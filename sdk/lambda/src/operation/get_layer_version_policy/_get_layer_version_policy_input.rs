@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLayerVersionPolicyInput  {
+pub struct GetLayerVersionPolicyInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     #[doc(hidden)]
     pub layer_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct GetLayerVersionPolicyInput  {
 }
 impl GetLayerVersionPolicyInput {
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-    pub fn layer_name(&self) -> std::option::Option<& str> {
+    pub fn layer_name(&self) -> std::option::Option<&str> {
         self.layer_name.as_deref()
     }
     /// <p>The version number.</p>
@@ -22,7 +22,9 @@ impl GetLayerVersionPolicyInput {
 }
 impl GetLayerVersionPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetLayerVersionPolicyInput`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput).
-    pub fn builder() -> crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyInputBuilder
+    {
         crate::operation::get_layer_version_policy::builders::GetLayerVersionPolicyInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl GetLayerVersionPolicyInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of the layer.</p>
     pub fn set_layer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.layer_name = input; self
+        self.layer_name = input;
+        self
     }
     /// <p>The version number.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -51,18 +54,21 @@ impl GetLayerVersionPolicyInputBuilder {
     }
     /// <p>The version number.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input; self
+        self.version_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetLayerVersionPolicyInput`](crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_layer_version_policy::GetLayerVersionPolicyInput {
-                layer_name: self.layer_name
-                ,
-                version_number: self.version_number
-                ,
-            }
+                layer_name: self.layer_name,
+                version_number: self.version_number,
+            },
         )
     }
 }
-

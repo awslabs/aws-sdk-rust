@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InviteMembersOutput  {
+pub struct InviteMembersOutput {
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::types::Result>>,
@@ -10,15 +10,15 @@ pub struct InviteMembersOutput  {
 }
 impl InviteMembersOutput {
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
-    pub fn unprocessed_accounts(&self) -> std::option::Option<& [crate::types::Result]> {
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::types::Result]> {
         self.unprocessed_accounts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for InviteMembersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl InviteMembersOutput {
     /// Creates a new builder-style object to manufacture [`InviteMembersOutput`](crate::operation::invite_members::InviteMembersOutput).
     pub fn builder() -> crate::operation::invite_members::builders::InviteMembersOutputBuilder {
@@ -41,30 +41,32 @@ impl InviteMembersOutputBuilder {
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
     pub fn unprocessed_accounts(mut self, input: crate::types::Result) -> Self {
         let mut v = self.unprocessed_accounts.unwrap_or_default();
-                        v.push(input);
-                        self.unprocessed_accounts = Some(v);
-                        self
+        v.push(input);
+        self.unprocessed_accounts = Some(v);
+        self
     }
     /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list includes the account ID and the email address.</p>
-    pub fn set_unprocessed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::Result>>) -> Self {
-        self.unprocessed_accounts = input; self
+    pub fn set_unprocessed_accounts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Result>>,
+    ) -> Self {
+        self.unprocessed_accounts = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`InviteMembersOutput`](crate::operation::invite_members::InviteMembersOutput).
     pub fn build(self) -> crate::operation::invite_members::InviteMembersOutput {
         crate::operation::invite_members::InviteMembersOutput {
-            unprocessed_accounts: self.unprocessed_accounts
-            ,
+            unprocessed_accounts: self.unprocessed_accounts,
             _request_id: self._request_id,
         }
     }
 }
-

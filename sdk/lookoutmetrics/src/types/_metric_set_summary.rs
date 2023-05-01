@@ -3,7 +3,7 @@
 /// <p>Contains information about a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricSetSummary  {
+pub struct MetricSetSummary {
     /// <p>The ARN of the dataset.</p>
     #[doc(hidden)]
     pub metric_set_arn: std::option::Option<std::string::String>,
@@ -24,35 +24,39 @@ pub struct MetricSetSummary  {
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl MetricSetSummary {
     /// <p>The ARN of the dataset.</p>
-    pub fn metric_set_arn(&self) -> std::option::Option<& str> {
+    pub fn metric_set_arn(&self) -> std::option::Option<&str> {
         self.metric_set_arn.as_deref()
     }
     /// <p>The ARN of the detector to which the dataset belongs.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>The description of the dataset.</p>
-    pub fn metric_set_description(&self) -> std::option::Option<& str> {
+    pub fn metric_set_description(&self) -> std::option::Option<&str> {
         self.metric_set_description.as_deref()
     }
     /// <p>The name of the dataset.</p>
-    pub fn metric_set_name(&self) -> std::option::Option<& str> {
+    pub fn metric_set_name(&self) -> std::option::Option<&str> {
         self.metric_set_name.as_deref()
     }
     /// <p>The time at which the dataset was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the dataset was last modified.</p>
-    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -73,7 +77,8 @@ pub struct MetricSetSummaryBuilder {
     pub(crate) metric_set_name: std::option::Option<std::string::String>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl MetricSetSummaryBuilder {
     /// <p>The ARN of the dataset.</p>
@@ -83,7 +88,8 @@ impl MetricSetSummaryBuilder {
     }
     /// <p>The ARN of the dataset.</p>
     pub fn set_metric_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_set_arn = input; self
+        self.metric_set_arn = input;
+        self
     }
     /// <p>The ARN of the detector to which the dataset belongs.</p>
     pub fn anomaly_detector_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,8 +97,12 @@ impl MetricSetSummaryBuilder {
         self
     }
     /// <p>The ARN of the detector to which the dataset belongs.</p>
-    pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.anomaly_detector_arn = input; self
+    pub fn set_anomaly_detector_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.anomaly_detector_arn = input;
+        self
     }
     /// <p>The description of the dataset.</p>
     pub fn metric_set_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +110,12 @@ impl MetricSetSummaryBuilder {
         self
     }
     /// <p>The description of the dataset.</p>
-    pub fn set_metric_set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_set_description = input; self
+    pub fn set_metric_set_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.metric_set_description = input;
+        self
     }
     /// <p>The name of the dataset.</p>
     pub fn metric_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +124,8 @@ impl MetricSetSummaryBuilder {
     }
     /// <p>The name of the dataset.</p>
     pub fn set_metric_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_set_name = input; self
+        self.metric_set_name = input;
+        self
     }
     /// <p>The time at which the dataset was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -118,8 +133,12 @@ impl MetricSetSummaryBuilder {
         self
     }
     /// <p>The time at which the dataset was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The time at which the dataset was last modified.</p>
     pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,42 +146,48 @@ impl MetricSetSummaryBuilder {
         self
     }
     /// <p>The time at which the dataset was last modified.</p>
-    pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input; self
+    pub fn set_last_modification_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modification_time = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The dataset's <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricSetSummary`](crate::types::MetricSetSummary).
     pub fn build(self) -> crate::types::MetricSetSummary {
         crate::types::MetricSetSummary {
-            metric_set_arn: self.metric_set_arn
-            ,
-            anomaly_detector_arn: self.anomaly_detector_arn
-            ,
-            metric_set_description: self.metric_set_description
-            ,
-            metric_set_name: self.metric_set_name
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modification_time: self.last_modification_time
-            ,
-            tags: self.tags
-            ,
+            metric_set_arn: self.metric_set_arn,
+            anomaly_detector_arn: self.anomaly_detector_arn,
+            metric_set_description: self.metric_set_description,
+            metric_set_name: self.metric_set_name,
+            creation_time: self.creation_time,
+            last_modification_time: self.last_modification_time,
+            tags: self.tags,
         }
     }
 }
-

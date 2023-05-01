@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssessmentFrameworkInput  {
+pub struct UpdateAssessmentFrameworkInput {
     /// <p> The unique identifier for the framework. </p>
     #[doc(hidden)]
     pub framework_id: std::option::Option<std::string::String>,
@@ -17,33 +17,36 @@ pub struct UpdateAssessmentFrameworkInput  {
     pub compliance_type: std::option::Option<std::string::String>,
     /// <p> The control sets that are associated with the framework. </p>
     #[doc(hidden)]
-    pub control_sets: std::option::Option<std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>,
+    pub control_sets:
+        std::option::Option<std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>,
 }
 impl UpdateAssessmentFrameworkInput {
     /// <p> The unique identifier for the framework. </p>
-    pub fn framework_id(&self) -> std::option::Option<& str> {
+    pub fn framework_id(&self) -> std::option::Option<&str> {
         self.framework_id.as_deref()
     }
     /// <p> The name of the framework to be updated. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The description of the updated framework. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
-    pub fn compliance_type(&self) -> std::option::Option<& str> {
+    pub fn compliance_type(&self) -> std::option::Option<&str> {
         self.compliance_type.as_deref()
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn control_sets(&self) -> std::option::Option<& [crate::types::UpdateAssessmentFrameworkControlSet]> {
+    pub fn control_sets(
+        &self,
+    ) -> std::option::Option<&[crate::types::UpdateAssessmentFrameworkControlSet]> {
         self.control_sets.as_deref()
     }
 }
 impl UpdateAssessmentFrameworkInput {
     /// Creates a new builder-style object to manufacture [`UpdateAssessmentFrameworkInput`](crate::operation::update_assessment_framework::UpdateAssessmentFrameworkInput).
-    pub fn builder() -> crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder {
+    pub fn builder() -> crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder{
         crate::operation::update_assessment_framework::builders::UpdateAssessmentFrameworkInputBuilder::default()
     }
 }
@@ -56,7 +59,8 @@ pub struct UpdateAssessmentFrameworkInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) compliance_type: std::option::Option<std::string::String>,
-    pub(crate) control_sets: std::option::Option<std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>,
+    pub(crate) control_sets:
+        std::option::Option<std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>,
 }
 impl UpdateAssessmentFrameworkInputBuilder {
     /// <p> The unique identifier for the framework. </p>
@@ -66,7 +70,8 @@ impl UpdateAssessmentFrameworkInputBuilder {
     }
     /// <p> The unique identifier for the framework. </p>
     pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.framework_id = input; self
+        self.framework_id = input;
+        self
     }
     /// <p> The name of the framework to be updated. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +80,8 @@ impl UpdateAssessmentFrameworkInputBuilder {
     }
     /// <p> The name of the framework to be updated. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> The description of the updated framework. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +90,8 @@ impl UpdateAssessmentFrameworkInputBuilder {
     }
     /// <p> The description of the updated framework. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn compliance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,39 +100,48 @@ impl UpdateAssessmentFrameworkInputBuilder {
     }
     /// <p> The compliance type that the new custom framework supports, such as CIS or HIPAA. </p>
     pub fn set_compliance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compliance_type = input; self
+        self.compliance_type = input;
+        self
     }
     /// Appends an item to `control_sets`.
     ///
     /// To override the contents of this collection use [`set_control_sets`](Self::set_control_sets).
     ///
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn control_sets(mut self, input: crate::types::UpdateAssessmentFrameworkControlSet) -> Self {
+    pub fn control_sets(
+        mut self,
+        input: crate::types::UpdateAssessmentFrameworkControlSet,
+    ) -> Self {
         let mut v = self.control_sets.unwrap_or_default();
-                        v.push(input);
-                        self.control_sets = Some(v);
-                        self
+        v.push(input);
+        self.control_sets = Some(v);
+        self
     }
     /// <p> The control sets that are associated with the framework. </p>
-    pub fn set_control_sets(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>>) -> Self {
-        self.control_sets = input; self
+    pub fn set_control_sets(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::UpdateAssessmentFrameworkControlSet>,
+        >,
+    ) -> Self {
+        self.control_sets = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentFrameworkInput`](crate::operation::update_assessment_framework::UpdateAssessmentFrameworkInput).
-    pub fn build(self) -> Result<crate::operation::update_assessment_framework::UpdateAssessmentFrameworkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_assessment_framework::UpdateAssessmentFrameworkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_assessment_framework::UpdateAssessmentFrameworkInput {
-                framework_id: self.framework_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                compliance_type: self.compliance_type
-                ,
-                control_sets: self.control_sets
-                ,
-            }
+                framework_id: self.framework_id,
+                name: self.name,
+                description: self.description,
+                compliance_type: self.compliance_type,
+                control_sets: self.control_sets,
+            },
         )
     }
 }
-

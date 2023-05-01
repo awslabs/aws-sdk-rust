@@ -27,4 +27,3 @@ pub mod list_projects;
 
 /// Types for the `UpdateProject` operation.
 pub mod update_project;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSerialConsoleAccessStatusOutput  {
+pub struct GetSerialConsoleAccessStatusOutput {
     /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     #[doc(hidden)]
     pub serial_console_access_enabled: std::option::Option<bool>,
@@ -15,13 +15,13 @@ impl GetSerialConsoleAccessStatusOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetSerialConsoleAccessStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetSerialConsoleAccessStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetSerialConsoleAccessStatusOutput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput).
-    pub fn builder() -> crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusOutputBuilder {
+    pub fn builder() -> crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusOutputBuilder{
         crate::operation::get_serial_console_access_status::builders::GetSerialConsoleAccessStatusOutputBuilder::default()
     }
 }
@@ -41,24 +41,26 @@ impl GetSerialConsoleAccessStatusOutputBuilder {
     }
     /// <p>If <code>true</code>, access to the EC2 serial console of all instances is enabled for your account. If <code>false</code>, access to the EC2 serial console of all instances is disabled for your account.</p>
     pub fn set_serial_console_access_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.serial_console_access_enabled = input; self
+        self.serial_console_access_enabled = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetSerialConsoleAccessStatusOutput`](crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput).
-    pub fn build(self) -> crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput
+    {
         crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput {
-            serial_console_access_enabled: self.serial_console_access_enabled
-            ,
+            serial_console_access_enabled: self.serial_console_access_enabled,
             _request_id: self._request_id,
         }
     }
 }
-

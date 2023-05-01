@@ -2,13 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProvisioningArtifactOutput  {
+pub struct DescribeProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
     #[doc(hidden)]
     pub provisioning_artifact_detail: std::option::Option<crate::types::ProvisioningArtifactDetail>,
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
     #[doc(hidden)]
-    pub info: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub info:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The status of the current request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::Status>,
@@ -16,26 +17,31 @@ pub struct DescribeProvisioningArtifactOutput  {
 }
 impl DescribeProvisioningArtifactOutput {
     /// <p>Information about the provisioning artifact.</p>
-    pub fn provisioning_artifact_detail(&self) -> std::option::Option<& crate::types::ProvisioningArtifactDetail> {
+    pub fn provisioning_artifact_detail(
+        &self,
+    ) -> std::option::Option<&crate::types::ProvisioningArtifactDetail> {
         self.provisioning_artifact_detail.as_ref()
     }
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    pub fn info(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn info(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.info.as_ref()
     }
     /// <p>The status of the current request.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProvisioningArtifactOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeProvisioningArtifactOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProvisioningArtifactOutput`](crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactOutput).
-    pub fn builder() -> crate::operation::describe_provisioning_artifact::builders::DescribeProvisioningArtifactOutputBuilder {
+    pub fn builder() -> crate::operation::describe_provisioning_artifact::builders::DescribeProvisioningArtifactOutputBuilder{
         crate::operation::describe_provisioning_artifact::builders::DescribeProvisioningArtifactOutputBuilder::default()
     }
 }
@@ -44,35 +50,54 @@ impl DescribeProvisioningArtifactOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeProvisioningArtifactOutputBuilder {
-    pub(crate) provisioning_artifact_detail: std::option::Option<crate::types::ProvisioningArtifactDetail>,
-    pub(crate) info: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) provisioning_artifact_detail:
+        std::option::Option<crate::types::ProvisioningArtifactDetail>,
+    pub(crate) info:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) status: std::option::Option<crate::types::Status>,
     _request_id: Option<String>,
 }
 impl DescribeProvisioningArtifactOutputBuilder {
     /// <p>Information about the provisioning artifact.</p>
-    pub fn provisioning_artifact_detail(mut self, input: crate::types::ProvisioningArtifactDetail) -> Self {
+    pub fn provisioning_artifact_detail(
+        mut self,
+        input: crate::types::ProvisioningArtifactDetail,
+    ) -> Self {
         self.provisioning_artifact_detail = Some(input);
         self
     }
     /// <p>Information about the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_detail(mut self, input: std::option::Option<crate::types::ProvisioningArtifactDetail>) -> Self {
-        self.provisioning_artifact_detail = input; self
+    pub fn set_provisioning_artifact_detail(
+        mut self,
+        input: std::option::Option<crate::types::ProvisioningArtifactDetail>,
+    ) -> Self {
+        self.provisioning_artifact_detail = input;
+        self
     }
     /// Adds a key-value pair to `info`.
     ///
     /// To override the contents of this collection use [`set_info`](Self::set_info).
     ///
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    pub fn info(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn info(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.info.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.info = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.info = Some(hash_map);
+        self
     }
     /// <p>The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format.</p>
-    pub fn set_info(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.info = input; self
+    pub fn set_info(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.info = input;
+        self
     }
     /// <p>The status of the current request.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -81,28 +106,27 @@ impl DescribeProvisioningArtifactOutputBuilder {
     }
     /// <p>The status of the current request.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeProvisioningArtifactOutput`](crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactOutput).
-    pub fn build(self) -> crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactOutput {
         crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactOutput {
-            provisioning_artifact_detail: self.provisioning_artifact_detail
-            ,
-            info: self.info
-            ,
-            status: self.status
-            ,
+            provisioning_artifact_detail: self.provisioning_artifact_detail,
+            info: self.info,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

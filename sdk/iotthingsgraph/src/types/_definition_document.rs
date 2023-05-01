@@ -3,7 +3,7 @@
 /// <p>A document that defines an entity. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefinitionDocument  {
+pub struct DefinitionDocument {
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
     #[doc(hidden)]
     pub language: std::option::Option<crate::types::DefinitionLanguage>,
@@ -13,11 +13,11 @@ pub struct DefinitionDocument  {
 }
 impl DefinitionDocument {
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
-    pub fn language(&self) -> std::option::Option<& crate::types::DefinitionLanguage> {
+    pub fn language(&self) -> std::option::Option<&crate::types::DefinitionLanguage> {
         self.language.as_ref()
     }
     /// <p>The GraphQL text that defines the entity.</p>
-    pub fn text(&self) -> std::option::Option<& str> {
+    pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl DefinitionDocumentBuilder {
         self
     }
     /// <p>The language used to define the entity. <code>GRAPHQL</code> is the only valid value.</p>
-    pub fn set_language(mut self, input: std::option::Option<crate::types::DefinitionLanguage>) -> Self {
-        self.language = input; self
+    pub fn set_language(
+        mut self,
+        input: std::option::Option<crate::types::DefinitionLanguage>,
+    ) -> Self {
+        self.language = input;
+        self
     }
     /// <p>The GraphQL text that defines the entity.</p>
     pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl DefinitionDocumentBuilder {
     }
     /// <p>The GraphQL text that defines the entity.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input; self
+        self.text = input;
+        self
     }
     /// Consumes the builder and constructs a [`DefinitionDocument`](crate::types::DefinitionDocument).
     pub fn build(self) -> crate::types::DefinitionDocument {
         crate::types::DefinitionDocument {
-            language: self.language
-            ,
-            text: self.text
-            ,
+            language: self.language,
+            text: self.text,
         }
     }
 }
-

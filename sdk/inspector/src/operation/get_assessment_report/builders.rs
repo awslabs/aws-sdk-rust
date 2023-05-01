@@ -4,57 +4,80 @@ pub use crate::operation::get_assessment_report::_get_assessment_report_output::
 pub use crate::operation::get_assessment_report::_get_assessment_report_input::GetAssessmentReportInputBuilder;
 
 /// Fluent builder constructing a request to `GetAssessmentReport`.
-/// 
+///
 /// <p>Produces an assessment report that includes detailed and comprehensive results of a specified assessment run. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssessmentReportFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_assessment_report::builders::GetAssessmentReportInputBuilder,
+    inner: crate::operation::get_assessment_report::builders::GetAssessmentReportInputBuilder,
 }
-impl GetAssessmentReportFluentBuilder  {
+impl GetAssessmentReportFluentBuilder {
     /// Creates a new `GetAssessmentReport`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_assessment_report::GetAssessmentReport, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_assessment_report::GetAssessmentReportError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_assessment_report::GetAssessmentReportOutput, aws_smithy_http::result::SdkError<crate::operation::get_assessment_report::GetAssessmentReportError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_assessment_report::GetAssessmentReport,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_assessment_report::GetAssessmentReportError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_assessment_report::GetAssessmentReportOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_assessment_report::GetAssessmentReportError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
     pub fn assessment_run_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assessment_run_arn(input.into());
         self
     }
     /// <p>The ARN that specifies the assessment run for which you want to generate a report.</p>
-    pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_assessment_run_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_assessment_run_arn(input);
         self
     }
@@ -64,7 +87,10 @@ impl GetAssessmentReportFluentBuilder  {
         self
     }
     /// <p>Specifies the file format (html or pdf) of the assessment report that you want to generate.</p>
-    pub fn set_report_file_format(mut self, input: std::option::Option<crate::types::ReportFileFormat>) -> Self {
+    pub fn set_report_file_format(
+        mut self,
+        input: std::option::Option<crate::types::ReportFileFormat>,
+    ) -> Self {
         self.inner = self.inner.set_report_file_format(input);
         self
     }
@@ -79,4 +105,3 @@ impl GetAssessmentReportFluentBuilder  {
         self
     }
 }
-

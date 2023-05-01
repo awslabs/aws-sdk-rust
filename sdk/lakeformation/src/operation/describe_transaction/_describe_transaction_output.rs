@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTransactionOutput  {
+pub struct DescribeTransactionOutput {
     /// <p>Returns a <code>TransactionDescription</code> object containing information about the transaction.</p>
     #[doc(hidden)]
     pub transaction_description: std::option::Option<crate::types::TransactionDescription>,
@@ -10,19 +10,23 @@ pub struct DescribeTransactionOutput  {
 }
 impl DescribeTransactionOutput {
     /// <p>Returns a <code>TransactionDescription</code> object containing information about the transaction.</p>
-    pub fn transaction_description(&self) -> std::option::Option<& crate::types::TransactionDescription> {
+    pub fn transaction_description(
+        &self,
+    ) -> std::option::Option<&crate::types::TransactionDescription> {
         self.transaction_description.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeTransactionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeTransactionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransactionOutput`](crate::operation::describe_transaction::DescribeTransactionOutput).
-    pub fn builder() -> crate::operation::describe_transaction::builders::DescribeTransactionOutputBuilder {
-        crate::operation::describe_transaction::builders::DescribeTransactionOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_transaction::builders::DescribeTransactionOutputBuilder {
+        crate::operation::describe_transaction::builders::DescribeTransactionOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +44,27 @@ impl DescribeTransactionOutputBuilder {
         self
     }
     /// <p>Returns a <code>TransactionDescription</code> object containing information about the transaction.</p>
-    pub fn set_transaction_description(mut self, input: std::option::Option<crate::types::TransactionDescription>) -> Self {
-        self.transaction_description = input; self
+    pub fn set_transaction_description(
+        mut self,
+        input: std::option::Option<crate::types::TransactionDescription>,
+    ) -> Self {
+        self.transaction_description = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeTransactionOutput`](crate::operation::describe_transaction::DescribeTransactionOutput).
     pub fn build(self) -> crate::operation::describe_transaction::DescribeTransactionOutput {
         crate::operation::describe_transaction::DescribeTransactionOutput {
-            transaction_description: self.transaction_description
-            ,
+            transaction_description: self.transaction_description,
             _request_id: self._request_id,
         }
     }
 }
-

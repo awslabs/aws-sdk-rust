@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssessmentTargetOutput  {
+pub struct CreateAssessmentTargetOutput {
     /// <p>The ARN that specifies the assessment target that is created.</p>
     #[doc(hidden)]
     pub assessment_target_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct CreateAssessmentTargetOutput  {
 }
 impl CreateAssessmentTargetOutput {
     /// <p>The ARN that specifies the assessment target that is created.</p>
-    pub fn assessment_target_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_target_arn(&self) -> std::option::Option<&str> {
         self.assessment_target_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAssessmentTargetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAssessmentTargetOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssessmentTargetOutput`](crate::operation::create_assessment_target::CreateAssessmentTargetOutput).
-    pub fn builder() -> crate::operation::create_assessment_target::builders::CreateAssessmentTargetOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_assessment_target::builders::CreateAssessmentTargetOutputBuilder
+    {
         crate::operation::create_assessment_target::builders::CreateAssessmentTargetOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CreateAssessmentTargetOutputBuilder {
         self
     }
     /// <p>The ARN that specifies the assessment target that is created.</p>
-    pub fn set_assessment_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_target_arn = input; self
+    pub fn set_assessment_target_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.assessment_target_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAssessmentTargetOutput`](crate::operation::create_assessment_target::CreateAssessmentTargetOutput).
     pub fn build(self) -> crate::operation::create_assessment_target::CreateAssessmentTargetOutput {
         crate::operation::create_assessment_target::CreateAssessmentTargetOutput {
-            assessment_target_arn: self.assessment_target_arn
-            ,
+            assessment_target_arn: self.assessment_target_arn,
             _request_id: self._request_id,
         }
     }
 }
-

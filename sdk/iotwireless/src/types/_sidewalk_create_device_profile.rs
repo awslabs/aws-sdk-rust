@@ -3,8 +3,7 @@
 /// <p>Sidewalk object for creating a device profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SidewalkCreateDeviceProfile  {
-}
+pub struct SidewalkCreateDeviceProfile {}
 impl SidewalkCreateDeviceProfile {
     /// Creates a new builder-style object to manufacture [`SidewalkCreateDeviceProfile`](crate::types::SidewalkCreateDeviceProfile).
     pub fn builder() -> crate::types::builders::SidewalkCreateDeviceProfileBuilder {
@@ -15,13 +14,10 @@ impl SidewalkCreateDeviceProfile {
 /// A builder for [`SidewalkCreateDeviceProfile`](crate::types::SidewalkCreateDeviceProfile).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct SidewalkCreateDeviceProfileBuilder {
-}
+pub struct SidewalkCreateDeviceProfileBuilder {}
 impl SidewalkCreateDeviceProfileBuilder {
     /// Consumes the builder and constructs a [`SidewalkCreateDeviceProfile`](crate::types::SidewalkCreateDeviceProfile).
     pub fn build(self) -> crate::types::SidewalkCreateDeviceProfile {
-        crate::types::SidewalkCreateDeviceProfile {
-        }
+        crate::types::SidewalkCreateDeviceProfile {}
     }
 }
-

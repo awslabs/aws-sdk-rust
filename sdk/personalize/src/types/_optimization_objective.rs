@@ -3,7 +3,7 @@
 /// <p>Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html">Optimizing a solution</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptimizationObjective  {
+pub struct OptimizationObjective {
     /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
     #[doc(hidden)]
     pub item_attribute: std::option::Option<std::string::String>,
@@ -13,11 +13,13 @@ pub struct OptimizationObjective  {
 }
 impl OptimizationObjective {
     /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
-    pub fn item_attribute(&self) -> std::option::Option<& str> {
+    pub fn item_attribute(&self) -> std::option::Option<&str> {
         self.item_attribute.as_deref()
     }
     /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
-    pub fn objective_sensitivity(&self) -> std::option::Option<& crate::types::ObjectiveSensitivity> {
+    pub fn objective_sensitivity(
+        &self,
+    ) -> std::option::Option<&crate::types::ObjectiveSensitivity> {
         self.objective_sensitivity.as_ref()
     }
 }
@@ -43,7 +45,8 @@ impl OptimizationObjectiveBuilder {
     }
     /// <p>The numerical metadata column in an Items dataset related to the optimization objective. For example, VIDEO_LENGTH (to maximize streaming minutes), or PRICE (to maximize revenue).</p>
     pub fn set_item_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.item_attribute = input; self
+        self.item_attribute = input;
+        self
     }
     /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
     pub fn objective_sensitivity(mut self, input: crate::types::ObjectiveSensitivity) -> Self {
@@ -51,17 +54,18 @@ impl OptimizationObjectiveBuilder {
         self
     }
     /// <p>Specifies how Amazon Personalize balances the importance of your optimization objective versus relevance.</p>
-    pub fn set_objective_sensitivity(mut self, input: std::option::Option<crate::types::ObjectiveSensitivity>) -> Self {
-        self.objective_sensitivity = input; self
+    pub fn set_objective_sensitivity(
+        mut self,
+        input: std::option::Option<crate::types::ObjectiveSensitivity>,
+    ) -> Self {
+        self.objective_sensitivity = input;
+        self
     }
     /// Consumes the builder and constructs a [`OptimizationObjective`](crate::types::OptimizationObjective).
     pub fn build(self) -> crate::types::OptimizationObjective {
         crate::types::OptimizationObjective {
-            item_attribute: self.item_attribute
-            ,
-            objective_sensitivity: self.objective_sensitivity
-            ,
+            item_attribute: self.item_attribute,
+            objective_sensitivity: self.objective_sensitivity,
         }
     }
 }
-

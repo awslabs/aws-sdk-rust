@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let confluencepagefieldname = unimplemented!();
 /// match confluencepagefieldname {
@@ -40,14 +40,22 @@
 /// Specifically, when `confluencepagefieldname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConfluencePageFieldName::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ConfluencePageFieldName {
     #[allow(missing_docs)] // documentation missing in model
     Author,
@@ -74,61 +82,75 @@ pub enum ConfluencePageFieldName {
     #[allow(missing_docs)] // documentation missing in model
     Version,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConfluencePageFieldName {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AUTHOR" => ConfluencePageFieldName::Author,
-"CONTENT_STATUS" => ConfluencePageFieldName::ContentStatus,
-"CREATED_DATE" => ConfluencePageFieldName::CreatedDate,
-"DISPLAY_URL" => ConfluencePageFieldName::DisplayUrl,
-"ITEM_TYPE" => ConfluencePageFieldName::ItemType,
-"LABELS" => ConfluencePageFieldName::Labels,
-"MODIFIED_DATE" => ConfluencePageFieldName::ModifiedDate,
-"PARENT_ID" => ConfluencePageFieldName::ParentId,
-"SPACE_KEY" => ConfluencePageFieldName::SpaceKey,
-"SPACE_NAME" => ConfluencePageFieldName::SpaceName,
-"URL" => ConfluencePageFieldName::Url,
-"VERSION" => ConfluencePageFieldName::Version,
-other => ConfluencePageFieldName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ConfluencePageFieldName {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ConfluencePageFieldName::from(s))
-                }
-            }
-impl ConfluencePageFieldName {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ConfluencePageFieldName::Author => "AUTHOR",
-    ConfluencePageFieldName::ContentStatus => "CONTENT_STATUS",
-    ConfluencePageFieldName::CreatedDate => "CREATED_DATE",
-    ConfluencePageFieldName::DisplayUrl => "DISPLAY_URL",
-    ConfluencePageFieldName::ItemType => "ITEM_TYPE",
-    ConfluencePageFieldName::Labels => "LABELS",
-    ConfluencePageFieldName::ModifiedDate => "MODIFIED_DATE",
-    ConfluencePageFieldName::ParentId => "PARENT_ID",
-    ConfluencePageFieldName::SpaceKey => "SPACE_KEY",
-    ConfluencePageFieldName::SpaceName => "SPACE_NAME",
-    ConfluencePageFieldName::Url => "URL",
-    ConfluencePageFieldName::Version => "VERSION",
-    ConfluencePageFieldName::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTHOR" => ConfluencePageFieldName::Author,
+            "CONTENT_STATUS" => ConfluencePageFieldName::ContentStatus,
+            "CREATED_DATE" => ConfluencePageFieldName::CreatedDate,
+            "DISPLAY_URL" => ConfluencePageFieldName::DisplayUrl,
+            "ITEM_TYPE" => ConfluencePageFieldName::ItemType,
+            "LABELS" => ConfluencePageFieldName::Labels,
+            "MODIFIED_DATE" => ConfluencePageFieldName::ModifiedDate,
+            "PARENT_ID" => ConfluencePageFieldName::ParentId,
+            "SPACE_KEY" => ConfluencePageFieldName::SpaceKey,
+            "SPACE_NAME" => ConfluencePageFieldName::SpaceName,
+            "URL" => ConfluencePageFieldName::Url,
+            "VERSION" => ConfluencePageFieldName::Version,
+            other => ConfluencePageFieldName::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AUTHOR", "CONTENT_STATUS", "CREATED_DATE", "DISPLAY_URL", "ITEM_TYPE", "LABELS", "MODIFIED_DATE", "PARENT_ID", "SPACE_KEY", "SPACE_NAME", "URL", "VERSION"]
-                }
-            }
-impl AsRef<str> for ConfluencePageFieldName {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ConfluencePageFieldName {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConfluencePageFieldName::from(s))
+    }
+}
+impl ConfluencePageFieldName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConfluencePageFieldName::Author => "AUTHOR",
+            ConfluencePageFieldName::ContentStatus => "CONTENT_STATUS",
+            ConfluencePageFieldName::CreatedDate => "CREATED_DATE",
+            ConfluencePageFieldName::DisplayUrl => "DISPLAY_URL",
+            ConfluencePageFieldName::ItemType => "ITEM_TYPE",
+            ConfluencePageFieldName::Labels => "LABELS",
+            ConfluencePageFieldName::ModifiedDate => "MODIFIED_DATE",
+            ConfluencePageFieldName::ParentId => "PARENT_ID",
+            ConfluencePageFieldName::SpaceKey => "SPACE_KEY",
+            ConfluencePageFieldName::SpaceName => "SPACE_NAME",
+            ConfluencePageFieldName::Url => "URL",
+            ConfluencePageFieldName::Version => "VERSION",
+            ConfluencePageFieldName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AUTHOR",
+            "CONTENT_STATUS",
+            "CREATED_DATE",
+            "DISPLAY_URL",
+            "ITEM_TYPE",
+            "LABELS",
+            "MODIFIED_DATE",
+            "PARENT_ID",
+            "SPACE_KEY",
+            "SPACE_NAME",
+            "URL",
+            "VERSION",
+        ]
+    }
+}
+impl AsRef<str> for ConfluencePageFieldName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

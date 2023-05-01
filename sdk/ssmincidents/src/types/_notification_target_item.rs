@@ -21,7 +21,11 @@ impl NotificationTargetItem {
     /// Tries to convert the enum instance into [`SnsTopicArn`](crate::types::NotificationTargetItem::SnsTopicArn), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_sns_topic_arn(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let NotificationTargetItem::SnsTopicArn(val) = &self { Ok(val) } else { Err(self) }
+        if let NotificationTargetItem::SnsTopicArn(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`SnsTopicArn`](crate::types::NotificationTargetItem::SnsTopicArn).
     pub fn is_sns_topic_arn(&self) -> bool {
@@ -32,4 +36,3 @@ impl NotificationTargetItem {
         matches!(self, Self::Unknown)
     }
 }
-

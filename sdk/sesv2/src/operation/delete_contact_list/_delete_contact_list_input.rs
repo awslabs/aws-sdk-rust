@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContactListInput  {
+pub struct DeleteContactListInput {
     /// <p>The name of the contact list.</p>
     #[doc(hidden)]
     pub contact_list_name: std::option::Option<std::string::String>,
 }
 impl DeleteContactListInput {
     /// <p>The name of the contact list.</p>
-    pub fn contact_list_name(&self) -> std::option::Option<& str> {
+    pub fn contact_list_name(&self) -> std::option::Option<&str> {
         self.contact_list_name.as_deref()
     }
 }
 impl DeleteContactListInput {
     /// Creates a new builder-style object to manufacture [`DeleteContactListInput`](crate::operation::delete_contact_list::DeleteContactListInput).
-    pub fn builder() -> crate::operation::delete_contact_list::builders::DeleteContactListInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_contact_list::builders::DeleteContactListInputBuilder {
         crate::operation::delete_contact_list::builders::DeleteContactListInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DeleteContactListInputBuilder {
         self
     }
     /// <p>The name of the contact list.</p>
-    pub fn set_contact_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_list_name = input; self
+    pub fn set_contact_list_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.contact_list_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteContactListInput`](crate::operation::delete_contact_list::DeleteContactListInput).
-    pub fn build(self) -> Result<crate::operation::delete_contact_list::DeleteContactListInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_contact_list::DeleteContactListInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_contact_list::DeleteContactListInput {
-                contact_list_name: self.contact_list_name
-                ,
-            }
+                contact_list_name: self.contact_list_name,
+            },
         )
     }
 }
-

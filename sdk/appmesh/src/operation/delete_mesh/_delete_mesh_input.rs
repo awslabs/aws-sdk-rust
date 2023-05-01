@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMeshInput  {
+pub struct DeleteMeshInput {
     /// <p>The name of the service mesh to delete.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
 }
 impl DeleteMeshInput {
     /// <p>The name of the service mesh to delete.</p>
-    pub fn mesh_name(&self) -> std::option::Option<& str> {
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteMeshInputBuilder {
     }
     /// <p>The name of the service mesh to delete.</p>
     pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_name = input; self
+        self.mesh_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMeshInput`](crate::operation::delete_mesh::DeleteMeshInput).
-    pub fn build(self) -> Result<crate::operation::delete_mesh::DeleteMeshInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_mesh::DeleteMeshInput {
-                mesh_name: self.mesh_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_mesh::DeleteMeshInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_mesh::DeleteMeshInput {
+            mesh_name: self.mesh_name,
+        })
     }
 }
-

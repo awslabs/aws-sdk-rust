@@ -3,17 +3,18 @@
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReceiptRuleOutput  {
+pub struct DeleteReceiptRuleOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteReceiptRuleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteReceiptRuleOutput {
     /// Creates a new builder-style object to manufacture [`DeleteReceiptRuleOutput`](crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput).
-    pub fn builder() -> crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleOutputBuilder {
         crate::operation::delete_receipt_rule::builders::DeleteReceiptRuleOutputBuilder::default()
     }
 }
@@ -26,14 +27,14 @@ pub struct DeleteReceiptRuleOutputBuilder {
 }
 impl DeleteReceiptRuleOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteReceiptRuleOutput`](crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput).
     pub fn build(self) -> crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput {
         crate::operation::delete_receipt_rule::DeleteReceiptRuleOutput {
@@ -41,4 +42,3 @@ impl DeleteReceiptRuleOutputBuilder {
         }
     }
 }
-

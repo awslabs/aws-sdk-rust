@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVodSourceInput  {
+pub struct UpdateVodSourceInput {
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
     #[doc(hidden)]
-    pub http_package_configurations: std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     /// <p>The name of the source location associated with this VOD Source.</p>
     #[doc(hidden)]
     pub source_location_name: std::option::Option<std::string::String>,
@@ -15,15 +16,17 @@ pub struct UpdateVodSourceInput  {
 }
 impl UpdateVodSourceInput {
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
-    pub fn http_package_configurations(&self) -> std::option::Option<& [crate::types::HttpPackageConfiguration]> {
+    pub fn http_package_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::HttpPackageConfiguration]> {
         self.http_package_configurations.as_deref()
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn source_location_name(&self) -> std::option::Option<& str> {
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
     }
     /// <p>The name of the VOD source.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<& str> {
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
         self.vod_source_name.as_deref()
     }
 }
@@ -38,7 +41,8 @@ impl UpdateVodSourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateVodSourceInputBuilder {
-    pub(crate) http_package_configurations: std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    pub(crate) http_package_configurations:
+        std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     pub(crate) source_location_name: std::option::Option<std::string::String>,
     pub(crate) vod_source_name: std::option::Option<std::string::String>,
 }
@@ -48,15 +52,22 @@ impl UpdateVodSourceInputBuilder {
     /// To override the contents of this collection use [`set_http_package_configurations`](Self::set_http_package_configurations).
     ///
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
-    pub fn http_package_configurations(mut self, input: crate::types::HttpPackageConfiguration) -> Self {
+    pub fn http_package_configurations(
+        mut self,
+        input: crate::types::HttpPackageConfiguration,
+    ) -> Self {
         let mut v = self.http_package_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.http_package_configurations = Some(v);
-                        self
+        v.push(input);
+        self.http_package_configurations = Some(v);
+        self
     }
     /// <p>A list of HTTP package configurations for the VOD source on this account.</p>
-    pub fn set_http_package_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>) -> Self {
-        self.http_package_configurations = input; self
+    pub fn set_http_package_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::HttpPackageConfiguration>>,
+    ) -> Self {
+        self.http_package_configurations = input;
+        self
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
     pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,8 +75,12 @@ impl UpdateVodSourceInputBuilder {
         self
     }
     /// <p>The name of the source location associated with this VOD Source.</p>
-    pub fn set_source_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_location_name = input; self
+    pub fn set_source_location_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_location_name = input;
+        self
     }
     /// <p>The name of the VOD source.</p>
     pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,20 +89,20 @@ impl UpdateVodSourceInputBuilder {
     }
     /// <p>The name of the VOD source.</p>
     pub fn set_vod_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vod_source_name = input; self
+        self.vod_source_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateVodSourceInput`](crate::operation::update_vod_source::UpdateVodSourceInput).
-    pub fn build(self) -> Result<crate::operation::update_vod_source::UpdateVodSourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_vod_source::UpdateVodSourceInput {
-                http_package_configurations: self.http_package_configurations
-                ,
-                source_location_name: self.source_location_name
-                ,
-                vod_source_name: self.vod_source_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_vod_source::UpdateVodSourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_vod_source::UpdateVodSourceInput {
+            http_package_configurations: self.http_package_configurations,
+            source_location_name: self.source_location_name,
+            vod_source_name: self.vod_source_name,
+        })
     }
 }
-

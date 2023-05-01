@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateClusterKafkaVersionInput  {
+pub struct UpdateClusterKafkaVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct UpdateClusterKafkaVersionInput  {
 }
 impl UpdateClusterKafkaVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The custom configuration that should be applied on the new version of cluster.</p>
-    pub fn configuration_info(&self) -> std::option::Option<& crate::types::ConfigurationInfo> {
+    pub fn configuration_info(&self) -> std::option::Option<&crate::types::ConfigurationInfo> {
         self.configuration_info.as_ref()
     }
     /// <p>Current cluster version.</p>
-    pub fn current_version(&self) -> std::option::Option<& str> {
+    pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
     }
     /// <p>Target Kafka version.</p>
-    pub fn target_kafka_version(&self) -> std::option::Option<& str> {
+    pub fn target_kafka_version(&self) -> std::option::Option<&str> {
         self.target_kafka_version.as_deref()
     }
 }
 impl UpdateClusterKafkaVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateClusterKafkaVersionInput`](crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionInput).
-    pub fn builder() -> crate::operation::update_cluster_kafka_version::builders::UpdateClusterKafkaVersionInputBuilder {
+    pub fn builder() -> crate::operation::update_cluster_kafka_version::builders::UpdateClusterKafkaVersionInputBuilder{
         crate::operation::update_cluster_kafka_version::builders::UpdateClusterKafkaVersionInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl UpdateClusterKafkaVersionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input; self
+        self.cluster_arn = input;
+        self
     }
     /// <p>The custom configuration that should be applied on the new version of cluster.</p>
     pub fn configuration_info(mut self, input: crate::types::ConfigurationInfo) -> Self {
@@ -66,8 +67,12 @@ impl UpdateClusterKafkaVersionInputBuilder {
         self
     }
     /// <p>The custom configuration that should be applied on the new version of cluster.</p>
-    pub fn set_configuration_info(mut self, input: std::option::Option<crate::types::ConfigurationInfo>) -> Self {
-        self.configuration_info = input; self
+    pub fn set_configuration_info(
+        mut self,
+        input: std::option::Option<crate::types::ConfigurationInfo>,
+    ) -> Self {
+        self.configuration_info = input;
+        self
     }
     /// <p>Current cluster version.</p>
     pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +81,8 @@ impl UpdateClusterKafkaVersionInputBuilder {
     }
     /// <p>Current cluster version.</p>
     pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_version = input; self
+        self.current_version = input;
+        self
     }
     /// <p>Target Kafka version.</p>
     pub fn target_kafka_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,23 +90,27 @@ impl UpdateClusterKafkaVersionInputBuilder {
         self
     }
     /// <p>Target Kafka version.</p>
-    pub fn set_target_kafka_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_kafka_version = input; self
+    pub fn set_target_kafka_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_kafka_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateClusterKafkaVersionInput`](crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionInput).
-    pub fn build(self) -> Result<crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_cluster_kafka_version::UpdateClusterKafkaVersionInput {
-                cluster_arn: self.cluster_arn
-                ,
-                configuration_info: self.configuration_info
-                ,
-                current_version: self.current_version
-                ,
-                target_kafka_version: self.target_kafka_version
-                ,
-            }
+                cluster_arn: self.cluster_arn,
+                configuration_info: self.configuration_info,
+                current_version: self.current_version,
+                target_kafka_version: self.target_kafka_version,
+            },
         )
     }
 }
-

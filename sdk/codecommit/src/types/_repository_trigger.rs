@@ -3,7 +3,7 @@
 /// <p>Information about a trigger for a repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryTrigger  {
+pub struct RepositoryTrigger {
     /// <p>The name of the trigger.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,40 +13,40 @@ pub struct RepositoryTrigger  {
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
     #[doc(hidden)]
     pub custom_data: std::option::Option<std::string::String>,
-    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note> 
-    /// <p>Although no content is required in the array, you must include the array itself.</p> 
+    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
+    /// <p>Although no content is required in the array, you must include the array itself.</p>
     /// </note>
     #[doc(hidden)]
     pub branches: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note> 
-    /// <p>The valid value "all" cannot be used with any other values.</p> 
+    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
+    /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<crate::types::RepositoryTriggerEventEnum>>,
 }
 impl RepositoryTrigger {
     /// <p>The name of the trigger.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
-    pub fn destination_arn(&self) -> std::option::Option<& str> {
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
-    pub fn custom_data(&self) -> std::option::Option<& str> {
+    pub fn custom_data(&self) -> std::option::Option<&str> {
         self.custom_data.as_deref()
     }
-    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note> 
-    /// <p>Although no content is required in the array, you must include the array itself.</p> 
+    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
+    /// <p>Although no content is required in the array, you must include the array itself.</p>
     /// </note>
-    pub fn branches(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn branches(&self) -> std::option::Option<&[std::string::String]> {
         self.branches.as_deref()
     }
-    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note> 
-    /// <p>The valid value "all" cannot be used with any other values.</p> 
+    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
+    /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
-    pub fn events(&self) -> std::option::Option<& [crate::types::RepositoryTriggerEventEnum]> {
+    pub fn events(&self) -> std::option::Option<&[crate::types::RepositoryTriggerEventEnum]> {
         self.events.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl RepositoryTriggerBuilder {
     }
     /// <p>The name of the trigger.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl RepositoryTriggerBuilder {
     }
     /// <p>The ARN of the resource that is the target for a trigger (for example, the ARN of a topic in Amazon SNS).</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input; self
+        self.destination_arn = input;
+        self
     }
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
     pub fn custom_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,60 +95,63 @@ impl RepositoryTriggerBuilder {
     }
     /// <p>Any custom data associated with the trigger to be included in the information sent to the target of the trigger.</p>
     pub fn set_custom_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_data = input; self
+        self.custom_data = input;
+        self
     }
     /// Appends an item to `branches`.
     ///
     /// To override the contents of this collection use [`set_branches`](Self::set_branches).
     ///
-    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note> 
-    /// <p>Although no content is required in the array, you must include the array itself.</p> 
+    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
+    /// <p>Although no content is required in the array, you must include the array itself.</p>
     /// </note>
     pub fn branches(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.branches.unwrap_or_default();
-                        v.push(input.into());
-                        self.branches = Some(v);
-                        self
+        v.push(input.into());
+        self.branches = Some(v);
+        self
     }
-    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note> 
-    /// <p>Although no content is required in the array, you must include the array itself.</p> 
+    /// <p>The branches to be included in the trigger configuration. If you specify an empty array, the trigger applies to all branches.</p> <note>
+    /// <p>Although no content is required in the array, you must include the array itself.</p>
     /// </note>
-    pub fn set_branches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.branches = input; self
+    pub fn set_branches(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.branches = input;
+        self
     }
     /// Appends an item to `events`.
     ///
     /// To override the contents of this collection use [`set_events`](Self::set_events).
     ///
-    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note> 
-    /// <p>The valid value "all" cannot be used with any other values.</p> 
+    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
+    /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
     pub fn events(mut self, input: crate::types::RepositoryTriggerEventEnum) -> Self {
         let mut v = self.events.unwrap_or_default();
-                        v.push(input);
-                        self.events = Some(v);
-                        self
+        v.push(input);
+        self.events = Some(v);
+        self
     }
-    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note> 
-    /// <p>The valid value "all" cannot be used with any other values.</p> 
+    /// <p>The repository events that cause the trigger to run actions in another service, such as sending a notification through Amazon SNS. </p> <note>
+    /// <p>The valid value "all" cannot be used with any other values.</p>
     /// </note>
-    pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::RepositoryTriggerEventEnum>>) -> Self {
-        self.events = input; self
+    pub fn set_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RepositoryTriggerEventEnum>>,
+    ) -> Self {
+        self.events = input;
+        self
     }
     /// Consumes the builder and constructs a [`RepositoryTrigger`](crate::types::RepositoryTrigger).
     pub fn build(self) -> crate::types::RepositoryTrigger {
         crate::types::RepositoryTrigger {
-            name: self.name
-            ,
-            destination_arn: self.destination_arn
-            ,
-            custom_data: self.custom_data
-            ,
-            branches: self.branches
-            ,
-            events: self.events
-            ,
+            name: self.name,
+            destination_arn: self.destination_arn,
+            custom_data: self.custom_data,
+            branches: self.branches,
+            events: self.events,
         }
     }
 }
-

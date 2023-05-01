@@ -2,31 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachGroupPolicyInput  {
-    /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p> 
+pub struct DetachGroupPolicyInput {
+    /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl DetachGroupPolicyInput {
-    /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p> 
+    /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn policy_arn(&self) -> std::option::Option<& str> {
+    pub fn policy_arn(&self) -> std::option::Option<&str> {
         self.policy_arn.as_deref()
     }
 }
 impl DetachGroupPolicyInput {
     /// Creates a new builder-style object to manufacture [`DetachGroupPolicyInput`](crate::operation::detach_group_policy::DetachGroupPolicyInput).
-    pub fn builder() -> crate::operation::detach_group_policy::builders::DetachGroupPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::detach_group_policy::builders::DetachGroupPolicyInputBuilder {
         crate::operation::detach_group_policy::builders::DetachGroupPolicyInputBuilder::default()
     }
 }
@@ -39,38 +40,42 @@ pub struct DetachGroupPolicyInputBuilder {
     pub(crate) policy_arn: std::option::Option<std::string::String>,
 }
 impl DetachGroupPolicyInputBuilder {
-    /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p> 
+    /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.group_name = Some(input.into());
         self
     }
-    /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p> 
+    /// <p>The name (friendly name, not ARN) of the IAM group to detach the policy from.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.policy_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_arn = input; self
+        self.policy_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetachGroupPolicyInput`](crate::operation::detach_group_policy::DetachGroupPolicyInput).
-    pub fn build(self) -> Result<crate::operation::detach_group_policy::DetachGroupPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::detach_group_policy::DetachGroupPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::detach_group_policy::DetachGroupPolicyInput {
-                group_name: self.group_name
-                ,
-                policy_arn: self.policy_arn
-                ,
-            }
+                group_name: self.group_name,
+                policy_arn: self.policy_arn,
+            },
         )
     }
 }
-

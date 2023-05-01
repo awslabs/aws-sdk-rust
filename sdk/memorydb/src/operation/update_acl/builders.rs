@@ -4,50 +4,66 @@ pub use crate::operation::update_acl::_update_acl_output::UpdateAclOutputBuilder
 pub use crate::operation::update_acl::_update_acl_input::UpdateAclInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateACL`.
-/// 
+///
 /// <p>Changes the list of users that belong to the Access Control List.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateACLFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_acl::builders::UpdateAclInputBuilder,
+    inner: crate::operation::update_acl::builders::UpdateAclInputBuilder,
 }
-impl UpdateACLFluentBuilder  {
+impl UpdateACLFluentBuilder {
     /// Creates a new `UpdateACL`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_acl::UpdateACL, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_acl::UpdateACLError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_acl::UpdateAclOutput, aws_smithy_http::result::SdkError<crate::operation::update_acl::UpdateACLError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_acl::UpdateACL,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_acl::UpdateACLError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_acl::UpdateAclOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_acl::UpdateACLError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the Access Control List</p>
     pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.acl_name(input.into());
@@ -68,7 +84,10 @@ impl UpdateACLFluentBuilder  {
         self
     }
     /// <p>The list of users to add to the Access Control List</p>
-    pub fn set_user_names_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_user_names_to_add(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_user_names_to_add(input);
         self
     }
@@ -82,9 +101,11 @@ impl UpdateACLFluentBuilder  {
         self
     }
     /// <p>The list of users to remove from the Access Control List</p>
-    pub fn set_user_names_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_user_names_to_remove(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_user_names_to_remove(input);
         self
     }
 }
-

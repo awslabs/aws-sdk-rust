@@ -3,7 +3,7 @@
 /// <p>The room membership details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoomMembership  {
+pub struct RoomMembership {
     /// <p>The room ID.</p>
     #[doc(hidden)]
     pub room_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct RoomMembership  {
 }
 impl RoomMembership {
     /// <p>The room ID.</p>
-    pub fn room_id(&self) -> std::option::Option<& str> {
+    pub fn room_id(&self) -> std::option::Option<&str> {
         self.room_id.as_deref()
     }
     /// <p>The member details, such as email address, name, member ID, and member type.</p>
-    pub fn member(&self) -> std::option::Option<& crate::types::Member> {
+    pub fn member(&self) -> std::option::Option<&crate::types::Member> {
         self.member.as_ref()
     }
     /// <p>The membership role.</p>
-    pub fn role(&self) -> std::option::Option<& crate::types::RoomMembershipRole> {
+    pub fn role(&self) -> std::option::Option<&crate::types::RoomMembershipRole> {
         self.role.as_ref()
     }
     /// <p>The identifier of the user that invited the room member.</p>
-    pub fn invited_by(&self) -> std::option::Option<& str> {
+    pub fn invited_by(&self) -> std::option::Option<&str> {
         self.invited_by.as_deref()
     }
     /// <p>The room membership update timestamp, in ISO 8601 format.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl RoomMembershipBuilder {
     }
     /// <p>The room ID.</p>
     pub fn set_room_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_id = input; self
+        self.room_id = input;
+        self
     }
     /// <p>The member details, such as email address, name, member ID, and member type.</p>
     pub fn member(mut self, input: crate::types::Member) -> Self {
@@ -76,7 +77,8 @@ impl RoomMembershipBuilder {
     }
     /// <p>The member details, such as email address, name, member ID, and member type.</p>
     pub fn set_member(mut self, input: std::option::Option<crate::types::Member>) -> Self {
-        self.member = input; self
+        self.member = input;
+        self
     }
     /// <p>The membership role.</p>
     pub fn role(mut self, input: crate::types::RoomMembershipRole) -> Self {
@@ -84,8 +86,12 @@ impl RoomMembershipBuilder {
         self
     }
     /// <p>The membership role.</p>
-    pub fn set_role(mut self, input: std::option::Option<crate::types::RoomMembershipRole>) -> Self {
-        self.role = input; self
+    pub fn set_role(
+        mut self,
+        input: std::option::Option<crate::types::RoomMembershipRole>,
+    ) -> Self {
+        self.role = input;
+        self
     }
     /// <p>The identifier of the user that invited the room member.</p>
     pub fn invited_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +100,8 @@ impl RoomMembershipBuilder {
     }
     /// <p>The identifier of the user that invited the room member.</p>
     pub fn set_invited_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.invited_by = input; self
+        self.invited_by = input;
+        self
     }
     /// <p>The room membership update timestamp, in ISO 8601 format.</p>
     pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +109,21 @@ impl RoomMembershipBuilder {
         self
     }
     /// <p>The room membership update timestamp, in ISO 8601 format.</p>
-    pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_timestamp = input; self
+    pub fn set_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_timestamp = input;
+        self
     }
     /// Consumes the builder and constructs a [`RoomMembership`](crate::types::RoomMembership).
     pub fn build(self) -> crate::types::RoomMembership {
         crate::types::RoomMembership {
-            room_id: self.room_id
-            ,
-            member: self.member
-            ,
-            role: self.role
-            ,
-            invited_by: self.invited_by
-            ,
-            updated_timestamp: self.updated_timestamp
-            ,
+            room_id: self.room_id,
+            member: self.member,
+            role: self.role,
+            invited_by: self.invited_by,
+            updated_timestamp: self.updated_timestamp,
         }
     }
 }
-

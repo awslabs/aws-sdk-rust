@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProvisionedProductPlanInput  {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+pub struct CreateProvisionedProductPlanInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -33,69 +33,72 @@ pub struct CreateProvisionedProductPlanInput  {
     pub provisioning_artifact_id: std::option::Option<std::string::String>,
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
     #[doc(hidden)]
-    pub provisioning_parameters: std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
+    pub provisioning_parameters:
+        std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     #[doc(hidden)]
     pub idempotency_token: std::option::Option<std::string::String>,
-    /// <p>One or more tags.</p> 
+    /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProvisionedProductPlanInput {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<& str> {
+    pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
     /// <p>The name of the plan.</p>
-    pub fn plan_name(&self) -> std::option::Option<& str> {
+    pub fn plan_name(&self) -> std::option::Option<&str> {
         self.plan_name.as_deref()
     }
     /// <p>The plan type.</p>
-    pub fn plan_type(&self) -> std::option::Option<& crate::types::ProvisionedProductPlanType> {
+    pub fn plan_type(&self) -> std::option::Option<&crate::types::ProvisionedProductPlanType> {
         self.plan_type.as_ref()
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn notification_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn notification_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.notification_arns.as_deref()
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
-    pub fn path_id(&self) -> std::option::Option<& str> {
+    pub fn path_id(&self) -> std::option::Option<&str> {
         self.path_id.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn product_id(&self) -> std::option::Option<& str> {
+    pub fn product_id(&self) -> std::option::Option<&str> {
         self.product_id.as_deref()
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    pub fn provisioned_product_name(&self) -> std::option::Option<& str> {
+    pub fn provisioned_product_name(&self) -> std::option::Option<&str> {
         self.provisioned_product_name.as_deref()
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<& str> {
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn provisioning_parameters(&self) -> std::option::Option<& [crate::types::UpdateProvisioningParameter]> {
+    pub fn provisioning_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::types::UpdateProvisioningParameter]> {
         self.provisioning_parameters.as_deref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<& str> {
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
-    /// <p>One or more tags.</p> 
+    /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateProvisionedProductPlanInput {
     /// Creates a new builder-style object to manufacture [`CreateProvisionedProductPlanInput`](crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanInput).
-    pub fn builder() -> crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanInputBuilder {
+    pub fn builder() -> crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanInputBuilder{
         crate::operation::create_provisioned_product_plan::builders::CreateProvisionedProductPlanInputBuilder::default()
     }
 }
@@ -112,27 +115,29 @@ pub struct CreateProvisionedProductPlanInputBuilder {
     pub(crate) product_id: std::option::Option<std::string::String>,
     pub(crate) provisioned_product_name: std::option::Option<std::string::String>,
     pub(crate) provisioning_artifact_id: std::option::Option<std::string::String>,
-    pub(crate) provisioning_parameters: std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
+    pub(crate) provisioning_parameters:
+        std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
     pub(crate) idempotency_token: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateProvisionedProductPlanInputBuilder {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input; self
+        self.accept_language = input;
+        self
     }
     /// <p>The name of the plan.</p>
     pub fn plan_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +146,8 @@ impl CreateProvisionedProductPlanInputBuilder {
     }
     /// <p>The name of the plan.</p>
     pub fn set_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.plan_name = input; self
+        self.plan_name = input;
+        self
     }
     /// <p>The plan type.</p>
     pub fn plan_type(mut self, input: crate::types::ProvisionedProductPlanType) -> Self {
@@ -149,8 +155,12 @@ impl CreateProvisionedProductPlanInputBuilder {
         self
     }
     /// <p>The plan type.</p>
-    pub fn set_plan_type(mut self, input: std::option::Option<crate::types::ProvisionedProductPlanType>) -> Self {
-        self.plan_type = input; self
+    pub fn set_plan_type(
+        mut self,
+        input: std::option::Option<crate::types::ProvisionedProductPlanType>,
+    ) -> Self {
+        self.plan_type = input;
+        self
     }
     /// Appends an item to `notification_arns`.
     ///
@@ -159,13 +169,17 @@ impl CreateProvisionedProductPlanInputBuilder {
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
     pub fn notification_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.notification_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.notification_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.notification_arns = Some(v);
+        self
     }
     /// <p>Passed to CloudFormation. The SNS topic ARNs to which to publish stack-related events.</p>
-    pub fn set_notification_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.notification_arns = input; self
+    pub fn set_notification_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.notification_arns = input;
+        self
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     pub fn path_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,7 +188,8 @@ impl CreateProvisionedProductPlanInputBuilder {
     }
     /// <p>The path identifier of the product. This value is optional if the product has a default path, and required if the product has more than one path. To list the paths for a product, use <code>ListLaunchPaths</code>.</p>
     pub fn set_path_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path_id = input; self
+        self.path_id = input;
+        self
     }
     /// <p>The product identifier.</p>
     pub fn product_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,7 +198,8 @@ impl CreateProvisionedProductPlanInputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_id = input; self
+        self.product_id = input;
+        self
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
     pub fn provisioned_product_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,8 +207,12 @@ impl CreateProvisionedProductPlanInputBuilder {
         self
     }
     /// <p>A user-friendly name for the provisioned product. This value must be unique for the Amazon Web Services account and cannot be updated after the product is provisioned.</p>
-    pub fn set_provisioned_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provisioned_product_name = input; self
+    pub fn set_provisioned_product_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.provisioned_product_name = input;
+        self
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,23 +220,34 @@ impl CreateProvisionedProductPlanInputBuilder {
         self
     }
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn set_provisioning_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provisioning_artifact_id = input; self
+    pub fn set_provisioning_artifact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.provisioning_artifact_id = input;
+        self
     }
     /// Appends an item to `provisioning_parameters`.
     ///
     /// To override the contents of this collection use [`set_provisioning_parameters`](Self::set_provisioning_parameters).
     ///
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn provisioning_parameters(mut self, input: crate::types::UpdateProvisioningParameter) -> Self {
+    pub fn provisioning_parameters(
+        mut self,
+        input: crate::types::UpdateProvisioningParameter,
+    ) -> Self {
         let mut v = self.provisioning_parameters.unwrap_or_default();
-                        v.push(input);
-                        self.provisioning_parameters = Some(v);
-                        self
+        v.push(input);
+        self.provisioning_parameters = Some(v);
+        self
     }
     /// <p>Parameters specified by the administrator that are required for provisioning the product.</p>
-    pub fn set_provisioning_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>) -> Self {
-        self.provisioning_parameters = input; self
+    pub fn set_provisioning_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpdateProvisioningParameter>>,
+    ) -> Self {
+        self.provisioning_parameters = input;
+        self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -224,54 +255,55 @@ impl CreateProvisionedProductPlanInputBuilder {
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.idempotency_token = input; self
+    pub fn set_idempotency_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.idempotency_token = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>One or more tags.</p> 
+    /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>One or more tags.</p> 
+    /// <p>One or more tags.</p>
     /// <p>If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code> constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow tag updates.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateProvisionedProductPlanInput`](crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanInput).
-    pub fn build(self) -> Result<crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_provisioned_product_plan::CreateProvisionedProductPlanInput {
-                accept_language: self.accept_language
-                ,
-                plan_name: self.plan_name
-                ,
-                plan_type: self.plan_type
-                ,
-                notification_arns: self.notification_arns
-                ,
-                path_id: self.path_id
-                ,
-                product_id: self.product_id
-                ,
-                provisioned_product_name: self.provisioned_product_name
-                ,
-                provisioning_artifact_id: self.provisioning_artifact_id
-                ,
-                provisioning_parameters: self.provisioning_parameters
-                ,
-                idempotency_token: self.idempotency_token
-                ,
-                tags: self.tags
-                ,
-            }
+                accept_language: self.accept_language,
+                plan_name: self.plan_name,
+                plan_type: self.plan_type,
+                notification_arns: self.notification_arns,
+                path_id: self.path_id,
+                product_id: self.product_id,
+                provisioned_product_name: self.provisioned_product_name,
+                provisioning_artifact_id: self.provisioning_artifact_id,
+                provisioning_parameters: self.provisioning_parameters,
+                idempotency_token: self.idempotency_token,
+                tags: self.tags,
+            },
         )
     }
 }
-

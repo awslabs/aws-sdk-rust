@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrustStoreInput  {
+pub struct DeleteTrustStoreInput {
     /// <p>The ARN of the trust store.</p>
     #[doc(hidden)]
     pub trust_store_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTrustStoreInput {
     /// <p>The ARN of the trust store.</p>
-    pub fn trust_store_arn(&self) -> std::option::Option<& str> {
+    pub fn trust_store_arn(&self) -> std::option::Option<&str> {
         self.trust_store_arn.as_deref()
     }
 }
 impl DeleteTrustStoreInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrustStoreInput`](crate::operation::delete_trust_store::DeleteTrustStoreInput).
-    pub fn builder() -> crate::operation::delete_trust_store::builders::DeleteTrustStoreInputBuilder {
+    pub fn builder() -> crate::operation::delete_trust_store::builders::DeleteTrustStoreInputBuilder
+    {
         crate::operation::delete_trust_store::builders::DeleteTrustStoreInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteTrustStoreInputBuilder {
     }
     /// <p>The ARN of the trust store.</p>
     pub fn set_trust_store_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_store_arn = input; self
+        self.trust_store_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTrustStoreInput`](crate::operation::delete_trust_store::DeleteTrustStoreInput).
-    pub fn build(self) -> Result<crate::operation::delete_trust_store::DeleteTrustStoreInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_trust_store::DeleteTrustStoreInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_trust_store::DeleteTrustStoreInput {
-                trust_store_arn: self.trust_store_arn
-                ,
-            }
+                trust_store_arn: self.trust_store_arn,
+            },
         )
     }
 }
-

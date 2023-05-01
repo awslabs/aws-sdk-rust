@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsForResourceInput  {
+pub struct ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,23 +16,25 @@ pub struct ListTagsForResourceInput  {
 }
 impl ListTagsForResourceInput {
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn builder() -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
-        crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder {
+        crate::operation::list_tags_for_resource::builders::ListTagsForResourceInputBuilder::default(
+        )
     }
 }
 
@@ -52,18 +54,20 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>The ARN of the resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,20 +76,22 @@ impl ListTagsForResourceInputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTagsForResourceInput`](crate::operation::list_tags_for_resource::ListTagsForResourceInput).
-    pub fn build(self) -> Result<crate::operation::list_tags_for_resource::ListTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_tags_for_resource::ListTagsForResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_tags_for_resource::ListTagsForResourceInput {
-                resource_arn: self.resource_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                resource_arn: self.resource_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

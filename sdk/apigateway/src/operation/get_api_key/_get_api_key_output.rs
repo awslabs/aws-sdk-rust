@@ -3,7 +3,7 @@
 /// <p>A resource that can be distributed to callers for executing Method resources that require an API key. API keys can be mapped to any Stage on any RestApi, which indicates that the callers with the API key can make requests to that stage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApiKeyOutput  {
+pub struct GetApiKeyOutput {
     /// <p>The identifier of the API Key.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -33,28 +33,29 @@ pub struct GetApiKeyOutput  {
     pub stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetApiKeyOutput {
     /// <p>The identifier of the API Key.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The value of the API Key.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The name of the API Key.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
-    pub fn customer_id(&self) -> std::option::Option<& str> {
+    pub fn customer_id(&self) -> std::option::Option<&str> {
         self.customer_id.as_deref()
     }
     /// <p>The description of the API Key.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Specifies whether the API Key can be used by callers.</p>
@@ -62,27 +63,30 @@ impl GetApiKeyOutput {
         self.enabled
     }
     /// <p>The timestamp when the API Key was created.</p>
-    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The timestamp when the API Key was last updated.</p>
-    pub fn last_updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date.as_ref()
     }
     /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
-    pub fn stage_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn stage_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.stage_keys.as_deref()
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetApiKeyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetApiKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetApiKeyOutput`](crate::operation::get_api_key::GetApiKeyOutput).
     pub fn builder() -> crate::operation::get_api_key::builders::GetApiKeyOutputBuilder {
@@ -103,7 +107,8 @@ pub struct GetApiKeyOutputBuilder {
     pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) stage_keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetApiKeyOutputBuilder {
@@ -114,7 +119,8 @@ impl GetApiKeyOutputBuilder {
     }
     /// <p>The identifier of the API Key.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The value of the API Key.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +129,8 @@ impl GetApiKeyOutputBuilder {
     }
     /// <p>The value of the API Key.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The name of the API Key.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +139,8 @@ impl GetApiKeyOutputBuilder {
     }
     /// <p>The name of the API Key.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
     pub fn customer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +149,8 @@ impl GetApiKeyOutputBuilder {
     }
     /// <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS Marketplace.</p>
     pub fn set_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.customer_id = input; self
+        self.customer_id = input;
+        self
     }
     /// <p>The description of the API Key.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +159,8 @@ impl GetApiKeyOutputBuilder {
     }
     /// <p>The description of the API Key.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Specifies whether the API Key can be used by callers.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -159,7 +169,8 @@ impl GetApiKeyOutputBuilder {
     }
     /// <p>Specifies whether the API Key can be used by callers.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>The timestamp when the API Key was created.</p>
     pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -167,8 +178,12 @@ impl GetApiKeyOutputBuilder {
         self
     }
     /// <p>The timestamp when the API Key was created.</p>
-    pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input; self
+    pub fn set_created_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_date = input;
+        self
     }
     /// <p>The timestamp when the API Key was last updated.</p>
     pub fn last_updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -176,8 +191,12 @@ impl GetApiKeyOutputBuilder {
         self
     }
     /// <p>The timestamp when the API Key was last updated.</p>
-    pub fn set_last_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date = input; self
+    pub fn set_last_updated_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_date = input;
+        self
     }
     /// Appends an item to `stage_keys`.
     ///
@@ -186,64 +205,66 @@ impl GetApiKeyOutputBuilder {
     /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
     pub fn stage_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.stage_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.stage_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.stage_keys = Some(v);
+        self
     }
     /// <p>A list of Stage resources that are associated with the ApiKey resource.</p>
-    pub fn set_stage_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.stage_keys = input; self
+    pub fn set_stage_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.stage_keys = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetApiKeyOutput`](crate::operation::get_api_key::GetApiKeyOutput).
     pub fn build(self) -> crate::operation::get_api_key::GetApiKeyOutput {
         crate::operation::get_api_key::GetApiKeyOutput {
-            id: self.id
-            ,
-            value: self.value
-            ,
-            name: self.name
-            ,
-            customer_id: self.customer_id
-            ,
-            description: self.description
-            ,
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
-            created_date: self.created_date
-            ,
-            last_updated_date: self.last_updated_date
-            ,
-            stage_keys: self.stage_keys
-            ,
-            tags: self.tags
-            ,
+            id: self.id,
+            value: self.value,
+            name: self.name,
+            customer_id: self.customer_id,
+            description: self.description,
+            enabled: self.enabled.unwrap_or_default(),
+            created_date: self.created_date,
+            last_updated_date: self.last_updated_date,
+            stage_keys: self.stage_keys,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

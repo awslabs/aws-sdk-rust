@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEntityTypesOutput  {
+pub struct GetEntityTypesOutput {
     /// <p>An array of entity types.</p>
     #[doc(hidden)]
     pub entity_types: std::option::Option<std::vec::Vec<crate::types::EntityType>>,
@@ -13,19 +13,19 @@ pub struct GetEntityTypesOutput  {
 }
 impl GetEntityTypesOutput {
     /// <p>An array of entity types.</p>
-    pub fn entity_types(&self) -> std::option::Option<& [crate::types::EntityType]> {
+    pub fn entity_types(&self) -> std::option::Option<&[crate::types::EntityType]> {
         self.entity_types.as_deref()
     }
     /// <p>The next page token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetEntityTypesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetEntityTypesOutput {
     /// Creates a new builder-style object to manufacture [`GetEntityTypesOutput`](crate::operation::get_entity_types::GetEntityTypesOutput).
     pub fn builder() -> crate::operation::get_entity_types::builders::GetEntityTypesOutputBuilder {
@@ -49,13 +49,17 @@ impl GetEntityTypesOutputBuilder {
     /// <p>An array of entity types.</p>
     pub fn entity_types(mut self, input: crate::types::EntityType) -> Self {
         let mut v = self.entity_types.unwrap_or_default();
-                        v.push(input);
-                        self.entity_types = Some(v);
-                        self
+        v.push(input);
+        self.entity_types = Some(v);
+        self
     }
     /// <p>An array of entity types.</p>
-    pub fn set_entity_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::EntityType>>) -> Self {
-        self.entity_types = input; self
+    pub fn set_entity_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EntityType>>,
+    ) -> Self {
+        self.entity_types = input;
+        self
     }
     /// <p>The next page token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl GetEntityTypesOutputBuilder {
     }
     /// <p>The next page token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetEntityTypesOutput`](crate::operation::get_entity_types::GetEntityTypesOutput).
     pub fn build(self) -> crate::operation::get_entity_types::GetEntityTypesOutput {
         crate::operation::get_entity_types::GetEntityTypesOutput {
-            entity_types: self.entity_types
-            ,
-            next_token: self.next_token
-            ,
+            entity_types: self.entity_types,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

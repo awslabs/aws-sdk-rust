@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImageTagsOutput  {
+pub struct DescribeImageTagsOutput {
     /// <p>The image tag details for the images in the requested repository.</p>
     #[doc(hidden)]
     pub image_tag_details: std::option::Option<std::vec::Vec<crate::types::ImageTagDetail>>,
@@ -13,22 +13,23 @@ pub struct DescribeImageTagsOutput  {
 }
 impl DescribeImageTagsOutput {
     /// <p>The image tag details for the images in the requested repository.</p>
-    pub fn image_tag_details(&self) -> std::option::Option<& [crate::types::ImageTagDetail]> {
+    pub fn image_tag_details(&self) -> std::option::Option<&[crate::types::ImageTagDetail]> {
         self.image_tag_details.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeImageTagsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeImageTagsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageTagsOutput`](crate::operation::describe_image_tags::DescribeImageTagsOutput).
-    pub fn builder() -> crate::operation::describe_image_tags::builders::DescribeImageTagsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_image_tags::builders::DescribeImageTagsOutputBuilder {
         crate::operation::describe_image_tags::builders::DescribeImageTagsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl DescribeImageTagsOutputBuilder {
     /// <p>The image tag details for the images in the requested repository.</p>
     pub fn image_tag_details(mut self, input: crate::types::ImageTagDetail) -> Self {
         let mut v = self.image_tag_details.unwrap_or_default();
-                        v.push(input);
-                        self.image_tag_details = Some(v);
-                        self
+        v.push(input);
+        self.image_tag_details = Some(v);
+        self
     }
     /// <p>The image tag details for the images in the requested repository.</p>
-    pub fn set_image_tag_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImageTagDetail>>) -> Self {
-        self.image_tag_details = input; self
+    pub fn set_image_tag_details(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ImageTagDetail>>,
+    ) -> Self {
+        self.image_tag_details = input;
+        self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl DescribeImageTagsOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>DescribeImageTags</code> request. When the results of a <code>DescribeImageTags</code> request exceed <code>maxResults</code>, you can use this value to retrieve the next page of results. If there are no more results to return, this value is <code>null</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeImageTagsOutput`](crate::operation::describe_image_tags::DescribeImageTagsOutput).
     pub fn build(self) -> crate::operation::describe_image_tags::DescribeImageTagsOutput {
         crate::operation::describe_image_tags::DescribeImageTagsOutput {
-            image_tag_details: self.image_tag_details
-            ,
-            next_token: self.next_token
-            ,
+            image_tag_details: self.image_tag_details,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

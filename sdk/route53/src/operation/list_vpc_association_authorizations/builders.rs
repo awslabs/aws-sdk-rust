@@ -4,51 +4,58 @@ pub use crate::operation::list_vpc_association_authorizations::_list_vpc_associa
 pub use crate::operation::list_vpc_association_authorizations::_list_vpc_association_authorizations_input::ListVpcAssociationAuthorizationsInputBuilder;
 
 /// Fluent builder constructing a request to `ListVPCAssociationAuthorizations`.
-/// 
-/// <p>Gets a list of the VPCs that were created by other accounts and that can be associated with a specified hosted zone because you've submitted one or more <code>CreateVPCAssociationAuthorization</code> requests. </p> 
+///
+/// <p>Gets a list of the VPCs that were created by other accounts and that can be associated with a specified hosted zone because you've submitted one or more <code>CreateVPCAssociationAuthorization</code> requests. </p>
 /// <p>The response includes a <code>VPCs</code> element with a <code>VPC</code> child element for each VPC that can be associated with the hosted zone.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListVPCAssociationAuthorizationsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_vpc_association_authorizations::builders::ListVpcAssociationAuthorizationsInputBuilder,
 }
-impl ListVPCAssociationAuthorizationsFluentBuilder  {
+impl ListVPCAssociationAuthorizationsFluentBuilder {
     /// Creates a new `ListVPCAssociationAuthorizations`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizations, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput, aws_smithy_http::result::SdkError<crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the hosted zone for which you want a list of VPCs that can be associated with the hosted zone.</p>
     pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
@@ -80,4 +87,3 @@ impl ListVPCAssociationAuthorizationsFluentBuilder  {
         self
     }
 }
-

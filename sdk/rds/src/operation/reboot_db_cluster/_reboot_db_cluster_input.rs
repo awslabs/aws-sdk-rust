@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootDbClusterInput  {
-    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li> 
+pub struct RebootDbClusterInput {
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl RebootDbClusterInput {
-    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li> 
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
 }
@@ -35,31 +35,36 @@ pub struct RebootDbClusterInputBuilder {
     pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
 }
 impl RebootDbClusterInputBuilder {
-    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li> 
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li> 
+    /// <p>The DB cluster identifier. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_identifier = input; self
+    pub fn set_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`RebootDbClusterInput`](crate::operation::reboot_db_cluster::RebootDbClusterInput).
-    pub fn build(self) -> Result<crate::operation::reboot_db_cluster::RebootDbClusterInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::reboot_db_cluster::RebootDbClusterInput {
-                db_cluster_identifier: self.db_cluster_identifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reboot_db_cluster::RebootDbClusterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::reboot_db_cluster::RebootDbClusterInput {
+            db_cluster_identifier: self.db_cluster_identifier,
+        })
     }
 }
-

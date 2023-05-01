@@ -4,52 +4,72 @@ pub use crate::operation::create_fpga_image::_create_fpga_image_output::CreateFp
 pub use crate::operation::create_fpga_image::_create_fpga_image_input::CreateFpgaImageInputBuilder;
 
 /// Fluent builder constructing a request to `CreateFpgaImage`.
-/// 
-/// <p>Creates an Amazon FPGA Image (AFI) from the specified design checkpoint (DCP).</p> 
-/// <p>The create operation is asynchronous. To verify that the AFI is ready for use, check the output logs.</p> 
+///
+/// <p>Creates an Amazon FPGA Image (AFI) from the specified design checkpoint (DCP).</p>
+/// <p>The create operation is asynchronous. To verify that the AFI is ready for use, check the output logs.</p>
 /// <p>An AFI contains the FPGA bitstream that is ready to download to an FPGA. You can securely deploy an AFI on multiple FPGA-accelerated instances. For more information, see the <a href="https://github.com/aws/aws-fpga/">Amazon Web Services FPGA Hardware Development Kit</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFpgaImageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_fpga_image::builders::CreateFpgaImageInputBuilder,
+    inner: crate::operation::create_fpga_image::builders::CreateFpgaImageInputBuilder,
 }
-impl CreateFpgaImageFluentBuilder  {
+impl CreateFpgaImageFluentBuilder {
     /// Creates a new `CreateFpgaImage`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_fpga_image::CreateFpgaImage, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_fpga_image::CreateFpgaImageError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_fpga_image::CreateFpgaImageOutput, aws_smithy_http::result::SdkError<crate::operation::create_fpga_image::CreateFpgaImageError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_fpga_image::CreateFpgaImage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_fpga_image::CreateFpgaImageError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_fpga_image::CreateFpgaImageOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_fpga_image::CreateFpgaImageError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -66,7 +86,10 @@ impl CreateFpgaImageFluentBuilder  {
         self
     }
     /// <p>The location of the encrypted design checkpoint in Amazon S3. The input must be a tarball.</p>
-    pub fn set_input_storage_location(mut self, input: std::option::Option<crate::types::StorageLocation>) -> Self {
+    pub fn set_input_storage_location(
+        mut self,
+        input: std::option::Option<crate::types::StorageLocation>,
+    ) -> Self {
         self.inner = self.inner.set_input_storage_location(input);
         self
     }
@@ -76,7 +99,10 @@ impl CreateFpgaImageFluentBuilder  {
         self
     }
     /// <p>The location in Amazon S3 for the output logs.</p>
-    pub fn set_logs_storage_location(mut self, input: std::option::Option<crate::types::StorageLocation>) -> Self {
+    pub fn set_logs_storage_location(
+        mut self,
+        input: std::option::Option<crate::types::StorageLocation>,
+    ) -> Self {
         self.inner = self.inner.set_logs_storage_location(input);
         self
     }
@@ -120,9 +146,11 @@ impl CreateFpgaImageFluentBuilder  {
         self
     }
     /// <p>The tags to apply to the FPGA image during creation.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
 }
-

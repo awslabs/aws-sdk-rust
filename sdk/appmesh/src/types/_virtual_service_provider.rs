@@ -21,8 +21,14 @@ pub enum VirtualServiceProvider {
 impl VirtualServiceProvider {
     /// Tries to convert the enum instance into [`VirtualNode`](crate::types::VirtualServiceProvider::VirtualNode), extracting the inner [`VirtualNodeServiceProvider`](crate::types::VirtualNodeServiceProvider).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_virtual_node(&self) -> std::result::Result<&crate::types::VirtualNodeServiceProvider, &Self> {
-        if let VirtualServiceProvider::VirtualNode(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_virtual_node(
+        &self,
+    ) -> std::result::Result<&crate::types::VirtualNodeServiceProvider, &Self> {
+        if let VirtualServiceProvider::VirtualNode(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`VirtualNode`](crate::types::VirtualServiceProvider::VirtualNode).
     pub fn is_virtual_node(&self) -> bool {
@@ -30,8 +36,14 @@ impl VirtualServiceProvider {
     }
     /// Tries to convert the enum instance into [`VirtualRouter`](crate::types::VirtualServiceProvider::VirtualRouter), extracting the inner [`VirtualRouterServiceProvider`](crate::types::VirtualRouterServiceProvider).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_virtual_router(&self) -> std::result::Result<&crate::types::VirtualRouterServiceProvider, &Self> {
-        if let VirtualServiceProvider::VirtualRouter(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_virtual_router(
+        &self,
+    ) -> std::result::Result<&crate::types::VirtualRouterServiceProvider, &Self> {
+        if let VirtualServiceProvider::VirtualRouter(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`VirtualRouter`](crate::types::VirtualServiceProvider::VirtualRouter).
     pub fn is_virtual_router(&self) -> bool {
@@ -42,4 +54,3 @@ impl VirtualServiceProvider {
         matches!(self, Self::Unknown)
     }
 }
-

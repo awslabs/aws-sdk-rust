@@ -4,51 +4,71 @@ pub use crate::operation::create_network_insights_path::_create_network_insights
 pub use crate::operation::create_network_insights_path::_create_network_insights_path_input::CreateNetworkInsightsPathInputBuilder;
 
 /// Fluent builder constructing a request to `CreateNetworkInsightsPath`.
-/// 
-/// <p>Creates a path to analyze for reachability.</p> 
+///
+/// <p>Creates a path to analyze for reachability.</p>
 /// <p>Reachability Analyzer enables you to analyze and debug network reachability between two resources in your virtual private cloud (VPC). For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/reachability/">Reachability Analyzer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNetworkInsightsPathFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_network_insights_path::builders::CreateNetworkInsightsPathInputBuilder,
 }
-impl CreateNetworkInsightsPathFluentBuilder  {
+impl CreateNetworkInsightsPathFluentBuilder {
     /// Creates a new `CreateNetworkInsightsPath`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_network_insights_path::CreateNetworkInsightsPath, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_network_insights_path::CreateNetworkInsightsPathError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput, aws_smithy_http::result::SdkError<crate::operation::create_network_insights_path::CreateNetworkInsightsPathError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_network_insights_path::CreateNetworkInsightsPath,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_network_insights_path::CreateNetworkInsightsPathError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_network_insights_path::CreateNetworkInsightsPathError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The IP address of the source.</p>
     pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source_ip(input.into());
@@ -119,7 +139,10 @@ impl CreateNetworkInsightsPathFluentBuilder  {
         self
     }
     /// <p>The tags to add to the path.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
@@ -149,7 +172,10 @@ impl CreateNetworkInsightsPathFluentBuilder  {
         self
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the source. If you specify this parameter, you can't specify the parameters for the source IP address or the destination port.</p>
-    pub fn set_filter_at_source(mut self, input: std::option::Option<crate::types::PathRequestFilter>) -> Self {
+    pub fn set_filter_at_source(
+        mut self,
+        input: std::option::Option<crate::types::PathRequestFilter>,
+    ) -> Self {
         self.inner = self.inner.set_filter_at_source(input);
         self
     }
@@ -159,9 +185,11 @@ impl CreateNetworkInsightsPathFluentBuilder  {
         self
     }
     /// <p>Scopes the analysis to network paths that match specific filters at the destination. If you specify this parameter, you can't specify the parameter for the destination IP address.</p>
-    pub fn set_filter_at_destination(mut self, input: std::option::Option<crate::types::PathRequestFilter>) -> Self {
+    pub fn set_filter_at_destination(
+        mut self,
+        input: std::option::Option<crate::types::PathRequestFilter>,
+    ) -> Self {
         self.inner = self.inner.set_filter_at_destination(input);
         self
     }
 }
-

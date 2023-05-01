@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddBridgeOutputsOutput  {
+pub struct AddBridgeOutputsOutput {
     /// The Amazon Resource Number (ARN) of the bridge.
     #[doc(hidden)]
     pub bridge_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct AddBridgeOutputsOutput  {
 }
 impl AddBridgeOutputsOutput {
     /// The Amazon Resource Number (ARN) of the bridge.
-    pub fn bridge_arn(&self) -> std::option::Option<& str> {
+    pub fn bridge_arn(&self) -> std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
     /// The outputs that you added to this bridge.
-    pub fn outputs(&self) -> std::option::Option<& [crate::types::BridgeOutput]> {
+    pub fn outputs(&self) -> std::option::Option<&[crate::types::BridgeOutput]> {
         self.outputs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AddBridgeOutputsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AddBridgeOutputsOutput {
     /// Creates a new builder-style object to manufacture [`AddBridgeOutputsOutput`](crate::operation::add_bridge_outputs::AddBridgeOutputsOutput).
-    pub fn builder() -> crate::operation::add_bridge_outputs::builders::AddBridgeOutputsOutputBuilder {
+    pub fn builder() -> crate::operation::add_bridge_outputs::builders::AddBridgeOutputsOutputBuilder
+    {
         crate::operation::add_bridge_outputs::builders::AddBridgeOutputsOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl AddBridgeOutputsOutputBuilder {
     }
     /// The Amazon Resource Number (ARN) of the bridge.
     pub fn set_bridge_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bridge_arn = input; self
+        self.bridge_arn = input;
+        self
     }
     /// Appends an item to `outputs`.
     ///
@@ -58,32 +60,33 @@ impl AddBridgeOutputsOutputBuilder {
     /// The outputs that you added to this bridge.
     pub fn outputs(mut self, input: crate::types::BridgeOutput) -> Self {
         let mut v = self.outputs.unwrap_or_default();
-                        v.push(input);
-                        self.outputs = Some(v);
-                        self
+        v.push(input);
+        self.outputs = Some(v);
+        self
     }
     /// The outputs that you added to this bridge.
-    pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::BridgeOutput>>) -> Self {
-        self.outputs = input; self
+    pub fn set_outputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BridgeOutput>>,
+    ) -> Self {
+        self.outputs = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AddBridgeOutputsOutput`](crate::operation::add_bridge_outputs::AddBridgeOutputsOutput).
     pub fn build(self) -> crate::operation::add_bridge_outputs::AddBridgeOutputsOutput {
         crate::operation::add_bridge_outputs::AddBridgeOutputsOutput {
-            bridge_arn: self.bridge_arn
-            ,
-            outputs: self.outputs
-            ,
+            bridge_arn: self.bridge_arn,
+            outputs: self.outputs,
             _request_id: self._request_id,
         }
     }
 }
-

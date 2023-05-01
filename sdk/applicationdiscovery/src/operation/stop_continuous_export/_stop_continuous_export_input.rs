@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopContinuousExportInput  {
+pub struct StopContinuousExportInput {
     /// <p>The unique ID assigned to this export.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
 }
 impl StopContinuousExportInput {
     /// <p>The unique ID assigned to this export.</p>
-    pub fn export_id(&self) -> std::option::Option<& str> {
+    pub fn export_id(&self) -> std::option::Option<&str> {
         self.export_id.as_deref()
     }
 }
 impl StopContinuousExportInput {
     /// Creates a new builder-style object to manufacture [`StopContinuousExportInput`](crate::operation::stop_continuous_export::StopContinuousExportInput).
-    pub fn builder() -> crate::operation::stop_continuous_export::builders::StopContinuousExportInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_continuous_export::builders::StopContinuousExportInputBuilder {
         crate::operation::stop_continuous_export::builders::StopContinuousExportInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl StopContinuousExportInputBuilder {
     }
     /// <p>The unique ID assigned to this export.</p>
     pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_id = input; self
+        self.export_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopContinuousExportInput`](crate::operation::stop_continuous_export::StopContinuousExportInput).
-    pub fn build(self) -> Result<crate::operation::stop_continuous_export::StopContinuousExportInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_continuous_export::StopContinuousExportInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_continuous_export::StopContinuousExportInput {
-                export_id: self.export_id
-                ,
-            }
+                export_id: self.export_id,
+            },
         )
     }
 }
-

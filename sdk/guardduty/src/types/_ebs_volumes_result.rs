@@ -3,7 +3,7 @@
 /// <p>Describes the configuration of scanning EBS volumes as a data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsVolumesResult  {
+pub struct EbsVolumesResult {
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::DataSourceStatus>,
@@ -13,11 +13,11 @@ pub struct EbsVolumesResult  {
 }
 impl EbsVolumesResult {
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::DataSourceStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
     /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl EbsVolumesResultBuilder {
         self
     }
     /// <p>Describes whether scanning EBS volumes is enabled as a data source.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::DataSourceStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::DataSourceStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl EbsVolumesResultBuilder {
     }
     /// <p>Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`EbsVolumesResult`](crate::types::EbsVolumesResult).
     pub fn build(self) -> crate::types::EbsVolumesResult {
         crate::types::EbsVolumesResult {
-            status: self.status
-            ,
-            reason: self.reason
-            ,
+            status: self.status,
+            reason: self.reason,
         }
     }
 }
-

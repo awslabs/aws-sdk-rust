@@ -3,7 +3,7 @@
 /// <p>Describes a private IPv4 address for a Scheduled Instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledInstancesPrivateIpAddressConfig  {
+pub struct ScheduledInstancesPrivateIpAddressConfig {
     /// <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.</p>
     #[doc(hidden)]
     pub primary: std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl ScheduledInstancesPrivateIpAddressConfig {
         self.primary
     }
     /// <p>The IPv4 address.</p>
-    pub fn private_ip_address(&self) -> std::option::Option<& str> {
+    pub fn private_ip_address(&self) -> std::option::Option<&str> {
         self.private_ip_address.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ScheduledInstancesPrivateIpAddressConfigBuilder {
     }
     /// <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a secondary IPv4 address.</p>
     pub fn set_primary(mut self, input: std::option::Option<bool>) -> Self {
-        self.primary = input; self
+        self.primary = input;
+        self
     }
     /// <p>The IPv4 address.</p>
     pub fn private_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +52,18 @@ impl ScheduledInstancesPrivateIpAddressConfigBuilder {
         self
     }
     /// <p>The IPv4 address.</p>
-    pub fn set_private_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_ip_address = input; self
+    pub fn set_private_ip_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.private_ip_address = input;
+        self
     }
     /// Consumes the builder and constructs a [`ScheduledInstancesPrivateIpAddressConfig`](crate::types::ScheduledInstancesPrivateIpAddressConfig).
     pub fn build(self) -> crate::types::ScheduledInstancesPrivateIpAddressConfig {
         crate::types::ScheduledInstancesPrivateIpAddressConfig {
-            primary: self.primary
-            ,
-            private_ip_address: self.private_ip_address
-            ,
+            primary: self.primary,
+            private_ip_address: self.private_ip_address,
         }
     }
 }
-

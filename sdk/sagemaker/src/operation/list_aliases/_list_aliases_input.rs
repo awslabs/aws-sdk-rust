@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAliasesInput  {
+pub struct ListAliasesInput {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
     pub image_name: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ListAliasesInput  {
 }
 impl ListAliasesInput {
     /// <p>The name of the image.</p>
-    pub fn image_name(&self) -> std::option::Option<& str> {
+    pub fn image_name(&self) -> std::option::Option<&str> {
         self.image_name.as_deref()
     }
     /// <p>The alias of the image version.</p>
-    pub fn alias(&self) -> std::option::Option<& str> {
+    pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
     /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
@@ -37,7 +37,7 @@ impl ListAliasesInput {
         self.max_results
     }
     /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -66,7 +66,8 @@ impl ListAliasesInputBuilder {
     }
     /// <p>The name of the image.</p>
     pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_name = input; self
+        self.image_name = input;
+        self
     }
     /// <p>The alias of the image version.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl ListAliasesInputBuilder {
     }
     /// <p>The alias of the image version.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input; self
+        self.alias = input;
+        self
     }
     /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -84,7 +86,8 @@ impl ListAliasesInputBuilder {
     }
     /// <p>The version of the image. If image version is not specified, the aliases of all versions of the image are listed.</p>
     pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The maximum number of aliases to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -93,7 +96,8 @@ impl ListAliasesInputBuilder {
     }
     /// <p>The maximum number of aliases to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,24 +106,22 @@ impl ListAliasesInputBuilder {
     }
     /// <p>If the previous call to <code>ListAliases</code> didn't return the full set of aliases, the call returns a token for retrieving the next set of aliases.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAliasesInput`](crate::operation::list_aliases::ListAliasesInput).
-    pub fn build(self) -> Result<crate::operation::list_aliases::ListAliasesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_aliases::ListAliasesInput {
-                image_name: self.image_name
-                ,
-                alias: self.alias
-                ,
-                version: self.version
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_aliases::ListAliasesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_aliases::ListAliasesInput {
+            image_name: self.image_name,
+            alias: self.alias,
+            version: self.version,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

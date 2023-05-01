@@ -3,7 +3,7 @@
 /// <p>The summary of the media pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaPipelineSummary  {
+pub struct MediaPipelineSummary {
     /// <p>The ID of the media pipeline in the summary.</p>
     #[doc(hidden)]
     pub media_pipeline_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MediaPipelineSummary  {
 }
 impl MediaPipelineSummary {
     /// <p>The ID of the media pipeline in the summary.</p>
-    pub fn media_pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn media_pipeline_id(&self) -> std::option::Option<&str> {
         self.media_pipeline_id.as_deref()
     }
     /// <p>The ARN of the media pipeline in the summary.</p>
-    pub fn media_pipeline_arn(&self) -> std::option::Option<& str> {
+    pub fn media_pipeline_arn(&self) -> std::option::Option<&str> {
         self.media_pipeline_arn.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl MediaPipelineSummaryBuilder {
         self
     }
     /// <p>The ID of the media pipeline in the summary.</p>
-    pub fn set_media_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.media_pipeline_id = input; self
+    pub fn set_media_pipeline_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.media_pipeline_id = input;
+        self
     }
     /// <p>The ARN of the media pipeline in the summary.</p>
     pub fn media_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +55,18 @@ impl MediaPipelineSummaryBuilder {
         self
     }
     /// <p>The ARN of the media pipeline in the summary.</p>
-    pub fn set_media_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.media_pipeline_arn = input; self
+    pub fn set_media_pipeline_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.media_pipeline_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`MediaPipelineSummary`](crate::types::MediaPipelineSummary).
     pub fn build(self) -> crate::types::MediaPipelineSummary {
         crate::types::MediaPipelineSummary {
-            media_pipeline_id: self.media_pipeline_id
-            ,
-            media_pipeline_arn: self.media_pipeline_arn
-            ,
+            media_pipeline_id: self.media_pipeline_id,
+            media_pipeline_arn: self.media_pipeline_arn,
         }
     }
 }
-

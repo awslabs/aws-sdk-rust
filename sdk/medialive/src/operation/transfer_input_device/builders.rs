@@ -4,50 +4,70 @@ pub use crate::operation::transfer_input_device::_transfer_input_device_output::
 pub use crate::operation::transfer_input_device::_transfer_input_device_input::TransferInputDeviceInputBuilder;
 
 /// Fluent builder constructing a request to `TransferInputDevice`.
-/// 
+///
 /// Start an input device transfer to another AWS account. After you make the request, the other account must accept or reject the transfer.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TransferInputDeviceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::transfer_input_device::builders::TransferInputDeviceInputBuilder,
+    inner: crate::operation::transfer_input_device::builders::TransferInputDeviceInputBuilder,
 }
-impl TransferInputDeviceFluentBuilder  {
+impl TransferInputDeviceFluentBuilder {
     /// Creates a new `TransferInputDevice`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::transfer_input_device::TransferInputDevice, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::transfer_input_device::TransferInputDeviceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::transfer_input_device::TransferInputDeviceOutput, aws_smithy_http::result::SdkError<crate::operation::transfer_input_device::TransferInputDeviceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::transfer_input_device::TransferInputDevice,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::transfer_input_device::TransferInputDeviceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::transfer_input_device::TransferInputDeviceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::transfer_input_device::TransferInputDeviceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// The unique ID of this input device. For example, hd-123456789abcdef.
     pub fn input_device_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.input_device_id(input.into());
@@ -64,7 +84,10 @@ impl TransferInputDeviceFluentBuilder  {
         self
     }
     /// The AWS account ID (12 digits) for the recipient of the device transfer.
-    pub fn set_target_customer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_customer_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_target_customer_id(input);
         self
     }
@@ -89,4 +112,3 @@ impl TransferInputDeviceFluentBuilder  {
         self
     }
 }
-

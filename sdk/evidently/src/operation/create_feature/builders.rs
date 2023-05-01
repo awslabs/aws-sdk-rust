@@ -4,51 +4,67 @@ pub use crate::operation::create_feature::_create_feature_output::CreateFeatureO
 pub use crate::operation::create_feature::_create_feature_input::CreateFeatureInputBuilder;
 
 /// Fluent builder constructing a request to `CreateFeature`.
-/// 
-/// <p>Creates an Evidently <i>feature</i> that you want to launch or test. You can define up to five variations of a feature, and use these variations in your launches and experiments. A feature must be created in a project. For information about creating a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p> 
+///
+/// <p>Creates an Evidently <i>feature</i> that you want to launch or test. You can define up to five variations of a feature, and use these variations in your launches and experiments. A feature must be created in a project. For information about creating a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p>
 /// <p>Don't use this operation to update an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html">UpdateFeature</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateFeatureFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_feature::builders::CreateFeatureInputBuilder,
+    inner: crate::operation::create_feature::builders::CreateFeatureInputBuilder,
 }
-impl CreateFeatureFluentBuilder  {
+impl CreateFeatureFluentBuilder {
     /// Creates a new `CreateFeature`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_feature::CreateFeature, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_feature::CreateFeatureError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_feature::CreateFeatureOutput, aws_smithy_http::result::SdkError<crate::operation::create_feature::CreateFeatureError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_feature::CreateFeature,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_feature::CreateFeatureError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_feature::CreateFeatureOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_feature::CreateFeatureError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name or ARN of the project that is to contain the new feature.</p>
     pub fn project(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project(input.into());
@@ -75,7 +91,10 @@ impl CreateFeatureFluentBuilder  {
         self
     }
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
-    pub fn set_evaluation_strategy(mut self, input: std::option::Option<crate::types::FeatureEvaluationStrategy>) -> Self {
+    pub fn set_evaluation_strategy(
+        mut self,
+        input: std::option::Option<crate::types::FeatureEvaluationStrategy>,
+    ) -> Self {
         self.inner = self.inner.set_evaluation_strategy(input);
         self
     }
@@ -99,21 +118,27 @@ impl CreateFeatureFluentBuilder  {
         self
     }
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub fn set_variations(mut self, input: std::option::Option<std::vec::Vec<crate::types::VariationConfig>>) -> Self {
+    pub fn set_variations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VariationConfig>>,
+    ) -> Self {
         self.inner = self.inner.set_variations(input);
         self
     }
-    /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p> 
-    /// <p>This variation must also be listed in the <code>variations</code> structure.</p> 
+    /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
+    /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
     pub fn default_variation(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.default_variation(input.into());
         self
     }
-    /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p> 
-    /// <p>This variation must also be listed in the <code>variations</code> structure.</p> 
+    /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
+    /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
-    pub fn set_default_variation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_variation(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_default_variation(input);
         self
     }
@@ -121,21 +146,30 @@ impl CreateFeatureFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Assigns one or more tags (key-value pairs) to the feature.</p> 
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> 
-    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p> 
-    /// <p>You can associate as many as 50 tags with a feature.</p> 
+    /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can associate as many as 50 tags with a feature.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
-    /// <p>Assigns one or more tags (key-value pairs) to the feature.</p> 
-    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> 
-    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p> 
-    /// <p>You can associate as many as 50 tags with a feature.</p> 
+    /// <p>Assigns one or more tags (key-value pairs) to the feature.</p>
+    /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p>
+    /// <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p>
+    /// <p>You can associate as many as 50 tags with a feature.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -143,17 +177,25 @@ impl CreateFeatureFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_entity_overrides`](Self::set_entity_overrides).
     ///
-    /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p> 
+    /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
-    pub fn entity_overrides(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn entity_overrides(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.entity_overrides(k.into(), v.into());
         self
     }
-    /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p> 
+    /// <p>Specify users that should always be served a specific variation of a feature. Each user is specified by a key-value pair . For each key, specify a user by entering their user ID, account ID, or some other identifier. For the value, specify the name of the variation that they are to be served.</p>
     /// <p>This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes an overhead of 6 bytes per override.</p>
-    pub fn set_entity_overrides(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_entity_overrides(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_entity_overrides(input);
         self
     }
 }
-

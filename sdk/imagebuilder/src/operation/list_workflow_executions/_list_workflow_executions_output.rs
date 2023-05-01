@@ -2,13 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkflowExecutionsOutput  {
+pub struct ListWorkflowExecutionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
     #[doc(hidden)]
-    pub workflow_executions: std::option::Option<std::vec::Vec<crate::types::WorkflowExecutionMetadata>>,
+    pub workflow_executions:
+        std::option::Option<std::vec::Vec<crate::types::WorkflowExecutionMetadata>>,
     /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
@@ -22,34 +23,38 @@ pub struct ListWorkflowExecutionsOutput  {
 }
 impl ListWorkflowExecutionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
-    pub fn workflow_executions(&self) -> std::option::Option<& [crate::types::WorkflowExecutionMetadata]> {
+    pub fn workflow_executions(
+        &self,
+    ) -> std::option::Option<&[crate::types::WorkflowExecutionMetadata]> {
         self.workflow_executions.as_deref()
     }
     /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
     /// <p>The output message from the list action, if applicable.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListWorkflowExecutionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListWorkflowExecutionsOutput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowExecutionsOutput`](crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput).
-    pub fn builder() -> crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsOutputBuilder
+    {
         crate::operation::list_workflow_executions::builders::ListWorkflowExecutionsOutputBuilder::default()
     }
 }
@@ -59,7 +64,8 @@ impl ListWorkflowExecutionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListWorkflowExecutionsOutputBuilder {
     pub(crate) request_id: std::option::Option<std::string::String>,
-    pub(crate) workflow_executions: std::option::Option<std::vec::Vec<crate::types::WorkflowExecutionMetadata>>,
+    pub(crate) workflow_executions:
+        std::option::Option<std::vec::Vec<crate::types::WorkflowExecutionMetadata>>,
     pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) next_token: std::option::Option<std::string::String>,
@@ -73,7 +79,8 @@ impl ListWorkflowExecutionsOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// Appends an item to `workflow_executions`.
     ///
@@ -82,13 +89,17 @@ impl ListWorkflowExecutionsOutputBuilder {
     /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
     pub fn workflow_executions(mut self, input: crate::types::WorkflowExecutionMetadata) -> Self {
         let mut v = self.workflow_executions.unwrap_or_default();
-                        v.push(input);
-                        self.workflow_executions = Some(v);
-                        self
+        v.push(input);
+        self.workflow_executions = Some(v);
+        self
     }
     /// <p>Contains an array of runtime details that represents each time a workflow ran for the requested image build version.</p>
-    pub fn set_workflow_executions(mut self, input: std::option::Option<std::vec::Vec<crate::types::WorkflowExecutionMetadata>>) -> Self {
-        self.workflow_executions = input; self
+    pub fn set_workflow_executions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::WorkflowExecutionMetadata>>,
+    ) -> Self {
+        self.workflow_executions = input;
+        self
     }
     /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
     pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,8 +107,12 @@ impl ListWorkflowExecutionsOutputBuilder {
         self
     }
     /// <p>The resource ARN of the image build version for which you requested a list of workflow runtime details.</p>
-    pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_build_version_arn = input; self
+    pub fn set_image_build_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.image_build_version_arn = input;
+        self
     }
     /// <p>The output message from the list action, if applicable.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +121,8 @@ impl ListWorkflowExecutionsOutputBuilder {
     }
     /// <p>The output message from the list action, if applicable.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,32 +131,27 @@ impl ListWorkflowExecutionsOutputBuilder {
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListWorkflowExecutionsOutput`](crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput).
     pub fn build(self) -> crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput {
         crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput {
-            request_id: self.request_id
-            ,
-            workflow_executions: self.workflow_executions
-            ,
-            image_build_version_arn: self.image_build_version_arn
-            ,
-            message: self.message
-            ,
-            next_token: self.next_token
-            ,
+            request_id: self.request_id,
+            workflow_executions: self.workflow_executions,
+            image_build_version_arn: self.image_build_version_arn,
+            message: self.message,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

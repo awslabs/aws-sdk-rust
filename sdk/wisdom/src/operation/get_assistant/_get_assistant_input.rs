@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssistantInput  {
+pub struct GetAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
     pub assistant_id: std::option::Option<std::string::String>,
 }
 impl GetAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> std::option::Option<& str> {
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetAssistantInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_id = input; self
+        self.assistant_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAssistantInput`](crate::operation::get_assistant::GetAssistantInput).
-    pub fn build(self) -> Result<crate::operation::get_assistant::GetAssistantInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_assistant::GetAssistantInput {
-                assistant_id: self.assistant_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_assistant::GetAssistantInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_assistant::GetAssistantInput {
+            assistant_id: self.assistant_id,
+        })
     }
 }
-

@@ -4,76 +4,99 @@ pub use crate::operation::get_finding_statistics::_get_finding_statistics_output
 pub use crate::operation::get_finding_statistics::_get_finding_statistics_input::GetFindingStatisticsInputBuilder;
 
 /// Fluent builder constructing a request to `GetFindingStatistics`.
-/// 
+///
 /// <p>Retrieves (queries) aggregated statistical data about findings.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetFindingStatisticsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder,
+    inner: crate::operation::get_finding_statistics::builders::GetFindingStatisticsInputBuilder,
 }
-impl GetFindingStatisticsFluentBuilder  {
+impl GetFindingStatisticsFluentBuilder {
     /// Creates a new `GetFindingStatistics`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_finding_statistics::GetFindingStatistics, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_finding_statistics::GetFindingStatisticsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_finding_statistics::GetFindingStatisticsOutput, aws_smithy_http::result::SdkError<crate::operation::get_finding_statistics::GetFindingStatisticsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_finding_statistics::GetFindingStatistics,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_finding_statistics::GetFindingStatisticsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_finding_statistics::GetFindingStatisticsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_finding_statistics::GetFindingStatisticsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The criteria to use to filter the query results.</p>
     pub fn finding_criteria(mut self, input: crate::types::FindingCriteria) -> Self {
         self.inner = self.inner.finding_criteria(input);
         self
     }
     /// <p>The criteria to use to filter the query results.</p>
-    pub fn set_finding_criteria(mut self, input: std::option::Option<crate::types::FindingCriteria>) -> Self {
+    pub fn set_finding_criteria(
+        mut self,
+        input: std::option::Option<crate::types::FindingCriteria>,
+    ) -> Self {
         self.inner = self.inner.set_finding_criteria(input);
         self
     }
-    /// <p>The finding property to use to group the query results. Valid values are:</p> 
+    /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
-    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> 
-    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> 
-    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> 
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     pub fn group_by(mut self, input: crate::types::GroupBy) -> Self {
         self.inner = self.inner.group_by(input);
         self
     }
-    /// <p>The finding property to use to group the query results. Valid values are:</p> 
+    /// <p>The finding property to use to group the query results. Valid values are:</p>
     /// <ul>
-    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li> 
-    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li> 
-    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li> 
+    /// <li><p>classificationDetails.jobId - The unique identifier for the classification job that produced the finding.</p></li>
+    /// <li><p>resourcesAffected.s3Bucket.name - The name of the S3 bucket that the finding applies to.</p></li>
+    /// <li><p>severity.description - The severity level of the finding, such as High or Medium.</p></li>
     /// <li><p>type - The type of finding, such as Policy:IAMUser/S3BucketPublic and SensitiveData:S3Object/Personal.</p></li>
     /// </ul>
     pub fn set_group_by(mut self, input: std::option::Option<crate::types::GroupBy>) -> Self {
@@ -96,9 +119,11 @@ impl GetFindingStatisticsFluentBuilder  {
         self
     }
     /// <p>The criteria to use to sort the query results.</p>
-    pub fn set_sort_criteria(mut self, input: std::option::Option<crate::types::FindingStatisticsSortCriteria>) -> Self {
+    pub fn set_sort_criteria(
+        mut self,
+        input: std::option::Option<crate::types::FindingStatisticsSortCriteria>,
+    ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
 }
-

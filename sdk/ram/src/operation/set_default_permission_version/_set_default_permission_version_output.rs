@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDefaultPermissionVersionOutput  {
+pub struct SetDefaultPermissionVersionOutput {
     /// <p>A boolean value that indicates whether the operation was successful.</p>
     #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
@@ -17,18 +17,18 @@ impl SetDefaultPermissionVersionOutput {
         self.return_value
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SetDefaultPermissionVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SetDefaultPermissionVersionOutput {
     /// Creates a new builder-style object to manufacture [`SetDefaultPermissionVersionOutput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput).
-    pub fn builder() -> crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionOutputBuilder {
+    pub fn builder() -> crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionOutputBuilder{
         crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl SetDefaultPermissionVersionOutputBuilder {
     }
     /// <p>A boolean value that indicates whether the operation was successful.</p>
     pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.return_value = input; self
+        self.return_value = input;
+        self
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +59,26 @@ impl SetDefaultPermissionVersionOutputBuilder {
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SetDefaultPermissionVersionOutput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput).
-    pub fn build(self) -> crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput {
         crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput {
-            return_value: self.return_value
-            ,
-            client_token: self.client_token
-            ,
+            return_value: self.return_value,
+            client_token: self.client_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventsOutput  {
+pub struct DescribeEventsOutput {
     /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
     #[doc(hidden)]
     pub server_events: std::option::Option<std::vec::Vec<crate::types::ServerEvent>>,
@@ -13,19 +13,19 @@ pub struct DescribeEventsOutput  {
 }
 impl DescribeEventsOutput {
     /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
-    pub fn server_events(&self) -> std::option::Option<& [crate::types::ServerEvent]> {
+    pub fn server_events(&self) -> std::option::Option<&[crate::types::ServerEvent]> {
         self.server_events.as_deref()
     }
     /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEventsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEventsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput).
     pub fn builder() -> crate::operation::describe_events::builders::DescribeEventsOutputBuilder {
@@ -49,13 +49,17 @@ impl DescribeEventsOutputBuilder {
     /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
     pub fn server_events(mut self, input: crate::types::ServerEvent) -> Self {
         let mut v = self.server_events.unwrap_or_default();
-                        v.push(input);
-                        self.server_events = Some(v);
-                        self
+        v.push(input);
+        self.server_events = Some(v);
+        self
     }
     /// <p>Contains the response to a <code>DescribeEvents</code> request. </p>
-    pub fn set_server_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServerEvent>>) -> Self {
-        self.server_events = input; self
+    pub fn set_server_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ServerEvent>>,
+    ) -> Self {
+        self.server_events = input;
+        self
     }
     /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl DescribeEventsOutputBuilder {
     }
     /// <p>NextToken is a string that is returned in some command responses. It indicates that not all entries have been returned, and that you must run at least one more request to get remaining items. To get remaining results, call <code>DescribeEvents</code> again, and assign the token from the previous results as the value of the <code>nextToken</code> parameter. If there are no more results, the response object's <code>nextToken</code> parameter value is <code>null</code>. Setting a <code>nextToken</code> value that was not returned in your previous results causes an <code>InvalidNextTokenException</code> to occur. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEventsOutput`](crate::operation::describe_events::DescribeEventsOutput).
     pub fn build(self) -> crate::operation::describe_events::DescribeEventsOutput {
         crate::operation::describe_events::DescribeEventsOutput {
-            server_events: self.server_events
-            ,
-            next_token: self.next_token
-            ,
+            server_events: self.server_events,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnshareDirectoryInput  {
+pub struct UnshareDirectoryInput {
     /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct UnshareDirectoryInput  {
 }
 impl UnshareDirectoryInput {
     /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
-    pub fn unshare_target(&self) -> std::option::Option<& crate::types::UnshareTarget> {
+    pub fn unshare_target(&self) -> std::option::Option<&crate::types::UnshareTarget> {
         self.unshare_target.as_ref()
     }
 }
 impl UnshareDirectoryInput {
     /// Creates a new builder-style object to manufacture [`UnshareDirectoryInput`](crate::operation::unshare_directory::UnshareDirectoryInput).
-    pub fn builder() -> crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder {
+    pub fn builder() -> crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder
+    {
         crate::operation::unshare_directory::builders::UnshareDirectoryInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl UnshareDirectoryInputBuilder {
     }
     /// <p>The identifier of the Managed Microsoft AD directory that you want to stop sharing.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
     pub fn unshare_target(mut self, input: crate::types::UnshareTarget) -> Self {
@@ -50,19 +52,23 @@ impl UnshareDirectoryInputBuilder {
         self
     }
     /// <p>Identifier for the directory consumer account with whom the directory has to be unshared.</p>
-    pub fn set_unshare_target(mut self, input: std::option::Option<crate::types::UnshareTarget>) -> Self {
-        self.unshare_target = input; self
+    pub fn set_unshare_target(
+        mut self,
+        input: std::option::Option<crate::types::UnshareTarget>,
+    ) -> Self {
+        self.unshare_target = input;
+        self
     }
     /// Consumes the builder and constructs a [`UnshareDirectoryInput`](crate::operation::unshare_directory::UnshareDirectoryInput).
-    pub fn build(self) -> Result<crate::operation::unshare_directory::UnshareDirectoryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::unshare_directory::UnshareDirectoryInput {
-                directory_id: self.directory_id
-                ,
-                unshare_target: self.unshare_target
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::unshare_directory::UnshareDirectoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::unshare_directory::UnshareDirectoryInput {
+            directory_id: self.directory_id,
+            unshare_target: self.unshare_target,
+        })
     }
 }
-

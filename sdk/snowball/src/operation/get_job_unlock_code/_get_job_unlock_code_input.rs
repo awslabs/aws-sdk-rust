@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJobUnlockCodeInput  {
+pub struct GetJobUnlockCodeInput {
     /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetJobUnlockCodeInput {
     /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl GetJobUnlockCodeInput {
     /// Creates a new builder-style object to manufacture [`GetJobUnlockCodeInput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeInput).
-    pub fn builder() -> crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeInputBuilder {
+    pub fn builder() -> crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeInputBuilder
+    {
         crate::operation::get_job_unlock_code::builders::GetJobUnlockCodeInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetJobUnlockCodeInputBuilder {
     }
     /// <p>The ID for the job that you want to get the <code>UnlockCode</code> value for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetJobUnlockCodeInput`](crate::operation::get_job_unlock_code::GetJobUnlockCodeInput).
-    pub fn build(self) -> Result<crate::operation::get_job_unlock_code::GetJobUnlockCodeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_job_unlock_code::GetJobUnlockCodeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_job_unlock_code::GetJobUnlockCodeInput {
-                job_id: self.job_id
-                ,
-            }
+                job_id: self.job_id,
+            },
         )
     }
 }
-

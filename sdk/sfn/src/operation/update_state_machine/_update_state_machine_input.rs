@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateStateMachineInput  {
+pub struct UpdateStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
     #[doc(hidden)]
     pub state_machine_arn: std::option::Option<std::string::String>,
@@ -21,27 +21,31 @@ pub struct UpdateStateMachineInput  {
 }
 impl UpdateStateMachineInput {
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn state_machine_arn(&self) -> std::option::Option<& str> {
+    pub fn state_machine_arn(&self) -> std::option::Option<&str> {
         self.state_machine_arn.as_deref()
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    pub fn definition(&self) -> std::option::Option<& str> {
+    pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn logging_configuration(&self) -> std::option::Option<& crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn tracing_configuration(&self) -> std::option::Option<& crate::types::TracingConfiguration> {
+    pub fn tracing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateStateMachineInput  {
+impl std::fmt::Debug for UpdateStateMachineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateStateMachineInput");
         formatter.field("state_machine_arn", &self.state_machine_arn);
@@ -54,7 +58,8 @@ impl  std::fmt::Debug for UpdateStateMachineInput  {
 }
 impl UpdateStateMachineInput {
     /// Creates a new builder-style object to manufacture [`UpdateStateMachineInput`](crate::operation::update_state_machine::UpdateStateMachineInput).
-    pub fn builder() -> crate::operation::update_state_machine::builders::UpdateStateMachineInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_state_machine::builders::UpdateStateMachineInputBuilder {
         crate::operation::update_state_machine::builders::UpdateStateMachineInputBuilder::default()
     }
 }
@@ -76,8 +81,12 @@ impl UpdateStateMachineInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine.</p>
-    pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_machine_arn = input; self
+    pub fn set_state_machine_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.state_machine_arn = input;
+        self
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +95,8 @@ impl UpdateStateMachineInputBuilder {
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.definition = input; self
+        self.definition = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +105,8 @@ impl UpdateStateMachineInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
@@ -103,8 +114,12 @@ impl UpdateStateMachineInputBuilder {
         self
     }
     /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
-    pub fn set_logging_configuration(mut self, input: std::option::Option<crate::types::LoggingConfiguration>) -> Self {
-        self.logging_configuration = input; self
+    pub fn set_logging_configuration(
+        mut self,
+        input: std::option::Option<crate::types::LoggingConfiguration>,
+    ) -> Self {
+        self.logging_configuration = input;
+        self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn tracing_configuration(mut self, input: crate::types::TracingConfiguration) -> Self {
@@ -112,24 +127,28 @@ impl UpdateStateMachineInputBuilder {
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn set_tracing_configuration(mut self, input: std::option::Option<crate::types::TracingConfiguration>) -> Self {
-        self.tracing_configuration = input; self
+    pub fn set_tracing_configuration(
+        mut self,
+        input: std::option::Option<crate::types::TracingConfiguration>,
+    ) -> Self {
+        self.tracing_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateStateMachineInput`](crate::operation::update_state_machine::UpdateStateMachineInput).
-    pub fn build(self) -> Result<crate::operation::update_state_machine::UpdateStateMachineInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_state_machine::UpdateStateMachineInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_state_machine::UpdateStateMachineInput {
-                state_machine_arn: self.state_machine_arn
-                ,
-                definition: self.definition
-                ,
-                role_arn: self.role_arn
-                ,
-                logging_configuration: self.logging_configuration
-                ,
-                tracing_configuration: self.tracing_configuration
-                ,
-            }
+                state_machine_arn: self.state_machine_arn,
+                definition: self.definition,
+                role_arn: self.role_arn,
+                logging_configuration: self.logging_configuration,
+                tracing_configuration: self.tracing_configuration,
+            },
         )
     }
 }
@@ -144,4 +163,3 @@ impl std::fmt::Debug for UpdateStateMachineInputBuilder {
         formatter.finish()
     }
 }
-

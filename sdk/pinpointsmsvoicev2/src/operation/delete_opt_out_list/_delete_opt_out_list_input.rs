@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOptOutListInput  {
+pub struct DeleteOptOutListInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
     #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
 }
 impl DeleteOptOutListInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
 }
 impl DeleteOptOutListInput {
     /// Creates a new builder-style object to manufacture [`DeleteOptOutListInput`](crate::operation::delete_opt_out_list::DeleteOptOutListInput).
-    pub fn builder() -> crate::operation::delete_opt_out_list::builders::DeleteOptOutListInputBuilder {
+    pub fn builder() -> crate::operation::delete_opt_out_list::builders::DeleteOptOutListInputBuilder
+    {
         crate::operation::delete_opt_out_list::builders::DeleteOptOutListInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DeleteOptOutListInputBuilder {
         self
     }
     /// <p>The OptOutListName or OptOutListArn of the OptOutList to delete. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.opt_out_list_name = input; self
+    pub fn set_opt_out_list_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.opt_out_list_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteOptOutListInput`](crate::operation::delete_opt_out_list::DeleteOptOutListInput).
-    pub fn build(self) -> Result<crate::operation::delete_opt_out_list::DeleteOptOutListInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_opt_out_list::DeleteOptOutListInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_opt_out_list::DeleteOptOutListInput {
-                opt_out_list_name: self.opt_out_list_name
-                ,
-            }
+                opt_out_list_name: self.opt_out_list_name,
+            },
         )
     }
 }
-

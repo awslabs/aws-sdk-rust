@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let serviceactiondefinitiontype = unimplemented!();
 /// match serviceactiondefinitiontype {
@@ -29,51 +29,60 @@
 /// Specifically, when `serviceactiondefinitiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ServiceActionDefinitionType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ServiceActionDefinitionType {
     #[allow(missing_docs)] // documentation missing in model
     SsmAutomation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ServiceActionDefinitionType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "SSM_AUTOMATION" => ServiceActionDefinitionType::SsmAutomation,
-other => ServiceActionDefinitionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ServiceActionDefinitionType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ServiceActionDefinitionType::from(s))
-                }
-            }
-impl ServiceActionDefinitionType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ServiceActionDefinitionType::SsmAutomation => "SSM_AUTOMATION",
-    ServiceActionDefinitionType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "SSM_AUTOMATION" => ServiceActionDefinitionType::SsmAutomation,
+            other => ServiceActionDefinitionType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["SSM_AUTOMATION"]
-                }
-            }
-impl AsRef<str> for ServiceActionDefinitionType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ServiceActionDefinitionType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ServiceActionDefinitionType::from(s))
+    }
+}
+impl ServiceActionDefinitionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ServiceActionDefinitionType::SsmAutomation => "SSM_AUTOMATION",
+            ServiceActionDefinitionType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["SSM_AUTOMATION"]
+    }
+}
+impl AsRef<str> for ServiceActionDefinitionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

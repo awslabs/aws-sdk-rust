@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTranscriptionJobsOutput  {
+pub struct ListTranscriptionJobsOutput {
     /// <p>Lists all transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::TranscriptionJobStatus>,
@@ -11,31 +11,36 @@ pub struct ListTranscriptionJobsOutput  {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides a summary of information about each result.</p>
     #[doc(hidden)]
-    pub transcription_job_summaries: std::option::Option<std::vec::Vec<crate::types::TranscriptionJobSummary>>,
+    pub transcription_job_summaries:
+        std::option::Option<std::vec::Vec<crate::types::TranscriptionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListTranscriptionJobsOutput {
     /// <p>Lists all transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::TranscriptionJobStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::TranscriptionJobStatus> {
         self.status.as_ref()
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn transcription_job_summaries(&self) -> std::option::Option<& [crate::types::TranscriptionJobSummary]> {
+    pub fn transcription_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::TranscriptionJobSummary]> {
         self.transcription_job_summaries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTranscriptionJobsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTranscriptionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListTranscriptionJobsOutput`](crate::operation::list_transcription_jobs::ListTranscriptionJobsOutput).
-    pub fn builder() -> crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsOutputBuilder
+    {
         crate::operation::list_transcription_jobs::builders::ListTranscriptionJobsOutputBuilder::default()
     }
 }
@@ -46,7 +51,8 @@ impl ListTranscriptionJobsOutput {
 pub struct ListTranscriptionJobsOutputBuilder {
     pub(crate) status: std::option::Option<crate::types::TranscriptionJobStatus>,
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) transcription_job_summaries: std::option::Option<std::vec::Vec<crate::types::TranscriptionJobSummary>>,
+    pub(crate) transcription_job_summaries:
+        std::option::Option<std::vec::Vec<crate::types::TranscriptionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListTranscriptionJobsOutputBuilder {
@@ -56,8 +62,12 @@ impl ListTranscriptionJobsOutputBuilder {
         self
     }
     /// <p>Lists all transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::TranscriptionJobStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,43 +76,47 @@ impl ListTranscriptionJobsOutputBuilder {
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `transcription_job_summaries`.
     ///
     /// To override the contents of this collection use [`set_transcription_job_summaries`](Self::set_transcription_job_summaries).
     ///
     /// <p>Provides a summary of information about each result.</p>
-    pub fn transcription_job_summaries(mut self, input: crate::types::TranscriptionJobSummary) -> Self {
+    pub fn transcription_job_summaries(
+        mut self,
+        input: crate::types::TranscriptionJobSummary,
+    ) -> Self {
         let mut v = self.transcription_job_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.transcription_job_summaries = Some(v);
-                        self
+        v.push(input);
+        self.transcription_job_summaries = Some(v);
+        self
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn set_transcription_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::TranscriptionJobSummary>>) -> Self {
-        self.transcription_job_summaries = input; self
+    pub fn set_transcription_job_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TranscriptionJobSummary>>,
+    ) -> Self {
+        self.transcription_job_summaries = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTranscriptionJobsOutput`](crate::operation::list_transcription_jobs::ListTranscriptionJobsOutput).
     pub fn build(self) -> crate::operation::list_transcription_jobs::ListTranscriptionJobsOutput {
         crate::operation::list_transcription_jobs::ListTranscriptionJobsOutput {
-            status: self.status
-            ,
-            next_token: self.next_token
-            ,
-            transcription_job_summaries: self.transcription_job_summaries
-            ,
+            status: self.status,
+            next_token: self.next_token,
+            transcription_job_summaries: self.transcription_job_summaries,
             _request_id: self._request_id,
         }
     }
 }
-

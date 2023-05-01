@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCollectionOutput  {
+pub struct UpdateCollectionOutput {
     /// <p>Details about the updated collection.</p>
     #[doc(hidden)]
     pub update_collection_detail: std::option::Option<crate::types::UpdateCollectionDetail>,
@@ -10,18 +10,21 @@ pub struct UpdateCollectionOutput  {
 }
 impl UpdateCollectionOutput {
     /// <p>Details about the updated collection.</p>
-    pub fn update_collection_detail(&self) -> std::option::Option<& crate::types::UpdateCollectionDetail> {
+    pub fn update_collection_detail(
+        &self,
+    ) -> std::option::Option<&crate::types::UpdateCollectionDetail> {
         self.update_collection_detail.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateCollectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateCollectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCollectionOutput`](crate::operation::update_collection::UpdateCollectionOutput).
-    pub fn builder() -> crate::operation::update_collection::builders::UpdateCollectionOutputBuilder {
+    pub fn builder() -> crate::operation::update_collection::builders::UpdateCollectionOutputBuilder
+    {
         crate::operation::update_collection::builders::UpdateCollectionOutputBuilder::default()
     }
 }
@@ -40,25 +43,27 @@ impl UpdateCollectionOutputBuilder {
         self
     }
     /// <p>Details about the updated collection.</p>
-    pub fn set_update_collection_detail(mut self, input: std::option::Option<crate::types::UpdateCollectionDetail>) -> Self {
-        self.update_collection_detail = input; self
+    pub fn set_update_collection_detail(
+        mut self,
+        input: std::option::Option<crate::types::UpdateCollectionDetail>,
+    ) -> Self {
+        self.update_collection_detail = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateCollectionOutput`](crate::operation::update_collection::UpdateCollectionOutput).
     pub fn build(self) -> crate::operation::update_collection::UpdateCollectionOutput {
         crate::operation::update_collection::UpdateCollectionOutput {
-            update_collection_detail: self.update_collection_detail
-            ,
+            update_collection_detail: self.update_collection_detail,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePeeringInput  {
+pub struct DeletePeeringInput {
     /// <p>The ID of the peering connection to delete.</p>
     #[doc(hidden)]
     pub peering_id: std::option::Option<std::string::String>,
 }
 impl DeletePeeringInput {
     /// <p>The ID of the peering connection to delete.</p>
-    pub fn peering_id(&self) -> std::option::Option<& str> {
+    pub fn peering_id(&self) -> std::option::Option<&str> {
         self.peering_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeletePeeringInputBuilder {
     }
     /// <p>The ID of the peering connection to delete.</p>
     pub fn set_peering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.peering_id = input; self
+        self.peering_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePeeringInput`](crate::operation::delete_peering::DeletePeeringInput).
-    pub fn build(self) -> Result<crate::operation::delete_peering::DeletePeeringInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_peering::DeletePeeringInput {
-                peering_id: self.peering_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_peering::DeletePeeringInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_peering::DeletePeeringInput {
+            peering_id: self.peering_id,
+        })
     }
 }
-

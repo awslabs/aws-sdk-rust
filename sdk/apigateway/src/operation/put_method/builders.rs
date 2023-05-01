@@ -4,50 +4,66 @@ pub use crate::operation::put_method::_put_method_output::PutMethodOutputBuilder
 pub use crate::operation::put_method::_put_method_input::PutMethodInputBuilder;
 
 /// Fluent builder constructing a request to `PutMethod`.
-/// 
+///
 /// <p>Add a method to an existing Resource resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutMethodFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_method::builders::PutMethodInputBuilder,
+    inner: crate::operation::put_method::builders::PutMethodInputBuilder,
 }
-impl PutMethodFluentBuilder  {
+impl PutMethodFluentBuilder {
     /// Creates a new `PutMethod`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_method::PutMethod, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_method::PutMethodError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_method::PutMethodOutput, aws_smithy_http::result::SdkError<crate::operation::put_method::PutMethodError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_method::PutMethod,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::put_method::PutMethodError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_method::PutMethodOutput,
+        aws_smithy_http::result::SdkError<crate::operation::put_method::PutMethodError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.rest_api_id(input.into());
@@ -84,7 +100,10 @@ impl PutMethodFluentBuilder  {
         self
     }
     /// <p>The method's authorization type. Valid values are <code>NONE</code> for open access, <code>AWS_IAM</code> for using AWS IAM permissions, <code>CUSTOM</code> for using a custom authorizer, or <code>COGNITO_USER_POOLS</code> for using a Cognito user pool.</p>
-    pub fn set_authorization_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authorization_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_authorization_type(input);
         self
     }
@@ -128,7 +147,10 @@ impl PutMethodFluentBuilder  {
         self
     }
     /// <p>A key-value map defining required or optional method request parameters that can be accepted by API Gateway. A key defines a method request parameter name matching the pattern of <code>method.request.{location}.{name}</code>, where <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code> and <code>name</code> is a valid and unique parameter name. The value associated with the key is a Boolean flag indicating whether the parameter is required (<code>true</code>) or optional (<code>false</code>). The method request parameter names defined here are available in Integration to be mapped to integration request parameters or body-mapping templates.</p>
-    pub fn set_request_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, bool>>) -> Self {
+    pub fn set_request_parameters(
+        mut self,
+        input: std::option::Option<std::collections::HashMap<std::string::String, bool>>,
+    ) -> Self {
         self.inner = self.inner.set_request_parameters(input);
         self
     }
@@ -137,12 +159,21 @@ impl PutMethodFluentBuilder  {
     /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
     ///
     /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
-    pub fn request_models(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn request_models(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.request_models(k.into(), v.into());
         self
     }
     /// <p>Specifies the Model resources used for the request's content type. Request models are represented as a key/value map, with a content type as the key and a Model name as the value.</p>
-    pub fn set_request_models(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_request_models(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_request_models(input);
         self
     }
@@ -152,7 +183,10 @@ impl PutMethodFluentBuilder  {
         self
     }
     /// <p>The identifier of a RequestValidator for validating the method request.</p>
-    pub fn set_request_validator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_request_validator_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_request_validator_id(input);
         self
     }
@@ -166,9 +200,11 @@ impl PutMethodFluentBuilder  {
         self
     }
     /// <p>A list of authorization scopes configured on the method. The scopes are used with a <code>COGNITO_USER_POOLS</code> authorizer to authorize the method invocation. The authorization works by matching the method scopes against the scopes parsed from the access token in the incoming request. The method invocation is authorized if any method scopes matches a claimed scope in the access token. Otherwise, the invocation is not authorized. When the method scope is configured, the client must provide an access token instead of an identity token for authorization purposes.</p>
-    pub fn set_authorization_scopes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_authorization_scopes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_authorization_scopes(input);
         self
     }
 }
-

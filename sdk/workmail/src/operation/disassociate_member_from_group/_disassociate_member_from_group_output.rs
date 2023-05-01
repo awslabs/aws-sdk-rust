@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateMemberFromGroupOutput  {
+pub struct DisassociateMemberFromGroupOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisassociateMemberFromGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateMemberFromGroupOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateMemberFromGroupOutput`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput).
-    pub fn builder() -> crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupOutputBuilder{
         crate::operation::disassociate_member_from_group::builders::DisassociateMemberFromGroupOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct DisassociateMemberFromGroupOutputBuilder {
 }
 impl DisassociateMemberFromGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateMemberFromGroupOutput`](crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput).
-    pub fn build(self) -> crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput {
         crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput {
             _request_id: self._request_id,
         }
     }
 }
-

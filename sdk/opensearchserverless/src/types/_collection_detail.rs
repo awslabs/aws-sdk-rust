@@ -3,7 +3,7 @@
 /// <p>Details about each OpenSearch Serverless collection, including the collection endpoint and the OpenSearch Dashboards endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CollectionDetail  {
+pub struct CollectionDetail {
     /// <p>A unique identifier for the collection.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -40,31 +40,31 @@ pub struct CollectionDetail  {
 }
 impl CollectionDetail {
     /// <p>A unique identifier for the collection.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the collection.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current status of the collection.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::CollectionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::CollectionStatus> {
         self.status.as_ref()
     }
     /// <p>The type of collection.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::CollectionType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::CollectionType> {
         self.r#type.as_ref()
     }
     /// <p>A description of the collection.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The Epoch time when the collection was created.</p>
@@ -76,11 +76,11 @@ impl CollectionDetail {
         self.last_modified_date
     }
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
-    pub fn collection_endpoint(&self) -> std::option::Option<& str> {
+    pub fn collection_endpoint(&self) -> std::option::Option<&str> {
         self.collection_endpoint.as_deref()
     }
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
-    pub fn dashboard_endpoint(&self) -> std::option::Option<& str> {
+    pub fn dashboard_endpoint(&self) -> std::option::Option<&str> {
         self.dashboard_endpoint.as_deref()
     }
 }
@@ -115,7 +115,8 @@ impl CollectionDetailBuilder {
     }
     /// <p>A unique identifier for the collection.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the collection.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +125,8 @@ impl CollectionDetailBuilder {
     }
     /// <p>The name of the collection.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The current status of the collection.</p>
     pub fn status(mut self, input: crate::types::CollectionStatus) -> Self {
@@ -132,8 +134,12 @@ impl CollectionDetailBuilder {
         self
     }
     /// <p>The current status of the collection.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::CollectionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::CollectionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The type of collection.</p>
     pub fn r#type(mut self, input: crate::types::CollectionType) -> Self {
@@ -142,7 +148,8 @@ impl CollectionDetailBuilder {
     }
     /// <p>The type of collection.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::CollectionType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>A description of the collection.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,7 +158,8 @@ impl CollectionDetailBuilder {
     }
     /// <p>A description of the collection.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,7 +168,8 @@ impl CollectionDetailBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the collection.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,7 +178,8 @@ impl CollectionDetailBuilder {
     }
     /// <p>The ARN of the Amazon Web Services KMS key used to encrypt the collection.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input; self
+        self.kms_key_arn = input;
+        self
     }
     /// <p>The Epoch time when the collection was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
@@ -178,7 +188,8 @@ impl CollectionDetailBuilder {
     }
     /// <p>The Epoch time when the collection was created.</p>
     pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-        self.created_date = input; self
+        self.created_date = input;
+        self
     }
     /// <p>The date and time when the collection was last modified.</p>
     pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -187,7 +198,8 @@ impl CollectionDetailBuilder {
     }
     /// <p>The date and time when the collection was last modified.</p>
     pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_modified_date = input; self
+        self.last_modified_date = input;
+        self
     }
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
     pub fn collection_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,8 +207,12 @@ impl CollectionDetailBuilder {
         self
     }
     /// <p>Collection-specific endpoint used to submit index, search, and data upload requests to an OpenSearch Serverless collection.</p>
-    pub fn set_collection_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_endpoint = input; self
+    pub fn set_collection_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.collection_endpoint = input;
+        self
     }
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
     pub fn dashboard_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,35 +220,27 @@ impl CollectionDetailBuilder {
         self
     }
     /// <p>Collection-specific endpoint used to access OpenSearch Dashboards.</p>
-    pub fn set_dashboard_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_endpoint = input; self
+    pub fn set_dashboard_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dashboard_endpoint = input;
+        self
     }
     /// Consumes the builder and constructs a [`CollectionDetail`](crate::types::CollectionDetail).
     pub fn build(self) -> crate::types::CollectionDetail {
         crate::types::CollectionDetail {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            status: self.status
-            ,
-            r#type: self.r#type
-            ,
-            description: self.description
-            ,
-            arn: self.arn
-            ,
-            kms_key_arn: self.kms_key_arn
-            ,
-            created_date: self.created_date
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            collection_endpoint: self.collection_endpoint
-            ,
-            dashboard_endpoint: self.dashboard_endpoint
-            ,
+            id: self.id,
+            name: self.name,
+            status: self.status,
+            r#type: self.r#type,
+            description: self.description,
+            arn: self.arn,
+            kms_key_arn: self.kms_key_arn,
+            created_date: self.created_date,
+            last_modified_date: self.last_modified_date,
+            collection_endpoint: self.collection_endpoint,
+            dashboard_endpoint: self.dashboard_endpoint,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Details of the watchlists in a domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WatchlistDetails  {
+pub struct WatchlistDetails {
     /// <p>The identifier of the default watchlist.</p>
     #[doc(hidden)]
     pub default_watchlist_id: std::option::Option<std::string::String>,
 }
 impl WatchlistDetails {
     /// <p>The identifier of the default watchlist.</p>
-    pub fn default_watchlist_id(&self) -> std::option::Option<& str> {
+    pub fn default_watchlist_id(&self) -> std::option::Option<&str> {
         self.default_watchlist_id.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl WatchlistDetailsBuilder {
         self
     }
     /// <p>The identifier of the default watchlist.</p>
-    pub fn set_default_watchlist_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_watchlist_id = input; self
+    pub fn set_default_watchlist_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_watchlist_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`WatchlistDetails`](crate::types::WatchlistDetails).
     pub fn build(self) -> crate::types::WatchlistDetails {
         crate::types::WatchlistDetails {
-            default_watchlist_id: self.default_watchlist_id
-            ,
+            default_watchlist_id: self.default_watchlist_id,
         }
     }
 }
-

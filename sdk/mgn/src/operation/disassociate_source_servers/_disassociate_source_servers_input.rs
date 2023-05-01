@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateSourceServersInput  {
+pub struct DisassociateSourceServersInput {
     /// <p>Application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociateSourceServersInput  {
 }
 impl DisassociateSourceServersInput {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>Source server IDs list.</p>
-    pub fn source_server_i_ds(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn source_server_i_ds(&self) -> std::option::Option<&[std::string::String]> {
         self.source_server_i_ds.as_deref()
     }
 }
 impl DisassociateSourceServersInput {
     /// Creates a new builder-style object to manufacture [`DisassociateSourceServersInput`](crate::operation::disassociate_source_servers::DisassociateSourceServersInput).
-    pub fn builder() -> crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder{
         crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DisassociateSourceServersInputBuilder {
     }
     /// <p>Application ID.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// Appends an item to `source_server_i_ds`.
     ///
@@ -51,24 +52,30 @@ impl DisassociateSourceServersInputBuilder {
     /// <p>Source server IDs list.</p>
     pub fn source_server_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.source_server_i_ds.unwrap_or_default();
-                        v.push(input.into());
-                        self.source_server_i_ds = Some(v);
-                        self
+        v.push(input.into());
+        self.source_server_i_ds = Some(v);
+        self
     }
     /// <p>Source server IDs list.</p>
-    pub fn set_source_server_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.source_server_i_ds = input; self
+    pub fn set_source_server_i_ds(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.source_server_i_ds = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateSourceServersInput`](crate::operation::disassociate_source_servers::DisassociateSourceServersInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_source_servers::DisassociateSourceServersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_source_servers::DisassociateSourceServersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disassociate_source_servers::DisassociateSourceServersInput {
-                application_id: self.application_id
-                ,
-                source_server_i_ds: self.source_server_i_ds
-                ,
-            }
+                application_id: self.application_id,
+                source_server_i_ds: self.source_server_i_ds,
+            },
         )
     }
 }
-

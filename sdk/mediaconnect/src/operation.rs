@@ -150,4 +150,3 @@ pub mod update_flow_source;
 
 /// Types for the `UpdateGatewayInstance` operation.
 pub mod update_gateway_instance;
-

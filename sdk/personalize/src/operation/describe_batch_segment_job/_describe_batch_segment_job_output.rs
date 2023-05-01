@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBatchSegmentJobOutput  {
+pub struct DescribeBatchSegmentJobOutput {
     /// <p>Information on the specified batch segment job.</p>
     #[doc(hidden)]
     pub batch_segment_job: std::option::Option<crate::types::BatchSegmentJob>,
@@ -10,18 +10,20 @@ pub struct DescribeBatchSegmentJobOutput  {
 }
 impl DescribeBatchSegmentJobOutput {
     /// <p>Information on the specified batch segment job.</p>
-    pub fn batch_segment_job(&self) -> std::option::Option<& crate::types::BatchSegmentJob> {
+    pub fn batch_segment_job(&self) -> std::option::Option<&crate::types::BatchSegmentJob> {
         self.batch_segment_job.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeBatchSegmentJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeBatchSegmentJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBatchSegmentJobOutput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput).
-    pub fn builder() -> crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobOutputBuilder
+    {
         crate::operation::describe_batch_segment_job::builders::DescribeBatchSegmentJobOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl DescribeBatchSegmentJobOutputBuilder {
         self
     }
     /// <p>Information on the specified batch segment job.</p>
-    pub fn set_batch_segment_job(mut self, input: std::option::Option<crate::types::BatchSegmentJob>) -> Self {
-        self.batch_segment_job = input; self
+    pub fn set_batch_segment_job(
+        mut self,
+        input: std::option::Option<crate::types::BatchSegmentJob>,
+    ) -> Self {
+        self.batch_segment_job = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeBatchSegmentJobOutput`](crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput).
-    pub fn build(self) -> crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput {
         crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput {
-            batch_segment_job: self.batch_segment_job
-            ,
+            batch_segment_job: self.batch_segment_job,
             _request_id: self._request_id,
         }
     }
 }
-

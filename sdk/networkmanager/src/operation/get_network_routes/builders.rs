@@ -4,57 +4,80 @@ pub use crate::operation::get_network_routes::_get_network_routes_output::GetNet
 pub use crate::operation::get_network_routes::_get_network_routes_input::GetNetworkRoutesInputBuilder;
 
 /// Fluent builder constructing a request to `GetNetworkRoutes`.
-/// 
+///
 /// <p>Gets the network routes of the specified global network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetNetworkRoutesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_network_routes::builders::GetNetworkRoutesInputBuilder,
+    inner: crate::operation::get_network_routes::builders::GetNetworkRoutesInputBuilder,
 }
-impl GetNetworkRoutesFluentBuilder  {
+impl GetNetworkRoutesFluentBuilder {
     /// Creates a new `GetNetworkRoutes`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_network_routes::GetNetworkRoutes, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_network_routes::GetNetworkRoutesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_network_routes::GetNetworkRoutesOutput, aws_smithy_http::result::SdkError<crate::operation::get_network_routes::GetNetworkRoutesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_network_routes::GetNetworkRoutes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_network_routes::GetNetworkRoutesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_network_routes::GetNetworkRoutesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_network_routes::GetNetworkRoutesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -64,7 +87,10 @@ impl GetNetworkRoutesFluentBuilder  {
         self
     }
     /// <p>The ID of the route table.</p>
-    pub fn set_route_table_identifier(mut self, input: std::option::Option<crate::types::RouteTableIdentifier>) -> Self {
+    pub fn set_route_table_identifier(
+        mut self,
+        input: std::option::Option<crate::types::RouteTableIdentifier>,
+    ) -> Self {
         self.inner = self.inner.set_route_table_identifier(input);
         self
     }
@@ -78,7 +104,10 @@ impl GetNetworkRoutesFluentBuilder  {
         self
     }
     /// <p>An exact CIDR block.</p>
-    pub fn set_exact_cidr_matches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_exact_cidr_matches(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_exact_cidr_matches(input);
         self
     }
@@ -92,7 +121,10 @@ impl GetNetworkRoutesFluentBuilder  {
         self
     }
     /// <p>The most specific route that matches the traffic (longest prefix match).</p>
-    pub fn set_longest_prefix_matches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_longest_prefix_matches(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_longest_prefix_matches(input);
         self
     }
@@ -106,7 +138,10 @@ impl GetNetworkRoutesFluentBuilder  {
         self
     }
     /// <p>The routes with a subnet that match the specified CIDR filter.</p>
-    pub fn set_subnet_of_matches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_subnet_of_matches(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_subnet_of_matches(input);
         self
     }
@@ -120,7 +155,10 @@ impl GetNetworkRoutesFluentBuilder  {
         self
     }
     /// <p>The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.</p>
-    pub fn set_supernet_of_matches(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_supernet_of_matches(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_supernet_of_matches(input);
         self
     }
@@ -134,7 +172,10 @@ impl GetNetworkRoutesFluentBuilder  {
         self
     }
     /// <p>The IDs of the prefix lists.</p>
-    pub fn set_prefix_list_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_prefix_list_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_prefix_list_ids(input);
         self
     }
@@ -148,7 +189,10 @@ impl GetNetworkRoutesFluentBuilder  {
         self
     }
     /// <p>The route states.</p>
-    pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::RouteState>>) -> Self {
+    pub fn set_states(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RouteState>>,
+    ) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
@@ -162,7 +206,10 @@ impl GetNetworkRoutesFluentBuilder  {
         self
     }
     /// <p>The route types.</p>
-    pub fn set_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::RouteType>>) -> Self {
+    pub fn set_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RouteType>>,
+    ) -> Self {
         self.inner = self.inner.set_types(input);
         self
     }
@@ -171,14 +218,22 @@ impl GetNetworkRoutesFluentBuilder  {
     /// To override the contents of this collection use [`set_destination_filters`](Self::set_destination_filters).
     ///
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
-    pub fn destination_filters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
+    pub fn destination_filters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::vec::Vec<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.destination_filters(k.into(), v);
         self
     }
     /// <p>Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.</p>
-    pub fn set_destination_filters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+    pub fn set_destination_filters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_destination_filters(input);
         self
     }
 }
-

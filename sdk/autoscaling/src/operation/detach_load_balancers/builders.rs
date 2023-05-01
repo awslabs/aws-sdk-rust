@@ -4,62 +4,85 @@ pub use crate::operation::detach_load_balancers::_detach_load_balancers_output::
 pub use crate::operation::detach_load_balancers::_detach_load_balancers_input::DetachLoadBalancersInputBuilder;
 
 /// Fluent builder constructing a request to `DetachLoadBalancers`.
-/// 
-/// <note> 
-/// <p>This API operation is superseded by <code>DetachTrafficSources</code>, which can detach multiple traffic sources types. We recommend using <code>DetachTrafficSources</code> to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancers</code>. You can use both the original <code>DetachLoadBalancers</code> API operation and <code>DetachTrafficSources</code> on the same Auto Scaling group.</p> 
-/// </note> 
-/// <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling group.</p> 
-/// <p>This operation detaches only Classic Load Balancers. If you have Application Load Balancers, Network Load Balancers, or Gateway Load Balancers, use the <code>DetachLoadBalancerTargetGroups</code> API instead.</p> 
+///
+/// <note>
+/// <p>This API operation is superseded by <code>DetachTrafficSources</code>, which can detach multiple traffic sources types. We recommend using <code>DetachTrafficSources</code> to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancers</code>. You can use both the original <code>DetachLoadBalancers</code> API operation and <code>DetachTrafficSources</code> on the same Auto Scaling group.</p>
+/// </note>
+/// <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling group.</p>
+/// <p>This operation detaches only Classic Load Balancers. If you have Application Load Balancers, Network Load Balancers, or Gateway Load Balancers, use the <code>DetachLoadBalancerTargetGroups</code> API instead.</p>
 /// <p>When you detach a load balancer, it enters the <code>Removing</code> state while deregistering the instances in the group. When all instances are deregistered, then you can no longer describe the load balancer using the <code>DescribeLoadBalancers</code> API call. The instances remain running.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachLoadBalancersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::detach_load_balancers::builders::DetachLoadBalancersInputBuilder,
+    inner: crate::operation::detach_load_balancers::builders::DetachLoadBalancersInputBuilder,
 }
-impl DetachLoadBalancersFluentBuilder  {
+impl DetachLoadBalancersFluentBuilder {
     /// Creates a new `DetachLoadBalancers`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::detach_load_balancers::DetachLoadBalancers, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::detach_load_balancers::DetachLoadBalancersError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::detach_load_balancers::DetachLoadBalancersOutput, aws_smithy_http::result::SdkError<crate::operation::detach_load_balancers::DetachLoadBalancersError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::detach_load_balancers::DetachLoadBalancers,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::detach_load_balancers::DetachLoadBalancersError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::detach_load_balancers::DetachLoadBalancersOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::detach_load_balancers::DetachLoadBalancersError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -73,9 +96,11 @@ impl DetachLoadBalancersFluentBuilder  {
         self
     }
     /// <p>The names of the load balancers. You can specify up to 10 load balancers.</p>
-    pub fn set_load_balancer_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_load_balancer_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_load_balancer_names(input);
         self
     }
 }
-

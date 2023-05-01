@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFraudstersOutput  {
+pub struct ListFraudstersOutput {
     /// <p>A list that contains details about each fraudster in the Amazon Web Services account. </p>
     #[doc(hidden)]
     pub fraudster_summaries: std::option::Option<std::vec::Vec<crate::types::FraudsterSummary>>,
@@ -13,19 +13,19 @@ pub struct ListFraudstersOutput  {
 }
 impl ListFraudstersOutput {
     /// <p>A list that contains details about each fraudster in the Amazon Web Services account. </p>
-    pub fn fraudster_summaries(&self) -> std::option::Option<& [crate::types::FraudsterSummary]> {
+    pub fn fraudster_summaries(&self) -> std::option::Option<&[crate::types::FraudsterSummary]> {
         self.fraudster_summaries.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFraudstersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListFraudstersOutput {
     /// Creates a new builder-style object to manufacture [`ListFraudstersOutput`](crate::operation::list_fraudsters::ListFraudstersOutput).
     pub fn builder() -> crate::operation::list_fraudsters::builders::ListFraudstersOutputBuilder {
@@ -37,7 +37,8 @@ impl ListFraudstersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListFraudstersOutputBuilder {
-    pub(crate) fraudster_summaries: std::option::Option<std::vec::Vec<crate::types::FraudsterSummary>>,
+    pub(crate) fraudster_summaries:
+        std::option::Option<std::vec::Vec<crate::types::FraudsterSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl ListFraudstersOutputBuilder {
     /// <p>A list that contains details about each fraudster in the Amazon Web Services account. </p>
     pub fn fraudster_summaries(mut self, input: crate::types::FraudsterSummary) -> Self {
         let mut v = self.fraudster_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.fraudster_summaries = Some(v);
-                        self
+        v.push(input);
+        self.fraudster_summaries = Some(v);
+        self
     }
     /// <p>A list that contains details about each fraudster in the Amazon Web Services account. </p>
-    pub fn set_fraudster_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::FraudsterSummary>>) -> Self {
-        self.fraudster_summaries = input; self
+    pub fn set_fraudster_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FraudsterSummary>>,
+    ) -> Self {
+        self.fraudster_summaries = input;
+        self
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListFraudstersOutputBuilder {
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFraudstersOutput`](crate::operation::list_fraudsters::ListFraudstersOutput).
     pub fn build(self) -> crate::operation::list_fraudsters::ListFraudstersOutput {
         crate::operation::list_fraudsters::ListFraudstersOutput {
-            fraudster_summaries: self.fraudster_summaries
-            ,
-            next_token: self.next_token
-            ,
+            fraudster_summaries: self.fraudster_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

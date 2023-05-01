@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAdministratorAccountInput  {
+pub struct GetAdministratorAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
 }
 impl GetAdministratorAccountInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
 }
 impl GetAdministratorAccountInput {
     /// Creates a new builder-style object to manufacture [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).
-    pub fn builder() -> crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder
+    {
         crate::operation::get_administrator_account::builders::GetAdministratorAccountInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl GetAdministratorAccountInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAdministratorAccountInput`](crate::operation::get_administrator_account::GetAdministratorAccountInput).
-    pub fn build(self) -> Result<crate::operation::get_administrator_account::GetAdministratorAccountInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_administrator_account::GetAdministratorAccountInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_administrator_account::GetAdministratorAccountInput {
-                detector_id: self.detector_id
-                ,
-            }
+                detector_id: self.detector_id,
+            },
         )
     }
 }
-

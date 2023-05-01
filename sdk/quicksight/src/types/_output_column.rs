@@ -3,7 +3,7 @@
 /// <p>Output column.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputColumn  {
+pub struct OutputColumn {
     /// <p>A display name for the dataset.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct OutputColumn  {
 }
 impl OutputColumn {
     /// <p>A display name for the dataset.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description for a column.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Type.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ColumnDataType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ColumnDataType> {
         self.r#type.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl OutputColumnBuilder {
     }
     /// <p>A display name for the dataset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description for a column.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl OutputColumnBuilder {
     }
     /// <p>A description for a column.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Type.</p>
     pub fn r#type(mut self, input: crate::types::ColumnDataType) -> Self {
@@ -69,18 +71,15 @@ impl OutputColumnBuilder {
     }
     /// <p>Type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ColumnDataType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`OutputColumn`](crate::types::OutputColumn).
     pub fn build(self) -> crate::types::OutputColumn {
         crate::types::OutputColumn {
-            name: self.name
-            ,
-            description: self.description
-            ,
-            r#type: self.r#type
-            ,
+            name: self.name,
+            description: self.description,
+            r#type: self.r#type,
         }
     }
 }
-

@@ -760,4 +760,3 @@ pub mod builders;
 
 /// Error types that Amazon Simple Storage Service can respond with.
 pub mod error;
-

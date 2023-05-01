@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameInput  {
+pub struct UpdateGameInput {
     /// <p>The name of the game.</p>
     #[doc(hidden)]
     pub game_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateGameInput  {
 }
 impl UpdateGameInput {
     /// <p>The name of the game.</p>
-    pub fn game_name(&self) -> std::option::Option<& str> {
+    pub fn game_name(&self) -> std::option::Option<&str> {
         self.game_name.as_deref()
     }
     /// <p>The description of the game.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl UpdateGameInputBuilder {
     }
     /// <p>The name of the game.</p>
     pub fn set_game_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_name = input; self
+        self.game_name = input;
+        self
     }
     /// <p>The description of the game.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl UpdateGameInputBuilder {
     }
     /// <p>The description of the game.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateGameInput`](crate::operation::update_game::UpdateGameInput).
-    pub fn build(self) -> Result<crate::operation::update_game::UpdateGameInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_game::UpdateGameInput {
-                game_name: self.game_name
-                ,
-                description: self.description
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_game::UpdateGameInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_game::UpdateGameInput {
+            game_name: self.game_name,
+            description: self.description,
+        })
     }
 }
-

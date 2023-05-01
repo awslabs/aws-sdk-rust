@@ -4,58 +4,81 @@ pub use crate::operation::create_security_profile::_create_security_profile_outp
 pub use crate::operation::create_security_profile::_create_security_profile_input::CreateSecurityProfileInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSecurityProfile`.
-/// 
-/// <p>Creates a Device Defender security profile.</p> 
+///
+/// <p>Creates a Device Defender security profile.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSecurityProfile</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSecurityProfileFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder,
+    inner: crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder,
 }
-impl CreateSecurityProfileFluentBuilder  {
+impl CreateSecurityProfileFluentBuilder {
     /// Creates a new `CreateSecurityProfile`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_security_profile::CreateSecurityProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_security_profile::CreateSecurityProfileError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_security_profile::CreateSecurityProfileOutput, aws_smithy_http::result::SdkError<crate::operation::create_security_profile::CreateSecurityProfileError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_security_profile::CreateSecurityProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_security_profile::CreateSecurityProfileError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_security_profile::CreateSecurityProfileOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_security_profile::CreateSecurityProfileError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name you are giving to the security profile.</p>
     pub fn security_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.security_profile_name(input.into());
         self
     }
     /// <p>The name you are giving to the security profile.</p>
-    pub fn set_security_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_security_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_security_profile_name(input);
         self
     }
@@ -65,7 +88,10 @@ impl CreateSecurityProfileFluentBuilder  {
         self
     }
     /// <p>A description of the security profile.</p>
-    pub fn set_security_profile_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_security_profile_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_security_profile_description(input);
         self
     }
@@ -79,7 +105,10 @@ impl CreateSecurityProfileFluentBuilder  {
         self
     }
     /// <p>Specifies the behaviors that, when violated by a device (thing), cause an alert.</p>
-    pub fn set_behaviors(mut self, input: std::option::Option<std::vec::Vec<crate::types::Behavior>>) -> Self {
+    pub fn set_behaviors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Behavior>>,
+    ) -> Self {
         self.inner = self.inner.set_behaviors(input);
         self
     }
@@ -88,12 +117,21 @@ impl CreateSecurityProfileFluentBuilder  {
     /// To override the contents of this collection use [`set_alert_targets`](Self::set_alert_targets).
     ///
     /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
-    pub fn alert_targets(mut self, k: crate::types::AlertTargetType, v: crate::types::AlertTarget) -> Self {
+    pub fn alert_targets(
+        mut self,
+        k: crate::types::AlertTargetType,
+        v: crate::types::AlertTarget,
+    ) -> Self {
         self.inner = self.inner.alert_targets(k, v);
         self
     }
     /// <p>Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior.</p>
-    pub fn set_alert_targets(mut self, input: std::option::Option<std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>>) -> Self {
+    pub fn set_alert_targets(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<crate::types::AlertTargetType, crate::types::AlertTarget>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_alert_targets(input);
         self
     }
@@ -101,17 +139,20 @@ impl CreateSecurityProfileFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_additional_metrics_to_retain`](Self::set_additional_metrics_to_retain).
     ///
-    /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p> 
+    /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
     pub fn additional_metrics_to_retain(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.additional_metrics_to_retain(input.into());
         self
     }
-    /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p> 
+    /// <p> <i>Please use <code>CreateSecurityProfileRequest$additionalMetricsToRetainV2</code> instead.</i> </p>
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
     #[deprecated(note = "Use additionalMetricsToRetainV2.")]
-    pub fn set_additional_metrics_to_retain(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_additional_metrics_to_retain(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_additional_metrics_to_retain(input);
         self
     }
@@ -125,7 +166,10 @@ impl CreateSecurityProfileFluentBuilder  {
         self
     }
     /// <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom metrics; cannot be used with dimensions.</p>
-    pub fn set_additional_metrics_to_retain_v2(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricToRetain>>) -> Self {
+    pub fn set_additional_metrics_to_retain_v2(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricToRetain>>,
+    ) -> Self {
         self.inner = self.inner.set_additional_metrics_to_retain_v2(input);
         self
     }
@@ -139,9 +183,11 @@ impl CreateSecurityProfileFluentBuilder  {
         self
     }
     /// <p>Metadata that can be used to manage the security profile.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

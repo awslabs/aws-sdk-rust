@@ -3,7 +3,7 @@
 /// A DASH manifest configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashManifest  {
+pub struct DashManifest {
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
     #[doc(hidden)]
     pub manifest_layout: std::option::Option<crate::types::ManifestLayout>,
@@ -25,11 +25,11 @@ pub struct DashManifest  {
 }
 impl DashManifest {
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
-    pub fn manifest_layout(&self) -> std::option::Option<& crate::types::ManifestLayout> {
+    pub fn manifest_layout(&self) -> std::option::Option<&crate::types::ManifestLayout> {
         self.manifest_layout.as_ref()
     }
     /// An optional string to include in the name of the manifest.
-    pub fn manifest_name(&self) -> std::option::Option<& str> {
+    pub fn manifest_name(&self) -> std::option::Option<&str> {
         self.manifest_name.as_deref()
     }
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
@@ -37,15 +37,15 @@ impl DashManifest {
         self.min_buffer_time_seconds
     }
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
-    pub fn profile(&self) -> std::option::Option<& crate::types::Profile> {
+    pub fn profile(&self) -> std::option::Option<&crate::types::Profile> {
         self.profile.as_ref()
     }
     /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
-    pub fn scte_markers_source(&self) -> std::option::Option<& crate::types::ScteMarkersSource> {
+    pub fn scte_markers_source(&self) -> std::option::Option<&crate::types::ScteMarkersSource> {
         self.scte_markers_source.as_ref()
     }
     /// A StreamSelection configuration.
-    pub fn stream_selection(&self) -> std::option::Option<& crate::types::StreamSelection> {
+    pub fn stream_selection(&self) -> std::option::Option<&crate::types::StreamSelection> {
         self.stream_selection.as_ref()
     }
 }
@@ -74,8 +74,12 @@ impl DashManifestBuilder {
         self
     }
     /// Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
-    pub fn set_manifest_layout(mut self, input: std::option::Option<crate::types::ManifestLayout>) -> Self {
-        self.manifest_layout = input; self
+    pub fn set_manifest_layout(
+        mut self,
+        input: std::option::Option<crate::types::ManifestLayout>,
+    ) -> Self {
+        self.manifest_layout = input;
+        self
     }
     /// An optional string to include in the name of the manifest.
     pub fn manifest_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl DashManifestBuilder {
     }
     /// An optional string to include in the name of the manifest.
     pub fn set_manifest_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.manifest_name = input; self
+        self.manifest_name = input;
+        self
     }
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
     pub fn min_buffer_time_seconds(mut self, input: i32) -> Self {
@@ -93,7 +98,8 @@ impl DashManifestBuilder {
     }
     /// Minimum duration (in seconds) that a player will buffer media before starting the presentation.
     pub fn set_min_buffer_time_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_buffer_time_seconds = input; self
+        self.min_buffer_time_seconds = input;
+        self
     }
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
     pub fn profile(mut self, input: crate::types::Profile) -> Self {
@@ -102,7 +108,8 @@ impl DashManifestBuilder {
     }
     /// The Dynamic Adaptive Streaming over HTTP (DASH) profile type. When set to "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
     pub fn set_profile(mut self, input: std::option::Option<crate::types::Profile>) -> Self {
-        self.profile = input; self
+        self.profile = input;
+        self
     }
     /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
     pub fn scte_markers_source(mut self, input: crate::types::ScteMarkersSource) -> Self {
@@ -110,8 +117,12 @@ impl DashManifestBuilder {
         self
     }
     /// The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
-    pub fn set_scte_markers_source(mut self, input: std::option::Option<crate::types::ScteMarkersSource>) -> Self {
-        self.scte_markers_source = input; self
+    pub fn set_scte_markers_source(
+        mut self,
+        input: std::option::Option<crate::types::ScteMarkersSource>,
+    ) -> Self {
+        self.scte_markers_source = input;
+        self
     }
     /// A StreamSelection configuration.
     pub fn stream_selection(mut self, input: crate::types::StreamSelection) -> Self {
@@ -119,26 +130,22 @@ impl DashManifestBuilder {
         self
     }
     /// A StreamSelection configuration.
-    pub fn set_stream_selection(mut self, input: std::option::Option<crate::types::StreamSelection>) -> Self {
-        self.stream_selection = input; self
+    pub fn set_stream_selection(
+        mut self,
+        input: std::option::Option<crate::types::StreamSelection>,
+    ) -> Self {
+        self.stream_selection = input;
+        self
     }
     /// Consumes the builder and constructs a [`DashManifest`](crate::types::DashManifest).
     pub fn build(self) -> crate::types::DashManifest {
         crate::types::DashManifest {
-            manifest_layout: self.manifest_layout
-            ,
-            manifest_name: self.manifest_name
-            ,
-            min_buffer_time_seconds: self.min_buffer_time_seconds
-                .unwrap_or_default()
-            ,
-            profile: self.profile
-            ,
-            scte_markers_source: self.scte_markers_source
-            ,
-            stream_selection: self.stream_selection
-            ,
+            manifest_layout: self.manifest_layout,
+            manifest_name: self.manifest_name,
+            min_buffer_time_seconds: self.min_buffer_time_seconds.unwrap_or_default(),
+            profile: self.profile,
+            scte_markers_source: self.scte_markers_source,
+            stream_selection: self.stream_selection,
         }
     }
 }
-

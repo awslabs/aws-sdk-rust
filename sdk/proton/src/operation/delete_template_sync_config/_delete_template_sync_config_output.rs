@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTemplateSyncConfigOutput  {
+pub struct DeleteTemplateSyncConfigOutput {
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
     #[doc(hidden)]
     pub template_sync_config: std::option::Option<crate::types::TemplateSyncConfig>,
@@ -10,18 +10,18 @@ pub struct DeleteTemplateSyncConfigOutput  {
 }
 impl DeleteTemplateSyncConfigOutput {
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    pub fn template_sync_config(&self) -> std::option::Option<& crate::types::TemplateSyncConfig> {
+    pub fn template_sync_config(&self) -> std::option::Option<&crate::types::TemplateSyncConfig> {
         self.template_sync_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteTemplateSyncConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteTemplateSyncConfigOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTemplateSyncConfigOutput`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput).
-    pub fn builder() -> crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigOutputBuilder {
+    pub fn builder() -> crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigOutputBuilder{
         crate::operation::delete_template_sync_config::builders::DeleteTemplateSyncConfigOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl DeleteTemplateSyncConfigOutputBuilder {
         self
     }
     /// <p>The template sync configuration detail data that's returned by Proton.</p>
-    pub fn set_template_sync_config(mut self, input: std::option::Option<crate::types::TemplateSyncConfig>) -> Self {
-        self.template_sync_config = input; self
+    pub fn set_template_sync_config(
+        mut self,
+        input: std::option::Option<crate::types::TemplateSyncConfig>,
+    ) -> Self {
+        self.template_sync_config = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteTemplateSyncConfigOutput`](crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput).
-    pub fn build(self) -> crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput {
         crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput {
-            template_sync_config: self.template_sync_config
-            ,
+            template_sync_config: self.template_sync_config,
             _request_id: self._request_id,
         }
     }
 }
-

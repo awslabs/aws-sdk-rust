@@ -3,7 +3,7 @@
 /// <p>This structure defines a project, which is the logical object in Evidently that can contain features, launches, and experiments. Use projects to group similar features together.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Project  {
+pub struct Project {
     /// <p>The name or ARN of the project.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -45,31 +45,32 @@ pub struct Project  {
     pub app_config_resource: std::option::Option<crate::types::ProjectAppConfigResource>,
     /// <p>The list of tag keys and values associated with this project.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Project {
     /// <p>The name or ARN of the project.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The current state of the project.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ProjectStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ProjectStatus> {
         self.status.as_ref()
     }
     /// <p>The user-entered description of the project.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time that the project is created.</p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The date and time that the project was most recently updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>The number of features currently in the project.</p>
@@ -93,15 +94,20 @@ impl Project {
         self.active_experiment_count
     }
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
-    pub fn data_delivery(&self) -> std::option::Option<& crate::types::ProjectDataDelivery> {
+    pub fn data_delivery(&self) -> std::option::Option<&crate::types::ProjectDataDelivery> {
         self.data_delivery.as_ref()
     }
     /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
-    pub fn app_config_resource(&self) -> std::option::Option<& crate::types::ProjectAppConfigResource> {
+    pub fn app_config_resource(
+        &self,
+    ) -> std::option::Option<&crate::types::ProjectAppConfigResource> {
         self.app_config_resource.as_ref()
     }
     /// <p>The list of tag keys and values associated with this project.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -129,7 +135,8 @@ pub struct ProjectBuilder {
     pub(crate) active_experiment_count: std::option::Option<i64>,
     pub(crate) data_delivery: std::option::Option<crate::types::ProjectDataDelivery>,
     pub(crate) app_config_resource: std::option::Option<crate::types::ProjectAppConfigResource>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ProjectBuilder {
     /// <p>The name or ARN of the project.</p>
@@ -139,7 +146,8 @@ impl ProjectBuilder {
     }
     /// <p>The name or ARN of the project.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the project.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +156,8 @@ impl ProjectBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The current state of the project.</p>
     pub fn status(mut self, input: crate::types::ProjectStatus) -> Self {
@@ -157,7 +166,8 @@ impl ProjectBuilder {
     }
     /// <p>The current state of the project.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ProjectStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The user-entered description of the project.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,7 +176,8 @@ impl ProjectBuilder {
     }
     /// <p>The user-entered description of the project.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date and time that the project is created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -174,8 +185,12 @@ impl ProjectBuilder {
         self
     }
     /// <p>The date and time that the project is created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     /// <p>The date and time that the project was most recently updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -183,8 +198,12 @@ impl ProjectBuilder {
         self
     }
     /// <p>The date and time that the project was most recently updated.</p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     /// <p>The number of features currently in the project.</p>
     pub fn feature_count(mut self, input: i64) -> Self {
@@ -193,7 +212,8 @@ impl ProjectBuilder {
     }
     /// <p>The number of features currently in the project.</p>
     pub fn set_feature_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.feature_count = input; self
+        self.feature_count = input;
+        self
     }
     /// <p>The number of launches currently in the project. This includes all launches that have been created and not deleted, whether they are ongoing or not.</p>
     pub fn launch_count(mut self, input: i64) -> Self {
@@ -202,7 +222,8 @@ impl ProjectBuilder {
     }
     /// <p>The number of launches currently in the project. This includes all launches that have been created and not deleted, whether they are ongoing or not.</p>
     pub fn set_launch_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.launch_count = input; self
+        self.launch_count = input;
+        self
     }
     /// <p>The number of ongoing launches currently in the project.</p>
     pub fn active_launch_count(mut self, input: i64) -> Self {
@@ -211,7 +232,8 @@ impl ProjectBuilder {
     }
     /// <p>The number of ongoing launches currently in the project.</p>
     pub fn set_active_launch_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.active_launch_count = input; self
+        self.active_launch_count = input;
+        self
     }
     /// <p>The number of experiments currently in the project. This includes all experiments that have been created and not deleted, whether they are ongoing or not.</p>
     pub fn experiment_count(mut self, input: i64) -> Self {
@@ -220,7 +242,8 @@ impl ProjectBuilder {
     }
     /// <p>The number of experiments currently in the project. This includes all experiments that have been created and not deleted, whether they are ongoing or not.</p>
     pub fn set_experiment_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.experiment_count = input; self
+        self.experiment_count = input;
+        self
     }
     /// <p>The number of ongoing experiments currently in the project.</p>
     pub fn active_experiment_count(mut self, input: i64) -> Self {
@@ -229,7 +252,8 @@ impl ProjectBuilder {
     }
     /// <p>The number of ongoing experiments currently in the project.</p>
     pub fn set_active_experiment_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.active_experiment_count = input; self
+        self.active_experiment_count = input;
+        self
     }
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
     pub fn data_delivery(mut self, input: crate::types::ProjectDataDelivery) -> Self {
@@ -237,8 +261,12 @@ impl ProjectBuilder {
         self
     }
     /// <p>A structure that contains information about where Evidently is to store evaluation events for longer term storage.</p>
-    pub fn set_data_delivery(mut self, input: std::option::Option<crate::types::ProjectDataDelivery>) -> Self {
-        self.data_delivery = input; self
+    pub fn set_data_delivery(
+        mut self,
+        input: std::option::Option<crate::types::ProjectDataDelivery>,
+    ) -> Self {
+        self.data_delivery = input;
+        self
     }
     /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
     pub fn app_config_resource(mut self, input: crate::types::ProjectAppConfigResource) -> Self {
@@ -246,56 +274,55 @@ impl ProjectBuilder {
         self
     }
     /// <p>This structure defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
-    pub fn set_app_config_resource(mut self, input: std::option::Option<crate::types::ProjectAppConfigResource>) -> Self {
-        self.app_config_resource = input; self
+    pub fn set_app_config_resource(
+        mut self,
+        input: std::option::Option<crate::types::ProjectAppConfigResource>,
+    ) -> Self {
+        self.app_config_resource = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tag keys and values associated with this project.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The list of tag keys and values associated with this project.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`Project`](crate::types::Project).
     pub fn build(self) -> crate::types::Project {
         crate::types::Project {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            status: self.status
-            ,
-            description: self.description
-            ,
-            created_time: self.created_time
-            ,
-            last_updated_time: self.last_updated_time
-            ,
-            feature_count: self.feature_count
-            ,
-            launch_count: self.launch_count
-            ,
-            active_launch_count: self.active_launch_count
-            ,
-            experiment_count: self.experiment_count
-            ,
-            active_experiment_count: self.active_experiment_count
-            ,
-            data_delivery: self.data_delivery
-            ,
-            app_config_resource: self.app_config_resource
-            ,
-            tags: self.tags
-            ,
+            arn: self.arn,
+            name: self.name,
+            status: self.status,
+            description: self.description,
+            created_time: self.created_time,
+            last_updated_time: self.last_updated_time,
+            feature_count: self.feature_count,
+            launch_count: self.launch_count,
+            active_launch_count: self.active_launch_count,
+            experiment_count: self.experiment_count,
+            active_experiment_count: self.active_experiment_count,
+            data_delivery: self.data_delivery,
+            app_config_resource: self.app_config_resource,
+            tags: self.tags,
         }
     }
 }
-

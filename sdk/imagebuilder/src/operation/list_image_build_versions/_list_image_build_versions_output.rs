@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImageBuildVersionsOutput  {
+pub struct ListImageBuildVersionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -16,26 +16,28 @@ pub struct ListImageBuildVersionsOutput  {
 }
 impl ListImageBuildVersionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The list of image build versions.</p>
-    pub fn image_summary_list(&self) -> std::option::Option<& [crate::types::ImageSummary]> {
+    pub fn image_summary_list(&self) -> std::option::Option<&[crate::types::ImageSummary]> {
         self.image_summary_list.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListImageBuildVersionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListImageBuildVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListImageBuildVersionsOutput`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput).
-    pub fn builder() -> crate::operation::list_image_build_versions::builders::ListImageBuildVersionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_image_build_versions::builders::ListImageBuildVersionsOutputBuilder
+    {
         crate::operation::list_image_build_versions::builders::ListImageBuildVersionsOutputBuilder::default()
     }
 }
@@ -57,7 +59,8 @@ impl ListImageBuildVersionsOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// Appends an item to `image_summary_list`.
     ///
@@ -66,13 +69,17 @@ impl ListImageBuildVersionsOutputBuilder {
     /// <p>The list of image build versions.</p>
     pub fn image_summary_list(mut self, input: crate::types::ImageSummary) -> Self {
         let mut v = self.image_summary_list.unwrap_or_default();
-                        v.push(input);
-                        self.image_summary_list = Some(v);
-                        self
+        v.push(input);
+        self.image_summary_list = Some(v);
+        self
     }
     /// <p>The list of image build versions.</p>
-    pub fn set_image_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImageSummary>>) -> Self {
-        self.image_summary_list = input; self
+    pub fn set_image_summary_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ImageSummary>>,
+    ) -> Self {
+        self.image_summary_list = input;
+        self
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,28 +88,27 @@ impl ListImageBuildVersionsOutputBuilder {
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListImageBuildVersionsOutput`](crate::operation::list_image_build_versions::ListImageBuildVersionsOutput).
-    pub fn build(self) -> crate::operation::list_image_build_versions::ListImageBuildVersionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_image_build_versions::ListImageBuildVersionsOutput {
         crate::operation::list_image_build_versions::ListImageBuildVersionsOutput {
-            request_id: self.request_id
-            ,
-            image_summary_list: self.image_summary_list
-            ,
-            next_token: self.next_token
-            ,
+            request_id: self.request_id,
+            image_summary_list: self.image_summary_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

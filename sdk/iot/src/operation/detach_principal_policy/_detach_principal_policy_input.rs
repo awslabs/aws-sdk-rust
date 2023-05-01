@@ -3,29 +3,31 @@
 /// <p>The input for the DetachPrincipalPolicy operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachPrincipalPolicyInput  {
+pub struct DetachPrincipalPolicyInput {
     /// <p>The name of the policy to detach.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The principal.</p> 
+    /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
 }
 impl DetachPrincipalPolicyInput {
     /// <p>The name of the policy to detach.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>The principal.</p> 
+    /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
-    pub fn principal(&self) -> std::option::Option<& str> {
+    pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
 }
 impl DetachPrincipalPolicyInput {
     /// Creates a new builder-style object to manufacture [`DetachPrincipalPolicyInput`](crate::operation::detach_principal_policy::DetachPrincipalPolicyInput).
-    pub fn builder() -> crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyInputBuilder
+    {
         crate::operation::detach_principal_policy::builders::DetachPrincipalPolicyInputBuilder::default()
     }
 }
@@ -45,29 +47,33 @@ impl DetachPrincipalPolicyInputBuilder {
     }
     /// <p>The name of the policy to detach.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
-    /// <p>The principal.</p> 
+    /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
         self.principal = Some(input.into());
         self
     }
-    /// <p>The principal.</p> 
+    /// <p>The principal.</p>
     /// <p>Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal = input; self
+        self.principal = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetachPrincipalPolicyInput`](crate::operation::detach_principal_policy::DetachPrincipalPolicyInput).
-    pub fn build(self) -> Result<crate::operation::detach_principal_policy::DetachPrincipalPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::detach_principal_policy::DetachPrincipalPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::detach_principal_policy::DetachPrincipalPolicyInput {
-                policy_name: self.policy_name
-                ,
-                principal: self.principal
-                ,
-            }
+                policy_name: self.policy_name,
+                principal: self.principal,
+            },
         )
     }
 }
-

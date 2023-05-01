@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppInstanceOutput  {
+pub struct DescribeAppInstanceOutput {
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     #[doc(hidden)]
     pub app_instance: std::option::Option<crate::types::AppInstance>,
@@ -10,19 +10,21 @@ pub struct DescribeAppInstanceOutput  {
 }
 impl DescribeAppInstanceOutput {
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
-    pub fn app_instance(&self) -> std::option::Option<& crate::types::AppInstance> {
+    pub fn app_instance(&self) -> std::option::Option<&crate::types::AppInstance> {
         self.app_instance.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAppInstanceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAppInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceOutput`](crate::operation::describe_app_instance::DescribeAppInstanceOutput).
-    pub fn builder() -> crate::operation::describe_app_instance::builders::DescribeAppInstanceOutputBuilder {
-        crate::operation::describe_app_instance::builders::DescribeAppInstanceOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_app_instance::builders::DescribeAppInstanceOutputBuilder {
+        crate::operation::describe_app_instance::builders::DescribeAppInstanceOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl DescribeAppInstanceOutputBuilder {
         self
     }
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
-    pub fn set_app_instance(mut self, input: std::option::Option<crate::types::AppInstance>) -> Self {
-        self.app_instance = input; self
+    pub fn set_app_instance(
+        mut self,
+        input: std::option::Option<crate::types::AppInstance>,
+    ) -> Self {
+        self.app_instance = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAppInstanceOutput`](crate::operation::describe_app_instance::DescribeAppInstanceOutput).
     pub fn build(self) -> crate::operation::describe_app_instance::DescribeAppInstanceOutput {
         crate::operation::describe_app_instance::DescribeAppInstanceOutput {
-            app_instance: self.app_instance
-            ,
+            app_instance: self.app_instance,
             _request_id: self._request_id,
         }
     }
 }
-

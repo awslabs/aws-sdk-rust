@@ -4,58 +4,79 @@ pub use crate::operation::describe_servers::_describe_servers_output::DescribeSe
 pub use crate::operation::describe_servers::_describe_servers_input::DescribeServersInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeServers`.
-/// 
-/// <p> Lists all configuration management servers that are identified with your account. Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does not query other services. </p> 
-/// <p> This operation is synchronous. </p> 
+///
+/// <p> Lists all configuration management servers that are identified with your account. Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does not query other services. </p>
+/// <p> This operation is synchronous. </p>
 /// <p> A <code>ResourceNotFoundException</code> is thrown when the server does not exist. A <code>ValidationException</code> is raised when parameters of the request are not valid. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeServersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_servers::builders::DescribeServersInputBuilder,
+    inner: crate::operation::describe_servers::builders::DescribeServersInputBuilder,
 }
-impl DescribeServersFluentBuilder  {
+impl DescribeServersFluentBuilder {
     /// Creates a new `DescribeServers`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_servers::DescribeServers, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_servers::DescribeServersError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_servers::DescribeServersOutput, aws_smithy_http::result::SdkError<crate::operation::describe_servers::DescribeServersError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_servers::DescribeServers,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::describe_servers::DescribeServersError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_servers::DescribeServersOutput,
+        aws_smithy_http::result::SdkError<crate::operation::describe_servers::DescribeServersError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_servers::paginator::DescribeServersPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_servers::paginator::DescribeServersPaginator {
-                                crate::operation::describe_servers::paginator::DescribeServersPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_servers::paginator::DescribeServersPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_servers::paginator::DescribeServersPaginator {
+        crate::operation::describe_servers::paginator::DescribeServersPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>Describes the server with the specified ServerName.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.server_name(input.into());
@@ -87,4 +108,3 @@ impl DescribeServersFluentBuilder  {
         self
     }
 }
-

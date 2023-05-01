@@ -3,7 +3,7 @@
 /// <p>An object that specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrganizationManagedRuleMetadata  {
+pub struct OrganizationManagedRuleMetadata {
     /// <p>The description that you provide for your organization Config rule.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -13,8 +13,8 @@ pub struct OrganizationManagedRuleMetadata  {
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     #[doc(hidden)]
     pub input_parameters: std::option::Option<std::string::String>,
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note> 
-    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p> 
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
+    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
     #[doc(hidden)]
     pub maximum_execution_frequency: std::option::Option<crate::types::MaximumExecutionFrequency>,
@@ -33,37 +33,39 @@ pub struct OrganizationManagedRuleMetadata  {
 }
 impl OrganizationManagedRuleMetadata {
     /// <p>The description that you provide for your organization Config rule.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>For organization config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
-    pub fn rule_identifier(&self) -> std::option::Option<& str> {
+    pub fn rule_identifier(&self) -> std::option::Option<&str> {
         self.rule_identifier.as_deref()
     }
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
-    pub fn input_parameters(&self) -> std::option::Option<& str> {
+    pub fn input_parameters(&self) -> std::option::Option<&str> {
         self.input_parameters.as_deref()
     }
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note> 
-    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p> 
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
+    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
-    pub fn maximum_execution_frequency(&self) -> std::option::Option<& crate::types::MaximumExecutionFrequency> {
+    pub fn maximum_execution_frequency(
+        &self,
+    ) -> std::option::Option<&crate::types::MaximumExecutionFrequency> {
         self.maximum_execution_frequency.as_ref()
     }
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    pub fn resource_types_scope(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resource_types_scope(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types_scope.as_deref()
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
-    pub fn resource_id_scope(&self) -> std::option::Option<& str> {
+    pub fn resource_id_scope(&self) -> std::option::Option<&str> {
         self.resource_id_scope.as_deref()
     }
     /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
-    pub fn tag_key_scope(&self) -> std::option::Option<& str> {
+    pub fn tag_key_scope(&self) -> std::option::Option<&str> {
         self.tag_key_scope.as_deref()
     }
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
-    pub fn tag_value_scope(&self) -> std::option::Option<& str> {
+    pub fn tag_value_scope(&self) -> std::option::Option<&str> {
         self.tag_value_scope.as_deref()
     }
 }
@@ -81,7 +83,8 @@ pub struct OrganizationManagedRuleMetadataBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) rule_identifier: std::option::Option<std::string::String>,
     pub(crate) input_parameters: std::option::Option<std::string::String>,
-    pub(crate) maximum_execution_frequency: std::option::Option<crate::types::MaximumExecutionFrequency>,
+    pub(crate) maximum_execution_frequency:
+        std::option::Option<crate::types::MaximumExecutionFrequency>,
     pub(crate) resource_types_scope: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) resource_id_scope: std::option::Option<std::string::String>,
     pub(crate) tag_key_scope: std::option::Option<std::string::String>,
@@ -95,7 +98,8 @@ impl OrganizationManagedRuleMetadataBuilder {
     }
     /// <p>The description that you provide for your organization Config rule.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>For organization config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
     pub fn rule_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +108,8 @@ impl OrganizationManagedRuleMetadataBuilder {
     }
     /// <p>For organization config managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using Config managed rules</a>.</p>
     pub fn set_rule_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_identifier = input; self
+        self.rule_identifier = input;
+        self
     }
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub fn input_parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,20 +118,28 @@ impl OrganizationManagedRuleMetadataBuilder {
     }
     /// <p>A string, in JSON format, that is passed to your organization Config rule Lambda function.</p>
     pub fn set_input_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_parameters = input; self
+        self.input_parameters = input;
+        self
     }
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note> 
-    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p> 
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
+    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
-    pub fn maximum_execution_frequency(mut self, input: crate::types::MaximumExecutionFrequency) -> Self {
+    pub fn maximum_execution_frequency(
+        mut self,
+        input: crate::types::MaximumExecutionFrequency,
+    ) -> Self {
         self.maximum_execution_frequency = Some(input);
         self
     }
-    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note> 
-    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p> 
+    /// <p>The maximum frequency with which Config runs evaluations for a rule. This is for an Config managed rule that is triggered at a periodic frequency.</p> <note>
+    /// <p>By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code> parameter.</p>
     /// </note>
-    pub fn set_maximum_execution_frequency(mut self, input: std::option::Option<crate::types::MaximumExecutionFrequency>) -> Self {
-        self.maximum_execution_frequency = input; self
+    pub fn set_maximum_execution_frequency(
+        mut self,
+        input: std::option::Option<crate::types::MaximumExecutionFrequency>,
+    ) -> Self {
+        self.maximum_execution_frequency = input;
+        self
     }
     /// Appends an item to `resource_types_scope`.
     ///
@@ -135,13 +148,17 @@ impl OrganizationManagedRuleMetadataBuilder {
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
     pub fn resource_types_scope(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_types_scope.unwrap_or_default();
-                        v.push(input.into());
-                        self.resource_types_scope = Some(v);
-                        self
+        v.push(input.into());
+        self.resource_types_scope = Some(v);
+        self
     }
     /// <p>The type of the Amazon Web Services resource that was evaluated.</p>
-    pub fn set_resource_types_scope(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resource_types_scope = input; self
+    pub fn set_resource_types_scope(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resource_types_scope = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
     pub fn resource_id_scope(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +166,12 @@ impl OrganizationManagedRuleMetadataBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services resource that was evaluated.</p>
-    pub fn set_resource_id_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id_scope = input; self
+    pub fn set_resource_id_scope(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_id_scope = input;
+        self
     }
     /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
     pub fn tag_key_scope(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +180,8 @@ impl OrganizationManagedRuleMetadataBuilder {
     }
     /// <p>One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more specific tag values. </p>
     pub fn set_tag_key_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tag_key_scope = input; self
+        self.tag_key_scope = input;
+        self
     }
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub fn tag_value_scope(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,28 +190,20 @@ impl OrganizationManagedRuleMetadataBuilder {
     }
     /// <p>The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key).</p>
     pub fn set_tag_value_scope(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tag_value_scope = input; self
+        self.tag_value_scope = input;
+        self
     }
     /// Consumes the builder and constructs a [`OrganizationManagedRuleMetadata`](crate::types::OrganizationManagedRuleMetadata).
     pub fn build(self) -> crate::types::OrganizationManagedRuleMetadata {
         crate::types::OrganizationManagedRuleMetadata {
-            description: self.description
-            ,
-            rule_identifier: self.rule_identifier
-            ,
-            input_parameters: self.input_parameters
-            ,
-            maximum_execution_frequency: self.maximum_execution_frequency
-            ,
-            resource_types_scope: self.resource_types_scope
-            ,
-            resource_id_scope: self.resource_id_scope
-            ,
-            tag_key_scope: self.tag_key_scope
-            ,
-            tag_value_scope: self.tag_value_scope
-            ,
+            description: self.description,
+            rule_identifier: self.rule_identifier,
+            input_parameters: self.input_parameters,
+            maximum_execution_frequency: self.maximum_execution_frequency,
+            resource_types_scope: self.resource_types_scope,
+            resource_id_scope: self.resource_id_scope,
+            tag_key_scope: self.tag_key_scope,
+            tag_value_scope: self.tag_value_scope,
         }
     }
 }
-

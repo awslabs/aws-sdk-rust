@@ -3,7 +3,7 @@
 /// <p>An import reference job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportReferenceJobItem  {
+pub struct ImportReferenceJobItem {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct ImportReferenceJobItem  {
 }
 impl ImportReferenceJobItem {
     /// <p>The job's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The job's reference store ID.</p>
-    pub fn reference_store_id(&self) -> std::option::Option<& str> {
+    pub fn reference_store_id(&self) -> std::option::Option<&str> {
         self.reference_store_id.as_deref()
     }
     /// <p>The job's service role ARN.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The job's status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ReferenceImportJobStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ReferenceImportJobStatus> {
         self.status.as_ref()
     }
     /// <p>When the job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the job completed.</p>
-    pub fn completion_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn completion_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completion_time.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl ImportReferenceJobItemBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The job's reference store ID.</p>
     pub fn reference_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +84,12 @@ impl ImportReferenceJobItemBuilder {
         self
     }
     /// <p>The job's reference store ID.</p>
-    pub fn set_reference_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reference_store_id = input; self
+    pub fn set_reference_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.reference_store_id = input;
+        self
     }
     /// <p>The job's service role ARN.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +98,8 @@ impl ImportReferenceJobItemBuilder {
     }
     /// <p>The job's service role ARN.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The job's status.</p>
     pub fn status(mut self, input: crate::types::ReferenceImportJobStatus) -> Self {
@@ -101,8 +107,12 @@ impl ImportReferenceJobItemBuilder {
         self
     }
     /// <p>The job's status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ReferenceImportJobStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ReferenceImportJobStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>When the job was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,8 +120,12 @@ impl ImportReferenceJobItemBuilder {
         self
     }
     /// <p>When the job was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>When the job completed.</p>
     pub fn completion_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,25 +133,22 @@ impl ImportReferenceJobItemBuilder {
         self
     }
     /// <p>When the job completed.</p>
-    pub fn set_completion_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.completion_time = input; self
+    pub fn set_completion_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.completion_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportReferenceJobItem`](crate::types::ImportReferenceJobItem).
     pub fn build(self) -> crate::types::ImportReferenceJobItem {
         crate::types::ImportReferenceJobItem {
-            id: self.id
-            ,
-            reference_store_id: self.reference_store_id
-            ,
-            role_arn: self.role_arn
-            ,
-            status: self.status
-            ,
-            creation_time: self.creation_time
-            ,
-            completion_time: self.completion_time
-            ,
+            id: self.id,
+            reference_store_id: self.reference_store_id,
+            role_arn: self.role_arn,
+            status: self.status,
+            creation_time: self.creation_time,
+            completion_time: self.completion_time,
         }
     }
 }
-

@@ -4,58 +4,81 @@ pub use crate::operation::create_instance_snapshot::_create_instance_snapshot_ou
 pub use crate::operation::create_instance_snapshot::_create_instance_snapshot_input::CreateInstanceSnapshotInputBuilder;
 
 /// Fluent builder constructing a request to `CreateInstanceSnapshot`.
-/// 
-/// <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a new instance that is based on that snapshot.</p> 
+///
+/// <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a new instance that is based on that snapshot.</p>
 /// <p>The <code>create instance snapshot</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateInstanceSnapshotFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_instance_snapshot::builders::CreateInstanceSnapshotInputBuilder,
+    inner: crate::operation::create_instance_snapshot::builders::CreateInstanceSnapshotInputBuilder,
 }
-impl CreateInstanceSnapshotFluentBuilder  {
+impl CreateInstanceSnapshotFluentBuilder {
     /// Creates a new `CreateInstanceSnapshot`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_instance_snapshot::CreateInstanceSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_instance_snapshot::CreateInstanceSnapshotError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_instance_snapshot::CreateInstanceSnapshotOutput, aws_smithy_http::result::SdkError<crate::operation::create_instance_snapshot::CreateInstanceSnapshotError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_instance_snapshot::CreateInstanceSnapshotOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name for your new snapshot.</p>
     pub fn instance_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_snapshot_name(input.into());
         self
     }
     /// <p>The name for your new snapshot.</p>
-    pub fn set_instance_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_instance_snapshot_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_instance_snapshot_name(input);
         self
     }
@@ -73,17 +96,19 @@ impl CreateInstanceSnapshotFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tag keys and optional values to add to the resource during create.</p> 
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The tag keys and optional values to add to the resource during create.</p> 
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

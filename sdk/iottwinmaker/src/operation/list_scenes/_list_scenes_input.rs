@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListScenesInput  {
+pub struct ListScenesInput {
     /// <p>The ID of the workspace that contains the scenes.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListScenesInput  {
 }
 impl ListScenesInput {
     /// <p>The ID of the workspace that contains the scenes.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>Specifies the maximum number of results to display.</p>
@@ -23,7 +23,7 @@ impl ListScenesInput {
         self.max_results
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl ListScenesInputBuilder {
     }
     /// <p>The ID of the workspace that contains the scenes.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// <p>Specifies the maximum number of results to display.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl ListScenesInputBuilder {
     }
     /// <p>Specifies the maximum number of results to display.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl ListScenesInputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListScenesInput`](crate::operation::list_scenes::ListScenesInput).
-    pub fn build(self) -> Result<crate::operation::list_scenes::ListScenesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_scenes::ListScenesInput {
-                workspace_id: self.workspace_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_scenes::ListScenesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_scenes::ListScenesInput {
+            workspace_id: self.workspace_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

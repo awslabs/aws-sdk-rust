@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRotationOutput  {
+pub struct UpdateRotationOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateRotationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateRotationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRotationOutput`](crate::operation::update_rotation::UpdateRotationOutput).
     pub fn builder() -> crate::operation::update_rotation::builders::UpdateRotationOutputBuilder {
@@ -25,14 +25,14 @@ pub struct UpdateRotationOutputBuilder {
 }
 impl UpdateRotationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateRotationOutput`](crate::operation::update_rotation::UpdateRotationOutput).
     pub fn build(self) -> crate::operation::update_rotation::UpdateRotationOutput {
         crate::operation::update_rotation::UpdateRotationOutput {
@@ -40,4 +40,3 @@ impl UpdateRotationOutputBuilder {
         }
     }
 }
-

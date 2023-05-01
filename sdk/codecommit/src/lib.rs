@@ -11,15 +11,14 @@
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
-
 #![warn(missing_docs)]
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
-//! 
+//!
 //! This is the _AWS CodeCommit API Reference_. This reference provides descriptions of the operations and data types for AWS CodeCommit API along with usage examples.
-//! 
+//!
 //! You can use the AWS CodeCommit API to work with the following objects:
-//! 
+//!
 //! Repositories, by calling the following:
 //!   - BatchGetRepositories, which returns information about one or more repositories associated with your AWS account.
 //!   - CreateRepository, which creates an AWS CodeCommit repository.
@@ -28,27 +27,27 @@
 //!   - ListRepositories, which lists all AWS CodeCommit repositories associated with your AWS account.
 //!   - UpdateRepositoryDescription, which sets or updates the description of the repository.
 //!   - UpdateRepositoryName, which changes the name of the repository. If you change the name of a repository, no other users of that repository can access it until you send them the new HTTPS or SSH URL to use.
-//! 
+//!
 //! Branches, by calling the following:
 //!   - CreateBranch, which creates a branch in a specified repository.
 //!   - DeleteBranch, which deletes the specified branch in a repository unless it is the default branch.
 //!   - GetBranch, which returns information about a specified branch.
 //!   - ListBranches, which lists all branches for a specified repository.
 //!   - UpdateDefaultBranch, which changes the default branch for a repository.
-//! 
+//!
 //! Files, by calling the following:
 //!   - DeleteFile, which deletes the content of a specified file from a specified branch.
 //!   - GetBlob, which returns the base-64 encoded content of an individual Git blob object in a repository.
 //!   - GetFile, which returns the base-64 encoded content of a specified file.
 //!   - GetFolder, which returns the contents of a specified folder or directory.
 //!   - PutFile, which adds or modifies a single file in a specified repository and branch.
-//! 
+//!
 //! Commits, by calling the following:
 //!   - BatchGetCommits, which returns information about one or more commits in a repository.
 //!   - CreateCommit, which creates a commit for changes to a repository.
 //!   - GetCommit, which returns information about a commit, including commit messages and author and committer information.
 //!   - GetDifferences, which returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified reference).
-//! 
+//!
 //! Merges, by calling the following:
 //!   - BatchDescribeMergeConflicts, which returns information about conflicts in a merge between commits in a repository.
 //!   - CreateUnreferencedMergeCommit, which creates an unreferenced commit between two branches or commits for the purpose of comparing them and identifying any potential conflicts.
@@ -59,7 +58,7 @@
 //!   - MergeBranchesByFastForward, which merges two branches using the fast-forward merge option.
 //!   - MergeBranchesBySquash, which merges two branches using the squash merge option.
 //!   - MergeBranchesByThreeWay, which merges two branches using the three-way merge option.
-//! 
+//!
 //! Pull requests, by calling the following:
 //!   - CreatePullRequest, which creates a pull request in a specified repository.
 //!   - CreatePullRequestApprovalRule, which creates an approval rule for a specified pull request.
@@ -81,7 +80,7 @@
 //!   - UpdatePullRequestDescription, which updates the description of a pull request.
 //!   - UpdatePullRequestStatus, which updates the status of a pull request.
 //!   - UpdatePullRequestTitle, which updates the title of a pull request.
-//! 
+//!
 //! Approval rule templates, by calling the following:
 //!   - AssociateApprovalRuleTemplateWithRepository, which associates a template with a specified repository. After the template is associated with a repository, AWS CodeCommit creates approval rules that match the template conditions on every pull request created in the specified repository.
 //!   - BatchAssociateApprovalRuleTemplateWithRepositories, which associates a template with one or more specified repositories. After the template is associated with a repository, AWS CodeCommit creates approval rules that match the template conditions on every pull request created in the specified repositories.
@@ -96,7 +95,7 @@
 //!   - UpdateApprovalRuleTemplateDescription, which updates the description of an approval rule template.
 //!   - UpdateApprovalRuleTemplateName, which updates the name of an approval rule template.
 //!   - UpdateApprovalRuleTemplateContent, which updates the content of an approval rule template.
-//! 
+//!
 //! Comments in a repository, by calling the following:
 //!   - DeleteCommentContent, which deletes the content of a comment on a commit in a repository.
 //!   - GetComment, which returns information about a comment on a commit.
@@ -106,92 +105,91 @@
 //!   - PostCommentReply, which creates a reply to a comment.
 //!   - PutCommentReaction, which creates or updates an emoji reaction to a comment.
 //!   - UpdateComment, which updates the content of a comment on a commit in a repository.
-//! 
+//!
 //! Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:
 //!   - ListTagsForResource, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit.
 //!   - TagResource, which adds or updates tags for a resource in AWS CodeCommit.
 //!   - UntagResource, which removes tags for a resource in AWS CodeCommit.
-//! 
+//!
 //! Triggers, by calling the following:
 //!   - GetRepositoryTriggers, which returns information about triggers configured for a repository.
 //!   - PutRepositoryTriggers, which replaces all triggers for a repository and can be used to create or delete triggers.
 //!   - TestRepositoryTriggers, which tests the functionality of a repository trigger by sending data to the trigger target.
-//! 
+//!
 //! For information about how to use AWS CodeCommit, see the [AWS CodeCommit User Guide](https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html).
-//! 
+//!
 //! ## Getting Started
-//! 
+//!
 //! > Examples are available for many services and operations, check out the
 //! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
-//! 
+//!
 //! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
 //! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-codecommit` to
 //! your project, add the following to your **Cargo.toml** file:
-//! 
+//!
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.1"
 //! aws-sdk-codecommit = "0.27.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
-//! 
+//!
 //! Then in code, a client can be created with the following:
-//! 
+//!
 //! ```rust,no_run
 //! use aws_sdk_codecommit as codecommit;
-//! 
+//!
 //! #[tokio::main]
 //! async fn main() -> Result<(), codecommit::Error> {
 //!     let config = aws_config::load_from_env().await;
 //!     let client = codecommit::Client::new(&config);
-//! 
+//!
 //!     // ... make some calls with the client
-//! 
+//!
 //!     Ok(())
 //! }
 //! ```
-//! 
+//!
 //! See the [client documentation](https://docs.rs/aws-sdk-codecommit/latest/aws_sdk_codecommit/client/struct.Client.html)
 //! for information on what calls can be made, and the inputs and outputs for each of those calls.
-//! 
+//!
 //! ## Using the SDK
-//! 
+//!
 //! Until the SDK is released, we will be adding information about using the SDK to the
 //! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
 //! additional sections for the guide by opening an issue and describing what you are trying to do.
-//! 
+//!
 //! ## Getting Help
-//! 
+//!
 //! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
 //! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
 //! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
 //! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
-//! 
-//! 
+//!
+//!
 //! # Crate Organization
-//! 
+//!
 //! The entry point for most customers will be [`Client`], which exposes one method for each API
 //! offered by AWS CodeCommit. The return value of each of these methods is a "fluent builder",
 //! where the different inputs for that API are added by builder-style function call chaining,
 //! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
 //! either a successful output or a [`SdkError`](crate::error::SdkError).
-//! 
+//!
 //! Some of these API inputs may be structs or enums to provide more complex structured information.
 //! These structs and enums live in [`types`](crate::types). There are some simpler types for
 //! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
-//! 
+//!
 //! All types required to configure a client via the [`Config`](crate::Config) struct live
 //! in [`config`](crate::config).
-//! 
+//!
 //! The [`operation`](crate::operation) module has a submodule for every API, and in each submodule
 //! is the input, output, and error type for that API, as well as builders to construct each of those.
-//! 
+//!
 //! There is a top-level [`Error`](crate::Error) type that encompasses all the errors that the
 //! client can return. Any other error type can be converted to this `Error` type via the
 //! [`From`](std::convert::From) trait.
-//! 
+//!
 //! The other modules within this crate are not required for normal usage.
-
 
 // Code generated by software.amazon.smithy.rust.codegen.smithy-rs. DO NOT EDIT.
 pub use error_meta::Error;
@@ -201,14 +199,14 @@ pub use config::Config;
 
 /// Client for calling AWS CodeCommit.
 /// ## Constructing a `Client`
-/// 
+///
 /// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
 /// crate should be used to automatically resolve this config using
 /// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
 /// across multiple different AWS SDK clients. This config resolution process can be customized
 /// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
 /// the [builder pattern] to customize the default config.
-/// 
+///
 /// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
 /// # async fn wrapper() {
@@ -216,12 +214,12 @@ pub use config::Config;
 /// let client = aws_sdk_codecommit::Client::new(&config);
 /// # }
 /// ```
-/// 
+///
 /// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
 /// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
 /// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
 /// done as follows:
-/// 
+///
 /// ```rust,no_run
 /// # async fn wrapper() {
 /// let sdk_config = aws_config::load_from_env().await;
@@ -232,12 +230,12 @@ pub use config::Config;
 ///     .build();
 /// # }
 /// ```
-/// 
+///
 /// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
-/// 
+///
 /// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
 /// be done once at application start-up.
-/// 
+///
 /// [`Config`]: crate::Config
 /// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
 /// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
@@ -247,20 +245,20 @@ pub use config::Config;
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
 /// # Using the `Client`
-/// 
+///
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AssociateApprovalRuleTemplateWithRepository`](crate::operation::associate_approval_rule_template_with_repository) operation has
 /// a [`Client::associate_approval_rule_template_with_repository`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
-/// 
+///
 /// ```rust,ignore
 /// let result = client.associate_approval_rule_template_with_repository()
 ///     .approval_rule_template_name("example")
 ///     .send()
 ///     .await;
 /// ```
-/// 
+///
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
@@ -291,10 +289,10 @@ pub mod types;
 
 mod idempotency_token;
 
-/// 
+///
 pub mod middleware;
 
-/// 
+///
 mod no_credentials;
 
 mod lens;
@@ -307,4 +305,3 @@ mod json_errors;
 
 #[doc(inline)]
 pub use client::Client;
-

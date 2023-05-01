@@ -4,59 +4,79 @@ pub use crate::operation::delete_time_series::_delete_time_series_output::Delete
 pub use crate::operation::delete_time_series::_delete_time_series_input::DeleteTimeSeriesInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteTimeSeries`.
-/// 
-/// <p>Deletes a time series (data stream). If you delete a time series that's associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property.</p> 
-/// <p>To identify a time series, do one of the following:</p> 
-/// <ul> 
-/// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li> 
-/// <li> <p>If the time series is associated with an asset property, specify one of the following: </p> 
-/// <ul> 
-/// <li> <p>The <code>alias</code> of the time series.</p> </li> 
-/// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li> 
-/// </ul> </li> 
+///
+/// <p>Deletes a time series (data stream). If you delete a time series that's associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property.</p>
+/// <p>To identify a time series, do one of the following:</p>
+/// <ul>
+/// <li> <p>If the time series isn't associated with an asset property, specify the <code>alias</code> of the time series.</p> </li>
+/// <li> <p>If the time series is associated with an asset property, specify one of the following: </p>
+/// <ul>
+/// <li> <p>The <code>alias</code> of the time series.</p> </li>
+/// <li> <p>The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.</p> </li>
+/// </ul> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteTimeSeriesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_time_series::builders::DeleteTimeSeriesInputBuilder,
+    inner: crate::operation::delete_time_series::builders::DeleteTimeSeriesInputBuilder,
 }
-impl DeleteTimeSeriesFluentBuilder  {
+impl DeleteTimeSeriesFluentBuilder {
     /// Creates a new `DeleteTimeSeries`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_time_series::DeleteTimeSeries, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_time_series::DeleteTimeSeriesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_time_series::DeleteTimeSeriesOutput, aws_smithy_http::result::SdkError<crate::operation::delete_time_series::DeleteTimeSeriesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_time_series::DeleteTimeSeries,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_time_series::DeleteTimeSeriesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_time_series::DeleteTimeSeriesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_time_series::DeleteTimeSeriesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The alias that identifies the time series.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.alias(input.into());
@@ -98,4 +118,3 @@ impl DeleteTimeSeriesFluentBuilder  {
         self
     }
 }
-

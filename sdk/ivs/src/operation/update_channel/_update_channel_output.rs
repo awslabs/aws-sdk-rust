@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelOutput  {
+pub struct UpdateChannelOutput {
     /// <p>Object specifying a channel.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::types::Channel>,
@@ -10,15 +10,15 @@ pub struct UpdateChannelOutput  {
 }
 impl UpdateChannelOutput {
     /// <p>Object specifying a channel.</p>
-    pub fn channel(&self) -> std::option::Option<& crate::types::Channel> {
+    pub fn channel(&self) -> std::option::Option<&crate::types::Channel> {
         self.channel.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateChannelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateChannelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput).
     pub fn builder() -> crate::operation::update_channel::builders::UpdateChannelOutputBuilder {
@@ -41,24 +41,23 @@ impl UpdateChannelOutputBuilder {
     }
     /// <p>Object specifying a channel.</p>
     pub fn set_channel(mut self, input: std::option::Option<crate::types::Channel>) -> Self {
-        self.channel = input; self
+        self.channel = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::operation::update_channel::UpdateChannelOutput).
     pub fn build(self) -> crate::operation::update_channel::UpdateChannelOutput {
         crate::operation::update_channel::UpdateChannelOutput {
-            channel: self.channel
-            ,
+            channel: self.channel,
             _request_id: self._request_id,
         }
     }
 }
-

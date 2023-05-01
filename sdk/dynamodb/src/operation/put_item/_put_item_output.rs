@@ -3,18 +3,20 @@
 /// <p>Represents the output of a <code>PutItem</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutItemOutput  {
+pub struct PutItemOutput {
     /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element consists of an attribute name and an attribute value.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
+    pub attributes: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    >,
     /// <p>The capacity units consumed by the <code>PutItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     #[doc(hidden)]
     pub consumed_capacity: std::option::Option<crate::types::ConsumedCapacity>,
-    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
-    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
+    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
+    /// <ul>
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub item_collection_metrics: std::option::Option<crate::types::ItemCollectionMetrics>,
@@ -22,28 +24,34 @@ pub struct PutItemOutput  {
 }
 impl PutItemOutput {
     /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element consists of an attribute name and an attribute value.</p>
-    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::AttributeValue>> {
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    > {
         self.attributes.as_ref()
     }
     /// <p>The capacity units consumed by the <code>PutItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn consumed_capacity(&self) -> std::option::Option<& crate::types::ConsumedCapacity> {
+    pub fn consumed_capacity(&self) -> std::option::Option<&crate::types::ConsumedCapacity> {
         self.consumed_capacity.as_ref()
     }
-    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
-    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
+    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
+    /// <ul>
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
-    pub fn item_collection_metrics(&self) -> std::option::Option<& crate::types::ItemCollectionMetrics> {
+    pub fn item_collection_metrics(
+        &self,
+    ) -> std::option::Option<&crate::types::ItemCollectionMetrics> {
         self.item_collection_metrics.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutItemOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutItemOutput {
     /// Creates a new builder-style object to manufacture [`PutItemOutput`](crate::operation::put_item::PutItemOutput).
     pub fn builder() -> crate::operation::put_item::builders::PutItemOutputBuilder {
@@ -55,7 +63,9 @@ impl PutItemOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutItemOutputBuilder {
-    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>,
+    pub(crate) attributes: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+    >,
     pub(crate) consumed_capacity: std::option::Option<crate::types::ConsumedCapacity>,
     pub(crate) item_collection_metrics: std::option::Option<crate::types::ItemCollectionMetrics>,
     _request_id: Option<String>,
@@ -66,15 +76,25 @@ impl PutItemOutputBuilder {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element consists of an attribute name and an attribute value.</p>
-    pub fn attributes(mut self, k: impl Into<std::string::String>, v: crate::types::AttributeValue) -> Self {
+    pub fn attributes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::AttributeValue,
+    ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.attributes = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.attributes = Some(hash_map);
+        self
     }
     /// <p>The attribute values as they appeared before the <code>PutItem</code> operation, but only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request. Each element consists of an attribute name and an attribute value.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::AttributeValue>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::AttributeValue>,
+        >,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     /// <p>The capacity units consumed by the <code>PutItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
     pub fn consumed_capacity(mut self, input: crate::types::ConsumedCapacity) -> Self {
@@ -82,48 +102,52 @@ impl PutItemOutputBuilder {
         self
     }
     /// <p>The capacity units consumed by the <code>PutItem</code> operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the <code>ReturnConsumedCapacity</code> parameter was specified. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-    pub fn set_consumed_capacity(mut self, input: std::option::Option<crate::types::ConsumedCapacity>) -> Self {
-        self.consumed_capacity = input; self
+    pub fn set_consumed_capacity(
+        mut self,
+        input: std::option::Option<crate::types::ConsumedCapacity>,
+    ) -> Self {
+        self.consumed_capacity = input;
+        self
     }
-    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
-    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
+    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
+    /// <ul>
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
     pub fn item_collection_metrics(mut self, input: crate::types::ItemCollectionMetrics) -> Self {
         self.item_collection_metrics = Some(input);
         self
     }
-    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p> 
-    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li> 
-    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li> 
+    /// <p>Information about item collections, if any, that were affected by the <code>PutItem</code> operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code> parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.</p>
+    /// <p>Each <code>ItemCollectionMetrics</code> element consists of:</p>
+    /// <ul>
+    /// <li> <p> <code>ItemCollectionKey</code> - The partition key value of the item collection. This is the same as the partition key value of the item itself.</p> </li>
+    /// <li> <p> <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.</p> <p>The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.</p> </li>
     /// </ul>
-    pub fn set_item_collection_metrics(mut self, input: std::option::Option<crate::types::ItemCollectionMetrics>) -> Self {
-        self.item_collection_metrics = input; self
+    pub fn set_item_collection_metrics(
+        mut self,
+        input: std::option::Option<crate::types::ItemCollectionMetrics>,
+    ) -> Self {
+        self.item_collection_metrics = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutItemOutput`](crate::operation::put_item::PutItemOutput).
     pub fn build(self) -> crate::operation::put_item::PutItemOutput {
         crate::operation::put_item::PutItemOutput {
-            attributes: self.attributes
-            ,
-            consumed_capacity: self.consumed_capacity
-            ,
-            item_collection_metrics: self.item_collection_metrics
-            ,
+            attributes: self.attributes,
+            consumed_capacity: self.consumed_capacity,
+            item_collection_metrics: self.item_collection_metrics,
             _request_id: self._request_id,
         }
     }
 }
-

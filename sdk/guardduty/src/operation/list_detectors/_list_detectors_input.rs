@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDetectorsInput  {
+pub struct ListDetectorsInput {
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,7 +16,7 @@ impl ListDetectorsInput {
         self.max_results
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl ListDetectorsInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl ListDetectorsInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDetectorsInput`](crate::operation::list_detectors::ListDetectorsInput).
-    pub fn build(self) -> Result<crate::operation::list_detectors::ListDetectorsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_detectors::ListDetectorsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_detectors::ListDetectorsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_detectors::ListDetectorsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

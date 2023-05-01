@@ -4,71 +4,100 @@ pub use crate::operation::add_storage_system::_add_storage_system_output::AddSto
 pub use crate::operation::add_storage_system::_add_storage_system_input::AddStorageSystemInputBuilder;
 
 /// Fluent builder constructing a request to `AddStorageSystem`.
-/// 
+///
 /// <p>Creates an Amazon Web Services resource for an on-premises storage system that you want DataSync Discovery to collect information about.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddStorageSystemFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::add_storage_system::builders::AddStorageSystemInputBuilder,
+    inner: crate::operation::add_storage_system::builders::AddStorageSystemInputBuilder,
 }
-impl AddStorageSystemFluentBuilder  {
+impl AddStorageSystemFluentBuilder {
     /// Creates a new `AddStorageSystem`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::add_storage_system::AddStorageSystem, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::add_storage_system::AddStorageSystemError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::add_storage_system::AddStorageSystemOutput, aws_smithy_http::result::SdkError<crate::operation::add_storage_system::AddStorageSystemError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::add_storage_system::AddStorageSystem,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::add_storage_system::AddStorageSystemError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::add_storage_system::AddStorageSystemOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::add_storage_system::AddStorageSystemError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Specifies the server name and network port required to connect with the management interface of your on-premises storage system.</p>
-    pub fn server_configuration(mut self, input: crate::types::DiscoveryServerConfiguration) -> Self {
+    pub fn server_configuration(
+        mut self,
+        input: crate::types::DiscoveryServerConfiguration,
+    ) -> Self {
         self.inner = self.inner.server_configuration(input);
         self
     }
     /// <p>Specifies the server name and network port required to connect with the management interface of your on-premises storage system.</p>
-    pub fn set_server_configuration(mut self, input: std::option::Option<crate::types::DiscoveryServerConfiguration>) -> Self {
+    pub fn set_server_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DiscoveryServerConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_server_configuration(input);
         self
     }
-    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note> 
-    /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p> 
+    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note>
+    /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
     /// </note>
     pub fn system_type(mut self, input: crate::types::DiscoverySystemType) -> Self {
         self.inner = self.inner.system_type(input);
         self
     }
-    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note> 
-    /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p> 
+    /// <p>Specifies the type of on-premises storage system that you want DataSync Discovery to collect information about.</p> <note>
+    /// <p>DataSync Discovery currently supports NetApp Fabric-Attached Storage (FAS) and All Flash FAS (AFF) systems running ONTAP 9.7 or later.</p>
     /// </note>
-    pub fn set_system_type(mut self, input: std::option::Option<crate::types::DiscoverySystemType>) -> Self {
+    pub fn set_system_type(
+        mut self,
+        input: std::option::Option<crate::types::DiscoverySystemType>,
+    ) -> Self {
         self.inner = self.inner.set_system_type(input);
         self
     }
@@ -82,7 +111,10 @@ impl AddStorageSystemFluentBuilder  {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the DataSync agent that connects to and reads from your on-premises storage system's management interface.</p>
-    pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_agent_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
@@ -92,7 +124,10 @@ impl AddStorageSystemFluentBuilder  {
         self
     }
     /// <p>Specifies the ARN of the Amazon CloudWatch log group for monitoring and logging discovery job events.</p>
-    pub fn set_cloud_watch_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cloud_watch_log_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cloud_watch_log_group_arn(input);
         self
     }
@@ -106,7 +141,10 @@ impl AddStorageSystemFluentBuilder  {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources. We recommend creating at least a name tag for your on-premises storage system.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -136,9 +174,11 @@ impl AddStorageSystemFluentBuilder  {
         self
     }
     /// <p>Specifies the user name and password for accessing your on-premises storage system's management interface.</p>
-    pub fn set_credentials(mut self, input: std::option::Option<crate::types::Credentials>) -> Self {
+    pub fn set_credentials(
+        mut self,
+        input: std::option::Option<crate::types::Credentials>,
+    ) -> Self {
         self.inner = self.inner.set_credentials(input);
         self
     }
 }
-

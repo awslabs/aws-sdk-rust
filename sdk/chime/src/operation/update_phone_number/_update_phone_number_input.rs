@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePhoneNumberInput  {
+pub struct UpdatePhoneNumberInput {
     /// <p>The phone number ID.</p>
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct UpdatePhoneNumberInput  {
 }
 impl UpdatePhoneNumberInput {
     /// <p>The phone number ID.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<& str> {
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The product type.</p>
-    pub fn product_type(&self) -> std::option::Option<& crate::types::PhoneNumberProductType> {
+    pub fn product_type(&self) -> std::option::Option<&crate::types::PhoneNumberProductType> {
         self.product_type.as_ref()
     }
     /// <p>The outbound calling name associated with the phone number.</p>
-    pub fn calling_name(&self) -> std::option::Option<& str> {
+    pub fn calling_name(&self) -> std::option::Option<&str> {
         self.calling_name.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdatePhoneNumberInput  {
+impl std::fmt::Debug for UpdatePhoneNumberInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberInput");
         formatter.field("phone_number_id", &self.phone_number_id);
@@ -38,7 +38,8 @@ impl  std::fmt::Debug for UpdatePhoneNumberInput  {
 }
 impl UpdatePhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
-    pub fn builder() -> crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder {
         crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder::default()
     }
 }
@@ -59,7 +60,8 @@ impl UpdatePhoneNumberInputBuilder {
     }
     /// <p>The phone number ID.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_id = input; self
+        self.phone_number_id = input;
+        self
     }
     /// <p>The product type.</p>
     pub fn product_type(mut self, input: crate::types::PhoneNumberProductType) -> Self {
@@ -67,8 +69,12 @@ impl UpdatePhoneNumberInputBuilder {
         self
     }
     /// <p>The product type.</p>
-    pub fn set_product_type(mut self, input: std::option::Option<crate::types::PhoneNumberProductType>) -> Self {
-        self.product_type = input; self
+    pub fn set_product_type(
+        mut self,
+        input: std::option::Option<crate::types::PhoneNumberProductType>,
+    ) -> Self {
+        self.product_type = input;
+        self
     }
     /// <p>The outbound calling name associated with the phone number.</p>
     pub fn calling_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,19 +83,22 @@ impl UpdatePhoneNumberInputBuilder {
     }
     /// <p>The outbound calling name associated with the phone number.</p>
     pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.calling_name = input; self
+        self.calling_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
-    pub fn build(self) -> Result<crate::operation::update_phone_number::UpdatePhoneNumberInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_phone_number::UpdatePhoneNumberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_phone_number::UpdatePhoneNumberInput {
-                phone_number_id: self.phone_number_id
-                ,
-                product_type: self.product_type
-                ,
-                calling_name: self.calling_name
-                ,
-            }
+                phone_number_id: self.phone_number_id,
+                product_type: self.product_type,
+                calling_name: self.calling_name,
+            },
         )
     }
 }
@@ -102,4 +111,3 @@ impl std::fmt::Debug for UpdatePhoneNumberInputBuilder {
         formatter.finish()
     }
 }
-

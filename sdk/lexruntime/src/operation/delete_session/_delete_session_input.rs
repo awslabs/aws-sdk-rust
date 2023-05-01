@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSessionInput  {
+pub struct DeleteSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
     #[doc(hidden)]
     pub bot_name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct DeleteSessionInput  {
 }
 impl DeleteSessionInput {
     /// <p>The name of the bot that contains the session data.</p>
-    pub fn bot_name(&self) -> std::option::Option<& str> {
+    pub fn bot_name(&self) -> std::option::Option<&str> {
         self.bot_name.as_deref()
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
-    pub fn bot_alias(&self) -> std::option::Option<& str> {
+    pub fn bot_alias(&self) -> std::option::Option<&str> {
         self.bot_alias.as_deref()
     }
     /// <p>The identifier of the user associated with the session data.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl DeleteSessionInputBuilder {
     }
     /// <p>The name of the bot that contains the session data.</p>
     pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_name = input; self
+        self.bot_name = input;
+        self
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
     pub fn bot_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DeleteSessionInputBuilder {
     }
     /// <p>The alias in use for the bot that contains the session data.</p>
     pub fn set_bot_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_alias = input; self
+        self.bot_alias = input;
+        self
     }
     /// <p>The identifier of the user associated with the session data.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl DeleteSessionInputBuilder {
     }
     /// <p>The identifier of the user associated with the session data.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSessionInput`](crate::operation::delete_session::DeleteSessionInput).
-    pub fn build(self) -> Result<crate::operation::delete_session::DeleteSessionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_session::DeleteSessionInput {
-                bot_name: self.bot_name
-                ,
-                bot_alias: self.bot_alias
-                ,
-                user_id: self.user_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_session::DeleteSessionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_session::DeleteSessionInput {
+            bot_name: self.bot_name,
+            bot_alias: self.bot_alias,
+            user_id: self.user_id,
+        })
     }
 }
-

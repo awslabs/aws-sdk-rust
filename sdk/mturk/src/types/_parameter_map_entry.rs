@@ -3,7 +3,7 @@
 /// <p> This data structure is the data type for the AnswerKey parameter of the ScoreMyKnownAnswers/2011-09-01 Review Policy. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterMapEntry  {
+pub struct ParameterMapEntry {
     /// <p> The QuestionID from the HIT that is used to identify which question requires Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review Policy. </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ParameterMapEntry  {
 }
 impl ParameterMapEntry {
     /// <p> The QuestionID from the HIT that is used to identify which question requires Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review Policy. </p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p> The list of answers to the question specified in the MapEntry Key element. The Worker must match all values in order for the answer to be scored correctly. </p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ParameterMapEntryBuilder {
     }
     /// <p> The QuestionID from the HIT that is used to identify which question requires Mechanical Turk to score as part of the ScoreMyKnownAnswers/2011-09-01 Review Policy. </p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -52,22 +53,23 @@ impl ParameterMapEntryBuilder {
     /// <p> The list of answers to the question specified in the MapEntry Key element. The Worker must match all values in order for the answer to be scored correctly. </p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p> The list of answers to the question specified in the MapEntry Key element. The Worker must match all values in order for the answer to be scored correctly. </p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParameterMapEntry`](crate::types::ParameterMapEntry).
     pub fn build(self) -> crate::types::ParameterMapEntry {
         crate::types::ParameterMapEntry {
-            key: self.key
-            ,
-            values: self.values
-            ,
+            key: self.key,
+            values: self.values,
         }
     }
 }
-

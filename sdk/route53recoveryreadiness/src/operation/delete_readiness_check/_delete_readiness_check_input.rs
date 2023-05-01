@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReadinessCheckInput  {
+pub struct DeleteReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
     #[doc(hidden)]
     pub readiness_check_name: std::option::Option<std::string::String>,
 }
 impl DeleteReadinessCheckInput {
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(&self) -> std::option::Option<& str> {
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
         self.readiness_check_name.as_deref()
     }
 }
 impl DeleteReadinessCheckInput {
     /// Creates a new builder-style object to manufacture [`DeleteReadinessCheckInput`](crate::operation::delete_readiness_check::DeleteReadinessCheckInput).
-    pub fn builder() -> crate::operation::delete_readiness_check::builders::DeleteReadinessCheckInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_readiness_check::builders::DeleteReadinessCheckInputBuilder {
         crate::operation::delete_readiness_check::builders::DeleteReadinessCheckInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DeleteReadinessCheckInputBuilder {
         self
     }
     /// <p>Name of a readiness check.</p>
-    pub fn set_readiness_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.readiness_check_name = input; self
+    pub fn set_readiness_check_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.readiness_check_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteReadinessCheckInput`](crate::operation::delete_readiness_check::DeleteReadinessCheckInput).
-    pub fn build(self) -> Result<crate::operation::delete_readiness_check::DeleteReadinessCheckInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_readiness_check::DeleteReadinessCheckInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_readiness_check::DeleteReadinessCheckInput {
-                readiness_check_name: self.readiness_check_name
-                ,
-            }
+                readiness_check_name: self.readiness_check_name,
+            },
         )
     }
 }
-

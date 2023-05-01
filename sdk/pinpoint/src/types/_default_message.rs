@@ -3,21 +3,27 @@
 /// <p>Specifies the default message for all channels.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultMessage  {
+pub struct DefaultMessage {
     /// <p>The default body of the message.</p>
     #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
     /// <p>The default message variables to use in the message. You can override these default variables with individual address variables.</p>
     #[doc(hidden)]
-    pub substitutions: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+    pub substitutions: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    >,
 }
 impl DefaultMessage {
     /// <p>The default body of the message.</p>
-    pub fn body(&self) -> std::option::Option<& str> {
+    pub fn body(&self) -> std::option::Option<&str> {
         self.body.as_deref()
     }
     /// <p>The default message variables to use in the message. You can override these default variables with individual address variables.</p>
-    pub fn substitutions(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
+    pub fn substitutions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
         self.substitutions.as_ref()
     }
 }
@@ -33,7 +39,9 @@ impl DefaultMessage {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DefaultMessageBuilder {
     pub(crate) body: std::option::Option<std::string::String>,
-    pub(crate) substitutions: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+    pub(crate) substitutions: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    >,
 }
 impl DefaultMessageBuilder {
     /// <p>The default body of the message.</p>
@@ -43,31 +51,39 @@ impl DefaultMessageBuilder {
     }
     /// <p>The default body of the message.</p>
     pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.body = input; self
+        self.body = input;
+        self
     }
     /// Adds a key-value pair to `substitutions`.
     ///
     /// To override the contents of this collection use [`set_substitutions`](Self::set_substitutions).
     ///
     /// <p>The default message variables to use in the message. You can override these default variables with individual address variables.</p>
-    pub fn substitutions(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
+    pub fn substitutions(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::vec::Vec<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.substitutions.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.substitutions = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.substitutions = Some(hash_map);
+        self
     }
     /// <p>The default message variables to use in the message. You can override these default variables with individual address variables.</p>
-    pub fn set_substitutions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
-        self.substitutions = input; self
+    pub fn set_substitutions(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    ) -> Self {
+        self.substitutions = input;
+        self
     }
     /// Consumes the builder and constructs a [`DefaultMessage`](crate::types::DefaultMessage).
     pub fn build(self) -> crate::types::DefaultMessage {
         crate::types::DefaultMessage {
-            body: self.body
-            ,
-            substitutions: self.substitutions
-            ,
+            body: self.body,
+            substitutions: self.substitutions,
         }
     }
 }
-

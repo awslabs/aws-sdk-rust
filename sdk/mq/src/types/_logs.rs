@@ -3,7 +3,7 @@
 /// <p>The list of information about logs to be enabled for the specified broker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Logs  {
+pub struct Logs {
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
     #[doc(hidden)]
     pub audit: bool,
@@ -43,7 +43,8 @@ impl LogsBuilder {
     }
     /// <p>Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged. Does not apply to RabbitMQ brokers.</p>
     pub fn set_audit(mut self, input: std::option::Option<bool>) -> Self {
-        self.audit = input; self
+        self.audit = input;
+        self
     }
     /// <p>Enables general logging.</p>
     pub fn general(mut self, input: bool) -> Self {
@@ -52,18 +53,14 @@ impl LogsBuilder {
     }
     /// <p>Enables general logging.</p>
     pub fn set_general(mut self, input: std::option::Option<bool>) -> Self {
-        self.general = input; self
+        self.general = input;
+        self
     }
     /// Consumes the builder and constructs a [`Logs`](crate::types::Logs).
     pub fn build(self) -> crate::types::Logs {
         crate::types::Logs {
-            audit: self.audit
-                .unwrap_or_default()
-            ,
-            general: self.general
-                .unwrap_or_default()
-            ,
+            audit: self.audit.unwrap_or_default(),
+            general: self.general.unwrap_or_default(),
         }
     }
 }
-

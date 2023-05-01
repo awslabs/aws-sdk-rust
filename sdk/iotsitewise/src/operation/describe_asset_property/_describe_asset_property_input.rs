@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssetPropertyInput  {
+pub struct DescribeAssetPropertyInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DescribeAssetPropertyInput  {
 }
 impl DescribeAssetPropertyInput {
     /// <p>The ID of the asset.</p>
-    pub fn asset_id(&self) -> std::option::Option<& str> {
+    pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> std::option::Option<& str> {
+    pub fn property_id(&self) -> std::option::Option<&str> {
         self.property_id.as_deref()
     }
 }
 impl DescribeAssetPropertyInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssetPropertyInput`](crate::operation::describe_asset_property::DescribeAssetPropertyInput).
-    pub fn builder() -> crate::operation::describe_asset_property::builders::DescribeAssetPropertyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_asset_property::builders::DescribeAssetPropertyInputBuilder
+    {
         crate::operation::describe_asset_property::builders::DescribeAssetPropertyInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DescribeAssetPropertyInputBuilder {
     }
     /// <p>The ID of the asset.</p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input; self
+        self.asset_id = input;
+        self
     }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl DescribeAssetPropertyInputBuilder {
     }
     /// <p>The ID of the asset property.</p>
     pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.property_id = input; self
+        self.property_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAssetPropertyInput`](crate::operation::describe_asset_property::DescribeAssetPropertyInput).
-    pub fn build(self) -> Result<crate::operation::describe_asset_property::DescribeAssetPropertyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_asset_property::DescribeAssetPropertyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_asset_property::DescribeAssetPropertyInput {
-                asset_id: self.asset_id
-                ,
-                property_id: self.property_id
-                ,
-            }
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+            },
         )
     }
 }
-

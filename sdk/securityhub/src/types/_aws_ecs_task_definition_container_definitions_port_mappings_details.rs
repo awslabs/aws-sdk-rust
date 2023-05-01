@@ -3,7 +3,7 @@
 /// <p>A port mapping for the container.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails  {
+pub struct AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
     /// <p>The port number on the container that is bound to the user-specified or automatically assigned host port.</p>
     #[doc(hidden)]
     pub container_port: i32,
@@ -24,13 +24,15 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
         self.host_port
     }
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
-    pub fn protocol(&self) -> std::option::Option<& str> {
+    pub fn protocol(&self) -> std::option::Option<&str> {
         self.protocol.as_deref()
     }
 }
 impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder
+    {
         crate::types::builders::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder::default()
     }
 }
@@ -51,7 +53,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
     }
     /// <p>The port number on the container that is bound to the user-specified or automatically assigned host port.</p>
     pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.container_port = input; self
+        self.container_port = input;
+        self
     }
     /// <p>The port number on the container instance to reserve for the container.</p>
     pub fn host_port(mut self, input: i32) -> Self {
@@ -60,7 +63,8 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
     }
     /// <p>The port number on the container instance to reserve for the container.</p>
     pub fn set_host_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.host_port = input; self
+        self.host_port = input;
+        self
     }
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
     pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +73,17 @@ impl AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetailsBuilder {
     }
     /// <p>The protocol used for the port mapping. The default is <code>tcp</code>.</p>
     pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails`](crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails).
-    pub fn build(self) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
+    pub fn build(
+        self,
+    ) -> crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
         crate::types::AwsEcsTaskDefinitionContainerDefinitionsPortMappingsDetails {
-            container_port: self.container_port
-                .unwrap_or_default()
-            ,
-            host_port: self.host_port
-                .unwrap_or_default()
-            ,
-            protocol: self.protocol
-            ,
+            container_port: self.container_port.unwrap_or_default(),
+            host_port: self.host_port.unwrap_or_default(),
+            protocol: self.protocol,
         }
     }
 }
-

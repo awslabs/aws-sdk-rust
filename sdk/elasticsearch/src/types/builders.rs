@@ -156,4 +156,3 @@ pub use crate::types::_auto_tune_details::AutoTuneDetailsBuilder;
 pub use crate::types::_scheduled_auto_tune_details::ScheduledAutoTuneDetailsBuilder;
 
 pub use crate::types::_auto_tune_options_input::AutoTuneOptionsInputBuilder;
-

@@ -50,4 +50,3 @@ pub use crate::types::_ingestion_status::IngestionStatusBuilder;
 pub use crate::types::_source_config::SourceConfigBuilder;
 
 pub use crate::types::_query_statistics_for_describe_query::QueryStatisticsForDescribeQueryBuilder;
-

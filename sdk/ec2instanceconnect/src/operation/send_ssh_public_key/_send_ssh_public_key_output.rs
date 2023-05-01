@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendSshPublicKeyOutput  {
+pub struct SendSshPublicKeyOutput {
     /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct SendSshPublicKeyOutput  {
 }
 impl SendSshPublicKeyOutput {
     /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>Is true if the request succeeds and an error otherwise.</p>
@@ -22,13 +22,14 @@ impl SendSshPublicKeyOutput {
     }
 }
 impl aws_http::request_id::RequestId for SendSshPublicKeyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SendSshPublicKeyOutput {
     /// Creates a new builder-style object to manufacture [`SendSshPublicKeyOutput`](crate::operation::send_ssh_public_key::SendSshPublicKeyOutput).
-    pub fn builder() -> crate::operation::send_ssh_public_key::builders::SendSshPublicKeyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::send_ssh_public_key::builders::SendSshPublicKeyOutputBuilder {
         crate::operation::send_ssh_public_key::builders::SendSshPublicKeyOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl SendSshPublicKeyOutputBuilder {
     }
     /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// <p>Is true if the request succeeds and an error otherwise.</p>
     pub fn success(mut self, input: bool) -> Self {
@@ -58,27 +60,24 @@ impl SendSshPublicKeyOutputBuilder {
     }
     /// <p>Is true if the request succeeds and an error otherwise.</p>
     pub fn set_success(mut self, input: std::option::Option<bool>) -> Self {
-        self.success = input; self
+        self.success = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SendSshPublicKeyOutput`](crate::operation::send_ssh_public_key::SendSshPublicKeyOutput).
     pub fn build(self) -> crate::operation::send_ssh_public_key::SendSshPublicKeyOutput {
         crate::operation::send_ssh_public_key::SendSshPublicKeyOutput {
-            request_id: self.request_id
-            ,
-            success: self.success
-                .unwrap_or_default()
-            ,
+            request_id: self.request_id,
+            success: self.success.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

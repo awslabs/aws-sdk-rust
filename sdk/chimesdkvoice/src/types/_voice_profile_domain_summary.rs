@@ -3,7 +3,7 @@
 /// <p>A high-level overview of a voice profile domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct VoiceProfileDomainSummary  {
+pub struct VoiceProfileDomainSummary {
     /// <p>The ID of the voice profile domain summary.</p>
     #[doc(hidden)]
     pub voice_profile_domain_id: std::option::Option<std::string::String>,
@@ -25,35 +25,38 @@ pub struct VoiceProfileDomainSummary  {
 }
 impl VoiceProfileDomainSummary {
     /// <p>The ID of the voice profile domain summary.</p>
-    pub fn voice_profile_domain_id(&self) -> std::option::Option<& str> {
+    pub fn voice_profile_domain_id(&self) -> std::option::Option<&str> {
         self.voice_profile_domain_id.as_deref()
     }
     /// <p>The ARN of a voice profile in a voice profile domain summary.</p>
-    pub fn voice_profile_domain_arn(&self) -> std::option::Option<& str> {
+    pub fn voice_profile_domain_arn(&self) -> std::option::Option<&str> {
         self.voice_profile_domain_arn.as_deref()
     }
     /// <p>The name of the voice profile domain summary.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Describes the voice profile domain summary.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The time at which the voice profile domain summary was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which the voice profile domain summary was last updated.</p>
-    pub fn updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_timestamp.as_ref()
     }
 }
-impl  std::fmt::Debug for VoiceProfileDomainSummary  {
+impl std::fmt::Debug for VoiceProfileDomainSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceProfileDomainSummary");
         formatter.field("voice_profile_domain_id", &self.voice_profile_domain_id);
-        formatter.field("voice_profile_domain_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "voice_profile_domain_arn",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("created_timestamp", &self.created_timestamp);
@@ -86,8 +89,12 @@ impl VoiceProfileDomainSummaryBuilder {
         self
     }
     /// <p>The ID of the voice profile domain summary.</p>
-    pub fn set_voice_profile_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_profile_domain_id = input; self
+    pub fn set_voice_profile_domain_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_profile_domain_id = input;
+        self
     }
     /// <p>The ARN of a voice profile in a voice profile domain summary.</p>
     pub fn voice_profile_domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,8 +102,12 @@ impl VoiceProfileDomainSummaryBuilder {
         self
     }
     /// <p>The ARN of a voice profile in a voice profile domain summary.</p>
-    pub fn set_voice_profile_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_profile_domain_arn = input; self
+    pub fn set_voice_profile_domain_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_profile_domain_arn = input;
+        self
     }
     /// <p>The name of the voice profile domain summary.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,7 +116,8 @@ impl VoiceProfileDomainSummaryBuilder {
     }
     /// <p>The name of the voice profile domain summary.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Describes the voice profile domain summary.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +126,8 @@ impl VoiceProfileDomainSummaryBuilder {
     }
     /// <p>Describes the voice profile domain summary.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The time at which the voice profile domain summary was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -122,8 +135,12 @@ impl VoiceProfileDomainSummaryBuilder {
         self
     }
     /// <p>The time at which the voice profile domain summary was created.</p>
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     /// <p>The time at which the voice profile domain summary was last updated.</p>
     pub fn updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -131,24 +148,22 @@ impl VoiceProfileDomainSummaryBuilder {
         self
     }
     /// <p>The time at which the voice profile domain summary was last updated.</p>
-    pub fn set_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_timestamp = input; self
+    pub fn set_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_timestamp = input;
+        self
     }
     /// Consumes the builder and constructs a [`VoiceProfileDomainSummary`](crate::types::VoiceProfileDomainSummary).
     pub fn build(self) -> crate::types::VoiceProfileDomainSummary {
         crate::types::VoiceProfileDomainSummary {
-            voice_profile_domain_id: self.voice_profile_domain_id
-            ,
-            voice_profile_domain_arn: self.voice_profile_domain_arn
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            updated_timestamp: self.updated_timestamp
-            ,
+            voice_profile_domain_id: self.voice_profile_domain_id,
+            voice_profile_domain_arn: self.voice_profile_domain_arn,
+            name: self.name,
+            description: self.description,
+            created_timestamp: self.created_timestamp,
+            updated_timestamp: self.updated_timestamp,
         }
     }
 }
@@ -156,7 +171,10 @@ impl std::fmt::Debug for VoiceProfileDomainSummaryBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("VoiceProfileDomainSummaryBuilder");
         formatter.field("voice_profile_domain_id", &self.voice_profile_domain_id);
-        formatter.field("voice_profile_domain_arn", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "voice_profile_domain_arn",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("name", &self.name);
         formatter.field("description", &self.description);
         formatter.field("created_timestamp", &self.created_timestamp);
@@ -164,4 +182,3 @@ impl std::fmt::Debug for VoiceProfileDomainSummaryBuilder {
         formatter.finish()
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDbClusterOutput  {
+pub struct StopDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
     #[doc(hidden)]
     pub db_cluster: std::option::Option<crate::types::DbCluster>,
@@ -10,15 +10,15 @@ pub struct StopDbClusterOutput  {
 }
 impl StopDbClusterOutput {
     /// <p>Detailed information about a cluster. </p>
-    pub fn db_cluster(&self) -> std::option::Option<& crate::types::DbCluster> {
+    pub fn db_cluster(&self) -> std::option::Option<&crate::types::DbCluster> {
         self.db_cluster.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StopDbClusterOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopDbClusterOutput {
     /// Creates a new builder-style object to manufacture [`StopDbClusterOutput`](crate::operation::stop_db_cluster::StopDbClusterOutput).
     pub fn builder() -> crate::operation::stop_db_cluster::builders::StopDbClusterOutputBuilder {
@@ -41,24 +41,23 @@ impl StopDbClusterOutputBuilder {
     }
     /// <p>Detailed information about a cluster. </p>
     pub fn set_db_cluster(mut self, input: std::option::Option<crate::types::DbCluster>) -> Self {
-        self.db_cluster = input; self
+        self.db_cluster = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopDbClusterOutput`](crate::operation::stop_db_cluster::StopDbClusterOutput).
     pub fn build(self) -> crate::operation::stop_db_cluster::StopDbClusterOutput {
         crate::operation::stop_db_cluster::StopDbClusterOutput {
-            db_cluster: self.db_cluster
-            ,
+            db_cluster: self.db_cluster,
             _request_id: self._request_id,
         }
     }
 }
-

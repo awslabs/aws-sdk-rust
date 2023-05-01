@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCellInput  {
+pub struct UpdateCellInput {
     /// <p>The name of the cell.</p>
     #[doc(hidden)]
     pub cell_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateCellInput  {
 }
 impl UpdateCellInput {
     /// <p>The name of the cell.</p>
-    pub fn cell_name(&self) -> std::option::Option<& str> {
+    pub fn cell_name(&self) -> std::option::Option<&str> {
         self.cell_name.as_deref()
     }
     /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
-    pub fn cells(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn cells(&self) -> std::option::Option<&[std::string::String]> {
         self.cells.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl UpdateCellInputBuilder {
     }
     /// <p>The name of the cell.</p>
     pub fn set_cell_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cell_name = input; self
+        self.cell_name = input;
+        self
     }
     /// Appends an item to `cells`.
     ///
@@ -51,24 +52,28 @@ impl UpdateCellInputBuilder {
     /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
     pub fn cells(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cells.unwrap_or_default();
-                        v.push(input.into());
-                        self.cells = Some(v);
-                        self
+        v.push(input.into());
+        self.cells = Some(v);
+        self
     }
     /// <p>A list of cell Amazon Resource Names (ARNs), which completely replaces the previous list.</p>
-    pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.cells = input; self
+    pub fn set_cells(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.cells = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateCellInput`](crate::operation::update_cell::UpdateCellInput).
-    pub fn build(self) -> Result<crate::operation::update_cell::UpdateCellInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_cell::UpdateCellInput {
-                cell_name: self.cell_name
-                ,
-                cells: self.cells
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_cell::UpdateCellInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_cell::UpdateCellInput {
+            cell_name: self.cell_name,
+            cells: self.cells,
+        })
     }
 }
-

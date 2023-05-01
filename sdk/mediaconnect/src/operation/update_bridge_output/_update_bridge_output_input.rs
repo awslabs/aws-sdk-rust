@@ -3,7 +3,7 @@
 /// The fields that you want to update in the bridge output.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBridgeOutputInput  {
+pub struct UpdateBridgeOutputInput {
     /// The ARN of the bridge that you want to update.
     #[doc(hidden)]
     pub bridge_arn: std::option::Option<std::string::String>,
@@ -16,21 +16,24 @@ pub struct UpdateBridgeOutputInput  {
 }
 impl UpdateBridgeOutputInput {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(&self) -> std::option::Option<& str> {
+    pub fn bridge_arn(&self) -> std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
     /// Update an existing network output.
-    pub fn network_output(&self) -> std::option::Option<& crate::types::UpdateBridgeNetworkOutputRequest> {
+    pub fn network_output(
+        &self,
+    ) -> std::option::Option<&crate::types::UpdateBridgeNetworkOutputRequest> {
         self.network_output.as_ref()
     }
     /// The name of the bridge output that you want to update.
-    pub fn output_name(&self) -> std::option::Option<& str> {
+    pub fn output_name(&self) -> std::option::Option<&str> {
         self.output_name.as_deref()
     }
 }
 impl UpdateBridgeOutputInput {
     /// Creates a new builder-style object to manufacture [`UpdateBridgeOutputInput`](crate::operation::update_bridge_output::UpdateBridgeOutputInput).
-    pub fn builder() -> crate::operation::update_bridge_output::builders::UpdateBridgeOutputInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_bridge_output::builders::UpdateBridgeOutputInputBuilder {
         crate::operation::update_bridge_output::builders::UpdateBridgeOutputInputBuilder::default()
     }
 }
@@ -51,7 +54,8 @@ impl UpdateBridgeOutputInputBuilder {
     }
     /// The ARN of the bridge that you want to update.
     pub fn set_bridge_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bridge_arn = input; self
+        self.bridge_arn = input;
+        self
     }
     /// Update an existing network output.
     pub fn network_output(mut self, input: crate::types::UpdateBridgeNetworkOutputRequest) -> Self {
@@ -59,8 +63,12 @@ impl UpdateBridgeOutputInputBuilder {
         self
     }
     /// Update an existing network output.
-    pub fn set_network_output(mut self, input: std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest>) -> Self {
-        self.network_output = input; self
+    pub fn set_network_output(
+        mut self,
+        input: std::option::Option<crate::types::UpdateBridgeNetworkOutputRequest>,
+    ) -> Self {
+        self.network_output = input;
+        self
     }
     /// The name of the bridge output that you want to update.
     pub fn output_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +77,22 @@ impl UpdateBridgeOutputInputBuilder {
     }
     /// The name of the bridge output that you want to update.
     pub fn set_output_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_name = input; self
+        self.output_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateBridgeOutputInput`](crate::operation::update_bridge_output::UpdateBridgeOutputInput).
-    pub fn build(self) -> Result<crate::operation::update_bridge_output::UpdateBridgeOutputInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_bridge_output::UpdateBridgeOutputInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_bridge_output::UpdateBridgeOutputInput {
-                bridge_arn: self.bridge_arn
-                ,
-                network_output: self.network_output
-                ,
-                output_name: self.output_name
-                ,
-            }
+                bridge_arn: self.bridge_arn,
+                network_output: self.network_output,
+                output_name: self.output_name,
+            },
         )
     }
 }
-

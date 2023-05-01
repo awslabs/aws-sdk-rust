@@ -66,4 +66,3 @@ pub use crate::types::_trace_configuration::TraceConfigurationBuilder;
 pub use crate::types::_auto_scaling_configuration::AutoScalingConfigurationBuilder;
 
 pub use crate::types::_connection::ConnectionBuilder;
-

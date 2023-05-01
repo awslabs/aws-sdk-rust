@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecuteCommandOutput  {
+pub struct ExecuteCommandOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -25,15 +25,15 @@ pub struct ExecuteCommandOutput  {
 }
 impl ExecuteCommandOutput {
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
-    pub fn container_arn(&self) -> std::option::Option<& str> {
+    pub fn container_arn(&self) -> std::option::Option<&str> {
         self.container_arn.as_deref()
     }
     /// <p>The name of the container.</p>
-    pub fn container_name(&self) -> std::option::Option<& str> {
+    pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
     /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
@@ -41,19 +41,19 @@ impl ExecuteCommandOutput {
         self.interactive
     }
     /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
-    pub fn session(&self) -> std::option::Option<& crate::types::Session> {
+    pub fn session(&self) -> std::option::Option<&crate::types::Session> {
         self.session.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn task_arn(&self) -> std::option::Option<& str> {
+    pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ExecuteCommandOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ExecuteCommandOutput {
     /// Creates a new builder-style object to manufacture [`ExecuteCommandOutput`](crate::operation::execute_command::ExecuteCommandOutput).
     pub fn builder() -> crate::operation::execute_command::builders::ExecuteCommandOutputBuilder {
@@ -81,7 +81,8 @@ impl ExecuteCommandOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input; self
+        self.cluster_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
     pub fn container_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,7 +91,8 @@ impl ExecuteCommandOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the container.</p>
     pub fn set_container_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_arn = input; self
+        self.container_arn = input;
+        self
     }
     /// <p>The name of the container.</p>
     pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +101,8 @@ impl ExecuteCommandOutputBuilder {
     }
     /// <p>The name of the container.</p>
     pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_name = input; self
+        self.container_name = input;
+        self
     }
     /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
     pub fn interactive(mut self, input: bool) -> Self {
@@ -108,7 +111,8 @@ impl ExecuteCommandOutputBuilder {
     }
     /// <p>Determines whether the execute command session is running in interactive mode. Amazon ECS only supports initiating interactive sessions, so you must specify <code>true</code> for this value.</p>
     pub fn set_interactive(mut self, input: std::option::Option<bool>) -> Self {
-        self.interactive = input; self
+        self.interactive = input;
+        self
     }
     /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
     pub fn session(mut self, input: crate::types::Session) -> Self {
@@ -117,7 +121,8 @@ impl ExecuteCommandOutputBuilder {
     }
     /// <p>The details of the SSM session that was created for this instance of execute-command.</p>
     pub fn set_session(mut self, input: std::option::Option<crate::types::Session>) -> Self {
-        self.session = input; self
+        self.session = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,35 +131,28 @@ impl ExecuteCommandOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_arn = input; self
+        self.task_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ExecuteCommandOutput`](crate::operation::execute_command::ExecuteCommandOutput).
     pub fn build(self) -> crate::operation::execute_command::ExecuteCommandOutput {
         crate::operation::execute_command::ExecuteCommandOutput {
-            cluster_arn: self.cluster_arn
-            ,
-            container_arn: self.container_arn
-            ,
-            container_name: self.container_name
-            ,
-            interactive: self.interactive
-                .unwrap_or_default()
-            ,
-            session: self.session
-            ,
-            task_arn: self.task_arn
-            ,
+            cluster_arn: self.cluster_arn,
+            container_arn: self.container_arn,
+            container_name: self.container_name,
+            interactive: self.interactive.unwrap_or_default(),
+            session: self.session,
+            task_arn: self.task_arn,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The configuration properties of a flywheel iteration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlywheelIterationProperties  {
+pub struct FlywheelIterationProperties {
     /// <p></p>
     #[doc(hidden)]
     pub flywheel_arn: std::option::Option<std::string::String>,
@@ -40,47 +40,51 @@ pub struct FlywheelIterationProperties  {
 }
 impl FlywheelIterationProperties {
     /// <p></p>
-    pub fn flywheel_arn(&self) -> std::option::Option<& str> {
+    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
         self.flywheel_arn.as_deref()
     }
     /// <p></p>
-    pub fn flywheel_iteration_id(&self) -> std::option::Option<& str> {
+    pub fn flywheel_iteration_id(&self) -> std::option::Option<&str> {
         self.flywheel_iteration_id.as_deref()
     }
     /// <p>The creation start time of the flywheel iteration.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The completion time of this flywheel iteration.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The status of the flywheel iteration.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::FlywheelIterationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::FlywheelIterationStatus> {
         self.status.as_ref()
     }
     /// <p>A description of the status of the flywheel iteration.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The ARN of the evaluated model associated with this flywheel iteration.</p>
-    pub fn evaluated_model_arn(&self) -> std::option::Option<& str> {
+    pub fn evaluated_model_arn(&self) -> std::option::Option<&str> {
         self.evaluated_model_arn.as_deref()
     }
     /// <p>The evaluation metrics associated with the evaluated model.</p>
-    pub fn evaluated_model_metrics(&self) -> std::option::Option<& crate::types::FlywheelModelEvaluationMetrics> {
+    pub fn evaluated_model_metrics(
+        &self,
+    ) -> std::option::Option<&crate::types::FlywheelModelEvaluationMetrics> {
         self.evaluated_model_metrics.as_ref()
     }
     /// <p>The ARN of the trained model associated with this flywheel iteration.</p>
-    pub fn trained_model_arn(&self) -> std::option::Option<& str> {
+    pub fn trained_model_arn(&self) -> std::option::Option<&str> {
         self.trained_model_arn.as_deref()
     }
     /// <p>The metrics associated with the trained model.</p>
-    pub fn trained_model_metrics(&self) -> std::option::Option<& crate::types::FlywheelModelEvaluationMetrics> {
+    pub fn trained_model_metrics(
+        &self,
+    ) -> std::option::Option<&crate::types::FlywheelModelEvaluationMetrics> {
         self.trained_model_metrics.as_ref()
     }
     /// <p></p>
-    pub fn evaluation_manifest_s3_prefix(&self) -> std::option::Option<& str> {
+    pub fn evaluation_manifest_s3_prefix(&self) -> std::option::Option<&str> {
         self.evaluation_manifest_s3_prefix.as_deref()
     }
 }
@@ -102,9 +106,11 @@ pub struct FlywheelIterationPropertiesBuilder {
     pub(crate) status: std::option::Option<crate::types::FlywheelIterationStatus>,
     pub(crate) message: std::option::Option<std::string::String>,
     pub(crate) evaluated_model_arn: std::option::Option<std::string::String>,
-    pub(crate) evaluated_model_metrics: std::option::Option<crate::types::FlywheelModelEvaluationMetrics>,
+    pub(crate) evaluated_model_metrics:
+        std::option::Option<crate::types::FlywheelModelEvaluationMetrics>,
     pub(crate) trained_model_arn: std::option::Option<std::string::String>,
-    pub(crate) trained_model_metrics: std::option::Option<crate::types::FlywheelModelEvaluationMetrics>,
+    pub(crate) trained_model_metrics:
+        std::option::Option<crate::types::FlywheelModelEvaluationMetrics>,
     pub(crate) evaluation_manifest_s3_prefix: std::option::Option<std::string::String>,
 }
 impl FlywheelIterationPropertiesBuilder {
@@ -115,7 +121,8 @@ impl FlywheelIterationPropertiesBuilder {
     }
     /// <p></p>
     pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flywheel_arn = input; self
+        self.flywheel_arn = input;
+        self
     }
     /// <p></p>
     pub fn flywheel_iteration_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +130,12 @@ impl FlywheelIterationPropertiesBuilder {
         self
     }
     /// <p></p>
-    pub fn set_flywheel_iteration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flywheel_iteration_id = input; self
+    pub fn set_flywheel_iteration_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.flywheel_iteration_id = input;
+        self
     }
     /// <p>The creation start time of the flywheel iteration.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -132,8 +143,12 @@ impl FlywheelIterationPropertiesBuilder {
         self
     }
     /// <p>The creation start time of the flywheel iteration.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The completion time of this flywheel iteration.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,7 +157,8 @@ impl FlywheelIterationPropertiesBuilder {
     }
     /// <p>The completion time of this flywheel iteration.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The status of the flywheel iteration.</p>
     pub fn status(mut self, input: crate::types::FlywheelIterationStatus) -> Self {
@@ -150,8 +166,12 @@ impl FlywheelIterationPropertiesBuilder {
         self
     }
     /// <p>The status of the flywheel iteration.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::FlywheelIterationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::FlywheelIterationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>A description of the status of the flywheel iteration.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,7 +180,8 @@ impl FlywheelIterationPropertiesBuilder {
     }
     /// <p>A description of the status of the flywheel iteration.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The ARN of the evaluated model associated with this flywheel iteration.</p>
     pub fn evaluated_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,17 +189,28 @@ impl FlywheelIterationPropertiesBuilder {
         self
     }
     /// <p>The ARN of the evaluated model associated with this flywheel iteration.</p>
-    pub fn set_evaluated_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluated_model_arn = input; self
+    pub fn set_evaluated_model_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evaluated_model_arn = input;
+        self
     }
     /// <p>The evaluation metrics associated with the evaluated model.</p>
-    pub fn evaluated_model_metrics(mut self, input: crate::types::FlywheelModelEvaluationMetrics) -> Self {
+    pub fn evaluated_model_metrics(
+        mut self,
+        input: crate::types::FlywheelModelEvaluationMetrics,
+    ) -> Self {
         self.evaluated_model_metrics = Some(input);
         self
     }
     /// <p>The evaluation metrics associated with the evaluated model.</p>
-    pub fn set_evaluated_model_metrics(mut self, input: std::option::Option<crate::types::FlywheelModelEvaluationMetrics>) -> Self {
-        self.evaluated_model_metrics = input; self
+    pub fn set_evaluated_model_metrics(
+        mut self,
+        input: std::option::Option<crate::types::FlywheelModelEvaluationMetrics>,
+    ) -> Self {
+        self.evaluated_model_metrics = input;
+        self
     }
     /// <p>The ARN of the trained model associated with this flywheel iteration.</p>
     pub fn trained_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,17 +218,28 @@ impl FlywheelIterationPropertiesBuilder {
         self
     }
     /// <p>The ARN of the trained model associated with this flywheel iteration.</p>
-    pub fn set_trained_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trained_model_arn = input; self
+    pub fn set_trained_model_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.trained_model_arn = input;
+        self
     }
     /// <p>The metrics associated with the trained model.</p>
-    pub fn trained_model_metrics(mut self, input: crate::types::FlywheelModelEvaluationMetrics) -> Self {
+    pub fn trained_model_metrics(
+        mut self,
+        input: crate::types::FlywheelModelEvaluationMetrics,
+    ) -> Self {
         self.trained_model_metrics = Some(input);
         self
     }
     /// <p>The metrics associated with the trained model.</p>
-    pub fn set_trained_model_metrics(mut self, input: std::option::Option<crate::types::FlywheelModelEvaluationMetrics>) -> Self {
-        self.trained_model_metrics = input; self
+    pub fn set_trained_model_metrics(
+        mut self,
+        input: std::option::Option<crate::types::FlywheelModelEvaluationMetrics>,
+    ) -> Self {
+        self.trained_model_metrics = input;
+        self
     }
     /// <p></p>
     pub fn evaluation_manifest_s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,35 +247,27 @@ impl FlywheelIterationPropertiesBuilder {
         self
     }
     /// <p></p>
-    pub fn set_evaluation_manifest_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_manifest_s3_prefix = input; self
+    pub fn set_evaluation_manifest_s3_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evaluation_manifest_s3_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`FlywheelIterationProperties`](crate::types::FlywheelIterationProperties).
     pub fn build(self) -> crate::types::FlywheelIterationProperties {
         crate::types::FlywheelIterationProperties {
-            flywheel_arn: self.flywheel_arn
-            ,
-            flywheel_iteration_id: self.flywheel_iteration_id
-            ,
-            creation_time: self.creation_time
-            ,
-            end_time: self.end_time
-            ,
-            status: self.status
-            ,
-            message: self.message
-            ,
-            evaluated_model_arn: self.evaluated_model_arn
-            ,
-            evaluated_model_metrics: self.evaluated_model_metrics
-            ,
-            trained_model_arn: self.trained_model_arn
-            ,
-            trained_model_metrics: self.trained_model_metrics
-            ,
-            evaluation_manifest_s3_prefix: self.evaluation_manifest_s3_prefix
-            ,
+            flywheel_arn: self.flywheel_arn,
+            flywheel_iteration_id: self.flywheel_iteration_id,
+            creation_time: self.creation_time,
+            end_time: self.end_time,
+            status: self.status,
+            message: self.message,
+            evaluated_model_arn: self.evaluated_model_arn,
+            evaluated_model_metrics: self.evaluated_model_metrics,
+            trained_model_arn: self.trained_model_arn,
+            trained_model_metrics: self.trained_model_metrics,
+            evaluation_manifest_s3_prefix: self.evaluation_manifest_s3_prefix,
         }
     }
 }
-

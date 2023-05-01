@@ -3,7 +3,7 @@
 /// <p>Filters update actions from the service updates that are in available status during the time range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeRangeFilter  {
+pub struct TimeRangeFilter {
     /// <p>The start time of the time range filter</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct TimeRangeFilter  {
 }
 impl TimeRangeFilter {
     /// <p>The start time of the time range filter</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the time range filter</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl TimeRangeFilterBuilder {
         self
     }
     /// <p>The start time of the time range filter</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The end time of the time range filter</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -52,16 +56,14 @@ impl TimeRangeFilterBuilder {
     }
     /// <p>The end time of the time range filter</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`TimeRangeFilter`](crate::types::TimeRangeFilter).
     pub fn build(self) -> crate::types::TimeRangeFilter {
         crate::types::TimeRangeFilter {
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
+            start_time: self.start_time,
+            end_time: self.end_time,
         }
     }
 }
-

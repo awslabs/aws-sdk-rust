@@ -3,7 +3,7 @@
 /// <p>Information about the metric for a candidate produced by an AutoML job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricDatum  {
+pub struct MetricDatum {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<crate::types::AutoMlMetricEnum>,
@@ -13,15 +13,15 @@ pub struct MetricDatum  {
     /// <p>The dataset split from which the AutoML job produced the metric.</p>
     #[doc(hidden)]
     pub set: std::option::Option<crate::types::MetricSetSource>,
-    /// <p>The name of the standard metric. </p> <note> 
-    /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p> 
+    /// <p>The name of the standard metric. </p> <note>
+    /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p>
     /// </note>
     #[doc(hidden)]
     pub standard_metric_name: std::option::Option<crate::types::AutoMlMetricExtendedEnum>,
 }
 impl MetricDatum {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<& crate::types::AutoMlMetricEnum> {
+    pub fn metric_name(&self) -> std::option::Option<&crate::types::AutoMlMetricEnum> {
         self.metric_name.as_ref()
     }
     /// <p>The value of the metric.</p>
@@ -29,13 +29,15 @@ impl MetricDatum {
         self.value
     }
     /// <p>The dataset split from which the AutoML job produced the metric.</p>
-    pub fn set(&self) -> std::option::Option<& crate::types::MetricSetSource> {
+    pub fn set(&self) -> std::option::Option<&crate::types::MetricSetSource> {
         self.set.as_ref()
     }
-    /// <p>The name of the standard metric. </p> <note> 
-    /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p> 
+    /// <p>The name of the standard metric. </p> <note>
+    /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p>
     /// </note>
-    pub fn standard_metric_name(&self) -> std::option::Option<& crate::types::AutoMlMetricExtendedEnum> {
+    pub fn standard_metric_name(
+        &self,
+    ) -> std::option::Option<&crate::types::AutoMlMetricExtendedEnum> {
         self.standard_metric_name.as_ref()
     }
 }
@@ -62,8 +64,12 @@ impl MetricDatumBuilder {
         self
     }
     /// <p>The name of the metric.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<crate::types::AutoMlMetricEnum>) -> Self {
-        self.metric_name = input; self
+    pub fn set_metric_name(
+        mut self,
+        input: std::option::Option<crate::types::AutoMlMetricEnum>,
+    ) -> Self {
+        self.metric_name = input;
+        self
     }
     /// <p>The value of the metric.</p>
     pub fn value(mut self, input: f32) -> Self {
@@ -72,7 +78,8 @@ impl MetricDatumBuilder {
     }
     /// <p>The value of the metric.</p>
     pub fn set_value(mut self, input: std::option::Option<f32>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The dataset split from which the AutoML job produced the metric.</p>
     pub fn set(mut self, input: crate::types::MetricSetSource) -> Self {
@@ -81,34 +88,33 @@ impl MetricDatumBuilder {
     }
     /// <p>The dataset split from which the AutoML job produced the metric.</p>
     pub fn set_set(mut self, input: std::option::Option<crate::types::MetricSetSource>) -> Self {
-        self.set = input; self
+        self.set = input;
+        self
     }
-    /// <p>The name of the standard metric. </p> <note> 
-    /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p> 
+    /// <p>The name of the standard metric. </p> <note>
+    /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p>
     /// </note>
     pub fn standard_metric_name(mut self, input: crate::types::AutoMlMetricExtendedEnum) -> Self {
         self.standard_metric_name = Some(input);
         self
     }
-    /// <p>The name of the standard metric. </p> <note> 
-    /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p> 
+    /// <p>The name of the standard metric. </p> <note>
+    /// <p>For definitions of the standard metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-metrics"> <code>Autopilot candidate metrics</code> </a>.</p>
     /// </note>
-    pub fn set_standard_metric_name(mut self, input: std::option::Option<crate::types::AutoMlMetricExtendedEnum>) -> Self {
-        self.standard_metric_name = input; self
+    pub fn set_standard_metric_name(
+        mut self,
+        input: std::option::Option<crate::types::AutoMlMetricExtendedEnum>,
+    ) -> Self {
+        self.standard_metric_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricDatum`](crate::types::MetricDatum).
     pub fn build(self) -> crate::types::MetricDatum {
         crate::types::MetricDatum {
-            metric_name: self.metric_name
-            ,
-            value: self.value
-                .unwrap_or_default()
-            ,
-            set: self.set
-            ,
-            standard_metric_name: self.standard_metric_name
-            ,
+            metric_name: self.metric_name,
+            value: self.value.unwrap_or_default(),
+            set: self.set,
+            standard_metric_name: self.standard_metric_name,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePortfolioOutput  {
+pub struct UpdatePortfolioOutput {
     /// <p>Information about the portfolio.</p>
     #[doc(hidden)]
     pub portfolio_detail: std::option::Option<crate::types::PortfolioDetail>,
@@ -13,19 +13,19 @@ pub struct UpdatePortfolioOutput  {
 }
 impl UpdatePortfolioOutput {
     /// <p>Information about the portfolio.</p>
-    pub fn portfolio_detail(&self) -> std::option::Option<& crate::types::PortfolioDetail> {
+    pub fn portfolio_detail(&self) -> std::option::Option<&crate::types::PortfolioDetail> {
         self.portfolio_detail.as_ref()
     }
     /// <p>Information about the tags associated with the portfolio.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdatePortfolioOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdatePortfolioOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePortfolioOutput`](crate::operation::update_portfolio::UpdatePortfolioOutput).
     pub fn builder() -> crate::operation::update_portfolio::builders::UpdatePortfolioOutputBuilder {
@@ -48,8 +48,12 @@ impl UpdatePortfolioOutputBuilder {
         self
     }
     /// <p>Information about the portfolio.</p>
-    pub fn set_portfolio_detail(mut self, input: std::option::Option<crate::types::PortfolioDetail>) -> Self {
-        self.portfolio_detail = input; self
+    pub fn set_portfolio_detail(
+        mut self,
+        input: std::option::Option<crate::types::PortfolioDetail>,
+    ) -> Self {
+        self.portfolio_detail = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -58,32 +62,33 @@ impl UpdatePortfolioOutputBuilder {
     /// <p>Information about the tags associated with the portfolio.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Information about the tags associated with the portfolio.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdatePortfolioOutput`](crate::operation::update_portfolio::UpdatePortfolioOutput).
     pub fn build(self) -> crate::operation::update_portfolio::UpdatePortfolioOutput {
         crate::operation::update_portfolio::UpdatePortfolioOutput {
-            portfolio_detail: self.portfolio_detail
-            ,
-            tags: self.tags
-            ,
+            portfolio_detail: self.portfolio_detail,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

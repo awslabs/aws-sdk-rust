@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTypedLinkFacetInput  {
+pub struct DeleteTypedLinkFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteTypedLinkFacetInput  {
 }
 impl DeleteTypedLinkFacetInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The unique name of the typed link facet.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl DeleteTypedLinkFacetInput {
     /// Creates a new builder-style object to manufacture [`DeleteTypedLinkFacetInput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput).
-    pub fn builder() -> crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetInputBuilder {
         crate::operation::delete_typed_link_facet::builders::DeleteTypedLinkFacetInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteTypedLinkFacetInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     /// <p>The unique name of the typed link facet.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeleteTypedLinkFacetInputBuilder {
     }
     /// <p>The unique name of the typed link facet.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTypedLinkFacetInput`](crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput).
-    pub fn build(self) -> Result<crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetInput {
-                schema_arn: self.schema_arn
-                ,
-                name: self.name
-                ,
-            }
+                schema_arn: self.schema_arn,
+                name: self.name,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSubjectOutput  {
+pub struct GetSubjectOutput {
     /// <p>The state of the subject after a read or write operation.</p>
     #[doc(hidden)]
     pub subject: std::option::Option<crate::types::SubjectDetail>,
@@ -10,15 +10,15 @@ pub struct GetSubjectOutput  {
 }
 impl GetSubjectOutput {
     /// <p>The state of the subject after a read or write operation.</p>
-    pub fn subject(&self) -> std::option::Option<& crate::types::SubjectDetail> {
+    pub fn subject(&self) -> std::option::Option<&crate::types::SubjectDetail> {
         self.subject.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetSubjectOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetSubjectOutput {
     /// Creates a new builder-style object to manufacture [`GetSubjectOutput`](crate::operation::get_subject::GetSubjectOutput).
     pub fn builder() -> crate::operation::get_subject::builders::GetSubjectOutputBuilder {
@@ -41,24 +41,23 @@ impl GetSubjectOutputBuilder {
     }
     /// <p>The state of the subject after a read or write operation.</p>
     pub fn set_subject(mut self, input: std::option::Option<crate::types::SubjectDetail>) -> Self {
-        self.subject = input; self
+        self.subject = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetSubjectOutput`](crate::operation::get_subject::GetSubjectOutput).
     pub fn build(self) -> crate::operation::get_subject::GetSubjectOutput {
         crate::operation::get_subject::GetSubjectOutput {
-            subject: self.subject
-            ,
+            subject: self.subject,
             _request_id: self._request_id,
         }
     }
 }
-

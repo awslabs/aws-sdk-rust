@@ -3,7 +3,7 @@
 /// <p>Settings used to configure delivery mode and destination for conversation logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogSettingsRequest  {
+pub struct LogSettingsRequest {
     /// <p>The type of logging to enable. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
     #[doc(hidden)]
     pub log_type: std::option::Option<crate::types::LogType>,
@@ -19,19 +19,19 @@ pub struct LogSettingsRequest  {
 }
 impl LogSettingsRequest {
     /// <p>The type of logging to enable. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
-    pub fn log_type(&self) -> std::option::Option<& crate::types::LogType> {
+    pub fn log_type(&self) -> std::option::Option<&crate::types::LogType> {
         self.log_type.as_ref()
     }
     /// <p>Where the logs will be delivered. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
-    pub fn destination(&self) -> std::option::Option<& crate::types::Destination> {
+    pub fn destination(&self) -> std::option::Option<&crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer managed key for encrypting audio logs delivered to an S3 bucket. The key does not apply to CloudWatch Logs and is optional for S3 buckets.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs should be delivered.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl LogSettingsRequestBuilder {
     }
     /// <p>The type of logging to enable. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
     pub fn set_log_type(mut self, input: std::option::Option<crate::types::LogType>) -> Self {
-        self.log_type = input; self
+        self.log_type = input;
+        self
     }
     /// <p>Where the logs will be delivered. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
@@ -67,8 +68,12 @@ impl LogSettingsRequestBuilder {
         self
     }
     /// <p>Where the logs will be delivered. Text logs are delivered to a CloudWatch Logs log group. Audio logs are delivered to an S3 bucket.</p>
-    pub fn set_destination(mut self, input: std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input; self
+    pub fn set_destination(
+        mut self,
+        input: std::option::Option<crate::types::Destination>,
+    ) -> Self {
+        self.destination = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer managed key for encrypting audio logs delivered to an S3 bucket. The key does not apply to CloudWatch Logs and is optional for S3 buckets.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +82,8 @@ impl LogSettingsRequestBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS KMS customer managed key for encrypting audio logs delivered to an S3 bucket. The key does not apply to CloudWatch Logs and is optional for S3 buckets.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input; self
+        self.kms_key_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs should be delivered.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +92,16 @@ impl LogSettingsRequestBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group or S3 bucket where the logs should be delivered.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`LogSettingsRequest`](crate::types::LogSettingsRequest).
     pub fn build(self) -> crate::types::LogSettingsRequest {
         crate::types::LogSettingsRequest {
-            log_type: self.log_type
-            ,
-            destination: self.destination
-            ,
-            kms_key_arn: self.kms_key_arn
-            ,
-            resource_arn: self.resource_arn
-            ,
+            log_type: self.log_type,
+            destination: self.destination,
+            kms_key_arn: self.kms_key_arn,
+            resource_arn: self.resource_arn,
         }
     }
 }
-

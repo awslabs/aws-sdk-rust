@@ -3,14 +3,14 @@
 /// <p>Provides information about an Amazon Web Service that performed an action on an affected resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsService  {
+pub struct AwsService {
     /// <p>The name of the Amazon Web Service that performed the action.</p>
     #[doc(hidden)]
     pub invoked_by: std::option::Option<std::string::String>,
 }
 impl AwsService {
     /// <p>The name of the Amazon Web Service that performed the action.</p>
-    pub fn invoked_by(&self) -> std::option::Option<& str> {
+    pub fn invoked_by(&self) -> std::option::Option<&str> {
         self.invoked_by.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl AwsServiceBuilder {
     }
     /// <p>The name of the Amazon Web Service that performed the action.</p>
     pub fn set_invoked_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.invoked_by = input; self
+        self.invoked_by = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsService`](crate::types::AwsService).
     pub fn build(self) -> crate::types::AwsService {
         crate::types::AwsService {
-            invoked_by: self.invoked_by
-            ,
+            invoked_by: self.invoked_by,
         }
     }
 }
-

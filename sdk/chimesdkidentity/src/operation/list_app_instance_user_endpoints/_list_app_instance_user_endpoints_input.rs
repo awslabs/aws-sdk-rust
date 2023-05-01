@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListAppInstanceUserEndpointsInput  {
+pub struct ListAppInstanceUserEndpointsInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListAppInstanceUserEndpointsInput  {
 }
 impl ListAppInstanceUserEndpointsInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The maximum number of endpoints that you want to return.</p>
@@ -23,11 +23,11 @@ impl ListAppInstanceUserEndpointsInput {
         self.max_results
     }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListAppInstanceUserEndpointsInput  {
+impl std::fmt::Debug for ListAppInstanceUserEndpointsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceUserEndpointsInput");
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
@@ -38,7 +38,7 @@ impl  std::fmt::Debug for ListAppInstanceUserEndpointsInput  {
 }
 impl ListAppInstanceUserEndpointsInput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceUserEndpointsInput`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput).
-    pub fn builder() -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsInputBuilder {
+    pub fn builder() -> crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsInputBuilder{
         crate::operation::list_app_instance_user_endpoints::builders::ListAppInstanceUserEndpointsInputBuilder::default()
     }
 }
@@ -58,8 +58,12 @@ impl ListAppInstanceUserEndpointsInputBuilder {
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_user_arn = input; self
+    pub fn set_app_instance_user_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_instance_user_arn = input;
+        self
     }
     /// <p>The maximum number of endpoints that you want to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,7 +72,8 @@ impl ListAppInstanceUserEndpointsInputBuilder {
     }
     /// <p>The maximum number of endpoints that you want to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,19 +82,22 @@ impl ListAppInstanceUserEndpointsInputBuilder {
     }
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAppInstanceUserEndpointsInput`](crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput).
-    pub fn build(self) -> Result<crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsInput {
-                app_instance_user_arn: self.app_instance_user_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                app_instance_user_arn: self.app_instance_user_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
@@ -102,4 +110,3 @@ impl std::fmt::Debug for ListAppInstanceUserEndpointsInputBuilder {
         formatter.finish()
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The input structure for Reverse Geocoding operation type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReverseGeocodingConfig  {
+pub struct ReverseGeocodingConfig {
     /// <p>The field name for the data that describes y-axis coordinate, eg. latitude of a point.</p>
     #[doc(hidden)]
     pub y_attribute_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ReverseGeocodingConfig  {
 }
 impl ReverseGeocodingConfig {
     /// <p>The field name for the data that describes y-axis coordinate, eg. latitude of a point.</p>
-    pub fn y_attribute_name(&self) -> std::option::Option<& str> {
+    pub fn y_attribute_name(&self) -> std::option::Option<&str> {
         self.y_attribute_name.as_deref()
     }
     /// <p>The field name for the data that describes x-axis coordinate, eg. longitude of a point.</p>
-    pub fn x_attribute_name(&self) -> std::option::Option<& str> {
+    pub fn x_attribute_name(&self) -> std::option::Option<&str> {
         self.x_attribute_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ReverseGeocodingConfigBuilder {
     }
     /// <p>The field name for the data that describes y-axis coordinate, eg. latitude of a point.</p>
     pub fn set_y_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.y_attribute_name = input; self
+        self.y_attribute_name = input;
+        self
     }
     /// <p>The field name for the data that describes x-axis coordinate, eg. longitude of a point.</p>
     pub fn x_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ReverseGeocodingConfigBuilder {
     }
     /// <p>The field name for the data that describes x-axis coordinate, eg. longitude of a point.</p>
     pub fn set_x_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.x_attribute_name = input; self
+        self.x_attribute_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReverseGeocodingConfig`](crate::types::ReverseGeocodingConfig).
     pub fn build(self) -> crate::types::ReverseGeocodingConfig {
         crate::types::ReverseGeocodingConfig {
-            y_attribute_name: self.y_attribute_name
-            ,
-            x_attribute_name: self.x_attribute_name
-            ,
+            y_attribute_name: self.y_attribute_name,
+            x_attribute_name: self.x_attribute_name,
         }
     }
 }
-

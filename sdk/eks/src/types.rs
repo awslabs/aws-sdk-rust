@@ -272,4 +272,3 @@ pub mod builders;
 
 /// Error types that Amazon Elastic Kubernetes Service can respond with.
 pub mod error;
-

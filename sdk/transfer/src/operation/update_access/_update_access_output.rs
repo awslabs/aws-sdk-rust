@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccessOutput  {
+pub struct UpdateAccessOutput {
     /// <p>The identifier of the server that the user is attached to.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct UpdateAccessOutput  {
 }
 impl UpdateAccessOutput {
     /// <p>The identifier of the server that the user is attached to.</p>
-    pub fn server_id(&self) -> std::option::Option<& str> {
+    pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
-    pub fn external_id(&self) -> std::option::Option<& str> {
+    pub fn external_id(&self) -> std::option::Option<&str> {
         self.external_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAccessOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateAccessOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessOutput`](crate::operation::update_access::UpdateAccessOutput).
     pub fn builder() -> crate::operation::update_access::builders::UpdateAccessOutputBuilder {
@@ -49,7 +49,8 @@ impl UpdateAccessOutputBuilder {
     }
     /// <p>The identifier of the server that the user is attached to.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input; self
+        self.server_id = input;
+        self
     }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
     pub fn external_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +59,24 @@ impl UpdateAccessOutputBuilder {
     }
     /// <p>The external identifier of the group whose users have access to your Amazon S3 or Amazon EFS resources over the enabled protocols using Amazon Web ServicesTransfer Family.</p>
     pub fn set_external_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_id = input; self
+        self.external_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateAccessOutput`](crate::operation::update_access::UpdateAccessOutput).
     pub fn build(self) -> crate::operation::update_access::UpdateAccessOutput {
         crate::operation::update_access::UpdateAccessOutput {
-            server_id: self.server_id
-            ,
-            external_id: self.external_id
-            ,
+            server_id: self.server_id,
+            external_id: self.external_id,
             _request_id: self._request_id,
         }
     }
 }
-

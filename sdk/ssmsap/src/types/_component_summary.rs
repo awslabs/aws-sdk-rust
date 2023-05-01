@@ -3,7 +3,7 @@
 /// <p>The summary of the component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentSummary  {
+pub struct ComponentSummary {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -15,23 +15,27 @@ pub struct ComponentSummary  {
     pub component_type: std::option::Option<crate::types::ComponentType>,
     /// <p>The tags of the component.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ComponentSummary {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the component.</p>
-    pub fn component_id(&self) -> std::option::Option<& str> {
+    pub fn component_id(&self) -> std::option::Option<&str> {
         self.component_id.as_deref()
     }
     /// <p>The type of the component.</p>
-    pub fn component_type(&self) -> std::option::Option<& crate::types::ComponentType> {
+    pub fn component_type(&self) -> std::option::Option<&crate::types::ComponentType> {
         self.component_type.as_ref()
     }
     /// <p>The tags of the component.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -49,7 +53,8 @@ pub struct ComponentSummaryBuilder {
     pub(crate) application_id: std::option::Option<std::string::String>,
     pub(crate) component_id: std::option::Option<std::string::String>,
     pub(crate) component_type: std::option::Option<crate::types::ComponentType>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ComponentSummaryBuilder {
     /// <p>The ID of the application.</p>
@@ -59,7 +64,8 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The ID of the component.</p>
     pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +74,8 @@ impl ComponentSummaryBuilder {
     }
     /// <p>The ID of the component.</p>
     pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_id = input; self
+        self.component_id = input;
+        self
     }
     /// <p>The type of the component.</p>
     pub fn component_type(mut self, input: crate::types::ComponentType) -> Self {
@@ -76,36 +83,45 @@ impl ComponentSummaryBuilder {
         self
     }
     /// <p>The type of the component.</p>
-    pub fn set_component_type(mut self, input: std::option::Option<crate::types::ComponentType>) -> Self {
-        self.component_type = input; self
+    pub fn set_component_type(
+        mut self,
+        input: std::option::Option<crate::types::ComponentType>,
+    ) -> Self {
+        self.component_type = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the component.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags of the component.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComponentSummary`](crate::types::ComponentSummary).
     pub fn build(self) -> crate::types::ComponentSummary {
         crate::types::ComponentSummary {
-            application_id: self.application_id
-            ,
-            component_id: self.component_id
-            ,
-            component_type: self.component_type
-            ,
-            tags: self.tags
-            ,
+            application_id: self.application_id,
+            component_id: self.component_id,
+            component_type: self.component_type,
+            tags: self.tags,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEntitlementsOutput  {
+pub struct ListEntitlementsOutput {
     /// A list of entitlements that have been granted to you from other AWS accounts.
     #[doc(hidden)]
     pub entitlements: std::option::Option<std::vec::Vec<crate::types::ListedEntitlement>>,
@@ -13,22 +13,23 @@ pub struct ListEntitlementsOutput  {
 }
 impl ListEntitlementsOutput {
     /// A list of entitlements that have been granted to you from other AWS accounts.
-    pub fn entitlements(&self) -> std::option::Option<& [crate::types::ListedEntitlement]> {
+    pub fn entitlements(&self) -> std::option::Option<&[crate::types::ListedEntitlement]> {
         self.entitlements.as_deref()
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEntitlementsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListEntitlementsOutput {
     /// Creates a new builder-style object to manufacture [`ListEntitlementsOutput`](crate::operation::list_entitlements::ListEntitlementsOutput).
-    pub fn builder() -> crate::operation::list_entitlements::builders::ListEntitlementsOutputBuilder {
+    pub fn builder() -> crate::operation::list_entitlements::builders::ListEntitlementsOutputBuilder
+    {
         crate::operation::list_entitlements::builders::ListEntitlementsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListEntitlementsOutputBuilder {
     /// A list of entitlements that have been granted to you from other AWS accounts.
     pub fn entitlements(mut self, input: crate::types::ListedEntitlement) -> Self {
         let mut v = self.entitlements.unwrap_or_default();
-                        v.push(input);
-                        self.entitlements = Some(v);
-                        self
+        v.push(input);
+        self.entitlements = Some(v);
+        self
     }
     /// A list of entitlements that have been granted to you from other AWS accounts.
-    pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::types::ListedEntitlement>>) -> Self {
-        self.entitlements = input; self
+    pub fn set_entitlements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ListedEntitlement>>,
+    ) -> Self {
+        self.entitlements = input;
+        self
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListEntitlementsOutputBuilder {
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListEntitlementsOutput`](crate::operation::list_entitlements::ListEntitlementsOutput).
     pub fn build(self) -> crate::operation::list_entitlements::ListEntitlementsOutput {
         crate::operation::list_entitlements::ListEntitlementsOutput {
-            entitlements: self.entitlements
-            ,
-            next_token: self.next_token
-            ,
+            entitlements: self.entitlements,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

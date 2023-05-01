@@ -3,7 +3,7 @@
 /// <p>Available option.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OptionGroupOption  {
+pub struct OptionGroupOption {
     /// <p>The name of the option.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -48,33 +48,35 @@ pub struct OptionGroupOption  {
     pub supports_option_version_downgrade: std::option::Option<bool>,
     /// <p>The option settings that are available (and the default value) for each option in an option group.</p>
     #[doc(hidden)]
-    pub option_group_option_settings: std::option::Option<std::vec::Vec<crate::types::OptionGroupOptionSetting>>,
+    pub option_group_option_settings:
+        std::option::Option<std::vec::Vec<crate::types::OptionGroupOptionSetting>>,
     /// <p>The versions that are available for the option.</p>
     #[doc(hidden)]
-    pub option_group_option_versions: std::option::Option<std::vec::Vec<crate::types::OptionVersion>>,
+    pub option_group_option_versions:
+        std::option::Option<std::vec::Vec<crate::types::OptionVersion>>,
     /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
     #[doc(hidden)]
     pub copyable_cross_account: std::option::Option<bool>,
 }
 impl OptionGroupOption {
     /// <p>The name of the option.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the option.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the engine that this option can be applied to.</p>
-    pub fn engine_name(&self) -> std::option::Option<& str> {
+    pub fn engine_name(&self) -> std::option::Option<&str> {
         self.engine_name.as_deref()
     }
     /// <p>Indicates the major engine version that the option is available for.</p>
-    pub fn major_engine_version(&self) -> std::option::Option<& str> {
+    pub fn major_engine_version(&self) -> std::option::Option<&str> {
         self.major_engine_version.as_deref()
     }
     /// <p>The minimum required engine version for the option to be applied.</p>
-    pub fn minimum_required_minor_engine_version(&self) -> std::option::Option<& str> {
+    pub fn minimum_required_minor_engine_version(&self) -> std::option::Option<&str> {
         self.minimum_required_minor_engine_version.as_deref()
     }
     /// <p>Specifies whether the option requires a port.</p>
@@ -86,11 +88,11 @@ impl OptionGroupOption {
         self.default_port
     }
     /// <p>The options that are prerequisites for this option.</p>
-    pub fn options_depended_on(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn options_depended_on(&self) -> std::option::Option<&[std::string::String]> {
         self.options_depended_on.as_deref()
     }
     /// <p>The options that conflict with this option.</p>
-    pub fn options_conflicts_with(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn options_conflicts_with(&self) -> std::option::Option<&[std::string::String]> {
         self.options_conflicts_with.as_deref()
     }
     /// <p>Persistent options can't be removed from an option group while DB instances are associated with the option group. If you disassociate all DB instances from the option group, your can remove the persistent option from the option group.</p>
@@ -114,11 +116,15 @@ impl OptionGroupOption {
         self.supports_option_version_downgrade
     }
     /// <p>The option settings that are available (and the default value) for each option in an option group.</p>
-    pub fn option_group_option_settings(&self) -> std::option::Option<& [crate::types::OptionGroupOptionSetting]> {
+    pub fn option_group_option_settings(
+        &self,
+    ) -> std::option::Option<&[crate::types::OptionGroupOptionSetting]> {
         self.option_group_option_settings.as_deref()
     }
     /// <p>The versions that are available for the option.</p>
-    pub fn option_group_option_versions(&self) -> std::option::Option<& [crate::types::OptionVersion]> {
+    pub fn option_group_option_versions(
+        &self,
+    ) -> std::option::Option<&[crate::types::OptionVersion]> {
         self.option_group_option_versions.as_deref()
     }
     /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
@@ -151,8 +157,10 @@ pub struct OptionGroupOptionBuilder {
     pub(crate) requires_auto_minor_engine_version_upgrade: std::option::Option<bool>,
     pub(crate) vpc_only: std::option::Option<bool>,
     pub(crate) supports_option_version_downgrade: std::option::Option<bool>,
-    pub(crate) option_group_option_settings: std::option::Option<std::vec::Vec<crate::types::OptionGroupOptionSetting>>,
-    pub(crate) option_group_option_versions: std::option::Option<std::vec::Vec<crate::types::OptionVersion>>,
+    pub(crate) option_group_option_settings:
+        std::option::Option<std::vec::Vec<crate::types::OptionGroupOptionSetting>>,
+    pub(crate) option_group_option_versions:
+        std::option::Option<std::vec::Vec<crate::types::OptionVersion>>,
     pub(crate) copyable_cross_account: std::option::Option<bool>,
 }
 impl OptionGroupOptionBuilder {
@@ -163,7 +171,8 @@ impl OptionGroupOptionBuilder {
     }
     /// <p>The name of the option.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the option.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,7 +181,8 @@ impl OptionGroupOptionBuilder {
     }
     /// <p>The description of the option.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The name of the engine that this option can be applied to.</p>
     pub fn engine_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,7 +191,8 @@ impl OptionGroupOptionBuilder {
     }
     /// <p>The name of the engine that this option can be applied to.</p>
     pub fn set_engine_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_name = input; self
+        self.engine_name = input;
+        self
     }
     /// <p>Indicates the major engine version that the option is available for.</p>
     pub fn major_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,17 +200,28 @@ impl OptionGroupOptionBuilder {
         self
     }
     /// <p>Indicates the major engine version that the option is available for.</p>
-    pub fn set_major_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.major_engine_version = input; self
+    pub fn set_major_engine_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.major_engine_version = input;
+        self
     }
     /// <p>The minimum required engine version for the option to be applied.</p>
-    pub fn minimum_required_minor_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn minimum_required_minor_engine_version(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.minimum_required_minor_engine_version = Some(input.into());
         self
     }
     /// <p>The minimum required engine version for the option to be applied.</p>
-    pub fn set_minimum_required_minor_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.minimum_required_minor_engine_version = input; self
+    pub fn set_minimum_required_minor_engine_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.minimum_required_minor_engine_version = input;
+        self
     }
     /// <p>Specifies whether the option requires a port.</p>
     pub fn port_required(mut self, input: bool) -> Self {
@@ -208,7 +230,8 @@ impl OptionGroupOptionBuilder {
     }
     /// <p>Specifies whether the option requires a port.</p>
     pub fn set_port_required(mut self, input: std::option::Option<bool>) -> Self {
-        self.port_required = input; self
+        self.port_required = input;
+        self
     }
     /// <p>If the option requires a port, specifies the default port for the option.</p>
     pub fn default_port(mut self, input: i32) -> Self {
@@ -217,7 +240,8 @@ impl OptionGroupOptionBuilder {
     }
     /// <p>If the option requires a port, specifies the default port for the option.</p>
     pub fn set_default_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.default_port = input; self
+        self.default_port = input;
+        self
     }
     /// Appends an item to `options_depended_on`.
     ///
@@ -226,13 +250,17 @@ impl OptionGroupOptionBuilder {
     /// <p>The options that are prerequisites for this option.</p>
     pub fn options_depended_on(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.options_depended_on.unwrap_or_default();
-                        v.push(input.into());
-                        self.options_depended_on = Some(v);
-                        self
+        v.push(input.into());
+        self.options_depended_on = Some(v);
+        self
     }
     /// <p>The options that are prerequisites for this option.</p>
-    pub fn set_options_depended_on(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.options_depended_on = input; self
+    pub fn set_options_depended_on(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.options_depended_on = input;
+        self
     }
     /// Appends an item to `options_conflicts_with`.
     ///
@@ -241,13 +269,17 @@ impl OptionGroupOptionBuilder {
     /// <p>The options that conflict with this option.</p>
     pub fn options_conflicts_with(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.options_conflicts_with.unwrap_or_default();
-                        v.push(input.into());
-                        self.options_conflicts_with = Some(v);
-                        self
+        v.push(input.into());
+        self.options_conflicts_with = Some(v);
+        self
     }
     /// <p>The options that conflict with this option.</p>
-    pub fn set_options_conflicts_with(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.options_conflicts_with = input; self
+    pub fn set_options_conflicts_with(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.options_conflicts_with = input;
+        self
     }
     /// <p>Persistent options can't be removed from an option group while DB instances are associated with the option group. If you disassociate all DB instances from the option group, your can remove the persistent option from the option group.</p>
     pub fn persistent(mut self, input: bool) -> Self {
@@ -256,7 +288,8 @@ impl OptionGroupOptionBuilder {
     }
     /// <p>Persistent options can't be removed from an option group while DB instances are associated with the option group. If you disassociate all DB instances from the option group, your can remove the persistent option from the option group.</p>
     pub fn set_persistent(mut self, input: std::option::Option<bool>) -> Self {
-        self.persistent = input; self
+        self.persistent = input;
+        self
     }
     /// <p>Permanent options can never be removed from an option group. An option group containing a permanent option can't be removed from a DB instance.</p>
     pub fn permanent(mut self, input: bool) -> Self {
@@ -265,7 +298,8 @@ impl OptionGroupOptionBuilder {
     }
     /// <p>Permanent options can never be removed from an option group. An option group containing a permanent option can't be removed from a DB instance.</p>
     pub fn set_permanent(mut self, input: std::option::Option<bool>) -> Self {
-        self.permanent = input; self
+        self.permanent = input;
+        self
     }
     /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later.</p>
     pub fn requires_auto_minor_engine_version_upgrade(mut self, input: bool) -> Self {
@@ -273,8 +307,12 @@ impl OptionGroupOptionBuilder {
         self
     }
     /// <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB instance before you can use this option. You can enable Auto Minor Version Upgrade when you first create your DB instance, or by modifying your DB instance later.</p>
-    pub fn set_requires_auto_minor_engine_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
-        self.requires_auto_minor_engine_version_upgrade = input; self
+    pub fn set_requires_auto_minor_engine_version_upgrade(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.requires_auto_minor_engine_version_upgrade = input;
+        self
     }
     /// <p>If true, you can only use this option with a DB instance that is in a VPC.</p>
     pub fn vpc_only(mut self, input: bool) -> Self {
@@ -283,7 +321,8 @@ impl OptionGroupOptionBuilder {
     }
     /// <p>If true, you can only use this option with a DB instance that is in a VPC.</p>
     pub fn set_vpc_only(mut self, input: std::option::Option<bool>) -> Self {
-        self.vpc_only = input; self
+        self.vpc_only = input;
+        self
     }
     /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available.</p>
     pub fn supports_option_version_downgrade(mut self, input: bool) -> Self {
@@ -291,23 +330,34 @@ impl OptionGroupOptionBuilder {
         self
     }
     /// <p>If true, you can change the option to an earlier version of the option. This only applies to options that have different versions available.</p>
-    pub fn set_supports_option_version_downgrade(mut self, input: std::option::Option<bool>) -> Self {
-        self.supports_option_version_downgrade = input; self
+    pub fn set_supports_option_version_downgrade(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.supports_option_version_downgrade = input;
+        self
     }
     /// Appends an item to `option_group_option_settings`.
     ///
     /// To override the contents of this collection use [`set_option_group_option_settings`](Self::set_option_group_option_settings).
     ///
     /// <p>The option settings that are available (and the default value) for each option in an option group.</p>
-    pub fn option_group_option_settings(mut self, input: crate::types::OptionGroupOptionSetting) -> Self {
+    pub fn option_group_option_settings(
+        mut self,
+        input: crate::types::OptionGroupOptionSetting,
+    ) -> Self {
         let mut v = self.option_group_option_settings.unwrap_or_default();
-                        v.push(input);
-                        self.option_group_option_settings = Some(v);
-                        self
+        v.push(input);
+        self.option_group_option_settings = Some(v);
+        self
     }
     /// <p>The option settings that are available (and the default value) for each option in an option group.</p>
-    pub fn set_option_group_option_settings(mut self, input: std::option::Option<std::vec::Vec<crate::types::OptionGroupOptionSetting>>) -> Self {
-        self.option_group_option_settings = input; self
+    pub fn set_option_group_option_settings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OptionGroupOptionSetting>>,
+    ) -> Self {
+        self.option_group_option_settings = input;
+        self
     }
     /// Appends an item to `option_group_option_versions`.
     ///
@@ -316,13 +366,17 @@ impl OptionGroupOptionBuilder {
     /// <p>The versions that are available for the option.</p>
     pub fn option_group_option_versions(mut self, input: crate::types::OptionVersion) -> Self {
         let mut v = self.option_group_option_versions.unwrap_or_default();
-                        v.push(input);
-                        self.option_group_option_versions = Some(v);
-                        self
+        v.push(input);
+        self.option_group_option_versions = Some(v);
+        self
     }
     /// <p>The versions that are available for the option.</p>
-    pub fn set_option_group_option_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::OptionVersion>>) -> Self {
-        self.option_group_option_versions = input; self
+    pub fn set_option_group_option_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OptionVersion>>,
+    ) -> Self {
+        self.option_group_option_versions = input;
+        self
     }
     /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
     pub fn copyable_cross_account(mut self, input: bool) -> Self {
@@ -331,51 +385,31 @@ impl OptionGroupOptionBuilder {
     }
     /// <p>Specifies whether the option can be copied across Amazon Web Services accounts.</p>
     pub fn set_copyable_cross_account(mut self, input: std::option::Option<bool>) -> Self {
-        self.copyable_cross_account = input; self
+        self.copyable_cross_account = input;
+        self
     }
     /// Consumes the builder and constructs a [`OptionGroupOption`](crate::types::OptionGroupOption).
     pub fn build(self) -> crate::types::OptionGroupOption {
         crate::types::OptionGroupOption {
-            name: self.name
-            ,
-            description: self.description
-            ,
-            engine_name: self.engine_name
-            ,
-            major_engine_version: self.major_engine_version
-            ,
-            minimum_required_minor_engine_version: self.minimum_required_minor_engine_version
-            ,
-            port_required: self.port_required
-                .unwrap_or_default()
-            ,
-            default_port: self.default_port
-            ,
-            options_depended_on: self.options_depended_on
-            ,
-            options_conflicts_with: self.options_conflicts_with
-            ,
-            persistent: self.persistent
-                .unwrap_or_default()
-            ,
-            permanent: self.permanent
-                .unwrap_or_default()
-            ,
-            requires_auto_minor_engine_version_upgrade: self.requires_auto_minor_engine_version_upgrade
-                .unwrap_or_default()
-            ,
-            vpc_only: self.vpc_only
-                .unwrap_or_default()
-            ,
-            supports_option_version_downgrade: self.supports_option_version_downgrade
-            ,
-            option_group_option_settings: self.option_group_option_settings
-            ,
-            option_group_option_versions: self.option_group_option_versions
-            ,
-            copyable_cross_account: self.copyable_cross_account
-            ,
+            name: self.name,
+            description: self.description,
+            engine_name: self.engine_name,
+            major_engine_version: self.major_engine_version,
+            minimum_required_minor_engine_version: self.minimum_required_minor_engine_version,
+            port_required: self.port_required.unwrap_or_default(),
+            default_port: self.default_port,
+            options_depended_on: self.options_depended_on,
+            options_conflicts_with: self.options_conflicts_with,
+            persistent: self.persistent.unwrap_or_default(),
+            permanent: self.permanent.unwrap_or_default(),
+            requires_auto_minor_engine_version_upgrade: self
+                .requires_auto_minor_engine_version_upgrade
+                .unwrap_or_default(),
+            vpc_only: self.vpc_only.unwrap_or_default(),
+            supports_option_version_downgrade: self.supports_option_version_downgrade,
+            option_group_option_settings: self.option_group_option_settings,
+            option_group_option_versions: self.option_group_option_versions,
+            copyable_cross_account: self.copyable_cross_account,
         }
     }
 }
-

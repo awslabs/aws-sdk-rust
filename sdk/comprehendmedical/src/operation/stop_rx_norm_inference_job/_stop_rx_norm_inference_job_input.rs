@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopRxNormInferenceJobInput  {
+pub struct StopRxNormInferenceJobInput {
     /// <p>The identifier of the job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl StopRxNormInferenceJobInput {
     /// <p>The identifier of the job.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl StopRxNormInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`StopRxNormInferenceJobInput`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput).
-    pub fn builder() -> crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobInputBuilder
+    {
         crate::operation::stop_rx_norm_inference_job::builders::StopRxNormInferenceJobInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl StopRxNormInferenceJobInputBuilder {
     }
     /// <p>The identifier of the job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopRxNormInferenceJobInput`](crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput).
-    pub fn build(self) -> Result<crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_rx_norm_inference_job::StopRxNormInferenceJobInput {
-                job_id: self.job_id
-                ,
-            }
+                job_id: self.job_id,
+            },
         )
     }
 }
-

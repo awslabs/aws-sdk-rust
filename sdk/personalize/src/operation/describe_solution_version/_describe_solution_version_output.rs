@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSolutionVersionOutput  {
+pub struct DescribeSolutionVersionOutput {
     /// <p>The solution version.</p>
     #[doc(hidden)]
     pub solution_version: std::option::Option<crate::types::SolutionVersion>,
@@ -10,18 +10,20 @@ pub struct DescribeSolutionVersionOutput  {
 }
 impl DescribeSolutionVersionOutput {
     /// <p>The solution version.</p>
-    pub fn solution_version(&self) -> std::option::Option<& crate::types::SolutionVersion> {
+    pub fn solution_version(&self) -> std::option::Option<&crate::types::SolutionVersion> {
         self.solution_version.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSolutionVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeSolutionVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSolutionVersionOutput`](crate::operation::describe_solution_version::DescribeSolutionVersionOutput).
-    pub fn builder() -> crate::operation::describe_solution_version::builders::DescribeSolutionVersionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_solution_version::builders::DescribeSolutionVersionOutputBuilder
+    {
         crate::operation::describe_solution_version::builders::DescribeSolutionVersionOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl DescribeSolutionVersionOutputBuilder {
         self
     }
     /// <p>The solution version.</p>
-    pub fn set_solution_version(mut self, input: std::option::Option<crate::types::SolutionVersion>) -> Self {
-        self.solution_version = input; self
+    pub fn set_solution_version(
+        mut self,
+        input: std::option::Option<crate::types::SolutionVersion>,
+    ) -> Self {
+        self.solution_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeSolutionVersionOutput`](crate::operation::describe_solution_version::DescribeSolutionVersionOutput).
-    pub fn build(self) -> crate::operation::describe_solution_version::DescribeSolutionVersionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_solution_version::DescribeSolutionVersionOutput {
         crate::operation::describe_solution_version::DescribeSolutionVersionOutput {
-            solution_version: self.solution_version
-            ,
+            solution_version: self.solution_version,
             _request_id: self._request_id,
         }
     }
 }
-

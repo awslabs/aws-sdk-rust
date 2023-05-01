@@ -37,4 +37,3 @@ mod _unsupported_stream_media_type_exception;
 
 /// Builders
 pub mod builders;
-

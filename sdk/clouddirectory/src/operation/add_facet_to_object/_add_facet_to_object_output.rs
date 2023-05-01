@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddFacetToObjectOutput  {
+pub struct AddFacetToObjectOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AddFacetToObjectOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AddFacetToObjectOutput {
     /// Creates a new builder-style object to manufacture [`AddFacetToObjectOutput`](crate::operation::add_facet_to_object::AddFacetToObjectOutput).
-    pub fn builder() -> crate::operation::add_facet_to_object::builders::AddFacetToObjectOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::add_facet_to_object::builders::AddFacetToObjectOutputBuilder {
         crate::operation::add_facet_to_object::builders::AddFacetToObjectOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct AddFacetToObjectOutputBuilder {
 }
 impl AddFacetToObjectOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AddFacetToObjectOutput`](crate::operation::add_facet_to_object::AddFacetToObjectOutput).
     pub fn build(self) -> crate::operation::add_facet_to_object::AddFacetToObjectOutput {
         crate::operation::add_facet_to_object::AddFacetToObjectOutput {
@@ -40,4 +41,3 @@ impl AddFacetToObjectOutputBuilder {
         }
     }
 }
-

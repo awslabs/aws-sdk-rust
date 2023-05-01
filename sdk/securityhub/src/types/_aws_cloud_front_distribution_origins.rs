@@ -3,14 +3,17 @@
 /// <p>A complex type that contains information about origins and origin groups for this CloudFront distribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsCloudFrontDistributionOrigins  {
+pub struct AwsCloudFrontDistributionOrigins {
     /// <p>A complex type that contains origins or origin groups for this distribution.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>>,
+    pub items:
+        std::option::Option<std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>>,
 }
 impl AwsCloudFrontDistributionOrigins {
     /// <p>A complex type that contains origins or origin groups for this distribution.</p>
-    pub fn items(&self) -> std::option::Option<& [crate::types::AwsCloudFrontDistributionOriginItem]> {
+    pub fn items(
+        &self,
+    ) -> std::option::Option<&[crate::types::AwsCloudFrontDistributionOriginItem]> {
         self.items.as_deref()
     }
 }
@@ -25,7 +28,8 @@ impl AwsCloudFrontDistributionOrigins {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsCloudFrontDistributionOriginsBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>>,
+    pub(crate) items:
+        std::option::Option<std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>>,
 }
 impl AwsCloudFrontDistributionOriginsBuilder {
     /// Appends an item to `items`.
@@ -35,20 +39,22 @@ impl AwsCloudFrontDistributionOriginsBuilder {
     /// <p>A complex type that contains origins or origin groups for this distribution.</p>
     pub fn items(mut self, input: crate::types::AwsCloudFrontDistributionOriginItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input);
-                        self.items = Some(v);
-                        self
+        v.push(input);
+        self.items = Some(v);
+        self
     }
     /// <p>A complex type that contains origins or origin groups for this distribution.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::AwsCloudFrontDistributionOriginItem>,
+        >,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsCloudFrontDistributionOrigins`](crate::types::AwsCloudFrontDistributionOrigins).
     pub fn build(self) -> crate::types::AwsCloudFrontDistributionOrigins {
-        crate::types::AwsCloudFrontDistributionOrigins {
-            items: self.items
-            ,
-        }
+        crate::types::AwsCloudFrontDistributionOrigins { items: self.items }
     }
 }
-

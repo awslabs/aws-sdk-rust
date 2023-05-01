@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMlTransformInput  {
+pub struct DeleteMlTransformInput {
     /// <p>The unique identifier of the transform to delete.</p>
     #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
 }
 impl DeleteMlTransformInput {
     /// <p>The unique identifier of the transform to delete.</p>
-    pub fn transform_id(&self) -> std::option::Option<& str> {
+    pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
 }
 impl DeleteMlTransformInput {
     /// Creates a new builder-style object to manufacture [`DeleteMlTransformInput`](crate::operation::delete_ml_transform::DeleteMlTransformInput).
-    pub fn builder() -> crate::operation::delete_ml_transform::builders::DeleteMlTransformInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_ml_transform::builders::DeleteMlTransformInputBuilder {
         crate::operation::delete_ml_transform::builders::DeleteMlTransformInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteMlTransformInputBuilder {
     }
     /// <p>The unique identifier of the transform to delete.</p>
     pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transform_id = input; self
+        self.transform_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMlTransformInput`](crate::operation::delete_ml_transform::DeleteMlTransformInput).
-    pub fn build(self) -> Result<crate::operation::delete_ml_transform::DeleteMlTransformInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_ml_transform::DeleteMlTransformInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_ml_transform::DeleteMlTransformInput {
-                transform_id: self.transform_id
-                ,
-            }
+                transform_id: self.transform_id,
+            },
         )
     }
 }
-

@@ -22,7 +22,7 @@ pub enum Error {
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36,7 +36,7 @@ impl std::fmt::Display for Error {
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ServiceUnavailableException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f)
+            Error::Unhandled(inner) => inner.fmt(f),
         }
     }
 }
@@ -53,8 +53,12 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::delete_recommen
         }
     }
 }
-impl From<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError> for Error {
-    fn from(err: crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError) -> Self {
+impl From<crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError,
+    ) -> Self {
         match err {
             crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::delete_recommendation_preferences::DeleteRecommendationPreferencesError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -137,8 +141,12 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::export_ebs_volu
         }
     }
 }
-impl From<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError> for Error {
-    fn from(err: crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError) -> Self {
+impl From<crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError,
+    ) -> Self {
         match err {
             crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::export_ebs_volume_recommendations::ExportEBSVolumeRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -193,8 +201,13 @@ impl<R> From<aws_smithy_http::result::SdkError<crate::operation::export_ecs_serv
         }
     }
 }
-impl From<crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError> for Error {
-    fn from(err: crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError) -> Self {
+impl
+    From<crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError,
+    ) -> Self {
         match err {
             crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -264,21 +277,43 @@ impl From<crate::operation::get_auto_scaling_group_recommendations::GetAutoScali
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError> for Error {
-    fn from(err: crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError) -> Self {
+impl From<crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError,
+    ) -> Self {
         match err {
             crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -292,21 +327,43 @@ impl From<crate::operation::get_ebs_volume_recommendations::GetEBSVolumeRecommen
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError> for Error {
-    fn from(err: crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError) -> Self {
+impl From<crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
+    ) -> Self {
         match err {
             crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -376,21 +433,43 @@ impl From<crate::operation::get_ecs_service_recommendation_projected_metrics::Ge
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError> for Error {
-    fn from(err: crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError) -> Self {
+impl From<crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError,
+    ) -> Self {
         match err {
             crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_ecs_service_recommendations::GetECSServiceRecommendationsError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -432,16 +511,34 @@ impl From<crate::operation::get_effective_recommendation_preferences::GetEffecti
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_enrollment_status::GetEnrollmentStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_enrollment_status::GetEnrollmentStatusError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_enrollment_status::GetEnrollmentStatusError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -512,21 +609,43 @@ impl From<crate::operation::get_lambda_function_recommendations::GetLambdaFuncti
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError> for Error {
-    fn from(err: crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError) -> Self {
+impl From<crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError,
+    ) -> Self {
         match err {
             crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_recommendation_preferences::GetRecommendationPreferencesError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -540,21 +659,43 @@ impl From<crate::operation::get_recommendation_preferences::GetRecommendationPre
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::get_recommendation_summaries::GetRecommendationSummariesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::get_recommendation_summaries::GetRecommendationSummariesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::get_recommendation_summaries::GetRecommendationSummariesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::get_recommendation_summaries::GetRecommendationSummariesError> for Error {
-    fn from(err: crate::operation::get_recommendation_summaries::GetRecommendationSummariesError) -> Self {
+impl From<crate::operation::get_recommendation_summaries::GetRecommendationSummariesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::get_recommendation_summaries::GetRecommendationSummariesError,
+    ) -> Self {
         match err {
             crate::operation::get_recommendation_summaries::GetRecommendationSummariesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::get_recommendation_summaries::GetRecommendationSummariesError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -567,21 +708,43 @@ impl From<crate::operation::get_recommendation_summaries::GetRecommendationSumma
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
-impl From<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError> for Error {
-    fn from(err: crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError) -> Self {
+impl From<crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError>
+    for Error
+{
+    fn from(
+        err: crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
+    ) -> Self {
         match err {
             crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
             crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError::InternalServerException(inner) => Error::InternalServerException(inner),
@@ -595,16 +758,34 @@ impl From<crate::operation::put_recommendation_preferences::PutRecommendationPre
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::update_enrollment_status::UpdateEnrollmentStatusError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::update_enrollment_status::UpdateEnrollmentStatusError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -633,7 +814,7 @@ impl std::error::Error for Error {
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ServiceUnavailableException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
-            Error::Unhandled(inner) => inner.source()
+            Error::Unhandled(inner) => inner.source(),
         }
     }
 }
@@ -653,4 +834,3 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
-

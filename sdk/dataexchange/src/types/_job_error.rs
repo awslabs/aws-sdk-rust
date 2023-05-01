@@ -3,7 +3,7 @@
 /// <p>An error that occurred with the job request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobError  {
+pub struct JobError {
     /// <p>The code for the job error.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::Code>,
@@ -28,15 +28,15 @@ pub struct JobError  {
 }
 impl JobError {
     /// <p>The code for the job error.</p>
-    pub fn code(&self) -> std::option::Option<& crate::types::Code> {
+    pub fn code(&self) -> std::option::Option<&crate::types::Code> {
         self.code.as_ref()
     }
     /// <p>The details about the job error.</p>
-    pub fn details(&self) -> std::option::Option<& crate::types::Details> {
+    pub fn details(&self) -> std::option::Option<&crate::types::Details> {
         self.details.as_ref()
     }
     /// <p>The name of the limit that was reached.</p>
-    pub fn limit_name(&self) -> std::option::Option<& crate::types::JobErrorLimitName> {
+    pub fn limit_name(&self) -> std::option::Option<&crate::types::JobErrorLimitName> {
         self.limit_name.as_ref()
     }
     /// <p>The value of the exceeded limit.</p>
@@ -44,15 +44,15 @@ impl JobError {
         self.limit_value
     }
     /// <p>The message related to the job error.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The unique identifier for the resource related to the error.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of resource related to the error.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::JobErrorResourceTypes> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::JobErrorResourceTypes> {
         self.resource_type.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl JobErrorBuilder {
     }
     /// <p>The code for the job error.</p>
     pub fn set_code(mut self, input: std::option::Option<crate::types::Code>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The details about the job error.</p>
     pub fn details(mut self, input: crate::types::Details) -> Self {
@@ -92,7 +93,8 @@ impl JobErrorBuilder {
     }
     /// <p>The details about the job error.</p>
     pub fn set_details(mut self, input: std::option::Option<crate::types::Details>) -> Self {
-        self.details = input; self
+        self.details = input;
+        self
     }
     /// <p>The name of the limit that was reached.</p>
     pub fn limit_name(mut self, input: crate::types::JobErrorLimitName) -> Self {
@@ -100,8 +102,12 @@ impl JobErrorBuilder {
         self
     }
     /// <p>The name of the limit that was reached.</p>
-    pub fn set_limit_name(mut self, input: std::option::Option<crate::types::JobErrorLimitName>) -> Self {
-        self.limit_name = input; self
+    pub fn set_limit_name(
+        mut self,
+        input: std::option::Option<crate::types::JobErrorLimitName>,
+    ) -> Self {
+        self.limit_name = input;
+        self
     }
     /// <p>The value of the exceeded limit.</p>
     pub fn limit_value(mut self, input: f64) -> Self {
@@ -110,7 +116,8 @@ impl JobErrorBuilder {
     }
     /// <p>The value of the exceeded limit.</p>
     pub fn set_limit_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.limit_value = input; self
+        self.limit_value = input;
+        self
     }
     /// <p>The message related to the job error.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +126,8 @@ impl JobErrorBuilder {
     }
     /// <p>The message related to the job error.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The unique identifier for the resource related to the error.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +136,8 @@ impl JobErrorBuilder {
     }
     /// <p>The unique identifier for the resource related to the error.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The type of resource related to the error.</p>
     pub fn resource_type(mut self, input: crate::types::JobErrorResourceTypes) -> Self {
@@ -136,28 +145,23 @@ impl JobErrorBuilder {
         self
     }
     /// <p>The type of resource related to the error.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::JobErrorResourceTypes>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::JobErrorResourceTypes>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`JobError`](crate::types::JobError).
     pub fn build(self) -> crate::types::JobError {
         crate::types::JobError {
-            code: self.code
-            ,
-            details: self.details
-            ,
-            limit_name: self.limit_name
-            ,
-            limit_value: self.limit_value
-                .unwrap_or_default()
-            ,
-            message: self.message
-            ,
-            resource_id: self.resource_id
-            ,
-            resource_type: self.resource_type
-            ,
+            code: self.code,
+            details: self.details,
+            limit_name: self.limit_name,
+            limit_value: self.limit_value.unwrap_or_default(),
+            message: self.message,
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
         }
     }
 }
-

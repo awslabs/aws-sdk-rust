@@ -56,4 +56,3 @@ pub use crate::types::_comment_filter::CommentFilterBuilder;
 pub use crate::types::_contact_filter::ContactFilterBuilder;
 
 pub use crate::types::_contact::ContactBuilder;
-

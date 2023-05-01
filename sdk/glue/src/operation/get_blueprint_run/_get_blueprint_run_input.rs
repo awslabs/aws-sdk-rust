@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBlueprintRunInput  {
+pub struct GetBlueprintRunInput {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
     pub blueprint_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetBlueprintRunInput  {
 }
 impl GetBlueprintRunInput {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(&self) -> std::option::Option<& str> {
+    pub fn blueprint_name(&self) -> std::option::Option<&str> {
         self.blueprint_name.as_deref()
     }
     /// <p>The run ID for the blueprint run you want to retrieve.</p>
-    pub fn run_id(&self) -> std::option::Option<& str> {
+    pub fn run_id(&self) -> std::option::Option<&str> {
         self.run_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetBlueprintRunInputBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_blueprint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.blueprint_name = input; self
+        self.blueprint_name = input;
+        self
     }
     /// <p>The run ID for the blueprint run you want to retrieve.</p>
     pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl GetBlueprintRunInputBuilder {
     }
     /// <p>The run ID for the blueprint run you want to retrieve.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input; self
+        self.run_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetBlueprintRunInput`](crate::operation::get_blueprint_run::GetBlueprintRunInput).
-    pub fn build(self) -> Result<crate::operation::get_blueprint_run::GetBlueprintRunInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_blueprint_run::GetBlueprintRunInput {
-                blueprint_name: self.blueprint_name
-                ,
-                run_id: self.run_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_blueprint_run::GetBlueprintRunInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_blueprint_run::GetBlueprintRunInput {
+            blueprint_name: self.blueprint_name,
+            run_id: self.run_id,
+        })
     }
 }
-

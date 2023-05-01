@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImagePipelineOutput  {
+pub struct DeleteImagePipelineOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -13,23 +13,25 @@ pub struct DeleteImagePipelineOutput  {
 }
 impl DeleteImagePipelineOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
-    pub fn image_pipeline_arn(&self) -> std::option::Option<& str> {
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
         self.image_pipeline_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteImagePipelineOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteImagePipelineOutput {
     /// Creates a new builder-style object to manufacture [`DeleteImagePipelineOutput`](crate::operation::delete_image_pipeline::DeleteImagePipelineOutput).
-    pub fn builder() -> crate::operation::delete_image_pipeline::builders::DeleteImagePipelineOutputBuilder {
-        crate::operation::delete_image_pipeline::builders::DeleteImagePipelineOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_image_pipeline::builders::DeleteImagePipelineOutputBuilder {
+        crate::operation::delete_image_pipeline::builders::DeleteImagePipelineOutputBuilder::default(
+        )
     }
 }
 
@@ -49,7 +51,8 @@ impl DeleteImagePipelineOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
     pub fn image_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,27 +60,28 @@ impl DeleteImagePipelineOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
-    pub fn set_image_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_pipeline_arn = input; self
+    pub fn set_image_pipeline_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.image_pipeline_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteImagePipelineOutput`](crate::operation::delete_image_pipeline::DeleteImagePipelineOutput).
     pub fn build(self) -> crate::operation::delete_image_pipeline::DeleteImagePipelineOutput {
         crate::operation::delete_image_pipeline::DeleteImagePipelineOutput {
-            request_id: self.request_id
-            ,
-            image_pipeline_arn: self.image_pipeline_arn
-            ,
+            request_id: self.request_id,
+            image_pipeline_arn: self.image_pipeline_arn,
             _request_id: self._request_id,
         }
     }
 }
-

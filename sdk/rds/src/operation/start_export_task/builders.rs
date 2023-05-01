@@ -4,61 +4,84 @@ pub use crate::operation::start_export_task::_start_export_task_output::StartExp
 pub use crate::operation::start_export_task::_start_export_task_input::StartExportTaskInputBuilder;
 
 /// Fluent builder constructing a request to `StartExportTask`.
-/// 
-/// <p>Starts an export of DB snapshot or DB cluster data to Amazon S3. The provided IAM role must have access to the S3 bucket.</p> 
-/// <p>You can't export snapshot data from RDS Custom DB instances.</p> 
-/// <p>You can't export cluster data from Multi-AZ DB clusters.</p> 
-/// <p>For more information on exporting DB snapshot data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-export-snapshot.html">Exporting DB cluster snapshot data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.</p> 
+///
+/// <p>Starts an export of DB snapshot or DB cluster data to Amazon S3. The provided IAM role must have access to the S3 bucket.</p>
+/// <p>You can't export snapshot data from RDS Custom DB instances.</p>
+/// <p>You can't export cluster data from Multi-AZ DB clusters.</p>
+/// <p>For more information on exporting DB snapshot data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ExportSnapshot.html">Exporting DB snapshot data to Amazon S3</a> in the <i>Amazon RDS User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-export-snapshot.html">Exporting DB cluster snapshot data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.</p>
 /// <p>For more information on exporting DB cluster data, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/export-cluster-data.html">Exporting DB cluster data to Amazon S3</a> in the <i>Amazon Aurora User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartExportTaskFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_export_task::builders::StartExportTaskInputBuilder,
+    inner: crate::operation::start_export_task::builders::StartExportTaskInputBuilder,
 }
-impl StartExportTaskFluentBuilder  {
+impl StartExportTaskFluentBuilder {
     /// Creates a new `StartExportTask`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_export_task::StartExportTask, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_export_task::StartExportTaskError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_export_task::StartExportTaskOutput, aws_smithy_http::result::SdkError<crate::operation::start_export_task::StartExportTaskError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_export_task::StartExportTask,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_export_task::StartExportTaskError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_export_task::StartExportTaskOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_export_task::StartExportTaskError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
     pub fn export_task_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.export_task_identifier(input.into());
         self
     }
     /// <p>A unique identifier for the export task. This ID isn't an identifier for the Amazon S3 bucket where the data is to be exported.</p>
-    pub fn set_export_task_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_export_task_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_export_task_identifier(input);
         self
     }
@@ -82,69 +105,69 @@ impl StartExportTaskFluentBuilder  {
         self.inner = self.inner.set_s3_bucket_name(input);
         self
     }
-    /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot or cluster.</p> 
-    /// <p>In the IAM policy attached to your IAM role, include the following required actions to allow the transfer of files from Amazon RDS or Amazon Aurora to an S3 bucket:</p> 
-    /// <ul> 
-    /// <li> <p>s3:PutObject*</p> </li> 
-    /// <li> <p>s3:GetObject*</p> </li> 
-    /// <li> <p>s3:ListBucket</p> </li> 
-    /// <li> <p>s3:DeleteObject*</p> </li> 
-    /// <li> <p>s3:GetBucketLocation </p> </li> 
-    /// </ul> 
-    /// <p>In the policy, include the resources to identify the S3 bucket and objects in the bucket. The following list of resources shows the Amazon Resource Name (ARN) format for accessing S3:</p> 
-    /// <ul> 
-    /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> 
-    /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code> </p> </li> 
+    /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot or cluster.</p>
+    /// <p>In the IAM policy attached to your IAM role, include the following required actions to allow the transfer of files from Amazon RDS or Amazon Aurora to an S3 bucket:</p>
+    /// <ul>
+    /// <li> <p>s3:PutObject*</p> </li>
+    /// <li> <p>s3:GetObject*</p> </li>
+    /// <li> <p>s3:ListBucket</p> </li>
+    /// <li> <p>s3:DeleteObject*</p> </li>
+    /// <li> <p>s3:GetBucketLocation </p> </li>
+    /// </ul>
+    /// <p>In the policy, include the resources to identify the S3 bucket and objects in the bucket. The following list of resources shows the Amazon Resource Name (ARN) format for accessing S3:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li>
+    /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code> </p> </li>
     /// </ul>
     pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.iam_role_arn(input.into());
         self
     }
-    /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot or cluster.</p> 
-    /// <p>In the IAM policy attached to your IAM role, include the following required actions to allow the transfer of files from Amazon RDS or Amazon Aurora to an S3 bucket:</p> 
-    /// <ul> 
-    /// <li> <p>s3:PutObject*</p> </li> 
-    /// <li> <p>s3:GetObject*</p> </li> 
-    /// <li> <p>s3:ListBucket</p> </li> 
-    /// <li> <p>s3:DeleteObject*</p> </li> 
-    /// <li> <p>s3:GetBucketLocation </p> </li> 
-    /// </ul> 
-    /// <p>In the policy, include the resources to identify the S3 bucket and objects in the bucket. The following list of resources shows the Amazon Resource Name (ARN) format for accessing S3:</p> 
-    /// <ul> 
-    /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li> 
-    /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code> </p> </li> 
+    /// <p>The name of the IAM role to use for writing to the Amazon S3 bucket when exporting a snapshot or cluster.</p>
+    /// <p>In the IAM policy attached to your IAM role, include the following required actions to allow the transfer of files from Amazon RDS or Amazon Aurora to an S3 bucket:</p>
+    /// <ul>
+    /// <li> <p>s3:PutObject*</p> </li>
+    /// <li> <p>s3:GetObject*</p> </li>
+    /// <li> <p>s3:ListBucket</p> </li>
+    /// <li> <p>s3:DeleteObject*</p> </li>
+    /// <li> <p>s3:GetBucketLocation </p> </li>
+    /// </ul>
+    /// <p>In the policy, include the resources to identify the S3 bucket and objects in the bucket. The following list of resources shows the Amazon Resource Name (ARN) format for accessing S3:</p>
+    /// <ul>
+    /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> </p> </li>
+    /// <li> <p> <code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code> </p> </li>
     /// </ul>
     pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_iam_role_arn(input);
         self
     }
-    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p> 
-    /// <ul> 
-    /// <li> <p>kms:Encrypt</p> </li> 
-    /// <li> <p>kms:Decrypt</p> </li> 
-    /// <li> <p>kms:GenerateDataKey</p> </li> 
-    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> 
-    /// <li> <p>kms:ReEncryptFrom</p> </li> 
-    /// <li> <p>kms:ReEncryptTo</p> </li> 
-    /// <li> <p>kms:CreateGrant</p> </li> 
-    /// <li> <p>kms:DescribeKey</p> </li> 
-    /// <li> <p>kms:RetireGrant</p> </li> 
+    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+    /// <ul>
+    /// <li> <p>kms:Encrypt</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+    /// <li> <p>kms:ReEncryptFrom</p> </li>
+    /// <li> <p>kms:ReEncryptTo</p> </li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:RetireGrant</p> </li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p> 
-    /// <ul> 
-    /// <li> <p>kms:Encrypt</p> </li> 
-    /// <li> <p>kms:Decrypt</p> </li> 
-    /// <li> <p>kms:GenerateDataKey</p> </li> 
-    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li> 
-    /// <li> <p>kms:ReEncryptFrom</p> </li> 
-    /// <li> <p>kms:ReEncryptTo</p> </li> 
-    /// <li> <p>kms:CreateGrant</p> </li> 
-    /// <li> <p>kms:DescribeKey</p> </li> 
-    /// <li> <p>kms:RetireGrant</p> </li> 
+    /// <p>The ID of the Amazon Web Services KMS key to use to encrypt the data exported to Amazon S3. The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. The caller of this operation must be authorized to run the following operations. These can be set in the Amazon Web Services KMS key policy:</p>
+    /// <ul>
+    /// <li> <p>kms:Encrypt</p> </li>
+    /// <li> <p>kms:Decrypt</p> </li>
+    /// <li> <p>kms:GenerateDataKey</p> </li>
+    /// <li> <p>kms:GenerateDataKeyWithoutPlaintext</p> </li>
+    /// <li> <p>kms:ReEncryptFrom</p> </li>
+    /// <li> <p>kms:ReEncryptTo</p> </li>
+    /// <li> <p>kms:CreateGrant</p> </li>
+    /// <li> <p>kms:DescribeKey</p> </li>
+    /// <li> <p>kms:RetireGrant</p> </li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
@@ -164,27 +187,29 @@ impl StartExportTaskFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_export_only`](Self::set_export_only).
     ///
-    /// <p>The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is exported. Valid values are the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
-    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
-    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
-    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+    /// <p>The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is exported. Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
     pub fn export_only(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.export_only(input.into());
         self
     }
-    /// <p>The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is exported. Valid values are the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li> 
-    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li> 
-    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
-    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li> 
+    /// <p>The data to be exported from the snapshot or cluster. If this parameter is not provided, all of the data is exported. Valid values are the following:</p>
+    /// <ul>
+    /// <li> <p> <code>database</code> - Export all the data from a specified database.</p> </li>
+    /// <li> <p> <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.</p> </li>
+    /// <li> <p> <code>database.schema</code> <i>schema-name</i> - Export a database schema of the snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
+    /// <li> <p> <code>database.schema.table</code> <i>table-name</i> - Export a table of the database schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.</p> </li>
     /// </ul>
-    pub fn set_export_only(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_export_only(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_export_only(input);
         self
     }
 }
-

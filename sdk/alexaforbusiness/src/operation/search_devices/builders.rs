@@ -4,56 +4,77 @@ pub use crate::operation::search_devices::_search_devices_output::SearchDevicesO
 pub use crate::operation::search_devices::_search_devices_input::SearchDevicesInputBuilder;
 
 /// Fluent builder constructing a request to `SearchDevices`.
-/// 
+///
 /// <p>Searches devices and lists the ones that meet a set of filter criteria.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchDevicesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_devices::builders::SearchDevicesInputBuilder,
+    inner: crate::operation::search_devices::builders::SearchDevicesInputBuilder,
 }
-impl SearchDevicesFluentBuilder  {
+impl SearchDevicesFluentBuilder {
     /// Creates a new `SearchDevices`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::search_devices::SearchDevices, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::search_devices::SearchDevicesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::search_devices::SearchDevicesOutput, aws_smithy_http::result::SdkError<crate::operation::search_devices::SearchDevicesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_devices::SearchDevices,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::search_devices::SearchDevicesError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::search_devices::SearchDevicesOutput,
+        aws_smithy_http::result::SdkError<crate::operation::search_devices::SearchDevicesError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::search_devices::paginator::SearchDevicesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::search_devices::paginator::SearchDevicesPaginator {
-                                crate::operation::search_devices::paginator::SearchDevicesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_devices::paginator::SearchDevicesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::search_devices::paginator::SearchDevicesPaginator {
+        crate::operation::search_devices::paginator::SearchDevicesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by <code>MaxResults</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -84,7 +105,10 @@ impl SearchDevicesFluentBuilder  {
         self
     }
     /// <p>The filters to use to list a specified set of devices. Supported filter keys are DeviceName, DeviceStatus, DeviceStatusDetailCode, RoomName, DeviceType, DeviceSerialNumber, UnassociatedOnly, ConnectionStatus (ONLINE and OFFLINE), NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -98,9 +122,11 @@ impl SearchDevicesFluentBuilder  {
         self
     }
     /// <p>The sort order to use in listing the specified set of devices. Supported sort keys are DeviceName, DeviceStatus, RoomName, DeviceType, DeviceSerialNumber, ConnectionStatus, NetworkProfileName, NetworkProfileArn, Feature, and FailureCode.</p>
-    pub fn set_sort_criteria(mut self, input: std::option::Option<std::vec::Vec<crate::types::Sort>>) -> Self {
+    pub fn set_sort_criteria(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Sort>>,
+    ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
 }
-

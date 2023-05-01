@@ -4,58 +4,74 @@ pub use crate::operation::untag_resource::_untag_resource_output::UntagResourceO
 pub use crate::operation::untag_resource::_untag_resource_input::UntagResourceInputBuilder;
 
 /// Fluent builder constructing a request to `UntagResource`.
-/// 
-/// <p>Removes the specified tags from the specified resources. When you specify a tag key, the action removes both that key and its associated value. The operation succeeds even if you attempt to remove tags from a resource that were already removed. Note the following:</p> 
-/// <ul> 
-/// <li> <p>To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for removing tags. For more information, see the documentation for the service whose resource you want to untag.</p> </li> 
-/// <li> <p>You can only tag resources that are located in the specified AWS Region for the calling AWS account.</p> </li> 
-/// </ul> 
-/// <p> <b>Minimum permissions</b> </p> 
-/// <p>In addition to the <code>tag:UntagResources</code> permission required by this operation, you must also have the remove tags permission defined by the service that created the resource. For example, to remove the tags from an Amazon EC2 instance using the <code>UntagResources</code> operation, you must have both of the following permissions:</p> 
-/// <p> <code>tag:UntagResource</code> </p> 
+///
+/// <p>Removes the specified tags from the specified resources. When you specify a tag key, the action removes both that key and its associated value. The operation succeeds even if you attempt to remove tags from a resource that were already removed. Note the following:</p>
+/// <ul>
+/// <li> <p>To remove tags from a resource, you need the necessary permissions for the service that the resource belongs to as well as permissions for removing tags. For more information, see the documentation for the service whose resource you want to untag.</p> </li>
+/// <li> <p>You can only tag resources that are located in the specified AWS Region for the calling AWS account.</p> </li>
+/// </ul>
+/// <p> <b>Minimum permissions</b> </p>
+/// <p>In addition to the <code>tag:UntagResources</code> permission required by this operation, you must also have the remove tags permission defined by the service that created the resource. For example, to remove the tags from an Amazon EC2 instance using the <code>UntagResources</code> operation, you must have both of the following permissions:</p>
+/// <p> <code>tag:UntagResource</code> </p>
 /// <p> <code>ChimeSDKMeetings:DeleteTags</code> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::untag_resource::builders::UntagResourceInputBuilder,
+    inner: crate::operation::untag_resource::builders::UntagResourceInputBuilder,
 }
-impl UntagResourceFluentBuilder  {
+impl UntagResourceFluentBuilder {
     /// Creates a new `UntagResource`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::untag_resource::UntagResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::untag_resource::UntagResourceOutput, aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::untag_resource::UntagResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::untag_resource::UntagResourceOutput,
+        aws_smithy_http::result::SdkError<crate::operation::untag_resource::UntagResourceError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN of the resource that you're removing tags from.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_arn(input.into());
@@ -76,9 +92,11 @@ impl UntagResourceFluentBuilder  {
         self
     }
     /// <p>The tag keys being removed from the resources.</p>
-    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_tag_keys(input);
         self
     }
 }
-

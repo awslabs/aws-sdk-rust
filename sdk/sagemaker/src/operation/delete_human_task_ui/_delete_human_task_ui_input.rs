@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHumanTaskUiInput  {
+pub struct DeleteHumanTaskUiInput {
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
     #[doc(hidden)]
     pub human_task_ui_name: std::option::Option<std::string::String>,
 }
 impl DeleteHumanTaskUiInput {
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
-    pub fn human_task_ui_name(&self) -> std::option::Option<& str> {
+    pub fn human_task_ui_name(&self) -> std::option::Option<&str> {
         self.human_task_ui_name.as_deref()
     }
 }
 impl DeleteHumanTaskUiInput {
     /// Creates a new builder-style object to manufacture [`DeleteHumanTaskUiInput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput).
-    pub fn builder() -> crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiInputBuilder {
         crate::operation::delete_human_task_ui::builders::DeleteHumanTaskUiInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DeleteHumanTaskUiInputBuilder {
         self
     }
     /// <p>The name of the human task user interface (work task template) you want to delete.</p>
-    pub fn set_human_task_ui_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.human_task_ui_name = input; self
+    pub fn set_human_task_ui_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.human_task_ui_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteHumanTaskUiInput`](crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput).
-    pub fn build(self) -> Result<crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_human_task_ui::DeleteHumanTaskUiInput {
-                human_task_ui_name: self.human_task_ui_name
-                ,
-            }
+                human_task_ui_name: self.human_task_ui_name,
+            },
         )
     }
 }
-

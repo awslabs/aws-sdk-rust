@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTrialInput  {
+pub struct CreateTrialInput {
     /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
     #[doc(hidden)]
     pub trial_name: std::option::Option<std::string::String>,
@@ -21,23 +21,23 @@ pub struct CreateTrialInput  {
 }
 impl CreateTrialInput {
     /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
-    pub fn trial_name(&self) -> std::option::Option<& str> {
+    pub fn trial_name(&self) -> std::option::Option<&str> {
         self.trial_name.as_deref()
     }
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The name of the experiment to associate the trial with.</p>
-    pub fn experiment_name(&self) -> std::option::Option<& str> {
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
         self.experiment_name.as_deref()
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn metadata_properties(&self) -> std::option::Option<& crate::types::MetadataProperties> {
+    pub fn metadata_properties(&self) -> std::option::Option<&crate::types::MetadataProperties> {
         self.metadata_properties.as_ref()
     }
     /// <p>A list of tags to associate with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -66,7 +66,8 @@ impl CreateTrialInputBuilder {
     }
     /// <p>The name of the trial. The name must be unique in your Amazon Web Services account and is not case-sensitive.</p>
     pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trial_name = input; self
+        self.trial_name = input;
+        self
     }
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl CreateTrialInputBuilder {
     }
     /// <p>The name of the trial as displayed. The name doesn't need to be unique. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The name of the experiment to associate the trial with.</p>
     pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +86,8 @@ impl CreateTrialInputBuilder {
     }
     /// <p>The name of the experiment to associate the trial with.</p>
     pub fn set_experiment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.experiment_name = input; self
+        self.experiment_name = input;
+        self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
     pub fn metadata_properties(mut self, input: crate::types::MetadataProperties) -> Self {
@@ -92,8 +95,12 @@ impl CreateTrialInputBuilder {
         self
     }
     /// <p>Metadata properties of the tracking entity, trial, or trial component.</p>
-    pub fn set_metadata_properties(mut self, input: std::option::Option<crate::types::MetadataProperties>) -> Self {
-        self.metadata_properties = input; self
+    pub fn set_metadata_properties(
+        mut self,
+        input: std::option::Option<crate::types::MetadataProperties>,
+    ) -> Self {
+        self.metadata_properties = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -102,30 +109,31 @@ impl CreateTrialInputBuilder {
     /// <p>A list of tags to associate with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of tags to associate with the trial. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API to search on the tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateTrialInput`](crate::operation::create_trial::CreateTrialInput).
-    pub fn build(self) -> Result<crate::operation::create_trial::CreateTrialInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_trial::CreateTrialInput {
-                trial_name: self.trial_name
-                ,
-                display_name: self.display_name
-                ,
-                experiment_name: self.experiment_name
-                ,
-                metadata_properties: self.metadata_properties
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_trial::CreateTrialInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_trial::CreateTrialInput {
+            trial_name: self.trial_name,
+            display_name: self.display_name,
+            experiment_name: self.experiment_name,
+            metadata_properties: self.metadata_properties,
+            tags: self.tags,
+        })
     }
 }
-

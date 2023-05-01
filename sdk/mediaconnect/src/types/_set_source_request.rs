@@ -3,7 +3,7 @@
 /// The settings for the source of the flow.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetSourceRequest  {
+pub struct SetSourceRequest {
     /// The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.
     #[doc(hidden)]
     pub decryption: std::option::Option<crate::types::Encryption>,
@@ -27,7 +27,8 @@ pub struct SetSourceRequest  {
     pub max_sync_buffer: i32,
     /// The media streams that are associated with the source, and the parameters for those associations.
     #[doc(hidden)]
-    pub media_stream_source_configurations: std::option::Option<std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>,
+    pub media_stream_source_configurations:
+        std::option::Option<std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>,
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     #[doc(hidden)]
     pub min_latency: i32,
@@ -64,15 +65,15 @@ pub struct SetSourceRequest  {
 }
 impl SetSourceRequest {
     /// The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.
-    pub fn decryption(&self) -> std::option::Option<& crate::types::Encryption> {
+    pub fn decryption(&self) -> std::option::Option<&crate::types::Encryption> {
         self.decryption.as_ref()
     }
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
-    pub fn entitlement_arn(&self) -> std::option::Option<& str> {
+    pub fn entitlement_arn(&self) -> std::option::Option<&str> {
         self.entitlement_arn.as_deref()
     }
     /// The port that the flow will be listening on for incoming content.
@@ -92,7 +93,9 @@ impl SetSourceRequest {
         self.max_sync_buffer
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn media_stream_source_configurations(&self) -> std::option::Option<& [crate::types::MediaStreamSourceConfigurationRequest]> {
+    pub fn media_stream_source_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::MediaStreamSourceConfigurationRequest]> {
         self.media_stream_source_configurations.as_deref()
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
@@ -100,11 +103,11 @@ impl SetSourceRequest {
         self.min_latency
     }
     /// The name of the source.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The protocol that is used by the source.
-    pub fn protocol(&self) -> std::option::Option<& crate::types::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::Protocol> {
         self.protocol.as_ref()
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
@@ -112,11 +115,11 @@ impl SetSourceRequest {
         self.sender_control_port
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn sender_ip_address(&self) -> std::option::Option<& str> {
+    pub fn sender_ip_address(&self) -> std::option::Option<&str> {
         self.sender_ip_address.as_deref()
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn source_listener_address(&self) -> std::option::Option<& str> {
+    pub fn source_listener_address(&self) -> std::option::Option<&str> {
         self.source_listener_address.as_deref()
     }
     /// Source port for SRT-caller protocol.
@@ -124,19 +127,21 @@ impl SetSourceRequest {
         self.source_listener_port
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
-    pub fn stream_id(&self) -> std::option::Option<& str> {
+    pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
     /// The name of the VPC interface to use for this source.
-    pub fn vpc_interface_name(&self) -> std::option::Option<& str> {
+    pub fn vpc_interface_name(&self) -> std::option::Option<&str> {
         self.vpc_interface_name.as_deref()
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn whitelist_cidr(&self) -> std::option::Option<& str> {
+    pub fn whitelist_cidr(&self) -> std::option::Option<&str> {
         self.whitelist_cidr.as_deref()
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    pub fn gateway_bridge_source(&self) -> std::option::Option<& crate::types::SetGatewayBridgeSourceRequest> {
+    pub fn gateway_bridge_source(
+        &self,
+    ) -> std::option::Option<&crate::types::SetGatewayBridgeSourceRequest> {
         self.gateway_bridge_source.as_ref()
     }
 }
@@ -158,7 +163,8 @@ pub struct SetSourceRequestBuilder {
     pub(crate) max_bitrate: std::option::Option<i32>,
     pub(crate) max_latency: std::option::Option<i32>,
     pub(crate) max_sync_buffer: std::option::Option<i32>,
-    pub(crate) media_stream_source_configurations: std::option::Option<std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>,
+    pub(crate) media_stream_source_configurations:
+        std::option::Option<std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>,
     pub(crate) min_latency: std::option::Option<i32>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) protocol: std::option::Option<crate::types::Protocol>,
@@ -169,7 +175,8 @@ pub struct SetSourceRequestBuilder {
     pub(crate) stream_id: std::option::Option<std::string::String>,
     pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
     pub(crate) whitelist_cidr: std::option::Option<std::string::String>,
-    pub(crate) gateway_bridge_source: std::option::Option<crate::types::SetGatewayBridgeSourceRequest>,
+    pub(crate) gateway_bridge_source:
+        std::option::Option<crate::types::SetGatewayBridgeSourceRequest>,
 }
 impl SetSourceRequestBuilder {
     /// The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.
@@ -179,7 +186,8 @@ impl SetSourceRequestBuilder {
     }
     /// The type of encryption that is used on the content ingested from this source. Allowable encryption types: static-key.
     pub fn set_decryption(mut self, input: std::option::Option<crate::types::Encryption>) -> Self {
-        self.decryption = input; self
+        self.decryption = input;
+        self
     }
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,7 +196,8 @@ impl SetSourceRequestBuilder {
     }
     /// A description for the source. This value is not used or seen outside of the current AWS Elemental MediaConnect account.
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
     pub fn entitlement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -197,7 +206,8 @@ impl SetSourceRequestBuilder {
     }
     /// The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow.
     pub fn set_entitlement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entitlement_arn = input; self
+        self.entitlement_arn = input;
+        self
     }
     /// The port that the flow will be listening on for incoming content.
     pub fn ingest_port(mut self, input: i32) -> Self {
@@ -206,7 +216,8 @@ impl SetSourceRequestBuilder {
     }
     /// The port that the flow will be listening on for incoming content.
     pub fn set_ingest_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.ingest_port = input; self
+        self.ingest_port = input;
+        self
     }
     /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
     pub fn max_bitrate(mut self, input: i32) -> Self {
@@ -215,7 +226,8 @@ impl SetSourceRequestBuilder {
     }
     /// The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
     pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_bitrate = input; self
+        self.max_bitrate = input;
+        self
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn max_latency(mut self, input: i32) -> Self {
@@ -224,7 +236,8 @@ impl SetSourceRequestBuilder {
     }
     /// The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
     pub fn set_max_latency(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_latency = input; self
+        self.max_latency = input;
+        self
     }
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
     pub fn max_sync_buffer(mut self, input: i32) -> Self {
@@ -233,22 +246,32 @@ impl SetSourceRequestBuilder {
     }
     /// The size of the buffer (in milliseconds) to use to sync incoming source data.
     pub fn set_max_sync_buffer(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_sync_buffer = input; self
+        self.max_sync_buffer = input;
+        self
     }
     /// Appends an item to `media_stream_source_configurations`.
     ///
     /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).
     ///
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn media_stream_source_configurations(mut self, input: crate::types::MediaStreamSourceConfigurationRequest) -> Self {
+    pub fn media_stream_source_configurations(
+        mut self,
+        input: crate::types::MediaStreamSourceConfigurationRequest,
+    ) -> Self {
         let mut v = self.media_stream_source_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.media_stream_source_configurations = Some(v);
-                        self
+        v.push(input);
+        self.media_stream_source_configurations = Some(v);
+        self
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn set_media_stream_source_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>) -> Self {
-        self.media_stream_source_configurations = input; self
+    pub fn set_media_stream_source_configurations(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>,
+        >,
+    ) -> Self {
+        self.media_stream_source_configurations = input;
+        self
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn min_latency(mut self, input: i32) -> Self {
@@ -257,7 +280,8 @@ impl SetSourceRequestBuilder {
     }
     /// The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
     pub fn set_min_latency(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_latency = input; self
+        self.min_latency = input;
+        self
     }
     /// The name of the source.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,7 +290,8 @@ impl SetSourceRequestBuilder {
     }
     /// The name of the source.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// The protocol that is used by the source.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
@@ -275,7 +300,8 @@ impl SetSourceRequestBuilder {
     }
     /// The protocol that is used by the source.
     pub fn set_protocol(mut self, input: std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn sender_control_port(mut self, input: i32) -> Self {
@@ -284,7 +310,8 @@ impl SetSourceRequestBuilder {
     }
     /// The port that the flow uses to send outbound requests to initiate connection with the sender.
     pub fn set_sender_control_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.sender_control_port = input; self
+        self.sender_control_port = input;
+        self
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
     pub fn sender_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -292,8 +319,12 @@ impl SetSourceRequestBuilder {
         self
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn set_sender_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sender_ip_address = input; self
+    pub fn set_sender_ip_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sender_ip_address = input;
+        self
     }
     /// Source IP or domain name for SRT-caller protocol.
     pub fn source_listener_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -301,8 +332,12 @@ impl SetSourceRequestBuilder {
         self
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn set_source_listener_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_listener_address = input; self
+    pub fn set_source_listener_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_listener_address = input;
+        self
     }
     /// Source port for SRT-caller protocol.
     pub fn source_listener_port(mut self, input: i32) -> Self {
@@ -311,7 +346,8 @@ impl SetSourceRequestBuilder {
     }
     /// Source port for SRT-caller protocol.
     pub fn set_source_listener_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.source_listener_port = input; self
+        self.source_listener_port = input;
+        self
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -320,7 +356,8 @@ impl SetSourceRequestBuilder {
     }
     /// The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams.
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_id = input; self
+        self.stream_id = input;
+        self
     }
     /// The name of the VPC interface to use for this source.
     pub fn vpc_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -328,8 +365,12 @@ impl SetSourceRequestBuilder {
         self
     }
     /// The name of the VPC interface to use for this source.
-    pub fn set_vpc_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_interface_name = input; self
+    pub fn set_vpc_interface_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpc_interface_name = input;
+        self
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub fn whitelist_cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -338,66 +379,47 @@ impl SetSourceRequestBuilder {
     }
     /// The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub fn set_whitelist_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.whitelist_cidr = input; self
+        self.whitelist_cidr = input;
+        self
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    pub fn gateway_bridge_source(mut self, input: crate::types::SetGatewayBridgeSourceRequest) -> Self {
+    pub fn gateway_bridge_source(
+        mut self,
+        input: crate::types::SetGatewayBridgeSourceRequest,
+    ) -> Self {
         self.gateway_bridge_source = Some(input);
         self
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    pub fn set_gateway_bridge_source(mut self, input: std::option::Option<crate::types::SetGatewayBridgeSourceRequest>) -> Self {
-        self.gateway_bridge_source = input; self
+    pub fn set_gateway_bridge_source(
+        mut self,
+        input: std::option::Option<crate::types::SetGatewayBridgeSourceRequest>,
+    ) -> Self {
+        self.gateway_bridge_source = input;
+        self
     }
     /// Consumes the builder and constructs a [`SetSourceRequest`](crate::types::SetSourceRequest).
     pub fn build(self) -> crate::types::SetSourceRequest {
         crate::types::SetSourceRequest {
-            decryption: self.decryption
-            ,
-            description: self.description
-            ,
-            entitlement_arn: self.entitlement_arn
-            ,
-            ingest_port: self.ingest_port
-                .unwrap_or_default()
-            ,
-            max_bitrate: self.max_bitrate
-                .unwrap_or_default()
-            ,
-            max_latency: self.max_latency
-                .unwrap_or_default()
-            ,
-            max_sync_buffer: self.max_sync_buffer
-                .unwrap_or_default()
-            ,
-            media_stream_source_configurations: self.media_stream_source_configurations
-            ,
-            min_latency: self.min_latency
-                .unwrap_or_default()
-            ,
-            name: self.name
-            ,
-            protocol: self.protocol
-            ,
-            sender_control_port: self.sender_control_port
-                .unwrap_or_default()
-            ,
-            sender_ip_address: self.sender_ip_address
-            ,
-            source_listener_address: self.source_listener_address
-            ,
-            source_listener_port: self.source_listener_port
-                .unwrap_or_default()
-            ,
-            stream_id: self.stream_id
-            ,
-            vpc_interface_name: self.vpc_interface_name
-            ,
-            whitelist_cidr: self.whitelist_cidr
-            ,
-            gateway_bridge_source: self.gateway_bridge_source
-            ,
+            decryption: self.decryption,
+            description: self.description,
+            entitlement_arn: self.entitlement_arn,
+            ingest_port: self.ingest_port.unwrap_or_default(),
+            max_bitrate: self.max_bitrate.unwrap_or_default(),
+            max_latency: self.max_latency.unwrap_or_default(),
+            max_sync_buffer: self.max_sync_buffer.unwrap_or_default(),
+            media_stream_source_configurations: self.media_stream_source_configurations,
+            min_latency: self.min_latency.unwrap_or_default(),
+            name: self.name,
+            protocol: self.protocol,
+            sender_control_port: self.sender_control_port.unwrap_or_default(),
+            sender_ip_address: self.sender_ip_address,
+            source_listener_address: self.source_listener_address,
+            source_listener_port: self.source_listener_port.unwrap_or_default(),
+            stream_id: self.stream_id,
+            vpc_interface_name: self.vpc_interface_name,
+            whitelist_cidr: self.whitelist_cidr,
+            gateway_bridge_source: self.gateway_bridge_source,
         }
     }
 }
-

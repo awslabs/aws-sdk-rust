@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomRoutingPortMappingsOutput  {
+pub struct ListCustomRoutingPortMappingsOutput {
     /// <p>The port mappings for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub port_mappings: std::option::Option<std::vec::Vec<crate::types::PortMapping>>,
@@ -13,22 +13,22 @@ pub struct ListCustomRoutingPortMappingsOutput  {
 }
 impl ListCustomRoutingPortMappingsOutput {
     /// <p>The port mappings for a custom routing accelerator.</p>
-    pub fn port_mappings(&self) -> std::option::Option<& [crate::types::PortMapping]> {
+    pub fn port_mappings(&self) -> std::option::Option<&[crate::types::PortMapping]> {
         self.port_mappings.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCustomRoutingPortMappingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListCustomRoutingPortMappingsOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingPortMappingsOutput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput).
-    pub fn builder() -> crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsOutputBuilder {
+    pub fn builder() -> crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsOutputBuilder{
         crate::operation::list_custom_routing_port_mappings::builders::ListCustomRoutingPortMappingsOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListCustomRoutingPortMappingsOutputBuilder {
     /// <p>The port mappings for a custom routing accelerator.</p>
     pub fn port_mappings(mut self, input: crate::types::PortMapping) -> Self {
         let mut v = self.port_mappings.unwrap_or_default();
-                        v.push(input);
-                        self.port_mappings = Some(v);
-                        self
+        v.push(input);
+        self.port_mappings = Some(v);
+        self
     }
     /// <p>The port mappings for a custom routing accelerator.</p>
-    pub fn set_port_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::types::PortMapping>>) -> Self {
-        self.port_mappings = input; self
+    pub fn set_port_mappings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PortMapping>>,
+    ) -> Self {
+        self.port_mappings = input;
+        self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,27 @@ impl ListCustomRoutingPortMappingsOutputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListCustomRoutingPortMappingsOutput`](crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput).
-    pub fn build(self) -> crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput
+    {
         crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput {
-            port_mappings: self.port_mappings
-            ,
-            next_token: self.next_token
-            ,
+            port_mappings: self.port_mappings,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

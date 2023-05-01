@@ -3,14 +3,14 @@
 /// <p>An object that represents the current status of a gateway route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayRouteStatus  {
+pub struct GatewayRouteStatus {
     /// <p>The current status for the gateway route.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::GatewayRouteStatusCode>,
 }
 impl GatewayRouteStatus {
     /// <p>The current status for the gateway route.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::GatewayRouteStatusCode> {
+    pub fn status(&self) -> std::option::Option<&crate::types::GatewayRouteStatusCode> {
         self.status.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl GatewayRouteStatusBuilder {
         self
     }
     /// <p>The current status for the gateway route.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::GatewayRouteStatusCode>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::GatewayRouteStatusCode>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`GatewayRouteStatus`](crate::types::GatewayRouteStatus).
     pub fn build(self) -> crate::types::GatewayRouteStatus {
         crate::types::GatewayRouteStatus {
-            status: self.status
-            ,
+            status: self.status,
         }
     }
 }
-

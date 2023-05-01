@@ -3,7 +3,7 @@
 /// <p>Specifies a transform that splits a dataset into two, based on a filter condition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter  {
+pub struct Filter {
     /// <p>The name of the transform node.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Filter  {
 }
 impl Filter {
     /// <p>The name of the transform node.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn inputs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
-    pub fn logical_operator(&self) -> std::option::Option<& crate::types::FilterLogicalOperator> {
+    pub fn logical_operator(&self) -> std::option::Option<&crate::types::FilterLogicalOperator> {
         self.logical_operator.as_ref()
     }
     /// <p>Specifies a filter expression.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::FilterExpression]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::FilterExpression]> {
         self.filters.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl FilterBuilder {
     }
     /// <p>The name of the transform node.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `inputs`.
     ///
@@ -68,13 +69,17 @@ impl FilterBuilder {
     /// <p>The data inputs identified by their node names.</p>
     pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-                        v.push(input.into());
-                        self.inputs = Some(v);
-                        self
+        v.push(input.into());
+        self.inputs = Some(v);
+        self
     }
     /// <p>The data inputs identified by their node names.</p>
-    pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.inputs = input; self
+    pub fn set_inputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.inputs = input;
+        self
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
     pub fn logical_operator(mut self, input: crate::types::FilterLogicalOperator) -> Self {
@@ -82,8 +87,12 @@ impl FilterBuilder {
         self
     }
     /// <p>The operator used to filter rows by comparing the key value to a specified value.</p>
-    pub fn set_logical_operator(mut self, input: std::option::Option<crate::types::FilterLogicalOperator>) -> Self {
-        self.logical_operator = input; self
+    pub fn set_logical_operator(
+        mut self,
+        input: std::option::Option<crate::types::FilterLogicalOperator>,
+    ) -> Self {
+        self.logical_operator = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -92,26 +101,25 @@ impl FilterBuilder {
     /// <p>Specifies a filter expression.</p>
     pub fn filters(mut self, input: crate::types::FilterExpression) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>Specifies a filter expression.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::FilterExpression>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FilterExpression>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            name: self.name
-            ,
-            inputs: self.inputs
-            ,
-            logical_operator: self.logical_operator
-            ,
-            filters: self.filters
-            ,
+            name: self.name,
+            inputs: self.inputs,
+            logical_operator: self.logical_operator,
+            filters: self.filters,
         }
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSequenceStoreInput  {
+pub struct GetSequenceStoreInput {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetSequenceStoreInput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl GetSequenceStoreInput {
     /// Creates a new builder-style object to manufacture [`GetSequenceStoreInput`](crate::operation::get_sequence_store::GetSequenceStoreInput).
-    pub fn builder() -> crate::operation::get_sequence_store::builders::GetSequenceStoreInputBuilder {
+    pub fn builder() -> crate::operation::get_sequence_store::builders::GetSequenceStoreInputBuilder
+    {
         crate::operation::get_sequence_store::builders::GetSequenceStoreInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl GetSequenceStoreInputBuilder {
     }
     /// <p>The store's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSequenceStoreInput`](crate::operation::get_sequence_store::GetSequenceStoreInput).
-    pub fn build(self) -> Result<crate::operation::get_sequence_store::GetSequenceStoreInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_sequence_store::GetSequenceStoreInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_sequence_store::GetSequenceStoreInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_sequence_store::GetSequenceStoreInput { id: self.id })
     }
 }
-

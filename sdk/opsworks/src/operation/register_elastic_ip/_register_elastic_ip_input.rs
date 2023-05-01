@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterElasticIpInput  {
+pub struct RegisterElasticIpInput {
     /// <p>The Elastic IP address.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct RegisterElasticIpInput  {
 }
 impl RegisterElasticIpInput {
     /// <p>The Elastic IP address.</p>
-    pub fn elastic_ip(&self) -> std::option::Option<& str> {
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
         self.elastic_ip.as_deref()
     }
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
 }
 impl RegisterElasticIpInput {
     /// Creates a new builder-style object to manufacture [`RegisterElasticIpInput`](crate::operation::register_elastic_ip::RegisterElasticIpInput).
-    pub fn builder() -> crate::operation::register_elastic_ip::builders::RegisterElasticIpInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::register_elastic_ip::builders::RegisterElasticIpInputBuilder {
         crate::operation::register_elastic_ip::builders::RegisterElasticIpInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl RegisterElasticIpInputBuilder {
     }
     /// <p>The Elastic IP address.</p>
     pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.elastic_ip = input; self
+        self.elastic_ip = input;
+        self
     }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl RegisterElasticIpInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegisterElasticIpInput`](crate::operation::register_elastic_ip::RegisterElasticIpInput).
-    pub fn build(self) -> Result<crate::operation::register_elastic_ip::RegisterElasticIpInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::register_elastic_ip::RegisterElasticIpInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::register_elastic_ip::RegisterElasticIpInput {
-                elastic_ip: self.elastic_ip
-                ,
-                stack_id: self.stack_id
-                ,
-            }
+                elastic_ip: self.elastic_ip,
+                stack_id: self.stack_id,
+            },
         )
     }
 }
-

@@ -4,58 +4,74 @@ pub use crate::operation::transfer_contact::_transfer_contact_output::TransferCo
 pub use crate::operation::transfer_contact::_transfer_contact_input::TransferContactInputBuilder;
 
 /// Fluent builder constructing a request to `TransferContact`.
-/// 
-/// <p>Transfers contacts from one agent or queue to another agent or queue at any point after a contact is created. You can transfer a contact to another queue by providing the flow which orchestrates the contact to the destination queue. This gives you more control over contact handling and helps you adhere to the service level agreement (SLA) guaranteed to your customers.</p> 
-/// <p>Note the following requirements:</p> 
-/// <ul> 
-/// <li> <p>Transfer is supported for only <code>TASK</code> contacts.</p> </li> 
-/// <li> <p>Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.</p> </li> 
-/// <li> <p>The following flow types are supported: Inbound flow, Transfer to agent flow, and Transfer to queue flow.</p> </li> 
-/// <li> <p>The <code>TransferContact</code> API can be called only on active contacts.</p> </li> 
-/// <li> <p>A contact cannot be transferred more than 11 times.</p> </li> 
+///
+/// <p>Transfers contacts from one agent or queue to another agent or queue at any point after a contact is created. You can transfer a contact to another queue by providing the flow which orchestrates the contact to the destination queue. This gives you more control over contact handling and helps you adhere to the service level agreement (SLA) guaranteed to your customers.</p>
+/// <p>Note the following requirements:</p>
+/// <ul>
+/// <li> <p>Transfer is supported for only <code>TASK</code> contacts.</p> </li>
+/// <li> <p>Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.</p> </li>
+/// <li> <p>The following flow types are supported: Inbound flow, Transfer to agent flow, and Transfer to queue flow.</p> </li>
+/// <li> <p>The <code>TransferContact</code> API can be called only on active contacts.</p> </li>
+/// <li> <p>A contact cannot be transferred more than 11 times.</p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TransferContactFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::transfer_contact::builders::TransferContactInputBuilder,
+    inner: crate::operation::transfer_contact::builders::TransferContactInputBuilder,
 }
-impl TransferContactFluentBuilder  {
+impl TransferContactFluentBuilder {
     /// Creates a new `TransferContact`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::transfer_contact::TransferContact, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::transfer_contact::TransferContactError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::transfer_contact::TransferContactOutput, aws_smithy_http::result::SdkError<crate::operation::transfer_contact::TransferContactError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::transfer_contact::TransferContact,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::transfer_contact::TransferContactError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::transfer_contact::TransferContactOutput,
+        aws_smithy_http::result::SdkError<crate::operation::transfer_contact::TransferContactError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -117,4 +133,3 @@ impl TransferContactFluentBuilder  {
         self
     }
 }
-

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeKeyInput  {
+pub struct DescribeKeyInput {
     /// <p>The name of the API key resource.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
 }
 impl DescribeKeyInput {
     /// <p>The name of the API key resource.</p>
-    pub fn key_name(&self) -> std::option::Option<& str> {
+    pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DescribeKeyInputBuilder {
     }
     /// <p>The name of the API key resource.</p>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input; self
+        self.key_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeKeyInput`](crate::operation::describe_key::DescribeKeyInput).
-    pub fn build(self) -> Result<crate::operation::describe_key::DescribeKeyInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_key::DescribeKeyInput {
-                key_name: self.key_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_key::DescribeKeyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_key::DescribeKeyInput {
+            key_name: self.key_name,
+        })
     }
 }
-

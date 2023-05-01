@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatabasesInput  {
+pub struct ListDatabasesInput {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListDatabasesInput  {
 }
 impl ListDatabasesInput {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the component.</p>
-    pub fn component_id(&self) -> std::option::Option<& str> {
+    pub fn component_id(&self) -> std::option::Option<&str> {
         self.component_id.as_deref()
     }
     /// <p>The token for the next page of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
@@ -58,7 +58,8 @@ impl ListDatabasesInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The ID of the component.</p>
     pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl ListDatabasesInputBuilder {
     }
     /// <p>The ID of the component.</p>
     pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_id = input; self
+        self.component_id = input;
+        self
     }
     /// <p>The token for the next page of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl ListDatabasesInputBuilder {
     }
     /// <p>The token for the next page of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +88,21 @@ impl ListDatabasesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDatabasesInput`](crate::operation::list_databases::ListDatabasesInput).
-    pub fn build(self) -> Result<crate::operation::list_databases::ListDatabasesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_databases::ListDatabasesInput {
-                application_id: self.application_id
-                ,
-                component_id: self.component_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_databases::ListDatabasesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_databases::ListDatabasesInput {
+            application_id: self.application_id,
+            component_id: self.component_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

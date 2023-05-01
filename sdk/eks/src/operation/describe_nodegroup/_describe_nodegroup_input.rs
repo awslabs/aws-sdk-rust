@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNodegroupInput  {
+pub struct DescribeNodegroupInput {
     /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DescribeNodegroupInput  {
 }
 impl DescribeNodegroupInput {
     /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
-    pub fn cluster_name(&self) -> std::option::Option<& str> {
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
     /// <p>The name of the node group to describe.</p>
-    pub fn nodegroup_name(&self) -> std::option::Option<& str> {
+    pub fn nodegroup_name(&self) -> std::option::Option<&str> {
         self.nodegroup_name.as_deref()
     }
 }
 impl DescribeNodegroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeNodegroupInput`](crate::operation::describe_nodegroup::DescribeNodegroupInput).
-    pub fn builder() -> crate::operation::describe_nodegroup::builders::DescribeNodegroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_nodegroup::builders::DescribeNodegroupInputBuilder
+    {
         crate::operation::describe_nodegroup::builders::DescribeNodegroupInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DescribeNodegroupInputBuilder {
     }
     /// <p>The name of the Amazon EKS cluster associated with the node group.</p>
     pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_name = input; self
+        self.cluster_name = input;
+        self
     }
     /// <p>The name of the node group to describe.</p>
     pub fn nodegroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DescribeNodegroupInputBuilder {
     }
     /// <p>The name of the node group to describe.</p>
     pub fn set_nodegroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.nodegroup_name = input; self
+        self.nodegroup_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeNodegroupInput`](crate::operation::describe_nodegroup::DescribeNodegroupInput).
-    pub fn build(self) -> Result<crate::operation::describe_nodegroup::DescribeNodegroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_nodegroup::DescribeNodegroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_nodegroup::DescribeNodegroupInput {
-                cluster_name: self.cluster_name
-                ,
-                nodegroup_name: self.nodegroup_name
-                ,
-            }
+                cluster_name: self.cluster_name,
+                nodegroup_name: self.nodegroup_name,
+            },
         )
     }
 }
-

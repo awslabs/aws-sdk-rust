@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGameServerGroupsOutput  {
+pub struct ListGameServerGroupsOutput {
     /// <p>The game server groups' game server groups.</p>
     #[doc(hidden)]
     pub game_server_groups: std::option::Option<std::vec::Vec<crate::types::GameServerGroup>>,
@@ -13,22 +13,24 @@ pub struct ListGameServerGroupsOutput  {
 }
 impl ListGameServerGroupsOutput {
     /// <p>The game server groups' game server groups.</p>
-    pub fn game_server_groups(&self) -> std::option::Option<& [crate::types::GameServerGroup]> {
+    pub fn game_server_groups(&self) -> std::option::Option<&[crate::types::GameServerGroup]> {
         self.game_server_groups.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListGameServerGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListGameServerGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListGameServerGroupsOutput`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput).
-    pub fn builder() -> crate::operation::list_game_server_groups::builders::ListGameServerGroupsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_game_server_groups::builders::ListGameServerGroupsOutputBuilder
+    {
         crate::operation::list_game_server_groups::builders::ListGameServerGroupsOutputBuilder::default()
     }
 }
@@ -37,7 +39,8 @@ impl ListGameServerGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListGameServerGroupsOutputBuilder {
-    pub(crate) game_server_groups: std::option::Option<std::vec::Vec<crate::types::GameServerGroup>>,
+    pub(crate) game_server_groups:
+        std::option::Option<std::vec::Vec<crate::types::GameServerGroup>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +52,17 @@ impl ListGameServerGroupsOutputBuilder {
     /// <p>The game server groups' game server groups.</p>
     pub fn game_server_groups(mut self, input: crate::types::GameServerGroup) -> Self {
         let mut v = self.game_server_groups.unwrap_or_default();
-                        v.push(input);
-                        self.game_server_groups = Some(v);
-                        self
+        v.push(input);
+        self.game_server_groups = Some(v);
+        self
     }
     /// <p>The game server groups' game server groups.</p>
-    pub fn set_game_server_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::GameServerGroup>>) -> Self {
-        self.game_server_groups = input; self
+    pub fn set_game_server_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GameServerGroup>>,
+    ) -> Self {
+        self.game_server_groups = input;
+        self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +71,24 @@ impl ListGameServerGroupsOutputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListGameServerGroupsOutput`](crate::operation::list_game_server_groups::ListGameServerGroupsOutput).
     pub fn build(self) -> crate::operation::list_game_server_groups::ListGameServerGroupsOutput {
         crate::operation::list_game_server_groups::ListGameServerGroupsOutput {
-            game_server_groups: self.game_server_groups
-            ,
-            next_token: self.next_token
-            ,
+            game_server_groups: self.game_server_groups,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

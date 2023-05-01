@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectorDefinitionInput  {
+pub struct DeleteConnectorDefinitionInput {
     /// The ID of the connector definition.
     #[doc(hidden)]
     pub connector_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteConnectorDefinitionInput {
     /// The ID of the connector definition.
-    pub fn connector_definition_id(&self) -> std::option::Option<& str> {
+    pub fn connector_definition_id(&self) -> std::option::Option<&str> {
         self.connector_definition_id.as_deref()
     }
 }
 impl DeleteConnectorDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectorDefinitionInput`](crate::operation::delete_connector_definition::DeleteConnectorDefinitionInput).
-    pub fn builder() -> crate::operation::delete_connector_definition::builders::DeleteConnectorDefinitionInputBuilder {
+    pub fn builder() -> crate::operation::delete_connector_definition::builders::DeleteConnectorDefinitionInputBuilder{
         crate::operation::delete_connector_definition::builders::DeleteConnectorDefinitionInputBuilder::default()
     }
 }
@@ -33,17 +33,24 @@ impl DeleteConnectorDefinitionInputBuilder {
         self
     }
     /// The ID of the connector definition.
-    pub fn set_connector_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connector_definition_id = input; self
+    pub fn set_connector_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.connector_definition_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteConnectorDefinitionInput`](crate::operation::delete_connector_definition::DeleteConnectorDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::delete_connector_definition::DeleteConnectorDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_connector_definition::DeleteConnectorDefinitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_connector_definition::DeleteConnectorDefinitionInput {
-                connector_definition_id: self.connector_definition_id
-                ,
-            }
+                connector_definition_id: self.connector_definition_id,
+            },
         )
     }
 }
-

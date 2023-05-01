@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBusinessReportScheduleInput  {
+pub struct CreateBusinessReportScheduleInput {
     /// <p>The name identifier of the schedule.</p>
     #[doc(hidden)]
     pub schedule_name: std::option::Option<std::string::String>,
@@ -30,41 +30,41 @@ pub struct CreateBusinessReportScheduleInput  {
 }
 impl CreateBusinessReportScheduleInput {
     /// <p>The name identifier of the schedule.</p>
-    pub fn schedule_name(&self) -> std::option::Option<& str> {
+    pub fn schedule_name(&self) -> std::option::Option<&str> {
         self.schedule_name.as_deref()
     }
     /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The S3 key where the report is delivered.</p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<& str> {
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-    pub fn format(&self) -> std::option::Option<& crate::types::BusinessReportFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::BusinessReportFormat> {
         self.format.as_ref()
     }
     /// <p>The content range of the reports.</p>
-    pub fn content_range(&self) -> std::option::Option<& crate::types::BusinessReportContentRange> {
+    pub fn content_range(&self) -> std::option::Option<&crate::types::BusinessReportContentRange> {
         self.content_range.as_ref()
     }
     /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
-    pub fn recurrence(&self) -> std::option::Option<& crate::types::BusinessReportRecurrence> {
+    pub fn recurrence(&self) -> std::option::Option<&crate::types::BusinessReportRecurrence> {
         self.recurrence.as_ref()
     }
     /// <p>The client request token.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags for the business report schedule.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateBusinessReportScheduleInput {
     /// Creates a new builder-style object to manufacture [`CreateBusinessReportScheduleInput`](crate::operation::create_business_report_schedule::CreateBusinessReportScheduleInput).
-    pub fn builder() -> crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleInputBuilder {
+    pub fn builder() -> crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleInputBuilder{
         crate::operation::create_business_report_schedule::builders::CreateBusinessReportScheduleInputBuilder::default()
     }
 }
@@ -90,7 +90,8 @@ impl CreateBusinessReportScheduleInputBuilder {
     }
     /// <p>The name identifier of the schedule.</p>
     pub fn set_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schedule_name = input; self
+        self.schedule_name = input;
+        self
     }
     /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
     pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +100,8 @@ impl CreateBusinessReportScheduleInputBuilder {
     }
     /// <p>The S3 bucket name of the output reports. If this isn't specified, the report can be retrieved from a download link by calling ListBusinessReportSchedule. </p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input; self
+        self.s3_bucket_name = input;
+        self
     }
     /// <p>The S3 key where the report is delivered.</p>
     pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +110,8 @@ impl CreateBusinessReportScheduleInputBuilder {
     }
     /// <p>The S3 key where the report is delivered.</p>
     pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key_prefix = input; self
+        self.s3_key_prefix = input;
+        self
     }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
     pub fn format(mut self, input: crate::types::BusinessReportFormat) -> Self {
@@ -116,8 +119,12 @@ impl CreateBusinessReportScheduleInputBuilder {
         self
     }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::BusinessReportFormat>) -> Self {
-        self.format = input; self
+    pub fn set_format(
+        mut self,
+        input: std::option::Option<crate::types::BusinessReportFormat>,
+    ) -> Self {
+        self.format = input;
+        self
     }
     /// <p>The content range of the reports.</p>
     pub fn content_range(mut self, input: crate::types::BusinessReportContentRange) -> Self {
@@ -125,8 +132,12 @@ impl CreateBusinessReportScheduleInputBuilder {
         self
     }
     /// <p>The content range of the reports.</p>
-    pub fn set_content_range(mut self, input: std::option::Option<crate::types::BusinessReportContentRange>) -> Self {
-        self.content_range = input; self
+    pub fn set_content_range(
+        mut self,
+        input: std::option::Option<crate::types::BusinessReportContentRange>,
+    ) -> Self {
+        self.content_range = input;
+        self
     }
     /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
     pub fn recurrence(mut self, input: crate::types::BusinessReportRecurrence) -> Self {
@@ -134,8 +145,12 @@ impl CreateBusinessReportScheduleInputBuilder {
         self
     }
     /// <p>The recurrence of the reports. If this isn't specified, the report will only be delivered one time when the API is called. </p>
-    pub fn set_recurrence(mut self, input: std::option::Option<crate::types::BusinessReportRecurrence>) -> Self {
-        self.recurrence = input; self
+    pub fn set_recurrence(
+        mut self,
+        input: std::option::Option<crate::types::BusinessReportRecurrence>,
+    ) -> Self {
+        self.recurrence = input;
+        self
     }
     /// <p>The client request token.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +158,12 @@ impl CreateBusinessReportScheduleInputBuilder {
         self
     }
     /// <p>The client request token.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -153,36 +172,36 @@ impl CreateBusinessReportScheduleInputBuilder {
     /// <p>The tags for the business report schedule.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags for the business report schedule.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBusinessReportScheduleInput`](crate::operation::create_business_report_schedule::CreateBusinessReportScheduleInput).
-    pub fn build(self) -> Result<crate::operation::create_business_report_schedule::CreateBusinessReportScheduleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_business_report_schedule::CreateBusinessReportScheduleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_business_report_schedule::CreateBusinessReportScheduleInput {
-                schedule_name: self.schedule_name
-                ,
-                s3_bucket_name: self.s3_bucket_name
-                ,
-                s3_key_prefix: self.s3_key_prefix
-                ,
-                format: self.format
-                ,
-                content_range: self.content_range
-                ,
-                recurrence: self.recurrence
-                ,
-                client_request_token: self.client_request_token
-                ,
-                tags: self.tags
-                ,
-            }
+                schedule_name: self.schedule_name,
+                s3_bucket_name: self.s3_bucket_name,
+                s3_key_prefix: self.s3_key_prefix,
+                format: self.format,
+                content_range: self.content_range,
+                recurrence: self.recurrence,
+                client_request_token: self.client_request_token,
+                tags: self.tags,
+            },
         )
     }
 }
-

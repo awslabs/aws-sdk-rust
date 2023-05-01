@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePlaceIndexOutput  {
+pub struct UpdatePlaceIndexOutput {
     /// <p>The name of the updated place index resource.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub index_arn: std::option::Option<std::string::String>,
@@ -19,29 +19,30 @@ pub struct UpdatePlaceIndexOutput  {
 }
 impl UpdatePlaceIndexOutput {
     /// <p>The name of the updated place index resource.</p>
-    pub fn index_name(&self) -> std::option::Option<& str> {
+    pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
-    pub fn index_arn(&self) -> std::option::Option<& str> {
+    pub fn index_arn(&self) -> std::option::Option<&str> {
         self.index_arn.as_deref()
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdatePlaceIndexOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdatePlaceIndexOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePlaceIndexOutput`](crate::operation::update_place_index::UpdatePlaceIndexOutput).
-    pub fn builder() -> crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder {
+    pub fn builder() -> crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder
+    {
         crate::operation::update_place_index::builders::UpdatePlaceIndexOutputBuilder::default()
     }
 }
@@ -63,22 +64,24 @@ impl UpdatePlaceIndexOutputBuilder {
     }
     /// <p>The name of the updated place index resource.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input; self
+        self.index_name = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub fn index_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.index_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the upated place index resource. Used to specify a resource across Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:place- index/ExamplePlaceIndex</code> </p> </li>
     /// </ul>
     pub fn set_index_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_arn = input; self
+        self.index_arn = input;
+        self
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -86,29 +89,29 @@ impl UpdatePlaceIndexOutputBuilder {
         self
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input; self
+    pub fn set_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdatePlaceIndexOutput`](crate::operation::update_place_index::UpdatePlaceIndexOutput).
     pub fn build(self) -> crate::operation::update_place_index::UpdatePlaceIndexOutput {
         crate::operation::update_place_index::UpdatePlaceIndexOutput {
-            index_name: self.index_name
-            ,
-            index_arn: self.index_arn
-            ,
-            update_time: self.update_time
-            ,
+            index_name: self.index_name,
+            index_arn: self.index_arn,
+            update_time: self.update_time,
             _request_id: self._request_id,
         }
     }
 }
-

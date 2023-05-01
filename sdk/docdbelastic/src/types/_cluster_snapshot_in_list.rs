@@ -3,7 +3,7 @@
 /// <p>A list of Elastic DocumentDB snapshots.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterSnapshotInList  {
+pub struct ClusterSnapshotInList {
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
     #[doc(hidden)]
     pub snapshot_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct ClusterSnapshotInList  {
 }
 impl ClusterSnapshotInList {
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<& str> {
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
-    pub fn snapshot_arn(&self) -> std::option::Option<& str> {
+    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    pub fn snapshot_creation_time(&self) -> std::option::Option<& str> {
+    pub fn snapshot_creation_time(&self) -> std::option::Option<&str> {
         self.snapshot_creation_time.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl ClusterSnapshotInListBuilder {
     }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
     pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_name = input; self
+        self.snapshot_name = input;
+        self
     }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
     pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl ClusterSnapshotInListBuilder {
     }
     /// <p>The arn of the Elastic DocumentDB snapshot</p>
     pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_arn = input; self
+        self.snapshot_arn = input;
+        self
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl ClusterSnapshotInListBuilder {
     }
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input; self
+        self.cluster_arn = input;
+        self
     }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -94,7 +97,8 @@ impl ClusterSnapshotInListBuilder {
     }
     /// <p>The status of the Elastic DocumentDB snapshot.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
     pub fn snapshot_creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,23 +106,21 @@ impl ClusterSnapshotInListBuilder {
         self
     }
     /// <p>The time when the Elastic DocumentDB snapshot was created in Universal Coordinated Time (UTC).</p>
-    pub fn set_snapshot_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_creation_time = input; self
+    pub fn set_snapshot_creation_time(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.snapshot_creation_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClusterSnapshotInList`](crate::types::ClusterSnapshotInList).
     pub fn build(self) -> crate::types::ClusterSnapshotInList {
         crate::types::ClusterSnapshotInList {
-            snapshot_name: self.snapshot_name
-            ,
-            snapshot_arn: self.snapshot_arn
-            ,
-            cluster_arn: self.cluster_arn
-            ,
-            status: self.status
-            ,
-            snapshot_creation_time: self.snapshot_creation_time
-            ,
+            snapshot_name: self.snapshot_name,
+            snapshot_arn: self.snapshot_arn,
+            cluster_arn: self.cluster_arn,
+            status: self.status,
+            snapshot_creation_time: self.snapshot_creation_time,
         }
     }
 }
-

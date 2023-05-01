@@ -3,28 +3,34 @@
 /// <p> Configuration setting for monitoring. This data type allows job template parameters to be specified within.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParametricMonitoringConfiguration  {
+pub struct ParametricMonitoringConfiguration {
     /// <p> Monitoring configurations for the persistent application UI.</p>
     #[doc(hidden)]
     pub persistent_app_ui: std::option::Option<std::string::String>,
     /// <p> Monitoring configurations for CloudWatch.</p>
     #[doc(hidden)]
-    pub cloud_watch_monitoring_configuration: std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>,
+    pub cloud_watch_monitoring_configuration:
+        std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>,
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
     #[doc(hidden)]
-    pub s3_monitoring_configuration: std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
+    pub s3_monitoring_configuration:
+        std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
 }
 impl ParametricMonitoringConfiguration {
     /// <p> Monitoring configurations for the persistent application UI.</p>
-    pub fn persistent_app_ui(&self) -> std::option::Option<& str> {
+    pub fn persistent_app_ui(&self) -> std::option::Option<&str> {
         self.persistent_app_ui.as_deref()
     }
     /// <p> Monitoring configurations for CloudWatch.</p>
-    pub fn cloud_watch_monitoring_configuration(&self) -> std::option::Option<& crate::types::ParametricCloudWatchMonitoringConfiguration> {
+    pub fn cloud_watch_monitoring_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ParametricCloudWatchMonitoringConfiguration> {
         self.cloud_watch_monitoring_configuration.as_ref()
     }
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn s3_monitoring_configuration(&self) -> std::option::Option<& crate::types::ParametricS3MonitoringConfiguration> {
+    pub fn s3_monitoring_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ParametricS3MonitoringConfiguration> {
         self.s3_monitoring_configuration.as_ref()
     }
 }
@@ -40,8 +46,10 @@ impl ParametricMonitoringConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ParametricMonitoringConfigurationBuilder {
     pub(crate) persistent_app_ui: std::option::Option<std::string::String>,
-    pub(crate) cloud_watch_monitoring_configuration: std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>,
-    pub(crate) s3_monitoring_configuration: std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
+    pub(crate) cloud_watch_monitoring_configuration:
+        std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>,
+    pub(crate) s3_monitoring_configuration:
+        std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
 }
 impl ParametricMonitoringConfigurationBuilder {
     /// <p> Monitoring configurations for the persistent application UI.</p>
@@ -50,37 +58,51 @@ impl ParametricMonitoringConfigurationBuilder {
         self
     }
     /// <p> Monitoring configurations for the persistent application UI.</p>
-    pub fn set_persistent_app_ui(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.persistent_app_ui = input; self
+    pub fn set_persistent_app_ui(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.persistent_app_ui = input;
+        self
     }
     /// <p> Monitoring configurations for CloudWatch.</p>
-    pub fn cloud_watch_monitoring_configuration(mut self, input: crate::types::ParametricCloudWatchMonitoringConfiguration) -> Self {
+    pub fn cloud_watch_monitoring_configuration(
+        mut self,
+        input: crate::types::ParametricCloudWatchMonitoringConfiguration,
+    ) -> Self {
         self.cloud_watch_monitoring_configuration = Some(input);
         self
     }
     /// <p> Monitoring configurations for CloudWatch.</p>
-    pub fn set_cloud_watch_monitoring_configuration(mut self, input: std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>) -> Self {
-        self.cloud_watch_monitoring_configuration = input; self
+    pub fn set_cloud_watch_monitoring_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ParametricCloudWatchMonitoringConfiguration>,
+    ) -> Self {
+        self.cloud_watch_monitoring_configuration = input;
+        self
     }
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn s3_monitoring_configuration(mut self, input: crate::types::ParametricS3MonitoringConfiguration) -> Self {
+    pub fn s3_monitoring_configuration(
+        mut self,
+        input: crate::types::ParametricS3MonitoringConfiguration,
+    ) -> Self {
         self.s3_monitoring_configuration = Some(input);
         self
     }
     /// <p> Amazon S3 configuration for monitoring log publishing.</p>
-    pub fn set_s3_monitoring_configuration(mut self, input: std::option::Option<crate::types::ParametricS3MonitoringConfiguration>) -> Self {
-        self.s3_monitoring_configuration = input; self
+    pub fn set_s3_monitoring_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ParametricS3MonitoringConfiguration>,
+    ) -> Self {
+        self.s3_monitoring_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParametricMonitoringConfiguration`](crate::types::ParametricMonitoringConfiguration).
     pub fn build(self) -> crate::types::ParametricMonitoringConfiguration {
         crate::types::ParametricMonitoringConfiguration {
-            persistent_app_ui: self.persistent_app_ui
-            ,
-            cloud_watch_monitoring_configuration: self.cloud_watch_monitoring_configuration
-            ,
-            s3_monitoring_configuration: self.s3_monitoring_configuration
-            ,
+            persistent_app_ui: self.persistent_app_ui,
+            cloud_watch_monitoring_configuration: self.cloud_watch_monitoring_configuration,
+            s3_monitoring_configuration: self.s3_monitoring_configuration,
         }
     }
 }
-

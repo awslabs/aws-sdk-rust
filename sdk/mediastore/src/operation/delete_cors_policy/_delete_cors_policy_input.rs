@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCorsPolicyInput  {
+pub struct DeleteCorsPolicyInput {
     /// <p>The name of the container to remove the policy from.</p>
     #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl DeleteCorsPolicyInput {
     /// <p>The name of the container to remove the policy from.</p>
-    pub fn container_name(&self) -> std::option::Option<& str> {
+    pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
 }
 impl DeleteCorsPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteCorsPolicyInput`](crate::operation::delete_cors_policy::DeleteCorsPolicyInput).
-    pub fn builder() -> crate::operation::delete_cors_policy::builders::DeleteCorsPolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_cors_policy::builders::DeleteCorsPolicyInputBuilder
+    {
         crate::operation::delete_cors_policy::builders::DeleteCorsPolicyInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteCorsPolicyInputBuilder {
     }
     /// <p>The name of the container to remove the policy from.</p>
     pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_name = input; self
+        self.container_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteCorsPolicyInput`](crate::operation::delete_cors_policy::DeleteCorsPolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_cors_policy::DeleteCorsPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_cors_policy::DeleteCorsPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_cors_policy::DeleteCorsPolicyInput {
-                container_name: self.container_name
-                ,
-            }
+                container_name: self.container_name,
+            },
         )
     }
 }
-

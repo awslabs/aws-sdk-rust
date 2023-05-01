@@ -3,7 +3,7 @@
 /// <p>An object that represents the specification of a service mesh resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualGatewaySpec  {
+pub struct VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
     #[doc(hidden)]
     pub backend_defaults: std::option::Option<crate::types::VirtualGatewayBackendDefaults>,
@@ -16,15 +16,17 @@ pub struct VirtualGatewaySpec  {
 }
 impl VirtualGatewaySpec {
     /// <p>A reference to an object that represents the defaults for backends.</p>
-    pub fn backend_defaults(&self) -> std::option::Option<& crate::types::VirtualGatewayBackendDefaults> {
+    pub fn backend_defaults(
+        &self,
+    ) -> std::option::Option<&crate::types::VirtualGatewayBackendDefaults> {
         self.backend_defaults.as_ref()
     }
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn listeners(&self) -> std::option::Option<& [crate::types::VirtualGatewayListener]> {
+    pub fn listeners(&self) -> std::option::Option<&[crate::types::VirtualGatewayListener]> {
         self.listeners.as_deref()
     }
     /// <p>An object that represents logging information.</p>
-    pub fn logging(&self) -> std::option::Option<& crate::types::VirtualGatewayLogging> {
+    pub fn logging(&self) -> std::option::Option<&crate::types::VirtualGatewayLogging> {
         self.logging.as_ref()
     }
 }
@@ -50,8 +52,12 @@ impl VirtualGatewaySpecBuilder {
         self
     }
     /// <p>A reference to an object that represents the defaults for backends.</p>
-    pub fn set_backend_defaults(mut self, input: std::option::Option<crate::types::VirtualGatewayBackendDefaults>) -> Self {
-        self.backend_defaults = input; self
+    pub fn set_backend_defaults(
+        mut self,
+        input: std::option::Option<crate::types::VirtualGatewayBackendDefaults>,
+    ) -> Self {
+        self.backend_defaults = input;
+        self
     }
     /// Appends an item to `listeners`.
     ///
@@ -60,13 +66,17 @@ impl VirtualGatewaySpecBuilder {
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
     pub fn listeners(mut self, input: crate::types::VirtualGatewayListener) -> Self {
         let mut v = self.listeners.unwrap_or_default();
-                        v.push(input);
-                        self.listeners = Some(v);
-                        self
+        v.push(input);
+        self.listeners = Some(v);
+        self
     }
     /// <p>The listeners that the mesh endpoint is expected to receive inbound traffic from. You can specify one listener.</p>
-    pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::types::VirtualGatewayListener>>) -> Self {
-        self.listeners = input; self
+    pub fn set_listeners(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VirtualGatewayListener>>,
+    ) -> Self {
+        self.listeners = input;
+        self
     }
     /// <p>An object that represents logging information.</p>
     pub fn logging(mut self, input: crate::types::VirtualGatewayLogging) -> Self {
@@ -74,19 +84,19 @@ impl VirtualGatewaySpecBuilder {
         self
     }
     /// <p>An object that represents logging information.</p>
-    pub fn set_logging(mut self, input: std::option::Option<crate::types::VirtualGatewayLogging>) -> Self {
-        self.logging = input; self
+    pub fn set_logging(
+        mut self,
+        input: std::option::Option<crate::types::VirtualGatewayLogging>,
+    ) -> Self {
+        self.logging = input;
+        self
     }
     /// Consumes the builder and constructs a [`VirtualGatewaySpec`](crate::types::VirtualGatewaySpec).
     pub fn build(self) -> crate::types::VirtualGatewaySpec {
         crate::types::VirtualGatewaySpec {
-            backend_defaults: self.backend_defaults
-            ,
-            listeners: self.listeners
-            ,
-            logging: self.logging
-            ,
+            backend_defaults: self.backend_defaults,
+            listeners: self.listeners,
+            logging: self.logging,
         }
     }
 }
-

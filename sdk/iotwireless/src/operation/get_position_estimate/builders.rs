@@ -4,50 +4,70 @@ pub use crate::operation::get_position_estimate::_get_position_estimate_output::
 pub use crate::operation::get_position_estimate::_get_position_estimate_input::GetPositionEstimateInputBuilder;
 
 /// Fluent builder constructing a request to `GetPositionEstimate`.
-/// 
+///
 /// <p>Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using solvers that are provided by third-party vendors.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetPositionEstimateFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder,
+    inner: crate::operation::get_position_estimate::builders::GetPositionEstimateInputBuilder,
 }
-impl GetPositionEstimateFluentBuilder  {
+impl GetPositionEstimateFluentBuilder {
     /// Creates a new `GetPositionEstimate`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_position_estimate::GetPositionEstimate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_position_estimate::GetPositionEstimateError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_position_estimate::GetPositionEstimateOutput, aws_smithy_http::result::SdkError<crate::operation::get_position_estimate::GetPositionEstimateError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_position_estimate::GetPositionEstimate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_position_estimate::GetPositionEstimateError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_position_estimate::GetPositionEstimateOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_position_estimate::GetPositionEstimateError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `WiFiAccessPoints`.
     ///
     /// To override the contents of this collection use [`set_wi_fi_access_points`](Self::set_wi_fi_access_points).
@@ -58,7 +78,10 @@ impl GetPositionEstimateFluentBuilder  {
         self
     }
     /// <p>Retrieves an estimated device position by resolving WLAN measurement data. The position is resolved using HERE's Wi-Fi based solver.</p>
-    pub fn set_wi_fi_access_points(mut self, input: std::option::Option<std::vec::Vec<crate::types::WiFiAccessPoint>>) -> Self {
+    pub fn set_wi_fi_access_points(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::WiFiAccessPoint>>,
+    ) -> Self {
         self.inner = self.inner.set_wi_fi_access_points(input);
         self
     }
@@ -103,4 +126,3 @@ impl GetPositionEstimateFluentBuilder  {
         self
     }
 }
-

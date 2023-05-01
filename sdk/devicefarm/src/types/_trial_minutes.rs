@@ -3,7 +3,7 @@
 /// <p>Represents information about free trial device minutes for an AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrialMinutes  {
+pub struct TrialMinutes {
     /// <p>The total number of free trial minutes that the account started with.</p>
     #[doc(hidden)]
     pub total: std::option::Option<f64>,
@@ -43,7 +43,8 @@ impl TrialMinutesBuilder {
     }
     /// <p>The total number of free trial minutes that the account started with.</p>
     pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
-        self.total = input; self
+        self.total = input;
+        self
     }
     /// <p>The number of free trial minutes remaining in the account.</p>
     pub fn remaining(mut self, input: f64) -> Self {
@@ -52,16 +53,14 @@ impl TrialMinutesBuilder {
     }
     /// <p>The number of free trial minutes remaining in the account.</p>
     pub fn set_remaining(mut self, input: std::option::Option<f64>) -> Self {
-        self.remaining = input; self
+        self.remaining = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrialMinutes`](crate::types::TrialMinutes).
     pub fn build(self) -> crate::types::TrialMinutes {
         crate::types::TrialMinutes {
-            total: self.total
-            ,
-            remaining: self.remaining
-            ,
+            total: self.total,
+            remaining: self.remaining,
         }
     }
 }
-

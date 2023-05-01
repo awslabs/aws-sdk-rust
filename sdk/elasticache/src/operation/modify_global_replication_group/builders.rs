@@ -4,57 +4,80 @@ pub use crate::operation::modify_global_replication_group::_modify_global_replic
 pub use crate::operation::modify_global_replication_group::_modify_global_replication_group_input::ModifyGlobalReplicationGroupInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyGlobalReplicationGroup`.
-/// 
+///
 /// <p>Modifies the settings for a Global datastore.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyGlobalReplicationGroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::modify_global_replication_group::builders::ModifyGlobalReplicationGroupInputBuilder,
 }
-impl ModifyGlobalReplicationGroupFluentBuilder  {
+impl ModifyGlobalReplicationGroupFluentBuilder {
     /// Creates a new `ModifyGlobalReplicationGroup`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupOutput, aws_smithy_http::result::SdkError<crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the Global datastore</p>
     pub fn global_replication_group_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_replication_group_id(input.into());
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_global_replication_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_global_replication_group_id(input);
         self
     }
@@ -94,17 +117,28 @@ impl ModifyGlobalReplicationGroupFluentBuilder  {
         self
     }
     /// <p>The name of the cache parameter group to use with the Global datastore. It must be compatible with the major engine version used by the Global datastore.</p>
-    pub fn set_cache_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cache_parameter_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cache_parameter_group_name(input);
         self
     }
     /// <p>A description of the Global datastore</p>
-    pub fn global_replication_group_description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inner = self.inner.global_replication_group_description(input.into());
+    pub fn global_replication_group_description(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        self.inner = self
+            .inner
+            .global_replication_group_description(input.into());
         self
     }
     /// <p>A description of the Global datastore</p>
-    pub fn set_global_replication_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_global_replication_group_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_global_replication_group_description(input);
         self
     }
@@ -119,4 +153,3 @@ impl ModifyGlobalReplicationGroupFluentBuilder  {
         self
     }
 }
-

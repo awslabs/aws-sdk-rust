@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopProjectVersionOutput  {
+pub struct StopProjectVersionOutput {
     /// <p>The current status of the stop operation. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ProjectVersionStatus>,
@@ -10,18 +10,19 @@ pub struct StopProjectVersionOutput  {
 }
 impl StopProjectVersionOutput {
     /// <p>The current status of the stop operation. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ProjectVersionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ProjectVersionStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StopProjectVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopProjectVersionOutput {
     /// Creates a new builder-style object to manufacture [`StopProjectVersionOutput`](crate::operation::stop_project_version::StopProjectVersionOutput).
-    pub fn builder() -> crate::operation::stop_project_version::builders::StopProjectVersionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_project_version::builders::StopProjectVersionOutputBuilder {
         crate::operation::stop_project_version::builders::StopProjectVersionOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl StopProjectVersionOutputBuilder {
         self
     }
     /// <p>The current status of the stop operation. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ProjectVersionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ProjectVersionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopProjectVersionOutput`](crate::operation::stop_project_version::StopProjectVersionOutput).
     pub fn build(self) -> crate::operation::stop_project_version::StopProjectVersionOutput {
         crate::operation::stop_project_version::StopProjectVersionOutput {
-            status: self.status
-            ,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

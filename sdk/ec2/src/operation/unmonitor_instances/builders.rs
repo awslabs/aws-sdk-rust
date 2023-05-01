@@ -4,50 +4,70 @@ pub use crate::operation::unmonitor_instances::_unmonitor_instances_output::Unmo
 pub use crate::operation::unmonitor_instances::_unmonitor_instances_input::UnmonitorInstancesInputBuilder;
 
 /// Fluent builder constructing a request to `UnmonitorInstances`.
-/// 
+///
 /// <p>Disables detailed monitoring for a running instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UnmonitorInstancesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::unmonitor_instances::builders::UnmonitorInstancesInputBuilder,
+    inner: crate::operation::unmonitor_instances::builders::UnmonitorInstancesInputBuilder,
 }
-impl UnmonitorInstancesFluentBuilder  {
+impl UnmonitorInstancesFluentBuilder {
     /// Creates a new `UnmonitorInstances`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::unmonitor_instances::UnmonitorInstances, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::unmonitor_instances::UnmonitorInstancesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::unmonitor_instances::UnmonitorInstancesOutput, aws_smithy_http::result::SdkError<crate::operation::unmonitor_instances::UnmonitorInstancesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::unmonitor_instances::UnmonitorInstances,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::unmonitor_instances::UnmonitorInstancesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::unmonitor_instances::UnmonitorInstancesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::unmonitor_instances::UnmonitorInstancesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `InstanceIds`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
@@ -58,7 +78,10 @@ impl UnmonitorInstancesFluentBuilder  {
         self
     }
     /// <p>The IDs of the instances.</p>
-    pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_instance_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_instance_ids(input);
         self
     }
@@ -73,4 +96,3 @@ impl UnmonitorInstancesFluentBuilder  {
         self
     }
 }
-

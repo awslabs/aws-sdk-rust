@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUserAssociationsOutput  {
+pub struct ListUserAssociationsOutput {
     /// <p>Metadata that describes the list user association operation.</p>
     #[doc(hidden)]
-    pub instance_user_summaries: std::option::Option<std::vec::Vec<crate::types::InstanceUserSummary>>,
+    pub instance_user_summaries:
+        std::option::Option<std::vec::Vec<crate::types::InstanceUserSummary>>,
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,25 @@ pub struct ListUserAssociationsOutput  {
 }
 impl ListUserAssociationsOutput {
     /// <p>Metadata that describes the list user association operation.</p>
-    pub fn instance_user_summaries(&self) -> std::option::Option<& [crate::types::InstanceUserSummary]> {
+    pub fn instance_user_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::InstanceUserSummary]> {
         self.instance_user_summaries.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListUserAssociationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListUserAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserAssociationsOutput`](crate::operation::list_user_associations::ListUserAssociationsOutput).
-    pub fn builder() -> crate::operation::list_user_associations::builders::ListUserAssociationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_user_associations::builders::ListUserAssociationsOutputBuilder {
         crate::operation::list_user_associations::builders::ListUserAssociationsOutputBuilder::default()
     }
 }
@@ -37,7 +41,8 @@ impl ListUserAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListUserAssociationsOutputBuilder {
-    pub(crate) instance_user_summaries: std::option::Option<std::vec::Vec<crate::types::InstanceUserSummary>>,
+    pub(crate) instance_user_summaries:
+        std::option::Option<std::vec::Vec<crate::types::InstanceUserSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +54,17 @@ impl ListUserAssociationsOutputBuilder {
     /// <p>Metadata that describes the list user association operation.</p>
     pub fn instance_user_summaries(mut self, input: crate::types::InstanceUserSummary) -> Self {
         let mut v = self.instance_user_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.instance_user_summaries = Some(v);
-                        self
+        v.push(input);
+        self.instance_user_summaries = Some(v);
+        self
     }
     /// <p>Metadata that describes the list user association operation.</p>
-    pub fn set_instance_user_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceUserSummary>>) -> Self {
-        self.instance_user_summaries = input; self
+    pub fn set_instance_user_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceUserSummary>>,
+    ) -> Self {
+        self.instance_user_summaries = input;
+        self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +73,24 @@ impl ListUserAssociationsOutputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListUserAssociationsOutput`](crate::operation::list_user_associations::ListUserAssociationsOutput).
     pub fn build(self) -> crate::operation::list_user_associations::ListUserAssociationsOutput {
         crate::operation::list_user_associations::ListUserAssociationsOutput {
-            instance_user_summaries: self.instance_user_summaries
-            ,
-            next_token: self.next_token
-            ,
+            instance_user_summaries: self.instance_user_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

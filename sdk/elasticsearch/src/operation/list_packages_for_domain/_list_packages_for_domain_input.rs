@@ -3,7 +3,7 @@
 /// <p> Container for request parameters to <code> <code>ListPackagesForDomain</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPackagesForDomainInput  {
+pub struct ListPackagesForDomainInput {
     /// <p>The name of the domain for which you want to list associated packages.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListPackagesForDomainInput  {
 }
 impl ListPackagesForDomainInput {
     /// <p>The name of the domain for which you want to list associated packages.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Limits results to a maximum number of packages.</p>
@@ -24,13 +24,15 @@ impl ListPackagesForDomainInput {
         self.max_results
     }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListPackagesForDomainInput {
     /// Creates a new builder-style object to manufacture [`ListPackagesForDomainInput`](crate::operation::list_packages_for_domain::ListPackagesForDomainInput).
-    pub fn builder() -> crate::operation::list_packages_for_domain::builders::ListPackagesForDomainInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_packages_for_domain::builders::ListPackagesForDomainInputBuilder
+    {
         crate::operation::list_packages_for_domain::builders::ListPackagesForDomainInputBuilder::default()
     }
 }
@@ -51,7 +53,8 @@ impl ListPackagesForDomainInputBuilder {
     }
     /// <p>The name of the domain for which you want to list associated packages.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>Limits results to a maximum number of packages.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,7 +63,8 @@ impl ListPackagesForDomainInputBuilder {
     }
     /// <p>Limits results to a maximum number of packages.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,21 +73,22 @@ impl ListPackagesForDomainInputBuilder {
     }
     /// <p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPackagesForDomainInput`](crate::operation::list_packages_for_domain::ListPackagesForDomainInput).
-    pub fn build(self) -> Result<crate::operation::list_packages_for_domain::ListPackagesForDomainInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_packages_for_domain::ListPackagesForDomainInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_packages_for_domain::ListPackagesForDomainInput {
-                domain_name: self.domain_name
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                domain_name: self.domain_name,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

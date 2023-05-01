@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecodeAuthorizationMessageInput  {
+pub struct DecodeAuthorizationMessageInput {
     /// <p>The encoded message that was returned with the response.</p>
     #[doc(hidden)]
     pub encoded_message: std::option::Option<std::string::String>,
 }
 impl DecodeAuthorizationMessageInput {
     /// <p>The encoded message that was returned with the response.</p>
-    pub fn encoded_message(&self) -> std::option::Option<& str> {
+    pub fn encoded_message(&self) -> std::option::Option<&str> {
         self.encoded_message.as_deref()
     }
 }
 impl DecodeAuthorizationMessageInput {
     /// Creates a new builder-style object to manufacture [`DecodeAuthorizationMessageInput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput).
-    pub fn builder() -> crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageInputBuilder {
+    pub fn builder() -> crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageInputBuilder{
         crate::operation::decode_authorization_message::builders::DecodeAuthorizationMessageInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DecodeAuthorizationMessageInputBuilder {
     }
     /// <p>The encoded message that was returned with the response.</p>
     pub fn set_encoded_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.encoded_message = input; self
+        self.encoded_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`DecodeAuthorizationMessageInput`](crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput).
-    pub fn build(self) -> Result<crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::decode_authorization_message::DecodeAuthorizationMessageInput {
-                encoded_message: self.encoded_message
-                ,
-            }
+                encoded_message: self.encoded_message,
+            },
         )
     }
 }
-

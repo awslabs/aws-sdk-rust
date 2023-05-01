@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadinessCheckResourceStatusInput  {
+pub struct GetReadinessCheckResourceStatusInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -22,21 +22,21 @@ impl GetReadinessCheckResourceStatusInput {
         self.max_results
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Name of a readiness check.</p>
-    pub fn readiness_check_name(&self) -> std::option::Option<& str> {
+    pub fn readiness_check_name(&self) -> std::option::Option<&str> {
         self.readiness_check_name.as_deref()
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
-    pub fn resource_identifier(&self) -> std::option::Option<& str> {
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
 }
 impl GetReadinessCheckResourceStatusInput {
     /// Creates a new builder-style object to manufacture [`GetReadinessCheckResourceStatusInput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput).
-    pub fn builder() -> crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder {
+    pub fn builder() -> crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder{
         crate::operation::get_readiness_check_resource_status::builders::GetReadinessCheckResourceStatusInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl GetReadinessCheckResourceStatusInputBuilder {
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl GetReadinessCheckResourceStatusInputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Name of a readiness check.</p>
     pub fn readiness_check_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +77,12 @@ impl GetReadinessCheckResourceStatusInputBuilder {
         self
     }
     /// <p>Name of a readiness check.</p>
-    pub fn set_readiness_check_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.readiness_check_name = input; self
+    pub fn set_readiness_check_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.readiness_check_name = input;
+        self
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
     pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,11 +90,20 @@ impl GetReadinessCheckResourceStatusInputBuilder {
         self
     }
     /// <p>The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).</p>
-    pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_identifier = input; self
+    pub fn set_resource_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetReadinessCheckResourceStatusInput`](crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput).
-    pub fn build(self) -> Result<crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_readiness_check_resource_status::GetReadinessCheckResourceStatusInput {
                 max_results: self.max_results
@@ -104,4 +119,3 @@ impl GetReadinessCheckResourceStatusInputBuilder {
         )
     }
 }
-

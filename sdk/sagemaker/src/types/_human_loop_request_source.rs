@@ -3,14 +3,17 @@
 /// <p>Container for configuring the source of human task requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HumanLoopRequestSource  {
+pub struct HumanLoopRequestSource {
     /// <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the integration source. The default field settings and JSON parsing rules are different based on the integration source. Valid values:</p>
     #[doc(hidden)]
-    pub aws_managed_human_loop_request_source: std::option::Option<crate::types::AwsManagedHumanLoopRequestSource>,
+    pub aws_managed_human_loop_request_source:
+        std::option::Option<crate::types::AwsManagedHumanLoopRequestSource>,
 }
 impl HumanLoopRequestSource {
     /// <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the integration source. The default field settings and JSON parsing rules are different based on the integration source. Valid values:</p>
-    pub fn aws_managed_human_loop_request_source(&self) -> std::option::Option<& crate::types::AwsManagedHumanLoopRequestSource> {
+    pub fn aws_managed_human_loop_request_source(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsManagedHumanLoopRequestSource> {
         self.aws_managed_human_loop_request_source.as_ref()
     }
 }
@@ -25,24 +28,30 @@ impl HumanLoopRequestSource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct HumanLoopRequestSourceBuilder {
-    pub(crate) aws_managed_human_loop_request_source: std::option::Option<crate::types::AwsManagedHumanLoopRequestSource>,
+    pub(crate) aws_managed_human_loop_request_source:
+        std::option::Option<crate::types::AwsManagedHumanLoopRequestSource>,
 }
 impl HumanLoopRequestSourceBuilder {
     /// <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the integration source. The default field settings and JSON parsing rules are different based on the integration source. Valid values:</p>
-    pub fn aws_managed_human_loop_request_source(mut self, input: crate::types::AwsManagedHumanLoopRequestSource) -> Self {
+    pub fn aws_managed_human_loop_request_source(
+        mut self,
+        input: crate::types::AwsManagedHumanLoopRequestSource,
+    ) -> Self {
         self.aws_managed_human_loop_request_source = Some(input);
         self
     }
     /// <p>Specifies whether Amazon Rekognition or Amazon Textract are used as the integration source. The default field settings and JSON parsing rules are different based on the integration source. Valid values:</p>
-    pub fn set_aws_managed_human_loop_request_source(mut self, input: std::option::Option<crate::types::AwsManagedHumanLoopRequestSource>) -> Self {
-        self.aws_managed_human_loop_request_source = input; self
+    pub fn set_aws_managed_human_loop_request_source(
+        mut self,
+        input: std::option::Option<crate::types::AwsManagedHumanLoopRequestSource>,
+    ) -> Self {
+        self.aws_managed_human_loop_request_source = input;
+        self
     }
     /// Consumes the builder and constructs a [`HumanLoopRequestSource`](crate::types::HumanLoopRequestSource).
     pub fn build(self) -> crate::types::HumanLoopRequestSource {
         crate::types::HumanLoopRequestSource {
-            aws_managed_human_loop_request_source: self.aws_managed_human_loop_request_source
-            ,
+            aws_managed_human_loop_request_source: self.aws_managed_human_loop_request_source,
         }
     }
 }
-

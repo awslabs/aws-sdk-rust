@@ -22,7 +22,11 @@ impl KmsKey {
     /// Tries to convert the enum instance into [`KmsAliasArn`](crate::types::KmsKey::KmsAliasArn), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_kms_alias_arn(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let KmsKey::KmsAliasArn(val) = &self { Ok(val) } else { Err(self) }
+        if let KmsKey::KmsAliasArn(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`KmsAliasArn`](crate::types::KmsKey::KmsAliasArn).
     pub fn is_kms_alias_arn(&self) -> bool {
@@ -31,7 +35,11 @@ impl KmsKey {
     /// Tries to convert the enum instance into [`KmsKeyArn`](crate::types::KmsKey::KmsKeyArn), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_kms_key_arn(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let KmsKey::KmsKeyArn(val) = &self { Ok(val) } else { Err(self) }
+        if let KmsKey::KmsKeyArn(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`KmsKeyArn`](crate::types::KmsKey::KmsKeyArn).
     pub fn is_kms_key_arn(&self) -> bool {
@@ -42,4 +50,3 @@ impl KmsKey {
         matches!(self, Self::Unknown)
     }
 }
-

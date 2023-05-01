@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for EnableAvailabilityZonesForLoadBalancer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAvailabilityZonesForLoadBalancerInput  {
+pub struct EnableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct EnableAvailabilityZonesForLoadBalancerInput  {
 }
 impl EnableAvailabilityZonesForLoadBalancerInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
-    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
 }
 impl EnableAvailabilityZonesForLoadBalancerInput {
     /// Creates a new builder-style object to manufacture [`EnableAvailabilityZonesForLoadBalancerInput`](crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerInput).
-    pub fn builder() -> crate::operation::enable_availability_zones_for_load_balancer::builders::EnableAvailabilityZonesForLoadBalancerInputBuilder {
+    pub fn builder() -> crate::operation::enable_availability_zones_for_load_balancer::builders::EnableAvailabilityZonesForLoadBalancerInputBuilder{
         crate::operation::enable_availability_zones_for_load_balancer::builders::EnableAvailabilityZonesForLoadBalancerInputBuilder::default()
     }
 }
@@ -42,8 +42,12 @@ impl EnableAvailabilityZonesForLoadBalancerInputBuilder {
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.load_balancer_name = input; self
+    pub fn set_load_balancer_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = input;
+        self
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -52,16 +56,20 @@ impl EnableAvailabilityZonesForLoadBalancerInputBuilder {
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
     pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-                        v.push(input.into());
-                        self.availability_zones = Some(v);
-                        self
+        v.push(input.into());
+        self.availability_zones = Some(v);
+        self
     }
     /// <p>The Availability Zones. These must be in the same region as the load balancer.</p>
-    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.availability_zones = input; self
+    pub fn set_availability_zones(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.availability_zones = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnableAvailabilityZonesForLoadBalancerInput`](crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerInput).
-    pub fn build(self) -> Result<crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::enable_availability_zones_for_load_balancer::EnableAvailabilityZonesForLoadBalancerInput {
                 load_balancer_name: self.load_balancer_name
@@ -72,4 +80,3 @@ impl EnableAvailabilityZonesForLoadBalancerInputBuilder {
         )
     }
 }
-

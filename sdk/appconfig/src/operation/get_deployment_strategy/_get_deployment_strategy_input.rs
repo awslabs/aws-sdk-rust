@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentStrategyInput  {
+pub struct GetDeploymentStrategyInput {
     /// <p>The ID of the deployment strategy to get.</p>
     #[doc(hidden)]
     pub deployment_strategy_id: std::option::Option<std::string::String>,
 }
 impl GetDeploymentStrategyInput {
     /// <p>The ID of the deployment strategy to get.</p>
-    pub fn deployment_strategy_id(&self) -> std::option::Option<& str> {
+    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
         self.deployment_strategy_id.as_deref()
     }
 }
 impl GetDeploymentStrategyInput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentStrategyInput`](crate::operation::get_deployment_strategy::GetDeploymentStrategyInput).
-    pub fn builder() -> crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyInputBuilder
+    {
         crate::operation::get_deployment_strategy::builders::GetDeploymentStrategyInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl GetDeploymentStrategyInputBuilder {
         self
     }
     /// <p>The ID of the deployment strategy to get.</p>
-    pub fn set_deployment_strategy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_strategy_id = input; self
+    pub fn set_deployment_strategy_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.deployment_strategy_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDeploymentStrategyInput`](crate::operation::get_deployment_strategy::GetDeploymentStrategyInput).
-    pub fn build(self) -> Result<crate::operation::get_deployment_strategy::GetDeploymentStrategyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_deployment_strategy::GetDeploymentStrategyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_deployment_strategy::GetDeploymentStrategyInput {
-                deployment_strategy_id: self.deployment_strategy_id
-                ,
-            }
+                deployment_strategy_id: self.deployment_strategy_id,
+            },
         )
     }
 }
-

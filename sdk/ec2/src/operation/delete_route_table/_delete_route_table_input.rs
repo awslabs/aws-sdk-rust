@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRouteTableInput  {
+pub struct DeleteRouteTableInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,13 +16,14 @@ impl DeleteRouteTableInput {
         self.dry_run
     }
     /// <p>The ID of the route table.</p>
-    pub fn route_table_id(&self) -> std::option::Option<& str> {
+    pub fn route_table_id(&self) -> std::option::Option<&str> {
         self.route_table_id.as_deref()
     }
 }
 impl DeleteRouteTableInput {
     /// Creates a new builder-style object to manufacture [`DeleteRouteTableInput`](crate::operation::delete_route_table::DeleteRouteTableInput).
-    pub fn builder() -> crate::operation::delete_route_table::builders::DeleteRouteTableInputBuilder {
+    pub fn builder() -> crate::operation::delete_route_table::builders::DeleteRouteTableInputBuilder
+    {
         crate::operation::delete_route_table::builders::DeleteRouteTableInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteRouteTableInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the route table.</p>
     pub fn route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeleteRouteTableInputBuilder {
     }
     /// <p>The ID of the route table.</p>
     pub fn set_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.route_table_id = input; self
+        self.route_table_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRouteTableInput`](crate::operation::delete_route_table::DeleteRouteTableInput).
-    pub fn build(self) -> Result<crate::operation::delete_route_table::DeleteRouteTableInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_route_table::DeleteRouteTableInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_route_table::DeleteRouteTableInput {
-                dry_run: self.dry_run
-                ,
-                route_table_id: self.route_table_id
-                ,
-            }
+                dry_run: self.dry_run,
+                route_table_id: self.route_table_id,
+            },
         )
     }
 }
-

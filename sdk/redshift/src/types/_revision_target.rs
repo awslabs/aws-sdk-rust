@@ -3,7 +3,7 @@
 /// <p>Describes a <code>RevisionTarget</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevisionTarget  {
+pub struct RevisionTarget {
     /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
     #[doc(hidden)]
     pub database_revision: std::option::Option<std::string::String>,
@@ -16,15 +16,17 @@ pub struct RevisionTarget  {
 }
 impl RevisionTarget {
     /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
-    pub fn database_revision(&self) -> std::option::Option<& str> {
+    pub fn database_revision(&self) -> std::option::Option<&str> {
         self.database_revision.as_deref()
     }
     /// <p>A string that describes the changes and features that will be applied to the cluster when it is updated to the corresponding <code>ClusterDbRevision</code>.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date on which the database revision was released.</p>
-    pub fn database_revision_release_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn database_revision_release_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.database_revision_release_date.as_ref()
     }
 }
@@ -50,8 +52,12 @@ impl RevisionTargetBuilder {
         self
     }
     /// <p>A unique string that identifies the version to update the cluster to. You can use this value in <code>ModifyClusterDbRevision</code>.</p>
-    pub fn set_database_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_revision = input; self
+    pub fn set_database_revision(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.database_revision = input;
+        self
     }
     /// <p>A string that describes the changes and features that will be applied to the cluster when it is updated to the corresponding <code>ClusterDbRevision</code>.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +66,8 @@ impl RevisionTargetBuilder {
     }
     /// <p>A string that describes the changes and features that will be applied to the cluster when it is updated to the corresponding <code>ClusterDbRevision</code>.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date on which the database revision was released.</p>
     pub fn database_revision_release_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,19 +75,19 @@ impl RevisionTargetBuilder {
         self
     }
     /// <p>The date on which the database revision was released.</p>
-    pub fn set_database_revision_release_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.database_revision_release_date = input; self
+    pub fn set_database_revision_release_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.database_revision_release_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`RevisionTarget`](crate::types::RevisionTarget).
     pub fn build(self) -> crate::types::RevisionTarget {
         crate::types::RevisionTarget {
-            database_revision: self.database_revision
-            ,
-            description: self.description
-            ,
-            database_revision_release_date: self.database_revision_release_date
-            ,
+            database_revision: self.database_revision,
+            description: self.description,
+            database_revision_release_date: self.database_revision_release_date,
         }
     }
 }
-

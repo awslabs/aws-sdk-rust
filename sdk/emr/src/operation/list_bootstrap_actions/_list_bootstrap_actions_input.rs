@@ -3,7 +3,7 @@
 /// <p>This input determines which bootstrap actions to retrieve.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBootstrapActionsInput  {
+pub struct ListBootstrapActionsInput {
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -13,17 +13,18 @@ pub struct ListBootstrapActionsInput  {
 }
 impl ListBootstrapActionsInput {
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
-    pub fn cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl ListBootstrapActionsInput {
     /// Creates a new builder-style object to manufacture [`ListBootstrapActionsInput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsInput).
-    pub fn builder() -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder {
         crate::operation::list_bootstrap_actions::builders::ListBootstrapActionsInputBuilder::default()
     }
 }
@@ -43,7 +44,8 @@ impl ListBootstrapActionsInputBuilder {
     }
     /// <p>The cluster identifier for the bootstrap actions to list.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input; self
+        self.cluster_id = input;
+        self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +54,21 @@ impl ListBootstrapActionsInputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBootstrapActionsInput`](crate::operation::list_bootstrap_actions::ListBootstrapActionsInput).
-    pub fn build(self) -> Result<crate::operation::list_bootstrap_actions::ListBootstrapActionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_bootstrap_actions::ListBootstrapActionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_bootstrap_actions::ListBootstrapActionsInput {
-                cluster_id: self.cluster_id
-                ,
-                marker: self.marker
-                ,
-            }
+                cluster_id: self.cluster_id,
+                marker: self.marker,
+            },
         )
     }
 }
-

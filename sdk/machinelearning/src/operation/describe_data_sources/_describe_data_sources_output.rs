@@ -3,7 +3,7 @@
 /// <p>Represents the query results from a <code>DescribeDataSources</code> operation. The content is essentially a list of <code>DataSource</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDataSourcesOutput  {
+pub struct DescribeDataSourcesOutput {
     /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
@@ -14,23 +14,25 @@ pub struct DescribeDataSourcesOutput  {
 }
 impl DescribeDataSourcesOutput {
     /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
-    pub fn results(&self) -> std::option::Option<& [crate::types::DataSource]> {
+    pub fn results(&self) -> std::option::Option<&[crate::types::DataSource]> {
         self.results.as_deref()
     }
     /// <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDataSourcesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDataSourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDataSourcesOutput`](crate::operation::describe_data_sources::DescribeDataSourcesOutput).
-    pub fn builder() -> crate::operation::describe_data_sources::builders::DescribeDataSourcesOutputBuilder {
-        crate::operation::describe_data_sources::builders::DescribeDataSourcesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_data_sources::builders::DescribeDataSourcesOutputBuilder {
+        crate::operation::describe_data_sources::builders::DescribeDataSourcesOutputBuilder::default(
+        )
     }
 }
 
@@ -50,13 +52,17 @@ impl DescribeDataSourcesOutputBuilder {
     /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
     pub fn results(mut self, input: crate::types::DataSource) -> Self {
         let mut v = self.results.unwrap_or_default();
-                        v.push(input);
-                        self.results = Some(v);
-                        self
+        v.push(input);
+        self.results = Some(v);
+        self
     }
     /// <p>A list of <code>DataSource</code> that meet the search criteria. </p>
-    pub fn set_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataSource>>) -> Self {
-        self.results = input; self
+    pub fn set_results(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DataSource>>,
+    ) -> Self {
+        self.results = input;
+        self
     }
     /// <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +71,24 @@ impl DescribeDataSourcesOutputBuilder {
     }
     /// <p>An ID of the next page in the paginated results that indicates at least one more page follows.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDataSourcesOutput`](crate::operation::describe_data_sources::DescribeDataSourcesOutput).
     pub fn build(self) -> crate::operation::describe_data_sources::DescribeDataSourcesOutput {
         crate::operation::describe_data_sources::DescribeDataSourcesOutput {
-            results: self.results
-            ,
-            next_token: self.next_token
-            ,
+            results: self.results,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

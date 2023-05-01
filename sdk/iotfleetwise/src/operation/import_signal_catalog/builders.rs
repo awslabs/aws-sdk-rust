@@ -4,50 +4,70 @@ pub use crate::operation::import_signal_catalog::_import_signal_catalog_output::
 pub use crate::operation::import_signal_catalog::_import_signal_catalog_input::ImportSignalCatalogInputBuilder;
 
 /// Fluent builder constructing a request to `ImportSignalCatalog`.
-/// 
+///
 /// <p> Creates a signal catalog using your existing VSS formatted content from your local device. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportSignalCatalogFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::import_signal_catalog::builders::ImportSignalCatalogInputBuilder,
+    inner: crate::operation::import_signal_catalog::builders::ImportSignalCatalogInputBuilder,
 }
-impl ImportSignalCatalogFluentBuilder  {
+impl ImportSignalCatalogFluentBuilder {
     /// Creates a new `ImportSignalCatalog`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::import_signal_catalog::ImportSignalCatalog, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::import_signal_catalog::ImportSignalCatalogError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::import_signal_catalog::ImportSignalCatalogOutput, aws_smithy_http::result::SdkError<crate::operation::import_signal_catalog::ImportSignalCatalogError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::import_signal_catalog::ImportSignalCatalog,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_signal_catalog::ImportSignalCatalogError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::import_signal_catalog::ImportSignalCatalogOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_signal_catalog::ImportSignalCatalogError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the signal catalog to import.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -88,9 +108,11 @@ impl ImportSignalCatalogFluentBuilder  {
         self
     }
     /// <p>Metadata that can be used to manage the signal catalog.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

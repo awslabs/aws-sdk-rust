@@ -3,7 +3,7 @@
 /// <p>An object that represents a virtual router returned by a describe operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualRouterData  {
+pub struct VirtualRouterData {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     #[doc(hidden)]
     pub mesh_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct VirtualRouterData  {
 }
 impl VirtualRouterData {
     /// <p>The name of the service mesh that the virtual router resides in.</p>
-    pub fn mesh_name(&self) -> std::option::Option<& str> {
+    pub fn mesh_name(&self) -> std::option::Option<&str> {
         self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual router.</p>
-    pub fn virtual_router_name(&self) -> std::option::Option<& str> {
+    pub fn virtual_router_name(&self) -> std::option::Option<&str> {
         self.virtual_router_name.as_deref()
     }
     /// <p>The specifications of the virtual router.</p>
-    pub fn spec(&self) -> std::option::Option<& crate::types::VirtualRouterSpec> {
+    pub fn spec(&self) -> std::option::Option<&crate::types::VirtualRouterSpec> {
         self.spec.as_ref()
     }
     /// <p>The associated metadata for the virtual router.</p>
-    pub fn metadata(&self) -> std::option::Option<& crate::types::ResourceMetadata> {
+    pub fn metadata(&self) -> std::option::Option<&crate::types::ResourceMetadata> {
         self.metadata.as_ref()
     }
     /// <p>The current status of the virtual router.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::VirtualRouterStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::VirtualRouterStatus> {
         self.status.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl VirtualRouterDataBuilder {
     }
     /// <p>The name of the service mesh that the virtual router resides in.</p>
     pub fn set_mesh_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mesh_name = input; self
+        self.mesh_name = input;
+        self
     }
     /// <p>The name of the virtual router.</p>
     pub fn virtual_router_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +76,12 @@ impl VirtualRouterDataBuilder {
         self
     }
     /// <p>The name of the virtual router.</p>
-    pub fn set_virtual_router_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.virtual_router_name = input; self
+    pub fn set_virtual_router_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.virtual_router_name = input;
+        self
     }
     /// <p>The specifications of the virtual router.</p>
     pub fn spec(mut self, input: crate::types::VirtualRouterSpec) -> Self {
@@ -85,7 +90,8 @@ impl VirtualRouterDataBuilder {
     }
     /// <p>The specifications of the virtual router.</p>
     pub fn set_spec(mut self, input: std::option::Option<crate::types::VirtualRouterSpec>) -> Self {
-        self.spec = input; self
+        self.spec = input;
+        self
     }
     /// <p>The associated metadata for the virtual router.</p>
     pub fn metadata(mut self, input: crate::types::ResourceMetadata) -> Self {
@@ -93,8 +99,12 @@ impl VirtualRouterDataBuilder {
         self
     }
     /// <p>The associated metadata for the virtual router.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<crate::types::ResourceMetadata>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<crate::types::ResourceMetadata>,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     /// <p>The current status of the virtual router.</p>
     pub fn status(mut self, input: crate::types::VirtualRouterStatus) -> Self {
@@ -102,23 +112,21 @@ impl VirtualRouterDataBuilder {
         self
     }
     /// <p>The current status of the virtual router.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::VirtualRouterStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::VirtualRouterStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`VirtualRouterData`](crate::types::VirtualRouterData).
     pub fn build(self) -> crate::types::VirtualRouterData {
         crate::types::VirtualRouterData {
-            mesh_name: self.mesh_name
-            ,
-            virtual_router_name: self.virtual_router_name
-            ,
-            spec: self.spec
-            ,
-            metadata: self.metadata
-            ,
-            status: self.status
-            ,
+            mesh_name: self.mesh_name,
+            virtual_router_name: self.virtual_router_name,
+            spec: self.spec,
+            metadata: self.metadata,
+            status: self.status,
         }
     }
 }
-

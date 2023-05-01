@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteModelQualityJobDefinitionInput  {
+pub struct DeleteModelQualityJobDefinitionInput {
     /// <p>The name of the model quality monitoring job definition to delete.</p>
     #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DeleteModelQualityJobDefinitionInput {
     /// <p>The name of the model quality monitoring job definition to delete.</p>
-    pub fn job_definition_name(&self) -> std::option::Option<& str> {
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
         self.job_definition_name.as_deref()
     }
 }
 impl DeleteModelQualityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteModelQualityJobDefinitionInput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput).
-    pub fn builder() -> crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionInputBuilder {
+    pub fn builder() -> crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionInputBuilder{
         crate::operation::delete_model_quality_job_definition::builders::DeleteModelQualityJobDefinitionInputBuilder::default()
     }
 }
@@ -33,11 +33,20 @@ impl DeleteModelQualityJobDefinitionInputBuilder {
         self
     }
     /// <p>The name of the model quality monitoring job definition to delete.</p>
-    pub fn set_job_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_definition_name = input; self
+    pub fn set_job_definition_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.job_definition_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteModelQualityJobDefinitionInput`](crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_model_quality_job_definition::DeleteModelQualityJobDefinitionInput {
                 job_definition_name: self.job_definition_name
@@ -46,4 +55,3 @@ impl DeleteModelQualityJobDefinitionInputBuilder {
         )
     }
 }
-

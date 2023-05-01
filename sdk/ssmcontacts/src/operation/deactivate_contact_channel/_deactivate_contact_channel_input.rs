@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeactivateContactChannelInput  {
+pub struct DeactivateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
     #[doc(hidden)]
     pub contact_channel_id: std::option::Option<std::string::String>,
 }
 impl DeactivateContactChannelInput {
     /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
-    pub fn contact_channel_id(&self) -> std::option::Option<& str> {
+    pub fn contact_channel_id(&self) -> std::option::Option<&str> {
         self.contact_channel_id.as_deref()
     }
 }
 impl DeactivateContactChannelInput {
     /// Creates a new builder-style object to manufacture [`DeactivateContactChannelInput`](crate::operation::deactivate_contact_channel::DeactivateContactChannelInput).
-    pub fn builder() -> crate::operation::deactivate_contact_channel::builders::DeactivateContactChannelInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deactivate_contact_channel::builders::DeactivateContactChannelInputBuilder
+    {
         crate::operation::deactivate_contact_channel::builders::DeactivateContactChannelInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeactivateContactChannelInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the contact channel you're deactivating.</p>
-    pub fn set_contact_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_channel_id = input; self
+    pub fn set_contact_channel_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.contact_channel_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeactivateContactChannelInput`](crate::operation::deactivate_contact_channel::DeactivateContactChannelInput).
-    pub fn build(self) -> Result<crate::operation::deactivate_contact_channel::DeactivateContactChannelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deactivate_contact_channel::DeactivateContactChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::deactivate_contact_channel::DeactivateContactChannelInput {
-                contact_channel_id: self.contact_channel_id
-                ,
-            }
+                contact_channel_id: self.contact_channel_id,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnablePolicyTypeOutput  {
+pub struct EnablePolicyTypeOutput {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
     #[doc(hidden)]
     pub root: std::option::Option<crate::types::Root>,
@@ -10,18 +10,19 @@ pub struct EnablePolicyTypeOutput  {
 }
 impl EnablePolicyTypeOutput {
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
-    pub fn root(&self) -> std::option::Option<& crate::types::Root> {
+    pub fn root(&self) -> std::option::Option<&crate::types::Root> {
         self.root.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for EnablePolicyTypeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl EnablePolicyTypeOutput {
     /// Creates a new builder-style object to manufacture [`EnablePolicyTypeOutput`](crate::operation::enable_policy_type::EnablePolicyTypeOutput).
-    pub fn builder() -> crate::operation::enable_policy_type::builders::EnablePolicyTypeOutputBuilder {
+    pub fn builder() -> crate::operation::enable_policy_type::builders::EnablePolicyTypeOutputBuilder
+    {
         crate::operation::enable_policy_type::builders::EnablePolicyTypeOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl EnablePolicyTypeOutputBuilder {
     }
     /// <p>A structure that shows the root with the updated list of enabled policy types.</p>
     pub fn set_root(mut self, input: std::option::Option<crate::types::Root>) -> Self {
-        self.root = input; self
+        self.root = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`EnablePolicyTypeOutput`](crate::operation::enable_policy_type::EnablePolicyTypeOutput).
     pub fn build(self) -> crate::operation::enable_policy_type::EnablePolicyTypeOutput {
         crate::operation::enable_policy_type::EnablePolicyTypeOutput {
-            root: self.root
-            ,
+            root: self.root,
             _request_id: self._request_id,
         }
     }
 }
-

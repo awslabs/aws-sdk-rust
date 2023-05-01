@@ -3,7 +3,7 @@
 /// <p>The group type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupType  {
+pub struct GroupType {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -16,8 +16,8 @@ pub struct GroupType  {
     /// <p>The role Amazon Resource Name (ARN) for the group.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p> 
-    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p> 
+    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
+    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
     /// <p>The default <code>Precedence</code> value is null.</p>
     #[doc(hidden)]
     pub precedence: std::option::Option<i32>,
@@ -30,33 +30,33 @@ pub struct GroupType  {
 }
 impl GroupType {
     /// <p>The name of the group.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The user pool ID for the user pool.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<& str> {
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>A string containing the description of the group.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The role Amazon Resource Name (ARN) for the group.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
-    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p> 
-    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p> 
+    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
+    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
     /// <p>The default <code>Precedence</code> value is null.</p>
     pub fn precedence(&self) -> std::option::Option<i32> {
         self.precedence
     }
     /// <p>The date the group was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date the group was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -87,7 +87,8 @@ impl GroupTypeBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,7 +97,8 @@ impl GroupTypeBuilder {
     }
     /// <p>The user pool ID for the user pool.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input; self
+        self.user_pool_id = input;
+        self
     }
     /// <p>A string containing the description of the group.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,7 +107,8 @@ impl GroupTypeBuilder {
     }
     /// <p>A string containing the description of the group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The role Amazon Resource Name (ARN) for the group.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,20 +117,22 @@ impl GroupTypeBuilder {
     }
     /// <p>The role Amazon Resource Name (ARN) for the group.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
-    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p> 
-    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p> 
+    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
+    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
     /// <p>The default <code>Precedence</code> value is null.</p>
     pub fn precedence(mut self, input: i32) -> Self {
         self.precedence = Some(input);
         self
     }
-    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p> 
-    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p> 
+    /// <p>A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower <code>Precedence</code> values take precedence over groups with higher ornull <code>Precedence</code> values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims.</p>
+    /// <p>Two groups can have the same <code>Precedence</code> value. If this happens, neither group takes precedence over the other. If two groups with the same <code>Precedence</code> have the same role ARN, that role is used in the <code>cognito:preferred_role</code> claim in tokens for users in each group. If the two groups have different role ARNs, the <code>cognito:preferred_role</code> claim isn't set in users' tokens.</p>
     /// <p>The default <code>Precedence</code> value is null.</p>
     pub fn set_precedence(mut self, input: std::option::Option<i32>) -> Self {
-        self.precedence = input; self
+        self.precedence = input;
+        self
     }
     /// <p>The date the group was last modified.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,8 +140,12 @@ impl GroupTypeBuilder {
         self
     }
     /// <p>The date the group was last modified.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     /// <p>The date the group was created.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -144,27 +153,23 @@ impl GroupTypeBuilder {
         self
     }
     /// <p>The date the group was created.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`GroupType`](crate::types::GroupType).
     pub fn build(self) -> crate::types::GroupType {
         crate::types::GroupType {
-            group_name: self.group_name
-            ,
-            user_pool_id: self.user_pool_id
-            ,
-            description: self.description
-            ,
-            role_arn: self.role_arn
-            ,
-            precedence: self.precedence
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            creation_date: self.creation_date
-            ,
+            group_name: self.group_name,
+            user_pool_id: self.user_pool_id,
+            description: self.description,
+            role_arn: self.role_arn,
+            precedence: self.precedence,
+            last_modified_date: self.last_modified_date,
+            creation_date: self.creation_date,
         }
     }
 }
-

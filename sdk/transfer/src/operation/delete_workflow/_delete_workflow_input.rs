@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkflowInput  {
+pub struct DeleteWorkflowInput {
     /// <p>A unique identifier for the workflow.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkflowInput {
     /// <p>A unique identifier for the workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<& str> {
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteWorkflowInputBuilder {
     }
     /// <p>A unique identifier for the workflow.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input; self
+        self.workflow_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteWorkflowInput`](crate::operation::delete_workflow::DeleteWorkflowInput).
-    pub fn build(self) -> Result<crate::operation::delete_workflow::DeleteWorkflowInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_workflow::DeleteWorkflowInput {
-                workflow_id: self.workflow_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_workflow::DeleteWorkflowInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_workflow::DeleteWorkflowInput {
+            workflow_id: self.workflow_id,
+        })
     }
 }
-

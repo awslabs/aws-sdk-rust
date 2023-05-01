@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFlywheelOutput  {
+pub struct CreateFlywheelOutput {
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
     #[doc(hidden)]
     pub flywheel_arn: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct CreateFlywheelOutput  {
 }
 impl CreateFlywheelOutput {
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
-    pub fn flywheel_arn(&self) -> std::option::Option<& str> {
+    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
         self.flywheel_arn.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
-    pub fn active_model_arn(&self) -> std::option::Option<& str> {
+    pub fn active_model_arn(&self) -> std::option::Option<&str> {
         self.active_model_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateFlywheelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateFlywheelOutput {
     /// Creates a new builder-style object to manufacture [`CreateFlywheelOutput`](crate::operation::create_flywheel::CreateFlywheelOutput).
     pub fn builder() -> crate::operation::create_flywheel::builders::CreateFlywheelOutputBuilder {
@@ -49,7 +49,8 @@ impl CreateFlywheelOutputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
     pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flywheel_arn = input; self
+        self.flywheel_arn = input;
+        self
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
     pub fn active_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +59,24 @@ impl CreateFlywheelOutputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
     pub fn set_active_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.active_model_arn = input; self
+        self.active_model_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateFlywheelOutput`](crate::operation::create_flywheel::CreateFlywheelOutput).
     pub fn build(self) -> crate::operation::create_flywheel::CreateFlywheelOutput {
         crate::operation::create_flywheel::CreateFlywheelOutput {
-            flywheel_arn: self.flywheel_arn
-            ,
-            active_model_arn: self.active_model_arn
-            ,
+            flywheel_arn: self.flywheel_arn,
+            active_model_arn: self.active_model_arn,
             _request_id: self._request_id,
         }
     }
 }
-

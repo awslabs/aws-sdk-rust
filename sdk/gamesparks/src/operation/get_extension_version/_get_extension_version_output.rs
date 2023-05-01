@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExtensionVersionOutput  {
+pub struct GetExtensionVersionOutput {
     /// <p>The version of the extension.</p>
     #[doc(hidden)]
     pub extension_version: std::option::Option<crate::types::ExtensionVersionDetails>,
@@ -10,19 +10,21 @@ pub struct GetExtensionVersionOutput  {
 }
 impl GetExtensionVersionOutput {
     /// <p>The version of the extension.</p>
-    pub fn extension_version(&self) -> std::option::Option<& crate::types::ExtensionVersionDetails> {
+    pub fn extension_version(&self) -> std::option::Option<&crate::types::ExtensionVersionDetails> {
         self.extension_version.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetExtensionVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetExtensionVersionOutput {
     /// Creates a new builder-style object to manufacture [`GetExtensionVersionOutput`](crate::operation::get_extension_version::GetExtensionVersionOutput).
-    pub fn builder() -> crate::operation::get_extension_version::builders::GetExtensionVersionOutputBuilder {
-        crate::operation::get_extension_version::builders::GetExtensionVersionOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_extension_version::builders::GetExtensionVersionOutputBuilder {
+        crate::operation::get_extension_version::builders::GetExtensionVersionOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl GetExtensionVersionOutputBuilder {
         self
     }
     /// <p>The version of the extension.</p>
-    pub fn set_extension_version(mut self, input: std::option::Option<crate::types::ExtensionVersionDetails>) -> Self {
-        self.extension_version = input; self
+    pub fn set_extension_version(
+        mut self,
+        input: std::option::Option<crate::types::ExtensionVersionDetails>,
+    ) -> Self {
+        self.extension_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetExtensionVersionOutput`](crate::operation::get_extension_version::GetExtensionVersionOutput).
     pub fn build(self) -> crate::operation::get_extension_version::GetExtensionVersionOutput {
         crate::operation::get_extension_version::GetExtensionVersionOutput {
-            extension_version: self.extension_version
-            ,
+            extension_version: self.extension_version,
             _request_id: self._request_id,
         }
     }
 }
-

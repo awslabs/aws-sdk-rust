@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PromoteResourceShareCreatedFromPolicyInput  {
+pub struct PromoteResourceShareCreatedFromPolicyInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to promote.</p>
     #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
 }
 impl PromoteResourceShareCreatedFromPolicyInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to promote.</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
 }
 impl PromoteResourceShareCreatedFromPolicyInput {
     /// Creates a new builder-style object to manufacture [`PromoteResourceShareCreatedFromPolicyInput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyInput).
-    pub fn builder() -> crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyInputBuilder {
+    pub fn builder() -> crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyInputBuilder{
         crate::operation::promote_resource_share_created_from_policy::builders::PromoteResourceShareCreatedFromPolicyInputBuilder::default()
     }
 }
@@ -33,11 +33,15 @@ impl PromoteResourceShareCreatedFromPolicyInputBuilder {
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share to promote.</p>
-    pub fn set_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_share_arn = input; self
+    pub fn set_resource_share_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`PromoteResourceShareCreatedFromPolicyInput`](crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyInput).
-    pub fn build(self) -> Result<crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyInput {
                 resource_share_arn: self.resource_share_arn
@@ -46,4 +50,3 @@ impl PromoteResourceShareCreatedFromPolicyInputBuilder {
         )
     }
 }
-

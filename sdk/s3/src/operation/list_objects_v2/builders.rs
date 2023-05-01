@@ -4,76 +4,97 @@ pub use crate::operation::list_objects_v2::_list_objects_v2_output::ListObjectsV
 pub use crate::operation::list_objects_v2::_list_objects_v2_input::ListObjectsV2InputBuilder;
 
 /// Fluent builder constructing a request to `ListObjectsV2`.
-/// 
-/// <p>Returns some or all (up to 1,000) of the objects in a bucket with each request. You can use the request parameters as selection criteria to return a subset of the objects in a bucket. A <code>200 OK</code> response can contain valid or invalid XML. Make sure to design your application to parse the contents of the response and handle it appropriately. Objects are returned sorted in an ascending order of the respective key names in the list. For more information about listing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing object keys programmatically</a> </p> 
-/// <p>To use this operation, you must have READ access to the bucket.</p> 
-/// <p>To use this action in an Identity and Access Management (IAM) policy, you must have permissions to perform the <code>s3:ListBucket</code> action. The bucket owner has this permission by default and can grant this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions to Your Amazon S3 Resources</a>.</p> <important> 
-/// <p>This section describes the latest revision of this action. We recommend that you use this revised API for application development. For backward compatibility, Amazon S3 continues to support the prior version of this API, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>.</p> 
-/// </important> 
-/// <p>To get a list of your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.</p> 
-/// <p>The following operations are related to <code>ListObjectsV2</code>:</p> 
-/// <ul> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> </p> </li> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a> </p> </li> 
+///
+/// <p>Returns some or all (up to 1,000) of the objects in a bucket with each request. You can use the request parameters as selection criteria to return a subset of the objects in a bucket. A <code>200 OK</code> response can contain valid or invalid XML. Make sure to design your application to parse the contents of the response and handle it appropriately. Objects are returned sorted in an ascending order of the respective key names in the list. For more information about listing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing object keys programmatically</a> </p>
+/// <p>To use this operation, you must have READ access to the bucket.</p>
+/// <p>To use this action in an Identity and Access Management (IAM) policy, you must have permissions to perform the <code>s3:ListBucket</code> action. The bucket owner has this permission by default and can grant this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions to Your Amazon S3 Resources</a>.</p> <important>
+/// <p>This section describes the latest revision of this action. We recommend that you use this revised API for application development. For backward compatibility, Amazon S3 continues to support the prior version of this API, <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>.</p>
+/// </important>
+/// <p>To get a list of your buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>.</p>
+/// <p>The following operations are related to <code>ListObjectsV2</code>:</p>
+/// <ul>
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a> </p> </li>
 /// </ul>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListObjectsV2FluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_objects_v2::builders::ListObjectsV2InputBuilder,
+    inner: crate::operation::list_objects_v2::builders::ListObjectsV2InputBuilder,
 }
-impl ListObjectsV2FluentBuilder  {
+impl ListObjectsV2FluentBuilder {
     /// Creates a new `ListObjectsV2`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_objects_v2::ListObjectsV2, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_objects_v2::ListObjectsV2Error>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_objects_v2::ListObjectsV2Output, aws_smithy_http::result::SdkError<crate::operation::list_objects_v2::ListObjectsV2Error>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_objects_v2::ListObjectsV2,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_objects_v2::ListObjectsV2Error>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_objects_v2::ListObjectsV2Output,
+        aws_smithy_http::result::SdkError<crate::operation::list_objects_v2::ListObjectsV2Error>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_objects_v2::paginator::ListObjectsV2Paginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_objects_v2::paginator::ListObjectsV2Paginator {
-                                crate::operation::list_objects_v2::paginator::ListObjectsV2Paginator::new(self.handle, self.inner)
-                            }
-    /// <p>Bucket name to list. </p> 
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_objects_v2::paginator::ListObjectsV2Paginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_objects_v2::paginator::ListObjectsV2Paginator {
+        crate::operation::list_objects_v2::paginator::ListObjectsV2Paginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
+    /// <p>Bucket name to list. </p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bucket(input.into());
         self
     }
-    /// <p>Bucket name to list. </p> 
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>Bucket name to list. </p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_bucket(input);
@@ -95,7 +116,10 @@ impl ListObjectsV2FluentBuilder  {
         self
     }
     /// <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
-    pub fn set_encoding_type(mut self, input: std::option::Option<crate::types::EncodingType>) -> Self {
+    pub fn set_encoding_type(
+        mut self,
+        input: std::option::Option<crate::types::EncodingType>,
+    ) -> Self {
         self.inner = self.inner.set_encoding_type(input);
         self
     }
@@ -125,7 +149,10 @@ impl ListObjectsV2FluentBuilder  {
         self
     }
     /// <p>ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a token. ContinuationToken is obfuscated and is not a real key.</p>
-    pub fn set_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_continuation_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_continuation_token(input);
         self
     }
@@ -155,7 +182,10 @@ impl ListObjectsV2FluentBuilder  {
         self
     }
     /// <p>Confirms that the requester knows that she or he will be charged for the list objects request in V2 style. Bucket owners need not specify this parameter in their requests.</p>
-    pub fn set_request_payer(mut self, input: std::option::Option<crate::types::RequestPayer>) -> Self {
+    pub fn set_request_payer(
+        mut self,
+        input: std::option::Option<crate::types::RequestPayer>,
+    ) -> Self {
         self.inner = self.inner.set_request_payer(input);
         self
     }
@@ -165,9 +195,11 @@ impl ListObjectsV2FluentBuilder  {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expected_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_expected_bucket_owner(input);
         self
     }
 }
-

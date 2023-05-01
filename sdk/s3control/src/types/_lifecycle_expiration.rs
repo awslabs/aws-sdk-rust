@@ -3,7 +3,7 @@
 /// <p>The container of the Outposts bucket lifecycle expiration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecycleExpiration  {
+pub struct LifecycleExpiration {
     /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601 format.</p>
     #[doc(hidden)]
     pub date: std::option::Option<aws_smithy_types::DateTime>,
@@ -16,7 +16,7 @@ pub struct LifecycleExpiration  {
 }
 impl LifecycleExpiration {
     /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601 format.</p>
-    pub fn date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
@@ -51,7 +51,8 @@ impl LifecycleExpirationBuilder {
     }
     /// <p>Indicates at what date the object is to be deleted. Should be in GMT ISO 8601 format.</p>
     pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date = input; self
+        self.date = input;
+        self
     }
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
     pub fn days(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl LifecycleExpirationBuilder {
     }
     /// <p>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</p>
     pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.days = input; self
+        self.days = input;
+        self
     }
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired. If set to false, the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
     pub fn expired_object_delete_marker(mut self, input: bool) -> Self {
@@ -69,20 +71,15 @@ impl LifecycleExpirationBuilder {
     }
     /// <p>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired. If set to false, the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</p>
     pub fn set_expired_object_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
-        self.expired_object_delete_marker = input; self
+        self.expired_object_delete_marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`LifecycleExpiration`](crate::types::LifecycleExpiration).
     pub fn build(self) -> crate::types::LifecycleExpiration {
         crate::types::LifecycleExpiration {
-            date: self.date
-            ,
-            days: self.days
-                .unwrap_or_default()
-            ,
-            expired_object_delete_marker: self.expired_object_delete_marker
-                .unwrap_or_default()
-            ,
+            date: self.date,
+            days: self.days.unwrap_or_default(),
+            expired_object_delete_marker: self.expired_object_delete_marker.unwrap_or_default(),
         }
     }
 }
-

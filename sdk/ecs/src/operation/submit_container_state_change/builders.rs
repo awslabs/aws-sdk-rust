@@ -4,53 +4,73 @@ pub use crate::operation::submit_container_state_change::_submit_container_state
 pub use crate::operation::submit_container_state_change::_submit_container_state_change_input::SubmitContainerStateChangeInputBuilder;
 
 /// Fluent builder constructing a request to `SubmitContainerStateChange`.
-/// 
-/// <note> 
-/// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p> 
-/// </note> 
+///
+/// <note>
+/// <p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the agent.</p>
+/// </note>
 /// <p>Sent to acknowledge that a container changed states.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SubmitContainerStateChangeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::submit_container_state_change::builders::SubmitContainerStateChangeInputBuilder,
 }
-impl SubmitContainerStateChangeFluentBuilder  {
+impl SubmitContainerStateChangeFluentBuilder {
     /// Creates a new `SubmitContainerStateChange`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::submit_container_state_change::SubmitContainerStateChange, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::submit_container_state_change::SubmitContainerStateChangeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::submit_container_state_change::SubmitContainerStateChangeOutput, aws_smithy_http::result::SdkError<crate::operation::submit_container_state_change::SubmitContainerStateChangeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::submit_container_state_change::SubmitContainerStateChange,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::submit_container_state_change::SubmitContainerStateChangeError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::submit_container_state_change::SubmitContainerStateChangeOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::submit_container_state_change::SubmitContainerStateChangeError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The short name or full ARN of the cluster that hosts the container.</p>
     pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
@@ -131,9 +151,11 @@ impl SubmitContainerStateChangeFluentBuilder  {
         self
     }
     /// <p>The network bindings of the container.</p>
-    pub fn set_network_bindings(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkBinding>>) -> Self {
+    pub fn set_network_bindings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NetworkBinding>>,
+    ) -> Self {
         self.inner = self.inner.set_network_bindings(input);
         self
     }
 }
-

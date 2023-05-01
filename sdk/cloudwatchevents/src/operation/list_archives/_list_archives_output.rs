@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListArchivesOutput  {
+pub struct ListArchivesOutput {
     /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
     #[doc(hidden)]
     pub archives: std::option::Option<std::vec::Vec<crate::types::Archive>>,
@@ -13,19 +13,19 @@ pub struct ListArchivesOutput  {
 }
 impl ListArchivesOutput {
     /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
-    pub fn archives(&self) -> std::option::Option<& [crate::types::Archive]> {
+    pub fn archives(&self) -> std::option::Option<&[crate::types::Archive]> {
         self.archives.as_deref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListArchivesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListArchivesOutput {
     /// Creates a new builder-style object to manufacture [`ListArchivesOutput`](crate::operation::list_archives::ListArchivesOutput).
     pub fn builder() -> crate::operation::list_archives::builders::ListArchivesOutputBuilder {
@@ -49,13 +49,17 @@ impl ListArchivesOutputBuilder {
     /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
     pub fn archives(mut self, input: crate::types::Archive) -> Self {
         let mut v = self.archives.unwrap_or_default();
-                        v.push(input);
-                        self.archives = Some(v);
-                        self
+        v.push(input);
+        self.archives = Some(v);
+        self
     }
     /// <p>An array of <code>Archive</code> objects that include details about an archive.</p>
-    pub fn set_archives(mut self, input: std::option::Option<std::vec::Vec<crate::types::Archive>>) -> Self {
-        self.archives = input; self
+    pub fn set_archives(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Archive>>,
+    ) -> Self {
+        self.archives = input;
+        self
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListArchivesOutputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListArchivesOutput`](crate::operation::list_archives::ListArchivesOutput).
     pub fn build(self) -> crate::operation::list_archives::ListArchivesOutput {
         crate::operation::list_archives::ListArchivesOutput {
-            archives: self.archives
-            ,
-            next_token: self.next_token
-            ,
+            archives: self.archives,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

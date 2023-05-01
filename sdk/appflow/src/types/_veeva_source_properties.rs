@@ -3,7 +3,7 @@
 /// <p> The properties that are applied when using Veeva as a flow source. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VeevaSourceProperties  {
+pub struct VeevaSourceProperties {
     /// <p> The object specified in the Veeva flow source. </p>
     #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
@@ -22,11 +22,11 @@ pub struct VeevaSourceProperties  {
 }
 impl VeevaSourceProperties {
     /// <p> The object specified in the Veeva flow source. </p>
-    pub fn object(&self) -> std::option::Option<& str> {
+    pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
     /// <p>The document type specified in the Veeva document extract flow.</p>
-    pub fn document_type(&self) -> std::option::Option<& str> {
+    pub fn document_type(&self) -> std::option::Option<&str> {
         self.document_type.as_deref()
     }
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
@@ -67,7 +67,8 @@ impl VeevaSourcePropertiesBuilder {
     }
     /// <p> The object specified in the Veeva flow source. </p>
     pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object = input; self
+        self.object = input;
+        self
     }
     /// <p>The document type specified in the Veeva document extract flow.</p>
     pub fn document_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl VeevaSourcePropertiesBuilder {
     }
     /// <p>The document type specified in the Veeva document extract flow.</p>
     pub fn set_document_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_type = input; self
+        self.document_type = input;
+        self
     }
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
     pub fn include_source_files(mut self, input: bool) -> Self {
@@ -85,7 +87,8 @@ impl VeevaSourcePropertiesBuilder {
     }
     /// <p>Boolean value to include source files in Veeva document extract flow.</p>
     pub fn set_include_source_files(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_source_files = input; self
+        self.include_source_files = input;
+        self
     }
     /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
     pub fn include_renditions(mut self, input: bool) -> Self {
@@ -94,7 +97,8 @@ impl VeevaSourcePropertiesBuilder {
     }
     /// <p>Boolean value to include file renditions in Veeva document extract flow.</p>
     pub fn set_include_renditions(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_renditions = input; self
+        self.include_renditions = input;
+        self
     }
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
     pub fn include_all_versions(mut self, input: bool) -> Self {
@@ -103,25 +107,17 @@ impl VeevaSourcePropertiesBuilder {
     }
     /// <p>Boolean value to include All Versions of files in Veeva document extract flow.</p>
     pub fn set_include_all_versions(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_all_versions = input; self
+        self.include_all_versions = input;
+        self
     }
     /// Consumes the builder and constructs a [`VeevaSourceProperties`](crate::types::VeevaSourceProperties).
     pub fn build(self) -> crate::types::VeevaSourceProperties {
         crate::types::VeevaSourceProperties {
-            object: self.object
-            ,
-            document_type: self.document_type
-            ,
-            include_source_files: self.include_source_files
-                .unwrap_or_default()
-            ,
-            include_renditions: self.include_renditions
-                .unwrap_or_default()
-            ,
-            include_all_versions: self.include_all_versions
-                .unwrap_or_default()
-            ,
+            object: self.object,
+            document_type: self.document_type,
+            include_source_files: self.include_source_files.unwrap_or_default(),
+            include_renditions: self.include_renditions.unwrap_or_default(),
+            include_all_versions: self.include_all_versions.unwrap_or_default(),
         }
     }
 }
-

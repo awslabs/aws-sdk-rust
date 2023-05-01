@@ -3,7 +3,7 @@
 /// <p>Information about scoring strategy for an evaluation form.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluationFormScoringStrategy  {
+pub struct EvaluationFormScoringStrategy {
     /// <p>The scoring mode of the evaluation form.</p>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::types::EvaluationFormScoringMode>,
@@ -13,11 +13,11 @@ pub struct EvaluationFormScoringStrategy  {
 }
 impl EvaluationFormScoringStrategy {
     /// <p>The scoring mode of the evaluation form.</p>
-    pub fn mode(&self) -> std::option::Option<& crate::types::EvaluationFormScoringMode> {
+    pub fn mode(&self) -> std::option::Option<&crate::types::EvaluationFormScoringMode> {
         self.mode.as_ref()
     }
     /// <p>The scoring status of the evaluation form.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::EvaluationFormScoringStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::EvaluationFormScoringStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl EvaluationFormScoringStrategyBuilder {
         self
     }
     /// <p>The scoring mode of the evaluation form.</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::EvaluationFormScoringMode>) -> Self {
-        self.mode = input; self
+    pub fn set_mode(
+        mut self,
+        input: std::option::Option<crate::types::EvaluationFormScoringMode>,
+    ) -> Self {
+        self.mode = input;
+        self
     }
     /// <p>The scoring status of the evaluation form.</p>
     pub fn status(mut self, input: crate::types::EvaluationFormScoringStatus) -> Self {
@@ -51,17 +55,18 @@ impl EvaluationFormScoringStrategyBuilder {
         self
     }
     /// <p>The scoring status of the evaluation form.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::EvaluationFormScoringStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::EvaluationFormScoringStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`EvaluationFormScoringStrategy`](crate::types::EvaluationFormScoringStrategy).
     pub fn build(self) -> crate::types::EvaluationFormScoringStrategy {
         crate::types::EvaluationFormScoringStrategy {
-            mode: self.mode
-            ,
-            status: self.status
-            ,
+            mode: self.mode,
+            status: self.status,
         }
     }
 }
-

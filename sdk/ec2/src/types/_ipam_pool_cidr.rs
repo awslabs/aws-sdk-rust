@@ -3,7 +3,7 @@
 /// <p>A CIDR provisioned to an IPAM pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpamPoolCidr  {
+pub struct IpamPoolCidr {
     /// <p>The CIDR provisioned to the IPAM pool. A CIDR is a representation of an IP address and its associated network mask (or netmask) and refers to a range of IP addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.</p>
     #[doc(hidden)]
     pub cidr: std::option::Option<std::string::String>,
@@ -22,19 +22,19 @@ pub struct IpamPoolCidr  {
 }
 impl IpamPoolCidr {
     /// <p>The CIDR provisioned to the IPAM pool. A CIDR is a representation of an IP address and its associated network mask (or netmask) and refers to a range of IP addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.</p>
-    pub fn cidr(&self) -> std::option::Option<& str> {
+    pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }
     /// <p>The state of the CIDR.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::IpamPoolCidrState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::IpamPoolCidrState> {
         self.state.as_ref()
     }
     /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
-    pub fn failure_reason(&self) -> std::option::Option<& crate::types::IpamPoolCidrFailureReason> {
+    pub fn failure_reason(&self) -> std::option::Option<&crate::types::IpamPoolCidrFailureReason> {
         self.failure_reason.as_ref()
     }
     /// <p>The IPAM pool CIDR ID.</p>
-    pub fn ipam_pool_cidr_id(&self) -> std::option::Option<& str> {
+    pub fn ipam_pool_cidr_id(&self) -> std::option::Option<&str> {
         self.ipam_pool_cidr_id.as_deref()
     }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
@@ -67,7 +67,8 @@ impl IpamPoolCidrBuilder {
     }
     /// <p>The CIDR provisioned to the IPAM pool. A CIDR is a representation of an IP address and its associated network mask (or netmask) and refers to a range of IP addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input; self
+        self.cidr = input;
+        self
     }
     /// <p>The state of the CIDR.</p>
     pub fn state(mut self, input: crate::types::IpamPoolCidrState) -> Self {
@@ -75,8 +76,12 @@ impl IpamPoolCidrBuilder {
         self
     }
     /// <p>The state of the CIDR.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::IpamPoolCidrState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::IpamPoolCidrState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
     pub fn failure_reason(mut self, input: crate::types::IpamPoolCidrFailureReason) -> Self {
@@ -84,8 +89,12 @@ impl IpamPoolCidrBuilder {
         self
     }
     /// <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<crate::types::IpamPoolCidrFailureReason>) -> Self {
-        self.failure_reason = input; self
+    pub fn set_failure_reason(
+        mut self,
+        input: std::option::Option<crate::types::IpamPoolCidrFailureReason>,
+    ) -> Self {
+        self.failure_reason = input;
+        self
     }
     /// <p>The IPAM pool CIDR ID.</p>
     pub fn ipam_pool_cidr_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +102,12 @@ impl IpamPoolCidrBuilder {
         self
     }
     /// <p>The IPAM pool CIDR ID.</p>
-    pub fn set_ipam_pool_cidr_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_pool_cidr_id = input; self
+    pub fn set_ipam_pool_cidr_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ipam_pool_cidr_id = input;
+        self
     }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
     pub fn netmask_length(mut self, input: i32) -> Self {
@@ -103,22 +116,17 @@ impl IpamPoolCidrBuilder {
     }
     /// <p>The netmask length of the CIDR you'd like to provision to a pool. Can be used for provisioning Amazon-provided IPv6 CIDRs to top-level pools and for provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
     pub fn set_netmask_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.netmask_length = input; self
+        self.netmask_length = input;
+        self
     }
     /// Consumes the builder and constructs a [`IpamPoolCidr`](crate::types::IpamPoolCidr).
     pub fn build(self) -> crate::types::IpamPoolCidr {
         crate::types::IpamPoolCidr {
-            cidr: self.cidr
-            ,
-            state: self.state
-            ,
-            failure_reason: self.failure_reason
-            ,
-            ipam_pool_cidr_id: self.ipam_pool_cidr_id
-            ,
-            netmask_length: self.netmask_length
-            ,
+            cidr: self.cidr,
+            state: self.state,
+            failure_reason: self.failure_reason,
+            ipam_pool_cidr_id: self.ipam_pool_cidr_id,
+            netmask_length: self.netmask_length,
         }
     }
 }
-

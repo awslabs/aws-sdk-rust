@@ -3,7 +3,7 @@
 /// <p>An object representing a Bonus payment paid to a Worker.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BonusPayment  {
+pub struct BonusPayment {
     /// <p>The ID of the Worker to whom the bonus was paid.</p>
     #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct BonusPayment  {
 }
 impl BonusPayment {
     /// <p>The ID of the Worker to whom the bonus was paid.</p>
-    pub fn worker_id(&self) -> std::option::Option<& str> {
+    pub fn worker_id(&self) -> std::option::Option<&str> {
         self.worker_id.as_deref()
     }
     /// <p>A string representing a currency amount.</p>
-    pub fn bonus_amount(&self) -> std::option::Option<& str> {
+    pub fn bonus_amount(&self) -> std::option::Option<&str> {
         self.bonus_amount.as_deref()
     }
     /// <p>The ID of the assignment associated with this bonus payment.</p>
-    pub fn assignment_id(&self) -> std::option::Option<& str> {
+    pub fn assignment_id(&self) -> std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
     /// <p>The Reason text given when the bonus was granted, if any.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The date and time of when the bonus was granted.</p>
-    pub fn grant_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn grant_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.grant_time.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl BonusPaymentBuilder {
     }
     /// <p>The ID of the Worker to whom the bonus was paid.</p>
     pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.worker_id = input; self
+        self.worker_id = input;
+        self
     }
     /// <p>A string representing a currency amount.</p>
     pub fn bonus_amount(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl BonusPaymentBuilder {
     }
     /// <p>A string representing a currency amount.</p>
     pub fn set_bonus_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bonus_amount = input; self
+        self.bonus_amount = input;
+        self
     }
     /// <p>The ID of the assignment associated with this bonus payment.</p>
     pub fn assignment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl BonusPaymentBuilder {
     }
     /// <p>The ID of the assignment associated with this bonus payment.</p>
     pub fn set_assignment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assignment_id = input; self
+        self.assignment_id = input;
+        self
     }
     /// <p>The Reason text given when the bonus was granted, if any.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl BonusPaymentBuilder {
     }
     /// <p>The Reason text given when the bonus was granted, if any.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// <p>The date and time of when the bonus was granted.</p>
     pub fn grant_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +106,21 @@ impl BonusPaymentBuilder {
         self
     }
     /// <p>The date and time of when the bonus was granted.</p>
-    pub fn set_grant_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.grant_time = input; self
+    pub fn set_grant_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.grant_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`BonusPayment`](crate::types::BonusPayment).
     pub fn build(self) -> crate::types::BonusPayment {
         crate::types::BonusPayment {
-            worker_id: self.worker_id
-            ,
-            bonus_amount: self.bonus_amount
-            ,
-            assignment_id: self.assignment_id
-            ,
-            reason: self.reason
-            ,
-            grant_time: self.grant_time
-            ,
+            worker_id: self.worker_id,
+            bonus_amount: self.bonus_amount,
+            assignment_id: self.assignment_id,
+            reason: self.reason,
+            grant_time: self.grant_time,
         }
     }
 }
-

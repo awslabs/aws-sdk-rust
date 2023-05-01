@@ -24,4 +24,3 @@ pub mod builders;
 
 /// Error types that AWS Price List Service can respond with.
 pub mod error;
-

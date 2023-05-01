@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataSetOutput  {
+pub struct UpdateDataSetOutput {
     /// <p>The ARN for the data set.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -37,51 +37,51 @@ pub struct UpdateDataSetOutput  {
 }
 impl UpdateDataSetOutput {
     /// <p>The ARN for the data set.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The type of asset that is added to a data set.</p>
-    pub fn asset_type(&self) -> std::option::Option<& crate::types::AssetType> {
+    pub fn asset_type(&self) -> std::option::Option<&crate::types::AssetType> {
         self.asset_type.as_ref()
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The description for the data set.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The unique identifier for the data set.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the data set.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
-    pub fn origin(&self) -> std::option::Option<& crate::types::Origin> {
+    pub fn origin(&self) -> std::option::Option<&crate::types::Origin> {
         self.origin.as_ref()
     }
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
-    pub fn origin_details(&self) -> std::option::Option<& crate::types::OriginDetails> {
+    pub fn origin_details(&self) -> std::option::Option<&crate::types::OriginDetails> {
         self.origin_details.as_ref()
     }
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
-    pub fn source_id(&self) -> std::option::Option<& str> {
+    pub fn source_id(&self) -> std::option::Option<&str> {
         self.source_id.as_deref()
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateDataSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateDataSetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDataSetOutput`](crate::operation::update_data_set::UpdateDataSetOutput).
     pub fn builder() -> crate::operation::update_data_set::builders::UpdateDataSetOutputBuilder {
@@ -113,7 +113,8 @@ impl UpdateDataSetOutputBuilder {
     }
     /// <p>The ARN for the data set.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The type of asset that is added to a data set.</p>
     pub fn asset_type(mut self, input: crate::types::AssetType) -> Self {
@@ -122,7 +123,8 @@ impl UpdateDataSetOutputBuilder {
     }
     /// <p>The type of asset that is added to a data set.</p>
     pub fn set_asset_type(mut self, input: std::option::Option<crate::types::AssetType>) -> Self {
-        self.asset_type = input; self
+        self.asset_type = input;
+        self
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -130,8 +132,12 @@ impl UpdateDataSetOutputBuilder {
         self
     }
     /// <p>The date and time that the data set was created, in ISO 8601 format.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The description for the data set.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,7 +146,8 @@ impl UpdateDataSetOutputBuilder {
     }
     /// <p>The description for the data set.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The unique identifier for the data set.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,7 +156,8 @@ impl UpdateDataSetOutputBuilder {
     }
     /// <p>The unique identifier for the data set.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the data set.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,7 +166,8 @@ impl UpdateDataSetOutputBuilder {
     }
     /// <p>The name of the data set.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
     pub fn origin(mut self, input: crate::types::Origin) -> Self {
@@ -167,7 +176,8 @@ impl UpdateDataSetOutputBuilder {
     }
     /// <p>A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers).</p>
     pub fn set_origin(mut self, input: std::option::Option<crate::types::Origin>) -> Self {
-        self.origin = input; self
+        self.origin = input;
+        self
     }
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
     pub fn origin_details(mut self, input: crate::types::OriginDetails) -> Self {
@@ -175,8 +185,12 @@ impl UpdateDataSetOutputBuilder {
         self
     }
     /// <p>If the origin of this data set is ENTITLED, includes the details for the product on AWS Marketplace.</p>
-    pub fn set_origin_details(mut self, input: std::option::Option<crate::types::OriginDetails>) -> Self {
-        self.origin_details = input; self
+    pub fn set_origin_details(
+        mut self,
+        input: std::option::Option<crate::types::OriginDetails>,
+    ) -> Self {
+        self.origin_details = input;
+        self
     }
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
     pub fn source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -185,7 +199,8 @@ impl UpdateDataSetOutputBuilder {
     }
     /// <p>The data set ID of the owned data set corresponding to the entitled data set being viewed. This parameter is returned when a data set owner is viewing the entitled copy of its owned data set.</p>
     pub fn set_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_id = input; self
+        self.source_id = input;
+        self
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -193,43 +208,36 @@ impl UpdateDataSetOutputBuilder {
         self
     }
     /// <p>The date and time that the data set was last updated, in ISO 8601 format.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateDataSetOutput`](crate::operation::update_data_set::UpdateDataSetOutput).
     pub fn build(self) -> crate::operation::update_data_set::UpdateDataSetOutput {
         crate::operation::update_data_set::UpdateDataSetOutput {
-            arn: self.arn
-            ,
-            asset_type: self.asset_type
-            ,
-            created_at: self.created_at
-            ,
-            description: self.description
-            ,
-            id: self.id
-            ,
-            name: self.name
-            ,
-            origin: self.origin
-            ,
-            origin_details: self.origin_details
-            ,
-            source_id: self.source_id
-            ,
-            updated_at: self.updated_at
-            ,
+            arn: self.arn,
+            asset_type: self.asset_type,
+            created_at: self.created_at,
+            description: self.description,
+            id: self.id,
+            name: self.name,
+            origin: self.origin,
+            origin_details: self.origin_details,
+            source_id: self.source_id,
+            updated_at: self.updated_at,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketMetricsConfigurationOutput  {
+pub struct GetBucketMetricsConfigurationOutput {
     /// <p>Specifies the metrics configuration.</p>
     #[doc(hidden)]
     pub metrics_configuration: std::option::Option<crate::types::MetricsConfiguration>,
@@ -11,23 +11,25 @@ pub struct GetBucketMetricsConfigurationOutput  {
 }
 impl GetBucketMetricsConfigurationOutput {
     /// <p>Specifies the metrics configuration.</p>
-    pub fn metrics_configuration(&self) -> std::option::Option<& crate::types::MetricsConfiguration> {
+    pub fn metrics_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::MetricsConfiguration> {
         self.metrics_configuration.as_ref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for GetBucketMetricsConfigurationOutput {
-                                fn extended_request_id(&self) -> Option<&str> {
-                                    self._extended_request_id.as_deref()
-                                }
-                            }
+    fn extended_request_id(&self) -> Option<&str> {
+        self._extended_request_id.as_deref()
+    }
+}
 impl aws_http::request_id::RequestId for GetBucketMetricsConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetBucketMetricsConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketMetricsConfigurationOutput`](crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationOutput).
-    pub fn builder() -> crate::operation::get_bucket_metrics_configuration::builders::GetBucketMetricsConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::get_bucket_metrics_configuration::builders::GetBucketMetricsConfigurationOutputBuilder{
         crate::operation::get_bucket_metrics_configuration::builders::GetBucketMetricsConfigurationOutputBuilder::default()
     }
 }
@@ -47,35 +49,43 @@ impl GetBucketMetricsConfigurationOutputBuilder {
         self
     }
     /// <p>Specifies the metrics configuration.</p>
-    pub fn set_metrics_configuration(mut self, input: std::option::Option<crate::types::MetricsConfiguration>) -> Self {
-        self.metrics_configuration = input; self
+    pub fn set_metrics_configuration(
+        mut self,
+        input: std::option::Option<crate::types::MetricsConfiguration>,
+    ) -> Self {
+        self.metrics_configuration = input;
+        self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-                                    self._extended_request_id = Some(extended_request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-                                    self._extended_request_id = extended_request_id;
-                                    self
-                                }
+        self._extended_request_id = Some(extended_request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_extended_request_id(
+        &mut self,
+        extended_request_id: Option<String>,
+    ) -> &mut Self {
+        self._extended_request_id = extended_request_id;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetBucketMetricsConfigurationOutput`](crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationOutput
+    {
         crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationOutput {
-            metrics_configuration: self.metrics_configuration
-            ,
+            metrics_configuration: self.metrics_configuration,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
-

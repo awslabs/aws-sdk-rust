@@ -20,8 +20,14 @@ impl Credentials {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`UsernamePassword`](crate::types::Credentials::UsernamePassword), extracting the inner [`UsernamePassword`](crate::types::UsernamePassword).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_username_password(&self) -> std::result::Result<&crate::types::UsernamePassword, &Self> {
-        if let Credentials::UsernamePassword(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_username_password(
+        &self,
+    ) -> std::result::Result<&crate::types::UsernamePassword, &Self> {
+        if let Credentials::UsernamePassword(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`UsernamePassword`](crate::types::Credentials::UsernamePassword).
     pub fn is_username_password(&self) -> bool {
@@ -35,9 +41,10 @@ impl Credentials {
 impl std::fmt::Debug for Credentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Credentials::UsernamePassword(_) => f.debug_tuple("*** Sensitive Data Redacted ***").finish(),
+            Credentials::UsernamePassword(_) => {
+                f.debug_tuple("*** Sensitive Data Redacted ***").finish()
+            }
             Credentials::Unknown => f.debug_tuple("Unknown").finish(),
         }
     }
 }
-

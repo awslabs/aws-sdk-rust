@@ -4,68 +4,87 @@ pub use crate::operation::list_queues::_list_queues_output::ListQueuesOutputBuil
 pub use crate::operation::list_queues::_list_queues_input::ListQueuesInputBuilder;
 
 /// Fluent builder constructing a request to `ListQueues`.
-/// 
-/// <p>Returns a list of your queues in the current region. The response includes a maximum of 1,000 results. If you specify a value for the optional <code>QueueNamePrefix</code> parameter, only queues with a name that begins with the specified value are returned.</p> 
-/// <p> The <code>listQueues</code> methods supports pagination. Set parameter <code>MaxResults</code> in the request to specify the maximum number of results to be returned in the response. If you do not set <code>MaxResults</code>, the response includes a maximum of 1,000 results. If you set <code>MaxResults</code> and there are additional results to display, the response includes a value for <code>NextToken</code>. Use <code>NextToken</code> as a parameter in your next request to <code>listQueues</code> to receive the next page of results. </p> <note> 
-/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p> 
+///
+/// <p>Returns a list of your queues in the current region. The response includes a maximum of 1,000 results. If you specify a value for the optional <code>QueueNamePrefix</code> parameter, only queues with a name that begins with the specified value are returned.</p>
+/// <p> The <code>listQueues</code> methods supports pagination. Set parameter <code>MaxResults</code> in the request to specify the maximum number of results to be returned in the response. If you do not set <code>MaxResults</code>, the response includes a maximum of 1,000 results. If you set <code>MaxResults</code> and there are additional results to display, the response includes a value for <code>NextToken</code>. Use <code>NextToken</code> as a parameter in your next request to <code>listQueues</code> to receive the next page of results. </p> <note>
+/// <p>Cross-account permissions don't apply to this action. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer Guide</i>.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListQueuesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_queues::builders::ListQueuesInputBuilder,
+    inner: crate::operation::list_queues::builders::ListQueuesInputBuilder,
 }
-impl ListQueuesFluentBuilder  {
+impl ListQueuesFluentBuilder {
     /// Creates a new `ListQueues`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_queues::ListQueues, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_queues::ListQueuesOutput, aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_queues::ListQueues,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_queues::ListQueuesOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_queues::ListQueuesError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_queues::paginator::ListQueuesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_queues::paginator::ListQueuesPaginator {
-                                crate::operation::list_queues::paginator::ListQueuesPaginator::new(self.handle, self.inner)
-                            }
-    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_queues::paginator::ListQueuesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_queues::paginator::ListQueuesPaginator {
+        crate::operation::list_queues::paginator::ListQueuesPaginator::new(self.handle, self.inner)
+    }
+    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_name_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.queue_name_prefix(input.into());
         self
     }
-    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p> 
+    /// <p>A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn set_queue_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_queue_name_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_queue_name_prefix(input);
         self
     }
@@ -90,4 +109,3 @@ impl ListQueuesFluentBuilder  {
         self
     }
 }
-

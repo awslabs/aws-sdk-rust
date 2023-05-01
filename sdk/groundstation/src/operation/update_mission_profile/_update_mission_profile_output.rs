@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMissionProfileOutput  {
+pub struct UpdateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
     #[doc(hidden)]
     pub mission_profile_id: std::option::Option<std::string::String>,
@@ -11,18 +11,19 @@ pub struct UpdateMissionProfileOutput  {
 }
 impl UpdateMissionProfileOutput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> std::option::Option<& str> {
+    pub fn mission_profile_id(&self) -> std::option::Option<&str> {
         self.mission_profile_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateMissionProfileOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateMissionProfileOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMissionProfileOutput`](crate::operation::update_mission_profile::UpdateMissionProfileOutput).
-    pub fn builder() -> crate::operation::update_mission_profile::builders::UpdateMissionProfileOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_mission_profile::builders::UpdateMissionProfileOutputBuilder {
         crate::operation::update_mission_profile::builders::UpdateMissionProfileOutputBuilder::default()
     }
 }
@@ -41,25 +42,27 @@ impl UpdateMissionProfileOutputBuilder {
         self
     }
     /// <p>UUID of a mission profile.</p>
-    pub fn set_mission_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mission_profile_id = input; self
+    pub fn set_mission_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.mission_profile_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateMissionProfileOutput`](crate::operation::update_mission_profile::UpdateMissionProfileOutput).
     pub fn build(self) -> crate::operation::update_mission_profile::UpdateMissionProfileOutput {
         crate::operation::update_mission_profile::UpdateMissionProfileOutput {
-            mission_profile_id: self.mission_profile_id
-            ,
+            mission_profile_id: self.mission_profile_id,
             _request_id: self._request_id,
         }
     }
 }
-

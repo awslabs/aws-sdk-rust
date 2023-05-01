@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServerDetailsOutput  {
+pub struct GetServerDetailsOutput {
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -11,31 +11,35 @@ pub struct GetServerDetailsOutput  {
     pub server_detail: std::option::Option<crate::types::ServerDetail>,
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
     #[doc(hidden)]
-    pub associated_applications: std::option::Option<std::vec::Vec<crate::types::AssociatedApplication>>,
+    pub associated_applications:
+        std::option::Option<std::vec::Vec<crate::types::AssociatedApplication>>,
     _request_id: Option<String>,
 }
 impl GetServerDetailsOutput {
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> Detailed information about the server. </p>
-    pub fn server_detail(&self) -> std::option::Option<& crate::types::ServerDetail> {
+    pub fn server_detail(&self) -> std::option::Option<&crate::types::ServerDetail> {
         self.server_detail.as_ref()
     }
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
-    pub fn associated_applications(&self) -> std::option::Option<& [crate::types::AssociatedApplication]> {
+    pub fn associated_applications(
+        &self,
+    ) -> std::option::Option<&[crate::types::AssociatedApplication]> {
         self.associated_applications.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetServerDetailsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetServerDetailsOutput {
     /// Creates a new builder-style object to manufacture [`GetServerDetailsOutput`](crate::operation::get_server_details::GetServerDetailsOutput).
-    pub fn builder() -> crate::operation::get_server_details::builders::GetServerDetailsOutputBuilder {
+    pub fn builder() -> crate::operation::get_server_details::builders::GetServerDetailsOutputBuilder
+    {
         crate::operation::get_server_details::builders::GetServerDetailsOutputBuilder::default()
     }
 }
@@ -46,7 +50,8 @@ impl GetServerDetailsOutput {
 pub struct GetServerDetailsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) server_detail: std::option::Option<crate::types::ServerDetail>,
-    pub(crate) associated_applications: std::option::Option<std::vec::Vec<crate::types::AssociatedApplication>>,
+    pub(crate) associated_applications:
+        std::option::Option<std::vec::Vec<crate::types::AssociatedApplication>>,
     _request_id: Option<String>,
 }
 impl GetServerDetailsOutputBuilder {
@@ -57,7 +62,8 @@ impl GetServerDetailsOutputBuilder {
     }
     /// <p> The token you use to retrieve the next set of results, or null if there are no more results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p> Detailed information about the server. </p>
     pub fn server_detail(mut self, input: crate::types::ServerDetail) -> Self {
@@ -65,8 +71,12 @@ impl GetServerDetailsOutputBuilder {
         self
     }
     /// <p> Detailed information about the server. </p>
-    pub fn set_server_detail(mut self, input: std::option::Option<crate::types::ServerDetail>) -> Self {
-        self.server_detail = input; self
+    pub fn set_server_detail(
+        mut self,
+        input: std::option::Option<crate::types::ServerDetail>,
+    ) -> Self {
+        self.server_detail = input;
+        self
     }
     /// Appends an item to `associated_applications`.
     ///
@@ -75,34 +85,34 @@ impl GetServerDetailsOutputBuilder {
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
     pub fn associated_applications(mut self, input: crate::types::AssociatedApplication) -> Self {
         let mut v = self.associated_applications.unwrap_or_default();
-                        v.push(input);
-                        self.associated_applications = Some(v);
-                        self
+        v.push(input);
+        self.associated_applications = Some(v);
+        self
     }
     /// <p> The associated application group the server belongs to, as defined in AWS Application Discovery Service. </p>
-    pub fn set_associated_applications(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssociatedApplication>>) -> Self {
-        self.associated_applications = input; self
+    pub fn set_associated_applications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AssociatedApplication>>,
+    ) -> Self {
+        self.associated_applications = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetServerDetailsOutput`](crate::operation::get_server_details::GetServerDetailsOutput).
     pub fn build(self) -> crate::operation::get_server_details::GetServerDetailsOutput {
         crate::operation::get_server_details::GetServerDetailsOutput {
-            next_token: self.next_token
-            ,
-            server_detail: self.server_detail
-            ,
-            associated_applications: self.associated_applications
-            ,
+            next_token: self.next_token,
+            server_detail: self.server_detail,
+            associated_applications: self.associated_applications,
             _request_id: self._request_id,
         }
     }
 }
-

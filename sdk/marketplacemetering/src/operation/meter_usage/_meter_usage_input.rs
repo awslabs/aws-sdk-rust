@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeterUsageInput  {
+pub struct MeterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     #[doc(hidden)]
     pub product_code: std::option::Option<std::string::String>,
@@ -18,22 +18,22 @@ pub struct MeterUsageInput  {
     /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>The set of <code>UsageAllocations</code> to submit.</p> 
+    /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
     #[doc(hidden)]
     pub usage_allocations: std::option::Option<std::vec::Vec<crate::types::UsageAllocation>>,
 }
 impl MeterUsageInput {
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
-    pub fn product_code(&self) -> std::option::Option<& str> {
+    pub fn product_code(&self) -> std::option::Option<&str> {
         self.product_code.as_deref()
     }
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
-    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
-    pub fn usage_dimension(&self) -> std::option::Option<& str> {
+    pub fn usage_dimension(&self) -> std::option::Option<&str> {
         self.usage_dimension.as_deref()
     }
     /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
@@ -44,9 +44,9 @@ impl MeterUsageInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The set of <code>UsageAllocations</code> to submit.</p> 
+    /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
-    pub fn usage_allocations(&self) -> std::option::Option<& [crate::types::UsageAllocation]> {
+    pub fn usage_allocations(&self) -> std::option::Option<&[crate::types::UsageAllocation]> {
         self.usage_allocations.as_deref()
     }
 }
@@ -76,7 +76,8 @@ impl MeterUsageInputBuilder {
     }
     /// <p>Product code is used to uniquely identify a product in AWS Marketplace. The product code should be the same as the one used during the publishing of a new product.</p>
     pub fn set_product_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_code = input; self
+        self.product_code = input;
+        self
     }
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -85,7 +86,8 @@ impl MeterUsageInputBuilder {
     }
     /// <p>Timestamp, in UTC, for which the usage is being reported. Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code> value is not before the start of the software usage.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
     pub fn usage_dimension(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +96,8 @@ impl MeterUsageInputBuilder {
     }
     /// <p>It will be one of the fcp dimension name provided during the publishing of the product.</p>
     pub fn set_usage_dimension(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_dimension = input; self
+        self.usage_dimension = input;
+        self
     }
     /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
     pub fn usage_quantity(mut self, input: i32) -> Self {
@@ -103,7 +106,8 @@ impl MeterUsageInputBuilder {
     }
     /// <p>Consumption value for the hour. Defaults to <code>0</code> if not specified.</p>
     pub fn set_usage_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.usage_quantity = input; self
+        self.usage_quantity = input;
+        self
     }
     /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -112,43 +116,44 @@ impl MeterUsageInputBuilder {
     }
     /// <p>Checks whether you have the permissions required for the action, but does not make the request. If you have the permissions, the request returns <code>DryRunOperation</code>; otherwise, it returns <code>UnauthorizedException</code>. Defaults to <code>false</code> if not specified.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Appends an item to `usage_allocations`.
     ///
     /// To override the contents of this collection use [`set_usage_allocations`](Self::set_usage_allocations).
     ///
-    /// <p>The set of <code>UsageAllocations</code> to submit.</p> 
+    /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
     pub fn usage_allocations(mut self, input: crate::types::UsageAllocation) -> Self {
         let mut v = self.usage_allocations.unwrap_or_default();
-                        v.push(input);
-                        self.usage_allocations = Some(v);
-                        self
+        v.push(input);
+        self.usage_allocations = Some(v);
+        self
     }
-    /// <p>The set of <code>UsageAllocations</code> to submit.</p> 
+    /// <p>The set of <code>UsageAllocations</code> to submit.</p>
     /// <p>The sum of all <code>UsageAllocation</code> quantities must equal the <code>UsageQuantity</code> of the <code>MeterUsage</code> request, and each <code>UsageAllocation</code> must have a unique set of tags (include no tags).</p>
-    pub fn set_usage_allocations(mut self, input: std::option::Option<std::vec::Vec<crate::types::UsageAllocation>>) -> Self {
-        self.usage_allocations = input; self
+    pub fn set_usage_allocations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UsageAllocation>>,
+    ) -> Self {
+        self.usage_allocations = input;
+        self
     }
     /// Consumes the builder and constructs a [`MeterUsageInput`](crate::operation::meter_usage::MeterUsageInput).
-    pub fn build(self) -> Result<crate::operation::meter_usage::MeterUsageInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::meter_usage::MeterUsageInput {
-                product_code: self.product_code
-                ,
-                timestamp: self.timestamp
-                ,
-                usage_dimension: self.usage_dimension
-                ,
-                usage_quantity: self.usage_quantity
-                ,
-                dry_run: self.dry_run
-                ,
-                usage_allocations: self.usage_allocations
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::meter_usage::MeterUsageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::meter_usage::MeterUsageInput {
+            product_code: self.product_code,
+            timestamp: self.timestamp,
+            usage_dimension: self.usage_dimension,
+            usage_quantity: self.usage_quantity,
+            dry_run: self.dry_run,
+            usage_allocations: self.usage_allocations,
+        })
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDatasetGroupInput  {
+pub struct DescribeDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
     #[doc(hidden)]
     pub dataset_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn dataset_group_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_group_arn(&self) -> std::option::Option<&str> {
         self.dataset_group_arn.as_deref()
     }
 }
 impl DescribeDatasetGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetGroupInput`](crate::operation::describe_dataset_group::DescribeDatasetGroupInput).
-    pub fn builder() -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_dataset_group::builders::DescribeDatasetGroupInputBuilder {
         crate::operation::describe_dataset_group::builders::DescribeDatasetGroupInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DescribeDatasetGroupInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset group.</p>
-    pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_group_arn = input; self
+    pub fn set_dataset_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dataset_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDatasetGroupInput`](crate::operation::describe_dataset_group::DescribeDatasetGroupInput).
-    pub fn build(self) -> Result<crate::operation::describe_dataset_group::DescribeDatasetGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_dataset_group::DescribeDatasetGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_dataset_group::DescribeDatasetGroupInput {
-                dataset_group_arn: self.dataset_group_arn
-                ,
-            }
+                dataset_group_arn: self.dataset_group_arn,
+            },
         )
     }
 }
-

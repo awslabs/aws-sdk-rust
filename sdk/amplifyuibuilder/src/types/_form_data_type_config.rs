@@ -3,7 +3,7 @@
 /// <p>Describes the data type configuration for the data source associated with a form.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FormDataTypeConfig  {
+pub struct FormDataTypeConfig {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
     #[doc(hidden)]
     pub data_source_type: std::option::Option<crate::types::FormDataSourceType>,
@@ -13,11 +13,11 @@ pub struct FormDataTypeConfig  {
 }
 impl FormDataTypeConfig {
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
-    pub fn data_source_type(&self) -> std::option::Option<& crate::types::FormDataSourceType> {
+    pub fn data_source_type(&self) -> std::option::Option<&crate::types::FormDataSourceType> {
         self.data_source_type.as_ref()
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
-    pub fn data_type_name(&self) -> std::option::Option<& str> {
+    pub fn data_type_name(&self) -> std::option::Option<&str> {
         self.data_type_name.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl FormDataTypeConfigBuilder {
         self
     }
     /// <p>The data source type, either an Amplify DataStore model or a custom data type.</p>
-    pub fn set_data_source_type(mut self, input: std::option::Option<crate::types::FormDataSourceType>) -> Self {
-        self.data_source_type = input; self
+    pub fn set_data_source_type(
+        mut self,
+        input: std::option::Option<crate::types::FormDataSourceType>,
+    ) -> Self {
+        self.data_source_type = input;
+        self
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
     pub fn data_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl FormDataTypeConfigBuilder {
     }
     /// <p>The unique name of the data type you are using as the data source for the form.</p>
     pub fn set_data_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_type_name = input; self
+        self.data_type_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`FormDataTypeConfig`](crate::types::FormDataTypeConfig).
     pub fn build(self) -> crate::types::FormDataTypeConfig {
         crate::types::FormDataTypeConfig {
-            data_source_type: self.data_source_type
-            ,
-            data_type_name: self.data_type_name
-            ,
+            data_source_type: self.data_source_type,
+            data_type_name: self.data_type_name,
         }
     }
 }
-

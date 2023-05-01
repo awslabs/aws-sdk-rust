@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateMeetingWithAttendeesInput  {
+pub struct CreateMeetingWithAttendeesInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
-    /// <p>The Region in which to create the meeting.</p> 
-    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
+    /// <p>The Region in which to create the meeting.</p>
+    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
     #[doc(hidden)]
     pub media_region: std::option::Option<std::string::String>,
     /// <p>Reserved.</p>
     #[doc(hidden)]
     pub meeting_host_id: std::option::Option<std::string::String>,
-    /// <p>The external meeting ID.</p> 
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> 
+    /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     #[doc(hidden)]
     pub external_meeting_id: std::option::Option<std::string::String>,
@@ -40,51 +40,55 @@ pub struct CreateMeetingWithAttendeesInput  {
 }
 impl CreateMeetingWithAttendeesInput {
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
-    /// <p>The Region in which to create the meeting.</p> 
-    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
+    /// <p>The Region in which to create the meeting.</p>
+    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
-    pub fn media_region(&self) -> std::option::Option<& str> {
+    pub fn media_region(&self) -> std::option::Option<&str> {
         self.media_region.as_deref()
     }
     /// <p>Reserved.</p>
-    pub fn meeting_host_id(&self) -> std::option::Option<& str> {
+    pub fn meeting_host_id(&self) -> std::option::Option<&str> {
         self.meeting_host_id.as_deref()
     }
-    /// <p>The external meeting ID.</p> 
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> 
+    /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    pub fn external_meeting_id(&self) -> std::option::Option<& str> {
+    pub fn external_meeting_id(&self) -> std::option::Option<&str> {
         self.external_meeting_id.as_deref()
     }
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    pub fn meeting_features(&self) -> std::option::Option<& crate::types::MeetingFeaturesConfiguration> {
+    pub fn meeting_features(
+        &self,
+    ) -> std::option::Option<&crate::types::MeetingFeaturesConfiguration> {
         self.meeting_features.as_ref()
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn notifications_configuration(&self) -> std::option::Option<& crate::types::NotificationsConfiguration> {
+    pub fn notifications_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::NotificationsConfiguration> {
         self.notifications_configuration.as_ref()
     }
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn attendees(&self) -> std::option::Option<& [crate::types::CreateAttendeeRequestItem]> {
+    pub fn attendees(&self) -> std::option::Option<&[crate::types::CreateAttendeeRequestItem]> {
         self.attendees.as_deref()
     }
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    pub fn primary_meeting_id(&self) -> std::option::Option<& str> {
+    pub fn primary_meeting_id(&self) -> std::option::Option<&str> {
         self.primary_meeting_id.as_deref()
     }
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    pub fn tenant_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tenant_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.tenant_ids.as_deref()
     }
     /// <p>The tags in the request.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateMeetingWithAttendeesInput  {
+impl std::fmt::Debug for CreateMeetingWithAttendeesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateMeetingWithAttendeesInput");
         formatter.field("client_request_token", &"*** Sensitive Data Redacted ***");
@@ -92,7 +96,10 @@ impl  std::fmt::Debug for CreateMeetingWithAttendeesInput  {
         formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
         formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
         formatter.field("meeting_features", &self.meeting_features);
-        formatter.field("notifications_configuration", &self.notifications_configuration);
+        formatter.field(
+            "notifications_configuration",
+            &self.notifications_configuration,
+        );
         formatter.field("attendees", &self.attendees);
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.field("tenant_ids", &self.tenant_ids);
@@ -102,7 +109,7 @@ impl  std::fmt::Debug for CreateMeetingWithAttendeesInput  {
 }
 impl CreateMeetingWithAttendeesInput {
     /// Creates a new builder-style object to manufacture [`CreateMeetingWithAttendeesInput`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput).
-    pub fn builder() -> crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder {
+    pub fn builder() -> crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder{
         crate::operation::create_meeting_with_attendees::builders::CreateMeetingWithAttendeesInputBuilder::default()
     }
 }
@@ -116,8 +123,10 @@ pub struct CreateMeetingWithAttendeesInputBuilder {
     pub(crate) meeting_host_id: std::option::Option<std::string::String>,
     pub(crate) external_meeting_id: std::option::Option<std::string::String>,
     pub(crate) meeting_features: std::option::Option<crate::types::MeetingFeaturesConfiguration>,
-    pub(crate) notifications_configuration: std::option::Option<crate::types::NotificationsConfiguration>,
-    pub(crate) attendees: std::option::Option<std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
+    pub(crate) notifications_configuration:
+        std::option::Option<crate::types::NotificationsConfiguration>,
+    pub(crate) attendees:
+        std::option::Option<std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
     pub(crate) primary_meeting_id: std::option::Option<std::string::String>,
     pub(crate) tenant_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -129,21 +138,26 @@ impl CreateMeetingWithAttendeesInputBuilder {
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different meetings.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
-    /// <p>The Region in which to create the meeting.</p> 
-    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
+    /// <p>The Region in which to create the meeting.</p>
+    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
     pub fn media_region(mut self, input: impl Into<std::string::String>) -> Self {
         self.media_region = Some(input.into());
         self
     }
-    /// <p>The Region in which to create the meeting.</p> 
-    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p> 
+    /// <p>The Region in which to create the meeting.</p>
+    /// <p> Available values: <code>af-south-1</code>, <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>. </p>
     /// <p>Available values in AWS GovCloud (US) Regions: <code>us-gov-east-1</code>, <code>us-gov-west-1</code>.</p>
     pub fn set_media_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.media_region = input; self
+        self.media_region = input;
+        self
     }
     /// <p>Reserved.</p>
     pub fn meeting_host_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,20 +166,25 @@ impl CreateMeetingWithAttendeesInputBuilder {
     }
     /// <p>Reserved.</p>
     pub fn set_meeting_host_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.meeting_host_id = input; self
+        self.meeting_host_id = input;
+        self
     }
-    /// <p>The external meeting ID.</p> 
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> 
+    /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
     pub fn external_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.external_meeting_id = Some(input.into());
         self
     }
-    /// <p>The external meeting ID.</p> 
-    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p> 
+    /// <p>The external meeting ID.</p>
+    /// <p>Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> </p>
     /// <p>Values that begin with <code>aws:</code> are reserved. You can't configure a value that uses this prefix. Case insensitive.</p>
-    pub fn set_external_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_meeting_id = input; self
+    pub fn set_external_meeting_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.external_meeting_id = input;
+        self
     }
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
     pub fn meeting_features(mut self, input: crate::types::MeetingFeaturesConfiguration) -> Self {
@@ -173,17 +192,28 @@ impl CreateMeetingWithAttendeesInputBuilder {
         self
     }
     /// <p>Lists the audio and video features enabled for a meeting, such as echo reduction.</p>
-    pub fn set_meeting_features(mut self, input: std::option::Option<crate::types::MeetingFeaturesConfiguration>) -> Self {
-        self.meeting_features = input; self
+    pub fn set_meeting_features(
+        mut self,
+        input: std::option::Option<crate::types::MeetingFeaturesConfiguration>,
+    ) -> Self {
+        self.meeting_features = input;
+        self
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn notifications_configuration(mut self, input: crate::types::NotificationsConfiguration) -> Self {
+    pub fn notifications_configuration(
+        mut self,
+        input: crate::types::NotificationsConfiguration,
+    ) -> Self {
         self.notifications_configuration = Some(input);
         self
     }
     /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
-    pub fn set_notifications_configuration(mut self, input: std::option::Option<crate::types::NotificationsConfiguration>) -> Self {
-        self.notifications_configuration = input; self
+    pub fn set_notifications_configuration(
+        mut self,
+        input: std::option::Option<crate::types::NotificationsConfiguration>,
+    ) -> Self {
+        self.notifications_configuration = input;
+        self
     }
     /// Appends an item to `attendees`.
     ///
@@ -192,13 +222,17 @@ impl CreateMeetingWithAttendeesInputBuilder {
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
     pub fn attendees(mut self, input: crate::types::CreateAttendeeRequestItem) -> Self {
         let mut v = self.attendees.unwrap_or_default();
-                        v.push(input);
-                        self.attendees = Some(v);
-                        self
+        v.push(input);
+        self.attendees = Some(v);
+        self
     }
     /// <p>The attendee information, including attendees' IDs and join tokens.</p>
-    pub fn set_attendees(mut self, input: std::option::Option<std::vec::Vec<crate::types::CreateAttendeeRequestItem>>) -> Self {
-        self.attendees = input; self
+    pub fn set_attendees(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CreateAttendeeRequestItem>>,
+    ) -> Self {
+        self.attendees = input;
+        self
     }
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
     pub fn primary_meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,8 +240,12 @@ impl CreateMeetingWithAttendeesInputBuilder {
         self
     }
     /// <p>When specified, replicates the media from the primary meeting to the new meeting.</p>
-    pub fn set_primary_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.primary_meeting_id = input; self
+    pub fn set_primary_meeting_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.primary_meeting_id = input;
+        self
     }
     /// Appends an item to `tenant_ids`.
     ///
@@ -216,13 +254,17 @@ impl CreateMeetingWithAttendeesInputBuilder {
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
     pub fn tenant_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tenant_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.tenant_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.tenant_ids = Some(v);
+        self
     }
     /// <p>A consistent and opaque identifier, created and maintained by the builder to represent a segment of their users.</p>
-    pub fn set_tenant_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tenant_ids = input; self
+    pub fn set_tenant_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tenant_ids = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -231,39 +273,38 @@ impl CreateMeetingWithAttendeesInputBuilder {
     /// <p>The tags in the request.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags in the request.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateMeetingWithAttendeesInput`](crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput).
-    pub fn build(self) -> Result<crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_meeting_with_attendees::CreateMeetingWithAttendeesInput {
-                client_request_token: self.client_request_token
-                ,
-                media_region: self.media_region
-                ,
-                meeting_host_id: self.meeting_host_id
-                ,
-                external_meeting_id: self.external_meeting_id
-                ,
-                meeting_features: self.meeting_features
-                ,
-                notifications_configuration: self.notifications_configuration
-                ,
-                attendees: self.attendees
-                ,
-                primary_meeting_id: self.primary_meeting_id
-                ,
-                tenant_ids: self.tenant_ids
-                ,
-                tags: self.tags
-                ,
-            }
+                client_request_token: self.client_request_token,
+                media_region: self.media_region,
+                meeting_host_id: self.meeting_host_id,
+                external_meeting_id: self.external_meeting_id,
+                meeting_features: self.meeting_features,
+                notifications_configuration: self.notifications_configuration,
+                attendees: self.attendees,
+                primary_meeting_id: self.primary_meeting_id,
+                tenant_ids: self.tenant_ids,
+                tags: self.tags,
+            },
         )
     }
 }
@@ -275,7 +316,10 @@ impl std::fmt::Debug for CreateMeetingWithAttendeesInputBuilder {
         formatter.field("meeting_host_id", &"*** Sensitive Data Redacted ***");
         formatter.field("external_meeting_id", &"*** Sensitive Data Redacted ***");
         formatter.field("meeting_features", &self.meeting_features);
-        formatter.field("notifications_configuration", &self.notifications_configuration);
+        formatter.field(
+            "notifications_configuration",
+            &self.notifications_configuration,
+        );
         formatter.field("attendees", &self.attendees);
         formatter.field("primary_meeting_id", &self.primary_meeting_id);
         formatter.field("tenant_ids", &self.tenant_ids);
@@ -283,4 +327,3 @@ impl std::fmt::Debug for CreateMeetingWithAttendeesInputBuilder {
         formatter.finish()
     }
 }
-

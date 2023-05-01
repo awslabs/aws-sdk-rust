@@ -3,7 +3,7 @@
 /// <p>Provisioned cluster request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisionedRequest  {
+pub struct ProvisionedRequest {
     /// <p>Information about the brokers.</p>
     #[doc(hidden)]
     pub broker_node_group_info: std::option::Option<crate::types::BrokerNodeGroupInfo>,
@@ -37,35 +37,39 @@ pub struct ProvisionedRequest  {
 }
 impl ProvisionedRequest {
     /// <p>Information about the brokers.</p>
-    pub fn broker_node_group_info(&self) -> std::option::Option<& crate::types::BrokerNodeGroupInfo> {
+    pub fn broker_node_group_info(
+        &self,
+    ) -> std::option::Option<&crate::types::BrokerNodeGroupInfo> {
         self.broker_node_group_info.as_ref()
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn client_authentication(&self) -> std::option::Option<& crate::types::ClientAuthentication> {
+    pub fn client_authentication(
+        &self,
+    ) -> std::option::Option<&crate::types::ClientAuthentication> {
         self.client_authentication.as_ref()
     }
     /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
-    pub fn configuration_info(&self) -> std::option::Option<& crate::types::ConfigurationInfo> {
+    pub fn configuration_info(&self) -> std::option::Option<&crate::types::ConfigurationInfo> {
         self.configuration_info.as_ref()
     }
     /// <p>Includes all encryption-related information.</p>
-    pub fn encryption_info(&self) -> std::option::Option<& crate::types::EncryptionInfo> {
+    pub fn encryption_info(&self) -> std::option::Option<&crate::types::EncryptionInfo> {
         self.encryption_info.as_ref()
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    pub fn enhanced_monitoring(&self) -> std::option::Option<& crate::types::EnhancedMonitoring> {
+    pub fn enhanced_monitoring(&self) -> std::option::Option<&crate::types::EnhancedMonitoring> {
         self.enhanced_monitoring.as_ref()
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn open_monitoring(&self) -> std::option::Option<& crate::types::OpenMonitoringInfo> {
+    pub fn open_monitoring(&self) -> std::option::Option<&crate::types::OpenMonitoringInfo> {
         self.open_monitoring.as_ref()
     }
     /// <p>The Apache Kafka version that you want for the cluster.</p>
-    pub fn kafka_version(&self) -> std::option::Option<& str> {
+    pub fn kafka_version(&self) -> std::option::Option<&str> {
         self.kafka_version.as_deref()
     }
     /// <p>Log delivery information for the cluster.</p>
-    pub fn logging_info(&self) -> std::option::Option<& crate::types::LoggingInfo> {
+    pub fn logging_info(&self) -> std::option::Option<&crate::types::LoggingInfo> {
         self.logging_info.as_ref()
     }
     /// <p>The number of broker nodes in the cluster.</p>
@@ -73,7 +77,7 @@ impl ProvisionedRequest {
         self.number_of_broker_nodes
     }
     /// <p>This controls storage mode for supported storage tiers.</p>
-    pub fn storage_mode(&self) -> std::option::Option<& crate::types::StorageMode> {
+    pub fn storage_mode(&self) -> std::option::Option<&crate::types::StorageMode> {
         self.storage_mode.as_ref()
     }
 }
@@ -106,8 +110,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Information about the brokers.</p>
-    pub fn set_broker_node_group_info(mut self, input: std::option::Option<crate::types::BrokerNodeGroupInfo>) -> Self {
-        self.broker_node_group_info = input; self
+    pub fn set_broker_node_group_info(
+        mut self,
+        input: std::option::Option<crate::types::BrokerNodeGroupInfo>,
+    ) -> Self {
+        self.broker_node_group_info = input;
+        self
     }
     /// <p>Includes all client authentication information.</p>
     pub fn client_authentication(mut self, input: crate::types::ClientAuthentication) -> Self {
@@ -115,8 +123,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Includes all client authentication information.</p>
-    pub fn set_client_authentication(mut self, input: std::option::Option<crate::types::ClientAuthentication>) -> Self {
-        self.client_authentication = input; self
+    pub fn set_client_authentication(
+        mut self,
+        input: std::option::Option<crate::types::ClientAuthentication>,
+    ) -> Self {
+        self.client_authentication = input;
+        self
     }
     /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
     pub fn configuration_info(mut self, input: crate::types::ConfigurationInfo) -> Self {
@@ -124,8 +136,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Represents the configuration that you want Amazon MSK to use for the brokers in a cluster.</p>
-    pub fn set_configuration_info(mut self, input: std::option::Option<crate::types::ConfigurationInfo>) -> Self {
-        self.configuration_info = input; self
+    pub fn set_configuration_info(
+        mut self,
+        input: std::option::Option<crate::types::ConfigurationInfo>,
+    ) -> Self {
+        self.configuration_info = input;
+        self
     }
     /// <p>Includes all encryption-related information.</p>
     pub fn encryption_info(mut self, input: crate::types::EncryptionInfo) -> Self {
@@ -133,8 +149,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Includes all encryption-related information.</p>
-    pub fn set_encryption_info(mut self, input: std::option::Option<crate::types::EncryptionInfo>) -> Self {
-        self.encryption_info = input; self
+    pub fn set_encryption_info(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionInfo>,
+    ) -> Self {
+        self.encryption_info = input;
+        self
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
     pub fn enhanced_monitoring(mut self, input: crate::types::EnhancedMonitoring) -> Self {
@@ -142,8 +162,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.</p>
-    pub fn set_enhanced_monitoring(mut self, input: std::option::Option<crate::types::EnhancedMonitoring>) -> Self {
-        self.enhanced_monitoring = input; self
+    pub fn set_enhanced_monitoring(
+        mut self,
+        input: std::option::Option<crate::types::EnhancedMonitoring>,
+    ) -> Self {
+        self.enhanced_monitoring = input;
+        self
     }
     /// <p>The settings for open monitoring.</p>
     pub fn open_monitoring(mut self, input: crate::types::OpenMonitoringInfo) -> Self {
@@ -151,8 +175,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>The settings for open monitoring.</p>
-    pub fn set_open_monitoring(mut self, input: std::option::Option<crate::types::OpenMonitoringInfo>) -> Self {
-        self.open_monitoring = input; self
+    pub fn set_open_monitoring(
+        mut self,
+        input: std::option::Option<crate::types::OpenMonitoringInfo>,
+    ) -> Self {
+        self.open_monitoring = input;
+        self
     }
     /// <p>The Apache Kafka version that you want for the cluster.</p>
     pub fn kafka_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,7 +189,8 @@ impl ProvisionedRequestBuilder {
     }
     /// <p>The Apache Kafka version that you want for the cluster.</p>
     pub fn set_kafka_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kafka_version = input; self
+        self.kafka_version = input;
+        self
     }
     /// <p>Log delivery information for the cluster.</p>
     pub fn logging_info(mut self, input: crate::types::LoggingInfo) -> Self {
@@ -169,8 +198,12 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>Log delivery information for the cluster.</p>
-    pub fn set_logging_info(mut self, input: std::option::Option<crate::types::LoggingInfo>) -> Self {
-        self.logging_info = input; self
+    pub fn set_logging_info(
+        mut self,
+        input: std::option::Option<crate::types::LoggingInfo>,
+    ) -> Self {
+        self.logging_info = input;
+        self
     }
     /// <p>The number of broker nodes in the cluster.</p>
     pub fn number_of_broker_nodes(mut self, input: i32) -> Self {
@@ -179,7 +212,8 @@ impl ProvisionedRequestBuilder {
     }
     /// <p>The number of broker nodes in the cluster.</p>
     pub fn set_number_of_broker_nodes(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_broker_nodes = input; self
+        self.number_of_broker_nodes = input;
+        self
     }
     /// <p>This controls storage mode for supported storage tiers.</p>
     pub fn storage_mode(mut self, input: crate::types::StorageMode) -> Self {
@@ -187,34 +221,26 @@ impl ProvisionedRequestBuilder {
         self
     }
     /// <p>This controls storage mode for supported storage tiers.</p>
-    pub fn set_storage_mode(mut self, input: std::option::Option<crate::types::StorageMode>) -> Self {
-        self.storage_mode = input; self
+    pub fn set_storage_mode(
+        mut self,
+        input: std::option::Option<crate::types::StorageMode>,
+    ) -> Self {
+        self.storage_mode = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProvisionedRequest`](crate::types::ProvisionedRequest).
     pub fn build(self) -> crate::types::ProvisionedRequest {
         crate::types::ProvisionedRequest {
-            broker_node_group_info: self.broker_node_group_info
-            ,
-            client_authentication: self.client_authentication
-            ,
-            configuration_info: self.configuration_info
-            ,
-            encryption_info: self.encryption_info
-            ,
-            enhanced_monitoring: self.enhanced_monitoring
-            ,
-            open_monitoring: self.open_monitoring
-            ,
-            kafka_version: self.kafka_version
-            ,
-            logging_info: self.logging_info
-            ,
-            number_of_broker_nodes: self.number_of_broker_nodes
-                .unwrap_or_default()
-            ,
-            storage_mode: self.storage_mode
-            ,
+            broker_node_group_info: self.broker_node_group_info,
+            client_authentication: self.client_authentication,
+            configuration_info: self.configuration_info,
+            encryption_info: self.encryption_info,
+            enhanced_monitoring: self.enhanced_monitoring,
+            open_monitoring: self.open_monitoring,
+            kafka_version: self.kafka_version,
+            logging_info: self.logging_info,
+            number_of_broker_nodes: self.number_of_broker_nodes.unwrap_or_default(),
+            storage_mode: self.storage_mode,
         }
     }
 }
-

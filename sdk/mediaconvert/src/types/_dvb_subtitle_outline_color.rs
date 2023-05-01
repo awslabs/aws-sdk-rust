@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let dvbsubtitleoutlinecolor = unimplemented!();
 /// match dvbsubtitleoutlinecolor {
@@ -35,14 +35,22 @@
 /// Specifically, when `dvbsubtitleoutlinecolor` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DvbSubtitleOutlineColor::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font outline color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DvbSubtitleOutlineColor {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -59,51 +67,52 @@ pub enum DvbSubtitleOutlineColor {
     #[allow(missing_docs)] // documentation missing in model
     Yellow,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DvbSubtitleOutlineColor {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AUTO" => DvbSubtitleOutlineColor::Auto,
-"BLACK" => DvbSubtitleOutlineColor::Black,
-"BLUE" => DvbSubtitleOutlineColor::Blue,
-"GREEN" => DvbSubtitleOutlineColor::Green,
-"RED" => DvbSubtitleOutlineColor::Red,
-"WHITE" => DvbSubtitleOutlineColor::White,
-"YELLOW" => DvbSubtitleOutlineColor::Yellow,
-other => DvbSubtitleOutlineColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for DvbSubtitleOutlineColor {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DvbSubtitleOutlineColor::from(s))
-                }
-            }
-impl DvbSubtitleOutlineColor {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DvbSubtitleOutlineColor::Auto => "AUTO",
-    DvbSubtitleOutlineColor::Black => "BLACK",
-    DvbSubtitleOutlineColor::Blue => "BLUE",
-    DvbSubtitleOutlineColor::Green => "GREEN",
-    DvbSubtitleOutlineColor::Red => "RED",
-    DvbSubtitleOutlineColor::White => "WHITE",
-    DvbSubtitleOutlineColor::Yellow => "YELLOW",
-    DvbSubtitleOutlineColor::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTO" => DvbSubtitleOutlineColor::Auto,
+            "BLACK" => DvbSubtitleOutlineColor::Black,
+            "BLUE" => DvbSubtitleOutlineColor::Blue,
+            "GREEN" => DvbSubtitleOutlineColor::Green,
+            "RED" => DvbSubtitleOutlineColor::Red,
+            "WHITE" => DvbSubtitleOutlineColor::White,
+            "YELLOW" => DvbSubtitleOutlineColor::Yellow,
+            other => DvbSubtitleOutlineColor::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AUTO", "BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
-                }
-            }
-impl AsRef<str> for DvbSubtitleOutlineColor {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DvbSubtitleOutlineColor {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DvbSubtitleOutlineColor::from(s))
+    }
+}
+impl DvbSubtitleOutlineColor {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DvbSubtitleOutlineColor::Auto => "AUTO",
+            DvbSubtitleOutlineColor::Black => "BLACK",
+            DvbSubtitleOutlineColor::Blue => "BLUE",
+            DvbSubtitleOutlineColor::Green => "GREEN",
+            DvbSubtitleOutlineColor::Red => "RED",
+            DvbSubtitleOutlineColor::White => "WHITE",
+            DvbSubtitleOutlineColor::Yellow => "YELLOW",
+            DvbSubtitleOutlineColor::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AUTO", "BLACK", "BLUE", "GREEN", "RED", "WHITE", "YELLOW"]
+    }
+}
+impl AsRef<str> for DvbSubtitleOutlineColor {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

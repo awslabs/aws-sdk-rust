@@ -4,56 +4,81 @@ pub use crate::operation::list_certificates::_list_certificates_output::ListCert
 pub use crate::operation::list_certificates::_list_certificates_input::ListCertificatesInputBuilder;
 
 /// Fluent builder constructing a request to `ListCertificates`.
-/// 
+///
 /// <p>Returns a list of the current certificates that have been imported into Transfer Family. If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code> parameter. If you ran the command previously and received a value for the <code>NextToken</code> parameter, you can supply that value to continue listing certificates from where you left off.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCertificatesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_certificates::builders::ListCertificatesInputBuilder,
+    inner: crate::operation::list_certificates::builders::ListCertificatesInputBuilder,
 }
-impl ListCertificatesFluentBuilder  {
+impl ListCertificatesFluentBuilder {
     /// Creates a new `ListCertificates`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_certificates::ListCertificates, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_certificates::ListCertificatesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_certificates::ListCertificatesOutput, aws_smithy_http::result::SdkError<crate::operation::list_certificates::ListCertificatesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_certificates::ListCertificates,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_certificates::ListCertificatesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_certificates::ListCertificatesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_certificates::ListCertificatesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_certificates::paginator::ListCertificatesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_certificates::paginator::ListCertificatesPaginator {
-                                crate::operation::list_certificates::paginator::ListCertificatesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_certificates::paginator::ListCertificatesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_certificates::paginator::ListCertificatesPaginator {
+        crate::operation::list_certificates::paginator::ListCertificatesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The maximum number of certificates to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.inner = self.inner.max_results(input);
@@ -75,4 +100,3 @@ impl ListCertificatesFluentBuilder  {
         self
     }
 }
-

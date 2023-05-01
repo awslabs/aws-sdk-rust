@@ -22,4 +22,3 @@ pub use crate::types::error::_data_already_accepted_exception::DataAlreadyAccept
 pub use crate::types::error::_resource_already_exists_exception::ResourceAlreadyExistsExceptionBuilder;
 
 pub use crate::types::error::_invalid_operation_exception::InvalidOperationExceptionBuilder;
-

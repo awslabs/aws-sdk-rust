@@ -3,7 +3,7 @@
 /// <p>The input for the DeletePolicyVersion operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePolicyVersionInput  {
+pub struct DeletePolicyVersionInput {
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -13,18 +13,20 @@ pub struct DeletePolicyVersionInput  {
 }
 impl DeletePolicyVersionInput {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The policy version ID.</p>
-    pub fn policy_version_id(&self) -> std::option::Option<& str> {
+    pub fn policy_version_id(&self) -> std::option::Option<&str> {
         self.policy_version_id.as_deref()
     }
 }
 impl DeletePolicyVersionInput {
     /// Creates a new builder-style object to manufacture [`DeletePolicyVersionInput`](crate::operation::delete_policy_version::DeletePolicyVersionInput).
-    pub fn builder() -> crate::operation::delete_policy_version::builders::DeletePolicyVersionInputBuilder {
-        crate::operation::delete_policy_version::builders::DeletePolicyVersionInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_policy_version::builders::DeletePolicyVersionInputBuilder {
+        crate::operation::delete_policy_version::builders::DeletePolicyVersionInputBuilder::default(
+        )
     }
 }
 
@@ -43,7 +45,8 @@ impl DeletePolicyVersionInputBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// <p>The policy version ID.</p>
     pub fn policy_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +54,25 @@ impl DeletePolicyVersionInputBuilder {
         self
     }
     /// <p>The policy version ID.</p>
-    pub fn set_policy_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_version_id = input; self
+    pub fn set_policy_version_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.policy_version_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePolicyVersionInput`](crate::operation::delete_policy_version::DeletePolicyVersionInput).
-    pub fn build(self) -> Result<crate::operation::delete_policy_version::DeletePolicyVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_policy_version::DeletePolicyVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_policy_version::DeletePolicyVersionInput {
-                policy_name: self.policy_name
-                ,
-                policy_version_id: self.policy_version_id
-                ,
-            }
+                policy_name: self.policy_name,
+                policy_version_id: self.policy_version_id,
+            },
         )
     }
 }
-

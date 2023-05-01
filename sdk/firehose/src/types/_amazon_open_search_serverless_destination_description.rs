@@ -3,7 +3,7 @@
 /// <p>The destination description in the Serverless offering for Amazon OpenSearch Service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AmazonOpenSearchServerlessDestinationDescription  {
+pub struct AmazonOpenSearchServerlessDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,8 @@ pub struct AmazonOpenSearchServerlessDestinationDescription  {
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The buffering options.</p>
     #[doc(hidden)]
-    pub buffering_hints: std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
+    pub buffering_hints:
+        std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
     /// <p>The Serverless offering for Amazon OpenSearch Service retry options.</p>
     #[doc(hidden)]
     pub retry_options: std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>,
@@ -33,53 +34,69 @@ pub struct AmazonOpenSearchServerlessDestinationDescription  {
     pub cloud_watch_logging_options: std::option::Option<crate::types::CloudWatchLoggingOptions>,
     /// <p>The details of the VPC of the Amazon ES destination.</p>
     #[doc(hidden)]
-    pub vpc_configuration_description: std::option::Option<crate::types::VpcConfigurationDescription>,
+    pub vpc_configuration_description:
+        std::option::Option<crate::types::VpcConfigurationDescription>,
 }
 impl AmazonOpenSearchServerlessDestinationDescription {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
-    pub fn collection_endpoint(&self) -> std::option::Option<& str> {
+    pub fn collection_endpoint(&self) -> std::option::Option<&str> {
         self.collection_endpoint.as_deref()
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
-    pub fn index_name(&self) -> std::option::Option<& str> {
+    pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>The buffering options.</p>
-    pub fn buffering_hints(&self) -> std::option::Option<& crate::types::AmazonOpenSearchServerlessBufferingHints> {
+    pub fn buffering_hints(
+        &self,
+    ) -> std::option::Option<&crate::types::AmazonOpenSearchServerlessBufferingHints> {
         self.buffering_hints.as_ref()
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service retry options.</p>
-    pub fn retry_options(&self) -> std::option::Option<& crate::types::AmazonOpenSearchServerlessRetryOptions> {
+    pub fn retry_options(
+        &self,
+    ) -> std::option::Option<&crate::types::AmazonOpenSearchServerlessRetryOptions> {
         self.retry_options.as_ref()
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn s3_backup_mode(&self) -> std::option::Option<& crate::types::AmazonOpenSearchServerlessS3BackupMode> {
+    pub fn s3_backup_mode(
+        &self,
+    ) -> std::option::Option<&crate::types::AmazonOpenSearchServerlessS3BackupMode> {
         self.s3_backup_mode.as_ref()
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn s3_destination_description(&self) -> std::option::Option<& crate::types::S3DestinationDescription> {
+    pub fn s3_destination_description(
+        &self,
+    ) -> std::option::Option<&crate::types::S3DestinationDescription> {
         self.s3_destination_description.as_ref()
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(&self) -> std::option::Option<& crate::types::ProcessingConfiguration> {
+    pub fn processing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ProcessingConfiguration> {
         self.processing_configuration.as_ref()
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(&self) -> std::option::Option<& crate::types::CloudWatchLoggingOptions> {
+    pub fn cloud_watch_logging_options(
+        &self,
+    ) -> std::option::Option<&crate::types::CloudWatchLoggingOptions> {
         self.cloud_watch_logging_options.as_ref()
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn vpc_configuration_description(&self) -> std::option::Option<& crate::types::VpcConfigurationDescription> {
+    pub fn vpc_configuration_description(
+        &self,
+    ) -> std::option::Option<&crate::types::VpcConfigurationDescription> {
         self.vpc_configuration_description.as_ref()
     }
 }
 impl AmazonOpenSearchServerlessDestinationDescription {
     /// Creates a new builder-style object to manufacture [`AmazonOpenSearchServerlessDestinationDescription`](crate::types::AmazonOpenSearchServerlessDestinationDescription).
-    pub fn builder() -> crate::types::builders::AmazonOpenSearchServerlessDestinationDescriptionBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::AmazonOpenSearchServerlessDestinationDescriptionBuilder {
         crate::types::builders::AmazonOpenSearchServerlessDestinationDescriptionBuilder::default()
     }
 }
@@ -91,13 +108,19 @@ pub struct AmazonOpenSearchServerlessDestinationDescriptionBuilder {
     pub(crate) role_arn: std::option::Option<std::string::String>,
     pub(crate) collection_endpoint: std::option::Option<std::string::String>,
     pub(crate) index_name: std::option::Option<std::string::String>,
-    pub(crate) buffering_hints: std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
-    pub(crate) retry_options: std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>,
-    pub(crate) s3_backup_mode: std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode>,
-    pub(crate) s3_destination_description: std::option::Option<crate::types::S3DestinationDescription>,
+    pub(crate) buffering_hints:
+        std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
+    pub(crate) retry_options:
+        std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>,
+    pub(crate) s3_backup_mode:
+        std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode>,
+    pub(crate) s3_destination_description:
+        std::option::Option<crate::types::S3DestinationDescription>,
     pub(crate) processing_configuration: std::option::Option<crate::types::ProcessingConfiguration>,
-    pub(crate) cloud_watch_logging_options: std::option::Option<crate::types::CloudWatchLoggingOptions>,
-    pub(crate) vpc_configuration_description: std::option::Option<crate::types::VpcConfigurationDescription>,
+    pub(crate) cloud_watch_logging_options:
+        std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    pub(crate) vpc_configuration_description:
+        std::option::Option<crate::types::VpcConfigurationDescription>,
 }
 impl AmazonOpenSearchServerlessDestinationDescriptionBuilder {
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
@@ -107,7 +130,8 @@ impl AmazonOpenSearchServerlessDestinationDescriptionBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS credentials.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
     pub fn collection_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +139,12 @@ impl AmazonOpenSearchServerlessDestinationDescriptionBuilder {
         self
     }
     /// <p>The endpoint to use when communicating with the collection in the Serverless offering for Amazon OpenSearch Service.</p>
-    pub fn set_collection_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_endpoint = input; self
+    pub fn set_collection_endpoint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.collection_endpoint = input;
+        self
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
     pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,95 +153,134 @@ impl AmazonOpenSearchServerlessDestinationDescriptionBuilder {
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input; self
+        self.index_name = input;
+        self
     }
     /// <p>The buffering options.</p>
-    pub fn buffering_hints(mut self, input: crate::types::AmazonOpenSearchServerlessBufferingHints) -> Self {
+    pub fn buffering_hints(
+        mut self,
+        input: crate::types::AmazonOpenSearchServerlessBufferingHints,
+    ) -> Self {
         self.buffering_hints = Some(input);
         self
     }
     /// <p>The buffering options.</p>
-    pub fn set_buffering_hints(mut self, input: std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>) -> Self {
-        self.buffering_hints = input; self
+    pub fn set_buffering_hints(
+        mut self,
+        input: std::option::Option<crate::types::AmazonOpenSearchServerlessBufferingHints>,
+    ) -> Self {
+        self.buffering_hints = input;
+        self
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service retry options.</p>
-    pub fn retry_options(mut self, input: crate::types::AmazonOpenSearchServerlessRetryOptions) -> Self {
+    pub fn retry_options(
+        mut self,
+        input: crate::types::AmazonOpenSearchServerlessRetryOptions,
+    ) -> Self {
         self.retry_options = Some(input);
         self
     }
     /// <p>The Serverless offering for Amazon OpenSearch Service retry options.</p>
-    pub fn set_retry_options(mut self, input: std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>) -> Self {
-        self.retry_options = input; self
+    pub fn set_retry_options(
+        mut self,
+        input: std::option::Option<crate::types::AmazonOpenSearchServerlessRetryOptions>,
+    ) -> Self {
+        self.retry_options = input;
+        self
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn s3_backup_mode(mut self, input: crate::types::AmazonOpenSearchServerlessS3BackupMode) -> Self {
+    pub fn s3_backup_mode(
+        mut self,
+        input: crate::types::AmazonOpenSearchServerlessS3BackupMode,
+    ) -> Self {
         self.s3_backup_mode = Some(input);
         self
     }
     /// <p>The Amazon S3 backup mode.</p>
-    pub fn set_s3_backup_mode(mut self, input: std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode>) -> Self {
-        self.s3_backup_mode = input; self
+    pub fn set_s3_backup_mode(
+        mut self,
+        input: std::option::Option<crate::types::AmazonOpenSearchServerlessS3BackupMode>,
+    ) -> Self {
+        self.s3_backup_mode = input;
+        self
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn s3_destination_description(mut self, input: crate::types::S3DestinationDescription) -> Self {
+    pub fn s3_destination_description(
+        mut self,
+        input: crate::types::S3DestinationDescription,
+    ) -> Self {
         self.s3_destination_description = Some(input);
         self
     }
     /// <p>Describes a destination in Amazon S3.</p>
-    pub fn set_s3_destination_description(mut self, input: std::option::Option<crate::types::S3DestinationDescription>) -> Self {
-        self.s3_destination_description = input; self
+    pub fn set_s3_destination_description(
+        mut self,
+        input: std::option::Option<crate::types::S3DestinationDescription>,
+    ) -> Self {
+        self.s3_destination_description = input;
+        self
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn processing_configuration(mut self, input: crate::types::ProcessingConfiguration) -> Self {
+    pub fn processing_configuration(
+        mut self,
+        input: crate::types::ProcessingConfiguration,
+    ) -> Self {
         self.processing_configuration = Some(input);
         self
     }
     /// <p>Describes a data processing configuration.</p>
-    pub fn set_processing_configuration(mut self, input: std::option::Option<crate::types::ProcessingConfiguration>) -> Self {
-        self.processing_configuration = input; self
+    pub fn set_processing_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ProcessingConfiguration>,
+    ) -> Self {
+        self.processing_configuration = input;
+        self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn cloud_watch_logging_options(mut self, input: crate::types::CloudWatchLoggingOptions) -> Self {
+    pub fn cloud_watch_logging_options(
+        mut self,
+        input: crate::types::CloudWatchLoggingOptions,
+    ) -> Self {
         self.cloud_watch_logging_options = Some(input);
         self
     }
     /// <p>Describes the Amazon CloudWatch logging options for your delivery stream.</p>
-    pub fn set_cloud_watch_logging_options(mut self, input: std::option::Option<crate::types::CloudWatchLoggingOptions>) -> Self {
-        self.cloud_watch_logging_options = input; self
+    pub fn set_cloud_watch_logging_options(
+        mut self,
+        input: std::option::Option<crate::types::CloudWatchLoggingOptions>,
+    ) -> Self {
+        self.cloud_watch_logging_options = input;
+        self
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn vpc_configuration_description(mut self, input: crate::types::VpcConfigurationDescription) -> Self {
+    pub fn vpc_configuration_description(
+        mut self,
+        input: crate::types::VpcConfigurationDescription,
+    ) -> Self {
         self.vpc_configuration_description = Some(input);
         self
     }
     /// <p>The details of the VPC of the Amazon ES destination.</p>
-    pub fn set_vpc_configuration_description(mut self, input: std::option::Option<crate::types::VpcConfigurationDescription>) -> Self {
-        self.vpc_configuration_description = input; self
+    pub fn set_vpc_configuration_description(
+        mut self,
+        input: std::option::Option<crate::types::VpcConfigurationDescription>,
+    ) -> Self {
+        self.vpc_configuration_description = input;
+        self
     }
     /// Consumes the builder and constructs a [`AmazonOpenSearchServerlessDestinationDescription`](crate::types::AmazonOpenSearchServerlessDestinationDescription).
     pub fn build(self) -> crate::types::AmazonOpenSearchServerlessDestinationDescription {
         crate::types::AmazonOpenSearchServerlessDestinationDescription {
-            role_arn: self.role_arn
-            ,
-            collection_endpoint: self.collection_endpoint
-            ,
-            index_name: self.index_name
-            ,
-            buffering_hints: self.buffering_hints
-            ,
-            retry_options: self.retry_options
-            ,
-            s3_backup_mode: self.s3_backup_mode
-            ,
-            s3_destination_description: self.s3_destination_description
-            ,
-            processing_configuration: self.processing_configuration
-            ,
-            cloud_watch_logging_options: self.cloud_watch_logging_options
-            ,
-            vpc_configuration_description: self.vpc_configuration_description
-            ,
+            role_arn: self.role_arn,
+            collection_endpoint: self.collection_endpoint,
+            index_name: self.index_name,
+            buffering_hints: self.buffering_hints,
+            retry_options: self.retry_options,
+            s3_backup_mode: self.s3_backup_mode,
+            s3_destination_description: self.s3_destination_description,
+            processing_configuration: self.processing_configuration,
+            cloud_watch_logging_options: self.cloud_watch_logging_options,
+            vpc_configuration_description: self.vpc_configuration_description,
         }
     }
 }
-

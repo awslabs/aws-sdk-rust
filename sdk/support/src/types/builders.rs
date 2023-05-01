@@ -30,4 +30,3 @@ pub use crate::types::_case_details::CaseDetailsBuilder;
 pub use crate::types::_recent_case_communications::RecentCaseCommunicationsBuilder;
 
 pub use crate::types::_attachment::AttachmentBuilder;
-

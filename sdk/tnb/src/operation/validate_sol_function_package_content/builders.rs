@@ -4,51 +4,58 @@ pub use crate::operation::validate_sol_function_package_content::_validate_sol_f
 pub use crate::operation::validate_sol_function_package_content::_validate_sol_function_package_content_input::ValidateSolFunctionPackageContentInputBuilder;
 
 /// Fluent builder constructing a request to `ValidateSolFunctionPackageContent`.
-/// 
-/// <p>Validates function package content. This can be used as a dry run before uploading function package content with <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.</p> 
+///
+/// <p>Validates function package content. This can be used as a dry run before uploading function package content with <a href="https://docs.aws.amazon.com/tnb/latest/APIReference/API_PutSolFunctionPackageContent.html">PutSolFunctionPackageContent</a>.</p>
 /// <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ValidateSolFunctionPackageContentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::validate_sol_function_package_content::builders::ValidateSolFunctionPackageContentInputBuilder,
 }
-impl ValidateSolFunctionPackageContentFluentBuilder  {
+impl ValidateSolFunctionPackageContentFluentBuilder {
     /// Creates a new `ValidateSolFunctionPackageContent`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContent, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentOutput, aws_smithy_http::result::SdkError<crate::operation::validate_sol_function_package_content::ValidateSolFunctionPackageContentError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Function package ID.</p>
     pub fn vnf_pkg_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.vnf_pkg_id(input.into());
@@ -65,7 +72,10 @@ impl ValidateSolFunctionPackageContentFluentBuilder  {
         self
     }
     /// <p>Function package content type.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<crate::types::PackageContentType>) -> Self {
+    pub fn set_content_type(
+        mut self,
+        input: std::option::Option<crate::types::PackageContentType>,
+    ) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
     }
@@ -80,4 +90,3 @@ impl ValidateSolFunctionPackageContentFluentBuilder  {
         self
     }
 }
-

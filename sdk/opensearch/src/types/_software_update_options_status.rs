@@ -3,7 +3,7 @@
 /// <p>The status of the service software options for a domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SoftwareUpdateOptionsStatus  {
+pub struct SoftwareUpdateOptionsStatus {
     /// <p>The service software update options for a domain.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::types::SoftwareUpdateOptions>,
@@ -13,11 +13,11 @@ pub struct SoftwareUpdateOptionsStatus  {
 }
 impl SoftwareUpdateOptionsStatus {
     /// <p>The service software update options for a domain.</p>
-    pub fn options(&self) -> std::option::Option<& crate::types::SoftwareUpdateOptions> {
+    pub fn options(&self) -> std::option::Option<&crate::types::SoftwareUpdateOptions> {
         self.options.as_ref()
     }
     /// <p>The status of service software update options, including creation date and last updated date.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl SoftwareUpdateOptionsStatusBuilder {
         self
     }
     /// <p>The service software update options for a domain.</p>
-    pub fn set_options(mut self, input: std::option::Option<crate::types::SoftwareUpdateOptions>) -> Self {
-        self.options = input; self
+    pub fn set_options(
+        mut self,
+        input: std::option::Option<crate::types::SoftwareUpdateOptions>,
+    ) -> Self {
+        self.options = input;
+        self
     }
     /// <p>The status of service software update options, including creation date and last updated date.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -52,16 +56,14 @@ impl SoftwareUpdateOptionsStatusBuilder {
     }
     /// <p>The status of service software update options, including creation date and last updated date.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`SoftwareUpdateOptionsStatus`](crate::types::SoftwareUpdateOptionsStatus).
     pub fn build(self) -> crate::types::SoftwareUpdateOptionsStatus {
         crate::types::SoftwareUpdateOptionsStatus {
-            options: self.options
-            ,
-            status: self.status
-            ,
+            options: self.options,
+            status: self.status,
         }
     }
 }
-

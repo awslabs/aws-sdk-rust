@@ -3,7 +3,7 @@
 /// <p>Represents an app's environment variable.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentVariable  {
+pub struct EnvironmentVariable {
     /// <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct EnvironmentVariable  {
 }
 impl EnvironmentVariable {
     /// <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
@@ -51,7 +51,8 @@ impl EnvironmentVariableBuilder {
     }
     /// <p>(Required) The environment variable's name, which can consist of up to 64 characters and must be specified. The name can contain upper- and lowercase letters, numbers, and underscores (_), but it must start with a letter or underscore.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl EnvironmentVariableBuilder {
     }
     /// <p>(Optional) The environment variable's value, which can be left empty. If you specify a value, it can contain up to 256 characters, which must all be printable.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub fn secure(mut self, input: bool) -> Self {
@@ -69,18 +71,15 @@ impl EnvironmentVariableBuilder {
     }
     /// <p>(Optional) Whether the variable's value will be returned by the <code>DescribeApps</code> action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>. <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of the actual value. The default value for <code>Secure</code> is <code>false</code>. </p>
     pub fn set_secure(mut self, input: std::option::Option<bool>) -> Self {
-        self.secure = input; self
+        self.secure = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnvironmentVariable`](crate::types::EnvironmentVariable).
     pub fn build(self) -> crate::types::EnvironmentVariable {
         crate::types::EnvironmentVariable {
-            key: self.key
-            ,
-            value: self.value
-            ,
-            secure: self.secure
-            ,
+            key: self.key,
+            value: self.value,
+            secure: self.secure,
         }
     }
 }
-

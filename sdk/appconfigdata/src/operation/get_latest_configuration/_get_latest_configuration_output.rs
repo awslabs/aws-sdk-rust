@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetLatestConfigurationOutput  {
-    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important> 
-    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p> 
+pub struct GetLatestConfigurationOutput {
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
     #[doc(hidden)]
     pub next_poll_configuration_token: std::option::Option<std::string::String>,
@@ -23,10 +23,10 @@ pub struct GetLatestConfigurationOutput  {
     _request_id: Option<String>,
 }
 impl GetLatestConfigurationOutput {
-    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important> 
-    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p> 
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
-    pub fn next_poll_configuration_token(&self) -> std::option::Option<& str> {
+    pub fn next_poll_configuration_token(&self) -> std::option::Option<&str> {
         self.next_poll_configuration_token.as_deref()
     }
     /// <p>The amount of time the client should wait before polling for configuration updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.</p>
@@ -34,23 +34,29 @@ impl GetLatestConfigurationOutput {
         self.next_poll_interval_in_seconds
     }
     /// <p>A standard MIME type describing the format of the configuration content.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
-    pub fn configuration(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn configuration(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.configuration.as_ref()
     }
     /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
-    pub fn version_label(&self) -> std::option::Option<& str> {
+    pub fn version_label(&self) -> std::option::Option<&str> {
         self.version_label.as_deref()
     }
 }
-impl  std::fmt::Debug for GetLatestConfigurationOutput  {
+impl std::fmt::Debug for GetLatestConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLatestConfigurationOutput");
-        formatter.field("next_poll_configuration_token", &self.next_poll_configuration_token);
-        formatter.field("next_poll_interval_in_seconds", &self.next_poll_interval_in_seconds);
+        formatter.field(
+            "next_poll_configuration_token",
+            &self.next_poll_configuration_token,
+        );
+        formatter.field(
+            "next_poll_interval_in_seconds",
+            &self.next_poll_interval_in_seconds,
+        );
         formatter.field("content_type", &self.content_type);
         formatter.field("configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("version_label", &self.version_label);
@@ -59,13 +65,15 @@ impl  std::fmt::Debug for GetLatestConfigurationOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetLatestConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetLatestConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetLatestConfigurationOutput`](crate::operation::get_latest_configuration::GetLatestConfigurationOutput).
-    pub fn builder() -> crate::operation::get_latest_configuration::builders::GetLatestConfigurationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_latest_configuration::builders::GetLatestConfigurationOutputBuilder
+    {
         crate::operation::get_latest_configuration::builders::GetLatestConfigurationOutputBuilder::default()
     }
 }
@@ -82,18 +90,22 @@ pub struct GetLatestConfigurationOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetLatestConfigurationOutputBuilder {
-    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important> 
-    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p> 
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
     pub fn next_poll_configuration_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_poll_configuration_token = Some(input.into());
         self
     }
-    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important> 
-    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p> 
+    /// <p>The latest token describing the current state of the configuration session. This <i>must</i> be provided to the next call to <code>GetLatestConfiguration.</code> </p> <important>
+    /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
-    pub fn set_next_poll_configuration_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_poll_configuration_token = input; self
+    pub fn set_next_poll_configuration_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.next_poll_configuration_token = input;
+        self
     }
     /// <p>The amount of time the client should wait before polling for configuration updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.</p>
     pub fn next_poll_interval_in_seconds(mut self, input: i32) -> Self {
@@ -102,7 +114,8 @@ impl GetLatestConfigurationOutputBuilder {
     }
     /// <p>The amount of time the client should wait before polling for configuration updates again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll interval.</p>
     pub fn set_next_poll_interval_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.next_poll_interval_in_seconds = input; self
+        self.next_poll_interval_in_seconds = input;
+        self
     }
     /// <p>A standard MIME type describing the format of the configuration content.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +124,8 @@ impl GetLatestConfigurationOutputBuilder {
     }
     /// <p>A standard MIME type describing the format of the configuration content.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     /// <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
     pub fn configuration(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -120,7 +134,8 @@ impl GetLatestConfigurationOutputBuilder {
     }
     /// <p>The data of the configuration. This may be empty if the client already has the latest version of configuration.</p>
     pub fn set_configuration(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.configuration = input; self
+        self.configuration = input;
+        self
     }
     /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
     pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,31 +144,26 @@ impl GetLatestConfigurationOutputBuilder {
     }
     /// <p>The user-defined label for the AppConfig hosted configuration version. This attribute doesn't apply if the configuration is not from an AppConfig hosted configuration version. If the client already has the latest version of the configuration data, this value is empty.</p>
     pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_label = input; self
+        self.version_label = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetLatestConfigurationOutput`](crate::operation::get_latest_configuration::GetLatestConfigurationOutput).
     pub fn build(self) -> crate::operation::get_latest_configuration::GetLatestConfigurationOutput {
         crate::operation::get_latest_configuration::GetLatestConfigurationOutput {
-            next_poll_configuration_token: self.next_poll_configuration_token
-            ,
-            next_poll_interval_in_seconds: self.next_poll_interval_in_seconds
-                .unwrap_or_default()
-            ,
-            content_type: self.content_type
-            ,
-            configuration: self.configuration
-            ,
-            version_label: self.version_label
-            ,
+            next_poll_configuration_token: self.next_poll_configuration_token,
+            next_poll_interval_in_seconds: self.next_poll_interval_in_seconds.unwrap_or_default(),
+            content_type: self.content_type,
+            configuration: self.configuration,
+            version_label: self.version_label,
             _request_id: self._request_id,
         }
     }
@@ -161,8 +171,14 @@ impl GetLatestConfigurationOutputBuilder {
 impl std::fmt::Debug for GetLatestConfigurationOutputBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetLatestConfigurationOutputBuilder");
-        formatter.field("next_poll_configuration_token", &self.next_poll_configuration_token);
-        formatter.field("next_poll_interval_in_seconds", &self.next_poll_interval_in_seconds);
+        formatter.field(
+            "next_poll_configuration_token",
+            &self.next_poll_configuration_token,
+        );
+        formatter.field(
+            "next_poll_interval_in_seconds",
+            &self.next_poll_interval_in_seconds,
+        );
         formatter.field("content_type", &self.content_type);
         formatter.field("configuration", &"*** Sensitive Data Redacted ***");
         formatter.field("version_label", &self.version_label);
@@ -170,4 +186,3 @@ impl std::fmt::Debug for GetLatestConfigurationOutputBuilder {
         formatter.finish()
     }
 }
-

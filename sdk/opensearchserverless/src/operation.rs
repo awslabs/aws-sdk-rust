@@ -93,4 +93,3 @@ pub mod update_security_policy;
 
 /// Types for the `UpdateVpcEndpoint` operation.
 pub mod update_vpc_endpoint;
-

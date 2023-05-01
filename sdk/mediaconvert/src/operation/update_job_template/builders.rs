@@ -4,57 +4,80 @@ pub use crate::operation::update_job_template::_update_job_template_output::Upda
 pub use crate::operation::update_job_template::_update_job_template_input::UpdateJobTemplateInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateJobTemplate`.
-/// 
+///
 /// Modify one of your existing job templates.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateJobTemplateFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_job_template::builders::UpdateJobTemplateInputBuilder,
+    inner: crate::operation::update_job_template::builders::UpdateJobTemplateInputBuilder,
 }
-impl UpdateJobTemplateFluentBuilder  {
+impl UpdateJobTemplateFluentBuilder {
     /// Creates a new `UpdateJobTemplate`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_job_template::UpdateJobTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_job_template::UpdateJobTemplateError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_job_template::UpdateJobTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::update_job_template::UpdateJobTemplateError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_job_template::UpdateJobTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_job_template::UpdateJobTemplateError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_job_template::UpdateJobTemplateOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_job_template::UpdateJobTemplateError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
     pub fn acceleration_settings(mut self, input: crate::types::AccelerationSettings) -> Self {
         self.inner = self.inner.acceleration_settings(input);
         self
     }
     /// Accelerated transcoding can significantly speed up jobs with long, visually complex content. Outputs that use this feature incur pro-tier pricing. For information about feature limitations, see the AWS Elemental MediaConvert User Guide.
-    pub fn set_acceleration_settings(mut self, input: std::option::Option<crate::types::AccelerationSettings>) -> Self {
+    pub fn set_acceleration_settings(
+        mut self,
+        input: std::option::Option<crate::types::AccelerationSettings>,
+    ) -> Self {
         self.inner = self.inner.set_acceleration_settings(input);
         self
     }
@@ -88,7 +111,10 @@ impl UpdateJobTemplateFluentBuilder  {
         self
     }
     /// Optional list of hop destinations.
-    pub fn set_hop_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::HopDestination>>) -> Self {
+    pub fn set_hop_destinations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::HopDestination>>,
+    ) -> Self {
         self.inner = self.inner.set_hop_destinations(input);
         self
     }
@@ -128,7 +154,10 @@ impl UpdateJobTemplateFluentBuilder  {
         self
     }
     /// JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it.
-    pub fn set_settings(mut self, input: std::option::Option<crate::types::JobTemplateSettings>) -> Self {
+    pub fn set_settings(
+        mut self,
+        input: std::option::Option<crate::types::JobTemplateSettings>,
+    ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
@@ -138,9 +167,11 @@ impl UpdateJobTemplateFluentBuilder  {
         self
     }
     /// Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
-    pub fn set_status_update_interval(mut self, input: std::option::Option<crate::types::StatusUpdateInterval>) -> Self {
+    pub fn set_status_update_interval(
+        mut self,
+        input: std::option::Option<crate::types::StatusUpdateInterval>,
+    ) -> Self {
         self.inner = self.inner.set_status_update_interval(input);
         self
     }
 }
-

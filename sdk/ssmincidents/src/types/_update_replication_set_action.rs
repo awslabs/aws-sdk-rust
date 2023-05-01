@@ -21,8 +21,14 @@ pub enum UpdateReplicationSetAction {
 impl UpdateReplicationSetAction {
     /// Tries to convert the enum instance into [`AddRegionAction`](crate::types::UpdateReplicationSetAction::AddRegionAction), extracting the inner [`AddRegionAction`](crate::types::AddRegionAction).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_add_region_action(&self) -> std::result::Result<&crate::types::AddRegionAction, &Self> {
-        if let UpdateReplicationSetAction::AddRegionAction(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_add_region_action(
+        &self,
+    ) -> std::result::Result<&crate::types::AddRegionAction, &Self> {
+        if let UpdateReplicationSetAction::AddRegionAction(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`AddRegionAction`](crate::types::UpdateReplicationSetAction::AddRegionAction).
     pub fn is_add_region_action(&self) -> bool {
@@ -30,8 +36,14 @@ impl UpdateReplicationSetAction {
     }
     /// Tries to convert the enum instance into [`DeleteRegionAction`](crate::types::UpdateReplicationSetAction::DeleteRegionAction), extracting the inner [`DeleteRegionAction`](crate::types::DeleteRegionAction).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_delete_region_action(&self) -> std::result::Result<&crate::types::DeleteRegionAction, &Self> {
-        if let UpdateReplicationSetAction::DeleteRegionAction(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_delete_region_action(
+        &self,
+    ) -> std::result::Result<&crate::types::DeleteRegionAction, &Self> {
+        if let UpdateReplicationSetAction::DeleteRegionAction(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`DeleteRegionAction`](crate::types::UpdateReplicationSetAction::DeleteRegionAction).
     pub fn is_delete_region_action(&self) -> bool {
@@ -42,4 +54,3 @@ impl UpdateReplicationSetAction {
         matches!(self, Self::Unknown)
     }
 }
-

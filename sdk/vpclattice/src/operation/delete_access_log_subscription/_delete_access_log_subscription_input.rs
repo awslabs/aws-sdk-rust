@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessLogSubscriptionInput  {
+pub struct DeleteAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
     #[doc(hidden)]
     pub access_log_subscription_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(&self) -> std::option::Option<& str> {
+    pub fn access_log_subscription_identifier(&self) -> std::option::Option<&str> {
         self.access_log_subscription_identifier.as_deref()
     }
 }
 impl DeleteAccessLogSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessLogSubscriptionInput`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput).
-    pub fn builder() -> crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder {
+    pub fn builder() -> crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder{
         crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder::default()
     }
 }
@@ -28,22 +28,32 @@ pub struct DeleteAccessLogSubscriptionInputBuilder {
 }
 impl DeleteAccessLogSubscriptionInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn access_log_subscription_identifier(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.access_log_subscription_identifier = Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn set_access_log_subscription_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_log_subscription_identifier = input; self
+    pub fn set_access_log_subscription_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.access_log_subscription_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAccessLogSubscriptionInput`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput).
-    pub fn build(self) -> Result<crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput {
-                access_log_subscription_identifier: self.access_log_subscription_identifier
-                ,
-            }
+                access_log_subscription_identifier: self.access_log_subscription_identifier,
+            },
         )
     }
 }
-

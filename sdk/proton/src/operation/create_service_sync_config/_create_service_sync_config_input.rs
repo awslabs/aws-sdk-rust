@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceSyncConfigInput  {
+pub struct CreateServiceSyncConfigInput {
     /// <p>The name of the service the Proton Ops file is for.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
@@ -21,29 +21,31 @@ pub struct CreateServiceSyncConfigInput  {
 }
 impl CreateServiceSyncConfigInput {
     /// <p>The name of the service the Proton Ops file is for.</p>
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The provider type for your repository.</p>
-    pub fn repository_provider(&self) -> std::option::Option<& crate::types::RepositoryProvider> {
+    pub fn repository_provider(&self) -> std::option::Option<&crate::types::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The repository name.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The repository branch for your Proton Ops file.</p>
-    pub fn branch(&self) -> std::option::Option<& str> {
+    pub fn branch(&self) -> std::option::Option<&str> {
         self.branch.as_deref()
     }
     /// <p>The path to the Proton Ops file.</p>
-    pub fn file_path(&self) -> std::option::Option<& str> {
+    pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
 }
 impl CreateServiceSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceSyncConfigInput`](crate::operation::create_service_sync_config::CreateServiceSyncConfigInput).
-    pub fn builder() -> crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder
+    {
         crate::operation::create_service_sync_config::builders::CreateServiceSyncConfigInputBuilder::default()
     }
 }
@@ -66,7 +68,8 @@ impl CreateServiceSyncConfigInputBuilder {
     }
     /// <p>The name of the service the Proton Ops file is for.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
     /// <p>The provider type for your repository.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
@@ -74,8 +77,12 @@ impl CreateServiceSyncConfigInputBuilder {
         self
     }
     /// <p>The provider type for your repository.</p>
-    pub fn set_repository_provider(mut self, input: std::option::Option<crate::types::RepositoryProvider>) -> Self {
-        self.repository_provider = input; self
+    pub fn set_repository_provider(
+        mut self,
+        input: std::option::Option<crate::types::RepositoryProvider>,
+    ) -> Self {
+        self.repository_provider = input;
+        self
     }
     /// <p>The repository name.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +91,8 @@ impl CreateServiceSyncConfigInputBuilder {
     }
     /// <p>The repository name.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The repository branch for your Proton Ops file.</p>
     pub fn branch(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +101,8 @@ impl CreateServiceSyncConfigInputBuilder {
     }
     /// <p>The repository branch for your Proton Ops file.</p>
     pub fn set_branch(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch = input; self
+        self.branch = input;
+        self
     }
     /// <p>The path to the Proton Ops file.</p>
     pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,24 +111,24 @@ impl CreateServiceSyncConfigInputBuilder {
     }
     /// <p>The path to the Proton Ops file.</p>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_path = input; self
+        self.file_path = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateServiceSyncConfigInput`](crate::operation::create_service_sync_config::CreateServiceSyncConfigInput).
-    pub fn build(self) -> Result<crate::operation::create_service_sync_config::CreateServiceSyncConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_service_sync_config::CreateServiceSyncConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_service_sync_config::CreateServiceSyncConfigInput {
-                service_name: self.service_name
-                ,
-                repository_provider: self.repository_provider
-                ,
-                repository_name: self.repository_name
-                ,
-                branch: self.branch
-                ,
-                file_path: self.file_path
-                ,
-            }
+                service_name: self.service_name,
+                repository_provider: self.repository_provider,
+                repository_name: self.repository_name,
+                branch: self.branch,
+                file_path: self.file_path,
+            },
         )
     }
 }
-

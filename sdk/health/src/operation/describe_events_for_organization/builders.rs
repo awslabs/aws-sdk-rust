@@ -4,73 +4,96 @@ pub use crate::operation::describe_events_for_organization::_describe_events_for
 pub use crate::operation::describe_events_for_organization::_describe_events_for_organization_input::DescribeEventsForOrganizationInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeEventsForOrganization`.
-/// 
-/// <p>Returns information about events across your organization in Organizations. You can use the<code>filters</code> parameter to specify the events that you want to return. Events are returned in a summary form and don't include the affected accounts, detailed description, any additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the following operations:</p> 
-/// <ul> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html">DescribeAffectedAccountsForOrganization</a> </p> </li> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> </p> </li> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> </p> </li> 
-/// </ul> 
-/// <p>If you don't specify a <code>filter</code>, the <code>DescribeEventsForOrganizations</code> returns all events across your organization. Results are sorted by <code>lastModifiedTime</code>, starting with the most recent event. </p> 
-/// <p>For more information about the different types of Health events, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p> 
-/// <p>Before you can call this operation, you must first enable Health to work with Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.</p> <note> 
-/// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p> 
+///
+/// <p>Returns information about events across your organization in Organizations. You can use the<code>filters</code> parameter to specify the events that you want to return. Events are returned in a summary form and don't include the affected accounts, detailed description, any additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the following operations:</p>
+/// <ul>
+/// <li> <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html">DescribeAffectedAccountsForOrganization</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> </p> </li>
+/// </ul>
+/// <p>If you don't specify a <code>filter</code>, the <code>DescribeEventsForOrganizations</code> returns all events across your organization. Results are sorted by <code>lastModifiedTime</code>, starting with the most recent event. </p>
+/// <p>For more information about the different types of Health events, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
+/// <p>Before you can call this operation, you must first enable Health to work with Organizations. To do this, call the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization's management account.</p> <note>
+/// <p>This API operation uses pagination. Specify the <code>nextToken</code> parameter in the next request to return more results.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEventsForOrganizationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_events_for_organization::builders::DescribeEventsForOrganizationInputBuilder,
 }
-impl DescribeEventsForOrganizationFluentBuilder  {
+impl DescribeEventsForOrganizationFluentBuilder {
     /// Creates a new `DescribeEventsForOrganization`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_events_for_organization::DescribeEventsForOrganization, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput, aws_smithy_http::result::SdkError<crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_events_for_organization::DescribeEventsForOrganization,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator {
-                                crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator{
+        crate::operation::describe_events_for_organization::paginator::DescribeEventsForOrganizationPaginator::new(self.handle, self.inner)
+    }
     /// <p>Values to narrow the results returned.</p>
     pub fn filter(mut self, input: crate::types::OrganizationEventFilter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
     /// <p>Values to narrow the results returned.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::OrganizationEventFilter>) -> Self {
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::OrganizationEventFilter>,
+    ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -105,4 +128,3 @@ impl DescribeEventsForOrganizationFluentBuilder  {
         self
     }
 }
-

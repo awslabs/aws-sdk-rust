@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSolutionVersionInput  {
+pub struct CreateSolutionVersionInput {
     /// <p>The name of the solution version.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     #[doc(hidden)]
     pub solution_arn: std::option::Option<std::string::String>,
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important> 
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p> 
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     #[doc(hidden)]
     pub training_mode: std::option::Option<crate::types::TrainingMode>,
@@ -20,27 +20,29 @@ pub struct CreateSolutionVersionInput  {
 }
 impl CreateSolutionVersionInput {
     /// <p>The name of the solution version.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
-    pub fn solution_arn(&self) -> std::option::Option<& str> {
+    pub fn solution_arn(&self) -> std::option::Option<&str> {
         self.solution_arn.as_deref()
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important> 
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p> 
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
-    pub fn training_mode(&self) -> std::option::Option<& crate::types::TrainingMode> {
+    pub fn training_mode(&self) -> std::option::Option<&crate::types::TrainingMode> {
         self.training_mode.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution version.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateSolutionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateSolutionVersionInput`](crate::operation::create_solution_version::CreateSolutionVersionInput).
-    pub fn builder() -> crate::operation::create_solution_version::builders::CreateSolutionVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_solution_version::builders::CreateSolutionVersionInputBuilder
+    {
         crate::operation::create_solution_version::builders::CreateSolutionVersionInputBuilder::default()
     }
 }
@@ -62,7 +64,8 @@ impl CreateSolutionVersionInputBuilder {
     }
     /// <p>The name of the solution version.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     pub fn solution_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,20 +74,25 @@ impl CreateSolutionVersionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the solution containing the training configuration information.</p>
     pub fn set_solution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.solution_arn = input; self
+        self.solution_arn = input;
+        self
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important> 
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p> 
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
     pub fn training_mode(mut self, input: crate::types::TrainingMode) -> Self {
         self.training_mode = Some(input);
         self
     }
-    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important> 
-    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p> 
+    /// <p>The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating an entirely new one.</p> <important>
+    /// <p>The <code>UPDATE</code> option can only be used when you already have an active solution version created from the input solution using the <code>FULL</code> option and the input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a> recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a> recipe.</p>
     /// </important>
-    pub fn set_training_mode(mut self, input: std::option::Option<crate::types::TrainingMode>) -> Self {
-        self.training_mode = input; self
+    pub fn set_training_mode(
+        mut self,
+        input: std::option::Option<crate::types::TrainingMode>,
+    ) -> Self {
+        self.training_mode = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -93,28 +101,32 @@ impl CreateSolutionVersionInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution version.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the solution version.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSolutionVersionInput`](crate::operation::create_solution_version::CreateSolutionVersionInput).
-    pub fn build(self) -> Result<crate::operation::create_solution_version::CreateSolutionVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_solution_version::CreateSolutionVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_solution_version::CreateSolutionVersionInput {
-                name: self.name
-                ,
-                solution_arn: self.solution_arn
-                ,
-                training_mode: self.training_mode
-                ,
-                tags: self.tags
-                ,
-            }
+                name: self.name,
+                solution_arn: self.solution_arn,
+                training_mode: self.training_mode,
+                tags: self.tags,
+            },
         )
     }
 }
-

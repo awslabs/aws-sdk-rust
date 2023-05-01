@@ -4,63 +4,75 @@ pub use crate::operation::batch_get_standards_control_associations::_batch_get_s
 pub use crate::operation::batch_get_standards_control_associations::_batch_get_standards_control_associations_input::BatchGetStandardsControlAssociationsInputBuilder;
 
 /// Fluent builder constructing a request to `BatchGetStandardsControlAssociations`.
-/// 
+///
 /// <p> For a batch of security controls and standards, identifies whether each control is currently enabled or disabled in a standard. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetStandardsControlAssociationsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::batch_get_standards_control_associations::builders::BatchGetStandardsControlAssociationsInputBuilder,
 }
-impl BatchGetStandardsControlAssociationsFluentBuilder  {
+impl BatchGetStandardsControlAssociationsFluentBuilder {
     /// Creates a new `BatchGetStandardsControlAssociations`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsOutput, aws_smithy_http::result::SdkError<crate::operation::batch_get_standards_control_associations::BatchGetStandardsControlAssociationsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `StandardsControlAssociationIds`.
     ///
     /// To override the contents of this collection use [`set_standards_control_association_ids`](Self::set_standards_control_association_ids).
     ///
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
-    pub fn standards_control_association_ids(mut self, input: crate::types::StandardsControlAssociationId) -> Self {
+    pub fn standards_control_association_ids(
+        mut self,
+        input: crate::types::StandardsControlAssociationId,
+    ) -> Self {
         self.inner = self.inner.standards_control_association_ids(input);
         self
     }
     /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. This field is used to query the enablement status of a control in a specified standard. The security control ID or ARN is the same across standards. </p>
-    pub fn set_standards_control_association_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::StandardsControlAssociationId>>) -> Self {
+    pub fn set_standards_control_association_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StandardsControlAssociationId>>,
+    ) -> Self {
         self.inner = self.inner.set_standards_control_association_ids(input);
         self
     }
 }
-

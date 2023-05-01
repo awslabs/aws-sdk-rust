@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartVectorEnrichmentJobOutput  {
+pub struct StartVectorEnrichmentJobOutput {
     /// <p>The name of the Vector Enrichment job.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -35,24 +35,25 @@ pub struct StartVectorEnrichmentJobOutput  {
     pub execution_role_arn: std::option::Option<std::string::String>,
     /// <p>Each tag consists of a key and a value.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartVectorEnrichmentJobOutput {
     /// <p>The name of the Vector Enrichment job.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The type of the Vector Enrichment job.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::VectorEnrichmentJobType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::VectorEnrichmentJobType> {
         self.r#type.as_ref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The duration of the Vector Enrichment job, in seconds.</p>
@@ -60,38 +61,43 @@ impl StartVectorEnrichmentJobOutput {
         self.duration_in_seconds
     }
     /// <p>The status of the Vector Enrichment job being started.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::VectorEnrichmentJobStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::VectorEnrichmentJobStatus> {
         self.status.as_ref()
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>Input configuration information for starting the Vector Enrichment job.</p>
-    pub fn input_config(&self) -> std::option::Option<& crate::types::VectorEnrichmentJobInputConfig> {
+    pub fn input_config(
+        &self,
+    ) -> std::option::Option<&crate::types::VectorEnrichmentJobInputConfig> {
         self.input_config.as_ref()
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn job_config(&self) -> std::option::Option<& crate::types::VectorEnrichmentJobConfig> {
+    pub fn job_config(&self) -> std::option::Option<&crate::types::VectorEnrichmentJobConfig> {
         self.job_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartVectorEnrichmentJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartVectorEnrichmentJobOutput {
     /// Creates a new builder-style object to manufacture [`StartVectorEnrichmentJobOutput`](crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput).
-    pub fn builder() -> crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder {
+    pub fn builder() -> crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder{
         crate::operation::start_vector_enrichment_job::builders::StartVectorEnrichmentJobOutputBuilder::default()
     }
 }
@@ -110,7 +116,8 @@ pub struct StartVectorEnrichmentJobOutputBuilder {
     pub(crate) input_config: std::option::Option<crate::types::VectorEnrichmentJobInputConfig>,
     pub(crate) job_config: std::option::Option<crate::types::VectorEnrichmentJobConfig>,
     pub(crate) execution_role_arn: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl StartVectorEnrichmentJobOutputBuilder {
@@ -121,7 +128,8 @@ impl StartVectorEnrichmentJobOutputBuilder {
     }
     /// <p>The name of the Vector Enrichment job.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +138,8 @@ impl StartVectorEnrichmentJobOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The type of the Vector Enrichment job.</p>
     pub fn r#type(mut self, input: crate::types::VectorEnrichmentJobType) -> Self {
@@ -138,8 +147,12 @@ impl StartVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>The type of the Vector Enrichment job.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::VectorEnrichmentJobType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::VectorEnrichmentJobType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -147,8 +160,12 @@ impl StartVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The duration of the Vector Enrichment job, in seconds.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -157,7 +174,8 @@ impl StartVectorEnrichmentJobOutputBuilder {
     }
     /// <p>The duration of the Vector Enrichment job, in seconds.</p>
     pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input; self
+        self.duration_in_seconds = input;
+        self
     }
     /// <p>The status of the Vector Enrichment job being started.</p>
     pub fn status(mut self, input: crate::types::VectorEnrichmentJobStatus) -> Self {
@@ -165,8 +183,12 @@ impl StartVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>The status of the Vector Enrichment job being started.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::VectorEnrichmentJobStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::VectorEnrichmentJobStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,7 +197,8 @@ impl StartVectorEnrichmentJobOutputBuilder {
     }
     /// <p>The Key Management Service key ID for server-side encryption.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>Input configuration information for starting the Vector Enrichment job.</p>
     pub fn input_config(mut self, input: crate::types::VectorEnrichmentJobInputConfig) -> Self {
@@ -183,8 +206,12 @@ impl StartVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>Input configuration information for starting the Vector Enrichment job.</p>
-    pub fn set_input_config(mut self, input: std::option::Option<crate::types::VectorEnrichmentJobInputConfig>) -> Self {
-        self.input_config = input; self
+    pub fn set_input_config(
+        mut self,
+        input: std::option::Option<crate::types::VectorEnrichmentJobInputConfig>,
+    ) -> Self {
+        self.input_config = input;
+        self
     }
     /// <p>An object containing information about the job configuration.</p>
     pub fn job_config(mut self, input: crate::types::VectorEnrichmentJobConfig) -> Self {
@@ -192,8 +219,12 @@ impl StartVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>An object containing information about the job configuration.</p>
-    pub fn set_job_config(mut self, input: std::option::Option<crate::types::VectorEnrichmentJobConfig>) -> Self {
-        self.job_config = input; self
+    pub fn set_job_config(
+        mut self,
+        input: std::option::Option<crate::types::VectorEnrichmentJobConfig>,
+    ) -> Self {
+        self.job_config = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
     pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,60 +232,64 @@ impl StartVectorEnrichmentJobOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the job.</p>
-    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_role_arn = input; self
+    pub fn set_execution_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.execution_role_arn = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Each tag consists of a key and a value.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartVectorEnrichmentJobOutput`](crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput).
-    pub fn build(self) -> crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput {
         crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput {
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            r#type: self.r#type
-            ,
-            creation_time: self.creation_time
-            ,
-            duration_in_seconds: self.duration_in_seconds
-            ,
-            status: self.status
-            ,
-            kms_key_id: self.kms_key_id
-            ,
-            input_config: self.input_config
-            ,
-            job_config: self.job_config
-            ,
-            execution_role_arn: self.execution_role_arn
-            ,
-            tags: self.tags
-            ,
+            name: self.name,
+            arn: self.arn,
+            r#type: self.r#type,
+            creation_time: self.creation_time,
+            duration_in_seconds: self.duration_in_seconds,
+            status: self.status,
+            kms_key_id: self.kms_key_id,
+            input_config: self.input_config,
+            job_config: self.job_config,
+            execution_role_arn: self.execution_role_arn,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

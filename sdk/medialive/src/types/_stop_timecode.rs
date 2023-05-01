@@ -3,7 +3,7 @@
 /// Settings to identify the end of the clip.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopTimecode  {
+pub struct StopTimecode {
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
     #[doc(hidden)]
     pub last_frame_clipping_behavior: std::option::Option<crate::types::LastFrameClippingBehavior>,
@@ -13,11 +13,13 @@ pub struct StopTimecode  {
 }
 impl StopTimecode {
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
-    pub fn last_frame_clipping_behavior(&self) -> std::option::Option<& crate::types::LastFrameClippingBehavior> {
+    pub fn last_frame_clipping_behavior(
+        &self,
+    ) -> std::option::Option<&crate::types::LastFrameClippingBehavior> {
         self.last_frame_clipping_behavior.as_ref()
     }
     /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
-    pub fn timecode(&self) -> std::option::Option<& str> {
+    pub fn timecode(&self) -> std::option::Option<&str> {
         self.timecode.as_deref()
     }
 }
@@ -32,18 +34,26 @@ impl StopTimecode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct StopTimecodeBuilder {
-    pub(crate) last_frame_clipping_behavior: std::option::Option<crate::types::LastFrameClippingBehavior>,
+    pub(crate) last_frame_clipping_behavior:
+        std::option::Option<crate::types::LastFrameClippingBehavior>,
     pub(crate) timecode: std::option::Option<std::string::String>,
 }
 impl StopTimecodeBuilder {
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
-    pub fn last_frame_clipping_behavior(mut self, input: crate::types::LastFrameClippingBehavior) -> Self {
+    pub fn last_frame_clipping_behavior(
+        mut self,
+        input: crate::types::LastFrameClippingBehavior,
+    ) -> Self {
         self.last_frame_clipping_behavior = Some(input);
         self
     }
     /// If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
-    pub fn set_last_frame_clipping_behavior(mut self, input: std::option::Option<crate::types::LastFrameClippingBehavior>) -> Self {
-        self.last_frame_clipping_behavior = input; self
+    pub fn set_last_frame_clipping_behavior(
+        mut self,
+        input: std::option::Option<crate::types::LastFrameClippingBehavior>,
+    ) -> Self {
+        self.last_frame_clipping_behavior = input;
+        self
     }
     /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
     pub fn timecode(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +62,14 @@ impl StopTimecodeBuilder {
     }
     /// The timecode for the frame where you want to stop the clip. Optional; if not specified, the clip continues to the end of the file. Enter the timecode as HH:MM:SS:FF or HH:MM:SS;FF.
     pub fn set_timecode(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timecode = input; self
+        self.timecode = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopTimecode`](crate::types::StopTimecode).
     pub fn build(self) -> crate::types::StopTimecode {
         crate::types::StopTimecode {
-            last_frame_clipping_behavior: self.last_frame_clipping_behavior
-            ,
-            timecode: self.timecode
-            ,
+            last_frame_clipping_behavior: self.last_frame_clipping_behavior,
+            timecode: self.timecode,
         }
     }
 }
-

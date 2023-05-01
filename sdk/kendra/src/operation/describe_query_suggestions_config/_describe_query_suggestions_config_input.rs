@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeQuerySuggestionsConfigInput  {
+pub struct DescribeQuerySuggestionsConfigInput {
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
 }
 impl DescribeQuerySuggestionsConfigInput {
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
-    pub fn index_id(&self) -> std::option::Option<& str> {
+    pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
 }
 impl DescribeQuerySuggestionsConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeQuerySuggestionsConfigInput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput).
-    pub fn builder() -> crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigInputBuilder {
+    pub fn builder() -> crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigInputBuilder{
         crate::operation::describe_query_suggestions_config::builders::DescribeQuerySuggestionsConfigInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl DescribeQuerySuggestionsConfigInputBuilder {
     }
     /// <p>The identifier of the index with query suggestions that you want to get information on.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input; self
+        self.index_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeQuerySuggestionsConfigInput`](crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput).
-    pub fn build(self) -> Result<crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigInput {
                 index_id: self.index_id
@@ -46,4 +52,3 @@ impl DescribeQuerySuggestionsConfigInputBuilder {
         )
     }
 }
-

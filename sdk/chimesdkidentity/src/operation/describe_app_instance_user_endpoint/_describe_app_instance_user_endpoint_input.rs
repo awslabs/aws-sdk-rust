@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeAppInstanceUserEndpointInput  {
+pub struct DescribeAppInstanceUserEndpointInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct DescribeAppInstanceUserEndpointInput  {
 }
 impl DescribeAppInstanceUserEndpointInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeAppInstanceUserEndpointInput  {
+impl std::fmt::Debug for DescribeAppInstanceUserEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeAppInstanceUserEndpointInput");
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
@@ -30,7 +30,7 @@ impl  std::fmt::Debug for DescribeAppInstanceUserEndpointInput  {
 }
 impl DescribeAppInstanceUserEndpointInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceUserEndpointInput`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointInput).
-    pub fn builder() -> crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointInputBuilder {
+    pub fn builder() -> crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointInputBuilder{
         crate::operation::describe_app_instance_user_endpoint::builders::DescribeAppInstanceUserEndpointInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl DescribeAppInstanceUserEndpointInputBuilder {
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_user_arn = input; self
+    pub fn set_app_instance_user_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_instance_user_arn = input;
+        self
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,10 +63,16 @@ impl DescribeAppInstanceUserEndpointInputBuilder {
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_id = input; self
+        self.endpoint_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAppInstanceUserEndpointInput`](crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointInput).
-    pub fn build(self) -> Result<crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_app_instance_user_endpoint::DescribeAppInstanceUserEndpointInput {
                 app_instance_user_arn: self.app_instance_user_arn
@@ -81,4 +91,3 @@ impl std::fmt::Debug for DescribeAppInstanceUserEndpointInputBuilder {
         formatter.finish()
     }
 }
-

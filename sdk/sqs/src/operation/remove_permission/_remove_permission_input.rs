@@ -3,8 +3,8 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemovePermissionInput  {
-    /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p> 
+pub struct RemovePermissionInput {
+    /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
@@ -13,19 +13,20 @@ pub struct RemovePermissionInput  {
     pub label: std::option::Option<std::string::String>,
 }
 impl RemovePermissionInput {
-    /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p> 
+    /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
-    pub fn queue_url(&self) -> std::option::Option<& str> {
+    pub fn queue_url(&self) -> std::option::Option<&str> {
         self.queue_url.as_deref()
     }
     /// <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
-    pub fn label(&self) -> std::option::Option<& str> {
+    pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
 }
 impl RemovePermissionInput {
     /// Creates a new builder-style object to manufacture [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
-    pub fn builder() -> crate::operation::remove_permission::builders::RemovePermissionInputBuilder {
+    pub fn builder() -> crate::operation::remove_permission::builders::RemovePermissionInputBuilder
+    {
         crate::operation::remove_permission::builders::RemovePermissionInputBuilder::default()
     }
 }
@@ -38,16 +39,17 @@ pub struct RemovePermissionInputBuilder {
     pub(crate) label: std::option::Option<std::string::String>,
 }
 impl RemovePermissionInputBuilder {
-    /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p> 
+    /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn queue_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.queue_url = Some(input.into());
         self
     }
-    /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p> 
+    /// <p>The URL of the Amazon SQS queue from which permissions are removed.</p>
     /// <p>Queue URLs and names are case-sensitive.</p>
     pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue_url = input; self
+        self.queue_url = input;
+        self
     }
     /// <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
     pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,18 +58,19 @@ impl RemovePermissionInputBuilder {
     }
     /// <p>The identification of the permission to remove. This is the label added using the <code> <code>AddPermission</code> </code> action.</p>
     pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label = input; self
+        self.label = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
-    pub fn build(self) -> Result<crate::operation::remove_permission::RemovePermissionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::remove_permission::RemovePermissionInput {
-                queue_url: self.queue_url
-                ,
-                label: self.label
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::remove_permission::RemovePermissionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::remove_permission::RemovePermissionInput {
+            queue_url: self.queue_url,
+            label: self.label,
+        })
     }
 }
-

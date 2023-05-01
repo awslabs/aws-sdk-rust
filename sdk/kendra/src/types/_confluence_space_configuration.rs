@@ -3,7 +3,7 @@
 /// <p>Configuration information for indexing Confluence spaces.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfluenceSpaceConfiguration  {
+pub struct ConfluenceSpaceConfiguration {
     /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     #[doc(hidden)]
     pub crawl_personal_spaces: bool,
@@ -16,10 +16,11 @@ pub struct ConfluenceSpaceConfiguration  {
     /// <p>A list of space keys of Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are not indexed. If a space is in both the <code>ExcludeSpaces</code> and the <code>IncludeSpaces</code> list, the space is excluded.</p>
     #[doc(hidden)]
     pub exclude_spaces: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p> 
+    /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you must specify at least one field mapping.</p>
     #[doc(hidden)]
-    pub space_field_mappings: std::option::Option<std::vec::Vec<crate::types::ConfluenceSpaceToIndexFieldMapping>>,
+    pub space_field_mappings:
+        std::option::Option<std::vec::Vec<crate::types::ConfluenceSpaceToIndexFieldMapping>>,
 }
 impl ConfluenceSpaceConfiguration {
     /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
@@ -31,16 +32,18 @@ impl ConfluenceSpaceConfiguration {
         self.crawl_archived_spaces
     }
     /// <p>A list of space keys for Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are indexed. Spaces that aren't in the list aren't indexed. A space in the list must exist. Otherwise, Amazon Kendra logs an error when the data source is synchronized. If a space is in both the <code>IncludeSpaces</code> and the <code>ExcludeSpaces</code> list, the space is excluded.</p>
-    pub fn include_spaces(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn include_spaces(&self) -> std::option::Option<&[std::string::String]> {
         self.include_spaces.as_deref()
     }
     /// <p>A list of space keys of Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are not indexed. If a space is in both the <code>ExcludeSpaces</code> and the <code>IncludeSpaces</code> list, the space is excluded.</p>
-    pub fn exclude_spaces(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn exclude_spaces(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_spaces.as_deref()
     }
-    /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p> 
+    /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn space_field_mappings(&self) -> std::option::Option<& [crate::types::ConfluenceSpaceToIndexFieldMapping]> {
+    pub fn space_field_mappings(
+        &self,
+    ) -> std::option::Option<&[crate::types::ConfluenceSpaceToIndexFieldMapping]> {
         self.space_field_mappings.as_deref()
     }
 }
@@ -59,7 +62,8 @@ pub struct ConfluenceSpaceConfigurationBuilder {
     pub(crate) crawl_archived_spaces: std::option::Option<bool>,
     pub(crate) include_spaces: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) exclude_spaces: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) space_field_mappings: std::option::Option<std::vec::Vec<crate::types::ConfluenceSpaceToIndexFieldMapping>>,
+    pub(crate) space_field_mappings:
+        std::option::Option<std::vec::Vec<crate::types::ConfluenceSpaceToIndexFieldMapping>>,
 }
 impl ConfluenceSpaceConfigurationBuilder {
     /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
@@ -69,7 +73,8 @@ impl ConfluenceSpaceConfigurationBuilder {
     }
     /// <p> <code>TRUE</code> to index personal spaces. You can add restrictions to items in personal spaces. If personal spaces are indexed, queries without user context information may return restricted items from a personal space in their results. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering on user context</a>.</p>
     pub fn set_crawl_personal_spaces(mut self, input: std::option::Option<bool>) -> Self {
-        self.crawl_personal_spaces = input; self
+        self.crawl_personal_spaces = input;
+        self
     }
     /// <p> <code>TRUE</code> to index archived spaces.</p>
     pub fn crawl_archived_spaces(mut self, input: bool) -> Self {
@@ -78,7 +83,8 @@ impl ConfluenceSpaceConfigurationBuilder {
     }
     /// <p> <code>TRUE</code> to index archived spaces.</p>
     pub fn set_crawl_archived_spaces(mut self, input: std::option::Option<bool>) -> Self {
-        self.crawl_archived_spaces = input; self
+        self.crawl_archived_spaces = input;
+        self
     }
     /// Appends an item to `include_spaces`.
     ///
@@ -87,13 +93,17 @@ impl ConfluenceSpaceConfigurationBuilder {
     /// <p>A list of space keys for Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are indexed. Spaces that aren't in the list aren't indexed. A space in the list must exist. Otherwise, Amazon Kendra logs an error when the data source is synchronized. If a space is in both the <code>IncludeSpaces</code> and the <code>ExcludeSpaces</code> list, the space is excluded.</p>
     pub fn include_spaces(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.include_spaces.unwrap_or_default();
-                        v.push(input.into());
-                        self.include_spaces = Some(v);
-                        self
+        v.push(input.into());
+        self.include_spaces = Some(v);
+        self
     }
     /// <p>A list of space keys for Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are indexed. Spaces that aren't in the list aren't indexed. A space in the list must exist. Otherwise, Amazon Kendra logs an error when the data source is synchronized. If a space is in both the <code>IncludeSpaces</code> and the <code>ExcludeSpaces</code> list, the space is excluded.</p>
-    pub fn set_include_spaces(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.include_spaces = input; self
+    pub fn set_include_spaces(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.include_spaces = input;
+        self
     }
     /// Appends an item to `exclude_spaces`.
     ///
@@ -102,47 +112,50 @@ impl ConfluenceSpaceConfigurationBuilder {
     /// <p>A list of space keys of Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are not indexed. If a space is in both the <code>ExcludeSpaces</code> and the <code>IncludeSpaces</code> list, the space is excluded.</p>
     pub fn exclude_spaces(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.exclude_spaces.unwrap_or_default();
-                        v.push(input.into());
-                        self.exclude_spaces = Some(v);
-                        self
+        v.push(input.into());
+        self.exclude_spaces = Some(v);
+        self
     }
     /// <p>A list of space keys of Confluence spaces. If you include a key, the blogs, documents, and attachments in the space are not indexed. If a space is in both the <code>ExcludeSpaces</code> and the <code>IncludeSpaces</code> list, the space is excluded.</p>
-    pub fn set_exclude_spaces(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.exclude_spaces = input; self
+    pub fn set_exclude_spaces(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.exclude_spaces = input;
+        self
     }
     /// Appends an item to `space_field_mappings`.
     ///
     /// To override the contents of this collection use [`set_space_field_mappings`](Self::set_space_field_mappings).
     ///
-    /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p> 
+    /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn space_field_mappings(mut self, input: crate::types::ConfluenceSpaceToIndexFieldMapping) -> Self {
+    pub fn space_field_mappings(
+        mut self,
+        input: crate::types::ConfluenceSpaceToIndexFieldMapping,
+    ) -> Self {
         let mut v = self.space_field_mappings.unwrap_or_default();
-                        v.push(input);
-                        self.space_field_mappings = Some(v);
-                        self
+        v.push(input);
+        self.space_field_mappings = Some(v);
+        self
     }
-    /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p> 
+    /// <p>Maps attributes or field names of Confluence spaces to Amazon Kendra index field names. To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping data source fields</a>. The Confluence data source field names must exist in your Confluence custom metadata.</p>
     /// <p>If you specify the <code>SpaceFieldMappings</code> parameter, you must specify at least one field mapping.</p>
-    pub fn set_space_field_mappings(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConfluenceSpaceToIndexFieldMapping>>) -> Self {
-        self.space_field_mappings = input; self
+    pub fn set_space_field_mappings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConfluenceSpaceToIndexFieldMapping>>,
+    ) -> Self {
+        self.space_field_mappings = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConfluenceSpaceConfiguration`](crate::types::ConfluenceSpaceConfiguration).
     pub fn build(self) -> crate::types::ConfluenceSpaceConfiguration {
         crate::types::ConfluenceSpaceConfiguration {
-            crawl_personal_spaces: self.crawl_personal_spaces
-                .unwrap_or_default()
-            ,
-            crawl_archived_spaces: self.crawl_archived_spaces
-                .unwrap_or_default()
-            ,
-            include_spaces: self.include_spaces
-            ,
-            exclude_spaces: self.exclude_spaces
-            ,
-            space_field_mappings: self.space_field_mappings
-            ,
+            crawl_personal_spaces: self.crawl_personal_spaces.unwrap_or_default(),
+            crawl_archived_spaces: self.crawl_archived_spaces.unwrap_or_default(),
+            include_spaces: self.include_spaces,
+            exclude_spaces: self.exclude_spaces,
+            space_field_mappings: self.space_field_mappings,
         }
     }
 }
-

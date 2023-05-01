@@ -146,4 +146,3 @@ pub use crate::types::_add_bridge_network_output_request::AddBridgeNetworkOutput
 pub use crate::types::_add_ingress_gateway_bridge_request::AddIngressGatewayBridgeRequestBuilder;
 
 pub use crate::types::_add_egress_gateway_bridge_request::AddEgressGatewayBridgeRequestBuilder;
-

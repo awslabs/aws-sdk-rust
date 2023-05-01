@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCollectionInput  {
+pub struct DescribeCollectionInput {
     /// <p>The ID of the collection to describe.</p>
     #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
 }
 impl DescribeCollectionInput {
     /// <p>The ID of the collection to describe.</p>
-    pub fn collection_id(&self) -> std::option::Option<& str> {
+    pub fn collection_id(&self) -> std::option::Option<&str> {
         self.collection_id.as_deref()
     }
 }
 impl DescribeCollectionInput {
     /// Creates a new builder-style object to manufacture [`DescribeCollectionInput`](crate::operation::describe_collection::DescribeCollectionInput).
-    pub fn builder() -> crate::operation::describe_collection::builders::DescribeCollectionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_collection::builders::DescribeCollectionInputBuilder {
         crate::operation::describe_collection::builders::DescribeCollectionInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeCollectionInputBuilder {
     }
     /// <p>The ID of the collection to describe.</p>
     pub fn set_collection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_id = input; self
+        self.collection_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeCollectionInput`](crate::operation::describe_collection::DescribeCollectionInput).
-    pub fn build(self) -> Result<crate::operation::describe_collection::DescribeCollectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_collection::DescribeCollectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_collection::DescribeCollectionInput {
-                collection_id: self.collection_id
-                ,
-            }
+                collection_id: self.collection_id,
+            },
         )
     }
 }
-

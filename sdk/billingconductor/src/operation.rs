@@ -93,4 +93,3 @@ pub mod update_pricing_plan;
 
 /// Types for the `UpdatePricingRule` operation.
 pub mod update_pricing_rule;
-

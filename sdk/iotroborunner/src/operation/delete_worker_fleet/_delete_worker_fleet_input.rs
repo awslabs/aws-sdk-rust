@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkerFleetInput  {
+pub struct DeleteWorkerFleetInput {
     /// Full ARN of the worker fleet.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteWorkerFleetInput {
     /// Full ARN of the worker fleet.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeleteWorkerFleetInput {
     /// Creates a new builder-style object to manufacture [`DeleteWorkerFleetInput`](crate::operation::delete_worker_fleet::DeleteWorkerFleetInput).
-    pub fn builder() -> crate::operation::delete_worker_fleet::builders::DeleteWorkerFleetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_worker_fleet::builders::DeleteWorkerFleetInputBuilder {
         crate::operation::delete_worker_fleet::builders::DeleteWorkerFleetInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl DeleteWorkerFleetInputBuilder {
     }
     /// Full ARN of the worker fleet.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteWorkerFleetInput`](crate::operation::delete_worker_fleet::DeleteWorkerFleetInput).
-    pub fn build(self) -> Result<crate::operation::delete_worker_fleet::DeleteWorkerFleetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_worker_fleet::DeleteWorkerFleetInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_worker_fleet::DeleteWorkerFleetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_worker_fleet::DeleteWorkerFleetInput { id: self.id })
     }
 }
-

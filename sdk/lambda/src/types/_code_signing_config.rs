@@ -3,7 +3,7 @@
 /// <p>Details about a <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Code signing configuration</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeSigningConfig  {
+pub struct CodeSigningConfig {
     /// <p>Unique identifer for the Code signing configuration.</p>
     #[doc(hidden)]
     pub code_signing_config_id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct CodeSigningConfig  {
 }
 impl CodeSigningConfig {
     /// <p>Unique identifer for the Code signing configuration.</p>
-    pub fn code_signing_config_id(&self) -> std::option::Option<& str> {
+    pub fn code_signing_config_id(&self) -> std::option::Option<&str> {
         self.code_signing_config_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> std::option::Option<& str> {
+    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
         self.code_signing_config_arn.as_deref()
     }
     /// <p>Code signing configuration description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>List of allowed publishers.</p>
-    pub fn allowed_publishers(&self) -> std::option::Option<& crate::types::AllowedPublishers> {
+    pub fn allowed_publishers(&self) -> std::option::Option<&crate::types::AllowedPublishers> {
         self.allowed_publishers.as_ref()
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
-    pub fn code_signing_policies(&self) -> std::option::Option<& crate::types::CodeSigningPolicies> {
+    pub fn code_signing_policies(&self) -> std::option::Option<&crate::types::CodeSigningPolicies> {
         self.code_signing_policies.as_ref()
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
-    pub fn last_modified(&self) -> std::option::Option<& str> {
+    pub fn last_modified(&self) -> std::option::Option<&str> {
         self.last_modified.as_deref()
     }
 }
@@ -74,8 +74,12 @@ impl CodeSigningConfigBuilder {
         self
     }
     /// <p>Unique identifer for the Code signing configuration.</p>
-    pub fn set_code_signing_config_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code_signing_config_id = input; self
+    pub fn set_code_signing_config_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.code_signing_config_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
     pub fn code_signing_config_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +87,12 @@ impl CodeSigningConfigBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Code signing configuration.</p>
-    pub fn set_code_signing_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code_signing_config_arn = input; self
+    pub fn set_code_signing_config_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.code_signing_config_arn = input;
+        self
     }
     /// <p>Code signing configuration description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +101,8 @@ impl CodeSigningConfigBuilder {
     }
     /// <p>Code signing configuration description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>List of allowed publishers.</p>
     pub fn allowed_publishers(mut self, input: crate::types::AllowedPublishers) -> Self {
@@ -101,8 +110,12 @@ impl CodeSigningConfigBuilder {
         self
     }
     /// <p>List of allowed publishers.</p>
-    pub fn set_allowed_publishers(mut self, input: std::option::Option<crate::types::AllowedPublishers>) -> Self {
-        self.allowed_publishers = input; self
+    pub fn set_allowed_publishers(
+        mut self,
+        input: std::option::Option<crate::types::AllowedPublishers>,
+    ) -> Self {
+        self.allowed_publishers = input;
+        self
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
     pub fn code_signing_policies(mut self, input: crate::types::CodeSigningPolicies) -> Self {
@@ -110,8 +123,12 @@ impl CodeSigningConfigBuilder {
         self
     }
     /// <p>The code signing policy controls the validation failure action for signature mismatch or expiry.</p>
-    pub fn set_code_signing_policies(mut self, input: std::option::Option<crate::types::CodeSigningPolicies>) -> Self {
-        self.code_signing_policies = input; self
+    pub fn set_code_signing_policies(
+        mut self,
+        input: std::option::Option<crate::types::CodeSigningPolicies>,
+    ) -> Self {
+        self.code_signing_policies = input;
+        self
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
     pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,24 +137,18 @@ impl CodeSigningConfigBuilder {
     }
     /// <p>The date and time that the Code signing configuration was last modified, in ISO-8601 format (YYYY-MM-DDThh:mm:ss.sTZD). </p>
     pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified = input; self
+        self.last_modified = input;
+        self
     }
     /// Consumes the builder and constructs a [`CodeSigningConfig`](crate::types::CodeSigningConfig).
     pub fn build(self) -> crate::types::CodeSigningConfig {
         crate::types::CodeSigningConfig {
-            code_signing_config_id: self.code_signing_config_id
-            ,
-            code_signing_config_arn: self.code_signing_config_arn
-            ,
-            description: self.description
-            ,
-            allowed_publishers: self.allowed_publishers
-            ,
-            code_signing_policies: self.code_signing_policies
-            ,
-            last_modified: self.last_modified
-            ,
+            code_signing_config_id: self.code_signing_config_id,
+            code_signing_config_arn: self.code_signing_config_arn,
+            description: self.description,
+            allowed_publishers: self.allowed_publishers,
+            code_signing_policies: self.code_signing_policies,
+            last_modified: self.last_modified,
         }
     }
 }
-

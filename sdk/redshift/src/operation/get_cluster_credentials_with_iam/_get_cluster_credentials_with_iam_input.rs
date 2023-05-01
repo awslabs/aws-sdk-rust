@@ -2,28 +2,28 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetClusterCredentialsWithIamInput  {
+pub struct GetClusterCredentialsWithIamInput {
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
     #[doc(hidden)]
     pub db_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The number of seconds until the returned temporary password expires.</p> 
+    /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Range: 900-3600. Default: 900.</p>
     #[doc(hidden)]
     pub duration_seconds: std::option::Option<i32>,
 }
 impl GetClusterCredentialsWithIamInput {
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
-    pub fn db_name(&self) -> std::option::Option<& str> {
+    pub fn db_name(&self) -> std::option::Option<&str> {
         self.db_name.as_deref()
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>The number of seconds until the returned temporary password expires.</p> 
+    /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Range: 900-3600. Default: 900.</p>
     pub fn duration_seconds(&self) -> std::option::Option<i32> {
         self.duration_seconds
@@ -31,7 +31,7 @@ impl GetClusterCredentialsWithIamInput {
 }
 impl GetClusterCredentialsWithIamInput {
     /// Creates a new builder-style object to manufacture [`GetClusterCredentialsWithIamInput`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput).
-    pub fn builder() -> crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder {
+    pub fn builder() -> crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder{
         crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamInputBuilder::default()
     }
 }
@@ -52,7 +52,8 @@ impl GetClusterCredentialsWithIamInputBuilder {
     }
     /// <p>The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource <code>dbname</code> for the specified database name. If the database name is not specified, access to all databases is allowed.</p>
     pub fn set_db_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_name = input; self
+        self.db_name = input;
+        self
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,32 +61,38 @@ impl GetClusterCredentialsWithIamInputBuilder {
         self
     }
     /// <p>The unique identifier of the cluster that contains the database for which you are requesting credentials. </p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
-    /// <p>The number of seconds until the returned temporary password expires.</p> 
+    /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Range: 900-3600. Default: 900.</p>
     pub fn duration_seconds(mut self, input: i32) -> Self {
         self.duration_seconds = Some(input);
         self
     }
-    /// <p>The number of seconds until the returned temporary password expires.</p> 
+    /// <p>The number of seconds until the returned temporary password expires.</p>
     /// <p>Range: 900-3600. Default: 900.</p>
     pub fn set_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration_seconds = input; self
+        self.duration_seconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetClusterCredentialsWithIamInput`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput).
-    pub fn build(self) -> Result<crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamInput {
-                db_name: self.db_name
-                ,
-                cluster_identifier: self.cluster_identifier
-                ,
-                duration_seconds: self.duration_seconds
-                ,
-            }
+                db_name: self.db_name,
+                cluster_identifier: self.cluster_identifier,
+                duration_seconds: self.duration_seconds,
+            },
         )
     }
 }
-

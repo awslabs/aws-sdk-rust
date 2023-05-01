@@ -4,60 +4,85 @@ pub use crate::operation::describe_fleet_events::_describe_fleet_events_output::
 pub use crate::operation::describe_fleet_events::_describe_fleet_events_input::DescribeFleetEventsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeFleetEvents`.
-/// 
-/// <p>Retrieves entries from a fleet's event log. Fleet events are initiated by changes in status, such as during fleet creation and termination, changes in capacity, etc. If a fleet has multiple locations, events are also initiated by changes to status and capacity in remote locations. </p> 
-/// <p>You can specify a time range to limit the result set. Use the pagination parameters to retrieve results as a set of sequential pages. </p> 
-/// <p>If successful, a collection of event log entries matching the request are returned.</p> 
-/// <p> <b>Learn more</b> </p> 
+///
+/// <p>Retrieves entries from a fleet's event log. Fleet events are initiated by changes in status, such as during fleet creation and termination, changes in capacity, etc. If a fleet has multiple locations, events are also initiated by changes to status and capacity in remote locations. </p>
+/// <p>You can specify a time range to limit the result set. Use the pagination parameters to retrieve results as a set of sequential pages. </p>
+/// <p>If successful, a collection of event log entries matching the request are returned.</p>
+/// <p> <b>Learn more</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting up Amazon GameLift fleets</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFleetEventsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_fleet_events::builders::DescribeFleetEventsInputBuilder,
+    inner: crate::operation::describe_fleet_events::builders::DescribeFleetEventsInputBuilder,
 }
-impl DescribeFleetEventsFluentBuilder  {
+impl DescribeFleetEventsFluentBuilder {
     /// Creates a new `DescribeFleetEvents`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_fleet_events::DescribeFleetEvents, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_fleet_events::DescribeFleetEventsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_fleet_events::DescribeFleetEventsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_fleet_events::DescribeFleetEventsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_fleet_events::DescribeFleetEvents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_events::DescribeFleetEventsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_fleet_events::DescribeFleetEventsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_events::DescribeFleetEventsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator {
-                                crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator {
+        crate::operation::describe_fleet_events::paginator::DescribeFleetEventsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.</p>
     pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.fleet_id(input.into());
@@ -74,7 +99,10 @@ impl DescribeFleetEventsFluentBuilder  {
         self
     }
     /// <p>The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds (ex: "1469498468.057").</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -109,4 +137,3 @@ impl DescribeFleetEventsFluentBuilder  {
         self
     }
 }
-

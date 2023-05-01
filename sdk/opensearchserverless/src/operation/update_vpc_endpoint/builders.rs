@@ -4,50 +4,70 @@ pub use crate::operation::update_vpc_endpoint::_update_vpc_endpoint_output::Upda
 pub use crate::operation::update_vpc_endpoint::_update_vpc_endpoint_input::UpdateVpcEndpointInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateVpcEndpoint`.
-/// 
+///
 /// <p>Updates an OpenSearch Serverless-managed interface endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon OpenSearch Serverless using an interface endpoint</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateVpcEndpointFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointInputBuilder,
+    inner: crate::operation::update_vpc_endpoint::builders::UpdateVpcEndpointInputBuilder,
 }
-impl UpdateVpcEndpointFluentBuilder  {
+impl UpdateVpcEndpointFluentBuilder {
     /// Creates a new `UpdateVpcEndpoint`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_vpc_endpoint::UpdateVpcEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput, aws_smithy_http::result::SdkError<crate::operation::update_vpc_endpoint::UpdateVpcEndpointError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_vpc_endpoint::UpdateVpcEndpoint,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_vpc_endpoint::UpdateVpcEndpointOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_vpc_endpoint::UpdateVpcEndpointError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique identifier of the interface endpoint to update.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -68,7 +88,10 @@ impl UpdateVpcEndpointFluentBuilder  {
         self
     }
     /// <p>The ID of one or more subnets to add to the endpoint.</p>
-    pub fn set_add_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_add_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_add_subnet_ids(input);
         self
     }
@@ -82,7 +105,10 @@ impl UpdateVpcEndpointFluentBuilder  {
         self
     }
     /// <p>The unique identifiers of the subnets to remove from the endpoint.</p>
-    pub fn set_remove_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_remove_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_remove_subnet_ids(input);
         self
     }
@@ -96,7 +122,10 @@ impl UpdateVpcEndpointFluentBuilder  {
         self
     }
     /// <p>The unique identifiers of the security groups to add to the endpoint. Security groups define the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>
-    pub fn set_add_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_add_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_add_security_group_ids(input);
         self
     }
@@ -110,7 +139,10 @@ impl UpdateVpcEndpointFluentBuilder  {
         self
     }
     /// <p>The unique identifiers of the security groups to remove from the endpoint.</p>
-    pub fn set_remove_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_remove_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_remove_security_group_ids(input);
         self
     }
@@ -125,4 +157,3 @@ impl UpdateVpcEndpointFluentBuilder  {
         self
     }
 }
-

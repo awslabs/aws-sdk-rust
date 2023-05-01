@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCommentReactionInput  {
+pub struct PutCommentReactionInput {
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
     #[doc(hidden)]
     pub comment_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct PutCommentReactionInput  {
 }
 impl PutCommentReactionInput {
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
-    pub fn comment_id(&self) -> std::option::Option<& str> {
+    pub fn comment_id(&self) -> std::option::Option<&str> {
         self.comment_id.as_deref()
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
-    pub fn reaction_value(&self) -> std::option::Option<& str> {
+    pub fn reaction_value(&self) -> std::option::Option<&str> {
         self.reaction_value.as_deref()
     }
 }
 impl PutCommentReactionInput {
     /// Creates a new builder-style object to manufacture [`PutCommentReactionInput`](crate::operation::put_comment_reaction::PutCommentReactionInput).
-    pub fn builder() -> crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder {
         crate::operation::put_comment_reaction::builders::PutCommentReactionInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl PutCommentReactionInputBuilder {
     }
     /// <p>The ID of the comment to which you want to add or update a reaction.</p>
     pub fn set_comment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment_id = input; self
+        self.comment_id = input;
+        self
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
     pub fn reaction_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl PutCommentReactionInputBuilder {
     }
     /// <p>The emoji reaction you want to add or update. To remove a reaction, provide a value of blank or null. You can also provide the value of none. For information about emoji reaction values supported in AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">AWS CodeCommit User Guide</a>.</p>
     pub fn set_reaction_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reaction_value = input; self
+        self.reaction_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutCommentReactionInput`](crate::operation::put_comment_reaction::PutCommentReactionInput).
-    pub fn build(self) -> Result<crate::operation::put_comment_reaction::PutCommentReactionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_comment_reaction::PutCommentReactionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_comment_reaction::PutCommentReactionInput {
-                comment_id: self.comment_id
-                ,
-                reaction_value: self.reaction_value
-                ,
-            }
+                comment_id: self.comment_id,
+                reaction_value: self.reaction_value,
+            },
         )
     }
 }
-

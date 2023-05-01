@@ -117,4 +117,3 @@ pub mod update_contact_channel;
 
 /// Types for the `UpdateRotation` operation.
 pub mod update_rotation;
-

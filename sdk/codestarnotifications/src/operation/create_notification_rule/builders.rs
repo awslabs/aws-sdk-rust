@@ -4,50 +4,70 @@ pub use crate::operation::create_notification_rule::_create_notification_rule_ou
 pub use crate::operation::create_notification_rule::_create_notification_rule_input::CreateNotificationRuleInputBuilder;
 
 /// Fluent builder constructing a request to `CreateNotificationRule`.
-/// 
+///
 /// <p>Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as Chatbot topics or Chatbot clients configured for Slack) where you want to receive them.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNotificationRuleFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_notification_rule::builders::CreateNotificationRuleInputBuilder,
+    inner: crate::operation::create_notification_rule::builders::CreateNotificationRuleInputBuilder,
 }
-impl CreateNotificationRuleFluentBuilder  {
+impl CreateNotificationRuleFluentBuilder {
     /// Creates a new `CreateNotificationRule`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_notification_rule::CreateNotificationRule, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_notification_rule::CreateNotificationRuleError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_notification_rule::CreateNotificationRuleOutput, aws_smithy_http::result::SdkError<crate::operation::create_notification_rule::CreateNotificationRuleError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_notification_rule::CreateNotificationRule,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_notification_rule::CreateNotificationRuleError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_notification_rule::CreateNotificationRuleOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_notification_rule::CreateNotificationRuleError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name for the notification rule. Notification rule names must be unique in your Amazon Web Services account.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -68,7 +88,10 @@ impl CreateNotificationRuleFluentBuilder  {
         self
     }
     /// <p>A list of event types associated with this notification rule. For a list of allowed events, see <code>EventTypeSummary</code>.</p>
-    pub fn set_event_type_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_event_type_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_event_type_ids(input);
         self
     }
@@ -92,7 +115,10 @@ impl CreateNotificationRuleFluentBuilder  {
         self
     }
     /// <p>A list of Amazon Resource Names (ARNs) of Amazon Simple Notification Service topics and Chatbot clients to associate with the notification rule.</p>
-    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
+    pub fn set_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
+    ) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
@@ -106,17 +132,20 @@ impl CreateNotificationRuleFluentBuilder  {
         self.inner = self.inner.set_detail_type(input);
         self
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> 
-    /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p> 
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
+    /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> 
-    /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p> 
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note>
+    /// <p>The Amazon Web Services SDKs prepopulate client request tokens. If you are using an Amazon Web Services SDK, an idempotency token is created for you.</p>
     /// </note>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -125,12 +154,21 @@ impl CreateNotificationRuleFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>". </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -140,9 +178,11 @@ impl CreateNotificationRuleFluentBuilder  {
         self
     }
     /// <p>The status of the notification rule. The default value is <code>ENABLED</code>. If the status is set to <code>DISABLED</code>, notifications aren't sent for the notification rule.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::NotificationRuleStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::NotificationRuleStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
 }
-

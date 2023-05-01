@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyTrafficMirrorFilterNetworkServicesOutput  {
+pub struct ModifyTrafficMirrorFilterNetworkServicesOutput {
     /// <p>The Traffic Mirror filter that the network service is associated with.</p>
     #[doc(hidden)]
     pub traffic_mirror_filter: std::option::Option<crate::types::TrafficMirrorFilter>,
@@ -10,18 +10,18 @@ pub struct ModifyTrafficMirrorFilterNetworkServicesOutput  {
 }
 impl ModifyTrafficMirrorFilterNetworkServicesOutput {
     /// <p>The Traffic Mirror filter that the network service is associated with.</p>
-    pub fn traffic_mirror_filter(&self) -> std::option::Option<& crate::types::TrafficMirrorFilter> {
+    pub fn traffic_mirror_filter(&self) -> std::option::Option<&crate::types::TrafficMirrorFilter> {
         self.traffic_mirror_filter.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyTrafficMirrorFilterNetworkServicesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifyTrafficMirrorFilterNetworkServicesOutput {
     /// Creates a new builder-style object to manufacture [`ModifyTrafficMirrorFilterNetworkServicesOutput`](crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesOutput).
-    pub fn builder() -> crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesOutputBuilder {
+    pub fn builder() -> crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesOutputBuilder{
         crate::operation::modify_traffic_mirror_filter_network_services::builders::ModifyTrafficMirrorFilterNetworkServicesOutputBuilder::default()
     }
 }
@@ -40,20 +40,24 @@ impl ModifyTrafficMirrorFilterNetworkServicesOutputBuilder {
         self
     }
     /// <p>The Traffic Mirror filter that the network service is associated with.</p>
-    pub fn set_traffic_mirror_filter(mut self, input: std::option::Option<crate::types::TrafficMirrorFilter>) -> Self {
-        self.traffic_mirror_filter = input; self
+    pub fn set_traffic_mirror_filter(
+        mut self,
+        input: std::option::Option<crate::types::TrafficMirrorFilter>,
+    ) -> Self {
+        self.traffic_mirror_filter = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyTrafficMirrorFilterNetworkServicesOutput`](crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesOutput).
-    pub fn build(self) -> crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesOutput {
+    pub fn build(self) -> crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesOutput{
         crate::operation::modify_traffic_mirror_filter_network_services::ModifyTrafficMirrorFilterNetworkServicesOutput {
             traffic_mirror_filter: self.traffic_mirror_filter
             ,
@@ -61,4 +65,3 @@ impl ModifyTrafficMirrorFilterNetworkServicesOutputBuilder {
         }
     }
 }
-

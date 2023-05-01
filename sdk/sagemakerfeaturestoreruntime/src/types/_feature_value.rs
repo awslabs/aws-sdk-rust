@@ -3,7 +3,7 @@
 /// <p>The value associated with a feature.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FeatureValue  {
+pub struct FeatureValue {
     /// <p>The name of a feature that a feature value corresponds to.</p>
     #[doc(hidden)]
     pub feature_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FeatureValue  {
 }
 impl FeatureValue {
     /// <p>The name of a feature that a feature value corresponds to.</p>
-    pub fn feature_name(&self) -> std::option::Option<& str> {
+    pub fn feature_name(&self) -> std::option::Option<&str> {
         self.feature_name.as_deref()
     }
     /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
-    pub fn value_as_string(&self) -> std::option::Option<& str> {
+    pub fn value_as_string(&self) -> std::option::Option<&str> {
         self.value_as_string.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl FeatureValueBuilder {
     }
     /// <p>The name of a feature that a feature value corresponds to.</p>
     pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_name = input; self
+        self.feature_name = input;
+        self
     }
     /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
     pub fn value_as_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl FeatureValueBuilder {
     }
     /// <p>The value associated with a feature, in string format. Note that features types can be String, Integral, or Fractional. This value represents all three types as a string.</p>
     pub fn set_value_as_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value_as_string = input; self
+        self.value_as_string = input;
+        self
     }
     /// Consumes the builder and constructs a [`FeatureValue`](crate::types::FeatureValue).
     pub fn build(self) -> crate::types::FeatureValue {
         crate::types::FeatureValue {
-            feature_name: self.feature_name
-            ,
-            value_as_string: self.value_as_string
-            ,
+            feature_name: self.feature_name,
+            value_as_string: self.value_as_string,
         }
     }
 }
-

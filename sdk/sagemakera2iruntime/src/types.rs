@@ -32,4 +32,3 @@ pub mod builders;
 
 /// Error types that Amazon Augmented AI Runtime can respond with.
 pub mod error;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateResolverRuleInput  {
+pub struct DisassociateResolverRuleInput {
     /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DisassociateResolverRuleInput  {
 }
 impl DisassociateResolverRuleInput {
     /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
-    pub fn resolver_rule_id(&self) -> std::option::Option<& str> {
+    pub fn resolver_rule_id(&self) -> std::option::Option<&str> {
         self.resolver_rule_id.as_deref()
     }
 }
 impl DisassociateResolverRuleInput {
     /// Creates a new builder-style object to manufacture [`DisassociateResolverRuleInput`](crate::operation::disassociate_resolver_rule::DisassociateResolverRuleInput).
-    pub fn builder() -> crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder
+    {
         crate::operation::disassociate_resolver_rule::builders::DisassociateResolverRuleInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DisassociateResolverRuleInputBuilder {
     }
     /// <p>The ID of the VPC that you want to disassociate the Resolver rule from.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
     pub fn resolver_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl DisassociateResolverRuleInputBuilder {
     }
     /// <p>The ID of the Resolver rule that you want to disassociate from the specified VPC.</p>
     pub fn set_resolver_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resolver_rule_id = input; self
+        self.resolver_rule_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateResolverRuleInput`](crate::operation::disassociate_resolver_rule::DisassociateResolverRuleInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_resolver_rule::DisassociateResolverRuleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_resolver_rule::DisassociateResolverRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disassociate_resolver_rule::DisassociateResolverRuleInput {
-                vpc_id: self.vpc_id
-                ,
-                resolver_rule_id: self.resolver_rule_id
-                ,
-            }
+                vpc_id: self.vpc_id,
+                resolver_rule_id: self.resolver_rule_id,
+            },
         )
     }
 }
-

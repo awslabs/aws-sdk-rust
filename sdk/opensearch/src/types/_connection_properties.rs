@@ -3,14 +3,14 @@
 /// <p>The connection properties of an outbound connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionProperties  {
+pub struct ConnectionProperties {
     /// <p>The endpoint of the remote domain.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
 }
 impl ConnectionProperties {
     /// <p>The endpoint of the remote domain.</p>
-    pub fn endpoint(&self) -> std::option::Option<& str> {
+    pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl ConnectionPropertiesBuilder {
     }
     /// <p>The endpoint of the remote domain.</p>
     pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint = input; self
+        self.endpoint = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConnectionProperties`](crate::types::ConnectionProperties).
     pub fn build(self) -> crate::types::ConnectionProperties {
         crate::types::ConnectionProperties {
-            endpoint: self.endpoint
-            ,
+            endpoint: self.endpoint,
         }
     }
 }
-

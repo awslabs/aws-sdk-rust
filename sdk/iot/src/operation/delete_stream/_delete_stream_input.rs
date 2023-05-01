@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStreamInput  {
+pub struct DeleteStreamInput {
     /// <p>The stream ID.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
 }
 impl DeleteStreamInput {
     /// <p>The stream ID.</p>
-    pub fn stream_id(&self) -> std::option::Option<& str> {
+    pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteStreamInputBuilder {
     }
     /// <p>The stream ID.</p>
     pub fn set_stream_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_id = input; self
+        self.stream_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteStreamInput`](crate::operation::delete_stream::DeleteStreamInput).
-    pub fn build(self) -> Result<crate::operation::delete_stream::DeleteStreamInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_stream::DeleteStreamInput {
-                stream_id: self.stream_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_stream::DeleteStreamInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_stream::DeleteStreamInput {
+            stream_id: self.stream_id,
+        })
     }
 }
-

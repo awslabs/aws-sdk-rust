@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterTransitGatewayMulticastGroupSourcesInput  {
+pub struct DeregisterTransitGatewayMulticastGroupSourcesInput {
     /// <p>The ID of the transit gateway multicast domain.</p>
     #[doc(hidden)]
     pub transit_gateway_multicast_domain_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct DeregisterTransitGatewayMulticastGroupSourcesInput  {
 }
 impl DeregisterTransitGatewayMulticastGroupSourcesInput {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_multicast_domain_id(&self) -> std::option::Option<&str> {
         self.transit_gateway_multicast_domain_id.as_deref()
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
-    pub fn group_ip_address(&self) -> std::option::Option<& str> {
+    pub fn group_ip_address(&self) -> std::option::Option<&str> {
         self.group_ip_address.as_deref()
     }
     /// <p>The IDs of the group sources' network interfaces.</p>
-    pub fn network_interface_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn network_interface_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.network_interface_ids.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -36,7 +36,7 @@ impl DeregisterTransitGatewayMulticastGroupSourcesInput {
 }
 impl DeregisterTransitGatewayMulticastGroupSourcesInput {
     /// Creates a new builder-style object to manufacture [`DeregisterTransitGatewayMulticastGroupSourcesInput`](crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesInput).
-    pub fn builder() -> crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesInputBuilder {
+    pub fn builder() -> crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesInputBuilder{
         crate::operation::deregister_transit_gateway_multicast_group_sources::builders::DeregisterTransitGatewayMulticastGroupSourcesInputBuilder::default()
     }
 }
@@ -52,13 +52,20 @@ pub struct DeregisterTransitGatewayMulticastGroupSourcesInputBuilder {
 }
 impl DeregisterTransitGatewayMulticastGroupSourcesInputBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transit_gateway_multicast_domain_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.transit_gateway_multicast_domain_id = Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_multicast_domain_id = input; self
+    pub fn set_transit_gateway_multicast_domain_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_multicast_domain_id = input;
+        self
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     pub fn group_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +74,8 @@ impl DeregisterTransitGatewayMulticastGroupSourcesInputBuilder {
     }
     /// <p>The IP address assigned to the transit gateway multicast group.</p>
     pub fn set_group_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_ip_address = input; self
+        self.group_ip_address = input;
+        self
     }
     /// Appends an item to `network_interface_ids`.
     ///
@@ -76,13 +84,17 @@ impl DeregisterTransitGatewayMulticastGroupSourcesInputBuilder {
     /// <p>The IDs of the group sources' network interfaces.</p>
     pub fn network_interface_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.network_interface_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.network_interface_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.network_interface_ids = Some(v);
+        self
     }
     /// <p>The IDs of the group sources' network interfaces.</p>
-    pub fn set_network_interface_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.network_interface_ids = input; self
+    pub fn set_network_interface_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.network_interface_ids = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -91,10 +103,11 @@ impl DeregisterTransitGatewayMulticastGroupSourcesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeregisterTransitGatewayMulticastGroupSourcesInput`](crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesInput).
-    pub fn build(self) -> Result<crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesInput {
                 transit_gateway_multicast_domain_id: self.transit_gateway_multicast_domain_id
@@ -109,4 +122,3 @@ impl DeregisterTransitGatewayMulticastGroupSourcesInputBuilder {
         )
     }
 }
-

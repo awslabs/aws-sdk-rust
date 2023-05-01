@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeliveryStreamOutput  {
+pub struct CreateDeliveryStreamOutput {
     /// <p>The ARN of the delivery stream.</p>
     #[doc(hidden)]
     pub delivery_stream_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct CreateDeliveryStreamOutput  {
 }
 impl CreateDeliveryStreamOutput {
     /// <p>The ARN of the delivery stream.</p>
-    pub fn delivery_stream_arn(&self) -> std::option::Option<& str> {
+    pub fn delivery_stream_arn(&self) -> std::option::Option<&str> {
         self.delivery_stream_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDeliveryStreamOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateDeliveryStreamOutput {
     /// Creates a new builder-style object to manufacture [`CreateDeliveryStreamOutput`](crate::operation::create_delivery_stream::CreateDeliveryStreamOutput).
-    pub fn builder() -> crate::operation::create_delivery_stream::builders::CreateDeliveryStreamOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_delivery_stream::builders::CreateDeliveryStreamOutputBuilder {
         crate::operation::create_delivery_stream::builders::CreateDeliveryStreamOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl CreateDeliveryStreamOutputBuilder {
         self
     }
     /// <p>The ARN of the delivery stream.</p>
-    pub fn set_delivery_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delivery_stream_arn = input; self
+    pub fn set_delivery_stream_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.delivery_stream_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDeliveryStreamOutput`](crate::operation::create_delivery_stream::CreateDeliveryStreamOutput).
     pub fn build(self) -> crate::operation::create_delivery_stream::CreateDeliveryStreamOutput {
         crate::operation::create_delivery_stream::CreateDeliveryStreamOutput {
-            delivery_stream_arn: self.delivery_stream_arn
-            ,
+            delivery_stream_arn: self.delivery_stream_arn,
             _request_id: self._request_id,
         }
     }
 }
-

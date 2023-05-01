@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLoggingOptionsOutput  {
+pub struct GetLoggingOptionsOutput {
     /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
     #[doc(hidden)]
     pub cloud_watch_log_delivery: std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
@@ -10,18 +10,21 @@ pub struct GetLoggingOptionsOutput  {
 }
 impl GetLoggingOptionsOutput {
     /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_log_delivery(&self) -> std::option::Option<& crate::types::CloudWatchLogDeliveryOptions> {
+    pub fn cloud_watch_log_delivery(
+        &self,
+    ) -> std::option::Option<&crate::types::CloudWatchLogDeliveryOptions> {
         self.cloud_watch_log_delivery.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetLoggingOptionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetLoggingOptionsOutput {
     /// Creates a new builder-style object to manufacture [`GetLoggingOptionsOutput`](crate::operation::get_logging_options::GetLoggingOptionsOutput).
-    pub fn builder() -> crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder {
         crate::operation::get_logging_options::builders::GetLoggingOptionsOutputBuilder::default()
     }
 }
@@ -30,35 +33,41 @@ impl GetLoggingOptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetLoggingOptionsOutputBuilder {
-    pub(crate) cloud_watch_log_delivery: std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
+    pub(crate) cloud_watch_log_delivery:
+        std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
     _request_id: Option<String>,
 }
 impl GetLoggingOptionsOutputBuilder {
     /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-    pub fn cloud_watch_log_delivery(mut self, input: crate::types::CloudWatchLogDeliveryOptions) -> Self {
+    pub fn cloud_watch_log_delivery(
+        mut self,
+        input: crate::types::CloudWatchLogDeliveryOptions,
+    ) -> Self {
         self.cloud_watch_log_delivery = Some(input);
         self
     }
     /// <p>Returns information about log delivery to Amazon CloudWatch Logs.</p>
-    pub fn set_cloud_watch_log_delivery(mut self, input: std::option::Option<crate::types::CloudWatchLogDeliveryOptions>) -> Self {
-        self.cloud_watch_log_delivery = input; self
+    pub fn set_cloud_watch_log_delivery(
+        mut self,
+        input: std::option::Option<crate::types::CloudWatchLogDeliveryOptions>,
+    ) -> Self {
+        self.cloud_watch_log_delivery = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetLoggingOptionsOutput`](crate::operation::get_logging_options::GetLoggingOptionsOutput).
     pub fn build(self) -> crate::operation::get_logging_options::GetLoggingOptionsOutput {
         crate::operation::get_logging_options::GetLoggingOptionsOutput {
-            cloud_watch_log_delivery: self.cloud_watch_log_delivery
-            ,
+            cloud_watch_log_delivery: self.cloud_watch_log_delivery,
             _request_id: self._request_id,
         }
     }
 }
-

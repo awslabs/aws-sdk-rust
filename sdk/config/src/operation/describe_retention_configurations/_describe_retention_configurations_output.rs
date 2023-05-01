@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRetentionConfigurationsOutput  {
+pub struct DescribeRetentionConfigurationsOutput {
     /// <p>Returns a retention configuration object.</p>
     #[doc(hidden)]
-    pub retention_configurations: std::option::Option<std::vec::Vec<crate::types::RetentionConfiguration>>,
+    pub retention_configurations:
+        std::option::Option<std::vec::Vec<crate::types::RetentionConfiguration>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DescribeRetentionConfigurationsOutput  {
 }
 impl DescribeRetentionConfigurationsOutput {
     /// <p>Returns a retention configuration object.</p>
-    pub fn retention_configurations(&self) -> std::option::Option<& [crate::types::RetentionConfiguration]> {
+    pub fn retention_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::RetentionConfiguration]> {
         self.retention_configurations.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRetentionConfigurationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeRetentionConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRetentionConfigurationsOutput`](crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsOutput).
-    pub fn builder() -> crate::operation::describe_retention_configurations::builders::DescribeRetentionConfigurationsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_retention_configurations::builders::DescribeRetentionConfigurationsOutputBuilder{
         crate::operation::describe_retention_configurations::builders::DescribeRetentionConfigurationsOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DescribeRetentionConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeRetentionConfigurationsOutputBuilder {
-    pub(crate) retention_configurations: std::option::Option<std::vec::Vec<crate::types::RetentionConfiguration>>,
+    pub(crate) retention_configurations:
+        std::option::Option<std::vec::Vec<crate::types::RetentionConfiguration>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +53,17 @@ impl DescribeRetentionConfigurationsOutputBuilder {
     /// <p>Returns a retention configuration object.</p>
     pub fn retention_configurations(mut self, input: crate::types::RetentionConfiguration) -> Self {
         let mut v = self.retention_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.retention_configurations = Some(v);
-                        self
+        v.push(input);
+        self.retention_configurations = Some(v);
+        self
     }
     /// <p>Returns a retention configuration object.</p>
-    pub fn set_retention_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::RetentionConfiguration>>) -> Self {
-        self.retention_configurations = input; self
+    pub fn set_retention_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RetentionConfiguration>>,
+    ) -> Self {
+        self.retention_configurations = input;
+        self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +72,27 @@ impl DescribeRetentionConfigurationsOutputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeRetentionConfigurationsOutput`](crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsOutput).
-    pub fn build(self) -> crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsOutput
+    {
         crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsOutput {
-            retention_configurations: self.retention_configurations
-            ,
-            next_token: self.next_token
-            ,
+            retention_configurations: self.retention_configurations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

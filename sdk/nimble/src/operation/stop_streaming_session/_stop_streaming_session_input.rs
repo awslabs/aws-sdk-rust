@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopStreamingSessionInput  {
+pub struct StopStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -18,25 +18,26 @@ pub struct StopStreamingSessionInput  {
 }
 impl StopStreamingSessionInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
-    pub fn session_id(&self) -> std::option::Option<& str> {
+    pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
-    pub fn volume_retention_mode(&self) -> std::option::Option<& crate::types::VolumeRetentionMode> {
+    pub fn volume_retention_mode(&self) -> std::option::Option<&crate::types::VolumeRetentionMode> {
         self.volume_retention_mode.as_ref()
     }
 }
 impl StopStreamingSessionInput {
     /// Creates a new builder-style object to manufacture [`StopStreamingSessionInput`](crate::operation::stop_streaming_session::StopStreamingSessionInput).
-    pub fn builder() -> crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder {
         crate::operation::stop_streaming_session::builders::StopStreamingSessionInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl StopStreamingSessionInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl StopStreamingSessionInputBuilder {
     }
     /// <p>The streaming session ID for the <code>StopStreamingSessionRequest</code>.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input; self
+        self.session_id = input;
+        self
     }
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +79,8 @@ impl StopStreamingSessionInputBuilder {
     }
     /// <p>The studioId for the StopStreamingSessionRequest.</p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
     pub fn volume_retention_mode(mut self, input: crate::types::VolumeRetentionMode) -> Self {
@@ -84,23 +88,27 @@ impl StopStreamingSessionInputBuilder {
         self
     }
     /// <p>Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the EBS volumes.</p>
-    pub fn set_volume_retention_mode(mut self, input: std::option::Option<crate::types::VolumeRetentionMode>) -> Self {
-        self.volume_retention_mode = input; self
+    pub fn set_volume_retention_mode(
+        mut self,
+        input: std::option::Option<crate::types::VolumeRetentionMode>,
+    ) -> Self {
+        self.volume_retention_mode = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopStreamingSessionInput`](crate::operation::stop_streaming_session::StopStreamingSessionInput).
-    pub fn build(self) -> Result<crate::operation::stop_streaming_session::StopStreamingSessionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_streaming_session::StopStreamingSessionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_streaming_session::StopStreamingSessionInput {
-                client_token: self.client_token
-                ,
-                session_id: self.session_id
-                ,
-                studio_id: self.studio_id
-                ,
-                volume_retention_mode: self.volume_retention_mode
-                ,
-            }
+                client_token: self.client_token,
+                session_id: self.session_id,
+                studio_id: self.studio_id,
+                volume_retention_mode: self.volume_retention_mode,
+            },
         )
     }
 }
-

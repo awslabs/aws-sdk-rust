@@ -3,32 +3,32 @@
 /// <p>Encloses data related to a successful message in a batch request for topic.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishBatchResultEntry  {
+pub struct PublishBatchResultEntry {
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>An identifier for the message.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p> 
-    /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p> 
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     #[doc(hidden)]
     pub sequence_number: std::option::Option<std::string::String>,
 }
 impl PublishBatchResultEntry {
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>An identifier for the message.</p>
-    pub fn message_id(&self) -> std::option::Option<& str> {
+    pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p> 
-    /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p> 
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
-    pub fn sequence_number(&self) -> std::option::Option<& str> {
+    pub fn sequence_number(&self) -> std::option::Option<&str> {
         self.sequence_number.as_deref()
     }
 }
@@ -55,7 +55,8 @@ impl PublishBatchResultEntryBuilder {
     }
     /// <p>The <code>Id</code> of an entry in a batch request.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>An identifier for the message.</p>
     pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,31 +65,29 @@ impl PublishBatchResultEntryBuilder {
     }
     /// <p>An identifier for the message.</p>
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input; self
+        self.message_id = input;
+        self
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p> 
-    /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p> 
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     pub fn sequence_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.sequence_number = Some(input.into());
         self
     }
-    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p> 
-    /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p> 
+    /// <p>This parameter applies only to FIFO (first-in-first-out) topics.</p>
+    /// <p>The large, non-consecutive number that Amazon SNS assigns to each message.</p>
     /// <p>The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for a particular <code>MessageGroupId</code>.</p>
     pub fn set_sequence_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sequence_number = input; self
+        self.sequence_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`PublishBatchResultEntry`](crate::types::PublishBatchResultEntry).
     pub fn build(self) -> crate::types::PublishBatchResultEntry {
         crate::types::PublishBatchResultEntry {
-            id: self.id
-            ,
-            message_id: self.message_id
-            ,
-            sequence_number: self.sequence_number
-            ,
+            id: self.id,
+            message_id: self.message_id,
+            sequence_number: self.sequence_number,
         }
     }
 }
-

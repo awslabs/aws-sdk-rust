@@ -3,7 +3,7 @@
 /// <p>Application request metrics for an AWS Elastic Beanstalk environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationMetrics  {
+pub struct ApplicationMetrics {
     /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
     #[doc(hidden)]
     pub duration: std::option::Option<i32>,
@@ -27,11 +27,11 @@ impl ApplicationMetrics {
         self.request_count
     }
     /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
-    pub fn status_codes(&self) -> std::option::Option<& crate::types::StatusCodes> {
+    pub fn status_codes(&self) -> std::option::Option<&crate::types::StatusCodes> {
         self.status_codes.as_ref()
     }
     /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
-    pub fn latency(&self) -> std::option::Option<& crate::types::Latency> {
+    pub fn latency(&self) -> std::option::Option<&crate::types::Latency> {
         self.latency.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl ApplicationMetricsBuilder {
     }
     /// <p>The amount of time that the metrics cover (usually 10 seconds). For example, you might have 5 requests (<code>request_count</code>) within the most recent time slice of 10 seconds (<code>duration</code>).</p>
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration = input; self
+        self.duration = input;
+        self
     }
     /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
     pub fn request_count(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl ApplicationMetricsBuilder {
     }
     /// <p>Average number of requests handled by the web server per second over the last 10 seconds.</p>
     pub fn set_request_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.request_count = input; self
+        self.request_count = input;
+        self
     }
     /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
     pub fn status_codes(mut self, input: crate::types::StatusCodes) -> Self {
@@ -76,8 +78,12 @@ impl ApplicationMetricsBuilder {
         self
     }
     /// <p>Represents the percentage of requests over the last 10 seconds that resulted in each type of status code response.</p>
-    pub fn set_status_codes(mut self, input: std::option::Option<crate::types::StatusCodes>) -> Self {
-        self.status_codes = input; self
+    pub fn set_status_codes(
+        mut self,
+        input: std::option::Option<crate::types::StatusCodes>,
+    ) -> Self {
+        self.status_codes = input;
+        self
     }
     /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
     pub fn latency(mut self, input: crate::types::Latency) -> Self {
@@ -86,21 +92,16 @@ impl ApplicationMetricsBuilder {
     }
     /// <p>Represents the average latency for the slowest X percent of requests over the last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
     pub fn set_latency(mut self, input: std::option::Option<crate::types::Latency>) -> Self {
-        self.latency = input; self
+        self.latency = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApplicationMetrics`](crate::types::ApplicationMetrics).
     pub fn build(self) -> crate::types::ApplicationMetrics {
         crate::types::ApplicationMetrics {
-            duration: self.duration
-            ,
-            request_count: self.request_count
-                .unwrap_or_default()
-            ,
-            status_codes: self.status_codes
-            ,
-            latency: self.latency
-            ,
+            duration: self.duration,
+            request_count: self.request_count.unwrap_or_default(),
+            status_codes: self.status_codes,
+            latency: self.latency,
         }
     }
 }
-

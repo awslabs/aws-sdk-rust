@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRuleInput  {
+pub struct CreateRuleInput {
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateRuleInput  {
 }
 impl CreateRuleInput {
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<& str> {
+    pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
     /// <p></p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl CreateRuleInputBuilder {
     }
     /// <p>A friendly name or description of the <code>Rule</code>. You can't change the name of a <code>Rule</code> after you create it.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</p>
     pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl CreateRuleInputBuilder {
     }
     /// <p>A friendly name or description for the metrics for this <code>Rule</code>. The name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and minimum length one. It can't contain whitespace or metric names reserved for AWS WAF, including "All" and "Default_Action." You can't change the name of the metric after you create the <code>Rule</code>.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input; self
+        self.change_token = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -85,28 +88,30 @@ impl CreateRuleInputBuilder {
     /// <p></p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    pub fn build(self) -> Result<crate::operation::create_rule::CreateRuleInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_rule::CreateRuleInput {
-                name: self.name
-                ,
-                metric_name: self.metric_name
-                ,
-                change_token: self.change_token
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_rule::CreateRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_rule::CreateRuleInput {
+            name: self.name,
+            metric_name: self.metric_name,
+            change_token: self.change_token,
+            tags: self.tags,
+        })
     }
 }
-

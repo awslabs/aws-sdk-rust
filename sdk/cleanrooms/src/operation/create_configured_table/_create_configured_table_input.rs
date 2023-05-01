@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfiguredTableInput  {
+pub struct CreateConfiguredTableInput {
     /// <p>The name of the configured table.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -20,37 +20,43 @@ pub struct CreateConfiguredTableInput  {
     pub analysis_method: std::option::Option<crate::types::AnalysisMethod>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateConfiguredTableInput {
     /// <p>The name of the configured table.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description for the configured table.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A reference to the AWS Glue table being configured.</p>
-    pub fn table_reference(&self) -> std::option::Option<& crate::types::TableReference> {
+    pub fn table_reference(&self) -> std::option::Option<&crate::types::TableReference> {
         self.table_reference.as_ref()
     }
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    pub fn allowed_columns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn allowed_columns(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_columns.as_deref()
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn analysis_method(&self) -> std::option::Option<& crate::types::AnalysisMethod> {
+    pub fn analysis_method(&self) -> std::option::Option<&crate::types::AnalysisMethod> {
         self.analysis_method.as_ref()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl CreateConfiguredTableInput {
     /// Creates a new builder-style object to manufacture [`CreateConfiguredTableInput`](crate::operation::create_configured_table::CreateConfiguredTableInput).
-    pub fn builder() -> crate::operation::create_configured_table::builders::CreateConfiguredTableInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_configured_table::builders::CreateConfiguredTableInputBuilder
+    {
         crate::operation::create_configured_table::builders::CreateConfiguredTableInputBuilder::default()
     }
 }
@@ -64,7 +70,8 @@ pub struct CreateConfiguredTableInputBuilder {
     pub(crate) table_reference: std::option::Option<crate::types::TableReference>,
     pub(crate) allowed_columns: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) analysis_method: std::option::Option<crate::types::AnalysisMethod>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateConfiguredTableInputBuilder {
     /// <p>The name of the configured table.</p>
@@ -74,7 +81,8 @@ impl CreateConfiguredTableInputBuilder {
     }
     /// <p>The name of the configured table.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description for the configured table.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +91,8 @@ impl CreateConfiguredTableInputBuilder {
     }
     /// <p>A description for the configured table.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A reference to the AWS Glue table being configured.</p>
     pub fn table_reference(mut self, input: crate::types::TableReference) -> Self {
@@ -91,8 +100,12 @@ impl CreateConfiguredTableInputBuilder {
         self
     }
     /// <p>A reference to the AWS Glue table being configured.</p>
-    pub fn set_table_reference(mut self, input: std::option::Option<crate::types::TableReference>) -> Self {
-        self.table_reference = input; self
+    pub fn set_table_reference(
+        mut self,
+        input: std::option::Option<crate::types::TableReference>,
+    ) -> Self {
+        self.table_reference = input;
+        self
     }
     /// Appends an item to `allowed_columns`.
     ///
@@ -101,13 +114,17 @@ impl CreateConfiguredTableInputBuilder {
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
     pub fn allowed_columns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allowed_columns.unwrap_or_default();
-                        v.push(input.into());
-                        self.allowed_columns = Some(v);
-                        self
+        v.push(input.into());
+        self.allowed_columns = Some(v);
+        self
     }
     /// <p>The columns of the underlying table that can be used by collaborations or analysis rules.</p>
-    pub fn set_allowed_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.allowed_columns = input; self
+    pub fn set_allowed_columns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.allowed_columns = input;
+        self
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
     pub fn analysis_method(mut self, input: crate::types::AnalysisMethod) -> Self {
@@ -115,42 +132,54 @@ impl CreateConfiguredTableInputBuilder {
         self
     }
     /// <p>The analysis method for the configured tables. The only valid value is currently `DIRECT_QUERY`.</p>
-    pub fn set_analysis_method(mut self, input: std::option::Option<crate::types::AnalysisMethod>) -> Self {
-        self.analysis_method = input; self
+    pub fn set_analysis_method(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisMethod>,
+    ) -> Self {
+        self.analysis_method = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateConfiguredTableInput`](crate::operation::create_configured_table::CreateConfiguredTableInput).
-    pub fn build(self) -> Result<crate::operation::create_configured_table::CreateConfiguredTableInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_configured_table::CreateConfiguredTableInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_configured_table::CreateConfiguredTableInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                table_reference: self.table_reference
-                ,
-                allowed_columns: self.allowed_columns
-                ,
-                analysis_method: self.analysis_method
-                ,
-                tags: self.tags
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                table_reference: self.table_reference,
+                allowed_columns: self.allowed_columns,
+                analysis_method: self.analysis_method,
+                tags: self.tags,
+            },
         )
     }
 }
-

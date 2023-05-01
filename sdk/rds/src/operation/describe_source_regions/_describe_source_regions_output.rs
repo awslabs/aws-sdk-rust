@@ -3,7 +3,7 @@
 /// <p>Contains the result of a successful invocation of the <code>DescribeSourceRegions</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSourceRegionsOutput  {
+pub struct DescribeSourceRegionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -14,22 +14,24 @@ pub struct DescribeSourceRegionsOutput  {
 }
 impl DescribeSourceRegionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
-    pub fn source_regions(&self) -> std::option::Option<& [crate::types::SourceRegion]> {
+    pub fn source_regions(&self) -> std::option::Option<&[crate::types::SourceRegion]> {
         self.source_regions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSourceRegionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeSourceRegionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceRegionsOutput`](crate::operation::describe_source_regions::DescribeSourceRegionsOutput).
-    pub fn builder() -> crate::operation::describe_source_regions::builders::DescribeSourceRegionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_source_regions::builders::DescribeSourceRegionsOutputBuilder
+    {
         crate::operation::describe_source_regions::builders::DescribeSourceRegionsOutputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl DescribeSourceRegionsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Appends an item to `source_regions`.
     ///
@@ -59,32 +62,33 @@ impl DescribeSourceRegionsOutputBuilder {
     /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
     pub fn source_regions(mut self, input: crate::types::SourceRegion) -> Self {
         let mut v = self.source_regions.unwrap_or_default();
-                        v.push(input);
-                        self.source_regions = Some(v);
-                        self
+        v.push(input);
+        self.source_regions = Some(v);
+        self
     }
     /// <p>A list of <code>SourceRegion</code> instances that contains each source Amazon Web Services Region that the current Amazon Web Services Region can get a read replica or a DB snapshot from.</p>
-    pub fn set_source_regions(mut self, input: std::option::Option<std::vec::Vec<crate::types::SourceRegion>>) -> Self {
-        self.source_regions = input; self
+    pub fn set_source_regions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SourceRegion>>,
+    ) -> Self {
+        self.source_regions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeSourceRegionsOutput`](crate::operation::describe_source_regions::DescribeSourceRegionsOutput).
     pub fn build(self) -> crate::operation::describe_source_regions::DescribeSourceRegionsOutput {
         crate::operation::describe_source_regions::DescribeSourceRegionsOutput {
-            marker: self.marker
-            ,
-            source_regions: self.source_regions
-            ,
+            marker: self.marker,
+            source_regions: self.source_regions,
             _request_id: self._request_id,
         }
     }
 }
-

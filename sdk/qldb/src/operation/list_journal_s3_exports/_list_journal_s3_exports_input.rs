@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJournalS3ExportsInput  {
+pub struct ListJournalS3ExportsInput {
     /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,13 +16,14 @@ impl ListJournalS3ExportsInput {
         self.max_results
     }
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListJournalS3ExportsInput {
     /// Creates a new builder-style object to manufacture [`ListJournalS3ExportsInput`](crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput).
-    pub fn builder() -> crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsInputBuilder {
         crate::operation::list_journal_s3_exports::builders::ListJournalS3ExportsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListJournalS3ExportsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl ListJournalS3ExportsInputBuilder {
     }
     /// <p>A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListJournalS3ExportsInput`](crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput).
-    pub fn build(self) -> Result<crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_journal_s3_exports::ListJournalS3ExportsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

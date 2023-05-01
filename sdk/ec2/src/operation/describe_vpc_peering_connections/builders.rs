@@ -4,107 +4,130 @@ pub use crate::operation::describe_vpc_peering_connections::_describe_vpc_peerin
 pub use crate::operation::describe_vpc_peering_connections::_describe_vpc_peering_connections_input::DescribeVpcPeeringConnectionsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeVpcPeeringConnections`.
-/// 
+///
 /// <p>Describes one or more of your VPC peering connections.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVpcPeeringConnectionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder,
 }
-impl DescribeVpcPeeringConnectionsFluentBuilder  {
+impl DescribeVpcPeeringConnectionsFluentBuilder {
     /// Creates a new `DescribeVpcPeeringConnections`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnections, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnections,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator {
-                                crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator{
+        crate::operation::describe_vpc_peering_connections::paginator::DescribeVpcPeeringConnectionsPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.</p> </li> 
-    /// <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the accepter VPC.</p> </li> 
-    /// <li> <p> <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li> 
-    /// <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC peering connection.</p> </li> 
-    /// <li> <p> <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.</p> </li> 
-    /// <li> <p> <code>requester-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the requester VPC.</p> </li> 
-    /// <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li> 
-    /// <li> <p> <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li> 
-    /// <li> <p> <code>status-message</code> - A message that provides more information about the status of the VPC peering connection, if applicable.</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.</p> </li>
+    /// <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the accepter VPC.</p> </li>
+    /// <li> <p> <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
+    /// <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC peering connection.</p> </li>
+    /// <li> <p> <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.</p> </li>
+    /// <li> <p> <code>requester-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the requester VPC.</p> </li>
+    /// <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
+    /// <li> <p> <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li>
+    /// <li> <p> <code>status-message</code> - A message that provides more information about the status of the VPC peering connection, if applicable.</p> </li>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
-    /// <li> <p> <code>vpc-peering-connection-id</code> - The ID of the VPC peering connection.</p> </li> 
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-peering-connection-id</code> - The ID of the VPC peering connection.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.</p> </li> 
-    /// <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the accepter VPC.</p> </li> 
-    /// <li> <p> <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li> 
-    /// <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC peering connection.</p> </li> 
-    /// <li> <p> <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.</p> </li> 
-    /// <li> <p> <code>requester-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the requester VPC.</p> </li> 
-    /// <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li> 
-    /// <li> <p> <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li> 
-    /// <li> <p> <code>status-message</code> - A message that provides more information about the status of the VPC peering connection, if applicable.</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter VPC.</p> </li>
+    /// <li> <p> <code>accepter-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the accepter VPC.</p> </li>
+    /// <li> <p> <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
+    /// <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC peering connection.</p> </li>
+    /// <li> <p> <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the requester's VPC.</p> </li>
+    /// <li> <p> <code>requester-vpc-info.owner-id</code> - The ID of the Amazon Web Services account that owns the requester VPC.</p> </li>
+    /// <li> <p> <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
+    /// <li> <p> <code>status-code</code> - The status of the VPC peering connection (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> | <code>provisioning</code> | <code>active</code> | <code>deleting</code> | <code>deleted</code> | <code>rejected</code>).</p> </li>
+    /// <li> <p> <code>status-message</code> - A message that provides more information about the status of the VPC peering connection, if applicable.</p> </li>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
-    /// <li> <p> <code>vpc-peering-connection-id</code> - The ID of the VPC peering connection.</p> </li> 
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-peering-connection-id</code> - The ID of the VPC peering connection.</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -122,15 +145,18 @@ impl DescribeVpcPeeringConnectionsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_vpc_peering_connection_ids`](Self::set_vpc_peering_connection_ids).
     ///
-    /// <p>One or more VPC peering connection IDs.</p> 
+    /// <p>One or more VPC peering connection IDs.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
     pub fn vpc_peering_connection_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.vpc_peering_connection_ids(input.into());
         self
     }
-    /// <p>One or more VPC peering connection IDs.</p> 
+    /// <p>One or more VPC peering connection IDs.</p>
     /// <p>Default: Describes all your VPC peering connections.</p>
-    pub fn set_vpc_peering_connection_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_vpc_peering_connection_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_vpc_peering_connection_ids(input);
         self
     }
@@ -155,4 +181,3 @@ impl DescribeVpcPeeringConnectionsFluentBuilder  {
         self
     }
 }
-

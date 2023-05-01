@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventActionInput  {
+pub struct DeleteEventActionInput {
     /// <p>The unique identifier for the event action.</p>
     #[doc(hidden)]
     pub event_action_id: std::option::Option<std::string::String>,
 }
 impl DeleteEventActionInput {
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(&self) -> std::option::Option<& str> {
+    pub fn event_action_id(&self) -> std::option::Option<&str> {
         self.event_action_id.as_deref()
     }
 }
 impl DeleteEventActionInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventActionInput`](crate::operation::delete_event_action::DeleteEventActionInput).
-    pub fn builder() -> crate::operation::delete_event_action::builders::DeleteEventActionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_event_action::builders::DeleteEventActionInputBuilder {
         crate::operation::delete_event_action::builders::DeleteEventActionInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteEventActionInputBuilder {
     }
     /// <p>The unique identifier for the event action.</p>
     pub fn set_event_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_action_id = input; self
+        self.event_action_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteEventActionInput`](crate::operation::delete_event_action::DeleteEventActionInput).
-    pub fn build(self) -> Result<crate::operation::delete_event_action::DeleteEventActionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_event_action::DeleteEventActionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_event_action::DeleteEventActionInput {
-                event_action_id: self.event_action_id
-                ,
-            }
+                event_action_id: self.event_action_id,
+            },
         )
     }
 }
-

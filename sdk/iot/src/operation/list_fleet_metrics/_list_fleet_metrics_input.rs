@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFleetMetricsInput  {
+pub struct ListFleetMetricsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListFleetMetricsInput  {
 }
 impl ListFleetMetricsInput {
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in this operation.</p>
@@ -22,7 +22,8 @@ impl ListFleetMetricsInput {
 }
 impl ListFleetMetricsInput {
     /// Creates a new builder-style object to manufacture [`ListFleetMetricsInput`](crate::operation::list_fleet_metrics::ListFleetMetricsInput).
-    pub fn builder() -> crate::operation::list_fleet_metrics::builders::ListFleetMetricsInputBuilder {
+    pub fn builder() -> crate::operation::list_fleet_metrics::builders::ListFleetMetricsInputBuilder
+    {
         crate::operation::list_fleet_metrics::builders::ListFleetMetricsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListFleetMetricsInputBuilder {
     }
     /// <p>To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -51,18 +53,21 @@ impl ListFleetMetricsInputBuilder {
     }
     /// <p>The maximum number of results to return in this operation.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListFleetMetricsInput`](crate::operation::list_fleet_metrics::ListFleetMetricsInput).
-    pub fn build(self) -> Result<crate::operation::list_fleet_metrics::ListFleetMetricsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_fleet_metrics::ListFleetMetricsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_fleet_metrics::ListFleetMetricsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

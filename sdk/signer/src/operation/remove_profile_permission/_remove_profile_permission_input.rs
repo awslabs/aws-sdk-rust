@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveProfilePermissionInput  {
+pub struct RemoveProfilePermissionInput {
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
     #[doc(hidden)]
     pub profile_name: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct RemoveProfilePermissionInput  {
 }
 impl RemoveProfilePermissionInput {
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
-    pub fn profile_name(&self) -> std::option::Option<& str> {
+    pub fn profile_name(&self) -> std::option::Option<&str> {
         self.profile_name.as_deref()
     }
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
-    pub fn revision_id(&self) -> std::option::Option<& str> {
+    pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
     /// <p>A unique identifier for the cross-account permissions statement.</p>
-    pub fn statement_id(&self) -> std::option::Option<& str> {
+    pub fn statement_id(&self) -> std::option::Option<&str> {
         self.statement_id.as_deref()
     }
 }
 impl RemoveProfilePermissionInput {
     /// Creates a new builder-style object to manufacture [`RemoveProfilePermissionInput`](crate::operation::remove_profile_permission::RemoveProfilePermissionInput).
-    pub fn builder() -> crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder
+    {
         crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl RemoveProfilePermissionInputBuilder {
     }
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
     pub fn set_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profile_name = input; self
+        self.profile_name = input;
+        self
     }
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl RemoveProfilePermissionInputBuilder {
     }
     /// <p>An identifier for the current revision of the signing profile permissions.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input; self
+        self.revision_id = input;
+        self
     }
     /// <p>A unique identifier for the cross-account permissions statement.</p>
     pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl RemoveProfilePermissionInputBuilder {
     }
     /// <p>A unique identifier for the cross-account permissions statement.</p>
     pub fn set_statement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.statement_id = input; self
+        self.statement_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoveProfilePermissionInput`](crate::operation::remove_profile_permission::RemoveProfilePermissionInput).
-    pub fn build(self) -> Result<crate::operation::remove_profile_permission::RemoveProfilePermissionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::remove_profile_permission::RemoveProfilePermissionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::remove_profile_permission::RemoveProfilePermissionInput {
-                profile_name: self.profile_name
-                ,
-                revision_id: self.revision_id
-                ,
-                statement_id: self.statement_id
-                ,
-            }
+                profile_name: self.profile_name,
+                revision_id: self.revision_id,
+                statement_id: self.statement_id,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Provides information about an activity that was performed by a campaign.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivityResponse  {
+pub struct ActivityResponse {
     /// <p>The unique identifier for the application that the campaign applies to.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -45,39 +45,40 @@ pub struct ActivityResponse  {
     pub treatment_id: std::option::Option<std::string::String>,
     /// <p>A JSON object that contains metrics relating to the campaign execution for this campaign activity. For information about the structure and contents of the results, see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub execution_metrics: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub execution_metrics:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ActivityResponse {
     /// <p>The unique identifier for the application that the campaign applies to.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the campaign that the activity applies to.</p>
-    pub fn campaign_id(&self) -> std::option::Option<& str> {
+    pub fn campaign_id(&self) -> std::option::Option<&str> {
         self.campaign_id.as_deref()
     }
     /// <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.</p>
-    pub fn end(&self) -> std::option::Option<& str> {
+    pub fn end(&self) -> std::option::Option<&str> {
         self.end.as_deref()
     }
     /// <p>The unique identifier for the activity.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.</p>
-    pub fn result(&self) -> std::option::Option<& str> {
+    pub fn result(&self) -> std::option::Option<&str> {
         self.result.as_deref()
     }
     /// <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
-    pub fn scheduled_start(&self) -> std::option::Option<& str> {
+    pub fn scheduled_start(&self) -> std::option::Option<&str> {
         self.scheduled_start.as_deref()
     }
     /// <p>The actual start time, in ISO 8601 format, of the activity.</p>
-    pub fn start(&self) -> std::option::Option<& str> {
+    pub fn start(&self) -> std::option::Option<&str> {
         self.start.as_deref()
     }
     /// <p>The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>The total number of endpoints that the campaign successfully delivered messages to.</p>
@@ -97,11 +98,14 @@ impl ActivityResponse {
         self.total_endpoint_count
     }
     /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
-    pub fn treatment_id(&self) -> std::option::Option<& str> {
+    pub fn treatment_id(&self) -> std::option::Option<&str> {
         self.treatment_id.as_deref()
     }
     /// <p>A JSON object that contains metrics relating to the campaign execution for this campaign activity. For information about the structure and contents of the results, see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
-    pub fn execution_metrics(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn execution_metrics(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.execution_metrics.as_ref()
     }
 }
@@ -129,7 +133,8 @@ pub struct ActivityResponseBuilder {
     pub(crate) timezones_total_count: std::option::Option<i32>,
     pub(crate) total_endpoint_count: std::option::Option<i32>,
     pub(crate) treatment_id: std::option::Option<std::string::String>,
-    pub(crate) execution_metrics: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) execution_metrics:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ActivityResponseBuilder {
     /// <p>The unique identifier for the application that the campaign applies to.</p>
@@ -139,7 +144,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The unique identifier for the application that the campaign applies to.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The unique identifier for the campaign that the activity applies to.</p>
     pub fn campaign_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +154,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The unique identifier for the campaign that the activity applies to.</p>
     pub fn set_campaign_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.campaign_id = input; self
+        self.campaign_id = input;
+        self
     }
     /// <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.</p>
     pub fn end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,7 +164,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The actual time, in ISO 8601 format, when the activity was marked CANCELLED or COMPLETED.</p>
     pub fn set_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end = input; self
+        self.end = input;
+        self
     }
     /// <p>The unique identifier for the activity.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,7 +174,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The unique identifier for the activity.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.</p>
     pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,7 +184,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>Specifies whether the activity succeeded. Possible values are SUCCESS and FAIL.</p>
     pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.result = input; self
+        self.result = input;
+        self
     }
     /// <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
     pub fn scheduled_start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,7 +194,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The scheduled start time, in ISO 8601 format, for the activity.</p>
     pub fn set_scheduled_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scheduled_start = input; self
+        self.scheduled_start = input;
+        self
     }
     /// <p>The actual start time, in ISO 8601 format, of the activity.</p>
     pub fn start(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,7 +204,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The actual start time, in ISO 8601 format, of the activity.</p>
     pub fn set_start(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start = input; self
+        self.start = input;
+        self
     }
     /// <p>The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -202,7 +214,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The current status of the activity. Possible values are: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, and COMPLETED.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The total number of endpoints that the campaign successfully delivered messages to.</p>
     pub fn successful_endpoint_count(mut self, input: i32) -> Self {
@@ -211,7 +224,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The total number of endpoints that the campaign successfully delivered messages to.</p>
     pub fn set_successful_endpoint_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.successful_endpoint_count = input; self
+        self.successful_endpoint_count = input;
+        self
     }
     /// <p>The total number of time zones that were completed.</p>
     pub fn timezones_completed_count(mut self, input: i32) -> Self {
@@ -220,7 +234,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The total number of time zones that were completed.</p>
     pub fn set_timezones_completed_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.timezones_completed_count = input; self
+        self.timezones_completed_count = input;
+        self
     }
     /// <p>The total number of unique time zones that are in the segment for the campaign.</p>
     pub fn timezones_total_count(mut self, input: i32) -> Self {
@@ -229,7 +244,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The total number of unique time zones that are in the segment for the campaign.</p>
     pub fn set_timezones_total_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.timezones_total_count = input; self
+        self.timezones_total_count = input;
+        self
     }
     /// <p>The total number of endpoints that the campaign attempted to deliver messages to.</p>
     pub fn total_endpoint_count(mut self, input: i32) -> Self {
@@ -238,7 +254,8 @@ impl ActivityResponseBuilder {
     }
     /// <p>The total number of endpoints that the campaign attempted to deliver messages to.</p>
     pub fn set_total_endpoint_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_endpoint_count = input; self
+        self.total_endpoint_count = input;
+        self
     }
     /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
     pub fn treatment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -247,59 +264,51 @@ impl ActivityResponseBuilder {
     }
     /// <p>The unique identifier for the campaign treatment that the activity applies to. A treatment is a variation of a campaign that's used for A/B testing of a campaign.</p>
     pub fn set_treatment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.treatment_id = input; self
+        self.treatment_id = input;
+        self
     }
     /// Adds a key-value pair to `execution_metrics`.
     ///
     /// To override the contents of this collection use [`set_execution_metrics`](Self::set_execution_metrics).
     ///
     /// <p>A JSON object that contains metrics relating to the campaign execution for this campaign activity. For information about the structure and contents of the results, see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
-    pub fn execution_metrics(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn execution_metrics(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.execution_metrics.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.execution_metrics = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.execution_metrics = Some(hash_map);
+        self
     }
     /// <p>A JSON object that contains metrics relating to the campaign execution for this campaign activity. For information about the structure and contents of the results, see <a href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>
-    pub fn set_execution_metrics(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.execution_metrics = input; self
+    pub fn set_execution_metrics(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.execution_metrics = input;
+        self
     }
     /// Consumes the builder and constructs a [`ActivityResponse`](crate::types::ActivityResponse).
     pub fn build(self) -> crate::types::ActivityResponse {
         crate::types::ActivityResponse {
-            application_id: self.application_id
-            ,
-            campaign_id: self.campaign_id
-            ,
-            end: self.end
-            ,
-            id: self.id
-            ,
-            result: self.result
-            ,
-            scheduled_start: self.scheduled_start
-            ,
-            start: self.start
-            ,
-            state: self.state
-            ,
-            successful_endpoint_count: self.successful_endpoint_count
-                .unwrap_or_default()
-            ,
-            timezones_completed_count: self.timezones_completed_count
-                .unwrap_or_default()
-            ,
-            timezones_total_count: self.timezones_total_count
-                .unwrap_or_default()
-            ,
-            total_endpoint_count: self.total_endpoint_count
-                .unwrap_or_default()
-            ,
-            treatment_id: self.treatment_id
-            ,
-            execution_metrics: self.execution_metrics
-            ,
+            application_id: self.application_id,
+            campaign_id: self.campaign_id,
+            end: self.end,
+            id: self.id,
+            result: self.result,
+            scheduled_start: self.scheduled_start,
+            start: self.start,
+            state: self.state,
+            successful_endpoint_count: self.successful_endpoint_count.unwrap_or_default(),
+            timezones_completed_count: self.timezones_completed_count.unwrap_or_default(),
+            timezones_total_count: self.timezones_total_count.unwrap_or_default(),
+            total_endpoint_count: self.total_endpoint_count.unwrap_or_default(),
+            treatment_id: self.treatment_id,
+            execution_metrics: self.execution_metrics,
         }
     }
 }
-

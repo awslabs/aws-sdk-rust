@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAwsOrganizationsAccessStatusOutput  {
+pub struct GetAwsOrganizationsAccessStatusOutput {
     /// <p>The status of the portfolio share feature.</p>
     #[doc(hidden)]
     pub access_status: std::option::Option<crate::types::AccessStatus>,
@@ -10,18 +10,18 @@ pub struct GetAwsOrganizationsAccessStatusOutput  {
 }
 impl GetAwsOrganizationsAccessStatusOutput {
     /// <p>The status of the portfolio share feature.</p>
-    pub fn access_status(&self) -> std::option::Option<& crate::types::AccessStatus> {
+    pub fn access_status(&self) -> std::option::Option<&crate::types::AccessStatus> {
         self.access_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAwsOrganizationsAccessStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetAwsOrganizationsAccessStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetAwsOrganizationsAccessStatusOutput`](crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusOutput).
-    pub fn builder() -> crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusOutputBuilder {
+    pub fn builder() -> crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusOutputBuilder{
         crate::operation::get_aws_organizations_access_status::builders::GetAwsOrganizationsAccessStatusOutputBuilder::default()
     }
 }
@@ -40,20 +40,27 @@ impl GetAwsOrganizationsAccessStatusOutputBuilder {
         self
     }
     /// <p>The status of the portfolio share feature.</p>
-    pub fn set_access_status(mut self, input: std::option::Option<crate::types::AccessStatus>) -> Self {
-        self.access_status = input; self
+    pub fn set_access_status(
+        mut self,
+        input: std::option::Option<crate::types::AccessStatus>,
+    ) -> Self {
+        self.access_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetAwsOrganizationsAccessStatusOutput`](crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusOutput).
-    pub fn build(self) -> crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusOutput
+    {
         crate::operation::get_aws_organizations_access_status::GetAwsOrganizationsAccessStatusOutput {
             access_status: self.access_status
             ,
@@ -61,4 +68,3 @@ impl GetAwsOrganizationsAccessStatusOutputBuilder {
         }
     }
 }
-

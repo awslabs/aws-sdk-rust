@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let r53hostedzonedeletionstatecode = unimplemented!();
 /// match r53hostedzonedeletionstatecode {
@@ -32,14 +32,22 @@
 /// Specifically, when `r53hostedzonedeletionstatecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `R53HostedZoneDeletionStateCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum R53HostedZoneDeletionStateCode {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -50,45 +58,46 @@ pub enum R53HostedZoneDeletionStateCode {
     #[allow(missing_docs)] // documentation missing in model
     Succeeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for R53HostedZoneDeletionStateCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FAILED" => R53HostedZoneDeletionStateCode::Failed,
-"PENDING" => R53HostedZoneDeletionStateCode::Pending,
-"STARTED" => R53HostedZoneDeletionStateCode::Started,
-"SUCCEEDED" => R53HostedZoneDeletionStateCode::Succeeded,
-other => R53HostedZoneDeletionStateCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for R53HostedZoneDeletionStateCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(R53HostedZoneDeletionStateCode::from(s))
-                }
-            }
-impl R53HostedZoneDeletionStateCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    R53HostedZoneDeletionStateCode::Failed => "FAILED",
-    R53HostedZoneDeletionStateCode::Pending => "PENDING",
-    R53HostedZoneDeletionStateCode::Started => "STARTED",
-    R53HostedZoneDeletionStateCode::Succeeded => "SUCCEEDED",
-    R53HostedZoneDeletionStateCode::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => R53HostedZoneDeletionStateCode::Failed,
+            "PENDING" => R53HostedZoneDeletionStateCode::Pending,
+            "STARTED" => R53HostedZoneDeletionStateCode::Started,
+            "SUCCEEDED" => R53HostedZoneDeletionStateCode::Succeeded,
+            other => R53HostedZoneDeletionStateCode::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FAILED", "PENDING", "STARTED", "SUCCEEDED"]
-                }
-            }
-impl AsRef<str> for R53HostedZoneDeletionStateCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for R53HostedZoneDeletionStateCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(R53HostedZoneDeletionStateCode::from(s))
+    }
+}
+impl R53HostedZoneDeletionStateCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            R53HostedZoneDeletionStateCode::Failed => "FAILED",
+            R53HostedZoneDeletionStateCode::Pending => "PENDING",
+            R53HostedZoneDeletionStateCode::Started => "STARTED",
+            R53HostedZoneDeletionStateCode::Succeeded => "SUCCEEDED",
+            R53HostedZoneDeletionStateCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILED", "PENDING", "STARTED", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for R53HostedZoneDeletionStateCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

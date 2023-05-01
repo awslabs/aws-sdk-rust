@@ -3,14 +3,14 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, identifies a Kinesis Data Firehose delivery stream as the streaming source. You provide the delivery stream's Amazon Resource Name (ARN).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisFirehoseInput  {
+pub struct KinesisFirehoseInput {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseInput {
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl KinesisFirehoseInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the delivery stream.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`KinesisFirehoseInput`](crate::types::KinesisFirehoseInput).
     pub fn build(self) -> crate::types::KinesisFirehoseInput {
         crate::types::KinesisFirehoseInput {
-            resource_arn: self.resource_arn
-            ,
+            resource_arn: self.resource_arn,
         }
     }
 }
-

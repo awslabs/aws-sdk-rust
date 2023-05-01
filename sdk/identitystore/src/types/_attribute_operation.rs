@@ -3,7 +3,7 @@
 /// <p>An operation that applies to the requested group. This operation might add, replace, or remove an attribute.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeOperation  {
+pub struct AttributeOperation {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     #[doc(hidden)]
     pub attribute_path: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AttributeOperation  {
 }
 impl AttributeOperation {
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
-    pub fn attribute_path(&self) -> std::option::Option<& str> {
+    pub fn attribute_path(&self) -> std::option::Option<&str> {
         self.attribute_path.as_deref()
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
-    pub fn attribute_value(&self) -> std::option::Option<& aws_smithy_types::Document> {
+    pub fn attribute_value(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.attribute_value.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl AttributeOperationBuilder {
     }
     /// <p>A string representation of the path to a given attribute or sub-attribute. Supports JMESPath.</p>
     pub fn set_attribute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_path = input; self
+        self.attribute_path = input;
+        self
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
     pub fn attribute_value(mut self, input: aws_smithy_types::Document) -> Self {
@@ -51,17 +52,18 @@ impl AttributeOperationBuilder {
         self
     }
     /// <p>The value of the attribute. This is a <code>Document</code> type. This type is not supported by Java V1, Go V1, and older versions of the AWS CLI.</p>
-    pub fn set_attribute_value(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
-        self.attribute_value = input; self
+    pub fn set_attribute_value(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Document>,
+    ) -> Self {
+        self.attribute_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttributeOperation`](crate::types::AttributeOperation).
     pub fn build(self) -> crate::types::AttributeOperation {
         crate::types::AttributeOperation {
-            attribute_path: self.attribute_path
-            ,
-            attribute_value: self.attribute_value
-            ,
+            attribute_path: self.attribute_path,
+            attribute_value: self.attribute_value,
         }
     }
 }
-

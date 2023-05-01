@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePortfolioOutput  {
+pub struct DescribePortfolioOutput {
     /// <p>Information about the portfolio.</p>
     #[doc(hidden)]
     pub portfolio_detail: std::option::Option<crate::types::PortfolioDetail>,
@@ -19,30 +19,31 @@ pub struct DescribePortfolioOutput  {
 }
 impl DescribePortfolioOutput {
     /// <p>Information about the portfolio.</p>
-    pub fn portfolio_detail(&self) -> std::option::Option<& crate::types::PortfolioDetail> {
+    pub fn portfolio_detail(&self) -> std::option::Option<&crate::types::PortfolioDetail> {
         self.portfolio_detail.as_ref()
     }
     /// <p>Information about the tags associated with the portfolio.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Information about the TagOptions associated with the portfolio.</p>
-    pub fn tag_options(&self) -> std::option::Option<& [crate::types::TagOptionDetail]> {
+    pub fn tag_options(&self) -> std::option::Option<&[crate::types::TagOptionDetail]> {
         self.tag_options.as_deref()
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn budgets(&self) -> std::option::Option<& [crate::types::BudgetDetail]> {
+    pub fn budgets(&self) -> std::option::Option<&[crate::types::BudgetDetail]> {
         self.budgets.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePortfolioOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribePortfolioOutput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioOutput`](crate::operation::describe_portfolio::DescribePortfolioOutput).
-    pub fn builder() -> crate::operation::describe_portfolio::builders::DescribePortfolioOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_portfolio::builders::DescribePortfolioOutputBuilder {
         crate::operation::describe_portfolio::builders::DescribePortfolioOutputBuilder::default()
     }
 }
@@ -64,8 +65,12 @@ impl DescribePortfolioOutputBuilder {
         self
     }
     /// <p>Information about the portfolio.</p>
-    pub fn set_portfolio_detail(mut self, input: std::option::Option<crate::types::PortfolioDetail>) -> Self {
-        self.portfolio_detail = input; self
+    pub fn set_portfolio_detail(
+        mut self,
+        input: std::option::Option<crate::types::PortfolioDetail>,
+    ) -> Self {
+        self.portfolio_detail = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -74,13 +79,17 @@ impl DescribePortfolioOutputBuilder {
     /// <p>Information about the tags associated with the portfolio.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Information about the tags associated with the portfolio.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Appends an item to `tag_options`.
     ///
@@ -89,13 +98,17 @@ impl DescribePortfolioOutputBuilder {
     /// <p>Information about the TagOptions associated with the portfolio.</p>
     pub fn tag_options(mut self, input: crate::types::TagOptionDetail) -> Self {
         let mut v = self.tag_options.unwrap_or_default();
-                        v.push(input);
-                        self.tag_options = Some(v);
-                        self
+        v.push(input);
+        self.tag_options = Some(v);
+        self
     }
     /// <p>Information about the TagOptions associated with the portfolio.</p>
-    pub fn set_tag_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagOptionDetail>>) -> Self {
-        self.tag_options = input; self
+    pub fn set_tag_options(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagOptionDetail>>,
+    ) -> Self {
+        self.tag_options = input;
+        self
     }
     /// Appends an item to `budgets`.
     ///
@@ -104,36 +117,35 @@ impl DescribePortfolioOutputBuilder {
     /// <p>Information about the associated budgets.</p>
     pub fn budgets(mut self, input: crate::types::BudgetDetail) -> Self {
         let mut v = self.budgets.unwrap_or_default();
-                        v.push(input);
-                        self.budgets = Some(v);
-                        self
+        v.push(input);
+        self.budgets = Some(v);
+        self
     }
     /// <p>Information about the associated budgets.</p>
-    pub fn set_budgets(mut self, input: std::option::Option<std::vec::Vec<crate::types::BudgetDetail>>) -> Self {
-        self.budgets = input; self
+    pub fn set_budgets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BudgetDetail>>,
+    ) -> Self {
+        self.budgets = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribePortfolioOutput`](crate::operation::describe_portfolio::DescribePortfolioOutput).
     pub fn build(self) -> crate::operation::describe_portfolio::DescribePortfolioOutput {
         crate::operation::describe_portfolio::DescribePortfolioOutput {
-            portfolio_detail: self.portfolio_detail
-            ,
-            tags: self.tags
-            ,
-            tag_options: self.tag_options
-            ,
-            budgets: self.budgets
-            ,
+            portfolio_detail: self.portfolio_detail,
+            tags: self.tags,
+            tag_options: self.tag_options,
+            budgets: self.budgets,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,16 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLaunchConfigurationTemplateInput  {
+pub struct CreateLaunchConfigurationTemplateInput {
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Launch disposition.</p>
     #[doc(hidden)]
     pub launch_disposition: std::option::Option<crate::types::LaunchDisposition>,
     /// <p>Target instance type right-sizing method.</p>
     #[doc(hidden)]
-    pub target_instance_type_right_sizing_method: std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
+    pub target_instance_type_right_sizing_method:
+        std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     /// <p>Copy private IP.</p>
     #[doc(hidden)]
     pub copy_private_ip: std::option::Option<bool>,
@@ -24,15 +26,20 @@ pub struct CreateLaunchConfigurationTemplateInput  {
 }
 impl CreateLaunchConfigurationTemplateInput {
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>Launch disposition.</p>
-    pub fn launch_disposition(&self) -> std::option::Option<& crate::types::LaunchDisposition> {
+    pub fn launch_disposition(&self) -> std::option::Option<&crate::types::LaunchDisposition> {
         self.launch_disposition.as_ref()
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(&self) -> std::option::Option<& crate::types::TargetInstanceTypeRightSizingMethod> {
+    pub fn target_instance_type_right_sizing_method(
+        &self,
+    ) -> std::option::Option<&crate::types::TargetInstanceTypeRightSizingMethod> {
         self.target_instance_type_right_sizing_method.as_ref()
     }
     /// <p>Copy private IP.</p>
@@ -44,16 +51,19 @@ impl CreateLaunchConfigurationTemplateInput {
         self.copy_tags
     }
     /// <p>Licensing.</p>
-    pub fn licensing(&self) -> std::option::Option<& crate::types::Licensing> {
+    pub fn licensing(&self) -> std::option::Option<&crate::types::Licensing> {
         self.licensing.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateLaunchConfigurationTemplateInput  {
+impl std::fmt::Debug for CreateLaunchConfigurationTemplateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLaunchConfigurationTemplateInput");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("launch_disposition", &self.launch_disposition);
-        formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
+        formatter.field(
+            "target_instance_type_right_sizing_method",
+            &self.target_instance_type_right_sizing_method,
+        );
         formatter.field("copy_private_ip", &self.copy_private_ip);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
@@ -62,7 +72,7 @@ impl  std::fmt::Debug for CreateLaunchConfigurationTemplateInput  {
 }
 impl CreateLaunchConfigurationTemplateInput {
     /// Creates a new builder-style object to manufacture [`CreateLaunchConfigurationTemplateInput`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput).
-    pub fn builder() -> crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateInputBuilder {
+    pub fn builder() -> crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateInputBuilder{
         crate::operation::create_launch_configuration_template::builders::CreateLaunchConfigurationTemplateInputBuilder::default()
     }
 }
@@ -71,9 +81,11 @@ impl CreateLaunchConfigurationTemplateInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct CreateLaunchConfigurationTemplateInputBuilder {
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) launch_disposition: std::option::Option<crate::types::LaunchDisposition>,
-    pub(crate) target_instance_type_right_sizing_method: std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
+    pub(crate) target_instance_type_right_sizing_method:
+        std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
     pub(crate) copy_private_ip: std::option::Option<bool>,
     pub(crate) copy_tags: std::option::Option<bool>,
     pub(crate) licensing: std::option::Option<crate::types::Licensing>,
@@ -84,15 +96,25 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Request to associate tags during creation of a Launch Configuration Template.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Launch disposition.</p>
     pub fn launch_disposition(mut self, input: crate::types::LaunchDisposition) -> Self {
@@ -100,17 +122,28 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
         self
     }
     /// <p>Launch disposition.</p>
-    pub fn set_launch_disposition(mut self, input: std::option::Option<crate::types::LaunchDisposition>) -> Self {
-        self.launch_disposition = input; self
+    pub fn set_launch_disposition(
+        mut self,
+        input: std::option::Option<crate::types::LaunchDisposition>,
+    ) -> Self {
+        self.launch_disposition = input;
+        self
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn target_instance_type_right_sizing_method(mut self, input: crate::types::TargetInstanceTypeRightSizingMethod) -> Self {
+    pub fn target_instance_type_right_sizing_method(
+        mut self,
+        input: crate::types::TargetInstanceTypeRightSizingMethod,
+    ) -> Self {
         self.target_instance_type_right_sizing_method = Some(input);
         self
     }
     /// <p>Target instance type right-sizing method.</p>
-    pub fn set_target_instance_type_right_sizing_method(mut self, input: std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>) -> Self {
-        self.target_instance_type_right_sizing_method = input; self
+    pub fn set_target_instance_type_right_sizing_method(
+        mut self,
+        input: std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
+    ) -> Self {
+        self.target_instance_type_right_sizing_method = input;
+        self
     }
     /// <p>Copy private IP.</p>
     pub fn copy_private_ip(mut self, input: bool) -> Self {
@@ -119,7 +152,8 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>Copy private IP.</p>
     pub fn set_copy_private_ip(mut self, input: std::option::Option<bool>) -> Self {
-        self.copy_private_ip = input; self
+        self.copy_private_ip = input;
+        self
     }
     /// <p>Copy tags.</p>
     pub fn copy_tags(mut self, input: bool) -> Self {
@@ -128,7 +162,8 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>Copy tags.</p>
     pub fn set_copy_tags(mut self, input: std::option::Option<bool>) -> Self {
-        self.copy_tags = input; self
+        self.copy_tags = input;
+        self
     }
     /// <p>Licensing.</p>
     pub fn licensing(mut self, input: crate::types::Licensing) -> Self {
@@ -137,10 +172,11 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
     }
     /// <p>Licensing.</p>
     pub fn set_licensing(mut self, input: std::option::Option<crate::types::Licensing>) -> Self {
-        self.licensing = input; self
+        self.licensing = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateLaunchConfigurationTemplateInput`](crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput).
-    pub fn build(self) -> Result<crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::create_launch_configuration_template::CreateLaunchConfigurationTemplateInput {
                 tags: self.tags
@@ -164,11 +200,13 @@ impl std::fmt::Debug for CreateLaunchConfigurationTemplateInputBuilder {
         let mut formatter = f.debug_struct("CreateLaunchConfigurationTemplateInputBuilder");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("launch_disposition", &self.launch_disposition);
-        formatter.field("target_instance_type_right_sizing_method", &self.target_instance_type_right_sizing_method);
+        formatter.field(
+            "target_instance_type_right_sizing_method",
+            &self.target_instance_type_right_sizing_method,
+        );
         formatter.field("copy_private_ip", &self.copy_private_ip);
         formatter.field("copy_tags", &self.copy_tags);
         formatter.field("licensing", &self.licensing);
         formatter.finish()
     }
 }
-

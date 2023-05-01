@@ -3,7 +3,7 @@
 /// <p>Represents a cluster's status within a particular cache security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CacheSecurityGroupMembership  {
+pub struct CacheSecurityGroupMembership {
     /// <p>The name of the cache security group.</p>
     #[doc(hidden)]
     pub cache_security_group_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CacheSecurityGroupMembership  {
 }
 impl CacheSecurityGroupMembership {
     /// <p>The name of the cache security group.</p>
-    pub fn cache_security_group_name(&self) -> std::option::Option<& str> {
+    pub fn cache_security_group_name(&self) -> std::option::Option<&str> {
         self.cache_security_group_name.as_deref()
     }
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl CacheSecurityGroupMembershipBuilder {
         self
     }
     /// <p>The name of the cache security group.</p>
-    pub fn set_cache_security_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_security_group_name = input; self
+    pub fn set_cache_security_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cache_security_group_name = input;
+        self
     }
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl CacheSecurityGroupMembershipBuilder {
     }
     /// <p>The membership status in the cache security group. The status changes when a cache security group is modified, or when the cache security groups assigned to a cluster are modified.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`CacheSecurityGroupMembership`](crate::types::CacheSecurityGroupMembership).
     pub fn build(self) -> crate::types::CacheSecurityGroupMembership {
         crate::types::CacheSecurityGroupMembership {
-            cache_security_group_name: self.cache_security_group_name
-            ,
-            status: self.status
-            ,
+            cache_security_group_name: self.cache_security_group_name,
+            status: self.status,
         }
     }
 }
-

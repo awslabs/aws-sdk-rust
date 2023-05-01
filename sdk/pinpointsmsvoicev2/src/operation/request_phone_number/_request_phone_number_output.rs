@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestPhoneNumberOutput  {
+pub struct RequestPhoneNumberOutput {
     /// <p>The Amazon Resource Name (ARN) of the requested phone number.</p>
     #[doc(hidden)]
     pub phone_number_arn: std::option::Option<std::string::String>,
@@ -58,39 +58,39 @@ pub struct RequestPhoneNumberOutput  {
 }
 impl RequestPhoneNumberOutput {
     /// <p>The Amazon Resource Name (ARN) of the requested phone number.</p>
-    pub fn phone_number_arn(&self) -> std::option::Option<& str> {
+    pub fn phone_number_arn(&self) -> std::option::Option<&str> {
         self.phone_number_arn.as_deref()
     }
     /// <p>The unique identifier of the new phone number.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<& str> {
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The new phone number that was requested.</p>
-    pub fn phone_number(&self) -> std::option::Option<& str> {
+    pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
     /// <p>The current status of the request.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::NumberStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::NumberStatus> {
         self.status.as_ref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> std::option::Option<& str> {
+    pub fn iso_country_code(&self) -> std::option::Option<&str> {
         self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<& crate::types::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
-    pub fn number_capabilities(&self) -> std::option::Option<& [crate::types::NumberCapability]> {
+    pub fn number_capabilities(&self) -> std::option::Option<&[crate::types::NumberCapability]> {
         self.number_capabilities.as_deref()
     }
     /// <p>The type of number that was released.</p>
-    pub fn number_type(&self) -> std::option::Option<& crate::types::RequestableNumberType> {
+    pub fn number_type(&self) -> std::option::Option<&crate::types::RequestableNumberType> {
         self.number_type.as_ref()
     }
     /// <p>The monthly price, in US dollars, to lease the phone number.</p>
-    pub fn monthly_leasing_price(&self) -> std::option::Option<& str> {
+    pub fn monthly_leasing_price(&self) -> std::option::Option<&str> {
         self.monthly_leasing_price.as_deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
@@ -98,7 +98,7 @@ impl RequestPhoneNumberOutput {
         self.two_way_enabled
     }
     /// <p>The ARN used to identify the two way channel.</p>
-    pub fn two_way_channel_arn(&self) -> std::option::Option<& str> {
+    pub fn two_way_channel_arn(&self) -> std::option::Option<&str> {
         self.two_way_channel_arn.as_deref()
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
@@ -106,7 +106,7 @@ impl RequestPhoneNumberOutput {
         self.self_managed_opt_outs_enabled
     }
     /// <p>The name of the OptOutList that is associated with the requested phone number.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
@@ -114,26 +114,27 @@ impl RequestPhoneNumberOutput {
         self.deletion_protection_enabled
     }
     /// <p>The unique identifier of the pool associated with the phone number </p>
-    pub fn pool_id(&self) -> std::option::Option<& str> {
+    pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
     /// <p>An array of key and value pair tags that are associated with the phone number.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RequestPhoneNumberOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RequestPhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`RequestPhoneNumberOutput`](crate::operation::request_phone_number::RequestPhoneNumberOutput).
-    pub fn builder() -> crate::operation::request_phone_number::builders::RequestPhoneNumberOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::request_phone_number::builders::RequestPhoneNumberOutputBuilder {
         crate::operation::request_phone_number::builders::RequestPhoneNumberOutputBuilder::default()
     }
 }
@@ -148,7 +149,8 @@ pub struct RequestPhoneNumberOutputBuilder {
     pub(crate) status: std::option::Option<crate::types::NumberStatus>,
     pub(crate) iso_country_code: std::option::Option<std::string::String>,
     pub(crate) message_type: std::option::Option<crate::types::MessageType>,
-    pub(crate) number_capabilities: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+    pub(crate) number_capabilities:
+        std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
     pub(crate) number_type: std::option::Option<crate::types::RequestableNumberType>,
     pub(crate) monthly_leasing_price: std::option::Option<std::string::String>,
     pub(crate) two_way_enabled: std::option::Option<bool>,
@@ -169,7 +171,8 @@ impl RequestPhoneNumberOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the requested phone number.</p>
     pub fn set_phone_number_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_arn = input; self
+        self.phone_number_arn = input;
+        self
     }
     /// <p>The unique identifier of the new phone number.</p>
     pub fn phone_number_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,7 +181,8 @@ impl RequestPhoneNumberOutputBuilder {
     }
     /// <p>The unique identifier of the new phone number.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_id = input; self
+        self.phone_number_id = input;
+        self
     }
     /// <p>The new phone number that was requested.</p>
     pub fn phone_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,7 +191,8 @@ impl RequestPhoneNumberOutputBuilder {
     }
     /// <p>The new phone number that was requested.</p>
     pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number = input; self
+        self.phone_number = input;
+        self
     }
     /// <p>The current status of the request.</p>
     pub fn status(mut self, input: crate::types::NumberStatus) -> Self {
@@ -196,7 +201,8 @@ impl RequestPhoneNumberOutputBuilder {
     }
     /// <p>The current status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::NumberStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn iso_country_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,7 +211,8 @@ impl RequestPhoneNumberOutputBuilder {
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
     pub fn set_iso_country_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iso_country_code = input; self
+        self.iso_country_code = input;
+        self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
@@ -213,8 +220,12 @@ impl RequestPhoneNumberOutputBuilder {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_type(mut self, input: std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input; self
+    pub fn set_message_type(
+        mut self,
+        input: std::option::Option<crate::types::MessageType>,
+    ) -> Self {
+        self.message_type = input;
+        self
     }
     /// Appends an item to `number_capabilities`.
     ///
@@ -223,13 +234,17 @@ impl RequestPhoneNumberOutputBuilder {
     /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
     pub fn number_capabilities(mut self, input: crate::types::NumberCapability) -> Self {
         let mut v = self.number_capabilities.unwrap_or_default();
-                        v.push(input);
-                        self.number_capabilities = Some(v);
-                        self
+        v.push(input);
+        self.number_capabilities = Some(v);
+        self
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages or both. </p>
-    pub fn set_number_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>) -> Self {
-        self.number_capabilities = input; self
+    pub fn set_number_capabilities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NumberCapability>>,
+    ) -> Self {
+        self.number_capabilities = input;
+        self
     }
     /// <p>The type of number that was released.</p>
     pub fn number_type(mut self, input: crate::types::RequestableNumberType) -> Self {
@@ -237,8 +252,12 @@ impl RequestPhoneNumberOutputBuilder {
         self
     }
     /// <p>The type of number that was released.</p>
-    pub fn set_number_type(mut self, input: std::option::Option<crate::types::RequestableNumberType>) -> Self {
-        self.number_type = input; self
+    pub fn set_number_type(
+        mut self,
+        input: std::option::Option<crate::types::RequestableNumberType>,
+    ) -> Self {
+        self.number_type = input;
+        self
     }
     /// <p>The monthly price, in US dollars, to lease the phone number.</p>
     pub fn monthly_leasing_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -246,8 +265,12 @@ impl RequestPhoneNumberOutputBuilder {
         self
     }
     /// <p>The monthly price, in US dollars, to lease the phone number.</p>
-    pub fn set_monthly_leasing_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monthly_leasing_price = input; self
+    pub fn set_monthly_leasing_price(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monthly_leasing_price = input;
+        self
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn two_way_enabled(mut self, input: bool) -> Self {
@@ -256,7 +279,8 @@ impl RequestPhoneNumberOutputBuilder {
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn set_two_way_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.two_way_enabled = input; self
+        self.two_way_enabled = input;
+        self
     }
     /// <p>The ARN used to identify the two way channel.</p>
     pub fn two_way_channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -264,8 +288,12 @@ impl RequestPhoneNumberOutputBuilder {
         self
     }
     /// <p>The ARN used to identify the two way channel.</p>
-    pub fn set_two_way_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.two_way_channel_arn = input; self
+    pub fn set_two_way_channel_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.two_way_channel_arn = input;
+        self
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn self_managed_opt_outs_enabled(mut self, input: bool) -> Self {
@@ -274,7 +302,8 @@ impl RequestPhoneNumberOutputBuilder {
     }
     /// <p>By default this is set to false. When an end recipient sends a message that begins with HELP or STOP to one of your dedicated numbers, Amazon Pinpoint automatically replies with a customizable message and adds the end recipient to the OptOutList. When set to true you're responsible for responding to HELP and STOP requests. You're also responsible for tracking and honoring opt-out requests.</p>
     pub fn set_self_managed_opt_outs_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.self_managed_opt_outs_enabled = input; self
+        self.self_managed_opt_outs_enabled = input;
+        self
     }
     /// <p>The name of the OptOutList that is associated with the requested phone number.</p>
     pub fn opt_out_list_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -282,8 +311,12 @@ impl RequestPhoneNumberOutputBuilder {
         self
     }
     /// <p>The name of the OptOutList that is associated with the requested phone number.</p>
-    pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.opt_out_list_name = input; self
+    pub fn set_opt_out_list_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.opt_out_list_name = input;
+        self
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
     pub fn deletion_protection_enabled(mut self, input: bool) -> Self {
@@ -292,7 +325,8 @@ impl RequestPhoneNumberOutputBuilder {
     }
     /// <p>By default this is set to false. When set to true the phone number can't be deleted. </p>
     pub fn set_deletion_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.deletion_protection_enabled = input; self
+        self.deletion_protection_enabled = input;
+        self
     }
     /// <p>The unique identifier of the pool associated with the phone number </p>
     pub fn pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -301,7 +335,8 @@ impl RequestPhoneNumberOutputBuilder {
     }
     /// <p>The unique identifier of the pool associated with the phone number </p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input; self
+        self.pool_id = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -310,13 +345,17 @@ impl RequestPhoneNumberOutputBuilder {
     /// <p>An array of key and value pair tags that are associated with the phone number.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>An array of key and value pair tags that are associated with the phone number.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -324,60 +363,43 @@ impl RequestPhoneNumberOutputBuilder {
         self
     }
     /// <p>The time when the phone number was created, in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RequestPhoneNumberOutput`](crate::operation::request_phone_number::RequestPhoneNumberOutput).
     pub fn build(self) -> crate::operation::request_phone_number::RequestPhoneNumberOutput {
         crate::operation::request_phone_number::RequestPhoneNumberOutput {
-            phone_number_arn: self.phone_number_arn
-            ,
-            phone_number_id: self.phone_number_id
-            ,
-            phone_number: self.phone_number
-            ,
-            status: self.status
-            ,
-            iso_country_code: self.iso_country_code
-            ,
-            message_type: self.message_type
-            ,
-            number_capabilities: self.number_capabilities
-            ,
-            number_type: self.number_type
-            ,
-            monthly_leasing_price: self.monthly_leasing_price
-            ,
-            two_way_enabled: self.two_way_enabled
-                .unwrap_or_default()
-            ,
-            two_way_channel_arn: self.two_way_channel_arn
-            ,
-            self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled
-                .unwrap_or_default()
-            ,
-            opt_out_list_name: self.opt_out_list_name
-            ,
-            deletion_protection_enabled: self.deletion_protection_enabled
-                .unwrap_or_default()
-            ,
-            pool_id: self.pool_id
-            ,
-            tags: self.tags
-            ,
-            created_timestamp: self.created_timestamp
-            ,
+            phone_number_arn: self.phone_number_arn,
+            phone_number_id: self.phone_number_id,
+            phone_number: self.phone_number,
+            status: self.status,
+            iso_country_code: self.iso_country_code,
+            message_type: self.message_type,
+            number_capabilities: self.number_capabilities,
+            number_type: self.number_type,
+            monthly_leasing_price: self.monthly_leasing_price,
+            two_way_enabled: self.two_way_enabled.unwrap_or_default(),
+            two_way_channel_arn: self.two_way_channel_arn,
+            self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled.unwrap_or_default(),
+            opt_out_list_name: self.opt_out_list_name,
+            deletion_protection_enabled: self.deletion_protection_enabled.unwrap_or_default(),
+            pool_id: self.pool_id,
+            tags: self.tags,
+            created_timestamp: self.created_timestamp,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p> Information about an enabled security standard in which a security control is enabled. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatedStandard  {
+pub struct AssociatedStandard {
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
     #[doc(hidden)]
     pub standards_id: std::option::Option<std::string::String>,
 }
 impl AssociatedStandard {
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
-    pub fn standards_id(&self) -> std::option::Option<& str> {
+    pub fn standards_id(&self) -> std::option::Option<&str> {
         self.standards_id.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl AssociatedStandardBuilder {
     }
     /// <p>The unique identifier of a standard in which a control is enabled. This field consists of the resource portion of the Amazon Resource Name (ARN) returned for a standard in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a> API response. </p>
     pub fn set_standards_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.standards_id = input; self
+        self.standards_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociatedStandard`](crate::types::AssociatedStandard).
     pub fn build(self) -> crate::types::AssociatedStandard {
         crate::types::AssociatedStandard {
-            standards_id: self.standards_id
-            ,
+            standards_id: self.standards_id,
         }
     }
 }
-

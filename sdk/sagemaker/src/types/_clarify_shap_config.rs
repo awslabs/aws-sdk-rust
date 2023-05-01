@@ -3,12 +3,12 @@
 /// <p>The configuration for SHAP analysis using SageMaker Clarify Explainer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClarifyShapConfig  {
+pub struct ClarifyShapConfig {
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
     #[doc(hidden)]
     pub shap_baseline_config: std::option::Option<crate::types::ClarifyShapBaselineConfig>,
-    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note> 
-    /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p> 
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
+    /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     #[doc(hidden)]
     pub number_of_samples: std::option::Option<i32>,
@@ -24,11 +24,13 @@ pub struct ClarifyShapConfig  {
 }
 impl ClarifyShapConfig {
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
-    pub fn shap_baseline_config(&self) -> std::option::Option<& crate::types::ClarifyShapBaselineConfig> {
+    pub fn shap_baseline_config(
+        &self,
+    ) -> std::option::Option<&crate::types::ClarifyShapBaselineConfig> {
         self.shap_baseline_config.as_ref()
     }
-    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note> 
-    /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p> 
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
+    /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     pub fn number_of_samples(&self) -> std::option::Option<i32> {
         self.number_of_samples
@@ -42,7 +44,7 @@ impl ClarifyShapConfig {
         self.seed
     }
     /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
-    pub fn text_config(&self) -> std::option::Option<& crate::types::ClarifyTextConfig> {
+    pub fn text_config(&self) -> std::option::Option<&crate::types::ClarifyTextConfig> {
         self.text_config.as_ref()
     }
 }
@@ -70,21 +72,26 @@ impl ClarifyShapConfigBuilder {
         self
     }
     /// <p>The configuration for the SHAP baseline of the Kernal SHAP algorithm.</p>
-    pub fn set_shap_baseline_config(mut self, input: std::option::Option<crate::types::ClarifyShapBaselineConfig>) -> Self {
-        self.shap_baseline_config = input; self
+    pub fn set_shap_baseline_config(
+        mut self,
+        input: std::option::Option<crate::types::ClarifyShapBaselineConfig>,
+    ) -> Self {
+        self.shap_baseline_config = input;
+        self
     }
-    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note> 
-    /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p> 
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
+    /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     pub fn number_of_samples(mut self, input: i32) -> Self {
         self.number_of_samples = Some(input);
         self
     }
-    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note> 
-    /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p> 
+    /// <p>The number of samples to be used for analysis by the Kernal SHAP algorithm. </p> <note>
+    /// <p>The number of samples determines the size of the synthetic dataset, which has an impact on latency of explainability requests. For more information, see the <b>Synthetic data</b> of <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html">Configure and create an endpoint</a>.</p>
     /// </note>
     pub fn set_number_of_samples(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_samples = input; self
+        self.number_of_samples = input;
+        self
     }
     /// <p>A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.</p>
     pub fn use_logit(mut self, input: bool) -> Self {
@@ -93,7 +100,8 @@ impl ClarifyShapConfigBuilder {
     }
     /// <p>A Boolean toggle to indicate if you want to use the logit function (true) or log-odds units (false) for model predictions. Defaults to false.</p>
     pub fn set_use_logit(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_logit = input; self
+        self.use_logit = input;
+        self
     }
     /// <p>The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.</p>
     pub fn seed(mut self, input: i32) -> Self {
@@ -102,7 +110,8 @@ impl ClarifyShapConfigBuilder {
     }
     /// <p>The starting value used to initialize the random number generator in the explainer. Provide a value for this parameter to obtain a deterministic SHAP result.</p>
     pub fn set_seed(mut self, input: std::option::Option<i32>) -> Self {
-        self.seed = input; self
+        self.seed = input;
+        self
     }
     /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
     pub fn text_config(mut self, input: crate::types::ClarifyTextConfig) -> Self {
@@ -110,23 +119,21 @@ impl ClarifyShapConfigBuilder {
         self
     }
     /// <p>A parameter that indicates if text features are treated as text and explanations are provided for individual units of text. Required for natural language processing (NLP) explainability only.</p>
-    pub fn set_text_config(mut self, input: std::option::Option<crate::types::ClarifyTextConfig>) -> Self {
-        self.text_config = input; self
+    pub fn set_text_config(
+        mut self,
+        input: std::option::Option<crate::types::ClarifyTextConfig>,
+    ) -> Self {
+        self.text_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClarifyShapConfig`](crate::types::ClarifyShapConfig).
     pub fn build(self) -> crate::types::ClarifyShapConfig {
         crate::types::ClarifyShapConfig {
-            shap_baseline_config: self.shap_baseline_config
-            ,
-            number_of_samples: self.number_of_samples
-            ,
-            use_logit: self.use_logit
-            ,
-            seed: self.seed
-            ,
-            text_config: self.text_config
-            ,
+            shap_baseline_config: self.shap_baseline_config,
+            number_of_samples: self.number_of_samples,
+            use_logit: self.use_logit,
+            seed: self.seed,
+            text_config: self.text_config,
         }
     }
 }
-

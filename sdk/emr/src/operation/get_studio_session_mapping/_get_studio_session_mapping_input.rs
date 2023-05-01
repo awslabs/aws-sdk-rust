@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStudioSessionMappingInput  {
+pub struct GetStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct GetStudioSessionMappingInput  {
 }
 impl GetStudioSessionMappingInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
     /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    pub fn identity_id(&self) -> std::option::Option<& str> {
+    pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
     }
     /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
-    pub fn identity_name(&self) -> std::option::Option<& str> {
+    pub fn identity_name(&self) -> std::option::Option<&str> {
         self.identity_name.as_deref()
     }
     /// <p>Specifies whether the identity to fetch is a user or a group.</p>
-    pub fn identity_type(&self) -> std::option::Option<& crate::types::IdentityType> {
+    pub fn identity_type(&self) -> std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
 }
 impl GetStudioSessionMappingInput {
     /// Creates a new builder-style object to manufacture [`GetStudioSessionMappingInput`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput).
-    pub fn builder() -> crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingInputBuilder
+    {
         crate::operation::get_studio_session_mapping::builders::GetStudioSessionMappingInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl GetStudioSessionMappingInputBuilder {
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl GetStudioSessionMappingInputBuilder {
     }
     /// <p>The globally unique identifier (GUID) of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn set_identity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_id = input; self
+        self.identity_id = input;
+        self
     }
     /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl GetStudioSessionMappingInputBuilder {
     }
     /// <p>The name of the user or group to fetch. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>. Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
     pub fn set_identity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_name = input; self
+        self.identity_name = input;
+        self
     }
     /// <p>Specifies whether the identity to fetch is a user or a group.</p>
     pub fn identity_type(mut self, input: crate::types::IdentityType) -> Self {
@@ -84,23 +89,27 @@ impl GetStudioSessionMappingInputBuilder {
         self
     }
     /// <p>Specifies whether the identity to fetch is a user or a group.</p>
-    pub fn set_identity_type(mut self, input: std::option::Option<crate::types::IdentityType>) -> Self {
-        self.identity_type = input; self
+    pub fn set_identity_type(
+        mut self,
+        input: std::option::Option<crate::types::IdentityType>,
+    ) -> Self {
+        self.identity_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetStudioSessionMappingInput`](crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput).
-    pub fn build(self) -> Result<crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_studio_session_mapping::GetStudioSessionMappingInput {
-                studio_id: self.studio_id
-                ,
-                identity_id: self.identity_id
-                ,
-                identity_name: self.identity_name
-                ,
-                identity_type: self.identity_type
-                ,
-            }
+                studio_id: self.studio_id,
+                identity_id: self.identity_id,
+                identity_name: self.identity_name,
+                identity_type: self.identity_type,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRefreshScheduleInput  {
+pub struct DeleteRefreshScheduleInput {
     /// <p>The ID of the dataset.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct DeleteRefreshScheduleInput  {
 }
 impl DeleteRefreshScheduleInput {
     /// <p>The ID of the dataset.</p>
-    pub fn data_set_id(&self) -> std::option::Option<& str> {
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the refresh schedule.</p>
-    pub fn schedule_id(&self) -> std::option::Option<& str> {
+    pub fn schedule_id(&self) -> std::option::Option<&str> {
         self.schedule_id.as_deref()
     }
 }
 impl DeleteRefreshScheduleInput {
     /// Creates a new builder-style object to manufacture [`DeleteRefreshScheduleInput`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput).
-    pub fn builder() -> crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleInputBuilder
+    {
         crate::operation::delete_refresh_schedule::builders::DeleteRefreshScheduleInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl DeleteRefreshScheduleInputBuilder {
     }
     /// <p>The ID of the dataset.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input; self
+        self.data_set_id = input;
+        self
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl DeleteRefreshScheduleInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The ID of the refresh schedule.</p>
     pub fn schedule_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl DeleteRefreshScheduleInputBuilder {
     }
     /// <p>The ID of the refresh schedule.</p>
     pub fn set_schedule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schedule_id = input; self
+        self.schedule_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRefreshScheduleInput`](crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput).
-    pub fn build(self) -> Result<crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_refresh_schedule::DeleteRefreshScheduleInput {
-                data_set_id: self.data_set_id
-                ,
-                aws_account_id: self.aws_account_id
-                ,
-                schedule_id: self.schedule_id
-                ,
-            }
+                data_set_id: self.data_set_id,
+                aws_account_id: self.aws_account_id,
+                schedule_id: self.schedule_id,
+            },
         )
     }
 }
-

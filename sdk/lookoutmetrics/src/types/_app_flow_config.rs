@@ -3,7 +3,7 @@
 /// <p>Details about an Amazon AppFlow flow datasource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AppFlowConfig  {
+pub struct AppFlowConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AppFlowConfig  {
 }
 impl AppFlowConfig {
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p> name of the flow.</p>
-    pub fn flow_name(&self) -> std::option::Option<& str> {
+    pub fn flow_name(&self) -> std::option::Option<&str> {
         self.flow_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AppFlowConfigBuilder {
     }
     /// <p>An IAM role that gives Amazon Lookout for Metrics permission to access the flow.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p> name of the flow.</p>
     pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl AppFlowConfigBuilder {
     }
     /// <p> name of the flow.</p>
     pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_name = input; self
+        self.flow_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`AppFlowConfig`](crate::types::AppFlowConfig).
     pub fn build(self) -> crate::types::AppFlowConfig {
         crate::types::AppFlowConfig {
-            role_arn: self.role_arn
-            ,
-            flow_name: self.flow_name
-            ,
+            role_arn: self.role_arn,
+            flow_name: self.flow_name,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Information about an Direct Connect connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectionOutput  {
+pub struct CreateConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -13,17 +13,17 @@ pub struct CreateConnectionOutput  {
     /// <p>The name of the connection.</p>
     #[doc(hidden)]
     pub connection_name: std::option::Option<std::string::String>,
-    /// <p>The state of the connection. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
+    /// <p>The state of the connection. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::types::ConnectionState>,
@@ -72,11 +72,11 @@ pub struct CreateConnectionOutput  {
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     #[doc(hidden)]
     pub mac_sec_capable: std::option::Option<bool>,
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     #[doc(hidden)]
     pub port_encryption_status: std::option::Option<std::string::String>,
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     #[doc(hidden)]
     pub encryption_mode: std::option::Option<std::string::String>,
@@ -87,42 +87,42 @@ pub struct CreateConnectionOutput  {
 }
 impl CreateConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
-    pub fn owner_account(&self) -> std::option::Option<& str> {
+    pub fn owner_account(&self) -> std::option::Option<&str> {
         self.owner_account.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<& str> {
+    pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
     /// <p>The name of the connection.</p>
-    pub fn connection_name(&self) -> std::option::Option<& str> {
+    pub fn connection_name(&self) -> std::option::Option<&str> {
         self.connection_name.as_deref()
     }
-    /// <p>The state of the connection. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
+    /// <p>The state of the connection. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
-    pub fn connection_state(&self) -> std::option::Option<& crate::types::ConnectionState> {
+    pub fn connection_state(&self) -> std::option::Option<&crate::types::ConnectionState> {
         self.connection_state.as_ref()
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
-    pub fn region(&self) -> std::option::Option<& str> {
+    pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The location of the connection.</p>
-    pub fn location(&self) -> std::option::Option<& str> {
+    pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The bandwidth of the connection.</p>
-    pub fn bandwidth(&self) -> std::option::Option<& str> {
+    pub fn bandwidth(&self) -> std::option::Option<&str> {
         self.bandwidth.as_deref()
     }
     /// <p>The ID of the VLAN.</p>
@@ -130,19 +130,19 @@ impl CreateConnectionOutput {
         self.vlan
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
-    pub fn partner_name(&self) -> std::option::Option<& str> {
+    pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn loa_issue_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn loa_issue_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.loa_issue_time.as_ref()
     }
     /// <p>The ID of the LAG.</p>
-    pub fn lag_id(&self) -> std::option::Option<& str> {
+    pub fn lag_id(&self) -> std::option::Option<&str> {
         self.lag_id.as_deref()
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
-    pub fn aws_device(&self) -> std::option::Option<& str> {
+    pub fn aws_device(&self) -> std::option::Option<&str> {
         self.aws_device.as_deref()
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
@@ -150,52 +150,55 @@ impl CreateConnectionOutput {
         self.jumbo_frame_capable
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
-    pub fn aws_device_v2(&self) -> std::option::Option<& str> {
+    pub fn aws_device_v2(&self) -> std::option::Option<&str> {
         self.aws_device_v2.as_deref()
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn aws_logical_device_id(&self) -> std::option::Option<& str> {
+    pub fn aws_logical_device_id(&self) -> std::option::Option<&str> {
         self.aws_logical_device_id.as_deref()
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn has_logical_redundancy(&self) -> std::option::Option<& crate::types::HasLogicalRedundancy> {
+    pub fn has_logical_redundancy(
+        &self,
+    ) -> std::option::Option<&crate::types::HasLogicalRedundancy> {
         self.has_logical_redundancy.as_ref()
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The name of the service provider associated with the connection.</p>
-    pub fn provider_name(&self) -> std::option::Option<& str> {
+    pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(&self) -> std::option::Option<bool> {
         self.mac_sec_capable
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn port_encryption_status(&self) -> std::option::Option<& str> {
+    pub fn port_encryption_status(&self) -> std::option::Option<&str> {
         self.port_encryption_status.as_deref()
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
-    pub fn encryption_mode(&self) -> std::option::Option<& str> {
+    pub fn encryption_mode(&self) -> std::option::Option<&str> {
         self.encryption_mode.as_deref()
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn mac_sec_keys(&self) -> std::option::Option<& [crate::types::MacSecKey]> {
+    pub fn mac_sec_keys(&self) -> std::option::Option<&[crate::types::MacSecKey]> {
         self.mac_sec_keys.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateConnectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateConnectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput).
-    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionOutputBuilder {
+    pub fn builder() -> crate::operation::create_connection::builders::CreateConnectionOutputBuilder
+    {
         crate::operation::create_connection::builders::CreateConnectionOutputBuilder::default()
     }
 }
@@ -236,7 +239,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
     pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_account = input; self
+        self.owner_account = input;
+        self
     }
     /// <p>The ID of the connection.</p>
     pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,7 +249,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input; self
+        self.connection_id = input;
+        self
     }
     /// <p>The name of the connection.</p>
     pub fn connection_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -254,38 +259,43 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The name of the connection.</p>
     pub fn set_connection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_name = input; self
+        self.connection_name = input;
+        self
     }
-    /// <p>The state of the connection. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
+    /// <p>The state of the connection. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
     pub fn connection_state(mut self, input: crate::types::ConnectionState) -> Self {
         self.connection_state = Some(input);
         self
     }
-    /// <p>The state of the connection. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li> 
-    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li> 
-    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li> 
-    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li> 
-    /// <li> <p> <code>down</code>: The network link is down.</p> </li> 
-    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li> 
-    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li> 
-    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li> 
-    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li> 
+    /// <p>The state of the connection. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>ordering</code>: The initial state of a hosted connection provisioned on an interconnect. The connection stays in the ordering state until the owner of the hosted connection confirms or declines the connection order.</p> </li>
+    /// <li> <p> <code>requested</code>: The initial state of a standard connection. The connection stays in the requested state until the Letter of Authorization (LOA) is sent to the customer.</p> </li>
+    /// <li> <p> <code>pending</code>: The connection has been approved and is being initialized.</p> </li>
+    /// <li> <p> <code>available</code>: The network link is up and the connection is ready for use.</p> </li>
+    /// <li> <p> <code>down</code>: The network link is down.</p> </li>
+    /// <li> <p> <code>deleting</code>: The connection is being deleted.</p> </li>
+    /// <li> <p> <code>deleted</code>: The connection has been deleted.</p> </li>
+    /// <li> <p> <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the <code>rejected</code> state if it is deleted by the customer.</p> </li>
+    /// <li> <p> <code>unknown</code>: The state of the connection is not available.</p> </li>
     /// </ul>
-    pub fn set_connection_state(mut self, input: std::option::Option<crate::types::ConnectionState>) -> Self {
-        self.connection_state = input; self
+    pub fn set_connection_state(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionState>,
+    ) -> Self {
+        self.connection_state = input;
+        self
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -294,7 +304,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The Amazon Web Services Region where the connection is located.</p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// <p>The location of the connection.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -303,7 +314,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The location of the connection.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// <p>The bandwidth of the connection.</p>
     pub fn bandwidth(mut self, input: impl Into<std::string::String>) -> Self {
@@ -312,7 +324,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The bandwidth of the connection.</p>
     pub fn set_bandwidth(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bandwidth = input; self
+        self.bandwidth = input;
+        self
     }
     /// <p>The ID of the VLAN.</p>
     pub fn vlan(mut self, input: i32) -> Self {
@@ -321,7 +334,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The ID of the VLAN.</p>
     pub fn set_vlan(mut self, input: std::option::Option<i32>) -> Self {
-        self.vlan = input; self
+        self.vlan = input;
+        self
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -330,7 +344,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The name of the Direct Connect service provider associated with the connection.</p>
     pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partner_name = input; self
+        self.partner_name = input;
+        self
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
     pub fn loa_issue_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -338,8 +353,12 @@ impl CreateConnectionOutputBuilder {
         self
     }
     /// <p>The time of the most recent call to <code>DescribeLoa</code> for this connection.</p>
-    pub fn set_loa_issue_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.loa_issue_time = input; self
+    pub fn set_loa_issue_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.loa_issue_time = input;
+        self
     }
     /// <p>The ID of the LAG.</p>
     pub fn lag_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -348,7 +367,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The ID of the LAG.</p>
     pub fn set_lag_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lag_id = input; self
+        self.lag_id = input;
+        self
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
     pub fn aws_device(mut self, input: impl Into<std::string::String>) -> Self {
@@ -357,7 +377,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The Direct Connect endpoint on which the physical connection terminates.</p>
     pub fn set_aws_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_device = input; self
+        self.aws_device = input;
+        self
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub fn jumbo_frame_capable(mut self, input: bool) -> Self {
@@ -366,7 +387,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
     pub fn set_jumbo_frame_capable(mut self, input: std::option::Option<bool>) -> Self {
-        self.jumbo_frame_capable = input; self
+        self.jumbo_frame_capable = input;
+        self
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub fn aws_device_v2(mut self, input: impl Into<std::string::String>) -> Self {
@@ -375,7 +397,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The Direct Connect endpoint that terminates the physical connection.</p>
     pub fn set_aws_device_v2(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_device_v2 = input; self
+        self.aws_device_v2 = input;
+        self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
     pub fn aws_logical_device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -383,8 +406,12 @@ impl CreateConnectionOutputBuilder {
         self
     }
     /// <p>The Direct Connect endpoint that terminates the logical connection. This device might be different than the device that terminates the physical connection.</p>
-    pub fn set_aws_logical_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_logical_device_id = input; self
+    pub fn set_aws_logical_device_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.aws_logical_device_id = input;
+        self
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
     pub fn has_logical_redundancy(mut self, input: crate::types::HasLogicalRedundancy) -> Self {
@@ -392,8 +419,12 @@ impl CreateConnectionOutputBuilder {
         self
     }
     /// <p>Indicates whether the connection supports a secondary BGP peer in the same address family (IPv4/IPv6).</p>
-    pub fn set_has_logical_redundancy(mut self, input: std::option::Option<crate::types::HasLogicalRedundancy>) -> Self {
-        self.has_logical_redundancy = input; self
+    pub fn set_has_logical_redundancy(
+        mut self,
+        input: std::option::Option<crate::types::HasLogicalRedundancy>,
+    ) -> Self {
+        self.has_logical_redundancy = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -402,13 +433,17 @@ impl CreateConnectionOutputBuilder {
     /// <p>The tags associated with the connection.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags associated with the connection.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The name of the service provider associated with the connection.</p>
     pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -417,7 +452,8 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>The name of the service provider associated with the connection.</p>
     pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider_name = input; self
+        self.provider_name = input;
+        self
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn mac_sec_capable(mut self, input: bool) -> Self {
@@ -426,29 +462,35 @@ impl CreateConnectionOutputBuilder {
     }
     /// <p>Indicates whether the connection supports MAC Security (MACsec).</p>
     pub fn set_mac_sec_capable(mut self, input: std::option::Option<bool>) -> Self {
-        self.mac_sec_capable = input; self
+        self.mac_sec_capable = input;
+        self
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
     pub fn port_encryption_status(mut self, input: impl Into<std::string::String>) -> Self {
         self.port_encryption_status = Some(input.into());
         self
     }
-    /// <p>The MAC Security (MACsec) port link status of the connection.</p> 
+    /// <p>The MAC Security (MACsec) port link status of the connection.</p>
     /// <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>
-    pub fn set_port_encryption_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.port_encryption_status = input; self
+    pub fn set_port_encryption_status(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.port_encryption_status = input;
+        self
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     pub fn encryption_mode(mut self, input: impl Into<std::string::String>) -> Self {
         self.encryption_mode = Some(input.into());
         self
     }
-    /// <p>The MAC Security (MACsec) connection encryption mode.</p> 
+    /// <p>The MAC Security (MACsec) connection encryption mode.</p>
     /// <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>
     pub fn set_encryption_mode(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.encryption_mode = input; self
+        self.encryption_mode = input;
+        self
     }
     /// Appends an item to `mac_sec_keys`.
     ///
@@ -457,73 +499,53 @@ impl CreateConnectionOutputBuilder {
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     pub fn mac_sec_keys(mut self, input: crate::types::MacSecKey) -> Self {
         let mut v = self.mac_sec_keys.unwrap_or_default();
-                        v.push(input);
-                        self.mac_sec_keys = Some(v);
-                        self
+        v.push(input);
+        self.mac_sec_keys = Some(v);
+        self
     }
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
-    pub fn set_mac_sec_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::MacSecKey>>) -> Self {
-        self.mac_sec_keys = input; self
+    pub fn set_mac_sec_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MacSecKey>>,
+    ) -> Self {
+        self.mac_sec_keys = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::operation::create_connection::CreateConnectionOutput).
     pub fn build(self) -> crate::operation::create_connection::CreateConnectionOutput {
         crate::operation::create_connection::CreateConnectionOutput {
-            owner_account: self.owner_account
-            ,
-            connection_id: self.connection_id
-            ,
-            connection_name: self.connection_name
-            ,
-            connection_state: self.connection_state
-            ,
-            region: self.region
-            ,
-            location: self.location
-            ,
-            bandwidth: self.bandwidth
-            ,
-            vlan: self.vlan
-                .unwrap_or_default()
-            ,
-            partner_name: self.partner_name
-            ,
-            loa_issue_time: self.loa_issue_time
-            ,
-            lag_id: self.lag_id
-            ,
-            aws_device: self.aws_device
-            ,
-            jumbo_frame_capable: self.jumbo_frame_capable
-            ,
-            aws_device_v2: self.aws_device_v2
-            ,
-            aws_logical_device_id: self.aws_logical_device_id
-            ,
-            has_logical_redundancy: self.has_logical_redundancy
-            ,
-            tags: self.tags
-            ,
-            provider_name: self.provider_name
-            ,
-            mac_sec_capable: self.mac_sec_capable
-            ,
-            port_encryption_status: self.port_encryption_status
-            ,
-            encryption_mode: self.encryption_mode
-            ,
-            mac_sec_keys: self.mac_sec_keys
-            ,
+            owner_account: self.owner_account,
+            connection_id: self.connection_id,
+            connection_name: self.connection_name,
+            connection_state: self.connection_state,
+            region: self.region,
+            location: self.location,
+            bandwidth: self.bandwidth,
+            vlan: self.vlan.unwrap_or_default(),
+            partner_name: self.partner_name,
+            loa_issue_time: self.loa_issue_time,
+            lag_id: self.lag_id,
+            aws_device: self.aws_device,
+            jumbo_frame_capable: self.jumbo_frame_capable,
+            aws_device_v2: self.aws_device_v2,
+            aws_logical_device_id: self.aws_logical_device_id,
+            has_logical_redundancy: self.has_logical_redundancy,
+            tags: self.tags,
+            provider_name: self.provider_name,
+            mac_sec_capable: self.mac_sec_capable,
+            port_encryption_status: self.port_encryption_status,
+            encryption_mode: self.encryption_mode,
+            mac_sec_keys: self.mac_sec_keys,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -4,50 +4,70 @@ pub use crate::operation::update_timeline_event::_update_timeline_event_output::
 pub use crate::operation::update_timeline_event::_update_timeline_event_input::UpdateTimelineEventInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateTimelineEvent`.
-/// 
+///
 /// <p>Updates a timeline event. You can update events of type <code>Custom Event</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTimelineEventFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder,
+    inner: crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder,
 }
-impl UpdateTimelineEventFluentBuilder  {
+impl UpdateTimelineEventFluentBuilder {
     /// Creates a new `UpdateTimelineEvent`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_timeline_event::UpdateTimelineEvent, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_timeline_event::UpdateTimelineEventError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_timeline_event::UpdateTimelineEventOutput, aws_smithy_http::result::SdkError<crate::operation::update_timeline_event::UpdateTimelineEventError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_timeline_event::UpdateTimelineEvent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_timeline_event::UpdateTimelineEventError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_timeline_event::UpdateTimelineEventOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_timeline_event::UpdateTimelineEventError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -64,7 +84,10 @@ impl UpdateTimelineEventFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn set_incident_record_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_incident_record_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_incident_record_arn(input);
         self
     }
@@ -84,7 +107,10 @@ impl UpdateTimelineEventFluentBuilder  {
         self
     }
     /// <p>The time that the event occurred.</p>
-    pub fn set_event_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_event_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_event_time(input);
         self
     }
@@ -112,19 +138,21 @@ impl UpdateTimelineEventFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_event_references`](Self::set_event_references).
     ///
-    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important> 
-    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p> 
+    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
+    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
     pub fn event_references(mut self, input: crate::types::EventReference) -> Self {
         self.inner = self.inner.event_references(input);
         self
     }
-    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important> 
-    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p> 
+    /// <p>Updates all existing references in a <code>TimelineEvent</code>. A reference is an Amazon Web Services resource involved or associated with the incident. To specify a reference, enter its Amazon Resource Name (ARN). You can also specify a related item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated with the DynamoDB table as a related item.</p> <important>
+    /// <p>This update action overrides all existing references. If you want to keep existing references, you must specify them in the call. If you don't, this action removes any existing references and enters only new references.</p>
     /// </important>
-    pub fn set_event_references(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventReference>>) -> Self {
+    pub fn set_event_references(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventReference>>,
+    ) -> Self {
         self.inner = self.inner.set_event_references(input);
         self
     }
 }
-

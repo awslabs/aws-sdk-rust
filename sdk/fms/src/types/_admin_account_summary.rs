@@ -3,40 +3,40 @@
 /// <p>Contains high level information about the Firewall Manager administrator account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdminAccountSummary  {
+pub struct AdminAccountSummary {
     /// <p>The Amazon Web Services account ID of the Firewall Manager administrator's account.</p>
     #[doc(hidden)]
     pub admin_account: std::option::Option<std::string::String>,
     /// <p>A boolean value that indicates if the administrator is the default administrator. If true, then this is the default administrator account. The default administrator can manage third-party firewalls and has full administrative scope. There is only one default administrator account per organization. For information about Firewall Manager default administrator accounts, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-administrators.html">Managing Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     #[doc(hidden)]
     pub default_admin: bool,
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li> 
-    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li> 
-    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li> 
-    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li> 
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <ul>
+    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
+    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
+    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
+    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::OrganizationStatus>,
 }
 impl AdminAccountSummary {
     /// <p>The Amazon Web Services account ID of the Firewall Manager administrator's account.</p>
-    pub fn admin_account(&self) -> std::option::Option<& str> {
+    pub fn admin_account(&self) -> std::option::Option<&str> {
         self.admin_account.as_deref()
     }
     /// <p>A boolean value that indicates if the administrator is the default administrator. If true, then this is the default administrator account. The default administrator can manage third-party firewalls and has full administrative scope. There is only one default administrator account per organization. For information about Firewall Manager default administrator accounts, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-administrators.html">Managing Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub fn default_admin(&self) -> bool {
         self.default_admin
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li> 
-    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li> 
-    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li> 
-    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li> 
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <ul>
+    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
+    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
+    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
+    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::OrganizationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::OrganizationStatus> {
         self.status.as_ref()
     }
 }
@@ -63,7 +63,8 @@ impl AdminAccountSummaryBuilder {
     }
     /// <p>The Amazon Web Services account ID of the Firewall Manager administrator's account.</p>
     pub fn set_admin_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.admin_account = input; self
+        self.admin_account = input;
+        self
     }
     /// <p>A boolean value that indicates if the administrator is the default administrator. If true, then this is the default administrator account. The default administrator can manage third-party firewalls and has full administrative scope. There is only one default administrator account per organization. For information about Firewall Manager default administrator accounts, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-administrators.html">Managing Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub fn default_admin(mut self, input: bool) -> Self {
@@ -72,40 +73,40 @@ impl AdminAccountSummaryBuilder {
     }
     /// <p>A boolean value that indicates if the administrator is the default administrator. If true, then this is the default administrator account. The default administrator can manage third-party firewalls and has full administrative scope. There is only one default administrator account per organization. For information about Firewall Manager default administrator accounts, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-administrators.html">Managing Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.</p>
     pub fn set_default_admin(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_admin = input; self
+        self.default_admin = input;
+        self
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li> 
-    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li> 
-    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li> 
-    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li> 
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <ul>
+    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
+    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
+    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
+    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::OrganizationStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li> 
-    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li> 
-    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li> 
-    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li> 
+    /// <p>The current status of the request to onboard a member account as an Firewall Manager administator.</p>
+    /// <ul>
+    /// <li> <p> <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.</p> </li>
+    /// <li> <p> <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall Manager as an administrator, and can perform actions on the resources defined in their <code>AdminScope</code>.</p> </li>
+    /// <li> <p> <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.</p> </li>
+    /// <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager administrator.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OrganizationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::OrganizationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`AdminAccountSummary`](crate::types::AdminAccountSummary).
     pub fn build(self) -> crate::types::AdminAccountSummary {
         crate::types::AdminAccountSummary {
-            admin_account: self.admin_account
-            ,
-            default_admin: self.default_admin
-                .unwrap_or_default()
-            ,
-            status: self.status
-            ,
+            admin_account: self.admin_account,
+            default_admin: self.default_admin.unwrap_or_default(),
+            status: self.status,
         }
     }
 }
-

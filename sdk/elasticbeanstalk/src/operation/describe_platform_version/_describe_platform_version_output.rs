@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePlatformVersionOutput  {
+pub struct DescribePlatformVersionOutput {
     /// <p>Detailed information about the platform version.</p>
     #[doc(hidden)]
     pub platform_description: std::option::Option<crate::types::PlatformDescription>,
@@ -10,18 +10,20 @@ pub struct DescribePlatformVersionOutput  {
 }
 impl DescribePlatformVersionOutput {
     /// <p>Detailed information about the platform version.</p>
-    pub fn platform_description(&self) -> std::option::Option<& crate::types::PlatformDescription> {
+    pub fn platform_description(&self) -> std::option::Option<&crate::types::PlatformDescription> {
         self.platform_description.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePlatformVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribePlatformVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribePlatformVersionOutput`](crate::operation::describe_platform_version::DescribePlatformVersionOutput).
-    pub fn builder() -> crate::operation::describe_platform_version::builders::DescribePlatformVersionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_platform_version::builders::DescribePlatformVersionOutputBuilder
+    {
         crate::operation::describe_platform_version::builders::DescribePlatformVersionOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl DescribePlatformVersionOutputBuilder {
         self
     }
     /// <p>Detailed information about the platform version.</p>
-    pub fn set_platform_description(mut self, input: std::option::Option<crate::types::PlatformDescription>) -> Self {
-        self.platform_description = input; self
+    pub fn set_platform_description(
+        mut self,
+        input: std::option::Option<crate::types::PlatformDescription>,
+    ) -> Self {
+        self.platform_description = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribePlatformVersionOutput`](crate::operation::describe_platform_version::DescribePlatformVersionOutput).
-    pub fn build(self) -> crate::operation::describe_platform_version::DescribePlatformVersionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_platform_version::DescribePlatformVersionOutput {
         crate::operation::describe_platform_version::DescribePlatformVersionOutput {
-            platform_description: self.platform_description
-            ,
+            platform_description: self.platform_description,
             _request_id: self._request_id,
         }
     }
 }
-

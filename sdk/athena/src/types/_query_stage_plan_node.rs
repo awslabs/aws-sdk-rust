@@ -3,7 +3,7 @@
 /// <p>Stage plan information such as name, identifier, sub plans, and remote sources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryStagePlanNode  {
+pub struct QueryStagePlanNode {
     /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct QueryStagePlanNode  {
 }
 impl QueryStagePlanNode {
     /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Information about the operation this query stage plan node is performing.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
-    pub fn children(&self) -> std::option::Option<& [crate::types::QueryStagePlanNode]> {
+    pub fn children(&self) -> std::option::Option<&[crate::types::QueryStagePlanNode]> {
         self.children.as_deref()
     }
     /// <p>Source plan node IDs.</p>
-    pub fn remote_sources(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn remote_sources(&self) -> std::option::Option<&[std::string::String]> {
         self.remote_sources.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl QueryStagePlanNodeBuilder {
     }
     /// <p>Name of the query stage plan that describes the operation this stage is performing as part of query execution.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Information about the operation this query stage plan node is performing.</p>
     pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl QueryStagePlanNodeBuilder {
     }
     /// <p>Information about the operation this query stage plan node is performing.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// Appends an item to `children`.
     ///
@@ -77,13 +79,17 @@ impl QueryStagePlanNodeBuilder {
     /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
     pub fn children(mut self, input: crate::types::QueryStagePlanNode) -> Self {
         let mut v = self.children.unwrap_or_default();
-                        v.push(input);
-                        self.children = Some(v);
-                        self
+        v.push(input);
+        self.children = Some(v);
+        self
     }
     /// <p>Stage plan information such as name, identifier, sub plans, and remote sources of child plan nodes/</p>
-    pub fn set_children(mut self, input: std::option::Option<std::vec::Vec<crate::types::QueryStagePlanNode>>) -> Self {
-        self.children = input; self
+    pub fn set_children(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::QueryStagePlanNode>>,
+    ) -> Self {
+        self.children = input;
+        self
     }
     /// Appends an item to `remote_sources`.
     ///
@@ -92,26 +98,25 @@ impl QueryStagePlanNodeBuilder {
     /// <p>Source plan node IDs.</p>
     pub fn remote_sources(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.remote_sources.unwrap_or_default();
-                        v.push(input.into());
-                        self.remote_sources = Some(v);
-                        self
+        v.push(input.into());
+        self.remote_sources = Some(v);
+        self
     }
     /// <p>Source plan node IDs.</p>
-    pub fn set_remote_sources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.remote_sources = input; self
+    pub fn set_remote_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.remote_sources = input;
+        self
     }
     /// Consumes the builder and constructs a [`QueryStagePlanNode`](crate::types::QueryStagePlanNode).
     pub fn build(self) -> crate::types::QueryStagePlanNode {
         crate::types::QueryStagePlanNode {
-            name: self.name
-            ,
-            identifier: self.identifier
-            ,
-            children: self.children
-            ,
-            remote_sources: self.remote_sources
-            ,
+            name: self.name,
+            identifier: self.identifier,
+            children: self.children,
+            remote_sources: self.remote_sources,
         }
     }
 }
-

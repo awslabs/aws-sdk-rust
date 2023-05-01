@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIpamDiscoveredAccountsInput  {
+pub struct GetIpamDiscoveredAccountsInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -28,19 +28,19 @@ impl GetIpamDiscoveredAccountsInput {
         self.dry_run
     }
     /// <p>A resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(&self) -> std::option::Option<& str> {
+    pub fn ipam_resource_discovery_id(&self) -> std::option::Option<&str> {
         self.ipam_resource_discovery_id.as_deref()
     }
     /// <p>The Amazon Web Services Region that the account information is returned from.</p>
-    pub fn discovery_region(&self) -> std::option::Option<& str> {
+    pub fn discovery_region(&self) -> std::option::Option<&str> {
         self.discovery_region.as_deref()
     }
     /// <p>Discovered account filters.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of discovered accounts to return in one page of results.</p>
@@ -50,7 +50,7 @@ impl GetIpamDiscoveredAccountsInput {
 }
 impl GetIpamDiscoveredAccountsInput {
     /// Creates a new builder-style object to manufacture [`GetIpamDiscoveredAccountsInput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput).
-    pub fn builder() -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder {
+    pub fn builder() -> crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder{
         crate::operation::get_ipam_discovered_accounts::builders::GetIpamDiscoveredAccountsInputBuilder::default()
     }
 }
@@ -74,7 +74,8 @@ impl GetIpamDiscoveredAccountsInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>A resource discovery ID.</p>
     pub fn ipam_resource_discovery_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +83,12 @@ impl GetIpamDiscoveredAccountsInputBuilder {
         self
     }
     /// <p>A resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_resource_discovery_id = input; self
+    pub fn set_ipam_resource_discovery_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ipam_resource_discovery_id = input;
+        self
     }
     /// <p>The Amazon Web Services Region that the account information is returned from.</p>
     pub fn discovery_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +97,8 @@ impl GetIpamDiscoveredAccountsInputBuilder {
     }
     /// <p>The Amazon Web Services Region that the account information is returned from.</p>
     pub fn set_discovery_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.discovery_region = input; self
+        self.discovery_region = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -101,13 +107,17 @@ impl GetIpamDiscoveredAccountsInputBuilder {
     /// <p>Discovered account filters.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>Discovered account filters.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +126,8 @@ impl GetIpamDiscoveredAccountsInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of discovered accounts to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -125,26 +136,25 @@ impl GetIpamDiscoveredAccountsInputBuilder {
     }
     /// <p>The maximum number of discovered accounts to return in one page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetIpamDiscoveredAccountsInput`](crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput).
-    pub fn build(self) -> Result<crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsInput {
-                dry_run: self.dry_run
-                ,
-                ipam_resource_discovery_id: self.ipam_resource_discovery_id
-                ,
-                discovery_region: self.discovery_region
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                dry_run: self.dry_run,
+                ipam_resource_discovery_id: self.ipam_resource_discovery_id,
+                discovery_region: self.discovery_region,
+                filters: self.filters,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

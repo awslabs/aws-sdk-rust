@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWaveInput  {
+pub struct UpdateWaveInput {
     /// <p>Wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateWaveInput  {
 }
 impl UpdateWaveInput {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<& str> {
+    pub fn wave_id(&self) -> std::option::Option<&str> {
         self.wave_id.as_deref()
     }
     /// <p>Wave name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Wave description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl UpdateWaveInputBuilder {
     }
     /// <p>Wave ID.</p>
     pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.wave_id = input; self
+        self.wave_id = input;
+        self
     }
     /// <p>Wave name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl UpdateWaveInputBuilder {
     }
     /// <p>Wave name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Wave description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl UpdateWaveInputBuilder {
     }
     /// <p>Wave description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateWaveInput`](crate::operation::update_wave::UpdateWaveInput).
-    pub fn build(self) -> Result<crate::operation::update_wave::UpdateWaveInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_wave::UpdateWaveInput {
-                wave_id: self.wave_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_wave::UpdateWaveInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_wave::UpdateWaveInput {
+            wave_id: self.wave_id,
+            name: self.name,
+            description: self.description,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Information about a source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceConfig  {
+pub struct SourceConfig {
     /// <p>The Amazon S3 bucket name.</p>
     #[doc(hidden)]
     pub s3_bucket: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SourceConfig  {
 }
 impl SourceConfig {
     /// <p>The Amazon S3 bucket name.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The s3 object key.</p>
-    pub fn s3_key(&self) -> std::option::Option<& str> {
+    pub fn s3_key(&self) -> std::option::Option<&str> {
         self.s3_key.as_deref()
     }
     /// <p>The target processor architecture for the application.</p>
-    pub fn architecture(&self) -> std::option::Option<& crate::types::Architecture> {
+    pub fn architecture(&self) -> std::option::Option<&crate::types::Architecture> {
         self.architecture.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl SourceConfigBuilder {
     }
     /// <p>The Amazon S3 bucket name.</p>
     pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket = input; self
+        self.s3_bucket = input;
+        self
     }
     /// <p>The s3 object key.</p>
     pub fn s3_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl SourceConfigBuilder {
     }
     /// <p>The s3 object key.</p>
     pub fn set_s3_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key = input; self
+        self.s3_key = input;
+        self
     }
     /// <p>The target processor architecture for the application.</p>
     pub fn architecture(mut self, input: crate::types::Architecture) -> Self {
@@ -68,19 +70,19 @@ impl SourceConfigBuilder {
         self
     }
     /// <p>The target processor architecture for the application.</p>
-    pub fn set_architecture(mut self, input: std::option::Option<crate::types::Architecture>) -> Self {
-        self.architecture = input; self
+    pub fn set_architecture(
+        mut self,
+        input: std::option::Option<crate::types::Architecture>,
+    ) -> Self {
+        self.architecture = input;
+        self
     }
     /// Consumes the builder and constructs a [`SourceConfig`](crate::types::SourceConfig).
     pub fn build(self) -> crate::types::SourceConfig {
         crate::types::SourceConfig {
-            s3_bucket: self.s3_bucket
-            ,
-            s3_key: self.s3_key
-            ,
-            architecture: self.architecture
-            ,
+            s3_bucket: self.s3_bucket,
+            s3_key: self.s3_key,
+            architecture: self.architecture,
         }
     }
 }
-

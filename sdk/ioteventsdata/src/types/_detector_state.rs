@@ -3,7 +3,7 @@
 /// <p>Information about the current state of the detector instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorState  {
+pub struct DetectorState {
     /// <p>The name of the state.</p>
     #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DetectorState  {
 }
 impl DetectorState {
     /// <p>The name of the state.</p>
-    pub fn state_name(&self) -> std::option::Option<& str> {
+    pub fn state_name(&self) -> std::option::Option<&str> {
         self.state_name.as_deref()
     }
     /// <p>The current values of the detector's variables.</p>
-    pub fn variables(&self) -> std::option::Option<& [crate::types::Variable]> {
+    pub fn variables(&self) -> std::option::Option<&[crate::types::Variable]> {
         self.variables.as_deref()
     }
     /// <p>The current state of the detector's timers.</p>
-    pub fn timers(&self) -> std::option::Option<& [crate::types::Timer]> {
+    pub fn timers(&self) -> std::option::Option<&[crate::types::Timer]> {
         self.timers.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DetectorStateBuilder {
     }
     /// <p>The name of the state.</p>
     pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_name = input; self
+        self.state_name = input;
+        self
     }
     /// Appends an item to `variables`.
     ///
@@ -60,13 +61,17 @@ impl DetectorStateBuilder {
     /// <p>The current values of the detector's variables.</p>
     pub fn variables(mut self, input: crate::types::Variable) -> Self {
         let mut v = self.variables.unwrap_or_default();
-                        v.push(input);
-                        self.variables = Some(v);
-                        self
+        v.push(input);
+        self.variables = Some(v);
+        self
     }
     /// <p>The current values of the detector's variables.</p>
-    pub fn set_variables(mut self, input: std::option::Option<std::vec::Vec<crate::types::Variable>>) -> Self {
-        self.variables = input; self
+    pub fn set_variables(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Variable>>,
+    ) -> Self {
+        self.variables = input;
+        self
     }
     /// Appends an item to `timers`.
     ///
@@ -75,24 +80,24 @@ impl DetectorStateBuilder {
     /// <p>The current state of the detector's timers.</p>
     pub fn timers(mut self, input: crate::types::Timer) -> Self {
         let mut v = self.timers.unwrap_or_default();
-                        v.push(input);
-                        self.timers = Some(v);
-                        self
+        v.push(input);
+        self.timers = Some(v);
+        self
     }
     /// <p>The current state of the detector's timers.</p>
-    pub fn set_timers(mut self, input: std::option::Option<std::vec::Vec<crate::types::Timer>>) -> Self {
-        self.timers = input; self
+    pub fn set_timers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Timer>>,
+    ) -> Self {
+        self.timers = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetectorState`](crate::types::DetectorState).
     pub fn build(self) -> crate::types::DetectorState {
         crate::types::DetectorState {
-            state_name: self.state_name
-            ,
-            variables: self.variables
-            ,
-            timers: self.timers
-            ,
+            state_name: self.state_name,
+            variables: self.variables,
+            timers: self.timers,
         }
     }
 }
-

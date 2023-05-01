@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWhatIfForecastExportInput  {
+pub struct DescribeWhatIfForecastExportInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
     #[doc(hidden)]
     pub what_if_forecast_export_arn: std::option::Option<std::string::String>,
 }
 impl DescribeWhatIfForecastExportInput {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
-    pub fn what_if_forecast_export_arn(&self) -> std::option::Option<& str> {
+    pub fn what_if_forecast_export_arn(&self) -> std::option::Option<&str> {
         self.what_if_forecast_export_arn.as_deref()
     }
 }
 impl DescribeWhatIfForecastExportInput {
     /// Creates a new builder-style object to manufacture [`DescribeWhatIfForecastExportInput`](crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput).
-    pub fn builder() -> crate::operation::describe_what_if_forecast_export::builders::DescribeWhatIfForecastExportInputBuilder {
+    pub fn builder() -> crate::operation::describe_what_if_forecast_export::builders::DescribeWhatIfForecastExportInputBuilder{
         crate::operation::describe_what_if_forecast_export::builders::DescribeWhatIfForecastExportInputBuilder::default()
     }
 }
@@ -33,17 +33,24 @@ impl DescribeWhatIfForecastExportInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.</p>
-    pub fn set_what_if_forecast_export_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.what_if_forecast_export_arn = input; self
+    pub fn set_what_if_forecast_export_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.what_if_forecast_export_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeWhatIfForecastExportInput`](crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput).
-    pub fn build(self) -> Result<crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_what_if_forecast_export::DescribeWhatIfForecastExportInput {
-                what_if_forecast_export_arn: self.what_if_forecast_export_arn
-                ,
-            }
+                what_if_forecast_export_arn: self.what_if_forecast_export_arn,
+            },
         )
     }
 }
-

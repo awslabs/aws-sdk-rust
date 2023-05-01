@@ -3,14 +3,14 @@
 /// <p>The tax documents required in your Amazon Web Services Region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaxDocuments  {
+pub struct TaxDocuments {
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
     #[doc(hidden)]
     pub ind: std::option::Option<crate::types::IndTaxDocuments>,
 }
 impl TaxDocuments {
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
-    pub fn ind(&self) -> std::option::Option<& crate::types::IndTaxDocuments> {
+    pub fn ind(&self) -> std::option::Option<&crate::types::IndTaxDocuments> {
         self.ind.as_ref()
     }
 }
@@ -35,14 +35,11 @@ impl TaxDocumentsBuilder {
     }
     /// <p>The tax documents required in Amazon Web Services Region in India.</p>
     pub fn set_ind(mut self, input: std::option::Option<crate::types::IndTaxDocuments>) -> Self {
-        self.ind = input; self
+        self.ind = input;
+        self
     }
     /// Consumes the builder and constructs a [`TaxDocuments`](crate::types::TaxDocuments).
     pub fn build(self) -> crate::types::TaxDocuments {
-        crate::types::TaxDocuments {
-            ind: self.ind
-            ,
-        }
+        crate::types::TaxDocuments { ind: self.ind }
     }
 }
-

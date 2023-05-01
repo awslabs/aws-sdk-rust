@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let h265scenechangedetect = unimplemented!();
 /// match h265scenechangedetect {
@@ -31,14 +31,22 @@
 /// Specifically, when `h265scenechangedetect` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H265SceneChangeDetect::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum H265SceneChangeDetect {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
@@ -47,43 +55,44 @@ pub enum H265SceneChangeDetect {
     #[allow(missing_docs)] // documentation missing in model
     TransitionDetection,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for H265SceneChangeDetect {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DISABLED" => H265SceneChangeDetect::Disabled,
-"ENABLED" => H265SceneChangeDetect::Enabled,
-"TRANSITION_DETECTION" => H265SceneChangeDetect::TransitionDetection,
-other => H265SceneChangeDetect::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for H265SceneChangeDetect {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(H265SceneChangeDetect::from(s))
-                }
-            }
-impl H265SceneChangeDetect {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    H265SceneChangeDetect::Disabled => "DISABLED",
-    H265SceneChangeDetect::Enabled => "ENABLED",
-    H265SceneChangeDetect::TransitionDetection => "TRANSITION_DETECTION",
-    H265SceneChangeDetect::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => H265SceneChangeDetect::Disabled,
+            "ENABLED" => H265SceneChangeDetect::Enabled,
+            "TRANSITION_DETECTION" => H265SceneChangeDetect::TransitionDetection,
+            other => H265SceneChangeDetect::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DISABLED", "ENABLED", "TRANSITION_DETECTION"]
-                }
-            }
-impl AsRef<str> for H265SceneChangeDetect {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for H265SceneChangeDetect {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(H265SceneChangeDetect::from(s))
+    }
+}
+impl H265SceneChangeDetect {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            H265SceneChangeDetect::Disabled => "DISABLED",
+            H265SceneChangeDetect::Enabled => "ENABLED",
+            H265SceneChangeDetect::TransitionDetection => "TRANSITION_DETECTION",
+            H265SceneChangeDetect::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED", "TRANSITION_DETECTION"]
+    }
+}
+impl AsRef<str> for H265SceneChangeDetect {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let eventtype = unimplemented!();
 /// match eventtype {
@@ -40,14 +40,22 @@
 /// Specifically, when `eventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     AssignmentAbandoned,
@@ -74,61 +82,73 @@ pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     Ping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AssignmentAbandoned" => EventType::AssignmentAbandoned,
-"AssignmentAccepted" => EventType::AssignmentAccepted,
-"AssignmentApproved" => EventType::AssignmentApproved,
-"AssignmentRejected" => EventType::AssignmentRejected,
-"AssignmentReturned" => EventType::AssignmentReturned,
-"AssignmentSubmitted" => EventType::AssignmentSubmitted,
-"HITCreated" => EventType::HitCreated,
-"HITDisposed" => EventType::HitDisposed,
-"HITExpired" => EventType::HitExpired,
-"HITExtended" => EventType::HitExtended,
-"HITReviewable" => EventType::HitReviewable,
-"Ping" => EventType::Ping,
-other => EventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for EventType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(EventType::from(s))
-                }
-            }
-impl EventType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    EventType::AssignmentAbandoned => "AssignmentAbandoned",
-    EventType::AssignmentAccepted => "AssignmentAccepted",
-    EventType::AssignmentApproved => "AssignmentApproved",
-    EventType::AssignmentRejected => "AssignmentRejected",
-    EventType::AssignmentReturned => "AssignmentReturned",
-    EventType::AssignmentSubmitted => "AssignmentSubmitted",
-    EventType::HitCreated => "HITCreated",
-    EventType::HitDisposed => "HITDisposed",
-    EventType::HitExpired => "HITExpired",
-    EventType::HitExtended => "HITExtended",
-    EventType::HitReviewable => "HITReviewable",
-    EventType::Ping => "Ping",
-    EventType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AssignmentAbandoned" => EventType::AssignmentAbandoned,
+            "AssignmentAccepted" => EventType::AssignmentAccepted,
+            "AssignmentApproved" => EventType::AssignmentApproved,
+            "AssignmentRejected" => EventType::AssignmentRejected,
+            "AssignmentReturned" => EventType::AssignmentReturned,
+            "AssignmentSubmitted" => EventType::AssignmentSubmitted,
+            "HITCreated" => EventType::HitCreated,
+            "HITDisposed" => EventType::HitDisposed,
+            "HITExpired" => EventType::HitExpired,
+            "HITExtended" => EventType::HitExtended,
+            "HITReviewable" => EventType::HitReviewable,
+            "Ping" => EventType::Ping,
+            other => EventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AssignmentAbandoned", "AssignmentAccepted", "AssignmentApproved", "AssignmentRejected", "AssignmentReturned", "AssignmentSubmitted", "HITCreated", "HITDisposed", "HITExpired", "HITExtended", "HITReviewable", "Ping"]
-                }
-            }
-impl AsRef<str> for EventType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for EventType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EventType::from(s))
+    }
+}
+impl EventType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EventType::AssignmentAbandoned => "AssignmentAbandoned",
+            EventType::AssignmentAccepted => "AssignmentAccepted",
+            EventType::AssignmentApproved => "AssignmentApproved",
+            EventType::AssignmentRejected => "AssignmentRejected",
+            EventType::AssignmentReturned => "AssignmentReturned",
+            EventType::AssignmentSubmitted => "AssignmentSubmitted",
+            EventType::HitCreated => "HITCreated",
+            EventType::HitDisposed => "HITDisposed",
+            EventType::HitExpired => "HITExpired",
+            EventType::HitExtended => "HITExtended",
+            EventType::HitReviewable => "HITReviewable",
+            EventType::Ping => "Ping",
+            EventType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AssignmentAbandoned",
+            "AssignmentAccepted",
+            "AssignmentApproved",
+            "AssignmentRejected",
+            "AssignmentReturned",
+            "AssignmentSubmitted",
+            "HITCreated",
+            "HITDisposed",
+            "HITExpired",
+            "HITExtended",
+            "HITReviewable",
+            "Ping",
+        ]
+    }
+}
+impl AsRef<str> for EventType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

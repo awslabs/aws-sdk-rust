@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateRuleInput  {
+pub struct BatchUpdateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     #[doc(hidden)]
     pub service_identifier: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct BatchUpdateRuleInput  {
 }
 impl BatchUpdateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> std::option::Option<& str> {
+    pub fn service_identifier(&self) -> std::option::Option<&str> {
         self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> std::option::Option<& str> {
+    pub fn listener_identifier(&self) -> std::option::Option<&str> {
         self.listener_identifier.as_deref()
     }
     /// <p>The rules for the specified listener.</p>
-    pub fn rules(&self) -> std::option::Option<& [crate::types::RuleUpdate]> {
+    pub fn rules(&self) -> std::option::Option<&[crate::types::RuleUpdate]> {
         self.rules.as_deref()
     }
 }
@@ -49,8 +49,12 @@ impl BatchUpdateRuleInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_identifier = input; self
+    pub fn set_service_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_identifier = input;
+        self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn listener_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +62,12 @@ impl BatchUpdateRuleInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_listener_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.listener_identifier = input; self
+    pub fn set_listener_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.listener_identifier = input;
+        self
     }
     /// Appends an item to `rules`.
     ///
@@ -68,26 +76,29 @@ impl BatchUpdateRuleInputBuilder {
     /// <p>The rules for the specified listener.</p>
     pub fn rules(mut self, input: crate::types::RuleUpdate) -> Self {
         let mut v = self.rules.unwrap_or_default();
-                        v.push(input);
-                        self.rules = Some(v);
-                        self
+        v.push(input);
+        self.rules = Some(v);
+        self
     }
     /// <p>The rules for the specified listener.</p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::RuleUpdate>>) -> Self {
-        self.rules = input; self
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RuleUpdate>>,
+    ) -> Self {
+        self.rules = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchUpdateRuleInput`](crate::operation::batch_update_rule::BatchUpdateRuleInput).
-    pub fn build(self) -> Result<crate::operation::batch_update_rule::BatchUpdateRuleInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::batch_update_rule::BatchUpdateRuleInput {
-                service_identifier: self.service_identifier
-                ,
-                listener_identifier: self.listener_identifier
-                ,
-                rules: self.rules
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_update_rule::BatchUpdateRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::batch_update_rule::BatchUpdateRuleInput {
+            service_identifier: self.service_identifier,
+            listener_identifier: self.listener_identifier,
+            rules: self.rules,
+        })
     }
 }
-

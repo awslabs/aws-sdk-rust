@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRoleAliasOutput  {
+pub struct UpdateRoleAliasOutput {
     /// <p>The role alias.</p>
     #[doc(hidden)]
     pub role_alias: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct UpdateRoleAliasOutput  {
 }
 impl UpdateRoleAliasOutput {
     /// <p>The role alias.</p>
-    pub fn role_alias(&self) -> std::option::Option<& str> {
+    pub fn role_alias(&self) -> std::option::Option<&str> {
         self.role_alias.as_deref()
     }
     /// <p>The role alias ARN.</p>
-    pub fn role_alias_arn(&self) -> std::option::Option<& str> {
+    pub fn role_alias_arn(&self) -> std::option::Option<&str> {
         self.role_alias_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateRoleAliasOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateRoleAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRoleAliasOutput`](crate::operation::update_role_alias::UpdateRoleAliasOutput).
-    pub fn builder() -> crate::operation::update_role_alias::builders::UpdateRoleAliasOutputBuilder {
+    pub fn builder() -> crate::operation::update_role_alias::builders::UpdateRoleAliasOutputBuilder
+    {
         crate::operation::update_role_alias::builders::UpdateRoleAliasOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl UpdateRoleAliasOutputBuilder {
     }
     /// <p>The role alias.</p>
     pub fn set_role_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_alias = input; self
+        self.role_alias = input;
+        self
     }
     /// <p>The role alias ARN.</p>
     pub fn role_alias_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +60,24 @@ impl UpdateRoleAliasOutputBuilder {
     }
     /// <p>The role alias ARN.</p>
     pub fn set_role_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_alias_arn = input; self
+        self.role_alias_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateRoleAliasOutput`](crate::operation::update_role_alias::UpdateRoleAliasOutput).
     pub fn build(self) -> crate::operation::update_role_alias::UpdateRoleAliasOutput {
         crate::operation::update_role_alias::UpdateRoleAliasOutput {
-            role_alias: self.role_alias
-            ,
-            role_alias_arn: self.role_alias_arn
-            ,
+            role_alias: self.role_alias,
+            role_alias_arn: self.role_alias_arn,
             _request_id: self._request_id,
         }
     }
 }
-

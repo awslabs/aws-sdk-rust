@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFlowDefinitionInput  {
+pub struct CreateFlowDefinitionInput {
     /// <p>The name of your flow definition.</p>
     #[doc(hidden)]
     pub flow_definition_name: std::option::Option<std::string::String>,
@@ -27,37 +27,42 @@ pub struct CreateFlowDefinitionInput  {
 }
 impl CreateFlowDefinitionInput {
     /// <p>The name of your flow definition.</p>
-    pub fn flow_definition_name(&self) -> std::option::Option<& str> {
+    pub fn flow_definition_name(&self) -> std::option::Option<&str> {
         self.flow_definition_name.as_deref()
     }
     /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
-    pub fn human_loop_request_source(&self) -> std::option::Option<& crate::types::HumanLoopRequestSource> {
+    pub fn human_loop_request_source(
+        &self,
+    ) -> std::option::Option<&crate::types::HumanLoopRequestSource> {
         self.human_loop_request_source.as_ref()
     }
     /// <p>An object containing information about the events that trigger a human workflow.</p>
-    pub fn human_loop_activation_config(&self) -> std::option::Option<& crate::types::HumanLoopActivationConfig> {
+    pub fn human_loop_activation_config(
+        &self,
+    ) -> std::option::Option<&crate::types::HumanLoopActivationConfig> {
         self.human_loop_activation_config.as_ref()
     }
     /// <p>An object containing information about the tasks the human reviewers will perform.</p>
-    pub fn human_loop_config(&self) -> std::option::Option<& crate::types::HumanLoopConfig> {
+    pub fn human_loop_config(&self) -> std::option::Option<&crate::types::HumanLoopConfig> {
         self.human_loop_config.as_ref()
     }
     /// <p>An object containing information about where the human review results will be uploaded.</p>
-    pub fn output_config(&self) -> std::option::Option<& crate::types::FlowDefinitionOutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<&crate::types::FlowDefinitionOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateFlowDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateFlowDefinitionInput`](crate::operation::create_flow_definition::CreateFlowDefinitionInput).
-    pub fn builder() -> crate::operation::create_flow_definition::builders::CreateFlowDefinitionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_flow_definition::builders::CreateFlowDefinitionInputBuilder {
         crate::operation::create_flow_definition::builders::CreateFlowDefinitionInputBuilder::default()
     }
 }
@@ -68,7 +73,8 @@ impl CreateFlowDefinitionInput {
 pub struct CreateFlowDefinitionInputBuilder {
     pub(crate) flow_definition_name: std::option::Option<std::string::String>,
     pub(crate) human_loop_request_source: std::option::Option<crate::types::HumanLoopRequestSource>,
-    pub(crate) human_loop_activation_config: std::option::Option<crate::types::HumanLoopActivationConfig>,
+    pub(crate) human_loop_activation_config:
+        std::option::Option<crate::types::HumanLoopActivationConfig>,
     pub(crate) human_loop_config: std::option::Option<crate::types::HumanLoopConfig>,
     pub(crate) output_config: std::option::Option<crate::types::FlowDefinitionOutputConfig>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -81,26 +87,44 @@ impl CreateFlowDefinitionInputBuilder {
         self
     }
     /// <p>The name of your flow definition.</p>
-    pub fn set_flow_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_definition_name = input; self
+    pub fn set_flow_definition_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.flow_definition_name = input;
+        self
     }
     /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
-    pub fn human_loop_request_source(mut self, input: crate::types::HumanLoopRequestSource) -> Self {
+    pub fn human_loop_request_source(
+        mut self,
+        input: crate::types::HumanLoopRequestSource,
+    ) -> Self {
         self.human_loop_request_source = Some(input);
         self
     }
     /// <p>Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.</p>
-    pub fn set_human_loop_request_source(mut self, input: std::option::Option<crate::types::HumanLoopRequestSource>) -> Self {
-        self.human_loop_request_source = input; self
+    pub fn set_human_loop_request_source(
+        mut self,
+        input: std::option::Option<crate::types::HumanLoopRequestSource>,
+    ) -> Self {
+        self.human_loop_request_source = input;
+        self
     }
     /// <p>An object containing information about the events that trigger a human workflow.</p>
-    pub fn human_loop_activation_config(mut self, input: crate::types::HumanLoopActivationConfig) -> Self {
+    pub fn human_loop_activation_config(
+        mut self,
+        input: crate::types::HumanLoopActivationConfig,
+    ) -> Self {
         self.human_loop_activation_config = Some(input);
         self
     }
     /// <p>An object containing information about the events that trigger a human workflow.</p>
-    pub fn set_human_loop_activation_config(mut self, input: std::option::Option<crate::types::HumanLoopActivationConfig>) -> Self {
-        self.human_loop_activation_config = input; self
+    pub fn set_human_loop_activation_config(
+        mut self,
+        input: std::option::Option<crate::types::HumanLoopActivationConfig>,
+    ) -> Self {
+        self.human_loop_activation_config = input;
+        self
     }
     /// <p>An object containing information about the tasks the human reviewers will perform.</p>
     pub fn human_loop_config(mut self, input: crate::types::HumanLoopConfig) -> Self {
@@ -108,8 +132,12 @@ impl CreateFlowDefinitionInputBuilder {
         self
     }
     /// <p>An object containing information about the tasks the human reviewers will perform.</p>
-    pub fn set_human_loop_config(mut self, input: std::option::Option<crate::types::HumanLoopConfig>) -> Self {
-        self.human_loop_config = input; self
+    pub fn set_human_loop_config(
+        mut self,
+        input: std::option::Option<crate::types::HumanLoopConfig>,
+    ) -> Self {
+        self.human_loop_config = input;
+        self
     }
     /// <p>An object containing information about where the human review results will be uploaded.</p>
     pub fn output_config(mut self, input: crate::types::FlowDefinitionOutputConfig) -> Self {
@@ -117,8 +145,12 @@ impl CreateFlowDefinitionInputBuilder {
         self
     }
     /// <p>An object containing information about where the human review results will be uploaded.</p>
-    pub fn set_output_config(mut self, input: std::option::Option<crate::types::FlowDefinitionOutputConfig>) -> Self {
-        self.output_config = input; self
+    pub fn set_output_config(
+        mut self,
+        input: std::option::Option<crate::types::FlowDefinitionOutputConfig>,
+    ) -> Self {
+        self.output_config = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,7 +159,8 @@ impl CreateFlowDefinitionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, <code>arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298</code>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -136,34 +169,35 @@ impl CreateFlowDefinitionInputBuilder {
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFlowDefinitionInput`](crate::operation::create_flow_definition::CreateFlowDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::create_flow_definition::CreateFlowDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_flow_definition::CreateFlowDefinitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_flow_definition::CreateFlowDefinitionInput {
-                flow_definition_name: self.flow_definition_name
-                ,
-                human_loop_request_source: self.human_loop_request_source
-                ,
-                human_loop_activation_config: self.human_loop_activation_config
-                ,
-                human_loop_config: self.human_loop_config
-                ,
-                output_config: self.output_config
-                ,
-                role_arn: self.role_arn
-                ,
-                tags: self.tags
-                ,
-            }
+                flow_definition_name: self.flow_definition_name,
+                human_loop_request_source: self.human_loop_request_source,
+                human_loop_activation_config: self.human_loop_activation_config,
+                human_loop_config: self.human_loop_config,
+                output_config: self.output_config,
+                role_arn: self.role_arn,
+                tags: self.tags,
+            },
         )
     }
 }
-

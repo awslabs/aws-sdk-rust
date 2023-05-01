@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Firehose  {
+pub struct Firehose {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub delivery_stream: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct Firehose  {
 }
 impl Firehose {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn delivery_stream(&self) -> std::option::Option<& str> {
+    pub fn delivery_stream(&self) -> std::option::Option<&str> {
         self.delivery_stream.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -42,7 +42,8 @@ impl FirehoseBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_delivery_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delivery_stream = input; self
+        self.delivery_stream = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn enabled(mut self, input: bool) -> Self {
@@ -51,17 +52,14 @@ impl FirehoseBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`Firehose`](crate::types::Firehose).
     pub fn build(self) -> crate::types::Firehose {
         crate::types::Firehose {
-            delivery_stream: self.delivery_stream
-            ,
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
+            delivery_stream: self.delivery_stream,
+            enabled: self.enabled.unwrap_or_default(),
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrafficRoutingConfig  {
+pub struct TrafficRoutingConfig {
     /// <p>The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment configuration.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::TrafficRoutingType>,
@@ -16,15 +16,15 @@ pub struct TrafficRoutingConfig  {
 }
 impl TrafficRoutingConfig {
     /// <p>The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment configuration.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::TrafficRoutingType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::TrafficRoutingType> {
         self.r#type.as_ref()
     }
     /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
-    pub fn time_based_canary(&self) -> std::option::Option<& crate::types::TimeBasedCanary> {
+    pub fn time_based_canary(&self) -> std::option::Option<&crate::types::TimeBasedCanary> {
         self.time_based_canary.as_ref()
     }
     /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
-    pub fn time_based_linear(&self) -> std::option::Option<& crate::types::TimeBasedLinear> {
+    pub fn time_based_linear(&self) -> std::option::Option<&crate::types::TimeBasedLinear> {
         self.time_based_linear.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl TrafficRoutingConfigBuilder {
         self
     }
     /// <p>The type of traffic shifting (<code>TimeBasedCanary</code> or <code>TimeBasedLinear</code>) used by a deployment configuration.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::TrafficRoutingType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::TrafficRoutingType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
     pub fn time_based_canary(mut self, input: crate::types::TimeBasedCanary) -> Self {
@@ -59,8 +63,12 @@ impl TrafficRoutingConfigBuilder {
         self
     }
     /// <p>A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file.</p>
-    pub fn set_time_based_canary(mut self, input: std::option::Option<crate::types::TimeBasedCanary>) -> Self {
-        self.time_based_canary = input; self
+    pub fn set_time_based_canary(
+        mut self,
+        input: std::option::Option<crate::types::TimeBasedCanary>,
+    ) -> Self {
+        self.time_based_canary = input;
+        self
     }
     /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
     pub fn time_based_linear(mut self, input: crate::types::TimeBasedLinear) -> Self {
@@ -68,19 +76,19 @@ impl TrafficRoutingConfigBuilder {
         self
     }
     /// <p>A configuration that shifts traffic from one version of a Lambda function or Amazon ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or Amazon ECS task sets are specified in the deployment's AppSpec file.</p>
-    pub fn set_time_based_linear(mut self, input: std::option::Option<crate::types::TimeBasedLinear>) -> Self {
-        self.time_based_linear = input; self
+    pub fn set_time_based_linear(
+        mut self,
+        input: std::option::Option<crate::types::TimeBasedLinear>,
+    ) -> Self {
+        self.time_based_linear = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrafficRoutingConfig`](crate::types::TrafficRoutingConfig).
     pub fn build(self) -> crate::types::TrafficRoutingConfig {
         crate::types::TrafficRoutingConfig {
-            r#type: self.r#type
-            ,
-            time_based_canary: self.time_based_canary
-            ,
-            time_based_linear: self.time_based_linear
-            ,
+            r#type: self.r#type,
+            time_based_canary: self.time_based_canary,
+            time_based_linear: self.time_based_linear,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroundStationsInput  {
+pub struct ListGroundStationsInput {
     /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
     #[doc(hidden)]
     pub satellite_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListGroundStationsInput  {
 }
 impl ListGroundStationsInput {
     /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
-    pub fn satellite_id(&self) -> std::option::Option<& str> {
+    pub fn satellite_id(&self) -> std::option::Option<&str> {
         self.satellite_id.as_deref()
     }
     /// <p>Maximum number of ground stations returned.</p>
@@ -24,13 +24,14 @@ impl ListGroundStationsInput {
         self.max_results
     }
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListGroundStationsInput {
     /// Creates a new builder-style object to manufacture [`ListGroundStationsInput`](crate::operation::list_ground_stations::ListGroundStationsInput).
-    pub fn builder() -> crate::operation::list_ground_stations::builders::ListGroundStationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_ground_stations::builders::ListGroundStationsInputBuilder {
         crate::operation::list_ground_stations::builders::ListGroundStationsInputBuilder::default()
     }
 }
@@ -51,7 +52,8 @@ impl ListGroundStationsInputBuilder {
     }
     /// <p>Satellite ID to retrieve on-boarded ground stations.</p>
     pub fn set_satellite_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.satellite_id = input; self
+        self.satellite_id = input;
+        self
     }
     /// <p>Maximum number of ground stations returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,7 +62,8 @@ impl ListGroundStationsInputBuilder {
     }
     /// <p>Maximum number of ground stations returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +72,22 @@ impl ListGroundStationsInputBuilder {
     }
     /// <p>Next token that can be supplied in the next call to get the next page of ground stations.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListGroundStationsInput`](crate::operation::list_ground_stations::ListGroundStationsInput).
-    pub fn build(self) -> Result<crate::operation::list_ground_stations::ListGroundStationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_ground_stations::ListGroundStationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_ground_stations::ListGroundStationsInput {
-                satellite_id: self.satellite_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                satellite_id: self.satellite_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

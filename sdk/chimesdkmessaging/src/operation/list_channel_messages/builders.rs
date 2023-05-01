@@ -4,59 +4,84 @@ pub use crate::operation::list_channel_messages::_list_channel_messages_output::
 pub use crate::operation::list_channel_messages::_list_channel_messages_input::ListChannelMessagesInputBuilder;
 
 /// Fluent builder constructing a request to `ListChannelMessages`.
-/// 
-/// <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p> <note> 
-/// <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p> 
-/// <p>Also, the <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> 
+///
+/// <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p> <note>
+/// <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p>
+/// <p>Also, the <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelMessagesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder,
+    inner: crate::operation::list_channel_messages::builders::ListChannelMessagesInputBuilder,
 }
-impl ListChannelMessagesFluentBuilder  {
+impl ListChannelMessagesFluentBuilder {
     /// Creates a new `ListChannelMessages`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_channel_messages::ListChannelMessages, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_channel_messages::ListChannelMessagesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_channel_messages::ListChannelMessagesOutput, aws_smithy_http::result::SdkError<crate::operation::list_channel_messages::ListChannelMessagesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_channel_messages::ListChannelMessages,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_messages::ListChannelMessagesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_channel_messages::ListChannelMessagesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_messages::ListChannelMessagesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator {
-                                crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator {
+        crate::operation::list_channel_messages::paginator::ListChannelMessagesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
@@ -83,7 +108,10 @@ impl ListChannelMessagesFluentBuilder  {
         self
     }
     /// <p>The initial or starting time stamp for your requested messages.</p>
-    pub fn set_not_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_not_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_not_before(input);
         self
     }
@@ -127,19 +155,18 @@ impl ListChannelMessagesFluentBuilder  {
         self.inner = self.inner.set_chime_bearer(input);
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note> 
-    /// <p>Only required when listing the messages in a SubChannel that the user belongs to.</p> 
+    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>Only required when listing the messages in a SubChannel that the user belongs to.</p>
     /// </note>
     pub fn sub_channel_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sub_channel_id(input.into());
         self
     }
-    /// <p>The ID of the SubChannel in the request.</p> <note> 
-    /// <p>Only required when listing the messages in a SubChannel that the user belongs to.</p> 
+    /// <p>The ID of the SubChannel in the request.</p> <note>
+    /// <p>Only required when listing the messages in a SubChannel that the user belongs to.</p>
     /// </note>
     pub fn set_sub_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_sub_channel_id(input);
         self
     }
 }
-

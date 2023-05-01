@@ -3,7 +3,7 @@
 /// <p> A representation of the new charge details of a custom line item. This should contain only one of <code>Flat</code> or <code>Percentage</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCustomLineItemChargeDetails  {
+pub struct UpdateCustomLineItemChargeDetails {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
     #[doc(hidden)]
     pub flat: std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
@@ -13,11 +13,15 @@ pub struct UpdateCustomLineItemChargeDetails  {
 }
 impl UpdateCustomLineItemChargeDetails {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
-    pub fn flat(&self) -> std::option::Option<& crate::types::UpdateCustomLineItemFlatChargeDetails> {
+    pub fn flat(
+        &self,
+    ) -> std::option::Option<&crate::types::UpdateCustomLineItemFlatChargeDetails> {
         self.flat.as_ref()
     }
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
-    pub fn percentage(&self) -> std::option::Option<& crate::types::UpdateCustomLineItemPercentageChargeDetails> {
+    pub fn percentage(
+        &self,
+    ) -> std::option::Option<&crate::types::UpdateCustomLineItemPercentageChargeDetails> {
         self.percentage.as_ref()
     }
 }
@@ -33,7 +37,8 @@ impl UpdateCustomLineItemChargeDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCustomLineItemChargeDetailsBuilder {
     pub(crate) flat: std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
-    pub(crate) percentage: std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
+    pub(crate) percentage:
+        std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
 }
 impl UpdateCustomLineItemChargeDetailsBuilder {
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
@@ -42,26 +47,34 @@ impl UpdateCustomLineItemChargeDetailsBuilder {
         self
     }
     /// <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new charge details of a flat custom line item. </p>
-    pub fn set_flat(mut self, input: std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>) -> Self {
-        self.flat = input; self
+    pub fn set_flat(
+        mut self,
+        input: std::option::Option<crate::types::UpdateCustomLineItemFlatChargeDetails>,
+    ) -> Self {
+        self.flat = input;
+        self
     }
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
-    pub fn percentage(mut self, input: crate::types::UpdateCustomLineItemPercentageChargeDetails) -> Self {
+    pub fn percentage(
+        mut self,
+        input: crate::types::UpdateCustomLineItemPercentageChargeDetails,
+    ) -> Self {
         self.percentage = Some(input);
         self
     }
     /// <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes the new charge details of a percentage custom line item. </p>
-    pub fn set_percentage(mut self, input: std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>) -> Self {
-        self.percentage = input; self
+    pub fn set_percentage(
+        mut self,
+        input: std::option::Option<crate::types::UpdateCustomLineItemPercentageChargeDetails>,
+    ) -> Self {
+        self.percentage = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateCustomLineItemChargeDetails`](crate::types::UpdateCustomLineItemChargeDetails).
     pub fn build(self) -> crate::types::UpdateCustomLineItemChargeDetails {
         crate::types::UpdateCustomLineItemChargeDetails {
-            flat: self.flat
-            ,
-            percentage: self.percentage
-            ,
+            flat: self.flat,
+            percentage: self.percentage,
         }
     }
 }
-

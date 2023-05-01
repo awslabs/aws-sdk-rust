@@ -546,4 +546,3 @@ pub use crate::types::_table_version_error::TableVersionErrorBuilder;
 pub use crate::types::_table_error::TableErrorBuilder;
 
 pub use crate::types::_partition_error::PartitionErrorBuilder;
-

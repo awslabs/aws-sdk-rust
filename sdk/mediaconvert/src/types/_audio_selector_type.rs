@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let audioselectortype = unimplemented!();
 /// match audioselectortype {
@@ -32,14 +32,22 @@
 /// Specifically, when `audioselectortype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AudioSelectorType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specifies the type of the audio selector.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AudioSelectorType {
     #[allow(missing_docs)] // documentation missing in model
     HlsRenditionGroup,
@@ -50,45 +58,46 @@ pub enum AudioSelectorType {
     #[allow(missing_docs)] // documentation missing in model
     Track,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AudioSelectorType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "HLS_RENDITION_GROUP" => AudioSelectorType::HlsRenditionGroup,
-"LANGUAGE_CODE" => AudioSelectorType::LanguageCode,
-"PID" => AudioSelectorType::Pid,
-"TRACK" => AudioSelectorType::Track,
-other => AudioSelectorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "HLS_RENDITION_GROUP" => AudioSelectorType::HlsRenditionGroup,
+            "LANGUAGE_CODE" => AudioSelectorType::LanguageCode,
+            "PID" => AudioSelectorType::Pid,
+            "TRACK" => AudioSelectorType::Track,
+            other => {
+                AudioSelectorType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for AudioSelectorType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AudioSelectorType::from(s))
-                }
-            }
-impl AudioSelectorType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AudioSelectorType::HlsRenditionGroup => "HLS_RENDITION_GROUP",
-    AudioSelectorType::LanguageCode => "LANGUAGE_CODE",
-    AudioSelectorType::Pid => "PID",
-    AudioSelectorType::Track => "TRACK",
-    AudioSelectorType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["HLS_RENDITION_GROUP", "LANGUAGE_CODE", "PID", "TRACK"]
-                }
-            }
-impl AsRef<str> for AudioSelectorType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AudioSelectorType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AudioSelectorType::from(s))
+    }
+}
+impl AudioSelectorType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AudioSelectorType::HlsRenditionGroup => "HLS_RENDITION_GROUP",
+            AudioSelectorType::LanguageCode => "LANGUAGE_CODE",
+            AudioSelectorType::Pid => "PID",
+            AudioSelectorType::Track => "TRACK",
+            AudioSelectorType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["HLS_RENDITION_GROUP", "LANGUAGE_CODE", "PID", "TRACK"]
+    }
+}
+impl AsRef<str> for AudioSelectorType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

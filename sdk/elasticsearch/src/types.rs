@@ -432,4 +432,3 @@ pub mod builders;
 
 /// Error types that Amazon Elasticsearch Service can respond with.
 pub mod error;
-

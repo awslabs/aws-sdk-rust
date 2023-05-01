@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let h264frameratecontrol = unimplemented!();
 /// match h264frameratecontrol {
@@ -30,55 +30,64 @@
 /// Specifically, when `h264frameratecontrol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H264FramerateControl::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// H264 Framerate Control
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum H264FramerateControl {
     #[allow(missing_docs)] // documentation missing in model
     InitializeFromSource,
     #[allow(missing_docs)] // documentation missing in model
     Specified,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for H264FramerateControl {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "INITIALIZE_FROM_SOURCE" => H264FramerateControl::InitializeFromSource,
-"SPECIFIED" => H264FramerateControl::Specified,
-other => H264FramerateControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for H264FramerateControl {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(H264FramerateControl::from(s))
-                }
-            }
-impl H264FramerateControl {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    H264FramerateControl::InitializeFromSource => "INITIALIZE_FROM_SOURCE",
-    H264FramerateControl::Specified => "SPECIFIED",
-    H264FramerateControl::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "INITIALIZE_FROM_SOURCE" => H264FramerateControl::InitializeFromSource,
+            "SPECIFIED" => H264FramerateControl::Specified,
+            other => H264FramerateControl::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
-                }
-            }
-impl AsRef<str> for H264FramerateControl {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for H264FramerateControl {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(H264FramerateControl::from(s))
+    }
+}
+impl H264FramerateControl {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            H264FramerateControl::InitializeFromSource => "INITIALIZE_FROM_SOURCE",
+            H264FramerateControl::Specified => "SPECIFIED",
+            H264FramerateControl::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
+    }
+}
+impl AsRef<str> for H264FramerateControl {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

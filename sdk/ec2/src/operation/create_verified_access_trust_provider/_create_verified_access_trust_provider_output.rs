@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVerifiedAccessTrustProviderOutput  {
+pub struct CreateVerifiedAccessTrustProviderOutput {
     /// <p>The ID of the Verified Access trust provider.</p>
     #[doc(hidden)]
-    pub verified_access_trust_provider: std::option::Option<crate::types::VerifiedAccessTrustProvider>,
+    pub verified_access_trust_provider:
+        std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     _request_id: Option<String>,
 }
 impl CreateVerifiedAccessTrustProviderOutput {
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn verified_access_trust_provider(&self) -> std::option::Option<& crate::types::VerifiedAccessTrustProvider> {
+    pub fn verified_access_trust_provider(
+        &self,
+    ) -> std::option::Option<&crate::types::VerifiedAccessTrustProvider> {
         self.verified_access_trust_provider.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateVerifiedAccessTrustProviderOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateVerifiedAccessTrustProviderOutput {
     /// Creates a new builder-style object to manufacture [`CreateVerifiedAccessTrustProviderOutput`](crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderOutput).
-    pub fn builder() -> crate::operation::create_verified_access_trust_provider::builders::CreateVerifiedAccessTrustProviderOutputBuilder {
+    pub fn builder() -> crate::operation::create_verified_access_trust_provider::builders::CreateVerifiedAccessTrustProviderOutputBuilder{
         crate::operation::create_verified_access_trust_provider::builders::CreateVerifiedAccessTrustProviderOutputBuilder::default()
     }
 }
@@ -30,30 +33,38 @@ impl CreateVerifiedAccessTrustProviderOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateVerifiedAccessTrustProviderOutputBuilder {
-    pub(crate) verified_access_trust_provider: std::option::Option<crate::types::VerifiedAccessTrustProvider>,
+    pub(crate) verified_access_trust_provider:
+        std::option::Option<crate::types::VerifiedAccessTrustProvider>,
     _request_id: Option<String>,
 }
 impl CreateVerifiedAccessTrustProviderOutputBuilder {
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn verified_access_trust_provider(mut self, input: crate::types::VerifiedAccessTrustProvider) -> Self {
+    pub fn verified_access_trust_provider(
+        mut self,
+        input: crate::types::VerifiedAccessTrustProvider,
+    ) -> Self {
         self.verified_access_trust_provider = Some(input);
         self
     }
     /// <p>The ID of the Verified Access trust provider.</p>
-    pub fn set_verified_access_trust_provider(mut self, input: std::option::Option<crate::types::VerifiedAccessTrustProvider>) -> Self {
-        self.verified_access_trust_provider = input; self
+    pub fn set_verified_access_trust_provider(
+        mut self,
+        input: std::option::Option<crate::types::VerifiedAccessTrustProvider>,
+    ) -> Self {
+        self.verified_access_trust_provider = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateVerifiedAccessTrustProviderOutput`](crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderOutput).
-    pub fn build(self) -> crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderOutput {
+    pub fn build(self) -> crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderOutput{
         crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderOutput {
             verified_access_trust_provider: self.verified_access_trust_provider
             ,
@@ -61,4 +72,3 @@ impl CreateVerifiedAccessTrustProviderOutputBuilder {
         }
     }
 }
-

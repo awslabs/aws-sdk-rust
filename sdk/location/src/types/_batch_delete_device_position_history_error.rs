@@ -3,7 +3,7 @@
 /// <p>Contains the tracker resource details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteDevicePositionHistoryError  {
+pub struct BatchDeleteDevicePositionHistoryError {
     /// <p>The ID of the device for this position.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct BatchDeleteDevicePositionHistoryError  {
 }
 impl BatchDeleteDevicePositionHistoryError {
     /// <p>The ID of the device for this position.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>Contains the batch request error details associated with the request.</p>
-    pub fn error(&self) -> std::option::Option<& crate::types::BatchItemError> {
+    pub fn error(&self) -> std::option::Option<&crate::types::BatchItemError> {
         self.error.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl BatchDeleteDevicePositionHistoryErrorBuilder {
     }
     /// <p>The ID of the device for this position.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// <p>Contains the batch request error details associated with the request.</p>
     pub fn error(mut self, input: crate::types::BatchItemError) -> Self {
@@ -52,16 +53,14 @@ impl BatchDeleteDevicePositionHistoryErrorBuilder {
     }
     /// <p>Contains the batch request error details associated with the request.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::BatchItemError>) -> Self {
-        self.error = input; self
+        self.error = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryError`](crate::types::BatchDeleteDevicePositionHistoryError).
     pub fn build(self) -> crate::types::BatchDeleteDevicePositionHistoryError {
         crate::types::BatchDeleteDevicePositionHistoryError {
-            device_id: self.device_id
-            ,
-            error: self.error
-            ,
+            device_id: self.device_id,
+            error: self.error,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestCustomDataIdentifierOutput  {
+pub struct TestCustomDataIdentifierOutput {
     /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
     #[doc(hidden)]
     pub match_count: i32,
@@ -15,13 +15,13 @@ impl TestCustomDataIdentifierOutput {
     }
 }
 impl aws_http::request_id::RequestId for TestCustomDataIdentifierOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl TestCustomDataIdentifierOutput {
     /// Creates a new builder-style object to manufacture [`TestCustomDataIdentifierOutput`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput).
-    pub fn builder() -> crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierOutputBuilder {
+    pub fn builder() -> crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierOutputBuilder{
         crate::operation::test_custom_data_identifier::builders::TestCustomDataIdentifierOutputBuilder::default()
     }
 }
@@ -41,25 +41,25 @@ impl TestCustomDataIdentifierOutputBuilder {
     }
     /// <p>The number of occurrences of sample text that matched the criteria specified by the custom data identifier.</p>
     pub fn set_match_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.match_count = input; self
+        self.match_count = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`TestCustomDataIdentifierOutput`](crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput).
-    pub fn build(self) -> crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput {
         crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput {
-            match_count: self.match_count
-                .unwrap_or_default()
-            ,
+            match_count: self.match_count.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

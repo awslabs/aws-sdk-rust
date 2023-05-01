@@ -3,55 +3,57 @@
 /// <p>Each step type has its own <code>StepDetails</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyStepDetails  {
+pub struct CopyStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies the location for the file being copied. Use <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p> 
-    /// <ul> 
-    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li> 
-    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note> 
-    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded.</p> 
-    /// </note> </li> 
+    /// <p>Specifies the location for the file being copied. Use <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
+    /// <ul>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note>
+    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded.</p>
+    /// </note> </li>
     /// </ul>
     #[doc(hidden)]
     pub destination_file_location: std::option::Option<crate::types::InputFileLocation>,
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
     #[doc(hidden)]
     pub overwrite_existing: std::option::Option<crate::types::OverwriteExisting>,
-    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p> 
-    /// <ul> 
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li> 
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li> 
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub source_file_location: std::option::Option<std::string::String>,
 }
 impl CopyStepDetails {
     /// <p>The name of the step, used as an identifier.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the location for the file being copied. Use <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p> 
-    /// <ul> 
-    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li> 
-    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note> 
-    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded.</p> 
-    /// </note> </li> 
+    /// <p>Specifies the location for the file being copied. Use <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
+    /// <ul>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note>
+    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded.</p>
+    /// </note> </li>
     /// </ul>
-    pub fn destination_file_location(&self) -> std::option::Option<& crate::types::InputFileLocation> {
+    pub fn destination_file_location(
+        &self,
+    ) -> std::option::Option<&crate::types::InputFileLocation> {
         self.destination_file_location.as_ref()
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
-    pub fn overwrite_existing(&self) -> std::option::Option<& crate::types::OverwriteExisting> {
+    pub fn overwrite_existing(&self) -> std::option::Option<&crate::types::OverwriteExisting> {
         self.overwrite_existing.as_ref()
     }
-    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p> 
-    /// <ul> 
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li> 
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li> 
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
-    pub fn source_file_location(&self) -> std::option::Option<& str> {
+    pub fn source_file_location(&self) -> std::option::Option<&str> {
         self.source_file_location.as_deref()
     }
 }
@@ -79,28 +81,33 @@ impl CopyStepDetailsBuilder {
     }
     /// <p>The name of the step, used as an identifier.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>Specifies the location for the file being copied. Use <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p> 
-    /// <ul> 
-    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li> 
-    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note> 
-    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded.</p> 
-    /// </note> </li> 
+    /// <p>Specifies the location for the file being copied. Use <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
+    /// <ul>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note>
+    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded.</p>
+    /// </note> </li>
     /// </ul>
     pub fn destination_file_location(mut self, input: crate::types::InputFileLocation) -> Self {
         self.destination_file_location = Some(input);
         self
     }
-    /// <p>Specifies the location for the file being copied. Use <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p> 
-    /// <ul> 
-    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li> 
-    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note> 
-    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded.</p> 
-    /// </note> </li> 
+    /// <p>Specifies the location for the file being copied. Use <code>${Transfer:username}</code> or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination prefix by username or uploaded date.</p>
+    /// <ul>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:username}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer Family user that uploaded the file.</p> </li>
+    /// <li> <p>Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code> to copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.</p> <note>
+    /// <p>The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>, based on the date the file is uploaded.</p>
+    /// </note> </li>
     /// </ul>
-    pub fn set_destination_file_location(mut self, input: std::option::Option<crate::types::InputFileLocation>) -> Self {
-        self.destination_file_location = input; self
+    pub fn set_destination_file_location(
+        mut self,
+        input: std::option::Option<crate::types::InputFileLocation>,
+    ) -> Self {
+        self.destination_file_location = input;
+        self
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
     pub fn overwrite_existing(mut self, input: crate::types::OverwriteExisting) -> Self {
@@ -108,38 +115,41 @@ impl CopyStepDetailsBuilder {
         self
     }
     /// <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p>
-    pub fn set_overwrite_existing(mut self, input: std::option::Option<crate::types::OverwriteExisting>) -> Self {
-        self.overwrite_existing = input; self
+    pub fn set_overwrite_existing(
+        mut self,
+        input: std::option::Option<crate::types::OverwriteExisting>,
+    ) -> Self {
+        self.overwrite_existing = input;
+        self
     }
-    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p> 
-    /// <ul> 
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li> 
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li> 
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
     pub fn source_file_location(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_file_location = Some(input.into());
         self
     }
-    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p> 
-    /// <ul> 
-    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li> 
-    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li> 
+    /// <p>Specifies which file to use as input to the workflow step: either the output from the previous step, or the originally uploaded file for the workflow.</p>
+    /// <ul>
+    /// <li> <p>To use the previous file as the input, enter <code>${previous.file}</code>. In this case, this workflow step uses the output file from the previous workflow step as input. This is the default value.</p> </li>
+    /// <li> <p>To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.</p> </li>
     /// </ul>
-    pub fn set_source_file_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_file_location = input; self
+    pub fn set_source_file_location(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_file_location = input;
+        self
     }
     /// Consumes the builder and constructs a [`CopyStepDetails`](crate::types::CopyStepDetails).
     pub fn build(self) -> crate::types::CopyStepDetails {
         crate::types::CopyStepDetails {
-            name: self.name
-            ,
-            destination_file_location: self.destination_file_location
-            ,
-            overwrite_existing: self.overwrite_existing
-            ,
-            source_file_location: self.source_file_location
-            ,
+            name: self.name,
+            destination_file_location: self.destination_file_location,
+            overwrite_existing: self.overwrite_existing,
+            source_file_location: self.source_file_location,
         }
     }
 }
-

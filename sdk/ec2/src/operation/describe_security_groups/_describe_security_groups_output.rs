@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSecurityGroupsOutput  {
+pub struct DescribeSecurityGroupsOutput {
     /// <p>Information about the security groups.</p>
     #[doc(hidden)]
     pub security_groups: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>,
@@ -13,22 +13,24 @@ pub struct DescribeSecurityGroupsOutput  {
 }
 impl DescribeSecurityGroupsOutput {
     /// <p>Information about the security groups.</p>
-    pub fn security_groups(&self) -> std::option::Option<& [crate::types::SecurityGroup]> {
+    pub fn security_groups(&self) -> std::option::Option<&[crate::types::SecurityGroup]> {
         self.security_groups.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSecurityGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeSecurityGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityGroupsOutput`](crate::operation::describe_security_groups::DescribeSecurityGroupsOutput).
-    pub fn builder() -> crate::operation::describe_security_groups::builders::DescribeSecurityGroupsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_security_groups::builders::DescribeSecurityGroupsOutputBuilder
+    {
         crate::operation::describe_security_groups::builders::DescribeSecurityGroupsOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeSecurityGroupsOutputBuilder {
     /// <p>Information about the security groups.</p>
     pub fn security_groups(mut self, input: crate::types::SecurityGroup) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-                        v.push(input);
-                        self.security_groups = Some(v);
-                        self
+        v.push(input);
+        self.security_groups = Some(v);
+        self
     }
     /// <p>Information about the security groups.</p>
-    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>) -> Self {
-        self.security_groups = input; self
+    pub fn set_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>,
+    ) -> Self {
+        self.security_groups = input;
+        self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl DescribeSecurityGroupsOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeSecurityGroupsOutput`](crate::operation::describe_security_groups::DescribeSecurityGroupsOutput).
     pub fn build(self) -> crate::operation::describe_security_groups::DescribeSecurityGroupsOutput {
         crate::operation::describe_security_groups::DescribeSecurityGroupsOutput {
-            security_groups: self.security_groups
-            ,
-            next_token: self.next_token
-            ,
+            security_groups: self.security_groups,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

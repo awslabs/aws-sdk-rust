@@ -2,25 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TagResourceInput  {
+pub struct TagResourceInput {
     /// <p>ARN of the resource for which tags are to be added or updated.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>Array of tags to be added or updated.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>ARN of the resource for which tags are to be added or updated.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Array of tags to be added or updated.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for TagResourceInput  {
+impl std::fmt::Debug for TagResourceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
@@ -40,7 +44,8 @@ impl TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct TagResourceInputBuilder {
     pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl TagResourceInputBuilder {
     /// <p>ARN of the resource for which tags are to be added or updated.</p>
@@ -50,33 +55,45 @@ impl TagResourceInputBuilder {
     }
     /// <p>ARN of the resource for which tags are to be added or updated.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Array of tags to be added or updated.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Array of tags to be added or updated.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
-    pub fn build(self) -> Result<crate::operation::tag_resource::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::tag_resource::TagResourceInput {
-                resource_arn: self.resource_arn
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::tag_resource::TagResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::tag_resource::TagResourceInput {
+            resource_arn: self.resource_arn,
+            tags: self.tags,
+        })
     }
 }
 impl std::fmt::Debug for TagResourceInputBuilder {
@@ -87,4 +104,3 @@ impl std::fmt::Debug for TagResourceInputBuilder {
         formatter.finish()
     }
 }
-

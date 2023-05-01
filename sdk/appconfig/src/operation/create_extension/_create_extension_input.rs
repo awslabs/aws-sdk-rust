@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExtensionInput  {
+pub struct CreateExtensionInput {
     /// <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -11,36 +11,51 @@ pub struct CreateExtensionInput  {
     pub description: std::option::Option<std::string::String>,
     /// <p>The actions defined in the extension.</p>
     #[doc(hidden)]
-    pub actions: std::option::Option<std::collections::HashMap<crate::types::ActionPoint, std::vec::Vec<crate::types::Action>>>,
+    pub actions: std::option::Option<
+        std::collections::HashMap<crate::types::ActionPoint, std::vec::Vec<crate::types::Action>>,
+    >,
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Parameter>>,
+    pub parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::Parameter>,
+    >,
     /// <p>Adds one or more tags for the specified extension. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>You can omit this field when you create an extension. When you create a new version, specify the most recent current version number. For example, you create version 3, enter 2 for this field.</p>
     #[doc(hidden)]
     pub latest_version_number: std::option::Option<i32>,
 }
 impl CreateExtensionInput {
     /// <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Information about the extension.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(&self) -> std::option::Option<& std::collections::HashMap<crate::types::ActionPoint, std::vec::Vec<crate::types::Action>>> {
+    pub fn actions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::types::ActionPoint, std::vec::Vec<crate::types::Action>>,
+    > {
         self.actions.as_ref()
     }
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::Parameter>> {
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, crate::types::Parameter>>
+    {
         self.parameters.as_ref()
     }
     /// <p>Adds one or more tags for the specified extension. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>You can omit this field when you create an extension. When you create a new version, specify the most recent current version number. For example, you create version 3, enter 2 for this field.</p>
@@ -61,9 +76,14 @@ impl CreateExtensionInput {
 pub struct CreateExtensionInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) actions: std::option::Option<std::collections::HashMap<crate::types::ActionPoint, std::vec::Vec<crate::types::Action>>>,
-    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Parameter>>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) actions: std::option::Option<
+        std::collections::HashMap<crate::types::ActionPoint, std::vec::Vec<crate::types::Action>>,
+    >,
+    pub(crate) parameters: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::Parameter>,
+    >,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) latest_version_number: std::option::Option<i32>,
 }
 impl CreateExtensionInputBuilder {
@@ -74,7 +94,8 @@ impl CreateExtensionInputBuilder {
     }
     /// <p>A name for the extension. Each extension name in your account must be unique. Extension versions use the same name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Information about the extension.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,52 +104,86 @@ impl CreateExtensionInputBuilder {
     }
     /// <p>Information about the extension.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Adds a key-value pair to `actions`.
     ///
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
     /// <p>The actions defined in the extension.</p>
-    pub fn actions(mut self, k: crate::types::ActionPoint, v: std::vec::Vec<crate::types::Action>) -> Self {
+    pub fn actions(
+        mut self,
+        k: crate::types::ActionPoint,
+        v: std::vec::Vec<crate::types::Action>,
+    ) -> Self {
         let mut hash_map = self.actions.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.actions = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.actions = Some(hash_map);
+        self
     }
     /// <p>The actions defined in the extension.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::collections::HashMap<crate::types::ActionPoint, std::vec::Vec<crate::types::Action>>>) -> Self {
-        self.actions = input; self
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                crate::types::ActionPoint,
+                std::vec::Vec<crate::types::Action>,
+            >,
+        >,
+    ) -> Self {
+        self.actions = input;
+        self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn parameters(mut self, k: impl Into<std::string::String>, v: crate::types::Parameter) -> Self {
+    pub fn parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::Parameter,
+    ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.parameters = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.parameters = Some(hash_map);
+        self
     }
     /// <p>The parameters accepted by the extension. You specify parameter values when you associate the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code> API action. For Lambda extension actions, these parameters are included in the Lambda request object.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::Parameter>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::Parameter>,
+        >,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Adds one or more tags for the specified extension. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Adds one or more tags for the specified extension. Tags are metadata that help you categorize resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>You can omit this field when you create an extension. When you create a new version, specify the most recent current version number. For example, you create version 3, enter 2 for this field.</p>
     pub fn latest_version_number(mut self, input: i32) -> Self {
@@ -137,26 +192,23 @@ impl CreateExtensionInputBuilder {
     }
     /// <p>You can omit this field when you create an extension. When you create a new version, specify the most recent current version number. For example, you create version 3, enter 2 for this field.</p>
     pub fn set_latest_version_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.latest_version_number = input; self
+        self.latest_version_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateExtensionInput`](crate::operation::create_extension::CreateExtensionInput).
-    pub fn build(self) -> Result<crate::operation::create_extension::CreateExtensionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_extension::CreateExtensionInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                actions: self.actions
-                ,
-                parameters: self.parameters
-                ,
-                tags: self.tags
-                ,
-                latest_version_number: self.latest_version_number
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_extension::CreateExtensionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_extension::CreateExtensionInput {
+            name: self.name,
+            description: self.description,
+            actions: self.actions,
+            parameters: self.parameters,
+            tags: self.tags,
+            latest_version_number: self.latest_version_number,
+        })
     }
 }
-

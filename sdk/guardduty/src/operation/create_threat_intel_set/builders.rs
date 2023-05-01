@@ -4,50 +4,70 @@ pub use crate::operation::create_threat_intel_set::_create_threat_intel_set_outp
 pub use crate::operation::create_threat_intel_set::_create_threat_intel_set_input::CreateThreatIntelSetInputBuilder;
 
 /// Fluent builder constructing a request to `CreateThreatIntelSet`.
-/// 
+///
 /// <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can use this operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateThreatIntelSetFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_threat_intel_set::builders::CreateThreatIntelSetInputBuilder,
+    inner: crate::operation::create_threat_intel_set::builders::CreateThreatIntelSetInputBuilder,
 }
-impl CreateThreatIntelSetFluentBuilder  {
+impl CreateThreatIntelSetFluentBuilder {
     /// Creates a new `CreateThreatIntelSet`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_threat_intel_set::CreateThreatIntelSet, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_threat_intel_set::CreateThreatIntelSetError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_threat_intel_set::CreateThreatIntelSetOutput, aws_smithy_http::result::SdkError<crate::operation::create_threat_intel_set::CreateThreatIntelSetError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_threat_intel_set::CreateThreatIntelSet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_threat_intel_set::CreateThreatIntelSetError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_threat_intel_set::CreateThreatIntelSetOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_threat_intel_set::CreateThreatIntelSetError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique ID of the detector of the GuardDuty account that you want to create a threatIntelSet for.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -74,7 +94,10 @@ impl CreateThreatIntelSetFluentBuilder  {
         self
     }
     /// <p>The format of the file that contains the ThreatIntelSet.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::ThreatIntelSetFormat>) -> Self {
+    pub fn set_format(
+        mut self,
+        input: std::option::Option<crate::types::ThreatIntelSetFormat>,
+    ) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
@@ -113,14 +136,22 @@ impl CreateThreatIntelSetFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be added to a new threat list resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to be added to a new threat list resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

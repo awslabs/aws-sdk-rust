@@ -4,52 +4,68 @@ pub use crate::operation::create_index::_create_index_output::CreateIndexOutputB
 pub use crate::operation::create_index::_create_index_input::CreateIndexInputBuilder;
 
 /// Fluent builder constructing a request to `CreateIndex`.
-/// 
-/// <p>Creates an Amazon Kendra index. Index creation is an asynchronous API. To determine if index creation has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.</p> 
-/// <p>Once the index is active you can index your documents using the <code>BatchPutDocument</code> API or using one of the supported data sources.</p> 
+///
+/// <p>Creates an Amazon Kendra index. Index creation is an asynchronous API. To determine if index creation has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.</p>
+/// <p>Once the index is active you can index your documents using the <code>BatchPutDocument</code> API or using one of the supported data sources.</p>
 /// <p>For an example of creating an index and data source using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting started with Python SDK</a>. For an example of creating an index and data source using the Java SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting started with Java SDK</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateIndexFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_index::builders::CreateIndexInputBuilder,
+    inner: crate::operation::create_index::builders::CreateIndexInputBuilder,
 }
-impl CreateIndexFluentBuilder  {
+impl CreateIndexFluentBuilder {
     /// Creates a new `CreateIndex`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_index::CreateIndex, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_index::CreateIndexError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_index::CreateIndexOutput, aws_smithy_http::result::SdkError<crate::operation::create_index::CreateIndexError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_index::CreateIndex,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_index::CreateIndexError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_index::CreateIndexOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_index::CreateIndexError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A name for the index.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -60,15 +76,15 @@ impl CreateIndexFluentBuilder  {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p> 
-    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p> 
+    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p>
+    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
     /// <p>For more information on quota limits for Enterprise and Developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn edition(mut self, input: crate::types::IndexEdition) -> Self {
         self.inner = self.inner.edition(input);
         self
     }
-    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p> 
-    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p> 
+    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p>
+    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
     /// <p>For more information on quota limits for Enterprise and Developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn set_edition(mut self, input: std::option::Option<crate::types::IndexEdition>) -> Self {
         self.inner = self.inner.set_edition(input);
@@ -85,12 +101,18 @@ impl CreateIndexFluentBuilder  {
         self
     }
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
+    pub fn server_side_encryption_configuration(
+        mut self,
+        input: crate::types::ServerSideEncryptionConfiguration,
+    ) -> Self {
         self.inner = self.inner.server_side_encryption_configuration(input);
         self
     }
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
+    pub fn set_server_side_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_server_side_encryption_configuration(input);
         self
     }
@@ -124,7 +146,10 @@ impl CreateIndexFluentBuilder  {
         self
     }
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -133,62 +158,76 @@ impl CreateIndexFluentBuilder  {
     /// To override the contents of this collection use [`set_user_token_configurations`](Self::set_user_token_configurations).
     ///
     /// <p>The user token configuration.</p>
-    pub fn user_token_configurations(mut self, input: crate::types::UserTokenConfiguration) -> Self {
+    pub fn user_token_configurations(
+        mut self,
+        input: crate::types::UserTokenConfiguration,
+    ) -> Self {
         self.inner = self.inner.user_token_configurations(input);
         self
     }
     /// <p>The user token configuration.</p>
-    pub fn set_user_token_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>) -> Self {
+    pub fn set_user_token_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    ) -> Self {
         self.inner = self.inner.set_user_token_configurations(input);
         self
     }
-    /// <p>The user context policy.</p> 
-    /// <dl> 
+    /// <p>The user context policy.</p>
+    /// <dl>
     /// <dt>
     /// ATTRIBUTE_FILTER
-    /// </dt> 
-    /// <dd> 
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// </dd>
     /// <dt>
     /// USER_TOKEN
-    /// </dt> 
-    /// <dd> 
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// </dd>
     /// </dl>
     pub fn user_context_policy(mut self, input: crate::types::UserContextPolicy) -> Self {
         self.inner = self.inner.user_context_policy(input);
         self
     }
-    /// <p>The user context policy.</p> 
-    /// <dl> 
+    /// <p>The user context policy.</p>
+    /// <dl>
     /// <dt>
     /// ATTRIBUTE_FILTER
-    /// </dt> 
-    /// <dd> 
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// </dd>
     /// <dt>
     /// USER_TOKEN
-    /// </dt> 
-    /// <dd> 
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// </dd>
     /// </dl>
-    pub fn set_user_context_policy(mut self, input: std::option::Option<crate::types::UserContextPolicy>) -> Self {
+    pub fn set_user_context_policy(
+        mut self,
+        input: std::option::Option<crate::types::UserContextPolicy>,
+    ) -> Self {
         self.inner = self.inner.set_user_context_policy(input);
         self
     }
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn user_group_resolution_configuration(mut self, input: crate::types::UserGroupResolutionConfiguration) -> Self {
+    pub fn user_group_resolution_configuration(
+        mut self,
+        input: crate::types::UserGroupResolutionConfiguration,
+    ) -> Self {
         self.inner = self.inner.user_group_resolution_configuration(input);
         self
     }
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn set_user_group_resolution_configuration(mut self, input: std::option::Option<crate::types::UserGroupResolutionConfiguration>) -> Self {
+    pub fn set_user_group_resolution_configuration(
+        mut self,
+        input: std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_user_group_resolution_configuration(input);
         self
     }
 }
-

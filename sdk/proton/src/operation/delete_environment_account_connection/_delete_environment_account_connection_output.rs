@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEnvironmentAccountConnectionOutput  {
+pub struct DeleteEnvironmentAccountConnectionOutput {
     /// <p>The detailed data of the environment account connection being deleted.</p>
     #[doc(hidden)]
-    pub environment_account_connection: std::option::Option<crate::types::EnvironmentAccountConnection>,
+    pub environment_account_connection:
+        std::option::Option<crate::types::EnvironmentAccountConnection>,
     _request_id: Option<String>,
 }
 impl DeleteEnvironmentAccountConnectionOutput {
     /// <p>The detailed data of the environment account connection being deleted.</p>
-    pub fn environment_account_connection(&self) -> std::option::Option<& crate::types::EnvironmentAccountConnection> {
+    pub fn environment_account_connection(
+        &self,
+    ) -> std::option::Option<&crate::types::EnvironmentAccountConnection> {
         self.environment_account_connection.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteEnvironmentAccountConnectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteEnvironmentAccountConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentAccountConnectionOutput`](crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnectionOutput).
-    pub fn builder() -> crate::operation::delete_environment_account_connection::builders::DeleteEnvironmentAccountConnectionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_environment_account_connection::builders::DeleteEnvironmentAccountConnectionOutputBuilder{
         crate::operation::delete_environment_account_connection::builders::DeleteEnvironmentAccountConnectionOutputBuilder::default()
     }
 }
@@ -30,30 +33,38 @@ impl DeleteEnvironmentAccountConnectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeleteEnvironmentAccountConnectionOutputBuilder {
-    pub(crate) environment_account_connection: std::option::Option<crate::types::EnvironmentAccountConnection>,
+    pub(crate) environment_account_connection:
+        std::option::Option<crate::types::EnvironmentAccountConnection>,
     _request_id: Option<String>,
 }
 impl DeleteEnvironmentAccountConnectionOutputBuilder {
     /// <p>The detailed data of the environment account connection being deleted.</p>
-    pub fn environment_account_connection(mut self, input: crate::types::EnvironmentAccountConnection) -> Self {
+    pub fn environment_account_connection(
+        mut self,
+        input: crate::types::EnvironmentAccountConnection,
+    ) -> Self {
         self.environment_account_connection = Some(input);
         self
     }
     /// <p>The detailed data of the environment account connection being deleted.</p>
-    pub fn set_environment_account_connection(mut self, input: std::option::Option<crate::types::EnvironmentAccountConnection>) -> Self {
-        self.environment_account_connection = input; self
+    pub fn set_environment_account_connection(
+        mut self,
+        input: std::option::Option<crate::types::EnvironmentAccountConnection>,
+    ) -> Self {
+        self.environment_account_connection = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteEnvironmentAccountConnectionOutput`](crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnectionOutput).
-    pub fn build(self) -> crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnectionOutput {
+    pub fn build(self) -> crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnectionOutput{
         crate::operation::delete_environment_account_connection::DeleteEnvironmentAccountConnectionOutput {
             environment_account_connection: self.environment_account_connection
             ,
@@ -61,4 +72,3 @@ impl DeleteEnvironmentAccountConnectionOutputBuilder {
         }
     }
 }
-

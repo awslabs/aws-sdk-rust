@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkflowStepExecutionsInput  {
+pub struct ListWorkflowStepExecutionsInput {
     /// <p>The maximum items to return in a request.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,17 +19,17 @@ impl ListWorkflowStepExecutionsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn workflow_execution_id(&self) -> std::option::Option<& str> {
+    pub fn workflow_execution_id(&self) -> std::option::Option<&str> {
         self.workflow_execution_id.as_deref()
     }
 }
 impl ListWorkflowStepExecutionsInput {
     /// Creates a new builder-style object to manufacture [`ListWorkflowStepExecutionsInput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput).
-    pub fn builder() -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsInputBuilder {
+    pub fn builder() -> crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsInputBuilder{
         crate::operation::list_workflow_step_executions::builders::ListWorkflowStepExecutionsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListWorkflowStepExecutionsInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl ListWorkflowStepExecutionsInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
     pub fn workflow_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,21 +69,26 @@ impl ListWorkflowStepExecutionsInputBuilder {
         self
     }
     /// <p>The unique identifier that Image Builder assigned to keep track of runtime details when it ran the workflow.</p>
-    pub fn set_workflow_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_execution_id = input; self
+    pub fn set_workflow_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.workflow_execution_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListWorkflowStepExecutionsInput`](crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput).
-    pub fn build(self) -> Result<crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_workflow_step_executions::ListWorkflowStepExecutionsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                workflow_execution_id: self.workflow_execution_id
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                workflow_execution_id: self.workflow_execution_id,
+            },
         )
     }
 }
-

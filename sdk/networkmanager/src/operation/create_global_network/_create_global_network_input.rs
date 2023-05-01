@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGlobalNetworkInput  {
-    /// <p>A description of the global network.</p> 
+pub struct CreateGlobalNetworkInput {
+    /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -12,20 +12,22 @@ pub struct CreateGlobalNetworkInput  {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGlobalNetworkInput {
-    /// <p>A description of the global network.</p> 
+    /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateGlobalNetworkInput {
     /// Creates a new builder-style object to manufacture [`CreateGlobalNetworkInput`](crate::operation::create_global_network::CreateGlobalNetworkInput).
-    pub fn builder() -> crate::operation::create_global_network::builders::CreateGlobalNetworkInputBuilder {
-        crate::operation::create_global_network::builders::CreateGlobalNetworkInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_global_network::builders::CreateGlobalNetworkInputBuilder {
+        crate::operation::create_global_network::builders::CreateGlobalNetworkInputBuilder::default(
+        )
     }
 }
 
@@ -37,16 +39,17 @@ pub struct CreateGlobalNetworkInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGlobalNetworkInputBuilder {
-    /// <p>A description of the global network.</p> 
+    /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.description = Some(input.into());
         self
     }
-    /// <p>A description of the global network.</p> 
+    /// <p>A description of the global network.</p>
     /// <p>Constraints: Maximum length of 256 characters.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -55,24 +58,30 @@ impl CreateGlobalNetworkInputBuilder {
     /// <p>The tags to apply to the resource during creation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags to apply to the resource during creation.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateGlobalNetworkInput`](crate::operation::create_global_network::CreateGlobalNetworkInput).
-    pub fn build(self) -> Result<crate::operation::create_global_network::CreateGlobalNetworkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_global_network::CreateGlobalNetworkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_global_network::CreateGlobalNetworkInput {
-                description: self.description
-                ,
-                tags: self.tags
-                ,
-            }
+                description: self.description,
+                tags: self.tags,
+            },
         )
     }
 }
-

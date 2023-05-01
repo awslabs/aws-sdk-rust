@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePublicVirtualInterfaceInput  {
+pub struct CreatePublicVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct CreatePublicVirtualInterfaceInput  {
 }
 impl CreatePublicVirtualInterfaceInput {
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<& str> {
+    pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
     /// <p>Information about the public virtual interface.</p>
-    pub fn new_public_virtual_interface(&self) -> std::option::Option<& crate::types::NewPublicVirtualInterface> {
+    pub fn new_public_virtual_interface(
+        &self,
+    ) -> std::option::Option<&crate::types::NewPublicVirtualInterface> {
         self.new_public_virtual_interface.as_ref()
     }
 }
 impl CreatePublicVirtualInterfaceInput {
     /// Creates a new builder-style object to manufacture [`CreatePublicVirtualInterfaceInput`](crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput).
-    pub fn builder() -> crate::operation::create_public_virtual_interface::builders::CreatePublicVirtualInterfaceInputBuilder {
+    pub fn builder() -> crate::operation::create_public_virtual_interface::builders::CreatePublicVirtualInterfaceInputBuilder{
         crate::operation::create_public_virtual_interface::builders::CreatePublicVirtualInterfaceInputBuilder::default()
     }
 }
@@ -32,7 +34,8 @@ impl CreatePublicVirtualInterfaceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreatePublicVirtualInterfaceInputBuilder {
     pub(crate) connection_id: std::option::Option<std::string::String>,
-    pub(crate) new_public_virtual_interface: std::option::Option<crate::types::NewPublicVirtualInterface>,
+    pub(crate) new_public_virtual_interface:
+        std::option::Option<crate::types::NewPublicVirtualInterface>,
 }
 impl CreatePublicVirtualInterfaceInputBuilder {
     /// <p>The ID of the connection.</p>
@@ -42,27 +45,37 @@ impl CreatePublicVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input; self
+        self.connection_id = input;
+        self
     }
     /// <p>Information about the public virtual interface.</p>
-    pub fn new_public_virtual_interface(mut self, input: crate::types::NewPublicVirtualInterface) -> Self {
+    pub fn new_public_virtual_interface(
+        mut self,
+        input: crate::types::NewPublicVirtualInterface,
+    ) -> Self {
         self.new_public_virtual_interface = Some(input);
         self
     }
     /// <p>Information about the public virtual interface.</p>
-    pub fn set_new_public_virtual_interface(mut self, input: std::option::Option<crate::types::NewPublicVirtualInterface>) -> Self {
-        self.new_public_virtual_interface = input; self
+    pub fn set_new_public_virtual_interface(
+        mut self,
+        input: std::option::Option<crate::types::NewPublicVirtualInterface>,
+    ) -> Self {
+        self.new_public_virtual_interface = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePublicVirtualInterfaceInput`](crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput).
-    pub fn build(self) -> Result<crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceInput {
-                connection_id: self.connection_id
-                ,
-                new_public_virtual_interface: self.new_public_virtual_interface
-                ,
-            }
+                connection_id: self.connection_id,
+                new_public_virtual_interface: self.new_public_virtual_interface,
+            },
         )
     }
 }
-

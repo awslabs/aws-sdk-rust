@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTemplateOutput  {
+pub struct DescribeTemplateOutput {
     /// <p>The template structure for the object you want to describe.</p>
     #[doc(hidden)]
     pub template: std::option::Option<crate::types::Template>,
@@ -16,7 +16,7 @@ pub struct DescribeTemplateOutput  {
 }
 impl DescribeTemplateOutput {
     /// <p>The template structure for the object you want to describe.</p>
-    pub fn template(&self) -> std::option::Option<& crate::types::Template> {
+    pub fn template(&self) -> std::option::Option<&crate::types::Template> {
         self.template.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -24,18 +24,19 @@ impl DescribeTemplateOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeTemplateOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTemplateOutput`](crate::operation::describe_template::DescribeTemplateOutput).
-    pub fn builder() -> crate::operation::describe_template::builders::DescribeTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::describe_template::builders::DescribeTemplateOutputBuilder
+    {
         crate::operation::describe_template::builders::DescribeTemplateOutputBuilder::default()
     }
 }
@@ -57,7 +58,8 @@ impl DescribeTemplateOutputBuilder {
     }
     /// <p>The template structure for the object you want to describe.</p>
     pub fn set_template(mut self, input: std::option::Option<crate::types::Template>) -> Self {
-        self.template = input; self
+        self.template = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -66,7 +68,8 @@ impl DescribeTemplateOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,29 +78,25 @@ impl DescribeTemplateOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeTemplateOutput`](crate::operation::describe_template::DescribeTemplateOutput).
     pub fn build(self) -> crate::operation::describe_template::DescribeTemplateOutput {
         crate::operation::describe_template::DescribeTemplateOutput {
-            template: self.template
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
+            template: self.template,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }
 }
-

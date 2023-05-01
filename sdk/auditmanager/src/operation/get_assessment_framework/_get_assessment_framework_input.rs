@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssessmentFrameworkInput  {
+pub struct GetAssessmentFrameworkInput {
     /// <p> The identifier for the framework. </p>
     #[doc(hidden)]
     pub framework_id: std::option::Option<std::string::String>,
 }
 impl GetAssessmentFrameworkInput {
     /// <p> The identifier for the framework. </p>
-    pub fn framework_id(&self) -> std::option::Option<& str> {
+    pub fn framework_id(&self) -> std::option::Option<&str> {
         self.framework_id.as_deref()
     }
 }
 impl GetAssessmentFrameworkInput {
     /// Creates a new builder-style object to manufacture [`GetAssessmentFrameworkInput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkInput).
-    pub fn builder() -> crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkInputBuilder
+    {
         crate::operation::get_assessment_framework::builders::GetAssessmentFrameworkInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl GetAssessmentFrameworkInputBuilder {
     }
     /// <p> The identifier for the framework. </p>
     pub fn set_framework_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.framework_id = input; self
+        self.framework_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAssessmentFrameworkInput`](crate::operation::get_assessment_framework::GetAssessmentFrameworkInput).
-    pub fn build(self) -> Result<crate::operation::get_assessment_framework::GetAssessmentFrameworkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_assessment_framework::GetAssessmentFrameworkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_assessment_framework::GetAssessmentFrameworkInput {
-                framework_id: self.framework_id
-                ,
-            }
+                framework_id: self.framework_id,
+            },
         )
     }
 }
-

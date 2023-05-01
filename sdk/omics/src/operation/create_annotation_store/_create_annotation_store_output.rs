@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAnnotationStoreOutput  {
+pub struct CreateAnnotationStoreOutput {
     /// <p>The store's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -28,42 +28,44 @@ pub struct CreateAnnotationStoreOutput  {
 }
 impl CreateAnnotationStoreOutput {
     /// <p>The store's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
-    pub fn reference(&self) -> std::option::Option<& crate::types::ReferenceItem> {
+    pub fn reference(&self) -> std::option::Option<&crate::types::ReferenceItem> {
         self.reference.as_ref()
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn store_format(&self) -> std::option::Option<& crate::types::StoreFormat> {
+    pub fn store_format(&self) -> std::option::Option<&crate::types::StoreFormat> {
         self.store_format.as_ref()
     }
     /// <p>The store's file parsing options.</p>
-    pub fn store_options(&self) -> std::option::Option<& crate::types::StoreOptions> {
+    pub fn store_options(&self) -> std::option::Option<&crate::types::StoreOptions> {
         self.store_options.as_ref()
     }
     /// <p>The store's status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::StoreStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::StoreStatus> {
         self.status.as_ref()
     }
     /// <p>The store's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>When the store was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAnnotationStoreOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAnnotationStoreOutput {
     /// Creates a new builder-style object to manufacture [`CreateAnnotationStoreOutput`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput).
-    pub fn builder() -> crate::operation::create_annotation_store::builders::CreateAnnotationStoreOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_annotation_store::builders::CreateAnnotationStoreOutputBuilder
+    {
         crate::operation::create_annotation_store::builders::CreateAnnotationStoreOutputBuilder::default()
     }
 }
@@ -89,7 +91,8 @@ impl CreateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
@@ -97,8 +100,12 @@ impl CreateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The store's genome reference. Required for all stores except TSV format with generic annotations.</p>
-    pub fn set_reference(mut self, input: std::option::Option<crate::types::ReferenceItem>) -> Self {
-        self.reference = input; self
+    pub fn set_reference(
+        mut self,
+        input: std::option::Option<crate::types::ReferenceItem>,
+    ) -> Self {
+        self.reference = input;
+        self
     }
     /// <p>The annotation file format of the store.</p>
     pub fn store_format(mut self, input: crate::types::StoreFormat) -> Self {
@@ -106,8 +113,12 @@ impl CreateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The annotation file format of the store.</p>
-    pub fn set_store_format(mut self, input: std::option::Option<crate::types::StoreFormat>) -> Self {
-        self.store_format = input; self
+    pub fn set_store_format(
+        mut self,
+        input: std::option::Option<crate::types::StoreFormat>,
+    ) -> Self {
+        self.store_format = input;
+        self
     }
     /// <p>The store's file parsing options.</p>
     pub fn store_options(mut self, input: crate::types::StoreOptions) -> Self {
@@ -115,8 +126,12 @@ impl CreateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>The store's file parsing options.</p>
-    pub fn set_store_options(mut self, input: std::option::Option<crate::types::StoreOptions>) -> Self {
-        self.store_options = input; self
+    pub fn set_store_options(
+        mut self,
+        input: std::option::Option<crate::types::StoreOptions>,
+    ) -> Self {
+        self.store_options = input;
+        self
     }
     /// <p>The store's status.</p>
     pub fn status(mut self, input: crate::types::StoreStatus) -> Self {
@@ -125,7 +140,8 @@ impl CreateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::StoreStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The store's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,7 +150,8 @@ impl CreateAnnotationStoreOutputBuilder {
     }
     /// <p>The store's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>When the store was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,37 +159,33 @@ impl CreateAnnotationStoreOutputBuilder {
         self
     }
     /// <p>When the store was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAnnotationStoreOutput`](crate::operation::create_annotation_store::CreateAnnotationStoreOutput).
     pub fn build(self) -> crate::operation::create_annotation_store::CreateAnnotationStoreOutput {
         crate::operation::create_annotation_store::CreateAnnotationStoreOutput {
-            id: self.id
-            ,
-            reference: self.reference
-            ,
-            store_format: self.store_format
-            ,
-            store_options: self.store_options
-            ,
-            status: self.status
-            ,
-            name: self.name
-            ,
-            creation_time: self.creation_time
-            ,
+            id: self.id,
+            reference: self.reference,
+            store_format: self.store_format,
+            store_options: self.store_options,
+            status: self.status,
+            name: self.name,
+            creation_time: self.creation_time,
             _request_id: self._request_id,
         }
     }
 }
-

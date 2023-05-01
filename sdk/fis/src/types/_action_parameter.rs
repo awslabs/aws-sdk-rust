@@ -3,7 +3,7 @@
 /// <p>Describes a parameter for an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionParameter  {
+pub struct ActionParameter {
     /// <p>The parameter description.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct ActionParameter  {
 }
 impl ActionParameter {
     /// <p>The parameter description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Indicates whether the parameter is required.</p>
@@ -43,7 +43,8 @@ impl ActionParameterBuilder {
     }
     /// <p>The parameter description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Indicates whether the parameter is required.</p>
     pub fn required(mut self, input: bool) -> Self {
@@ -52,16 +53,14 @@ impl ActionParameterBuilder {
     }
     /// <p>Indicates whether the parameter is required.</p>
     pub fn set_required(mut self, input: std::option::Option<bool>) -> Self {
-        self.required = input; self
+        self.required = input;
+        self
     }
     /// Consumes the builder and constructs a [`ActionParameter`](crate::types::ActionParameter).
     pub fn build(self) -> crate::types::ActionParameter {
         crate::types::ActionParameter {
-            description: self.description
-            ,
-            required: self.required
-            ,
+            description: self.description,
+            required: self.required,
         }
     }
 }
-

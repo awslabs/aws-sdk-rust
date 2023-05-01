@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaFunctionCompletedEventAttributes  {
+pub struct LambdaFunctionCompletedEventAttributes {
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this Lambda task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     #[doc(hidden)]
     pub scheduled_event_id: i64,
@@ -24,7 +24,7 @@ impl LambdaFunctionCompletedEventAttributes {
         self.started_event_id
     }
     /// <p>The results of the Lambda task.</p>
-    pub fn result(&self) -> std::option::Option<& str> {
+    pub fn result(&self) -> std::option::Option<&str> {
         self.result.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl LambdaFunctionCompletedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this Lambda task was scheduled. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn set_scheduled_event_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.scheduled_event_id = input; self
+        self.scheduled_event_id = input;
+        self
     }
     /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn started_event_id(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl LambdaFunctionCompletedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity task started. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn set_started_event_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.started_event_id = input; self
+        self.started_event_id = input;
+        self
     }
     /// <p>The results of the Lambda task.</p>
     pub fn result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +71,15 @@ impl LambdaFunctionCompletedEventAttributesBuilder {
     }
     /// <p>The results of the Lambda task.</p>
     pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.result = input; self
+        self.result = input;
+        self
     }
     /// Consumes the builder and constructs a [`LambdaFunctionCompletedEventAttributes`](crate::types::LambdaFunctionCompletedEventAttributes).
     pub fn build(self) -> crate::types::LambdaFunctionCompletedEventAttributes {
         crate::types::LambdaFunctionCompletedEventAttributes {
-            scheduled_event_id: self.scheduled_event_id
-                .unwrap_or_default()
-            ,
-            started_event_id: self.started_event_id
-                .unwrap_or_default()
-            ,
-            result: self.result
-            ,
+            scheduled_event_id: self.scheduled_event_id.unwrap_or_default(),
+            started_event_id: self.started_event_id.unwrap_or_default(),
+            result: self.result,
         }
     }
 }
-

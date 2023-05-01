@@ -90,7 +90,7 @@ impl<'a> Arn<'a> {
     }
 }
 
-pub(crate) fn parse_arn<'a, 'b>(input: &'a str, e: &'b mut DiagnosticCollector) -> Option<Arn<'a>> {
+pub(crate) fn parse_arn<'a>(input: &'a str, e: &mut DiagnosticCollector) -> Option<Arn<'a>> {
     e.capture(Arn::parse(input))
 }
 
@@ -151,4 +151,3 @@ mod test {
         );
     }
 }
-

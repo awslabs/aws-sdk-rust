@@ -4,51 +4,71 @@ pub use crate::operation::create_provisioning_template::_create_provisioning_tem
 pub use crate::operation::create_provisioning_template::_create_provisioning_template_input::CreateProvisioningTemplateInputBuilder;
 
 /// Fluent builder constructing a request to `CreateProvisioningTemplate`.
-/// 
-/// <p>Creates a provisioning template.</p> 
+///
+/// <p>Creates a provisioning template.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplate</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProvisioningTemplateFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_provisioning_template::builders::CreateProvisioningTemplateInputBuilder,
 }
-impl CreateProvisioningTemplateFluentBuilder  {
+impl CreateProvisioningTemplateFluentBuilder {
     /// Creates a new `CreateProvisioningTemplate`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_provisioning_template::CreateProvisioningTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_provisioning_template::CreateProvisioningTemplateError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_provisioning_template::CreateProvisioningTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::create_provisioning_template::CreateProvisioningTemplateError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_provisioning_template::CreateProvisioningTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_provisioning_template::CreateProvisioningTemplateError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_provisioning_template::CreateProvisioningTemplateOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_provisioning_template::CreateProvisioningTemplateError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the provisioning template.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
@@ -95,7 +115,10 @@ impl CreateProvisioningTemplateFluentBuilder  {
         self
     }
     /// <p>The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn set_provisioning_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provisioning_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provisioning_role_arn(input);
         self
     }
@@ -105,7 +128,10 @@ impl CreateProvisioningTemplateFluentBuilder  {
         self
     }
     /// <p>Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
-    pub fn set_pre_provisioning_hook(mut self, input: std::option::Option<crate::types::ProvisioningHook>) -> Self {
+    pub fn set_pre_provisioning_hook(
+        mut self,
+        input: std::option::Option<crate::types::ProvisioningHook>,
+    ) -> Self {
         self.inner = self.inner.set_pre_provisioning_hook(input);
         self
     }
@@ -113,21 +139,24 @@ impl CreateProvisioningTemplateFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Metadata which can be used to manage the provisioning template.</p> <note> 
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
+    /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>Metadata which can be used to manage the provisioning template.</p> <note> 
-    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> 
-    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> 
-    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> 
+    /// <p>Metadata which can be used to manage the provisioning template.</p> <note>
+    /// <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p>
+    /// <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p>
+    /// <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p>
     /// </note>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -142,4 +171,3 @@ impl CreateProvisioningTemplateFluentBuilder  {
         self
     }
 }
-

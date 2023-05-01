@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProgramInput  {
+pub struct CreateProgramInput {
     /// <p>The ad break configuration settings.</p>
     #[doc(hidden)]
     pub ad_breaks: std::option::Option<std::vec::Vec<crate::types::AdBreak>>,
@@ -27,31 +27,33 @@ pub struct CreateProgramInput  {
 }
 impl CreateProgramInput {
     /// <p>The ad break configuration settings.</p>
-    pub fn ad_breaks(&self) -> std::option::Option<& [crate::types::AdBreak]> {
+    pub fn ad_breaks(&self) -> std::option::Option<&[crate::types::AdBreak]> {
         self.ad_breaks.as_deref()
     }
     /// <p>The name of the channel for this Program.</p>
-    pub fn channel_name(&self) -> std::option::Option<& str> {
+    pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
     /// <p>The name of the LiveSource for this Program.</p>
-    pub fn live_source_name(&self) -> std::option::Option<& str> {
+    pub fn live_source_name(&self) -> std::option::Option<&str> {
         self.live_source_name.as_deref()
     }
     /// <p>The name of the Program.</p>
-    pub fn program_name(&self) -> std::option::Option<& str> {
+    pub fn program_name(&self) -> std::option::Option<&str> {
         self.program_name.as_deref()
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn schedule_configuration(&self) -> std::option::Option<& crate::types::ScheduleConfiguration> {
+    pub fn schedule_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> std::option::Option<& str> {
+    pub fn source_location_name(&self) -> std::option::Option<&str> {
         self.source_location_name.as_deref()
     }
     /// <p>The name that's used to refer to a VOD source.</p>
-    pub fn vod_source_name(&self) -> std::option::Option<& str> {
+    pub fn vod_source_name(&self) -> std::option::Option<&str> {
         self.vod_source_name.as_deref()
     }
 }
@@ -82,13 +84,17 @@ impl CreateProgramInputBuilder {
     /// <p>The ad break configuration settings.</p>
     pub fn ad_breaks(mut self, input: crate::types::AdBreak) -> Self {
         let mut v = self.ad_breaks.unwrap_or_default();
-                        v.push(input);
-                        self.ad_breaks = Some(v);
-                        self
+        v.push(input);
+        self.ad_breaks = Some(v);
+        self
     }
     /// <p>The ad break configuration settings.</p>
-    pub fn set_ad_breaks(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>) -> Self {
-        self.ad_breaks = input; self
+    pub fn set_ad_breaks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AdBreak>>,
+    ) -> Self {
+        self.ad_breaks = input;
+        self
     }
     /// <p>The name of the channel for this Program.</p>
     pub fn channel_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,7 +103,8 @@ impl CreateProgramInputBuilder {
     }
     /// <p>The name of the channel for this Program.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input; self
+        self.channel_name = input;
+        self
     }
     /// <p>The name of the LiveSource for this Program.</p>
     pub fn live_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +113,8 @@ impl CreateProgramInputBuilder {
     }
     /// <p>The name of the LiveSource for this Program.</p>
     pub fn set_live_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.live_source_name = input; self
+        self.live_source_name = input;
+        self
     }
     /// <p>The name of the Program.</p>
     pub fn program_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +123,8 @@ impl CreateProgramInputBuilder {
     }
     /// <p>The name of the Program.</p>
     pub fn set_program_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.program_name = input; self
+        self.program_name = input;
+        self
     }
     /// <p>The schedule configuration settings.</p>
     pub fn schedule_configuration(mut self, input: crate::types::ScheduleConfiguration) -> Self {
@@ -123,8 +132,12 @@ impl CreateProgramInputBuilder {
         self
     }
     /// <p>The schedule configuration settings.</p>
-    pub fn set_schedule_configuration(mut self, input: std::option::Option<crate::types::ScheduleConfiguration>) -> Self {
-        self.schedule_configuration = input; self
+    pub fn set_schedule_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ScheduleConfiguration>,
+    ) -> Self {
+        self.schedule_configuration = input;
+        self
     }
     /// <p>The name of the source location.</p>
     pub fn source_location_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,8 +145,12 @@ impl CreateProgramInputBuilder {
         self
     }
     /// <p>The name of the source location.</p>
-    pub fn set_source_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_location_name = input; self
+    pub fn set_source_location_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_location_name = input;
+        self
     }
     /// <p>The name that's used to refer to a VOD source.</p>
     pub fn vod_source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,28 +159,24 @@ impl CreateProgramInputBuilder {
     }
     /// <p>The name that's used to refer to a VOD source.</p>
     pub fn set_vod_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vod_source_name = input; self
+        self.vod_source_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateProgramInput`](crate::operation::create_program::CreateProgramInput).
-    pub fn build(self) -> Result<crate::operation::create_program::CreateProgramInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_program::CreateProgramInput {
-                ad_breaks: self.ad_breaks
-                ,
-                channel_name: self.channel_name
-                ,
-                live_source_name: self.live_source_name
-                ,
-                program_name: self.program_name
-                ,
-                schedule_configuration: self.schedule_configuration
-                ,
-                source_location_name: self.source_location_name
-                ,
-                vod_source_name: self.vod_source_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_program::CreateProgramInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_program::CreateProgramInput {
+            ad_breaks: self.ad_breaks,
+            channel_name: self.channel_name,
+            live_source_name: self.live_source_name,
+            program_name: self.program_name,
+            schedule_configuration: self.schedule_configuration,
+            source_location_name: self.source_location_name,
+            vod_source_name: self.vod_source_name,
+        })
     }
 }
-

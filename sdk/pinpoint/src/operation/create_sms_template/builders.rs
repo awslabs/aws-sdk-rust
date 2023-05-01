@@ -4,57 +4,80 @@ pub use crate::operation::create_sms_template::_create_sms_template_output::Crea
 pub use crate::operation::create_sms_template::_create_sms_template_input::CreateSmsTemplateInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSmsTemplate`.
-/// 
+///
 /// <p>Creates a message template for messages that are sent through the SMS channel.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSmsTemplateFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_sms_template::builders::CreateSmsTemplateInputBuilder,
+    inner: crate::operation::create_sms_template::builders::CreateSmsTemplateInputBuilder,
 }
-impl CreateSmsTemplateFluentBuilder  {
+impl CreateSmsTemplateFluentBuilder {
     /// Creates a new `CreateSmsTemplate`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_sms_template::CreateSmsTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_sms_template::CreateSmsTemplateError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_sms_template::CreateSmsTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::create_sms_template::CreateSmsTemplateError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_sms_template::CreateSmsTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_sms_template::CreateSmsTemplateError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_sms_template::CreateSmsTemplateOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_sms_template::CreateSmsTemplateError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
     pub fn sms_template_request(mut self, input: crate::types::SmsTemplateRequest) -> Self {
         self.inner = self.inner.sms_template_request(input);
         self
     }
     /// <p>Specifies the content and settings for a message template that can be used in text messages that are sent through the SMS channel.</p>
-    pub fn set_sms_template_request(mut self, input: std::option::Option<crate::types::SmsTemplateRequest>) -> Self {
+    pub fn set_sms_template_request(
+        mut self,
+        input: std::option::Option<crate::types::SmsTemplateRequest>,
+    ) -> Self {
         self.inner = self.inner.set_sms_template_request(input);
         self
     }
@@ -69,4 +92,3 @@ impl CreateSmsTemplateFluentBuilder  {
         self
     }
 }
-

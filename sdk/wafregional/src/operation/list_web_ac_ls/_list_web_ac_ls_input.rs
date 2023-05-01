@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWebAcLsInput  {
+pub struct ListWebAcLsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListWebAcLsInput  {
 }
 impl ListWebAcLsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
@@ -42,7 +42,8 @@ impl ListWebAcLsInputBuilder {
     }
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>WebACL</code> objects. For the second and subsequent <code>ListWebACLs</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>WebACL</code> objects.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -51,19 +52,19 @@ impl ListWebAcLsInputBuilder {
     }
     /// <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to return for this request. If you have more <code>WebACL</code> objects than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>WebACL</code> objects.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListWebAcLsInput`](crate::operation::list_web_ac_ls::ListWebAcLsInput).
-    pub fn build(self) -> Result<crate::operation::list_web_ac_ls::ListWebAcLsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_web_ac_ls::ListWebAcLsInput {
-                next_marker: self.next_marker
-                ,
-                limit: self.limit
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_web_ac_ls::ListWebAcLsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_web_ac_ls::ListWebAcLsInput {
+            next_marker: self.next_marker,
+            limit: self.limit.unwrap_or_default(),
+        })
     }
 }
-

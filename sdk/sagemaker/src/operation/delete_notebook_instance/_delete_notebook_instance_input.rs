@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNotebookInstanceInput  {
+pub struct DeleteNotebookInstanceInput {
     /// <p>The name of the SageMaker notebook instance to delete.</p>
     #[doc(hidden)]
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
 impl DeleteNotebookInstanceInput {
     /// <p>The name of the SageMaker notebook instance to delete.</p>
-    pub fn notebook_instance_name(&self) -> std::option::Option<& str> {
+    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
         self.notebook_instance_name.as_deref()
     }
 }
 impl DeleteNotebookInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteNotebookInstanceInput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput).
-    pub fn builder() -> crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceInputBuilder
+    {
         crate::operation::delete_notebook_instance::builders::DeleteNotebookInstanceInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteNotebookInstanceInputBuilder {
         self
     }
     /// <p>The name of the SageMaker notebook instance to delete.</p>
-    pub fn set_notebook_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_instance_name = input; self
+    pub fn set_notebook_instance_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.notebook_instance_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteNotebookInstanceInput`](crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput).
-    pub fn build(self) -> Result<crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_notebook_instance::DeleteNotebookInstanceInput {
-                notebook_instance_name: self.notebook_instance_name
-                ,
-            }
+                notebook_instance_name: self.notebook_instance_name,
+            },
         )
     }
 }
-

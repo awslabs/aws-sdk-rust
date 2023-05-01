@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateParticipantConnectionInput  {
+pub struct CreateParticipantConnectionInput {
     /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::vec::Vec<crate::types::ConnectionType>>,
-    /// <p>This is a header parameter.</p> 
+    /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     #[doc(hidden)]
     pub participant_token: std::option::Option<std::string::String>,
@@ -16,12 +16,12 @@ pub struct CreateParticipantConnectionInput  {
 }
 impl CreateParticipantConnectionInput {
     /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& [crate::types::ConnectionType]> {
+    pub fn r#type(&self) -> std::option::Option<&[crate::types::ConnectionType]> {
         self.r#type.as_deref()
     }
-    /// <p>This is a header parameter.</p> 
+    /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
-    pub fn participant_token(&self) -> std::option::Option<& str> {
+    pub fn participant_token(&self) -> std::option::Option<&str> {
         self.participant_token.as_deref()
     }
     /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
@@ -31,7 +31,7 @@ impl CreateParticipantConnectionInput {
 }
 impl CreateParticipantConnectionInput {
     /// Creates a new builder-style object to manufacture [`CreateParticipantConnectionInput`](crate::operation::create_participant_connection::CreateParticipantConnectionInput).
-    pub fn builder() -> crate::operation::create_participant_connection::builders::CreateParticipantConnectionInputBuilder {
+    pub fn builder() -> crate::operation::create_participant_connection::builders::CreateParticipantConnectionInputBuilder{
         crate::operation::create_participant_connection::builders::CreateParticipantConnectionInputBuilder::default()
     }
 }
@@ -52,24 +52,32 @@ impl CreateParticipantConnectionInputBuilder {
     /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
     pub fn r#type(mut self, input: crate::types::ConnectionType) -> Self {
         let mut v = self.r#type.unwrap_or_default();
-                        v.push(input);
-                        self.r#type = Some(v);
-                        self
+        v.push(input);
+        self.r#type = Some(v);
+        self
     }
     /// <p>Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is <code>true</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConnectionType>>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConnectionType>>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
-    /// <p>This is a header parameter.</p> 
+    /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
     pub fn participant_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.participant_token = Some(input.into());
         self
     }
-    /// <p>This is a header parameter.</p> 
+    /// <p>This is a header parameter.</p>
     /// <p>The ParticipantToken as obtained from <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartChatContact.html">StartChatContact</a> API response.</p>
-    pub fn set_participant_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.participant_token = input; self
+    pub fn set_participant_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.participant_token = input;
+        self
     }
     /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub fn connect_participant(mut self, input: bool) -> Self {
@@ -78,20 +86,22 @@ impl CreateParticipantConnectionInputBuilder {
     }
     /// <p>Amazon Connect Participant is used to mark the participant as connected for customer participant in message streaming, as well as for agent or manager participant in non-streaming chats.</p>
     pub fn set_connect_participant(mut self, input: std::option::Option<bool>) -> Self {
-        self.connect_participant = input; self
+        self.connect_participant = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateParticipantConnectionInput`](crate::operation::create_participant_connection::CreateParticipantConnectionInput).
-    pub fn build(self) -> Result<crate::operation::create_participant_connection::CreateParticipantConnectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_participant_connection::CreateParticipantConnectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_participant_connection::CreateParticipantConnectionInput {
-                r#type: self.r#type
-                ,
-                participant_token: self.participant_token
-                ,
-                connect_participant: self.connect_participant
-                ,
-            }
+                r#type: self.r#type,
+                participant_token: self.participant_token,
+                connect_participant: self.connect_participant,
+            },
         )
     }
 }
-

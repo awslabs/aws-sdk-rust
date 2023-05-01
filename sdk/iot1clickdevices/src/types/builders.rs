@@ -8,4 +8,3 @@ pub use crate::types::_device::DeviceBuilder;
 pub use crate::types::_attributes::AttributesBuilder;
 
 pub use crate::types::_device_method::DeviceMethodBuilder;
-

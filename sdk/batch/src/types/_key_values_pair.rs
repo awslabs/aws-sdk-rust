@@ -3,7 +3,7 @@
 /// <p>A filter name and value pair that's used to return a more specific list of results from a <code>ListJobs</code> API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyValuesPair  {
+pub struct KeyValuesPair {
     /// <p>The name of the filter. Filter names are case sensitive.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct KeyValuesPair  {
 }
 impl KeyValuesPair {
     /// <p>The name of the filter. Filter names are case sensitive.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The filter values.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl KeyValuesPairBuilder {
     }
     /// <p>The name of the filter. Filter names are case sensitive.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -52,22 +53,23 @@ impl KeyValuesPairBuilder {
     /// <p>The filter values.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The filter values.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`KeyValuesPair`](crate::types::KeyValuesPair).
     pub fn build(self) -> crate::types::KeyValuesPair {
         crate::types::KeyValuesPair {
-            name: self.name
-            ,
-            values: self.values
-            ,
+            name: self.name,
+            values: self.values,
         }
     }
 }
-

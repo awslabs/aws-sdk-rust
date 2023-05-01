@@ -3,7 +3,7 @@
 /// <p>Provides details about an auto scaling group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsAutoScalingAutoScalingGroupDetails  {
+pub struct AwsAutoScalingAutoScalingGroupDetails {
     /// <p>The name of the launch configuration.</p>
     #[doc(hidden)]
     pub launch_configuration_name: std::option::Option<std::string::String>,
@@ -16,55 +16,72 @@ pub struct AwsAutoScalingAutoScalingGroupDetails  {
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
     #[doc(hidden)]
     pub health_check_grace_period: i32,
-    /// <p>Indicates when the auto scaling group was created.</p> 
+    /// <p>Indicates when the auto scaling group was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<std::string::String>,
     /// <p>The mixed instances policy for the automatic scaling group.</p>
     #[doc(hidden)]
-    pub mixed_instances_policy: std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails>,
+    pub mixed_instances_policy: std::option::Option<
+        crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
+    >,
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>>,
+    pub availability_zones: std::option::Option<
+        std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>,
+    >,
     /// <p>The launch template to use.</p>
     #[doc(hidden)]
-    pub launch_template: std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>,
+    pub launch_template: std::option::Option<
+        crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
+    >,
     /// <p>Indicates whether capacity rebalancing is enabled. </p>
     #[doc(hidden)]
     pub capacity_rebalance: bool,
 }
 impl AwsAutoScalingAutoScalingGroupDetails {
     /// <p>The name of the launch configuration.</p>
-    pub fn launch_configuration_name(&self) -> std::option::Option<& str> {
+    pub fn launch_configuration_name(&self) -> std::option::Option<&str> {
         self.launch_configuration_name.as_deref()
     }
     /// <p>The list of load balancers associated with the group.</p>
-    pub fn load_balancer_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn load_balancer_names(&self) -> std::option::Option<&[std::string::String]> {
         self.load_balancer_names.as_deref()
     }
     /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
-    pub fn health_check_type(&self) -> std::option::Option<& str> {
+    pub fn health_check_type(&self) -> std::option::Option<&str> {
         self.health_check_type.as_deref()
     }
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
     pub fn health_check_grace_period(&self) -> i32 {
         self.health_check_grace_period
     }
-    /// <p>Indicates when the auto scaling group was created.</p> 
+    /// <p>Indicates when the auto scaling group was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_time(&self) -> std::option::Option<& str> {
+    pub fn created_time(&self) -> std::option::Option<&str> {
         self.created_time.as_deref()
     }
     /// <p>The mixed instances policy for the automatic scaling group.</p>
-    pub fn mixed_instances_policy(&self) -> std::option::Option<& crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails> {
+    pub fn mixed_instances_policy(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails>
+    {
         self.mixed_instances_policy.as_ref()
     }
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
-    pub fn availability_zones(&self) -> std::option::Option<& [crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails]> {
+    pub fn availability_zones(
+        &self,
+    ) -> std::option::Option<
+        &[crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails],
+    > {
         self.availability_zones.as_deref()
     }
     /// <p>The launch template to use.</p>
-    pub fn launch_template(&self) -> std::option::Option<& crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification> {
+    pub fn launch_template(
+        &self,
+    ) -> std::option::Option<
+        &crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
+    > {
         self.launch_template.as_ref()
     }
     /// <p>Indicates whether capacity rebalancing is enabled. </p>
@@ -88,9 +105,15 @@ pub struct AwsAutoScalingAutoScalingGroupDetailsBuilder {
     pub(crate) health_check_type: std::option::Option<std::string::String>,
     pub(crate) health_check_grace_period: std::option::Option<i32>,
     pub(crate) created_time: std::option::Option<std::string::String>,
-    pub(crate) mixed_instances_policy: std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails>,
-    pub(crate) availability_zones: std::option::Option<std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>>,
-    pub(crate) launch_template: std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>,
+    pub(crate) mixed_instances_policy: std::option::Option<
+        crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
+    >,
+    pub(crate) availability_zones: std::option::Option<
+        std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>,
+    >,
+    pub(crate) launch_template: std::option::Option<
+        crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
+    >,
     pub(crate) capacity_rebalance: std::option::Option<bool>,
 }
 impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
@@ -100,8 +123,12 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
         self
     }
     /// <p>The name of the launch configuration.</p>
-    pub fn set_launch_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_configuration_name = input; self
+    pub fn set_launch_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_configuration_name = input;
+        self
     }
     /// Appends an item to `load_balancer_names`.
     ///
@@ -110,13 +137,17 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     /// <p>The list of load balancers associated with the group.</p>
     pub fn load_balancer_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.load_balancer_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.load_balancer_names = Some(v);
-                        self
+        v.push(input.into());
+        self.load_balancer_names = Some(v);
+        self
     }
     /// <p>The list of load balancers associated with the group.</p>
-    pub fn set_load_balancer_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.load_balancer_names = input; self
+    pub fn set_load_balancer_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.load_balancer_names = input;
+        self
     }
     /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
     pub fn health_check_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +155,12 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
         self
     }
     /// <p>The service to use for the health checks. Valid values are <code>EC2</code> or <code>ELB</code>.</p>
-    pub fn set_health_check_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.health_check_type = input; self
+    pub fn set_health_check_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.health_check_type = input;
+        self
     }
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
     pub fn health_check_grace_period(mut self, input: i32) -> Self {
@@ -134,51 +169,80 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     }
     /// <p>The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before it checks the health status of an EC2 instance that has come into service.</p>
     pub fn set_health_check_grace_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.health_check_grace_period = input; self
+        self.health_check_grace_period = input;
+        self
     }
-    /// <p>Indicates when the auto scaling group was created.</p> 
+    /// <p>Indicates when the auto scaling group was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_time(mut self, input: impl Into<std::string::String>) -> Self {
         self.created_time = Some(input.into());
         self
     }
-    /// <p>Indicates when the auto scaling group was created.</p> 
+    /// <p>Indicates when the auto scaling group was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_time = input; self
+        self.created_time = input;
+        self
     }
     /// <p>The mixed instances policy for the automatic scaling group.</p>
-    pub fn mixed_instances_policy(mut self, input: crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails) -> Self {
+    pub fn mixed_instances_policy(
+        mut self,
+        input: crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
+    ) -> Self {
         self.mixed_instances_policy = Some(input);
         self
     }
     /// <p>The mixed instances policy for the automatic scaling group.</p>
-    pub fn set_mixed_instances_policy(mut self, input: std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails>) -> Self {
-        self.mixed_instances_policy = input; self
+    pub fn set_mixed_instances_policy(
+        mut self,
+        input: std::option::Option<
+            crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetails,
+        >,
+    ) -> Self {
+        self.mixed_instances_policy = input;
+        self
     }
     /// Appends an item to `availability_zones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
     ///
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
-    pub fn availability_zones(mut self, input: crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails) -> Self {
+    pub fn availability_zones(
+        mut self,
+        input: crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails,
+    ) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-                        v.push(input);
-                        self.availability_zones = Some(v);
-                        self
+        v.push(input);
+        self.availability_zones = Some(v);
+        self
     }
     /// <p>The list of Availability Zones for the automatic scaling group.</p>
-    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>>) -> Self {
-        self.availability_zones = input; self
+    pub fn set_availability_zones(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetails>,
+        >,
+    ) -> Self {
+        self.availability_zones = input;
+        self
     }
     /// <p>The launch template to use.</p>
-    pub fn launch_template(mut self, input: crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification) -> Self {
+    pub fn launch_template(
+        mut self,
+        input: crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
+    ) -> Self {
         self.launch_template = Some(input);
         self
     }
     /// <p>The launch template to use.</p>
-    pub fn set_launch_template(mut self, input: std::option::Option<crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification>) -> Self {
-        self.launch_template = input; self
+    pub fn set_launch_template(
+        mut self,
+        input: std::option::Option<
+            crate::types::AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecification,
+        >,
+    ) -> Self {
+        self.launch_template = input;
+        self
     }
     /// <p>Indicates whether capacity rebalancing is enabled. </p>
     pub fn capacity_rebalance(mut self, input: bool) -> Self {
@@ -187,32 +251,21 @@ impl AwsAutoScalingAutoScalingGroupDetailsBuilder {
     }
     /// <p>Indicates whether capacity rebalancing is enabled. </p>
     pub fn set_capacity_rebalance(mut self, input: std::option::Option<bool>) -> Self {
-        self.capacity_rebalance = input; self
+        self.capacity_rebalance = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsAutoScalingAutoScalingGroupDetails`](crate::types::AwsAutoScalingAutoScalingGroupDetails).
     pub fn build(self) -> crate::types::AwsAutoScalingAutoScalingGroupDetails {
         crate::types::AwsAutoScalingAutoScalingGroupDetails {
-            launch_configuration_name: self.launch_configuration_name
-            ,
-            load_balancer_names: self.load_balancer_names
-            ,
-            health_check_type: self.health_check_type
-            ,
-            health_check_grace_period: self.health_check_grace_period
-                .unwrap_or_default()
-            ,
-            created_time: self.created_time
-            ,
-            mixed_instances_policy: self.mixed_instances_policy
-            ,
-            availability_zones: self.availability_zones
-            ,
-            launch_template: self.launch_template
-            ,
-            capacity_rebalance: self.capacity_rebalance
-                .unwrap_or_default()
-            ,
+            launch_configuration_name: self.launch_configuration_name,
+            load_balancer_names: self.load_balancer_names,
+            health_check_type: self.health_check_type,
+            health_check_grace_period: self.health_check_grace_period.unwrap_or_default(),
+            created_time: self.created_time,
+            mixed_instances_policy: self.mixed_instances_policy,
+            availability_zones: self.availability_zones,
+            launch_template: self.launch_template,
+            capacity_rebalance: self.capacity_rebalance.unwrap_or_default(),
         }
     }
 }
-

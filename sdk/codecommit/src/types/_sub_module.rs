@@ -3,7 +3,7 @@
 /// <p>Returns information about a submodule reference in a repository folder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubModule  {
+pub struct SubModule {
     /// <p>The commit ID that contains the reference to the submodule.</p>
     #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SubModule  {
 }
 impl SubModule {
     /// <p>The commit ID that contains the reference to the submodule.</p>
-    pub fn commit_id(&self) -> std::option::Option<& str> {
+    pub fn commit_id(&self) -> std::option::Option<&str> {
         self.commit_id.as_deref()
     }
     /// <p>The fully qualified path to the folder that contains the reference to the submodule.</p>
-    pub fn absolute_path(&self) -> std::option::Option<& str> {
+    pub fn absolute_path(&self) -> std::option::Option<&str> {
         self.absolute_path.as_deref()
     }
     /// <p>The relative path of the submodule from the folder where the query originated.</p>
-    pub fn relative_path(&self) -> std::option::Option<& str> {
+    pub fn relative_path(&self) -> std::option::Option<&str> {
         self.relative_path.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl SubModuleBuilder {
     }
     /// <p>The commit ID that contains the reference to the submodule.</p>
     pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.commit_id = input; self
+        self.commit_id = input;
+        self
     }
     /// <p>The fully qualified path to the folder that contains the reference to the submodule.</p>
     pub fn absolute_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl SubModuleBuilder {
     }
     /// <p>The fully qualified path to the folder that contains the reference to the submodule.</p>
     pub fn set_absolute_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.absolute_path = input; self
+        self.absolute_path = input;
+        self
     }
     /// <p>The relative path of the submodule from the folder where the query originated.</p>
     pub fn relative_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl SubModuleBuilder {
     }
     /// <p>The relative path of the submodule from the folder where the query originated.</p>
     pub fn set_relative_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.relative_path = input; self
+        self.relative_path = input;
+        self
     }
     /// Consumes the builder and constructs a [`SubModule`](crate::types::SubModule).
     pub fn build(self) -> crate::types::SubModule {
         crate::types::SubModule {
-            commit_id: self.commit_id
-            ,
-            absolute_path: self.absolute_path
-            ,
-            relative_path: self.relative_path
-            ,
+            commit_id: self.commit_id,
+            absolute_path: self.absolute_path,
+            relative_path: self.relative_path,
         }
     }
 }
-

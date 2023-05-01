@@ -3,7 +3,7 @@
 /// <p>Provides information that defines an IBM Db2 LUW endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct IbmDb2Settings  {
+pub struct IbmDb2Settings {
     /// <p>Database name for the endpoint.</p>
     #[doc(hidden)]
     pub database_name: std::option::Option<std::string::String>,
@@ -28,8 +28,8 @@ pub struct IbmDb2Settings  {
     /// <p>Endpoint connection user name.</p>
     #[doc(hidden)]
     pub username: std::option::Option<std::string::String>,
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
     pub secrets_manager_access_role_arn: std::option::Option<std::string::String>,
@@ -39,11 +39,11 @@ pub struct IbmDb2Settings  {
 }
 impl IbmDb2Settings {
     /// <p>Database name for the endpoint.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>Endpoint connection password.</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>Endpoint TCP port. The default value is 50000.</p>
@@ -51,7 +51,7 @@ impl IbmDb2Settings {
         self.port
     }
     /// <p>Fully qualified domain name of the endpoint.</p>
-    pub fn server_name(&self) -> std::option::Option<& str> {
+    pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
     /// <p>Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.</p>
@@ -59,7 +59,7 @@ impl IbmDb2Settings {
         self.set_data_capture_changes
     }
     /// <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the replication to start.</p>
-    pub fn current_lsn(&self) -> std::option::Option<& str> {
+    pub fn current_lsn(&self) -> std::option::Option<&str> {
         self.current_lsn.as_deref()
     }
     /// <p>Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.</p>
@@ -67,21 +67,21 @@ impl IbmDb2Settings {
         self.max_k_bytes_per_read
     }
     /// <p>Endpoint connection user name.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(&self) -> std::option::Option<& str> {
+    pub fn secrets_manager_access_role_arn(&self) -> std::option::Option<&str> {
         self.secrets_manager_access_role_arn.as_deref()
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Db2 LUW endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(&self) -> std::option::Option<& str> {
+    pub fn secrets_manager_secret_id(&self) -> std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
 }
-impl  std::fmt::Debug for IbmDb2Settings  {
+impl std::fmt::Debug for IbmDb2Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IbmDb2Settings");
         formatter.field("database_name", &self.database_name);
@@ -92,7 +92,10 @@ impl  std::fmt::Debug for IbmDb2Settings  {
         formatter.field("current_lsn", &self.current_lsn);
         formatter.field("max_k_bytes_per_read", &self.max_k_bytes_per_read);
         formatter.field("username", &self.username);
-        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
+        formatter.field(
+            "secrets_manager_access_role_arn",
+            &self.secrets_manager_access_role_arn,
+        );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.finish()
     }
@@ -127,7 +130,8 @@ impl IbmDb2SettingsBuilder {
     }
     /// <p>Database name for the endpoint.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>Endpoint connection password.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,7 +140,8 @@ impl IbmDb2SettingsBuilder {
     }
     /// <p>Endpoint connection password.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     /// <p>Endpoint TCP port. The default value is 50000.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -145,7 +150,8 @@ impl IbmDb2SettingsBuilder {
     }
     /// <p>Endpoint TCP port. The default value is 50000.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>Fully qualified domain name of the endpoint.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,7 +160,8 @@ impl IbmDb2SettingsBuilder {
     }
     /// <p>Fully qualified domain name of the endpoint.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_name = input; self
+        self.server_name = input;
+        self
     }
     /// <p>Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.</p>
     pub fn set_data_capture_changes(mut self, input: bool) -> Self {
@@ -163,7 +170,8 @@ impl IbmDb2SettingsBuilder {
     }
     /// <p>Enables ongoing replication (CDC) as a BOOLEAN value. The default is true.</p>
     pub fn set_set_data_capture_changes(mut self, input: std::option::Option<bool>) -> Self {
-        self.set_data_capture_changes = input; self
+        self.set_data_capture_changes = input;
+        self
     }
     /// <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the replication to start.</p>
     pub fn current_lsn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,7 +180,8 @@ impl IbmDb2SettingsBuilder {
     }
     /// <p>For ongoing replication (CDC), use CurrentLSN to specify a log sequence number (LSN) where you want the replication to start.</p>
     pub fn set_current_lsn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_lsn = input; self
+        self.current_lsn = input;
+        self
     }
     /// <p>Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.</p>
     pub fn max_k_bytes_per_read(mut self, input: i32) -> Self {
@@ -181,7 +190,8 @@ impl IbmDb2SettingsBuilder {
     }
     /// <p>Maximum number of bytes per read, as a NUMBER value. The default is 64 KB.</p>
     pub fn set_max_k_bytes_per_read(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_k_bytes_per_read = input; self
+        self.max_k_bytes_per_read = input;
+        self
     }
     /// <p>Endpoint connection user name.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,20 +200,28 @@ impl IbmDb2SettingsBuilder {
     }
     /// <p>Endpoint connection user name.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn secrets_manager_access_role_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.secrets_manager_access_role_arn = Some(input.into());
         self
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the Db2 LUW endpoint. </p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn set_secrets_manager_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secrets_manager_access_role_arn = input; self
+    pub fn set_secrets_manager_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.secrets_manager_access_role_arn = input;
+        self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Db2 LUW endpoint connection details.</p>
     pub fn secrets_manager_secret_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -211,32 +229,26 @@ impl IbmDb2SettingsBuilder {
         self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the Db2 LUW endpoint connection details.</p>
-    pub fn set_secrets_manager_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secrets_manager_secret_id = input; self
+    pub fn set_secrets_manager_secret_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.secrets_manager_secret_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`IbmDb2Settings`](crate::types::IbmDb2Settings).
     pub fn build(self) -> crate::types::IbmDb2Settings {
         crate::types::IbmDb2Settings {
-            database_name: self.database_name
-            ,
-            password: self.password
-            ,
-            port: self.port
-            ,
-            server_name: self.server_name
-            ,
-            set_data_capture_changes: self.set_data_capture_changes
-            ,
-            current_lsn: self.current_lsn
-            ,
-            max_k_bytes_per_read: self.max_k_bytes_per_read
-            ,
-            username: self.username
-            ,
-            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn
-            ,
-            secrets_manager_secret_id: self.secrets_manager_secret_id
-            ,
+            database_name: self.database_name,
+            password: self.password,
+            port: self.port,
+            server_name: self.server_name,
+            set_data_capture_changes: self.set_data_capture_changes,
+            current_lsn: self.current_lsn,
+            max_k_bytes_per_read: self.max_k_bytes_per_read,
+            username: self.username,
+            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
+            secrets_manager_secret_id: self.secrets_manager_secret_id,
         }
     }
 }
@@ -251,9 +263,11 @@ impl std::fmt::Debug for IbmDb2SettingsBuilder {
         formatter.field("current_lsn", &self.current_lsn);
         formatter.field("max_k_bytes_per_read", &self.max_k_bytes_per_read);
         formatter.field("username", &self.username);
-        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
+        formatter.field(
+            "secrets_manager_access_role_arn",
+            &self.secrets_manager_access_role_arn,
+        );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.finish()
     }
 }
-

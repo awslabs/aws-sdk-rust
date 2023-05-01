@@ -3,7 +3,7 @@
 /// <p>Detailed information about an event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Event  {
+pub struct Event {
     /// <p>Provides the identifier for the source of the event.</p>
     #[doc(hidden)]
     pub source_identifier: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct Event  {
 }
 impl Event {
     /// <p>Provides the identifier for the source of the event.</p>
-    pub fn source_identifier(&self) -> std::option::Option<& str> {
+    pub fn source_identifier(&self) -> std::option::Option<&str> {
         self.source_identifier.as_deref()
     }
     /// <p>Specifies the source type for this event.</p>
-    pub fn source_type(&self) -> std::option::Option<& crate::types::SourceType> {
+    pub fn source_type(&self) -> std::option::Option<&crate::types::SourceType> {
         self.source_type.as_ref()
     }
     /// <p>Provides the text of this event.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Specifies the category for the event.</p>
-    pub fn event_categories(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
         self.event_categories.as_deref()
     }
     /// <p>Specifies the date and time of the event.</p>
-    pub fn date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the event.</p>
-    pub fn source_arn(&self) -> std::option::Option<& str> {
+    pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
 }
@@ -74,8 +74,12 @@ impl EventBuilder {
         self
     }
     /// <p>Provides the identifier for the source of the event.</p>
-    pub fn set_source_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_identifier = input; self
+    pub fn set_source_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_identifier = input;
+        self
     }
     /// <p>Specifies the source type for this event.</p>
     pub fn source_type(mut self, input: crate::types::SourceType) -> Self {
@@ -84,7 +88,8 @@ impl EventBuilder {
     }
     /// <p>Specifies the source type for this event.</p>
     pub fn set_source_type(mut self, input: std::option::Option<crate::types::SourceType>) -> Self {
-        self.source_type = input; self
+        self.source_type = input;
+        self
     }
     /// <p>Provides the text of this event.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +98,8 @@ impl EventBuilder {
     }
     /// <p>Provides the text of this event.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Appends an item to `event_categories`.
     ///
@@ -102,13 +108,17 @@ impl EventBuilder {
     /// <p>Specifies the category for the event.</p>
     pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
-                        v.push(input.into());
-                        self.event_categories = Some(v);
-                        self
+        v.push(input.into());
+        self.event_categories = Some(v);
+        self
     }
     /// <p>Specifies the category for the event.</p>
-    pub fn set_event_categories(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.event_categories = input; self
+    pub fn set_event_categories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.event_categories = input;
+        self
     }
     /// <p>Specifies the date and time of the event.</p>
     pub fn date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -117,7 +127,8 @@ impl EventBuilder {
     }
     /// <p>Specifies the date and time of the event.</p>
     pub fn set_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date = input; self
+        self.date = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the event.</p>
     pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,24 +137,18 @@ impl EventBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the event.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input; self
+        self.source_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`Event`](crate::types::Event).
     pub fn build(self) -> crate::types::Event {
         crate::types::Event {
-            source_identifier: self.source_identifier
-            ,
-            source_type: self.source_type
-            ,
-            message: self.message
-            ,
-            event_categories: self.event_categories
-            ,
-            date: self.date
-            ,
-            source_arn: self.source_arn
-            ,
+            source_identifier: self.source_identifier,
+            source_type: self.source_type,
+            message: self.message,
+            event_categories: self.event_categories,
+            date: self.date,
+            source_arn: self.source_arn,
         }
     }
 }
-

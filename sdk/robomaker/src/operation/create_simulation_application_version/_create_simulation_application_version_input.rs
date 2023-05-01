@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSimulationApplicationVersionInput  {
+pub struct CreateSimulationApplicationVersionInput {
     /// <p>The application information for the simulation application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct CreateSimulationApplicationVersionInput  {
 }
 impl CreateSimulationApplicationVersionInput {
     /// <p>The application information for the simulation application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn current_revision_id(&self) -> std::option::Option<& str> {
+    pub fn current_revision_id(&self) -> std::option::Option<&str> {
         self.current_revision_id.as_deref()
     }
     /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
-    pub fn s3_etags(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn s3_etags(&self) -> std::option::Option<&[std::string::String]> {
         self.s3_etags.as_deref()
     }
     /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
-    pub fn image_digest(&self) -> std::option::Option<& str> {
+    pub fn image_digest(&self) -> std::option::Option<&str> {
         self.image_digest.as_deref()
     }
 }
 impl CreateSimulationApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateSimulationApplicationVersionInput`](crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput).
-    pub fn builder() -> crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionInputBuilder {
+    pub fn builder() -> crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionInputBuilder{
         crate::operation::create_simulation_application_version::builders::CreateSimulationApplicationVersionInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl CreateSimulationApplicationVersionInputBuilder {
     }
     /// <p>The application information for the simulation application.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input; self
+        self.application = input;
+        self
     }
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
     pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +67,12 @@ impl CreateSimulationApplicationVersionInputBuilder {
         self
     }
     /// <p>The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.</p>
-    pub fn set_current_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_revision_id = input; self
+    pub fn set_current_revision_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.current_revision_id = input;
+        self
     }
     /// Appends an item to `s3_etags`.
     ///
@@ -76,13 +81,17 @@ impl CreateSimulationApplicationVersionInputBuilder {
     /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
     pub fn s3_etags(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.s3_etags.unwrap_or_default();
-                        v.push(input.into());
-                        self.s3_etags = Some(v);
-                        self
+        v.push(input.into());
+        self.s3_etags = Some(v);
+        self
     }
     /// <p>The Amazon S3 eTag identifier for the zip file bundle that you use to create the simulation application.</p>
-    pub fn set_s3_etags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.s3_etags = input; self
+    pub fn set_s3_etags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.s3_etags = input;
+        self
     }
     /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
     pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,10 +100,11 @@ impl CreateSimulationApplicationVersionInputBuilder {
     }
     /// <p>The SHA256 digest used to identify the Docker image URI used to created the simulation application.</p>
     pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_digest = input; self
+        self.image_digest = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSimulationApplicationVersionInput`](crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput).
-    pub fn build(self) -> Result<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::create_simulation_application_version::CreateSimulationApplicationVersionInput {
                 application: self.application
@@ -109,4 +119,3 @@ impl CreateSimulationApplicationVersionInputBuilder {
         )
     }
 }
-

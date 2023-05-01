@@ -12,4 +12,3 @@ pub use crate::types::_list_notification_rules_filter::ListNotificationRulesFilt
 pub use crate::types::_event_type_summary::EventTypeSummaryBuilder;
 
 pub use crate::types::_list_event_types_filter::ListEventTypesFilterBuilder;
-

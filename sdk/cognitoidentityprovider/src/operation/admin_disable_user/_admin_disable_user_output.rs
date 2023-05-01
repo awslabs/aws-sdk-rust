@@ -3,17 +3,18 @@
 /// <p>Represents the response received from the server to disable the user as an administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AdminDisableUserOutput  {
+pub struct AdminDisableUserOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AdminDisableUserOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AdminDisableUserOutput {
     /// Creates a new builder-style object to manufacture [`AdminDisableUserOutput`](crate::operation::admin_disable_user::AdminDisableUserOutput).
-    pub fn builder() -> crate::operation::admin_disable_user::builders::AdminDisableUserOutputBuilder {
+    pub fn builder() -> crate::operation::admin_disable_user::builders::AdminDisableUserOutputBuilder
+    {
         crate::operation::admin_disable_user::builders::AdminDisableUserOutputBuilder::default()
     }
 }
@@ -26,14 +27,14 @@ pub struct AdminDisableUserOutputBuilder {
 }
 impl AdminDisableUserOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AdminDisableUserOutput`](crate::operation::admin_disable_user::AdminDisableUserOutput).
     pub fn build(self) -> crate::operation::admin_disable_user::AdminDisableUserOutput {
         crate::operation::admin_disable_user::AdminDisableUserOutput {
@@ -41,4 +42,3 @@ impl AdminDisableUserOutputBuilder {
         }
     }
 }
-

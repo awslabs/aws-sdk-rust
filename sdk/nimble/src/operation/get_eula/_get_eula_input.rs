@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEulaInput  {
+pub struct GetEulaInput {
     /// <p>The EULA ID.</p>
     #[doc(hidden)]
     pub eula_id: std::option::Option<std::string::String>,
 }
 impl GetEulaInput {
     /// <p>The EULA ID.</p>
-    pub fn eula_id(&self) -> std::option::Option<& str> {
+    pub fn eula_id(&self) -> std::option::Option<&str> {
         self.eula_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetEulaInputBuilder {
     }
     /// <p>The EULA ID.</p>
     pub fn set_eula_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.eula_id = input; self
+        self.eula_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetEulaInput`](crate::operation::get_eula::GetEulaInput).
-    pub fn build(self) -> Result<crate::operation::get_eula::GetEulaInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_eula::GetEulaInput {
-                eula_id: self.eula_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_eula::GetEulaInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_eula::GetEulaInput {
+            eula_id: self.eula_id,
+        })
     }
 }
-

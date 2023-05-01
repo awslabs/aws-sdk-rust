@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserEndpointsOutput  {
+pub struct GetUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
     #[doc(hidden)]
     pub endpoints_response: std::option::Option<crate::types::EndpointsResponse>,
@@ -10,18 +10,19 @@ pub struct GetUserEndpointsOutput  {
 }
 impl GetUserEndpointsOutput {
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
-    pub fn endpoints_response(&self) -> std::option::Option<& crate::types::EndpointsResponse> {
+    pub fn endpoints_response(&self) -> std::option::Option<&crate::types::EndpointsResponse> {
         self.endpoints_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetUserEndpointsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetUserEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`GetUserEndpointsOutput`](crate::operation::get_user_endpoints::GetUserEndpointsOutput).
-    pub fn builder() -> crate::operation::get_user_endpoints::builders::GetUserEndpointsOutputBuilder {
+    pub fn builder() -> crate::operation::get_user_endpoints::builders::GetUserEndpointsOutputBuilder
+    {
         crate::operation::get_user_endpoints::builders::GetUserEndpointsOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl GetUserEndpointsOutputBuilder {
         self
     }
     /// <p>Provides information about all the endpoints that are associated with a user ID.</p>
-    pub fn set_endpoints_response(mut self, input: std::option::Option<crate::types::EndpointsResponse>) -> Self {
-        self.endpoints_response = input; self
+    pub fn set_endpoints_response(
+        mut self,
+        input: std::option::Option<crate::types::EndpointsResponse>,
+    ) -> Self {
+        self.endpoints_response = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetUserEndpointsOutput`](crate::operation::get_user_endpoints::GetUserEndpointsOutput).
     pub fn build(self) -> crate::operation::get_user_endpoints::GetUserEndpointsOutput {
         crate::operation::get_user_endpoints::GetUserEndpointsOutput {
-            endpoints_response: self.endpoints_response
-            ,
+            endpoints_response: self.endpoints_response,
             _request_id: self._request_id,
         }
     }
 }
-

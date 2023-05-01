@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTypeRegistrationsOutput  {
-    /// <p>A list of extension registration tokens.</p> 
+pub struct ListTypeRegistrationsOutput {
+    /// <p>A list of extension registration tokens.</p>
     /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
     #[doc(hidden)]
     pub registration_token_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,24 +13,26 @@ pub struct ListTypeRegistrationsOutput  {
     _request_id: Option<String>,
 }
 impl ListTypeRegistrationsOutput {
-    /// <p>A list of extension registration tokens.</p> 
+    /// <p>A list of extension registration tokens.</p>
     /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
-    pub fn registration_token_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn registration_token_list(&self) -> std::option::Option<&[std::string::String]> {
         self.registration_token_list.as_deref()
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTypeRegistrationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTypeRegistrationsOutput {
     /// Creates a new builder-style object to manufacture [`ListTypeRegistrationsOutput`](crate::operation::list_type_registrations::ListTypeRegistrationsOutput).
-    pub fn builder() -> crate::operation::list_type_registrations::builders::ListTypeRegistrationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_type_registrations::builders::ListTypeRegistrationsOutputBuilder
+    {
         crate::operation::list_type_registrations::builders::ListTypeRegistrationsOutputBuilder::default()
     }
 }
@@ -48,18 +50,22 @@ impl ListTypeRegistrationsOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_registration_token_list`](Self::set_registration_token_list).
     ///
-    /// <p>A list of extension registration tokens.</p> 
+    /// <p>A list of extension registration tokens.</p>
     /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
     pub fn registration_token_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.registration_token_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.registration_token_list = Some(v);
-                        self
+        v.push(input.into());
+        self.registration_token_list = Some(v);
+        self
     }
-    /// <p>A list of extension registration tokens.</p> 
+    /// <p>A list of extension registration tokens.</p>
     /// <p>Use <code> <code>DescribeTypeRegistration</code> </code> to return detailed information about a type registration request.</p>
-    pub fn set_registration_token_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.registration_token_list = input; self
+    pub fn set_registration_token_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.registration_token_list = input;
+        self
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,26 +74,24 @@ impl ListTypeRegistrationsOutputBuilder {
     }
     /// <p>If the request doesn't return all the remaining results, <code>NextToken</code> is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If the request returns all results, <code>NextToken</code> is set to <code>null</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTypeRegistrationsOutput`](crate::operation::list_type_registrations::ListTypeRegistrationsOutput).
     pub fn build(self) -> crate::operation::list_type_registrations::ListTypeRegistrationsOutput {
         crate::operation::list_type_registrations::ListTypeRegistrationsOutput {
-            registration_token_list: self.registration_token_list
-            ,
-            next_token: self.next_token
-            ,
+            registration_token_list: self.registration_token_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

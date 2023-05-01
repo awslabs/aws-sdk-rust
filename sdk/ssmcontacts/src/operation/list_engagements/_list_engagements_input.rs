@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEngagementsInput  {
+pub struct ListEngagementsInput {
     /// <p>The pagination token to continue to the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListEngagementsInput  {
 }
 impl ListEngagementsInput {
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of engagements per page of results.</p>
@@ -26,11 +26,11 @@ impl ListEngagementsInput {
         self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
-    pub fn incident_id(&self) -> std::option::Option<& str> {
+    pub fn incident_id(&self) -> std::option::Option<&str> {
         self.incident_id.as_deref()
     }
     /// <p>The time range to lists engagements for an incident.</p>
-    pub fn time_range_value(&self) -> std::option::Option<& crate::types::TimeRange> {
+    pub fn time_range_value(&self) -> std::option::Option<&crate::types::TimeRange> {
         self.time_range_value.as_ref()
     }
 }
@@ -58,7 +58,8 @@ impl ListEngagementsInputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of engagements per page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -67,7 +68,8 @@ impl ListEngagementsInputBuilder {
     }
     /// <p>The maximum number of engagements per page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
     pub fn incident_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl ListEngagementsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the incident you're listing engagements for.</p>
     pub fn set_incident_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.incident_id = input; self
+        self.incident_id = input;
+        self
     }
     /// <p>The time range to lists engagements for an incident.</p>
     pub fn time_range_value(mut self, input: crate::types::TimeRange) -> Self {
@@ -84,23 +87,25 @@ impl ListEngagementsInputBuilder {
         self
     }
     /// <p>The time range to lists engagements for an incident.</p>
-    pub fn set_time_range_value(mut self, input: std::option::Option<crate::types::TimeRange>) -> Self {
-        self.time_range_value = input; self
+    pub fn set_time_range_value(
+        mut self,
+        input: std::option::Option<crate::types::TimeRange>,
+    ) -> Self {
+        self.time_range_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEngagementsInput`](crate::operation::list_engagements::ListEngagementsInput).
-    pub fn build(self) -> Result<crate::operation::list_engagements::ListEngagementsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_engagements::ListEngagementsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                incident_id: self.incident_id
-                ,
-                time_range_value: self.time_range_value
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_engagements::ListEngagementsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_engagements::ListEngagementsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            incident_id: self.incident_id,
+            time_range_value: self.time_range_value,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RescoreOutput  {
+pub struct RescoreOutput {
     /// <p>The identifier associated with the scores that Amazon Kendra Intelligent Ranking gives to the results. Amazon Kendra Intelligent Ranking rescores or re-ranks the results for the search service.</p>
     #[doc(hidden)]
     pub rescore_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct RescoreOutput  {
 }
 impl RescoreOutput {
     /// <p>The identifier associated with the scores that Amazon Kendra Intelligent Ranking gives to the results. Amazon Kendra Intelligent Ranking rescores or re-ranks the results for the search service.</p>
-    pub fn rescore_id(&self) -> std::option::Option<& str> {
+    pub fn rescore_id(&self) -> std::option::Option<&str> {
         self.rescore_id.as_deref()
     }
     /// <p>A list of result items for documents with new relevancy scores. The results are in descending order.</p>
-    pub fn result_items(&self) -> std::option::Option<& [crate::types::RescoreResultItem]> {
+    pub fn result_items(&self) -> std::option::Option<&[crate::types::RescoreResultItem]> {
         self.result_items.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RescoreOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RescoreOutput {
     /// Creates a new builder-style object to manufacture [`RescoreOutput`](crate::operation::rescore::RescoreOutput).
     pub fn builder() -> crate::operation::rescore::builders::RescoreOutputBuilder {
@@ -49,7 +49,8 @@ impl RescoreOutputBuilder {
     }
     /// <p>The identifier associated with the scores that Amazon Kendra Intelligent Ranking gives to the results. Amazon Kendra Intelligent Ranking rescores or re-ranks the results for the search service.</p>
     pub fn set_rescore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rescore_id = input; self
+        self.rescore_id = input;
+        self
     }
     /// Appends an item to `result_items`.
     ///
@@ -58,32 +59,33 @@ impl RescoreOutputBuilder {
     /// <p>A list of result items for documents with new relevancy scores. The results are in descending order.</p>
     pub fn result_items(mut self, input: crate::types::RescoreResultItem) -> Self {
         let mut v = self.result_items.unwrap_or_default();
-                        v.push(input);
-                        self.result_items = Some(v);
-                        self
+        v.push(input);
+        self.result_items = Some(v);
+        self
     }
     /// <p>A list of result items for documents with new relevancy scores. The results are in descending order.</p>
-    pub fn set_result_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::RescoreResultItem>>) -> Self {
-        self.result_items = input; self
+    pub fn set_result_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RescoreResultItem>>,
+    ) -> Self {
+        self.result_items = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RescoreOutput`](crate::operation::rescore::RescoreOutput).
     pub fn build(self) -> crate::operation::rescore::RescoreOutput {
         crate::operation::rescore::RescoreOutput {
-            rescore_id: self.rescore_id
-            ,
-            result_items: self.result_items
-            ,
+            rescore_id: self.rescore_id,
+            result_items: self.result_items,
             _request_id: self._request_id,
         }
     }
 }
-

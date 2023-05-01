@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameOutput  {
+pub struct UpdateGameOutput {
     /// <p>The details of the game.</p>
     #[doc(hidden)]
     pub game: std::option::Option<crate::types::GameDetails>,
@@ -10,15 +10,15 @@ pub struct UpdateGameOutput  {
 }
 impl UpdateGameOutput {
     /// <p>The details of the game.</p>
-    pub fn game(&self) -> std::option::Option<& crate::types::GameDetails> {
+    pub fn game(&self) -> std::option::Option<&crate::types::GameDetails> {
         self.game.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateGameOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateGameOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGameOutput`](crate::operation::update_game::UpdateGameOutput).
     pub fn builder() -> crate::operation::update_game::builders::UpdateGameOutputBuilder {
@@ -41,24 +41,23 @@ impl UpdateGameOutputBuilder {
     }
     /// <p>The details of the game.</p>
     pub fn set_game(mut self, input: std::option::Option<crate::types::GameDetails>) -> Self {
-        self.game = input; self
+        self.game = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateGameOutput`](crate::operation::update_game::UpdateGameOutput).
     pub fn build(self) -> crate::operation::update_game::UpdateGameOutput {
         crate::operation::update_game::UpdateGameOutput {
-            game: self.game
-            ,
+            game: self.game,
             _request_id: self._request_id,
         }
     }
 }
-

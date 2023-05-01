@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveBridgeSourceInput  {
+pub struct RemoveBridgeSourceInput {
     /// The ARN of the bridge that you want to update.
     #[doc(hidden)]
     pub bridge_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct RemoveBridgeSourceInput  {
 }
 impl RemoveBridgeSourceInput {
     /// The ARN of the bridge that you want to update.
-    pub fn bridge_arn(&self) -> std::option::Option<& str> {
+    pub fn bridge_arn(&self) -> std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
     /// The name of the bridge source that you want to remove.
-    pub fn source_name(&self) -> std::option::Option<& str> {
+    pub fn source_name(&self) -> std::option::Option<&str> {
         self.source_name.as_deref()
     }
 }
 impl RemoveBridgeSourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveBridgeSourceInput`](crate::operation::remove_bridge_source::RemoveBridgeSourceInput).
-    pub fn builder() -> crate::operation::remove_bridge_source::builders::RemoveBridgeSourceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::remove_bridge_source::builders::RemoveBridgeSourceInputBuilder {
         crate::operation::remove_bridge_source::builders::RemoveBridgeSourceInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl RemoveBridgeSourceInputBuilder {
     }
     /// The ARN of the bridge that you want to update.
     pub fn set_bridge_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bridge_arn = input; self
+        self.bridge_arn = input;
+        self
     }
     /// The name of the bridge source that you want to remove.
     pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl RemoveBridgeSourceInputBuilder {
     }
     /// The name of the bridge source that you want to remove.
     pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_name = input; self
+        self.source_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoveBridgeSourceInput`](crate::operation::remove_bridge_source::RemoveBridgeSourceInput).
-    pub fn build(self) -> Result<crate::operation::remove_bridge_source::RemoveBridgeSourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::remove_bridge_source::RemoveBridgeSourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::remove_bridge_source::RemoveBridgeSourceInput {
-                bridge_arn: self.bridge_arn
-                ,
-                source_name: self.source_name
-                ,
-            }
+                bridge_arn: self.bridge_arn,
+                source_name: self.source_name,
+            },
         )
     }
 }
-

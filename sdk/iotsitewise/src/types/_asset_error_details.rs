@@ -3,7 +3,7 @@
 /// <p>Contains error details for the requested associate project asset action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetErrorDetails  {
+pub struct AssetErrorDetails {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct AssetErrorDetails  {
 }
 impl AssetErrorDetails {
     /// <p>The ID of the asset.</p>
-    pub fn asset_id(&self) -> std::option::Option<& str> {
+    pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
     /// <p>The error code.</p>
-    pub fn code(&self) -> std::option::Option<& crate::types::AssetErrorCode> {
+    pub fn code(&self) -> std::option::Option<&crate::types::AssetErrorCode> {
         self.code.as_ref()
     }
     /// <p>The error message.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl AssetErrorDetailsBuilder {
     }
     /// <p>The ID of the asset.</p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input; self
+        self.asset_id = input;
+        self
     }
     /// <p>The error code.</p>
     pub fn code(mut self, input: crate::types::AssetErrorCode) -> Self {
@@ -60,7 +61,8 @@ impl AssetErrorDetailsBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_code(mut self, input: std::option::Option<crate::types::AssetErrorCode>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The error message.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl AssetErrorDetailsBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssetErrorDetails`](crate::types::AssetErrorDetails).
     pub fn build(self) -> crate::types::AssetErrorDetails {
         crate::types::AssetErrorDetails {
-            asset_id: self.asset_id
-            ,
-            code: self.code
-            ,
-            message: self.message
-            ,
+            asset_id: self.asset_id,
+            code: self.code,
+            message: self.message,
         }
     }
 }
-

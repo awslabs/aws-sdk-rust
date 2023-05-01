@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJourneyExecutionMetricsOutput  {
+pub struct GetJourneyExecutionMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
     #[doc(hidden)]
-    pub journey_execution_metrics_response: std::option::Option<crate::types::JourneyExecutionMetricsResponse>,
+    pub journey_execution_metrics_response:
+        std::option::Option<crate::types::JourneyExecutionMetricsResponse>,
     _request_id: Option<String>,
 }
 impl GetJourneyExecutionMetricsOutput {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
-    pub fn journey_execution_metrics_response(&self) -> std::option::Option<& crate::types::JourneyExecutionMetricsResponse> {
+    pub fn journey_execution_metrics_response(
+        &self,
+    ) -> std::option::Option<&crate::types::JourneyExecutionMetricsResponse> {
         self.journey_execution_metrics_response.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetJourneyExecutionMetricsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetJourneyExecutionMetricsOutput {
     /// Creates a new builder-style object to manufacture [`GetJourneyExecutionMetricsOutput`](crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsOutput).
-    pub fn builder() -> crate::operation::get_journey_execution_metrics::builders::GetJourneyExecutionMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::get_journey_execution_metrics::builders::GetJourneyExecutionMetricsOutputBuilder{
         crate::operation::get_journey_execution_metrics::builders::GetJourneyExecutionMetricsOutputBuilder::default()
     }
 }
@@ -30,35 +33,43 @@ impl GetJourneyExecutionMetricsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetJourneyExecutionMetricsOutputBuilder {
-    pub(crate) journey_execution_metrics_response: std::option::Option<crate::types::JourneyExecutionMetricsResponse>,
+    pub(crate) journey_execution_metrics_response:
+        std::option::Option<crate::types::JourneyExecutionMetricsResponse>,
     _request_id: Option<String>,
 }
 impl GetJourneyExecutionMetricsOutputBuilder {
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
-    pub fn journey_execution_metrics_response(mut self, input: crate::types::JourneyExecutionMetricsResponse) -> Self {
+    pub fn journey_execution_metrics_response(
+        mut self,
+        input: crate::types::JourneyExecutionMetricsResponse,
+    ) -> Self {
         self.journey_execution_metrics_response = Some(input);
         self
     }
     /// <p>Provides the results of a query that retrieved the data for a standard execution metric that applies to a journey, and provides information about that query.</p>
-    pub fn set_journey_execution_metrics_response(mut self, input: std::option::Option<crate::types::JourneyExecutionMetricsResponse>) -> Self {
-        self.journey_execution_metrics_response = input; self
+    pub fn set_journey_execution_metrics_response(
+        mut self,
+        input: std::option::Option<crate::types::JourneyExecutionMetricsResponse>,
+    ) -> Self {
+        self.journey_execution_metrics_response = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetJourneyExecutionMetricsOutput`](crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsOutput).
-    pub fn build(self) -> crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsOutput {
         crate::operation::get_journey_execution_metrics::GetJourneyExecutionMetricsOutput {
-            journey_execution_metrics_response: self.journey_execution_metrics_response
-            ,
+            journey_execution_metrics_response: self.journey_execution_metrics_response,
             _request_id: self._request_id,
         }
     }
 }
-

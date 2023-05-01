@@ -3,7 +3,7 @@
 /// <p>Represents the output of an AcknowledgeJob action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcknowledgeJobOutput  {
+pub struct AcknowledgeJobOutput {
     /// <p>Whether the job worker has received the specified job.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::JobStatus>,
@@ -11,15 +11,15 @@ pub struct AcknowledgeJobOutput  {
 }
 impl AcknowledgeJobOutput {
     /// <p>Whether the job worker has received the specified job.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AcknowledgeJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AcknowledgeJobOutput {
     /// Creates a new builder-style object to manufacture [`AcknowledgeJobOutput`](crate::operation::acknowledge_job::AcknowledgeJobOutput).
     pub fn builder() -> crate::operation::acknowledge_job::builders::AcknowledgeJobOutputBuilder {
@@ -42,24 +42,23 @@ impl AcknowledgeJobOutputBuilder {
     }
     /// <p>Whether the job worker has received the specified job.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AcknowledgeJobOutput`](crate::operation::acknowledge_job::AcknowledgeJobOutput).
     pub fn build(self) -> crate::operation::acknowledge_job::AcknowledgeJobOutput {
         crate::operation::acknowledge_job::AcknowledgeJobOutput {
-            status: self.status
-            ,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

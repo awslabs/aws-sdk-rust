@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceLfTagsInput  {
+pub struct GetResourceLfTagsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetResourceLfTagsInput  {
 }
 impl GetResourceLfTagsInput {
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
-    pub fn resource(&self) -> std::option::Option<& crate::types::Resource> {
+    pub fn resource(&self) -> std::option::Option<&crate::types::Resource> {
         self.resource.as_ref()
     }
     /// <p>Indicates whether to show the assigned LF-tags.</p>
@@ -29,7 +29,8 @@ impl GetResourceLfTagsInput {
 }
 impl GetResourceLfTagsInput {
     /// Creates a new builder-style object to manufacture [`GetResourceLfTagsInput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsInput).
-    pub fn builder() -> crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsInputBuilder {
         crate::operation::get_resource_lf_tags::builders::GetResourceLfTagsInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl GetResourceLfTagsInputBuilder {
     }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
     pub fn resource(mut self, input: crate::types::Resource) -> Self {
@@ -59,7 +61,8 @@ impl GetResourceLfTagsInputBuilder {
     }
     /// <p>The database, table, or column resource for which you want to return LF-tags.</p>
     pub fn set_resource(mut self, input: std::option::Option<crate::types::Resource>) -> Self {
-        self.resource = input; self
+        self.resource = input;
+        self
     }
     /// <p>Indicates whether to show the assigned LF-tags.</p>
     pub fn show_assigned_lf_tags(mut self, input: bool) -> Self {
@@ -68,20 +71,22 @@ impl GetResourceLfTagsInputBuilder {
     }
     /// <p>Indicates whether to show the assigned LF-tags.</p>
     pub fn set_show_assigned_lf_tags(mut self, input: std::option::Option<bool>) -> Self {
-        self.show_assigned_lf_tags = input; self
+        self.show_assigned_lf_tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetResourceLfTagsInput`](crate::operation::get_resource_lf_tags::GetResourceLfTagsInput).
-    pub fn build(self) -> Result<crate::operation::get_resource_lf_tags::GetResourceLfTagsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_resource_lf_tags::GetResourceLfTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_resource_lf_tags::GetResourceLfTagsInput {
-                catalog_id: self.catalog_id
-                ,
-                resource: self.resource
-                ,
-                show_assigned_lf_tags: self.show_assigned_lf_tags
-                ,
-            }
+                catalog_id: self.catalog_id,
+                resource: self.resource,
+                show_assigned_lf_tags: self.show_assigned_lf_tags,
+            },
         )
     }
 }
-

@@ -3,11 +3,11 @@
 /// <p>Provides information about the status of documents submitted for indexing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Status  {
+pub struct Status {
     /// <p>The identifier of the document.</p>
     #[doc(hidden)]
     pub document_id: std::option::Option<std::string::String>,
-    /// <p>The current status of a document.</p> 
+    /// <p>The current status of a document.</p>
     /// <p>If the document was submitted for deletion, the status is <code>NOT_FOUND</code> after the document is deleted.</p>
     #[doc(hidden)]
     pub document_status: std::option::Option<crate::types::DocumentStatus>,
@@ -20,20 +20,20 @@ pub struct Status  {
 }
 impl Status {
     /// <p>The identifier of the document.</p>
-    pub fn document_id(&self) -> std::option::Option<& str> {
+    pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
-    /// <p>The current status of a document.</p> 
+    /// <p>The current status of a document.</p>
     /// <p>If the document was submitted for deletion, the status is <code>NOT_FOUND</code> after the document is deleted.</p>
-    pub fn document_status(&self) -> std::option::Option<& crate::types::DocumentStatus> {
+    pub fn document_status(&self) -> std::option::Option<&crate::types::DocumentStatus> {
         self.document_status.as_ref()
     }
     /// <p>Indicates the source of the error.</p>
-    pub fn failure_code(&self) -> std::option::Option<& str> {
+    pub fn failure_code(&self) -> std::option::Option<&str> {
         self.failure_code.as_deref()
     }
     /// <p>Provides detailed information about why the document couldn't be indexed. Use this information to correct the error before you resubmit the document for indexing.</p>
-    pub fn failure_reason(&self) -> std::option::Option<& str> {
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
 }
@@ -61,18 +61,23 @@ impl StatusBuilder {
     }
     /// <p>The identifier of the document.</p>
     pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_id = input; self
+        self.document_id = input;
+        self
     }
-    /// <p>The current status of a document.</p> 
+    /// <p>The current status of a document.</p>
     /// <p>If the document was submitted for deletion, the status is <code>NOT_FOUND</code> after the document is deleted.</p>
     pub fn document_status(mut self, input: crate::types::DocumentStatus) -> Self {
         self.document_status = Some(input);
         self
     }
-    /// <p>The current status of a document.</p> 
+    /// <p>The current status of a document.</p>
     /// <p>If the document was submitted for deletion, the status is <code>NOT_FOUND</code> after the document is deleted.</p>
-    pub fn set_document_status(mut self, input: std::option::Option<crate::types::DocumentStatus>) -> Self {
-        self.document_status = input; self
+    pub fn set_document_status(
+        mut self,
+        input: std::option::Option<crate::types::DocumentStatus>,
+    ) -> Self {
+        self.document_status = input;
+        self
     }
     /// <p>Indicates the source of the error.</p>
     pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,7 +86,8 @@ impl StatusBuilder {
     }
     /// <p>Indicates the source of the error.</p>
     pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_code = input; self
+        self.failure_code = input;
+        self
     }
     /// <p>Provides detailed information about why the document couldn't be indexed. Use this information to correct the error before you resubmit the document for indexing.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,20 +96,16 @@ impl StatusBuilder {
     }
     /// <p>Provides detailed information about why the document couldn't be indexed. Use this information to correct the error before you resubmit the document for indexing.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input; self
+        self.failure_reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`Status`](crate::types::Status).
     pub fn build(self) -> crate::types::Status {
         crate::types::Status {
-            document_id: self.document_id
-            ,
-            document_status: self.document_status
-            ,
-            failure_code: self.failure_code
-            ,
-            failure_reason: self.failure_reason
-            ,
+            document_id: self.document_id,
+            document_status: self.document_status,
+            failure_code: self.failure_code,
+            failure_reason: self.failure_reason,
         }
     }
 }
-

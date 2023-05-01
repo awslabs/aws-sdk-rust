@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartCanaryInput  {
+pub struct StartCanaryInput {
     /// <p>The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StartCanaryInput {
     /// <p>The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl StartCanaryInputBuilder {
     }
     /// <p>The name of the canary that you want to run. To find canary names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartCanaryInput`](crate::operation::start_canary::StartCanaryInput).
-    pub fn build(self) -> Result<crate::operation::start_canary::StartCanaryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_canary::StartCanaryInput {
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_canary::StartCanaryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_canary::StartCanaryInput { name: self.name })
     }
 }
-

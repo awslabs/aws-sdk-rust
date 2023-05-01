@@ -3,7 +3,7 @@
 /// <p>Provides summary information of an alert's history.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MonitoringAlertHistorySummary  {
+pub struct MonitoringAlertHistorySummary {
     /// <p>The name of a monitoring schedule.</p>
     #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct MonitoringAlertHistorySummary  {
 }
 impl MonitoringAlertHistorySummary {
     /// <p>The name of a monitoring schedule.</p>
-    pub fn monitoring_schedule_name(&self) -> std::option::Option<& str> {
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
         self.monitoring_schedule_name.as_deref()
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn monitoring_alert_name(&self) -> std::option::Option<& str> {
+    pub fn monitoring_alert_name(&self) -> std::option::Option<&str> {
         self.monitoring_alert_name.as_deref()
     }
     /// <p>A timestamp that indicates when the first alert transition occurred in an alert history. An alert transition can be from status <code>InAlert</code> to <code>OK</code>, or from <code>OK</code> to <code>InAlert</code>.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current alert status of an alert.</p>
-    pub fn alert_status(&self) -> std::option::Option<& crate::types::MonitoringAlertStatus> {
+    pub fn alert_status(&self) -> std::option::Option<&crate::types::MonitoringAlertStatus> {
         self.alert_status.as_ref()
     }
 }
@@ -58,8 +58,12 @@ impl MonitoringAlertHistorySummaryBuilder {
         self
     }
     /// <p>The name of a monitoring schedule.</p>
-    pub fn set_monitoring_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitoring_schedule_name = input; self
+    pub fn set_monitoring_schedule_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monitoring_schedule_name = input;
+        self
     }
     /// <p>The name of a monitoring alert.</p>
     pub fn monitoring_alert_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +71,12 @@ impl MonitoringAlertHistorySummaryBuilder {
         self
     }
     /// <p>The name of a monitoring alert.</p>
-    pub fn set_monitoring_alert_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitoring_alert_name = input; self
+    pub fn set_monitoring_alert_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monitoring_alert_name = input;
+        self
     }
     /// <p>A timestamp that indicates when the first alert transition occurred in an alert history. An alert transition can be from status <code>InAlert</code> to <code>OK</code>, or from <code>OK</code> to <code>InAlert</code>.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,8 +84,12 @@ impl MonitoringAlertHistorySummaryBuilder {
         self
     }
     /// <p>A timestamp that indicates when the first alert transition occurred in an alert history. An alert transition can be from status <code>InAlert</code> to <code>OK</code>, or from <code>OK</code> to <code>InAlert</code>.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The current alert status of an alert.</p>
     pub fn alert_status(mut self, input: crate::types::MonitoringAlertStatus) -> Self {
@@ -85,21 +97,20 @@ impl MonitoringAlertHistorySummaryBuilder {
         self
     }
     /// <p>The current alert status of an alert.</p>
-    pub fn set_alert_status(mut self, input: std::option::Option<crate::types::MonitoringAlertStatus>) -> Self {
-        self.alert_status = input; self
+    pub fn set_alert_status(
+        mut self,
+        input: std::option::Option<crate::types::MonitoringAlertStatus>,
+    ) -> Self {
+        self.alert_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`MonitoringAlertHistorySummary`](crate::types::MonitoringAlertHistorySummary).
     pub fn build(self) -> crate::types::MonitoringAlertHistorySummary {
         crate::types::MonitoringAlertHistorySummary {
-            monitoring_schedule_name: self.monitoring_schedule_name
-            ,
-            monitoring_alert_name: self.monitoring_alert_name
-            ,
-            creation_time: self.creation_time
-            ,
-            alert_status: self.alert_status
-            ,
+            monitoring_schedule_name: self.monitoring_schedule_name,
+            monitoring_alert_name: self.monitoring_alert_name,
+            creation_time: self.creation_time,
+            alert_status: self.alert_status,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssumeImpersonationRoleInput  {
+pub struct AssumeImpersonationRoleInput {
     /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct AssumeImpersonationRoleInput  {
 }
 impl AssumeImpersonationRoleInput {
     /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The impersonation role ID to assume.</p>
-    pub fn impersonation_role_id(&self) -> std::option::Option<& str> {
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
         self.impersonation_role_id.as_deref()
     }
 }
 impl AssumeImpersonationRoleInput {
     /// Creates a new builder-style object to manufacture [`AssumeImpersonationRoleInput`](crate::operation::assume_impersonation_role::AssumeImpersonationRoleInput).
-    pub fn builder() -> crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleInputBuilder
+    {
         crate::operation::assume_impersonation_role::builders::AssumeImpersonationRoleInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl AssumeImpersonationRoleInputBuilder {
     }
     /// <p>The WorkMail organization under which the impersonation role will be assumed.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The impersonation role ID to assume.</p>
     pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl AssumeImpersonationRoleInputBuilder {
         self
     }
     /// <p>The impersonation role ID to assume.</p>
-    pub fn set_impersonation_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.impersonation_role_id = input; self
+    pub fn set_impersonation_role_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.impersonation_role_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssumeImpersonationRoleInput`](crate::operation::assume_impersonation_role::AssumeImpersonationRoleInput).
-    pub fn build(self) -> Result<crate::operation::assume_impersonation_role::AssumeImpersonationRoleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::assume_impersonation_role::AssumeImpersonationRoleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::assume_impersonation_role::AssumeImpersonationRoleInput {
-                organization_id: self.organization_id
-                ,
-                impersonation_role_id: self.impersonation_role_id
-                ,
-            }
+                organization_id: self.organization_id,
+                impersonation_role_id: self.impersonation_role_id,
+            },
         )
     }
 }
-

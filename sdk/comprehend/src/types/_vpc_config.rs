@@ -3,7 +3,7 @@
 /// <p> Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html">Amazon VPC</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfig  {
+pub struct VpcConfig {
     /// <p>The ID number for a security group on an instance of your private VPC. Security groups on your VPC function serve as a virtual firewall to control inbound and outbound traffic and provides security for the resources that you’ll be accessing on the VPC. This ID number is preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for your VPC</a>. </p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct VpcConfig  {
 }
 impl VpcConfig {
     /// <p>The ID number for a security group on an instance of your private VPC. Security groups on your VPC function serve as a virtual firewall to control inbound and outbound traffic and provides security for the resources that you’ll be accessing on the VPC. This ID number is preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for your VPC</a>. </p>
-    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The ID for each subnet being used in your private VPC. This subnet is a subset of the a range of IPv4 addresses used by the VPC and is specific to a given availability zone in the VPC’s Region. This ID number is preceded by "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a>. </p>
-    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl VpcConfigBuilder {
     /// <p>The ID number for a security group on an instance of your private VPC. Security groups on your VPC function serve as a virtual firewall to control inbound and outbound traffic and provides security for the resources that you’ll be accessing on the VPC. This ID number is preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for your VPC</a>. </p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_ids = Some(v);
+        self
     }
     /// <p>The ID number for a security group on an instance of your private VPC. Security groups on your VPC function serve as a virtual firewall to control inbound and outbound traffic and provides security for the resources that you’ll be accessing on the VPC. This ID number is preceded by "sg-", for instance: "sg-03b388029b0a285ea". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for your VPC</a>. </p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_ids = input; self
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_ids = input;
+        self
     }
     /// Appends an item to `subnets`.
     ///
@@ -58,22 +62,23 @@ impl VpcConfigBuilder {
     /// <p>The ID for each subnet being used in your private VPC. This subnet is a subset of the a range of IPv4 addresses used by the VPC and is specific to a given availability zone in the VPC’s Region. This ID number is preceded by "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a>. </p>
     pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnets = Some(v);
-                        self
+        v.push(input.into());
+        self.subnets = Some(v);
+        self
     }
     /// <p>The ID for each subnet being used in your private VPC. This subnet is a subset of the a range of IPv4 addresses used by the VPC and is specific to a given availability zone in the VPC’s Region. This ID number is preceded by "subnet-", for instance: "subnet-04ccf456919e69055". For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs and Subnets</a>. </p>
-    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnets = input; self
+    pub fn set_subnets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnets = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
     pub fn build(self) -> crate::types::VpcConfig {
         crate::types::VpcConfig {
-            security_group_ids: self.security_group_ids
-            ,
-            subnets: self.subnets
-            ,
+            security_group_ids: self.security_group_ids,
+            subnets: self.subnets,
         }
     }
 }
-

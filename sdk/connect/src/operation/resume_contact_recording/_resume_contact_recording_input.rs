@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResumeContactRecordingInput  {
+pub struct ResumeContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct ResumeContactRecordingInput  {
 }
 impl ResumeContactRecordingInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<& str> {
+    pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn initial_contact_id(&self) -> std::option::Option<& str> {
+    pub fn initial_contact_id(&self) -> std::option::Option<&str> {
         self.initial_contact_id.as_deref()
     }
 }
 impl ResumeContactRecordingInput {
     /// Creates a new builder-style object to manufacture [`ResumeContactRecordingInput`](crate::operation::resume_contact_recording::ResumeContactRecordingInput).
-    pub fn builder() -> crate::operation::resume_contact_recording::builders::ResumeContactRecordingInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::resume_contact_recording::builders::ResumeContactRecordingInputBuilder
+    {
         crate::operation::resume_contact_recording::builders::ResumeContactRecordingInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ResumeContactRecordingInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The identifier of the contact.</p>
     pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl ResumeContactRecordingInputBuilder {
     }
     /// <p>The identifier of the contact.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input; self
+        self.contact_id = input;
+        self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
     pub fn initial_contact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,21 +71,26 @@ impl ResumeContactRecordingInputBuilder {
         self
     }
     /// <p>The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.</p>
-    pub fn set_initial_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.initial_contact_id = input; self
+    pub fn set_initial_contact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.initial_contact_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResumeContactRecordingInput`](crate::operation::resume_contact_recording::ResumeContactRecordingInput).
-    pub fn build(self) -> Result<crate::operation::resume_contact_recording::ResumeContactRecordingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::resume_contact_recording::ResumeContactRecordingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::resume_contact_recording::ResumeContactRecordingInput {
-                instance_id: self.instance_id
-                ,
-                contact_id: self.contact_id
-                ,
-                initial_contact_id: self.initial_contact_id
-                ,
-            }
+                instance_id: self.instance_id,
+                contact_id: self.contact_id,
+                initial_contact_id: self.initial_contact_id,
+            },
         )
     }
 }
-

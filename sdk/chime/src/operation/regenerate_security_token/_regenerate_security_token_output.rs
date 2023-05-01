@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegenerateSecurityTokenOutput  {
+pub struct RegenerateSecurityTokenOutput {
     /// <p>A resource that allows Enterprise account administrators to configure an interface that receives events from Amazon Chime.</p>
     #[doc(hidden)]
     pub bot: std::option::Option<crate::types::Bot>,
@@ -10,18 +10,20 @@ pub struct RegenerateSecurityTokenOutput  {
 }
 impl RegenerateSecurityTokenOutput {
     /// <p>A resource that allows Enterprise account administrators to configure an interface that receives events from Amazon Chime.</p>
-    pub fn bot(&self) -> std::option::Option<& crate::types::Bot> {
+    pub fn bot(&self) -> std::option::Option<&crate::types::Bot> {
         self.bot.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RegenerateSecurityTokenOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RegenerateSecurityTokenOutput {
     /// Creates a new builder-style object to manufacture [`RegenerateSecurityTokenOutput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput).
-    pub fn builder() -> crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenOutputBuilder
+    {
         crate::operation::regenerate_security_token::builders::RegenerateSecurityTokenOutputBuilder::default()
     }
 }
@@ -41,24 +43,25 @@ impl RegenerateSecurityTokenOutputBuilder {
     }
     /// <p>A resource that allows Enterprise account administrators to configure an interface that receives events from Amazon Chime.</p>
     pub fn set_bot(mut self, input: std::option::Option<crate::types::Bot>) -> Self {
-        self.bot = input; self
+        self.bot = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RegenerateSecurityTokenOutput`](crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput).
-    pub fn build(self) -> crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput {
         crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput {
-            bot: self.bot
-            ,
+            bot: self.bot,
             _request_id: self._request_id,
         }
     }
 }
-

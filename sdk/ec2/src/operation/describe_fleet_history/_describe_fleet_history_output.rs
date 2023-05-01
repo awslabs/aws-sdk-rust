@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetHistoryOutput  {
+pub struct DescribeFleetHistoryOutput {
     /// <p>Information about the events in the history of the EC2 Fleet.</p>
     #[doc(hidden)]
     pub history_records: std::option::Option<std::vec::Vec<crate::types::HistoryRecordEntry>>,
-    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p> 
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
     #[doc(hidden)]
     pub last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -23,35 +23,36 @@ pub struct DescribeFleetHistoryOutput  {
 }
 impl DescribeFleetHistoryOutput {
     /// <p>Information about the events in the history of the EC2 Fleet.</p>
-    pub fn history_records(&self) -> std::option::Option<& [crate::types::HistoryRecordEntry]> {
+    pub fn history_records(&self) -> std::option::Option<&[crate::types::HistoryRecordEntry]> {
         self.history_records.as_deref()
     }
-    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p> 
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
-    pub fn last_evaluated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_evaluated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_evaluated_time.as_ref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the EC Fleet.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFleetHistoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeFleetHistoryOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetHistoryOutput`](crate::operation::describe_fleet_history::DescribeFleetHistoryOutput).
-    pub fn builder() -> crate::operation::describe_fleet_history::builders::DescribeFleetHistoryOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_fleet_history::builders::DescribeFleetHistoryOutputBuilder {
         crate::operation::describe_fleet_history::builders::DescribeFleetHistoryOutputBuilder::default()
     }
 }
@@ -60,7 +61,8 @@ impl DescribeFleetHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeFleetHistoryOutputBuilder {
-    pub(crate) history_records: std::option::Option<std::vec::Vec<crate::types::HistoryRecordEntry>>,
+    pub(crate) history_records:
+        std::option::Option<std::vec::Vec<crate::types::HistoryRecordEntry>>,
     pub(crate) last_evaluated_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) fleet_id: std::option::Option<std::string::String>,
@@ -75,24 +77,32 @@ impl DescribeFleetHistoryOutputBuilder {
     /// <p>Information about the events in the history of the EC2 Fleet.</p>
     pub fn history_records(mut self, input: crate::types::HistoryRecordEntry) -> Self {
         let mut v = self.history_records.unwrap_or_default();
-                        v.push(input);
-                        self.history_records = Some(v);
-                        self
+        v.push(input);
+        self.history_records = Some(v);
+        self
     }
     /// <p>Information about the events in the history of the EC2 Fleet.</p>
-    pub fn set_history_records(mut self, input: std::option::Option<std::vec::Vec<crate::types::HistoryRecordEntry>>) -> Self {
-        self.history_records = input; self
+    pub fn set_history_records(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::HistoryRecordEntry>>,
+    ) -> Self {
+        self.history_records = input;
+        self
     }
-    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p> 
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
     pub fn last_evaluated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_evaluated_time = Some(input);
         self
     }
-    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p> 
+    /// <p>The last date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). All records up to this time were retrieved.</p>
     /// <p>If <code>nextToken</code> indicates that there are more items, this value is not present.</p>
-    pub fn set_last_evaluated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_evaluated_time = input; self
+    pub fn set_last_evaluated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_evaluated_time = input;
+        self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +111,8 @@ impl DescribeFleetHistoryOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The ID of the EC Fleet.</p>
     pub fn fleet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +121,8 @@ impl DescribeFleetHistoryOutputBuilder {
     }
     /// <p>The ID of the EC Fleet.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -118,33 +130,31 @@ impl DescribeFleetHistoryOutputBuilder {
         self
     }
     /// <p>The start date and time for the events, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeFleetHistoryOutput`](crate::operation::describe_fleet_history::DescribeFleetHistoryOutput).
     pub fn build(self) -> crate::operation::describe_fleet_history::DescribeFleetHistoryOutput {
         crate::operation::describe_fleet_history::DescribeFleetHistoryOutput {
-            history_records: self.history_records
-            ,
-            last_evaluated_time: self.last_evaluated_time
-            ,
-            next_token: self.next_token
-            ,
-            fleet_id: self.fleet_id
-            ,
-            start_time: self.start_time
-            ,
+            history_records: self.history_records,
+            last_evaluated_time: self.last_evaluated_time,
+            next_token: self.next_token,
+            fleet_id: self.fleet_id,
+            start_time: self.start_time,
             _request_id: self._request_id,
         }
     }
 }
-

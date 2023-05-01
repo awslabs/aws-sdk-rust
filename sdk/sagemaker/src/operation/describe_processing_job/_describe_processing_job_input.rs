@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProcessingJobInput  {
+pub struct DescribeProcessingJobInput {
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub processing_job_name: std::option::Option<std::string::String>,
 }
 impl DescribeProcessingJobInput {
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn processing_job_name(&self) -> std::option::Option<& str> {
+    pub fn processing_job_name(&self) -> std::option::Option<&str> {
         self.processing_job_name.as_deref()
     }
 }
 impl DescribeProcessingJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeProcessingJobInput`](crate::operation::describe_processing_job::DescribeProcessingJobInput).
-    pub fn builder() -> crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder
+    {
         crate::operation::describe_processing_job::builders::DescribeProcessingJobInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeProcessingJobInputBuilder {
         self
     }
     /// <p>The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_processing_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.processing_job_name = input; self
+    pub fn set_processing_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.processing_job_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeProcessingJobInput`](crate::operation::describe_processing_job::DescribeProcessingJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_processing_job::DescribeProcessingJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_processing_job::DescribeProcessingJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_processing_job::DescribeProcessingJobInput {
-                processing_job_name: self.processing_job_name
-                ,
-            }
+                processing_job_name: self.processing_job_name,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseOutput  {
+pub struct GetRelationalDatabaseOutput {
     /// <p>An object describing the specified database.</p>
     #[doc(hidden)]
     pub relational_database: std::option::Option<crate::types::RelationalDatabase>,
@@ -10,18 +10,20 @@ pub struct GetRelationalDatabaseOutput  {
 }
 impl GetRelationalDatabaseOutput {
     /// <p>An object describing the specified database.</p>
-    pub fn relational_database(&self) -> std::option::Option<& crate::types::RelationalDatabase> {
+    pub fn relational_database(&self) -> std::option::Option<&crate::types::RelationalDatabase> {
         self.relational_database.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetRelationalDatabaseOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetRelationalDatabaseOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseOutput`](crate::operation::get_relational_database::GetRelationalDatabaseOutput).
-    pub fn builder() -> crate::operation::get_relational_database::builders::GetRelationalDatabaseOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_relational_database::builders::GetRelationalDatabaseOutputBuilder
+    {
         crate::operation::get_relational_database::builders::GetRelationalDatabaseOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl GetRelationalDatabaseOutputBuilder {
         self
     }
     /// <p>An object describing the specified database.</p>
-    pub fn set_relational_database(mut self, input: std::option::Option<crate::types::RelationalDatabase>) -> Self {
-        self.relational_database = input; self
+    pub fn set_relational_database(
+        mut self,
+        input: std::option::Option<crate::types::RelationalDatabase>,
+    ) -> Self {
+        self.relational_database = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseOutput`](crate::operation::get_relational_database::GetRelationalDatabaseOutput).
     pub fn build(self) -> crate::operation::get_relational_database::GetRelationalDatabaseOutput {
         crate::operation::get_relational_database::GetRelationalDatabaseOutput {
-            relational_database: self.relational_database
-            ,
+            relational_database: self.relational_database,
             _request_id: self._request_id,
         }
     }
 }
-

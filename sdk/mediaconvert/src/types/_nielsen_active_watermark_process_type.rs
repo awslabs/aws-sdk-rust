@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let nielsenactivewatermarkprocesstype = unimplemented!();
 /// match nielsenactivewatermarkprocesstype {
@@ -31,14 +31,22 @@
 /// Specifically, when `nielsenactivewatermarkprocesstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NielsenActiveWatermarkProcessType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum NielsenActiveWatermarkProcessType {
     #[allow(missing_docs)] // documentation missing in model
     Cbet,
@@ -47,43 +55,44 @@ pub enum NielsenActiveWatermarkProcessType {
     #[allow(missing_docs)] // documentation missing in model
     Naes2AndNwAndCbet,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for NielsenActiveWatermarkProcessType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CBET" => NielsenActiveWatermarkProcessType::Cbet,
-"NAES2_AND_NW" => NielsenActiveWatermarkProcessType::Naes2AndNw,
-"NAES2_AND_NW_AND_CBET" => NielsenActiveWatermarkProcessType::Naes2AndNwAndCbet,
-other => NielsenActiveWatermarkProcessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for NielsenActiveWatermarkProcessType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(NielsenActiveWatermarkProcessType::from(s))
-                }
-            }
-impl NielsenActiveWatermarkProcessType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    NielsenActiveWatermarkProcessType::Cbet => "CBET",
-    NielsenActiveWatermarkProcessType::Naes2AndNw => "NAES2_AND_NW",
-    NielsenActiveWatermarkProcessType::Naes2AndNwAndCbet => "NAES2_AND_NW_AND_CBET",
-    NielsenActiveWatermarkProcessType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "CBET" => NielsenActiveWatermarkProcessType::Cbet,
+            "NAES2_AND_NW" => NielsenActiveWatermarkProcessType::Naes2AndNw,
+            "NAES2_AND_NW_AND_CBET" => NielsenActiveWatermarkProcessType::Naes2AndNwAndCbet,
+            other => NielsenActiveWatermarkProcessType::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CBET", "NAES2_AND_NW", "NAES2_AND_NW_AND_CBET"]
-                }
-            }
-impl AsRef<str> for NielsenActiveWatermarkProcessType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for NielsenActiveWatermarkProcessType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NielsenActiveWatermarkProcessType::from(s))
+    }
+}
+impl NielsenActiveWatermarkProcessType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NielsenActiveWatermarkProcessType::Cbet => "CBET",
+            NielsenActiveWatermarkProcessType::Naes2AndNw => "NAES2_AND_NW",
+            NielsenActiveWatermarkProcessType::Naes2AndNwAndCbet => "NAES2_AND_NW_AND_CBET",
+            NielsenActiveWatermarkProcessType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["CBET", "NAES2_AND_NW", "NAES2_AND_NW_AND_CBET"]
+    }
+}
+impl AsRef<str> for NielsenActiveWatermarkProcessType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

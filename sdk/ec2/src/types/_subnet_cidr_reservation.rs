@@ -3,7 +3,7 @@
 /// <p>Describes a subnet CIDR reservation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubnetCidrReservation  {
+pub struct SubnetCidrReservation {
     /// <p>The ID of the subnet CIDR reservation.</p>
     #[doc(hidden)]
     pub subnet_cidr_reservation_id: std::option::Option<std::string::String>,
@@ -28,31 +28,33 @@ pub struct SubnetCidrReservation  {
 }
 impl SubnetCidrReservation {
     /// <p>The ID of the subnet CIDR reservation.</p>
-    pub fn subnet_cidr_reservation_id(&self) -> std::option::Option<& str> {
+    pub fn subnet_cidr_reservation_id(&self) -> std::option::Option<&str> {
         self.subnet_cidr_reservation_id.as_deref()
     }
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<& str> {
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>The CIDR that has been reserved.</p>
-    pub fn cidr(&self) -> std::option::Option<& str> {
+    pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }
     /// <p>The type of reservation. </p>
-    pub fn reservation_type(&self) -> std::option::Option<& crate::types::SubnetCidrReservationType> {
+    pub fn reservation_type(
+        &self,
+    ) -> std::option::Option<&crate::types::SubnetCidrReservationType> {
         self.reservation_type.as_ref()
     }
     /// <p>The ID of the account that owns the subnet CIDR reservation. </p>
-    pub fn owner_id(&self) -> std::option::Option<& str> {
+    pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>The description assigned to the subnet CIDR reservation.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The tags assigned to the subnet CIDR reservation.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -82,8 +84,12 @@ impl SubnetCidrReservationBuilder {
         self
     }
     /// <p>The ID of the subnet CIDR reservation.</p>
-    pub fn set_subnet_cidr_reservation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_cidr_reservation_id = input; self
+    pub fn set_subnet_cidr_reservation_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.subnet_cidr_reservation_id = input;
+        self
     }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +98,8 @@ impl SubnetCidrReservationBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input; self
+        self.subnet_id = input;
+        self
     }
     /// <p>The CIDR that has been reserved.</p>
     pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +108,8 @@ impl SubnetCidrReservationBuilder {
     }
     /// <p>The CIDR that has been reserved.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input; self
+        self.cidr = input;
+        self
     }
     /// <p>The type of reservation. </p>
     pub fn reservation_type(mut self, input: crate::types::SubnetCidrReservationType) -> Self {
@@ -109,8 +117,12 @@ impl SubnetCidrReservationBuilder {
         self
     }
     /// <p>The type of reservation. </p>
-    pub fn set_reservation_type(mut self, input: std::option::Option<crate::types::SubnetCidrReservationType>) -> Self {
-        self.reservation_type = input; self
+    pub fn set_reservation_type(
+        mut self,
+        input: std::option::Option<crate::types::SubnetCidrReservationType>,
+    ) -> Self {
+        self.reservation_type = input;
+        self
     }
     /// <p>The ID of the account that owns the subnet CIDR reservation. </p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +131,8 @@ impl SubnetCidrReservationBuilder {
     }
     /// <p>The ID of the account that owns the subnet CIDR reservation. </p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input; self
+        self.owner_id = input;
+        self
     }
     /// <p>The description assigned to the subnet CIDR reservation.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +141,8 @@ impl SubnetCidrReservationBuilder {
     }
     /// <p>The description assigned to the subnet CIDR reservation.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -137,32 +151,28 @@ impl SubnetCidrReservationBuilder {
     /// <p>The tags assigned to the subnet CIDR reservation.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags assigned to the subnet CIDR reservation.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`SubnetCidrReservation`](crate::types::SubnetCidrReservation).
     pub fn build(self) -> crate::types::SubnetCidrReservation {
         crate::types::SubnetCidrReservation {
-            subnet_cidr_reservation_id: self.subnet_cidr_reservation_id
-            ,
-            subnet_id: self.subnet_id
-            ,
-            cidr: self.cidr
-            ,
-            reservation_type: self.reservation_type
-            ,
-            owner_id: self.owner_id
-            ,
-            description: self.description
-            ,
-            tags: self.tags
-            ,
+            subnet_cidr_reservation_id: self.subnet_cidr_reservation_id,
+            subnet_id: self.subnet_id,
+            cidr: self.cidr,
+            reservation_type: self.reservation_type,
+            owner_id: self.owner_id,
+            description: self.description,
+            tags: self.tags,
         }
     }
 }
-

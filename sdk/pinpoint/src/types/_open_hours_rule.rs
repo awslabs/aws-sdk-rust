@@ -3,7 +3,7 @@
 /// <p>Specifies the start and end time for OpenHours.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpenHoursRule  {
+pub struct OpenHoursRule {
     /// <p>The start of the scheduled time, in ISO 8601 format, when the channel can send messages.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct OpenHoursRule  {
 }
 impl OpenHoursRule {
     /// <p>The start of the scheduled time, in ISO 8601 format, when the channel can send messages.</p>
-    pub fn start_time(&self) -> std::option::Option<& str> {
+    pub fn start_time(&self) -> std::option::Option<&str> {
         self.start_time.as_deref()
     }
     /// <p>The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.</p>
-    pub fn end_time(&self) -> std::option::Option<& str> {
+    pub fn end_time(&self) -> std::option::Option<&str> {
         self.end_time.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl OpenHoursRuleBuilder {
     }
     /// <p>The start of the scheduled time, in ISO 8601 format, when the channel can send messages.</p>
     pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_time = input; self
+        self.start_time = input;
+        self
     }
     /// <p>The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.</p>
     pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl OpenHoursRuleBuilder {
     }
     /// <p>The end of the scheduled time, in ISO 8601 format, when the channel can't send messages.</p>
     pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpenHoursRule`](crate::types::OpenHoursRule).
     pub fn build(self) -> crate::types::OpenHoursRule {
         crate::types::OpenHoursRule {
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
+            start_time: self.start_time,
+            end_time: self.end_time,
         }
     }
 }
-

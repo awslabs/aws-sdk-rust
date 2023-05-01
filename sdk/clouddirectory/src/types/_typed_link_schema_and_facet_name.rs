@@ -3,7 +3,7 @@
 /// <p>Identifies the schema Amazon Resource Name (ARN) and facet name for the typed link.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TypedLinkSchemaAndFacetName  {
+pub struct TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TypedLinkSchemaAndFacetName  {
 }
 impl TypedLinkSchemaAndFacetName {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The unique name of the typed link facet.</p>
-    pub fn typed_link_name(&self) -> std::option::Option<& str> {
+    pub fn typed_link_name(&self) -> std::option::Option<&str> {
         self.typed_link_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl TypedLinkSchemaAndFacetNameBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     /// <p>The unique name of the typed link facet.</p>
     pub fn typed_link_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl TypedLinkSchemaAndFacetNameBuilder {
     }
     /// <p>The unique name of the typed link facet.</p>
     pub fn set_typed_link_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.typed_link_name = input; self
+        self.typed_link_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`TypedLinkSchemaAndFacetName`](crate::types::TypedLinkSchemaAndFacetName).
     pub fn build(self) -> crate::types::TypedLinkSchemaAndFacetName {
         crate::types::TypedLinkSchemaAndFacetName {
-            schema_arn: self.schema_arn
-            ,
-            typed_link_name: self.typed_link_name
-            ,
+            schema_arn: self.schema_arn,
+            typed_link_name: self.typed_link_name,
         }
     }
 }
-

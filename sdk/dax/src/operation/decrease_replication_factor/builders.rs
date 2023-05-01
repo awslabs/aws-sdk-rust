@@ -4,52 +4,72 @@ pub use crate::operation::decrease_replication_factor::_decrease_replication_fac
 pub use crate::operation::decrease_replication_factor::_decrease_replication_factor_input::DecreaseReplicationFactorInputBuilder;
 
 /// Fluent builder constructing a request to `DecreaseReplicationFactor`.
-/// 
-/// <p>Removes one or more nodes from a DAX cluster.</p> <note> 
-/// <p>You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.</p> 
+///
+/// <p>Removes one or more nodes from a DAX cluster.</p> <note>
+/// <p>You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DecreaseReplicationFactorFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::decrease_replication_factor::builders::DecreaseReplicationFactorInputBuilder,
 }
-impl DecreaseReplicationFactorFluentBuilder  {
+impl DecreaseReplicationFactorFluentBuilder {
     /// Creates a new `DecreaseReplicationFactor`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::decrease_replication_factor::DecreaseReplicationFactor, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput, aws_smithy_http::result::SdkError<crate::operation::decrease_replication_factor::DecreaseReplicationFactorError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactor,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the DAX cluster from which you want to remove nodes.</p>
     pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -80,7 +100,10 @@ impl DecreaseReplicationFactorFluentBuilder  {
         self
     }
     /// <p>The Availability Zone(s) from which to remove nodes.</p>
-    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_availability_zones(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
@@ -94,9 +117,11 @@ impl DecreaseReplicationFactorFluentBuilder  {
         self
     }
     /// <p>The unique identifiers of the nodes to be removed from the cluster.</p>
-    pub fn set_node_ids_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_node_ids_to_remove(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_node_ids_to_remove(input);
         self
     }
 }
-

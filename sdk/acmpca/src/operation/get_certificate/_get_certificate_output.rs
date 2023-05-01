@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCertificateOutput  {
+pub struct GetCertificateOutput {
     /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct GetCertificateOutput  {
 }
 impl GetCertificateOutput {
     /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
-    pub fn certificate(&self) -> std::option::Option<& str> {
+    pub fn certificate(&self) -> std::option::Option<&str> {
         self.certificate.as_deref()
     }
     /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
-    pub fn certificate_chain(&self) -> std::option::Option<& str> {
+    pub fn certificate_chain(&self) -> std::option::Option<&str> {
         self.certificate_chain.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetCertificateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCertificateOutput {
     /// Creates a new builder-style object to manufacture [`GetCertificateOutput`](crate::operation::get_certificate::GetCertificateOutput).
     pub fn builder() -> crate::operation::get_certificate::builders::GetCertificateOutputBuilder {
@@ -49,7 +49,8 @@ impl GetCertificateOutputBuilder {
     }
     /// <p>The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.</p>
     pub fn set_certificate(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate = input; self
+        self.certificate = input;
+        self
     }
     /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
     pub fn certificate_chain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,27 +58,28 @@ impl GetCertificateOutputBuilder {
         self
     }
     /// <p>The base64 PEM-encoded certificate chain that chains up to the root CA certificate that you used to sign your private CA certificate. </p>
-    pub fn set_certificate_chain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_chain = input; self
+    pub fn set_certificate_chain(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.certificate_chain = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCertificateOutput`](crate::operation::get_certificate::GetCertificateOutput).
     pub fn build(self) -> crate::operation::get_certificate::GetCertificateOutput {
         crate::operation::get_certificate::GetCertificateOutput {
-            certificate: self.certificate
-            ,
-            certificate_chain: self.certificate_chain
-            ,
+            certificate: self.certificate,
+            certificate_chain: self.certificate_chain,
             _request_id: self._request_id,
         }
     }
 }
-

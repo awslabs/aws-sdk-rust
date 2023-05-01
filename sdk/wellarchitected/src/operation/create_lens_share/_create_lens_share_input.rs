@@ -2,40 +2,40 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLensShareInput  {
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
+pub struct CreateLensShareInput {
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     #[doc(hidden)]
     pub shared_with: std::option::Option<std::string::String>,
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> 
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> 
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateLensShareInput {
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<& str> {
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
-    pub fn shared_with(&self) -> std::option::Option<& str> {
+    pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> 
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> 
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
@@ -55,20 +55,21 @@ pub struct CreateLensShareInputBuilder {
     pub(crate) client_request_token: std::option::Option<std::string::String>,
 }
 impl CreateLensShareInputBuilder {
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
         self.lens_alias = Some(input.into());
         self
     }
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_alias = input; self
+        self.lens_alias = input;
+        self
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,35 +78,39 @@ impl CreateLensShareInputBuilder {
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.shared_with = input; self
+        self.shared_with = input;
+        self
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> 
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> 
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p> 
-    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important> 
-    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure that this request is idempotent (executes only once).</p>
+    /// <p>You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.</p> <important>
+    /// <p>This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.</p>
     /// </important>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateLensShareInput`](crate::operation::create_lens_share::CreateLensShareInput).
-    pub fn build(self) -> Result<crate::operation::create_lens_share::CreateLensShareInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_lens_share::CreateLensShareInput {
-                lens_alias: self.lens_alias
-                ,
-                shared_with: self.shared_with
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_lens_share::CreateLensShareInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_lens_share::CreateLensShareInput {
+            lens_alias: self.lens_alias,
+            shared_with: self.shared_with,
+            client_request_token: self.client_request_token,
+        })
     }
 }
-

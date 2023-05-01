@@ -3,14 +3,14 @@
 /// <p>The parameters for Jira.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JiraParameters  {
+pub struct JiraParameters {
     /// <p>The base URL of the Jira site.</p>
     #[doc(hidden)]
     pub site_base_url: std::option::Option<std::string::String>,
 }
 impl JiraParameters {
     /// <p>The base URL of the Jira site.</p>
-    pub fn site_base_url(&self) -> std::option::Option<& str> {
+    pub fn site_base_url(&self) -> std::option::Option<&str> {
         self.site_base_url.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl JiraParametersBuilder {
     }
     /// <p>The base URL of the Jira site.</p>
     pub fn set_site_base_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.site_base_url = input; self
+        self.site_base_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`JiraParameters`](crate::types::JiraParameters).
     pub fn build(self) -> crate::types::JiraParameters {
         crate::types::JiraParameters {
-            site_base_url: self.site_base_url
-            ,
+            site_base_url: self.site_base_url,
         }
     }
 }
-

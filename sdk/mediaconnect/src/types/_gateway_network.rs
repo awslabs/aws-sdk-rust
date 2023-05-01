@@ -3,7 +3,7 @@
 /// The network settings for a gateway.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayNetwork  {
+pub struct GatewayNetwork {
     /// A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     #[doc(hidden)]
     pub cidr_block: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct GatewayNetwork  {
 }
 impl GatewayNetwork {
     /// A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn cidr_block(&self) -> std::option::Option<& str> {
+    pub fn cidr_block(&self) -> std::option::Option<&str> {
         self.cidr_block.as_deref()
     }
     /// The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl GatewayNetworkBuilder {
     }
     /// A unique IP address range to use for this network. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
     pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr_block = input; self
+        self.cidr_block = input;
+        self
     }
     /// The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl GatewayNetworkBuilder {
     }
     /// The name of the network. This name is used to reference the network and must be unique among networks in this gateway.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GatewayNetwork`](crate::types::GatewayNetwork).
     pub fn build(self) -> crate::types::GatewayNetwork {
         crate::types::GatewayNetwork {
-            cidr_block: self.cidr_block
-            ,
-            name: self.name
-            ,
+            cidr_block: self.cidr_block,
+            name: self.name,
         }
     }
 }
-

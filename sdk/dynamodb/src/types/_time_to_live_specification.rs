@@ -3,7 +3,7 @@
 /// <p>Represents the settings used to enable or disable Time to Live (TTL) for the specified table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeToLiveSpecification  {
+pub struct TimeToLiveSpecification {
     /// <p>Indicates whether TTL is to be enabled (true) or disabled (false) on the table.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl TimeToLiveSpecification {
         self.enabled
     }
     /// <p>The name of the TTL attribute used to store the expiration time for items in the table.</p>
-    pub fn attribute_name(&self) -> std::option::Option<& str> {
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl TimeToLiveSpecificationBuilder {
     }
     /// <p>Indicates whether TTL is to be enabled (true) or disabled (false) on the table.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>The name of the TTL attribute used to store the expiration time for items in the table.</p>
     pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl TimeToLiveSpecificationBuilder {
     }
     /// <p>The name of the TTL attribute used to store the expiration time for items in the table.</p>
     pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_name = input; self
+        self.attribute_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`TimeToLiveSpecification`](crate::types::TimeToLiveSpecification).
     pub fn build(self) -> crate::types::TimeToLiveSpecification {
         crate::types::TimeToLiveSpecification {
-            enabled: self.enabled
-            ,
-            attribute_name: self.attribute_name
-            ,
+            enabled: self.enabled,
+            attribute_name: self.attribute_name,
         }
     }
 }
-

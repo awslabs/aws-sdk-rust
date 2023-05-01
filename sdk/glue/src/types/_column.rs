@@ -3,7 +3,7 @@
 /// <p>A column in a <code>Table</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Column  {
+pub struct Column {
     /// <p>The name of the <code>Column</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,23 +15,27 @@ pub struct Column  {
     pub comment: std::option::Option<std::string::String>,
     /// <p>These key-value pairs define properties associated with the column.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Column {
     /// <p>The name of the <code>Column</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The data type of the <code>Column</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>A free-form text comment.</p>
-    pub fn comment(&self) -> std::option::Option<& str> {
+    pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
     }
     /// <p>These key-value pairs define properties associated with the column.</p>
-    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.parameters.as_ref()
     }
 }
@@ -49,7 +53,8 @@ pub struct ColumnBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) r#type: std::option::Option<std::string::String>,
     pub(crate) comment: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ColumnBuilder {
     /// <p>The name of the <code>Column</code>.</p>
@@ -59,7 +64,8 @@ impl ColumnBuilder {
     }
     /// <p>The name of the <code>Column</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The data type of the <code>Column</code>.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +74,8 @@ impl ColumnBuilder {
     }
     /// <p>The data type of the <code>Column</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>A free-form text comment.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,35 +84,41 @@ impl ColumnBuilder {
     }
     /// <p>A free-form text comment.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input; self
+        self.comment = input;
+        self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>These key-value pairs define properties associated with the column.</p>
-    pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.parameters = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.parameters = Some(hash_map);
+        self
     }
     /// <p>These key-value pairs define properties associated with the column.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`Column`](crate::types::Column).
     pub fn build(self) -> crate::types::Column {
         crate::types::Column {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            comment: self.comment
-            ,
-            parameters: self.parameters
-            ,
+            name: self.name,
+            r#type: self.r#type,
+            comment: self.comment,
+            parameters: self.parameters,
         }
     }
 }
-

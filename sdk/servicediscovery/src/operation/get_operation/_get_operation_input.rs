@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOperationInput  {
+pub struct GetOperationInput {
     /// <p>The ID of the operation that you want to get more information about.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
 }
 impl GetOperationInput {
     /// <p>The ID of the operation that you want to get more information about.</p>
-    pub fn operation_id(&self) -> std::option::Option<& str> {
+    pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetOperationInputBuilder {
     }
     /// <p>The ID of the operation that you want to get more information about.</p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input; self
+        self.operation_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetOperationInput`](crate::operation::get_operation::GetOperationInput).
-    pub fn build(self) -> Result<crate::operation::get_operation::GetOperationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_operation::GetOperationInput {
-                operation_id: self.operation_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_operation::GetOperationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_operation::GetOperationInput {
+            operation_id: self.operation_id,
+        })
     }
 }
-

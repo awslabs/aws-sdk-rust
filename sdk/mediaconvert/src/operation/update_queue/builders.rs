@@ -4,50 +4,66 @@ pub use crate::operation::update_queue::_update_queue_output::UpdateQueueOutputB
 pub use crate::operation::update_queue::_update_queue_input::UpdateQueueInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateQueue`.
-/// 
+///
 /// Modify one of your existing queues.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateQueueFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_queue::builders::UpdateQueueInputBuilder,
+    inner: crate::operation::update_queue::builders::UpdateQueueInputBuilder,
 }
-impl UpdateQueueFluentBuilder  {
+impl UpdateQueueFluentBuilder {
     /// Creates a new `UpdateQueue`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_queue::UpdateQueue, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_queue::UpdateQueueError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_queue::UpdateQueueOutput, aws_smithy_http::result::SdkError<crate::operation::update_queue::UpdateQueueError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_queue::UpdateQueue,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_queue::UpdateQueueError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_queue::UpdateQueueOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_queue::UpdateQueueError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// The new description for the queue, if you are changing it.
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.description(input.into());
@@ -69,12 +85,18 @@ impl UpdateQueueFluentBuilder  {
         self
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    pub fn reservation_plan_settings(mut self, input: crate::types::ReservationPlanSettings) -> Self {
+    pub fn reservation_plan_settings(
+        mut self,
+        input: crate::types::ReservationPlanSettings,
+    ) -> Self {
         self.inner = self.inner.reservation_plan_settings(input);
         self
     }
     /// The new details of your pricing plan for your reserved queue. When you set up a new pricing plan to replace an expired one, you enter into another 12-month commitment. When you add capacity to your queue by increasing the number of RTS, you extend the term of your commitment to 12 months from when you add capacity. After you make these commitments, you can't cancel them.
-    pub fn set_reservation_plan_settings(mut self, input: std::option::Option<crate::types::ReservationPlanSettings>) -> Self {
+    pub fn set_reservation_plan_settings(
+        mut self,
+        input: std::option::Option<crate::types::ReservationPlanSettings>,
+    ) -> Self {
         self.inner = self.inner.set_reservation_plan_settings(input);
         self
     }
@@ -89,4 +111,3 @@ impl UpdateQueueFluentBuilder  {
         self
     }
 }
-

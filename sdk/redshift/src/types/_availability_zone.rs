@@ -3,7 +3,7 @@
 /// <p>Describes an availability zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AvailabilityZone  {
+pub struct AvailabilityZone {
     /// <p>The name of the availability zone.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AvailabilityZone  {
 }
 impl AvailabilityZone {
     /// <p>The name of the availability zone.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p></p>
-    pub fn supported_platforms(&self) -> std::option::Option<& [crate::types::SupportedPlatform]> {
+    pub fn supported_platforms(&self) -> std::option::Option<&[crate::types::SupportedPlatform]> {
         self.supported_platforms.as_deref()
     }
 }
@@ -33,7 +33,8 @@ impl AvailabilityZone {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AvailabilityZoneBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) supported_platforms: std::option::Option<std::vec::Vec<crate::types::SupportedPlatform>>,
+    pub(crate) supported_platforms:
+        std::option::Option<std::vec::Vec<crate::types::SupportedPlatform>>,
 }
 impl AvailabilityZoneBuilder {
     /// <p>The name of the availability zone.</p>
@@ -43,7 +44,8 @@ impl AvailabilityZoneBuilder {
     }
     /// <p>The name of the availability zone.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `supported_platforms`.
     ///
@@ -52,22 +54,23 @@ impl AvailabilityZoneBuilder {
     /// <p></p>
     pub fn supported_platforms(mut self, input: crate::types::SupportedPlatform) -> Self {
         let mut v = self.supported_platforms.unwrap_or_default();
-                        v.push(input);
-                        self.supported_platforms = Some(v);
-                        self
+        v.push(input);
+        self.supported_platforms = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_supported_platforms(mut self, input: std::option::Option<std::vec::Vec<crate::types::SupportedPlatform>>) -> Self {
-        self.supported_platforms = input; self
+    pub fn set_supported_platforms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SupportedPlatform>>,
+    ) -> Self {
+        self.supported_platforms = input;
+        self
     }
     /// Consumes the builder and constructs a [`AvailabilityZone`](crate::types::AvailabilityZone).
     pub fn build(self) -> crate::types::AvailabilityZone {
         crate::types::AvailabilityZone {
-            name: self.name
-            ,
-            supported_platforms: self.supported_platforms
-            ,
+            name: self.name,
+            supported_platforms: self.supported_platforms,
         }
     }
 }
-

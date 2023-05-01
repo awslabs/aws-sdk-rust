@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationOutput  {
+pub struct GetApplicationOutput {
     /// <p>The identifier of the application.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -26,7 +26,8 @@ pub struct GetApplicationOutput  {
     pub associated_resource_count: i32,
     /// <p>Key-value pairs associated with the application.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     #[doc(hidden)]
     pub integrations: std::option::Option<crate::types::Integrations>,
@@ -34,27 +35,27 @@ pub struct GetApplicationOutput  {
 }
 impl GetApplicationOutput {
     /// <p>The identifier of the application.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p>The number of top-level resources that were registered as part of this application.</p>
@@ -62,19 +63,22 @@ impl GetApplicationOutput {
         self.associated_resource_count
     }
     /// <p>Key-value pairs associated with the application.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
-    pub fn integrations(&self) -> std::option::Option<& crate::types::Integrations> {
+    pub fn integrations(&self) -> std::option::Option<&crate::types::Integrations> {
         self.integrations.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetApplicationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
     pub fn builder() -> crate::operation::get_application::builders::GetApplicationOutputBuilder {
@@ -93,7 +97,8 @@ pub struct GetApplicationOutputBuilder {
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_update_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) associated_resource_count: std::option::Option<i32>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) integrations: std::option::Option<crate::types::Integrations>,
     _request_id: Option<String>,
 }
@@ -105,7 +110,8 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The identifier of the application.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +120,8 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The Amazon resource name (ARN) that specifies the application across services.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +130,8 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The name of the application. The name must be unique in the region in which you are creating the application.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +140,8 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The description of the application.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -140,8 +149,12 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
     pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -149,8 +162,12 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>The ISO-8601 formatted timestamp of the moment when the application was last updated.</p>
-    pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input; self
+    pub fn set_last_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_time = input;
+        self
     }
     /// <p>The number of top-level resources that were registered as part of this application.</p>
     pub fn associated_resource_count(mut self, input: i32) -> Self {
@@ -159,22 +176,33 @@ impl GetApplicationOutputBuilder {
     }
     /// <p>The number of top-level resources that were registered as part of this application.</p>
     pub fn set_associated_resource_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.associated_resource_count = input; self
+        self.associated_resource_count = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Key-value pairs associated with the application.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Key-value pairs associated with the application.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
     pub fn integrations(mut self, input: crate::types::Integrations) -> Self {
@@ -182,42 +210,35 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p> The information about the integration of the application with other services, such as Resource Groups. </p>
-    pub fn set_integrations(mut self, input: std::option::Option<crate::types::Integrations>) -> Self {
-        self.integrations = input; self
+    pub fn set_integrations(
+        mut self,
+        input: std::option::Option<crate::types::Integrations>,
+    ) -> Self {
+        self.integrations = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
     pub fn build(self) -> crate::operation::get_application::GetApplicationOutput {
         crate::operation::get_application::GetApplicationOutput {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            creation_time: self.creation_time
-            ,
-            last_update_time: self.last_update_time
-            ,
-            associated_resource_count: self.associated_resource_count
-                .unwrap_or_default()
-            ,
-            tags: self.tags
-            ,
-            integrations: self.integrations
-            ,
+            id: self.id,
+            arn: self.arn,
+            name: self.name,
+            description: self.description,
+            creation_time: self.creation_time,
+            last_update_time: self.last_update_time,
+            associated_resource_count: self.associated_resource_count.unwrap_or_default(),
+            tags: self.tags,
+            integrations: self.integrations,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventAggregatesOutput  {
+pub struct DescribeEventAggregatesOutput {
     /// <p>The number of events in each category that meet the optional filter criteria.</p>
     #[doc(hidden)]
     pub event_aggregates: std::option::Option<std::vec::Vec<crate::types::EventAggregate>>,
@@ -13,22 +13,24 @@ pub struct DescribeEventAggregatesOutput  {
 }
 impl DescribeEventAggregatesOutput {
     /// <p>The number of events in each category that meet the optional filter criteria.</p>
-    pub fn event_aggregates(&self) -> std::option::Option<& [crate::types::EventAggregate]> {
+    pub fn event_aggregates(&self) -> std::option::Option<&[crate::types::EventAggregate]> {
         self.event_aggregates.as_deref()
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEventAggregatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEventAggregatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventAggregatesOutput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput).
-    pub fn builder() -> crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesOutputBuilder
+    {
         crate::operation::describe_event_aggregates::builders::DescribeEventAggregatesOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeEventAggregatesOutputBuilder {
     /// <p>The number of events in each category that meet the optional filter criteria.</p>
     pub fn event_aggregates(mut self, input: crate::types::EventAggregate) -> Self {
         let mut v = self.event_aggregates.unwrap_or_default();
-                        v.push(input);
-                        self.event_aggregates = Some(v);
-                        self
+        v.push(input);
+        self.event_aggregates = Some(v);
+        self
     }
     /// <p>The number of events in each category that meet the optional filter criteria.</p>
-    pub fn set_event_aggregates(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventAggregate>>) -> Self {
-        self.event_aggregates = input; self
+    pub fn set_event_aggregates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventAggregate>>,
+    ) -> Self {
+        self.event_aggregates = input;
+        self
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,26 @@ impl DescribeEventAggregatesOutputBuilder {
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEventAggregatesOutput`](crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput).
-    pub fn build(self) -> crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput {
         crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput {
-            event_aggregates: self.event_aggregates
-            ,
-            next_token: self.next_token
-            ,
+            event_aggregates: self.event_aggregates,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -4,50 +4,66 @@ pub use crate::operation::update_slot_type::_update_slot_type_output::UpdateSlot
 pub use crate::operation::update_slot_type::_update_slot_type_input::UpdateSlotTypeInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateSlotType`.
-/// 
+///
 /// <p>Updates the configuration of an existing slot type.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSlotTypeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_slot_type::builders::UpdateSlotTypeInputBuilder,
+    inner: crate::operation::update_slot_type::builders::UpdateSlotTypeInputBuilder,
 }
-impl UpdateSlotTypeFluentBuilder  {
+impl UpdateSlotTypeFluentBuilder {
     /// Creates a new `UpdateSlotType`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_slot_type::UpdateSlotType, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_slot_type::UpdateSlotTypeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_slot_type::UpdateSlotTypeOutput, aws_smithy_http::result::SdkError<crate::operation::update_slot_type::UpdateSlotTypeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_slot_type::UpdateSlotType,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_slot_type::UpdateSlotTypeError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_slot_type::UpdateSlotTypeOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_slot_type::UpdateSlotTypeError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique identifier of the slot type to update.</p>
     pub fn slot_type_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.slot_type_id(input.into());
@@ -88,17 +104,26 @@ impl UpdateSlotTypeFluentBuilder  {
         self
     }
     /// <p>A new list of values and their optional synonyms that define the values that the slot type can take.</p>
-    pub fn set_slot_type_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::SlotTypeValue>>) -> Self {
+    pub fn set_slot_type_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SlotTypeValue>>,
+    ) -> Self {
         self.inner = self.inner.set_slot_type_values(input);
         self
     }
     /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
-    pub fn value_selection_setting(mut self, input: crate::types::SlotValueSelectionSetting) -> Self {
+    pub fn value_selection_setting(
+        mut self,
+        input: crate::types::SlotValueSelectionSetting,
+    ) -> Self {
         self.inner = self.inner.value_selection_setting(input);
         self
     }
     /// <p>The strategy that Amazon Lex should use when deciding on a value from the list of slot type values.</p>
-    pub fn set_value_selection_setting(mut self, input: std::option::Option<crate::types::SlotValueSelectionSetting>) -> Self {
+    pub fn set_value_selection_setting(
+        mut self,
+        input: std::option::Option<crate::types::SlotValueSelectionSetting>,
+    ) -> Self {
         self.inner = self.inner.set_value_selection_setting(input);
         self
     }
@@ -108,7 +133,10 @@ impl UpdateSlotTypeFluentBuilder  {
         self
     }
     /// <p>The new built-in slot type that should be used as the parent of this slot type.</p>
-    pub fn set_parent_slot_type_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parent_slot_type_signature(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_parent_slot_type_signature(input);
         self
     }
@@ -148,19 +176,27 @@ impl UpdateSlotTypeFluentBuilder  {
         self
     }
     /// <p>Provides information about the external source of the slot type's definition.</p>
-    pub fn set_external_source_setting(mut self, input: std::option::Option<crate::types::ExternalSourceSetting>) -> Self {
+    pub fn set_external_source_setting(
+        mut self,
+        input: std::option::Option<crate::types::ExternalSourceSetting>,
+    ) -> Self {
         self.inner = self.inner.set_external_source_setting(input);
         self
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn composite_slot_type_setting(mut self, input: crate::types::CompositeSlotTypeSetting) -> Self {
+    pub fn composite_slot_type_setting(
+        mut self,
+        input: crate::types::CompositeSlotTypeSetting,
+    ) -> Self {
         self.inner = self.inner.composite_slot_type_setting(input);
         self
     }
     /// <p>Specifications for a composite slot type.</p>
-    pub fn set_composite_slot_type_setting(mut self, input: std::option::Option<crate::types::CompositeSlotTypeSetting>) -> Self {
+    pub fn set_composite_slot_type_setting(
+        mut self,
+        input: std::option::Option<crate::types::CompositeSlotTypeSetting>,
+    ) -> Self {
         self.inner = self.inner.set_composite_slot_type_setting(input);
         self
     }
 }
-

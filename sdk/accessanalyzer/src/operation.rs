@@ -84,4 +84,3 @@ pub mod update_findings;
 
 /// Types for the `ValidatePolicy` operation.
 pub mod validate_policy;
-

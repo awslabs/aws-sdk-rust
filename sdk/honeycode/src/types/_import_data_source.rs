@@ -3,14 +3,14 @@
 /// <p>An object that has details about the source of the data that was submitted for import.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportDataSource  {
+pub struct ImportDataSource {
     /// <p>The configuration parameters for the data source of the import</p>
     #[doc(hidden)]
     pub data_source_config: std::option::Option<crate::types::ImportDataSourceConfig>,
 }
 impl ImportDataSource {
     /// <p>The configuration parameters for the data source of the import</p>
-    pub fn data_source_config(&self) -> std::option::Option<& crate::types::ImportDataSourceConfig> {
+    pub fn data_source_config(&self) -> std::option::Option<&crate::types::ImportDataSourceConfig> {
         self.data_source_config.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ImportDataSourceBuilder {
         self
     }
     /// <p>The configuration parameters for the data source of the import</p>
-    pub fn set_data_source_config(mut self, input: std::option::Option<crate::types::ImportDataSourceConfig>) -> Self {
-        self.data_source_config = input; self
+    pub fn set_data_source_config(
+        mut self,
+        input: std::option::Option<crate::types::ImportDataSourceConfig>,
+    ) -> Self {
+        self.data_source_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportDataSource`](crate::types::ImportDataSource).
     pub fn build(self) -> crate::types::ImportDataSource {
         crate::types::ImportDataSource {
-            data_source_config: self.data_source_config
-            ,
+            data_source_config: self.data_source_config,
         }
     }
 }
-

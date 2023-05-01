@@ -3,7 +3,7 @@
 /// <p>Provides a summary of the what-if forecast export properties used in the <code>ListWhatIfForecastExports</code> operation. To get the complete set of properties, call the <code>DescribeWhatIfForecastExport</code> operation, and provide the <code>WhatIfForecastExportArn</code> that is listed in the summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WhatIfForecastExportSummary  {
+pub struct WhatIfForecastExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
     #[doc(hidden)]
     pub what_if_forecast_export_arn: std::option::Option<std::string::String>,
@@ -16,14 +16,14 @@ pub struct WhatIfForecastExportSummary  {
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<crate::types::DataDestination>,
-    /// <p>The status of the what-if forecast export. States include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> 
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p> 
+    /// <p>The status of the what-if forecast export. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -33,63 +33,63 @@ pub struct WhatIfForecastExportSummary  {
     /// <p>When the what-if forecast export was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li> 
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li> 
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl WhatIfForecastExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
-    pub fn what_if_forecast_export_arn(&self) -> std::option::Option<& str> {
+    pub fn what_if_forecast_export_arn(&self) -> std::option::Option<&str> {
         self.what_if_forecast_export_arn.as_deref()
     }
     /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
-    pub fn what_if_forecast_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn what_if_forecast_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.what_if_forecast_arns.as_deref()
     }
     /// <p>The what-if forecast export name.</p>
-    pub fn what_if_forecast_export_name(&self) -> std::option::Option<& str> {
+    pub fn what_if_forecast_export_name(&self) -> std::option::Option<&str> {
         self.what_if_forecast_export_name.as_deref()
     }
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
-    pub fn destination(&self) -> std::option::Option<& crate::types::DataDestination> {
+    pub fn destination(&self) -> std::option::Option<&crate::types::DataDestination> {
         self.destination.as_ref()
     }
-    /// <p>The status of the what-if forecast export. States include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> 
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p> 
+    /// <p>The status of the what-if forecast export. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>If an error occurred, an informational message about the error.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>When the what-if forecast export was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li> 
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li> 
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
@@ -120,8 +120,12 @@ impl WhatIfForecastExportSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the what-if forecast export.</p>
-    pub fn set_what_if_forecast_export_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.what_if_forecast_export_arn = input; self
+    pub fn set_what_if_forecast_export_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.what_if_forecast_export_arn = input;
+        self
     }
     /// Appends an item to `what_if_forecast_arns`.
     ///
@@ -130,13 +134,17 @@ impl WhatIfForecastExportSummaryBuilder {
     /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
     pub fn what_if_forecast_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.what_if_forecast_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.what_if_forecast_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.what_if_forecast_arns = Some(v);
+        self
     }
     /// <p>An array of Amazon Resource Names (ARNs) that define the what-if forecasts included in the export.</p>
-    pub fn set_what_if_forecast_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.what_if_forecast_arns = input; self
+    pub fn set_what_if_forecast_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.what_if_forecast_arns = input;
+        self
     }
     /// <p>The what-if forecast export name.</p>
     pub fn what_if_forecast_export_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,8 +152,12 @@ impl WhatIfForecastExportSummaryBuilder {
         self
     }
     /// <p>The what-if forecast export name.</p>
-    pub fn set_what_if_forecast_export_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.what_if_forecast_export_name = input; self
+    pub fn set_what_if_forecast_export_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.what_if_forecast_export_name = input;
+        self
     }
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
     pub fn destination(mut self, input: crate::types::DataDestination) -> Self {
@@ -153,33 +165,38 @@ impl WhatIfForecastExportSummaryBuilder {
         self
     }
     /// <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the forecast is exported.</p>
-    pub fn set_destination(mut self, input: std::option::Option<crate::types::DataDestination>) -> Self {
-        self.destination = input; self
+    pub fn set_destination(
+        mut self,
+        input: std::option::Option<crate::types::DataDestination>,
+    ) -> Self {
+        self.destination = input;
+        self
     }
-    /// <p>The status of the what-if forecast export. States include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> 
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p> 
+    /// <p>The status of the what-if forecast export. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The status of the what-if forecast export. States include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACTIVE</code> </p> </li> 
-    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li> 
-    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p> 
+    /// <p>The status of the what-if forecast export. States include:</p>
+    /// <ul>
+    /// <li> <p> <code>ACTIVE</code> </p> </li>
+    /// <li> <p> <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> </p> </li>
+    /// <li> <p> <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code> </p> </li>
+    /// </ul> <note>
+    /// <p>The <code>Status</code> of the what-if analysis must be <code>ACTIVE</code> before you can access the analysis.</p>
     /// </note>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,7 +205,8 @@ impl WhatIfForecastExportSummaryBuilder {
     }
     /// <p>If an error occurred, an informational message about the error.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>When the what-if forecast export was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -196,52 +214,51 @@ impl WhatIfForecastExportSummaryBuilder {
         self
     }
     /// <p>When the what-if forecast export was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li> 
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li> 
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
     pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.last_modification_time = Some(input);
         self
     }
-    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li> 
-    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li> 
-    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li> 
-    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li> 
+    /// <p>The last time the resource was modified. The timestamp depends on the status of the job:</p>
+    /// <ul>
+    /// <li> <p> <code>CREATE_PENDING</code> - The <code>CreationTime</code>.</p> </li>
+    /// <li> <p> <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPING</code> - The current timestamp.</p> </li>
+    /// <li> <p> <code>CREATE_STOPPED</code> - When the job stopped.</p> </li>
+    /// <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.</p> </li>
     /// </ul>
-    pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input; self
+    pub fn set_last_modification_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modification_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`WhatIfForecastExportSummary`](crate::types::WhatIfForecastExportSummary).
     pub fn build(self) -> crate::types::WhatIfForecastExportSummary {
         crate::types::WhatIfForecastExportSummary {
-            what_if_forecast_export_arn: self.what_if_forecast_export_arn
-            ,
-            what_if_forecast_arns: self.what_if_forecast_arns
-            ,
-            what_if_forecast_export_name: self.what_if_forecast_export_name
-            ,
-            destination: self.destination
-            ,
-            status: self.status
-            ,
-            message: self.message
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modification_time: self.last_modification_time
-            ,
+            what_if_forecast_export_arn: self.what_if_forecast_export_arn,
+            what_if_forecast_arns: self.what_if_forecast_arns,
+            what_if_forecast_export_name: self.what_if_forecast_export_name,
+            destination: self.destination,
+            status: self.status,
+            message: self.message,
+            creation_time: self.creation_time,
+            last_modification_time: self.last_modification_time,
         }
     }
 }
-

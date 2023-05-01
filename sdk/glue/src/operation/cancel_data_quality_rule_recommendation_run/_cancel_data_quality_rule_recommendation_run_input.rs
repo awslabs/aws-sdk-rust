@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelDataQualityRuleRecommendationRunInput  {
+pub struct CancelDataQualityRuleRecommendationRunInput {
     /// <p>The unique run identifier associated with this run.</p>
     #[doc(hidden)]
     pub run_id: std::option::Option<std::string::String>,
 }
 impl CancelDataQualityRuleRecommendationRunInput {
     /// <p>The unique run identifier associated with this run.</p>
-    pub fn run_id(&self) -> std::option::Option<& str> {
+    pub fn run_id(&self) -> std::option::Option<&str> {
         self.run_id.as_deref()
     }
 }
 impl CancelDataQualityRuleRecommendationRunInput {
     /// Creates a new builder-style object to manufacture [`CancelDataQualityRuleRecommendationRunInput`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput).
-    pub fn builder() -> crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunInputBuilder {
+    pub fn builder() -> crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunInputBuilder{
         crate::operation::cancel_data_quality_rule_recommendation_run::builders::CancelDataQualityRuleRecommendationRunInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl CancelDataQualityRuleRecommendationRunInputBuilder {
     }
     /// <p>The unique run identifier associated with this run.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input; self
+        self.run_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CancelDataQualityRuleRecommendationRunInput`](crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput).
-    pub fn build(self) -> Result<crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::cancel_data_quality_rule_recommendation_run::CancelDataQualityRuleRecommendationRunInput {
                 run_id: self.run_id
@@ -46,4 +47,3 @@ impl CancelDataQualityRuleRecommendationRunInputBuilder {
         )
     }
 }
-

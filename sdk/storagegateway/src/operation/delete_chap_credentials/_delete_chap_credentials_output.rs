@@ -3,7 +3,7 @@
 /// <p>A JSON object containing the following fields:</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChapCredentialsOutput  {
+pub struct DeleteChapCredentialsOutput {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     #[doc(hidden)]
     pub target_arn: std::option::Option<std::string::String>,
@@ -14,22 +14,24 @@ pub struct DeleteChapCredentialsOutput  {
 }
 impl DeleteChapCredentialsOutput {
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
-    pub fn target_arn(&self) -> std::option::Option<& str> {
+    pub fn target_arn(&self) -> std::option::Option<&str> {
         self.target_arn.as_deref()
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
-    pub fn initiator_name(&self) -> std::option::Option<& str> {
+    pub fn initiator_name(&self) -> std::option::Option<&str> {
         self.initiator_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteChapCredentialsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteChapCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteChapCredentialsOutput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsOutput).
-    pub fn builder() -> crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsOutputBuilder
+    {
         crate::operation::delete_chap_credentials::builders::DeleteChapCredentialsOutputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl DeleteChapCredentialsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     pub fn set_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_arn = input; self
+        self.target_arn = input;
+        self
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
     pub fn initiator_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,26 +62,24 @@ impl DeleteChapCredentialsOutputBuilder {
     }
     /// <p>The iSCSI initiator that connects to the target.</p>
     pub fn set_initiator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.initiator_name = input; self
+        self.initiator_name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteChapCredentialsOutput`](crate::operation::delete_chap_credentials::DeleteChapCredentialsOutput).
     pub fn build(self) -> crate::operation::delete_chap_credentials::DeleteChapCredentialsOutput {
         crate::operation::delete_chap_credentials::DeleteChapCredentialsOutput {
-            target_arn: self.target_arn
-            ,
-            initiator_name: self.initiator_name
-            ,
+            target_arn: self.target_arn,
+            initiator_name: self.initiator_name,
             _request_id: self._request_id,
         }
     }
 }
-

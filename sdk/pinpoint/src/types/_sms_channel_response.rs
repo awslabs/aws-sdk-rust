@@ -3,7 +3,7 @@
 /// <p>Provides information about the status and settings of the SMS channel for an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SmsChannelResponse  {
+pub struct SmsChannelResponse {
     /// <p>The unique identifier for the application that the SMS channel applies to.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -49,11 +49,11 @@ pub struct SmsChannelResponse  {
 }
 impl SmsChannelResponse {
     /// <p>The unique identifier for the application that the SMS channel applies to.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
-    pub fn creation_date(&self) -> std::option::Option<& str> {
+    pub fn creation_date(&self) -> std::option::Option<&str> {
         self.creation_date.as_deref()
     }
     /// <p>Specifies whether the SMS channel is enabled for the application.</p>
@@ -65,7 +65,7 @@ impl SmsChannelResponse {
         self.has_credential
     }
     /// <p>(Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Specifies whether the SMS channel is archived.</p>
@@ -73,15 +73,15 @@ impl SmsChannelResponse {
         self.is_archived
     }
     /// <p>The user who last modified the SMS channel.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<& str> {
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& str> {
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.</p>
-    pub fn platform(&self) -> std::option::Option<& str> {
+    pub fn platform(&self) -> std::option::Option<&str> {
         self.platform.as_deref()
     }
     /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
@@ -89,11 +89,11 @@ impl SmsChannelResponse {
         self.promotional_messages_per_second
     }
     /// <p>The identity that displays on recipients' devices when they receive messages from the SMS channel.</p>
-    pub fn sender_id(&self) -> std::option::Option<& str> {
+    pub fn sender_id(&self) -> std::option::Option<&str> {
         self.sender_id.as_deref()
     }
     /// <p>The registered short code to use when you send messages through the SMS channel.</p>
-    pub fn short_code(&self) -> std::option::Option<& str> {
+    pub fn short_code(&self) -> std::option::Option<&str> {
         self.short_code.as_deref()
     }
     /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
@@ -139,7 +139,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>The unique identifier for the application that the SMS channel applies to.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
     pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +149,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was enabled.</p>
     pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_date = input; self
+        self.creation_date = input;
+        self
     }
     /// <p>Specifies whether the SMS channel is enabled for the application.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -157,7 +159,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>Specifies whether the SMS channel is enabled for the application.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn has_credential(mut self, input: bool) -> Self {
@@ -166,7 +169,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>(Not used) This property is retained only for backward compatibility.</p>
     pub fn set_has_credential(mut self, input: std::option::Option<bool>) -> Self {
-        self.has_credential = input; self
+        self.has_credential = input;
+        self
     }
     /// <p>(Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,7 +179,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>(Deprecated) An identifier for the SMS channel. This property is retained only for backward compatibility.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>Specifies whether the SMS channel is archived.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
@@ -184,7 +189,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>Specifies whether the SMS channel is archived.</p>
     pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_archived = input; self
+        self.is_archived = input;
+        self
     }
     /// <p>The user who last modified the SMS channel.</p>
     pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,7 +199,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>The user who last modified the SMS channel.</p>
     pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified_by = input; self
+        self.last_modified_by = input;
+        self
     }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was last modified.</p>
     pub fn last_modified_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,8 +208,12 @@ impl SmsChannelResponseBuilder {
         self
     }
     /// <p>The date and time, in ISO 8601 format, when the SMS channel was last modified.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     /// <p>The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.</p>
     pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -211,7 +222,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>The type of messaging or notification platform for the channel. For the SMS channel, this value is SMS.</p>
     pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
     pub fn promotional_messages_per_second(mut self, input: i32) -> Self {
@@ -220,7 +232,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>The maximum number of promotional messages that you can send through the SMS channel each second.</p>
     pub fn set_promotional_messages_per_second(mut self, input: std::option::Option<i32>) -> Self {
-        self.promotional_messages_per_second = input; self
+        self.promotional_messages_per_second = input;
+        self
     }
     /// <p>The identity that displays on recipients' devices when they receive messages from the SMS channel.</p>
     pub fn sender_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -229,7 +242,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>The identity that displays on recipients' devices when they receive messages from the SMS channel.</p>
     pub fn set_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sender_id = input; self
+        self.sender_id = input;
+        self
     }
     /// <p>The registered short code to use when you send messages through the SMS channel.</p>
     pub fn short_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -238,7 +252,8 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>The registered short code to use when you send messages through the SMS channel.</p>
     pub fn set_short_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.short_code = input; self
+        self.short_code = input;
+        self
     }
     /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
     pub fn transactional_messages_per_second(mut self, input: i32) -> Self {
@@ -246,8 +261,12 @@ impl SmsChannelResponseBuilder {
         self
     }
     /// <p>The maximum number of transactional messages that you can send through the SMS channel each second.</p>
-    pub fn set_transactional_messages_per_second(mut self, input: std::option::Option<i32>) -> Self {
-        self.transactional_messages_per_second = input; self
+    pub fn set_transactional_messages_per_second(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.transactional_messages_per_second = input;
+        self
     }
     /// <p>The current version of the SMS channel.</p>
     pub fn version(mut self, input: i32) -> Self {
@@ -256,46 +275,30 @@ impl SmsChannelResponseBuilder {
     }
     /// <p>The current version of the SMS channel.</p>
     pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`SmsChannelResponse`](crate::types::SmsChannelResponse).
     pub fn build(self) -> crate::types::SmsChannelResponse {
         crate::types::SmsChannelResponse {
-            application_id: self.application_id
-            ,
-            creation_date: self.creation_date
-            ,
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
-            has_credential: self.has_credential
-                .unwrap_or_default()
-            ,
-            id: self.id
-            ,
-            is_archived: self.is_archived
-                .unwrap_or_default()
-            ,
-            last_modified_by: self.last_modified_by
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            platform: self.platform
-            ,
-            promotional_messages_per_second: self.promotional_messages_per_second
-                .unwrap_or_default()
-            ,
-            sender_id: self.sender_id
-            ,
-            short_code: self.short_code
-            ,
-            transactional_messages_per_second: self.transactional_messages_per_second
-                .unwrap_or_default()
-            ,
-            version: self.version
-                .unwrap_or_default()
-            ,
+            application_id: self.application_id,
+            creation_date: self.creation_date,
+            enabled: self.enabled.unwrap_or_default(),
+            has_credential: self.has_credential.unwrap_or_default(),
+            id: self.id,
+            is_archived: self.is_archived.unwrap_or_default(),
+            last_modified_by: self.last_modified_by,
+            last_modified_date: self.last_modified_date,
+            platform: self.platform,
+            promotional_messages_per_second: self
+                .promotional_messages_per_second
+                .unwrap_or_default(),
+            sender_id: self.sender_id,
+            short_code: self.short_code,
+            transactional_messages_per_second: self
+                .transactional_messages_per_second
+                .unwrap_or_default(),
+            version: self.version.unwrap_or_default(),
         }
     }
 }
-

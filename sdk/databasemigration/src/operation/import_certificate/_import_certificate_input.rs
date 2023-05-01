@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ImportCertificateInput  {
+pub struct ImportCertificateInput {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
     #[doc(hidden)]
     pub certificate_identifier: std::option::Option<std::string::String>,
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     #[doc(hidden)]
     pub certificate_pem: std::option::Option<std::string::String>,
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p> 
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
     #[doc(hidden)]
     pub certificate_wallet: std::option::Option<aws_smithy_types::Blob>,
@@ -19,24 +19,24 @@ pub struct ImportCertificateInput  {
 }
 impl ImportCertificateInput {
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn certificate_identifier(&self) -> std::option::Option<& str> {
+    pub fn certificate_identifier(&self) -> std::option::Option<&str> {
         self.certificate_identifier.as_deref()
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
-    pub fn certificate_pem(&self) -> std::option::Option<& str> {
+    pub fn certificate_pem(&self) -> std::option::Option<&str> {
         self.certificate_pem.as_deref()
     }
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p> 
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
-    pub fn certificate_wallet(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn certificate_wallet(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.certificate_wallet.as_ref()
     }
     /// <p>The tags associated with the certificate.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for ImportCertificateInput  {
+impl std::fmt::Debug for ImportCertificateInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ImportCertificateInput");
         formatter.field("certificate_identifier", &self.certificate_identifier);
@@ -48,7 +48,8 @@ impl  std::fmt::Debug for ImportCertificateInput  {
 }
 impl ImportCertificateInput {
     /// Creates a new builder-style object to manufacture [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
-    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateInputBuilder {
+    pub fn builder() -> crate::operation::import_certificate::builders::ImportCertificateInputBuilder
+    {
         crate::operation::import_certificate::builders::ImportCertificateInputBuilder::default()
     }
 }
@@ -69,8 +70,12 @@ impl ImportCertificateInputBuilder {
         self
     }
     /// <p>A customer-assigned name for the certificate. Identifiers must begin with a letter and must contain only ASCII letters, digits, and hyphens. They can't end with a hyphen or contain two consecutive hyphens.</p>
-    pub fn set_certificate_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_identifier = input; self
+    pub fn set_certificate_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.certificate_identifier = input;
+        self
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub fn certificate_pem(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,18 +84,23 @@ impl ImportCertificateInputBuilder {
     }
     /// <p>The contents of a <code>.pem</code> file, which contains an X.509 certificate.</p>
     pub fn set_certificate_pem(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_pem = input; self
+        self.certificate_pem = input;
+        self
     }
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p> 
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
     pub fn certificate_wallet(mut self, input: aws_smithy_types::Blob) -> Self {
         self.certificate_wallet = Some(input);
         self
     }
-    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p> 
+    /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't provide the certificate inline.</p>
     /// <p>Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
-    pub fn set_certificate_wallet(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.certificate_wallet = input; self
+    pub fn set_certificate_wallet(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
+        self.certificate_wallet = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -99,27 +109,32 @@ impl ImportCertificateInputBuilder {
     /// <p>The tags associated with the certificate.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags associated with the certificate.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportCertificateInput`](crate::operation::import_certificate::ImportCertificateInput).
-    pub fn build(self) -> Result<crate::operation::import_certificate::ImportCertificateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::import_certificate::ImportCertificateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::import_certificate::ImportCertificateInput {
-                certificate_identifier: self.certificate_identifier
-                ,
-                certificate_pem: self.certificate_pem
-                ,
-                certificate_wallet: self.certificate_wallet
-                ,
-                tags: self.tags
-                ,
-            }
+                certificate_identifier: self.certificate_identifier,
+                certificate_pem: self.certificate_pem,
+                certificate_wallet: self.certificate_wallet,
+                tags: self.tags,
+            },
         )
     }
 }
@@ -133,4 +148,3 @@ impl std::fmt::Debug for ImportCertificateInputBuilder {
         formatter.finish()
     }
 }
-

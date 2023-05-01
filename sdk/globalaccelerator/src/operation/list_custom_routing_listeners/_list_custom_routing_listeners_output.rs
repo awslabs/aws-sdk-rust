@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCustomRoutingListenersOutput  {
+pub struct ListCustomRoutingListenersOutput {
     /// <p>The list of listeners for a custom routing accelerator.</p>
     #[doc(hidden)]
     pub listeners: std::option::Option<std::vec::Vec<crate::types::CustomRoutingListener>>,
@@ -13,22 +13,22 @@ pub struct ListCustomRoutingListenersOutput  {
 }
 impl ListCustomRoutingListenersOutput {
     /// <p>The list of listeners for a custom routing accelerator.</p>
-    pub fn listeners(&self) -> std::option::Option<& [crate::types::CustomRoutingListener]> {
+    pub fn listeners(&self) -> std::option::Option<&[crate::types::CustomRoutingListener]> {
         self.listeners.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCustomRoutingListenersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListCustomRoutingListenersOutput {
     /// Creates a new builder-style object to manufacture [`ListCustomRoutingListenersOutput`](crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput).
-    pub fn builder() -> crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersOutputBuilder {
+    pub fn builder() -> crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersOutputBuilder{
         crate::operation::list_custom_routing_listeners::builders::ListCustomRoutingListenersOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListCustomRoutingListenersOutputBuilder {
     /// <p>The list of listeners for a custom routing accelerator.</p>
     pub fn listeners(mut self, input: crate::types::CustomRoutingListener) -> Self {
         let mut v = self.listeners.unwrap_or_default();
-                        v.push(input);
-                        self.listeners = Some(v);
-                        self
+        v.push(input);
+        self.listeners = Some(v);
+        self
     }
     /// <p>The list of listeners for a custom routing accelerator.</p>
-    pub fn set_listeners(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomRoutingListener>>) -> Self {
-        self.listeners = input; self
+    pub fn set_listeners(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CustomRoutingListener>>,
+    ) -> Self {
+        self.listeners = input;
+        self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,26 @@ impl ListCustomRoutingListenersOutputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListCustomRoutingListenersOutput`](crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput).
-    pub fn build(self) -> crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput {
         crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput {
-            listeners: self.listeners
-            ,
-            next_token: self.next_token
-            ,
+            listeners: self.listeners,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

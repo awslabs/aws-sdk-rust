@@ -4,51 +4,67 @@ pub use crate::operation::create_service::_create_service_output::CreateServiceO
 pub use crate::operation::create_service::_create_service_input::CreateServiceInputBuilder;
 
 /// Fluent builder constructing a request to `CreateService`.
-/// 
-/// <p>Creates a service. A service is any software application that can run on instances containers, or serverless functions within an account or virtual private cloud (VPC).</p> 
+///
+/// <p>Creates a service. A service is any software application that can run on instances containers, or serverless functions within an account or virtual private cloud (VPC).</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html">Services</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateServiceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_service::builders::CreateServiceInputBuilder,
+    inner: crate::operation::create_service::builders::CreateServiceInputBuilder,
 }
-impl CreateServiceFluentBuilder  {
+impl CreateServiceFluentBuilder {
     /// Creates a new `CreateService`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_service::CreateService, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_service::CreateServiceOutput, aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_service::CreateService,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_service::CreateServiceOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_service::CreateServiceError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -74,12 +90,21 @@ impl CreateServiceFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the service.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags for the service.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -89,7 +114,10 @@ impl CreateServiceFluentBuilder  {
         self
     }
     /// <p>The custom domain name of the service.</p>
-    pub fn set_custom_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_domain_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_custom_domain_name(input);
         self
     }
@@ -103,23 +131,22 @@ impl CreateServiceFluentBuilder  {
         self.inner = self.inner.set_certificate_arn(input);
         self
     }
-    /// <p>The type of IAM policy.</p> 
-    /// <ul> 
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li> 
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li> 
+    /// <p>The type of IAM policy.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
+    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.inner = self.inner.auth_type(input);
         self
     }
-    /// <p>The type of IAM policy.</p> 
-    /// <ul> 
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li> 
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li> 
+    /// <p>The type of IAM policy.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
+    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
     pub fn set_auth_type(mut self, input: std::option::Option<crate::types::AuthType>) -> Self {
         self.inner = self.inner.set_auth_type(input);
         self
     }
 }
-

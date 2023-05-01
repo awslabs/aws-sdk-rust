@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDiscoveryJobInput  {
+pub struct DescribeDiscoveryJobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want information about.</p>
     #[doc(hidden)]
     pub discovery_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDiscoveryJobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want information about.</p>
-    pub fn discovery_job_arn(&self) -> std::option::Option<& str> {
+    pub fn discovery_job_arn(&self) -> std::option::Option<&str> {
         self.discovery_job_arn.as_deref()
     }
 }
 impl DescribeDiscoveryJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeDiscoveryJobInput`](crate::operation::describe_discovery_job::DescribeDiscoveryJobInput).
-    pub fn builder() -> crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobInputBuilder {
         crate::operation::describe_discovery_job::builders::DescribeDiscoveryJobInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DescribeDiscoveryJobInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want information about.</p>
-    pub fn set_discovery_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.discovery_job_arn = input; self
+    pub fn set_discovery_job_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.discovery_job_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDiscoveryJobInput`](crate::operation::describe_discovery_job::DescribeDiscoveryJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_discovery_job::DescribeDiscoveryJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_discovery_job::DescribeDiscoveryJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_discovery_job::DescribeDiscoveryJobInput {
-                discovery_job_arn: self.discovery_job_arn
-                ,
-            }
+                discovery_job_arn: self.discovery_job_arn,
+            },
         )
     }
 }
-

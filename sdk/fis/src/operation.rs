@@ -48,4 +48,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateExperimentTemplate` operation.
 pub mod update_experiment_template;
-

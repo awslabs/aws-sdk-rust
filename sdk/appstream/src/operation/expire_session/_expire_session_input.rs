@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpireSessionInput  {
+pub struct ExpireSessionInput {
     /// <p>The identifier of the streaming session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
 }
 impl ExpireSessionInput {
     /// <p>The identifier of the streaming session.</p>
-    pub fn session_id(&self) -> std::option::Option<& str> {
+    pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl ExpireSessionInputBuilder {
     }
     /// <p>The identifier of the streaming session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input; self
+        self.session_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExpireSessionInput`](crate::operation::expire_session::ExpireSessionInput).
-    pub fn build(self) -> Result<crate::operation::expire_session::ExpireSessionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::expire_session::ExpireSessionInput {
-                session_id: self.session_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::expire_session::ExpireSessionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::expire_session::ExpireSessionInput {
+            session_id: self.session_id,
+        })
     }
 }
-

@@ -2,36 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeCacheSecurityGroupIngressOutput  {
-    /// <p>Represents the output of one of the following operations:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
-    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
-    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
+pub struct RevokeCacheSecurityGroupIngressOutput {
+    /// <p>Represents the output of one of the following operations:</p>
+    /// <ul>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub cache_security_group: std::option::Option<crate::types::CacheSecurityGroup>,
     _request_id: Option<String>,
 }
 impl RevokeCacheSecurityGroupIngressOutput {
-    /// <p>Represents the output of one of the following operations:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
-    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
-    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
+    /// <p>Represents the output of one of the following operations:</p>
+    /// <ul>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
-    pub fn cache_security_group(&self) -> std::option::Option<& crate::types::CacheSecurityGroup> {
+    pub fn cache_security_group(&self) -> std::option::Option<&crate::types::CacheSecurityGroup> {
         self.cache_security_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RevokeCacheSecurityGroupIngressOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RevokeCacheSecurityGroupIngressOutput {
     /// Creates a new builder-style object to manufacture [`RevokeCacheSecurityGroupIngressOutput`](crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput).
-    pub fn builder() -> crate::operation::revoke_cache_security_group_ingress::builders::RevokeCacheSecurityGroupIngressOutputBuilder {
+    pub fn builder() -> crate::operation::revoke_cache_security_group_ingress::builders::RevokeCacheSecurityGroupIngressOutputBuilder{
         crate::operation::revoke_cache_security_group_ingress::builders::RevokeCacheSecurityGroupIngressOutputBuilder::default()
     }
 }
@@ -44,36 +44,43 @@ pub struct RevokeCacheSecurityGroupIngressOutputBuilder {
     _request_id: Option<String>,
 }
 impl RevokeCacheSecurityGroupIngressOutputBuilder {
-    /// <p>Represents the output of one of the following operations:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
-    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
-    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
+    /// <p>Represents the output of one of the following operations:</p>
+    /// <ul>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
     pub fn cache_security_group(mut self, input: crate::types::CacheSecurityGroup) -> Self {
         self.cache_security_group = Some(input);
         self
     }
-    /// <p>Represents the output of one of the following operations:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li> 
-    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li> 
-    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li> 
+    /// <p>Represents the output of one of the following operations:</p>
+    /// <ul>
+    /// <li> <p> <code>AuthorizeCacheSecurityGroupIngress</code> </p> </li>
+    /// <li> <p> <code>CreateCacheSecurityGroup</code> </p> </li>
+    /// <li> <p> <code>RevokeCacheSecurityGroupIngress</code> </p> </li>
     /// </ul>
-    pub fn set_cache_security_group(mut self, input: std::option::Option<crate::types::CacheSecurityGroup>) -> Self {
-        self.cache_security_group = input; self
+    pub fn set_cache_security_group(
+        mut self,
+        input: std::option::Option<crate::types::CacheSecurityGroup>,
+    ) -> Self {
+        self.cache_security_group = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RevokeCacheSecurityGroupIngressOutput`](crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput).
-    pub fn build(self) -> crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput
+    {
         crate::operation::revoke_cache_security_group_ingress::RevokeCacheSecurityGroupIngressOutput {
             cache_security_group: self.cache_security_group
             ,
@@ -81,4 +88,3 @@ impl RevokeCacheSecurityGroupIngressOutputBuilder {
         }
     }
 }
-

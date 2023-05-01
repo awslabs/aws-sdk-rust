@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEndpointGroupsInput  {
+pub struct ListEndpointGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     #[doc(hidden)]
     pub listener_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListEndpointGroupsInput  {
 }
 impl ListEndpointGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_arn(&self) -> std::option::Option<& str> {
+    pub fn listener_arn(&self) -> std::option::Option<&str> {
         self.listener_arn.as_deref()
     }
     /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
@@ -23,13 +23,14 @@ impl ListEndpointGroupsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListEndpointGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListEndpointGroupsInput`](crate::operation::list_endpoint_groups::ListEndpointGroupsInput).
-    pub fn builder() -> crate::operation::list_endpoint_groups::builders::ListEndpointGroupsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_endpoint_groups::builders::ListEndpointGroupsInputBuilder {
         crate::operation::list_endpoint_groups::builders::ListEndpointGroupsInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl ListEndpointGroupsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn set_listener_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.listener_arn = input; self
+        self.listener_arn = input;
+        self
     }
     /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +61,8 @@ impl ListEndpointGroupsInputBuilder {
     }
     /// <p>The number of endpoint group objects that you want to return with this call. The default value is 10.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl ListEndpointGroupsInputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEndpointGroupsInput`](crate::operation::list_endpoint_groups::ListEndpointGroupsInput).
-    pub fn build(self) -> Result<crate::operation::list_endpoint_groups::ListEndpointGroupsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_endpoint_groups::ListEndpointGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_endpoint_groups::ListEndpointGroupsInput {
-                listener_arn: self.listener_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                listener_arn: self.listener_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

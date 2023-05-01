@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDevEnvironmentSessionInput  {
+pub struct StartDevEnvironmentSessionInput {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -14,29 +14,32 @@ pub struct StartDevEnvironmentSessionInput  {
     pub id: std::option::Option<std::string::String>,
     /// <p>Information about the configuration of a Dev Environment session.</p>
     #[doc(hidden)]
-    pub session_configuration: std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
+    pub session_configuration:
+        std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
 }
 impl StartDevEnvironmentSessionInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<& str> {
+    pub fn space_name(&self) -> std::option::Option<&str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn session_configuration(&self) -> std::option::Option<& crate::types::DevEnvironmentSessionConfiguration> {
+    pub fn session_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::DevEnvironmentSessionConfiguration> {
         self.session_configuration.as_ref()
     }
 }
 impl StartDevEnvironmentSessionInput {
     /// Creates a new builder-style object to manufacture [`StartDevEnvironmentSessionInput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput).
-    pub fn builder() -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder {
+    pub fn builder() -> crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder{
         crate::operation::start_dev_environment_session::builders::StartDevEnvironmentSessionInputBuilder::default()
     }
 }
@@ -48,7 +51,8 @@ pub struct StartDevEnvironmentSessionInputBuilder {
     pub(crate) space_name: std::option::Option<std::string::String>,
     pub(crate) project_name: std::option::Option<std::string::String>,
     pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) session_configuration: std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
+    pub(crate) session_configuration:
+        std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
 }
 impl StartDevEnvironmentSessionInputBuilder {
     /// <p>The name of the space.</p>
@@ -58,7 +62,8 @@ impl StartDevEnvironmentSessionInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input; self
+        self.space_name = input;
+        self
     }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +72,8 @@ impl StartDevEnvironmentSessionInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,31 +82,39 @@ impl StartDevEnvironmentSessionInputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn session_configuration(mut self, input: crate::types::DevEnvironmentSessionConfiguration) -> Self {
+    pub fn session_configuration(
+        mut self,
+        input: crate::types::DevEnvironmentSessionConfiguration,
+    ) -> Self {
         self.session_configuration = Some(input);
         self
     }
     /// <p>Information about the configuration of a Dev Environment session.</p>
-    pub fn set_session_configuration(mut self, input: std::option::Option<crate::types::DevEnvironmentSessionConfiguration>) -> Self {
-        self.session_configuration = input; self
+    pub fn set_session_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DevEnvironmentSessionConfiguration>,
+    ) -> Self {
+        self.session_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartDevEnvironmentSessionInput`](crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput).
-    pub fn build(self) -> Result<crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_dev_environment_session::StartDevEnvironmentSessionInput {
-                space_name: self.space_name
-                ,
-                project_name: self.project_name
-                ,
-                id: self.id
-                ,
-                session_configuration: self.session_configuration
-                ,
-            }
+                space_name: self.space_name,
+                project_name: self.project_name,
+                id: self.id,
+                session_configuration: self.session_configuration,
+            },
         )
     }
 }
-

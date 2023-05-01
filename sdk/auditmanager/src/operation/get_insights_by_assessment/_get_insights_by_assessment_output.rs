@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightsByAssessmentOutput  {
+pub struct GetInsightsByAssessmentOutput {
     /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
     #[doc(hidden)]
     pub insights: std::option::Option<crate::types::InsightsByAssessment>,
@@ -10,18 +10,20 @@ pub struct GetInsightsByAssessmentOutput  {
 }
 impl GetInsightsByAssessmentOutput {
     /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
-    pub fn insights(&self) -> std::option::Option<& crate::types::InsightsByAssessment> {
+    pub fn insights(&self) -> std::option::Option<&crate::types::InsightsByAssessment> {
         self.insights.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetInsightsByAssessmentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetInsightsByAssessmentOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightsByAssessmentOutput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput).
-    pub fn builder() -> crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentOutputBuilder
+    {
         crate::operation::get_insights_by_assessment::builders::GetInsightsByAssessmentOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl GetInsightsByAssessmentOutputBuilder {
         self
     }
     /// <p> The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned. </p>
-    pub fn set_insights(mut self, input: std::option::Option<crate::types::InsightsByAssessment>) -> Self {
-        self.insights = input; self
+    pub fn set_insights(
+        mut self,
+        input: std::option::Option<crate::types::InsightsByAssessment>,
+    ) -> Self {
+        self.insights = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetInsightsByAssessmentOutput`](crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput).
-    pub fn build(self) -> crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput {
         crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput {
-            insights: self.insights
-            ,
+            insights: self.insights,
             _request_id: self._request_id,
         }
     }
 }
-

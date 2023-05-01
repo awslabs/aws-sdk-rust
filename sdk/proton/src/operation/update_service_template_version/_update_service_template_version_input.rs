@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateServiceTemplateVersionInput  {
+pub struct UpdateServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -20,48 +20,55 @@ pub struct UpdateServiceTemplateVersionInput  {
     pub status: std::option::Option<crate::types::TemplateVersionStatus>,
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
     #[doc(hidden)]
-    pub compatible_environment_templates: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note> 
-    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p> 
-    /// </note> 
+    pub compatible_environment_templates:
+        std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+    /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
     #[doc(hidden)]
-    pub supported_component_sources: std::option::Option<std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
+    pub supported_component_sources: std::option::Option<
+        std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
+    >,
 }
 impl UpdateServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
-    pub fn major_version(&self) -> std::option::Option<& str> {
+    pub fn major_version(&self) -> std::option::Option<&str> {
         self.major_version.as_deref()
     }
     /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
-    pub fn minor_version(&self) -> std::option::Option<& str> {
+    pub fn minor_version(&self) -> std::option::Option<&str> {
         self.minor_version.as_deref()
     }
     /// <p>A description of a service template version to update.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The status of the service template minor version to update.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::TemplateVersionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::TemplateVersionStatus> {
         self.status.as_ref()
     }
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn compatible_environment_templates(&self) -> std::option::Option<& [crate::types::CompatibleEnvironmentTemplateInput]> {
+    pub fn compatible_environment_templates(
+        &self,
+    ) -> std::option::Option<&[crate::types::CompatibleEnvironmentTemplateInput]> {
         self.compatible_environment_templates.as_deref()
     }
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note> 
-    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p> 
-    /// </note> 
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+    /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(&self) -> std::option::Option<& [crate::types::ServiceTemplateSupportedComponentSourceType]> {
+    pub fn supported_component_sources(
+        &self,
+    ) -> std::option::Option<&[crate::types::ServiceTemplateSupportedComponentSourceType]> {
         self.supported_component_sources.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateServiceTemplateVersionInput  {
+impl std::fmt::Debug for UpdateServiceTemplateVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceTemplateVersionInput");
         formatter.field("template_name", &self.template_name);
@@ -69,14 +76,20 @@ impl  std::fmt::Debug for UpdateServiceTemplateVersionInput  {
         formatter.field("minor_version", &self.minor_version);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
-        formatter.field("compatible_environment_templates", &self.compatible_environment_templates);
-        formatter.field("supported_component_sources", &self.supported_component_sources);
+        formatter.field(
+            "compatible_environment_templates",
+            &self.compatible_environment_templates,
+        );
+        formatter.field(
+            "supported_component_sources",
+            &self.supported_component_sources,
+        );
         formatter.finish()
     }
 }
 impl UpdateServiceTemplateVersionInput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceTemplateVersionInput`](crate::operation::update_service_template_version::UpdateServiceTemplateVersionInput).
-    pub fn builder() -> crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionInputBuilder {
+    pub fn builder() -> crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionInputBuilder{
         crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionInputBuilder::default()
     }
 }
@@ -90,8 +103,11 @@ pub struct UpdateServiceTemplateVersionInputBuilder {
     pub(crate) minor_version: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::TemplateVersionStatus>,
-    pub(crate) compatible_environment_templates: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
-    pub(crate) supported_component_sources: std::option::Option<std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>,
+    pub(crate) compatible_environment_templates:
+        std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
+    pub(crate) supported_component_sources: std::option::Option<
+        std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
+    >,
 }
 impl UpdateServiceTemplateVersionInputBuilder {
     /// <p>The name of the service template.</p>
@@ -101,7 +117,8 @@ impl UpdateServiceTemplateVersionInputBuilder {
     }
     /// <p>The name of the service template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
     pub fn major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +127,8 @@ impl UpdateServiceTemplateVersionInputBuilder {
     }
     /// <p>To update a major version of a service template, include <code>major Version</code>.</p>
     pub fn set_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.major_version = input; self
+        self.major_version = input;
+        self
     }
     /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
     pub fn minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +137,8 @@ impl UpdateServiceTemplateVersionInputBuilder {
     }
     /// <p>To update a minor version of a service template, include <code>minorVersion</code>.</p>
     pub fn set_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.minor_version = input; self
+        self.minor_version = input;
+        self
     }
     /// <p>A description of a service template version to update.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +147,8 @@ impl UpdateServiceTemplateVersionInputBuilder {
     }
     /// <p>A description of a service template version to update.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The status of the service template minor version to update.</p>
     pub fn status(mut self, input: crate::types::TemplateVersionStatus) -> Self {
@@ -136,64 +156,82 @@ impl UpdateServiceTemplateVersionInputBuilder {
         self
     }
     /// <p>The status of the service template minor version to update.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TemplateVersionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::TemplateVersionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Appends an item to `compatible_environment_templates`.
     ///
     /// To override the contents of this collection use [`set_compatible_environment_templates`](Self::set_compatible_environment_templates).
     ///
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn compatible_environment_templates(mut self, input: crate::types::CompatibleEnvironmentTemplateInput) -> Self {
+    pub fn compatible_environment_templates(
+        mut self,
+        input: crate::types::CompatibleEnvironmentTemplateInput,
+    ) -> Self {
         let mut v = self.compatible_environment_templates.unwrap_or_default();
-                        v.push(input);
-                        self.compatible_environment_templates = Some(v);
-                        self
+        v.push(input);
+        self.compatible_environment_templates = Some(v);
+        self
     }
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn set_compatible_environment_templates(mut self, input: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>) -> Self {
-        self.compatible_environment_templates = input; self
+    pub fn set_compatible_environment_templates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
+    ) -> Self {
+        self.compatible_environment_templates = input;
+        self
     }
     /// Appends an item to `supported_component_sources`.
     ///
     /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
     ///
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note> 
-    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p> 
-    /// </note> 
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+    /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(mut self, input: crate::types::ServiceTemplateSupportedComponentSourceType) -> Self {
+    pub fn supported_component_sources(
+        mut self,
+        input: crate::types::ServiceTemplateSupportedComponentSourceType,
+    ) -> Self {
         let mut v = self.supported_component_sources.unwrap_or_default();
-                        v.push(input);
-                        self.supported_component_sources = Some(v);
-                        self
+        v.push(input);
+        self.supported_component_sources = Some(v);
+        self
     }
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note> 
-    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p> 
-    /// </note> 
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+    /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_supported_component_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>) -> Self {
-        self.supported_component_sources = input; self
+    pub fn set_supported_component_sources(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
+        >,
+    ) -> Self {
+        self.supported_component_sources = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateServiceTemplateVersionInput`](crate::operation::update_service_template_version::UpdateServiceTemplateVersionInput).
-    pub fn build(self) -> Result<crate::operation::update_service_template_version::UpdateServiceTemplateVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_service_template_version::UpdateServiceTemplateVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_service_template_version::UpdateServiceTemplateVersionInput {
-                template_name: self.template_name
-                ,
-                major_version: self.major_version
-                ,
-                minor_version: self.minor_version
-                ,
-                description: self.description
-                ,
-                status: self.status
-                ,
-                compatible_environment_templates: self.compatible_environment_templates
-                ,
-                supported_component_sources: self.supported_component_sources
-                ,
-            }
+                template_name: self.template_name,
+                major_version: self.major_version,
+                minor_version: self.minor_version,
+                description: self.description,
+                status: self.status,
+                compatible_environment_templates: self.compatible_environment_templates,
+                supported_component_sources: self.supported_component_sources,
+            },
         )
     }
 }
@@ -205,9 +243,14 @@ impl std::fmt::Debug for UpdateServiceTemplateVersionInputBuilder {
         formatter.field("minor_version", &self.minor_version);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("status", &self.status);
-        formatter.field("compatible_environment_templates", &self.compatible_environment_templates);
-        formatter.field("supported_component_sources", &self.supported_component_sources);
+        formatter.field(
+            "compatible_environment_templates",
+            &self.compatible_environment_templates,
+        );
+        formatter.field(
+            "supported_component_sources",
+            &self.supported_component_sources,
+        );
         formatter.finish()
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationConfigurationOutput  {
+pub struct DescribeOrganizationConfigurationOutput {
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
     #[doc(hidden)]
     pub auto_enable: bool,
@@ -15,13 +15,13 @@ impl DescribeOrganizationConfigurationOutput {
     }
 }
 impl aws_http::request_id::RequestId for DescribeOrganizationConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeOrganizationConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder{
         crate::operation::describe_organization_configuration::builders::DescribeOrganizationConfigurationOutputBuilder::default()
     }
 }
@@ -41,19 +41,20 @@ impl DescribeOrganizationConfigurationOutputBuilder {
     }
     /// <p>Indicates whether to automatically enable new organization accounts as member accounts in the organization behavior graph.</p>
     pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_enable = input; self
+        self.auto_enable = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigurationOutput`](crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
+    pub fn build(self) -> crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput{
         crate::operation::describe_organization_configuration::DescribeOrganizationConfigurationOutput {
             auto_enable: self.auto_enable
                 .unwrap_or_default()
@@ -62,4 +63,3 @@ impl DescribeOrganizationConfigurationOutputBuilder {
         }
     }
 }
-

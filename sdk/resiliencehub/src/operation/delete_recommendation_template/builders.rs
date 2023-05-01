@@ -4,57 +4,80 @@ pub use crate::operation::delete_recommendation_template::_delete_recommendation
 pub use crate::operation::delete_recommendation_template::_delete_recommendation_template_input::DeleteRecommendationTemplateInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteRecommendationTemplate`.
-/// 
+///
 /// <p>Deletes a recommendation template. This is a destructive action that can't be undone.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRecommendationTemplateFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_recommendation_template::builders::DeleteRecommendationTemplateInputBuilder,
 }
-impl DeleteRecommendationTemplateFluentBuilder  {
+impl DeleteRecommendationTemplateFluentBuilder {
     /// Creates a new `DeleteRecommendationTemplate`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_recommendation_template::DeleteRecommendationTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_recommendation_template::DeleteRecommendationTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_recommendation_template::DeleteRecommendationTemplateOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_recommendation_template::DeleteRecommendationTemplateError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
     pub fn recommendation_template_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.recommendation_template_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn set_recommendation_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_recommendation_template_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_recommendation_template_arn(input);
         self
     }
@@ -69,4 +92,3 @@ impl DeleteRecommendationTemplateFluentBuilder  {
         self
     }
 }
-

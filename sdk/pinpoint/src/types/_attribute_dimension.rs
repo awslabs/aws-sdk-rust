@@ -3,7 +3,7 @@
 /// <p>Specifies attribute-based criteria for including or excluding endpoints from a segment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributeDimension  {
+pub struct AttributeDimension {
     /// <p>The type of segment dimension to use. Valid values are: </p>
     /// <ul>
     /// <li>INCLUSIVE - endpoints that have attributes matching the values are included in the segment.</li>
@@ -33,11 +33,11 @@ impl AttributeDimension {
     /// <li>BETWEEN - endpoints with attributes read as ISO_INSTANT datetimes between the values are included in the segment.</li>
     /// <p></p>
     /// </ul>
-    pub fn attribute_type(&self) -> std::option::Option<& crate::types::AttributeType> {
+    pub fn attribute_type(&self) -> std::option::Option<&crate::types::AttributeType> {
         self.attribute_type.as_ref()
     }
     /// <p>The criteria values to use for the segment dimension. Depending on the value of the AttributeType property, endpoints are included or excluded from the segment if their attribute values match the criteria values.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -82,8 +82,12 @@ impl AttributeDimensionBuilder {
     /// <li>BETWEEN - endpoints with attributes read as ISO_INSTANT datetimes between the values are included in the segment.</li>
     /// <p></p>
     /// </ul>
-    pub fn set_attribute_type(mut self, input: std::option::Option<crate::types::AttributeType>) -> Self {
-        self.attribute_type = input; self
+    pub fn set_attribute_type(
+        mut self,
+        input: std::option::Option<crate::types::AttributeType>,
+    ) -> Self {
+        self.attribute_type = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -92,22 +96,23 @@ impl AttributeDimensionBuilder {
     /// <p>The criteria values to use for the segment dimension. Depending on the value of the AttributeType property, endpoints are included or excluded from the segment if their attribute values match the criteria values.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The criteria values to use for the segment dimension. Depending on the value of the AttributeType property, endpoints are included or excluded from the segment if their attribute values match the criteria values.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttributeDimension`](crate::types::AttributeDimension).
     pub fn build(self) -> crate::types::AttributeDimension {
         crate::types::AttributeDimension {
-            attribute_type: self.attribute_type
-            ,
-            values: self.values
-            ,
+            attribute_type: self.attribute_type,
+            values: self.values,
         }
     }
 }
-

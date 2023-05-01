@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGroupInput  {
+pub struct UpdateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateGroupInput  {
 }
 impl UpdateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<& str> {
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
-    pub fn operations(&self) -> std::option::Option<& [crate::types::AttributeOperation]> {
+    pub fn operations(&self) -> std::option::Option<&[crate::types::AttributeOperation]> {
         self.operations.as_deref()
     }
 }
@@ -49,8 +49,12 @@ impl UpdateGroupInputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_store_id = input; self
+    pub fn set_identity_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_store_id = input;
+        self
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +63,8 @@ impl UpdateGroupInputBuilder {
     }
     /// <p>The identifier for a group in the identity store.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// Appends an item to `operations`.
     ///
@@ -68,26 +73,29 @@ impl UpdateGroupInputBuilder {
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
     pub fn operations(mut self, input: crate::types::AttributeOperation) -> Self {
         let mut v = self.operations.unwrap_or_default();
-                        v.push(input);
-                        self.operations = Some(v);
-                        self
+        v.push(input);
+        self.operations = Some(v);
+        self
     }
     /// <p>A list of <code>AttributeOperation</code> objects to apply to the requested group. These operations might add, replace, or remove an attribute.</p>
-    pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeOperation>>) -> Self {
-        self.operations = input; self
+    pub fn set_operations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AttributeOperation>>,
+    ) -> Self {
+        self.operations = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateGroupInput`](crate::operation::update_group::UpdateGroupInput).
-    pub fn build(self) -> Result<crate::operation::update_group::UpdateGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_group::UpdateGroupInput {
-                identity_store_id: self.identity_store_id
-                ,
-                group_id: self.group_id
-                ,
-                operations: self.operations
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_group::UpdateGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_group::UpdateGroupInput {
+            identity_store_id: self.identity_store_id,
+            group_id: self.group_id,
+            operations: self.operations,
+        })
     }
 }
-

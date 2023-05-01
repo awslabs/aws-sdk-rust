@@ -3,7 +3,7 @@
 /// <p>The response from the request to list users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsersOutput  {
+pub struct ListUsersOutput {
     /// <p>The users returned in the request to list users.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::types::UserType>>,
@@ -14,19 +14,19 @@ pub struct ListUsersOutput  {
 }
 impl ListUsersOutput {
     /// <p>The users returned in the request to list users.</p>
-    pub fn users(&self) -> std::option::Option<& [crate::types::UserType]> {
+    pub fn users(&self) -> std::option::Option<&[crate::types::UserType]> {
         self.users.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn pagination_token(&self) -> std::option::Option<& str> {
+    pub fn pagination_token(&self) -> std::option::Option<&str> {
         self.pagination_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListUsersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
     pub fn builder() -> crate::operation::list_users::builders::ListUsersOutputBuilder {
@@ -50,13 +50,17 @@ impl ListUsersOutputBuilder {
     /// <p>The users returned in the request to list users.</p>
     pub fn users(mut self, input: crate::types::UserType) -> Self {
         let mut v = self.users.unwrap_or_default();
-                        v.push(input);
-                        self.users = Some(v);
-                        self
+        v.push(input);
+        self.users = Some(v);
+        self
     }
     /// <p>The users returned in the request to list users.</p>
-    pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserType>>) -> Self {
-        self.users = input; self
+    pub fn set_users(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserType>>,
+    ) -> Self {
+        self.users = input;
+        self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn pagination_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +69,24 @@ impl ListUsersOutputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_pagination_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pagination_token = input; self
+        self.pagination_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
     pub fn build(self) -> crate::operation::list_users::ListUsersOutput {
         crate::operation::list_users::ListUsersOutput {
-            users: self.users
-            ,
-            pagination_token: self.pagination_token
-            ,
+            users: self.users,
+            pagination_token: self.pagination_token,
             _request_id: self._request_id,
         }
     }
 }
-

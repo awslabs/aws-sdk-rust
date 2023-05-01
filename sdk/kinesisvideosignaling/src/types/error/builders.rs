@@ -10,4 +10,3 @@ pub use crate::types::error::_client_limit_exceeded_exception::ClientLimitExceed
 pub use crate::types::error::_session_expired_exception::SessionExpiredExceptionBuilder;
 
 pub use crate::types::error::_invalid_client_exception::InvalidClientExceptionBuilder;
-

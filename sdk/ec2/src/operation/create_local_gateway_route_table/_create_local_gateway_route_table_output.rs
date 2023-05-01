@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLocalGatewayRouteTableOutput  {
+pub struct CreateLocalGatewayRouteTableOutput {
     /// <p>Information about the local gateway route table.</p>
     #[doc(hidden)]
     pub local_gateway_route_table: std::option::Option<crate::types::LocalGatewayRouteTable>,
@@ -10,18 +10,20 @@ pub struct CreateLocalGatewayRouteTableOutput  {
 }
 impl CreateLocalGatewayRouteTableOutput {
     /// <p>Information about the local gateway route table.</p>
-    pub fn local_gateway_route_table(&self) -> std::option::Option<& crate::types::LocalGatewayRouteTable> {
+    pub fn local_gateway_route_table(
+        &self,
+    ) -> std::option::Option<&crate::types::LocalGatewayRouteTable> {
         self.local_gateway_route_table.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLocalGatewayRouteTableOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateLocalGatewayRouteTableOutput {
     /// Creates a new builder-style object to manufacture [`CreateLocalGatewayRouteTableOutput`](crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput).
-    pub fn builder() -> crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableOutputBuilder {
+    pub fn builder() -> crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableOutputBuilder{
         crate::operation::create_local_gateway_route_table::builders::CreateLocalGatewayRouteTableOutputBuilder::default()
     }
 }
@@ -35,30 +37,38 @@ pub struct CreateLocalGatewayRouteTableOutputBuilder {
 }
 impl CreateLocalGatewayRouteTableOutputBuilder {
     /// <p>Information about the local gateway route table.</p>
-    pub fn local_gateway_route_table(mut self, input: crate::types::LocalGatewayRouteTable) -> Self {
+    pub fn local_gateway_route_table(
+        mut self,
+        input: crate::types::LocalGatewayRouteTable,
+    ) -> Self {
         self.local_gateway_route_table = Some(input);
         self
     }
     /// <p>Information about the local gateway route table.</p>
-    pub fn set_local_gateway_route_table(mut self, input: std::option::Option<crate::types::LocalGatewayRouteTable>) -> Self {
-        self.local_gateway_route_table = input; self
+    pub fn set_local_gateway_route_table(
+        mut self,
+        input: std::option::Option<crate::types::LocalGatewayRouteTable>,
+    ) -> Self {
+        self.local_gateway_route_table = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateLocalGatewayRouteTableOutput`](crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput).
-    pub fn build(self) -> crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput
+    {
         crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput {
-            local_gateway_route_table: self.local_gateway_route_table
-            ,
+            local_gateway_route_table: self.local_gateway_route_table,
             _request_id: self._request_id,
         }
     }
 }
-

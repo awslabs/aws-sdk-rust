@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationStatesInput  {
+pub struct ListApplicationStatesInput {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
     #[doc(hidden)]
     pub application_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,11 +15,11 @@ pub struct ListApplicationStatesInput  {
 }
 impl ListApplicationStatesInput {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    pub fn application_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn application_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.application_ids.as_deref()
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of results to be returned per page.</p>
@@ -29,7 +29,9 @@ impl ListApplicationStatesInput {
 }
 impl ListApplicationStatesInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationStatesInput`](crate::operation::list_application_states::ListApplicationStatesInput).
-    pub fn builder() -> crate::operation::list_application_states::builders::ListApplicationStatesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_application_states::builders::ListApplicationStatesInputBuilder
+    {
         crate::operation::list_application_states::builders::ListApplicationStatesInputBuilder::default()
     }
 }
@@ -50,13 +52,17 @@ impl ListApplicationStatesInputBuilder {
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
     pub fn application_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.application_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.application_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.application_ids = Some(v);
+        self
     }
     /// <p>The configurationIds from the Application Discovery Service that uniquely identifies your applications.</p>
-    pub fn set_application_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.application_ids = input; self
+    pub fn set_application_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.application_ids = input;
+        self
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,7 +71,8 @@ impl ListApplicationStatesInputBuilder {
     }
     /// <p>If a <code>NextToken</code> was returned by a previous call, there are more results available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Maximum number of results to be returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -74,20 +81,22 @@ impl ListApplicationStatesInputBuilder {
     }
     /// <p>Maximum number of results to be returned per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListApplicationStatesInput`](crate::operation::list_application_states::ListApplicationStatesInput).
-    pub fn build(self) -> Result<crate::operation::list_application_states::ListApplicationStatesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_application_states::ListApplicationStatesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_application_states::ListApplicationStatesInput {
-                application_ids: self.application_ids
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                application_ids: self.application_ids,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

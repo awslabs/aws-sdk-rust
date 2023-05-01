@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the latest version of one traffic policy that is associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrafficPolicySummary  {
+pub struct TrafficPolicySummary {
     /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -22,15 +22,15 @@ pub struct TrafficPolicySummary  {
 }
 impl TrafficPolicySummary {
     /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name that you specified for the traffic policy when you created it.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::RrType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::RrType> {
         self.r#type.as_ref()
     }
     /// <p>The version number of the latest version of the traffic policy.</p>
@@ -67,7 +67,8 @@ impl TrafficPolicySummaryBuilder {
     }
     /// <p>The ID that Amazon Route 53 assigned to the traffic policy when you created it.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name that you specified for the traffic policy when you created it.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl TrafficPolicySummaryBuilder {
     }
     /// <p>The name that you specified for the traffic policy when you created it.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
     pub fn r#type(mut self, input: crate::types::RrType) -> Self {
@@ -85,7 +87,8 @@ impl TrafficPolicySummaryBuilder {
     }
     /// <p>The DNS type of the resource record sets that Amazon Route 53 creates when you use a traffic policy to create a traffic policy instance.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::RrType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The version number of the latest version of the traffic policy.</p>
     pub fn latest_version(mut self, input: i32) -> Self {
@@ -94,7 +97,8 @@ impl TrafficPolicySummaryBuilder {
     }
     /// <p>The version number of the latest version of the traffic policy.</p>
     pub fn set_latest_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.latest_version = input; self
+        self.latest_version = input;
+        self
     }
     /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
     pub fn traffic_policy_count(mut self, input: i32) -> Self {
@@ -103,22 +107,17 @@ impl TrafficPolicySummaryBuilder {
     }
     /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
     pub fn set_traffic_policy_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.traffic_policy_count = input; self
+        self.traffic_policy_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrafficPolicySummary`](crate::types::TrafficPolicySummary).
     pub fn build(self) -> crate::types::TrafficPolicySummary {
         crate::types::TrafficPolicySummary {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            latest_version: self.latest_version
-            ,
-            traffic_policy_count: self.traffic_policy_count
-            ,
+            id: self.id,
+            name: self.name,
+            r#type: self.r#type,
+            latest_version: self.latest_version,
+            traffic_policy_count: self.traffic_policy_count,
         }
     }
 }
-

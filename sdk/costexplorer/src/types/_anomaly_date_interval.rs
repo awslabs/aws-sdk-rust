@@ -3,7 +3,7 @@
 /// <p>The time period for an anomaly. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AnomalyDateInterval  {
+pub struct AnomalyDateInterval {
     /// <p>The first date an anomaly was observed. </p>
     #[doc(hidden)]
     pub start_date: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AnomalyDateInterval  {
 }
 impl AnomalyDateInterval {
     /// <p>The first date an anomaly was observed. </p>
-    pub fn start_date(&self) -> std::option::Option<& str> {
+    pub fn start_date(&self) -> std::option::Option<&str> {
         self.start_date.as_deref()
     }
     /// <p>The last date an anomaly was observed. </p>
-    pub fn end_date(&self) -> std::option::Option<& str> {
+    pub fn end_date(&self) -> std::option::Option<&str> {
         self.end_date.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AnomalyDateIntervalBuilder {
     }
     /// <p>The first date an anomaly was observed. </p>
     pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_date = input; self
+        self.start_date = input;
+        self
     }
     /// <p>The last date an anomaly was observed. </p>
     pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl AnomalyDateIntervalBuilder {
     }
     /// <p>The last date an anomaly was observed. </p>
     pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_date = input; self
+        self.end_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`AnomalyDateInterval`](crate::types::AnomalyDateInterval).
     pub fn build(self) -> crate::types::AnomalyDateInterval {
         crate::types::AnomalyDateInterval {
-            start_date: self.start_date
-            ,
-            end_date: self.end_date
-            ,
+            start_date: self.start_date,
+            end_date: self.end_date,
         }
     }
 }
-

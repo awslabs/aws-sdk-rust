@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartAssessmentRunOutput  {
+pub struct StartAssessmentRunOutput {
     /// <p>The ARN of the assessment run that has been started.</p>
     #[doc(hidden)]
     pub assessment_run_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct StartAssessmentRunOutput  {
 }
 impl StartAssessmentRunOutput {
     /// <p>The ARN of the assessment run that has been started.</p>
-    pub fn assessment_run_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_run_arn(&self) -> std::option::Option<&str> {
         self.assessment_run_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartAssessmentRunOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartAssessmentRunOutput {
     /// Creates a new builder-style object to manufacture [`StartAssessmentRunOutput`](crate::operation::start_assessment_run::StartAssessmentRunOutput).
-    pub fn builder() -> crate::operation::start_assessment_run::builders::StartAssessmentRunOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_assessment_run::builders::StartAssessmentRunOutputBuilder {
         crate::operation::start_assessment_run::builders::StartAssessmentRunOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl StartAssessmentRunOutputBuilder {
         self
     }
     /// <p>The ARN of the assessment run that has been started.</p>
-    pub fn set_assessment_run_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_run_arn = input; self
+    pub fn set_assessment_run_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.assessment_run_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartAssessmentRunOutput`](crate::operation::start_assessment_run::StartAssessmentRunOutput).
     pub fn build(self) -> crate::operation::start_assessment_run::StartAssessmentRunOutput {
         crate::operation::start_assessment_run::StartAssessmentRunOutput {
-            assessment_run_arn: self.assessment_run_arn
-            ,
+            assessment_run_arn: self.assessment_run_arn,
             _request_id: self._request_id,
         }
     }
 }
-

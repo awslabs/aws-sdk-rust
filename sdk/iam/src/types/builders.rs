@@ -100,4 +100,3 @@ pub use crate::types::_user_detail::UserDetailBuilder;
 pub use crate::types::_access_key_last_used::AccessKeyLastUsedBuilder;
 
 pub use crate::types::_access_key::AccessKeyBuilder;
-

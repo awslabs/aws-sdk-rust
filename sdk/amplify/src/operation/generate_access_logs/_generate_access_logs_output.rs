@@ -3,7 +3,7 @@
 /// <p> The result structure for the generate access logs request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateAccessLogsOutput  {
+pub struct GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
     #[doc(hidden)]
     pub log_url: std::option::Option<std::string::String>,
@@ -11,18 +11,19 @@ pub struct GenerateAccessLogsOutput  {
 }
 impl GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
-    pub fn log_url(&self) -> std::option::Option<& str> {
+    pub fn log_url(&self) -> std::option::Option<&str> {
         self.log_url.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GenerateAccessLogsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GenerateAccessLogsOutput {
     /// Creates a new builder-style object to manufacture [`GenerateAccessLogsOutput`](crate::operation::generate_access_logs::GenerateAccessLogsOutput).
-    pub fn builder() -> crate::operation::generate_access_logs::builders::GenerateAccessLogsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::generate_access_logs::builders::GenerateAccessLogsOutputBuilder {
         crate::operation::generate_access_logs::builders::GenerateAccessLogsOutputBuilder::default()
     }
 }
@@ -42,24 +43,23 @@ impl GenerateAccessLogsOutputBuilder {
     }
     /// <p> The pre-signed URL for the requested access logs. </p>
     pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_url = input; self
+        self.log_url = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GenerateAccessLogsOutput`](crate::operation::generate_access_logs::GenerateAccessLogsOutput).
     pub fn build(self) -> crate::operation::generate_access_logs::GenerateAccessLogsOutput {
         crate::operation::generate_access_logs::GenerateAccessLogsOutput {
-            log_url: self.log_url
-            ,
+            log_url: self.log_url,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -12,4 +12,3 @@ pub mod get_shard_iterator;
 
 /// Types for the `ListStreams` operation.
 pub mod list_streams;
-

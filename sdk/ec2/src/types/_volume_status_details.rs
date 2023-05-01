@@ -3,7 +3,7 @@
 /// <p>Describes a volume status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeStatusDetails  {
+pub struct VolumeStatusDetails {
     /// <p>The name of the volume status.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::VolumeStatusName>,
@@ -13,11 +13,11 @@ pub struct VolumeStatusDetails  {
 }
 impl VolumeStatusDetails {
     /// <p>The name of the volume status.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::VolumeStatusName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::VolumeStatusName> {
         self.name.as_ref()
     }
     /// <p>The intended status of the volume status.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl VolumeStatusDetailsBuilder {
     }
     /// <p>The name of the volume status.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::VolumeStatusName>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The intended status of the volume status.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl VolumeStatusDetailsBuilder {
     }
     /// <p>The intended status of the volume status.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`VolumeStatusDetails`](crate::types::VolumeStatusDetails).
     pub fn build(self) -> crate::types::VolumeStatusDetails {
         crate::types::VolumeStatusDetails {
-            name: self.name
-            ,
-            status: self.status
-            ,
+            name: self.name,
+            status: self.status,
         }
     }
 }
-

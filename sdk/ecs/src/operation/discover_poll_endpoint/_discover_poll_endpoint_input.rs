@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiscoverPollEndpointInput  {
+pub struct DiscoverPollEndpointInput {
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
     #[doc(hidden)]
     pub container_instance: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DiscoverPollEndpointInput  {
 }
 impl DiscoverPollEndpointInput {
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn container_instance(&self) -> std::option::Option<& str> {
+    pub fn container_instance(&self) -> std::option::Option<&str> {
         self.container_instance.as_deref()
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
-    pub fn cluster(&self) -> std::option::Option<& str> {
+    pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
 }
 impl DiscoverPollEndpointInput {
     /// Creates a new builder-style object to manufacture [`DiscoverPollEndpointInput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput).
-    pub fn builder() -> crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointInputBuilder {
         crate::operation::discover_poll_endpoint::builders::DiscoverPollEndpointInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl DiscoverPollEndpointInputBuilder {
         self
     }
     /// <p>The container instance ID or full ARN of the container instance. For more information about the ARN format, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#ecs-resource-ids">Amazon Resource Name (ARN)</a> in the <i>Amazon ECS Developer Guide</i>.</p>
-    pub fn set_container_instance(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_instance = input; self
+    pub fn set_container_instance(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.container_instance = input;
+        self
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
     pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +56,21 @@ impl DiscoverPollEndpointInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that the container instance belongs to.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input; self
+        self.cluster = input;
+        self
     }
     /// Consumes the builder and constructs a [`DiscoverPollEndpointInput`](crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput).
-    pub fn build(self) -> Result<crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::discover_poll_endpoint::DiscoverPollEndpointInput {
-                container_instance: self.container_instance
-                ,
-                cluster: self.cluster
-                ,
-            }
+                container_instance: self.container_instance,
+                cluster: self.cluster,
+            },
         )
     }
 }
-

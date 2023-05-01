@@ -5,69 +5,123 @@ impl ModifyClusterInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::modify_cluster::ModifyCluster, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
-        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
-        .set_use_dual_stack(_config.use_dual_stack)
-        .set_use_fips(_config.use_fips)
-        .set_endpoint(_config.endpoint_url
-        .clone()).build()
-                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
-                                let (endpoint_result, params) = match params_result {
-                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
-                                    Err(e) => (Err(e), None)
-                                };
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::modify_cluster::ModifyCluster,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
-            fn uri_base(_input: &crate::operation::modify_cluster::ModifyClusterInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(
+                _input: &crate::operation::modify_cluster::ModifyClusterInput,
+                output: &mut String,
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 use std::fmt::Write as _;
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                            input: &crate::operation::modify_cluster::ModifyClusterInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                input: &crate::operation::modify_cluster::ModifyClusterInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
         let body = aws_smithy_http::body::SdkBody::from(
-            crate::protocol_serde::shape_modify_cluster_input::ser_modify_cluster_input_input(&self)?
+            crate::protocol_serde::shape_modify_cluster_input::ser_modify_cluster_input_input(
+                &self,
+            )?,
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params { request.properties_mut().insert(params); }
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                                aws_types::os_shim_internal::Env::real(),
-                                crate::meta::API_METADATA.clone(),
-                            );
-                            if let Some(app_name) = _config.app_name() {
-                                user_agent = user_agent.with_app_name(app_name.clone());
-                            }
-                            request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::meta::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::modify_cluster::ModifyCluster::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("ModifyCluster", "redshift"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_credentials_cache(
+            &mut request.properties_mut(),
+            _config.credentials_cache.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::modify_cluster::ModifyCluster::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "ModifyCluster",
+            "redshift",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -84,26 +138,34 @@ impl ModifyCluster {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for ModifyCluster {
-                type Output = std::result::Result<crate::operation::modify_cluster::ModifyClusterOutput, crate::operation::modify_cluster::ModifyClusterError>;
-                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-                     let (success, status) = (response.status().is_success(), response.status().as_u16());
-                     let headers = response.headers();
-                     let body = response.body().as_ref();
-                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !success && status != 200 {
-                        crate::protocol_serde::shape_modify_cluster::de_modify_cluster_http_error(status, headers, body)
-                     } else {
-                        crate::protocol_serde::shape_modify_cluster::de_modify_cluster_http_response(status, headers, body)
-                     }
-                }
-                
-            }
+    type Output = std::result::Result<
+        crate::operation::modify_cluster::ModifyClusterOutput,
+        crate::operation::modify_cluster::ModifyClusterError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        let (success, status) = (response.status().is_success(), response.status().as_u16());
+        let headers = response.headers();
+        let body = response.body().as_ref();
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        if !success && status != 200 {
+            crate::protocol_serde::shape_modify_cluster::de_modify_cluster_http_error(
+                status, headers, body,
+            )
+        } else {
+            crate::protocol_serde::shape_modify_cluster::de_modify_cluster_http_response(
+                status, headers, body,
+            )
+        }
+    }
+}
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type ModifyClusterErrorKind = ModifyClusterError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type ModifyClusterErrorKind = ModifyClusterError;
 /// Error type for the `ModifyClusterError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -117,7 +179,9 @@ pub enum ModifyClusterError {
     /// <p>The cluster security group name does not refer to an existing cluster security group.</p>
     ClusterSecurityGroupNotFoundFault(crate::types::error::ClusterSecurityGroupNotFoundFault),
     /// <p>The request cannot be completed because a dependent service is throttling requests made by Amazon Redshift on your behalf. Wait and retry the request.</p>
-    DependentServiceRequestThrottlingFault(crate::types::error::DependentServiceRequestThrottlingFault),
+    DependentServiceRequestThrottlingFault(
+        crate::types::error::DependentServiceRequestThrottlingFault,
+    ),
     /// <p>There is no Amazon Redshift HSM client certificate with the specified identifier.</p>
     HsmClientCertificateNotFoundFault(crate::types::error::HsmClientCertificateNotFoundFault),
     /// <p>There is no Amazon Redshift HSM configuration with the specified identifier.</p>
@@ -125,20 +189,24 @@ pub enum ModifyClusterError {
     /// <p>The number of nodes specified exceeds the allotted capacity of the cluster.</p>
     InsufficientClusterCapacityFault(crate::types::error::InsufficientClusterCapacityFault),
     /// <p>The state of the cluster security group is not <code>available</code>. </p>
-    InvalidClusterSecurityGroupStateFault(crate::types::error::InvalidClusterSecurityGroupStateFault),
+    InvalidClusterSecurityGroupStateFault(
+        crate::types::error::InvalidClusterSecurityGroupStateFault,
+    ),
     /// <p>The specified cluster is not in the <code>available</code> state. </p>
     InvalidClusterStateFault(crate::types::error::InvalidClusterStateFault),
     /// <p>The provided cluster track name is not valid.</p>
     InvalidClusterTrackFault(crate::types::error::InvalidClusterTrackFault),
     /// <p>The Elastic IP (EIP) is invalid or cannot be found.</p>
     InvalidElasticIpFault(crate::types::error::InvalidElasticIpFault),
-    /// <p>The retention period specified is either in the past or is not a valid value.</p> 
+    /// <p>The retention period specified is either in the past or is not a valid value.</p>
     /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     InvalidRetentionPeriodFault(crate::types::error::InvalidRetentionPeriodFault),
     /// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
     LimitExceededFault(crate::types::error::LimitExceededFault),
     /// <p>The operation would exceed the number of nodes allowed for a cluster.</p>
-    NumberOfNodesPerClusterLimitExceededFault(crate::types::error::NumberOfNodesPerClusterLimitExceededFault),
+    NumberOfNodesPerClusterLimitExceededFault(
+        crate::types::error::NumberOfNodesPerClusterLimitExceededFault,
+    ),
     /// <p>The operation would exceed the number of nodes allotted to the account. For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
     NumberOfNodesQuotaExceededFault(crate::types::error::NumberOfNodesQuotaExceededFault),
     /// <p>The number of tables in the cluster exceeds the limit for the requested new cluster node type. </p>
@@ -148,148 +216,106 @@ pub enum ModifyClusterError {
     /// <p>A request option was specified that is not supported.</p>
     UnsupportedOptionFault(crate::types::error::UnsupportedOptionFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for ModifyClusterError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for ModifyClusterError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::ClusterAlreadyExistsFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ClusterNotFoundFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ClusterParameterGroupNotFoundFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ClusterSecurityGroupNotFoundFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::DependentServiceRequestThrottlingFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::HsmClientCertificateNotFoundFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::HsmConfigurationNotFoundFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InsufficientClusterCapacityFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidClusterSecurityGroupStateFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidClusterStateFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidClusterTrackFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidElasticIpFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidRetentionPeriodFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::LimitExceededFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NumberOfNodesPerClusterLimitExceededFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NumberOfNodesQuotaExceededFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TableLimitExceededFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::UnauthorizedOperation(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::UnsupportedOptionFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::ClusterAlreadyExistsFault(_inner) => _inner.fmt(f),
+            Self::ClusterNotFoundFault(_inner) => _inner.fmt(f),
+            Self::ClusterParameterGroupNotFoundFault(_inner) => _inner.fmt(f),
+            Self::ClusterSecurityGroupNotFoundFault(_inner) => _inner.fmt(f),
+            Self::DependentServiceRequestThrottlingFault(_inner) => _inner.fmt(f),
+            Self::HsmClientCertificateNotFoundFault(_inner) => _inner.fmt(f),
+            Self::HsmConfigurationNotFoundFault(_inner) => _inner.fmt(f),
+            Self::InsufficientClusterCapacityFault(_inner) => _inner.fmt(f),
+            Self::InvalidClusterSecurityGroupStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidClusterStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidClusterTrackFault(_inner) => _inner.fmt(f),
+            Self::InvalidElasticIpFault(_inner) => _inner.fmt(f),
+            Self::InvalidRetentionPeriodFault(_inner) => _inner.fmt(f),
+            Self::LimitExceededFault(_inner) => _inner.fmt(f),
+            Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => _inner.fmt(f),
+            Self::NumberOfNodesQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::TableLimitExceededFault(_inner) => _inner.fmt(f),
+            Self::UnauthorizedOperation(_inner) => _inner.fmt(f),
+            Self::UnsupportedOptionFault(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyClusterError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ClusterAlreadyExistsFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ClusterNotFoundFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ClusterParameterGroupNotFoundFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ClusterSecurityGroupNotFoundFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::DependentServiceRequestThrottlingFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::HsmClientCertificateNotFoundFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::HsmConfigurationNotFoundFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InsufficientClusterCapacityFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidClusterSecurityGroupStateFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidClusterStateFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidClusterTrackFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidElasticIpFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidRetentionPeriodFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::LimitExceededFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NumberOfNodesPerClusterLimitExceededFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NumberOfNodesQuotaExceededFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TableLimitExceededFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::UnauthorizedOperation(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::UnsupportedOptionFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::ClusterAlreadyExistsFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ClusterNotFoundFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ClusterParameterGroupNotFoundFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ClusterSecurityGroupNotFoundFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::DependentServiceRequestThrottlingFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::HsmClientCertificateNotFoundFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::HsmConfigurationNotFoundFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InsufficientClusterCapacityFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidClusterSecurityGroupStateFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidClusterStateFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidClusterTrackFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidElasticIpFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidRetentionPeriodFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::LimitExceededFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NumberOfNodesQuotaExceededFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TableLimitExceededFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::UnauthorizedOperation(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::UnsupportedOptionFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -297,10 +323,10 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ModifyClusterEr
     }
 }
 impl aws_http::request_id::RequestId for crate::operation::modify_cluster::ModifyClusterError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for ModifyClusterError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -311,18 +337,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for ModifyClusterError {
 }
 impl ModifyClusterError {
     /// Creates the `ModifyClusterError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `ModifyClusterError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `ModifyClusterError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -428,66 +463,26 @@ impl ModifyClusterError {
 impl std::error::Error for ModifyClusterError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::ClusterAlreadyExistsFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::ClusterNotFoundFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::ClusterParameterGroupNotFoundFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::ClusterSecurityGroupNotFoundFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::DependentServiceRequestThrottlingFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::HsmClientCertificateNotFoundFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::HsmConfigurationNotFoundFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InsufficientClusterCapacityFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidClusterSecurityGroupStateFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidClusterStateFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidClusterTrackFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidElasticIpFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidRetentionPeriodFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::LimitExceededFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::NumberOfNodesPerClusterLimitExceededFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::NumberOfNodesQuotaExceededFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::TableLimitExceededFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::UnauthorizedOperation(_inner) =>
-            Some(_inner)
-            ,
-            Self::UnsupportedOptionFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::ClusterAlreadyExistsFault(_inner) => Some(_inner),
+            Self::ClusterNotFoundFault(_inner) => Some(_inner),
+            Self::ClusterParameterGroupNotFoundFault(_inner) => Some(_inner),
+            Self::ClusterSecurityGroupNotFoundFault(_inner) => Some(_inner),
+            Self::DependentServiceRequestThrottlingFault(_inner) => Some(_inner),
+            Self::HsmClientCertificateNotFoundFault(_inner) => Some(_inner),
+            Self::HsmConfigurationNotFoundFault(_inner) => Some(_inner),
+            Self::InsufficientClusterCapacityFault(_inner) => Some(_inner),
+            Self::InvalidClusterSecurityGroupStateFault(_inner) => Some(_inner),
+            Self::InvalidClusterStateFault(_inner) => Some(_inner),
+            Self::InvalidClusterTrackFault(_inner) => Some(_inner),
+            Self::InvalidElasticIpFault(_inner) => Some(_inner),
+            Self::InvalidRetentionPeriodFault(_inner) => Some(_inner),
+            Self::LimitExceededFault(_inner) => Some(_inner),
+            Self::NumberOfNodesPerClusterLimitExceededFault(_inner) => Some(_inner),
+            Self::NumberOfNodesQuotaExceededFault(_inner) => Some(_inner),
+            Self::TableLimitExceededFault(_inner) => Some(_inner),
+            Self::UnauthorizedOperation(_inner) => Some(_inner),
+            Self::UnsupportedOptionFault(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -502,4 +497,3 @@ mod _modify_cluster_output;
 
 /// Builders
 pub mod builders;
-

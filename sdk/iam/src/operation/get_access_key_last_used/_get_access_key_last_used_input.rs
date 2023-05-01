@@ -2,22 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessKeyLastUsedInput  {
-    /// <p>The identifier of an access key.</p> 
+pub struct GetAccessKeyLastUsedInput {
+    /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
 }
 impl GetAccessKeyLastUsedInput {
-    /// <p>The identifier of an access key.</p> 
+    /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
-    pub fn access_key_id(&self) -> std::option::Option<& str> {
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
 }
 impl GetAccessKeyLastUsedInput {
     /// Creates a new builder-style object to manufacture [`GetAccessKeyLastUsedInput`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput).
-    pub fn builder() -> crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedInputBuilder
+    {
         crate::operation::get_access_key_last_used::builders::GetAccessKeyLastUsedInputBuilder::default()
     }
 }
@@ -29,25 +31,29 @@ pub struct GetAccessKeyLastUsedInputBuilder {
     pub(crate) access_key_id: std::option::Option<std::string::String>,
 }
 impl GetAccessKeyLastUsedInputBuilder {
-    /// <p>The identifier of an access key.</p> 
+    /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.access_key_id = Some(input.into());
         self
     }
-    /// <p>The identifier of an access key.</p> 
+    /// <p>The identifier of an access key.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters that can consist of any upper or lowercased letter or digit.</p>
     pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_key_id = input; self
+        self.access_key_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAccessKeyLastUsedInput`](crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput).
-    pub fn build(self) -> Result<crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_access_key_last_used::GetAccessKeyLastUsedInput {
-                access_key_id: self.access_key_id
-                ,
-            }
+                access_key_id: self.access_key_id,
+            },
         )
     }
 }
-

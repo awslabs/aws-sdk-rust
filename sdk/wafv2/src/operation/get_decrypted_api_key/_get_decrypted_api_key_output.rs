@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDecryptedApiKeyOutput  {
+pub struct GetDecryptedApiKeyOutput {
     /// <p>The token domains that are defined in this API key. </p>
     #[doc(hidden)]
     pub token_domains: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,23 +13,25 @@ pub struct GetDecryptedApiKeyOutput  {
 }
 impl GetDecryptedApiKeyOutput {
     /// <p>The token domains that are defined in this API key. </p>
-    pub fn token_domains(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn token_domains(&self) -> std::option::Option<&[std::string::String]> {
         self.token_domains.as_deref()
     }
     /// <p>The date and time that the key was created. </p>
-    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDecryptedApiKeyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDecryptedApiKeyOutput {
     /// Creates a new builder-style object to manufacture [`GetDecryptedApiKeyOutput`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyOutput).
-    pub fn builder() -> crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyOutputBuilder {
-        crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyOutputBuilder {
+        crate::operation::get_decrypted_api_key::builders::GetDecryptedApiKeyOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl GetDecryptedApiKeyOutputBuilder {
     /// <p>The token domains that are defined in this API key. </p>
     pub fn token_domains(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.token_domains.unwrap_or_default();
-                        v.push(input.into());
-                        self.token_domains = Some(v);
-                        self
+        v.push(input.into());
+        self.token_domains = Some(v);
+        self
     }
     /// <p>The token domains that are defined in this API key. </p>
-    pub fn set_token_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.token_domains = input; self
+    pub fn set_token_domains(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.token_domains = input;
+        self
     }
     /// <p>The date and time that the key was created. </p>
     pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -63,27 +69,28 @@ impl GetDecryptedApiKeyOutputBuilder {
         self
     }
     /// <p>The date and time that the key was created. </p>
-    pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input; self
+    pub fn set_creation_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_timestamp = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDecryptedApiKeyOutput`](crate::operation::get_decrypted_api_key::GetDecryptedApiKeyOutput).
     pub fn build(self) -> crate::operation::get_decrypted_api_key::GetDecryptedApiKeyOutput {
         crate::operation::get_decrypted_api_key::GetDecryptedApiKeyOutput {
-            token_domains: self.token_domains
-            ,
-            creation_timestamp: self.creation_timestamp
-            ,
+            token_domains: self.token_domains,
+            creation_timestamp: self.creation_timestamp,
             _request_id: self._request_id,
         }
     }
 }
-

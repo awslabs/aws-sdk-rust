@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloseTunnelInput  {
+pub struct CloseTunnelInput {
     /// <p>The ID of the tunnel to close.</p>
     #[doc(hidden)]
     pub tunnel_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct CloseTunnelInput  {
 }
 impl CloseTunnelInput {
     /// <p>The ID of the tunnel to close.</p>
-    pub fn tunnel_id(&self) -> std::option::Option<& str> {
+    pub fn tunnel_id(&self) -> std::option::Option<&str> {
         self.tunnel_id.as_deref()
     }
     /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
@@ -42,7 +42,8 @@ impl CloseTunnelInputBuilder {
     }
     /// <p>The ID of the tunnel to close.</p>
     pub fn set_tunnel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tunnel_id = input; self
+        self.tunnel_id = input;
+        self
     }
     /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub fn delete(mut self, input: bool) -> Self {
@@ -51,18 +52,19 @@ impl CloseTunnelInputBuilder {
     }
     /// <p>When set to true, IoT Secure Tunneling deletes the tunnel data immediately.</p>
     pub fn set_delete(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete = input; self
+        self.delete = input;
+        self
     }
     /// Consumes the builder and constructs a [`CloseTunnelInput`](crate::operation::close_tunnel::CloseTunnelInput).
-    pub fn build(self) -> Result<crate::operation::close_tunnel::CloseTunnelInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::close_tunnel::CloseTunnelInput {
-                tunnel_id: self.tunnel_id
-                ,
-                delete: self.delete
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::close_tunnel::CloseTunnelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::close_tunnel::CloseTunnelInput {
+            tunnel_id: self.tunnel_id,
+            delete: self.delete,
+        })
     }
 }
-

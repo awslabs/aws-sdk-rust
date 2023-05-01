@@ -4,51 +4,58 @@ pub use crate::operation::create_vpc_endpoint_connection_notification::_create_v
 pub use crate::operation::create_vpc_endpoint_connection_notification::_create_vpc_endpoint_connection_notification_input::CreateVpcEndpointConnectionNotificationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateVpcEndpointConnectionNotification`.
-/// 
-/// <p>Creates a connection notification for a specified VPC endpoint or VPC endpoint service. A connection notification notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a Topic</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p> 
+///
+/// <p>Creates a connection notification for a specified VPC endpoint or VPC endpoint service. A connection notification notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a Topic</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>
 /// <p>You can create a connection notification for interface endpoints only.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVpcEndpointConnectionNotificationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_vpc_endpoint_connection_notification::builders::CreateVpcEndpointConnectionNotificationInputBuilder,
 }
-impl CreateVpcEndpointConnectionNotificationFluentBuilder  {
+impl CreateVpcEndpointConnectionNotificationFluentBuilder {
     /// Creates a new `CreateVpcEndpointConnectionNotification`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotification, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput, aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -85,7 +92,10 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder  {
         self
     }
     /// <p>The ARN of the SNS topic for the notifications.</p>
-    pub fn set_connection_notification_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_notification_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_connection_notification_arn(input);
         self
     }
@@ -99,7 +109,10 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder  {
         self
     }
     /// <p>The endpoint events for which to receive notifications. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn set_connection_events(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_connection_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_connection_events(input);
         self
     }
@@ -114,4 +127,3 @@ impl CreateVpcEndpointConnectionNotificationFluentBuilder  {
         self
     }
 }
-

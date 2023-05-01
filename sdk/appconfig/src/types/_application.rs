@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Application  {
+pub struct Application {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct Application  {
 }
 impl Application {
     /// <p>The application ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The application name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl ApplicationBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The application name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl ApplicationBuilder {
     }
     /// <p>The application name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,18 +70,15 @@ impl ApplicationBuilder {
     }
     /// <p>The description of the application.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`Application`](crate::types::Application).
     pub fn build(self) -> crate::types::Application {
         crate::types::Application {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
+            id: self.id,
+            name: self.name,
+            description: self.description,
         }
     }
 }
-

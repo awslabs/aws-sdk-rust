@@ -3,7 +3,7 @@
 /// <p>Contains information about a policy type and its status in the associated root.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyTypeSummary  {
+pub struct PolicyTypeSummary {
     /// <p>The name of the policy type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::PolicyType>,
@@ -13,11 +13,11 @@ pub struct PolicyTypeSummary  {
 }
 impl PolicyTypeSummary {
     /// <p>The name of the policy type.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::PolicyType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::PolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::PolicyTypeStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::PolicyTypeStatus> {
         self.status.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl PolicyTypeSummaryBuilder {
     }
     /// <p>The name of the policy type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PolicyType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
     pub fn status(mut self, input: crate::types::PolicyTypeStatus) -> Self {
@@ -51,17 +52,18 @@ impl PolicyTypeSummaryBuilder {
         self
     }
     /// <p>The status of the policy type as it relates to the associated root. To attach a policy of the specified type to a root or to an OU or account in that root, it must be available in the organization and enabled for that root.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::PolicyTypeStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::PolicyTypeStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`PolicyTypeSummary`](crate::types::PolicyTypeSummary).
     pub fn build(self) -> crate::types::PolicyTypeSummary {
         crate::types::PolicyTypeSummary {
-            r#type: self.r#type
-            ,
-            status: self.status
-            ,
+            r#type: self.r#type,
+            status: self.status,
         }
     }
 }
-

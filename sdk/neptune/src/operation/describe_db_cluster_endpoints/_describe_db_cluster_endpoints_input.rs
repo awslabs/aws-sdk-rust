@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterEndpointsInput  {
+pub struct DescribeDbClusterEndpointsInput {
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
@@ -12,8 +12,8 @@ pub struct DescribeDbClusterEndpointsInput  {
     /// <p>A set of name-value pairs that define which endpoints to include in the output. The filters are specified as name-value pairs, in the format <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>. <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>, <code>db-cluster-endpoint-custom-type</code>, <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>. <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. </p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p> 
-    /// <p>Default: 100</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p>
+    /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -23,31 +23,31 @@ pub struct DescribeDbClusterEndpointsInput  {
 }
 impl DescribeDbClusterEndpointsInput {
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
     /// <p>A set of name-value pairs that define which endpoints to include in the output. The filters are specified as name-value pairs, in the format <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>. <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>, <code>db-cluster-endpoint-custom-type</code>, <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>. <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. </p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p> 
-    /// <p>Default: 100</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p>
+    /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl DescribeDbClusterEndpointsInput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterEndpointsInput`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput).
-    pub fn builder() -> crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder {
+    pub fn builder() -> crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder{
         crate::operation::describe_db_cluster_endpoints::builders::DescribeDbClusterEndpointsInputBuilder::default()
     }
 }
@@ -69,8 +69,12 @@ impl DescribeDbClusterEndpointsInputBuilder {
         self
     }
     /// <p>The DB cluster identifier of the DB cluster associated with the endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_identifier = input; self
+    pub fn set_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = input;
+        self
     }
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
     pub fn db_cluster_endpoint_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,8 +82,12 @@ impl DescribeDbClusterEndpointsInputBuilder {
         self
     }
     /// <p>The identifier of the endpoint to describe. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_endpoint_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_endpoint_identifier = input; self
+    pub fn set_db_cluster_endpoint_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_endpoint_identifier = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -88,26 +96,31 @@ impl DescribeDbClusterEndpointsInputBuilder {
     /// <p>A set of name-value pairs that define which endpoints to include in the output. The filters are specified as name-value pairs, in the format <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>. <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>, <code>db-cluster-endpoint-custom-type</code>, <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>. <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>A set of name-value pairs that define which endpoints to include in the output. The filters are specified as name-value pairs, in the format <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>. <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>, <code>db-cluster-endpoint-custom-type</code>, <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>. <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>. <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter can be one or more of: <code>reader</code>, <code>any</code>. <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can be one or more of: <code>available</code>, <code>creating</code>, <code>deleting</code>, <code>inactive</code>, <code>modifying</code>. </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p> 
-    /// <p>Default: 100</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p>
+    /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p> 
-    /// <p>Default: 100</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a marker is included in the response so you can retrieve the remaining results. </p>
+    /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input; self
+        self.max_records = input;
+        self
     }
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,24 +129,24 @@ impl DescribeDbClusterEndpointsInputBuilder {
     }
     /// <p> An optional pagination token provided by a previous <code>DescribeDBClusterEndpoints</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>. </p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDbClusterEndpointsInput`](crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput).
-    pub fn build(self) -> Result<crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_db_cluster_endpoints::DescribeDbClusterEndpointsInput {
-                db_cluster_identifier: self.db_cluster_identifier
-                ,
-                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier
-                ,
-                filters: self.filters
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-            }
+                db_cluster_identifier: self.db_cluster_identifier,
+                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
+                filters: self.filters,
+                max_records: self.max_records,
+                marker: self.marker,
+            },
         )
     }
 }
-

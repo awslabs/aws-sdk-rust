@@ -3,7 +3,7 @@
 /// <p>Contains information about the backup that will be copied and created by the <code>CopyBackupToRegion</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationBackup  {
+pub struct DestinationBackup {
     /// <p>The date and time when both the source backup was created.</p>
     #[doc(hidden)]
     pub create_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -19,19 +19,19 @@ pub struct DestinationBackup  {
 }
 impl DestinationBackup {
     /// <p>The date and time when both the source backup was created.</p>
-    pub fn create_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_timestamp.as_ref()
     }
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
-    pub fn source_region(&self) -> std::option::Option<& str> {
+    pub fn source_region(&self) -> std::option::Option<&str> {
         self.source_region.as_deref()
     }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
-    pub fn source_backup(&self) -> std::option::Option<& str> {
+    pub fn source_backup(&self) -> std::option::Option<&str> {
         self.source_backup.as_deref()
     }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
-    pub fn source_cluster(&self) -> std::option::Option<& str> {
+    pub fn source_cluster(&self) -> std::option::Option<&str> {
         self.source_cluster.as_deref()
     }
 }
@@ -58,8 +58,12 @@ impl DestinationBackupBuilder {
         self
     }
     /// <p>The date and time when both the source backup was created.</p>
-    pub fn set_create_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_timestamp = input; self
+    pub fn set_create_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_timestamp = input;
+        self
     }
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
     pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +72,8 @@ impl DestinationBackupBuilder {
     }
     /// <p>The AWS region that contains the source backup from which the new backup was copied.</p>
     pub fn set_source_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_region = input; self
+        self.source_region = input;
+        self
     }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
     pub fn source_backup(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +82,8 @@ impl DestinationBackupBuilder {
     }
     /// <p>The identifier (ID) of the source backup from which the new backup was copied.</p>
     pub fn set_source_backup(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_backup = input; self
+        self.source_backup = input;
+        self
     }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
     pub fn source_cluster(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +92,16 @@ impl DestinationBackupBuilder {
     }
     /// <p>The identifier (ID) of the cluster containing the source backup from which the new backup was copied.</p>
     pub fn set_source_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_cluster = input; self
+        self.source_cluster = input;
+        self
     }
     /// Consumes the builder and constructs a [`DestinationBackup`](crate::types::DestinationBackup).
     pub fn build(self) -> crate::types::DestinationBackup {
         crate::types::DestinationBackup {
-            create_timestamp: self.create_timestamp
-            ,
-            source_region: self.source_region
-            ,
-            source_backup: self.source_backup
-            ,
-            source_cluster: self.source_cluster
-            ,
+            create_timestamp: self.create_timestamp,
+            source_region: self.source_region,
+            source_backup: self.source_backup,
+            source_cluster: self.source_cluster,
         }
     }
 }
-

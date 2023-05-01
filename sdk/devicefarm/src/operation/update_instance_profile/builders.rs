@@ -4,50 +4,70 @@ pub use crate::operation::update_instance_profile::_update_instance_profile_outp
 pub use crate::operation::update_instance_profile::_update_instance_profile_input::UpdateInstanceProfileInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateInstanceProfile`.
-/// 
+///
 /// <p>Updates information about an existing private device instance profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateInstanceProfileFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_instance_profile::builders::UpdateInstanceProfileInputBuilder,
+    inner: crate::operation::update_instance_profile::builders::UpdateInstanceProfileInputBuilder,
 }
-impl UpdateInstanceProfileFluentBuilder  {
+impl UpdateInstanceProfileFluentBuilder {
     /// Creates a new `UpdateInstanceProfile`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_instance_profile::UpdateInstanceProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_instance_profile::UpdateInstanceProfileError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_instance_profile::UpdateInstanceProfileOutput, aws_smithy_http::result::SdkError<crate::operation::update_instance_profile::UpdateInstanceProfileError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_instance_profile::UpdateInstanceProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_instance_profile::UpdateInstanceProfileError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_instance_profile::UpdateInstanceProfileOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_instance_profile::UpdateInstanceProfileError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.arn(input.into());
@@ -92,15 +112,21 @@ impl UpdateInstanceProfileFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_exclude_app_packages_from_cleanup`](Self::set_exclude_app_packages_from_cleanup).
     ///
-    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p> 
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
     /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn exclude_app_packages_from_cleanup(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn exclude_app_packages_from_cleanup(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.exclude_app_packages_from_cleanup(input.into());
         self
     }
-    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p> 
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
     /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn set_exclude_app_packages_from_cleanup(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_exclude_app_packages_from_cleanup(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_exclude_app_packages_from_cleanup(input);
         self
     }
@@ -115,4 +141,3 @@ impl UpdateInstanceProfileFluentBuilder  {
         self
     }
 }
-

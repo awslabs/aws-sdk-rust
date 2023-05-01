@@ -3,7 +3,7 @@
 /// <p>A collection of finding attributes used to sort findings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SortCriterion  {
+pub struct SortCriterion {
     /// <p>The finding attribute used to sort findings.</p>
     #[doc(hidden)]
     pub field: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SortCriterion  {
 }
 impl SortCriterion {
     /// <p>The finding attribute used to sort findings.</p>
-    pub fn field(&self) -> std::option::Option<& str> {
+    pub fn field(&self) -> std::option::Option<&str> {
         self.field.as_deref()
     }
     /// <p>The order used to sort findings.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl SortCriterionBuilder {
     }
     /// <p>The finding attribute used to sort findings.</p>
     pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field = input; self
+        self.field = input;
+        self
     }
     /// <p>The order used to sort findings.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -52,16 +53,14 @@ impl SortCriterionBuilder {
     }
     /// <p>The order used to sort findings.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// Consumes the builder and constructs a [`SortCriterion`](crate::types::SortCriterion).
     pub fn build(self) -> crate::types::SortCriterion {
         crate::types::SortCriterion {
-            field: self.field
-            ,
-            sort_order: self.sort_order
-            ,
+            field: self.field,
+            sort_order: self.sort_order,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Information about the version of the policy associated with the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyVersionIdentifier  {
+pub struct PolicyVersionIdentifier {
     /// <p>The name of the policy.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PolicyVersionIdentifier  {
 }
 impl PolicyVersionIdentifier {
     /// <p>The name of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The ID of the version of the policy associated with the resource.</p>
-    pub fn policy_version_id(&self) -> std::option::Option<& str> {
+    pub fn policy_version_id(&self) -> std::option::Option<&str> {
         self.policy_version_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl PolicyVersionIdentifierBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// <p>The ID of the version of the policy associated with the resource.</p>
     pub fn policy_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +52,18 @@ impl PolicyVersionIdentifierBuilder {
         self
     }
     /// <p>The ID of the version of the policy associated with the resource.</p>
-    pub fn set_policy_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_version_id = input; self
+    pub fn set_policy_version_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.policy_version_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`PolicyVersionIdentifier`](crate::types::PolicyVersionIdentifier).
     pub fn build(self) -> crate::types::PolicyVersionIdentifier {
         crate::types::PolicyVersionIdentifier {
-            policy_name: self.policy_name
-            ,
-            policy_version_id: self.policy_version_id
-            ,
+            policy_name: self.policy_name,
+            policy_version_id: self.policy_version_id,
         }
     }
 }
-

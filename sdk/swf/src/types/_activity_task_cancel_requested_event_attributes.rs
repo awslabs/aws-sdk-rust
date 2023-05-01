@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>ActivityTaskCancelRequested</code> event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivityTaskCancelRequestedEventAttributes  {
+pub struct ActivityTaskCancelRequestedEventAttributes {
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     #[doc(hidden)]
     pub decision_task_completed_event_id: i64,
@@ -17,7 +17,7 @@ impl ActivityTaskCancelRequestedEventAttributes {
         self.decision_task_completed_event_id
     }
     /// <p>The unique ID of the task.</p>
-    pub fn activity_id(&self) -> std::option::Option<& str> {
+    pub fn activity_id(&self) -> std::option::Option<&str> {
         self.activity_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ActivityTaskCancelRequestedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision task that resulted in the <code>RequestCancelActivityTask</code> decision for this cancellation request. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_decision_task_completed_event_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.decision_task_completed_event_id = input; self
+        self.decision_task_completed_event_id = input;
+        self
     }
     /// <p>The unique ID of the task.</p>
     pub fn activity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,17 +53,16 @@ impl ActivityTaskCancelRequestedEventAttributesBuilder {
     }
     /// <p>The unique ID of the task.</p>
     pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.activity_id = input; self
+        self.activity_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ActivityTaskCancelRequestedEventAttributes`](crate::types::ActivityTaskCancelRequestedEventAttributes).
     pub fn build(self) -> crate::types::ActivityTaskCancelRequestedEventAttributes {
         crate::types::ActivityTaskCancelRequestedEventAttributes {
-            decision_task_completed_event_id: self.decision_task_completed_event_id
-                .unwrap_or_default()
-            ,
-            activity_id: self.activity_id
-            ,
+            decision_task_completed_event_id: self
+                .decision_task_completed_event_id
+                .unwrap_or_default(),
+            activity_id: self.activity_id,
         }
     }
 }
-

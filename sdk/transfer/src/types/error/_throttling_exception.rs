@@ -3,7 +3,7 @@
 /// <p>The request was denied due to request throttling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException  {
+pub struct ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub retry_after_seconds: std::option::Option<std::string::String>,
@@ -14,19 +14,21 @@ pub struct ThrottlingException  {
 }
 impl ThrottlingException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn retry_after_seconds(&self) -> std::option::Option<& str> {
+    pub fn retry_after_seconds(&self) -> std::option::Option<&str> {
         self.retry_after_seconds.as_deref()
     }
 }
 impl ThrottlingException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -41,7 +43,9 @@ impl aws_http::request_id::RequestId for crate::types::error::ThrottlingExceptio
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ThrottlingException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::types::error::ThrottlingException).
@@ -65,8 +69,12 @@ impl ThrottlingExceptionBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_retry_after_seconds(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.retry_after_seconds = input; self
+    pub fn set_retry_after_seconds(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.retry_after_seconds = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +83,29 @@ impl ThrottlingExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`ThrottlingException`](crate::types::error::ThrottlingException).
     pub fn build(self) -> crate::types::error::ThrottlingException {
         crate::types::error::ThrottlingException {
-            retry_after_seconds: self.retry_after_seconds
-            ,
-            message: self.message
-            ,
+            retry_after_seconds: self.retry_after_seconds,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

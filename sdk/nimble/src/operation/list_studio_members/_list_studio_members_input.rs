@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStudioMembersInput  {
+pub struct ListStudioMembersInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -19,17 +19,18 @@ impl ListStudioMembersInput {
         self.max_results
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
 }
 impl ListStudioMembersInput {
     /// Creates a new builder-style object to manufacture [`ListStudioMembersInput`](crate::operation::list_studio_members::ListStudioMembersInput).
-    pub fn builder() -> crate::operation::list_studio_members::builders::ListStudioMembersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_studio_members::builders::ListStudioMembersInputBuilder {
         crate::operation::list_studio_members::builders::ListStudioMembersInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl ListStudioMembersInputBuilder {
     }
     /// <p>The max number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl ListStudioMembersInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl ListStudioMembersInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListStudioMembersInput`](crate::operation::list_studio_members::ListStudioMembersInput).
-    pub fn build(self) -> Result<crate::operation::list_studio_members::ListStudioMembersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_studio_members::ListStudioMembersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_studio_members::ListStudioMembersInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                studio_id: self.studio_id
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                studio_id: self.studio_id,
+            },
         )
     }
 }
-

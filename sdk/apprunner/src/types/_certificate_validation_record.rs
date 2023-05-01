@@ -3,7 +3,7 @@
 /// <p>Describes a certificate CNAME record to add to your DNS. For more information, see <a href="https://docs.aws.amazon.com/apprunner/latest/api/API_AssociateCustomDomain.html">AssociateCustomDomain</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CertificateValidationRecord  {
+pub struct CertificateValidationRecord {
     /// <p>The certificate CNAME record name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct CertificateValidationRecord  {
 }
 impl CertificateValidationRecord {
     /// <p>The certificate CNAME record name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The record type, always <code>CNAME</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The certificate CNAME record value.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your DNS.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::CertificateValidationRecordStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::CertificateValidationRecordStatus> {
         self.status.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl CertificateValidationRecordBuilder {
     }
     /// <p>The certificate CNAME record name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The record type, always <code>CNAME</code>.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl CertificateValidationRecordBuilder {
     }
     /// <p>The record type, always <code>CNAME</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The certificate CNAME record value.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl CertificateValidationRecordBuilder {
     }
     /// <p>The certificate CNAME record value.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your DNS.</p>
     pub fn status(mut self, input: crate::types::CertificateValidationRecordStatus) -> Self {
@@ -85,21 +88,20 @@ impl CertificateValidationRecordBuilder {
         self
     }
     /// <p>The current state of the certificate CNAME record validation. It should change to <code>SUCCESS</code> after App Runner completes validation with your DNS.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::CertificateValidationRecordStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::CertificateValidationRecordStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`CertificateValidationRecord`](crate::types::CertificateValidationRecord).
     pub fn build(self) -> crate::types::CertificateValidationRecord {
         crate::types::CertificateValidationRecord {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            value: self.value
-            ,
-            status: self.status
-            ,
+            name: self.name,
+            r#type: self.r#type,
+            value: self.value,
+            status: self.status,
         }
     }
 }
-

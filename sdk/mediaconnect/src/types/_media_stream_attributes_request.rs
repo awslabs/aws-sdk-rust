@@ -3,7 +3,7 @@
 /// Attributes that are related to the media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MediaStreamAttributesRequest  {
+pub struct MediaStreamAttributesRequest {
     /// The settings that you want to use to define the media stream.
     #[doc(hidden)]
     pub fmtp: std::option::Option<crate::types::FmtpRequest>,
@@ -13,11 +13,11 @@ pub struct MediaStreamAttributesRequest  {
 }
 impl MediaStreamAttributesRequest {
     /// The settings that you want to use to define the media stream.
-    pub fn fmtp(&self) -> std::option::Option<& crate::types::FmtpRequest> {
+    pub fn fmtp(&self) -> std::option::Option<&crate::types::FmtpRequest> {
         self.fmtp.as_ref()
     }
     /// The audio language, in a format that is recognized by the receiver.
-    pub fn lang(&self) -> std::option::Option<& str> {
+    pub fn lang(&self) -> std::option::Option<&str> {
         self.lang.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl MediaStreamAttributesRequestBuilder {
     }
     /// The settings that you want to use to define the media stream.
     pub fn set_fmtp(mut self, input: std::option::Option<crate::types::FmtpRequest>) -> Self {
-        self.fmtp = input; self
+        self.fmtp = input;
+        self
     }
     /// The audio language, in a format that is recognized by the receiver.
     pub fn lang(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl MediaStreamAttributesRequestBuilder {
     }
     /// The audio language, in a format that is recognized by the receiver.
     pub fn set_lang(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lang = input; self
+        self.lang = input;
+        self
     }
     /// Consumes the builder and constructs a [`MediaStreamAttributesRequest`](crate::types::MediaStreamAttributesRequest).
     pub fn build(self) -> crate::types::MediaStreamAttributesRequest {
         crate::types::MediaStreamAttributesRequest {
-            fmtp: self.fmtp
-            ,
-            lang: self.lang
-            ,
+            fmtp: self.fmtp,
+            lang: self.lang,
         }
     }
 }
-

@@ -128,4 +128,3 @@ pub mod builders;
 
 /// Error types that AWS IoT Things Graph can respond with.
 pub mod error;
-

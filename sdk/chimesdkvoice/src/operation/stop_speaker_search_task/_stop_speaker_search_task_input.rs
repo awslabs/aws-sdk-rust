@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopSpeakerSearchTaskInput  {
+pub struct StopSpeakerSearchTaskInput {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct StopSpeakerSearchTaskInput  {
 }
 impl StopSpeakerSearchTaskInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The speaker search task ID.</p>
-    pub fn speaker_search_task_id(&self) -> std::option::Option<& str> {
+    pub fn speaker_search_task_id(&self) -> std::option::Option<&str> {
         self.speaker_search_task_id.as_deref()
     }
 }
 impl StopSpeakerSearchTaskInput {
     /// Creates a new builder-style object to manufacture [`StopSpeakerSearchTaskInput`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput).
-    pub fn builder() -> crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskInputBuilder
+    {
         crate::operation::stop_speaker_search_task::builders::StopSpeakerSearchTaskInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl StopSpeakerSearchTaskInputBuilder {
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     /// <p>The speaker search task ID.</p>
     pub fn speaker_search_task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +56,25 @@ impl StopSpeakerSearchTaskInputBuilder {
         self
     }
     /// <p>The speaker search task ID.</p>
-    pub fn set_speaker_search_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.speaker_search_task_id = input; self
+    pub fn set_speaker_search_task_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.speaker_search_task_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopSpeakerSearchTaskInput`](crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput).
-    pub fn build(self) -> Result<crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-                speaker_search_task_id: self.speaker_search_task_id
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+                speaker_search_task_id: self.speaker_search_task_id,
+            },
         )
     }
 }
-

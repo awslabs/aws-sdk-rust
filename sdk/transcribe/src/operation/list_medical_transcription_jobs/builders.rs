@@ -4,64 +4,87 @@ pub use crate::operation::list_medical_transcription_jobs::_list_medical_transcr
 pub use crate::operation::list_medical_transcription_jobs::_list_medical_transcription_jobs_input::ListMedicalTranscriptionJobsInputBuilder;
 
 /// Fluent builder constructing a request to `ListMedicalTranscriptionJobs`.
-/// 
-/// <p>Provides a list of medical transcription jobs that match the specified criteria. If no criteria are specified, all medical transcription jobs are returned.</p> 
+///
+/// <p>Provides a list of medical transcription jobs that match the specified criteria. If no criteria are specified, all medical transcription jobs are returned.</p>
 /// <p>To get detailed information about a specific medical transcription job, use the operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMedicalTranscriptionJobsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsInputBuilder,
 }
-impl ListMedicalTranscriptionJobsFluentBuilder  {
+impl ListMedicalTranscriptionJobsFluentBuilder {
     /// Creates a new `ListMedicalTranscriptionJobs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput, aws_smithy_http::result::SdkError<crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_medical_transcription_jobs::paginator::ListMedicalTranscriptionJobsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_medical_transcription_jobs::paginator::ListMedicalTranscriptionJobsPaginator {
-                                crate::operation::list_medical_transcription_jobs::paginator::ListMedicalTranscriptionJobsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_medical_transcription_jobs::paginator::ListMedicalTranscriptionJobsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_medical_transcription_jobs::paginator::ListMedicalTranscriptionJobsPaginator{
+        crate::operation::list_medical_transcription_jobs::paginator::ListMedicalTranscriptionJobsPaginator::new(self.handle, self.inner)
+    }
     /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
     pub fn status(mut self, input: crate::types::TranscriptionJobStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
     /// <p>Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you don't include <code>Status</code>, all medical transcription jobs are returned.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::TranscriptionJobStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -71,7 +94,10 @@ impl ListMedicalTranscriptionJobsFluentBuilder  {
         self
     }
     /// <p>Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.</p>
-    pub fn set_job_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name_contains(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_job_name_contains(input);
         self
     }
@@ -96,4 +122,3 @@ impl ListMedicalTranscriptionJobsFluentBuilder  {
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPackagingGroupsOutput  {
+pub struct ListPackagingGroupsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,25 @@ pub struct ListPackagingGroupsOutput  {
 }
 impl ListPackagingGroupsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// A list of MediaPackage VOD PackagingGroup resources.
-    pub fn packaging_groups(&self) -> std::option::Option<& [crate::types::PackagingGroup]> {
+    pub fn packaging_groups(&self) -> std::option::Option<&[crate::types::PackagingGroup]> {
         self.packaging_groups.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPackagingGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListPackagingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListPackagingGroupsOutput`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput).
-    pub fn builder() -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsOutputBuilder {
-        crate::operation::list_packaging_groups::builders::ListPackagingGroupsOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_packaging_groups::builders::ListPackagingGroupsOutputBuilder {
+        crate::operation::list_packaging_groups::builders::ListPackagingGroupsOutputBuilder::default(
+        )
     }
 }
 
@@ -49,7 +51,8 @@ impl ListPackagingGroupsOutputBuilder {
     }
     /// A token that can be used to resume pagination from the end of the collection.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `packaging_groups`.
     ///
@@ -58,32 +61,33 @@ impl ListPackagingGroupsOutputBuilder {
     /// A list of MediaPackage VOD PackagingGroup resources.
     pub fn packaging_groups(mut self, input: crate::types::PackagingGroup) -> Self {
         let mut v = self.packaging_groups.unwrap_or_default();
-                        v.push(input);
-                        self.packaging_groups = Some(v);
-                        self
+        v.push(input);
+        self.packaging_groups = Some(v);
+        self
     }
     /// A list of MediaPackage VOD PackagingGroup resources.
-    pub fn set_packaging_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::PackagingGroup>>) -> Self {
-        self.packaging_groups = input; self
+    pub fn set_packaging_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PackagingGroup>>,
+    ) -> Self {
+        self.packaging_groups = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListPackagingGroupsOutput`](crate::operation::list_packaging_groups::ListPackagingGroupsOutput).
     pub fn build(self) -> crate::operation::list_packaging_groups::ListPackagingGroupsOutput {
         crate::operation::list_packaging_groups::ListPackagingGroupsOutput {
-            next_token: self.next_token
-            ,
-            packaging_groups: self.packaging_groups
-            ,
+            next_token: self.next_token,
+            packaging_groups: self.packaging_groups,
             _request_id: self._request_id,
         }
     }
 }
-

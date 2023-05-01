@@ -4,50 +4,66 @@ pub use crate::operation::import_notebook::_import_notebook_output::ImportNotebo
 pub use crate::operation::import_notebook::_import_notebook_input::ImportNotebookInputBuilder;
 
 /// Fluent builder constructing a request to `ImportNotebook`.
-/// 
+///
 /// <p>Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportNotebookFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::import_notebook::builders::ImportNotebookInputBuilder,
+    inner: crate::operation::import_notebook::builders::ImportNotebookInputBuilder,
 }
-impl ImportNotebookFluentBuilder  {
+impl ImportNotebookFluentBuilder {
     /// Creates a new `ImportNotebook`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::import_notebook::ImportNotebook, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::import_notebook::ImportNotebookError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::import_notebook::ImportNotebookOutput, aws_smithy_http::result::SdkError<crate::operation::import_notebook::ImportNotebookError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::import_notebook::ImportNotebook,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::import_notebook::ImportNotebookError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::import_notebook::ImportNotebookOutput,
+        aws_smithy_http::result::SdkError<crate::operation::import_notebook::ImportNotebookError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the Spark enabled workgroup to import the notebook to.</p>
     pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.work_group(input.into());
@@ -88,19 +104,21 @@ impl ImportNotebookFluentBuilder  {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to import the notebook is idempotent (executes only once).</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for you. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
 }
-

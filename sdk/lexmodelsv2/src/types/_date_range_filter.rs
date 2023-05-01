@@ -3,7 +3,7 @@
 /// <p>The object used for specifying the data range that the customer wants Amazon Lex to read through in the input transcripts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DateRangeFilter  {
+pub struct DateRangeFilter {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
     #[doc(hidden)]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct DateRangeFilter  {
 }
 impl DateRangeFilter {
     /// <p>A timestamp indicating the start date for the date range filter.</p>
-    pub fn start_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>A timestamp indicating the end date for the date range filter.</p>
-    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl DateRangeFilterBuilder {
         self
     }
     /// <p>A timestamp indicating the start date for the date range filter.</p>
-    pub fn set_start_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_date_time = input; self
+    pub fn set_start_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_date_time = input;
+        self
     }
     /// <p>A timestamp indicating the end date for the date range filter.</p>
     pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -51,17 +55,18 @@ impl DateRangeFilterBuilder {
         self
     }
     /// <p>A timestamp indicating the end date for the date range filter.</p>
-    pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_date_time = input; self
+    pub fn set_end_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.end_date_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`DateRangeFilter`](crate::types::DateRangeFilter).
     pub fn build(self) -> crate::types::DateRangeFilter {
         crate::types::DateRangeFilter {
-            start_date_time: self.start_date_time
-            ,
-            end_date_time: self.end_date_time
-            ,
+            start_date_time: self.start_date_time,
+            end_date_time: self.end_date_time,
         }
     }
 }
-

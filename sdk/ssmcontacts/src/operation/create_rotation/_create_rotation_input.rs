@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRotationInput  {
+pub struct CreateRotationInput {
     /// <p>The name of the rotation.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p> 
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p>
     /// <p>The order that you list the contacts in is their shift order in the rotation schedule. To change the order of the contact's shifts, use the <code>UpdateRotation</code> operation.</p>
     #[doc(hidden)]
     pub contact_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time that the rotation goes into effect.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note> 
-    /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p> 
+    /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
+    /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p>
     /// </note>
     #[doc(hidden)]
     pub time_zone_id: std::option::Option<std::string::String>,
@@ -30,34 +30,34 @@ pub struct CreateRotationInput  {
 }
 impl CreateRotationInput {
     /// <p>The name of the rotation.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p> 
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p>
     /// <p>The order that you list the contacts in is their shift order in the rotation schedule. To change the order of the contact's shifts, use the <code>UpdateRotation</code> operation.</p>
-    pub fn contact_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn contact_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.contact_ids.as_deref()
     }
     /// <p>The date and time that the rotation goes into effect.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note> 
-    /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p> 
+    /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
+    /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p>
     /// </note>
-    pub fn time_zone_id(&self) -> std::option::Option<& str> {
+    pub fn time_zone_id(&self) -> std::option::Option<&str> {
         self.time_zone_id.as_deref()
     }
     /// <p>Information about the rule that specifies when a shift's team members rotate.</p>
-    pub fn recurrence(&self) -> std::option::Option<& crate::types::RecurrenceSettings> {
+    pub fn recurrence(&self) -> std::option::Option<&crate::types::RecurrenceSettings> {
         self.recurrence.as_ref()
     }
     /// <p>Optional metadata to assign to the rotation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/tagging.html">Tagging Incident Manager resources</a> in the <i>Incident Manager User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<& str> {
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -88,24 +88,29 @@ impl CreateRotationInputBuilder {
     }
     /// <p>The name of the rotation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `contact_ids`.
     ///
     /// To override the contents of this collection use [`set_contact_ids`](Self::set_contact_ids).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p> 
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p>
     /// <p>The order that you list the contacts in is their shift order in the rotation schedule. To change the order of the contact's shifts, use the <code>UpdateRotation</code> operation.</p>
     pub fn contact_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.contact_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.contact_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.contact_ids = Some(v);
+        self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p> 
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to add to the rotation.</p>
     /// <p>The order that you list the contacts in is their shift order in the rotation schedule. To change the order of the contact's shifts, use the <code>UpdateRotation</code> operation.</p>
-    pub fn set_contact_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.contact_ids = input; self
+    pub fn set_contact_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.contact_ids = input;
+        self
     }
     /// <p>The date and time that the rotation goes into effect.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -113,21 +118,26 @@ impl CreateRotationInputBuilder {
         self
     }
     /// <p>The date and time that the rotation goes into effect.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
-    /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note> 
-    /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p> 
+    /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
+    /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p>
     /// </note>
     pub fn time_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.time_zone_id = Some(input.into());
         self
     }
-    /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note> 
-    /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p> 
+    /// <p>The time zone to base the rotation’s activity on in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
+    /// <p>Designators for time zones that don’t support Daylight Savings Time rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), are not supported.</p>
     /// </note>
     pub fn set_time_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time_zone_id = input; self
+        self.time_zone_id = input;
+        self
     }
     /// <p>Information about the rule that specifies when a shift's team members rotate.</p>
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
@@ -135,8 +145,12 @@ impl CreateRotationInputBuilder {
         self
     }
     /// <p>Information about the rule that specifies when a shift's team members rotate.</p>
-    pub fn set_recurrence(mut self, input: std::option::Option<crate::types::RecurrenceSettings>) -> Self {
-        self.recurrence = input; self
+    pub fn set_recurrence(
+        mut self,
+        input: std::option::Option<crate::types::RecurrenceSettings>,
+    ) -> Self {
+        self.recurrence = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -145,13 +159,17 @@ impl CreateRotationInputBuilder {
     /// <p>Optional metadata to assign to the rotation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/tagging.html">Tagging Incident Manager resources</a> in the <i>Incident Manager User Guide</i>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Optional metadata to assign to the rotation. Tags enable you to categorize a resource in different ways, such as by purpose, owner, or environment. For more information, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/tagging.html">Tagging Incident Manager resources</a> in the <i>Incident Manager User Guide</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,29 +177,28 @@ impl CreateRotationInputBuilder {
         self
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
-    pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.idempotency_token = input; self
+    pub fn set_idempotency_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.idempotency_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRotationInput`](crate::operation::create_rotation::CreateRotationInput).
-    pub fn build(self) -> Result<crate::operation::create_rotation::CreateRotationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_rotation::CreateRotationInput {
-                name: self.name
-                ,
-                contact_ids: self.contact_ids
-                ,
-                start_time: self.start_time
-                ,
-                time_zone_id: self.time_zone_id
-                ,
-                recurrence: self.recurrence
-                ,
-                tags: self.tags
-                ,
-                idempotency_token: self.idempotency_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_rotation::CreateRotationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_rotation::CreateRotationInput {
+            name: self.name,
+            contact_ids: self.contact_ids,
+            start_time: self.start_time,
+            time_zone_id: self.time_zone_id,
+            recurrence: self.recurrence,
+            tags: self.tags,
+            idempotency_token: self.idempotency_token,
+        })
     }
 }
-

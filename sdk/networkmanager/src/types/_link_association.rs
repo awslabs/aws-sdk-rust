@@ -3,7 +3,7 @@
 /// <p>Describes the association between a device and a link.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LinkAssociation  {
+pub struct LinkAssociation {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -19,19 +19,21 @@ pub struct LinkAssociation  {
 }
 impl LinkAssociation {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The device ID for the link association.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the link.</p>
-    pub fn link_id(&self) -> std::option::Option<& str> {
+    pub fn link_id(&self) -> std::option::Option<&str> {
         self.link_id.as_deref()
     }
     /// <p>The state of the association.</p>
-    pub fn link_association_state(&self) -> std::option::Option<& crate::types::LinkAssociationState> {
+    pub fn link_association_state(
+        &self,
+    ) -> std::option::Option<&crate::types::LinkAssociationState> {
         self.link_association_state.as_ref()
     }
 }
@@ -58,8 +60,12 @@ impl LinkAssociationBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// <p>The device ID for the link association.</p>
     pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +74,8 @@ impl LinkAssociationBuilder {
     }
     /// <p>The device ID for the link association.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// <p>The ID of the link.</p>
     pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +84,8 @@ impl LinkAssociationBuilder {
     }
     /// <p>The ID of the link.</p>
     pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.link_id = input; self
+        self.link_id = input;
+        self
     }
     /// <p>The state of the association.</p>
     pub fn link_association_state(mut self, input: crate::types::LinkAssociationState) -> Self {
@@ -85,21 +93,20 @@ impl LinkAssociationBuilder {
         self
     }
     /// <p>The state of the association.</p>
-    pub fn set_link_association_state(mut self, input: std::option::Option<crate::types::LinkAssociationState>) -> Self {
-        self.link_association_state = input; self
+    pub fn set_link_association_state(
+        mut self,
+        input: std::option::Option<crate::types::LinkAssociationState>,
+    ) -> Self {
+        self.link_association_state = input;
+        self
     }
     /// Consumes the builder and constructs a [`LinkAssociation`](crate::types::LinkAssociation).
     pub fn build(self) -> crate::types::LinkAssociation {
         crate::types::LinkAssociation {
-            global_network_id: self.global_network_id
-            ,
-            device_id: self.device_id
-            ,
-            link_id: self.link_id
-            ,
-            link_association_state: self.link_association_state
-            ,
+            global_network_id: self.global_network_id,
+            device_id: self.device_id,
+            link_id: self.link_id,
+            link_association_state: self.link_association_state,
         }
     }
 }
-

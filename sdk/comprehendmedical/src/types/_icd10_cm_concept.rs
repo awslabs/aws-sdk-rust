@@ -3,7 +3,7 @@
 /// <p> The ICD-10-CM concepts that the entity could refer to, along with a score indicating the likelihood of the match.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Icd10CmConcept  {
+pub struct Icd10CmConcept {
     /// <p>The long description of the ICD-10-CM code in the ontology.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct Icd10CmConcept  {
 }
 impl Icd10CmConcept {
     /// <p>The long description of the ICD-10-CM code in the ontology.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
@@ -51,7 +51,8 @@ impl Icd10CmConceptBuilder {
     }
     /// <p>The long description of the ICD-10-CM code in the ontology.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl Icd10CmConceptBuilder {
     }
     /// <p>The ICD-10-CM code that identifies the concept found in the knowledge base from the Centers for Disease Control.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
     pub fn score(mut self, input: f32) -> Self {
@@ -69,18 +71,15 @@ impl Icd10CmConceptBuilder {
     }
     /// <p>The level of confidence that Amazon Comprehend Medical has that the entity is accurately linked to an ICD-10-CM concept.</p>
     pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
-        self.score = input; self
+        self.score = input;
+        self
     }
     /// Consumes the builder and constructs a [`Icd10CmConcept`](crate::types::Icd10CmConcept).
     pub fn build(self) -> crate::types::Icd10CmConcept {
         crate::types::Icd10CmConcept {
-            description: self.description
-            ,
-            code: self.code
-            ,
-            score: self.score
-            ,
+            description: self.description,
+            code: self.code,
+            score: self.score,
         }
     }
 }
-

@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTransitGatewayRouteTablesOutput  {
+pub struct DescribeTransitGatewayRouteTablesOutput {
     /// <p>Information about the transit gateway route tables.</p>
     #[doc(hidden)]
-    pub transit_gateway_route_tables: std::option::Option<std::vec::Vec<crate::types::TransitGatewayRouteTable>>,
+    pub transit_gateway_route_tables:
+        std::option::Option<std::vec::Vec<crate::types::TransitGatewayRouteTable>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DescribeTransitGatewayRouteTablesOutput  {
 }
 impl DescribeTransitGatewayRouteTablesOutput {
     /// <p>Information about the transit gateway route tables.</p>
-    pub fn transit_gateway_route_tables(&self) -> std::option::Option<& [crate::types::TransitGatewayRouteTable]> {
+    pub fn transit_gateway_route_tables(
+        &self,
+    ) -> std::option::Option<&[crate::types::TransitGatewayRouteTable]> {
         self.transit_gateway_route_tables.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeTransitGatewayRouteTablesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeTransitGatewayRouteTablesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTransitGatewayRouteTablesOutput`](crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesOutput).
-    pub fn builder() -> crate::operation::describe_transit_gateway_route_tables::builders::DescribeTransitGatewayRouteTablesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_transit_gateway_route_tables::builders::DescribeTransitGatewayRouteTablesOutputBuilder{
         crate::operation::describe_transit_gateway_route_tables::builders::DescribeTransitGatewayRouteTablesOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DescribeTransitGatewayRouteTablesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTransitGatewayRouteTablesOutputBuilder {
-    pub(crate) transit_gateway_route_tables: std::option::Option<std::vec::Vec<crate::types::TransitGatewayRouteTable>>,
+    pub(crate) transit_gateway_route_tables:
+        std::option::Option<std::vec::Vec<crate::types::TransitGatewayRouteTable>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +51,22 @@ impl DescribeTransitGatewayRouteTablesOutputBuilder {
     /// To override the contents of this collection use [`set_transit_gateway_route_tables`](Self::set_transit_gateway_route_tables).
     ///
     /// <p>Information about the transit gateway route tables.</p>
-    pub fn transit_gateway_route_tables(mut self, input: crate::types::TransitGatewayRouteTable) -> Self {
+    pub fn transit_gateway_route_tables(
+        mut self,
+        input: crate::types::TransitGatewayRouteTable,
+    ) -> Self {
         let mut v = self.transit_gateway_route_tables.unwrap_or_default();
-                        v.push(input);
-                        self.transit_gateway_route_tables = Some(v);
-                        self
+        v.push(input);
+        self.transit_gateway_route_tables = Some(v);
+        self
     }
     /// <p>Information about the transit gateway route tables.</p>
-    pub fn set_transit_gateway_route_tables(mut self, input: std::option::Option<std::vec::Vec<crate::types::TransitGatewayRouteTable>>) -> Self {
-        self.transit_gateway_route_tables = input; self
+    pub fn set_transit_gateway_route_tables(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TransitGatewayRouteTable>>,
+    ) -> Self {
+        self.transit_gateway_route_tables = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +75,20 @@ impl DescribeTransitGatewayRouteTablesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeTransitGatewayRouteTablesOutput`](crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesOutput).
-    pub fn build(self) -> crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesOutput {
+    pub fn build(self) -> crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesOutput{
         crate::operation::describe_transit_gateway_route_tables::DescribeTransitGatewayRouteTablesOutput {
             transit_gateway_route_tables: self.transit_gateway_route_tables
             ,
@@ -86,4 +98,3 @@ impl DescribeTransitGatewayRouteTablesOutputBuilder {
         }
     }
 }
-

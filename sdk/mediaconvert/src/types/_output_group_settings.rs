@@ -3,7 +3,7 @@
 /// Output Group settings, including type
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputGroupSettings  {
+pub struct OutputGroupSettings {
     /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to CMAF_GROUP_SETTINGS.
     #[doc(hidden)]
     pub cmaf_group_settings: std::option::Option<crate::types::CmafGroupSettings>,
@@ -25,27 +25,31 @@ pub struct OutputGroupSettings  {
 }
 impl OutputGroupSettings {
     /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to CMAF_GROUP_SETTINGS.
-    pub fn cmaf_group_settings(&self) -> std::option::Option<& crate::types::CmafGroupSettings> {
+    pub fn cmaf_group_settings(&self) -> std::option::Option<&crate::types::CmafGroupSettings> {
         self.cmaf_group_settings.as_ref()
     }
     /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to DASH_ISO_GROUP_SETTINGS.
-    pub fn dash_iso_group_settings(&self) -> std::option::Option<& crate::types::DashIsoGroupSettings> {
+    pub fn dash_iso_group_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::DashIsoGroupSettings> {
         self.dash_iso_group_settings.as_ref()
     }
     /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
-    pub fn file_group_settings(&self) -> std::option::Option<& crate::types::FileGroupSettings> {
+    pub fn file_group_settings(&self) -> std::option::Option<&crate::types::FileGroupSettings> {
         self.file_group_settings.as_ref()
     }
     /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to HLS_GROUP_SETTINGS.
-    pub fn hls_group_settings(&self) -> std::option::Option<& crate::types::HlsGroupSettings> {
+    pub fn hls_group_settings(&self) -> std::option::Option<&crate::types::HlsGroupSettings> {
         self.hls_group_settings.as_ref()
     }
     /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to MS_SMOOTH_GROUP_SETTINGS.
-    pub fn ms_smooth_group_settings(&self) -> std::option::Option<& crate::types::MsSmoothGroupSettings> {
+    pub fn ms_smooth_group_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::MsSmoothGroupSettings> {
         self.ms_smooth_group_settings.as_ref()
     }
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
-    pub fn r#type(&self) -> std::option::Option<& crate::types::OutputGroupType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::OutputGroupType> {
         self.r#type.as_ref()
     }
 }
@@ -74,8 +78,12 @@ impl OutputGroupSettingsBuilder {
         self
     }
     /// Settings related to your CMAF output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to CMAF_GROUP_SETTINGS.
-    pub fn set_cmaf_group_settings(mut self, input: std::option::Option<crate::types::CmafGroupSettings>) -> Self {
-        self.cmaf_group_settings = input; self
+    pub fn set_cmaf_group_settings(
+        mut self,
+        input: std::option::Option<crate::types::CmafGroupSettings>,
+    ) -> Self {
+        self.cmaf_group_settings = input;
+        self
     }
     /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to DASH_ISO_GROUP_SETTINGS.
     pub fn dash_iso_group_settings(mut self, input: crate::types::DashIsoGroupSettings) -> Self {
@@ -83,8 +91,12 @@ impl OutputGroupSettingsBuilder {
         self
     }
     /// Settings related to your DASH output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to DASH_ISO_GROUP_SETTINGS.
-    pub fn set_dash_iso_group_settings(mut self, input: std::option::Option<crate::types::DashIsoGroupSettings>) -> Self {
-        self.dash_iso_group_settings = input; self
+    pub fn set_dash_iso_group_settings(
+        mut self,
+        input: std::option::Option<crate::types::DashIsoGroupSettings>,
+    ) -> Self {
+        self.dash_iso_group_settings = input;
+        self
     }
     /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
     pub fn file_group_settings(mut self, input: crate::types::FileGroupSettings) -> Self {
@@ -92,8 +104,12 @@ impl OutputGroupSettingsBuilder {
         self
     }
     /// Settings related to your File output group. MediaConvert uses this group of settings to generate a single standalone file, rather than a streaming package. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to FILE_GROUP_SETTINGS.
-    pub fn set_file_group_settings(mut self, input: std::option::Option<crate::types::FileGroupSettings>) -> Self {
-        self.file_group_settings = input; self
+    pub fn set_file_group_settings(
+        mut self,
+        input: std::option::Option<crate::types::FileGroupSettings>,
+    ) -> Self {
+        self.file_group_settings = input;
+        self
     }
     /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to HLS_GROUP_SETTINGS.
     pub fn hls_group_settings(mut self, input: crate::types::HlsGroupSettings) -> Self {
@@ -101,8 +117,12 @@ impl OutputGroupSettingsBuilder {
         self
     }
     /// Settings related to your HLS output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to HLS_GROUP_SETTINGS.
-    pub fn set_hls_group_settings(mut self, input: std::option::Option<crate::types::HlsGroupSettings>) -> Self {
-        self.hls_group_settings = input; self
+    pub fn set_hls_group_settings(
+        mut self,
+        input: std::option::Option<crate::types::HlsGroupSettings>,
+    ) -> Self {
+        self.hls_group_settings = input;
+        self
     }
     /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to MS_SMOOTH_GROUP_SETTINGS.
     pub fn ms_smooth_group_settings(mut self, input: crate::types::MsSmoothGroupSettings) -> Self {
@@ -110,8 +130,12 @@ impl OutputGroupSettingsBuilder {
         self
     }
     /// Settings related to your Microsoft Smooth Streaming output package. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/outputs-file-ABR.html. When you work directly in your JSON job specification, include this object and any required children when you set Type, under OutputGroupSettings, to MS_SMOOTH_GROUP_SETTINGS.
-    pub fn set_ms_smooth_group_settings(mut self, input: std::option::Option<crate::types::MsSmoothGroupSettings>) -> Self {
-        self.ms_smooth_group_settings = input; self
+    pub fn set_ms_smooth_group_settings(
+        mut self,
+        input: std::option::Option<crate::types::MsSmoothGroupSettings>,
+    ) -> Self {
+        self.ms_smooth_group_settings = input;
+        self
     }
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     pub fn r#type(mut self, input: crate::types::OutputGroupType) -> Self {
@@ -120,24 +144,18 @@ impl OutputGroupSettingsBuilder {
     }
     /// Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF)
     pub fn set_type(mut self, input: std::option::Option<crate::types::OutputGroupType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`OutputGroupSettings`](crate::types::OutputGroupSettings).
     pub fn build(self) -> crate::types::OutputGroupSettings {
         crate::types::OutputGroupSettings {
-            cmaf_group_settings: self.cmaf_group_settings
-            ,
-            dash_iso_group_settings: self.dash_iso_group_settings
-            ,
-            file_group_settings: self.file_group_settings
-            ,
-            hls_group_settings: self.hls_group_settings
-            ,
-            ms_smooth_group_settings: self.ms_smooth_group_settings
-            ,
-            r#type: self.r#type
-            ,
+            cmaf_group_settings: self.cmaf_group_settings,
+            dash_iso_group_settings: self.dash_iso_group_settings,
+            file_group_settings: self.file_group_settings,
+            hls_group_settings: self.hls_group_settings,
+            ms_smooth_group_settings: self.ms_smooth_group_settings,
+            r#type: self.r#type,
         }
     }
 }
-

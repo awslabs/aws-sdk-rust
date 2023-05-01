@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListExperimentTemplatesOutput  {
+pub struct ListExperimentTemplatesOutput {
     /// <p>The experiment templates.</p>
     #[doc(hidden)]
-    pub experiment_templates: std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateSummary>>,
+    pub experiment_templates:
+        std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateSummary>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct ListExperimentTemplatesOutput  {
 }
 impl ListExperimentTemplatesOutput {
     /// <p>The experiment templates.</p>
-    pub fn experiment_templates(&self) -> std::option::Option<& [crate::types::ExperimentTemplateSummary]> {
+    pub fn experiment_templates(
+        &self,
+    ) -> std::option::Option<&[crate::types::ExperimentTemplateSummary]> {
         self.experiment_templates.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListExperimentTemplatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListExperimentTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListExperimentTemplatesOutput`](crate::operation::list_experiment_templates::ListExperimentTemplatesOutput).
-    pub fn builder() -> crate::operation::list_experiment_templates::builders::ListExperimentTemplatesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_experiment_templates::builders::ListExperimentTemplatesOutputBuilder
+    {
         crate::operation::list_experiment_templates::builders::ListExperimentTemplatesOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl ListExperimentTemplatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListExperimentTemplatesOutputBuilder {
-    pub(crate) experiment_templates: std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateSummary>>,
+    pub(crate) experiment_templates:
+        std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl ListExperimentTemplatesOutputBuilder {
     /// <p>The experiment templates.</p>
     pub fn experiment_templates(mut self, input: crate::types::ExperimentTemplateSummary) -> Self {
         let mut v = self.experiment_templates.unwrap_or_default();
-                        v.push(input);
-                        self.experiment_templates = Some(v);
-                        self
+        v.push(input);
+        self.experiment_templates = Some(v);
+        self
     }
     /// <p>The experiment templates.</p>
-    pub fn set_experiment_templates(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateSummary>>) -> Self {
-        self.experiment_templates = input; self
+    pub fn set_experiment_templates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExperimentTemplateSummary>>,
+    ) -> Self {
+        self.experiment_templates = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,26 @@ impl ListExperimentTemplatesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListExperimentTemplatesOutput`](crate::operation::list_experiment_templates::ListExperimentTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_experiment_templates::ListExperimentTemplatesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_experiment_templates::ListExperimentTemplatesOutput {
         crate::operation::list_experiment_templates::ListExperimentTemplatesOutput {
-            experiment_templates: self.experiment_templates
-            ,
-            next_token: self.next_token
-            ,
+            experiment_templates: self.experiment_templates,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

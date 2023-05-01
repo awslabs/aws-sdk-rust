@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainConfigurationInput  {
+pub struct DescribeDomainConfigurationInput {
     /// <p>The name of the domain configuration.</p>
     #[doc(hidden)]
     pub domain_configuration_name: std::option::Option<std::string::String>,
 }
 impl DescribeDomainConfigurationInput {
     /// <p>The name of the domain configuration.</p>
-    pub fn domain_configuration_name(&self) -> std::option::Option<& str> {
+    pub fn domain_configuration_name(&self) -> std::option::Option<&str> {
         self.domain_configuration_name.as_deref()
     }
 }
 impl DescribeDomainConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainConfigurationInput`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput).
-    pub fn builder() -> crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationInputBuilder{
         crate::operation::describe_domain_configuration::builders::DescribeDomainConfigurationInputBuilder::default()
     }
 }
@@ -33,17 +33,24 @@ impl DescribeDomainConfigurationInputBuilder {
         self
     }
     /// <p>The name of the domain configuration.</p>
-    pub fn set_domain_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_configuration_name = input; self
+    pub fn set_domain_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.domain_configuration_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDomainConfigurationInput`](crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_domain_configuration::DescribeDomainConfigurationInput {
-                domain_configuration_name: self.domain_configuration_name
-                ,
-            }
+                domain_configuration_name: self.domain_configuration_name,
+            },
         )
     }
 }
-

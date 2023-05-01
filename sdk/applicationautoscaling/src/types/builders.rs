@@ -34,4 +34,3 @@ pub use crate::types::_scaling_activity::ScalingActivityBuilder;
 pub use crate::types::_not_scaled_reason::NotScaledReasonBuilder;
 
 pub use crate::types::_scalable_target::ScalableTargetBuilder;
-

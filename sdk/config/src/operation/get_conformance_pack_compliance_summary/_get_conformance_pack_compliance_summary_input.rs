@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConformancePackComplianceSummaryInput  {
+pub struct GetConformancePackComplianceSummaryInput {
     /// <p>Names of conformance packs.</p>
     #[doc(hidden)]
     pub conformance_pack_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct GetConformancePackComplianceSummaryInput  {
 }
 impl GetConformancePackComplianceSummaryInput {
     /// <p>Names of conformance packs.</p>
-    pub fn conformance_pack_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn conformance_pack_names(&self) -> std::option::Option<&[std::string::String]> {
         self.conformance_pack_names.as_deref()
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
@@ -23,13 +23,13 @@ impl GetConformancePackComplianceSummaryInput {
         self.limit
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetConformancePackComplianceSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetConformancePackComplianceSummaryInput`](crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryInput).
-    pub fn builder() -> crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryInputBuilder {
+    pub fn builder() -> crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryInputBuilder{
         crate::operation::get_conformance_pack_compliance_summary::builders::GetConformancePackComplianceSummaryInputBuilder::default()
     }
 }
@@ -50,13 +50,17 @@ impl GetConformancePackComplianceSummaryInputBuilder {
     /// <p>Names of conformance packs.</p>
     pub fn conformance_pack_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.conformance_pack_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.conformance_pack_names = Some(v);
-                        self
+        v.push(input.into());
+        self.conformance_pack_names = Some(v);
+        self
     }
     /// <p>Names of conformance packs.</p>
-    pub fn set_conformance_pack_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.conformance_pack_names = input; self
+    pub fn set_conformance_pack_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.conformance_pack_names = input;
+        self
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -65,7 +69,8 @@ impl GetConformancePackComplianceSummaryInputBuilder {
     }
     /// <p>The maximum number of conformance packs returned on each page.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,10 +79,11 @@ impl GetConformancePackComplianceSummaryInputBuilder {
     }
     /// <p>The nextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetConformancePackComplianceSummaryInput`](crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryInput).
-    pub fn build(self) -> Result<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryInput {
                 conformance_pack_names: self.conformance_pack_names
@@ -90,4 +96,3 @@ impl GetConformancePackComplianceSummaryInputBuilder {
         )
     }
 }
-

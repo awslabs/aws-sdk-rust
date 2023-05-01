@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPropertyValueHistoryInput  {
+pub struct GetPropertyValueHistoryInput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -22,11 +22,15 @@ pub struct GetPropertyValueHistoryInput  {
     #[doc(hidden)]
     pub property_filters: std::option::Option<std::vec::Vec<crate::types::PropertyFilter>>,
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+    )]
     #[doc(hidden)]
     pub start_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+    )]
     #[doc(hidden)]
     pub end_date_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
@@ -35,88 +39,94 @@ pub struct GetPropertyValueHistoryInput  {
     /// <p>The string that specifies the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
     /// <p>The time direction to use in the result order.</p>
     #[doc(hidden)]
     pub order_by_time: std::option::Option<crate::types::OrderByTime>,
-    /// <p>The ISO8601 DateTime of the earliest property value to return.</p> 
+    /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<std::string::String>,
-    /// <p>The ISO8601 DateTime of the latest property value to return.</p> 
+    /// <p>The ISO8601 DateTime of the latest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<std::string::String>,
 }
 impl GetPropertyValueHistoryInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> std::option::Option<& str> {
+    pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<& str> {
+    pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(&self) -> std::option::Option<& str> {
+    pub fn component_type_id(&self) -> std::option::Option<&str> {
         self.component_type_id.as_deref()
     }
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn selected_properties(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn selected_properties(&self) -> std::option::Option<&[std::string::String]> {
         self.selected_properties.as_deref()
     }
     /// <p>A list of objects that filter the property value history request.</p>
-    pub fn property_filters(&self) -> std::option::Option<& [crate::types::PropertyFilter]> {
+    pub fn property_filters(&self) -> std::option::Option<&[crate::types::PropertyFilter]> {
         self.property_filters.as_deref()
     }
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
-    pub fn start_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+    )]
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
-    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+    )]
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
-    pub fn interpolation(&self) -> std::option::Option<& crate::types::InterpolationParameters> {
+    pub fn interpolation(&self) -> std::option::Option<&crate::types::InterpolationParameters> {
         self.interpolation.as_ref()
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The time direction to use in the result order.</p>
-    pub fn order_by_time(&self) -> std::option::Option<& crate::types::OrderByTime> {
+    pub fn order_by_time(&self) -> std::option::Option<&crate::types::OrderByTime> {
         self.order_by_time.as_ref()
     }
-    /// <p>The ISO8601 DateTime of the earliest property value to return.</p> 
+    /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
-    pub fn start_time(&self) -> std::option::Option<& str> {
+    pub fn start_time(&self) -> std::option::Option<&str> {
         self.start_time.as_deref()
     }
-    /// <p>The ISO8601 DateTime of the latest property value to return.</p> 
+    /// <p>The ISO8601 DateTime of the latest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
-    pub fn end_time(&self) -> std::option::Option<& str> {
+    pub fn end_time(&self) -> std::option::Option<&str> {
         self.end_time.as_deref()
     }
 }
 impl GetPropertyValueHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetPropertyValueHistoryInput`](crate::operation::get_property_value_history::GetPropertyValueHistoryInput).
-    pub fn builder() -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder
+    {
         crate::operation::get_property_value_history::builders::GetPropertyValueHistoryInputBuilder::default()
     }
 }
@@ -148,7 +158,8 @@ impl GetPropertyValueHistoryInputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// <p>The ID of the entity.</p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,7 +168,8 @@ impl GetPropertyValueHistoryInputBuilder {
     }
     /// <p>The ID of the entity.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input; self
+        self.entity_id = input;
+        self
     }
     /// <p>The name of the component.</p>
     pub fn component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,7 +178,8 @@ impl GetPropertyValueHistoryInputBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input; self
+        self.component_name = input;
+        self
     }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,8 +187,12 @@ impl GetPropertyValueHistoryInputBuilder {
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn set_component_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_type_id = input; self
+    pub fn set_component_type_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.component_type_id = input;
+        self
     }
     /// Appends an item to `selected_properties`.
     ///
@@ -184,13 +201,17 @@ impl GetPropertyValueHistoryInputBuilder {
     /// <p>A list of properties whose value histories the request retrieves.</p>
     pub fn selected_properties(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.selected_properties.unwrap_or_default();
-                        v.push(input.into());
-                        self.selected_properties = Some(v);
-                        self
+        v.push(input.into());
+        self.selected_properties = Some(v);
+        self
     }
     /// <p>A list of properties whose value histories the request retrieves.</p>
-    pub fn set_selected_properties(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.selected_properties = input; self
+    pub fn set_selected_properties(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.selected_properties = input;
+        self
     }
     /// Appends an item to `property_filters`.
     ///
@@ -199,35 +220,55 @@ impl GetPropertyValueHistoryInputBuilder {
     /// <p>A list of objects that filter the property value history request.</p>
     pub fn property_filters(mut self, input: crate::types::PropertyFilter) -> Self {
         let mut v = self.property_filters.unwrap_or_default();
-                        v.push(input);
-                        self.property_filters = Some(v);
-                        self
+        v.push(input);
+        self.property_filters = Some(v);
+        self
     }
     /// <p>A list of objects that filter the property value history request.</p>
-    pub fn set_property_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::PropertyFilter>>) -> Self {
-        self.property_filters = input; self
+    pub fn set_property_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PropertyFilter>>,
+    ) -> Self {
+        self.property_filters = input;
+        self
     }
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+    )]
     pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.start_date_time = Some(input);
         self
     }
     /// <p>The date and time of the earliest property value to return.</p>
-    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use startTime instead.")]
-    pub fn set_start_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_date_time = input; self
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use startTime instead."
+    )]
+    pub fn set_start_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_date_time = input;
+        self
     }
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+    )]
     pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.end_date_time = Some(input);
         self
     }
     /// <p>The date and time of the latest property value to return.</p>
-    #[deprecated(note = "This field is deprecated and will throw an error in the future. Use endTime instead.")]
-    pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_date_time = input; self
+    #[deprecated(
+        note = "This field is deprecated and will throw an error in the future. Use endTime instead."
+    )]
+    pub fn set_end_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.end_date_time = input;
+        self
     }
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
     pub fn interpolation(mut self, input: crate::types::InterpolationParameters) -> Self {
@@ -235,8 +276,12 @@ impl GetPropertyValueHistoryInputBuilder {
         self
     }
     /// <p>An object that specifies the interpolation type and the interval over which to interpolate data.</p>
-    pub fn set_interpolation(mut self, input: std::option::Option<crate::types::InterpolationParameters>) -> Self {
-        self.interpolation = input; self
+    pub fn set_interpolation(
+        mut self,
+        input: std::option::Option<crate::types::InterpolationParameters>,
+    ) -> Self {
+        self.interpolation = input;
+        self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,18 +290,20 @@ impl GetPropertyValueHistoryInputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of results to return at one time. The default is 25.</p> 
+    /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The time direction to use in the result order.</p>
     pub fn order_by_time(mut self, input: crate::types::OrderByTime) -> Self {
@@ -264,65 +311,61 @@ impl GetPropertyValueHistoryInputBuilder {
         self
     }
     /// <p>The time direction to use in the result order.</p>
-    pub fn set_order_by_time(mut self, input: std::option::Option<crate::types::OrderByTime>) -> Self {
-        self.order_by_time = input; self
+    pub fn set_order_by_time(
+        mut self,
+        input: std::option::Option<crate::types::OrderByTime>,
+    ) -> Self {
+        self.order_by_time = input;
+        self
     }
-    /// <p>The ISO8601 DateTime of the earliest property value to return.</p> 
+    /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
     pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
         self.start_time = Some(input.into());
         self
     }
-    /// <p>The ISO8601 DateTime of the earliest property value to return.</p> 
+    /// <p>The ISO8601 DateTime of the earliest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
     pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_time = input; self
+        self.start_time = input;
+        self
     }
-    /// <p>The ISO8601 DateTime of the latest property value to return.</p> 
+    /// <p>The ISO8601 DateTime of the latest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
     pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
         self.end_time = Some(input.into());
         self
     }
-    /// <p>The ISO8601 DateTime of the latest property value to return.</p> 
+    /// <p>The ISO8601 DateTime of the latest property value to return.</p>
     /// <p>For more information about the ISO8601 DateTime format, see the data type <a href="https://docs.aws.amazon.com/iot-twinmaker/latest/apireference/API_PropertyValue.html">PropertyValue</a>.</p>
     pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetPropertyValueHistoryInput`](crate::operation::get_property_value_history::GetPropertyValueHistoryInput).
-    pub fn build(self) -> Result<crate::operation::get_property_value_history::GetPropertyValueHistoryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_property_value_history::GetPropertyValueHistoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_property_value_history::GetPropertyValueHistoryInput {
-                workspace_id: self.workspace_id
-                ,
-                entity_id: self.entity_id
-                ,
-                component_name: self.component_name
-                ,
-                component_type_id: self.component_type_id
-                ,
-                selected_properties: self.selected_properties
-                ,
-                property_filters: self.property_filters
-                ,
-                start_date_time: self.start_date_time
-                ,
-                end_date_time: self.end_date_time
-                ,
-                interpolation: self.interpolation
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                order_by_time: self.order_by_time
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-            }
+                workspace_id: self.workspace_id,
+                entity_id: self.entity_id,
+                component_name: self.component_name,
+                component_type_id: self.component_type_id,
+                selected_properties: self.selected_properties,
+                property_filters: self.property_filters,
+                start_date_time: self.start_date_time,
+                end_date_time: self.end_date_time,
+                interpolation: self.interpolation,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                order_by_time: self.order_by_time,
+                start_time: self.start_time,
+                end_time: self.end_time,
+            },
         )
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let additionalartifact = unimplemented!();
 /// match additionalartifact {
@@ -31,14 +31,22 @@
 /// Specifically, when `additionalartifact` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AdditionalArtifact::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The types of manifest that you want AWS to create for this report.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AdditionalArtifact {
     #[allow(missing_docs)] // documentation missing in model
     Athena,
@@ -47,43 +55,44 @@ pub enum AdditionalArtifact {
     #[allow(missing_docs)] // documentation missing in model
     Redshift,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AdditionalArtifact {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ATHENA" => AdditionalArtifact::Athena,
-"QUICKSIGHT" => AdditionalArtifact::Quicksight,
-"REDSHIFT" => AdditionalArtifact::Redshift,
-other => AdditionalArtifact::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for AdditionalArtifact {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AdditionalArtifact::from(s))
-                }
-            }
-impl AdditionalArtifact {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AdditionalArtifact::Athena => "ATHENA",
-    AdditionalArtifact::Quicksight => "QUICKSIGHT",
-    AdditionalArtifact::Redshift => "REDSHIFT",
-    AdditionalArtifact::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ATHENA" => AdditionalArtifact::Athena,
+            "QUICKSIGHT" => AdditionalArtifact::Quicksight,
+            "REDSHIFT" => AdditionalArtifact::Redshift,
+            other => AdditionalArtifact::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ATHENA", "QUICKSIGHT", "REDSHIFT"]
-                }
-            }
-impl AsRef<str> for AdditionalArtifact {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AdditionalArtifact {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AdditionalArtifact::from(s))
+    }
+}
+impl AdditionalArtifact {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AdditionalArtifact::Athena => "ATHENA",
+            AdditionalArtifact::Quicksight => "QUICKSIGHT",
+            AdditionalArtifact::Redshift => "REDSHIFT",
+            AdditionalArtifact::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ATHENA", "QUICKSIGHT", "REDSHIFT"]
+    }
+}
+impl AsRef<str> for AdditionalArtifact {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

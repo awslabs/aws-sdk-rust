@@ -4,50 +4,70 @@ pub use crate::operation::modify_fpga_image_attribute::_modify_fpga_image_attrib
 pub use crate::operation::modify_fpga_image_attribute::_modify_fpga_image_attribute_input::ModifyFpgaImageAttributeInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyFpgaImageAttribute`.
-/// 
+///
 /// <p>Modifies the specified attribute of the specified Amazon FPGA Image (AFI).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyFpgaImageAttributeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::modify_fpga_image_attribute::builders::ModifyFpgaImageAttributeInputBuilder,
 }
-impl ModifyFpgaImageAttributeFluentBuilder  {
+impl ModifyFpgaImageAttributeFluentBuilder {
     /// Creates a new `ModifyFpgaImageAttribute`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttribute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput, aws_smithy_http::result::SdkError<crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttribute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -74,7 +94,10 @@ impl ModifyFpgaImageAttributeFluentBuilder  {
         self
     }
     /// <p>The name of the attribute.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<crate::types::FpgaImageAttributeName>) -> Self {
+    pub fn set_attribute(
+        mut self,
+        input: std::option::Option<crate::types::FpgaImageAttributeName>,
+    ) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
@@ -84,7 +107,10 @@ impl ModifyFpgaImageAttributeFluentBuilder  {
         self
     }
     /// <p>The operation type.</p>
-    pub fn set_operation_type(mut self, input: std::option::Option<crate::types::OperationType>) -> Self {
+    pub fn set_operation_type(
+        mut self,
+        input: std::option::Option<crate::types::OperationType>,
+    ) -> Self {
         self.inner = self.inner.set_operation_type(input);
         self
     }
@@ -98,7 +124,10 @@ impl ModifyFpgaImageAttributeFluentBuilder  {
         self
     }
     /// <p>The Amazon Web Services account IDs. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
-    pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_user_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_user_ids(input);
         self
     }
@@ -112,7 +141,10 @@ impl ModifyFpgaImageAttributeFluentBuilder  {
         self
     }
     /// <p>The user groups. This parameter is valid only when modifying the <code>loadPermission</code> attribute.</p>
-    pub fn set_user_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_user_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_user_groups(input);
         self
     }
@@ -126,7 +158,10 @@ impl ModifyFpgaImageAttributeFluentBuilder  {
         self
     }
     /// <p>The product codes. After you add a product code to an AFI, it can't be removed. This parameter is valid only when modifying the <code>productCodes</code> attribute.</p>
-    pub fn set_product_codes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_product_codes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_product_codes(input);
         self
     }
@@ -136,7 +171,10 @@ impl ModifyFpgaImageAttributeFluentBuilder  {
         self
     }
     /// <p>The load permission for the AFI.</p>
-    pub fn set_load_permission(mut self, input: std::option::Option<crate::types::LoadPermissionModifications>) -> Self {
+    pub fn set_load_permission(
+        mut self,
+        input: std::option::Option<crate::types::LoadPermissionModifications>,
+    ) -> Self {
         self.inner = self.inner.set_load_permission(input);
         self
     }
@@ -161,4 +199,3 @@ impl ModifyFpgaImageAttributeFluentBuilder  {
         self
     }
 }
-

@@ -3,21 +3,26 @@
 /// <p>Formatting configuration for string fields.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StringFormatConfiguration  {
+pub struct StringFormatConfiguration {
     /// <p>The options that determine the null value format configuration.</p>
     #[doc(hidden)]
-    pub null_value_format_configuration: std::option::Option<crate::types::NullValueFormatConfiguration>,
+    pub null_value_format_configuration:
+        std::option::Option<crate::types::NullValueFormatConfiguration>,
     /// <p>The formatting configuration for numeric strings.</p>
     #[doc(hidden)]
     pub numeric_format_configuration: std::option::Option<crate::types::NumericFormatConfiguration>,
 }
 impl StringFormatConfiguration {
     /// <p>The options that determine the null value format configuration.</p>
-    pub fn null_value_format_configuration(&self) -> std::option::Option<& crate::types::NullValueFormatConfiguration> {
+    pub fn null_value_format_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::NullValueFormatConfiguration> {
         self.null_value_format_configuration.as_ref()
     }
     /// <p>The formatting configuration for numeric strings.</p>
-    pub fn numeric_format_configuration(&self) -> std::option::Option<& crate::types::NumericFormatConfiguration> {
+    pub fn numeric_format_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::NumericFormatConfiguration> {
         self.numeric_format_configuration.as_ref()
     }
 }
@@ -32,36 +37,49 @@ impl StringFormatConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct StringFormatConfigurationBuilder {
-    pub(crate) null_value_format_configuration: std::option::Option<crate::types::NullValueFormatConfiguration>,
-    pub(crate) numeric_format_configuration: std::option::Option<crate::types::NumericFormatConfiguration>,
+    pub(crate) null_value_format_configuration:
+        std::option::Option<crate::types::NullValueFormatConfiguration>,
+    pub(crate) numeric_format_configuration:
+        std::option::Option<crate::types::NumericFormatConfiguration>,
 }
 impl StringFormatConfigurationBuilder {
     /// <p>The options that determine the null value format configuration.</p>
-    pub fn null_value_format_configuration(mut self, input: crate::types::NullValueFormatConfiguration) -> Self {
+    pub fn null_value_format_configuration(
+        mut self,
+        input: crate::types::NullValueFormatConfiguration,
+    ) -> Self {
         self.null_value_format_configuration = Some(input);
         self
     }
     /// <p>The options that determine the null value format configuration.</p>
-    pub fn set_null_value_format_configuration(mut self, input: std::option::Option<crate::types::NullValueFormatConfiguration>) -> Self {
-        self.null_value_format_configuration = input; self
+    pub fn set_null_value_format_configuration(
+        mut self,
+        input: std::option::Option<crate::types::NullValueFormatConfiguration>,
+    ) -> Self {
+        self.null_value_format_configuration = input;
+        self
     }
     /// <p>The formatting configuration for numeric strings.</p>
-    pub fn numeric_format_configuration(mut self, input: crate::types::NumericFormatConfiguration) -> Self {
+    pub fn numeric_format_configuration(
+        mut self,
+        input: crate::types::NumericFormatConfiguration,
+    ) -> Self {
         self.numeric_format_configuration = Some(input);
         self
     }
     /// <p>The formatting configuration for numeric strings.</p>
-    pub fn set_numeric_format_configuration(mut self, input: std::option::Option<crate::types::NumericFormatConfiguration>) -> Self {
-        self.numeric_format_configuration = input; self
+    pub fn set_numeric_format_configuration(
+        mut self,
+        input: std::option::Option<crate::types::NumericFormatConfiguration>,
+    ) -> Self {
+        self.numeric_format_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`StringFormatConfiguration`](crate::types::StringFormatConfiguration).
     pub fn build(self) -> crate::types::StringFormatConfiguration {
         crate::types::StringFormatConfiguration {
-            null_value_format_configuration: self.null_value_format_configuration
-            ,
-            numeric_format_configuration: self.numeric_format_configuration
-            ,
+            null_value_format_configuration: self.null_value_format_configuration,
+            numeric_format_configuration: self.numeric_format_configuration,
         }
     }
 }
-

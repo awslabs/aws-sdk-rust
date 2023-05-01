@@ -3,7 +3,7 @@
 /// <p>Describes a Client VPN endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClientVpnEndpoint  {
+pub struct ClientVpnEndpoint {
     /// <p>The ID of the Client VPN endpoint.</p>
     #[doc(hidden)]
     pub client_vpn_endpoint_id: std::option::Option<std::string::String>,
@@ -28,7 +28,7 @@ pub struct ClientVpnEndpoint  {
     /// <p>Information about the DNS servers to be used for DNS resolution. </p>
     #[doc(hidden)]
     pub dns_servers: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p> 
+    /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
     #[doc(hidden)]
     pub split_tunnel: std::option::Option<bool>,
@@ -42,15 +42,19 @@ pub struct ClientVpnEndpoint  {
     #[doc(hidden)]
     pub vpn_port: std::option::Option<i32>,
     /// <p>Information about the associated target networks. A target network is a subnet in a VPC.</p>
-    #[deprecated(note = "This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element.")]
+    #[deprecated(
+        note = "This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element."
+    )]
     #[doc(hidden)]
-    pub associated_target_networks: std::option::Option<std::vec::Vec<crate::types::AssociatedTargetNetwork>>,
+    pub associated_target_networks:
+        std::option::Option<std::vec::Vec<crate::types::AssociatedTargetNetwork>>,
     /// <p>The ARN of the server certificate.</p>
     #[doc(hidden)]
     pub server_certificate_arn: std::option::Option<std::string::String>,
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
     #[doc(hidden)]
-    pub authentication_options: std::option::Option<std::vec::Vec<crate::types::ClientVpnAuthentication>>,
+    pub authentication_options:
+        std::option::Option<std::vec::Vec<crate::types::ClientVpnAuthentication>>,
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
     #[doc(hidden)]
     pub connection_log_options: std::option::Option<crate::types::ConnectionLogResponseOptions>,
@@ -69,59 +73,60 @@ pub struct ClientVpnEndpoint  {
     /// <p>The options for managing connection authorization for new client connections.</p>
     #[doc(hidden)]
     pub client_connect_options: std::option::Option<crate::types::ClientConnectResponseOptions>,
-    /// <p>The maximum VPN session duration time in hours.</p> 
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p> 
+    /// <p>The maximum VPN session duration time in hours.</p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
     /// <p>Default value: <code>24</code> </p>
     #[doc(hidden)]
     pub session_timeout_hours: std::option::Option<i32>,
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
     #[doc(hidden)]
-    pub client_login_banner_options: std::option::Option<crate::types::ClientLoginBannerResponseOptions>,
+    pub client_login_banner_options:
+        std::option::Option<crate::types::ClientLoginBannerResponseOptions>,
 }
 impl ClientVpnEndpoint {
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn client_vpn_endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn client_vpn_endpoint_id(&self) -> std::option::Option<&str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>A brief description of the endpoint.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The current state of the Client VPN endpoint.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ClientVpnEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ClientVpnEndpointStatus> {
         self.status.as_ref()
     }
     /// <p>The date and time the Client VPN endpoint was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& str> {
+    pub fn creation_time(&self) -> std::option::Option<&str> {
         self.creation_time.as_deref()
     }
     /// <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
-    pub fn deletion_time(&self) -> std::option::Option<& str> {
+    pub fn deletion_time(&self) -> std::option::Option<&str> {
         self.deletion_time.as_deref()
     }
     /// <p>The DNS name to be used by clients when connecting to the Client VPN endpoint.</p>
-    pub fn dns_name(&self) -> std::option::Option<& str> {
+    pub fn dns_name(&self) -> std::option::Option<&str> {
         self.dns_name.as_deref()
     }
     /// <p>The IPv4 address range, in CIDR notation, from which client IP addresses are assigned.</p>
-    pub fn client_cidr_block(&self) -> std::option::Option<& str> {
+    pub fn client_cidr_block(&self) -> std::option::Option<&str> {
         self.client_cidr_block.as_deref()
     }
     /// <p>Information about the DNS servers to be used for DNS resolution. </p>
-    pub fn dns_servers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn dns_servers(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_servers.as_deref()
     }
-    /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p> 
+    /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
     pub fn split_tunnel(&self) -> std::option::Option<bool> {
         self.split_tunnel
     }
     /// <p>The protocol used by the VPN session.</p>
-    pub fn vpn_protocol(&self) -> std::option::Option<& crate::types::VpnProtocol> {
+    pub fn vpn_protocol(&self) -> std::option::Option<&crate::types::VpnProtocol> {
         self.vpn_protocol.as_ref()
     }
     /// <p>The transport protocol used by the Client VPN endpoint.</p>
-    pub fn transport_protocol(&self) -> std::option::Option<& crate::types::TransportProtocol> {
+    pub fn transport_protocol(&self) -> std::option::Option<&crate::types::TransportProtocol> {
         self.transport_protocol.as_ref()
     }
     /// <p>The port number for the Client VPN endpoint.</p>
@@ -129,50 +134,62 @@ impl ClientVpnEndpoint {
         self.vpn_port
     }
     /// <p>Information about the associated target networks. A target network is a subnet in a VPC.</p>
-    #[deprecated(note = "This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element.")]
-    pub fn associated_target_networks(&self) -> std::option::Option<& [crate::types::AssociatedTargetNetwork]> {
+    #[deprecated(
+        note = "This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element."
+    )]
+    pub fn associated_target_networks(
+        &self,
+    ) -> std::option::Option<&[crate::types::AssociatedTargetNetwork]> {
         self.associated_target_networks.as_deref()
     }
     /// <p>The ARN of the server certificate.</p>
-    pub fn server_certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn server_certificate_arn(&self) -> std::option::Option<&str> {
         self.server_certificate_arn.as_deref()
     }
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
-    pub fn authentication_options(&self) -> std::option::Option<& [crate::types::ClientVpnAuthentication]> {
+    pub fn authentication_options(
+        &self,
+    ) -> std::option::Option<&[crate::types::ClientVpnAuthentication]> {
         self.authentication_options.as_deref()
     }
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
-    pub fn connection_log_options(&self) -> std::option::Option<& crate::types::ConnectionLogResponseOptions> {
+    pub fn connection_log_options(
+        &self,
+    ) -> std::option::Option<&crate::types::ConnectionLogResponseOptions> {
         self.connection_log_options.as_ref()
     }
     /// <p>Any tags assigned to the Client VPN endpoint.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The IDs of the security groups for the target network.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The URL of the self-service portal.</p>
-    pub fn self_service_portal_url(&self) -> std::option::Option<& str> {
+    pub fn self_service_portal_url(&self) -> std::option::Option<&str> {
         self.self_service_portal_url.as_deref()
     }
     /// <p>The options for managing connection authorization for new client connections.</p>
-    pub fn client_connect_options(&self) -> std::option::Option<& crate::types::ClientConnectResponseOptions> {
+    pub fn client_connect_options(
+        &self,
+    ) -> std::option::Option<&crate::types::ClientConnectResponseOptions> {
         self.client_connect_options.as_ref()
     }
-    /// <p>The maximum VPN session duration time in hours.</p> 
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p> 
+    /// <p>The maximum VPN session duration time in hours.</p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
     /// <p>Default value: <code>24</code> </p>
     pub fn session_timeout_hours(&self) -> std::option::Option<i32> {
         self.session_timeout_hours
     }
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
-    pub fn client_login_banner_options(&self) -> std::option::Option<& crate::types::ClientLoginBannerResponseOptions> {
+    pub fn client_login_banner_options(
+        &self,
+    ) -> std::option::Option<&crate::types::ClientLoginBannerResponseOptions> {
         self.client_login_banner_options.as_ref()
     }
 }
@@ -199,17 +216,22 @@ pub struct ClientVpnEndpointBuilder {
     pub(crate) vpn_protocol: std::option::Option<crate::types::VpnProtocol>,
     pub(crate) transport_protocol: std::option::Option<crate::types::TransportProtocol>,
     pub(crate) vpn_port: std::option::Option<i32>,
-    pub(crate) associated_target_networks: std::option::Option<std::vec::Vec<crate::types::AssociatedTargetNetwork>>,
+    pub(crate) associated_target_networks:
+        std::option::Option<std::vec::Vec<crate::types::AssociatedTargetNetwork>>,
     pub(crate) server_certificate_arn: std::option::Option<std::string::String>,
-    pub(crate) authentication_options: std::option::Option<std::vec::Vec<crate::types::ClientVpnAuthentication>>,
-    pub(crate) connection_log_options: std::option::Option<crate::types::ConnectionLogResponseOptions>,
+    pub(crate) authentication_options:
+        std::option::Option<std::vec::Vec<crate::types::ClientVpnAuthentication>>,
+    pub(crate) connection_log_options:
+        std::option::Option<crate::types::ConnectionLogResponseOptions>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) vpc_id: std::option::Option<std::string::String>,
     pub(crate) self_service_portal_url: std::option::Option<std::string::String>,
-    pub(crate) client_connect_options: std::option::Option<crate::types::ClientConnectResponseOptions>,
+    pub(crate) client_connect_options:
+        std::option::Option<crate::types::ClientConnectResponseOptions>,
     pub(crate) session_timeout_hours: std::option::Option<i32>,
-    pub(crate) client_login_banner_options: std::option::Option<crate::types::ClientLoginBannerResponseOptions>,
+    pub(crate) client_login_banner_options:
+        std::option::Option<crate::types::ClientLoginBannerResponseOptions>,
 }
 impl ClientVpnEndpointBuilder {
     /// <p>The ID of the Client VPN endpoint.</p>
@@ -218,8 +240,12 @@ impl ClientVpnEndpointBuilder {
         self
     }
     /// <p>The ID of the Client VPN endpoint.</p>
-    pub fn set_client_vpn_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = input; self
+    pub fn set_client_vpn_endpoint_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_vpn_endpoint_id = input;
+        self
     }
     /// <p>A brief description of the endpoint.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,7 +254,8 @@ impl ClientVpnEndpointBuilder {
     }
     /// <p>A brief description of the endpoint.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The current state of the Client VPN endpoint.</p>
     pub fn status(mut self, input: crate::types::ClientVpnEndpointStatus) -> Self {
@@ -236,8 +263,12 @@ impl ClientVpnEndpointBuilder {
         self
     }
     /// <p>The current state of the Client VPN endpoint.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ClientVpnEndpointStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ClientVpnEndpointStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The date and time the Client VPN endpoint was created.</p>
     pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -246,7 +277,8 @@ impl ClientVpnEndpointBuilder {
     }
     /// <p>The date and time the Client VPN endpoint was created.</p>
     pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creation_time = input; self
+        self.creation_time = input;
+        self
     }
     /// <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
     pub fn deletion_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -255,7 +287,8 @@ impl ClientVpnEndpointBuilder {
     }
     /// <p>The date and time the Client VPN endpoint was deleted, if applicable.</p>
     pub fn set_deletion_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deletion_time = input; self
+        self.deletion_time = input;
+        self
     }
     /// <p>The DNS name to be used by clients when connecting to the Client VPN endpoint.</p>
     pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -264,7 +297,8 @@ impl ClientVpnEndpointBuilder {
     }
     /// <p>The DNS name to be used by clients when connecting to the Client VPN endpoint.</p>
     pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dns_name = input; self
+        self.dns_name = input;
+        self
     }
     /// <p>The IPv4 address range, in CIDR notation, from which client IP addresses are assigned.</p>
     pub fn client_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
@@ -272,8 +306,12 @@ impl ClientVpnEndpointBuilder {
         self
     }
     /// <p>The IPv4 address range, in CIDR notation, from which client IP addresses are assigned.</p>
-    pub fn set_client_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_cidr_block = input; self
+    pub fn set_client_cidr_block(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_cidr_block = input;
+        self
     }
     /// Appends an item to `dns_servers`.
     ///
@@ -282,24 +320,29 @@ impl ClientVpnEndpointBuilder {
     /// <p>Information about the DNS servers to be used for DNS resolution. </p>
     pub fn dns_servers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dns_servers.unwrap_or_default();
-                        v.push(input.into());
-                        self.dns_servers = Some(v);
-                        self
+        v.push(input.into());
+        self.dns_servers = Some(v);
+        self
     }
     /// <p>Information about the DNS servers to be used for DNS resolution. </p>
-    pub fn set_dns_servers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.dns_servers = input; self
+    pub fn set_dns_servers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.dns_servers = input;
+        self
     }
-    /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p> 
+    /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
     pub fn split_tunnel(mut self, input: bool) -> Self {
         self.split_tunnel = Some(input);
         self
     }
-    /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p> 
+    /// <p>Indicates whether split-tunnel is enabled in the Client VPN endpoint.</p>
     /// <p>For information about split-tunnel VPN endpoints, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/split-tunnel-vpn.html">Split-Tunnel Client VPN endpoint</a> in the <i>Client VPN Administrator Guide</i>.</p>
     pub fn set_split_tunnel(mut self, input: std::option::Option<bool>) -> Self {
-        self.split_tunnel = input; self
+        self.split_tunnel = input;
+        self
     }
     /// <p>The protocol used by the VPN session.</p>
     pub fn vpn_protocol(mut self, input: crate::types::VpnProtocol) -> Self {
@@ -307,8 +350,12 @@ impl ClientVpnEndpointBuilder {
         self
     }
     /// <p>The protocol used by the VPN session.</p>
-    pub fn set_vpn_protocol(mut self, input: std::option::Option<crate::types::VpnProtocol>) -> Self {
-        self.vpn_protocol = input; self
+    pub fn set_vpn_protocol(
+        mut self,
+        input: std::option::Option<crate::types::VpnProtocol>,
+    ) -> Self {
+        self.vpn_protocol = input;
+        self
     }
     /// <p>The transport protocol used by the Client VPN endpoint.</p>
     pub fn transport_protocol(mut self, input: crate::types::TransportProtocol) -> Self {
@@ -316,8 +363,12 @@ impl ClientVpnEndpointBuilder {
         self
     }
     /// <p>The transport protocol used by the Client VPN endpoint.</p>
-    pub fn set_transport_protocol(mut self, input: std::option::Option<crate::types::TransportProtocol>) -> Self {
-        self.transport_protocol = input; self
+    pub fn set_transport_protocol(
+        mut self,
+        input: std::option::Option<crate::types::TransportProtocol>,
+    ) -> Self {
+        self.transport_protocol = input;
+        self
     }
     /// <p>The port number for the Client VPN endpoint.</p>
     pub fn vpn_port(mut self, input: i32) -> Self {
@@ -326,24 +377,36 @@ impl ClientVpnEndpointBuilder {
     }
     /// <p>The port number for the Client VPN endpoint.</p>
     pub fn set_vpn_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.vpn_port = input; self
+        self.vpn_port = input;
+        self
     }
     /// Appends an item to `associated_target_networks`.
     ///
     /// To override the contents of this collection use [`set_associated_target_networks`](Self::set_associated_target_networks).
     ///
     /// <p>Information about the associated target networks. A target network is a subnet in a VPC.</p>
-    #[deprecated(note = "This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element.")]
-    pub fn associated_target_networks(mut self, input: crate::types::AssociatedTargetNetwork) -> Self {
+    #[deprecated(
+        note = "This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element."
+    )]
+    pub fn associated_target_networks(
+        mut self,
+        input: crate::types::AssociatedTargetNetwork,
+    ) -> Self {
         let mut v = self.associated_target_networks.unwrap_or_default();
-                        v.push(input);
-                        self.associated_target_networks = Some(v);
-                        self
+        v.push(input);
+        self.associated_target_networks = Some(v);
+        self
     }
     /// <p>Information about the associated target networks. A target network is a subnet in a VPC.</p>
-    #[deprecated(note = "This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element.")]
-    pub fn set_associated_target_networks(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssociatedTargetNetwork>>) -> Self {
-        self.associated_target_networks = input; self
+    #[deprecated(
+        note = "This property is deprecated. To view the target networks associated with a Client VPN endpoint, call DescribeClientVpnTargetNetworks and inspect the clientVpnTargetNetworks response element."
+    )]
+    pub fn set_associated_target_networks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AssociatedTargetNetwork>>,
+    ) -> Self {
+        self.associated_target_networks = input;
+        self
     }
     /// <p>The ARN of the server certificate.</p>
     pub fn server_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -351,8 +414,12 @@ impl ClientVpnEndpointBuilder {
         self
     }
     /// <p>The ARN of the server certificate.</p>
-    pub fn set_server_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_certificate_arn = input; self
+    pub fn set_server_certificate_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.server_certificate_arn = input;
+        self
     }
     /// Appends an item to `authentication_options`.
     ///
@@ -361,22 +428,33 @@ impl ClientVpnEndpointBuilder {
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
     pub fn authentication_options(mut self, input: crate::types::ClientVpnAuthentication) -> Self {
         let mut v = self.authentication_options.unwrap_or_default();
-                        v.push(input);
-                        self.authentication_options = Some(v);
-                        self
+        v.push(input);
+        self.authentication_options = Some(v);
+        self
     }
     /// <p>Information about the authentication method used by the Client VPN endpoint.</p>
-    pub fn set_authentication_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClientVpnAuthentication>>) -> Self {
-        self.authentication_options = input; self
+    pub fn set_authentication_options(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ClientVpnAuthentication>>,
+    ) -> Self {
+        self.authentication_options = input;
+        self
     }
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
-    pub fn connection_log_options(mut self, input: crate::types::ConnectionLogResponseOptions) -> Self {
+    pub fn connection_log_options(
+        mut self,
+        input: crate::types::ConnectionLogResponseOptions,
+    ) -> Self {
         self.connection_log_options = Some(input);
         self
     }
     /// <p>Information about the client connection logging options for the Client VPN endpoint.</p>
-    pub fn set_connection_log_options(mut self, input: std::option::Option<crate::types::ConnectionLogResponseOptions>) -> Self {
-        self.connection_log_options = input; self
+    pub fn set_connection_log_options(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionLogResponseOptions>,
+    ) -> Self {
+        self.connection_log_options = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -385,13 +463,17 @@ impl ClientVpnEndpointBuilder {
     /// <p>Any tags assigned to the Client VPN endpoint.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Any tags assigned to the Client VPN endpoint.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -400,13 +482,17 @@ impl ClientVpnEndpointBuilder {
     /// <p>The IDs of the security groups for the target network.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_ids = Some(v);
+        self
     }
     /// <p>The IDs of the security groups for the target network.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_ids = input; self
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_ids = input;
+        self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -415,7 +501,8 @@ impl ClientVpnEndpointBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// <p>The URL of the self-service portal.</p>
     pub fn self_service_portal_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -423,90 +510,85 @@ impl ClientVpnEndpointBuilder {
         self
     }
     /// <p>The URL of the self-service portal.</p>
-    pub fn set_self_service_portal_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.self_service_portal_url = input; self
+    pub fn set_self_service_portal_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.self_service_portal_url = input;
+        self
     }
     /// <p>The options for managing connection authorization for new client connections.</p>
-    pub fn client_connect_options(mut self, input: crate::types::ClientConnectResponseOptions) -> Self {
+    pub fn client_connect_options(
+        mut self,
+        input: crate::types::ClientConnectResponseOptions,
+    ) -> Self {
         self.client_connect_options = Some(input);
         self
     }
     /// <p>The options for managing connection authorization for new client connections.</p>
-    pub fn set_client_connect_options(mut self, input: std::option::Option<crate::types::ClientConnectResponseOptions>) -> Self {
-        self.client_connect_options = input; self
+    pub fn set_client_connect_options(
+        mut self,
+        input: std::option::Option<crate::types::ClientConnectResponseOptions>,
+    ) -> Self {
+        self.client_connect_options = input;
+        self
     }
-    /// <p>The maximum VPN session duration time in hours.</p> 
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p> 
+    /// <p>The maximum VPN session duration time in hours.</p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
     /// <p>Default value: <code>24</code> </p>
     pub fn session_timeout_hours(mut self, input: i32) -> Self {
         self.session_timeout_hours = Some(input);
         self
     }
-    /// <p>The maximum VPN session duration time in hours.</p> 
-    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p> 
+    /// <p>The maximum VPN session duration time in hours.</p>
+    /// <p>Valid values: <code>8 | 10 | 12 | 24</code> </p>
     /// <p>Default value: <code>24</code> </p>
     pub fn set_session_timeout_hours(mut self, input: std::option::Option<i32>) -> Self {
-        self.session_timeout_hours = input; self
+        self.session_timeout_hours = input;
+        self
     }
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
-    pub fn client_login_banner_options(mut self, input: crate::types::ClientLoginBannerResponseOptions) -> Self {
+    pub fn client_login_banner_options(
+        mut self,
+        input: crate::types::ClientLoginBannerResponseOptions,
+    ) -> Self {
         self.client_login_banner_options = Some(input);
         self
     }
     /// <p>Options for enabling a customizable text banner that will be displayed on Amazon Web Services provided clients when a VPN session is established.</p>
-    pub fn set_client_login_banner_options(mut self, input: std::option::Option<crate::types::ClientLoginBannerResponseOptions>) -> Self {
-        self.client_login_banner_options = input; self
+    pub fn set_client_login_banner_options(
+        mut self,
+        input: std::option::Option<crate::types::ClientLoginBannerResponseOptions>,
+    ) -> Self {
+        self.client_login_banner_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClientVpnEndpoint`](crate::types::ClientVpnEndpoint).
     pub fn build(self) -> crate::types::ClientVpnEndpoint {
         crate::types::ClientVpnEndpoint {
-            client_vpn_endpoint_id: self.client_vpn_endpoint_id
-            ,
-            description: self.description
-            ,
-            status: self.status
-            ,
-            creation_time: self.creation_time
-            ,
-            deletion_time: self.deletion_time
-            ,
-            dns_name: self.dns_name
-            ,
-            client_cidr_block: self.client_cidr_block
-            ,
-            dns_servers: self.dns_servers
-            ,
-            split_tunnel: self.split_tunnel
-            ,
-            vpn_protocol: self.vpn_protocol
-            ,
-            transport_protocol: self.transport_protocol
-            ,
-            vpn_port: self.vpn_port
-            ,
-            associated_target_networks: self.associated_target_networks
-            ,
-            server_certificate_arn: self.server_certificate_arn
-            ,
-            authentication_options: self.authentication_options
-            ,
-            connection_log_options: self.connection_log_options
-            ,
-            tags: self.tags
-            ,
-            security_group_ids: self.security_group_ids
-            ,
-            vpc_id: self.vpc_id
-            ,
-            self_service_portal_url: self.self_service_portal_url
-            ,
-            client_connect_options: self.client_connect_options
-            ,
-            session_timeout_hours: self.session_timeout_hours
-            ,
-            client_login_banner_options: self.client_login_banner_options
-            ,
+            client_vpn_endpoint_id: self.client_vpn_endpoint_id,
+            description: self.description,
+            status: self.status,
+            creation_time: self.creation_time,
+            deletion_time: self.deletion_time,
+            dns_name: self.dns_name,
+            client_cidr_block: self.client_cidr_block,
+            dns_servers: self.dns_servers,
+            split_tunnel: self.split_tunnel,
+            vpn_protocol: self.vpn_protocol,
+            transport_protocol: self.transport_protocol,
+            vpn_port: self.vpn_port,
+            associated_target_networks: self.associated_target_networks,
+            server_certificate_arn: self.server_certificate_arn,
+            authentication_options: self.authentication_options,
+            connection_log_options: self.connection_log_options,
+            tags: self.tags,
+            security_group_ids: self.security_group_ids,
+            vpc_id: self.vpc_id,
+            self_service_portal_url: self.self_service_portal_url,
+            client_connect_options: self.client_connect_options,
+            session_timeout_hours: self.session_timeout_hours,
+            client_login_banner_options: self.client_login_banner_options,
         }
     }
 }
-

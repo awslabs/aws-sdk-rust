@@ -3,7 +3,7 @@
 /// <p>A filter name and value pair that is used to return more specific results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as tags, attributes, or IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter  {
+pub struct Filter {
     /// <p>Name of the filter. Filter names are case-sensitive.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Filter  {
 }
 impl Filter {
     /// <p>Name of the filter. Filter names are case-sensitive.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value of the filter, which is case-sensitive. You can only specify one value for the filter.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl FilterBuilder {
     }
     /// <p>Name of the filter. Filter names are case-sensitive.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -52,22 +53,23 @@ impl FilterBuilder {
     /// <p>The value of the filter, which is case-sensitive. You can only specify one value for the filter.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The value of the filter, which is case-sensitive. You can only specify one value for the filter.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            name: self.name
-            ,
-            values: self.values
-            ,
+            name: self.name,
+            values: self.values,
         }
     }
 }
-

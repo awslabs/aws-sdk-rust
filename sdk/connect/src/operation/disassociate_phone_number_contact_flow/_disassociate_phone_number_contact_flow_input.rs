@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociatePhoneNumberContactFlowInput  {
+pub struct DisassociatePhoneNumberContactFlowInput {
     /// <p>A unique identifier for the phone number.</p>
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociatePhoneNumberContactFlowInput  {
 }
 impl DisassociatePhoneNumberContactFlowInput {
     /// <p>A unique identifier for the phone number.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<& str> {
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
         self.phone_number_id.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
 }
 impl DisassociatePhoneNumberContactFlowInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumberContactFlowInput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput).
-    pub fn builder() -> crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowInputBuilder{
         crate::operation::disassociate_phone_number_contact_flow::builders::DisassociatePhoneNumberContactFlowInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DisassociatePhoneNumberContactFlowInputBuilder {
     }
     /// <p>A unique identifier for the phone number.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_id = input; self
+        self.phone_number_id = input;
+        self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,11 @@ impl DisassociatePhoneNumberContactFlowInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumberContactFlowInput`](crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowInput {
                 phone_number_id: self.phone_number_id
@@ -65,4 +67,3 @@ impl DisassociatePhoneNumberContactFlowInputBuilder {
         )
     }
 }
-

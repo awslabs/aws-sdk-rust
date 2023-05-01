@@ -3,20 +3,20 @@
 /// <p>An Image Builder image. You must specify exactly one recipe for the image – either a container recipe (<code>containerRecipe</code>), which creates a container image, or an image recipe (<code>imageRecipe</code>), which creates an AMI.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Image  {
-    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note> 
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
-    /// <ol> 
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
+pub struct Image {
+    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li> 
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
-    /// </ol> 
+    /// </major></p> </li>
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </ol>
     /// </note>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ pub struct Image  {
     /// <p>The name of the image.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the image.</p> <note> 
+    /// <p>The semantic version of the image.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -38,10 +38,10 @@ pub struct Image  {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -71,7 +71,8 @@ pub struct Image  {
     pub source_pipeline_arn: std::option::Option<std::string::String>,
     /// <p>The infrastructure that Image Builder used to create this image.</p>
     #[doc(hidden)]
-    pub infrastructure_configuration: std::option::Option<crate::types::InfrastructureConfiguration>,
+    pub infrastructure_configuration:
+        std::option::Option<crate::types::InfrastructureConfiguration>,
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
     #[doc(hidden)]
     pub distribution_configuration: std::option::Option<crate::types::DistributionConfiguration>,
@@ -86,12 +87,13 @@ pub struct Image  {
     pub output_resources: std::option::Option<crate::types::OutputResources>,
     /// <p>The tags that apply to this image.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
-    /// <ul> 
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
+    /// <ul>
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub build_type: std::option::Option<crate::types::BuildType>,
@@ -106,32 +108,32 @@ pub struct Image  {
     pub image_scanning_configuration: std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl Image {
-    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note> 
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
-    /// <ol> 
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li> 
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
-    /// </ol> 
+    /// </major></p> </li>
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </ol>
     /// </note>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ImageType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ImageType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the image.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The semantic version of the image.</p> <note> 
+    /// <p>The semantic version of the image.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -143,16 +145,16 @@ impl Image {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The image operating system platform, such as Linux or Windows.</p>
-    pub fn platform(&self) -> std::option::Option<& crate::types::Platform> {
+    pub fn platform(&self) -> std::option::Option<&crate::types::Platform> {
         self.platform.as_ref()
     }
     /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
@@ -160,72 +162,83 @@ impl Image {
         self.enhanced_image_metadata_enabled
     }
     /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
-    pub fn os_version(&self) -> std::option::Option<& str> {
+    pub fn os_version(&self) -> std::option::Option<&str> {
         self.os_version.as_deref()
     }
     /// <p>The state of the image.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ImageState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ImageState> {
         self.state.as_ref()
     }
     /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
-    pub fn image_recipe(&self) -> std::option::Option<& crate::types::ImageRecipe> {
+    pub fn image_recipe(&self) -> std::option::Option<&crate::types::ImageRecipe> {
         self.image_recipe.as_ref()
     }
     /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
-    pub fn container_recipe(&self) -> std::option::Option<& crate::types::ContainerRecipe> {
+    pub fn container_recipe(&self) -> std::option::Option<&crate::types::ContainerRecipe> {
         self.container_recipe.as_ref()
     }
     /// <p>The name of the image pipeline that created this image.</p>
-    pub fn source_pipeline_name(&self) -> std::option::Option<& str> {
+    pub fn source_pipeline_name(&self) -> std::option::Option<&str> {
         self.source_pipeline_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
-    pub fn source_pipeline_arn(&self) -> std::option::Option<& str> {
+    pub fn source_pipeline_arn(&self) -> std::option::Option<&str> {
         self.source_pipeline_arn.as_deref()
     }
     /// <p>The infrastructure that Image Builder used to create this image.</p>
-    pub fn infrastructure_configuration(&self) -> std::option::Option<& crate::types::InfrastructureConfiguration> {
+    pub fn infrastructure_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::InfrastructureConfiguration> {
         self.infrastructure_configuration.as_ref()
     }
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
-    pub fn distribution_configuration(&self) -> std::option::Option<& crate::types::DistributionConfiguration> {
+    pub fn distribution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::DistributionConfiguration> {
         self.distribution_configuration.as_ref()
     }
     /// <p>The image tests that ran when that Image Builder created this image.</p>
-    pub fn image_tests_configuration(&self) -> std::option::Option<& crate::types::ImageTestsConfiguration> {
+    pub fn image_tests_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ImageTestsConfiguration> {
         self.image_tests_configuration.as_ref()
     }
     /// <p>The date on which Image Builder created this image.</p>
-    pub fn date_created(&self) -> std::option::Option<& str> {
+    pub fn date_created(&self) -> std::option::Option<&str> {
         self.date_created.as_deref()
     }
     /// <p>The output resources that Image Builder produces for this image.</p>
-    pub fn output_resources(&self) -> std::option::Option<& crate::types::OutputResources> {
+    pub fn output_resources(&self) -> std::option::Option<&crate::types::OutputResources> {
         self.output_resources.as_ref()
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
-    /// <ul> 
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
+    /// <ul>
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
-    pub fn build_type(&self) -> std::option::Option<& crate::types::BuildType> {
+    pub fn build_type(&self) -> std::option::Option<&crate::types::BuildType> {
         self.build_type.as_ref()
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn image_source(&self) -> std::option::Option<& crate::types::ImageSource> {
+    pub fn image_source(&self) -> std::option::Option<&crate::types::ImageSource> {
         self.image_source.as_ref()
     }
     /// <p>Contains information about the current state of scans for this image.</p>
-    pub fn scan_state(&self) -> std::option::Option<& crate::types::ImageScanState> {
+    pub fn scan_state(&self) -> std::option::Option<&crate::types::ImageScanState> {
         self.scan_state.as_ref()
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn image_scanning_configuration(&self) -> std::option::Option<& crate::types::ImageScanningConfiguration> {
+    pub fn image_scanning_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ImageScanningConfiguration> {
         self.image_scanning_configuration.as_ref()
     }
 }
@@ -252,52 +265,58 @@ pub struct ImageBuilder {
     pub(crate) container_recipe: std::option::Option<crate::types::ContainerRecipe>,
     pub(crate) source_pipeline_name: std::option::Option<std::string::String>,
     pub(crate) source_pipeline_arn: std::option::Option<std::string::String>,
-    pub(crate) infrastructure_configuration: std::option::Option<crate::types::InfrastructureConfiguration>,
-    pub(crate) distribution_configuration: std::option::Option<crate::types::DistributionConfiguration>,
-    pub(crate) image_tests_configuration: std::option::Option<crate::types::ImageTestsConfiguration>,
+    pub(crate) infrastructure_configuration:
+        std::option::Option<crate::types::InfrastructureConfiguration>,
+    pub(crate) distribution_configuration:
+        std::option::Option<crate::types::DistributionConfiguration>,
+    pub(crate) image_tests_configuration:
+        std::option::Option<crate::types::ImageTestsConfiguration>,
     pub(crate) date_created: std::option::Option<std::string::String>,
     pub(crate) output_resources: std::option::Option<crate::types::OutputResources>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) build_type: std::option::Option<crate::types::BuildType>,
     pub(crate) image_source: std::option::Option<crate::types::ImageSource>,
     pub(crate) scan_state: std::option::Option<crate::types::ImageScanState>,
-    pub(crate) image_scanning_configuration: std::option::Option<crate::types::ImageScanningConfiguration>,
+    pub(crate) image_scanning_configuration:
+        std::option::Option<crate::types::ImageScanningConfiguration>,
 }
 impl ImageBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note> 
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
-    /// <ol> 
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li> 
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
-    /// </ol> 
+    /// </major></p> </li>
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </ol>
     /// </note>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note> 
-    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p> 
-    /// <ol> 
-    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the image.</p> <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN), at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li> <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are either left off entirely, or they are specified as wildcards, for example: x.x.x.</p> </li>
     /// <li> <p>Version ARNs have only the first three nodes: <major>
     /// .
     /// <minor>
     /// .
     /// <patch></patch>
     /// </minor>
-    /// </major></p> </li> 
-    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li> 
-    /// </ol> 
+    /// </major></p> </li>
+    /// <li> <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p> </li>
+    /// </ol>
     /// </note>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub fn r#type(mut self, input: crate::types::ImageType) -> Self {
@@ -306,7 +325,8 @@ impl ImageBuilder {
     }
     /// <p>Specifies whether this image produces an AMI or a container image.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ImageType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The name of the image.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -315,9 +335,10 @@ impl ImageBuilder {
     }
     /// <p>The name of the image.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>The semantic version of the image.</p> <note> 
+    /// <p>The semantic version of the image.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -329,16 +350,16 @@ impl ImageBuilder {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
         self.version = Some(input.into());
         self
     }
-    /// <p>The semantic version of the image.</p> <note> 
+    /// <p>The semantic version of the image.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -350,13 +371,14 @@ impl ImageBuilder {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The image operating system platform, such as Linux or Windows.</p>
     pub fn platform(mut self, input: crate::types::Platform) -> Self {
@@ -365,7 +387,8 @@ impl ImageBuilder {
     }
     /// <p>The image operating system platform, such as Linux or Windows.</p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
     pub fn enhanced_image_metadata_enabled(mut self, input: bool) -> Self {
@@ -374,7 +397,8 @@ impl ImageBuilder {
     }
     /// <p>Indicates whether Image Builder collects additional information about the image, such as the operating system (OS) version and package list.</p>
     pub fn set_enhanced_image_metadata_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enhanced_image_metadata_enabled = input; self
+        self.enhanced_image_metadata_enabled = input;
+        self
     }
     /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
     pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -383,7 +407,8 @@ impl ImageBuilder {
     }
     /// <p>The operating system version for instances that launch from this image. For example, Amazon Linux 2, Ubuntu 18, or Microsoft Windows Server 2019.</p>
     pub fn set_os_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.os_version = input; self
+        self.os_version = input;
+        self
     }
     /// <p>The state of the image.</p>
     pub fn state(mut self, input: crate::types::ImageState) -> Self {
@@ -392,7 +417,8 @@ impl ImageBuilder {
     }
     /// <p>The state of the image.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ImageState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
     pub fn image_recipe(mut self, input: crate::types::ImageRecipe) -> Self {
@@ -400,8 +426,12 @@ impl ImageBuilder {
         self
     }
     /// <p>For images that distribute an AMI, this is the image recipe that Image Builder used to create the image. For container images, this is empty.</p>
-    pub fn set_image_recipe(mut self, input: std::option::Option<crate::types::ImageRecipe>) -> Self {
-        self.image_recipe = input; self
+    pub fn set_image_recipe(
+        mut self,
+        input: std::option::Option<crate::types::ImageRecipe>,
+    ) -> Self {
+        self.image_recipe = input;
+        self
     }
     /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
     pub fn container_recipe(mut self, input: crate::types::ContainerRecipe) -> Self {
@@ -409,8 +439,12 @@ impl ImageBuilder {
         self
     }
     /// <p>For container images, this is the container recipe that Image Builder used to create the image. For images that distribute an AMI, this is empty.</p>
-    pub fn set_container_recipe(mut self, input: std::option::Option<crate::types::ContainerRecipe>) -> Self {
-        self.container_recipe = input; self
+    pub fn set_container_recipe(
+        mut self,
+        input: std::option::Option<crate::types::ContainerRecipe>,
+    ) -> Self {
+        self.container_recipe = input;
+        self
     }
     /// <p>The name of the image pipeline that created this image.</p>
     pub fn source_pipeline_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -418,8 +452,12 @@ impl ImageBuilder {
         self
     }
     /// <p>The name of the image pipeline that created this image.</p>
-    pub fn set_source_pipeline_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_pipeline_name = input; self
+    pub fn set_source_pipeline_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_pipeline_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
     pub fn source_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -427,35 +465,60 @@ impl ImageBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that created this image.</p>
-    pub fn set_source_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_pipeline_arn = input; self
+    pub fn set_source_pipeline_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_pipeline_arn = input;
+        self
     }
     /// <p>The infrastructure that Image Builder used to create this image.</p>
-    pub fn infrastructure_configuration(mut self, input: crate::types::InfrastructureConfiguration) -> Self {
+    pub fn infrastructure_configuration(
+        mut self,
+        input: crate::types::InfrastructureConfiguration,
+    ) -> Self {
         self.infrastructure_configuration = Some(input);
         self
     }
     /// <p>The infrastructure that Image Builder used to create this image.</p>
-    pub fn set_infrastructure_configuration(mut self, input: std::option::Option<crate::types::InfrastructureConfiguration>) -> Self {
-        self.infrastructure_configuration = input; self
+    pub fn set_infrastructure_configuration(
+        mut self,
+        input: std::option::Option<crate::types::InfrastructureConfiguration>,
+    ) -> Self {
+        self.infrastructure_configuration = input;
+        self
     }
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
-    pub fn distribution_configuration(mut self, input: crate::types::DistributionConfiguration) -> Self {
+    pub fn distribution_configuration(
+        mut self,
+        input: crate::types::DistributionConfiguration,
+    ) -> Self {
         self.distribution_configuration = Some(input);
         self
     }
     /// <p>The distribution configuration that Image Builder used to create this image.</p>
-    pub fn set_distribution_configuration(mut self, input: std::option::Option<crate::types::DistributionConfiguration>) -> Self {
-        self.distribution_configuration = input; self
+    pub fn set_distribution_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DistributionConfiguration>,
+    ) -> Self {
+        self.distribution_configuration = input;
+        self
     }
     /// <p>The image tests that ran when that Image Builder created this image.</p>
-    pub fn image_tests_configuration(mut self, input: crate::types::ImageTestsConfiguration) -> Self {
+    pub fn image_tests_configuration(
+        mut self,
+        input: crate::types::ImageTestsConfiguration,
+    ) -> Self {
         self.image_tests_configuration = Some(input);
         self
     }
     /// <p>The image tests that ran when that Image Builder created this image.</p>
-    pub fn set_image_tests_configuration(mut self, input: std::option::Option<crate::types::ImageTestsConfiguration>) -> Self {
-        self.image_tests_configuration = input; self
+    pub fn set_image_tests_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ImageTestsConfiguration>,
+    ) -> Self {
+        self.image_tests_configuration = input;
+        self
     }
     /// <p>The date on which Image Builder created this image.</p>
     pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -464,7 +527,8 @@ impl ImageBuilder {
     }
     /// <p>The date on which Image Builder created this image.</p>
     pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.date_created = input; self
+        self.date_created = input;
+        self
     }
     /// <p>The output resources that Image Builder produces for this image.</p>
     pub fn output_resources(mut self, input: crate::types::OutputResources) -> Self {
@@ -472,42 +536,57 @@ impl ImageBuilder {
         self
     }
     /// <p>The output resources that Image Builder produces for this image.</p>
-    pub fn set_output_resources(mut self, input: std::option::Option<crate::types::OutputResources>) -> Self {
-        self.output_resources = input; self
+    pub fn set_output_resources(
+        mut self,
+        input: std::option::Option<crate::types::OutputResources>,
+    ) -> Self {
+        self.output_resources = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags that apply to this image.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags that apply to this image.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
-    /// <ul> 
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
+    /// <ul>
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
     pub fn build_type(mut self, input: crate::types::BuildType) -> Self {
         self.build_type = Some(input);
         self
     }
-    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p> 
-    /// <ul> 
-    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li> 
-    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li> 
-    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li> 
+    /// <p>Indicates the type of build that created this image. The build can be initiated in the following ways:</p>
+    /// <ul>
+    /// <li> <p> <b>USER_INITIATED</b> – A manual pipeline build request.</p> </li>
+    /// <li> <p> <b>SCHEDULED</b> – A pipeline build initiated by a cron expression in the Image Builder pipeline, or from EventBridge.</p> </li>
+    /// <li> <p> <b>IMPORT</b> – A VM import created the image to use as the base image for the recipe.</p> </li>
     /// </ul>
     pub fn set_build_type(mut self, input: std::option::Option<crate::types::BuildType>) -> Self {
-        self.build_type = input; self
+        self.build_type = input;
+        self
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
     pub fn image_source(mut self, input: crate::types::ImageSource) -> Self {
@@ -515,8 +594,12 @@ impl ImageBuilder {
         self
     }
     /// <p>The origin of the base image that Image Builder used to build this image.</p>
-    pub fn set_image_source(mut self, input: std::option::Option<crate::types::ImageSource>) -> Self {
-        self.image_source = input; self
+    pub fn set_image_source(
+        mut self,
+        input: std::option::Option<crate::types::ImageSource>,
+    ) -> Self {
+        self.image_source = input;
+        self
     }
     /// <p>Contains information about the current state of scans for this image.</p>
     pub fn scan_state(mut self, input: crate::types::ImageScanState) -> Self {
@@ -524,66 +607,54 @@ impl ImageBuilder {
         self
     }
     /// <p>Contains information about the current state of scans for this image.</p>
-    pub fn set_scan_state(mut self, input: std::option::Option<crate::types::ImageScanState>) -> Self {
-        self.scan_state = input; self
+    pub fn set_scan_state(
+        mut self,
+        input: std::option::Option<crate::types::ImageScanState>,
+    ) -> Self {
+        self.scan_state = input;
+        self
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn image_scanning_configuration(mut self, input: crate::types::ImageScanningConfiguration) -> Self {
+    pub fn image_scanning_configuration(
+        mut self,
+        input: crate::types::ImageScanningConfiguration,
+    ) -> Self {
         self.image_scanning_configuration = Some(input);
         self
     }
     /// <p>Contains settings for vulnerability scans.</p>
-    pub fn set_image_scanning_configuration(mut self, input: std::option::Option<crate::types::ImageScanningConfiguration>) -> Self {
-        self.image_scanning_configuration = input; self
+    pub fn set_image_scanning_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ImageScanningConfiguration>,
+    ) -> Self {
+        self.image_scanning_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`Image`](crate::types::Image).
     pub fn build(self) -> crate::types::Image {
         crate::types::Image {
-            arn: self.arn
-            ,
-            r#type: self.r#type
-            ,
-            name: self.name
-            ,
-            version: self.version
-            ,
-            platform: self.platform
-            ,
-            enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled
-            ,
-            os_version: self.os_version
-            ,
-            state: self.state
-            ,
-            image_recipe: self.image_recipe
-            ,
-            container_recipe: self.container_recipe
-            ,
-            source_pipeline_name: self.source_pipeline_name
-            ,
-            source_pipeline_arn: self.source_pipeline_arn
-            ,
-            infrastructure_configuration: self.infrastructure_configuration
-            ,
-            distribution_configuration: self.distribution_configuration
-            ,
-            image_tests_configuration: self.image_tests_configuration
-            ,
-            date_created: self.date_created
-            ,
-            output_resources: self.output_resources
-            ,
-            tags: self.tags
-            ,
-            build_type: self.build_type
-            ,
-            image_source: self.image_source
-            ,
-            scan_state: self.scan_state
-            ,
-            image_scanning_configuration: self.image_scanning_configuration
-            ,
+            arn: self.arn,
+            r#type: self.r#type,
+            name: self.name,
+            version: self.version,
+            platform: self.platform,
+            enhanced_image_metadata_enabled: self.enhanced_image_metadata_enabled,
+            os_version: self.os_version,
+            state: self.state,
+            image_recipe: self.image_recipe,
+            container_recipe: self.container_recipe,
+            source_pipeline_name: self.source_pipeline_name,
+            source_pipeline_arn: self.source_pipeline_arn,
+            infrastructure_configuration: self.infrastructure_configuration,
+            distribution_configuration: self.distribution_configuration,
+            image_tests_configuration: self.image_tests_configuration,
+            date_created: self.date_created,
+            output_resources: self.output_resources,
+            tags: self.tags,
+            build_type: self.build_type,
+            image_source: self.image_source,
+            scan_state: self.scan_state,
+            image_scanning_configuration: self.image_scanning_configuration,
         }
     }
 }
-

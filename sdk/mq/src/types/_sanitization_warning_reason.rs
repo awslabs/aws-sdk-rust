@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let sanitizationwarningreason = unimplemented!();
 /// match sanitizationwarningreason {
@@ -31,14 +31,22 @@
 /// Specifically, when `sanitizationwarningreason` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SanitizationWarningReason::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The reason for which the XML elements or attributes were sanitized.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SanitizationWarningReason {
     #[allow(missing_docs)] // documentation missing in model
     DisallowedAttributeRemoved,
@@ -47,43 +55,52 @@ pub enum SanitizationWarningReason {
     #[allow(missing_docs)] // documentation missing in model
     InvalidAttributeValueRemoved,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SanitizationWarningReason {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DISALLOWED_ATTRIBUTE_REMOVED" => SanitizationWarningReason::DisallowedAttributeRemoved,
-"DISALLOWED_ELEMENT_REMOVED" => SanitizationWarningReason::DisallowedElementRemoved,
-"INVALID_ATTRIBUTE_VALUE_REMOVED" => SanitizationWarningReason::InvalidAttributeValueRemoved,
-other => SanitizationWarningReason::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "DISALLOWED_ATTRIBUTE_REMOVED" => SanitizationWarningReason::DisallowedAttributeRemoved,
+            "DISALLOWED_ELEMENT_REMOVED" => SanitizationWarningReason::DisallowedElementRemoved,
+            "INVALID_ATTRIBUTE_VALUE_REMOVED" => {
+                SanitizationWarningReason::InvalidAttributeValueRemoved
             }
-impl std::str::FromStr for SanitizationWarningReason {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(SanitizationWarningReason::from(s))
-                }
-            }
-impl SanitizationWarningReason {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    SanitizationWarningReason::DisallowedAttributeRemoved => "DISALLOWED_ATTRIBUTE_REMOVED",
-    SanitizationWarningReason::DisallowedElementRemoved => "DISALLOWED_ELEMENT_REMOVED",
-    SanitizationWarningReason::InvalidAttributeValueRemoved => "INVALID_ATTRIBUTE_VALUE_REMOVED",
-    SanitizationWarningReason::Unknown(value) => value.as_str()
+            other => SanitizationWarningReason::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DISALLOWED_ATTRIBUTE_REMOVED", "DISALLOWED_ELEMENT_REMOVED", "INVALID_ATTRIBUTE_VALUE_REMOVED"]
-                }
-            }
-impl AsRef<str> for SanitizationWarningReason {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for SanitizationWarningReason {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SanitizationWarningReason::from(s))
+    }
+}
+impl SanitizationWarningReason {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SanitizationWarningReason::DisallowedAttributeRemoved => "DISALLOWED_ATTRIBUTE_REMOVED",
+            SanitizationWarningReason::DisallowedElementRemoved => "DISALLOWED_ELEMENT_REMOVED",
+            SanitizationWarningReason::InvalidAttributeValueRemoved => {
+                "INVALID_ATTRIBUTE_VALUE_REMOVED"
+            }
+            SanitizationWarningReason::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "DISALLOWED_ATTRIBUTE_REMOVED",
+            "DISALLOWED_ELEMENT_REMOVED",
+            "INVALID_ATTRIBUTE_VALUE_REMOVED",
+        ]
+    }
+}
+impl AsRef<str> for SanitizationWarningReason {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

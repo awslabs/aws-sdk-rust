@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectInvitationInput  {
+pub struct RejectInvitationInput {
     /// <p>The unique identifier of the invitation to reject.</p>
     #[doc(hidden)]
     pub invitation_id: std::option::Option<std::string::String>,
 }
 impl RejectInvitationInput {
     /// <p>The unique identifier of the invitation to reject.</p>
-    pub fn invitation_id(&self) -> std::option::Option<& str> {
+    pub fn invitation_id(&self) -> std::option::Option<&str> {
         self.invitation_id.as_deref()
     }
 }
 impl RejectInvitationInput {
     /// Creates a new builder-style object to manufacture [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
-    pub fn builder() -> crate::operation::reject_invitation::builders::RejectInvitationInputBuilder {
+    pub fn builder() -> crate::operation::reject_invitation::builders::RejectInvitationInputBuilder
+    {
         crate::operation::reject_invitation::builders::RejectInvitationInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl RejectInvitationInputBuilder {
     }
     /// <p>The unique identifier of the invitation to reject.</p>
     pub fn set_invitation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.invitation_id = input; self
+        self.invitation_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RejectInvitationInput`](crate::operation::reject_invitation::RejectInvitationInput).
-    pub fn build(self) -> Result<crate::operation::reject_invitation::RejectInvitationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::reject_invitation::RejectInvitationInput {
-                invitation_id: self.invitation_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reject_invitation::RejectInvitationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::reject_invitation::RejectInvitationInput {
+            invitation_id: self.invitation_id,
+        })
     }
 }
-

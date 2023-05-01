@@ -3,18 +3,18 @@
 /// <p>The parameters for the SQL type Protected Query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ProtectedQuerySqlParameters  {
+pub struct ProtectedQuerySqlParameters {
     /// <p>The query string to be submitted.</p>
     #[doc(hidden)]
     pub query_string: std::option::Option<std::string::String>,
 }
 impl ProtectedQuerySqlParameters {
     /// <p>The query string to be submitted.</p>
-    pub fn query_string(&self) -> std::option::Option<& str> {
+    pub fn query_string(&self) -> std::option::Option<&str> {
         self.query_string.as_deref()
     }
 }
-impl  std::fmt::Debug for ProtectedQuerySqlParameters  {
+impl std::fmt::Debug for ProtectedQuerySqlParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ProtectedQuerySqlParameters");
         formatter.field("query_string", &"*** Sensitive Data Redacted ***");
@@ -42,13 +42,13 @@ impl ProtectedQuerySqlParametersBuilder {
     }
     /// <p>The query string to be submitted.</p>
     pub fn set_query_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_string = input; self
+        self.query_string = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProtectedQuerySqlParameters`](crate::types::ProtectedQuerySqlParameters).
     pub fn build(self) -> crate::types::ProtectedQuerySqlParameters {
         crate::types::ProtectedQuerySqlParameters {
-            query_string: self.query_string
-            ,
+            query_string: self.query_string,
         }
     }
 }
@@ -59,4 +59,3 @@ impl std::fmt::Debug for ProtectedQuerySqlParametersBuilder {
         formatter.finish()
     }
 }
-

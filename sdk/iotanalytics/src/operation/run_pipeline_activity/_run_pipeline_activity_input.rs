@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RunPipelineActivityInput  {
+pub struct RunPipelineActivityInput {
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
     #[doc(hidden)]
     pub pipeline_activity: std::option::Option<crate::types::PipelineActivity>,
@@ -12,18 +12,20 @@ pub struct RunPipelineActivityInput  {
 }
 impl RunPipelineActivityInput {
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
-    pub fn pipeline_activity(&self) -> std::option::Option<& crate::types::PipelineActivity> {
+    pub fn pipeline_activity(&self) -> std::option::Option<&crate::types::PipelineActivity> {
         self.pipeline_activity.as_ref()
     }
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
-    pub fn payloads(&self) -> std::option::Option<& [aws_smithy_types::Blob]> {
+    pub fn payloads(&self) -> std::option::Option<&[aws_smithy_types::Blob]> {
         self.payloads.as_deref()
     }
 }
 impl RunPipelineActivityInput {
     /// Creates a new builder-style object to manufacture [`RunPipelineActivityInput`](crate::operation::run_pipeline_activity::RunPipelineActivityInput).
-    pub fn builder() -> crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder {
-        crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder {
+        crate::operation::run_pipeline_activity::builders::RunPipelineActivityInputBuilder::default(
+        )
     }
 }
 
@@ -41,8 +43,12 @@ impl RunPipelineActivityInputBuilder {
         self
     }
     /// <p>The pipeline activity that is run. This must not be a channel activity or a data store activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a Lambda activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</p>
-    pub fn set_pipeline_activity(mut self, input: std::option::Option<crate::types::PipelineActivity>) -> Self {
-        self.pipeline_activity = input; self
+    pub fn set_pipeline_activity(
+        mut self,
+        input: std::option::Option<crate::types::PipelineActivity>,
+    ) -> Self {
+        self.pipeline_activity = input;
+        self
     }
     /// Appends an item to `payloads`.
     ///
@@ -51,24 +57,30 @@ impl RunPipelineActivityInputBuilder {
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
     pub fn payloads(mut self, input: aws_smithy_types::Blob) -> Self {
         let mut v = self.payloads.unwrap_or_default();
-                        v.push(input);
-                        self.payloads = Some(v);
-                        self
+        v.push(input);
+        self.payloads = Some(v);
+        self
     }
     /// <p>The sample message payloads on which the pipeline activity is run.</p>
-    pub fn set_payloads(mut self, input: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>) -> Self {
-        self.payloads = input; self
+    pub fn set_payloads(
+        mut self,
+        input: std::option::Option<std::vec::Vec<aws_smithy_types::Blob>>,
+    ) -> Self {
+        self.payloads = input;
+        self
     }
     /// Consumes the builder and constructs a [`RunPipelineActivityInput`](crate::operation::run_pipeline_activity::RunPipelineActivityInput).
-    pub fn build(self) -> Result<crate::operation::run_pipeline_activity::RunPipelineActivityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::run_pipeline_activity::RunPipelineActivityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::run_pipeline_activity::RunPipelineActivityInput {
-                pipeline_activity: self.pipeline_activity
-                ,
-                payloads: self.payloads
-                ,
-            }
+                pipeline_activity: self.pipeline_activity,
+                payloads: self.payloads,
+            },
         )
     }
 }
-

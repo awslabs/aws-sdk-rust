@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTimelineEventInput  {
+pub struct DeleteTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
     #[doc(hidden)]
     pub incident_record_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct DeleteTimelineEventInput  {
 }
 impl DeleteTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(&self) -> std::option::Option<& str> {
+    pub fn incident_record_arn(&self) -> std::option::Option<&str> {
         self.incident_record_arn.as_deref()
     }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
-    pub fn event_id(&self) -> std::option::Option<& str> {
+    pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
 }
 impl DeleteTimelineEventInput {
     /// Creates a new builder-style object to manufacture [`DeleteTimelineEventInput`](crate::operation::delete_timeline_event::DeleteTimelineEventInput).
-    pub fn builder() -> crate::operation::delete_timeline_event::builders::DeleteTimelineEventInputBuilder {
-        crate::operation::delete_timeline_event::builders::DeleteTimelineEventInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_timeline_event::builders::DeleteTimelineEventInputBuilder {
+        crate::operation::delete_timeline_event::builders::DeleteTimelineEventInputBuilder::default(
+        )
     }
 }
 
@@ -41,8 +43,12 @@ impl DeleteTimelineEventInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn set_incident_record_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.incident_record_arn = input; self
+    pub fn set_incident_record_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.incident_record_arn = input;
+        self
     }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl DeleteTimelineEventInputBuilder {
     }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input; self
+        self.event_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTimelineEventInput`](crate::operation::delete_timeline_event::DeleteTimelineEventInput).
-    pub fn build(self) -> Result<crate::operation::delete_timeline_event::DeleteTimelineEventInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_timeline_event::DeleteTimelineEventInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_timeline_event::DeleteTimelineEventInput {
-                incident_record_arn: self.incident_record_arn
-                ,
-                event_id: self.event_id
-                ,
-            }
+                incident_record_arn: self.incident_record_arn,
+                event_id: self.event_id,
+            },
         )
     }
 }
-

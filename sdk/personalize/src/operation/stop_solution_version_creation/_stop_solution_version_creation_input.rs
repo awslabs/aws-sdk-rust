@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopSolutionVersionCreationInput  {
+pub struct StopSolutionVersionCreationInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
     #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
 }
 impl StopSolutionVersionCreationInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
 }
 impl StopSolutionVersionCreationInput {
     /// Creates a new builder-style object to manufacture [`StopSolutionVersionCreationInput`](crate::operation::stop_solution_version_creation::StopSolutionVersionCreationInput).
-    pub fn builder() -> crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationInputBuilder {
+    pub fn builder() -> crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationInputBuilder{
         crate::operation::stop_solution_version_creation::builders::StopSolutionVersionCreationInputBuilder::default()
     }
 }
@@ -33,17 +33,24 @@ impl StopSolutionVersionCreationInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version you want to stop creating.</p>
-    pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.solution_version_arn = input; self
+    pub fn set_solution_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.solution_version_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopSolutionVersionCreationInput`](crate::operation::stop_solution_version_creation::StopSolutionVersionCreationInput).
-    pub fn build(self) -> Result<crate::operation::stop_solution_version_creation::StopSolutionVersionCreationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_solution_version_creation::StopSolutionVersionCreationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_solution_version_creation::StopSolutionVersionCreationInput {
-                solution_version_arn: self.solution_version_arn
-                ,
-            }
+                solution_version_arn: self.solution_version_arn,
+            },
         )
     }
 }
-

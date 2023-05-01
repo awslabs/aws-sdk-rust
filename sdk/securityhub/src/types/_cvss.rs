@@ -3,7 +3,7 @@
 /// <p>CVSS scores from the advisory related to the vulnerability.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Cvss  {
+pub struct Cvss {
     /// <p>The version of CVSS for the CVSS score.</p>
     #[doc(hidden)]
     pub version: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct Cvss  {
 }
 impl Cvss {
     /// <p>The version of CVSS for the CVSS score.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The base CVSS score.</p>
@@ -30,15 +30,15 @@ impl Cvss {
         self.base_score
     }
     /// <p>The base scoring vector for the CVSS score.</p>
-    pub fn base_vector(&self) -> std::option::Option<& str> {
+    pub fn base_vector(&self) -> std::option::Option<&str> {
         self.base_vector.as_deref()
     }
     /// <p>The origin of the original CVSS score and vector.</p>
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>Adjustments to the CVSS metrics.</p>
-    pub fn adjustments(&self) -> std::option::Option<& [crate::types::Adjustment]> {
+    pub fn adjustments(&self) -> std::option::Option<&[crate::types::Adjustment]> {
         self.adjustments.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl CvssBuilder {
     }
     /// <p>The version of CVSS for the CVSS score.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The base CVSS score.</p>
     pub fn base_score(mut self, input: f64) -> Self {
@@ -76,7 +77,8 @@ impl CvssBuilder {
     }
     /// <p>The base CVSS score.</p>
     pub fn set_base_score(mut self, input: std::option::Option<f64>) -> Self {
-        self.base_score = input; self
+        self.base_score = input;
+        self
     }
     /// <p>The base scoring vector for the CVSS score.</p>
     pub fn base_vector(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl CvssBuilder {
     }
     /// <p>The base scoring vector for the CVSS score.</p>
     pub fn set_base_vector(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.base_vector = input; self
+        self.base_vector = input;
+        self
     }
     /// <p>The origin of the original CVSS score and vector.</p>
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl CvssBuilder {
     }
     /// <p>The origin of the original CVSS score and vector.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// Appends an item to `adjustments`.
     ///
@@ -103,29 +107,26 @@ impl CvssBuilder {
     /// <p>Adjustments to the CVSS metrics.</p>
     pub fn adjustments(mut self, input: crate::types::Adjustment) -> Self {
         let mut v = self.adjustments.unwrap_or_default();
-                        v.push(input);
-                        self.adjustments = Some(v);
-                        self
+        v.push(input);
+        self.adjustments = Some(v);
+        self
     }
     /// <p>Adjustments to the CVSS metrics.</p>
-    pub fn set_adjustments(mut self, input: std::option::Option<std::vec::Vec<crate::types::Adjustment>>) -> Self {
-        self.adjustments = input; self
+    pub fn set_adjustments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Adjustment>>,
+    ) -> Self {
+        self.adjustments = input;
+        self
     }
     /// Consumes the builder and constructs a [`Cvss`](crate::types::Cvss).
     pub fn build(self) -> crate::types::Cvss {
         crate::types::Cvss {
-            version: self.version
-            ,
-            base_score: self.base_score
-                .unwrap_or_default()
-            ,
-            base_vector: self.base_vector
-            ,
-            source: self.source
-            ,
-            adjustments: self.adjustments
-            ,
+            version: self.version,
+            base_score: self.base_score.unwrap_or_default(),
+            base_vector: self.base_vector,
+            source: self.source,
+            adjustments: self.adjustments,
         }
     }
 }
-

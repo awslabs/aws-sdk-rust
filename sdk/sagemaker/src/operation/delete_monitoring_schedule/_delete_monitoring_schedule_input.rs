@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMonitoringScheduleInput  {
+pub struct DeleteMonitoringScheduleInput {
     /// <p>The name of the monitoring schedule to delete.</p>
     #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
 }
 impl DeleteMonitoringScheduleInput {
     /// <p>The name of the monitoring schedule to delete.</p>
-    pub fn monitoring_schedule_name(&self) -> std::option::Option<& str> {
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
         self.monitoring_schedule_name.as_deref()
     }
 }
 impl DeleteMonitoringScheduleInput {
     /// Creates a new builder-style object to manufacture [`DeleteMonitoringScheduleInput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput).
-    pub fn builder() -> crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleInputBuilder
+    {
         crate::operation::delete_monitoring_schedule::builders::DeleteMonitoringScheduleInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteMonitoringScheduleInputBuilder {
         self
     }
     /// <p>The name of the monitoring schedule to delete.</p>
-    pub fn set_monitoring_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitoring_schedule_name = input; self
+    pub fn set_monitoring_schedule_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monitoring_schedule_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMonitoringScheduleInput`](crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput).
-    pub fn build(self) -> Result<crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_monitoring_schedule::DeleteMonitoringScheduleInput {
-                monitoring_schedule_name: self.monitoring_schedule_name
-                ,
-            }
+                monitoring_schedule_name: self.monitoring_schedule_name,
+            },
         )
     }
 }
-

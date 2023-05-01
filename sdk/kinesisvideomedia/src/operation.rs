@@ -3,4 +3,3 @@ pub use aws_http::request_id::RequestId;
 
 /// Types for the `GetMedia` operation.
 pub mod get_media;
-

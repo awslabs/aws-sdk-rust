@@ -3,14 +3,14 @@
 /// <p>Describes service integrations with VPC Flow logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IntegrateServices  {
+pub struct IntegrateServices {
     /// <p>Information about the integration with Amazon Athena.</p>
     #[doc(hidden)]
     pub athena_integrations: std::option::Option<std::vec::Vec<crate::types::AthenaIntegration>>,
 }
 impl IntegrateServices {
     /// <p>Information about the integration with Amazon Athena.</p>
-    pub fn athena_integrations(&self) -> std::option::Option<& [crate::types::AthenaIntegration]> {
+    pub fn athena_integrations(&self) -> std::option::Option<&[crate::types::AthenaIntegration]> {
         self.athena_integrations.as_deref()
     }
 }
@@ -25,7 +25,8 @@ impl IntegrateServices {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct IntegrateServicesBuilder {
-    pub(crate) athena_integrations: std::option::Option<std::vec::Vec<crate::types::AthenaIntegration>>,
+    pub(crate) athena_integrations:
+        std::option::Option<std::vec::Vec<crate::types::AthenaIntegration>>,
 }
 impl IntegrateServicesBuilder {
     /// Appends an item to `athena_integrations`.
@@ -35,20 +36,22 @@ impl IntegrateServicesBuilder {
     /// <p>Information about the integration with Amazon Athena.</p>
     pub fn athena_integrations(mut self, input: crate::types::AthenaIntegration) -> Self {
         let mut v = self.athena_integrations.unwrap_or_default();
-                        v.push(input);
-                        self.athena_integrations = Some(v);
-                        self
+        v.push(input);
+        self.athena_integrations = Some(v);
+        self
     }
     /// <p>Information about the integration with Amazon Athena.</p>
-    pub fn set_athena_integrations(mut self, input: std::option::Option<std::vec::Vec<crate::types::AthenaIntegration>>) -> Self {
-        self.athena_integrations = input; self
+    pub fn set_athena_integrations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AthenaIntegration>>,
+    ) -> Self {
+        self.athena_integrations = input;
+        self
     }
     /// Consumes the builder and constructs a [`IntegrateServices`](crate::types::IntegrateServices).
     pub fn build(self) -> crate::types::IntegrateServices {
         crate::types::IntegrateServices {
-            athena_integrations: self.athena_integrations
-            ,
+            athena_integrations: self.athena_integrations,
         }
     }
 }
-

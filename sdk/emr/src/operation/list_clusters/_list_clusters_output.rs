@@ -3,7 +3,7 @@
 /// <p>This contains a ClusterSummaryList with the cluster details; for example, the cluster IDs, names, and status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClustersOutput  {
+pub struct ListClustersOutput {
     /// <p>The list of clusters for the account based on the given filters.</p>
     #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<crate::types::ClusterSummary>>,
@@ -14,19 +14,19 @@ pub struct ListClustersOutput  {
 }
 impl ListClustersOutput {
     /// <p>The list of clusters for the account based on the given filters.</p>
-    pub fn clusters(&self) -> std::option::Option<& [crate::types::ClusterSummary]> {
+    pub fn clusters(&self) -> std::option::Option<&[crate::types::ClusterSummary]> {
         self.clusters.as_deref()
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListClustersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListClustersOutput {
     /// Creates a new builder-style object to manufacture [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
     pub fn builder() -> crate::operation::list_clusters::builders::ListClustersOutputBuilder {
@@ -50,13 +50,17 @@ impl ListClustersOutputBuilder {
     /// <p>The list of clusters for the account based on the given filters.</p>
     pub fn clusters(mut self, input: crate::types::ClusterSummary) -> Self {
         let mut v = self.clusters.unwrap_or_default();
-                        v.push(input);
-                        self.clusters = Some(v);
-                        self
+        v.push(input);
+        self.clusters = Some(v);
+        self
     }
     /// <p>The list of clusters for the account based on the given filters.</p>
-    pub fn set_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClusterSummary>>) -> Self {
-        self.clusters = input; self
+    pub fn set_clusters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ClusterSummary>>,
+    ) -> Self {
+        self.clusters = input;
+        self
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +69,24 @@ impl ListClustersOutputBuilder {
     }
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
     pub fn build(self) -> crate::operation::list_clusters::ListClustersOutput {
         crate::operation::list_clusters::ListClustersOutput {
-            clusters: self.clusters
-            ,
-            marker: self.marker
-            ,
+            clusters: self.clusters,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

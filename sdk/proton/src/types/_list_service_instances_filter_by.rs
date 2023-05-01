@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let listserviceinstancesfilterby = unimplemented!();
 /// match listserviceinstancesfilterby {
@@ -38,14 +38,22 @@
 /// Specifically, when `listserviceinstancesfilterby` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ListServiceInstancesFilterBy::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ListServiceInstancesFilterBy {
     #[allow(missing_docs)] // documentation missing in model
     CreatedAtAfter,
@@ -68,57 +76,81 @@ pub enum ListServiceInstancesFilterBy {
     #[allow(missing_docs)] // documentation missing in model
     TemplateName,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ListServiceInstancesFilterBy {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "createdAtAfter" => ListServiceInstancesFilterBy::CreatedAtAfter,
-"createdAtBefore" => ListServiceInstancesFilterBy::CreatedAtBefore,
-"deployedTemplateVersionStatus" => ListServiceInstancesFilterBy::DeployedTemplateVersionStatus,
-"deploymentStatus" => ListServiceInstancesFilterBy::DeploymentStatus,
-"environmentName" => ListServiceInstancesFilterBy::EnvironmentName,
-"lastDeploymentAttemptedAtAfter" => ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter,
-"lastDeploymentAttemptedAtBefore" => ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore,
-"name" => ListServiceInstancesFilterBy::Name,
-"serviceName" => ListServiceInstancesFilterBy::ServiceName,
-"templateName" => ListServiceInstancesFilterBy::TemplateName,
-other => ListServiceInstancesFilterBy::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "createdAtAfter" => ListServiceInstancesFilterBy::CreatedAtAfter,
+            "createdAtBefore" => ListServiceInstancesFilterBy::CreatedAtBefore,
+            "deployedTemplateVersionStatus" => {
+                ListServiceInstancesFilterBy::DeployedTemplateVersionStatus
             }
-impl std::str::FromStr for ListServiceInstancesFilterBy {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ListServiceInstancesFilterBy::from(s))
-                }
+            "deploymentStatus" => ListServiceInstancesFilterBy::DeploymentStatus,
+            "environmentName" => ListServiceInstancesFilterBy::EnvironmentName,
+            "lastDeploymentAttemptedAtAfter" => {
+                ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter
             }
-impl ListServiceInstancesFilterBy {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ListServiceInstancesFilterBy::CreatedAtAfter => "createdAtAfter",
-    ListServiceInstancesFilterBy::CreatedAtBefore => "createdAtBefore",
-    ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => "deployedTemplateVersionStatus",
-    ListServiceInstancesFilterBy::DeploymentStatus => "deploymentStatus",
-    ListServiceInstancesFilterBy::EnvironmentName => "environmentName",
-    ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => "lastDeploymentAttemptedAtAfter",
-    ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => "lastDeploymentAttemptedAtBefore",
-    ListServiceInstancesFilterBy::Name => "name",
-    ListServiceInstancesFilterBy::ServiceName => "serviceName",
-    ListServiceInstancesFilterBy::TemplateName => "templateName",
-    ListServiceInstancesFilterBy::Unknown(value) => value.as_str()
+            "lastDeploymentAttemptedAtBefore" => {
+                ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore
+            }
+            "name" => ListServiceInstancesFilterBy::Name,
+            "serviceName" => ListServiceInstancesFilterBy::ServiceName,
+            "templateName" => ListServiceInstancesFilterBy::TemplateName,
+            other => ListServiceInstancesFilterBy::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["createdAtAfter", "createdAtBefore", "deployedTemplateVersionStatus", "deploymentStatus", "environmentName", "lastDeploymentAttemptedAtAfter", "lastDeploymentAttemptedAtBefore", "name", "serviceName", "templateName"]
-                }
-            }
-impl AsRef<str> for ListServiceInstancesFilterBy {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ListServiceInstancesFilterBy {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ListServiceInstancesFilterBy::from(s))
+    }
+}
+impl ListServiceInstancesFilterBy {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ListServiceInstancesFilterBy::CreatedAtAfter => "createdAtAfter",
+            ListServiceInstancesFilterBy::CreatedAtBefore => "createdAtBefore",
+            ListServiceInstancesFilterBy::DeployedTemplateVersionStatus => {
+                "deployedTemplateVersionStatus"
+            }
+            ListServiceInstancesFilterBy::DeploymentStatus => "deploymentStatus",
+            ListServiceInstancesFilterBy::EnvironmentName => "environmentName",
+            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtAfter => {
+                "lastDeploymentAttemptedAtAfter"
+            }
+            ListServiceInstancesFilterBy::LastDeploymentAttemptedAtBefore => {
+                "lastDeploymentAttemptedAtBefore"
+            }
+            ListServiceInstancesFilterBy::Name => "name",
+            ListServiceInstancesFilterBy::ServiceName => "serviceName",
+            ListServiceInstancesFilterBy::TemplateName => "templateName",
+            ListServiceInstancesFilterBy::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "createdAtAfter",
+            "createdAtBefore",
+            "deployedTemplateVersionStatus",
+            "deploymentStatus",
+            "environmentName",
+            "lastDeploymentAttemptedAtAfter",
+            "lastDeploymentAttemptedAtBefore",
+            "name",
+            "serviceName",
+            "templateName",
+        ]
+    }
+}
+impl AsRef<str> for ListServiceInstancesFilterBy {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagsInput  {
+pub struct DescribeTagsInput {
     /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl DescribeTagsInput {
     /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DescribeTagsInputBuilder {
     }
     /// <p>The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(self) -> Result<crate::operation::describe_tags::DescribeTagsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_tags::DescribeTagsInput {
-                resource_id: self.resource_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_tags::DescribeTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_tags::DescribeTagsInput {
+            resource_id: self.resource_id,
+        })
     }
 }
-

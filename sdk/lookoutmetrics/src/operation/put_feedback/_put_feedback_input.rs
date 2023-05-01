@@ -2,21 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutFeedbackInput  {
+pub struct PutFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
     #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
     /// <p>Feedback for an anomalous metric.</p>
     #[doc(hidden)]
-    pub anomaly_group_time_series_feedback: std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
+    pub anomaly_group_time_series_feedback:
+        std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
 }
 impl PutFeedbackInput {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
         self.anomaly_detector_arn.as_deref()
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn anomaly_group_time_series_feedback(&self) -> std::option::Option<& crate::types::AnomalyGroupTimeSeriesFeedback> {
+    pub fn anomaly_group_time_series_feedback(
+        &self,
+    ) -> std::option::Option<&crate::types::AnomalyGroupTimeSeriesFeedback> {
         self.anomaly_group_time_series_feedback.as_ref()
     }
 }
@@ -32,7 +35,8 @@ impl PutFeedbackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutFeedbackInputBuilder {
     pub(crate) anomaly_detector_arn: std::option::Option<std::string::String>,
-    pub(crate) anomaly_group_time_series_feedback: std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
+    pub(crate) anomaly_group_time_series_feedback:
+        std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
 }
 impl PutFeedbackInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
@@ -41,28 +45,39 @@ impl PutFeedbackInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
-    pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.anomaly_detector_arn = input; self
+    pub fn set_anomaly_detector_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.anomaly_detector_arn = input;
+        self
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn anomaly_group_time_series_feedback(mut self, input: crate::types::AnomalyGroupTimeSeriesFeedback) -> Self {
+    pub fn anomaly_group_time_series_feedback(
+        mut self,
+        input: crate::types::AnomalyGroupTimeSeriesFeedback,
+    ) -> Self {
         self.anomaly_group_time_series_feedback = Some(input);
         self
     }
     /// <p>Feedback for an anomalous metric.</p>
-    pub fn set_anomaly_group_time_series_feedback(mut self, input: std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>) -> Self {
-        self.anomaly_group_time_series_feedback = input; self
+    pub fn set_anomaly_group_time_series_feedback(
+        mut self,
+        input: std::option::Option<crate::types::AnomalyGroupTimeSeriesFeedback>,
+    ) -> Self {
+        self.anomaly_group_time_series_feedback = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutFeedbackInput`](crate::operation::put_feedback::PutFeedbackInput).
-    pub fn build(self) -> Result<crate::operation::put_feedback::PutFeedbackInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_feedback::PutFeedbackInput {
-                anomaly_detector_arn: self.anomaly_detector_arn
-                ,
-                anomaly_group_time_series_feedback: self.anomaly_group_time_series_feedback
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_feedback::PutFeedbackInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_feedback::PutFeedbackInput {
+            anomaly_detector_arn: self.anomaly_detector_arn,
+            anomaly_group_time_series_feedback: self.anomaly_group_time_series_feedback,
+        })
     }
 }
-

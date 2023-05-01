@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePackagingGroupInput  {
+pub struct DeletePackagingGroupInput {
     /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeletePackagingGroupInput {
     /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeletePackagingGroupInput {
     /// Creates a new builder-style object to manufacture [`DeletePackagingGroupInput`](crate::operation::delete_packaging_group::DeletePackagingGroupInput).
-    pub fn builder() -> crate::operation::delete_packaging_group::builders::DeletePackagingGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_packaging_group::builders::DeletePackagingGroupInputBuilder {
         crate::operation::delete_packaging_group::builders::DeletePackagingGroupInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl DeletePackagingGroupInputBuilder {
     }
     /// The ID of the MediaPackage VOD PackagingGroup resource to delete.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePackagingGroupInput`](crate::operation::delete_packaging_group::DeletePackagingGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_packaging_group::DeletePackagingGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_packaging_group::DeletePackagingGroupInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_packaging_group::DeletePackagingGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_packaging_group::DeletePackagingGroupInput { id: self.id })
     }
 }
-

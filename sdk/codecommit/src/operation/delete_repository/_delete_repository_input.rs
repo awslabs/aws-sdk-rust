@@ -3,20 +3,21 @@
 /// <p>Represents the input of a delete repository operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRepositoryInput  {
+pub struct DeleteRepositoryInput {
     /// <p>The name of the repository to delete.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
 }
 impl DeleteRepositoryInput {
     /// <p>The name of the repository to delete.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
 }
 impl DeleteRepositoryInput {
     /// Creates a new builder-style object to manufacture [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
-    pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder {
+    pub fn builder() -> crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder
+    {
         crate::operation::delete_repository::builders::DeleteRepositoryInputBuilder::default()
     }
 }
@@ -35,16 +36,18 @@ impl DeleteRepositoryInputBuilder {
     }
     /// <p>The name of the repository to delete.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRepositoryInput`](crate::operation::delete_repository::DeleteRepositoryInput).
-    pub fn build(self) -> Result<crate::operation::delete_repository::DeleteRepositoryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_repository::DeleteRepositoryInput {
-                repository_name: self.repository_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_repository::DeleteRepositoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_repository::DeleteRepositoryInput {
+            repository_name: self.repository_name,
+        })
     }
 }
-

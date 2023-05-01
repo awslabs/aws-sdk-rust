@@ -22,7 +22,11 @@ impl RelatedItemTypeFilter {
     /// Tries to convert the enum instance into [`Comment`](crate::types::RelatedItemTypeFilter::Comment), extracting the inner [`CommentFilter`](crate::types::CommentFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_comment(&self) -> std::result::Result<&crate::types::CommentFilter, &Self> {
-        if let RelatedItemTypeFilter::Comment(val) = &self { Ok(val) } else { Err(self) }
+        if let RelatedItemTypeFilter::Comment(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Comment`](crate::types::RelatedItemTypeFilter::Comment).
     pub fn is_comment(&self) -> bool {
@@ -31,7 +35,11 @@ impl RelatedItemTypeFilter {
     /// Tries to convert the enum instance into [`Contact`](crate::types::RelatedItemTypeFilter::Contact), extracting the inner [`ContactFilter`](crate::types::ContactFilter).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contact(&self) -> std::result::Result<&crate::types::ContactFilter, &Self> {
-        if let RelatedItemTypeFilter::Contact(val) = &self { Ok(val) } else { Err(self) }
+        if let RelatedItemTypeFilter::Contact(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Contact`](crate::types::RelatedItemTypeFilter::Contact).
     pub fn is_contact(&self) -> bool {
@@ -42,4 +50,3 @@ impl RelatedItemTypeFilter {
         matches!(self, Self::Unknown)
     }
 }
-

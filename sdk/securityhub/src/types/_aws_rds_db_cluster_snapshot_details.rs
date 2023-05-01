@@ -3,11 +3,11 @@
 /// <p>Information about an Amazon RDS DB cluster snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRdsDbClusterSnapshotDetails  {
+pub struct AwsRdsDbClusterSnapshotDetails {
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Indicates when the snapshot was taken.</p> 
+    /// <p>Indicates when the snapshot was taken.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub snapshot_create_time: std::option::Option<std::string::String>,
@@ -26,7 +26,7 @@ pub struct AwsRdsDbClusterSnapshotDetails  {
     /// <p>The VPC ID that is associated with the DB cluster snapshot.</p>
     #[doc(hidden)]
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p> 
+    /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub cluster_create_time: std::option::Option<std::string::String>,
@@ -63,16 +63,16 @@ pub struct AwsRdsDbClusterSnapshotDetails  {
 }
 impl AwsRdsDbClusterSnapshotDetails {
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
-    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
-    /// <p>Indicates when the snapshot was taken.</p> 
+    /// <p>Indicates when the snapshot was taken.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn snapshot_create_time(&self) -> std::option::Option<& str> {
+    pub fn snapshot_create_time(&self) -> std::option::Option<&str> {
         self.snapshot_create_time.as_deref()
     }
     /// <p>The name of the database engine that you want to use for this DB instance.</p>
-    pub fn engine(&self) -> std::option::Option<& str> {
+    pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
@@ -80,7 +80,7 @@ impl AwsRdsDbClusterSnapshotDetails {
         self.allocated_storage
     }
     /// <p>The status of this DB cluster snapshot.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The port number on which the DB instances in the DB cluster accept connections.</p>
@@ -88,28 +88,28 @@ impl AwsRdsDbClusterSnapshotDetails {
         self.port
     }
     /// <p>The VPC ID that is associated with the DB cluster snapshot.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
-    /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p> 
+    /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn cluster_create_time(&self) -> std::option::Option<& str> {
+    pub fn cluster_create_time(&self) -> std::option::Option<&str> {
         self.cluster_create_time.as_deref()
     }
     /// <p>The name of the master user for the DB cluster.</p>
-    pub fn master_username(&self) -> std::option::Option<& str> {
+    pub fn master_username(&self) -> std::option::Option<&str> {
         self.master_username.as_deref()
     }
     /// <p>The version of the database engine to use.</p>
-    pub fn engine_version(&self) -> std::option::Option<& str> {
+    pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The license model information for this DB cluster snapshot.</p>
-    pub fn license_model(&self) -> std::option::Option<& str> {
+    pub fn license_model(&self) -> std::option::Option<&str> {
         self.license_model.as_deref()
     }
     /// <p>The type of DB cluster snapshot.</p>
-    pub fn snapshot_type(&self) -> std::option::Option<& str> {
+    pub fn snapshot_type(&self) -> std::option::Option<&str> {
         self.snapshot_type.as_deref()
     }
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
@@ -121,15 +121,15 @@ impl AwsRdsDbClusterSnapshotDetails {
         self.storage_encrypted
     }
     /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the DB cluster.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The DB cluster identifier.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The identifier of the DB cluster snapshot.</p>
-    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
@@ -175,24 +175,32 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
     pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-                        v.push(input.into());
-                        self.availability_zones = Some(v);
-                        self
+        v.push(input.into());
+        self.availability_zones = Some(v);
+        self
     }
     /// <p>A list of Availability Zones where instances in the DB cluster can be created.</p>
-    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.availability_zones = input; self
+    pub fn set_availability_zones(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.availability_zones = input;
+        self
     }
-    /// <p>Indicates when the snapshot was taken.</p> 
+    /// <p>Indicates when the snapshot was taken.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn snapshot_create_time(mut self, input: impl Into<std::string::String>) -> Self {
         self.snapshot_create_time = Some(input.into());
         self
     }
-    /// <p>Indicates when the snapshot was taken.</p> 
+    /// <p>Indicates when the snapshot was taken.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_snapshot_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_create_time = input; self
+    pub fn set_snapshot_create_time(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.snapshot_create_time = input;
+        self
     }
     /// <p>The name of the database engine that you want to use for this DB instance.</p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,7 +209,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>The name of the database engine that you want to use for this DB instance.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input; self
+        self.engine = input;
+        self
     }
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
@@ -210,7 +219,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>Specifies the allocated storage size in gibibytes (GiB).</p>
     pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
-        self.allocated_storage = input; self
+        self.allocated_storage = input;
+        self
     }
     /// <p>The status of this DB cluster snapshot.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,7 +229,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>The status of this DB cluster snapshot.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The port number on which the DB instances in the DB cluster accept connections.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -228,7 +239,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>The port number on which the DB instances in the DB cluster accept connections.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>The VPC ID that is associated with the DB cluster snapshot.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -237,18 +249,23 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>The VPC ID that is associated with the DB cluster snapshot.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
-    /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p> 
+    /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn cluster_create_time(mut self, input: impl Into<std::string::String>) -> Self {
         self.cluster_create_time = Some(input.into());
         self
     }
-    /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p> 
+    /// <p>Indicates when the DB cluster was created, in Universal Coordinated Time (UTC).</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_cluster_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_create_time = input; self
+    pub fn set_cluster_create_time(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_create_time = input;
+        self
     }
     /// <p>The name of the master user for the DB cluster.</p>
     pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -257,7 +274,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>The name of the master user for the DB cluster.</p>
     pub fn set_master_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.master_username = input; self
+        self.master_username = input;
+        self
     }
     /// <p>The version of the database engine to use.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,7 +284,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>The version of the database engine to use.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input; self
+        self.engine_version = input;
+        self
     }
     /// <p>The license model information for this DB cluster snapshot.</p>
     pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
@@ -275,7 +294,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>The license model information for this DB cluster snapshot.</p>
     pub fn set_license_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_model = input; self
+        self.license_model = input;
+        self
     }
     /// <p>The type of DB cluster snapshot.</p>
     pub fn snapshot_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -284,7 +304,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>The type of DB cluster snapshot.</p>
     pub fn set_snapshot_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_type = input; self
+        self.snapshot_type = input;
+        self
     }
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
     pub fn percent_progress(mut self, input: i32) -> Self {
@@ -293,7 +314,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>Specifies the percentage of the estimated data that has been transferred.</p>
     pub fn set_percent_progress(mut self, input: std::option::Option<i32>) -> Self {
-        self.percent_progress = input; self
+        self.percent_progress = input;
+        self
     }
     /// <p>Whether the DB cluster is encrypted.</p>
     pub fn storage_encrypted(mut self, input: bool) -> Self {
@@ -302,7 +324,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>Whether the DB cluster is encrypted.</p>
     pub fn set_storage_encrypted(mut self, input: std::option::Option<bool>) -> Self {
-        self.storage_encrypted = input; self
+        self.storage_encrypted = input;
+        self
     }
     /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the DB cluster.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -311,7 +334,8 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
     }
     /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the DB cluster.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>The DB cluster identifier.</p>
     pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -319,8 +343,12 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         self
     }
     /// <p>The DB cluster identifier.</p>
-    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_identifier = input; self
+    pub fn set_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = input;
+        self
     }
     /// <p>The identifier of the DB cluster snapshot.</p>
     pub fn db_cluster_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -328,8 +356,12 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         self
     }
     /// <p>The identifier of the DB cluster snapshot.</p>
-    pub fn set_db_cluster_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_snapshot_identifier = input; self
+    pub fn set_db_cluster_snapshot_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_snapshot_identifier = input;
+        self
     }
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
@@ -337,54 +369,36 @@ impl AwsRdsDbClusterSnapshotDetailsBuilder {
         self
     }
     /// <p>Whether mapping of IAM accounts to database accounts is enabled.</p>
-    pub fn set_iam_database_authentication_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.iam_database_authentication_enabled = input; self
+    pub fn set_iam_database_authentication_enabled(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.iam_database_authentication_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsRdsDbClusterSnapshotDetails`](crate::types::AwsRdsDbClusterSnapshotDetails).
     pub fn build(self) -> crate::types::AwsRdsDbClusterSnapshotDetails {
         crate::types::AwsRdsDbClusterSnapshotDetails {
-            availability_zones: self.availability_zones
-            ,
-            snapshot_create_time: self.snapshot_create_time
-            ,
-            engine: self.engine
-            ,
-            allocated_storage: self.allocated_storage
-                .unwrap_or_default()
-            ,
-            status: self.status
-            ,
-            port: self.port
-                .unwrap_or_default()
-            ,
-            vpc_id: self.vpc_id
-            ,
-            cluster_create_time: self.cluster_create_time
-            ,
-            master_username: self.master_username
-            ,
-            engine_version: self.engine_version
-            ,
-            license_model: self.license_model
-            ,
-            snapshot_type: self.snapshot_type
-            ,
-            percent_progress: self.percent_progress
-                .unwrap_or_default()
-            ,
-            storage_encrypted: self.storage_encrypted
-                .unwrap_or_default()
-            ,
-            kms_key_id: self.kms_key_id
-            ,
-            db_cluster_identifier: self.db_cluster_identifier
-            ,
-            db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier
-            ,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled
-                .unwrap_or_default()
-            ,
+            availability_zones: self.availability_zones,
+            snapshot_create_time: self.snapshot_create_time,
+            engine: self.engine,
+            allocated_storage: self.allocated_storage.unwrap_or_default(),
+            status: self.status,
+            port: self.port.unwrap_or_default(),
+            vpc_id: self.vpc_id,
+            cluster_create_time: self.cluster_create_time,
+            master_username: self.master_username,
+            engine_version: self.engine_version,
+            license_model: self.license_model,
+            snapshot_type: self.snapshot_type,
+            percent_progress: self.percent_progress.unwrap_or_default(),
+            storage_encrypted: self.storage_encrypted.unwrap_or_default(),
+            kms_key_id: self.kms_key_id,
+            db_cluster_identifier: self.db_cluster_identifier,
+            db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
+            iam_database_authentication_enabled: self
+                .iam_database_authentication_enabled
+                .unwrap_or_default(),
         }
     }
 }
-

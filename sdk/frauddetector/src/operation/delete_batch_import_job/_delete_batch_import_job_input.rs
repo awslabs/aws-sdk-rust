@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBatchImportJobInput  {
+pub struct DeleteBatchImportJobInput {
     /// <p>The ID of the batch import job to delete. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DeleteBatchImportJobInput {
     /// <p>The ID of the batch import job to delete. </p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl DeleteBatchImportJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteBatchImportJobInput`](crate::operation::delete_batch_import_job::DeleteBatchImportJobInput).
-    pub fn builder() -> crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobInputBuilder {
         crate::operation::delete_batch_import_job::builders::DeleteBatchImportJobInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteBatchImportJobInputBuilder {
     }
     /// <p>The ID of the batch import job to delete. </p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBatchImportJobInput`](crate::operation::delete_batch_import_job::DeleteBatchImportJobInput).
-    pub fn build(self) -> Result<crate::operation::delete_batch_import_job::DeleteBatchImportJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_batch_import_job::DeleteBatchImportJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_batch_import_job::DeleteBatchImportJobInput {
-                job_id: self.job_id
-                ,
-            }
+                job_id: self.job_id,
+            },
         )
     }
 }
-

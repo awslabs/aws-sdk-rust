@@ -4,59 +4,82 @@ pub use crate::operation::create_gateway_route::_create_gateway_route_output::Cr
 pub use crate::operation::create_gateway_route::_create_gateway_route_input::CreateGatewayRouteInputBuilder;
 
 /// Fluent builder constructing a request to `CreateGatewayRoute`.
-/// 
-/// <p>Creates a gateway route.</p> 
-/// <p>A gateway route is attached to a virtual gateway and routes traffic to an existing virtual service. If a route matches a request, it can distribute traffic to a target virtual service.</p> 
+///
+/// <p>Creates a gateway route.</p>
+/// <p>A gateway route is attached to a virtual gateway and routes traffic to an existing virtual service. If a route matches a request, it can distribute traffic to a target virtual service.</p>
 /// <p>For more information about gateway routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway routes</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGatewayRouteFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder,
+    inner: crate::operation::create_gateway_route::builders::CreateGatewayRouteInputBuilder,
 }
-impl CreateGatewayRouteFluentBuilder  {
+impl CreateGatewayRouteFluentBuilder {
     /// Creates a new `CreateGatewayRoute`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_gateway_route::CreateGatewayRoute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_gateway_route::CreateGatewayRouteError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_gateway_route::CreateGatewayRouteOutput, aws_smithy_http::result::SdkError<crate::operation::create_gateway_route::CreateGatewayRouteError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_gateway_route::CreateGatewayRoute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_gateway_route::CreateGatewayRouteError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_gateway_route::CreateGatewayRouteOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_gateway_route::CreateGatewayRouteError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name to use for the gateway route.</p>
     pub fn gateway_route_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.gateway_route_name(input.into());
         self
     }
     /// <p>The name to use for the gateway route.</p>
-    pub fn set_gateway_route_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_route_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_gateway_route_name(input);
         self
     }
@@ -76,7 +99,10 @@ impl CreateGatewayRouteFluentBuilder  {
         self
     }
     /// <p>The name of the virtual gateway to associate the gateway route with. If the virtual gateway is in a shared mesh, then you must be the owner of the virtual gateway resource.</p>
-    pub fn set_virtual_gateway_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_virtual_gateway_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_virtual_gateway_name(input);
         self
     }
@@ -100,7 +126,10 @@ impl CreateGatewayRouteFluentBuilder  {
         self
     }
     /// <p>Optional metadata that you can apply to the gateway route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagRef>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagRef>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -125,4 +154,3 @@ impl CreateGatewayRouteFluentBuilder  {
         self
     }
 }
-

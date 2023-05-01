@@ -4,50 +4,70 @@ pub use crate::operation::update_simulation_application::_update_simulation_appl
 pub use crate::operation::update_simulation_application::_update_simulation_application_input::UpdateSimulationApplicationInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateSimulationApplication`.
-/// 
+///
 /// <p>Updates a simulation application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSimulationApplicationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_simulation_application::builders::UpdateSimulationApplicationInputBuilder,
 }
-impl UpdateSimulationApplicationFluentBuilder  {
+impl UpdateSimulationApplicationFluentBuilder {
     /// Creates a new `UpdateSimulationApplication`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_simulation_application::UpdateSimulationApplication, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_simulation_application::UpdateSimulationApplicationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_simulation_application::UpdateSimulationApplicationOutput, aws_smithy_http::result::SdkError<crate::operation::update_simulation_application::UpdateSimulationApplicationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_simulation_application::UpdateSimulationApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_simulation_application::UpdateSimulationApplicationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_simulation_application::UpdateSimulationApplicationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_simulation_application::UpdateSimulationApplicationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The application information for the simulation application.</p>
     pub fn application(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application(input.into());
@@ -68,17 +88,26 @@ impl UpdateSimulationApplicationFluentBuilder  {
         self
     }
     /// <p>The sources of the simulation application.</p>
-    pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::SourceConfig>>) -> Self {
+    pub fn set_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SourceConfig>>,
+    ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn simulation_software_suite(mut self, input: crate::types::SimulationSoftwareSuite) -> Self {
+    pub fn simulation_software_suite(
+        mut self,
+        input: crate::types::SimulationSoftwareSuite,
+    ) -> Self {
         self.inner = self.inner.simulation_software_suite(input);
         self
     }
     /// <p>The simulation software suite used by the simulation application.</p>
-    pub fn set_simulation_software_suite(mut self, input: std::option::Option<crate::types::SimulationSoftwareSuite>) -> Self {
+    pub fn set_simulation_software_suite(
+        mut self,
+        input: std::option::Option<crate::types::SimulationSoftwareSuite>,
+    ) -> Self {
         self.inner = self.inner.set_simulation_software_suite(input);
         self
     }
@@ -88,7 +117,10 @@ impl UpdateSimulationApplicationFluentBuilder  {
         self
     }
     /// <p>Information about the robot software suite (ROS distribution).</p>
-    pub fn set_robot_software_suite(mut self, input: std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
+    pub fn set_robot_software_suite(
+        mut self,
+        input: std::option::Option<crate::types::RobotSoftwareSuite>,
+    ) -> Self {
         self.inner = self.inner.set_robot_software_suite(input);
         self
     }
@@ -98,7 +130,10 @@ impl UpdateSimulationApplicationFluentBuilder  {
         self
     }
     /// <p>The rendering engine for the simulation application.</p>
-    pub fn set_rendering_engine(mut self, input: std::option::Option<crate::types::RenderingEngine>) -> Self {
+    pub fn set_rendering_engine(
+        mut self,
+        input: std::option::Option<crate::types::RenderingEngine>,
+    ) -> Self {
         self.inner = self.inner.set_rendering_engine(input);
         self
     }
@@ -108,7 +143,10 @@ impl UpdateSimulationApplicationFluentBuilder  {
         self
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn set_current_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_current_revision_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_current_revision_id(input);
         self
     }
@@ -118,9 +156,11 @@ impl UpdateSimulationApplicationFluentBuilder  {
         self
     }
     /// <p>The object that contains the Docker image URI for your simulation application.</p>
-    pub fn set_environment(mut self, input: std::option::Option<crate::types::Environment>) -> Self {
+    pub fn set_environment(
+        mut self,
+        input: std::option::Option<crate::types::Environment>,
+    ) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
 }
-

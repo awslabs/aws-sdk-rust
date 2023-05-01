@@ -3,7 +3,7 @@
 /// <p>Describes the capacity for a fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComputeCapacity  {
+pub struct ComputeCapacity {
     /// <p>The desired number of streaming instances.</p>
     #[doc(hidden)]
     pub desired_instances: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl ComputeCapacityBuilder {
     }
     /// <p>The desired number of streaming instances.</p>
     pub fn set_desired_instances(mut self, input: std::option::Option<i32>) -> Self {
-        self.desired_instances = input; self
+        self.desired_instances = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComputeCapacity`](crate::types::ComputeCapacity).
     pub fn build(self) -> crate::types::ComputeCapacity {
         crate::types::ComputeCapacity {
-            desired_instances: self.desired_instances
-            ,
+            desired_instances: self.desired_instances,
         }
     }
 }
-

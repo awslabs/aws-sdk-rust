@@ -3,7 +3,7 @@
 /// <p>Information about the audit check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuditCheckDetails  {
+pub struct AuditCheckDetails {
     /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
     #[doc(hidden)]
     pub check_run_status: std::option::Option<crate::types::AuditCheckRunStatus>,
@@ -28,7 +28,7 @@ pub struct AuditCheckDetails  {
 }
 impl AuditCheckDetails {
     /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
-    pub fn check_run_status(&self) -> std::option::Option<& crate::types::AuditCheckRunStatus> {
+    pub fn check_run_status(&self) -> std::option::Option<&crate::types::AuditCheckRunStatus> {
         self.check_run_status.as_ref()
     }
     /// <p>True if the check is complete and found all resources compliant.</p>
@@ -48,11 +48,11 @@ impl AuditCheckDetails {
         self.suppressed_non_compliant_resources_count
     }
     /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
-    pub fn error_code(&self) -> std::option::Option<& str> {
+    pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -82,8 +82,12 @@ impl AuditCheckDetailsBuilder {
         self
     }
     /// <p>The completion status of this check. One of "IN_PROGRESS", "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT", "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
-    pub fn set_check_run_status(mut self, input: std::option::Option<crate::types::AuditCheckRunStatus>) -> Self {
-        self.check_run_status = input; self
+    pub fn set_check_run_status(
+        mut self,
+        input: std::option::Option<crate::types::AuditCheckRunStatus>,
+    ) -> Self {
+        self.check_run_status = input;
+        self
     }
     /// <p>True if the check is complete and found all resources compliant.</p>
     pub fn check_compliant(mut self, input: bool) -> Self {
@@ -92,7 +96,8 @@ impl AuditCheckDetailsBuilder {
     }
     /// <p>True if the check is complete and found all resources compliant.</p>
     pub fn set_check_compliant(mut self, input: std::option::Option<bool>) -> Self {
-        self.check_compliant = input; self
+        self.check_compliant = input;
+        self
     }
     /// <p>The number of resources on which the check was performed.</p>
     pub fn total_resources_count(mut self, input: i64) -> Self {
@@ -101,7 +106,8 @@ impl AuditCheckDetailsBuilder {
     }
     /// <p>The number of resources on which the check was performed.</p>
     pub fn set_total_resources_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.total_resources_count = input; self
+        self.total_resources_count = input;
+        self
     }
     /// <p>The number of resources that were found noncompliant during the check.</p>
     pub fn non_compliant_resources_count(mut self, input: i64) -> Self {
@@ -110,7 +116,8 @@ impl AuditCheckDetailsBuilder {
     }
     /// <p>The number of resources that were found noncompliant during the check.</p>
     pub fn set_non_compliant_resources_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.non_compliant_resources_count = input; self
+        self.non_compliant_resources_count = input;
+        self
     }
     /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
     pub fn suppressed_non_compliant_resources_count(mut self, input: i64) -> Self {
@@ -118,8 +125,12 @@ impl AuditCheckDetailsBuilder {
         self
     }
     /// <p> Describes how many of the non-compliant resources created during the evaluation of an audit check were marked as suppressed. </p>
-    pub fn set_suppressed_non_compliant_resources_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.suppressed_non_compliant_resources_count = input; self
+    pub fn set_suppressed_non_compliant_resources_count(
+        mut self,
+        input: std::option::Option<i64>,
+    ) -> Self {
+        self.suppressed_non_compliant_resources_count = input;
+        self
     }
     /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +139,8 @@ impl AuditCheckDetailsBuilder {
     }
     /// <p>The code of any error encountered when this check is performed during this audit. One of "INSUFFICIENT_PERMISSIONS" or "AUDIT_CHECK_DISABLED".</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input; self
+        self.error_code = input;
+        self
     }
     /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,26 +149,19 @@ impl AuditCheckDetailsBuilder {
     }
     /// <p>The message associated with any error encountered when this check is performed during this audit.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`AuditCheckDetails`](crate::types::AuditCheckDetails).
     pub fn build(self) -> crate::types::AuditCheckDetails {
         crate::types::AuditCheckDetails {
-            check_run_status: self.check_run_status
-            ,
-            check_compliant: self.check_compliant
-            ,
-            total_resources_count: self.total_resources_count
-            ,
-            non_compliant_resources_count: self.non_compliant_resources_count
-            ,
-            suppressed_non_compliant_resources_count: self.suppressed_non_compliant_resources_count
-            ,
-            error_code: self.error_code
-            ,
-            message: self.message
-            ,
+            check_run_status: self.check_run_status,
+            check_compliant: self.check_compliant,
+            total_resources_count: self.total_resources_count,
+            non_compliant_resources_count: self.non_compliant_resources_count,
+            suppressed_non_compliant_resources_count: self.suppressed_non_compliant_resources_count,
+            error_code: self.error_code,
+            message: self.message,
         }
     }
 }
-

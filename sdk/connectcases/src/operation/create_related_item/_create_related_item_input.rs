@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRelatedItemInput  {
+pub struct CreateRelatedItemInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -18,25 +18,26 @@ pub struct CreateRelatedItemInput  {
 }
 impl CreateRelatedItemInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> std::option::Option<& str> {
+    pub fn case_id(&self) -> std::option::Option<&str> {
         self.case_id.as_deref()
     }
     /// <p>The type of a related item.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::RelatedItemType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::RelatedItemType> {
         self.r#type.as_ref()
     }
     /// <p>The content of a related item to be created.</p>
-    pub fn content(&self) -> std::option::Option<& crate::types::RelatedItemInputContent> {
+    pub fn content(&self) -> std::option::Option<&crate::types::RelatedItemInputContent> {
         self.content.as_ref()
     }
 }
 impl CreateRelatedItemInput {
     /// Creates a new builder-style object to manufacture [`CreateRelatedItemInput`](crate::operation::create_related_item::CreateRelatedItemInput).
-    pub fn builder() -> crate::operation::create_related_item::builders::CreateRelatedItemInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_related_item::builders::CreateRelatedItemInputBuilder {
         crate::operation::create_related_item::builders::CreateRelatedItemInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl CreateRelatedItemInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>A unique identifier of the case.</p>
     pub fn case_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl CreateRelatedItemInputBuilder {
     }
     /// <p>A unique identifier of the case.</p>
     pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.case_id = input; self
+        self.case_id = input;
+        self
     }
     /// <p>The type of a related item.</p>
     pub fn r#type(mut self, input: crate::types::RelatedItemType) -> Self {
@@ -76,7 +79,8 @@ impl CreateRelatedItemInputBuilder {
     }
     /// <p>The type of a related item.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::RelatedItemType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The content of a related item to be created.</p>
     pub fn content(mut self, input: crate::types::RelatedItemInputContent) -> Self {
@@ -84,23 +88,27 @@ impl CreateRelatedItemInputBuilder {
         self
     }
     /// <p>The content of a related item to be created.</p>
-    pub fn set_content(mut self, input: std::option::Option<crate::types::RelatedItemInputContent>) -> Self {
-        self.content = input; self
+    pub fn set_content(
+        mut self,
+        input: std::option::Option<crate::types::RelatedItemInputContent>,
+    ) -> Self {
+        self.content = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRelatedItemInput`](crate::operation::create_related_item::CreateRelatedItemInput).
-    pub fn build(self) -> Result<crate::operation::create_related_item::CreateRelatedItemInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_related_item::CreateRelatedItemInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_related_item::CreateRelatedItemInput {
-                domain_id: self.domain_id
-                ,
-                case_id: self.case_id
-                ,
-                r#type: self.r#type
-                ,
-                content: self.content
-                ,
-            }
+                domain_id: self.domain_id,
+                case_id: self.case_id,
+                r#type: self.r#type,
+                content: self.content,
+            },
         )
     }
 }
-

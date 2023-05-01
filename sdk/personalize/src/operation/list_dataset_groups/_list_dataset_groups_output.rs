@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDatasetGroupsOutput  {
+pub struct ListDatasetGroupsOutput {
     /// <p>The list of your dataset groups.</p>
     #[doc(hidden)]
     pub dataset_groups: std::option::Option<std::vec::Vec<crate::types::DatasetGroupSummary>>,
@@ -13,22 +13,23 @@ pub struct ListDatasetGroupsOutput  {
 }
 impl ListDatasetGroupsOutput {
     /// <p>The list of your dataset groups.</p>
-    pub fn dataset_groups(&self) -> std::option::Option<& [crate::types::DatasetGroupSummary]> {
+    pub fn dataset_groups(&self) -> std::option::Option<&[crate::types::DatasetGroupSummary]> {
         self.dataset_groups.as_deref()
     }
     /// <p>A token for getting the next set of dataset groups (if they exist).</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDatasetGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListDatasetGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListDatasetGroupsOutput`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput).
-    pub fn builder() -> crate::operation::list_dataset_groups::builders::ListDatasetGroupsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_dataset_groups::builders::ListDatasetGroupsOutputBuilder {
         crate::operation::list_dataset_groups::builders::ListDatasetGroupsOutputBuilder::default()
     }
 }
@@ -37,7 +38,8 @@ impl ListDatasetGroupsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDatasetGroupsOutputBuilder {
-    pub(crate) dataset_groups: std::option::Option<std::vec::Vec<crate::types::DatasetGroupSummary>>,
+    pub(crate) dataset_groups:
+        std::option::Option<std::vec::Vec<crate::types::DatasetGroupSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +51,17 @@ impl ListDatasetGroupsOutputBuilder {
     /// <p>The list of your dataset groups.</p>
     pub fn dataset_groups(mut self, input: crate::types::DatasetGroupSummary) -> Self {
         let mut v = self.dataset_groups.unwrap_or_default();
-                        v.push(input);
-                        self.dataset_groups = Some(v);
-                        self
+        v.push(input);
+        self.dataset_groups = Some(v);
+        self
     }
     /// <p>The list of your dataset groups.</p>
-    pub fn set_dataset_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::DatasetGroupSummary>>) -> Self {
-        self.dataset_groups = input; self
+    pub fn set_dataset_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DatasetGroupSummary>>,
+    ) -> Self {
+        self.dataset_groups = input;
+        self
     }
     /// <p>A token for getting the next set of dataset groups (if they exist).</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListDatasetGroupsOutputBuilder {
     }
     /// <p>A token for getting the next set of dataset groups (if they exist).</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListDatasetGroupsOutput`](crate::operation::list_dataset_groups::ListDatasetGroupsOutput).
     pub fn build(self) -> crate::operation::list_dataset_groups::ListDatasetGroupsOutput {
         crate::operation::list_dataset_groups::ListDatasetGroupsOutput {
-            dataset_groups: self.dataset_groups
-            ,
-            next_token: self.next_token
-            ,
+            dataset_groups: self.dataset_groups,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

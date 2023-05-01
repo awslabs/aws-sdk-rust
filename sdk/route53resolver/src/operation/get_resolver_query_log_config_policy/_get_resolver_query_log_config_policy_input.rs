@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverQueryLogConfigPolicyInput  {
+pub struct GetResolverQueryLogConfigPolicyInput {
     /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetResolverQueryLogConfigPolicyInput {
     /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
 impl GetResolverQueryLogConfigPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetResolverQueryLogConfigPolicyInput`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput).
-    pub fn builder() -> crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyInputBuilder{
         crate::operation::get_resolver_query_log_config_policy::builders::GetResolverQueryLogConfigPolicyInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl GetResolverQueryLogConfigPolicyInputBuilder {
     }
     /// <p>The ARN of the query logging configuration that you want to get the query logging policy for.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetResolverQueryLogConfigPolicyInput`](crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyInput {
                 arn: self.arn
@@ -46,4 +47,3 @@ impl GetResolverQueryLogConfigPolicyInputBuilder {
         )
     }
 }
-

@@ -4,57 +4,80 @@ pub use crate::operation::upgrade_published_schema::_upgrade_published_schema_ou
 pub use crate::operation::upgrade_published_schema::_upgrade_published_schema_input::UpgradePublishedSchemaInputBuilder;
 
 /// Fluent builder constructing a request to `UpgradePublishedSchema`.
-/// 
+///
 /// <p>Upgrades a published schema under a new minor version revision using the current contents of <code>DevelopmentSchemaArn</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpgradePublishedSchemaFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaInputBuilder,
+    inner: crate::operation::upgrade_published_schema::builders::UpgradePublishedSchemaInputBuilder,
 }
-impl UpgradePublishedSchemaFluentBuilder  {
+impl UpgradePublishedSchemaFluentBuilder {
     /// Creates a new `UpgradePublishedSchema`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::upgrade_published_schema::UpgradePublishedSchema, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::upgrade_published_schema::UpgradePublishedSchemaError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput, aws_smithy_http::result::SdkError<crate::operation::upgrade_published_schema::UpgradePublishedSchemaError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::upgrade_published_schema::UpgradePublishedSchema,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::upgrade_published_schema::UpgradePublishedSchemaError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::upgrade_published_schema::UpgradePublishedSchemaError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
     pub fn development_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.development_schema_arn(input.into());
         self
     }
     /// <p>The ARN of the development schema with the changes used for the upgrade.</p>
-    pub fn set_development_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_development_schema_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_development_schema_arn(input);
         self
     }
@@ -64,7 +87,10 @@ impl UpgradePublishedSchemaFluentBuilder  {
         self
     }
     /// <p>The ARN of the published schema to be upgraded.</p>
-    pub fn set_published_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_published_schema_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_published_schema_arn(input);
         self
     }
@@ -89,4 +115,3 @@ impl UpgradePublishedSchemaFluentBuilder  {
         self
     }
 }
-

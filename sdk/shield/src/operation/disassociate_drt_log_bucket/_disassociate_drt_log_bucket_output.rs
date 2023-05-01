@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateDrtLogBucketOutput  {
+pub struct DisassociateDrtLogBucketOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisassociateDrtLogBucketOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateDrtLogBucketOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateDrtLogBucketOutput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput).
-    pub fn builder() -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketOutputBuilder{
         crate::operation::disassociate_drt_log_bucket::builders::DisassociateDrtLogBucketOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct DisassociateDrtLogBucketOutputBuilder {
 }
 impl DisassociateDrtLogBucketOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateDrtLogBucketOutput`](crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput).
-    pub fn build(self) -> crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput {
         crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput {
             _request_id: self._request_id,
         }
     }
 }
-

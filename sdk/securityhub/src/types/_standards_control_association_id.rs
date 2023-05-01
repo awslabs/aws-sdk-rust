@@ -3,7 +3,7 @@
 /// <p> An array with one or more objects that includes a security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) and the Amazon Resource Name (ARN) of a standard. The security control ID or ARN is the same across standards. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StandardsControlAssociationId  {
+pub struct StandardsControlAssociationId {
     /// <p> The unique identifier (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) of a security control across standards. </p>
     #[doc(hidden)]
     pub security_control_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct StandardsControlAssociationId  {
 }
 impl StandardsControlAssociationId {
     /// <p> The unique identifier (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) of a security control across standards. </p>
-    pub fn security_control_id(&self) -> std::option::Option<& str> {
+    pub fn security_control_id(&self) -> std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
     /// <p> The ARN of a standard. </p>
-    pub fn standards_arn(&self) -> std::option::Option<& str> {
+    pub fn standards_arn(&self) -> std::option::Option<&str> {
         self.standards_arn.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl StandardsControlAssociationIdBuilder {
         self
     }
     /// <p> The unique identifier (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) of a security control across standards. </p>
-    pub fn set_security_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_control_id = input; self
+    pub fn set_security_control_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_control_id = input;
+        self
     }
     /// <p> The ARN of a standard. </p>
     pub fn standards_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl StandardsControlAssociationIdBuilder {
     }
     /// <p> The ARN of a standard. </p>
     pub fn set_standards_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.standards_arn = input; self
+        self.standards_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`StandardsControlAssociationId`](crate::types::StandardsControlAssociationId).
     pub fn build(self) -> crate::types::StandardsControlAssociationId {
         crate::types::StandardsControlAssociationId {
-            security_control_id: self.security_control_id
-            ,
-            standards_arn: self.standards_arn
-            ,
+            security_control_id: self.security_control_id,
+            standards_arn: self.standards_arn,
         }
     }
 }
-

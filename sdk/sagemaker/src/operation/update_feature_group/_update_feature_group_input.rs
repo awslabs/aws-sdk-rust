@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFeatureGroupInput  {
+pub struct UpdateFeatureGroupInput {
     /// <p>The name of the feature group that you're updating.</p>
     #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct UpdateFeatureGroupInput  {
 }
 impl UpdateFeatureGroupInput {
     /// <p>The name of the feature group that you're updating.</p>
-    pub fn feature_group_name(&self) -> std::option::Option<& str> {
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
     /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
-    pub fn feature_additions(&self) -> std::option::Option<& [crate::types::FeatureDefinition]> {
+    pub fn feature_additions(&self) -> std::option::Option<&[crate::types::FeatureDefinition]> {
         self.feature_additions.as_deref()
     }
 }
 impl UpdateFeatureGroupInput {
     /// Creates a new builder-style object to manufacture [`UpdateFeatureGroupInput`](crate::operation::update_feature_group::UpdateFeatureGroupInput).
-    pub fn builder() -> crate::operation::update_feature_group::builders::UpdateFeatureGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_feature_group::builders::UpdateFeatureGroupInputBuilder {
         crate::operation::update_feature_group::builders::UpdateFeatureGroupInputBuilder::default()
     }
 }
@@ -32,7 +33,8 @@ impl UpdateFeatureGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateFeatureGroupInputBuilder {
     pub(crate) feature_group_name: std::option::Option<std::string::String>,
-    pub(crate) feature_additions: std::option::Option<std::vec::Vec<crate::types::FeatureDefinition>>,
+    pub(crate) feature_additions:
+        std::option::Option<std::vec::Vec<crate::types::FeatureDefinition>>,
 }
 impl UpdateFeatureGroupInputBuilder {
     /// <p>The name of the feature group that you're updating.</p>
@@ -41,8 +43,12 @@ impl UpdateFeatureGroupInputBuilder {
         self
     }
     /// <p>The name of the feature group that you're updating.</p>
-    pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_group_name = input; self
+    pub fn set_feature_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.feature_group_name = input;
+        self
     }
     /// Appends an item to `feature_additions`.
     ///
@@ -51,24 +57,30 @@ impl UpdateFeatureGroupInputBuilder {
     /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
     pub fn feature_additions(mut self, input: crate::types::FeatureDefinition) -> Self {
         let mut v = self.feature_additions.unwrap_or_default();
-                        v.push(input);
-                        self.feature_additions = Some(v);
-                        self
+        v.push(input);
+        self.feature_additions = Some(v);
+        self
     }
     /// <p>Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.</p>
-    pub fn set_feature_additions(mut self, input: std::option::Option<std::vec::Vec<crate::types::FeatureDefinition>>) -> Self {
-        self.feature_additions = input; self
+    pub fn set_feature_additions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FeatureDefinition>>,
+    ) -> Self {
+        self.feature_additions = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFeatureGroupInput`](crate::operation::update_feature_group::UpdateFeatureGroupInput).
-    pub fn build(self) -> Result<crate::operation::update_feature_group::UpdateFeatureGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_feature_group::UpdateFeatureGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_feature_group::UpdateFeatureGroupInput {
-                feature_group_name: self.feature_group_name
-                ,
-                feature_additions: self.feature_additions
-                ,
-            }
+                feature_group_name: self.feature_group_name,
+                feature_additions: self.feature_additions,
+            },
         )
     }
 }
-

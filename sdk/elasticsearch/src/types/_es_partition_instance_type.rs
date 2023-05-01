@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let espartitioninstancetype = unimplemented!();
 /// match espartitioninstancetype {
@@ -86,14 +86,22 @@
 /// Specifically, when `espartitioninstancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EsPartitionInstanceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum EsPartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     C42xlargeElasticsearch,
@@ -212,153 +220,221 @@ pub enum EsPartitionInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     Ultrawarm1MediumElasticsearch,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EsPartitionInstanceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "c4.2xlarge.elasticsearch" => EsPartitionInstanceType::C42xlargeElasticsearch,
-"c4.4xlarge.elasticsearch" => EsPartitionInstanceType::C44xlargeElasticsearch,
-"c4.8xlarge.elasticsearch" => EsPartitionInstanceType::C48xlargeElasticsearch,
-"c4.large.elasticsearch" => EsPartitionInstanceType::C4LargeElasticsearch,
-"c4.xlarge.elasticsearch" => EsPartitionInstanceType::C4XlargeElasticsearch,
-"c5.18xlarge.elasticsearch" => EsPartitionInstanceType::C518xlargeElasticsearch,
-"c5.2xlarge.elasticsearch" => EsPartitionInstanceType::C52xlargeElasticsearch,
-"c5.4xlarge.elasticsearch" => EsPartitionInstanceType::C54xlargeElasticsearch,
-"c5.9xlarge.elasticsearch" => EsPartitionInstanceType::C59xlargeElasticsearch,
-"c5.large.elasticsearch" => EsPartitionInstanceType::C5LargeElasticsearch,
-"c5.xlarge.elasticsearch" => EsPartitionInstanceType::C5XlargeElasticsearch,
-"d2.2xlarge.elasticsearch" => EsPartitionInstanceType::D22xlargeElasticsearch,
-"d2.4xlarge.elasticsearch" => EsPartitionInstanceType::D24xlargeElasticsearch,
-"d2.8xlarge.elasticsearch" => EsPartitionInstanceType::D28xlargeElasticsearch,
-"d2.xlarge.elasticsearch" => EsPartitionInstanceType::D2XlargeElasticsearch,
-"i2.2xlarge.elasticsearch" => EsPartitionInstanceType::I22xlargeElasticsearch,
-"i2.xlarge.elasticsearch" => EsPartitionInstanceType::I2XlargeElasticsearch,
-"i3.16xlarge.elasticsearch" => EsPartitionInstanceType::I316xlargeElasticsearch,
-"i3.2xlarge.elasticsearch" => EsPartitionInstanceType::I32xlargeElasticsearch,
-"i3.4xlarge.elasticsearch" => EsPartitionInstanceType::I34xlargeElasticsearch,
-"i3.8xlarge.elasticsearch" => EsPartitionInstanceType::I38xlargeElasticsearch,
-"i3.large.elasticsearch" => EsPartitionInstanceType::I3LargeElasticsearch,
-"i3.xlarge.elasticsearch" => EsPartitionInstanceType::I3XlargeElasticsearch,
-"m3.2xlarge.elasticsearch" => EsPartitionInstanceType::M32xlargeElasticsearch,
-"m3.large.elasticsearch" => EsPartitionInstanceType::M3LargeElasticsearch,
-"m3.medium.elasticsearch" => EsPartitionInstanceType::M3MediumElasticsearch,
-"m3.xlarge.elasticsearch" => EsPartitionInstanceType::M3XlargeElasticsearch,
-"m4.10xlarge.elasticsearch" => EsPartitionInstanceType::M410xlargeElasticsearch,
-"m4.2xlarge.elasticsearch" => EsPartitionInstanceType::M42xlargeElasticsearch,
-"m4.4xlarge.elasticsearch" => EsPartitionInstanceType::M44xlargeElasticsearch,
-"m4.large.elasticsearch" => EsPartitionInstanceType::M4LargeElasticsearch,
-"m4.xlarge.elasticsearch" => EsPartitionInstanceType::M4XlargeElasticsearch,
-"m5.12xlarge.elasticsearch" => EsPartitionInstanceType::M512xlargeElasticsearch,
-"m5.2xlarge.elasticsearch" => EsPartitionInstanceType::M52xlargeElasticsearch,
-"m5.4xlarge.elasticsearch" => EsPartitionInstanceType::M54xlargeElasticsearch,
-"m5.large.elasticsearch" => EsPartitionInstanceType::M5LargeElasticsearch,
-"m5.xlarge.elasticsearch" => EsPartitionInstanceType::M5XlargeElasticsearch,
-"r3.2xlarge.elasticsearch" => EsPartitionInstanceType::R32xlargeElasticsearch,
-"r3.4xlarge.elasticsearch" => EsPartitionInstanceType::R34xlargeElasticsearch,
-"r3.8xlarge.elasticsearch" => EsPartitionInstanceType::R38xlargeElasticsearch,
-"r3.large.elasticsearch" => EsPartitionInstanceType::R3LargeElasticsearch,
-"r3.xlarge.elasticsearch" => EsPartitionInstanceType::R3XlargeElasticsearch,
-"r4.16xlarge.elasticsearch" => EsPartitionInstanceType::R416xlargeElasticsearch,
-"r4.2xlarge.elasticsearch" => EsPartitionInstanceType::R42xlargeElasticsearch,
-"r4.4xlarge.elasticsearch" => EsPartitionInstanceType::R44xlargeElasticsearch,
-"r4.8xlarge.elasticsearch" => EsPartitionInstanceType::R48xlargeElasticsearch,
-"r4.large.elasticsearch" => EsPartitionInstanceType::R4LargeElasticsearch,
-"r4.xlarge.elasticsearch" => EsPartitionInstanceType::R4XlargeElasticsearch,
-"r5.12xlarge.elasticsearch" => EsPartitionInstanceType::R512xlargeElasticsearch,
-"r5.2xlarge.elasticsearch" => EsPartitionInstanceType::R52xlargeElasticsearch,
-"r5.4xlarge.elasticsearch" => EsPartitionInstanceType::R54xlargeElasticsearch,
-"r5.large.elasticsearch" => EsPartitionInstanceType::R5LargeElasticsearch,
-"r5.xlarge.elasticsearch" => EsPartitionInstanceType::R5XlargeElasticsearch,
-"t2.medium.elasticsearch" => EsPartitionInstanceType::T2MediumElasticsearch,
-"t2.micro.elasticsearch" => EsPartitionInstanceType::T2MicroElasticsearch,
-"t2.small.elasticsearch" => EsPartitionInstanceType::T2SmallElasticsearch,
-"ultrawarm1.large.elasticsearch" => EsPartitionInstanceType::Ultrawarm1LargeElasticsearch,
-"ultrawarm1.medium.elasticsearch" => EsPartitionInstanceType::Ultrawarm1MediumElasticsearch,
-other => EsPartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "c4.2xlarge.elasticsearch" => EsPartitionInstanceType::C42xlargeElasticsearch,
+            "c4.4xlarge.elasticsearch" => EsPartitionInstanceType::C44xlargeElasticsearch,
+            "c4.8xlarge.elasticsearch" => EsPartitionInstanceType::C48xlargeElasticsearch,
+            "c4.large.elasticsearch" => EsPartitionInstanceType::C4LargeElasticsearch,
+            "c4.xlarge.elasticsearch" => EsPartitionInstanceType::C4XlargeElasticsearch,
+            "c5.18xlarge.elasticsearch" => EsPartitionInstanceType::C518xlargeElasticsearch,
+            "c5.2xlarge.elasticsearch" => EsPartitionInstanceType::C52xlargeElasticsearch,
+            "c5.4xlarge.elasticsearch" => EsPartitionInstanceType::C54xlargeElasticsearch,
+            "c5.9xlarge.elasticsearch" => EsPartitionInstanceType::C59xlargeElasticsearch,
+            "c5.large.elasticsearch" => EsPartitionInstanceType::C5LargeElasticsearch,
+            "c5.xlarge.elasticsearch" => EsPartitionInstanceType::C5XlargeElasticsearch,
+            "d2.2xlarge.elasticsearch" => EsPartitionInstanceType::D22xlargeElasticsearch,
+            "d2.4xlarge.elasticsearch" => EsPartitionInstanceType::D24xlargeElasticsearch,
+            "d2.8xlarge.elasticsearch" => EsPartitionInstanceType::D28xlargeElasticsearch,
+            "d2.xlarge.elasticsearch" => EsPartitionInstanceType::D2XlargeElasticsearch,
+            "i2.2xlarge.elasticsearch" => EsPartitionInstanceType::I22xlargeElasticsearch,
+            "i2.xlarge.elasticsearch" => EsPartitionInstanceType::I2XlargeElasticsearch,
+            "i3.16xlarge.elasticsearch" => EsPartitionInstanceType::I316xlargeElasticsearch,
+            "i3.2xlarge.elasticsearch" => EsPartitionInstanceType::I32xlargeElasticsearch,
+            "i3.4xlarge.elasticsearch" => EsPartitionInstanceType::I34xlargeElasticsearch,
+            "i3.8xlarge.elasticsearch" => EsPartitionInstanceType::I38xlargeElasticsearch,
+            "i3.large.elasticsearch" => EsPartitionInstanceType::I3LargeElasticsearch,
+            "i3.xlarge.elasticsearch" => EsPartitionInstanceType::I3XlargeElasticsearch,
+            "m3.2xlarge.elasticsearch" => EsPartitionInstanceType::M32xlargeElasticsearch,
+            "m3.large.elasticsearch" => EsPartitionInstanceType::M3LargeElasticsearch,
+            "m3.medium.elasticsearch" => EsPartitionInstanceType::M3MediumElasticsearch,
+            "m3.xlarge.elasticsearch" => EsPartitionInstanceType::M3XlargeElasticsearch,
+            "m4.10xlarge.elasticsearch" => EsPartitionInstanceType::M410xlargeElasticsearch,
+            "m4.2xlarge.elasticsearch" => EsPartitionInstanceType::M42xlargeElasticsearch,
+            "m4.4xlarge.elasticsearch" => EsPartitionInstanceType::M44xlargeElasticsearch,
+            "m4.large.elasticsearch" => EsPartitionInstanceType::M4LargeElasticsearch,
+            "m4.xlarge.elasticsearch" => EsPartitionInstanceType::M4XlargeElasticsearch,
+            "m5.12xlarge.elasticsearch" => EsPartitionInstanceType::M512xlargeElasticsearch,
+            "m5.2xlarge.elasticsearch" => EsPartitionInstanceType::M52xlargeElasticsearch,
+            "m5.4xlarge.elasticsearch" => EsPartitionInstanceType::M54xlargeElasticsearch,
+            "m5.large.elasticsearch" => EsPartitionInstanceType::M5LargeElasticsearch,
+            "m5.xlarge.elasticsearch" => EsPartitionInstanceType::M5XlargeElasticsearch,
+            "r3.2xlarge.elasticsearch" => EsPartitionInstanceType::R32xlargeElasticsearch,
+            "r3.4xlarge.elasticsearch" => EsPartitionInstanceType::R34xlargeElasticsearch,
+            "r3.8xlarge.elasticsearch" => EsPartitionInstanceType::R38xlargeElasticsearch,
+            "r3.large.elasticsearch" => EsPartitionInstanceType::R3LargeElasticsearch,
+            "r3.xlarge.elasticsearch" => EsPartitionInstanceType::R3XlargeElasticsearch,
+            "r4.16xlarge.elasticsearch" => EsPartitionInstanceType::R416xlargeElasticsearch,
+            "r4.2xlarge.elasticsearch" => EsPartitionInstanceType::R42xlargeElasticsearch,
+            "r4.4xlarge.elasticsearch" => EsPartitionInstanceType::R44xlargeElasticsearch,
+            "r4.8xlarge.elasticsearch" => EsPartitionInstanceType::R48xlargeElasticsearch,
+            "r4.large.elasticsearch" => EsPartitionInstanceType::R4LargeElasticsearch,
+            "r4.xlarge.elasticsearch" => EsPartitionInstanceType::R4XlargeElasticsearch,
+            "r5.12xlarge.elasticsearch" => EsPartitionInstanceType::R512xlargeElasticsearch,
+            "r5.2xlarge.elasticsearch" => EsPartitionInstanceType::R52xlargeElasticsearch,
+            "r5.4xlarge.elasticsearch" => EsPartitionInstanceType::R54xlargeElasticsearch,
+            "r5.large.elasticsearch" => EsPartitionInstanceType::R5LargeElasticsearch,
+            "r5.xlarge.elasticsearch" => EsPartitionInstanceType::R5XlargeElasticsearch,
+            "t2.medium.elasticsearch" => EsPartitionInstanceType::T2MediumElasticsearch,
+            "t2.micro.elasticsearch" => EsPartitionInstanceType::T2MicroElasticsearch,
+            "t2.small.elasticsearch" => EsPartitionInstanceType::T2SmallElasticsearch,
+            "ultrawarm1.large.elasticsearch" => {
+                EsPartitionInstanceType::Ultrawarm1LargeElasticsearch
             }
-impl std::str::FromStr for EsPartitionInstanceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(EsPartitionInstanceType::from(s))
-                }
+            "ultrawarm1.medium.elasticsearch" => {
+                EsPartitionInstanceType::Ultrawarm1MediumElasticsearch
             }
-impl EsPartitionInstanceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    EsPartitionInstanceType::C42xlargeElasticsearch => "c4.2xlarge.elasticsearch",
-    EsPartitionInstanceType::C44xlargeElasticsearch => "c4.4xlarge.elasticsearch",
-    EsPartitionInstanceType::C48xlargeElasticsearch => "c4.8xlarge.elasticsearch",
-    EsPartitionInstanceType::C4LargeElasticsearch => "c4.large.elasticsearch",
-    EsPartitionInstanceType::C4XlargeElasticsearch => "c4.xlarge.elasticsearch",
-    EsPartitionInstanceType::C518xlargeElasticsearch => "c5.18xlarge.elasticsearch",
-    EsPartitionInstanceType::C52xlargeElasticsearch => "c5.2xlarge.elasticsearch",
-    EsPartitionInstanceType::C54xlargeElasticsearch => "c5.4xlarge.elasticsearch",
-    EsPartitionInstanceType::C59xlargeElasticsearch => "c5.9xlarge.elasticsearch",
-    EsPartitionInstanceType::C5LargeElasticsearch => "c5.large.elasticsearch",
-    EsPartitionInstanceType::C5XlargeElasticsearch => "c5.xlarge.elasticsearch",
-    EsPartitionInstanceType::D22xlargeElasticsearch => "d2.2xlarge.elasticsearch",
-    EsPartitionInstanceType::D24xlargeElasticsearch => "d2.4xlarge.elasticsearch",
-    EsPartitionInstanceType::D28xlargeElasticsearch => "d2.8xlarge.elasticsearch",
-    EsPartitionInstanceType::D2XlargeElasticsearch => "d2.xlarge.elasticsearch",
-    EsPartitionInstanceType::I22xlargeElasticsearch => "i2.2xlarge.elasticsearch",
-    EsPartitionInstanceType::I2XlargeElasticsearch => "i2.xlarge.elasticsearch",
-    EsPartitionInstanceType::I316xlargeElasticsearch => "i3.16xlarge.elasticsearch",
-    EsPartitionInstanceType::I32xlargeElasticsearch => "i3.2xlarge.elasticsearch",
-    EsPartitionInstanceType::I34xlargeElasticsearch => "i3.4xlarge.elasticsearch",
-    EsPartitionInstanceType::I38xlargeElasticsearch => "i3.8xlarge.elasticsearch",
-    EsPartitionInstanceType::I3LargeElasticsearch => "i3.large.elasticsearch",
-    EsPartitionInstanceType::I3XlargeElasticsearch => "i3.xlarge.elasticsearch",
-    EsPartitionInstanceType::M32xlargeElasticsearch => "m3.2xlarge.elasticsearch",
-    EsPartitionInstanceType::M3LargeElasticsearch => "m3.large.elasticsearch",
-    EsPartitionInstanceType::M3MediumElasticsearch => "m3.medium.elasticsearch",
-    EsPartitionInstanceType::M3XlargeElasticsearch => "m3.xlarge.elasticsearch",
-    EsPartitionInstanceType::M410xlargeElasticsearch => "m4.10xlarge.elasticsearch",
-    EsPartitionInstanceType::M42xlargeElasticsearch => "m4.2xlarge.elasticsearch",
-    EsPartitionInstanceType::M44xlargeElasticsearch => "m4.4xlarge.elasticsearch",
-    EsPartitionInstanceType::M4LargeElasticsearch => "m4.large.elasticsearch",
-    EsPartitionInstanceType::M4XlargeElasticsearch => "m4.xlarge.elasticsearch",
-    EsPartitionInstanceType::M512xlargeElasticsearch => "m5.12xlarge.elasticsearch",
-    EsPartitionInstanceType::M52xlargeElasticsearch => "m5.2xlarge.elasticsearch",
-    EsPartitionInstanceType::M54xlargeElasticsearch => "m5.4xlarge.elasticsearch",
-    EsPartitionInstanceType::M5LargeElasticsearch => "m5.large.elasticsearch",
-    EsPartitionInstanceType::M5XlargeElasticsearch => "m5.xlarge.elasticsearch",
-    EsPartitionInstanceType::R32xlargeElasticsearch => "r3.2xlarge.elasticsearch",
-    EsPartitionInstanceType::R34xlargeElasticsearch => "r3.4xlarge.elasticsearch",
-    EsPartitionInstanceType::R38xlargeElasticsearch => "r3.8xlarge.elasticsearch",
-    EsPartitionInstanceType::R3LargeElasticsearch => "r3.large.elasticsearch",
-    EsPartitionInstanceType::R3XlargeElasticsearch => "r3.xlarge.elasticsearch",
-    EsPartitionInstanceType::R416xlargeElasticsearch => "r4.16xlarge.elasticsearch",
-    EsPartitionInstanceType::R42xlargeElasticsearch => "r4.2xlarge.elasticsearch",
-    EsPartitionInstanceType::R44xlargeElasticsearch => "r4.4xlarge.elasticsearch",
-    EsPartitionInstanceType::R48xlargeElasticsearch => "r4.8xlarge.elasticsearch",
-    EsPartitionInstanceType::R4LargeElasticsearch => "r4.large.elasticsearch",
-    EsPartitionInstanceType::R4XlargeElasticsearch => "r4.xlarge.elasticsearch",
-    EsPartitionInstanceType::R512xlargeElasticsearch => "r5.12xlarge.elasticsearch",
-    EsPartitionInstanceType::R52xlargeElasticsearch => "r5.2xlarge.elasticsearch",
-    EsPartitionInstanceType::R54xlargeElasticsearch => "r5.4xlarge.elasticsearch",
-    EsPartitionInstanceType::R5LargeElasticsearch => "r5.large.elasticsearch",
-    EsPartitionInstanceType::R5XlargeElasticsearch => "r5.xlarge.elasticsearch",
-    EsPartitionInstanceType::T2MediumElasticsearch => "t2.medium.elasticsearch",
-    EsPartitionInstanceType::T2MicroElasticsearch => "t2.micro.elasticsearch",
-    EsPartitionInstanceType::T2SmallElasticsearch => "t2.small.elasticsearch",
-    EsPartitionInstanceType::Ultrawarm1LargeElasticsearch => "ultrawarm1.large.elasticsearch",
-    EsPartitionInstanceType::Ultrawarm1MediumElasticsearch => "ultrawarm1.medium.elasticsearch",
-    EsPartitionInstanceType::Unknown(value) => value.as_str()
+            other => EsPartitionInstanceType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["c4.2xlarge.elasticsearch", "c4.4xlarge.elasticsearch", "c4.8xlarge.elasticsearch", "c4.large.elasticsearch", "c4.xlarge.elasticsearch", "c5.18xlarge.elasticsearch", "c5.2xlarge.elasticsearch", "c5.4xlarge.elasticsearch", "c5.9xlarge.elasticsearch", "c5.large.elasticsearch", "c5.xlarge.elasticsearch", "d2.2xlarge.elasticsearch", "d2.4xlarge.elasticsearch", "d2.8xlarge.elasticsearch", "d2.xlarge.elasticsearch", "i2.2xlarge.elasticsearch", "i2.xlarge.elasticsearch", "i3.16xlarge.elasticsearch", "i3.2xlarge.elasticsearch", "i3.4xlarge.elasticsearch", "i3.8xlarge.elasticsearch", "i3.large.elasticsearch", "i3.xlarge.elasticsearch", "m3.2xlarge.elasticsearch", "m3.large.elasticsearch", "m3.medium.elasticsearch", "m3.xlarge.elasticsearch", "m4.10xlarge.elasticsearch", "m4.2xlarge.elasticsearch", "m4.4xlarge.elasticsearch", "m4.large.elasticsearch", "m4.xlarge.elasticsearch", "m5.12xlarge.elasticsearch", "m5.2xlarge.elasticsearch", "m5.4xlarge.elasticsearch", "m5.large.elasticsearch", "m5.xlarge.elasticsearch", "r3.2xlarge.elasticsearch", "r3.4xlarge.elasticsearch", "r3.8xlarge.elasticsearch", "r3.large.elasticsearch", "r3.xlarge.elasticsearch", "r4.16xlarge.elasticsearch", "r4.2xlarge.elasticsearch", "r4.4xlarge.elasticsearch", "r4.8xlarge.elasticsearch", "r4.large.elasticsearch", "r4.xlarge.elasticsearch", "r5.12xlarge.elasticsearch", "r5.2xlarge.elasticsearch", "r5.4xlarge.elasticsearch", "r5.large.elasticsearch", "r5.xlarge.elasticsearch", "t2.medium.elasticsearch", "t2.micro.elasticsearch", "t2.small.elasticsearch", "ultrawarm1.large.elasticsearch", "ultrawarm1.medium.elasticsearch"]
-                }
-            }
-impl AsRef<str> for EsPartitionInstanceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for EsPartitionInstanceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EsPartitionInstanceType::from(s))
+    }
+}
+impl EsPartitionInstanceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EsPartitionInstanceType::C42xlargeElasticsearch => "c4.2xlarge.elasticsearch",
+            EsPartitionInstanceType::C44xlargeElasticsearch => "c4.4xlarge.elasticsearch",
+            EsPartitionInstanceType::C48xlargeElasticsearch => "c4.8xlarge.elasticsearch",
+            EsPartitionInstanceType::C4LargeElasticsearch => "c4.large.elasticsearch",
+            EsPartitionInstanceType::C4XlargeElasticsearch => "c4.xlarge.elasticsearch",
+            EsPartitionInstanceType::C518xlargeElasticsearch => "c5.18xlarge.elasticsearch",
+            EsPartitionInstanceType::C52xlargeElasticsearch => "c5.2xlarge.elasticsearch",
+            EsPartitionInstanceType::C54xlargeElasticsearch => "c5.4xlarge.elasticsearch",
+            EsPartitionInstanceType::C59xlargeElasticsearch => "c5.9xlarge.elasticsearch",
+            EsPartitionInstanceType::C5LargeElasticsearch => "c5.large.elasticsearch",
+            EsPartitionInstanceType::C5XlargeElasticsearch => "c5.xlarge.elasticsearch",
+            EsPartitionInstanceType::D22xlargeElasticsearch => "d2.2xlarge.elasticsearch",
+            EsPartitionInstanceType::D24xlargeElasticsearch => "d2.4xlarge.elasticsearch",
+            EsPartitionInstanceType::D28xlargeElasticsearch => "d2.8xlarge.elasticsearch",
+            EsPartitionInstanceType::D2XlargeElasticsearch => "d2.xlarge.elasticsearch",
+            EsPartitionInstanceType::I22xlargeElasticsearch => "i2.2xlarge.elasticsearch",
+            EsPartitionInstanceType::I2XlargeElasticsearch => "i2.xlarge.elasticsearch",
+            EsPartitionInstanceType::I316xlargeElasticsearch => "i3.16xlarge.elasticsearch",
+            EsPartitionInstanceType::I32xlargeElasticsearch => "i3.2xlarge.elasticsearch",
+            EsPartitionInstanceType::I34xlargeElasticsearch => "i3.4xlarge.elasticsearch",
+            EsPartitionInstanceType::I38xlargeElasticsearch => "i3.8xlarge.elasticsearch",
+            EsPartitionInstanceType::I3LargeElasticsearch => "i3.large.elasticsearch",
+            EsPartitionInstanceType::I3XlargeElasticsearch => "i3.xlarge.elasticsearch",
+            EsPartitionInstanceType::M32xlargeElasticsearch => "m3.2xlarge.elasticsearch",
+            EsPartitionInstanceType::M3LargeElasticsearch => "m3.large.elasticsearch",
+            EsPartitionInstanceType::M3MediumElasticsearch => "m3.medium.elasticsearch",
+            EsPartitionInstanceType::M3XlargeElasticsearch => "m3.xlarge.elasticsearch",
+            EsPartitionInstanceType::M410xlargeElasticsearch => "m4.10xlarge.elasticsearch",
+            EsPartitionInstanceType::M42xlargeElasticsearch => "m4.2xlarge.elasticsearch",
+            EsPartitionInstanceType::M44xlargeElasticsearch => "m4.4xlarge.elasticsearch",
+            EsPartitionInstanceType::M4LargeElasticsearch => "m4.large.elasticsearch",
+            EsPartitionInstanceType::M4XlargeElasticsearch => "m4.xlarge.elasticsearch",
+            EsPartitionInstanceType::M512xlargeElasticsearch => "m5.12xlarge.elasticsearch",
+            EsPartitionInstanceType::M52xlargeElasticsearch => "m5.2xlarge.elasticsearch",
+            EsPartitionInstanceType::M54xlargeElasticsearch => "m5.4xlarge.elasticsearch",
+            EsPartitionInstanceType::M5LargeElasticsearch => "m5.large.elasticsearch",
+            EsPartitionInstanceType::M5XlargeElasticsearch => "m5.xlarge.elasticsearch",
+            EsPartitionInstanceType::R32xlargeElasticsearch => "r3.2xlarge.elasticsearch",
+            EsPartitionInstanceType::R34xlargeElasticsearch => "r3.4xlarge.elasticsearch",
+            EsPartitionInstanceType::R38xlargeElasticsearch => "r3.8xlarge.elasticsearch",
+            EsPartitionInstanceType::R3LargeElasticsearch => "r3.large.elasticsearch",
+            EsPartitionInstanceType::R3XlargeElasticsearch => "r3.xlarge.elasticsearch",
+            EsPartitionInstanceType::R416xlargeElasticsearch => "r4.16xlarge.elasticsearch",
+            EsPartitionInstanceType::R42xlargeElasticsearch => "r4.2xlarge.elasticsearch",
+            EsPartitionInstanceType::R44xlargeElasticsearch => "r4.4xlarge.elasticsearch",
+            EsPartitionInstanceType::R48xlargeElasticsearch => "r4.8xlarge.elasticsearch",
+            EsPartitionInstanceType::R4LargeElasticsearch => "r4.large.elasticsearch",
+            EsPartitionInstanceType::R4XlargeElasticsearch => "r4.xlarge.elasticsearch",
+            EsPartitionInstanceType::R512xlargeElasticsearch => "r5.12xlarge.elasticsearch",
+            EsPartitionInstanceType::R52xlargeElasticsearch => "r5.2xlarge.elasticsearch",
+            EsPartitionInstanceType::R54xlargeElasticsearch => "r5.4xlarge.elasticsearch",
+            EsPartitionInstanceType::R5LargeElasticsearch => "r5.large.elasticsearch",
+            EsPartitionInstanceType::R5XlargeElasticsearch => "r5.xlarge.elasticsearch",
+            EsPartitionInstanceType::T2MediumElasticsearch => "t2.medium.elasticsearch",
+            EsPartitionInstanceType::T2MicroElasticsearch => "t2.micro.elasticsearch",
+            EsPartitionInstanceType::T2SmallElasticsearch => "t2.small.elasticsearch",
+            EsPartitionInstanceType::Ultrawarm1LargeElasticsearch => {
+                "ultrawarm1.large.elasticsearch"
+            }
+            EsPartitionInstanceType::Ultrawarm1MediumElasticsearch => {
+                "ultrawarm1.medium.elasticsearch"
+            }
+            EsPartitionInstanceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "c4.2xlarge.elasticsearch",
+            "c4.4xlarge.elasticsearch",
+            "c4.8xlarge.elasticsearch",
+            "c4.large.elasticsearch",
+            "c4.xlarge.elasticsearch",
+            "c5.18xlarge.elasticsearch",
+            "c5.2xlarge.elasticsearch",
+            "c5.4xlarge.elasticsearch",
+            "c5.9xlarge.elasticsearch",
+            "c5.large.elasticsearch",
+            "c5.xlarge.elasticsearch",
+            "d2.2xlarge.elasticsearch",
+            "d2.4xlarge.elasticsearch",
+            "d2.8xlarge.elasticsearch",
+            "d2.xlarge.elasticsearch",
+            "i2.2xlarge.elasticsearch",
+            "i2.xlarge.elasticsearch",
+            "i3.16xlarge.elasticsearch",
+            "i3.2xlarge.elasticsearch",
+            "i3.4xlarge.elasticsearch",
+            "i3.8xlarge.elasticsearch",
+            "i3.large.elasticsearch",
+            "i3.xlarge.elasticsearch",
+            "m3.2xlarge.elasticsearch",
+            "m3.large.elasticsearch",
+            "m3.medium.elasticsearch",
+            "m3.xlarge.elasticsearch",
+            "m4.10xlarge.elasticsearch",
+            "m4.2xlarge.elasticsearch",
+            "m4.4xlarge.elasticsearch",
+            "m4.large.elasticsearch",
+            "m4.xlarge.elasticsearch",
+            "m5.12xlarge.elasticsearch",
+            "m5.2xlarge.elasticsearch",
+            "m5.4xlarge.elasticsearch",
+            "m5.large.elasticsearch",
+            "m5.xlarge.elasticsearch",
+            "r3.2xlarge.elasticsearch",
+            "r3.4xlarge.elasticsearch",
+            "r3.8xlarge.elasticsearch",
+            "r3.large.elasticsearch",
+            "r3.xlarge.elasticsearch",
+            "r4.16xlarge.elasticsearch",
+            "r4.2xlarge.elasticsearch",
+            "r4.4xlarge.elasticsearch",
+            "r4.8xlarge.elasticsearch",
+            "r4.large.elasticsearch",
+            "r4.xlarge.elasticsearch",
+            "r5.12xlarge.elasticsearch",
+            "r5.2xlarge.elasticsearch",
+            "r5.4xlarge.elasticsearch",
+            "r5.large.elasticsearch",
+            "r5.xlarge.elasticsearch",
+            "t2.medium.elasticsearch",
+            "t2.micro.elasticsearch",
+            "t2.small.elasticsearch",
+            "ultrawarm1.large.elasticsearch",
+            "ultrawarm1.medium.elasticsearch",
+        ]
+    }
+}
+impl AsRef<str> for EsPartitionInstanceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

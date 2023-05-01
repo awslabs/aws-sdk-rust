@@ -4,50 +4,57 @@ pub use crate::operation::update_contact_flow_module_content::_update_contact_fl
 pub use crate::operation::update_contact_flow_module_content::_update_contact_flow_module_content_input::UpdateContactFlowModuleContentInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateContactFlowModuleContent`.
-/// 
+///
 /// <p>Updates specified flow module for the specified Amazon Connect instance. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContactFlowModuleContentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_contact_flow_module_content::builders::UpdateContactFlowModuleContentInputBuilder,
 }
-impl UpdateContactFlowModuleContentFluentBuilder  {
+impl UpdateContactFlowModuleContentFluentBuilder {
     /// Creates a new `UpdateContactFlowModuleContent`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContent, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentOutput, aws_smithy_http::result::SdkError<crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -64,7 +71,10 @@ impl UpdateContactFlowModuleContentFluentBuilder  {
         self
     }
     /// <p>The identifier of the flow module.</p>
-    pub fn set_contact_flow_module_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_contact_flow_module_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_contact_flow_module_id(input);
         self
     }
@@ -79,4 +89,3 @@ impl UpdateContactFlowModuleContentFluentBuilder  {
         self
     }
 }
-

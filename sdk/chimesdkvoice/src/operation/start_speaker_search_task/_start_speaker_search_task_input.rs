@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSpeakerSearchTaskInput  {
+pub struct StartSpeakerSearchTaskInput {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct StartSpeakerSearchTaskInput  {
 }
 impl StartSpeakerSearchTaskInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The transaction ID of the call being analyzed.</p>
-    pub fn transaction_id(&self) -> std::option::Option<& str> {
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
     /// <p>The ID of the voice profile domain that will store the voice profile.</p>
-    pub fn voice_profile_domain_id(&self) -> std::option::Option<& str> {
+    pub fn voice_profile_domain_id(&self) -> std::option::Option<&str> {
         self.voice_profile_domain_id.as_deref()
     }
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
 impl StartSpeakerSearchTaskInput {
     /// Creates a new builder-style object to manufacture [`StartSpeakerSearchTaskInput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput).
-    pub fn builder() -> crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskInputBuilder
+    {
         crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskInputBuilder::default()
     }
 }
@@ -57,8 +59,12 @@ impl StartSpeakerSearchTaskInputBuilder {
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     /// <p>The transaction ID of the call being analyzed.</p>
     pub fn transaction_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +73,8 @@ impl StartSpeakerSearchTaskInputBuilder {
     }
     /// <p>The transaction ID of the call being analyzed.</p>
     pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transaction_id = input; self
+        self.transaction_id = input;
+        self
     }
     /// <p>The ID of the voice profile domain that will store the voice profile.</p>
     pub fn voice_profile_domain_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +82,12 @@ impl StartSpeakerSearchTaskInputBuilder {
         self
     }
     /// <p>The ID of the voice profile domain that will store the voice profile.</p>
-    pub fn set_voice_profile_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_profile_domain_id = input; self
+    pub fn set_voice_profile_domain_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_profile_domain_id = input;
+        self
     }
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,23 +95,27 @@ impl StartSpeakerSearchTaskInputBuilder {
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartSpeakerSearchTaskInput`](crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput).
-    pub fn build(self) -> Result<crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_speaker_search_task::StartSpeakerSearchTaskInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-                transaction_id: self.transaction_id
-                ,
-                voice_profile_domain_id: self.voice_profile_domain_id
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+                transaction_id: self.transaction_id,
+                voice_profile_domain_id: self.voice_profile_domain_id,
+                client_request_token: self.client_request_token,
+            },
         )
     }
 }
-

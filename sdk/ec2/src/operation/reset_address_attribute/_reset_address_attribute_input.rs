@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetAddressAttributeInput  {
+pub struct ResetAddressAttributeInput {
     /// <p>[EC2-VPC] The allocation ID.</p>
     #[doc(hidden)]
     pub allocation_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ResetAddressAttributeInput  {
 }
 impl ResetAddressAttributeInput {
     /// <p>[EC2-VPC] The allocation ID.</p>
-    pub fn allocation_id(&self) -> std::option::Option<& str> {
+    pub fn allocation_id(&self) -> std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
     /// <p>The attribute of the IP address.</p>
-    pub fn attribute(&self) -> std::option::Option<& crate::types::AddressAttributeName> {
+    pub fn attribute(&self) -> std::option::Option<&crate::types::AddressAttributeName> {
         self.attribute.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,7 +29,9 @@ impl ResetAddressAttributeInput {
 }
 impl ResetAddressAttributeInput {
     /// Creates a new builder-style object to manufacture [`ResetAddressAttributeInput`](crate::operation::reset_address_attribute::ResetAddressAttributeInput).
-    pub fn builder() -> crate::operation::reset_address_attribute::builders::ResetAddressAttributeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::reset_address_attribute::builders::ResetAddressAttributeInputBuilder
+    {
         crate::operation::reset_address_attribute::builders::ResetAddressAttributeInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ResetAddressAttributeInputBuilder {
     }
     /// <p>[EC2-VPC] The allocation ID.</p>
     pub fn set_allocation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allocation_id = input; self
+        self.allocation_id = input;
+        self
     }
     /// <p>The attribute of the IP address.</p>
     pub fn attribute(mut self, input: crate::types::AddressAttributeName) -> Self {
@@ -58,8 +61,12 @@ impl ResetAddressAttributeInputBuilder {
         self
     }
     /// <p>The attribute of the IP address.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<crate::types::AddressAttributeName>) -> Self {
-        self.attribute = input; self
+    pub fn set_attribute(
+        mut self,
+        input: std::option::Option<crate::types::AddressAttributeName>,
+    ) -> Self {
+        self.attribute = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -68,20 +75,22 @@ impl ResetAddressAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResetAddressAttributeInput`](crate::operation::reset_address_attribute::ResetAddressAttributeInput).
-    pub fn build(self) -> Result<crate::operation::reset_address_attribute::ResetAddressAttributeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reset_address_attribute::ResetAddressAttributeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::reset_address_attribute::ResetAddressAttributeInput {
-                allocation_id: self.allocation_id
-                ,
-                attribute: self.attribute
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                allocation_id: self.allocation_id,
+                attribute: self.attribute,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

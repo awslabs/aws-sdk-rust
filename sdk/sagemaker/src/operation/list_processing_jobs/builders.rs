@@ -4,63 +4,91 @@ pub use crate::operation::list_processing_jobs::_list_processing_jobs_output::Li
 pub use crate::operation::list_processing_jobs::_list_processing_jobs_input::ListProcessingJobsInputBuilder;
 
 /// Fluent builder constructing a request to `ListProcessingJobs`.
-/// 
+///
 /// <p>Lists processing jobs that satisfy various filters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProcessingJobsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_processing_jobs::builders::ListProcessingJobsInputBuilder,
+    inner: crate::operation::list_processing_jobs::builders::ListProcessingJobsInputBuilder,
 }
-impl ListProcessingJobsFluentBuilder  {
+impl ListProcessingJobsFluentBuilder {
     /// Creates a new `ListProcessingJobs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_processing_jobs::ListProcessingJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_processing_jobs::ListProcessingJobsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_processing_jobs::ListProcessingJobsOutput, aws_smithy_http::result::SdkError<crate::operation::list_processing_jobs::ListProcessingJobsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_processing_jobs::ListProcessingJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_processing_jobs::ListProcessingJobsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_processing_jobs::ListProcessingJobsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_processing_jobs::ListProcessingJobsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator {
-                                crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator {
+        crate::operation::list_processing_jobs::paginator::ListProcessingJobsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>A filter that returns only processing jobs created after the specified time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>A filter that returns only processing jobs created after the specified time.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -70,7 +98,10 @@ impl ListProcessingJobsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only processing jobs created after the specified time.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -80,7 +111,10 @@ impl ListProcessingJobsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only processing jobs modified after the specified time.</p>
-    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
@@ -90,7 +124,10 @@ impl ListProcessingJobsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only processing jobs modified before the specified time.</p>
-    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
@@ -110,7 +147,10 @@ impl ListProcessingJobsFluentBuilder  {
         self
     }
     /// <p>A filter that retrieves only processing jobs with a specific status.</p>
-    pub fn set_status_equals(mut self, input: std::option::Option<crate::types::ProcessingJobStatus>) -> Self {
+    pub fn set_status_equals(
+        mut self,
+        input: std::option::Option<crate::types::ProcessingJobStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
@@ -155,4 +195,3 @@ impl ListProcessingJobsFluentBuilder  {
         self
     }
 }
-

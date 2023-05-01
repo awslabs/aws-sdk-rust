@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReadSetMetadataInput  {
+pub struct GetReadSetMetadataInput {
     /// <p>The read set's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct GetReadSetMetadataInput  {
 }
 impl GetReadSetMetadataInput {
     /// <p>The read set's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
         self.sequence_store_id.as_deref()
     }
 }
 impl GetReadSetMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetReadSetMetadataInput`](crate::operation::get_read_set_metadata::GetReadSetMetadataInput).
-    pub fn builder() -> crate::operation::get_read_set_metadata::builders::GetReadSetMetadataInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_read_set_metadata::builders::GetReadSetMetadataInputBuilder {
         crate::operation::get_read_set_metadata::builders::GetReadSetMetadataInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl GetReadSetMetadataInputBuilder {
     }
     /// <p>The read set's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The read set's sequence store ID.</p>
     pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +52,25 @@ impl GetReadSetMetadataInputBuilder {
         self
     }
     /// <p>The read set's sequence store ID.</p>
-    pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sequence_store_id = input; self
+    pub fn set_sequence_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sequence_store_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetReadSetMetadataInput`](crate::operation::get_read_set_metadata::GetReadSetMetadataInput).
-    pub fn build(self) -> Result<crate::operation::get_read_set_metadata::GetReadSetMetadataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_read_set_metadata::GetReadSetMetadataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_read_set_metadata::GetReadSetMetadataInput {
-                id: self.id
-                ,
-                sequence_store_id: self.sequence_store_id
-                ,
-            }
+                id: self.id,
+                sequence_store_id: self.sequence_store_id,
+            },
         )
     }
 }
-

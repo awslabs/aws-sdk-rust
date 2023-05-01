@@ -4,50 +4,70 @@ pub use crate::operation::start_generated_code_job::_start_generated_code_job_ou
 pub use crate::operation::start_generated_code_job::_start_generated_code_job_input::StartGeneratedCodeJobInputBuilder;
 
 /// Fluent builder constructing a request to `StartGeneratedCodeJob`.
-/// 
+///
 /// <p> Starts an asynchronous process that generates client code for system-defined and custom messages. The resulting code is collected as a .zip file and uploaded to a pre-signed Amazon S3 URL. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartGeneratedCodeJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder,
+    inner: crate::operation::start_generated_code_job::builders::StartGeneratedCodeJobInputBuilder,
 }
-impl StartGeneratedCodeJobFluentBuilder  {
+impl StartGeneratedCodeJobFluentBuilder {
     /// Creates a new `StartGeneratedCodeJob`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_generated_code_job::StartGeneratedCodeJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_generated_code_job::StartGeneratedCodeJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_generated_code_job::StartGeneratedCodeJobOutput, aws_smithy_http::result::SdkError<crate::operation::start_generated_code_job::StartGeneratedCodeJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_generated_code_job::StartGeneratedCodeJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_generated_code_job::StartGeneratedCodeJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_generated_code_job::StartGeneratedCodeJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_generated_code_job::StartGeneratedCodeJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the game.</p>
     pub fn game_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.game_name(input.into());
@@ -79,4 +99,3 @@ impl StartGeneratedCodeJobFluentBuilder  {
         self
     }
 }
-

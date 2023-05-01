@@ -3,7 +3,7 @@
 /// <p>Amazon Virtual Private Cloud configuration details associated with your Lambda function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfig  {
+pub struct VpcConfig {
     /// <p>The identifiers of the subnets that are associated with your Lambda function.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,15 +16,15 @@ pub struct VpcConfig  {
 }
 impl VpcConfig {
     /// <p>The identifiers of the subnets that are associated with your Lambda function.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The identifier of the Amazon Virtual Private Cloud.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The identifier of the security group attached to the Lambda function.</p>
-    pub fn security_groups(&self) -> std::option::Option<& [crate::types::SecurityGroup]> {
+    pub fn security_groups(&self) -> std::option::Option<&[crate::types::SecurityGroup]> {
         self.security_groups.as_deref()
     }
 }
@@ -51,13 +51,17 @@ impl VpcConfigBuilder {
     /// <p>The identifiers of the subnets that are associated with your Lambda function.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>The identifiers of the subnets that are associated with your Lambda function.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// <p>The identifier of the Amazon Virtual Private Cloud.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +70,8 @@ impl VpcConfigBuilder {
     }
     /// <p>The identifier of the Amazon Virtual Private Cloud.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -75,24 +80,24 @@ impl VpcConfigBuilder {
     /// <p>The identifier of the security group attached to the Lambda function.</p>
     pub fn security_groups(mut self, input: crate::types::SecurityGroup) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-                        v.push(input);
-                        self.security_groups = Some(v);
-                        self
+        v.push(input);
+        self.security_groups = Some(v);
+        self
     }
     /// <p>The identifier of the security group attached to the Lambda function.</p>
-    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>) -> Self {
-        self.security_groups = input; self
+    pub fn set_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SecurityGroup>>,
+    ) -> Self {
+        self.security_groups = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
     pub fn build(self) -> crate::types::VpcConfig {
         crate::types::VpcConfig {
-            subnet_ids: self.subnet_ids
-            ,
-            vpc_id: self.vpc_id
-            ,
-            security_groups: self.security_groups
-            ,
+            subnet_ids: self.subnet_ids,
+            vpc_id: self.vpc_id,
+            security_groups: self.security_groups,
         }
     }
 }
-

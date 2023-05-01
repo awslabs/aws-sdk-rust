@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBatchSegmentJobsInput  {
+pub struct ListBatchSegmentJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
     #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListBatchSegmentJobsInput  {
 }
 impl ListBatchSegmentJobsInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
@@ -29,7 +29,8 @@ impl ListBatchSegmentJobsInput {
 }
 impl ListBatchSegmentJobsInput {
     /// Creates a new builder-style object to manufacture [`ListBatchSegmentJobsInput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput).
-    pub fn builder() -> crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsInputBuilder {
         crate::operation::list_batch_segment_jobs::builders::ListBatchSegmentJobsInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl ListBatchSegmentJobsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version that the batch segment jobs used to generate batch segments.</p>
-    pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.solution_version_arn = input; self
+    pub fn set_solution_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.solution_version_arn = input;
+        self
     }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +64,8 @@ impl ListBatchSegmentJobsInputBuilder {
     }
     /// <p>The token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +74,22 @@ impl ListBatchSegmentJobsInputBuilder {
     }
     /// <p>The maximum number of batch segment job results to return in each page. The default value is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBatchSegmentJobsInput`](crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsInput {
-                solution_version_arn: self.solution_version_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                solution_version_arn: self.solution_version_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

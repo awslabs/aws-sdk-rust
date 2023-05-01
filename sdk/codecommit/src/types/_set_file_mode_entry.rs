@@ -3,7 +3,7 @@
 /// <p>Information about the file mode changes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetFileModeEntry  {
+pub struct SetFileModeEntry {
     /// <p>The full path to the file, including the name of the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SetFileModeEntry  {
 }
 impl SetFileModeEntry {
     /// <p>The full path to the file, including the name of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<& str> {
+    pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
     /// <p>The file mode for the file.</p>
-    pub fn file_mode(&self) -> std::option::Option<& crate::types::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> std::option::Option<&crate::types::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl SetFileModeEntryBuilder {
     }
     /// <p>The full path to the file, including the name of the file.</p>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_path = input; self
+        self.file_path = input;
+        self
     }
     /// <p>The file mode for the file.</p>
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
@@ -51,17 +52,18 @@ impl SetFileModeEntryBuilder {
         self
     }
     /// <p>The file mode for the file.</p>
-    pub fn set_file_mode(mut self, input: std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
-        self.file_mode = input; self
+    pub fn set_file_mode(
+        mut self,
+        input: std::option::Option<crate::types::FileModeTypeEnum>,
+    ) -> Self {
+        self.file_mode = input;
+        self
     }
     /// Consumes the builder and constructs a [`SetFileModeEntry`](crate::types::SetFileModeEntry).
     pub fn build(self) -> crate::types::SetFileModeEntry {
         crate::types::SetFileModeEntry {
-            file_path: self.file_path
-            ,
-            file_mode: self.file_mode
-            ,
+            file_path: self.file_path,
+            file_mode: self.file_mode,
         }
     }
 }
-

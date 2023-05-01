@@ -3,7 +3,7 @@
 /// <p>Represents the output of <code>DescribeDBEngineVersions</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbEngineVersionsOutput  {
+pub struct DescribeDbEngineVersionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -14,22 +14,22 @@ pub struct DescribeDbEngineVersionsOutput  {
 }
 impl DescribeDbEngineVersionsOutput {
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Detailed information about one or more engine versions.</p>
-    pub fn db_engine_versions(&self) -> std::option::Option<& [crate::types::DbEngineVersion]> {
+    pub fn db_engine_versions(&self) -> std::option::Option<&[crate::types::DbEngineVersion]> {
         self.db_engine_versions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDbEngineVersionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDbEngineVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbEngineVersionsOutput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput).
-    pub fn builder() -> crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsOutputBuilder{
         crate::operation::describe_db_engine_versions::builders::DescribeDbEngineVersionsOutputBuilder::default()
     }
 }
@@ -39,7 +39,8 @@ impl DescribeDbEngineVersionsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDbEngineVersionsOutputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
-    pub(crate) db_engine_versions: std::option::Option<std::vec::Vec<crate::types::DbEngineVersion>>,
+    pub(crate) db_engine_versions:
+        std::option::Option<std::vec::Vec<crate::types::DbEngineVersion>>,
     _request_id: Option<String>,
 }
 impl DescribeDbEngineVersionsOutputBuilder {
@@ -50,7 +51,8 @@ impl DescribeDbEngineVersionsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Appends an item to `db_engine_versions`.
     ///
@@ -59,32 +61,35 @@ impl DescribeDbEngineVersionsOutputBuilder {
     /// <p>Detailed information about one or more engine versions.</p>
     pub fn db_engine_versions(mut self, input: crate::types::DbEngineVersion) -> Self {
         let mut v = self.db_engine_versions.unwrap_or_default();
-                        v.push(input);
-                        self.db_engine_versions = Some(v);
-                        self
+        v.push(input);
+        self.db_engine_versions = Some(v);
+        self
     }
     /// <p>Detailed information about one or more engine versions.</p>
-    pub fn set_db_engine_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::DbEngineVersion>>) -> Self {
-        self.db_engine_versions = input; self
+    pub fn set_db_engine_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DbEngineVersion>>,
+    ) -> Self {
+        self.db_engine_versions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDbEngineVersionsOutput`](crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput).
-    pub fn build(self) -> crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput {
         crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput {
-            marker: self.marker
-            ,
-            db_engine_versions: self.db_engine_versions
-            ,
+            marker: self.marker,
+            db_engine_versions: self.db_engine_versions,
             _request_id: self._request_id,
         }
     }
 }
-

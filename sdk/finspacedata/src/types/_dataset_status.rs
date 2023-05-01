@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let datasetstatus = unimplemented!();
 /// match datasetstatus {
@@ -32,14 +32,22 @@
 /// Specifically, when `datasetstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DatasetStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Status of the dataset process returned from scheduler service.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DatasetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Failed,
@@ -50,45 +58,46 @@ pub enum DatasetStatus {
     #[allow(missing_docs)] // documentation missing in model
     Success,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DatasetStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FAILED" => DatasetStatus::Failed,
-"PENDING" => DatasetStatus::Pending,
-"RUNNING" => DatasetStatus::Running,
-"SUCCESS" => DatasetStatus::Success,
-other => DatasetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "FAILED" => DatasetStatus::Failed,
+            "PENDING" => DatasetStatus::Pending,
+            "RUNNING" => DatasetStatus::Running,
+            "SUCCESS" => DatasetStatus::Success,
+            other => {
+                DatasetStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for DatasetStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DatasetStatus::from(s))
-                }
-            }
-impl DatasetStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DatasetStatus::Failed => "FAILED",
-    DatasetStatus::Pending => "PENDING",
-    DatasetStatus::Running => "RUNNING",
-    DatasetStatus::Success => "SUCCESS",
-    DatasetStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FAILED", "PENDING", "RUNNING", "SUCCESS"]
-                }
-            }
-impl AsRef<str> for DatasetStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DatasetStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DatasetStatus::from(s))
+    }
+}
+impl DatasetStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DatasetStatus::Failed => "FAILED",
+            DatasetStatus::Pending => "PENDING",
+            DatasetStatus::Running => "RUNNING",
+            DatasetStatus::Success => "SUCCESS",
+            DatasetStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FAILED", "PENDING", "RUNNING", "SUCCESS"]
+    }
+}
+impl AsRef<str> for DatasetStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,43 +2,49 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchRasterDataCollectionInput  {
+pub struct SearchRasterDataCollectionInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
     /// <p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
     #[doc(hidden)]
-    pub raster_data_collection_query: std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput>,
+    pub raster_data_collection_query:
+        std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput>,
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
 }
 impl SearchRasterDataCollectionInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
-    pub fn raster_data_collection_query(&self) -> std::option::Option<& crate::types::RasterDataCollectionQueryWithBandFilterInput> {
+    pub fn raster_data_collection_query(
+        &self,
+    ) -> std::option::Option<&crate::types::RasterDataCollectionQueryWithBandFilterInput> {
         self.raster_data_collection_query.as_ref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for SearchRasterDataCollectionInput  {
+impl std::fmt::Debug for SearchRasterDataCollectionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchRasterDataCollectionInput");
         formatter.field("arn", &self.arn);
-        formatter.field("raster_data_collection_query", &self.raster_data_collection_query);
+        formatter.field(
+            "raster_data_collection_query",
+            &self.raster_data_collection_query,
+        );
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
 impl SearchRasterDataCollectionInput {
     /// Creates a new builder-style object to manufacture [`SearchRasterDataCollectionInput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionInput).
-    pub fn builder() -> crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionInputBuilder {
+    pub fn builder() -> crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionInputBuilder{
         crate::operation::search_raster_data_collection::builders::SearchRasterDataCollectionInputBuilder::default()
     }
 }
@@ -48,7 +54,8 @@ impl SearchRasterDataCollectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct SearchRasterDataCollectionInputBuilder {
     pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) raster_data_collection_query: std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput>,
+    pub(crate) raster_data_collection_query:
+        std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput>,
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl SearchRasterDataCollectionInputBuilder {
@@ -59,16 +66,24 @@ impl SearchRasterDataCollectionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
-    pub fn raster_data_collection_query(mut self, input: crate::types::RasterDataCollectionQueryWithBandFilterInput) -> Self {
+    pub fn raster_data_collection_query(
+        mut self,
+        input: crate::types::RasterDataCollectionQueryWithBandFilterInput,
+    ) -> Self {
         self.raster_data_collection_query = Some(input);
         self
     }
     /// <p>RasterDataCollectionQuery consisting of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>, <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a> used in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
-    pub fn set_raster_data_collection_query(mut self, input: std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput>) -> Self {
-        self.raster_data_collection_query = input; self
+    pub fn set_raster_data_collection_query(
+        mut self,
+        input: std::option::Option<crate::types::RasterDataCollectionQueryWithBandFilterInput>,
+    ) -> Self {
+        self.raster_data_collection_query = input;
+        self
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,19 +92,22 @@ impl SearchRasterDataCollectionInputBuilder {
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchRasterDataCollectionInput`](crate::operation::search_raster_data_collection::SearchRasterDataCollectionInput).
-    pub fn build(self) -> Result<crate::operation::search_raster_data_collection::SearchRasterDataCollectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::search_raster_data_collection::SearchRasterDataCollectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::search_raster_data_collection::SearchRasterDataCollectionInput {
-                arn: self.arn
-                ,
-                raster_data_collection_query: self.raster_data_collection_query
-                ,
-                next_token: self.next_token
-                ,
-            }
+                arn: self.arn,
+                raster_data_collection_query: self.raster_data_collection_query,
+                next_token: self.next_token,
+            },
         )
     }
 }
@@ -97,9 +115,11 @@ impl std::fmt::Debug for SearchRasterDataCollectionInputBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchRasterDataCollectionInputBuilder");
         formatter.field("arn", &self.arn);
-        formatter.field("raster_data_collection_query", &self.raster_data_collection_query);
+        formatter.field(
+            "raster_data_collection_query",
+            &self.raster_data_collection_query,
+        );
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let targethealthreasonenum = unimplemented!();
 /// match targethealthreasonenum {
@@ -40,14 +40,22 @@
 /// Specifically, when `targethealthreasonenum` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetHealthReasonEnum::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TargetHealthReasonEnum {
     #[allow(missing_docs)] // documentation missing in model
     InitialHealthChecking,
@@ -74,61 +82,75 @@ pub enum TargetHealthReasonEnum {
     #[allow(missing_docs)] // documentation missing in model
     Timeout,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TargetHealthReasonEnum {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "Elb.InitialHealthChecking" => TargetHealthReasonEnum::InitialHealthChecking,
-"Elb.InternalError" => TargetHealthReasonEnum::InternalError,
-"Elb.RegistrationInProgress" => TargetHealthReasonEnum::RegistrationInProgress,
-"Target.DeregistrationInProgress" => TargetHealthReasonEnum::DeregistrationInProgress,
-"Target.FailedHealthChecks" => TargetHealthReasonEnum::FailedHealthChecks,
-"Target.HealthCheckDisabled" => TargetHealthReasonEnum::HealthCheckDisabled,
-"Target.InvalidState" => TargetHealthReasonEnum::InvalidState,
-"Target.IpUnusable" => TargetHealthReasonEnum::IpUnusable,
-"Target.NotInUse" => TargetHealthReasonEnum::NotInUse,
-"Target.NotRegistered" => TargetHealthReasonEnum::NotRegistered,
-"Target.ResponseCodeMismatch" => TargetHealthReasonEnum::ResponseCodeMismatch,
-"Target.Timeout" => TargetHealthReasonEnum::Timeout,
-other => TargetHealthReasonEnum::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for TargetHealthReasonEnum {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TargetHealthReasonEnum::from(s))
-                }
-            }
-impl TargetHealthReasonEnum {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TargetHealthReasonEnum::InitialHealthChecking => "Elb.InitialHealthChecking",
-    TargetHealthReasonEnum::InternalError => "Elb.InternalError",
-    TargetHealthReasonEnum::RegistrationInProgress => "Elb.RegistrationInProgress",
-    TargetHealthReasonEnum::DeregistrationInProgress => "Target.DeregistrationInProgress",
-    TargetHealthReasonEnum::FailedHealthChecks => "Target.FailedHealthChecks",
-    TargetHealthReasonEnum::HealthCheckDisabled => "Target.HealthCheckDisabled",
-    TargetHealthReasonEnum::InvalidState => "Target.InvalidState",
-    TargetHealthReasonEnum::IpUnusable => "Target.IpUnusable",
-    TargetHealthReasonEnum::NotInUse => "Target.NotInUse",
-    TargetHealthReasonEnum::NotRegistered => "Target.NotRegistered",
-    TargetHealthReasonEnum::ResponseCodeMismatch => "Target.ResponseCodeMismatch",
-    TargetHealthReasonEnum::Timeout => "Target.Timeout",
-    TargetHealthReasonEnum::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "Elb.InitialHealthChecking" => TargetHealthReasonEnum::InitialHealthChecking,
+            "Elb.InternalError" => TargetHealthReasonEnum::InternalError,
+            "Elb.RegistrationInProgress" => TargetHealthReasonEnum::RegistrationInProgress,
+            "Target.DeregistrationInProgress" => TargetHealthReasonEnum::DeregistrationInProgress,
+            "Target.FailedHealthChecks" => TargetHealthReasonEnum::FailedHealthChecks,
+            "Target.HealthCheckDisabled" => TargetHealthReasonEnum::HealthCheckDisabled,
+            "Target.InvalidState" => TargetHealthReasonEnum::InvalidState,
+            "Target.IpUnusable" => TargetHealthReasonEnum::IpUnusable,
+            "Target.NotInUse" => TargetHealthReasonEnum::NotInUse,
+            "Target.NotRegistered" => TargetHealthReasonEnum::NotRegistered,
+            "Target.ResponseCodeMismatch" => TargetHealthReasonEnum::ResponseCodeMismatch,
+            "Target.Timeout" => TargetHealthReasonEnum::Timeout,
+            other => TargetHealthReasonEnum::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["Elb.InitialHealthChecking", "Elb.InternalError", "Elb.RegistrationInProgress", "Target.DeregistrationInProgress", "Target.FailedHealthChecks", "Target.HealthCheckDisabled", "Target.InvalidState", "Target.IpUnusable", "Target.NotInUse", "Target.NotRegistered", "Target.ResponseCodeMismatch", "Target.Timeout"]
-                }
-            }
-impl AsRef<str> for TargetHealthReasonEnum {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TargetHealthReasonEnum {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetHealthReasonEnum::from(s))
+    }
+}
+impl TargetHealthReasonEnum {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetHealthReasonEnum::InitialHealthChecking => "Elb.InitialHealthChecking",
+            TargetHealthReasonEnum::InternalError => "Elb.InternalError",
+            TargetHealthReasonEnum::RegistrationInProgress => "Elb.RegistrationInProgress",
+            TargetHealthReasonEnum::DeregistrationInProgress => "Target.DeregistrationInProgress",
+            TargetHealthReasonEnum::FailedHealthChecks => "Target.FailedHealthChecks",
+            TargetHealthReasonEnum::HealthCheckDisabled => "Target.HealthCheckDisabled",
+            TargetHealthReasonEnum::InvalidState => "Target.InvalidState",
+            TargetHealthReasonEnum::IpUnusable => "Target.IpUnusable",
+            TargetHealthReasonEnum::NotInUse => "Target.NotInUse",
+            TargetHealthReasonEnum::NotRegistered => "Target.NotRegistered",
+            TargetHealthReasonEnum::ResponseCodeMismatch => "Target.ResponseCodeMismatch",
+            TargetHealthReasonEnum::Timeout => "Target.Timeout",
+            TargetHealthReasonEnum::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "Elb.InitialHealthChecking",
+            "Elb.InternalError",
+            "Elb.RegistrationInProgress",
+            "Target.DeregistrationInProgress",
+            "Target.FailedHealthChecks",
+            "Target.HealthCheckDisabled",
+            "Target.InvalidState",
+            "Target.IpUnusable",
+            "Target.NotInUse",
+            "Target.NotRegistered",
+            "Target.ResponseCodeMismatch",
+            "Target.Timeout",
+        ]
+    }
+}
+impl AsRef<str> for TargetHealthReasonEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

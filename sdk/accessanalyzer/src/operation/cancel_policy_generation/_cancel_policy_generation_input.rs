@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelPolicyGenerationInput  {
+pub struct CancelPolicyGenerationInput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl CancelPolicyGenerationInput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl CancelPolicyGenerationInput {
     /// Creates a new builder-style object to manufacture [`CancelPolicyGenerationInput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationInput).
-    pub fn builder() -> crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationInputBuilder
+    {
         crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl CancelPolicyGenerationInputBuilder {
     }
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CancelPolicyGenerationInput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationInput).
-    pub fn build(self) -> Result<crate::operation::cancel_policy_generation::CancelPolicyGenerationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::cancel_policy_generation::CancelPolicyGenerationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::cancel_policy_generation::CancelPolicyGenerationInput {
-                job_id: self.job_id
-                ,
-            }
+                job_id: self.job_id,
+            },
         )
     }
 }
-

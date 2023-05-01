@@ -4,56 +4,63 @@ pub use crate::operation::list_model_quality_job_definitions::_list_model_qualit
 pub use crate::operation::list_model_quality_job_definitions::_list_model_quality_job_definitions_input::ListModelQualityJobDefinitionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListModelQualityJobDefinitions`.
-/// 
+///
 /// <p>Gets a list of model quality monitoring job definitions in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListModelQualityJobDefinitionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_model_quality_job_definitions::builders::ListModelQualityJobDefinitionsInputBuilder,
 }
-impl ListModelQualityJobDefinitionsFluentBuilder  {
+impl ListModelQualityJobDefinitionsFluentBuilder {
     /// Creates a new `ListModelQualityJobDefinitions`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitions, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_model_quality_job_definitions::ListModelQualityJobDefinitionsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_model_quality_job_definitions::paginator::ListModelQualityJobDefinitionsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_model_quality_job_definitions::paginator::ListModelQualityJobDefinitionsPaginator {
-                                crate::operation::list_model_quality_job_definitions::paginator::ListModelQualityJobDefinitionsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_model_quality_job_definitions::paginator::ListModelQualityJobDefinitionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_model_quality_job_definitions::paginator::ListModelQualityJobDefinitionsPaginator{
+        crate::operation::list_model_quality_job_definitions::paginator::ListModelQualityJobDefinitionsPaginator::new(self.handle, self.inner)
+    }
     /// <p>A filter that returns only model quality monitoring job definitions that are associated with the specified endpoint.</p>
     pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
@@ -70,7 +77,10 @@ impl ListModelQualityJobDefinitionsFluentBuilder  {
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::MonitoringJobDefinitionSortKey>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::MonitoringJobDefinitionSortKey>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -120,7 +130,10 @@ impl ListModelQualityJobDefinitionsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only model quality monitoring job definitions created before the specified time.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -130,9 +143,11 @@ impl ListModelQualityJobDefinitionsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only model quality monitoring job definitions created after the specified time.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
 }
-

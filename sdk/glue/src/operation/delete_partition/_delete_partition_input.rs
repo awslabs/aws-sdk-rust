@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePartitionInput  {
+pub struct DeletePartitionInput {
     /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct DeletePartitionInput  {
 }
 impl DeletePartitionInput {
     /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the table that contains the partition to be deleted.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The values that define the partition.</p>
-    pub fn partition_values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn partition_values(&self) -> std::option::Option<&[std::string::String]> {
         self.partition_values.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl DeletePartitionInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the partition to be deleted resides. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl DeletePartitionInputBuilder {
     }
     /// <p>The name of the catalog database in which the table in question resides.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>The name of the table that contains the partition to be deleted.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl DeletePartitionInputBuilder {
     }
     /// <p>The name of the table that contains the partition to be deleted.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// Appends an item to `partition_values`.
     ///
@@ -85,28 +88,30 @@ impl DeletePartitionInputBuilder {
     /// <p>The values that define the partition.</p>
     pub fn partition_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.partition_values.unwrap_or_default();
-                        v.push(input.into());
-                        self.partition_values = Some(v);
-                        self
+        v.push(input.into());
+        self.partition_values = Some(v);
+        self
     }
     /// <p>The values that define the partition.</p>
-    pub fn set_partition_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.partition_values = input; self
+    pub fn set_partition_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.partition_values = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePartitionInput`](crate::operation::delete_partition::DeletePartitionInput).
-    pub fn build(self) -> Result<crate::operation::delete_partition::DeletePartitionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_partition::DeletePartitionInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                table_name: self.table_name
-                ,
-                partition_values: self.partition_values
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_partition::DeletePartitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_partition::DeletePartitionInput {
+            catalog_id: self.catalog_id,
+            database_name: self.database_name,
+            table_name: self.table_name,
+            partition_values: self.partition_values,
+        })
     }
 }
-

@@ -2,10 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDiscoveredResourceCountsInput  {
-    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p> 
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note> 
-    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p> 
+pub struct GetDiscoveredResourceCountsInput {
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
     #[doc(hidden)]
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17,11 +17,11 @@ pub struct GetDiscoveredResourceCountsInput  {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl GetDiscoveredResourceCountsInput {
-    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p> 
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note> 
-    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p> 
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
-    pub fn resource_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resource_types(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_types.as_deref()
     }
     /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
@@ -29,13 +29,13 @@ impl GetDiscoveredResourceCountsInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetDiscoveredResourceCountsInput {
     /// Creates a new builder-style object to manufacture [`GetDiscoveredResourceCountsInput`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsInput).
-    pub fn builder() -> crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsInputBuilder {
+    pub fn builder() -> crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsInputBuilder{
         crate::operation::get_discovered_resource_counts::builders::GetDiscoveredResourceCountsInputBuilder::default()
     }
 }
@@ -53,22 +53,26 @@ impl GetDiscoveredResourceCountsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_resource_types`](Self::set_resource_types).
     ///
-    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p> 
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note> 
-    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p> 
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
     pub fn resource_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.resource_types = Some(v);
-                        self
+        v.push(input.into());
+        self.resource_types = Some(v);
+        self
     }
-    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p> 
-    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note> 
-    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p> 
+    /// <p>The comma-separated list that specifies the resource types that you want Config to return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).</p>
+    /// <p>If a value for <code>resourceTypes</code> is not specified, Config returns all resource types that Config is recording in the region for your account.</p> <note>
+    /// <p>If the configuration recorder is turned off, Config returns an empty list of <code>ResourceCount</code> objects. If the configuration recorder is not recording a specific resource type (for example, S3 buckets), that resource type is not returned in the list of <code>ResourceCount</code> objects.</p>
     /// </note>
-    pub fn set_resource_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resource_types = input; self
+    pub fn set_resource_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resource_types = input;
+        self
     }
     /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -77,7 +81,8 @@ impl GetDiscoveredResourceCountsInputBuilder {
     }
     /// <p>The maximum number of <code>ResourceCount</code> objects returned on each page. The default is 100. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +91,22 @@ impl GetDiscoveredResourceCountsInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDiscoveredResourceCountsInput`](crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsInput).
-    pub fn build(self) -> Result<crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsInput {
-                resource_types: self.resource_types
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                resource_types: self.resource_types,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

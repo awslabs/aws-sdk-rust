@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveFlowMediaStreamInput  {
+pub struct RemoveFlowMediaStreamInput {
     /// The Amazon Resource Name (ARN) of the flow.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct RemoveFlowMediaStreamInput  {
 }
 impl RemoveFlowMediaStreamInput {
     /// The Amazon Resource Name (ARN) of the flow.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The name of the media stream that you want to remove.
-    pub fn media_stream_name(&self) -> std::option::Option<& str> {
+    pub fn media_stream_name(&self) -> std::option::Option<&str> {
         self.media_stream_name.as_deref()
     }
 }
 impl RemoveFlowMediaStreamInput {
     /// Creates a new builder-style object to manufacture [`RemoveFlowMediaStreamInput`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput).
-    pub fn builder() -> crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamInputBuilder
+    {
         crate::operation::remove_flow_media_stream::builders::RemoveFlowMediaStreamInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl RemoveFlowMediaStreamInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the flow.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input; self
+        self.flow_arn = input;
+        self
     }
     /// The name of the media stream that you want to remove.
     pub fn media_stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl RemoveFlowMediaStreamInputBuilder {
         self
     }
     /// The name of the media stream that you want to remove.
-    pub fn set_media_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.media_stream_name = input; self
+    pub fn set_media_stream_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.media_stream_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoveFlowMediaStreamInput`](crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput).
-    pub fn build(self) -> Result<crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamInput {
-                flow_arn: self.flow_arn
-                ,
-                media_stream_name: self.media_stream_name
-                ,
-            }
+                flow_arn: self.flow_arn,
+                media_stream_name: self.media_stream_name,
+            },
         )
     }
 }
-

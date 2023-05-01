@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveManagedScalingPolicyInput  {
+pub struct RemoveManagedScalingPolicyInput {
     /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
 }
 impl RemoveManagedScalingPolicyInput {
     /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
-    pub fn cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
 }
 impl RemoveManagedScalingPolicyInput {
     /// Creates a new builder-style object to manufacture [`RemoveManagedScalingPolicyInput`](crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput).
-    pub fn builder() -> crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyInputBuilder {
+    pub fn builder() -> crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyInputBuilder{
         crate::operation::remove_managed_scaling_policy::builders::RemoveManagedScalingPolicyInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl RemoveManagedScalingPolicyInputBuilder {
     }
     /// <p> Specifies the ID of the cluster from which the managed scaling policy will be removed. </p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input; self
+        self.cluster_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoveManagedScalingPolicyInput`](crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput).
-    pub fn build(self) -> Result<crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::remove_managed_scaling_policy::RemoveManagedScalingPolicyInput {
-                cluster_id: self.cluster_id
-                ,
-            }
+                cluster_id: self.cluster_id,
+            },
         )
     }
 }
-

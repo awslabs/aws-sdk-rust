@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let deinterlacealgorithm = unimplemented!();
 /// match deinterlacealgorithm {
@@ -33,14 +33,22 @@
 /// Specifically, when `deinterlacealgorithm` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DeinterlaceAlgorithm::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Only applies when you set Deinterlace mode to Deinterlace or Adaptive. Interpolate produces sharper pictures, while blend produces smoother motion. If your source file includes a ticker, such as a scrolling headline at the bottom of the frame: Choose Interpolate ticker or Blend ticker. To apply field doubling: Choose Linear interpolation. Note that Linear interpolation may introduce video artifacts into your output.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DeinterlaceAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Blend,
@@ -53,47 +61,54 @@ pub enum DeinterlaceAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     LinearInterpolation,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DeinterlaceAlgorithm {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BLEND" => DeinterlaceAlgorithm::Blend,
-"BLEND_TICKER" => DeinterlaceAlgorithm::BlendTicker,
-"INTERPOLATE" => DeinterlaceAlgorithm::Interpolate,
-"INTERPOLATE_TICKER" => DeinterlaceAlgorithm::InterpolateTicker,
-"LINEAR_INTERPOLATION" => DeinterlaceAlgorithm::LinearInterpolation,
-other => DeinterlaceAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for DeinterlaceAlgorithm {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DeinterlaceAlgorithm::from(s))
-                }
-            }
-impl DeinterlaceAlgorithm {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DeinterlaceAlgorithm::Blend => "BLEND",
-    DeinterlaceAlgorithm::BlendTicker => "BLEND_TICKER",
-    DeinterlaceAlgorithm::Interpolate => "INTERPOLATE",
-    DeinterlaceAlgorithm::InterpolateTicker => "INTERPOLATE_TICKER",
-    DeinterlaceAlgorithm::LinearInterpolation => "LINEAR_INTERPOLATION",
-    DeinterlaceAlgorithm::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "BLEND" => DeinterlaceAlgorithm::Blend,
+            "BLEND_TICKER" => DeinterlaceAlgorithm::BlendTicker,
+            "INTERPOLATE" => DeinterlaceAlgorithm::Interpolate,
+            "INTERPOLATE_TICKER" => DeinterlaceAlgorithm::InterpolateTicker,
+            "LINEAR_INTERPOLATION" => DeinterlaceAlgorithm::LinearInterpolation,
+            other => DeinterlaceAlgorithm::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BLEND", "BLEND_TICKER", "INTERPOLATE", "INTERPOLATE_TICKER", "LINEAR_INTERPOLATION"]
-                }
-            }
-impl AsRef<str> for DeinterlaceAlgorithm {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DeinterlaceAlgorithm {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DeinterlaceAlgorithm::from(s))
+    }
+}
+impl DeinterlaceAlgorithm {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DeinterlaceAlgorithm::Blend => "BLEND",
+            DeinterlaceAlgorithm::BlendTicker => "BLEND_TICKER",
+            DeinterlaceAlgorithm::Interpolate => "INTERPOLATE",
+            DeinterlaceAlgorithm::InterpolateTicker => "INTERPOLATE_TICKER",
+            DeinterlaceAlgorithm::LinearInterpolation => "LINEAR_INTERPOLATION",
+            DeinterlaceAlgorithm::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BLEND",
+            "BLEND_TICKER",
+            "INTERPOLATE",
+            "INTERPOLATE_TICKER",
+            "LINEAR_INTERPOLATION",
+        ]
+    }
+}
+impl AsRef<str> for DeinterlaceAlgorithm {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

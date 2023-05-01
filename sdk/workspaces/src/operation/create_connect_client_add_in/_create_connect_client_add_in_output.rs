@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectClientAddInOutput  {
+pub struct CreateConnectClientAddInOutput {
     /// <p>The client add-in identifier.</p>
     #[doc(hidden)]
     pub add_in_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct CreateConnectClientAddInOutput  {
 }
 impl CreateConnectClientAddInOutput {
     /// <p>The client add-in identifier.</p>
-    pub fn add_in_id(&self) -> std::option::Option<& str> {
+    pub fn add_in_id(&self) -> std::option::Option<&str> {
         self.add_in_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateConnectClientAddInOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateConnectClientAddInOutput {
     /// Creates a new builder-style object to manufacture [`CreateConnectClientAddInOutput`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput).
-    pub fn builder() -> crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInOutputBuilder {
+    pub fn builder() -> crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInOutputBuilder{
         crate::operation::create_connect_client_add_in::builders::CreateConnectClientAddInOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl CreateConnectClientAddInOutputBuilder {
     }
     /// <p>The client add-in identifier.</p>
     pub fn set_add_in_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.add_in_id = input; self
+        self.add_in_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateConnectClientAddInOutput`](crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput).
-    pub fn build(self) -> crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput {
         crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput {
-            add_in_id: self.add_in_id
-            ,
+            add_in_id: self.add_in_id,
             _request_id: self._request_id,
         }
     }
 }
-

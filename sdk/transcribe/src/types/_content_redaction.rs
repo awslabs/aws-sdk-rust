@@ -3,12 +3,12 @@
 /// <p>Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContentRedaction  {
+pub struct ContentRedaction {
     /// <p>Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.</p>
     #[doc(hidden)]
     pub redaction_type: std::option::Option<crate::types::RedactionType>,
-    /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p> 
-    /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p> 
+    /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p>
+    /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p>
     /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted transcript (as two separate files).</p>
     #[doc(hidden)]
     pub redaction_output: std::option::Option<crate::types::RedactionOutput>,
@@ -18,17 +18,17 @@ pub struct ContentRedaction  {
 }
 impl ContentRedaction {
     /// <p>Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.</p>
-    pub fn redaction_type(&self) -> std::option::Option<& crate::types::RedactionType> {
+    pub fn redaction_type(&self) -> std::option::Option<&crate::types::RedactionType> {
         self.redaction_type.as_ref()
     }
-    /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p> 
-    /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p> 
+    /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p>
+    /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p>
     /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted transcript (as two separate files).</p>
-    pub fn redaction_output(&self) -> std::option::Option<& crate::types::RedactionOutput> {
+    pub fn redaction_output(&self) -> std::option::Option<&crate::types::RedactionOutput> {
         self.redaction_output.as_ref()
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    pub fn pii_entity_types(&self) -> std::option::Option<& [crate::types::PiiEntityType]> {
+    pub fn pii_entity_types(&self) -> std::option::Option<&[crate::types::PiiEntityType]> {
         self.pii_entity_types.as_deref()
     }
 }
@@ -54,21 +54,29 @@ impl ContentRedactionBuilder {
         self
     }
     /// <p>Specify the category of information you want to redact; <code>PII</code> (personally identifiable information) is the only valid value. You can use <code>PiiEntityTypes</code> to choose which types of PII you want to redact.</p>
-    pub fn set_redaction_type(mut self, input: std::option::Option<crate::types::RedactionType>) -> Self {
-        self.redaction_type = input; self
+    pub fn set_redaction_type(
+        mut self,
+        input: std::option::Option<crate::types::RedactionType>,
+    ) -> Self {
+        self.redaction_type = input;
+        self
     }
-    /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p> 
-    /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p> 
+    /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p>
+    /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p>
     /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted transcript (as two separate files).</p>
     pub fn redaction_output(mut self, input: crate::types::RedactionOutput) -> Self {
         self.redaction_output = Some(input);
         self
     }
-    /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p> 
-    /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p> 
+    /// <p>Specify if you want only a redacted transcript, or if you want a redacted and an unredacted transcript.</p>
+    /// <p>When you choose <code>redacted</code> Amazon Transcribe creates only a redacted transcript.</p>
     /// <p>When you choose <code>redacted_and_unredacted</code> Amazon Transcribe creates a redacted and an unredacted transcript (as two separate files).</p>
-    pub fn set_redaction_output(mut self, input: std::option::Option<crate::types::RedactionOutput>) -> Self {
-        self.redaction_output = input; self
+    pub fn set_redaction_output(
+        mut self,
+        input: std::option::Option<crate::types::RedactionOutput>,
+    ) -> Self {
+        self.redaction_output = input;
+        self
     }
     /// Appends an item to `pii_entity_types`.
     ///
@@ -77,24 +85,24 @@ impl ContentRedactionBuilder {
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
     pub fn pii_entity_types(mut self, input: crate::types::PiiEntityType) -> Self {
         let mut v = self.pii_entity_types.unwrap_or_default();
-                        v.push(input);
-                        self.pii_entity_types = Some(v);
-                        self
+        v.push(input);
+        self.pii_entity_types = Some(v);
+        self
     }
     /// <p>Specify which types of personally identifiable information (PII) you want to redact in your transcript. You can include as many types as you'd like, or you can select <code>ALL</code>.</p>
-    pub fn set_pii_entity_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::PiiEntityType>>) -> Self {
-        self.pii_entity_types = input; self
+    pub fn set_pii_entity_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PiiEntityType>>,
+    ) -> Self {
+        self.pii_entity_types = input;
+        self
     }
     /// Consumes the builder and constructs a [`ContentRedaction`](crate::types::ContentRedaction).
     pub fn build(self) -> crate::types::ContentRedaction {
         crate::types::ContentRedaction {
-            redaction_type: self.redaction_type
-            ,
-            redaction_output: self.redaction_output
-            ,
-            pii_entity_types: self.pii_entity_types
-            ,
+            redaction_type: self.redaction_type,
+            redaction_output: self.redaction_output,
+            pii_entity_types: self.pii_entity_types,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableImportFindingsForProductOutput  {
+pub struct EnableImportFindingsForProductOutput {
     /// <p>The ARN of your subscription to the product to enable integrations for.</p>
     #[doc(hidden)]
     pub product_subscription_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct EnableImportFindingsForProductOutput  {
 }
 impl EnableImportFindingsForProductOutput {
     /// <p>The ARN of your subscription to the product to enable integrations for.</p>
-    pub fn product_subscription_arn(&self) -> std::option::Option<& str> {
+    pub fn product_subscription_arn(&self) -> std::option::Option<&str> {
         self.product_subscription_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for EnableImportFindingsForProductOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl EnableImportFindingsForProductOutput {
     /// Creates a new builder-style object to manufacture [`EnableImportFindingsForProductOutput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput).
-    pub fn builder() -> crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductOutputBuilder {
+    pub fn builder() -> crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductOutputBuilder{
         crate::operation::enable_import_findings_for_product::builders::EnableImportFindingsForProductOutputBuilder::default()
     }
 }
@@ -40,25 +40,30 @@ impl EnableImportFindingsForProductOutputBuilder {
         self
     }
     /// <p>The ARN of your subscription to the product to enable integrations for.</p>
-    pub fn set_product_subscription_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_subscription_arn = input; self
+    pub fn set_product_subscription_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.product_subscription_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`EnableImportFindingsForProductOutput`](crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput).
-    pub fn build(self) -> crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput
+    {
         crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput {
-            product_subscription_arn: self.product_subscription_arn
-            ,
+            product_subscription_arn: self.product_subscription_arn,
             _request_id: self._request_id,
         }
     }
 }
-

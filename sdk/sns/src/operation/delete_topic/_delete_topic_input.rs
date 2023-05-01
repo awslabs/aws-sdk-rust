@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTopicInput  {
+pub struct DeleteTopicInput {
     /// <p>The ARN of the topic you want to delete.</p>
     #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl DeleteTopicInput {
     /// <p>The ARN of the topic you want to delete.</p>
-    pub fn topic_arn(&self) -> std::option::Option<& str> {
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteTopicInputBuilder {
     }
     /// <p>The ARN of the topic you want to delete.</p>
     pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic_arn = input; self
+        self.topic_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTopicInput`](crate::operation::delete_topic::DeleteTopicInput).
-    pub fn build(self) -> Result<crate::operation::delete_topic::DeleteTopicInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_topic::DeleteTopicInput {
-                topic_arn: self.topic_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_topic::DeleteTopicInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_topic::DeleteTopicInput {
+            topic_arn: self.topic_arn,
+        })
     }
 }
-

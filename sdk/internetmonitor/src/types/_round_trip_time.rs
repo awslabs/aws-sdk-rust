@@ -3,7 +3,7 @@
 /// <p>Round-trip time (RTT) is how long it takes for a request from the user to return a response to the user. Amazon CloudWatch Internet Monitor calculates RTT at different percentiles: p50, p90, and p95.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoundTripTime  {
+pub struct RoundTripTime {
     /// <p>RTT at the 50th percentile (p50).</p>
     #[doc(hidden)]
     pub p50: std::option::Option<f64>,
@@ -51,7 +51,8 @@ impl RoundTripTimeBuilder {
     }
     /// <p>RTT at the 50th percentile (p50).</p>
     pub fn set_p50(mut self, input: std::option::Option<f64>) -> Self {
-        self.p50 = input; self
+        self.p50 = input;
+        self
     }
     /// <p>RTT at the 90th percentile (p90). </p>
     pub fn p90(mut self, input: f64) -> Self {
@@ -60,7 +61,8 @@ impl RoundTripTimeBuilder {
     }
     /// <p>RTT at the 90th percentile (p90). </p>
     pub fn set_p90(mut self, input: std::option::Option<f64>) -> Self {
-        self.p90 = input; self
+        self.p90 = input;
+        self
     }
     /// <p>RTT at the 95th percentile (p95). </p>
     pub fn p95(mut self, input: f64) -> Self {
@@ -69,18 +71,15 @@ impl RoundTripTimeBuilder {
     }
     /// <p>RTT at the 95th percentile (p95). </p>
     pub fn set_p95(mut self, input: std::option::Option<f64>) -> Self {
-        self.p95 = input; self
+        self.p95 = input;
+        self
     }
     /// Consumes the builder and constructs a [`RoundTripTime`](crate::types::RoundTripTime).
     pub fn build(self) -> crate::types::RoundTripTime {
         crate::types::RoundTripTime {
-            p50: self.p50
-            ,
-            p90: self.p90
-            ,
-            p95: self.p95
-            ,
+            p50: self.p50,
+            p90: self.p90,
+            p95: self.p95,
         }
     }
 }
-

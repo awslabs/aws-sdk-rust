@@ -3,14 +3,14 @@
 /// <p>Describes an IPv4 CIDR block.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CidrBlock  {
+pub struct CidrBlock {
     /// <p>The IPv4 CIDR block.</p>
     #[doc(hidden)]
     pub cidr_block: std::option::Option<std::string::String>,
 }
 impl CidrBlock {
     /// <p>The IPv4 CIDR block.</p>
-    pub fn cidr_block(&self) -> std::option::Option<& str> {
+    pub fn cidr_block(&self) -> std::option::Option<&str> {
         self.cidr_block.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl CidrBlockBuilder {
     }
     /// <p>The IPv4 CIDR block.</p>
     pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr_block = input; self
+        self.cidr_block = input;
+        self
     }
     /// Consumes the builder and constructs a [`CidrBlock`](crate::types::CidrBlock).
     pub fn build(self) -> crate::types::CidrBlock {
         crate::types::CidrBlock {
-            cidr_block: self.cidr_block
-            ,
+            cidr_block: self.cidr_block,
         }
     }
 }
-

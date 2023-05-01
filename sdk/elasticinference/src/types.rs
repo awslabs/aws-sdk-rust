@@ -36,4 +36,3 @@ pub mod builders;
 
 /// Error types that Amazon Elastic  Inference can respond with.
 pub mod error;
-

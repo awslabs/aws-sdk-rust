@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFeatureTransformationInput  {
+pub struct DescribeFeatureTransformationInput {
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
     #[doc(hidden)]
     pub feature_transformation_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFeatureTransformationInput {
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
-    pub fn feature_transformation_arn(&self) -> std::option::Option<& str> {
+    pub fn feature_transformation_arn(&self) -> std::option::Option<&str> {
         self.feature_transformation_arn.as_deref()
     }
 }
 impl DescribeFeatureTransformationInput {
     /// Creates a new builder-style object to manufacture [`DescribeFeatureTransformationInput`](crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput).
-    pub fn builder() -> crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder {
+    pub fn builder() -> crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder{
         crate::operation::describe_feature_transformation::builders::DescribeFeatureTransformationInputBuilder::default()
     }
 }
@@ -33,17 +33,24 @@ impl DescribeFeatureTransformationInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the feature transformation to describe.</p>
-    pub fn set_feature_transformation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_transformation_arn = input; self
+    pub fn set_feature_transformation_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.feature_transformation_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeFeatureTransformationInput`](crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput).
-    pub fn build(self) -> Result<crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_feature_transformation::DescribeFeatureTransformationInput {
-                feature_transformation_arn: self.feature_transformation_arn
-                ,
-            }
+                feature_transformation_arn: self.feature_transformation_arn,
+            },
         )
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>How much it costs to run an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoverageCost  {
+pub struct CoverageCost {
     /// <p>How much an On-Demand Instance costs.</p>
     #[doc(hidden)]
     pub on_demand_cost: std::option::Option<std::string::String>,
 }
 impl CoverageCost {
     /// <p>How much an On-Demand Instance costs.</p>
-    pub fn on_demand_cost(&self) -> std::option::Option<& str> {
+    pub fn on_demand_cost(&self) -> std::option::Option<&str> {
         self.on_demand_cost.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl CoverageCostBuilder {
     }
     /// <p>How much an On-Demand Instance costs.</p>
     pub fn set_on_demand_cost(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.on_demand_cost = input; self
+        self.on_demand_cost = input;
+        self
     }
     /// Consumes the builder and constructs a [`CoverageCost`](crate::types::CoverageCost).
     pub fn build(self) -> crate::types::CoverageCost {
         crate::types::CoverageCost {
-            on_demand_cost: self.on_demand_cost
-            ,
+            on_demand_cost: self.on_demand_cost,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricProcessingConfig  {
+pub struct MetricProcessingConfig {
     /// <p>The compute location for the given metric property. </p>
     #[doc(hidden)]
     pub compute_location: std::option::Option<crate::types::ComputeLocation>,
 }
 impl MetricProcessingConfig {
     /// <p>The compute location for the given metric property. </p>
-    pub fn compute_location(&self) -> std::option::Option<& crate::types::ComputeLocation> {
+    pub fn compute_location(&self) -> std::option::Option<&crate::types::ComputeLocation> {
         self.compute_location.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl MetricProcessingConfigBuilder {
         self
     }
     /// <p>The compute location for the given metric property. </p>
-    pub fn set_compute_location(mut self, input: std::option::Option<crate::types::ComputeLocation>) -> Self {
-        self.compute_location = input; self
+    pub fn set_compute_location(
+        mut self,
+        input: std::option::Option<crate::types::ComputeLocation>,
+    ) -> Self {
+        self.compute_location = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricProcessingConfig`](crate::types::MetricProcessingConfig).
     pub fn build(self) -> crate::types::MetricProcessingConfig {
         crate::types::MetricProcessingConfig {
-            compute_location: self.compute_location
-            ,
+            compute_location: self.compute_location,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Represents the output of <code>DBClusterParameterGroup</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbClusterParametersOutput  {
+pub struct DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
@@ -14,22 +14,22 @@ pub struct DescribeDbClusterParametersOutput  {
 }
 impl DescribeDbClusterParametersOutput {
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::Parameter]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::types::Parameter]> {
         self.parameters.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDbClusterParametersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDbClusterParametersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbClusterParametersOutput`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput).
-    pub fn builder() -> crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersOutputBuilder {
+    pub fn builder() -> crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersOutputBuilder{
         crate::operation::describe_db_cluster_parameters::builders::DescribeDbClusterParametersOutputBuilder::default()
     }
 }
@@ -50,13 +50,17 @@ impl DescribeDbClusterParametersOutputBuilder {
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
     pub fn parameters(mut self, input: crate::types::Parameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
     /// <p>Provides a list of parameters for the cluster parameter group.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Parameter>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Parameter>>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +69,26 @@ impl DescribeDbClusterParametersOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDbClusterParametersOutput`](crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput).
-    pub fn build(self) -> crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput {
         crate::operation::describe_db_cluster_parameters::DescribeDbClusterParametersOutput {
-            parameters: self.parameters
-            ,
-            marker: self.marker
-            ,
+            parameters: self.parameters,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>An activity that performs a transformation on a message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipelineActivity  {
+pub struct PipelineActivity {
     /// <p>Determines the source of the messages to be processed.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::types::ChannelActivity>,
@@ -37,43 +37,51 @@ pub struct PipelineActivity  {
 }
 impl PipelineActivity {
     /// <p>Determines the source of the messages to be processed.</p>
-    pub fn channel(&self) -> std::option::Option<& crate::types::ChannelActivity> {
+    pub fn channel(&self) -> std::option::Option<&crate::types::ChannelActivity> {
         self.channel.as_ref()
     }
     /// <p>Runs a Lambda function to modify the message.</p>
-    pub fn lambda(&self) -> std::option::Option<& crate::types::LambdaActivity> {
+    pub fn lambda(&self) -> std::option::Option<&crate::types::LambdaActivity> {
         self.lambda.as_ref()
     }
     /// <p>Specifies where to store the processed message data.</p>
-    pub fn datastore(&self) -> std::option::Option<& crate::types::DatastoreActivity> {
+    pub fn datastore(&self) -> std::option::Option<&crate::types::DatastoreActivity> {
         self.datastore.as_ref()
     }
     /// <p>Adds other attributes based on existing attributes in the message.</p>
-    pub fn add_attributes(&self) -> std::option::Option<& crate::types::AddAttributesActivity> {
+    pub fn add_attributes(&self) -> std::option::Option<&crate::types::AddAttributesActivity> {
         self.add_attributes.as_ref()
     }
     /// <p>Removes attributes from a message.</p>
-    pub fn remove_attributes(&self) -> std::option::Option<& crate::types::RemoveAttributesActivity> {
+    pub fn remove_attributes(
+        &self,
+    ) -> std::option::Option<&crate::types::RemoveAttributesActivity> {
         self.remove_attributes.as_ref()
     }
     /// <p>Used to create a new message using only the specified attributes from the original message. </p>
-    pub fn select_attributes(&self) -> std::option::Option<& crate::types::SelectAttributesActivity> {
+    pub fn select_attributes(
+        &self,
+    ) -> std::option::Option<&crate::types::SelectAttributesActivity> {
         self.select_attributes.as_ref()
     }
     /// <p>Filters a message based on its attributes.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::types::FilterActivity> {
+    pub fn filter(&self) -> std::option::Option<&crate::types::FilterActivity> {
         self.filter.as_ref()
     }
     /// <p>Computes an arithmetic expression using the message's attributes and adds it to the message.</p>
-    pub fn math(&self) -> std::option::Option<& crate::types::MathActivity> {
+    pub fn math(&self) -> std::option::Option<&crate::types::MathActivity> {
         self.math.as_ref()
     }
     /// <p>Adds data from the IoT device registry to your message.</p>
-    pub fn device_registry_enrich(&self) -> std::option::Option<& crate::types::DeviceRegistryEnrichActivity> {
+    pub fn device_registry_enrich(
+        &self,
+    ) -> std::option::Option<&crate::types::DeviceRegistryEnrichActivity> {
         self.device_registry_enrich.as_ref()
     }
     /// <p>Adds information from the IoT Device Shadow service to a message.</p>
-    pub fn device_shadow_enrich(&self) -> std::option::Option<& crate::types::DeviceShadowEnrichActivity> {
+    pub fn device_shadow_enrich(
+        &self,
+    ) -> std::option::Option<&crate::types::DeviceShadowEnrichActivity> {
         self.device_shadow_enrich.as_ref()
     }
 }
@@ -96,7 +104,8 @@ pub struct PipelineActivityBuilder {
     pub(crate) select_attributes: std::option::Option<crate::types::SelectAttributesActivity>,
     pub(crate) filter: std::option::Option<crate::types::FilterActivity>,
     pub(crate) math: std::option::Option<crate::types::MathActivity>,
-    pub(crate) device_registry_enrich: std::option::Option<crate::types::DeviceRegistryEnrichActivity>,
+    pub(crate) device_registry_enrich:
+        std::option::Option<crate::types::DeviceRegistryEnrichActivity>,
     pub(crate) device_shadow_enrich: std::option::Option<crate::types::DeviceShadowEnrichActivity>,
 }
 impl PipelineActivityBuilder {
@@ -106,8 +115,12 @@ impl PipelineActivityBuilder {
         self
     }
     /// <p>Determines the source of the messages to be processed.</p>
-    pub fn set_channel(mut self, input: std::option::Option<crate::types::ChannelActivity>) -> Self {
-        self.channel = input; self
+    pub fn set_channel(
+        mut self,
+        input: std::option::Option<crate::types::ChannelActivity>,
+    ) -> Self {
+        self.channel = input;
+        self
     }
     /// <p>Runs a Lambda function to modify the message.</p>
     pub fn lambda(mut self, input: crate::types::LambdaActivity) -> Self {
@@ -116,7 +129,8 @@ impl PipelineActivityBuilder {
     }
     /// <p>Runs a Lambda function to modify the message.</p>
     pub fn set_lambda(mut self, input: std::option::Option<crate::types::LambdaActivity>) -> Self {
-        self.lambda = input; self
+        self.lambda = input;
+        self
     }
     /// <p>Specifies where to store the processed message data.</p>
     pub fn datastore(mut self, input: crate::types::DatastoreActivity) -> Self {
@@ -124,8 +138,12 @@ impl PipelineActivityBuilder {
         self
     }
     /// <p>Specifies where to store the processed message data.</p>
-    pub fn set_datastore(mut self, input: std::option::Option<crate::types::DatastoreActivity>) -> Self {
-        self.datastore = input; self
+    pub fn set_datastore(
+        mut self,
+        input: std::option::Option<crate::types::DatastoreActivity>,
+    ) -> Self {
+        self.datastore = input;
+        self
     }
     /// <p>Adds other attributes based on existing attributes in the message.</p>
     pub fn add_attributes(mut self, input: crate::types::AddAttributesActivity) -> Self {
@@ -133,8 +151,12 @@ impl PipelineActivityBuilder {
         self
     }
     /// <p>Adds other attributes based on existing attributes in the message.</p>
-    pub fn set_add_attributes(mut self, input: std::option::Option<crate::types::AddAttributesActivity>) -> Self {
-        self.add_attributes = input; self
+    pub fn set_add_attributes(
+        mut self,
+        input: std::option::Option<crate::types::AddAttributesActivity>,
+    ) -> Self {
+        self.add_attributes = input;
+        self
     }
     /// <p>Removes attributes from a message.</p>
     pub fn remove_attributes(mut self, input: crate::types::RemoveAttributesActivity) -> Self {
@@ -142,8 +164,12 @@ impl PipelineActivityBuilder {
         self
     }
     /// <p>Removes attributes from a message.</p>
-    pub fn set_remove_attributes(mut self, input: std::option::Option<crate::types::RemoveAttributesActivity>) -> Self {
-        self.remove_attributes = input; self
+    pub fn set_remove_attributes(
+        mut self,
+        input: std::option::Option<crate::types::RemoveAttributesActivity>,
+    ) -> Self {
+        self.remove_attributes = input;
+        self
     }
     /// <p>Used to create a new message using only the specified attributes from the original message. </p>
     pub fn select_attributes(mut self, input: crate::types::SelectAttributesActivity) -> Self {
@@ -151,8 +177,12 @@ impl PipelineActivityBuilder {
         self
     }
     /// <p>Used to create a new message using only the specified attributes from the original message. </p>
-    pub fn set_select_attributes(mut self, input: std::option::Option<crate::types::SelectAttributesActivity>) -> Self {
-        self.select_attributes = input; self
+    pub fn set_select_attributes(
+        mut self,
+        input: std::option::Option<crate::types::SelectAttributesActivity>,
+    ) -> Self {
+        self.select_attributes = input;
+        self
     }
     /// <p>Filters a message based on its attributes.</p>
     pub fn filter(mut self, input: crate::types::FilterActivity) -> Self {
@@ -161,7 +191,8 @@ impl PipelineActivityBuilder {
     }
     /// <p>Filters a message based on its attributes.</p>
     pub fn set_filter(mut self, input: std::option::Option<crate::types::FilterActivity>) -> Self {
-        self.filter = input; self
+        self.filter = input;
+        self
     }
     /// <p>Computes an arithmetic expression using the message's attributes and adds it to the message.</p>
     pub fn math(mut self, input: crate::types::MathActivity) -> Self {
@@ -170,16 +201,24 @@ impl PipelineActivityBuilder {
     }
     /// <p>Computes an arithmetic expression using the message's attributes and adds it to the message.</p>
     pub fn set_math(mut self, input: std::option::Option<crate::types::MathActivity>) -> Self {
-        self.math = input; self
+        self.math = input;
+        self
     }
     /// <p>Adds data from the IoT device registry to your message.</p>
-    pub fn device_registry_enrich(mut self, input: crate::types::DeviceRegistryEnrichActivity) -> Self {
+    pub fn device_registry_enrich(
+        mut self,
+        input: crate::types::DeviceRegistryEnrichActivity,
+    ) -> Self {
         self.device_registry_enrich = Some(input);
         self
     }
     /// <p>Adds data from the IoT device registry to your message.</p>
-    pub fn set_device_registry_enrich(mut self, input: std::option::Option<crate::types::DeviceRegistryEnrichActivity>) -> Self {
-        self.device_registry_enrich = input; self
+    pub fn set_device_registry_enrich(
+        mut self,
+        input: std::option::Option<crate::types::DeviceRegistryEnrichActivity>,
+    ) -> Self {
+        self.device_registry_enrich = input;
+        self
     }
     /// <p>Adds information from the IoT Device Shadow service to a message.</p>
     pub fn device_shadow_enrich(mut self, input: crate::types::DeviceShadowEnrichActivity) -> Self {
@@ -187,33 +226,26 @@ impl PipelineActivityBuilder {
         self
     }
     /// <p>Adds information from the IoT Device Shadow service to a message.</p>
-    pub fn set_device_shadow_enrich(mut self, input: std::option::Option<crate::types::DeviceShadowEnrichActivity>) -> Self {
-        self.device_shadow_enrich = input; self
+    pub fn set_device_shadow_enrich(
+        mut self,
+        input: std::option::Option<crate::types::DeviceShadowEnrichActivity>,
+    ) -> Self {
+        self.device_shadow_enrich = input;
+        self
     }
     /// Consumes the builder and constructs a [`PipelineActivity`](crate::types::PipelineActivity).
     pub fn build(self) -> crate::types::PipelineActivity {
         crate::types::PipelineActivity {
-            channel: self.channel
-            ,
-            lambda: self.lambda
-            ,
-            datastore: self.datastore
-            ,
-            add_attributes: self.add_attributes
-            ,
-            remove_attributes: self.remove_attributes
-            ,
-            select_attributes: self.select_attributes
-            ,
-            filter: self.filter
-            ,
-            math: self.math
-            ,
-            device_registry_enrich: self.device_registry_enrich
-            ,
-            device_shadow_enrich: self.device_shadow_enrich
-            ,
+            channel: self.channel,
+            lambda: self.lambda,
+            datastore: self.datastore,
+            add_attributes: self.add_attributes,
+            remove_attributes: self.remove_attributes,
+            select_attributes: self.select_attributes,
+            filter: self.filter,
+            math: self.math,
+            device_registry_enrich: self.device_registry_enrich,
+            device_shadow_enrich: self.device_shadow_enrich,
         }
     }
 }
-

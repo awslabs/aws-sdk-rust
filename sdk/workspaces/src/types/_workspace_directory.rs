@@ -3,7 +3,7 @@
 /// <p>Describes a directory that is used with Amazon WorkSpaces.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkspaceDirectory  {
+pub struct WorkspaceDirectory {
     /// <p>The directory identifier.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -39,7 +39,8 @@ pub struct WorkspaceDirectory  {
     pub state: std::option::Option<crate::types::WorkspaceDirectoryState>,
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
     #[doc(hidden)]
-    pub workspace_creation_properties: std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
+    pub workspace_creation_properties:
+        std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
     #[doc(hidden)]
     pub ip_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -57,79 +58,88 @@ pub struct WorkspaceDirectory  {
     pub saml_properties: std::option::Option<crate::types::SamlProperties>,
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
     #[doc(hidden)]
-    pub certificate_based_auth_properties: std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub certificate_based_auth_properties:
+        std::option::Option<crate::types::CertificateBasedAuthProperties>,
 }
 impl WorkspaceDirectory {
     /// <p>The directory identifier.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The directory alias.</p>
-    pub fn alias(&self) -> std::option::Option<& str> {
+    pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
     /// <p>The name of the directory.</p>
-    pub fn directory_name(&self) -> std::option::Option<& str> {
+    pub fn directory_name(&self) -> std::option::Option<&str> {
         self.directory_name.as_deref()
     }
     /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
-    pub fn registration_code(&self) -> std::option::Option<& str> {
+    pub fn registration_code(&self) -> std::option::Option<&str> {
         self.registration_code.as_deref()
     }
     /// <p>The identifiers of the subnets used with the directory.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The IP addresses of the DNS servers for the directory.</p>
-    pub fn dns_ip_addresses(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn dns_ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_ip_addresses.as_deref()
     }
     /// <p>The user name for the service account.</p>
-    pub fn customer_user_name(&self) -> std::option::Option<& str> {
+    pub fn customer_user_name(&self) -> std::option::Option<&str> {
         self.customer_user_name.as_deref()
     }
     /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>
-    pub fn iam_role_id(&self) -> std::option::Option<& str> {
+    pub fn iam_role_id(&self) -> std::option::Option<&str> {
         self.iam_role_id.as_deref()
     }
     /// <p>The directory type.</p>
-    pub fn directory_type(&self) -> std::option::Option<& crate::types::WorkspaceDirectoryType> {
+    pub fn directory_type(&self) -> std::option::Option<&crate::types::WorkspaceDirectoryType> {
         self.directory_type.as_ref()
     }
     /// <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
-    pub fn workspace_security_group_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_security_group_id(&self) -> std::option::Option<&str> {
         self.workspace_security_group_id.as_deref()
     }
     /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"> DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully deregistered.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::WorkspaceDirectoryState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::WorkspaceDirectoryState> {
         self.state.as_ref()
     }
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
-    pub fn workspace_creation_properties(&self) -> std::option::Option<& crate::types::DefaultWorkspaceCreationProperties> {
+    pub fn workspace_creation_properties(
+        &self,
+    ) -> std::option::Option<&crate::types::DefaultWorkspaceCreationProperties> {
         self.workspace_creation_properties.as_ref()
     }
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
-    pub fn ip_group_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn ip_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ip_group_ids.as_deref()
     }
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
-    pub fn workspace_access_properties(&self) -> std::option::Option<& crate::types::WorkspaceAccessProperties> {
+    pub fn workspace_access_properties(
+        &self,
+    ) -> std::option::Option<&crate::types::WorkspaceAccessProperties> {
         self.workspace_access_properties.as_ref()
     }
     /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
-    pub fn tenancy(&self) -> std::option::Option<& crate::types::Tenancy> {
+    pub fn tenancy(&self) -> std::option::Option<&crate::types::Tenancy> {
         self.tenancy.as_ref()
     }
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
-    pub fn selfservice_permissions(&self) -> std::option::Option<& crate::types::SelfservicePermissions> {
+    pub fn selfservice_permissions(
+        &self,
+    ) -> std::option::Option<&crate::types::SelfservicePermissions> {
         self.selfservice_permissions.as_ref()
     }
     /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
-    pub fn saml_properties(&self) -> std::option::Option<& crate::types::SamlProperties> {
+    pub fn saml_properties(&self) -> std::option::Option<&crate::types::SamlProperties> {
         self.saml_properties.as_ref()
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
-    pub fn certificate_based_auth_properties(&self) -> std::option::Option<& crate::types::CertificateBasedAuthProperties> {
+    pub fn certificate_based_auth_properties(
+        &self,
+    ) -> std::option::Option<&crate::types::CertificateBasedAuthProperties> {
         self.certificate_based_auth_properties.as_ref()
     }
 }
@@ -155,13 +165,16 @@ pub struct WorkspaceDirectoryBuilder {
     pub(crate) directory_type: std::option::Option<crate::types::WorkspaceDirectoryType>,
     pub(crate) workspace_security_group_id: std::option::Option<std::string::String>,
     pub(crate) state: std::option::Option<crate::types::WorkspaceDirectoryState>,
-    pub(crate) workspace_creation_properties: std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
+    pub(crate) workspace_creation_properties:
+        std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
     pub(crate) ip_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) workspace_access_properties: std::option::Option<crate::types::WorkspaceAccessProperties>,
+    pub(crate) workspace_access_properties:
+        std::option::Option<crate::types::WorkspaceAccessProperties>,
     pub(crate) tenancy: std::option::Option<crate::types::Tenancy>,
     pub(crate) selfservice_permissions: std::option::Option<crate::types::SelfservicePermissions>,
     pub(crate) saml_properties: std::option::Option<crate::types::SamlProperties>,
-    pub(crate) certificate_based_auth_properties: std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    pub(crate) certificate_based_auth_properties:
+        std::option::Option<crate::types::CertificateBasedAuthProperties>,
 }
 impl WorkspaceDirectoryBuilder {
     /// <p>The directory identifier.</p>
@@ -171,7 +184,8 @@ impl WorkspaceDirectoryBuilder {
     }
     /// <p>The directory identifier.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The directory alias.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,7 +194,8 @@ impl WorkspaceDirectoryBuilder {
     }
     /// <p>The directory alias.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input; self
+        self.alias = input;
+        self
     }
     /// <p>The name of the directory.</p>
     pub fn directory_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -189,7 +204,8 @@ impl WorkspaceDirectoryBuilder {
     }
     /// <p>The name of the directory.</p>
     pub fn set_directory_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_name = input; self
+        self.directory_name = input;
+        self
     }
     /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
     pub fn registration_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -197,8 +213,12 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</p>
-    pub fn set_registration_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registration_code = input; self
+    pub fn set_registration_code(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.registration_code = input;
+        self
     }
     /// Appends an item to `subnet_ids`.
     ///
@@ -207,13 +227,17 @@ impl WorkspaceDirectoryBuilder {
     /// <p>The identifiers of the subnets used with the directory.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>The identifiers of the subnets used with the directory.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// Appends an item to `dns_ip_addresses`.
     ///
@@ -222,13 +246,17 @@ impl WorkspaceDirectoryBuilder {
     /// <p>The IP addresses of the DNS servers for the directory.</p>
     pub fn dns_ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dns_ip_addresses.unwrap_or_default();
-                        v.push(input.into());
-                        self.dns_ip_addresses = Some(v);
-                        self
+        v.push(input.into());
+        self.dns_ip_addresses = Some(v);
+        self
     }
     /// <p>The IP addresses of the DNS servers for the directory.</p>
-    pub fn set_dns_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.dns_ip_addresses = input; self
+    pub fn set_dns_ip_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.dns_ip_addresses = input;
+        self
     }
     /// <p>The user name for the service account.</p>
     pub fn customer_user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -236,8 +264,12 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The user name for the service account.</p>
-    pub fn set_customer_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.customer_user_name = input; self
+    pub fn set_customer_user_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.customer_user_name = input;
+        self
     }
     /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>
     pub fn iam_role_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -246,7 +278,8 @@ impl WorkspaceDirectoryBuilder {
     }
     /// <p>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</p>
     pub fn set_iam_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role_id = input; self
+        self.iam_role_id = input;
+        self
     }
     /// <p>The directory type.</p>
     pub fn directory_type(mut self, input: crate::types::WorkspaceDirectoryType) -> Self {
@@ -254,8 +287,12 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The directory type.</p>
-    pub fn set_directory_type(mut self, input: std::option::Option<crate::types::WorkspaceDirectoryType>) -> Self {
-        self.directory_type = input; self
+    pub fn set_directory_type(
+        mut self,
+        input: std::option::Option<crate::types::WorkspaceDirectoryType>,
+    ) -> Self {
+        self.directory_type = input;
+        self
     }
     /// <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
     pub fn workspace_security_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -263,8 +300,12 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The identifier of the security group that is assigned to new WorkSpaces.</p>
-    pub fn set_workspace_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_security_group_id = input; self
+    pub fn set_workspace_security_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.workspace_security_group_id = input;
+        self
     }
     /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"> DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully deregistered.</p>
     pub fn state(mut self, input: crate::types::WorkspaceDirectoryState) -> Self {
@@ -272,17 +313,28 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The state of the directory's registration with Amazon WorkSpaces. After a directory is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before the directory metadata is cleaned up, so this state is rarely returned. To confirm that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html"> DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory has been successfully deregistered.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::WorkspaceDirectoryState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::WorkspaceDirectoryState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
-    pub fn workspace_creation_properties(mut self, input: crate::types::DefaultWorkspaceCreationProperties) -> Self {
+    pub fn workspace_creation_properties(
+        mut self,
+        input: crate::types::DefaultWorkspaceCreationProperties,
+    ) -> Self {
         self.workspace_creation_properties = Some(input);
         self
     }
     /// <p>The default creation properties for all WorkSpaces in the directory.</p>
-    pub fn set_workspace_creation_properties(mut self, input: std::option::Option<crate::types::DefaultWorkspaceCreationProperties>) -> Self {
-        self.workspace_creation_properties = input; self
+    pub fn set_workspace_creation_properties(
+        mut self,
+        input: std::option::Option<crate::types::DefaultWorkspaceCreationProperties>,
+    ) -> Self {
+        self.workspace_creation_properties = input;
+        self
     }
     /// Appends an item to `ip_group_ids`.
     ///
@@ -291,22 +343,33 @@ impl WorkspaceDirectoryBuilder {
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
     pub fn ip_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ip_group_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.ip_group_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.ip_group_ids = Some(v);
+        self
     }
     /// <p>The identifiers of the IP access control groups associated with the directory.</p>
-    pub fn set_ip_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.ip_group_ids = input; self
+    pub fn set_ip_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.ip_group_ids = input;
+        self
     }
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
-    pub fn workspace_access_properties(mut self, input: crate::types::WorkspaceAccessProperties) -> Self {
+    pub fn workspace_access_properties(
+        mut self,
+        input: crate::types::WorkspaceAccessProperties,
+    ) -> Self {
         self.workspace_access_properties = Some(input);
         self
     }
     /// <p>The devices and operating systems that users can use to access WorkSpaces.</p>
-    pub fn set_workspace_access_properties(mut self, input: std::option::Option<crate::types::WorkspaceAccessProperties>) -> Self {
-        self.workspace_access_properties = input; self
+    pub fn set_workspace_access_properties(
+        mut self,
+        input: std::option::Option<crate::types::WorkspaceAccessProperties>,
+    ) -> Self {
+        self.workspace_access_properties = input;
+        self
     }
     /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub fn tenancy(mut self, input: crate::types::Tenancy) -> Self {
@@ -315,7 +378,8 @@ impl WorkspaceDirectoryBuilder {
     }
     /// <p>Specifies whether the directory is dedicated or shared. To use Bring Your Own License (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring Your Own Windows Desktop Images</a>.</p>
     pub fn set_tenancy(mut self, input: std::option::Option<crate::types::Tenancy>) -> Self {
-        self.tenancy = input; self
+        self.tenancy = input;
+        self
     }
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
     pub fn selfservice_permissions(mut self, input: crate::types::SelfservicePermissions) -> Self {
@@ -323,8 +387,12 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>The default self-service permissions for WorkSpaces in the directory.</p>
-    pub fn set_selfservice_permissions(mut self, input: std::option::Option<crate::types::SelfservicePermissions>) -> Self {
-        self.selfservice_permissions = input; self
+    pub fn set_selfservice_permissions(
+        mut self,
+        input: std::option::Option<crate::types::SelfservicePermissions>,
+    ) -> Self {
+        self.selfservice_permissions = input;
+        self
     }
     /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
     pub fn saml_properties(mut self, input: crate::types::SamlProperties) -> Self {
@@ -332,58 +400,50 @@ impl WorkspaceDirectoryBuilder {
         self
     }
     /// <p>Describes the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>
-    pub fn set_saml_properties(mut self, input: std::option::Option<crate::types::SamlProperties>) -> Self {
-        self.saml_properties = input; self
+    pub fn set_saml_properties(
+        mut self,
+        input: std::option::Option<crate::types::SamlProperties>,
+    ) -> Self {
+        self.saml_properties = input;
+        self
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
-    pub fn certificate_based_auth_properties(mut self, input: crate::types::CertificateBasedAuthProperties) -> Self {
+    pub fn certificate_based_auth_properties(
+        mut self,
+        input: crate::types::CertificateBasedAuthProperties,
+    ) -> Self {
         self.certificate_based_auth_properties = Some(input);
         self
     }
     /// <p>The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user identities to Active Directory for WorkSpaces login.</p>
-    pub fn set_certificate_based_auth_properties(mut self, input: std::option::Option<crate::types::CertificateBasedAuthProperties>) -> Self {
-        self.certificate_based_auth_properties = input; self
+    pub fn set_certificate_based_auth_properties(
+        mut self,
+        input: std::option::Option<crate::types::CertificateBasedAuthProperties>,
+    ) -> Self {
+        self.certificate_based_auth_properties = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkspaceDirectory`](crate::types::WorkspaceDirectory).
     pub fn build(self) -> crate::types::WorkspaceDirectory {
         crate::types::WorkspaceDirectory {
-            directory_id: self.directory_id
-            ,
-            alias: self.alias
-            ,
-            directory_name: self.directory_name
-            ,
-            registration_code: self.registration_code
-            ,
-            subnet_ids: self.subnet_ids
-            ,
-            dns_ip_addresses: self.dns_ip_addresses
-            ,
-            customer_user_name: self.customer_user_name
-            ,
-            iam_role_id: self.iam_role_id
-            ,
-            directory_type: self.directory_type
-            ,
-            workspace_security_group_id: self.workspace_security_group_id
-            ,
-            state: self.state
-            ,
-            workspace_creation_properties: self.workspace_creation_properties
-            ,
-            ip_group_ids: self.ip_group_ids
-            ,
-            workspace_access_properties: self.workspace_access_properties
-            ,
-            tenancy: self.tenancy
-            ,
-            selfservice_permissions: self.selfservice_permissions
-            ,
-            saml_properties: self.saml_properties
-            ,
-            certificate_based_auth_properties: self.certificate_based_auth_properties
-            ,
+            directory_id: self.directory_id,
+            alias: self.alias,
+            directory_name: self.directory_name,
+            registration_code: self.registration_code,
+            subnet_ids: self.subnet_ids,
+            dns_ip_addresses: self.dns_ip_addresses,
+            customer_user_name: self.customer_user_name,
+            iam_role_id: self.iam_role_id,
+            directory_type: self.directory_type,
+            workspace_security_group_id: self.workspace_security_group_id,
+            state: self.state,
+            workspace_creation_properties: self.workspace_creation_properties,
+            ip_group_ids: self.ip_group_ids,
+            workspace_access_properties: self.workspace_access_properties,
+            tenancy: self.tenancy,
+            selfservice_permissions: self.selfservice_permissions,
+            saml_properties: self.saml_properties,
+            certificate_based_auth_properties: self.certificate_based_auth_properties,
         }
     }
 }
-

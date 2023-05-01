@@ -3,20 +3,22 @@
 /// Placeholder documentation for DeleteInputSecurityGroupRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInputSecurityGroupInput  {
+pub struct DeleteInputSecurityGroupInput {
     /// The Input Security Group to delete
     #[doc(hidden)]
     pub input_security_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteInputSecurityGroupInput {
     /// The Input Security Group to delete
-    pub fn input_security_group_id(&self) -> std::option::Option<& str> {
+    pub fn input_security_group_id(&self) -> std::option::Option<&str> {
         self.input_security_group_id.as_deref()
     }
 }
 impl DeleteInputSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteInputSecurityGroupInput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput).
-    pub fn builder() -> crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder
+    {
         crate::operation::delete_input_security_group::builders::DeleteInputSecurityGroupInputBuilder::default()
     }
 }
@@ -34,17 +36,24 @@ impl DeleteInputSecurityGroupInputBuilder {
         self
     }
     /// The Input Security Group to delete
-    pub fn set_input_security_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_security_group_id = input; self
+    pub fn set_input_security_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.input_security_group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteInputSecurityGroupInput`](crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_input_security_group::DeleteInputSecurityGroupInput {
-                input_security_group_id: self.input_security_group_id
-                ,
-            }
+                input_security_group_id: self.input_security_group_id,
+            },
         )
     }
 }
-

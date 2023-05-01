@@ -3,7 +3,7 @@
 /// <p>An object that represents a gateway route target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GatewayRouteTarget  {
+pub struct GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::types::GatewayRouteVirtualService>,
@@ -13,7 +13,9 @@ pub struct GatewayRouteTarget  {
 }
 impl GatewayRouteTarget {
     /// <p>An object that represents a virtual service gateway route target.</p>
-    pub fn virtual_service(&self) -> std::option::Option<& crate::types::GatewayRouteVirtualService> {
+    pub fn virtual_service(
+        &self,
+    ) -> std::option::Option<&crate::types::GatewayRouteVirtualService> {
         self.virtual_service.as_ref()
     }
     /// <p>The port number of the gateway route target.</p>
@@ -42,8 +44,12 @@ impl GatewayRouteTargetBuilder {
         self
     }
     /// <p>An object that represents a virtual service gateway route target.</p>
-    pub fn set_virtual_service(mut self, input: std::option::Option<crate::types::GatewayRouteVirtualService>) -> Self {
-        self.virtual_service = input; self
+    pub fn set_virtual_service(
+        mut self,
+        input: std::option::Option<crate::types::GatewayRouteVirtualService>,
+    ) -> Self {
+        self.virtual_service = input;
+        self
     }
     /// <p>The port number of the gateway route target.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -52,16 +58,14 @@ impl GatewayRouteTargetBuilder {
     }
     /// <p>The port number of the gateway route target.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// Consumes the builder and constructs a [`GatewayRouteTarget`](crate::types::GatewayRouteTarget).
     pub fn build(self) -> crate::types::GatewayRouteTarget {
         crate::types::GatewayRouteTarget {
-            virtual_service: self.virtual_service
-            ,
-            port: self.port
-            ,
+            virtual_service: self.virtual_service,
+            port: self.port,
         }
     }
 }
-

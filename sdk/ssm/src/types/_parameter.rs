@@ -3,25 +3,25 @@
 /// <p>An Amazon Web Services Systems Manager parameter in Parameter Store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Parameter  {
+pub struct Parameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note> 
-    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p> 
+    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ParameterType>,
-    /// <p>The parameter value.</p> <note> 
-    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p> 
+    /// <p>The parameter value.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
     /// <p>The parameter version.</p>
     #[doc(hidden)]
     pub version: i64,
-    /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p> 
-    /// <p>parameter_name:version</p> 
+    /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p>
+    /// <p>parameter_name:version</p>
     /// <p>parameter_name:label</p>
     #[doc(hidden)]
     pub selector: std::option::Option<std::string::String>,
@@ -40,49 +40,49 @@ pub struct Parameter  {
 }
 impl Parameter {
     /// <p>The name of the parameter.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note> 
-    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p> 
+    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ParameterType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ParameterType> {
         self.r#type.as_ref()
     }
-    /// <p>The parameter value.</p> <note> 
-    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p> 
+    /// <p>The parameter value.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The parameter version.</p>
     pub fn version(&self) -> i64 {
         self.version
     }
-    /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p> 
-    /// <p>parameter_name:version</p> 
+    /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p>
+    /// <p>parameter_name:version</p>
     /// <p>parameter_name:label</p>
-    pub fn selector(&self) -> std::option::Option<& str> {
+    pub fn selector(&self) -> std::option::Option<&str> {
         self.selector.as_deref()
     }
     /// <p>Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code> is the raw result or response from the source.</p>
-    pub fn source_result(&self) -> std::option::Option<& str> {
+    pub fn source_result(&self) -> std::option::Option<&str> {
         self.source_result.as_deref()
     }
     /// <p>Date the parameter was last changed or updated and the parameter version was created.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the parameter.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
-    pub fn data_type(&self) -> std::option::Option<& str> {
+    pub fn data_type(&self) -> std::option::Option<&str> {
         self.data_type.as_deref()
     }
 }
-impl  std::fmt::Debug for Parameter  {
+impl std::fmt::Debug for Parameter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Parameter");
         formatter.field("name", &self.name);
@@ -126,33 +126,36 @@ impl ParameterBuilder {
     }
     /// <p>The name of the parameter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note> 
-    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p> 
+    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note> 
-    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p> 
+    /// <p>The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>, and <code>SecureString</code>.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ParameterType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
-    /// <p>The parameter value.</p> <note> 
-    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p> 
+    /// <p>The parameter value.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.value = Some(input.into());
         self
     }
-    /// <p>The parameter value.</p> <note> 
-    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p> 
+    /// <p>The parameter value.</p> <note>
+    /// <p>If type is <code>StringList</code>, the system returns a comma-separated string with no spaces between commas in the <code>Value</code> field.</p>
     /// </note>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The parameter version.</p>
     pub fn version(mut self, input: i64) -> Self {
@@ -161,20 +164,22 @@ impl ParameterBuilder {
     }
     /// <p>The parameter version.</p>
     pub fn set_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
-    /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p> 
-    /// <p>parameter_name:version</p> 
+    /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p>
+    /// <p>parameter_name:version</p>
     /// <p>parameter_name:label</p>
     pub fn selector(mut self, input: impl Into<std::string::String>) -> Self {
         self.selector = Some(input.into());
         self
     }
-    /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p> 
-    /// <p>parameter_name:version</p> 
+    /// <p>Either the version number or the label used to retrieve the parameter value. Specify selectors by using one of the following formats:</p>
+    /// <p>parameter_name:version</p>
     /// <p>parameter_name:label</p>
     pub fn set_selector(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.selector = input; self
+        self.selector = input;
+        self
     }
     /// <p>Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code> is the raw result or response from the source.</p>
     pub fn source_result(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,7 +188,8 @@ impl ParameterBuilder {
     }
     /// <p>Applies to parameters that reference information in other Amazon Web Services services. <code>SourceResult</code> is the raw result or response from the source.</p>
     pub fn set_source_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_result = input; self
+        self.source_result = input;
+        self
     }
     /// <p>Date the parameter was last changed or updated and the parameter version was created.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -191,8 +197,12 @@ impl ParameterBuilder {
         self
     }
     /// <p>Date the parameter was last changed or updated and the parameter version was created.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the parameter.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,7 +211,8 @@ impl ParameterBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the parameter.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -210,30 +221,21 @@ impl ParameterBuilder {
     }
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The default is <code>text</code>.</p>
     pub fn set_data_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_type = input; self
+        self.data_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`Parameter`](crate::types::Parameter).
     pub fn build(self) -> crate::types::Parameter {
         crate::types::Parameter {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            value: self.value
-            ,
-            version: self.version
-                .unwrap_or_default()
-            ,
-            selector: self.selector
-            ,
-            source_result: self.source_result
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            arn: self.arn
-            ,
-            data_type: self.data_type
-            ,
+            name: self.name,
+            r#type: self.r#type,
+            value: self.value,
+            version: self.version.unwrap_or_default(),
+            selector: self.selector,
+            source_result: self.source_result,
+            last_modified_date: self.last_modified_date,
+            arn: self.arn,
+            data_type: self.data_type,
         }
     }
 }
@@ -252,4 +254,3 @@ impl std::fmt::Debug for ParameterBuilder {
         formatter.finish()
     }
 }
-

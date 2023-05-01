@@ -3,12 +3,12 @@
 /// <p>Detailed information about an activity type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeActivityTypeOutput  {
-    /// <p>General information about the activity type.</p> 
-    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li> 
-    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li> 
+pub struct DescribeActivityTypeOutput {
+    /// <p>General information about the activity type.</p>
+    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub type_info: std::option::Option<crate::types::ActivityTypeInfo>,
@@ -18,28 +18,29 @@ pub struct DescribeActivityTypeOutput  {
     _request_id: Option<String>,
 }
 impl DescribeActivityTypeOutput {
-    /// <p>General information about the activity type.</p> 
-    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li> 
-    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li> 
+    /// <p>General information about the activity type.</p>
+    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
-    pub fn type_info(&self) -> std::option::Option<& crate::types::ActivityTypeInfo> {
+    pub fn type_info(&self) -> std::option::Option<&crate::types::ActivityTypeInfo> {
         self.type_info.as_ref()
     }
     /// <p>The configuration settings registered with the activity type.</p>
-    pub fn configuration(&self) -> std::option::Option<& crate::types::ActivityTypeConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<&crate::types::ActivityTypeConfiguration> {
         self.configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeActivityTypeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeActivityTypeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActivityTypeOutput`](crate::operation::describe_activity_type::DescribeActivityTypeOutput).
-    pub fn builder() -> crate::operation::describe_activity_type::builders::DescribeActivityTypeOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_activity_type::builders::DescribeActivityTypeOutputBuilder {
         crate::operation::describe_activity_type::builders::DescribeActivityTypeOutputBuilder::default()
     }
 }
@@ -53,24 +54,28 @@ pub struct DescribeActivityTypeOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeActivityTypeOutputBuilder {
-    /// <p>General information about the activity type.</p> 
-    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li> 
-    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li> 
+    /// <p>General information about the activity type.</p>
+    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
     pub fn type_info(mut self, input: crate::types::ActivityTypeInfo) -> Self {
         self.type_info = Some(input);
         self
     }
-    /// <p>General information about the activity type.</p> 
-    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p> 
-    /// <ul> 
-    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li> 
-    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li> 
+    /// <p>General information about the activity type.</p>
+    /// <p>The status of activity type (returned in the ActivityTypeInfo structure) can be one of the following.</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTERED</code> – The type is registered and available. Workers supporting this type should be running. </p> </li>
+    /// <li> <p> <code>DEPRECATED</code> – The type was deprecated using <code>DeprecateActivityType</code>, but is still in use. You should keep workers supporting this type running. You cannot create new tasks of this type. </p> </li>
     /// </ul>
-    pub fn set_type_info(mut self, input: std::option::Option<crate::types::ActivityTypeInfo>) -> Self {
-        self.type_info = input; self
+    pub fn set_type_info(
+        mut self,
+        input: std::option::Option<crate::types::ActivityTypeInfo>,
+    ) -> Self {
+        self.type_info = input;
+        self
     }
     /// <p>The configuration settings registered with the activity type.</p>
     pub fn configuration(mut self, input: crate::types::ActivityTypeConfiguration) -> Self {
@@ -78,27 +83,28 @@ impl DescribeActivityTypeOutputBuilder {
         self
     }
     /// <p>The configuration settings registered with the activity type.</p>
-    pub fn set_configuration(mut self, input: std::option::Option<crate::types::ActivityTypeConfiguration>) -> Self {
-        self.configuration = input; self
+    pub fn set_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ActivityTypeConfiguration>,
+    ) -> Self {
+        self.configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeActivityTypeOutput`](crate::operation::describe_activity_type::DescribeActivityTypeOutput).
     pub fn build(self) -> crate::operation::describe_activity_type::DescribeActivityTypeOutput {
         crate::operation::describe_activity_type::DescribeActivityTypeOutput {
-            type_info: self.type_info
-            ,
-            configuration: self.configuration
-            ,
+            type_info: self.type_info,
+            configuration: self.configuration,
             _request_id: self._request_id,
         }
     }
 }
-

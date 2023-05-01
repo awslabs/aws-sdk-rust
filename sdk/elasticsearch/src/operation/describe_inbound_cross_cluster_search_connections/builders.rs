@@ -4,83 +4,93 @@ pub use crate::operation::describe_inbound_cross_cluster_search_connections::_de
 pub use crate::operation::describe_inbound_cross_cluster_search_connections::_describe_inbound_cross_cluster_search_connections_input::DescribeInboundCrossClusterSearchConnectionsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeInboundCrossClusterSearchConnections`.
-/// 
+///
 /// <p>Lists all the inbound cross-cluster search connections for a destination domain.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInboundCrossClusterSearchConnectionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_inbound_cross_cluster_search_connections::builders::DescribeInboundCrossClusterSearchConnectionsInputBuilder,
 }
-impl DescribeInboundCrossClusterSearchConnectionsFluentBuilder  {
+impl DescribeInboundCrossClusterSearchConnectionsFluentBuilder {
     /// Creates a new `DescribeInboundCrossClusterSearchConnections`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnections, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_inbound_cross_cluster_search_connections::paginator::DescribeInboundCrossClusterSearchConnectionsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_inbound_cross_cluster_search_connections::paginator::DescribeInboundCrossClusterSearchConnectionsPaginator {
-                                crate::operation::describe_inbound_cross_cluster_search_connections::paginator::DescribeInboundCrossClusterSearchConnectionsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_inbound_cross_cluster_search_connections::paginator::DescribeInboundCrossClusterSearchConnectionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_inbound_cross_cluster_search_connections::paginator::DescribeInboundCrossClusterSearchConnectionsPaginator{
+        crate::operation::describe_inbound_cross_cluster_search_connections::paginator::DescribeInboundCrossClusterSearchConnectionsPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
-    /// <ul> 
-    /// <li>cross-cluster-search-connection-id</li> 
-    /// <li>source-domain-info.domain-name</li> 
-    /// <li>source-domain-info.owner-id</li> 
-    /// <li>source-domain-info.region</li> 
-    /// <li>destination-domain-info.domain-name</li> 
-    /// </ul> 
+    /// <ul>
+    /// <li>cross-cluster-search-connection-id</li>
+    /// <li>source-domain-info.domain-name</li>
+    /// <li>source-domain-info.owner-id</li>
+    /// <li>source-domain-info.region</li>
+    /// <li>destination-domain-info.domain-name</li>
+    /// </ul>
     /// <p></p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
     /// <p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><code>Filter</code></code> names for this operation are: </p>
-    /// <ul> 
-    /// <li>cross-cluster-search-connection-id</li> 
-    /// <li>source-domain-info.domain-name</li> 
-    /// <li>source-domain-info.owner-id</li> 
-    /// <li>source-domain-info.region</li> 
-    /// <li>destination-domain-info.domain-name</li> 
-    /// </ul> 
+    /// <ul>
+    /// <li>cross-cluster-search-connection-id</li>
+    /// <li>source-domain-info.domain-name</li>
+    /// <li>source-domain-info.owner-id</li>
+    /// <li>source-domain-info.region</li>
+    /// <li>destination-domain-info.domain-name</li>
+    /// </ul>
     /// <p></p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -105,4 +115,3 @@ impl DescribeInboundCrossClusterSearchConnectionsFluentBuilder  {
         self
     }
 }
-

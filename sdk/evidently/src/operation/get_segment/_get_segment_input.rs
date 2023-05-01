@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSegmentInput  {
+pub struct GetSegmentInput {
     /// <p>The ARN of the segment to return information for.</p>
     #[doc(hidden)]
     pub segment: std::option::Option<std::string::String>,
 }
 impl GetSegmentInput {
     /// <p>The ARN of the segment to return information for.</p>
-    pub fn segment(&self) -> std::option::Option<& str> {
+    pub fn segment(&self) -> std::option::Option<&str> {
         self.segment.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetSegmentInputBuilder {
     }
     /// <p>The ARN of the segment to return information for.</p>
     pub fn set_segment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.segment = input; self
+        self.segment = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSegmentInput`](crate::operation::get_segment::GetSegmentInput).
-    pub fn build(self) -> Result<crate::operation::get_segment::GetSegmentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_segment::GetSegmentInput {
-                segment: self.segment
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_segment::GetSegmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_segment::GetSegmentInput {
+            segment: self.segment,
+        })
     }
 }
-

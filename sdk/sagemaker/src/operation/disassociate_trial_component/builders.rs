@@ -4,58 +4,81 @@ pub use crate::operation::disassociate_trial_component::_disassociate_trial_comp
 pub use crate::operation::disassociate_trial_component::_disassociate_trial_component_input::DisassociateTrialComponentInputBuilder;
 
 /// Fluent builder constructing a request to `DisassociateTrialComponent`.
-/// 
-/// <p>Disassociates a trial component from a trial. This doesn't effect other trials the component is associated with. Before you can delete a component, you must disassociate the component from all trials it is associated with. To associate a trial component with a trial, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AssociateTrialComponent.html">AssociateTrialComponent</a> API.</p> 
+///
+/// <p>Disassociates a trial component from a trial. This doesn't effect other trials the component is associated with. Before you can delete a component, you must disassociate the component from all trials it is associated with. To associate a trial component with a trial, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AssociateTrialComponent.html">AssociateTrialComponent</a> API.</p>
 /// <p>To get a list of the trials a component is associated with, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a> API. Specify <code>ExperimentTrialComponent</code> for the <code>Resource</code> parameter. The list appears in the response under <code>Results.TrialComponent.Parents</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateTrialComponentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::disassociate_trial_component::builders::DisassociateTrialComponentInputBuilder,
 }
-impl DisassociateTrialComponentFluentBuilder  {
+impl DisassociateTrialComponentFluentBuilder {
     /// Creates a new `DisassociateTrialComponent`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::disassociate_trial_component::DisassociateTrialComponent, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::disassociate_trial_component::DisassociateTrialComponentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::disassociate_trial_component::DisassociateTrialComponentOutput, aws_smithy_http::result::SdkError<crate::operation::disassociate_trial_component::DisassociateTrialComponentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_trial_component::DisassociateTrialComponent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_trial_component::DisassociateTrialComponentError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::disassociate_trial_component::DisassociateTrialComponentOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_trial_component::DisassociateTrialComponentError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the component to disassociate from the trial.</p>
     pub fn trial_component_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.trial_component_name(input.into());
         self
     }
     /// <p>The name of the component to disassociate from the trial.</p>
-    pub fn set_trial_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_trial_component_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_trial_component_name(input);
         self
     }
@@ -70,4 +93,3 @@ impl DisassociateTrialComponentFluentBuilder  {
         self
     }
 }
-

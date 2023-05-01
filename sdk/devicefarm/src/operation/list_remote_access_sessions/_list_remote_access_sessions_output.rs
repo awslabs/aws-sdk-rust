@@ -3,10 +3,11 @@
 /// <p>Represents the response from the server after AWS Device Farm makes a request to return information about the remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRemoteAccessSessionsOutput  {
+pub struct ListRemoteAccessSessionsOutput {
     /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
     #[doc(hidden)]
-    pub remote_access_sessions: std::option::Option<std::vec::Vec<crate::types::RemoteAccessSession>>,
+    pub remote_access_sessions:
+        std::option::Option<std::vec::Vec<crate::types::RemoteAccessSession>>,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,22 +15,24 @@ pub struct ListRemoteAccessSessionsOutput  {
 }
 impl ListRemoteAccessSessionsOutput {
     /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
-    pub fn remote_access_sessions(&self) -> std::option::Option<& [crate::types::RemoteAccessSession]> {
+    pub fn remote_access_sessions(
+        &self,
+    ) -> std::option::Option<&[crate::types::RemoteAccessSession]> {
         self.remote_access_sessions.as_deref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRemoteAccessSessionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListRemoteAccessSessionsOutput {
     /// Creates a new builder-style object to manufacture [`ListRemoteAccessSessionsOutput`](crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput).
-    pub fn builder() -> crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsOutputBuilder{
         crate::operation::list_remote_access_sessions::builders::ListRemoteAccessSessionsOutputBuilder::default()
     }
 }
@@ -38,7 +41,8 @@ impl ListRemoteAccessSessionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListRemoteAccessSessionsOutputBuilder {
-    pub(crate) remote_access_sessions: std::option::Option<std::vec::Vec<crate::types::RemoteAccessSession>>,
+    pub(crate) remote_access_sessions:
+        std::option::Option<std::vec::Vec<crate::types::RemoteAccessSession>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -50,13 +54,17 @@ impl ListRemoteAccessSessionsOutputBuilder {
     /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
     pub fn remote_access_sessions(mut self, input: crate::types::RemoteAccessSession) -> Self {
         let mut v = self.remote_access_sessions.unwrap_or_default();
-                        v.push(input);
-                        self.remote_access_sessions = Some(v);
-                        self
+        v.push(input);
+        self.remote_access_sessions = Some(v);
+        self
     }
     /// <p>A container that represents the metadata from the service about each remote access session you are requesting.</p>
-    pub fn set_remote_access_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::types::RemoteAccessSession>>) -> Self {
-        self.remote_access_sessions = input; self
+    pub fn set_remote_access_sessions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RemoteAccessSession>>,
+    ) -> Self {
+        self.remote_access_sessions = input;
+        self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +73,26 @@ impl ListRemoteAccessSessionsOutputBuilder {
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListRemoteAccessSessionsOutput`](crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput).
-    pub fn build(self) -> crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput {
         crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput {
-            remote_access_sessions: self.remote_access_sessions
-            ,
-            next_token: self.next_token
-            ,
+            remote_access_sessions: self.remote_access_sessions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

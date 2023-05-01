@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetSecurityControlsInput  {
+pub struct BatchGetSecurityControlsInput {
     /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
     #[doc(hidden)]
     pub security_control_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetSecurityControlsInput {
     /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-    pub fn security_control_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_control_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_control_ids.as_deref()
     }
 }
 impl BatchGetSecurityControlsInput {
     /// Creates a new builder-style object to manufacture [`BatchGetSecurityControlsInput`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput).
-    pub fn builder() -> crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsInputBuilder
+    {
         crate::operation::batch_get_security_controls::builders::BatchGetSecurityControlsInputBuilder::default()
     }
 }
@@ -34,22 +36,29 @@ impl BatchGetSecurityControlsInputBuilder {
     /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
     pub fn security_control_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_control_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_control_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_control_ids = Some(v);
+        self
     }
     /// <p> A list of security controls (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters). The security control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-    pub fn set_security_control_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_control_ids = input; self
+    pub fn set_security_control_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_control_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetSecurityControlsInput`](crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput).
-    pub fn build(self) -> Result<crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_get_security_controls::BatchGetSecurityControlsInput {
-                security_control_ids: self.security_control_ids
-                ,
-            }
+                security_control_ids: self.security_control_ids,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Represents the input of an update repository description operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRepositoryNameInput  {
+pub struct UpdateRepositoryNameInput {
     /// <p>The current name of the repository.</p>
     #[doc(hidden)]
     pub old_name: std::option::Option<std::string::String>,
@@ -13,17 +13,18 @@ pub struct UpdateRepositoryNameInput  {
 }
 impl UpdateRepositoryNameInput {
     /// <p>The current name of the repository.</p>
-    pub fn old_name(&self) -> std::option::Option<& str> {
+    pub fn old_name(&self) -> std::option::Option<&str> {
         self.old_name.as_deref()
     }
     /// <p>The new name for the repository.</p>
-    pub fn new_name(&self) -> std::option::Option<& str> {
+    pub fn new_name(&self) -> std::option::Option<&str> {
         self.new_name.as_deref()
     }
 }
 impl UpdateRepositoryNameInput {
     /// Creates a new builder-style object to manufacture [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
-    pub fn builder() -> crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder {
         crate::operation::update_repository_name::builders::UpdateRepositoryNameInputBuilder::default()
     }
 }
@@ -43,7 +44,8 @@ impl UpdateRepositoryNameInputBuilder {
     }
     /// <p>The current name of the repository.</p>
     pub fn set_old_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.old_name = input; self
+        self.old_name = input;
+        self
     }
     /// <p>The new name for the repository.</p>
     pub fn new_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +54,21 @@ impl UpdateRepositoryNameInputBuilder {
     }
     /// <p>The new name for the repository.</p>
     pub fn set_new_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.new_name = input; self
+        self.new_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRepositoryNameInput`](crate::operation::update_repository_name::UpdateRepositoryNameInput).
-    pub fn build(self) -> Result<crate::operation::update_repository_name::UpdateRepositoryNameInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_repository_name::UpdateRepositoryNameInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_repository_name::UpdateRepositoryNameInput {
-                old_name: self.old_name
-                ,
-                new_name: self.new_name
-                ,
-            }
+                old_name: self.old_name,
+                new_name: self.new_name,
+            },
         )
     }
 }
-

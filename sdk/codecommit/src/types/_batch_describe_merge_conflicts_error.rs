@@ -3,7 +3,7 @@
 /// <p>Returns information about errors in a BatchDescribeMergeConflicts operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDescribeMergeConflictsError  {
+pub struct BatchDescribeMergeConflictsError {
     /// <p>The path to the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct BatchDescribeMergeConflictsError  {
 }
 impl BatchDescribeMergeConflictsError {
     /// <p>The path to the file.</p>
-    pub fn file_path(&self) -> std::option::Option<& str> {
+    pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
     /// <p>The name of the exception.</p>
-    pub fn exception_name(&self) -> std::option::Option<& str> {
+    pub fn exception_name(&self) -> std::option::Option<&str> {
         self.exception_name.as_deref()
     }
     /// <p>The message provided by the exception.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl BatchDescribeMergeConflictsErrorBuilder {
     }
     /// <p>The path to the file.</p>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_path = input; self
+        self.file_path = input;
+        self
     }
     /// <p>The name of the exception.</p>
     pub fn exception_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl BatchDescribeMergeConflictsErrorBuilder {
     }
     /// <p>The name of the exception.</p>
     pub fn set_exception_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.exception_name = input; self
+        self.exception_name = input;
+        self
     }
     /// <p>The message provided by the exception.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl BatchDescribeMergeConflictsErrorBuilder {
     }
     /// <p>The message provided by the exception.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDescribeMergeConflictsError`](crate::types::BatchDescribeMergeConflictsError).
     pub fn build(self) -> crate::types::BatchDescribeMergeConflictsError {
         crate::types::BatchDescribeMergeConflictsError {
-            file_path: self.file_path
-            ,
-            exception_name: self.exception_name
-            ,
-            message: self.message
-            ,
+            file_path: self.file_path,
+            exception_name: self.exception_name,
+            message: self.message,
         }
     }
 }
-

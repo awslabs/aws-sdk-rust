@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFilterInput  {
+pub struct UpdateFilterInput {
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::FilterAction>,
@@ -24,27 +24,27 @@ pub struct UpdateFilterInput  {
 }
 impl UpdateFilterInput {
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
-    pub fn action(&self) -> std::option::Option<& crate::types::FilterAction> {
+    pub fn action(&self) -> std::option::Option<&crate::types::FilterAction> {
         self.action.as_ref()
     }
     /// <p>A description of the filter.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Defines the criteria to be update in the filter.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<& crate::types::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::types::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The name of the filter.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
-    pub fn filter_arn(&self) -> std::option::Option<& str> {
+    pub fn filter_arn(&self) -> std::option::Option<&str> {
         self.filter_arn.as_deref()
     }
     /// <p>The reason the filter was updated.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -74,7 +74,8 @@ impl UpdateFilterInputBuilder {
     }
     /// <p>Specifies the action that is to be applied to the findings that match the filter.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::FilterAction>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
     /// <p>A description of the filter.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +84,8 @@ impl UpdateFilterInputBuilder {
     }
     /// <p>A description of the filter.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Defines the criteria to be update in the filter.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
@@ -91,8 +93,12 @@ impl UpdateFilterInputBuilder {
         self
     }
     /// <p>Defines the criteria to be update in the filter.</p>
-    pub fn set_filter_criteria(mut self, input: std::option::Option<crate::types::FilterCriteria>) -> Self {
-        self.filter_criteria = input; self
+    pub fn set_filter_criteria(
+        mut self,
+        input: std::option::Option<crate::types::FilterCriteria>,
+    ) -> Self {
+        self.filter_criteria = input;
+        self
     }
     /// <p>The name of the filter.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +107,8 @@ impl UpdateFilterInputBuilder {
     }
     /// <p>The name of the filter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
     pub fn filter_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +117,8 @@ impl UpdateFilterInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the filter to update.</p>
     pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_arn = input; self
+        self.filter_arn = input;
+        self
     }
     /// <p>The reason the filter was updated.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,26 +127,23 @@ impl UpdateFilterInputBuilder {
     }
     /// <p>The reason the filter was updated.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFilterInput`](crate::operation::update_filter::UpdateFilterInput).
-    pub fn build(self) -> Result<crate::operation::update_filter::UpdateFilterInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_filter::UpdateFilterInput {
-                action: self.action
-                ,
-                description: self.description
-                ,
-                filter_criteria: self.filter_criteria
-                ,
-                name: self.name
-                ,
-                filter_arn: self.filter_arn
-                ,
-                reason: self.reason
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_filter::UpdateFilterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_filter::UpdateFilterInput {
+            action: self.action,
+            description: self.description,
+            filter_criteria: self.filter_criteria,
+            name: self.name,
+            filter_arn: self.filter_arn,
+            reason: self.reason,
+        })
     }
 }
-

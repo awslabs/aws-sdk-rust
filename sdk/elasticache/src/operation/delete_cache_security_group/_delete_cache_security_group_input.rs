@@ -3,24 +3,26 @@
 /// <p>Represents the input of a <code>DeleteCacheSecurityGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCacheSecurityGroupInput  {
-    /// <p>The name of the cache security group to delete.</p> <note> 
-    /// <p>You cannot delete the default security group.</p> 
+pub struct DeleteCacheSecurityGroupInput {
+    /// <p>The name of the cache security group to delete.</p> <note>
+    /// <p>You cannot delete the default security group.</p>
     /// </note>
     #[doc(hidden)]
     pub cache_security_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteCacheSecurityGroupInput {
-    /// <p>The name of the cache security group to delete.</p> <note> 
-    /// <p>You cannot delete the default security group.</p> 
+    /// <p>The name of the cache security group to delete.</p> <note>
+    /// <p>You cannot delete the default security group.</p>
     /// </note>
-    pub fn cache_security_group_name(&self) -> std::option::Option<& str> {
+    pub fn cache_security_group_name(&self) -> std::option::Option<&str> {
         self.cache_security_group_name.as_deref()
     }
 }
 impl DeleteCacheSecurityGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteCacheSecurityGroupInput`](crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput).
-    pub fn builder() -> crate::operation::delete_cache_security_group::builders::DeleteCacheSecurityGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_cache_security_group::builders::DeleteCacheSecurityGroupInputBuilder
+    {
         crate::operation::delete_cache_security_group::builders::DeleteCacheSecurityGroupInputBuilder::default()
     }
 }
@@ -32,27 +34,34 @@ pub struct DeleteCacheSecurityGroupInputBuilder {
     pub(crate) cache_security_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteCacheSecurityGroupInputBuilder {
-    /// <p>The name of the cache security group to delete.</p> <note> 
-    /// <p>You cannot delete the default security group.</p> 
+    /// <p>The name of the cache security group to delete.</p> <note>
+    /// <p>You cannot delete the default security group.</p>
     /// </note>
     pub fn cache_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.cache_security_group_name = Some(input.into());
         self
     }
-    /// <p>The name of the cache security group to delete.</p> <note> 
-    /// <p>You cannot delete the default security group.</p> 
+    /// <p>The name of the cache security group to delete.</p> <note>
+    /// <p>You cannot delete the default security group.</p>
     /// </note>
-    pub fn set_cache_security_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_security_group_name = input; self
+    pub fn set_cache_security_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cache_security_group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteCacheSecurityGroupInput`](crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_cache_security_group::DeleteCacheSecurityGroupInput {
-                cache_security_group_name: self.cache_security_group_name
-                ,
-            }
+                cache_security_group_name: self.cache_security_group_name,
+            },
         )
     }
 }
-

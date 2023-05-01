@@ -116,4 +116,3 @@ pub use crate::types::_type_configuration_details::TypeConfigurationDetailsBuild
 pub use crate::types::_type_configuration_identifier::TypeConfigurationIdentifierBuilder;
 
 pub use crate::types::_batch_describe_type_configurations_error::BatchDescribeTypeConfigurationsErrorBuilder;
-

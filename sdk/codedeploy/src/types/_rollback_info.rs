@@ -3,7 +3,7 @@
 /// <p>Information about a deployment rollback.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RollbackInfo  {
+pub struct RollbackInfo {
     /// <p>The ID of the deployment rollback.</p>
     #[doc(hidden)]
     pub rollback_deployment_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct RollbackInfo  {
 }
 impl RollbackInfo {
     /// <p>The ID of the deployment rollback.</p>
-    pub fn rollback_deployment_id(&self) -> std::option::Option<& str> {
+    pub fn rollback_deployment_id(&self) -> std::option::Option<&str> {
         self.rollback_deployment_id.as_deref()
     }
     /// <p>The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or was stopped.</p>
-    pub fn rollback_triggering_deployment_id(&self) -> std::option::Option<& str> {
+    pub fn rollback_triggering_deployment_id(&self) -> std::option::Option<&str> {
         self.rollback_triggering_deployment_id.as_deref()
     }
     /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
-    pub fn rollback_message(&self) -> std::option::Option<& str> {
+    pub fn rollback_message(&self) -> std::option::Option<&str> {
         self.rollback_message.as_deref()
     }
 }
@@ -50,17 +50,28 @@ impl RollbackInfoBuilder {
         self
     }
     /// <p>The ID of the deployment rollback.</p>
-    pub fn set_rollback_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rollback_deployment_id = input; self
+    pub fn set_rollback_deployment_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.rollback_deployment_id = input;
+        self
     }
     /// <p>The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or was stopped.</p>
-    pub fn rollback_triggering_deployment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn rollback_triggering_deployment_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.rollback_triggering_deployment_id = Some(input.into());
         self
     }
     /// <p>The deployment ID of the deployment that was underway and triggered a rollback deployment because it failed or was stopped.</p>
-    pub fn set_rollback_triggering_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rollback_triggering_deployment_id = input; self
+    pub fn set_rollback_triggering_deployment_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.rollback_triggering_deployment_id = input;
+        self
     }
     /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
     pub fn rollback_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +80,15 @@ impl RollbackInfoBuilder {
     }
     /// <p>Information that describes the status of a deployment rollback (for example, whether the deployment can't be rolled back, is in progress, failed, or succeeded). </p>
     pub fn set_rollback_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rollback_message = input; self
+        self.rollback_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`RollbackInfo`](crate::types::RollbackInfo).
     pub fn build(self) -> crate::types::RollbackInfo {
         crate::types::RollbackInfo {
-            rollback_deployment_id: self.rollback_deployment_id
-            ,
-            rollback_triggering_deployment_id: self.rollback_triggering_deployment_id
-            ,
-            rollback_message: self.rollback_message
-            ,
+            rollback_deployment_id: self.rollback_deployment_id,
+            rollback_triggering_deployment_id: self.rollback_triggering_deployment_id,
+            rollback_message: self.rollback_message,
         }
     }
 }
-

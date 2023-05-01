@@ -3,14 +3,14 @@
 /// <p>Specifies the encryption algorithm for the VPN tunnel for phase 1 IKE negotiations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Phase1EncryptionAlgorithmsRequestListValue  {
+pub struct Phase1EncryptionAlgorithmsRequestListValue {
     /// <p>The value for the encryption algorithm.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Phase1EncryptionAlgorithmsRequestListValue {
     /// <p>The value for the encryption algorithm.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl Phase1EncryptionAlgorithmsRequestListValueBuilder {
     }
     /// <p>The value for the encryption algorithm.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`Phase1EncryptionAlgorithmsRequestListValue`](crate::types::Phase1EncryptionAlgorithmsRequestListValue).
     pub fn build(self) -> crate::types::Phase1EncryptionAlgorithmsRequestListValue {
-        crate::types::Phase1EncryptionAlgorithmsRequestListValue {
-            value: self.value
-            ,
-        }
+        crate::types::Phase1EncryptionAlgorithmsRequestListValue { value: self.value }
     }
 }
-

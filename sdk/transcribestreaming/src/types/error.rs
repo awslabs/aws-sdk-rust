@@ -10,10 +10,12 @@ pub use crate::types::error::_bad_request_exception::BadRequestException;
 pub use crate::types::error::_service_unavailable_exception::ServiceUnavailableException;
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type TranscriptResultStreamErrorKind = TranscriptResultStreamError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type TranscriptResultStreamErrorKind = TranscriptResultStreamError;
 /// Error type for the `TranscriptResultStreamError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -29,64 +31,50 @@ pub enum TranscriptResultStreamError {
     /// <p>The service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for TranscriptResultStreamError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for TranscriptResultStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::BadRequestException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::LimitExceededException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InternalFailureException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ConflictException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::InternalFailureException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TranscriptResultStreamError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BadRequestException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::LimitExceededException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InternalFailureException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ConflictException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::BadRequestException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::LimitExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InternalFailureException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ConflictException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ServiceUnavailableException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -94,10 +82,10 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TranscriptResul
     }
 }
 impl aws_http::request_id::RequestId for crate::types::error::TranscriptResultStreamError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for TranscriptResultStreamError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -108,18 +96,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for TranscriptResultStreamError {
 }
 impl TranscriptResultStreamError {
     /// Creates the `TranscriptResultStreamError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `TranscriptResultStreamError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `TranscriptResultStreamError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -155,60 +152,46 @@ impl TranscriptResultStreamError {
 impl std::error::Error for TranscriptResultStreamError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::BadRequestException(_inner) =>
-            Some(_inner)
-            ,
-            Self::LimitExceededException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InternalFailureException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ConflictException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::BadRequestException(_inner) => Some(_inner),
+            Self::LimitExceededException(_inner) => Some(_inner),
+            Self::InternalFailureException(_inner) => Some(_inner),
+            Self::ConflictException(_inner) => Some(_inner),
+            Self::ServiceUnavailableException(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type AudioStreamErrorKind = AudioStreamError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type AudioStreamErrorKind = AudioStreamError;
 /// Error type for the `AudioStreamError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum AudioStreamError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for AudioStreamError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for AudioStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
@@ -222,10 +205,10 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AudioStreamErro
     }
 }
 impl aws_http::request_id::RequestId for crate::types::error::AudioStreamError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for AudioStreamError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -236,18 +219,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for AudioStreamError {
 }
 impl AudioStreamError {
     /// Creates the `AudioStreamError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `AudioStreamError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `AudioStreamError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -258,18 +250,18 @@ impl AudioStreamError {
 impl std::error::Error for AudioStreamError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type MedicalTranscriptResultStreamErrorKind = MedicalTranscriptResultStreamError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type MedicalTranscriptResultStreamErrorKind = MedicalTranscriptResultStreamError;
 /// Error type for the `MedicalTranscriptResultStreamError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -285,64 +277,52 @@ pub enum MedicalTranscriptResultStreamError {
     /// <p>The service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for MedicalTranscriptResultStreamError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for MedicalTranscriptResultStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::BadRequestException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::LimitExceededException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InternalFailureException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ConflictException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::InternalFailureException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MedicalTranscriptResultStreamError {
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for MedicalTranscriptResultStreamError
+{
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BadRequestException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::LimitExceededException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InternalFailureException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ConflictException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::BadRequestException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::LimitExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InternalFailureException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ConflictException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ServiceUnavailableException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -350,10 +330,10 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for MedicalTranscri
     }
 }
 impl aws_http::request_id::RequestId for crate::types::error::MedicalTranscriptResultStreamError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for MedicalTranscriptResultStreamError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -364,18 +344,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for MedicalTranscriptResultStream
 }
 impl MedicalTranscriptResultStreamError {
     /// Creates the `MedicalTranscriptResultStreamError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `MedicalTranscriptResultStreamError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `MedicalTranscriptResultStreamError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -411,33 +400,23 @@ impl MedicalTranscriptResultStreamError {
 impl std::error::Error for MedicalTranscriptResultStreamError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::BadRequestException(_inner) =>
-            Some(_inner)
-            ,
-            Self::LimitExceededException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InternalFailureException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ConflictException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::BadRequestException(_inner) => Some(_inner),
+            Self::LimitExceededException(_inner) => Some(_inner),
+            Self::InternalFailureException(_inner) => Some(_inner),
+            Self::ConflictException(_inner) => Some(_inner),
+            Self::ServiceUnavailableException(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type CallAnalyticsTranscriptResultStreamErrorKind = CallAnalyticsTranscriptResultStreamError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type CallAnalyticsTranscriptResultStreamErrorKind = CallAnalyticsTranscriptResultStreamError;
 /// Error type for the `CallAnalyticsTranscriptResultStreamError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -453,75 +432,65 @@ pub enum CallAnalyticsTranscriptResultStreamError {
     /// <p>The service is currently unavailable. Try your request later.</p>
     ServiceUnavailableException(crate::types::error::ServiceUnavailableException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for CallAnalyticsTranscriptResultStreamError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for CallAnalyticsTranscriptResultStreamError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::BadRequestException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::LimitExceededException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InternalFailureException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ConflictException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::BadRequestException(_inner) => _inner.fmt(f),
+            Self::LimitExceededException(_inner) => _inner.fmt(f),
+            Self::InternalFailureException(_inner) => _inner.fmt(f),
+            Self::ConflictException(_inner) => _inner.fmt(f),
+            Self::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for CallAnalyticsTranscriptResultStreamError {
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for CallAnalyticsTranscriptResultStreamError
+{
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::BadRequestException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::LimitExceededException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InternalFailureException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ConflictException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::BadRequestException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::LimitExceededException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InternalFailureException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ConflictException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ServiceUnavailableException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId for crate::types::error::CallAnalyticsTranscriptResultStreamError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+impl aws_http::request_id::RequestId
+    for crate::types::error::CallAnalyticsTranscriptResultStreamError
+{
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for CallAnalyticsTranscriptResultStreamError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -532,18 +501,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for CallAnalyticsTranscriptResult
 }
 impl CallAnalyticsTranscriptResultStreamError {
     /// Creates the `CallAnalyticsTranscriptResultStreamError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `CallAnalyticsTranscriptResultStreamError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `CallAnalyticsTranscriptResultStreamError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -579,24 +557,12 @@ impl CallAnalyticsTranscriptResultStreamError {
 impl std::error::Error for CallAnalyticsTranscriptResultStreamError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::BadRequestException(_inner) =>
-            Some(_inner)
-            ,
-            Self::LimitExceededException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InternalFailureException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ConflictException(_inner) =>
-            Some(_inner)
-            ,
-            Self::ServiceUnavailableException(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::BadRequestException(_inner) => Some(_inner),
+            Self::LimitExceededException(_inner) => Some(_inner),
+            Self::InternalFailureException(_inner) => Some(_inner),
+            Self::ConflictException(_inner) => Some(_inner),
+            Self::ServiceUnavailableException(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -613,4 +579,3 @@ mod _service_unavailable_exception;
 
 /// Builders
 pub mod builders;
-

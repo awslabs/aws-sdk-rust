@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConnectivityInfoOutput  {
+pub struct UpdateConnectivityInfoOutput {
     /// A message about the connectivity info update request.
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct UpdateConnectivityInfoOutput  {
 }
 impl UpdateConnectivityInfoOutput {
     /// A message about the connectivity info update request.
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// The new version of the connectivity info.
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateConnectivityInfoOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateConnectivityInfoOutput {
     /// Creates a new builder-style object to manufacture [`UpdateConnectivityInfoOutput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput).
-    pub fn builder() -> crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoOutputBuilder
+    {
         crate::operation::update_connectivity_info::builders::UpdateConnectivityInfoOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl UpdateConnectivityInfoOutputBuilder {
     }
     /// A message about the connectivity info update request.
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// The new version of the connectivity info.
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +61,24 @@ impl UpdateConnectivityInfoOutputBuilder {
     }
     /// The new version of the connectivity info.
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateConnectivityInfoOutput`](crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput).
     pub fn build(self) -> crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput {
         crate::operation::update_connectivity_info::UpdateConnectivityInfoOutput {
-            message: self.message
-            ,
-            version: self.version
-            ,
+            message: self.message,
+            version: self.version,
             _request_id: self._request_id,
         }
     }
 }
-

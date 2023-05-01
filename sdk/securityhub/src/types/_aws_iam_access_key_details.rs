@@ -3,8 +3,8 @@
 /// <p>IAM access key details related to a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsIamAccessKeyDetails  {
-    /// <p>The user associated with the IAM access key related to a finding.</p> 
+pub struct AwsIamAccessKeyDetails {
+    /// <p>The user associated with the IAM access key related to a finding.</p>
     /// <p>The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code> parameter because access keys can also be assigned to principals that are not IAM users.</p>
     #[deprecated(note = "This filter is deprecated. Instead, use PrincipalName.")]
     #[doc(hidden)]
@@ -12,7 +12,7 @@ pub struct AwsIamAccessKeyDetails  {
     /// <p>The status of the IAM access key related to a finding.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AwsIamAccessKeyStatus>,
-    /// <p>Indicates when the IAM access key was created.</p> 
+    /// <p>Indicates when the IAM access key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<std::string::String>,
@@ -36,43 +36,45 @@ pub struct AwsIamAccessKeyDetails  {
     pub session_context: std::option::Option<crate::types::AwsIamAccessKeySessionContext>,
 }
 impl AwsIamAccessKeyDetails {
-    /// <p>The user associated with the IAM access key related to a finding.</p> 
+    /// <p>The user associated with the IAM access key related to a finding.</p>
     /// <p>The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code> parameter because access keys can also be assigned to principals that are not IAM users.</p>
     #[deprecated(note = "This filter is deprecated. Instead, use PrincipalName.")]
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The status of the IAM access key related to a finding.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AwsIamAccessKeyStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AwsIamAccessKeyStatus> {
         self.status.as_ref()
     }
-    /// <p>Indicates when the IAM access key was created.</p> 
+    /// <p>Indicates when the IAM access key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_at(&self) -> std::option::Option<& str> {
+    pub fn created_at(&self) -> std::option::Option<&str> {
         self.created_at.as_deref()
     }
     /// <p>The ID of the principal associated with an access key.</p>
-    pub fn principal_id(&self) -> std::option::Option<& str> {
+    pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
     /// <p>The type of principal associated with an access key.</p>
-    pub fn principal_type(&self) -> std::option::Option<& str> {
+    pub fn principal_type(&self) -> std::option::Option<&str> {
         self.principal_type.as_deref()
     }
     /// <p>The name of the principal.</p>
-    pub fn principal_name(&self) -> std::option::Option<& str> {
+    pub fn principal_name(&self) -> std::option::Option<&str> {
         self.principal_name.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the account for the key.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The identifier of the access key.</p>
-    pub fn access_key_id(&self) -> std::option::Option<& str> {
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
     /// <p>Information about the session that the key was used for.</p>
-    pub fn session_context(&self) -> std::option::Option<& crate::types::AwsIamAccessKeySessionContext> {
+    pub fn session_context(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsIamAccessKeySessionContext> {
         self.session_context.as_ref()
     }
 }
@@ -98,18 +100,19 @@ pub struct AwsIamAccessKeyDetailsBuilder {
     pub(crate) session_context: std::option::Option<crate::types::AwsIamAccessKeySessionContext>,
 }
 impl AwsIamAccessKeyDetailsBuilder {
-    /// <p>The user associated with the IAM access key related to a finding.</p> 
+    /// <p>The user associated with the IAM access key related to a finding.</p>
     /// <p>The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code> parameter because access keys can also be assigned to principals that are not IAM users.</p>
     #[deprecated(note = "This filter is deprecated. Instead, use PrincipalName.")]
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The user associated with the IAM access key related to a finding.</p> 
+    /// <p>The user associated with the IAM access key related to a finding.</p>
     /// <p>The <code>UserName</code> parameter has been replaced with the <code>PrincipalName</code> parameter because access keys can also be assigned to principals that are not IAM users.</p>
     #[deprecated(note = "This filter is deprecated. Instead, use PrincipalName.")]
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// <p>The status of the IAM access key related to a finding.</p>
     pub fn status(mut self, input: crate::types::AwsIamAccessKeyStatus) -> Self {
@@ -117,19 +120,24 @@ impl AwsIamAccessKeyDetailsBuilder {
         self
     }
     /// <p>The status of the IAM access key related to a finding.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AwsIamAccessKeyStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AwsIamAccessKeyStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
-    /// <p>Indicates when the IAM access key was created.</p> 
+    /// <p>Indicates when the IAM access key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_at(mut self, input: impl Into<std::string::String>) -> Self {
         self.created_at = Some(input.into());
         self
     }
-    /// <p>Indicates when the IAM access key was created.</p> 
+    /// <p>Indicates when the IAM access key was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_at = input; self
+        self.created_at = input;
+        self
     }
     /// <p>The ID of the principal associated with an access key.</p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,7 +146,8 @@ impl AwsIamAccessKeyDetailsBuilder {
     }
     /// <p>The ID of the principal associated with an access key.</p>
     pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_id = input; self
+        self.principal_id = input;
+        self
     }
     /// <p>The type of principal associated with an access key.</p>
     pub fn principal_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,7 +156,8 @@ impl AwsIamAccessKeyDetailsBuilder {
     }
     /// <p>The type of principal associated with an access key.</p>
     pub fn set_principal_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_type = input; self
+        self.principal_type = input;
+        self
     }
     /// <p>The name of the principal.</p>
     pub fn principal_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,7 +166,8 @@ impl AwsIamAccessKeyDetailsBuilder {
     }
     /// <p>The name of the principal.</p>
     pub fn set_principal_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_name = input; self
+        self.principal_name = input;
+        self
     }
     /// <p>The Amazon Web Services account ID of the account for the key.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,7 +176,8 @@ impl AwsIamAccessKeyDetailsBuilder {
     }
     /// <p>The Amazon Web Services account ID of the account for the key.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The identifier of the access key.</p>
     pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,7 +186,8 @@ impl AwsIamAccessKeyDetailsBuilder {
     }
     /// <p>The identifier of the access key.</p>
     pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_key_id = input; self
+        self.access_key_id = input;
+        self
     }
     /// <p>Information about the session that the key was used for.</p>
     pub fn session_context(mut self, input: crate::types::AwsIamAccessKeySessionContext) -> Self {
@@ -182,31 +195,25 @@ impl AwsIamAccessKeyDetailsBuilder {
         self
     }
     /// <p>Information about the session that the key was used for.</p>
-    pub fn set_session_context(mut self, input: std::option::Option<crate::types::AwsIamAccessKeySessionContext>) -> Self {
-        self.session_context = input; self
+    pub fn set_session_context(
+        mut self,
+        input: std::option::Option<crate::types::AwsIamAccessKeySessionContext>,
+    ) -> Self {
+        self.session_context = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsIamAccessKeyDetails`](crate::types::AwsIamAccessKeyDetails).
     pub fn build(self) -> crate::types::AwsIamAccessKeyDetails {
         crate::types::AwsIamAccessKeyDetails {
-            user_name: self.user_name
-            ,
-            status: self.status
-            ,
-            created_at: self.created_at
-            ,
-            principal_id: self.principal_id
-            ,
-            principal_type: self.principal_type
-            ,
-            principal_name: self.principal_name
-            ,
-            account_id: self.account_id
-            ,
-            access_key_id: self.access_key_id
-            ,
-            session_context: self.session_context
-            ,
+            user_name: self.user_name,
+            status: self.status,
+            created_at: self.created_at,
+            principal_id: self.principal_id,
+            principal_type: self.principal_type,
+            principal_name: self.principal_name,
+            account_id: self.account_id,
+            access_key_id: self.access_key_id,
+            session_context: self.session_context,
         }
     }
 }
-

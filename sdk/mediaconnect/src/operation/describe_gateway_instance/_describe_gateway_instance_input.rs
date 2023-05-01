@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGatewayInstanceInput  {
+pub struct DescribeGatewayInstanceInput {
     /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
     #[doc(hidden)]
     pub gateway_instance_arn: std::option::Option<std::string::String>,
 }
 impl DescribeGatewayInstanceInput {
     /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
-    pub fn gateway_instance_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_instance_arn(&self) -> std::option::Option<&str> {
         self.gateway_instance_arn.as_deref()
     }
 }
 impl DescribeGatewayInstanceInput {
     /// Creates a new builder-style object to manufacture [`DescribeGatewayInstanceInput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput).
-    pub fn builder() -> crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder
+    {
         crate::operation::describe_gateway_instance::builders::DescribeGatewayInstanceInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeGatewayInstanceInputBuilder {
         self
     }
     /// The Amazon Resource Name (ARN) of the gateway instance that you want to describe.
-    pub fn set_gateway_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_instance_arn = input; self
+    pub fn set_gateway_instance_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.gateway_instance_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeGatewayInstanceInput`](crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput).
-    pub fn build(self) -> Result<crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_gateway_instance::DescribeGatewayInstanceInput {
-                gateway_instance_arn: self.gateway_instance_arn
-                ,
-            }
+                gateway_instance_arn: self.gateway_instance_arn,
+            },
         )
     }
 }
-

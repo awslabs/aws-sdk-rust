@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTaskProtectionInput  {
+pub struct UpdateTaskProtectionInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
@@ -12,25 +12,25 @@ pub struct UpdateTaskProtectionInput  {
     /// <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
     #[doc(hidden)]
     pub protection_enabled: std::option::Option<bool>,
-    /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p> 
+    /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>
     /// <p>If you don’t specify the time, then the task is automatically protected for 120 minutes (2 hours).</p>
     #[doc(hidden)]
     pub expires_in_minutes: std::option::Option<i32>,
 }
 impl UpdateTaskProtectionInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
-    pub fn cluster(&self) -> std::option::Option<& str> {
+    pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
     /// <p>A list of up to 10 task IDs or full ARN entries.</p>
-    pub fn tasks(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tasks(&self) -> std::option::Option<&[std::string::String]> {
         self.tasks.as_deref()
     }
     /// <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
     pub fn protection_enabled(&self) -> std::option::Option<bool> {
         self.protection_enabled
     }
-    /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p> 
+    /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>
     /// <p>If you don’t specify the time, then the task is automatically protected for 120 minutes (2 hours).</p>
     pub fn expires_in_minutes(&self) -> std::option::Option<i32> {
         self.expires_in_minutes
@@ -38,7 +38,8 @@ impl UpdateTaskProtectionInput {
 }
 impl UpdateTaskProtectionInput {
     /// Creates a new builder-style object to manufacture [`UpdateTaskProtectionInput`](crate::operation::update_task_protection::UpdateTaskProtectionInput).
-    pub fn builder() -> crate::operation::update_task_protection::builders::UpdateTaskProtectionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_task_protection::builders::UpdateTaskProtectionInputBuilder {
         crate::operation::update_task_protection::builders::UpdateTaskProtectionInputBuilder::default()
     }
 }
@@ -60,7 +61,8 @@ impl UpdateTaskProtectionInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts the service that the task sets exist in.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input; self
+        self.cluster = input;
+        self
     }
     /// Appends an item to `tasks`.
     ///
@@ -69,13 +71,17 @@ impl UpdateTaskProtectionInputBuilder {
     /// <p>A list of up to 10 task IDs or full ARN entries.</p>
     pub fn tasks(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tasks.unwrap_or_default();
-                        v.push(input.into());
-                        self.tasks = Some(v);
-                        self
+        v.push(input.into());
+        self.tasks = Some(v);
+        self
     }
     /// <p>A list of up to 10 task IDs or full ARN entries.</p>
-    pub fn set_tasks(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tasks = input; self
+    pub fn set_tasks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tasks = input;
+        self
     }
     /// <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
     pub fn protection_enabled(mut self, input: bool) -> Self {
@@ -84,33 +90,35 @@ impl UpdateTaskProtectionInputBuilder {
     }
     /// <p>Specify <code>true</code> to mark a task for protection and <code>false</code> to unset protection, making it eligible for termination.</p>
     pub fn set_protection_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.protection_enabled = input; self
+        self.protection_enabled = input;
+        self
     }
-    /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p> 
+    /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>
     /// <p>If you don’t specify the time, then the task is automatically protected for 120 minutes (2 hours).</p>
     pub fn expires_in_minutes(mut self, input: i32) -> Self {
         self.expires_in_minutes = Some(input);
         self
     }
-    /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p> 
+    /// <p>If you set <code>protectionEnabled</code> to <code>true</code>, you can specify the duration for task protection in minutes. You can specify a value from 1 minute to up to 2,880 minutes (48 hours). During this time, your task will not be terminated by scale-in events from Service Auto Scaling or deployments. After this time period lapses, <code>protectionEnabled</code> will be reset to <code>false</code>.</p>
     /// <p>If you don’t specify the time, then the task is automatically protected for 120 minutes (2 hours).</p>
     pub fn set_expires_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.expires_in_minutes = input; self
+        self.expires_in_minutes = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateTaskProtectionInput`](crate::operation::update_task_protection::UpdateTaskProtectionInput).
-    pub fn build(self) -> Result<crate::operation::update_task_protection::UpdateTaskProtectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_task_protection::UpdateTaskProtectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_task_protection::UpdateTaskProtectionInput {
-                cluster: self.cluster
-                ,
-                tasks: self.tasks
-                ,
-                protection_enabled: self.protection_enabled
-                ,
-                expires_in_minutes: self.expires_in_minutes
-                ,
-            }
+                cluster: self.cluster,
+                tasks: self.tasks,
+                protection_enabled: self.protection_enabled,
+                expires_in_minutes: self.expires_in_minutes,
+            },
         )
     }
 }
-

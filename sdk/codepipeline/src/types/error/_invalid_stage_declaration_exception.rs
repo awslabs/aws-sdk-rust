@@ -3,7 +3,7 @@
 /// <p>The stage declaration was specified in an invalid format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidStageDeclarationException  {
+pub struct InvalidStageDeclarationException {
     /// <p>The message provided to the user in the event of an exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,13 +11,15 @@ pub struct InvalidStageDeclarationException  {
 }
 impl InvalidStageDeclarationException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for InvalidStageDeclarationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidStageDeclarationException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -32,7 +34,9 @@ impl aws_http::request_id::RequestId for crate::types::error::InvalidStageDeclar
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidStageDeclarationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl InvalidStageDeclarationException {
     /// Creates a new builder-style object to manufacture [`InvalidStageDeclarationException`](crate::types::error::InvalidStageDeclarationException).
@@ -56,26 +60,28 @@ impl InvalidStageDeclarationExceptionBuilder {
     }
     /// <p>The message provided to the user in the event of an exception.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`InvalidStageDeclarationException`](crate::types::error::InvalidStageDeclarationException).
     pub fn build(self) -> crate::types::error::InvalidStageDeclarationException {
         crate::types::error::InvalidStageDeclarationException {
-            message: self.message
-            ,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

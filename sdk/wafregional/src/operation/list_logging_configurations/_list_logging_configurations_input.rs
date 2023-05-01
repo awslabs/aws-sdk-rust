@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLoggingConfigurationsInput  {
+pub struct ListLoggingConfigurationsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListLoggingConfigurationsInput  {
 }
 impl ListLoggingConfigurationsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
@@ -22,7 +22,7 @@ impl ListLoggingConfigurationsInput {
 }
 impl ListLoggingConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListLoggingConfigurationsInput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsInput).
-    pub fn builder() -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder {
+    pub fn builder() -> crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder{
         crate::operation::list_logging_configurations::builders::ListLoggingConfigurationsInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl ListLoggingConfigurationsInputBuilder {
     }
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>LoggingConfigurations</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>LoggingConfigurations</code>. For the second and subsequent <code>ListLoggingConfigurations</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>ListLoggingConfigurations</code>.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     /// <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -51,19 +52,21 @@ impl ListLoggingConfigurationsInputBuilder {
     }
     /// <p>Specifies the number of <code>LoggingConfigurations</code> that you want AWS WAF to return for this request. If you have more <code>LoggingConfigurations</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>LoggingConfigurations</code>.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListLoggingConfigurationsInput`](crate::operation::list_logging_configurations::ListLoggingConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::list_logging_configurations::ListLoggingConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_logging_configurations::ListLoggingConfigurationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_logging_configurations::ListLoggingConfigurationsInput {
-                next_marker: self.next_marker
-                ,
-                limit: self.limit
-                    .unwrap_or_default()
-                ,
-            }
+                next_marker: self.next_marker,
+                limit: self.limit.unwrap_or_default(),
+            },
         )
     }
 }
-

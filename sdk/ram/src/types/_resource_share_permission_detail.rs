@@ -3,7 +3,7 @@
 /// <p>Information about a RAM managed permission.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceSharePermissionDetail  {
+pub struct ResourceSharePermissionDetail {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of this RAM managed permission.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -31,27 +31,27 @@ pub struct ResourceSharePermissionDetail  {
     /// <p>Specifies whether the version of the permission represented in this response is the default version for all resources of this resource type.</p>
     #[doc(hidden)]
     pub is_resource_type_default: std::option::Option<bool>,
-    /// <p>The type of managed permission. This can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it with your resource shares, but you can't modify it.</p> </li> 
-    /// <li> <p> <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p> </li> 
+    /// <p>The type of managed permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it with your resource shares, but you can't modify it.</p> </li>
+    /// <li> <p> <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub permission_type: std::option::Option<crate::types::PermissionType>,
-    /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li> 
-    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li> 
+    /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
+    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub feature_set: std::option::Option<crate::types::PermissionFeatureSet>,
-    /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li> 
-    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li> 
-    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li> 
-    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li> 
+    /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li>
+    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li>
+    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::PermissionStatus>,
@@ -61,11 +61,11 @@ pub struct ResourceSharePermissionDetail  {
 }
 impl ResourceSharePermissionDetail {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of this RAM managed permission.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The version of the permission described in this response.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for this permission.</p>
@@ -73,58 +73,58 @@ impl ResourceSharePermissionDetail {
         self.default_version
     }
     /// <p>The name of this permission.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The resource type to which this permission applies.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
-    pub fn permission(&self) -> std::option::Option<& str> {
+    pub fn permission(&self) -> std::option::Option<&str> {
         self.permission.as_deref()
     }
     /// <p>The date and time when the permission was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time when the permission was last updated.</p>
-    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for all resources of this resource type.</p>
     pub fn is_resource_type_default(&self) -> std::option::Option<bool> {
         self.is_resource_type_default
     }
-    /// <p>The type of managed permission. This can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it with your resource shares, but you can't modify it.</p> </li> 
-    /// <li> <p> <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p> </li> 
+    /// <p>The type of managed permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it with your resource shares, but you can't modify it.</p> </li>
+    /// <li> <p> <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p> </li>
     /// </ul>
-    pub fn permission_type(&self) -> std::option::Option<& crate::types::PermissionType> {
+    pub fn permission_type(&self) -> std::option::Option<&crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
-    /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li> 
-    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li> 
+    /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
+    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
-    pub fn feature_set(&self) -> std::option::Option<& crate::types::PermissionFeatureSet> {
+    pub fn feature_set(&self) -> std::option::Option<&crate::types::PermissionFeatureSet> {
         self.feature_set.as_ref()
     }
-    /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li> 
-    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li> 
-    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li> 
-    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li> 
+    /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li>
+    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li>
+    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::PermissionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::PermissionStatus> {
         self.status.as_ref()
     }
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -161,7 +161,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of this RAM managed permission.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The version of the permission described in this response.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,7 +171,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The version of the permission described in this response.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for this permission.</p>
     pub fn default_version(mut self, input: bool) -> Self {
@@ -179,7 +181,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for this permission.</p>
     pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_version = input; self
+        self.default_version = input;
+        self
     }
     /// <p>The name of this permission.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,7 +191,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The name of this permission.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The resource type to which this permission applies.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -197,7 +201,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The resource type to which this permission applies.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
     pub fn permission(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,7 +211,8 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>The permission's effect and actions in JSON format. The <code>effect</code> indicates whether the specified actions are allowed or denied. The <code>actions</code> list the operations to which the principal is granted or denied access.</p>
     pub fn set_permission(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.permission = input; self
+        self.permission = input;
+        self
     }
     /// <p>The date and time when the permission was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -214,8 +220,12 @@ impl ResourceSharePermissionDetailBuilder {
         self
     }
     /// <p>The date and time when the permission was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The date and time when the permission was last updated.</p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -223,8 +233,12 @@ impl ResourceSharePermissionDetailBuilder {
         self
     }
     /// <p>The date and time when the permission was last updated.</p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for all resources of this resource type.</p>
     pub fn is_resource_type_default(mut self, input: bool) -> Self {
@@ -233,64 +247,77 @@ impl ResourceSharePermissionDetailBuilder {
     }
     /// <p>Specifies whether the version of the permission represented in this response is the default version for all resources of this resource type.</p>
     pub fn set_is_resource_type_default(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_resource_type_default = input; self
+        self.is_resource_type_default = input;
+        self
     }
-    /// <p>The type of managed permission. This can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it with your resource shares, but you can't modify it.</p> </li> 
-    /// <li> <p> <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p> </li> 
+    /// <p>The type of managed permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it with your resource shares, but you can't modify it.</p> </li>
+    /// <li> <p> <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p> </li>
     /// </ul>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
         self.permission_type = Some(input);
         self
     }
-    /// <p>The type of managed permission. This can be one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it with your resource shares, but you can't modify it.</p> </li> 
-    /// <li> <p> <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p> </li> 
+    /// <p>The type of managed permission. This can be one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission. You can associate it with your resource shares, but you can't modify it.</p> </li>
+    /// <li> <p> <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created this managed permission. You can associate it with your resource shares and create new versions that have different permissions.</p> </li>
     /// </ul>
-    pub fn set_permission_type(mut self, input: std::option::Option<crate::types::PermissionType>) -> Self {
-        self.permission_type = input; self
+    pub fn set_permission_type(
+        mut self,
+        input: std::option::Option<crate::types::PermissionType>,
+    ) -> Self {
+        self.permission_type = input;
+        self
     }
-    /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li> 
-    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li> 
+    /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
+    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
     pub fn feature_set(mut self, input: crate::types::PermissionFeatureSet) -> Self {
         self.feature_set = Some(input);
         self
     }
-    /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li> 
-    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li> 
-    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li> 
+    /// <p>Indicates what features are available for this resource share. This parameter can have one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <b>STANDARD</b> – A resource share that supports all functionality. These resource shares are visible to all principals you share the resource share with. You can modify these resource shares in RAM using the console or APIs. This resource share might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then promoted.</p> </li>
+    /// <li> <p> <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching a resource-based policy. That policy did not match any existing managed permissions, so RAM created this customer managed permission automatically on the customer's behalf based on the attached policy document. This type of resource share is visible only to the Amazon Web Services account that created it. You can't modify it in RAM unless you promote it. For more information, see <code>PromoteResourceShareCreatedFromPolicy</code>.</p> </li>
+    /// <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>, but the customer ran the <code>PromoteResourceShareCreatedFromPolicy</code> and that operation is still in progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
     /// </ul>
-    pub fn set_feature_set(mut self, input: std::option::Option<crate::types::PermissionFeatureSet>) -> Self {
-        self.feature_set = input; self
+    pub fn set_feature_set(
+        mut self,
+        input: std::option::Option<crate::types::PermissionFeatureSet>,
+    ) -> Self {
+        self.feature_set = input;
+        self
     }
-    /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li> 
-    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li> 
-    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li> 
-    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li> 
+    /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li>
+    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li>
+    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::PermissionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li> 
-    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li> 
-    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li> 
-    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li> 
+    /// <p>The current status of the association between the permission and the resource share. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>ATTACHABLE</code> – This permission or version can be associated with resource shares.</p> </li>
+    /// <li> <p> <code>UNATTACHABLE</code> – This permission or version can't currently be associated with resource shares.</p> </li>
+    /// <li> <p> <code>DELETING</code> – This permission or version is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETED</code> – This permission or version is deleted.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::PermissionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::PermissionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -299,44 +326,34 @@ impl ResourceSharePermissionDetailBuilder {
     /// <p>The tag key and value pairs attached to the resource share.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tag key and value pairs attached to the resource share.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceSharePermissionDetail`](crate::types::ResourceSharePermissionDetail).
     pub fn build(self) -> crate::types::ResourceSharePermissionDetail {
         crate::types::ResourceSharePermissionDetail {
-            arn: self.arn
-            ,
-            version: self.version
-            ,
-            default_version: self.default_version
-            ,
-            name: self.name
-            ,
-            resource_type: self.resource_type
-            ,
-            permission: self.permission
-            ,
-            creation_time: self.creation_time
-            ,
-            last_updated_time: self.last_updated_time
-            ,
-            is_resource_type_default: self.is_resource_type_default
-            ,
-            permission_type: self.permission_type
-            ,
-            feature_set: self.feature_set
-            ,
-            status: self.status
-            ,
-            tags: self.tags
-            ,
+            arn: self.arn,
+            version: self.version,
+            default_version: self.default_version,
+            name: self.name,
+            resource_type: self.resource_type,
+            permission: self.permission,
+            creation_time: self.creation_time,
+            last_updated_time: self.last_updated_time,
+            is_resource_type_default: self.is_resource_type_default,
+            permission_type: self.permission_type,
+            feature_set: self.feature_set,
+            status: self.status,
+            tags: self.tags,
         }
     }
 }
-

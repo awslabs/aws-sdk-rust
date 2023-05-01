@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContactInput  {
+pub struct CreateContactInput {
     /// <p>The name of the contact list to which the contact should be added.</p>
     #[doc(hidden)]
     pub contact_list_name: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct CreateContactInput  {
 }
 impl CreateContactInput {
     /// <p>The name of the contact list to which the contact should be added.</p>
-    pub fn contact_list_name(&self) -> std::option::Option<& str> {
+    pub fn contact_list_name(&self) -> std::option::Option<&str> {
         self.contact_list_name.as_deref()
     }
     /// <p>The contact's email address.</p>
-    pub fn email_address(&self) -> std::option::Option<& str> {
+    pub fn email_address(&self) -> std::option::Option<&str> {
         self.email_address.as_deref()
     }
     /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
-    pub fn topic_preferences(&self) -> std::option::Option<& [crate::types::TopicPreference]> {
+    pub fn topic_preferences(&self) -> std::option::Option<&[crate::types::TopicPreference]> {
         self.topic_preferences.as_deref()
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
@@ -37,7 +37,7 @@ impl CreateContactInput {
         self.unsubscribe_all
     }
     /// <p>The attribute data attached to a contact.</p>
-    pub fn attributes_data(&self) -> std::option::Option<& str> {
+    pub fn attributes_data(&self) -> std::option::Option<&str> {
         self.attributes_data.as_deref()
     }
 }
@@ -65,8 +65,12 @@ impl CreateContactInputBuilder {
         self
     }
     /// <p>The name of the contact list to which the contact should be added.</p>
-    pub fn set_contact_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_list_name = input; self
+    pub fn set_contact_list_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.contact_list_name = input;
+        self
     }
     /// <p>The contact's email address.</p>
     pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +79,8 @@ impl CreateContactInputBuilder {
     }
     /// <p>The contact's email address.</p>
     pub fn set_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_address = input; self
+        self.email_address = input;
+        self
     }
     /// Appends an item to `topic_preferences`.
     ///
@@ -84,13 +89,17 @@ impl CreateContactInputBuilder {
     /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
     pub fn topic_preferences(mut self, input: crate::types::TopicPreference) -> Self {
         let mut v = self.topic_preferences.unwrap_or_default();
-                        v.push(input);
-                        self.topic_preferences = Some(v);
-                        self
+        v.push(input);
+        self.topic_preferences = Some(v);
+        self
     }
     /// <p>The contact's preferences for being opted-in to or opted-out of topics.</p>
-    pub fn set_topic_preferences(mut self, input: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>) -> Self {
-        self.topic_preferences = input; self
+    pub fn set_topic_preferences(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TopicPreference>>,
+    ) -> Self {
+        self.topic_preferences = input;
+        self
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn unsubscribe_all(mut self, input: bool) -> Self {
@@ -99,7 +108,8 @@ impl CreateContactInputBuilder {
     }
     /// <p>A boolean value status noting if the contact is unsubscribed from all contact list topics.</p>
     pub fn set_unsubscribe_all(mut self, input: std::option::Option<bool>) -> Self {
-        self.unsubscribe_all = input; self
+        self.unsubscribe_all = input;
+        self
     }
     /// <p>The attribute data attached to a contact.</p>
     pub fn attributes_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,24 +118,22 @@ impl CreateContactInputBuilder {
     }
     /// <p>The attribute data attached to a contact.</p>
     pub fn set_attributes_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attributes_data = input; self
+        self.attributes_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateContactInput`](crate::operation::create_contact::CreateContactInput).
-    pub fn build(self) -> Result<crate::operation::create_contact::CreateContactInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_contact::CreateContactInput {
-                contact_list_name: self.contact_list_name
-                ,
-                email_address: self.email_address
-                ,
-                topic_preferences: self.topic_preferences
-                ,
-                unsubscribe_all: self.unsubscribe_all
-                ,
-                attributes_data: self.attributes_data
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_contact::CreateContactInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_contact::CreateContactInput {
+            contact_list_name: self.contact_list_name,
+            email_address: self.email_address,
+            topic_preferences: self.topic_preferences,
+            unsubscribe_all: self.unsubscribe_all,
+            attributes_data: self.attributes_data,
+        })
     }
 }
-

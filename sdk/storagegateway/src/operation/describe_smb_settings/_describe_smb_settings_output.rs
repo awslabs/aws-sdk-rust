@@ -2,34 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSmbSettingsOutput  {
+pub struct DescribeSmbSettingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The name of the domain that the gateway is joined to.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li> 
-    /// <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li> 
-    /// <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li> 
-    /// <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li> 
-    /// <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li> 
-    /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li> 
-    /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li> 
+    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
+    /// <ul>
+    /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li>
+    /// <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li>
+    /// <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li>
+    /// <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li>
+    /// <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
+    /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub active_directory_status: std::option::Option<crate::types::ActiveDirectoryStatus>,
-    /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p> 
+    /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     #[doc(hidden)]
     pub smb_guest_password_set: std::option::Option<bool>,
-    /// <p>The type of security strategy that was specified for file gateway.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p> </li> 
-    /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li> 
-    /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li> 
+    /// <p>The type of security strategy that was specified for file gateway.</p>
+    /// <ul>
+    /// <li> <p> <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p> </li>
+    /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li>
+    /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub smb_security_strategy: std::option::Option<crate::types::SmbSecurityStrategy>,
@@ -43,38 +43,40 @@ pub struct DescribeSmbSettingsOutput  {
 }
 impl DescribeSmbSettingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The name of the domain that the gateway is joined to.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
-    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li> 
-    /// <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li> 
-    /// <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li> 
-    /// <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li> 
-    /// <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li> 
-    /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li> 
-    /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li> 
+    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
+    /// <ul>
+    /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li>
+    /// <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li>
+    /// <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li>
+    /// <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li>
+    /// <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
+    /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
-    pub fn active_directory_status(&self) -> std::option::Option<& crate::types::ActiveDirectoryStatus> {
+    pub fn active_directory_status(
+        &self,
+    ) -> std::option::Option<&crate::types::ActiveDirectoryStatus> {
         self.active_directory_status.as_ref()
     }
-    /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p> 
+    /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn smb_guest_password_set(&self) -> std::option::Option<bool> {
         self.smb_guest_password_set
     }
-    /// <p>The type of security strategy that was specified for file gateway.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p> </li> 
-    /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li> 
-    /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li> 
+    /// <p>The type of security strategy that was specified for file gateway.</p>
+    /// <ul>
+    /// <li> <p> <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p> </li>
+    /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li>
+    /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li>
     /// </ul>
-    pub fn smb_security_strategy(&self) -> std::option::Option<& crate::types::SmbSecurityStrategy> {
+    pub fn smb_security_strategy(&self) -> std::option::Option<&crate::types::SmbSecurityStrategy> {
         self.smb_security_strategy.as_ref()
     }
     /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
@@ -82,19 +84,21 @@ impl DescribeSmbSettingsOutput {
         self.file_shares_visible
     }
     /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
-    pub fn smb_local_groups(&self) -> std::option::Option<& crate::types::SmbLocalGroups> {
+    pub fn smb_local_groups(&self) -> std::option::Option<&crate::types::SmbLocalGroups> {
         self.smb_local_groups.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeSmbSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeSmbSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSmbSettingsOutput`](crate::operation::describe_smb_settings::DescribeSmbSettingsOutput).
-    pub fn builder() -> crate::operation::describe_smb_settings::builders::DescribeSmbSettingsOutputBuilder {
-        crate::operation::describe_smb_settings::builders::DescribeSmbSettingsOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_smb_settings::builders::DescribeSmbSettingsOutputBuilder {
+        crate::operation::describe_smb_settings::builders::DescribeSmbSettingsOutputBuilder::default(
+        )
     }
 }
 
@@ -119,7 +123,8 @@ impl DescribeSmbSettingsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// <p>The name of the domain that the gateway is joined to.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,64 +133,74 @@ impl DescribeSmbSettingsOutputBuilder {
     }
     /// <p>The name of the domain that the gateway is joined to.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
-    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li> 
-    /// <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li> 
-    /// <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li> 
-    /// <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li> 
-    /// <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li> 
-    /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li> 
-    /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li> 
+    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
+    /// <ul>
+    /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li>
+    /// <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li>
+    /// <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li>
+    /// <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li>
+    /// <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
+    /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
     pub fn active_directory_status(mut self, input: crate::types::ActiveDirectoryStatus) -> Self {
         self.active_directory_status = Some(input);
         self
     }
-    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li> 
-    /// <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li> 
-    /// <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li> 
-    /// <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li> 
-    /// <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li> 
-    /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li> 
-    /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li> 
+    /// <p>Indicates the status of a gateway that is a member of the Active Directory domain.</p>
+    /// <ul>
+    /// <li> <p> <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation failed due to an authentication error.</p> </li>
+    /// <li> <p> <code>DETACHED</code>: Indicates that gateway is not joined to a domain.</p> </li>
+    /// <li> <p> <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.</p> </li>
+    /// <li> <p> <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.</p> </li>
+    /// <li> <p> <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed due to a network or connectivity error.</p> </li>
+    /// <li> <p> <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed because the operation didn't complete within the allotted time.</p> </li>
+    /// <li> <p> <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation failed due to another type of error.</p> </li>
     /// </ul>
-    pub fn set_active_directory_status(mut self, input: std::option::Option<crate::types::ActiveDirectoryStatus>) -> Self {
-        self.active_directory_status = input; self
+    pub fn set_active_directory_status(
+        mut self,
+        input: std::option::Option<crate::types::ActiveDirectoryStatus>,
+    ) -> Self {
+        self.active_directory_status = input;
+        self
     }
-    /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p> 
+    /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn smb_guest_password_set(mut self, input: bool) -> Self {
         self.smb_guest_password_set = Some(input);
         self
     }
-    /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p> 
+    /// <p>This value is <code>true</code> if a password for the guest user <code>smbguest</code> is set, otherwise <code>false</code>. Only supported for S3 File Gateways.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code> </p>
     pub fn set_smb_guest_password_set(mut self, input: std::option::Option<bool>) -> Self {
-        self.smb_guest_password_set = input; self
+        self.smb_guest_password_set = input;
+        self
     }
-    /// <p>The type of security strategy that was specified for file gateway.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p> </li> 
-    /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li> 
-    /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li> 
+    /// <p>The type of security strategy that was specified for file gateway.</p>
+    /// <ul>
+    /// <li> <p> <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p> </li>
+    /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li>
+    /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li>
     /// </ul>
     pub fn smb_security_strategy(mut self, input: crate::types::SmbSecurityStrategy) -> Self {
         self.smb_security_strategy = Some(input);
         self
     }
-    /// <p>The type of security strategy that was specified for file gateway.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p> </li> 
-    /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li> 
-    /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li> 
+    /// <p>The type of security strategy that was specified for file gateway.</p>
+    /// <ul>
+    /// <li> <p> <code>ClientSpecified</code>: If you use this option, requests are established based on what is negotiated by the client. This option is recommended when you want to maximize compatibility across different clients in your environment. Only supported for S3 File Gateways.</p> </li>
+    /// <li> <p> <code>MandatorySigning</code>: If you use this option, file gateway only allows connections from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB clients on Microsoft Windows Vista, Windows Server 2008 or newer.</p> </li>
+    /// <li> <p> <code>MandatoryEncryption</code>: If you use this option, file gateway only allows connections from SMBv3 clients that have encryption enabled. This option is highly recommended for environments that handle sensitive data. This option works with SMB clients on Microsoft Windows 8, Windows Server 2012 or newer.</p> </li>
     /// </ul>
-    pub fn set_smb_security_strategy(mut self, input: std::option::Option<crate::types::SmbSecurityStrategy>) -> Self {
-        self.smb_security_strategy = input; self
+    pub fn set_smb_security_strategy(
+        mut self,
+        input: std::option::Option<crate::types::SmbSecurityStrategy>,
+    ) -> Self {
+        self.smb_security_strategy = input;
+        self
     }
     /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
     pub fn file_shares_visible(mut self, input: bool) -> Self {
@@ -194,7 +209,8 @@ impl DescribeSmbSettingsOutputBuilder {
     }
     /// <p>The shares on this gateway appear when listing shares. Only supported for S3 File Gateways. </p>
     pub fn set_file_shares_visible(mut self, input: std::option::Option<bool>) -> Self {
-        self.file_shares_visible = input; self
+        self.file_shares_visible = input;
+        self
     }
     /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
     pub fn smb_local_groups(mut self, input: crate::types::SmbLocalGroups) -> Self {
@@ -202,37 +218,33 @@ impl DescribeSmbSettingsOutputBuilder {
         self
     }
     /// <p>A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>
-    pub fn set_smb_local_groups(mut self, input: std::option::Option<crate::types::SmbLocalGroups>) -> Self {
-        self.smb_local_groups = input; self
+    pub fn set_smb_local_groups(
+        mut self,
+        input: std::option::Option<crate::types::SmbLocalGroups>,
+    ) -> Self {
+        self.smb_local_groups = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeSmbSettingsOutput`](crate::operation::describe_smb_settings::DescribeSmbSettingsOutput).
     pub fn build(self) -> crate::operation::describe_smb_settings::DescribeSmbSettingsOutput {
         crate::operation::describe_smb_settings::DescribeSmbSettingsOutput {
-            gateway_arn: self.gateway_arn
-            ,
-            domain_name: self.domain_name
-            ,
-            active_directory_status: self.active_directory_status
-            ,
-            smb_guest_password_set: self.smb_guest_password_set
-            ,
-            smb_security_strategy: self.smb_security_strategy
-            ,
-            file_shares_visible: self.file_shares_visible
-            ,
-            smb_local_groups: self.smb_local_groups
-            ,
+            gateway_arn: self.gateway_arn,
+            domain_name: self.domain_name,
+            active_directory_status: self.active_directory_status,
+            smb_guest_password_set: self.smb_guest_password_set,
+            smb_security_strategy: self.smb_security_strategy,
+            file_shares_visible: self.file_shares_visible,
+            smb_local_groups: self.smb_local_groups,
             _request_id: self._request_id,
         }
     }
 }
-

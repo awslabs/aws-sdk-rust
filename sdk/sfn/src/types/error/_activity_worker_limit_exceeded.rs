@@ -3,7 +3,7 @@
 /// <p>The maximum number of workers concurrently polling for activity tasks has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivityWorkerLimitExceeded  {
+pub struct ActivityWorkerLimitExceeded {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,13 +11,15 @@ pub struct ActivityWorkerLimitExceeded  {
 }
 impl ActivityWorkerLimitExceeded {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for ActivityWorkerLimitExceeded {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ActivityWorkerLimitExceeded")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -32,7 +34,9 @@ impl aws_http::request_id::RequestId for crate::types::error::ActivityWorkerLimi
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ActivityWorkerLimitExceeded {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl ActivityWorkerLimitExceeded {
     /// Creates a new builder-style object to manufacture [`ActivityWorkerLimitExceeded`](crate::types::error::ActivityWorkerLimitExceeded).
@@ -56,26 +60,28 @@ impl ActivityWorkerLimitExceededBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`ActivityWorkerLimitExceeded`](crate::types::error::ActivityWorkerLimitExceeded).
     pub fn build(self) -> crate::types::error::ActivityWorkerLimitExceeded {
         crate::types::error::ActivityWorkerLimitExceeded {
-            message: self.message
-            ,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

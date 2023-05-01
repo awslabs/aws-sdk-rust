@@ -3,7 +3,7 @@
 /// <p>A set of elements to filter the returned scheduled actions. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduledActionFilter  {
+pub struct ScheduledActionFilter {
     /// <p>The type of element to filter. </p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::ScheduledActionFilterName>,
@@ -13,11 +13,11 @@ pub struct ScheduledActionFilter  {
 }
 impl ScheduledActionFilter {
     /// <p>The type of element to filter. </p>
-    pub fn name(&self) -> std::option::Option<& crate::types::ScheduledActionFilterName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::ScheduledActionFilterName> {
         self.name.as_ref()
     }
     /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ScheduledActionFilterBuilder {
         self
     }
     /// <p>The type of element to filter. </p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::ScheduledActionFilterName>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::ScheduledActionFilterName>,
+    ) -> Self {
+        self.name = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -52,22 +56,23 @@ impl ScheduledActionFilterBuilder {
     /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>List of values. Compare if the value (of type defined by <code>Name</code>) equals an item in the list of scheduled actions. </p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`ScheduledActionFilter`](crate::types::ScheduledActionFilter).
     pub fn build(self) -> crate::types::ScheduledActionFilter {
         crate::types::ScheduledActionFilter {
-            name: self.name
-            ,
-            values: self.values
-            ,
+            name: self.name,
+            values: self.values,
         }
     }
 }
-

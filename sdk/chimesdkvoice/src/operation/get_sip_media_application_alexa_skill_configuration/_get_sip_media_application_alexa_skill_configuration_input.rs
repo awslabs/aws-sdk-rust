@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSipMediaApplicationAlexaSkillConfigurationInput  {
+pub struct GetSipMediaApplicationAlexaSkillConfigurationInput {
     /// <p>The SIP media application ID.</p>
     #[doc(hidden)]
     pub sip_media_application_id: std::option::Option<std::string::String>,
 }
 impl GetSipMediaApplicationAlexaSkillConfigurationInput {
     /// <p>The SIP media application ID.</p>
-    pub fn sip_media_application_id(&self) -> std::option::Option<& str> {
+    pub fn sip_media_application_id(&self) -> std::option::Option<&str> {
         self.sip_media_application_id.as_deref()
     }
 }
 impl GetSipMediaApplicationAlexaSkillConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetSipMediaApplicationAlexaSkillConfigurationInput`](crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationInput).
-    pub fn builder() -> crate::operation::get_sip_media_application_alexa_skill_configuration::builders::GetSipMediaApplicationAlexaSkillConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_sip_media_application_alexa_skill_configuration::builders::GetSipMediaApplicationAlexaSkillConfigurationInputBuilder{
         crate::operation::get_sip_media_application_alexa_skill_configuration::builders::GetSipMediaApplicationAlexaSkillConfigurationInputBuilder::default()
     }
 }
@@ -33,11 +33,15 @@ impl GetSipMediaApplicationAlexaSkillConfigurationInputBuilder {
         self
     }
     /// <p>The SIP media application ID.</p>
-    pub fn set_sip_media_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sip_media_application_id = input; self
+    pub fn set_sip_media_application_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sip_media_application_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSipMediaApplicationAlexaSkillConfigurationInput`](crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_sip_media_application_alexa_skill_configuration::GetSipMediaApplicationAlexaSkillConfigurationInput {
                 sip_media_application_id: self.sip_media_application_id
@@ -46,4 +50,3 @@ impl GetSipMediaApplicationAlexaSkillConfigurationInputBuilder {
         )
     }
 }
-

@@ -4,57 +4,76 @@ pub use crate::operation::update_content::_update_content_output::UpdateContentO
 pub use crate::operation::update_content::_update_content_input::UpdateContentInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateContent`.
-/// 
+///
 /// <p>Updates information about the content.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateContentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_content::builders::UpdateContentInputBuilder,
+    inner: crate::operation::update_content::builders::UpdateContentInputBuilder,
 }
-impl UpdateContentFluentBuilder  {
+impl UpdateContentFluentBuilder {
     /// Creates a new `UpdateContent`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_content::UpdateContent, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_content::UpdateContentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_content::UpdateContentOutput, aws_smithy_http::result::SdkError<crate::operation::update_content::UpdateContentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_content::UpdateContent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_content::UpdateContentError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_content::UpdateContentOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_content::UpdateContentError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
     pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.knowledge_base_id(input.into());
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
-    pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_knowledge_base_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
@@ -94,7 +113,10 @@ impl UpdateContentFluentBuilder  {
         self
     }
     /// <p>The URI for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content. To remove an existing <code>overrideLinkOurUri</code>, exclude this argument and set <code>removeOverrideLinkOutUri</code> to true.</p>
-    pub fn set_override_link_out_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_override_link_out_uri(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_override_link_out_uri(input);
         self
     }
@@ -113,12 +135,21 @@ impl UpdateContentFluentBuilder  {
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.metadata(k.into(), v.into());
         self
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_metadata(input);
         self
     }
@@ -133,4 +164,3 @@ impl UpdateContentFluentBuilder  {
         self
     }
 }
-

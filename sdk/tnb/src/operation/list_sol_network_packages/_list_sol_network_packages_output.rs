@@ -2,33 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSolNetworkPackagesOutput  {
+pub struct ListSolNetworkPackagesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
     #[doc(hidden)]
-    pub network_packages: std::option::Option<std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
+    pub network_packages:
+        std::option::Option<std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolNetworkPackagesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
-    pub fn network_packages(&self) -> std::option::Option<& [crate::types::ListSolNetworkPackageInfo]> {
+    pub fn network_packages(
+        &self,
+    ) -> std::option::Option<&[crate::types::ListSolNetworkPackageInfo]> {
         self.network_packages.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSolNetworkPackagesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListSolNetworkPackagesOutput {
     /// Creates a new builder-style object to manufacture [`ListSolNetworkPackagesOutput`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput).
-    pub fn builder() -> crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesOutputBuilder
+    {
         crate::operation::list_sol_network_packages::builders::ListSolNetworkPackagesOutputBuilder::default()
     }
 }
@@ -38,7 +43,8 @@ impl ListSolNetworkPackagesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListSolNetworkPackagesOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) network_packages: std::option::Option<std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
+    pub(crate) network_packages:
+        std::option::Option<std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
     _request_id: Option<String>,
 }
 impl ListSolNetworkPackagesOutputBuilder {
@@ -49,7 +55,8 @@ impl ListSolNetworkPackagesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `network_packages`.
     ///
@@ -58,32 +65,35 @@ impl ListSolNetworkPackagesOutputBuilder {
     /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
     pub fn network_packages(mut self, input: crate::types::ListSolNetworkPackageInfo) -> Self {
         let mut v = self.network_packages.unwrap_or_default();
-                        v.push(input);
-                        self.network_packages = Some(v);
-                        self
+        v.push(input);
+        self.network_packages = Some(v);
+        self
     }
     /// <p>Network packages. A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
-    pub fn set_network_packages(mut self, input: std::option::Option<std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>) -> Self {
-        self.network_packages = input; self
+    pub fn set_network_packages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ListSolNetworkPackageInfo>>,
+    ) -> Self {
+        self.network_packages = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListSolNetworkPackagesOutput`](crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput).
-    pub fn build(self) -> crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput {
         crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput {
-            next_token: self.next_token
-            ,
-            network_packages: self.network_packages
-            ,
+            next_token: self.next_token,
+            network_packages: self.network_packages,
             _request_id: self._request_id,
         }
     }
 }
-

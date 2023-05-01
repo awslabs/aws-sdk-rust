@@ -3,7 +3,7 @@
 /// <p>Summary information about a target group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TargetGroupSummary  {
+pub struct TargetGroupSummary {
     /// <p>The ID of the target group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -43,23 +43,23 @@ pub struct TargetGroupSummary  {
 }
 impl TargetGroupSummary {
     /// <p>The ID of the target group.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the target group.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the target group.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The target group type.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::TargetGroupType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::TargetGroupType> {
         self.r#type.as_ref()
     }
     /// <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The port of the target group.</p>
@@ -67,27 +67,27 @@ impl TargetGroupSummary {
         self.port
     }
     /// <p>The protocol of the target group.</p>
-    pub fn protocol(&self) -> std::option::Option<& crate::types::TargetGroupProtocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::TargetGroupProtocol> {
         self.protocol.as_ref()
     }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn ip_address_type(&self) -> std::option::Option<& crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
     /// <p>The ID of the VPC of the target group.</p>
-    pub fn vpc_identifier(&self) -> std::option::Option<& str> {
+    pub fn vpc_identifier(&self) -> std::option::Option<&str> {
         self.vpc_identifier.as_deref()
     }
     /// <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::TargetGroupStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::TargetGroupStatus> {
         self.status.as_ref()
     }
     /// <p>The list of Amazon Resource Names (ARNs) of the service.</p>
-    pub fn service_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn service_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.service_arns.as_deref()
     }
 }
@@ -123,7 +123,8 @@ impl TargetGroupSummaryBuilder {
     }
     /// <p>The ID of the target group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The ARN (Amazon Resource Name) of the target group.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +133,8 @@ impl TargetGroupSummaryBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the target group.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the target group.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +143,8 @@ impl TargetGroupSummaryBuilder {
     }
     /// <p>The name of the target group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The target group type.</p>
     pub fn r#type(mut self, input: crate::types::TargetGroupType) -> Self {
@@ -150,7 +153,8 @@ impl TargetGroupSummaryBuilder {
     }
     /// <p>The target group type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::TargetGroupType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -158,8 +162,12 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The date and time that the target group was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The port of the target group.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -168,7 +176,8 @@ impl TargetGroupSummaryBuilder {
     }
     /// <p>The port of the target group.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>The protocol of the target group.</p>
     pub fn protocol(mut self, input: crate::types::TargetGroupProtocol) -> Self {
@@ -176,8 +185,12 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The protocol of the target group.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::TargetGroupProtocol>) -> Self {
-        self.protocol = input; self
+    pub fn set_protocol(
+        mut self,
+        input: std::option::Option<crate::types::TargetGroupProtocol>,
+    ) -> Self {
+        self.protocol = input;
+        self
     }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
     pub fn ip_address_type(mut self, input: crate::types::IpAddressType) -> Self {
@@ -185,8 +198,12 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The type of IP address used for the target group. The possible values are <code>ipv4</code> and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address type defaults to <code>ipv4</code>.</p>
-    pub fn set_ip_address_type(mut self, input: std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input; self
+    pub fn set_ip_address_type(
+        mut self,
+        input: std::option::Option<crate::types::IpAddressType>,
+    ) -> Self {
+        self.ip_address_type = input;
+        self
     }
     /// <p>The ID of the VPC of the target group.</p>
     pub fn vpc_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,7 +212,8 @@ impl TargetGroupSummaryBuilder {
     }
     /// <p>The ID of the VPC of the target group.</p>
     pub fn set_vpc_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_identifier = input; self
+        self.vpc_identifier = input;
+        self
     }
     /// <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -203,8 +221,12 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The date and time that the target group was last updated, specified in ISO-8601 format.</p>
-    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input; self
+    pub fn set_last_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_at = input;
+        self
     }
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::TargetGroupStatus) -> Self {
@@ -212,8 +234,12 @@ impl TargetGroupSummaryBuilder {
         self
     }
     /// <p>The status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TargetGroupStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::TargetGroupStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Appends an item to `service_arns`.
     ///
@@ -222,42 +248,33 @@ impl TargetGroupSummaryBuilder {
     /// <p>The list of Amazon Resource Names (ARNs) of the service.</p>
     pub fn service_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.service_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.service_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.service_arns = Some(v);
+        self
     }
     /// <p>The list of Amazon Resource Names (ARNs) of the service.</p>
-    pub fn set_service_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.service_arns = input; self
+    pub fn set_service_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.service_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`TargetGroupSummary`](crate::types::TargetGroupSummary).
     pub fn build(self) -> crate::types::TargetGroupSummary {
         crate::types::TargetGroupSummary {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            created_at: self.created_at
-            ,
-            port: self.port
-            ,
-            protocol: self.protocol
-            ,
-            ip_address_type: self.ip_address_type
-            ,
-            vpc_identifier: self.vpc_identifier
-            ,
-            last_updated_at: self.last_updated_at
-            ,
-            status: self.status
-            ,
-            service_arns: self.service_arns
-            ,
+            id: self.id,
+            arn: self.arn,
+            name: self.name,
+            r#type: self.r#type,
+            created_at: self.created_at,
+            port: self.port,
+            protocol: self.protocol,
+            ip_address_type: self.ip_address_type,
+            vpc_identifier: self.vpc_identifier,
+            last_updated_at: self.last_updated_at,
+            status: self.status,
+            service_arns: self.service_arns,
         }
     }
 }
-

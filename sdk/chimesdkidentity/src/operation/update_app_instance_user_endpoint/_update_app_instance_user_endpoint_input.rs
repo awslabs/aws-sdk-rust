@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateAppInstanceUserEndpointInput  {
+pub struct UpdateAppInstanceUserEndpointInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -18,23 +18,23 @@ pub struct UpdateAppInstanceUserEndpointInput  {
 }
 impl UpdateAppInstanceUserEndpointInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    pub fn allow_messages(&self) -> std::option::Option<& crate::types::AllowMessages> {
+    pub fn allow_messages(&self) -> std::option::Option<&crate::types::AllowMessages> {
         self.allow_messages.as_ref()
     }
 }
-impl  std::fmt::Debug for UpdateAppInstanceUserEndpointInput  {
+impl std::fmt::Debug for UpdateAppInstanceUserEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceUserEndpointInput");
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
@@ -46,7 +46,7 @@ impl  std::fmt::Debug for UpdateAppInstanceUserEndpointInput  {
 }
 impl UpdateAppInstanceUserEndpointInput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserEndpointInput`](crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput).
-    pub fn builder() -> crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder {
+    pub fn builder() -> crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder{
         crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointInputBuilder::default()
     }
 }
@@ -67,8 +67,12 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_user_arn = input; self
+    pub fn set_app_instance_user_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_instance_user_arn = input;
+        self
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +81,8 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_id = input; self
+        self.endpoint_id = input;
+        self
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +91,8 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
     }
     /// <p>The name of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
     pub fn allow_messages(mut self, input: crate::types::AllowMessages) -> Self {
@@ -94,11 +100,20 @@ impl UpdateAppInstanceUserEndpointInputBuilder {
         self
     }
     /// <p>Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in to receive messages. <code>ALL</code> indicates the endpoint will receive all messages. <code>NONE</code> indicates the endpoint will receive no messages.</p>
-    pub fn set_allow_messages(mut self, input: std::option::Option<crate::types::AllowMessages>) -> Self {
-        self.allow_messages = input; self
+    pub fn set_allow_messages(
+        mut self,
+        input: std::option::Option<crate::types::AllowMessages>,
+    ) -> Self {
+        self.allow_messages = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAppInstanceUserEndpointInput`](crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput).
-    pub fn build(self) -> Result<crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointInput {
                 app_instance_user_arn: self.app_instance_user_arn
@@ -123,4 +138,3 @@ impl std::fmt::Debug for UpdateAppInstanceUserEndpointInputBuilder {
         formatter.finish()
     }
 }
-

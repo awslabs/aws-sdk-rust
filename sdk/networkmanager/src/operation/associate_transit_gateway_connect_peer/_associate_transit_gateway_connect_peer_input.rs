@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTransitGatewayConnectPeerInput  {
+pub struct AssociateTransitGatewayConnectPeerInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct AssociateTransitGatewayConnectPeerInput  {
 }
 impl AssociateTransitGatewayConnectPeerInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
-    pub fn transit_gateway_connect_peer_arn(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_connect_peer_arn(&self) -> std::option::Option<&str> {
         self.transit_gateway_connect_peer_arn.as_deref()
     }
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the link.</p>
-    pub fn link_id(&self) -> std::option::Option<& str> {
+    pub fn link_id(&self) -> std::option::Option<&str> {
         self.link_id.as_deref()
     }
 }
 impl AssociateTransitGatewayConnectPeerInput {
     /// Creates a new builder-style object to manufacture [`AssociateTransitGatewayConnectPeerInput`](crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput).
-    pub fn builder() -> crate::operation::associate_transit_gateway_connect_peer::builders::AssociateTransitGatewayConnectPeerInputBuilder {
+    pub fn builder() -> crate::operation::associate_transit_gateway_connect_peer::builders::AssociateTransitGatewayConnectPeerInputBuilder{
         crate::operation::associate_transit_gateway_connect_peer::builders::AssociateTransitGatewayConnectPeerInputBuilder::default()
     }
 }
@@ -57,17 +57,28 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
-    pub fn transit_gateway_connect_peer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transit_gateway_connect_peer_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.transit_gateway_connect_peer_arn = Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Connect peer.</p>
-    pub fn set_transit_gateway_connect_peer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_connect_peer_arn = input; self
+    pub fn set_transit_gateway_connect_peer_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_connect_peer_arn = input;
+        self
     }
     /// <p>The ID of the device.</p>
     pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +87,8 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
     }
     /// <p>The ID of the device.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// <p>The ID of the link.</p>
     pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,10 +97,11 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
     }
     /// <p>The ID of the link.</p>
     pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.link_id = input; self
+        self.link_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateTransitGatewayConnectPeerInput`](crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput).
-    pub fn build(self) -> Result<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerInput {
                 global_network_id: self.global_network_id
@@ -103,4 +116,3 @@ impl AssociateTransitGatewayConnectPeerInputBuilder {
         )
     }
 }
-

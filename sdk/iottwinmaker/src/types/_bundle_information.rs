@@ -3,7 +3,7 @@
 /// <p>Information about the pricing bundle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BundleInformation  {
+pub struct BundleInformation {
     /// <p>The bundle names.</p>
     #[doc(hidden)]
     pub bundle_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct BundleInformation  {
 }
 impl BundleInformation {
     /// <p>The bundle names.</p>
-    pub fn bundle_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn bundle_names(&self) -> std::option::Option<&[std::string::String]> {
         self.bundle_names.as_deref()
     }
     /// <p>The pricing tier.</p>
-    pub fn pricing_tier(&self) -> std::option::Option<& crate::types::PricingTier> {
+    pub fn pricing_tier(&self) -> std::option::Option<&crate::types::PricingTier> {
         self.pricing_tier.as_ref()
     }
 }
@@ -43,13 +43,17 @@ impl BundleInformationBuilder {
     /// <p>The bundle names.</p>
     pub fn bundle_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.bundle_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.bundle_names = Some(v);
-                        self
+        v.push(input.into());
+        self.bundle_names = Some(v);
+        self
     }
     /// <p>The bundle names.</p>
-    pub fn set_bundle_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.bundle_names = input; self
+    pub fn set_bundle_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.bundle_names = input;
+        self
     }
     /// <p>The pricing tier.</p>
     pub fn pricing_tier(mut self, input: crate::types::PricingTier) -> Self {
@@ -57,17 +61,18 @@ impl BundleInformationBuilder {
         self
     }
     /// <p>The pricing tier.</p>
-    pub fn set_pricing_tier(mut self, input: std::option::Option<crate::types::PricingTier>) -> Self {
-        self.pricing_tier = input; self
+    pub fn set_pricing_tier(
+        mut self,
+        input: std::option::Option<crate::types::PricingTier>,
+    ) -> Self {
+        self.pricing_tier = input;
+        self
     }
     /// Consumes the builder and constructs a [`BundleInformation`](crate::types::BundleInformation).
     pub fn build(self) -> crate::types::BundleInformation {
         crate::types::BundleInformation {
-            bundle_names: self.bundle_names
-            ,
-            pricing_tier: self.pricing_tier
-            ,
+            bundle_names: self.bundle_names,
+            pricing_tier: self.pricing_tier,
         }
     }
 }
-

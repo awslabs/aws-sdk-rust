@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLaunchConfigurationTemplateInput  {
+pub struct DeleteLaunchConfigurationTemplateInput {
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
     #[doc(hidden)]
     pub launch_configuration_template_id: std::option::Option<std::string::String>,
 }
 impl DeleteLaunchConfigurationTemplateInput {
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
-    pub fn launch_configuration_template_id(&self) -> std::option::Option<& str> {
+    pub fn launch_configuration_template_id(&self) -> std::option::Option<&str> {
         self.launch_configuration_template_id.as_deref()
     }
 }
 impl DeleteLaunchConfigurationTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchConfigurationTemplateInput`](crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput).
-    pub fn builder() -> crate::operation::delete_launch_configuration_template::builders::DeleteLaunchConfigurationTemplateInputBuilder {
+    pub fn builder() -> crate::operation::delete_launch_configuration_template::builders::DeleteLaunchConfigurationTemplateInputBuilder{
         crate::operation::delete_launch_configuration_template::builders::DeleteLaunchConfigurationTemplateInputBuilder::default()
     }
 }
@@ -28,16 +28,23 @@ pub struct DeleteLaunchConfigurationTemplateInputBuilder {
 }
 impl DeleteLaunchConfigurationTemplateInputBuilder {
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
-    pub fn launch_configuration_template_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn launch_configuration_template_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.launch_configuration_template_id = Some(input.into());
         self
     }
     /// <p>The ID of the Launch Configuration Template to be deleted.</p>
-    pub fn set_launch_configuration_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_configuration_template_id = input; self
+    pub fn set_launch_configuration_template_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_configuration_template_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteLaunchConfigurationTemplateInput`](crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput).
-    pub fn build(self) -> Result<crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateInput {
                 launch_configuration_template_id: self.launch_configuration_template_id
@@ -46,4 +53,3 @@ impl DeleteLaunchConfigurationTemplateInputBuilder {
         )
     }
 }
-

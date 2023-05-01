@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RevokeEndpointAccessInput  {
+pub struct RevokeEndpointAccessInput {
     /// <p>The cluster to revoke access from.</p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct RevokeEndpointAccessInput  {
 }
 impl RevokeEndpointAccessInput {
     /// <p>The cluster to revoke access from.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
-    pub fn account(&self) -> std::option::Option<& str> {
+    pub fn account(&self) -> std::option::Option<&str> {
         self.account.as_deref()
     }
     /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
-    pub fn vpc_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn vpc_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_ids.as_deref()
     }
     /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
@@ -36,7 +36,8 @@ impl RevokeEndpointAccessInput {
 }
 impl RevokeEndpointAccessInput {
     /// Creates a new builder-style object to manufacture [`RevokeEndpointAccessInput`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput).
-    pub fn builder() -> crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessInputBuilder {
         crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessInputBuilder::default()
     }
 }
@@ -57,8 +58,12 @@ impl RevokeEndpointAccessInputBuilder {
         self
     }
     /// <p>The cluster to revoke access from.</p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
     /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
     pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +72,8 @@ impl RevokeEndpointAccessInputBuilder {
     }
     /// <p>The Amazon Web Services account ID whose access is to be revoked.</p>
     pub fn set_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account = input; self
+        self.account = input;
+        self
     }
     /// Appends an item to `vpc_ids`.
     ///
@@ -76,13 +82,17 @@ impl RevokeEndpointAccessInputBuilder {
     /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
     pub fn vpc_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.vpc_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.vpc_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.vpc_ids = Some(v);
+        self
     }
     /// <p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>
-    pub fn set_vpc_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.vpc_ids = input; self
+    pub fn set_vpc_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.vpc_ids = input;
+        self
     }
     /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
     pub fn force(mut self, input: bool) -> Self {
@@ -91,23 +101,23 @@ impl RevokeEndpointAccessInputBuilder {
     }
     /// <p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input; self
+        self.force = input;
+        self
     }
     /// Consumes the builder and constructs a [`RevokeEndpointAccessInput`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput).
-    pub fn build(self) -> Result<crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::revoke_endpoint_access::RevokeEndpointAccessInput {
-                cluster_identifier: self.cluster_identifier
-                ,
-                account: self.account
-                ,
-                vpc_ids: self.vpc_ids
-                ,
-                force: self.force
-                    .unwrap_or_default()
-                ,
-            }
+                cluster_identifier: self.cluster_identifier,
+                account: self.account,
+                vpc_ids: self.vpc_ids,
+                force: self.force.unwrap_or_default(),
+            },
         )
     }
 }
-

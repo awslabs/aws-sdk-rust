@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteQualificationTypeInput  {
+pub struct DeleteQualificationTypeInput {
     /// <p>The ID of the QualificationType to dispose.</p>
     #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
 }
 impl DeleteQualificationTypeInput {
     /// <p>The ID of the QualificationType to dispose.</p>
-    pub fn qualification_type_id(&self) -> std::option::Option<& str> {
+    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
 }
 impl DeleteQualificationTypeInput {
     /// Creates a new builder-style object to manufacture [`DeleteQualificationTypeInput`](crate::operation::delete_qualification_type::DeleteQualificationTypeInput).
-    pub fn builder() -> crate::operation::delete_qualification_type::builders::DeleteQualificationTypeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_qualification_type::builders::DeleteQualificationTypeInputBuilder
+    {
         crate::operation::delete_qualification_type::builders::DeleteQualificationTypeInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteQualificationTypeInputBuilder {
         self
     }
     /// <p>The ID of the QualificationType to dispose.</p>
-    pub fn set_qualification_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.qualification_type_id = input; self
+    pub fn set_qualification_type_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.qualification_type_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteQualificationTypeInput`](crate::operation::delete_qualification_type::DeleteQualificationTypeInput).
-    pub fn build(self) -> Result<crate::operation::delete_qualification_type::DeleteQualificationTypeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_qualification_type::DeleteQualificationTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_qualification_type::DeleteQualificationTypeInput {
-                qualification_type_id: self.qualification_type_id
-                ,
-            }
+                qualification_type_id: self.qualification_type_id,
+            },
         )
     }
 }
-

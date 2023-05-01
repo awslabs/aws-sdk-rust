@@ -3,14 +3,14 @@
 /// <p>Summary information on an access control configuration that you created for your documents in an index.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessControlConfigurationSummary  {
+pub struct AccessControlConfigurationSummary {
     /// <p>The identifier of the access control configuration.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl AccessControlConfigurationSummary {
     /// <p>The identifier of the access control configuration.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl AccessControlConfigurationSummaryBuilder {
     }
     /// <p>The identifier of the access control configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccessControlConfigurationSummary`](crate::types::AccessControlConfigurationSummary).
     pub fn build(self) -> crate::types::AccessControlConfigurationSummary {
-        crate::types::AccessControlConfigurationSummary {
-            id: self.id
-            ,
-        }
+        crate::types::AccessControlConfigurationSummary { id: self.id }
     }
 }
-

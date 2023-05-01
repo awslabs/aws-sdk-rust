@@ -5,7 +5,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceIdentity  {
+pub struct InstanceIdentity {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
     #[doc(hidden)]
     pub document: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct InstanceIdentity  {
 }
 impl InstanceIdentity {
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
-    pub fn document(&self) -> std::option::Option<& str> {
+    pub fn document(&self) -> std::option::Option<&str> {
         self.document.as_deref()
     }
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
-    pub fn signature(&self) -> std::option::Option<& str> {
+    pub fn signature(&self) -> std::option::Option<&str> {
         self.signature.as_deref()
     }
 }
@@ -45,7 +45,8 @@ impl InstanceIdentityBuilder {
     }
     /// <p>A description of an EC2 instance that is generated when the instance is launched and exposed to the instance via the instance metadata service in the form of a JSON representation of an object.</p>
     pub fn set_document(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document = input; self
+        self.document = input;
+        self
     }
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
     pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -54,16 +55,14 @@ impl InstanceIdentityBuilder {
     }
     /// <p>A signature which can be used to verify the accuracy and authenticity of the information provided in the instance identity document.</p>
     pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.signature = input; self
+        self.signature = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceIdentity`](crate::types::InstanceIdentity).
     pub fn build(self) -> crate::types::InstanceIdentity {
         crate::types::InstanceIdentity {
-            document: self.document
-            ,
-            signature: self.signature
-            ,
+            document: self.document,
+            signature: self.signature,
         }
     }
 }
-

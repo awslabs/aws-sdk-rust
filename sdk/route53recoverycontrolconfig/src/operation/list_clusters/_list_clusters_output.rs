@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClustersOutput  {
+pub struct ListClustersOutput {
     /// <p>An array of the clusters in an account.</p>
     #[doc(hidden)]
     pub clusters: std::option::Option<std::vec::Vec<crate::types::Cluster>>,
@@ -13,19 +13,19 @@ pub struct ListClustersOutput  {
 }
 impl ListClustersOutput {
     /// <p>An array of the clusters in an account.</p>
-    pub fn clusters(&self) -> std::option::Option<& [crate::types::Cluster]> {
+    pub fn clusters(&self) -> std::option::Option<&[crate::types::Cluster]> {
         self.clusters.as_deref()
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListClustersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListClustersOutput {
     /// Creates a new builder-style object to manufacture [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
     pub fn builder() -> crate::operation::list_clusters::builders::ListClustersOutputBuilder {
@@ -49,13 +49,17 @@ impl ListClustersOutputBuilder {
     /// <p>An array of the clusters in an account.</p>
     pub fn clusters(mut self, input: crate::types::Cluster) -> Self {
         let mut v = self.clusters.unwrap_or_default();
-                        v.push(input);
-                        self.clusters = Some(v);
-                        self
+        v.push(input);
+        self.clusters = Some(v);
+        self
     }
     /// <p>An array of the clusters in an account.</p>
-    pub fn set_clusters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Cluster>>) -> Self {
-        self.clusters = input; self
+    pub fn set_clusters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Cluster>>,
+    ) -> Self {
+        self.clusters = input;
+        self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListClustersOutputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListClustersOutput`](crate::operation::list_clusters::ListClustersOutput).
     pub fn build(self) -> crate::operation::list_clusters::ListClustersOutput {
         crate::operation::list_clusters::ListClustersOutput {
-            clusters: self.clusters
-            ,
-            next_token: self.next_token
-            ,
+            clusters: self.clusters,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

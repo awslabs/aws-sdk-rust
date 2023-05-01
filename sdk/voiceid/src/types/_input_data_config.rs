@@ -3,14 +3,14 @@
 /// <p>The configuration containing input file information for a batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputDataConfig  {
+pub struct InputDataConfig {
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
     #[doc(hidden)]
     pub s3_uri: std::option::Option<std::string::String>,
 }
 impl InputDataConfig {
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
-    pub fn s3_uri(&self) -> std::option::Option<& str> {
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl InputDataConfigBuilder {
     }
     /// <p>The S3 location for the input manifest file that contains the list of individual enrollment or registration job requests.</p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input; self
+        self.s3_uri = input;
+        self
     }
     /// Consumes the builder and constructs a [`InputDataConfig`](crate::types::InputDataConfig).
     pub fn build(self) -> crate::types::InputDataConfig {
         crate::types::InputDataConfig {
-            s3_uri: self.s3_uri
-            ,
+            s3_uri: self.s3_uri,
         }
     }
 }
-

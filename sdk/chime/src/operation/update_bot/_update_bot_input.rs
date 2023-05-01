@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBotInput  {
+pub struct UpdateBotInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct UpdateBotInput  {
 }
 impl UpdateBotInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The bot ID.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>When true, stops the specified bot from running in your account.</p>
@@ -50,7 +50,8 @@ impl UpdateBotInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The bot ID.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl UpdateBotInputBuilder {
     }
     /// <p>The bot ID.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>When true, stops the specified bot from running in your account.</p>
     pub fn disabled(mut self, input: bool) -> Self {
@@ -68,20 +70,20 @@ impl UpdateBotInputBuilder {
     }
     /// <p>When true, stops the specified bot from running in your account.</p>
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.disabled = input; self
+        self.disabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateBotInput`](crate::operation::update_bot::UpdateBotInput).
-    pub fn build(self) -> Result<crate::operation::update_bot::UpdateBotInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_bot::UpdateBotInput {
-                account_id: self.account_id
-                ,
-                bot_id: self.bot_id
-                ,
-                disabled: self.disabled
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_bot::UpdateBotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_bot::UpdateBotInput {
+            account_id: self.account_id,
+            bot_id: self.bot_id,
+            disabled: self.disabled,
+        })
     }
 }
-

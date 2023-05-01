@@ -12,4 +12,3 @@ pub mod update_routing_control_state;
 
 /// Types for the `UpdateRoutingControlStates` operation.
 pub mod update_routing_control_states;
-

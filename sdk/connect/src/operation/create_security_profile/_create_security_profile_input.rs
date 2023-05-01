@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSecurityProfileInput  {
+pub struct CreateSecurityProfileInput {
     /// <p>The name of the security profile.</p>
     #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
@@ -17,47 +17,57 @@ pub struct CreateSecurityProfileInput  {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
     #[doc(hidden)]
-    pub allowed_access_control_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub allowed_access_control_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code> </p>
     #[doc(hidden)]
     pub tag_restricted_resources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateSecurityProfileInput {
     /// <p>The name of the security profile.</p>
-    pub fn security_profile_name(&self) -> std::option::Option<& str> {
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
     /// <p>The description of the security profile.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
-    pub fn permissions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn permissions(&self) -> std::option::Option<&[std::string::String]> {
         self.permissions.as_deref()
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn allowed_access_control_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn allowed_access_control_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.allowed_access_control_tags.as_ref()
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code> </p>
-    pub fn tag_restricted_resources(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_restricted_resources(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_restricted_resources.as_deref()
     }
 }
 impl CreateSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateSecurityProfileInput`](crate::operation::create_security_profile::CreateSecurityProfileInput).
-    pub fn builder() -> crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder
+    {
         crate::operation::create_security_profile::builders::CreateSecurityProfileInputBuilder::default()
     }
 }
@@ -70,8 +80,10 @@ pub struct CreateSecurityProfileInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) permissions: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) instance_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) allowed_access_control_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) allowed_access_control_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) tag_restricted_resources: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CreateSecurityProfileInputBuilder {
@@ -81,8 +93,12 @@ impl CreateSecurityProfileInputBuilder {
         self
     }
     /// <p>The name of the security profile.</p>
-    pub fn set_security_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_profile_name = input; self
+    pub fn set_security_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_profile_name = input;
+        self
     }
     /// <p>The description of the security profile.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +107,8 @@ impl CreateSecurityProfileInputBuilder {
     }
     /// <p>The description of the security profile.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `permissions`.
     ///
@@ -100,13 +117,17 @@ impl CreateSecurityProfileInputBuilder {
     /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
     pub fn permissions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-                        v.push(input.into());
-                        self.permissions = Some(v);
-                        self
+        v.push(input.into());
+        self.permissions = Some(v);
+        self
     }
     /// <p>Permissions assigned to the security profile. For a list of valid permissions, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-list.html">List of security profile permissions</a>. </p>
-    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.permissions = input; self
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.permissions = input;
+        self
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,37 +136,58 @@ impl CreateSecurityProfileInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags used to organize, track, or control access for this resource. For example, { "tags": {"key1":"value1", "key2":"value2"} }.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Adds a key-value pair to `allowed_access_control_tags`.
     ///
     /// To override the contents of this collection use [`set_allowed_access_control_tags`](Self::set_allowed_access_control_tags).
     ///
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn allowed_access_control_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn allowed_access_control_tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.allowed_access_control_tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.allowed_access_control_tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.allowed_access_control_tags = Some(hash_map);
+        self
     }
     /// <p>The list of tags that a security profile uses to restrict access to resources in Amazon Connect.</p>
-    pub fn set_allowed_access_control_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.allowed_access_control_tags = input; self
+    pub fn set_allowed_access_control_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.allowed_access_control_tags = input;
+        self
     }
     /// Appends an item to `tag_restricted_resources`.
     ///
@@ -154,34 +196,35 @@ impl CreateSecurityProfileInputBuilder {
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code> </p>
     pub fn tag_restricted_resources(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_restricted_resources.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_restricted_resources = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_restricted_resources = Some(v);
+        self
     }
     /// <p>The list of resources that a security profile applies tag restrictions to in Amazon Connect. Following are acceptable ResourceNames: <code>User</code> | <code>SecurityProfile</code> | <code>Queue</code> | <code>RoutingProfile</code> </p>
-    pub fn set_tag_restricted_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_restricted_resources = input; self
+    pub fn set_tag_restricted_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_restricted_resources = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSecurityProfileInput`](crate::operation::create_security_profile::CreateSecurityProfileInput).
-    pub fn build(self) -> Result<crate::operation::create_security_profile::CreateSecurityProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_security_profile::CreateSecurityProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_security_profile::CreateSecurityProfileInput {
-                security_profile_name: self.security_profile_name
-                ,
-                description: self.description
-                ,
-                permissions: self.permissions
-                ,
-                instance_id: self.instance_id
-                ,
-                tags: self.tags
-                ,
-                allowed_access_control_tags: self.allowed_access_control_tags
-                ,
-                tag_restricted_resources: self.tag_restricted_resources
-                ,
-            }
+                security_profile_name: self.security_profile_name,
+                description: self.description,
+                permissions: self.permissions,
+                instance_id: self.instance_id,
+                tags: self.tags,
+                allowed_access_control_tags: self.allowed_access_control_tags,
+                tag_restricted_resources: self.tag_restricted_resources,
+            },
         )
     }
 }
-

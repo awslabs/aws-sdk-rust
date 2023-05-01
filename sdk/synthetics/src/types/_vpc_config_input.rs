@@ -3,7 +3,7 @@
 /// <p>If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html"> Running a Canary in a VPC</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfigInput  {
+pub struct VpcConfigInput {
     /// <p>The IDs of the subnets where this canary is to run.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct VpcConfigInput  {
 }
 impl VpcConfigInput {
     /// <p>The IDs of the subnets where this canary is to run.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The IDs of the security groups for this canary.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl VpcConfigInputBuilder {
     /// <p>The IDs of the subnets where this canary is to run.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>The IDs of the subnets where this canary is to run.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -58,22 +62,23 @@ impl VpcConfigInputBuilder {
     /// <p>The IDs of the security groups for this canary.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_ids = Some(v);
+        self
     }
     /// <p>The IDs of the security groups for this canary.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_ids = input; self
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcConfigInput`](crate::types::VpcConfigInput).
     pub fn build(self) -> crate::types::VpcConfigInput {
         crate::types::VpcConfigInput {
-            subnet_ids: self.subnet_ids
-            ,
-            security_group_ids: self.security_group_ids
-            ,
+            subnet_ids: self.subnet_ids,
+            security_group_ids: self.security_group_ids,
         }
     }
 }
-

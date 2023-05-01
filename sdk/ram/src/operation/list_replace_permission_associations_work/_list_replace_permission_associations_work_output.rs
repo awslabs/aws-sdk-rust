@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReplacePermissionAssociationsWorkOutput  {
+pub struct ListReplacePermissionAssociationsWorkOutput {
     /// <p>An array of data structures that provide details of the matching work IDs.</p>
     #[doc(hidden)]
-    pub replace_permission_associations_works: std::option::Option<std::vec::Vec<crate::types::ReplacePermissionAssociationsWork>>,
+    pub replace_permission_associations_works:
+        std::option::Option<std::vec::Vec<crate::types::ReplacePermissionAssociationsWork>>,
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct ListReplacePermissionAssociationsWorkOutput  {
 }
 impl ListReplacePermissionAssociationsWorkOutput {
     /// <p>An array of data structures that provide details of the matching work IDs.</p>
-    pub fn replace_permission_associations_works(&self) -> std::option::Option<& [crate::types::ReplacePermissionAssociationsWork]> {
+    pub fn replace_permission_associations_works(
+        &self,
+    ) -> std::option::Option<&[crate::types::ReplacePermissionAssociationsWork]> {
         self.replace_permission_associations_works.as_deref()
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListReplacePermissionAssociationsWorkOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListReplacePermissionAssociationsWorkOutput {
     /// Creates a new builder-style object to manufacture [`ListReplacePermissionAssociationsWorkOutput`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput).
-    pub fn builder() -> crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkOutputBuilder {
+    pub fn builder() -> crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkOutputBuilder{
         crate::operation::list_replace_permission_associations_work::builders::ListReplacePermissionAssociationsWorkOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl ListReplacePermissionAssociationsWorkOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListReplacePermissionAssociationsWorkOutputBuilder {
-    pub(crate) replace_permission_associations_works: std::option::Option<std::vec::Vec<crate::types::ReplacePermissionAssociationsWork>>,
+    pub(crate) replace_permission_associations_works:
+        std::option::Option<std::vec::Vec<crate::types::ReplacePermissionAssociationsWork>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +51,24 @@ impl ListReplacePermissionAssociationsWorkOutputBuilder {
     /// To override the contents of this collection use [`set_replace_permission_associations_works`](Self::set_replace_permission_associations_works).
     ///
     /// <p>An array of data structures that provide details of the matching work IDs.</p>
-    pub fn replace_permission_associations_works(mut self, input: crate::types::ReplacePermissionAssociationsWork) -> Self {
-        let mut v = self.replace_permission_associations_works.unwrap_or_default();
-                        v.push(input);
-                        self.replace_permission_associations_works = Some(v);
-                        self
+    pub fn replace_permission_associations_works(
+        mut self,
+        input: crate::types::ReplacePermissionAssociationsWork,
+    ) -> Self {
+        let mut v = self
+            .replace_permission_associations_works
+            .unwrap_or_default();
+        v.push(input);
+        self.replace_permission_associations_works = Some(v);
+        self
     }
     /// <p>An array of data structures that provide details of the matching work IDs.</p>
-    pub fn set_replace_permission_associations_works(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReplacePermissionAssociationsWork>>) -> Self {
-        self.replace_permission_associations_works = input; self
+    pub fn set_replace_permission_associations_works(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReplacePermissionAssociationsWork>>,
+    ) -> Self {
+        self.replace_permission_associations_works = input;
+        self
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +77,20 @@ impl ListReplacePermissionAssociationsWorkOutputBuilder {
     }
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListReplacePermissionAssociationsWorkOutput`](crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput).
-    pub fn build(self) -> crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput {
+    pub fn build(self) -> crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput{
         crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput {
             replace_permission_associations_works: self.replace_permission_associations_works
             ,
@@ -86,4 +100,3 @@ impl ListReplacePermissionAssociationsWorkOutputBuilder {
         }
     }
 }
-

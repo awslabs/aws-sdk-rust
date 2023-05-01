@@ -3,7 +3,7 @@
 /// <p>Provides a summary of the properties of a dataset schema. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSchema.html">DescribeSchema</a> API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetSchemaSummary  {
+pub struct DatasetSchemaSummary {
     /// <p>The name of the schema.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct DatasetSchemaSummary  {
 }
 impl DatasetSchemaSummary {
     /// <p>The name of the schema.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The date and time (in Unix time) that the schema was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
-    pub fn domain(&self) -> std::option::Option<& crate::types::Domain> {
+    pub fn domain(&self) -> std::option::Option<&crate::types::Domain> {
         self.domain.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl DatasetSchemaSummaryBuilder {
     }
     /// <p>The name of the schema.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl DatasetSchemaSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     /// <p>The date and time (in Unix time) that the schema was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,8 +86,12 @@ impl DatasetSchemaSummaryBuilder {
         self
     }
     /// <p>The date and time (in Unix time) that the schema was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +99,12 @@ impl DatasetSchemaSummaryBuilder {
         self
     }
     /// <p>The date and time (in Unix time) that the schema was last updated.</p>
-    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input; self
+    pub fn set_last_updated_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_date_time = input;
+        self
     }
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
     pub fn domain(mut self, input: crate::types::Domain) -> Self {
@@ -103,22 +113,17 @@ impl DatasetSchemaSummaryBuilder {
     }
     /// <p>The domain of a schema that you created for a dataset in a Domain dataset group.</p>
     pub fn set_domain(mut self, input: std::option::Option<crate::types::Domain>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// Consumes the builder and constructs a [`DatasetSchemaSummary`](crate::types::DatasetSchemaSummary).
     pub fn build(self) -> crate::types::DatasetSchemaSummary {
         crate::types::DatasetSchemaSummary {
-            name: self.name
-            ,
-            schema_arn: self.schema_arn
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            last_updated_date_time: self.last_updated_date_time
-            ,
-            domain: self.domain
-            ,
+            name: self.name,
+            schema_arn: self.schema_arn,
+            creation_date_time: self.creation_date_time,
+            last_updated_date_time: self.last_updated_date_time,
+            domain: self.domain,
         }
     }
 }
-

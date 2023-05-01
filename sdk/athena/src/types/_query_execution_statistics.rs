@@ -3,7 +3,7 @@
 /// <p>The amount of data scanned during the query execution and the amount of time that it took to execute, and the type of statement that was run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryExecutionStatistics  {
+pub struct QueryExecutionStatistics {
     /// <p>The number of milliseconds that the query took to execute.</p>
     #[doc(hidden)]
     pub engine_execution_time_in_millis: std::option::Option<i64>,
@@ -39,7 +39,7 @@ impl QueryExecutionStatistics {
         self.data_scanned_in_bytes
     }
     /// <p>The location and file name of a data manifest file. The manifest file is saved to the Athena query results location in Amazon S3. The manifest file tracks files that the query wrote to Amazon S3. If the query fails, the manifest file also tracks files that the query intended to write. The manifest is useful for identifying orphaned files resulting from a failed query. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with Query Results, Output Files, and Query History</a> in the <i>Amazon Athena User Guide</i>.</p>
-    pub fn data_manifest_location(&self) -> std::option::Option<& str> {
+    pub fn data_manifest_location(&self) -> std::option::Option<&str> {
         self.data_manifest_location.as_deref()
     }
     /// <p>The number of milliseconds that Athena took to run the query.</p>
@@ -59,7 +59,9 @@ impl QueryExecutionStatistics {
         self.service_processing_time_in_millis
     }
     /// <p>Contains information about whether previous query results were reused for the query.</p>
-    pub fn result_reuse_information(&self) -> std::option::Option<& crate::types::ResultReuseInformation> {
+    pub fn result_reuse_information(
+        &self,
+    ) -> std::option::Option<&crate::types::ResultReuseInformation> {
         self.result_reuse_information.as_ref()
     }
 }
@@ -91,7 +93,8 @@ impl QueryExecutionStatisticsBuilder {
     }
     /// <p>The number of milliseconds that the query took to execute.</p>
     pub fn set_engine_execution_time_in_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.engine_execution_time_in_millis = input; self
+        self.engine_execution_time_in_millis = input;
+        self
     }
     /// <p>The number of bytes in the data that was queried.</p>
     pub fn data_scanned_in_bytes(mut self, input: i64) -> Self {
@@ -100,7 +103,8 @@ impl QueryExecutionStatisticsBuilder {
     }
     /// <p>The number of bytes in the data that was queried.</p>
     pub fn set_data_scanned_in_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.data_scanned_in_bytes = input; self
+        self.data_scanned_in_bytes = input;
+        self
     }
     /// <p>The location and file name of a data manifest file. The manifest file is saved to the Athena query results location in Amazon S3. The manifest file tracks files that the query wrote to Amazon S3. If the query fails, the manifest file also tracks files that the query intended to write. The manifest is useful for identifying orphaned files resulting from a failed query. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with Query Results, Output Files, and Query History</a> in the <i>Amazon Athena User Guide</i>.</p>
     pub fn data_manifest_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +112,12 @@ impl QueryExecutionStatisticsBuilder {
         self
     }
     /// <p>The location and file name of a data manifest file. The manifest file is saved to the Athena query results location in Amazon S3. The manifest file tracks files that the query wrote to Amazon S3. If the query fails, the manifest file also tracks files that the query intended to write. The manifest is useful for identifying orphaned files resulting from a failed query. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with Query Results, Output Files, and Query History</a> in the <i>Amazon Athena User Guide</i>.</p>
-    pub fn set_data_manifest_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_manifest_location = input; self
+    pub fn set_data_manifest_location(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_manifest_location = input;
+        self
     }
     /// <p>The number of milliseconds that Athena took to run the query.</p>
     pub fn total_execution_time_in_millis(mut self, input: i64) -> Self {
@@ -118,7 +126,8 @@ impl QueryExecutionStatisticsBuilder {
     }
     /// <p>The number of milliseconds that Athena took to run the query.</p>
     pub fn set_total_execution_time_in_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.total_execution_time_in_millis = input; self
+        self.total_execution_time_in_millis = input;
+        self
     }
     /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
     pub fn query_queue_time_in_millis(mut self, input: i64) -> Self {
@@ -127,7 +136,8 @@ impl QueryExecutionStatisticsBuilder {
     }
     /// <p>The number of milliseconds that the query was in your query queue waiting for resources. Note that if transient errors occur, Athena might automatically add the query back to the queue.</p>
     pub fn set_query_queue_time_in_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.query_queue_time_in_millis = input; self
+        self.query_queue_time_in_millis = input;
+        self
     }
     /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
     pub fn query_planning_time_in_millis(mut self, input: i64) -> Self {
@@ -136,7 +146,8 @@ impl QueryExecutionStatisticsBuilder {
     }
     /// <p>The number of milliseconds that Athena took to plan the query processing flow. This includes the time spent retrieving table partitions from the data source. Note that because the query engine performs the query planning, query planning time is a subset of engine processing time.</p>
     pub fn set_query_planning_time_in_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.query_planning_time_in_millis = input; self
+        self.query_planning_time_in_millis = input;
+        self
     }
     /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
     pub fn service_processing_time_in_millis(mut self, input: i64) -> Self {
@@ -144,8 +155,12 @@ impl QueryExecutionStatisticsBuilder {
         self
     }
     /// <p>The number of milliseconds that Athena took to finalize and publish the query results after the query engine finished running the query.</p>
-    pub fn set_service_processing_time_in_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.service_processing_time_in_millis = input; self
+    pub fn set_service_processing_time_in_millis(
+        mut self,
+        input: std::option::Option<i64>,
+    ) -> Self {
+        self.service_processing_time_in_millis = input;
+        self
     }
     /// <p>Contains information about whether previous query results were reused for the query.</p>
     pub fn result_reuse_information(mut self, input: crate::types::ResultReuseInformation) -> Self {
@@ -153,29 +168,24 @@ impl QueryExecutionStatisticsBuilder {
         self
     }
     /// <p>Contains information about whether previous query results were reused for the query.</p>
-    pub fn set_result_reuse_information(mut self, input: std::option::Option<crate::types::ResultReuseInformation>) -> Self {
-        self.result_reuse_information = input; self
+    pub fn set_result_reuse_information(
+        mut self,
+        input: std::option::Option<crate::types::ResultReuseInformation>,
+    ) -> Self {
+        self.result_reuse_information = input;
+        self
     }
     /// Consumes the builder and constructs a [`QueryExecutionStatistics`](crate::types::QueryExecutionStatistics).
     pub fn build(self) -> crate::types::QueryExecutionStatistics {
         crate::types::QueryExecutionStatistics {
-            engine_execution_time_in_millis: self.engine_execution_time_in_millis
-            ,
-            data_scanned_in_bytes: self.data_scanned_in_bytes
-            ,
-            data_manifest_location: self.data_manifest_location
-            ,
-            total_execution_time_in_millis: self.total_execution_time_in_millis
-            ,
-            query_queue_time_in_millis: self.query_queue_time_in_millis
-            ,
-            query_planning_time_in_millis: self.query_planning_time_in_millis
-            ,
-            service_processing_time_in_millis: self.service_processing_time_in_millis
-            ,
-            result_reuse_information: self.result_reuse_information
-            ,
+            engine_execution_time_in_millis: self.engine_execution_time_in_millis,
+            data_scanned_in_bytes: self.data_scanned_in_bytes,
+            data_manifest_location: self.data_manifest_location,
+            total_execution_time_in_millis: self.total_execution_time_in_millis,
+            query_queue_time_in_millis: self.query_queue_time_in_millis,
+            query_planning_time_in_millis: self.query_planning_time_in_millis,
+            service_processing_time_in_millis: self.service_processing_time_in_millis,
+            result_reuse_information: self.result_reuse_information,
         }
     }
 }
-

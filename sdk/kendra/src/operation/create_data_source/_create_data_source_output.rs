@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataSourceOutput  {
+pub struct CreateDataSourceOutput {
     /// <p>The identifier of the data source connector.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct CreateDataSourceOutput  {
 }
 impl CreateDataSourceOutput {
     /// <p>The identifier of the data source connector.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDataSourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateDataSourceOutput {
     /// Creates a new builder-style object to manufacture [`CreateDataSourceOutput`](crate::operation::create_data_source::CreateDataSourceOutput).
-    pub fn builder() -> crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder {
+    pub fn builder() -> crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder
+    {
         crate::operation::create_data_source::builders::CreateDataSourceOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl CreateDataSourceOutputBuilder {
     }
     /// <p>The identifier of the data source connector.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDataSourceOutput`](crate::operation::create_data_source::CreateDataSourceOutput).
     pub fn build(self) -> crate::operation::create_data_source::CreateDataSourceOutput {
         crate::operation::create_data_source::CreateDataSourceOutput {
-            id: self.id
-            ,
+            id: self.id,
             _request_id: self._request_id,
         }
     }
 }
-

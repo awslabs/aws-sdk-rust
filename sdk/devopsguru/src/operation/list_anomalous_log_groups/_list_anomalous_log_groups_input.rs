@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnomalousLogGroupsInput  {
+pub struct ListAnomalousLogGroupsInput {
     /// <p> The ID of the insight containing the log groups. </p>
     #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListAnomalousLogGroupsInput  {
 }
 impl ListAnomalousLogGroupsInput {
     /// <p> The ID of the insight containing the log groups. </p>
-    pub fn insight_id(&self) -> std::option::Option<& str> {
+    pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -23,13 +23,15 @@ impl ListAnomalousLogGroupsInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListAnomalousLogGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListAnomalousLogGroupsInput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput).
-    pub fn builder() -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsInputBuilder
+    {
         crate::operation::list_anomalous_log_groups::builders::ListAnomalousLogGroupsInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ListAnomalousLogGroupsInputBuilder {
     }
     /// <p> The ID of the insight containing the log groups. </p>
     pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insight_id = input; self
+        self.insight_id = input;
+        self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +62,8 @@ impl ListAnomalousLogGroupsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl ListAnomalousLogGroupsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAnomalousLogGroupsInput`](crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput).
-    pub fn build(self) -> Result<crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_anomalous_log_groups::ListAnomalousLogGroupsInput {
-                insight_id: self.insight_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                insight_id: self.insight_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

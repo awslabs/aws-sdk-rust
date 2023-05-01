@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let hitreviewstatus = unimplemented!();
 /// match hitreviewstatus {
@@ -32,14 +32,22 @@
 /// Specifically, when `hitreviewstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HitReviewStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum HitReviewStatus {
     #[allow(missing_docs)] // documentation missing in model
     MarkedForReview,
@@ -50,45 +58,51 @@ pub enum HitReviewStatus {
     #[allow(missing_docs)] // documentation missing in model
     ReviewedInappropriate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HitReviewStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "MarkedForReview" => HitReviewStatus::MarkedForReview,
-"NotReviewed" => HitReviewStatus::NotReviewed,
-"ReviewedAppropriate" => HitReviewStatus::ReviewedAppropriate,
-"ReviewedInappropriate" => HitReviewStatus::ReviewedInappropriate,
-other => HitReviewStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "MarkedForReview" => HitReviewStatus::MarkedForReview,
+            "NotReviewed" => HitReviewStatus::NotReviewed,
+            "ReviewedAppropriate" => HitReviewStatus::ReviewedAppropriate,
+            "ReviewedInappropriate" => HitReviewStatus::ReviewedInappropriate,
+            other => {
+                HitReviewStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for HitReviewStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(HitReviewStatus::from(s))
-                }
-            }
-impl HitReviewStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    HitReviewStatus::MarkedForReview => "MarkedForReview",
-    HitReviewStatus::NotReviewed => "NotReviewed",
-    HitReviewStatus::ReviewedAppropriate => "ReviewedAppropriate",
-    HitReviewStatus::ReviewedInappropriate => "ReviewedInappropriate",
-    HitReviewStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["MarkedForReview", "NotReviewed", "ReviewedAppropriate", "ReviewedInappropriate"]
-                }
-            }
-impl AsRef<str> for HitReviewStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for HitReviewStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HitReviewStatus::from(s))
+    }
+}
+impl HitReviewStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HitReviewStatus::MarkedForReview => "MarkedForReview",
+            HitReviewStatus::NotReviewed => "NotReviewed",
+            HitReviewStatus::ReviewedAppropriate => "ReviewedAppropriate",
+            HitReviewStatus::ReviewedInappropriate => "ReviewedInappropriate",
+            HitReviewStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "MarkedForReview",
+            "NotReviewed",
+            "ReviewedAppropriate",
+            "ReviewedInappropriate",
+        ]
+    }
+}
+impl AsRef<str> for HitReviewStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

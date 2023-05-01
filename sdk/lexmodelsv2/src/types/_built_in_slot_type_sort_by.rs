@@ -3,7 +3,7 @@
 /// <p>Specifies attributes for sorting a list of built-in slot types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BuiltInSlotTypeSortBy  {
+pub struct BuiltInSlotTypeSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::BuiltInSlotTypeSortAttribute>,
@@ -13,11 +13,11 @@ pub struct BuiltInSlotTypeSortBy  {
 }
 impl BuiltInSlotTypeSortBy {
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    pub fn attribute(&self) -> std::option::Option<& crate::types::BuiltInSlotTypeSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<&crate::types::BuiltInSlotTypeSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
-    pub fn order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl BuiltInSlotTypeSortByBuilder {
         self
     }
     /// <p>The attribute to use to sort the list of built-in intents.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<crate::types::BuiltInSlotTypeSortAttribute>) -> Self {
-        self.attribute = input; self
+    pub fn set_attribute(
+        mut self,
+        input: std::option::Option<crate::types::BuiltInSlotTypeSortAttribute>,
+    ) -> Self {
+        self.attribute = input;
+        self
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
@@ -52,16 +56,14 @@ impl BuiltInSlotTypeSortByBuilder {
     }
     /// <p>The order to sort the list. You can choose ascending or descending.</p>
     pub fn set_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input; self
+        self.order = input;
+        self
     }
     /// Consumes the builder and constructs a [`BuiltInSlotTypeSortBy`](crate::types::BuiltInSlotTypeSortBy).
     pub fn build(self) -> crate::types::BuiltInSlotTypeSortBy {
         crate::types::BuiltInSlotTypeSortBy {
-            attribute: self.attribute
-            ,
-            order: self.order
-            ,
+            attribute: self.attribute,
+            order: self.order,
         }
     }
 }
-

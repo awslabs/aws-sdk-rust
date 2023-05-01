@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSuiteRunReportInput  {
+pub struct GetSuiteRunReportInput {
     /// <p>Suite definition ID of the test suite.</p>
     #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct GetSuiteRunReportInput  {
 }
 impl GetSuiteRunReportInput {
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn suite_definition_id(&self) -> std::option::Option<& str> {
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Suite run ID of the test suite run.</p>
-    pub fn suite_run_id(&self) -> std::option::Option<& str> {
+    pub fn suite_run_id(&self) -> std::option::Option<&str> {
         self.suite_run_id.as_deref()
     }
 }
 impl GetSuiteRunReportInput {
     /// Creates a new builder-style object to manufacture [`GetSuiteRunReportInput`](crate::operation::get_suite_run_report::GetSuiteRunReportInput).
-    pub fn builder() -> crate::operation::get_suite_run_report::builders::GetSuiteRunReportInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_suite_run_report::builders::GetSuiteRunReportInputBuilder {
         crate::operation::get_suite_run_report::builders::GetSuiteRunReportInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl GetSuiteRunReportInputBuilder {
         self
     }
     /// <p>Suite definition ID of the test suite.</p>
-    pub fn set_suite_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suite_definition_id = input; self
+    pub fn set_suite_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.suite_definition_id = input;
+        self
     }
     /// <p>Suite run ID of the test suite run.</p>
     pub fn suite_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +56,21 @@ impl GetSuiteRunReportInputBuilder {
     }
     /// <p>Suite run ID of the test suite run.</p>
     pub fn set_suite_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suite_run_id = input; self
+        self.suite_run_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSuiteRunReportInput`](crate::operation::get_suite_run_report::GetSuiteRunReportInput).
-    pub fn build(self) -> Result<crate::operation::get_suite_run_report::GetSuiteRunReportInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_suite_run_report::GetSuiteRunReportInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_suite_run_report::GetSuiteRunReportInput {
-                suite_definition_id: self.suite_definition_id
-                ,
-                suite_run_id: self.suite_run_id
-                ,
-            }
+                suite_definition_id: self.suite_definition_id,
+                suite_run_id: self.suite_run_id,
+            },
         )
     }
 }
-

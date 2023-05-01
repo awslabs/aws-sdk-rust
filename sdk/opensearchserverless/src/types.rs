@@ -136,4 +136,3 @@ pub mod builders;
 
 /// Error types that OpenSearch Service Serverless can respond with.
 pub mod error;
-

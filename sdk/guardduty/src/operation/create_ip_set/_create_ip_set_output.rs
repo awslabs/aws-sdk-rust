@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIpSetOutput  {
+pub struct CreateIpSetOutput {
     /// <p>The ID of the IPSet resource.</p>
     #[doc(hidden)]
     pub ip_set_id: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CreateIpSetOutput  {
 }
 impl CreateIpSetOutput {
     /// <p>The ID of the IPSet resource.</p>
-    pub fn ip_set_id(&self) -> std::option::Option<& str> {
+    pub fn ip_set_id(&self) -> std::option::Option<&str> {
         self.ip_set_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateIpSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateIpSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateIpSetOutput`](crate::operation::create_ip_set::CreateIpSetOutput).
     pub fn builder() -> crate::operation::create_ip_set::builders::CreateIpSetOutputBuilder {
@@ -41,24 +41,23 @@ impl CreateIpSetOutputBuilder {
     }
     /// <p>The ID of the IPSet resource.</p>
     pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_set_id = input; self
+        self.ip_set_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateIpSetOutput`](crate::operation::create_ip_set::CreateIpSetOutput).
     pub fn build(self) -> crate::operation::create_ip_set::CreateIpSetOutput {
         crate::operation::create_ip_set::CreateIpSetOutput {
-            ip_set_id: self.ip_set_id
-            ,
+            ip_set_id: self.ip_set_id,
             _request_id: self._request_id,
         }
     }
 }
-

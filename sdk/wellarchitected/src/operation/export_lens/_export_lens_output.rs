@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportLensOutput  {
+pub struct ExportLensOutput {
     /// <p>The JSON representation of a lens.</p>
     #[doc(hidden)]
     pub lens_json: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct ExportLensOutput  {
 }
 impl ExportLensOutput {
     /// <p>The JSON representation of a lens.</p>
-    pub fn lens_json(&self) -> std::option::Option<& str> {
+    pub fn lens_json(&self) -> std::option::Option<&str> {
         self.lens_json.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ExportLensOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ExportLensOutput {
     /// Creates a new builder-style object to manufacture [`ExportLensOutput`](crate::operation::export_lens::ExportLensOutput).
     pub fn builder() -> crate::operation::export_lens::builders::ExportLensOutputBuilder {
@@ -41,24 +41,23 @@ impl ExportLensOutputBuilder {
     }
     /// <p>The JSON representation of a lens.</p>
     pub fn set_lens_json(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_json = input; self
+        self.lens_json = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ExportLensOutput`](crate::operation::export_lens::ExportLensOutput).
     pub fn build(self) -> crate::operation::export_lens::ExportLensOutput {
         crate::operation::export_lens::ExportLensOutput {
-            lens_json: self.lens_json
-            ,
+            lens_json: self.lens_json,
             _request_id: self._request_id,
         }
     }
 }
-

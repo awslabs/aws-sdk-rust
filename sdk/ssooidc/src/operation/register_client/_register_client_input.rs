@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterClientInput  {
+pub struct RegisterClientInput {
     /// <p>The friendly name of the client.</p>
     #[doc(hidden)]
     pub client_name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct RegisterClientInput  {
 }
 impl RegisterClientInput {
     /// <p>The friendly name of the client.</p>
-    pub fn client_name(&self) -> std::option::Option<& str> {
+    pub fn client_name(&self) -> std::option::Option<&str> {
         self.client_name.as_deref()
     }
     /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
-    pub fn client_type(&self) -> std::option::Option<& str> {
+    pub fn client_type(&self) -> std::option::Option<&str> {
         self.client_type.as_deref()
     }
     /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
-    pub fn scopes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.scopes.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl RegisterClientInputBuilder {
     }
     /// <p>The friendly name of the client.</p>
     pub fn set_client_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_name = input; self
+        self.client_name = input;
+        self
     }
     /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
     pub fn client_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl RegisterClientInputBuilder {
     }
     /// <p>The type of client. The service supports only <code>public</code> as a client type. Anything other than public will be rejected by the service.</p>
     pub fn set_client_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_type = input; self
+        self.client_type = input;
+        self
     }
     /// Appends an item to `scopes`.
     ///
@@ -68,26 +70,29 @@ impl RegisterClientInputBuilder {
     /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
     pub fn scopes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.scopes.unwrap_or_default();
-                        v.push(input.into());
-                        self.scopes = Some(v);
-                        self
+        v.push(input.into());
+        self.scopes = Some(v);
+        self
     }
     /// <p>The list of scopes that are defined by the client. Upon authorization, this list is used to restrict permissions when granting an access token.</p>
-    pub fn set_scopes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.scopes = input; self
+    pub fn set_scopes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.scopes = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegisterClientInput`](crate::operation::register_client::RegisterClientInput).
-    pub fn build(self) -> Result<crate::operation::register_client::RegisterClientInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::register_client::RegisterClientInput {
-                client_name: self.client_name
-                ,
-                client_type: self.client_type
-                ,
-                scopes: self.scopes
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::register_client::RegisterClientInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::register_client::RegisterClientInput {
+            client_name: self.client_name,
+            client_type: self.client_type,
+            scopes: self.scopes,
+        })
     }
 }
-

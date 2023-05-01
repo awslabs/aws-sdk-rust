@@ -3,7 +3,7 @@
 /// <p>The cell conditional formatting option for a table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableCellConditionalFormatting  {
+pub struct TableCellConditionalFormatting {
     /// <p>The field ID of the cell for conditional formatting.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TableCellConditionalFormatting  {
 }
 impl TableCellConditionalFormatting {
     /// <p>The field ID of the cell for conditional formatting.</p>
-    pub fn field_id(&self) -> std::option::Option<& str> {
+    pub fn field_id(&self) -> std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The text format of the cell for conditional formatting.</p>
-    pub fn text_format(&self) -> std::option::Option<& crate::types::TextConditionalFormat> {
+    pub fn text_format(&self) -> std::option::Option<&crate::types::TextConditionalFormat> {
         self.text_format.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl TableCellConditionalFormattingBuilder {
     }
     /// <p>The field ID of the cell for conditional formatting.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input; self
+        self.field_id = input;
+        self
     }
     /// <p>The text format of the cell for conditional formatting.</p>
     pub fn text_format(mut self, input: crate::types::TextConditionalFormat) -> Self {
@@ -51,17 +52,18 @@ impl TableCellConditionalFormattingBuilder {
         self
     }
     /// <p>The text format of the cell for conditional formatting.</p>
-    pub fn set_text_format(mut self, input: std::option::Option<crate::types::TextConditionalFormat>) -> Self {
-        self.text_format = input; self
+    pub fn set_text_format(
+        mut self,
+        input: std::option::Option<crate::types::TextConditionalFormat>,
+    ) -> Self {
+        self.text_format = input;
+        self
     }
     /// Consumes the builder and constructs a [`TableCellConditionalFormatting`](crate::types::TableCellConditionalFormatting).
     pub fn build(self) -> crate::types::TableCellConditionalFormatting {
         crate::types::TableCellConditionalFormatting {
-            field_id: self.field_id
-            ,
-            text_format: self.text_format
-            ,
+            field_id: self.field_id,
+            text_format: self.text_format,
         }
     }
 }
-

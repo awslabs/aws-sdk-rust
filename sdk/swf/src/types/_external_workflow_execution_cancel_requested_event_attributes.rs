@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code> event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExternalWorkflowExecutionCancelRequestedEventAttributes  {
+pub struct ExternalWorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution to which the cancellation request was delivered.</p>
     #[doc(hidden)]
     pub workflow_execution: std::option::Option<crate::types::WorkflowExecution>,
@@ -13,7 +13,7 @@ pub struct ExternalWorkflowExecutionCancelRequestedEventAttributes  {
 }
 impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
     /// <p>The external workflow execution to which the cancellation request was delivered.</p>
-    pub fn workflow_execution(&self) -> std::option::Option<& crate::types::WorkflowExecution> {
+    pub fn workflow_execution(&self) -> std::option::Option<&crate::types::WorkflowExecution> {
         self.workflow_execution.as_ref()
     }
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
@@ -23,7 +23,9 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
 }
 impl ExternalWorkflowExecutionCancelRequestedEventAttributes {
     /// Creates a new builder-style object to manufacture [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes).
-    pub fn builder() -> crate::types::builders::ExternalWorkflowExecutionCancelRequestedEventAttributesBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::ExternalWorkflowExecutionCancelRequestedEventAttributesBuilder
+    {
         crate::types::builders::ExternalWorkflowExecutionCancelRequestedEventAttributesBuilder::default()
     }
 }
@@ -42,8 +44,12 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributesBuilder {
         self
     }
     /// <p>The external workflow execution to which the cancellation request was delivered.</p>
-    pub fn set_workflow_execution(mut self, input: std::option::Option<crate::types::WorkflowExecution>) -> Self {
-        self.workflow_execution = input; self
+    pub fn set_workflow_execution(
+        mut self,
+        input: std::option::Option<crate::types::WorkflowExecution>,
+    ) -> Self {
+        self.workflow_execution = input;
+        self
     }
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn initiated_event_id(mut self, input: i64) -> Self {
@@ -52,17 +58,14 @@ impl ExternalWorkflowExecutionCancelRequestedEventAttributesBuilder {
     }
     /// <p>The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this external workflow execution. This information can be useful for diagnosing problems by tracing back the chain of events leading up to this event.</p>
     pub fn set_initiated_event_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.initiated_event_id = input; self
+        self.initiated_event_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExternalWorkflowExecutionCancelRequestedEventAttributes`](crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes).
     pub fn build(self) -> crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes {
         crate::types::ExternalWorkflowExecutionCancelRequestedEventAttributes {
-            workflow_execution: self.workflow_execution
-            ,
-            initiated_event_id: self.initiated_event_id
-                .unwrap_or_default()
-            ,
+            workflow_execution: self.workflow_execution,
+            initiated_event_id: self.initiated_event_id.unwrap_or_default(),
         }
     }
 }
-

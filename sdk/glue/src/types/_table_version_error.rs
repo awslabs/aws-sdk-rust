@@ -3,7 +3,7 @@
 /// <p>An error record for table-version operations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableVersionError  {
+pub struct TableVersionError {
     /// <p>The name of the table in question.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct TableVersionError  {
 }
 impl TableVersionError {
     /// <p>The name of the table in question.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>The details about the error.</p>
-    pub fn error_detail(&self) -> std::option::Option<& crate::types::ErrorDetail> {
+    pub fn error_detail(&self) -> std::option::Option<&crate::types::ErrorDetail> {
         self.error_detail.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl TableVersionErrorBuilder {
     }
     /// <p>The name of the table in question.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// <p>The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl TableVersionErrorBuilder {
     }
     /// <p>The ID value of the version in question. A <code>VersionID</code> is a string representation of an integer. Each version is incremented by 1.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// <p>The details about the error.</p>
     pub fn error_detail(mut self, input: crate::types::ErrorDetail) -> Self {
@@ -68,19 +70,19 @@ impl TableVersionErrorBuilder {
         self
     }
     /// <p>The details about the error.</p>
-    pub fn set_error_detail(mut self, input: std::option::Option<crate::types::ErrorDetail>) -> Self {
-        self.error_detail = input; self
+    pub fn set_error_detail(
+        mut self,
+        input: std::option::Option<crate::types::ErrorDetail>,
+    ) -> Self {
+        self.error_detail = input;
+        self
     }
     /// Consumes the builder and constructs a [`TableVersionError`](crate::types::TableVersionError).
     pub fn build(self) -> crate::types::TableVersionError {
         crate::types::TableVersionError {
-            table_name: self.table_name
-            ,
-            version_id: self.version_id
-            ,
-            error_detail: self.error_detail
-            ,
+            table_name: self.table_name,
+            version_id: self.version_id,
+            error_detail: self.error_detail,
         }
     }
 }
-

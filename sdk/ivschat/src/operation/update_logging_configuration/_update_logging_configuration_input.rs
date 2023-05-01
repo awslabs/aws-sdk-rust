@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLoggingConfigurationInput  {
+pub struct UpdateLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be updated.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct UpdateLoggingConfigurationInput  {
 }
 impl UpdateLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be updated.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>Logging-configuration name. The value does not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn destination_configuration(&self) -> std::option::Option<& crate::types::DestinationConfiguration> {
+    pub fn destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::DestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
 }
 impl UpdateLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateLoggingConfigurationInput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder{
         crate::operation::update_logging_configuration::builders::UpdateLoggingConfigurationInputBuilder::default()
     }
 }
@@ -40,7 +42,8 @@ impl UpdateLoggingConfigurationInput {
 pub struct UpdateLoggingConfigurationInputBuilder {
     pub(crate) identifier: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) destination_configuration: std::option::Option<crate::types::DestinationConfiguration>,
+    pub(crate) destination_configuration:
+        std::option::Option<crate::types::DestinationConfiguration>,
 }
 impl UpdateLoggingConfigurationInputBuilder {
     /// <p>Identifier of the logging configuration to be updated.</p>
@@ -50,7 +53,8 @@ impl UpdateLoggingConfigurationInputBuilder {
     }
     /// <p>Identifier of the logging configuration to be updated.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// <p>Logging-configuration name. The value does not need to be unique.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,29 +63,38 @@ impl UpdateLoggingConfigurationInputBuilder {
     }
     /// <p>Logging-configuration name. The value does not need to be unique.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn destination_configuration(mut self, input: crate::types::DestinationConfiguration) -> Self {
+    pub fn destination_configuration(
+        mut self,
+        input: crate::types::DestinationConfiguration,
+    ) -> Self {
         self.destination_configuration = Some(input);
         self
     }
     /// <p>A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.</p>
-    pub fn set_destination_configuration(mut self, input: std::option::Option<crate::types::DestinationConfiguration>) -> Self {
-        self.destination_configuration = input; self
+    pub fn set_destination_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DestinationConfiguration>,
+    ) -> Self {
+        self.destination_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateLoggingConfigurationInput`](crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_logging_configuration::UpdateLoggingConfigurationInput {
-                identifier: self.identifier
-                ,
-                name: self.name
-                ,
-                destination_configuration: self.destination_configuration
-                ,
-            }
+                identifier: self.identifier,
+                name: self.name,
+                destination_configuration: self.destination_configuration,
+            },
         )
     }
 }
-

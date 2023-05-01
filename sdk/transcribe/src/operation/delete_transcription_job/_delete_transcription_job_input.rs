@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTranscriptionJobInput  {
+pub struct DeleteTranscriptionJobInput {
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
     #[doc(hidden)]
     pub transcription_job_name: std::option::Option<std::string::String>,
 }
 impl DeleteTranscriptionJobInput {
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
-    pub fn transcription_job_name(&self) -> std::option::Option<& str> {
+    pub fn transcription_job_name(&self) -> std::option::Option<&str> {
         self.transcription_job_name.as_deref()
     }
 }
 impl DeleteTranscriptionJobInput {
     /// Creates a new builder-style object to manufacture [`DeleteTranscriptionJobInput`](crate::operation::delete_transcription_job::DeleteTranscriptionJobInput).
-    pub fn builder() -> crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobInputBuilder
+    {
         crate::operation::delete_transcription_job::builders::DeleteTranscriptionJobInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteTranscriptionJobInputBuilder {
         self
     }
     /// <p>The name of the transcription job you want to delete. Job names are case sensitive.</p>
-    pub fn set_transcription_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transcription_job_name = input; self
+    pub fn set_transcription_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transcription_job_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTranscriptionJobInput`](crate::operation::delete_transcription_job::DeleteTranscriptionJobInput).
-    pub fn build(self) -> Result<crate::operation::delete_transcription_job::DeleteTranscriptionJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_transcription_job::DeleteTranscriptionJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_transcription_job::DeleteTranscriptionJobInput {
-                transcription_job_name: self.transcription_job_name
-                ,
-            }
+                transcription_job_name: self.transcription_job_name,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Container for request parameters to the <code>PurchaseReservedInstanceOffering</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PurchaseReservedInstanceOfferingInput  {
+pub struct PurchaseReservedInstanceOfferingInput {
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
     #[doc(hidden)]
     pub reserved_instance_offering_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct PurchaseReservedInstanceOfferingInput  {
 }
 impl PurchaseReservedInstanceOfferingInput {
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn reserved_instance_offering_id(&self) -> std::option::Option<& str> {
+    pub fn reserved_instance_offering_id(&self) -> std::option::Option<&str> {
         self.reserved_instance_offering_id.as_deref()
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
-    pub fn reservation_name(&self) -> std::option::Option<& str> {
+    pub fn reservation_name(&self) -> std::option::Option<&str> {
         self.reservation_name.as_deref()
     }
     /// <p>The number of OpenSearch instances to reserve.</p>
@@ -30,7 +30,7 @@ impl PurchaseReservedInstanceOfferingInput {
 }
 impl PurchaseReservedInstanceOfferingInput {
     /// Creates a new builder-style object to manufacture [`PurchaseReservedInstanceOfferingInput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput).
-    pub fn builder() -> crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingInputBuilder {
+    pub fn builder() -> crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingInputBuilder{
         crate::operation::purchase_reserved_instance_offering::builders::PurchaseReservedInstanceOfferingInputBuilder::default()
     }
 }
@@ -50,8 +50,12 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
         self
     }
     /// <p>The ID of the Reserved Instance offering to purchase.</p>
-    pub fn set_reserved_instance_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reserved_instance_offering_id = input; self
+    pub fn set_reserved_instance_offering_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.reserved_instance_offering_id = input;
+        self
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
     pub fn reservation_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
     }
     /// <p>A customer-specified identifier to track this reservation.</p>
     pub fn set_reservation_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reservation_name = input; self
+        self.reservation_name = input;
+        self
     }
     /// <p>The number of OpenSearch instances to reserve.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
@@ -69,10 +74,11 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
     }
     /// <p>The number of OpenSearch instances to reserve.</p>
     pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.instance_count = input; self
+        self.instance_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`PurchaseReservedInstanceOfferingInput`](crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput).
-    pub fn build(self) -> Result<crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingInput {
                 reserved_instance_offering_id: self.reserved_instance_offering_id
@@ -85,4 +91,3 @@ impl PurchaseReservedInstanceOfferingInputBuilder {
         )
     }
 }
-

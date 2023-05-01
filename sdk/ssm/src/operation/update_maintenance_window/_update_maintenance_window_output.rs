@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateMaintenanceWindowOutput  {
+pub struct UpdateMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
     #[doc(hidden)]
     pub window_id: std::option::Option<std::string::String>,
@@ -43,31 +43,31 @@ pub struct UpdateMaintenanceWindowOutput  {
 }
 impl UpdateMaintenanceWindowOutput {
     /// <p>The ID of the created maintenance window.</p>
-    pub fn window_id(&self) -> std::option::Option<& str> {
+    pub fn window_id(&self) -> std::option::Option<&str> {
         self.window_id.as_deref()
     }
     /// <p>The name of the maintenance window.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>An optional description of the update.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
-    pub fn start_date(&self) -> std::option::Option<& str> {
+    pub fn start_date(&self) -> std::option::Option<&str> {
         self.start_date.as_deref()
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
-    pub fn end_date(&self) -> std::option::Option<& str> {
+    pub fn end_date(&self) -> std::option::Option<&str> {
         self.end_date.as_deref()
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
-    pub fn schedule(&self) -> std::option::Option<& str> {
+    pub fn schedule(&self) -> std::option::Option<&str> {
         self.schedule.as_deref()
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn schedule_timezone(&self) -> std::option::Option<& str> {
+    pub fn schedule_timezone(&self) -> std::option::Option<&str> {
         self.schedule_timezone.as_deref()
     }
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
@@ -91,7 +91,7 @@ impl UpdateMaintenanceWindowOutput {
         self.enabled
     }
 }
-impl  std::fmt::Debug for UpdateMaintenanceWindowOutput  {
+impl std::fmt::Debug for UpdateMaintenanceWindowOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateMaintenanceWindowOutput");
         formatter.field("window_id", &self.window_id);
@@ -104,20 +104,25 @@ impl  std::fmt::Debug for UpdateMaintenanceWindowOutput  {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
+        formatter.field(
+            "allow_unassociated_targets",
+            &self.allow_unassociated_targets,
+        );
         formatter.field("enabled", &self.enabled);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
 impl aws_http::request_id::RequestId for UpdateMaintenanceWindowOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateMaintenanceWindowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMaintenanceWindowOutput`](crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput).
-    pub fn builder() -> crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowOutputBuilder
+    {
         crate::operation::update_maintenance_window::builders::UpdateMaintenanceWindowOutputBuilder::default()
     }
 }
@@ -148,7 +153,8 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>The ID of the created maintenance window.</p>
     pub fn set_window_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_id = input; self
+        self.window_id = input;
+        self
     }
     /// <p>The name of the maintenance window.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,7 +163,8 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>The name of the maintenance window.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>An optional description of the update.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,7 +173,8 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>An optional description of the update.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
     pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,7 +183,8 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become active. The maintenance window won't run before this specified time.</p>
     pub fn set_start_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_date = input; self
+        self.start_date = input;
+        self
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
     pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,7 +193,8 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled to become inactive. The maintenance window won't run after this specified time.</p>
     pub fn set_end_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_date = input; self
+        self.end_date = input;
+        self
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     pub fn schedule(mut self, input: impl Into<std::string::String>) -> Self {
@@ -193,7 +203,8 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     pub fn set_schedule(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schedule = input; self
+        self.schedule = input;
+        self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
     pub fn schedule_timezone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,8 +212,12 @@ impl UpdateMaintenanceWindowOutputBuilder {
         self
     }
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p>
-    pub fn set_schedule_timezone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schedule_timezone = input; self
+    pub fn set_schedule_timezone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.schedule_timezone = input;
+        self
     }
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
     pub fn schedule_offset(mut self, input: i32) -> Self {
@@ -211,7 +226,8 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression date and time.</p>
     pub fn set_schedule_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.schedule_offset = input; self
+        self.schedule_offset = input;
+        self
     }
     /// <p>The duration of the maintenance window in hours.</p>
     pub fn duration(mut self, input: i32) -> Self {
@@ -220,7 +236,8 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>The duration of the maintenance window in hours.</p>
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration = input; self
+        self.duration = input;
+        self
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub fn cutoff(mut self, input: i32) -> Self {
@@ -229,7 +246,8 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling new tasks for execution.</p>
     pub fn set_cutoff(mut self, input: std::option::Option<i32>) -> Self {
-        self.cutoff = input; self
+        self.cutoff = input;
+        self
     }
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
     pub fn allow_unassociated_targets(mut self, input: bool) -> Self {
@@ -238,7 +256,8 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined for those targets.</p>
     pub fn set_allow_unassociated_targets(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_unassociated_targets = input; self
+        self.allow_unassociated_targets = input;
+        self
     }
     /// <p>Whether the maintenance window is enabled.</p>
     pub fn enabled(mut self, input: bool) -> Self {
@@ -247,48 +266,35 @@ impl UpdateMaintenanceWindowOutputBuilder {
     }
     /// <p>Whether the maintenance window is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateMaintenanceWindowOutput`](crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput).
-    pub fn build(self) -> crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput {
         crate::operation::update_maintenance_window::UpdateMaintenanceWindowOutput {
-            window_id: self.window_id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            start_date: self.start_date
-            ,
-            end_date: self.end_date
-            ,
-            schedule: self.schedule
-            ,
-            schedule_timezone: self.schedule_timezone
-            ,
-            schedule_offset: self.schedule_offset
-            ,
-            duration: self.duration
-                .unwrap_or_default()
-            ,
-            cutoff: self.cutoff
-                .unwrap_or_default()
-            ,
-            allow_unassociated_targets: self.allow_unassociated_targets
-                .unwrap_or_default()
-            ,
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
+            window_id: self.window_id,
+            name: self.name,
+            description: self.description,
+            start_date: self.start_date,
+            end_date: self.end_date,
+            schedule: self.schedule,
+            schedule_timezone: self.schedule_timezone,
+            schedule_offset: self.schedule_offset,
+            duration: self.duration.unwrap_or_default(),
+            cutoff: self.cutoff.unwrap_or_default(),
+            allow_unassociated_targets: self.allow_unassociated_targets.unwrap_or_default(),
+            enabled: self.enabled.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
@@ -306,10 +312,12 @@ impl std::fmt::Debug for UpdateMaintenanceWindowOutputBuilder {
         formatter.field("schedule_offset", &self.schedule_offset);
         formatter.field("duration", &self.duration);
         formatter.field("cutoff", &self.cutoff);
-        formatter.field("allow_unassociated_targets", &self.allow_unassociated_targets);
+        formatter.field(
+            "allow_unassociated_targets",
+            &self.allow_unassociated_targets,
+        );
         formatter.field("enabled", &self.enabled);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
-

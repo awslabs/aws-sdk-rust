@@ -3,7 +3,7 @@
 /// <p>Describes the resource with which a prefix list is associated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrefixListAssociation  {
+pub struct PrefixListAssociation {
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PrefixListAssociation  {
 }
 impl PrefixListAssociation {
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The owner of the resource.</p>
-    pub fn resource_owner(&self) -> std::option::Option<& str> {
+    pub fn resource_owner(&self) -> std::option::Option<&str> {
         self.resource_owner.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl PrefixListAssociationBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The owner of the resource.</p>
     pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl PrefixListAssociationBuilder {
     }
     /// <p>The owner of the resource.</p>
     pub fn set_resource_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_owner = input; self
+        self.resource_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`PrefixListAssociation`](crate::types::PrefixListAssociation).
     pub fn build(self) -> crate::types::PrefixListAssociation {
         crate::types::PrefixListAssociation {
-            resource_id: self.resource_id
-            ,
-            resource_owner: self.resource_owner
-            ,
+            resource_id: self.resource_id,
+            resource_owner: self.resource_owner,
         }
     }
 }
-

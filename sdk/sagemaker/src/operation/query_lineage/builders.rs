@@ -4,56 +4,77 @@ pub use crate::operation::query_lineage::_query_lineage_output::QueryLineageOutp
 pub use crate::operation::query_lineage::_query_lineage_input::QueryLineageInputBuilder;
 
 /// Fluent builder constructing a request to `QueryLineage`.
-/// 
+///
 /// <p>Use this action to inspect your lineage and discover relationships between entities. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html"> Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct QueryLineageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::query_lineage::builders::QueryLineageInputBuilder,
+    inner: crate::operation::query_lineage::builders::QueryLineageInputBuilder,
 }
-impl QueryLineageFluentBuilder  {
+impl QueryLineageFluentBuilder {
     /// Creates a new `QueryLineage`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::query_lineage::QueryLineage, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::query_lineage::QueryLineageOutput, aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::query_lineage::QueryLineage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::query_lineage::QueryLineageOutput,
+        aws_smithy_http::result::SdkError<crate::operation::query_lineage::QueryLineageError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::query_lineage::paginator::QueryLineagePaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::query_lineage::paginator::QueryLineagePaginator {
-                                crate::operation::query_lineage::paginator::QueryLineagePaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::query_lineage::paginator::QueryLineagePaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::query_lineage::paginator::QueryLineagePaginator {
+        crate::operation::query_lineage::paginator::QueryLineagePaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// Appends an item to `StartArns`.
     ///
     /// To override the contents of this collection use [`set_start_arns`](Self::set_start_arns).
@@ -64,7 +85,10 @@ impl QueryLineageFluentBuilder  {
         self
     }
     /// <p>A list of resource Amazon Resource Name (ARN) that represent the starting point for your lineage query.</p>
-    pub fn set_start_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_start_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_start_arns(input);
         self
     }
@@ -88,25 +112,25 @@ impl QueryLineageFluentBuilder  {
         self.inner = self.inner.set_include_edges(input);
         self
     }
-    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p> 
-    /// <ul> 
-    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li> 
-    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li> 
-    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li> 
-    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li> 
-    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li> 
+    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
+    /// <ul>
+    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
+    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
+    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
+    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
+    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::QueryFilters) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p> 
-    /// <ul> 
-    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li> 
-    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li> 
-    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li> 
-    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li> 
-    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li> 
+    /// <p>A set of filtering parameters that allow you to specify which entities should be returned.</p>
+    /// <ul>
+    /// <li> <p>Properties - Key-value pairs to match on the lineage entities' properties.</p> </li>
+    /// <li> <p>LineageTypes - A set of lineage entity types to match on. For example: <code>TrialComponent</code>, <code>Artifact</code>, or <code>Context</code>.</p> </li>
+    /// <li> <p>CreatedBefore - Filter entities created before this date.</p> </li>
+    /// <li> <p>ModifiedBefore - Filter entities modified before this date.</p> </li>
+    /// <li> <p>ModifiedAfter - Filter entities modified after this date.</p> </li>
     /// </ul>
     pub fn set_filters(mut self, input: std::option::Option<crate::types::QueryFilters>) -> Self {
         self.inner = self.inner.set_filters(input);
@@ -143,4 +167,3 @@ impl QueryLineageFluentBuilder  {
         self
     }
 }
-

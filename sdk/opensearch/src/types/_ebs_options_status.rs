@@ -3,7 +3,7 @@
 /// <p>The status of the EBS options for the specified OpenSearch Service domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsOptionsStatus  {
+pub struct EbsOptionsStatus {
     /// <p>The configured EBS options for the specified domain.</p>
     #[doc(hidden)]
     pub options: std::option::Option<crate::types::EbsOptions>,
@@ -13,11 +13,11 @@ pub struct EbsOptionsStatus  {
 }
 impl EbsOptionsStatus {
     /// <p>The configured EBS options for the specified domain.</p>
-    pub fn options(&self) -> std::option::Option<& crate::types::EbsOptions> {
+    pub fn options(&self) -> std::option::Option<&crate::types::EbsOptions> {
         self.options.as_ref()
     }
     /// <p>The status of the EBS options for the specified domain.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::OptionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::OptionStatus> {
         self.status.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl EbsOptionsStatusBuilder {
     }
     /// <p>The configured EBS options for the specified domain.</p>
     pub fn set_options(mut self, input: std::option::Option<crate::types::EbsOptions>) -> Self {
-        self.options = input; self
+        self.options = input;
+        self
     }
     /// <p>The status of the EBS options for the specified domain.</p>
     pub fn status(mut self, input: crate::types::OptionStatus) -> Self {
@@ -52,16 +53,14 @@ impl EbsOptionsStatusBuilder {
     }
     /// <p>The status of the EBS options for the specified domain.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::OptionStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`EbsOptionsStatus`](crate::types::EbsOptionsStatus).
     pub fn build(self) -> crate::types::EbsOptionsStatus {
         crate::types::EbsOptionsStatus {
-            options: self.options
-            ,
-            status: self.status
-            ,
+            options: self.options,
+            status: self.status,
         }
     }
 }
-

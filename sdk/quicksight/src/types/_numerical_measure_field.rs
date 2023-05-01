@@ -3,7 +3,7 @@
 /// <p>The measure type field with numerical type columns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NumericalMeasureField  {
+pub struct NumericalMeasureField {
     /// <p>The custom field ID.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -19,19 +19,23 @@ pub struct NumericalMeasureField  {
 }
 impl NumericalMeasureField {
     /// <p>The custom field ID.</p>
-    pub fn field_id(&self) -> std::option::Option<& str> {
+    pub fn field_id(&self) -> std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The column that is used in the <code>NumericalMeasureField</code>.</p>
-    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The aggregation function of the measure field.</p>
-    pub fn aggregation_function(&self) -> std::option::Option<& crate::types::NumericalAggregationFunction> {
+    pub fn aggregation_function(
+        &self,
+    ) -> std::option::Option<&crate::types::NumericalAggregationFunction> {
         self.aggregation_function.as_ref()
     }
     /// <p>The format configuration of the field.</p>
-    pub fn format_configuration(&self) -> std::option::Option<& crate::types::NumberFormatConfiguration> {
+    pub fn format_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::NumberFormatConfiguration> {
         self.format_configuration.as_ref()
     }
 }
@@ -48,7 +52,8 @@ impl NumericalMeasureField {
 pub struct NumericalMeasureFieldBuilder {
     pub(crate) field_id: std::option::Option<std::string::String>,
     pub(crate) column: std::option::Option<crate::types::ColumnIdentifier>,
-    pub(crate) aggregation_function: std::option::Option<crate::types::NumericalAggregationFunction>,
+    pub(crate) aggregation_function:
+        std::option::Option<crate::types::NumericalAggregationFunction>,
     pub(crate) format_configuration: std::option::Option<crate::types::NumberFormatConfiguration>,
 }
 impl NumericalMeasureFieldBuilder {
@@ -59,7 +64,8 @@ impl NumericalMeasureFieldBuilder {
     }
     /// <p>The custom field ID.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input; self
+        self.field_id = input;
+        self
     }
     /// <p>The column that is used in the <code>NumericalMeasureField</code>.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
@@ -67,17 +73,28 @@ impl NumericalMeasureFieldBuilder {
         self
     }
     /// <p>The column that is used in the <code>NumericalMeasureField</code>.</p>
-    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input; self
+    pub fn set_column(
+        mut self,
+        input: std::option::Option<crate::types::ColumnIdentifier>,
+    ) -> Self {
+        self.column = input;
+        self
     }
     /// <p>The aggregation function of the measure field.</p>
-    pub fn aggregation_function(mut self, input: crate::types::NumericalAggregationFunction) -> Self {
+    pub fn aggregation_function(
+        mut self,
+        input: crate::types::NumericalAggregationFunction,
+    ) -> Self {
         self.aggregation_function = Some(input);
         self
     }
     /// <p>The aggregation function of the measure field.</p>
-    pub fn set_aggregation_function(mut self, input: std::option::Option<crate::types::NumericalAggregationFunction>) -> Self {
-        self.aggregation_function = input; self
+    pub fn set_aggregation_function(
+        mut self,
+        input: std::option::Option<crate::types::NumericalAggregationFunction>,
+    ) -> Self {
+        self.aggregation_function = input;
+        self
     }
     /// <p>The format configuration of the field.</p>
     pub fn format_configuration(mut self, input: crate::types::NumberFormatConfiguration) -> Self {
@@ -85,21 +102,20 @@ impl NumericalMeasureFieldBuilder {
         self
     }
     /// <p>The format configuration of the field.</p>
-    pub fn set_format_configuration(mut self, input: std::option::Option<crate::types::NumberFormatConfiguration>) -> Self {
-        self.format_configuration = input; self
+    pub fn set_format_configuration(
+        mut self,
+        input: std::option::Option<crate::types::NumberFormatConfiguration>,
+    ) -> Self {
+        self.format_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`NumericalMeasureField`](crate::types::NumericalMeasureField).
     pub fn build(self) -> crate::types::NumericalMeasureField {
         crate::types::NumericalMeasureField {
-            field_id: self.field_id
-            ,
-            column: self.column
-            ,
-            aggregation_function: self.aggregation_function
-            ,
-            format_configuration: self.format_configuration
-            ,
+            field_id: self.field_id,
+            column: self.column,
+            aggregation_function: self.aggregation_function,
+            format_configuration: self.format_configuration,
         }
     }
 }
-

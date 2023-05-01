@@ -36,4 +36,3 @@ pub mod untag_delivery_stream;
 
 /// Types for the `UpdateDestination` operation.
 pub mod update_destination;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePhoneNumberOutput  {
+pub struct UpdatePhoneNumberOutput {
     /// <p>The updated phone number details.</p>
     #[doc(hidden)]
     pub phone_number: std::option::Option<crate::types::PhoneNumber>,
@@ -10,18 +10,19 @@ pub struct UpdatePhoneNumberOutput  {
 }
 impl UpdatePhoneNumberOutput {
     /// <p>The updated phone number details.</p>
-    pub fn phone_number(&self) -> std::option::Option<& crate::types::PhoneNumber> {
+    pub fn phone_number(&self) -> std::option::Option<&crate::types::PhoneNumber> {
         self.phone_number.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdatePhoneNumberOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdatePhoneNumberOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberOutput`](crate::operation::update_phone_number::UpdatePhoneNumberOutput).
-    pub fn builder() -> crate::operation::update_phone_number::builders::UpdatePhoneNumberOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_phone_number::builders::UpdatePhoneNumberOutputBuilder {
         crate::operation::update_phone_number::builders::UpdatePhoneNumberOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl UpdatePhoneNumberOutputBuilder {
         self
     }
     /// <p>The updated phone number details.</p>
-    pub fn set_phone_number(mut self, input: std::option::Option<crate::types::PhoneNumber>) -> Self {
-        self.phone_number = input; self
+    pub fn set_phone_number(
+        mut self,
+        input: std::option::Option<crate::types::PhoneNumber>,
+    ) -> Self {
+        self.phone_number = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberOutput`](crate::operation::update_phone_number::UpdatePhoneNumberOutput).
     pub fn build(self) -> crate::operation::update_phone_number::UpdatePhoneNumberOutput {
         crate::operation::update_phone_number::UpdatePhoneNumberOutput {
-            phone_number: self.phone_number
-            ,
+            phone_number: self.phone_number,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Returns an array of <a href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCasesOutput  {
+pub struct DescribeCasesOutput {
     /// <p>The details for the cases that match the request.</p>
     #[doc(hidden)]
     pub cases: std::option::Option<std::vec::Vec<crate::types::CaseDetails>>,
@@ -14,19 +14,19 @@ pub struct DescribeCasesOutput  {
 }
 impl DescribeCasesOutput {
     /// <p>The details for the cases that match the request.</p>
-    pub fn cases(&self) -> std::option::Option<& [crate::types::CaseDetails]> {
+    pub fn cases(&self) -> std::option::Option<&[crate::types::CaseDetails]> {
         self.cases.as_deref()
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCasesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeCasesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCasesOutput`](crate::operation::describe_cases::DescribeCasesOutput).
     pub fn builder() -> crate::operation::describe_cases::builders::DescribeCasesOutputBuilder {
@@ -50,13 +50,17 @@ impl DescribeCasesOutputBuilder {
     /// <p>The details for the cases that match the request.</p>
     pub fn cases(mut self, input: crate::types::CaseDetails) -> Self {
         let mut v = self.cases.unwrap_or_default();
-                        v.push(input);
-                        self.cases = Some(v);
-                        self
+        v.push(input);
+        self.cases = Some(v);
+        self
     }
     /// <p>The details for the cases that match the request.</p>
-    pub fn set_cases(mut self, input: std::option::Option<std::vec::Vec<crate::types::CaseDetails>>) -> Self {
-        self.cases = input; self
+    pub fn set_cases(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CaseDetails>>,
+    ) -> Self {
+        self.cases = input;
+        self
     }
     /// <p>A resumption point for pagination.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +69,24 @@ impl DescribeCasesOutputBuilder {
     }
     /// <p>A resumption point for pagination.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeCasesOutput`](crate::operation::describe_cases::DescribeCasesOutput).
     pub fn build(self) -> crate::operation::describe_cases::DescribeCasesOutput {
         crate::operation::describe_cases::DescribeCasesOutput {
-            cases: self.cases
-            ,
-            next_token: self.next_token
-            ,
+            cases: self.cases,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

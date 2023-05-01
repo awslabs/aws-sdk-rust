@@ -4,50 +4,66 @@ pub use crate::operation::translate_text::_translate_text_output::TranslateTextO
 pub use crate::operation::translate_text::_translate_text_input::TranslateTextInputBuilder;
 
 /// Fluent builder constructing a request to `TranslateText`.
-/// 
+///
 /// <p>Translates input text from the source language to the target language. For a list of available languages and language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct TranslateTextFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::translate_text::builders::TranslateTextInputBuilder,
+    inner: crate::operation::translate_text::builders::TranslateTextInputBuilder,
 }
-impl TranslateTextFluentBuilder  {
+impl TranslateTextFluentBuilder {
     /// Creates a new `TranslateText`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::translate_text::TranslateText, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::translate_text::TranslateTextError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::translate_text::TranslateTextOutput, aws_smithy_http::result::SdkError<crate::operation::translate_text::TranslateTextError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::translate_text::TranslateText,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::translate_text::TranslateTextError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::translate_text::TranslateTextOutput,
+        aws_smithy_http::result::SdkError<crate::operation::translate_text::TranslateTextError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
     pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.text(input.into());
@@ -68,23 +84,29 @@ impl TranslateTextFluentBuilder  {
         self
     }
     /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
-    pub fn set_terminology_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_terminology_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_terminology_names(input);
         self
     }
-    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p> 
-    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note> 
-    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p> 
+    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
     /// </note>
     pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source_language_code(input.into());
         self
     }
-    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p> 
-    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note> 
-    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p> 
+    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
     /// </note>
-    pub fn set_source_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_language_code(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_language_code(input);
         self
     }
@@ -94,7 +116,10 @@ impl TranslateTextFluentBuilder  {
         self
     }
     /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    pub fn set_target_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target_language_code(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_target_language_code(input);
         self
     }
@@ -104,9 +129,11 @@ impl TranslateTextFluentBuilder  {
         self
     }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-    pub fn set_settings(mut self, input: std::option::Option<crate::types::TranslationSettings>) -> Self {
+    pub fn set_settings(
+        mut self,
+        input: std::option::Option<crate::types::TranslationSettings>,
+    ) -> Self {
         self.inner = self.inner.set_settings(input);
         self
     }
 }
-

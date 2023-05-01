@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreTableFromBackupOutput  {
+pub struct RestoreTableFromBackupOutput {
     /// <p>The description of the table created from an existing backup.</p>
     #[doc(hidden)]
     pub table_description: std::option::Option<crate::types::TableDescription>,
@@ -10,18 +10,20 @@ pub struct RestoreTableFromBackupOutput  {
 }
 impl RestoreTableFromBackupOutput {
     /// <p>The description of the table created from an existing backup.</p>
-    pub fn table_description(&self) -> std::option::Option<& crate::types::TableDescription> {
+    pub fn table_description(&self) -> std::option::Option<&crate::types::TableDescription> {
         self.table_description.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RestoreTableFromBackupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RestoreTableFromBackupOutput {
     /// Creates a new builder-style object to manufacture [`RestoreTableFromBackupOutput`](crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput).
-    pub fn builder() -> crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupOutputBuilder
+    {
         crate::operation::restore_table_from_backup::builders::RestoreTableFromBackupOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl RestoreTableFromBackupOutputBuilder {
         self
     }
     /// <p>The description of the table created from an existing backup.</p>
-    pub fn set_table_description(mut self, input: std::option::Option<crate::types::TableDescription>) -> Self {
-        self.table_description = input; self
+    pub fn set_table_description(
+        mut self,
+        input: std::option::Option<crate::types::TableDescription>,
+    ) -> Self {
+        self.table_description = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RestoreTableFromBackupOutput`](crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput).
-    pub fn build(self) -> crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput {
         crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput {
-            table_description: self.table_description
-            ,
+            table_description: self.table_description,
             _request_id: self._request_id,
         }
     }
 }
-

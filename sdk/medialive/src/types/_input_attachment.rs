@@ -3,10 +3,11 @@
 /// Placeholder documentation for InputAttachment
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputAttachment  {
+pub struct InputAttachment {
     /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
     #[doc(hidden)]
-    pub automatic_input_failover_settings: std::option::Option<crate::types::AutomaticInputFailoverSettings>,
+    pub automatic_input_failover_settings:
+        std::option::Option<crate::types::AutomaticInputFailoverSettings>,
     /// User-specified name for the attachment. This is required if the user wants to use this input in an input switch action.
     #[doc(hidden)]
     pub input_attachment_name: std::option::Option<std::string::String>,
@@ -19,19 +20,21 @@ pub struct InputAttachment  {
 }
 impl InputAttachment {
     /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
-    pub fn automatic_input_failover_settings(&self) -> std::option::Option<& crate::types::AutomaticInputFailoverSettings> {
+    pub fn automatic_input_failover_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::AutomaticInputFailoverSettings> {
         self.automatic_input_failover_settings.as_ref()
     }
     /// User-specified name for the attachment. This is required if the user wants to use this input in an input switch action.
-    pub fn input_attachment_name(&self) -> std::option::Option<& str> {
+    pub fn input_attachment_name(&self) -> std::option::Option<&str> {
         self.input_attachment_name.as_deref()
     }
     /// The ID of the input
-    pub fn input_id(&self) -> std::option::Option<& str> {
+    pub fn input_id(&self) -> std::option::Option<&str> {
         self.input_id.as_deref()
     }
     /// Settings of an input (caption selector, etc.)
-    pub fn input_settings(&self) -> std::option::Option<& crate::types::InputSettings> {
+    pub fn input_settings(&self) -> std::option::Option<&crate::types::InputSettings> {
         self.input_settings.as_ref()
     }
 }
@@ -46,20 +49,28 @@ impl InputAttachment {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct InputAttachmentBuilder {
-    pub(crate) automatic_input_failover_settings: std::option::Option<crate::types::AutomaticInputFailoverSettings>,
+    pub(crate) automatic_input_failover_settings:
+        std::option::Option<crate::types::AutomaticInputFailoverSettings>,
     pub(crate) input_attachment_name: std::option::Option<std::string::String>,
     pub(crate) input_id: std::option::Option<std::string::String>,
     pub(crate) input_settings: std::option::Option<crate::types::InputSettings>,
 }
 impl InputAttachmentBuilder {
     /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
-    pub fn automatic_input_failover_settings(mut self, input: crate::types::AutomaticInputFailoverSettings) -> Self {
+    pub fn automatic_input_failover_settings(
+        mut self,
+        input: crate::types::AutomaticInputFailoverSettings,
+    ) -> Self {
         self.automatic_input_failover_settings = Some(input);
         self
     }
     /// User-specified settings for defining what the conditions are for declaring the input unhealthy and failing over to a different input.
-    pub fn set_automatic_input_failover_settings(mut self, input: std::option::Option<crate::types::AutomaticInputFailoverSettings>) -> Self {
-        self.automatic_input_failover_settings = input; self
+    pub fn set_automatic_input_failover_settings(
+        mut self,
+        input: std::option::Option<crate::types::AutomaticInputFailoverSettings>,
+    ) -> Self {
+        self.automatic_input_failover_settings = input;
+        self
     }
     /// User-specified name for the attachment. This is required if the user wants to use this input in an input switch action.
     pub fn input_attachment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +78,12 @@ impl InputAttachmentBuilder {
         self
     }
     /// User-specified name for the attachment. This is required if the user wants to use this input in an input switch action.
-    pub fn set_input_attachment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_attachment_name = input; self
+    pub fn set_input_attachment_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.input_attachment_name = input;
+        self
     }
     /// The ID of the input
     pub fn input_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +92,8 @@ impl InputAttachmentBuilder {
     }
     /// The ID of the input
     pub fn set_input_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_id = input; self
+        self.input_id = input;
+        self
     }
     /// Settings of an input (caption selector, etc.)
     pub fn input_settings(mut self, input: crate::types::InputSettings) -> Self {
@@ -85,21 +101,20 @@ impl InputAttachmentBuilder {
         self
     }
     /// Settings of an input (caption selector, etc.)
-    pub fn set_input_settings(mut self, input: std::option::Option<crate::types::InputSettings>) -> Self {
-        self.input_settings = input; self
+    pub fn set_input_settings(
+        mut self,
+        input: std::option::Option<crate::types::InputSettings>,
+    ) -> Self {
+        self.input_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`InputAttachment`](crate::types::InputAttachment).
     pub fn build(self) -> crate::types::InputAttachment {
         crate::types::InputAttachment {
-            automatic_input_failover_settings: self.automatic_input_failover_settings
-            ,
-            input_attachment_name: self.input_attachment_name
-            ,
-            input_id: self.input_id
-            ,
-            input_settings: self.input_settings
-            ,
+            automatic_input_failover_settings: self.automatic_input_failover_settings,
+            input_attachment_name: self.input_attachment_name,
+            input_id: self.input_id,
+            input_settings: self.input_settings,
         }
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnomalyMonitorInput  {
+pub struct DeleteAnomalyMonitorInput {
     /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
     #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAnomalyMonitorInput {
     /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
-    pub fn monitor_arn(&self) -> std::option::Option<& str> {
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
         self.monitor_arn.as_deref()
     }
 }
 impl DeleteAnomalyMonitorInput {
     /// Creates a new builder-style object to manufacture [`DeleteAnomalyMonitorInput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput).
-    pub fn builder() -> crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorInputBuilder {
         crate::operation::delete_anomaly_monitor::builders::DeleteAnomalyMonitorInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteAnomalyMonitorInputBuilder {
     }
     /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
     pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_arn = input; self
+        self.monitor_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAnomalyMonitorInput`](crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput).
-    pub fn build(self) -> Result<crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorInput {
-                monitor_arn: self.monitor_arn
-                ,
-            }
+                monitor_arn: self.monitor_arn,
+            },
         )
     }
 }
-

@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateLoginProfileInput  {
-    /// <p>The name of the IAM user to create a password for. The user must already exist.</p> 
+pub struct CreateLoginProfileInput {
+    /// <p>The name of the IAM user to create a password for. The user must already exist.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
-    /// <p>The new password for the user.</p> 
+    /// <p>The new password for the user.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</p>
     #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
@@ -16,14 +16,14 @@ pub struct CreateLoginProfileInput  {
     pub password_reset_required: std::option::Option<bool>,
 }
 impl CreateLoginProfileInput {
-    /// <p>The name of the IAM user to create a password for. The user must already exist.</p> 
+    /// <p>The name of the IAM user to create a password for. The user must already exist.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
-    /// <p>The new password for the user.</p> 
+    /// <p>The new password for the user.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
@@ -31,7 +31,7 @@ impl CreateLoginProfileInput {
         self.password_reset_required
     }
 }
-impl  std::fmt::Debug for CreateLoginProfileInput  {
+impl std::fmt::Debug for CreateLoginProfileInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateLoginProfileInput");
         formatter.field("user_name", &self.user_name);
@@ -42,7 +42,8 @@ impl  std::fmt::Debug for CreateLoginProfileInput  {
 }
 impl CreateLoginProfileInput {
     /// Creates a new builder-style object to manufacture [`CreateLoginProfileInput`](crate::operation::create_login_profile::CreateLoginProfileInput).
-    pub fn builder() -> crate::operation::create_login_profile::builders::CreateLoginProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_login_profile::builders::CreateLoginProfileInputBuilder {
         crate::operation::create_login_profile::builders::CreateLoginProfileInputBuilder::default()
     }
 }
@@ -56,27 +57,29 @@ pub struct CreateLoginProfileInputBuilder {
     pub(crate) password_reset_required: std::option::Option<bool>,
 }
 impl CreateLoginProfileInputBuilder {
-    /// <p>The name of the IAM user to create a password for. The user must already exist.</p> 
+    /// <p>The name of the IAM user to create a password for. The user must already exist.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_name = Some(input.into());
         self
     }
-    /// <p>The name of the IAM user to create a password for. The user must already exist.</p> 
+    /// <p>The name of the IAM user to create a password for. The user must already exist.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
-    /// <p>The new password for the user.</p> 
+    /// <p>The new password for the user.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
         self.password = Some(input.into());
         self
     }
-    /// <p>The new password for the user.</p> 
+    /// <p>The new password for the user.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of characters. That string can include almost any printable ASCII character from the space (<code>\u0020</code>) through the end of the ASCII character range (<code>\u00FF</code>). You can also include the tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) characters. Any of these characters are valid in a password. However, many tools, such as the Amazon Web Services Management Console, might restrict the ability to type certain characters because they have special meaning within that tool.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub fn password_reset_required(mut self, input: bool) -> Self {
@@ -85,19 +88,22 @@ impl CreateLoginProfileInputBuilder {
     }
     /// <p>Specifies whether the user is required to set a new password on next sign-in.</p>
     pub fn set_password_reset_required(mut self, input: std::option::Option<bool>) -> Self {
-        self.password_reset_required = input; self
+        self.password_reset_required = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateLoginProfileInput`](crate::operation::create_login_profile::CreateLoginProfileInput).
-    pub fn build(self) -> Result<crate::operation::create_login_profile::CreateLoginProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_login_profile::CreateLoginProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_login_profile::CreateLoginProfileInput {
-                user_name: self.user_name
-                ,
-                password: self.password
-                ,
-                password_reset_required: self.password_reset_required
-                ,
-            }
+                user_name: self.user_name,
+                password: self.password,
+                password_reset_required: self.password_reset_required,
+            },
         )
     }
 }
@@ -110,4 +116,3 @@ impl std::fmt::Debug for CreateLoginProfileInputBuilder {
         formatter.finish()
     }
 }
-

@@ -23,8 +23,14 @@ pub enum TlsValidationContextTrust {
 impl TlsValidationContextTrust {
     /// Tries to convert the enum instance into [`Acm`](crate::types::TlsValidationContextTrust::Acm), extracting the inner [`TlsValidationContextAcmTrust`](crate::types::TlsValidationContextAcmTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_acm(&self) -> std::result::Result<&crate::types::TlsValidationContextAcmTrust, &Self> {
-        if let TlsValidationContextTrust::Acm(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_acm(
+        &self,
+    ) -> std::result::Result<&crate::types::TlsValidationContextAcmTrust, &Self> {
+        if let TlsValidationContextTrust::Acm(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Acm`](crate::types::TlsValidationContextTrust::Acm).
     pub fn is_acm(&self) -> bool {
@@ -32,8 +38,14 @@ impl TlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`File`](crate::types::TlsValidationContextTrust::File), extracting the inner [`TlsValidationContextFileTrust`](crate::types::TlsValidationContextFileTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_file(&self) -> std::result::Result<&crate::types::TlsValidationContextFileTrust, &Self> {
-        if let TlsValidationContextTrust::File(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_file(
+        &self,
+    ) -> std::result::Result<&crate::types::TlsValidationContextFileTrust, &Self> {
+        if let TlsValidationContextTrust::File(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`File`](crate::types::TlsValidationContextTrust::File).
     pub fn is_file(&self) -> bool {
@@ -41,8 +53,14 @@ impl TlsValidationContextTrust {
     }
     /// Tries to convert the enum instance into [`Sds`](crate::types::TlsValidationContextTrust::Sds), extracting the inner [`TlsValidationContextSdsTrust`](crate::types::TlsValidationContextSdsTrust).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_sds(&self) -> std::result::Result<&crate::types::TlsValidationContextSdsTrust, &Self> {
-        if let TlsValidationContextTrust::Sds(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_sds(
+        &self,
+    ) -> std::result::Result<&crate::types::TlsValidationContextSdsTrust, &Self> {
+        if let TlsValidationContextTrust::Sds(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Sds`](crate::types::TlsValidationContextTrust::Sds).
     pub fn is_sds(&self) -> bool {
@@ -53,4 +71,3 @@ impl TlsValidationContextTrust {
         matches!(self, Self::Unknown)
     }
 }
-

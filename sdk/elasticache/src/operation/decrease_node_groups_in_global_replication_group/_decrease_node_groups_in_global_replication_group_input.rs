@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecreaseNodeGroupsInGlobalReplicationGroupInput  {
+pub struct DecreaseNodeGroupsInGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
     #[doc(hidden)]
     pub global_replication_group_id: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct DecreaseNodeGroupsInGlobalReplicationGroupInput  {
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
-    pub fn global_replication_group_id(&self) -> std::option::Option<& str> {
+    pub fn global_replication_group_id(&self) -> std::option::Option<&str> {
         self.global_replication_group_id.as_deref()
     }
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
@@ -29,11 +29,11 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
         self.node_group_count
     }
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
-    pub fn global_node_groups_to_remove(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn global_node_groups_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.global_node_groups_to_remove.as_deref()
     }
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster. </p>
-    pub fn global_node_groups_to_retain(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn global_node_groups_to_retain(&self) -> std::option::Option<&[std::string::String]> {
         self.global_node_groups_to_retain.as_deref()
     }
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
@@ -43,7 +43,7 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
     /// Creates a new builder-style object to manufacture [`DecreaseNodeGroupsInGlobalReplicationGroupInput`](crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupInput).
-    pub fn builder() -> crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
+    pub fn builder() -> crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder{
         crate::operation::decrease_node_groups_in_global_replication_group::builders::DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder::default()
     }
 }
@@ -54,8 +54,10 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInput {
 pub struct DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     pub(crate) global_replication_group_id: std::option::Option<std::string::String>,
     pub(crate) node_group_count: std::option::Option<i32>,
-    pub(crate) global_node_groups_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) global_node_groups_to_retain: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) global_node_groups_to_remove:
+        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) global_node_groups_to_retain:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) apply_immediately: std::option::Option<bool>,
 }
 impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
@@ -65,8 +67,12 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         self
     }
     /// <p>The name of the Global datastore</p>
-    pub fn set_global_replication_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_replication_group_id = input; self
+    pub fn set_global_replication_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_replication_group_id = input;
+        self
     }
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
     pub fn node_group_count(mut self, input: i32) -> Self {
@@ -75,7 +81,8 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     }
     /// <p>The number of node groups (shards) that results from the modification of the shard configuration</p>
     pub fn set_node_group_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.node_group_count = input; self
+        self.node_group_count = input;
+        self
     }
     /// Appends an item to `global_node_groups_to_remove`.
     ///
@@ -84,13 +91,17 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
     pub fn global_node_groups_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.global_node_groups_to_remove.unwrap_or_default();
-                        v.push(input.into());
-                        self.global_node_groups_to_remove = Some(v);
-                        self
+        v.push(input.into());
+        self.global_node_groups_to_remove = Some(v);
+        self
     }
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by GlobalNodeGroupsToRemove from the cluster. </p>
-    pub fn set_global_node_groups_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.global_node_groups_to_remove = input; self
+    pub fn set_global_node_groups_to_remove(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.global_node_groups_to_remove = input;
+        self
     }
     /// Appends an item to `global_node_groups_to_retain`.
     ///
@@ -99,13 +110,17 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster. </p>
     pub fn global_node_groups_to_retain(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.global_node_groups_to_retain.unwrap_or_default();
-                        v.push(input.into());
-                        self.global_node_groups_to_retain = Some(v);
-                        self
+        v.push(input.into());
+        self.global_node_groups_to_retain = Some(v);
+        self
     }
     /// <p>If the value of NodeGroupCount is less than the current number of node groups (shards), then either NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by GlobalNodeGroupsToRetain from the cluster. </p>
-    pub fn set_global_node_groups_to_retain(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.global_node_groups_to_retain = input; self
+    pub fn set_global_node_groups_to_retain(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.global_node_groups_to_retain = input;
+        self
     }
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
     pub fn apply_immediately(mut self, input: bool) -> Self {
@@ -114,10 +129,11 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
     }
     /// <p>Indicates that the shard reconfiguration process begins immediately. At present, the only permitted value for this parameter is true. </p>
     pub fn set_apply_immediately(mut self, input: std::option::Option<bool>) -> Self {
-        self.apply_immediately = input; self
+        self.apply_immediately = input;
+        self
     }
     /// Consumes the builder and constructs a [`DecreaseNodeGroupsInGlobalReplicationGroupInput`](crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupInput).
-    pub fn build(self) -> Result<crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupInput {
                 global_replication_group_id: self.global_replication_group_id
@@ -136,4 +152,3 @@ impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
         )
     }
 }
-

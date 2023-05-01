@@ -3,7 +3,7 @@
 /// <p>Response for ListTopics action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTopicsOutput  {
+pub struct ListTopicsOutput {
     /// <p>A list of topic ARNs.</p>
     #[doc(hidden)]
     pub topics: std::option::Option<std::vec::Vec<crate::types::Topic>>,
@@ -14,19 +14,19 @@ pub struct ListTopicsOutput  {
 }
 impl ListTopicsOutput {
     /// <p>A list of topic ARNs.</p>
-    pub fn topics(&self) -> std::option::Option<& [crate::types::Topic]> {
+    pub fn topics(&self) -> std::option::Option<&[crate::types::Topic]> {
         self.topics.as_deref()
     }
     /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTopicsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTopicsOutput {
     /// Creates a new builder-style object to manufacture [`ListTopicsOutput`](crate::operation::list_topics::ListTopicsOutput).
     pub fn builder() -> crate::operation::list_topics::builders::ListTopicsOutputBuilder {
@@ -50,13 +50,17 @@ impl ListTopicsOutputBuilder {
     /// <p>A list of topic ARNs.</p>
     pub fn topics(mut self, input: crate::types::Topic) -> Self {
         let mut v = self.topics.unwrap_or_default();
-                        v.push(input);
-                        self.topics = Some(v);
-                        self
+        v.push(input);
+        self.topics = Some(v);
+        self
     }
     /// <p>A list of topic ARNs.</p>
-    pub fn set_topics(mut self, input: std::option::Option<std::vec::Vec<crate::types::Topic>>) -> Self {
-        self.topics = input; self
+    pub fn set_topics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Topic>>,
+    ) -> Self {
+        self.topics = input;
+        self
     }
     /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +69,24 @@ impl ListTopicsOutputBuilder {
     }
     /// <p>Token to pass along to the next <code>ListTopics</code> request. This element is returned if there are additional topics to retrieve.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTopicsOutput`](crate::operation::list_topics::ListTopicsOutput).
     pub fn build(self) -> crate::operation::list_topics::ListTopicsOutput {
         crate::operation::list_topics::ListTopicsOutput {
-            topics: self.topics
-            ,
-            next_token: self.next_token
-            ,
+            topics: self.topics,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

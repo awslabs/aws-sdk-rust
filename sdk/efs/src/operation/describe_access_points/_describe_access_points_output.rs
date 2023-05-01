@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccessPointsOutput  {
+pub struct DescribeAccessPointsOutput {
     /// <p>An array of access point descriptions.</p>
     #[doc(hidden)]
     pub access_points: std::option::Option<std::vec::Vec<crate::types::AccessPointDescription>>,
@@ -13,22 +13,23 @@ pub struct DescribeAccessPointsOutput  {
 }
 impl DescribeAccessPointsOutput {
     /// <p>An array of access point descriptions.</p>
-    pub fn access_points(&self) -> std::option::Option<& [crate::types::AccessPointDescription]> {
+    pub fn access_points(&self) -> std::option::Option<&[crate::types::AccessPointDescription]> {
         self.access_points.as_deref()
     }
     /// <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAccessPointsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAccessPointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessPointsOutput`](crate::operation::describe_access_points::DescribeAccessPointsOutput).
-    pub fn builder() -> crate::operation::describe_access_points::builders::DescribeAccessPointsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_access_points::builders::DescribeAccessPointsOutputBuilder {
         crate::operation::describe_access_points::builders::DescribeAccessPointsOutputBuilder::default()
     }
 }
@@ -37,7 +38,8 @@ impl DescribeAccessPointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAccessPointsOutputBuilder {
-    pub(crate) access_points: std::option::Option<std::vec::Vec<crate::types::AccessPointDescription>>,
+    pub(crate) access_points:
+        std::option::Option<std::vec::Vec<crate::types::AccessPointDescription>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +51,17 @@ impl DescribeAccessPointsOutputBuilder {
     /// <p>An array of access point descriptions.</p>
     pub fn access_points(mut self, input: crate::types::AccessPointDescription) -> Self {
         let mut v = self.access_points.unwrap_or_default();
-                        v.push(input);
-                        self.access_points = Some(v);
-                        self
+        v.push(input);
+        self.access_points = Some(v);
+        self
     }
     /// <p>An array of access point descriptions.</p>
-    pub fn set_access_points(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccessPointDescription>>) -> Self {
-        self.access_points = input; self
+    pub fn set_access_points(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AccessPointDescription>>,
+    ) -> Self {
+        self.access_points = input;
+        self
     }
     /// <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl DescribeAccessPointsOutputBuilder {
     }
     /// <p>Present if there are more access points than returned in the response. You can use the NextMarker in the subsequent request to fetch the additional descriptions.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAccessPointsOutput`](crate::operation::describe_access_points::DescribeAccessPointsOutput).
     pub fn build(self) -> crate::operation::describe_access_points::DescribeAccessPointsOutput {
         crate::operation::describe_access_points::DescribeAccessPointsOutput {
-            access_points: self.access_points
-            ,
-            next_token: self.next_token
-            ,
+            access_points: self.access_points,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

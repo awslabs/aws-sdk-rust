@@ -3,7 +3,7 @@
 /// <p>Contains details of the fetched page.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Page  {
+pub struct Page {
     /// <p>A structure that contains values in multiple encoding formats.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::types::ValueHolder>>,
@@ -13,11 +13,11 @@ pub struct Page  {
 }
 impl Page {
     /// <p>A structure that contains values in multiple encoding formats.</p>
-    pub fn values(&self) -> std::option::Option<& [crate::types::ValueHolder]> {
+    pub fn values(&self) -> std::option::Option<&[crate::types::ValueHolder]> {
         self.values.as_deref()
     }
     /// <p>The token of the next page.</p>
-    pub fn next_page_token(&self) -> std::option::Option<& str> {
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl PageBuilder {
     /// <p>A structure that contains values in multiple encoding formats.</p>
     pub fn values(mut self, input: crate::types::ValueHolder) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input);
-                        self.values = Some(v);
-                        self
+        v.push(input);
+        self.values = Some(v);
+        self
     }
     /// <p>A structure that contains values in multiple encoding formats.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::ValueHolder>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ValueHolder>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// <p>The token of the next page.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,16 +62,14 @@ impl PageBuilder {
     }
     /// <p>The token of the next page.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input; self
+        self.next_page_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`Page`](crate::types::Page).
     pub fn build(self) -> crate::types::Page {
         crate::types::Page {
-            values: self.values
-            ,
-            next_page_token: self.next_page_token
-            ,
+            values: self.values,
+            next_page_token: self.next_page_token,
         }
     }
 }
-

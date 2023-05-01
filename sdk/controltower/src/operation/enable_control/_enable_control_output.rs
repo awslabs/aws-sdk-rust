@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableControlOutput  {
+pub struct EnableControlOutput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     #[doc(hidden)]
     pub operation_identifier: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct EnableControlOutput  {
 }
 impl EnableControlOutput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn operation_identifier(&self) -> std::option::Option<& str> {
+    pub fn operation_identifier(&self) -> std::option::Option<&str> {
         self.operation_identifier.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for EnableControlOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl EnableControlOutput {
     /// Creates a new builder-style object to manufacture [`EnableControlOutput`](crate::operation::enable_control::EnableControlOutput).
     pub fn builder() -> crate::operation::enable_control::builders::EnableControlOutputBuilder {
@@ -40,25 +40,27 @@ impl EnableControlOutputBuilder {
         self
     }
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn set_operation_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_identifier = input; self
+    pub fn set_operation_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.operation_identifier = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`EnableControlOutput`](crate::operation::enable_control::EnableControlOutput).
     pub fn build(self) -> crate::operation::enable_control::EnableControlOutput {
         crate::operation::enable_control::EnableControlOutput {
-            operation_identifier: self.operation_identifier
-            ,
+            operation_identifier: self.operation_identifier,
             _request_id: self._request_id,
         }
     }
 }
-

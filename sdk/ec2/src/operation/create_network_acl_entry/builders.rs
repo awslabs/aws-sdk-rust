@@ -4,53 +4,73 @@ pub use crate::operation::create_network_acl_entry::_create_network_acl_entry_ou
 pub use crate::operation::create_network_acl_entry::_create_network_acl_entry_input::CreateNetworkAclEntryInputBuilder;
 
 /// Fluent builder constructing a request to `CreateNetworkAclEntry`.
-/// 
-/// <p>Creates an entry (a rule) in a network ACL with the specified rule number. Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated with the ACL, we process the entries in the ACL according to the rule numbers, in ascending order. Each network ACL has a set of ingress rules and a separate set of egress rules.</p> 
-/// <p>We recommend that you leave room between the rule numbers (for example, 100, 110, 120, ...), and not number them one right after the other (for example, 101, 102, 103, ...). This makes it easier to add a rule between existing ones without having to renumber the rules.</p> 
-/// <p>After you add an entry, you can't modify it; you must either replace it, or create an entry and delete the old one.</p> 
+///
+/// <p>Creates an entry (a rule) in a network ACL with the specified rule number. Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated with the ACL, we process the entries in the ACL according to the rule numbers, in ascending order. Each network ACL has a set of ingress rules and a separate set of egress rules.</p>
+/// <p>We recommend that you leave room between the rule numbers (for example, 100, 110, 120, ...), and not number them one right after the other (for example, 101, 102, 103, ...). This makes it easier to add a rule between existing ones without having to renumber the rules.</p>
+/// <p>After you add an entry, you can't modify it; you must either replace it, or create an entry and delete the old one.</p>
 /// <p>For more information about network ACLs, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_ACLs.html">Network ACLs</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNetworkAclEntryFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryInputBuilder,
+    inner: crate::operation::create_network_acl_entry::builders::CreateNetworkAclEntryInputBuilder,
 }
-impl CreateNetworkAclEntryFluentBuilder  {
+impl CreateNetworkAclEntryFluentBuilder {
     /// Creates a new `CreateNetworkAclEntry`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_network_acl_entry::CreateNetworkAclEntry, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_network_acl_entry::CreateNetworkAclEntryError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_network_acl_entry::CreateNetworkAclEntryOutput, aws_smithy_http::result::SdkError<crate::operation::create_network_acl_entry::CreateNetworkAclEntryError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_network_acl_entry::CreateNetworkAclEntry,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_network_acl_entry::CreateNetworkAclEntryError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_network_acl_entry::CreateNetworkAclEntryOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_network_acl_entry::CreateNetworkAclEntryError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
     pub fn cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cidr_block(input.into());
@@ -87,7 +107,10 @@ impl CreateNetworkAclEntryFluentBuilder  {
         self
     }
     /// <p>ICMP protocol: The ICMP or ICMPv6 type and code. Required if specifying protocol 1 (ICMP) or protocol 58 (ICMPv6) with an IPv6 CIDR block.</p>
-    pub fn set_icmp_type_code(mut self, input: std::option::Option<crate::types::IcmpTypeCode>) -> Self {
+    pub fn set_icmp_type_code(
+        mut self,
+        input: std::option::Option<crate::types::IcmpTypeCode>,
+    ) -> Self {
         self.inner = self.inner.set_icmp_type_code(input);
         self
     }
@@ -141,17 +164,16 @@ impl CreateNetworkAclEntryFluentBuilder  {
         self.inner = self.inner.set_rule_action(input);
         self
     }
-    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p> 
+    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
     /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
     pub fn rule_number(mut self, input: i32) -> Self {
         self.inner = self.inner.rule_number(input);
         self
     }
-    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p> 
+    /// <p>The rule number for the entry (for example, 100). ACL entries are processed in ascending order by rule number.</p>
     /// <p>Constraints: Positive integer from 1 to 32766. The range 32767 to 65535 is reserved for internal use.</p>
     pub fn set_rule_number(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_rule_number(input);
         self
     }
 }
-

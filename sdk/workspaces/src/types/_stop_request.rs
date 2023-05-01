@@ -3,14 +3,14 @@
 /// <p>Describes the information used to stop a WorkSpace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopRequest  {
+pub struct StopRequest {
     /// <p>The identifier of the WorkSpace.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
 }
 impl StopRequest {
     /// <p>The identifier of the WorkSpace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl StopRequestBuilder {
     }
     /// <p>The identifier of the WorkSpace.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopRequest`](crate::types::StopRequest).
     pub fn build(self) -> crate::types::StopRequest {
         crate::types::StopRequest {
-            workspace_id: self.workspace_id
-            ,
+            workspace_id: self.workspace_id,
         }
     }
 }
-

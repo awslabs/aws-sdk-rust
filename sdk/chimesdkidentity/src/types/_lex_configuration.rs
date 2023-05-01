@@ -3,7 +3,7 @@
 /// <p>The configuration for an Amazon Lex V2 bot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LexConfiguration  {
+pub struct LexConfiguration {
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     #[doc(hidden)]
     pub responds_to: std::option::Option<crate::types::RespondsTo>,
@@ -19,19 +19,19 @@ pub struct LexConfiguration  {
 }
 impl LexConfiguration {
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
-    pub fn responds_to(&self) -> std::option::Option<& crate::types::RespondsTo> {
+    pub fn responds_to(&self) -> std::option::Option<&crate::types::RespondsTo> {
         self.responds_to.as_ref()
     }
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
-    pub fn lex_bot_alias_arn(&self) -> std::option::Option<& str> {
+    pub fn lex_bot_alias_arn(&self) -> std::option::Option<&str> {
         self.lex_bot_alias_arn.as_deref()
     }
     /// <p>Identifies the Amazon Lex V2 bot's language and locale. The string must match one of the supported locales in Amazon Lex V2. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> in the <i>Amazon Lex V2 Developer Guide</i>.</p>
-    pub fn locale_id(&self) -> std::option::Option<& str> {
+    pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
     /// <p>The name of the welcome intent configured in the Amazon Lex V2 bot.</p>
-    pub fn welcome_intent(&self) -> std::option::Option<& str> {
+    pub fn welcome_intent(&self) -> std::option::Option<&str> {
         self.welcome_intent.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl LexConfigurationBuilder {
     }
     /// <p>Determines whether the Amazon Lex V2 bot responds to all standard messages. Control messages are not supported.</p>
     pub fn set_responds_to(mut self, input: std::option::Option<crate::types::RespondsTo>) -> Self {
-        self.responds_to = input; self
+        self.responds_to = input;
+        self
     }
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
     pub fn lex_bot_alias_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +68,12 @@ impl LexConfigurationBuilder {
         self
     }
     /// <p>The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code> </p>
-    pub fn set_lex_bot_alias_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lex_bot_alias_arn = input; self
+    pub fn set_lex_bot_alias_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.lex_bot_alias_arn = input;
+        self
     }
     /// <p>Identifies the Amazon Lex V2 bot's language and locale. The string must match one of the supported locales in Amazon Lex V2. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> in the <i>Amazon Lex V2 Developer Guide</i>.</p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +82,8 @@ impl LexConfigurationBuilder {
     }
     /// <p>Identifies the Amazon Lex V2 bot's language and locale. The string must match one of the supported locales in Amazon Lex V2. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> in the <i>Amazon Lex V2 Developer Guide</i>.</p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input; self
+        self.locale_id = input;
+        self
     }
     /// <p>The name of the welcome intent configured in the Amazon Lex V2 bot.</p>
     pub fn welcome_intent(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +92,16 @@ impl LexConfigurationBuilder {
     }
     /// <p>The name of the welcome intent configured in the Amazon Lex V2 bot.</p>
     pub fn set_welcome_intent(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.welcome_intent = input; self
+        self.welcome_intent = input;
+        self
     }
     /// Consumes the builder and constructs a [`LexConfiguration`](crate::types::LexConfiguration).
     pub fn build(self) -> crate::types::LexConfiguration {
         crate::types::LexConfiguration {
-            responds_to: self.responds_to
-            ,
-            lex_bot_alias_arn: self.lex_bot_alias_arn
-            ,
-            locale_id: self.locale_id
-            ,
-            welcome_intent: self.welcome_intent
-            ,
+            responds_to: self.responds_to,
+            lex_bot_alias_arn: self.lex_bot_alias_arn,
+            locale_id: self.locale_id,
+            welcome_intent: self.welcome_intent,
         }
     }
 }
-

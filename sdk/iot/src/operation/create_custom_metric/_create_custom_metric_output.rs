@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomMetricOutput  {
+pub struct CreateCustomMetricOutput {
     /// <p> The name of the custom metric to be used in the metric report. </p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct CreateCustomMetricOutput  {
 }
 impl CreateCustomMetricOutput {
     /// <p> The name of the custom metric to be used in the metric report. </p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
-    pub fn metric_arn(&self) -> std::option::Option<& str> {
+    pub fn metric_arn(&self) -> std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateCustomMetricOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateCustomMetricOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomMetricOutput`](crate::operation::create_custom_metric::CreateCustomMetricOutput).
-    pub fn builder() -> crate::operation::create_custom_metric::builders::CreateCustomMetricOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_custom_metric::builders::CreateCustomMetricOutputBuilder {
         crate::operation::create_custom_metric::builders::CreateCustomMetricOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl CreateCustomMetricOutputBuilder {
     }
     /// <p> The name of the custom metric to be used in the metric report. </p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +60,24 @@ impl CreateCustomMetricOutputBuilder {
     }
     /// <p> The Amazon Resource Number (ARN) of the custom metric. For example, <code>arn:<i>aws-partition</i>:iot:<i>region</i>:<i>accountId</i>:custommetric/<i>metricName</i> </code> </p>
     pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_arn = input; self
+        self.metric_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateCustomMetricOutput`](crate::operation::create_custom_metric::CreateCustomMetricOutput).
     pub fn build(self) -> crate::operation::create_custom_metric::CreateCustomMetricOutput {
         crate::operation::create_custom_metric::CreateCustomMetricOutput {
-            metric_name: self.metric_name
-            ,
-            metric_arn: self.metric_arn
-            ,
+            metric_name: self.metric_name,
+            metric_arn: self.metric_arn,
             _request_id: self._request_id,
         }
     }
 }
-

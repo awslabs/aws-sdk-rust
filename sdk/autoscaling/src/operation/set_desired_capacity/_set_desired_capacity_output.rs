@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDesiredCapacityOutput  {
+pub struct SetDesiredCapacityOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SetDesiredCapacityOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SetDesiredCapacityOutput {
     /// Creates a new builder-style object to manufacture [`SetDesiredCapacityOutput`](crate::operation::set_desired_capacity::SetDesiredCapacityOutput).
-    pub fn builder() -> crate::operation::set_desired_capacity::builders::SetDesiredCapacityOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_desired_capacity::builders::SetDesiredCapacityOutputBuilder {
         crate::operation::set_desired_capacity::builders::SetDesiredCapacityOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct SetDesiredCapacityOutputBuilder {
 }
 impl SetDesiredCapacityOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SetDesiredCapacityOutput`](crate::operation::set_desired_capacity::SetDesiredCapacityOutput).
     pub fn build(self) -> crate::operation::set_desired_capacity::SetDesiredCapacityOutput {
         crate::operation::set_desired_capacity::SetDesiredCapacityOutput {
@@ -40,4 +41,3 @@ impl SetDesiredCapacityOutputBuilder {
         }
     }
 }
-

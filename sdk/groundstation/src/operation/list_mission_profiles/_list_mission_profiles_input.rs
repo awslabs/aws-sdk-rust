@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMissionProfilesInput  {
+pub struct ListMissionProfilesInput {
     /// <p>Maximum number of mission profiles returned.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -17,14 +17,16 @@ impl ListMissionProfilesInput {
         self.max_results
     }
     /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListMissionProfilesInput {
     /// Creates a new builder-style object to manufacture [`ListMissionProfilesInput`](crate::operation::list_mission_profiles::ListMissionProfilesInput).
-    pub fn builder() -> crate::operation::list_mission_profiles::builders::ListMissionProfilesInputBuilder {
-        crate::operation::list_mission_profiles::builders::ListMissionProfilesInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_mission_profiles::builders::ListMissionProfilesInputBuilder {
+        crate::operation::list_mission_profiles::builders::ListMissionProfilesInputBuilder::default(
+        )
     }
 }
 
@@ -43,7 +45,8 @@ impl ListMissionProfilesInputBuilder {
     }
     /// <p>Maximum number of mission profiles returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +55,21 @@ impl ListMissionProfilesInputBuilder {
     }
     /// <p>Next token returned in the request of a previous <code>ListMissionProfiles</code> call. Used to get the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListMissionProfilesInput`](crate::operation::list_mission_profiles::ListMissionProfilesInput).
-    pub fn build(self) -> Result<crate::operation::list_mission_profiles::ListMissionProfilesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_mission_profiles::ListMissionProfilesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_mission_profiles::ListMissionProfilesInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

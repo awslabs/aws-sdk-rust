@@ -4,50 +4,70 @@ pub use crate::operation::create_app_instance_bot::_create_app_instance_bot_outp
 pub use crate::operation::create_app_instance_bot::_create_app_instance_bot_input::CreateAppInstanceBotInputBuilder;
 
 /// Fluent builder constructing a request to `CreateAppInstanceBot`.
-/// 
+///
 /// <p>Creates a bot under an Amazon Chime <code>AppInstance</code>. The request consists of a unique <code>Configuration</code> and <code>Name</code> for that bot.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAppInstanceBotFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotInputBuilder,
+    inner: crate::operation::create_app_instance_bot::builders::CreateAppInstanceBotInputBuilder,
 }
-impl CreateAppInstanceBotFluentBuilder  {
+impl CreateAppInstanceBotFluentBuilder {
     /// Creates a new `CreateAppInstanceBot`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_app_instance_bot::CreateAppInstanceBot, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_app_instance_bot::CreateAppInstanceBotError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_app_instance_bot::CreateAppInstanceBotOutput, aws_smithy_http::result::SdkError<crate::operation::create_app_instance_bot::CreateAppInstanceBotError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_app_instance_bot::CreateAppInstanceBot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_app_instance_bot::CreateAppInstanceBotError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_app_instance_bot::CreateAppInstanceBotOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_app_instance_bot::CreateAppInstanceBotError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN of the <code>AppInstance</code> request.</p>
     pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_instance_arn(input.into());
@@ -84,7 +104,10 @@ impl CreateAppInstanceBotFluentBuilder  {
         self
     }
     /// <p>The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -98,7 +121,10 @@ impl CreateAppInstanceBotFluentBuilder  {
         self
     }
     /// <p>The tags assigned to the <code>AppInstanceBot</code>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -108,9 +134,11 @@ impl CreateAppInstanceBotFluentBuilder  {
         self
     }
     /// <p>Configuration information about the Amazon Lex V2 V2 bot.</p>
-    pub fn set_configuration(mut self, input: std::option::Option<crate::types::Configuration>) -> Self {
+    pub fn set_configuration(
+        mut self,
+        input: std::option::Option<crate::types::Configuration>,
+    ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
 }
-

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveRoleFromInstanceProfileOutput  {
+pub struct RemoveRoleFromInstanceProfileOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RemoveRoleFromInstanceProfileOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RemoveRoleFromInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`RemoveRoleFromInstanceProfileOutput`](crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput).
-    pub fn builder() -> crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileOutputBuilder {
+    pub fn builder() -> crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileOutputBuilder{
         crate::operation::remove_role_from_instance_profile::builders::RemoveRoleFromInstanceProfileOutputBuilder::default()
     }
 }
@@ -25,19 +25,21 @@ pub struct RemoveRoleFromInstanceProfileOutputBuilder {
 }
 impl RemoveRoleFromInstanceProfileOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RemoveRoleFromInstanceProfileOutput`](crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput).
-    pub fn build(self) -> crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput
+    {
         crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput {
             _request_id: self._request_id,
         }
     }
 }
-

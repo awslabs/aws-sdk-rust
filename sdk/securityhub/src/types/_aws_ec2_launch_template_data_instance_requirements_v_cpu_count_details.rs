@@ -3,7 +3,7 @@
 /// <p> The minimum and maximum number of vCPUs for an Amazon EC2 instance. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails  {
+pub struct AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
     /// <p> The maximum number of vCPUs. </p>
     #[doc(hidden)]
     pub max: i32,
@@ -23,7 +23,9 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
     /// Creates a new builder-style object to manufacture [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
-    pub fn builder() -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder
+    {
         crate::types::builders::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder::default()
     }
 }
@@ -43,7 +45,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
     }
     /// <p> The maximum number of vCPUs. </p>
     pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.max = input; self
+        self.max = input;
+        self
     }
     /// <p> The minimum number of vCPUs. </p>
     pub fn min(mut self, input: i32) -> Self {
@@ -52,18 +55,16 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetailsBuilder {
     }
     /// <p> The minimum number of vCPUs. </p>
     pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.min = input; self
+        self.min = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails).
-    pub fn build(self) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
+    pub fn build(
+        self,
+    ) -> crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
         crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsVCpuCountDetails {
-            max: self.max
-                .unwrap_or_default()
-            ,
-            min: self.min
-                .unwrap_or_default()
-            ,
+            max: self.max.unwrap_or_default(),
+            min: self.min.unwrap_or_default(),
         }
     }
 }
-

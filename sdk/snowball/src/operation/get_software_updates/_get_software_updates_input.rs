@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSoftwareUpdatesInput  {
+pub struct GetSoftwareUpdatesInput {
     /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl GetSoftwareUpdatesInput {
     /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl GetSoftwareUpdatesInput {
     /// Creates a new builder-style object to manufacture [`GetSoftwareUpdatesInput`](crate::operation::get_software_updates::GetSoftwareUpdatesInput).
-    pub fn builder() -> crate::operation::get_software_updates::builders::GetSoftwareUpdatesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_software_updates::builders::GetSoftwareUpdatesInputBuilder {
         crate::operation::get_software_updates::builders::GetSoftwareUpdatesInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetSoftwareUpdatesInputBuilder {
     }
     /// <p>The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSoftwareUpdatesInput`](crate::operation::get_software_updates::GetSoftwareUpdatesInput).
-    pub fn build(self) -> Result<crate::operation::get_software_updates::GetSoftwareUpdatesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_software_updates::GetSoftwareUpdatesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_software_updates::GetSoftwareUpdatesInput {
-                job_id: self.job_id
-                ,
-            }
+                job_id: self.job_id,
+            },
         )
     }
 }
-

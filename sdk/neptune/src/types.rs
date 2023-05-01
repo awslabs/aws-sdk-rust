@@ -200,4 +200,3 @@ pub mod builders;
 
 /// Error types that Amazon Neptune can respond with.
 pub mod error;
-

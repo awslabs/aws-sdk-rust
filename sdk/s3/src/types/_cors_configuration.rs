@@ -3,14 +3,14 @@
 /// <p>Describes the cross-origin access configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CorsConfiguration  {
+pub struct CorsConfiguration {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     #[doc(hidden)]
     pub cors_rules: std::option::Option<std::vec::Vec<crate::types::CorsRule>>,
 }
 impl CorsConfiguration {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
-    pub fn cors_rules(&self) -> std::option::Option<& [crate::types::CorsRule]> {
+    pub fn cors_rules(&self) -> std::option::Option<&[crate::types::CorsRule]> {
         self.cors_rules.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl CorsConfigurationBuilder {
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
     pub fn cors_rules(mut self, input: crate::types::CorsRule) -> Self {
         let mut v = self.cors_rules.unwrap_or_default();
-                        v.push(input);
-                        self.cors_rules = Some(v);
-                        self
+        v.push(input);
+        self.cors_rules = Some(v);
+        self
     }
     /// <p>A set of origins and methods (cross-origin access that you want to allow). You can add up to 100 rules to the configuration.</p>
-    pub fn set_cors_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::CorsRule>>) -> Self {
-        self.cors_rules = input; self
+    pub fn set_cors_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CorsRule>>,
+    ) -> Self {
+        self.cors_rules = input;
+        self
     }
     /// Consumes the builder and constructs a [`CorsConfiguration`](crate::types::CorsConfiguration).
     pub fn build(self) -> crate::types::CorsConfiguration {
         crate::types::CorsConfiguration {
-            cors_rules: self.cors_rules
-            ,
+            cors_rules: self.cors_rules,
         }
     }
 }
-

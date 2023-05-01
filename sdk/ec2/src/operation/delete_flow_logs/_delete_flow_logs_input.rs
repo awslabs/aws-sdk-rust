@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFlowLogsInput  {
+pub struct DeleteFlowLogsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>One or more flow log IDs.</p> 
+    /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
     #[doc(hidden)]
     pub flow_log_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,9 +16,9 @@ impl DeleteFlowLogsInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more flow log IDs.</p> 
+    /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn flow_log_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn flow_log_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.flow_log_ids.as_deref()
     }
 }
@@ -44,35 +44,40 @@ impl DeleteFlowLogsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Appends an item to `flow_log_ids`.
     ///
     /// To override the contents of this collection use [`set_flow_log_ids`](Self::set_flow_log_ids).
     ///
-    /// <p>One or more flow log IDs.</p> 
+    /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
     pub fn flow_log_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.flow_log_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.flow_log_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.flow_log_ids = Some(v);
+        self
     }
-    /// <p>One or more flow log IDs.</p> 
+    /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn set_flow_log_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.flow_log_ids = input; self
+    pub fn set_flow_log_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.flow_log_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFlowLogsInput`](crate::operation::delete_flow_logs::DeleteFlowLogsInput).
-    pub fn build(self) -> Result<crate::operation::delete_flow_logs::DeleteFlowLogsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_flow_logs::DeleteFlowLogsInput {
-                dry_run: self.dry_run
-                ,
-                flow_log_ids: self.flow_log_ids
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_flow_logs::DeleteFlowLogsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_flow_logs::DeleteFlowLogsInput {
+            dry_run: self.dry_run,
+            flow_log_ids: self.flow_log_ids,
+        })
     }
 }
-

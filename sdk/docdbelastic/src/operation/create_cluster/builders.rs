@@ -4,69 +4,85 @@ pub use crate::operation::create_cluster::_create_cluster_output::CreateClusterO
 pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCluster`.
-/// 
+///
 /// <p>Creates a new Elastic DocumentDB cluster and returns its Cluster structure.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
+    inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
 }
-impl CreateClusterFluentBuilder  {
+impl CreateClusterFluentBuilder {
     /// Creates a new `CreateCluster`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_cluster::CreateCluster, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_cluster::CreateClusterOutput, aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p> 
-    /// <p> <i>Constraints</i>:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> 
-    /// <li> <p>The first character must be a letter.</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
-    /// </ul> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_cluster::CreateCluster,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_cluster::CreateClusterOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
+    /// <p> <i>Constraints</i>:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
     /// <p> <i>Example</i>: <code>my-cluster</code> </p>
     pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
         self
     }
-    /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p> 
-    /// <p> <i>Constraints</i>:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> 
-    /// <li> <p>The first character must be a letter.</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the new Elastic DocumentDB cluster. This parameter is stored as a lowercase string.</p>
+    /// <p> <i>Constraints</i>:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
     /// <p> <i>Example</i>: <code>my-cluster</code> </p>
     pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_cluster_name(input);
@@ -82,45 +98,48 @@ impl CreateClusterFluentBuilder  {
         self.inner = self.inner.set_auth_type(input);
         self
     }
-    /// <p>The name of the Elastic DocumentDB cluster administrator.</p> 
-    /// <p> <i>Constraints</i>:</p> 
-    /// <ul> 
-    /// <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> 
-    /// <li> <p>The first character must be a letter.</p> </li> 
-    /// <li> <p>Cannot be a reserved word.</p> </li> 
+    /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
+    /// <p> <i>Constraints</i>:</p>
+    /// <ul>
+    /// <li> <p>Must be from 1 to 63 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
     pub fn admin_user_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.admin_user_name(input.into());
         self
     }
-    /// <p>The name of the Elastic DocumentDB cluster administrator.</p> 
-    /// <p> <i>Constraints</i>:</p> 
-    /// <ul> 
-    /// <li> <p>Must be from 1 to 63 letters or numbers.</p> </li> 
-    /// <li> <p>The first character must be a letter.</p> </li> 
-    /// <li> <p>Cannot be a reserved word.</p> </li> 
+    /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
+    /// <p> <i>Constraints</i>:</p>
+    /// <ul>
+    /// <li> <p>Must be from 1 to 63 letters or numbers.</p> </li>
+    /// <li> <p>The first character must be a letter.</p> </li>
+    /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
     pub fn set_admin_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_admin_user_name(input);
         self
     }
-    /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p> 
-    /// <p> <i>Constraints</i>:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain from 8 to 100 characters.</p> </li> 
-    /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li> 
+    /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
+    /// <p> <i>Constraints</i>:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
+    /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
     pub fn admin_user_password(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.admin_user_password(input.into());
         self
     }
-    /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p> 
-    /// <p> <i>Constraints</i>:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain from 8 to 100 characters.</p> </li> 
-    /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li> 
+    /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
+    /// <p> <i>Constraints</i>:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
+    /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
-    pub fn set_admin_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_admin_user_password(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_admin_user_password(input);
         self
     }
@@ -154,7 +173,10 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_vpc_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
@@ -168,19 +190,22 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>The Amazon EC2 subnet IDs for the new Elastic DocumentDB cluster.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
-    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p> 
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p> 
+    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
     /// <p>If an encryption key is not specified, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p> 
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p> 
+    /// <p>The KMS key identifier to use to encrypt the new Elastic DocumentDB cluster.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a cluster using the same Amazon account that owns this KMS encryption key, you can use the KMS key alias instead of the ARN as the KMS encryption key.</p>
     /// <p>If an encryption key is not specified, Elastic DocumentDB uses the default encryption key that KMS creates for your account. Your account has a different default encryption key for each Amazon Region.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
@@ -196,21 +221,24 @@ impl CreateClusterFluentBuilder  {
         self.inner = self.inner.set_client_token(input);
         self
     }
-    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> 
-    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> 
-    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p> 
-    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> 
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
     pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
-    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> 
-    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> 
-    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p> 
-    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> 
+    /// <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p>
+    /// <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p>
+    /// <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p>
+    /// <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
     /// <p> <i>Constraints</i>: Minimum 30-minute window.</p>
-    pub fn set_preferred_maintenance_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_preferred_maintenance_window(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
@@ -219,14 +247,22 @@ impl CreateClusterFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be assigned to the new Elastic DocumentDB cluster.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to be assigned to the new Elastic DocumentDB cluster.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

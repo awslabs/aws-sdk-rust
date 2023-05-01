@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for QueryObjects.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryObjectsInput  {
+pub struct QueryObjectsInput {
     /// <p>The ID of the pipeline.</p>
     #[doc(hidden)]
     pub pipeline_id: std::option::Option<std::string::String>,
@@ -22,19 +22,19 @@ pub struct QueryObjectsInput  {
 }
 impl QueryObjectsInput {
     /// <p>The ID of the pipeline.</p>
-    pub fn pipeline_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_id(&self) -> std::option::Option<&str> {
         self.pipeline_id.as_deref()
     }
     /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
-    pub fn query(&self) -> std::option::Option<& crate::types::Query> {
+    pub fn query(&self) -> std::option::Option<&crate::types::Query> {
         self.query.as_ref()
     }
     /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
-    pub fn sphere(&self) -> std::option::Option<& str> {
+    pub fn sphere(&self) -> std::option::Option<&str> {
         self.sphere.as_deref()
     }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
@@ -67,7 +67,8 @@ impl QueryObjectsInputBuilder {
     }
     /// <p>The ID of the pipeline.</p>
     pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_id = input; self
+        self.pipeline_id = input;
+        self
     }
     /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
     pub fn query(mut self, input: crate::types::Query) -> Self {
@@ -76,7 +77,8 @@ impl QueryObjectsInputBuilder {
     }
     /// <p>The query that defines the objects to be returned. The <code>Query</code> object can contain a maximum of ten selectors. The conditions in the query are limited to top-level String fields in the object. These filters can be applied to components, instances, and attempts.</p>
     pub fn set_query(mut self, input: std::option::Option<crate::types::Query>) -> Self {
-        self.query = input; self
+        self.query = input;
+        self
     }
     /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
     pub fn sphere(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl QueryObjectsInputBuilder {
     }
     /// <p>Indicates whether the query applies to components or instances. The possible values are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.</p>
     pub fn set_sphere(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sphere = input; self
+        self.sphere = input;
+        self
     }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl QueryObjectsInputBuilder {
     }
     /// <p>The starting point for the results to be returned. For the first call, this value should be empty. As long as there are more results, continue to call <code>QueryObjects</code> with the marker value from the previous call to retrieve the next set of results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -103,24 +107,22 @@ impl QueryObjectsInputBuilder {
     }
     /// <p>The maximum number of object names that <code>QueryObjects</code> will return in a single call. The default value is 100. </p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// Consumes the builder and constructs a [`QueryObjectsInput`](crate::operation::query_objects::QueryObjectsInput).
-    pub fn build(self) -> Result<crate::operation::query_objects::QueryObjectsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::query_objects::QueryObjectsInput {
-                pipeline_id: self.pipeline_id
-                ,
-                query: self.query
-                ,
-                sphere: self.sphere
-                ,
-                marker: self.marker
-                ,
-                limit: self.limit
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::query_objects::QueryObjectsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::query_objects::QueryObjectsInput {
+            pipeline_id: self.pipeline_id,
+            query: self.query,
+            sphere: self.sphere,
+            marker: self.marker,
+            limit: self.limit,
+        })
     }
 }
-

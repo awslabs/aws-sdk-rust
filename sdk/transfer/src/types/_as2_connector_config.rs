@@ -3,7 +3,7 @@
 /// <p>Contains the details for a connector object. The connector object is used for AS2 outbound processes, to connect the Transfer Family customer with the trading partner.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct As2ConnectorConfig  {
+pub struct As2ConnectorConfig {
     /// <p>A unique identifier for the AS2 local profile.</p>
     #[doc(hidden)]
     pub local_profile_id: std::option::Option<std::string::String>,
@@ -16,66 +16,66 @@ pub struct As2ConnectorConfig  {
     /// <p>Specifies whether the AS2 file is compressed.</p>
     #[doc(hidden)]
     pub compression: std::option::Option<crate::types::CompressionEnum>,
-    /// <p>The algorithm that is used to encrypt the file.</p> <note> 
-    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p> 
+    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
     /// </note>
     #[doc(hidden)]
     pub encryption_algorithm: std::option::Option<crate::types::EncryptionAlg>,
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
     #[doc(hidden)]
     pub signing_algorithm: std::option::Option<crate::types::SigningAlg>,
-    /// <p>The signing algorithm for the MDN response.</p> <note> 
-    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p> 
+    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     #[doc(hidden)]
     pub mdn_signing_algorithm: std::option::Option<crate::types::MdnSigningAlg>,
-    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li> 
-    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li> 
+    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
+    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub mdn_response: std::option::Option<crate::types::MdnResponse>,
 }
 impl As2ConnectorConfig {
     /// <p>A unique identifier for the AS2 local profile.</p>
-    pub fn local_profile_id(&self) -> std::option::Option<& str> {
+    pub fn local_profile_id(&self) -> std::option::Option<&str> {
         self.local_profile_id.as_deref()
     }
     /// <p>A unique identifier for the partner profile for the connector.</p>
-    pub fn partner_profile_id(&self) -> std::option::Option<& str> {
+    pub fn partner_profile_id(&self) -> std::option::Option<&str> {
         self.partner_profile_id.as_deref()
     }
     /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
-    pub fn message_subject(&self) -> std::option::Option<& str> {
+    pub fn message_subject(&self) -> std::option::Option<&str> {
         self.message_subject.as_deref()
     }
     /// <p>Specifies whether the AS2 file is compressed.</p>
-    pub fn compression(&self) -> std::option::Option<& crate::types::CompressionEnum> {
+    pub fn compression(&self) -> std::option::Option<&crate::types::CompressionEnum> {
         self.compression.as_ref()
     }
-    /// <p>The algorithm that is used to encrypt the file.</p> <note> 
-    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p> 
+    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
     /// </note>
-    pub fn encryption_algorithm(&self) -> std::option::Option<& crate::types::EncryptionAlg> {
+    pub fn encryption_algorithm(&self) -> std::option::Option<&crate::types::EncryptionAlg> {
         self.encryption_algorithm.as_ref()
     }
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
-    pub fn signing_algorithm(&self) -> std::option::Option<& crate::types::SigningAlg> {
+    pub fn signing_algorithm(&self) -> std::option::Option<&crate::types::SigningAlg> {
         self.signing_algorithm.as_ref()
     }
-    /// <p>The signing algorithm for the MDN response.</p> <note> 
-    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p> 
+    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
-    pub fn mdn_signing_algorithm(&self) -> std::option::Option<& crate::types::MdnSigningAlg> {
+    pub fn mdn_signing_algorithm(&self) -> std::option::Option<&crate::types::MdnSigningAlg> {
         self.mdn_signing_algorithm.as_ref()
     }
-    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li> 
-    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li> 
+    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
+    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
     /// </ul>
-    pub fn mdn_response(&self) -> std::option::Option<& crate::types::MdnResponse> {
+    pub fn mdn_response(&self) -> std::option::Option<&crate::types::MdnResponse> {
         self.mdn_response.as_ref()
     }
 }
@@ -107,7 +107,8 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>A unique identifier for the AS2 local profile.</p>
     pub fn set_local_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_profile_id = input; self
+        self.local_profile_id = input;
+        self
     }
     /// <p>A unique identifier for the partner profile for the connector.</p>
     pub fn partner_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +116,12 @@ impl As2ConnectorConfigBuilder {
         self
     }
     /// <p>A unique identifier for the partner profile for the connector.</p>
-    pub fn set_partner_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partner_profile_id = input; self
+    pub fn set_partner_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.partner_profile_id = input;
+        self
     }
     /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
     pub fn message_subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +130,8 @@ impl As2ConnectorConfigBuilder {
     }
     /// <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that are being sent with the connector.</p>
     pub fn set_message_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_subject = input; self
+        self.message_subject = input;
+        self
     }
     /// <p>Specifies whether the AS2 file is compressed.</p>
     pub fn compression(mut self, input: crate::types::CompressionEnum) -> Self {
@@ -133,21 +139,29 @@ impl As2ConnectorConfigBuilder {
         self
     }
     /// <p>Specifies whether the AS2 file is compressed.</p>
-    pub fn set_compression(mut self, input: std::option::Option<crate::types::CompressionEnum>) -> Self {
-        self.compression = input; self
+    pub fn set_compression(
+        mut self,
+        input: std::option::Option<crate::types::CompressionEnum>,
+    ) -> Self {
+        self.compression = input;
+        self
     }
-    /// <p>The algorithm that is used to encrypt the file.</p> <note> 
-    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p> 
+    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
     /// </note>
     pub fn encryption_algorithm(mut self, input: crate::types::EncryptionAlg) -> Self {
         self.encryption_algorithm = Some(input);
         self
     }
-    /// <p>The algorithm that is used to encrypt the file.</p> <note> 
-    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p> 
+    /// <p>The algorithm that is used to encrypt the file.</p> <note>
+    /// <p>You can only specify <code>NONE</code> if the URL for your connector uses HTTPS. This ensures that no traffic is sent in clear text.</p>
     /// </note>
-    pub fn set_encryption_algorithm(mut self, input: std::option::Option<crate::types::EncryptionAlg>) -> Self {
-        self.encryption_algorithm = input; self
+    pub fn set_encryption_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionAlg>,
+    ) -> Self {
+        self.encryption_algorithm = input;
+        self
     }
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlg) -> Self {
@@ -155,59 +169,62 @@ impl As2ConnectorConfigBuilder {
         self
     }
     /// <p>The algorithm that is used to sign the AS2 messages sent with the connector.</p>
-    pub fn set_signing_algorithm(mut self, input: std::option::Option<crate::types::SigningAlg>) -> Self {
-        self.signing_algorithm = input; self
+    pub fn set_signing_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::SigningAlg>,
+    ) -> Self {
+        self.signing_algorithm = input;
+        self
     }
-    /// <p>The signing algorithm for the MDN response.</p> <note> 
-    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p> 
+    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
     pub fn mdn_signing_algorithm(mut self, input: crate::types::MdnSigningAlg) -> Self {
         self.mdn_signing_algorithm = Some(input);
         self
     }
-    /// <p>The signing algorithm for the MDN response.</p> <note> 
-    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p> 
+    /// <p>The signing algorithm for the MDN response.</p> <note>
+    /// <p>If set to DEFAULT (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
     /// </note>
-    pub fn set_mdn_signing_algorithm(mut self, input: std::option::Option<crate::types::MdnSigningAlg>) -> Self {
-        self.mdn_signing_algorithm = input; self
+    pub fn set_mdn_signing_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::MdnSigningAlg>,
+    ) -> Self {
+        self.mdn_signing_algorithm = input;
+        self
     }
-    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li> 
-    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li> 
+    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
+    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
     /// </ul>
     pub fn mdn_response(mut self, input: crate::types::MdnResponse) -> Self {
         self.mdn_response = Some(input);
         self
     }
-    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li> 
-    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li> 
+    /// <p>Used for outbound requests (from an Transfer Family server to a partner AS2 server) to determine whether the partner response for transfers is synchronous or asynchronous. Specify either of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>SYNC</code>: The system expects a synchronous MDN response, confirming that the file was transferred successfully (or not).</p> </li>
+    /// <li> <p> <code>NONE</code>: Specifies that no MDN response is required.</p> </li>
     /// </ul>
-    pub fn set_mdn_response(mut self, input: std::option::Option<crate::types::MdnResponse>) -> Self {
-        self.mdn_response = input; self
+    pub fn set_mdn_response(
+        mut self,
+        input: std::option::Option<crate::types::MdnResponse>,
+    ) -> Self {
+        self.mdn_response = input;
+        self
     }
     /// Consumes the builder and constructs a [`As2ConnectorConfig`](crate::types::As2ConnectorConfig).
     pub fn build(self) -> crate::types::As2ConnectorConfig {
         crate::types::As2ConnectorConfig {
-            local_profile_id: self.local_profile_id
-            ,
-            partner_profile_id: self.partner_profile_id
-            ,
-            message_subject: self.message_subject
-            ,
-            compression: self.compression
-            ,
-            encryption_algorithm: self.encryption_algorithm
-            ,
-            signing_algorithm: self.signing_algorithm
-            ,
-            mdn_signing_algorithm: self.mdn_signing_algorithm
-            ,
-            mdn_response: self.mdn_response
-            ,
+            local_profile_id: self.local_profile_id,
+            partner_profile_id: self.partner_profile_id,
+            message_subject: self.message_subject,
+            compression: self.compression,
+            encryption_algorithm: self.encryption_algorithm,
+            signing_algorithm: self.signing_algorithm,
+            mdn_signing_algorithm: self.mdn_signing_algorithm,
+            mdn_response: self.mdn_response,
         }
     }
 }
-

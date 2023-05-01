@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventSubscriptionsInput  {
+pub struct ListEventSubscriptionsInput {
     /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListEventSubscriptionsInput  {
 }
 impl ListEventSubscriptionsInput {
     /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
@@ -29,7 +29,9 @@ impl ListEventSubscriptionsInput {
 }
 impl ListEventSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`ListEventSubscriptionsInput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsInput).
-    pub fn builder() -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsInputBuilder
+    {
         crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ListEventSubscriptionsInputBuilder {
     }
     /// <p>The ARN of the assessment template for which you want to list the existing event subscriptions.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl ListEventSubscriptionsInputBuilder {
     }
     /// <p>You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the <b>ListEventSubscriptions</b> action. Subsequent calls to the action fill <b>nextToken</b> in the request with the value of <b>NextToken</b> from the previous response to continue listing data.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +72,22 @@ impl ListEventSubscriptionsInputBuilder {
     }
     /// <p>You can use this parameter to indicate the maximum number of items you want in the response. The default value is 10. The maximum value is 500.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEventSubscriptionsInput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsInput).
-    pub fn build(self) -> Result<crate::operation::list_event_subscriptions::ListEventSubscriptionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_event_subscriptions::ListEventSubscriptionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_event_subscriptions::ListEventSubscriptionsInput {
-                resource_arn: self.resource_arn
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                resource_arn: self.resource_arn,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

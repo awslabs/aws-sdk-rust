@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbClusterEndpointInput  {
+pub struct DeleteDbClusterEndpointInput {
     /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
     #[doc(hidden)]
     pub db_cluster_endpoint_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteDbClusterEndpointInput {
     /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_endpoint_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_endpoint_identifier.as_deref()
     }
 }
 impl DeleteDbClusterEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterEndpointInput`](crate::operation::delete_db_cluster_endpoint::DeleteDbClusterEndpointInput).
-    pub fn builder() -> crate::operation::delete_db_cluster_endpoint::builders::DeleteDbClusterEndpointInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_db_cluster_endpoint::builders::DeleteDbClusterEndpointInputBuilder
+    {
         crate::operation::delete_db_cluster_endpoint::builders::DeleteDbClusterEndpointInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteDbClusterEndpointInputBuilder {
         self
     }
     /// <p>The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.</p>
-    pub fn set_db_cluster_endpoint_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_endpoint_identifier = input; self
+    pub fn set_db_cluster_endpoint_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_endpoint_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDbClusterEndpointInput`](crate::operation::delete_db_cluster_endpoint::DeleteDbClusterEndpointInput).
-    pub fn build(self) -> Result<crate::operation::delete_db_cluster_endpoint::DeleteDbClusterEndpointInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_db_cluster_endpoint::DeleteDbClusterEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_db_cluster_endpoint::DeleteDbClusterEndpointInput {
-                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier
-                ,
-            }
+                db_cluster_endpoint_identifier: self.db_cluster_endpoint_identifier,
+            },
         )
     }
 }
-

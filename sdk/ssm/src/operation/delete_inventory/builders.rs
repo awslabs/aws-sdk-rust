@@ -4,50 +4,66 @@ pub use crate::operation::delete_inventory::_delete_inventory_output::DeleteInve
 pub use crate::operation::delete_inventory::_delete_inventory_input::DeleteInventoryInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteInventory`.
-/// 
+///
 /// <p>Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory type is also referred to as deleting a custom inventory schema.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInventoryFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_inventory::builders::DeleteInventoryInputBuilder,
+    inner: crate::operation::delete_inventory::builders::DeleteInventoryInputBuilder,
 }
-impl DeleteInventoryFluentBuilder  {
+impl DeleteInventoryFluentBuilder {
     /// Creates a new `DeleteInventory`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_inventory::DeleteInventory, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_inventory::DeleteInventoryError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_inventory::DeleteInventoryOutput, aws_smithy_http::result::SdkError<crate::operation::delete_inventory::DeleteInventoryError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_inventory::DeleteInventory,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::delete_inventory::DeleteInventoryError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_inventory::DeleteInventoryOutput,
+        aws_smithy_http::result::SdkError<crate::operation::delete_inventory::DeleteInventoryError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>
     pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.type_name(input.into());
@@ -58,17 +74,23 @@ impl DeleteInventoryFluentBuilder  {
         self.inner = self.inner.set_type_name(input);
         self
     }
-    /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p> 
-    /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p> 
+    /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p>
+    /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p>
     /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You can recreate the schema later, if you want.</p>
-    pub fn schema_delete_option(mut self, input: crate::types::InventorySchemaDeleteOption) -> Self {
+    pub fn schema_delete_option(
+        mut self,
+        input: crate::types::InventorySchemaDeleteOption,
+    ) -> Self {
         self.inner = self.inner.schema_delete_option(input);
         self
     }
-    /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p> 
-    /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p> 
+    /// <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema). If you don't choose this option, the system only deletes existing inventory data associated with the custom inventory type. Choose one of the following options:</p>
+    /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the specified version, and any earlier versions. To enable this schema again, you must call the <code>PutInventory</code> operation for a version greater than the disabled version.</p>
     /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You can recreate the schema later, if you want.</p>
-    pub fn set_schema_delete_option(mut self, input: std::option::Option<crate::types::InventorySchemaDeleteOption>) -> Self {
+    pub fn set_schema_delete_option(
+        mut self,
+        input: std::option::Option<crate::types::InventorySchemaDeleteOption>,
+    ) -> Self {
         self.inner = self.inner.set_schema_delete_option(input);
         self
     }
@@ -93,4 +115,3 @@ impl DeleteInventoryFluentBuilder  {
         self
     }
 }
-

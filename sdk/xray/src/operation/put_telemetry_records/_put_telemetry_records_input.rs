@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutTelemetryRecordsInput  {
+pub struct PutTelemetryRecordsInput {
     /// <p></p>
     #[doc(hidden)]
     pub telemetry_records: std::option::Option<std::vec::Vec<crate::types::TelemetryRecord>>,
@@ -18,26 +18,28 @@ pub struct PutTelemetryRecordsInput  {
 }
 impl PutTelemetryRecordsInput {
     /// <p></p>
-    pub fn telemetry_records(&self) -> std::option::Option<& [crate::types::TelemetryRecord]> {
+    pub fn telemetry_records(&self) -> std::option::Option<&[crate::types::TelemetryRecord]> {
         self.telemetry_records.as_deref()
     }
     /// <p></p>
-    pub fn ec2_instance_id(&self) -> std::option::Option<& str> {
+    pub fn ec2_instance_id(&self) -> std::option::Option<&str> {
         self.ec2_instance_id.as_deref()
     }
     /// <p></p>
-    pub fn hostname(&self) -> std::option::Option<& str> {
+    pub fn hostname(&self) -> std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p></p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
 impl PutTelemetryRecordsInput {
     /// Creates a new builder-style object to manufacture [`PutTelemetryRecordsInput`](crate::operation::put_telemetry_records::PutTelemetryRecordsInput).
-    pub fn builder() -> crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder {
-        crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder {
+        crate::operation::put_telemetry_records::builders::PutTelemetryRecordsInputBuilder::default(
+        )
     }
 }
 
@@ -58,13 +60,17 @@ impl PutTelemetryRecordsInputBuilder {
     /// <p></p>
     pub fn telemetry_records(mut self, input: crate::types::TelemetryRecord) -> Self {
         let mut v = self.telemetry_records.unwrap_or_default();
-                        v.push(input);
-                        self.telemetry_records = Some(v);
-                        self
+        v.push(input);
+        self.telemetry_records = Some(v);
+        self
     }
     /// <p></p>
-    pub fn set_telemetry_records(mut self, input: std::option::Option<std::vec::Vec<crate::types::TelemetryRecord>>) -> Self {
-        self.telemetry_records = input; self
+    pub fn set_telemetry_records(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TelemetryRecord>>,
+    ) -> Self {
+        self.telemetry_records = input;
+        self
     }
     /// <p></p>
     pub fn ec2_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,7 +79,8 @@ impl PutTelemetryRecordsInputBuilder {
     }
     /// <p></p>
     pub fn set_ec2_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ec2_instance_id = input; self
+        self.ec2_instance_id = input;
+        self
     }
     /// <p></p>
     pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +89,8 @@ impl PutTelemetryRecordsInputBuilder {
     }
     /// <p></p>
     pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hostname = input; self
+        self.hostname = input;
+        self
     }
     /// <p></p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,22 +99,23 @@ impl PutTelemetryRecordsInputBuilder {
     }
     /// <p></p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutTelemetryRecordsInput`](crate::operation::put_telemetry_records::PutTelemetryRecordsInput).
-    pub fn build(self) -> Result<crate::operation::put_telemetry_records::PutTelemetryRecordsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_telemetry_records::PutTelemetryRecordsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_telemetry_records::PutTelemetryRecordsInput {
-                telemetry_records: self.telemetry_records
-                ,
-                ec2_instance_id: self.ec2_instance_id
-                ,
-                hostname: self.hostname
-                ,
-                resource_arn: self.resource_arn
-                ,
-            }
+                telemetry_records: self.telemetry_records,
+                ec2_instance_id: self.ec2_instance_id,
+                hostname: self.hostname,
+                resource_arn: self.resource_arn,
+            },
         )
     }
 }
-

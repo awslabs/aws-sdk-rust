@@ -3,7 +3,7 @@
 /// <p>The input source of the namespace that is located on your Amazon Elastic Kubernetes Service cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EksSourceClusterNamespace  {
+pub struct EksSourceClusterNamespace {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Elastic Kubernetes Service cluster. The format for this ARN is: arn:<code>aws</code>:eks:<code>region</code>:<code>account-id</code>:cluster/<code>cluster-name</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub eks_cluster_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EksSourceClusterNamespace  {
 }
 impl EksSourceClusterNamespace {
     /// <p>The Amazon Resource Name (ARN) of the Amazon Elastic Kubernetes Service cluster. The format for this ARN is: arn:<code>aws</code>:eks:<code>region</code>:<code>account-id</code>:cluster/<code>cluster-name</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn eks_cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn eks_cluster_arn(&self) -> std::option::Option<&str> {
         self.eks_cluster_arn.as_deref()
     }
     /// <p>Name of the namespace that is located on your Amazon Elastic Kubernetes Service cluster.</p>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl EksSourceClusterNamespaceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Amazon Elastic Kubernetes Service cluster. The format for this ARN is: arn:<code>aws</code>:eks:<code>region</code>:<code>account-id</code>:cluster/<code>cluster-name</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_eks_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.eks_cluster_arn = input; self
+        self.eks_cluster_arn = input;
+        self
     }
     /// <p>Name of the namespace that is located on your Amazon Elastic Kubernetes Service cluster.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl EksSourceClusterNamespaceBuilder {
     }
     /// <p>Name of the namespace that is located on your Amazon Elastic Kubernetes Service cluster.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// Consumes the builder and constructs a [`EksSourceClusterNamespace`](crate::types::EksSourceClusterNamespace).
     pub fn build(self) -> crate::types::EksSourceClusterNamespace {
         crate::types::EksSourceClusterNamespace {
-            eks_cluster_arn: self.eks_cluster_arn
-            ,
-            namespace: self.namespace
-            ,
+            eks_cluster_arn: self.eks_cluster_arn,
+            namespace: self.namespace,
         }
     }
 }
-

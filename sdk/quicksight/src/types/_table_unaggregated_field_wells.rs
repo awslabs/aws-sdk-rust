@@ -3,14 +3,14 @@
 /// <p>The unaggregated field well for the table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableUnaggregatedFieldWells  {
+pub struct TableUnaggregatedFieldWells {
     /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::types::UnaggregatedField>>,
 }
 impl TableUnaggregatedFieldWells {
     /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
-    pub fn values(&self) -> std::option::Option<& [crate::types::UnaggregatedField]> {
+    pub fn values(&self) -> std::option::Option<&[crate::types::UnaggregatedField]> {
         self.values.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl TableUnaggregatedFieldWellsBuilder {
     /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
     pub fn values(mut self, input: crate::types::UnaggregatedField) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input);
-                        self.values = Some(v);
-                        self
+        v.push(input);
+        self.values = Some(v);
+        self
     }
     /// <p>The values field well for a pivot table. Values are unaggregated for an unaggregated table.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::UnaggregatedField>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UnaggregatedField>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`TableUnaggregatedFieldWells`](crate::types::TableUnaggregatedFieldWells).
     pub fn build(self) -> crate::types::TableUnaggregatedFieldWells {
         crate::types::TableUnaggregatedFieldWells {
-            values: self.values
-            ,
+            values: self.values,
         }
     }
 }
-

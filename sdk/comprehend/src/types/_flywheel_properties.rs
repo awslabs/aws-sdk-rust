@@ -3,7 +3,7 @@
 /// <p>The flywheel properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FlywheelProperties  {
+pub struct FlywheelProperties {
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
     #[doc(hidden)]
     pub flywheel_arn: std::option::Option<std::string::String>,
@@ -43,51 +43,51 @@ pub struct FlywheelProperties  {
 }
 impl FlywheelProperties {
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
-    pub fn flywheel_arn(&self) -> std::option::Option<& str> {
+    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
         self.flywheel_arn.as_deref()
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
-    pub fn active_model_arn(&self) -> std::option::Option<& str> {
+    pub fn active_model_arn(&self) -> std::option::Option<&str> {
         self.active_model_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>Configuration about the custom classifier associated with the flywheel.</p>
-    pub fn task_config(&self) -> std::option::Option<& crate::types::TaskConfig> {
+    pub fn task_config(&self) -> std::option::Option<&crate::types::TaskConfig> {
         self.task_config.as_ref()
     }
     /// <p>Amazon S3 URI of the data lake location. </p>
-    pub fn data_lake_s3_uri(&self) -> std::option::Option<& str> {
+    pub fn data_lake_s3_uri(&self) -> std::option::Option<&str> {
         self.data_lake_s3_uri.as_deref()
     }
     /// <p>Data security configuration.</p>
-    pub fn data_security_config(&self) -> std::option::Option<& crate::types::DataSecurityConfig> {
+    pub fn data_security_config(&self) -> std::option::Option<&crate::types::DataSecurityConfig> {
         self.data_security_config.as_ref()
     }
     /// <p>The status of the flywheel.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::FlywheelStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::FlywheelStatus> {
         self.status.as_ref()
     }
     /// <p>Model type of the flywheel's model.</p>
-    pub fn model_type(&self) -> std::option::Option<& crate::types::ModelType> {
+    pub fn model_type(&self) -> std::option::Option<&crate::types::ModelType> {
         self.model_type.as_ref()
     }
     /// <p>A description of the status of the flywheel.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Creation time of the flywheel.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Last modified time for the flywheel.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The most recent flywheel iteration.</p>
-    pub fn latest_flywheel_iteration(&self) -> std::option::Option<& str> {
+    pub fn latest_flywheel_iteration(&self) -> std::option::Option<&str> {
         self.latest_flywheel_iteration.as_deref()
     }
 }
@@ -123,7 +123,8 @@ impl FlywheelPropertiesBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
     pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flywheel_arn = input; self
+        self.flywheel_arn = input;
+        self
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
     pub fn active_model_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +133,8 @@ impl FlywheelPropertiesBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the active model version.</p>
     pub fn set_active_model_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.active_model_arn = input; self
+        self.active_model_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,8 +142,12 @@ impl FlywheelPropertiesBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.</p>
-    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_access_role_arn = input; self
+    pub fn set_data_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_access_role_arn = input;
+        self
     }
     /// <p>Configuration about the custom classifier associated with the flywheel.</p>
     pub fn task_config(mut self, input: crate::types::TaskConfig) -> Self {
@@ -150,7 +156,8 @@ impl FlywheelPropertiesBuilder {
     }
     /// <p>Configuration about the custom classifier associated with the flywheel.</p>
     pub fn set_task_config(mut self, input: std::option::Option<crate::types::TaskConfig>) -> Self {
-        self.task_config = input; self
+        self.task_config = input;
+        self
     }
     /// <p>Amazon S3 URI of the data lake location. </p>
     pub fn data_lake_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +166,8 @@ impl FlywheelPropertiesBuilder {
     }
     /// <p>Amazon S3 URI of the data lake location. </p>
     pub fn set_data_lake_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_lake_s3_uri = input; self
+        self.data_lake_s3_uri = input;
+        self
     }
     /// <p>Data security configuration.</p>
     pub fn data_security_config(mut self, input: crate::types::DataSecurityConfig) -> Self {
@@ -167,8 +175,12 @@ impl FlywheelPropertiesBuilder {
         self
     }
     /// <p>Data security configuration.</p>
-    pub fn set_data_security_config(mut self, input: std::option::Option<crate::types::DataSecurityConfig>) -> Self {
-        self.data_security_config = input; self
+    pub fn set_data_security_config(
+        mut self,
+        input: std::option::Option<crate::types::DataSecurityConfig>,
+    ) -> Self {
+        self.data_security_config = input;
+        self
     }
     /// <p>The status of the flywheel.</p>
     pub fn status(mut self, input: crate::types::FlywheelStatus) -> Self {
@@ -177,7 +189,8 @@ impl FlywheelPropertiesBuilder {
     }
     /// <p>The status of the flywheel.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::FlywheelStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>Model type of the flywheel's model.</p>
     pub fn model_type(mut self, input: crate::types::ModelType) -> Self {
@@ -186,7 +199,8 @@ impl FlywheelPropertiesBuilder {
     }
     /// <p>Model type of the flywheel's model.</p>
     pub fn set_model_type(mut self, input: std::option::Option<crate::types::ModelType>) -> Self {
-        self.model_type = input; self
+        self.model_type = input;
+        self
     }
     /// <p>A description of the status of the flywheel.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,7 +209,8 @@ impl FlywheelPropertiesBuilder {
     }
     /// <p>A description of the status of the flywheel.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>Creation time of the flywheel.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -203,8 +218,12 @@ impl FlywheelPropertiesBuilder {
         self
     }
     /// <p>Creation time of the flywheel.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>Last modified time for the flywheel.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -212,8 +231,12 @@ impl FlywheelPropertiesBuilder {
         self
     }
     /// <p>Last modified time for the flywheel.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// <p>The most recent flywheel iteration.</p>
     pub fn latest_flywheel_iteration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,37 +244,28 @@ impl FlywheelPropertiesBuilder {
         self
     }
     /// <p>The most recent flywheel iteration.</p>
-    pub fn set_latest_flywheel_iteration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.latest_flywheel_iteration = input; self
+    pub fn set_latest_flywheel_iteration(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.latest_flywheel_iteration = input;
+        self
     }
     /// Consumes the builder and constructs a [`FlywheelProperties`](crate::types::FlywheelProperties).
     pub fn build(self) -> crate::types::FlywheelProperties {
         crate::types::FlywheelProperties {
-            flywheel_arn: self.flywheel_arn
-            ,
-            active_model_arn: self.active_model_arn
-            ,
-            data_access_role_arn: self.data_access_role_arn
-            ,
-            task_config: self.task_config
-            ,
-            data_lake_s3_uri: self.data_lake_s3_uri
-            ,
-            data_security_config: self.data_security_config
-            ,
-            status: self.status
-            ,
-            model_type: self.model_type
-            ,
-            message: self.message
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            latest_flywheel_iteration: self.latest_flywheel_iteration
-            ,
+            flywheel_arn: self.flywheel_arn,
+            active_model_arn: self.active_model_arn,
+            data_access_role_arn: self.data_access_role_arn,
+            task_config: self.task_config,
+            data_lake_s3_uri: self.data_lake_s3_uri,
+            data_security_config: self.data_security_config,
+            status: self.status,
+            model_type: self.model_type,
+            message: self.message,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
+            latest_flywheel_iteration: self.latest_flywheel_iteration,
         }
     }
 }
-

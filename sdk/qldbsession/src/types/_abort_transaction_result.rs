@@ -3,14 +3,14 @@
 /// <p>Contains the details of the aborted transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbortTransactionResult  {
+pub struct AbortTransactionResult {
     /// <p>Contains server-side performance information for the command.</p>
     #[doc(hidden)]
     pub timing_information: std::option::Option<crate::types::TimingInformation>,
 }
 impl AbortTransactionResult {
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<& crate::types::TimingInformation> {
+    pub fn timing_information(&self) -> std::option::Option<&crate::types::TimingInformation> {
         self.timing_information.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl AbortTransactionResultBuilder {
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn set_timing_information(mut self, input: std::option::Option<crate::types::TimingInformation>) -> Self {
-        self.timing_information = input; self
+    pub fn set_timing_information(
+        mut self,
+        input: std::option::Option<crate::types::TimingInformation>,
+    ) -> Self {
+        self.timing_information = input;
+        self
     }
     /// Consumes the builder and constructs a [`AbortTransactionResult`](crate::types::AbortTransactionResult).
     pub fn build(self) -> crate::types::AbortTransactionResult {
         crate::types::AbortTransactionResult {
-            timing_information: self.timing_information
-            ,
+            timing_information: self.timing_information,
         }
     }
 }
-

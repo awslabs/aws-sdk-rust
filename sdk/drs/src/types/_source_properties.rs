@@ -3,7 +3,7 @@
 /// <p>Properties of the Source Server machine.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceProperties  {
+pub struct SourceProperties {
     /// <p>The date and time the Source Properties were last updated on.</p>
     #[doc(hidden)]
     pub last_updated_date_time: std::option::Option<std::string::String>,
@@ -34,27 +34,27 @@ pub struct SourceProperties  {
 }
 impl SourceProperties {
     /// <p>The date and time the Source Properties were last updated on.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<& str> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&str> {
         self.last_updated_date_time.as_deref()
     }
     /// <p>The recommended EC2 instance type that will be used when recovering the Source Server.</p>
-    pub fn recommended_instance_type(&self) -> std::option::Option<& str> {
+    pub fn recommended_instance_type(&self) -> std::option::Option<&str> {
         self.recommended_instance_type.as_deref()
     }
     /// <p>Hints used to uniquely identify a machine.</p>
-    pub fn identification_hints(&self) -> std::option::Option<& crate::types::IdentificationHints> {
+    pub fn identification_hints(&self) -> std::option::Option<&crate::types::IdentificationHints> {
         self.identification_hints.as_ref()
     }
     /// <p>An array of network interfaces.</p>
-    pub fn network_interfaces(&self) -> std::option::Option<& [crate::types::NetworkInterface]> {
+    pub fn network_interfaces(&self) -> std::option::Option<&[crate::types::NetworkInterface]> {
         self.network_interfaces.as_deref()
     }
     /// <p>An array of disks.</p>
-    pub fn disks(&self) -> std::option::Option<& [crate::types::Disk]> {
+    pub fn disks(&self) -> std::option::Option<&[crate::types::Disk]> {
         self.disks.as_deref()
     }
     /// <p>An array of CPUs.</p>
-    pub fn cpus(&self) -> std::option::Option<& [crate::types::Cpu]> {
+    pub fn cpus(&self) -> std::option::Option<&[crate::types::Cpu]> {
         self.cpus.as_deref()
     }
     /// <p>The amount of RAM in bytes.</p>
@@ -62,7 +62,7 @@ impl SourceProperties {
         self.ram_bytes
     }
     /// <p>Operating system.</p>
-    pub fn os(&self) -> std::option::Option<& crate::types::Os> {
+    pub fn os(&self) -> std::option::Option<&crate::types::Os> {
         self.os.as_ref()
     }
     /// <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
@@ -84,7 +84,8 @@ pub struct SourcePropertiesBuilder {
     pub(crate) last_updated_date_time: std::option::Option<std::string::String>,
     pub(crate) recommended_instance_type: std::option::Option<std::string::String>,
     pub(crate) identification_hints: std::option::Option<crate::types::IdentificationHints>,
-    pub(crate) network_interfaces: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+    pub(crate) network_interfaces:
+        std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
     pub(crate) disks: std::option::Option<std::vec::Vec<crate::types::Disk>>,
     pub(crate) cpus: std::option::Option<std::vec::Vec<crate::types::Cpu>>,
     pub(crate) ram_bytes: std::option::Option<i64>,
@@ -98,8 +99,12 @@ impl SourcePropertiesBuilder {
         self
     }
     /// <p>The date and time the Source Properties were last updated on.</p>
-    pub fn set_last_updated_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_updated_date_time = input; self
+    pub fn set_last_updated_date_time(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_updated_date_time = input;
+        self
     }
     /// <p>The recommended EC2 instance type that will be used when recovering the Source Server.</p>
     pub fn recommended_instance_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +112,12 @@ impl SourcePropertiesBuilder {
         self
     }
     /// <p>The recommended EC2 instance type that will be used when recovering the Source Server.</p>
-    pub fn set_recommended_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recommended_instance_type = input; self
+    pub fn set_recommended_instance_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.recommended_instance_type = input;
+        self
     }
     /// <p>Hints used to uniquely identify a machine.</p>
     pub fn identification_hints(mut self, input: crate::types::IdentificationHints) -> Self {
@@ -116,8 +125,12 @@ impl SourcePropertiesBuilder {
         self
     }
     /// <p>Hints used to uniquely identify a machine.</p>
-    pub fn set_identification_hints(mut self, input: std::option::Option<crate::types::IdentificationHints>) -> Self {
-        self.identification_hints = input; self
+    pub fn set_identification_hints(
+        mut self,
+        input: std::option::Option<crate::types::IdentificationHints>,
+    ) -> Self {
+        self.identification_hints = input;
+        self
     }
     /// Appends an item to `network_interfaces`.
     ///
@@ -126,13 +139,17 @@ impl SourcePropertiesBuilder {
     /// <p>An array of network interfaces.</p>
     pub fn network_interfaces(mut self, input: crate::types::NetworkInterface) -> Self {
         let mut v = self.network_interfaces.unwrap_or_default();
-                        v.push(input);
-                        self.network_interfaces = Some(v);
-                        self
+        v.push(input);
+        self.network_interfaces = Some(v);
+        self
     }
     /// <p>An array of network interfaces.</p>
-    pub fn set_network_interfaces(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>) -> Self {
-        self.network_interfaces = input; self
+    pub fn set_network_interfaces(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NetworkInterface>>,
+    ) -> Self {
+        self.network_interfaces = input;
+        self
     }
     /// Appends an item to `disks`.
     ///
@@ -141,13 +158,17 @@ impl SourcePropertiesBuilder {
     /// <p>An array of disks.</p>
     pub fn disks(mut self, input: crate::types::Disk) -> Self {
         let mut v = self.disks.unwrap_or_default();
-                        v.push(input);
-                        self.disks = Some(v);
-                        self
+        v.push(input);
+        self.disks = Some(v);
+        self
     }
     /// <p>An array of disks.</p>
-    pub fn set_disks(mut self, input: std::option::Option<std::vec::Vec<crate::types::Disk>>) -> Self {
-        self.disks = input; self
+    pub fn set_disks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Disk>>,
+    ) -> Self {
+        self.disks = input;
+        self
     }
     /// Appends an item to `cpus`.
     ///
@@ -156,13 +177,17 @@ impl SourcePropertiesBuilder {
     /// <p>An array of CPUs.</p>
     pub fn cpus(mut self, input: crate::types::Cpu) -> Self {
         let mut v = self.cpus.unwrap_or_default();
-                        v.push(input);
-                        self.cpus = Some(v);
-                        self
+        v.push(input);
+        self.cpus = Some(v);
+        self
     }
     /// <p>An array of CPUs.</p>
-    pub fn set_cpus(mut self, input: std::option::Option<std::vec::Vec<crate::types::Cpu>>) -> Self {
-        self.cpus = input; self
+    pub fn set_cpus(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Cpu>>,
+    ) -> Self {
+        self.cpus = input;
+        self
     }
     /// <p>The amount of RAM in bytes.</p>
     pub fn ram_bytes(mut self, input: i64) -> Self {
@@ -171,7 +196,8 @@ impl SourcePropertiesBuilder {
     }
     /// <p>The amount of RAM in bytes.</p>
     pub fn set_ram_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.ram_bytes = input; self
+        self.ram_bytes = input;
+        self
     }
     /// <p>Operating system.</p>
     pub fn os(mut self, input: crate::types::Os) -> Self {
@@ -180,7 +206,8 @@ impl SourcePropertiesBuilder {
     }
     /// <p>Operating system.</p>
     pub fn set_os(mut self, input: std::option::Option<crate::types::Os>) -> Self {
-        self.os = input; self
+        self.os = input;
+        self
     }
     /// <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
     pub fn supports_nitro_instances(mut self, input: bool) -> Self {
@@ -189,31 +216,21 @@ impl SourcePropertiesBuilder {
     }
     /// <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
     pub fn set_supports_nitro_instances(mut self, input: std::option::Option<bool>) -> Self {
-        self.supports_nitro_instances = input; self
+        self.supports_nitro_instances = input;
+        self
     }
     /// Consumes the builder and constructs a [`SourceProperties`](crate::types::SourceProperties).
     pub fn build(self) -> crate::types::SourceProperties {
         crate::types::SourceProperties {
-            last_updated_date_time: self.last_updated_date_time
-            ,
-            recommended_instance_type: self.recommended_instance_type
-            ,
-            identification_hints: self.identification_hints
-            ,
-            network_interfaces: self.network_interfaces
-            ,
-            disks: self.disks
-            ,
-            cpus: self.cpus
-            ,
-            ram_bytes: self.ram_bytes
-                .unwrap_or_default()
-            ,
-            os: self.os
-            ,
-            supports_nitro_instances: self.supports_nitro_instances
-            ,
+            last_updated_date_time: self.last_updated_date_time,
+            recommended_instance_type: self.recommended_instance_type,
+            identification_hints: self.identification_hints,
+            network_interfaces: self.network_interfaces,
+            disks: self.disks,
+            cpus: self.cpus,
+            ram_bytes: self.ram_bytes.unwrap_or_default(),
+            os: self.os,
+            supports_nitro_instances: self.supports_nitro_instances,
         }
     }
 }
-

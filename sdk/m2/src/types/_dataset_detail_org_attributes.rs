@@ -22,7 +22,11 @@ impl DatasetDetailOrgAttributes {
     /// Tries to convert the enum instance into [`Gdg`](crate::types::DatasetDetailOrgAttributes::Gdg), extracting the inner [`GdgDetailAttributes`](crate::types::GdgDetailAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_gdg(&self) -> std::result::Result<&crate::types::GdgDetailAttributes, &Self> {
-        if let DatasetDetailOrgAttributes::Gdg(val) = &self { Ok(val) } else { Err(self) }
+        if let DatasetDetailOrgAttributes::Gdg(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Gdg`](crate::types::DatasetDetailOrgAttributes::Gdg).
     pub fn is_gdg(&self) -> bool {
@@ -31,7 +35,11 @@ impl DatasetDetailOrgAttributes {
     /// Tries to convert the enum instance into [`Vsam`](crate::types::DatasetDetailOrgAttributes::Vsam), extracting the inner [`VsamDetailAttributes`](crate::types::VsamDetailAttributes).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_vsam(&self) -> std::result::Result<&crate::types::VsamDetailAttributes, &Self> {
-        if let DatasetDetailOrgAttributes::Vsam(val) = &self { Ok(val) } else { Err(self) }
+        if let DatasetDetailOrgAttributes::Vsam(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Vsam`](crate::types::DatasetDetailOrgAttributes::Vsam).
     pub fn is_vsam(&self) -> bool {
@@ -42,4 +50,3 @@ impl DatasetDetailOrgAttributes {
         matches!(self, Self::Unknown)
     }
 }
-

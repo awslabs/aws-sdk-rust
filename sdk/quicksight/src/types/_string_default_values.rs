@@ -3,7 +3,7 @@
 /// <p>The default values of the <code>StringParameterDeclaration</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StringDefaultValues  {
+pub struct StringDefaultValues {
     /// <p>The dynamic value of the <code>StringDefaultValues</code>. Different defaults displayed according to users, groups, and values mapping.</p>
     #[doc(hidden)]
     pub dynamic_value: std::option::Option<crate::types::DynamicDefaultValue>,
@@ -13,11 +13,11 @@ pub struct StringDefaultValues  {
 }
 impl StringDefaultValues {
     /// <p>The dynamic value of the <code>StringDefaultValues</code>. Different defaults displayed according to users, groups, and values mapping.</p>
-    pub fn dynamic_value(&self) -> std::option::Option<& crate::types::DynamicDefaultValue> {
+    pub fn dynamic_value(&self) -> std::option::Option<&crate::types::DynamicDefaultValue> {
         self.dynamic_value.as_ref()
     }
     /// <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-    pub fn static_values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn static_values(&self) -> std::option::Option<&[std::string::String]> {
         self.static_values.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl StringDefaultValuesBuilder {
         self
     }
     /// <p>The dynamic value of the <code>StringDefaultValues</code>. Different defaults displayed according to users, groups, and values mapping.</p>
-    pub fn set_dynamic_value(mut self, input: std::option::Option<crate::types::DynamicDefaultValue>) -> Self {
-        self.dynamic_value = input; self
+    pub fn set_dynamic_value(
+        mut self,
+        input: std::option::Option<crate::types::DynamicDefaultValue>,
+    ) -> Self {
+        self.dynamic_value = input;
+        self
     }
     /// Appends an item to `static_values`.
     ///
@@ -52,22 +56,23 @@ impl StringDefaultValuesBuilder {
     /// <p>The static values of the <code>DecimalDefaultValues</code>.</p>
     pub fn static_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.static_values.unwrap_or_default();
-                        v.push(input.into());
-                        self.static_values = Some(v);
-                        self
+        v.push(input.into());
+        self.static_values = Some(v);
+        self
     }
     /// <p>The static values of the <code>DecimalDefaultValues</code>.</p>
-    pub fn set_static_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.static_values = input; self
+    pub fn set_static_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.static_values = input;
+        self
     }
     /// Consumes the builder and constructs a [`StringDefaultValues`](crate::types::StringDefaultValues).
     pub fn build(self) -> crate::types::StringDefaultValues {
         crate::types::StringDefaultValues {
-            dynamic_value: self.dynamic_value
-            ,
-            static_values: self.static_values
-            ,
+            dynamic_value: self.dynamic_value,
+            static_values: self.static_values,
         }
     }
 }
-

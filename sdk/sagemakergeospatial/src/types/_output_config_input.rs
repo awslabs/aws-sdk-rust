@@ -3,14 +3,14 @@
 /// <p>The response structure for an OutputConfig returned by an ExportEarthObservationJob.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputConfigInput  {
+pub struct OutputConfigInput {
     /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
     #[doc(hidden)]
     pub s3_data: std::option::Option<crate::types::ExportS3DataInput>,
 }
 impl OutputConfigInput {
     /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
-    pub fn s3_data(&self) -> std::option::Option<& crate::types::ExportS3DataInput> {
+    pub fn s3_data(&self) -> std::option::Option<&crate::types::ExportS3DataInput> {
         self.s3_data.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl OutputConfigInputBuilder {
         self
     }
     /// <p>Path to Amazon S3 storage location for the output configuration file.</p>
-    pub fn set_s3_data(mut self, input: std::option::Option<crate::types::ExportS3DataInput>) -> Self {
-        self.s3_data = input; self
+    pub fn set_s3_data(
+        mut self,
+        input: std::option::Option<crate::types::ExportS3DataInput>,
+    ) -> Self {
+        self.s3_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`OutputConfigInput`](crate::types::OutputConfigInput).
     pub fn build(self) -> crate::types::OutputConfigInput {
         crate::types::OutputConfigInput {
-            s3_data: self.s3_data
-            ,
+            s3_data: self.s3_data,
         }
     }
 }
-

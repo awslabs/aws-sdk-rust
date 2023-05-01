@@ -3,7 +3,7 @@
 /// <p>The network settings that DataSync Discovery uses to connect with your on-premises storage system's management interface.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiscoveryServerConfiguration  {
+pub struct DiscoveryServerConfiguration {
     /// <p>The domain name or IP address of your storage system's management interface.</p>
     #[doc(hidden)]
     pub server_hostname: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct DiscoveryServerConfiguration  {
 }
 impl DiscoveryServerConfiguration {
     /// <p>The domain name or IP address of your storage system's management interface.</p>
-    pub fn server_hostname(&self) -> std::option::Option<& str> {
+    pub fn server_hostname(&self) -> std::option::Option<&str> {
         self.server_hostname.as_deref()
     }
     /// <p>The network port for accessing the storage system's management interface.</p>
@@ -43,7 +43,8 @@ impl DiscoveryServerConfigurationBuilder {
     }
     /// <p>The domain name or IP address of your storage system's management interface.</p>
     pub fn set_server_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_hostname = input; self
+        self.server_hostname = input;
+        self
     }
     /// <p>The network port for accessing the storage system's management interface.</p>
     pub fn server_port(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl DiscoveryServerConfigurationBuilder {
     }
     /// <p>The network port for accessing the storage system's management interface.</p>
     pub fn set_server_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.server_port = input; self
+        self.server_port = input;
+        self
     }
     /// Consumes the builder and constructs a [`DiscoveryServerConfiguration`](crate::types::DiscoveryServerConfiguration).
     pub fn build(self) -> crate::types::DiscoveryServerConfiguration {
         crate::types::DiscoveryServerConfiguration {
-            server_hostname: self.server_hostname
-            ,
-            server_port: self.server_port
-            ,
+            server_hostname: self.server_hostname,
+            server_port: self.server_port,
         }
     }
 }
-

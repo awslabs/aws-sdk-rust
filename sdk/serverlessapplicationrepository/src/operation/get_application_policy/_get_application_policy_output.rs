@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationPolicyOutput  {
+pub struct GetApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
     #[doc(hidden)]
     pub statements: std::option::Option<std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
@@ -10,18 +10,19 @@ pub struct GetApplicationPolicyOutput  {
 }
 impl GetApplicationPolicyOutput {
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn statements(&self) -> std::option::Option<& [crate::types::ApplicationPolicyStatement]> {
+    pub fn statements(&self) -> std::option::Option<&[crate::types::ApplicationPolicyStatement]> {
         self.statements.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetApplicationPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetApplicationPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationPolicyOutput`](crate::operation::get_application_policy::GetApplicationPolicyOutput).
-    pub fn builder() -> crate::operation::get_application_policy::builders::GetApplicationPolicyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_application_policy::builders::GetApplicationPolicyOutputBuilder {
         crate::operation::get_application_policy::builders::GetApplicationPolicyOutputBuilder::default()
     }
 }
@@ -30,7 +31,8 @@ impl GetApplicationPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetApplicationPolicyOutputBuilder {
-    pub(crate) statements: std::option::Option<std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
+    pub(crate) statements:
+        std::option::Option<std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
     _request_id: Option<String>,
 }
 impl GetApplicationPolicyOutputBuilder {
@@ -41,30 +43,32 @@ impl GetApplicationPolicyOutputBuilder {
     /// <p>An array of policy statements applied to the application.</p>
     pub fn statements(mut self, input: crate::types::ApplicationPolicyStatement) -> Self {
         let mut v = self.statements.unwrap_or_default();
-                        v.push(input);
-                        self.statements = Some(v);
-                        self
+        v.push(input);
+        self.statements = Some(v);
+        self
     }
     /// <p>An array of policy statements applied to the application.</p>
-    pub fn set_statements(mut self, input: std::option::Option<std::vec::Vec<crate::types::ApplicationPolicyStatement>>) -> Self {
-        self.statements = input; self
+    pub fn set_statements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ApplicationPolicyStatement>>,
+    ) -> Self {
+        self.statements = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetApplicationPolicyOutput`](crate::operation::get_application_policy::GetApplicationPolicyOutput).
     pub fn build(self) -> crate::operation::get_application_policy::GetApplicationPolicyOutput {
         crate::operation::get_application_policy::GetApplicationPolicyOutput {
-            statements: self.statements
-            ,
+            statements: self.statements,
             _request_id: self._request_id,
         }
     }
 }
-

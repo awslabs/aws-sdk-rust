@@ -64,4 +64,3 @@ pub mod builders;
 
 /// Error types that Amazon Simple Notification Service can respond with.
 pub mod error;
-

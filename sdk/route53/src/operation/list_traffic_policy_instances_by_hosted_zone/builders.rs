@@ -4,53 +4,60 @@ pub use crate::operation::list_traffic_policy_instances_by_hosted_zone::_list_tr
 pub use crate::operation::list_traffic_policy_instances_by_hosted_zone::_list_traffic_policy_instances_by_hosted_zone_input::ListTrafficPolicyInstancesByHostedZoneInputBuilder;
 
 /// Fluent builder constructing a request to `ListTrafficPolicyInstancesByHostedZone`.
-/// 
-/// <p>Gets information about the traffic policy instances that you created in a specified hosted zone.</p> <note> 
-/// <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p> 
-/// </note> 
+///
+/// <p>Gets information about the traffic policy instances that you created in a specified hosted zone.</p> <note>
+/// <p>After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code> request, there's a brief delay while Amazon Route 53 creates the resource record sets that are specified in the traffic policy definition. For more information, see the <code>State</code> response element.</p>
+/// </note>
 /// <p>Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic policy instances, you can use the <code>MaxItems</code> parameter to list them in groups of up to 100.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListTrafficPolicyInstancesByHostedZoneFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_traffic_policy_instances_by_hosted_zone::builders::ListTrafficPolicyInstancesByHostedZoneInputBuilder,
 }
-impl ListTrafficPolicyInstancesByHostedZoneFluentBuilder  {
+impl ListTrafficPolicyInstancesByHostedZoneFluentBuilder {
     /// Creates a new `ListTrafficPolicyInstancesByHostedZone`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZone, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput, aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the hosted zone that you want to list traffic policy instances for.</p>
     pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hosted_zone_id(input.into());
@@ -61,27 +68,36 @@ impl ListTrafficPolicyInstancesByHostedZoneFluentBuilder  {
         self.inner = self.inner.set_hosted_zone_id(input);
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.</p> 
+    /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-    pub fn traffic_policy_instance_name_marker(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn traffic_policy_instance_name_marker(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.traffic_policy_instance_name_marker(input.into());
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.</p> 
+    /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancename</code>, specify the value of <code>TrafficPolicyInstanceNameMarker</code> from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-    pub fn set_traffic_policy_instance_name_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_traffic_policy_instance_name_marker(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_traffic_policy_instance_name_marker(input);
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.</p> 
+    /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
     pub fn traffic_policy_instance_type_marker(mut self, input: crate::types::RrType) -> Self {
         self.inner = self.inner.traffic_policy_instance_type_marker(input);
         self
     }
-    /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.</p> 
+    /// <p>If the value of <code>IsTruncated</code> in the previous response is true, you have more traffic policy instances. To get more traffic policy instances, submit another <code>ListTrafficPolicyInstances</code> request. For the value of <code>trafficpolicyinstancetype</code>, specify the value of <code>TrafficPolicyInstanceTypeMarker</code> from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.</p>
     /// <p>If the value of <code>IsTruncated</code> in the previous response was <code>false</code>, there are no more traffic policy instances to get.</p>
-    pub fn set_traffic_policy_instance_type_marker(mut self, input: std::option::Option<crate::types::RrType>) -> Self {
+    pub fn set_traffic_policy_instance_type_marker(
+        mut self,
+        input: std::option::Option<crate::types::RrType>,
+    ) -> Self {
         self.inner = self.inner.set_traffic_policy_instance_type_marker(input);
         self
     }
@@ -96,4 +112,3 @@ impl ListTrafficPolicyInstancesByHostedZoneFluentBuilder  {
         self
     }
 }
-

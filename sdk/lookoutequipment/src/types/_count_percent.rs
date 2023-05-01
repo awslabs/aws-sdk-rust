@@ -3,7 +3,7 @@
 /// <p> Entity that comprises information of count and percentage. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountPercent  {
+pub struct CountPercent {
     /// <p> Indicates the count of occurences of the given statistic. </p>
     #[doc(hidden)]
     pub count: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl CountPercentBuilder {
     }
     /// <p> Indicates the count of occurences of the given statistic. </p>
     pub fn set_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.count = input; self
+        self.count = input;
+        self
     }
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
     pub fn percentage(mut self, input: f32) -> Self {
@@ -52,17 +53,14 @@ impl CountPercentBuilder {
     }
     /// <p> Indicates the percentage of occurances of the given statistic. </p>
     pub fn set_percentage(mut self, input: std::option::Option<f32>) -> Self {
-        self.percentage = input; self
+        self.percentage = input;
+        self
     }
     /// Consumes the builder and constructs a [`CountPercent`](crate::types::CountPercent).
     pub fn build(self) -> crate::types::CountPercent {
         crate::types::CountPercent {
-            count: self.count
-            ,
-            percentage: self.percentage
-                .unwrap_or_default()
-            ,
+            count: self.count,
+            percentage: self.percentage.unwrap_or_default(),
         }
     }
 }
-

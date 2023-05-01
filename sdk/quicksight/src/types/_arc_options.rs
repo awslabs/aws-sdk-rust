@@ -3,14 +3,14 @@
 /// <p>The options that determine the arc thickness of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArcOptions  {
+pub struct ArcOptions {
     /// <p>The arc thickness of a <code>GaugeChartVisual</code>.</p>
     #[doc(hidden)]
     pub arc_thickness: std::option::Option<crate::types::ArcThickness>,
 }
 impl ArcOptions {
     /// <p>The arc thickness of a <code>GaugeChartVisual</code>.</p>
-    pub fn arc_thickness(&self) -> std::option::Option<& crate::types::ArcThickness> {
+    pub fn arc_thickness(&self) -> std::option::Option<&crate::types::ArcThickness> {
         self.arc_thickness.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ArcOptionsBuilder {
         self
     }
     /// <p>The arc thickness of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_arc_thickness(mut self, input: std::option::Option<crate::types::ArcThickness>) -> Self {
-        self.arc_thickness = input; self
+    pub fn set_arc_thickness(
+        mut self,
+        input: std::option::Option<crate::types::ArcThickness>,
+    ) -> Self {
+        self.arc_thickness = input;
+        self
     }
     /// Consumes the builder and constructs a [`ArcOptions`](crate::types::ArcOptions).
     pub fn build(self) -> crate::types::ArcOptions {
         crate::types::ArcOptions {
-            arc_thickness: self.arc_thickness
-            ,
+            arc_thickness: self.arc_thickness,
         }
     }
 }
-

@@ -3,14 +3,17 @@
 /// <p> Object containing the choice of application destination that you specify. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NoManagementPreference  {
+pub struct NoManagementPreference {
     /// <p> The choice of application destination that you specify. </p>
     #[doc(hidden)]
-    pub target_destination: std::option::Option<std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
+    pub target_destination:
+        std::option::Option<std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
 }
 impl NoManagementPreference {
     /// <p> The choice of application destination that you specify. </p>
-    pub fn target_destination(&self) -> std::option::Option<& [crate::types::NoPreferenceTargetDestination]> {
+    pub fn target_destination(
+        &self,
+    ) -> std::option::Option<&[crate::types::NoPreferenceTargetDestination]> {
         self.target_destination.as_deref()
     }
 }
@@ -25,7 +28,8 @@ impl NoManagementPreference {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct NoManagementPreferenceBuilder {
-    pub(crate) target_destination: std::option::Option<std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
+    pub(crate) target_destination:
+        std::option::Option<std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
 }
 impl NoManagementPreferenceBuilder {
     /// Appends an item to `target_destination`.
@@ -33,22 +37,27 @@ impl NoManagementPreferenceBuilder {
     /// To override the contents of this collection use [`set_target_destination`](Self::set_target_destination).
     ///
     /// <p> The choice of application destination that you specify. </p>
-    pub fn target_destination(mut self, input: crate::types::NoPreferenceTargetDestination) -> Self {
+    pub fn target_destination(
+        mut self,
+        input: crate::types::NoPreferenceTargetDestination,
+    ) -> Self {
         let mut v = self.target_destination.unwrap_or_default();
-                        v.push(input);
-                        self.target_destination = Some(v);
-                        self
+        v.push(input);
+        self.target_destination = Some(v);
+        self
     }
     /// <p> The choice of application destination that you specify. </p>
-    pub fn set_target_destination(mut self, input: std::option::Option<std::vec::Vec<crate::types::NoPreferenceTargetDestination>>) -> Self {
-        self.target_destination = input; self
+    pub fn set_target_destination(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NoPreferenceTargetDestination>>,
+    ) -> Self {
+        self.target_destination = input;
+        self
     }
     /// Consumes the builder and constructs a [`NoManagementPreference`](crate::types::NoManagementPreference).
     pub fn build(self) -> crate::types::NoManagementPreference {
         crate::types::NoManagementPreference {
-            target_destination: self.target_destination
-            ,
+            target_destination: self.target_destination,
         }
     }
 }
-

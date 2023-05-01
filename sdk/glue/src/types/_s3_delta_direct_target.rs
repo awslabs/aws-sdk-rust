@@ -3,7 +3,7 @@
 /// <p>Specifies a target that writes to a Delta Lake data source in Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3DeltaDirectTarget  {
+pub struct S3DeltaDirectTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -24,42 +24,48 @@ pub struct S3DeltaDirectTarget  {
     pub format: std::option::Option<crate::types::TargetFormat>,
     /// <p>Specifies additional connection options for the connector.</p>
     #[doc(hidden)]
-    pub additional_options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub additional_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A policy that specifies update behavior for the crawler.</p>
     #[doc(hidden)]
     pub schema_change_policy: std::option::Option<crate::types::DirectSchemaChangePolicy>,
 }
 impl S3DeltaDirectTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn partition_keys(&self) -> std::option::Option<& [std::vec::Vec<std::string::String>]> {
+    pub fn partition_keys(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.partition_keys.as_deref()
     }
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
-    pub fn path(&self) -> std::option::Option<& str> {
+    pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn compression(&self) -> std::option::Option<& crate::types::DeltaTargetCompressionType> {
+    pub fn compression(&self) -> std::option::Option<&crate::types::DeltaTargetCompressionType> {
         self.compression.as_ref()
     }
     /// <p>Specifies the data output format for the target.</p>
-    pub fn format(&self) -> std::option::Option<& crate::types::TargetFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::TargetFormat> {
         self.format.as_ref()
     }
     /// <p>Specifies additional connection options for the connector.</p>
-    pub fn additional_options(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.additional_options.as_ref()
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    pub fn schema_change_policy(&self) -> std::option::Option<& crate::types::DirectSchemaChangePolicy> {
+    pub fn schema_change_policy(
+        &self,
+    ) -> std::option::Option<&crate::types::DirectSchemaChangePolicy> {
         self.schema_change_policy.as_ref()
     }
 }
@@ -76,11 +82,13 @@ impl S3DeltaDirectTarget {
 pub struct S3DeltaDirectTargetBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) partition_keys: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub(crate) partition_keys:
+        std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     pub(crate) path: std::option::Option<std::string::String>,
     pub(crate) compression: std::option::Option<crate::types::DeltaTargetCompressionType>,
     pub(crate) format: std::option::Option<crate::types::TargetFormat>,
-    pub(crate) additional_options: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) additional_options:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) schema_change_policy: std::option::Option<crate::types::DirectSchemaChangePolicy>,
 }
 impl S3DeltaDirectTargetBuilder {
@@ -91,7 +99,8 @@ impl S3DeltaDirectTargetBuilder {
     }
     /// <p>The name of the data target.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `inputs`.
     ///
@@ -100,13 +109,17 @@ impl S3DeltaDirectTargetBuilder {
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-                        v.push(input.into());
-                        self.inputs = Some(v);
-                        self
+        v.push(input.into());
+        self.inputs = Some(v);
+        self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.inputs = input; self
+    pub fn set_inputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.inputs = input;
+        self
     }
     /// Appends an item to `partition_keys`.
     ///
@@ -115,13 +128,17 @@ impl S3DeltaDirectTargetBuilder {
     /// <p>Specifies native partitioning using a sequence of keys.</p>
     pub fn partition_keys(mut self, input: std::vec::Vec<std::string::String>) -> Self {
         let mut v = self.partition_keys.unwrap_or_default();
-                        v.push(input);
-                        self.partition_keys = Some(v);
-                        self
+        v.push(input);
+        self.partition_keys = Some(v);
+        self
     }
     /// <p>Specifies native partitioning using a sequence of keys.</p>
-    pub fn set_partition_keys(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
-        self.partition_keys = input; self
+    pub fn set_partition_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    ) -> Self {
+        self.partition_keys = input;
+        self
     }
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +147,8 @@ impl S3DeltaDirectTargetBuilder {
     }
     /// <p>The Amazon S3 path of your Delta Lake data source to write to.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input; self
+        self.path = input;
+        self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
     pub fn compression(mut self, input: crate::types::DeltaTargetCompressionType) -> Self {
@@ -138,8 +156,12 @@ impl S3DeltaDirectTargetBuilder {
         self
     }
     /// <p>Specifies how the data is compressed. This is generally not necessary if the data has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).</p>
-    pub fn set_compression(mut self, input: std::option::Option<crate::types::DeltaTargetCompressionType>) -> Self {
-        self.compression = input; self
+    pub fn set_compression(
+        mut self,
+        input: std::option::Option<crate::types::DeltaTargetCompressionType>,
+    ) -> Self {
+        self.compression = input;
+        self
     }
     /// <p>Specifies the data output format for the target.</p>
     pub fn format(mut self, input: crate::types::TargetFormat) -> Self {
@@ -148,22 +170,33 @@ impl S3DeltaDirectTargetBuilder {
     }
     /// <p>Specifies the data output format for the target.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::TargetFormat>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
     /// Adds a key-value pair to `additional_options`.
     ///
     /// To override the contents of this collection use [`set_additional_options`](Self::set_additional_options).
     ///
     /// <p>Specifies additional connection options for the connector.</p>
-    pub fn additional_options(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn additional_options(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.additional_options.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.additional_options = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.additional_options = Some(hash_map);
+        self
     }
     /// <p>Specifies additional connection options for the connector.</p>
-    pub fn set_additional_options(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.additional_options = input; self
+    pub fn set_additional_options(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.additional_options = input;
+        self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
     pub fn schema_change_policy(mut self, input: crate::types::DirectSchemaChangePolicy) -> Self {
@@ -171,29 +204,24 @@ impl S3DeltaDirectTargetBuilder {
         self
     }
     /// <p>A policy that specifies update behavior for the crawler.</p>
-    pub fn set_schema_change_policy(mut self, input: std::option::Option<crate::types::DirectSchemaChangePolicy>) -> Self {
-        self.schema_change_policy = input; self
+    pub fn set_schema_change_policy(
+        mut self,
+        input: std::option::Option<crate::types::DirectSchemaChangePolicy>,
+    ) -> Self {
+        self.schema_change_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3DeltaDirectTarget`](crate::types::S3DeltaDirectTarget).
     pub fn build(self) -> crate::types::S3DeltaDirectTarget {
         crate::types::S3DeltaDirectTarget {
-            name: self.name
-            ,
-            inputs: self.inputs
-            ,
-            partition_keys: self.partition_keys
-            ,
-            path: self.path
-            ,
-            compression: self.compression
-            ,
-            format: self.format
-            ,
-            additional_options: self.additional_options
-            ,
-            schema_change_policy: self.schema_change_policy
-            ,
+            name: self.name,
+            inputs: self.inputs,
+            partition_keys: self.partition_keys,
+            path: self.path,
+            compression: self.compression,
+            format: self.format,
+            additional_options: self.additional_options,
+            schema_change_policy: self.schema_change_policy,
         }
     }
 }
-

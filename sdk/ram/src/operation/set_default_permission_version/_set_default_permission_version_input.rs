@@ -2,38 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetDefaultPermissionVersionInput  {
+pub struct SetDefaultPermissionVersionInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
     #[doc(hidden)]
     pub permission_arn: std::option::Option<std::string::String>,
     /// <p>Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <code>ListPermissionVersions</code>.</p>
     #[doc(hidden)]
     pub permission_version: std::option::Option<i32>,
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl SetDefaultPermissionVersionInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
-    pub fn permission_arn(&self) -> std::option::Option<& str> {
+    pub fn permission_arn(&self) -> std::option::Option<&str> {
         self.permission_arn.as_deref()
     }
     /// <p>Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <code>ListPermissionVersions</code>.</p>
     pub fn permission_version(&self) -> std::option::Option<i32> {
         self.permission_version
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl SetDefaultPermissionVersionInput {
     /// Creates a new builder-style object to manufacture [`SetDefaultPermissionVersionInput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput).
-    pub fn builder() -> crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder {
+    pub fn builder() -> crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder{
         crate::operation::set_default_permission_version::builders::SetDefaultPermissionVersionInputBuilder::default()
     }
 }
@@ -54,7 +54,8 @@ impl SetDefaultPermissionVersionInputBuilder {
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the customer managed permission whose default version you want to change.</p>
     pub fn set_permission_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.permission_arn = input; self
+        self.permission_arn = input;
+        self
     }
     /// <p>Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <code>ListPermissionVersions</code>.</p>
     pub fn permission_version(mut self, input: i32) -> Self {
@@ -63,33 +64,36 @@ impl SetDefaultPermissionVersionInputBuilder {
     }
     /// <p>Specifies the version number that you want to designate as the default for customer managed permission. To see a list of all available version numbers, use <code>ListPermissionVersions</code>.</p>
     pub fn set_permission_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.permission_version = input; self
+        self.permission_version = input;
+        self
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`SetDefaultPermissionVersionInput`](crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput).
-    pub fn build(self) -> Result<crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::set_default_permission_version::SetDefaultPermissionVersionInput {
-                permission_arn: self.permission_arn
-                ,
-                permission_version: self.permission_version
-                ,
-                client_token: self.client_token
-                ,
-            }
+                permission_arn: self.permission_arn,
+                permission_version: self.permission_version,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The entity representing certificate data generated for managed endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Certificate  {
+pub struct Certificate {
     /// <p>The ARN of the certificate generated for managed endpoint.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Certificate  {
 }
 impl Certificate {
     /// <p>The ARN of the certificate generated for managed endpoint.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
-    pub fn certificate_data(&self) -> std::option::Option<& str> {
+    pub fn certificate_data(&self) -> std::option::Option<&str> {
         self.certificate_data.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl CertificateBuilder {
     }
     /// <p>The ARN of the certificate generated for managed endpoint.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input; self
+        self.certificate_arn = input;
+        self
     }
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
     pub fn certificate_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl CertificateBuilder {
     }
     /// <p>The base64 encoded PEM certificate data generated for managed endpoint.</p>
     pub fn set_certificate_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_data = input; self
+        self.certificate_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`Certificate`](crate::types::Certificate).
     pub fn build(self) -> crate::types::Certificate {
         crate::types::Certificate {
-            certificate_arn: self.certificate_arn
-            ,
-            certificate_data: self.certificate_data
-            ,
+            certificate_arn: self.certificate_arn,
+            certificate_data: self.certificate_data,
         }
     }
 }
-

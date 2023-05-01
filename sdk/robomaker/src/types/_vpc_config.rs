@@ -3,7 +3,7 @@
 /// <p>If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and two subnet IDs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfig  {
+pub struct VpcConfig {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
     #[doc(hidden)]
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,11 +16,11 @@ pub struct VpcConfig  {
 }
 impl VpcConfig {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
@@ -51,13 +51,17 @@ impl VpcConfigBuilder {
     /// <p>A list of one or more subnet IDs in your VPC.</p>
     pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnets = Some(v);
-                        self
+        v.push(input.into());
+        self.subnets = Some(v);
+        self
     }
     /// <p>A list of one or more subnet IDs in your VPC.</p>
-    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnets = input; self
+    pub fn set_subnets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnets = input;
+        self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -66,13 +70,17 @@ impl VpcConfigBuilder {
     /// <p>A list of one or more security groups IDs in your VPC.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_groups = Some(v);
-                        self
+        v.push(input.into());
+        self.security_groups = Some(v);
+        self
     }
     /// <p>A list of one or more security groups IDs in your VPC.</p>
-    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_groups = input; self
+    pub fn set_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_groups = input;
+        self
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub fn assign_public_ip(mut self, input: bool) -> Self {
@@ -81,19 +89,15 @@ impl VpcConfigBuilder {
     }
     /// <p>A boolean indicating whether to assign a public IP address.</p>
     pub fn set_assign_public_ip(mut self, input: std::option::Option<bool>) -> Self {
-        self.assign_public_ip = input; self
+        self.assign_public_ip = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcConfig`](crate::types::VpcConfig).
     pub fn build(self) -> crate::types::VpcConfig {
         crate::types::VpcConfig {
-            subnets: self.subnets
-            ,
-            security_groups: self.security_groups
-            ,
-            assign_public_ip: self.assign_public_ip
-                .unwrap_or_default()
-            ,
+            subnets: self.subnets,
+            security_groups: self.security_groups,
+            assign_public_ip: self.assign_public_ip.unwrap_or_default(),
         }
     }
 }
-

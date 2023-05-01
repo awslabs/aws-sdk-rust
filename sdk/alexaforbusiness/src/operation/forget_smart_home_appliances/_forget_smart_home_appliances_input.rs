@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForgetSmartHomeAppliancesInput  {
+pub struct ForgetSmartHomeAppliancesInput {
     /// <p>The room that the appliances are associated with.</p>
     #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
 }
 impl ForgetSmartHomeAppliancesInput {
     /// <p>The room that the appliances are associated with.</p>
-    pub fn room_arn(&self) -> std::option::Option<& str> {
+    pub fn room_arn(&self) -> std::option::Option<&str> {
         self.room_arn.as_deref()
     }
 }
 impl ForgetSmartHomeAppliancesInput {
     /// Creates a new builder-style object to manufacture [`ForgetSmartHomeAppliancesInput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput).
-    pub fn builder() -> crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesInputBuilder {
+    pub fn builder() -> crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesInputBuilder{
         crate::operation::forget_smart_home_appliances::builders::ForgetSmartHomeAppliancesInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl ForgetSmartHomeAppliancesInputBuilder {
     }
     /// <p>The room that the appliances are associated with.</p>
     pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_arn = input; self
+        self.room_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`ForgetSmartHomeAppliancesInput`](crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput).
-    pub fn build(self) -> Result<crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesInput {
-                room_arn: self.room_arn
-                ,
-            }
+                room_arn: self.room_arn,
+            },
         )
     }
 }
-

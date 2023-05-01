@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcEndpointServiceConfigurationsOutput  {
+pub struct DescribeVpcEndpointServiceConfigurationsOutput {
     /// <p>Information about the services.</p>
     #[doc(hidden)]
-    pub service_configurations: std::option::Option<std::vec::Vec<crate::types::ServiceConfiguration>>,
+    pub service_configurations:
+        std::option::Option<std::vec::Vec<crate::types::ServiceConfiguration>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DescribeVpcEndpointServiceConfigurationsOutput  {
 }
 impl DescribeVpcEndpointServiceConfigurationsOutput {
     /// <p>Information about the services.</p>
-    pub fn service_configurations(&self) -> std::option::Option<& [crate::types::ServiceConfiguration]> {
+    pub fn service_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::ServiceConfiguration]> {
         self.service_configurations.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeVpcEndpointServiceConfigurationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeVpcEndpointServiceConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointServiceConfigurationsOutput`](crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsOutput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsOutputBuilder{
         crate::operation::describe_vpc_endpoint_service_configurations::builders::DescribeVpcEndpointServiceConfigurationsOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DescribeVpcEndpointServiceConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeVpcEndpointServiceConfigurationsOutputBuilder {
-    pub(crate) service_configurations: std::option::Option<std::vec::Vec<crate::types::ServiceConfiguration>>,
+    pub(crate) service_configurations:
+        std::option::Option<std::vec::Vec<crate::types::ServiceConfiguration>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +53,17 @@ impl DescribeVpcEndpointServiceConfigurationsOutputBuilder {
     /// <p>Information about the services.</p>
     pub fn service_configurations(mut self, input: crate::types::ServiceConfiguration) -> Self {
         let mut v = self.service_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.service_configurations = Some(v);
-                        self
+        v.push(input);
+        self.service_configurations = Some(v);
+        self
     }
     /// <p>Information about the services.</p>
-    pub fn set_service_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceConfiguration>>) -> Self {
-        self.service_configurations = input; self
+    pub fn set_service_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ServiceConfiguration>>,
+    ) -> Self {
+        self.service_configurations = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +72,20 @@ impl DescribeVpcEndpointServiceConfigurationsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointServiceConfigurationsOutput`](crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsOutput).
-    pub fn build(self) -> crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsOutput {
+    pub fn build(self) -> crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsOutput{
         crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsOutput {
             service_configurations: self.service_configurations
             ,
@@ -86,4 +95,3 @@ impl DescribeVpcEndpointServiceConfigurationsOutputBuilder {
         }
     }
 }
-

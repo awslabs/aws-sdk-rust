@@ -3,7 +3,7 @@
 /// <p>Formatting configuration for gradient color.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ConditionalFormattingGradientColor  {
+pub struct ConditionalFormattingGradientColor {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct ConditionalFormattingGradientColor  {
 }
 impl ConditionalFormattingGradientColor {
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
-    pub fn expression(&self) -> std::option::Option<& str> {
+    pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>Determines the color.</p>
-    pub fn color(&self) -> std::option::Option<& crate::types::GradientColor> {
+    pub fn color(&self) -> std::option::Option<&crate::types::GradientColor> {
         self.color.as_ref()
     }
 }
-impl  std::fmt::Debug for ConditionalFormattingGradientColor  {
+impl std::fmt::Debug for ConditionalFormattingGradientColor {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ConditionalFormattingGradientColor");
         formatter.field("expression", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl ConditionalFormattingGradientColorBuilder {
     }
     /// <p>The expression that determines the formatting configuration for gradient color.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input; self
+        self.expression = input;
+        self
     }
     /// <p>Determines the color.</p>
     pub fn color(mut self, input: crate::types::GradientColor) -> Self {
@@ -60,15 +61,14 @@ impl ConditionalFormattingGradientColorBuilder {
     }
     /// <p>Determines the color.</p>
     pub fn set_color(mut self, input: std::option::Option<crate::types::GradientColor>) -> Self {
-        self.color = input; self
+        self.color = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingGradientColor`](crate::types::ConditionalFormattingGradientColor).
     pub fn build(self) -> crate::types::ConditionalFormattingGradientColor {
         crate::types::ConditionalFormattingGradientColor {
-            expression: self.expression
-            ,
-            color: self.color
-            ,
+            expression: self.expression,
+            color: self.color,
         }
     }
 }
@@ -80,4 +80,3 @@ impl std::fmt::Debug for ConditionalFormattingGradientColorBuilder {
         formatter.finish()
     }
 }
-

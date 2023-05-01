@@ -3,7 +3,7 @@
 /// <p>The request to list invalidations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInvalidationsInput  {
+pub struct ListInvalidationsInput {
     /// <p>The distribution's ID.</p>
     #[doc(hidden)]
     pub distribution_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct ListInvalidationsInput  {
 }
 impl ListInvalidationsInput {
     /// <p>The distribution's ID.</p>
-    pub fn distribution_id(&self) -> std::option::Option<& str> {
+    pub fn distribution_id(&self) -> std::option::Option<&str> {
         self.distribution_id.as_deref()
     }
     /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of invalidation batches that you want in the response body.</p>
@@ -30,7 +30,8 @@ impl ListInvalidationsInput {
 }
 impl ListInvalidationsInput {
     /// Creates a new builder-style object to manufacture [`ListInvalidationsInput`](crate::operation::list_invalidations::ListInvalidationsInput).
-    pub fn builder() -> crate::operation::list_invalidations::builders::ListInvalidationsInputBuilder {
+    pub fn builder() -> crate::operation::list_invalidations::builders::ListInvalidationsInputBuilder
+    {
         crate::operation::list_invalidations::builders::ListInvalidationsInputBuilder::default()
     }
 }
@@ -51,7 +52,8 @@ impl ListInvalidationsInputBuilder {
     }
     /// <p>The distribution's ID.</p>
     pub fn set_distribution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.distribution_id = input; self
+        self.distribution_id = input;
+        self
     }
     /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +62,8 @@ impl ListInvalidationsInputBuilder {
     }
     /// <p>Use this parameter when paginating results to indicate where to begin in your list of invalidation batches. Because the results are returned in decreasing order from most recent to oldest, the most recent results are on the first page, the second page will contain earlier results, and so on. To get the next page of results, set <code>Marker</code> to the value of the <code>NextMarker</code> from the current page's response. This value is the same as the ID of the last invalidation batch on that page.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// <p>The maximum number of invalidation batches that you want in the response body.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -69,20 +72,22 @@ impl ListInvalidationsInputBuilder {
     }
     /// <p>The maximum number of invalidation batches that you want in the response body.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input; self
+        self.max_items = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListInvalidationsInput`](crate::operation::list_invalidations::ListInvalidationsInput).
-    pub fn build(self) -> Result<crate::operation::list_invalidations::ListInvalidationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_invalidations::ListInvalidationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_invalidations::ListInvalidationsInput {
-                distribution_id: self.distribution_id
-                ,
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-            }
+                distribution_id: self.distribution_id,
+                marker: self.marker,
+                max_items: self.max_items,
+            },
         )
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let ruletype = unimplemented!();
 /// match ruletype {
@@ -31,14 +31,22 @@
 /// Specifically, when `ruletype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `RuleType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>An enumerated type that determines how the evaluated rules are processed. RuleType can be one of the following:</p> <p>ATLEAST - At least N routing controls must be set. You specify N as the Threshold in the rule configuration.</p> <p>AND - All routing controls must be set. This is a shortcut for "At least N," where N is the total number of controls in the rule.</p> <p>OR - Any control must be set. This is a shortcut for "At least N," where N is 1.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum RuleType {
     #[allow(missing_docs)] // documentation missing in model
     And,
@@ -47,43 +55,42 @@ pub enum RuleType {
     #[allow(missing_docs)] // documentation missing in model
     Or,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for RuleType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AND" => RuleType::And,
-"ATLEAST" => RuleType::Atleast,
-"OR" => RuleType::Or,
-other => RuleType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for RuleType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(RuleType::from(s))
-                }
-            }
-impl RuleType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    RuleType::And => "AND",
-    RuleType::Atleast => "ATLEAST",
-    RuleType::Or => "OR",
-    RuleType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AND" => RuleType::And,
+            "ATLEAST" => RuleType::Atleast,
+            "OR" => RuleType::Or,
+            other => RuleType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AND", "ATLEAST", "OR"]
-                }
-            }
-impl AsRef<str> for RuleType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for RuleType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RuleType::from(s))
+    }
+}
+impl RuleType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            RuleType::And => "AND",
+            RuleType::Atleast => "ATLEAST",
+            RuleType::Or => "OR",
+            RuleType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AND", "ATLEAST", "OR"]
+    }
+}
+impl AsRef<str> for RuleType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

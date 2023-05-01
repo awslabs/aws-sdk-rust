@@ -4,50 +4,66 @@ pub use crate::operation::create_domain::_create_domain_output::CreateDomainOutp
 pub use crate::operation::create_domain::_create_domain_input::CreateDomainInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDomain`.
-/// 
+///
 /// <p>Creates an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating and managing Amazon OpenSearch Service domains</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDomainFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_domain::builders::CreateDomainInputBuilder,
+    inner: crate::operation::create_domain::builders::CreateDomainInputBuilder,
 }
-impl CreateDomainFluentBuilder  {
+impl CreateDomainFluentBuilder {
     /// Creates a new `CreateDomain`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_domain::CreateDomain, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_domain::CreateDomainOutput, aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_domain::CreateDomain,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_domain::CreateDomainOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_domain::CreateDomainError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -74,7 +90,10 @@ impl CreateDomainFluentBuilder  {
         self
     }
     /// <p>Container for the cluster configuration of a domain.</p>
-    pub fn set_cluster_config(mut self, input: std::option::Option<crate::types::ClusterConfig>) -> Self {
+    pub fn set_cluster_config(
+        mut self,
+        input: std::option::Option<crate::types::ClusterConfig>,
+    ) -> Self {
         self.inner = self.inner.set_cluster_config(input);
         self
     }
@@ -104,7 +123,10 @@ impl CreateDomainFluentBuilder  {
         self
     }
     /// <p>DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.</p>
-    pub fn set_snapshot_options(mut self, input: std::option::Option<crate::types::SnapshotOptions>) -> Self {
+    pub fn set_snapshot_options(
+        mut self,
+        input: std::option::Option<crate::types::SnapshotOptions>,
+    ) -> Self {
         self.inner = self.inner.set_snapshot_options(input);
         self
     }
@@ -124,27 +146,42 @@ impl CreateDomainFluentBuilder  {
         self
     }
     /// <p>Key-value pairs to configure Amazon Cognito authentication. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
-    pub fn set_cognito_options(mut self, input: std::option::Option<crate::types::CognitoOptions>) -> Self {
+    pub fn set_cognito_options(
+        mut self,
+        input: std::option::Option<crate::types::CognitoOptions>,
+    ) -> Self {
         self.inner = self.inner.set_cognito_options(input);
         self
     }
     /// <p>Key-value pairs to enable encryption at rest.</p>
-    pub fn encryption_at_rest_options(mut self, input: crate::types::EncryptionAtRestOptions) -> Self {
+    pub fn encryption_at_rest_options(
+        mut self,
+        input: crate::types::EncryptionAtRestOptions,
+    ) -> Self {
         self.inner = self.inner.encryption_at_rest_options(input);
         self
     }
     /// <p>Key-value pairs to enable encryption at rest.</p>
-    pub fn set_encryption_at_rest_options(mut self, input: std::option::Option<crate::types::EncryptionAtRestOptions>) -> Self {
+    pub fn set_encryption_at_rest_options(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionAtRestOptions>,
+    ) -> Self {
         self.inner = self.inner.set_encryption_at_rest_options(input);
         self
     }
     /// <p>Enables node-to-node encryption.</p>
-    pub fn node_to_node_encryption_options(mut self, input: crate::types::NodeToNodeEncryptionOptions) -> Self {
+    pub fn node_to_node_encryption_options(
+        mut self,
+        input: crate::types::NodeToNodeEncryptionOptions,
+    ) -> Self {
         self.inner = self.inner.node_to_node_encryption_options(input);
         self
     }
     /// <p>Enables node-to-node encryption.</p>
-    pub fn set_node_to_node_encryption_options(mut self, input: std::option::Option<crate::types::NodeToNodeEncryptionOptions>) -> Self {
+    pub fn set_node_to_node_encryption_options(
+        mut self,
+        input: std::option::Option<crate::types::NodeToNodeEncryptionOptions>,
+    ) -> Self {
         self.inner = self.inner.set_node_to_node_encryption_options(input);
         self
     }
@@ -152,27 +189,36 @@ impl CreateDomainFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_advanced_options`](Self::set_advanced_options).
     ///
-    /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p> 
-    /// <ul> 
-    /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li> 
-    /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li> 
-    /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li> 
-    /// <li> <p> <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li> 
-    /// </ul> 
+    /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
+    /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>
+    /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
+    /// <li> <p> <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
-    pub fn advanced_options(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn advanced_options(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.advanced_options(k.into(), v.into());
         self
     }
-    /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p> 
-    /// <ul> 
-    /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li> 
-    /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li> 
-    /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li> 
-    /// <li> <p> <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li> 
-    /// </ul> 
+    /// <p>Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.</p> </li>
+    /// <li> <p> <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.</p> </li>
+    /// <li> <p> <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.</p> </li>
+    /// <li> <p> <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.</p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced cluster parameters</a>.</p>
-    pub fn set_advanced_options(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_advanced_options(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_advanced_options(input);
         self
     }
@@ -181,12 +227,21 @@ impl CreateDomainFluentBuilder  {
     /// To override the contents of this collection use [`set_log_publishing_options`](Self::set_log_publishing_options).
     ///
     /// <p>Key-value pairs to configure slow log publishing.</p>
-    pub fn log_publishing_options(mut self, k: crate::types::LogType, v: crate::types::LogPublishingOption) -> Self {
+    pub fn log_publishing_options(
+        mut self,
+        k: crate::types::LogType,
+        v: crate::types::LogPublishingOption,
+    ) -> Self {
         self.inner = self.inner.log_publishing_options(k, v);
         self
     }
     /// <p>Key-value pairs to configure slow log publishing.</p>
-    pub fn set_log_publishing_options(mut self, input: std::option::Option<std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>>) -> Self {
+    pub fn set_log_publishing_options(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<crate::types::LogType, crate::types::LogPublishingOption>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_log_publishing_options(input);
         self
     }
@@ -196,17 +251,26 @@ impl CreateDomainFluentBuilder  {
         self
     }
     /// <p>Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.</p>
-    pub fn set_domain_endpoint_options(mut self, input: std::option::Option<crate::types::DomainEndpointOptions>) -> Self {
+    pub fn set_domain_endpoint_options(
+        mut self,
+        input: std::option::Option<crate::types::DomainEndpointOptions>,
+    ) -> Self {
         self.inner = self.inner.set_domain_endpoint_options(input);
         self
     }
     /// <p>Options for fine-grained access control.</p>
-    pub fn advanced_security_options(mut self, input: crate::types::AdvancedSecurityOptionsInput) -> Self {
+    pub fn advanced_security_options(
+        mut self,
+        input: crate::types::AdvancedSecurityOptionsInput,
+    ) -> Self {
         self.inner = self.inner.advanced_security_options(input);
         self
     }
     /// <p>Options for fine-grained access control.</p>
-    pub fn set_advanced_security_options(mut self, input: std::option::Option<crate::types::AdvancedSecurityOptionsInput>) -> Self {
+    pub fn set_advanced_security_options(
+        mut self,
+        input: std::option::Option<crate::types::AdvancedSecurityOptionsInput>,
+    ) -> Self {
         self.inner = self.inner.set_advanced_security_options(input);
         self
     }
@@ -220,7 +284,10 @@ impl CreateDomainFluentBuilder  {
         self
     }
     /// <p>List of tags to add to the domain upon creation.</p>
-    pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tag_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tag_list(input);
         self
     }
@@ -230,7 +297,10 @@ impl CreateDomainFluentBuilder  {
         self
     }
     /// <p>Options for Auto-Tune.</p>
-    pub fn set_auto_tune_options(mut self, input: std::option::Option<crate::types::AutoTuneOptionsInput>) -> Self {
+    pub fn set_auto_tune_options(
+        mut self,
+        input: std::option::Option<crate::types::AutoTuneOptionsInput>,
+    ) -> Self {
         self.inner = self.inner.set_auto_tune_options(input);
         self
     }
@@ -240,7 +310,10 @@ impl CreateDomainFluentBuilder  {
         self
     }
     /// <p>Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.</p>
-    pub fn set_off_peak_window_options(mut self, input: std::option::Option<crate::types::OffPeakWindowOptions>) -> Self {
+    pub fn set_off_peak_window_options(
+        mut self,
+        input: std::option::Option<crate::types::OffPeakWindowOptions>,
+    ) -> Self {
         self.inner = self.inner.set_off_peak_window_options(input);
         self
     }
@@ -250,9 +323,11 @@ impl CreateDomainFluentBuilder  {
         self
     }
     /// <p>Software update options for the domain.</p>
-    pub fn set_software_update_options(mut self, input: std::option::Option<crate::types::SoftwareUpdateOptions>) -> Self {
+    pub fn set_software_update_options(
+        mut self,
+        input: std::option::Option<crate::types::SoftwareUpdateOptions>,
+    ) -> Self {
         self.inner = self.inner.set_software_update_options(input);
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRegionOptStatusOutput  {
+pub struct GetRegionOptStatusOutput {
     /// <p>The Region code that was passed in.</p>
     #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
@@ -13,23 +13,25 @@ pub struct GetRegionOptStatusOutput  {
 }
 impl GetRegionOptStatusOutput {
     /// <p>The Region code that was passed in.</p>
-    pub fn region_name(&self) -> std::option::Option<& str> {
+    pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
     /// <p>One of the potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
-    pub fn region_opt_status(&self) -> std::option::Option<& crate::types::RegionOptStatus> {
+    pub fn region_opt_status(&self) -> std::option::Option<&crate::types::RegionOptStatus> {
         self.region_opt_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetRegionOptStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetRegionOptStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetRegionOptStatusOutput`](crate::operation::get_region_opt_status::GetRegionOptStatusOutput).
-    pub fn builder() -> crate::operation::get_region_opt_status::builders::GetRegionOptStatusOutputBuilder {
-        crate::operation::get_region_opt_status::builders::GetRegionOptStatusOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_region_opt_status::builders::GetRegionOptStatusOutputBuilder {
+        crate::operation::get_region_opt_status::builders::GetRegionOptStatusOutputBuilder::default(
+        )
     }
 }
 
@@ -49,7 +51,8 @@ impl GetRegionOptStatusOutputBuilder {
     }
     /// <p>The Region code that was passed in.</p>
     pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region_name = input; self
+        self.region_name = input;
+        self
     }
     /// <p>One of the potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
     pub fn region_opt_status(mut self, input: crate::types::RegionOptStatus) -> Self {
@@ -57,27 +60,28 @@ impl GetRegionOptStatusOutputBuilder {
         self
     }
     /// <p>One of the potential statuses a Region can undergo (Enabled, Enabling, Disabled, Disabling, Enabled_By_Default).</p>
-    pub fn set_region_opt_status(mut self, input: std::option::Option<crate::types::RegionOptStatus>) -> Self {
-        self.region_opt_status = input; self
+    pub fn set_region_opt_status(
+        mut self,
+        input: std::option::Option<crate::types::RegionOptStatus>,
+    ) -> Self {
+        self.region_opt_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetRegionOptStatusOutput`](crate::operation::get_region_opt_status::GetRegionOptStatusOutput).
     pub fn build(self) -> crate::operation::get_region_opt_status::GetRegionOptStatusOutput {
         crate::operation::get_region_opt_status::GetRegionOptStatusOutput {
-            region_name: self.region_name
-            ,
-            region_opt_status: self.region_opt_status
-            ,
+            region_name: self.region_name,
+            region_opt_status: self.region_opt_status,
             _request_id: self._request_id,
         }
     }
 }
-

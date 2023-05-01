@@ -2,18 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFleetMetadataOutput  {
+pub struct UpdateFleetMetadataOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateFleetMetadataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateFleetMetadataOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetMetadataOutput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataOutput).
-    pub fn builder() -> crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataOutputBuilder {
-        crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataOutputBuilder {
+        crate::operation::update_fleet_metadata::builders::UpdateFleetMetadataOutputBuilder::default(
+        )
     }
 }
 
@@ -25,14 +27,14 @@ pub struct UpdateFleetMetadataOutputBuilder {
 }
 impl UpdateFleetMetadataOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateFleetMetadataOutput`](crate::operation::update_fleet_metadata::UpdateFleetMetadataOutput).
     pub fn build(self) -> crate::operation::update_fleet_metadata::UpdateFleetMetadataOutput {
         crate::operation::update_fleet_metadata::UpdateFleetMetadataOutput {
@@ -40,4 +42,3 @@ impl UpdateFleetMetadataOutputBuilder {
         }
     }
 }
-

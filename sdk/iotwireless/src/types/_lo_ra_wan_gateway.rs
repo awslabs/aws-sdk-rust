@@ -3,7 +3,7 @@
 /// <p>LoRaWANGateway object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanGateway  {
+pub struct LoRaWanGateway {
     /// <p>The gateway's EUI value.</p>
     #[doc(hidden)]
     pub gateway_eui: std::option::Option<std::string::String>,
@@ -28,27 +28,27 @@ pub struct LoRaWanGateway  {
 }
 impl LoRaWanGateway {
     /// <p>The gateway's EUI value.</p>
-    pub fn gateway_eui(&self) -> std::option::Option<& str> {
+    pub fn gateway_eui(&self) -> std::option::Option<&str> {
         self.gateway_eui.as_deref()
     }
     /// <p>The frequency band (RFRegion) value.</p>
-    pub fn rf_region(&self) -> std::option::Option<& str> {
+    pub fn rf_region(&self) -> std::option::Option<&str> {
         self.rf_region.as_deref()
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn join_eui_filters(&self) -> std::option::Option<& [std::vec::Vec<std::string::String>]> {
+    pub fn join_eui_filters(&self) -> std::option::Option<&[std::vec::Vec<std::string::String>]> {
         self.join_eui_filters.as_deref()
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn net_id_filters(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn net_id_filters(&self) -> std::option::Option<&[std::string::String]> {
         self.net_id_filters.as_deref()
     }
     /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
-    pub fn sub_bands(&self) -> std::option::Option<& [i32]> {
+    pub fn sub_bands(&self) -> std::option::Option<&[i32]> {
         self.sub_bands.as_deref()
     }
     /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
-    pub fn beaconing(&self) -> std::option::Option<& crate::types::Beaconing> {
+    pub fn beaconing(&self) -> std::option::Option<&crate::types::Beaconing> {
         self.beaconing.as_ref()
     }
     /// <p>The MaxEIRP value.</p>
@@ -69,7 +69,8 @@ impl LoRaWanGateway {
 pub struct LoRaWanGatewayBuilder {
     pub(crate) gateway_eui: std::option::Option<std::string::String>,
     pub(crate) rf_region: std::option::Option<std::string::String>,
-    pub(crate) join_eui_filters: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    pub(crate) join_eui_filters:
+        std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
     pub(crate) net_id_filters: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) sub_bands: std::option::Option<std::vec::Vec<i32>>,
     pub(crate) beaconing: std::option::Option<crate::types::Beaconing>,
@@ -83,7 +84,8 @@ impl LoRaWanGatewayBuilder {
     }
     /// <p>The gateway's EUI value.</p>
     pub fn set_gateway_eui(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_eui = input; self
+        self.gateway_eui = input;
+        self
     }
     /// <p>The frequency band (RFRegion) value.</p>
     pub fn rf_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +94,8 @@ impl LoRaWanGatewayBuilder {
     }
     /// <p>The frequency band (RFRegion) value.</p>
     pub fn set_rf_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rf_region = input; self
+        self.rf_region = input;
+        self
     }
     /// Appends an item to `join_eui_filters`.
     ///
@@ -101,13 +104,17 @@ impl LoRaWanGatewayBuilder {
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
     pub fn join_eui_filters(mut self, input: std::vec::Vec<std::string::String>) -> Self {
         let mut v = self.join_eui_filters.unwrap_or_default();
-                        v.push(input);
-                        self.join_eui_filters = Some(v);
-                        self
+        v.push(input);
+        self.join_eui_filters = Some(v);
+        self
     }
     /// <p>A list of JoinEuiRange used by LoRa gateways to filter LoRa frames.</p>
-    pub fn set_join_eui_filters(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>) -> Self {
-        self.join_eui_filters = input; self
+    pub fn set_join_eui_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::string::String>>>,
+    ) -> Self {
+        self.join_eui_filters = input;
+        self
     }
     /// Appends an item to `net_id_filters`.
     ///
@@ -116,13 +123,17 @@ impl LoRaWanGatewayBuilder {
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
     pub fn net_id_filters(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.net_id_filters.unwrap_or_default();
-                        v.push(input.into());
-                        self.net_id_filters = Some(v);
-                        self
+        v.push(input.into());
+        self.net_id_filters = Some(v);
+        self
     }
     /// <p>A list of NetId values that are used by LoRa gateways to filter the uplink frames.</p>
-    pub fn set_net_id_filters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.net_id_filters = input; self
+    pub fn set_net_id_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.net_id_filters = input;
+        self
     }
     /// Appends an item to `sub_bands`.
     ///
@@ -131,13 +142,14 @@ impl LoRaWanGatewayBuilder {
     /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
     pub fn sub_bands(mut self, input: i32) -> Self {
         let mut v = self.sub_bands.unwrap_or_default();
-                        v.push(input);
-                        self.sub_bands = Some(v);
-                        self
+        v.push(input);
+        self.sub_bands = Some(v);
+        self
     }
     /// <p>A list of integer indicating which sub bands are supported by LoRa gateway.</p>
     pub fn set_sub_bands(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-        self.sub_bands = input; self
+        self.sub_bands = input;
+        self
     }
     /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
     pub fn beaconing(mut self, input: crate::types::Beaconing) -> Self {
@@ -146,7 +158,8 @@ impl LoRaWanGatewayBuilder {
     }
     /// <p>Beaconing object information, which consists of the data rate and frequency parameters.</p>
     pub fn set_beaconing(mut self, input: std::option::Option<crate::types::Beaconing>) -> Self {
-        self.beaconing = input; self
+        self.beaconing = input;
+        self
     }
     /// <p>The MaxEIRP value.</p>
     pub fn max_eirp(mut self, input: f32) -> Self {
@@ -155,26 +168,19 @@ impl LoRaWanGatewayBuilder {
     }
     /// <p>The MaxEIRP value.</p>
     pub fn set_max_eirp(mut self, input: std::option::Option<f32>) -> Self {
-        self.max_eirp = input; self
+        self.max_eirp = input;
+        self
     }
     /// Consumes the builder and constructs a [`LoRaWanGateway`](crate::types::LoRaWanGateway).
     pub fn build(self) -> crate::types::LoRaWanGateway {
         crate::types::LoRaWanGateway {
-            gateway_eui: self.gateway_eui
-            ,
-            rf_region: self.rf_region
-            ,
-            join_eui_filters: self.join_eui_filters
-            ,
-            net_id_filters: self.net_id_filters
-            ,
-            sub_bands: self.sub_bands
-            ,
-            beaconing: self.beaconing
-            ,
-            max_eirp: self.max_eirp
-            ,
+            gateway_eui: self.gateway_eui,
+            rf_region: self.rf_region,
+            join_eui_filters: self.join_eui_filters,
+            net_id_filters: self.net_id_filters,
+            sub_bands: self.sub_bands,
+            beaconing: self.beaconing,
+            max_eirp: self.max_eirp,
         }
     }
 }
-

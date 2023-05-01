@@ -3,7 +3,7 @@
 /// <p>Summarizes the monitoring schedule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MonitoringScheduleSummary  {
+pub struct MonitoringScheduleSummary {
     /// <p>The name of the monitoring schedule.</p>
     #[doc(hidden)]
     pub monitoring_schedule_name: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct MonitoringScheduleSummary  {
 }
 impl MonitoringScheduleSummary {
     /// <p>The name of the monitoring schedule.</p>
-    pub fn monitoring_schedule_name(&self) -> std::option::Option<& str> {
+    pub fn monitoring_schedule_name(&self) -> std::option::Option<&str> {
         self.monitoring_schedule_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn monitoring_schedule_arn(&self) -> std::option::Option<& str> {
+    pub fn monitoring_schedule_arn(&self) -> std::option::Option<&str> {
         self.monitoring_schedule_arn.as_deref()
     }
     /// <p>The creation time of the monitoring schedule.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The last time the monitoring schedule was modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The status of the monitoring schedule.</p>
-    pub fn monitoring_schedule_status(&self) -> std::option::Option<& crate::types::ScheduleStatus> {
+    pub fn monitoring_schedule_status(&self) -> std::option::Option<&crate::types::ScheduleStatus> {
         self.monitoring_schedule_status.as_ref()
     }
     /// <p>The name of the endpoint using the monitoring schedule.</p>
-    pub fn endpoint_name(&self) -> std::option::Option<& str> {
+    pub fn endpoint_name(&self) -> std::option::Option<&str> {
         self.endpoint_name.as_deref()
     }
     /// <p>The name of the monitoring job definition that the schedule is for.</p>
-    pub fn monitoring_job_definition_name(&self) -> std::option::Option<& str> {
+    pub fn monitoring_job_definition_name(&self) -> std::option::Option<&str> {
         self.monitoring_job_definition_name.as_deref()
     }
     /// <p>The type of the monitoring job definition that the schedule is for.</p>
-    pub fn monitoring_type(&self) -> std::option::Option<& crate::types::MonitoringType> {
+    pub fn monitoring_type(&self) -> std::option::Option<&crate::types::MonitoringType> {
         self.monitoring_type.as_ref()
     }
 }
@@ -90,8 +90,12 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The name of the monitoring schedule.</p>
-    pub fn set_monitoring_schedule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitoring_schedule_name = input; self
+    pub fn set_monitoring_schedule_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monitoring_schedule_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
     pub fn monitoring_schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +103,12 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
-    pub fn set_monitoring_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitoring_schedule_arn = input; self
+    pub fn set_monitoring_schedule_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monitoring_schedule_arn = input;
+        self
     }
     /// <p>The creation time of the monitoring schedule.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -108,8 +116,12 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The creation time of the monitoring schedule.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The last time the monitoring schedule was modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -117,8 +129,12 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The last time the monitoring schedule was modified.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// <p>The status of the monitoring schedule.</p>
     pub fn monitoring_schedule_status(mut self, input: crate::types::ScheduleStatus) -> Self {
@@ -126,8 +142,12 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The status of the monitoring schedule.</p>
-    pub fn set_monitoring_schedule_status(mut self, input: std::option::Option<crate::types::ScheduleStatus>) -> Self {
-        self.monitoring_schedule_status = input; self
+    pub fn set_monitoring_schedule_status(
+        mut self,
+        input: std::option::Option<crate::types::ScheduleStatus>,
+    ) -> Self {
+        self.monitoring_schedule_status = input;
+        self
     }
     /// <p>The name of the endpoint using the monitoring schedule.</p>
     pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,7 +156,8 @@ impl MonitoringScheduleSummaryBuilder {
     }
     /// <p>The name of the endpoint using the monitoring schedule.</p>
     pub fn set_endpoint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_name = input; self
+        self.endpoint_name = input;
+        self
     }
     /// <p>The name of the monitoring job definition that the schedule is for.</p>
     pub fn monitoring_job_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,8 +165,12 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The name of the monitoring job definition that the schedule is for.</p>
-    pub fn set_monitoring_job_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitoring_job_definition_name = input; self
+    pub fn set_monitoring_job_definition_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monitoring_job_definition_name = input;
+        self
     }
     /// <p>The type of the monitoring job definition that the schedule is for.</p>
     pub fn monitoring_type(mut self, input: crate::types::MonitoringType) -> Self {
@@ -153,29 +178,24 @@ impl MonitoringScheduleSummaryBuilder {
         self
     }
     /// <p>The type of the monitoring job definition that the schedule is for.</p>
-    pub fn set_monitoring_type(mut self, input: std::option::Option<crate::types::MonitoringType>) -> Self {
-        self.monitoring_type = input; self
+    pub fn set_monitoring_type(
+        mut self,
+        input: std::option::Option<crate::types::MonitoringType>,
+    ) -> Self {
+        self.monitoring_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`MonitoringScheduleSummary`](crate::types::MonitoringScheduleSummary).
     pub fn build(self) -> crate::types::MonitoringScheduleSummary {
         crate::types::MonitoringScheduleSummary {
-            monitoring_schedule_name: self.monitoring_schedule_name
-            ,
-            monitoring_schedule_arn: self.monitoring_schedule_arn
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            monitoring_schedule_status: self.monitoring_schedule_status
-            ,
-            endpoint_name: self.endpoint_name
-            ,
-            monitoring_job_definition_name: self.monitoring_job_definition_name
-            ,
-            monitoring_type: self.monitoring_type
-            ,
+            monitoring_schedule_name: self.monitoring_schedule_name,
+            monitoring_schedule_arn: self.monitoring_schedule_arn,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
+            monitoring_schedule_status: self.monitoring_schedule_status,
+            endpoint_name: self.endpoint_name,
+            monitoring_job_definition_name: self.monitoring_job_definition_name,
+            monitoring_type: self.monitoring_type,
         }
     }
 }
-

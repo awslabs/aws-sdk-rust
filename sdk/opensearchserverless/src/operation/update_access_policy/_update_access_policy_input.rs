@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccessPolicyInput  {
+pub struct UpdateAccessPolicyInput {
     /// <p>The type of policy.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::AccessPolicyType>,
@@ -24,33 +24,34 @@ pub struct UpdateAccessPolicyInput  {
 }
 impl UpdateAccessPolicyInput {
     /// <p>The type of policy.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::AccessPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::AccessPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The version of the policy being updated.</p>
-    pub fn policy_version(&self) -> std::option::Option<& str> {
+    pub fn policy_version(&self) -> std::option::Option<&str> {
         self.policy_version.as_deref()
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
-    pub fn policy(&self) -> std::option::Option<& str> {
+    pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl UpdateAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
-    pub fn builder() -> crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder {
         crate::operation::update_access_policy::builders::UpdateAccessPolicyInputBuilder::default()
     }
 }
@@ -74,7 +75,8 @@ impl UpdateAccessPolicyInputBuilder {
     }
     /// <p>The type of policy.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::AccessPolicyType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The name of the policy.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +85,8 @@ impl UpdateAccessPolicyInputBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The version of the policy being updated.</p>
     pub fn policy_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +95,8 @@ impl UpdateAccessPolicyInputBuilder {
     }
     /// <p>The version of the policy being updated.</p>
     pub fn set_policy_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_version = input; self
+        self.policy_version = input;
+        self
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +105,8 @@ impl UpdateAccessPolicyInputBuilder {
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +115,8 @@ impl UpdateAccessPolicyInputBuilder {
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,26 +125,25 @@ impl UpdateAccessPolicyInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAccessPolicyInput`](crate::operation::update_access_policy::UpdateAccessPolicyInput).
-    pub fn build(self) -> Result<crate::operation::update_access_policy::UpdateAccessPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_access_policy::UpdateAccessPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_access_policy::UpdateAccessPolicyInput {
-                r#type: self.r#type
-                ,
-                name: self.name
-                ,
-                policy_version: self.policy_version
-                ,
-                description: self.description
-                ,
-                policy: self.policy
-                ,
-                client_token: self.client_token
-                ,
-            }
+                r#type: self.r#type,
+                name: self.name,
+                policy_version: self.policy_version,
+                description: self.description,
+                policy: self.policy,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

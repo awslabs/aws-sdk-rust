@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCostCategoryDefinitionOutput  {
+pub struct DeleteCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
     #[doc(hidden)]
     pub cost_category_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct DeleteCostCategoryDefinitionOutput  {
 }
 impl DeleteCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn cost_category_arn(&self) -> std::option::Option<& str> {
+    pub fn cost_category_arn(&self) -> std::option::Option<&str> {
         self.cost_category_arn.as_deref()
     }
     /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
-    pub fn effective_end(&self) -> std::option::Option<& str> {
+    pub fn effective_end(&self) -> std::option::Option<&str> {
         self.effective_end.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteCostCategoryDefinitionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteCostCategoryDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCostCategoryDefinitionOutput`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput).
-    pub fn builder() -> crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionOutputBuilder{
         crate::operation::delete_cost_category_definition::builders::DeleteCostCategoryDefinitionOutputBuilder::default()
     }
 }
@@ -48,8 +48,12 @@ impl DeleteCostCategoryDefinitionOutputBuilder {
         self
     }
     /// <p>The unique identifier for your Cost Category. </p>
-    pub fn set_cost_category_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cost_category_arn = input; self
+    pub fn set_cost_category_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cost_category_arn = input;
+        self
     }
     /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
     pub fn effective_end(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +62,26 @@ impl DeleteCostCategoryDefinitionOutputBuilder {
     }
     /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
     pub fn set_effective_end(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.effective_end = input; self
+        self.effective_end = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteCostCategoryDefinitionOutput`](crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput).
-    pub fn build(self) -> crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput {
         crate::operation::delete_cost_category_definition::DeleteCostCategoryDefinitionOutput {
-            cost_category_arn: self.cost_category_arn
-            ,
-            effective_end: self.effective_end
-            ,
+            cost_category_arn: self.cost_category_arn,
+            effective_end: self.effective_end,
             _request_id: self._request_id,
         }
     }
 }
-

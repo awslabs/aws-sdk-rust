@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateCustomerGatewayInput  {
+pub struct AssociateCustomerGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
     #[doc(hidden)]
     pub customer_gateway_arn: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct AssociateCustomerGatewayInput  {
 }
 impl AssociateCustomerGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn customer_gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn customer_gateway_arn(&self) -> std::option::Option<&str> {
         self.customer_gateway_arn.as_deref()
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the link.</p>
-    pub fn link_id(&self) -> std::option::Option<& str> {
+    pub fn link_id(&self) -> std::option::Option<&str> {
         self.link_id.as_deref()
     }
 }
 impl AssociateCustomerGatewayInput {
     /// Creates a new builder-style object to manufacture [`AssociateCustomerGatewayInput`](crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput).
-    pub fn builder() -> crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder
+    {
         crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayInputBuilder::default()
     }
 }
@@ -57,8 +59,12 @@ impl AssociateCustomerGatewayInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
-    pub fn set_customer_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.customer_gateway_arn = input; self
+    pub fn set_customer_gateway_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.customer_gateway_arn = input;
+        self
     }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +72,12 @@ impl AssociateCustomerGatewayInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// <p>The ID of the device.</p>
     pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +86,8 @@ impl AssociateCustomerGatewayInputBuilder {
     }
     /// <p>The ID of the device.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// <p>The ID of the link.</p>
     pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +96,23 @@ impl AssociateCustomerGatewayInputBuilder {
     }
     /// <p>The ID of the link.</p>
     pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.link_id = input; self
+        self.link_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateCustomerGatewayInput`](crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput).
-    pub fn build(self) -> Result<crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_customer_gateway::AssociateCustomerGatewayInput {
-                customer_gateway_arn: self.customer_gateway_arn
-                ,
-                global_network_id: self.global_network_id
-                ,
-                device_id: self.device_id
-                ,
-                link_id: self.link_id
-                ,
-            }
+                customer_gateway_arn: self.customer_gateway_arn,
+                global_network_id: self.global_network_id,
+                device_id: self.device_id,
+                link_id: self.link_id,
+            },
         )
     }
 }
-

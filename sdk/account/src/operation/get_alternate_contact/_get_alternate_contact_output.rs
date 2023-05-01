@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAlternateContactOutput  {
+pub struct GetAlternateContactOutput {
     /// <p>A structure that contains the details for the specified alternate contact.</p>
     #[doc(hidden)]
     pub alternate_contact: std::option::Option<crate::types::AlternateContact>,
@@ -10,19 +10,21 @@ pub struct GetAlternateContactOutput  {
 }
 impl GetAlternateContactOutput {
     /// <p>A structure that contains the details for the specified alternate contact.</p>
-    pub fn alternate_contact(&self) -> std::option::Option<& crate::types::AlternateContact> {
+    pub fn alternate_contact(&self) -> std::option::Option<&crate::types::AlternateContact> {
         self.alternate_contact.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAlternateContactOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetAlternateContactOutput {
     /// Creates a new builder-style object to manufacture [`GetAlternateContactOutput`](crate::operation::get_alternate_contact::GetAlternateContactOutput).
-    pub fn builder() -> crate::operation::get_alternate_contact::builders::GetAlternateContactOutputBuilder {
-        crate::operation::get_alternate_contact::builders::GetAlternateContactOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_alternate_contact::builders::GetAlternateContactOutputBuilder {
+        crate::operation::get_alternate_contact::builders::GetAlternateContactOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl GetAlternateContactOutputBuilder {
         self
     }
     /// <p>A structure that contains the details for the specified alternate contact.</p>
-    pub fn set_alternate_contact(mut self, input: std::option::Option<crate::types::AlternateContact>) -> Self {
-        self.alternate_contact = input; self
+    pub fn set_alternate_contact(
+        mut self,
+        input: std::option::Option<crate::types::AlternateContact>,
+    ) -> Self {
+        self.alternate_contact = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetAlternateContactOutput`](crate::operation::get_alternate_contact::GetAlternateContactOutput).
     pub fn build(self) -> crate::operation::get_alternate_contact::GetAlternateContactOutput {
         crate::operation::get_alternate_contact::GetAlternateContactOutput {
-            alternate_contact: self.alternate_contact
-            ,
+            alternate_contact: self.alternate_contact,
             _request_id: self._request_id,
         }
     }
 }
-

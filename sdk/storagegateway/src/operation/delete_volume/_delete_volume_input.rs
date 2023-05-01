@@ -3,14 +3,14 @@
 /// <p>A JSON object containing the <code>DeleteVolumeInput$VolumeARN</code> to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVolumeInput  {
+pub struct DeleteVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
 }
 impl DeleteVolumeInput {
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
-    pub fn volume_arn(&self) -> std::option::Option<& str> {
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
 }
@@ -35,16 +35,18 @@ impl DeleteVolumeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the volume. Use the <code>ListVolumes</code> operation to return a list of gateway volumes.</p>
     pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_arn = input; self
+        self.volume_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVolumeInput`](crate::operation::delete_volume::DeleteVolumeInput).
-    pub fn build(self) -> Result<crate::operation::delete_volume::DeleteVolumeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_volume::DeleteVolumeInput {
-                volume_arn: self.volume_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_volume::DeleteVolumeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_volume::DeleteVolumeInput {
+            volume_arn: self.volume_arn,
+        })
     }
 }
-

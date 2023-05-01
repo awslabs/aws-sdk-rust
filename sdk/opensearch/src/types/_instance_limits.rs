@@ -3,14 +3,14 @@
 /// <p>Instance-related attributes that are available for a given instance type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceLimits  {
+pub struct InstanceLimits {
     /// <p>Limits on the number of instances that can be created for a given instance type.</p>
     #[doc(hidden)]
     pub instance_count_limits: std::option::Option<crate::types::InstanceCountLimits>,
 }
 impl InstanceLimits {
     /// <p>Limits on the number of instances that can be created for a given instance type.</p>
-    pub fn instance_count_limits(&self) -> std::option::Option<& crate::types::InstanceCountLimits> {
+    pub fn instance_count_limits(&self) -> std::option::Option<&crate::types::InstanceCountLimits> {
         self.instance_count_limits.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl InstanceLimitsBuilder {
         self
     }
     /// <p>Limits on the number of instances that can be created for a given instance type.</p>
-    pub fn set_instance_count_limits(mut self, input: std::option::Option<crate::types::InstanceCountLimits>) -> Self {
-        self.instance_count_limits = input; self
+    pub fn set_instance_count_limits(
+        mut self,
+        input: std::option::Option<crate::types::InstanceCountLimits>,
+    ) -> Self {
+        self.instance_count_limits = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceLimits`](crate::types::InstanceLimits).
     pub fn build(self) -> crate::types::InstanceLimits {
         crate::types::InstanceLimits {
-            instance_count_limits: self.instance_count_limits
-            ,
+            instance_count_limits: self.instance_count_limits,
         }
     }
 }
-

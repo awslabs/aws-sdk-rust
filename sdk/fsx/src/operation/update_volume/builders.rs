@@ -4,57 +4,76 @@ pub use crate::operation::update_volume::_update_volume_output::UpdateVolumeOutp
 pub use crate::operation::update_volume::_update_volume_input::UpdateVolumeInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateVolume`.
-/// 
+///
 /// <p>Updates the configuration of an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateVolumeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_volume::builders::UpdateVolumeInputBuilder,
+    inner: crate::operation::update_volume::builders::UpdateVolumeInputBuilder,
 }
-impl UpdateVolumeFluentBuilder  {
+impl UpdateVolumeFluentBuilder {
     /// Creates a new `UpdateVolume`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_volume::UpdateVolume, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_volume::UpdateVolumeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_volume::UpdateVolumeOutput, aws_smithy_http::result::SdkError<crate::operation::update_volume::UpdateVolumeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_volume::UpdateVolume,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_volume::UpdateVolumeError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_volume::UpdateVolumeOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_volume::UpdateVolumeError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -69,12 +88,18 @@ impl UpdateVolumeFluentBuilder  {
         self
     }
     /// <p>The configuration of the ONTAP volume that you are updating.</p>
-    pub fn ontap_configuration(mut self, input: crate::types::UpdateOntapVolumeConfiguration) -> Self {
+    pub fn ontap_configuration(
+        mut self,
+        input: crate::types::UpdateOntapVolumeConfiguration,
+    ) -> Self {
         self.inner = self.inner.ontap_configuration(input);
         self
     }
     /// <p>The configuration of the ONTAP volume that you are updating.</p>
-    pub fn set_ontap_configuration(mut self, input: std::option::Option<crate::types::UpdateOntapVolumeConfiguration>) -> Self {
+    pub fn set_ontap_configuration(
+        mut self,
+        input: std::option::Option<crate::types::UpdateOntapVolumeConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_ontap_configuration(input);
         self
     }
@@ -89,14 +114,19 @@ impl UpdateVolumeFluentBuilder  {
         self
     }
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
-    pub fn open_zfs_configuration(mut self, input: crate::types::UpdateOpenZfsVolumeConfiguration) -> Self {
+    pub fn open_zfs_configuration(
+        mut self,
+        input: crate::types::UpdateOpenZfsVolumeConfiguration,
+    ) -> Self {
         self.inner = self.inner.open_zfs_configuration(input);
         self
     }
     /// <p>The configuration of the OpenZFS volume that you are updating.</p>
-    pub fn set_open_zfs_configuration(mut self, input: std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration>) -> Self {
+    pub fn set_open_zfs_configuration(
+        mut self,
+        input: std::option::Option<crate::types::UpdateOpenZfsVolumeConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_open_zfs_configuration(input);
         self
     }
 }
-

@@ -3,18 +3,18 @@
 /// <p>Sidewalk update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SidewalkUpdateAccount  {
+pub struct SidewalkUpdateAccount {
     /// <p>The new Sidewalk application server private key.</p>
     #[doc(hidden)]
     pub app_server_private_key: std::option::Option<std::string::String>,
 }
 impl SidewalkUpdateAccount {
     /// <p>The new Sidewalk application server private key.</p>
-    pub fn app_server_private_key(&self) -> std::option::Option<& str> {
+    pub fn app_server_private_key(&self) -> std::option::Option<&str> {
         self.app_server_private_key.as_deref()
     }
 }
-impl  std::fmt::Debug for SidewalkUpdateAccount  {
+impl std::fmt::Debug for SidewalkUpdateAccount {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkUpdateAccount");
         formatter.field("app_server_private_key", &"*** Sensitive Data Redacted ***");
@@ -41,14 +41,17 @@ impl SidewalkUpdateAccountBuilder {
         self
     }
     /// <p>The new Sidewalk application server private key.</p>
-    pub fn set_app_server_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_server_private_key = input; self
+    pub fn set_app_server_private_key(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_server_private_key = input;
+        self
     }
     /// Consumes the builder and constructs a [`SidewalkUpdateAccount`](crate::types::SidewalkUpdateAccount).
     pub fn build(self) -> crate::types::SidewalkUpdateAccount {
         crate::types::SidewalkUpdateAccount {
-            app_server_private_key: self.app_server_private_key
-            ,
+            app_server_private_key: self.app_server_private_key,
         }
     }
 }
@@ -59,4 +62,3 @@ impl std::fmt::Debug for SidewalkUpdateAccountBuilder {
         formatter.finish()
     }
 }
-

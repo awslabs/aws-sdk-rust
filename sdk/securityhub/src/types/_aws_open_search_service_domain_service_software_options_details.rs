@@ -3,7 +3,7 @@
 /// <p>Provides information about the state of the domain relative to the latest service software.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails  {
+pub struct AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
     /// <p>The epoch time when the deployment window closes for required updates. After this time, OpenSearch Service schedules the software upgrade automatically.</p>
     #[doc(hidden)]
     pub automated_update_date: std::option::Option<std::string::String>,
@@ -22,13 +22,13 @@ pub struct AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails  {
     /// <p>Whether a service software update is available for the domain.</p>
     #[doc(hidden)]
     pub update_available: bool,
-    /// <p>The status of the service software update. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLETED</code> </p> </li> 
-    /// <li> <p> <code>ELIGIBLE</code> </p> </li> 
-    /// <li> <p> <code>IN_PROGRESS</code> </p> </li> 
-    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li> 
-    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li> 
+    /// <p>The status of the service software update. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> </p> </li>
+    /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub update_status: std::option::Option<std::string::String>,
@@ -38,7 +38,7 @@ pub struct AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails  {
 }
 impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
     /// <p>The epoch time when the deployment window closes for required updates. After this time, OpenSearch Service schedules the software upgrade automatically.</p>
-    pub fn automated_update_date(&self) -> std::option::Option<& str> {
+    pub fn automated_update_date(&self) -> std::option::Option<&str> {
         self.automated_update_date.as_deref()
     }
     /// <p>Whether a request to update the domain can be canceled.</p>
@@ -46,30 +46,30 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
         self.cancellable
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
-    pub fn current_version(&self) -> std::option::Option<& str> {
+    pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
     }
     /// <p>A more detailed description of the service software status.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The most recent version of the service software.</p>
-    pub fn new_version(&self) -> std::option::Option<& str> {
+    pub fn new_version(&self) -> std::option::Option<&str> {
         self.new_version.as_deref()
     }
     /// <p>Whether a service software update is available for the domain.</p>
     pub fn update_available(&self) -> bool {
         self.update_available
     }
-    /// <p>The status of the service software update. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLETED</code> </p> </li> 
-    /// <li> <p> <code>ELIGIBLE</code> </p> </li> 
-    /// <li> <p> <code>IN_PROGRESS</code> </p> </li> 
-    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li> 
-    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li> 
+    /// <p>The status of the service software update. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> </p> </li>
+    /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
-    pub fn update_status(&self) -> std::option::Option<& str> {
+    pub fn update_status(&self) -> std::option::Option<&str> {
         self.update_status.as_deref()
     }
     /// <p>Whether the service software update is optional.</p>
@@ -79,7 +79,9 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
 }
 impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
-    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder
+    {
         crate::types::builders::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder::default()
     }
 }
@@ -104,8 +106,12 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
         self
     }
     /// <p>The epoch time when the deployment window closes for required updates. After this time, OpenSearch Service schedules the software upgrade automatically.</p>
-    pub fn set_automated_update_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.automated_update_date = input; self
+    pub fn set_automated_update_date(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.automated_update_date = input;
+        self
     }
     /// <p>Whether a request to update the domain can be canceled.</p>
     pub fn cancellable(mut self, input: bool) -> Self {
@@ -114,7 +120,8 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     }
     /// <p>Whether a request to update the domain can be canceled.</p>
     pub fn set_cancellable(mut self, input: std::option::Option<bool>) -> Self {
-        self.cancellable = input; self
+        self.cancellable = input;
+        self
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
     pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +130,8 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     }
     /// <p>The version of the service software that is currently installed on the domain.</p>
     pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_version = input; self
+        self.current_version = input;
+        self
     }
     /// <p>A more detailed description of the service software status.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +140,8 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     }
     /// <p>A more detailed description of the service software status.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The most recent version of the service software.</p>
     pub fn new_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +150,8 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     }
     /// <p>The most recent version of the service software.</p>
     pub fn set_new_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.new_version = input; self
+        self.new_version = input;
+        self
     }
     /// <p>Whether a service software update is available for the domain.</p>
     pub fn update_available(mut self, input: bool) -> Self {
@@ -150,30 +160,32 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     }
     /// <p>Whether a service software update is available for the domain.</p>
     pub fn set_update_available(mut self, input: std::option::Option<bool>) -> Self {
-        self.update_available = input; self
+        self.update_available = input;
+        self
     }
-    /// <p>The status of the service software update. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLETED</code> </p> </li> 
-    /// <li> <p> <code>ELIGIBLE</code> </p> </li> 
-    /// <li> <p> <code>IN_PROGRESS</code> </p> </li> 
-    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li> 
-    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li> 
+    /// <p>The status of the service software update. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> </p> </li>
+    /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
     pub fn update_status(mut self, input: impl Into<std::string::String>) -> Self {
         self.update_status = Some(input.into());
         self
     }
-    /// <p>The status of the service software update. Valid values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLETED</code> </p> </li> 
-    /// <li> <p> <code>ELIGIBLE</code> </p> </li> 
-    /// <li> <p> <code>IN_PROGRESS</code> </p> </li> 
-    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li> 
-    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li> 
+    /// <p>The status of the service software update. Valid values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> </p> </li>
+    /// <li> <p> <code>ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>IN_PROGRESS</code> </p> </li>
+    /// <li> <p> <code>NOT_ELIGIBLE</code> </p> </li>
+    /// <li> <p> <code>PENDING_UPDATE</code> </p> </li>
     /// </ul>
     pub fn set_update_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.update_status = input; self
+        self.update_status = input;
+        self
     }
     /// <p>Whether the service software update is optional.</p>
     pub fn optional_deployment(mut self, input: bool) -> Self {
@@ -182,31 +194,20 @@ impl AwsOpenSearchServiceDomainServiceSoftwareOptionsDetailsBuilder {
     }
     /// <p>Whether the service software update is optional.</p>
     pub fn set_optional_deployment(mut self, input: std::option::Option<bool>) -> Self {
-        self.optional_deployment = input; self
+        self.optional_deployment = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails`](crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
         crate::types::AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails {
-            automated_update_date: self.automated_update_date
-            ,
-            cancellable: self.cancellable
-                .unwrap_or_default()
-            ,
-            current_version: self.current_version
-            ,
-            description: self.description
-            ,
-            new_version: self.new_version
-            ,
-            update_available: self.update_available
-                .unwrap_or_default()
-            ,
-            update_status: self.update_status
-            ,
-            optional_deployment: self.optional_deployment
-                .unwrap_or_default()
-            ,
+            automated_update_date: self.automated_update_date,
+            cancellable: self.cancellable.unwrap_or_default(),
+            current_version: self.current_version,
+            description: self.description,
+            new_version: self.new_version,
+            update_available: self.update_available.unwrap_or_default(),
+            update_status: self.update_status,
+            optional_deployment: self.optional_deployment.unwrap_or_default(),
         }
     }
 }
-

@@ -2,49 +2,54 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateServiceNetworkInput  {
+pub struct CreateServiceNetworkInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The type of IAM policy.</p> 
-    /// <ul> 
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li> 
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li> 
+    /// <p>The type of IAM policy.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
+    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub auth_type: std::option::Option<crate::types::AuthType>,
     /// <p>The tags for the service network.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateServiceNetworkInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The type of IAM policy.</p> 
-    /// <ul> 
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li> 
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li> 
+    /// <p>The type of IAM policy.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
+    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
-    pub fn auth_type(&self) -> std::option::Option<& crate::types::AuthType> {
+    pub fn auth_type(&self) -> std::option::Option<&crate::types::AuthType> {
         self.auth_type.as_ref()
     }
     /// <p>The tags for the service network.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl CreateServiceNetworkInput {
     /// Creates a new builder-style object to manufacture [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
-    pub fn builder() -> crate::operation::create_service_network::builders::CreateServiceNetworkInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_service_network::builders::CreateServiceNetworkInputBuilder {
         crate::operation::create_service_network::builders::CreateServiceNetworkInputBuilder::default()
     }
 }
@@ -56,7 +61,8 @@ pub struct CreateServiceNetworkInputBuilder {
     pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) auth_type: std::option::Option<crate::types::AuthType>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateServiceNetworkInputBuilder {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -66,7 +72,8 @@ impl CreateServiceNetworkInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,54 +82,66 @@ impl CreateServiceNetworkInputBuilder {
     }
     /// <p>The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>The type of IAM policy.</p> 
-    /// <ul> 
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li> 
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li> 
+    /// <p>The type of IAM policy.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
+    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
         self.auth_type = Some(input);
         self
     }
-    /// <p>The type of IAM policy.</p> 
-    /// <ul> 
-    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li> 
-    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li> 
+    /// <p>The type of IAM policy.</p>
+    /// <ul>
+    /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
+    /// <li> <p> <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used, auth is enabled and an auth policy is required.</p> </li>
     /// </ul>
     pub fn set_auth_type(mut self, input: std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input; self
+        self.auth_type = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the service network.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags for the service network.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
-    pub fn build(self) -> Result<crate::operation::create_service_network::CreateServiceNetworkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_service_network::CreateServiceNetworkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_service_network::CreateServiceNetworkInput {
-                client_token: self.client_token
-                ,
-                name: self.name
-                ,
-                auth_type: self.auth_type
-                ,
-                tags: self.tags
-                ,
-            }
+                client_token: self.client_token,
+                name: self.name,
+                auth_type: self.auth_type,
+                tags: self.tags,
+            },
         )
     }
 }
-

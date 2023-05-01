@@ -4,58 +4,81 @@ pub use crate::operation::describe_snapshot_attribute::_describe_snapshot_attrib
 pub use crate::operation::describe_snapshot_attribute::_describe_snapshot_attribute_input::DescribeSnapshotAttributeInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeSnapshotAttribute`.
-/// 
-/// <p>Describes the specified attribute of the specified snapshot. You can specify only one attribute at a time.</p> 
+///
+/// <p>Describes the specified attribute of the specified snapshot. You can specify only one attribute at a time.</p>
 /// <p>For more information about EBS snapshots, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSSnapshots.html">Amazon EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSnapshotAttributeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_snapshot_attribute::builders::DescribeSnapshotAttributeInputBuilder,
 }
-impl DescribeSnapshotAttributeFluentBuilder  {
+impl DescribeSnapshotAttributeFluentBuilder {
     /// Creates a new `DescribeSnapshotAttribute`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_snapshot_attribute::DescribeSnapshotAttribute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeOutput, aws_smithy_http::result::SdkError<crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_snapshot_attribute::DescribeSnapshotAttribute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_attribute::DescribeSnapshotAttributeError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The snapshot attribute you would like to view.</p>
     pub fn attribute(mut self, input: crate::types::SnapshotAttributeName) -> Self {
         self.inner = self.inner.attribute(input);
         self
     }
     /// <p>The snapshot attribute you would like to view.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<crate::types::SnapshotAttributeName>) -> Self {
+    pub fn set_attribute(
+        mut self,
+        input: std::option::Option<crate::types::SnapshotAttributeName>,
+    ) -> Self {
         self.inner = self.inner.set_attribute(input);
         self
     }
@@ -80,4 +103,3 @@ impl DescribeSnapshotAttributeFluentBuilder  {
         self
     }
 }
-

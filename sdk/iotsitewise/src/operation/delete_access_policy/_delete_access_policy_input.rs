@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessPolicyInput  {
+pub struct DeleteAccessPolicyInput {
     /// <p>The ID of the access policy to be deleted.</p>
     #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteAccessPolicyInput  {
 }
 impl DeleteAccessPolicyInput {
     /// <p>The ID of the access policy to be deleted.</p>
-    pub fn access_policy_id(&self) -> std::option::Option<& str> {
+    pub fn access_policy_id(&self) -> std::option::Option<&str> {
         self.access_policy_id.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl DeleteAccessPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPolicyInput`](crate::operation::delete_access_policy::DeleteAccessPolicyInput).
-    pub fn builder() -> crate::operation::delete_access_policy::builders::DeleteAccessPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_access_policy::builders::DeleteAccessPolicyInputBuilder {
         crate::operation::delete_access_policy::builders::DeleteAccessPolicyInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteAccessPolicyInputBuilder {
     }
     /// <p>The ID of the access policy to be deleted.</p>
     pub fn set_access_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_policy_id = input; self
+        self.access_policy_id = input;
+        self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeleteAccessPolicyInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAccessPolicyInput`](crate::operation::delete_access_policy::DeleteAccessPolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_access_policy::DeleteAccessPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_access_policy::DeleteAccessPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_access_policy::DeleteAccessPolicyInput {
-                access_policy_id: self.access_policy_id
-                ,
-                client_token: self.client_token
-                ,
-            }
+                access_policy_id: self.access_policy_id,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

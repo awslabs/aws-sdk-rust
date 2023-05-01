@@ -3,8 +3,8 @@
 /// <p>Describes a recommendation option for an Lambda function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaFunctionMemoryRecommendationOption  {
-    /// <p>The rank of the function recommendation option.</p> 
+pub struct LambdaFunctionMemoryRecommendationOption {
+    /// <p>The rank of the function recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     #[doc(hidden)]
     pub rank: i32,
@@ -13,13 +13,14 @@ pub struct LambdaFunctionMemoryRecommendationOption  {
     pub memory_size: i32,
     /// <p>An array of objects that describe the projected utilization metrics of the function recommendation option.</p>
     #[doc(hidden)]
-    pub projected_utilization_metrics: std::option::Option<std::vec::Vec<crate::types::LambdaFunctionMemoryProjectedMetric>>,
+    pub projected_utilization_metrics:
+        std::option::Option<std::vec::Vec<crate::types::LambdaFunctionMemoryProjectedMetric>>,
     /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     #[doc(hidden)]
     pub savings_opportunity: std::option::Option<crate::types::SavingsOpportunity>,
 }
 impl LambdaFunctionMemoryRecommendationOption {
-    /// <p>The rank of the function recommendation option.</p> 
+    /// <p>The rank of the function recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(&self) -> i32 {
         self.rank
@@ -29,11 +30,13 @@ impl LambdaFunctionMemoryRecommendationOption {
         self.memory_size
     }
     /// <p>An array of objects that describe the projected utilization metrics of the function recommendation option.</p>
-    pub fn projected_utilization_metrics(&self) -> std::option::Option<& [crate::types::LambdaFunctionMemoryProjectedMetric]> {
+    pub fn projected_utilization_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::types::LambdaFunctionMemoryProjectedMetric]> {
         self.projected_utilization_metrics.as_deref()
     }
     /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn savings_opportunity(&self) -> std::option::Option<& crate::types::SavingsOpportunity> {
+    pub fn savings_opportunity(&self) -> std::option::Option<&crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
 }
@@ -50,20 +53,22 @@ impl LambdaFunctionMemoryRecommendationOption {
 pub struct LambdaFunctionMemoryRecommendationOptionBuilder {
     pub(crate) rank: std::option::Option<i32>,
     pub(crate) memory_size: std::option::Option<i32>,
-    pub(crate) projected_utilization_metrics: std::option::Option<std::vec::Vec<crate::types::LambdaFunctionMemoryProjectedMetric>>,
+    pub(crate) projected_utilization_metrics:
+        std::option::Option<std::vec::Vec<crate::types::LambdaFunctionMemoryProjectedMetric>>,
     pub(crate) savings_opportunity: std::option::Option<crate::types::SavingsOpportunity>,
 }
 impl LambdaFunctionMemoryRecommendationOptionBuilder {
-    /// <p>The rank of the function recommendation option.</p> 
+    /// <p>The rank of the function recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(mut self, input: i32) -> Self {
         self.rank = Some(input);
         self
     }
-    /// <p>The rank of the function recommendation option.</p> 
+    /// <p>The rank of the function recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
-        self.rank = input; self
+        self.rank = input;
+        self
     }
     /// <p>The memory size, in MB, of the function recommendation option.</p>
     pub fn memory_size(mut self, input: i32) -> Self {
@@ -72,22 +77,32 @@ impl LambdaFunctionMemoryRecommendationOptionBuilder {
     }
     /// <p>The memory size, in MB, of the function recommendation option.</p>
     pub fn set_memory_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.memory_size = input; self
+        self.memory_size = input;
+        self
     }
     /// Appends an item to `projected_utilization_metrics`.
     ///
     /// To override the contents of this collection use [`set_projected_utilization_metrics`](Self::set_projected_utilization_metrics).
     ///
     /// <p>An array of objects that describe the projected utilization metrics of the function recommendation option.</p>
-    pub fn projected_utilization_metrics(mut self, input: crate::types::LambdaFunctionMemoryProjectedMetric) -> Self {
+    pub fn projected_utilization_metrics(
+        mut self,
+        input: crate::types::LambdaFunctionMemoryProjectedMetric,
+    ) -> Self {
         let mut v = self.projected_utilization_metrics.unwrap_or_default();
-                        v.push(input);
-                        self.projected_utilization_metrics = Some(v);
-                        self
+        v.push(input);
+        self.projected_utilization_metrics = Some(v);
+        self
     }
     /// <p>An array of objects that describe the projected utilization metrics of the function recommendation option.</p>
-    pub fn set_projected_utilization_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::types::LambdaFunctionMemoryProjectedMetric>>) -> Self {
-        self.projected_utilization_metrics = input; self
+    pub fn set_projected_utilization_metrics(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::LambdaFunctionMemoryProjectedMetric>,
+        >,
+    ) -> Self {
+        self.projected_utilization_metrics = input;
+        self
     }
     /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn savings_opportunity(mut self, input: crate::types::SavingsOpportunity) -> Self {
@@ -95,23 +110,20 @@ impl LambdaFunctionMemoryRecommendationOptionBuilder {
         self
     }
     /// <p>An object that describes the savings opportunity for the Lambda function recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn set_savings_opportunity(mut self, input: std::option::Option<crate::types::SavingsOpportunity>) -> Self {
-        self.savings_opportunity = input; self
+    pub fn set_savings_opportunity(
+        mut self,
+        input: std::option::Option<crate::types::SavingsOpportunity>,
+    ) -> Self {
+        self.savings_opportunity = input;
+        self
     }
     /// Consumes the builder and constructs a [`LambdaFunctionMemoryRecommendationOption`](crate::types::LambdaFunctionMemoryRecommendationOption).
     pub fn build(self) -> crate::types::LambdaFunctionMemoryRecommendationOption {
         crate::types::LambdaFunctionMemoryRecommendationOption {
-            rank: self.rank
-                .unwrap_or_default()
-            ,
-            memory_size: self.memory_size
-                .unwrap_or_default()
-            ,
-            projected_utilization_metrics: self.projected_utilization_metrics
-            ,
-            savings_opportunity: self.savings_opportunity
-            ,
+            rank: self.rank.unwrap_or_default(),
+            memory_size: self.memory_size.unwrap_or_default(),
+            projected_utilization_metrics: self.projected_utilization_metrics,
+            savings_opportunity: self.savings_opportunity,
         }
     }
 }
-

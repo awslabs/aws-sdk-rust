@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateLinkOutput  {
+pub struct DisassociateLinkOutput {
     /// <p>Information about the link association.</p>
     #[doc(hidden)]
     pub link_association: std::option::Option<crate::types::LinkAssociation>,
@@ -10,18 +10,19 @@ pub struct DisassociateLinkOutput  {
 }
 impl DisassociateLinkOutput {
     /// <p>Information about the link association.</p>
-    pub fn link_association(&self) -> std::option::Option<& crate::types::LinkAssociation> {
+    pub fn link_association(&self) -> std::option::Option<&crate::types::LinkAssociation> {
         self.link_association.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociateLinkOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateLinkOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateLinkOutput`](crate::operation::disassociate_link::DisassociateLinkOutput).
-    pub fn builder() -> crate::operation::disassociate_link::builders::DisassociateLinkOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_link::builders::DisassociateLinkOutputBuilder
+    {
         crate::operation::disassociate_link::builders::DisassociateLinkOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl DisassociateLinkOutputBuilder {
         self
     }
     /// <p>Information about the link association.</p>
-    pub fn set_link_association(mut self, input: std::option::Option<crate::types::LinkAssociation>) -> Self {
-        self.link_association = input; self
+    pub fn set_link_association(
+        mut self,
+        input: std::option::Option<crate::types::LinkAssociation>,
+    ) -> Self {
+        self.link_association = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateLinkOutput`](crate::operation::disassociate_link::DisassociateLinkOutput).
     pub fn build(self) -> crate::operation::disassociate_link::DisassociateLinkOutput {
         crate::operation::disassociate_link::DisassociateLinkOutput {
-            link_association: self.link_association
-            ,
+            link_association: self.link_association,
             _request_id: self._request_id,
         }
     }
 }
-

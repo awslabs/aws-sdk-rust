@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRecommenderInput  {
+pub struct StartRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
     #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl StartRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
-    pub fn recommender_arn(&self) -> std::option::Option<& str> {
+    pub fn recommender_arn(&self) -> std::option::Option<&str> {
         self.recommender_arn.as_deref()
     }
 }
 impl StartRecommenderInput {
     /// Creates a new builder-style object to manufacture [`StartRecommenderInput`](crate::operation::start_recommender::StartRecommenderInput).
-    pub fn builder() -> crate::operation::start_recommender::builders::StartRecommenderInputBuilder {
+    pub fn builder() -> crate::operation::start_recommender::builders::StartRecommenderInputBuilder
+    {
         crate::operation::start_recommender::builders::StartRecommenderInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl StartRecommenderInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to start.</p>
     pub fn set_recommender_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recommender_arn = input; self
+        self.recommender_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartRecommenderInput`](crate::operation::start_recommender::StartRecommenderInput).
-    pub fn build(self) -> Result<crate::operation::start_recommender::StartRecommenderInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_recommender::StartRecommenderInput {
-                recommender_arn: self.recommender_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_recommender::StartRecommenderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_recommender::StartRecommenderInput {
+            recommender_arn: self.recommender_arn,
+        })
     }
 }
-

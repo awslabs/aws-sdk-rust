@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let entitysubtype = unimplemented!();
 /// match entitysubtype {
@@ -73,14 +73,22 @@
 /// Specifically, when `entitysubtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EntitySubType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum EntitySubType {
     #[allow(missing_docs)] // documentation missing in model
     Acuity,
@@ -173,127 +181,174 @@ pub enum EntitySubType {
     #[allow(missing_docs)] // documentation missing in model
     Url,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EntitySubType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACUITY" => EntitySubType::Acuity,
-"ADDRESS" => EntitySubType::Address,
-"AGE" => EntitySubType::Age,
-"ALCOHOL_CONSUMPTION" => EntitySubType::AlcoholConsumption,
-"ALLERGIES" => EntitySubType::Allergies,
-"AMOUNT" => EntitySubType::Amount,
-"BRAND_NAME" => EntitySubType::BrandName,
-"CONTACT_POINT" => EntitySubType::ContactPoint,
-"DATE" => EntitySubType::Date,
-"DIRECTION" => EntitySubType::Direction,
-"DOSAGE" => EntitySubType::Dosage,
-"DURATION" => EntitySubType::Duration,
-"DX_NAME" => EntitySubType::DxName,
-"EMAIL" => EntitySubType::Email,
-"FORM" => EntitySubType::Form,
-"FREQUENCY" => EntitySubType::Frequency,
-"GENDER" => EntitySubType::Gender,
-"GENERIC_NAME" => EntitySubType::GenericName,
-"ID" => EntitySubType::Id,
-"IDENTIFIER" => EntitySubType::Identifier,
-"NAME" => EntitySubType::Name,
-"PHONE_OR_FAX" => EntitySubType::PhoneOrFax,
-"PROCEDURE_NAME" => EntitySubType::ProcedureName,
-"PROFESSION" => EntitySubType::Profession,
-"QUALITY" => EntitySubType::Quality,
-"QUANTITY" => EntitySubType::Quantity,
-"RACE_ETHNICITY" => EntitySubType::RaceEthnicity,
-"RATE" => EntitySubType::Rate,
-"REC_DRUG_USE" => EntitySubType::RecDrugUse,
-"ROUTE_OR_MODE" => EntitySubType::RouteOrMode,
-"STRENGTH" => EntitySubType::Strength,
-"SYSTEM_ORGAN_SITE" => EntitySubType::SystemOrganSite,
-"TEST_NAME" => EntitySubType::TestName,
-"TEST_UNIT" => EntitySubType::TestUnit,
-"TEST_UNITS" => EntitySubType::TestUnits,
-"TEST_VALUE" => EntitySubType::TestValue,
-"TIME_EXPRESSION" => EntitySubType::TimeExpression,
-"TIME_TO_DX_NAME" => EntitySubType::TimeToDxName,
-"TIME_TO_MEDICATION_NAME" => EntitySubType::TimeToMedicationName,
-"TIME_TO_PROCEDURE_NAME" => EntitySubType::TimeToProcedureName,
-"TIME_TO_TEST_NAME" => EntitySubType::TimeToTestName,
-"TIME_TO_TREATMENT_NAME" => EntitySubType::TimeToTreatmentName,
-"TOBACCO_USE" => EntitySubType::TobaccoUse,
-"TREATMENT_NAME" => EntitySubType::TreatmentName,
-"URL" => EntitySubType::Url,
-other => EntitySubType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ACUITY" => EntitySubType::Acuity,
+            "ADDRESS" => EntitySubType::Address,
+            "AGE" => EntitySubType::Age,
+            "ALCOHOL_CONSUMPTION" => EntitySubType::AlcoholConsumption,
+            "ALLERGIES" => EntitySubType::Allergies,
+            "AMOUNT" => EntitySubType::Amount,
+            "BRAND_NAME" => EntitySubType::BrandName,
+            "CONTACT_POINT" => EntitySubType::ContactPoint,
+            "DATE" => EntitySubType::Date,
+            "DIRECTION" => EntitySubType::Direction,
+            "DOSAGE" => EntitySubType::Dosage,
+            "DURATION" => EntitySubType::Duration,
+            "DX_NAME" => EntitySubType::DxName,
+            "EMAIL" => EntitySubType::Email,
+            "FORM" => EntitySubType::Form,
+            "FREQUENCY" => EntitySubType::Frequency,
+            "GENDER" => EntitySubType::Gender,
+            "GENERIC_NAME" => EntitySubType::GenericName,
+            "ID" => EntitySubType::Id,
+            "IDENTIFIER" => EntitySubType::Identifier,
+            "NAME" => EntitySubType::Name,
+            "PHONE_OR_FAX" => EntitySubType::PhoneOrFax,
+            "PROCEDURE_NAME" => EntitySubType::ProcedureName,
+            "PROFESSION" => EntitySubType::Profession,
+            "QUALITY" => EntitySubType::Quality,
+            "QUANTITY" => EntitySubType::Quantity,
+            "RACE_ETHNICITY" => EntitySubType::RaceEthnicity,
+            "RATE" => EntitySubType::Rate,
+            "REC_DRUG_USE" => EntitySubType::RecDrugUse,
+            "ROUTE_OR_MODE" => EntitySubType::RouteOrMode,
+            "STRENGTH" => EntitySubType::Strength,
+            "SYSTEM_ORGAN_SITE" => EntitySubType::SystemOrganSite,
+            "TEST_NAME" => EntitySubType::TestName,
+            "TEST_UNIT" => EntitySubType::TestUnit,
+            "TEST_UNITS" => EntitySubType::TestUnits,
+            "TEST_VALUE" => EntitySubType::TestValue,
+            "TIME_EXPRESSION" => EntitySubType::TimeExpression,
+            "TIME_TO_DX_NAME" => EntitySubType::TimeToDxName,
+            "TIME_TO_MEDICATION_NAME" => EntitySubType::TimeToMedicationName,
+            "TIME_TO_PROCEDURE_NAME" => EntitySubType::TimeToProcedureName,
+            "TIME_TO_TEST_NAME" => EntitySubType::TimeToTestName,
+            "TIME_TO_TREATMENT_NAME" => EntitySubType::TimeToTreatmentName,
+            "TOBACCO_USE" => EntitySubType::TobaccoUse,
+            "TREATMENT_NAME" => EntitySubType::TreatmentName,
+            "URL" => EntitySubType::Url,
+            other => {
+                EntitySubType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for EntitySubType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(EntitySubType::from(s))
-                }
-            }
-impl EntitySubType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    EntitySubType::Acuity => "ACUITY",
-    EntitySubType::Address => "ADDRESS",
-    EntitySubType::Age => "AGE",
-    EntitySubType::AlcoholConsumption => "ALCOHOL_CONSUMPTION",
-    EntitySubType::Allergies => "ALLERGIES",
-    EntitySubType::Amount => "AMOUNT",
-    EntitySubType::BrandName => "BRAND_NAME",
-    EntitySubType::ContactPoint => "CONTACT_POINT",
-    EntitySubType::Date => "DATE",
-    EntitySubType::Direction => "DIRECTION",
-    EntitySubType::Dosage => "DOSAGE",
-    EntitySubType::Duration => "DURATION",
-    EntitySubType::DxName => "DX_NAME",
-    EntitySubType::Email => "EMAIL",
-    EntitySubType::Form => "FORM",
-    EntitySubType::Frequency => "FREQUENCY",
-    EntitySubType::Gender => "GENDER",
-    EntitySubType::GenericName => "GENERIC_NAME",
-    EntitySubType::Id => "ID",
-    EntitySubType::Identifier => "IDENTIFIER",
-    EntitySubType::Name => "NAME",
-    EntitySubType::PhoneOrFax => "PHONE_OR_FAX",
-    EntitySubType::ProcedureName => "PROCEDURE_NAME",
-    EntitySubType::Profession => "PROFESSION",
-    EntitySubType::Quality => "QUALITY",
-    EntitySubType::Quantity => "QUANTITY",
-    EntitySubType::RaceEthnicity => "RACE_ETHNICITY",
-    EntitySubType::Rate => "RATE",
-    EntitySubType::RecDrugUse => "REC_DRUG_USE",
-    EntitySubType::RouteOrMode => "ROUTE_OR_MODE",
-    EntitySubType::Strength => "STRENGTH",
-    EntitySubType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
-    EntitySubType::TestName => "TEST_NAME",
-    EntitySubType::TestUnit => "TEST_UNIT",
-    EntitySubType::TestUnits => "TEST_UNITS",
-    EntitySubType::TestValue => "TEST_VALUE",
-    EntitySubType::TimeExpression => "TIME_EXPRESSION",
-    EntitySubType::TimeToDxName => "TIME_TO_DX_NAME",
-    EntitySubType::TimeToMedicationName => "TIME_TO_MEDICATION_NAME",
-    EntitySubType::TimeToProcedureName => "TIME_TO_PROCEDURE_NAME",
-    EntitySubType::TimeToTestName => "TIME_TO_TEST_NAME",
-    EntitySubType::TimeToTreatmentName => "TIME_TO_TREATMENT_NAME",
-    EntitySubType::TobaccoUse => "TOBACCO_USE",
-    EntitySubType::TreatmentName => "TREATMENT_NAME",
-    EntitySubType::Url => "URL",
-    EntitySubType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACUITY", "ADDRESS", "AGE", "ALCOHOL_CONSUMPTION", "ALLERGIES", "AMOUNT", "BRAND_NAME", "CONTACT_POINT", "DATE", "DIRECTION", "DOSAGE", "DURATION", "DX_NAME", "EMAIL", "FORM", "FREQUENCY", "GENDER", "GENERIC_NAME", "ID", "IDENTIFIER", "NAME", "PHONE_OR_FAX", "PROCEDURE_NAME", "PROFESSION", "QUALITY", "QUANTITY", "RACE_ETHNICITY", "RATE", "REC_DRUG_USE", "ROUTE_OR_MODE", "STRENGTH", "SYSTEM_ORGAN_SITE", "TEST_NAME", "TEST_UNIT", "TEST_UNITS", "TEST_VALUE", "TIME_EXPRESSION", "TIME_TO_DX_NAME", "TIME_TO_MEDICATION_NAME", "TIME_TO_PROCEDURE_NAME", "TIME_TO_TEST_NAME", "TIME_TO_TREATMENT_NAME", "TOBACCO_USE", "TREATMENT_NAME", "URL"]
-                }
-            }
-impl AsRef<str> for EntitySubType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for EntitySubType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EntitySubType::from(s))
+    }
+}
+impl EntitySubType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EntitySubType::Acuity => "ACUITY",
+            EntitySubType::Address => "ADDRESS",
+            EntitySubType::Age => "AGE",
+            EntitySubType::AlcoholConsumption => "ALCOHOL_CONSUMPTION",
+            EntitySubType::Allergies => "ALLERGIES",
+            EntitySubType::Amount => "AMOUNT",
+            EntitySubType::BrandName => "BRAND_NAME",
+            EntitySubType::ContactPoint => "CONTACT_POINT",
+            EntitySubType::Date => "DATE",
+            EntitySubType::Direction => "DIRECTION",
+            EntitySubType::Dosage => "DOSAGE",
+            EntitySubType::Duration => "DURATION",
+            EntitySubType::DxName => "DX_NAME",
+            EntitySubType::Email => "EMAIL",
+            EntitySubType::Form => "FORM",
+            EntitySubType::Frequency => "FREQUENCY",
+            EntitySubType::Gender => "GENDER",
+            EntitySubType::GenericName => "GENERIC_NAME",
+            EntitySubType::Id => "ID",
+            EntitySubType::Identifier => "IDENTIFIER",
+            EntitySubType::Name => "NAME",
+            EntitySubType::PhoneOrFax => "PHONE_OR_FAX",
+            EntitySubType::ProcedureName => "PROCEDURE_NAME",
+            EntitySubType::Profession => "PROFESSION",
+            EntitySubType::Quality => "QUALITY",
+            EntitySubType::Quantity => "QUANTITY",
+            EntitySubType::RaceEthnicity => "RACE_ETHNICITY",
+            EntitySubType::Rate => "RATE",
+            EntitySubType::RecDrugUse => "REC_DRUG_USE",
+            EntitySubType::RouteOrMode => "ROUTE_OR_MODE",
+            EntitySubType::Strength => "STRENGTH",
+            EntitySubType::SystemOrganSite => "SYSTEM_ORGAN_SITE",
+            EntitySubType::TestName => "TEST_NAME",
+            EntitySubType::TestUnit => "TEST_UNIT",
+            EntitySubType::TestUnits => "TEST_UNITS",
+            EntitySubType::TestValue => "TEST_VALUE",
+            EntitySubType::TimeExpression => "TIME_EXPRESSION",
+            EntitySubType::TimeToDxName => "TIME_TO_DX_NAME",
+            EntitySubType::TimeToMedicationName => "TIME_TO_MEDICATION_NAME",
+            EntitySubType::TimeToProcedureName => "TIME_TO_PROCEDURE_NAME",
+            EntitySubType::TimeToTestName => "TIME_TO_TEST_NAME",
+            EntitySubType::TimeToTreatmentName => "TIME_TO_TREATMENT_NAME",
+            EntitySubType::TobaccoUse => "TOBACCO_USE",
+            EntitySubType::TreatmentName => "TREATMENT_NAME",
+            EntitySubType::Url => "URL",
+            EntitySubType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACUITY",
+            "ADDRESS",
+            "AGE",
+            "ALCOHOL_CONSUMPTION",
+            "ALLERGIES",
+            "AMOUNT",
+            "BRAND_NAME",
+            "CONTACT_POINT",
+            "DATE",
+            "DIRECTION",
+            "DOSAGE",
+            "DURATION",
+            "DX_NAME",
+            "EMAIL",
+            "FORM",
+            "FREQUENCY",
+            "GENDER",
+            "GENERIC_NAME",
+            "ID",
+            "IDENTIFIER",
+            "NAME",
+            "PHONE_OR_FAX",
+            "PROCEDURE_NAME",
+            "PROFESSION",
+            "QUALITY",
+            "QUANTITY",
+            "RACE_ETHNICITY",
+            "RATE",
+            "REC_DRUG_USE",
+            "ROUTE_OR_MODE",
+            "STRENGTH",
+            "SYSTEM_ORGAN_SITE",
+            "TEST_NAME",
+            "TEST_UNIT",
+            "TEST_UNITS",
+            "TEST_VALUE",
+            "TIME_EXPRESSION",
+            "TIME_TO_DX_NAME",
+            "TIME_TO_MEDICATION_NAME",
+            "TIME_TO_PROCEDURE_NAME",
+            "TIME_TO_TEST_NAME",
+            "TIME_TO_TREATMENT_NAME",
+            "TOBACCO_USE",
+            "TREATMENT_NAME",
+            "URL",
+        ]
+    }
+}
+impl AsRef<str> for EntitySubType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcPeeringAuthorizationsInput  {
-}
+pub struct DescribeVpcPeeringAuthorizationsInput {}
 impl DescribeVpcPeeringAuthorizationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringAuthorizationsInput`](crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsInput).
-    pub fn builder() -> crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsInputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsInputBuilder{
         crate::operation::describe_vpc_peering_authorizations::builders::DescribeVpcPeeringAuthorizationsInputBuilder::default()
     }
 }
@@ -14,15 +13,13 @@ impl DescribeVpcPeeringAuthorizationsInput {
 /// A builder for [`DescribeVpcPeeringAuthorizationsInput`](crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeVpcPeeringAuthorizationsInputBuilder {
-}
+pub struct DescribeVpcPeeringAuthorizationsInputBuilder {}
 impl DescribeVpcPeeringAuthorizationsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeVpcPeeringAuthorizationsInput`](crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsInput {
             }
         )
     }
 }
-

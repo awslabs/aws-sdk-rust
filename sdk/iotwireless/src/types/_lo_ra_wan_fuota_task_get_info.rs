@@ -3,7 +3,7 @@
 /// <p>The LoRaWAN information returned from getting a FUOTA task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanFuotaTaskGetInfo  {
+pub struct LoRaWanFuotaTaskGetInfo {
     /// <p>The frequency band (RFRegion) value.</p>
     #[doc(hidden)]
     pub rf_region: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LoRaWanFuotaTaskGetInfo  {
 }
 impl LoRaWanFuotaTaskGetInfo {
     /// <p>The frequency band (RFRegion) value.</p>
-    pub fn rf_region(&self) -> std::option::Option<& str> {
+    pub fn rf_region(&self) -> std::option::Option<&str> {
         self.rf_region.as_deref()
     }
     /// <p>Start time of a FUOTA task.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl LoRaWanFuotaTaskGetInfoBuilder {
     }
     /// <p>The frequency band (RFRegion) value.</p>
     pub fn set_rf_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rf_region = input; self
+        self.rf_region = input;
+        self
     }
     /// <p>Start time of a FUOTA task.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -51,17 +52,18 @@ impl LoRaWanFuotaTaskGetInfoBuilder {
         self
     }
     /// <p>Start time of a FUOTA task.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`LoRaWanFuotaTaskGetInfo`](crate::types::LoRaWanFuotaTaskGetInfo).
     pub fn build(self) -> crate::types::LoRaWanFuotaTaskGetInfo {
         crate::types::LoRaWanFuotaTaskGetInfo {
-            rf_region: self.rf_region
-            ,
-            start_time: self.start_time
-            ,
+            rf_region: self.rf_region,
+            start_time: self.start_time,
         }
     }
 }
-

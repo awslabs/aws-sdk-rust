@@ -3,7 +3,7 @@
 /// <p>Contains the output of DescribeLoadBalancerPolicies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoadBalancerPoliciesOutput  {
+pub struct DescribeLoadBalancerPoliciesOutput {
     /// <p>Information about the policies.</p>
     #[doc(hidden)]
     pub policy_descriptions: std::option::Option<std::vec::Vec<crate::types::PolicyDescription>>,
@@ -11,18 +11,18 @@ pub struct DescribeLoadBalancerPoliciesOutput  {
 }
 impl DescribeLoadBalancerPoliciesOutput {
     /// <p>Information about the policies.</p>
-    pub fn policy_descriptions(&self) -> std::option::Option<& [crate::types::PolicyDescription]> {
+    pub fn policy_descriptions(&self) -> std::option::Option<&[crate::types::PolicyDescription]> {
         self.policy_descriptions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLoadBalancerPoliciesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeLoadBalancerPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLoadBalancerPoliciesOutput`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput).
-    pub fn builder() -> crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesOutputBuilder{
         crate::operation::describe_load_balancer_policies::builders::DescribeLoadBalancerPoliciesOutputBuilder::default()
     }
 }
@@ -31,7 +31,8 @@ impl DescribeLoadBalancerPoliciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLoadBalancerPoliciesOutputBuilder {
-    pub(crate) policy_descriptions: std::option::Option<std::vec::Vec<crate::types::PolicyDescription>>,
+    pub(crate) policy_descriptions:
+        std::option::Option<std::vec::Vec<crate::types::PolicyDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeLoadBalancerPoliciesOutputBuilder {
@@ -42,30 +43,34 @@ impl DescribeLoadBalancerPoliciesOutputBuilder {
     /// <p>Information about the policies.</p>
     pub fn policy_descriptions(mut self, input: crate::types::PolicyDescription) -> Self {
         let mut v = self.policy_descriptions.unwrap_or_default();
-                        v.push(input);
-                        self.policy_descriptions = Some(v);
-                        self
+        v.push(input);
+        self.policy_descriptions = Some(v);
+        self
     }
     /// <p>Information about the policies.</p>
-    pub fn set_policy_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::PolicyDescription>>) -> Self {
-        self.policy_descriptions = input; self
+    pub fn set_policy_descriptions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PolicyDescription>>,
+    ) -> Self {
+        self.policy_descriptions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeLoadBalancerPoliciesOutput`](crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput).
-    pub fn build(self) -> crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput {
         crate::operation::describe_load_balancer_policies::DescribeLoadBalancerPoliciesOutput {
-            policy_descriptions: self.policy_descriptions
-            ,
+            policy_descriptions: self.policy_descriptions,
             _request_id: self._request_id,
         }
     }
 }
-

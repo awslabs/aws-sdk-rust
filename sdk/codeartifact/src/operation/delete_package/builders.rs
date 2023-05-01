@@ -4,50 +4,66 @@ pub use crate::operation::delete_package::_delete_package_output::DeletePackageO
 pub use crate::operation::delete_package::_delete_package_input::DeletePackageInputBuilder;
 
 /// Fluent builder constructing a request to `DeletePackage`.
-/// 
+///
 /// <p>Deletes a package and all associated package versions. A deleted package cannot be restored. To delete one or more package versions, use the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html">DeletePackageVersions</a> API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeletePackageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_package::builders::DeletePackageInputBuilder,
+    inner: crate::operation::delete_package::builders::DeletePackageInputBuilder,
 }
-impl DeletePackageFluentBuilder  {
+impl DeletePackageFluentBuilder {
     /// Creates a new `DeletePackage`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_package::DeletePackage, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_package::DeletePackageError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_package::DeletePackageOutput, aws_smithy_http::result::SdkError<crate::operation::delete_package::DeletePackageError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_package::DeletePackage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::delete_package::DeletePackageError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_package::DeletePackageOutput,
+        aws_smithy_http::result::SdkError<crate::operation::delete_package::DeletePackageError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the domain that contains the package to delete.</p>
     pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain(input.into());
@@ -88,23 +104,23 @@ impl DeletePackageFluentBuilder  {
         self.inner = self.inner.set_format(input);
         self
     }
-    /// <p>The namespace of the package to delete. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>.</p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain corresponding components, packages of those formats do not have a namespace. </p> </li> 
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
+    /// <p>The namespace of the package to delete. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>.</p> </li>
+    /// <li> <p> Python and NuGet packages do not contain corresponding components, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
-    /// <p>The namespace of the package to delete. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>.</p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain corresponding components, packages of those formats do not have a namespace. </p> </li> 
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
+    /// <p>The namespace of the package to delete. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. The namespace is required when deleting Maven package versions. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>.</p> </li>
+    /// <li> <p> Python and NuGet packages do not contain corresponding components, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
@@ -121,4 +137,3 @@ impl DeletePackageFluentBuilder  {
         self
     }
 }
-

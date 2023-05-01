@@ -3,7 +3,7 @@
 /// <p>Specifies the type of grid layout.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GridViewConfiguration  {
+pub struct GridViewConfiguration {
     /// <p>Defines the layout of the video tiles when content sharing is enabled.</p>
     #[doc(hidden)]
     pub content_share_layout: std::option::Option<crate::types::ContentShareLayoutOption>,
@@ -13,11 +13,15 @@ pub struct GridViewConfiguration  {
 }
 impl GridViewConfiguration {
     /// <p>Defines the layout of the video tiles when content sharing is enabled.</p>
-    pub fn content_share_layout(&self) -> std::option::Option<& crate::types::ContentShareLayoutOption> {
+    pub fn content_share_layout(
+        &self,
+    ) -> std::option::Option<&crate::types::ContentShareLayoutOption> {
         self.content_share_layout.as_ref()
     }
     /// <p>Defines the configuration options for a presenter only video tile.</p>
-    pub fn presenter_only_configuration(&self) -> std::option::Option<& crate::types::PresenterOnlyConfiguration> {
+    pub fn presenter_only_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::PresenterOnlyConfiguration> {
         self.presenter_only_configuration.as_ref()
     }
 }
@@ -33,7 +37,8 @@ impl GridViewConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GridViewConfigurationBuilder {
     pub(crate) content_share_layout: std::option::Option<crate::types::ContentShareLayoutOption>,
-    pub(crate) presenter_only_configuration: std::option::Option<crate::types::PresenterOnlyConfiguration>,
+    pub(crate) presenter_only_configuration:
+        std::option::Option<crate::types::PresenterOnlyConfiguration>,
 }
 impl GridViewConfigurationBuilder {
     /// <p>Defines the layout of the video tiles when content sharing is enabled.</p>
@@ -42,26 +47,34 @@ impl GridViewConfigurationBuilder {
         self
     }
     /// <p>Defines the layout of the video tiles when content sharing is enabled.</p>
-    pub fn set_content_share_layout(mut self, input: std::option::Option<crate::types::ContentShareLayoutOption>) -> Self {
-        self.content_share_layout = input; self
+    pub fn set_content_share_layout(
+        mut self,
+        input: std::option::Option<crate::types::ContentShareLayoutOption>,
+    ) -> Self {
+        self.content_share_layout = input;
+        self
     }
     /// <p>Defines the configuration options for a presenter only video tile.</p>
-    pub fn presenter_only_configuration(mut self, input: crate::types::PresenterOnlyConfiguration) -> Self {
+    pub fn presenter_only_configuration(
+        mut self,
+        input: crate::types::PresenterOnlyConfiguration,
+    ) -> Self {
         self.presenter_only_configuration = Some(input);
         self
     }
     /// <p>Defines the configuration options for a presenter only video tile.</p>
-    pub fn set_presenter_only_configuration(mut self, input: std::option::Option<crate::types::PresenterOnlyConfiguration>) -> Self {
-        self.presenter_only_configuration = input; self
+    pub fn set_presenter_only_configuration(
+        mut self,
+        input: std::option::Option<crate::types::PresenterOnlyConfiguration>,
+    ) -> Self {
+        self.presenter_only_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`GridViewConfiguration`](crate::types::GridViewConfiguration).
     pub fn build(self) -> crate::types::GridViewConfiguration {
         crate::types::GridViewConfiguration {
-            content_share_layout: self.content_share_layout
-            ,
-            presenter_only_configuration: self.presenter_only_configuration
-            ,
+            content_share_layout: self.content_share_layout,
+            presenter_only_configuration: self.presenter_only_configuration,
         }
     }
 }
-

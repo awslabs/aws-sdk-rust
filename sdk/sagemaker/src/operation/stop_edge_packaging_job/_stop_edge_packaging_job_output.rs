@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopEdgePackagingJobOutput  {
+pub struct StopEdgePackagingJobOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for StopEdgePackagingJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopEdgePackagingJobOutput {
     /// Creates a new builder-style object to manufacture [`StopEdgePackagingJobOutput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobOutput).
-    pub fn builder() -> crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobOutputBuilder
+    {
         crate::operation::stop_edge_packaging_job::builders::StopEdgePackagingJobOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct StopEdgePackagingJobOutputBuilder {
 }
 impl StopEdgePackagingJobOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopEdgePackagingJobOutput`](crate::operation::stop_edge_packaging_job::StopEdgePackagingJobOutput).
     pub fn build(self) -> crate::operation::stop_edge_packaging_job::StopEdgePackagingJobOutput {
         crate::operation::stop_edge_packaging_job::StopEdgePackagingJobOutput {
@@ -40,4 +42,3 @@ impl StopEdgePackagingJobOutputBuilder {
         }
     }
 }
-

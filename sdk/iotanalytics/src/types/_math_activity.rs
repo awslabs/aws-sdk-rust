@@ -3,7 +3,7 @@
 /// <p>An activity that computes an arithmetic expression using the message's attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MathActivity  {
+pub struct MathActivity {
     /// <p>The name of the math activity.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct MathActivity  {
 }
 impl MathActivity {
     /// <p>The name of the math activity.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the attribute that contains the result of the math operation.</p>
-    pub fn attribute(&self) -> std::option::Option<& str> {
+    pub fn attribute(&self) -> std::option::Option<&str> {
         self.attribute.as_deref()
     }
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
-    pub fn math(&self) -> std::option::Option<& str> {
+    pub fn math(&self) -> std::option::Option<&str> {
         self.math.as_deref()
     }
     /// <p>The next activity in the pipeline.</p>
-    pub fn next(&self) -> std::option::Option<& str> {
+    pub fn next(&self) -> std::option::Option<&str> {
         self.next.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl MathActivityBuilder {
     }
     /// <p>The name of the math activity.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the attribute that contains the result of the math operation.</p>
     pub fn attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl MathActivityBuilder {
     }
     /// <p>The name of the attribute that contains the result of the math operation.</p>
     pub fn set_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute = input; self
+        self.attribute = input;
+        self
     }
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
     pub fn math(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl MathActivityBuilder {
     }
     /// <p>An expression that uses one or more existing attributes and must return an integer value.</p>
     pub fn set_math(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.math = input; self
+        self.math = input;
+        self
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn next(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl MathActivityBuilder {
     }
     /// <p>The next activity in the pipeline.</p>
     pub fn set_next(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next = input; self
+        self.next = input;
+        self
     }
     /// Consumes the builder and constructs a [`MathActivity`](crate::types::MathActivity).
     pub fn build(self) -> crate::types::MathActivity {
         crate::types::MathActivity {
-            name: self.name
-            ,
-            attribute: self.attribute
-            ,
-            math: self.math
-            ,
-            next: self.next
-            ,
+            name: self.name,
+            attribute: self.attribute,
+            math: self.math,
+            next: self.next,
         }
     }
 }
-

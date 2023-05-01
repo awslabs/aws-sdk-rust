@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopMetricStreamsInput  {
-    /// <p>The array of the names of metric streams to stop streaming.</p> 
+pub struct StopMetricStreamsInput {
+    /// <p>The array of the names of metric streams to stop streaming.</p>
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
     #[doc(hidden)]
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StopMetricStreamsInput {
-    /// <p>The array of the names of metric streams to stop streaming.</p> 
+    /// <p>The array of the names of metric streams to stop streaming.</p>
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
-    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
 }
 impl StopMetricStreamsInput {
     /// Creates a new builder-style object to manufacture [`StopMetricStreamsInput`](crate::operation::stop_metric_streams::StopMetricStreamsInput).
-    pub fn builder() -> crate::operation::stop_metric_streams::builders::StopMetricStreamsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_metric_streams::builders::StopMetricStreamsInputBuilder {
         crate::operation::stop_metric_streams::builders::StopMetricStreamsInputBuilder::default()
     }
 }
@@ -33,27 +34,30 @@ impl StopMetricStreamsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_names`](Self::set_names).
     ///
-    /// <p>The array of the names of metric streams to stop streaming.</p> 
+    /// <p>The array of the names of metric streams to stop streaming.</p>
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-                        v.push(input.into());
-                        self.names = Some(v);
-                        self
+        v.push(input.into());
+        self.names = Some(v);
+        self
     }
-    /// <p>The array of the names of metric streams to stop streaming.</p> 
+    /// <p>The array of the names of metric streams to stop streaming.</p>
     /// <p>This is an "all or nothing" operation. If you do not have permission to access all of the metric streams that you list here, then none of the streams that you list in the operation will stop streaming.</p>
-    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.names = input; self
+    pub fn set_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.names = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopMetricStreamsInput`](crate::operation::stop_metric_streams::StopMetricStreamsInput).
-    pub fn build(self) -> Result<crate::operation::stop_metric_streams::StopMetricStreamsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_metric_streams::StopMetricStreamsInput {
-                names: self.names
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_metric_streams::StopMetricStreamsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_metric_streams::StopMetricStreamsInput { names: self.names })
     }
 }
-

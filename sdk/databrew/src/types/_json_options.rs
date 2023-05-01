@@ -3,7 +3,7 @@
 /// <p>Represents the JSON-specific options that define how input is to be interpreted by Glue DataBrew.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JsonOptions  {
+pub struct JsonOptions {
     /// <p>A value that specifies whether JSON input contains embedded new line characters.</p>
     #[doc(hidden)]
     pub multi_line: bool,
@@ -35,15 +35,13 @@ impl JsonOptionsBuilder {
     }
     /// <p>A value that specifies whether JSON input contains embedded new line characters.</p>
     pub fn set_multi_line(mut self, input: std::option::Option<bool>) -> Self {
-        self.multi_line = input; self
+        self.multi_line = input;
+        self
     }
     /// Consumes the builder and constructs a [`JsonOptions`](crate::types::JsonOptions).
     pub fn build(self) -> crate::types::JsonOptions {
         crate::types::JsonOptions {
-            multi_line: self.multi_line
-                .unwrap_or_default()
-            ,
+            multi_line: self.multi_line.unwrap_or_default(),
         }
     }
 }
-

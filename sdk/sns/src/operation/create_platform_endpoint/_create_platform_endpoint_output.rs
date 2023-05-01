@@ -3,7 +3,7 @@
 /// <p>Response from CreateEndpoint action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePlatformEndpointOutput  {
+pub struct CreatePlatformEndpointOutput {
     /// <p>EndpointArn returned from CreateEndpoint action.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
@@ -11,18 +11,20 @@ pub struct CreatePlatformEndpointOutput  {
 }
 impl CreatePlatformEndpointOutput {
     /// <p>EndpointArn returned from CreateEndpoint action.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreatePlatformEndpointOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreatePlatformEndpointOutput {
     /// Creates a new builder-style object to manufacture [`CreatePlatformEndpointOutput`](crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput).
-    pub fn builder() -> crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointOutputBuilder
+    {
         crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointOutputBuilder::default()
     }
 }
@@ -42,24 +44,23 @@ impl CreatePlatformEndpointOutputBuilder {
     }
     /// <p>EndpointArn returned from CreateEndpoint action.</p>
     pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_arn = input; self
+        self.endpoint_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreatePlatformEndpointOutput`](crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput).
     pub fn build(self) -> crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput {
         crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput {
-            endpoint_arn: self.endpoint_arn
-            ,
+            endpoint_arn: self.endpoint_arn,
             _request_id: self._request_id,
         }
     }
 }
-

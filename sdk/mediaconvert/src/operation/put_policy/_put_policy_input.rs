@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPolicyInput  {
+pub struct PutPolicyInput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     #[doc(hidden)]
     pub policy: std::option::Option<crate::types::Policy>,
 }
 impl PutPolicyInput {
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
-    pub fn policy(&self) -> std::option::Option<& crate::types::Policy> {
+    pub fn policy(&self) -> std::option::Option<&crate::types::Policy> {
         self.policy.as_ref()
     }
 }
@@ -34,16 +34,18 @@ impl PutPolicyInputBuilder {
     }
     /// A policy configures behavior that you allow or disallow for your account. For information about MediaConvert policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
     pub fn set_policy(mut self, input: std::option::Option<crate::types::Policy>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutPolicyInput`](crate::operation::put_policy::PutPolicyInput).
-    pub fn build(self) -> Result<crate::operation::put_policy::PutPolicyInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_policy::PutPolicyInput {
-                policy: self.policy
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_policy::PutPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_policy::PutPolicyInput {
+            policy: self.policy,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListRasterDataCollectionsInput  {
+pub struct ListRasterDataCollectionsInput {
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListRasterDataCollectionsInput  {
 }
 impl ListRasterDataCollectionsInput {
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of items to return.</p>
@@ -20,7 +20,7 @@ impl ListRasterDataCollectionsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListRasterDataCollectionsInput  {
+impl std::fmt::Debug for ListRasterDataCollectionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRasterDataCollectionsInput");
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
@@ -30,7 +30,7 @@ impl  std::fmt::Debug for ListRasterDataCollectionsInput  {
 }
 impl ListRasterDataCollectionsInput {
     /// Creates a new builder-style object to manufacture [`ListRasterDataCollectionsInput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput).
-    pub fn builder() -> crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsInputBuilder {
+    pub fn builder() -> crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsInputBuilder{
         crate::operation::list_raster_data_collections::builders::ListRasterDataCollectionsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListRasterDataCollectionsInputBuilder {
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The total number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,17 +60,21 @@ impl ListRasterDataCollectionsInputBuilder {
     }
     /// <p>The total number of items to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListRasterDataCollectionsInput`](crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput).
-    pub fn build(self) -> Result<crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_raster_data_collections::ListRasterDataCollectionsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
@@ -81,4 +86,3 @@ impl std::fmt::Debug for ListRasterDataCollectionsInputBuilder {
         formatter.finish()
     }
 }
-

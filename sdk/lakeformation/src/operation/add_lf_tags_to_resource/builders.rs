@@ -4,50 +4,70 @@ pub use crate::operation::add_lf_tags_to_resource::_add_lf_tags_to_resource_outp
 pub use crate::operation::add_lf_tags_to_resource::_add_lf_tags_to_resource_input::AddLfTagsToResourceInputBuilder;
 
 /// Fluent builder constructing a request to `AddLFTagsToResource`.
-/// 
+///
 /// <p>Attaches one or more LF-tags to an existing resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AddLFTagsToResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder,
+    inner: crate::operation::add_lf_tags_to_resource::builders::AddLfTagsToResourceInputBuilder,
 }
-impl AddLFTagsToResourceFluentBuilder  {
+impl AddLFTagsToResourceFluentBuilder {
     /// Creates a new `AddLFTagsToResource`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::add_lf_tags_to_resource::AddLFTagsToResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput, aws_smithy_http::result::SdkError<crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::add_lf_tags_to_resource::AddLFTagsToResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment. </p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -78,9 +98,11 @@ impl AddLFTagsToResourceFluentBuilder  {
         self
     }
     /// <p>The LF-tags to attach to the resource.</p>
-    pub fn set_lf_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>) -> Self {
+    pub fn set_lf_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LfTagPair>>,
+    ) -> Self {
         self.inner = self.inner.set_lf_tags(input);
         self
     }
 }
-

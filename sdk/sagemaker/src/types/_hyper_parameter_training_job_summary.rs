@@ -3,7 +3,7 @@
 /// <p>The container for the summary information about a training job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HyperParameterTrainingJobSummary  {
+pub struct HyperParameterTrainingJobSummary {
     /// <p>The training job definition name.</p>
     #[doc(hidden)]
     pub training_job_definition_name: std::option::Option<std::string::String>,
@@ -30,82 +30,90 @@ pub struct HyperParameterTrainingJobSummary  {
     pub training_job_status: std::option::Option<crate::types::TrainingJobStatus>,
     /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
     #[doc(hidden)]
-    pub tuned_hyper_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tuned_hyper_parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The reason that the training job failed. </p>
     #[doc(hidden)]
     pub failure_reason: std::option::Option<std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
     #[doc(hidden)]
-    pub final_hyper_parameter_tuning_job_objective_metric: std::option::Option<crate::types::FinalHyperParameterTuningJobObjectiveMetric>,
-    /// <p>The status of the objective metric for the training job:</p> 
-    /// <ul> 
-    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li> 
+    pub final_hyper_parameter_tuning_job_objective_metric:
+        std::option::Option<crate::types::FinalHyperParameterTuningJobObjectiveMetric>,
+    /// <p>The status of the objective metric for the training job:</p>
+    /// <ul>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub objective_status: std::option::Option<crate::types::ObjectiveStatus>,
 }
 impl HyperParameterTrainingJobSummary {
     /// <p>The training job definition name.</p>
-    pub fn training_job_definition_name(&self) -> std::option::Option<& str> {
+    pub fn training_job_definition_name(&self) -> std::option::Option<&str> {
         self.training_job_definition_name.as_deref()
     }
     /// <p>The name of the training job.</p>
-    pub fn training_job_name(&self) -> std::option::Option<& str> {
+    pub fn training_job_name(&self) -> std::option::Option<&str> {
         self.training_job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
-    pub fn training_job_arn(&self) -> std::option::Option<& str> {
+    pub fn training_job_arn(&self) -> std::option::Option<&str> {
         self.training_job_arn.as_deref()
     }
     /// <p>The HyperParameter tuning job that launched the training job.</p>
-    pub fn tuning_job_name(&self) -> std::option::Option<& str> {
+    pub fn tuning_job_name(&self) -> std::option::Option<&str> {
         self.tuning_job_name.as_deref()
     }
     /// <p>The date and time that the training job was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The date and time that the training job started.</p>
-    pub fn training_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn training_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_start_time.as_ref()
     }
     /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
-    pub fn training_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn training_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.training_end_time.as_ref()
     }
     /// <p>The status of the training job.</p>
-    pub fn training_job_status(&self) -> std::option::Option<& crate::types::TrainingJobStatus> {
+    pub fn training_job_status(&self) -> std::option::Option<&crate::types::TrainingJobStatus> {
         self.training_job_status.as_ref()
     }
     /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
-    pub fn tuned_hyper_parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tuned_hyper_parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tuned_hyper_parameters.as_ref()
     }
     /// <p>The reason that the training job failed. </p>
-    pub fn failure_reason(&self) -> std::option::Option<& str> {
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
-    pub fn final_hyper_parameter_tuning_job_objective_metric(&self) -> std::option::Option<& crate::types::FinalHyperParameterTuningJobObjectiveMetric> {
-        self.final_hyper_parameter_tuning_job_objective_metric.as_ref()
+    pub fn final_hyper_parameter_tuning_job_objective_metric(
+        &self,
+    ) -> std::option::Option<&crate::types::FinalHyperParameterTuningJobObjectiveMetric> {
+        self.final_hyper_parameter_tuning_job_objective_metric
+            .as_ref()
     }
-    /// <p>The status of the objective metric for the training job:</p> 
-    /// <ul> 
-    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li> 
+    /// <p>The status of the objective metric for the training job:</p>
+    /// <ul>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
     /// </ul>
-    pub fn objective_status(&self) -> std::option::Option<& crate::types::ObjectiveStatus> {
+    /// <ul>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
+    /// </ul>
+    pub fn objective_status(&self) -> std::option::Option<&crate::types::ObjectiveStatus> {
         self.objective_status.as_ref()
     }
 }
@@ -128,9 +136,11 @@ pub struct HyperParameterTrainingJobSummaryBuilder {
     pub(crate) training_start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) training_end_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) training_job_status: std::option::Option<crate::types::TrainingJobStatus>,
-    pub(crate) tuned_hyper_parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tuned_hyper_parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) failure_reason: std::option::Option<std::string::String>,
-    pub(crate) final_hyper_parameter_tuning_job_objective_metric: std::option::Option<crate::types::FinalHyperParameterTuningJobObjectiveMetric>,
+    pub(crate) final_hyper_parameter_tuning_job_objective_metric:
+        std::option::Option<crate::types::FinalHyperParameterTuningJobObjectiveMetric>,
     pub(crate) objective_status: std::option::Option<crate::types::ObjectiveStatus>,
 }
 impl HyperParameterTrainingJobSummaryBuilder {
@@ -140,8 +150,12 @@ impl HyperParameterTrainingJobSummaryBuilder {
         self
     }
     /// <p>The training job definition name.</p>
-    pub fn set_training_job_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.training_job_definition_name = input; self
+    pub fn set_training_job_definition_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.training_job_definition_name = input;
+        self
     }
     /// <p>The name of the training job.</p>
     pub fn training_job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,8 +163,12 @@ impl HyperParameterTrainingJobSummaryBuilder {
         self
     }
     /// <p>The name of the training job.</p>
-    pub fn set_training_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.training_job_name = input; self
+    pub fn set_training_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.training_job_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
     pub fn training_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +177,8 @@ impl HyperParameterTrainingJobSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the training job.</p>
     pub fn set_training_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.training_job_arn = input; self
+        self.training_job_arn = input;
+        self
     }
     /// <p>The HyperParameter tuning job that launched the training job.</p>
     pub fn tuning_job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +187,8 @@ impl HyperParameterTrainingJobSummaryBuilder {
     }
     /// <p>The HyperParameter tuning job that launched the training job.</p>
     pub fn set_tuning_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tuning_job_name = input; self
+        self.tuning_job_name = input;
+        self
     }
     /// <p>The date and time that the training job was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -176,8 +196,12 @@ impl HyperParameterTrainingJobSummaryBuilder {
         self
     }
     /// <p>The date and time that the training job was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The date and time that the training job started.</p>
     pub fn training_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -185,8 +209,12 @@ impl HyperParameterTrainingJobSummaryBuilder {
         self
     }
     /// <p>The date and time that the training job started.</p>
-    pub fn set_training_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.training_start_time = input; self
+    pub fn set_training_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.training_start_time = input;
+        self
     }
     /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
     pub fn training_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -194,8 +222,12 @@ impl HyperParameterTrainingJobSummaryBuilder {
         self
     }
     /// <p>Specifies the time when the training job ends on training instances. You are billed for the time interval between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.</p>
-    pub fn set_training_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.training_end_time = input; self
+    pub fn set_training_end_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.training_end_time = input;
+        self
     }
     /// <p>The status of the training job.</p>
     pub fn training_job_status(mut self, input: crate::types::TrainingJobStatus) -> Self {
@@ -203,23 +235,37 @@ impl HyperParameterTrainingJobSummaryBuilder {
         self
     }
     /// <p>The status of the training job.</p>
-    pub fn set_training_job_status(mut self, input: std::option::Option<crate::types::TrainingJobStatus>) -> Self {
-        self.training_job_status = input; self
+    pub fn set_training_job_status(
+        mut self,
+        input: std::option::Option<crate::types::TrainingJobStatus>,
+    ) -> Self {
+        self.training_job_status = input;
+        self
     }
     /// Adds a key-value pair to `tuned_hyper_parameters`.
     ///
     /// To override the contents of this collection use [`set_tuned_hyper_parameters`](Self::set_tuned_hyper_parameters).
     ///
     /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
-    pub fn tuned_hyper_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tuned_hyper_parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tuned_hyper_parameters.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tuned_hyper_parameters = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tuned_hyper_parameters = Some(hash_map);
+        self
     }
     /// <p>A list of the hyperparameters for which you specified ranges to search.</p>
-    pub fn set_tuned_hyper_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tuned_hyper_parameters = input; self
+    pub fn set_tuned_hyper_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tuned_hyper_parameters = input;
+        self
     }
     /// <p>The reason that the training job failed. </p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,72 +274,72 @@ impl HyperParameterTrainingJobSummaryBuilder {
     }
     /// <p>The reason that the training job failed. </p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input; self
+        self.failure_reason = input;
+        self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
-    pub fn final_hyper_parameter_tuning_job_objective_metric(mut self, input: crate::types::FinalHyperParameterTuningJobObjectiveMetric) -> Self {
+    pub fn final_hyper_parameter_tuning_job_objective_metric(
+        mut self,
+        input: crate::types::FinalHyperParameterTuningJobObjectiveMetric,
+    ) -> Self {
         self.final_hyper_parameter_tuning_job_objective_metric = Some(input);
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
-    pub fn set_final_hyper_parameter_tuning_job_objective_metric(mut self, input: std::option::Option<crate::types::FinalHyperParameterTuningJobObjectiveMetric>) -> Self {
-        self.final_hyper_parameter_tuning_job_objective_metric = input; self
+    pub fn set_final_hyper_parameter_tuning_job_objective_metric(
+        mut self,
+        input: std::option::Option<crate::types::FinalHyperParameterTuningJobObjectiveMetric>,
+    ) -> Self {
+        self.final_hyper_parameter_tuning_job_objective_metric = input;
+        self
     }
-    /// <p>The status of the objective metric for the training job:</p> 
-    /// <ul> 
-    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li> 
+    /// <p>The status of the objective metric for the training job:</p>
+    /// <ul>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
     /// </ul>
     pub fn objective_status(mut self, input: crate::types::ObjectiveStatus) -> Self {
         self.objective_status = Some(input);
         self
     }
-    /// <p>The status of the objective metric for the training job:</p> 
-    /// <ul> 
-    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li> 
+    /// <p>The status of the objective metric for the training job:</p>
+    /// <ul>
+    /// <li> <p>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</p> </li>
     /// </ul>
-    pub fn set_objective_status(mut self, input: std::option::Option<crate::types::ObjectiveStatus>) -> Self {
-        self.objective_status = input; self
+    /// <ul>
+    /// <li> <p>Pending: The training job is in progress and evaluation of its final objective metric is pending.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</p> </li>
+    /// </ul>
+    pub fn set_objective_status(
+        mut self,
+        input: std::option::Option<crate::types::ObjectiveStatus>,
+    ) -> Self {
+        self.objective_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`HyperParameterTrainingJobSummary`](crate::types::HyperParameterTrainingJobSummary).
     pub fn build(self) -> crate::types::HyperParameterTrainingJobSummary {
         crate::types::HyperParameterTrainingJobSummary {
-            training_job_definition_name: self.training_job_definition_name
-            ,
-            training_job_name: self.training_job_name
-            ,
-            training_job_arn: self.training_job_arn
-            ,
-            tuning_job_name: self.tuning_job_name
-            ,
-            creation_time: self.creation_time
-            ,
-            training_start_time: self.training_start_time
-            ,
-            training_end_time: self.training_end_time
-            ,
-            training_job_status: self.training_job_status
-            ,
-            tuned_hyper_parameters: self.tuned_hyper_parameters
-            ,
-            failure_reason: self.failure_reason
-            ,
-            final_hyper_parameter_tuning_job_objective_metric: self.final_hyper_parameter_tuning_job_objective_metric
-            ,
-            objective_status: self.objective_status
-            ,
+            training_job_definition_name: self.training_job_definition_name,
+            training_job_name: self.training_job_name,
+            training_job_arn: self.training_job_arn,
+            tuning_job_name: self.tuning_job_name,
+            creation_time: self.creation_time,
+            training_start_time: self.training_start_time,
+            training_end_time: self.training_end_time,
+            training_job_status: self.training_job_status,
+            tuned_hyper_parameters: self.tuned_hyper_parameters,
+            failure_reason: self.failure_reason,
+            final_hyper_parameter_tuning_job_objective_metric: self
+                .final_hyper_parameter_tuning_job_objective_metric,
+            objective_status: self.objective_status,
         }
     }
 }
-

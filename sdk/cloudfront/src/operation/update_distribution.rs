@@ -5,41 +5,84 @@ impl UpdateDistributionInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::update_distribution::UpdateDistribution, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
-        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
-        .set_use_dual_stack(_config.use_dual_stack)
-        .set_use_fips(_config.use_fips)
-        .set_endpoint(_config.endpoint_url
-        .clone()).build()
-                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
-                                let (endpoint_result, params) = match params_result {
-                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
-                                    Err(e) => (Err(e), None)
-                                };
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::update_distribution::UpdateDistribution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
-            fn uri_base(_input: &crate::operation::update_distribution::UpdateDistributionInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(
+                _input: &crate::operation::update_distribution::UpdateDistributionInput,
+                output: &mut String,
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 use std::fmt::Write as _;
                 let input_1 = &_input.id;
-                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
-                let id = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Default);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "id",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let id = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Default,
+                );
                 if id.is_empty() {
-                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))
-                            }
-                write!(output, "/2020-05-31/distribution/{Id}/config", Id = id).expect("formatting should succeed");
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "id",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
+                write!(output, "/2020-05-31/distribution/{Id}/config", Id = id)
+                    .expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                            input: &crate::operation::update_distribution::UpdateDistributionInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                input: &crate::operation::update_distribution::UpdateDistributionInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 let builder = crate::protocol_serde::shape_update_distribution::ser_update_distribution_headers(input, builder)?;
                 Ok(builder.method("PUT").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/xml");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/xml",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -48,33 +91,56 @@ impl UpdateDistributionInput {
             crate::protocol_serde::shape_update_distribution_input::ser_distribution_config_http_payload(& self.distribution_config)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params { request.properties_mut().insert(params); }
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                                aws_types::os_shim_internal::Env::real(),
-                                crate::meta::API_METADATA.clone(),
-                            );
-                            if let Some(app_name) = _config.app_name() {
-                                user_agent = user_agent.with_app_name(app_name.clone());
-                            }
-                            request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::meta::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::update_distribution::UpdateDistribution::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("UpdateDistribution", "cloudfront"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_credentials_cache(
+            &mut request.properties_mut(),
+            _config.credentials_cache.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::update_distribution::UpdateDistribution::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "UpdateDistribution",
+            "cloudfront",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -91,26 +157,37 @@ impl UpdateDistribution {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for UpdateDistribution {
-                type Output = std::result::Result<crate::operation::update_distribution::UpdateDistributionOutput, crate::operation::update_distribution::UpdateDistributionError>;
-                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-                     let (success, status) = (response.status().is_success(), response.status().as_u16());
-                     let headers = response.headers();
-                     let body = response.body().as_ref();
-                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !success && status != 200 {
-                        crate::protocol_serde::shape_update_distribution::de_update_distribution_http_error(status, headers, body)
-                     } else {
-                        crate::protocol_serde::shape_update_distribution::de_update_distribution_http_response(status, headers, body)
-                     }
-                }
-                fn sensitive(&self) -> bool { true }
-            }
+    type Output = std::result::Result<
+        crate::operation::update_distribution::UpdateDistributionOutput,
+        crate::operation::update_distribution::UpdateDistributionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        let (success, status) = (response.status().is_success(), response.status().as_u16());
+        let headers = response.headers();
+        let body = response.body().as_ref();
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        if !success && status != 200 {
+            crate::protocol_serde::shape_update_distribution::de_update_distribution_http_error(
+                status, headers, body,
+            )
+        } else {
+            crate::protocol_serde::shape_update_distribution::de_update_distribution_http_response(
+                status, headers, body,
+            )
+        }
+    }
+    fn sensitive(&self) -> bool {
+        true
+    }
+}
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type UpdateDistributionErrorKind = UpdateDistributionError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type UpdateDistributionErrorKind = UpdateDistributionError;
 /// Error type for the `UpdateDistributionError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -122,7 +199,9 @@ pub enum UpdateDistributionError {
     /// <p>You cannot delete a continuous deployment policy that is associated with a primary distribution.</p>
     ContinuousDeploymentPolicyInUse(crate::types::error::ContinuousDeploymentPolicyInUse),
     /// <p>The specified configuration for field-level encryption can't be associated with the specified cache behavior.</p>
-    IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(crate::types::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior),
+    IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(
+        crate::types::error::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior,
+    ),
     /// <p>An origin cannot contain both an origin access control (OAC) and an origin access identity (OAI).</p>
     IllegalOriginAccessConfiguration(crate::types::error::IllegalOriginAccessConfiguration),
     /// <p>The update contains modifications that are not allowed.</p>
@@ -134,7 +213,9 @@ pub enum UpdateDistributionError {
     /// <p>The default root object file name is too big or contains an invalid character.</p>
     InvalidDefaultRootObject(crate::types::error::InvalidDefaultRootObject),
     /// <p>An origin access control is associated with an origin whose domain name is not supported.</p>
-    InvalidDomainNameForOriginAccessControl(crate::types::error::InvalidDomainNameForOriginAccessControl),
+    InvalidDomainNameForOriginAccessControl(
+        crate::types::error::InvalidDomainNameForOriginAccessControl,
+    ),
     /// <p>An invalid error code was specified.</p>
     InvalidErrorCode(crate::types::error::InvalidErrorCode),
     /// <p>Your request contains forward cookies option which doesn't match with the expectation for the <code>whitelisted</code> list of cookie names. Either list of cookie names has been specified when not allowed or list of cookie names is missing when expected.</p>
@@ -208,28 +289,46 @@ pub enum UpdateDistributionError {
     /// <p>Your request contains more CNAMEs than are allowed per distribution.</p>
     TooManyDistributionCnamEs(crate::types::error::TooManyDistributionCnamEs),
     /// <p>The maximum number of distributions have been associated with the specified cache policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsAssociatedToCachePolicy(crate::types::error::TooManyDistributionsAssociatedToCachePolicy),
+    TooManyDistributionsAssociatedToCachePolicy(
+        crate::types::error::TooManyDistributionsAssociatedToCachePolicy,
+    ),
     /// <p>The maximum number of distributions have been associated with the specified configuration for field-level encryption.</p>
-    TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig),
+    TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(
+        crate::types::error::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig,
+    ),
     /// <p>The number of distributions that reference this key group is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsAssociatedToKeyGroup(crate::types::error::TooManyDistributionsAssociatedToKeyGroup),
+    TooManyDistributionsAssociatedToKeyGroup(
+        crate::types::error::TooManyDistributionsAssociatedToKeyGroup,
+    ),
     /// <p>The maximum number of distributions have been associated with the specified origin request policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsAssociatedToOriginRequestPolicy(crate::types::error::TooManyDistributionsAssociatedToOriginRequestPolicy),
-    /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p> 
+    TooManyDistributionsAssociatedToOriginRequestPolicy(
+        crate::types::error::TooManyDistributionsAssociatedToOriginRequestPolicy,
+    ),
+    /// <p>The maximum number of distributions have been associated with the specified response headers policy.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsAssociatedToResponseHeadersPolicy(crate::types::error::TooManyDistributionsAssociatedToResponseHeadersPolicy),
+    TooManyDistributionsAssociatedToResponseHeadersPolicy(
+        crate::types::error::TooManyDistributionsAssociatedToResponseHeadersPolicy,
+    ),
     /// <p>You have reached the maximum number of distributions that are associated with a CloudFront function. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyDistributionsWithFunctionAssociations(crate::types::error::TooManyDistributionsWithFunctionAssociations),
+    TooManyDistributionsWithFunctionAssociations(
+        crate::types::error::TooManyDistributionsWithFunctionAssociations,
+    ),
     /// <p>Processing your request would cause the maximum number of distributions with Lambda@Edge function associations per owner to be exceeded.</p>
-    TooManyDistributionsWithLambdaAssociations(crate::types::error::TooManyDistributionsWithLambdaAssociations),
+    TooManyDistributionsWithLambdaAssociations(
+        crate::types::error::TooManyDistributionsWithLambdaAssociations,
+    ),
     /// <p>The maximum number of distributions have been associated with the specified Lambda@Edge function.</p>
-    TooManyDistributionsWithSingleFunctionArn(crate::types::error::TooManyDistributionsWithSingleFunctionArn),
+    TooManyDistributionsWithSingleFunctionArn(
+        crate::types::error::TooManyDistributionsWithSingleFunctionArn,
+    ),
     /// <p>You have reached the maximum number of CloudFront function associations for this distribution. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
     TooManyFunctionAssociations(crate::types::error::TooManyFunctionAssociations),
     /// <p>Your request contains too many headers in forwarded values.</p>
     TooManyHeadersInForwardedValues(crate::types::error::TooManyHeadersInForwardedValues),
     /// <p>The number of key groups referenced by this distribution is more than the maximum allowed. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.</p>
-    TooManyKeyGroupsAssociatedToDistribution(crate::types::error::TooManyKeyGroupsAssociatedToDistribution),
+    TooManyKeyGroupsAssociatedToDistribution(
+        crate::types::error::TooManyKeyGroupsAssociatedToDistribution,
+    ),
     /// <p>Your request contains more Lambda@Edge function associations than are allowed per distribution.</p>
     TooManyLambdaFunctionAssociations(crate::types::error::TooManyLambdaFunctionAssociations),
     /// <p>Your request contains too many origin custom headers.</p>
@@ -247,435 +346,307 @@ pub enum UpdateDistributionError {
     /// <p>One or more of your trusted signers don't exist.</p>
     TrustedSignerDoesNotExist(crate::types::error::TrustedSignerDoesNotExist),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for UpdateDistributionError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for UpdateDistributionError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::AccessDenied(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::CnameAlreadyExists(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ContinuousDeploymentPolicyInUse(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::IllegalOriginAccessConfiguration(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::IllegalUpdate(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InconsistentQuantities(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidArgument(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidDefaultRootObject(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidDomainNameForOriginAccessControl(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidErrorCode(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidForwardCookies(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidFunctionAssociation(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidGeoRestrictionParameter(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidHeadersForS3Origin(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidIfMatchVersion(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidLambdaFunctionAssociation(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidLocationCode(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidMinimumProtocolVersion(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidOriginAccessControl(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidOriginAccessIdentity(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidOriginKeepaliveTimeout(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidOriginReadTimeout(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidQueryStringParameters(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidRelativePath(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidRequiredProtocol(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidResponseCode(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidTtlOrder(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidViewerCertificate(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidWebAclId(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::MissingBody(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NoSuchCachePolicy(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NoSuchContinuousDeploymentPolicy(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NoSuchDistribution(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NoSuchFieldLevelEncryptionConfig(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NoSuchOrigin(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NoSuchOriginRequestPolicy(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NoSuchRealtimeLogConfig(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NoSuchResponseHeadersPolicy(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::PreconditionFailed(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::RealtimeLogConfigOwnerMismatch(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::StagingDistributionInUse(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyCacheBehaviors(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyCertificates(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyCookieNamesInWhiteList(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyDistributionCnamEs(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyDistributionsAssociatedToCachePolicy(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyDistributionsAssociatedToKeyGroup(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyDistributionsWithFunctionAssociations(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyDistributionsWithLambdaAssociations(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyDistributionsWithSingleFunctionArn(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyFunctionAssociations(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyHeadersInForwardedValues(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyKeyGroupsAssociatedToDistribution(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyLambdaFunctionAssociations(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyOriginCustomHeaders(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyOriginGroupsPerDistribution(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyOrigins(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyQueryStringParameters(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TooManyTrustedSigners(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TrustedKeyGroupDoesNotExist(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::TrustedSignerDoesNotExist(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
+            Self::AccessDenied(_inner) => _inner.fmt(f),
+            Self::CnameAlreadyExists(_inner) => _inner.fmt(f),
+            Self::ContinuousDeploymentPolicyInUse(_inner) => _inner.fmt(f),
+            Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => {
                 _inner.fmt(f)
             }
+            Self::IllegalOriginAccessConfiguration(_inner) => _inner.fmt(f),
+            Self::IllegalUpdate(_inner) => _inner.fmt(f),
+            Self::InconsistentQuantities(_inner) => _inner.fmt(f),
+            Self::InvalidArgument(_inner) => _inner.fmt(f),
+            Self::InvalidDefaultRootObject(_inner) => _inner.fmt(f),
+            Self::InvalidDomainNameForOriginAccessControl(_inner) => _inner.fmt(f),
+            Self::InvalidErrorCode(_inner) => _inner.fmt(f),
+            Self::InvalidForwardCookies(_inner) => _inner.fmt(f),
+            Self::InvalidFunctionAssociation(_inner) => _inner.fmt(f),
+            Self::InvalidGeoRestrictionParameter(_inner) => _inner.fmt(f),
+            Self::InvalidHeadersForS3Origin(_inner) => _inner.fmt(f),
+            Self::InvalidIfMatchVersion(_inner) => _inner.fmt(f),
+            Self::InvalidLambdaFunctionAssociation(_inner) => _inner.fmt(f),
+            Self::InvalidLocationCode(_inner) => _inner.fmt(f),
+            Self::InvalidMinimumProtocolVersion(_inner) => _inner.fmt(f),
+            Self::InvalidOriginAccessControl(_inner) => _inner.fmt(f),
+            Self::InvalidOriginAccessIdentity(_inner) => _inner.fmt(f),
+            Self::InvalidOriginKeepaliveTimeout(_inner) => _inner.fmt(f),
+            Self::InvalidOriginReadTimeout(_inner) => _inner.fmt(f),
+            Self::InvalidQueryStringParameters(_inner) => _inner.fmt(f),
+            Self::InvalidRelativePath(_inner) => _inner.fmt(f),
+            Self::InvalidRequiredProtocol(_inner) => _inner.fmt(f),
+            Self::InvalidResponseCode(_inner) => _inner.fmt(f),
+            Self::InvalidTtlOrder(_inner) => _inner.fmt(f),
+            Self::InvalidViewerCertificate(_inner) => _inner.fmt(f),
+            Self::InvalidWebAclId(_inner) => _inner.fmt(f),
+            Self::MissingBody(_inner) => _inner.fmt(f),
+            Self::NoSuchCachePolicy(_inner) => _inner.fmt(f),
+            Self::NoSuchContinuousDeploymentPolicy(_inner) => _inner.fmt(f),
+            Self::NoSuchDistribution(_inner) => _inner.fmt(f),
+            Self::NoSuchFieldLevelEncryptionConfig(_inner) => _inner.fmt(f),
+            Self::NoSuchOrigin(_inner) => _inner.fmt(f),
+            Self::NoSuchOriginRequestPolicy(_inner) => _inner.fmt(f),
+            Self::NoSuchRealtimeLogConfig(_inner) => _inner.fmt(f),
+            Self::NoSuchResponseHeadersPolicy(_inner) => _inner.fmt(f),
+            Self::PreconditionFailed(_inner) => _inner.fmt(f),
+            Self::RealtimeLogConfigOwnerMismatch(_inner) => _inner.fmt(f),
+            Self::StagingDistributionInUse(_inner) => _inner.fmt(f),
+            Self::TooManyCacheBehaviors(_inner) => _inner.fmt(f),
+            Self::TooManyCertificates(_inner) => _inner.fmt(f),
+            Self::TooManyCookieNamesInWhiteList(_inner) => _inner.fmt(f),
+            Self::TooManyDistributionCnamEs(_inner) => _inner.fmt(f),
+            Self::TooManyDistributionsAssociatedToCachePolicy(_inner) => _inner.fmt(f),
+            Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) => {
+                _inner.fmt(f)
+            }
+            Self::TooManyDistributionsAssociatedToKeyGroup(_inner) => _inner.fmt(f),
+            Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) => _inner.fmt(f),
+            Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) => _inner.fmt(f),
+            Self::TooManyDistributionsWithFunctionAssociations(_inner) => _inner.fmt(f),
+            Self::TooManyDistributionsWithLambdaAssociations(_inner) => _inner.fmt(f),
+            Self::TooManyDistributionsWithSingleFunctionArn(_inner) => _inner.fmt(f),
+            Self::TooManyFunctionAssociations(_inner) => _inner.fmt(f),
+            Self::TooManyHeadersInForwardedValues(_inner) => _inner.fmt(f),
+            Self::TooManyKeyGroupsAssociatedToDistribution(_inner) => _inner.fmt(f),
+            Self::TooManyLambdaFunctionAssociations(_inner) => _inner.fmt(f),
+            Self::TooManyOriginCustomHeaders(_inner) => _inner.fmt(f),
+            Self::TooManyOriginGroupsPerDistribution(_inner) => _inner.fmt(f),
+            Self::TooManyOrigins(_inner) => _inner.fmt(f),
+            Self::TooManyQueryStringParameters(_inner) => _inner.fmt(f),
+            Self::TooManyTrustedSigners(_inner) => _inner.fmt(f),
+            Self::TrustedKeyGroupDoesNotExist(_inner) => _inner.fmt(f),
+            Self::TrustedSignerDoesNotExist(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for UpdateDistributionError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::AccessDenied(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::CnameAlreadyExists(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ContinuousDeploymentPolicyInUse(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::IllegalOriginAccessConfiguration(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::IllegalUpdate(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InconsistentQuantities(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidArgument(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidDefaultRootObject(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidDomainNameForOriginAccessControl(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidErrorCode(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidForwardCookies(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidFunctionAssociation(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidGeoRestrictionParameter(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidHeadersForS3Origin(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidIfMatchVersion(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidLambdaFunctionAssociation(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidLocationCode(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidMinimumProtocolVersion(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidOriginAccessControl(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidOriginAccessIdentity(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidOriginKeepaliveTimeout(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidOriginReadTimeout(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidQueryStringParameters(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidRelativePath(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidRequiredProtocol(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidResponseCode(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidTtlOrder(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidViewerCertificate(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidWebAclId(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::MissingBody(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NoSuchCachePolicy(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NoSuchContinuousDeploymentPolicy(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NoSuchDistribution(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NoSuchFieldLevelEncryptionConfig(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NoSuchOrigin(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NoSuchOriginRequestPolicy(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NoSuchRealtimeLogConfig(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NoSuchResponseHeadersPolicy(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::PreconditionFailed(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::RealtimeLogConfigOwnerMismatch(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::StagingDistributionInUse(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyCacheBehaviors(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyCertificates(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyCookieNamesInWhiteList(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyDistributionCnamEs(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyDistributionsAssociatedToCachePolicy(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyDistributionsAssociatedToKeyGroup(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyDistributionsWithFunctionAssociations(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyDistributionsWithLambdaAssociations(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyDistributionsWithSingleFunctionArn(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyFunctionAssociations(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyHeadersInForwardedValues(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyKeyGroupsAssociatedToDistribution(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyLambdaFunctionAssociations(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyOriginCustomHeaders(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyOriginGroupsPerDistribution(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyOrigins(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyQueryStringParameters(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TooManyTrustedSigners(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TrustedKeyGroupDoesNotExist(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::TrustedSignerDoesNotExist(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::AccessDenied(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::CnameAlreadyExists(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ContinuousDeploymentPolicyInUse(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::IllegalOriginAccessConfiguration(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::IllegalUpdate(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InconsistentQuantities(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidArgument(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidDefaultRootObject(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidDomainNameForOriginAccessControl(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidErrorCode(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidForwardCookies(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidFunctionAssociation(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidGeoRestrictionParameter(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidHeadersForS3Origin(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidIfMatchVersion(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidLambdaFunctionAssociation(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidLocationCode(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidMinimumProtocolVersion(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidOriginAccessControl(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidOriginAccessIdentity(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidOriginKeepaliveTimeout(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidOriginReadTimeout(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidQueryStringParameters(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidRelativePath(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidRequiredProtocol(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidResponseCode(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidTtlOrder(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidViewerCertificate(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidWebAclId(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::MissingBody(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NoSuchCachePolicy(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NoSuchContinuousDeploymentPolicy(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NoSuchDistribution(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NoSuchFieldLevelEncryptionConfig(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NoSuchOrigin(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NoSuchOriginRequestPolicy(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NoSuchRealtimeLogConfig(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NoSuchResponseHeadersPolicy(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::PreconditionFailed(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::RealtimeLogConfigOwnerMismatch(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::StagingDistributionInUse(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyCacheBehaviors(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyCertificates(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyCookieNamesInWhiteList(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyDistributionCnamEs(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyDistributionsAssociatedToCachePolicy(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyDistributionsAssociatedToKeyGroup(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyDistributionsWithFunctionAssociations(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyDistributionsWithLambdaAssociations(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyDistributionsWithSingleFunctionArn(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyFunctionAssociations(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyHeadersInForwardedValues(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyKeyGroupsAssociatedToDistribution(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyLambdaFunctionAssociations(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyOriginCustomHeaders(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyOriginGroupsPerDistribution(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyOrigins(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyQueryStringParameters(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TooManyTrustedSigners(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TrustedKeyGroupDoesNotExist(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::TrustedSignerDoesNotExist(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId for crate::operation::update_distribution::UpdateDistributionError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+impl aws_http::request_id::RequestId
+    for crate::operation::update_distribution::UpdateDistributionError
+{
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for UpdateDistributionError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -686,18 +657,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for UpdateDistributionError {
 }
 impl UpdateDistributionError {
     /// Creates the `UpdateDistributionError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `UpdateDistributionError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `UpdateDistributionError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -783,7 +763,10 @@ impl UpdateDistributionError {
     }
     /// Returns `true` if the error kind is `UpdateDistributionError::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior`.
     pub fn is_illegal_field_level_encryption_config_association_with_cache_behavior(&self) -> bool {
-        matches!(self, Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_))
+        matches!(
+            self,
+            Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_)
+        )
     }
     /// Returns `true` if the error kind is `UpdateDistributionError::IllegalOriginAccessConfiguration`.
     pub fn is_illegal_origin_access_configuration(&self) -> bool {
@@ -959,7 +942,10 @@ impl UpdateDistributionError {
     }
     /// Returns `true` if the error kind is `UpdateDistributionError::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig`.
     pub fn is_too_many_distributions_associated_to_field_level_encryption_config(&self) -> bool {
-        matches!(self, Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_))
+        matches!(
+            self,
+            Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_)
+        )
     }
     /// Returns `true` if the error kind is `UpdateDistributionError::TooManyDistributionsAssociatedToKeyGroup`.
     pub fn is_too_many_distributions_associated_to_key_group(&self) -> bool {
@@ -967,11 +953,17 @@ impl UpdateDistributionError {
     }
     /// Returns `true` if the error kind is `UpdateDistributionError::TooManyDistributionsAssociatedToOriginRequestPolicy`.
     pub fn is_too_many_distributions_associated_to_origin_request_policy(&self) -> bool {
-        matches!(self, Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_))
+        matches!(
+            self,
+            Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_)
+        )
     }
     /// Returns `true` if the error kind is `UpdateDistributionError::TooManyDistributionsAssociatedToResponseHeadersPolicy`.
     pub fn is_too_many_distributions_associated_to_response_headers_policy(&self) -> bool {
-        matches!(self, Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_))
+        matches!(
+            self,
+            Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_)
+        )
     }
     /// Returns `true` if the error kind is `UpdateDistributionError::TooManyDistributionsWithFunctionAssociations`.
     pub fn is_too_many_distributions_with_function_associations(&self) -> bool {
@@ -1033,204 +1025,76 @@ impl UpdateDistributionError {
 impl std::error::Error for UpdateDistributionError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::AccessDenied(_inner) =>
-            Some(_inner)
-            ,
-            Self::CnameAlreadyExists(_inner) =>
-            Some(_inner)
-            ,
-            Self::ContinuousDeploymentPolicyInUse(_inner) =>
-            Some(_inner)
-            ,
-            Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) =>
-            Some(_inner)
-            ,
-            Self::IllegalOriginAccessConfiguration(_inner) =>
-            Some(_inner)
-            ,
-            Self::IllegalUpdate(_inner) =>
-            Some(_inner)
-            ,
-            Self::InconsistentQuantities(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidArgument(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidDefaultRootObject(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidDomainNameForOriginAccessControl(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidErrorCode(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidForwardCookies(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidFunctionAssociation(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidGeoRestrictionParameter(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidHeadersForS3Origin(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidIfMatchVersion(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidLambdaFunctionAssociation(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidLocationCode(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidMinimumProtocolVersion(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidOriginAccessControl(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidOriginAccessIdentity(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidOriginKeepaliveTimeout(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidOriginReadTimeout(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidQueryStringParameters(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidRelativePath(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidRequiredProtocol(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidResponseCode(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidTtlOrder(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidViewerCertificate(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidWebAclId(_inner) =>
-            Some(_inner)
-            ,
-            Self::MissingBody(_inner) =>
-            Some(_inner)
-            ,
-            Self::NoSuchCachePolicy(_inner) =>
-            Some(_inner)
-            ,
-            Self::NoSuchContinuousDeploymentPolicy(_inner) =>
-            Some(_inner)
-            ,
-            Self::NoSuchDistribution(_inner) =>
-            Some(_inner)
-            ,
-            Self::NoSuchFieldLevelEncryptionConfig(_inner) =>
-            Some(_inner)
-            ,
-            Self::NoSuchOrigin(_inner) =>
-            Some(_inner)
-            ,
-            Self::NoSuchOriginRequestPolicy(_inner) =>
-            Some(_inner)
-            ,
-            Self::NoSuchRealtimeLogConfig(_inner) =>
-            Some(_inner)
-            ,
-            Self::NoSuchResponseHeadersPolicy(_inner) =>
-            Some(_inner)
-            ,
-            Self::PreconditionFailed(_inner) =>
-            Some(_inner)
-            ,
-            Self::RealtimeLogConfigOwnerMismatch(_inner) =>
-            Some(_inner)
-            ,
-            Self::StagingDistributionInUse(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyCacheBehaviors(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyCertificates(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyCookieNamesInWhiteList(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyDistributionCnamEs(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyDistributionsAssociatedToCachePolicy(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyDistributionsAssociatedToKeyGroup(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyDistributionsWithFunctionAssociations(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyDistributionsWithLambdaAssociations(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyDistributionsWithSingleFunctionArn(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyFunctionAssociations(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyHeadersInForwardedValues(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyKeyGroupsAssociatedToDistribution(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyLambdaFunctionAssociations(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyOriginCustomHeaders(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyOriginGroupsPerDistribution(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyOrigins(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyQueryStringParameters(_inner) =>
-            Some(_inner)
-            ,
-            Self::TooManyTrustedSigners(_inner) =>
-            Some(_inner)
-            ,
-            Self::TrustedKeyGroupDoesNotExist(_inner) =>
-            Some(_inner)
-            ,
-            Self::TrustedSignerDoesNotExist(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
+            Self::AccessDenied(_inner) => Some(_inner),
+            Self::CnameAlreadyExists(_inner) => Some(_inner),
+            Self::ContinuousDeploymentPolicyInUse(_inner) => Some(_inner),
+            Self::IllegalFieldLevelEncryptionConfigAssociationWithCacheBehavior(_inner) => {
                 Some(_inner)
             }
+            Self::IllegalOriginAccessConfiguration(_inner) => Some(_inner),
+            Self::IllegalUpdate(_inner) => Some(_inner),
+            Self::InconsistentQuantities(_inner) => Some(_inner),
+            Self::InvalidArgument(_inner) => Some(_inner),
+            Self::InvalidDefaultRootObject(_inner) => Some(_inner),
+            Self::InvalidDomainNameForOriginAccessControl(_inner) => Some(_inner),
+            Self::InvalidErrorCode(_inner) => Some(_inner),
+            Self::InvalidForwardCookies(_inner) => Some(_inner),
+            Self::InvalidFunctionAssociation(_inner) => Some(_inner),
+            Self::InvalidGeoRestrictionParameter(_inner) => Some(_inner),
+            Self::InvalidHeadersForS3Origin(_inner) => Some(_inner),
+            Self::InvalidIfMatchVersion(_inner) => Some(_inner),
+            Self::InvalidLambdaFunctionAssociation(_inner) => Some(_inner),
+            Self::InvalidLocationCode(_inner) => Some(_inner),
+            Self::InvalidMinimumProtocolVersion(_inner) => Some(_inner),
+            Self::InvalidOriginAccessControl(_inner) => Some(_inner),
+            Self::InvalidOriginAccessIdentity(_inner) => Some(_inner),
+            Self::InvalidOriginKeepaliveTimeout(_inner) => Some(_inner),
+            Self::InvalidOriginReadTimeout(_inner) => Some(_inner),
+            Self::InvalidQueryStringParameters(_inner) => Some(_inner),
+            Self::InvalidRelativePath(_inner) => Some(_inner),
+            Self::InvalidRequiredProtocol(_inner) => Some(_inner),
+            Self::InvalidResponseCode(_inner) => Some(_inner),
+            Self::InvalidTtlOrder(_inner) => Some(_inner),
+            Self::InvalidViewerCertificate(_inner) => Some(_inner),
+            Self::InvalidWebAclId(_inner) => Some(_inner),
+            Self::MissingBody(_inner) => Some(_inner),
+            Self::NoSuchCachePolicy(_inner) => Some(_inner),
+            Self::NoSuchContinuousDeploymentPolicy(_inner) => Some(_inner),
+            Self::NoSuchDistribution(_inner) => Some(_inner),
+            Self::NoSuchFieldLevelEncryptionConfig(_inner) => Some(_inner),
+            Self::NoSuchOrigin(_inner) => Some(_inner),
+            Self::NoSuchOriginRequestPolicy(_inner) => Some(_inner),
+            Self::NoSuchRealtimeLogConfig(_inner) => Some(_inner),
+            Self::NoSuchResponseHeadersPolicy(_inner) => Some(_inner),
+            Self::PreconditionFailed(_inner) => Some(_inner),
+            Self::RealtimeLogConfigOwnerMismatch(_inner) => Some(_inner),
+            Self::StagingDistributionInUse(_inner) => Some(_inner),
+            Self::TooManyCacheBehaviors(_inner) => Some(_inner),
+            Self::TooManyCertificates(_inner) => Some(_inner),
+            Self::TooManyCookieNamesInWhiteList(_inner) => Some(_inner),
+            Self::TooManyDistributionCnamEs(_inner) => Some(_inner),
+            Self::TooManyDistributionsAssociatedToCachePolicy(_inner) => Some(_inner),
+            Self::TooManyDistributionsAssociatedToFieldLevelEncryptionConfig(_inner) => {
+                Some(_inner)
+            }
+            Self::TooManyDistributionsAssociatedToKeyGroup(_inner) => Some(_inner),
+            Self::TooManyDistributionsAssociatedToOriginRequestPolicy(_inner) => Some(_inner),
+            Self::TooManyDistributionsAssociatedToResponseHeadersPolicy(_inner) => Some(_inner),
+            Self::TooManyDistributionsWithFunctionAssociations(_inner) => Some(_inner),
+            Self::TooManyDistributionsWithLambdaAssociations(_inner) => Some(_inner),
+            Self::TooManyDistributionsWithSingleFunctionArn(_inner) => Some(_inner),
+            Self::TooManyFunctionAssociations(_inner) => Some(_inner),
+            Self::TooManyHeadersInForwardedValues(_inner) => Some(_inner),
+            Self::TooManyKeyGroupsAssociatedToDistribution(_inner) => Some(_inner),
+            Self::TooManyLambdaFunctionAssociations(_inner) => Some(_inner),
+            Self::TooManyOriginCustomHeaders(_inner) => Some(_inner),
+            Self::TooManyOriginGroupsPerDistribution(_inner) => Some(_inner),
+            Self::TooManyOrigins(_inner) => Some(_inner),
+            Self::TooManyQueryStringParameters(_inner) => Some(_inner),
+            Self::TooManyTrustedSigners(_inner) => Some(_inner),
+            Self::TrustedKeyGroupDoesNotExist(_inner) => Some(_inner),
+            Self::TrustedSignerDoesNotExist(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -1245,4 +1109,3 @@ mod _update_distribution_output;
 
 /// Builders
 pub mod builders;
-

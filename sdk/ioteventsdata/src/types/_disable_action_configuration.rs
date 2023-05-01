@@ -3,14 +3,14 @@
 /// <p>Contains the configuration information of a disable action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableActionConfiguration  {
+pub struct DisableActionConfiguration {
     /// <p>The note that you can leave when you disable the alarm.</p>
     #[doc(hidden)]
     pub note: std::option::Option<std::string::String>,
 }
 impl DisableActionConfiguration {
     /// <p>The note that you can leave when you disable the alarm.</p>
-    pub fn note(&self) -> std::option::Option<& str> {
+    pub fn note(&self) -> std::option::Option<&str> {
         self.note.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl DisableActionConfigurationBuilder {
     }
     /// <p>The note that you can leave when you disable the alarm.</p>
     pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.note = input; self
+        self.note = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableActionConfiguration`](crate::types::DisableActionConfiguration).
     pub fn build(self) -> crate::types::DisableActionConfiguration {
-        crate::types::DisableActionConfiguration {
-            note: self.note
-            ,
-        }
+        crate::types::DisableActionConfiguration { note: self.note }
     }
 }
-

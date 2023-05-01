@@ -3,7 +3,7 @@
 /// <p>Specifies one of the label or labels that categorize the document being analyzed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentLabel  {
+pub struct DocumentLabel {
     /// <p>The name of the label.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct DocumentLabel  {
 }
 impl DocumentLabel {
     /// <p>The name of the label.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The confidence score that Amazon Comprehend has this label correctly attributed.</p>
@@ -51,7 +51,8 @@ impl DocumentLabelBuilder {
     }
     /// <p>The name of the label.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The confidence score that Amazon Comprehend has this label correctly attributed.</p>
     pub fn score(mut self, input: f32) -> Self {
@@ -60,7 +61,8 @@ impl DocumentLabelBuilder {
     }
     /// <p>The confidence score that Amazon Comprehend has this label correctly attributed.</p>
     pub fn set_score(mut self, input: std::option::Option<f32>) -> Self {
-        self.score = input; self
+        self.score = input;
+        self
     }
     /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn page(mut self, input: i32) -> Self {
@@ -69,18 +71,15 @@ impl DocumentLabelBuilder {
     }
     /// <p>Page number where the label occurs. This field is present in the response only if your request includes the <code>Byte</code> parameter. </p>
     pub fn set_page(mut self, input: std::option::Option<i32>) -> Self {
-        self.page = input; self
+        self.page = input;
+        self
     }
     /// Consumes the builder and constructs a [`DocumentLabel`](crate::types::DocumentLabel).
     pub fn build(self) -> crate::types::DocumentLabel {
         crate::types::DocumentLabel {
-            name: self.name
-            ,
-            score: self.score
-            ,
-            page: self.page
-            ,
+            name: self.name,
+            score: self.score,
+            page: self.page,
         }
     }
 }
-

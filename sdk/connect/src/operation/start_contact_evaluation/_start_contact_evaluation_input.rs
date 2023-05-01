@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartContactEvaluationInput  {
+pub struct StartContactEvaluationInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct StartContactEvaluationInput  {
 }
 impl StartContactEvaluationInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
-    pub fn contact_id(&self) -> std::option::Option<& str> {
+    pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> std::option::Option<& str> {
+    pub fn evaluation_form_id(&self) -> std::option::Option<&str> {
         self.evaluation_form_id.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl StartContactEvaluationInput {
     /// Creates a new builder-style object to manufacture [`StartContactEvaluationInput`](crate::operation::start_contact_evaluation::StartContactEvaluationInput).
-    pub fn builder() -> crate::operation::start_contact_evaluation::builders::StartContactEvaluationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_contact_evaluation::builders::StartContactEvaluationInputBuilder
+    {
         crate::operation::start_contact_evaluation::builders::StartContactEvaluationInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl StartContactEvaluationInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn contact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl StartContactEvaluationInputBuilder {
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input; self
+        self.contact_id = input;
+        self
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn evaluation_form_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +79,12 @@ impl StartContactEvaluationInputBuilder {
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_form_id = input; self
+    pub fn set_evaluation_form_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evaluation_form_id = input;
+        self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +93,23 @@ impl StartContactEvaluationInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartContactEvaluationInput`](crate::operation::start_contact_evaluation::StartContactEvaluationInput).
-    pub fn build(self) -> Result<crate::operation::start_contact_evaluation::StartContactEvaluationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_contact_evaluation::StartContactEvaluationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_contact_evaluation::StartContactEvaluationInput {
-                instance_id: self.instance_id
-                ,
-                contact_id: self.contact_id
-                ,
-                evaluation_form_id: self.evaluation_form_id
-                ,
-                client_token: self.client_token
-                ,
-            }
+                instance_id: self.instance_id,
+                contact_id: self.contact_id,
+                evaluation_form_id: self.evaluation_form_id,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

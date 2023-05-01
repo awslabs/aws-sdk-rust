@@ -3,7 +3,7 @@
 /// <p>Specifies the Server Message Block (SMB) protocol configuration that DataSync uses to access your Amazon FSx for NetApp ONTAP file system. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html#create-ontap-location-access">Accessing FSx for ONTAP file systems</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FsxProtocolSmb  {
+pub struct FsxProtocolSmb {
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -13,49 +13,49 @@ pub struct FsxProtocolSmb  {
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
     #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
-    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p> 
-    /// <p>If you provide a user in your Active Directory, note the following:</p> 
-    /// <ul> 
-    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li> 
-    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li> 
-    /// </ul> 
-    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li> 
-    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li> 
+    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
+    /// <p>If you provide a user in your Active Directory, note the following:</p>
+    /// <ul>
+    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li>
+    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li>
+    /// </ul>
+    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p>
+    /// <ul>
+    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
+    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub user: std::option::Option<std::string::String>,
 }
 impl FsxProtocolSmb {
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
-    pub fn mount_options(&self) -> std::option::Option<& crate::types::SmbMountOptions> {
+    pub fn mount_options(&self) -> std::option::Option<&crate::types::SmbMountOptions> {
         self.mount_options.as_ref()
     }
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
-    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p> 
-    /// <p>If you provide a user in your Active Directory, note the following:</p> 
-    /// <ul> 
-    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li> 
-    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li> 
-    /// </ul> 
-    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li> 
-    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li> 
+    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
+    /// <p>If you provide a user in your Active Directory, note the following:</p>
+    /// <ul>
+    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li>
+    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li>
     /// </ul>
-    pub fn user(&self) -> std::option::Option<& str> {
+    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p>
+    /// <ul>
+    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
+    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
+    /// </ul>
+    pub fn user(&self) -> std::option::Option<&str> {
         self.user.as_deref()
     }
 }
-impl  std::fmt::Debug for FsxProtocolSmb  {
+impl std::fmt::Debug for FsxProtocolSmb {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FsxProtocolSmb");
         formatter.field("domain", &self.domain);
@@ -89,7 +89,8 @@ impl FsxProtocolSmbBuilder {
     }
     /// <p>Specifies the fully qualified domain name (FQDN) of the Microsoft Active Directory that your storage virtual machine (SVM) belongs to.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
     pub fn mount_options(mut self, input: crate::types::SmbMountOptions) -> Self {
@@ -97,8 +98,12 @@ impl FsxProtocolSmbBuilder {
         self
     }
     /// <p>Specifies the version of the Server Message Block (SMB) protocol that DataSync uses to access an SMB file server.</p>
-    pub fn set_mount_options(mut self, input: std::option::Option<crate::types::SmbMountOptions>) -> Self {
-        self.mount_options = input; self
+    pub fn set_mount_options(
+        mut self,
+        input: std::option::Option<crate::types::SmbMountOptions>,
+    ) -> Self {
+        self.mount_options = input;
+        self
     }
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,48 +112,46 @@ impl FsxProtocolSmbBuilder {
     }
     /// <p>Specifies the password of a user who has permission to access your SVM.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
-    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p> 
-    /// <p>If you provide a user in your Active Directory, note the following:</p> 
-    /// <ul> 
-    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li> 
-    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li> 
-    /// </ul> 
-    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li> 
-    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li> 
+    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
+    /// <p>If you provide a user in your Active Directory, note the following:</p>
+    /// <ul>
+    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li>
+    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li>
+    /// </ul>
+    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p>
+    /// <ul>
+    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
+    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
     /// </ul>
     pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
         self.user = Some(input.into());
         self
     }
-    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p> 
-    /// <p>If you provide a user in your Active Directory, note the following:</p> 
-    /// <ul> 
-    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li> 
-    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li> 
-    /// </ul> 
-    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li> 
-    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li> 
+    /// <p>Specifies a user name that can mount the location and access the files, folders, and metadata that you need in the SVM.</p>
+    /// <p>If you provide a user in your Active Directory, note the following:</p>
+    /// <ul>
+    /// <li> <p>If you're using Directory Service for Microsoft Active Directory, the user must be a member of the Amazon Web Services Delegated FSx Administrators group.</p> </li>
+    /// <li> <p>If you're using a self-managed Active Directory, the user must be a member of either the Domain Admins group or a custom group that you specified for file system administration when you created your file system.</p> </li>
+    /// </ul>
+    /// <p>Make sure that the user has the permissions it needs to copy the data you want:</p>
+    /// <ul>
+    /// <li> <p> <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With this privilege, you also can copy NTFS discretionary access lists (DACLs).</p> </li>
+    /// <li> <p> <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists (SACLs). This operation specifically requires the Windows privilege, which is granted to members of the Domain Admins group. If you configure your task to copy SACLs, make sure that the user has the required privileges. For information about copying SACLs, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership and permissions-related options</a>.</p> </li>
     /// </ul>
     pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user = input; self
+        self.user = input;
+        self
     }
     /// Consumes the builder and constructs a [`FsxProtocolSmb`](crate::types::FsxProtocolSmb).
     pub fn build(self) -> crate::types::FsxProtocolSmb {
         crate::types::FsxProtocolSmb {
-            domain: self.domain
-            ,
-            mount_options: self.mount_options
-            ,
-            password: self.password
-            ,
-            user: self.user
-            ,
+            domain: self.domain,
+            mount_options: self.mount_options,
+            password: self.password,
+            user: self.user,
         }
     }
 }
@@ -162,4 +165,3 @@ impl std::fmt::Debug for FsxProtocolSmbBuilder {
         formatter.finish()
     }
 }
-

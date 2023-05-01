@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPortfolioPreferencesOutput  {
+pub struct GetPortfolioPreferencesOutput {
     /// <p> The rank of business goals based on priority. </p>
     #[doc(hidden)]
     pub prioritize_business_goals: std::option::Option<crate::types::PrioritizeBusinessGoals>,
@@ -19,30 +19,36 @@ pub struct GetPortfolioPreferencesOutput  {
 }
 impl GetPortfolioPreferencesOutput {
     /// <p> The rank of business goals based on priority. </p>
-    pub fn prioritize_business_goals(&self) -> std::option::Option<& crate::types::PrioritizeBusinessGoals> {
+    pub fn prioritize_business_goals(
+        &self,
+    ) -> std::option::Option<&crate::types::PrioritizeBusinessGoals> {
         self.prioritize_business_goals.as_ref()
     }
     /// <p> The transformation preferences for non-database applications. </p>
-    pub fn application_preferences(&self) -> std::option::Option<& crate::types::ApplicationPreferences> {
+    pub fn application_preferences(
+        &self,
+    ) -> std::option::Option<&crate::types::ApplicationPreferences> {
         self.application_preferences.as_ref()
     }
     /// <p> The transformation preferences for database applications. </p>
-    pub fn database_preferences(&self) -> std::option::Option<& crate::types::DatabasePreferences> {
+    pub fn database_preferences(&self) -> std::option::Option<&crate::types::DatabasePreferences> {
         self.database_preferences.as_ref()
     }
     /// <p>The classification for application component types.</p>
-    pub fn application_mode(&self) -> std::option::Option<& crate::types::ApplicationMode> {
+    pub fn application_mode(&self) -> std::option::Option<&crate::types::ApplicationMode> {
         self.application_mode.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetPortfolioPreferencesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetPortfolioPreferencesOutput {
     /// Creates a new builder-style object to manufacture [`GetPortfolioPreferencesOutput`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput).
-    pub fn builder() -> crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesOutputBuilder
+    {
         crate::operation::get_portfolio_preferences::builders::GetPortfolioPreferencesOutputBuilder::default()
     }
 }
@@ -51,7 +57,8 @@ impl GetPortfolioPreferencesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetPortfolioPreferencesOutputBuilder {
-    pub(crate) prioritize_business_goals: std::option::Option<crate::types::PrioritizeBusinessGoals>,
+    pub(crate) prioritize_business_goals:
+        std::option::Option<crate::types::PrioritizeBusinessGoals>,
     pub(crate) application_preferences: std::option::Option<crate::types::ApplicationPreferences>,
     pub(crate) database_preferences: std::option::Option<crate::types::DatabasePreferences>,
     pub(crate) application_mode: std::option::Option<crate::types::ApplicationMode>,
@@ -59,13 +66,20 @@ pub struct GetPortfolioPreferencesOutputBuilder {
 }
 impl GetPortfolioPreferencesOutputBuilder {
     /// <p> The rank of business goals based on priority. </p>
-    pub fn prioritize_business_goals(mut self, input: crate::types::PrioritizeBusinessGoals) -> Self {
+    pub fn prioritize_business_goals(
+        mut self,
+        input: crate::types::PrioritizeBusinessGoals,
+    ) -> Self {
         self.prioritize_business_goals = Some(input);
         self
     }
     /// <p> The rank of business goals based on priority. </p>
-    pub fn set_prioritize_business_goals(mut self, input: std::option::Option<crate::types::PrioritizeBusinessGoals>) -> Self {
-        self.prioritize_business_goals = input; self
+    pub fn set_prioritize_business_goals(
+        mut self,
+        input: std::option::Option<crate::types::PrioritizeBusinessGoals>,
+    ) -> Self {
+        self.prioritize_business_goals = input;
+        self
     }
     /// <p> The transformation preferences for non-database applications. </p>
     pub fn application_preferences(mut self, input: crate::types::ApplicationPreferences) -> Self {
@@ -73,8 +87,12 @@ impl GetPortfolioPreferencesOutputBuilder {
         self
     }
     /// <p> The transformation preferences for non-database applications. </p>
-    pub fn set_application_preferences(mut self, input: std::option::Option<crate::types::ApplicationPreferences>) -> Self {
-        self.application_preferences = input; self
+    pub fn set_application_preferences(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationPreferences>,
+    ) -> Self {
+        self.application_preferences = input;
+        self
     }
     /// <p> The transformation preferences for database applications. </p>
     pub fn database_preferences(mut self, input: crate::types::DatabasePreferences) -> Self {
@@ -82,8 +100,12 @@ impl GetPortfolioPreferencesOutputBuilder {
         self
     }
     /// <p> The transformation preferences for database applications. </p>
-    pub fn set_database_preferences(mut self, input: std::option::Option<crate::types::DatabasePreferences>) -> Self {
-        self.database_preferences = input; self
+    pub fn set_database_preferences(
+        mut self,
+        input: std::option::Option<crate::types::DatabasePreferences>,
+    ) -> Self {
+        self.database_preferences = input;
+        self
     }
     /// <p>The classification for application component types.</p>
     pub fn application_mode(mut self, input: crate::types::ApplicationMode) -> Self {
@@ -91,31 +113,32 @@ impl GetPortfolioPreferencesOutputBuilder {
         self
     }
     /// <p>The classification for application component types.</p>
-    pub fn set_application_mode(mut self, input: std::option::Option<crate::types::ApplicationMode>) -> Self {
-        self.application_mode = input; self
+    pub fn set_application_mode(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationMode>,
+    ) -> Self {
+        self.application_mode = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetPortfolioPreferencesOutput`](crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput).
-    pub fn build(self) -> crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput {
         crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput {
-            prioritize_business_goals: self.prioritize_business_goals
-            ,
-            application_preferences: self.application_preferences
-            ,
-            database_preferences: self.database_preferences
-            ,
-            application_mode: self.application_mode
-            ,
+            prioritize_business_goals: self.prioritize_business_goals,
+            application_preferences: self.application_preferences,
+            database_preferences: self.database_preferences,
+            application_mode: self.application_mode,
             _request_id: self._request_id,
         }
     }
 }
-

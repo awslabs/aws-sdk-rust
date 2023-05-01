@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrustedAdvisorCheckSummariesInput  {
+pub struct DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
     #[doc(hidden)]
     pub check_ids: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn check_ids(&self) -> std::option::Option<& [std::option::Option<std::string::String>]> {
+    pub fn check_ids(&self) -> std::option::Option<&[std::option::Option<std::string::String>]> {
         self.check_ids.as_deref()
     }
 }
 impl DescribeTrustedAdvisorCheckSummariesInput {
     /// Creates a new builder-style object to manufacture [`DescribeTrustedAdvisorCheckSummariesInput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput).
-    pub fn builder() -> crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesInputBuilder {
+    pub fn builder() -> crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesInputBuilder{
         crate::operation::describe_trusted_advisor_check_summaries::builders::DescribeTrustedAdvisorCheckSummariesInputBuilder::default()
     }
 }
@@ -24,7 +24,8 @@ impl DescribeTrustedAdvisorCheckSummariesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTrustedAdvisorCheckSummariesInputBuilder {
-    pub(crate) check_ids: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
+    pub(crate) check_ids:
+        std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
 }
 impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
     /// Appends an item to `check_ids`.
@@ -34,16 +35,20 @@ impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
     /// <p>The IDs of the Trusted Advisor checks.</p>
     pub fn check_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
         let mut v = self.check_ids.unwrap_or_default();
-                        v.push(input);
-                        self.check_ids = Some(v);
-                        self
+        v.push(input);
+        self.check_ids = Some(v);
+        self
     }
     /// <p>The IDs of the Trusted Advisor checks.</p>
-    pub fn set_check_ids(mut self, input: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>) -> Self {
-        self.check_ids = input; self
+    pub fn set_check_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::option::Option<std::string::String>>>,
+    ) -> Self {
+        self.check_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeTrustedAdvisorCheckSummariesInput`](crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput).
-    pub fn build(self) -> Result<crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_trusted_advisor_check_summaries::DescribeTrustedAdvisorCheckSummariesInput {
                 check_ids: self.check_ids
@@ -52,4 +57,3 @@ impl DescribeTrustedAdvisorCheckSummariesInputBuilder {
         )
     }
 }
-

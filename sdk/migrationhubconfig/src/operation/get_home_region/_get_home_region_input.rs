@@ -2,8 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHomeRegionInput  {
-}
+pub struct GetHomeRegionInput {}
 impl GetHomeRegionInput {
     /// Creates a new builder-style object to manufacture [`GetHomeRegionInput`](crate::operation::get_home_region::GetHomeRegionInput).
     pub fn builder() -> crate::operation::get_home_region::builders::GetHomeRegionInputBuilder {
@@ -14,15 +13,15 @@ impl GetHomeRegionInput {
 /// A builder for [`GetHomeRegionInput`](crate::operation::get_home_region::GetHomeRegionInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetHomeRegionInputBuilder {
-}
+pub struct GetHomeRegionInputBuilder {}
 impl GetHomeRegionInputBuilder {
     /// Consumes the builder and constructs a [`GetHomeRegionInput`](crate::operation::get_home_region::GetHomeRegionInput).
-    pub fn build(self) -> Result<crate::operation::get_home_region::GetHomeRegionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_home_region::GetHomeRegionInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_home_region::GetHomeRegionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_home_region::GetHomeRegionInput {})
     }
 }
-

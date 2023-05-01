@@ -4,69 +4,92 @@ pub use crate::operation::start_discovery_job::_start_discovery_job_output::Star
 pub use crate::operation::start_discovery_job::_start_discovery_job_input::StartDiscoveryJobInputBuilder;
 
 /// Fluent builder constructing a request to `StartDiscoveryJob`.
-/// 
+///
 /// <p>Runs a DataSync discovery job on your on-premises storage system. If you haven't added the storage system to DataSync Discovery yet, do this first by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_AddStorageSystem.html">AddStorageSystem</a> operation.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartDiscoveryJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_discovery_job::builders::StartDiscoveryJobInputBuilder,
+    inner: crate::operation::start_discovery_job::builders::StartDiscoveryJobInputBuilder,
 }
-impl StartDiscoveryJobFluentBuilder  {
+impl StartDiscoveryJobFluentBuilder {
     /// Creates a new `StartDiscoveryJob`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_discovery_job::StartDiscoveryJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_discovery_job::StartDiscoveryJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_discovery_job::StartDiscoveryJobOutput, aws_smithy_http::result::SdkError<crate::operation::start_discovery_job::StartDiscoveryJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_discovery_job::StartDiscoveryJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_discovery_job::StartDiscoveryJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_discovery_job::StartDiscoveryJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_discovery_job::StartDiscoveryJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
     pub fn storage_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.storage_system_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the on-premises storage system that you want to run the discovery job on.</p>
-    pub fn set_storage_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_storage_system_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_storage_system_arn(input);
         self
     }
-    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note> 
-    /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p> 
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
+    /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     pub fn collection_duration_minutes(mut self, input: i32) -> Self {
         self.inner = self.inner.collection_duration_minutes(input);
         self
     }
-    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note> 
-    /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p> 
+    /// <p>Specifies in minutes how long you want the discovery job to run.</p> <note>
+    /// <p>For more accurate recommendations, we recommend a duration of at least 14 days. Longer durations allow time to collect a sufficient number of data points and provide a realistic representation of storage performance and utilization.</p>
     /// </note>
     pub fn set_collection_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_collection_duration_minutes(input);
@@ -92,9 +115,11 @@ impl StartDiscoveryJobFluentBuilder  {
         self
     }
     /// <p>Specifies labels that help you categorize, filter, and search for your Amazon Web Services resources.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagListEntry>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

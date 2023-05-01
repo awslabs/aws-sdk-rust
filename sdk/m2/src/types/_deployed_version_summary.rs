@@ -3,7 +3,7 @@
 /// <p>Contains a summary of a deployed application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeployedVersionSummary  {
+pub struct DeployedVersionSummary {
     /// <p>The version of the deployed application.</p>
     #[doc(hidden)]
     pub application_version: std::option::Option<i32>,
@@ -20,11 +20,11 @@ impl DeployedVersionSummary {
         self.application_version
     }
     /// <p>The status of the deployment.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::DeploymentLifecycle> {
+    pub fn status(&self) -> std::option::Option<&crate::types::DeploymentLifecycle> {
         self.status.as_ref()
     }
     /// <p>The reason for the reported status.</p>
-    pub fn status_reason(&self) -> std::option::Option<& str> {
+    pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DeployedVersionSummaryBuilder {
     }
     /// <p>The version of the deployed application.</p>
     pub fn set_application_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.application_version = input; self
+        self.application_version = input;
+        self
     }
     /// <p>The status of the deployment.</p>
     pub fn status(mut self, input: crate::types::DeploymentLifecycle) -> Self {
@@ -59,8 +60,12 @@ impl DeployedVersionSummaryBuilder {
         self
     }
     /// <p>The status of the deployment.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::DeploymentLifecycle>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentLifecycle>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The reason for the reported status.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +74,15 @@ impl DeployedVersionSummaryBuilder {
     }
     /// <p>The reason for the reported status.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input; self
+        self.status_reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeployedVersionSummary`](crate::types::DeployedVersionSummary).
     pub fn build(self) -> crate::types::DeployedVersionSummary {
         crate::types::DeployedVersionSummary {
-            application_version: self.application_version
-            ,
-            status: self.status
-            ,
-            status_reason: self.status_reason
-            ,
+            application_version: self.application_version,
+            status: self.status,
+            status_reason: self.status_reason,
         }
     }
 }
-

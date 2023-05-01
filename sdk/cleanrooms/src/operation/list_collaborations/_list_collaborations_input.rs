@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCollaborationsInput  {
+pub struct ListCollaborationsInput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListCollaborationsInput  {
 }
 impl ListCollaborationsInput {
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
@@ -23,13 +23,14 @@ impl ListCollaborationsInput {
         self.max_results
     }
     /// <p>The caller's status in a collaboration.</p>
-    pub fn member_status(&self) -> std::option::Option<& crate::types::FilterableMemberStatus> {
+    pub fn member_status(&self) -> std::option::Option<&crate::types::FilterableMemberStatus> {
         self.member_status.as_ref()
     }
 }
 impl ListCollaborationsInput {
     /// Creates a new builder-style object to manufacture [`ListCollaborationsInput`](crate::operation::list_collaborations::ListCollaborationsInput).
-    pub fn builder() -> crate::operation::list_collaborations::builders::ListCollaborationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_collaborations::builders::ListCollaborationsInputBuilder {
         crate::operation::list_collaborations::builders::ListCollaborationsInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl ListCollaborationsInputBuilder {
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +61,8 @@ impl ListCollaborationsInputBuilder {
     }
     /// <p>The maximum size of the results that is returned per call. Service chooses a default if it has not been set. Service may return a nextToken even if the maximum results has not been met.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The caller's status in a collaboration.</p>
     pub fn member_status(mut self, input: crate::types::FilterableMemberStatus) -> Self {
@@ -67,21 +70,26 @@ impl ListCollaborationsInputBuilder {
         self
     }
     /// <p>The caller's status in a collaboration.</p>
-    pub fn set_member_status(mut self, input: std::option::Option<crate::types::FilterableMemberStatus>) -> Self {
-        self.member_status = input; self
+    pub fn set_member_status(
+        mut self,
+        input: std::option::Option<crate::types::FilterableMemberStatus>,
+    ) -> Self {
+        self.member_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListCollaborationsInput`](crate::operation::list_collaborations::ListCollaborationsInput).
-    pub fn build(self) -> Result<crate::operation::list_collaborations::ListCollaborationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_collaborations::ListCollaborationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_collaborations::ListCollaborationsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                member_status: self.member_status
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                member_status: self.member_status,
+            },
         )
     }
 }
-

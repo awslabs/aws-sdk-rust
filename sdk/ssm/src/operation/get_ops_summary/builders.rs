@@ -4,56 +4,77 @@ pub use crate::operation::get_ops_summary::_get_ops_summary_output::GetOpsSummar
 pub use crate::operation::get_ops_summary::_get_ops_summary_input::GetOpsSummaryInputBuilder;
 
 /// Fluent builder constructing a request to `GetOpsSummary`.
-/// 
+///
 /// <p>View a summary of operations metadata (OpsData) based on specified filters and aggregators. OpsData can include information about Amazon Web Services Systems Manager OpsCenter operational workitems (OpsItems) as well as information about any Amazon Web Services resource or service configured to report OpsData to Amazon Web Services Systems Manager Explorer. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetOpsSummaryFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_ops_summary::builders::GetOpsSummaryInputBuilder,
+    inner: crate::operation::get_ops_summary::builders::GetOpsSummaryInputBuilder,
 }
-impl GetOpsSummaryFluentBuilder  {
+impl GetOpsSummaryFluentBuilder {
     /// Creates a new `GetOpsSummary`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_ops_summary::GetOpsSummary, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_ops_summary::GetOpsSummaryError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_ops_summary::GetOpsSummaryOutput, aws_smithy_http::result::SdkError<crate::operation::get_ops_summary::GetOpsSummaryError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_ops_summary::GetOpsSummary,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::get_ops_summary::GetOpsSummaryError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_ops_summary::GetOpsSummaryOutput,
+        aws_smithy_http::result::SdkError<crate::operation::get_ops_summary::GetOpsSummaryError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator {
-                                crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator {
+        crate::operation::get_ops_summary::paginator::GetOpsSummaryPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>Specify the name of a resource data sync to get.</p>
     pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.sync_name(input.into());
@@ -74,7 +95,10 @@ impl GetOpsSummaryFluentBuilder  {
         self
     }
     /// <p>Optional filters used to scope down the returned OpsData. </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OpsFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -88,7 +112,10 @@ impl GetOpsSummaryFluentBuilder  {
         self
     }
     /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
-    pub fn set_aggregators(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsAggregator>>) -> Self {
+    pub fn set_aggregators(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OpsAggregator>>,
+    ) -> Self {
         self.inner = self.inner.set_aggregators(input);
         self
     }
@@ -102,7 +129,10 @@ impl GetOpsSummaryFluentBuilder  {
         self
     }
     /// <p>The OpsData data type to return.</p>
-    pub fn set_result_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::OpsResultAttribute>>) -> Self {
+    pub fn set_result_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OpsResultAttribute>>,
+    ) -> Self {
         self.inner = self.inner.set_result_attributes(input);
         self
     }
@@ -127,4 +157,3 @@ impl GetOpsSummaryFluentBuilder  {
         self
     }
 }
-

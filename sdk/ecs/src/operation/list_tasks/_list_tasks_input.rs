@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTasksInput  {
+pub struct ListTasksInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
@@ -12,23 +12,23 @@ pub struct ListTasksInput  {
     /// <p>The name of the task definition family to use when filtering the <code>ListTasks</code> results. Specifying a <code>family</code> limits the results to tasks that belong to that family.</p>
     #[doc(hidden)]
     pub family: std::option::Option<std::string::String>,
-    /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note> 
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
+    /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated output. When this parameter is used, <code>ListTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTasks</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTasks</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p> 
+    /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p>
     /// <p>When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.</p>
     #[doc(hidden)]
     pub started_by: std::option::Option<std::string::String>,
     /// <p>The name of the service to use when filtering the <code>ListTasks</code> results. Specifying a <code>serviceName</code> limits the results to tasks that belong to that service.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note> 
-    /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> 
+    /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+    /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
     /// </note>
     #[doc(hidden)]
     pub desired_status: std::option::Option<crate::types::DesiredStatus>,
@@ -38,44 +38,44 @@ pub struct ListTasksInput  {
 }
 impl ListTasksInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> std::option::Option<& str> {
+    pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
     /// <p>The container instance ID or full ARN of the container instance to use when filtering the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container instance.</p>
-    pub fn container_instance(&self) -> std::option::Option<& str> {
+    pub fn container_instance(&self) -> std::option::Option<&str> {
         self.container_instance.as_deref()
     }
     /// <p>The name of the task definition family to use when filtering the <code>ListTasks</code> results. Specifying a <code>family</code> limits the results to tasks that belong to that family.</p>
-    pub fn family(&self) -> std::option::Option<& str> {
+    pub fn family(&self) -> std::option::Option<&str> {
         self.family.as_deref()
     }
-    /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note> 
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
+    /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated output. When this parameter is used, <code>ListTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTasks</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTasks</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p> 
+    /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p>
     /// <p>When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.</p>
-    pub fn started_by(&self) -> std::option::Option<& str> {
+    pub fn started_by(&self) -> std::option::Option<&str> {
         self.started_by.as_deref()
     }
     /// <p>The name of the service to use when filtering the <code>ListTasks</code> results. Specifying a <code>serviceName</code> limits the results to tasks that belong to that service.</p>
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note> 
-    /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> 
+    /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+    /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
     /// </note>
-    pub fn desired_status(&self) -> std::option::Option<& crate::types::DesiredStatus> {
+    pub fn desired_status(&self) -> std::option::Option<&crate::types::DesiredStatus> {
         self.desired_status.as_ref()
     }
     /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
-    pub fn launch_type(&self) -> std::option::Option<& crate::types::LaunchType> {
+    pub fn launch_type(&self) -> std::option::Option<&crate::types::LaunchType> {
         self.launch_type.as_ref()
     }
 }
@@ -108,7 +108,8 @@ impl ListTasksInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering the <code>ListTasks</code> results. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input; self
+        self.cluster = input;
+        self
     }
     /// <p>The container instance ID or full ARN of the container instance to use when filtering the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container instance.</p>
     pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +117,12 @@ impl ListTasksInputBuilder {
         self
     }
     /// <p>The container instance ID or full ARN of the container instance to use when filtering the <code>ListTasks</code> results. Specifying a <code>containerInstance</code> limits the results to tasks that belong to that container instance.</p>
-    pub fn set_container_instance(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_instance = input; self
+    pub fn set_container_instance(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.container_instance = input;
+        self
     }
     /// <p>The name of the task definition family to use when filtering the <code>ListTasks</code> results. Specifying a <code>family</code> limits the results to tasks that belong to that family.</p>
     pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,20 +131,22 @@ impl ListTasksInputBuilder {
     }
     /// <p>The name of the task definition family to use when filtering the <code>ListTasks</code> results. Specifying a <code>family</code> limits the results to tasks that belong to that family.</p>
     pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.family = input; self
+        self.family = input;
+        self
     }
-    /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note> 
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
+    /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note> 
-    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> 
+    /// <p>The <code>nextToken</code> value returned from a <code>ListTasks</code> request indicating that more results are available to fulfill the request and further calls will be needed. If <code>maxResults</code> was provided, it's possible the number of results to be fewer than <code>maxResults</code>.</p> <note>
+    /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated output. When this parameter is used, <code>ListTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTasks</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTasks</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -148,18 +155,20 @@ impl ListTasksInputBuilder {
     }
     /// <p>The maximum number of task results that <code>ListTasks</code> returned in paginated output. When this parameter is used, <code>ListTasks</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListTasks</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListTasks</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
-    /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p> 
+    /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p>
     /// <p>When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.</p>
     pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
         self.started_by = Some(input.into());
         self
     }
-    /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p> 
+    /// <p>The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value limits the results to tasks that were started with that value.</p>
     /// <p>When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.</p>
     pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.started_by = input; self
+        self.started_by = input;
+        self
     }
     /// <p>The name of the service to use when filtering the <code>ListTasks</code> results. Specifying a <code>serviceName</code> limits the results to tasks that belong to that service.</p>
     pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,20 +177,25 @@ impl ListTasksInputBuilder {
     }
     /// <p>The name of the service to use when filtering the <code>ListTasks</code> results. Specifying a <code>serviceName</code> limits the results to tasks that belong to that service.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
-    /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note> 
-    /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> 
+    /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+    /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
     /// </note>
     pub fn desired_status(mut self, input: crate::types::DesiredStatus) -> Self {
         self.desired_status = Some(input);
         self
     }
-    /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note> 
-    /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p> 
+    /// <p>The task desired status to use when filtering the <code>ListTasks</code> results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits the results to tasks that Amazon ECS has set the desired status to <code>STOPPED</code>. This can be useful for debugging tasks that aren't starting properly or have died or finished. The default status filter is <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired status to <code>RUNNING</code>.</p> <note>
+    /// <p>Although you can filter results based on a desired status of <code>PENDING</code>, this doesn't return any results. Amazon ECS never sets the desired status of a task to that value (only a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
     /// </note>
-    pub fn set_desired_status(mut self, input: std::option::Option<crate::types::DesiredStatus>) -> Self {
-        self.desired_status = input; self
+    pub fn set_desired_status(
+        mut self,
+        input: std::option::Option<crate::types::DesiredStatus>,
+    ) -> Self {
+        self.desired_status = input;
+        self
     }
     /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
     pub fn launch_type(mut self, input: crate::types::LaunchType) -> Self {
@@ -190,32 +204,26 @@ impl ListTasksInputBuilder {
     }
     /// <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
     pub fn set_launch_type(mut self, input: std::option::Option<crate::types::LaunchType>) -> Self {
-        self.launch_type = input; self
+        self.launch_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTasksInput`](crate::operation::list_tasks::ListTasksInput).
-    pub fn build(self) -> Result<crate::operation::list_tasks::ListTasksInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_tasks::ListTasksInput {
-                cluster: self.cluster
-                ,
-                container_instance: self.container_instance
-                ,
-                family: self.family
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                started_by: self.started_by
-                ,
-                service_name: self.service_name
-                ,
-                desired_status: self.desired_status
-                ,
-                launch_type: self.launch_type
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_tasks::ListTasksInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_tasks::ListTasksInput {
+            cluster: self.cluster,
+            container_instance: self.container_instance,
+            family: self.family,
+            next_token: self.next_token,
+            max_results: self.max_results,
+            started_by: self.started_by,
+            service_name: self.service_name,
+            desired_status: self.desired_status,
+            launch_type: self.launch_type,
+        })
     }
 }
-

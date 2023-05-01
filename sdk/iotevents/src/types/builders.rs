@@ -122,4 +122,3 @@ pub use crate::types::_analysis_result_location::AnalysisResultLocationBuilder;
 pub use crate::types::_input::InputBuilder;
 
 pub use crate::types::_detector_model::DetectorModelBuilder;
-

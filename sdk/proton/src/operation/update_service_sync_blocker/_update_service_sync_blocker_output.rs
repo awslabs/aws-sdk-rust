@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceSyncBlockerOutput  {
+pub struct UpdateServiceSyncBlockerOutput {
     /// <p>The name of the service that you want to update the service sync blocker for.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
@@ -16,26 +16,26 @@ pub struct UpdateServiceSyncBlockerOutput  {
 }
 impl UpdateServiceSyncBlockerOutput {
     /// <p>The name of the service that you want to update the service sync blocker for.</p>
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the service instance that you want to update the service sync blocker for.</p>
-    pub fn service_instance_name(&self) -> std::option::Option<& str> {
+    pub fn service_instance_name(&self) -> std::option::Option<&str> {
         self.service_instance_name.as_deref()
     }
     /// <p>The detailed data on the service sync blocker that was updated.</p>
-    pub fn service_sync_blocker(&self) -> std::option::Option<& crate::types::SyncBlocker> {
+    pub fn service_sync_blocker(&self) -> std::option::Option<&crate::types::SyncBlocker> {
         self.service_sync_blocker.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateServiceSyncBlockerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateServiceSyncBlockerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceSyncBlockerOutput`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput).
-    pub fn builder() -> crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerOutputBuilder {
+    pub fn builder() -> crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerOutputBuilder{
         crate::operation::update_service_sync_blocker::builders::UpdateServiceSyncBlockerOutputBuilder::default()
     }
 }
@@ -57,7 +57,8 @@ impl UpdateServiceSyncBlockerOutputBuilder {
     }
     /// <p>The name of the service that you want to update the service sync blocker for.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
     /// <p>The name of the service instance that you want to update the service sync blocker for.</p>
     pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +66,12 @@ impl UpdateServiceSyncBlockerOutputBuilder {
         self
     }
     /// <p>The name of the service instance that you want to update the service sync blocker for.</p>
-    pub fn set_service_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_instance_name = input; self
+    pub fn set_service_instance_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_instance_name = input;
+        self
     }
     /// <p>The detailed data on the service sync blocker that was updated.</p>
     pub fn service_sync_blocker(mut self, input: crate::types::SyncBlocker) -> Self {
@@ -74,29 +79,31 @@ impl UpdateServiceSyncBlockerOutputBuilder {
         self
     }
     /// <p>The detailed data on the service sync blocker that was updated.</p>
-    pub fn set_service_sync_blocker(mut self, input: std::option::Option<crate::types::SyncBlocker>) -> Self {
-        self.service_sync_blocker = input; self
+    pub fn set_service_sync_blocker(
+        mut self,
+        input: std::option::Option<crate::types::SyncBlocker>,
+    ) -> Self {
+        self.service_sync_blocker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateServiceSyncBlockerOutput`](crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput).
-    pub fn build(self) -> crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput {
         crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerOutput {
-            service_name: self.service_name
-            ,
-            service_instance_name: self.service_instance_name
-            ,
-            service_sync_blocker: self.service_sync_blocker
-            ,
+            service_name: self.service_name,
+            service_instance_name: self.service_instance_name,
+            service_sync_blocker: self.service_sync_blocker,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Information about the hierarchy group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HierarchyGroupSummaryReference  {
+pub struct HierarchyGroupSummaryReference {
     /// <p>The unique identifier for the hierarchy group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct HierarchyGroupSummaryReference  {
 }
 impl HierarchyGroupSummaryReference {
     /// <p>The unique identifier for the hierarchy group.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the hierarchy group. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl HierarchyGroupSummaryReferenceBuilder {
     }
     /// <p>The unique identifier for the hierarchy group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the hierarchy group. </p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl HierarchyGroupSummaryReferenceBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the hierarchy group. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`HierarchyGroupSummaryReference`](crate::types::HierarchyGroupSummaryReference).
     pub fn build(self) -> crate::types::HierarchyGroupSummaryReference {
         crate::types::HierarchyGroupSummaryReference {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
+            id: self.id,
+            arn: self.arn,
         }
     }
 }
-

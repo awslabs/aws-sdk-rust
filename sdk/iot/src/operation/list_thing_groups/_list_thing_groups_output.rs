@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThingGroupsOutput  {
+pub struct ListThingGroupsOutput {
     /// <p>The thing groups.</p>
     #[doc(hidden)]
     pub thing_groups: std::option::Option<std::vec::Vec<crate::types::GroupNameAndArn>>,
@@ -13,22 +13,23 @@ pub struct ListThingGroupsOutput  {
 }
 impl ListThingGroupsOutput {
     /// <p>The thing groups.</p>
-    pub fn thing_groups(&self) -> std::option::Option<& [crate::types::GroupNameAndArn]> {
+    pub fn thing_groups(&self) -> std::option::Option<&[crate::types::GroupNameAndArn]> {
         self.thing_groups.as_deref()
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListThingGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListThingGroupsOutput {
     /// Creates a new builder-style object to manufacture [`ListThingGroupsOutput`](crate::operation::list_thing_groups::ListThingGroupsOutput).
-    pub fn builder() -> crate::operation::list_thing_groups::builders::ListThingGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::list_thing_groups::builders::ListThingGroupsOutputBuilder
+    {
         crate::operation::list_thing_groups::builders::ListThingGroupsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListThingGroupsOutputBuilder {
     /// <p>The thing groups.</p>
     pub fn thing_groups(mut self, input: crate::types::GroupNameAndArn) -> Self {
         let mut v = self.thing_groups.unwrap_or_default();
-                        v.push(input);
-                        self.thing_groups = Some(v);
-                        self
+        v.push(input);
+        self.thing_groups = Some(v);
+        self
     }
     /// <p>The thing groups.</p>
-    pub fn set_thing_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::GroupNameAndArn>>) -> Self {
-        self.thing_groups = input; self
+    pub fn set_thing_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GroupNameAndArn>>,
+    ) -> Self {
+        self.thing_groups = input;
+        self
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListThingGroupsOutputBuilder {
     }
     /// <p>The token to use to get the next set of results. Will not be returned if operation has returned all results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListThingGroupsOutput`](crate::operation::list_thing_groups::ListThingGroupsOutput).
     pub fn build(self) -> crate::operation::list_thing_groups::ListThingGroupsOutput {
         crate::operation::list_thing_groups::ListThingGroupsOutput {
-            thing_groups: self.thing_groups
-            ,
-            next_token: self.next_token
-            ,
+            thing_groups: self.thing_groups,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

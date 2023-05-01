@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MoveAddressToVpcOutput  {
+pub struct MoveAddressToVpcOutput {
     /// <p>The allocation ID for the Elastic IP address.</p>
     #[doc(hidden)]
     pub allocation_id: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct MoveAddressToVpcOutput  {
 }
 impl MoveAddressToVpcOutput {
     /// <p>The allocation ID for the Elastic IP address.</p>
-    pub fn allocation_id(&self) -> std::option::Option<& str> {
+    pub fn allocation_id(&self) -> std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
     /// <p>The status of the move of the IP address.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for MoveAddressToVpcOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl MoveAddressToVpcOutput {
     /// Creates a new builder-style object to manufacture [`MoveAddressToVpcOutput`](crate::operation::move_address_to_vpc::MoveAddressToVpcOutput).
-    pub fn builder() -> crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder {
         crate::operation::move_address_to_vpc::builders::MoveAddressToVpcOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl MoveAddressToVpcOutputBuilder {
     }
     /// <p>The allocation ID for the Elastic IP address.</p>
     pub fn set_allocation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allocation_id = input; self
+        self.allocation_id = input;
+        self
     }
     /// <p>The status of the move of the IP address.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -58,26 +60,24 @@ impl MoveAddressToVpcOutputBuilder {
     }
     /// <p>The status of the move of the IP address.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`MoveAddressToVpcOutput`](crate::operation::move_address_to_vpc::MoveAddressToVpcOutput).
     pub fn build(self) -> crate::operation::move_address_to_vpc::MoveAddressToVpcOutput {
         crate::operation::move_address_to_vpc::MoveAddressToVpcOutput {
-            allocation_id: self.allocation_id
-            ,
-            status: self.status
-            ,
+            allocation_id: self.allocation_id,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

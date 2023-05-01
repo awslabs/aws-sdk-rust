@@ -4,51 +4,71 @@ pub use crate::operation::import_ssh_public_key::_import_ssh_public_key_output::
 pub use crate::operation::import_ssh_public_key::_import_ssh_public_key_input::ImportSshPublicKeyInputBuilder;
 
 /// Fluent builder constructing a request to `ImportSshPublicKey`.
-/// 
-/// <p>Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code> value assigned to the specific file transfer protocol-enabled server, identified by <code>ServerId</code>.</p> 
+///
+/// <p>Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code> value assigned to the specific file transfer protocol-enabled server, identified by <code>ServerId</code>.</p>
 /// <p>The response returns the <code>UserName</code> value, the <code>ServerId</code> value, and the name of the <code>SshPublicKeyId</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportSshPublicKeyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyInputBuilder,
+    inner: crate::operation::import_ssh_public_key::builders::ImportSshPublicKeyInputBuilder,
 }
-impl ImportSshPublicKeyFluentBuilder  {
+impl ImportSshPublicKeyFluentBuilder {
     /// Creates a new `ImportSshPublicKey`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::import_ssh_public_key::ImportSshPublicKey, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::import_ssh_public_key::ImportSshPublicKeyError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput, aws_smithy_http::result::SdkError<crate::operation::import_ssh_public_key::ImportSshPublicKeyError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::import_ssh_public_key::ImportSshPublicKey,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_ssh_public_key::ImportSshPublicKeyError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::import_ssh_public_key::ImportSshPublicKeyError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A system-assigned unique identifier for a server.</p>
     pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
@@ -59,15 +79,18 @@ impl ImportSshPublicKeyFluentBuilder  {
         self.inner = self.inner.set_server_id(input);
         self
     }
-    /// <p>The public key portion of an SSH key pair.</p> 
+    /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn ssh_public_key_body(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ssh_public_key_body(input.into());
         self
     }
-    /// <p>The public key portion of an SSH key pair.</p> 
+    /// <p>The public key portion of an SSH key pair.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn set_ssh_public_key_body(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ssh_public_key_body(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ssh_public_key_body(input);
         self
     }
@@ -82,4 +105,3 @@ impl ImportSshPublicKeyFluentBuilder  {
         self
     }
 }
-

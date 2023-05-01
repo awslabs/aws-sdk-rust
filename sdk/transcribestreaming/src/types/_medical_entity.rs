@@ -3,7 +3,7 @@
 /// <p>Contains entities identified as personal health information (PHI) in your transcription output, along with various associated attributes. Examples include category, confidence score, type, stability score, and start and end times.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MedicalEntity  {
+pub struct MedicalEntity {
     /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
     #[doc(hidden)]
     pub start_time: f64,
@@ -16,7 +16,7 @@ pub struct MedicalEntity  {
     /// <p>The word or words identified as PHI.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::string::String>,
-    /// <p>The confidence score associated with the identified PHI entity in your audio.</p> 
+    /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     #[doc(hidden)]
     pub confidence: std::option::Option<f64>,
@@ -31,14 +31,14 @@ impl MedicalEntity {
         self.end_time
     }
     /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
-    pub fn category(&self) -> std::option::Option<& str> {
+    pub fn category(&self) -> std::option::Option<&str> {
         self.category.as_deref()
     }
     /// <p>The word or words identified as PHI.</p>
-    pub fn content(&self) -> std::option::Option<& str> {
+    pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
-    /// <p>The confidence score associated with the identified PHI entity in your audio.</p> 
+    /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub fn confidence(&self) -> std::option::Option<f64> {
         self.confidence
@@ -69,7 +69,8 @@ impl MedicalEntityBuilder {
     }
     /// <p>The start time, in milliseconds, of the utterance that was identified as PHI.</p>
     pub fn set_start_time(mut self, input: std::option::Option<f64>) -> Self {
-        self.start_time = input; self
+        self.start_time = input;
+        self
     }
     /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
     pub fn end_time(mut self, input: f64) -> Self {
@@ -78,7 +79,8 @@ impl MedicalEntityBuilder {
     }
     /// <p>The end time, in milliseconds, of the utterance that was identified as PHI.</p>
     pub fn set_end_time(mut self, input: std::option::Option<f64>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
     pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,7 +89,8 @@ impl MedicalEntityBuilder {
     }
     /// <p>The category of information identified. The only category is <code>PHI</code>.</p>
     pub fn set_category(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.category = input; self
+        self.category = input;
+        self
     }
     /// <p>The word or words identified as PHI.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,35 +99,29 @@ impl MedicalEntityBuilder {
     }
     /// <p>The word or words identified as PHI.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
-    /// <p>The confidence score associated with the identified PHI entity in your audio.</p> 
+    /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub fn confidence(mut self, input: f64) -> Self {
         self.confidence = Some(input);
         self
     }
-    /// <p>The confidence score associated with the identified PHI entity in your audio.</p> 
+    /// <p>The confidence score associated with the identified PHI entity in your audio.</p>
     /// <p>Confidence scores are values between 0 and 1. A larger value indicates a higher probability that the identified entity correctly matches the entity spoken in your media.</p>
     pub fn set_confidence(mut self, input: std::option::Option<f64>) -> Self {
-        self.confidence = input; self
+        self.confidence = input;
+        self
     }
     /// Consumes the builder and constructs a [`MedicalEntity`](crate::types::MedicalEntity).
     pub fn build(self) -> crate::types::MedicalEntity {
         crate::types::MedicalEntity {
-            start_time: self.start_time
-                .unwrap_or_default()
-            ,
-            end_time: self.end_time
-                .unwrap_or_default()
-            ,
-            category: self.category
-            ,
-            content: self.content
-            ,
-            confidence: self.confidence
-            ,
+            start_time: self.start_time.unwrap_or_default(),
+            end_time: self.end_time.unwrap_or_default(),
+            category: self.category,
+            content: self.content,
+            confidence: self.confidence,
         }
     }
 }
-

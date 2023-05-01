@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCollaborationInput  {
+pub struct GetCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
 }
 impl GetCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
         self.collaboration_identifier.as_deref()
     }
 }
 impl GetCollaborationInput {
     /// Creates a new builder-style object to manufacture [`GetCollaborationInput`](crate::operation::get_collaboration::GetCollaborationInput).
-    pub fn builder() -> crate::operation::get_collaboration::builders::GetCollaborationInputBuilder {
+    pub fn builder() -> crate::operation::get_collaboration::builders::GetCollaborationInputBuilder
+    {
         crate::operation::get_collaboration::builders::GetCollaborationInputBuilder::default()
     }
 }
@@ -33,17 +34,22 @@ impl GetCollaborationInputBuilder {
         self
     }
     /// <p>The identifier for the collaboration.</p>
-    pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collaboration_identifier = input; self
+    pub fn set_collaboration_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.collaboration_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetCollaborationInput`](crate::operation::get_collaboration::GetCollaborationInput).
-    pub fn build(self) -> Result<crate::operation::get_collaboration::GetCollaborationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_collaboration::GetCollaborationInput {
-                collaboration_identifier: self.collaboration_identifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_collaboration::GetCollaborationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_collaboration::GetCollaborationInput {
+            collaboration_identifier: self.collaboration_identifier,
+        })
     }
 }
-

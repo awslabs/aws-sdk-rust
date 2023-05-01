@@ -3,14 +3,17 @@
 /// <p>The configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeployAsApplicationConfigurationDescription  {
+pub struct DeployAsApplicationConfigurationDescription {
     /// <p>The location that holds the data required to specify an Amazon Data Analytics application.</p>
     #[doc(hidden)]
-    pub s3_content_location_description: std::option::Option<crate::types::S3ContentBaseLocationDescription>,
+    pub s3_content_location_description:
+        std::option::Option<crate::types::S3ContentBaseLocationDescription>,
 }
 impl DeployAsApplicationConfigurationDescription {
     /// <p>The location that holds the data required to specify an Amazon Data Analytics application.</p>
-    pub fn s3_content_location_description(&self) -> std::option::Option<& crate::types::S3ContentBaseLocationDescription> {
+    pub fn s3_content_location_description(
+        &self,
+    ) -> std::option::Option<&crate::types::S3ContentBaseLocationDescription> {
         self.s3_content_location_description.as_ref()
     }
 }
@@ -25,24 +28,30 @@ impl DeployAsApplicationConfigurationDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeployAsApplicationConfigurationDescriptionBuilder {
-    pub(crate) s3_content_location_description: std::option::Option<crate::types::S3ContentBaseLocationDescription>,
+    pub(crate) s3_content_location_description:
+        std::option::Option<crate::types::S3ContentBaseLocationDescription>,
 }
 impl DeployAsApplicationConfigurationDescriptionBuilder {
     /// <p>The location that holds the data required to specify an Amazon Data Analytics application.</p>
-    pub fn s3_content_location_description(mut self, input: crate::types::S3ContentBaseLocationDescription) -> Self {
+    pub fn s3_content_location_description(
+        mut self,
+        input: crate::types::S3ContentBaseLocationDescription,
+    ) -> Self {
         self.s3_content_location_description = Some(input);
         self
     }
     /// <p>The location that holds the data required to specify an Amazon Data Analytics application.</p>
-    pub fn set_s3_content_location_description(mut self, input: std::option::Option<crate::types::S3ContentBaseLocationDescription>) -> Self {
-        self.s3_content_location_description = input; self
+    pub fn set_s3_content_location_description(
+        mut self,
+        input: std::option::Option<crate::types::S3ContentBaseLocationDescription>,
+    ) -> Self {
+        self.s3_content_location_description = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeployAsApplicationConfigurationDescription`](crate::types::DeployAsApplicationConfigurationDescription).
     pub fn build(self) -> crate::types::DeployAsApplicationConfigurationDescription {
         crate::types::DeployAsApplicationConfigurationDescription {
-            s3_content_location_description: self.s3_content_location_description
-            ,
+            s3_content_location_description: self.s3_content_location_description,
         }
     }
 }
-

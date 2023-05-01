@@ -24,4 +24,3 @@ pub mod get_federation_token;
 
 /// Types for the `GetSessionToken` operation.
 pub mod get_session_token;
-

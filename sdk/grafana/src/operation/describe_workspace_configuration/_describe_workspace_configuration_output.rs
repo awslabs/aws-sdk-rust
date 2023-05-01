@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceConfigurationOutput  {
+pub struct DescribeWorkspaceConfigurationOutput {
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct DescribeWorkspaceConfigurationOutput  {
 }
 impl DescribeWorkspaceConfigurationOutput {
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
-    pub fn configuration(&self) -> std::option::Option<& str> {
+    pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeWorkspaceConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeWorkspaceConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceConfigurationOutput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput).
-    pub fn builder() -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder{
         crate::operation::describe_workspace_configuration::builders::DescribeWorkspaceConfigurationOutputBuilder::default()
     }
 }
@@ -41,24 +41,26 @@ impl DescribeWorkspaceConfigurationOutputBuilder {
     }
     /// <p>The configuration string for the workspace that you requested. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.</p>
     pub fn set_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration = input; self
+        self.configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeWorkspaceConfigurationOutput`](crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput).
-    pub fn build(self) -> crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput
+    {
         crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput {
-            configuration: self.configuration
-            ,
+            configuration: self.configuration,
             _request_id: self._request_id,
         }
     }
 }
-

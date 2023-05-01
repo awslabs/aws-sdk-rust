@@ -3,14 +3,14 @@
 /// <p>Contains information for a user identity in an access policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserIdentity  {
+pub struct UserIdentity {
     /// <p>The IAM Identity Center ID of the user.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl UserIdentity {
     /// <p>The IAM Identity Center ID of the user.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl UserIdentityBuilder {
     }
     /// <p>The IAM Identity Center ID of the user.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`UserIdentity`](crate::types::UserIdentity).
     pub fn build(self) -> crate::types::UserIdentity {
-        crate::types::UserIdentity {
-            id: self.id
-            ,
-        }
+        crate::types::UserIdentity { id: self.id }
     }
 }
-

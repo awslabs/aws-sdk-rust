@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppValidationConfigurationInput  {
+pub struct GetAppValidationConfigurationInput {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
 }
 impl GetAppValidationConfigurationInput {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
 }
 impl GetAppValidationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetAppValidationConfigurationInput`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationInput).
-    pub fn builder() -> crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationInputBuilder{
         crate::operation::get_app_validation_configuration::builders::GetAppValidationConfigurationInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl GetAppValidationConfigurationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAppValidationConfigurationInput`](crate::operation::get_app_validation_configuration::GetAppValidationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_app_validation_configuration::GetAppValidationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_app_validation_configuration::GetAppValidationConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_app_validation_configuration::GetAppValidationConfigurationInput {
                 app_id: self.app_id
@@ -46,4 +52,3 @@ impl GetAppValidationConfigurationInputBuilder {
         )
     }
 }
-

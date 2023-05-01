@@ -3,7 +3,7 @@
 /// <p>Input to list all workloads.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkloadsInput  {
+pub struct ListWorkloadsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
     #[doc(hidden)]
     pub workload_name_prefix: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct ListWorkloadsInput  {
 }
 impl ListWorkloadsInput {
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn workload_name_prefix(&self) -> std::option::Option<& str> {
+    pub fn workload_name_prefix(&self) -> std::option::Option<&str> {
         self.workload_name_prefix.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
@@ -50,8 +50,12 @@ impl ListWorkloadsInputBuilder {
         self
     }
     /// <p>An optional string added to the beginning of each workload name returned in the results.</p>
-    pub fn set_workload_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_name_prefix = input; self
+    pub fn set_workload_name_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.workload_name_prefix = input;
+        self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl ListWorkloadsInputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -69,20 +74,20 @@ impl ListWorkloadsInputBuilder {
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListWorkloadsInput`](crate::operation::list_workloads::ListWorkloadsInput).
-    pub fn build(self) -> Result<crate::operation::list_workloads::ListWorkloadsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_workloads::ListWorkloadsInput {
-                workload_name_prefix: self.workload_name_prefix
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_workloads::ListWorkloadsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_workloads::ListWorkloadsInput {
+            workload_name_prefix: self.workload_name_prefix,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

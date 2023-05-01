@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelExplainabilityJobDefinitionInput  {
+pub struct DescribeModelExplainabilityJobDefinitionInput {
     /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub job_definition_name: std::option::Option<std::string::String>,
 }
 impl DescribeModelExplainabilityJobDefinitionInput {
     /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn job_definition_name(&self) -> std::option::Option<& str> {
+    pub fn job_definition_name(&self) -> std::option::Option<&str> {
         self.job_definition_name.as_deref()
     }
 }
 impl DescribeModelExplainabilityJobDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelExplainabilityJobDefinitionInput`](crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionInput).
-    pub fn builder() -> crate::operation::describe_model_explainability_job_definition::builders::DescribeModelExplainabilityJobDefinitionInputBuilder {
+    pub fn builder() -> crate::operation::describe_model_explainability_job_definition::builders::DescribeModelExplainabilityJobDefinitionInputBuilder{
         crate::operation::describe_model_explainability_job_definition::builders::DescribeModelExplainabilityJobDefinitionInputBuilder::default()
     }
 }
@@ -33,11 +33,15 @@ impl DescribeModelExplainabilityJobDefinitionInputBuilder {
         self
     }
     /// <p>The name of the model explainability job definition. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_job_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_definition_name = input; self
+    pub fn set_job_definition_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.job_definition_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeModelExplainabilityJobDefinitionInput`](crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_model_explainability_job_definition::DescribeModelExplainabilityJobDefinitionInput {
                 job_definition_name: self.job_definition_name
@@ -46,4 +50,3 @@ impl DescribeModelExplainabilityJobDefinitionInputBuilder {
         )
     }
 }
-

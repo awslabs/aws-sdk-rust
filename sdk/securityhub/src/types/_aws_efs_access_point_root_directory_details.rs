@@ -3,21 +3,24 @@
 /// <p>Provides information about the directory on the Amazon EFS file system that the access point exposes as the root directory to NFS clients using the access point. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEfsAccessPointRootDirectoryDetails  {
+pub struct AwsEfsAccessPointRootDirectoryDetails {
     /// <p>Specifies the POSIX IDs and permissions to apply to the access point's root directory. </p>
     #[doc(hidden)]
-    pub creation_info: std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
+    pub creation_info:
+        std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
     /// <p>Specifies the path on the Amazon EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide <code>CreationInfo</code>. </p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
 }
 impl AwsEfsAccessPointRootDirectoryDetails {
     /// <p>Specifies the POSIX IDs and permissions to apply to the access point's root directory. </p>
-    pub fn creation_info(&self) -> std::option::Option<& crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails> {
+    pub fn creation_info(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails> {
         self.creation_info.as_ref()
     }
     /// <p>Specifies the path on the Amazon EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide <code>CreationInfo</code>. </p>
-    pub fn path(&self) -> std::option::Option<& str> {
+    pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
 }
@@ -32,18 +35,26 @@ impl AwsEfsAccessPointRootDirectoryDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsEfsAccessPointRootDirectoryDetailsBuilder {
-    pub(crate) creation_info: std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
+    pub(crate) creation_info:
+        std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
     pub(crate) path: std::option::Option<std::string::String>,
 }
 impl AwsEfsAccessPointRootDirectoryDetailsBuilder {
     /// <p>Specifies the POSIX IDs and permissions to apply to the access point's root directory. </p>
-    pub fn creation_info(mut self, input: crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails) -> Self {
+    pub fn creation_info(
+        mut self,
+        input: crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails,
+    ) -> Self {
         self.creation_info = Some(input);
         self
     }
     /// <p>Specifies the POSIX IDs and permissions to apply to the access point's root directory. </p>
-    pub fn set_creation_info(mut self, input: std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>) -> Self {
-        self.creation_info = input; self
+    pub fn set_creation_info(
+        mut self,
+        input: std::option::Option<crate::types::AwsEfsAccessPointRootDirectoryCreationInfoDetails>,
+    ) -> Self {
+        self.creation_info = input;
+        self
     }
     /// <p>Specifies the path on the Amazon EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide <code>CreationInfo</code>. </p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +63,14 @@ impl AwsEfsAccessPointRootDirectoryDetailsBuilder {
     }
     /// <p>Specifies the path on the Amazon EFS file system to expose as the root directory to NFS clients using the access point to access the EFS file system. A path can have up to four subdirectories. If the specified path does not exist, you are required to provide <code>CreationInfo</code>. </p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input; self
+        self.path = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEfsAccessPointRootDirectoryDetails`](crate::types::AwsEfsAccessPointRootDirectoryDetails).
     pub fn build(self) -> crate::types::AwsEfsAccessPointRootDirectoryDetails {
         crate::types::AwsEfsAccessPointRootDirectoryDetails {
-            creation_info: self.creation_info
-            ,
-            path: self.path
-            ,
+            creation_info: self.creation_info,
+            path: self.path,
         }
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let locale = unimplemented!();
 /// match locale {
@@ -41,14 +41,22 @@
 /// Specifically, when `locale` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Locale::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Locale {
     #[allow(missing_docs)] // documentation missing in model
     DeDe,
@@ -77,63 +85,65 @@ pub enum Locale {
     #[allow(missing_docs)] // documentation missing in model
     KoKr,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Locale {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "de-DE" => Locale::DeDe,
-"en-AU" => Locale::EnAu,
-"en-GB" => Locale::EnGb,
-"en-IN" => Locale::EnIn,
-"en-US" => Locale::EnUs,
-"es-419" => Locale::Es419,
-"es-ES" => Locale::EsEs,
-"es-US" => Locale::EsUs,
-"fr-CA" => Locale::FrCa,
-"fr-FR" => Locale::FrFr,
-"it-IT" => Locale::ItIt,
-"ja-JP" => Locale::JaJp,
-"ko-KR" => Locale::KoKr,
-other => Locale::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Locale {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Locale::from(s))
-                }
-            }
-impl Locale {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Locale::DeDe => "de-DE",
-    Locale::EnAu => "en-AU",
-    Locale::EnGb => "en-GB",
-    Locale::EnIn => "en-IN",
-    Locale::EnUs => "en-US",
-    Locale::Es419 => "es-419",
-    Locale::EsEs => "es-ES",
-    Locale::EsUs => "es-US",
-    Locale::FrCa => "fr-CA",
-    Locale::FrFr => "fr-FR",
-    Locale::ItIt => "it-IT",
-    Locale::JaJp => "ja-JP",
-    Locale::KoKr => "ko-KR",
-    Locale::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "de-DE" => Locale::DeDe,
+            "en-AU" => Locale::EnAu,
+            "en-GB" => Locale::EnGb,
+            "en-IN" => Locale::EnIn,
+            "en-US" => Locale::EnUs,
+            "es-419" => Locale::Es419,
+            "es-ES" => Locale::EsEs,
+            "es-US" => Locale::EsUs,
+            "fr-CA" => Locale::FrCa,
+            "fr-FR" => Locale::FrFr,
+            "it-IT" => Locale::ItIt,
+            "ja-JP" => Locale::JaJp,
+            "ko-KR" => Locale::KoKr,
+            other => Locale::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["de-DE", "en-AU", "en-GB", "en-IN", "en-US", "es-419", "es-ES", "es-US", "fr-CA", "fr-FR", "it-IT", "ja-JP", "ko-KR"]
-                }
-            }
-impl AsRef<str> for Locale {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Locale {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Locale::from(s))
+    }
+}
+impl Locale {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Locale::DeDe => "de-DE",
+            Locale::EnAu => "en-AU",
+            Locale::EnGb => "en-GB",
+            Locale::EnIn => "en-IN",
+            Locale::EnUs => "en-US",
+            Locale::Es419 => "es-419",
+            Locale::EsEs => "es-ES",
+            Locale::EsUs => "es-US",
+            Locale::FrCa => "fr-CA",
+            Locale::FrFr => "fr-FR",
+            Locale::ItIt => "it-IT",
+            Locale::JaJp => "ja-JP",
+            Locale::KoKr => "ko-KR",
+            Locale::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "de-DE", "en-AU", "en-GB", "en-IN", "en-US", "es-419", "es-ES", "es-US", "fr-CA",
+            "fr-FR", "it-IT", "ja-JP", "ko-KR",
+        ]
+    }
+}
+impl AsRef<str> for Locale {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

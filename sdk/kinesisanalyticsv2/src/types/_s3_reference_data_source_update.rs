@@ -3,7 +3,7 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, describes the Amazon S3 bucket name and object key name for an in-application reference table. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ReferenceDataSourceUpdate  {
+pub struct S3ReferenceDataSourceUpdate {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_arn_update: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3ReferenceDataSourceUpdate  {
 }
 impl S3ReferenceDataSourceUpdate {
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn bucket_arn_update(&self) -> std::option::Option<& str> {
+    pub fn bucket_arn_update(&self) -> std::option::Option<&str> {
         self.bucket_arn_update.as_deref()
     }
     /// <p>The object key name.</p>
-    pub fn file_key_update(&self) -> std::option::Option<& str> {
+    pub fn file_key_update(&self) -> std::option::Option<&str> {
         self.file_key_update.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl S3ReferenceDataSourceUpdateBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the S3 bucket.</p>
-    pub fn set_bucket_arn_update(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_arn_update = input; self
+    pub fn set_bucket_arn_update(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.bucket_arn_update = input;
+        self
     }
     /// <p>The object key name.</p>
     pub fn file_key_update(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl S3ReferenceDataSourceUpdateBuilder {
     }
     /// <p>The object key name.</p>
     pub fn set_file_key_update(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_key_update = input; self
+        self.file_key_update = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3ReferenceDataSourceUpdate`](crate::types::S3ReferenceDataSourceUpdate).
     pub fn build(self) -> crate::types::S3ReferenceDataSourceUpdate {
         crate::types::S3ReferenceDataSourceUpdate {
-            bucket_arn_update: self.bucket_arn_update
-            ,
-            file_key_update: self.file_key_update
-            ,
+            bucket_arn_update: self.bucket_arn_update,
+            file_key_update: self.file_key_update,
         }
     }
 }
-

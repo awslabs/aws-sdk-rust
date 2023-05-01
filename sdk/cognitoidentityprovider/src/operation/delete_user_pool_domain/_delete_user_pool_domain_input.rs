@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserPoolDomainInput  {
+pub struct DeleteUserPoolDomainInput {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteUserPoolDomainInput  {
 }
 impl DeleteUserPoolDomainInput {
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<& str> {
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
 }
 impl DeleteUserPoolDomainInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserPoolDomainInput`](crate::operation::delete_user_pool_domain::DeleteUserPoolDomainInput).
-    pub fn builder() -> crate::operation::delete_user_pool_domain::builders::DeleteUserPoolDomainInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_user_pool_domain::builders::DeleteUserPoolDomainInputBuilder {
         crate::operation::delete_user_pool_domain::builders::DeleteUserPoolDomainInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteUserPoolDomainInputBuilder {
     }
     /// <p>The domain string. For custom domains, this is the fully-qualified domain name, such as <code>auth.example.com</code>. For Amazon Cognito prefix domains, this is the prefix alone, such as <code>auth</code>.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeleteUserPoolDomainInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input; self
+        self.user_pool_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteUserPoolDomainInput`](crate::operation::delete_user_pool_domain::DeleteUserPoolDomainInput).
-    pub fn build(self) -> Result<crate::operation::delete_user_pool_domain::DeleteUserPoolDomainInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_user_pool_domain::DeleteUserPoolDomainInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_user_pool_domain::DeleteUserPoolDomainInput {
-                domain: self.domain
-                ,
-                user_pool_id: self.user_pool_id
-                ,
-            }
+                domain: self.domain,
+                user_pool_id: self.user_pool_id,
+            },
         )
     }
 }
-

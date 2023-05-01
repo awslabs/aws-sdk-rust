@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishAppVersionOutput  {
+pub struct PublishAppVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct PublishAppVersionOutput  {
 }
 impl PublishAppVersionOutput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> std::option::Option<& str> {
+    pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> std::option::Option<& str> {
+    pub fn app_version(&self) -> std::option::Option<&str> {
         self.app_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PublishAppVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PublishAppVersionOutput {
     /// Creates a new builder-style object to manufacture [`PublishAppVersionOutput`](crate::operation::publish_app_version::PublishAppVersionOutput).
-    pub fn builder() -> crate::operation::publish_app_version::builders::PublishAppVersionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::publish_app_version::builders::PublishAppVersionOutputBuilder {
         crate::operation::publish_app_version::builders::PublishAppVersionOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl PublishAppVersionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input; self
+        self.app_arn = input;
+        self
     }
     /// <p>The version of the application.</p>
     pub fn app_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +60,24 @@ impl PublishAppVersionOutputBuilder {
     }
     /// <p>The version of the application.</p>
     pub fn set_app_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_version = input; self
+        self.app_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PublishAppVersionOutput`](crate::operation::publish_app_version::PublishAppVersionOutput).
     pub fn build(self) -> crate::operation::publish_app_version::PublishAppVersionOutput {
         crate::operation::publish_app_version::PublishAppVersionOutput {
-            app_arn: self.app_arn
-            ,
-            app_version: self.app_version
-            ,
+            app_arn: self.app_arn,
+            app_version: self.app_version,
             _request_id: self._request_id,
         }
     }
 }
-

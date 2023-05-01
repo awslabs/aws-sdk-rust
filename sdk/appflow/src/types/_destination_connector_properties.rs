@@ -3,7 +3,7 @@
 /// <p> This stores the information that is required to query a particular connector. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationConnectorProperties  {
+pub struct DestinationConnectorProperties {
     /// <p> The properties required to query Amazon Redshift. </p>
     #[doc(hidden)]
     pub redshift: std::option::Option<crate::types::RedshiftDestinationProperties>,
@@ -46,55 +46,65 @@ pub struct DestinationConnectorProperties  {
 }
 impl DestinationConnectorProperties {
     /// <p> The properties required to query Amazon Redshift. </p>
-    pub fn redshift(&self) -> std::option::Option<& crate::types::RedshiftDestinationProperties> {
+    pub fn redshift(&self) -> std::option::Option<&crate::types::RedshiftDestinationProperties> {
         self.redshift.as_ref()
     }
     /// <p> The properties required to query Amazon S3. </p>
-    pub fn s3(&self) -> std::option::Option<& crate::types::S3DestinationProperties> {
+    pub fn s3(&self) -> std::option::Option<&crate::types::S3DestinationProperties> {
         self.s3.as_ref()
     }
     /// <p> The properties required to query Salesforce. </p>
-    pub fn salesforce(&self) -> std::option::Option<& crate::types::SalesforceDestinationProperties> {
+    pub fn salesforce(
+        &self,
+    ) -> std::option::Option<&crate::types::SalesforceDestinationProperties> {
         self.salesforce.as_ref()
     }
     /// <p> The properties required to query Snowflake. </p>
-    pub fn snowflake(&self) -> std::option::Option<& crate::types::SnowflakeDestinationProperties> {
+    pub fn snowflake(&self) -> std::option::Option<&crate::types::SnowflakeDestinationProperties> {
         self.snowflake.as_ref()
     }
     /// <p> The properties required to query Amazon EventBridge. </p>
-    pub fn event_bridge(&self) -> std::option::Option<& crate::types::EventBridgeDestinationProperties> {
+    pub fn event_bridge(
+        &self,
+    ) -> std::option::Option<&crate::types::EventBridgeDestinationProperties> {
         self.event_bridge.as_ref()
     }
     /// <p> The properties required to query Amazon Lookout for Metrics. </p>
-    pub fn lookout_metrics(&self) -> std::option::Option<& crate::types::LookoutMetricsDestinationProperties> {
+    pub fn lookout_metrics(
+        &self,
+    ) -> std::option::Option<&crate::types::LookoutMetricsDestinationProperties> {
         self.lookout_metrics.as_ref()
     }
     /// <p> The properties required to query Upsolver. </p>
-    pub fn upsolver(&self) -> std::option::Option<& crate::types::UpsolverDestinationProperties> {
+    pub fn upsolver(&self) -> std::option::Option<&crate::types::UpsolverDestinationProperties> {
         self.upsolver.as_ref()
     }
     /// <p> The properties required to query Amazon Honeycode. </p>
-    pub fn honeycode(&self) -> std::option::Option<& crate::types::HoneycodeDestinationProperties> {
+    pub fn honeycode(&self) -> std::option::Option<&crate::types::HoneycodeDestinationProperties> {
         self.honeycode.as_ref()
     }
     /// <p> The properties required to query Amazon Connect Customer Profiles. </p>
-    pub fn customer_profiles(&self) -> std::option::Option<& crate::types::CustomerProfilesDestinationProperties> {
+    pub fn customer_profiles(
+        &self,
+    ) -> std::option::Option<&crate::types::CustomerProfilesDestinationProperties> {
         self.customer_profiles.as_ref()
     }
     /// <p>The properties required to query Zendesk.</p>
-    pub fn zendesk(&self) -> std::option::Option<& crate::types::ZendeskDestinationProperties> {
+    pub fn zendesk(&self) -> std::option::Option<&crate::types::ZendeskDestinationProperties> {
         self.zendesk.as_ref()
     }
     /// <p>The properties required to query Marketo.</p>
-    pub fn marketo(&self) -> std::option::Option<& crate::types::MarketoDestinationProperties> {
+    pub fn marketo(&self) -> std::option::Option<&crate::types::MarketoDestinationProperties> {
         self.marketo.as_ref()
     }
     /// <p>The properties that are required to query the custom Connector.</p>
-    pub fn custom_connector(&self) -> std::option::Option<& crate::types::CustomConnectorDestinationProperties> {
+    pub fn custom_connector(
+        &self,
+    ) -> std::option::Option<&crate::types::CustomConnectorDestinationProperties> {
         self.custom_connector.as_ref()
     }
     /// <p>The properties required to query SAPOData.</p>
-    pub fn sapo_data(&self) -> std::option::Option<& crate::types::SapoDataDestinationProperties> {
+    pub fn sapo_data(&self) -> std::option::Option<&crate::types::SapoDataDestinationProperties> {
         self.sapo_data.as_ref()
     }
 }
@@ -114,13 +124,16 @@ pub struct DestinationConnectorPropertiesBuilder {
     pub(crate) salesforce: std::option::Option<crate::types::SalesforceDestinationProperties>,
     pub(crate) snowflake: std::option::Option<crate::types::SnowflakeDestinationProperties>,
     pub(crate) event_bridge: std::option::Option<crate::types::EventBridgeDestinationProperties>,
-    pub(crate) lookout_metrics: std::option::Option<crate::types::LookoutMetricsDestinationProperties>,
+    pub(crate) lookout_metrics:
+        std::option::Option<crate::types::LookoutMetricsDestinationProperties>,
     pub(crate) upsolver: std::option::Option<crate::types::UpsolverDestinationProperties>,
     pub(crate) honeycode: std::option::Option<crate::types::HoneycodeDestinationProperties>,
-    pub(crate) customer_profiles: std::option::Option<crate::types::CustomerProfilesDestinationProperties>,
+    pub(crate) customer_profiles:
+        std::option::Option<crate::types::CustomerProfilesDestinationProperties>,
     pub(crate) zendesk: std::option::Option<crate::types::ZendeskDestinationProperties>,
     pub(crate) marketo: std::option::Option<crate::types::MarketoDestinationProperties>,
-    pub(crate) custom_connector: std::option::Option<crate::types::CustomConnectorDestinationProperties>,
+    pub(crate) custom_connector:
+        std::option::Option<crate::types::CustomConnectorDestinationProperties>,
     pub(crate) sapo_data: std::option::Option<crate::types::SapoDataDestinationProperties>,
 }
 impl DestinationConnectorPropertiesBuilder {
@@ -130,8 +143,12 @@ impl DestinationConnectorPropertiesBuilder {
         self
     }
     /// <p> The properties required to query Amazon Redshift. </p>
-    pub fn set_redshift(mut self, input: std::option::Option<crate::types::RedshiftDestinationProperties>) -> Self {
-        self.redshift = input; self
+    pub fn set_redshift(
+        mut self,
+        input: std::option::Option<crate::types::RedshiftDestinationProperties>,
+    ) -> Self {
+        self.redshift = input;
+        self
     }
     /// <p> The properties required to query Amazon S3. </p>
     pub fn s3(mut self, input: crate::types::S3DestinationProperties) -> Self {
@@ -139,8 +156,12 @@ impl DestinationConnectorPropertiesBuilder {
         self
     }
     /// <p> The properties required to query Amazon S3. </p>
-    pub fn set_s3(mut self, input: std::option::Option<crate::types::S3DestinationProperties>) -> Self {
-        self.s3 = input; self
+    pub fn set_s3(
+        mut self,
+        input: std::option::Option<crate::types::S3DestinationProperties>,
+    ) -> Self {
+        self.s3 = input;
+        self
     }
     /// <p> The properties required to query Salesforce. </p>
     pub fn salesforce(mut self, input: crate::types::SalesforceDestinationProperties) -> Self {
@@ -148,8 +169,12 @@ impl DestinationConnectorPropertiesBuilder {
         self
     }
     /// <p> The properties required to query Salesforce. </p>
-    pub fn set_salesforce(mut self, input: std::option::Option<crate::types::SalesforceDestinationProperties>) -> Self {
-        self.salesforce = input; self
+    pub fn set_salesforce(
+        mut self,
+        input: std::option::Option<crate::types::SalesforceDestinationProperties>,
+    ) -> Self {
+        self.salesforce = input;
+        self
     }
     /// <p> The properties required to query Snowflake. </p>
     pub fn snowflake(mut self, input: crate::types::SnowflakeDestinationProperties) -> Self {
@@ -157,8 +182,12 @@ impl DestinationConnectorPropertiesBuilder {
         self
     }
     /// <p> The properties required to query Snowflake. </p>
-    pub fn set_snowflake(mut self, input: std::option::Option<crate::types::SnowflakeDestinationProperties>) -> Self {
-        self.snowflake = input; self
+    pub fn set_snowflake(
+        mut self,
+        input: std::option::Option<crate::types::SnowflakeDestinationProperties>,
+    ) -> Self {
+        self.snowflake = input;
+        self
     }
     /// <p> The properties required to query Amazon EventBridge. </p>
     pub fn event_bridge(mut self, input: crate::types::EventBridgeDestinationProperties) -> Self {
@@ -166,17 +195,28 @@ impl DestinationConnectorPropertiesBuilder {
         self
     }
     /// <p> The properties required to query Amazon EventBridge. </p>
-    pub fn set_event_bridge(mut self, input: std::option::Option<crate::types::EventBridgeDestinationProperties>) -> Self {
-        self.event_bridge = input; self
+    pub fn set_event_bridge(
+        mut self,
+        input: std::option::Option<crate::types::EventBridgeDestinationProperties>,
+    ) -> Self {
+        self.event_bridge = input;
+        self
     }
     /// <p> The properties required to query Amazon Lookout for Metrics. </p>
-    pub fn lookout_metrics(mut self, input: crate::types::LookoutMetricsDestinationProperties) -> Self {
+    pub fn lookout_metrics(
+        mut self,
+        input: crate::types::LookoutMetricsDestinationProperties,
+    ) -> Self {
         self.lookout_metrics = Some(input);
         self
     }
     /// <p> The properties required to query Amazon Lookout for Metrics. </p>
-    pub fn set_lookout_metrics(mut self, input: std::option::Option<crate::types::LookoutMetricsDestinationProperties>) -> Self {
-        self.lookout_metrics = input; self
+    pub fn set_lookout_metrics(
+        mut self,
+        input: std::option::Option<crate::types::LookoutMetricsDestinationProperties>,
+    ) -> Self {
+        self.lookout_metrics = input;
+        self
     }
     /// <p> The properties required to query Upsolver. </p>
     pub fn upsolver(mut self, input: crate::types::UpsolverDestinationProperties) -> Self {
@@ -184,8 +224,12 @@ impl DestinationConnectorPropertiesBuilder {
         self
     }
     /// <p> The properties required to query Upsolver. </p>
-    pub fn set_upsolver(mut self, input: std::option::Option<crate::types::UpsolverDestinationProperties>) -> Self {
-        self.upsolver = input; self
+    pub fn set_upsolver(
+        mut self,
+        input: std::option::Option<crate::types::UpsolverDestinationProperties>,
+    ) -> Self {
+        self.upsolver = input;
+        self
     }
     /// <p> The properties required to query Amazon Honeycode. </p>
     pub fn honeycode(mut self, input: crate::types::HoneycodeDestinationProperties) -> Self {
@@ -193,17 +237,28 @@ impl DestinationConnectorPropertiesBuilder {
         self
     }
     /// <p> The properties required to query Amazon Honeycode. </p>
-    pub fn set_honeycode(mut self, input: std::option::Option<crate::types::HoneycodeDestinationProperties>) -> Self {
-        self.honeycode = input; self
+    pub fn set_honeycode(
+        mut self,
+        input: std::option::Option<crate::types::HoneycodeDestinationProperties>,
+    ) -> Self {
+        self.honeycode = input;
+        self
     }
     /// <p> The properties required to query Amazon Connect Customer Profiles. </p>
-    pub fn customer_profiles(mut self, input: crate::types::CustomerProfilesDestinationProperties) -> Self {
+    pub fn customer_profiles(
+        mut self,
+        input: crate::types::CustomerProfilesDestinationProperties,
+    ) -> Self {
         self.customer_profiles = Some(input);
         self
     }
     /// <p> The properties required to query Amazon Connect Customer Profiles. </p>
-    pub fn set_customer_profiles(mut self, input: std::option::Option<crate::types::CustomerProfilesDestinationProperties>) -> Self {
-        self.customer_profiles = input; self
+    pub fn set_customer_profiles(
+        mut self,
+        input: std::option::Option<crate::types::CustomerProfilesDestinationProperties>,
+    ) -> Self {
+        self.customer_profiles = input;
+        self
     }
     /// <p>The properties required to query Zendesk.</p>
     pub fn zendesk(mut self, input: crate::types::ZendeskDestinationProperties) -> Self {
@@ -211,8 +266,12 @@ impl DestinationConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties required to query Zendesk.</p>
-    pub fn set_zendesk(mut self, input: std::option::Option<crate::types::ZendeskDestinationProperties>) -> Self {
-        self.zendesk = input; self
+    pub fn set_zendesk(
+        mut self,
+        input: std::option::Option<crate::types::ZendeskDestinationProperties>,
+    ) -> Self {
+        self.zendesk = input;
+        self
     }
     /// <p>The properties required to query Marketo.</p>
     pub fn marketo(mut self, input: crate::types::MarketoDestinationProperties) -> Self {
@@ -220,17 +279,28 @@ impl DestinationConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties required to query Marketo.</p>
-    pub fn set_marketo(mut self, input: std::option::Option<crate::types::MarketoDestinationProperties>) -> Self {
-        self.marketo = input; self
+    pub fn set_marketo(
+        mut self,
+        input: std::option::Option<crate::types::MarketoDestinationProperties>,
+    ) -> Self {
+        self.marketo = input;
+        self
     }
     /// <p>The properties that are required to query the custom Connector.</p>
-    pub fn custom_connector(mut self, input: crate::types::CustomConnectorDestinationProperties) -> Self {
+    pub fn custom_connector(
+        mut self,
+        input: crate::types::CustomConnectorDestinationProperties,
+    ) -> Self {
         self.custom_connector = Some(input);
         self
     }
     /// <p>The properties that are required to query the custom Connector.</p>
-    pub fn set_custom_connector(mut self, input: std::option::Option<crate::types::CustomConnectorDestinationProperties>) -> Self {
-        self.custom_connector = input; self
+    pub fn set_custom_connector(
+        mut self,
+        input: std::option::Option<crate::types::CustomConnectorDestinationProperties>,
+    ) -> Self {
+        self.custom_connector = input;
+        self
     }
     /// <p>The properties required to query SAPOData.</p>
     pub fn sapo_data(mut self, input: crate::types::SapoDataDestinationProperties) -> Self {
@@ -238,39 +308,29 @@ impl DestinationConnectorPropertiesBuilder {
         self
     }
     /// <p>The properties required to query SAPOData.</p>
-    pub fn set_sapo_data(mut self, input: std::option::Option<crate::types::SapoDataDestinationProperties>) -> Self {
-        self.sapo_data = input; self
+    pub fn set_sapo_data(
+        mut self,
+        input: std::option::Option<crate::types::SapoDataDestinationProperties>,
+    ) -> Self {
+        self.sapo_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`DestinationConnectorProperties`](crate::types::DestinationConnectorProperties).
     pub fn build(self) -> crate::types::DestinationConnectorProperties {
         crate::types::DestinationConnectorProperties {
-            redshift: self.redshift
-            ,
-            s3: self.s3
-            ,
-            salesforce: self.salesforce
-            ,
-            snowflake: self.snowflake
-            ,
-            event_bridge: self.event_bridge
-            ,
-            lookout_metrics: self.lookout_metrics
-            ,
-            upsolver: self.upsolver
-            ,
-            honeycode: self.honeycode
-            ,
-            customer_profiles: self.customer_profiles
-            ,
-            zendesk: self.zendesk
-            ,
-            marketo: self.marketo
-            ,
-            custom_connector: self.custom_connector
-            ,
-            sapo_data: self.sapo_data
-            ,
+            redshift: self.redshift,
+            s3: self.s3,
+            salesforce: self.salesforce,
+            snowflake: self.snowflake,
+            event_bridge: self.event_bridge,
+            lookout_metrics: self.lookout_metrics,
+            upsolver: self.upsolver,
+            honeycode: self.honeycode,
+            customer_profiles: self.customer_profiles,
+            zendesk: self.zendesk,
+            marketo: self.marketo,
+            custom_connector: self.custom_connector,
+            sapo_data: self.sapo_data,
         }
     }
 }
-

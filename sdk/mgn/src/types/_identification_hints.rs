@@ -3,7 +3,7 @@
 /// <p>Identification hints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentificationHints  {
+pub struct IdentificationHints {
     /// <p>FQDN address identification hint.</p>
     #[doc(hidden)]
     pub fqdn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct IdentificationHints  {
 }
 impl IdentificationHints {
     /// <p>FQDN address identification hint.</p>
-    pub fn fqdn(&self) -> std::option::Option<& str> {
+    pub fn fqdn(&self) -> std::option::Option<&str> {
         self.fqdn.as_deref()
     }
     /// <p>Hostname identification hint.</p>
-    pub fn hostname(&self) -> std::option::Option<& str> {
+    pub fn hostname(&self) -> std::option::Option<&str> {
         self.hostname.as_deref()
     }
     /// <p>vmWare UUID identification hint.</p>
-    pub fn vm_ware_uuid(&self) -> std::option::Option<& str> {
+    pub fn vm_ware_uuid(&self) -> std::option::Option<&str> {
         self.vm_ware_uuid.as_deref()
     }
     /// <p>AWS Instance ID identification hint.</p>
-    pub fn aws_instance_id(&self) -> std::option::Option<& str> {
+    pub fn aws_instance_id(&self) -> std::option::Option<&str> {
         self.aws_instance_id.as_deref()
     }
     /// <p>vCenter VM path identification hint.</p>
-    pub fn vm_path(&self) -> std::option::Option<& str> {
+    pub fn vm_path(&self) -> std::option::Option<&str> {
         self.vm_path.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl IdentificationHintsBuilder {
     }
     /// <p>FQDN address identification hint.</p>
     pub fn set_fqdn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fqdn = input; self
+        self.fqdn = input;
+        self
     }
     /// <p>Hostname identification hint.</p>
     pub fn hostname(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl IdentificationHintsBuilder {
     }
     /// <p>Hostname identification hint.</p>
     pub fn set_hostname(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hostname = input; self
+        self.hostname = input;
+        self
     }
     /// <p>vmWare UUID identification hint.</p>
     pub fn vm_ware_uuid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl IdentificationHintsBuilder {
     }
     /// <p>vmWare UUID identification hint.</p>
     pub fn set_vm_ware_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vm_ware_uuid = input; self
+        self.vm_ware_uuid = input;
+        self
     }
     /// <p>AWS Instance ID identification hint.</p>
     pub fn aws_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl IdentificationHintsBuilder {
     }
     /// <p>AWS Instance ID identification hint.</p>
     pub fn set_aws_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_instance_id = input; self
+        self.aws_instance_id = input;
+        self
     }
     /// <p>vCenter VM path identification hint.</p>
     pub fn vm_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +107,17 @@ impl IdentificationHintsBuilder {
     }
     /// <p>vCenter VM path identification hint.</p>
     pub fn set_vm_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vm_path = input; self
+        self.vm_path = input;
+        self
     }
     /// Consumes the builder and constructs a [`IdentificationHints`](crate::types::IdentificationHints).
     pub fn build(self) -> crate::types::IdentificationHints {
         crate::types::IdentificationHints {
-            fqdn: self.fqdn
-            ,
-            hostname: self.hostname
-            ,
-            vm_ware_uuid: self.vm_ware_uuid
-            ,
-            aws_instance_id: self.aws_instance_id
-            ,
-            vm_path: self.vm_path
-            ,
+            fqdn: self.fqdn,
+            hostname: self.hostname,
+            vm_ware_uuid: self.vm_ware_uuid,
+            aws_instance_id: self.aws_instance_id,
+            vm_path: self.vm_path,
         }
     }
 }
-

@@ -4,53 +4,69 @@ pub use crate::operation::delete_user::_delete_user_output::DeleteUserOutputBuil
 pub use crate::operation::delete_user::_delete_user_input::DeleteUserInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteUser`.
-/// 
-/// <p>Deletes the user belonging to a file transfer protocol-enabled server you specify.</p> 
-/// <p>No response returns from this operation.</p> <note> 
-/// <p>When you delete a user from a server, the user's information is lost.</p> 
+///
+/// <p>Deletes the user belonging to a file transfer protocol-enabled server you specify.</p>
+/// <p>No response returns from this operation.</p> <note>
+/// <p>When you delete a user from a server, the user's information is lost.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteUserFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_user::builders::DeleteUserInputBuilder,
+    inner: crate::operation::delete_user::builders::DeleteUserInputBuilder,
 }
-impl DeleteUserFluentBuilder  {
+impl DeleteUserFluentBuilder {
     /// Creates a new `DeleteUser`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_user::DeleteUser, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_user::DeleteUserOutput, aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_user::DeleteUser,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_user::DeleteUserOutput,
+        aws_smithy_http::result::SdkError<crate::operation::delete_user::DeleteUserError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
     pub fn server_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.server_id(input.into());
@@ -72,4 +88,3 @@ impl DeleteUserFluentBuilder  {
         self
     }
 }
-

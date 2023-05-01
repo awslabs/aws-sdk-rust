@@ -4,50 +4,70 @@ pub use crate::operation::update_location_object_storage::_update_location_objec
 pub use crate::operation::update_location_object_storage::_update_location_object_storage_input::UpdateLocationObjectStorageInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateLocationObjectStorage`.
-/// 
+///
 /// <p>Updates some parameters of an existing object storage location that DataSync accesses for a transfer. For information about creating a self-managed object storage location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLocationObjectStorageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_location_object_storage::builders::UpdateLocationObjectStorageInputBuilder,
 }
-impl UpdateLocationObjectStorageFluentBuilder  {
+impl UpdateLocationObjectStorageFluentBuilder {
     /// Creates a new `UpdateLocationObjectStorage`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_location_object_storage::UpdateLocationObjectStorage, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_location_object_storage::UpdateLocationObjectStorageError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput, aws_smithy_http::result::SdkError<crate::operation::update_location_object_storage::UpdateLocationObjectStorageError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_location_object_storage::UpdateLocationObjectStorage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_location_object_storage::UpdateLocationObjectStorageError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_location_object_storage::UpdateLocationObjectStorageError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Specifies the ARN of the object storage system location that you're updating.</p>
     pub fn location_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.location_arn(input.into());
@@ -74,7 +94,10 @@ impl UpdateLocationObjectStorageFluentBuilder  {
         self
     }
     /// <p>Specifies the protocol that your object storage server uses to communicate.</p>
-    pub fn set_server_protocol(mut self, input: std::option::Option<crate::types::ObjectStorageServerProtocol>) -> Self {
+    pub fn set_server_protocol(
+        mut self,
+        input: std::option::Option<crate::types::ObjectStorageServerProtocol>,
+    ) -> Self {
         self.inner = self.inner.set_server_protocol(input);
         self
     }
@@ -118,23 +141,28 @@ impl UpdateLocationObjectStorageFluentBuilder  {
         self
     }
     /// <p>Specifies the Amazon Resource Names (ARNs) of the DataSync agents that can securely connect with your location.</p>
-    pub fn set_agent_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_agent_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_agent_arns(input);
         self
     }
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p> 
-    /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p> 
+    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
     pub fn server_certificate(mut self, input: aws_smithy_types::Blob) -> Self {
         self.inner = self.inner.server_certificate(input);
         self
     }
-    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p> 
-    /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p> 
+    /// <p>Specifies a certificate to authenticate with an object storage system that uses a private or self-signed certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes (before Base64 encoding).</p>
+    /// <p>To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.</p>
     /// <p>Updating the certificate doesn't interfere with tasks that you have in progress.</p>
-    pub fn set_server_certificate(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
+    pub fn set_server_certificate(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
         self.inner = self.inner.set_server_certificate(input);
         self
     }
 }
-

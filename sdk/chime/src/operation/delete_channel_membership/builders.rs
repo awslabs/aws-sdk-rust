@@ -4,52 +4,73 @@ pub use crate::operation::delete_channel_membership::_delete_channel_membership_
 pub use crate::operation::delete_channel_membership::_delete_channel_membership_input::DeleteChannelMembershipInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteChannelMembership`.
-/// 
-/// <p>Removes a member from a channel.</p> <note> 
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> 
+///
+/// <p>Removes a member from a channel.</p> <note>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChannelMembershipFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder,
+    inner:
+        crate::operation::delete_channel_membership::builders::DeleteChannelMembershipInputBuilder,
 }
-impl DeleteChannelMembershipFluentBuilder  {
+impl DeleteChannelMembershipFluentBuilder {
     /// Creates a new `DeleteChannelMembership`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_channel_membership::DeleteChannelMembership, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_channel_membership::DeleteChannelMembershipError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_channel_membership::DeleteChannelMembershipOutput, aws_smithy_http::result::SdkError<crate::operation::delete_channel_membership::DeleteChannelMembershipError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_channel_membership::DeleteChannelMembership,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_channel_membership::DeleteChannelMembershipError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_channel_membership::DeleteChannelMembershipOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_channel_membership::DeleteChannelMembershipError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN of the channel from which you want to remove the user.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.channel_arn(input.into());
@@ -81,4 +102,3 @@ impl DeleteChannelMembershipFluentBuilder  {
         self
     }
 }
-

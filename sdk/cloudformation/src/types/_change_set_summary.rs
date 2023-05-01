@@ -3,7 +3,7 @@
 /// <p>The <code>ChangeSetSummary</code> structure describes a change set, its status, and the stack with which it's associated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeSetSummary  {
+pub struct ChangeSetSummary {
     /// <p>The ID of the stack with which the change set is associated.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
@@ -43,39 +43,39 @@ pub struct ChangeSetSummary  {
 }
 impl ChangeSetSummary {
     /// <p>The ID of the stack with which the change set is associated.</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>The name of the stack with which the change set is associated.</p>
-    pub fn stack_name(&self) -> std::option::Option<& str> {
+    pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>The ID of the change set.</p>
-    pub fn change_set_id(&self) -> std::option::Option<& str> {
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
     /// <p>The name of the change set.</p>
-    pub fn change_set_name(&self) -> std::option::Option<& str> {
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
-    pub fn execution_status(&self) -> std::option::Option<& crate::types::ExecutionStatus> {
+    pub fn execution_status(&self) -> std::option::Option<&crate::types::ExecutionStatus> {
         self.execution_status.as_ref()
     }
     /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ChangeSetStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ChangeSetStatus> {
         self.status.as_ref()
     }
     /// <p>A description of the change set's status. For example, if your change set is in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
-    pub fn status_reason(&self) -> std::option::Option<& str> {
+    pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The start time when the change set was created, in UTC.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Descriptive information about the change set.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change set.</p>
@@ -83,11 +83,11 @@ impl ChangeSetSummary {
         self.include_nested_stacks
     }
     /// <p>The parent change set ID.</p>
-    pub fn parent_change_set_id(&self) -> std::option::Option<& str> {
+    pub fn parent_change_set_id(&self) -> std::option::Option<&str> {
         self.parent_change_set_id.as_deref()
     }
     /// <p>The root change set ID.</p>
-    pub fn root_change_set_id(&self) -> std::option::Option<& str> {
+    pub fn root_change_set_id(&self) -> std::option::Option<&str> {
         self.root_change_set_id.as_deref()
     }
 }
@@ -123,7 +123,8 @@ impl ChangeSetSummaryBuilder {
     }
     /// <p>The ID of the stack with which the change set is associated.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// <p>The name of the stack with which the change set is associated.</p>
     pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +133,8 @@ impl ChangeSetSummaryBuilder {
     }
     /// <p>The name of the stack with which the change set is associated.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input; self
+        self.stack_name = input;
+        self
     }
     /// <p>The ID of the change set.</p>
     pub fn change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +143,8 @@ impl ChangeSetSummaryBuilder {
     }
     /// <p>The ID of the change set.</p>
     pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_id = input; self
+        self.change_set_id = input;
+        self
     }
     /// <p>The name of the change set.</p>
     pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +153,8 @@ impl ChangeSetSummaryBuilder {
     }
     /// <p>The name of the change set.</p>
     pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_name = input; self
+        self.change_set_name = input;
+        self
     }
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
     pub fn execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
@@ -158,8 +162,12 @@ impl ChangeSetSummaryBuilder {
         self
     }
     /// <p>If the change set execution status is <code>AVAILABLE</code>, you can execute the change set. If you can't execute the change set, the status indicates why. For example, a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation is still creating it or in an <code>OBSOLETE</code> state because the stack was already updated.</p>
-    pub fn set_execution_status(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.execution_status = input; self
+    pub fn set_execution_status(
+        mut self,
+        input: std::option::Option<crate::types::ExecutionStatus>,
+    ) -> Self {
+        self.execution_status = input;
+        self
     }
     /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
     pub fn status(mut self, input: crate::types::ChangeSetStatus) -> Self {
@@ -168,7 +176,8 @@ impl ChangeSetSummaryBuilder {
     }
     /// <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ChangeSetStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>A description of the change set's status. For example, if your change set is in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -177,7 +186,8 @@ impl ChangeSetSummaryBuilder {
     }
     /// <p>A description of the change set's status. For example, if your change set is in the <code>FAILED</code> state, CloudFormation shows the error message.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input; self
+        self.status_reason = input;
+        self
     }
     /// <p>The start time when the change set was created, in UTC.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -185,8 +195,12 @@ impl ChangeSetSummaryBuilder {
         self
     }
     /// <p>The start time when the change set was created, in UTC.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>Descriptive information about the change set.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,7 +209,8 @@ impl ChangeSetSummaryBuilder {
     }
     /// <p>Descriptive information about the change set.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change set.</p>
     pub fn include_nested_stacks(mut self, input: bool) -> Self {
@@ -204,7 +219,8 @@ impl ChangeSetSummaryBuilder {
     }
     /// <p>Specifies the current setting of <code>IncludeNestedStacks</code> for the change set.</p>
     pub fn set_include_nested_stacks(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_nested_stacks = input; self
+        self.include_nested_stacks = input;
+        self
     }
     /// <p>The parent change set ID.</p>
     pub fn parent_change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,8 +228,12 @@ impl ChangeSetSummaryBuilder {
         self
     }
     /// <p>The parent change set ID.</p>
-    pub fn set_parent_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_change_set_id = input; self
+    pub fn set_parent_change_set_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.parent_change_set_id = input;
+        self
     }
     /// <p>The root change set ID.</p>
     pub fn root_change_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,37 +241,28 @@ impl ChangeSetSummaryBuilder {
         self
     }
     /// <p>The root change set ID.</p>
-    pub fn set_root_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.root_change_set_id = input; self
+    pub fn set_root_change_set_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.root_change_set_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ChangeSetSummary`](crate::types::ChangeSetSummary).
     pub fn build(self) -> crate::types::ChangeSetSummary {
         crate::types::ChangeSetSummary {
-            stack_id: self.stack_id
-            ,
-            stack_name: self.stack_name
-            ,
-            change_set_id: self.change_set_id
-            ,
-            change_set_name: self.change_set_name
-            ,
-            execution_status: self.execution_status
-            ,
-            status: self.status
-            ,
-            status_reason: self.status_reason
-            ,
-            creation_time: self.creation_time
-            ,
-            description: self.description
-            ,
-            include_nested_stacks: self.include_nested_stacks
-            ,
-            parent_change_set_id: self.parent_change_set_id
-            ,
-            root_change_set_id: self.root_change_set_id
-            ,
+            stack_id: self.stack_id,
+            stack_name: self.stack_name,
+            change_set_id: self.change_set_id,
+            change_set_name: self.change_set_name,
+            execution_status: self.execution_status,
+            status: self.status,
+            status_reason: self.status_reason,
+            creation_time: self.creation_time,
+            description: self.description,
+            include_nested_stacks: self.include_nested_stacks,
+            parent_change_set_id: self.parent_change_set_id,
+            root_change_set_id: self.root_change_set_id,
         }
     }
 }
-

@@ -4,53 +4,69 @@ pub use crate::operation::start_task::_start_task_output::StartTaskOutputBuilder
 pub use crate::operation::start_task::_start_task_input::StartTaskInputBuilder;
 
 /// Fluent builder constructing a request to `StartTask`.
-/// 
-/// <p>Starts a new task from the specified task definition on the specified container instance or instances.</p> <note> 
-/// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service. </p> 
-/// </note> 
+///
+/// <p>Starts a new task from the specified task definition on the specified container instance or instances.</p> <note>
+/// <p>Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service. </p>
+/// </note>
 /// <p>Alternatively, you can use <code>RunTask</code> to place tasks for you. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartTaskFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_task::builders::StartTaskInputBuilder,
+    inner: crate::operation::start_task::builders::StartTaskInputBuilder,
 }
-impl StartTaskFluentBuilder  {
+impl StartTaskFluentBuilder {
     /// Creates a new `StartTask`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_task::StartTask, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_task::StartTaskError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_task::StartTaskOutput, aws_smithy_http::result::SdkError<crate::operation::start_task::StartTaskError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_task::StartTask,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::start_task::StartTaskError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_task::StartTaskOutput,
+        aws_smithy_http::result::SdkError<crate::operation::start_task::StartTaskError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster(input.into());
@@ -71,7 +87,10 @@ impl StartTaskFluentBuilder  {
         self
     }
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    pub fn set_container_instances(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_container_instances(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_container_instances(input);
         self
     }
@@ -111,19 +130,22 @@ impl StartTaskFluentBuilder  {
         self
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    pub fn set_network_configuration(mut self, input: std::option::Option<crate::types::NetworkConfiguration>) -> Self {
+    pub fn set_network_configuration(
+        mut self,
+        input: std::option::Option<crate::types::NetworkConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
     }
-    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note> 
-    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p> 
+    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note>
+    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
     /// </note>
     pub fn overrides(mut self, input: crate::types::TaskOverride) -> Self {
         self.inner = self.inner.overrides(input);
         self
     }
-    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note> 
-    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p> 
+    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note>
+    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
     /// </note>
     pub fn set_overrides(mut self, input: std::option::Option<crate::types::TaskOverride>) -> Self {
         self.inner = self.inner.set_overrides(input);
@@ -135,7 +157,10 @@ impl StartTaskFluentBuilder  {
         self
     }
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
-    pub fn set_propagate_tags(mut self, input: std::option::Option<crate::types::PropagateTags>) -> Self {
+    pub fn set_propagate_tags(
+        mut self,
+        input: std::option::Option<crate::types::PropagateTags>,
+    ) -> Self {
         self.inner = self.inner.set_propagate_tags(input);
         self
     }
@@ -149,13 +174,13 @@ impl StartTaskFluentBuilder  {
         self.inner = self.inner.set_reference_id(input);
         self
     }
-    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p> 
+    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
     pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.started_by(input.into());
         self
     }
-    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p> 
+    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
     pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_started_by(input);
@@ -165,33 +190,36 @@ impl StartTaskFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> 
-    /// <p>The following basic restrictions apply to tags:</p> 
-    /// <ul> 
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> 
-    /// <p>The following basic restrictions apply to tags:</p> 
-    /// <ul> 
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -206,4 +234,3 @@ impl StartTaskFluentBuilder  {
         self
     }
 }
-

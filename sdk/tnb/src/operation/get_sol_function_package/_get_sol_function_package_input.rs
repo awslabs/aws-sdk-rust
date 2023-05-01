@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSolFunctionPackageInput  {
+pub struct GetSolFunctionPackageInput {
     /// <p>ID of the function package.</p>
     #[doc(hidden)]
     pub vnf_pkg_id: std::option::Option<std::string::String>,
 }
 impl GetSolFunctionPackageInput {
     /// <p>ID of the function package.</p>
-    pub fn vnf_pkg_id(&self) -> std::option::Option<& str> {
+    pub fn vnf_pkg_id(&self) -> std::option::Option<&str> {
         self.vnf_pkg_id.as_deref()
     }
 }
 impl GetSolFunctionPackageInput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionPackageInput`](crate::operation::get_sol_function_package::GetSolFunctionPackageInput).
-    pub fn builder() -> crate::operation::get_sol_function_package::builders::GetSolFunctionPackageInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_sol_function_package::builders::GetSolFunctionPackageInputBuilder
+    {
         crate::operation::get_sol_function_package::builders::GetSolFunctionPackageInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl GetSolFunctionPackageInputBuilder {
     }
     /// <p>ID of the function package.</p>
     pub fn set_vnf_pkg_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vnf_pkg_id = input; self
+        self.vnf_pkg_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSolFunctionPackageInput`](crate::operation::get_sol_function_package::GetSolFunctionPackageInput).
-    pub fn build(self) -> Result<crate::operation::get_sol_function_package::GetSolFunctionPackageInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_sol_function_package::GetSolFunctionPackageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_sol_function_package::GetSolFunctionPackageInput {
-                vnf_pkg_id: self.vnf_pkg_id
-                ,
-            }
+                vnf_pkg_id: self.vnf_pkg_id,
+            },
         )
     }
 }
-

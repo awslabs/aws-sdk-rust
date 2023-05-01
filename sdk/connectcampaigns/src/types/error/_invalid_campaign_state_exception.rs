@@ -3,7 +3,7 @@
 /// The request could not be processed because of conflict in the current state of the campaign.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidCampaignStateException  {
+pub struct InvalidCampaignStateException {
     /// State of a campaign
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::CampaignState>,
@@ -17,23 +17,25 @@ pub struct InvalidCampaignStateException  {
 }
 impl InvalidCampaignStateException {
     /// State of a campaign
-    pub fn state(&self) -> std::option::Option<& crate::types::CampaignState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::CampaignState> {
         self.state.as_ref()
     }
     /// A header that defines the error encountered while processing the request.
-    pub fn x_amz_error_type(&self) -> std::option::Option<& str> {
+    pub fn x_amz_error_type(&self) -> std::option::Option<&str> {
         self.x_amz_error_type.as_deref()
     }
 }
 impl InvalidCampaignStateException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for InvalidCampaignStateException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidCampaignStateException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -48,7 +50,9 @@ impl aws_http::request_id::RequestId for crate::types::error::InvalidCampaignSta
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidCampaignStateException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl InvalidCampaignStateException {
     /// Creates a new builder-style object to manufacture [`InvalidCampaignStateException`](crate::types::error::InvalidCampaignStateException).
@@ -74,7 +78,8 @@ impl InvalidCampaignStateExceptionBuilder {
     }
     /// State of a campaign
     pub fn set_state(mut self, input: std::option::Option<crate::types::CampaignState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +88,8 @@ impl InvalidCampaignStateExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// A header that defines the error encountered while processing the request.
     pub fn x_amz_error_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,30 +98,30 @@ impl InvalidCampaignStateExceptionBuilder {
     }
     /// A header that defines the error encountered while processing the request.
     pub fn set_x_amz_error_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.x_amz_error_type = input; self
+        self.x_amz_error_type = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`InvalidCampaignStateException`](crate::types::error::InvalidCampaignStateException).
     pub fn build(self) -> crate::types::error::InvalidCampaignStateException {
         crate::types::error::InvalidCampaignStateException {
-            state: self.state
-            ,
-            message: self.message
-            ,
-            x_amz_error_type: self.x_amz_error_type
-            ,
+            state: self.state,
+            message: self.message,
+            x_amz_error_type: self.x_amz_error_type,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

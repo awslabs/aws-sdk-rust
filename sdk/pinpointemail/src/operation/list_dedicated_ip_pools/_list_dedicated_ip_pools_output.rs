@@ -3,7 +3,7 @@
 /// <p>A list of dedicated IP pools.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDedicatedIpPoolsOutput  {
+pub struct ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
     #[doc(hidden)]
     pub dedicated_ip_pools: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14,22 +14,24 @@ pub struct ListDedicatedIpPoolsOutput  {
 }
 impl ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
-    pub fn dedicated_ip_pools(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn dedicated_ip_pools(&self) -> std::option::Option<&[std::string::String]> {
         self.dedicated_ip_pools.as_deref()
     }
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDedicatedIpPoolsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListDedicatedIpPoolsOutput {
     /// Creates a new builder-style object to manufacture [`ListDedicatedIpPoolsOutput`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput).
-    pub fn builder() -> crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsOutputBuilder
+    {
         crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsOutputBuilder::default()
     }
 }
@@ -50,13 +52,17 @@ impl ListDedicatedIpPoolsOutputBuilder {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
     pub fn dedicated_ip_pools(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dedicated_ip_pools.unwrap_or_default();
-                        v.push(input.into());
-                        self.dedicated_ip_pools = Some(v);
-                        self
+        v.push(input.into());
+        self.dedicated_ip_pools = Some(v);
+        self
     }
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
-    pub fn set_dedicated_ip_pools(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.dedicated_ip_pools = input; self
+    pub fn set_dedicated_ip_pools(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.dedicated_ip_pools = input;
+        self
     }
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +71,24 @@ impl ListDedicatedIpPoolsOutputBuilder {
     }
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListDedicatedIpPoolsOutput`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput).
     pub fn build(self) -> crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput {
         crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput {
-            dedicated_ip_pools: self.dedicated_ip_pools
-            ,
-            next_token: self.next_token
-            ,
+            dedicated_ip_pools: self.dedicated_ip_pools,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

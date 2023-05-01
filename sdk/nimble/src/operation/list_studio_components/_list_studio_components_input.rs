@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStudioComponentsInput  {
+pub struct ListStudioComponentsInput {
     /// <p>The max number of results to return in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -25,25 +25,26 @@ impl ListStudioComponentsInput {
         self.max_results
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Filters the request to studio components that are in one of the given states. </p>
-    pub fn states(&self) -> std::option::Option<& [crate::types::StudioComponentState]> {
+    pub fn states(&self) -> std::option::Option<&[crate::types::StudioComponentState]> {
         self.states.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    pub fn types(&self) -> std::option::Option<& [crate::types::StudioComponentType]> {
+    pub fn types(&self) -> std::option::Option<&[crate::types::StudioComponentType]> {
         self.types.as_deref()
     }
 }
 impl ListStudioComponentsInput {
     /// Creates a new builder-style object to manufacture [`ListStudioComponentsInput`](crate::operation::list_studio_components::ListStudioComponentsInput).
-    pub fn builder() -> crate::operation::list_studio_components::builders::ListStudioComponentsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_studio_components::builders::ListStudioComponentsInputBuilder {
         crate::operation::list_studio_components::builders::ListStudioComponentsInputBuilder::default()
     }
 }
@@ -66,7 +67,8 @@ impl ListStudioComponentsInputBuilder {
     }
     /// <p>The max number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +77,8 @@ impl ListStudioComponentsInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `states`.
     ///
@@ -84,13 +87,17 @@ impl ListStudioComponentsInputBuilder {
     /// <p>Filters the request to studio components that are in one of the given states. </p>
     pub fn states(mut self, input: crate::types::StudioComponentState) -> Self {
         let mut v = self.states.unwrap_or_default();
-                        v.push(input);
-                        self.states = Some(v);
-                        self
+        v.push(input);
+        self.states = Some(v);
+        self
     }
     /// <p>Filters the request to studio components that are in one of the given states. </p>
-    pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::StudioComponentState>>) -> Self {
-        self.states = input; self
+    pub fn set_states(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StudioComponentState>>,
+    ) -> Self {
+        self.states = input;
+        self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +106,8 @@ impl ListStudioComponentsInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Appends an item to `types`.
     ///
@@ -108,30 +116,33 @@ impl ListStudioComponentsInputBuilder {
     /// <p>Filters the request to studio components that are of one of the given types.</p>
     pub fn types(mut self, input: crate::types::StudioComponentType) -> Self {
         let mut v = self.types.unwrap_or_default();
-                        v.push(input);
-                        self.types = Some(v);
-                        self
+        v.push(input);
+        self.types = Some(v);
+        self
     }
     /// <p>Filters the request to studio components that are of one of the given types.</p>
-    pub fn set_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::StudioComponentType>>) -> Self {
-        self.types = input; self
+    pub fn set_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StudioComponentType>>,
+    ) -> Self {
+        self.types = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListStudioComponentsInput`](crate::operation::list_studio_components::ListStudioComponentsInput).
-    pub fn build(self) -> Result<crate::operation::list_studio_components::ListStudioComponentsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_studio_components::ListStudioComponentsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_studio_components::ListStudioComponentsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                states: self.states
-                ,
-                studio_id: self.studio_id
-                ,
-                types: self.types
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                states: self.states,
+                studio_id: self.studio_id,
+                types: self.types,
+            },
         )
     }
 }
-

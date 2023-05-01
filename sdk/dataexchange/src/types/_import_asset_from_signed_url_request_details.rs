@@ -3,7 +3,7 @@
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportAssetFromSignedUrlRequestDetails  {
+pub struct ImportAssetFromSignedUrlRequestDetails {
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
     #[doc(hidden)]
     pub asset_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ImportAssetFromSignedUrlRequestDetails  {
 }
 impl ImportAssetFromSignedUrlRequestDetails {
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
-    pub fn asset_name(&self) -> std::option::Option<& str> {
+    pub fn asset_name(&self) -> std::option::Option<&str> {
         self.asset_name.as_deref()
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn data_set_id(&self) -> std::option::Option<& str> {
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
-    pub fn md5_hash(&self) -> std::option::Option<& str> {
+    pub fn md5_hash(&self) -> std::option::Option<&str> {
         self.md5_hash.as_deref()
     }
     /// <p>The unique identifier for the revision associated with this import request.</p>
-    pub fn revision_id(&self) -> std::option::Option<& str> {
+    pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     }
     /// <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.</p>
     pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_name = input; self
+        self.asset_name = input;
+        self
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input; self
+        self.data_set_id = input;
+        self
     }
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
     pub fn md5_hash(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     }
     /// <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of the file at that location.</p>
     pub fn set_md5_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.md5_hash = input; self
+        self.md5_hash = input;
+        self
     }
     /// <p>The unique identifier for the revision associated with this import request.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl ImportAssetFromSignedUrlRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the revision associated with this import request.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input; self
+        self.revision_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportAssetFromSignedUrlRequestDetails`](crate::types::ImportAssetFromSignedUrlRequestDetails).
     pub fn build(self) -> crate::types::ImportAssetFromSignedUrlRequestDetails {
         crate::types::ImportAssetFromSignedUrlRequestDetails {
-            asset_name: self.asset_name
-            ,
-            data_set_id: self.data_set_id
-            ,
-            md5_hash: self.md5_hash
-            ,
-            revision_id: self.revision_id
-            ,
+            asset_name: self.asset_name,
+            data_set_id: self.data_set_id,
+            md5_hash: self.md5_hash,
+            revision_id: self.revision_id,
         }
     }
 }
-

@@ -3,8 +3,7 @@
 /// Arib Source Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AribSourceSettings  {
-}
+pub struct AribSourceSettings {}
 impl AribSourceSettings {
     /// Creates a new builder-style object to manufacture [`AribSourceSettings`](crate::types::AribSourceSettings).
     pub fn builder() -> crate::types::builders::AribSourceSettingsBuilder {
@@ -15,13 +14,10 @@ impl AribSourceSettings {
 /// A builder for [`AribSourceSettings`](crate::types::AribSourceSettings).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct AribSourceSettingsBuilder {
-}
+pub struct AribSourceSettingsBuilder {}
 impl AribSourceSettingsBuilder {
     /// Consumes the builder and constructs a [`AribSourceSettings`](crate::types::AribSourceSettings).
     pub fn build(self) -> crate::types::AribSourceSettings {
-        crate::types::AribSourceSettings {
-        }
+        crate::types::AribSourceSettings {}
     }
 }
-

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppInstanceStreamingConfigurationsInput  {
+pub struct GetAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl GetAppInstanceStreamingConfigurationsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
     }
 }
 impl GetAppInstanceStreamingConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`GetAppInstanceStreamingConfigurationsInput`](crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsInput).
-    pub fn builder() -> crate::operation::get_app_instance_streaming_configurations::builders::GetAppInstanceStreamingConfigurationsInputBuilder {
+    pub fn builder() -> crate::operation::get_app_instance_streaming_configurations::builders::GetAppInstanceStreamingConfigurationsInputBuilder{
         crate::operation::get_app_instance_streaming_configurations::builders::GetAppInstanceStreamingConfigurationsInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl GetAppInstanceStreamingConfigurationsInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_arn = input; self
+        self.app_instance_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAppInstanceStreamingConfigurationsInput`](crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_app_instance_streaming_configurations::GetAppInstanceStreamingConfigurationsInput {
                 app_instance_arn: self.app_instance_arn
@@ -46,4 +47,3 @@ impl GetAppInstanceStreamingConfigurationsInputBuilder {
         )
     }
 }
-

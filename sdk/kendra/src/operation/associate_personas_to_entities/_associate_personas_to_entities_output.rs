@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociatePersonasToEntitiesOutput  {
+pub struct AssociatePersonasToEntitiesOutput {
     /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
     #[doc(hidden)]
     pub failed_entity_list: std::option::Option<std::vec::Vec<crate::types::FailedEntity>>,
@@ -10,18 +10,18 @@ pub struct AssociatePersonasToEntitiesOutput  {
 }
 impl AssociatePersonasToEntitiesOutput {
     /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
-    pub fn failed_entity_list(&self) -> std::option::Option<& [crate::types::FailedEntity]> {
+    pub fn failed_entity_list(&self) -> std::option::Option<&[crate::types::FailedEntity]> {
         self.failed_entity_list.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AssociatePersonasToEntitiesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociatePersonasToEntitiesOutput {
     /// Creates a new builder-style object to manufacture [`AssociatePersonasToEntitiesOutput`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput).
-    pub fn builder() -> crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesOutputBuilder {
+    pub fn builder() -> crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesOutputBuilder{
         crate::operation::associate_personas_to_entities::builders::AssociatePersonasToEntitiesOutputBuilder::default()
     }
 }
@@ -41,30 +41,34 @@ impl AssociatePersonasToEntitiesOutputBuilder {
     /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
     pub fn failed_entity_list(mut self, input: crate::types::FailedEntity) -> Self {
         let mut v = self.failed_entity_list.unwrap_or_default();
-                        v.push(input);
-                        self.failed_entity_list = Some(v);
-                        self
+        v.push(input);
+        self.failed_entity_list = Some(v);
+        self
     }
     /// <p>Lists the users or groups in your IAM Identity Center identity source that failed to properly configure with your Amazon Kendra experience.</p>
-    pub fn set_failed_entity_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::FailedEntity>>) -> Self {
-        self.failed_entity_list = input; self
+    pub fn set_failed_entity_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FailedEntity>>,
+    ) -> Self {
+        self.failed_entity_list = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociatePersonasToEntitiesOutput`](crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput).
-    pub fn build(self) -> crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput {
         crate::operation::associate_personas_to_entities::AssociatePersonasToEntitiesOutput {
-            failed_entity_list: self.failed_entity_list
-            ,
+            failed_entity_list: self.failed_entity_list,
             _request_id: self._request_id,
         }
     }
 }
-

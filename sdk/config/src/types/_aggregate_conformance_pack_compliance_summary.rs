@@ -3,21 +3,24 @@
 /// <p>Provides a summary of compliance based on either account ID or region. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AggregateConformancePackComplianceSummary  {
+pub struct AggregateConformancePackComplianceSummary {
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
     #[doc(hidden)]
-    pub compliance_summary: std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
+    pub compliance_summary:
+        std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
 }
 impl AggregateConformancePackComplianceSummary {
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
-    pub fn compliance_summary(&self) -> std::option::Option<& crate::types::AggregateConformancePackComplianceCount> {
+    pub fn compliance_summary(
+        &self,
+    ) -> std::option::Option<&crate::types::AggregateConformancePackComplianceCount> {
         self.compliance_summary.as_ref()
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
 }
@@ -32,18 +35,26 @@ impl AggregateConformancePackComplianceSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AggregateConformancePackComplianceSummaryBuilder {
-    pub(crate) compliance_summary: std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
+    pub(crate) compliance_summary:
+        std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
     pub(crate) group_name: std::option::Option<std::string::String>,
 }
 impl AggregateConformancePackComplianceSummaryBuilder {
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
-    pub fn compliance_summary(mut self, input: crate::types::AggregateConformancePackComplianceCount) -> Self {
+    pub fn compliance_summary(
+        mut self,
+        input: crate::types::AggregateConformancePackComplianceCount,
+    ) -> Self {
         self.compliance_summary = Some(input);
         self
     }
     /// <p>Returns an <code>AggregateConformancePackComplianceCount</code> object. </p>
-    pub fn set_compliance_summary(mut self, input: std::option::Option<crate::types::AggregateConformancePackComplianceCount>) -> Self {
-        self.compliance_summary = input; self
+    pub fn set_compliance_summary(
+        mut self,
+        input: std::option::Option<crate::types::AggregateConformancePackComplianceCount>,
+    ) -> Self {
+        self.compliance_summary = input;
+        self
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +63,14 @@ impl AggregateConformancePackComplianceSummaryBuilder {
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`AggregateConformancePackComplianceSummary`](crate::types::AggregateConformancePackComplianceSummary).
     pub fn build(self) -> crate::types::AggregateConformancePackComplianceSummary {
         crate::types::AggregateConformancePackComplianceSummary {
-            compliance_summary: self.compliance_summary
-            ,
-            group_name: self.group_name
-            ,
+            compliance_summary: self.compliance_summary,
+            group_name: self.group_name,
         }
     }
 }
-

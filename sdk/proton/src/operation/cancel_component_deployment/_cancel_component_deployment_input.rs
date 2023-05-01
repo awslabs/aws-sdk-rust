@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelComponentDeploymentInput  {
+pub struct CancelComponentDeploymentInput {
     /// <p>The name of the component with the deployment to cancel.</p>
     #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
 }
 impl CancelComponentDeploymentInput {
     /// <p>The name of the component with the deployment to cancel.</p>
-    pub fn component_name(&self) -> std::option::Option<& str> {
+    pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
 }
 impl CancelComponentDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CancelComponentDeploymentInput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentInput).
-    pub fn builder() -> crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentInputBuilder{
         crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl CancelComponentDeploymentInputBuilder {
     }
     /// <p>The name of the component with the deployment to cancel.</p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input; self
+        self.component_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CancelComponentDeploymentInput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentInput).
-    pub fn build(self) -> Result<crate::operation::cancel_component_deployment::CancelComponentDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::cancel_component_deployment::CancelComponentDeploymentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::cancel_component_deployment::CancelComponentDeploymentInput {
-                component_name: self.component_name
-                ,
-            }
+                component_name: self.component_name,
+            },
         )
     }
 }
-

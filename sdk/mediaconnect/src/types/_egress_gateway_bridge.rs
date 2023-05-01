@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EgressGatewayBridge  {
+pub struct EgressGatewayBridge {
     /// The ID of the instance running this bridge.
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct EgressGatewayBridge  {
 }
 impl EgressGatewayBridge {
     /// The ID of the instance running this bridge.
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// The maximum expected bitrate (in bps) of the egress bridge.
@@ -42,7 +42,8 @@ impl EgressGatewayBridgeBuilder {
     }
     /// The ID of the instance running this bridge.
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// The maximum expected bitrate (in bps) of the egress bridge.
     pub fn max_bitrate(mut self, input: i32) -> Self {
@@ -51,17 +52,14 @@ impl EgressGatewayBridgeBuilder {
     }
     /// The maximum expected bitrate (in bps) of the egress bridge.
     pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_bitrate = input; self
+        self.max_bitrate = input;
+        self
     }
     /// Consumes the builder and constructs a [`EgressGatewayBridge`](crate::types::EgressGatewayBridge).
     pub fn build(self) -> crate::types::EgressGatewayBridge {
         crate::types::EgressGatewayBridge {
-            instance_id: self.instance_id
-            ,
-            max_bitrate: self.max_bitrate
-                .unwrap_or_default()
-            ,
+            instance_id: self.instance_id,
+            max_bitrate: self.max_bitrate.unwrap_or_default(),
         }
     }
 }
-

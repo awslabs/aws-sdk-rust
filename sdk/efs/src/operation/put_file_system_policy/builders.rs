@@ -4,53 +4,73 @@ pub use crate::operation::put_file_system_policy::_put_file_system_policy_output
 pub use crate::operation::put_file_system_policy::_put_file_system_policy_input::PutFileSystemPolicyInputBuilder;
 
 /// Fluent builder constructing a request to `PutFileSystemPolicy`.
-/// 
-/// <p>Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file system. A file system policy is an IAM resource-based policy and can contain multiple policy statements. A file system always has exactly one file system policy, which can be the default policy or an explicit policy set or updated using this API operation. EFS file system policies have a 20,000 character limit. When an explicit policy is set, it overrides the default policy. For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default EFS File System Policy</a>. </p> <note> 
-/// <p>EFS file system policies have a 20,000 character limit.</p> 
-/// </note> 
+///
+/// <p>Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file system. A file system policy is an IAM resource-based policy and can contain multiple policy statements. A file system always has exactly one file system policy, which can be the default policy or an explicit policy set or updated using this API operation. EFS file system policies have a 20,000 character limit. When an explicit policy is set, it overrides the default policy. For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/iam-access-control-nfs-efs.html#default-filesystempolicy">Default EFS File System Policy</a>. </p> <note>
+/// <p>EFS file system policies have a 20,000 character limit.</p>
+/// </note>
 /// <p>This operation requires permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutFileSystemPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_file_system_policy::builders::PutFileSystemPolicyInputBuilder,
+    inner: crate::operation::put_file_system_policy::builders::PutFileSystemPolicyInputBuilder,
 }
-impl PutFileSystemPolicyFluentBuilder  {
+impl PutFileSystemPolicyFluentBuilder {
     /// Creates a new `PutFileSystemPolicy`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_file_system_policy::PutFileSystemPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_file_system_policy::PutFileSystemPolicyError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_file_system_policy::PutFileSystemPolicyOutput, aws_smithy_http::result::SdkError<crate::operation::put_file_system_policy::PutFileSystemPolicyError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_file_system_policy::PutFileSystemPolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_file_system_policy::PutFileSystemPolicyError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_file_system_policy::PutFileSystemPolicyOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_file_system_policy::PutFileSystemPolicyError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the EFS file system that you want to create or update the <code>FileSystemPolicy</code> for.</p>
     pub fn file_system_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.file_system_id(input.into());
@@ -77,9 +97,11 @@ impl PutFileSystemPolicyFluentBuilder  {
         self
     }
     /// <p>(Optional) A boolean that specifies whether or not to bypass the <code>FileSystemPolicy</code> lockout safety check. The lockout safety check determines whether the policy in the request will lock out, or prevent, the IAM principal that is making the request from making future <code>PutFileSystemPolicy</code> requests on this file system. Set <code>BypassPolicyLockoutSafetyCheck</code> to <code>True</code> only when you intend to prevent the IAM principal that is making the request from making subsequent <code>PutFileSystemPolicy</code> requests on this file system. The default value is <code>False</code>. </p>
-    pub fn set_bypass_policy_lockout_safety_check(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_bypass_policy_lockout_safety_check(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
         self.inner = self.inner.set_bypass_policy_lockout_safety_check(input);
         self
     }
 }
-

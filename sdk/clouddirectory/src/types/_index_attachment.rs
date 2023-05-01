@@ -3,7 +3,7 @@
 /// <p>Represents an index and an attached object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IndexAttachment  {
+pub struct IndexAttachment {
     /// <p>The indexed attribute values.</p>
     #[doc(hidden)]
     pub indexed_attributes: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
@@ -13,11 +13,11 @@ pub struct IndexAttachment  {
 }
 impl IndexAttachment {
     /// <p>The indexed attribute values.</p>
-    pub fn indexed_attributes(&self) -> std::option::Option<& [crate::types::AttributeKeyAndValue]> {
+    pub fn indexed_attributes(&self) -> std::option::Option<&[crate::types::AttributeKeyAndValue]> {
         self.indexed_attributes.as_deref()
     }
     /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
-    pub fn object_identifier(&self) -> std::option::Option<& str> {
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
         self.object_identifier.as_deref()
     }
 }
@@ -32,7 +32,8 @@ impl IndexAttachment {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct IndexAttachmentBuilder {
-    pub(crate) indexed_attributes: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    pub(crate) indexed_attributes:
+        std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
     pub(crate) object_identifier: std::option::Option<std::string::String>,
 }
 impl IndexAttachmentBuilder {
@@ -43,13 +44,17 @@ impl IndexAttachmentBuilder {
     /// <p>The indexed attribute values.</p>
     pub fn indexed_attributes(mut self, input: crate::types::AttributeKeyAndValue) -> Self {
         let mut v = self.indexed_attributes.unwrap_or_default();
-                        v.push(input);
-                        self.indexed_attributes = Some(v);
-                        self
+        v.push(input);
+        self.indexed_attributes = Some(v);
+        self
     }
     /// <p>The indexed attribute values.</p>
-    pub fn set_indexed_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>) -> Self {
-        self.indexed_attributes = input; self
+    pub fn set_indexed_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AttributeKeyAndValue>>,
+    ) -> Self {
+        self.indexed_attributes = input;
+        self
     }
     /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
     pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,17 +62,18 @@ impl IndexAttachmentBuilder {
         self
     }
     /// <p>In response to <code>ListIndex</code>, the <code>ObjectIdentifier</code> of the object attached to the index. In response to <code>ListAttachedIndices</code>, the <code>ObjectIdentifier</code> of the index attached to the object. This field will always contain the <code>ObjectIdentifier</code> of the object on the opposite side of the attachment specified in the query.</p>
-    pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_identifier = input; self
+    pub fn set_object_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.object_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`IndexAttachment`](crate::types::IndexAttachment).
     pub fn build(self) -> crate::types::IndexAttachment {
         crate::types::IndexAttachment {
-            indexed_attributes: self.indexed_attributes
-            ,
-            object_identifier: self.object_identifier
-            ,
+            indexed_attributes: self.indexed_attributes,
+            object_identifier: self.object_identifier,
         }
     }
 }
-

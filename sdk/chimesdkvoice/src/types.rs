@@ -268,4 +268,3 @@ pub mod builders;
 
 /// Error types that Amazon Chime SDK Voice can respond with.
 pub mod error;
-

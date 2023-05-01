@@ -3,14 +3,14 @@
 /// Placeholder documentation for DeleteMultiplexRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMultiplexInput  {
+pub struct DeleteMultiplexInput {
     /// The ID of the multiplex.
     #[doc(hidden)]
     pub multiplex_id: std::option::Option<std::string::String>,
 }
 impl DeleteMultiplexInput {
     /// The ID of the multiplex.
-    pub fn multiplex_id(&self) -> std::option::Option<& str> {
+    pub fn multiplex_id(&self) -> std::option::Option<&str> {
         self.multiplex_id.as_deref()
     }
 }
@@ -35,16 +35,18 @@ impl DeleteMultiplexInputBuilder {
     }
     /// The ID of the multiplex.
     pub fn set_multiplex_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.multiplex_id = input; self
+        self.multiplex_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMultiplexInput`](crate::operation::delete_multiplex::DeleteMultiplexInput).
-    pub fn build(self) -> Result<crate::operation::delete_multiplex::DeleteMultiplexInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_multiplex::DeleteMultiplexInput {
-                multiplex_id: self.multiplex_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_multiplex::DeleteMultiplexInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_multiplex::DeleteMultiplexInput {
+            multiplex_id: self.multiplex_id,
+        })
     }
 }
-

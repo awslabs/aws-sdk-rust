@@ -3,20 +3,22 @@
 /// <p>DescribeSMBFileSharesInput</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSmbFileSharesInput  {
+pub struct DescribeSmbFileSharesInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
     #[doc(hidden)]
     pub file_share_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeSmbFileSharesInput {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
-    pub fn file_share_arn_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn file_share_arn_list(&self) -> std::option::Option<&[std::string::String]> {
         self.file_share_arn_list.as_deref()
     }
 }
 impl DescribeSmbFileSharesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSmbFileSharesInput`](crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput).
-    pub fn builder() -> crate::operation::describe_smb_file_shares::builders::DescribeSmbFileSharesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_smb_file_shares::builders::DescribeSmbFileSharesInputBuilder
+    {
         crate::operation::describe_smb_file_shares::builders::DescribeSmbFileSharesInputBuilder::default()
     }
 }
@@ -35,22 +37,29 @@ impl DescribeSmbFileSharesInputBuilder {
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
     pub fn file_share_arn_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.file_share_arn_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.file_share_arn_list = Some(v);
-                        self
+        v.push(input.into());
+        self.file_share_arn_list = Some(v);
+        self
     }
     /// <p>An array containing the Amazon Resource Name (ARN) of each file share to be described.</p>
-    pub fn set_file_share_arn_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.file_share_arn_list = input; self
+    pub fn set_file_share_arn_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.file_share_arn_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSmbFileSharesInput`](crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput).
-    pub fn build(self) -> Result<crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_smb_file_shares::DescribeSmbFileSharesInput {
-                file_share_arn_list: self.file_share_arn_list
-                ,
-            }
+                file_share_arn_list: self.file_share_arn_list,
+            },
         )
     }
 }
-

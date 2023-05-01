@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let phonenumberfiltername = unimplemented!();
 /// match phonenumberfiltername {
@@ -37,14 +37,22 @@
 /// Specifically, when `phonenumberfiltername` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PhoneNumberFilterName::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PhoneNumberFilterName {
     #[allow(missing_docs)] // documentation missing in model
     DeletionProtectionEnabled,
@@ -65,55 +73,66 @@ pub enum PhoneNumberFilterName {
     #[allow(missing_docs)] // documentation missing in model
     TwoWayEnabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PhoneNumberFilterName {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "deletion-protection-enabled" => PhoneNumberFilterName::DeletionProtectionEnabled,
-"iso-country-code" => PhoneNumberFilterName::IsoCountryCode,
-"message-type" => PhoneNumberFilterName::MessageType,
-"number-capability" => PhoneNumberFilterName::NumberCapability,
-"number-type" => PhoneNumberFilterName::NumberType,
-"opt-out-list-name" => PhoneNumberFilterName::OptOutListName,
-"self-managed-opt-outs-enabled" => PhoneNumberFilterName::SelfManagedOptOutsEnabled,
-"status" => PhoneNumberFilterName::Status,
-"two-way-enabled" => PhoneNumberFilterName::TwoWayEnabled,
-other => PhoneNumberFilterName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for PhoneNumberFilterName {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(PhoneNumberFilterName::from(s))
-                }
-            }
-impl PhoneNumberFilterName {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    PhoneNumberFilterName::DeletionProtectionEnabled => "deletion-protection-enabled",
-    PhoneNumberFilterName::IsoCountryCode => "iso-country-code",
-    PhoneNumberFilterName::MessageType => "message-type",
-    PhoneNumberFilterName::NumberCapability => "number-capability",
-    PhoneNumberFilterName::NumberType => "number-type",
-    PhoneNumberFilterName::OptOutListName => "opt-out-list-name",
-    PhoneNumberFilterName::SelfManagedOptOutsEnabled => "self-managed-opt-outs-enabled",
-    PhoneNumberFilterName::Status => "status",
-    PhoneNumberFilterName::TwoWayEnabled => "two-way-enabled",
-    PhoneNumberFilterName::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "deletion-protection-enabled" => PhoneNumberFilterName::DeletionProtectionEnabled,
+            "iso-country-code" => PhoneNumberFilterName::IsoCountryCode,
+            "message-type" => PhoneNumberFilterName::MessageType,
+            "number-capability" => PhoneNumberFilterName::NumberCapability,
+            "number-type" => PhoneNumberFilterName::NumberType,
+            "opt-out-list-name" => PhoneNumberFilterName::OptOutListName,
+            "self-managed-opt-outs-enabled" => PhoneNumberFilterName::SelfManagedOptOutsEnabled,
+            "status" => PhoneNumberFilterName::Status,
+            "two-way-enabled" => PhoneNumberFilterName::TwoWayEnabled,
+            other => PhoneNumberFilterName::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["deletion-protection-enabled", "iso-country-code", "message-type", "number-capability", "number-type", "opt-out-list-name", "self-managed-opt-outs-enabled", "status", "two-way-enabled"]
-                }
-            }
-impl AsRef<str> for PhoneNumberFilterName {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for PhoneNumberFilterName {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PhoneNumberFilterName::from(s))
+    }
+}
+impl PhoneNumberFilterName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PhoneNumberFilterName::DeletionProtectionEnabled => "deletion-protection-enabled",
+            PhoneNumberFilterName::IsoCountryCode => "iso-country-code",
+            PhoneNumberFilterName::MessageType => "message-type",
+            PhoneNumberFilterName::NumberCapability => "number-capability",
+            PhoneNumberFilterName::NumberType => "number-type",
+            PhoneNumberFilterName::OptOutListName => "opt-out-list-name",
+            PhoneNumberFilterName::SelfManagedOptOutsEnabled => "self-managed-opt-outs-enabled",
+            PhoneNumberFilterName::Status => "status",
+            PhoneNumberFilterName::TwoWayEnabled => "two-way-enabled",
+            PhoneNumberFilterName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "deletion-protection-enabled",
+            "iso-country-code",
+            "message-type",
+            "number-capability",
+            "number-type",
+            "opt-out-list-name",
+            "self-managed-opt-outs-enabled",
+            "status",
+            "two-way-enabled",
+        ]
+    }
+}
+impl AsRef<str> for PhoneNumberFilterName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

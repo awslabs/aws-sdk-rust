@@ -3,7 +3,7 @@
 /// <p>Returns the updates being applied to the user group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserGroupPendingChanges  {
+pub struct UserGroupPendingChanges {
     /// <p>The list of user IDs to remove.</p>
     #[doc(hidden)]
     pub user_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct UserGroupPendingChanges  {
 }
 impl UserGroupPendingChanges {
     /// <p>The list of user IDs to remove.</p>
-    pub fn user_ids_to_remove(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_ids_to_remove(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids_to_remove.as_deref()
     }
     /// <p>The list of user IDs to add.</p>
-    pub fn user_ids_to_add(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_ids_to_add(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids_to_add.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl UserGroupPendingChangesBuilder {
     /// <p>The list of user IDs to remove.</p>
     pub fn user_ids_to_remove(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_ids_to_remove.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_ids_to_remove = Some(v);
-                        self
+        v.push(input.into());
+        self.user_ids_to_remove = Some(v);
+        self
     }
     /// <p>The list of user IDs to remove.</p>
-    pub fn set_user_ids_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_ids_to_remove = input; self
+    pub fn set_user_ids_to_remove(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_ids_to_remove = input;
+        self
     }
     /// Appends an item to `user_ids_to_add`.
     ///
@@ -58,22 +62,23 @@ impl UserGroupPendingChangesBuilder {
     /// <p>The list of user IDs to add.</p>
     pub fn user_ids_to_add(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_ids_to_add.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_ids_to_add = Some(v);
-                        self
+        v.push(input.into());
+        self.user_ids_to_add = Some(v);
+        self
     }
     /// <p>The list of user IDs to add.</p>
-    pub fn set_user_ids_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_ids_to_add = input; self
+    pub fn set_user_ids_to_add(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_ids_to_add = input;
+        self
     }
     /// Consumes the builder and constructs a [`UserGroupPendingChanges`](crate::types::UserGroupPendingChanges).
     pub fn build(self) -> crate::types::UserGroupPendingChanges {
         crate::types::UserGroupPendingChanges {
-            user_ids_to_remove: self.user_ids_to_remove
-            ,
-            user_ids_to_add: self.user_ids_to_add
-            ,
+            user_ids_to_remove: self.user_ids_to_remove,
+            user_ids_to_add: self.user_ids_to_add,
         }
     }
 }
-

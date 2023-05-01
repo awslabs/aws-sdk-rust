@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEnvironmentStatusOutput  {
-    /// <p>The status of the environment. Available values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li> 
-    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li> 
-    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li> 
-    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li> 
-    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li> 
-    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li> 
-    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li> 
+pub struct DescribeEnvironmentStatusOutput {
+    /// <p>The status of the environment. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li>
+    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li>
+    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li>
+    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li>
+    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li>
+    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
+    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::EnvironmentStatus>,
@@ -21,32 +21,32 @@ pub struct DescribeEnvironmentStatusOutput  {
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentStatusOutput {
-    /// <p>The status of the environment. Available values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li> 
-    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li> 
-    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li> 
-    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li> 
-    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li> 
-    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li> 
-    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li> 
+    /// <p>The status of the environment. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li>
+    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li>
+    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li>
+    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li>
+    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li>
+    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
+    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::EnvironmentStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::EnvironmentStatus> {
         self.status.as_ref()
     }
     /// <p>Any informational message about the status of the environment.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEnvironmentStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEnvironmentStatusOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentStatusOutput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput).
-    pub fn builder() -> crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder {
+    pub fn builder() -> crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder{
         crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusOutputBuilder::default()
     }
 }
@@ -60,32 +60,36 @@ pub struct DescribeEnvironmentStatusOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeEnvironmentStatusOutputBuilder {
-    /// <p>The status of the environment. Available values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li> 
-    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li> 
-    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li> 
-    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li> 
-    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li> 
-    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li> 
-    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li> 
+    /// <p>The status of the environment. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li>
+    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li>
+    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li>
+    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li>
+    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li>
+    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
+    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EnvironmentStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the environment. Available values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li> 
-    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li> 
-    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li> 
-    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li> 
-    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li> 
-    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li> 
-    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li> 
+    /// <p>The status of the environment. Available values include:</p>
+    /// <ul>
+    /// <li> <p> <code>connecting</code>: The environment is connecting.</p> </li>
+    /// <li> <p> <code>creating</code>: The environment is being created.</p> </li>
+    /// <li> <p> <code>deleting</code>: The environment is being deleted.</p> </li>
+    /// <li> <p> <code>error</code>: The environment is in an error state.</p> </li>
+    /// <li> <p> <code>ready</code>: The environment is ready.</p> </li>
+    /// <li> <p> <code>stopped</code>: The environment is stopped.</p> </li>
+    /// <li> <p> <code>stopping</code>: The environment is stopping.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::EnvironmentStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::EnvironmentStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Any informational message about the status of the environment.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,26 +98,26 @@ impl DescribeEnvironmentStatusOutputBuilder {
     }
     /// <p>Any informational message about the status of the environment.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEnvironmentStatusOutput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput).
-    pub fn build(self) -> crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
         crate::operation::describe_environment_status::DescribeEnvironmentStatusOutput {
-            status: self.status
-            ,
-            message: self.message
-            ,
+            status: self.status,
+            message: self.message,
             _request_id: self._request_id,
         }
     }
 }
-

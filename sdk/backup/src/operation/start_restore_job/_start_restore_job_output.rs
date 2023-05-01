@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRestoreJobOutput  {
+pub struct StartRestoreJobOutput {
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
     #[doc(hidden)]
     pub restore_job_id: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct StartRestoreJobOutput  {
 }
 impl StartRestoreJobOutput {
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
-    pub fn restore_job_id(&self) -> std::option::Option<& str> {
+    pub fn restore_job_id(&self) -> std::option::Option<&str> {
         self.restore_job_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartRestoreJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartRestoreJobOutput {
     /// Creates a new builder-style object to manufacture [`StartRestoreJobOutput`](crate::operation::start_restore_job::StartRestoreJobOutput).
-    pub fn builder() -> crate::operation::start_restore_job::builders::StartRestoreJobOutputBuilder {
+    pub fn builder() -> crate::operation::start_restore_job::builders::StartRestoreJobOutputBuilder
+    {
         crate::operation::start_restore_job::builders::StartRestoreJobOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl StartRestoreJobOutputBuilder {
     }
     /// <p>Uniquely identifies the job that restores a recovery point.</p>
     pub fn set_restore_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.restore_job_id = input; self
+        self.restore_job_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartRestoreJobOutput`](crate::operation::start_restore_job::StartRestoreJobOutput).
     pub fn build(self) -> crate::operation::start_restore_job::StartRestoreJobOutput {
         crate::operation::start_restore_job::StartRestoreJobOutput {
-            restore_job_id: self.restore_job_id
-            ,
+            restore_job_id: self.restore_job_id,
             _request_id: self._request_id,
         }
     }
 }
-

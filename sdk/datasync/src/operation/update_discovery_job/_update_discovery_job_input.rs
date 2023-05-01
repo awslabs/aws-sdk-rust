@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDiscoveryJobInput  {
+pub struct UpdateDiscoveryJobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to update.</p>
     #[doc(hidden)]
     pub discovery_job_arn: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct UpdateDiscoveryJobInput  {
 }
 impl UpdateDiscoveryJobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to update.</p>
-    pub fn discovery_job_arn(&self) -> std::option::Option<& str> {
+    pub fn discovery_job_arn(&self) -> std::option::Option<&str> {
         self.discovery_job_arn.as_deref()
     }
     /// <p>Specifies in minutes how long that you want the discovery job to run. (You can't set this parameter to less than the number of minutes that the job has already run for.)</p>
@@ -22,7 +22,8 @@ impl UpdateDiscoveryJobInput {
 }
 impl UpdateDiscoveryJobInput {
     /// Creates a new builder-style object to manufacture [`UpdateDiscoveryJobInput`](crate::operation::update_discovery_job::UpdateDiscoveryJobInput).
-    pub fn builder() -> crate::operation::update_discovery_job::builders::UpdateDiscoveryJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_discovery_job::builders::UpdateDiscoveryJobInputBuilder {
         crate::operation::update_discovery_job::builders::UpdateDiscoveryJobInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl UpdateDiscoveryJobInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to update.</p>
-    pub fn set_discovery_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.discovery_job_arn = input; self
+    pub fn set_discovery_job_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.discovery_job_arn = input;
+        self
     }
     /// <p>Specifies in minutes how long that you want the discovery job to run. (You can't set this parameter to less than the number of minutes that the job has already run for.)</p>
     pub fn collection_duration_minutes(mut self, input: i32) -> Self {
@@ -51,18 +56,21 @@ impl UpdateDiscoveryJobInputBuilder {
     }
     /// <p>Specifies in minutes how long that you want the discovery job to run. (You can't set this parameter to less than the number of minutes that the job has already run for.)</p>
     pub fn set_collection_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.collection_duration_minutes = input; self
+        self.collection_duration_minutes = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDiscoveryJobInput`](crate::operation::update_discovery_job::UpdateDiscoveryJobInput).
-    pub fn build(self) -> Result<crate::operation::update_discovery_job::UpdateDiscoveryJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_discovery_job::UpdateDiscoveryJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_discovery_job::UpdateDiscoveryJobInput {
-                discovery_job_arn: self.discovery_job_arn
-                ,
-                collection_duration_minutes: self.collection_duration_minutes
-                ,
-            }
+                discovery_job_arn: self.discovery_job_arn,
+                collection_duration_minutes: self.collection_duration_minutes,
+            },
         )
     }
 }
-

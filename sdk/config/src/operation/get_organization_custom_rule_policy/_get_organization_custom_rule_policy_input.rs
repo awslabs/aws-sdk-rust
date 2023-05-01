@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOrganizationCustomRulePolicyInput  {
+pub struct GetOrganizationCustomRulePolicyInput {
     /// <p>The name of your organization Config Custom Policy rule. </p>
     #[doc(hidden)]
     pub organization_config_rule_name: std::option::Option<std::string::String>,
 }
 impl GetOrganizationCustomRulePolicyInput {
     /// <p>The name of your organization Config Custom Policy rule. </p>
-    pub fn organization_config_rule_name(&self) -> std::option::Option<& str> {
+    pub fn organization_config_rule_name(&self) -> std::option::Option<&str> {
         self.organization_config_rule_name.as_deref()
     }
 }
 impl GetOrganizationCustomRulePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetOrganizationCustomRulePolicyInput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput).
-    pub fn builder() -> crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyInputBuilder {
+    pub fn builder() -> crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyInputBuilder{
         crate::operation::get_organization_custom_rule_policy::builders::GetOrganizationCustomRulePolicyInputBuilder::default()
     }
 }
@@ -33,11 +33,20 @@ impl GetOrganizationCustomRulePolicyInputBuilder {
         self
     }
     /// <p>The name of your organization Config Custom Policy rule. </p>
-    pub fn set_organization_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_config_rule_name = input; self
+    pub fn set_organization_config_rule_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.organization_config_rule_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetOrganizationCustomRulePolicyInput`](crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_organization_custom_rule_policy::GetOrganizationCustomRulePolicyInput {
                 organization_config_rule_name: self.organization_config_rule_name
@@ -46,4 +55,3 @@ impl GetOrganizationCustomRulePolicyInputBuilder {
         )
     }
 }
-

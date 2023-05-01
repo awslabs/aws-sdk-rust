@@ -3,14 +3,14 @@
 /// <p>Detaches a typed link from a specified source and target object inside a <code>BatchRead</code> operation. For more information, see <code>DetachTypedLink</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDetachTypedLink  {
+pub struct BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
     #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::types::TypedLinkSpecifier>,
 }
 impl BatchDetachTypedLink {
     /// <p>Used to accept a typed link specifier as input.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<& crate::types::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::types::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl BatchDetachTypedLinkBuilder {
         self
     }
     /// <p>Used to accept a typed link specifier as input.</p>
-    pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
-        self.typed_link_specifier = input; self
+    pub fn set_typed_link_specifier(
+        mut self,
+        input: std::option::Option<crate::types::TypedLinkSpecifier>,
+    ) -> Self {
+        self.typed_link_specifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDetachTypedLink`](crate::types::BatchDetachTypedLink).
     pub fn build(self) -> crate::types::BatchDetachTypedLink {
         crate::types::BatchDetachTypedLink {
-            typed_link_specifier: self.typed_link_specifier
-            ,
+            typed_link_specifier: self.typed_link_specifier,
         }
     }
 }
-

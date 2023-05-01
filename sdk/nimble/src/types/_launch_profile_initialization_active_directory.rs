@@ -3,10 +3,11 @@
 /// <p>The launch profile initialization Active Directory contains information required for the launch profile to connect to the Active Directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LaunchProfileInitializationActiveDirectory  {
+pub struct LaunchProfileInitializationActiveDirectory {
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
     #[doc(hidden)]
-    pub computer_attributes: std::option::Option<std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
+    pub computer_attributes:
+        std::option::Option<std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -28,42 +29,47 @@ pub struct LaunchProfileInitializationActiveDirectory  {
 }
 impl LaunchProfileInitializationActiveDirectory {
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
-    pub fn computer_attributes(&self) -> std::option::Option<& [crate::types::ActiveDirectoryComputerAttribute]> {
+    pub fn computer_attributes(
+        &self,
+    ) -> std::option::Option<&[crate::types::ActiveDirectoryComputerAttribute]> {
         self.computer_attributes.as_deref()
     }
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The directory name.</p>
-    pub fn directory_name(&self) -> std::option::Option<& str> {
+    pub fn directory_name(&self) -> std::option::Option<&str> {
         self.directory_name.as_deref()
     }
     /// <p>The DNS IP address.</p>
-    pub fn dns_ip_addresses(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn dns_ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.dns_ip_addresses.as_deref()
     }
     /// <p>The name for the organizational unit distinguished name.</p>
-    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<& str> {
+    pub fn organizational_unit_distinguished_name(&self) -> std::option::Option<&str> {
         self.organizational_unit_distinguished_name.as_deref()
     }
     /// <p>The unique identifier for a studio component resource.</p>
-    pub fn studio_component_id(&self) -> std::option::Option<& str> {
+    pub fn studio_component_id(&self) -> std::option::Option<&str> {
         self.studio_component_id.as_deref()
     }
     /// <p>The name for the studio component.</p>
-    pub fn studio_component_name(&self) -> std::option::Option<& str> {
+    pub fn studio_component_name(&self) -> std::option::Option<&str> {
         self.studio_component_name.as_deref()
     }
 }
-impl  std::fmt::Debug for LaunchProfileInitializationActiveDirectory  {
+impl std::fmt::Debug for LaunchProfileInitializationActiveDirectory {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LaunchProfileInitializationActiveDirectory");
         formatter.field("computer_attributes", &"*** Sensitive Data Redacted ***");
         formatter.field("directory_id", &self.directory_id);
         formatter.field("directory_name", &self.directory_name);
         formatter.field("dns_ip_addresses", &self.dns_ip_addresses);
-        formatter.field("organizational_unit_distinguished_name", &self.organizational_unit_distinguished_name);
+        formatter.field(
+            "organizational_unit_distinguished_name",
+            &self.organizational_unit_distinguished_name,
+        );
         formatter.field("studio_component_id", &self.studio_component_id);
         formatter.field("studio_component_name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
@@ -80,7 +86,8 @@ impl LaunchProfileInitializationActiveDirectory {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct LaunchProfileInitializationActiveDirectoryBuilder {
-    pub(crate) computer_attributes: std::option::Option<std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
+    pub(crate) computer_attributes:
+        std::option::Option<std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
     pub(crate) directory_id: std::option::Option<std::string::String>,
     pub(crate) directory_name: std::option::Option<std::string::String>,
     pub(crate) dns_ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -94,15 +101,22 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
     /// To override the contents of this collection use [`set_computer_attributes`](Self::set_computer_attributes).
     ///
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
-    pub fn computer_attributes(mut self, input: crate::types::ActiveDirectoryComputerAttribute) -> Self {
+    pub fn computer_attributes(
+        mut self,
+        input: crate::types::ActiveDirectoryComputerAttribute,
+    ) -> Self {
         let mut v = self.computer_attributes.unwrap_or_default();
-                        v.push(input);
-                        self.computer_attributes = Some(v);
-                        self
+        v.push(input);
+        self.computer_attributes = Some(v);
+        self
     }
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
-    pub fn set_computer_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>) -> Self {
-        self.computer_attributes = input; self
+    pub fn set_computer_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ActiveDirectoryComputerAttribute>>,
+    ) -> Self {
+        self.computer_attributes = input;
+        self
     }
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
     pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +125,8 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
     }
     /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The directory name.</p>
     pub fn directory_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,7 +135,8 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
     }
     /// <p>The directory name.</p>
     pub fn set_directory_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_name = input; self
+        self.directory_name = input;
+        self
     }
     /// Appends an item to `dns_ip_addresses`.
     ///
@@ -129,22 +145,33 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
     /// <p>The DNS IP address.</p>
     pub fn dns_ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dns_ip_addresses.unwrap_or_default();
-                        v.push(input.into());
-                        self.dns_ip_addresses = Some(v);
-                        self
+        v.push(input.into());
+        self.dns_ip_addresses = Some(v);
+        self
     }
     /// <p>The DNS IP address.</p>
-    pub fn set_dns_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.dns_ip_addresses = input; self
+    pub fn set_dns_ip_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.dns_ip_addresses = input;
+        self
     }
     /// <p>The name for the organizational unit distinguished name.</p>
-    pub fn organizational_unit_distinguished_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn organizational_unit_distinguished_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.organizational_unit_distinguished_name = Some(input.into());
         self
     }
     /// <p>The name for the organizational unit distinguished name.</p>
-    pub fn set_organizational_unit_distinguished_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organizational_unit_distinguished_name = input; self
+    pub fn set_organizational_unit_distinguished_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.organizational_unit_distinguished_name = input;
+        self
     }
     /// <p>The unique identifier for a studio component resource.</p>
     pub fn studio_component_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,8 +179,12 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
         self
     }
     /// <p>The unique identifier for a studio component resource.</p>
-    pub fn set_studio_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_component_id = input; self
+    pub fn set_studio_component_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.studio_component_id = input;
+        self
     }
     /// <p>The name for the studio component.</p>
     pub fn studio_component_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,26 +192,23 @@ impl LaunchProfileInitializationActiveDirectoryBuilder {
         self
     }
     /// <p>The name for the studio component.</p>
-    pub fn set_studio_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_component_name = input; self
+    pub fn set_studio_component_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.studio_component_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`LaunchProfileInitializationActiveDirectory`](crate::types::LaunchProfileInitializationActiveDirectory).
     pub fn build(self) -> crate::types::LaunchProfileInitializationActiveDirectory {
         crate::types::LaunchProfileInitializationActiveDirectory {
-            computer_attributes: self.computer_attributes
-            ,
-            directory_id: self.directory_id
-            ,
-            directory_name: self.directory_name
-            ,
-            dns_ip_addresses: self.dns_ip_addresses
-            ,
-            organizational_unit_distinguished_name: self.organizational_unit_distinguished_name
-            ,
-            studio_component_id: self.studio_component_id
-            ,
-            studio_component_name: self.studio_component_name
-            ,
+            computer_attributes: self.computer_attributes,
+            directory_id: self.directory_id,
+            directory_name: self.directory_name,
+            dns_ip_addresses: self.dns_ip_addresses,
+            organizational_unit_distinguished_name: self.organizational_unit_distinguished_name,
+            studio_component_id: self.studio_component_id,
+            studio_component_name: self.studio_component_name,
         }
     }
 }
@@ -191,10 +219,12 @@ impl std::fmt::Debug for LaunchProfileInitializationActiveDirectoryBuilder {
         formatter.field("directory_id", &self.directory_id);
         formatter.field("directory_name", &self.directory_name);
         formatter.field("dns_ip_addresses", &self.dns_ip_addresses);
-        formatter.field("organizational_unit_distinguished_name", &self.organizational_unit_distinguished_name);
+        formatter.field(
+            "organizational_unit_distinguished_name",
+            &self.organizational_unit_distinguished_name,
+        );
         formatter.field("studio_component_id", &self.studio_component_id);
         formatter.field("studio_component_name", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
-

@@ -2,18 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecoveryPointOutput  {
+pub struct DeleteRecoveryPointOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteRecoveryPointOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteRecoveryPointOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRecoveryPointOutput`](crate::operation::delete_recovery_point::DeleteRecoveryPointOutput).
-    pub fn builder() -> crate::operation::delete_recovery_point::builders::DeleteRecoveryPointOutputBuilder {
-        crate::operation::delete_recovery_point::builders::DeleteRecoveryPointOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_recovery_point::builders::DeleteRecoveryPointOutputBuilder {
+        crate::operation::delete_recovery_point::builders::DeleteRecoveryPointOutputBuilder::default(
+        )
     }
 }
 
@@ -25,14 +27,14 @@ pub struct DeleteRecoveryPointOutputBuilder {
 }
 impl DeleteRecoveryPointOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteRecoveryPointOutput`](crate::operation::delete_recovery_point::DeleteRecoveryPointOutput).
     pub fn build(self) -> crate::operation::delete_recovery_point::DeleteRecoveryPointOutput {
         crate::operation::delete_recovery_point::DeleteRecoveryPointOutput {
@@ -40,4 +42,3 @@ impl DeleteRecoveryPointOutputBuilder {
         }
     }
 }
-

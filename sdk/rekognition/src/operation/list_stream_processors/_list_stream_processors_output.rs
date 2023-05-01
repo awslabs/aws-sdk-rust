@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStreamProcessorsOutput  {
+pub struct ListStreamProcessorsOutput {
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct ListStreamProcessorsOutput  {
 }
 impl ListStreamProcessorsOutput {
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>List of stream processors that you have created.</p>
-    pub fn stream_processors(&self) -> std::option::Option<& [crate::types::StreamProcessor]> {
+    pub fn stream_processors(&self) -> std::option::Option<&[crate::types::StreamProcessor]> {
         self.stream_processors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListStreamProcessorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListStreamProcessorsOutput {
     /// Creates a new builder-style object to manufacture [`ListStreamProcessorsOutput`](crate::operation::list_stream_processors::ListStreamProcessorsOutput).
-    pub fn builder() -> crate::operation::list_stream_processors::builders::ListStreamProcessorsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_stream_processors::builders::ListStreamProcessorsOutputBuilder {
         crate::operation::list_stream_processors::builders::ListStreamProcessorsOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl ListStreamProcessorsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of stream processors. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `stream_processors`.
     ///
@@ -58,32 +60,33 @@ impl ListStreamProcessorsOutputBuilder {
     /// <p>List of stream processors that you have created.</p>
     pub fn stream_processors(mut self, input: crate::types::StreamProcessor) -> Self {
         let mut v = self.stream_processors.unwrap_or_default();
-                        v.push(input);
-                        self.stream_processors = Some(v);
-                        self
+        v.push(input);
+        self.stream_processors = Some(v);
+        self
     }
     /// <p>List of stream processors that you have created.</p>
-    pub fn set_stream_processors(mut self, input: std::option::Option<std::vec::Vec<crate::types::StreamProcessor>>) -> Self {
-        self.stream_processors = input; self
+    pub fn set_stream_processors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StreamProcessor>>,
+    ) -> Self {
+        self.stream_processors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListStreamProcessorsOutput`](crate::operation::list_stream_processors::ListStreamProcessorsOutput).
     pub fn build(self) -> crate::operation::list_stream_processors::ListStreamProcessorsOutput {
         crate::operation::list_stream_processors::ListStreamProcessorsOutput {
-            next_token: self.next_token
-            ,
-            stream_processors: self.stream_processors
-            ,
+            next_token: self.next_token,
+            stream_processors: self.stream_processors,
             _request_id: self._request_id,
         }
     }
 }
-

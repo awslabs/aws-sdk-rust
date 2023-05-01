@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProductInput  {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+pub struct DescribeProductInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -18,20 +18,20 @@ pub struct DescribeProductInput  {
     pub name: std::option::Option<std::string::String>,
 }
 impl DescribeProductInput {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<& str> {
+    pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
     /// <p>The product identifier.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The product name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -51,22 +51,23 @@ pub struct DescribeProductInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
 }
 impl DescribeProductInputBuilder {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input; self
+        self.accept_language = input;
+        self
     }
     /// <p>The product identifier.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl DescribeProductInputBuilder {
     }
     /// <p>The product identifier.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The product name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,20 +86,20 @@ impl DescribeProductInputBuilder {
     }
     /// <p>The product name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeProductInput`](crate::operation::describe_product::DescribeProductInput).
-    pub fn build(self) -> Result<crate::operation::describe_product::DescribeProductInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_product::DescribeProductInput {
-                accept_language: self.accept_language
-                ,
-                id: self.id
-                ,
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_product::DescribeProductInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_product::DescribeProductInput {
+            accept_language: self.accept_language,
+            id: self.id,
+            name: self.name,
+        })
     }
 }
-

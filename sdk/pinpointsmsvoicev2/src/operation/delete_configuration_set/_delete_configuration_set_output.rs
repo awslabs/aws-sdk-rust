@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationSetOutput  {
+pub struct DeleteConfigurationSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_arn: std::option::Option<std::string::String>,
@@ -25,38 +25,40 @@ pub struct DeleteConfigurationSetOutput  {
 }
 impl DeleteConfigurationSetOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
-    pub fn configuration_set_arn(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_arn(&self) -> std::option::Option<&str> {
         self.configuration_set_arn.as_deref()
     }
     /// <p>The name of the deleted configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
-    pub fn event_destinations(&self) -> std::option::Option<& [crate::types::EventDestination]> {
+    pub fn event_destinations(&self) -> std::option::Option<&[crate::types::EventDestination]> {
         self.event_destinations.as_deref()
     }
     /// <p>The default message type of the configuration set that was deleted.</p>
-    pub fn default_message_type(&self) -> std::option::Option<& crate::types::MessageType> {
+    pub fn default_message_type(&self) -> std::option::Option<&crate::types::MessageType> {
         self.default_message_type.as_ref()
     }
     /// <p>The default Sender ID of the configuration set that was deleted.</p>
-    pub fn default_sender_id(&self) -> std::option::Option<& str> {
+    pub fn default_sender_id(&self) -> std::option::Option<&str> {
         self.default_sender_id.as_deref()
     }
     /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteConfigurationSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput).
-    pub fn builder() -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetOutputBuilder
+    {
         crate::operation::delete_configuration_set::builders::DeleteConfigurationSetOutputBuilder::default()
     }
 }
@@ -67,7 +69,8 @@ impl DeleteConfigurationSetOutput {
 pub struct DeleteConfigurationSetOutputBuilder {
     pub(crate) configuration_set_arn: std::option::Option<std::string::String>,
     pub(crate) configuration_set_name: std::option::Option<std::string::String>,
-    pub(crate) event_destinations: std::option::Option<std::vec::Vec<crate::types::EventDestination>>,
+    pub(crate) event_destinations:
+        std::option::Option<std::vec::Vec<crate::types::EventDestination>>,
     pub(crate) default_message_type: std::option::Option<crate::types::MessageType>,
     pub(crate) default_sender_id: std::option::Option<std::string::String>,
     pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -80,8 +83,12 @@ impl DeleteConfigurationSetOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the deleted configuration set.</p>
-    pub fn set_configuration_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_arn = input; self
+    pub fn set_configuration_set_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_arn = input;
+        self
     }
     /// <p>The name of the deleted configuration set.</p>
     pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +96,12 @@ impl DeleteConfigurationSetOutputBuilder {
         self
     }
     /// <p>The name of the deleted configuration set.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_name = input; self
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = input;
+        self
     }
     /// Appends an item to `event_destinations`.
     ///
@@ -99,13 +110,17 @@ impl DeleteConfigurationSetOutputBuilder {
     /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
     pub fn event_destinations(mut self, input: crate::types::EventDestination) -> Self {
         let mut v = self.event_destinations.unwrap_or_default();
-                        v.push(input);
-                        self.event_destinations = Some(v);
-                        self
+        v.push(input);
+        self.event_destinations = Some(v);
+        self
     }
     /// <p>An array of any EventDestination objects that were associated with the deleted configuration set.</p>
-    pub fn set_event_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventDestination>>) -> Self {
-        self.event_destinations = input; self
+    pub fn set_event_destinations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventDestination>>,
+    ) -> Self {
+        self.event_destinations = input;
+        self
     }
     /// <p>The default message type of the configuration set that was deleted.</p>
     pub fn default_message_type(mut self, input: crate::types::MessageType) -> Self {
@@ -113,8 +128,12 @@ impl DeleteConfigurationSetOutputBuilder {
         self
     }
     /// <p>The default message type of the configuration set that was deleted.</p>
-    pub fn set_default_message_type(mut self, input: std::option::Option<crate::types::MessageType>) -> Self {
-        self.default_message_type = input; self
+    pub fn set_default_message_type(
+        mut self,
+        input: std::option::Option<crate::types::MessageType>,
+    ) -> Self {
+        self.default_message_type = input;
+        self
     }
     /// <p>The default Sender ID of the configuration set that was deleted.</p>
     pub fn default_sender_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +141,12 @@ impl DeleteConfigurationSetOutputBuilder {
         self
     }
     /// <p>The default Sender ID of the configuration set that was deleted.</p>
-    pub fn set_default_sender_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_sender_id = input; self
+    pub fn set_default_sender_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_sender_id = input;
+        self
     }
     /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -131,35 +154,32 @@ impl DeleteConfigurationSetOutputBuilder {
         self
     }
     /// <p>The time that the deleted configuration set was created in <a href="https://www.epochconverter.com/">UNIX epoch time</a> format.</p>
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetOutput`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput).
     pub fn build(self) -> crate::operation::delete_configuration_set::DeleteConfigurationSetOutput {
         crate::operation::delete_configuration_set::DeleteConfigurationSetOutput {
-            configuration_set_arn: self.configuration_set_arn
-            ,
-            configuration_set_name: self.configuration_set_name
-            ,
-            event_destinations: self.event_destinations
-            ,
-            default_message_type: self.default_message_type
-            ,
-            default_sender_id: self.default_sender_id
-            ,
-            created_timestamp: self.created_timestamp
-            ,
+            configuration_set_arn: self.configuration_set_arn,
+            configuration_set_name: self.configuration_set_name,
+            event_destinations: self.event_destinations,
+            default_message_type: self.default_message_type,
+            default_sender_id: self.default_sender_id,
+            created_timestamp: self.created_timestamp,
             _request_id: self._request_id,
         }
     }
 }
-

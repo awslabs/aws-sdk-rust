@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEvaluationFormsInput  {
+pub struct ListEvaluationFormsInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListEvaluationFormsInput  {
 }
 impl ListEvaluationFormsInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -23,14 +23,16 @@ impl ListEvaluationFormsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListEvaluationFormsInput {
     /// Creates a new builder-style object to manufacture [`ListEvaluationFormsInput`](crate::operation::list_evaluation_forms::ListEvaluationFormsInput).
-    pub fn builder() -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsInputBuilder {
-        crate::operation::list_evaluation_forms::builders::ListEvaluationFormsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_evaluation_forms::builders::ListEvaluationFormsInputBuilder {
+        crate::operation::list_evaluation_forms::builders::ListEvaluationFormsInputBuilder::default(
+        )
     }
 }
 
@@ -50,7 +52,8 @@ impl ListEvaluationFormsInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +62,8 @@ impl ListEvaluationFormsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl ListEvaluationFormsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEvaluationFormsInput`](crate::operation::list_evaluation_forms::ListEvaluationFormsInput).
-    pub fn build(self) -> Result<crate::operation::list_evaluation_forms::ListEvaluationFormsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_evaluation_forms::ListEvaluationFormsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_evaluation_forms::ListEvaluationFormsInput {
-                instance_id: self.instance_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                instance_id: self.instance_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

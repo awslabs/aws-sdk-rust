@@ -3,7 +3,7 @@
 /// <p>Summary information about an export task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportSummary  {
+pub struct ExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
     #[doc(hidden)]
     pub export_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExportSummary  {
 }
 impl ExportSummary {
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
-    pub fn export_arn(&self) -> std::option::Option<& str> {
+    pub fn export_arn(&self) -> std::option::Option<&str> {
         self.export_arn.as_deref()
     }
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub fn export_status(&self) -> std::option::Option<& crate::types::ExportStatus> {
+    pub fn export_status(&self) -> std::option::Option<&crate::types::ExportStatus> {
         self.export_status.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl ExportSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the export.</p>
     pub fn set_export_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_arn = input; self
+        self.export_arn = input;
+        self
     }
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
     pub fn export_status(mut self, input: crate::types::ExportStatus) -> Self {
@@ -51,17 +52,18 @@ impl ExportSummaryBuilder {
         self
     }
     /// <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or FAILED.</p>
-    pub fn set_export_status(mut self, input: std::option::Option<crate::types::ExportStatus>) -> Self {
-        self.export_status = input; self
+    pub fn set_export_status(
+        mut self,
+        input: std::option::Option<crate::types::ExportStatus>,
+    ) -> Self {
+        self.export_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExportSummary`](crate::types::ExportSummary).
     pub fn build(self) -> crate::types::ExportSummary {
         crate::types::ExportSummary {
-            export_arn: self.export_arn
-            ,
-            export_status: self.export_status
-            ,
+            export_arn: self.export_arn,
+            export_status: self.export_status,
         }
     }
 }
-

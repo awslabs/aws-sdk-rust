@@ -3,7 +3,7 @@
 /// <p>The condition that must be met in order to apply the routing rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsS3BucketWebsiteConfigurationRoutingRuleCondition  {
+pub struct AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
     /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
     #[doc(hidden)]
     pub http_error_code_returned_equals: std::option::Option<std::string::String>,
@@ -13,18 +13,20 @@ pub struct AwsS3BucketWebsiteConfigurationRoutingRuleCondition  {
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
     /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
-    pub fn http_error_code_returned_equals(&self) -> std::option::Option<& str> {
+    pub fn http_error_code_returned_equals(&self) -> std::option::Option<&str> {
         self.http_error_code_returned_equals.as_deref()
     }
     /// <p>Indicates to redirect the request if the key prefix matches this value.</p>
-    pub fn key_prefix_equals(&self) -> std::option::Option<& str> {
+    pub fn key_prefix_equals(&self) -> std::option::Option<&str> {
         self.key_prefix_equals.as_deref()
     }
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
     /// Creates a new builder-style object to manufacture [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
-    pub fn builder() -> crate::types::builders::AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
-        crate::types::builders::AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder::default()
+    pub fn builder(
+    ) -> crate::types::builders::AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
+        crate::types::builders::AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder::default(
+        )
     }
 }
 
@@ -37,13 +39,20 @@ pub struct AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
 }
 impl AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
     /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
-    pub fn http_error_code_returned_equals(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn http_error_code_returned_equals(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.http_error_code_returned_equals = Some(input.into());
         self
     }
     /// <p>Indicates to redirect the request if the HTTP error code matches this value.</p>
-    pub fn set_http_error_code_returned_equals(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.http_error_code_returned_equals = input; self
+    pub fn set_http_error_code_returned_equals(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.http_error_code_returned_equals = input;
+        self
     }
     /// <p>Indicates to redirect the request if the key prefix matches this value.</p>
     pub fn key_prefix_equals(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +60,18 @@ impl AwsS3BucketWebsiteConfigurationRoutingRuleConditionBuilder {
         self
     }
     /// <p>Indicates to redirect the request if the key prefix matches this value.</p>
-    pub fn set_key_prefix_equals(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_prefix_equals = input; self
+    pub fn set_key_prefix_equals(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.key_prefix_equals = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsS3BucketWebsiteConfigurationRoutingRuleCondition`](crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition).
     pub fn build(self) -> crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
         crate::types::AwsS3BucketWebsiteConfigurationRoutingRuleCondition {
-            http_error_code_returned_equals: self.http_error_code_returned_equals
-            ,
-            key_prefix_equals: self.key_prefix_equals
-            ,
+            http_error_code_returned_equals: self.http_error_code_returned_equals,
+            key_prefix_equals: self.key_prefix_equals,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReadSetImportJobsOutput  {
+pub struct ListReadSetImportJobsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct ListReadSetImportJobsOutput  {
 }
 impl ListReadSetImportJobsOutput {
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>A list of jobs.</p>
-    pub fn import_jobs(&self) -> std::option::Option<& [crate::types::ImportReadSetJobItem]> {
+    pub fn import_jobs(&self) -> std::option::Option<&[crate::types::ImportReadSetJobItem]> {
         self.import_jobs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListReadSetImportJobsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListReadSetImportJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListReadSetImportJobsOutput`](crate::operation::list_read_set_import_jobs::ListReadSetImportJobsOutput).
-    pub fn builder() -> crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsOutputBuilder
+    {
         crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl ListReadSetImportJobsOutputBuilder {
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `import_jobs`.
     ///
@@ -58,32 +61,33 @@ impl ListReadSetImportJobsOutputBuilder {
     /// <p>A list of jobs.</p>
     pub fn import_jobs(mut self, input: crate::types::ImportReadSetJobItem) -> Self {
         let mut v = self.import_jobs.unwrap_or_default();
-                        v.push(input);
-                        self.import_jobs = Some(v);
-                        self
+        v.push(input);
+        self.import_jobs = Some(v);
+        self
     }
     /// <p>A list of jobs.</p>
-    pub fn set_import_jobs(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImportReadSetJobItem>>) -> Self {
-        self.import_jobs = input; self
+    pub fn set_import_jobs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ImportReadSetJobItem>>,
+    ) -> Self {
+        self.import_jobs = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListReadSetImportJobsOutput`](crate::operation::list_read_set_import_jobs::ListReadSetImportJobsOutput).
     pub fn build(self) -> crate::operation::list_read_set_import_jobs::ListReadSetImportJobsOutput {
         crate::operation::list_read_set_import_jobs::ListReadSetImportJobsOutput {
-            next_token: self.next_token
-            ,
-            import_jobs: self.import_jobs
-            ,
+            next_token: self.next_token,
+            import_jobs: self.import_jobs,
             _request_id: self._request_id,
         }
     }
 }
-

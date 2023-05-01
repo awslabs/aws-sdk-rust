@@ -2,32 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbClusterParameterGroupInput  {
-    /// <p>The name of the DB cluster parameter group.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li> 
-    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li> 
-    /// <li> <p>Cannot be associated with any DB clusters.</p> </li> 
+pub struct DeleteDbClusterParameterGroupInput {
+    /// <p>The name of the DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li>
+    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
+    /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteDbClusterParameterGroupInput {
-    /// <p>The name of the DB cluster parameter group.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li> 
-    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li> 
-    /// <li> <p>Cannot be associated with any DB clusters.</p> </li> 
+    /// <p>The name of the DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li>
+    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
+    /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
-    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_parameter_group_name(&self) -> std::option::Option<&str> {
         self.db_cluster_parameter_group_name.as_deref()
     }
 }
 impl DeleteDbClusterParameterGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteDbClusterParameterGroupInput`](crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput).
-    pub fn builder() -> crate::operation::delete_db_cluster_parameter_group::builders::DeleteDbClusterParameterGroupInputBuilder {
+    pub fn builder() -> crate::operation::delete_db_cluster_parameter_group::builders::DeleteDbClusterParameterGroupInputBuilder{
         crate::operation::delete_db_cluster_parameter_group::builders::DeleteDbClusterParameterGroupInputBuilder::default()
     }
 }
@@ -39,29 +39,41 @@ pub struct DeleteDbClusterParameterGroupInputBuilder {
     pub(crate) db_cluster_parameter_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteDbClusterParameterGroupInputBuilder {
-    /// <p>The name of the DB cluster parameter group.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li> 
-    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li> 
-    /// <li> <p>Cannot be associated with any DB clusters.</p> </li> 
+    /// <p>The name of the DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li>
+    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
+    /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
-    pub fn db_cluster_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_cluster_parameter_group_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.db_cluster_parameter_group_name = Some(input.into());
         self
     }
-    /// <p>The name of the DB cluster parameter group.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li> 
-    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li> 
-    /// <li> <p>Cannot be associated with any DB clusters.</p> </li> 
+    /// <p>The name of the DB cluster parameter group.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the name of an existing DB cluster parameter group.</p> </li>
+    /// <li> <p>You can't delete a default DB cluster parameter group.</p> </li>
+    /// <li> <p>Cannot be associated with any DB clusters.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_parameter_group_name = input; self
+    pub fn set_db_cluster_parameter_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_parameter_group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDbClusterParameterGroupInput`](crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupInput {
                 db_cluster_parameter_group_name: self.db_cluster_parameter_group_name
@@ -70,4 +82,3 @@ impl DeleteDbClusterParameterGroupInputBuilder {
         )
     }
 }
-

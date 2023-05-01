@@ -4,50 +4,70 @@ pub use crate::operation::create_batch_segment_job::_create_batch_segment_job_ou
 pub use crate::operation::create_batch_segment_job::_create_batch_segment_job_input::CreateBatchSegmentJobInputBuilder;
 
 /// Fluent builder constructing a request to `CreateBatchSegmentJob`.
-/// 
+///
 /// <p>Creates a batch segment job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recommendations-batch.html">Getting batch recommendations and user segments</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateBatchSegmentJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobInputBuilder,
+    inner: crate::operation::create_batch_segment_job::builders::CreateBatchSegmentJobInputBuilder,
 }
-impl CreateBatchSegmentJobFluentBuilder  {
+impl CreateBatchSegmentJobFluentBuilder {
     /// Creates a new `CreateBatchSegmentJob`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_batch_segment_job::CreateBatchSegmentJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_batch_segment_job::CreateBatchSegmentJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_batch_segment_job::CreateBatchSegmentJobOutput, aws_smithy_http::result::SdkError<crate::operation::create_batch_segment_job::CreateBatchSegmentJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_batch_segment_job::CreateBatchSegmentJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_batch_segment_job::CreateBatchSegmentJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_batch_segment_job::CreateBatchSegmentJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_batch_segment_job::CreateBatchSegmentJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the batch segment job to create.</p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_name(input.into());
@@ -64,7 +84,10 @@ impl CreateBatchSegmentJobFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version you want the batch segment job to use to generate batch segments.</p>
-    pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_solution_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_solution_version_arn(input);
         self
     }
@@ -94,7 +117,10 @@ impl CreateBatchSegmentJobFluentBuilder  {
         self
     }
     /// <p>The Amazon S3 path for the input data used to generate the batch segment job.</p>
-    pub fn set_job_input(mut self, input: std::option::Option<crate::types::BatchSegmentJobInput>) -> Self {
+    pub fn set_job_input(
+        mut self,
+        input: std::option::Option<crate::types::BatchSegmentJobInput>,
+    ) -> Self {
         self.inner = self.inner.set_job_input(input);
         self
     }
@@ -104,7 +130,10 @@ impl CreateBatchSegmentJobFluentBuilder  {
         self
     }
     /// <p>The Amazon S3 path for the bucket where the job's output will be stored.</p>
-    pub fn set_job_output(mut self, input: std::option::Option<crate::types::BatchSegmentJobOutput>) -> Self {
+    pub fn set_job_output(
+        mut self,
+        input: std::option::Option<crate::types::BatchSegmentJobOutput>,
+    ) -> Self {
         self.inner = self.inner.set_job_output(input);
         self
     }
@@ -128,9 +157,11 @@ impl CreateBatchSegmentJobFluentBuilder  {
         self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the batch segment job.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

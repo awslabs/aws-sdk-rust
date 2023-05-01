@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MessageDetail  {
+pub struct MessageDetail {
     /// The error code.
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct MessageDetail  {
 }
 impl MessageDetail {
     /// The error code.
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// The name of the resource.
-    pub fn resource_name(&self) -> std::option::Option<& str> {
+    pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl MessageDetailBuilder {
     }
     /// The error code.
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl MessageDetailBuilder {
     }
     /// The specific error message that MediaConnect returns to help you understand the reason that the request did not succeed.
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// The name of the resource.
     pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,18 +70,15 @@ impl MessageDetailBuilder {
     }
     /// The name of the resource.
     pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_name = input; self
+        self.resource_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`MessageDetail`](crate::types::MessageDetail).
     pub fn build(self) -> crate::types::MessageDetail {
         crate::types::MessageDetail {
-            code: self.code
-            ,
-            message: self.message
-            ,
-            resource_name: self.resource_name
-            ,
+            code: self.code,
+            message: self.message,
+            resource_name: self.resource_name,
         }
     }
 }
-

@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBlueGreenDeploymentInput  {
-    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p> 
-    /// <p>Constraints: </p> 
-    /// <ul> 
-    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li> 
+pub struct DeleteBlueGreenDeploymentInput {
+    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints: </p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub blue_green_deployment_identifier: std::option::Option<std::string::String>,
@@ -15,12 +15,12 @@ pub struct DeleteBlueGreenDeploymentInput  {
     pub delete_target: std::option::Option<bool>,
 }
 impl DeleteBlueGreenDeploymentInput {
-    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p> 
-    /// <p>Constraints: </p> 
-    /// <ul> 
-    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li> 
+    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints: </p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn blue_green_deployment_identifier(&self) -> std::option::Option<& str> {
+    pub fn blue_green_deployment_identifier(&self) -> std::option::Option<&str> {
         self.blue_green_deployment_identifier.as_deref()
     }
     /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
@@ -30,7 +30,7 @@ impl DeleteBlueGreenDeploymentInput {
 }
 impl DeleteBlueGreenDeploymentInput {
     /// Creates a new builder-style object to manufacture [`DeleteBlueGreenDeploymentInput`](crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput).
-    pub fn builder() -> crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentInputBuilder{
         crate::operation::delete_blue_green_deployment::builders::DeleteBlueGreenDeploymentInputBuilder::default()
     }
 }
@@ -43,22 +43,29 @@ pub struct DeleteBlueGreenDeploymentInputBuilder {
     pub(crate) delete_target: std::option::Option<bool>,
 }
 impl DeleteBlueGreenDeploymentInputBuilder {
-    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p> 
-    /// <p>Constraints: </p> 
-    /// <ul> 
-    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li> 
+    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints: </p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn blue_green_deployment_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn blue_green_deployment_identifier(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.blue_green_deployment_identifier = Some(input.into());
         self
     }
-    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p> 
-    /// <p>Constraints: </p> 
-    /// <ul> 
-    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li> 
+    /// <p>The blue/green deployment identifier of the deployment to be deleted. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints: </p>
+    /// <ul>
+    /// <li> <p>Must match an existing blue/green deployment identifier.</p> </li>
     /// </ul>
-    pub fn set_blue_green_deployment_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.blue_green_deployment_identifier = input; self
+    pub fn set_blue_green_deployment_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.blue_green_deployment_identifier = input;
+        self
     }
     /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn delete_target(mut self, input: bool) -> Self {
@@ -67,18 +74,21 @@ impl DeleteBlueGreenDeploymentInputBuilder {
     }
     /// <p>A value that indicates whether to delete the resources in the green environment. You can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a> is <code>SWITCHOVER_COMPLETED</code>.</p>
     pub fn set_delete_target(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_target = input; self
+        self.delete_target = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBlueGreenDeploymentInput`](crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput).
-    pub fn build(self) -> Result<crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_blue_green_deployment::DeleteBlueGreenDeploymentInput {
-                blue_green_deployment_identifier: self.blue_green_deployment_identifier
-                ,
-                delete_target: self.delete_target
-                ,
-            }
+                blue_green_deployment_identifier: self.blue_green_deployment_identifier,
+                delete_target: self.delete_target,
+            },
         )
     }
 }
-

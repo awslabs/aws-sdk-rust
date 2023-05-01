@@ -3,7 +3,7 @@
 /// <p> Describes updates to the output configuration identified by the <code>OutputId</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputUpdate  {
+pub struct OutputUpdate {
     /// <p>Identifies the specific output configuration that you want to update.</p>
     #[doc(hidden)]
     pub output_id: std::option::Option<std::string::String>,
@@ -12,10 +12,12 @@ pub struct OutputUpdate  {
     pub name_update: std::option::Option<std::string::String>,
     /// <p>Describes an Amazon Kinesis stream as the destination for the output.</p>
     #[doc(hidden)]
-    pub kinesis_streams_output_update: std::option::Option<crate::types::KinesisStreamsOutputUpdate>,
+    pub kinesis_streams_output_update:
+        std::option::Option<crate::types::KinesisStreamsOutputUpdate>,
     /// <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.</p>
     #[doc(hidden)]
-    pub kinesis_firehose_output_update: std::option::Option<crate::types::KinesisFirehoseOutputUpdate>,
+    pub kinesis_firehose_output_update:
+        std::option::Option<crate::types::KinesisFirehoseOutputUpdate>,
     /// <p>Describes an AWS Lambda function as the destination for the output.</p>
     #[doc(hidden)]
     pub lambda_output_update: std::option::Option<crate::types::LambdaOutputUpdate>,
@@ -25,27 +27,33 @@ pub struct OutputUpdate  {
 }
 impl OutputUpdate {
     /// <p>Identifies the specific output configuration that you want to update.</p>
-    pub fn output_id(&self) -> std::option::Option<& str> {
+    pub fn output_id(&self) -> std::option::Option<&str> {
         self.output_id.as_deref()
     }
     /// <p>If you want to specify a different in-application stream for this output configuration, use this field to specify the new in-application stream name.</p>
-    pub fn name_update(&self) -> std::option::Option<& str> {
+    pub fn name_update(&self) -> std::option::Option<&str> {
         self.name_update.as_deref()
     }
     /// <p>Describes an Amazon Kinesis stream as the destination for the output.</p>
-    pub fn kinesis_streams_output_update(&self) -> std::option::Option<& crate::types::KinesisStreamsOutputUpdate> {
+    pub fn kinesis_streams_output_update(
+        &self,
+    ) -> std::option::Option<&crate::types::KinesisStreamsOutputUpdate> {
         self.kinesis_streams_output_update.as_ref()
     }
     /// <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.</p>
-    pub fn kinesis_firehose_output_update(&self) -> std::option::Option<& crate::types::KinesisFirehoseOutputUpdate> {
+    pub fn kinesis_firehose_output_update(
+        &self,
+    ) -> std::option::Option<&crate::types::KinesisFirehoseOutputUpdate> {
         self.kinesis_firehose_output_update.as_ref()
     }
     /// <p>Describes an AWS Lambda function as the destination for the output.</p>
-    pub fn lambda_output_update(&self) -> std::option::Option<& crate::types::LambdaOutputUpdate> {
+    pub fn lambda_output_update(&self) -> std::option::Option<&crate::types::LambdaOutputUpdate> {
         self.lambda_output_update.as_ref()
     }
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
-    pub fn destination_schema_update(&self) -> std::option::Option<& crate::types::DestinationSchema> {
+    pub fn destination_schema_update(
+        &self,
+    ) -> std::option::Option<&crate::types::DestinationSchema> {
         self.destination_schema_update.as_ref()
     }
 }
@@ -62,8 +70,10 @@ impl OutputUpdate {
 pub struct OutputUpdateBuilder {
     pub(crate) output_id: std::option::Option<std::string::String>,
     pub(crate) name_update: std::option::Option<std::string::String>,
-    pub(crate) kinesis_streams_output_update: std::option::Option<crate::types::KinesisStreamsOutputUpdate>,
-    pub(crate) kinesis_firehose_output_update: std::option::Option<crate::types::KinesisFirehoseOutputUpdate>,
+    pub(crate) kinesis_streams_output_update:
+        std::option::Option<crate::types::KinesisStreamsOutputUpdate>,
+    pub(crate) kinesis_firehose_output_update:
+        std::option::Option<crate::types::KinesisFirehoseOutputUpdate>,
     pub(crate) lambda_output_update: std::option::Option<crate::types::LambdaOutputUpdate>,
     pub(crate) destination_schema_update: std::option::Option<crate::types::DestinationSchema>,
 }
@@ -75,7 +85,8 @@ impl OutputUpdateBuilder {
     }
     /// <p>Identifies the specific output configuration that you want to update.</p>
     pub fn set_output_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_id = input; self
+        self.output_id = input;
+        self
     }
     /// <p>If you want to specify a different in-application stream for this output configuration, use this field to specify the new in-application stream name.</p>
     pub fn name_update(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,25 +95,40 @@ impl OutputUpdateBuilder {
     }
     /// <p>If you want to specify a different in-application stream for this output configuration, use this field to specify the new in-application stream name.</p>
     pub fn set_name_update(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_update = input; self
+        self.name_update = input;
+        self
     }
     /// <p>Describes an Amazon Kinesis stream as the destination for the output.</p>
-    pub fn kinesis_streams_output_update(mut self, input: crate::types::KinesisStreamsOutputUpdate) -> Self {
+    pub fn kinesis_streams_output_update(
+        mut self,
+        input: crate::types::KinesisStreamsOutputUpdate,
+    ) -> Self {
         self.kinesis_streams_output_update = Some(input);
         self
     }
     /// <p>Describes an Amazon Kinesis stream as the destination for the output.</p>
-    pub fn set_kinesis_streams_output_update(mut self, input: std::option::Option<crate::types::KinesisStreamsOutputUpdate>) -> Self {
-        self.kinesis_streams_output_update = input; self
+    pub fn set_kinesis_streams_output_update(
+        mut self,
+        input: std::option::Option<crate::types::KinesisStreamsOutputUpdate>,
+    ) -> Self {
+        self.kinesis_streams_output_update = input;
+        self
     }
     /// <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.</p>
-    pub fn kinesis_firehose_output_update(mut self, input: crate::types::KinesisFirehoseOutputUpdate) -> Self {
+    pub fn kinesis_firehose_output_update(
+        mut self,
+        input: crate::types::KinesisFirehoseOutputUpdate,
+    ) -> Self {
         self.kinesis_firehose_output_update = Some(input);
         self
     }
     /// <p>Describes an Amazon Kinesis Firehose delivery stream as the destination for the output.</p>
-    pub fn set_kinesis_firehose_output_update(mut self, input: std::option::Option<crate::types::KinesisFirehoseOutputUpdate>) -> Self {
-        self.kinesis_firehose_output_update = input; self
+    pub fn set_kinesis_firehose_output_update(
+        mut self,
+        input: std::option::Option<crate::types::KinesisFirehoseOutputUpdate>,
+    ) -> Self {
+        self.kinesis_firehose_output_update = input;
+        self
     }
     /// <p>Describes an AWS Lambda function as the destination for the output.</p>
     pub fn lambda_output_update(mut self, input: crate::types::LambdaOutputUpdate) -> Self {
@@ -110,8 +136,12 @@ impl OutputUpdateBuilder {
         self
     }
     /// <p>Describes an AWS Lambda function as the destination for the output.</p>
-    pub fn set_lambda_output_update(mut self, input: std::option::Option<crate::types::LambdaOutputUpdate>) -> Self {
-        self.lambda_output_update = input; self
+    pub fn set_lambda_output_update(
+        mut self,
+        input: std::option::Option<crate::types::LambdaOutputUpdate>,
+    ) -> Self {
+        self.lambda_output_update = input;
+        self
     }
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
     pub fn destination_schema_update(mut self, input: crate::types::DestinationSchema) -> Self {
@@ -119,25 +149,22 @@ impl OutputUpdateBuilder {
         self
     }
     /// <p>Describes the data format when records are written to the destination. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Configuring Application Output</a>.</p>
-    pub fn set_destination_schema_update(mut self, input: std::option::Option<crate::types::DestinationSchema>) -> Self {
-        self.destination_schema_update = input; self
+    pub fn set_destination_schema_update(
+        mut self,
+        input: std::option::Option<crate::types::DestinationSchema>,
+    ) -> Self {
+        self.destination_schema_update = input;
+        self
     }
     /// Consumes the builder and constructs a [`OutputUpdate`](crate::types::OutputUpdate).
     pub fn build(self) -> crate::types::OutputUpdate {
         crate::types::OutputUpdate {
-            output_id: self.output_id
-            ,
-            name_update: self.name_update
-            ,
-            kinesis_streams_output_update: self.kinesis_streams_output_update
-            ,
-            kinesis_firehose_output_update: self.kinesis_firehose_output_update
-            ,
-            lambda_output_update: self.lambda_output_update
-            ,
-            destination_schema_update: self.destination_schema_update
-            ,
+            output_id: self.output_id,
+            name_update: self.name_update,
+            kinesis_streams_output_update: self.kinesis_streams_output_update,
+            kinesis_firehose_output_update: self.kinesis_firehose_output_update,
+            lambda_output_update: self.lambda_output_update,
+            destination_schema_update: self.destination_schema_update,
         }
     }
 }
-

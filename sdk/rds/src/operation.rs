@@ -423,4 +423,3 @@ pub mod switchover_blue_green_deployment;
 
 /// Types for the `SwitchoverReadReplica` operation.
 pub mod switchover_read_replica;
-

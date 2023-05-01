@@ -3,14 +3,14 @@
 /// <p>Output data configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntityRecognizerOutputDataConfig  {
+pub struct EntityRecognizerOutputDataConfig {
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
     #[doc(hidden)]
     pub flywheel_stats_s3_prefix: std::option::Option<std::string::String>,
 }
 impl EntityRecognizerOutputDataConfig {
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
-    pub fn flywheel_stats_s3_prefix(&self) -> std::option::Option<& str> {
+    pub fn flywheel_stats_s3_prefix(&self) -> std::option::Option<&str> {
         self.flywheel_stats_s3_prefix.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl EntityRecognizerOutputDataConfigBuilder {
         self
     }
     /// <p>The Amazon S3 prefix for the data lake location of the flywheel statistics.</p>
-    pub fn set_flywheel_stats_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flywheel_stats_s3_prefix = input; self
+    pub fn set_flywheel_stats_s3_prefix(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.flywheel_stats_s3_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`EntityRecognizerOutputDataConfig`](crate::types::EntityRecognizerOutputDataConfig).
     pub fn build(self) -> crate::types::EntityRecognizerOutputDataConfig {
         crate::types::EntityRecognizerOutputDataConfig {
-            flywheel_stats_s3_prefix: self.flywheel_stats_s3_prefix
-            ,
+            flywheel_stats_s3_prefix: self.flywheel_stats_s3_prefix,
         }
     }
 }
-

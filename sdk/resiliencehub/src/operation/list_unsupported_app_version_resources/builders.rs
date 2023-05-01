@@ -4,56 +4,63 @@ pub use crate::operation::list_unsupported_app_version_resources::_list_unsuppor
 pub use crate::operation::list_unsupported_app_version_resources::_list_unsupported_app_version_resources_input::ListUnsupportedAppVersionResourcesInputBuilder;
 
 /// Fluent builder constructing a request to `ListUnsupportedAppVersionResources`.
-/// 
+///
 /// <p>Lists the resources that are not currently supported in Resilience Hub. An unsupported resource is a resource that exists in the object that was used to create an app, but is not supported by Resilience Hub.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListUnsupportedAppVersionResourcesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_unsupported_app_version_resources::builders::ListUnsupportedAppVersionResourcesInputBuilder,
 }
-impl ListUnsupportedAppVersionResourcesFluentBuilder  {
+impl ListUnsupportedAppVersionResourcesFluentBuilder {
     /// Creates a new `ListUnsupportedAppVersionResources`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResources, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput, aws_smithy_http::result::SdkError<crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_unsupported_app_version_resources::paginator::ListUnsupportedAppVersionResourcesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_unsupported_app_version_resources::paginator::ListUnsupportedAppVersionResourcesPaginator {
-                                crate::operation::list_unsupported_app_version_resources::paginator::ListUnsupportedAppVersionResourcesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_unsupported_app_version_resources::paginator::ListUnsupportedAppVersionResourcesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_unsupported_app_version_resources::paginator::ListUnsupportedAppVersionResourcesPaginator{
+        crate::operation::list_unsupported_app_version_resources::paginator::ListUnsupportedAppVersionResourcesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
@@ -105,4 +112,3 @@ impl ListUnsupportedAppVersionResourcesFluentBuilder  {
         self
     }
 }
-

@@ -3,19 +3,19 @@
 /// <p>An object that defines the entire content of the email, including the message headers and the body content. You can create a simple email message, in which you specify the subject and the text and HTML versions of the message body. You can also create raw messages, in which you specify a complete MIME-formatted message. Raw messages can include attachments and custom headers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EmailContent  {
+pub struct EmailContent {
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
     #[doc(hidden)]
     pub simple: std::option::Option<crate::types::Message>,
-    /// <p>The raw email message. The message has to meet the following criteria:</p> 
-    /// <ul> 
-    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
-    /// <li> <p>If you include attachments, they must be in a file format that the Amazon SES API v2 supports. </p> </li> 
-    /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
-    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
+    /// <p>The raw email message. The message has to meet the following criteria:</p>
+    /// <ul>
+    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
+    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
+    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
+    /// <li> <p>If you include attachments, they must be in a file format that the Amazon SES API v2 supports. </p> </li>
+    /// <li> <p>The entire message must be Base64 encoded.</p> </li>
+    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
+    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub raw: std::option::Option<crate::types::RawMessage>,
@@ -25,24 +25,24 @@ pub struct EmailContent  {
 }
 impl EmailContent {
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
-    pub fn simple(&self) -> std::option::Option<& crate::types::Message> {
+    pub fn simple(&self) -> std::option::Option<&crate::types::Message> {
         self.simple.as_ref()
     }
-    /// <p>The raw email message. The message has to meet the following criteria:</p> 
-    /// <ul> 
-    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
-    /// <li> <p>If you include attachments, they must be in a file format that the Amazon SES API v2 supports. </p> </li> 
-    /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
-    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
+    /// <p>The raw email message. The message has to meet the following criteria:</p>
+    /// <ul>
+    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
+    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
+    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
+    /// <li> <p>If you include attachments, they must be in a file format that the Amazon SES API v2 supports. </p> </li>
+    /// <li> <p>The entire message must be Base64 encoded.</p> </li>
+    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
+    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
-    pub fn raw(&self) -> std::option::Option<& crate::types::RawMessage> {
+    pub fn raw(&self) -> std::option::Option<&crate::types::RawMessage> {
         self.raw.as_ref()
     }
     /// <p>The template to use for the email message.</p>
-    pub fn template(&self) -> std::option::Option<& crate::types::Template> {
+    pub fn template(&self) -> std::option::Option<&crate::types::Template> {
         self.template.as_ref()
     }
 }
@@ -69,34 +69,36 @@ impl EmailContentBuilder {
     }
     /// <p>The simple email message. The message consists of a subject and a message body.</p>
     pub fn set_simple(mut self, input: std::option::Option<crate::types::Message>) -> Self {
-        self.simple = input; self
+        self.simple = input;
+        self
     }
-    /// <p>The raw email message. The message has to meet the following criteria:</p> 
-    /// <ul> 
-    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
-    /// <li> <p>If you include attachments, they must be in a file format that the Amazon SES API v2 supports. </p> </li> 
-    /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
-    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
+    /// <p>The raw email message. The message has to meet the following criteria:</p>
+    /// <ul>
+    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
+    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
+    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
+    /// <li> <p>If you include attachments, they must be in a file format that the Amazon SES API v2 supports. </p> </li>
+    /// <li> <p>The entire message must be Base64 encoded.</p> </li>
+    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
+    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
     pub fn raw(mut self, input: crate::types::RawMessage) -> Self {
         self.raw = Some(input);
         self
     }
-    /// <p>The raw email message. The message has to meet the following criteria:</p> 
-    /// <ul> 
-    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li> 
-    /// <li> <p>All of the required header fields must be present in the message.</p> </li> 
-    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li> 
-    /// <li> <p>If you include attachments, they must be in a file format that the Amazon SES API v2 supports. </p> </li> 
-    /// <li> <p>The entire message must be Base64 encoded.</p> </li> 
-    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li> 
-    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> 
+    /// <p>The raw email message. The message has to meet the following criteria:</p>
+    /// <ul>
+    /// <li> <p>The message has to contain a header and a body, separated by one blank line.</p> </li>
+    /// <li> <p>All of the required header fields must be present in the message.</p> </li>
+    /// <li> <p>Each part of a multipart MIME message must be formatted properly.</p> </li>
+    /// <li> <p>If you include attachments, they must be in a file format that the Amazon SES API v2 supports. </p> </li>
+    /// <li> <p>The entire message must be Base64 encoded.</p> </li>
+    /// <li> <p>If any of the MIME parts in your message contain content that is outside of the 7-bit ASCII character range, you should encode that content to ensure that recipients' email clients render the message properly.</p> </li>
+    /// <li> <p>The length of any single line of text in the message can't exceed 1,000 characters. This restriction is defined in <a href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li>
     /// </ul>
     pub fn set_raw(mut self, input: std::option::Option<crate::types::RawMessage>) -> Self {
-        self.raw = input; self
+        self.raw = input;
+        self
     }
     /// <p>The template to use for the email message.</p>
     pub fn template(mut self, input: crate::types::Template) -> Self {
@@ -105,18 +107,15 @@ impl EmailContentBuilder {
     }
     /// <p>The template to use for the email message.</p>
     pub fn set_template(mut self, input: std::option::Option<crate::types::Template>) -> Self {
-        self.template = input; self
+        self.template = input;
+        self
     }
     /// Consumes the builder and constructs a [`EmailContent`](crate::types::EmailContent).
     pub fn build(self) -> crate::types::EmailContent {
         crate::types::EmailContent {
-            simple: self.simple
-            ,
-            raw: self.raw
-            ,
-            template: self.template
-            ,
+            simple: self.simple,
+            raw: self.raw,
+            template: self.template,
         }
     }
 }
-

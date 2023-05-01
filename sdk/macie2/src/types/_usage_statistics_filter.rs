@@ -3,19 +3,19 @@
 /// <p>Specifies a condition for filtering the results of a query for quota and usage data for one or more Amazon Macie accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UsageStatisticsFilter  {
+pub struct UsageStatisticsFilter {
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
     #[doc(hidden)]
     pub comparator: std::option::Option<crate::types::UsageStatisticsFilterComparator>,
     /// <p>The field to use in the condition.</p>
     #[doc(hidden)]
     pub key: std::option::Option<crate::types::UsageStatisticsFilterKey>,
-    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p> 
-    /// <p>Valid values for each supported field are:</p> 
+    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
+    /// <p>Valid values for each supported field are:</p>
     /// <ul>
-    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li> 
-    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li> 
-    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li> 
+    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
+    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
+    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
     /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
     #[doc(hidden)]
@@ -23,22 +23,24 @@ pub struct UsageStatisticsFilter  {
 }
 impl UsageStatisticsFilter {
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
-    pub fn comparator(&self) -> std::option::Option<& crate::types::UsageStatisticsFilterComparator> {
+    pub fn comparator(
+        &self,
+    ) -> std::option::Option<&crate::types::UsageStatisticsFilterComparator> {
         self.comparator.as_ref()
     }
     /// <p>The field to use in the condition.</p>
-    pub fn key(&self) -> std::option::Option<& crate::types::UsageStatisticsFilterKey> {
+    pub fn key(&self) -> std::option::Option<&crate::types::UsageStatisticsFilterKey> {
         self.key.as_ref()
     }
-    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p> 
-    /// <p>Valid values for each supported field are:</p> 
+    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
+    /// <p>Valid values for each supported field are:</p>
     /// <ul>
-    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li> 
-    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li> 
-    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li> 
+    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
+    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
+    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
     /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -64,8 +66,12 @@ impl UsageStatisticsFilterBuilder {
         self
     }
     /// <p>The operator to use in the condition. If the value for the key property is accountId, this value must be CONTAINS. If the value for the key property is any other supported field, this value can be EQ, GT, GTE, LT, LTE, or NE.</p>
-    pub fn set_comparator(mut self, input: std::option::Option<crate::types::UsageStatisticsFilterComparator>) -> Self {
-        self.comparator = input; self
+    pub fn set_comparator(
+        mut self,
+        input: std::option::Option<crate::types::UsageStatisticsFilterComparator>,
+    ) -> Self {
+        self.comparator = input;
+        self
     }
     /// <p>The field to use in the condition.</p>
     pub fn key(mut self, input: crate::types::UsageStatisticsFilterKey) -> Self {
@@ -73,48 +79,52 @@ impl UsageStatisticsFilterBuilder {
         self
     }
     /// <p>The field to use in the condition.</p>
-    pub fn set_key(mut self, input: std::option::Option<crate::types::UsageStatisticsFilterKey>) -> Self {
-        self.key = input; self
+    pub fn set_key(
+        mut self,
+        input: std::option::Option<crate::types::UsageStatisticsFilterKey>,
+    ) -> Self {
+        self.key = input;
+        self
     }
     /// Appends an item to `values`.
     ///
     /// To override the contents of this collection use [`set_values`](Self::set_values).
     ///
-    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p> 
-    /// <p>Valid values for each supported field are:</p> 
+    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
+    /// <p>Valid values for each supported field are:</p>
     /// <ul>
-    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li> 
-    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li> 
-    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li> 
+    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
+    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
+    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
     /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
-    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p> 
-    /// <p>Valid values for each supported field are:</p> 
+    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p>
+    /// <p>Valid values for each supported field are:</p>
     /// <ul>
-    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li> 
-    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li> 
-    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li> 
+    /// <li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li>
+    /// <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for an account.</p></li>
+    /// <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li>
     /// <li><p>total - A string that represents the current estimated cost for an account.</p></li>
     /// </ul>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`UsageStatisticsFilter`](crate::types::UsageStatisticsFilter).
     pub fn build(self) -> crate::types::UsageStatisticsFilter {
         crate::types::UsageStatisticsFilter {
-            comparator: self.comparator
-            ,
-            key: self.key
-            ,
-            values: self.values
-            ,
+            comparator: self.comparator,
+            key: self.key,
+            values: self.values,
         }
     }
 }
-

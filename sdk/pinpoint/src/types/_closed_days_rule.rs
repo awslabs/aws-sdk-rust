@@ -3,7 +3,7 @@
 /// <p>Specifies the rule settings for when messages can't be sent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClosedDaysRule  {
+pub struct ClosedDaysRule {
     /// <p>The name of the closed day rule.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ClosedDaysRule  {
 }
 impl ClosedDaysRule {
     /// <p>The name of the closed day rule.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Start DateTime ISO 8601 format</p>
-    pub fn start_date_time(&self) -> std::option::Option<& str> {
+    pub fn start_date_time(&self) -> std::option::Option<&str> {
         self.start_date_time.as_deref()
     }
     /// <p>End DateTime ISO 8601 format</p>
-    pub fn end_date_time(&self) -> std::option::Option<& str> {
+    pub fn end_date_time(&self) -> std::option::Option<&str> {
         self.end_date_time.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ClosedDaysRuleBuilder {
     }
     /// <p>The name of the closed day rule.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Start DateTime ISO 8601 format</p>
     pub fn start_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ClosedDaysRuleBuilder {
     }
     /// <p>Start DateTime ISO 8601 format</p>
     pub fn set_start_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_date_time = input; self
+        self.start_date_time = input;
+        self
     }
     /// <p>End DateTime ISO 8601 format</p>
     pub fn end_date_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl ClosedDaysRuleBuilder {
     }
     /// <p>End DateTime ISO 8601 format</p>
     pub fn set_end_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_date_time = input; self
+        self.end_date_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClosedDaysRule`](crate::types::ClosedDaysRule).
     pub fn build(self) -> crate::types::ClosedDaysRule {
         crate::types::ClosedDaysRule {
-            name: self.name
-            ,
-            start_date_time: self.start_date_time
-            ,
-            end_date_time: self.end_date_time
-            ,
+            name: self.name,
+            start_date_time: self.start_date_time,
+            end_date_time: self.end_date_time,
         }
     }
 }
-

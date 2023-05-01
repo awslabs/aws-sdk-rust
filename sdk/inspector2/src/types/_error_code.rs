@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let errorcode = unimplemented!();
 /// match errorcode {
@@ -42,14 +42,22 @@
 /// Specifically, when `errorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ErrorCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -80,65 +88,79 @@ pub enum ErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     SuspendInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ErrorCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACCESS_DENIED" => ErrorCode::AccessDenied,
-"ACCOUNT_IS_ISOLATED" => ErrorCode::AccountIsIsolated,
-"ALREADY_ENABLED" => ErrorCode::AlreadyEnabled,
-"DISABLE_IN_PROGRESS" => ErrorCode::DisableInProgress,
-"DISASSOCIATE_ALL_MEMBERS" => ErrorCode::DisassociateAllMembers,
-"ENABLE_IN_PROGRESS" => ErrorCode::EnableInProgress,
-"EVENTBRIDGE_THROTTLED" => ErrorCode::EventbridgeThrottled,
-"EVENTBRIDGE_UNAVAILABLE" => ErrorCode::EventbridgeUnavailable,
-"INTERNAL_ERROR" => ErrorCode::InternalError,
-"RESOURCE_NOT_FOUND" => ErrorCode::ResourceNotFound,
-"RESOURCE_SCAN_NOT_DISABLED" => ErrorCode::ResourceScanNotDisabled,
-"SSM_THROTTLED" => ErrorCode::SsmThrottled,
-"SSM_UNAVAILABLE" => ErrorCode::SsmUnavailable,
-"SUSPEND_IN_PROGRESS" => ErrorCode::SuspendInProgress,
-other => ErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ErrorCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ErrorCode::from(s))
-                }
-            }
-impl ErrorCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ErrorCode::AccessDenied => "ACCESS_DENIED",
-    ErrorCode::AccountIsIsolated => "ACCOUNT_IS_ISOLATED",
-    ErrorCode::AlreadyEnabled => "ALREADY_ENABLED",
-    ErrorCode::DisableInProgress => "DISABLE_IN_PROGRESS",
-    ErrorCode::DisassociateAllMembers => "DISASSOCIATE_ALL_MEMBERS",
-    ErrorCode::EnableInProgress => "ENABLE_IN_PROGRESS",
-    ErrorCode::EventbridgeThrottled => "EVENTBRIDGE_THROTTLED",
-    ErrorCode::EventbridgeUnavailable => "EVENTBRIDGE_UNAVAILABLE",
-    ErrorCode::InternalError => "INTERNAL_ERROR",
-    ErrorCode::ResourceNotFound => "RESOURCE_NOT_FOUND",
-    ErrorCode::ResourceScanNotDisabled => "RESOURCE_SCAN_NOT_DISABLED",
-    ErrorCode::SsmThrottled => "SSM_THROTTLED",
-    ErrorCode::SsmUnavailable => "SSM_UNAVAILABLE",
-    ErrorCode::SuspendInProgress => "SUSPEND_IN_PROGRESS",
-    ErrorCode::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCESS_DENIED" => ErrorCode::AccessDenied,
+            "ACCOUNT_IS_ISOLATED" => ErrorCode::AccountIsIsolated,
+            "ALREADY_ENABLED" => ErrorCode::AlreadyEnabled,
+            "DISABLE_IN_PROGRESS" => ErrorCode::DisableInProgress,
+            "DISASSOCIATE_ALL_MEMBERS" => ErrorCode::DisassociateAllMembers,
+            "ENABLE_IN_PROGRESS" => ErrorCode::EnableInProgress,
+            "EVENTBRIDGE_THROTTLED" => ErrorCode::EventbridgeThrottled,
+            "EVENTBRIDGE_UNAVAILABLE" => ErrorCode::EventbridgeUnavailable,
+            "INTERNAL_ERROR" => ErrorCode::InternalError,
+            "RESOURCE_NOT_FOUND" => ErrorCode::ResourceNotFound,
+            "RESOURCE_SCAN_NOT_DISABLED" => ErrorCode::ResourceScanNotDisabled,
+            "SSM_THROTTLED" => ErrorCode::SsmThrottled,
+            "SSM_UNAVAILABLE" => ErrorCode::SsmUnavailable,
+            "SUSPEND_IN_PROGRESS" => ErrorCode::SuspendInProgress,
+            other => ErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACCESS_DENIED", "ACCOUNT_IS_ISOLATED", "ALREADY_ENABLED", "DISABLE_IN_PROGRESS", "DISASSOCIATE_ALL_MEMBERS", "ENABLE_IN_PROGRESS", "EVENTBRIDGE_THROTTLED", "EVENTBRIDGE_UNAVAILABLE", "INTERNAL_ERROR", "RESOURCE_NOT_FOUND", "RESOURCE_SCAN_NOT_DISABLED", "SSM_THROTTLED", "SSM_UNAVAILABLE", "SUSPEND_IN_PROGRESS"]
-                }
-            }
-impl AsRef<str> for ErrorCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ErrorCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ErrorCode::from(s))
+    }
+}
+impl ErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ErrorCode::AccessDenied => "ACCESS_DENIED",
+            ErrorCode::AccountIsIsolated => "ACCOUNT_IS_ISOLATED",
+            ErrorCode::AlreadyEnabled => "ALREADY_ENABLED",
+            ErrorCode::DisableInProgress => "DISABLE_IN_PROGRESS",
+            ErrorCode::DisassociateAllMembers => "DISASSOCIATE_ALL_MEMBERS",
+            ErrorCode::EnableInProgress => "ENABLE_IN_PROGRESS",
+            ErrorCode::EventbridgeThrottled => "EVENTBRIDGE_THROTTLED",
+            ErrorCode::EventbridgeUnavailable => "EVENTBRIDGE_UNAVAILABLE",
+            ErrorCode::InternalError => "INTERNAL_ERROR",
+            ErrorCode::ResourceNotFound => "RESOURCE_NOT_FOUND",
+            ErrorCode::ResourceScanNotDisabled => "RESOURCE_SCAN_NOT_DISABLED",
+            ErrorCode::SsmThrottled => "SSM_THROTTLED",
+            ErrorCode::SsmUnavailable => "SSM_UNAVAILABLE",
+            ErrorCode::SuspendInProgress => "SUSPEND_IN_PROGRESS",
+            ErrorCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCESS_DENIED",
+            "ACCOUNT_IS_ISOLATED",
+            "ALREADY_ENABLED",
+            "DISABLE_IN_PROGRESS",
+            "DISASSOCIATE_ALL_MEMBERS",
+            "ENABLE_IN_PROGRESS",
+            "EVENTBRIDGE_THROTTLED",
+            "EVENTBRIDGE_UNAVAILABLE",
+            "INTERNAL_ERROR",
+            "RESOURCE_NOT_FOUND",
+            "RESOURCE_SCAN_NOT_DISABLED",
+            "SSM_THROTTLED",
+            "SSM_UNAVAILABLE",
+            "SUSPEND_IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for ErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

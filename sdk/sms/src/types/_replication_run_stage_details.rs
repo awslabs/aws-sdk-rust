@@ -3,7 +3,7 @@
 /// <p>Details of the current stage of a replication run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationRunStageDetails  {
+pub struct ReplicationRunStageDetails {
     /// <p>The current stage of a replication run.</p>
     #[doc(hidden)]
     pub stage: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ReplicationRunStageDetails  {
 }
 impl ReplicationRunStageDetails {
     /// <p>The current stage of a replication run.</p>
-    pub fn stage(&self) -> std::option::Option<& str> {
+    pub fn stage(&self) -> std::option::Option<&str> {
         self.stage.as_deref()
     }
     /// <p>The progress of the current stage of a replication run.</p>
-    pub fn stage_progress(&self) -> std::option::Option<& str> {
+    pub fn stage_progress(&self) -> std::option::Option<&str> {
         self.stage_progress.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ReplicationRunStageDetailsBuilder {
     }
     /// <p>The current stage of a replication run.</p>
     pub fn set_stage(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage = input; self
+        self.stage = input;
+        self
     }
     /// <p>The progress of the current stage of a replication run.</p>
     pub fn stage_progress(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ReplicationRunStageDetailsBuilder {
     }
     /// <p>The progress of the current stage of a replication run.</p>
     pub fn set_stage_progress(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_progress = input; self
+        self.stage_progress = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReplicationRunStageDetails`](crate::types::ReplicationRunStageDetails).
     pub fn build(self) -> crate::types::ReplicationRunStageDetails {
         crate::types::ReplicationRunStageDetails {
-            stage: self.stage
-            ,
-            stage_progress: self.stage_progress
-            ,
+            stage: self.stage,
+            stage_progress: self.stage_progress,
         }
     }
 }
-

@@ -2,21 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterContainerImageInput  {
+pub struct RegisterContainerImageInput {
     /// <p>The name of the container service for which to register a container image.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>The label for the container image when it's registered to the container service.</p> 
-    /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p> 
+    /// <p>The label for the container image when it's registered to the container service.</p>
+    /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
     /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
-    /// <imagelabel></imagelabel></code> portion of the following image name example:</p> 
-    /// <ul> 
+    /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
+    /// <ul>
     /// <li> <p> <code>:container-service-1.
     /// <imagelabel>
     /// .1
-    /// </imagelabel></code> </p> </li> 
-    /// </ul> 
-    /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p> 
+    /// </imagelabel></code> </p> </li>
+    /// </ul>
+    /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
     /// <p>The number at the end of these image name examples represents the version of the registered container image. If you push and register another container image to the same Lightsail container service, with the same label, then the version number for the new registered container image will be <code>2</code>. If you push and register another container image, the version number will be <code>3</code>, and so on.</p>
     #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
@@ -26,32 +26,34 @@ pub struct RegisterContainerImageInput  {
 }
 impl RegisterContainerImageInput {
     /// <p>The name of the container service for which to register a container image.</p>
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
-    /// <p>The label for the container image when it's registered to the container service.</p> 
-    /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p> 
+    /// <p>The label for the container image when it's registered to the container service.</p>
+    /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
     /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
-    /// <imagelabel></imagelabel></code> portion of the following image name example:</p> 
-    /// <ul> 
+    /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
+    /// <ul>
     /// <li> <p> <code>:container-service-1.
     /// <imagelabel>
     /// .1
-    /// </imagelabel></code> </p> </li> 
-    /// </ul> 
-    /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p> 
+    /// </imagelabel></code> </p> </li>
+    /// </ul>
+    /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
     /// <p>The number at the end of these image name examples represents the version of the registered container image. If you push and register another container image to the same Lightsail container service, with the same label, then the version number for the new registered container image will be <code>2</code>. If you push and register another container image, the version number will be <code>3</code>, and so on.</p>
-    pub fn label(&self) -> std::option::Option<& str> {
+    pub fn label(&self) -> std::option::Option<&str> {
         self.label.as_deref()
     }
     /// <p>The digest of the container image to be registered.</p>
-    pub fn digest(&self) -> std::option::Option<& str> {
+    pub fn digest(&self) -> std::option::Option<&str> {
         self.digest.as_deref()
     }
 }
 impl RegisterContainerImageInput {
     /// Creates a new builder-style object to manufacture [`RegisterContainerImageInput`](crate::operation::register_container_image::RegisterContainerImageInput).
-    pub fn builder() -> crate::operation::register_container_image::builders::RegisterContainerImageInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::register_container_image::builders::RegisterContainerImageInputBuilder
+    {
         crate::operation::register_container_image::builders::RegisterContainerImageInputBuilder::default()
     }
 }
@@ -72,38 +74,40 @@ impl RegisterContainerImageInputBuilder {
     }
     /// <p>The name of the container service for which to register a container image.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
-    /// <p>The label for the container image when it's registered to the container service.</p> 
-    /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p> 
+    /// <p>The label for the container image when it's registered to the container service.</p>
+    /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
     /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
-    /// <imagelabel></imagelabel></code> portion of the following image name example:</p> 
-    /// <ul> 
+    /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
+    /// <ul>
     /// <li> <p> <code>:container-service-1.
     /// <imagelabel>
     /// .1
-    /// </imagelabel></code> </p> </li> 
-    /// </ul> 
-    /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p> 
+    /// </imagelabel></code> </p> </li>
+    /// </ul>
+    /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
     /// <p>The number at the end of these image name examples represents the version of the registered container image. If you push and register another container image to the same Lightsail container service, with the same label, then the version number for the new registered container image will be <code>2</code>. If you push and register another container image, the version number will be <code>3</code>, and so on.</p>
     pub fn label(mut self, input: impl Into<std::string::String>) -> Self {
         self.label = Some(input.into());
         self
     }
-    /// <p>The label for the container image when it's registered to the container service.</p> 
-    /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p> 
+    /// <p>The label for the container image when it's registered to the container service.</p>
+    /// <p>Use a descriptive label that you can use to track the different versions of your registered container images.</p>
     /// <p>Use the <code>GetContainerImages</code> action to return the container images registered to a Lightsail container service. The label is the <code>
-    /// <imagelabel></imagelabel></code> portion of the following image name example:</p> 
-    /// <ul> 
+    /// <imagelabel></imagelabel></code> portion of the following image name example:</p>
+    /// <ul>
     /// <li> <p> <code>:container-service-1.
     /// <imagelabel>
     /// .1
-    /// </imagelabel></code> </p> </li> 
-    /// </ul> 
-    /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p> 
+    /// </imagelabel></code> </p> </li>
+    /// </ul>
+    /// <p>If the name of your container service is <code>mycontainerservice</code>, and the label that you specify is <code>mystaticwebsite</code>, then the name of the registered container image will be <code>:mycontainerservice.mystaticwebsite.1</code>.</p>
     /// <p>The number at the end of these image name examples represents the version of the registered container image. If you push and register another container image to the same Lightsail container service, with the same label, then the version number for the new registered container image will be <code>2</code>. If you push and register another container image, the version number will be <code>3</code>, and so on.</p>
     pub fn set_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label = input; self
+        self.label = input;
+        self
     }
     /// <p>The digest of the container image to be registered.</p>
     pub fn digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,20 +116,22 @@ impl RegisterContainerImageInputBuilder {
     }
     /// <p>The digest of the container image to be registered.</p>
     pub fn set_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.digest = input; self
+        self.digest = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegisterContainerImageInput`](crate::operation::register_container_image::RegisterContainerImageInput).
-    pub fn build(self) -> Result<crate::operation::register_container_image::RegisterContainerImageInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::register_container_image::RegisterContainerImageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::register_container_image::RegisterContainerImageInput {
-                service_name: self.service_name
-                ,
-                label: self.label
-                ,
-                digest: self.digest
-                ,
-            }
+                service_name: self.service_name,
+                label: self.label,
+                digest: self.digest,
+            },
         )
     }
 }
-

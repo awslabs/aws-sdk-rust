@@ -3,7 +3,7 @@
 /// <p>The query execution timeline, statistics on input and output rows and bytes, and the different query stages that form the query execution plan.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct QueryRuntimeStatistics  {
+pub struct QueryRuntimeStatistics {
     /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
     #[doc(hidden)]
     pub timeline: std::option::Option<crate::types::QueryRuntimeStatisticsTimeline>,
@@ -16,15 +16,15 @@ pub struct QueryRuntimeStatistics  {
 }
 impl QueryRuntimeStatistics {
     /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
-    pub fn timeline(&self) -> std::option::Option<& crate::types::QueryRuntimeStatisticsTimeline> {
+    pub fn timeline(&self) -> std::option::Option<&crate::types::QueryRuntimeStatisticsTimeline> {
         self.timeline.as_ref()
     }
     /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
-    pub fn rows(&self) -> std::option::Option<& crate::types::QueryRuntimeStatisticsRows> {
+    pub fn rows(&self) -> std::option::Option<&crate::types::QueryRuntimeStatisticsRows> {
         self.rows.as_ref()
     }
     /// <p>Stage statistics such as input and output rows and bytes, execution time, and stage state. This information also includes substages and the query stage plan.</p>
-    pub fn output_stage(&self) -> std::option::Option<& crate::types::QueryStage> {
+    pub fn output_stage(&self) -> std::option::Option<&crate::types::QueryStage> {
         self.output_stage.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl QueryRuntimeStatisticsBuilder {
         self
     }
     /// <p>Timeline statistics such as query queue time, planning time, execution time, service processing time, and total execution time.</p>
-    pub fn set_timeline(mut self, input: std::option::Option<crate::types::QueryRuntimeStatisticsTimeline>) -> Self {
-        self.timeline = input; self
+    pub fn set_timeline(
+        mut self,
+        input: std::option::Option<crate::types::QueryRuntimeStatisticsTimeline>,
+    ) -> Self {
+        self.timeline = input;
+        self
     }
     /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
     pub fn rows(mut self, input: crate::types::QueryRuntimeStatisticsRows) -> Self {
@@ -59,8 +63,12 @@ impl QueryRuntimeStatisticsBuilder {
         self
     }
     /// <p>Statistics such as input rows and bytes read by the query, rows and bytes output by the query, and the number of rows written by the query.</p>
-    pub fn set_rows(mut self, input: std::option::Option<crate::types::QueryRuntimeStatisticsRows>) -> Self {
-        self.rows = input; self
+    pub fn set_rows(
+        mut self,
+        input: std::option::Option<crate::types::QueryRuntimeStatisticsRows>,
+    ) -> Self {
+        self.rows = input;
+        self
     }
     /// <p>Stage statistics such as input and output rows and bytes, execution time, and stage state. This information also includes substages and the query stage plan.</p>
     pub fn output_stage(mut self, input: crate::types::QueryStage) -> Self {
@@ -68,19 +76,19 @@ impl QueryRuntimeStatisticsBuilder {
         self
     }
     /// <p>Stage statistics such as input and output rows and bytes, execution time, and stage state. This information also includes substages and the query stage plan.</p>
-    pub fn set_output_stage(mut self, input: std::option::Option<crate::types::QueryStage>) -> Self {
-        self.output_stage = input; self
+    pub fn set_output_stage(
+        mut self,
+        input: std::option::Option<crate::types::QueryStage>,
+    ) -> Self {
+        self.output_stage = input;
+        self
     }
     /// Consumes the builder and constructs a [`QueryRuntimeStatistics`](crate::types::QueryRuntimeStatistics).
     pub fn build(self) -> crate::types::QueryRuntimeStatistics {
         crate::types::QueryRuntimeStatistics {
-            timeline: self.timeline
-            ,
-            rows: self.rows
-            ,
-            output_stage: self.output_stage
-            ,
+            timeline: self.timeline,
+            rows: self.rows,
+            output_stage: self.output_stage,
         }
     }
 }
-

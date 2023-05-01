@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartNetworkResourceUpdateInput  {
+pub struct StartNetworkResourceUpdateInput {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
     #[doc(hidden)]
     pub network_resource_arn: std::option::Option<std::string::String>,
-    /// <p>The update type.</p> 
-    /// <ul> 
-    /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li> 
-    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li> 
+    /// <p>The update type.</p>
+    /// <ul>
+    /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li>
+    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub update_type: std::option::Option<crate::types::UpdateType>,
@@ -22,29 +22,29 @@ pub struct StartNetworkResourceUpdateInput  {
 }
 impl StartNetworkResourceUpdateInput {
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn network_resource_arn(&self) -> std::option::Option<& str> {
+    pub fn network_resource_arn(&self) -> std::option::Option<&str> {
         self.network_resource_arn.as_deref()
     }
-    /// <p>The update type.</p> 
-    /// <ul> 
-    /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li> 
-    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li> 
+    /// <p>The update type.</p>
+    /// <ul>
+    /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li>
+    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// </ul>
-    pub fn update_type(&self) -> std::option::Option<& crate::types::UpdateType> {
+    pub fn update_type(&self) -> std::option::Option<&crate::types::UpdateType> {
         self.update_type.as_ref()
     }
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
-    pub fn shipping_address(&self) -> std::option::Option<& crate::types::Address> {
+    pub fn shipping_address(&self) -> std::option::Option<&crate::types::Address> {
         self.shipping_address.as_ref()
     }
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
-    pub fn return_reason(&self) -> std::option::Option<& str> {
+    pub fn return_reason(&self) -> std::option::Option<&str> {
         self.return_reason.as_deref()
     }
 }
 impl StartNetworkResourceUpdateInput {
     /// Creates a new builder-style object to manufacture [`StartNetworkResourceUpdateInput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput).
-    pub fn builder() -> crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder {
+    pub fn builder() -> crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder{
         crate::operation::start_network_resource_update::builders::StartNetworkResourceUpdateInputBuilder::default()
     }
 }
@@ -65,25 +65,30 @@ impl StartNetworkResourceUpdateInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the network resource.</p>
-    pub fn set_network_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_resource_arn = input; self
+    pub fn set_network_resource_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.network_resource_arn = input;
+        self
     }
-    /// <p>The update type.</p> 
-    /// <ul> 
-    /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li> 
-    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li> 
+    /// <p>The update type.</p>
+    /// <ul>
+    /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li>
+    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// </ul>
     pub fn update_type(mut self, input: crate::types::UpdateType) -> Self {
         self.update_type = Some(input);
         self
     }
-    /// <p>The update type.</p> 
-    /// <ul> 
-    /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li> 
-    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li> 
+    /// <p>The update type.</p>
+    /// <ul>
+    /// <li> <p> <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide a shipping label that you can use for the return process and we ship a replacement radio unit to you.</p> </li>
+    /// <li> <p> <code>RETURN</code> - Submits a request to replace a radio unit that you no longer need. We provide a shipping label that you can use for the return process.</p> </li>
     /// </ul>
     pub fn set_update_type(mut self, input: std::option::Option<crate::types::UpdateType>) -> Self {
-        self.update_type = input; self
+        self.update_type = input;
+        self
     }
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
     pub fn shipping_address(mut self, input: crate::types::Address) -> Self {
@@ -91,8 +96,12 @@ impl StartNetworkResourceUpdateInputBuilder {
         self
     }
     /// <p>The shipping address. If you don't provide a shipping address when replacing or returning a network resource, we use the address from the original order for the network resource.</p>
-    pub fn set_shipping_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
-        self.shipping_address = input; self
+    pub fn set_shipping_address(
+        mut self,
+        input: std::option::Option<crate::types::Address>,
+    ) -> Self {
+        self.shipping_address = input;
+        self
     }
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
     pub fn return_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,22 +110,23 @@ impl StartNetworkResourceUpdateInputBuilder {
     }
     /// <p>The reason for the return. Providing a reason for a return is optional.</p>
     pub fn set_return_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.return_reason = input; self
+        self.return_reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartNetworkResourceUpdateInput`](crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput).
-    pub fn build(self) -> Result<crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_network_resource_update::StartNetworkResourceUpdateInput {
-                network_resource_arn: self.network_resource_arn
-                ,
-                update_type: self.update_type
-                ,
-                shipping_address: self.shipping_address
-                ,
-                return_reason: self.return_reason
-                ,
-            }
+                network_resource_arn: self.network_resource_arn,
+                update_type: self.update_type,
+                shipping_address: self.shipping_address,
+                return_reason: self.return_reason,
+            },
         )
     }
 }
-

@@ -2,17 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchProductsInput  {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+pub struct SearchProductsInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::collections::HashMap<crate::types::ProductViewFilterBy, std::vec::Vec<std::string::String>>>,
+    pub filters: std::option::Option<
+        std::collections::HashMap<
+            crate::types::ProductViewFilterBy,
+            std::vec::Vec<std::string::String>,
+        >,
+    >,
     /// <p>The maximum number of items to return with this call.</p>
     #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
@@ -27,16 +32,23 @@ pub struct SearchProductsInput  {
     pub page_token: std::option::Option<std::string::String>,
 }
 impl SearchProductsInput {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<& str> {
+    pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
-    pub fn filters(&self) -> std::option::Option<& std::collections::HashMap<crate::types::ProductViewFilterBy, std::vec::Vec<std::string::String>>> {
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::types::ProductViewFilterBy,
+            std::vec::Vec<std::string::String>,
+        >,
+    > {
         self.filters.as_ref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -44,15 +56,15 @@ impl SearchProductsInput {
         self.page_size
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::ProductViewSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::ProductViewSortBy> {
         self.sort_by.as_ref()
     }
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
 }
@@ -68,44 +80,63 @@ impl SearchProductsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SearchProductsInputBuilder {
     pub(crate) accept_language: std::option::Option<std::string::String>,
-    pub(crate) filters: std::option::Option<std::collections::HashMap<crate::types::ProductViewFilterBy, std::vec::Vec<std::string::String>>>,
+    pub(crate) filters: std::option::Option<
+        std::collections::HashMap<
+            crate::types::ProductViewFilterBy,
+            std::vec::Vec<std::string::String>,
+        >,
+    >,
     pub(crate) page_size: std::option::Option<i32>,
     pub(crate) sort_by: std::option::Option<crate::types::ProductViewSortBy>,
     pub(crate) sort_order: std::option::Option<crate::types::SortOrder>,
     pub(crate) page_token: std::option::Option<std::string::String>,
 }
 impl SearchProductsInputBuilder {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input; self
+        self.accept_language = input;
+        self
     }
     /// Adds a key-value pair to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
-    pub fn filters(mut self, k: crate::types::ProductViewFilterBy, v: std::vec::Vec<std::string::String>) -> Self {
+    pub fn filters(
+        mut self,
+        k: crate::types::ProductViewFilterBy,
+        v: std::vec::Vec<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.filters = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.filters = Some(hash_map);
+        self
     }
     /// <p>The search filters. If no search filters are specified, the output includes all products to which the caller has access.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::collections::HashMap<crate::types::ProductViewFilterBy, std::vec::Vec<std::string::String>>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                crate::types::ProductViewFilterBy,
+                std::vec::Vec<std::string::String>,
+            >,
+        >,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -114,7 +145,8 @@ impl SearchProductsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
     pub fn sort_by(mut self, input: crate::types::ProductViewSortBy) -> Self {
@@ -122,8 +154,12 @@ impl SearchProductsInputBuilder {
         self
     }
     /// <p>The sort field. If no value is specified, the results are not sorted.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ProductViewSortBy>) -> Self {
-        self.sort_by = input; self
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::ProductViewSortBy>,
+    ) -> Self {
+        self.sort_by = input;
+        self
     }
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -132,7 +168,8 @@ impl SearchProductsInputBuilder {
     }
     /// <p>The sort order. If no value is specified, the results are not sorted.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,26 +178,23 @@ impl SearchProductsInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchProductsInput`](crate::operation::search_products::SearchProductsInput).
-    pub fn build(self) -> Result<crate::operation::search_products::SearchProductsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::search_products::SearchProductsInput {
-                accept_language: self.accept_language
-                ,
-                filters: self.filters
-                ,
-                page_size: self.page_size
-                ,
-                sort_by: self.sort_by
-                ,
-                sort_order: self.sort_order
-                ,
-                page_token: self.page_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::search_products::SearchProductsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::search_products::SearchProductsInput {
+            accept_language: self.accept_language,
+            filters: self.filters,
+            page_size: self.page_size,
+            sort_by: self.sort_by,
+            sort_order: self.sort_order,
+            page_token: self.page_token,
+        })
     }
 }
-

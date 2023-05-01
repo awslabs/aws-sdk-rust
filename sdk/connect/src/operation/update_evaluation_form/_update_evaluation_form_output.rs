@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEvaluationFormOutput  {
+pub struct UpdateEvaluationFormOutput {
     /// <p>The unique identifier for the evaluation form.</p>
     #[doc(hidden)]
     pub evaluation_form_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct UpdateEvaluationFormOutput  {
 }
 impl UpdateEvaluationFormOutput {
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> std::option::Option<& str> {
+    pub fn evaluation_form_id(&self) -> std::option::Option<&str> {
         self.evaluation_form_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_form_arn(&self) -> std::option::Option<& str> {
+    pub fn evaluation_form_arn(&self) -> std::option::Option<&str> {
         self.evaluation_form_arn.as_deref()
     }
     /// <p>The version of the updated evaluation form resource.</p>
@@ -29,13 +29,14 @@ impl UpdateEvaluationFormOutput {
     }
 }
 impl aws_http::request_id::RequestId for UpdateEvaluationFormOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateEvaluationFormOutput {
     /// Creates a new builder-style object to manufacture [`UpdateEvaluationFormOutput`](crate::operation::update_evaluation_form::UpdateEvaluationFormOutput).
-    pub fn builder() -> crate::operation::update_evaluation_form::builders::UpdateEvaluationFormOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_evaluation_form::builders::UpdateEvaluationFormOutputBuilder {
         crate::operation::update_evaluation_form::builders::UpdateEvaluationFormOutputBuilder::default()
     }
 }
@@ -56,8 +57,12 @@ impl UpdateEvaluationFormOutputBuilder {
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_form_id = input; self
+    pub fn set_evaluation_form_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evaluation_form_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn evaluation_form_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +70,12 @@ impl UpdateEvaluationFormOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn set_evaluation_form_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_form_arn = input; self
+    pub fn set_evaluation_form_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evaluation_form_arn = input;
+        self
     }
     /// <p>The version of the updated evaluation form resource.</p>
     pub fn evaluation_form_version(mut self, input: i32) -> Self {
@@ -75,28 +84,25 @@ impl UpdateEvaluationFormOutputBuilder {
     }
     /// <p>The version of the updated evaluation form resource.</p>
     pub fn set_evaluation_form_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.evaluation_form_version = input; self
+        self.evaluation_form_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateEvaluationFormOutput`](crate::operation::update_evaluation_form::UpdateEvaluationFormOutput).
     pub fn build(self) -> crate::operation::update_evaluation_form::UpdateEvaluationFormOutput {
         crate::operation::update_evaluation_form::UpdateEvaluationFormOutput {
-            evaluation_form_id: self.evaluation_form_id
-            ,
-            evaluation_form_arn: self.evaluation_form_arn
-            ,
-            evaluation_form_version: self.evaluation_form_version
-            ,
+            evaluation_form_id: self.evaluation_form_id,
+            evaluation_form_arn: self.evaluation_form_arn,
+            evaluation_form_version: self.evaluation_form_version,
             _request_id: self._request_id,
         }
     }
 }
-

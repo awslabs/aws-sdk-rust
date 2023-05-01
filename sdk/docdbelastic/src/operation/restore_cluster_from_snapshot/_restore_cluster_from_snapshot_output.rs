@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreClusterFromSnapshotOutput  {
+pub struct RestoreClusterFromSnapshotOutput {
     /// <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::types::Cluster>,
@@ -10,18 +10,18 @@ pub struct RestoreClusterFromSnapshotOutput  {
 }
 impl RestoreClusterFromSnapshotOutput {
     /// <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
-    pub fn cluster(&self) -> std::option::Option<& crate::types::Cluster> {
+    pub fn cluster(&self) -> std::option::Option<&crate::types::Cluster> {
         self.cluster.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RestoreClusterFromSnapshotOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RestoreClusterFromSnapshotOutput {
     /// Creates a new builder-style object to manufacture [`RestoreClusterFromSnapshotOutput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput).
-    pub fn builder() -> crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotOutputBuilder {
+    pub fn builder() -> crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotOutputBuilder{
         crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl RestoreClusterFromSnapshotOutputBuilder {
     }
     /// <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
     pub fn set_cluster(mut self, input: std::option::Option<crate::types::Cluster>) -> Self {
-        self.cluster = input; self
+        self.cluster = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RestoreClusterFromSnapshotOutput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput).
-    pub fn build(self) -> crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput {
         crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput {
-            cluster: self.cluster
-            ,
+            cluster: self.cluster,
             _request_id: self._request_id,
         }
     }
 }
-

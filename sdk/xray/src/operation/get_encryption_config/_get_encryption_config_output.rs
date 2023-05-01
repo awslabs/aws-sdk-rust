@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEncryptionConfigOutput  {
+pub struct GetEncryptionConfigOutput {
     /// <p>The encryption configuration document.</p>
     #[doc(hidden)]
     pub encryption_config: std::option::Option<crate::types::EncryptionConfig>,
@@ -10,19 +10,21 @@ pub struct GetEncryptionConfigOutput  {
 }
 impl GetEncryptionConfigOutput {
     /// <p>The encryption configuration document.</p>
-    pub fn encryption_config(&self) -> std::option::Option<& crate::types::EncryptionConfig> {
+    pub fn encryption_config(&self) -> std::option::Option<&crate::types::EncryptionConfig> {
         self.encryption_config.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetEncryptionConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetEncryptionConfigOutput {
     /// Creates a new builder-style object to manufacture [`GetEncryptionConfigOutput`](crate::operation::get_encryption_config::GetEncryptionConfigOutput).
-    pub fn builder() -> crate::operation::get_encryption_config::builders::GetEncryptionConfigOutputBuilder {
-        crate::operation::get_encryption_config::builders::GetEncryptionConfigOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_encryption_config::builders::GetEncryptionConfigOutputBuilder {
+        crate::operation::get_encryption_config::builders::GetEncryptionConfigOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl GetEncryptionConfigOutputBuilder {
         self
     }
     /// <p>The encryption configuration document.</p>
-    pub fn set_encryption_config(mut self, input: std::option::Option<crate::types::EncryptionConfig>) -> Self {
-        self.encryption_config = input; self
+    pub fn set_encryption_config(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionConfig>,
+    ) -> Self {
+        self.encryption_config = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetEncryptionConfigOutput`](crate::operation::get_encryption_config::GetEncryptionConfigOutput).
     pub fn build(self) -> crate::operation::get_encryption_config::GetEncryptionConfigOutput {
         crate::operation::get_encryption_config::GetEncryptionConfigOutput {
-            encryption_config: self.encryption_config
-            ,
+            encryption_config: self.encryption_config,
             _request_id: self._request_id,
         }
     }
 }
-

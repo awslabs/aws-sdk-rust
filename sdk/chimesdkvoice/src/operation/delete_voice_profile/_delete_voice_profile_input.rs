@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVoiceProfileInput  {
+pub struct DeleteVoiceProfileInput {
     /// <p>The voice profile ID.</p>
     #[doc(hidden)]
     pub voice_profile_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceProfileInput {
     /// <p>The voice profile ID.</p>
-    pub fn voice_profile_id(&self) -> std::option::Option<& str> {
+    pub fn voice_profile_id(&self) -> std::option::Option<&str> {
         self.voice_profile_id.as_deref()
     }
 }
 impl DeleteVoiceProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceProfileInput`](crate::operation::delete_voice_profile::DeleteVoiceProfileInput).
-    pub fn builder() -> crate::operation::delete_voice_profile::builders::DeleteVoiceProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_voice_profile::builders::DeleteVoiceProfileInputBuilder {
         crate::operation::delete_voice_profile::builders::DeleteVoiceProfileInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteVoiceProfileInputBuilder {
     }
     /// <p>The voice profile ID.</p>
     pub fn set_voice_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_profile_id = input; self
+        self.voice_profile_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceProfileInput`](crate::operation::delete_voice_profile::DeleteVoiceProfileInput).
-    pub fn build(self) -> Result<crate::operation::delete_voice_profile::DeleteVoiceProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_voice_profile::DeleteVoiceProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_voice_profile::DeleteVoiceProfileInput {
-                voice_profile_id: self.voice_profile_id
-                ,
-            }
+                voice_profile_id: self.voice_profile_id,
+            },
         )
     }
 }
-

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLedgersOutput  {
+pub struct ListLedgersOutput {
     /// <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
     #[doc(hidden)]
     pub ledgers: std::option::Option<std::vec::Vec<crate::types::LedgerSummary>>,
-    /// <p>A pagination token, indicating whether there are more results available:</p> 
-    /// <ul> 
-    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li> 
-    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li> 
+    /// <p>A pagination token, indicating whether there are more results available:</p>
+    /// <ul>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -17,23 +17,23 @@ pub struct ListLedgersOutput  {
 }
 impl ListLedgersOutput {
     /// <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
-    pub fn ledgers(&self) -> std::option::Option<& [crate::types::LedgerSummary]> {
+    pub fn ledgers(&self) -> std::option::Option<&[crate::types::LedgerSummary]> {
         self.ledgers.as_deref()
     }
-    /// <p>A pagination token, indicating whether there are more results available:</p> 
-    /// <ul> 
-    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li> 
-    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li> 
+    /// <p>A pagination token, indicating whether there are more results available:</p>
+    /// <ul>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>
     /// </ul>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLedgersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListLedgersOutput {
     /// Creates a new builder-style object to manufacture [`ListLedgersOutput`](crate::operation::list_ledgers::ListLedgersOutput).
     pub fn builder() -> crate::operation::list_ledgers::builders::ListLedgersOutputBuilder {
@@ -57,49 +57,51 @@ impl ListLedgersOutputBuilder {
     /// <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
     pub fn ledgers(mut self, input: crate::types::LedgerSummary) -> Self {
         let mut v = self.ledgers.unwrap_or_default();
-                        v.push(input);
-                        self.ledgers = Some(v);
-                        self
+        v.push(input);
+        self.ledgers = Some(v);
+        self
     }
     /// <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
-    pub fn set_ledgers(mut self, input: std::option::Option<std::vec::Vec<crate::types::LedgerSummary>>) -> Self {
-        self.ledgers = input; self
+    pub fn set_ledgers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LedgerSummary>>,
+    ) -> Self {
+        self.ledgers = input;
+        self
     }
-    /// <p>A pagination token, indicating whether there are more results available:</p> 
-    /// <ul> 
-    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li> 
-    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li> 
+    /// <p>A pagination token, indicating whether there are more results available:</p>
+    /// <ul>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>
     /// </ul>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>A pagination token, indicating whether there are more results available:</p> 
-    /// <ul> 
-    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li> 
-    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li> 
+    /// <p>A pagination token, indicating whether there are more results available:</p>
+    /// <ul>
+    /// <li> <p>If <code>NextToken</code> is empty, then the last page of results has been processed and there are no more results to be retrieved.</p> </li>
+    /// <li> <p>If <code>NextToken</code> is <i>not</i> empty, then there are more results available. To retrieve the next page of results, use the value of <code>NextToken</code> in a subsequent <code>ListLedgers</code> call.</p> </li>
     /// </ul>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListLedgersOutput`](crate::operation::list_ledgers::ListLedgersOutput).
     pub fn build(self) -> crate::operation::list_ledgers::ListLedgersOutput {
         crate::operation::list_ledgers::ListLedgersOutput {
-            ledgers: self.ledgers
-            ,
-            next_token: self.next_token
-            ,
+            ledgers: self.ledgers,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

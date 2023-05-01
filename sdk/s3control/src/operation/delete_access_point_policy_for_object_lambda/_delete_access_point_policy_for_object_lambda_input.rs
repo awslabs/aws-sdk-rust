@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessPointPolicyForObjectLambdaInput  {
+pub struct DeleteAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteAccessPointPolicyForObjectLambdaInput  {
 }
 impl DeleteAccessPointPolicyForObjectLambdaInput {
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl DeleteAccessPointPolicyForObjectLambdaInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessPointPolicyForObjectLambdaInput`](crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput).
-    pub fn builder() -> crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaInputBuilder {
+    pub fn builder() -> crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaInputBuilder{
         crate::operation::delete_access_point_policy_for_object_lambda::builders::DeleteAccessPointPolicyForObjectLambdaInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteAccessPointPolicyForObjectLambdaInputBuilder {
     }
     /// <p>The account ID for the account that owns the specified Object Lambda Access Point.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,11 @@ impl DeleteAccessPointPolicyForObjectLambdaInputBuilder {
     }
     /// <p>The name of the Object Lambda Access Point you want to delete the policy for.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAccessPointPolicyForObjectLambdaInput`](crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput).
-    pub fn build(self) -> Result<crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_access_point_policy_for_object_lambda::DeleteAccessPointPolicyForObjectLambdaInput {
                 account_id: self.account_id
@@ -65,4 +67,3 @@ impl DeleteAccessPointPolicyForObjectLambdaInputBuilder {
         )
     }
 }
-

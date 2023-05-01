@@ -3,26 +3,29 @@
 /// <p>Contains the output of CancelSpotInstanceRequests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelSpotInstanceRequestsOutput  {
+pub struct CancelSpotInstanceRequestsOutput {
     /// <p>One or more Spot Instance requests.</p>
     #[doc(hidden)]
-    pub cancelled_spot_instance_requests: std::option::Option<std::vec::Vec<crate::types::CancelledSpotInstanceRequest>>,
+    pub cancelled_spot_instance_requests:
+        std::option::Option<std::vec::Vec<crate::types::CancelledSpotInstanceRequest>>,
     _request_id: Option<String>,
 }
 impl CancelSpotInstanceRequestsOutput {
     /// <p>One or more Spot Instance requests.</p>
-    pub fn cancelled_spot_instance_requests(&self) -> std::option::Option<& [crate::types::CancelledSpotInstanceRequest]> {
+    pub fn cancelled_spot_instance_requests(
+        &self,
+    ) -> std::option::Option<&[crate::types::CancelledSpotInstanceRequest]> {
         self.cancelled_spot_instance_requests.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CancelSpotInstanceRequestsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CancelSpotInstanceRequestsOutput {
     /// Creates a new builder-style object to manufacture [`CancelSpotInstanceRequestsOutput`](crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsOutput).
-    pub fn builder() -> crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsOutputBuilder{
         crate::operation::cancel_spot_instance_requests::builders::CancelSpotInstanceRequestsOutputBuilder::default()
     }
 }
@@ -31,7 +34,8 @@ impl CancelSpotInstanceRequestsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CancelSpotInstanceRequestsOutputBuilder {
-    pub(crate) cancelled_spot_instance_requests: std::option::Option<std::vec::Vec<crate::types::CancelledSpotInstanceRequest>>,
+    pub(crate) cancelled_spot_instance_requests:
+        std::option::Option<std::vec::Vec<crate::types::CancelledSpotInstanceRequest>>,
     _request_id: Option<String>,
 }
 impl CancelSpotInstanceRequestsOutputBuilder {
@@ -40,32 +44,39 @@ impl CancelSpotInstanceRequestsOutputBuilder {
     /// To override the contents of this collection use [`set_cancelled_spot_instance_requests`](Self::set_cancelled_spot_instance_requests).
     ///
     /// <p>One or more Spot Instance requests.</p>
-    pub fn cancelled_spot_instance_requests(mut self, input: crate::types::CancelledSpotInstanceRequest) -> Self {
+    pub fn cancelled_spot_instance_requests(
+        mut self,
+        input: crate::types::CancelledSpotInstanceRequest,
+    ) -> Self {
         let mut v = self.cancelled_spot_instance_requests.unwrap_or_default();
-                        v.push(input);
-                        self.cancelled_spot_instance_requests = Some(v);
-                        self
+        v.push(input);
+        self.cancelled_spot_instance_requests = Some(v);
+        self
     }
     /// <p>One or more Spot Instance requests.</p>
-    pub fn set_cancelled_spot_instance_requests(mut self, input: std::option::Option<std::vec::Vec<crate::types::CancelledSpotInstanceRequest>>) -> Self {
-        self.cancelled_spot_instance_requests = input; self
+    pub fn set_cancelled_spot_instance_requests(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CancelledSpotInstanceRequest>>,
+    ) -> Self {
+        self.cancelled_spot_instance_requests = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CancelSpotInstanceRequestsOutput`](crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsOutput).
-    pub fn build(self) -> crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsOutput {
         crate::operation::cancel_spot_instance_requests::CancelSpotInstanceRequestsOutput {
-            cancelled_spot_instance_requests: self.cancelled_spot_instance_requests
-            ,
+            cancelled_spot_instance_requests: self.cancelled_spot_instance_requests,
             _request_id: self._request_id,
         }
     }
 }
-

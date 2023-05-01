@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointGroupInput  {
+pub struct DescribeEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
     #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-    pub fn endpoint_group_arn(&self) -> std::option::Option<& str> {
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
         self.endpoint_group_arn.as_deref()
     }
 }
 impl DescribeEndpointGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointGroupInput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupInput).
-    pub fn builder() -> crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupInputBuilder
+    {
         crate::operation::describe_endpoint_group::builders::DescribeEndpointGroupInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeEndpointGroupInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-    pub fn set_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_group_arn = input; self
+    pub fn set_endpoint_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.endpoint_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeEndpointGroupInput`](crate::operation::describe_endpoint_group::DescribeEndpointGroupInput).
-    pub fn build(self) -> Result<crate::operation::describe_endpoint_group::DescribeEndpointGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_endpoint_group::DescribeEndpointGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_endpoint_group::DescribeEndpointGroupInput {
-                endpoint_group_arn: self.endpoint_group_arn
-                ,
-            }
+                endpoint_group_arn: self.endpoint_group_arn,
+            },
         )
     }
 }
-

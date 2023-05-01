@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHarvestJobsInput  {
+pub struct ListHarvestJobsInput {
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
     #[doc(hidden)]
     pub include_channel_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListHarvestJobsInput  {
 }
 impl ListHarvestJobsInput {
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
-    pub fn include_channel_id(&self) -> std::option::Option<& str> {
+    pub fn include_channel_id(&self) -> std::option::Option<&str> {
         self.include_channel_id.as_deref()
     }
     /// When specified, the request will return only HarvestJobs in the given status.
-    pub fn include_status(&self) -> std::option::Option<& str> {
+    pub fn include_status(&self) -> std::option::Option<&str> {
         self.include_status.as_deref()
     }
     /// The upper bound on the number of records to return.
@@ -30,7 +30,7 @@ impl ListHarvestJobsInput {
         self.max_results
     }
     /// A token used to resume pagination from the end of a previous request.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -57,8 +57,12 @@ impl ListHarvestJobsInputBuilder {
         self
     }
     /// When specified, the request will return only HarvestJobs associated with the given Channel ID.
-    pub fn set_include_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.include_channel_id = input; self
+    pub fn set_include_channel_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.include_channel_id = input;
+        self
     }
     /// When specified, the request will return only HarvestJobs in the given status.
     pub fn include_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +71,8 @@ impl ListHarvestJobsInputBuilder {
     }
     /// When specified, the request will return only HarvestJobs in the given status.
     pub fn set_include_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.include_status = input; self
+        self.include_status = input;
+        self
     }
     /// The upper bound on the number of records to return.
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,7 +81,8 @@ impl ListHarvestJobsInputBuilder {
     }
     /// The upper bound on the number of records to return.
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// A token used to resume pagination from the end of a previous request.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +91,21 @@ impl ListHarvestJobsInputBuilder {
     }
     /// A token used to resume pagination from the end of a previous request.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListHarvestJobsInput`](crate::operation::list_harvest_jobs::ListHarvestJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_harvest_jobs::ListHarvestJobsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_harvest_jobs::ListHarvestJobsInput {
-                include_channel_id: self.include_channel_id
-                ,
-                include_status: self.include_status
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_harvest_jobs::ListHarvestJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_harvest_jobs::ListHarvestJobsInput {
+            include_channel_id: self.include_channel_id,
+            include_status: self.include_status,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

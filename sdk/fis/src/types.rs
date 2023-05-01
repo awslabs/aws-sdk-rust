@@ -164,4 +164,3 @@ pub mod builders;
 
 /// Error types that AWS Fault Injection Simulator can respond with.
 pub mod error;
-

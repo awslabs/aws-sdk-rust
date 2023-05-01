@@ -3,7 +3,7 @@
 /// <p>A dimension name and value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DimensionNameValue  {
+pub struct DimensionNameValue {
     /// <p>The name of the dimension.</p>
     #[doc(hidden)]
     pub dimension_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DimensionNameValue  {
 }
 impl DimensionNameValue {
     /// <p>The name of the dimension.</p>
-    pub fn dimension_name(&self) -> std::option::Option<& str> {
+    pub fn dimension_name(&self) -> std::option::Option<&str> {
         self.dimension_name.as_deref()
     }
     /// <p>The value of the dimension.</p>
-    pub fn dimension_value(&self) -> std::option::Option<& str> {
+    pub fn dimension_value(&self) -> std::option::Option<&str> {
         self.dimension_value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DimensionNameValueBuilder {
     }
     /// <p>The name of the dimension.</p>
     pub fn set_dimension_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dimension_name = input; self
+        self.dimension_name = input;
+        self
     }
     /// <p>The value of the dimension.</p>
     pub fn dimension_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl DimensionNameValueBuilder {
     }
     /// <p>The value of the dimension.</p>
     pub fn set_dimension_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dimension_value = input; self
+        self.dimension_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`DimensionNameValue`](crate::types::DimensionNameValue).
     pub fn build(self) -> crate::types::DimensionNameValue {
         crate::types::DimensionNameValue {
-            dimension_name: self.dimension_name
-            ,
-            dimension_value: self.dimension_value
-            ,
+            dimension_name: self.dimension_name,
+            dimension_value: self.dimension_value,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeactivateUserInput  {
+pub struct DeactivateUserInput {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct DeactivateUserInput  {
 }
 impl DeactivateUserInput {
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
 }
-impl  std::fmt::Debug for DeactivateUserInput  {
+impl std::fmt::Debug for DeactivateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeactivateUserInput");
         formatter.field("user_id", &self.user_id);
@@ -50,7 +50,8 @@ impl DeactivateUserInputBuilder {
     }
     /// <p>The ID of the user.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,19 +59,24 @@ impl DeactivateUserInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeactivateUserInput`](crate::operation::deactivate_user::DeactivateUserInput).
-    pub fn build(self) -> Result<crate::operation::deactivate_user::DeactivateUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::deactivate_user::DeactivateUserInput {
-                user_id: self.user_id
-                ,
-                authentication_token: self.authentication_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deactivate_user::DeactivateUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::deactivate_user::DeactivateUserInput {
+            user_id: self.user_id,
+            authentication_token: self.authentication_token,
+        })
     }
 }
 impl std::fmt::Debug for DeactivateUserInputBuilder {
@@ -81,4 +87,3 @@ impl std::fmt::Debug for DeactivateUserInputBuilder {
         formatter.finish()
     }
 }
-

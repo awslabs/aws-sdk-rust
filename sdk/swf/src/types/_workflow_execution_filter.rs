@@ -3,14 +3,14 @@
 /// <p>Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkflowExecutionFilter  {
+pub struct WorkflowExecutionFilter {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
     #[doc(hidden)]
     pub workflow_id: std::option::Option<std::string::String>,
 }
 impl WorkflowExecutionFilter {
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
-    pub fn workflow_id(&self) -> std::option::Option<& str> {
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl WorkflowExecutionFilterBuilder {
     }
     /// <p>The workflowId to pass of match the criteria of this filter.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input; self
+        self.workflow_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionFilter`](crate::types::WorkflowExecutionFilter).
     pub fn build(self) -> crate::types::WorkflowExecutionFilter {
         crate::types::WorkflowExecutionFilter {
-            workflow_id: self.workflow_id
-            ,
+            workflow_id: self.workflow_id,
         }
     }
 }
-

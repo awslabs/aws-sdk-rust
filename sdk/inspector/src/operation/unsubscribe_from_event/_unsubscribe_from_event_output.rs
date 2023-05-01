@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsubscribeFromEventOutput  {
+pub struct UnsubscribeFromEventOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UnsubscribeFromEventOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UnsubscribeFromEventOutput {
     /// Creates a new builder-style object to manufacture [`UnsubscribeFromEventOutput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventOutput).
-    pub fn builder() -> crate::operation::unsubscribe_from_event::builders::UnsubscribeFromEventOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::unsubscribe_from_event::builders::UnsubscribeFromEventOutputBuilder {
         crate::operation::unsubscribe_from_event::builders::UnsubscribeFromEventOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct UnsubscribeFromEventOutputBuilder {
 }
 impl UnsubscribeFromEventOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UnsubscribeFromEventOutput`](crate::operation::unsubscribe_from_event::UnsubscribeFromEventOutput).
     pub fn build(self) -> crate::operation::unsubscribe_from_event::UnsubscribeFromEventOutput {
         crate::operation::unsubscribe_from_event::UnsubscribeFromEventOutput {
@@ -40,4 +41,3 @@ impl UnsubscribeFromEventOutputBuilder {
         }
     }
 }
-

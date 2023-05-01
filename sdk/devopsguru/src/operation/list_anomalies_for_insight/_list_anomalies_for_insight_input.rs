@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnomaliesForInsightInput  {
+pub struct ListAnomaliesForInsightInput {
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     #[doc(hidden)]
     pub insight_id: std::option::Option<std::string::String>,
@@ -24,11 +24,11 @@ pub struct ListAnomaliesForInsightInput  {
 }
 impl ListAnomaliesForInsightInput {
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
-    pub fn insight_id(&self) -> std::option::Option<& str> {
+    pub fn insight_id(&self) -> std::option::Option<&str> {
         self.insight_id.as_deref()
     }
     /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
-    pub fn start_time_range(&self) -> std::option::Option<& crate::types::StartTimeRange> {
+    pub fn start_time_range(&self) -> std::option::Option<&crate::types::StartTimeRange> {
         self.start_time_range.as_ref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -36,21 +36,23 @@ impl ListAnomaliesForInsightInput {
         self.max_results
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p> Specifies one or more service names that are used to list anomalies. </p>
-    pub fn filters(&self) -> std::option::Option<& crate::types::ListAnomaliesForInsightFilters> {
+    pub fn filters(&self) -> std::option::Option<&crate::types::ListAnomaliesForInsightFilters> {
         self.filters.as_ref()
     }
 }
 impl ListAnomaliesForInsightInput {
     /// Creates a new builder-style object to manufacture [`ListAnomaliesForInsightInput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput).
-    pub fn builder() -> crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder
+    {
         crate::operation::list_anomalies_for_insight::builders::ListAnomaliesForInsightInputBuilder::default()
     }
 }
@@ -74,7 +76,8 @@ impl ListAnomaliesForInsightInputBuilder {
     }
     /// <p> The ID of the insight. The returned anomalies belong to this insight. </p>
     pub fn set_insight_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insight_id = input; self
+        self.insight_id = input;
+        self
     }
     /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
     pub fn start_time_range(mut self, input: crate::types::StartTimeRange) -> Self {
@@ -82,8 +85,12 @@ impl ListAnomaliesForInsightInputBuilder {
         self
     }
     /// <p> A time range used to specify when the requested anomalies started. All returned anomalies started during this time range. </p>
-    pub fn set_start_time_range(mut self, input: std::option::Option<crate::types::StartTimeRange>) -> Self {
-        self.start_time_range = input; self
+    pub fn set_start_time_range(
+        mut self,
+        input: std::option::Option<crate::types::StartTimeRange>,
+    ) -> Self {
+        self.start_time_range = input;
+        self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -92,7 +99,8 @@ impl ListAnomaliesForInsightInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +109,8 @@ impl ListAnomaliesForInsightInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services account. </p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +119,8 @@ impl ListAnomaliesForInsightInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account. </p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p> Specifies one or more service names that are used to list anomalies. </p>
     pub fn filters(mut self, input: crate::types::ListAnomaliesForInsightFilters) -> Self {
@@ -118,27 +128,29 @@ impl ListAnomaliesForInsightInputBuilder {
         self
     }
     /// <p> Specifies one or more service names that are used to list anomalies. </p>
-    pub fn set_filters(mut self, input: std::option::Option<crate::types::ListAnomaliesForInsightFilters>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<crate::types::ListAnomaliesForInsightFilters>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAnomaliesForInsightInput`](crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput).
-    pub fn build(self) -> Result<crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightInput {
-                insight_id: self.insight_id
-                ,
-                start_time_range: self.start_time_range
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                account_id: self.account_id
-                ,
-                filters: self.filters
-                ,
-            }
+                insight_id: self.insight_id,
+                start_time_range: self.start_time_range,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                account_id: self.account_id,
+                filters: self.filters,
+            },
         )
     }
 }
-

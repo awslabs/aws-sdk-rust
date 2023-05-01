@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserGroupInput  {
+pub struct DeleteUserGroupInput {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
     pub user_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteUserGroupInput {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(&self) -> std::option::Option<& str> {
+    pub fn user_group_id(&self) -> std::option::Option<&str> {
         self.user_group_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteUserGroupInputBuilder {
     }
     /// <p>The ID of the user group.</p>
     pub fn set_user_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_group_id = input; self
+        self.user_group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteUserGroupInput`](crate::operation::delete_user_group::DeleteUserGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_user_group::DeleteUserGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_user_group::DeleteUserGroupInput {
-                user_group_id: self.user_group_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_user_group::DeleteUserGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_user_group::DeleteUserGroupInput {
+            user_group_id: self.user_group_id,
+        })
     }
 }
-

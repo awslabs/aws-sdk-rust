@@ -4,58 +4,77 @@ pub use crate::operation::search_users::_search_users_output::SearchUsersOutputB
 pub use crate::operation::search_users::_search_users_input::SearchUsersInputBuilder;
 
 /// Fluent builder constructing a request to `SearchUsers`.
-/// 
-/// <p>Searches users in an Amazon Connect instance, with optional filtering.</p> <note> 
-/// <p> <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p> 
+///
+/// <p>Searches users in an Amazon Connect instance, with optional filtering.</p> <note>
+/// <p> <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. </p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchUsersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_users::builders::SearchUsersInputBuilder,
+    inner: crate::operation::search_users::builders::SearchUsersInputBuilder,
 }
-impl SearchUsersFluentBuilder  {
+impl SearchUsersFluentBuilder {
     /// Creates a new `SearchUsers`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::search_users::SearchUsers, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::search_users::SearchUsersError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::search_users::SearchUsersOutput, aws_smithy_http::result::SdkError<crate::operation::search_users::SearchUsersError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_users::SearchUsers,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::search_users::SearchUsersError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::search_users::SearchUsersOutput,
+        aws_smithy_http::result::SdkError<crate::operation::search_users::SearchUsersError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::search_users::paginator::SearchUsersPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::search_users::paginator::SearchUsersPaginator {
-                                crate::operation::search_users::paginator::SearchUsersPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_users::paginator::SearchUsersPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::search_users::paginator::SearchUsersPaginator {
+        crate::operation::search_users::paginator::SearchUsersPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -92,23 +111,28 @@ impl SearchUsersFluentBuilder  {
         self
     }
     /// <p>Filters to be applied to search results.</p>
-    pub fn set_search_filter(mut self, input: std::option::Option<crate::types::UserSearchFilter>) -> Self {
+    pub fn set_search_filter(
+        mut self,
+        input: std::option::Option<crate::types::UserSearchFilter>,
+    ) -> Self {
         self.inner = self.inner.set_search_filter(input);
         self
     }
-    /// <p>The search criteria to be used to return users.</p> <note> 
-    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p> 
+    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
     /// </note>
     pub fn search_criteria(mut self, input: crate::types::UserSearchCriteria) -> Self {
         self.inner = self.inner.search_criteria(input);
         self
     }
-    /// <p>The search criteria to be used to return users.</p> <note> 
-    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p> 
+    /// <p>The search criteria to be used to return users.</p> <note>
+    /// <p>The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results. </p>
     /// </note>
-    pub fn set_search_criteria(mut self, input: std::option::Option<crate::types::UserSearchCriteria>) -> Self {
+    pub fn set_search_criteria(
+        mut self,
+        input: std::option::Option<crate::types::UserSearchCriteria>,
+    ) -> Self {
         self.inner = self.inner.set_search_criteria(input);
         self
     }
 }
-

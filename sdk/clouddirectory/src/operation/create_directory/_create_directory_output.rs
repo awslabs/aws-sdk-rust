@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDirectoryOutput  {
+pub struct CreateDirectoryOutput {
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -19,27 +19,27 @@ pub struct CreateDirectoryOutput  {
 }
 impl CreateDirectoryOutput {
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
-    pub fn directory_arn(&self) -> std::option::Option<& str> {
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
     /// <p>The name of the <code>Directory</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The root object node of the created directory.</p>
-    pub fn object_identifier(&self) -> std::option::Option<& str> {
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
         self.object_identifier.as_deref()
     }
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
-    pub fn applied_schema_arn(&self) -> std::option::Option<& str> {
+    pub fn applied_schema_arn(&self) -> std::option::Option<&str> {
         self.applied_schema_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDirectoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`CreateDirectoryOutput`](crate::operation::create_directory::CreateDirectoryOutput).
     pub fn builder() -> crate::operation::create_directory::builders::CreateDirectoryOutputBuilder {
@@ -65,7 +65,8 @@ impl CreateDirectoryOutputBuilder {
     }
     /// <p>The ARN that is associated with the <code>Directory</code>. For more information, see <code>arns</code>.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input; self
+        self.directory_arn = input;
+        self
     }
     /// <p>The name of the <code>Directory</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +75,8 @@ impl CreateDirectoryOutputBuilder {
     }
     /// <p>The name of the <code>Directory</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The root object node of the created directory.</p>
     pub fn object_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +84,12 @@ impl CreateDirectoryOutputBuilder {
         self
     }
     /// <p>The root object node of the created directory.</p>
-    pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_identifier = input; self
+    pub fn set_object_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.object_identifier = input;
+        self
     }
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
     pub fn applied_schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,31 +97,30 @@ impl CreateDirectoryOutputBuilder {
         self
     }
     /// <p>The ARN of the published schema in the <code>Directory</code>. Once a published schema is copied into the directory, it has its own ARN, which is referred to applied schema ARN. For more information, see <code>arns</code>.</p>
-    pub fn set_applied_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.applied_schema_arn = input; self
+    pub fn set_applied_schema_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.applied_schema_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDirectoryOutput`](crate::operation::create_directory::CreateDirectoryOutput).
     pub fn build(self) -> crate::operation::create_directory::CreateDirectoryOutput {
         crate::operation::create_directory::CreateDirectoryOutput {
-            directory_arn: self.directory_arn
-            ,
-            name: self.name
-            ,
-            object_identifier: self.object_identifier
-            ,
-            applied_schema_arn: self.applied_schema_arn
-            ,
+            directory_arn: self.directory_arn,
+            name: self.name,
+            object_identifier: self.object_identifier,
+            applied_schema_arn: self.applied_schema_arn,
             _request_id: self._request_id,
         }
     }
 }
-

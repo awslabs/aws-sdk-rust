@@ -3,7 +3,7 @@
 /// <p>Specifies a character set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CharacterSet  {
+pub struct CharacterSet {
     /// <p>The name of the character set.</p>
     #[doc(hidden)]
     pub character_set_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CharacterSet  {
 }
 impl CharacterSet {
     /// <p>The name of the character set.</p>
-    pub fn character_set_name(&self) -> std::option::Option<& str> {
+    pub fn character_set_name(&self) -> std::option::Option<&str> {
         self.character_set_name.as_deref()
     }
     /// <p>The description of the character set.</p>
-    pub fn character_set_description(&self) -> std::option::Option<& str> {
+    pub fn character_set_description(&self) -> std::option::Option<&str> {
         self.character_set_description.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl CharacterSetBuilder {
         self
     }
     /// <p>The name of the character set.</p>
-    pub fn set_character_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.character_set_name = input; self
+    pub fn set_character_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.character_set_name = input;
+        self
     }
     /// <p>The description of the character set.</p>
     pub fn character_set_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +55,18 @@ impl CharacterSetBuilder {
         self
     }
     /// <p>The description of the character set.</p>
-    pub fn set_character_set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.character_set_description = input; self
+    pub fn set_character_set_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.character_set_description = input;
+        self
     }
     /// Consumes the builder and constructs a [`CharacterSet`](crate::types::CharacterSet).
     pub fn build(self) -> crate::types::CharacterSet {
         crate::types::CharacterSet {
-            character_set_name: self.character_set_name
-            ,
-            character_set_description: self.character_set_description
-            ,
+            character_set_name: self.character_set_name,
+            character_set_description: self.character_set_description,
         }
     }
 }
-

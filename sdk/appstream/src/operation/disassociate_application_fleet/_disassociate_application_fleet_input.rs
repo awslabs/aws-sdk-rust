@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateApplicationFleetInput  {
+pub struct DisassociateApplicationFleetInput {
     /// <p>The name of the fleet.</p>
     #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociateApplicationFleetInput  {
 }
 impl DisassociateApplicationFleetInput {
     /// <p>The name of the fleet.</p>
-    pub fn fleet_name(&self) -> std::option::Option<& str> {
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
         self.fleet_name.as_deref()
     }
     /// <p>The ARN of the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<& str> {
+    pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
 }
 impl DisassociateApplicationFleetInput {
     /// Creates a new builder-style object to manufacture [`DisassociateApplicationFleetInput`](crate::operation::disassociate_application_fleet::DisassociateApplicationFleetInput).
-    pub fn builder() -> crate::operation::disassociate_application_fleet::builders::DisassociateApplicationFleetInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_application_fleet::builders::DisassociateApplicationFleetInputBuilder{
         crate::operation::disassociate_application_fleet::builders::DisassociateApplicationFleetInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DisassociateApplicationFleetInputBuilder {
     }
     /// <p>The name of the fleet.</p>
     pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_name = input; self
+        self.fleet_name = input;
+        self
     }
     /// <p>The ARN of the application.</p>
     pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,21 @@ impl DisassociateApplicationFleetInputBuilder {
     }
     /// <p>The ARN of the application.</p>
     pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_arn = input; self
+        self.application_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateApplicationFleetInput`](crate::operation::disassociate_application_fleet::DisassociateApplicationFleetInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_application_fleet::DisassociateApplicationFleetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_application_fleet::DisassociateApplicationFleetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disassociate_application_fleet::DisassociateApplicationFleetInput {
-                fleet_name: self.fleet_name
-                ,
-                application_arn: self.application_arn
-                ,
-            }
+                fleet_name: self.fleet_name,
+                application_arn: self.application_arn,
+            },
         )
     }
 }
-

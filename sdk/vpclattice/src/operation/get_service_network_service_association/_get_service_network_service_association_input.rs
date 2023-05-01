@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceNetworkServiceAssociationInput  {
+pub struct GetServiceNetworkServiceAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
     #[doc(hidden)]
     pub service_network_service_association_identifier: std::option::Option<std::string::String>,
 }
 impl GetServiceNetworkServiceAssociationInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_service_association_identifier(&self) -> std::option::Option<& str> {
-        self.service_network_service_association_identifier.as_deref()
+    pub fn service_network_service_association_identifier(&self) -> std::option::Option<&str> {
+        self.service_network_service_association_identifier
+            .as_deref()
     }
 }
 impl GetServiceNetworkServiceAssociationInput {
     /// Creates a new builder-style object to manufacture [`GetServiceNetworkServiceAssociationInput`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput).
-    pub fn builder() -> crate::operation::get_service_network_service_association::builders::GetServiceNetworkServiceAssociationInputBuilder {
+    pub fn builder() -> crate::operation::get_service_network_service_association::builders::GetServiceNetworkServiceAssociationInputBuilder{
         crate::operation::get_service_network_service_association::builders::GetServiceNetworkServiceAssociationInputBuilder::default()
     }
 }
@@ -24,20 +25,28 @@ impl GetServiceNetworkServiceAssociationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetServiceNetworkServiceAssociationInputBuilder {
-    pub(crate) service_network_service_association_identifier: std::option::Option<std::string::String>,
+    pub(crate) service_network_service_association_identifier:
+        std::option::Option<std::string::String>,
 }
 impl GetServiceNetworkServiceAssociationInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn service_network_service_association_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn service_network_service_association_identifier(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.service_network_service_association_identifier = Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the association.</p>
-    pub fn set_service_network_service_association_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_network_service_association_identifier = input; self
+    pub fn set_service_network_service_association_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_network_service_association_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetServiceNetworkServiceAssociationInput`](crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput).
-    pub fn build(self) -> Result<crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_service_network_service_association::GetServiceNetworkServiceAssociationInput {
                 service_network_service_association_identifier: self.service_network_service_association_identifier
@@ -46,4 +55,3 @@ impl GetServiceNetworkServiceAssociationInputBuilder {
         )
     }
 }
-

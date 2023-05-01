@@ -256,4 +256,3 @@ pub mod builders;
 
 /// Error types that Managed Streaming for Kafka can respond with.
 pub mod error;
-

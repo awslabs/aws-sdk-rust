@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFileOutput  {
+pub struct GetFileOutput {
     /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
     #[doc(hidden)]
     pub commit_id: std::option::Option<std::string::String>,
@@ -12,8 +12,8 @@ pub struct GetFileOutput  {
     /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
-    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note> 
-    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p> 
+    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
+    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
     #[doc(hidden)]
     pub file_mode: std::option::Option<crate::types::FileModeTypeEnum>,
@@ -27,21 +27,21 @@ pub struct GetFileOutput  {
 }
 impl GetFileOutput {
     /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
-    pub fn commit_id(&self) -> std::option::Option<& str> {
+    pub fn commit_id(&self) -> std::option::Option<&str> {
         self.commit_id.as_deref()
     }
     /// <p>The blob ID of the object that represents the file content.</p>
-    pub fn blob_id(&self) -> std::option::Option<& str> {
+    pub fn blob_id(&self) -> std::option::Option<&str> {
         self.blob_id.as_deref()
     }
     /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<& str> {
+    pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
-    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note> 
-    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p> 
+    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
+    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
-    pub fn file_mode(&self) -> std::option::Option<& crate::types::FileModeTypeEnum> {
+    pub fn file_mode(&self) -> std::option::Option<&crate::types::FileModeTypeEnum> {
         self.file_mode.as_ref()
     }
     /// <p>The size of the contents of the file, in bytes.</p>
@@ -49,15 +49,15 @@ impl GetFileOutput {
         self.file_size
     }
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
-    pub fn file_content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn file_content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.file_content.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetFileOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetFileOutput {
     /// Creates a new builder-style object to manufacture [`GetFileOutput`](crate::operation::get_file::GetFileOutput).
     pub fn builder() -> crate::operation::get_file::builders::GetFileOutputBuilder {
@@ -85,7 +85,8 @@ impl GetFileOutputBuilder {
     }
     /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
     pub fn set_commit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.commit_id = input; self
+        self.commit_id = input;
+        self
     }
     /// <p>The blob ID of the object that represents the file content.</p>
     pub fn blob_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +95,8 @@ impl GetFileOutputBuilder {
     }
     /// <p>The blob ID of the object that represents the file content.</p>
     pub fn set_blob_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.blob_id = input; self
+        self.blob_id = input;
+        self
     }
     /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
     pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,20 +105,25 @@ impl GetFileOutputBuilder {
     }
     /// <p>The fully qualified path to the specified file. Returns the name and extension of the file.</p>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_path = input; self
+        self.file_path = input;
+        self
     }
-    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note> 
-    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p> 
+    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
+    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
     pub fn file_mode(mut self, input: crate::types::FileModeTypeEnum) -> Self {
         self.file_mode = Some(input);
         self
     }
-    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note> 
-    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p> 
+    /// <p>The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.</p> <note>
+    /// <p>The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See the supported return values.</p>
     /// </note>
-    pub fn set_file_mode(mut self, input: std::option::Option<crate::types::FileModeTypeEnum>) -> Self {
-        self.file_mode = input; self
+    pub fn set_file_mode(
+        mut self,
+        input: std::option::Option<crate::types::FileModeTypeEnum>,
+    ) -> Self {
+        self.file_mode = input;
+        self
     }
     /// <p>The size of the contents of the file, in bytes.</p>
     pub fn file_size(mut self, input: i64) -> Self {
@@ -125,7 +132,8 @@ impl GetFileOutputBuilder {
     }
     /// <p>The size of the contents of the file, in bytes.</p>
     pub fn set_file_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.file_size = input; self
+        self.file_size = input;
+        self
     }
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
     pub fn file_content(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -134,35 +142,28 @@ impl GetFileOutputBuilder {
     }
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
     pub fn set_file_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.file_content = input; self
+        self.file_content = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetFileOutput`](crate::operation::get_file::GetFileOutput).
     pub fn build(self) -> crate::operation::get_file::GetFileOutput {
         crate::operation::get_file::GetFileOutput {
-            commit_id: self.commit_id
-            ,
-            blob_id: self.blob_id
-            ,
-            file_path: self.file_path
-            ,
-            file_mode: self.file_mode
-            ,
-            file_size: self.file_size
-                .unwrap_or_default()
-            ,
-            file_content: self.file_content
-            ,
+            commit_id: self.commit_id,
+            blob_id: self.blob_id,
+            file_path: self.file_path,
+            file_mode: self.file_mode,
+            file_size: self.file_size.unwrap_or_default(),
+            file_content: self.file_content,
             _request_id: self._request_id,
         }
     }
 }
-

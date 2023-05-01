@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDiscovererInput  {
+pub struct DeleteDiscovererInput {
     /// <p>The ID of the discoverer.</p>
     #[doc(hidden)]
     pub discoverer_id: std::option::Option<std::string::String>,
 }
 impl DeleteDiscovererInput {
     /// <p>The ID of the discoverer.</p>
-    pub fn discoverer_id(&self) -> std::option::Option<& str> {
+    pub fn discoverer_id(&self) -> std::option::Option<&str> {
         self.discoverer_id.as_deref()
     }
 }
 impl DeleteDiscovererInput {
     /// Creates a new builder-style object to manufacture [`DeleteDiscovererInput`](crate::operation::delete_discoverer::DeleteDiscovererInput).
-    pub fn builder() -> crate::operation::delete_discoverer::builders::DeleteDiscovererInputBuilder {
+    pub fn builder() -> crate::operation::delete_discoverer::builders::DeleteDiscovererInputBuilder
+    {
         crate::operation::delete_discoverer::builders::DeleteDiscovererInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl DeleteDiscovererInputBuilder {
     }
     /// <p>The ID of the discoverer.</p>
     pub fn set_discoverer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.discoverer_id = input; self
+        self.discoverer_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDiscovererInput`](crate::operation::delete_discoverer::DeleteDiscovererInput).
-    pub fn build(self) -> Result<crate::operation::delete_discoverer::DeleteDiscovererInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_discoverer::DeleteDiscovererInput {
-                discoverer_id: self.discoverer_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_discoverer::DeleteDiscovererInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_discoverer::DeleteDiscovererInput {
+            discoverer_id: self.discoverer_id,
+        })
     }
 }
-

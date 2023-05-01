@@ -3,14 +3,14 @@
 /// <p>Container for <code>TagSet</code> elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tagging  {
+pub struct Tagging {
     /// <p>A collection for a set of tags</p>
     #[doc(hidden)]
     pub tag_set: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl Tagging {
     /// <p>A collection for a set of tags</p>
-    pub fn tag_set(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tag_set(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tag_set.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl TaggingBuilder {
     /// <p>A collection for a set of tags</p>
     pub fn tag_set(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_set.unwrap_or_default();
-                        v.push(input);
-                        self.tag_set = Some(v);
-                        self
+        v.push(input);
+        self.tag_set = Some(v);
+        self
     }
     /// <p>A collection for a set of tags</p>
-    pub fn set_tag_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_set = input; self
+    pub fn set_tag_set(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tag_set = input;
+        self
     }
     /// Consumes the builder and constructs a [`Tagging`](crate::types::Tagging).
     pub fn build(self) -> crate::types::Tagging {
         crate::types::Tagging {
-            tag_set: self.tag_set
-            ,
+            tag_set: self.tag_set,
         }
     }
 }
-

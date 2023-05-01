@@ -3,8 +3,7 @@
 /// <p>Represents the output of a <code>DeleteObject</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteObjectResponse  {
-}
+pub struct BatchDeleteObjectResponse {}
 impl BatchDeleteObjectResponse {
     /// Creates a new builder-style object to manufacture [`BatchDeleteObjectResponse`](crate::types::BatchDeleteObjectResponse).
     pub fn builder() -> crate::types::builders::BatchDeleteObjectResponseBuilder {
@@ -15,13 +14,10 @@ impl BatchDeleteObjectResponse {
 /// A builder for [`BatchDeleteObjectResponse`](crate::types::BatchDeleteObjectResponse).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct BatchDeleteObjectResponseBuilder {
-}
+pub struct BatchDeleteObjectResponseBuilder {}
 impl BatchDeleteObjectResponseBuilder {
     /// Consumes the builder and constructs a [`BatchDeleteObjectResponse`](crate::types::BatchDeleteObjectResponse).
     pub fn build(self) -> crate::types::BatchDeleteObjectResponse {
-        crate::types::BatchDeleteObjectResponse {
-        }
+        crate::types::BatchDeleteObjectResponse {}
     }
 }
-

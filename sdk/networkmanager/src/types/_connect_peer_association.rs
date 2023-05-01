@@ -3,7 +3,7 @@
 /// <p>Describes a core network Connect peer association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectPeerAssociation  {
+pub struct ConnectPeerAssociation {
     /// <p>The ID of the Connect peer.</p>
     #[doc(hidden)]
     pub connect_peer_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct ConnectPeerAssociation  {
 }
 impl ConnectPeerAssociation {
     /// <p>The ID of the Connect peer.</p>
-    pub fn connect_peer_id(&self) -> std::option::Option<& str> {
+    pub fn connect_peer_id(&self) -> std::option::Option<&str> {
         self.connect_peer_id.as_deref()
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the device to connect to.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The ID of the link.</p>
-    pub fn link_id(&self) -> std::option::Option<& str> {
+    pub fn link_id(&self) -> std::option::Option<&str> {
         self.link_id.as_deref()
     }
     /// <p>The state of the Connect peer association.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ConnectPeerAssociationState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ConnectPeerAssociationState> {
         self.state.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl ConnectPeerAssociationBuilder {
     }
     /// <p>The ID of the Connect peer.</p>
     pub fn set_connect_peer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connect_peer_id = input; self
+        self.connect_peer_id = input;
+        self
     }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +76,12 @@ impl ConnectPeerAssociationBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// <p>The ID of the device to connect to.</p>
     pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +90,8 @@ impl ConnectPeerAssociationBuilder {
     }
     /// <p>The ID of the device to connect to.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// <p>The ID of the link.</p>
     pub fn link_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +100,8 @@ impl ConnectPeerAssociationBuilder {
     }
     /// <p>The ID of the link.</p>
     pub fn set_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.link_id = input; self
+        self.link_id = input;
+        self
     }
     /// <p>The state of the Connect peer association.</p>
     pub fn state(mut self, input: crate::types::ConnectPeerAssociationState) -> Self {
@@ -102,23 +109,21 @@ impl ConnectPeerAssociationBuilder {
         self
     }
     /// <p>The state of the Connect peer association.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ConnectPeerAssociationState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::ConnectPeerAssociationState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConnectPeerAssociation`](crate::types::ConnectPeerAssociation).
     pub fn build(self) -> crate::types::ConnectPeerAssociation {
         crate::types::ConnectPeerAssociation {
-            connect_peer_id: self.connect_peer_id
-            ,
-            global_network_id: self.global_network_id
-            ,
-            device_id: self.device_id
-            ,
-            link_id: self.link_id
-            ,
-            state: self.state
-            ,
+            connect_peer_id: self.connect_peer_id,
+            global_network_id: self.global_network_id,
+            device_id: self.device_id,
+            link_id: self.link_id,
+            state: self.state,
         }
     }
 }
-

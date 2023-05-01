@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoggingConfigurationInput  {
+pub struct DeleteLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be deleted.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl DeleteLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be deleted.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
 }
 impl DeleteLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder{
         crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DeleteLoggingConfigurationInputBuilder {
     }
     /// <p>Identifier of the logging configuration to be deleted.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput {
-                identifier: self.identifier
-                ,
-            }
+                identifier: self.identifier,
+            },
         )
     }
 }
-

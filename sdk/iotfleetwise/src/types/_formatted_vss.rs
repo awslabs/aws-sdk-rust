@@ -21,7 +21,11 @@ impl FormattedVss {
     /// Tries to convert the enum instance into [`VssJson`](crate::types::FormattedVss::VssJson), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_vss_json(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let FormattedVss::VssJson(val) = &self { Ok(val) } else { Err(self) }
+        if let FormattedVss::VssJson(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`VssJson`](crate::types::FormattedVss::VssJson).
     pub fn is_vss_json(&self) -> bool {
@@ -32,4 +36,3 @@ impl FormattedVss {
         matches!(self, Self::Unknown)
     }
 }
-

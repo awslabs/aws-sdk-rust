@@ -24,4 +24,3 @@ pub use crate::types::_lake_configuration_response::LakeConfigurationResponseBui
 pub use crate::types::_update_status::UpdateStatusBuilder;
 
 pub use crate::types::_last_update_failure::LastUpdateFailureBuilder;
-

@@ -3,7 +3,7 @@
 /// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointAuthorization  {
+pub struct EndpointAuthorization {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
     #[doc(hidden)]
     pub grantor: std::option::Option<std::string::String>,
@@ -34,27 +34,27 @@ pub struct EndpointAuthorization  {
 }
 impl EndpointAuthorization {
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
-    pub fn grantor(&self) -> std::option::Option<& str> {
+    pub fn grantor(&self) -> std::option::Option<&str> {
         self.grantor.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
-    pub fn grantee(&self) -> std::option::Option<& str> {
+    pub fn grantee(&self) -> std::option::Option<&str> {
         self.grantee.as_deref()
     }
     /// <p>The cluster identifier.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub fn authorize_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn authorize_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.authorize_time.as_ref()
     }
     /// <p>The status of the cluster.</p>
-    pub fn cluster_status(&self) -> std::option::Option<& str> {
+    pub fn cluster_status(&self) -> std::option::Option<&str> {
         self.cluster_status.as_deref()
     }
     /// <p>The status of the authorization action.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AuthorizationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AuthorizationStatus> {
         self.status.as_ref()
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
@@ -62,7 +62,7 @@ impl EndpointAuthorization {
         self.allowed_all_vp_cs
     }
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn allowed_vp_cs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn allowed_vp_cs(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_vp_cs.as_deref()
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
@@ -99,7 +99,8 @@ impl EndpointAuthorizationBuilder {
     }
     /// <p>The Amazon Web Services account ID of the cluster owner.</p>
     pub fn set_grantor(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.grantor = input; self
+        self.grantor = input;
+        self
     }
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
     pub fn grantee(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl EndpointAuthorizationBuilder {
     }
     /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
     pub fn set_grantee(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.grantee = input; self
+        self.grantee = input;
+        self
     }
     /// <p>The cluster identifier.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +118,12 @@ impl EndpointAuthorizationBuilder {
         self
     }
     /// <p>The cluster identifier.</p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
     /// <p>The time (UTC) when the authorization was created.</p>
     pub fn authorize_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,8 +131,12 @@ impl EndpointAuthorizationBuilder {
         self
     }
     /// <p>The time (UTC) when the authorization was created.</p>
-    pub fn set_authorize_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.authorize_time = input; self
+    pub fn set_authorize_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.authorize_time = input;
+        self
     }
     /// <p>The status of the cluster.</p>
     pub fn cluster_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +145,8 @@ impl EndpointAuthorizationBuilder {
     }
     /// <p>The status of the cluster.</p>
     pub fn set_cluster_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_status = input; self
+        self.cluster_status = input;
+        self
     }
     /// <p>The status of the authorization action.</p>
     pub fn status(mut self, input: crate::types::AuthorizationStatus) -> Self {
@@ -143,8 +154,12 @@ impl EndpointAuthorizationBuilder {
         self
     }
     /// <p>The status of the authorization action.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AuthorizationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AuthorizationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
     pub fn allowed_all_vp_cs(mut self, input: bool) -> Self {
@@ -153,7 +168,8 @@ impl EndpointAuthorizationBuilder {
     }
     /// <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
     pub fn set_allowed_all_vp_cs(mut self, input: std::option::Option<bool>) -> Self {
-        self.allowed_all_vp_cs = input; self
+        self.allowed_all_vp_cs = input;
+        self
     }
     /// Appends an item to `allowed_vp_cs`.
     ///
@@ -162,13 +178,17 @@ impl EndpointAuthorizationBuilder {
     /// <p>The VPCs allowed access to the cluster.</p>
     pub fn allowed_vp_cs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allowed_vp_cs.unwrap_or_default();
-                        v.push(input.into());
-                        self.allowed_vp_cs = Some(v);
-                        self
+        v.push(input.into());
+        self.allowed_vp_cs = Some(v);
+        self
     }
     /// <p>The VPCs allowed access to the cluster.</p>
-    pub fn set_allowed_vp_cs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.allowed_vp_cs = input; self
+    pub fn set_allowed_vp_cs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.allowed_vp_cs = input;
+        self
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub fn endpoint_count(mut self, input: i32) -> Self {
@@ -177,32 +197,21 @@ impl EndpointAuthorizationBuilder {
     }
     /// <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     pub fn set_endpoint_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.endpoint_count = input; self
+        self.endpoint_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`EndpointAuthorization`](crate::types::EndpointAuthorization).
     pub fn build(self) -> crate::types::EndpointAuthorization {
         crate::types::EndpointAuthorization {
-            grantor: self.grantor
-            ,
-            grantee: self.grantee
-            ,
-            cluster_identifier: self.cluster_identifier
-            ,
-            authorize_time: self.authorize_time
-            ,
-            cluster_status: self.cluster_status
-            ,
-            status: self.status
-            ,
-            allowed_all_vp_cs: self.allowed_all_vp_cs
-                .unwrap_or_default()
-            ,
-            allowed_vp_cs: self.allowed_vp_cs
-            ,
-            endpoint_count: self.endpoint_count
-                .unwrap_or_default()
-            ,
+            grantor: self.grantor,
+            grantee: self.grantee,
+            cluster_identifier: self.cluster_identifier,
+            authorize_time: self.authorize_time,
+            cluster_status: self.cluster_status,
+            status: self.status,
+            allowed_all_vp_cs: self.allowed_all_vp_cs.unwrap_or_default(),
+            allowed_vp_cs: self.allowed_vp_cs,
+            endpoint_count: self.endpoint_count.unwrap_or_default(),
         }
     }
 }
-

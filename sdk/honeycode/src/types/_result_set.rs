@@ -3,8 +3,8 @@
 /// <p> ResultSet contains the results of the request for a single block or list defined on the screen. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultSet  {
-    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p> 
+pub struct ResultSet {
+    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
     /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
     #[doc(hidden)]
     pub headers: std::option::Option<std::vec::Vec<crate::types::ColumnMetadata>>,
@@ -13,13 +13,13 @@ pub struct ResultSet  {
     pub rows: std::option::Option<std::vec::Vec<crate::types::ResultRow>>,
 }
 impl ResultSet {
-    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p> 
+    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
     /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
-    pub fn headers(&self) -> std::option::Option<& [crate::types::ColumnMetadata]> {
+    pub fn headers(&self) -> std::option::Option<&[crate::types::ColumnMetadata]> {
         self.headers.as_deref()
     }
     /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
-    pub fn rows(&self) -> std::option::Option<& [crate::types::ResultRow]> {
+    pub fn rows(&self) -> std::option::Option<&[crate::types::ResultRow]> {
         self.rows.as_deref()
     }
 }
@@ -42,18 +42,22 @@ impl ResultSetBuilder {
     ///
     /// To override the contents of this collection use [`set_headers`](Self::set_headers).
     ///
-    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p> 
+    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
     /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
     pub fn headers(mut self, input: crate::types::ColumnMetadata) -> Self {
         let mut v = self.headers.unwrap_or_default();
-                        v.push(input);
-                        self.headers = Some(v);
-                        self
+        v.push(input);
+        self.headers = Some(v);
+        self
     }
-    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p> 
+    /// <p> List of headers for all the data cells in the block. The header identifies the name and default format of the data cell. Data cells appear in the same order in all rows as defined in the header. The names and formats are not repeated in the rows. If a particular row does not have a value for a data cell, a blank value is used. </p>
     /// <p> For example, a task list that displays the task name, due date and assigned person might have headers [ { "name": "Task Name"}, {"name": "Due Date", "format": "DATE"}, {"name": "Assigned", "format": "CONTACT"} ]. Every row in the result will have the task name as the first item, due date as the second item and assigned person as the third item. If a particular task does not have a due date, that row will still have a blank value in the second element and the assigned person will still be in the third element. </p>
-    pub fn set_headers(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
-        self.headers = input; self
+    pub fn set_headers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ColumnMetadata>>,
+    ) -> Self {
+        self.headers = input;
+        self
     }
     /// Appends an item to `rows`.
     ///
@@ -62,22 +66,23 @@ impl ResultSetBuilder {
     /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
     pub fn rows(mut self, input: crate::types::ResultRow) -> Self {
         let mut v = self.rows.unwrap_or_default();
-                        v.push(input);
-                        self.rows = Some(v);
-                        self
+        v.push(input);
+        self.rows = Some(v);
+        self
     }
     /// <p> List of rows returned by the request. Each row has a row Id and a list of data cells in that row. The data cells will be present in the same order as they are defined in the header. </p>
-    pub fn set_rows(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResultRow>>) -> Self {
-        self.rows = input; self
+    pub fn set_rows(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResultRow>>,
+    ) -> Self {
+        self.rows = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResultSet`](crate::types::ResultSet).
     pub fn build(self) -> crate::types::ResultSet {
         crate::types::ResultSet {
-            headers: self.headers
-            ,
-            rows: self.rows
-            ,
+            headers: self.headers,
+            rows: self.rows,
         }
     }
 }
-

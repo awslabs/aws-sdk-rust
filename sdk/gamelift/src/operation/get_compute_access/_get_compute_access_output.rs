@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetComputeAccessOutput  {
+pub struct GetComputeAccessOutput {
     /// <p>The fleet ID of compute resource.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -28,33 +28,33 @@ pub struct GetComputeAccessOutput  {
 }
 impl GetComputeAccessOutput {
     /// <p>The fleet ID of compute resource.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<& str> {
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The name of the compute resource you requested credentials for.</p>
-    pub fn compute_name(&self) -> std::option::Option<& str> {
+    pub fn compute_name(&self) -> std::option::Option<&str> {
         self.compute_name.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn compute_arn(&self) -> std::option::Option<& str> {
+    pub fn compute_arn(&self) -> std::option::Option<&str> {
         self.compute_arn.as_deref()
     }
     /// <p>The access credentials for the compute resource.</p>
-    pub fn credentials(&self) -> std::option::Option<& crate::types::AwsCredentials> {
+    pub fn credentials(&self) -> std::option::Option<&crate::types::AwsCredentials> {
         self.credentials.as_ref()
     }
 }
-impl  std::fmt::Debug for GetComputeAccessOutput  {
+impl std::fmt::Debug for GetComputeAccessOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetComputeAccessOutput");
         formatter.field("fleet_id", &self.fleet_id);
@@ -67,13 +67,14 @@ impl  std::fmt::Debug for GetComputeAccessOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetComputeAccessOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetComputeAccessOutput {
     /// Creates a new builder-style object to manufacture [`GetComputeAccessOutput`](crate::operation::get_compute_access::GetComputeAccessOutput).
-    pub fn builder() -> crate::operation::get_compute_access::builders::GetComputeAccessOutputBuilder {
+    pub fn builder() -> crate::operation::get_compute_access::builders::GetComputeAccessOutputBuilder
+    {
         crate::operation::get_compute_access::builders::GetComputeAccessOutputBuilder::default()
     }
 }
@@ -97,7 +98,8 @@ impl GetComputeAccessOutputBuilder {
     }
     /// <p>The fleet ID of compute resource.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
@@ -112,7 +114,8 @@ impl GetComputeAccessOutputBuilder {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input; self
+        self.fleet_arn = input;
+        self
     }
     /// <p>The name of the compute resource you requested credentials for.</p>
     pub fn compute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,7 +124,8 @@ impl GetComputeAccessOutputBuilder {
     }
     /// <p>The name of the compute resource you requested credentials for.</p>
     pub fn set_compute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compute_name = input; self
+        self.compute_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift compute resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
@@ -136,7 +140,8 @@ impl GetComputeAccessOutputBuilder {
     /// ::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_compute_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compute_arn = input; self
+        self.compute_arn = input;
+        self
     }
     /// <p>The access credentials for the compute resource.</p>
     pub fn credentials(mut self, input: crate::types::AwsCredentials) -> Self {
@@ -144,31 +149,30 @@ impl GetComputeAccessOutputBuilder {
         self
     }
     /// <p>The access credentials for the compute resource.</p>
-    pub fn set_credentials(mut self, input: std::option::Option<crate::types::AwsCredentials>) -> Self {
-        self.credentials = input; self
+    pub fn set_credentials(
+        mut self,
+        input: std::option::Option<crate::types::AwsCredentials>,
+    ) -> Self {
+        self.credentials = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetComputeAccessOutput`](crate::operation::get_compute_access::GetComputeAccessOutput).
     pub fn build(self) -> crate::operation::get_compute_access::GetComputeAccessOutput {
         crate::operation::get_compute_access::GetComputeAccessOutput {
-            fleet_id: self.fleet_id
-            ,
-            fleet_arn: self.fleet_arn
-            ,
-            compute_name: self.compute_name
-            ,
-            compute_arn: self.compute_arn
-            ,
-            credentials: self.credentials
-            ,
+            fleet_id: self.fleet_id,
+            fleet_arn: self.fleet_arn,
+            compute_name: self.compute_name,
+            compute_arn: self.compute_arn,
+            credentials: self.credentials,
             _request_id: self._request_id,
         }
     }
@@ -185,4 +189,3 @@ impl std::fmt::Debug for GetComputeAccessOutputBuilder {
         formatter.finish()
     }
 }
-

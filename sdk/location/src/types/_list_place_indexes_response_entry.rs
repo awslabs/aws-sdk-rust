@@ -3,24 +3,27 @@
 /// <p>A place index resource listed in your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPlaceIndexesResponseEntry  {
+pub struct ListPlaceIndexesResponseEntry {
     /// <p>The name of the place index resource.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The optional description for the place index resource.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Esri</code> </p> </li> 
-    /// <li> <p> <code>Grab</code> </p> </li> 
-    /// <li> <p> <code>Here</code> </p> </li> 
-    /// </ul> 
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
+    /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     #[doc(hidden)]
     pub data_source: std::option::Option<std::string::String>,
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::types::PricingPlan>,
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
@@ -32,34 +35,37 @@ pub struct ListPlaceIndexesResponseEntry  {
 }
 impl ListPlaceIndexesResponseEntry {
     /// <p>The name of the place index resource.</p>
-    pub fn index_name(&self) -> std::option::Option<& str> {
+    pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>The optional description for the place index resource.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Esri</code> </p> </li> 
-    /// <li> <p> <code>Grab</code> </p> </li> 
-    /// <li> <p> <code>Here</code> </p> </li> 
-    /// </ul> 
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
+    /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
-    pub fn data_source(&self) -> std::option::Option<& str> {
+    pub fn data_source(&self) -> std::option::Option<&str> {
         self.data_source.as_deref()
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    pub fn pricing_plan(&self) -> std::option::Option<& crate::types::PricingPlan> {
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -89,7 +95,8 @@ impl ListPlaceIndexesResponseEntryBuilder {
     }
     /// <p>The name of the place index resource.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input; self
+        self.index_name = input;
+        self
     }
     /// <p>The optional description for the place index resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,39 +105,51 @@ impl ListPlaceIndexesResponseEntryBuilder {
     }
     /// <p>The optional description for the place index resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
-    /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Esri</code> </p> </li> 
-    /// <li> <p> <code>Grab</code> </p> </li> 
-    /// <li> <p> <code>Here</code> </p> </li> 
-    /// </ul> 
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
+    /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.data_source = Some(input.into());
         self
     }
-    /// <p>The data provider of geospatial data. Values can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Esri</code> </p> </li> 
-    /// <li> <p> <code>Grab</code> </p> </li> 
-    /// <li> <p> <code>Here</code> </p> </li> 
-    /// </ul> 
+    /// <p>The data provider of geospatial data. Values can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Esri</code> </p> </li>
+    /// <li> <p> <code>Grab</code> </p> </li>
+    /// <li> <p> <code>Here</code> </p> </li>
+    /// </ul>
     /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
     pub fn set_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_source = input; self
+        self.data_source = input;
+        self
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.pricing_plan = Some(input);
         self
     }
     /// <p>No longer used. Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    pub fn set_pricing_plan(mut self, input: std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pricing_plan = input; self
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn set_pricing_plan(
+        mut self,
+        input: std::option::Option<crate::types::PricingPlan>,
+    ) -> Self {
+        self.pricing_plan = input;
+        self
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -138,8 +157,12 @@ impl ListPlaceIndexesResponseEntryBuilder {
         self
     }
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -147,25 +170,22 @@ impl ListPlaceIndexesResponseEntryBuilder {
         self
     }
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input; self
+    pub fn set_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPlaceIndexesResponseEntry`](crate::types::ListPlaceIndexesResponseEntry).
     pub fn build(self) -> crate::types::ListPlaceIndexesResponseEntry {
         crate::types::ListPlaceIndexesResponseEntry {
-            index_name: self.index_name
-            ,
-            description: self.description
-            ,
-            data_source: self.data_source
-            ,
-            pricing_plan: self.pricing_plan
-            ,
-            create_time: self.create_time
-            ,
-            update_time: self.update_time
-            ,
+            index_name: self.index_name,
+            description: self.description,
+            data_source: self.data_source,
+            pricing_plan: self.pricing_plan,
+            create_time: self.create_time,
+            update_time: self.update_time,
         }
     }
 }
-

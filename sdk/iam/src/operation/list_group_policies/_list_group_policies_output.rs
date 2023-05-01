@@ -3,8 +3,8 @@
 /// <p>Contains the response to a successful <code>ListGroupPolicies</code> request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGroupPoliciesOutput  {
-    /// <p>A list of policy names.</p> 
+pub struct ListGroupPoliciesOutput {
+    /// <p>A list of policy names.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     #[doc(hidden)]
     pub policy_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -17,9 +17,9 @@ pub struct ListGroupPoliciesOutput  {
     _request_id: Option<String>,
 }
 impl ListGroupPoliciesOutput {
-    /// <p>A list of policy names.</p> 
+    /// <p>A list of policy names.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn policy_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names.as_deref()
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
@@ -27,18 +27,19 @@ impl ListGroupPoliciesOutput {
         self.is_truncated
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListGroupPoliciesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListGroupPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListGroupPoliciesOutput`](crate::operation::list_group_policies::ListGroupPoliciesOutput).
-    pub fn builder() -> crate::operation::list_group_policies::builders::ListGroupPoliciesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_group_policies::builders::ListGroupPoliciesOutputBuilder {
         crate::operation::list_group_policies::builders::ListGroupPoliciesOutputBuilder::default()
     }
 }
@@ -57,18 +58,22 @@ impl ListGroupPoliciesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_policy_names`](Self::set_policy_names).
     ///
-    /// <p>A list of policy names.</p> 
+    /// <p>A list of policy names.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
     pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.policy_names = Some(v);
-                        self
+        v.push(input.into());
+        self.policy_names = Some(v);
+        self
     }
-    /// <p>A list of policy names.</p> 
+    /// <p>A list of policy names.</p>
     /// <p>This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters consisting of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: _+=,.@-</p>
-    pub fn set_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.policy_names = input; self
+    pub fn set_policy_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.policy_names = input;
+        self
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
@@ -77,7 +82,8 @@ impl ListGroupPoliciesOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <code>Marker</code> request parameter to retrieve more items. Note that IAM might return fewer than the <code>MaxItems</code> number of results even when there are more results available. We recommend that you check <code>IsTruncated</code> after every call to ensure that you receive all your results.</p>
     pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_truncated = input; self
+        self.is_truncated = input;
+        self
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,29 +92,25 @@ impl ListGroupPoliciesOutputBuilder {
     }
     /// <p>When <code>IsTruncated</code> is <code>true</code>, this element is present and contains the value to use for the <code>Marker</code> parameter in a subsequent pagination request.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListGroupPoliciesOutput`](crate::operation::list_group_policies::ListGroupPoliciesOutput).
     pub fn build(self) -> crate::operation::list_group_policies::ListGroupPoliciesOutput {
         crate::operation::list_group_policies::ListGroupPoliciesOutput {
-            policy_names: self.policy_names
-            ,
-            is_truncated: self.is_truncated
-                .unwrap_or_default()
-            ,
-            marker: self.marker
-            ,
+            policy_names: self.policy_names,
+            is_truncated: self.is_truncated.unwrap_or_default(),
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

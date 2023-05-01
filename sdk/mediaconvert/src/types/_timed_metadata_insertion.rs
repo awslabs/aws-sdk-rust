@@ -3,14 +3,14 @@
 /// Insert user-defined custom ID3 metadata (id3) at timecodes (timecode) that you specify. In each output that you want to include this metadata, you must set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimedMetadataInsertion  {
+pub struct TimedMetadataInsertion {
     /// Id3Insertions contains the array of Id3Insertion instances.
     #[doc(hidden)]
     pub id3_insertions: std::option::Option<std::vec::Vec<crate::types::Id3Insertion>>,
 }
 impl TimedMetadataInsertion {
     /// Id3Insertions contains the array of Id3Insertion instances.
-    pub fn id3_insertions(&self) -> std::option::Option<& [crate::types::Id3Insertion]> {
+    pub fn id3_insertions(&self) -> std::option::Option<&[crate::types::Id3Insertion]> {
         self.id3_insertions.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl TimedMetadataInsertionBuilder {
     /// Id3Insertions contains the array of Id3Insertion instances.
     pub fn id3_insertions(mut self, input: crate::types::Id3Insertion) -> Self {
         let mut v = self.id3_insertions.unwrap_or_default();
-                        v.push(input);
-                        self.id3_insertions = Some(v);
-                        self
+        v.push(input);
+        self.id3_insertions = Some(v);
+        self
     }
     /// Id3Insertions contains the array of Id3Insertion instances.
-    pub fn set_id3_insertions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Id3Insertion>>) -> Self {
-        self.id3_insertions = input; self
+    pub fn set_id3_insertions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Id3Insertion>>,
+    ) -> Self {
+        self.id3_insertions = input;
+        self
     }
     /// Consumes the builder and constructs a [`TimedMetadataInsertion`](crate::types::TimedMetadataInsertion).
     pub fn build(self) -> crate::types::TimedMetadataInsertion {
         crate::types::TimedMetadataInsertion {
-            id3_insertions: self.id3_insertions
-            ,
+            id3_insertions: self.id3_insertions,
         }
     }
 }
-

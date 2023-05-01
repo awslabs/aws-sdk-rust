@@ -4,68 +4,78 @@ pub use crate::operation::start_medical_stream_transcription::_start_medical_str
 pub use crate::operation::start_medical_stream_transcription::_start_medical_stream_transcription_input::StartMedicalStreamTranscriptionInputBuilder;
 
 /// Fluent builder constructing a request to `StartMedicalStreamTranscription`.
-/// 
-/// <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to Amazon Transcribe Medical and the transcription results are streamed to your application.</p> 
-/// <p>The following parameters are required:</p> 
-/// <ul> 
-/// <li> <p> <code>language-code</code> </p> </li> 
-/// <li> <p> <code>media-encoding</code> </p> </li> 
-/// <li> <p> <code>sample-rate</code> </p> </li> 
-/// </ul> 
+///
+/// <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to Amazon Transcribe Medical and the transcription results are streamed to your application.</p>
+/// <p>The following parameters are required:</p>
+/// <ul>
+/// <li> <p> <code>language-code</code> </p> </li>
+/// <li> <p> <code>media-encoding</code> </p> </li>
+/// <li> <p> <code>sample-rate</code> </p> </li>
+/// </ul>
 /// <p>For more information on streaming with Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
 #[derive(std::fmt::Debug)]
 pub struct StartMedicalStreamTranscriptionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_medical_stream_transcription::builders::StartMedicalStreamTranscriptionInputBuilder,
 }
-impl StartMedicalStreamTranscriptionFluentBuilder  {
+impl StartMedicalStreamTranscriptionFluentBuilder {
     /// Creates a new `StartMedicalStreamTranscription`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscription, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput, aws_smithy_http::result::SdkError<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>Specify the language code that represents the language spoken in your audio.</p> <important> 
-    /// <p>Amazon Transcribe Medical only supports US English (<code>en-US</code>).</p> 
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>Specify the language code that represents the language spoken in your audio.</p> <important>
+    /// <p>Amazon Transcribe Medical only supports US English (<code>en-US</code>).</p>
     /// </important>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
         self.inner = self.inner.language_code(input);
         self
     }
-    /// <p>Specify the language code that represents the language spoken in your audio.</p> <important> 
-    /// <p>Amazon Transcribe Medical only supports US English (<code>en-US</code>).</p> 
+    /// <p>Specify the language code that represents the language spoken in your audio.</p> <important>
+    /// <p>Amazon Transcribe Medical only supports US English (<code>en-US</code>).</p>
     /// </important>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::LanguageCode>,
+    ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
@@ -79,25 +89,28 @@ impl StartMedicalStreamTranscriptionFluentBuilder  {
         self.inner = self.inner.set_media_sample_rate_hertz(input);
         self
     }
-    /// <p>Specify the encoding used for the input audio. Supported formats are:</p> 
-    /// <ul> 
-    /// <li> <p>FLAC</p> </li> 
-    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li> 
-    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li> 
-    /// </ul> 
+    /// <p>Specify the encoding used for the input audio. Supported formats are:</p>
+    /// <ul>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
     pub fn media_encoding(mut self, input: crate::types::MediaEncoding) -> Self {
         self.inner = self.inner.media_encoding(input);
         self
     }
-    /// <p>Specify the encoding used for the input audio. Supported formats are:</p> 
-    /// <ul> 
-    /// <li> <p>FLAC</p> </li> 
-    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li> 
-    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li> 
-    /// </ul> 
+    /// <p>Specify the encoding used for the input audio. Supported formats are:</p>
+    /// <ul>
+    /// <li> <p>FLAC</p> </li>
+    /// <li> <p>OPUS-encoded audio in an Ogg container</p> </li>
+    /// <li> <p>PCM (only signed 16-bit little-endian audio formats, which does not include WAV)</p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a>.</p>
-    pub fn set_media_encoding(mut self, input: std::option::Option<crate::types::MediaEncoding>) -> Self {
+    pub fn set_media_encoding(
+        mut self,
+        input: std::option::Option<crate::types::MediaEncoding>,
+    ) -> Self {
         self.inner = self.inner.set_media_encoding(input);
         self
     }
@@ -131,53 +144,67 @@ impl StartMedicalStreamTranscriptionFluentBuilder  {
         self.inner = self.inner.set_type(input);
         self
     }
-    /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p> 
+    /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
     pub fn show_speaker_label(mut self, input: bool) -> Self {
         self.inner = self.inner.show_speaker_label(input);
         self
     }
-    /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p> 
+    /// <p>Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech from individual speakers in your media file.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.</p>
     pub fn set_show_speaker_label(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_show_speaker_label(input);
         self
     }
-    /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p> 
+    /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
     /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.session_id(input.into());
         self
     }
-    /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p> 
+    /// <p>Specify a name for your transcription session. If you don't include this parameter in your request, Amazon Transcribe Medical generates an ID and returns it in the response.</p>
     /// <p>You can use a session ID to retry a streaming session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_session_id(input);
         self
     }
-    /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p> 
+    /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
-    pub fn audio_stream(mut self, input: aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>) -> Self {
+    pub fn audio_stream(
+        mut self,
+        input: aws_smithy_http::event_stream::EventStreamSender<
+            crate::types::AudioStream,
+            crate::types::error::AudioStreamError,
+        >,
+    ) -> Self {
         self.inner = self.inner.audio_stream(input);
         self
     }
-    /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p> 
+    /// <p>An encoded stream of audio blobs. Audio streams are encoded as either HTTP/2 or WebSocket data frames.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing streaming audio</a>.</p>
-    pub fn set_audio_stream(mut self, input: std::option::Option<aws_smithy_http::event_stream::EventStreamSender<crate::types::AudioStream, crate::types::error::AudioStreamError>>) -> Self {
+    pub fn set_audio_stream(
+        mut self,
+        input: std::option::Option<
+            aws_smithy_http::event_stream::EventStreamSender<
+                crate::types::AudioStream,
+                crate::types::error::AudioStreamError,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_audio_stream(input);
         self
     }
-    /// <p>Enables channel identification in multi-channel audio.</p> 
-    /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p> 
-    /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p> 
+    /// <p>Enables channel identification in multi-channel audio.</p>
+    /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
+    /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn enable_channel_identification(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_channel_identification(input);
         self
     }
-    /// <p>Enables channel identification in multi-channel audio.</p> 
-    /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p> 
-    /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p> 
+    /// <p>Enables channel identification in multi-channel audio.</p>
+    /// <p>Channel identification transcribes the audio on each channel independently, then appends the output for each channel into one transcript.</p>
+    /// <p>If you have multi-channel audio and do not enable channel identification, your audio is transcribed in a continuous manner and your transcript is not separated by channel.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing multi-channel audio</a>.</p>
     pub fn set_enable_channel_identification(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_channel_identification(input);
@@ -193,19 +220,24 @@ impl StartMedicalStreamTranscriptionFluentBuilder  {
         self.inner = self.inner.set_number_of_channels(input);
         self
     }
-    /// <p>Labels all personal health information (PHI) identified in your transcript.</p> 
-    /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p> 
+    /// <p>Labels all personal health information (PHI) identified in your transcript.</p>
+    /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn content_identification_type(mut self, input: crate::types::MedicalContentIdentificationType) -> Self {
+    pub fn content_identification_type(
+        mut self,
+        input: crate::types::MedicalContentIdentificationType,
+    ) -> Self {
         self.inner = self.inner.content_identification_type(input);
         self
     }
-    /// <p>Labels all personal health information (PHI) identified in your transcript.</p> 
-    /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p> 
+    /// <p>Labels all personal health information (PHI) identified in your transcript.</p>
+    /// <p>Content identification is performed at the segment level; PHI is flagged upon complete transcription of an audio segment.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI) in a transcription</a>.</p>
-    pub fn set_content_identification_type(mut self, input: std::option::Option<crate::types::MedicalContentIdentificationType>) -> Self {
+    pub fn set_content_identification_type(
+        mut self,
+        input: std::option::Option<crate::types::MedicalContentIdentificationType>,
+    ) -> Self {
         self.inner = self.inner.set_content_identification_type(input);
         self
     }
 }
-

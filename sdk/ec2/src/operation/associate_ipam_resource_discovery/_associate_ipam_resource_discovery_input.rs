@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateIpamResourceDiscoveryInput  {
+pub struct AssociateIpamResourceDiscoveryInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -25,25 +25,25 @@ impl AssociateIpamResourceDiscoveryInput {
         self.dry_run
     }
     /// <p>An IPAM ID.</p>
-    pub fn ipam_id(&self) -> std::option::Option<& str> {
+    pub fn ipam_id(&self) -> std::option::Option<&str> {
         self.ipam_id.as_deref()
     }
     /// <p>A resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(&self) -> std::option::Option<& str> {
+    pub fn ipam_resource_discovery_id(&self) -> std::option::Option<&str> {
         self.ipam_resource_discovery_id.as_deref()
     }
     /// <p>Tag specifications.</p>
-    pub fn tag_specifications(&self) -> std::option::Option<& [crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> std::option::Option<&[crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
     /// <p>A client token.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl AssociateIpamResourceDiscoveryInput {
     /// Creates a new builder-style object to manufacture [`AssociateIpamResourceDiscoveryInput`](crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput).
-    pub fn builder() -> crate::operation::associate_ipam_resource_discovery::builders::AssociateIpamResourceDiscoveryInputBuilder {
+    pub fn builder() -> crate::operation::associate_ipam_resource_discovery::builders::AssociateIpamResourceDiscoveryInputBuilder{
         crate::operation::associate_ipam_resource_discovery::builders::AssociateIpamResourceDiscoveryInputBuilder::default()
     }
 }
@@ -55,7 +55,8 @@ pub struct AssociateIpamResourceDiscoveryInputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
     pub(crate) ipam_id: std::option::Option<std::string::String>,
     pub(crate) ipam_resource_discovery_id: std::option::Option<std::string::String>,
-    pub(crate) tag_specifications: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications:
+        std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
 impl AssociateIpamResourceDiscoveryInputBuilder {
@@ -66,7 +67,8 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>An IPAM ID.</p>
     pub fn ipam_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +77,8 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     }
     /// <p>An IPAM ID.</p>
     pub fn set_ipam_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_id = input; self
+        self.ipam_id = input;
+        self
     }
     /// <p>A resource discovery ID.</p>
     pub fn ipam_resource_discovery_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +86,12 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
         self
     }
     /// <p>A resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_resource_discovery_id = input; self
+    pub fn set_ipam_resource_discovery_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ipam_resource_discovery_id = input;
+        self
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -93,13 +100,17 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     /// <p>Tag specifications.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-                        v.push(input);
-                        self.tag_specifications = Some(v);
-                        self
+        v.push(input);
+        self.tag_specifications = Some(v);
+        self
     }
     /// <p>Tag specifications.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input; self
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
+        self.tag_specifications = input;
+        self
     }
     /// <p>A client token.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,10 +119,16 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A client token.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateIpamResourceDiscoveryInput`](crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput).
-    pub fn build(self) -> Result<crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryInput {
                 dry_run: self.dry_run
@@ -128,4 +145,3 @@ impl AssociateIpamResourceDiscoveryInputBuilder {
         )
     }
 }
-

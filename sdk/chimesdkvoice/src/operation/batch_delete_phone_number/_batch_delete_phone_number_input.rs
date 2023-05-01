@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeletePhoneNumberInput  {
+pub struct BatchDeletePhoneNumberInput {
     /// <p>List of phone number IDs.</p>
     #[doc(hidden)]
     pub phone_number_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDeletePhoneNumberInput {
     /// <p>List of phone number IDs.</p>
-    pub fn phone_number_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn phone_number_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.phone_number_ids.as_deref()
     }
 }
 impl BatchDeletePhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`BatchDeletePhoneNumberInput`](crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput).
-    pub fn builder() -> crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberInputBuilder
+    {
         crate::operation::batch_delete_phone_number::builders::BatchDeletePhoneNumberInputBuilder::default()
     }
 }
@@ -34,22 +36,29 @@ impl BatchDeletePhoneNumberInputBuilder {
     /// <p>List of phone number IDs.</p>
     pub fn phone_number_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.phone_number_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.phone_number_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.phone_number_ids = Some(v);
+        self
     }
     /// <p>List of phone number IDs.</p>
-    pub fn set_phone_number_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.phone_number_ids = input; self
+    pub fn set_phone_number_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.phone_number_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDeletePhoneNumberInput`](crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput).
-    pub fn build(self) -> Result<crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberInput {
-                phone_number_ids: self.phone_number_ids
-                ,
-            }
+                phone_number_ids: self.phone_number_ids,
+            },
         )
     }
 }
-

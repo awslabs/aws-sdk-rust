@@ -3,7 +3,7 @@
 /// <p>Describes a network route.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkRoute  {
+pub struct NetworkRoute {
     /// <p>A unique identifier for the route, such as a CIDR block.</p>
     #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct NetworkRoute  {
 }
 impl NetworkRoute {
     /// <p>A unique identifier for the route, such as a CIDR block.</p>
-    pub fn destination_cidr_block(&self) -> std::option::Option<& str> {
+    pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The destinations.</p>
-    pub fn destinations(&self) -> std::option::Option<& [crate::types::NetworkRouteDestination]> {
+    pub fn destinations(&self) -> std::option::Option<&[crate::types::NetworkRouteDestination]> {
         self.destinations.as_deref()
     }
     /// <p>The ID of the prefix list.</p>
-    pub fn prefix_list_id(&self) -> std::option::Option<& str> {
+    pub fn prefix_list_id(&self) -> std::option::Option<&str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::RouteState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::RouteState> {
         self.state.as_ref()
     }
     /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::RouteType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::RouteType> {
         self.r#type.as_ref()
     }
 }
@@ -54,7 +54,8 @@ impl NetworkRoute {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct NetworkRouteBuilder {
     pub(crate) destination_cidr_block: std::option::Option<std::string::String>,
-    pub(crate) destinations: std::option::Option<std::vec::Vec<crate::types::NetworkRouteDestination>>,
+    pub(crate) destinations:
+        std::option::Option<std::vec::Vec<crate::types::NetworkRouteDestination>>,
     pub(crate) prefix_list_id: std::option::Option<std::string::String>,
     pub(crate) state: std::option::Option<crate::types::RouteState>,
     pub(crate) r#type: std::option::Option<crate::types::RouteType>,
@@ -66,8 +67,12 @@ impl NetworkRouteBuilder {
         self
     }
     /// <p>A unique identifier for the route, such as a CIDR block.</p>
-    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_cidr_block = input; self
+    pub fn set_destination_cidr_block(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_cidr_block = input;
+        self
     }
     /// Appends an item to `destinations`.
     ///
@@ -76,13 +81,17 @@ impl NetworkRouteBuilder {
     /// <p>The destinations.</p>
     pub fn destinations(mut self, input: crate::types::NetworkRouteDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-                        v.push(input);
-                        self.destinations = Some(v);
-                        self
+        v.push(input);
+        self.destinations = Some(v);
+        self
     }
     /// <p>The destinations.</p>
-    pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkRouteDestination>>) -> Self {
-        self.destinations = input; self
+    pub fn set_destinations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NetworkRouteDestination>>,
+    ) -> Self {
+        self.destinations = input;
+        self
     }
     /// <p>The ID of the prefix list.</p>
     pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +100,8 @@ impl NetworkRouteBuilder {
     }
     /// <p>The ID of the prefix list.</p>
     pub fn set_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix_list_id = input; self
+        self.prefix_list_id = input;
+        self
     }
     /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
     pub fn state(mut self, input: crate::types::RouteState) -> Self {
@@ -100,7 +110,8 @@ impl NetworkRouteBuilder {
     }
     /// <p>The route state. The possible values are <code>active</code> and <code>blackhole</code>.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::RouteState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
     pub fn r#type(mut self, input: crate::types::RouteType) -> Self {
@@ -109,22 +120,17 @@ impl NetworkRouteBuilder {
     }
     /// <p>The route type. The possible values are <code>propagated</code> and <code>static</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::RouteType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`NetworkRoute`](crate::types::NetworkRoute).
     pub fn build(self) -> crate::types::NetworkRoute {
         crate::types::NetworkRoute {
-            destination_cidr_block: self.destination_cidr_block
-            ,
-            destinations: self.destinations
-            ,
-            prefix_list_id: self.prefix_list_id
-            ,
-            state: self.state
-            ,
-            r#type: self.r#type
-            ,
+            destination_cidr_block: self.destination_cidr_block,
+            destinations: self.destinations,
+            prefix_list_id: self.prefix_list_id,
+            state: self.state,
+            r#type: self.r#type,
         }
     }
 }
-

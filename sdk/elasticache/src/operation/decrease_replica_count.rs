@@ -5,34 +5,63 @@ impl DecreaseReplicaCountInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::decrease_replica_count::DecreaseReplicaCount, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
-        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
-        .set_use_dual_stack(_config.use_dual_stack)
-        .set_use_fips(_config.use_fips)
-        .set_endpoint(_config.endpoint_url
-        .clone()).build()
-                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
-                                let (endpoint_result, params) = match params_result {
-                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
-                                    Err(e) => (Err(e), None)
-                                };
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::decrease_replica_count::DecreaseReplicaCount,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_use_dual_stack(_config.use_dual_stack)
+            .set_use_fips(_config.use_fips)
+            .set_endpoint(_config.endpoint_url.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
-            fn uri_base(_input: &crate::operation::decrease_replica_count::DecreaseReplicaCountInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(
+                _input: &crate::operation::decrease_replica_count::DecreaseReplicaCountInput,
+                output: &mut String,
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 use std::fmt::Write as _;
                 write!(output, "/").expect("formatting should succeed");
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                            input: &crate::operation::decrease_replica_count::DecreaseReplicaCountInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                input: &crate::operation::decrease_replica_count::DecreaseReplicaCountInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 Ok(builder.method("POST").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
-            builder = aws_smithy_http::header::set_request_header_if_absent(builder, http::header::CONTENT_TYPE, "application/x-www-form-urlencoded");
+            builder = aws_smithy_http::header::set_request_header_if_absent(
+                builder,
+                http::header::CONTENT_TYPE,
+                "application/x-www-form-urlencoded",
+            );
             builder
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
@@ -41,33 +70,56 @@ impl DecreaseReplicaCountInput {
             crate::protocol_serde::shape_decrease_replica_count_input::ser_decrease_replica_count_input_input(&self)?
         );
         if let Some(content_length) = body.content_length() {
-                                request = aws_smithy_http::header::set_request_header_if_absent(request, http::header::CONTENT_LENGTH, content_length);
-                            }
+            request = aws_smithy_http::header::set_request_header_if_absent(
+                request,
+                http::header::CONTENT_LENGTH,
+                content_length,
+            );
+        }
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params { request.properties_mut().insert(params); }
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                                aws_types::os_shim_internal::Env::real(),
-                                crate::meta::API_METADATA.clone(),
-                            );
-                            if let Some(app_name) = _config.app_name() {
-                                user_agent = user_agent.with_app_name(app_name.clone());
-                            }
-                            request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::meta::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::decrease_replica_count::DecreaseReplicaCount::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("DecreaseReplicaCount", "elasticache"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_credentials_cache(
+            &mut request.properties_mut(),
+            _config.credentials_cache.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::decrease_replica_count::DecreaseReplicaCount::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new(
+            "DecreaseReplicaCount",
+            "elasticache",
+        ));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -84,26 +136,30 @@ impl DecreaseReplicaCount {
     }
 }
 impl aws_smithy_http::response::ParseStrictResponse for DecreaseReplicaCount {
-                type Output = std::result::Result<crate::operation::decrease_replica_count::DecreaseReplicaCountOutput, crate::operation::decrease_replica_count::DecreaseReplicaCountError>;
-                fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-                     let (success, status) = (response.status().is_success(), response.status().as_u16());
-                     let headers = response.headers();
-                     let body = response.body().as_ref();
-                     tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                     if !success && status != 200 {
-                        crate::protocol_serde::shape_decrease_replica_count::de_decrease_replica_count_http_error(status, headers, body)
-                     } else {
-                        crate::protocol_serde::shape_decrease_replica_count::de_decrease_replica_count_http_response(status, headers, body)
-                     }
-                }
-                
-            }
+    type Output = std::result::Result<
+        crate::operation::decrease_replica_count::DecreaseReplicaCountOutput,
+        crate::operation::decrease_replica_count::DecreaseReplicaCountError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        let (success, status) = (response.status().is_success(), response.status().as_u16());
+        let headers = response.headers();
+        let body = response.body().as_ref();
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        if !success && status != 200 {
+            crate::protocol_serde::shape_decrease_replica_count::de_decrease_replica_count_http_error(status, headers, body)
+        } else {
+            crate::protocol_serde::shape_decrease_replica_count::de_decrease_replica_count_http_response(status, headers, body)
+        }
+    }
+}
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type DecreaseReplicaCountErrorKind = DecreaseReplicaCountError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type DecreaseReplicaCountErrorKind = DecreaseReplicaCountError;
 /// Error type for the `DecreaseReplicaCountError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -111,7 +167,9 @@ pub enum DecreaseReplicaCountError {
     /// <p>The request cannot be processed because it would exceed the allowed number of clusters per customer.</p>
     ClusterQuotaForCustomerExceededFault(crate::types::error::ClusterQuotaForCustomerExceededFault),
     /// <p>The requested cache node type is not available in the specified Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ErrorMessages.html#ErrorMessages.INSUFFICIENT_CACHE_CLUSTER_CAPACITY">InsufficientCacheClusterCapacity</a> in the ElastiCache User Guide.</p>
-    InsufficientCacheClusterCapacityFault(crate::types::error::InsufficientCacheClusterCapacityFault),
+    InsufficientCacheClusterCapacityFault(
+        crate::types::error::InsufficientCacheClusterCapacityFault,
+    ),
     /// <p>The requested cluster is not in the <code>available</code> state.</p>
     InvalidCacheClusterStateFault(crate::types::error::InvalidCacheClusterStateFault),
     /// <p>Two or more incompatible parameters were specified.</p>
@@ -123,7 +181,9 @@ pub enum DecreaseReplicaCountError {
     /// <p>The VPC network is in an invalid state.</p>
     InvalidVpcNetworkStateFault(crate::types::error::InvalidVpcNetworkStateFault),
     /// <p>The request cannot be processed because it would exceed the maximum allowed number of node groups (shards) in a single replication group. The default maximum is 90</p>
-    NodeGroupsPerReplicationGroupQuotaExceededFault(crate::types::error::NodeGroupsPerReplicationGroupQuotaExceededFault),
+    NodeGroupsPerReplicationGroupQuotaExceededFault(
+        crate::types::error::NodeGroupsPerReplicationGroupQuotaExceededFault,
+    ),
     /// <p>The request cannot be processed because it would exceed the allowed number of cache nodes per customer.</p>
     NodeQuotaForCustomerExceededFault(crate::types::error::NodeQuotaForCustomerExceededFault),
     /// <p>The operation was not performed because no changes were required.</p>
@@ -133,117 +193,91 @@ pub enum DecreaseReplicaCountError {
     /// <p>The specified service linked role (SLR) was not found.</p>
     ServiceLinkedRoleNotFoundFault(crate::types::error::ServiceLinkedRoleNotFoundFault),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for DecreaseReplicaCountError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for DecreaseReplicaCountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::ClusterQuotaForCustomerExceededFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InsufficientCacheClusterCapacityFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidCacheClusterStateFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidParameterCombinationException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidParameterValueException(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidReplicationGroupStateFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::InvalidVpcNetworkStateFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NodeQuotaForCustomerExceededFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NoOperationFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ReplicationGroupNotFoundFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::ServiceLinkedRoleNotFoundFault(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::ClusterQuotaForCustomerExceededFault(_inner) => _inner.fmt(f),
+            Self::InsufficientCacheClusterCapacityFault(_inner) => _inner.fmt(f),
+            Self::InvalidCacheClusterStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidParameterCombinationException(_inner) => _inner.fmt(f),
+            Self::InvalidParameterValueException(_inner) => _inner.fmt(f),
+            Self::InvalidReplicationGroupStateFault(_inner) => _inner.fmt(f),
+            Self::InvalidVpcNetworkStateFault(_inner) => _inner.fmt(f),
+            Self::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) => _inner.fmt(f),
+            Self::NodeQuotaForCustomerExceededFault(_inner) => _inner.fmt(f),
+            Self::NoOperationFault(_inner) => _inner.fmt(f),
+            Self::ReplicationGroupNotFoundFault(_inner) => _inner.fmt(f),
+            Self::ServiceLinkedRoleNotFoundFault(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for DecreaseReplicaCountError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::ClusterQuotaForCustomerExceededFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InsufficientCacheClusterCapacityFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidCacheClusterStateFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidParameterCombinationException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidParameterValueException(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidReplicationGroupStateFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::InvalidVpcNetworkStateFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NodeQuotaForCustomerExceededFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NoOperationFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ReplicationGroupNotFoundFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::ServiceLinkedRoleNotFoundFault(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::ClusterQuotaForCustomerExceededFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InsufficientCacheClusterCapacityFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidCacheClusterStateFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidParameterCombinationException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidParameterValueException(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidReplicationGroupStateFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::InvalidVpcNetworkStateFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NodeQuotaForCustomerExceededFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NoOperationFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ReplicationGroupNotFoundFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::ServiceLinkedRoleNotFoundFault(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
         }
     }
 }
-impl aws_http::request_id::RequestId for crate::operation::decrease_replica_count::DecreaseReplicaCountError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+impl aws_http::request_id::RequestId
+    for crate::operation::decrease_replica_count::DecreaseReplicaCountError
+{
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for DecreaseReplicaCountError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -254,18 +288,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for DecreaseReplicaCountError {
 }
 impl DecreaseReplicaCountError {
     /// Creates the `DecreaseReplicaCountError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `DecreaseReplicaCountError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `DecreaseReplicaCountError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -314,7 +357,10 @@ impl DecreaseReplicaCountError {
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountError::NodeGroupsPerReplicationGroupQuotaExceededFault`.
     pub fn is_node_groups_per_replication_group_quota_exceeded_fault(&self) -> bool {
-        matches!(self, Self::NodeGroupsPerReplicationGroupQuotaExceededFault(_))
+        matches!(
+            self,
+            Self::NodeGroupsPerReplicationGroupQuotaExceededFault(_)
+        )
     }
     /// Returns `true` if the error kind is `DecreaseReplicaCountError::NodeQuotaForCustomerExceededFault`.
     pub fn is_node_quota_for_customer_exceeded_fault(&self) -> bool {
@@ -336,45 +382,19 @@ impl DecreaseReplicaCountError {
 impl std::error::Error for DecreaseReplicaCountError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::ClusterQuotaForCustomerExceededFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InsufficientCacheClusterCapacityFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidCacheClusterStateFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidParameterCombinationException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidParameterValueException(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidReplicationGroupStateFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::InvalidVpcNetworkStateFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::NodeQuotaForCustomerExceededFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::NoOperationFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::ReplicationGroupNotFoundFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::ServiceLinkedRoleNotFoundFault(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::ClusterQuotaForCustomerExceededFault(_inner) => Some(_inner),
+            Self::InsufficientCacheClusterCapacityFault(_inner) => Some(_inner),
+            Self::InvalidCacheClusterStateFault(_inner) => Some(_inner),
+            Self::InvalidParameterCombinationException(_inner) => Some(_inner),
+            Self::InvalidParameterValueException(_inner) => Some(_inner),
+            Self::InvalidReplicationGroupStateFault(_inner) => Some(_inner),
+            Self::InvalidVpcNetworkStateFault(_inner) => Some(_inner),
+            Self::NodeGroupsPerReplicationGroupQuotaExceededFault(_inner) => Some(_inner),
+            Self::NodeQuotaForCustomerExceededFault(_inner) => Some(_inner),
+            Self::NoOperationFault(_inner) => Some(_inner),
+            Self::ReplicationGroupNotFoundFault(_inner) => Some(_inner),
+            Self::ServiceLinkedRoleNotFoundFault(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -389,4 +409,3 @@ mod _decrease_replica_count_output;
 
 /// Builders
 pub mod builders;
-

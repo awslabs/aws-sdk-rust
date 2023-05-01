@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFolderInput  {
+pub struct UpdateFolderInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateFolderInput  {
 }
 impl UpdateFolderInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<& str> {
+    pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
     /// <p>The name of the folder.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl UpdateFolderInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder to update.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl UpdateFolderInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.folder_id = input; self
+        self.folder_id = input;
+        self
     }
     /// <p>The name of the folder.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl UpdateFolderInputBuilder {
     }
     /// <p>The name of the folder.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFolderInput`](crate::operation::update_folder::UpdateFolderInput).
-    pub fn build(self) -> Result<crate::operation::update_folder::UpdateFolderInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_folder::UpdateFolderInput {
-                aws_account_id: self.aws_account_id
-                ,
-                folder_id: self.folder_id
-                ,
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_folder::UpdateFolderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_folder::UpdateFolderInput {
+            aws_account_id: self.aws_account_id,
+            folder_id: self.folder_id,
+            name: self.name,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Options for a double-precision 64-bit floating point field. Present if <code>IndexFieldType</code> specifies the field is of type <code>double</code>. All options are enabled by default.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DoubleOptions  {
+pub struct DoubleOptions {
     /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
     #[doc(hidden)]
     pub default_value: std::option::Option<f64>,
@@ -29,7 +29,7 @@ impl DoubleOptions {
         self.default_value
     }
     /// <p>The name of the source field to map to the field. </p>
-    pub fn source_field(&self) -> std::option::Option<& str> {
+    pub fn source_field(&self) -> std::option::Option<&str> {
         self.source_field.as_deref()
     }
     /// <p>Whether facet information can be returned for the field.</p>
@@ -75,7 +75,8 @@ impl DoubleOptionsBuilder {
     }
     /// <p>A value to use for the field if the field isn't specified for a document. This can be important if you are using the field in an expression and that field is not present in every document.</p>
     pub fn set_default_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.default_value = input; self
+        self.default_value = input;
+        self
     }
     /// <p>The name of the source field to map to the field. </p>
     pub fn source_field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl DoubleOptionsBuilder {
     }
     /// <p>The name of the source field to map to the field. </p>
     pub fn set_source_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_field = input; self
+        self.source_field = input;
+        self
     }
     /// <p>Whether facet information can be returned for the field.</p>
     pub fn facet_enabled(mut self, input: bool) -> Self {
@@ -93,7 +95,8 @@ impl DoubleOptionsBuilder {
     }
     /// <p>Whether facet information can be returned for the field.</p>
     pub fn set_facet_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.facet_enabled = input; self
+        self.facet_enabled = input;
+        self
     }
     /// <p>Whether the contents of the field are searchable.</p>
     pub fn search_enabled(mut self, input: bool) -> Self {
@@ -102,7 +105,8 @@ impl DoubleOptionsBuilder {
     }
     /// <p>Whether the contents of the field are searchable.</p>
     pub fn set_search_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.search_enabled = input; self
+        self.search_enabled = input;
+        self
     }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn return_enabled(mut self, input: bool) -> Self {
@@ -111,7 +115,8 @@ impl DoubleOptionsBuilder {
     }
     /// <p>Whether the contents of the field can be returned in the search results.</p>
     pub fn set_return_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.return_enabled = input; self
+        self.return_enabled = input;
+        self
     }
     /// <p>Whether the field can be used to sort the search results.</p>
     pub fn sort_enabled(mut self, input: bool) -> Self {
@@ -120,24 +125,18 @@ impl DoubleOptionsBuilder {
     }
     /// <p>Whether the field can be used to sort the search results.</p>
     pub fn set_sort_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.sort_enabled = input; self
+        self.sort_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`DoubleOptions`](crate::types::DoubleOptions).
     pub fn build(self) -> crate::types::DoubleOptions {
         crate::types::DoubleOptions {
-            default_value: self.default_value
-            ,
-            source_field: self.source_field
-            ,
-            facet_enabled: self.facet_enabled
-            ,
-            search_enabled: self.search_enabled
-            ,
-            return_enabled: self.return_enabled
-            ,
-            sort_enabled: self.sort_enabled
-            ,
+            default_value: self.default_value,
+            source_field: self.source_field,
+            facet_enabled: self.facet_enabled,
+            search_enabled: self.search_enabled,
+            return_enabled: self.return_enabled,
+            sort_enabled: self.sort_enabled,
         }
     }
 }
-

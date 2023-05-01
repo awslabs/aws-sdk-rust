@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let unit = unimplemented!();
 /// match unit {
@@ -55,14 +55,22 @@
 /// Specifically, when `unit` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Unit::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Unit {
     #[allow(missing_docs)] // documentation missing in model
     Bits,
@@ -119,91 +127,118 @@ pub enum Unit {
     #[allow(missing_docs)] // documentation missing in model
     TeraBytesPerSecond,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Unit {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BITS" => Unit::Bits,
-"BITS_PER_SECOND" => Unit::BitsPerSecond,
-"BYTES" => Unit::Bytes,
-"BYTES_PER_SECOND" => Unit::BytesPerSecond,
-"COUNT" => Unit::Count,
-"COUNT_PER_SECOND" => Unit::CountPerSecond,
-"GIGA_BITS" => Unit::GigaBits,
-"GIGA_BITS_PER_SECOND" => Unit::GigaBitsPerSecond,
-"GIGA_BYTES" => Unit::GigaBytes,
-"GIGA_BYTES_PER_SECOND" => Unit::GigaBytesPerSecond,
-"KILO_BITS" => Unit::KiloBits,
-"KILO_BITS_PER_SECOND" => Unit::KiloBitsPerSecond,
-"KILO_BYTES" => Unit::KiloBytes,
-"KILO_BYTES_PER_SECOND" => Unit::KiloBytesPerSecond,
-"MEGA_BITS" => Unit::MegaBits,
-"MEGA_BITS_PER_SECOND" => Unit::MegaBitsPerSecond,
-"MEGA_BYTES" => Unit::MegaBytes,
-"MEGA_BYTES_PER_SECOND" => Unit::MegaBytesPerSecond,
-"MICRO_SECONDS" => Unit::MicroSeconds,
-"MILLI_SECONDS" => Unit::MilliSeconds,
-"NONE" => Unit::None,
-"PERCENT" => Unit::Percent,
-"SECONDS" => Unit::Seconds,
-"TERA_BITS" => Unit::TeraBits,
-"TERA_BITS_PER_SECOND" => Unit::TeraBitsPerSecond,
-"TERA_BYTES" => Unit::TeraBytes,
-"TERA_BYTES_PER_SECOND" => Unit::TeraBytesPerSecond,
-other => Unit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Unit {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Unit::from(s))
-                }
-            }
-impl Unit {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Unit::Bits => "BITS",
-    Unit::BitsPerSecond => "BITS_PER_SECOND",
-    Unit::Bytes => "BYTES",
-    Unit::BytesPerSecond => "BYTES_PER_SECOND",
-    Unit::Count => "COUNT",
-    Unit::CountPerSecond => "COUNT_PER_SECOND",
-    Unit::GigaBits => "GIGA_BITS",
-    Unit::GigaBitsPerSecond => "GIGA_BITS_PER_SECOND",
-    Unit::GigaBytes => "GIGA_BYTES",
-    Unit::GigaBytesPerSecond => "GIGA_BYTES_PER_SECOND",
-    Unit::KiloBits => "KILO_BITS",
-    Unit::KiloBitsPerSecond => "KILO_BITS_PER_SECOND",
-    Unit::KiloBytes => "KILO_BYTES",
-    Unit::KiloBytesPerSecond => "KILO_BYTES_PER_SECOND",
-    Unit::MegaBits => "MEGA_BITS",
-    Unit::MegaBitsPerSecond => "MEGA_BITS_PER_SECOND",
-    Unit::MegaBytes => "MEGA_BYTES",
-    Unit::MegaBytesPerSecond => "MEGA_BYTES_PER_SECOND",
-    Unit::MicroSeconds => "MICRO_SECONDS",
-    Unit::MilliSeconds => "MILLI_SECONDS",
-    Unit::None => "NONE",
-    Unit::Percent => "PERCENT",
-    Unit::Seconds => "SECONDS",
-    Unit::TeraBits => "TERA_BITS",
-    Unit::TeraBitsPerSecond => "TERA_BITS_PER_SECOND",
-    Unit::TeraBytes => "TERA_BYTES",
-    Unit::TeraBytesPerSecond => "TERA_BYTES_PER_SECOND",
-    Unit::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "BITS" => Unit::Bits,
+            "BITS_PER_SECOND" => Unit::BitsPerSecond,
+            "BYTES" => Unit::Bytes,
+            "BYTES_PER_SECOND" => Unit::BytesPerSecond,
+            "COUNT" => Unit::Count,
+            "COUNT_PER_SECOND" => Unit::CountPerSecond,
+            "GIGA_BITS" => Unit::GigaBits,
+            "GIGA_BITS_PER_SECOND" => Unit::GigaBitsPerSecond,
+            "GIGA_BYTES" => Unit::GigaBytes,
+            "GIGA_BYTES_PER_SECOND" => Unit::GigaBytesPerSecond,
+            "KILO_BITS" => Unit::KiloBits,
+            "KILO_BITS_PER_SECOND" => Unit::KiloBitsPerSecond,
+            "KILO_BYTES" => Unit::KiloBytes,
+            "KILO_BYTES_PER_SECOND" => Unit::KiloBytesPerSecond,
+            "MEGA_BITS" => Unit::MegaBits,
+            "MEGA_BITS_PER_SECOND" => Unit::MegaBitsPerSecond,
+            "MEGA_BYTES" => Unit::MegaBytes,
+            "MEGA_BYTES_PER_SECOND" => Unit::MegaBytesPerSecond,
+            "MICRO_SECONDS" => Unit::MicroSeconds,
+            "MILLI_SECONDS" => Unit::MilliSeconds,
+            "NONE" => Unit::None,
+            "PERCENT" => Unit::Percent,
+            "SECONDS" => Unit::Seconds,
+            "TERA_BITS" => Unit::TeraBits,
+            "TERA_BITS_PER_SECOND" => Unit::TeraBitsPerSecond,
+            "TERA_BYTES" => Unit::TeraBytes,
+            "TERA_BYTES_PER_SECOND" => Unit::TeraBytesPerSecond,
+            other => Unit::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BITS", "BITS_PER_SECOND", "BYTES", "BYTES_PER_SECOND", "COUNT", "COUNT_PER_SECOND", "GIGA_BITS", "GIGA_BITS_PER_SECOND", "GIGA_BYTES", "GIGA_BYTES_PER_SECOND", "KILO_BITS", "KILO_BITS_PER_SECOND", "KILO_BYTES", "KILO_BYTES_PER_SECOND", "MEGA_BITS", "MEGA_BITS_PER_SECOND", "MEGA_BYTES", "MEGA_BYTES_PER_SECOND", "MICRO_SECONDS", "MILLI_SECONDS", "NONE", "PERCENT", "SECONDS", "TERA_BITS", "TERA_BITS_PER_SECOND", "TERA_BYTES", "TERA_BYTES_PER_SECOND"]
-                }
-            }
-impl AsRef<str> for Unit {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Unit {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Unit::from(s))
+    }
+}
+impl Unit {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Unit::Bits => "BITS",
+            Unit::BitsPerSecond => "BITS_PER_SECOND",
+            Unit::Bytes => "BYTES",
+            Unit::BytesPerSecond => "BYTES_PER_SECOND",
+            Unit::Count => "COUNT",
+            Unit::CountPerSecond => "COUNT_PER_SECOND",
+            Unit::GigaBits => "GIGA_BITS",
+            Unit::GigaBitsPerSecond => "GIGA_BITS_PER_SECOND",
+            Unit::GigaBytes => "GIGA_BYTES",
+            Unit::GigaBytesPerSecond => "GIGA_BYTES_PER_SECOND",
+            Unit::KiloBits => "KILO_BITS",
+            Unit::KiloBitsPerSecond => "KILO_BITS_PER_SECOND",
+            Unit::KiloBytes => "KILO_BYTES",
+            Unit::KiloBytesPerSecond => "KILO_BYTES_PER_SECOND",
+            Unit::MegaBits => "MEGA_BITS",
+            Unit::MegaBitsPerSecond => "MEGA_BITS_PER_SECOND",
+            Unit::MegaBytes => "MEGA_BYTES",
+            Unit::MegaBytesPerSecond => "MEGA_BYTES_PER_SECOND",
+            Unit::MicroSeconds => "MICRO_SECONDS",
+            Unit::MilliSeconds => "MILLI_SECONDS",
+            Unit::None => "NONE",
+            Unit::Percent => "PERCENT",
+            Unit::Seconds => "SECONDS",
+            Unit::TeraBits => "TERA_BITS",
+            Unit::TeraBitsPerSecond => "TERA_BITS_PER_SECOND",
+            Unit::TeraBytes => "TERA_BYTES",
+            Unit::TeraBytesPerSecond => "TERA_BYTES_PER_SECOND",
+            Unit::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BITS",
+            "BITS_PER_SECOND",
+            "BYTES",
+            "BYTES_PER_SECOND",
+            "COUNT",
+            "COUNT_PER_SECOND",
+            "GIGA_BITS",
+            "GIGA_BITS_PER_SECOND",
+            "GIGA_BYTES",
+            "GIGA_BYTES_PER_SECOND",
+            "KILO_BITS",
+            "KILO_BITS_PER_SECOND",
+            "KILO_BYTES",
+            "KILO_BYTES_PER_SECOND",
+            "MEGA_BITS",
+            "MEGA_BITS_PER_SECOND",
+            "MEGA_BYTES",
+            "MEGA_BYTES_PER_SECOND",
+            "MICRO_SECONDS",
+            "MILLI_SECONDS",
+            "NONE",
+            "PERCENT",
+            "SECONDS",
+            "TERA_BITS",
+            "TERA_BITS_PER_SECOND",
+            "TERA_BYTES",
+            "TERA_BYTES_PER_SECOND",
+        ]
+    }
+}
+impl AsRef<str> for Unit {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

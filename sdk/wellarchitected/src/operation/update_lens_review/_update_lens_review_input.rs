@@ -3,13 +3,13 @@
 /// <p>Input for update lens review.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLensReviewInput  {
+pub struct UpdateLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     #[doc(hidden)]
     pub lens_alias: std::option::Option<std::string::String>,
@@ -18,32 +18,37 @@ pub struct UpdateLensReviewInput  {
     pub lens_notes: std::option::Option<std::string::String>,
     /// <p>List of pillar notes of a lens review in a workload.</p>
     #[doc(hidden)]
-    pub pillar_notes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub pillar_notes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateLensReviewInput {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<& str> {
+    pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lens_alias(&self) -> std::option::Option<& str> {
+    pub fn lens_alias(&self) -> std::option::Option<&str> {
         self.lens_alias.as_deref()
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn lens_notes(&self) -> std::option::Option<& str> {
+    pub fn lens_notes(&self) -> std::option::Option<&str> {
         self.lens_notes.as_deref()
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
-    pub fn pillar_notes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn pillar_notes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.pillar_notes.as_ref()
     }
 }
 impl UpdateLensReviewInput {
     /// Creates a new builder-style object to manufacture [`UpdateLensReviewInput`](crate::operation::update_lens_review::UpdateLensReviewInput).
-    pub fn builder() -> crate::operation::update_lens_review::builders::UpdateLensReviewInputBuilder {
+    pub fn builder() -> crate::operation::update_lens_review::builders::UpdateLensReviewInputBuilder
+    {
         crate::operation::update_lens_review::builders::UpdateLensReviewInputBuilder::default()
     }
 }
@@ -55,7 +60,8 @@ pub struct UpdateLensReviewInputBuilder {
     pub(crate) workload_id: std::option::Option<std::string::String>,
     pub(crate) lens_alias: std::option::Option<std::string::String>,
     pub(crate) lens_notes: std::option::Option<std::string::String>,
-    pub(crate) pillar_notes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) pillar_notes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateLensReviewInputBuilder {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
@@ -65,22 +71,24 @@ impl UpdateLensReviewInputBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_id = input; self
+        self.workload_id = input;
+        self
     }
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lens_alias(mut self, input: impl Into<std::string::String>) -> Self {
         self.lens_alias = Some(input.into());
         self
     }
-    /// <p>The alias of the lens.</p> 
-    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p> 
-    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p> 
+    /// <p>The alias of the lens.</p>
+    /// <p>For Amazon Web Services official lenses, this is either the lens alias, such as <code>serverless</code>, or the lens ARN, such as <code>arn:aws:wellarchitected:us-east-1::lens/serverless</code>. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.</p>
+    /// <p>For custom lenses, this is the lens ARN, such as <code>arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef</code>. </p>
     /// <p>Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn set_lens_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_alias = input; self
+        self.lens_alias = input;
+        self
     }
     /// <p>The notes associated with the workload.</p>
     pub fn lens_notes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,37 +97,48 @@ impl UpdateLensReviewInputBuilder {
     }
     /// <p>The notes associated with the workload.</p>
     pub fn set_lens_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_notes = input; self
+        self.lens_notes = input;
+        self
     }
     /// Adds a key-value pair to `pillar_notes`.
     ///
     /// To override the contents of this collection use [`set_pillar_notes`](Self::set_pillar_notes).
     ///
     /// <p>List of pillar notes of a lens review in a workload.</p>
-    pub fn pillar_notes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn pillar_notes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.pillar_notes.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.pillar_notes = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.pillar_notes = Some(hash_map);
+        self
     }
     /// <p>List of pillar notes of a lens review in a workload.</p>
-    pub fn set_pillar_notes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.pillar_notes = input; self
+    pub fn set_pillar_notes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.pillar_notes = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateLensReviewInput`](crate::operation::update_lens_review::UpdateLensReviewInput).
-    pub fn build(self) -> Result<crate::operation::update_lens_review::UpdateLensReviewInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_lens_review::UpdateLensReviewInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_lens_review::UpdateLensReviewInput {
-                workload_id: self.workload_id
-                ,
-                lens_alias: self.lens_alias
-                ,
-                lens_notes: self.lens_notes
-                ,
-                pillar_notes: self.pillar_notes
-                ,
-            }
+                workload_id: self.workload_id,
+                lens_alias: self.lens_alias,
+                lens_notes: self.lens_notes,
+                pillar_notes: self.pillar_notes,
+            },
         )
     }
 }
-

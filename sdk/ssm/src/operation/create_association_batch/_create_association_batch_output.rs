@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssociationBatchOutput  {
+pub struct CreateAssociationBatchOutput {
     /// <p>Information about the associations that succeeded.</p>
     #[doc(hidden)]
     pub successful: std::option::Option<std::vec::Vec<crate::types::AssociationDescription>>,
@@ -13,22 +13,24 @@ pub struct CreateAssociationBatchOutput  {
 }
 impl CreateAssociationBatchOutput {
     /// <p>Information about the associations that succeeded.</p>
-    pub fn successful(&self) -> std::option::Option<& [crate::types::AssociationDescription]> {
+    pub fn successful(&self) -> std::option::Option<&[crate::types::AssociationDescription]> {
         self.successful.as_deref()
     }
     /// <p>Information about the associations that failed.</p>
-    pub fn failed(&self) -> std::option::Option<& [crate::types::FailedCreateAssociation]> {
+    pub fn failed(&self) -> std::option::Option<&[crate::types::FailedCreateAssociation]> {
         self.failed.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAssociationBatchOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAssociationBatchOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssociationBatchOutput`](crate::operation::create_association_batch::CreateAssociationBatchOutput).
-    pub fn builder() -> crate::operation::create_association_batch::builders::CreateAssociationBatchOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_association_batch::builders::CreateAssociationBatchOutputBuilder
+    {
         crate::operation::create_association_batch::builders::CreateAssociationBatchOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl CreateAssociationBatchOutputBuilder {
     /// <p>Information about the associations that succeeded.</p>
     pub fn successful(mut self, input: crate::types::AssociationDescription) -> Self {
         let mut v = self.successful.unwrap_or_default();
-                        v.push(input);
-                        self.successful = Some(v);
-                        self
+        v.push(input);
+        self.successful = Some(v);
+        self
     }
     /// <p>Information about the associations that succeeded.</p>
-    pub fn set_successful(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssociationDescription>>) -> Self {
-        self.successful = input; self
+    pub fn set_successful(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AssociationDescription>>,
+    ) -> Self {
+        self.successful = input;
+        self
     }
     /// Appends an item to `failed`.
     ///
@@ -64,32 +70,33 @@ impl CreateAssociationBatchOutputBuilder {
     /// <p>Information about the associations that failed.</p>
     pub fn failed(mut self, input: crate::types::FailedCreateAssociation) -> Self {
         let mut v = self.failed.unwrap_or_default();
-                        v.push(input);
-                        self.failed = Some(v);
-                        self
+        v.push(input);
+        self.failed = Some(v);
+        self
     }
     /// <p>Information about the associations that failed.</p>
-    pub fn set_failed(mut self, input: std::option::Option<std::vec::Vec<crate::types::FailedCreateAssociation>>) -> Self {
-        self.failed = input; self
+    pub fn set_failed(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FailedCreateAssociation>>,
+    ) -> Self {
+        self.failed = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAssociationBatchOutput`](crate::operation::create_association_batch::CreateAssociationBatchOutput).
     pub fn build(self) -> crate::operation::create_association_batch::CreateAssociationBatchOutput {
         crate::operation::create_association_batch::CreateAssociationBatchOutput {
-            successful: self.successful
-            ,
-            failed: self.failed
-            ,
+            successful: self.successful,
+            failed: self.failed,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The field well configuration of a waterfall visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WaterfallChartAggregatedFieldWells  {
+pub struct WaterfallChartAggregatedFieldWells {
     /// <p>The category field wells of a waterfall visual.</p>
     #[doc(hidden)]
     pub categories: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
@@ -16,15 +16,15 @@ pub struct WaterfallChartAggregatedFieldWells  {
 }
 impl WaterfallChartAggregatedFieldWells {
     /// <p>The category field wells of a waterfall visual.</p>
-    pub fn categories(&self) -> std::option::Option<& [crate::types::DimensionField]> {
+    pub fn categories(&self) -> std::option::Option<&[crate::types::DimensionField]> {
         self.categories.as_deref()
     }
     /// <p>The value field wells of a waterfall visual.</p>
-    pub fn values(&self) -> std::option::Option<& [crate::types::MeasureField]> {
+    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
         self.values.as_deref()
     }
     /// <p>The breakdown field wells of a waterfall visual.</p>
-    pub fn breakdowns(&self) -> std::option::Option<& [crate::types::DimensionField]> {
+    pub fn breakdowns(&self) -> std::option::Option<&[crate::types::DimensionField]> {
         self.breakdowns.as_deref()
     }
 }
@@ -51,13 +51,17 @@ impl WaterfallChartAggregatedFieldWellsBuilder {
     /// <p>The category field wells of a waterfall visual.</p>
     pub fn categories(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.categories.unwrap_or_default();
-                        v.push(input);
-                        self.categories = Some(v);
-                        self
+        v.push(input);
+        self.categories = Some(v);
+        self
     }
     /// <p>The category field wells of a waterfall visual.</p>
-    pub fn set_categories(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>) -> Self {
-        self.categories = input; self
+    pub fn set_categories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    ) -> Self {
+        self.categories = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -66,13 +70,17 @@ impl WaterfallChartAggregatedFieldWellsBuilder {
     /// <p>The value field wells of a waterfall visual.</p>
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input);
-                        self.values = Some(v);
-                        self
+        v.push(input);
+        self.values = Some(v);
+        self
     }
     /// <p>The value field wells of a waterfall visual.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Appends an item to `breakdowns`.
     ///
@@ -81,24 +89,24 @@ impl WaterfallChartAggregatedFieldWellsBuilder {
     /// <p>The breakdown field wells of a waterfall visual.</p>
     pub fn breakdowns(mut self, input: crate::types::DimensionField) -> Self {
         let mut v = self.breakdowns.unwrap_or_default();
-                        v.push(input);
-                        self.breakdowns = Some(v);
-                        self
+        v.push(input);
+        self.breakdowns = Some(v);
+        self
     }
     /// <p>The breakdown field wells of a waterfall visual.</p>
-    pub fn set_breakdowns(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>) -> Self {
-        self.breakdowns = input; self
+    pub fn set_breakdowns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DimensionField>>,
+    ) -> Self {
+        self.breakdowns = input;
+        self
     }
     /// Consumes the builder and constructs a [`WaterfallChartAggregatedFieldWells`](crate::types::WaterfallChartAggregatedFieldWells).
     pub fn build(self) -> crate::types::WaterfallChartAggregatedFieldWells {
         crate::types::WaterfallChartAggregatedFieldWells {
-            categories: self.categories
-            ,
-            values: self.values
-            ,
-            breakdowns: self.breakdowns
-            ,
+            categories: self.categories,
+            values: self.values,
+            breakdowns: self.breakdowns,
         }
     }
 }
-

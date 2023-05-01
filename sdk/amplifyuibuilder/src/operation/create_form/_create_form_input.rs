@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFormInput  {
+pub struct CreateFormInput {
     /// <p>The unique ID of the Amplify app to associate with the form.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CreateFormInput  {
 }
 impl CreateFormInput {
     /// <p>The unique ID of the Amplify app to associate with the form.</p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> std::option::Option<& str> {
+    pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The unique client token.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Represents the configuration of the form to create.</p>
-    pub fn form_to_create(&self) -> std::option::Option<& crate::types::CreateFormData> {
+    pub fn form_to_create(&self) -> std::option::Option<&crate::types::CreateFormData> {
         self.form_to_create.as_ref()
     }
 }
@@ -58,7 +58,8 @@ impl CreateFormInputBuilder {
     }
     /// <p>The unique ID of the Amplify app to associate with the form.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl CreateFormInputBuilder {
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_name = input; self
+        self.environment_name = input;
+        self
     }
     /// <p>The unique client token.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl CreateFormInputBuilder {
     }
     /// <p>The unique client token.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>Represents the configuration of the form to create.</p>
     pub fn form_to_create(mut self, input: crate::types::CreateFormData) -> Self {
@@ -84,23 +87,25 @@ impl CreateFormInputBuilder {
         self
     }
     /// <p>Represents the configuration of the form to create.</p>
-    pub fn set_form_to_create(mut self, input: std::option::Option<crate::types::CreateFormData>) -> Self {
-        self.form_to_create = input; self
+    pub fn set_form_to_create(
+        mut self,
+        input: std::option::Option<crate::types::CreateFormData>,
+    ) -> Self {
+        self.form_to_create = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFormInput`](crate::operation::create_form::CreateFormInput).
-    pub fn build(self) -> Result<crate::operation::create_form::CreateFormInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_form::CreateFormInput {
-                app_id: self.app_id
-                ,
-                environment_name: self.environment_name
-                ,
-                client_token: self.client_token
-                ,
-                form_to_create: self.form_to_create
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_form::CreateFormInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_form::CreateFormInput {
+            app_id: self.app_id,
+            environment_name: self.environment_name,
+            client_token: self.client_token,
+            form_to_create: self.form_to_create,
+        })
     }
 }
-

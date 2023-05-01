@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSkillGroupOutput  {
+pub struct DeleteSkillGroupOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteSkillGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteSkillGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSkillGroupOutput`](crate::operation::delete_skill_group::DeleteSkillGroupOutput).
-    pub fn builder() -> crate::operation::delete_skill_group::builders::DeleteSkillGroupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_skill_group::builders::DeleteSkillGroupOutputBuilder
+    {
         crate::operation::delete_skill_group::builders::DeleteSkillGroupOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct DeleteSkillGroupOutputBuilder {
 }
 impl DeleteSkillGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteSkillGroupOutput`](crate::operation::delete_skill_group::DeleteSkillGroupOutput).
     pub fn build(self) -> crate::operation::delete_skill_group::DeleteSkillGroupOutput {
         crate::operation::delete_skill_group::DeleteSkillGroupOutput {
@@ -40,4 +41,3 @@ impl DeleteSkillGroupOutputBuilder {
         }
     }
 }
-

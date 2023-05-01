@@ -3,7 +3,7 @@
 /// <p>Describes the BGP options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BgpOptions  {
+pub struct BgpOptions {
     /// <p>The Peer ASN of the BGP.</p>
     #[doc(hidden)]
     pub peer_asn: std::option::Option<i64>,
@@ -35,14 +35,13 @@ impl BgpOptionsBuilder {
     }
     /// <p>The Peer ASN of the BGP.</p>
     pub fn set_peer_asn(mut self, input: std::option::Option<i64>) -> Self {
-        self.peer_asn = input; self
+        self.peer_asn = input;
+        self
     }
     /// Consumes the builder and constructs a [`BgpOptions`](crate::types::BgpOptions).
     pub fn build(self) -> crate::types::BgpOptions {
         crate::types::BgpOptions {
-            peer_asn: self.peer_asn
-            ,
+            peer_asn: self.peer_asn,
         }
     }
 }
-

@@ -4,56 +4,81 @@ pub use crate::operation::list_pull_requests::_list_pull_requests_output::ListPu
 pub use crate::operation::list_pull_requests::_list_pull_requests_input::ListPullRequestsInputBuilder;
 
 /// Fluent builder constructing a request to `ListPullRequests`.
-/// 
+///
 /// <p>Returns a list of pull requests for a specified repository. The return list can be refined by pull request status or pull request author ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPullRequestsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_pull_requests::builders::ListPullRequestsInputBuilder,
+    inner: crate::operation::list_pull_requests::builders::ListPullRequestsInputBuilder,
 }
-impl ListPullRequestsFluentBuilder  {
+impl ListPullRequestsFluentBuilder {
     /// Creates a new `ListPullRequests`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_pull_requests::ListPullRequests, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_pull_requests::ListPullRequestsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_pull_requests::ListPullRequestsOutput, aws_smithy_http::result::SdkError<crate::operation::list_pull_requests::ListPullRequestsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_pull_requests::ListPullRequests,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_pull_requests::ListPullRequestsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_pull_requests::ListPullRequestsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_pull_requests::ListPullRequestsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator {
-                                crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator {
+        crate::operation::list_pull_requests::paginator::ListPullRequestsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The name of the repository for which you want to list pull requests.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
@@ -80,7 +105,10 @@ impl ListPullRequestsFluentBuilder  {
         self
     }
     /// <p>Optional. The status of the pull request. If used, this refines the results to the pull requests that match the specified status.</p>
-    pub fn set_pull_request_status(mut self, input: std::option::Option<crate::types::PullRequestStatusEnum>) -> Self {
+    pub fn set_pull_request_status(
+        mut self,
+        input: std::option::Option<crate::types::PullRequestStatusEnum>,
+    ) -> Self {
         self.inner = self.inner.set_pull_request_status(input);
         self
     }
@@ -105,4 +133,3 @@ impl ListPullRequestsFluentBuilder  {
         self
     }
 }
-

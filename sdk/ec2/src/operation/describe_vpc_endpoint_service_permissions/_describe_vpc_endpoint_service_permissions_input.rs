@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcEndpointServicePermissionsInput  {
+pub struct DescribeVpcEndpointServicePermissionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
     /// <p>The ID of the service.</p>
     #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li> 
-    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -29,15 +29,15 @@ impl DescribeVpcEndpointServicePermissionsInput {
         self.dry_run
     }
     /// <p>The ID of the service.</p>
-    pub fn service_id(&self) -> std::option::Option<& str> {
+    pub fn service_id(&self) -> std::option::Option<&str> {
         self.service_id.as_deref()
     }
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li> 
-    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned.</p>
@@ -45,13 +45,13 @@ impl DescribeVpcEndpointServicePermissionsInput {
         self.max_results
     }
     /// <p>The token to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeVpcEndpointServicePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcEndpointServicePermissionsInput`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput).
-    pub fn builder() -> crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsInputBuilder{
         crate::operation::describe_vpc_endpoint_service_permissions::builders::DescribeVpcEndpointServicePermissionsInputBuilder::default()
     }
 }
@@ -74,7 +74,8 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,30 +84,35 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     }
     /// <p>The ID of the service.</p>
     pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_id = input; self
+        self.service_id = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li> 
-    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li> 
-    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>principal</code> - The ARN of the principal.</p> </li>
+    /// <li> <p> <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code> | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -115,7 +121,8 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     }
     /// <p>The maximum number of results to return for the request in a single page. The remaining results of the initial request can be seen by sending another request with the returned <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results are returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,10 +131,11 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
     }
     /// <p>The token to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeVpcEndpointServicePermissionsInput`](crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsInput {
                 dry_run: self.dry_run
@@ -144,4 +152,3 @@ impl DescribeVpcEndpointServicePermissionsInputBuilder {
         )
     }
 }
-

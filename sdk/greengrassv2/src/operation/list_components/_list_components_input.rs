@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComponentsInput  {
-    /// <p>The scope of the components to list.</p> 
+pub struct ListComponentsInput {
+    /// <p>The scope of the components to list.</p>
     /// <p>Default: <code>PRIVATE</code> </p>
     #[doc(hidden)]
     pub scope: std::option::Option<crate::types::ComponentVisibilityScope>,
@@ -15,9 +15,9 @@ pub struct ListComponentsInput  {
     pub next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsInput {
-    /// <p>The scope of the components to list.</p> 
+    /// <p>The scope of the components to list.</p>
     /// <p>Default: <code>PRIVATE</code> </p>
-    pub fn scope(&self) -> std::option::Option<& crate::types::ComponentVisibilityScope> {
+    pub fn scope(&self) -> std::option::Option<&crate::types::ComponentVisibilityScope> {
         self.scope.as_ref()
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
@@ -25,7 +25,7 @@ impl ListComponentsInput {
         self.max_results
     }
     /// <p>The token to be used for the next set of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -45,16 +45,20 @@ pub struct ListComponentsInputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
 impl ListComponentsInputBuilder {
-    /// <p>The scope of the components to list.</p> 
+    /// <p>The scope of the components to list.</p>
     /// <p>Default: <code>PRIVATE</code> </p>
     pub fn scope(mut self, input: crate::types::ComponentVisibilityScope) -> Self {
         self.scope = Some(input);
         self
     }
-    /// <p>The scope of the components to list.</p> 
+    /// <p>The scope of the components to list.</p>
     /// <p>Default: <code>PRIVATE</code> </p>
-    pub fn set_scope(mut self, input: std::option::Option<crate::types::ComponentVisibilityScope>) -> Self {
-        self.scope = input; self
+    pub fn set_scope(
+        mut self,
+        input: std::option::Option<crate::types::ComponentVisibilityScope>,
+    ) -> Self {
+        self.scope = input;
+        self
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -63,7 +67,8 @@ impl ListComponentsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,20 +77,20 @@ impl ListComponentsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListComponentsInput`](crate::operation::list_components::ListComponentsInput).
-    pub fn build(self) -> Result<crate::operation::list_components::ListComponentsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_components::ListComponentsInput {
-                scope: self.scope
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_components::ListComponentsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_components::ListComponentsInput {
+            scope: self.scope,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchAvailablePhoneNumbersOutput  {
+pub struct SearchAvailablePhoneNumbersOutput {
     /// <p>List of phone numbers, in E.164 format.</p>
     #[doc(hidden)]
     pub e164_phone_numbers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,22 @@ pub struct SearchAvailablePhoneNumbersOutput  {
 }
 impl SearchAvailablePhoneNumbersOutput {
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
         self.e164_phone_numbers.as_deref()
     }
     /// <p>The token used to retrieve the next page of search results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchAvailablePhoneNumbersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SearchAvailablePhoneNumbersOutput {
     /// Creates a new builder-style object to manufacture [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput).
-    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder {
+    pub fn builder() -> crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder{
         crate::operation::search_available_phone_numbers::builders::SearchAvailablePhoneNumbersOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
     /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
-                        v.push(input.into());
-                        self.e164_phone_numbers = Some(v);
-                        self
+        v.push(input.into());
+        self.e164_phone_numbers = Some(v);
+        self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn set_e164_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.e164_phone_numbers = input; self
+    pub fn set_e164_phone_numbers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.e164_phone_numbers = input;
+        self
     }
     /// <p>The token used to retrieve the next page of search results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,26 @@ impl SearchAvailablePhoneNumbersOutputBuilder {
     }
     /// <p>The token used to retrieve the next page of search results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SearchAvailablePhoneNumbersOutput`](crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput).
-    pub fn build(self) -> crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
         crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput {
-            e164_phone_numbers: self.e164_phone_numbers
-            ,
-            next_token: self.next_token
-            ,
+            e164_phone_numbers: self.e164_phone_numbers,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

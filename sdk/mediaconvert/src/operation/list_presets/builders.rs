@@ -4,56 +4,75 @@ pub use crate::operation::list_presets::_list_presets_output::ListPresetsOutputB
 pub use crate::operation::list_presets::_list_presets_input::ListPresetsInputBuilder;
 
 /// Fluent builder constructing a request to `ListPresets`.
-/// 
+///
 /// Retrieve a JSON array of up to twenty of your presets. This will return the presets themselves, not just a list of them. To retrieve the next twenty presets, use the nextToken string returned with the array.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPresetsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_presets::builders::ListPresetsInputBuilder,
+    inner: crate::operation::list_presets::builders::ListPresetsInputBuilder,
 }
-impl ListPresetsFluentBuilder  {
+impl ListPresetsFluentBuilder {
     /// Creates a new `ListPresets`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_presets::ListPresets, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_presets::ListPresetsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_presets::ListPresetsOutput, aws_smithy_http::result::SdkError<crate::operation::list_presets::ListPresetsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_presets::ListPresets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_presets::ListPresetsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_presets::ListPresetsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_presets::ListPresetsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_presets::paginator::ListPresetsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_presets::paginator::ListPresetsPaginator {
-                                crate::operation::list_presets::paginator::ListPresetsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_presets::paginator::ListPresetsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_presets::paginator::ListPresetsPaginator {
+        crate::operation::list_presets::paginator::ListPresetsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// Optionally, specify a preset category to limit responses to only presets from that category.
     pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.category(input.into());
@@ -105,4 +124,3 @@ impl ListPresetsFluentBuilder  {
         self
     }
 }
-

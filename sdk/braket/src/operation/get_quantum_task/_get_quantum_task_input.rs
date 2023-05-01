@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetQuantumTaskInput  {
+pub struct GetQuantumTaskInput {
     /// <p>the ARN of the task to retrieve.</p>
     #[doc(hidden)]
     pub quantum_task_arn: std::option::Option<std::string::String>,
 }
 impl GetQuantumTaskInput {
     /// <p>the ARN of the task to retrieve.</p>
-    pub fn quantum_task_arn(&self) -> std::option::Option<& str> {
+    pub fn quantum_task_arn(&self) -> std::option::Option<&str> {
         self.quantum_task_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetQuantumTaskInputBuilder {
     }
     /// <p>the ARN of the task to retrieve.</p>
     pub fn set_quantum_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quantum_task_arn = input; self
+        self.quantum_task_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetQuantumTaskInput`](crate::operation::get_quantum_task::GetQuantumTaskInput).
-    pub fn build(self) -> Result<crate::operation::get_quantum_task::GetQuantumTaskInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_quantum_task::GetQuantumTaskInput {
-                quantum_task_arn: self.quantum_task_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_quantum_task::GetQuantumTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_quantum_task::GetQuantumTaskInput {
+            quantum_task_arn: self.quantum_task_arn,
+        })
     }
 }
-

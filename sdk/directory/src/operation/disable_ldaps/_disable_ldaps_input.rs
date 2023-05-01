@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableLdapsInput  {
+pub struct DisableLdapsInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DisableLdapsInput  {
 }
 impl DisableLdapsInput {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::LdapsType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::LdapsType> {
         self.r#type.as_ref()
     }
 }
@@ -42,7 +42,8 @@ impl DisableLdapsInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn r#type(mut self, input: crate::types::LdapsType) -> Self {
@@ -51,18 +52,19 @@ impl DisableLdapsInputBuilder {
     }
     /// <p>The type of LDAP security to enable. Currently only the value <code>Client</code> is supported.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::LdapsType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableLdapsInput`](crate::operation::disable_ldaps::DisableLdapsInput).
-    pub fn build(self) -> Result<crate::operation::disable_ldaps::DisableLdapsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::disable_ldaps::DisableLdapsInput {
-                directory_id: self.directory_id
-                ,
-                r#type: self.r#type
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_ldaps::DisableLdapsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::disable_ldaps::DisableLdapsInput {
+            directory_id: self.directory_id,
+            r#type: self.r#type,
+        })
     }
 }
-

@@ -128,4 +128,3 @@ pub mod builders;
 
 /// Error types that Amazon Mechanical Turk can respond with.
 pub mod error;
-

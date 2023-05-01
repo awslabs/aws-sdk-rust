@@ -3,7 +3,7 @@
 /// <p> <b>[Event-based policies only]</b> Specifies an event that activates an event-based policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventSource  {
+pub struct EventSource {
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::EventSourceValues>,
@@ -13,11 +13,11 @@ pub struct EventSource  {
 }
 impl EventSource {
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::EventSourceValues> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::EventSourceValues> {
         self.r#type.as_ref()
     }
     /// <p>Information about the event.</p>
-    pub fn parameters(&self) -> std::option::Option<& crate::types::EventParameters> {
+    pub fn parameters(&self) -> std::option::Option<&crate::types::EventParameters> {
         self.parameters.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl EventSourceBuilder {
     }
     /// <p>The source of the event. Currently only managed CloudWatch Events rules are supported.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::EventSourceValues>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>Information about the event.</p>
     pub fn parameters(mut self, input: crate::types::EventParameters) -> Self {
@@ -51,17 +52,18 @@ impl EventSourceBuilder {
         self
     }
     /// <p>Information about the event.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<crate::types::EventParameters>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<crate::types::EventParameters>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventSource`](crate::types::EventSource).
     pub fn build(self) -> crate::types::EventSource {
         crate::types::EventSource {
-            r#type: self.r#type
-            ,
-            parameters: self.parameters
-            ,
+            r#type: self.r#type,
+            parameters: self.parameters,
         }
     }
 }
-

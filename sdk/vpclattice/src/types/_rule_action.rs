@@ -21,8 +21,14 @@ pub enum RuleAction {
 impl RuleAction {
     /// Tries to convert the enum instance into [`FixedResponse`](crate::types::RuleAction::FixedResponse), extracting the inner [`FixedResponseAction`](crate::types::FixedResponseAction).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_fixed_response(&self) -> std::result::Result<&crate::types::FixedResponseAction, &Self> {
-        if let RuleAction::FixedResponse(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_fixed_response(
+        &self,
+    ) -> std::result::Result<&crate::types::FixedResponseAction, &Self> {
+        if let RuleAction::FixedResponse(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`FixedResponse`](crate::types::RuleAction::FixedResponse).
     pub fn is_fixed_response(&self) -> bool {
@@ -31,7 +37,11 @@ impl RuleAction {
     /// Tries to convert the enum instance into [`Forward`](crate::types::RuleAction::Forward), extracting the inner [`ForwardAction`](crate::types::ForwardAction).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_forward(&self) -> std::result::Result<&crate::types::ForwardAction, &Self> {
-        if let RuleAction::Forward(val) = &self { Ok(val) } else { Err(self) }
+        if let RuleAction::Forward(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Forward`](crate::types::RuleAction::Forward).
     pub fn is_forward(&self) -> bool {
@@ -42,4 +52,3 @@ impl RuleAction {
         matches!(self, Self::Unknown)
     }
 }
-

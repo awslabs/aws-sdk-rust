@@ -202,4 +202,3 @@ pub use crate::types::_config_rule_compliance_filters::ConfigRuleComplianceFilte
 pub use crate::types::_failed_delete_remediation_exceptions_batch::FailedDeleteRemediationExceptionsBatchBuilder;
 
 pub use crate::types::_base_configuration_item::BaseConfigurationItemBuilder;
-

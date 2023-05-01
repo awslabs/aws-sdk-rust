@@ -3,21 +3,21 @@
 /// <p> Represents the input of a <code>ListDeploymentInstances</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentInstancesInput  {
+pub struct ListDeploymentInstancesInput {
     /// <p> The unique ID of a deployment. </p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
     /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A subset of instances to list by status:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li> 
-    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li> 
-    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li> 
-    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li> 
-    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li> 
-    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li> 
+    /// <p>A subset of instances to list by status:</p>
+    /// <ul>
+    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub instance_status_filter: std::option::Option<std::vec::Vec<crate::types::InstanceStatus>>,
@@ -27,33 +27,35 @@ pub struct ListDeploymentInstancesInput  {
 }
 impl ListDeploymentInstancesInput {
     /// <p> The unique ID of a deployment. </p>
-    pub fn deployment_id(&self) -> std::option::Option<& str> {
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
     /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>A subset of instances to list by status:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li> 
-    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li> 
-    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li> 
-    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li> 
-    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li> 
-    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li> 
+    /// <p>A subset of instances to list by status:</p>
+    /// <ul>
+    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
-    pub fn instance_status_filter(&self) -> std::option::Option<& [crate::types::InstanceStatus]> {
+    pub fn instance_status_filter(&self) -> std::option::Option<&[crate::types::InstanceStatus]> {
         self.instance_status_filter.as_deref()
     }
     /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
-    pub fn instance_type_filter(&self) -> std::option::Option<& [crate::types::InstanceType]> {
+    pub fn instance_type_filter(&self) -> std::option::Option<&[crate::types::InstanceType]> {
         self.instance_type_filter.as_deref()
     }
 }
 impl ListDeploymentInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListDeploymentInstancesInput`](crate::operation::list_deployment_instances::ListDeploymentInstancesInput).
-    pub fn builder() -> crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder
+    {
         crate::operation::list_deployment_instances::builders::ListDeploymentInstancesInputBuilder::default()
     }
 }
@@ -64,7 +66,8 @@ impl ListDeploymentInstancesInput {
 pub struct ListDeploymentInstancesInputBuilder {
     pub(crate) deployment_id: std::option::Option<std::string::String>,
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) instance_status_filter: std::option::Option<std::vec::Vec<crate::types::InstanceStatus>>,
+    pub(crate) instance_status_filter:
+        std::option::Option<std::vec::Vec<crate::types::InstanceStatus>>,
     pub(crate) instance_type_filter: std::option::Option<std::vec::Vec<crate::types::InstanceType>>,
 }
 impl ListDeploymentInstancesInputBuilder {
@@ -75,7 +78,8 @@ impl ListDeploymentInstancesInputBuilder {
     }
     /// <p> The unique ID of a deployment. </p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input; self
+        self.deployment_id = input;
+        self
     }
     /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,38 +88,43 @@ impl ListDeploymentInstancesInputBuilder {
     }
     /// <p>An identifier returned from the previous list deployment instances call. It can be used to return the next set of deployment instances in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `instance_status_filter`.
     ///
     /// To override the contents of this collection use [`set_instance_status_filter`](Self::set_instance_status_filter).
     ///
-    /// <p>A subset of instances to list by status:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li> 
-    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li> 
-    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li> 
-    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li> 
-    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li> 
-    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li> 
+    /// <p>A subset of instances to list by status:</p>
+    /// <ul>
+    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
     pub fn instance_status_filter(mut self, input: crate::types::InstanceStatus) -> Self {
         let mut v = self.instance_status_filter.unwrap_or_default();
-                        v.push(input);
-                        self.instance_status_filter = Some(v);
-                        self
+        v.push(input);
+        self.instance_status_filter = Some(v);
+        self
     }
-    /// <p>A subset of instances to list by status:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li> 
-    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li> 
-    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li> 
-    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li> 
-    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li> 
-    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li> 
+    /// <p>A subset of instances to list by status:</p>
+    /// <ul>
+    /// <li> <p> <code>Pending</code>: Include those instances with pending deployments.</p> </li>
+    /// <li> <p> <code>InProgress</code>: Include those instances where deployments are still in progress.</p> </li>
+    /// <li> <p> <code>Succeeded</code>: Include those instances with successful deployments.</p> </li>
+    /// <li> <p> <code>Failed</code>: Include those instances with failed deployments.</p> </li>
+    /// <li> <p> <code>Skipped</code>: Include those instances with skipped deployments.</p> </li>
+    /// <li> <p> <code>Unknown</code>: Include those instances with deployments in an unknown state.</p> </li>
     /// </ul>
-    pub fn set_instance_status_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceStatus>>) -> Self {
-        self.instance_status_filter = input; self
+    pub fn set_instance_status_filter(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceStatus>>,
+    ) -> Self {
+        self.instance_status_filter = input;
+        self
     }
     /// Appends an item to `instance_type_filter`.
     ///
@@ -124,28 +133,32 @@ impl ListDeploymentInstancesInputBuilder {
     /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
     pub fn instance_type_filter(mut self, input: crate::types::InstanceType) -> Self {
         let mut v = self.instance_type_filter.unwrap_or_default();
-                        v.push(input);
-                        self.instance_type_filter = Some(v);
-                        self
+        v.push(input);
+        self.instance_type_filter = Some(v);
+        self
     }
     /// <p>The set of instances in a blue/green deployment, either those in the original environment ("BLUE") or those in the replacement environment ("GREEN"), for which you want to view instance information.</p>
-    pub fn set_instance_type_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceType>>) -> Self {
-        self.instance_type_filter = input; self
+    pub fn set_instance_type_filter(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceType>>,
+    ) -> Self {
+        self.instance_type_filter = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDeploymentInstancesInput`](crate::operation::list_deployment_instances::ListDeploymentInstancesInput).
-    pub fn build(self) -> Result<crate::operation::list_deployment_instances::ListDeploymentInstancesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_deployment_instances::ListDeploymentInstancesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_deployment_instances::ListDeploymentInstancesInput {
-                deployment_id: self.deployment_id
-                ,
-                next_token: self.next_token
-                ,
-                instance_status_filter: self.instance_status_filter
-                ,
-                instance_type_filter: self.instance_type_filter
-                ,
-            }
+                deployment_id: self.deployment_id,
+                next_token: self.next_token,
+                instance_status_filter: self.instance_status_filter,
+                instance_type_filter: self.instance_type_filter,
+            },
         )
     }
 }
-

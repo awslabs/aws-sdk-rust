@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArchiveFindingsInput  {
+pub struct ArchiveFindingsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct ArchiveFindingsInput  {
 }
 impl ArchiveFindingsInput {
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The IDs of the findings that you want to archive.</p>
-    pub fn finding_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn finding_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.finding_ids.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl ArchiveFindingsInputBuilder {
     }
     /// <p>The ID of the detector that specifies the GuardDuty service whose findings you want to archive.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// Appends an item to `finding_ids`.
     ///
@@ -51,24 +52,28 @@ impl ArchiveFindingsInputBuilder {
     /// <p>The IDs of the findings that you want to archive.</p>
     pub fn finding_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.finding_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.finding_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.finding_ids = Some(v);
+        self
     }
     /// <p>The IDs of the findings that you want to archive.</p>
-    pub fn set_finding_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.finding_ids = input; self
+    pub fn set_finding_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.finding_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`ArchiveFindingsInput`](crate::operation::archive_findings::ArchiveFindingsInput).
-    pub fn build(self) -> Result<crate::operation::archive_findings::ArchiveFindingsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::archive_findings::ArchiveFindingsInput {
-                detector_id: self.detector_id
-                ,
-                finding_ids: self.finding_ids
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::archive_findings::ArchiveFindingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::archive_findings::ArchiveFindingsInput {
+            detector_id: self.detector_id,
+            finding_ids: self.finding_ids,
+        })
     }
 }
-

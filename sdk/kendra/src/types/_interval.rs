@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let interval = unimplemented!();
 /// match interval {
@@ -34,14 +34,22 @@
 /// Specifically, when `interval` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Interval::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Interval {
     #[allow(missing_docs)] // documentation missing in model
     OneMonthAgo,
@@ -56,49 +64,55 @@ pub enum Interval {
     #[allow(missing_docs)] // documentation missing in model
     TwoWeeksAgo,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Interval {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ONE_MONTH_AGO" => Interval::OneMonthAgo,
-"ONE_WEEK_AGO" => Interval::OneWeekAgo,
-"THIS_MONTH" => Interval::ThisMonth,
-"THIS_WEEK" => Interval::ThisWeek,
-"TWO_MONTHS_AGO" => Interval::TwoMonthsAgo,
-"TWO_WEEKS_AGO" => Interval::TwoWeeksAgo,
-other => Interval::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Interval {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Interval::from(s))
-                }
-            }
-impl Interval {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Interval::OneMonthAgo => "ONE_MONTH_AGO",
-    Interval::OneWeekAgo => "ONE_WEEK_AGO",
-    Interval::ThisMonth => "THIS_MONTH",
-    Interval::ThisWeek => "THIS_WEEK",
-    Interval::TwoMonthsAgo => "TWO_MONTHS_AGO",
-    Interval::TwoWeeksAgo => "TWO_WEEKS_AGO",
-    Interval::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ONE_MONTH_AGO" => Interval::OneMonthAgo,
+            "ONE_WEEK_AGO" => Interval::OneWeekAgo,
+            "THIS_MONTH" => Interval::ThisMonth,
+            "THIS_WEEK" => Interval::ThisWeek,
+            "TWO_MONTHS_AGO" => Interval::TwoMonthsAgo,
+            "TWO_WEEKS_AGO" => Interval::TwoWeeksAgo,
+            other => Interval::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ONE_MONTH_AGO", "ONE_WEEK_AGO", "THIS_MONTH", "THIS_WEEK", "TWO_MONTHS_AGO", "TWO_WEEKS_AGO"]
-                }
-            }
-impl AsRef<str> for Interval {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Interval {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Interval::from(s))
+    }
+}
+impl Interval {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Interval::OneMonthAgo => "ONE_MONTH_AGO",
+            Interval::OneWeekAgo => "ONE_WEEK_AGO",
+            Interval::ThisMonth => "THIS_MONTH",
+            Interval::ThisWeek => "THIS_WEEK",
+            Interval::TwoMonthsAgo => "TWO_MONTHS_AGO",
+            Interval::TwoWeeksAgo => "TWO_WEEKS_AGO",
+            Interval::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ONE_MONTH_AGO",
+            "ONE_WEEK_AGO",
+            "THIS_MONTH",
+            "THIS_WEEK",
+            "TWO_MONTHS_AGO",
+            "TWO_WEEKS_AGO",
+        ]
+    }
+}
+impl AsRef<str> for Interval {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

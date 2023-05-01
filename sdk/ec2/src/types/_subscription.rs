@@ -3,7 +3,7 @@
 /// <p>Describes an Infrastructure Performance subscription.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subscription  {
+pub struct Subscription {
     /// <p>The Region or Availability Zone that's the source for the subscription. For example, <code>us-east-1</code>.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct Subscription  {
 }
 impl Subscription {
     /// <p>The Region or Availability Zone that's the source for the subscription. For example, <code>us-east-1</code>.</p>
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>The Region or Availability Zone that's the target for the subscription. For example, <code>eu-west-1</code>.</p>
-    pub fn destination(&self) -> std::option::Option<& str> {
+    pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
     /// <p>The metric used for the subscription.</p>
-    pub fn metric(&self) -> std::option::Option<& crate::types::MetricType> {
+    pub fn metric(&self) -> std::option::Option<&crate::types::MetricType> {
         self.metric.as_ref()
     }
     /// <p>The statistic used for the subscription.</p>
-    pub fn statistic(&self) -> std::option::Option<& crate::types::StatisticType> {
+    pub fn statistic(&self) -> std::option::Option<&crate::types::StatisticType> {
         self.statistic.as_ref()
     }
     /// <p>The data aggregation time for the subscription.</p>
-    pub fn period(&self) -> std::option::Option<& crate::types::PeriodType> {
+    pub fn period(&self) -> std::option::Option<&crate::types::PeriodType> {
         self.period.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl SubscriptionBuilder {
     }
     /// <p>The Region or Availability Zone that's the source for the subscription. For example, <code>us-east-1</code>.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// <p>The Region or Availability Zone that's the target for the subscription. For example, <code>eu-west-1</code>.</p>
     pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl SubscriptionBuilder {
     }
     /// <p>The Region or Availability Zone that's the target for the subscription. For example, <code>eu-west-1</code>.</p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination = input; self
+        self.destination = input;
+        self
     }
     /// <p>The metric used for the subscription.</p>
     pub fn metric(mut self, input: crate::types::MetricType) -> Self {
@@ -85,7 +87,8 @@ impl SubscriptionBuilder {
     }
     /// <p>The metric used for the subscription.</p>
     pub fn set_metric(mut self, input: std::option::Option<crate::types::MetricType>) -> Self {
-        self.metric = input; self
+        self.metric = input;
+        self
     }
     /// <p>The statistic used for the subscription.</p>
     pub fn statistic(mut self, input: crate::types::StatisticType) -> Self {
@@ -93,8 +96,12 @@ impl SubscriptionBuilder {
         self
     }
     /// <p>The statistic used for the subscription.</p>
-    pub fn set_statistic(mut self, input: std::option::Option<crate::types::StatisticType>) -> Self {
-        self.statistic = input; self
+    pub fn set_statistic(
+        mut self,
+        input: std::option::Option<crate::types::StatisticType>,
+    ) -> Self {
+        self.statistic = input;
+        self
     }
     /// <p>The data aggregation time for the subscription.</p>
     pub fn period(mut self, input: crate::types::PeriodType) -> Self {
@@ -103,22 +110,17 @@ impl SubscriptionBuilder {
     }
     /// <p>The data aggregation time for the subscription.</p>
     pub fn set_period(mut self, input: std::option::Option<crate::types::PeriodType>) -> Self {
-        self.period = input; self
+        self.period = input;
+        self
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
     pub fn build(self) -> crate::types::Subscription {
         crate::types::Subscription {
-            source: self.source
-            ,
-            destination: self.destination
-            ,
-            metric: self.metric
-            ,
-            statistic: self.statistic
-            ,
-            period: self.period
-            ,
+            source: self.source,
+            destination: self.destination,
+            metric: self.metric,
+            statistic: self.statistic,
+            period: self.period,
         }
     }
 }
-

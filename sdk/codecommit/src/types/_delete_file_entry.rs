@@ -3,14 +3,14 @@
 /// <p>A file that is deleted as part of a commit.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFileEntry  {
+pub struct DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
 }
 impl DeleteFileEntry {
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
-    pub fn file_path(&self) -> std::option::Option<& str> {
+    pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl DeleteFileEntryBuilder {
     }
     /// <p>The full path of the file to be deleted, including the name of the file.</p>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_path = input; self
+        self.file_path = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFileEntry`](crate::types::DeleteFileEntry).
     pub fn build(self) -> crate::types::DeleteFileEntry {
         crate::types::DeleteFileEntry {
-            file_path: self.file_path
-            ,
+            file_path: self.file_path,
         }
     }
 }
-

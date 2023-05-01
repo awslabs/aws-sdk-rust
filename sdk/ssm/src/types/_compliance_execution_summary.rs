@@ -3,7 +3,7 @@
 /// <p>A summary of the call execution that includes an execution ID, the type of execution (for example, <code>Command</code>), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComplianceExecutionSummary  {
+pub struct ComplianceExecutionSummary {
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
     #[doc(hidden)]
     pub execution_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -16,15 +16,15 @@ pub struct ComplianceExecutionSummary  {
 }
 impl ComplianceExecutionSummary {
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-    pub fn execution_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn execution_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.execution_time.as_ref()
     }
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
-    pub fn execution_id(&self) -> std::option::Option<& str> {
+    pub fn execution_id(&self) -> std::option::Option<&str> {
         self.execution_id.as_deref()
     }
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
-    pub fn execution_type(&self) -> std::option::Option<& str> {
+    pub fn execution_type(&self) -> std::option::Option<&str> {
         self.execution_type.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl ComplianceExecutionSummaryBuilder {
         self
     }
     /// <p>The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.</p>
-    pub fn set_execution_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.execution_time = input; self
+    pub fn set_execution_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.execution_time = input;
+        self
     }
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
     pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl ComplianceExecutionSummaryBuilder {
     }
     /// <p>An ID created by the system when <code>PutComplianceItems</code> was called. For example, <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent calls.</p>
     pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_id = input; self
+        self.execution_id = input;
+        self
     }
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
     pub fn execution_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +74,15 @@ impl ComplianceExecutionSummaryBuilder {
     }
     /// <p>The type of execution. For example, <code>Command</code> is a valid execution type.</p>
     pub fn set_execution_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_type = input; self
+        self.execution_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComplianceExecutionSummary`](crate::types::ComplianceExecutionSummary).
     pub fn build(self) -> crate::types::ComplianceExecutionSummary {
         crate::types::ComplianceExecutionSummary {
-            execution_time: self.execution_time
-            ,
-            execution_id: self.execution_id
-            ,
-            execution_type: self.execution_type
-            ,
+            execution_time: self.execution_time,
+            execution_id: self.execution_id,
+            execution_type: self.execution_type,
         }
     }
 }
-

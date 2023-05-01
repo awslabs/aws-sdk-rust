@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBucketAnalyticsConfigurationsInput  {
+pub struct ListBucketAnalyticsConfigurationsInput {
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct ListBucketAnalyticsConfigurationsInput  {
 }
 impl ListBucketAnalyticsConfigurationsInput {
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
-    pub fn continuation_token(&self) -> std::option::Option<& str> {
+    pub fn continuation_token(&self) -> std::option::Option<&str> {
         self.continuation_token.as_deref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
 }
 impl ListBucketAnalyticsConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListBucketAnalyticsConfigurationsInput`](crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsInput).
-    pub fn builder() -> crate::operation::list_bucket_analytics_configurations::builders::ListBucketAnalyticsConfigurationsInputBuilder {
+    pub fn builder() -> crate::operation::list_bucket_analytics_configurations::builders::ListBucketAnalyticsConfigurationsInputBuilder{
         crate::operation::list_bucket_analytics_configurations::builders::ListBucketAnalyticsConfigurationsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListBucketAnalyticsConfigurationsInputBuilder {
     }
     /// <p>The name of the bucket from which analytics configurations are retrieved.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
     pub fn continuation_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl ListBucketAnalyticsConfigurationsInputBuilder {
         self
     }
     /// <p>The ContinuationToken that represents a placeholder from where this request should begin.</p>
-    pub fn set_continuation_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.continuation_token = input; self
+    pub fn set_continuation_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.continuation_token = input;
+        self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,11 +72,15 @@ impl ListBucketAnalyticsConfigurationsInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expected_bucket_owner = input; self
+    pub fn set_expected_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.expected_bucket_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBucketAnalyticsConfigurationsInput`](crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsInput {
                 bucket: self.bucket
@@ -84,4 +93,3 @@ impl ListBucketAnalyticsConfigurationsInputBuilder {
         )
     }
 }
-

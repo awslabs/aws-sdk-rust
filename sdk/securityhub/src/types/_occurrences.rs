@@ -3,7 +3,7 @@
 /// <p>The detected occurrences of sensitive data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Occurrences  {
+pub struct Occurrences {
     /// <p>Occurrences of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
     #[doc(hidden)]
     pub line_ranges: std::option::Option<std::vec::Vec<crate::types::Range>>,
@@ -22,23 +22,23 @@ pub struct Occurrences  {
 }
 impl Occurrences {
     /// <p>Occurrences of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
-    pub fn line_ranges(&self) -> std::option::Option<& [crate::types::Range]> {
+    pub fn line_ranges(&self) -> std::option::Option<&[crate::types::Range]> {
         self.line_ranges.as_deref()
     }
     /// <p>Occurrences of sensitive data detected in a binary text file.</p>
-    pub fn offset_ranges(&self) -> std::option::Option<& [crate::types::Range]> {
+    pub fn offset_ranges(&self) -> std::option::Option<&[crate::types::Range]> {
         self.offset_ranges.as_deref()
     }
     /// <p>Occurrences of sensitive data in an Adobe Portable Document Format (PDF) file.</p>
-    pub fn pages(&self) -> std::option::Option<& [crate::types::Page]> {
+    pub fn pages(&self) -> std::option::Option<&[crate::types::Page]> {
         self.pages.as_deref()
     }
     /// <p>Occurrences of sensitive data in an Apache Avro object container or an Apache Parquet file.</p>
-    pub fn records(&self) -> std::option::Option<& [crate::types::Record]> {
+    pub fn records(&self) -> std::option::Option<&[crate::types::Record]> {
         self.records.as_deref()
     }
     /// <p>Occurrences of sensitive data detected in Microsoft Excel workbooks, comma-separated value (CSV) files, or tab-separated value (TSV) files.</p>
-    pub fn cells(&self) -> std::option::Option<& [crate::types::Cell]> {
+    pub fn cells(&self) -> std::option::Option<&[crate::types::Cell]> {
         self.cells.as_deref()
     }
 }
@@ -67,13 +67,17 @@ impl OccurrencesBuilder {
     /// <p>Occurrences of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
     pub fn line_ranges(mut self, input: crate::types::Range) -> Self {
         let mut v = self.line_ranges.unwrap_or_default();
-                        v.push(input);
-                        self.line_ranges = Some(v);
-                        self
+        v.push(input);
+        self.line_ranges = Some(v);
+        self
     }
     /// <p>Occurrences of sensitive data detected in a non-binary text file or a Microsoft Word file. Non-binary text files include files such as HTML, XML, JSON, and TXT files.</p>
-    pub fn set_line_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::types::Range>>) -> Self {
-        self.line_ranges = input; self
+    pub fn set_line_ranges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Range>>,
+    ) -> Self {
+        self.line_ranges = input;
+        self
     }
     /// Appends an item to `offset_ranges`.
     ///
@@ -82,13 +86,17 @@ impl OccurrencesBuilder {
     /// <p>Occurrences of sensitive data detected in a binary text file.</p>
     pub fn offset_ranges(mut self, input: crate::types::Range) -> Self {
         let mut v = self.offset_ranges.unwrap_or_default();
-                        v.push(input);
-                        self.offset_ranges = Some(v);
-                        self
+        v.push(input);
+        self.offset_ranges = Some(v);
+        self
     }
     /// <p>Occurrences of sensitive data detected in a binary text file.</p>
-    pub fn set_offset_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::types::Range>>) -> Self {
-        self.offset_ranges = input; self
+    pub fn set_offset_ranges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Range>>,
+    ) -> Self {
+        self.offset_ranges = input;
+        self
     }
     /// Appends an item to `pages`.
     ///
@@ -97,13 +105,17 @@ impl OccurrencesBuilder {
     /// <p>Occurrences of sensitive data in an Adobe Portable Document Format (PDF) file.</p>
     pub fn pages(mut self, input: crate::types::Page) -> Self {
         let mut v = self.pages.unwrap_or_default();
-                        v.push(input);
-                        self.pages = Some(v);
-                        self
+        v.push(input);
+        self.pages = Some(v);
+        self
     }
     /// <p>Occurrences of sensitive data in an Adobe Portable Document Format (PDF) file.</p>
-    pub fn set_pages(mut self, input: std::option::Option<std::vec::Vec<crate::types::Page>>) -> Self {
-        self.pages = input; self
+    pub fn set_pages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Page>>,
+    ) -> Self {
+        self.pages = input;
+        self
     }
     /// Appends an item to `records`.
     ///
@@ -112,13 +124,17 @@ impl OccurrencesBuilder {
     /// <p>Occurrences of sensitive data in an Apache Avro object container or an Apache Parquet file.</p>
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
-                        v.push(input);
-                        self.records = Some(v);
-                        self
+        v.push(input);
+        self.records = Some(v);
+        self
     }
     /// <p>Occurrences of sensitive data in an Apache Avro object container or an Apache Parquet file.</p>
-    pub fn set_records(mut self, input: std::option::Option<std::vec::Vec<crate::types::Record>>) -> Self {
-        self.records = input; self
+    pub fn set_records(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Record>>,
+    ) -> Self {
+        self.records = input;
+        self
     }
     /// Appends an item to `cells`.
     ///
@@ -127,28 +143,26 @@ impl OccurrencesBuilder {
     /// <p>Occurrences of sensitive data detected in Microsoft Excel workbooks, comma-separated value (CSV) files, or tab-separated value (TSV) files.</p>
     pub fn cells(mut self, input: crate::types::Cell) -> Self {
         let mut v = self.cells.unwrap_or_default();
-                        v.push(input);
-                        self.cells = Some(v);
-                        self
+        v.push(input);
+        self.cells = Some(v);
+        self
     }
     /// <p>Occurrences of sensitive data detected in Microsoft Excel workbooks, comma-separated value (CSV) files, or tab-separated value (TSV) files.</p>
-    pub fn set_cells(mut self, input: std::option::Option<std::vec::Vec<crate::types::Cell>>) -> Self {
-        self.cells = input; self
+    pub fn set_cells(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Cell>>,
+    ) -> Self {
+        self.cells = input;
+        self
     }
     /// Consumes the builder and constructs a [`Occurrences`](crate::types::Occurrences).
     pub fn build(self) -> crate::types::Occurrences {
         crate::types::Occurrences {
-            line_ranges: self.line_ranges
-            ,
-            offset_ranges: self.offset_ranges
-            ,
-            pages: self.pages
-            ,
-            records: self.records
-            ,
-            cells: self.cells
-            ,
+            line_ranges: self.line_ranges,
+            offset_ranges: self.offset_ranges,
+            pages: self.pages,
+            records: self.records,
+            cells: self.cells,
         }
     }
 }
-

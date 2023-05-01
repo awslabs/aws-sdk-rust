@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCertificateInput  {
-    /// <p>The name of the certificate to delete.</p> 
+pub struct DeleteCertificateInput {
+    /// <p>The name of the certificate to delete.</p>
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
     #[doc(hidden)]
     pub certificate_name: std::option::Option<std::string::String>,
 }
 impl DeleteCertificateInput {
-    /// <p>The name of the certificate to delete.</p> 
+    /// <p>The name of the certificate to delete.</p>
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
-    pub fn certificate_name(&self) -> std::option::Option<& str> {
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
 }
 impl DeleteCertificateInput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
-    pub fn builder() -> crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder {
+    pub fn builder() -> crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder
+    {
         crate::operation::delete_certificate::builders::DeleteCertificateInputBuilder::default()
     }
 }
@@ -29,25 +30,29 @@ pub struct DeleteCertificateInputBuilder {
     pub(crate) certificate_name: std::option::Option<std::string::String>,
 }
 impl DeleteCertificateInputBuilder {
-    /// <p>The name of the certificate to delete.</p> 
+    /// <p>The name of the certificate to delete.</p>
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
     pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.certificate_name = Some(input.into());
         self
     }
-    /// <p>The name of the certificate to delete.</p> 
+    /// <p>The name of the certificate to delete.</p>
     /// <p>Use the <code>GetCertificates</code> action to get a list of certificate names that you can specify.</p>
     pub fn set_certificate_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_name = input; self
+        self.certificate_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteCertificateInput`](crate::operation::delete_certificate::DeleteCertificateInput).
-    pub fn build(self) -> Result<crate::operation::delete_certificate::DeleteCertificateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_certificate::DeleteCertificateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_certificate::DeleteCertificateInput {
-                certificate_name: self.certificate_name
-                ,
-            }
+                certificate_name: self.certificate_name,
+            },
         )
     }
 }
-

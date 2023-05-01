@@ -3,7 +3,7 @@
 /// <p>Contains metadata about a specific cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterMetadata  {
+pub struct ClusterMetadata {
     /// <p>The automatically generated ID for a cluster.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -22,8 +22,8 @@ pub struct ClusterMetadata  {
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     #[doc(hidden)]
     pub job_type: std::option::Option<crate::types::JobType>,
-    /// <p>The type of Snowcone device to use for this cluster. </p> <note> 
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+    /// <p>The type of Snowcone device to use for this cluster. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     #[doc(hidden)]
     pub snowball_type: std::option::Option<crate::types::SnowballType>,
@@ -36,12 +36,12 @@ pub struct ClusterMetadata  {
     /// <p>The automatically generated ID for a specific address.</p>
     #[doc(hidden)]
     pub address_id: std::option::Option<std::string::String>,
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
-    /// <ul> 
-    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub shipping_option: std::option::Option<crate::types::ShippingOption>,
@@ -56,75 +56,78 @@ pub struct ClusterMetadata  {
     pub tax_documents: std::option::Option<crate::types::TaxDocuments>,
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
     #[doc(hidden)]
-    pub on_device_service_configuration: std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    pub on_device_service_configuration:
+        std::option::Option<crate::types::OnDeviceServiceConfiguration>,
 }
 impl ClusterMetadata {
     /// <p>The automatically generated ID for a cluster.</p>
-    pub fn cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
     /// <p>The optional description of the cluster.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The current status of the cluster.</p>
-    pub fn cluster_state(&self) -> std::option::Option<& crate::types::ClusterState> {
+    pub fn cluster_state(&self) -> std::option::Option<&crate::types::ClusterState> {
         self.cluster_state.as_ref()
     }
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
-    pub fn job_type(&self) -> std::option::Option<& crate::types::JobType> {
+    pub fn job_type(&self) -> std::option::Option<&crate::types::JobType> {
         self.job_type.as_ref()
     }
-    /// <p>The type of Snowcone device to use for this cluster. </p> <note> 
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+    /// <p>The type of Snowcone device to use for this cluster. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
-    pub fn snowball_type(&self) -> std::option::Option<& crate::types::SnowballType> {
+    pub fn snowball_type(&self) -> std::option::Option<&crate::types::SnowballType> {
         self.snowball_type.as_ref()
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
-    pub fn resources(&self) -> std::option::Option<& crate::types::JobResource> {
+    pub fn resources(&self) -> std::option::Option<&crate::types::JobResource> {
         self.resources.as_ref()
     }
     /// <p>The automatically generated ID for a specific address.</p>
-    pub fn address_id(&self) -> std::option::Option<& str> {
+    pub fn address_id(&self) -> std::option::Option<&str> {
         self.address_id.as_deref()
     }
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
-    /// <ul> 
-    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    pub fn shipping_option(&self) -> std::option::Option<& crate::types::ShippingOption> {
+    pub fn shipping_option(&self) -> std::option::Option<&crate::types::ShippingOption> {
         self.shipping_option.as_ref()
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-    pub fn notification(&self) -> std::option::Option<& crate::types::Notification> {
+    pub fn notification(&self) -> std::option::Option<&crate::types::Notification> {
         self.notification.as_ref()
     }
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-    pub fn forwarding_address_id(&self) -> std::option::Option<& str> {
+    pub fn forwarding_address_id(&self) -> std::option::Option<&str> {
         self.forwarding_address_id.as_deref()
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    pub fn tax_documents(&self) -> std::option::Option<& crate::types::TaxDocuments> {
+    pub fn tax_documents(&self) -> std::option::Option<&crate::types::TaxDocuments> {
         self.tax_documents.as_ref()
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    pub fn on_device_service_configuration(&self) -> std::option::Option<& crate::types::OnDeviceServiceConfiguration> {
+    pub fn on_device_service_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::OnDeviceServiceConfiguration> {
         self.on_device_service_configuration.as_ref()
     }
 }
@@ -153,7 +156,8 @@ pub struct ClusterMetadataBuilder {
     pub(crate) notification: std::option::Option<crate::types::Notification>,
     pub(crate) forwarding_address_id: std::option::Option<std::string::String>,
     pub(crate) tax_documents: std::option::Option<crate::types::TaxDocuments>,
-    pub(crate) on_device_service_configuration: std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    pub(crate) on_device_service_configuration:
+        std::option::Option<crate::types::OnDeviceServiceConfiguration>,
 }
 impl ClusterMetadataBuilder {
     /// <p>The automatically generated ID for a cluster.</p>
@@ -163,7 +167,8 @@ impl ClusterMetadataBuilder {
     }
     /// <p>The automatically generated ID for a cluster.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input; self
+        self.cluster_id = input;
+        self
     }
     /// <p>The optional description of the cluster.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,7 +177,8 @@ impl ClusterMetadataBuilder {
     }
     /// <p>The optional description of the cluster.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,7 +187,8 @@ impl ClusterMetadataBuilder {
     }
     /// <p>The <code>KmsKeyARN</code> Amazon Resource Name (ARN) associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a> API action in Key Management Service (KMS.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input; self
+        self.kms_key_arn = input;
+        self
     }
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,7 +197,8 @@ impl ClusterMetadataBuilder {
     }
     /// <p>The role ARN associated with this cluster. This ARN was created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a> API action in Identity and Access Management (IAM).</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The current status of the cluster.</p>
     pub fn cluster_state(mut self, input: crate::types::ClusterState) -> Self {
@@ -198,8 +206,12 @@ impl ClusterMetadataBuilder {
         self
     }
     /// <p>The current status of the cluster.</p>
-    pub fn set_cluster_state(mut self, input: std::option::Option<crate::types::ClusterState>) -> Self {
-        self.cluster_state = input; self
+    pub fn set_cluster_state(
+        mut self,
+        input: std::option::Option<crate::types::ClusterState>,
+    ) -> Self {
+        self.cluster_state = input;
+        self
     }
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
@@ -208,20 +220,25 @@ impl ClusterMetadataBuilder {
     }
     /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input; self
+        self.job_type = input;
+        self
     }
-    /// <p>The type of Snowcone device to use for this cluster. </p> <note> 
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+    /// <p>The type of Snowcone device to use for this cluster. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
     pub fn snowball_type(mut self, input: crate::types::SnowballType) -> Self {
         self.snowball_type = Some(input);
         self
     }
-    /// <p>The type of Snowcone device to use for this cluster. </p> <note> 
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
+    /// <p>The type of Snowcone device to use for this cluster. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
     /// </note>
-    pub fn set_snowball_type(mut self, input: std::option::Option<crate::types::SnowballType>) -> Self {
-        self.snowball_type = input; self
+    pub fn set_snowball_type(
+        mut self,
+        input: std::option::Option<crate::types::SnowballType>,
+    ) -> Self {
+        self.snowball_type = input;
+        self
     }
     /// <p>The creation date for this cluster.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -229,8 +246,12 @@ impl ClusterMetadataBuilder {
         self
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
     pub fn resources(mut self, input: crate::types::JobResource) -> Self {
@@ -239,7 +260,8 @@ impl ClusterMetadataBuilder {
     }
     /// <p>The arrays of <code>JobResource</code> objects that can include updated <code>S3Resource</code> objects or <code>LambdaResource</code> objects.</p>
     pub fn set_resources(mut self, input: std::option::Option<crate::types::JobResource>) -> Self {
-        self.resources = input; self
+        self.resources = input;
+        self
     }
     /// <p>The automatically generated ID for a specific address.</p>
     pub fn address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -248,28 +270,33 @@ impl ClusterMetadataBuilder {
     }
     /// <p>The automatically generated ID for a specific address.</p>
     pub fn set_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address_id = input; self
+        self.address_id = input;
+        self
     }
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
-    /// <ul> 
-    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
         self.shipping_option = Some(input);
         self
     }
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p> 
-    /// <ul> 
-    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows:</p>
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    pub fn set_shipping_option(mut self, input: std::option::Option<crate::types::ShippingOption>) -> Self {
-        self.shipping_option = input; self
+    pub fn set_shipping_option(
+        mut self,
+        input: std::option::Option<crate::types::ShippingOption>,
+    ) -> Self {
+        self.shipping_option = input;
+        self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
     pub fn notification(mut self, input: crate::types::Notification) -> Self {
@@ -277,8 +304,12 @@ impl ClusterMetadataBuilder {
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-    pub fn set_notification(mut self, input: std::option::Option<crate::types::Notification>) -> Self {
-        self.notification = input; self
+    pub fn set_notification(
+        mut self,
+        input: std::option::Option<crate::types::Notification>,
+    ) -> Self {
+        self.notification = input;
+        self
     }
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
     pub fn forwarding_address_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -286,8 +317,12 @@ impl ClusterMetadataBuilder {
         self
     }
     /// <p>The ID of the address that you want a cluster shipped to, after it will be shipped to its primary address. This field is not supported in most regions.</p>
-    pub fn set_forwarding_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.forwarding_address_id = input; self
+    pub fn set_forwarding_address_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.forwarding_address_id = input;
+        self
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
     pub fn tax_documents(mut self, input: crate::types::TaxDocuments) -> Self {
@@ -295,52 +330,47 @@ impl ClusterMetadataBuilder {
         self
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    pub fn set_tax_documents(mut self, input: std::option::Option<crate::types::TaxDocuments>) -> Self {
-        self.tax_documents = input; self
+    pub fn set_tax_documents(
+        mut self,
+        input: std::option::Option<crate::types::TaxDocuments>,
+    ) -> Self {
+        self.tax_documents = input;
+        self
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    pub fn on_device_service_configuration(mut self, input: crate::types::OnDeviceServiceConfiguration) -> Self {
+    pub fn on_device_service_configuration(
+        mut self,
+        input: crate::types::OnDeviceServiceConfiguration,
+    ) -> Self {
         self.on_device_service_configuration = Some(input);
         self
     }
     /// <p>Represents metadata and configuration settings for services on an Amazon Web Services Snow Family device.</p>
-    pub fn set_on_device_service_configuration(mut self, input: std::option::Option<crate::types::OnDeviceServiceConfiguration>) -> Self {
-        self.on_device_service_configuration = input; self
+    pub fn set_on_device_service_configuration(
+        mut self,
+        input: std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    ) -> Self {
+        self.on_device_service_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClusterMetadata`](crate::types::ClusterMetadata).
     pub fn build(self) -> crate::types::ClusterMetadata {
         crate::types::ClusterMetadata {
-            cluster_id: self.cluster_id
-            ,
-            description: self.description
-            ,
-            kms_key_arn: self.kms_key_arn
-            ,
-            role_arn: self.role_arn
-            ,
-            cluster_state: self.cluster_state
-            ,
-            job_type: self.job_type
-            ,
-            snowball_type: self.snowball_type
-            ,
-            creation_date: self.creation_date
-            ,
-            resources: self.resources
-            ,
-            address_id: self.address_id
-            ,
-            shipping_option: self.shipping_option
-            ,
-            notification: self.notification
-            ,
-            forwarding_address_id: self.forwarding_address_id
-            ,
-            tax_documents: self.tax_documents
-            ,
-            on_device_service_configuration: self.on_device_service_configuration
-            ,
+            cluster_id: self.cluster_id,
+            description: self.description,
+            kms_key_arn: self.kms_key_arn,
+            role_arn: self.role_arn,
+            cluster_state: self.cluster_state,
+            job_type: self.job_type,
+            snowball_type: self.snowball_type,
+            creation_date: self.creation_date,
+            resources: self.resources,
+            address_id: self.address_id,
+            shipping_option: self.shipping_option,
+            notification: self.notification,
+            forwarding_address_id: self.forwarding_address_id,
+            tax_documents: self.tax_documents,
+            on_device_service_configuration: self.on_device_service_configuration,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>The collection of event patterns used to filter events. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-and-event-patterns.html">Events and Event Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterCriteria  {
+pub struct FilterCriteria {
     /// <p>The event patterns.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
 }
 impl FilterCriteria {
     /// <p>The event patterns.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl FilterCriteriaBuilder {
     /// <p>The event patterns.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>The event patterns.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Consumes the builder and constructs a [`FilterCriteria`](crate::types::FilterCriteria).
     pub fn build(self) -> crate::types::FilterCriteria {
         crate::types::FilterCriteria {
-            filters: self.filters
-            ,
+            filters: self.filters,
         }
     }
 }
-

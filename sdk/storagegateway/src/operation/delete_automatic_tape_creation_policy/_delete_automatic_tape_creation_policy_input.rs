@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAutomaticTapeCreationPolicyInput  {
+pub struct DeleteAutomaticTapeCreationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAutomaticTapeCreationPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
 }
 impl DeleteAutomaticTapeCreationPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteAutomaticTapeCreationPolicyInput`](crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyInput).
-    pub fn builder() -> crate::operation::delete_automatic_tape_creation_policy::builders::DeleteAutomaticTapeCreationPolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_automatic_tape_creation_policy::builders::DeleteAutomaticTapeCreationPolicyInputBuilder{
         crate::operation::delete_automatic_tape_creation_policy::builders::DeleteAutomaticTapeCreationPolicyInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl DeleteAutomaticTapeCreationPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAutomaticTapeCreationPolicyInput`](crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_automatic_tape_creation_policy::DeleteAutomaticTapeCreationPolicyInput {
                 gateway_arn: self.gateway_arn
@@ -46,4 +47,3 @@ impl DeleteAutomaticTapeCreationPolicyInputBuilder {
         )
     }
 }
-

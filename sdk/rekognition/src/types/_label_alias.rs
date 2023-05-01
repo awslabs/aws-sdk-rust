@@ -3,14 +3,14 @@
 /// <p>A potential alias of for a given label.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelAlias  {
+pub struct LabelAlias {
     /// <p>The name of an alias for a given label.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl LabelAlias {
     /// <p>The name of an alias for a given label.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl LabelAliasBuilder {
     }
     /// <p>The name of an alias for a given label.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`LabelAlias`](crate::types::LabelAlias).
     pub fn build(self) -> crate::types::LabelAlias {
-        crate::types::LabelAlias {
-            name: self.name
-            ,
-        }
+        crate::types::LabelAlias { name: self.name }
     }
 }
-

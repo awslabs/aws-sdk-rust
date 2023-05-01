@@ -3,7 +3,7 @@
 /// <p>The input structure for specifying Platform. Platform refers to the unique name of the specific platform the instrument is attached to. For satellites it is the name of the satellite, eg. landsat-8 (Landsat-8), sentinel-2a.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformInput  {
+pub struct PlatformInput {
     /// <p>The value of the platform.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PlatformInput  {
 }
 impl PlatformInput {
     /// <p>The value of the platform.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
     /// <p>The ComparisonOperator to use with PlatformInput.</p>
-    pub fn comparison_operator(&self) -> std::option::Option<& crate::types::ComparisonOperator> {
+    pub fn comparison_operator(&self) -> std::option::Option<&crate::types::ComparisonOperator> {
         self.comparison_operator.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl PlatformInputBuilder {
     }
     /// <p>The value of the platform.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The ComparisonOperator to use with PlatformInput.</p>
     pub fn comparison_operator(mut self, input: crate::types::ComparisonOperator) -> Self {
@@ -51,17 +52,18 @@ impl PlatformInputBuilder {
         self
     }
     /// <p>The ComparisonOperator to use with PlatformInput.</p>
-    pub fn set_comparison_operator(mut self, input: std::option::Option<crate::types::ComparisonOperator>) -> Self {
-        self.comparison_operator = input; self
+    pub fn set_comparison_operator(
+        mut self,
+        input: std::option::Option<crate::types::ComparisonOperator>,
+    ) -> Self {
+        self.comparison_operator = input;
+        self
     }
     /// Consumes the builder and constructs a [`PlatformInput`](crate::types::PlatformInput).
     pub fn build(self) -> crate::types::PlatformInput {
         crate::types::PlatformInput {
-            value: self.value
-            ,
-            comparison_operator: self.comparison_operator
-            ,
+            value: self.value,
+            comparison_operator: self.comparison_operator,
         }
     }
 }
-

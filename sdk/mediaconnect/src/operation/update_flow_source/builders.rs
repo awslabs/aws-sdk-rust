@@ -4,57 +4,80 @@ pub use crate::operation::update_flow_source::_update_flow_source_output::Update
 pub use crate::operation::update_flow_source::_update_flow_source_input::UpdateFlowSourceInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateFlowSource`.
-/// 
+///
 /// Updates the source of a flow.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFlowSourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_flow_source::builders::UpdateFlowSourceInputBuilder,
+    inner: crate::operation::update_flow_source::builders::UpdateFlowSourceInputBuilder,
 }
-impl UpdateFlowSourceFluentBuilder  {
+impl UpdateFlowSourceFluentBuilder {
     /// Creates a new `UpdateFlowSource`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_flow_source::UpdateFlowSource, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_flow_source::UpdateFlowSourceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_flow_source::UpdateFlowSourceOutput, aws_smithy_http::result::SdkError<crate::operation::update_flow_source::UpdateFlowSourceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_flow_source::UpdateFlowSource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_flow_source::UpdateFlowSourceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_flow_source::UpdateFlowSourceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_flow_source::UpdateFlowSourceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// The type of encryption used on the content ingested from this source. Allowable encryption types: static-key.
     pub fn decryption(mut self, input: crate::types::UpdateEncryption) -> Self {
         self.inner = self.inner.decryption(input);
         self
     }
     /// The type of encryption used on the content ingested from this source. Allowable encryption types: static-key.
-    pub fn set_decryption(mut self, input: std::option::Option<crate::types::UpdateEncryption>) -> Self {
+    pub fn set_decryption(
+        mut self,
+        input: std::option::Option<crate::types::UpdateEncryption>,
+    ) -> Self {
         self.inner = self.inner.set_decryption(input);
         self
     }
@@ -133,12 +156,20 @@ impl UpdateFlowSourceFluentBuilder  {
     /// To override the contents of this collection use [`set_media_stream_source_configurations`](Self::set_media_stream_source_configurations).
     ///
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn media_stream_source_configurations(mut self, input: crate::types::MediaStreamSourceConfigurationRequest) -> Self {
+    pub fn media_stream_source_configurations(
+        mut self,
+        input: crate::types::MediaStreamSourceConfigurationRequest,
+    ) -> Self {
         self.inner = self.inner.media_stream_source_configurations(input);
         self
     }
     /// The media streams that are associated with the source, and the parameters for those associations.
-    pub fn set_media_stream_source_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>>) -> Self {
+    pub fn set_media_stream_source_configurations(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::MediaStreamSourceConfigurationRequest>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_media_stream_source_configurations(input);
         self
     }
@@ -178,7 +209,10 @@ impl UpdateFlowSourceFluentBuilder  {
         self
     }
     /// The IP address that the flow communicates with to initiate connection with the sender.
-    pub fn set_sender_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sender_ip_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_sender_ip_address(input);
         self
     }
@@ -198,7 +232,10 @@ impl UpdateFlowSourceFluentBuilder  {
         self
     }
     /// Source IP or domain name for SRT-caller protocol.
-    pub fn set_source_listener_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_listener_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_listener_address(input);
         self
     }
@@ -228,7 +265,10 @@ impl UpdateFlowSourceFluentBuilder  {
         self
     }
     /// The name of the VPC interface to use for this source.
-    pub fn set_vpc_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_interface_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_vpc_interface_name(input);
         self
     }
@@ -243,14 +283,19 @@ impl UpdateFlowSourceFluentBuilder  {
         self
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    pub fn gateway_bridge_source(mut self, input: crate::types::UpdateGatewayBridgeSourceRequest) -> Self {
+    pub fn gateway_bridge_source(
+        mut self,
+        input: crate::types::UpdateGatewayBridgeSourceRequest,
+    ) -> Self {
         self.inner = self.inner.gateway_bridge_source(input);
         self
     }
     /// The source configuration for cloud flows receiving a stream from a bridge.
-    pub fn set_gateway_bridge_source(mut self, input: std::option::Option<crate::types::UpdateGatewayBridgeSourceRequest>) -> Self {
+    pub fn set_gateway_bridge_source(
+        mut self,
+        input: std::option::Option<crate::types::UpdateGatewayBridgeSourceRequest>,
+    ) -> Self {
         self.inner = self.inner.set_gateway_bridge_source(input);
         self
     }
 }
-

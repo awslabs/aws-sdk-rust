@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceNetworkInput  {
+pub struct GetServiceNetworkInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
     #[doc(hidden)]
     pub service_network_identifier: std::option::Option<std::string::String>,
 }
 impl GetServiceNetworkInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(&self) -> std::option::Option<& str> {
+    pub fn service_network_identifier(&self) -> std::option::Option<&str> {
         self.service_network_identifier.as_deref()
     }
 }
 impl GetServiceNetworkInput {
     /// Creates a new builder-style object to manufacture [`GetServiceNetworkInput`](crate::operation::get_service_network::GetServiceNetworkInput).
-    pub fn builder() -> crate::operation::get_service_network::builders::GetServiceNetworkInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_service_network::builders::GetServiceNetworkInputBuilder {
         crate::operation::get_service_network::builders::GetServiceNetworkInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl GetServiceNetworkInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn set_service_network_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_network_identifier = input; self
+    pub fn set_service_network_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_network_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetServiceNetworkInput`](crate::operation::get_service_network::GetServiceNetworkInput).
-    pub fn build(self) -> Result<crate::operation::get_service_network::GetServiceNetworkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_service_network::GetServiceNetworkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_service_network::GetServiceNetworkInput {
-                service_network_identifier: self.service_network_identifier
-                ,
-            }
+                service_network_identifier: self.service_network_identifier,
+            },
         )
     }
 }
-

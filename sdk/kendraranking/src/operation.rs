@@ -27,4 +27,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateRescoreExecutionPlan` operation.
 pub mod update_rescore_execution_plan;
-

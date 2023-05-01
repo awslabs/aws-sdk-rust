@@ -3,7 +3,7 @@
 /// <p>A request to enable or disable tracking of reputation metrics for a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetReputationOptionsInput  {
+pub struct PutConfigurationSetReputationOptionsInput {
     /// <p>The name of the configuration set.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct PutConfigurationSetReputationOptionsInput  {
 }
 impl PutConfigurationSetReputationOptionsInput {
     /// <p>The name of the configuration set.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
@@ -23,7 +23,7 @@ impl PutConfigurationSetReputationOptionsInput {
 }
 impl PutConfigurationSetReputationOptionsInput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetReputationOptionsInput`](crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsInput).
-    pub fn builder() -> crate::operation::put_configuration_set_reputation_options::builders::PutConfigurationSetReputationOptionsInputBuilder {
+    pub fn builder() -> crate::operation::put_configuration_set_reputation_options::builders::PutConfigurationSetReputationOptionsInputBuilder{
         crate::operation::put_configuration_set_reputation_options::builders::PutConfigurationSetReputationOptionsInputBuilder::default()
     }
 }
@@ -42,8 +42,12 @@ impl PutConfigurationSetReputationOptionsInputBuilder {
         self
     }
     /// <p>The name of the configuration set.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_name = input; self
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = input;
+        self
     }
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
@@ -52,10 +56,11 @@ impl PutConfigurationSetReputationOptionsInputBuilder {
     }
     /// <p>If <code>true</code>, tracking of reputation metrics is enabled for the configuration set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration set.</p>
     pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.reputation_metrics_enabled = input; self
+        self.reputation_metrics_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetReputationOptionsInput`](crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsInput).
-    pub fn build(self) -> Result<crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsInput {
                 configuration_set_name: self.configuration_set_name
@@ -66,4 +71,3 @@ impl PutConfigurationSetReputationOptionsInputBuilder {
         )
     }
 }
-

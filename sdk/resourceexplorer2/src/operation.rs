@@ -57,4 +57,3 @@ pub mod update_index_type;
 
 /// Types for the `UpdateView` operation.
 pub mod update_view;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceRefreshesOutput  {
+pub struct DescribeInstanceRefreshesOutput {
     /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
     #[doc(hidden)]
     pub instance_refreshes: std::option::Option<std::vec::Vec<crate::types::InstanceRefresh>>,
@@ -13,22 +13,22 @@ pub struct DescribeInstanceRefreshesOutput  {
 }
 impl DescribeInstanceRefreshesOutput {
     /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
-    pub fn instance_refreshes(&self) -> std::option::Option<& [crate::types::InstanceRefresh]> {
+    pub fn instance_refreshes(&self) -> std::option::Option<&[crate::types::InstanceRefresh]> {
         self.instance_refreshes.as_deref()
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeInstanceRefreshesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeInstanceRefreshesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceRefreshesOutput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput).
-    pub fn builder() -> crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesOutputBuilder{
         crate::operation::describe_instance_refreshes::builders::DescribeInstanceRefreshesOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl DescribeInstanceRefreshesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeInstanceRefreshesOutputBuilder {
-    pub(crate) instance_refreshes: std::option::Option<std::vec::Vec<crate::types::InstanceRefresh>>,
+    pub(crate) instance_refreshes:
+        std::option::Option<std::vec::Vec<crate::types::InstanceRefresh>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl DescribeInstanceRefreshesOutputBuilder {
     /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
     pub fn instance_refreshes(mut self, input: crate::types::InstanceRefresh) -> Self {
         let mut v = self.instance_refreshes.unwrap_or_default();
-                        v.push(input);
-                        self.instance_refreshes = Some(v);
-                        self
+        v.push(input);
+        self.instance_refreshes = Some(v);
+        self
     }
     /// <p>The instance refreshes for the specified group, sorted by creation timestamp in descending order.</p>
-    pub fn set_instance_refreshes(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceRefresh>>) -> Self {
-        self.instance_refreshes = input; self
+    pub fn set_instance_refreshes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceRefresh>>,
+    ) -> Self {
+        self.instance_refreshes = input;
+        self
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,26 @@ impl DescribeInstanceRefreshesOutputBuilder {
     }
     /// <p>A string that indicates that the response contains more items than can be returned in a single response. To receive additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items. This value is null when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeInstanceRefreshesOutput`](crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput).
-    pub fn build(self) -> crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput {
         crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput {
-            instance_refreshes: self.instance_refreshes
-            ,
-            next_token: self.next_token
-            ,
+            instance_refreshes: self.instance_refreshes,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

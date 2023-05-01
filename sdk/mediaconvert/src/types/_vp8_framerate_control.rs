@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let vp8frameratecontrol = unimplemented!();
 /// match vp8frameratecontrol {
@@ -30,55 +30,64 @@
 /// Specifically, when `vp8frameratecontrol` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Vp8FramerateControl::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Vp8FramerateControl {
     #[allow(missing_docs)] // documentation missing in model
     InitializeFromSource,
     #[allow(missing_docs)] // documentation missing in model
     Specified,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Vp8FramerateControl {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "INITIALIZE_FROM_SOURCE" => Vp8FramerateControl::InitializeFromSource,
-"SPECIFIED" => Vp8FramerateControl::Specified,
-other => Vp8FramerateControl::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Vp8FramerateControl {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Vp8FramerateControl::from(s))
-                }
-            }
-impl Vp8FramerateControl {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Vp8FramerateControl::InitializeFromSource => "INITIALIZE_FROM_SOURCE",
-    Vp8FramerateControl::Specified => "SPECIFIED",
-    Vp8FramerateControl::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "INITIALIZE_FROM_SOURCE" => Vp8FramerateControl::InitializeFromSource,
+            "SPECIFIED" => Vp8FramerateControl::Specified,
+            other => Vp8FramerateControl::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
-                }
-            }
-impl AsRef<str> for Vp8FramerateControl {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Vp8FramerateControl {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Vp8FramerateControl::from(s))
+    }
+}
+impl Vp8FramerateControl {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Vp8FramerateControl::InitializeFromSource => "INITIALIZE_FROM_SOURCE",
+            Vp8FramerateControl::Specified => "SPECIFIED",
+            Vp8FramerateControl::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["INITIALIZE_FROM_SOURCE", "SPECIFIED"]
+    }
+}
+impl AsRef<str> for Vp8FramerateControl {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

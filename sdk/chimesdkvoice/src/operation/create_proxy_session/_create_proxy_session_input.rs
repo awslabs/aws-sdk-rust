@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateProxySessionInput  {
+pub struct CreateProxySessionInput {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -30,15 +30,15 @@ pub struct CreateProxySessionInput  {
 }
 impl CreateProxySessionInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The participant phone numbers.</p>
-    pub fn participant_phone_numbers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn participant_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
         self.participant_phone_numbers.as_deref()
     }
     /// <p>The name of the proxy session.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The number of minutes allowed for the proxy session.</p>
@@ -46,23 +46,25 @@ impl CreateProxySessionInput {
         self.expiry_minutes
     }
     /// <p>The proxy session's capabilities.</p>
-    pub fn capabilities(&self) -> std::option::Option<& [crate::types::Capability]> {
+    pub fn capabilities(&self) -> std::option::Option<&[crate::types::Capability]> {
         self.capabilities.as_deref()
     }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
-    pub fn number_selection_behavior(&self) -> std::option::Option<& crate::types::NumberSelectionBehavior> {
+    pub fn number_selection_behavior(
+        &self,
+    ) -> std::option::Option<&crate::types::NumberSelectionBehavior> {
         self.number_selection_behavior.as_ref()
     }
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
-    pub fn geo_match_level(&self) -> std::option::Option<& crate::types::GeoMatchLevel> {
+    pub fn geo_match_level(&self) -> std::option::Option<&crate::types::GeoMatchLevel> {
         self.geo_match_level.as_ref()
     }
     /// <p>The country and area code for the proxy phone number.</p>
-    pub fn geo_match_params(&self) -> std::option::Option<& crate::types::GeoMatchParams> {
+    pub fn geo_match_params(&self) -> std::option::Option<&crate::types::GeoMatchParams> {
         self.geo_match_params.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateProxySessionInput  {
+impl std::fmt::Debug for CreateProxySessionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateProxySessionInput");
         formatter.field("voice_connector_id", &self.voice_connector_id);
@@ -78,7 +80,8 @@ impl  std::fmt::Debug for CreateProxySessionInput  {
 }
 impl CreateProxySessionInput {
     /// Creates a new builder-style object to manufacture [`CreateProxySessionInput`](crate::operation::create_proxy_session::CreateProxySessionInput).
-    pub fn builder() -> crate::operation::create_proxy_session::builders::CreateProxySessionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_proxy_session::builders::CreateProxySessionInputBuilder {
         crate::operation::create_proxy_session::builders::CreateProxySessionInputBuilder::default()
     }
 }
@@ -92,7 +95,8 @@ pub struct CreateProxySessionInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) expiry_minutes: std::option::Option<i32>,
     pub(crate) capabilities: std::option::Option<std::vec::Vec<crate::types::Capability>>,
-    pub(crate) number_selection_behavior: std::option::Option<crate::types::NumberSelectionBehavior>,
+    pub(crate) number_selection_behavior:
+        std::option::Option<crate::types::NumberSelectionBehavior>,
     pub(crate) geo_match_level: std::option::Option<crate::types::GeoMatchLevel>,
     pub(crate) geo_match_params: std::option::Option<crate::types::GeoMatchParams>,
 }
@@ -103,8 +107,12 @@ impl CreateProxySessionInputBuilder {
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     /// Appends an item to `participant_phone_numbers`.
     ///
@@ -113,13 +121,17 @@ impl CreateProxySessionInputBuilder {
     /// <p>The participant phone numbers.</p>
     pub fn participant_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.participant_phone_numbers.unwrap_or_default();
-                        v.push(input.into());
-                        self.participant_phone_numbers = Some(v);
-                        self
+        v.push(input.into());
+        self.participant_phone_numbers = Some(v);
+        self
     }
     /// <p>The participant phone numbers.</p>
-    pub fn set_participant_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.participant_phone_numbers = input; self
+    pub fn set_participant_phone_numbers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.participant_phone_numbers = input;
+        self
     }
     /// <p>The name of the proxy session.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +140,8 @@ impl CreateProxySessionInputBuilder {
     }
     /// <p>The name of the proxy session.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn expiry_minutes(mut self, input: i32) -> Self {
@@ -137,7 +150,8 @@ impl CreateProxySessionInputBuilder {
     }
     /// <p>The number of minutes allowed for the proxy session.</p>
     pub fn set_expiry_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.expiry_minutes = input; self
+        self.expiry_minutes = input;
+        self
     }
     /// Appends an item to `capabilities`.
     ///
@@ -146,22 +160,33 @@ impl CreateProxySessionInputBuilder {
     /// <p>The proxy session's capabilities.</p>
     pub fn capabilities(mut self, input: crate::types::Capability) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-                        v.push(input);
-                        self.capabilities = Some(v);
-                        self
+        v.push(input);
+        self.capabilities = Some(v);
+        self
     }
     /// <p>The proxy session's capabilities.</p>
-    pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::types::Capability>>) -> Self {
-        self.capabilities = input; self
+    pub fn set_capabilities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Capability>>,
+    ) -> Self {
+        self.capabilities = input;
+        self
     }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
-    pub fn number_selection_behavior(mut self, input: crate::types::NumberSelectionBehavior) -> Self {
+    pub fn number_selection_behavior(
+        mut self,
+        input: crate::types::NumberSelectionBehavior,
+    ) -> Self {
         self.number_selection_behavior = Some(input);
         self
     }
     /// <p>The preference for proxy phone number reuse, or stickiness, between the same participants across sessions.</p>
-    pub fn set_number_selection_behavior(mut self, input: std::option::Option<crate::types::NumberSelectionBehavior>) -> Self {
-        self.number_selection_behavior = input; self
+    pub fn set_number_selection_behavior(
+        mut self,
+        input: std::option::Option<crate::types::NumberSelectionBehavior>,
+    ) -> Self {
+        self.number_selection_behavior = input;
+        self
     }
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
     pub fn geo_match_level(mut self, input: crate::types::GeoMatchLevel) -> Self {
@@ -169,8 +194,12 @@ impl CreateProxySessionInputBuilder {
         self
     }
     /// <p>The preference for matching the country or area code of the proxy phone number with that of the first participant.</p>
-    pub fn set_geo_match_level(mut self, input: std::option::Option<crate::types::GeoMatchLevel>) -> Self {
-        self.geo_match_level = input; self
+    pub fn set_geo_match_level(
+        mut self,
+        input: std::option::Option<crate::types::GeoMatchLevel>,
+    ) -> Self {
+        self.geo_match_level = input;
+        self
     }
     /// <p>The country and area code for the proxy phone number.</p>
     pub fn geo_match_params(mut self, input: crate::types::GeoMatchParams) -> Self {
@@ -178,30 +207,31 @@ impl CreateProxySessionInputBuilder {
         self
     }
     /// <p>The country and area code for the proxy phone number.</p>
-    pub fn set_geo_match_params(mut self, input: std::option::Option<crate::types::GeoMatchParams>) -> Self {
-        self.geo_match_params = input; self
+    pub fn set_geo_match_params(
+        mut self,
+        input: std::option::Option<crate::types::GeoMatchParams>,
+    ) -> Self {
+        self.geo_match_params = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateProxySessionInput`](crate::operation::create_proxy_session::CreateProxySessionInput).
-    pub fn build(self) -> Result<crate::operation::create_proxy_session::CreateProxySessionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_proxy_session::CreateProxySessionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_proxy_session::CreateProxySessionInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-                participant_phone_numbers: self.participant_phone_numbers
-                ,
-                name: self.name
-                ,
-                expiry_minutes: self.expiry_minutes
-                ,
-                capabilities: self.capabilities
-                ,
-                number_selection_behavior: self.number_selection_behavior
-                ,
-                geo_match_level: self.geo_match_level
-                ,
-                geo_match_params: self.geo_match_params
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+                participant_phone_numbers: self.participant_phone_numbers,
+                name: self.name,
+                expiry_minutes: self.expiry_minutes,
+                capabilities: self.capabilities,
+                number_selection_behavior: self.number_selection_behavior,
+                geo_match_level: self.geo_match_level,
+                geo_match_params: self.geo_match_params,
+            },
         )
     }
 }
@@ -219,4 +249,3 @@ impl std::fmt::Debug for CreateProxySessionInputBuilder {
         formatter.finish()
     }
 }
-

@@ -3,18 +3,18 @@
 /// <p>Describes an <code>ApiAssociation</code> object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiAssociation  {
+pub struct ApiAssociation {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>The API ID.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
-    /// <p>Identifies the status of an association.</p> 
-    /// <ul> 
-    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li> 
-    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li> 
-    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li> 
+    /// <p>Identifies the status of an association.</p>
+    /// <ul>
+    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li>
+    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
+    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub association_status: std::option::Option<crate::types::AssociationStatus>,
@@ -24,24 +24,24 @@ pub struct ApiAssociation  {
 }
 impl ApiAssociation {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The API ID.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
-    /// <p>Identifies the status of an association.</p> 
-    /// <ul> 
-    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li> 
-    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li> 
-    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li> 
+    /// <p>Identifies the status of an association.</p>
+    /// <ul>
+    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li>
+    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
+    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
     /// </ul>
-    pub fn association_status(&self) -> std::option::Option<& crate::types::AssociationStatus> {
+    pub fn association_status(&self) -> std::option::Option<&crate::types::AssociationStatus> {
         self.association_status.as_ref()
     }
     /// <p>Details about the last deployment status.</p>
-    pub fn deployment_detail(&self) -> std::option::Option<& str> {
+    pub fn deployment_detail(&self) -> std::option::Option<&str> {
         self.deployment_detail.as_deref()
     }
 }
@@ -69,7 +69,8 @@ impl ApiAssociationBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>The API ID.</p>
     pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,26 +79,31 @@ impl ApiAssociationBuilder {
     }
     /// <p>The API ID.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
-    /// <p>Identifies the status of an association.</p> 
-    /// <ul> 
-    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li> 
-    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li> 
-    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li> 
+    /// <p>Identifies the status of an association.</p>
+    /// <ul>
+    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li>
+    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
+    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
     /// </ul>
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
         self.association_status = Some(input);
         self
     }
-    /// <p>Identifies the status of an association.</p> 
-    /// <ul> 
-    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li> 
-    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li> 
-    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li> 
+    /// <p>Identifies the status of an association.</p>
+    /// <ul>
+    /// <li> <p> <b>PROCESSING</b>: The API association is being created. You cannot modify association requests during processing.</p> </li>
+    /// <li> <p> <b>SUCCESS</b>: The API association was successful. You can modify associations after success.</p> </li>
+    /// <li> <p> <b>FAILED</b>: The API association has failed. You can modify associations after failure.</p> </li>
     /// </ul>
-    pub fn set_association_status(mut self, input: std::option::Option<crate::types::AssociationStatus>) -> Self {
-        self.association_status = input; self
+    pub fn set_association_status(
+        mut self,
+        input: std::option::Option<crate::types::AssociationStatus>,
+    ) -> Self {
+        self.association_status = input;
+        self
     }
     /// <p>Details about the last deployment status.</p>
     pub fn deployment_detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,21 +111,20 @@ impl ApiAssociationBuilder {
         self
     }
     /// <p>Details about the last deployment status.</p>
-    pub fn set_deployment_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_detail = input; self
+    pub fn set_deployment_detail(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.deployment_detail = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApiAssociation`](crate::types::ApiAssociation).
     pub fn build(self) -> crate::types::ApiAssociation {
         crate::types::ApiAssociation {
-            domain_name: self.domain_name
-            ,
-            api_id: self.api_id
-            ,
-            association_status: self.association_status
-            ,
-            deployment_detail: self.deployment_detail
-            ,
+            domain_name: self.domain_name,
+            api_id: self.api_id,
+            association_status: self.association_status,
+            deployment_detail: self.deployment_detail,
         }
     }
 }
-

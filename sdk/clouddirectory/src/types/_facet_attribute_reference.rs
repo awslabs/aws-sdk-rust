@@ -3,7 +3,7 @@
 /// <p>The facet attribute reference that specifies the attribute definition that contains the attribute facet name and attribute name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FacetAttributeReference  {
+pub struct FacetAttributeReference {
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     #[doc(hidden)]
     pub target_facet_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FacetAttributeReference  {
 }
 impl FacetAttributeReference {
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn target_facet_name(&self) -> std::option::Option<& str> {
+    pub fn target_facet_name(&self) -> std::option::Option<&str> {
         self.target_facet_name.as_deref()
     }
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn target_attribute_name(&self) -> std::option::Option<& str> {
+    pub fn target_attribute_name(&self) -> std::option::Option<&str> {
         self.target_attribute_name.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl FacetAttributeReferenceBuilder {
         self
     }
     /// <p>The target facet name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn set_target_facet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_facet_name = input; self
+    pub fn set_target_facet_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_facet_name = input;
+        self
     }
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
     pub fn target_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +55,18 @@ impl FacetAttributeReferenceBuilder {
         self
     }
     /// <p>The target attribute name that is associated with the facet reference. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute References</a> for more information.</p>
-    pub fn set_target_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_attribute_name = input; self
+    pub fn set_target_attribute_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_attribute_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`FacetAttributeReference`](crate::types::FacetAttributeReference).
     pub fn build(self) -> crate::types::FacetAttributeReference {
         crate::types::FacetAttributeReference {
-            target_facet_name: self.target_facet_name
-            ,
-            target_attribute_name: self.target_attribute_name
-            ,
+            target_facet_name: self.target_facet_name,
+            target_attribute_name: self.target_attribute_name,
         }
     }
 }
-

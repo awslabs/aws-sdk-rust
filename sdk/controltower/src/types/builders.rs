@@ -2,4 +2,3 @@
 pub use crate::types::_enabled_control_summary::EnabledControlSummaryBuilder;
 
 pub use crate::types::_control_operation::ControlOperationBuilder;
-

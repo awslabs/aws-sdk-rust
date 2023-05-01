@@ -3,7 +3,7 @@
 /// <p>Describes the DNS information of a service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnsEntry  {
+pub struct DnsEntry {
     /// <p>The domain name of the service.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DnsEntry  {
 }
 impl DnsEntry {
     /// <p>The domain name of the service.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The ID of the hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DnsEntryBuilder {
     }
     /// <p>The domain name of the service.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>The ID of the hosted zone.</p>
     pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl DnsEntryBuilder {
     }
     /// <p>The ID of the hosted zone.</p>
     pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hosted_zone_id = input; self
+        self.hosted_zone_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DnsEntry`](crate::types::DnsEntry).
     pub fn build(self) -> crate::types::DnsEntry {
         crate::types::DnsEntry {
-            domain_name: self.domain_name
-            ,
-            hosted_zone_id: self.hosted_zone_id
-            ,
+            domain_name: self.domain_name,
+            hosted_zone_id: self.hosted_zone_id,
         }
     }
 }
-

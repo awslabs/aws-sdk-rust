@@ -3,14 +3,14 @@
 /// <p>Details of the license configuration that this generator reports on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportContext  {
+pub struct ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     #[doc(hidden)]
     pub license_configuration_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ReportContext {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub fn license_configuration_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn license_configuration_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.license_configuration_arns.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl ReportContextBuilder {
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
     pub fn license_configuration_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.license_configuration_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.license_configuration_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.license_configuration_arns = Some(v);
+        self
     }
     /// <p>Amazon Resource Name (ARN) of the license configuration that this generator reports on.</p>
-    pub fn set_license_configuration_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.license_configuration_arns = input; self
+    pub fn set_license_configuration_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.license_configuration_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReportContext`](crate::types::ReportContext).
     pub fn build(self) -> crate::types::ReportContext {
         crate::types::ReportContext {
-            license_configuration_arns: self.license_configuration_arns
-            ,
+            license_configuration_arns: self.license_configuration_arns,
         }
     }
 }
-

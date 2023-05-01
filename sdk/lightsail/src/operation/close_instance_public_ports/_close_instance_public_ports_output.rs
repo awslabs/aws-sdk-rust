@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloseInstancePublicPortsOutput  {
+pub struct CloseInstancePublicPortsOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::types::Operation>,
@@ -10,18 +10,18 @@ pub struct CloseInstancePublicPortsOutput  {
 }
 impl CloseInstancePublicPortsOutput {
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<& crate::types::Operation> {
+    pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CloseInstancePublicPortsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CloseInstancePublicPortsOutput {
     /// Creates a new builder-style object to manufacture [`CloseInstancePublicPortsOutput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput).
-    pub fn builder() -> crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsOutputBuilder {
+    pub fn builder() -> crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsOutputBuilder{
         crate::operation::close_instance_public_ports::builders::CloseInstancePublicPortsOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl CloseInstancePublicPortsOutputBuilder {
     }
     /// <p>An object that describes the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CloseInstancePublicPortsOutput`](crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput).
-    pub fn build(self) -> crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput {
         crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput {
-            operation: self.operation
-            ,
+            operation: self.operation,
             _request_id: self._request_id,
         }
     }
 }
-

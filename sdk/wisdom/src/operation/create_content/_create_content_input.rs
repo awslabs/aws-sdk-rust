@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContentInput  {
+pub struct CreateContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
     pub knowledge_base_id: std::option::Option<std::string::String>,
@@ -17,7 +17,8 @@ pub struct CreateContentInput  {
     pub override_link_out_uri: std::option::Option<std::string::String>,
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     #[doc(hidden)]
     pub upload_id: std::option::Option<std::string::String>,
@@ -26,39 +27,46 @@ pub struct CreateContentInput  {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
     /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The title of the content. If not set, the title is equal to the name.</p>
-    pub fn title(&self) -> std::option::Option<& str> {
+    pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
-    pub fn override_link_out_uri(&self) -> std::option::Option<& str> {
+    pub fn override_link_out_uri(&self) -> std::option::Option<&str> {
         self.override_link_out_uri.as_deref()
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.metadata.as_ref()
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
-    pub fn upload_id(&self) -> std::option::Option<& str> {
+    pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -77,10 +85,12 @@ pub struct CreateContentInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) title: std::option::Option<std::string::String>,
     pub(crate) override_link_out_uri: std::option::Option<std::string::String>,
-    pub(crate) metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) upload_id: std::option::Option<std::string::String>,
     pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateContentInputBuilder {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
@@ -89,8 +99,12 @@ impl CreateContentInputBuilder {
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.knowledge_base_id = input; self
+    pub fn set_knowledge_base_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.knowledge_base_id = input;
+        self
     }
     /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +113,8 @@ impl CreateContentInputBuilder {
     }
     /// <p>The name of the content. Each piece of content in a knowledge base must have a unique name. You can retrieve a piece of content using only its knowledge base and its name with the <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_SearchContent.html">SearchContent</a> API.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The title of the content. If not set, the title is equal to the name.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +123,8 @@ impl CreateContentInputBuilder {
     }
     /// <p>The title of the content. If not set, the title is equal to the name.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input; self
+        self.title = input;
+        self
     }
     /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
     pub fn override_link_out_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,23 +132,37 @@ impl CreateContentInputBuilder {
         self
     }
     /// <p>The URI you want to use for the article. If the knowledge base has a templateUri, setting this argument overrides it for this piece of content.</p>
-    pub fn set_override_link_out_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.override_link_out_uri = input; self
+    pub fn set_override_link_out_uri(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.override_link_out_uri = input;
+        self
     }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.metadata = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.metadata = Some(hash_map);
+        self
     }
     /// <p>A key/value map to store attributes without affecting tagging or recommendations. For example, when synchronizing data between an external system and Wisdom, you can store an external version identifier as metadata to utilize for determining drift.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +171,8 @@ impl CreateContentInputBuilder {
     }
     /// <p>A pointer to the uploaded asset. This value is returned by <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
     pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.upload_id = input; self
+        self.upload_id = input;
+        self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,45 +181,50 @@ impl CreateContentInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags used to organize, track, or control access for this resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateContentInput`](crate::operation::create_content::CreateContentInput).
-    pub fn build(self) -> Result<crate::operation::create_content::CreateContentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_content::CreateContentInput {
-                knowledge_base_id: self.knowledge_base_id
-                ,
-                name: self.name
-                ,
-                title: self.title
-                ,
-                override_link_out_uri: self.override_link_out_uri
-                ,
-                metadata: self.metadata
-                ,
-                upload_id: self.upload_id
-                ,
-                client_token: self.client_token
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_content::CreateContentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_content::CreateContentInput {
+            knowledge_base_id: self.knowledge_base_id,
+            name: self.name,
+            title: self.title,
+            override_link_out_uri: self.override_link_out_uri,
+            metadata: self.metadata,
+            upload_id: self.upload_id,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }
-

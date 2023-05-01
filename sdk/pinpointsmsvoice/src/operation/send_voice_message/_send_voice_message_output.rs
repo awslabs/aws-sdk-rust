@@ -3,7 +3,7 @@
 /// An object that that contains the Message ID of a Voice message that was sent successfully.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendVoiceMessageOutput  {
+pub struct SendVoiceMessageOutput {
     /// A unique identifier for the voice message.
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -11,18 +11,19 @@ pub struct SendVoiceMessageOutput  {
 }
 impl SendVoiceMessageOutput {
     /// A unique identifier for the voice message.
-    pub fn message_id(&self) -> std::option::Option<& str> {
+    pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SendVoiceMessageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SendVoiceMessageOutput {
     /// Creates a new builder-style object to manufacture [`SendVoiceMessageOutput`](crate::operation::send_voice_message::SendVoiceMessageOutput).
-    pub fn builder() -> crate::operation::send_voice_message::builders::SendVoiceMessageOutputBuilder {
+    pub fn builder() -> crate::operation::send_voice_message::builders::SendVoiceMessageOutputBuilder
+    {
         crate::operation::send_voice_message::builders::SendVoiceMessageOutputBuilder::default()
     }
 }
@@ -42,24 +43,23 @@ impl SendVoiceMessageOutputBuilder {
     }
     /// A unique identifier for the voice message.
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input; self
+        self.message_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SendVoiceMessageOutput`](crate::operation::send_voice_message::SendVoiceMessageOutput).
     pub fn build(self) -> crate::operation::send_voice_message::SendVoiceMessageOutput {
         crate::operation::send_voice_message::SendVoiceMessageOutput {
-            message_id: self.message_id
-            ,
+            message_id: self.message_id,
             _request_id: self._request_id,
         }
     }
 }
-

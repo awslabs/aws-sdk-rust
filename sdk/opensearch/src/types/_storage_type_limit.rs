@@ -3,15 +3,15 @@
 /// <p>Limits that are applicable for the given Amazon OpenSearch Service storage type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageTypeLimit  {
-    /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p> 
-    /// <ul> 
-    /// <li> <p> <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
+pub struct StorageTypeLimit {
+    /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p>
+    /// <ul>
+    /// <li> <p> <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub limit_name: std::option::Option<std::string::String>,
@@ -20,20 +20,20 @@ pub struct StorageTypeLimit  {
     pub limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StorageTypeLimit {
-    /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p> 
-    /// <ul> 
-    /// <li> <p> <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
+    /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p>
+    /// <ul>
+    /// <li> <p> <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// </ul>
-    pub fn limit_name(&self) -> std::option::Option<& str> {
+    pub fn limit_name(&self) -> std::option::Option<&str> {
         self.limit_name.as_deref()
     }
     /// <p>The limit values.</p>
-    pub fn limit_values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn limit_values(&self) -> std::option::Option<&[std::string::String]> {
         self.limit_values.as_deref()
     }
 }
@@ -52,30 +52,31 @@ pub struct StorageTypeLimitBuilder {
     pub(crate) limit_values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl StorageTypeLimitBuilder {
-    /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p> 
-    /// <ul> 
-    /// <li> <p> <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
+    /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p>
+    /// <ul>
+    /// <li> <p> <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// </ul>
     pub fn limit_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.limit_name = Some(input.into());
         self
     }
-    /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p> 
-    /// <ul> 
-    /// <li> <p> <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
-    /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li> 
+    /// <p> Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is <code>ebs</code>, the following options are available:</p>
+    /// <ul>
+    /// <li> <p> <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
+    /// <li> <p> <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be empty if not applicable.</p> </li>
     /// </ul>
     pub fn set_limit_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.limit_name = input; self
+        self.limit_name = input;
+        self
     }
     /// Appends an item to `limit_values`.
     ///
@@ -84,22 +85,23 @@ impl StorageTypeLimitBuilder {
     /// <p>The limit values.</p>
     pub fn limit_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.limit_values.unwrap_or_default();
-                        v.push(input.into());
-                        self.limit_values = Some(v);
-                        self
+        v.push(input.into());
+        self.limit_values = Some(v);
+        self
     }
     /// <p>The limit values.</p>
-    pub fn set_limit_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.limit_values = input; self
+    pub fn set_limit_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.limit_values = input;
+        self
     }
     /// Consumes the builder and constructs a [`StorageTypeLimit`](crate::types::StorageTypeLimit).
     pub fn build(self) -> crate::types::StorageTypeLimit {
         crate::types::StorageTypeLimit {
-            limit_name: self.limit_name
-            ,
-            limit_values: self.limit_values
-            ,
+            limit_name: self.limit_name,
+            limit_values: self.limit_values,
         }
     }
 }
-

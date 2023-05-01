@@ -3,7 +3,7 @@
 /// <p>An object that represents the array properties of a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArrayPropertiesDetail  {
+pub struct ArrayPropertiesDetail {
     /// <p>A summary of the number of array job children in each available job status. This parameter is returned for parent array jobs.</p>
     #[doc(hidden)]
     pub status_summary: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
@@ -16,7 +16,9 @@ pub struct ArrayPropertiesDetail  {
 }
 impl ArrayPropertiesDetail {
     /// <p>A summary of the number of array job children in each available job status. This parameter is returned for parent array jobs.</p>
-    pub fn status_summary(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, i32>> {
+    pub fn status_summary(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
         self.status_summary.as_ref()
     }
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
@@ -39,7 +41,8 @@ impl ArrayPropertiesDetail {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ArrayPropertiesDetailBuilder {
-    pub(crate) status_summary: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+    pub(crate) status_summary:
+        std::option::Option<std::collections::HashMap<std::string::String, i32>>,
     pub(crate) size: std::option::Option<i32>,
     pub(crate) index: std::option::Option<i32>,
 }
@@ -51,13 +54,17 @@ impl ArrayPropertiesDetailBuilder {
     /// <p>A summary of the number of array job children in each available job status. This parameter is returned for parent array jobs.</p>
     pub fn status_summary(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
         let mut hash_map = self.status_summary.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.status_summary = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.status_summary = Some(hash_map);
+        self
     }
     /// <p>A summary of the number of array job children in each available job status. This parameter is returned for parent array jobs.</p>
-    pub fn set_status_summary(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, i32>>) -> Self {
-        self.status_summary = input; self
+    pub fn set_status_summary(
+        mut self,
+        input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+    ) -> Self {
+        self.status_summary = input;
+        self
     }
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
     pub fn size(mut self, input: i32) -> Self {
@@ -66,7 +73,8 @@ impl ArrayPropertiesDetailBuilder {
     }
     /// <p>The size of the array job. This parameter is returned for parent array jobs.</p>
     pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.size = input; self
+        self.size = input;
+        self
     }
     /// <p>The job index within the array that's associated with this job. This parameter is returned for array job children.</p>
     pub fn index(mut self, input: i32) -> Self {
@@ -75,18 +83,15 @@ impl ArrayPropertiesDetailBuilder {
     }
     /// <p>The job index within the array that's associated with this job. This parameter is returned for array job children.</p>
     pub fn set_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.index = input; self
+        self.index = input;
+        self
     }
     /// Consumes the builder and constructs a [`ArrayPropertiesDetail`](crate::types::ArrayPropertiesDetail).
     pub fn build(self) -> crate::types::ArrayPropertiesDetail {
         crate::types::ArrayPropertiesDetail {
-            status_summary: self.status_summary
-            ,
-            size: self.size
-            ,
-            index: self.index
-            ,
+            status_summary: self.status_summary,
+            size: self.size,
+            index: self.index,
         }
     }
 }
-

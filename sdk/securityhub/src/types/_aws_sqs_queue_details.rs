@@ -3,7 +3,7 @@
 /// <p>Data about a queue.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsSqsQueueDetails  {
+pub struct AwsSqsQueueDetails {
     /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.</p>
     #[doc(hidden)]
     pub kms_data_key_reuse_period_seconds: i32,
@@ -23,15 +23,15 @@ impl AwsSqsQueueDetails {
         self.kms_data_key_reuse_period_seconds
     }
     /// <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS key.</p>
-    pub fn kms_master_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_master_key_id(&self) -> std::option::Option<&str> {
         self.kms_master_key_id.as_deref()
     }
     /// <p>The name of the new queue.</p>
-    pub fn queue_name(&self) -> std::option::Option<& str> {
+    pub fn queue_name(&self) -> std::option::Option<&str> {
         self.queue_name.as_deref()
     }
     /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
-    pub fn dead_letter_target_arn(&self) -> std::option::Option<& str> {
+    pub fn dead_letter_target_arn(&self) -> std::option::Option<&str> {
         self.dead_letter_target_arn.as_deref()
     }
 }
@@ -58,8 +58,12 @@ impl AwsSqsQueueDetailsBuilder {
         self
     }
     /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.</p>
-    pub fn set_kms_data_key_reuse_period_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.kms_data_key_reuse_period_seconds = input; self
+    pub fn set_kms_data_key_reuse_period_seconds(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.kms_data_key_reuse_period_seconds = input;
+        self
     }
     /// <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS key.</p>
     pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +71,12 @@ impl AwsSqsQueueDetailsBuilder {
         self
     }
     /// <p>The ID of an Amazon Web Services managed key for Amazon SQS or a custom KMS key.</p>
-    pub fn set_kms_master_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_master_key_id = input; self
+    pub fn set_kms_master_key_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.kms_master_key_id = input;
+        self
     }
     /// <p>The name of the new queue.</p>
     pub fn queue_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +85,8 @@ impl AwsSqsQueueDetailsBuilder {
     }
     /// <p>The name of the new queue.</p>
     pub fn set_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue_name = input; self
+        self.queue_name = input;
+        self
     }
     /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
     pub fn dead_letter_target_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +94,22 @@ impl AwsSqsQueueDetailsBuilder {
         self
     }
     /// <p>The ARN of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </p>
-    pub fn set_dead_letter_target_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dead_letter_target_arn = input; self
+    pub fn set_dead_letter_target_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dead_letter_target_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsSqsQueueDetails`](crate::types::AwsSqsQueueDetails).
     pub fn build(self) -> crate::types::AwsSqsQueueDetails {
         crate::types::AwsSqsQueueDetails {
-            kms_data_key_reuse_period_seconds: self.kms_data_key_reuse_period_seconds
-                .unwrap_or_default()
-            ,
-            kms_master_key_id: self.kms_master_key_id
-            ,
-            queue_name: self.queue_name
-            ,
-            dead_letter_target_arn: self.dead_letter_target_arn
-            ,
+            kms_data_key_reuse_period_seconds: self
+                .kms_data_key_reuse_period_seconds
+                .unwrap_or_default(),
+            kms_master_key_id: self.kms_master_key_id,
+            queue_name: self.queue_name,
+            dead_letter_target_arn: self.dead_letter_target_arn,
         }
     }
 }
-

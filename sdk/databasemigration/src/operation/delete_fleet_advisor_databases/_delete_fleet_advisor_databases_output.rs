@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFleetAdvisorDatabasesOutput  {
+pub struct DeleteFleetAdvisorDatabasesOutput {
     /// <p>The IDs of the databases that the operation deleted.</p>
     #[doc(hidden)]
     pub database_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10,18 +10,18 @@ pub struct DeleteFleetAdvisorDatabasesOutput  {
 }
 impl DeleteFleetAdvisorDatabasesOutput {
     /// <p>The IDs of the databases that the operation deleted.</p>
-    pub fn database_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn database_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.database_ids.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteFleetAdvisorDatabasesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteFleetAdvisorDatabasesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFleetAdvisorDatabasesOutput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput).
-    pub fn builder() -> crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesOutputBuilder {
+    pub fn builder() -> crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesOutputBuilder{
         crate::operation::delete_fleet_advisor_databases::builders::DeleteFleetAdvisorDatabasesOutputBuilder::default()
     }
 }
@@ -41,30 +41,34 @@ impl DeleteFleetAdvisorDatabasesOutputBuilder {
     /// <p>The IDs of the databases that the operation deleted.</p>
     pub fn database_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.database_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.database_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.database_ids = Some(v);
+        self
     }
     /// <p>The IDs of the databases that the operation deleted.</p>
-    pub fn set_database_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.database_ids = input; self
+    pub fn set_database_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.database_ids = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteFleetAdvisorDatabasesOutput`](crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput).
-    pub fn build(self) -> crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput {
         crate::operation::delete_fleet_advisor_databases::DeleteFleetAdvisorDatabasesOutput {
-            database_ids: self.database_ids
-            ,
+            database_ids: self.database_ids,
             _request_id: self._request_id,
         }
     }
 }
-

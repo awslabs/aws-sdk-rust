@@ -4,56 +4,76 @@ pub use crate::operation::list_permission_associations::_list_permission_associa
 pub use crate::operation::list_permission_associations::_list_permission_associations_input::ListPermissionAssociationsInputBuilder;
 
 /// Fluent builder constructing a request to `ListPermissionAssociations`.
-/// 
+///
 /// <p>Lists information about the managed permission and its associations to any resource shares that use this managed permission. This lets you see which resource shares use which versions of the specified managed permission.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPermissionAssociationsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder,
 }
-impl ListPermissionAssociationsFluentBuilder  {
+impl ListPermissionAssociationsFluentBuilder {
     /// Creates a new `ListPermissionAssociations`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_permission_associations::ListPermissionAssociations, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_permission_associations::ListPermissionAssociationsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_permission_associations::ListPermissionAssociationsOutput, aws_smithy_http::result::SdkError<crate::operation::list_permission_associations::ListPermissionAssociationsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_permission_associations::ListPermissionAssociations,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_permission_associations::ListPermissionAssociationsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_permission_associations::ListPermissionAssociationsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_permission_associations::ListPermissionAssociationsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator {
-                                crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator{
+        crate::operation::list_permission_associations::paginator::ListPermissionAssociationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission.</p>
     pub fn permission_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.permission_arn(input.into());
@@ -75,12 +95,18 @@ impl ListPermissionAssociationsFluentBuilder  {
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn association_status(mut self, input: crate::types::ResourceShareAssociationStatus) -> Self {
+    pub fn association_status(
+        mut self,
+        input: crate::types::ResourceShareAssociationStatus,
+    ) -> Self {
         self.inner = self.inner.association_status(input);
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn set_association_status(mut self, input: std::option::Option<crate::types::ResourceShareAssociationStatus>) -> Self {
+    pub fn set_association_status(
+        mut self,
+        input: std::option::Option<crate::types::ResourceShareAssociationStatus>,
+    ) -> Self {
         self.inner = self.inner.set_association_status(input);
         self
     }
@@ -100,17 +126,20 @@ impl ListPermissionAssociationsFluentBuilder  {
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that have a <code>featureSet</code> with this value.</p>
-    pub fn set_feature_set(mut self, input: std::option::Option<crate::types::PermissionFeatureSet>) -> Self {
+    pub fn set_feature_set(
+        mut self,
+        input: std::option::Option<crate::types::PermissionFeatureSet>,
+    ) -> Self {
         self.inner = self.inner.set_feature_set(input);
         self
     }
-    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p> 
+    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p>
     /// <p>When <code>false</code> (the default value), lists associations with resource shares that use any version of the specified managed permission.</p>
     pub fn default_version(mut self, input: bool) -> Self {
         self.inner = self.inner.default_version(input);
         self
     }
-    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p> 
+    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p>
     /// <p>When <code>false</code> (the default value), lists associations with resource shares that use any version of the specified managed permission.</p>
     pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_default_version(input);
@@ -137,4 +166,3 @@ impl ListPermissionAssociationsFluentBuilder  {
         self
     }
 }
-

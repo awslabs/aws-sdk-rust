@@ -4,58 +4,81 @@ pub use crate::operation::create_scheduled_audit::_create_scheduled_audit_output
 pub use crate::operation::create_scheduled_audit::_create_scheduled_audit_input::CreateScheduledAuditInputBuilder;
 
 /// Fluent builder constructing a request to `CreateScheduledAudit`.
-/// 
-/// <p>Creates a scheduled audit that is run at a specified time interval.</p> 
+///
+/// <p>Creates a scheduled audit that is run at a specified time interval.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateScheduledAudit</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateScheduledAuditFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_scheduled_audit::builders::CreateScheduledAuditInputBuilder,
+    inner: crate::operation::create_scheduled_audit::builders::CreateScheduledAuditInputBuilder,
 }
-impl CreateScheduledAuditFluentBuilder  {
+impl CreateScheduledAuditFluentBuilder {
     /// Creates a new `CreateScheduledAudit`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_scheduled_audit::CreateScheduledAudit, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_scheduled_audit::CreateScheduledAuditError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_scheduled_audit::CreateScheduledAuditOutput, aws_smithy_http::result::SdkError<crate::operation::create_scheduled_audit::CreateScheduledAuditError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_scheduled_audit::CreateScheduledAudit,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_scheduled_audit::CreateScheduledAuditError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_scheduled_audit::CreateScheduledAuditOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_scheduled_audit::CreateScheduledAuditError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
     pub fn frequency(mut self, input: crate::types::AuditFrequency) -> Self {
         self.inner = self.inner.frequency(input);
         self
     }
     /// <p>How often the scheduled audit takes place, either <code>DAILY</code>, <code>WEEKLY</code>, <code>BIWEEKLY</code> or <code>MONTHLY</code>. The start time of each audit is determined by the system.</p>
-    pub fn set_frequency(mut self, input: std::option::Option<crate::types::AuditFrequency>) -> Self {
+    pub fn set_frequency(
+        mut self,
+        input: std::option::Option<crate::types::AuditFrequency>,
+    ) -> Self {
         self.inner = self.inner.set_frequency(input);
         self
     }
@@ -89,7 +112,10 @@ impl CreateScheduledAuditFluentBuilder  {
         self
     }
     /// <p>Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.)</p>
-    pub fn set_target_check_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_target_check_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_target_check_names(input);
         self
     }
@@ -99,7 +125,10 @@ impl CreateScheduledAuditFluentBuilder  {
         self
     }
     /// <p>The name you want to give to the scheduled audit. (Max. 128 chars)</p>
-    pub fn set_scheduled_audit_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_scheduled_audit_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_scheduled_audit_name(input);
         self
     }
@@ -113,9 +142,11 @@ impl CreateScheduledAuditFluentBuilder  {
         self
     }
     /// <p>Metadata that can be used to manage the scheduled audit.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

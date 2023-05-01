@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessLogSubscriptionInput  {
+pub struct GetAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
     #[doc(hidden)]
     pub access_log_subscription_identifier: std::option::Option<std::string::String>,
 }
 impl GetAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(&self) -> std::option::Option<& str> {
+    pub fn access_log_subscription_identifier(&self) -> std::option::Option<&str> {
         self.access_log_subscription_identifier.as_deref()
     }
 }
 impl GetAccessLogSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`GetAccessLogSubscriptionInput`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionInput).
-    pub fn builder() -> crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionInputBuilder
+    {
         crate::operation::get_access_log_subscription::builders::GetAccessLogSubscriptionInputBuilder::default()
     }
 }
@@ -28,22 +30,32 @@ pub struct GetAccessLogSubscriptionInputBuilder {
 }
 impl GetAccessLogSubscriptionInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn access_log_subscription_identifier(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.access_log_subscription_identifier = Some(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn set_access_log_subscription_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_log_subscription_identifier = input; self
+    pub fn set_access_log_subscription_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.access_log_subscription_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAccessLogSubscriptionInput`](crate::operation::get_access_log_subscription::GetAccessLogSubscriptionInput).
-    pub fn build(self) -> Result<crate::operation::get_access_log_subscription::GetAccessLogSubscriptionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_access_log_subscription::GetAccessLogSubscriptionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_access_log_subscription::GetAccessLogSubscriptionInput {
-                access_log_subscription_identifier: self.access_log_subscription_identifier
-                ,
-            }
+                access_log_subscription_identifier: self.access_log_subscription_identifier,
+            },
         )
     }
 }
-

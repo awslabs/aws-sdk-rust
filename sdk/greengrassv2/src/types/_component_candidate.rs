@@ -3,30 +3,34 @@
 /// <p>Contains information about a component that is a candidate to deploy to a Greengrass core device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentCandidate  {
+pub struct ComponentCandidate {
     /// <p>The name of the component.</p>
     #[doc(hidden)]
     pub component_name: std::option::Option<std::string::String>,
     /// <p>The version of the component.</p>
     #[doc(hidden)]
     pub component_version: std::option::Option<std::string::String>,
-    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p> 
+    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
     #[doc(hidden)]
-    pub version_requirements: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub version_requirements:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ComponentCandidate {
     /// <p>The name of the component.</p>
-    pub fn component_name(&self) -> std::option::Option<& str> {
+    pub fn component_name(&self) -> std::option::Option<&str> {
         self.component_name.as_deref()
     }
     /// <p>The version of the component.</p>
-    pub fn component_version(&self) -> std::option::Option<& str> {
+    pub fn component_version(&self) -> std::option::Option<&str> {
         self.component_version.as_deref()
     }
-    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p> 
+    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
-    pub fn version_requirements(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn version_requirements(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.version_requirements.as_ref()
     }
 }
@@ -43,7 +47,8 @@ impl ComponentCandidate {
 pub struct ComponentCandidateBuilder {
     pub(crate) component_name: std::option::Option<std::string::String>,
     pub(crate) component_version: std::option::Option<std::string::String>,
-    pub(crate) version_requirements: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) version_requirements:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ComponentCandidateBuilder {
     /// <p>The name of the component.</p>
@@ -53,7 +58,8 @@ impl ComponentCandidateBuilder {
     }
     /// <p>The name of the component.</p>
     pub fn set_component_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_name = input; self
+        self.component_name = input;
+        self
     }
     /// <p>The version of the component.</p>
     pub fn component_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,36 +67,46 @@ impl ComponentCandidateBuilder {
         self
     }
     /// <p>The version of the component.</p>
-    pub fn set_component_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_version = input; self
+    pub fn set_component_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.component_version = input;
+        self
     }
     /// Adds a key-value pair to `version_requirements`.
     ///
     /// To override the contents of this collection use [`set_version_requirements`](Self::set_version_requirements).
     ///
-    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p> 
+    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
-    pub fn version_requirements(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn version_requirements(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.version_requirements.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.version_requirements = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.version_requirements = Some(hash_map);
+        self
     }
-    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p> 
+    /// <p>The version requirements for the component's dependencies. Greengrass core devices get the version requirements from component recipes.</p>
     /// <p>IoT Greengrass V2 uses semantic version constraints. For more information, see <a href="https://semver.org/">Semantic Versioning</a>.</p>
-    pub fn set_version_requirements(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.version_requirements = input; self
+    pub fn set_version_requirements(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.version_requirements = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComponentCandidate`](crate::types::ComponentCandidate).
     pub fn build(self) -> crate::types::ComponentCandidate {
         crate::types::ComponentCandidate {
-            component_name: self.component_name
-            ,
-            component_version: self.component_version
-            ,
-            version_requirements: self.version_requirements
-            ,
+            component_name: self.component_name,
+            component_version: self.component_version,
+            version_requirements: self.version_requirements,
         }
     }
 }
-

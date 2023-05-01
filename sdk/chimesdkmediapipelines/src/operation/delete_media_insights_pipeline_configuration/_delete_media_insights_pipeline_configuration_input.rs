@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMediaInsightsPipelineConfigurationInput  {
+pub struct DeleteMediaInsightsPipelineConfigurationInput {
     /// <p>The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl DeleteMediaInsightsPipelineConfigurationInput {
     /// <p>The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
 }
 impl DeleteMediaInsightsPipelineConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteMediaInsightsPipelineConfigurationInput`](crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput).
-    pub fn builder() -> crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder{
         crate::operation::delete_media_insights_pipeline_configuration::builders::DeleteMediaInsightsPipelineConfigurationInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl DeleteMediaInsightsPipelineConfigurationInputBuilder {
     }
     /// <p>The unique identifier of the resource to be deleted. Valid values include the name and ARN of the media insights pipeline configuration.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMediaInsightsPipelineConfigurationInput`](crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_media_insights_pipeline_configuration::DeleteMediaInsightsPipelineConfigurationInput {
                 identifier: self.identifier
@@ -46,4 +47,3 @@ impl DeleteMediaInsightsPipelineConfigurationInputBuilder {
         )
     }
 }
-

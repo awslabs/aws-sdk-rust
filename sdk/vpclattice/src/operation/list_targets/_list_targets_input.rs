@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetsInput  {
+pub struct ListTargetsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_identifier: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListTargetsInput  {
 }
 impl ListTargetsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> std::option::Option<& str> {
+    pub fn target_group_identifier(&self) -> std::option::Option<&str> {
         self.target_group_identifier.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -26,11 +26,11 @@ impl ListTargetsInput {
         self.max_results
     }
     /// <p>A pagination token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The targets to list.</p>
-    pub fn targets(&self) -> std::option::Option<& [crate::types::Target]> {
+    pub fn targets(&self) -> std::option::Option<&[crate::types::Target]> {
         self.targets.as_deref()
     }
 }
@@ -57,8 +57,12 @@ impl ListTargetsInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_group_identifier = input; self
+    pub fn set_target_group_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_group_identifier = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -67,7 +71,8 @@ impl ListTargetsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +81,8 @@ impl ListTargetsInputBuilder {
     }
     /// <p>A pagination token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `targets`.
     ///
@@ -85,28 +91,30 @@ impl ListTargetsInputBuilder {
     /// <p>The targets to list.</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-                        v.push(input);
-                        self.targets = Some(v);
-                        self
+        v.push(input);
+        self.targets = Some(v);
+        self
     }
     /// <p>The targets to list.</p>
-    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input; self
+    pub fn set_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
+    ) -> Self {
+        self.targets = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTargetsInput`](crate::operation::list_targets::ListTargetsInput).
-    pub fn build(self) -> Result<crate::operation::list_targets::ListTargetsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_targets::ListTargetsInput {
-                target_group_identifier: self.target_group_identifier
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                targets: self.targets
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_targets::ListTargetsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_targets::ListTargetsInput {
+            target_group_identifier: self.target_group_identifier,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            targets: self.targets,
+        })
     }
 }
-

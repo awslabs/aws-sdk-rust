@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSnapshotsInRecycleBinOutput  {
+pub struct ListSnapshotsInRecycleBinOutput {
     /// <p>Information about the snapshots.</p>
     #[doc(hidden)]
     pub snapshots: std::option::Option<std::vec::Vec<crate::types::SnapshotRecycleBinInfo>>,
@@ -13,22 +13,22 @@ pub struct ListSnapshotsInRecycleBinOutput  {
 }
 impl ListSnapshotsInRecycleBinOutput {
     /// <p>Information about the snapshots.</p>
-    pub fn snapshots(&self) -> std::option::Option<& [crate::types::SnapshotRecycleBinInfo]> {
+    pub fn snapshots(&self) -> std::option::Option<&[crate::types::SnapshotRecycleBinInfo]> {
         self.snapshots.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSnapshotsInRecycleBinOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListSnapshotsInRecycleBinOutput {
     /// Creates a new builder-style object to manufacture [`ListSnapshotsInRecycleBinOutput`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput).
-    pub fn builder() -> crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinOutputBuilder {
+    pub fn builder() -> crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinOutputBuilder{
         crate::operation::list_snapshots_in_recycle_bin::builders::ListSnapshotsInRecycleBinOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListSnapshotsInRecycleBinOutputBuilder {
     /// <p>Information about the snapshots.</p>
     pub fn snapshots(mut self, input: crate::types::SnapshotRecycleBinInfo) -> Self {
         let mut v = self.snapshots.unwrap_or_default();
-                        v.push(input);
-                        self.snapshots = Some(v);
-                        self
+        v.push(input);
+        self.snapshots = Some(v);
+        self
     }
     /// <p>Information about the snapshots.</p>
-    pub fn set_snapshots(mut self, input: std::option::Option<std::vec::Vec<crate::types::SnapshotRecycleBinInfo>>) -> Self {
-        self.snapshots = input; self
+    pub fn set_snapshots(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SnapshotRecycleBinInfo>>,
+    ) -> Self {
+        self.snapshots = input;
+        self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,26 @@ impl ListSnapshotsInRecycleBinOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListSnapshotsInRecycleBinOutput`](crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput).
-    pub fn build(self) -> crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput {
         crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput {
-            snapshots: self.snapshots
-            ,
-            next_token: self.next_token
-            ,
+            snapshots: self.snapshots,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

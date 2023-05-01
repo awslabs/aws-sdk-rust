@@ -3,7 +3,7 @@
 /// <p>The parameters for using an MSK stream as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePipeSourceManagedStreamingKafkaParameters  {
+pub struct UpdatePipeSourceManagedStreamingKafkaParameters {
     /// <p>The maximum number of records to include in each batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -20,7 +20,7 @@ impl UpdatePipeSourceManagedStreamingKafkaParameters {
         self.batch_size
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn credentials(&self) -> std::option::Option<& crate::types::MskAccessCredentials> {
+    pub fn credentials(&self) -> std::option::Option<&crate::types::MskAccessCredentials> {
         self.credentials.as_ref()
     }
     /// <p>The maximum length of a time to wait for events.</p>
@@ -30,7 +30,8 @@ impl UpdatePipeSourceManagedStreamingKafkaParameters {
 }
 impl UpdatePipeSourceManagedStreamingKafkaParameters {
     /// Creates a new builder-style object to manufacture [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::types::UpdatePipeSourceManagedStreamingKafkaParameters).
-    pub fn builder() -> crate::types::builders::UpdatePipeSourceManagedStreamingKafkaParametersBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::UpdatePipeSourceManagedStreamingKafkaParametersBuilder {
         crate::types::builders::UpdatePipeSourceManagedStreamingKafkaParametersBuilder::default()
     }
 }
@@ -51,7 +52,8 @@ impl UpdatePipeSourceManagedStreamingKafkaParametersBuilder {
     }
     /// <p>The maximum number of records to include in each batch.</p>
     pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.batch_size = input; self
+        self.batch_size = input;
+        self
     }
     /// <p>The credentials needed to access the resource.</p>
     pub fn credentials(mut self, input: crate::types::MskAccessCredentials) -> Self {
@@ -59,8 +61,12 @@ impl UpdatePipeSourceManagedStreamingKafkaParametersBuilder {
         self
     }
     /// <p>The credentials needed to access the resource.</p>
-    pub fn set_credentials(mut self, input: std::option::Option<crate::types::MskAccessCredentials>) -> Self {
-        self.credentials = input; self
+    pub fn set_credentials(
+        mut self,
+        input: std::option::Option<crate::types::MskAccessCredentials>,
+    ) -> Self {
+        self.credentials = input;
+        self
     }
     /// <p>The maximum length of a time to wait for events.</p>
     pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
@@ -68,19 +74,19 @@ impl UpdatePipeSourceManagedStreamingKafkaParametersBuilder {
         self
     }
     /// <p>The maximum length of a time to wait for events.</p>
-    pub fn set_maximum_batching_window_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_batching_window_in_seconds = input; self
+    pub fn set_maximum_batching_window_in_seconds(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.maximum_batching_window_in_seconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePipeSourceManagedStreamingKafkaParameters`](crate::types::UpdatePipeSourceManagedStreamingKafkaParameters).
     pub fn build(self) -> crate::types::UpdatePipeSourceManagedStreamingKafkaParameters {
         crate::types::UpdatePipeSourceManagedStreamingKafkaParameters {
-            batch_size: self.batch_size
-            ,
-            credentials: self.credentials
-            ,
-            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds
-            ,
+            batch_size: self.batch_size,
+            credentials: self.credentials,
+            maximum_batching_window_in_seconds: self.maximum_batching_window_in_seconds,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes code configuration for an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationCodeConfiguration  {
+pub struct ApplicationCodeConfiguration {
     /// <p>The location and type of the application code.</p>
     #[doc(hidden)]
     pub code_content: std::option::Option<crate::types::CodeContent>,
@@ -13,11 +13,11 @@ pub struct ApplicationCodeConfiguration  {
 }
 impl ApplicationCodeConfiguration {
     /// <p>The location and type of the application code.</p>
-    pub fn code_content(&self) -> std::option::Option<& crate::types::CodeContent> {
+    pub fn code_content(&self) -> std::option::Option<&crate::types::CodeContent> {
         self.code_content.as_ref()
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub fn code_content_type(&self) -> std::option::Option<& crate::types::CodeContentType> {
+    pub fn code_content_type(&self) -> std::option::Option<&crate::types::CodeContentType> {
         self.code_content_type.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl ApplicationCodeConfigurationBuilder {
         self
     }
     /// <p>The location and type of the application code.</p>
-    pub fn set_code_content(mut self, input: std::option::Option<crate::types::CodeContent>) -> Self {
-        self.code_content = input; self
+    pub fn set_code_content(
+        mut self,
+        input: std::option::Option<crate::types::CodeContent>,
+    ) -> Self {
+        self.code_content = input;
+        self
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
     pub fn code_content_type(mut self, input: crate::types::CodeContentType) -> Self {
@@ -51,17 +55,18 @@ impl ApplicationCodeConfigurationBuilder {
         self
     }
     /// <p>Specifies whether the code content is in text or zip format.</p>
-    pub fn set_code_content_type(mut self, input: std::option::Option<crate::types::CodeContentType>) -> Self {
-        self.code_content_type = input; self
+    pub fn set_code_content_type(
+        mut self,
+        input: std::option::Option<crate::types::CodeContentType>,
+    ) -> Self {
+        self.code_content_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApplicationCodeConfiguration`](crate::types::ApplicationCodeConfiguration).
     pub fn build(self) -> crate::types::ApplicationCodeConfiguration {
         crate::types::ApplicationCodeConfiguration {
-            code_content: self.code_content
-            ,
-            code_content_type: self.code_content_type
-            ,
+            code_content: self.code_content,
+            code_content_type: self.code_content_type,
         }
     }
 }
-

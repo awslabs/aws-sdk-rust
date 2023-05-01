@@ -3,7 +3,7 @@
 /// <p>A package version output configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageVersionOutputConfig  {
+pub struct PackageVersionOutputConfig {
     /// <p>The output's package name.</p>
     #[doc(hidden)]
     pub package_name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct PackageVersionOutputConfig  {
 }
 impl PackageVersionOutputConfig {
     /// <p>The output's package name.</p>
-    pub fn package_name(&self) -> std::option::Option<& str> {
+    pub fn package_name(&self) -> std::option::Option<&str> {
         self.package_name.as_deref()
     }
     /// <p>The output's package version.</p>
-    pub fn package_version(&self) -> std::option::Option<& str> {
+    pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
     }
     /// <p>Indicates that the version is recommended for all users.</p>
@@ -51,7 +51,8 @@ impl PackageVersionOutputConfigBuilder {
     }
     /// <p>The output's package name.</p>
     pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_name = input; self
+        self.package_name = input;
+        self
     }
     /// <p>The output's package version.</p>
     pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl PackageVersionOutputConfigBuilder {
     }
     /// <p>The output's package version.</p>
     pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_version = input; self
+        self.package_version = input;
+        self
     }
     /// <p>Indicates that the version is recommended for all users.</p>
     pub fn mark_latest(mut self, input: bool) -> Self {
@@ -69,19 +71,15 @@ impl PackageVersionOutputConfigBuilder {
     }
     /// <p>Indicates that the version is recommended for all users.</p>
     pub fn set_mark_latest(mut self, input: std::option::Option<bool>) -> Self {
-        self.mark_latest = input; self
+        self.mark_latest = input;
+        self
     }
     /// Consumes the builder and constructs a [`PackageVersionOutputConfig`](crate::types::PackageVersionOutputConfig).
     pub fn build(self) -> crate::types::PackageVersionOutputConfig {
         crate::types::PackageVersionOutputConfig {
-            package_name: self.package_name
-            ,
-            package_version: self.package_version
-            ,
-            mark_latest: self.mark_latest
-                .unwrap_or_default()
-            ,
+            package_name: self.package_name,
+            package_version: self.package_version,
+            mark_latest: self.mark_latest.unwrap_or_default(),
         }
     }
 }
-

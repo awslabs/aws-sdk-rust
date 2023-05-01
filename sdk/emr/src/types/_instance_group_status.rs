@@ -3,7 +3,7 @@
 /// <p>The details of the instance group status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceGroupStatus  {
+pub struct InstanceGroupStatus {
     /// <p>The current state of the instance group.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::InstanceGroupState>,
@@ -16,15 +16,17 @@ pub struct InstanceGroupStatus  {
 }
 impl InstanceGroupStatus {
     /// <p>The current state of the instance group.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::InstanceGroupState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::InstanceGroupState> {
         self.state.as_ref()
     }
     /// <p>The status change reason details for the instance group.</p>
-    pub fn state_change_reason(&self) -> std::option::Option<& crate::types::InstanceGroupStateChangeReason> {
+    pub fn state_change_reason(
+        &self,
+    ) -> std::option::Option<&crate::types::InstanceGroupStateChangeReason> {
         self.state_change_reason.as_ref()
     }
     /// <p>The timeline of the instance group status over time.</p>
-    pub fn timeline(&self) -> std::option::Option<& crate::types::InstanceGroupTimeline> {
+    pub fn timeline(&self) -> std::option::Option<&crate::types::InstanceGroupTimeline> {
         self.timeline.as_ref()
     }
 }
@@ -40,7 +42,8 @@ impl InstanceGroupStatus {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct InstanceGroupStatusBuilder {
     pub(crate) state: std::option::Option<crate::types::InstanceGroupState>,
-    pub(crate) state_change_reason: std::option::Option<crate::types::InstanceGroupStateChangeReason>,
+    pub(crate) state_change_reason:
+        std::option::Option<crate::types::InstanceGroupStateChangeReason>,
     pub(crate) timeline: std::option::Option<crate::types::InstanceGroupTimeline>,
 }
 impl InstanceGroupStatusBuilder {
@@ -50,17 +53,28 @@ impl InstanceGroupStatusBuilder {
         self
     }
     /// <p>The current state of the instance group.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::InstanceGroupState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::InstanceGroupState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>The status change reason details for the instance group.</p>
-    pub fn state_change_reason(mut self, input: crate::types::InstanceGroupStateChangeReason) -> Self {
+    pub fn state_change_reason(
+        mut self,
+        input: crate::types::InstanceGroupStateChangeReason,
+    ) -> Self {
         self.state_change_reason = Some(input);
         self
     }
     /// <p>The status change reason details for the instance group.</p>
-    pub fn set_state_change_reason(mut self, input: std::option::Option<crate::types::InstanceGroupStateChangeReason>) -> Self {
-        self.state_change_reason = input; self
+    pub fn set_state_change_reason(
+        mut self,
+        input: std::option::Option<crate::types::InstanceGroupStateChangeReason>,
+    ) -> Self {
+        self.state_change_reason = input;
+        self
     }
     /// <p>The timeline of the instance group status over time.</p>
     pub fn timeline(mut self, input: crate::types::InstanceGroupTimeline) -> Self {
@@ -68,19 +82,19 @@ impl InstanceGroupStatusBuilder {
         self
     }
     /// <p>The timeline of the instance group status over time.</p>
-    pub fn set_timeline(mut self, input: std::option::Option<crate::types::InstanceGroupTimeline>) -> Self {
-        self.timeline = input; self
+    pub fn set_timeline(
+        mut self,
+        input: std::option::Option<crate::types::InstanceGroupTimeline>,
+    ) -> Self {
+        self.timeline = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceGroupStatus`](crate::types::InstanceGroupStatus).
     pub fn build(self) -> crate::types::InstanceGroupStatus {
         crate::types::InstanceGroupStatus {
-            state: self.state
-            ,
-            state_change_reason: self.state_change_reason
-            ,
-            timeline: self.timeline
-            ,
+            state: self.state,
+            state_change_reason: self.state_change_reason,
+            timeline: self.timeline,
         }
     }
 }
-

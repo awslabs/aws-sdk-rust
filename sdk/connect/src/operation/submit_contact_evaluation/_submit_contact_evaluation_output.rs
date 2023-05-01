@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubmitContactEvaluationOutput  {
+pub struct SubmitContactEvaluationOutput {
     /// <p>A unique identifier for the contact evaluation.</p>
     #[doc(hidden)]
     pub evaluation_id: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct SubmitContactEvaluationOutput  {
 }
 impl SubmitContactEvaluationOutput {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(&self) -> std::option::Option<& str> {
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
         self.evaluation_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(&self) -> std::option::Option<& str> {
+    pub fn evaluation_arn(&self) -> std::option::Option<&str> {
         self.evaluation_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SubmitContactEvaluationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SubmitContactEvaluationOutput {
     /// Creates a new builder-style object to manufacture [`SubmitContactEvaluationOutput`](crate::operation::submit_contact_evaluation::SubmitContactEvaluationOutput).
-    pub fn builder() -> crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationOutputBuilder
+    {
         crate::operation::submit_contact_evaluation::builders::SubmitContactEvaluationOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl SubmitContactEvaluationOutputBuilder {
     }
     /// <p>A unique identifier for the contact evaluation.</p>
     pub fn set_evaluation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_id = input; self
+        self.evaluation_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn evaluation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +61,26 @@ impl SubmitContactEvaluationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn set_evaluation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_arn = input; self
+        self.evaluation_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SubmitContactEvaluationOutput`](crate::operation::submit_contact_evaluation::SubmitContactEvaluationOutput).
-    pub fn build(self) -> crate::operation::submit_contact_evaluation::SubmitContactEvaluationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::submit_contact_evaluation::SubmitContactEvaluationOutput {
         crate::operation::submit_contact_evaluation::SubmitContactEvaluationOutput {
-            evaluation_id: self.evaluation_id
-            ,
-            evaluation_arn: self.evaluation_arn
-            ,
+            evaluation_id: self.evaluation_id,
+            evaluation_arn: self.evaluation_arn,
             _request_id: self._request_id,
         }
     }
 }
-

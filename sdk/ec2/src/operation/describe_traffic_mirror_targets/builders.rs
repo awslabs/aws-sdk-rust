@@ -4,56 +4,76 @@ pub use crate::operation::describe_traffic_mirror_targets::_describe_traffic_mir
 pub use crate::operation::describe_traffic_mirror_targets::_describe_traffic_mirror_targets_input::DescribeTrafficMirrorTargetsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeTrafficMirrorTargets`.
-/// 
+///
 /// <p>Information about one or more Traffic Mirror targets.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTrafficMirrorTargetsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_traffic_mirror_targets::builders::DescribeTrafficMirrorTargetsInputBuilder,
 }
-impl DescribeTrafficMirrorTargetsFluentBuilder  {
+impl DescribeTrafficMirrorTargetsFluentBuilder {
     /// Creates a new `DescribeTrafficMirrorTargets`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargets, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator {
-                                crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator{
+        crate::operation::describe_traffic_mirror_targets::paginator::DescribeTrafficMirrorTargetsPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `TrafficMirrorTargetIds`.
     ///
     /// To override the contents of this collection use [`set_traffic_mirror_target_ids`](Self::set_traffic_mirror_target_ids).
@@ -64,7 +84,10 @@ impl DescribeTrafficMirrorTargetsFluentBuilder  {
         self
     }
     /// <p>The ID of the Traffic Mirror targets.</p>
-    pub fn set_traffic_mirror_target_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_traffic_mirror_target_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_traffic_mirror_target_ids(input);
         self
     }
@@ -82,27 +105,30 @@ impl DescribeTrafficMirrorTargetsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters. The possible values are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>description</code>: The Traffic Mirror target description.</p> </li> 
-    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li> 
-    /// <li> <p> <code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p> </li> 
-    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li> 
-    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li> 
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>description</code>: The Traffic Mirror target description.</p> </li>
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li>
+    /// <li> <p> <code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters. The possible values are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>description</code>: The Traffic Mirror target description.</p> </li> 
-    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li> 
-    /// <li> <p> <code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p> </li> 
-    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li> 
-    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li> 
+    /// <p>One or more filters. The possible values are:</p>
+    /// <ul>
+    /// <li> <p> <code>description</code>: The Traffic Mirror target description.</p> </li>
+    /// <li> <p> <code>network-interface-id</code>: The ID of the Traffic Mirror session network interface.</p> </li>
+    /// <li> <p> <code>network-load-balancer-arn</code>: The Amazon Resource Name (ARN) of the Network Load Balancer that is associated with the session.</p> </li>
+    /// <li> <p> <code>owner-id</code>: The ID of the account that owns the Traffic Mirror session.</p> </li>
+    /// <li> <p> <code>traffic-mirror-target-id</code>: The ID of the Traffic Mirror target.</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -127,4 +153,3 @@ impl DescribeTrafficMirrorTargetsFluentBuilder  {
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFacetInput  {
+pub struct CreateFacetInput {
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,18 @@ pub struct CreateFacetInput  {
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
     #[doc(hidden)]
     pub attributes: std::option::Option<std::vec::Vec<crate::types::FacetAttribute>>,
-    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p> 
-    /// <ul> 
-    /// <li> <p>Node: Can have multiple children but one parent.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Index: Can be created with the Index API.</p> </li> 
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
+    /// <ul>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub object_type: std::option::Option<crate::types::ObjectType>,
@@ -33,35 +33,35 @@ pub struct CreateFacetInput  {
 }
 impl CreateFacetInput {
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub fn attributes(&self) -> std::option::Option<& [crate::types::FacetAttribute]> {
+    pub fn attributes(&self) -> std::option::Option<&[crate::types::FacetAttribute]> {
         self.attributes.as_deref()
     }
-    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p> 
-    /// <ul> 
-    /// <li> <p>Node: Can have multiple children but one parent.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Index: Can be created with the Index API.</p> </li> 
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
+    /// <ul>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
     /// </ul>
-    pub fn object_type(&self) -> std::option::Option<& crate::types::ObjectType> {
+    /// <ul>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
+    /// </ul>
+    pub fn object_type(&self) -> std::option::Option<&crate::types::ObjectType> {
         self.object_type.as_ref()
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
-    pub fn facet_style(&self) -> std::option::Option<& crate::types::FacetStyle> {
+    pub fn facet_style(&self) -> std::option::Option<&crate::types::FacetStyle> {
         self.facet_style.as_ref()
     }
 }
@@ -90,7 +90,8 @@ impl CreateFacetInputBuilder {
     }
     /// <p>The schema ARN in which the new <code>Facet</code> will be created. For more information, see <code>arns</code>.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +100,8 @@ impl CreateFacetInputBuilder {
     }
     /// <p>The name of the <code>Facet</code>, which is unique for a given schema.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `attributes`.
     ///
@@ -108,46 +110,51 @@ impl CreateFacetInputBuilder {
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
     pub fn attributes(mut self, input: crate::types::FacetAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-                        v.push(input);
-                        self.attributes = Some(v);
-                        self
+        v.push(input);
+        self.attributes = Some(v);
+        self
     }
     /// <p>The attributes that are associated with the <code>Facet</code>.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::FacetAttribute>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FacetAttribute>>,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
-    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p> 
-    /// <ul> 
-    /// <li> <p>Node: Can have multiple children but one parent.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Index: Can be created with the Index API.</p> </li> 
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
+    /// <ul>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
     pub fn object_type(mut self, input: crate::types::ObjectType) -> Self {
         self.object_type = Some(input);
         self
     }
-    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p> 
-    /// <ul> 
-    /// <li> <p>Node: Can have multiple children but one parent.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>Index: Can be created with the Index API.</p> </li> 
+    /// <p>Specifies whether a given object created from this facet is of type node, leaf node, policy or index.</p>
+    /// <ul>
+    /// <li> <p>Node: Can have multiple children but one parent.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Leaf node: Cannot have children but can have multiple parents.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Policy: Allows you to store a policy document and policy type. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>Index: Can be created with the Index API.</p> </li>
     /// </ul>
     pub fn set_object_type(mut self, input: std::option::Option<crate::types::ObjectType>) -> Self {
-        self.object_type = input; self
+        self.object_type = input;
+        self
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn facet_style(mut self, input: crate::types::FacetStyle) -> Self {
@@ -156,24 +163,22 @@ impl CreateFacetInputBuilder {
     }
     /// <p>There are two different styles that you can define on any given facet, <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes must be defined in the schema. For dynamic facets, attributes can be defined during data plane operations.</p>
     pub fn set_facet_style(mut self, input: std::option::Option<crate::types::FacetStyle>) -> Self {
-        self.facet_style = input; self
+        self.facet_style = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFacetInput`](crate::operation::create_facet::CreateFacetInput).
-    pub fn build(self) -> Result<crate::operation::create_facet::CreateFacetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_facet::CreateFacetInput {
-                schema_arn: self.schema_arn
-                ,
-                name: self.name
-                ,
-                attributes: self.attributes
-                ,
-                object_type: self.object_type
-                ,
-                facet_style: self.facet_style
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_facet::CreateFacetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_facet::CreateFacetInput {
+            schema_arn: self.schema_arn,
+            name: self.name,
+            attributes: self.attributes,
+            object_type: self.object_type,
+            facet_style: self.facet_style,
+        })
     }
 }
-

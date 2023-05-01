@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDbInstanceAutomatedBackupOutput  {
+pub struct DeleteDbInstanceAutomatedBackupOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
     #[doc(hidden)]
     pub db_instance_automated_backup: std::option::Option<crate::types::DbInstanceAutomatedBackup>,
@@ -10,18 +10,20 @@ pub struct DeleteDbInstanceAutomatedBackupOutput  {
 }
 impl DeleteDbInstanceAutomatedBackupOutput {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn db_instance_automated_backup(&self) -> std::option::Option<& crate::types::DbInstanceAutomatedBackup> {
+    pub fn db_instance_automated_backup(
+        &self,
+    ) -> std::option::Option<&crate::types::DbInstanceAutomatedBackup> {
         self.db_instance_automated_backup.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteDbInstanceAutomatedBackupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteDbInstanceAutomatedBackupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDbInstanceAutomatedBackupOutput`](crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupOutput).
-    pub fn builder() -> crate::operation::delete_db_instance_automated_backup::builders::DeleteDbInstanceAutomatedBackupOutputBuilder {
+    pub fn builder() -> crate::operation::delete_db_instance_automated_backup::builders::DeleteDbInstanceAutomatedBackupOutputBuilder{
         crate::operation::delete_db_instance_automated_backup::builders::DeleteDbInstanceAutomatedBackupOutputBuilder::default()
     }
 }
@@ -30,30 +32,41 @@ impl DeleteDbInstanceAutomatedBackupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDbInstanceAutomatedBackupOutputBuilder {
-    pub(crate) db_instance_automated_backup: std::option::Option<crate::types::DbInstanceAutomatedBackup>,
+    pub(crate) db_instance_automated_backup:
+        std::option::Option<crate::types::DbInstanceAutomatedBackup>,
     _request_id: Option<String>,
 }
 impl DeleteDbInstanceAutomatedBackupOutputBuilder {
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn db_instance_automated_backup(mut self, input: crate::types::DbInstanceAutomatedBackup) -> Self {
+    pub fn db_instance_automated_backup(
+        mut self,
+        input: crate::types::DbInstanceAutomatedBackup,
+    ) -> Self {
         self.db_instance_automated_backup = Some(input);
         self
     }
     /// <p>An automated backup of a DB instance. It consists of system backups, transaction logs, and the database instance properties that existed at the time you deleted the source instance.</p>
-    pub fn set_db_instance_automated_backup(mut self, input: std::option::Option<crate::types::DbInstanceAutomatedBackup>) -> Self {
-        self.db_instance_automated_backup = input; self
+    pub fn set_db_instance_automated_backup(
+        mut self,
+        input: std::option::Option<crate::types::DbInstanceAutomatedBackup>,
+    ) -> Self {
+        self.db_instance_automated_backup = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteDbInstanceAutomatedBackupOutput`](crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupOutput).
-    pub fn build(self) -> crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupOutput
+    {
         crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupOutput {
             db_instance_automated_backup: self.db_instance_automated_backup
             ,
@@ -61,4 +74,3 @@ impl DeleteDbInstanceAutomatedBackupOutputBuilder {
         }
     }
 }
-

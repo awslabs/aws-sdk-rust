@@ -3,14 +3,14 @@
 /// <p> The properties that are applied when Amplitude is being used as a source. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AmplitudeSourceProperties  {
+pub struct AmplitudeSourceProperties {
     /// <p> The object specified in the Amplitude flow source. </p>
     #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
 }
 impl AmplitudeSourceProperties {
     /// <p> The object specified in the Amplitude flow source. </p>
-    pub fn object(&self) -> std::option::Option<& str> {
+    pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl AmplitudeSourcePropertiesBuilder {
     }
     /// <p> The object specified in the Amplitude flow source. </p>
     pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object = input; self
+        self.object = input;
+        self
     }
     /// Consumes the builder and constructs a [`AmplitudeSourceProperties`](crate::types::AmplitudeSourceProperties).
     pub fn build(self) -> crate::types::AmplitudeSourceProperties {
         crate::types::AmplitudeSourceProperties {
-            object: self.object
-            ,
+            object: self.object,
         }
     }
 }
-

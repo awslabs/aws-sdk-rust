@@ -3,7 +3,7 @@
 /// <p>Returns information about the specified configuration revision.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigurationRevision  {
+pub struct ConfigurationRevision {
     /// <p>Required. The date and time of the configuration revision.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
@@ -16,11 +16,11 @@ pub struct ConfigurationRevision  {
 }
 impl ConfigurationRevision {
     /// <p>Required. The date and time of the configuration revision.</p>
-    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The description of the configuration revision.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Required. The revision number of the configuration.</p>
@@ -51,7 +51,8 @@ impl ConfigurationRevisionBuilder {
     }
     /// <p>Required. The date and time of the configuration revision.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input; self
+        self.created = input;
+        self
     }
     /// <p>The description of the configuration revision.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ConfigurationRevisionBuilder {
     }
     /// <p>The description of the configuration revision.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Required. The revision number of the configuration.</p>
     pub fn revision(mut self, input: i32) -> Self {
@@ -69,19 +71,15 @@ impl ConfigurationRevisionBuilder {
     }
     /// <p>Required. The revision number of the configuration.</p>
     pub fn set_revision(mut self, input: std::option::Option<i32>) -> Self {
-        self.revision = input; self
+        self.revision = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConfigurationRevision`](crate::types::ConfigurationRevision).
     pub fn build(self) -> crate::types::ConfigurationRevision {
         crate::types::ConfigurationRevision {
-            created: self.created
-            ,
-            description: self.description
-            ,
-            revision: self.revision
-                .unwrap_or_default()
-            ,
+            created: self.created,
+            description: self.description,
+            revision: self.revision.unwrap_or_default(),
         }
     }
 }
-

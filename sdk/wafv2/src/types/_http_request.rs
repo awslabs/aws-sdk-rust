@@ -3,11 +3,11 @@
 /// <p>Part of the response from <code>GetSampledRequests</code>. This is a complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code> contains information about one of the web requests. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HttpRequest  {
-    /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> 
-    /// <ul> 
-    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> 
-    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> 
+pub struct HttpRequest {
+    /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
+    /// <ul>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub client_ip: std::option::Option<std::string::String>,
@@ -28,32 +28,32 @@ pub struct HttpRequest  {
     pub headers: std::option::Option<std::vec::Vec<crate::types::HttpHeader>>,
 }
 impl HttpRequest {
-    /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> 
-    /// <ul> 
-    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> 
-    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> 
+    /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
+    /// <ul>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
-    pub fn client_ip(&self) -> std::option::Option<& str> {
+    pub fn client_ip(&self) -> std::option::Option<&str> {
         self.client_ip.as_deref()
     }
     /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
-    pub fn country(&self) -> std::option::Option<& str> {
+    pub fn country(&self) -> std::option::Option<&str> {
         self.country.as_deref()
     }
     /// <p>The URI path of the request, which identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
-    pub fn uri(&self) -> std::option::Option<& str> {
+    pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// <p>The HTTP method specified in the sampled web request. </p>
-    pub fn method(&self) -> std::option::Option<& str> {
+    pub fn method(&self) -> std::option::Option<&str> {
         self.method.as_deref()
     }
     /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
-    pub fn http_version(&self) -> std::option::Option<& str> {
+    pub fn http_version(&self) -> std::option::Option<&str> {
         self.http_version.as_deref()
     }
     /// <p>A complex type that contains the name and value for each header in the sampled web request.</p>
-    pub fn headers(&self) -> std::option::Option<& [crate::types::HttpHeader]> {
+    pub fn headers(&self) -> std::option::Option<&[crate::types::HttpHeader]> {
         self.headers.as_deref()
     }
 }
@@ -76,22 +76,23 @@ pub struct HttpRequestBuilder {
     pub(crate) headers: std::option::Option<std::vec::Vec<crate::types::HttpHeader>>,
 }
 impl HttpRequestBuilder {
-    /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> 
-    /// <ul> 
-    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> 
-    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> 
+    /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
+    /// <ul>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
     pub fn client_ip(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_ip = Some(input.into());
         self
     }
-    /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p> 
-    /// <ul> 
-    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li> 
-    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li> 
+    /// <p>The IP address that the request originated from. If the web ACL is associated with a CloudFront distribution, this is the value of one of the following fields in CloudFront access logs:</p>
+    /// <ul>
+    /// <li> <p> <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to send the request</p> </li>
+    /// <li> <p> <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer to send the request</p> </li>
     /// </ul>
     pub fn set_client_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_ip = input; self
+        self.client_ip = input;
+        self
     }
     /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
     pub fn country(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +101,8 @@ impl HttpRequestBuilder {
     }
     /// <p>The two-letter country code for the country that the request originated from. For a current list of country codes, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>.</p>
     pub fn set_country(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.country = input; self
+        self.country = input;
+        self
     }
     /// <p>The URI path of the request, which identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
     pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +111,8 @@ impl HttpRequestBuilder {
     }
     /// <p>The URI path of the request, which identifies the resource, for example, <code>/images/daily-ad.jpg</code>.</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input; self
+        self.uri = input;
+        self
     }
     /// <p>The HTTP method specified in the sampled web request. </p>
     pub fn method(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,7 +121,8 @@ impl HttpRequestBuilder {
     }
     /// <p>The HTTP method specified in the sampled web request. </p>
     pub fn set_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.method = input; self
+        self.method = input;
+        self
     }
     /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
     pub fn http_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,7 +131,8 @@ impl HttpRequestBuilder {
     }
     /// <p>The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.</p>
     pub fn set_http_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.http_version = input; self
+        self.http_version = input;
+        self
     }
     /// Appends an item to `headers`.
     ///
@@ -136,30 +141,27 @@ impl HttpRequestBuilder {
     /// <p>A complex type that contains the name and value for each header in the sampled web request.</p>
     pub fn headers(mut self, input: crate::types::HttpHeader) -> Self {
         let mut v = self.headers.unwrap_or_default();
-                        v.push(input);
-                        self.headers = Some(v);
-                        self
+        v.push(input);
+        self.headers = Some(v);
+        self
     }
     /// <p>A complex type that contains the name and value for each header in the sampled web request.</p>
-    pub fn set_headers(mut self, input: std::option::Option<std::vec::Vec<crate::types::HttpHeader>>) -> Self {
-        self.headers = input; self
+    pub fn set_headers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::HttpHeader>>,
+    ) -> Self {
+        self.headers = input;
+        self
     }
     /// Consumes the builder and constructs a [`HttpRequest`](crate::types::HttpRequest).
     pub fn build(self) -> crate::types::HttpRequest {
         crate::types::HttpRequest {
-            client_ip: self.client_ip
-            ,
-            country: self.country
-            ,
-            uri: self.uri
-            ,
-            method: self.method
-            ,
-            http_version: self.http_version
-            ,
-            headers: self.headers
-            ,
+            client_ip: self.client_ip,
+            country: self.country,
+            uri: self.uri,
+            method: self.method,
+            http_version: self.http_version,
+            headers: self.headers,
         }
     }
 }
-

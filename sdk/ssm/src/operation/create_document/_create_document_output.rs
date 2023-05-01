@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDocumentOutput  {
+pub struct CreateDocumentOutput {
     /// <p>Information about the SSM document.</p>
     #[doc(hidden)]
     pub document_description: std::option::Option<crate::types::DocumentDescription>,
@@ -10,15 +10,15 @@ pub struct CreateDocumentOutput  {
 }
 impl CreateDocumentOutput {
     /// <p>Information about the SSM document.</p>
-    pub fn document_description(&self) -> std::option::Option<& crate::types::DocumentDescription> {
+    pub fn document_description(&self) -> std::option::Option<&crate::types::DocumentDescription> {
         self.document_description.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDocumentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateDocumentOutput {
     /// Creates a new builder-style object to manufacture [`CreateDocumentOutput`](crate::operation::create_document::CreateDocumentOutput).
     pub fn builder() -> crate::operation::create_document::builders::CreateDocumentOutputBuilder {
@@ -40,25 +40,27 @@ impl CreateDocumentOutputBuilder {
         self
     }
     /// <p>Information about the SSM document.</p>
-    pub fn set_document_description(mut self, input: std::option::Option<crate::types::DocumentDescription>) -> Self {
-        self.document_description = input; self
+    pub fn set_document_description(
+        mut self,
+        input: std::option::Option<crate::types::DocumentDescription>,
+    ) -> Self {
+        self.document_description = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDocumentOutput`](crate::operation::create_document::CreateDocumentOutput).
     pub fn build(self) -> crate::operation::create_document::CreateDocumentOutput {
         crate::operation::create_document::CreateDocumentOutput {
-            document_description: self.document_description
-            ,
+            document_description: self.document_description,
             _request_id: self._request_id,
         }
     }
 }
-

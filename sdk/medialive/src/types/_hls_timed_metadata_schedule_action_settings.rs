@@ -3,14 +3,14 @@
 /// Settings for the action to emit HLS metadata
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HlsTimedMetadataScheduleActionSettings  {
+pub struct HlsTimedMetadataScheduleActionSettings {
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
     #[doc(hidden)]
     pub id3: std::option::Option<std::string::String>,
 }
 impl HlsTimedMetadataScheduleActionSettings {
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
-    pub fn id3(&self) -> std::option::Option<& str> {
+    pub fn id3(&self) -> std::option::Option<&str> {
         self.id3.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl HlsTimedMetadataScheduleActionSettingsBuilder {
     }
     /// Base64 string formatted according to the ID3 specification: http://id3.org/id3v2.4.0-structure
     pub fn set_id3(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id3 = input; self
+        self.id3 = input;
+        self
     }
     /// Consumes the builder and constructs a [`HlsTimedMetadataScheduleActionSettings`](crate::types::HlsTimedMetadataScheduleActionSettings).
     pub fn build(self) -> crate::types::HlsTimedMetadataScheduleActionSettings {
-        crate::types::HlsTimedMetadataScheduleActionSettings {
-            id3: self.id3
-            ,
-        }
+        crate::types::HlsTimedMetadataScheduleActionSettings { id3: self.id3 }
     }
 }
-

@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseParametersOutput  {
+pub struct GetRelationalDatabaseParametersOutput {
     /// <p>An object describing the result of your get relational database parameters request.</p>
     #[doc(hidden)]
     pub parameters: std::option::Option<std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
-    /// <p>The token to advance to the next page of results from your request.</p> 
-    /// <p>A next page token is not returned if there are no more results to display.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
@@ -15,24 +15,24 @@ pub struct GetRelationalDatabaseParametersOutput  {
 }
 impl GetRelationalDatabaseParametersOutput {
     /// <p>An object describing the result of your get relational database parameters request.</p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::RelationalDatabaseParameter]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::types::RelationalDatabaseParameter]> {
         self.parameters.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p> 
-    /// <p>A next page token is not returned if there are no more results to display.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
-    pub fn next_page_token(&self) -> std::option::Option<& str> {
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetRelationalDatabaseParametersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetRelationalDatabaseParametersOutput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseParametersOutput`](crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersOutput).
-    pub fn builder() -> crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersOutputBuilder {
+    pub fn builder() -> crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersOutputBuilder{
         crate::operation::get_relational_database_parameters::builders::GetRelationalDatabaseParametersOutputBuilder::default()
     }
 }
@@ -41,7 +41,8 @@ impl GetRelationalDatabaseParametersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetRelationalDatabaseParametersOutputBuilder {
-    pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
+    pub(crate) parameters:
+        std::option::Option<std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
     pub(crate) next_page_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,38 +54,46 @@ impl GetRelationalDatabaseParametersOutputBuilder {
     /// <p>An object describing the result of your get relational database parameters request.</p>
     pub fn parameters(mut self, input: crate::types::RelationalDatabaseParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
     /// <p>An object describing the result of your get relational database parameters request.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::RelationalDatabaseParameter>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RelationalDatabaseParameter>>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
-    /// <p>The token to advance to the next page of results from your request.</p> 
-    /// <p>A next page token is not returned if there are no more results to display.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_page_token = Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p> 
-    /// <p>A next page token is not returned if there are no more results to display.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
     /// <p>To get the next page of results, perform another <code>GetRelationalDatabaseParameters</code> request and specify the next page token using the <code>pageToken</code> parameter.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input; self
+        self.next_page_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseParametersOutput`](crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersOutput).
-    pub fn build(self) -> crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersOutput
+    {
         crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersOutput {
             parameters: self.parameters
             ,
@@ -94,4 +103,3 @@ impl GetRelationalDatabaseParametersOutputBuilder {
         }
     }
 }
-

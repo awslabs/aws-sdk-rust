@@ -292,4 +292,3 @@ pub use crate::types::_supported_field_type_details::SupportedFieldTypeDetailsBu
 pub use crate::types::_field_type_details::FieldTypeDetailsBuilder;
 
 pub use crate::types::_range::RangeBuilder;
-

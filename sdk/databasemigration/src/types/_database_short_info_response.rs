@@ -3,7 +3,7 @@
 /// <p>Describes a database in a Fleet Advisor collector inventory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatabaseShortInfoResponse  {
+pub struct DatabaseShortInfoResponse {
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
     #[doc(hidden)]
     pub database_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct DatabaseShortInfoResponse  {
 }
 impl DatabaseShortInfoResponse {
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
-    pub fn database_id(&self) -> std::option::Option<& str> {
+    pub fn database_id(&self) -> std::option::Option<&str> {
         self.database_id.as_deref()
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
-    pub fn database_ip_address(&self) -> std::option::Option<& str> {
+    pub fn database_ip_address(&self) -> std::option::Option<&str> {
         self.database_ip_address.as_deref()
     }
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
-    pub fn database_engine(&self) -> std::option::Option<& str> {
+    pub fn database_engine(&self) -> std::option::Option<&str> {
         self.database_engine.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl DatabaseShortInfoResponseBuilder {
     }
     /// <p>The ID of a database in a Fleet Advisor collector inventory.</p>
     pub fn set_database_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_id = input; self
+        self.database_id = input;
+        self
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl DatabaseShortInfoResponseBuilder {
     }
     /// <p>The name of a database in a Fleet Advisor collector inventory.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
     pub fn database_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +78,12 @@ impl DatabaseShortInfoResponseBuilder {
         self
     }
     /// <p>The IP address of a database in a Fleet Advisor collector inventory.</p>
-    pub fn set_database_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_ip_address = input; self
+    pub fn set_database_ip_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.database_ip_address = input;
+        self
     }
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
     pub fn database_engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +92,16 @@ impl DatabaseShortInfoResponseBuilder {
     }
     /// <p>The database engine of a database in a Fleet Advisor collector inventory, for example <code>PostgreSQL</code>.</p>
     pub fn set_database_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_engine = input; self
+        self.database_engine = input;
+        self
     }
     /// Consumes the builder and constructs a [`DatabaseShortInfoResponse`](crate::types::DatabaseShortInfoResponse).
     pub fn build(self) -> crate::types::DatabaseShortInfoResponse {
         crate::types::DatabaseShortInfoResponse {
-            database_id: self.database_id
-            ,
-            database_name: self.database_name
-            ,
-            database_ip_address: self.database_ip_address
-            ,
-            database_engine: self.database_engine
-            ,
+            database_id: self.database_id,
+            database_name: self.database_name,
+            database_ip_address: self.database_ip_address,
+            database_engine: self.database_engine,
         }
     }
 }
-

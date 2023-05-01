@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFeaturedResultsSetInput  {
+pub struct UpdateFeaturedResultsSetInput {
     /// <p>The identifier of the index used for featuring results.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -27,37 +27,39 @@ pub struct UpdateFeaturedResultsSetInput  {
 }
 impl UpdateFeaturedResultsSetInput {
     /// <p>The identifier of the index used for featuring results.</p>
-    pub fn index_id(&self) -> std::option::Option<& str> {
+    pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the index used for featuring results.</p>
-    pub fn featured_results_set_id(&self) -> std::option::Option<& str> {
+    pub fn featured_results_set_id(&self) -> std::option::Option<&str> {
         self.featured_results_set_id.as_deref()
     }
     /// <p>A new name for the set of featured results.</p>
-    pub fn featured_results_set_name(&self) -> std::option::Option<& str> {
+    pub fn featured_results_set_name(&self) -> std::option::Option<&str> {
         self.featured_results_set_name.as_deref()
     }
     /// <p>A new description for the set of featured results.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code>. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::FeaturedResultsSetStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::FeaturedResultsSetStatus> {
         self.status.as_ref()
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn query_texts(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn query_texts(&self) -> std::option::Option<&[std::string::String]> {
         self.query_texts.as_deref()
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn featured_documents(&self) -> std::option::Option<& [crate::types::FeaturedDocument]> {
+    pub fn featured_documents(&self) -> std::option::Option<&[crate::types::FeaturedDocument]> {
         self.featured_documents.as_deref()
     }
 }
 impl UpdateFeaturedResultsSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateFeaturedResultsSetInput`](crate::operation::update_featured_results_set::UpdateFeaturedResultsSetInput).
-    pub fn builder() -> crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder
+    {
         crate::operation::update_featured_results_set::builders::UpdateFeaturedResultsSetInputBuilder::default()
     }
 }
@@ -72,7 +74,8 @@ pub struct UpdateFeaturedResultsSetInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<crate::types::FeaturedResultsSetStatus>,
     pub(crate) query_texts: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) featured_documents: std::option::Option<std::vec::Vec<crate::types::FeaturedDocument>>,
+    pub(crate) featured_documents:
+        std::option::Option<std::vec::Vec<crate::types::FeaturedDocument>>,
 }
 impl UpdateFeaturedResultsSetInputBuilder {
     /// <p>The identifier of the index used for featuring results.</p>
@@ -82,7 +85,8 @@ impl UpdateFeaturedResultsSetInputBuilder {
     }
     /// <p>The identifier of the index used for featuring results.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input; self
+        self.index_id = input;
+        self
     }
     /// <p>The identifier of the index used for featuring results.</p>
     pub fn featured_results_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,8 +94,12 @@ impl UpdateFeaturedResultsSetInputBuilder {
         self
     }
     /// <p>The identifier of the index used for featuring results.</p>
-    pub fn set_featured_results_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.featured_results_set_id = input; self
+    pub fn set_featured_results_set_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.featured_results_set_id = input;
+        self
     }
     /// <p>A new name for the set of featured results.</p>
     pub fn featured_results_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +107,12 @@ impl UpdateFeaturedResultsSetInputBuilder {
         self
     }
     /// <p>A new name for the set of featured results.</p>
-    pub fn set_featured_results_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.featured_results_set_name = input; self
+    pub fn set_featured_results_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.featured_results_set_name = input;
+        self
     }
     /// <p>A new description for the set of featured results.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +121,8 @@ impl UpdateFeaturedResultsSetInputBuilder {
     }
     /// <p>A new description for the set of featured results.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code>. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
     pub fn status(mut self, input: crate::types::FeaturedResultsSetStatus) -> Self {
@@ -117,8 +130,12 @@ impl UpdateFeaturedResultsSetInputBuilder {
         self
     }
     /// <p>You can set the status to <code>ACTIVE</code> or <code>INACTIVE</code>. When the value is <code>ACTIVE</code>, featured results are ready for use. You can still configure your settings before setting the status to <code>ACTIVE</code>. The queries you specify for featured results must be unique per featured results set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::FeaturedResultsSetStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::FeaturedResultsSetStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Appends an item to `query_texts`.
     ///
@@ -127,13 +144,17 @@ impl UpdateFeaturedResultsSetInputBuilder {
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
     pub fn query_texts(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.query_texts.unwrap_or_default();
-                        v.push(input.into());
-                        self.query_texts = Some(v);
-                        self
+        v.push(input.into());
+        self.query_texts = Some(v);
+        self
     }
     /// <p>A list of queries for featuring results. For more information on the list of queries, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn set_query_texts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.query_texts = input; self
+    pub fn set_query_texts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.query_texts = input;
+        self
     }
     /// Appends an item to `featured_documents`.
     ///
@@ -142,34 +163,35 @@ impl UpdateFeaturedResultsSetInputBuilder {
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
     pub fn featured_documents(mut self, input: crate::types::FeaturedDocument) -> Self {
         let mut v = self.featured_documents.unwrap_or_default();
-                        v.push(input);
-                        self.featured_documents = Some(v);
-                        self
+        v.push(input);
+        self.featured_documents = Some(v);
+        self
     }
     /// <p>A list of document IDs for the documents you want to feature at the top of the search results page. For more information on the list of featured documents, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_FeaturedResultsSet.html">FeaturedResultsSet</a>.</p>
-    pub fn set_featured_documents(mut self, input: std::option::Option<std::vec::Vec<crate::types::FeaturedDocument>>) -> Self {
-        self.featured_documents = input; self
+    pub fn set_featured_documents(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FeaturedDocument>>,
+    ) -> Self {
+        self.featured_documents = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFeaturedResultsSetInput`](crate::operation::update_featured_results_set::UpdateFeaturedResultsSetInput).
-    pub fn build(self) -> Result<crate::operation::update_featured_results_set::UpdateFeaturedResultsSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_featured_results_set::UpdateFeaturedResultsSetInput {
-                index_id: self.index_id
-                ,
-                featured_results_set_id: self.featured_results_set_id
-                ,
-                featured_results_set_name: self.featured_results_set_name
-                ,
-                description: self.description
-                ,
-                status: self.status
-                ,
-                query_texts: self.query_texts
-                ,
-                featured_documents: self.featured_documents
-                ,
-            }
+                index_id: self.index_id,
+                featured_results_set_id: self.featured_results_set_id,
+                featured_results_set_name: self.featured_results_set_name,
+                description: self.description,
+                status: self.status,
+                query_texts: self.query_texts,
+                featured_documents: self.featured_documents,
+            },
         )
     }
 }
-

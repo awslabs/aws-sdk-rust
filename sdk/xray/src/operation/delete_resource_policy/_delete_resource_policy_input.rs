@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyInput  {
+pub struct DeleteResourcePolicyInput {
     /// <p>The name of the resource policy to delete.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteResourcePolicyInput  {
 }
 impl DeleteResourcePolicyInput {
     /// <p>The name of the resource policy to delete.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
-    pub fn policy_revision_id(&self) -> std::option::Option<& str> {
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
         self.policy_revision_id.as_deref()
     }
 }
 impl DeleteResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn builder() -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
         crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteResourcePolicyInputBuilder {
     }
     /// <p>The name of the resource policy to delete.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
     pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +52,25 @@ impl DeleteResourcePolicyInputBuilder {
         self
     }
     /// <p>Specifies a specific policy revision to delete. Provide a <code>PolicyRevisionId</code> to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an <code>InvalidPolicyRevisionIdException</code> exception is returned. </p>
-    pub fn set_policy_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_revision_id = input; self
+    pub fn set_policy_revision_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.policy_revision_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_resource_policy::DeleteResourcePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
-                policy_name: self.policy_name
-                ,
-                policy_revision_id: self.policy_revision_id
-                ,
-            }
+                policy_name: self.policy_name,
+                policy_revision_id: self.policy_revision_id,
+            },
         )
     }
 }
-

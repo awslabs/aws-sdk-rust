@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectVpcEndpointConnectionsInput  {
+pub struct RejectVpcEndpointConnectionsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -19,17 +19,17 @@ impl RejectVpcEndpointConnectionsInput {
         self.dry_run
     }
     /// <p>The ID of the service.</p>
-    pub fn service_id(&self) -> std::option::Option<& str> {
+    pub fn service_id(&self) -> std::option::Option<&str> {
         self.service_id.as_deref()
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn vpc_endpoint_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn vpc_endpoint_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.vpc_endpoint_ids.as_deref()
     }
 }
 impl RejectVpcEndpointConnectionsInput {
     /// Creates a new builder-style object to manufacture [`RejectVpcEndpointConnectionsInput`](crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsInput).
-    pub fn builder() -> crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsInputBuilder {
+    pub fn builder() -> crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsInputBuilder{
         crate::operation::reject_vpc_endpoint_connections::builders::RejectVpcEndpointConnectionsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl RejectVpcEndpointConnectionsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the service.</p>
     pub fn service_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl RejectVpcEndpointConnectionsInputBuilder {
     }
     /// <p>The ID of the service.</p>
     pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_id = input; self
+        self.service_id = input;
+        self
     }
     /// Appends an item to `vpc_endpoint_ids`.
     ///
@@ -68,26 +70,31 @@ impl RejectVpcEndpointConnectionsInputBuilder {
     /// <p>The IDs of the VPC endpoints.</p>
     pub fn vpc_endpoint_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.vpc_endpoint_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.vpc_endpoint_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.vpc_endpoint_ids = Some(v);
+        self
     }
     /// <p>The IDs of the VPC endpoints.</p>
-    pub fn set_vpc_endpoint_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.vpc_endpoint_ids = input; self
+    pub fn set_vpc_endpoint_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.vpc_endpoint_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`RejectVpcEndpointConnectionsInput`](crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsInput).
-    pub fn build(self) -> Result<crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsInput {
-                dry_run: self.dry_run
-                ,
-                service_id: self.service_id
-                ,
-                vpc_endpoint_ids: self.vpc_endpoint_ids
-                ,
-            }
+                dry_run: self.dry_run,
+                service_id: self.service_id,
+                vpc_endpoint_ids: self.vpc_endpoint_ids,
+            },
         )
     }
 }
-

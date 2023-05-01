@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceActionsForProvisioningArtifactInput  {
+pub struct ListServiceActionsForProvisioningArtifactInput {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     #[doc(hidden)]
     pub product_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct ListServiceActionsForProvisioningArtifactInput  {
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
 }
 impl ListServiceActionsForProvisioningArtifactInput {
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
-    pub fn product_id(&self) -> std::option::Option<& str> {
+    pub fn product_id(&self) -> std::option::Option<&str> {
         self.product_id.as_deref()
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn provisioning_artifact_id(&self) -> std::option::Option<& str> {
+    pub fn provisioning_artifact_id(&self) -> std::option::Option<&str> {
         self.provisioning_artifact_id.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -37,21 +37,21 @@ impl ListServiceActionsForProvisioningArtifactInput {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<& str> {
+    pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
 }
 impl ListServiceActionsForProvisioningArtifactInput {
     /// Creates a new builder-style object to manufacture [`ListServiceActionsForProvisioningArtifactInput`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput).
-    pub fn builder() -> crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactInputBuilder {
+    pub fn builder() -> crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactInputBuilder{
         crate::operation::list_service_actions_for_provisioning_artifact::builders::ListServiceActionsForProvisioningArtifactInputBuilder::default()
     }
 }
@@ -74,7 +74,8 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
     }
     /// <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
     pub fn set_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_id = input; self
+        self.product_id = input;
+        self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
     pub fn provisioning_artifact_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +83,12 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
         self
     }
     /// <p>The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.</p>
-    pub fn set_provisioning_artifact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provisioning_artifact_id = input; self
+    pub fn set_provisioning_artifact_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.provisioning_artifact_id = input;
+        self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -92,7 +97,8 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,27 +107,29 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input; self
+        self.accept_language = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListServiceActionsForProvisioningArtifactInput`](crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput).
-    pub fn build(self) -> Result<crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactInput {
                 product_id: self.product_id
@@ -138,4 +146,3 @@ impl ListServiceActionsForProvisioningArtifactInputBuilder {
         )
     }
 }
-

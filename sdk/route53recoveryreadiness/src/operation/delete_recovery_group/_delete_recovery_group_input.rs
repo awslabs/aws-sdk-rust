@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRecoveryGroupInput  {
+pub struct DeleteRecoveryGroupInput {
     /// <p>The name of a recovery group.</p>
     #[doc(hidden)]
     pub recovery_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteRecoveryGroupInput {
     /// <p>The name of a recovery group.</p>
-    pub fn recovery_group_name(&self) -> std::option::Option<& str> {
+    pub fn recovery_group_name(&self) -> std::option::Option<&str> {
         self.recovery_group_name.as_deref()
     }
 }
 impl DeleteRecoveryGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteRecoveryGroupInput`](crate::operation::delete_recovery_group::DeleteRecoveryGroupInput).
-    pub fn builder() -> crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupInputBuilder {
-        crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupInputBuilder {
+        crate::operation::delete_recovery_group::builders::DeleteRecoveryGroupInputBuilder::default(
+        )
     }
 }
 
@@ -33,17 +35,24 @@ impl DeleteRecoveryGroupInputBuilder {
         self
     }
     /// <p>The name of a recovery group.</p>
-    pub fn set_recovery_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recovery_group_name = input; self
+    pub fn set_recovery_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.recovery_group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRecoveryGroupInput`](crate::operation::delete_recovery_group::DeleteRecoveryGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_recovery_group::DeleteRecoveryGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_recovery_group::DeleteRecoveryGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_recovery_group::DeleteRecoveryGroupInput {
-                recovery_group_name: self.recovery_group_name
-                ,
-            }
+                recovery_group_name: self.recovery_group_name,
+            },
         )
     }
 }
-

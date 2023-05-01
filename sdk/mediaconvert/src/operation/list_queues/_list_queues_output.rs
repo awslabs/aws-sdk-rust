@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQueuesOutput  {
+pub struct ListQueuesOutput {
     /// Use this string to request the next batch of queues.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListQueuesOutput  {
 }
 impl ListQueuesOutput {
     /// Use this string to request the next batch of queues.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// List of queues.
-    pub fn queues(&self) -> std::option::Option<& [crate::types::Queue]> {
+    pub fn queues(&self) -> std::option::Option<&[crate::types::Queue]> {
         self.queues.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListQueuesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListQueuesOutput {
     /// Creates a new builder-style object to manufacture [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput).
     pub fn builder() -> crate::operation::list_queues::builders::ListQueuesOutputBuilder {
@@ -49,7 +49,8 @@ impl ListQueuesOutputBuilder {
     }
     /// Use this string to request the next batch of queues.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `queues`.
     ///
@@ -58,32 +59,33 @@ impl ListQueuesOutputBuilder {
     /// List of queues.
     pub fn queues(mut self, input: crate::types::Queue) -> Self {
         let mut v = self.queues.unwrap_or_default();
-                        v.push(input);
-                        self.queues = Some(v);
-                        self
+        v.push(input);
+        self.queues = Some(v);
+        self
     }
     /// List of queues.
-    pub fn set_queues(mut self, input: std::option::Option<std::vec::Vec<crate::types::Queue>>) -> Self {
-        self.queues = input; self
+    pub fn set_queues(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Queue>>,
+    ) -> Self {
+        self.queues = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListQueuesOutput`](crate::operation::list_queues::ListQueuesOutput).
     pub fn build(self) -> crate::operation::list_queues::ListQueuesOutput {
         crate::operation::list_queues::ListQueuesOutput {
-            next_token: self.next_token
-            ,
-            queues: self.queues
-            ,
+            next_token: self.next_token,
+            queues: self.queues,
             _request_id: self._request_id,
         }
     }
 }
-

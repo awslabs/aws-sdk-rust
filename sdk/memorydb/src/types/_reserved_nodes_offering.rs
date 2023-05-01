@@ -3,7 +3,7 @@
 /// <p>The offering type of this node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservedNodesOffering  {
+pub struct ReservedNodesOffering {
     /// <p>The offering identifier.</p>
     #[doc(hidden)]
     pub reserved_nodes_offering_id: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct ReservedNodesOffering  {
 }
 impl ReservedNodesOffering {
     /// <p>The offering identifier.</p>
-    pub fn reserved_nodes_offering_id(&self) -> std::option::Option<& str> {
+    pub fn reserved_nodes_offering_id(&self) -> std::option::Option<&str> {
         self.reserved_nodes_offering_id.as_deref()
     }
     /// <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
-    pub fn node_type(&self) -> std::option::Option<& str> {
+    pub fn node_type(&self) -> std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The duration of the reservation in seconds.</p>
@@ -41,11 +41,11 @@ impl ReservedNodesOffering {
         self.fixed_price
     }
     /// <p>The offering type of this reserved node.</p>
-    pub fn offering_type(&self) -> std::option::Option<& str> {
+    pub fn offering_type(&self) -> std::option::Option<&str> {
         self.offering_type.as_deref()
     }
     /// <p>The recurring price charged to run this reserved node.</p>
-    pub fn recurring_charges(&self) -> std::option::Option<& [crate::types::RecurringCharge]> {
+    pub fn recurring_charges(&self) -> std::option::Option<&[crate::types::RecurringCharge]> {
         self.recurring_charges.as_deref()
     }
 }
@@ -74,8 +74,12 @@ impl ReservedNodesOfferingBuilder {
         self
     }
     /// <p>The offering identifier.</p>
-    pub fn set_reserved_nodes_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reserved_nodes_offering_id = input; self
+    pub fn set_reserved_nodes_offering_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.reserved_nodes_offering_id = input;
+        self
     }
     /// <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
     pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl ReservedNodesOfferingBuilder {
     }
     /// <p>The node type for the reserved nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/nodes.reserved.html#reserved-nodes-supported">Supported node types</a>.</p>
     pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_type = input; self
+        self.node_type = input;
+        self
     }
     /// <p>The duration of the reservation in seconds.</p>
     pub fn duration(mut self, input: i32) -> Self {
@@ -93,7 +98,8 @@ impl ReservedNodesOfferingBuilder {
     }
     /// <p>The duration of the reservation in seconds.</p>
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration = input; self
+        self.duration = input;
+        self
     }
     /// <p>The fixed price charged for this reserved node.</p>
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -102,7 +108,8 @@ impl ReservedNodesOfferingBuilder {
     }
     /// <p>The fixed price charged for this reserved node.</p>
     pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
-        self.fixed_price = input; self
+        self.fixed_price = input;
+        self
     }
     /// <p>The offering type of this reserved node.</p>
     pub fn offering_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +118,8 @@ impl ReservedNodesOfferingBuilder {
     }
     /// <p>The offering type of this reserved node.</p>
     pub fn set_offering_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.offering_type = input; self
+        self.offering_type = input;
+        self
     }
     /// Appends an item to `recurring_charges`.
     ///
@@ -120,32 +128,27 @@ impl ReservedNodesOfferingBuilder {
     /// <p>The recurring price charged to run this reserved node.</p>
     pub fn recurring_charges(mut self, input: crate::types::RecurringCharge) -> Self {
         let mut v = self.recurring_charges.unwrap_or_default();
-                        v.push(input);
-                        self.recurring_charges = Some(v);
-                        self
+        v.push(input);
+        self.recurring_charges = Some(v);
+        self
     }
     /// <p>The recurring price charged to run this reserved node.</p>
-    pub fn set_recurring_charges(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecurringCharge>>) -> Self {
-        self.recurring_charges = input; self
+    pub fn set_recurring_charges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RecurringCharge>>,
+    ) -> Self {
+        self.recurring_charges = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReservedNodesOffering`](crate::types::ReservedNodesOffering).
     pub fn build(self) -> crate::types::ReservedNodesOffering {
         crate::types::ReservedNodesOffering {
-            reserved_nodes_offering_id: self.reserved_nodes_offering_id
-            ,
-            node_type: self.node_type
-            ,
-            duration: self.duration
-                .unwrap_or_default()
-            ,
-            fixed_price: self.fixed_price
-                .unwrap_or_default()
-            ,
-            offering_type: self.offering_type
-            ,
-            recurring_charges: self.recurring_charges
-            ,
+            reserved_nodes_offering_id: self.reserved_nodes_offering_id,
+            node_type: self.node_type,
+            duration: self.duration.unwrap_or_default(),
+            fixed_price: self.fixed_price.unwrap_or_default(),
+            offering_type: self.offering_type,
+            recurring_charges: self.recurring_charges,
         }
     }
 }
-

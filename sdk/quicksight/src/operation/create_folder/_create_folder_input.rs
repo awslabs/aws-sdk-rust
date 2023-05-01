@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFolderInput  {
+pub struct CreateFolderInput {
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct CreateFolderInput  {
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
     #[doc(hidden)]
     pub folder_type: std::option::Option<crate::types::FolderType>,
-    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p> 
+    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     #[doc(hidden)]
     pub parent_folder_arn: std::option::Option<std::string::String>,
-    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p> 
+    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
@@ -29,33 +29,33 @@ pub struct CreateFolderInput  {
 }
 impl CreateFolderInput {
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<& str> {
+    pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
     /// <p>The name of the folder.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
-    pub fn folder_type(&self) -> std::option::Option<& crate::types::FolderType> {
+    pub fn folder_type(&self) -> std::option::Option<&crate::types::FolderType> {
         self.folder_type.as_ref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p> 
+    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
-    pub fn parent_folder_arn(&self) -> std::option::Option<& str> {
+    pub fn parent_folder_arn(&self) -> std::option::Option<&str> {
         self.parent_folder_arn.as_deref()
     }
-    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p> 
+    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn permissions(&self) -> std::option::Option<& [crate::types::ResourcePermission]> {
+    pub fn permissions(&self) -> std::option::Option<&[crate::types::ResourcePermission]> {
         self.permissions.as_deref()
     }
     /// <p>Tags for the folder.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -86,7 +86,8 @@ impl CreateFolderInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account where you want to create the folder.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +96,8 @@ impl CreateFolderInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.folder_id = input; self
+        self.folder_id = input;
+        self
     }
     /// <p>The name of the folder.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +106,8 @@ impl CreateFolderInputBuilder {
     }
     /// <p>The name of the folder.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
     pub fn folder_type(mut self, input: crate::types::FolderType) -> Self {
@@ -113,35 +116,44 @@ impl CreateFolderInputBuilder {
     }
     /// <p>The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.</p>
     pub fn set_folder_type(mut self, input: std::option::Option<crate::types::FolderType>) -> Self {
-        self.folder_type = input; self
+        self.folder_type = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p> 
+    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
     pub fn parent_folder_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.parent_folder_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p> 
+    /// <p>The Amazon Resource Name (ARN) for the parent folder.</p>
     /// <p> <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates a root-level folder.</p>
-    pub fn set_parent_folder_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_folder_arn = input; self
+    pub fn set_parent_folder_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.parent_folder_arn = input;
+        self
     }
     /// Appends an item to `permissions`.
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
     ///
-    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p> 
+    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-                        v.push(input);
-                        self.permissions = Some(v);
-                        self
+        v.push(input);
+        self.permissions = Some(v);
+        self
     }
-    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p> 
+    /// <p>A structure that describes the principals and the resource-level permissions of a folder.</p>
     /// <p>To specify no permissions, omit <code>Permissions</code>.</p>
-    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
-        self.permissions = input; self
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    ) -> Self {
+        self.permissions = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -150,34 +162,33 @@ impl CreateFolderInputBuilder {
     /// <p>Tags for the folder.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Tags for the folder.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFolderInput`](crate::operation::create_folder::CreateFolderInput).
-    pub fn build(self) -> Result<crate::operation::create_folder::CreateFolderInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_folder::CreateFolderInput {
-                aws_account_id: self.aws_account_id
-                ,
-                folder_id: self.folder_id
-                ,
-                name: self.name
-                ,
-                folder_type: self.folder_type
-                ,
-                parent_folder_arn: self.parent_folder_arn
-                ,
-                permissions: self.permissions
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_folder::CreateFolderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_folder::CreateFolderInput {
+            aws_account_id: self.aws_account_id,
+            folder_id: self.folder_id,
+            name: self.name,
+            folder_type: self.folder_type,
+            parent_folder_arn: self.parent_folder_arn,
+            permissions: self.permissions,
+            tags: self.tags,
+        })
     }
 }
-

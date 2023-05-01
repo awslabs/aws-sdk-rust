@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetEndpointAttributesOutput  {
+pub struct SetEndpointAttributesOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SetEndpointAttributesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SetEndpointAttributesOutput {
     /// Creates a new builder-style object to manufacture [`SetEndpointAttributesOutput`](crate::operation::set_endpoint_attributes::SetEndpointAttributesOutput).
-    pub fn builder() -> crate::operation::set_endpoint_attributes::builders::SetEndpointAttributesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_endpoint_attributes::builders::SetEndpointAttributesOutputBuilder
+    {
         crate::operation::set_endpoint_attributes::builders::SetEndpointAttributesOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct SetEndpointAttributesOutputBuilder {
 }
 impl SetEndpointAttributesOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SetEndpointAttributesOutput`](crate::operation::set_endpoint_attributes::SetEndpointAttributesOutput).
     pub fn build(self) -> crate::operation::set_endpoint_attributes::SetEndpointAttributesOutput {
         crate::operation::set_endpoint_attributes::SetEndpointAttributesOutput {
@@ -40,4 +42,3 @@ impl SetEndpointAttributesOutputBuilder {
         }
     }
 }
-

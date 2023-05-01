@@ -3,7 +3,7 @@
 /// <p>The object that represents any node overrides to a job definition that's used in a <code>SubmitJob</code> API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodePropertyOverride  {
+pub struct NodePropertyOverride {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
     #[doc(hidden)]
     pub target_nodes: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct NodePropertyOverride  {
 }
 impl NodePropertyOverride {
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
-    pub fn target_nodes(&self) -> std::option::Option<& str> {
+    pub fn target_nodes(&self) -> std::option::Option<&str> {
         self.target_nodes.as_deref()
     }
     /// <p>The overrides that are sent to a node range.</p>
-    pub fn container_overrides(&self) -> std::option::Option<& crate::types::ContainerOverrides> {
+    pub fn container_overrides(&self) -> std::option::Option<&crate::types::ContainerOverrides> {
         self.container_overrides.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl NodePropertyOverrideBuilder {
     }
     /// <p>The range of nodes, using node index values, that's used to override. A range of <code>0:3</code> indicates nodes with index values of <code>0</code> through <code>3</code>. If the starting range value is omitted (<code>:n</code>), then <code>0</code> is used to start the range. If the ending range value is omitted (<code>n:</code>), then the highest possible node index is used to end the range.</p>
     pub fn set_target_nodes(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_nodes = input; self
+        self.target_nodes = input;
+        self
     }
     /// <p>The overrides that are sent to a node range.</p>
     pub fn container_overrides(mut self, input: crate::types::ContainerOverrides) -> Self {
@@ -51,17 +52,18 @@ impl NodePropertyOverrideBuilder {
         self
     }
     /// <p>The overrides that are sent to a node range.</p>
-    pub fn set_container_overrides(mut self, input: std::option::Option<crate::types::ContainerOverrides>) -> Self {
-        self.container_overrides = input; self
+    pub fn set_container_overrides(
+        mut self,
+        input: std::option::Option<crate::types::ContainerOverrides>,
+    ) -> Self {
+        self.container_overrides = input;
+        self
     }
     /// Consumes the builder and constructs a [`NodePropertyOverride`](crate::types::NodePropertyOverride).
     pub fn build(self) -> crate::types::NodePropertyOverride {
         crate::types::NodePropertyOverride {
-            target_nodes: self.target_nodes
-            ,
-            container_overrides: self.container_overrides
-            ,
+            target_nodes: self.target_nodes,
+            container_overrides: self.container_overrides,
         }
     }
 }
-

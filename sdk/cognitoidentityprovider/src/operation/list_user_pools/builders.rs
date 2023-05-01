@@ -4,56 +4,77 @@ pub use crate::operation::list_user_pools::_list_user_pools_output::ListUserPool
 pub use crate::operation::list_user_pools::_list_user_pools_input::ListUserPoolsInputBuilder;
 
 /// Fluent builder constructing a request to `ListUserPools`.
-/// 
+///
 /// <p>Lists the user pools associated with an Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListUserPoolsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_user_pools::builders::ListUserPoolsInputBuilder,
+    inner: crate::operation::list_user_pools::builders::ListUserPoolsInputBuilder,
 }
-impl ListUserPoolsFluentBuilder  {
+impl ListUserPoolsFluentBuilder {
     /// Creates a new `ListUserPools`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_user_pools::ListUserPools, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_user_pools::ListUserPoolsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_user_pools::ListUserPoolsOutput, aws_smithy_http::result::SdkError<crate::operation::list_user_pools::ListUserPoolsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_user_pools::ListUserPools,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_user_pools::ListUserPoolsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_user_pools::ListUserPoolsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_user_pools::ListUserPoolsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_user_pools::paginator::ListUserPoolsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_user_pools::paginator::ListUserPoolsPaginator {
-                                crate::operation::list_user_pools::paginator::ListUserPoolsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_user_pools::paginator::ListUserPoolsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_user_pools::paginator::ListUserPoolsPaginator {
+        crate::operation::list_user_pools::paginator::ListUserPoolsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -75,4 +96,3 @@ impl ListUserPoolsFluentBuilder  {
         self
     }
 }
-

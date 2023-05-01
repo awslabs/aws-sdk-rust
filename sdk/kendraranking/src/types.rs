@@ -28,4 +28,3 @@ pub mod builders;
 
 /// Error types that Amazon Kendra Intelligent Ranking can respond with.
 pub mod error;
-

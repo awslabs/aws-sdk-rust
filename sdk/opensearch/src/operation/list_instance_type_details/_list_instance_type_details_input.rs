@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInstanceTypeDetailsInput  {
+pub struct ListInstanceTypeDetailsInput {
     /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     #[doc(hidden)]
     pub engine_version: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListInstanceTypeDetailsInput  {
 }
 impl ListInstanceTypeDetailsInput {
     /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
-    pub fn engine_version(&self) -> std::option::Option<& str> {
+    pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>Name of the domain to list instance type details for.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
@@ -30,13 +30,15 @@ impl ListInstanceTypeDetailsInput {
         self.max_results
     }
     /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListInstanceTypeDetailsInput {
     /// Creates a new builder-style object to manufacture [`ListInstanceTypeDetailsInput`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput).
-    pub fn builder() -> crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsInputBuilder
+    {
         crate::operation::list_instance_type_details::builders::ListInstanceTypeDetailsInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl ListInstanceTypeDetailsInputBuilder {
     }
     /// <p>Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input; self
+        self.engine_version = input;
+        self
     }
     /// <p>Name of the domain to list instance type details for.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl ListInstanceTypeDetailsInputBuilder {
     }
     /// <p>Name of the domain to list instance type details for.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,7 +80,8 @@ impl ListInstanceTypeDetailsInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +90,23 @@ impl ListInstanceTypeDetailsInputBuilder {
     }
     /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListInstanceTypeDetailsInput`](crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput).
-    pub fn build(self) -> Result<crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_instance_type_details::ListInstanceTypeDetailsInput {
-                engine_version: self.engine_version
-                ,
-                domain_name: self.domain_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                engine_version: self.engine_version,
+                domain_name: self.domain_name,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

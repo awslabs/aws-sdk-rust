@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateMemberToGroupOutput  {
+pub struct AssociateMemberToGroupOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AssociateMemberToGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociateMemberToGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateMemberToGroupOutput`](crate::operation::associate_member_to_group::AssociateMemberToGroupOutput).
-    pub fn builder() -> crate::operation::associate_member_to_group::builders::AssociateMemberToGroupOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_member_to_group::builders::AssociateMemberToGroupOutputBuilder
+    {
         crate::operation::associate_member_to_group::builders::AssociateMemberToGroupOutputBuilder::default()
     }
 }
@@ -25,19 +27,20 @@ pub struct AssociateMemberToGroupOutputBuilder {
 }
 impl AssociateMemberToGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateMemberToGroupOutput`](crate::operation::associate_member_to_group::AssociateMemberToGroupOutput).
-    pub fn build(self) -> crate::operation::associate_member_to_group::AssociateMemberToGroupOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::associate_member_to_group::AssociateMemberToGroupOutput {
         crate::operation::associate_member_to_group::AssociateMemberToGroupOutput {
             _request_id: self._request_id,
         }
     }
 }
-

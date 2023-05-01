@@ -3,7 +3,7 @@
 /// <p>Information about the S3 bucket where you saved your unsigned code.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Source  {
+pub struct S3Source {
     /// <p>Name of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct S3Source  {
 }
 impl S3Source {
     /// <p>Name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<& str> {
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl S3SourceBuilder {
     }
     /// <p>Name of the S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input; self
+        self.bucket_name = input;
+        self
     }
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl S3SourceBuilder {
     }
     /// <p>Key name of the bucket object that contains your unsigned code.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl S3SourceBuilder {
     }
     /// <p>Version of your source image in your version enabled S3 bucket.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3Source`](crate::types::S3Source).
     pub fn build(self) -> crate::types::S3Source {
         crate::types::S3Source {
-            bucket_name: self.bucket_name
-            ,
-            key: self.key
-            ,
-            version: self.version
-            ,
+            bucket_name: self.bucket_name,
+            key: self.key,
+            version: self.version,
         }
     }
 }
-

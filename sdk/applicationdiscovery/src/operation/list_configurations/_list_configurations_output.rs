@@ -2,10 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListConfigurationsOutput  {
+pub struct ListConfigurationsOutput {
     /// <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
     #[doc(hidden)]
-    pub configurations: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
+    pub configurations: std::option::Option<
+        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+    >,
     /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +15,26 @@ pub struct ListConfigurationsOutput  {
 }
 impl ListConfigurationsOutput {
     /// <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
-    pub fn configurations(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, std::string::String>]> {
+    pub fn configurations(
+        &self,
+    ) -> std::option::Option<&[std::collections::HashMap<std::string::String, std::string::String>]>
+    {
         self.configurations.as_deref()
     }
     /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListConfigurationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListConfigurationsOutput`](crate::operation::list_configurations::ListConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_configurations::builders::ListConfigurationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_configurations::builders::ListConfigurationsOutputBuilder {
         crate::operation::list_configurations::builders::ListConfigurationsOutputBuilder::default()
     }
 }
@@ -37,7 +43,9 @@ impl ListConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListConfigurationsOutputBuilder {
-    pub(crate) configurations: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>,
+    pub(crate) configurations: std::option::Option<
+        std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+    >,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +55,24 @@ impl ListConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
     /// <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
-    pub fn configurations(mut self, input: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
+    pub fn configurations(
+        mut self,
+        input: std::collections::HashMap<std::string::String, std::string::String>,
+    ) -> Self {
         let mut v = self.configurations.unwrap_or_default();
-                        v.push(input);
-                        self.configurations = Some(v);
-                        self
+        v.push(input);
+        self.configurations = Some(v);
+        self
     }
     /// <p>Returns configuration details, including the configuration ID, attribute names, and attribute values.</p>
-    pub fn set_configurations(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
-        self.configurations = input; self
+    pub fn set_configurations(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
+        >,
+    ) -> Self {
+        self.configurations = input;
+        self
     }
     /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +81,24 @@ impl ListConfigurationsOutputBuilder {
     }
     /// <p>Token to retrieve the next set of results. For example, if your call to ListConfigurations returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code> to 10, you received a set of 10 results along with this token. Use this token in the next query to retrieve the next set of 10.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListConfigurationsOutput`](crate::operation::list_configurations::ListConfigurationsOutput).
     pub fn build(self) -> crate::operation::list_configurations::ListConfigurationsOutput {
         crate::operation::list_configurations::ListConfigurationsOutput {
-            configurations: self.configurations
-            ,
-            next_token: self.next_token
-            ,
+            configurations: self.configurations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

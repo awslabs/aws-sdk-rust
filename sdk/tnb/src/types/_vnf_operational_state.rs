@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let vnfoperationalstate = unimplemented!();
 /// match vnfoperationalstate {
@@ -30,55 +30,64 @@
 /// Specifically, when `vnfoperationalstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VnfOperationalState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum VnfOperationalState {
     #[allow(missing_docs)] // documentation missing in model
     Started,
     #[allow(missing_docs)] // documentation missing in model
     Stopped,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VnfOperationalState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "STARTED" => VnfOperationalState::Started,
-"STOPPED" => VnfOperationalState::Stopped,
-other => VnfOperationalState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for VnfOperationalState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(VnfOperationalState::from(s))
-                }
-            }
-impl VnfOperationalState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    VnfOperationalState::Started => "STARTED",
-    VnfOperationalState::Stopped => "STOPPED",
-    VnfOperationalState::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "STARTED" => VnfOperationalState::Started,
+            "STOPPED" => VnfOperationalState::Stopped,
+            other => VnfOperationalState::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["STARTED", "STOPPED"]
-                }
-            }
-impl AsRef<str> for VnfOperationalState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for VnfOperationalState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VnfOperationalState::from(s))
+    }
+}
+impl VnfOperationalState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VnfOperationalState::Started => "STARTED",
+            VnfOperationalState::Stopped => "STOPPED",
+            VnfOperationalState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["STARTED", "STOPPED"]
+    }
+}
+impl AsRef<str> for VnfOperationalState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

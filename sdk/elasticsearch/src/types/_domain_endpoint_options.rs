@@ -3,15 +3,15 @@
 /// <p>Options to configure endpoint for the Elasticsearch domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainEndpointOptions  {
+pub struct DomainEndpointOptions {
     /// <p>Specify if only HTTPS endpoint should be enabled for the Elasticsearch domain.</p>
     #[doc(hidden)]
     pub enforce_https: std::option::Option<bool>,
     /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
-    /// <ul> 
-    /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li> 
-    /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li> 
-    /// </ul> 
+    /// <ul>
+    /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
+    /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
+    /// </ul>
     /// <p></p>
     #[doc(hidden)]
     pub tls_security_policy: std::option::Option<crate::types::TlsSecurityPolicy>,
@@ -31,12 +31,12 @@ impl DomainEndpointOptions {
         self.enforce_https
     }
     /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
-    /// <ul> 
-    /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li> 
-    /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li> 
-    /// </ul> 
+    /// <ul>
+    /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
+    /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
+    /// </ul>
     /// <p></p>
-    pub fn tls_security_policy(&self) -> std::option::Option<& crate::types::TlsSecurityPolicy> {
+    pub fn tls_security_policy(&self) -> std::option::Option<&crate::types::TlsSecurityPolicy> {
         self.tls_security_policy.as_ref()
     }
     /// <p>Specify if custom endpoint should be enabled for the Elasticsearch domain.</p>
@@ -44,11 +44,11 @@ impl DomainEndpointOptions {
         self.custom_endpoint_enabled
     }
     /// <p>Specify the fully qualified domain for your custom endpoint.</p>
-    pub fn custom_endpoint(&self) -> std::option::Option<& str> {
+    pub fn custom_endpoint(&self) -> std::option::Option<&str> {
         self.custom_endpoint.as_deref()
     }
     /// <p>Specify ACM certificate ARN for your custom endpoint.</p>
-    pub fn custom_endpoint_certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn custom_endpoint_certificate_arn(&self) -> std::option::Option<&str> {
         self.custom_endpoint_certificate_arn.as_deref()
     }
 }
@@ -77,26 +77,31 @@ impl DomainEndpointOptionsBuilder {
     }
     /// <p>Specify if only HTTPS endpoint should be enabled for the Elasticsearch domain.</p>
     pub fn set_enforce_https(mut self, input: std::option::Option<bool>) -> Self {
-        self.enforce_https = input; self
+        self.enforce_https = input;
+        self
     }
     /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
-    /// <ul> 
-    /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li> 
-    /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li> 
-    /// </ul> 
+    /// <ul>
+    /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
+    /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
+    /// </ul>
     /// <p></p>
     pub fn tls_security_policy(mut self, input: crate::types::TlsSecurityPolicy) -> Self {
         self.tls_security_policy = Some(input);
         self
     }
     /// <p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br><br> It can be one of the following values: </p>
-    /// <ul> 
-    /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li> 
-    /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li> 
-    /// </ul> 
+    /// <ul>
+    /// <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li>
+    /// <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li>
+    /// </ul>
     /// <p></p>
-    pub fn set_tls_security_policy(mut self, input: std::option::Option<crate::types::TlsSecurityPolicy>) -> Self {
-        self.tls_security_policy = input; self
+    pub fn set_tls_security_policy(
+        mut self,
+        input: std::option::Option<crate::types::TlsSecurityPolicy>,
+    ) -> Self {
+        self.tls_security_policy = input;
+        self
     }
     /// <p>Specify if custom endpoint should be enabled for the Elasticsearch domain.</p>
     pub fn custom_endpoint_enabled(mut self, input: bool) -> Self {
@@ -105,7 +110,8 @@ impl DomainEndpointOptionsBuilder {
     }
     /// <p>Specify if custom endpoint should be enabled for the Elasticsearch domain.</p>
     pub fn set_custom_endpoint_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.custom_endpoint_enabled = input; self
+        self.custom_endpoint_enabled = input;
+        self
     }
     /// <p>Specify the fully qualified domain for your custom endpoint.</p>
     pub fn custom_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,31 +120,33 @@ impl DomainEndpointOptionsBuilder {
     }
     /// <p>Specify the fully qualified domain for your custom endpoint.</p>
     pub fn set_custom_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_endpoint = input; self
+        self.custom_endpoint = input;
+        self
     }
     /// <p>Specify ACM certificate ARN for your custom endpoint.</p>
-    pub fn custom_endpoint_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn custom_endpoint_certificate_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.custom_endpoint_certificate_arn = Some(input.into());
         self
     }
     /// <p>Specify ACM certificate ARN for your custom endpoint.</p>
-    pub fn set_custom_endpoint_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_endpoint_certificate_arn = input; self
+    pub fn set_custom_endpoint_certificate_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.custom_endpoint_certificate_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DomainEndpointOptions`](crate::types::DomainEndpointOptions).
     pub fn build(self) -> crate::types::DomainEndpointOptions {
         crate::types::DomainEndpointOptions {
-            enforce_https: self.enforce_https
-            ,
-            tls_security_policy: self.tls_security_policy
-            ,
-            custom_endpoint_enabled: self.custom_endpoint_enabled
-            ,
-            custom_endpoint: self.custom_endpoint
-            ,
-            custom_endpoint_certificate_arn: self.custom_endpoint_certificate_arn
-            ,
+            enforce_https: self.enforce_https,
+            tls_security_policy: self.tls_security_policy,
+            custom_endpoint_enabled: self.custom_endpoint_enabled,
+            custom_endpoint: self.custom_endpoint,
+            custom_endpoint_certificate_arn: self.custom_endpoint_certificate_arn,
         }
     }
 }
-

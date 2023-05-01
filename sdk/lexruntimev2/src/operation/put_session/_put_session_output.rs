@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct PutSessionOutput  {
+pub struct PutSessionOutput {
     /// <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
     #[doc(hidden)]
     pub messages: std::option::Option<std::string::String>,
-    /// <p>Represents the current state of the dialog between the user and the bot.</p> 
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     #[doc(hidden)]
     pub session_state: std::option::Option<std::string::String>,
@@ -25,36 +25,36 @@ pub struct PutSessionOutput  {
 }
 impl PutSessionOutput {
     /// <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
-    pub fn messages(&self) -> std::option::Option<& str> {
+    pub fn messages(&self) -> std::option::Option<&str> {
         self.messages.as_deref()
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p> 
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
-    pub fn session_state(&self) -> std::option::Option<& str> {
+    pub fn session_state(&self) -> std::option::Option<&str> {
         self.session_state.as_deref()
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
-    pub fn request_attributes(&self) -> std::option::Option<& str> {
+    pub fn request_attributes(&self) -> std::option::Option<&str> {
         self.request_attributes.as_deref()
     }
     /// <p>The identifier of the session that received the data.</p>
-    pub fn session_id(&self) -> std::option::Option<& str> {
+    pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
-    pub fn audio_stream(&self) -> & aws_smithy_http::byte_stream::ByteStream {
+    pub fn audio_stream(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.audio_stream
     }
 }
 impl aws_http::request_id::RequestId for PutSessionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutSessionOutput {
     /// Creates a new builder-style object to manufacture [`PutSessionOutput`](crate::operation::put_session::PutSessionOutput).
     pub fn builder() -> crate::operation::put_session::builders::PutSessionOutputBuilder {
@@ -82,7 +82,8 @@ impl PutSessionOutputBuilder {
     }
     /// <p>The type of response. Same as the type specified in the <code>responseContentType</code> field in the request.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
     pub fn messages(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,18 +92,20 @@ impl PutSessionOutputBuilder {
     }
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on how you return the messages from you Lambda function or the order that the messages are defined in the bot.</p>
     pub fn set_messages(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.messages = input; self
+        self.messages = input;
+        self
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p> 
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn session_state(mut self, input: impl Into<std::string::String>) -> Self {
         self.session_state = Some(input.into());
         self
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p> 
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>Use this to determine the progress of the conversation and what the next action may be.</p>
     pub fn set_session_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_state = input; self
+        self.session_state = input;
+        self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
     pub fn request_attributes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +113,12 @@ impl PutSessionOutputBuilder {
         self
     }
     /// <p>Request-specific information passed between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code> parameter in the call to the <code>PutSession</code> operation.</p>
-    pub fn set_request_attributes(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_attributes = input; self
+    pub fn set_request_attributes(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.request_attributes = input;
+        self
     }
     /// <p>The identifier of the session that received the data.</p>
     pub fn session_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,7 +127,8 @@ impl PutSessionOutputBuilder {
     }
     /// <p>The identifier of the session that received the data.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input; self
+        self.session_id = input;
+        self
     }
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
     pub fn audio_stream(mut self, input: aws_smithy_http::byte_stream::ByteStream) -> Self {
@@ -128,36 +136,32 @@ impl PutSessionOutputBuilder {
         self
     }
     /// <p>If the requested content type was audio, the audio version of the message to convey to the user.</p>
-    pub fn set_audio_stream(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
-        self.audio_stream = input; self
+    pub fn set_audio_stream(
+        mut self,
+        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+    ) -> Self {
+        self.audio_stream = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutSessionOutput`](crate::operation::put_session::PutSessionOutput).
     pub fn build(self) -> crate::operation::put_session::PutSessionOutput {
         crate::operation::put_session::PutSessionOutput {
-            content_type: self.content_type
-            ,
-            messages: self.messages
-            ,
-            session_state: self.session_state
-            ,
-            request_attributes: self.request_attributes
-            ,
-            session_id: self.session_id
-            ,
-            audio_stream: self.audio_stream
-                .unwrap_or_default()
-            ,
+            content_type: self.content_type,
+            messages: self.messages,
+            session_state: self.session_state,
+            request_attributes: self.request_attributes,
+            session_id: self.session_id,
+            audio_stream: self.audio_stream.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

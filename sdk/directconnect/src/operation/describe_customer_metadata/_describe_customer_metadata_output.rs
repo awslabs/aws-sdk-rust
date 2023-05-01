@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomerMetadataOutput  {
+pub struct DescribeCustomerMetadataOutput {
     /// <p>The list of customer agreements.</p>
     #[doc(hidden)]
     pub agreements: std::option::Option<std::vec::Vec<crate::types::CustomerAgreement>>,
-    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li> 
-    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li> 
-    /// <li> <p>nonPartner: The customer is not a partner.</p> </li> 
+    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
+    /// <ul>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub nni_partner_type: std::option::Option<crate::types::NniPartnerType>,
@@ -18,27 +18,29 @@ pub struct DescribeCustomerMetadataOutput  {
 }
 impl DescribeCustomerMetadataOutput {
     /// <p>The list of customer agreements.</p>
-    pub fn agreements(&self) -> std::option::Option<& [crate::types::CustomerAgreement]> {
+    pub fn agreements(&self) -> std::option::Option<&[crate::types::CustomerAgreement]> {
         self.agreements.as_deref()
     }
-    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li> 
-    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li> 
-    /// <li> <p>nonPartner: The customer is not a partner.</p> </li> 
+    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
+    /// <ul>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
-    pub fn nni_partner_type(&self) -> std::option::Option<& crate::types::NniPartnerType> {
+    pub fn nni_partner_type(&self) -> std::option::Option<&crate::types::NniPartnerType> {
         self.nni_partner_type.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeCustomerMetadataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeCustomerMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomerMetadataOutput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput).
-    pub fn builder() -> crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataOutputBuilder
+    {
         crate::operation::describe_customer_metadata::builders::DescribeCustomerMetadataOutputBuilder::default()
     }
 }
@@ -59,51 +61,58 @@ impl DescribeCustomerMetadataOutputBuilder {
     /// <p>The list of customer agreements.</p>
     pub fn agreements(mut self, input: crate::types::CustomerAgreement) -> Self {
         let mut v = self.agreements.unwrap_or_default();
-                        v.push(input);
-                        self.agreements = Some(v);
-                        self
+        v.push(input);
+        self.agreements = Some(v);
+        self
     }
     /// <p>The list of customer agreements.</p>
-    pub fn set_agreements(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomerAgreement>>) -> Self {
-        self.agreements = input; self
+    pub fn set_agreements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CustomerAgreement>>,
+    ) -> Self {
+        self.agreements = input;
+        self
     }
-    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li> 
-    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li> 
-    /// <li> <p>nonPartner: The customer is not a partner.</p> </li> 
+    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
+    /// <ul>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
     pub fn nni_partner_type(mut self, input: crate::types::NniPartnerType) -> Self {
         self.nni_partner_type = Some(input);
         self
     }
-    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li> 
-    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li> 
-    /// <li> <p>nonPartner: The customer is not a partner.</p> </li> 
+    /// <p>The type of network-to-network interface (NNI) partner. The partner type will be one of the following:</p>
+    /// <ul>
+    /// <li> <p>V1: This partner can only allocate 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, or 500Mbps subgigabit connections.</p> </li>
+    /// <li> <p>V2: This partner can only allocate 1GB, 2GB, 5GB, or 10GB hosted connections.</p> </li>
+    /// <li> <p>nonPartner: The customer is not a partner.</p> </li>
     /// </ul>
-    pub fn set_nni_partner_type(mut self, input: std::option::Option<crate::types::NniPartnerType>) -> Self {
-        self.nni_partner_type = input; self
+    pub fn set_nni_partner_type(
+        mut self,
+        input: std::option::Option<crate::types::NniPartnerType>,
+    ) -> Self {
+        self.nni_partner_type = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeCustomerMetadataOutput`](crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput).
-    pub fn build(self) -> crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput {
         crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput {
-            agreements: self.agreements
-            ,
-            nni_partner_type: self.nni_partner_type
-            ,
+            agreements: self.agreements,
+            nni_partner_type: self.nni_partner_type,
             _request_id: self._request_id,
         }
     }
 }
-

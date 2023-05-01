@@ -3,7 +3,7 @@
 /// <p>A metadata key-value pair to store with an object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetadataEntry  {
+pub struct MetadataEntry {
     /// <p>Name of the Object.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MetadataEntry  {
 }
 impl MetadataEntry {
     /// <p>Name of the Object.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Value of the Object.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl MetadataEntryBuilder {
     }
     /// <p>Name of the Object.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Value of the Object.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl MetadataEntryBuilder {
     }
     /// <p>Value of the Object.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetadataEntry`](crate::types::MetadataEntry).
     pub fn build(self) -> crate::types::MetadataEntry {
         crate::types::MetadataEntry {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

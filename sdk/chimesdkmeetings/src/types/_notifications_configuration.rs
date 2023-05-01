@@ -3,7 +3,7 @@
 /// <p>The configuration for resource targets to receive notifications when meeting and attendee events occur.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotificationsConfiguration  {
+pub struct NotificationsConfiguration {
     /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
     #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct NotificationsConfiguration  {
 }
 impl NotificationsConfiguration {
     /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
-    pub fn lambda_function_arn(&self) -> std::option::Option<& str> {
+    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
         self.lambda_function_arn.as_deref()
     }
     /// <p>The ARN of the SNS topic.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The ARN of the SQS queue.</p>
-    pub fn sqs_queue_arn(&self) -> std::option::Option<& str> {
+    pub fn sqs_queue_arn(&self) -> std::option::Option<&str> {
         self.sqs_queue_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for NotificationsConfiguration  {
+impl std::fmt::Debug for NotificationsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationsConfiguration");
         formatter.field("lambda_function_arn", &"*** Sensitive Data Redacted ***");
@@ -59,8 +59,12 @@ impl NotificationsConfigurationBuilder {
         self
     }
     /// <p>The ARN of the AWS Lambda function in the notifications configuration.</p>
-    pub fn set_lambda_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lambda_function_arn = input; self
+    pub fn set_lambda_function_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.lambda_function_arn = input;
+        self
     }
     /// <p>The ARN of the SNS topic.</p>
     pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,7 +73,8 @@ impl NotificationsConfigurationBuilder {
     }
     /// <p>The ARN of the SNS topic.</p>
     pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sns_topic_arn = input; self
+        self.sns_topic_arn = input;
+        self
     }
     /// <p>The ARN of the SQS queue.</p>
     pub fn sqs_queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,17 +83,15 @@ impl NotificationsConfigurationBuilder {
     }
     /// <p>The ARN of the SQS queue.</p>
     pub fn set_sqs_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sqs_queue_arn = input; self
+        self.sqs_queue_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`NotificationsConfiguration`](crate::types::NotificationsConfiguration).
     pub fn build(self) -> crate::types::NotificationsConfiguration {
         crate::types::NotificationsConfiguration {
-            lambda_function_arn: self.lambda_function_arn
-            ,
-            sns_topic_arn: self.sns_topic_arn
-            ,
-            sqs_queue_arn: self.sqs_queue_arn
-            ,
+            lambda_function_arn: self.lambda_function_arn,
+            sns_topic_arn: self.sns_topic_arn,
+            sqs_queue_arn: self.sqs_queue_arn,
         }
     }
 }
@@ -101,4 +104,3 @@ impl std::fmt::Debug for NotificationsConfigurationBuilder {
         formatter.finish()
     }
 }
-

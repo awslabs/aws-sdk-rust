@@ -3,7 +3,7 @@
 /// <p> Used to filter for insights that have any status. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInsightsAnyStatusFilter  {
+pub struct ListInsightsAnyStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::InsightType>,
@@ -13,11 +13,11 @@ pub struct ListInsightsAnyStatusFilter  {
 }
 impl ListInsightsAnyStatusFilter {
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::InsightType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::InsightType> {
         self.r#type.as_ref()
     }
     /// <p> A time range used to specify when the behavior of the filtered insights started. </p>
-    pub fn start_time_range(&self) -> std::option::Option<& crate::types::StartTimeRange> {
+    pub fn start_time_range(&self) -> std::option::Option<&crate::types::StartTimeRange> {
         self.start_time_range.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl ListInsightsAnyStatusFilterBuilder {
     }
     /// <p> Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights. </p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::InsightType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p> A time range used to specify when the behavior of the filtered insights started. </p>
     pub fn start_time_range(mut self, input: crate::types::StartTimeRange) -> Self {
@@ -51,17 +52,18 @@ impl ListInsightsAnyStatusFilterBuilder {
         self
     }
     /// <p> A time range used to specify when the behavior of the filtered insights started. </p>
-    pub fn set_start_time_range(mut self, input: std::option::Option<crate::types::StartTimeRange>) -> Self {
-        self.start_time_range = input; self
+    pub fn set_start_time_range(
+        mut self,
+        input: std::option::Option<crate::types::StartTimeRange>,
+    ) -> Self {
+        self.start_time_range = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListInsightsAnyStatusFilter`](crate::types::ListInsightsAnyStatusFilter).
     pub fn build(self) -> crate::types::ListInsightsAnyStatusFilter {
         crate::types::ListInsightsAnyStatusFilter {
-            r#type: self.r#type
-            ,
-            start_time_range: self.start_time_range
-            ,
+            r#type: self.r#type,
+            start_time_range: self.start_time_range,
         }
     }
 }
-

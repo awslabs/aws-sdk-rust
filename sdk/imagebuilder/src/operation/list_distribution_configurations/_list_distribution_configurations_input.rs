@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDistributionConfigurationsInput  {
+pub struct ListDistributionConfigurationsInput {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -15,7 +15,7 @@ pub struct ListDistributionConfigurationsInput  {
 }
 impl ListDistributionConfigurationsInput {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -23,13 +23,13 @@ impl ListDistributionConfigurationsInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListDistributionConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionConfigurationsInput`](crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput).
-    pub fn builder() -> crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsInputBuilder {
+    pub fn builder() -> crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsInputBuilder{
         crate::operation::list_distribution_configurations::builders::ListDistributionConfigurationsInputBuilder::default()
     }
 }
@@ -50,13 +50,17 @@ impl ListDistributionConfigurationsInputBuilder {
     /// <p>You can filter on <code>name</code> to streamline results.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>You can filter on <code>name</code> to streamline results.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -65,7 +69,8 @@ impl ListDistributionConfigurationsInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,10 +79,16 @@ impl ListDistributionConfigurationsInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDistributionConfigurationsInput`](crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_distribution_configurations::ListDistributionConfigurationsInput {
                 filters: self.filters
@@ -90,4 +101,3 @@ impl ListDistributionConfigurationsInputBuilder {
         )
     }
 }
-

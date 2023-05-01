@@ -3,7 +3,7 @@
 /// Reboots a node.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RebootBrokerInput  {
+pub struct RebootBrokerInput {
     /// <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
     #[doc(hidden)]
     pub broker_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct RebootBrokerInput  {
 }
 impl RebootBrokerInput {
     /// <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
-    pub fn broker_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn broker_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.broker_ids.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl RebootBrokerInputBuilder {
     /// <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
     pub fn broker_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.broker_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.broker_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.broker_ids = Some(v);
+        self
     }
     /// <p>The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.</p>
-    pub fn set_broker_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.broker_ids = input; self
+    pub fn set_broker_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.broker_ids = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,18 +62,19 @@ impl RebootBrokerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input; self
+        self.cluster_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`RebootBrokerInput`](crate::operation::reboot_broker::RebootBrokerInput).
-    pub fn build(self) -> Result<crate::operation::reboot_broker::RebootBrokerInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::reboot_broker::RebootBrokerInput {
-                broker_ids: self.broker_ids
-                ,
-                cluster_arn: self.cluster_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reboot_broker::RebootBrokerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::reboot_broker::RebootBrokerInput {
+            broker_ids: self.broker_ids,
+            cluster_arn: self.cluster_arn,
+        })
     }
 }
-

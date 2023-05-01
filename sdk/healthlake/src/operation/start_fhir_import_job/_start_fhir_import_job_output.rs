@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartFhirImportJobOutput  {
+pub struct StartFhirImportJobOutput {
     /// <p>The AWS-generated job ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -16,27 +16,29 @@ pub struct StartFhirImportJobOutput  {
 }
 impl StartFhirImportJobOutput {
     /// <p>The AWS-generated job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The status of an import job.</p>
-    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The AWS-generated Data Store ID.</p>
-    pub fn datastore_id(&self) -> std::option::Option<& str> {
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartFhirImportJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartFhirImportJobOutput {
     /// Creates a new builder-style object to manufacture [`StartFhirImportJobOutput`](crate::operation::start_fhir_import_job::StartFhirImportJobOutput).
-    pub fn builder() -> crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder {
-        crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder {
+        crate::operation::start_fhir_import_job::builders::StartFhirImportJobOutputBuilder::default(
+        )
     }
 }
 
@@ -57,7 +59,8 @@ impl StartFhirImportJobOutputBuilder {
     }
     /// <p>The AWS-generated job ID.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>The status of an import job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -66,7 +69,8 @@ impl StartFhirImportJobOutputBuilder {
     }
     /// <p>The status of an import job.</p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input; self
+        self.job_status = input;
+        self
     }
     /// <p>The AWS-generated Data Store ID.</p>
     pub fn datastore_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +79,25 @@ impl StartFhirImportJobOutputBuilder {
     }
     /// <p>The AWS-generated Data Store ID.</p>
     pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.datastore_id = input; self
+        self.datastore_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartFhirImportJobOutput`](crate::operation::start_fhir_import_job::StartFhirImportJobOutput).
     pub fn build(self) -> crate::operation::start_fhir_import_job::StartFhirImportJobOutput {
         crate::operation::start_fhir_import_job::StartFhirImportJobOutput {
-            job_id: self.job_id
-            ,
-            job_status: self.job_status
-            ,
-            datastore_id: self.datastore_id
-            ,
+            job_id: self.job_id,
+            job_status: self.job_status,
+            datastore_id: self.datastore_id,
             _request_id: self._request_id,
         }
     }
 }
-

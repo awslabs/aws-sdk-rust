@@ -3,7 +3,7 @@
 /// An Amazon Connect campaign.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Campaign  {
+pub struct Campaign {
     /// Identifier representing a Campaign
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -24,35 +24,39 @@ pub struct Campaign  {
     pub outbound_call_config: std::option::Option<crate::types::OutboundCallConfig>,
     /// Tag map with key and value.
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Campaign {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// The resource name of an Amazon Connect campaign.
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// The name of an Amazon Connect Campaign name.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// Amazon Connect Instance Id
-    pub fn connect_instance_id(&self) -> std::option::Option<& str> {
+    pub fn connect_instance_id(&self) -> std::option::Option<&str> {
         self.connect_instance_id.as_deref()
     }
     /// The possible types of dialer config parameters
-    pub fn dialer_config(&self) -> std::option::Option<& crate::types::DialerConfig> {
+    pub fn dialer_config(&self) -> std::option::Option<&crate::types::DialerConfig> {
         self.dialer_config.as_ref()
     }
     /// The configuration used for outbound calls.
-    pub fn outbound_call_config(&self) -> std::option::Option<& crate::types::OutboundCallConfig> {
+    pub fn outbound_call_config(&self) -> std::option::Option<&crate::types::OutboundCallConfig> {
         self.outbound_call_config.as_ref()
     }
     /// Tag map with key and value.
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -73,7 +77,8 @@ pub struct CampaignBuilder {
     pub(crate) connect_instance_id: std::option::Option<std::string::String>,
     pub(crate) dialer_config: std::option::Option<crate::types::DialerConfig>,
     pub(crate) outbound_call_config: std::option::Option<crate::types::OutboundCallConfig>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CampaignBuilder {
     /// Identifier representing a Campaign
@@ -83,7 +88,8 @@ impl CampaignBuilder {
     }
     /// Identifier representing a Campaign
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// The resource name of an Amazon Connect campaign.
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +98,8 @@ impl CampaignBuilder {
     }
     /// The resource name of an Amazon Connect campaign.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// The name of an Amazon Connect Campaign name.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +108,8 @@ impl CampaignBuilder {
     }
     /// The name of an Amazon Connect Campaign name.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Amazon Connect Instance Id
     pub fn connect_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +117,12 @@ impl CampaignBuilder {
         self
     }
     /// Amazon Connect Instance Id
-    pub fn set_connect_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connect_instance_id = input; self
+    pub fn set_connect_instance_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.connect_instance_id = input;
+        self
     }
     /// The possible types of dialer config parameters
     pub fn dialer_config(mut self, input: crate::types::DialerConfig) -> Self {
@@ -118,8 +130,12 @@ impl CampaignBuilder {
         self
     }
     /// The possible types of dialer config parameters
-    pub fn set_dialer_config(mut self, input: std::option::Option<crate::types::DialerConfig>) -> Self {
-        self.dialer_config = input; self
+    pub fn set_dialer_config(
+        mut self,
+        input: std::option::Option<crate::types::DialerConfig>,
+    ) -> Self {
+        self.dialer_config = input;
+        self
     }
     /// The configuration used for outbound calls.
     pub fn outbound_call_config(mut self, input: crate::types::OutboundCallConfig) -> Self {
@@ -127,42 +143,48 @@ impl CampaignBuilder {
         self
     }
     /// The configuration used for outbound calls.
-    pub fn set_outbound_call_config(mut self, input: std::option::Option<crate::types::OutboundCallConfig>) -> Self {
-        self.outbound_call_config = input; self
+    pub fn set_outbound_call_config(
+        mut self,
+        input: std::option::Option<crate::types::OutboundCallConfig>,
+    ) -> Self {
+        self.outbound_call_config = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag map with key and value.
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// Tag map with key and value.
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`Campaign`](crate::types::Campaign).
     pub fn build(self) -> crate::types::Campaign {
         crate::types::Campaign {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            connect_instance_id: self.connect_instance_id
-            ,
-            dialer_config: self.dialer_config
-            ,
-            outbound_call_config: self.outbound_call_config
-            ,
-            tags: self.tags
-            ,
+            id: self.id,
+            arn: self.arn,
+            name: self.name,
+            connect_instance_id: self.connect_instance_id,
+            dialer_config: self.dialer_config,
+            outbound_call_config: self.outbound_call_config,
+            tags: self.tags,
         }
     }
 }
-

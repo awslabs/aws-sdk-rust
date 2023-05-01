@@ -4,50 +4,70 @@ pub use crate::operation::detach_network_interface::_detach_network_interface_ou
 pub use crate::operation::detach_network_interface::_detach_network_interface_input::DetachNetworkInterfaceInputBuilder;
 
 /// Fluent builder constructing a request to `DetachNetworkInterface`.
-/// 
+///
 /// <p>Detaches a network interface from an instance.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DetachNetworkInterfaceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::detach_network_interface::builders::DetachNetworkInterfaceInputBuilder,
+    inner: crate::operation::detach_network_interface::builders::DetachNetworkInterfaceInputBuilder,
 }
-impl DetachNetworkInterfaceFluentBuilder  {
+impl DetachNetworkInterfaceFluentBuilder {
     /// Creates a new `DetachNetworkInterface`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::detach_network_interface::DetachNetworkInterface, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::detach_network_interface::DetachNetworkInterfaceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::detach_network_interface::DetachNetworkInterfaceOutput, aws_smithy_http::result::SdkError<crate::operation::detach_network_interface::DetachNetworkInterfaceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::detach_network_interface::DetachNetworkInterface,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::detach_network_interface::DetachNetworkInterfaceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::detach_network_interface::DetachNetworkInterfaceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::detach_network_interface::DetachNetworkInterfaceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the attachment.</p>
     pub fn attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.attachment_id(input.into());
@@ -68,27 +88,26 @@ impl DetachNetworkInterfaceFluentBuilder  {
         self.inner = self.inner.set_dry_run(input);
         self
     }
-    /// <p>Specifies whether to force a detachment.</p> <note> 
-    /// <ul> 
-    /// <li> <p>Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed instance. </p> </li> 
-    /// <li> <p>If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach a different network interface to the same index on the instance without first stopping and starting the instance.</p> </li> 
-    /// <li> <p>If you force the detachment of a network interface, the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might not get updated. This means that the attributes associated with the detached network interface might still be visible. The instance metadata will get updated when you stop and start the instance.</p> </li> 
-    /// </ul> 
+    /// <p>Specifies whether to force a detachment.</p> <note>
+    /// <ul>
+    /// <li> <p>Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed instance. </p> </li>
+    /// <li> <p>If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach a different network interface to the same index on the instance without first stopping and starting the instance.</p> </li>
+    /// <li> <p>If you force the detachment of a network interface, the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might not get updated. This means that the attributes associated with the detached network interface might still be visible. The instance metadata will get updated when you stop and start the instance.</p> </li>
+    /// </ul>
     /// </note>
     pub fn force(mut self, input: bool) -> Self {
         self.inner = self.inner.force(input);
         self
     }
-    /// <p>Specifies whether to force a detachment.</p> <note> 
-    /// <ul> 
-    /// <li> <p>Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed instance. </p> </li> 
-    /// <li> <p>If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach a different network interface to the same index on the instance without first stopping and starting the instance.</p> </li> 
-    /// <li> <p>If you force the detachment of a network interface, the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might not get updated. This means that the attributes associated with the detached network interface might still be visible. The instance metadata will get updated when you stop and start the instance.</p> </li> 
-    /// </ul> 
+    /// <p>Specifies whether to force a detachment.</p> <note>
+    /// <ul>
+    /// <li> <p>Use the <code>Force</code> parameter only as a last resort to detach a network interface from a failed instance. </p> </li>
+    /// <li> <p>If you use the <code>Force</code> parameter to detach a network interface, you might not be able to attach a different network interface to the same index on the instance without first stopping and starting the instance.</p> </li>
+    /// <li> <p>If you force the detachment of a network interface, the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance metadata</a> might not get updated. This means that the attributes associated with the detached network interface might still be visible. The instance metadata will get updated when you stop and start the instance.</p> </li>
+    /// </ul>
     /// </note>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_force(input);
         self
     }
 }
-

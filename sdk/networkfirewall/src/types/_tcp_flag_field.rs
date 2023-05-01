@@ -3,12 +3,12 @@
 /// <p>TCP flags and masks to inspect packets for, used in stateless rules <code>MatchAttributes</code> settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TcpFlagField  {
-    /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p> 
-    /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p> 
-    /// <ul> 
-    /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li> 
-    /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li> 
+pub struct TcpFlagField {
+    /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
+    /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p>
+    /// <ul>
+    /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li>
+    /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub flags: std::option::Option<std::vec::Vec<crate::types::TcpFlag>>,
@@ -17,17 +17,17 @@ pub struct TcpFlagField  {
     pub masks: std::option::Option<std::vec::Vec<crate::types::TcpFlag>>,
 }
 impl TcpFlagField {
-    /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p> 
-    /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p> 
-    /// <ul> 
-    /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li> 
-    /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li> 
+    /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
+    /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p>
+    /// <ul>
+    /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li>
+    /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li>
     /// </ul>
-    pub fn flags(&self) -> std::option::Option<& [crate::types::TcpFlag]> {
+    pub fn flags(&self) -> std::option::Option<&[crate::types::TcpFlag]> {
         self.flags.as_deref()
     }
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
-    pub fn masks(&self) -> std::option::Option<& [crate::types::TcpFlag]> {
+    pub fn masks(&self) -> std::option::Option<&[crate::types::TcpFlag]> {
         self.masks.as_deref()
     }
 }
@@ -50,26 +50,30 @@ impl TcpFlagFieldBuilder {
     ///
     /// To override the contents of this collection use [`set_flags`](Self::set_flags).
     ///
-    /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p> 
-    /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p> 
-    /// <ul> 
-    /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li> 
-    /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li> 
+    /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
+    /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p>
+    /// <ul>
+    /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li>
+    /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li>
     /// </ul>
     pub fn flags(mut self, input: crate::types::TcpFlag) -> Self {
         let mut v = self.flags.unwrap_or_default();
-                        v.push(input);
-                        self.flags = Some(v);
-                        self
+        v.push(input);
+        self.flags = Some(v);
+        self
     }
-    /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p> 
-    /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p> 
-    /// <ul> 
-    /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li> 
-    /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li> 
+    /// <p>Used in conjunction with the <code>Masks</code> setting to define the flags that must be set and flags that must not be set in order for the packet to match. This setting can only specify values that are also specified in the <code>Masks</code> setting.</p>
+    /// <p>For the flags that are specified in the masks setting, the following must be true for the packet to match: </p>
+    /// <ul>
+    /// <li> <p>The ones that are set in this flags setting must be set in the packet. </p> </li>
+    /// <li> <p>The ones that are not set in this flags setting must also not be set in the packet. </p> </li>
     /// </ul>
-    pub fn set_flags(mut self, input: std::option::Option<std::vec::Vec<crate::types::TcpFlag>>) -> Self {
-        self.flags = input; self
+    pub fn set_flags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TcpFlag>>,
+    ) -> Self {
+        self.flags = input;
+        self
     }
     /// Appends an item to `masks`.
     ///
@@ -78,22 +82,23 @@ impl TcpFlagFieldBuilder {
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
     pub fn masks(mut self, input: crate::types::TcpFlag) -> Self {
         let mut v = self.masks.unwrap_or_default();
-                        v.push(input);
-                        self.masks = Some(v);
-                        self
+        v.push(input);
+        self.masks = Some(v);
+        self
     }
     /// <p>The set of flags to consider in the inspection. To inspect all flags in the valid values list, leave this with no setting.</p>
-    pub fn set_masks(mut self, input: std::option::Option<std::vec::Vec<crate::types::TcpFlag>>) -> Self {
-        self.masks = input; self
+    pub fn set_masks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TcpFlag>>,
+    ) -> Self {
+        self.masks = input;
+        self
     }
     /// Consumes the builder and constructs a [`TcpFlagField`](crate::types::TcpFlagField).
     pub fn build(self) -> crate::types::TcpFlagField {
         crate::types::TcpFlagField {
-            flags: self.flags
-            ,
-            masks: self.masks
-            ,
+            flags: self.flags,
+            masks: self.masks,
         }
     }
 }
-

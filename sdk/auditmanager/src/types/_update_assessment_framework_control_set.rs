@@ -3,7 +3,7 @@
 /// <p> A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This doesn't contain the control set ID. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssessmentFrameworkControlSet  {
+pub struct UpdateAssessmentFrameworkControlSet {
     /// <p> The unique identifier for the control set. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,19 +12,22 @@ pub struct UpdateAssessmentFrameworkControlSet  {
     pub name: std::option::Option<std::string::String>,
     /// <p> The list of controls that are contained within the control set. </p>
     #[doc(hidden)]
-    pub controls: std::option::Option<std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
+    pub controls:
+        std::option::Option<std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
 }
 impl UpdateAssessmentFrameworkControlSet {
     /// <p> The unique identifier for the control set. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The name of the control set. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The list of controls that are contained within the control set. </p>
-    pub fn controls(&self) -> std::option::Option<& [crate::types::CreateAssessmentFrameworkControl]> {
+    pub fn controls(
+        &self,
+    ) -> std::option::Option<&[crate::types::CreateAssessmentFrameworkControl]> {
         self.controls.as_deref()
     }
 }
@@ -41,7 +44,8 @@ impl UpdateAssessmentFrameworkControlSet {
 pub struct UpdateAssessmentFrameworkControlSetBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) controls: std::option::Option<std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
+    pub(crate) controls:
+        std::option::Option<std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
 }
 impl UpdateAssessmentFrameworkControlSetBuilder {
     /// <p> The unique identifier for the control set. </p>
@@ -51,7 +55,8 @@ impl UpdateAssessmentFrameworkControlSetBuilder {
     }
     /// <p> The unique identifier for the control set. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p> The name of the control set. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +65,8 @@ impl UpdateAssessmentFrameworkControlSetBuilder {
     }
     /// <p> The name of the control set. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `controls`.
     ///
@@ -69,24 +75,24 @@ impl UpdateAssessmentFrameworkControlSetBuilder {
     /// <p> The list of controls that are contained within the control set. </p>
     pub fn controls(mut self, input: crate::types::CreateAssessmentFrameworkControl) -> Self {
         let mut v = self.controls.unwrap_or_default();
-                        v.push(input);
-                        self.controls = Some(v);
-                        self
+        v.push(input);
+        self.controls = Some(v);
+        self
     }
     /// <p> The list of controls that are contained within the control set. </p>
-    pub fn set_controls(mut self, input: std::option::Option<std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>) -> Self {
-        self.controls = input; self
+    pub fn set_controls(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CreateAssessmentFrameworkControl>>,
+    ) -> Self {
+        self.controls = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAssessmentFrameworkControlSet`](crate::types::UpdateAssessmentFrameworkControlSet).
     pub fn build(self) -> crate::types::UpdateAssessmentFrameworkControlSet {
         crate::types::UpdateAssessmentFrameworkControlSet {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            controls: self.controls
-            ,
+            id: self.id,
+            name: self.name,
+            controls: self.controls,
         }
     }
 }
-

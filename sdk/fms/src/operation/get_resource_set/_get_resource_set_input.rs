@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceSetInput  {
+pub struct GetResourceSetInput {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl GetResourceSetInput {
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetResourceSetInputBuilder {
     }
     /// <p>A unique identifier for the resource set, used in a request to refer to the resource set.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetResourceSetInput`](crate::operation::get_resource_set::GetResourceSetInput).
-    pub fn build(self) -> Result<crate::operation::get_resource_set::GetResourceSetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_resource_set::GetResourceSetInput {
-                identifier: self.identifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_resource_set::GetResourceSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_resource_set::GetResourceSetInput {
+            identifier: self.identifier,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAttributesOutput  {
+pub struct DescribeFleetAttributesOutput {
     /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
     #[doc(hidden)]
     pub fleet_attributes: std::option::Option<std::vec::Vec<crate::types::FleetAttributes>>,
@@ -13,22 +13,24 @@ pub struct DescribeFleetAttributesOutput  {
 }
 impl DescribeFleetAttributesOutput {
     /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
-    pub fn fleet_attributes(&self) -> std::option::Option<& [crate::types::FleetAttributes]> {
+    pub fn fleet_attributes(&self) -> std::option::Option<&[crate::types::FleetAttributes]> {
         self.fleet_attributes.as_deref()
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFleetAttributesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeFleetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAttributesOutput`](crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput).
-    pub fn builder() -> crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesOutputBuilder
+    {
         crate::operation::describe_fleet_attributes::builders::DescribeFleetAttributesOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeFleetAttributesOutputBuilder {
     /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
     pub fn fleet_attributes(mut self, input: crate::types::FleetAttributes) -> Self {
         let mut v = self.fleet_attributes.unwrap_or_default();
-                        v.push(input);
-                        self.fleet_attributes = Some(v);
-                        self
+        v.push(input);
+        self.fleet_attributes = Some(v);
+        self
     }
     /// <p>A collection of objects containing attribute metadata for each requested fleet ID. Attribute objects are returned only for fleets that currently exist.</p>
-    pub fn set_fleet_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::FleetAttributes>>) -> Self {
-        self.fleet_attributes = input; self
+    pub fn set_fleet_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FleetAttributes>>,
+    ) -> Self {
+        self.fleet_attributes = input;
+        self
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,26 @@ impl DescribeFleetAttributesOutputBuilder {
     }
     /// <p>A token that indicates where to resume retrieving results on the next call to this operation. If no token is returned, these results represent the end of the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeFleetAttributesOutput`](crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput).
-    pub fn build(self) -> crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput {
         crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput {
-            fleet_attributes: self.fleet_attributes
-            ,
-            next_token: self.next_token
-            ,
+            fleet_attributes: self.fleet_attributes,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

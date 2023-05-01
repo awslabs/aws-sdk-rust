@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventsByEventTypeInput  {
+pub struct DeleteEventsByEventTypeInput {
     /// <p>The name of the event type.</p>
     #[doc(hidden)]
     pub event_type_name: std::option::Option<std::string::String>,
 }
 impl DeleteEventsByEventTypeInput {
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(&self) -> std::option::Option<& str> {
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
         self.event_type_name.as_deref()
     }
 }
 impl DeleteEventsByEventTypeInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventsByEventTypeInput`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput).
-    pub fn builder() -> crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeInputBuilder
+    {
         crate::operation::delete_events_by_event_type::builders::DeleteEventsByEventTypeInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteEventsByEventTypeInputBuilder {
     }
     /// <p>The name of the event type.</p>
     pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_type_name = input; self
+        self.event_type_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteEventsByEventTypeInput`](crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput).
-    pub fn build(self) -> Result<crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_events_by_event_type::DeleteEventsByEventTypeInput {
-                event_type_name: self.event_type_name
-                ,
-            }
+                event_type_name: self.event_type_name,
+            },
         )
     }
 }
-

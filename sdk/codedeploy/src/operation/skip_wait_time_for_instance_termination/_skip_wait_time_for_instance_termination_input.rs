@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SkipWaitTimeForInstanceTerminationInput  {
+pub struct SkipWaitTimeForInstanceTerminationInput {
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
 }
 impl SkipWaitTimeForInstanceTerminationInput {
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
-    pub fn deployment_id(&self) -> std::option::Option<& str> {
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
 }
 impl SkipWaitTimeForInstanceTerminationInput {
     /// Creates a new builder-style object to manufacture [`SkipWaitTimeForInstanceTerminationInput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput).
-    pub fn builder() -> crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder {
+    pub fn builder() -> crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder{
         crate::operation::skip_wait_time_for_instance_termination::builders::SkipWaitTimeForInstanceTerminationInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl SkipWaitTimeForInstanceTerminationInputBuilder {
     }
     /// <p> The unique ID of a blue/green deployment for which you want to skip the instance termination wait time. </p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input; self
+        self.deployment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`SkipWaitTimeForInstanceTerminationInput`](crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput).
-    pub fn build(self) -> Result<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationInput {
                 deployment_id: self.deployment_id
@@ -46,4 +47,3 @@ impl SkipWaitTimeForInstanceTerminationInputBuilder {
         )
     }
 }
-

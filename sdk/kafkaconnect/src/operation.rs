@@ -36,4 +36,3 @@ pub mod list_worker_configurations;
 
 /// Types for the `UpdateConnector` operation.
 pub mod update_connector;
-

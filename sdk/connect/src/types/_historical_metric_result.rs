@@ -3,7 +3,7 @@
 /// <p>Contains information about the historical metrics retrieved.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HistoricalMetricResult  {
+pub struct HistoricalMetricResult {
     /// <p>The dimension for the metrics.</p>
     #[doc(hidden)]
     pub dimensions: std::option::Option<crate::types::Dimensions>,
@@ -13,11 +13,11 @@ pub struct HistoricalMetricResult  {
 }
 impl HistoricalMetricResult {
     /// <p>The dimension for the metrics.</p>
-    pub fn dimensions(&self) -> std::option::Option<& crate::types::Dimensions> {
+    pub fn dimensions(&self) -> std::option::Option<&crate::types::Dimensions> {
         self.dimensions.as_ref()
     }
     /// <p>The set of metrics.</p>
-    pub fn collections(&self) -> std::option::Option<& [crate::types::HistoricalMetricData]> {
+    pub fn collections(&self) -> std::option::Option<&[crate::types::HistoricalMetricData]> {
         self.collections.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl HistoricalMetricResultBuilder {
     }
     /// <p>The dimension for the metrics.</p>
     pub fn set_dimensions(mut self, input: std::option::Option<crate::types::Dimensions>) -> Self {
-        self.dimensions = input; self
+        self.dimensions = input;
+        self
     }
     /// Appends an item to `collections`.
     ///
@@ -52,22 +53,23 @@ impl HistoricalMetricResultBuilder {
     /// <p>The set of metrics.</p>
     pub fn collections(mut self, input: crate::types::HistoricalMetricData) -> Self {
         let mut v = self.collections.unwrap_or_default();
-                        v.push(input);
-                        self.collections = Some(v);
-                        self
+        v.push(input);
+        self.collections = Some(v);
+        self
     }
     /// <p>The set of metrics.</p>
-    pub fn set_collections(mut self, input: std::option::Option<std::vec::Vec<crate::types::HistoricalMetricData>>) -> Self {
-        self.collections = input; self
+    pub fn set_collections(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::HistoricalMetricData>>,
+    ) -> Self {
+        self.collections = input;
+        self
     }
     /// Consumes the builder and constructs a [`HistoricalMetricResult`](crate::types::HistoricalMetricResult).
     pub fn build(self) -> crate::types::HistoricalMetricResult {
         crate::types::HistoricalMetricResult {
-            dimensions: self.dimensions
-            ,
-            collections: self.collections
-            ,
+            dimensions: self.dimensions,
+            collections: self.collections,
         }
     }
 }
-

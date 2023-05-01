@@ -3,20 +3,21 @@
 /// <p>The input for the DisableTopicRuleRequest operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableTopicRuleInput  {
+pub struct DisableTopicRuleInput {
     /// <p>The name of the rule to disable.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
 }
 impl DisableTopicRuleInput {
     /// <p>The name of the rule to disable.</p>
-    pub fn rule_name(&self) -> std::option::Option<& str> {
+    pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
 }
 impl DisableTopicRuleInput {
     /// Creates a new builder-style object to manufacture [`DisableTopicRuleInput`](crate::operation::disable_topic_rule::DisableTopicRuleInput).
-    pub fn builder() -> crate::operation::disable_topic_rule::builders::DisableTopicRuleInputBuilder {
+    pub fn builder() -> crate::operation::disable_topic_rule::builders::DisableTopicRuleInputBuilder
+    {
         crate::operation::disable_topic_rule::builders::DisableTopicRuleInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl DisableTopicRuleInputBuilder {
     }
     /// <p>The name of the rule to disable.</p>
     pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_name = input; self
+        self.rule_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableTopicRuleInput`](crate::operation::disable_topic_rule::DisableTopicRuleInput).
-    pub fn build(self) -> Result<crate::operation::disable_topic_rule::DisableTopicRuleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_topic_rule::DisableTopicRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disable_topic_rule::DisableTopicRuleInput {
-                rule_name: self.rule_name
-                ,
-            }
+                rule_name: self.rule_name,
+            },
         )
     }
 }
-

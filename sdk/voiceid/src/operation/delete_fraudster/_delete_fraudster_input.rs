@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteFraudsterInput  {
+pub struct DeleteFraudsterInput {
     /// <p>The identifier of the domain that contains the fraudster.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -12,15 +12,15 @@ pub struct DeleteFraudsterInput  {
 }
 impl DeleteFraudsterInput {
     /// <p>The identifier of the domain that contains the fraudster.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the fraudster you want to delete.</p>
-    pub fn fraudster_id(&self) -> std::option::Option<& str> {
+    pub fn fraudster_id(&self) -> std::option::Option<&str> {
         self.fraudster_id.as_deref()
     }
 }
-impl  std::fmt::Debug for DeleteFraudsterInput  {
+impl std::fmt::Debug for DeleteFraudsterInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteFraudsterInput");
         formatter.field("domain_id", &self.domain_id);
@@ -50,7 +50,8 @@ impl DeleteFraudsterInputBuilder {
     }
     /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The identifier of the fraudster you want to delete.</p>
     pub fn fraudster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,18 +60,20 @@ impl DeleteFraudsterInputBuilder {
     }
     /// <p>The identifier of the fraudster you want to delete.</p>
     pub fn set_fraudster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fraudster_id = input; self
+        self.fraudster_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFraudsterInput`](crate::operation::delete_fraudster::DeleteFraudsterInput).
-    pub fn build(self) -> Result<crate::operation::delete_fraudster::DeleteFraudsterInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_fraudster::DeleteFraudsterInput {
-                domain_id: self.domain_id
-                ,
-                fraudster_id: self.fraudster_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_fraudster::DeleteFraudsterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_fraudster::DeleteFraudsterInput {
+            domain_id: self.domain_id,
+            fraudster_id: self.fraudster_id,
+        })
     }
 }
 impl std::fmt::Debug for DeleteFraudsterInputBuilder {
@@ -81,4 +84,3 @@ impl std::fmt::Debug for DeleteFraudsterInputBuilder {
         formatter.finish()
     }
 }
-

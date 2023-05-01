@@ -292,4 +292,3 @@ pub mod builders;
 
 /// Error types that Amazon CloudWatch Events can respond with.
 pub mod error;
-

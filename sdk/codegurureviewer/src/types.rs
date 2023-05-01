@@ -152,4 +152,3 @@ pub mod builders;
 
 /// Error types that Amazon CodeGuru Reviewer can respond with.
 pub mod error;
-

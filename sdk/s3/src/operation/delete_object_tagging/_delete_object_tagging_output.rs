@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteObjectTaggingOutput  {
+pub struct DeleteObjectTaggingOutput {
     /// <p>The versionId of the object the tag-set was removed from.</p>
     #[doc(hidden)]
     pub version_id: std::option::Option<std::string::String>,
@@ -11,24 +11,26 @@ pub struct DeleteObjectTaggingOutput  {
 }
 impl DeleteObjectTaggingOutput {
     /// <p>The versionId of the object the tag-set was removed from.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for DeleteObjectTaggingOutput {
-                                fn extended_request_id(&self) -> Option<&str> {
-                                    self._extended_request_id.as_deref()
-                                }
-                            }
+    fn extended_request_id(&self) -> Option<&str> {
+        self._extended_request_id.as_deref()
+    }
+}
 impl aws_http::request_id::RequestId for DeleteObjectTaggingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteObjectTaggingOutput {
     /// Creates a new builder-style object to manufacture [`DeleteObjectTaggingOutput`](crate::operation::delete_object_tagging::DeleteObjectTaggingOutput).
-    pub fn builder() -> crate::operation::delete_object_tagging::builders::DeleteObjectTaggingOutputBuilder {
-        crate::operation::delete_object_tagging::builders::DeleteObjectTaggingOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_object_tagging::builders::DeleteObjectTaggingOutputBuilder {
+        crate::operation::delete_object_tagging::builders::DeleteObjectTaggingOutputBuilder::default(
+        )
     }
 }
 
@@ -48,34 +50,36 @@ impl DeleteObjectTaggingOutputBuilder {
     }
     /// <p>The versionId of the object the tag-set was removed from.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-                                    self._extended_request_id = Some(extended_request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-                                    self._extended_request_id = extended_request_id;
-                                    self
-                                }
+        self._extended_request_id = Some(extended_request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_extended_request_id(
+        &mut self,
+        extended_request_id: Option<String>,
+    ) -> &mut Self {
+        self._extended_request_id = extended_request_id;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteObjectTaggingOutput`](crate::operation::delete_object_tagging::DeleteObjectTaggingOutput).
     pub fn build(self) -> crate::operation::delete_object_tagging::DeleteObjectTaggingOutput {
         crate::operation::delete_object_tagging::DeleteObjectTaggingOutput {
-            version_id: self.version_id
-            ,
+            version_id: self.version_id,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
-

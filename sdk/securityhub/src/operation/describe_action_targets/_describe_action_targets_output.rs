@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeActionTargetsOutput  {
+pub struct DescribeActionTargetsOutput {
     /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
     #[doc(hidden)]
     pub action_targets: std::option::Option<std::vec::Vec<crate::types::ActionTarget>>,
@@ -13,22 +13,24 @@ pub struct DescribeActionTargetsOutput  {
 }
 impl DescribeActionTargetsOutput {
     /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
-    pub fn action_targets(&self) -> std::option::Option<& [crate::types::ActionTarget]> {
+    pub fn action_targets(&self) -> std::option::Option<&[crate::types::ActionTarget]> {
         self.action_targets.as_deref()
     }
     /// <p>The pagination token to use to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeActionTargetsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeActionTargetsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeActionTargetsOutput`](crate::operation::describe_action_targets::DescribeActionTargetsOutput).
-    pub fn builder() -> crate::operation::describe_action_targets::builders::DescribeActionTargetsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_action_targets::builders::DescribeActionTargetsOutputBuilder
+    {
         crate::operation::describe_action_targets::builders::DescribeActionTargetsOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeActionTargetsOutputBuilder {
     /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
     pub fn action_targets(mut self, input: crate::types::ActionTarget) -> Self {
         let mut v = self.action_targets.unwrap_or_default();
-                        v.push(input);
-                        self.action_targets = Some(v);
-                        self
+        v.push(input);
+        self.action_targets = Some(v);
+        self
     }
     /// <p>A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>, <code>Description</code>, and <code>Name</code> of a custom action target available in Security Hub.</p>
-    pub fn set_action_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::ActionTarget>>) -> Self {
-        self.action_targets = input; self
+    pub fn set_action_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ActionTarget>>,
+    ) -> Self {
+        self.action_targets = input;
+        self
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl DescribeActionTargetsOutputBuilder {
     }
     /// <p>The pagination token to use to request the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeActionTargetsOutput`](crate::operation::describe_action_targets::DescribeActionTargetsOutput).
     pub fn build(self) -> crate::operation::describe_action_targets::DescribeActionTargetsOutput {
         crate::operation::describe_action_targets::DescribeActionTargetsOutput {
-            action_targets: self.action_targets
-            ,
-            next_token: self.next_token
-            ,
+            action_targets: self.action_targets,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

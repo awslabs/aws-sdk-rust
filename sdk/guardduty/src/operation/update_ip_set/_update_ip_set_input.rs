@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIpSetInput  {
+pub struct UpdateIpSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct UpdateIpSetInput  {
 }
 impl UpdateIpSetInput {
     /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
-    pub fn ip_set_id(&self) -> std::option::Option<& str> {
+    pub fn ip_set_id(&self) -> std::option::Option<&str> {
         self.ip_set_id.as_deref()
     }
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The updated URI of the file that contains the IPSet. </p>
-    pub fn location(&self) -> std::option::Option<& str> {
+    pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
@@ -66,7 +66,8 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>The detectorID that specifies the GuardDuty service whose IPSet you want to update.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
     pub fn ip_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
     pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_set_id = input; self
+        self.ip_set_id = input;
+        self
     }
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +86,8 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>The unique ID that specifies the IPSet that you want to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +96,8 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>The updated URI of the file that contains the IPSet. </p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     pub fn activate(mut self, input: bool) -> Self {
@@ -102,24 +106,22 @@ impl UpdateIpSetInputBuilder {
     }
     /// <p>The updated Boolean value that specifies whether the IPSet is active or not.</p>
     pub fn set_activate(mut self, input: std::option::Option<bool>) -> Self {
-        self.activate = input; self
+        self.activate = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateIpSetInput`](crate::operation::update_ip_set::UpdateIpSetInput).
-    pub fn build(self) -> Result<crate::operation::update_ip_set::UpdateIpSetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_ip_set::UpdateIpSetInput {
-                detector_id: self.detector_id
-                ,
-                ip_set_id: self.ip_set_id
-                ,
-                name: self.name
-                ,
-                location: self.location
-                ,
-                activate: self.activate
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_ip_set::UpdateIpSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_ip_set::UpdateIpSetInput {
+            detector_id: self.detector_id,
+            ip_set_id: self.ip_set_id,
+            name: self.name,
+            location: self.location,
+            activate: self.activate,
+        })
     }
 }
-

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAutoTerminationPolicyOutput  {
+pub struct PutAutoTerminationPolicyOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutAutoTerminationPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutAutoTerminationPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutAutoTerminationPolicyOutput`](crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyOutput).
-    pub fn builder() -> crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyOutputBuilder{
         crate::operation::put_auto_termination_policy::builders::PutAutoTerminationPolicyOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct PutAutoTerminationPolicyOutputBuilder {
 }
 impl PutAutoTerminationPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutAutoTerminationPolicyOutput`](crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyOutput).
-    pub fn build(self) -> crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyOutput {
         crate::operation::put_auto_termination_policy::PutAutoTerminationPolicyOutput {
             _request_id: self._request_id,
         }
     }
 }
-

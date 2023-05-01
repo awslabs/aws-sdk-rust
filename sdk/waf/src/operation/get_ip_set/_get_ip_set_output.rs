@@ -2,31 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIpSetOutput  {
-    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> 
-    /// <ul> 
-    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li> 
-    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li> 
+pub struct GetIpSetOutput {
+    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p>
+    /// <ul>
+    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>
+    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub ip_set: std::option::Option<crate::types::IpSet>,
     _request_id: Option<String>,
 }
 impl GetIpSetOutput {
-    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> 
-    /// <ul> 
-    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li> 
-    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li> 
+    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p>
+    /// <ul>
+    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>
+    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
-    pub fn ip_set(&self) -> std::option::Option<& crate::types::IpSet> {
+    pub fn ip_set(&self) -> std::option::Option<&crate::types::IpSet> {
         self.ip_set.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetIpSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetIpSetOutput {
     /// Creates a new builder-style object to manufacture [`GetIpSetOutput`](crate::operation::get_ip_set::GetIpSetOutput).
     pub fn builder() -> crate::operation::get_ip_set::builders::GetIpSetOutputBuilder {
@@ -42,39 +42,38 @@ pub struct GetIpSetOutputBuilder {
     _request_id: Option<String>,
 }
 impl GetIpSetOutputBuilder {
-    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> 
-    /// <ul> 
-    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li> 
-    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li> 
+    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p>
+    /// <ul>
+    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>
+    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
     pub fn ip_set(mut self, input: crate::types::IpSet) -> Self {
         self.ip_set = Some(input);
         self
     }
-    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p> 
-    /// <ul> 
-    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li> 
-    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li> 
+    /// <p>Information about the <code>IPSet</code> that you specified in the <code>GetIPSet</code> request. For more information, see the following topics:</p>
+    /// <ul>
+    /// <li> <p> <code>IPSet</code>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code> </p> </li>
+    /// <li> <p> <code>IPSetDescriptors</code>: Contains an array of <code>IPSetDescriptor</code> objects. Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code> </p> </li>
     /// </ul>
     pub fn set_ip_set(mut self, input: std::option::Option<crate::types::IpSet>) -> Self {
-        self.ip_set = input; self
+        self.ip_set = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetIpSetOutput`](crate::operation::get_ip_set::GetIpSetOutput).
     pub fn build(self) -> crate::operation::get_ip_set::GetIpSetOutput {
         crate::operation::get_ip_set::GetIpSetOutput {
-            ip_set: self.ip_set
-            ,
+            ip_set: self.ip_set,
             _request_id: self._request_id,
         }
     }
 }
-

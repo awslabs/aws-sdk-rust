@@ -3,7 +3,7 @@
 /// <p>An entity describing an executable that runs on a cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Command  {
+pub struct Command {
     /// <p>The name of the command.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Command  {
 }
 impl Command {
     /// <p>The name of the command.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon S3 location of the command script.</p>
-    pub fn script_path(&self) -> std::option::Option<& str> {
+    pub fn script_path(&self) -> std::option::Option<&str> {
         self.script_path.as_deref()
     }
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
-    pub fn args(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
         self.args.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl CommandBuilder {
     }
     /// <p>The name of the command.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon S3 location of the command script.</p>
     pub fn script_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl CommandBuilder {
     }
     /// <p>The Amazon S3 location of the command script.</p>
     pub fn set_script_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.script_path = input; self
+        self.script_path = input;
+        self
     }
     /// Appends an item to `args`.
     ///
@@ -69,24 +71,24 @@ impl CommandBuilder {
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
     pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
-                        v.push(input.into());
-                        self.args = Some(v);
-                        self
+        v.push(input.into());
+        self.args = Some(v);
+        self
     }
     /// <p>Arguments for Amazon EMR to pass to the command for execution.</p>
-    pub fn set_args(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.args = input; self
+    pub fn set_args(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.args = input;
+        self
     }
     /// Consumes the builder and constructs a [`Command`](crate::types::Command).
     pub fn build(self) -> crate::types::Command {
         crate::types::Command {
-            name: self.name
-            ,
-            script_path: self.script_path
-            ,
-            args: self.args
-            ,
+            name: self.name,
+            script_path: self.script_path,
+            args: self.args,
         }
     }
 }
-

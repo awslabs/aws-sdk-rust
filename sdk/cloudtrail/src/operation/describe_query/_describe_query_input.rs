@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeQueryInput  {
+pub struct DescribeQueryInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
     #[doc(hidden)]
@@ -14,11 +14,11 @@ pub struct DescribeQueryInput  {
 impl DescribeQueryInput {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
-    pub fn event_data_store(&self) -> std::option::Option<& str> {
+    pub fn event_data_store(&self) -> std::option::Option<&str> {
         self.event_data_store.as_deref()
     }
     /// <p>The query ID.</p>
-    pub fn query_id(&self) -> std::option::Option<& str> {
+    pub fn query_id(&self) -> std::option::Option<&str> {
         self.query_id.as_deref()
     }
 }
@@ -46,7 +46,8 @@ impl DescribeQueryInputBuilder {
     /// <p>The ARN (or the ID suffix of the ARN) of an event data store on which the specified query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by DescribeQueryRequest")]
     pub fn set_event_data_store(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_data_store = input; self
+        self.event_data_store = input;
+        self
     }
     /// <p>The query ID.</p>
     pub fn query_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -55,18 +56,19 @@ impl DescribeQueryInputBuilder {
     }
     /// <p>The query ID.</p>
     pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_id = input; self
+        self.query_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeQueryInput`](crate::operation::describe_query::DescribeQueryInput).
-    pub fn build(self) -> Result<crate::operation::describe_query::DescribeQueryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_query::DescribeQueryInput {
-                event_data_store: self.event_data_store
-                ,
-                query_id: self.query_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_query::DescribeQueryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_query::DescribeQueryInput {
+            event_data_store: self.event_data_store,
+            query_id: self.query_id,
+        })
     }
 }
-

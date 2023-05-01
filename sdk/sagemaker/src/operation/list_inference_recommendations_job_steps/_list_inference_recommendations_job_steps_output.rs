@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInferenceRecommendationsJobStepsOutput  {
+pub struct ListInferenceRecommendationsJobStepsOutput {
     /// <p>A list of all subtask details in Inference Recommender.</p>
     #[doc(hidden)]
     pub steps: std::option::Option<std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
@@ -13,22 +13,22 @@ pub struct ListInferenceRecommendationsJobStepsOutput  {
 }
 impl ListInferenceRecommendationsJobStepsOutput {
     /// <p>A list of all subtask details in Inference Recommender.</p>
-    pub fn steps(&self) -> std::option::Option<& [crate::types::InferenceRecommendationsJobStep]> {
+    pub fn steps(&self) -> std::option::Option<&[crate::types::InferenceRecommendationsJobStep]> {
         self.steps.as_deref()
     }
     /// <p>A token that you can specify in your next request to return more results from the list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListInferenceRecommendationsJobStepsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListInferenceRecommendationsJobStepsOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceRecommendationsJobStepsOutput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput).
-    pub fn builder() -> crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsOutputBuilder {
+    pub fn builder() -> crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsOutputBuilder{
         crate::operation::list_inference_recommendations_job_steps::builders::ListInferenceRecommendationsJobStepsOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl ListInferenceRecommendationsJobStepsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListInferenceRecommendationsJobStepsOutputBuilder {
-    pub(crate) steps: std::option::Option<std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
+    pub(crate) steps:
+        std::option::Option<std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl ListInferenceRecommendationsJobStepsOutputBuilder {
     /// <p>A list of all subtask details in Inference Recommender.</p>
     pub fn steps(mut self, input: crate::types::InferenceRecommendationsJobStep) -> Self {
         let mut v = self.steps.unwrap_or_default();
-                        v.push(input);
-                        self.steps = Some(v);
-                        self
+        v.push(input);
+        self.steps = Some(v);
+        self
     }
     /// <p>A list of all subtask details in Inference Recommender.</p>
-    pub fn set_steps(mut self, input: std::option::Option<std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>) -> Self {
-        self.steps = input; self
+    pub fn set_steps(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InferenceRecommendationsJobStep>>,
+    ) -> Self {
+        self.steps = input;
+        self
     }
     /// <p>A token that you can specify in your next request to return more results from the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +69,20 @@ impl ListInferenceRecommendationsJobStepsOutputBuilder {
     }
     /// <p>A token that you can specify in your next request to return more results from the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListInferenceRecommendationsJobStepsOutput`](crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput).
-    pub fn build(self) -> crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput {
+    pub fn build(self) -> crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput{
         crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput {
             steps: self.steps
             ,
@@ -86,4 +92,3 @@ impl ListInferenceRecommendationsJobStepsOutputBuilder {
         }
     }
 }
-

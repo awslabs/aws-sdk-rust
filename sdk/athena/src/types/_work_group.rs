@@ -3,7 +3,7 @@
 /// <p>A workgroup, which contains a name, description, creation time, state, and other configuration, listed under <code>WorkGroup$Configuration</code>. Each workgroup enables you to isolate queries for you or your group of users from other queries in the same account, to configure the query results location and the encryption configuration (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and to establish per-query data usage control limits for all queries in a workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkGroup  {
+pub struct WorkGroup {
     /// <p>The workgroup name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct WorkGroup  {
 }
 impl WorkGroup {
     /// <p>The workgroup name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::WorkGroupState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::WorkGroupState> {
         self.state.as_ref()
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn configuration(&self) -> std::option::Option<& crate::types::WorkGroupConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<&crate::types::WorkGroupConfiguration> {
         self.configuration.as_ref()
     }
     /// <p>The workgroup description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date and time the workgroup was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl WorkGroupBuilder {
     }
     /// <p>The workgroup name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
     pub fn state(mut self, input: crate::types::WorkGroupState) -> Self {
@@ -76,7 +77,8 @@ impl WorkGroupBuilder {
     }
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::WorkGroupState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
     pub fn configuration(mut self, input: crate::types::WorkGroupConfiguration) -> Self {
@@ -84,8 +86,12 @@ impl WorkGroupBuilder {
         self
     }
     /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where query and calculation results are stored, the encryption configuration, if any, used for query and calculation results; whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the <code>WorkGroupConfiguration</code>. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn set_configuration(mut self, input: std::option::Option<crate::types::WorkGroupConfiguration>) -> Self {
-        self.configuration = input; self
+    pub fn set_configuration(
+        mut self,
+        input: std::option::Option<crate::types::WorkGroupConfiguration>,
+    ) -> Self {
+        self.configuration = input;
+        self
     }
     /// <p>The workgroup description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +100,8 @@ impl WorkGroupBuilder {
     }
     /// <p>The workgroup description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date and time the workgroup was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,23 +109,21 @@ impl WorkGroupBuilder {
         self
     }
     /// <p>The date and time the workgroup was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkGroup`](crate::types::WorkGroup).
     pub fn build(self) -> crate::types::WorkGroup {
         crate::types::WorkGroup {
-            name: self.name
-            ,
-            state: self.state
-            ,
-            configuration: self.configuration
-            ,
-            description: self.description
-            ,
-            creation_time: self.creation_time
-            ,
+            name: self.name,
+            state: self.state,
+            configuration: self.configuration,
+            description: self.description,
+            creation_time: self.creation_time,
         }
     }
 }
-

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HeadObjectInput  {
-    /// <p>The name of the bucket containing the object.</p> 
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+pub struct HeadObjectInput {
+    /// <p>The name of the bucket containing the object.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -47,60 +47,60 @@ pub struct HeadObjectInput  {
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     #[doc(hidden)]
     pub expected_bucket_owner: std::option::Option<std::string::String>,
-    /// <p>To retrieve the checksum, this parameter must be enabled.</p> 
+    /// <p>To retrieve the checksum, this parameter must be enabled.</p>
     /// <p>In addition, if you enable <code>ChecksumMode</code> and the object is encrypted with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must have permission to use the <code>kms:Decrypt</code> action for the request to succeed.</p>
     #[doc(hidden)]
     pub checksum_mode: std::option::Option<crate::types::ChecksumMode>,
 }
 impl HeadObjectInput {
-    /// <p>The name of the bucket containing the object.</p> 
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>The name of the bucket containing the object.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
-    pub fn if_match(&self) -> std::option::Option<& str> {
+    pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
     /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
-    pub fn if_modified_since(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn if_modified_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.if_modified_since.as_ref()
     }
     /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
-    pub fn if_none_match(&self) -> std::option::Option<& str> {
+    pub fn if_none_match(&self) -> std::option::Option<&str> {
         self.if_none_match.as_deref()
     }
     /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
-    pub fn if_unmodified_since(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn if_unmodified_since(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.if_unmodified_since.as_ref()
     }
     /// <p>The object key.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>Because <code>HeadObject</code> returns only the metadata for an object, this parameter has no effect.</p>
-    pub fn range(&self) -> std::option::Option<& str> {
+    pub fn range(&self) -> std::option::Option<&str> {
         self.range.as_deref()
     }
     /// <p>VersionId used to reference a specific version of the object.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
-    pub fn sse_customer_algorithm(&self) -> std::option::Option<& str> {
+    pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
-    pub fn sse_customer_key(&self) -> std::option::Option<& str> {
+    pub fn sse_customer_key(&self) -> std::option::Option<&str> {
         self.sse_customer_key.as_deref()
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn sse_customer_key_md5(&self) -> std::option::Option<& str> {
+    pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn request_payer(&self) -> std::option::Option<& crate::types::RequestPayer> {
+    pub fn request_payer(&self) -> std::option::Option<&crate::types::RequestPayer> {
         self.request_payer.as_ref()
     }
     /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about the size of the part and the number of parts in this object.</p>
@@ -108,16 +108,16 @@ impl HeadObjectInput {
         self.part_number
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
-    /// <p>To retrieve the checksum, this parameter must be enabled.</p> 
+    /// <p>To retrieve the checksum, this parameter must be enabled.</p>
     /// <p>In addition, if you enable <code>ChecksumMode</code> and the object is encrypted with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must have permission to use the <code>kms:Decrypt</code> action for the request to succeed.</p>
-    pub fn checksum_mode(&self) -> std::option::Option<& crate::types::ChecksumMode> {
+    pub fn checksum_mode(&self) -> std::option::Option<&crate::types::ChecksumMode> {
         self.checksum_mode.as_ref()
     }
 }
-impl  std::fmt::Debug for HeadObjectInput  {
+impl std::fmt::Debug for HeadObjectInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HeadObjectInput");
         formatter.field("bucket", &self.bucket);
@@ -166,18 +166,19 @@ pub struct HeadObjectInputBuilder {
     pub(crate) checksum_mode: std::option::Option<crate::types::ChecksumMode>,
 }
 impl HeadObjectInputBuilder {
-    /// <p>The name of the bucket containing the object.</p> 
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>The name of the bucket containing the object.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
         self.bucket = Some(input.into());
         self
     }
-    /// <p>The name of the bucket containing the object.</p> 
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p> 
+    /// <p>The name of the bucket containing the object.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>. When using this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
     pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,7 +187,8 @@ impl HeadObjectInputBuilder {
     }
     /// <p>Return the object only if its entity tag (ETag) is the same as the one specified; otherwise, return a 412 (precondition failed) error.</p>
     pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.if_match = input; self
+        self.if_match = input;
+        self
     }
     /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
     pub fn if_modified_since(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -194,8 +196,12 @@ impl HeadObjectInputBuilder {
         self
     }
     /// <p>Return the object only if it has been modified since the specified time; otherwise, return a 304 (not modified) error.</p>
-    pub fn set_if_modified_since(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.if_modified_since = input; self
+    pub fn set_if_modified_since(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.if_modified_since = input;
+        self
     }
     /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
     pub fn if_none_match(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,7 +210,8 @@ impl HeadObjectInputBuilder {
     }
     /// <p>Return the object only if its entity tag (ETag) is different from the one specified; otherwise, return a 304 (not modified) error.</p>
     pub fn set_if_none_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.if_none_match = input; self
+        self.if_none_match = input;
+        self
     }
     /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
     pub fn if_unmodified_since(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -212,8 +219,12 @@ impl HeadObjectInputBuilder {
         self
     }
     /// <p>Return the object only if it has not been modified since the specified time; otherwise, return a 412 (precondition failed) error.</p>
-    pub fn set_if_unmodified_since(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.if_unmodified_since = input; self
+    pub fn set_if_unmodified_since(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.if_unmodified_since = input;
+        self
     }
     /// <p>The object key.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,7 +233,8 @@ impl HeadObjectInputBuilder {
     }
     /// <p>The object key.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>Because <code>HeadObject</code> returns only the metadata for an object, this parameter has no effect.</p>
     pub fn range(mut self, input: impl Into<std::string::String>) -> Self {
@@ -231,7 +243,8 @@ impl HeadObjectInputBuilder {
     }
     /// <p>Because <code>HeadObject</code> returns only the metadata for an object, this parameter has no effect.</p>
     pub fn set_range(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.range = input; self
+        self.range = input;
+        self
     }
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -240,7 +253,8 @@ impl HeadObjectInputBuilder {
     }
     /// <p>VersionId used to reference a specific version of the object.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
     pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
@@ -248,8 +262,12 @@ impl HeadObjectInputBuilder {
         self
     }
     /// <p>Specifies the algorithm to use to when encrypting the object (for example, AES256).</p>
-    pub fn set_sse_customer_algorithm(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sse_customer_algorithm = input; self
+    pub fn set_sse_customer_algorithm(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sse_customer_algorithm = input;
+        self
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub fn sse_customer_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -258,7 +276,8 @@ impl HeadObjectInputBuilder {
     }
     /// <p>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon S3 does not store the encryption key. The key must be appropriate for use with the algorithm specified in the <code>x-amz-server-side-encryption-customer-algorithm</code> header.</p>
     pub fn set_sse_customer_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sse_customer_key = input; self
+        self.sse_customer_key = input;
+        self
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
     pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,8 +285,12 @@ impl HeadObjectInputBuilder {
         self
     }
     /// <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure that the encryption key was transmitted without error.</p>
-    pub fn set_sse_customer_key_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sse_customer_key_md5 = input; self
+    pub fn set_sse_customer_key_md5(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sse_customer_key_md5 = input;
+        self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn request_payer(mut self, input: crate::types::RequestPayer) -> Self {
@@ -275,8 +298,12 @@ impl HeadObjectInputBuilder {
         self
     }
     /// <p>Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">Downloading Objects in Requester Pays Buckets</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn set_request_payer(mut self, input: std::option::Option<crate::types::RequestPayer>) -> Self {
-        self.request_payer = input; self
+    pub fn set_request_payer(
+        mut self,
+        input: std::option::Option<crate::types::RequestPayer>,
+    ) -> Self {
+        self.request_payer = input;
+        self
     }
     /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about the size of the part and the number of parts in this object.</p>
     pub fn part_number(mut self, input: i32) -> Self {
@@ -285,7 +312,8 @@ impl HeadObjectInputBuilder {
     }
     /// <p>Part number of the object being read. This is a positive integer between 1 and 10,000. Effectively performs a 'ranged' HEAD request for the part specified. Useful querying about the size of the part and the number of parts in this object.</p>
     pub fn set_part_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.part_number = input; self
+        self.part_number = input;
+        self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -293,56 +321,52 @@ impl HeadObjectInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expected_bucket_owner = input; self
+    pub fn set_expected_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.expected_bucket_owner = input;
+        self
     }
-    /// <p>To retrieve the checksum, this parameter must be enabled.</p> 
+    /// <p>To retrieve the checksum, this parameter must be enabled.</p>
     /// <p>In addition, if you enable <code>ChecksumMode</code> and the object is encrypted with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must have permission to use the <code>kms:Decrypt</code> action for the request to succeed.</p>
     pub fn checksum_mode(mut self, input: crate::types::ChecksumMode) -> Self {
         self.checksum_mode = Some(input);
         self
     }
-    /// <p>To retrieve the checksum, this parameter must be enabled.</p> 
+    /// <p>To retrieve the checksum, this parameter must be enabled.</p>
     /// <p>In addition, if you enable <code>ChecksumMode</code> and the object is encrypted with Amazon Web Services Key Management Service (Amazon Web Services KMS), you must have permission to use the <code>kms:Decrypt</code> action for the request to succeed.</p>
-    pub fn set_checksum_mode(mut self, input: std::option::Option<crate::types::ChecksumMode>) -> Self {
-        self.checksum_mode = input; self
+    pub fn set_checksum_mode(
+        mut self,
+        input: std::option::Option<crate::types::ChecksumMode>,
+    ) -> Self {
+        self.checksum_mode = input;
+        self
     }
     /// Consumes the builder and constructs a [`HeadObjectInput`](crate::operation::head_object::HeadObjectInput).
-    pub fn build(self) -> Result<crate::operation::head_object::HeadObjectInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::head_object::HeadObjectInput {
-                bucket: self.bucket
-                ,
-                if_match: self.if_match
-                ,
-                if_modified_since: self.if_modified_since
-                ,
-                if_none_match: self.if_none_match
-                ,
-                if_unmodified_since: self.if_unmodified_since
-                ,
-                key: self.key
-                ,
-                range: self.range
-                ,
-                version_id: self.version_id
-                ,
-                sse_customer_algorithm: self.sse_customer_algorithm
-                ,
-                sse_customer_key: self.sse_customer_key
-                ,
-                sse_customer_key_md5: self.sse_customer_key_md5
-                ,
-                request_payer: self.request_payer
-                ,
-                part_number: self.part_number
-                ,
-                expected_bucket_owner: self.expected_bucket_owner
-                ,
-                checksum_mode: self.checksum_mode
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::head_object::HeadObjectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::head_object::HeadObjectInput {
+            bucket: self.bucket,
+            if_match: self.if_match,
+            if_modified_since: self.if_modified_since,
+            if_none_match: self.if_none_match,
+            if_unmodified_since: self.if_unmodified_since,
+            key: self.key,
+            range: self.range,
+            version_id: self.version_id,
+            sse_customer_algorithm: self.sse_customer_algorithm,
+            sse_customer_key: self.sse_customer_key,
+            sse_customer_key_md5: self.sse_customer_key_md5,
+            request_payer: self.request_payer,
+            part_number: self.part_number,
+            expected_bucket_owner: self.expected_bucket_owner,
+            checksum_mode: self.checksum_mode,
+        })
     }
 }
 impl std::fmt::Debug for HeadObjectInputBuilder {
@@ -366,4 +390,3 @@ impl std::fmt::Debug for HeadObjectInputBuilder {
         formatter.finish()
     }
 }
-

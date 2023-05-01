@@ -3,7 +3,7 @@
 /// <p>Set of options which defines notification preferences of given action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct NotificationOptions  {
+pub struct NotificationOptions {
     /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
     #[doc(hidden)]
     pub send_email: bool,
@@ -17,11 +17,11 @@ impl NotificationOptions {
         self.send_email
     }
     /// <p>Text value to be included in the email body.</p>
-    pub fn email_message(&self) -> std::option::Option<& str> {
+    pub fn email_message(&self) -> std::option::Option<&str> {
         self.email_message.as_deref()
     }
 }
-impl  std::fmt::Debug for NotificationOptions  {
+impl std::fmt::Debug for NotificationOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("NotificationOptions");
         formatter.field("send_email", &self.send_email);
@@ -51,7 +51,8 @@ impl NotificationOptionsBuilder {
     }
     /// <p>Boolean value to indicate an email notification should be sent to the recipients.</p>
     pub fn set_send_email(mut self, input: std::option::Option<bool>) -> Self {
-        self.send_email = input; self
+        self.send_email = input;
+        self
     }
     /// <p>Text value to be included in the email body.</p>
     pub fn email_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,16 +61,14 @@ impl NotificationOptionsBuilder {
     }
     /// <p>Text value to be included in the email body.</p>
     pub fn set_email_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_message = input; self
+        self.email_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`NotificationOptions`](crate::types::NotificationOptions).
     pub fn build(self) -> crate::types::NotificationOptions {
         crate::types::NotificationOptions {
-            send_email: self.send_email
-                .unwrap_or_default()
-            ,
-            email_message: self.email_message
-            ,
+            send_email: self.send_email.unwrap_or_default(),
+            email_message: self.email_message,
         }
     }
 }
@@ -81,4 +80,3 @@ impl std::fmt::Debug for NotificationOptionsBuilder {
         formatter.finish()
     }
 }
-

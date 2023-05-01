@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidateSolNetworkPackageContentInput  {
+pub struct ValidateSolNetworkPackageContentInput {
     /// <p>Network service descriptor file.</p>
     #[doc(hidden)]
     pub nsd_info_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct ValidateSolNetworkPackageContentInput  {
 }
 impl ValidateSolNetworkPackageContentInput {
     /// <p>Network service descriptor file.</p>
-    pub fn nsd_info_id(&self) -> std::option::Option<& str> {
+    pub fn nsd_info_id(&self) -> std::option::Option<&str> {
         self.nsd_info_id.as_deref()
     }
     /// <p>Network package content type.</p>
-    pub fn content_type(&self) -> std::option::Option<& crate::types::PackageContentType> {
+    pub fn content_type(&self) -> std::option::Option<&crate::types::PackageContentType> {
         self.content_type.as_ref()
     }
     /// <p>Network package file.</p>
-    pub fn file(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn file(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.file.as_ref()
     }
 }
 impl ValidateSolNetworkPackageContentInput {
     /// Creates a new builder-style object to manufacture [`ValidateSolNetworkPackageContentInput`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput).
-    pub fn builder() -> crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder {
+    pub fn builder() -> crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder{
         crate::operation::validate_sol_network_package_content::builders::ValidateSolNetworkPackageContentInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ValidateSolNetworkPackageContentInputBuilder {
     }
     /// <p>Network service descriptor file.</p>
     pub fn set_nsd_info_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.nsd_info_id = input; self
+        self.nsd_info_id = input;
+        self
     }
     /// <p>Network package content type.</p>
     pub fn content_type(mut self, input: crate::types::PackageContentType) -> Self {
@@ -58,8 +59,12 @@ impl ValidateSolNetworkPackageContentInputBuilder {
         self
     }
     /// <p>Network package content type.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<crate::types::PackageContentType>) -> Self {
-        self.content_type = input; self
+    pub fn set_content_type(
+        mut self,
+        input: std::option::Option<crate::types::PackageContentType>,
+    ) -> Self {
+        self.content_type = input;
+        self
     }
     /// <p>Network package file.</p>
     pub fn file(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -68,10 +73,11 @@ impl ValidateSolNetworkPackageContentInputBuilder {
     }
     /// <p>Network package file.</p>
     pub fn set_file(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.file = input; self
+        self.file = input;
+        self
     }
     /// Consumes the builder and constructs a [`ValidateSolNetworkPackageContentInput`](crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput).
-    pub fn build(self) -> Result<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::validate_sol_network_package_content::ValidateSolNetworkPackageContentInput {
                 nsd_info_id: self.nsd_info_id
@@ -84,4 +90,3 @@ impl ValidateSolNetworkPackageContentInputBuilder {
         )
     }
 }
-

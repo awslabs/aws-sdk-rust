@@ -4,51 +4,58 @@ pub use crate::operation::disassociate_from_administrator_account::_disassociate
 pub use crate::operation::disassociate_from_administrator_account::_disassociate_from_administrator_account_input::DisassociateFromAdministratorAccountInputBuilder;
 
 /// Fluent builder constructing a request to `DisassociateFromAdministratorAccount`.
-/// 
-/// <p>Disassociates the current GuardDuty member account from its administrator account.</p> 
+///
+/// <p>Disassociates the current GuardDuty member account from its administrator account.</p>
 /// <p>With <code>autoEnableOrganizationMembers</code> configuration for your organization set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty in a member account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateFromAdministratorAccountFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::disassociate_from_administrator_account::builders::DisassociateFromAdministratorAccountInputBuilder,
 }
-impl DisassociateFromAdministratorAccountFluentBuilder  {
+impl DisassociateFromAdministratorAccountFluentBuilder {
     /// Creates a new `DisassociateFromAdministratorAccount`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccount, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountOutput, aws_smithy_http::result::SdkError<crate::operation::disassociate_from_administrator_account::DisassociateFromAdministratorAccountError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -60,4 +67,3 @@ impl DisassociateFromAdministratorAccountFluentBuilder  {
         self
     }
 }
-

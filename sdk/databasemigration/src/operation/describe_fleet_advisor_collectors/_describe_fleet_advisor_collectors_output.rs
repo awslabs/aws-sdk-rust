@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAdvisorCollectorsOutput  {
+pub struct DescribeFleetAdvisorCollectorsOutput {
     /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
     #[doc(hidden)]
     pub collectors: std::option::Option<std::vec::Vec<crate::types::CollectorResponse>>,
@@ -13,22 +13,22 @@ pub struct DescribeFleetAdvisorCollectorsOutput  {
 }
 impl DescribeFleetAdvisorCollectorsOutput {
     /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
-    pub fn collectors(&self) -> std::option::Option<& [crate::types::CollectorResponse]> {
+    pub fn collectors(&self) -> std::option::Option<&[crate::types::CollectorResponse]> {
         self.collectors.as_deref()
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFleetAdvisorCollectorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeFleetAdvisorCollectorsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorCollectorsOutput`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsOutputBuilder{
         crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl DescribeFleetAdvisorCollectorsOutputBuilder {
     /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
     pub fn collectors(mut self, input: crate::types::CollectorResponse) -> Self {
         let mut v = self.collectors.unwrap_or_default();
-                        v.push(input);
-                        self.collectors = Some(v);
-                        self
+        v.push(input);
+        self.collectors = Some(v);
+        self
     }
     /// <p>Provides descriptions of the Fleet Advisor collectors, including the collectors' name and ID, and the latest inventory data. </p>
-    pub fn set_collectors(mut self, input: std::option::Option<std::vec::Vec<crate::types::CollectorResponse>>) -> Self {
-        self.collectors = input; self
+    pub fn set_collectors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CollectorResponse>>,
+    ) -> Self {
+        self.collectors = input;
+        self
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,27 @@ impl DescribeFleetAdvisorCollectorsOutputBuilder {
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorCollectorsOutput`](crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput).
-    pub fn build(self) -> crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput
+    {
         crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput {
-            collectors: self.collectors
-            ,
-            next_token: self.next_token
-            ,
+            collectors: self.collectors,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

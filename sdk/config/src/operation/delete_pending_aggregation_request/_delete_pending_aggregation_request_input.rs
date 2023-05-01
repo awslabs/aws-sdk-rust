@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePendingAggregationRequestInput  {
+pub struct DeletePendingAggregationRequestInput {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
     #[doc(hidden)]
     pub requester_account_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeletePendingAggregationRequestInput  {
 }
 impl DeletePendingAggregationRequestInput {
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
-    pub fn requester_account_id(&self) -> std::option::Option<& str> {
+    pub fn requester_account_id(&self) -> std::option::Option<&str> {
         self.requester_account_id.as_deref()
     }
     /// <p>The region requesting to aggregate data.</p>
-    pub fn requester_aws_region(&self) -> std::option::Option<& str> {
+    pub fn requester_aws_region(&self) -> std::option::Option<&str> {
         self.requester_aws_region.as_deref()
     }
 }
 impl DeletePendingAggregationRequestInput {
     /// Creates a new builder-style object to manufacture [`DeletePendingAggregationRequestInput`](crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput).
-    pub fn builder() -> crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder {
+    pub fn builder() -> crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder{
         crate::operation::delete_pending_aggregation_request::builders::DeletePendingAggregationRequestInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl DeletePendingAggregationRequestInputBuilder {
         self
     }
     /// <p>The 12-digit account ID of the account requesting to aggregate data.</p>
-    pub fn set_requester_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.requester_account_id = input; self
+    pub fn set_requester_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.requester_account_id = input;
+        self
     }
     /// <p>The region requesting to aggregate data.</p>
     pub fn requester_aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,11 +54,20 @@ impl DeletePendingAggregationRequestInputBuilder {
         self
     }
     /// <p>The region requesting to aggregate data.</p>
-    pub fn set_requester_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.requester_aws_region = input; self
+    pub fn set_requester_aws_region(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.requester_aws_region = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePendingAggregationRequestInput`](crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput).
-    pub fn build(self) -> Result<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestInput {
                 requester_account_id: self.requester_account_id
@@ -65,4 +78,3 @@ impl DeletePendingAggregationRequestInputBuilder {
         )
     }
 }
-

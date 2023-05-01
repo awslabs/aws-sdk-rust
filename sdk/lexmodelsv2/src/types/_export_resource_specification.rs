@@ -3,28 +3,36 @@
 /// <p>Provides information about the bot or bot locale that you want to export. You can specify the <code>botExportSpecification</code> or the <code>botLocaleExportSpecification</code>, but not both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportResourceSpecification  {
+pub struct ExportResourceSpecification {
     /// <p>Parameters for exporting a bot.</p>
     #[doc(hidden)]
     pub bot_export_specification: std::option::Option<crate::types::BotExportSpecification>,
     /// <p>Parameters for exporting a bot locale.</p>
     #[doc(hidden)]
-    pub bot_locale_export_specification: std::option::Option<crate::types::BotLocaleExportSpecification>,
+    pub bot_locale_export_specification:
+        std::option::Option<crate::types::BotLocaleExportSpecification>,
     /// <p>The parameters required to export a custom vocabulary.</p>
     #[doc(hidden)]
-    pub custom_vocabulary_export_specification: std::option::Option<crate::types::CustomVocabularyExportSpecification>,
+    pub custom_vocabulary_export_specification:
+        std::option::Option<crate::types::CustomVocabularyExportSpecification>,
 }
 impl ExportResourceSpecification {
     /// <p>Parameters for exporting a bot.</p>
-    pub fn bot_export_specification(&self) -> std::option::Option<& crate::types::BotExportSpecification> {
+    pub fn bot_export_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::BotExportSpecification> {
         self.bot_export_specification.as_ref()
     }
     /// <p>Parameters for exporting a bot locale.</p>
-    pub fn bot_locale_export_specification(&self) -> std::option::Option<& crate::types::BotLocaleExportSpecification> {
+    pub fn bot_locale_export_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::BotLocaleExportSpecification> {
         self.bot_locale_export_specification.as_ref()
     }
     /// <p>The parameters required to export a custom vocabulary.</p>
-    pub fn custom_vocabulary_export_specification(&self) -> std::option::Option<& crate::types::CustomVocabularyExportSpecification> {
+    pub fn custom_vocabulary_export_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::CustomVocabularyExportSpecification> {
         self.custom_vocabulary_export_specification.as_ref()
     }
 }
@@ -40,8 +48,10 @@ impl ExportResourceSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ExportResourceSpecificationBuilder {
     pub(crate) bot_export_specification: std::option::Option<crate::types::BotExportSpecification>,
-    pub(crate) bot_locale_export_specification: std::option::Option<crate::types::BotLocaleExportSpecification>,
-    pub(crate) custom_vocabulary_export_specification: std::option::Option<crate::types::CustomVocabularyExportSpecification>,
+    pub(crate) bot_locale_export_specification:
+        std::option::Option<crate::types::BotLocaleExportSpecification>,
+    pub(crate) custom_vocabulary_export_specification:
+        std::option::Option<crate::types::CustomVocabularyExportSpecification>,
 }
 impl ExportResourceSpecificationBuilder {
     /// <p>Parameters for exporting a bot.</p>
@@ -50,37 +60,51 @@ impl ExportResourceSpecificationBuilder {
         self
     }
     /// <p>Parameters for exporting a bot.</p>
-    pub fn set_bot_export_specification(mut self, input: std::option::Option<crate::types::BotExportSpecification>) -> Self {
-        self.bot_export_specification = input; self
+    pub fn set_bot_export_specification(
+        mut self,
+        input: std::option::Option<crate::types::BotExportSpecification>,
+    ) -> Self {
+        self.bot_export_specification = input;
+        self
     }
     /// <p>Parameters for exporting a bot locale.</p>
-    pub fn bot_locale_export_specification(mut self, input: crate::types::BotLocaleExportSpecification) -> Self {
+    pub fn bot_locale_export_specification(
+        mut self,
+        input: crate::types::BotLocaleExportSpecification,
+    ) -> Self {
         self.bot_locale_export_specification = Some(input);
         self
     }
     /// <p>Parameters for exporting a bot locale.</p>
-    pub fn set_bot_locale_export_specification(mut self, input: std::option::Option<crate::types::BotLocaleExportSpecification>) -> Self {
-        self.bot_locale_export_specification = input; self
+    pub fn set_bot_locale_export_specification(
+        mut self,
+        input: std::option::Option<crate::types::BotLocaleExportSpecification>,
+    ) -> Self {
+        self.bot_locale_export_specification = input;
+        self
     }
     /// <p>The parameters required to export a custom vocabulary.</p>
-    pub fn custom_vocabulary_export_specification(mut self, input: crate::types::CustomVocabularyExportSpecification) -> Self {
+    pub fn custom_vocabulary_export_specification(
+        mut self,
+        input: crate::types::CustomVocabularyExportSpecification,
+    ) -> Self {
         self.custom_vocabulary_export_specification = Some(input);
         self
     }
     /// <p>The parameters required to export a custom vocabulary.</p>
-    pub fn set_custom_vocabulary_export_specification(mut self, input: std::option::Option<crate::types::CustomVocabularyExportSpecification>) -> Self {
-        self.custom_vocabulary_export_specification = input; self
+    pub fn set_custom_vocabulary_export_specification(
+        mut self,
+        input: std::option::Option<crate::types::CustomVocabularyExportSpecification>,
+    ) -> Self {
+        self.custom_vocabulary_export_specification = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExportResourceSpecification`](crate::types::ExportResourceSpecification).
     pub fn build(self) -> crate::types::ExportResourceSpecification {
         crate::types::ExportResourceSpecification {
-            bot_export_specification: self.bot_export_specification
-            ,
-            bot_locale_export_specification: self.bot_locale_export_specification
-            ,
-            custom_vocabulary_export_specification: self.custom_vocabulary_export_specification
-            ,
+            bot_export_specification: self.bot_export_specification,
+            bot_locale_export_specification: self.bot_locale_export_specification,
+            custom_vocabulary_export_specification: self.custom_vocabulary_export_specification,
         }
     }
 }
-

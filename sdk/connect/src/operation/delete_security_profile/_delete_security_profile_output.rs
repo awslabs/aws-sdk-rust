@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSecurityProfileOutput  {
+pub struct DeleteSecurityProfileOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteSecurityProfileOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityProfileOutput`](crate::operation::delete_security_profile::DeleteSecurityProfileOutput).
-    pub fn builder() -> crate::operation::delete_security_profile::builders::DeleteSecurityProfileOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_security_profile::builders::DeleteSecurityProfileOutputBuilder
+    {
         crate::operation::delete_security_profile::builders::DeleteSecurityProfileOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct DeleteSecurityProfileOutputBuilder {
 }
 impl DeleteSecurityProfileOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteSecurityProfileOutput`](crate::operation::delete_security_profile::DeleteSecurityProfileOutput).
     pub fn build(self) -> crate::operation::delete_security_profile::DeleteSecurityProfileOutput {
         crate::operation::delete_security_profile::DeleteSecurityProfileOutput {
@@ -40,4 +42,3 @@ impl DeleteSecurityProfileOutputBuilder {
         }
     }
 }
-

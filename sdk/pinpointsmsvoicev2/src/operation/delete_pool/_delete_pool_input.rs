@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePoolInput  {
+pub struct DeletePoolInput {
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
     #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
 }
 impl DeletePoolInput {
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
-    pub fn pool_id(&self) -> std::option::Option<& str> {
+    pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeletePoolInputBuilder {
     }
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input; self
+        self.pool_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePoolInput`](crate::operation::delete_pool::DeletePoolInput).
-    pub fn build(self) -> Result<crate::operation::delete_pool::DeletePoolInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_pool::DeletePoolInput {
-                pool_id: self.pool_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_pool::DeletePoolInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_pool::DeletePoolInput {
+            pool_id: self.pool_id,
+        })
     }
 }
-

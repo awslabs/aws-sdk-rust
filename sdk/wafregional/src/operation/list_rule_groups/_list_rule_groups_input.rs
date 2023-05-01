@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRuleGroupsInput  {
+pub struct ListRuleGroupsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListRuleGroupsInput  {
 }
 impl ListRuleGroupsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
@@ -42,7 +42,8 @@ impl ListRuleGroupsInputBuilder {
     }
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>RuleGroups</code> than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of <code>RuleGroups</code>. For the second and subsequent <code>ListRuleGroups</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of <code>RuleGroups</code>.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     /// <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -51,19 +52,19 @@ impl ListRuleGroupsInputBuilder {
     }
     /// <p>Specifies the number of <code>RuleGroups</code> that you want AWS WAF to return for this request. If you have more <code>RuleGroups</code> than the number that you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of <code>RuleGroups</code>.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListRuleGroupsInput`](crate::operation::list_rule_groups::ListRuleGroupsInput).
-    pub fn build(self) -> Result<crate::operation::list_rule_groups::ListRuleGroupsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_rule_groups::ListRuleGroupsInput {
-                next_marker: self.next_marker
-                ,
-                limit: self.limit
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_rule_groups::ListRuleGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_rule_groups::ListRuleGroupsInput {
+            next_marker: self.next_marker,
+            limit: self.limit.unwrap_or_default(),
+        })
     }
 }
-

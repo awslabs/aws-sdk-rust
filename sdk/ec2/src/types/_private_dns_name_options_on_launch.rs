@@ -3,7 +3,7 @@
 /// <p>Describes the options for instance hostnames.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrivateDnsNameOptionsOnLaunch  {
+pub struct PrivateDnsNameOptionsOnLaunch {
     /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
     #[doc(hidden)]
     pub hostname_type: std::option::Option<crate::types::HostnameType>,
@@ -16,7 +16,7 @@ pub struct PrivateDnsNameOptionsOnLaunch  {
 }
 impl PrivateDnsNameOptionsOnLaunch {
     /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
-    pub fn hostname_type(&self) -> std::option::Option<& crate::types::HostnameType> {
+    pub fn hostname_type(&self) -> std::option::Option<&crate::types::HostnameType> {
         self.hostname_type.as_ref()
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
@@ -50,8 +50,12 @@ impl PrivateDnsNameOptionsOnLaunchBuilder {
         self
     }
     /// <p>The type of hostname for EC2 instances. For IPv4 only subnets, an instance DNS name must be based on the instance IPv4 address. For IPv6 only subnets, an instance DNS name must be based on the instance ID. For dual-stack subnets, you can specify whether DNS names use the instance IPv4 address or the instance ID.</p>
-    pub fn set_hostname_type(mut self, input: std::option::Option<crate::types::HostnameType>) -> Self {
-        self.hostname_type = input; self
+    pub fn set_hostname_type(
+        mut self,
+        input: std::option::Option<crate::types::HostnameType>,
+    ) -> Self {
+        self.hostname_type = input;
+        self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
     pub fn enable_resource_name_dns_a_record(mut self, input: bool) -> Self {
@@ -59,8 +63,12 @@ impl PrivateDnsNameOptionsOnLaunchBuilder {
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A records.</p>
-    pub fn set_enable_resource_name_dns_a_record(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_resource_name_dns_a_record = input; self
+    pub fn set_enable_resource_name_dns_a_record(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.enable_resource_name_dns_a_record = input;
+        self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostname with DNS AAAA records.</p>
     pub fn enable_resource_name_dns_aaaa_record(mut self, input: bool) -> Self {
@@ -68,19 +76,19 @@ impl PrivateDnsNameOptionsOnLaunchBuilder {
         self
     }
     /// <p>Indicates whether to respond to DNS queries for instance hostname with DNS AAAA records.</p>
-    pub fn set_enable_resource_name_dns_aaaa_record(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_resource_name_dns_aaaa_record = input; self
+    pub fn set_enable_resource_name_dns_aaaa_record(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.enable_resource_name_dns_aaaa_record = input;
+        self
     }
     /// Consumes the builder and constructs a [`PrivateDnsNameOptionsOnLaunch`](crate::types::PrivateDnsNameOptionsOnLaunch).
     pub fn build(self) -> crate::types::PrivateDnsNameOptionsOnLaunch {
         crate::types::PrivateDnsNameOptionsOnLaunch {
-            hostname_type: self.hostname_type
-            ,
-            enable_resource_name_dns_a_record: self.enable_resource_name_dns_a_record
-            ,
-            enable_resource_name_dns_aaaa_record: self.enable_resource_name_dns_aaaa_record
-            ,
+            hostname_type: self.hostname_type,
+            enable_resource_name_dns_a_record: self.enable_resource_name_dns_a_record,
+            enable_resource_name_dns_aaaa_record: self.enable_resource_name_dns_aaaa_record,
         }
     }
 }
-

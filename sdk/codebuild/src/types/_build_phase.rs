@@ -3,116 +3,116 @@
 /// <p>Information about a stage for a build.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BuildPhase  {
-    /// <p>The name of the build phase. Valid values include:</p> 
-    /// <dl> 
+pub struct BuildPhase {
+    /// <p>The name of the build phase. Valid values include:</p>
+    /// <dl>
     /// <dt>
     /// BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Core build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Core build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// COMPLETED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been completed.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been completed.</p>
+    /// </dd>
     /// <dt>
     /// DOWNLOAD_SOURCE
-    /// </dt> 
-    /// <dd> 
-    /// <p>Source code is being downloaded in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Source code is being downloaded in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// FINALIZING
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build process is completing in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build process is completing in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// INSTALL
-    /// </dt> 
-    /// <dd> 
-    /// <p>Installation activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Installation activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// POST_BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Post-build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Post-build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// PRE_BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Pre-build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Pre-build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// PROVISIONING
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build environment is being set up.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build environment is being set up.</p>
+    /// </dd>
     /// <dt>
     /// QUEUED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been submitted and is queued behind other submitted builds.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been submitted and is queued behind other submitted builds.</p>
+    /// </dd>
     /// <dt>
     /// SUBMITTED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been submitted.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been submitted.</p>
+    /// </dd>
     /// <dt>
     /// UPLOAD_ARTIFACTS
-    /// </dt> 
-    /// <dd> 
-    /// <p>Build output artifacts are being uploaded to the output location.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Build output artifacts are being uploaded to the output location.</p>
+    /// </dd>
     /// </dl>
     #[doc(hidden)]
     pub phase_type: std::option::Option<crate::types::BuildPhaseType>,
-    /// <p>The current status of the build phase. Valid values include:</p> 
-    /// <dl> 
+    /// <p>The current status of the build phase. Valid values include:</p>
+    /// <dl>
     /// <dt>
     /// FAILED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase failed.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase failed.</p>
+    /// </dd>
     /// <dt>
     /// FAULT
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase faulted.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase faulted.</p>
+    /// </dd>
     /// <dt>
     /// IN_PROGRESS
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase is still in progress.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase is still in progress.</p>
+    /// </dd>
     /// <dt>
     /// STOPPED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase stopped.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase stopped.</p>
+    /// </dd>
     /// <dt>
     /// SUCCEEDED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase succeeded.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase succeeded.</p>
+    /// </dd>
     /// <dt>
     /// TIMED_OUT
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase timed out.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase timed out.</p>
+    /// </dd>
     /// </dl>
     #[doc(hidden)]
     pub phase_status: std::option::Option<crate::types::StatusType>,
@@ -130,126 +130,126 @@ pub struct BuildPhase  {
     pub contexts: std::option::Option<std::vec::Vec<crate::types::PhaseContext>>,
 }
 impl BuildPhase {
-    /// <p>The name of the build phase. Valid values include:</p> 
-    /// <dl> 
+    /// <p>The name of the build phase. Valid values include:</p>
+    /// <dl>
     /// <dt>
     /// BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Core build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Core build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// COMPLETED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been completed.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been completed.</p>
+    /// </dd>
     /// <dt>
     /// DOWNLOAD_SOURCE
-    /// </dt> 
-    /// <dd> 
-    /// <p>Source code is being downloaded in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Source code is being downloaded in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// FINALIZING
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build process is completing in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build process is completing in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// INSTALL
-    /// </dt> 
-    /// <dd> 
-    /// <p>Installation activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Installation activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// POST_BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Post-build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Post-build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// PRE_BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Pre-build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Pre-build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// PROVISIONING
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build environment is being set up.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build environment is being set up.</p>
+    /// </dd>
     /// <dt>
     /// QUEUED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been submitted and is queued behind other submitted builds.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been submitted and is queued behind other submitted builds.</p>
+    /// </dd>
     /// <dt>
     /// SUBMITTED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been submitted.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been submitted.</p>
+    /// </dd>
     /// <dt>
     /// UPLOAD_ARTIFACTS
-    /// </dt> 
-    /// <dd> 
-    /// <p>Build output artifacts are being uploaded to the output location.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Build output artifacts are being uploaded to the output location.</p>
+    /// </dd>
     /// </dl>
-    pub fn phase_type(&self) -> std::option::Option<& crate::types::BuildPhaseType> {
+    pub fn phase_type(&self) -> std::option::Option<&crate::types::BuildPhaseType> {
         self.phase_type.as_ref()
     }
-    /// <p>The current status of the build phase. Valid values include:</p> 
-    /// <dl> 
+    /// <p>The current status of the build phase. Valid values include:</p>
+    /// <dl>
     /// <dt>
     /// FAILED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase failed.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase failed.</p>
+    /// </dd>
     /// <dt>
     /// FAULT
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase faulted.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase faulted.</p>
+    /// </dd>
     /// <dt>
     /// IN_PROGRESS
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase is still in progress.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase is still in progress.</p>
+    /// </dd>
     /// <dt>
     /// STOPPED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase stopped.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase stopped.</p>
+    /// </dd>
     /// <dt>
     /// SUCCEEDED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase succeeded.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase succeeded.</p>
+    /// </dd>
     /// <dt>
     /// TIMED_OUT
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase timed out.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase timed out.</p>
+    /// </dd>
     /// </dl>
-    pub fn phase_status(&self) -> std::option::Option<& crate::types::StatusType> {
+    pub fn phase_status(&self) -> std::option::Option<&crate::types::StatusType> {
         self.phase_status.as_ref()
     }
     /// <p>When the build phase started, expressed in Unix time format.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>When the build phase ended, expressed in Unix time format.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>How long, in seconds, between the starting and ending times of the build's phase.</p>
@@ -257,7 +257,7 @@ impl BuildPhase {
         self.duration_in_seconds
     }
     /// <p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
-    pub fn contexts(&self) -> std::option::Option<& [crate::types::PhaseContext]> {
+    pub fn contexts(&self) -> std::option::Option<&[crate::types::PhaseContext]> {
         self.contexts.as_deref()
     }
 }
@@ -280,235 +280,243 @@ pub struct BuildPhaseBuilder {
     pub(crate) contexts: std::option::Option<std::vec::Vec<crate::types::PhaseContext>>,
 }
 impl BuildPhaseBuilder {
-    /// <p>The name of the build phase. Valid values include:</p> 
-    /// <dl> 
+    /// <p>The name of the build phase. Valid values include:</p>
+    /// <dl>
     /// <dt>
     /// BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Core build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Core build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// COMPLETED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been completed.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been completed.</p>
+    /// </dd>
     /// <dt>
     /// DOWNLOAD_SOURCE
-    /// </dt> 
-    /// <dd> 
-    /// <p>Source code is being downloaded in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Source code is being downloaded in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// FINALIZING
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build process is completing in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build process is completing in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// INSTALL
-    /// </dt> 
-    /// <dd> 
-    /// <p>Installation activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Installation activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// POST_BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Post-build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Post-build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// PRE_BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Pre-build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Pre-build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// PROVISIONING
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build environment is being set up.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build environment is being set up.</p>
+    /// </dd>
     /// <dt>
     /// QUEUED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been submitted and is queued behind other submitted builds.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been submitted and is queued behind other submitted builds.</p>
+    /// </dd>
     /// <dt>
     /// SUBMITTED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been submitted.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been submitted.</p>
+    /// </dd>
     /// <dt>
     /// UPLOAD_ARTIFACTS
-    /// </dt> 
-    /// <dd> 
-    /// <p>Build output artifacts are being uploaded to the output location.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Build output artifacts are being uploaded to the output location.</p>
+    /// </dd>
     /// </dl>
     pub fn phase_type(mut self, input: crate::types::BuildPhaseType) -> Self {
         self.phase_type = Some(input);
         self
     }
-    /// <p>The name of the build phase. Valid values include:</p> 
-    /// <dl> 
+    /// <p>The name of the build phase. Valid values include:</p>
+    /// <dl>
     /// <dt>
     /// BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Core build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Core build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// COMPLETED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been completed.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been completed.</p>
+    /// </dd>
     /// <dt>
     /// DOWNLOAD_SOURCE
-    /// </dt> 
-    /// <dd> 
-    /// <p>Source code is being downloaded in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Source code is being downloaded in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// FINALIZING
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build process is completing in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build process is completing in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// INSTALL
-    /// </dt> 
-    /// <dd> 
-    /// <p>Installation activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Installation activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// POST_BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Post-build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Post-build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// PRE_BUILD
-    /// </dt> 
-    /// <dd> 
-    /// <p>Pre-build activities typically occur in this build phase.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Pre-build activities typically occur in this build phase.</p>
+    /// </dd>
     /// <dt>
     /// PROVISIONING
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build environment is being set up.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build environment is being set up.</p>
+    /// </dd>
     /// <dt>
     /// QUEUED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been submitted and is queued behind other submitted builds.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been submitted and is queued behind other submitted builds.</p>
+    /// </dd>
     /// <dt>
     /// SUBMITTED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build has been submitted.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build has been submitted.</p>
+    /// </dd>
     /// <dt>
     /// UPLOAD_ARTIFACTS
-    /// </dt> 
-    /// <dd> 
-    /// <p>Build output artifacts are being uploaded to the output location.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Build output artifacts are being uploaded to the output location.</p>
+    /// </dd>
     /// </dl>
-    pub fn set_phase_type(mut self, input: std::option::Option<crate::types::BuildPhaseType>) -> Self {
-        self.phase_type = input; self
+    pub fn set_phase_type(
+        mut self,
+        input: std::option::Option<crate::types::BuildPhaseType>,
+    ) -> Self {
+        self.phase_type = input;
+        self
     }
-    /// <p>The current status of the build phase. Valid values include:</p> 
-    /// <dl> 
+    /// <p>The current status of the build phase. Valid values include:</p>
+    /// <dl>
     /// <dt>
     /// FAILED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase failed.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase failed.</p>
+    /// </dd>
     /// <dt>
     /// FAULT
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase faulted.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase faulted.</p>
+    /// </dd>
     /// <dt>
     /// IN_PROGRESS
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase is still in progress.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase is still in progress.</p>
+    /// </dd>
     /// <dt>
     /// STOPPED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase stopped.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase stopped.</p>
+    /// </dd>
     /// <dt>
     /// SUCCEEDED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase succeeded.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase succeeded.</p>
+    /// </dd>
     /// <dt>
     /// TIMED_OUT
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase timed out.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase timed out.</p>
+    /// </dd>
     /// </dl>
     pub fn phase_status(mut self, input: crate::types::StatusType) -> Self {
         self.phase_status = Some(input);
         self
     }
-    /// <p>The current status of the build phase. Valid values include:</p> 
-    /// <dl> 
+    /// <p>The current status of the build phase. Valid values include:</p>
+    /// <dl>
     /// <dt>
     /// FAILED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase failed.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase failed.</p>
+    /// </dd>
     /// <dt>
     /// FAULT
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase faulted.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase faulted.</p>
+    /// </dd>
     /// <dt>
     /// IN_PROGRESS
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase is still in progress.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase is still in progress.</p>
+    /// </dd>
     /// <dt>
     /// STOPPED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase stopped.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase stopped.</p>
+    /// </dd>
     /// <dt>
     /// SUCCEEDED
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase succeeded.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase succeeded.</p>
+    /// </dd>
     /// <dt>
     /// TIMED_OUT
-    /// </dt> 
-    /// <dd> 
-    /// <p>The build phase timed out.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The build phase timed out.</p>
+    /// </dd>
     /// </dl>
-    pub fn set_phase_status(mut self, input: std::option::Option<crate::types::StatusType>) -> Self {
-        self.phase_status = input; self
+    pub fn set_phase_status(
+        mut self,
+        input: std::option::Option<crate::types::StatusType>,
+    ) -> Self {
+        self.phase_status = input;
+        self
     }
     /// <p>When the build phase started, expressed in Unix time format.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -516,8 +524,12 @@ impl BuildPhaseBuilder {
         self
     }
     /// <p>When the build phase started, expressed in Unix time format.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>When the build phase ended, expressed in Unix time format.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -526,7 +538,8 @@ impl BuildPhaseBuilder {
     }
     /// <p>When the build phase ended, expressed in Unix time format.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>How long, in seconds, between the starting and ending times of the build's phase.</p>
     pub fn duration_in_seconds(mut self, input: i64) -> Self {
@@ -535,7 +548,8 @@ impl BuildPhaseBuilder {
     }
     /// <p>How long, in seconds, between the starting and ending times of the build's phase.</p>
     pub fn set_duration_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.duration_in_seconds = input; self
+        self.duration_in_seconds = input;
+        self
     }
     /// Appends an item to `contexts`.
     ///
@@ -544,30 +558,27 @@ impl BuildPhaseBuilder {
     /// <p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
     pub fn contexts(mut self, input: crate::types::PhaseContext) -> Self {
         let mut v = self.contexts.unwrap_or_default();
-                        v.push(input);
-                        self.contexts = Some(v);
-                        self
+        v.push(input);
+        self.contexts = Some(v);
+        self
     }
     /// <p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
-    pub fn set_contexts(mut self, input: std::option::Option<std::vec::Vec<crate::types::PhaseContext>>) -> Self {
-        self.contexts = input; self
+    pub fn set_contexts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PhaseContext>>,
+    ) -> Self {
+        self.contexts = input;
+        self
     }
     /// Consumes the builder and constructs a [`BuildPhase`](crate::types::BuildPhase).
     pub fn build(self) -> crate::types::BuildPhase {
         crate::types::BuildPhase {
-            phase_type: self.phase_type
-            ,
-            phase_status: self.phase_status
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
-            duration_in_seconds: self.duration_in_seconds
-            ,
-            contexts: self.contexts
-            ,
+            phase_type: self.phase_type,
+            phase_status: self.phase_status,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            duration_in_seconds: self.duration_in_seconds,
+            contexts: self.contexts,
         }
     }
 }
-

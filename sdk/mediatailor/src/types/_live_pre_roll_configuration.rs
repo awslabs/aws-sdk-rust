@@ -3,7 +3,7 @@
 /// <p>The configuration for pre-roll ad insertion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LivePreRollConfiguration  {
+pub struct LivePreRollConfiguration {
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
     #[doc(hidden)]
     pub ad_decision_server_url: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct LivePreRollConfiguration  {
 }
 impl LivePreRollConfiguration {
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
-    pub fn ad_decision_server_url(&self) -> std::option::Option<& str> {
+    pub fn ad_decision_server_url(&self) -> std::option::Option<&str> {
         self.ad_decision_server_url.as_deref()
     }
     /// <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.</p>
@@ -42,8 +42,12 @@ impl LivePreRollConfigurationBuilder {
         self
     }
     /// <p>The URL for the ad decision server (ADS) for pre-roll ads. This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
-    pub fn set_ad_decision_server_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ad_decision_server_url = input; self
+    pub fn set_ad_decision_server_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ad_decision_server_url = input;
+        self
     }
     /// <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.</p>
     pub fn max_duration_seconds(mut self, input: i32) -> Self {
@@ -52,17 +56,14 @@ impl LivePreRollConfigurationBuilder {
     }
     /// <p>The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to exceed this duration, regardless of the total duration of ads that the ADS returns.</p>
     pub fn set_max_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_duration_seconds = input; self
+        self.max_duration_seconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`LivePreRollConfiguration`](crate::types::LivePreRollConfiguration).
     pub fn build(self) -> crate::types::LivePreRollConfiguration {
         crate::types::LivePreRollConfiguration {
-            ad_decision_server_url: self.ad_decision_server_url
-            ,
-            max_duration_seconds: self.max_duration_seconds
-                .unwrap_or_default()
-            ,
+            ad_decision_server_url: self.ad_decision_server_url,
+            max_duration_seconds: self.max_duration_seconds.unwrap_or_default(),
         }
     }
 }
-

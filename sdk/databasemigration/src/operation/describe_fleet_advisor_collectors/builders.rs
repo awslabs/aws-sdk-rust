@@ -4,77 +4,87 @@ pub use crate::operation::describe_fleet_advisor_collectors::_describe_fleet_adv
 pub use crate::operation::describe_fleet_advisor_collectors::_describe_fleet_advisor_collectors_input::DescribeFleetAdvisorCollectorsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeFleetAdvisorCollectors`.
-/// 
+///
 /// <p>Returns a list of the Fleet Advisor collectors in your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFleetAdvisorCollectorsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_fleet_advisor_collectors::builders::DescribeFleetAdvisorCollectorsInputBuilder,
 }
-impl DescribeFleetAdvisorCollectorsFluentBuilder  {
+impl DescribeFleetAdvisorCollectorsFluentBuilder {
     /// Creates a new `DescribeFleetAdvisorCollectors`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectors, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_collectors::DescribeFleetAdvisorCollectorsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_collectors::paginator::DescribeFleetAdvisorCollectorsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_collectors::paginator::DescribeFleetAdvisorCollectorsPaginator {
-                                crate::operation::describe_fleet_advisor_collectors::paginator::DescribeFleetAdvisorCollectorsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_fleet_advisor_collectors::paginator::DescribeFleetAdvisorCollectorsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_fleet_advisor_collectors::paginator::DescribeFleetAdvisorCollectorsPaginator{
+        crate::operation::describe_fleet_advisor_collectors::paginator::DescribeFleetAdvisorCollectorsPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `Filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p> 
-    /// <ul> 
-    /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> 
-    /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li> 
-    /// </ul> 
+    /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
+    /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p> 
-    /// <ul> 
-    /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li> 
-    /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li> 
-    /// </ul> 
+    /// <p> If you specify any of the following filters, the output includes information for only those collectors that meet the filter criteria:</p>
+    /// <ul>
+    /// <li> <p> <code>collector-referenced-id</code> – The ID of the collector agent, for example <code>d4610ac5-e323-4ad9-bc50-eaf7249dfe9d</code>.</p> </li>
+    /// <li> <p> <code>collector-name</code> – The name of the collector agent.</p> </li>
+    /// </ul>
     /// <p>An example is: <code>describe-fleet-advisor-collectors --filter Name="collector-referenced-id",Values="d4610ac5-e323-4ad9-bc50-eaf7249dfe9d"</code> </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -99,4 +109,3 @@ impl DescribeFleetAdvisorCollectorsFluentBuilder  {
         self
     }
 }
-

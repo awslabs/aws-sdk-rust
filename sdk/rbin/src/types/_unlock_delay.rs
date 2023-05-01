@@ -3,7 +3,7 @@
 /// <p>Information about the retention rule unlock delay. The unlock delay is the period after which a retention rule can be modified or edited after it has been unlocked by a user with the required permissions. The retention rule can't be modified or deleted during the unlock delay.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnlockDelay  {
+pub struct UnlockDelay {
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
     #[doc(hidden)]
     pub unlock_delay_value: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl UnlockDelay {
         self.unlock_delay_value
     }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
-    pub fn unlock_delay_unit(&self) -> std::option::Option<& crate::types::UnlockDelayUnit> {
+    pub fn unlock_delay_unit(&self) -> std::option::Option<&crate::types::UnlockDelayUnit> {
         self.unlock_delay_unit.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl UnlockDelayBuilder {
     }
     /// <p>The unlock delay period, measured in the unit specified for <b> UnlockDelayUnit</b>.</p>
     pub fn set_unlock_delay_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.unlock_delay_value = input; self
+        self.unlock_delay_value = input;
+        self
     }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
     pub fn unlock_delay_unit(mut self, input: crate::types::UnlockDelayUnit) -> Self {
@@ -51,17 +52,18 @@ impl UnlockDelayBuilder {
         self
     }
     /// <p>The unit of time in which to measure the unlock delay. Currently, the unlock delay can be measure only in days.</p>
-    pub fn set_unlock_delay_unit(mut self, input: std::option::Option<crate::types::UnlockDelayUnit>) -> Self {
-        self.unlock_delay_unit = input; self
+    pub fn set_unlock_delay_unit(
+        mut self,
+        input: std::option::Option<crate::types::UnlockDelayUnit>,
+    ) -> Self {
+        self.unlock_delay_unit = input;
+        self
     }
     /// Consumes the builder and constructs a [`UnlockDelay`](crate::types::UnlockDelay).
     pub fn build(self) -> crate::types::UnlockDelay {
         crate::types::UnlockDelay {
-            unlock_delay_value: self.unlock_delay_value
-            ,
-            unlock_delay_unit: self.unlock_delay_unit
-            ,
+            unlock_delay_value: self.unlock_delay_value,
+            unlock_delay_unit: self.unlock_delay_unit,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportClientVpnClientConfigurationOutput  {
+pub struct ExportClientVpnClientConfigurationOutput {
     /// <p>The contents of the Client VPN endpoint configuration file.</p>
     #[doc(hidden)]
     pub client_configuration: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct ExportClientVpnClientConfigurationOutput  {
 }
 impl ExportClientVpnClientConfigurationOutput {
     /// <p>The contents of the Client VPN endpoint configuration file.</p>
-    pub fn client_configuration(&self) -> std::option::Option<& str> {
+    pub fn client_configuration(&self) -> std::option::Option<&str> {
         self.client_configuration.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ExportClientVpnClientConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ExportClientVpnClientConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`ExportClientVpnClientConfigurationOutput`](crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput).
-    pub fn builder() -> crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationOutputBuilder{
         crate::operation::export_client_vpn_client_configuration::builders::ExportClientVpnClientConfigurationOutputBuilder::default()
     }
 }
@@ -40,20 +40,24 @@ impl ExportClientVpnClientConfigurationOutputBuilder {
         self
     }
     /// <p>The contents of the Client VPN endpoint configuration file.</p>
-    pub fn set_client_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_configuration = input; self
+    pub fn set_client_configuration(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ExportClientVpnClientConfigurationOutput`](crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput).
-    pub fn build(self) -> crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput {
+    pub fn build(self) -> crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput{
         crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput {
             client_configuration: self.client_configuration
             ,
@@ -61,4 +65,3 @@ impl ExportClientVpnClientConfigurationOutputBuilder {
         }
     }
 }
-

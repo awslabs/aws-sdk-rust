@@ -3,14 +3,14 @@
 /// <p>The source template of the template.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TemplateSourceTemplate  {
+pub struct TemplateSourceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl TemplateSourceTemplate {
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl TemplateSourceTemplateBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`TemplateSourceTemplate`](crate::types::TemplateSourceTemplate).
     pub fn build(self) -> crate::types::TemplateSourceTemplate {
-        crate::types::TemplateSourceTemplate {
-            arn: self.arn
-            ,
-        }
+        crate::types::TemplateSourceTemplate { arn: self.arn }
     }
 }
-

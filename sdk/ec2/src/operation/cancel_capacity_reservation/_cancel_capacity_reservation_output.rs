@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelCapacityReservationOutput  {
+pub struct CancelCapacityReservationOutput {
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     #[doc(hidden)]
     pub r#return: std::option::Option<bool>,
@@ -15,13 +15,13 @@ impl CancelCapacityReservationOutput {
     }
 }
 impl aws_http::request_id::RequestId for CancelCapacityReservationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CancelCapacityReservationOutput {
     /// Creates a new builder-style object to manufacture [`CancelCapacityReservationOutput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationOutput).
-    pub fn builder() -> crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationOutputBuilder {
+    pub fn builder() -> crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationOutputBuilder{
         crate::operation::cancel_capacity_reservation::builders::CancelCapacityReservationOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl CancelCapacityReservationOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn set_return(mut self, input: std::option::Option<bool>) -> Self {
-        self.r#return = input; self
+        self.r#return = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CancelCapacityReservationOutput`](crate::operation::cancel_capacity_reservation::CancelCapacityReservationOutput).
-    pub fn build(self) -> crate::operation::cancel_capacity_reservation::CancelCapacityReservationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::cancel_capacity_reservation::CancelCapacityReservationOutput {
         crate::operation::cancel_capacity_reservation::CancelCapacityReservationOutput {
-            r#return: self.r#return
-            ,
+            r#return: self.r#return,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A structure that contains experiment results for one metric that is monitored in the experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentResultsData  {
+pub struct ExperimentResultsData {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ExperimentResultsData  {
 }
 impl ExperimentResultsData {
     /// <p>The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The treatment, or variation, that returned the <code>values</code> in this structure.</p>
-    pub fn treatment_name(&self) -> std::option::Option<& str> {
+    pub fn treatment_name(&self) -> std::option::Option<&str> {
         self.treatment_name.as_deref()
     }
     /// <p>The experiment statistic that these results pertain to.</p>
-    pub fn result_stat(&self) -> std::option::Option<& crate::types::ExperimentResultResponseType> {
+    pub fn result_stat(&self) -> std::option::Option<&crate::types::ExperimentResultResponseType> {
         self.result_stat.as_ref()
     }
     /// <p>The values for the <code>metricName</code> that were recorded in the experiment.</p>
-    pub fn values(&self) -> std::option::Option<& [f64]> {
+    pub fn values(&self) -> std::option::Option<&[f64]> {
         self.values.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl ExperimentResultsDataBuilder {
     }
     /// <p>The name of the metric.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// <p>The treatment, or variation, that returned the <code>values</code> in this structure.</p>
     pub fn treatment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl ExperimentResultsDataBuilder {
     }
     /// <p>The treatment, or variation, that returned the <code>values</code> in this structure.</p>
     pub fn set_treatment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.treatment_name = input; self
+        self.treatment_name = input;
+        self
     }
     /// <p>The experiment statistic that these results pertain to.</p>
     pub fn result_stat(mut self, input: crate::types::ExperimentResultResponseType) -> Self {
@@ -76,8 +78,12 @@ impl ExperimentResultsDataBuilder {
         self
     }
     /// <p>The experiment statistic that these results pertain to.</p>
-    pub fn set_result_stat(mut self, input: std::option::Option<crate::types::ExperimentResultResponseType>) -> Self {
-        self.result_stat = input; self
+    pub fn set_result_stat(
+        mut self,
+        input: std::option::Option<crate::types::ExperimentResultResponseType>,
+    ) -> Self {
+        self.result_stat = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -86,26 +92,22 @@ impl ExperimentResultsDataBuilder {
     /// <p>The values for the <code>metricName</code> that were recorded in the experiment.</p>
     pub fn values(mut self, input: f64) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input);
-                        self.values = Some(v);
-                        self
+        v.push(input);
+        self.values = Some(v);
+        self
     }
     /// <p>The values for the <code>metricName</code> that were recorded in the experiment.</p>
     pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-        self.values = input; self
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExperimentResultsData`](crate::types::ExperimentResultsData).
     pub fn build(self) -> crate::types::ExperimentResultsData {
         crate::types::ExperimentResultsData {
-            metric_name: self.metric_name
-            ,
-            treatment_name: self.treatment_name
-            ,
-            result_stat: self.result_stat
-            ,
-            values: self.values
-            ,
+            metric_name: self.metric_name,
+            treatment_name: self.treatment_name,
+            result_stat: self.result_stat,
+            values: self.values,
         }
     }
 }
-

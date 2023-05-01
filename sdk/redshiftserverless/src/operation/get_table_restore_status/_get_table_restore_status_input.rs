@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTableRestoreStatusInput  {
+pub struct GetTableRestoreStatusInput {
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
     #[doc(hidden)]
     pub table_restore_request_id: std::option::Option<std::string::String>,
 }
 impl GetTableRestoreStatusInput {
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
-    pub fn table_restore_request_id(&self) -> std::option::Option<& str> {
+    pub fn table_restore_request_id(&self) -> std::option::Option<&str> {
         self.table_restore_request_id.as_deref()
     }
 }
 impl GetTableRestoreStatusInput {
     /// Creates a new builder-style object to manufacture [`GetTableRestoreStatusInput`](crate::operation::get_table_restore_status::GetTableRestoreStatusInput).
-    pub fn builder() -> crate::operation::get_table_restore_status::builders::GetTableRestoreStatusInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_table_restore_status::builders::GetTableRestoreStatusInputBuilder
+    {
         crate::operation::get_table_restore_status::builders::GetTableRestoreStatusInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl GetTableRestoreStatusInputBuilder {
         self
     }
     /// <p>The ID of the <code>RestoreTableFromSnapshot</code> request to return status for.</p>
-    pub fn set_table_restore_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_restore_request_id = input; self
+    pub fn set_table_restore_request_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.table_restore_request_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTableRestoreStatusInput`](crate::operation::get_table_restore_status::GetTableRestoreStatusInput).
-    pub fn build(self) -> Result<crate::operation::get_table_restore_status::GetTableRestoreStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_table_restore_status::GetTableRestoreStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_table_restore_status::GetTableRestoreStatusInput {
-                table_restore_request_id: self.table_restore_request_id
-                ,
-            }
+                table_restore_request_id: self.table_restore_request_id,
+            },
         )
     }
 }
-

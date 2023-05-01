@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeviceEventsInput  {
+pub struct ListDeviceEventsInput {
     /// <p>The ARN of a device.</p>
     #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListDeviceEventsInput  {
 }
 impl ListDeviceEventsInput {
     /// <p>The ARN of a device.</p>
-    pub fn device_arn(&self) -> std::option::Option<& str> {
+    pub fn device_arn(&self) -> std::option::Option<&str> {
         self.device_arn.as_deref()
     }
     /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
-    pub fn event_type(&self) -> std::option::Option<& crate::types::DeviceEventType> {
+    pub fn event_type(&self) -> std::option::Option<&crate::types::DeviceEventType> {
         self.event_type.as_ref()
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
@@ -36,7 +36,8 @@ impl ListDeviceEventsInput {
 }
 impl ListDeviceEventsInput {
     /// Creates a new builder-style object to manufacture [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
-    pub fn builder() -> crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder {
+    pub fn builder() -> crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder
+    {
         crate::operation::list_device_events::builders::ListDeviceEventsInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl ListDeviceEventsInputBuilder {
     }
     /// <p>The ARN of a device.</p>
     pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_arn = input; self
+        self.device_arn = input;
+        self
     }
     /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
     pub fn event_type(mut self, input: crate::types::DeviceEventType) -> Self {
@@ -66,8 +68,12 @@ impl ListDeviceEventsInputBuilder {
         self
     }
     /// <p>The event type to filter device events. If EventType isn't specified, this returns a list of all device events in reverse chronological order. If EventType is specified, this returns a list of device events for that EventType in reverse chronological order. </p>
-    pub fn set_event_type(mut self, input: std::option::Option<crate::types::DeviceEventType>) -> Self {
-        self.event_type = input; self
+    pub fn set_event_type(
+        mut self,
+        input: std::option::Option<crate::types::DeviceEventType>,
+    ) -> Self {
+        self.event_type = input;
+        self
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +82,8 @@ impl ListDeviceEventsInputBuilder {
     }
     /// <p>An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response only includes results beyond the token, up to the value specified by MaxResults. When the end of results is reached, the response has a value of null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +92,23 @@ impl ListDeviceEventsInputBuilder {
     }
     /// <p>The maximum number of results to include in the response. The default value is 50. If more results exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDeviceEventsInput`](crate::operation::list_device_events::ListDeviceEventsInput).
-    pub fn build(self) -> Result<crate::operation::list_device_events::ListDeviceEventsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_device_events::ListDeviceEventsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_device_events::ListDeviceEventsInput {
-                device_arn: self.device_arn
-                ,
-                event_type: self.event_type
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                device_arn: self.device_arn,
+                event_type: self.event_type,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>A URL for the Amazon Web Services Systems Manager (Systems Manager) bucket where you want to store the results of this request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3OutputUrl  {
+pub struct S3OutputUrl {
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
     #[doc(hidden)]
     pub output_url: std::option::Option<std::string::String>,
 }
 impl S3OutputUrl {
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
-    pub fn output_url(&self) -> std::option::Option<& str> {
+    pub fn output_url(&self) -> std::option::Option<&str> {
         self.output_url.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl S3OutputUrlBuilder {
     }
     /// <p>A URL for an S3 bucket where you want to store the results of this request.</p>
     pub fn set_output_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output_url = input; self
+        self.output_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3OutputUrl`](crate::types::S3OutputUrl).
     pub fn build(self) -> crate::types::S3OutputUrl {
         crate::types::S3OutputUrl {
-            output_url: self.output_url
-            ,
+            output_url: self.output_url,
         }
     }
 }
-

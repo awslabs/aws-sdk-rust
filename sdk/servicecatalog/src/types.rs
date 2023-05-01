@@ -392,4 +392,3 @@ pub mod builders;
 
 /// Error types that AWS Service Catalog can respond with.
 pub mod error;
-

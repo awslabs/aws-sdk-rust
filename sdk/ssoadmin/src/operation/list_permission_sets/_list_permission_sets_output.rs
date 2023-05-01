@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionSetsOutput  {
+pub struct ListPermissionSetsOutput {
     /// <p>Defines the level of access on an AWS account.</p>
     #[doc(hidden)]
     pub permission_sets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,23 @@ pub struct ListPermissionSetsOutput  {
 }
 impl ListPermissionSetsOutput {
     /// <p>Defines the level of access on an AWS account.</p>
-    pub fn permission_sets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn permission_sets(&self) -> std::option::Option<&[std::string::String]> {
         self.permission_sets.as_deref()
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPermissionSetsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListPermissionSetsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionSetsOutput`](crate::operation::list_permission_sets::ListPermissionSetsOutput).
-    pub fn builder() -> crate::operation::list_permission_sets::builders::ListPermissionSetsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_permission_sets::builders::ListPermissionSetsOutputBuilder {
         crate::operation::list_permission_sets::builders::ListPermissionSetsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListPermissionSetsOutputBuilder {
     /// <p>Defines the level of access on an AWS account.</p>
     pub fn permission_sets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.permission_sets.unwrap_or_default();
-                        v.push(input.into());
-                        self.permission_sets = Some(v);
-                        self
+        v.push(input.into());
+        self.permission_sets = Some(v);
+        self
     }
     /// <p>Defines the level of access on an AWS account.</p>
-    pub fn set_permission_sets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.permission_sets = input; self
+    pub fn set_permission_sets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.permission_sets = input;
+        self
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListPermissionSetsOutputBuilder {
     }
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListPermissionSetsOutput`](crate::operation::list_permission_sets::ListPermissionSetsOutput).
     pub fn build(self) -> crate::operation::list_permission_sets::ListPermissionSetsOutput {
         crate::operation::list_permission_sets::ListPermissionSetsOutput {
-            permission_sets: self.permission_sets
-            ,
-            next_token: self.next_token
-            ,
+            permission_sets: self.permission_sets,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

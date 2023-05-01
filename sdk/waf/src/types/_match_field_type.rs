@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let matchfieldtype = unimplemented!();
 /// match matchfieldtype {
@@ -35,14 +35,22 @@
 /// Specifically, when `matchfieldtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MatchFieldType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum MatchFieldType {
     #[allow(missing_docs)] // documentation missing in model
     AllQueryArgs,
@@ -59,51 +67,60 @@ pub enum MatchFieldType {
     #[allow(missing_docs)] // documentation missing in model
     Uri,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MatchFieldType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ALL_QUERY_ARGS" => MatchFieldType::AllQueryArgs,
-"BODY" => MatchFieldType::Body,
-"HEADER" => MatchFieldType::Header,
-"METHOD" => MatchFieldType::Method,
-"QUERY_STRING" => MatchFieldType::QueryString,
-"SINGLE_QUERY_ARG" => MatchFieldType::SingleQueryArg,
-"URI" => MatchFieldType::Uri,
-other => MatchFieldType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL_QUERY_ARGS" => MatchFieldType::AllQueryArgs,
+            "BODY" => MatchFieldType::Body,
+            "HEADER" => MatchFieldType::Header,
+            "METHOD" => MatchFieldType::Method,
+            "QUERY_STRING" => MatchFieldType::QueryString,
+            "SINGLE_QUERY_ARG" => MatchFieldType::SingleQueryArg,
+            "URI" => MatchFieldType::Uri,
+            other => {
+                MatchFieldType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for MatchFieldType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(MatchFieldType::from(s))
-                }
-            }
-impl MatchFieldType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    MatchFieldType::AllQueryArgs => "ALL_QUERY_ARGS",
-    MatchFieldType::Body => "BODY",
-    MatchFieldType::Header => "HEADER",
-    MatchFieldType::Method => "METHOD",
-    MatchFieldType::QueryString => "QUERY_STRING",
-    MatchFieldType::SingleQueryArg => "SINGLE_QUERY_ARG",
-    MatchFieldType::Uri => "URI",
-    MatchFieldType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ALL_QUERY_ARGS", "BODY", "HEADER", "METHOD", "QUERY_STRING", "SINGLE_QUERY_ARG", "URI"]
-                }
-            }
-impl AsRef<str> for MatchFieldType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for MatchFieldType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MatchFieldType::from(s))
+    }
+}
+impl MatchFieldType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MatchFieldType::AllQueryArgs => "ALL_QUERY_ARGS",
+            MatchFieldType::Body => "BODY",
+            MatchFieldType::Header => "HEADER",
+            MatchFieldType::Method => "METHOD",
+            MatchFieldType::QueryString => "QUERY_STRING",
+            MatchFieldType::SingleQueryArg => "SINGLE_QUERY_ARG",
+            MatchFieldType::Uri => "URI",
+            MatchFieldType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ALL_QUERY_ARGS",
+            "BODY",
+            "HEADER",
+            "METHOD",
+            "QUERY_STRING",
+            "SINGLE_QUERY_ARG",
+            "URI",
+        ]
+    }
+}
+impl AsRef<str> for MatchFieldType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

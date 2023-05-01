@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTestGridSessionsInput  {
+pub struct ListTestGridSessionsInput {
     /// <p>ARN of a <code>TestGridProject</code>.</p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
@@ -30,27 +30,27 @@ pub struct ListTestGridSessionsInput  {
 }
 impl ListTestGridSessionsInput {
     /// <p>ARN of a <code>TestGridProject</code>.</p>
-    pub fn project_arn(&self) -> std::option::Option<& str> {
+    pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
     /// <p>Return only sessions in this state.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::TestGridSessionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::TestGridSessionStatus> {
         self.status.as_ref()
     }
     /// <p>Return only sessions created after this time.</p>
-    pub fn creation_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_after.as_ref()
     }
     /// <p>Return only sessions created before this time.</p>
-    pub fn creation_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time_before.as_ref()
     }
     /// <p>Return only sessions that ended after this time.</p>
-    pub fn end_time_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time_after.as_ref()
     }
     /// <p>Return only sessions that ended before this time.</p>
-    pub fn end_time_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time_before.as_ref()
     }
     /// <p>Return only this many results at a time.</p>
@@ -58,13 +58,14 @@ impl ListTestGridSessionsInput {
         self.max_result
     }
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListTestGridSessionsInput {
     /// Creates a new builder-style object to manufacture [`ListTestGridSessionsInput`](crate::operation::list_test_grid_sessions::ListTestGridSessionsInput).
-    pub fn builder() -> crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsInputBuilder {
         crate::operation::list_test_grid_sessions::builders::ListTestGridSessionsInputBuilder::default()
     }
 }
@@ -90,7 +91,8 @@ impl ListTestGridSessionsInputBuilder {
     }
     /// <p>ARN of a <code>TestGridProject</code>.</p>
     pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_arn = input; self
+        self.project_arn = input;
+        self
     }
     /// <p>Return only sessions in this state.</p>
     pub fn status(mut self, input: crate::types::TestGridSessionStatus) -> Self {
@@ -98,8 +100,12 @@ impl ListTestGridSessionsInputBuilder {
         self
     }
     /// <p>Return only sessions in this state.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TestGridSessionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::TestGridSessionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Return only sessions created after this time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -107,8 +113,12 @@ impl ListTestGridSessionsInputBuilder {
         self
     }
     /// <p>Return only sessions created after this time.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_after = input; self
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time_after = input;
+        self
     }
     /// <p>Return only sessions created before this time.</p>
     pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -116,8 +126,12 @@ impl ListTestGridSessionsInputBuilder {
         self
     }
     /// <p>Return only sessions created before this time.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time_before = input; self
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time_before = input;
+        self
     }
     /// <p>Return only sessions that ended after this time.</p>
     pub fn end_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,8 +139,12 @@ impl ListTestGridSessionsInputBuilder {
         self
     }
     /// <p>Return only sessions that ended after this time.</p>
-    pub fn set_end_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time_after = input; self
+    pub fn set_end_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.end_time_after = input;
+        self
     }
     /// <p>Return only sessions that ended before this time.</p>
     pub fn end_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -134,8 +152,12 @@ impl ListTestGridSessionsInputBuilder {
         self
     }
     /// <p>Return only sessions that ended before this time.</p>
-    pub fn set_end_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time_before = input; self
+    pub fn set_end_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.end_time_before = input;
+        self
     }
     /// <p>Return only this many results at a time.</p>
     pub fn max_result(mut self, input: i32) -> Self {
@@ -144,7 +166,8 @@ impl ListTestGridSessionsInputBuilder {
     }
     /// <p>Return only this many results at a time.</p>
     pub fn set_max_result(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_result = input; self
+        self.max_result = input;
+        self
     }
     /// <p>Pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,30 +176,27 @@ impl ListTestGridSessionsInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTestGridSessionsInput`](crate::operation::list_test_grid_sessions::ListTestGridSessionsInput).
-    pub fn build(self) -> Result<crate::operation::list_test_grid_sessions::ListTestGridSessionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_test_grid_sessions::ListTestGridSessionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_test_grid_sessions::ListTestGridSessionsInput {
-                project_arn: self.project_arn
-                ,
-                status: self.status
-                ,
-                creation_time_after: self.creation_time_after
-                ,
-                creation_time_before: self.creation_time_before
-                ,
-                end_time_after: self.end_time_after
-                ,
-                end_time_before: self.end_time_before
-                ,
-                max_result: self.max_result
-                ,
-                next_token: self.next_token
-                ,
-            }
+                project_arn: self.project_arn,
+                status: self.status,
+                creation_time_after: self.creation_time_after,
+                creation_time_before: self.creation_time_before,
+                end_time_after: self.end_time_after,
+                end_time_before: self.end_time_before,
+                max_result: self.max_result,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

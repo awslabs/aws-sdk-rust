@@ -3,20 +3,20 @@
 /// <p>A request to obtain information about the event destinations for a configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConfigurationSetEventDestinationsInput  {
+pub struct GetConfigurationSetEventDestinationsInput {
     /// <p>The name of the configuration set that contains the event destination.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
 }
 impl GetConfigurationSetEventDestinationsInput {
     /// <p>The name of the configuration set that contains the event destination.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
 }
 impl GetConfigurationSetEventDestinationsInput {
     /// Creates a new builder-style object to manufacture [`GetConfigurationSetEventDestinationsInput`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput).
-    pub fn builder() -> crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsInputBuilder {
+    pub fn builder() -> crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsInputBuilder{
         crate::operation::get_configuration_set_event_destinations::builders::GetConfigurationSetEventDestinationsInputBuilder::default()
     }
 }
@@ -34,11 +34,15 @@ impl GetConfigurationSetEventDestinationsInputBuilder {
         self
     }
     /// <p>The name of the configuration set that contains the event destination.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_name = input; self
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetConfigurationSetEventDestinationsInput`](crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput).
-    pub fn build(self) -> Result<crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_configuration_set_event_destinations::GetConfigurationSetEventDestinationsInput {
                 configuration_set_name: self.configuration_set_name
@@ -47,4 +51,3 @@ impl GetConfigurationSetEventDestinationsInputBuilder {
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDetectorModelAnalysisOutput  {
+pub struct StartDetectorModelAnalysisOutput {
     /// <p>The ID that you can use to retrieve the analysis result.</p>
     #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct StartDetectorModelAnalysisOutput  {
 }
 impl StartDetectorModelAnalysisOutput {
     /// <p>The ID that you can use to retrieve the analysis result.</p>
-    pub fn analysis_id(&self) -> std::option::Option<& str> {
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartDetectorModelAnalysisOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartDetectorModelAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`StartDetectorModelAnalysisOutput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput).
-    pub fn builder() -> crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisOutputBuilder {
+    pub fn builder() -> crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisOutputBuilder{
         crate::operation::start_detector_model_analysis::builders::StartDetectorModelAnalysisOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl StartDetectorModelAnalysisOutputBuilder {
     }
     /// <p>The ID that you can use to retrieve the analysis result.</p>
     pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analysis_id = input; self
+        self.analysis_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartDetectorModelAnalysisOutput`](crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput).
-    pub fn build(self) -> crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput {
         crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput {
-            analysis_id: self.analysis_id
-            ,
+            analysis_id: self.analysis_id,
             _request_id: self._request_id,
         }
     }
 }
-

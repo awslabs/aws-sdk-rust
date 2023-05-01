@@ -176,4 +176,3 @@ pub mod builders;
 
 /// Error types that AWS Storage Gateway can respond with.
 pub mod error;
-

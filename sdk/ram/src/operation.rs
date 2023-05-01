@@ -102,4 +102,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateResourceShare` operation.
 pub mod update_resource_share;
-

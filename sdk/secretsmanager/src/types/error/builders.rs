@@ -22,4 +22,3 @@ pub use crate::types::error::_decryption_failure::DecryptionFailureBuilder;
 pub use crate::types::error::_public_policy_exception::PublicPolicyExceptionBuilder;
 
 pub use crate::types::error::_invalid_next_token_exception::InvalidNextTokenExceptionBuilder;
-

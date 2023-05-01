@@ -3,7 +3,7 @@
 /// <p>A group of fields that describe the current status of components that are no longer active.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentState  {
+pub struct ComponentState {
     /// <p>The current state of the component.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ComponentStatus>,
@@ -13,11 +13,11 @@ pub struct ComponentState  {
 }
 impl ComponentState {
     /// <p>The current state of the component.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ComponentStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ComponentStatus> {
         self.status.as_ref()
     }
     /// <p>Describes how or why the component changed state.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ComponentStateBuilder {
     }
     /// <p>The current state of the component.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ComponentStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>Describes how or why the component changed state.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ComponentStateBuilder {
     }
     /// <p>Describes how or why the component changed state.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComponentState`](crate::types::ComponentState).
     pub fn build(self) -> crate::types::ComponentState {
         crate::types::ComponentState {
-            status: self.status
-            ,
-            reason: self.reason
-            ,
+            status: self.status,
+            reason: self.reason,
         }
     }
 }
-

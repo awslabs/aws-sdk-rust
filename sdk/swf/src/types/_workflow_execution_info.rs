@@ -3,7 +3,7 @@
 /// <p>Contains information about a workflow execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkflowExecutionInfo  {
+pub struct WorkflowExecutionInfo {
     /// <p>The workflow execution this information is about.</p>
     #[doc(hidden)]
     pub execution: std::option::Option<crate::types::WorkflowExecution>,
@@ -19,14 +19,14 @@ pub struct WorkflowExecutionInfo  {
     /// <p>The current status of the execution.</p>
     #[doc(hidden)]
     pub execution_status: std::option::Option<crate::types::ExecutionStatus>,
-    /// <p>If the execution status is closed then this specifies how the execution was closed:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLETED</code> – the execution was successfully completed.</p> </li> 
-    /// <li> <p> <code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p> </li> 
-    /// <li> <p> <code>TERMINATED</code> – the execution was force terminated.</p> </li> 
-    /// <li> <p> <code>FAILED</code> – the execution failed to complete.</p> </li> 
-    /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li> 
-    /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li> 
+    /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> – the execution was successfully completed.</p> </li>
+    /// <li> <p> <code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p> </li>
+    /// <li> <p> <code>TERMINATED</code> – the execution was force terminated.</p> </li>
+    /// <li> <p> <code>FAILED</code> – the execution failed to complete.</p> </li>
+    /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li>
+    /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub close_status: std::option::Option<crate::types::CloseStatus>,
@@ -42,43 +42,43 @@ pub struct WorkflowExecutionInfo  {
 }
 impl WorkflowExecutionInfo {
     /// <p>The workflow execution this information is about.</p>
-    pub fn execution(&self) -> std::option::Option<& crate::types::WorkflowExecution> {
+    pub fn execution(&self) -> std::option::Option<&crate::types::WorkflowExecution> {
         self.execution.as_ref()
     }
     /// <p>The type of the workflow execution.</p>
-    pub fn workflow_type(&self) -> std::option::Option<& crate::types::WorkflowType> {
+    pub fn workflow_type(&self) -> std::option::Option<&crate::types::WorkflowType> {
         self.workflow_type.as_ref()
     }
     /// <p>The time when the execution was started.</p>
-    pub fn start_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_timestamp.as_ref()
     }
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
-    pub fn close_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn close_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.close_timestamp.as_ref()
     }
     /// <p>The current status of the execution.</p>
-    pub fn execution_status(&self) -> std::option::Option<& crate::types::ExecutionStatus> {
+    pub fn execution_status(&self) -> std::option::Option<&crate::types::ExecutionStatus> {
         self.execution_status.as_ref()
     }
-    /// <p>If the execution status is closed then this specifies how the execution was closed:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLETED</code> – the execution was successfully completed.</p> </li> 
-    /// <li> <p> <code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p> </li> 
-    /// <li> <p> <code>TERMINATED</code> – the execution was force terminated.</p> </li> 
-    /// <li> <p> <code>FAILED</code> – the execution failed to complete.</p> </li> 
-    /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li> 
-    /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li> 
+    /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> – the execution was successfully completed.</p> </li>
+    /// <li> <p> <code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p> </li>
+    /// <li> <p> <code>TERMINATED</code> – the execution was force terminated.</p> </li>
+    /// <li> <p> <code>FAILED</code> – the execution failed to complete.</p> </li>
+    /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li>
+    /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li>
     /// </ul>
-    pub fn close_status(&self) -> std::option::Option<& crate::types::CloseStatus> {
+    pub fn close_status(&self) -> std::option::Option<&crate::types::CloseStatus> {
         self.close_status.as_ref()
     }
     /// <p>If this workflow execution is a child of another execution then contains the workflow execution that started this execution.</p>
-    pub fn parent(&self) -> std::option::Option<& crate::types::WorkflowExecution> {
+    pub fn parent(&self) -> std::option::Option<&crate::types::WorkflowExecution> {
         self.parent.as_ref()
     }
     /// <p>The list of tags associated with the workflow execution. Tags can be used to identify and list workflow executions of interest through the visibility APIs. A workflow execution can have a maximum of 5 tags.</p>
-    pub fn tag_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_list(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_list.as_deref()
     }
     /// <p>Set to true if a cancellation is requested for this workflow execution.</p>
@@ -114,8 +114,12 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The workflow execution this information is about.</p>
-    pub fn set_execution(mut self, input: std::option::Option<crate::types::WorkflowExecution>) -> Self {
-        self.execution = input; self
+    pub fn set_execution(
+        mut self,
+        input: std::option::Option<crate::types::WorkflowExecution>,
+    ) -> Self {
+        self.execution = input;
+        self
     }
     /// <p>The type of the workflow execution.</p>
     pub fn workflow_type(mut self, input: crate::types::WorkflowType) -> Self {
@@ -123,8 +127,12 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The type of the workflow execution.</p>
-    pub fn set_workflow_type(mut self, input: std::option::Option<crate::types::WorkflowType>) -> Self {
-        self.workflow_type = input; self
+    pub fn set_workflow_type(
+        mut self,
+        input: std::option::Option<crate::types::WorkflowType>,
+    ) -> Self {
+        self.workflow_type = input;
+        self
     }
     /// <p>The time when the execution was started.</p>
     pub fn start_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -132,8 +140,12 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The time when the execution was started.</p>
-    pub fn set_start_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_timestamp = input; self
+    pub fn set_start_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_timestamp = input;
+        self
     }
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
     pub fn close_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -141,8 +153,12 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The time when the workflow execution was closed. Set only if the execution status is CLOSED.</p>
-    pub fn set_close_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.close_timestamp = input; self
+    pub fn set_close_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.close_timestamp = input;
+        self
     }
     /// <p>The current status of the execution.</p>
     pub fn execution_status(mut self, input: crate::types::ExecutionStatus) -> Self {
@@ -150,33 +166,41 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>The current status of the execution.</p>
-    pub fn set_execution_status(mut self, input: std::option::Option<crate::types::ExecutionStatus>) -> Self {
-        self.execution_status = input; self
+    pub fn set_execution_status(
+        mut self,
+        input: std::option::Option<crate::types::ExecutionStatus>,
+    ) -> Self {
+        self.execution_status = input;
+        self
     }
-    /// <p>If the execution status is closed then this specifies how the execution was closed:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLETED</code> – the execution was successfully completed.</p> </li> 
-    /// <li> <p> <code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p> </li> 
-    /// <li> <p> <code>TERMINATED</code> – the execution was force terminated.</p> </li> 
-    /// <li> <p> <code>FAILED</code> – the execution failed to complete.</p> </li> 
-    /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li> 
-    /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li> 
+    /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> – the execution was successfully completed.</p> </li>
+    /// <li> <p> <code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p> </li>
+    /// <li> <p> <code>TERMINATED</code> – the execution was force terminated.</p> </li>
+    /// <li> <p> <code>FAILED</code> – the execution failed to complete.</p> </li>
+    /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li>
+    /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li>
     /// </ul>
     pub fn close_status(mut self, input: crate::types::CloseStatus) -> Self {
         self.close_status = Some(input);
         self
     }
-    /// <p>If the execution status is closed then this specifies how the execution was closed:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLETED</code> – the execution was successfully completed.</p> </li> 
-    /// <li> <p> <code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p> </li> 
-    /// <li> <p> <code>TERMINATED</code> – the execution was force terminated.</p> </li> 
-    /// <li> <p> <code>FAILED</code> – the execution failed to complete.</p> </li> 
-    /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li> 
-    /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li> 
+    /// <p>If the execution status is closed then this specifies how the execution was closed:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLETED</code> – the execution was successfully completed.</p> </li>
+    /// <li> <p> <code>CANCELED</code> – the execution was canceled.Cancellation allows the implementation to gracefully clean up before the execution is closed.</p> </li>
+    /// <li> <p> <code>TERMINATED</code> – the execution was force terminated.</p> </li>
+    /// <li> <p> <code>FAILED</code> – the execution failed to complete.</p> </li>
+    /// <li> <p> <code>TIMED_OUT</code> – the execution did not complete in the alloted time and was automatically timed out.</p> </li>
+    /// <li> <p> <code>CONTINUED_AS_NEW</code> – the execution is logically continued. This means the current execution was completed and a new execution was started to carry on the workflow.</p> </li>
     /// </ul>
-    pub fn set_close_status(mut self, input: std::option::Option<crate::types::CloseStatus>) -> Self {
-        self.close_status = input; self
+    pub fn set_close_status(
+        mut self,
+        input: std::option::Option<crate::types::CloseStatus>,
+    ) -> Self {
+        self.close_status = input;
+        self
     }
     /// <p>If this workflow execution is a child of another execution then contains the workflow execution that started this execution.</p>
     pub fn parent(mut self, input: crate::types::WorkflowExecution) -> Self {
@@ -184,8 +208,12 @@ impl WorkflowExecutionInfoBuilder {
         self
     }
     /// <p>If this workflow execution is a child of another execution then contains the workflow execution that started this execution.</p>
-    pub fn set_parent(mut self, input: std::option::Option<crate::types::WorkflowExecution>) -> Self {
-        self.parent = input; self
+    pub fn set_parent(
+        mut self,
+        input: std::option::Option<crate::types::WorkflowExecution>,
+    ) -> Self {
+        self.parent = input;
+        self
     }
     /// Appends an item to `tag_list`.
     ///
@@ -194,13 +222,17 @@ impl WorkflowExecutionInfoBuilder {
     /// <p>The list of tags associated with the workflow execution. Tags can be used to identify and list workflow executions of interest through the visibility APIs. A workflow execution can have a maximum of 5 tags.</p>
     pub fn tag_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_list = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_list = Some(v);
+        self
     }
     /// <p>The list of tags associated with the workflow execution. Tags can be used to identify and list workflow executions of interest through the visibility APIs. A workflow execution can have a maximum of 5 tags.</p>
-    pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_list = input; self
+    pub fn set_tag_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_list = input;
+        self
     }
     /// <p>Set to true if a cancellation is requested for this workflow execution.</p>
     pub fn cancel_requested(mut self, input: bool) -> Self {
@@ -209,31 +241,21 @@ impl WorkflowExecutionInfoBuilder {
     }
     /// <p>Set to true if a cancellation is requested for this workflow execution.</p>
     pub fn set_cancel_requested(mut self, input: std::option::Option<bool>) -> Self {
-        self.cancel_requested = input; self
+        self.cancel_requested = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkflowExecutionInfo`](crate::types::WorkflowExecutionInfo).
     pub fn build(self) -> crate::types::WorkflowExecutionInfo {
         crate::types::WorkflowExecutionInfo {
-            execution: self.execution
-            ,
-            workflow_type: self.workflow_type
-            ,
-            start_timestamp: self.start_timestamp
-            ,
-            close_timestamp: self.close_timestamp
-            ,
-            execution_status: self.execution_status
-            ,
-            close_status: self.close_status
-            ,
-            parent: self.parent
-            ,
-            tag_list: self.tag_list
-            ,
-            cancel_requested: self.cancel_requested
-                .unwrap_or_default()
-            ,
+            execution: self.execution,
+            workflow_type: self.workflow_type,
+            start_timestamp: self.start_timestamp,
+            close_timestamp: self.close_timestamp,
+            execution_status: self.execution_status,
+            close_status: self.close_status,
+            parent: self.parent,
+            tag_list: self.tag_list,
+            cancel_requested: self.cancel_requested.unwrap_or_default(),
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateVoiceProfileDomainInput  {
+pub struct CreateVoiceProfileDomainInput {
     /// <p>The name of the voice profile domain.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -11,7 +11,8 @@ pub struct CreateVoiceProfileDomainInput  {
     pub description: std::option::Option<std::string::String>,
     /// <p>The server-side encryption configuration for the request.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration:
+        std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -21,29 +22,33 @@ pub struct CreateVoiceProfileDomainInput  {
 }
 impl CreateVoiceProfileDomainInput {
     /// <p>The name of the voice profile domain.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the voice profile domain.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The server-side encryption configuration for the request.</p>
-    pub fn server_side_encryption_configuration(&self) -> std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags assigned to the domain.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateVoiceProfileDomainInput {
     /// Creates a new builder-style object to manufacture [`CreateVoiceProfileDomainInput`](crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput).
-    pub fn builder() -> crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainInputBuilder
+    {
         crate::operation::create_voice_profile_domain::builders::CreateVoiceProfileDomainInputBuilder::default()
     }
 }
@@ -54,7 +59,8 @@ impl CreateVoiceProfileDomainInput {
 pub struct CreateVoiceProfileDomainInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) server_side_encryption_configuration: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub(crate) server_side_encryption_configuration:
+        std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) client_request_token: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
@@ -66,7 +72,8 @@ impl CreateVoiceProfileDomainInputBuilder {
     }
     /// <p>The name of the voice profile domain.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description of the voice profile domain.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,16 +82,24 @@ impl CreateVoiceProfileDomainInputBuilder {
     }
     /// <p>A description of the voice profile domain.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The server-side encryption configuration for the request.</p>
-    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
+    pub fn server_side_encryption_configuration(
+        mut self,
+        input: crate::types::ServerSideEncryptionConfiguration,
+    ) -> Self {
         self.server_side_encryption_configuration = Some(input);
         self
     }
     /// <p>The server-side encryption configuration for the request.</p>
-    pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input; self
+    pub fn set_server_side_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    ) -> Self {
+        self.server_side_encryption_configuration = input;
+        self
     }
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +107,12 @@ impl CreateVoiceProfileDomainInputBuilder {
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different domain creation requests.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -102,30 +121,33 @@ impl CreateVoiceProfileDomainInputBuilder {
     /// <p>The tags assigned to the domain.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags assigned to the domain.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateVoiceProfileDomainInput`](crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput).
-    pub fn build(self) -> Result<crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                server_side_encryption_configuration: self.server_side_encryption_configuration
-                ,
-                client_request_token: self.client_request_token
-                ,
-                tags: self.tags
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                server_side_encryption_configuration: self.server_side_encryption_configuration,
+                client_request_token: self.client_request_token,
+                tags: self.tags,
+            },
         )
     }
 }
-

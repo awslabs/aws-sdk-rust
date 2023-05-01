@@ -3,14 +3,14 @@
 /// <p>Information about the current creation or deletion lifecycle state of an Cloud9 development environment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentLifecycle  {
-    /// <p>The current creation or deletion lifecycle state of the environment.</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li> 
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li> 
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li> 
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li> 
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> 
+pub struct EnvironmentLifecycle {
+    /// <p>The current creation or deletion lifecycle state of the environment.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
+    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::EnvironmentLifecycleStatus>,
@@ -22,23 +22,23 @@ pub struct EnvironmentLifecycle  {
     pub failure_resource: std::option::Option<std::string::String>,
 }
 impl EnvironmentLifecycle {
-    /// <p>The current creation or deletion lifecycle state of the environment.</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li> 
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li> 
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li> 
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li> 
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> 
+    /// <p>The current creation or deletion lifecycle state of the environment.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
+    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::EnvironmentLifecycleStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::EnvironmentLifecycleStatus> {
         self.status.as_ref()
     }
     /// <p>Any informational message about the lifecycle state of the environment.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
-    pub fn failure_resource(&self) -> std::option::Option<& str> {
+    pub fn failure_resource(&self) -> std::option::Option<&str> {
         self.failure_resource.as_deref()
     }
 }
@@ -58,28 +58,32 @@ pub struct EnvironmentLifecycleBuilder {
     pub(crate) failure_resource: std::option::Option<std::string::String>,
 }
 impl EnvironmentLifecycleBuilder {
-    /// <p>The current creation or deletion lifecycle state of the environment.</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li> 
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li> 
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li> 
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li> 
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> 
+    /// <p>The current creation or deletion lifecycle state of the environment.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
+    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::EnvironmentLifecycleStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The current creation or deletion lifecycle state of the environment.</p> 
-    /// <ul> 
-    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li> 
-    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li> 
-    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li> 
-    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li> 
-    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li> 
+    /// <p>The current creation or deletion lifecycle state of the environment.</p>
+    /// <ul>
+    /// <li> <p> <code>CREATING</code>: The environment is in the process of being created.</p> </li>
+    /// <li> <p> <code>CREATED</code>: The environment was successfully created.</p> </li>
+    /// <li> <p> <code>CREATE_FAILED</code>: The environment failed to be created.</p> </li>
+    /// <li> <p> <code>DELETING</code>: The environment is in the process of being deleted.</p> </li>
+    /// <li> <p> <code>DELETE_FAILED</code>: The environment failed to delete.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::EnvironmentLifecycleStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::EnvironmentLifecycleStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Any informational message about the lifecycle state of the environment.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,7 +92,8 @@ impl EnvironmentLifecycleBuilder {
     }
     /// <p>Any informational message about the lifecycle state of the environment.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
     pub fn failure_resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,18 +102,15 @@ impl EnvironmentLifecycleBuilder {
     }
     /// <p>If the environment failed to delete, the Amazon Resource Name (ARN) of the related Amazon Web Services resource.</p>
     pub fn set_failure_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_resource = input; self
+        self.failure_resource = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnvironmentLifecycle`](crate::types::EnvironmentLifecycle).
     pub fn build(self) -> crate::types::EnvironmentLifecycle {
         crate::types::EnvironmentLifecycle {
-            status: self.status
-            ,
-            reason: self.reason
-            ,
-            failure_resource: self.failure_resource
-            ,
+            status: self.status,
+            reason: self.reason,
+            failure_resource: self.failure_resource,
         }
     }
 }
-

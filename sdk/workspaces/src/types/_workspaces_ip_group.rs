@@ -3,7 +3,7 @@
 /// <p>Describes an IP access control group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkspacesIpGroup  {
+pub struct WorkspacesIpGroup {
     /// <p>The identifier of the group.</p>
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct WorkspacesIpGroup  {
 }
 impl WorkspacesIpGroup {
     /// <p>The identifier of the group.</p>
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The description of the group.</p>
-    pub fn group_desc(&self) -> std::option::Option<& str> {
+    pub fn group_desc(&self) -> std::option::Option<&str> {
         self.group_desc.as_deref()
     }
     /// <p>The rules.</p>
-    pub fn user_rules(&self) -> std::option::Option<& [crate::types::IpRuleItem]> {
+    pub fn user_rules(&self) -> std::option::Option<&[crate::types::IpRuleItem]> {
         self.user_rules.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl WorkspacesIpGroupBuilder {
     }
     /// <p>The identifier of the group.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// <p>The name of the group.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl WorkspacesIpGroupBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p>The description of the group.</p>
     pub fn group_desc(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl WorkspacesIpGroupBuilder {
     }
     /// <p>The description of the group.</p>
     pub fn set_group_desc(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_desc = input; self
+        self.group_desc = input;
+        self
     }
     /// Appends an item to `user_rules`.
     ///
@@ -86,26 +89,25 @@ impl WorkspacesIpGroupBuilder {
     /// <p>The rules.</p>
     pub fn user_rules(mut self, input: crate::types::IpRuleItem) -> Self {
         let mut v = self.user_rules.unwrap_or_default();
-                        v.push(input);
-                        self.user_rules = Some(v);
-                        self
+        v.push(input);
+        self.user_rules = Some(v);
+        self
     }
     /// <p>The rules.</p>
-    pub fn set_user_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpRuleItem>>) -> Self {
-        self.user_rules = input; self
+    pub fn set_user_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IpRuleItem>>,
+    ) -> Self {
+        self.user_rules = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkspacesIpGroup`](crate::types::WorkspacesIpGroup).
     pub fn build(self) -> crate::types::WorkspacesIpGroup {
         crate::types::WorkspacesIpGroup {
-            group_id: self.group_id
-            ,
-            group_name: self.group_name
-            ,
-            group_desc: self.group_desc
-            ,
-            user_rules: self.user_rules
-            ,
+            group_id: self.group_id,
+            group_name: self.group_name,
+            group_desc: self.group_desc,
+            user_rules: self.user_rules,
         }
     }
 }
-

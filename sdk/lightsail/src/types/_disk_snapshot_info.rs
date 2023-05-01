@@ -3,7 +3,7 @@
 /// <p>Describes a disk snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiskSnapshotInfo  {
+pub struct DiskSnapshotInfo {
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     #[doc(hidden)]
     pub size_in_gb: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl DiskSnapshotInfoBuilder {
     }
     /// <p>The size of the disk in GB (e.g., <code>32</code>).</p>
     pub fn set_size_in_gb(mut self, input: std::option::Option<i32>) -> Self {
-        self.size_in_gb = input; self
+        self.size_in_gb = input;
+        self
     }
     /// Consumes the builder and constructs a [`DiskSnapshotInfo`](crate::types::DiskSnapshotInfo).
     pub fn build(self) -> crate::types::DiskSnapshotInfo {
         crate::types::DiskSnapshotInfo {
-            size_in_gb: self.size_in_gb
-            ,
+            size_in_gb: self.size_in_gb,
         }
     }
 }
-

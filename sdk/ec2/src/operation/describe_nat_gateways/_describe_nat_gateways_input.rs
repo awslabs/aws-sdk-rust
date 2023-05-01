@@ -2,24 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNatGatewaysInput  {
+pub struct DescribeNatGatewaysInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li> 
-    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li> 
-    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li> 
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filter: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -38,22 +38,22 @@ impl DescribeNatGatewaysInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li> 
-    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li> 
-    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li> 
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
-    pub fn filter(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filter(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filter.as_deref()
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
@@ -61,18 +61,20 @@ impl DescribeNatGatewaysInput {
         self.max_results
     }
     /// <p>One or more NAT gateway IDs.</p>
-    pub fn nat_gateway_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn nat_gateway_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.nat_gateway_ids.as_deref()
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeNatGatewaysInput {
     /// Creates a new builder-style object to manufacture [`DescribeNatGatewaysInput`](crate::operation::describe_nat_gateways::DescribeNatGatewaysInput).
-    pub fn builder() -> crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysInputBuilder {
-        crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysInputBuilder {
+        crate::operation::describe_nat_gateways::builders::DescribeNatGatewaysInputBuilder::default(
+        )
     }
 }
 
@@ -94,50 +96,55 @@ impl DescribeNatGatewaysInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Appends an item to `filter`.
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li> 
-    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li> 
-    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li> 
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filter.unwrap_or_default();
-                        v.push(input);
-                        self.filter = Some(v);
-                        self
+        v.push(input);
+        self.filter = Some(v);
+        self
     }
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li> 
-    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li> 
-    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>nat-gateway-id</code> - The ID of the NAT gateway.</p> </li>
+    /// <li> <p> <code>state</code> - The state of the NAT gateway (<code>pending</code> | <code>failed</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p> </li>
+    /// <li> <p> <code>subnet-id</code> - The ID of the subnet in which the NAT gateway resides.</p> </li>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
-    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li> 
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
+    /// <li> <p> <code>vpc-id</code> - The ID of the VPC in which the NAT gateway resides.</p> </li>
     /// </ul>
-    pub fn set_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filter = input; self
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filter = input;
+        self
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -146,7 +153,8 @@ impl DescribeNatGatewaysInputBuilder {
     }
     /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Appends an item to `nat_gateway_ids`.
     ///
@@ -155,13 +163,17 @@ impl DescribeNatGatewaysInputBuilder {
     /// <p>One or more NAT gateway IDs.</p>
     pub fn nat_gateway_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.nat_gateway_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.nat_gateway_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.nat_gateway_ids = Some(v);
+        self
     }
     /// <p>One or more NAT gateway IDs.</p>
-    pub fn set_nat_gateway_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.nat_gateway_ids = input; self
+    pub fn set_nat_gateway_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.nat_gateway_ids = input;
+        self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,24 +182,24 @@ impl DescribeNatGatewaysInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeNatGatewaysInput`](crate::operation::describe_nat_gateways::DescribeNatGatewaysInput).
-    pub fn build(self) -> Result<crate::operation::describe_nat_gateways::DescribeNatGatewaysInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_nat_gateways::DescribeNatGatewaysInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_nat_gateways::DescribeNatGatewaysInput {
-                dry_run: self.dry_run
-                ,
-                filter: self.filter
-                ,
-                max_results: self.max_results
-                ,
-                nat_gateway_ids: self.nat_gateway_ids
-                ,
-                next_token: self.next_token
-                ,
-            }
+                dry_run: self.dry_run,
+                filter: self.filter,
+                max_results: self.max_results,
+                nat_gateway_ids: self.nat_gateway_ids,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

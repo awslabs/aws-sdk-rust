@@ -3,16 +3,16 @@
 /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntityTypesListItem  {
-    /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p> 
+pub struct EntityTypesListItem {
+    /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
     /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
 }
 impl EntityTypesListItem {
-    /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p> 
+    /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
     /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -30,23 +30,22 @@ pub struct EntityTypesListItemBuilder {
     pub(crate) r#type: std::option::Option<std::string::String>,
 }
 impl EntityTypesListItemBuilder {
-    /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p> 
+    /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
     /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
         self.r#type = Some(input.into());
         self
     }
-    /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p> 
+    /// <p>An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.</p>
     /// <p>Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`EntityTypesListItem`](crate::types::EntityTypesListItem).
     pub fn build(self) -> crate::types::EntityTypesListItem {
         crate::types::EntityTypesListItem {
-            r#type: self.r#type
-            ,
+            r#type: self.r#type,
         }
     }
 }
-

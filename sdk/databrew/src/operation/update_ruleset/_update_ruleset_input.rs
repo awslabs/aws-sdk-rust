@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRulesetInput  {
+pub struct UpdateRulesetInput {
     /// <p>The name of the ruleset to be updated.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateRulesetInput  {
 }
 impl UpdateRulesetInput {
     /// <p>The name of the ruleset to be updated.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the ruleset.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
-    pub fn rules(&self) -> std::option::Option<& [crate::types::Rule]> {
+    pub fn rules(&self) -> std::option::Option<&[crate::types::Rule]> {
         self.rules.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl UpdateRulesetInputBuilder {
     }
     /// <p>The name of the ruleset to be updated.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the ruleset.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl UpdateRulesetInputBuilder {
     }
     /// <p>The description of the ruleset.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `rules`.
     ///
@@ -68,26 +70,29 @@ impl UpdateRulesetInputBuilder {
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-                        v.push(input);
-                        self.rules = Some(v);
-                        self
+        v.push(input);
+        self.rules = Some(v);
+        self
     }
     /// <p>A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.</p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::Rule>>) -> Self {
-        self.rules = input; self
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+    ) -> Self {
+        self.rules = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRulesetInput`](crate::operation::update_ruleset::UpdateRulesetInput).
-    pub fn build(self) -> Result<crate::operation::update_ruleset::UpdateRulesetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_ruleset::UpdateRulesetInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                rules: self.rules
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_ruleset::UpdateRulesetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_ruleset::UpdateRulesetInput {
+            name: self.name,
+            description: self.description,
+            rules: self.rules,
+        })
     }
 }
-

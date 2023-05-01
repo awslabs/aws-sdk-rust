@@ -3,20 +3,21 @@
 /// <p>Represents a request to display the template object (which includes the subject line, HTML part and text part) for the template you specify.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEmailTemplateInput  {
+pub struct GetEmailTemplateInput {
     /// <p>The name of the template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
 }
 impl GetEmailTemplateInput {
     /// <p>The name of the template.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
 }
 impl GetEmailTemplateInput {
     /// Creates a new builder-style object to manufacture [`GetEmailTemplateInput`](crate::operation::get_email_template::GetEmailTemplateInput).
-    pub fn builder() -> crate::operation::get_email_template::builders::GetEmailTemplateInputBuilder {
+    pub fn builder() -> crate::operation::get_email_template::builders::GetEmailTemplateInputBuilder
+    {
         crate::operation::get_email_template::builders::GetEmailTemplateInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl GetEmailTemplateInputBuilder {
     }
     /// <p>The name of the template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetEmailTemplateInput`](crate::operation::get_email_template::GetEmailTemplateInput).
-    pub fn build(self) -> Result<crate::operation::get_email_template::GetEmailTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_email_template::GetEmailTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_email_template::GetEmailTemplateInput {
-                template_name: self.template_name
-                ,
-            }
+                template_name: self.template_name,
+            },
         )
     }
 }
-

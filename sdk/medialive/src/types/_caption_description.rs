@@ -3,7 +3,7 @@
 /// Caption Description
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CaptionDescription  {
+pub struct CaptionDescription {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
     #[doc(hidden)]
     pub accessibility: std::option::Option<crate::types::AccessibilityType>,
@@ -25,27 +25,29 @@ pub struct CaptionDescription  {
 }
 impl CaptionDescription {
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
-    pub fn accessibility(&self) -> std::option::Option<& crate::types::AccessibilityType> {
+    pub fn accessibility(&self) -> std::option::Option<&crate::types::AccessibilityType> {
         self.accessibility.as_ref()
     }
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
-    pub fn caption_selector_name(&self) -> std::option::Option<& str> {
+    pub fn caption_selector_name(&self) -> std::option::Option<&str> {
         self.caption_selector_name.as_deref()
     }
     /// Additional settings for captions destination that depend on the destination type.
-    pub fn destination_settings(&self) -> std::option::Option<& crate::types::CaptionDestinationSettings> {
+    pub fn destination_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::CaptionDestinationSettings> {
         self.destination_settings.as_ref()
     }
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
-    pub fn language_code(&self) -> std::option::Option<& str> {
+    pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
-    pub fn language_description(&self) -> std::option::Option<& str> {
+    pub fn language_description(&self) -> std::option::Option<&str> {
         self.language_description.as_deref()
     }
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -74,8 +76,12 @@ impl CaptionDescriptionBuilder {
         self
     }
     /// Indicates whether the caption track implements accessibility features such as written descriptions of spoken dialog, music, and sounds.
-    pub fn set_accessibility(mut self, input: std::option::Option<crate::types::AccessibilityType>) -> Self {
-        self.accessibility = input; self
+    pub fn set_accessibility(
+        mut self,
+        input: std::option::Option<crate::types::AccessibilityType>,
+    ) -> Self {
+        self.accessibility = input;
+        self
     }
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
     pub fn caption_selector_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +89,12 @@ impl CaptionDescriptionBuilder {
         self
     }
     /// Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.
-    pub fn set_caption_selector_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.caption_selector_name = input; self
+    pub fn set_caption_selector_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.caption_selector_name = input;
+        self
     }
     /// Additional settings for captions destination that depend on the destination type.
     pub fn destination_settings(mut self, input: crate::types::CaptionDestinationSettings) -> Self {
@@ -92,8 +102,12 @@ impl CaptionDescriptionBuilder {
         self
     }
     /// Additional settings for captions destination that depend on the destination type.
-    pub fn set_destination_settings(mut self, input: std::option::Option<crate::types::CaptionDestinationSettings>) -> Self {
-        self.destination_settings = input; self
+    pub fn set_destination_settings(
+        mut self,
+        input: std::option::Option<crate::types::CaptionDestinationSettings>,
+    ) -> Self {
+        self.destination_settings = input;
+        self
     }
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
     pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +116,8 @@ impl CaptionDescriptionBuilder {
     }
     /// ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
     pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_code = input; self
+        self.language_code = input;
+        self
     }
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
     pub fn language_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +125,12 @@ impl CaptionDescriptionBuilder {
         self
     }
     /// Human readable information to indicate captions available for players (eg. English, or Spanish).
-    pub fn set_language_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_description = input; self
+    pub fn set_language_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.language_description = input;
+        self
     }
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,24 +139,18 @@ impl CaptionDescriptionBuilder {
     }
     /// Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CaptionDescription`](crate::types::CaptionDescription).
     pub fn build(self) -> crate::types::CaptionDescription {
         crate::types::CaptionDescription {
-            accessibility: self.accessibility
-            ,
-            caption_selector_name: self.caption_selector_name
-            ,
-            destination_settings: self.destination_settings
-            ,
-            language_code: self.language_code
-            ,
-            language_description: self.language_description
-            ,
-            name: self.name
-            ,
+            accessibility: self.accessibility,
+            caption_selector_name: self.caption_selector_name,
+            destination_settings: self.destination_settings,
+            language_code: self.language_code,
+            language_description: self.language_description,
+            name: self.name,
         }
     }
 }
-

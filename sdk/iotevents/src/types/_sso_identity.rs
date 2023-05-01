@@ -3,7 +3,7 @@
 /// <p>Contains information about your identity source in AWS Single Sign-On. For more information, see the <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html">AWS Single Sign-On User Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SsoIdentity  {
+pub struct SsoIdentity {
     /// <p>The ID of the AWS SSO identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SsoIdentity  {
 }
 impl SsoIdentity {
     /// <p>The ID of the AWS SSO identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<& str> {
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl SsoIdentityBuilder {
         self
     }
     /// <p>The ID of the AWS SSO identity store.</p>
-    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_store_id = input; self
+    pub fn set_identity_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_store_id = input;
+        self
     }
     /// <p>The user ID.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl SsoIdentityBuilder {
     }
     /// <p>The user ID.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`SsoIdentity`](crate::types::SsoIdentity).
     pub fn build(self) -> crate::types::SsoIdentity {
         crate::types::SsoIdentity {
-            identity_store_id: self.identity_store_id
-            ,
-            user_id: self.user_id
-            ,
+            identity_store_id: self.identity_store_id,
+            user_id: self.user_id,
         }
     }
 }
-

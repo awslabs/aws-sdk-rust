@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAccountStatusInput  {
+pub struct BatchGetAccountStatusInput {
     /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
     #[doc(hidden)]
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetAccountStatusInput {
     /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
-    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
 }
 impl BatchGetAccountStatusInput {
     /// Creates a new builder-style object to manufacture [`BatchGetAccountStatusInput`](crate::operation::batch_get_account_status::BatchGetAccountStatusInput).
-    pub fn builder() -> crate::operation::batch_get_account_status::builders::BatchGetAccountStatusInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_get_account_status::builders::BatchGetAccountStatusInputBuilder
+    {
         crate::operation::batch_get_account_status::builders::BatchGetAccountStatusInputBuilder::default()
     }
 }
@@ -34,22 +36,29 @@ impl BatchGetAccountStatusInputBuilder {
     /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.account_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
     }
     /// <p>The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.</p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.account_ids = input; self
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetAccountStatusInput`](crate::operation::batch_get_account_status::BatchGetAccountStatusInput).
-    pub fn build(self) -> Result<crate::operation::batch_get_account_status::BatchGetAccountStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_get_account_status::BatchGetAccountStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_get_account_status::BatchGetAccountStatusInput {
-                account_ids: self.account_ids
-                ,
-            }
+                account_ids: self.account_ids,
+            },
         )
     }
 }
-

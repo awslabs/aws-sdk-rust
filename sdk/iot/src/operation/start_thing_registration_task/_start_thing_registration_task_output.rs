@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartThingRegistrationTaskOutput  {
+pub struct StartThingRegistrationTaskOutput {
     /// <p>The bulk thing provisioning task ID.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct StartThingRegistrationTaskOutput  {
 }
 impl StartThingRegistrationTaskOutput {
     /// <p>The bulk thing provisioning task ID.</p>
-    pub fn task_id(&self) -> std::option::Option<& str> {
+    pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartThingRegistrationTaskOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartThingRegistrationTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartThingRegistrationTaskOutput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput).
-    pub fn builder() -> crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskOutputBuilder {
+    pub fn builder() -> crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskOutputBuilder{
         crate::operation::start_thing_registration_task::builders::StartThingRegistrationTaskOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl StartThingRegistrationTaskOutputBuilder {
     }
     /// <p>The bulk thing provisioning task ID.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input; self
+        self.task_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartThingRegistrationTaskOutput`](crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput).
-    pub fn build(self) -> crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput {
         crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput {
-            task_id: self.task_id
-            ,
+            task_id: self.task_id,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The data for a given domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MailDomainSummary  {
+pub struct MailDomainSummary {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct MailDomainSummary  {
 }
 impl MailDomainSummary {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Whether the domain is default or not.</p>
@@ -43,7 +43,8 @@ impl MailDomainSummaryBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>Whether the domain is default or not.</p>
     pub fn default_domain(mut self, input: bool) -> Self {
@@ -52,17 +53,14 @@ impl MailDomainSummaryBuilder {
     }
     /// <p>Whether the domain is default or not.</p>
     pub fn set_default_domain(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_domain = input; self
+        self.default_domain = input;
+        self
     }
     /// Consumes the builder and constructs a [`MailDomainSummary`](crate::types::MailDomainSummary).
     pub fn build(self) -> crate::types::MailDomainSummary {
         crate::types::MailDomainSummary {
-            domain_name: self.domain_name
-            ,
-            default_domain: self.default_domain
-                .unwrap_or_default()
-            ,
+            domain_name: self.domain_name,
+            default_domain: self.default_domain.unwrap_or_default(),
         }
     }
 }
-

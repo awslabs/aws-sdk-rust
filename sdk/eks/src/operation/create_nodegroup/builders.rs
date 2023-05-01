@@ -4,53 +4,69 @@ pub use crate::operation::create_nodegroup::_create_nodegroup_output::CreateNode
 pub use crate::operation::create_nodegroup::_create_nodegroup_input::CreateNodegroupInputBuilder;
 
 /// Fluent builder constructing a request to `CreateNodegroup`.
-/// 
-/// <p>Creates a managed node group for an Amazon EKS cluster. You can only create a node group for your cluster that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI release version for the respective minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch template. For more information about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>.</p> 
-/// <p>An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are managed by Amazon Web Services for an Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed node groups</a> in the <i>Amazon EKS User Guide</i>.</p> <note> 
-/// <p>Windows AMI types are only supported for commercial Regions that support Windows Amazon EKS.</p> 
+///
+/// <p>Creates a managed node group for an Amazon EKS cluster. You can only create a node group for your cluster that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI release version for the respective minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch template. For more information about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>.</p>
+/// <p>An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are managed by Amazon Web Services for an Amazon EKS cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed node groups</a> in the <i>Amazon EKS User Guide</i>.</p> <note>
+/// <p>Windows AMI types are only supported for commercial Regions that support Windows Amazon EKS.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNodegroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_nodegroup::builders::CreateNodegroupInputBuilder,
+    inner: crate::operation::create_nodegroup::builders::CreateNodegroupInputBuilder,
 }
-impl CreateNodegroupFluentBuilder  {
+impl CreateNodegroupFluentBuilder {
     /// Creates a new `CreateNodegroup`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_nodegroup::CreateNodegroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_nodegroup::CreateNodegroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_nodegroup::CreateNodegroupOutput, aws_smithy_http::result::SdkError<crate::operation::create_nodegroup::CreateNodegroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_nodegroup::CreateNodegroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_nodegroup::CreateNodegroupError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_nodegroup::CreateNodegroupOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_nodegroup::CreateNodegroupError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the cluster to create the node group in.</p>
     pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -77,7 +93,10 @@ impl CreateNodegroupFluentBuilder  {
         self
     }
     /// <p>The scaling configuration details for the Auto Scaling group that is created for your node group.</p>
-    pub fn set_scaling_config(mut self, input: std::option::Option<crate::types::NodegroupScalingConfig>) -> Self {
+    pub fn set_scaling_config(
+        mut self,
+        input: std::option::Option<crate::types::NodegroupScalingConfig>,
+    ) -> Self {
         self.inner = self.inner.set_scaling_config(input);
         self
     }
@@ -101,7 +120,10 @@ impl CreateNodegroupFluentBuilder  {
         self
     }
     /// <p>The subnets to use for the Auto Scaling group that is created for your node group. If you specify <code>launchTemplate</code>, then don't specify <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html"> <code>SubnetId</code> </a> in your launch template, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_subnets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_subnets(input);
         self
     }
@@ -115,7 +137,10 @@ impl CreateNodegroupFluentBuilder  {
         self
     }
     /// <p>Specify the instance types for a node group. If you specify a GPU instance type, make sure to also specify an applicable GPU AMI type with the <code>amiType</code> parameter. If you specify <code>launchTemplate</code>, then you can specify zero or one instance type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>. If however, you specify an instance type in your launch template <i>and</i> specify any <code>instanceTypes</code>, the node group deployment will fail. If you don't specify an instance type in a launch template or for <code>instanceTypes</code>, then <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>, then we recommend specifying multiple values for <code>instanceTypes</code>. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn set_instance_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_instance_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_instance_types(input);
         self
     }
@@ -135,7 +160,10 @@ impl CreateNodegroupFluentBuilder  {
         self
     }
     /// <p>The remote access configuration to use with your node group. For Linux, the protocol is SSH. For Windows, the protocol is RDP. If you specify <code>launchTemplate</code>, then don't specify <code>remoteAccess</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
-    pub fn set_remote_access(mut self, input: std::option::Option<crate::types::RemoteAccessConfig>) -> Self {
+    pub fn set_remote_access(
+        mut self,
+        input: std::option::Option<crate::types::RemoteAccessConfig>,
+    ) -> Self {
         self.inner = self.inner.set_remote_access(input);
         self
     }
@@ -154,12 +182,21 @@ impl CreateNodegroupFluentBuilder  {
     /// To override the contents of this collection use [`set_labels`](Self::set_labels).
     ///
     /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are created.</p>
-    pub fn labels(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn labels(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.labels(k.into(), v.into());
         self
     }
     /// <p>The Kubernetes labels to be applied to the nodes in the node group when they are created.</p>
-    pub fn set_labels(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_labels(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_labels(input);
         self
     }
@@ -173,7 +210,10 @@ impl CreateNodegroupFluentBuilder  {
         self
     }
     /// <p>The Kubernetes taints to be applied to the nodes in the node group. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node taints on managed node groups</a>.</p>
-    pub fn set_taints(mut self, input: std::option::Option<std::vec::Vec<crate::types::Taint>>) -> Self {
+    pub fn set_taints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Taint>>,
+    ) -> Self {
         self.inner = self.inner.set_taints(input);
         self
     }
@@ -182,12 +222,21 @@ impl CreateNodegroupFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The metadata to apply to the node group to assist with categorization and organization. Each tag consists of a key and an optional value. You define both. Node group tags do not propagate to any other resources associated with the node group, such as the Amazon EC2 instances or subnets.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -197,7 +246,10 @@ impl CreateNodegroupFluentBuilder  {
         self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -207,7 +259,10 @@ impl CreateNodegroupFluentBuilder  {
         self
     }
     /// <p>An object representing a node group's launch template specification. If specified, then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code> and make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>.</p>
-    pub fn set_launch_template(mut self, input: std::option::Option<crate::types::LaunchTemplateSpecification>) -> Self {
+    pub fn set_launch_template(
+        mut self,
+        input: std::option::Option<crate::types::LaunchTemplateSpecification>,
+    ) -> Self {
         self.inner = self.inner.set_launch_template(input);
         self
     }
@@ -217,7 +272,10 @@ impl CreateNodegroupFluentBuilder  {
         self
     }
     /// <p>The node group update configuration.</p>
-    pub fn set_update_config(mut self, input: std::option::Option<crate::types::NodegroupUpdateConfig>) -> Self {
+    pub fn set_update_config(
+        mut self,
+        input: std::option::Option<crate::types::NodegroupUpdateConfig>,
+    ) -> Self {
         self.inner = self.inner.set_update_config(input);
         self
     }
@@ -227,7 +285,10 @@ impl CreateNodegroupFluentBuilder  {
         self
     }
     /// <p>The capacity type for your node group.</p>
-    pub fn set_capacity_type(mut self, input: std::option::Option<crate::types::CapacityTypes>) -> Self {
+    pub fn set_capacity_type(
+        mut self,
+        input: std::option::Option<crate::types::CapacityTypes>,
+    ) -> Self {
         self.inner = self.inner.set_capacity_type(input);
         self
     }
@@ -241,17 +302,16 @@ impl CreateNodegroupFluentBuilder  {
         self.inner = self.inner.set_version(input);
         self
     }
-    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p> 
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn release_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.release_version(input.into());
         self
     }
-    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p> 
+    /// <p>The AMI version of the Amazon EKS optimized AMI to use with your node group. By default, the latest available AMI version for the node group's current Kubernetes version is used. For information about Linux versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
     /// <p>If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.</p>
     pub fn set_release_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_release_version(input);
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Summary information about a bot returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBots.html">ListBots</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotSummary  {
+pub struct BotSummary {
     /// <p>The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a> operation.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct BotSummary  {
 }
 impl BotSummary {
     /// <p>The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a> operation.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The name of the bot.</p>
-    pub fn bot_name(&self) -> std::option::Option<& str> {
+    pub fn bot_name(&self) -> std::option::Option<&str> {
         self.bot_name.as_deref()
     }
     /// <p>The description of the bot.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready for use.</p>
-    pub fn bot_status(&self) -> std::option::Option<& crate::types::BotStatus> {
+    pub fn bot_status(&self) -> std::option::Option<&crate::types::BotStatus> {
         self.bot_status.as_ref()
     }
     /// <p>The latest numerical version in use for the bot.</p>
-    pub fn latest_bot_version(&self) -> std::option::Option<& str> {
+    pub fn latest_bot_version(&self) -> std::option::Option<&str> {
         self.latest_bot_version.as_deref()
     }
     /// <p>The date and time that the bot was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The type of the bot.</p>
-    pub fn bot_type(&self) -> std::option::Option<& crate::types::BotType> {
+    pub fn bot_type(&self) -> std::option::Option<&crate::types::BotType> {
         self.bot_type.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl BotSummaryBuilder {
     }
     /// <p>The unique identifier assigned to the bot. Use this ID to get detailed information about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a> operation.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The name of the bot.</p>
     pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +93,8 @@ impl BotSummaryBuilder {
     }
     /// <p>The name of the bot.</p>
     pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_name = input; self
+        self.bot_name = input;
+        self
     }
     /// <p>The description of the bot.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +103,8 @@ impl BotSummaryBuilder {
     }
     /// <p>The description of the bot.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready for use.</p>
     pub fn bot_status(mut self, input: crate::types::BotStatus) -> Self {
@@ -110,7 +113,8 @@ impl BotSummaryBuilder {
     }
     /// <p>The current status of the bot. When the status is <code>Available</code> the bot is ready for use.</p>
     pub fn set_bot_status(mut self, input: std::option::Option<crate::types::BotStatus>) -> Self {
-        self.bot_status = input; self
+        self.bot_status = input;
+        self
     }
     /// <p>The latest numerical version in use for the bot.</p>
     pub fn latest_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +122,12 @@ impl BotSummaryBuilder {
         self
     }
     /// <p>The latest numerical version in use for the bot.</p>
-    pub fn set_latest_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.latest_bot_version = input; self
+    pub fn set_latest_bot_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.latest_bot_version = input;
+        self
     }
     /// <p>The date and time that the bot was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,8 +135,12 @@ impl BotSummaryBuilder {
         self
     }
     /// <p>The date and time that the bot was last updated.</p>
-    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input; self
+    pub fn set_last_updated_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_date_time = input;
+        self
     }
     /// <p>The type of the bot.</p>
     pub fn bot_type(mut self, input: crate::types::BotType) -> Self {
@@ -137,26 +149,19 @@ impl BotSummaryBuilder {
     }
     /// <p>The type of the bot.</p>
     pub fn set_bot_type(mut self, input: std::option::Option<crate::types::BotType>) -> Self {
-        self.bot_type = input; self
+        self.bot_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`BotSummary`](crate::types::BotSummary).
     pub fn build(self) -> crate::types::BotSummary {
         crate::types::BotSummary {
-            bot_id: self.bot_id
-            ,
-            bot_name: self.bot_name
-            ,
-            description: self.description
-            ,
-            bot_status: self.bot_status
-            ,
-            latest_bot_version: self.latest_bot_version
-            ,
-            last_updated_date_time: self.last_updated_date_time
-            ,
-            bot_type: self.bot_type
-            ,
+            bot_id: self.bot_id,
+            bot_name: self.bot_name,
+            description: self.description,
+            bot_status: self.bot_status,
+            latest_bot_version: self.latest_bot_version,
+            last_updated_date_time: self.last_updated_date_time,
+            bot_type: self.bot_type,
         }
     }
 }
-

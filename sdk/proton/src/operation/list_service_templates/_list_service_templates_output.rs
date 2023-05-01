@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListServiceTemplatesOutput  {
+pub struct ListServiceTemplatesOutput {
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct ListServiceTemplatesOutput  {
 }
 impl ListServiceTemplatesOutput {
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An array of service templates with detail data.</p>
-    pub fn templates(&self) -> std::option::Option<& [crate::types::ServiceTemplateSummary]> {
+    pub fn templates(&self) -> std::option::Option<&[crate::types::ServiceTemplateSummary]> {
         self.templates.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListServiceTemplatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListServiceTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListServiceTemplatesOutput`](crate::operation::list_service_templates::ListServiceTemplatesOutput).
-    pub fn builder() -> crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder {
         crate::operation::list_service_templates::builders::ListServiceTemplatesOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl ListServiceTemplatesOutputBuilder {
     }
     /// <p>A token that indicates the location of the next service template in the array of service templates, after the current requested list of service templates.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `templates`.
     ///
@@ -58,32 +60,33 @@ impl ListServiceTemplatesOutputBuilder {
     /// <p>An array of service templates with detail data.</p>
     pub fn templates(mut self, input: crate::types::ServiceTemplateSummary) -> Self {
         let mut v = self.templates.unwrap_or_default();
-                        v.push(input);
-                        self.templates = Some(v);
-                        self
+        v.push(input);
+        self.templates = Some(v);
+        self
     }
     /// <p>An array of service templates with detail data.</p>
-    pub fn set_templates(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceTemplateSummary>>) -> Self {
-        self.templates = input; self
+    pub fn set_templates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ServiceTemplateSummary>>,
+    ) -> Self {
+        self.templates = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListServiceTemplatesOutput`](crate::operation::list_service_templates::ListServiceTemplatesOutput).
     pub fn build(self) -> crate::operation::list_service_templates::ListServiceTemplatesOutput {
         crate::operation::list_service_templates::ListServiceTemplatesOutput {
-            next_token: self.next_token
-            ,
-            templates: self.templates
-            ,
+            next_token: self.next_token,
+            templates: self.templates,
             _request_id: self._request_id,
         }
     }
 }
-

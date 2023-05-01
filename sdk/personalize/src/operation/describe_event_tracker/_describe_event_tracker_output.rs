@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventTrackerOutput  {
+pub struct DescribeEventTrackerOutput {
     /// <p>An object that describes the event tracker.</p>
     #[doc(hidden)]
     pub event_tracker: std::option::Option<crate::types::EventTracker>,
@@ -10,18 +10,19 @@ pub struct DescribeEventTrackerOutput  {
 }
 impl DescribeEventTrackerOutput {
     /// <p>An object that describes the event tracker.</p>
-    pub fn event_tracker(&self) -> std::option::Option<& crate::types::EventTracker> {
+    pub fn event_tracker(&self) -> std::option::Option<&crate::types::EventTracker> {
         self.event_tracker.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEventTrackerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEventTrackerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventTrackerOutput`](crate::operation::describe_event_tracker::DescribeEventTrackerOutput).
-    pub fn builder() -> crate::operation::describe_event_tracker::builders::DescribeEventTrackerOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_event_tracker::builders::DescribeEventTrackerOutputBuilder {
         crate::operation::describe_event_tracker::builders::DescribeEventTrackerOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl DescribeEventTrackerOutputBuilder {
         self
     }
     /// <p>An object that describes the event tracker.</p>
-    pub fn set_event_tracker(mut self, input: std::option::Option<crate::types::EventTracker>) -> Self {
-        self.event_tracker = input; self
+    pub fn set_event_tracker(
+        mut self,
+        input: std::option::Option<crate::types::EventTracker>,
+    ) -> Self {
+        self.event_tracker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEventTrackerOutput`](crate::operation::describe_event_tracker::DescribeEventTrackerOutput).
     pub fn build(self) -> crate::operation::describe_event_tracker::DescribeEventTrackerOutput {
         crate::operation::describe_event_tracker::DescribeEventTrackerOutput {
-            event_tracker: self.event_tracker
-            ,
+            event_tracker: self.event_tracker,
             _request_id: self._request_id,
         }
     }
 }
-

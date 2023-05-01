@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeviceMetadataInput  {
+pub struct UpdateDeviceMetadataInput {
     /// <p>The device's ID.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct UpdateDeviceMetadataInput  {
 }
 impl UpdateDeviceMetadataInput {
     /// <p>The device's ID.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>A description for the device.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
 impl UpdateDeviceMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateDeviceMetadataInput`](crate::operation::update_device_metadata::UpdateDeviceMetadataInput).
-    pub fn builder() -> crate::operation::update_device_metadata::builders::UpdateDeviceMetadataInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_device_metadata::builders::UpdateDeviceMetadataInputBuilder {
         crate::operation::update_device_metadata::builders::UpdateDeviceMetadataInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl UpdateDeviceMetadataInputBuilder {
     }
     /// <p>The device's ID.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// <p>A description for the device.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl UpdateDeviceMetadataInputBuilder {
     }
     /// <p>A description for the device.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDeviceMetadataInput`](crate::operation::update_device_metadata::UpdateDeviceMetadataInput).
-    pub fn build(self) -> Result<crate::operation::update_device_metadata::UpdateDeviceMetadataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_device_metadata::UpdateDeviceMetadataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_device_metadata::UpdateDeviceMetadataInput {
-                device_id: self.device_id
-                ,
-                description: self.description
-                ,
-            }
+                device_id: self.device_id,
+                description: self.description,
+            },
         )
     }
 }
-

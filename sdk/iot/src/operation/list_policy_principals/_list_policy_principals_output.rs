@@ -3,7 +3,7 @@
 /// <p>The output from the ListPolicyPrincipals operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPolicyPrincipalsOutput  {
+pub struct ListPolicyPrincipalsOutput {
     /// <p>The descriptions of the principals.</p>
     #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14,22 +14,23 @@ pub struct ListPolicyPrincipalsOutput  {
 }
 impl ListPolicyPrincipalsOutput {
     /// <p>The descriptions of the principals.</p>
-    pub fn principals(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPolicyPrincipalsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListPolicyPrincipalsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyPrincipalsOutput`](crate::operation::list_policy_principals::ListPolicyPrincipalsOutput).
-    pub fn builder() -> crate::operation::list_policy_principals::builders::ListPolicyPrincipalsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_policy_principals::builders::ListPolicyPrincipalsOutputBuilder {
         crate::operation::list_policy_principals::builders::ListPolicyPrincipalsOutputBuilder::default()
     }
 }
@@ -50,13 +51,17 @@ impl ListPolicyPrincipalsOutputBuilder {
     /// <p>The descriptions of the principals.</p>
     pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
-                        v.push(input.into());
-                        self.principals = Some(v);
-                        self
+        v.push(input.into());
+        self.principals = Some(v);
+        self
     }
     /// <p>The descriptions of the principals.</p>
-    pub fn set_principals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.principals = input; self
+    pub fn set_principals(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.principals = input;
+        self
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +70,24 @@ impl ListPolicyPrincipalsOutputBuilder {
     }
     /// <p>The marker for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListPolicyPrincipalsOutput`](crate::operation::list_policy_principals::ListPolicyPrincipalsOutput).
     pub fn build(self) -> crate::operation::list_policy_principals::ListPolicyPrincipalsOutput {
         crate::operation::list_policy_principals::ListPolicyPrincipalsOutput {
-            principals: self.principals
-            ,
-            next_marker: self.next_marker
-            ,
+            principals: self.principals,
+            next_marker: self.next_marker,
             _request_id: self._request_id,
         }
     }
 }
-

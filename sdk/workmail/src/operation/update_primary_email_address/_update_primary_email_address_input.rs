@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePrimaryEmailAddressInput  {
+pub struct UpdatePrimaryEmailAddressInput {
     /// <p>The organization that contains the user, group, or resource to update.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct UpdatePrimaryEmailAddressInput  {
 }
 impl UpdatePrimaryEmailAddressInput {
     /// <p>The organization that contains the user, group, or resource to update.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The user, group, or resource to update.</p>
-    pub fn entity_id(&self) -> std::option::Option<& str> {
+    pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
     /// <p>The value of the email to be updated as primary.</p>
-    pub fn email(&self) -> std::option::Option<& str> {
+    pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
 }
 impl UpdatePrimaryEmailAddressInput {
     /// Creates a new builder-style object to manufacture [`UpdatePrimaryEmailAddressInput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput).
-    pub fn builder() -> crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressInputBuilder {
+    pub fn builder() -> crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressInputBuilder{
         crate::operation::update_primary_email_address::builders::UpdatePrimaryEmailAddressInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl UpdatePrimaryEmailAddressInputBuilder {
     }
     /// <p>The organization that contains the user, group, or resource to update.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The user, group, or resource to update.</p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl UpdatePrimaryEmailAddressInputBuilder {
     }
     /// <p>The user, group, or resource to update.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input; self
+        self.entity_id = input;
+        self
     }
     /// <p>The value of the email to be updated as primary.</p>
     pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,22 @@ impl UpdatePrimaryEmailAddressInputBuilder {
     }
     /// <p>The value of the email to be updated as primary.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email = input; self
+        self.email = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePrimaryEmailAddressInput`](crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput).
-    pub fn build(self) -> Result<crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressInput {
-                organization_id: self.organization_id
-                ,
-                entity_id: self.entity_id
-                ,
-                email: self.email
-                ,
-            }
+                organization_id: self.organization_id,
+                entity_id: self.entity_id,
+                email: self.email,
+            },
         )
     }
 }
-

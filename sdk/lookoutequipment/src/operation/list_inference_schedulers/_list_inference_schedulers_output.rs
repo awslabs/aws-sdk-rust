@@ -2,33 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInferenceSchedulersOutput  {
+pub struct ListInferenceSchedulersOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
     #[doc(hidden)]
-    pub inference_scheduler_summaries: std::option::Option<std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
+    pub inference_scheduler_summaries:
+        std::option::Option<std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceSchedulersOutput {
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
-    pub fn inference_scheduler_summaries(&self) -> std::option::Option<& [crate::types::InferenceSchedulerSummary]> {
+    pub fn inference_scheduler_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::InferenceSchedulerSummary]> {
         self.inference_scheduler_summaries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListInferenceSchedulersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListInferenceSchedulersOutput {
     /// Creates a new builder-style object to manufacture [`ListInferenceSchedulersOutput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput).
-    pub fn builder() -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersOutputBuilder
+    {
         crate::operation::list_inference_schedulers::builders::ListInferenceSchedulersOutputBuilder::default()
     }
 }
@@ -38,7 +43,8 @@ impl ListInferenceSchedulersOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListInferenceSchedulersOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) inference_scheduler_summaries: std::option::Option<std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
+    pub(crate) inference_scheduler_summaries:
+        std::option::Option<std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
     _request_id: Option<String>,
 }
 impl ListInferenceSchedulersOutputBuilder {
@@ -49,41 +55,48 @@ impl ListInferenceSchedulersOutputBuilder {
     }
     /// <p> An opaque pagination token indicating where to continue the listing of inference schedulers. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `inference_scheduler_summaries`.
     ///
     /// To override the contents of this collection use [`set_inference_scheduler_summaries`](Self::set_inference_scheduler_summaries).
     ///
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
-    pub fn inference_scheduler_summaries(mut self, input: crate::types::InferenceSchedulerSummary) -> Self {
+    pub fn inference_scheduler_summaries(
+        mut self,
+        input: crate::types::InferenceSchedulerSummary,
+    ) -> Self {
         let mut v = self.inference_scheduler_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.inference_scheduler_summaries = Some(v);
-                        self
+        v.push(input);
+        self.inference_scheduler_summaries = Some(v);
+        self
     }
     /// <p>Provides information about the specified inference scheduler, including data upload frequency, model name and ARN, and status. </p>
-    pub fn set_inference_scheduler_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::InferenceSchedulerSummary>>) -> Self {
-        self.inference_scheduler_summaries = input; self
+    pub fn set_inference_scheduler_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InferenceSchedulerSummary>>,
+    ) -> Self {
+        self.inference_scheduler_summaries = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListInferenceSchedulersOutput`](crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput).
-    pub fn build(self) -> crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput {
         crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput {
-            next_token: self.next_token
-            ,
-            inference_scheduler_summaries: self.inference_scheduler_summaries
-            ,
+            next_token: self.next_token,
+            inference_scheduler_summaries: self.inference_scheduler_summaries,
             _request_id: self._request_id,
         }
     }
 }
-

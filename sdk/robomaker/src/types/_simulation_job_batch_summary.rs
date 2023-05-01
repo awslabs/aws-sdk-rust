@@ -3,7 +3,7 @@
 /// <p>Information about a simulation job batch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationJobBatchSummary  {
+pub struct SimulationJobBatchSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,63 +13,63 @@ pub struct SimulationJobBatchSummary  {
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the simulation job batch.</p> 
-    /// <dl> 
+    /// <p>The status of the simulation job batch.</p>
+    /// <dl>
     /// <dt>
     /// Pending
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch request is pending.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch request is pending.</p>
+    /// </dd>
     /// <dt>
     /// InProgress
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch is in progress. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is in progress. </p>
+    /// </dd>
     /// <dt>
     /// Failed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
+    /// </dd>
     /// <dt>
     /// Completed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
+    /// </dd>
     /// <dt>
     /// Canceled
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job was cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job was cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Canceling
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job is being cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is being cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Completing
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job is completing.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is completing.</p>
+    /// </dd>
     /// <dt>
     /// TimingOut
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch is timing out.</p> 
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is timing out.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
+    /// </dd>
     /// <dt>
     /// TimedOut
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job timed out.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job timed out.</p>
+    /// </dd>
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::SimulationJobBatchStatus>,
@@ -85,76 +85,76 @@ pub struct SimulationJobBatchSummary  {
 }
 impl SimulationJobBatchSummary {
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The status of the simulation job batch.</p> 
-    /// <dl> 
+    /// <p>The status of the simulation job batch.</p>
+    /// <dl>
     /// <dt>
     /// Pending
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch request is pending.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch request is pending.</p>
+    /// </dd>
     /// <dt>
     /// InProgress
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch is in progress. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is in progress. </p>
+    /// </dd>
     /// <dt>
     /// Failed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
+    /// </dd>
     /// <dt>
     /// Completed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
+    /// </dd>
     /// <dt>
     /// Canceled
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job was cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job was cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Canceling
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job is being cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is being cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Completing
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job is completing.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is completing.</p>
+    /// </dd>
     /// <dt>
     /// TimingOut
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch is timing out.</p> 
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is timing out.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
+    /// </dd>
     /// <dt>
     /// TimedOut
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job timed out.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job timed out.</p>
+    /// </dd>
     /// </dl>
-    pub fn status(&self) -> std::option::Option<& crate::types::SimulationJobBatchStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::SimulationJobBatchStatus> {
         self.status.as_ref()
     }
     /// <p>The number of failed simulation job requests.</p>
@@ -197,7 +197,8 @@ impl SimulationJobBatchSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the batch.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -205,8 +206,12 @@ impl SimulationJobBatchSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was last updated.</p>
-    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input; self
+    pub fn set_last_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_at = input;
+        self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -214,131 +219,139 @@ impl SimulationJobBatchSummaryBuilder {
         self
     }
     /// <p>The time, in milliseconds since the epoch, when the simulation job batch was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
-    /// <p>The status of the simulation job batch.</p> 
-    /// <dl> 
+    /// <p>The status of the simulation job batch.</p>
+    /// <dl>
     /// <dt>
     /// Pending
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch request is pending.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch request is pending.</p>
+    /// </dd>
     /// <dt>
     /// InProgress
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch is in progress. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is in progress. </p>
+    /// </dd>
     /// <dt>
     /// Failed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
+    /// </dd>
     /// <dt>
     /// Completed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
+    /// </dd>
     /// <dt>
     /// Canceled
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job was cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job was cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Canceling
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job is being cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is being cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Completing
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job is completing.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is completing.</p>
+    /// </dd>
     /// <dt>
     /// TimingOut
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch is timing out.</p> 
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is timing out.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
+    /// </dd>
     /// <dt>
     /// TimedOut
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job timed out.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job timed out.</p>
+    /// </dd>
     /// </dl>
     pub fn status(mut self, input: crate::types::SimulationJobBatchStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the simulation job batch.</p> 
-    /// <dl> 
+    /// <p>The status of the simulation job batch.</p>
+    /// <dl>
     /// <dt>
     /// Pending
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch request is pending.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch request is pending.</p>
+    /// </dd>
     /// <dt>
     /// InProgress
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch is in progress. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is in progress. </p>
+    /// </dd>
     /// <dt>
     /// Failed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch failed. One or more simulation job requests could not be completed due to an internal failure (like <code>InternalServiceError</code>). See <code>failureCode</code> and <code>failureReason</code> for more information.</p>
+    /// </dd>
     /// <dt>
     /// Completed
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job completed. A batch is complete when (1) there are no pending simulation job requests in the batch and none of the failed simulation job requests are due to <code>InternalServiceError</code> and (2) when all created simulation jobs have reached a terminal state (for example, <code>Completed</code> or <code>Failed</code>). </p>
+    /// </dd>
     /// <dt>
     /// Canceled
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job was cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job was cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Canceling
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job is being cancelled.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is being cancelled.</p>
+    /// </dd>
     /// <dt>
     /// Completing
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job is completing.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job is completing.</p>
+    /// </dd>
     /// <dt>
     /// TimingOut
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation job batch is timing out.</p> 
-    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation job batch is timing out.</p>
+    /// <p>If a batch timing out, and there are pending requests that were failing due to an internal failure (like <code>InternalServiceError</code>), the batch status will be <code>Failed</code>. If there are no such failing request, the batch status will be <code>TimedOut</code>. </p>
+    /// </dd>
     /// <dt>
     /// TimedOut
-    /// </dt> 
-    /// <dd> 
-    /// <p>The simulation batch job timed out.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The simulation batch job timed out.</p>
+    /// </dd>
     /// </dl>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::SimulationJobBatchStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::SimulationJobBatchStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The number of failed simulation job requests.</p>
     pub fn failed_request_count(mut self, input: i32) -> Self {
@@ -347,7 +360,8 @@ impl SimulationJobBatchSummaryBuilder {
     }
     /// <p>The number of failed simulation job requests.</p>
     pub fn set_failed_request_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.failed_request_count = input; self
+        self.failed_request_count = input;
+        self
     }
     /// <p>The number of pending simulation job requests.</p>
     pub fn pending_request_count(mut self, input: i32) -> Self {
@@ -356,7 +370,8 @@ impl SimulationJobBatchSummaryBuilder {
     }
     /// <p>The number of pending simulation job requests.</p>
     pub fn set_pending_request_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.pending_request_count = input; self
+        self.pending_request_count = input;
+        self
     }
     /// <p>The number of created simulation job requests.</p>
     pub fn created_request_count(mut self, input: i32) -> Self {
@@ -365,29 +380,19 @@ impl SimulationJobBatchSummaryBuilder {
     }
     /// <p>The number of created simulation job requests.</p>
     pub fn set_created_request_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.created_request_count = input; self
+        self.created_request_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`SimulationJobBatchSummary`](crate::types::SimulationJobBatchSummary).
     pub fn build(self) -> crate::types::SimulationJobBatchSummary {
         crate::types::SimulationJobBatchSummary {
-            arn: self.arn
-            ,
-            last_updated_at: self.last_updated_at
-            ,
-            created_at: self.created_at
-            ,
-            status: self.status
-            ,
-            failed_request_count: self.failed_request_count
-                .unwrap_or_default()
-            ,
-            pending_request_count: self.pending_request_count
-                .unwrap_or_default()
-            ,
-            created_request_count: self.created_request_count
-                .unwrap_or_default()
-            ,
+            arn: self.arn,
+            last_updated_at: self.last_updated_at,
+            created_at: self.created_at,
+            status: self.status,
+            failed_request_count: self.failed_request_count.unwrap_or_default(),
+            pending_request_count: self.pending_request_count.unwrap_or_default(),
+            created_request_count: self.created_request_count.unwrap_or_default(),
         }
     }
 }
-

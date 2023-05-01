@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetClusterCredentialsWithIamOutput  {
+pub struct GetClusterCredentialsWithIamOutput {
     /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
     #[doc(hidden)]
     pub db_user: std::option::Option<std::string::String>,
@@ -19,23 +19,23 @@ pub struct GetClusterCredentialsWithIamOutput  {
 }
 impl GetClusterCredentialsWithIamOutput {
     /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>A temporary password that you provide when you connect to a database.</p>
-    pub fn db_password(&self) -> std::option::Option<& str> {
+    pub fn db_password(&self) -> std::option::Option<&str> {
         self.db_password.as_deref()
     }
     /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
-    pub fn expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expiration.as_ref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn next_refresh_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn next_refresh_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.next_refresh_time.as_ref()
     }
 }
-impl  std::fmt::Debug for GetClusterCredentialsWithIamOutput  {
+impl std::fmt::Debug for GetClusterCredentialsWithIamOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetClusterCredentialsWithIamOutput");
         formatter.field("db_user", &self.db_user);
@@ -47,13 +47,13 @@ impl  std::fmt::Debug for GetClusterCredentialsWithIamOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetClusterCredentialsWithIamOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetClusterCredentialsWithIamOutput {
     /// Creates a new builder-style object to manufacture [`GetClusterCredentialsWithIamOutput`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput).
-    pub fn builder() -> crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder {
+    pub fn builder() -> crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder{
         crate::operation::get_cluster_credentials_with_iam::builders::GetClusterCredentialsWithIamOutputBuilder::default()
     }
 }
@@ -76,7 +76,8 @@ impl GetClusterCredentialsWithIamOutputBuilder {
     }
     /// <p>A database user name that you provide when you connect to a database. The database user is mapped 1:1 to the source IAM identity. </p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input; self
+        self.db_user = input;
+        self
     }
     /// <p>A temporary password that you provide when you connect to a database.</p>
     pub fn db_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +86,8 @@ impl GetClusterCredentialsWithIamOutputBuilder {
     }
     /// <p>A temporary password that you provide when you connect to a database.</p>
     pub fn set_db_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_password = input; self
+        self.db_password = input;
+        self
     }
     /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
     pub fn expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +95,12 @@ impl GetClusterCredentialsWithIamOutputBuilder {
         self
     }
     /// <p>The time (UTC) when the temporary password expires. After this timestamp, a log in with the temporary password fails.</p>
-    pub fn set_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expiration = input; self
+    pub fn set_expiration(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expiration = input;
+        self
     }
     /// <p>Reserved for future use.</p>
     pub fn next_refresh_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,29 +108,32 @@ impl GetClusterCredentialsWithIamOutputBuilder {
         self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_next_refresh_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.next_refresh_time = input; self
+    pub fn set_next_refresh_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.next_refresh_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetClusterCredentialsWithIamOutput`](crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput).
-    pub fn build(self) -> crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput
+    {
         crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput {
-            db_user: self.db_user
-            ,
-            db_password: self.db_password
-            ,
-            expiration: self.expiration
-            ,
-            next_refresh_time: self.next_refresh_time
-            ,
+            db_user: self.db_user,
+            db_password: self.db_password,
+            expiration: self.expiration,
+            next_refresh_time: self.next_refresh_time,
             _request_id: self._request_id,
         }
     }
@@ -140,4 +149,3 @@ impl std::fmt::Debug for GetClusterCredentialsWithIamOutputBuilder {
         formatter.finish()
     }
 }
-

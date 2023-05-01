@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let transformationtoolname = unimplemented!();
 /// match transformationtoolname {
@@ -38,14 +38,22 @@
 /// Specifically, when `transformationtoolname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TransformationToolName::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TransformationToolName {
     #[allow(missing_docs)] // documentation missing in model
     App2Container,
@@ -68,57 +76,73 @@ pub enum TransformationToolName {
     #[allow(missing_docs)] // documentation missing in model
     Wwama,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TransformationToolName {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "App2Container" => TransformationToolName::App2Container,
-"Application Migration Service" => TransformationToolName::Mgn,
-"Database Migration Service" => TransformationToolName::Dms,
-"End of Support Migration" => TransformationToolName::Emp,
-"In Place Operating System Upgrade" => TransformationToolName::InPlaceOsUpgrade,
-"Native SQL Server Backup/Restore" => TransformationToolName::NativeSql,
-"Porting Assistant For .NET" => TransformationToolName::PortingAssistant,
-"Schema Conversion Tool" => TransformationToolName::Sct,
-"Strategy Recommendation Support" => TransformationToolName::StrategyRecommendationSupport,
-"Windows Web Application Migration Assistant" => TransformationToolName::Wwama,
-other => TransformationToolName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "App2Container" => TransformationToolName::App2Container,
+            "Application Migration Service" => TransformationToolName::Mgn,
+            "Database Migration Service" => TransformationToolName::Dms,
+            "End of Support Migration" => TransformationToolName::Emp,
+            "In Place Operating System Upgrade" => TransformationToolName::InPlaceOsUpgrade,
+            "Native SQL Server Backup/Restore" => TransformationToolName::NativeSql,
+            "Porting Assistant For .NET" => TransformationToolName::PortingAssistant,
+            "Schema Conversion Tool" => TransformationToolName::Sct,
+            "Strategy Recommendation Support" => {
+                TransformationToolName::StrategyRecommendationSupport
             }
-impl std::str::FromStr for TransformationToolName {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TransformationToolName::from(s))
-                }
-            }
-impl TransformationToolName {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TransformationToolName::App2Container => "App2Container",
-    TransformationToolName::Mgn => "Application Migration Service",
-    TransformationToolName::Dms => "Database Migration Service",
-    TransformationToolName::Emp => "End of Support Migration",
-    TransformationToolName::InPlaceOsUpgrade => "In Place Operating System Upgrade",
-    TransformationToolName::NativeSql => "Native SQL Server Backup/Restore",
-    TransformationToolName::PortingAssistant => "Porting Assistant For .NET",
-    TransformationToolName::Sct => "Schema Conversion Tool",
-    TransformationToolName::StrategyRecommendationSupport => "Strategy Recommendation Support",
-    TransformationToolName::Wwama => "Windows Web Application Migration Assistant",
-    TransformationToolName::Unknown(value) => value.as_str()
+            "Windows Web Application Migration Assistant" => TransformationToolName::Wwama,
+            other => TransformationToolName::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["App2Container", "Application Migration Service", "Database Migration Service", "End of Support Migration", "In Place Operating System Upgrade", "Native SQL Server Backup/Restore", "Porting Assistant For .NET", "Schema Conversion Tool", "Strategy Recommendation Support", "Windows Web Application Migration Assistant"]
-                }
-            }
-impl AsRef<str> for TransformationToolName {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TransformationToolName {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TransformationToolName::from(s))
+    }
+}
+impl TransformationToolName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TransformationToolName::App2Container => "App2Container",
+            TransformationToolName::Mgn => "Application Migration Service",
+            TransformationToolName::Dms => "Database Migration Service",
+            TransformationToolName::Emp => "End of Support Migration",
+            TransformationToolName::InPlaceOsUpgrade => "In Place Operating System Upgrade",
+            TransformationToolName::NativeSql => "Native SQL Server Backup/Restore",
+            TransformationToolName::PortingAssistant => "Porting Assistant For .NET",
+            TransformationToolName::Sct => "Schema Conversion Tool",
+            TransformationToolName::StrategyRecommendationSupport => {
+                "Strategy Recommendation Support"
+            }
+            TransformationToolName::Wwama => "Windows Web Application Migration Assistant",
+            TransformationToolName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "App2Container",
+            "Application Migration Service",
+            "Database Migration Service",
+            "End of Support Migration",
+            "In Place Operating System Upgrade",
+            "Native SQL Server Backup/Restore",
+            "Porting Assistant For .NET",
+            "Schema Conversion Tool",
+            "Strategy Recommendation Support",
+            "Windows Web Application Migration Assistant",
+        ]
+    }
+}
+impl AsRef<str> for TransformationToolName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

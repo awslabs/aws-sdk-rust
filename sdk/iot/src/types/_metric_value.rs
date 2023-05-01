@@ -3,7 +3,7 @@
 /// <p>The value to be compared with the <code>metric</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricValue  {
+pub struct MetricValue {
     /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
     #[doc(hidden)]
     pub count: std::option::Option<i64>,
@@ -29,11 +29,11 @@ impl MetricValue {
         self.count
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
-    pub fn cidrs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn cidrs(&self) -> std::option::Option<&[std::string::String]> {
         self.cidrs.as_deref()
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
-    pub fn ports(&self) -> std::option::Option<& [i32]> {
+    pub fn ports(&self) -> std::option::Option<&[i32]> {
         self.ports.as_deref()
     }
     /// <p> The numeral value of a metric. </p>
@@ -41,11 +41,11 @@ impl MetricValue {
         self.number
     }
     /// <p> The numeral values of a metric. </p>
-    pub fn numbers(&self) -> std::option::Option<& [f64]> {
+    pub fn numbers(&self) -> std::option::Option<&[f64]> {
         self.numbers.as_deref()
     }
     /// <p> The string values of a metric. </p>
-    pub fn strings(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn strings(&self) -> std::option::Option<&[std::string::String]> {
         self.strings.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl MetricValueBuilder {
     }
     /// <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to specify that numeric value to be compared with the <code>metric</code>.</p>
     pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.count = input; self
+        self.count = input;
+        self
     }
     /// Appends an item to `cidrs`.
     ///
@@ -84,13 +85,17 @@ impl MetricValueBuilder {
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
     pub fn cidrs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cidrs.unwrap_or_default();
-                        v.push(input.into());
-                        self.cidrs = Some(v);
-                        self
+        v.push(input.into());
+        self.cidrs = Some(v);
+        self
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify that set to be compared with the <code>metric</code>.</p>
-    pub fn set_cidrs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.cidrs = input; self
+    pub fn set_cidrs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.cidrs = input;
+        self
     }
     /// Appends an item to `ports`.
     ///
@@ -99,13 +104,14 @@ impl MetricValueBuilder {
     /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
     pub fn ports(mut self, input: i32) -> Self {
         let mut v = self.ports.unwrap_or_default();
-                        v.push(input);
-                        self.ports = Some(v);
-                        self
+        v.push(input);
+        self.ports = Some(v);
+        self
     }
     /// <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to specify that set to be compared with the <code>metric</code>.</p>
     pub fn set_ports(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
-        self.ports = input; self
+        self.ports = input;
+        self
     }
     /// <p> The numeral value of a metric. </p>
     pub fn number(mut self, input: f64) -> Self {
@@ -114,7 +120,8 @@ impl MetricValueBuilder {
     }
     /// <p> The numeral value of a metric. </p>
     pub fn set_number(mut self, input: std::option::Option<f64>) -> Self {
-        self.number = input; self
+        self.number = input;
+        self
     }
     /// Appends an item to `numbers`.
     ///
@@ -123,13 +130,14 @@ impl MetricValueBuilder {
     /// <p> The numeral values of a metric. </p>
     pub fn numbers(mut self, input: f64) -> Self {
         let mut v = self.numbers.unwrap_or_default();
-                        v.push(input);
-                        self.numbers = Some(v);
-                        self
+        v.push(input);
+        self.numbers = Some(v);
+        self
     }
     /// <p> The numeral values of a metric. </p>
     pub fn set_numbers(mut self, input: std::option::Option<std::vec::Vec<f64>>) -> Self {
-        self.numbers = input; self
+        self.numbers = input;
+        self
     }
     /// Appends an item to `strings`.
     ///
@@ -138,30 +146,27 @@ impl MetricValueBuilder {
     /// <p> The string values of a metric. </p>
     pub fn strings(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.strings.unwrap_or_default();
-                        v.push(input.into());
-                        self.strings = Some(v);
-                        self
+        v.push(input.into());
+        self.strings = Some(v);
+        self
     }
     /// <p> The string values of a metric. </p>
-    pub fn set_strings(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.strings = input; self
+    pub fn set_strings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.strings = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricValue`](crate::types::MetricValue).
     pub fn build(self) -> crate::types::MetricValue {
         crate::types::MetricValue {
-            count: self.count
-            ,
-            cidrs: self.cidrs
-            ,
-            ports: self.ports
-            ,
-            number: self.number
-            ,
-            numbers: self.numbers
-            ,
-            strings: self.strings
-            ,
+            count: self.count,
+            cidrs: self.cidrs,
+            ports: self.ports,
+            number: self.number,
+            numbers: self.numbers,
+            strings: self.strings,
         }
     }
 }
-

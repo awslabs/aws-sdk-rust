@@ -3,20 +3,22 @@
 /// <p>Represents the input of a <code>DeleteDeploymentConfig</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDeploymentConfigInput  {
+pub struct DeleteDeploymentConfigInput {
     /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
     #[doc(hidden)]
     pub deployment_config_name: std::option::Option<std::string::String>,
 }
 impl DeleteDeploymentConfigInput {
     /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
-    pub fn deployment_config_name(&self) -> std::option::Option<& str> {
+    pub fn deployment_config_name(&self) -> std::option::Option<&str> {
         self.deployment_config_name.as_deref()
     }
 }
 impl DeleteDeploymentConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentConfigInput`](crate::operation::delete_deployment_config::DeleteDeploymentConfigInput).
-    pub fn builder() -> crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigInputBuilder
+    {
         crate::operation::delete_deployment_config::builders::DeleteDeploymentConfigInputBuilder::default()
     }
 }
@@ -34,17 +36,24 @@ impl DeleteDeploymentConfigInputBuilder {
         self
     }
     /// <p>The name of a deployment configuration associated with the IAM user or Amazon Web Services account.</p>
-    pub fn set_deployment_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_config_name = input; self
+    pub fn set_deployment_config_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.deployment_config_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDeploymentConfigInput`](crate::operation::delete_deployment_config::DeleteDeploymentConfigInput).
-    pub fn build(self) -> Result<crate::operation::delete_deployment_config::DeleteDeploymentConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_deployment_config::DeleteDeploymentConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_deployment_config::DeleteDeploymentConfigInput {
-                deployment_config_name: self.deployment_config_name
-                ,
-            }
+                deployment_config_name: self.deployment_config_name,
+            },
         )
     }
 }
-

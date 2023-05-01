@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePlatformVersionInput  {
+pub struct DescribePlatformVersionInput {
     /// <p>The ARN of the platform version.</p>
     #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
 }
 impl DescribePlatformVersionInput {
     /// <p>The ARN of the platform version.</p>
-    pub fn platform_arn(&self) -> std::option::Option<& str> {
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
 }
 impl DescribePlatformVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribePlatformVersionInput`](crate::operation::describe_platform_version::DescribePlatformVersionInput).
-    pub fn builder() -> crate::operation::describe_platform_version::builders::DescribePlatformVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_platform_version::builders::DescribePlatformVersionInputBuilder
+    {
         crate::operation::describe_platform_version::builders::DescribePlatformVersionInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DescribePlatformVersionInputBuilder {
     }
     /// <p>The ARN of the platform version.</p>
     pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_arn = input; self
+        self.platform_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribePlatformVersionInput`](crate::operation::describe_platform_version::DescribePlatformVersionInput).
-    pub fn build(self) -> Result<crate::operation::describe_platform_version::DescribePlatformVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_platform_version::DescribePlatformVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_platform_version::DescribePlatformVersionInput {
-                platform_arn: self.platform_arn
-                ,
-            }
+                platform_arn: self.platform_arn,
+            },
         )
     }
 }
-

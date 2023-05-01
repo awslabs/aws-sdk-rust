@@ -3,7 +3,7 @@
 /// <p>Represents the result of a list samples request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSamplesOutput  {
+pub struct ListSamplesOutput {
     /// <p>Information about the samples.</p>
     #[doc(hidden)]
     pub samples: std::option::Option<std::vec::Vec<crate::types::Sample>>,
@@ -14,19 +14,19 @@ pub struct ListSamplesOutput  {
 }
 impl ListSamplesOutput {
     /// <p>Information about the samples.</p>
-    pub fn samples(&self) -> std::option::Option<& [crate::types::Sample]> {
+    pub fn samples(&self) -> std::option::Option<&[crate::types::Sample]> {
         self.samples.as_deref()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListSamplesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListSamplesOutput {
     /// Creates a new builder-style object to manufacture [`ListSamplesOutput`](crate::operation::list_samples::ListSamplesOutput).
     pub fn builder() -> crate::operation::list_samples::builders::ListSamplesOutputBuilder {
@@ -50,13 +50,17 @@ impl ListSamplesOutputBuilder {
     /// <p>Information about the samples.</p>
     pub fn samples(mut self, input: crate::types::Sample) -> Self {
         let mut v = self.samples.unwrap_or_default();
-                        v.push(input);
-                        self.samples = Some(v);
-                        self
+        v.push(input);
+        self.samples = Some(v);
+        self
     }
     /// <p>Information about the samples.</p>
-    pub fn set_samples(mut self, input: std::option::Option<std::vec::Vec<crate::types::Sample>>) -> Self {
-        self.samples = input; self
+    pub fn set_samples(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Sample>>,
+    ) -> Self {
+        self.samples = input;
+        self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +69,24 @@ impl ListSamplesOutputBuilder {
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListSamplesOutput`](crate::operation::list_samples::ListSamplesOutput).
     pub fn build(self) -> crate::operation::list_samples::ListSamplesOutput {
         crate::operation::list_samples::ListSamplesOutput {
-            samples: self.samples
-            ,
-            next_token: self.next_token
-            ,
+            samples: self.samples,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -117,4 +117,3 @@ pub mod update_notification_settings;
 
 /// Types for the `UpdateQualificationType` operation.
 pub mod update_qualification_type;
-

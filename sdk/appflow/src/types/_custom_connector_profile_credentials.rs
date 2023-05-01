@@ -3,7 +3,7 @@
 /// <p>The connector-specific profile credentials that are required when using the custom connector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomConnectorProfileCredentials  {
+pub struct CustomConnectorProfileCredentials {
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
     #[doc(hidden)]
     pub authentication_type: std::option::Option<crate::types::AuthenticationType>,
@@ -22,23 +22,23 @@ pub struct CustomConnectorProfileCredentials  {
 }
 impl CustomConnectorProfileCredentials {
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
-    pub fn authentication_type(&self) -> std::option::Option<& crate::types::AuthenticationType> {
+    pub fn authentication_type(&self) -> std::option::Option<&crate::types::AuthenticationType> {
         self.authentication_type.as_ref()
     }
     /// <p>The basic credentials that are required for the authentication of the user.</p>
-    pub fn basic(&self) -> std::option::Option<& crate::types::BasicAuthCredentials> {
+    pub fn basic(&self) -> std::option::Option<&crate::types::BasicAuthCredentials> {
         self.basic.as_ref()
     }
     /// <p>The OAuth 2.0 credentials required for the authentication of the user.</p>
-    pub fn oauth2(&self) -> std::option::Option<& crate::types::OAuth2Credentials> {
+    pub fn oauth2(&self) -> std::option::Option<&crate::types::OAuth2Credentials> {
         self.oauth2.as_ref()
     }
     /// <p>The API keys required for the authentication of the user.</p>
-    pub fn api_key(&self) -> std::option::Option<& crate::types::ApiKeyCredentials> {
+    pub fn api_key(&self) -> std::option::Option<&crate::types::ApiKeyCredentials> {
         self.api_key.as_ref()
     }
     /// <p>If the connector uses the custom authentication mechanism, this holds the required credentials.</p>
-    pub fn custom(&self) -> std::option::Option<& crate::types::CustomAuthCredentials> {
+    pub fn custom(&self) -> std::option::Option<&crate::types::CustomAuthCredentials> {
         self.custom.as_ref()
     }
 }
@@ -66,8 +66,12 @@ impl CustomConnectorProfileCredentialsBuilder {
         self
     }
     /// <p>The authentication type that the custom connector uses for authenticating while creating a connector profile.</p>
-    pub fn set_authentication_type(mut self, input: std::option::Option<crate::types::AuthenticationType>) -> Self {
-        self.authentication_type = input; self
+    pub fn set_authentication_type(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationType>,
+    ) -> Self {
+        self.authentication_type = input;
+        self
     }
     /// <p>The basic credentials that are required for the authentication of the user.</p>
     pub fn basic(mut self, input: crate::types::BasicAuthCredentials) -> Self {
@@ -75,8 +79,12 @@ impl CustomConnectorProfileCredentialsBuilder {
         self
     }
     /// <p>The basic credentials that are required for the authentication of the user.</p>
-    pub fn set_basic(mut self, input: std::option::Option<crate::types::BasicAuthCredentials>) -> Self {
-        self.basic = input; self
+    pub fn set_basic(
+        mut self,
+        input: std::option::Option<crate::types::BasicAuthCredentials>,
+    ) -> Self {
+        self.basic = input;
+        self
     }
     /// <p>The OAuth 2.0 credentials required for the authentication of the user.</p>
     pub fn oauth2(mut self, input: crate::types::OAuth2Credentials) -> Self {
@@ -84,8 +92,12 @@ impl CustomConnectorProfileCredentialsBuilder {
         self
     }
     /// <p>The OAuth 2.0 credentials required for the authentication of the user.</p>
-    pub fn set_oauth2(mut self, input: std::option::Option<crate::types::OAuth2Credentials>) -> Self {
-        self.oauth2 = input; self
+    pub fn set_oauth2(
+        mut self,
+        input: std::option::Option<crate::types::OAuth2Credentials>,
+    ) -> Self {
+        self.oauth2 = input;
+        self
     }
     /// <p>The API keys required for the authentication of the user.</p>
     pub fn api_key(mut self, input: crate::types::ApiKeyCredentials) -> Self {
@@ -93,8 +105,12 @@ impl CustomConnectorProfileCredentialsBuilder {
         self
     }
     /// <p>The API keys required for the authentication of the user.</p>
-    pub fn set_api_key(mut self, input: std::option::Option<crate::types::ApiKeyCredentials>) -> Self {
-        self.api_key = input; self
+    pub fn set_api_key(
+        mut self,
+        input: std::option::Option<crate::types::ApiKeyCredentials>,
+    ) -> Self {
+        self.api_key = input;
+        self
     }
     /// <p>If the connector uses the custom authentication mechanism, this holds the required credentials.</p>
     pub fn custom(mut self, input: crate::types::CustomAuthCredentials) -> Self {
@@ -102,23 +118,21 @@ impl CustomConnectorProfileCredentialsBuilder {
         self
     }
     /// <p>If the connector uses the custom authentication mechanism, this holds the required credentials.</p>
-    pub fn set_custom(mut self, input: std::option::Option<crate::types::CustomAuthCredentials>) -> Self {
-        self.custom = input; self
+    pub fn set_custom(
+        mut self,
+        input: std::option::Option<crate::types::CustomAuthCredentials>,
+    ) -> Self {
+        self.custom = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomConnectorProfileCredentials`](crate::types::CustomConnectorProfileCredentials).
     pub fn build(self) -> crate::types::CustomConnectorProfileCredentials {
         crate::types::CustomConnectorProfileCredentials {
-            authentication_type: self.authentication_type
-            ,
-            basic: self.basic
-            ,
-            oauth2: self.oauth2
-            ,
-            api_key: self.api_key
-            ,
-            custom: self.custom
-            ,
+            authentication_type: self.authentication_type,
+            basic: self.basic,
+            oauth2: self.oauth2,
+            api_key: self.api_key,
+            custom: self.custom,
         }
     }
 }
-

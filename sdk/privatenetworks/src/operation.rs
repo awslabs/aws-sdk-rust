@@ -78,4 +78,3 @@ pub mod update_network_site;
 
 /// Types for the `UpdateNetworkSitePlan` operation.
 pub mod update_network_site_plan;
-

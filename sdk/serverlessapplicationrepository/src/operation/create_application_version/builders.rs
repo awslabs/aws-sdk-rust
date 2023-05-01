@@ -4,50 +4,70 @@ pub use crate::operation::create_application_version::_create_application_versio
 pub use crate::operation::create_application_version::_create_application_version_input::CreateApplicationVersionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateApplicationVersion`.
-/// 
+///
 /// <p>Creates an application version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateApplicationVersionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_application_version::builders::CreateApplicationVersionInputBuilder,
 }
-impl CreateApplicationVersionFluentBuilder  {
+impl CreateApplicationVersionFluentBuilder {
     /// Creates a new `CreateApplicationVersion`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_application_version::CreateApplicationVersion, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_application_version::CreateApplicationVersionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_application_version::CreateApplicationVersionOutput, aws_smithy_http::result::SdkError<crate::operation::create_application_version::CreateApplicationVersionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_application_version::CreateApplicationVersion,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_application_version::CreateApplicationVersionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_application_version::CreateApplicationVersionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_application_version::CreateApplicationVersionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
@@ -76,7 +96,10 @@ impl CreateApplicationVersionFluentBuilder  {
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn set_source_code_archive_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_code_archive_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_code_archive_url(input);
         self
     }
@@ -111,4 +134,3 @@ impl CreateApplicationVersionFluentBuilder  {
         self
     }
 }
-

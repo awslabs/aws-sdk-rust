@@ -3,7 +3,7 @@
 /// <p>The query result body of the GetServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceSettingOutput  {
+pub struct GetServiceSettingOutput {
     /// <p>The query result of the current service setting.</p>
     #[doc(hidden)]
     pub service_setting: std::option::Option<crate::types::ServiceSetting>,
@@ -11,18 +11,19 @@ pub struct GetServiceSettingOutput  {
 }
 impl GetServiceSettingOutput {
     /// <p>The query result of the current service setting.</p>
-    pub fn service_setting(&self) -> std::option::Option<& crate::types::ServiceSetting> {
+    pub fn service_setting(&self) -> std::option::Option<&crate::types::ServiceSetting> {
         self.service_setting.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetServiceSettingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetServiceSettingOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceSettingOutput`](crate::operation::get_service_setting::GetServiceSettingOutput).
-    pub fn builder() -> crate::operation::get_service_setting::builders::GetServiceSettingOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_service_setting::builders::GetServiceSettingOutputBuilder {
         crate::operation::get_service_setting::builders::GetServiceSettingOutputBuilder::default()
     }
 }
@@ -41,25 +42,27 @@ impl GetServiceSettingOutputBuilder {
         self
     }
     /// <p>The query result of the current service setting.</p>
-    pub fn set_service_setting(mut self, input: std::option::Option<crate::types::ServiceSetting>) -> Self {
-        self.service_setting = input; self
+    pub fn set_service_setting(
+        mut self,
+        input: std::option::Option<crate::types::ServiceSetting>,
+    ) -> Self {
+        self.service_setting = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetServiceSettingOutput`](crate::operation::get_service_setting::GetServiceSettingOutput).
     pub fn build(self) -> crate::operation::get_service_setting::GetServiceSettingOutput {
         crate::operation::get_service_setting::GetServiceSettingOutput {
-            service_setting: self.service_setting
-            ,
+            service_setting: self.service_setting,
             _request_id: self._request_id,
         }
     }
 }
-

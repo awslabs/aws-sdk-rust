@@ -208,4 +208,3 @@ pub use crate::types::_managed_rule_set_version::ManagedRuleSetVersionBuilder;
 pub use crate::types::_ip_set::IpSetBuilder;
 
 pub use crate::types::_rule_summary::RuleSummaryBuilder;
-

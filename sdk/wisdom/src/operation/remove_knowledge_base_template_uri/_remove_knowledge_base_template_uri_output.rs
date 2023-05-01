@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveKnowledgeBaseTemplateUriOutput  {
+pub struct RemoveKnowledgeBaseTemplateUriOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RemoveKnowledgeBaseTemplateUriOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RemoveKnowledgeBaseTemplateUriOutput {
     /// Creates a new builder-style object to manufacture [`RemoveKnowledgeBaseTemplateUriOutput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput).
-    pub fn builder() -> crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriOutputBuilder {
+    pub fn builder() -> crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriOutputBuilder{
         crate::operation::remove_knowledge_base_template_uri::builders::RemoveKnowledgeBaseTemplateUriOutputBuilder::default()
     }
 }
@@ -25,19 +25,21 @@ pub struct RemoveKnowledgeBaseTemplateUriOutputBuilder {
 }
 impl RemoveKnowledgeBaseTemplateUriOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RemoveKnowledgeBaseTemplateUriOutput`](crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput).
-    pub fn build(self) -> crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput
+    {
         crate::operation::remove_knowledge_base_template_uri::RemoveKnowledgeBaseTemplateUriOutput {
             _request_id: self._request_id,
         }
     }
 }
-

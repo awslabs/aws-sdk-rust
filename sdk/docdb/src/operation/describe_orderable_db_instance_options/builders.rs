@@ -4,56 +4,63 @@ pub use crate::operation::describe_orderable_db_instance_options::_describe_orde
 pub use crate::operation::describe_orderable_db_instance_options::_describe_orderable_db_instance_options_input::DescribeOrderableDbInstanceOptionsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeOrderableDBInstanceOptions`.
-/// 
+///
 /// <p>Returns a list of orderable instance options for the specified engine.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOrderableDBInstanceOptionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_orderable_db_instance_options::builders::DescribeOrderableDbInstanceOptionsInputBuilder,
 }
-impl DescribeOrderableDBInstanceOptionsFluentBuilder  {
+impl DescribeOrderableDBInstanceOptionsFluentBuilder {
     /// Creates a new `DescribeOrderableDBInstanceOptions`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptions, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator {
-                                crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator{
+        crate::operation::describe_orderable_db_instance_options::paginator::DescribeOrderableDbInstanceOptionsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of the engine to retrieve instance options for.</p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
@@ -80,7 +87,10 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder  {
         self
     }
     /// <p>The instance class filter value. Specify this parameter to show only the available offerings that match the specified instance class.</p>
-    pub fn set_db_instance_class(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_instance_class(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_db_instance_class(input);
         self
     }
@@ -114,19 +124,22 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder  {
         self
     }
     /// <p>This parameter is not currently supported.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> 
-    /// <p>Default: 100</p> 
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
-    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p> 
-    /// <p>Default: 100</p> 
+    /// <p> The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
     /// <p>Constraints: Minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
@@ -143,4 +156,3 @@ impl DescribeOrderableDBInstanceOptionsFluentBuilder  {
         self
     }
 }
-

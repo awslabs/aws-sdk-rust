@@ -3,7 +3,7 @@
 /// <p>A default version of a document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentDefaultVersionDescription  {
+pub struct DocumentDefaultVersionDescription {
     /// <p>The name of the document.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DocumentDefaultVersionDescription  {
 }
 impl DocumentDefaultVersionDescription {
     /// <p>The name of the document.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The default version of the document.</p>
-    pub fn default_version(&self) -> std::option::Option<& str> {
+    pub fn default_version(&self) -> std::option::Option<&str> {
         self.default_version.as_deref()
     }
     /// <p>The default version of the artifact associated with the document.</p>
-    pub fn default_version_name(&self) -> std::option::Option<& str> {
+    pub fn default_version_name(&self) -> std::option::Option<&str> {
         self.default_version_name.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DocumentDefaultVersionDescriptionBuilder {
     }
     /// <p>The name of the document.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The default version of the document.</p>
     pub fn default_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DocumentDefaultVersionDescriptionBuilder {
     }
     /// <p>The default version of the document.</p>
     pub fn set_default_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_version = input; self
+        self.default_version = input;
+        self
     }
     /// <p>The default version of the artifact associated with the document.</p>
     pub fn default_version_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +70,19 @@ impl DocumentDefaultVersionDescriptionBuilder {
         self
     }
     /// <p>The default version of the artifact associated with the document.</p>
-    pub fn set_default_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_version_name = input; self
+    pub fn set_default_version_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_version_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DocumentDefaultVersionDescription`](crate::types::DocumentDefaultVersionDescription).
     pub fn build(self) -> crate::types::DocumentDefaultVersionDescription {
         crate::types::DocumentDefaultVersionDescription {
-            name: self.name
-            ,
-            default_version: self.default_version
-            ,
-            default_version_name: self.default_version_name
-            ,
+            name: self.name,
+            default_version: self.default_version,
+            default_version_name: self.default_version_name,
         }
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePackagingGroupInput  {
+pub struct DescribePackagingGroupInput {
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribePackagingGroupInput {
     /// The ID of a MediaPackage VOD PackagingGroup resource.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DescribePackagingGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribePackagingGroupInput`](crate::operation::describe_packaging_group::DescribePackagingGroupInput).
-    pub fn builder() -> crate::operation::describe_packaging_group::builders::DescribePackagingGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_packaging_group::builders::DescribePackagingGroupInputBuilder
+    {
         crate::operation::describe_packaging_group::builders::DescribePackagingGroupInputBuilder::default()
     }
 }
@@ -34,16 +36,16 @@ impl DescribePackagingGroupInputBuilder {
     }
     /// The ID of a MediaPackage VOD PackagingGroup resource.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribePackagingGroupInput`](crate::operation::describe_packaging_group::DescribePackagingGroupInput).
-    pub fn build(self) -> Result<crate::operation::describe_packaging_group::DescribePackagingGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_packaging_group::DescribePackagingGroupInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_packaging_group::DescribePackagingGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_packaging_group::DescribePackagingGroupInput { id: self.id })
     }
 }
-

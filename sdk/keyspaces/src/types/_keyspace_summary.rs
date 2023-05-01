@@ -3,7 +3,7 @@
 /// <p>Represents the properties of a keyspace.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyspaceSummary  {
+pub struct KeyspaceSummary {
     /// <p>The name of the keyspace.</p>
     #[doc(hidden)]
     pub keyspace_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct KeyspaceSummary  {
 }
 impl KeyspaceSummary {
     /// <p>The name of the keyspace.</p>
-    pub fn keyspace_name(&self) -> std::option::Option<& str> {
+    pub fn keyspace_name(&self) -> std::option::Option<&str> {
         self.keyspace_name.as_deref()
     }
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl KeyspaceSummaryBuilder {
     }
     /// <p>The name of the keyspace.</p>
     pub fn set_keyspace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.keyspace_name = input; self
+        self.keyspace_name = input;
+        self
     }
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl KeyspaceSummaryBuilder {
     }
     /// <p>The unique identifier of the keyspace in the format of an Amazon Resource Name (ARN).</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`KeyspaceSummary`](crate::types::KeyspaceSummary).
     pub fn build(self) -> crate::types::KeyspaceSummary {
         crate::types::KeyspaceSummary {
-            keyspace_name: self.keyspace_name
-            ,
-            resource_arn: self.resource_arn
-            ,
+            keyspace_name: self.keyspace_name,
+            resource_arn: self.resource_arn,
         }
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let timeunitstype = unimplemented!();
 /// match timeunitstype {
@@ -32,14 +32,22 @@
 /// Specifically, when `timeunitstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimeUnitsType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TimeUnitsType {
     #[allow(missing_docs)] // documentation missing in model
     Days,
@@ -50,45 +58,46 @@ pub enum TimeUnitsType {
     #[allow(missing_docs)] // documentation missing in model
     Seconds,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TimeUnitsType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "days" => TimeUnitsType::Days,
-"hours" => TimeUnitsType::Hours,
-"minutes" => TimeUnitsType::Minutes,
-"seconds" => TimeUnitsType::Seconds,
-other => TimeUnitsType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "days" => TimeUnitsType::Days,
+            "hours" => TimeUnitsType::Hours,
+            "minutes" => TimeUnitsType::Minutes,
+            "seconds" => TimeUnitsType::Seconds,
+            other => {
+                TimeUnitsType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for TimeUnitsType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TimeUnitsType::from(s))
-                }
-            }
-impl TimeUnitsType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TimeUnitsType::Days => "days",
-    TimeUnitsType::Hours => "hours",
-    TimeUnitsType::Minutes => "minutes",
-    TimeUnitsType::Seconds => "seconds",
-    TimeUnitsType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["days", "hours", "minutes", "seconds"]
-                }
-            }
-impl AsRef<str> for TimeUnitsType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TimeUnitsType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TimeUnitsType::from(s))
+    }
+}
+impl TimeUnitsType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TimeUnitsType::Days => "days",
+            TimeUnitsType::Hours => "hours",
+            TimeUnitsType::Minutes => "minutes",
+            TimeUnitsType::Seconds => "seconds",
+            TimeUnitsType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["days", "hours", "minutes", "seconds"]
+    }
+}
+impl AsRef<str> for TimeUnitsType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

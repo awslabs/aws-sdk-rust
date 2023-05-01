@@ -4,50 +4,70 @@ pub use crate::operation::create_authorizer::_create_authorizer_output::CreateAu
 pub use crate::operation::create_authorizer::_create_authorizer_input::CreateAuthorizerInputBuilder;
 
 /// Fluent builder constructing a request to `CreateAuthorizer`.
-/// 
+///
 /// <p>Creates an Authorizer for an API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAuthorizerFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_authorizer::builders::CreateAuthorizerInputBuilder,
+    inner: crate::operation::create_authorizer::builders::CreateAuthorizerInputBuilder,
 }
-impl CreateAuthorizerFluentBuilder  {
+impl CreateAuthorizerFluentBuilder {
     /// Creates a new `CreateAuthorizer`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_authorizer::CreateAuthorizer, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_authorizer::CreateAuthorizerError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_authorizer::CreateAuthorizerOutput, aws_smithy_http::result::SdkError<crate::operation::create_authorizer::CreateAuthorizerError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_authorizer::CreateAuthorizer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_authorizer::CreateAuthorizerError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_authorizer::CreateAuthorizerOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_authorizer::CreateAuthorizerError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The API identifier.</p>
     pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
@@ -64,17 +84,26 @@ impl CreateAuthorizerFluentBuilder  {
         self
     }
     /// <p>Specifies the required credentials as an IAM role for API Gateway to invoke the authorizer. To specify an IAM role for API Gateway to assume, use the role's Amazon Resource Name (ARN). To use resource-based permissions on the Lambda function, don't specify this parameter. Supported only for REQUEST authorizers.</p>
-    pub fn set_authorizer_credentials_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authorizer_credentials_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_authorizer_credentials_arn(input);
         self
     }
     /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
-    pub fn authorizer_payload_format_version(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn authorizer_payload_format_version(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.authorizer_payload_format_version(input.into());
         self
     }
     /// <p>Specifies the format of the payload sent to an HTTP API Lambda authorizer. Required for HTTP API Lambda authorizers. Supported values are 1.0 and 2.0. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
-    pub fn set_authorizer_payload_format_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authorizer_payload_format_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_authorizer_payload_format_version(input);
         self
     }
@@ -94,7 +123,10 @@ impl CreateAuthorizerFluentBuilder  {
         self
     }
     /// <p>The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).</p>
-    pub fn set_authorizer_type(mut self, input: std::option::Option<crate::types::AuthorizerType>) -> Self {
+    pub fn set_authorizer_type(
+        mut self,
+        input: std::option::Option<crate::types::AuthorizerType>,
+    ) -> Self {
         self.inner = self.inner.set_authorizer_type(input);
         self
     }
@@ -138,17 +170,20 @@ impl CreateAuthorizerFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_identity_source`](Self::set_identity_source).
     ///
-    /// <p>The identity source for which authorization is requested.</p> 
-    /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> 
+    /// <p>The identity source for which authorization is requested.</p>
+    /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
     /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
     pub fn identity_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.identity_source(input.into());
         self
     }
-    /// <p>The identity source for which authorization is requested.</p> 
-    /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p> 
+    /// <p>The identity source for which authorization is requested.</p>
+    /// <p>For a REQUEST authorizer, this is optional. The value is a set of one or more mapping expressions of the specified request parameters. The identity source can be headers, query string parameters, stage variables, and context parameters. For example, if an Auth header and a Name query string parameter are defined as identity sources, this value is route.request.header.Auth, route.request.querystring.Name for WebSocket APIs. For HTTP APIs, use selection expressions prefixed with $, for example, $request.header.Auth, $request.querystring.Name. These parameters are used to perform runtime validation for Lambda-based authorizers by verifying all of the identity-related request parameters are present in the request, not null, and non-empty. Only when this is true does the authorizer invoke the authorizer Lambda function. Otherwise, it returns a 401 Unauthorized response without calling the Lambda function. For HTTP APIs, identity sources are also used as the cache key when caching is enabled. To learn more, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-lambda-authorizer.html">Working with AWS Lambda authorizers for HTTP APIs</a>.</p>
     /// <p>For JWT, a single entry that specifies where to extract the JSON Web Token (JWT) from inbound requests. Currently only header-based and query parameter-based selections are supported, for example $request.header.Authorization.</p>
-    pub fn set_identity_source(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_identity_source(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_identity_source(input);
         self
     }
@@ -158,7 +193,10 @@ impl CreateAuthorizerFluentBuilder  {
         self
     }
     /// <p>This parameter is not used.</p>
-    pub fn set_identity_validation_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_identity_validation_expression(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_identity_validation_expression(input);
         self
     }
@@ -168,7 +206,10 @@ impl CreateAuthorizerFluentBuilder  {
         self
     }
     /// <p>Represents the configuration of a JWT authorizer. Required for the JWT authorizer type. Supported only for HTTP APIs.</p>
-    pub fn set_jwt_configuration(mut self, input: std::option::Option<crate::types::JwtConfiguration>) -> Self {
+    pub fn set_jwt_configuration(
+        mut self,
+        input: std::option::Option<crate::types::JwtConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_jwt_configuration(input);
         self
     }
@@ -183,4 +224,3 @@ impl CreateAuthorizerFluentBuilder  {
         self
     }
 }
-

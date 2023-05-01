@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainConfigurationOutput  {
+pub struct UpdateDomainConfigurationOutput {
     /// <p>The name of the domain configuration that was updated.</p>
     #[doc(hidden)]
     pub domain_configuration_name: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct UpdateDomainConfigurationOutput  {
 }
 impl UpdateDomainConfigurationOutput {
     /// <p>The name of the domain configuration that was updated.</p>
-    pub fn domain_configuration_name(&self) -> std::option::Option<& str> {
+    pub fn domain_configuration_name(&self) -> std::option::Option<&str> {
         self.domain_configuration_name.as_deref()
     }
     /// <p>The ARN of the domain configuration that was updated.</p>
-    pub fn domain_configuration_arn(&self) -> std::option::Option<& str> {
+    pub fn domain_configuration_arn(&self) -> std::option::Option<&str> {
         self.domain_configuration_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateDomainConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateDomainConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainConfigurationOutput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput).
-    pub fn builder() -> crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationOutputBuilder{
         crate::operation::update_domain_configuration::builders::UpdateDomainConfigurationOutputBuilder::default()
     }
 }
@@ -48,8 +48,12 @@ impl UpdateDomainConfigurationOutputBuilder {
         self
     }
     /// <p>The name of the domain configuration that was updated.</p>
-    pub fn set_domain_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_configuration_name = input; self
+    pub fn set_domain_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.domain_configuration_name = input;
+        self
     }
     /// <p>The ARN of the domain configuration that was updated.</p>
     pub fn domain_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -57,27 +61,30 @@ impl UpdateDomainConfigurationOutputBuilder {
         self
     }
     /// <p>The ARN of the domain configuration that was updated.</p>
-    pub fn set_domain_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_configuration_arn = input; self
+    pub fn set_domain_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.domain_configuration_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateDomainConfigurationOutput`](crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput).
-    pub fn build(self) -> crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput {
         crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput {
-            domain_configuration_name: self.domain_configuration_name
-            ,
-            domain_configuration_arn: self.domain_configuration_arn
-            ,
+            domain_configuration_name: self.domain_configuration_name,
+            domain_configuration_arn: self.domain_configuration_arn,
             _request_id: self._request_id,
         }
     }
 }
-

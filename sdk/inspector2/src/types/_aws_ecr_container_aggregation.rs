@@ -3,7 +3,7 @@
 /// <p>An aggregation of information about Amazon ECR containers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcrContainerAggregation  {
+pub struct AwsEcrContainerAggregation {
     /// <p>The container resource IDs.</p>
     #[doc(hidden)]
     pub resource_ids: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
@@ -28,31 +28,31 @@ pub struct AwsEcrContainerAggregation  {
 }
 impl AwsEcrContainerAggregation {
     /// <p>The container resource IDs.</p>
-    pub fn resource_ids(&self) -> std::option::Option<& [crate::types::StringFilter]> {
+    pub fn resource_ids(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.resource_ids.as_deref()
     }
     /// <p>The image SHA values.</p>
-    pub fn image_shas(&self) -> std::option::Option<& [crate::types::StringFilter]> {
+    pub fn image_shas(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.image_shas.as_deref()
     }
     /// <p>The container repositories.</p>
-    pub fn repositories(&self) -> std::option::Option<& [crate::types::StringFilter]> {
+    pub fn repositories(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.repositories.as_deref()
     }
     /// <p>The architecture of the containers.</p>
-    pub fn architectures(&self) -> std::option::Option<& [crate::types::StringFilter]> {
+    pub fn architectures(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.architectures.as_deref()
     }
     /// <p>The image tags.</p>
-    pub fn image_tags(&self) -> std::option::Option<& [crate::types::StringFilter]> {
+    pub fn image_tags(&self) -> std::option::Option<&[crate::types::StringFilter]> {
         self.image_tags.as_deref()
     }
     /// <p>The sort order (ascending or descending).</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The value to sort by.</p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::AwsEcrContainerSortBy> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::AwsEcrContainerSortBy> {
         self.sort_by.as_ref()
     }
 }
@@ -83,13 +83,17 @@ impl AwsEcrContainerAggregationBuilder {
     /// <p>The container resource IDs.</p>
     pub fn resource_ids(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.resource_ids.unwrap_or_default();
-                        v.push(input);
-                        self.resource_ids = Some(v);
-                        self
+        v.push(input);
+        self.resource_ids = Some(v);
+        self
     }
     /// <p>The container resource IDs.</p>
-    pub fn set_resource_ids(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.resource_ids = input; self
+    pub fn set_resource_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.resource_ids = input;
+        self
     }
     /// Appends an item to `image_shas`.
     ///
@@ -98,13 +102,17 @@ impl AwsEcrContainerAggregationBuilder {
     /// <p>The image SHA values.</p>
     pub fn image_shas(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.image_shas.unwrap_or_default();
-                        v.push(input);
-                        self.image_shas = Some(v);
-                        self
+        v.push(input);
+        self.image_shas = Some(v);
+        self
     }
     /// <p>The image SHA values.</p>
-    pub fn set_image_shas(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.image_shas = input; self
+    pub fn set_image_shas(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.image_shas = input;
+        self
     }
     /// Appends an item to `repositories`.
     ///
@@ -113,13 +121,17 @@ impl AwsEcrContainerAggregationBuilder {
     /// <p>The container repositories.</p>
     pub fn repositories(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.repositories.unwrap_or_default();
-                        v.push(input);
-                        self.repositories = Some(v);
-                        self
+        v.push(input);
+        self.repositories = Some(v);
+        self
     }
     /// <p>The container repositories.</p>
-    pub fn set_repositories(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.repositories = input; self
+    pub fn set_repositories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.repositories = input;
+        self
     }
     /// Appends an item to `architectures`.
     ///
@@ -128,13 +140,17 @@ impl AwsEcrContainerAggregationBuilder {
     /// <p>The architecture of the containers.</p>
     pub fn architectures(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.architectures.unwrap_or_default();
-                        v.push(input);
-                        self.architectures = Some(v);
-                        self
+        v.push(input);
+        self.architectures = Some(v);
+        self
     }
     /// <p>The architecture of the containers.</p>
-    pub fn set_architectures(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.architectures = input; self
+    pub fn set_architectures(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.architectures = input;
+        self
     }
     /// Appends an item to `image_tags`.
     ///
@@ -143,13 +159,17 @@ impl AwsEcrContainerAggregationBuilder {
     /// <p>The image tags.</p>
     pub fn image_tags(mut self, input: crate::types::StringFilter) -> Self {
         let mut v = self.image_tags.unwrap_or_default();
-                        v.push(input);
-                        self.image_tags = Some(v);
-                        self
+        v.push(input);
+        self.image_tags = Some(v);
+        self
     }
     /// <p>The image tags.</p>
-    pub fn set_image_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>) -> Self {
-        self.image_tags = input; self
+    pub fn set_image_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StringFilter>>,
+    ) -> Self {
+        self.image_tags = input;
+        self
     }
     /// <p>The sort order (ascending or descending).</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -158,7 +178,8 @@ impl AwsEcrContainerAggregationBuilder {
     }
     /// <p>The sort order (ascending or descending).</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// <p>The value to sort by.</p>
     pub fn sort_by(mut self, input: crate::types::AwsEcrContainerSortBy) -> Self {
@@ -166,27 +187,23 @@ impl AwsEcrContainerAggregationBuilder {
         self
     }
     /// <p>The value to sort by.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::AwsEcrContainerSortBy>) -> Self {
-        self.sort_by = input; self
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::AwsEcrContainerSortBy>,
+    ) -> Self {
+        self.sort_by = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEcrContainerAggregation`](crate::types::AwsEcrContainerAggregation).
     pub fn build(self) -> crate::types::AwsEcrContainerAggregation {
         crate::types::AwsEcrContainerAggregation {
-            resource_ids: self.resource_ids
-            ,
-            image_shas: self.image_shas
-            ,
-            repositories: self.repositories
-            ,
-            architectures: self.architectures
-            ,
-            image_tags: self.image_tags
-            ,
-            sort_order: self.sort_order
-            ,
-            sort_by: self.sort_by
-            ,
+            resource_ids: self.resource_ids,
+            image_shas: self.image_shas,
+            repositories: self.repositories,
+            architectures: self.architectures,
+            image_tags: self.image_tags,
+            sort_order: self.sort_order,
+            sort_by: self.sort_by,
         }
     }
 }
-

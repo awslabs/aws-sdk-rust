@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopFlowOutput  {
+pub struct StopFlowOutput {
     /// The ARN of the flow that you stopped.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct StopFlowOutput  {
 }
 impl StopFlowOutput {
     /// The ARN of the flow that you stopped.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The status of the flow when the StopFlow process begins.
-    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StopFlowOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopFlowOutput {
     /// Creates a new builder-style object to manufacture [`StopFlowOutput`](crate::operation::stop_flow::StopFlowOutput).
     pub fn builder() -> crate::operation::stop_flow::builders::StopFlowOutputBuilder {
@@ -49,7 +49,8 @@ impl StopFlowOutputBuilder {
     }
     /// The ARN of the flow that you stopped.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input; self
+        self.flow_arn = input;
+        self
     }
     /// The status of the flow when the StopFlow process begins.
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -58,26 +59,24 @@ impl StopFlowOutputBuilder {
     }
     /// The status of the flow when the StopFlow process begins.
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopFlowOutput`](crate::operation::stop_flow::StopFlowOutput).
     pub fn build(self) -> crate::operation::stop_flow::StopFlowOutput {
         crate::operation::stop_flow::StopFlowOutput {
-            flow_arn: self.flow_arn
-            ,
-            status: self.status
-            ,
+            flow_arn: self.flow_arn,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

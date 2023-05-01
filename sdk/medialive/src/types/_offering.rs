@@ -3,7 +3,7 @@
 /// Reserved resources available for purchase
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Offering  {
+pub struct Offering {
     /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -40,11 +40,11 @@ pub struct Offering  {
 }
 impl Offering {
     /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
-    pub fn currency_code(&self) -> std::option::Option<& str> {
+    pub fn currency_code(&self) -> std::option::Option<&str> {
         self.currency_code.as_deref()
     }
     /// Lease duration, e.g. '12'
@@ -52,7 +52,7 @@ impl Offering {
         self.duration
     }
     /// Units for duration, e.g. 'MONTHS'
-    pub fn duration_units(&self) -> std::option::Option<& crate::types::OfferingDurationUnits> {
+    pub fn duration_units(&self) -> std::option::Option<&crate::types::OfferingDurationUnits> {
         self.duration_units.as_ref()
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
@@ -60,23 +60,25 @@ impl Offering {
         self.fixed_price
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    pub fn offering_description(&self) -> std::option::Option<& str> {
+    pub fn offering_description(&self) -> std::option::Option<&str> {
         self.offering_description.as_deref()
     }
     /// Unique offering ID, e.g. '87654321'
-    pub fn offering_id(&self) -> std::option::Option<& str> {
+    pub fn offering_id(&self) -> std::option::Option<&str> {
         self.offering_id.as_deref()
     }
     /// Offering type, e.g. 'NO_UPFRONT'
-    pub fn offering_type(&self) -> std::option::Option<& crate::types::OfferingType> {
+    pub fn offering_type(&self) -> std::option::Option<&crate::types::OfferingType> {
         self.offering_type.as_ref()
     }
     /// AWS region, e.g. 'us-west-2'
-    pub fn region(&self) -> std::option::Option<& str> {
+    pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
     /// Resource configuration details
-    pub fn resource_specification(&self) -> std::option::Option<& crate::types::ReservationResourceSpecification> {
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::ReservationResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
@@ -104,7 +106,8 @@ pub struct OfferingBuilder {
     pub(crate) offering_id: std::option::Option<std::string::String>,
     pub(crate) offering_type: std::option::Option<crate::types::OfferingType>,
     pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) resource_specification: std::option::Option<crate::types::ReservationResourceSpecification>,
+    pub(crate) resource_specification:
+        std::option::Option<crate::types::ReservationResourceSpecification>,
     pub(crate) usage_price: std::option::Option<f64>,
 }
 impl OfferingBuilder {
@@ -115,7 +118,8 @@ impl OfferingBuilder {
     }
     /// Unique offering ARN, e.g. 'arn:aws:medialive:us-west-2:123456789012:offering:87654321'
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
     pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +128,8 @@ impl OfferingBuilder {
     }
     /// Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
     pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.currency_code = input; self
+        self.currency_code = input;
+        self
     }
     /// Lease duration, e.g. '12'
     pub fn duration(mut self, input: i32) -> Self {
@@ -133,7 +138,8 @@ impl OfferingBuilder {
     }
     /// Lease duration, e.g. '12'
     pub fn set_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration = input; self
+        self.duration = input;
+        self
     }
     /// Units for duration, e.g. 'MONTHS'
     pub fn duration_units(mut self, input: crate::types::OfferingDurationUnits) -> Self {
@@ -141,8 +147,12 @@ impl OfferingBuilder {
         self
     }
     /// Units for duration, e.g. 'MONTHS'
-    pub fn set_duration_units(mut self, input: std::option::Option<crate::types::OfferingDurationUnits>) -> Self {
-        self.duration_units = input; self
+    pub fn set_duration_units(
+        mut self,
+        input: std::option::Option<crate::types::OfferingDurationUnits>,
+    ) -> Self {
+        self.duration_units = input;
+        self
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
     pub fn fixed_price(mut self, input: f64) -> Self {
@@ -151,7 +161,8 @@ impl OfferingBuilder {
     }
     /// One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
     pub fn set_fixed_price(mut self, input: std::option::Option<f64>) -> Self {
-        self.fixed_price = input; self
+        self.fixed_price = input;
+        self
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
     pub fn offering_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,8 +170,12 @@ impl OfferingBuilder {
         self
     }
     /// Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ in US West (Oregon)'
-    pub fn set_offering_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.offering_description = input; self
+    pub fn set_offering_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.offering_description = input;
+        self
     }
     /// Unique offering ID, e.g. '87654321'
     pub fn offering_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,7 +184,8 @@ impl OfferingBuilder {
     }
     /// Unique offering ID, e.g. '87654321'
     pub fn set_offering_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.offering_id = input; self
+        self.offering_id = input;
+        self
     }
     /// Offering type, e.g. 'NO_UPFRONT'
     pub fn offering_type(mut self, input: crate::types::OfferingType) -> Self {
@@ -177,8 +193,12 @@ impl OfferingBuilder {
         self
     }
     /// Offering type, e.g. 'NO_UPFRONT'
-    pub fn set_offering_type(mut self, input: std::option::Option<crate::types::OfferingType>) -> Self {
-        self.offering_type = input; self
+    pub fn set_offering_type(
+        mut self,
+        input: std::option::Option<crate::types::OfferingType>,
+    ) -> Self {
+        self.offering_type = input;
+        self
     }
     /// AWS region, e.g. 'us-west-2'
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,16 +207,24 @@ impl OfferingBuilder {
     }
     /// AWS region, e.g. 'us-west-2'
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// Resource configuration details
-    pub fn resource_specification(mut self, input: crate::types::ReservationResourceSpecification) -> Self {
+    pub fn resource_specification(
+        mut self,
+        input: crate::types::ReservationResourceSpecification,
+    ) -> Self {
         self.resource_specification = Some(input);
         self
     }
     /// Resource configuration details
-    pub fn set_resource_specification(mut self, input: std::option::Option<crate::types::ReservationResourceSpecification>) -> Self {
-        self.resource_specification = input; self
+    pub fn set_resource_specification(
+        mut self,
+        input: std::option::Option<crate::types::ReservationResourceSpecification>,
+    ) -> Self {
+        self.resource_specification = input;
+        self
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn usage_price(mut self, input: f64) -> Self {
@@ -205,37 +233,23 @@ impl OfferingBuilder {
     }
     /// Recurring usage charge for each reserved resource, e.g. '157.0'
     pub fn set_usage_price(mut self, input: std::option::Option<f64>) -> Self {
-        self.usage_price = input; self
+        self.usage_price = input;
+        self
     }
     /// Consumes the builder and constructs a [`Offering`](crate::types::Offering).
     pub fn build(self) -> crate::types::Offering {
         crate::types::Offering {
-            arn: self.arn
-            ,
-            currency_code: self.currency_code
-            ,
-            duration: self.duration
-                .unwrap_or_default()
-            ,
-            duration_units: self.duration_units
-            ,
-            fixed_price: self.fixed_price
-                .unwrap_or_default()
-            ,
-            offering_description: self.offering_description
-            ,
-            offering_id: self.offering_id
-            ,
-            offering_type: self.offering_type
-            ,
-            region: self.region
-            ,
-            resource_specification: self.resource_specification
-            ,
-            usage_price: self.usage_price
-                .unwrap_or_default()
-            ,
+            arn: self.arn,
+            currency_code: self.currency_code,
+            duration: self.duration.unwrap_or_default(),
+            duration_units: self.duration_units,
+            fixed_price: self.fixed_price.unwrap_or_default(),
+            offering_description: self.offering_description,
+            offering_id: self.offering_id,
+            offering_type: self.offering_type,
+            region: self.region,
+            resource_specification: self.resource_specification,
+            usage_price: self.usage_price.unwrap_or_default(),
         }
     }
 }
-

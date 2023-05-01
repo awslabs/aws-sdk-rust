@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveStorageSystemInput  {
+pub struct RemoveStorageSystemInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
     #[doc(hidden)]
     pub storage_system_arn: std::option::Option<std::string::String>,
 }
 impl RemoveStorageSystemInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
-    pub fn storage_system_arn(&self) -> std::option::Option<& str> {
+    pub fn storage_system_arn(&self) -> std::option::Option<&str> {
         self.storage_system_arn.as_deref()
     }
 }
 impl RemoveStorageSystemInput {
     /// Creates a new builder-style object to manufacture [`RemoveStorageSystemInput`](crate::operation::remove_storage_system::RemoveStorageSystemInput).
-    pub fn builder() -> crate::operation::remove_storage_system::builders::RemoveStorageSystemInputBuilder {
-        crate::operation::remove_storage_system::builders::RemoveStorageSystemInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::remove_storage_system::builders::RemoveStorageSystemInputBuilder {
+        crate::operation::remove_storage_system::builders::RemoveStorageSystemInputBuilder::default(
+        )
     }
 }
 
@@ -33,17 +35,24 @@ impl RemoveStorageSystemInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
-    pub fn set_storage_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.storage_system_arn = input; self
+    pub fn set_storage_system_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.storage_system_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoveStorageSystemInput`](crate::operation::remove_storage_system::RemoveStorageSystemInput).
-    pub fn build(self) -> Result<crate::operation::remove_storage_system::RemoveStorageSystemInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::remove_storage_system::RemoveStorageSystemInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::remove_storage_system::RemoveStorageSystemInput {
-                storage_system_arn: self.storage_system_arn
-                ,
-            }
+                storage_system_arn: self.storage_system_arn,
+            },
         )
     }
 }
-

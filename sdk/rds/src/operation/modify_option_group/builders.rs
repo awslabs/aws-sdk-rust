@@ -4,59 +4,82 @@ pub use crate::operation::modify_option_group::_modify_option_group_output::Modi
 pub use crate::operation::modify_option_group::_modify_option_group_input::ModifyOptionGroupInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyOptionGroup`.
-/// 
+///
 /// <p>Modifies an existing option group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyOptionGroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_option_group::builders::ModifyOptionGroupInputBuilder,
+    inner: crate::operation::modify_option_group::builders::ModifyOptionGroupInputBuilder,
 }
-impl ModifyOptionGroupFluentBuilder  {
+impl ModifyOptionGroupFluentBuilder {
     /// Creates a new `ModifyOptionGroup`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_option_group::ModifyOptionGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_option_group::ModifyOptionGroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_option_group::ModifyOptionGroupOutput, aws_smithy_http::result::SdkError<crate::operation::modify_option_group::ModifyOptionGroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The name of the option group to be modified.</p> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_option_group::ModifyOptionGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_option_group::ModifyOptionGroupError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_option_group::ModifyOptionGroupOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_option_group::ModifyOptionGroupError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
     pub fn option_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.option_group_name(input.into());
         self
     }
-    /// <p>The name of the option group to be modified.</p> 
+    /// <p>The name of the option group to be modified.</p>
     /// <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance once it is associated with a DB instance</p>
-    pub fn set_option_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_option_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
     }
@@ -70,7 +93,10 @@ impl ModifyOptionGroupFluentBuilder  {
         self
     }
     /// <p>Options in this list are added to the option group or, if already present, the specified configuration is used to update the existing configuration.</p>
-    pub fn set_options_to_include(mut self, input: std::option::Option<std::vec::Vec<crate::types::OptionConfiguration>>) -> Self {
+    pub fn set_options_to_include(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OptionConfiguration>>,
+    ) -> Self {
         self.inner = self.inner.set_options_to_include(input);
         self
     }
@@ -84,7 +110,10 @@ impl ModifyOptionGroupFluentBuilder  {
         self
     }
     /// <p>Options in this list are removed from the option group.</p>
-    pub fn set_options_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_options_to_remove(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_options_to_remove(input);
         self
     }
@@ -99,4 +128,3 @@ impl ModifyOptionGroupFluentBuilder  {
         self
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>The navigation configuration for <code>CustomActionNavigationOperation</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LocalNavigationConfiguration  {
+pub struct LocalNavigationConfiguration {
     /// <p>The sheet that is targeted for navigation in the same analysis.</p>
     #[doc(hidden)]
     pub target_sheet_id: std::option::Option<std::string::String>,
 }
 impl LocalNavigationConfiguration {
     /// <p>The sheet that is targeted for navigation in the same analysis.</p>
-    pub fn target_sheet_id(&self) -> std::option::Option<& str> {
+    pub fn target_sheet_id(&self) -> std::option::Option<&str> {
         self.target_sheet_id.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl LocalNavigationConfigurationBuilder {
     }
     /// <p>The sheet that is targeted for navigation in the same analysis.</p>
     pub fn set_target_sheet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_sheet_id = input; self
+        self.target_sheet_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`LocalNavigationConfiguration`](crate::types::LocalNavigationConfiguration).
     pub fn build(self) -> crate::types::LocalNavigationConfiguration {
         crate::types::LocalNavigationConfiguration {
-            target_sheet_id: self.target_sheet_id
-            ,
+            target_sheet_id: self.target_sheet_id,
         }
     }
 }
-

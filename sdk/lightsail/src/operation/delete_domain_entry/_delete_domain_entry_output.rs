@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainEntryOutput  {
+pub struct DeleteDomainEntryOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::types::Operation>,
@@ -10,18 +10,19 @@ pub struct DeleteDomainEntryOutput  {
 }
 impl DeleteDomainEntryOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<& crate::types::Operation> {
+    pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteDomainEntryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteDomainEntryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainEntryOutput`](crate::operation::delete_domain_entry::DeleteDomainEntryOutput).
-    pub fn builder() -> crate::operation::delete_domain_entry::builders::DeleteDomainEntryOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_domain_entry::builders::DeleteDomainEntryOutputBuilder {
         crate::operation::delete_domain_entry::builders::DeleteDomainEntryOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl DeleteDomainEntryOutputBuilder {
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteDomainEntryOutput`](crate::operation::delete_domain_entry::DeleteDomainEntryOutput).
     pub fn build(self) -> crate::operation::delete_domain_entry::DeleteDomainEntryOutput {
         crate::operation::delete_domain_entry::DeleteDomainEntryOutput {
-            operation: self.operation
-            ,
+            operation: self.operation,
             _request_id: self._request_id,
         }
     }
 }
-

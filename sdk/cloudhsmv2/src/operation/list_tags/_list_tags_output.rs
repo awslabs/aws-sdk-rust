@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagsOutput  {
+pub struct ListTagsOutput {
     /// <p>A list of tags.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -13,19 +13,19 @@ pub struct ListTagsOutput  {
 }
 impl ListTagsOutput {
     /// <p>A list of tags.</p>
-    pub fn tag_list(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tag_list.as_deref()
     }
     /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTagsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTagsOutput {
     /// Creates a new builder-style object to manufacture [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput).
     pub fn builder() -> crate::operation::list_tags::builders::ListTagsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListTagsOutputBuilder {
     /// <p>A list of tags.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-                        v.push(input);
-                        self.tag_list = Some(v);
-                        self
+        v.push(input);
+        self.tag_list = Some(v);
+        self
     }
     /// <p>A list of tags.</p>
-    pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input; self
+    pub fn set_tag_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tag_list = input;
+        self
     }
     /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListTagsOutputBuilder {
     }
     /// <p>An opaque string that indicates that the response contains only a subset of tags. Use this value in a subsequent <code>ListTags</code> request to get more tags.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTagsOutput`](crate::operation::list_tags::ListTagsOutput).
     pub fn build(self) -> crate::operation::list_tags::ListTagsOutput {
         crate::operation::list_tags::ListTagsOutput {
-            tag_list: self.tag_list
-            ,
-            next_token: self.next_token
-            ,
+            tag_list: self.tag_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

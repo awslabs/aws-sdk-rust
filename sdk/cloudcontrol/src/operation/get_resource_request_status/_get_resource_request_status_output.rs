@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceRequestStatusOutput  {
+pub struct GetResourceRequestStatusOutput {
     /// <p>Represents the current status of the resource operation request.</p>
     #[doc(hidden)]
     pub progress_event: std::option::Option<crate::types::ProgressEvent>,
@@ -10,18 +10,18 @@ pub struct GetResourceRequestStatusOutput  {
 }
 impl GetResourceRequestStatusOutput {
     /// <p>Represents the current status of the resource operation request.</p>
-    pub fn progress_event(&self) -> std::option::Option<& crate::types::ProgressEvent> {
+    pub fn progress_event(&self) -> std::option::Option<&crate::types::ProgressEvent> {
         self.progress_event.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetResourceRequestStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetResourceRequestStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetResourceRequestStatusOutput`](crate::operation::get_resource_request_status::GetResourceRequestStatusOutput).
-    pub fn builder() -> crate::operation::get_resource_request_status::builders::GetResourceRequestStatusOutputBuilder {
+    pub fn builder() -> crate::operation::get_resource_request_status::builders::GetResourceRequestStatusOutputBuilder{
         crate::operation::get_resource_request_status::builders::GetResourceRequestStatusOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl GetResourceRequestStatusOutputBuilder {
         self
     }
     /// <p>Represents the current status of the resource operation request.</p>
-    pub fn set_progress_event(mut self, input: std::option::Option<crate::types::ProgressEvent>) -> Self {
-        self.progress_event = input; self
+    pub fn set_progress_event(
+        mut self,
+        input: std::option::Option<crate::types::ProgressEvent>,
+    ) -> Self {
+        self.progress_event = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetResourceRequestStatusOutput`](crate::operation::get_resource_request_status::GetResourceRequestStatusOutput).
-    pub fn build(self) -> crate::operation::get_resource_request_status::GetResourceRequestStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_resource_request_status::GetResourceRequestStatusOutput {
         crate::operation::get_resource_request_status::GetResourceRequestStatusOutput {
-            progress_event: self.progress_event
-            ,
+            progress_event: self.progress_event,
             _request_id: self._request_id,
         }
     }
 }
-

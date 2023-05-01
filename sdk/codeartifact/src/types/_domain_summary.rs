@@ -3,7 +3,7 @@
 /// <p> Information about a domain, including its name, Amazon Resource Name (ARN), and status. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html">ListDomains</a> operation returns a list of <code>DomainSummary</code> objects. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainSummary  {
+pub struct DomainSummary {
     /// <p> The name of the domain. </p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct DomainSummary  {
 }
 impl DomainSummary {
     /// <p> The name of the domain. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn owner(&self) -> std::option::Option<& str> {
+    pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p> The ARN of the domain. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> A string that contains the status of the domain. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::DomainStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::DomainStatus> {
         self.status.as_ref()
     }
     /// <p> A timestamp that contains the date and time the domain was created. </p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p> The key used to encrypt the domain. </p>
-    pub fn encryption_key(&self) -> std::option::Option<& str> {
+    pub fn encryption_key(&self) -> std::option::Option<&str> {
         self.encryption_key.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl DomainSummaryBuilder {
     }
     /// <p> The name of the domain. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl DomainSummaryBuilder {
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// <p> The ARN of the domain. </p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl DomainSummaryBuilder {
     }
     /// <p> The ARN of the domain. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> A string that contains the status of the domain. </p>
     pub fn status(mut self, input: crate::types::DomainStatus) -> Self {
@@ -102,7 +105,8 @@ impl DomainSummaryBuilder {
     }
     /// <p> A string that contains the status of the domain. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::DomainStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p> A timestamp that contains the date and time the domain was created. </p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,8 +114,12 @@ impl DomainSummaryBuilder {
         self
     }
     /// <p> A timestamp that contains the date and time the domain was created. </p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     /// <p> The key used to encrypt the domain. </p>
     pub fn encryption_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,24 +128,18 @@ impl DomainSummaryBuilder {
     }
     /// <p> The key used to encrypt the domain. </p>
     pub fn set_encryption_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.encryption_key = input; self
+        self.encryption_key = input;
+        self
     }
     /// Consumes the builder and constructs a [`DomainSummary`](crate::types::DomainSummary).
     pub fn build(self) -> crate::types::DomainSummary {
         crate::types::DomainSummary {
-            name: self.name
-            ,
-            owner: self.owner
-            ,
-            arn: self.arn
-            ,
-            status: self.status
-            ,
-            created_time: self.created_time
-            ,
-            encryption_key: self.encryption_key
-            ,
+            name: self.name,
+            owner: self.owner,
+            arn: self.arn,
+            status: self.status,
+            created_time: self.created_time,
+            encryption_key: self.encryption_key,
         }
     }
 }
-

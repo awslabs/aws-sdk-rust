@@ -3,14 +3,14 @@
 /// <p>The Amazon Web Services organization for your S3 Storage Lens.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StorageLensAwsOrg  {
+pub struct StorageLensAwsOrg {
     /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl StorageLensAwsOrg {
     /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl StorageLensAwsOrgBuilder {
     }
     /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization. This property is read-only and follows the following format: <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i> </code> </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`StorageLensAwsOrg`](crate::types::StorageLensAwsOrg).
     pub fn build(self) -> crate::types::StorageLensAwsOrg {
-        crate::types::StorageLensAwsOrg {
-            arn: self.arn
-            ,
-        }
+        crate::types::StorageLensAwsOrg { arn: self.arn }
     }
 }
-

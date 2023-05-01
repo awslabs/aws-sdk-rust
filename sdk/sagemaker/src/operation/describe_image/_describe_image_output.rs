@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImageOutput  {
+pub struct DescribeImageOutput {
     /// <p>When the image was created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -34,47 +34,47 @@ pub struct DescribeImageOutput  {
 }
 impl DescribeImageOutput {
     /// <p>When the image was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the image.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the image as displayed.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>When a create, update, or delete operation fails, the reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<& str> {
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The ARN of the image.</p>
-    pub fn image_arn(&self) -> std::option::Option<& str> {
+    pub fn image_arn(&self) -> std::option::Option<&str> {
         self.image_arn.as_deref()
     }
     /// <p>The name of the image.</p>
-    pub fn image_name(&self) -> std::option::Option<& str> {
+    pub fn image_name(&self) -> std::option::Option<&str> {
         self.image_name.as_deref()
     }
     /// <p>The status of the image.</p>
-    pub fn image_status(&self) -> std::option::Option<& crate::types::ImageStatus> {
+    pub fn image_status(&self) -> std::option::Option<&crate::types::ImageStatus> {
         self.image_status.as_ref()
     }
     /// <p>When the image was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeImageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeImageOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImageOutput`](crate::operation::describe_image::DescribeImageOutput).
     pub fn builder() -> crate::operation::describe_image::builders::DescribeImageOutputBuilder {
@@ -104,8 +104,12 @@ impl DescribeImageOutputBuilder {
         self
     }
     /// <p>When the image was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The description of the image.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +118,8 @@ impl DescribeImageOutputBuilder {
     }
     /// <p>The description of the image.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The name of the image as displayed.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +128,8 @@ impl DescribeImageOutputBuilder {
     }
     /// <p>The name of the image as displayed.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>When a create, update, or delete operation fails, the reason for the failure.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +138,8 @@ impl DescribeImageOutputBuilder {
     }
     /// <p>When a create, update, or delete operation fails, the reason for the failure.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input; self
+        self.failure_reason = input;
+        self
     }
     /// <p>The ARN of the image.</p>
     pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +148,8 @@ impl DescribeImageOutputBuilder {
     }
     /// <p>The ARN of the image.</p>
     pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_arn = input; self
+        self.image_arn = input;
+        self
     }
     /// <p>The name of the image.</p>
     pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +158,8 @@ impl DescribeImageOutputBuilder {
     }
     /// <p>The name of the image.</p>
     pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_name = input; self
+        self.image_name = input;
+        self
     }
     /// <p>The status of the image.</p>
     pub fn image_status(mut self, input: crate::types::ImageStatus) -> Self {
@@ -158,8 +167,12 @@ impl DescribeImageOutputBuilder {
         self
     }
     /// <p>The status of the image.</p>
-    pub fn set_image_status(mut self, input: std::option::Option<crate::types::ImageStatus>) -> Self {
-        self.image_status = input; self
+    pub fn set_image_status(
+        mut self,
+        input: std::option::Option<crate::types::ImageStatus>,
+    ) -> Self {
+        self.image_status = input;
+        self
     }
     /// <p>When the image was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -167,8 +180,12 @@ impl DescribeImageOutputBuilder {
         self
     }
     /// <p>When the image was last modified.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -177,40 +194,31 @@ impl DescribeImageOutputBuilder {
     }
     /// <p>The ARN of the IAM role that enables Amazon SageMaker to perform tasks on your behalf.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeImageOutput`](crate::operation::describe_image::DescribeImageOutput).
     pub fn build(self) -> crate::operation::describe_image::DescribeImageOutput {
         crate::operation::describe_image::DescribeImageOutput {
-            creation_time: self.creation_time
-            ,
-            description: self.description
-            ,
-            display_name: self.display_name
-            ,
-            failure_reason: self.failure_reason
-            ,
-            image_arn: self.image_arn
-            ,
-            image_name: self.image_name
-            ,
-            image_status: self.image_status
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            role_arn: self.role_arn
-            ,
+            creation_time: self.creation_time,
+            description: self.description,
+            display_name: self.display_name,
+            failure_reason: self.failure_reason,
+            image_arn: self.image_arn,
+            image_name: self.image_name,
+            image_status: self.image_status,
+            last_modified_time: self.last_modified_time,
+            role_arn: self.role_arn,
             _request_id: self._request_id,
         }
     }
 }
-

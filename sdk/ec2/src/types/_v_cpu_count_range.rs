@@ -3,7 +3,7 @@
 /// <p>The minimum and maximum number of vCPUs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VCpuCountRange  {
+pub struct VCpuCountRange {
     /// <p>The minimum number of vCPUs. If the value is <code>0</code>, there is no minimum limit.</p>
     #[doc(hidden)]
     pub min: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl VCpuCountRangeBuilder {
     }
     /// <p>The minimum number of vCPUs. If the value is <code>0</code>, there is no minimum limit.</p>
     pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.min = input; self
+        self.min = input;
+        self
     }
     /// <p>The maximum number of vCPUs. If this parameter is not specified, there is no maximum limit.</p>
     pub fn max(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl VCpuCountRangeBuilder {
     }
     /// <p>The maximum number of vCPUs. If this parameter is not specified, there is no maximum limit.</p>
     pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.max = input; self
+        self.max = input;
+        self
     }
     /// Consumes the builder and constructs a [`VCpuCountRange`](crate::types::VCpuCountRange).
     pub fn build(self) -> crate::types::VCpuCountRange {
         crate::types::VCpuCountRange {
-            min: self.min
-            ,
-            max: self.max
-            ,
+            min: self.min,
+            max: self.max,
         }
     }
 }
-

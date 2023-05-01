@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMlTaskRunInput  {
+pub struct GetMlTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
     #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetMlTaskRunInput  {
 }
 impl GetMlTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(&self) -> std::option::Option<& str> {
+    pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
     /// <p>The unique identifier of the task run.</p>
-    pub fn task_run_id(&self) -> std::option::Option<& str> {
+    pub fn task_run_id(&self) -> std::option::Option<&str> {
         self.task_run_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetMlTaskRunInputBuilder {
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transform_id = input; self
+        self.transform_id = input;
+        self
     }
     /// <p>The unique identifier of the task run.</p>
     pub fn task_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl GetMlTaskRunInputBuilder {
     }
     /// <p>The unique identifier of the task run.</p>
     pub fn set_task_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_run_id = input; self
+        self.task_run_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetMlTaskRunInput`](crate::operation::get_ml_task_run::GetMlTaskRunInput).
-    pub fn build(self) -> Result<crate::operation::get_ml_task_run::GetMlTaskRunInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_ml_task_run::GetMlTaskRunInput {
-                transform_id: self.transform_id
-                ,
-                task_run_id: self.task_run_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_ml_task_run::GetMlTaskRunInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_ml_task_run::GetMlTaskRunInput {
+            transform_id: self.transform_id,
+            task_run_id: self.task_run_id,
+        })
     }
 }
-

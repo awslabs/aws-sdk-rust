@@ -3,21 +3,24 @@
 /// <p>Specifies target details for an activated hook.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeSetHookTargetDetails  {
+pub struct ChangeSetHookTargetDetails {
     /// <p>The name of the type.</p>
     #[doc(hidden)]
     pub target_type: std::option::Option<crate::types::HookTargetType>,
     /// <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
     #[doc(hidden)]
-    pub resource_target_details: std::option::Option<crate::types::ChangeSetHookResourceTargetDetails>,
+    pub resource_target_details:
+        std::option::Option<crate::types::ChangeSetHookResourceTargetDetails>,
 }
 impl ChangeSetHookTargetDetails {
     /// <p>The name of the type.</p>
-    pub fn target_type(&self) -> std::option::Option<& crate::types::HookTargetType> {
+    pub fn target_type(&self) -> std::option::Option<&crate::types::HookTargetType> {
         self.target_type.as_ref()
     }
     /// <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
-    pub fn resource_target_details(&self) -> std::option::Option<& crate::types::ChangeSetHookResourceTargetDetails> {
+    pub fn resource_target_details(
+        &self,
+    ) -> std::option::Option<&crate::types::ChangeSetHookResourceTargetDetails> {
         self.resource_target_details.as_ref()
     }
 }
@@ -33,7 +36,8 @@ impl ChangeSetHookTargetDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ChangeSetHookTargetDetailsBuilder {
     pub(crate) target_type: std::option::Option<crate::types::HookTargetType>,
-    pub(crate) resource_target_details: std::option::Option<crate::types::ChangeSetHookResourceTargetDetails>,
+    pub(crate) resource_target_details:
+        std::option::Option<crate::types::ChangeSetHookResourceTargetDetails>,
 }
 impl ChangeSetHookTargetDetailsBuilder {
     /// <p>The name of the type.</p>
@@ -42,26 +46,34 @@ impl ChangeSetHookTargetDetailsBuilder {
         self
     }
     /// <p>The name of the type.</p>
-    pub fn set_target_type(mut self, input: std::option::Option<crate::types::HookTargetType>) -> Self {
-        self.target_type = input; self
+    pub fn set_target_type(
+        mut self,
+        input: std::option::Option<crate::types::HookTargetType>,
+    ) -> Self {
+        self.target_type = input;
+        self
     }
     /// <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
-    pub fn resource_target_details(mut self, input: crate::types::ChangeSetHookResourceTargetDetails) -> Self {
+    pub fn resource_target_details(
+        mut self,
+        input: crate::types::ChangeSetHookResourceTargetDetails,
+    ) -> Self {
         self.resource_target_details = Some(input);
         self
     }
     /// <p>Required if <code>TargetType</code> is <code>RESOURCE</code>.</p>
-    pub fn set_resource_target_details(mut self, input: std::option::Option<crate::types::ChangeSetHookResourceTargetDetails>) -> Self {
-        self.resource_target_details = input; self
+    pub fn set_resource_target_details(
+        mut self,
+        input: std::option::Option<crate::types::ChangeSetHookResourceTargetDetails>,
+    ) -> Self {
+        self.resource_target_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`ChangeSetHookTargetDetails`](crate::types::ChangeSetHookTargetDetails).
     pub fn build(self) -> crate::types::ChangeSetHookTargetDetails {
         crate::types::ChangeSetHookTargetDetails {
-            target_type: self.target_type
-            ,
-            resource_target_details: self.resource_target_details
-            ,
+            target_type: self.target_type,
+            resource_target_details: self.resource_target_details,
         }
     }
 }
-

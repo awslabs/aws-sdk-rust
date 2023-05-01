@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPredictorsOutput  {
+pub struct ListPredictorsOutput {
     /// <p>An array of objects that summarize each predictor's properties.</p>
     #[doc(hidden)]
     pub predictors: std::option::Option<std::vec::Vec<crate::types::PredictorSummary>>,
@@ -13,19 +13,19 @@ pub struct ListPredictorsOutput  {
 }
 impl ListPredictorsOutput {
     /// <p>An array of objects that summarize each predictor's properties.</p>
-    pub fn predictors(&self) -> std::option::Option<& [crate::types::PredictorSummary]> {
+    pub fn predictors(&self) -> std::option::Option<&[crate::types::PredictorSummary]> {
         self.predictors.as_deref()
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPredictorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListPredictorsOutput {
     /// Creates a new builder-style object to manufacture [`ListPredictorsOutput`](crate::operation::list_predictors::ListPredictorsOutput).
     pub fn builder() -> crate::operation::list_predictors::builders::ListPredictorsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListPredictorsOutputBuilder {
     /// <p>An array of objects that summarize each predictor's properties.</p>
     pub fn predictors(mut self, input: crate::types::PredictorSummary) -> Self {
         let mut v = self.predictors.unwrap_or_default();
-                        v.push(input);
-                        self.predictors = Some(v);
-                        self
+        v.push(input);
+        self.predictors = Some(v);
+        self
     }
     /// <p>An array of objects that summarize each predictor's properties.</p>
-    pub fn set_predictors(mut self, input: std::option::Option<std::vec::Vec<crate::types::PredictorSummary>>) -> Self {
-        self.predictors = input; self
+    pub fn set_predictors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PredictorSummary>>,
+    ) -> Self {
+        self.predictors = input;
+        self
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListPredictorsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Forecast returns this token. To retrieve the next set of results, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListPredictorsOutput`](crate::operation::list_predictors::ListPredictorsOutput).
     pub fn build(self) -> crate::operation::list_predictors::ListPredictorsOutput {
         crate::operation::list_predictors::ListPredictorsOutput {
-            predictors: self.predictors
-            ,
-            next_token: self.next_token
-            ,
+            predictors: self.predictors,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

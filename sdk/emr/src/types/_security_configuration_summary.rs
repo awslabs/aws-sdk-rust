@@ -3,7 +3,7 @@
 /// <p>The creation date and time, and name, of a security configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityConfigurationSummary  {
+pub struct SecurityConfigurationSummary {
     /// <p>The name of the security configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SecurityConfigurationSummary  {
 }
 impl SecurityConfigurationSummary {
     /// <p>The name of the security configuration.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The date and time the security configuration was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl SecurityConfigurationSummaryBuilder {
     }
     /// <p>The name of the security configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The date and time the security configuration was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -51,17 +52,18 @@ impl SecurityConfigurationSummaryBuilder {
         self
     }
     /// <p>The date and time the security configuration was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`SecurityConfigurationSummary`](crate::types::SecurityConfigurationSummary).
     pub fn build(self) -> crate::types::SecurityConfigurationSummary {
         crate::types::SecurityConfigurationSummary {
-            name: self.name
-            ,
-            creation_date_time: self.creation_date_time
-            ,
+            name: self.name,
+            creation_date_time: self.creation_date_time,
         }
     }
 }
-

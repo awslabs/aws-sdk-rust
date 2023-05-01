@@ -4,50 +4,70 @@ pub use crate::operation::register_avs_device::_register_avs_device_output::Regi
 pub use crate::operation::register_avs_device::_register_avs_device_input::RegisterAvsDeviceInputBuilder;
 
 /// Fluent builder constructing a request to `RegisterAVSDevice`.
-/// 
+///
 /// <p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterAVSDeviceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_avs_device::builders::RegisterAvsDeviceInputBuilder,
+    inner: crate::operation::register_avs_device::builders::RegisterAvsDeviceInputBuilder,
 }
-impl RegisterAVSDeviceFluentBuilder  {
+impl RegisterAVSDeviceFluentBuilder {
     /// Creates a new `RegisterAVSDevice`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::register_avs_device::RegisterAVSDevice, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::register_avs_device::RegisterAVSDeviceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::register_avs_device::RegisterAvsDeviceOutput, aws_smithy_http::result::SdkError<crate::operation::register_avs_device::RegisterAVSDeviceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_avs_device::RegisterAVSDevice,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::register_avs_device::RegisterAVSDeviceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::register_avs_device::RegisterAvsDeviceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::register_avs_device::RegisterAVSDeviceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The client ID of the OEM used for code-based linking authorization on an AVS device.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_id(input.into());
@@ -84,7 +104,10 @@ impl RegisterAVSDeviceFluentBuilder  {
         self
     }
     /// <p>The key generated by the OEM that uniquely identifies a specified instance of your AVS device.</p>
-    pub fn set_device_serial_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_serial_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_device_serial_number(input);
         self
     }
@@ -118,9 +141,11 @@ impl RegisterAVSDeviceFluentBuilder  {
         self
     }
     /// <p>The tags to be added to the specified resource. Do not provide system tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

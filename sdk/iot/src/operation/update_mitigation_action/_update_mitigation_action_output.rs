@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMitigationActionOutput  {
+pub struct UpdateMitigationActionOutput {
     /// <p>The ARN for the new mitigation action.</p>
     #[doc(hidden)]
     pub action_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct UpdateMitigationActionOutput  {
 }
 impl UpdateMitigationActionOutput {
     /// <p>The ARN for the new mitigation action.</p>
-    pub fn action_arn(&self) -> std::option::Option<& str> {
+    pub fn action_arn(&self) -> std::option::Option<&str> {
         self.action_arn.as_deref()
     }
     /// <p>A unique identifier for the mitigation action.</p>
-    pub fn action_id(&self) -> std::option::Option<& str> {
+    pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateMitigationActionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateMitigationActionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMitigationActionOutput`](crate::operation::update_mitigation_action::UpdateMitigationActionOutput).
-    pub fn builder() -> crate::operation::update_mitigation_action::builders::UpdateMitigationActionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_mitigation_action::builders::UpdateMitigationActionOutputBuilder
+    {
         crate::operation::update_mitigation_action::builders::UpdateMitigationActionOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl UpdateMitigationActionOutputBuilder {
     }
     /// <p>The ARN for the new mitigation action.</p>
     pub fn set_action_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_arn = input; self
+        self.action_arn = input;
+        self
     }
     /// <p>A unique identifier for the mitigation action.</p>
     pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +61,24 @@ impl UpdateMitigationActionOutputBuilder {
     }
     /// <p>A unique identifier for the mitigation action.</p>
     pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_id = input; self
+        self.action_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateMitigationActionOutput`](crate::operation::update_mitigation_action::UpdateMitigationActionOutput).
     pub fn build(self) -> crate::operation::update_mitigation_action::UpdateMitigationActionOutput {
         crate::operation::update_mitigation_action::UpdateMitigationActionOutput {
-            action_arn: self.action_arn
-            ,
-            action_id: self.action_id
-            ,
+            action_arn: self.action_arn,
+            action_id: self.action_id,
             _request_id: self._request_id,
         }
     }
 }
-

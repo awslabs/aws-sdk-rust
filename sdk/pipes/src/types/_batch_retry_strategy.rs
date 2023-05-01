@@ -3,7 +3,7 @@
 /// <p>The retry strategy that's associated with a job. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html"> Automated job retries</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchRetryStrategy  {
+pub struct BatchRetryStrategy {
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
     #[doc(hidden)]
     pub attempts: i32,
@@ -35,15 +35,13 @@ impl BatchRetryStrategyBuilder {
     }
     /// <p>The number of times to move a job to the <code>RUNNABLE</code> status. If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of attempts as the value.</p>
     pub fn set_attempts(mut self, input: std::option::Option<i32>) -> Self {
-        self.attempts = input; self
+        self.attempts = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchRetryStrategy`](crate::types::BatchRetryStrategy).
     pub fn build(self) -> crate::types::BatchRetryStrategy {
         crate::types::BatchRetryStrategy {
-            attempts: self.attempts
-                .unwrap_or_default()
-            ,
+            attempts: self.attempts.unwrap_or_default(),
         }
     }
 }
-

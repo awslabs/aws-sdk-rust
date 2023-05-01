@@ -4,50 +4,70 @@ pub use crate::operation::send_voice_message::_send_voice_message_output::SendVo
 pub use crate::operation::send_voice_message::_send_voice_message_input::SendVoiceMessageInputBuilder;
 
 /// Fluent builder constructing a request to `SendVoiceMessage`.
-/// 
+///
 /// Create a new voice message and send it to a recipient's phone number.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendVoiceMessageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder,
+    inner: crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder,
 }
-impl SendVoiceMessageFluentBuilder  {
+impl SendVoiceMessageFluentBuilder {
     /// Creates a new `SendVoiceMessage`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::send_voice_message::SendVoiceMessage, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::send_voice_message::SendVoiceMessageError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::send_voice_message::SendVoiceMessageOutput, aws_smithy_http::result::SdkError<crate::operation::send_voice_message::SendVoiceMessageError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::send_voice_message::SendVoiceMessage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_voice_message::SendVoiceMessageError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::send_voice_message::SendVoiceMessageOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_voice_message::SendVoiceMessageError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// The phone number that appears on recipients' devices when they receive the message.
     pub fn caller_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.caller_id(input.into());
@@ -64,7 +84,10 @@ impl SendVoiceMessageFluentBuilder  {
         self
     }
     /// The name of the configuration set that you want to use to send the message.
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -74,7 +97,10 @@ impl SendVoiceMessageFluentBuilder  {
         self
     }
     /// An object that contains a voice message and information about the recipient that you want to send it to.
-    pub fn set_content(mut self, input: std::option::Option<crate::types::VoiceMessageContent>) -> Self {
+    pub fn set_content(
+        mut self,
+        input: std::option::Option<crate::types::VoiceMessageContent>,
+    ) -> Self {
         self.inner = self.inner.set_content(input);
         self
     }
@@ -84,7 +110,10 @@ impl SendVoiceMessageFluentBuilder  {
         self
     }
     /// The phone number that you want to send the voice message to.
-    pub fn set_destination_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_phone_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_phone_number(input);
         self
     }
@@ -94,9 +123,11 @@ impl SendVoiceMessageFluentBuilder  {
         self
     }
     /// The phone number that Amazon Pinpoint should use to send the voice message. This isn't necessarily the phone number that appears on recipients' devices when they receive the message, because you can specify a CallerId parameter in the request.
-    pub fn set_origination_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_origination_phone_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_origination_phone_number(input);
         self
     }
 }
-

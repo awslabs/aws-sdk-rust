@@ -4,64 +4,83 @@ pub use crate::operation::create_listener::_create_listener_output::CreateListen
 pub use crate::operation::create_listener::_create_listener_input::CreateListenerInputBuilder;
 
 /// Fluent builder constructing a request to `CreateListener`.
-/// 
-/// <p>Creates a listener for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.</p> 
-/// <p>For more information, see the following:</p> 
-/// <ul> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners for your Application Load Balancers</a> </p> </li> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for your Network Load Balancers</a> </p> </li> 
-/// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html">Listeners for your Gateway Load Balancers</a> </p> </li> 
-/// </ul> 
+///
+/// <p>Creates a listener for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.</p>
+/// <p>For more information, see the following:</p>
+/// <ul>
+/// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html">Listeners for your Application Load Balancers</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-listeners.html">Listeners for your Network Load Balancers</a> </p> </li>
+/// <li> <p> <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/gateway/gateway-listeners.html">Listeners for your Gateway Load Balancers</a> </p> </li>
+/// </ul>
 /// <p>This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple listeners with the same settings, each call succeeds.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateListenerFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_listener::builders::CreateListenerInputBuilder,
+    inner: crate::operation::create_listener::builders::CreateListenerInputBuilder,
 }
-impl CreateListenerFluentBuilder  {
+impl CreateListenerFluentBuilder {
     /// Creates a new `CreateListener`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_listener::CreateListener, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_listener::CreateListenerOutput, aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_listener::CreateListener,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_listener::CreateListenerOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_listener::CreateListenerError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_load_balancer_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
@@ -85,13 +104,13 @@ impl CreateListenerFluentBuilder  {
         self.inner = self.inner.set_port(input);
         self
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn ssl_policy(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ssl_policy(input.into());
         self
     }
-    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p> 
+    /// <p>[HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies">Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies">Security policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn set_ssl_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_ssl_policy(input);
@@ -107,7 +126,10 @@ impl CreateListenerFluentBuilder  {
         self
     }
     /// <p>[HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::types::Certificate>>) -> Self {
+    pub fn set_certificates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Certificate>>,
+    ) -> Self {
         self.inner = self.inner.set_certificates(input);
         self
     }
@@ -121,7 +143,10 @@ impl CreateListenerFluentBuilder  {
         self
     }
     /// <p>The actions for the default rule.</p>
-    pub fn set_default_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Action>>) -> Self {
+    pub fn set_default_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Action>>,
+    ) -> Self {
         self.inner = self.inner.set_default_actions(input);
         self
     }
@@ -129,29 +154,32 @@ impl CreateListenerFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_alpn_policy`](Self::set_alpn_policy).
     ///
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
-    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
-    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
-    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
-    /// <li> <p> <code>None</code> </p> </li> 
-    /// </ul> 
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>HTTP1Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+    /// <li> <p> <code>None</code> </p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
     pub fn alpn_policy(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.alpn_policy(input.into());
         self
     }
-    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>HTTP1Only</code> </p> </li> 
-    /// <li> <p> <code>HTTP2Only</code> </p> </li> 
-    /// <li> <p> <code>HTTP2Optional</code> </p> </li> 
-    /// <li> <p> <code>HTTP2Preferred</code> </p> </li> 
-    /// <li> <p> <code>None</code> </p> </li> 
-    /// </ul> 
+    /// <p>[TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one policy name. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p> <code>HTTP1Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Only</code> </p> </li>
+    /// <li> <p> <code>HTTP2Optional</code> </p> </li>
+    /// <li> <p> <code>HTTP2Preferred</code> </p> </li>
+    /// <li> <p> <code>None</code> </p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies">ALPN policies</a> in the <i>Network Load Balancers Guide</i>.</p>
-    pub fn set_alpn_policy(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_alpn_policy(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_alpn_policy(input);
         self
     }
@@ -165,9 +193,11 @@ impl CreateListenerFluentBuilder  {
         self
     }
     /// <p>The tags to assign to the listener.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

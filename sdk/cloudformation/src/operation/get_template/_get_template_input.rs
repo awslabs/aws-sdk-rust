@@ -3,40 +3,40 @@
 /// <p>The input for a <code>GetTemplate</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTemplateInput  {
-    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p> 
-    /// <ul> 
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
-    /// </ul> 
+pub struct GetTemplateInput {
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
     /// <p>Default: There is no default value.</p>
     #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>
     #[doc(hidden)]
     pub change_set_name: std::option::Option<std::string::String>,
-    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p> 
+    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p>
     /// <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, CloudFormation specifies <code>Processed</code>.</p>
     #[doc(hidden)]
     pub template_stage: std::option::Option<crate::types::TemplateStage>,
 }
 impl GetTemplateInput {
-    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p> 
-    /// <ul> 
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
-    /// </ul> 
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
     /// <p>Default: There is no default value.</p>
-    pub fn stack_name(&self) -> std::option::Option<& str> {
+    pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>
-    pub fn change_set_name(&self) -> std::option::Option<& str> {
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
-    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p> 
+    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p>
     /// <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, CloudFormation specifies <code>Processed</code>.</p>
-    pub fn template_stage(&self) -> std::option::Option<& crate::types::TemplateStage> {
+    pub fn template_stage(&self) -> std::option::Option<&crate::types::TemplateStage> {
         self.template_stage.as_ref()
     }
 }
@@ -56,24 +56,25 @@ pub struct GetTemplateInputBuilder {
     pub(crate) template_stage: std::option::Option<crate::types::TemplateStage>,
 }
 impl GetTemplateInputBuilder {
-    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p> 
-    /// <ul> 
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
-    /// </ul> 
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.stack_name = Some(input.into());
         self
     }
-    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p> 
-    /// <ul> 
-    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li> 
-    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li> 
-    /// </ul> 
+    /// <p>The name or the unique stack ID that's associated with the stack, which aren't always interchangeable:</p>
+    /// <ul>
+    /// <li> <p>Running stacks: You can specify either the stack's name or its unique stack ID.</p> </li>
+    /// <li> <p>Deleted stacks: You must specify the unique stack ID.</p> </li>
+    /// </ul>
     /// <p>Default: There is no default value.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input; self
+        self.stack_name = input;
+        self
     }
     /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>
     pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,31 +83,35 @@ impl GetTemplateInputBuilder {
     }
     /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the <code>StackName</code>.</p>
     pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_name = input; self
+        self.change_set_name = input;
+        self
     }
-    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p> 
+    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p>
     /// <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, CloudFormation specifies <code>Processed</code>.</p>
     pub fn template_stage(mut self, input: crate::types::TemplateStage) -> Self {
         self.template_stage = Some(input);
         self
     }
-    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p> 
+    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify <code>Original</code>. To get the template after CloudFormation has processed all transforms, specify <code>Processed</code>.</p>
     /// <p>If the template doesn't include transforms, <code>Original</code> and <code>Processed</code> return the same template. By default, CloudFormation specifies <code>Processed</code>.</p>
-    pub fn set_template_stage(mut self, input: std::option::Option<crate::types::TemplateStage>) -> Self {
-        self.template_stage = input; self
+    pub fn set_template_stage(
+        mut self,
+        input: std::option::Option<crate::types::TemplateStage>,
+    ) -> Self {
+        self.template_stage = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTemplateInput`](crate::operation::get_template::GetTemplateInput).
-    pub fn build(self) -> Result<crate::operation::get_template::GetTemplateInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_template::GetTemplateInput {
-                stack_name: self.stack_name
-                ,
-                change_set_name: self.change_set_name
-                ,
-                template_stage: self.template_stage
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_template::GetTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_template::GetTemplateInput {
+            stack_name: self.stack_name,
+            change_set_name: self.change_set_name,
+            template_stage: self.template_stage,
+        })
     }
 }
-

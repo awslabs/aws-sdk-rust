@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteImagePermissionsInput  {
+pub struct DeleteImagePermissionsInput {
     /// <p>The name of the private image.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteImagePermissionsInput  {
 }
 impl DeleteImagePermissionsInput {
     /// <p>The name of the private image.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
-    pub fn shared_account_id(&self) -> std::option::Option<& str> {
+    pub fn shared_account_id(&self) -> std::option::Option<&str> {
         self.shared_account_id.as_deref()
     }
 }
 impl DeleteImagePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DeleteImagePermissionsInput`](crate::operation::delete_image_permissions::DeleteImagePermissionsInput).
-    pub fn builder() -> crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder
+    {
         crate::operation::delete_image_permissions::builders::DeleteImagePermissionsInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeleteImagePermissionsInputBuilder {
     }
     /// <p>The name of the private image.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
     pub fn shared_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl DeleteImagePermissionsInputBuilder {
         self
     }
     /// <p>The 12-digit identifier of the AWS account for which to delete image permissions.</p>
-    pub fn set_shared_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.shared_account_id = input; self
+    pub fn set_shared_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.shared_account_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteImagePermissionsInput`](crate::operation::delete_image_permissions::DeleteImagePermissionsInput).
-    pub fn build(self) -> Result<crate::operation::delete_image_permissions::DeleteImagePermissionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_image_permissions::DeleteImagePermissionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_image_permissions::DeleteImagePermissionsInput {
-                name: self.name
-                ,
-                shared_account_id: self.shared_account_id
-                ,
-            }
+                name: self.name,
+                shared_account_id: self.shared_account_id,
+            },
         )
     }
 }
-

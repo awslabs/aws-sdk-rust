@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateApplicationToEntitlementInput  {
+pub struct AssociateApplicationToEntitlementInput {
     /// <p>The name of the stack.</p>
     #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct AssociateApplicationToEntitlementInput  {
 }
 impl AssociateApplicationToEntitlementInput {
     /// <p>The name of the stack.</p>
-    pub fn stack_name(&self) -> std::option::Option<& str> {
+    pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>The name of the entitlement.</p>
-    pub fn entitlement_name(&self) -> std::option::Option<& str> {
+    pub fn entitlement_name(&self) -> std::option::Option<&str> {
         self.entitlement_name.as_deref()
     }
     /// <p>The identifier of the application.</p>
-    pub fn application_identifier(&self) -> std::option::Option<& str> {
+    pub fn application_identifier(&self) -> std::option::Option<&str> {
         self.application_identifier.as_deref()
     }
 }
 impl AssociateApplicationToEntitlementInput {
     /// Creates a new builder-style object to manufacture [`AssociateApplicationToEntitlementInput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput).
-    pub fn builder() -> crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementInputBuilder {
+    pub fn builder() -> crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementInputBuilder{
         crate::operation::associate_application_to_entitlement::builders::AssociateApplicationToEntitlementInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl AssociateApplicationToEntitlementInputBuilder {
     }
     /// <p>The name of the stack.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input; self
+        self.stack_name = input;
+        self
     }
     /// <p>The name of the entitlement.</p>
     pub fn entitlement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl AssociateApplicationToEntitlementInputBuilder {
     }
     /// <p>The name of the entitlement.</p>
     pub fn set_entitlement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entitlement_name = input; self
+        self.entitlement_name = input;
+        self
     }
     /// <p>The identifier of the application.</p>
     pub fn application_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,11 +69,15 @@ impl AssociateApplicationToEntitlementInputBuilder {
         self
     }
     /// <p>The identifier of the application.</p>
-    pub fn set_application_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_identifier = input; self
+    pub fn set_application_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateApplicationToEntitlementInput`](crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput).
-    pub fn build(self) -> Result<crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementInput {
                 stack_name: self.stack_name
@@ -84,4 +90,3 @@ impl AssociateApplicationToEntitlementInputBuilder {
         )
     }
 }
-

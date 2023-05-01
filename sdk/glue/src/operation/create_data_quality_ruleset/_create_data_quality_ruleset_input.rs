@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDataQualityRulesetInput  {
+pub struct CreateDataQualityRulesetInput {
     /// <p>A unique name for the data quality ruleset.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -14,7 +14,8 @@ pub struct CreateDataQualityRulesetInput  {
     pub ruleset: std::option::Option<std::string::String>,
     /// <p>A list of tags applied to the data quality ruleset.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A target table associated with the data quality ruleset.</p>
     #[doc(hidden)]
     pub target_table: std::option::Option<crate::types::DataQualityTargetTable>,
@@ -24,33 +25,38 @@ pub struct CreateDataQualityRulesetInput  {
 }
 impl CreateDataQualityRulesetInput {
     /// <p>A unique name for the data quality ruleset.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the data quality ruleset.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
-    pub fn ruleset(&self) -> std::option::Option<& str> {
+    pub fn ruleset(&self) -> std::option::Option<&str> {
         self.ruleset.as_deref()
     }
     /// <p>A list of tags applied to the data quality ruleset.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>A target table associated with the data quality ruleset.</p>
-    pub fn target_table(&self) -> std::option::Option<& crate::types::DataQualityTargetTable> {
+    pub fn target_table(&self) -> std::option::Option<&crate::types::DataQualityTargetTable> {
         self.target_table.as_ref()
     }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl CreateDataQualityRulesetInput {
     /// Creates a new builder-style object to manufacture [`CreateDataQualityRulesetInput`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput).
-    pub fn builder() -> crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetInputBuilder
+    {
         crate::operation::create_data_quality_ruleset::builders::CreateDataQualityRulesetInputBuilder::default()
     }
 }
@@ -62,7 +68,8 @@ pub struct CreateDataQualityRulesetInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) ruleset: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) target_table: std::option::Option<crate::types::DataQualityTargetTable>,
     pub(crate) client_token: std::option::Option<std::string::String>,
 }
@@ -74,7 +81,8 @@ impl CreateDataQualityRulesetInputBuilder {
     }
     /// <p>A unique name for the data quality ruleset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description of the data quality ruleset.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +91,8 @@ impl CreateDataQualityRulesetInputBuilder {
     }
     /// <p>A description of the data quality ruleset.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
     pub fn ruleset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,22 +101,33 @@ impl CreateDataQualityRulesetInputBuilder {
     }
     /// <p>A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.</p>
     pub fn set_ruleset(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ruleset = input; self
+        self.ruleset = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags applied to the data quality ruleset.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A list of tags applied to the data quality ruleset.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>A target table associated with the data quality ruleset.</p>
     pub fn target_table(mut self, input: crate::types::DataQualityTargetTable) -> Self {
@@ -115,8 +135,12 @@ impl CreateDataQualityRulesetInputBuilder {
         self
     }
     /// <p>A target table associated with the data quality ruleset.</p>
-    pub fn set_target_table(mut self, input: std::option::Option<crate::types::DataQualityTargetTable>) -> Self {
-        self.target_table = input; self
+    pub fn set_target_table(
+        mut self,
+        input: std::option::Option<crate::types::DataQualityTargetTable>,
+    ) -> Self {
+        self.target_table = input;
+        self
     }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,26 +149,25 @@ impl CreateDataQualityRulesetInputBuilder {
     }
     /// <p>Used for idempotency and is recommended to be set to a random ID (such as a UUID) to avoid creating or starting multiple instances of the same resource.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDataQualityRulesetInput`](crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput).
-    pub fn build(self) -> Result<crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                ruleset: self.ruleset
-                ,
-                tags: self.tags
-                ,
-                target_table: self.target_table
-                ,
-                client_token: self.client_token
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                ruleset: self.ruleset,
+                tags: self.tags,
+                target_table: self.target_table,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

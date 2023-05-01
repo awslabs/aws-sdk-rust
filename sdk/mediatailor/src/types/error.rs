@@ -5,4 +5,3 @@ mod _bad_request_exception;
 
 /// Builders
 pub mod builders;
-

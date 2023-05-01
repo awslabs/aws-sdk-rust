@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStudioComponentsOutput  {
+pub struct ListStudioComponentsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct ListStudioComponentsOutput  {
 }
 impl ListStudioComponentsOutput {
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>A collection of studio components.</p>
-    pub fn studio_components(&self) -> std::option::Option<& [crate::types::StudioComponent]> {
+    pub fn studio_components(&self) -> std::option::Option<&[crate::types::StudioComponent]> {
         self.studio_components.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListStudioComponentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListStudioComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListStudioComponentsOutput`](crate::operation::list_studio_components::ListStudioComponentsOutput).
-    pub fn builder() -> crate::operation::list_studio_components::builders::ListStudioComponentsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_studio_components::builders::ListStudioComponentsOutputBuilder {
         crate::operation::list_studio_components::builders::ListStudioComponentsOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl ListStudioComponentsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `studio_components`.
     ///
@@ -58,32 +60,33 @@ impl ListStudioComponentsOutputBuilder {
     /// <p>A collection of studio components.</p>
     pub fn studio_components(mut self, input: crate::types::StudioComponent) -> Self {
         let mut v = self.studio_components.unwrap_or_default();
-                        v.push(input);
-                        self.studio_components = Some(v);
-                        self
+        v.push(input);
+        self.studio_components = Some(v);
+        self
     }
     /// <p>A collection of studio components.</p>
-    pub fn set_studio_components(mut self, input: std::option::Option<std::vec::Vec<crate::types::StudioComponent>>) -> Self {
-        self.studio_components = input; self
+    pub fn set_studio_components(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StudioComponent>>,
+    ) -> Self {
+        self.studio_components = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListStudioComponentsOutput`](crate::operation::list_studio_components::ListStudioComponentsOutput).
     pub fn build(self) -> crate::operation::list_studio_components::ListStudioComponentsOutput {
         crate::operation::list_studio_components::ListStudioComponentsOutput {
-            next_token: self.next_token
-            ,
-            studio_components: self.studio_components
-            ,
+            next_token: self.next_token,
+            studio_components: self.studio_components,
             _request_id: self._request_id,
         }
     }
 }
-

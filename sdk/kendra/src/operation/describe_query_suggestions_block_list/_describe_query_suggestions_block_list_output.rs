@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeQuerySuggestionsBlockListOutput  {
+pub struct DescribeQuerySuggestionsBlockListOutput {
     /// <p>The identifier of the index for the block list.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -27,8 +27,8 @@ pub struct DescribeQuerySuggestionsBlockListOutput  {
     /// <p>The Unix timestamp when a block list for query suggestions was last updated.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p> 
-    /// <p>Each block word or phrase should be on a separate line in a text file.</p> 
+    /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
+    /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     #[doc(hidden)]
     pub source_s3_path: std::option::Option<crate::types::S3Path>,
@@ -38,7 +38,7 @@ pub struct DescribeQuerySuggestionsBlockListOutput  {
     /// <p>The current size of the block list text file in S3.</p>
     #[doc(hidden)]
     pub file_size_bytes: std::option::Option<i64>,
-    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p> 
+    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
     /// <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -46,41 +46,41 @@ pub struct DescribeQuerySuggestionsBlockListOutput  {
 }
 impl DescribeQuerySuggestionsBlockListOutput {
     /// <p>The identifier of the index for the block list.</p>
-    pub fn index_id(&self) -> std::option::Option<& str> {
+    pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the block list.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the block list.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description for the block list.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::QuerySuggestionsBlockListStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::QuerySuggestionsBlockListStatus> {
         self.status.as_ref()
     }
     /// <p>The error message containing details if there are issues processing the block list.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>The Unix timestamp when a block list for query suggestions was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix timestamp when a block list for query suggestions was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
-    /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p> 
-    /// <p>Each block word or phrase should be on a separate line in a text file.</p> 
+    /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
+    /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    pub fn source_s3_path(&self) -> std::option::Option<& crate::types::S3Path> {
+    pub fn source_s3_path(&self) -> std::option::Option<&crate::types::S3Path> {
         self.source_s3_path.as_ref()
     }
     /// <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
@@ -91,20 +91,20 @@ impl DescribeQuerySuggestionsBlockListOutput {
     pub fn file_size_bytes(&self) -> std::option::Option<i64> {
         self.file_size_bytes
     }
-    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p> 
+    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
     /// <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeQuerySuggestionsBlockListOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeQuerySuggestionsBlockListOutput {
     /// Creates a new builder-style object to manufacture [`DescribeQuerySuggestionsBlockListOutput`](crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput).
-    pub fn builder() -> crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListOutputBuilder {
+    pub fn builder() -> crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListOutputBuilder{
         crate::operation::describe_query_suggestions_block_list::builders::DescribeQuerySuggestionsBlockListOutputBuilder::default()
     }
 }
@@ -135,7 +135,8 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
     }
     /// <p>The identifier of the index for the block list.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input; self
+        self.index_id = input;
+        self
     }
     /// <p>The identifier of the block list.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +145,8 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
     }
     /// <p>The identifier of the block list.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the block list.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,7 +155,8 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
     }
     /// <p>The name of the block list.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description for the block list.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -162,7 +165,8 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
     }
     /// <p>The description for the block list.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
     pub fn status(mut self, input: crate::types::QuerySuggestionsBlockListStatus) -> Self {
@@ -170,8 +174,12 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
         self
     }
     /// <p>The current status of the block list. When the value is <code>ACTIVE</code>, the block list is ready for use.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::QuerySuggestionsBlockListStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::QuerySuggestionsBlockListStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The error message containing details if there are issues processing the block list.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -180,7 +188,8 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
     }
     /// <p>The error message containing details if there are issues processing the block list.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// <p>The Unix timestamp when a block list for query suggestions was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -188,8 +197,12 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when a block list for query suggestions was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The Unix timestamp when a block list for query suggestions was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -197,21 +210,26 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when a block list for query suggestions was last updated.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
-    /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p> 
-    /// <p>Each block word or phrase should be on a separate line in a text file.</p> 
+    /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
+    /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     pub fn source_s3_path(mut self, input: crate::types::S3Path) -> Self {
         self.source_s3_path = Some(input);
         self
     }
-    /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p> 
-    /// <p>Each block word or phrase should be on a separate line in a text file.</p> 
+    /// <p>Shows the current S3 path to your block list text file in your S3 bucket.</p>
+    /// <p>Each block word or phrase should be on a separate line in a text file.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     pub fn set_source_s3_path(mut self, input: std::option::Option<crate::types::S3Path>) -> Self {
-        self.source_s3_path = input; self
+        self.source_s3_path = input;
+        self
     }
     /// <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
     pub fn item_count(mut self, input: i32) -> Self {
@@ -220,7 +238,8 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
     }
     /// <p>The current number of valid, non-empty words or phrases in the block list text file.</p>
     pub fn set_item_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.item_count = input; self
+        self.item_count = input;
+        self
     }
     /// <p>The current size of the block list text file in S3.</p>
     pub fn file_size_bytes(mut self, input: i64) -> Self {
@@ -229,30 +248,32 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
     }
     /// <p>The current size of the block list text file in S3.</p>
     pub fn set_file_size_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.file_size_bytes = input; self
+        self.file_size_bytes = input;
+        self
     }
-    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p> 
+    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
     /// <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.role_arn = Some(input.into());
         self
     }
-    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p> 
+    /// <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access the block list text file in S3.</p>
     /// <p>The role needs S3 read permissions to your file in S3 and needs to give STS (Security Token Service) assume role permissions to Amazon Kendra.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeQuerySuggestionsBlockListOutput`](crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput).
-    pub fn build(self) -> crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput {
+    pub fn build(self) -> crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput{
         crate::operation::describe_query_suggestions_block_list::DescribeQuerySuggestionsBlockListOutput {
             index_id: self.index_id
             ,
@@ -282,4 +303,3 @@ impl DescribeQuerySuggestionsBlockListOutputBuilder {
         }
     }
 }
-

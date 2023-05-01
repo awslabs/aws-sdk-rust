@@ -4,53 +4,69 @@ pub use crate::operation::start_session::_start_session_output::StartSessionOutp
 pub use crate::operation::start_session::_start_session_input::StartSessionInputBuilder;
 
 /// Fluent builder constructing a request to `StartSession`.
-/// 
-/// <p>Initiates a connection to a target (for example, a managed node) for a Session Manager session. Returns a URL and token that can be used to open a WebSocket connection for sending input and receiving outputs.</p> <note> 
-/// <p>Amazon Web Services CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to be installed on the client machine making the call. For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p> 
-/// <p>Amazon Web Services Tools for PowerShell usage: Start-SSMSession isn't currently supported by Amazon Web Services Tools for PowerShell on Windows local machines.</p> 
+///
+/// <p>Initiates a connection to a target (for example, a managed node) for a Session Manager session. Returns a URL and token that can be used to open a WebSocket connection for sending input and receiving outputs.</p> <note>
+/// <p>Amazon Web Services CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager plugin to be installed on the client machine making the call. For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// <p>Amazon Web Services Tools for PowerShell usage: Start-SSMSession isn't currently supported by Amazon Web Services Tools for PowerShell on Windows local machines.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartSessionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_session::builders::StartSessionInputBuilder,
+    inner: crate::operation::start_session::builders::StartSessionInputBuilder,
 }
-impl StartSessionFluentBuilder  {
+impl StartSessionFluentBuilder {
     /// Creates a new `StartSession`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_session::StartSession, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_session::StartSessionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_session::StartSessionOutput, aws_smithy_http::result::SdkError<crate::operation::start_session::StartSessionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_session::StartSession,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::start_session::StartSessionError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_session::StartSessionOutput,
+        aws_smithy_http::result::SdkError<crate::operation::start_session::StartSessionError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The managed node to connect to for the session.</p>
     pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.target(input.into());
@@ -86,14 +102,22 @@ impl StartSessionFluentBuilder  {
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>The values you want to specify for the parameters defined in the Session document.</p>
-    pub fn parameters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
+    pub fn parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::vec::Vec<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.parameters(k.into(), v);
         self
     }
     /// <p>The values you want to specify for the parameters defined in the Session document.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_parameters(input);
         self
     }
 }
-

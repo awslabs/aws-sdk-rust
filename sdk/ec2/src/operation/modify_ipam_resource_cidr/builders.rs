@@ -4,51 +4,72 @@ pub use crate::operation::modify_ipam_resource_cidr::_modify_ipam_resource_cidr_
 pub use crate::operation::modify_ipam_resource_cidr::_modify_ipam_resource_cidr_input::ModifyIpamResourceCidrInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyIpamResourceCidr`.
-/// 
-/// <p>Modify a resource CIDR. You can use this action to transfer resource CIDRs between scopes and ignore resource CIDRs that you do not want to manage. If set to false, the resource will not be tracked for overlap, it cannot be auto-imported into a pool, and it will be removed from any pool it has an allocation in.</p> 
+///
+/// <p>Modify a resource CIDR. You can use this action to transfer resource CIDRs between scopes and ignore resource CIDRs that you do not want to manage. If set to false, the resource will not be tracked for overlap, it cannot be auto-imported into a pool, and it will be removed from any pool it has an allocation in.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/move-resource-ipam.html">Move resource CIDRs between scopes</a> and <a href="https://docs.aws.amazon.com/vpc/latest/ipam/change-monitoring-state-ipam.html">Change the monitoring state of resource CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyIpamResourceCidrFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrInputBuilder,
+    inner:
+        crate::operation::modify_ipam_resource_cidr::builders::ModifyIpamResourceCidrInputBuilder,
 }
-impl ModifyIpamResourceCidrFluentBuilder  {
+impl ModifyIpamResourceCidrFluentBuilder {
     /// Creates a new `ModifyIpamResourceCidr`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidr, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput, aws_smithy_http::result::SdkError<crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidr,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -95,7 +116,10 @@ impl ModifyIpamResourceCidrFluentBuilder  {
         self
     }
     /// <p>The ID of the current scope that the resource CIDR is in.</p>
-    pub fn set_current_ipam_scope_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_current_ipam_scope_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_current_ipam_scope_id(input);
         self
     }
@@ -105,7 +129,10 @@ impl ModifyIpamResourceCidrFluentBuilder  {
         self
     }
     /// <p>The ID of the scope you want to transfer the resource CIDR to.</p>
-    pub fn set_destination_ipam_scope_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_ipam_scope_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_ipam_scope_id(input);
         self
     }
@@ -120,4 +147,3 @@ impl ModifyIpamResourceCidrFluentBuilder  {
         self
     }
 }
-

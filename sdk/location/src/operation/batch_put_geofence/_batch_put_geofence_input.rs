@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutGeofenceInput  {
+pub struct BatchPutGeofenceInput {
     /// <p>The geofence collection storing the geofences.</p>
     #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct BatchPutGeofenceInput  {
 }
 impl BatchPutGeofenceInput {
     /// <p>The geofence collection storing the geofences.</p>
-    pub fn collection_name(&self) -> std::option::Option<& str> {
+    pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
-    pub fn entries(&self) -> std::option::Option<& [crate::types::BatchPutGeofenceRequestEntry]> {
+    pub fn entries(&self) -> std::option::Option<&[crate::types::BatchPutGeofenceRequestEntry]> {
         self.entries.as_deref()
     }
 }
 impl BatchPutGeofenceInput {
     /// Creates a new builder-style object to manufacture [`BatchPutGeofenceInput`](crate::operation::batch_put_geofence::BatchPutGeofenceInput).
-    pub fn builder() -> crate::operation::batch_put_geofence::builders::BatchPutGeofenceInputBuilder {
+    pub fn builder() -> crate::operation::batch_put_geofence::builders::BatchPutGeofenceInputBuilder
+    {
         crate::operation::batch_put_geofence::builders::BatchPutGeofenceInputBuilder::default()
     }
 }
@@ -32,7 +33,8 @@ impl BatchPutGeofenceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchPutGeofenceInputBuilder {
     pub(crate) collection_name: std::option::Option<std::string::String>,
-    pub(crate) entries: std::option::Option<std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>>,
+    pub(crate) entries:
+        std::option::Option<std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>>,
 }
 impl BatchPutGeofenceInputBuilder {
     /// <p>The geofence collection storing the geofences.</p>
@@ -42,7 +44,8 @@ impl BatchPutGeofenceInputBuilder {
     }
     /// <p>The geofence collection storing the geofences.</p>
     pub fn set_collection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_name = input; self
+        self.collection_name = input;
+        self
     }
     /// Appends an item to `entries`.
     ///
@@ -51,24 +54,30 @@ impl BatchPutGeofenceInputBuilder {
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
     pub fn entries(mut self, input: crate::types::BatchPutGeofenceRequestEntry) -> Self {
         let mut v = self.entries.unwrap_or_default();
-                        v.push(input);
-                        self.entries = Some(v);
-                        self
+        v.push(input);
+        self.entries = Some(v);
+        self
     }
     /// <p>The batch of geofences to be stored in a geofence collection.</p>
-    pub fn set_entries(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>>) -> Self {
-        self.entries = input; self
+    pub fn set_entries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BatchPutGeofenceRequestEntry>>,
+    ) -> Self {
+        self.entries = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchPutGeofenceInput`](crate::operation::batch_put_geofence::BatchPutGeofenceInput).
-    pub fn build(self) -> Result<crate::operation::batch_put_geofence::BatchPutGeofenceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_put_geofence::BatchPutGeofenceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_put_geofence::BatchPutGeofenceInput {
-                collection_name: self.collection_name
-                ,
-                entries: self.entries
-                ,
-            }
+                collection_name: self.collection_name,
+                entries: self.entries,
+            },
         )
     }
 }
-

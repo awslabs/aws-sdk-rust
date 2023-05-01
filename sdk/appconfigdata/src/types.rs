@@ -24,4 +24,3 @@ pub mod builders;
 
 /// Error types that AWS AppConfig Data can respond with.
 pub mod error;
-

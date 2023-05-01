@@ -3,7 +3,7 @@
 /// <p>The user on the Amazon Chime account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct User  {
+pub struct User {
     /// <p>The user ID.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -46,65 +46,72 @@ pub struct User  {
 }
 impl User {
     /// <p>The user ID.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The primary email address of the user.</p>
-    pub fn primary_email(&self) -> std::option::Option<& str> {
+    pub fn primary_email(&self) -> std::option::Option<&str> {
         self.primary_email.as_deref()
     }
     /// <p>The primary phone number associated with the user.</p>
-    pub fn primary_provisioned_number(&self) -> std::option::Option<& str> {
+    pub fn primary_provisioned_number(&self) -> std::option::Option<&str> {
         self.primary_provisioned_number.as_deref()
     }
     /// <p>The display name of the user.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The license type for the user.</p>
-    pub fn license_type(&self) -> std::option::Option<& crate::types::License> {
+    pub fn license_type(&self) -> std::option::Option<&crate::types::License> {
         self.license_type.as_ref()
     }
     /// <p>The user type.</p>
-    pub fn user_type(&self) -> std::option::Option<& crate::types::UserType> {
+    pub fn user_type(&self) -> std::option::Option<&crate::types::UserType> {
         self.user_type.as_ref()
     }
     /// <p>The user registration status.</p>
-    pub fn user_registration_status(&self) -> std::option::Option<& crate::types::RegistrationStatus> {
+    pub fn user_registration_status(
+        &self,
+    ) -> std::option::Option<&crate::types::RegistrationStatus> {
         self.user_registration_status.as_ref()
     }
     /// <p>The user invite status.</p>
-    pub fn user_invitation_status(&self) -> std::option::Option<& crate::types::InviteStatus> {
+    pub fn user_invitation_status(&self) -> std::option::Option<&crate::types::InviteStatus> {
         self.user_invitation_status.as_ref()
     }
     /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
-    pub fn registered_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn registered_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.registered_on.as_ref()
     }
     /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
-    pub fn invited_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn invited_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_on.as_ref()
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn alexa_for_business_metadata(&self) -> std::option::Option<& crate::types::AlexaForBusinessMetadata> {
+    pub fn alexa_for_business_metadata(
+        &self,
+    ) -> std::option::Option<&crate::types::AlexaForBusinessMetadata> {
         self.alexa_for_business_metadata.as_ref()
     }
     /// <p>The user's personal meeting PIN.</p>
-    pub fn personal_pin(&self) -> std::option::Option<& str> {
+    pub fn personal_pin(&self) -> std::option::Option<&str> {
         self.personal_pin.as_deref()
     }
 }
-impl  std::fmt::Debug for User  {
+impl std::fmt::Debug for User {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("User");
         formatter.field("user_id", &self.user_id);
         formatter.field("account_id", &self.account_id);
         formatter.field("primary_email", &"*** Sensitive Data Redacted ***");
-        formatter.field("primary_provisioned_number", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "primary_provisioned_number",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("license_type", &self.license_type);
         formatter.field("user_type", &self.user_type);
@@ -112,7 +119,10 @@ impl  std::fmt::Debug for User  {
         formatter.field("user_invitation_status", &self.user_invitation_status);
         formatter.field("registered_on", &self.registered_on);
         formatter.field("invited_on", &self.invited_on);
-        formatter.field("alexa_for_business_metadata", &self.alexa_for_business_metadata);
+        formatter.field(
+            "alexa_for_business_metadata",
+            &self.alexa_for_business_metadata,
+        );
         formatter.field("personal_pin", &self.personal_pin);
         formatter.finish()
     }
@@ -139,7 +149,8 @@ pub struct UserBuilder {
     pub(crate) user_invitation_status: std::option::Option<crate::types::InviteStatus>,
     pub(crate) registered_on: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) invited_on: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) alexa_for_business_metadata: std::option::Option<crate::types::AlexaForBusinessMetadata>,
+    pub(crate) alexa_for_business_metadata:
+        std::option::Option<crate::types::AlexaForBusinessMetadata>,
     pub(crate) personal_pin: std::option::Option<std::string::String>,
 }
 impl UserBuilder {
@@ -150,7 +161,8 @@ impl UserBuilder {
     }
     /// <p>The user ID.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +171,8 @@ impl UserBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The primary email address of the user.</p>
     pub fn primary_email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +181,8 @@ impl UserBuilder {
     }
     /// <p>The primary email address of the user.</p>
     pub fn set_primary_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.primary_email = input; self
+        self.primary_email = input;
+        self
     }
     /// <p>The primary phone number associated with the user.</p>
     pub fn primary_provisioned_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,8 +190,12 @@ impl UserBuilder {
         self
     }
     /// <p>The primary phone number associated with the user.</p>
-    pub fn set_primary_provisioned_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.primary_provisioned_number = input; self
+    pub fn set_primary_provisioned_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.primary_provisioned_number = input;
+        self
     }
     /// <p>The display name of the user.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,7 +204,8 @@ impl UserBuilder {
     }
     /// <p>The display name of the user.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The license type for the user.</p>
     pub fn license_type(mut self, input: crate::types::License) -> Self {
@@ -195,7 +214,8 @@ impl UserBuilder {
     }
     /// <p>The license type for the user.</p>
     pub fn set_license_type(mut self, input: std::option::Option<crate::types::License>) -> Self {
-        self.license_type = input; self
+        self.license_type = input;
+        self
     }
     /// <p>The user type.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
@@ -204,7 +224,8 @@ impl UserBuilder {
     }
     /// <p>The user type.</p>
     pub fn set_user_type(mut self, input: std::option::Option<crate::types::UserType>) -> Self {
-        self.user_type = input; self
+        self.user_type = input;
+        self
     }
     /// <p>The user registration status.</p>
     pub fn user_registration_status(mut self, input: crate::types::RegistrationStatus) -> Self {
@@ -212,8 +233,12 @@ impl UserBuilder {
         self
     }
     /// <p>The user registration status.</p>
-    pub fn set_user_registration_status(mut self, input: std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.user_registration_status = input; self
+    pub fn set_user_registration_status(
+        mut self,
+        input: std::option::Option<crate::types::RegistrationStatus>,
+    ) -> Self {
+        self.user_registration_status = input;
+        self
     }
     /// <p>The user invite status.</p>
     pub fn user_invitation_status(mut self, input: crate::types::InviteStatus) -> Self {
@@ -221,8 +246,12 @@ impl UserBuilder {
         self
     }
     /// <p>The user invite status.</p>
-    pub fn set_user_invitation_status(mut self, input: std::option::Option<crate::types::InviteStatus>) -> Self {
-        self.user_invitation_status = input; self
+    pub fn set_user_invitation_status(
+        mut self,
+        input: std::option::Option<crate::types::InviteStatus>,
+    ) -> Self {
+        self.user_invitation_status = input;
+        self
     }
     /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
     pub fn registered_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -230,8 +259,12 @@ impl UserBuilder {
         self
     }
     /// <p>Date and time when the user is registered, in ISO 8601 format.</p>
-    pub fn set_registered_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.registered_on = input; self
+    pub fn set_registered_on(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.registered_on = input;
+        self
     }
     /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
     pub fn invited_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -239,17 +272,28 @@ impl UserBuilder {
         self
     }
     /// <p>Date and time when the user is invited to the Amazon Chime account, in ISO 8601 format.</p>
-    pub fn set_invited_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.invited_on = input; self
+    pub fn set_invited_on(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.invited_on = input;
+        self
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn alexa_for_business_metadata(mut self, input: crate::types::AlexaForBusinessMetadata) -> Self {
+    pub fn alexa_for_business_metadata(
+        mut self,
+        input: crate::types::AlexaForBusinessMetadata,
+    ) -> Self {
         self.alexa_for_business_metadata = Some(input);
         self
     }
     /// <p>The Alexa for Business metadata.</p>
-    pub fn set_alexa_for_business_metadata(mut self, input: std::option::Option<crate::types::AlexaForBusinessMetadata>) -> Self {
-        self.alexa_for_business_metadata = input; self
+    pub fn set_alexa_for_business_metadata(
+        mut self,
+        input: std::option::Option<crate::types::AlexaForBusinessMetadata>,
+    ) -> Self {
+        self.alexa_for_business_metadata = input;
+        self
     }
     /// <p>The user's personal meeting PIN.</p>
     pub fn personal_pin(mut self, input: impl Into<std::string::String>) -> Self {
@@ -258,37 +302,25 @@ impl UserBuilder {
     }
     /// <p>The user's personal meeting PIN.</p>
     pub fn set_personal_pin(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.personal_pin = input; self
+        self.personal_pin = input;
+        self
     }
     /// Consumes the builder and constructs a [`User`](crate::types::User).
     pub fn build(self) -> crate::types::User {
         crate::types::User {
-            user_id: self.user_id
-            ,
-            account_id: self.account_id
-            ,
-            primary_email: self.primary_email
-            ,
-            primary_provisioned_number: self.primary_provisioned_number
-            ,
-            display_name: self.display_name
-            ,
-            license_type: self.license_type
-            ,
-            user_type: self.user_type
-            ,
-            user_registration_status: self.user_registration_status
-            ,
-            user_invitation_status: self.user_invitation_status
-            ,
-            registered_on: self.registered_on
-            ,
-            invited_on: self.invited_on
-            ,
-            alexa_for_business_metadata: self.alexa_for_business_metadata
-            ,
-            personal_pin: self.personal_pin
-            ,
+            user_id: self.user_id,
+            account_id: self.account_id,
+            primary_email: self.primary_email,
+            primary_provisioned_number: self.primary_provisioned_number,
+            display_name: self.display_name,
+            license_type: self.license_type,
+            user_type: self.user_type,
+            user_registration_status: self.user_registration_status,
+            user_invitation_status: self.user_invitation_status,
+            registered_on: self.registered_on,
+            invited_on: self.invited_on,
+            alexa_for_business_metadata: self.alexa_for_business_metadata,
+            personal_pin: self.personal_pin,
         }
     }
 }
@@ -298,7 +330,10 @@ impl std::fmt::Debug for UserBuilder {
         formatter.field("user_id", &self.user_id);
         formatter.field("account_id", &self.account_id);
         formatter.field("primary_email", &"*** Sensitive Data Redacted ***");
-        formatter.field("primary_provisioned_number", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "primary_provisioned_number",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("display_name", &"*** Sensitive Data Redacted ***");
         formatter.field("license_type", &self.license_type);
         formatter.field("user_type", &self.user_type);
@@ -306,9 +341,11 @@ impl std::fmt::Debug for UserBuilder {
         formatter.field("user_invitation_status", &self.user_invitation_status);
         formatter.field("registered_on", &self.registered_on);
         formatter.field("invited_on", &self.invited_on);
-        formatter.field("alexa_for_business_metadata", &self.alexa_for_business_metadata);
+        formatter.field(
+            "alexa_for_business_metadata",
+            &self.alexa_for_business_metadata,
+        );
         formatter.field("personal_pin", &self.personal_pin);
         formatter.finish()
     }
 }
-

@@ -2,13 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComponentTypesOutput  {
+pub struct ListComponentTypesOutput {
     /// <p>The ID of the workspace.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
     /// <p>A list of objects that contain information about the component types.</p>
     #[doc(hidden)]
-    pub component_type_summaries: std::option::Option<std::vec::Vec<crate::types::ComponentTypeSummary>>,
+    pub component_type_summaries:
+        std::option::Option<std::vec::Vec<crate::types::ComponentTypeSummary>>,
     /// <p>The string that specifies the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -19,15 +20,17 @@ pub struct ListComponentTypesOutput  {
 }
 impl ListComponentTypesOutput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>A list of objects that contain information about the component types.</p>
-    pub fn component_type_summaries(&self) -> std::option::Option<& [crate::types::ComponentTypeSummary]> {
+    pub fn component_type_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::ComponentTypeSummary]> {
         self.component_type_summaries.as_deref()
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the maximum number of results to display.</p>
@@ -36,13 +39,14 @@ impl ListComponentTypesOutput {
     }
 }
 impl aws_http::request_id::RequestId for ListComponentTypesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListComponentTypesOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentTypesOutput`](crate::operation::list_component_types::ListComponentTypesOutput).
-    pub fn builder() -> crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder {
         crate::operation::list_component_types::builders::ListComponentTypesOutputBuilder::default()
     }
 }
@@ -52,7 +56,8 @@ impl ListComponentTypesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListComponentTypesOutputBuilder {
     pub(crate) workspace_id: std::option::Option<std::string::String>,
-    pub(crate) component_type_summaries: std::option::Option<std::vec::Vec<crate::types::ComponentTypeSummary>>,
+    pub(crate) component_type_summaries:
+        std::option::Option<std::vec::Vec<crate::types::ComponentTypeSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
     _request_id: Option<String>,
@@ -65,7 +70,8 @@ impl ListComponentTypesOutputBuilder {
     }
     /// <p>The ID of the workspace.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// Appends an item to `component_type_summaries`.
     ///
@@ -74,13 +80,17 @@ impl ListComponentTypesOutputBuilder {
     /// <p>A list of objects that contain information about the component types.</p>
     pub fn component_type_summaries(mut self, input: crate::types::ComponentTypeSummary) -> Self {
         let mut v = self.component_type_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.component_type_summaries = Some(v);
-                        self
+        v.push(input);
+        self.component_type_summaries = Some(v);
+        self
     }
     /// <p>A list of objects that contain information about the component types.</p>
-    pub fn set_component_type_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComponentTypeSummary>>) -> Self {
-        self.component_type_summaries = input; self
+    pub fn set_component_type_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ComponentTypeSummary>>,
+    ) -> Self {
+        self.component_type_summaries = input;
+        self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,7 +99,8 @@ impl ListComponentTypesOutputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Specifies the maximum number of results to display.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -98,30 +109,26 @@ impl ListComponentTypesOutputBuilder {
     }
     /// <p>Specifies the maximum number of results to display.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListComponentTypesOutput`](crate::operation::list_component_types::ListComponentTypesOutput).
     pub fn build(self) -> crate::operation::list_component_types::ListComponentTypesOutput {
         crate::operation::list_component_types::ListComponentTypesOutput {
-            workspace_id: self.workspace_id
-            ,
-            component_type_summaries: self.component_type_summaries
-            ,
-            next_token: self.next_token
-            ,
-            max_results: self.max_results
-            ,
+            workspace_id: self.workspace_id,
+            component_type_summaries: self.component_type_summaries,
+            next_token: self.next_token,
+            max_results: self.max_results,
             _request_id: self._request_id,
         }
     }
 }
-

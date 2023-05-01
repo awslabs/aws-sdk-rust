@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsersInGroupOutput  {
+pub struct ListUsersInGroupOutput {
     /// <p>The users returned in the request to list users.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::types::UserType>>,
@@ -13,22 +13,23 @@ pub struct ListUsersInGroupOutput  {
 }
 impl ListUsersInGroupOutput {
     /// <p>The users returned in the request to list users.</p>
-    pub fn users(&self) -> std::option::Option<& [crate::types::UserType]> {
+    pub fn users(&self) -> std::option::Option<&[crate::types::UserType]> {
         self.users.as_deref()
     }
     /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListUsersInGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListUsersInGroupOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersInGroupOutput`](crate::operation::list_users_in_group::ListUsersInGroupOutput).
-    pub fn builder() -> crate::operation::list_users_in_group::builders::ListUsersInGroupOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_users_in_group::builders::ListUsersInGroupOutputBuilder {
         crate::operation::list_users_in_group::builders::ListUsersInGroupOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListUsersInGroupOutputBuilder {
     /// <p>The users returned in the request to list users.</p>
     pub fn users(mut self, input: crate::types::UserType) -> Self {
         let mut v = self.users.unwrap_or_default();
-                        v.push(input);
-                        self.users = Some(v);
-                        self
+        v.push(input);
+        self.users = Some(v);
+        self
     }
     /// <p>The users returned in the request to list users.</p>
-    pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserType>>) -> Self {
-        self.users = input; self
+    pub fn set_users(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserType>>,
+    ) -> Self {
+        self.users = input;
+        self
     }
     /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListUsersInGroupOutputBuilder {
     }
     /// <p>An identifier that you can use in a later request to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListUsersInGroupOutput`](crate::operation::list_users_in_group::ListUsersInGroupOutput).
     pub fn build(self) -> crate::operation::list_users_in_group::ListUsersInGroupOutput {
         crate::operation::list_users_in_group::ListUsersInGroupOutput {
-            users: self.users
-            ,
-            next_token: self.next_token
-            ,
+            users: self.users,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

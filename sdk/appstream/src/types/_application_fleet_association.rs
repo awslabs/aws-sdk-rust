@@ -3,7 +3,7 @@
 /// <p>Describes the application fleet association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationFleetAssociation  {
+pub struct ApplicationFleetAssociation {
     /// <p>The name of the fleet associated with the application.</p>
     #[doc(hidden)]
     pub fleet_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ApplicationFleetAssociation  {
 }
 impl ApplicationFleetAssociation {
     /// <p>The name of the fleet associated with the application.</p>
-    pub fn fleet_name(&self) -> std::option::Option<& str> {
+    pub fn fleet_name(&self) -> std::option::Option<&str> {
         self.fleet_name.as_deref()
     }
     /// <p>The ARN of the application associated with the fleet.</p>
-    pub fn application_arn(&self) -> std::option::Option<& str> {
+    pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ApplicationFleetAssociationBuilder {
     }
     /// <p>The name of the fleet associated with the application.</p>
     pub fn set_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_name = input; self
+        self.fleet_name = input;
+        self
     }
     /// <p>The ARN of the application associated with the fleet.</p>
     pub fn application_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ApplicationFleetAssociationBuilder {
     }
     /// <p>The ARN of the application associated with the fleet.</p>
     pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_arn = input; self
+        self.application_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApplicationFleetAssociation`](crate::types::ApplicationFleetAssociation).
     pub fn build(self) -> crate::types::ApplicationFleetAssociation {
         crate::types::ApplicationFleetAssociation {
-            fleet_name: self.fleet_name
-            ,
-            application_arn: self.application_arn
-            ,
+            fleet_name: self.fleet_name,
+            application_arn: self.application_arn,
         }
     }
 }
-

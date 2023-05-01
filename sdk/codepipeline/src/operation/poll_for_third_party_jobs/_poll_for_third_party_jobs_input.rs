@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>PollForThirdPartyJobs</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PollForThirdPartyJobsInput  {
+pub struct PollForThirdPartyJobsInput {
     /// <p>Represents information about an action type.</p>
     #[doc(hidden)]
     pub action_type_id: std::option::Option<crate::types::ActionTypeId>,
@@ -13,7 +13,7 @@ pub struct PollForThirdPartyJobsInput  {
 }
 impl PollForThirdPartyJobsInput {
     /// <p>Represents information about an action type.</p>
-    pub fn action_type_id(&self) -> std::option::Option<& crate::types::ActionTypeId> {
+    pub fn action_type_id(&self) -> std::option::Option<&crate::types::ActionTypeId> {
         self.action_type_id.as_ref()
     }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
@@ -23,7 +23,9 @@ impl PollForThirdPartyJobsInput {
 }
 impl PollForThirdPartyJobsInput {
     /// Creates a new builder-style object to manufacture [`PollForThirdPartyJobsInput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput).
-    pub fn builder() -> crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsInputBuilder
+    {
         crate::operation::poll_for_third_party_jobs::builders::PollForThirdPartyJobsInputBuilder::default()
     }
 }
@@ -42,8 +44,12 @@ impl PollForThirdPartyJobsInputBuilder {
         self
     }
     /// <p>Represents information about an action type.</p>
-    pub fn set_action_type_id(mut self, input: std::option::Option<crate::types::ActionTypeId>) -> Self {
-        self.action_type_id = input; self
+    pub fn set_action_type_id(
+        mut self,
+        input: std::option::Option<crate::types::ActionTypeId>,
+    ) -> Self {
+        self.action_type_id = input;
+        self
     }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub fn max_batch_size(mut self, input: i32) -> Self {
@@ -52,18 +58,21 @@ impl PollForThirdPartyJobsInputBuilder {
     }
     /// <p>The maximum number of jobs to return in a poll for jobs call.</p>
     pub fn set_max_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_batch_size = input; self
+        self.max_batch_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`PollForThirdPartyJobsInput`](crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput).
-    pub fn build(self) -> Result<crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsInput {
-                action_type_id: self.action_type_id
-                ,
-                max_batch_size: self.max_batch_size
-                ,
-            }
+                action_type_id: self.action_type_id,
+                max_batch_size: self.max_batch_size,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVirtualClusterOutput  {
+pub struct DeleteVirtualClusterOutput {
     /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct DeleteVirtualClusterOutput  {
 }
 impl DeleteVirtualClusterOutput {
     /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteVirtualClusterOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteVirtualClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVirtualClusterOutput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput).
-    pub fn builder() -> crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder {
         crate::operation::delete_virtual_cluster::builders::DeleteVirtualClusterOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl DeleteVirtualClusterOutputBuilder {
     }
     /// <p>This output contains the ID of the virtual cluster that will be deleted. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteVirtualClusterOutput`](crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput).
     pub fn build(self) -> crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput {
         crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput {
-            id: self.id
-            ,
+            id: self.id,
             _request_id: self._request_id,
         }
     }
 }
-

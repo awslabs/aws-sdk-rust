@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetMaintenanceWindowExecutionInput  {
+pub struct GetMaintenanceWindowExecutionInput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
 }
 impl GetMaintenanceWindowExecutionInput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn window_execution_id(&self) -> std::option::Option<& str> {
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
         self.window_execution_id.as_deref()
     }
 }
 impl GetMaintenanceWindowExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionInput`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput).
-    pub fn builder() -> crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionInputBuilder {
+    pub fn builder() -> crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionInputBuilder{
         crate::operation::get_maintenance_window_execution::builders::GetMaintenanceWindowExecutionInputBuilder::default()
     }
 }
@@ -33,11 +33,20 @@ impl GetMaintenanceWindowExecutionInputBuilder {
         self
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn set_window_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_execution_id = input; self
+    pub fn set_window_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.window_execution_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionInput`](crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput).
-    pub fn build(self) -> Result<crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_maintenance_window_execution::GetMaintenanceWindowExecutionInput {
                 window_execution_id: self.window_execution_id
@@ -46,4 +55,3 @@ impl GetMaintenanceWindowExecutionInputBuilder {
         )
     }
 }
-

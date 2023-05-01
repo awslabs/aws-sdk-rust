@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocatePublicVirtualInterfaceInput  {
+pub struct AllocatePublicVirtualInterfaceInput {
     /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
     #[doc(hidden)]
     pub connection_id: std::option::Option<std::string::String>,
@@ -11,25 +11,28 @@ pub struct AllocatePublicVirtualInterfaceInput  {
     pub owner_account: std::option::Option<std::string::String>,
     /// <p>Information about the public virtual interface.</p>
     #[doc(hidden)]
-    pub new_public_virtual_interface_allocation: std::option::Option<crate::types::NewPublicVirtualInterfaceAllocation>,
+    pub new_public_virtual_interface_allocation:
+        std::option::Option<crate::types::NewPublicVirtualInterfaceAllocation>,
 }
 impl AllocatePublicVirtualInterfaceInput {
     /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
-    pub fn connection_id(&self) -> std::option::Option<& str> {
+    pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
-    pub fn owner_account(&self) -> std::option::Option<& str> {
+    pub fn owner_account(&self) -> std::option::Option<&str> {
         self.owner_account.as_deref()
     }
     /// <p>Information about the public virtual interface.</p>
-    pub fn new_public_virtual_interface_allocation(&self) -> std::option::Option<& crate::types::NewPublicVirtualInterfaceAllocation> {
+    pub fn new_public_virtual_interface_allocation(
+        &self,
+    ) -> std::option::Option<&crate::types::NewPublicVirtualInterfaceAllocation> {
         self.new_public_virtual_interface_allocation.as_ref()
     }
 }
 impl AllocatePublicVirtualInterfaceInput {
     /// Creates a new builder-style object to manufacture [`AllocatePublicVirtualInterfaceInput`](crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceInput).
-    pub fn builder() -> crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceInputBuilder {
+    pub fn builder() -> crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceInputBuilder{
         crate::operation::allocate_public_virtual_interface::builders::AllocatePublicVirtualInterfaceInputBuilder::default()
     }
 }
@@ -40,7 +43,8 @@ impl AllocatePublicVirtualInterfaceInput {
 pub struct AllocatePublicVirtualInterfaceInputBuilder {
     pub(crate) connection_id: std::option::Option<std::string::String>,
     pub(crate) owner_account: std::option::Option<std::string::String>,
-    pub(crate) new_public_virtual_interface_allocation: std::option::Option<crate::types::NewPublicVirtualInterfaceAllocation>,
+    pub(crate) new_public_virtual_interface_allocation:
+        std::option::Option<crate::types::NewPublicVirtualInterfaceAllocation>,
 }
 impl AllocatePublicVirtualInterfaceInputBuilder {
     /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
@@ -50,7 +54,8 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the connection on which the public virtual interface is provisioned.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input; self
+        self.connection_id = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
     pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,19 +64,32 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the public virtual interface.</p>
     pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_account = input; self
+        self.owner_account = input;
+        self
     }
     /// <p>Information about the public virtual interface.</p>
-    pub fn new_public_virtual_interface_allocation(mut self, input: crate::types::NewPublicVirtualInterfaceAllocation) -> Self {
+    pub fn new_public_virtual_interface_allocation(
+        mut self,
+        input: crate::types::NewPublicVirtualInterfaceAllocation,
+    ) -> Self {
         self.new_public_virtual_interface_allocation = Some(input);
         self
     }
     /// <p>Information about the public virtual interface.</p>
-    pub fn set_new_public_virtual_interface_allocation(mut self, input: std::option::Option<crate::types::NewPublicVirtualInterfaceAllocation>) -> Self {
-        self.new_public_virtual_interface_allocation = input; self
+    pub fn set_new_public_virtual_interface_allocation(
+        mut self,
+        input: std::option::Option<crate::types::NewPublicVirtualInterfaceAllocation>,
+    ) -> Self {
+        self.new_public_virtual_interface_allocation = input;
+        self
     }
     /// Consumes the builder and constructs a [`AllocatePublicVirtualInterfaceInput`](crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceInput).
-    pub fn build(self) -> Result<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceInput {
                 connection_id: self.connection_id
@@ -84,4 +102,3 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
         )
     }
 }
-

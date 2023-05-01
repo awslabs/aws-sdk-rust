@@ -3,14 +3,14 @@
 /// <p>Represents a task list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskList  {
+pub struct TaskList {
     /// <p>The name of the task list.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl TaskList {
     /// <p>The name of the task list.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl TaskListBuilder {
     }
     /// <p>The name of the task list.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`TaskList`](crate::types::TaskList).
     pub fn build(self) -> crate::types::TaskList {
-        crate::types::TaskList {
-            name: self.name
-            ,
-        }
+        crate::types::TaskList { name: self.name }
     }
 }
-

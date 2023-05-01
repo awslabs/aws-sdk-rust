@@ -4,56 +4,81 @@ pub use crate::operation::list_builds_for_project::_list_builds_for_project_outp
 pub use crate::operation::list_builds_for_project::_list_builds_for_project_input::ListBuildsForProjectInputBuilder;
 
 /// Fluent builder constructing a request to `ListBuildsForProject`.
-/// 
+///
 /// <p>Gets a list of build identifiers for the specified build project, with each build identifier representing a single build.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBuildsForProjectFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder,
+    inner: crate::operation::list_builds_for_project::builders::ListBuildsForProjectInputBuilder,
 }
-impl ListBuildsForProjectFluentBuilder  {
+impl ListBuildsForProjectFluentBuilder {
     /// Creates a new `ListBuildsForProject`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_builds_for_project::ListBuildsForProject, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_builds_for_project::ListBuildsForProjectError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_builds_for_project::ListBuildsForProjectOutput, aws_smithy_http::result::SdkError<crate::operation::list_builds_for_project::ListBuildsForProjectError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_builds_for_project::ListBuildsForProject,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_builds_for_project::ListBuildsForProjectError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_builds_for_project::ListBuildsForProjectOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_builds_for_project::ListBuildsForProjectError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator {
-                                crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator {
+        crate::operation::list_builds_for_project::paginator::ListBuildsForProjectPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The name of the CodeBuild project.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.project_name(input.into());
@@ -64,25 +89,28 @@ impl ListBuildsForProjectFluentBuilder  {
         self.inner = self.inner.set_project_name(input);
         self
     }
-    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p> 
-    /// <p>Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li> 
-    /// </ul> 
+    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
+    /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p> 
-    /// <p>Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li> 
-    /// </ul> 
+    /// <p>The order to sort the results in. The results are sorted by build number, not the build identifier. If this is not specified, the results are sorted in descending order.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the build identifiers in ascending order, by build number.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the build identifiers in descending order, by build number.</p> </li>
+    /// </ul>
     /// <p>If the project has more than 100 builds, setting the sort order will result in an error. </p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrderType>) -> Self {
+    pub fn set_sort_order(
+        mut self,
+        input: std::option::Option<crate::types::SortOrderType>,
+    ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -97,4 +125,3 @@ impl ListBuildsForProjectFluentBuilder  {
         self
     }
 }
-

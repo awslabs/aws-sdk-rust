@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeUserProfileInput  {
+pub struct DescribeUserProfileInput {
     /// <p>The domain ID.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct DescribeUserProfileInput  {
 }
 impl DescribeUserProfileInput {
     /// <p>The domain ID.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The user profile name. This value is not case sensitive.</p>
-    pub fn user_profile_name(&self) -> std::option::Option<& str> {
+    pub fn user_profile_name(&self) -> std::option::Option<&str> {
         self.user_profile_name.as_deref()
     }
 }
 impl DescribeUserProfileInput {
     /// Creates a new builder-style object to manufacture [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
-    pub fn builder() -> crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder {
-        crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder {
+        crate::operation::describe_user_profile::builders::DescribeUserProfileInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl DescribeUserProfileInputBuilder {
     }
     /// <p>The domain ID.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The user profile name. This value is not case sensitive.</p>
     pub fn user_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl DescribeUserProfileInputBuilder {
         self
     }
     /// <p>The user profile name. This value is not case sensitive.</p>
-    pub fn set_user_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_profile_name = input; self
+    pub fn set_user_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.user_profile_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeUserProfileInput`](crate::operation::describe_user_profile::DescribeUserProfileInput).
-    pub fn build(self) -> Result<crate::operation::describe_user_profile::DescribeUserProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_user_profile::DescribeUserProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_user_profile::DescribeUserProfileInput {
-                domain_id: self.domain_id
-                ,
-                user_profile_name: self.user_profile_name
-                ,
-            }
+                domain_id: self.domain_id,
+                user_profile_name: self.user_profile_name,
+            },
         )
     }
 }
-

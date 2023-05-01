@@ -3,14 +3,14 @@
 /// <p>Contains the configuration information of the Parquet format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParquetConfiguration  {
+pub struct ParquetConfiguration {
     /// <p>Information needed to define a schema.</p>
     #[doc(hidden)]
     pub schema_definition: std::option::Option<crate::types::SchemaDefinition>,
 }
 impl ParquetConfiguration {
     /// <p>Information needed to define a schema.</p>
-    pub fn schema_definition(&self) -> std::option::Option<& crate::types::SchemaDefinition> {
+    pub fn schema_definition(&self) -> std::option::Option<&crate::types::SchemaDefinition> {
         self.schema_definition.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ParquetConfigurationBuilder {
         self
     }
     /// <p>Information needed to define a schema.</p>
-    pub fn set_schema_definition(mut self, input: std::option::Option<crate::types::SchemaDefinition>) -> Self {
-        self.schema_definition = input; self
+    pub fn set_schema_definition(
+        mut self,
+        input: std::option::Option<crate::types::SchemaDefinition>,
+    ) -> Self {
+        self.schema_definition = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParquetConfiguration`](crate::types::ParquetConfiguration).
     pub fn build(self) -> crate::types::ParquetConfiguration {
         crate::types::ParquetConfiguration {
-            schema_definition: self.schema_definition
-            ,
+            schema_definition: self.schema_definition,
         }
     }
 }
-

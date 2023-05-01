@@ -4,50 +4,57 @@ pub use crate::operation::update_notification_configuration::_update_notificatio
 pub use crate::operation::update_notification_configuration::_update_notification_configuration_input::UpdateNotificationConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateNotificationConfiguration`.
-/// 
+///
 /// <p>Updates the notification information for a stream.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateNotificationConfigurationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_notification_configuration::builders::UpdateNotificationConfigurationInputBuilder,
 }
-impl UpdateNotificationConfigurationFluentBuilder  {
+impl UpdateNotificationConfigurationFluentBuilder {
     /// Creates a new `UpdateNotificationConfiguration`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_notification_configuration::UpdateNotificationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::update_notification_configuration::UpdateNotificationConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::update_notification_configuration::UpdateNotificationConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_notification_configuration::UpdateNotificationConfigurationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the stream from which to update the notification configuration. You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -69,14 +76,19 @@ impl UpdateNotificationConfigurationFluentBuilder  {
         self
     }
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn notification_configuration(mut self, input: crate::types::NotificationConfiguration) -> Self {
+    pub fn notification_configuration(
+        mut self,
+        input: crate::types::NotificationConfiguration,
+    ) -> Self {
         self.inner = self.inner.notification_configuration(input);
         self
     }
     /// <p>The structure containing the information required for notifications. If the structure is null, the configuration will be deleted from the stream.</p>
-    pub fn set_notification_configuration(mut self, input: std::option::Option<crate::types::NotificationConfiguration>) -> Self {
+    pub fn set_notification_configuration(
+        mut self,
+        input: std::option::Option<crate::types::NotificationConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_notification_configuration(input);
         self
     }
 }
-

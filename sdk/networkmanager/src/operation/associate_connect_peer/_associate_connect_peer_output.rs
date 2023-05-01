@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateConnectPeerOutput  {
+pub struct AssociateConnectPeerOutput {
     /// <p>The response to the Connect peer request.</p>
     #[doc(hidden)]
     pub connect_peer_association: std::option::Option<crate::types::ConnectPeerAssociation>,
@@ -10,18 +10,21 @@ pub struct AssociateConnectPeerOutput  {
 }
 impl AssociateConnectPeerOutput {
     /// <p>The response to the Connect peer request.</p>
-    pub fn connect_peer_association(&self) -> std::option::Option<& crate::types::ConnectPeerAssociation> {
+    pub fn connect_peer_association(
+        &self,
+    ) -> std::option::Option<&crate::types::ConnectPeerAssociation> {
         self.connect_peer_association.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateConnectPeerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociateConnectPeerOutput {
     /// Creates a new builder-style object to manufacture [`AssociateConnectPeerOutput`](crate::operation::associate_connect_peer::AssociateConnectPeerOutput).
-    pub fn builder() -> crate::operation::associate_connect_peer::builders::AssociateConnectPeerOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_connect_peer::builders::AssociateConnectPeerOutputBuilder {
         crate::operation::associate_connect_peer::builders::AssociateConnectPeerOutputBuilder::default()
     }
 }
@@ -40,25 +43,27 @@ impl AssociateConnectPeerOutputBuilder {
         self
     }
     /// <p>The response to the Connect peer request.</p>
-    pub fn set_connect_peer_association(mut self, input: std::option::Option<crate::types::ConnectPeerAssociation>) -> Self {
-        self.connect_peer_association = input; self
+    pub fn set_connect_peer_association(
+        mut self,
+        input: std::option::Option<crate::types::ConnectPeerAssociation>,
+    ) -> Self {
+        self.connect_peer_association = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateConnectPeerOutput`](crate::operation::associate_connect_peer::AssociateConnectPeerOutput).
     pub fn build(self) -> crate::operation::associate_connect_peer::AssociateConnectPeerOutput {
         crate::operation::associate_connect_peer::AssociateConnectPeerOutput {
-            connect_peer_association: self.connect_peer_association
-            ,
+            connect_peer_association: self.connect_peer_association,
             _request_id: self._request_id,
         }
     }
 }
-

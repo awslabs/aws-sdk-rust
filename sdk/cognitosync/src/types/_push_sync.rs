@@ -3,7 +3,7 @@
 /// <p>Configuration options to be applied to the identity pool.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PushSync  {
+pub struct PushSync {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
     #[doc(hidden)]
     pub application_arns: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct PushSync  {
 }
 impl PushSync {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    pub fn application_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn application_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.application_arns.as_deref()
     }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl PushSyncBuilder {
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
     pub fn application_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.application_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.application_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.application_arns = Some(v);
+        self
     }
     /// <p>List of SNS platform application ARNs that could be used by clients.</p>
-    pub fn set_application_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.application_arns = input; self
+    pub fn set_application_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.application_arns = input;
+        self
     }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,16 +62,14 @@ impl PushSyncBuilder {
     }
     /// <p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`PushSync`](crate::types::PushSync).
     pub fn build(self) -> crate::types::PushSync {
         crate::types::PushSync {
-            application_arns: self.application_arns
-            ,
-            role_arn: self.role_arn
-            ,
+            application_arns: self.application_arns,
+            role_arn: self.role_arn,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The authentication applied to incoming webhook trigger requests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WebhookAuthConfiguration  {
+pub struct WebhookAuthConfiguration {
     /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
     #[doc(hidden)]
     pub allowed_ip_range: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct WebhookAuthConfiguration  {
 }
 impl WebhookAuthConfiguration {
     /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
-    pub fn allowed_ip_range(&self) -> std::option::Option<& str> {
+    pub fn allowed_ip_range(&self) -> std::option::Option<&str> {
         self.allowed_ip_range.as_deref()
     }
     /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
-    pub fn secret_token(&self) -> std::option::Option<& str> {
+    pub fn secret_token(&self) -> std::option::Option<&str> {
         self.secret_token.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl WebhookAuthConfigurationBuilder {
     }
     /// <p>The property used to configure acceptance of webhooks in an IP address range. For IP, only the <code>AllowedIPRange</code> property must be set. This property must be set to a valid CIDR range.</p>
     pub fn set_allowed_ip_range(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allowed_ip_range = input; self
+        self.allowed_ip_range = input;
+        self
     }
     /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
     pub fn secret_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl WebhookAuthConfigurationBuilder {
     }
     /// <p>The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code> property must be set.</p>
     pub fn set_secret_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_token = input; self
+        self.secret_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`WebhookAuthConfiguration`](crate::types::WebhookAuthConfiguration).
     pub fn build(self) -> crate::types::WebhookAuthConfiguration {
         crate::types::WebhookAuthConfiguration {
-            allowed_ip_range: self.allowed_ip_range
-            ,
-            secret_token: self.secret_token
-            ,
+            allowed_ip_range: self.allowed_ip_range,
+            secret_token: self.secret_token,
         }
     }
 }
-

@@ -87,4 +87,3 @@ pub mod update_domain;
 
 /// Types for the `UpdateWatchlist` operation.
 pub mod update_watchlist;
-

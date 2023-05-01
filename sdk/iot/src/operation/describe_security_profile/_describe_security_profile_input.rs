@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSecurityProfileInput  {
+pub struct DescribeSecurityProfileInput {
     /// <p>The name of the security profile whose information you want to get.</p>
     #[doc(hidden)]
     pub security_profile_name: std::option::Option<std::string::String>,
 }
 impl DescribeSecurityProfileInput {
     /// <p>The name of the security profile whose information you want to get.</p>
-    pub fn security_profile_name(&self) -> std::option::Option<& str> {
+    pub fn security_profile_name(&self) -> std::option::Option<&str> {
         self.security_profile_name.as_deref()
     }
 }
 impl DescribeSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityProfileInput`](crate::operation::describe_security_profile::DescribeSecurityProfileInput).
-    pub fn builder() -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder
+    {
         crate::operation::describe_security_profile::builders::DescribeSecurityProfileInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeSecurityProfileInputBuilder {
         self
     }
     /// <p>The name of the security profile whose information you want to get.</p>
-    pub fn set_security_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_profile_name = input; self
+    pub fn set_security_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_profile_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSecurityProfileInput`](crate::operation::describe_security_profile::DescribeSecurityProfileInput).
-    pub fn build(self) -> Result<crate::operation::describe_security_profile::DescribeSecurityProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_security_profile::DescribeSecurityProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_security_profile::DescribeSecurityProfileInput {
-                security_profile_name: self.security_profile_name
-                ,
-            }
+                security_profile_name: self.security_profile_name,
+            },
         )
     }
 }
-

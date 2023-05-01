@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let applicationrestoretype = unimplemented!();
 /// match applicationrestoretype {
@@ -31,14 +31,22 @@
 /// Specifically, when `applicationrestoretype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApplicationRestoreType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ApplicationRestoreType {
     #[allow(missing_docs)] // documentation missing in model
     RestoreFromCustomSnapshot,
@@ -47,43 +55,48 @@ pub enum ApplicationRestoreType {
     #[allow(missing_docs)] // documentation missing in model
     SkipRestoreFromSnapshot,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ApplicationRestoreType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "RESTORE_FROM_CUSTOM_SNAPSHOT" => ApplicationRestoreType::RestoreFromCustomSnapshot,
-"RESTORE_FROM_LATEST_SNAPSHOT" => ApplicationRestoreType::RestoreFromLatestSnapshot,
-"SKIP_RESTORE_FROM_SNAPSHOT" => ApplicationRestoreType::SkipRestoreFromSnapshot,
-other => ApplicationRestoreType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ApplicationRestoreType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ApplicationRestoreType::from(s))
-                }
-            }
-impl ApplicationRestoreType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ApplicationRestoreType::RestoreFromCustomSnapshot => "RESTORE_FROM_CUSTOM_SNAPSHOT",
-    ApplicationRestoreType::RestoreFromLatestSnapshot => "RESTORE_FROM_LATEST_SNAPSHOT",
-    ApplicationRestoreType::SkipRestoreFromSnapshot => "SKIP_RESTORE_FROM_SNAPSHOT",
-    ApplicationRestoreType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "RESTORE_FROM_CUSTOM_SNAPSHOT" => ApplicationRestoreType::RestoreFromCustomSnapshot,
+            "RESTORE_FROM_LATEST_SNAPSHOT" => ApplicationRestoreType::RestoreFromLatestSnapshot,
+            "SKIP_RESTORE_FROM_SNAPSHOT" => ApplicationRestoreType::SkipRestoreFromSnapshot,
+            other => ApplicationRestoreType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["RESTORE_FROM_CUSTOM_SNAPSHOT", "RESTORE_FROM_LATEST_SNAPSHOT", "SKIP_RESTORE_FROM_SNAPSHOT"]
-                }
-            }
-impl AsRef<str> for ApplicationRestoreType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ApplicationRestoreType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ApplicationRestoreType::from(s))
+    }
+}
+impl ApplicationRestoreType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ApplicationRestoreType::RestoreFromCustomSnapshot => "RESTORE_FROM_CUSTOM_SNAPSHOT",
+            ApplicationRestoreType::RestoreFromLatestSnapshot => "RESTORE_FROM_LATEST_SNAPSHOT",
+            ApplicationRestoreType::SkipRestoreFromSnapshot => "SKIP_RESTORE_FROM_SNAPSHOT",
+            ApplicationRestoreType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "RESTORE_FROM_CUSTOM_SNAPSHOT",
+            "RESTORE_FROM_LATEST_SNAPSHOT",
+            "SKIP_RESTORE_FROM_SNAPSHOT",
+        ]
+    }
+}
+impl AsRef<str> for ApplicationRestoreType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

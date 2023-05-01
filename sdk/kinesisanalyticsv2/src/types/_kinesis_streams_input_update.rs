@@ -3,14 +3,14 @@
 /// <p>When you update the input configuration for a SQL-based Kinesis Data Analytics application, provides information about a Kinesis stream as the streaming source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisStreamsInputUpdate  {
+pub struct KinesisStreamsInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
     #[doc(hidden)]
     pub resource_arn_update: std::option::Option<std::string::String>,
 }
 impl KinesisStreamsInputUpdate {
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-    pub fn resource_arn_update(&self) -> std::option::Option<& str> {
+    pub fn resource_arn_update(&self) -> std::option::Option<&str> {
         self.resource_arn_update.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl KinesisStreamsInputUpdateBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the input Kinesis data stream to read.</p>
-    pub fn set_resource_arn_update(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn_update = input; self
+    pub fn set_resource_arn_update(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_arn_update = input;
+        self
     }
     /// Consumes the builder and constructs a [`KinesisStreamsInputUpdate`](crate::types::KinesisStreamsInputUpdate).
     pub fn build(self) -> crate::types::KinesisStreamsInputUpdate {
         crate::types::KinesisStreamsInputUpdate {
-            resource_arn_update: self.resource_arn_update
-            ,
+            resource_arn_update: self.resource_arn_update,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p> A structure within a <code>FilterCriteria</code> object that defines an event filtering pattern. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Filter  {
+pub struct Filter {
     /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
     #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
 }
 impl Filter {
     /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
-    pub fn pattern(&self) -> std::option::Option<& str> {
+    pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl FilterBuilder {
     }
     /// <p> A filter pattern. For more information on the syntax of a filter pattern, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html#filtering-syntax"> Filter rule syntax</a>. </p>
     pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pattern = input; self
+        self.pattern = input;
+        self
     }
     /// Consumes the builder and constructs a [`Filter`](crate::types::Filter).
     pub fn build(self) -> crate::types::Filter {
         crate::types::Filter {
-            pattern: self.pattern
-            ,
+            pattern: self.pattern,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetJourneyExecutionActivityMetricsInput  {
+pub struct GetJourneyExecutionActivityMetricsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -21,29 +21,29 @@ pub struct GetJourneyExecutionActivityMetricsInput  {
 }
 impl GetJourneyExecutionActivityMetricsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier for the journey activity.</p>
-    pub fn journey_activity_id(&self) -> std::option::Option<& str> {
+    pub fn journey_activity_id(&self) -> std::option::Option<&str> {
         self.journey_activity_id.as_deref()
     }
     /// <p>The unique identifier for the journey.</p>
-    pub fn journey_id(&self) -> std::option::Option<& str> {
+    pub fn journey_id(&self) -> std::option::Option<&str> {
         self.journey_id.as_deref()
     }
     /// <p>The <code></code> string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
-    pub fn page_size(&self) -> std::option::Option<& str> {
+    pub fn page_size(&self) -> std::option::Option<&str> {
         self.page_size.as_deref()
     }
 }
 impl GetJourneyExecutionActivityMetricsInput {
     /// Creates a new builder-style object to manufacture [`GetJourneyExecutionActivityMetricsInput`](crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsInput).
-    pub fn builder() -> crate::operation::get_journey_execution_activity_metrics::builders::GetJourneyExecutionActivityMetricsInputBuilder {
+    pub fn builder() -> crate::operation::get_journey_execution_activity_metrics::builders::GetJourneyExecutionActivityMetricsInputBuilder{
         crate::operation::get_journey_execution_activity_metrics::builders::GetJourneyExecutionActivityMetricsInputBuilder::default()
     }
 }
@@ -66,7 +66,8 @@ impl GetJourneyExecutionActivityMetricsInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The unique identifier for the journey activity.</p>
     pub fn journey_activity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +75,12 @@ impl GetJourneyExecutionActivityMetricsInputBuilder {
         self
     }
     /// <p>The unique identifier for the journey activity.</p>
-    pub fn set_journey_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.journey_activity_id = input; self
+    pub fn set_journey_activity_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.journey_activity_id = input;
+        self
     }
     /// <p>The unique identifier for the journey.</p>
     pub fn journey_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +89,8 @@ impl GetJourneyExecutionActivityMetricsInputBuilder {
     }
     /// <p>The unique identifier for the journey.</p>
     pub fn set_journey_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.journey_id = input; self
+        self.journey_id = input;
+        self
     }
     /// <p>The <code></code> string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +99,8 @@ impl GetJourneyExecutionActivityMetricsInputBuilder {
     }
     /// <p>The <code></code> string that specifies which page of results to return in a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn page_size(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,10 +109,11 @@ impl GetJourneyExecutionActivityMetricsInputBuilder {
     }
     /// <p>The maximum number of items to include in each page of a paginated response. This parameter is not supported for application, campaign, and journey metrics.</p>
     pub fn set_page_size(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetJourneyExecutionActivityMetricsInput`](crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsInput).
-    pub fn build(self) -> Result<crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsInput {
                 application_id: self.application_id
@@ -122,4 +130,3 @@ impl GetJourneyExecutionActivityMetricsInputBuilder {
         )
     }
 }
-

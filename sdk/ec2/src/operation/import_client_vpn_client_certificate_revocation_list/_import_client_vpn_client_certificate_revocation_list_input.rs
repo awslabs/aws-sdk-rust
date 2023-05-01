@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportClientVpnClientCertificateRevocationListInput  {
+pub struct ImportClientVpnClientCertificateRevocationListInput {
     /// <p>The ID of the Client VPN endpoint to which the client certificate revocation list applies.</p>
     #[doc(hidden)]
     pub client_vpn_endpoint_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ImportClientVpnClientCertificateRevocationListInput  {
 }
 impl ImportClientVpnClientCertificateRevocationListInput {
     /// <p>The ID of the Client VPN endpoint to which the client certificate revocation list applies.</p>
-    pub fn client_vpn_endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn client_vpn_endpoint_id(&self) -> std::option::Option<&str> {
         self.client_vpn_endpoint_id.as_deref()
     }
     /// <p>The client certificate revocation list file. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate a Client Certificate Revocation List</a> in the <i>Client VPN Administrator Guide</i>.</p>
-    pub fn certificate_revocation_list(&self) -> std::option::Option<& str> {
+    pub fn certificate_revocation_list(&self) -> std::option::Option<&str> {
         self.certificate_revocation_list.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,7 +29,7 @@ impl ImportClientVpnClientCertificateRevocationListInput {
 }
 impl ImportClientVpnClientCertificateRevocationListInput {
     /// Creates a new builder-style object to manufacture [`ImportClientVpnClientCertificateRevocationListInput`](crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListInput).
-    pub fn builder() -> crate::operation::import_client_vpn_client_certificate_revocation_list::builders::ImportClientVpnClientCertificateRevocationListInputBuilder {
+    pub fn builder() -> crate::operation::import_client_vpn_client_certificate_revocation_list::builders::ImportClientVpnClientCertificateRevocationListInputBuilder{
         crate::operation::import_client_vpn_client_certificate_revocation_list::builders::ImportClientVpnClientCertificateRevocationListInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl ImportClientVpnClientCertificateRevocationListInputBuilder {
         self
     }
     /// <p>The ID of the Client VPN endpoint to which the client certificate revocation list applies.</p>
-    pub fn set_client_vpn_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_vpn_endpoint_id = input; self
+    pub fn set_client_vpn_endpoint_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_vpn_endpoint_id = input;
+        self
     }
     /// <p>The client certificate revocation list file. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate a Client Certificate Revocation List</a> in the <i>Client VPN Administrator Guide</i>.</p>
     pub fn certificate_revocation_list(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +62,12 @@ impl ImportClientVpnClientCertificateRevocationListInputBuilder {
         self
     }
     /// <p>The client certificate revocation list file. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/cvpn-working-certificates.html#cvpn-working-certificates-generate">Generate a Client Certificate Revocation List</a> in the <i>Client VPN Administrator Guide</i>.</p>
-    pub fn set_certificate_revocation_list(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_revocation_list = input; self
+    pub fn set_certificate_revocation_list(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.certificate_revocation_list = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -68,10 +76,11 @@ impl ImportClientVpnClientCertificateRevocationListInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportClientVpnClientCertificateRevocationListInput`](crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListInput).
-    pub fn build(self) -> Result<crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListInput {
                 client_vpn_endpoint_id: self.client_vpn_endpoint_id
@@ -84,4 +93,3 @@ impl ImportClientVpnClientCertificateRevocationListInputBuilder {
         )
     }
 }
-

@@ -38,4 +38,3 @@ pub use crate::types::_permission::PermissionBuilder;
 pub use crate::types::_signing_profile_revocation_record::SigningProfileRevocationRecordBuilder;
 
 pub use crate::types::_signing_job_revocation_record::SigningJobRevocationRecordBuilder;
-

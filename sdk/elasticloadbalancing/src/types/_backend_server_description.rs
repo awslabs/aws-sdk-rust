@@ -3,7 +3,7 @@
 /// <p>Information about the configuration of an EC2 instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BackendServerDescription  {
+pub struct BackendServerDescription {
     /// <p>The port on which the EC2 instance is listening.</p>
     #[doc(hidden)]
     pub instance_port: i32,
@@ -17,7 +17,7 @@ impl BackendServerDescription {
         self.instance_port
     }
     /// <p>The names of the policies enabled for the EC2 instance.</p>
-    pub fn policy_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn policy_names(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_names.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl BackendServerDescriptionBuilder {
     }
     /// <p>The port on which the EC2 instance is listening.</p>
     pub fn set_instance_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.instance_port = input; self
+        self.instance_port = input;
+        self
     }
     /// Appends an item to `policy_names`.
     ///
@@ -52,23 +53,23 @@ impl BackendServerDescriptionBuilder {
     /// <p>The names of the policies enabled for the EC2 instance.</p>
     pub fn policy_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.policy_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.policy_names = Some(v);
-                        self
+        v.push(input.into());
+        self.policy_names = Some(v);
+        self
     }
     /// <p>The names of the policies enabled for the EC2 instance.</p>
-    pub fn set_policy_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.policy_names = input; self
+    pub fn set_policy_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.policy_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`BackendServerDescription`](crate::types::BackendServerDescription).
     pub fn build(self) -> crate::types::BackendServerDescription {
         crate::types::BackendServerDescription {
-            instance_port: self.instance_port
-                .unwrap_or_default()
-            ,
-            policy_names: self.policy_names
-            ,
+            instance_port: self.instance_port.unwrap_or_default(),
+            policy_names: self.policy_names,
         }
     }
 }
-

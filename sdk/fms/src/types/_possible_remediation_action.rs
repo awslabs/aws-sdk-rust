@@ -3,24 +3,27 @@
 /// <p>A list of remediation actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PossibleRemediationAction  {
+pub struct PossibleRemediationAction {
     /// <p>A description of the list of remediation actions.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>The ordered list of remediation actions.</p>
     #[doc(hidden)]
-    pub ordered_remediation_actions: std::option::Option<std::vec::Vec<crate::types::RemediationActionWithOrder>>,
+    pub ordered_remediation_actions:
+        std::option::Option<std::vec::Vec<crate::types::RemediationActionWithOrder>>,
     /// <p>Information about whether an action is taken by default.</p>
     #[doc(hidden)]
     pub is_default_action: bool,
 }
 impl PossibleRemediationAction {
     /// <p>A description of the list of remediation actions.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ordered list of remediation actions.</p>
-    pub fn ordered_remediation_actions(&self) -> std::option::Option<& [crate::types::RemediationActionWithOrder]> {
+    pub fn ordered_remediation_actions(
+        &self,
+    ) -> std::option::Option<&[crate::types::RemediationActionWithOrder]> {
         self.ordered_remediation_actions.as_deref()
     }
     /// <p>Information about whether an action is taken by default.</p>
@@ -40,7 +43,8 @@ impl PossibleRemediationAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PossibleRemediationActionBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) ordered_remediation_actions: std::option::Option<std::vec::Vec<crate::types::RemediationActionWithOrder>>,
+    pub(crate) ordered_remediation_actions:
+        std::option::Option<std::vec::Vec<crate::types::RemediationActionWithOrder>>,
     pub(crate) is_default_action: std::option::Option<bool>,
 }
 impl PossibleRemediationActionBuilder {
@@ -51,22 +55,30 @@ impl PossibleRemediationActionBuilder {
     }
     /// <p>A description of the list of remediation actions.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `ordered_remediation_actions`.
     ///
     /// To override the contents of this collection use [`set_ordered_remediation_actions`](Self::set_ordered_remediation_actions).
     ///
     /// <p>The ordered list of remediation actions.</p>
-    pub fn ordered_remediation_actions(mut self, input: crate::types::RemediationActionWithOrder) -> Self {
+    pub fn ordered_remediation_actions(
+        mut self,
+        input: crate::types::RemediationActionWithOrder,
+    ) -> Self {
         let mut v = self.ordered_remediation_actions.unwrap_or_default();
-                        v.push(input);
-                        self.ordered_remediation_actions = Some(v);
-                        self
+        v.push(input);
+        self.ordered_remediation_actions = Some(v);
+        self
     }
     /// <p>The ordered list of remediation actions.</p>
-    pub fn set_ordered_remediation_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::RemediationActionWithOrder>>) -> Self {
-        self.ordered_remediation_actions = input; self
+    pub fn set_ordered_remediation_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RemediationActionWithOrder>>,
+    ) -> Self {
+        self.ordered_remediation_actions = input;
+        self
     }
     /// <p>Information about whether an action is taken by default.</p>
     pub fn is_default_action(mut self, input: bool) -> Self {
@@ -75,19 +87,15 @@ impl PossibleRemediationActionBuilder {
     }
     /// <p>Information about whether an action is taken by default.</p>
     pub fn set_is_default_action(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_default_action = input; self
+        self.is_default_action = input;
+        self
     }
     /// Consumes the builder and constructs a [`PossibleRemediationAction`](crate::types::PossibleRemediationAction).
     pub fn build(self) -> crate::types::PossibleRemediationAction {
         crate::types::PossibleRemediationAction {
-            description: self.description
-            ,
-            ordered_remediation_actions: self.ordered_remediation_actions
-            ,
-            is_default_action: self.is_default_action
-                .unwrap_or_default()
-            ,
+            description: self.description,
+            ordered_remediation_actions: self.ordered_remediation_actions,
+            is_default_action: self.is_default_action.unwrap_or_default(),
         }
     }
 }
-

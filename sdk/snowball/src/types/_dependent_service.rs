@@ -3,7 +3,7 @@
 /// <p>The name and version of the service dependant on the requested service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DependentService  {
+pub struct DependentService {
     /// <p>The name of the dependent service.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<crate::types::ServiceName>,
@@ -13,11 +13,11 @@ pub struct DependentService  {
 }
 impl DependentService {
     /// <p>The name of the dependent service.</p>
-    pub fn service_name(&self) -> std::option::Option<& crate::types::ServiceName> {
+    pub fn service_name(&self) -> std::option::Option<&crate::types::ServiceName> {
         self.service_name.as_ref()
     }
     /// <p>The version of the dependent service.</p>
-    pub fn service_version(&self) -> std::option::Option<& crate::types::ServiceVersion> {
+    pub fn service_version(&self) -> std::option::Option<&crate::types::ServiceVersion> {
         self.service_version.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl DependentServiceBuilder {
         self
     }
     /// <p>The name of the dependent service.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<crate::types::ServiceName>) -> Self {
-        self.service_name = input; self
+    pub fn set_service_name(
+        mut self,
+        input: std::option::Option<crate::types::ServiceName>,
+    ) -> Self {
+        self.service_name = input;
+        self
     }
     /// <p>The version of the dependent service.</p>
     pub fn service_version(mut self, input: crate::types::ServiceVersion) -> Self {
@@ -51,17 +55,18 @@ impl DependentServiceBuilder {
         self
     }
     /// <p>The version of the dependent service.</p>
-    pub fn set_service_version(mut self, input: std::option::Option<crate::types::ServiceVersion>) -> Self {
-        self.service_version = input; self
+    pub fn set_service_version(
+        mut self,
+        input: std::option::Option<crate::types::ServiceVersion>,
+    ) -> Self {
+        self.service_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`DependentService`](crate::types::DependentService).
     pub fn build(self) -> crate::types::DependentService {
         crate::types::DependentService {
-            service_name: self.service_name
-            ,
-            service_version: self.service_version
-            ,
+            service_name: self.service_name,
+            service_version: self.service_version,
         }
     }
 }
-

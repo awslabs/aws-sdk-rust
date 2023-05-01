@@ -4,50 +4,66 @@ pub use crate::operation::create_site::_create_site_output::CreateSiteOutputBuil
 pub use crate::operation::create_site::_create_site_input::CreateSiteInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSite`.
-/// 
+///
 /// <p> Creates a site for an Outpost. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSiteFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_site::builders::CreateSiteInputBuilder,
+    inner: crate::operation::create_site::builders::CreateSiteInputBuilder,
 }
-impl CreateSiteFluentBuilder  {
+impl CreateSiteFluentBuilder {
     /// Creates a new `CreateSite`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_site::CreateSite, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_site::CreateSiteOutput, aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_site::CreateSite,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_site::CreateSiteOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_site::CreateSiteError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the site.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -83,12 +99,21 @@ impl CreateSiteFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags to apply to a site. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tags to apply to a site. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -98,7 +123,10 @@ impl CreateSiteFluentBuilder  {
         self
     }
     /// <p> The location to install and power on the hardware. This address might be different from the shipping address. </p>
-    pub fn set_operating_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
+    pub fn set_operating_address(
+        mut self,
+        input: std::option::Option<crate::types::Address>,
+    ) -> Self {
         self.inner = self.inner.set_operating_address(input);
         self
     }
@@ -108,7 +136,10 @@ impl CreateSiteFluentBuilder  {
         self
     }
     /// <p> The location to ship the hardware. This address might be different from the operating address. </p>
-    pub fn set_shipping_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
+    pub fn set_shipping_address(
+        mut self,
+        input: std::option::Option<crate::types::Address>,
+    ) -> Self {
         self.inner = self.inner.set_shipping_address(input);
         self
     }
@@ -118,9 +149,11 @@ impl CreateSiteFluentBuilder  {
         self
     }
     /// <p> Information about the physical and logistical details for the rack at this site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>
-    pub fn set_rack_physical_properties(mut self, input: std::option::Option<crate::types::RackPhysicalProperties>) -> Self {
+    pub fn set_rack_physical_properties(
+        mut self,
+        input: std::option::Option<crate::types::RackPhysicalProperties>,
+    ) -> Self {
         self.inner = self.inner.set_rack_physical_properties(input);
         self
     }
 }
-

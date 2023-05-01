@@ -3,7 +3,7 @@
 /// <p> The connector-specific profile credentials required when using Salesforce. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SalesforceConnectorProfileCredentials  {
+pub struct SalesforceConnectorProfileCredentials {
     /// <p> The credentials used to access protected Salesforce resources. </p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
@@ -19,23 +19,23 @@ pub struct SalesforceConnectorProfileCredentials  {
 }
 impl SalesforceConnectorProfileCredentials {
     /// <p> The credentials used to access protected Salesforce resources. </p>
-    pub fn access_token(&self) -> std::option::Option<& str> {
+    pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p> The credentials used to acquire new access tokens. </p>
-    pub fn refresh_token(&self) -> std::option::Option<& str> {
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
-    pub fn o_auth_request(&self) -> std::option::Option<& crate::types::ConnectorOAuthRequest> {
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::types::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
     /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
-    pub fn client_credentials_arn(&self) -> std::option::Option<& str> {
+    pub fn client_credentials_arn(&self) -> std::option::Option<&str> {
         self.client_credentials_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for SalesforceConnectorProfileCredentials  {
+impl std::fmt::Debug for SalesforceConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SalesforceConnectorProfileCredentials");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -69,7 +69,8 @@ impl SalesforceConnectorProfileCredentialsBuilder {
     }
     /// <p> The credentials used to access protected Salesforce resources. </p>
     pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_token = input; self
+        self.access_token = input;
+        self
     }
     /// <p> The credentials used to acquire new access tokens. </p>
     pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,7 +79,8 @@ impl SalesforceConnectorProfileCredentialsBuilder {
     }
     /// <p> The credentials used to acquire new access tokens. </p>
     pub fn set_refresh_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.refresh_token = input; self
+        self.refresh_token = input;
+        self
     }
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
     pub fn o_auth_request(mut self, input: crate::types::ConnectorOAuthRequest) -> Self {
@@ -86,8 +88,12 @@ impl SalesforceConnectorProfileCredentialsBuilder {
         self
     }
     /// <p> The OAuth requirement needed to request security tokens from the connector endpoint. </p>
-    pub fn set_o_auth_request(mut self, input: std::option::Option<crate::types::ConnectorOAuthRequest>) -> Self {
-        self.o_auth_request = input; self
+    pub fn set_o_auth_request(
+        mut self,
+        input: std::option::Option<crate::types::ConnectorOAuthRequest>,
+    ) -> Self {
+        self.o_auth_request = input;
+        self
     }
     /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
     pub fn client_credentials_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,20 +101,20 @@ impl SalesforceConnectorProfileCredentialsBuilder {
         self
     }
     /// <p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>
-    pub fn set_client_credentials_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_credentials_arn = input; self
+    pub fn set_client_credentials_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_credentials_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`SalesforceConnectorProfileCredentials`](crate::types::SalesforceConnectorProfileCredentials).
     pub fn build(self) -> crate::types::SalesforceConnectorProfileCredentials {
         crate::types::SalesforceConnectorProfileCredentials {
-            access_token: self.access_token
-            ,
-            refresh_token: self.refresh_token
-            ,
-            o_auth_request: self.o_auth_request
-            ,
-            client_credentials_arn: self.client_credentials_arn
-            ,
+            access_token: self.access_token,
+            refresh_token: self.refresh_token,
+            o_auth_request: self.o_auth_request,
+            client_credentials_arn: self.client_credentials_arn,
         }
     }
 }
@@ -122,4 +128,3 @@ impl std::fmt::Debug for SalesforceConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
-

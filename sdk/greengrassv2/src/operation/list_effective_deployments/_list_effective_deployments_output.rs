@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEffectiveDeploymentsOutput  {
+pub struct ListEffectiveDeploymentsOutput {
     /// <p>A list that summarizes each deployment on the core device.</p>
     #[doc(hidden)]
-    pub effective_deployments: std::option::Option<std::vec::Vec<crate::types::EffectiveDeployment>>,
+    pub effective_deployments:
+        std::option::Option<std::vec::Vec<crate::types::EffectiveDeployment>>,
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct ListEffectiveDeploymentsOutput  {
 }
 impl ListEffectiveDeploymentsOutput {
     /// <p>A list that summarizes each deployment on the core device.</p>
-    pub fn effective_deployments(&self) -> std::option::Option<& [crate::types::EffectiveDeployment]> {
+    pub fn effective_deployments(
+        &self,
+    ) -> std::option::Option<&[crate::types::EffectiveDeployment]> {
         self.effective_deployments.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEffectiveDeploymentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListEffectiveDeploymentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEffectiveDeploymentsOutput`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput).
-    pub fn builder() -> crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsOutputBuilder
+    {
         crate::operation::list_effective_deployments::builders::ListEffectiveDeploymentsOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl ListEffectiveDeploymentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListEffectiveDeploymentsOutputBuilder {
-    pub(crate) effective_deployments: std::option::Option<std::vec::Vec<crate::types::EffectiveDeployment>>,
+    pub(crate) effective_deployments:
+        std::option::Option<std::vec::Vec<crate::types::EffectiveDeployment>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl ListEffectiveDeploymentsOutputBuilder {
     /// <p>A list that summarizes each deployment on the core device.</p>
     pub fn effective_deployments(mut self, input: crate::types::EffectiveDeployment) -> Self {
         let mut v = self.effective_deployments.unwrap_or_default();
-                        v.push(input);
-                        self.effective_deployments = Some(v);
-                        self
+        v.push(input);
+        self.effective_deployments = Some(v);
+        self
     }
     /// <p>A list that summarizes each deployment on the core device.</p>
-    pub fn set_effective_deployments(mut self, input: std::option::Option<std::vec::Vec<crate::types::EffectiveDeployment>>) -> Self {
-        self.effective_deployments = input; self
+    pub fn set_effective_deployments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EffectiveDeployment>>,
+    ) -> Self {
+        self.effective_deployments = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,26 @@ impl ListEffectiveDeploymentsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListEffectiveDeploymentsOutput`](crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput).
-    pub fn build(self) -> crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput {
         crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput {
-            effective_deployments: self.effective_deployments
-            ,
-            next_token: self.next_token
-            ,
+            effective_deployments: self.effective_deployments,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

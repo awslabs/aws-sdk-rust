@@ -3,7 +3,7 @@
 /// <p>Information about the dedicated IP addresses that are associated with your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDedicatedIpsOutput  {
+pub struct GetDedicatedIpsOutput {
     /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
     #[doc(hidden)]
     pub dedicated_ips: std::option::Option<std::vec::Vec<crate::types::DedicatedIp>>,
@@ -14,22 +14,23 @@ pub struct GetDedicatedIpsOutput  {
 }
 impl GetDedicatedIpsOutput {
     /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
-    pub fn dedicated_ips(&self) -> std::option::Option<& [crate::types::DedicatedIp]> {
+    pub fn dedicated_ips(&self) -> std::option::Option<&[crate::types::DedicatedIp]> {
         self.dedicated_ips.as_deref()
     }
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDedicatedIpsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDedicatedIpsOutput {
     /// Creates a new builder-style object to manufacture [`GetDedicatedIpsOutput`](crate::operation::get_dedicated_ips::GetDedicatedIpsOutput).
-    pub fn builder() -> crate::operation::get_dedicated_ips::builders::GetDedicatedIpsOutputBuilder {
+    pub fn builder() -> crate::operation::get_dedicated_ips::builders::GetDedicatedIpsOutputBuilder
+    {
         crate::operation::get_dedicated_ips::builders::GetDedicatedIpsOutputBuilder::default()
     }
 }
@@ -50,13 +51,17 @@ impl GetDedicatedIpsOutputBuilder {
     /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
     pub fn dedicated_ips(mut self, input: crate::types::DedicatedIp) -> Self {
         let mut v = self.dedicated_ips.unwrap_or_default();
-                        v.push(input);
-                        self.dedicated_ips = Some(v);
-                        self
+        v.push(input);
+        self.dedicated_ips = Some(v);
+        self
     }
     /// <p>A list of dedicated IP addresses that are associated with your Amazon Web Services account.</p>
-    pub fn set_dedicated_ips(mut self, input: std::option::Option<std::vec::Vec<crate::types::DedicatedIp>>) -> Self {
-        self.dedicated_ips = input; self
+    pub fn set_dedicated_ips(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DedicatedIp>>,
+    ) -> Self {
+        self.dedicated_ips = input;
+        self
     }
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +70,24 @@ impl GetDedicatedIpsOutputBuilder {
     }
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDedicatedIpsOutput`](crate::operation::get_dedicated_ips::GetDedicatedIpsOutput).
     pub fn build(self) -> crate::operation::get_dedicated_ips::GetDedicatedIpsOutput {
         crate::operation::get_dedicated_ips::GetDedicatedIpsOutput {
-            dedicated_ips: self.dedicated_ips
-            ,
-            next_token: self.next_token
-            ,
+            dedicated_ips: self.dedicated_ips,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

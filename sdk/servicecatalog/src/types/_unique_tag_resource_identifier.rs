@@ -3,7 +3,7 @@
 /// <p> The unique key-value pair for a tag that identifies provisioned product resources. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UniqueTagResourceIdentifier  {
+pub struct UniqueTagResourceIdentifier {
     /// <p> A unique key that's attached to a resource. </p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UniqueTagResourceIdentifier  {
 }
 impl UniqueTagResourceIdentifier {
     /// <p> A unique key that's attached to a resource. </p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p> A unique value that's attached to a resource. </p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl UniqueTagResourceIdentifierBuilder {
     }
     /// <p> A unique key that's attached to a resource. </p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p> A unique value that's attached to a resource. </p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl UniqueTagResourceIdentifierBuilder {
     }
     /// <p> A unique value that's attached to a resource. </p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`UniqueTagResourceIdentifier`](crate::types::UniqueTagResourceIdentifier).
     pub fn build(self) -> crate::types::UniqueTagResourceIdentifier {
         crate::types::UniqueTagResourceIdentifier {
-            key: self.key
-            ,
-            value: self.value
-            ,
+            key: self.key,
+            value: self.value,
         }
     }
 }
-

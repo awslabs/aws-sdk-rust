@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let hdrtosdrtonemapper = unimplemented!();
 /// match hdrtosdrtonemapper {
@@ -30,55 +30,64 @@
 /// Specifically, when `hdrtosdrtonemapper` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HdrToSdrToneMapper::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify how MediaConvert maps brightness and colors from your HDR input to your SDR output. The mode that you select represents a creative choice, with different tradeoffs in the details and tones of your output. To maintain details in bright or saturated areas of your output: Choose Preserve details. For some sources, your SDR output may look less bright and less saturated when compared to your HDR source. MediaConvert automatically applies this mode for HLG sources, regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend that you choose this mode when any of your source content is HDR10, and for the best results when it is mastered for 1000 nits. You may notice loss of details in bright or saturated areas of your output. HDR to SDR tone mapping has no effect when your input is SDR.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum HdrToSdrToneMapper {
     #[allow(missing_docs)] // documentation missing in model
     PreserveDetails,
     #[allow(missing_docs)] // documentation missing in model
     Vibrant,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HdrToSdrToneMapper {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "PRESERVE_DETAILS" => HdrToSdrToneMapper::PreserveDetails,
-"VIBRANT" => HdrToSdrToneMapper::Vibrant,
-other => HdrToSdrToneMapper::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for HdrToSdrToneMapper {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(HdrToSdrToneMapper::from(s))
-                }
-            }
-impl HdrToSdrToneMapper {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    HdrToSdrToneMapper::PreserveDetails => "PRESERVE_DETAILS",
-    HdrToSdrToneMapper::Vibrant => "VIBRANT",
-    HdrToSdrToneMapper::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "PRESERVE_DETAILS" => HdrToSdrToneMapper::PreserveDetails,
+            "VIBRANT" => HdrToSdrToneMapper::Vibrant,
+            other => HdrToSdrToneMapper::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["PRESERVE_DETAILS", "VIBRANT"]
-                }
-            }
-impl AsRef<str> for HdrToSdrToneMapper {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for HdrToSdrToneMapper {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HdrToSdrToneMapper::from(s))
+    }
+}
+impl HdrToSdrToneMapper {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HdrToSdrToneMapper::PreserveDetails => "PRESERVE_DETAILS",
+            HdrToSdrToneMapper::Vibrant => "VIBRANT",
+            HdrToSdrToneMapper::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["PRESERVE_DETAILS", "VIBRANT"]
+    }
+}
+impl AsRef<str> for HdrToSdrToneMapper {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

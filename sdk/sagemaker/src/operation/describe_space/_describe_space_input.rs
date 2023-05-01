@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSpaceInput  {
+pub struct DescribeSpaceInput {
     /// <p>The ID of the associated Domain.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeSpaceInput  {
 }
 impl DescribeSpaceInput {
     /// <p>The ID of the associated Domain.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<& str> {
+    pub fn space_name(&self) -> std::option::Option<&str> {
         self.space_name.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeSpaceInputBuilder {
     }
     /// <p>The ID of the associated Domain.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The name of the space.</p>
     pub fn space_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DescribeSpaceInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input; self
+        self.space_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSpaceInput`](crate::operation::describe_space::DescribeSpaceInput).
-    pub fn build(self) -> Result<crate::operation::describe_space::DescribeSpaceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_space::DescribeSpaceInput {
-                domain_id: self.domain_id
-                ,
-                space_name: self.space_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_space::DescribeSpaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_space::DescribeSpaceInput {
+            domain_id: self.domain_id,
+            space_name: self.space_name,
+        })
     }
 }
-

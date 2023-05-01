@@ -3,7 +3,7 @@
 /// <p>The error code and error message that is returned for a parameter or parameter combination that is not valid when a new launch template or new version of a launch template is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidationError  {
+pub struct ValidationError {
     /// <p>The error code that indicates why the parameter or parameter combination is not valid. For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ValidationError  {
 }
 impl ValidationError {
     /// <p>The error code that indicates why the parameter or parameter combination is not valid. For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The error message that describes why the parameter or parameter combination is not valid. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ValidationErrorBuilder {
     }
     /// <p>The error code that indicates why the parameter or parameter combination is not valid. For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The error message that describes why the parameter or parameter combination is not valid. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ValidationErrorBuilder {
     }
     /// <p>The error message that describes why the parameter or parameter combination is not valid. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`ValidationError`](crate::types::ValidationError).
     pub fn build(self) -> crate::types::ValidationError {
         crate::types::ValidationError {
-            code: self.code
-            ,
-            message: self.message
-            ,
+            code: self.code,
+            message: self.message,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInstanceStorageConfigInput  {
+pub struct UpdateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct UpdateInstanceStorageConfigInput  {
 }
 impl UpdateInstanceStorageConfigInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
-    pub fn association_id(&self) -> std::option::Option<& str> {
+    pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>A valid resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::InstanceStorageResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::InstanceStorageResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The storage configuration for the instance.</p>
-    pub fn storage_config(&self) -> std::option::Option<& crate::types::InstanceStorageConfig> {
+    pub fn storage_config(&self) -> std::option::Option<&crate::types::InstanceStorageConfig> {
         self.storage_config.as_ref()
     }
 }
 impl UpdateInstanceStorageConfigInput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceStorageConfigInput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput).
-    pub fn builder() -> crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigInputBuilder {
+    pub fn builder() -> crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigInputBuilder{
         crate::operation::update_instance_storage_config::builders::UpdateInstanceStorageConfigInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl UpdateInstanceStorageConfigInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub fn association_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl UpdateInstanceStorageConfigInputBuilder {
     }
     /// <p>The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input; self
+        self.association_id = input;
+        self
     }
     /// <p>A valid resource type.</p>
     pub fn resource_type(mut self, input: crate::types::InstanceStorageResourceType) -> Self {
@@ -75,8 +77,12 @@ impl UpdateInstanceStorageConfigInputBuilder {
         self
     }
     /// <p>A valid resource type.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::InstanceStorageResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::InstanceStorageResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The storage configuration for the instance.</p>
     pub fn storage_config(mut self, input: crate::types::InstanceStorageConfig) -> Self {
@@ -84,23 +90,27 @@ impl UpdateInstanceStorageConfigInputBuilder {
         self
     }
     /// <p>The storage configuration for the instance.</p>
-    pub fn set_storage_config(mut self, input: std::option::Option<crate::types::InstanceStorageConfig>) -> Self {
-        self.storage_config = input; self
+    pub fn set_storage_config(
+        mut self,
+        input: std::option::Option<crate::types::InstanceStorageConfig>,
+    ) -> Self {
+        self.storage_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateInstanceStorageConfigInput`](crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput).
-    pub fn build(self) -> Result<crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_instance_storage_config::UpdateInstanceStorageConfigInput {
-                instance_id: self.instance_id
-                ,
-                association_id: self.association_id
-                ,
-                resource_type: self.resource_type
-                ,
-                storage_config: self.storage_config
-                ,
-            }
+                instance_id: self.instance_id,
+                association_id: self.association_id,
+                resource_type: self.resource_type,
+                storage_config: self.storage_config,
+            },
         )
     }
 }
-

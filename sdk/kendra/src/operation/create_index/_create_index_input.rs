@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIndexInput  {
+pub struct CreateIndexInput {
     /// <p>A name for the index.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p> 
-    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p> 
+    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p>
+    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
     /// <p>For more information on quota limits for Enterprise and Developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     #[doc(hidden)]
     pub edition: std::option::Option<crate::types::IndexEdition>,
@@ -16,7 +16,8 @@ pub struct CreateIndexInput  {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration:
+        std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>A description for the index.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -28,83 +29,91 @@ pub struct CreateIndexInput  {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     /// <p>The user token configuration.</p>
     #[doc(hidden)]
-    pub user_token_configurations: std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
-    /// <p>The user context policy.</p> 
-    /// <dl> 
+    pub user_token_configurations:
+        std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    /// <p>The user context policy.</p>
+    /// <dl>
     /// <dt>
     /// ATTRIBUTE_FILTER
-    /// </dt> 
-    /// <dd> 
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// </dd>
     /// <dt>
     /// USER_TOKEN
-    /// </dt> 
-    /// <dd> 
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// </dd>
     /// </dl>
     #[doc(hidden)]
     pub user_context_policy: std::option::Option<crate::types::UserContextPolicy>,
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
     #[doc(hidden)]
-    pub user_group_resolution_configuration: std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    pub user_group_resolution_configuration:
+        std::option::Option<crate::types::UserGroupResolutionConfiguration>,
 }
 impl CreateIndexInput {
     /// <p>A name for the index.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p> 
-    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p> 
+    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p>
+    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
     /// <p>For more information on quota limits for Enterprise and Developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
-    pub fn edition(&self) -> std::option::Option<& crate::types::IndexEdition> {
+    pub fn edition(&self) -> std::option::Option<&crate::types::IndexEdition> {
         self.edition.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn server_side_encryption_configuration(&self) -> std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>A description for the index.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The user token configuration.</p>
-    pub fn user_token_configurations(&self) -> std::option::Option<& [crate::types::UserTokenConfiguration]> {
+    pub fn user_token_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::UserTokenConfiguration]> {
         self.user_token_configurations.as_deref()
     }
-    /// <p>The user context policy.</p> 
-    /// <dl> 
+    /// <p>The user context policy.</p>
+    /// <dl>
     /// <dt>
     /// ATTRIBUTE_FILTER
-    /// </dt> 
-    /// <dd> 
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// </dd>
     /// <dt>
     /// USER_TOKEN
-    /// </dt> 
-    /// <dd> 
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// </dd>
     /// </dl>
-    pub fn user_context_policy(&self) -> std::option::Option<& crate::types::UserContextPolicy> {
+    pub fn user_context_policy(&self) -> std::option::Option<&crate::types::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn user_group_resolution_configuration(&self) -> std::option::Option<& crate::types::UserGroupResolutionConfiguration> {
+    pub fn user_group_resolution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::UserGroupResolutionConfiguration> {
         self.user_group_resolution_configuration.as_ref()
     }
 }
@@ -122,13 +131,16 @@ pub struct CreateIndexInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) edition: std::option::Option<crate::types::IndexEdition>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) server_side_encryption_configuration: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub(crate) server_side_encryption_configuration:
+        std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) user_token_configurations: std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    pub(crate) user_token_configurations:
+        std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
     pub(crate) user_context_policy: std::option::Option<crate::types::UserContextPolicy>,
-    pub(crate) user_group_resolution_configuration: std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    pub(crate) user_group_resolution_configuration:
+        std::option::Option<crate::types::UserGroupResolutionConfiguration>,
 }
 impl CreateIndexInputBuilder {
     /// <p>A name for the index.</p>
@@ -138,20 +150,22 @@ impl CreateIndexInputBuilder {
     }
     /// <p>A name for the index.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p> 
-    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p> 
+    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p>
+    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
     /// <p>For more information on quota limits for Enterprise and Developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn edition(mut self, input: crate::types::IndexEdition) -> Self {
         self.edition = Some(input);
         self
     }
-    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p> 
-    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p> 
+    /// <p>The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you set the edition for an index, it can't be changed.</p>
+    /// <p>The <code>Edition</code> parameter is optional. If you don't supply a value, the default is <code>ENTERPRISE_EDITION</code>.</p>
     /// <p>For more information on quota limits for Enterprise and Developer editions, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
     pub fn set_edition(mut self, input: std::option::Option<crate::types::IndexEdition>) -> Self {
-        self.edition = input; self
+        self.edition = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,16 +174,24 @@ impl CreateIndexInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access roles for Amazon Kendra</a>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
+    pub fn server_side_encryption_configuration(
+        mut self,
+        input: crate::types::ServerSideEncryptionConfiguration,
+    ) -> Self {
         self.server_side_encryption_configuration = Some(input);
         self
     }
     /// <p>The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input; self
+    pub fn set_server_side_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    ) -> Self {
+        self.server_side_encryption_configuration = input;
+        self
     }
     /// <p>A description for the index.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,7 +200,8 @@ impl CreateIndexInputBuilder {
     }
     /// <p>A description for the index.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,7 +210,8 @@ impl CreateIndexInputBuilder {
     }
     /// <p>A token that you provide to identify the request to create an index. Multiple calls to the <code>CreateIndex</code> API with the same client token will create only one index.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -196,101 +220,115 @@ impl CreateIndexInputBuilder {
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Appends an item to `user_token_configurations`.
     ///
     /// To override the contents of this collection use [`set_user_token_configurations`](Self::set_user_token_configurations).
     ///
     /// <p>The user token configuration.</p>
-    pub fn user_token_configurations(mut self, input: crate::types::UserTokenConfiguration) -> Self {
+    pub fn user_token_configurations(
+        mut self,
+        input: crate::types::UserTokenConfiguration,
+    ) -> Self {
         let mut v = self.user_token_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.user_token_configurations = Some(v);
-                        self
+        v.push(input);
+        self.user_token_configurations = Some(v);
+        self
     }
     /// <p>The user token configuration.</p>
-    pub fn set_user_token_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>) -> Self {
-        self.user_token_configurations = input; self
+    pub fn set_user_token_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    ) -> Self {
+        self.user_token_configurations = input;
+        self
     }
-    /// <p>The user context policy.</p> 
-    /// <dl> 
+    /// <p>The user context policy.</p>
+    /// <dl>
     /// <dt>
     /// ATTRIBUTE_FILTER
-    /// </dt> 
-    /// <dd> 
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// </dd>
     /// <dt>
     /// USER_TOKEN
-    /// </dt> 
-    /// <dd> 
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// </dd>
     /// </dl>
     pub fn user_context_policy(mut self, input: crate::types::UserContextPolicy) -> Self {
         self.user_context_policy = Some(input);
         self
     }
-    /// <p>The user context policy.</p> 
-    /// <dl> 
+    /// <p>The user context policy.</p>
+    /// <dl>
     /// <dt>
     /// ATTRIBUTE_FILTER
-    /// </dt> 
-    /// <dd> 
-    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of <code>_user_id</code> and <code>_group_ids</code> or you can provide user and group information in <code>UserContext</code>. </p>
+    /// </dd>
     /// <dt>
     /// USER_TOKEN
-    /// </dt> 
-    /// <dd> 
-    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable. </p>
+    /// </dd>
     /// </dl>
-    pub fn set_user_context_policy(mut self, input: std::option::Option<crate::types::UserContextPolicy>) -> Self {
-        self.user_context_policy = input; self
+    pub fn set_user_context_policy(
+        mut self,
+        input: std::option::Option<crate::types::UserContextPolicy>,
+    ) -> Self {
+        self.user_context_policy = input;
+        self
     }
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn user_group_resolution_configuration(mut self, input: crate::types::UserGroupResolutionConfiguration) -> Self {
+    pub fn user_group_resolution_configuration(
+        mut self,
+        input: crate::types::UserGroupResolutionConfiguration,
+    ) -> Self {
         self.user_group_resolution_configuration = Some(input);
         self
     }
     /// <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
-    pub fn set_user_group_resolution_configuration(mut self, input: std::option::Option<crate::types::UserGroupResolutionConfiguration>) -> Self {
-        self.user_group_resolution_configuration = input; self
+    pub fn set_user_group_resolution_configuration(
+        mut self,
+        input: std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    ) -> Self {
+        self.user_group_resolution_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateIndexInput`](crate::operation::create_index::CreateIndexInput).
-    pub fn build(self) -> Result<crate::operation::create_index::CreateIndexInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_index::CreateIndexInput {
-                name: self.name
-                ,
-                edition: self.edition
-                ,
-                role_arn: self.role_arn
-                ,
-                server_side_encryption_configuration: self.server_side_encryption_configuration
-                ,
-                description: self.description
-                ,
-                client_token: self.client_token
-                ,
-                tags: self.tags
-                ,
-                user_token_configurations: self.user_token_configurations
-                ,
-                user_context_policy: self.user_context_policy
-                ,
-                user_group_resolution_configuration: self.user_group_resolution_configuration
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_index::CreateIndexInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_index::CreateIndexInput {
+            name: self.name,
+            edition: self.edition,
+            role_arn: self.role_arn,
+            server_side_encryption_configuration: self.server_side_encryption_configuration,
+            description: self.description,
+            client_token: self.client_token,
+            tags: self.tags,
+            user_token_configurations: self.user_token_configurations,
+            user_context_policy: self.user_context_policy,
+            user_group_resolution_configuration: self.user_group_resolution_configuration,
+        })
     }
 }
-

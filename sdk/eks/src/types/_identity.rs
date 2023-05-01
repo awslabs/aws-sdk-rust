@@ -3,14 +3,14 @@
 /// <p>An object representing an identity provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Identity  {
+pub struct Identity {
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
     #[doc(hidden)]
     pub oidc: std::option::Option<crate::types::Oidc>,
 }
 impl Identity {
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
-    pub fn oidc(&self) -> std::option::Option<& crate::types::Oidc> {
+    pub fn oidc(&self) -> std::option::Option<&crate::types::Oidc> {
         self.oidc.as_ref()
     }
 }
@@ -35,14 +35,11 @@ impl IdentityBuilder {
     }
     /// <p>An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information.</p>
     pub fn set_oidc(mut self, input: std::option::Option<crate::types::Oidc>) -> Self {
-        self.oidc = input; self
+        self.oidc = input;
+        self
     }
     /// Consumes the builder and constructs a [`Identity`](crate::types::Identity).
     pub fn build(self) -> crate::types::Identity {
-        crate::types::Identity {
-            oidc: self.oidc
-            ,
-        }
+        crate::types::Identity { oidc: self.oidc }
     }
 }
-

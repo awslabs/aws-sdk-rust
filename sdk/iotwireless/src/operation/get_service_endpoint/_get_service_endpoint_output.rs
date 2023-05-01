@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceEndpointOutput  {
+pub struct GetServiceEndpointOutput {
     /// <p>The endpoint's service type.</p>
     #[doc(hidden)]
     pub service_type: std::option::Option<crate::types::WirelessGatewayServiceType>,
@@ -16,26 +16,27 @@ pub struct GetServiceEndpointOutput  {
 }
 impl GetServiceEndpointOutput {
     /// <p>The endpoint's service type.</p>
-    pub fn service_type(&self) -> std::option::Option<& crate::types::WirelessGatewayServiceType> {
+    pub fn service_type(&self) -> std::option::Option<&crate::types::WirelessGatewayServiceType> {
         self.service_type.as_ref()
     }
     /// <p>The service endpoint value.</p>
-    pub fn service_endpoint(&self) -> std::option::Option<& str> {
+    pub fn service_endpoint(&self) -> std::option::Option<&str> {
         self.service_endpoint.as_deref()
     }
     /// <p>The Root CA of the server trust certificate.</p>
-    pub fn server_trust(&self) -> std::option::Option<& str> {
+    pub fn server_trust(&self) -> std::option::Option<&str> {
         self.server_trust.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetServiceEndpointOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetServiceEndpointOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceEndpointOutput`](crate::operation::get_service_endpoint::GetServiceEndpointOutput).
-    pub fn builder() -> crate::operation::get_service_endpoint::builders::GetServiceEndpointOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_service_endpoint::builders::GetServiceEndpointOutputBuilder {
         crate::operation::get_service_endpoint::builders::GetServiceEndpointOutputBuilder::default()
     }
 }
@@ -56,8 +57,12 @@ impl GetServiceEndpointOutputBuilder {
         self
     }
     /// <p>The endpoint's service type.</p>
-    pub fn set_service_type(mut self, input: std::option::Option<crate::types::WirelessGatewayServiceType>) -> Self {
-        self.service_type = input; self
+    pub fn set_service_type(
+        mut self,
+        input: std::option::Option<crate::types::WirelessGatewayServiceType>,
+    ) -> Self {
+        self.service_type = input;
+        self
     }
     /// <p>The service endpoint value.</p>
     pub fn service_endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +71,8 @@ impl GetServiceEndpointOutputBuilder {
     }
     /// <p>The service endpoint value.</p>
     pub fn set_service_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_endpoint = input; self
+        self.service_endpoint = input;
+        self
     }
     /// <p>The Root CA of the server trust certificate.</p>
     pub fn server_trust(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +81,25 @@ impl GetServiceEndpointOutputBuilder {
     }
     /// <p>The Root CA of the server trust certificate.</p>
     pub fn set_server_trust(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_trust = input; self
+        self.server_trust = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetServiceEndpointOutput`](crate::operation::get_service_endpoint::GetServiceEndpointOutput).
     pub fn build(self) -> crate::operation::get_service_endpoint::GetServiceEndpointOutput {
         crate::operation::get_service_endpoint::GetServiceEndpointOutput {
-            service_type: self.service_type
-            ,
-            service_endpoint: self.service_endpoint
-            ,
-            server_trust: self.server_trust
-            ,
+            service_type: self.service_type,
+            service_endpoint: self.service_endpoint,
+            server_trust: self.server_trust,
             _request_id: self._request_id,
         }
     }
 }
-

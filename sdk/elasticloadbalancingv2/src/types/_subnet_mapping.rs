@@ -3,7 +3,7 @@
 /// <p>Information about a subnet mapping.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubnetMapping  {
+pub struct SubnetMapping {
     /// <p>The ID of the subnet.</p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SubnetMapping  {
 }
 impl SubnetMapping {
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<& str> {
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
-    pub fn allocation_id(&self) -> std::option::Option<& str> {
+    pub fn allocation_id(&self) -> std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
-    pub fn private_i_pv4_address(&self) -> std::option::Option<& str> {
+    pub fn private_i_pv4_address(&self) -> std::option::Option<&str> {
         self.private_i_pv4_address.as_deref()
     }
     /// <p>[Network Load Balancers] The IPv6 address.</p>
-    pub fn i_pv6_address(&self) -> std::option::Option<& str> {
+    pub fn i_pv6_address(&self) -> std::option::Option<&str> {
         self.i_pv6_address.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl SubnetMappingBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input; self
+        self.subnet_id = input;
+        self
     }
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl SubnetMappingBuilder {
     }
     /// <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an internet-facing load balancer.</p>
     pub fn set_allocation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allocation_id = input; self
+        self.allocation_id = input;
+        self
     }
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
     pub fn private_i_pv4_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,8 +78,12 @@ impl SubnetMappingBuilder {
         self
     }
     /// <p>[Network Load Balancers] The private IPv4 address for an internal load balancer.</p>
-    pub fn set_private_i_pv4_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.private_i_pv4_address = input; self
+    pub fn set_private_i_pv4_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.private_i_pv4_address = input;
+        self
     }
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     pub fn i_pv6_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +92,16 @@ impl SubnetMappingBuilder {
     }
     /// <p>[Network Load Balancers] The IPv6 address.</p>
     pub fn set_i_pv6_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.i_pv6_address = input; self
+        self.i_pv6_address = input;
+        self
     }
     /// Consumes the builder and constructs a [`SubnetMapping`](crate::types::SubnetMapping).
     pub fn build(self) -> crate::types::SubnetMapping {
         crate::types::SubnetMapping {
-            subnet_id: self.subnet_id
-            ,
-            allocation_id: self.allocation_id
-            ,
-            private_i_pv4_address: self.private_i_pv4_address
-            ,
-            i_pv6_address: self.i_pv6_address
-            ,
+            subnet_id: self.subnet_id,
+            allocation_id: self.allocation_id,
+            private_i_pv4_address: self.private_i_pv4_address,
+            i_pv6_address: self.i_pv6_address,
         }
     }
 }
-

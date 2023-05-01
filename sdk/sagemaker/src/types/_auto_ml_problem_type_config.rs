@@ -21,8 +21,14 @@ pub enum AutoMlProblemTypeConfig {
 impl AutoMlProblemTypeConfig {
     /// Tries to convert the enum instance into [`ImageClassificationJobConfig`](crate::types::AutoMlProblemTypeConfig::ImageClassificationJobConfig), extracting the inner [`ImageClassificationJobConfig`](crate::types::ImageClassificationJobConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_image_classification_job_config(&self) -> std::result::Result<&crate::types::ImageClassificationJobConfig, &Self> {
-        if let AutoMlProblemTypeConfig::ImageClassificationJobConfig(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_image_classification_job_config(
+        &self,
+    ) -> std::result::Result<&crate::types::ImageClassificationJobConfig, &Self> {
+        if let AutoMlProblemTypeConfig::ImageClassificationJobConfig(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`ImageClassificationJobConfig`](crate::types::AutoMlProblemTypeConfig::ImageClassificationJobConfig).
     pub fn is_image_classification_job_config(&self) -> bool {
@@ -30,8 +36,14 @@ impl AutoMlProblemTypeConfig {
     }
     /// Tries to convert the enum instance into [`TextClassificationJobConfig`](crate::types::AutoMlProblemTypeConfig::TextClassificationJobConfig), extracting the inner [`TextClassificationJobConfig`](crate::types::TextClassificationJobConfig).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_text_classification_job_config(&self) -> std::result::Result<&crate::types::TextClassificationJobConfig, &Self> {
-        if let AutoMlProblemTypeConfig::TextClassificationJobConfig(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_text_classification_job_config(
+        &self,
+    ) -> std::result::Result<&crate::types::TextClassificationJobConfig, &Self> {
+        if let AutoMlProblemTypeConfig::TextClassificationJobConfig(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`TextClassificationJobConfig`](crate::types::AutoMlProblemTypeConfig::TextClassificationJobConfig).
     pub fn is_text_classification_job_config(&self) -> bool {
@@ -42,4 +54,3 @@ impl AutoMlProblemTypeConfig {
         matches!(self, Self::Unknown)
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes event information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventInfoMap  {
+pub struct EventInfoMap {
     /// <p>The identifier of an Amazon Redshift event.</p>
     #[doc(hidden)]
     pub event_id: std::option::Option<std::string::String>,
@@ -13,27 +13,27 @@ pub struct EventInfoMap  {
     /// <p>The description of an Amazon Redshift event.</p>
     #[doc(hidden)]
     pub event_description: std::option::Option<std::string::String>,
-    /// <p>The severity of the event.</p> 
+    /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
     #[doc(hidden)]
     pub severity: std::option::Option<std::string::String>,
 }
 impl EventInfoMap {
     /// <p>The identifier of an Amazon Redshift event.</p>
-    pub fn event_id(&self) -> std::option::Option<& str> {
+    pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
     /// <p>The category of an Amazon Redshift event.</p>
-    pub fn event_categories(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
         self.event_categories.as_deref()
     }
     /// <p>The description of an Amazon Redshift event.</p>
-    pub fn event_description(&self) -> std::option::Option<& str> {
+    pub fn event_description(&self) -> std::option::Option<&str> {
         self.event_description.as_deref()
     }
-    /// <p>The severity of the event.</p> 
+    /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
-    pub fn severity(&self) -> std::option::Option<& str> {
+    pub fn severity(&self) -> std::option::Option<&str> {
         self.severity.as_deref()
     }
 }
@@ -61,7 +61,8 @@ impl EventInfoMapBuilder {
     }
     /// <p>The identifier of an Amazon Redshift event.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input; self
+        self.event_id = input;
+        self
     }
     /// Appends an item to `event_categories`.
     ///
@@ -70,13 +71,17 @@ impl EventInfoMapBuilder {
     /// <p>The category of an Amazon Redshift event.</p>
     pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
-                        v.push(input.into());
-                        self.event_categories = Some(v);
-                        self
+        v.push(input.into());
+        self.event_categories = Some(v);
+        self
     }
     /// <p>The category of an Amazon Redshift event.</p>
-    pub fn set_event_categories(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.event_categories = input; self
+    pub fn set_event_categories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.event_categories = input;
+        self
     }
     /// <p>The description of an Amazon Redshift event.</p>
     pub fn event_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,32 +89,32 @@ impl EventInfoMapBuilder {
         self
     }
     /// <p>The description of an Amazon Redshift event.</p>
-    pub fn set_event_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_description = input; self
+    pub fn set_event_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.event_description = input;
+        self
     }
-    /// <p>The severity of the event.</p> 
+    /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
     pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
         self.severity = Some(input.into());
         self
     }
-    /// <p>The severity of the event.</p> 
+    /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
     pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.severity = input; self
+        self.severity = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventInfoMap`](crate::types::EventInfoMap).
     pub fn build(self) -> crate::types::EventInfoMap {
         crate::types::EventInfoMap {
-            event_id: self.event_id
-            ,
-            event_categories: self.event_categories
-            ,
-            event_description: self.event_description
-            ,
-            severity: self.severity
-            ,
+            event_id: self.event_id,
+            event_categories: self.event_categories,
+            event_description: self.event_description,
+            severity: self.severity,
         }
     }
 }
-

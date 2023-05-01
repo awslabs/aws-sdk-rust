@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveAllResourcePermissionsOutput  {
+pub struct RemoveAllResourcePermissionsOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RemoveAllResourcePermissionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RemoveAllResourcePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`RemoveAllResourcePermissionsOutput`](crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsOutput).
-    pub fn builder() -> crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsOutputBuilder {
+    pub fn builder() -> crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsOutputBuilder{
         crate::operation::remove_all_resource_permissions::builders::RemoveAllResourcePermissionsOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct RemoveAllResourcePermissionsOutputBuilder {
 }
 impl RemoveAllResourcePermissionsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RemoveAllResourcePermissionsOutput`](crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsOutput).
-    pub fn build(self) -> crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsOutput {
         crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsOutput {
             _request_id: self._request_id,
         }
     }
 }
-

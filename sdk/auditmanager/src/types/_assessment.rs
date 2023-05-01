@@ -3,7 +3,7 @@
 /// <p> An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Assessment  {
+pub struct Assessment {
     /// <p> The Amazon Resource Name (ARN) of the assessment. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -18,27 +18,31 @@ pub struct Assessment  {
     pub framework: std::option::Option<crate::types::AssessmentFramework>,
     /// <p> The tags that are associated with the assessment. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl Assessment {
     /// <p> The Amazon Resource Name (ARN) of the assessment. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> The Amazon Web Services account that's associated with the assessment. </p>
-    pub fn aws_account(&self) -> std::option::Option<& crate::types::AwsAccount> {
+    pub fn aws_account(&self) -> std::option::Option<&crate::types::AwsAccount> {
         self.aws_account.as_ref()
     }
     /// <p> The metadata for the assessment. </p>
-    pub fn metadata(&self) -> std::option::Option<& crate::types::AssessmentMetadata> {
+    pub fn metadata(&self) -> std::option::Option<&crate::types::AssessmentMetadata> {
         self.metadata.as_ref()
     }
     /// <p> The framework that the assessment was created from. </p>
-    pub fn framework(&self) -> std::option::Option<& crate::types::AssessmentFramework> {
+    pub fn framework(&self) -> std::option::Option<&crate::types::AssessmentFramework> {
         self.framework.as_ref()
     }
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -57,7 +61,8 @@ pub struct AssessmentBuilder {
     pub(crate) aws_account: std::option::Option<crate::types::AwsAccount>,
     pub(crate) metadata: std::option::Option<crate::types::AssessmentMetadata>,
     pub(crate) framework: std::option::Option<crate::types::AssessmentFramework>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl AssessmentBuilder {
     /// <p> The Amazon Resource Name (ARN) of the assessment. </p>
@@ -67,7 +72,8 @@ impl AssessmentBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the assessment. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> The Amazon Web Services account that's associated with the assessment. </p>
     pub fn aws_account(mut self, input: crate::types::AwsAccount) -> Self {
@@ -76,7 +82,8 @@ impl AssessmentBuilder {
     }
     /// <p> The Amazon Web Services account that's associated with the assessment. </p>
     pub fn set_aws_account(mut self, input: std::option::Option<crate::types::AwsAccount>) -> Self {
-        self.aws_account = input; self
+        self.aws_account = input;
+        self
     }
     /// <p> The metadata for the assessment. </p>
     pub fn metadata(mut self, input: crate::types::AssessmentMetadata) -> Self {
@@ -84,8 +91,12 @@ impl AssessmentBuilder {
         self
     }
     /// <p> The metadata for the assessment. </p>
-    pub fn set_metadata(mut self, input: std::option::Option<crate::types::AssessmentMetadata>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentMetadata>,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     /// <p> The framework that the assessment was created from. </p>
     pub fn framework(mut self, input: crate::types::AssessmentFramework) -> Self {
@@ -93,38 +104,46 @@ impl AssessmentBuilder {
         self
     }
     /// <p> The framework that the assessment was created from. </p>
-    pub fn set_framework(mut self, input: std::option::Option<crate::types::AssessmentFramework>) -> Self {
-        self.framework = input; self
+    pub fn set_framework(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentFramework>,
+    ) -> Self {
+        self.framework = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p> The tags that are associated with the assessment. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`Assessment`](crate::types::Assessment).
     pub fn build(self) -> crate::types::Assessment {
         crate::types::Assessment {
-            arn: self.arn
-            ,
-            aws_account: self.aws_account
-            ,
-            metadata: self.metadata
-            ,
-            framework: self.framework
-            ,
-            tags: self.tags
-            ,
+            arn: self.arn,
+            aws_account: self.aws_account,
+            metadata: self.metadata,
+            framework: self.framework,
+            tags: self.tags,
         }
     }
 }
-

@@ -4,51 +4,67 @@ pub use crate::operation::update_profile::_update_profile_output::UpdateProfileO
 pub use crate::operation::update_profile::_update_profile_input::UpdateProfileInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateProfile`.
-/// 
-/// <p>Updates the properties of a profile. The ProfileId is required for updating a customer profile.</p> 
+///
+/// <p>Updates the properties of a profile. The ProfileId is required for updating a customer profile.</p>
 /// <p>When calling the UpdateProfile API, specifying an empty string value means that any existing value will be removed. Not specifying a string value means that any value already there will be kept.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProfileFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_profile::builders::UpdateProfileInputBuilder,
+    inner: crate::operation::update_profile::builders::UpdateProfileInputBuilder,
 }
-impl UpdateProfileFluentBuilder  {
+impl UpdateProfileFluentBuilder {
     /// Creates a new `UpdateProfile`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_profile::UpdateProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_profile::UpdateProfileError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_profile::UpdateProfileOutput, aws_smithy_http::result::SdkError<crate::operation::update_profile::UpdateProfileError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_profile::UpdateProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_profile::UpdateProfileError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_profile::UpdateProfileOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_profile::UpdateProfileError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique name of the domain.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -75,7 +91,10 @@ impl UpdateProfileFluentBuilder  {
         self
     }
     /// <p>Any additional information relevant to the customer’s profile.</p>
-    pub fn set_additional_information(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_additional_information(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_additional_information(input);
         self
     }
@@ -175,7 +194,10 @@ impl UpdateProfileFluentBuilder  {
         self
     }
     /// <p>The customer’s mobile phone number.</p>
-    pub fn set_mobile_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_mobile_phone_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_mobile_phone_number(input);
         self
     }
@@ -185,7 +207,10 @@ impl UpdateProfileFluentBuilder  {
         self
     }
     /// <p>The customer’s home phone number.</p>
-    pub fn set_home_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_home_phone_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_home_phone_number(input);
         self
     }
@@ -195,7 +220,10 @@ impl UpdateProfileFluentBuilder  {
         self
     }
     /// <p>The customer’s business phone number.</p>
-    pub fn set_business_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_business_phone_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_business_phone_number(input);
         self
     }
@@ -215,7 +243,10 @@ impl UpdateProfileFluentBuilder  {
         self
     }
     /// <p>The customer’s personal email address.</p>
-    pub fn set_personal_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_personal_email_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_personal_email_address(input);
         self
     }
@@ -225,7 +256,10 @@ impl UpdateProfileFluentBuilder  {
         self
     }
     /// <p>The customer’s business email address.</p>
-    pub fn set_business_email_address(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_business_email_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_business_email_address(input);
         self
     }
@@ -245,7 +279,10 @@ impl UpdateProfileFluentBuilder  {
         self
     }
     /// <p>The customer’s shipping address.</p>
-    pub fn set_shipping_address(mut self, input: std::option::Option<crate::types::UpdateAddress>) -> Self {
+    pub fn set_shipping_address(
+        mut self,
+        input: std::option::Option<crate::types::UpdateAddress>,
+    ) -> Self {
         self.inner = self.inner.set_shipping_address(input);
         self
     }
@@ -255,7 +292,10 @@ impl UpdateProfileFluentBuilder  {
         self
     }
     /// <p>The customer’s mailing address.</p>
-    pub fn set_mailing_address(mut self, input: std::option::Option<crate::types::UpdateAddress>) -> Self {
+    pub fn set_mailing_address(
+        mut self,
+        input: std::option::Option<crate::types::UpdateAddress>,
+    ) -> Self {
         self.inner = self.inner.set_mailing_address(input);
         self
     }
@@ -265,7 +305,10 @@ impl UpdateProfileFluentBuilder  {
         self
     }
     /// <p>The customer’s billing address.</p>
-    pub fn set_billing_address(mut self, input: std::option::Option<crate::types::UpdateAddress>) -> Self {
+    pub fn set_billing_address(
+        mut self,
+        input: std::option::Option<crate::types::UpdateAddress>,
+    ) -> Self {
         self.inner = self.inner.set_billing_address(input);
         self
     }
@@ -274,12 +317,21 @@ impl UpdateProfileFluentBuilder  {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn attributes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>A key value pair of attributes of a customer profile.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
@@ -289,7 +341,10 @@ impl UpdateProfileFluentBuilder  {
         self
     }
     /// <p>An alternative to <code>PartyType</code> which accepts any string as input.</p>
-    pub fn set_party_type_string(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_party_type_string(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_party_type_string(input);
         self
     }
@@ -304,4 +359,3 @@ impl UpdateProfileFluentBuilder  {
         self
     }
 }
-

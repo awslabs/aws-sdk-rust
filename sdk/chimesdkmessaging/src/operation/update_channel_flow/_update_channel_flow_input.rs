@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateChannelFlowInput  {
+pub struct UpdateChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
     #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct UpdateChannelFlowInput  {
 }
 impl UpdateChannelFlowInput {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
         self.channel_flow_arn.as_deref()
     }
     /// <p>Information about the processor Lambda functions </p>
-    pub fn processors(&self) -> std::option::Option<& [crate::types::Processor]> {
+    pub fn processors(&self) -> std::option::Option<&[crate::types::Processor]> {
         self.processors.as_deref()
     }
     /// <p>The name of the channel flow.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateChannelFlowInput  {
+impl std::fmt::Debug for UpdateChannelFlowInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateChannelFlowInput");
         formatter.field("channel_flow_arn", &self.channel_flow_arn);
@@ -38,7 +38,8 @@ impl  std::fmt::Debug for UpdateChannelFlowInput  {
 }
 impl UpdateChannelFlowInput {
     /// Creates a new builder-style object to manufacture [`UpdateChannelFlowInput`](crate::operation::update_channel_flow::UpdateChannelFlowInput).
-    pub fn builder() -> crate::operation::update_channel_flow::builders::UpdateChannelFlowInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_channel_flow::builders::UpdateChannelFlowInputBuilder {
         crate::operation::update_channel_flow::builders::UpdateChannelFlowInputBuilder::default()
     }
 }
@@ -59,7 +60,8 @@ impl UpdateChannelFlowInputBuilder {
     }
     /// <p>The ARN of the channel flow.</p>
     pub fn set_channel_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_flow_arn = input; self
+        self.channel_flow_arn = input;
+        self
     }
     /// Appends an item to `processors`.
     ///
@@ -68,13 +70,17 @@ impl UpdateChannelFlowInputBuilder {
     /// <p>Information about the processor Lambda functions </p>
     pub fn processors(mut self, input: crate::types::Processor) -> Self {
         let mut v = self.processors.unwrap_or_default();
-                        v.push(input);
-                        self.processors = Some(v);
-                        self
+        v.push(input);
+        self.processors = Some(v);
+        self
     }
     /// <p>Information about the processor Lambda functions </p>
-    pub fn set_processors(mut self, input: std::option::Option<std::vec::Vec<crate::types::Processor>>) -> Self {
-        self.processors = input; self
+    pub fn set_processors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Processor>>,
+    ) -> Self {
+        self.processors = input;
+        self
     }
     /// <p>The name of the channel flow.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,19 +89,22 @@ impl UpdateChannelFlowInputBuilder {
     }
     /// <p>The name of the channel flow.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateChannelFlowInput`](crate::operation::update_channel_flow::UpdateChannelFlowInput).
-    pub fn build(self) -> Result<crate::operation::update_channel_flow::UpdateChannelFlowInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_channel_flow::UpdateChannelFlowInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_channel_flow::UpdateChannelFlowInput {
-                channel_flow_arn: self.channel_flow_arn
-                ,
-                processors: self.processors
-                ,
-                name: self.name
-                ,
-            }
+                channel_flow_arn: self.channel_flow_arn,
+                processors: self.processors,
+                name: self.name,
+            },
         )
     }
 }
@@ -108,4 +117,3 @@ impl std::fmt::Debug for UpdateChannelFlowInputBuilder {
         formatter.finish()
     }
 }
-

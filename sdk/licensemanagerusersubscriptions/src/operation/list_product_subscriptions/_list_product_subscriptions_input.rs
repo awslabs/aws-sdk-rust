@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProductSubscriptionsInput  {
+pub struct ListProductSubscriptionsInput {
     /// <p>The name of the user-based subscription product.</p>
     #[doc(hidden)]
     pub product: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct ListProductSubscriptionsInput  {
 }
 impl ListProductSubscriptionsInput {
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> std::option::Option<& str> {
+    pub fn product(&self) -> std::option::Option<&str> {
         self.product.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn identity_provider(&self) -> std::option::Option<& crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -33,17 +33,19 @@ impl ListProductSubscriptionsInput {
         self.max_results
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListProductSubscriptionsInput {
     /// Creates a new builder-style object to manufacture [`ListProductSubscriptionsInput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsInput).
-    pub fn builder() -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder
+    {
         crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder::default()
     }
 }
@@ -66,7 +68,8 @@ impl ListProductSubscriptionsInputBuilder {
     }
     /// <p>The name of the user-based subscription product.</p>
     pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product = input; self
+        self.product = input;
+        self
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
@@ -74,8 +77,12 @@ impl ListProductSubscriptionsInputBuilder {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(mut self, input: std::option::Option<crate::types::IdentityProvider>) -> Self {
-        self.identity_provider = input; self
+    pub fn set_identity_provider(
+        mut self,
+        input: std::option::Option<crate::types::IdentityProvider>,
+    ) -> Self {
+        self.identity_provider = input;
+        self
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -84,7 +91,8 @@ impl ListProductSubscriptionsInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -93,13 +101,17 @@ impl ListProductSubscriptionsInputBuilder {
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,24 +120,24 @@ impl ListProductSubscriptionsInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListProductSubscriptionsInput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsInput).
-    pub fn build(self) -> Result<crate::operation::list_product_subscriptions::ListProductSubscriptionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_product_subscriptions::ListProductSubscriptionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_product_subscriptions::ListProductSubscriptionsInput {
-                product: self.product
-                ,
-                identity_provider: self.identity_provider
-                ,
-                max_results: self.max_results
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-            }
+                product: self.product,
+                identity_provider: self.identity_provider,
+                max_results: self.max_results,
+                filters: self.filters,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

@@ -2,9 +2,9 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFirewallEncryptionConfigurationInput  {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+pub struct UpdateFirewallEncryptionConfigurationInput {
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     #[doc(hidden)]
     pub update_token: std::option::Option<std::string::String>,
@@ -19,28 +19,30 @@ pub struct UpdateFirewallEncryptionConfigurationInput  {
     pub encryption_configuration: std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateFirewallEncryptionConfigurationInput {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
-    pub fn update_token(&self) -> std::option::Option<& str> {
+    pub fn update_token(&self) -> std::option::Option<&str> {
         self.update_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
-    pub fn firewall_arn(&self) -> std::option::Option<& str> {
+    pub fn firewall_arn(&self) -> std::option::Option<&str> {
         self.firewall_arn.as_deref()
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
-    pub fn firewall_name(&self) -> std::option::Option<& str> {
+    pub fn firewall_name(&self) -> std::option::Option<&str> {
         self.firewall_name.as_deref()
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn encryption_configuration(&self) -> std::option::Option<& crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
 impl UpdateFirewallEncryptionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateFirewallEncryptionConfigurationInput`](crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationInput).
-    pub fn builder() -> crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder{
         crate::operation::update_firewall_encryption_configuration::builders::UpdateFirewallEncryptionConfigurationInputBuilder::default()
     }
 }
@@ -55,18 +57,19 @@ pub struct UpdateFirewallEncryptionConfigurationInputBuilder {
     pub(crate) encryption_configuration: std::option::Option<crate::types::EncryptionConfiguration>,
 }
 impl UpdateFirewallEncryptionConfigurationInputBuilder {
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.update_token = Some(input.into());
         self
     }
-    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p> 
-    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p> 
+    /// <p>An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request. </p>
+    /// <p>To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.</p>
     /// <p>To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.update_token = input; self
+        self.update_token = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn firewall_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +78,8 @@ impl UpdateFirewallEncryptionConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall.</p>
     pub fn set_firewall_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firewall_arn = input; self
+        self.firewall_arn = input;
+        self
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub fn firewall_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,19 +88,27 @@ impl UpdateFirewallEncryptionConfigurationInputBuilder {
     }
     /// <p>The descriptive name of the firewall. You can't change the name of a firewall after you create it.</p>
     pub fn set_firewall_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firewall_name = input; self
+        self.firewall_name = input;
+        self
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+    pub fn encryption_configuration(
+        mut self,
+        input: crate::types::EncryptionConfiguration,
+    ) -> Self {
         self.encryption_configuration = Some(input);
         self
     }
     /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input; self
+    pub fn set_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionConfiguration>,
+    ) -> Self {
+        self.encryption_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFirewallEncryptionConfigurationInput`](crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_firewall_encryption_configuration::UpdateFirewallEncryptionConfigurationInput {
                 update_token: self.update_token
@@ -111,4 +123,3 @@ impl UpdateFirewallEncryptionConfigurationInputBuilder {
         )
     }
 }
-

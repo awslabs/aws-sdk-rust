@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInstanceProfileInput  {
+pub struct UpdateInstanceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct UpdateInstanceProfileInput  {
     /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
     #[doc(hidden)]
     pub package_cleanup: std::option::Option<bool>,
-    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p> 
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
     /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
     #[doc(hidden)]
     pub exclude_app_packages_from_cleanup: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -25,24 +25,24 @@ pub struct UpdateInstanceProfileInput  {
 }
 impl UpdateInstanceProfileInput {
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The updated name for your instance profile.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The updated description for your instance profile.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
     pub fn package_cleanup(&self) -> std::option::Option<bool> {
         self.package_cleanup
     }
-    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p> 
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
     /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn exclude_app_packages_from_cleanup(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn exclude_app_packages_from_cleanup(&self) -> std::option::Option<&[std::string::String]> {
         self.exclude_app_packages_from_cleanup.as_deref()
     }
     /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
@@ -52,7 +52,9 @@ impl UpdateInstanceProfileInput {
 }
 impl UpdateInstanceProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateInstanceProfileInput`](crate::operation::update_instance_profile::UpdateInstanceProfileInput).
-    pub fn builder() -> crate::operation::update_instance_profile::builders::UpdateInstanceProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_instance_profile::builders::UpdateInstanceProfileInputBuilder
+    {
         crate::operation::update_instance_profile::builders::UpdateInstanceProfileInputBuilder::default()
     }
 }
@@ -65,7 +67,8 @@ pub struct UpdateInstanceProfileInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) package_cleanup: std::option::Option<bool>,
-    pub(crate) exclude_app_packages_from_cleanup: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) exclude_app_packages_from_cleanup:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) reboot_after_use: std::option::Option<bool>,
 }
 impl UpdateInstanceProfileInputBuilder {
@@ -76,7 +79,8 @@ impl UpdateInstanceProfileInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the instance profile.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The updated name for your instance profile.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +89,8 @@ impl UpdateInstanceProfileInputBuilder {
     }
     /// <p>The updated name for your instance profile.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The updated description for your instance profile.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +99,8 @@ impl UpdateInstanceProfileInputBuilder {
     }
     /// <p>The updated description for your instance profile.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
     pub fn package_cleanup(mut self, input: bool) -> Self {
@@ -103,24 +109,32 @@ impl UpdateInstanceProfileInputBuilder {
     }
     /// <p>The updated choice for whether you want to specify package cleanup. The default value is <code>false</code> for private devices.</p>
     pub fn set_package_cleanup(mut self, input: std::option::Option<bool>) -> Self {
-        self.package_cleanup = input; self
+        self.package_cleanup = input;
+        self
     }
     /// Appends an item to `exclude_app_packages_from_cleanup`.
     ///
     /// To override the contents of this collection use [`set_exclude_app_packages_from_cleanup`](Self::set_exclude_app_packages_from_cleanup).
     ///
-    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p> 
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
     /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn exclude_app_packages_from_cleanup(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn exclude_app_packages_from_cleanup(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         let mut v = self.exclude_app_packages_from_cleanup.unwrap_or_default();
-                        v.push(input.into());
-                        self.exclude_app_packages_from_cleanup = Some(v);
-                        self
+        v.push(input.into());
+        self.exclude_app_packages_from_cleanup = Some(v);
+        self
     }
-    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p> 
+    /// <p>An array of strings that specifies the list of app packages that should not be cleaned up from the device after a test run is over.</p>
     /// <p>The list of packages is only considered if you set <code>packageCleanup</code> to <code>true</code>.</p>
-    pub fn set_exclude_app_packages_from_cleanup(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.exclude_app_packages_from_cleanup = input; self
+    pub fn set_exclude_app_packages_from_cleanup(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.exclude_app_packages_from_cleanup = input;
+        self
     }
     /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
     pub fn reboot_after_use(mut self, input: bool) -> Self {
@@ -129,26 +143,25 @@ impl UpdateInstanceProfileInputBuilder {
     }
     /// <p>The updated choice for whether you want to reboot the device after use. The default value is <code>true</code>.</p>
     pub fn set_reboot_after_use(mut self, input: std::option::Option<bool>) -> Self {
-        self.reboot_after_use = input; self
+        self.reboot_after_use = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateInstanceProfileInput`](crate::operation::update_instance_profile::UpdateInstanceProfileInput).
-    pub fn build(self) -> Result<crate::operation::update_instance_profile::UpdateInstanceProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_instance_profile::UpdateInstanceProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_instance_profile::UpdateInstanceProfileInput {
-                arn: self.arn
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-                package_cleanup: self.package_cleanup
-                ,
-                exclude_app_packages_from_cleanup: self.exclude_app_packages_from_cleanup
-                ,
-                reboot_after_use: self.reboot_after_use
-                ,
-            }
+                arn: self.arn,
+                name: self.name,
+                description: self.description,
+                package_cleanup: self.package_cleanup,
+                exclude_app_packages_from_cleanup: self.exclude_app_packages_from_cleanup,
+                reboot_after_use: self.reboot_after_use,
+            },
         )
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let lifecyclestate = unimplemented!();
 /// match lifecyclestate {
@@ -38,14 +38,22 @@
 /// Specifically, when `lifecyclestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LifeCycleState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum LifeCycleState {
     #[allow(missing_docs)] // documentation missing in model
     Cutover,
@@ -68,57 +76,69 @@ pub enum LifeCycleState {
     #[allow(missing_docs)] // documentation missing in model
     Testing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LifeCycleState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CUTOVER" => LifeCycleState::Cutover,
-"CUTTING_OVER" => LifeCycleState::CuttingOver,
-"DISCONNECTED" => LifeCycleState::Disconnected,
-"DISCOVERED" => LifeCycleState::Discovered,
-"NOT_READY" => LifeCycleState::NotReady,
-"PENDING_INSTALLATION" => LifeCycleState::PendingInstallation,
-"READY_FOR_CUTOVER" => LifeCycleState::ReadyForCutover,
-"READY_FOR_TEST" => LifeCycleState::ReadyForTest,
-"STOPPED" => LifeCycleState::Stopped,
-"TESTING" => LifeCycleState::Testing,
-other => LifeCycleState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "CUTOVER" => LifeCycleState::Cutover,
+            "CUTTING_OVER" => LifeCycleState::CuttingOver,
+            "DISCONNECTED" => LifeCycleState::Disconnected,
+            "DISCOVERED" => LifeCycleState::Discovered,
+            "NOT_READY" => LifeCycleState::NotReady,
+            "PENDING_INSTALLATION" => LifeCycleState::PendingInstallation,
+            "READY_FOR_CUTOVER" => LifeCycleState::ReadyForCutover,
+            "READY_FOR_TEST" => LifeCycleState::ReadyForTest,
+            "STOPPED" => LifeCycleState::Stopped,
+            "TESTING" => LifeCycleState::Testing,
+            other => {
+                LifeCycleState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for LifeCycleState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(LifeCycleState::from(s))
-                }
-            }
-impl LifeCycleState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    LifeCycleState::Cutover => "CUTOVER",
-    LifeCycleState::CuttingOver => "CUTTING_OVER",
-    LifeCycleState::Disconnected => "DISCONNECTED",
-    LifeCycleState::Discovered => "DISCOVERED",
-    LifeCycleState::NotReady => "NOT_READY",
-    LifeCycleState::PendingInstallation => "PENDING_INSTALLATION",
-    LifeCycleState::ReadyForCutover => "READY_FOR_CUTOVER",
-    LifeCycleState::ReadyForTest => "READY_FOR_TEST",
-    LifeCycleState::Stopped => "STOPPED",
-    LifeCycleState::Testing => "TESTING",
-    LifeCycleState::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CUTOVER", "CUTTING_OVER", "DISCONNECTED", "DISCOVERED", "NOT_READY", "PENDING_INSTALLATION", "READY_FOR_CUTOVER", "READY_FOR_TEST", "STOPPED", "TESTING"]
-                }
-            }
-impl AsRef<str> for LifeCycleState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for LifeCycleState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LifeCycleState::from(s))
+    }
+}
+impl LifeCycleState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LifeCycleState::Cutover => "CUTOVER",
+            LifeCycleState::CuttingOver => "CUTTING_OVER",
+            LifeCycleState::Disconnected => "DISCONNECTED",
+            LifeCycleState::Discovered => "DISCOVERED",
+            LifeCycleState::NotReady => "NOT_READY",
+            LifeCycleState::PendingInstallation => "PENDING_INSTALLATION",
+            LifeCycleState::ReadyForCutover => "READY_FOR_CUTOVER",
+            LifeCycleState::ReadyForTest => "READY_FOR_TEST",
+            LifeCycleState::Stopped => "STOPPED",
+            LifeCycleState::Testing => "TESTING",
+            LifeCycleState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CUTOVER",
+            "CUTTING_OVER",
+            "DISCONNECTED",
+            "DISCOVERED",
+            "NOT_READY",
+            "PENDING_INSTALLATION",
+            "READY_FOR_CUTOVER",
+            "READY_FOR_TEST",
+            "STOPPED",
+            "TESTING",
+        ]
+    }
+}
+impl AsRef<str> for LifeCycleState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

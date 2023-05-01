@@ -4,57 +4,80 @@ pub use crate::operation::reboot_replication_instance::_reboot_replication_insta
 pub use crate::operation::reboot_replication_instance::_reboot_replication_instance_input::RebootReplicationInstanceInputBuilder;
 
 /// Fluent builder constructing a request to `RebootReplicationInstance`.
-/// 
+///
 /// <p>Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RebootReplicationInstanceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::reboot_replication_instance::builders::RebootReplicationInstanceInputBuilder,
 }
-impl RebootReplicationInstanceFluentBuilder  {
+impl RebootReplicationInstanceFluentBuilder {
     /// Creates a new `RebootReplicationInstance`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::reboot_replication_instance::RebootReplicationInstance, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::reboot_replication_instance::RebootReplicationInstanceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput, aws_smithy_http::result::SdkError<crate::operation::reboot_replication_instance::RebootReplicationInstanceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::reboot_replication_instance::RebootReplicationInstance,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::reboot_replication_instance::RebootReplicationInstanceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::reboot_replication_instance::RebootReplicationInstanceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.replication_instance_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_replication_instance_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
     }
@@ -79,4 +102,3 @@ impl RebootReplicationInstanceFluentBuilder  {
         self
     }
 }
-

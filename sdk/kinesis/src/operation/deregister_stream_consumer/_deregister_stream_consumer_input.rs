@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterStreamConsumerInput  {
+pub struct DeregisterStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct DeregisterStreamConsumerInput  {
 }
 impl DeregisterStreamConsumerInput {
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>The name that you gave to the consumer.</p>
-    pub fn consumer_name(&self) -> std::option::Option<& str> {
+    pub fn consumer_name(&self) -> std::option::Option<&str> {
         self.consumer_name.as_deref()
     }
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer. If you don't know the ARN of the consumer that you want to deregister, you can use the ListStreamConsumers operation to get a list of the descriptions of all the consumers that are currently registered with a given data stream. The description of a consumer contains its ARN.</p>
-    pub fn consumer_arn(&self) -> std::option::Option<& str> {
+    pub fn consumer_arn(&self) -> std::option::Option<&str> {
         self.consumer_arn.as_deref()
     }
 }
 impl DeregisterStreamConsumerInput {
     /// Creates a new builder-style object to manufacture [`DeregisterStreamConsumerInput`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerInput).
-    pub fn builder() -> crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerInputBuilder
+    {
         crate::operation::deregister_stream_consumer::builders::DeregisterStreamConsumerInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl DeregisterStreamConsumerInputBuilder {
     }
     /// <p>The ARN of the Kinesis data stream that the consumer is registered with. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kinesis-streams">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
     /// <p>The name that you gave to the consumer.</p>
     pub fn consumer_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl DeregisterStreamConsumerInputBuilder {
     }
     /// <p>The name that you gave to the consumer.</p>
     pub fn set_consumer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.consumer_name = input; self
+        self.consumer_name = input;
+        self
     }
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer. If you don't know the ARN of the consumer that you want to deregister, you can use the ListStreamConsumers operation to get a list of the descriptions of all the consumers that are currently registered with a given data stream. The description of a consumer contains its ARN.</p>
     pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl DeregisterStreamConsumerInputBuilder {
     }
     /// <p>The ARN returned by Kinesis Data Streams when you registered the consumer. If you don't know the ARN of the consumer that you want to deregister, you can use the ListStreamConsumers operation to get a list of the descriptions of all the consumers that are currently registered with a given data stream. The description of a consumer contains its ARN.</p>
     pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.consumer_arn = input; self
+        self.consumer_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeregisterStreamConsumerInput`](crate::operation::deregister_stream_consumer::DeregisterStreamConsumerInput).
-    pub fn build(self) -> Result<crate::operation::deregister_stream_consumer::DeregisterStreamConsumerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deregister_stream_consumer::DeregisterStreamConsumerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::deregister_stream_consumer::DeregisterStreamConsumerInput {
-                stream_arn: self.stream_arn
-                ,
-                consumer_name: self.consumer_name
-                ,
-                consumer_arn: self.consumer_arn
-                ,
-            }
+                stream_arn: self.stream_arn,
+                consumer_name: self.consumer_name,
+                consumer_arn: self.consumer_arn,
+            },
         )
     }
 }
-

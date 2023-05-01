@@ -11,103 +11,101 @@
 #![allow(clippy::derive_partial_eq_without_eq)]
 #![allow(clippy::result_large_err)]
 #![allow(rustdoc::bare_urls)]
-
 #![warn(missing_docs)]
 //! **Please Note: The SDK is currently in Developer Preview and is intended strictly for
 //! feedback purposes only. Do not use this SDK for production workloads.**
-//! 
+//!
 //! The Amazon Chime application programming interface (API) is designed so administrators can perform key tasks, such as creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information about the Amazon Chime API, including operations, types, inputs and outputs, and error codes.
-//! 
+//!
 //! You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls for Amazon Chime. We recommend using an AWS SDK or the AWS CLI. The page for each API action contains a _See Also_ section that includes links to information about using the action with a language-specific AWS SDK or the AWS CLI.
-//! 
+//!
 //! __Using an AWS SDK__
-//! 
+//!
 //! You don't need to write code to calculate a signature for request authentication. The SDK clients authenticate your requests by using access keys that you provide. For more information about AWS SDKs, see the [AWS Developer Center](http://aws.amazon.com/developer/).
-//! 
+//!
 //! __Using the AWS CLI__
-//! 
+//!
 //! Use your access keys with the AWS CLI to make API calls. For information about setting up the AWS CLI, see [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) in the _AWS Command Line Interface User Guide_. For a list of available Amazon Chime commands, see the [Amazon Chime commands](https://docs.aws.amazon.com/cli/latest/reference/chime/index.html) in the _AWS CLI Command Reference_.
-//! 
+//!
 //! __Using REST APIs__
-//! 
+//!
 //! If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports Signature Version 4. For more information, see [Signature Version 4 Signing Process](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html) in the _Amazon Web Services General Reference_. When making REST API calls, use the service name chime and REST endpoint https://service.chime.aws.amazon.com.
-//! 
-//! 
+//!
+//!
 //! Administrative permissions are controlled using AWS Identity and Access Management (IAM). For more information, see [Identity and Access Management for Amazon Chime](https://docs.aws.amazon.com/chime/latest/ag/security-iam.html) in the _Amazon Chime Administration Guide_.
-//! 
+//!
 //! ## Getting Started
-//! 
+//!
 //! > Examples are available for many services and operations, check out the
 //! > [examples folder in GitHub](https://github.com/awslabs/aws-sdk-rust/tree/main/examples).
-//! 
+//!
 //! The SDK provides one crate per AWS service. You must add [Tokio](https://crates.io/crates/tokio)
 //! as a dependency within your Rust project to execute asynchronous code. To add `aws-sdk-chime` to
 //! your project, add the following to your **Cargo.toml** file:
-//! 
+//!
 //! ```toml
 //! [dependencies]
 //! aws-config = "0.55.1"
 //! aws-sdk-chime = "0.27.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```
-//! 
+//!
 //! Then in code, a client can be created with the following:
-//! 
+//!
 //! ```rust,no_run
 //! use aws_sdk_chime as chime;
-//! 
+//!
 //! #[tokio::main]
 //! async fn main() -> Result<(), chime::Error> {
 //!     let config = aws_config::load_from_env().await;
 //!     let client = chime::Client::new(&config);
-//! 
+//!
 //!     // ... make some calls with the client
-//! 
+//!
 //!     Ok(())
 //! }
 //! ```
-//! 
+//!
 //! See the [client documentation](https://docs.rs/aws-sdk-chime/latest/aws_sdk_chime/client/struct.Client.html)
 //! for information on what calls can be made, and the inputs and outputs for each of those calls.
-//! 
+//!
 //! ## Using the SDK
-//! 
+//!
 //! Until the SDK is released, we will be adding information about using the SDK to the
 //! [Developer Guide](https://docs.aws.amazon.com/sdk-for-rust/latest/dg/welcome.html). Feel free to suggest
 //! additional sections for the guide by opening an issue and describing what you are trying to do.
-//! 
+//!
 //! ## Getting Help
-//! 
+//!
 //! * [GitHub discussions](https://github.com/awslabs/aws-sdk-rust/discussions) - For ideas, RFCs & general questions
 //! * [GitHub issues](https://github.com/awslabs/aws-sdk-rust/issues/new/choose) - For bug reports & feature requests
 //! * [Generated Docs (latest version)](https://awslabs.github.io/aws-sdk-rust/)
 //! * [Usage examples](https://github.com/awslabs/aws-sdk-rust/tree/main/examples)
-//! 
-//! 
+//!
+//!
 //! # Crate Organization
-//! 
+//!
 //! The entry point for most customers will be [`Client`], which exposes one method for each API
 //! offered by Amazon Chime. The return value of each of these methods is a "fluent builder",
 //! where the different inputs for that API are added by builder-style function call chaining,
 //! followed by calling `send()` to get a [`Future`](std::future::Future) that will result in
 //! either a successful output or a [`SdkError`](crate::error::SdkError).
-//! 
+//!
 //! Some of these API inputs may be structs or enums to provide more complex structured information.
 //! These structs and enums live in [`types`](crate::types). There are some simpler types for
 //! representing data such as date times or binary blobs that live in [`primitives`](crate::primitives).
-//! 
+//!
 //! All types required to configure a client via the [`Config`](crate::Config) struct live
 //! in [`config`](crate::config).
-//! 
+//!
 //! The [`operation`](crate::operation) module has a submodule for every API, and in each submodule
 //! is the input, output, and error type for that API, as well as builders to construct each of those.
-//! 
+//!
 //! There is a top-level [`Error`](crate::Error) type that encompasses all the errors that the
 //! client can return. Any other error type can be converted to this `Error` type via the
 //! [`From`](std::convert::From) trait.
-//! 
+//!
 //! The other modules within this crate are not required for normal usage.
-
 
 // Code generated by software.amazon.smithy.rust.codegen.smithy-rs. DO NOT EDIT.
 pub use error_meta::Error;
@@ -117,14 +115,14 @@ pub use config::Config;
 
 /// Client for calling Amazon Chime.
 /// ## Constructing a `Client`
-/// 
+///
 /// A [`Config`] is required to construct a client. For most use cases, the [`aws-config`]
 /// crate should be used to automatically resolve this config using
 /// [`aws_config::load_from_env()`], since this will resolve an [`SdkConfig`] which can be shared
 /// across multiple different AWS SDK clients. This config resolution process can be customized
 /// by calling [`aws_config::from_env()`] instead, which returns a [`ConfigLoader`] that uses
 /// the [builder pattern] to customize the default config.
-/// 
+///
 /// In the simplest case, creating a client looks as follows:
 /// ```rust,no_run
 /// # async fn wrapper() {
@@ -132,12 +130,12 @@ pub use config::Config;
 /// let client = aws_sdk_chime::Client::new(&config);
 /// # }
 /// ```
-/// 
+///
 /// Occasionally, SDKs may have additional service-specific that can be set on the [`Config`] that
 /// is absent from [`SdkConfig`], or slightly different settings for a specific client may be desired.
 /// The [`Config`] struct implements `From<&SdkConfig>`, so setting these specific settings can be
 /// done as follows:
-/// 
+///
 /// ```rust,no_run
 /// # async fn wrapper() {
 /// let sdk_config = aws_config::load_from_env().await;
@@ -148,12 +146,12 @@ pub use config::Config;
 ///     .build();
 /// # }
 /// ```
-/// 
+///
 /// See the [`aws-config` docs] and [`Config`] for more information on customizing configuration.
-/// 
+///
 /// _Note:_ Client construction is expensive due to connection thread pool initialization, and should
 /// be done once at application start-up.
-/// 
+///
 /// [`Config`]: crate::Config
 /// [`ConfigLoader`]: https://docs.rs/aws-config/*/aws_config/struct.ConfigLoader.html
 /// [`SdkConfig`]: https://docs.rs/aws-config/*/aws_config/struct.SdkConfig.html
@@ -163,20 +161,20 @@ pub use config::Config;
 /// [`aws_config::load_from_env()`]: https://docs.rs/aws-config/*/aws_config/fn.load_from_env.html
 /// [builder pattern]: https://rust-lang.github.io/api-guidelines/type-safety.html#builders-enable-construction-of-complex-values-c-builder
 /// # Using the `Client`
-/// 
+///
 /// A client has a function for every operation that can be performed by the service.
 /// For example, the [`AssociatePhoneNumbersWithVoiceConnector`](crate::operation::associate_phone_numbers_with_voice_connector) operation has
 /// a [`Client::associate_phone_numbers_with_voice_connector`], function which returns a builder for that operation.
 /// The fluent builder ultimately has a `send()` function that returns an async future that
 /// returns a result, as illustrated below:
-/// 
+///
 /// ```rust,ignore
 /// let result = client.associate_phone_numbers_with_voice_connector()
 ///     .voice_connector_id("example")
 ///     .send()
 ///     .await;
 /// ```
-/// 
+///
 /// The underlying HTTP requests that get made by this can be modified with the `customize_operation`
 /// function on the fluent builder. See the [`customize`](crate::client::customize) module for more
 /// information.
@@ -207,10 +205,10 @@ pub mod types;
 
 mod idempotency_token;
 
-/// 
+///
 pub mod middleware;
 
-/// 
+///
 mod no_credentials;
 
 mod lens;
@@ -223,4 +221,3 @@ mod json_errors;
 
 #[doc(inline)]
 pub use client::Client;
-

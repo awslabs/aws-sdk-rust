@@ -3,7 +3,7 @@
 /// <p>Describes the parameters of a VPC used by the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcConfiguration  {
+pub struct VpcConfiguration {
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
     #[doc(hidden)]
     pub subnet_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct VpcConfiguration  {
 }
 impl VpcConfiguration {
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
-    pub fn subnet_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnet_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.subnet_ids.as_deref()
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl VpcConfigurationBuilder {
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
     pub fn subnet_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnet_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnet_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.subnet_ids = Some(v);
+        self
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Subnet.html">Subnet</a> IDs used by the VPC configuration.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnet_ids = input; self
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnet_ids = input;
+        self
     }
     /// Appends an item to `security_group_ids`.
     ///
@@ -58,22 +62,23 @@ impl VpcConfigurationBuilder {
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_ids = Some(v);
+        self
     }
     /// <p>The array of <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SecurityGroup.html">SecurityGroup</a> IDs used by the VPC configuration.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_ids = input; self
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcConfiguration`](crate::types::VpcConfiguration).
     pub fn build(self) -> crate::types::VpcConfiguration {
         crate::types::VpcConfiguration {
-            subnet_ids: self.subnet_ids
-            ,
-            security_group_ids: self.security_group_ids
-            ,
+            subnet_ids: self.subnet_ids,
+            security_group_ids: self.security_group_ids,
         }
     }
 }
-

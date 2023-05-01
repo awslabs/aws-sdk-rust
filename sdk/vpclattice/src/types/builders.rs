@@ -46,4 +46,3 @@ pub use crate::types::_rule_update_failure::RuleUpdateFailureBuilder;
 pub use crate::types::_rule_update_success::RuleUpdateSuccessBuilder;
 
 pub use crate::types::_rule_update::RuleUpdateBuilder;
-

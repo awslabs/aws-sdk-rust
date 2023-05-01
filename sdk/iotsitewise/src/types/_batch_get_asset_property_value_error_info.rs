@@ -3,7 +3,7 @@
 /// <p>The error information, such as the error code and the timestamp.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueErrorInfo  {
+pub struct BatchGetAssetPropertyValueErrorInfo {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode>,
@@ -13,11 +13,13 @@ pub struct BatchGetAssetPropertyValueErrorInfo  {
 }
 impl BatchGetAssetPropertyValueErrorInfo {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<& crate::types::BatchGetAssetPropertyValueErrorCode> {
+    pub fn error_code(
+        &self,
+    ) -> std::option::Option<&crate::types::BatchGetAssetPropertyValueErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
-    pub fn error_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn error_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.error_timestamp.as_ref()
     }
 }
@@ -42,8 +44,12 @@ impl BatchGetAssetPropertyValueErrorInfoBuilder {
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode>) -> Self {
-        self.error_code = input; self
+    pub fn set_error_code(
+        mut self,
+        input: std::option::Option<crate::types::BatchGetAssetPropertyValueErrorCode>,
+    ) -> Self {
+        self.error_code = input;
+        self
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
     pub fn error_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -51,17 +57,18 @@ impl BatchGetAssetPropertyValueErrorInfoBuilder {
         self
     }
     /// <p>The date the error occurred, in Unix epoch time.</p>
-    pub fn set_error_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.error_timestamp = input; self
+    pub fn set_error_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.error_timestamp = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueErrorInfo`](crate::types::BatchGetAssetPropertyValueErrorInfo).
     pub fn build(self) -> crate::types::BatchGetAssetPropertyValueErrorInfo {
         crate::types::BatchGetAssetPropertyValueErrorInfo {
-            error_code: self.error_code
-            ,
-            error_timestamp: self.error_timestamp
-            ,
+            error_code: self.error_code,
+            error_timestamp: self.error_timestamp,
         }
     }
 }
-

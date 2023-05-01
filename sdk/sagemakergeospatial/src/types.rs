@@ -344,4 +344,3 @@ pub mod builders;
 
 /// Error types that Amazon SageMaker geospatial capabilities can respond with.
 pub mod error;
-

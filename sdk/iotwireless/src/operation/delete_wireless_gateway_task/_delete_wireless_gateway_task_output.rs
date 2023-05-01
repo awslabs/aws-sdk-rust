@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWirelessGatewayTaskOutput  {
+pub struct DeleteWirelessGatewayTaskOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteWirelessGatewayTaskOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteWirelessGatewayTaskOutput {
     /// Creates a new builder-style object to manufacture [`DeleteWirelessGatewayTaskOutput`](crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskOutput).
-    pub fn builder() -> crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskOutputBuilder {
+    pub fn builder() -> crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskOutputBuilder{
         crate::operation::delete_wireless_gateway_task::builders::DeleteWirelessGatewayTaskOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct DeleteWirelessGatewayTaskOutputBuilder {
 }
 impl DeleteWirelessGatewayTaskOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteWirelessGatewayTaskOutput`](crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskOutput).
-    pub fn build(self) -> crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskOutput {
         crate::operation::delete_wireless_gateway_task::DeleteWirelessGatewayTaskOutput {
             _request_id: self._request_id,
         }
     }
 }
-

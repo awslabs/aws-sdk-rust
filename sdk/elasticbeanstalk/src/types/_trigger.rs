@@ -3,14 +3,14 @@
 /// <p>Describes a trigger.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Trigger  {
+pub struct Trigger {
     /// <p>The name of the trigger.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl Trigger {
     /// <p>The name of the trigger.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl TriggerBuilder {
     }
     /// <p>The name of the trigger.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`Trigger`](crate::types::Trigger).
     pub fn build(self) -> crate::types::Trigger {
-        crate::types::Trigger {
-            name: self.name
-            ,
-        }
+        crate::types::Trigger { name: self.name }
     }
 }
-

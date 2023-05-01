@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateIpamResourceDiscoveryOutput  {
+pub struct DisassociateIpamResourceDiscoveryOutput {
     /// <p>A resource discovery association.</p>
     #[doc(hidden)]
-    pub ipam_resource_discovery_association: std::option::Option<crate::types::IpamResourceDiscoveryAssociation>,
+    pub ipam_resource_discovery_association:
+        std::option::Option<crate::types::IpamResourceDiscoveryAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateIpamResourceDiscoveryOutput {
     /// <p>A resource discovery association.</p>
-    pub fn ipam_resource_discovery_association(&self) -> std::option::Option<& crate::types::IpamResourceDiscoveryAssociation> {
+    pub fn ipam_resource_discovery_association(
+        &self,
+    ) -> std::option::Option<&crate::types::IpamResourceDiscoveryAssociation> {
         self.ipam_resource_discovery_association.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociateIpamResourceDiscoveryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateIpamResourceDiscoveryOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateIpamResourceDiscoveryOutput`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryOutput).
-    pub fn builder() -> crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryOutputBuilder{
         crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryOutputBuilder::default()
     }
 }
@@ -30,30 +33,38 @@ impl DisassociateIpamResourceDiscoveryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DisassociateIpamResourceDiscoveryOutputBuilder {
-    pub(crate) ipam_resource_discovery_association: std::option::Option<crate::types::IpamResourceDiscoveryAssociation>,
+    pub(crate) ipam_resource_discovery_association:
+        std::option::Option<crate::types::IpamResourceDiscoveryAssociation>,
     _request_id: Option<String>,
 }
 impl DisassociateIpamResourceDiscoveryOutputBuilder {
     /// <p>A resource discovery association.</p>
-    pub fn ipam_resource_discovery_association(mut self, input: crate::types::IpamResourceDiscoveryAssociation) -> Self {
+    pub fn ipam_resource_discovery_association(
+        mut self,
+        input: crate::types::IpamResourceDiscoveryAssociation,
+    ) -> Self {
         self.ipam_resource_discovery_association = Some(input);
         self
     }
     /// <p>A resource discovery association.</p>
-    pub fn set_ipam_resource_discovery_association(mut self, input: std::option::Option<crate::types::IpamResourceDiscoveryAssociation>) -> Self {
-        self.ipam_resource_discovery_association = input; self
+    pub fn set_ipam_resource_discovery_association(
+        mut self,
+        input: std::option::Option<crate::types::IpamResourceDiscoveryAssociation>,
+    ) -> Self {
+        self.ipam_resource_discovery_association = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateIpamResourceDiscoveryOutput`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryOutput).
-    pub fn build(self) -> crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryOutput {
+    pub fn build(self) -> crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryOutput{
         crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryOutput {
             ipam_resource_discovery_association: self.ipam_resource_discovery_association
             ,
@@ -61,4 +72,3 @@ impl DisassociateIpamResourceDiscoveryOutputBuilder {
         }
     }
 }
-

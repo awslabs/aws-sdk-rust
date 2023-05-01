@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyClusterOutput  {
+pub struct ModifyClusterOutput {
     /// <p>The number of steps that can be executed concurrently.</p>
     #[doc(hidden)]
     pub step_concurrency_level: std::option::Option<i32>,
@@ -15,10 +15,10 @@ impl ModifyClusterOutput {
     }
 }
 impl aws_http::request_id::RequestId for ModifyClusterOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifyClusterOutput {
     /// Creates a new builder-style object to manufacture [`ModifyClusterOutput`](crate::operation::modify_cluster::ModifyClusterOutput).
     pub fn builder() -> crate::operation::modify_cluster::builders::ModifyClusterOutputBuilder {
@@ -41,24 +41,23 @@ impl ModifyClusterOutputBuilder {
     }
     /// <p>The number of steps that can be executed concurrently.</p>
     pub fn set_step_concurrency_level(mut self, input: std::option::Option<i32>) -> Self {
-        self.step_concurrency_level = input; self
+        self.step_concurrency_level = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyClusterOutput`](crate::operation::modify_cluster::ModifyClusterOutput).
     pub fn build(self) -> crate::operation::modify_cluster::ModifyClusterOutput {
         crate::operation::modify_cluster::ModifyClusterOutput {
-            step_concurrency_level: self.step_concurrency_level
-            ,
+            step_concurrency_level: self.step_concurrency_level,
             _request_id: self._request_id,
         }
     }
 }
-

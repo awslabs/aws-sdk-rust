@@ -3,7 +3,7 @@
 /// <p>The batch condition that started the workflow run. Either the number of events in the batch size arrived, in which case the BatchSize member is non-zero, or the batch window expired, in which case the BatchWindow member is non-zero.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartingEventBatchCondition  {
+pub struct StartingEventBatchCondition {
     /// <p>Number of events in the batch.</p>
     #[doc(hidden)]
     pub batch_size: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl StartingEventBatchConditionBuilder {
     }
     /// <p>Number of events in the batch.</p>
     pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.batch_size = input; self
+        self.batch_size = input;
+        self
     }
     /// <p>Duration of the batch window in seconds.</p>
     pub fn batch_window(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl StartingEventBatchConditionBuilder {
     }
     /// <p>Duration of the batch window in seconds.</p>
     pub fn set_batch_window(mut self, input: std::option::Option<i32>) -> Self {
-        self.batch_window = input; self
+        self.batch_window = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartingEventBatchCondition`](crate::types::StartingEventBatchCondition).
     pub fn build(self) -> crate::types::StartingEventBatchCondition {
         crate::types::StartingEventBatchCondition {
-            batch_size: self.batch_size
-            ,
-            batch_window: self.batch_window
-            ,
+            batch_size: self.batch_size,
+            batch_window: self.batch_window,
         }
     }
 }
-

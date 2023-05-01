@@ -3,7 +3,7 @@
 /// <p>The configuration sent to a cluster for configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectorConfigRequest  {
+pub struct ConnectorConfigRequest {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ConnectorConfigRequest  {
 }
 impl ConnectorConfigRequest {
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The cloud provider for the target cluster to connect.</p>
-    pub fn provider(&self) -> std::option::Option<& crate::types::ConnectorConfigProvider> {
+    pub fn provider(&self) -> std::option::Option<&crate::types::ConnectorConfigProvider> {
         self.provider.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl ConnectorConfigRequestBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role that is authorized to request the connector configuration.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The cloud provider for the target cluster to connect.</p>
     pub fn provider(mut self, input: crate::types::ConnectorConfigProvider) -> Self {
@@ -51,17 +52,18 @@ impl ConnectorConfigRequestBuilder {
         self
     }
     /// <p>The cloud provider for the target cluster to connect.</p>
-    pub fn set_provider(mut self, input: std::option::Option<crate::types::ConnectorConfigProvider>) -> Self {
-        self.provider = input; self
+    pub fn set_provider(
+        mut self,
+        input: std::option::Option<crate::types::ConnectorConfigProvider>,
+    ) -> Self {
+        self.provider = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConnectorConfigRequest`](crate::types::ConnectorConfigRequest).
     pub fn build(self) -> crate::types::ConnectorConfigRequest {
         crate::types::ConnectorConfigRequest {
-            role_arn: self.role_arn
-            ,
-            provider: self.provider
-            ,
+            role_arn: self.role_arn,
+            provider: self.provider,
         }
     }
 }
-

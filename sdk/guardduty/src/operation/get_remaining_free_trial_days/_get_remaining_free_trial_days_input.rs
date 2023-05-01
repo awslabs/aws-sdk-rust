@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRemainingFreeTrialDaysInput  {
+pub struct GetRemainingFreeTrialDaysInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct GetRemainingFreeTrialDaysInput  {
 }
 impl GetRemainingFreeTrialDaysInput {
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
-    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
 }
 impl GetRemainingFreeTrialDaysInput {
     /// Creates a new builder-style object to manufacture [`GetRemainingFreeTrialDaysInput`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput).
-    pub fn builder() -> crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder {
+    pub fn builder() -> crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder{
         crate::operation::get_remaining_free_trial_days::builders::GetRemainingFreeTrialDaysInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl GetRemainingFreeTrialDaysInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty member account.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// Appends an item to `account_ids`.
     ///
@@ -51,24 +52,30 @@ impl GetRemainingFreeTrialDaysInputBuilder {
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.account_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
     }
     /// <p>A list of account identifiers of the GuardDuty member account.</p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.account_ids = input; self
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRemainingFreeTrialDaysInput`](crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput).
-    pub fn build(self) -> Result<crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysInput {
-                detector_id: self.detector_id
-                ,
-                account_ids: self.account_ids
-                ,
-            }
+                detector_id: self.detector_id,
+                account_ids: self.account_ids,
+            },
         )
     }
 }
-

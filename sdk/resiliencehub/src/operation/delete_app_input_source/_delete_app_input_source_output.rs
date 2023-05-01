@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppInputSourceOutput  {
+pub struct DeleteAppInputSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     #[doc(hidden)]
     pub app_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct DeleteAppInputSourceOutput  {
 }
 impl DeleteAppInputSourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> std::option::Option<& str> {
+    pub fn app_arn(&self) -> std::option::Option<&str> {
         self.app_arn.as_deref()
     }
     /// <p>The name of the input source from where the application resource is imported from.</p>
-    pub fn app_input_source(&self) -> std::option::Option<& crate::types::AppInputSource> {
+    pub fn app_input_source(&self) -> std::option::Option<&crate::types::AppInputSource> {
         self.app_input_source.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteAppInputSourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteAppInputSourceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAppInputSourceOutput`](crate::operation::delete_app_input_source::DeleteAppInputSourceOutput).
-    pub fn builder() -> crate::operation::delete_app_input_source::builders::DeleteAppInputSourceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_app_input_source::builders::DeleteAppInputSourceOutputBuilder
+    {
         crate::operation::delete_app_input_source::builders::DeleteAppInputSourceOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl DeleteAppInputSourceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn set_app_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_arn = input; self
+        self.app_arn = input;
+        self
     }
     /// <p>The name of the input source from where the application resource is imported from.</p>
     pub fn app_input_source(mut self, input: crate::types::AppInputSource) -> Self {
@@ -57,27 +60,28 @@ impl DeleteAppInputSourceOutputBuilder {
         self
     }
     /// <p>The name of the input source from where the application resource is imported from.</p>
-    pub fn set_app_input_source(mut self, input: std::option::Option<crate::types::AppInputSource>) -> Self {
-        self.app_input_source = input; self
+    pub fn set_app_input_source(
+        mut self,
+        input: std::option::Option<crate::types::AppInputSource>,
+    ) -> Self {
+        self.app_input_source = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteAppInputSourceOutput`](crate::operation::delete_app_input_source::DeleteAppInputSourceOutput).
     pub fn build(self) -> crate::operation::delete_app_input_source::DeleteAppInputSourceOutput {
         crate::operation::delete_app_input_source::DeleteAppInputSourceOutput {
-            app_arn: self.app_arn
-            ,
-            app_input_source: self.app_input_source
-            ,
+            app_arn: self.app_arn,
+            app_input_source: self.app_input_source,
             _request_id: self._request_id,
         }
     }
 }
-

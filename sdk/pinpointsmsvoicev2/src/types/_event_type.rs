@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let eventtype = unimplemented!();
 /// match eventtype {
@@ -53,14 +53,22 @@
 /// Specifically, when `eventtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EventType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     All,
@@ -113,87 +121,112 @@ pub enum EventType {
     #[allow(missing_docs)] // documentation missing in model
     VoiceTtlExpired,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EventType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ALL" => EventType::All,
-"TEXT_ALL" => EventType::TextAll,
-"TEXT_BLOCKED" => EventType::TextBlocked,
-"TEXT_CARRIER_BLOCKED" => EventType::TextCarrierBlocked,
-"TEXT_CARRIER_UNREACHABLE" => EventType::TextCarrierUnreachable,
-"TEXT_DELIVERED" => EventType::TextDelivered,
-"TEXT_INVALID" => EventType::TextInvalid,
-"TEXT_INVALID_MESSAGE" => EventType::TextInvalidMessage,
-"TEXT_PENDING" => EventType::TextPending,
-"TEXT_QUEUED" => EventType::TextQueued,
-"TEXT_SENT" => EventType::TextSent,
-"TEXT_SPAM" => EventType::TextSpam,
-"TEXT_SUCCESSFUL" => EventType::TextSuccessful,
-"TEXT_TTL_EXPIRED" => EventType::TextTtlExpired,
-"TEXT_UNKNOWN" => EventType::TextUnknown,
-"TEXT_UNREACHABLE" => EventType::TextUnreachable,
-"VOICE_ALL" => EventType::VoiceAll,
-"VOICE_ANSWERED" => EventType::VoiceAnswered,
-"VOICE_BUSY" => EventType::VoiceBusy,
-"VOICE_COMPLETED" => EventType::VoiceCompleted,
-"VOICE_FAILED" => EventType::VoiceFailed,
-"VOICE_INITIATED" => EventType::VoiceInitiated,
-"VOICE_NO_ANSWER" => EventType::VoiceNoAnswer,
-"VOICE_RINGING" => EventType::VoiceRinging,
-"VOICE_TTL_EXPIRED" => EventType::VoiceTtlExpired,
-other => EventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for EventType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(EventType::from(s))
-                }
-            }
-impl EventType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    EventType::All => "ALL",
-    EventType::TextAll => "TEXT_ALL",
-    EventType::TextBlocked => "TEXT_BLOCKED",
-    EventType::TextCarrierBlocked => "TEXT_CARRIER_BLOCKED",
-    EventType::TextCarrierUnreachable => "TEXT_CARRIER_UNREACHABLE",
-    EventType::TextDelivered => "TEXT_DELIVERED",
-    EventType::TextInvalid => "TEXT_INVALID",
-    EventType::TextInvalidMessage => "TEXT_INVALID_MESSAGE",
-    EventType::TextPending => "TEXT_PENDING",
-    EventType::TextQueued => "TEXT_QUEUED",
-    EventType::TextSent => "TEXT_SENT",
-    EventType::TextSpam => "TEXT_SPAM",
-    EventType::TextSuccessful => "TEXT_SUCCESSFUL",
-    EventType::TextTtlExpired => "TEXT_TTL_EXPIRED",
-    EventType::TextUnknown => "TEXT_UNKNOWN",
-    EventType::TextUnreachable => "TEXT_UNREACHABLE",
-    EventType::VoiceAll => "VOICE_ALL",
-    EventType::VoiceAnswered => "VOICE_ANSWERED",
-    EventType::VoiceBusy => "VOICE_BUSY",
-    EventType::VoiceCompleted => "VOICE_COMPLETED",
-    EventType::VoiceFailed => "VOICE_FAILED",
-    EventType::VoiceInitiated => "VOICE_INITIATED",
-    EventType::VoiceNoAnswer => "VOICE_NO_ANSWER",
-    EventType::VoiceRinging => "VOICE_RINGING",
-    EventType::VoiceTtlExpired => "VOICE_TTL_EXPIRED",
-    EventType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL" => EventType::All,
+            "TEXT_ALL" => EventType::TextAll,
+            "TEXT_BLOCKED" => EventType::TextBlocked,
+            "TEXT_CARRIER_BLOCKED" => EventType::TextCarrierBlocked,
+            "TEXT_CARRIER_UNREACHABLE" => EventType::TextCarrierUnreachable,
+            "TEXT_DELIVERED" => EventType::TextDelivered,
+            "TEXT_INVALID" => EventType::TextInvalid,
+            "TEXT_INVALID_MESSAGE" => EventType::TextInvalidMessage,
+            "TEXT_PENDING" => EventType::TextPending,
+            "TEXT_QUEUED" => EventType::TextQueued,
+            "TEXT_SENT" => EventType::TextSent,
+            "TEXT_SPAM" => EventType::TextSpam,
+            "TEXT_SUCCESSFUL" => EventType::TextSuccessful,
+            "TEXT_TTL_EXPIRED" => EventType::TextTtlExpired,
+            "TEXT_UNKNOWN" => EventType::TextUnknown,
+            "TEXT_UNREACHABLE" => EventType::TextUnreachable,
+            "VOICE_ALL" => EventType::VoiceAll,
+            "VOICE_ANSWERED" => EventType::VoiceAnswered,
+            "VOICE_BUSY" => EventType::VoiceBusy,
+            "VOICE_COMPLETED" => EventType::VoiceCompleted,
+            "VOICE_FAILED" => EventType::VoiceFailed,
+            "VOICE_INITIATED" => EventType::VoiceInitiated,
+            "VOICE_NO_ANSWER" => EventType::VoiceNoAnswer,
+            "VOICE_RINGING" => EventType::VoiceRinging,
+            "VOICE_TTL_EXPIRED" => EventType::VoiceTtlExpired,
+            other => EventType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ALL", "TEXT_ALL", "TEXT_BLOCKED", "TEXT_CARRIER_BLOCKED", "TEXT_CARRIER_UNREACHABLE", "TEXT_DELIVERED", "TEXT_INVALID", "TEXT_INVALID_MESSAGE", "TEXT_PENDING", "TEXT_QUEUED", "TEXT_SENT", "TEXT_SPAM", "TEXT_SUCCESSFUL", "TEXT_TTL_EXPIRED", "TEXT_UNKNOWN", "TEXT_UNREACHABLE", "VOICE_ALL", "VOICE_ANSWERED", "VOICE_BUSY", "VOICE_COMPLETED", "VOICE_FAILED", "VOICE_INITIATED", "VOICE_NO_ANSWER", "VOICE_RINGING", "VOICE_TTL_EXPIRED"]
-                }
-            }
-impl AsRef<str> for EventType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for EventType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EventType::from(s))
+    }
+}
+impl EventType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EventType::All => "ALL",
+            EventType::TextAll => "TEXT_ALL",
+            EventType::TextBlocked => "TEXT_BLOCKED",
+            EventType::TextCarrierBlocked => "TEXT_CARRIER_BLOCKED",
+            EventType::TextCarrierUnreachable => "TEXT_CARRIER_UNREACHABLE",
+            EventType::TextDelivered => "TEXT_DELIVERED",
+            EventType::TextInvalid => "TEXT_INVALID",
+            EventType::TextInvalidMessage => "TEXT_INVALID_MESSAGE",
+            EventType::TextPending => "TEXT_PENDING",
+            EventType::TextQueued => "TEXT_QUEUED",
+            EventType::TextSent => "TEXT_SENT",
+            EventType::TextSpam => "TEXT_SPAM",
+            EventType::TextSuccessful => "TEXT_SUCCESSFUL",
+            EventType::TextTtlExpired => "TEXT_TTL_EXPIRED",
+            EventType::TextUnknown => "TEXT_UNKNOWN",
+            EventType::TextUnreachable => "TEXT_UNREACHABLE",
+            EventType::VoiceAll => "VOICE_ALL",
+            EventType::VoiceAnswered => "VOICE_ANSWERED",
+            EventType::VoiceBusy => "VOICE_BUSY",
+            EventType::VoiceCompleted => "VOICE_COMPLETED",
+            EventType::VoiceFailed => "VOICE_FAILED",
+            EventType::VoiceInitiated => "VOICE_INITIATED",
+            EventType::VoiceNoAnswer => "VOICE_NO_ANSWER",
+            EventType::VoiceRinging => "VOICE_RINGING",
+            EventType::VoiceTtlExpired => "VOICE_TTL_EXPIRED",
+            EventType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ALL",
+            "TEXT_ALL",
+            "TEXT_BLOCKED",
+            "TEXT_CARRIER_BLOCKED",
+            "TEXT_CARRIER_UNREACHABLE",
+            "TEXT_DELIVERED",
+            "TEXT_INVALID",
+            "TEXT_INVALID_MESSAGE",
+            "TEXT_PENDING",
+            "TEXT_QUEUED",
+            "TEXT_SENT",
+            "TEXT_SPAM",
+            "TEXT_SUCCESSFUL",
+            "TEXT_TTL_EXPIRED",
+            "TEXT_UNKNOWN",
+            "TEXT_UNREACHABLE",
+            "VOICE_ALL",
+            "VOICE_ANSWERED",
+            "VOICE_BUSY",
+            "VOICE_COMPLETED",
+            "VOICE_FAILED",
+            "VOICE_INITIATED",
+            "VOICE_NO_ANSWER",
+            "VOICE_RINGING",
+            "VOICE_TTL_EXPIRED",
+        ]
+    }
+}
+impl AsRef<str> for EventType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

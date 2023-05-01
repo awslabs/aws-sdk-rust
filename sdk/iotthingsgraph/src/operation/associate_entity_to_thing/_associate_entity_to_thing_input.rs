@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateEntityToThingInput  {
+pub struct AssociateEntityToThingInput {
     /// <p>The name of the thing to which the entity is to be associated.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the device to be associated with the thing.</p> 
-    /// <p>The ID should be in the following format.</p> 
+    /// <p>The ID of the device to be associated with the thing.</p>
+    /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     #[doc(hidden)]
     pub entity_id: std::option::Option<std::string::String>,
@@ -17,13 +17,13 @@ pub struct AssociateEntityToThingInput  {
 }
 impl AssociateEntityToThingInput {
     /// <p>The name of the thing to which the entity is to be associated.</p>
-    pub fn thing_name(&self) -> std::option::Option<& str> {
+    pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
-    /// <p>The ID of the device to be associated with the thing.</p> 
-    /// <p>The ID should be in the following format.</p> 
+    /// <p>The ID of the device to be associated with the thing.</p>
+    /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
-    pub fn entity_id(&self) -> std::option::Option<& str> {
+    pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
@@ -33,7 +33,9 @@ impl AssociateEntityToThingInput {
 }
 impl AssociateEntityToThingInput {
     /// Creates a new builder-style object to manufacture [`AssociateEntityToThingInput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingInput).
-    pub fn builder() -> crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder
+    {
         crate::operation::associate_entity_to_thing::builders::AssociateEntityToThingInputBuilder::default()
     }
 }
@@ -54,20 +56,22 @@ impl AssociateEntityToThingInputBuilder {
     }
     /// <p>The name of the thing to which the entity is to be associated.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input; self
+        self.thing_name = input;
+        self
     }
-    /// <p>The ID of the device to be associated with the thing.</p> 
-    /// <p>The ID should be in the following format.</p> 
+    /// <p>The ID of the device to be associated with the thing.</p>
+    /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.entity_id = Some(input.into());
         self
     }
-    /// <p>The ID of the device to be associated with the thing.</p> 
-    /// <p>The ID should be in the following format.</p> 
+    /// <p>The ID of the device to be associated with the thing.</p>
+    /// <p>The ID should be in the following format.</p>
     /// <p> <code>urn:tdm:REGION/ACCOUNT ID/default:device:DEVICENAME</code> </p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input; self
+        self.entity_id = input;
+        self
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn namespace_version(mut self, input: i64) -> Self {
@@ -76,20 +80,22 @@ impl AssociateEntityToThingInputBuilder {
     }
     /// <p>The version of the user's namespace. Defaults to the latest version of the user's namespace.</p>
     pub fn set_namespace_version(mut self, input: std::option::Option<i64>) -> Self {
-        self.namespace_version = input; self
+        self.namespace_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateEntityToThingInput`](crate::operation::associate_entity_to_thing::AssociateEntityToThingInput).
-    pub fn build(self) -> Result<crate::operation::associate_entity_to_thing::AssociateEntityToThingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_entity_to_thing::AssociateEntityToThingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_entity_to_thing::AssociateEntityToThingInput {
-                thing_name: self.thing_name
-                ,
-                entity_id: self.entity_id
-                ,
-                namespace_version: self.namespace_version
-                ,
-            }
+                thing_name: self.thing_name,
+                entity_id: self.entity_id,
+                namespace_version: self.namespace_version,
+            },
         )
     }
 }
-

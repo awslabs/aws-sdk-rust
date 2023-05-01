@@ -97,4 +97,3 @@ impl Clone for IdempotencyTokenProvider {
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>The options for a Connect attachment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTransitGatewayConnectRequestOptions  {
+pub struct CreateTransitGatewayConnectRequestOptions {
     /// <p>The tunnel protocol.</p>
     #[doc(hidden)]
     pub protocol: std::option::Option<crate::types::ProtocolValue>,
 }
 impl CreateTransitGatewayConnectRequestOptions {
     /// <p>The tunnel protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<& crate::types::ProtocolValue> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::ProtocolValue> {
         self.protocol.as_ref()
     }
 }
@@ -35,14 +35,13 @@ impl CreateTransitGatewayConnectRequestOptionsBuilder {
     }
     /// <p>The tunnel protocol.</p>
     pub fn set_protocol(mut self, input: std::option::Option<crate::types::ProtocolValue>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayConnectRequestOptions`](crate::types::CreateTransitGatewayConnectRequestOptions).
     pub fn build(self) -> crate::types::CreateTransitGatewayConnectRequestOptions {
         crate::types::CreateTransitGatewayConnectRequestOptions {
-            protocol: self.protocol
-            ,
+            protocol: self.protocol,
         }
     }
 }
-

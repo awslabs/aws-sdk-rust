@@ -3,28 +3,34 @@
 /// <p>Contains additional parameters for the connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectionHttpParameters  {
+pub struct ConnectionHttpParameters {
     /// <p>Contains additional header parameters for the connection.</p>
     #[doc(hidden)]
-    pub header_parameters: std::option::Option<std::vec::Vec<crate::types::ConnectionHeaderParameter>>,
+    pub header_parameters:
+        std::option::Option<std::vec::Vec<crate::types::ConnectionHeaderParameter>>,
     /// <p>Contains additional query string parameters for the connection.</p>
     #[doc(hidden)]
-    pub query_string_parameters: std::option::Option<std::vec::Vec<crate::types::ConnectionQueryStringParameter>>,
+    pub query_string_parameters:
+        std::option::Option<std::vec::Vec<crate::types::ConnectionQueryStringParameter>>,
     /// <p>Contains additional body string parameters for the connection.</p>
     #[doc(hidden)]
     pub body_parameters: std::option::Option<std::vec::Vec<crate::types::ConnectionBodyParameter>>,
 }
 impl ConnectionHttpParameters {
     /// <p>Contains additional header parameters for the connection.</p>
-    pub fn header_parameters(&self) -> std::option::Option<& [crate::types::ConnectionHeaderParameter]> {
+    pub fn header_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::types::ConnectionHeaderParameter]> {
         self.header_parameters.as_deref()
     }
     /// <p>Contains additional query string parameters for the connection.</p>
-    pub fn query_string_parameters(&self) -> std::option::Option<& [crate::types::ConnectionQueryStringParameter]> {
+    pub fn query_string_parameters(
+        &self,
+    ) -> std::option::Option<&[crate::types::ConnectionQueryStringParameter]> {
         self.query_string_parameters.as_deref()
     }
     /// <p>Contains additional body string parameters for the connection.</p>
-    pub fn body_parameters(&self) -> std::option::Option<& [crate::types::ConnectionBodyParameter]> {
+    pub fn body_parameters(&self) -> std::option::Option<&[crate::types::ConnectionBodyParameter]> {
         self.body_parameters.as_deref()
     }
 }
@@ -39,9 +45,12 @@ impl ConnectionHttpParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ConnectionHttpParametersBuilder {
-    pub(crate) header_parameters: std::option::Option<std::vec::Vec<crate::types::ConnectionHeaderParameter>>,
-    pub(crate) query_string_parameters: std::option::Option<std::vec::Vec<crate::types::ConnectionQueryStringParameter>>,
-    pub(crate) body_parameters: std::option::Option<std::vec::Vec<crate::types::ConnectionBodyParameter>>,
+    pub(crate) header_parameters:
+        std::option::Option<std::vec::Vec<crate::types::ConnectionHeaderParameter>>,
+    pub(crate) query_string_parameters:
+        std::option::Option<std::vec::Vec<crate::types::ConnectionQueryStringParameter>>,
+    pub(crate) body_parameters:
+        std::option::Option<std::vec::Vec<crate::types::ConnectionBodyParameter>>,
 }
 impl ConnectionHttpParametersBuilder {
     /// Appends an item to `header_parameters`.
@@ -51,28 +60,39 @@ impl ConnectionHttpParametersBuilder {
     /// <p>Contains additional header parameters for the connection.</p>
     pub fn header_parameters(mut self, input: crate::types::ConnectionHeaderParameter) -> Self {
         let mut v = self.header_parameters.unwrap_or_default();
-                        v.push(input);
-                        self.header_parameters = Some(v);
-                        self
+        v.push(input);
+        self.header_parameters = Some(v);
+        self
     }
     /// <p>Contains additional header parameters for the connection.</p>
-    pub fn set_header_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConnectionHeaderParameter>>) -> Self {
-        self.header_parameters = input; self
+    pub fn set_header_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConnectionHeaderParameter>>,
+    ) -> Self {
+        self.header_parameters = input;
+        self
     }
     /// Appends an item to `query_string_parameters`.
     ///
     /// To override the contents of this collection use [`set_query_string_parameters`](Self::set_query_string_parameters).
     ///
     /// <p>Contains additional query string parameters for the connection.</p>
-    pub fn query_string_parameters(mut self, input: crate::types::ConnectionQueryStringParameter) -> Self {
+    pub fn query_string_parameters(
+        mut self,
+        input: crate::types::ConnectionQueryStringParameter,
+    ) -> Self {
         let mut v = self.query_string_parameters.unwrap_or_default();
-                        v.push(input);
-                        self.query_string_parameters = Some(v);
-                        self
+        v.push(input);
+        self.query_string_parameters = Some(v);
+        self
     }
     /// <p>Contains additional query string parameters for the connection.</p>
-    pub fn set_query_string_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConnectionQueryStringParameter>>) -> Self {
-        self.query_string_parameters = input; self
+    pub fn set_query_string_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConnectionQueryStringParameter>>,
+    ) -> Self {
+        self.query_string_parameters = input;
+        self
     }
     /// Appends an item to `body_parameters`.
     ///
@@ -81,24 +101,24 @@ impl ConnectionHttpParametersBuilder {
     /// <p>Contains additional body string parameters for the connection.</p>
     pub fn body_parameters(mut self, input: crate::types::ConnectionBodyParameter) -> Self {
         let mut v = self.body_parameters.unwrap_or_default();
-                        v.push(input);
-                        self.body_parameters = Some(v);
-                        self
+        v.push(input);
+        self.body_parameters = Some(v);
+        self
     }
     /// <p>Contains additional body string parameters for the connection.</p>
-    pub fn set_body_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConnectionBodyParameter>>) -> Self {
-        self.body_parameters = input; self
+    pub fn set_body_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConnectionBodyParameter>>,
+    ) -> Self {
+        self.body_parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConnectionHttpParameters`](crate::types::ConnectionHttpParameters).
     pub fn build(self) -> crate::types::ConnectionHttpParameters {
         crate::types::ConnectionHttpParameters {
-            header_parameters: self.header_parameters
-            ,
-            query_string_parameters: self.query_string_parameters
-            ,
-            body_parameters: self.body_parameters
-            ,
+            header_parameters: self.header_parameters,
+            query_string_parameters: self.query_string_parameters,
+            body_parameters: self.body_parameters,
         }
     }
 }
-

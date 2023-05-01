@@ -4,51 +4,71 @@ pub use crate::operation::create_template_sync_config::_create_template_sync_con
 pub use crate::operation::create_template_sync_config::_create_template_sync_config_input::CreateTemplateSyncConfigInputBuilder;
 
 /// Fluent builder constructing a request to `CreateTemplateSyncConfig`.
-/// 
-/// <p>Set up a template to create new template versions automatically by tracking a linked repository. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p> 
+///
+/// <p>Set up a template to create new template versions automatically by tracking a linked repository. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>
 /// <p>When a commit is pushed to your linked repository, Proton checks for changes to your repository template bundles. If it detects a template bundle change, a new major or minor version of its template is created, if the version doesn’t already exist. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-template-sync-configs.html">Template sync configurations</a> in the <i>Proton User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateTemplateSyncConfigFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_template_sync_config::builders::CreateTemplateSyncConfigInputBuilder,
 }
-impl CreateTemplateSyncConfigFluentBuilder  {
+impl CreateTemplateSyncConfigFluentBuilder {
     /// Creates a new `CreateTemplateSyncConfig`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_template_sync_config::CreateTemplateSyncConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_template_sync_config::CreateTemplateSyncConfigError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_template_sync_config::CreateTemplateSyncConfigOutput, aws_smithy_http::result::SdkError<crate::operation::create_template_sync_config::CreateTemplateSyncConfigError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_template_sync_config::CreateTemplateSyncConfig,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_template_sync_config::CreateTemplateSyncConfigError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_template_sync_config::CreateTemplateSyncConfigOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_template_sync_config::CreateTemplateSyncConfigError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of your registered template.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
@@ -65,7 +85,10 @@ impl CreateTemplateSyncConfigFluentBuilder  {
         self
     }
     /// <p>The type of the registered template.</p>
-    pub fn set_template_type(mut self, input: std::option::Option<crate::types::TemplateType>) -> Self {
+    pub fn set_template_type(
+        mut self,
+        input: std::option::Option<crate::types::TemplateType>,
+    ) -> Self {
         self.inner = self.inner.set_template_type(input);
         self
     }
@@ -75,7 +98,10 @@ impl CreateTemplateSyncConfigFluentBuilder  {
         self
     }
     /// <p>The provider type for your repository.</p>
-    pub fn set_repository_provider(mut self, input: std::option::Option<crate::types::RepositoryProvider>) -> Self {
+    pub fn set_repository_provider(
+        mut self,
+        input: std::option::Option<crate::types::RepositoryProvider>,
+    ) -> Self {
         self.inner = self.inner.set_repository_provider(input);
         self
     }
@@ -110,4 +136,3 @@ impl CreateTemplateSyncConfigFluentBuilder  {
         self
     }
 }
-

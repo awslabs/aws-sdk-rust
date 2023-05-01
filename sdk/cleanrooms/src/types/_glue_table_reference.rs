@@ -3,7 +3,7 @@
 /// <p>A reference to a table within an AWS Glue data catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GlueTableReference  {
+pub struct GlueTableReference {
     /// <p>The name of the AWS Glue table.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct GlueTableReference  {
 }
 impl GlueTableReference {
     /// <p>The name of the AWS Glue table.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the database the AWS Glue table belongs to.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl GlueTableReferenceBuilder {
     }
     /// <p>The name of the AWS Glue table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// <p>The name of the database the AWS Glue table belongs to.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl GlueTableReferenceBuilder {
     }
     /// <p>The name of the database the AWS Glue table belongs to.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GlueTableReference`](crate::types::GlueTableReference).
     pub fn build(self) -> crate::types::GlueTableReference {
         crate::types::GlueTableReference {
-            table_name: self.table_name
-            ,
-            database_name: self.database_name
-            ,
+            table_name: self.table_name,
+            database_name: self.database_name,
         }
     }
 }
-

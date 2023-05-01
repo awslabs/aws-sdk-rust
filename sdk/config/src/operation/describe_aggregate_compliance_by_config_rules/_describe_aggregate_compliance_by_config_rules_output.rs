@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAggregateComplianceByConfigRulesOutput  {
+pub struct DescribeAggregateComplianceByConfigRulesOutput {
     /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
     #[doc(hidden)]
-    pub aggregate_compliance_by_config_rules: std::option::Option<std::vec::Vec<crate::types::AggregateComplianceByConfigRule>>,
+    pub aggregate_compliance_by_config_rules:
+        std::option::Option<std::vec::Vec<crate::types::AggregateComplianceByConfigRule>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DescribeAggregateComplianceByConfigRulesOutput  {
 }
 impl DescribeAggregateComplianceByConfigRulesOutput {
     /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
-    pub fn aggregate_compliance_by_config_rules(&self) -> std::option::Option<& [crate::types::AggregateComplianceByConfigRule]> {
+    pub fn aggregate_compliance_by_config_rules(
+        &self,
+    ) -> std::option::Option<&[crate::types::AggregateComplianceByConfigRule]> {
         self.aggregate_compliance_by_config_rules.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAggregateComplianceByConfigRulesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAggregateComplianceByConfigRulesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAggregateComplianceByConfigRulesOutput`](crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesOutput).
-    pub fn builder() -> crate::operation::describe_aggregate_compliance_by_config_rules::builders::DescribeAggregateComplianceByConfigRulesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_aggregate_compliance_by_config_rules::builders::DescribeAggregateComplianceByConfigRulesOutputBuilder{
         crate::operation::describe_aggregate_compliance_by_config_rules::builders::DescribeAggregateComplianceByConfigRulesOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DescribeAggregateComplianceByConfigRulesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAggregateComplianceByConfigRulesOutputBuilder {
-    pub(crate) aggregate_compliance_by_config_rules: std::option::Option<std::vec::Vec<crate::types::AggregateComplianceByConfigRule>>,
+    pub(crate) aggregate_compliance_by_config_rules:
+        std::option::Option<std::vec::Vec<crate::types::AggregateComplianceByConfigRule>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +51,24 @@ impl DescribeAggregateComplianceByConfigRulesOutputBuilder {
     /// To override the contents of this collection use [`set_aggregate_compliance_by_config_rules`](Self::set_aggregate_compliance_by_config_rules).
     ///
     /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
-    pub fn aggregate_compliance_by_config_rules(mut self, input: crate::types::AggregateComplianceByConfigRule) -> Self {
-        let mut v = self.aggregate_compliance_by_config_rules.unwrap_or_default();
-                        v.push(input);
-                        self.aggregate_compliance_by_config_rules = Some(v);
-                        self
+    pub fn aggregate_compliance_by_config_rules(
+        mut self,
+        input: crate::types::AggregateComplianceByConfigRule,
+    ) -> Self {
+        let mut v = self
+            .aggregate_compliance_by_config_rules
+            .unwrap_or_default();
+        v.push(input);
+        self.aggregate_compliance_by_config_rules = Some(v);
+        self
     }
     /// <p>Returns a list of AggregateComplianceByConfigRule object.</p>
-    pub fn set_aggregate_compliance_by_config_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::AggregateComplianceByConfigRule>>) -> Self {
-        self.aggregate_compliance_by_config_rules = input; self
+    pub fn set_aggregate_compliance_by_config_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AggregateComplianceByConfigRule>>,
+    ) -> Self {
+        self.aggregate_compliance_by_config_rules = input;
+        self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +77,20 @@ impl DescribeAggregateComplianceByConfigRulesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAggregateComplianceByConfigRulesOutput`](crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesOutput).
-    pub fn build(self) -> crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesOutput {
+    pub fn build(self) -> crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesOutput{
         crate::operation::describe_aggregate_compliance_by_config_rules::DescribeAggregateComplianceByConfigRulesOutput {
             aggregate_compliance_by_config_rules: self.aggregate_compliance_by_config_rules
             ,
@@ -86,4 +100,3 @@ impl DescribeAggregateComplianceByConfigRulesOutputBuilder {
         }
     }
 }
-

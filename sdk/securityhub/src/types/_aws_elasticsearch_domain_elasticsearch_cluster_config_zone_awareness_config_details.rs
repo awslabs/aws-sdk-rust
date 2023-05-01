@@ -3,7 +3,7 @@
 /// <p>Configuration options for zone awareness.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails  {
+pub struct AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
     /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
     #[doc(hidden)]
     pub availability_zone_count: i32,
@@ -16,7 +16,7 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails 
 }
 impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
     /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
-    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsBuilder {
+    pub fn builder() -> crate::types::builders::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsBuilder{
         crate::types::builders::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsBuilder::default()
     }
 }
@@ -35,15 +35,16 @@ impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetailsB
     }
     /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
     pub fn set_availability_zone_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.availability_zone_count = input; self
+        self.availability_zone_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails).
-    pub fn build(self) -> crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
+    pub fn build(
+        self,
+    ) -> crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails
+    {
         crate::types::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
-            availability_zone_count: self.availability_zone_count
-                .unwrap_or_default()
-            ,
+            availability_zone_count: self.availability_zone_count.unwrap_or_default(),
         }
     }
 }
-

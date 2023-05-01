@@ -3,7 +3,7 @@
 /// <p>Provides user and group information for <a href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">user context filtering</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Principal  {
+pub struct Principal {
     /// <p>The name of the user or group.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct Principal  {
 }
 impl Principal {
     /// <p>The name of the user or group.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of principal.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::PrincipalType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::PrincipalType> {
         self.r#type.as_ref()
     }
     /// <p>Whether to allow or deny document access to the principal.</p>
-    pub fn access(&self) -> std::option::Option<& crate::types::ReadAccessType> {
+    pub fn access(&self) -> std::option::Option<&crate::types::ReadAccessType> {
         self.access.as_ref()
     }
     /// <p>The identifier of the data source the principal should access documents from.</p>
-    pub fn data_source_id(&self) -> std::option::Option<& str> {
+    pub fn data_source_id(&self) -> std::option::Option<&str> {
         self.data_source_id.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl PrincipalBuilder {
     }
     /// <p>The name of the user or group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of principal.</p>
     pub fn r#type(mut self, input: crate::types::PrincipalType) -> Self {
@@ -68,7 +69,8 @@ impl PrincipalBuilder {
     }
     /// <p>The type of principal.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>Whether to allow or deny document access to the principal.</p>
     pub fn access(mut self, input: crate::types::ReadAccessType) -> Self {
@@ -77,7 +79,8 @@ impl PrincipalBuilder {
     }
     /// <p>Whether to allow or deny document access to the principal.</p>
     pub fn set_access(mut self, input: std::option::Option<crate::types::ReadAccessType>) -> Self {
-        self.access = input; self
+        self.access = input;
+        self
     }
     /// <p>The identifier of the data source the principal should access documents from.</p>
     pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl PrincipalBuilder {
     }
     /// <p>The identifier of the data source the principal should access documents from.</p>
     pub fn set_data_source_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_source_id = input; self
+        self.data_source_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`Principal`](crate::types::Principal).
     pub fn build(self) -> crate::types::Principal {
         crate::types::Principal {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            access: self.access
-            ,
-            data_source_id: self.data_source_id
-            ,
+            name: self.name,
+            r#type: self.r#type,
+            access: self.access,
+            data_source_id: self.data_source_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountCustomizationOutput  {
+pub struct DeleteAccountCustomizationOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct DeleteAccountCustomizationOutput  {
 }
 impl DeleteAccountCustomizationOutput {
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -22,13 +22,13 @@ impl DeleteAccountCustomizationOutput {
     }
 }
 impl aws_http::request_id::RequestId for DeleteAccountCustomizationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteAccountCustomizationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteAccountCustomizationOutput`](crate::operation::delete_account_customization::DeleteAccountCustomizationOutput).
-    pub fn builder() -> crate::operation::delete_account_customization::builders::DeleteAccountCustomizationOutputBuilder {
+    pub fn builder() -> crate::operation::delete_account_customization::builders::DeleteAccountCustomizationOutputBuilder{
         crate::operation::delete_account_customization::builders::DeleteAccountCustomizationOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl DeleteAccountCustomizationOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -58,27 +59,26 @@ impl DeleteAccountCustomizationOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteAccountCustomizationOutput`](crate::operation::delete_account_customization::DeleteAccountCustomizationOutput).
-    pub fn build(self) -> crate::operation::delete_account_customization::DeleteAccountCustomizationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_account_customization::DeleteAccountCustomizationOutput {
         crate::operation::delete_account_customization::DeleteAccountCustomizationOutput {
-            request_id: self.request_id
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
+            request_id: self.request_id,
+            status: self.status.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMonitorsOutput  {
+pub struct ListMonitorsOutput {
     /// <p>A list of monitors.</p>
     #[doc(hidden)]
     pub monitors: std::option::Option<std::vec::Vec<crate::types::Monitor>>,
@@ -13,19 +13,19 @@ pub struct ListMonitorsOutput  {
 }
 impl ListMonitorsOutput {
     /// <p>A list of monitors.</p>
-    pub fn monitors(&self) -> std::option::Option<& [crate::types::Monitor]> {
+    pub fn monitors(&self) -> std::option::Option<&[crate::types::Monitor]> {
         self.monitors.as_deref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMonitorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListMonitorsOutput {
     /// Creates a new builder-style object to manufacture [`ListMonitorsOutput`](crate::operation::list_monitors::ListMonitorsOutput).
     pub fn builder() -> crate::operation::list_monitors::builders::ListMonitorsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListMonitorsOutputBuilder {
     /// <p>A list of monitors.</p>
     pub fn monitors(mut self, input: crate::types::Monitor) -> Self {
         let mut v = self.monitors.unwrap_or_default();
-                        v.push(input);
-                        self.monitors = Some(v);
-                        self
+        v.push(input);
+        self.monitors = Some(v);
+        self
     }
     /// <p>A list of monitors.</p>
-    pub fn set_monitors(mut self, input: std::option::Option<std::vec::Vec<crate::types::Monitor>>) -> Self {
-        self.monitors = input; self
+    pub fn set_monitors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Monitor>>,
+    ) -> Self {
+        self.monitors = input;
+        self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListMonitorsOutputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListMonitorsOutput`](crate::operation::list_monitors::ListMonitorsOutput).
     pub fn build(self) -> crate::operation::list_monitors::ListMonitorsOutput {
         crate::operation::list_monitors::ListMonitorsOutput {
-            monitors: self.monitors
-            ,
-            next_token: self.next_token
-            ,
+            monitors: self.monitors,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

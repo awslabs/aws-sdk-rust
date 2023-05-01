@@ -3,7 +3,7 @@
 /// <p>The output configuration details for a metric attribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricAttributionOutput  {
+pub struct MetricAttributionOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
     #[doc(hidden)]
     pub s3_data_destination: std::option::Option<crate::types::S3DataConfig>,
@@ -13,11 +13,11 @@ pub struct MetricAttributionOutput  {
 }
 impl MetricAttributionOutput {
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn s3_data_destination(&self) -> std::option::Option<& crate::types::S3DataConfig> {
+    pub fn s3_data_destination(&self) -> std::option::Option<&crate::types::S3DataConfig> {
         self.s3_data_destination.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl MetricAttributionOutputBuilder {
         self
     }
     /// <p>The configuration details of an Amazon S3 input or output bucket.</p>
-    pub fn set_s3_data_destination(mut self, input: std::option::Option<crate::types::S3DataConfig>) -> Self {
-        self.s3_data_destination = input; self
+    pub fn set_s3_data_destination(
+        mut self,
+        input: std::option::Option<crate::types::S3DataConfig>,
+    ) -> Self {
+        self.s3_data_destination = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl MetricAttributionOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket and add metrics to Amazon CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricAttributionOutput`](crate::types::MetricAttributionOutput).
     pub fn build(self) -> crate::types::MetricAttributionOutput {
         crate::types::MetricAttributionOutput {
-            s3_data_destination: self.s3_data_destination
-            ,
-            role_arn: self.role_arn
-            ,
+            s3_data_destination: self.s3_data_destination,
+            role_arn: self.role_arn,
         }
     }
 }
-

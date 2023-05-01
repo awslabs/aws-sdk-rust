@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartPiiEntitiesDetectionJobInput  {
+pub struct StartPiiEntitiesDetectionJobInput {
     /// <p>The input properties for a PII entities detection job.</p>
     #[doc(hidden)]
     pub input_data_config: std::option::Option<crate::types::InputDataConfig>,
@@ -12,7 +12,7 @@ pub struct StartPiiEntitiesDetectionJobInput  {
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::types::PiiEntitiesDetectionMode>,
-    /// <p>Provides configuration parameters for PII entity redaction.</p> 
+    /// <p>Provides configuration parameters for PII entity redaction.</p>
     /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
     #[doc(hidden)]
     pub redaction_config: std::option::Option<crate::types::RedactionConfig>,
@@ -34,46 +34,46 @@ pub struct StartPiiEntitiesDetectionJobInput  {
 }
 impl StartPiiEntitiesDetectionJobInput {
     /// <p>The input properties for a PII entities detection job.</p>
-    pub fn input_data_config(&self) -> std::option::Option<& crate::types::InputDataConfig> {
+    pub fn input_data_config(&self) -> std::option::Option<&crate::types::InputDataConfig> {
         self.input_data_config.as_ref()
     }
     /// <p>Provides conﬁguration parameters for the output of PII entity detection jobs.</p>
-    pub fn output_data_config(&self) -> std::option::Option<& crate::types::OutputDataConfig> {
+    pub fn output_data_config(&self) -> std::option::Option<&crate::types::OutputDataConfig> {
         self.output_data_config.as_ref()
     }
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
-    pub fn mode(&self) -> std::option::Option<& crate::types::PiiEntitiesDetectionMode> {
+    pub fn mode(&self) -> std::option::Option<&crate::types::PiiEntitiesDetectionMode> {
         self.mode.as_ref()
     }
-    /// <p>Provides configuration parameters for PII entity redaction.</p> 
+    /// <p>Provides configuration parameters for PII entity redaction.</p>
     /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
-    pub fn redaction_config(&self) -> std::option::Option<& crate::types::RedactionConfig> {
+    pub fn redaction_config(&self) -> std::option::Option<&crate::types::RedactionConfig> {
         self.redaction_config.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn data_access_role_arn(&self) -> std::option::Option<& str> {
+    pub fn data_access_role_arn(&self) -> std::option::Option<&str> {
         self.data_access_role_arn.as_deref()
     }
     /// <p>The identifier of the job.</p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
-    pub fn language_code(&self) -> std::option::Option<& crate::types::LanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<&crate::types::LanguageCode> {
         self.language_code.as_ref()
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl StartPiiEntitiesDetectionJobInput {
     /// Creates a new builder-style object to manufacture [`StartPiiEntitiesDetectionJobInput`](crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobInput).
-    pub fn builder() -> crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobInputBuilder {
+    pub fn builder() -> crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobInputBuilder{
         crate::operation::start_pii_entities_detection_job::builders::StartPiiEntitiesDetectionJobInputBuilder::default()
     }
 }
@@ -99,8 +99,12 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>The input properties for a PII entities detection job.</p>
-    pub fn set_input_data_config(mut self, input: std::option::Option<crate::types::InputDataConfig>) -> Self {
-        self.input_data_config = input; self
+    pub fn set_input_data_config(
+        mut self,
+        input: std::option::Option<crate::types::InputDataConfig>,
+    ) -> Self {
+        self.input_data_config = input;
+        self
     }
     /// <p>Provides conﬁguration parameters for the output of PII entity detection jobs.</p>
     pub fn output_data_config(mut self, input: crate::types::OutputDataConfig) -> Self {
@@ -108,8 +112,12 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>Provides conﬁguration parameters for the output of PII entity detection jobs.</p>
-    pub fn set_output_data_config(mut self, input: std::option::Option<crate::types::OutputDataConfig>) -> Self {
-        self.output_data_config = input; self
+    pub fn set_output_data_config(
+        mut self,
+        input: std::option::Option<crate::types::OutputDataConfig>,
+    ) -> Self {
+        self.output_data_config = input;
+        self
     }
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
     pub fn mode(mut self, input: crate::types::PiiEntitiesDetectionMode) -> Self {
@@ -117,19 +125,27 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>Specifies whether the output provides the locations (offsets) of PII entities or a file in which PII entities are redacted.</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::PiiEntitiesDetectionMode>) -> Self {
-        self.mode = input; self
+    pub fn set_mode(
+        mut self,
+        input: std::option::Option<crate::types::PiiEntitiesDetectionMode>,
+    ) -> Self {
+        self.mode = input;
+        self
     }
-    /// <p>Provides configuration parameters for PII entity redaction.</p> 
+    /// <p>Provides configuration parameters for PII entity redaction.</p>
     /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
     pub fn redaction_config(mut self, input: crate::types::RedactionConfig) -> Self {
         self.redaction_config = Some(input);
         self
     }
-    /// <p>Provides configuration parameters for PII entity redaction.</p> 
+    /// <p>Provides configuration parameters for PII entity redaction.</p>
     /// <p>This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>. In that case, you must provide a <code>RedactionConfig</code> definition that includes the <code>PiiEntityTypes</code> parameter.</p>
-    pub fn set_redaction_config(mut self, input: std::option::Option<crate::types::RedactionConfig>) -> Self {
-        self.redaction_config = input; self
+    pub fn set_redaction_config(
+        mut self,
+        input: std::option::Option<crate::types::RedactionConfig>,
+    ) -> Self {
+        self.redaction_config = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
     pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,8 +153,12 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data.</p>
-    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_access_role_arn = input; self
+    pub fn set_data_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_access_role_arn = input;
+        self
     }
     /// <p>The identifier of the job.</p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,7 +167,8 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
     }
     /// <p>The identifier of the job.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
     pub fn language_code(mut self, input: crate::types::LanguageCode) -> Self {
@@ -155,8 +176,12 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>The language of the input documents. Currently, English is the only valid language.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
-        self.language_code = input; self
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::LanguageCode>,
+    ) -> Self {
+        self.language_code = input;
+        self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,8 +189,12 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -174,38 +203,37 @@ impl StartPiiEntitiesDetectionJobInputBuilder {
     /// <p>Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Tags to associate with the PII entities detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartPiiEntitiesDetectionJobInput`](crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobInput).
-    pub fn build(self) -> Result<crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_pii_entities_detection_job::StartPiiEntitiesDetectionJobInput {
-                input_data_config: self.input_data_config
-                ,
-                output_data_config: self.output_data_config
-                ,
-                mode: self.mode
-                ,
-                redaction_config: self.redaction_config
-                ,
-                data_access_role_arn: self.data_access_role_arn
-                ,
-                job_name: self.job_name
-                ,
-                language_code: self.language_code
-                ,
-                client_request_token: self.client_request_token
-                ,
-                tags: self.tags
-                ,
-            }
+                input_data_config: self.input_data_config,
+                output_data_config: self.output_data_config,
+                mode: self.mode,
+                redaction_config: self.redaction_config,
+                data_access_role_arn: self.data_access_role_arn,
+                job_name: self.job_name,
+                language_code: self.language_code,
+                client_request_token: self.client_request_token,
+                tags: self.tags,
+            },
         )
     }
 }
-

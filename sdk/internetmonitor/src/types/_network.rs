@@ -3,7 +3,7 @@
 /// <p>An internet service provider (ISP) or network in Amazon CloudWatch Internet Monitor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Network  {
+pub struct Network {
     /// <p>The internet provider name or network name.</p>
     #[doc(hidden)]
     pub as_name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct Network  {
 }
 impl Network {
     /// <p>The internet provider name or network name.</p>
-    pub fn as_name(&self) -> std::option::Option<& str> {
+    pub fn as_name(&self) -> std::option::Option<&str> {
         self.as_name.as_deref()
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
@@ -43,7 +43,8 @@ impl NetworkBuilder {
     }
     /// <p>The internet provider name or network name.</p>
     pub fn set_as_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.as_name = input; self
+        self.as_name = input;
+        self
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
     pub fn as_number(mut self, input: i64) -> Self {
@@ -52,16 +53,14 @@ impl NetworkBuilder {
     }
     /// <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
     pub fn set_as_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.as_number = input; self
+        self.as_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`Network`](crate::types::Network).
     pub fn build(self) -> crate::types::Network {
         crate::types::Network {
-            as_name: self.as_name
-            ,
-            as_number: self.as_number
-            ,
+            as_name: self.as_name,
+            as_number: self.as_number,
         }
     }
 }
-

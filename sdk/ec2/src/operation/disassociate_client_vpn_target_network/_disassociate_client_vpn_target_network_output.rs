@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateClientVpnTargetNetworkOutput  {
+pub struct DisassociateClientVpnTargetNetworkOutput {
     /// <p>The ID of the target network association.</p>
     #[doc(hidden)]
     pub association_id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct DisassociateClientVpnTargetNetworkOutput  {
 }
 impl DisassociateClientVpnTargetNetworkOutput {
     /// <p>The ID of the target network association.</p>
-    pub fn association_id(&self) -> std::option::Option<& str> {
+    pub fn association_id(&self) -> std::option::Option<&str> {
         self.association_id.as_deref()
     }
     /// <p>The current state of the target network association.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AssociationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AssociationStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DisassociateClientVpnTargetNetworkOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateClientVpnTargetNetworkOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateClientVpnTargetNetworkOutput`](crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkOutput).
-    pub fn builder() -> crate::operation::disassociate_client_vpn_target_network::builders::DisassociateClientVpnTargetNetworkOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_client_vpn_target_network::builders::DisassociateClientVpnTargetNetworkOutputBuilder{
         crate::operation::disassociate_client_vpn_target_network::builders::DisassociateClientVpnTargetNetworkOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl DisassociateClientVpnTargetNetworkOutputBuilder {
     }
     /// <p>The ID of the target network association.</p>
     pub fn set_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.association_id = input; self
+        self.association_id = input;
+        self
     }
     /// <p>The current state of the target network association.</p>
     pub fn status(mut self, input: crate::types::AssociationStatus) -> Self {
@@ -57,20 +58,24 @@ impl DisassociateClientVpnTargetNetworkOutputBuilder {
         self
     }
     /// <p>The current state of the target network association.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AssociationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AssociationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateClientVpnTargetNetworkOutput`](crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkOutput).
-    pub fn build(self) -> crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkOutput {
+    pub fn build(self) -> crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkOutput{
         crate::operation::disassociate_client_vpn_target_network::DisassociateClientVpnTargetNetworkOutput {
             association_id: self.association_id
             ,
@@ -80,4 +85,3 @@ impl DisassociateClientVpnTargetNetworkOutputBuilder {
         }
     }
 }
-

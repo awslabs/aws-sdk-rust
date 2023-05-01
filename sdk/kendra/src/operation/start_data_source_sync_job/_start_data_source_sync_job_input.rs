@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartDataSourceSyncJobInput  {
+pub struct StartDataSourceSyncJobInput {
     /// <p>The identifier of the data source connector to synchronize.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct StartDataSourceSyncJobInput  {
 }
 impl StartDataSourceSyncJobInput {
     /// <p>The identifier of the data source connector to synchronize.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The identifier of the index used with the data source connector.</p>
-    pub fn index_id(&self) -> std::option::Option<& str> {
+    pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
 }
 impl StartDataSourceSyncJobInput {
     /// Creates a new builder-style object to manufacture [`StartDataSourceSyncJobInput`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobInput).
-    pub fn builder() -> crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobInputBuilder
+    {
         crate::operation::start_data_source_sync_job::builders::StartDataSourceSyncJobInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl StartDataSourceSyncJobInputBuilder {
     }
     /// <p>The identifier of the data source connector to synchronize.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl StartDataSourceSyncJobInputBuilder {
     }
     /// <p>The identifier of the index used with the data source connector.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input; self
+        self.index_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartDataSourceSyncJobInput`](crate::operation::start_data_source_sync_job::StartDataSourceSyncJobInput).
-    pub fn build(self) -> Result<crate::operation::start_data_source_sync_job::StartDataSourceSyncJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_data_source_sync_job::StartDataSourceSyncJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_data_source_sync_job::StartDataSourceSyncJobInput {
-                id: self.id
-                ,
-                index_id: self.index_id
-                ,
-            }
+                id: self.id,
+                index_id: self.index_id,
+            },
         )
     }
 }
-

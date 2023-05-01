@@ -3,7 +3,7 @@
 /// <p>Update action that has yet to be processed for the corresponding apply/stop request</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PendingModifiedServiceUpdate  {
+pub struct PendingModifiedServiceUpdate {
     /// <p>The unique ID of the service update</p>
     #[doc(hidden)]
     pub service_update_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PendingModifiedServiceUpdate  {
 }
 impl PendingModifiedServiceUpdate {
     /// <p>The unique ID of the service update</p>
-    pub fn service_update_name(&self) -> std::option::Option<& str> {
+    pub fn service_update_name(&self) -> std::option::Option<&str> {
         self.service_update_name.as_deref()
     }
     /// <p>The status of the service update</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ServiceUpdateStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ServiceUpdateStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl PendingModifiedServiceUpdateBuilder {
         self
     }
     /// <p>The unique ID of the service update</p>
-    pub fn set_service_update_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_update_name = input; self
+    pub fn set_service_update_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_update_name = input;
+        self
     }
     /// <p>The status of the service update</p>
     pub fn status(mut self, input: crate::types::ServiceUpdateStatus) -> Self {
@@ -51,17 +55,18 @@ impl PendingModifiedServiceUpdateBuilder {
         self
     }
     /// <p>The status of the service update</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ServiceUpdateStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ServiceUpdateStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`PendingModifiedServiceUpdate`](crate::types::PendingModifiedServiceUpdate).
     pub fn build(self) -> crate::types::PendingModifiedServiceUpdate {
         crate::types::PendingModifiedServiceUpdate {
-            service_update_name: self.service_update_name
-            ,
-            status: self.status
-            ,
+            service_update_name: self.service_update_name,
+            status: self.status,
         }
     }
 }
-

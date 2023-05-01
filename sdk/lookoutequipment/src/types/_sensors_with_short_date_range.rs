@@ -3,7 +3,7 @@
 /// <p> Entity that comprises information on sensors that have shorter date range. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SensorsWithShortDateRange  {
+pub struct SensorsWithShortDateRange {
     /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
     #[doc(hidden)]
     pub affected_sensor_count: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl SensorsWithShortDateRangeBuilder {
     }
     /// <p> Indicates the number of sensors that have less than 90 days of data. </p>
     pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.affected_sensor_count = input; self
+        self.affected_sensor_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`SensorsWithShortDateRange`](crate::types::SensorsWithShortDateRange).
     pub fn build(self) -> crate::types::SensorsWithShortDateRange {
         crate::types::SensorsWithShortDateRange {
-            affected_sensor_count: self.affected_sensor_count
-            ,
+            affected_sensor_count: self.affected_sensor_count,
         }
     }
 }
-

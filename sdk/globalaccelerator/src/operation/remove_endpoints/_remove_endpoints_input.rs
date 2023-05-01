@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveEndpointsInput  {
+pub struct RemoveEndpointsInput {
     /// <p>The identifiers of the endpoints that you want to remove.</p>
     #[doc(hidden)]
     pub endpoint_identifiers: std::option::Option<std::vec::Vec<crate::types::EndpointIdentifier>>,
@@ -12,11 +12,11 @@ pub struct RemoveEndpointsInput  {
 }
 impl RemoveEndpointsInput {
     /// <p>The identifiers of the endpoints that you want to remove.</p>
-    pub fn endpoint_identifiers(&self) -> std::option::Option<& [crate::types::EndpointIdentifier]> {
+    pub fn endpoint_identifiers(&self) -> std::option::Option<&[crate::types::EndpointIdentifier]> {
         self.endpoint_identifiers.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn endpoint_group_arn(&self) -> std::option::Option<& str> {
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
         self.endpoint_group_arn.as_deref()
     }
 }
@@ -31,7 +31,8 @@ impl RemoveEndpointsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RemoveEndpointsInputBuilder {
-    pub(crate) endpoint_identifiers: std::option::Option<std::vec::Vec<crate::types::EndpointIdentifier>>,
+    pub(crate) endpoint_identifiers:
+        std::option::Option<std::vec::Vec<crate::types::EndpointIdentifier>>,
     pub(crate) endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl RemoveEndpointsInputBuilder {
@@ -42,13 +43,17 @@ impl RemoveEndpointsInputBuilder {
     /// <p>The identifiers of the endpoints that you want to remove.</p>
     pub fn endpoint_identifiers(mut self, input: crate::types::EndpointIdentifier) -> Self {
         let mut v = self.endpoint_identifiers.unwrap_or_default();
-                        v.push(input);
-                        self.endpoint_identifiers = Some(v);
-                        self
+        v.push(input);
+        self.endpoint_identifiers = Some(v);
+        self
     }
     /// <p>The identifiers of the endpoints that you want to remove.</p>
-    pub fn set_endpoint_identifiers(mut self, input: std::option::Option<std::vec::Vec<crate::types::EndpointIdentifier>>) -> Self {
-        self.endpoint_identifiers = input; self
+    pub fn set_endpoint_identifiers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EndpointIdentifier>>,
+    ) -> Self {
+        self.endpoint_identifiers = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
     pub fn endpoint_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -56,19 +61,23 @@ impl RemoveEndpointsInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-    pub fn set_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_group_arn = input; self
+    pub fn set_endpoint_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.endpoint_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoveEndpointsInput`](crate::operation::remove_endpoints::RemoveEndpointsInput).
-    pub fn build(self) -> Result<crate::operation::remove_endpoints::RemoveEndpointsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::remove_endpoints::RemoveEndpointsInput {
-                endpoint_identifiers: self.endpoint_identifiers
-                ,
-                endpoint_group_arn: self.endpoint_group_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::remove_endpoints::RemoveEndpointsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::remove_endpoints::RemoveEndpointsInput {
+            endpoint_identifiers: self.endpoint_identifiers,
+            endpoint_group_arn: self.endpoint_group_arn,
+        })
     }
 }
-

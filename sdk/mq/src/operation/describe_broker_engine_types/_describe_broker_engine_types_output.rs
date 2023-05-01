@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBrokerEngineTypesOutput  {
+pub struct DescribeBrokerEngineTypesOutput {
     /// <p>List of available engine types and versions.</p>
     #[doc(hidden)]
     pub broker_engine_types: std::option::Option<std::vec::Vec<crate::types::BrokerEngineType>>,
@@ -16,7 +16,7 @@ pub struct DescribeBrokerEngineTypesOutput  {
 }
 impl DescribeBrokerEngineTypesOutput {
     /// <p>List of available engine types and versions.</p>
-    pub fn broker_engine_types(&self) -> std::option::Option<& [crate::types::BrokerEngineType]> {
+    pub fn broker_engine_types(&self) -> std::option::Option<&[crate::types::BrokerEngineType]> {
         self.broker_engine_types.as_deref()
     }
     /// <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
@@ -24,18 +24,18 @@ impl DescribeBrokerEngineTypesOutput {
         self.max_results
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeBrokerEngineTypesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeBrokerEngineTypesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBrokerEngineTypesOutput`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput).
-    pub fn builder() -> crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesOutputBuilder{
         crate::operation::describe_broker_engine_types::builders::DescribeBrokerEngineTypesOutputBuilder::default()
     }
 }
@@ -44,7 +44,8 @@ impl DescribeBrokerEngineTypesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeBrokerEngineTypesOutputBuilder {
-    pub(crate) broker_engine_types: std::option::Option<std::vec::Vec<crate::types::BrokerEngineType>>,
+    pub(crate) broker_engine_types:
+        std::option::Option<std::vec::Vec<crate::types::BrokerEngineType>>,
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -57,13 +58,17 @@ impl DescribeBrokerEngineTypesOutputBuilder {
     /// <p>List of available engine types and versions.</p>
     pub fn broker_engine_types(mut self, input: crate::types::BrokerEngineType) -> Self {
         let mut v = self.broker_engine_types.unwrap_or_default();
-                        v.push(input);
-                        self.broker_engine_types = Some(v);
-                        self
+        v.push(input);
+        self.broker_engine_types = Some(v);
+        self
     }
     /// <p>List of available engine types and versions.</p>
-    pub fn set_broker_engine_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::BrokerEngineType>>) -> Self {
-        self.broker_engine_types = input; self
+    pub fn set_broker_engine_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BrokerEngineType>>,
+    ) -> Self {
+        self.broker_engine_types = input;
+        self
     }
     /// <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,7 +77,8 @@ impl DescribeBrokerEngineTypesOutputBuilder {
     }
     /// <p>Required. The maximum number of engine types that can be returned per page (20 by default). This value must be an integer from 5 to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,29 +87,27 @@ impl DescribeBrokerEngineTypesOutputBuilder {
     }
     /// <p>The token that specifies the next page of results Amazon MQ should return. To request the first page, leave nextToken empty.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeBrokerEngineTypesOutput`](crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput).
-    pub fn build(self) -> crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput {
         crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput {
-            broker_engine_types: self.broker_engine_types
-            ,
-            max_results: self.max_results
-                .unwrap_or_default()
-            ,
-            next_token: self.next_token
-            ,
+            broker_engine_types: self.broker_engine_types,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

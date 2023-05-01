@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAnomaliesInput  {
+pub struct GetAnomaliesInput {
     /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
     #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
@@ -24,23 +24,23 @@ pub struct GetAnomaliesInput  {
 }
 impl GetAnomaliesInput {
     /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
-    pub fn monitor_arn(&self) -> std::option::Option<& str> {
+    pub fn monitor_arn(&self) -> std::option::Option<&str> {
         self.monitor_arn.as_deref()
     }
     /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
-    pub fn date_interval(&self) -> std::option::Option<& crate::types::AnomalyDateInterval> {
+    pub fn date_interval(&self) -> std::option::Option<&crate::types::AnomalyDateInterval> {
         self.date_interval.as_ref()
     }
     /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
-    pub fn feedback(&self) -> std::option::Option<& crate::types::AnomalyFeedbackType> {
+    pub fn feedback(&self) -> std::option::Option<&crate::types::AnomalyFeedbackType> {
         self.feedback.as_ref()
     }
     /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
-    pub fn total_impact(&self) -> std::option::Option<& crate::types::TotalImpactFilter> {
+    pub fn total_impact(&self) -> std::option::Option<&crate::types::TotalImpactFilter> {
         self.total_impact.as_ref()
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
-    pub fn next_page_token(&self) -> std::option::Option<& str> {
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
     /// <p>The number of entries a paginated response contains. </p>
@@ -74,7 +74,8 @@ impl GetAnomaliesInputBuilder {
     }
     /// <p>Retrieves all of the cost anomalies detected for a specific cost anomaly monitor Amazon Resource Name (ARN). </p>
     pub fn set_monitor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_arn = input; self
+        self.monitor_arn = input;
+        self
     }
     /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
     pub fn date_interval(mut self, input: crate::types::AnomalyDateInterval) -> Self {
@@ -82,8 +83,12 @@ impl GetAnomaliesInputBuilder {
         self
     }
     /// <p>Assigns the start and end dates for retrieving cost anomalies. The returned anomaly object will have an <code>AnomalyEndDate</code> in the specified time range. </p>
-    pub fn set_date_interval(mut self, input: std::option::Option<crate::types::AnomalyDateInterval>) -> Self {
-        self.date_interval = input; self
+    pub fn set_date_interval(
+        mut self,
+        input: std::option::Option<crate::types::AnomalyDateInterval>,
+    ) -> Self {
+        self.date_interval = input;
+        self
     }
     /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
     pub fn feedback(mut self, input: crate::types::AnomalyFeedbackType) -> Self {
@@ -91,8 +96,12 @@ impl GetAnomaliesInputBuilder {
         self
     }
     /// <p>Filters anomaly results by the feedback field on the anomaly object. </p>
-    pub fn set_feedback(mut self, input: std::option::Option<crate::types::AnomalyFeedbackType>) -> Self {
-        self.feedback = input; self
+    pub fn set_feedback(
+        mut self,
+        input: std::option::Option<crate::types::AnomalyFeedbackType>,
+    ) -> Self {
+        self.feedback = input;
+        self
     }
     /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
     pub fn total_impact(mut self, input: crate::types::TotalImpactFilter) -> Self {
@@ -100,8 +109,12 @@ impl GetAnomaliesInputBuilder {
         self
     }
     /// <p>Filters anomaly results by the total impact field on the anomaly object. For example, you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated dollar impact greater than 200. </p>
-    pub fn set_total_impact(mut self, input: std::option::Option<crate::types::TotalImpactFilter>) -> Self {
-        self.total_impact = input; self
+    pub fn set_total_impact(
+        mut self,
+        input: std::option::Option<crate::types::TotalImpactFilter>,
+    ) -> Self {
+        self.total_impact = input;
+        self
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +123,8 @@ impl GetAnomaliesInputBuilder {
     }
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input; self
+        self.next_page_token = input;
+        self
     }
     /// <p>The number of entries a paginated response contains. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -119,26 +133,23 @@ impl GetAnomaliesInputBuilder {
     }
     /// <p>The number of entries a paginated response contains. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAnomaliesInput`](crate::operation::get_anomalies::GetAnomaliesInput).
-    pub fn build(self) -> Result<crate::operation::get_anomalies::GetAnomaliesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_anomalies::GetAnomaliesInput {
-                monitor_arn: self.monitor_arn
-                ,
-                date_interval: self.date_interval
-                ,
-                feedback: self.feedback
-                ,
-                total_impact: self.total_impact
-                ,
-                next_page_token: self.next_page_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_anomalies::GetAnomaliesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_anomalies::GetAnomaliesInput {
+            monitor_arn: self.monitor_arn,
+            date_interval: self.date_interval,
+            feedback: self.feedback,
+            total_impact: self.total_impact,
+            next_page_token: self.next_page_token,
+            max_results: self.max_results,
+        })
     }
 }
-

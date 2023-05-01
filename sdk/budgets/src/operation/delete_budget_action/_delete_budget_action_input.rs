@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBudgetActionInput  {
+pub struct DeleteBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct DeleteBudgetActionInput  {
 }
 impl DeleteBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<& str> {
+    pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
-    pub fn action_id(&self) -> std::option::Option<& str> {
+    pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
 }
 impl DeleteBudgetActionInput {
     /// Creates a new builder-style object to manufacture [`DeleteBudgetActionInput`](crate::operation::delete_budget_action::DeleteBudgetActionInput).
-    pub fn builder() -> crate::operation::delete_budget_action::builders::DeleteBudgetActionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_budget_action::builders::DeleteBudgetActionInputBuilder {
         crate::operation::delete_budget_action::builders::DeleteBudgetActionInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DeleteBudgetActionInputBuilder {
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl DeleteBudgetActionInputBuilder {
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.budget_name = input; self
+        self.budget_name = input;
+        self
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl DeleteBudgetActionInputBuilder {
     }
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_id = input; self
+        self.action_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBudgetActionInput`](crate::operation::delete_budget_action::DeleteBudgetActionInput).
-    pub fn build(self) -> Result<crate::operation::delete_budget_action::DeleteBudgetActionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_budget_action::DeleteBudgetActionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_budget_action::DeleteBudgetActionInput {
-                account_id: self.account_id
-                ,
-                budget_name: self.budget_name
-                ,
-                action_id: self.action_id
-                ,
-            }
+                account_id: self.account_id,
+                budget_name: self.budget_name,
+                action_id: self.action_id,
+            },
         )
     }
 }
-

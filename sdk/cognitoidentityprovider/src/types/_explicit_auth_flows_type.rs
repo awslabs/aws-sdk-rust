@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let explicitauthflowstype = unimplemented!();
 /// match explicitauthflowstype {
@@ -36,14 +36,22 @@
 /// Specifically, when `explicitauthflowstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExplicitAuthFlowsType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ExplicitAuthFlowsType {
     #[allow(missing_docs)] // documentation missing in model
     AdminNoSrpAuth,
@@ -62,53 +70,63 @@ pub enum ExplicitAuthFlowsType {
     #[allow(missing_docs)] // documentation missing in model
     UserPasswordAuth,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ExplicitAuthFlowsType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ADMIN_NO_SRP_AUTH" => ExplicitAuthFlowsType::AdminNoSrpAuth,
-"ALLOW_ADMIN_USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::AllowAdminUserPasswordAuth,
-"ALLOW_CUSTOM_AUTH" => ExplicitAuthFlowsType::AllowCustomAuth,
-"ALLOW_REFRESH_TOKEN_AUTH" => ExplicitAuthFlowsType::AllowRefreshTokenAuth,
-"ALLOW_USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::AllowUserPasswordAuth,
-"ALLOW_USER_SRP_AUTH" => ExplicitAuthFlowsType::AllowUserSrpAuth,
-"CUSTOM_AUTH_FLOW_ONLY" => ExplicitAuthFlowsType::CustomAuthFlowOnly,
-"USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::UserPasswordAuth,
-other => ExplicitAuthFlowsType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ExplicitAuthFlowsType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ExplicitAuthFlowsType::from(s))
-                }
-            }
-impl ExplicitAuthFlowsType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ExplicitAuthFlowsType::AdminNoSrpAuth => "ADMIN_NO_SRP_AUTH",
-    ExplicitAuthFlowsType::AllowAdminUserPasswordAuth => "ALLOW_ADMIN_USER_PASSWORD_AUTH",
-    ExplicitAuthFlowsType::AllowCustomAuth => "ALLOW_CUSTOM_AUTH",
-    ExplicitAuthFlowsType::AllowRefreshTokenAuth => "ALLOW_REFRESH_TOKEN_AUTH",
-    ExplicitAuthFlowsType::AllowUserPasswordAuth => "ALLOW_USER_PASSWORD_AUTH",
-    ExplicitAuthFlowsType::AllowUserSrpAuth => "ALLOW_USER_SRP_AUTH",
-    ExplicitAuthFlowsType::CustomAuthFlowOnly => "CUSTOM_AUTH_FLOW_ONLY",
-    ExplicitAuthFlowsType::UserPasswordAuth => "USER_PASSWORD_AUTH",
-    ExplicitAuthFlowsType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ADMIN_NO_SRP_AUTH" => ExplicitAuthFlowsType::AdminNoSrpAuth,
+            "ALLOW_ADMIN_USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::AllowAdminUserPasswordAuth,
+            "ALLOW_CUSTOM_AUTH" => ExplicitAuthFlowsType::AllowCustomAuth,
+            "ALLOW_REFRESH_TOKEN_AUTH" => ExplicitAuthFlowsType::AllowRefreshTokenAuth,
+            "ALLOW_USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::AllowUserPasswordAuth,
+            "ALLOW_USER_SRP_AUTH" => ExplicitAuthFlowsType::AllowUserSrpAuth,
+            "CUSTOM_AUTH_FLOW_ONLY" => ExplicitAuthFlowsType::CustomAuthFlowOnly,
+            "USER_PASSWORD_AUTH" => ExplicitAuthFlowsType::UserPasswordAuth,
+            other => ExplicitAuthFlowsType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ADMIN_NO_SRP_AUTH", "ALLOW_ADMIN_USER_PASSWORD_AUTH", "ALLOW_CUSTOM_AUTH", "ALLOW_REFRESH_TOKEN_AUTH", "ALLOW_USER_PASSWORD_AUTH", "ALLOW_USER_SRP_AUTH", "CUSTOM_AUTH_FLOW_ONLY", "USER_PASSWORD_AUTH"]
-                }
-            }
-impl AsRef<str> for ExplicitAuthFlowsType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ExplicitAuthFlowsType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExplicitAuthFlowsType::from(s))
+    }
+}
+impl ExplicitAuthFlowsType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExplicitAuthFlowsType::AdminNoSrpAuth => "ADMIN_NO_SRP_AUTH",
+            ExplicitAuthFlowsType::AllowAdminUserPasswordAuth => "ALLOW_ADMIN_USER_PASSWORD_AUTH",
+            ExplicitAuthFlowsType::AllowCustomAuth => "ALLOW_CUSTOM_AUTH",
+            ExplicitAuthFlowsType::AllowRefreshTokenAuth => "ALLOW_REFRESH_TOKEN_AUTH",
+            ExplicitAuthFlowsType::AllowUserPasswordAuth => "ALLOW_USER_PASSWORD_AUTH",
+            ExplicitAuthFlowsType::AllowUserSrpAuth => "ALLOW_USER_SRP_AUTH",
+            ExplicitAuthFlowsType::CustomAuthFlowOnly => "CUSTOM_AUTH_FLOW_ONLY",
+            ExplicitAuthFlowsType::UserPasswordAuth => "USER_PASSWORD_AUTH",
+            ExplicitAuthFlowsType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ADMIN_NO_SRP_AUTH",
+            "ALLOW_ADMIN_USER_PASSWORD_AUTH",
+            "ALLOW_CUSTOM_AUTH",
+            "ALLOW_REFRESH_TOKEN_AUTH",
+            "ALLOW_USER_PASSWORD_AUTH",
+            "ALLOW_USER_SRP_AUTH",
+            "CUSTOM_AUTH_FLOW_ONLY",
+            "USER_PASSWORD_AUTH",
+        ]
+    }
+}
+impl AsRef<str> for ExplicitAuthFlowsType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

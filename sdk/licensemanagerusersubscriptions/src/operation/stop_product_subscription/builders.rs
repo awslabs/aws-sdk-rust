@@ -4,50 +4,71 @@ pub use crate::operation::stop_product_subscription::_stop_product_subscription_
 pub use crate::operation::stop_product_subscription::_stop_product_subscription_input::StopProductSubscriptionInputBuilder;
 
 /// Fluent builder constructing a request to `StopProductSubscription`.
-/// 
+///
 /// <p>Stops a product subscription for a user with the specified identity provider.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StopProductSubscriptionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder,
+    inner:
+        crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder,
 }
-impl StopProductSubscriptionFluentBuilder  {
+impl StopProductSubscriptionFluentBuilder {
     /// Creates a new `StopProductSubscription`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::stop_product_subscription::StopProductSubscription, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::stop_product_subscription::StopProductSubscriptionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::stop_product_subscription::StopProductSubscriptionOutput, aws_smithy_http::result::SdkError<crate::operation::stop_product_subscription::StopProductSubscriptionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::stop_product_subscription::StopProductSubscription,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_product_subscription::StopProductSubscriptionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::stop_product_subscription::StopProductSubscriptionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::stop_product_subscription::StopProductSubscriptionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The user name from the identity provider for the user.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.username(input.into());
@@ -64,7 +85,10 @@ impl StopProductSubscriptionFluentBuilder  {
         self
     }
     /// <p>An object that specifies details for the identity provider.</p>
-    pub fn set_identity_provider(mut self, input: std::option::Option<crate::types::IdentityProvider>) -> Self {
+    pub fn set_identity_provider(
+        mut self,
+        input: std::option::Option<crate::types::IdentityProvider>,
+    ) -> Self {
         self.inner = self.inner.set_identity_provider(input);
         self
     }
@@ -89,4 +113,3 @@ impl StopProductSubscriptionFluentBuilder  {
         self
     }
 }
-

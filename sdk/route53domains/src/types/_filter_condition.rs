@@ -3,15 +3,15 @@
 /// <p>Information for the filtering of a list of domains returned by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html">ListDomains</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterCondition  {
+pub struct FilterCondition {
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::ListDomainsAttributeName>,
-    /// <p>The operator values for filtering domain names. The values can be:</p> 
-    /// <ul> 
-    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li> 
-    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li> 
-    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li> 
+    /// <p>The operator values for filtering domain names. The values can be:</p>
+    /// <ul>
+    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
+    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub operator: std::option::Option<crate::types::Operator>,
@@ -21,20 +21,20 @@ pub struct FilterCondition  {
 }
 impl FilterCondition {
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::ListDomainsAttributeName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::ListDomainsAttributeName> {
         self.name.as_ref()
     }
-    /// <p>The operator values for filtering domain names. The values can be:</p> 
-    /// <ul> 
-    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li> 
-    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li> 
-    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li> 
+    /// <p>The operator values for filtering domain names. The values can be:</p>
+    /// <ul>
+    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
+    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
     /// </ul>
-    pub fn operator(&self) -> std::option::Option<& crate::types::Operator> {
+    pub fn operator(&self) -> std::option::Option<&crate::types::Operator> {
         self.operator.as_ref()
     }
     /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -60,27 +60,32 @@ impl FilterConditionBuilder {
         self
     }
     /// <p>Name of the field which should be used for filtering the list of domains.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::ListDomainsAttributeName>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::ListDomainsAttributeName>,
+    ) -> Self {
+        self.name = input;
+        self
     }
-    /// <p>The operator values for filtering domain names. The values can be:</p> 
-    /// <ul> 
-    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li> 
-    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li> 
-    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li> 
+    /// <p>The operator values for filtering domain names. The values can be:</p>
+    /// <ul>
+    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
+    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
     /// </ul>
     pub fn operator(mut self, input: crate::types::Operator) -> Self {
         self.operator = Some(input);
         self
     }
-    /// <p>The operator values for filtering domain names. The values can be:</p> 
-    /// <ul> 
-    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li> 
-    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li> 
-    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li> 
+    /// <p>The operator values for filtering domain names. The values can be:</p>
+    /// <ul>
+    /// <li> <p> <code>LE</code>: Less than, or equal to</p> </li>
+    /// <li> <p> <code>GE</code>: Greater than, or equal to</p> </li>
+    /// <li> <p> <code>BEGINS_WITH</code>: Begins with</p> </li>
     /// </ul>
     pub fn set_operator(mut self, input: std::option::Option<crate::types::Operator>) -> Self {
-        self.operator = input; self
+        self.operator = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -89,24 +94,24 @@ impl FilterConditionBuilder {
     /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p> An array of strings presenting values to compare. Only 1 item in the list is currently supported.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`FilterCondition`](crate::types::FilterCondition).
     pub fn build(self) -> crate::types::FilterCondition {
         crate::types::FilterCondition {
-            name: self.name
-            ,
-            operator: self.operator
-            ,
-            values: self.values
-            ,
+            name: self.name,
+            operator: self.operator,
+            values: self.values,
         }
     }
 }
-

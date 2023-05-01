@@ -3,7 +3,7 @@
 /// <p>The configuration for the URI path route type. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UriPathRouteInput  {
+pub struct UriPathRouteInput {
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
     #[doc(hidden)]
     pub source_path: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct UriPathRouteInput  {
 }
 impl UriPathRouteInput {
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
-    pub fn source_path(&self) -> std::option::Option<& str> {
+    pub fn source_path(&self) -> std::option::Option<&str> {
         self.source_path.as_deref()
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-    pub fn activation_state(&self) -> std::option::Option<& crate::types::RouteActivationState> {
+    pub fn activation_state(&self) -> std::option::Option<&crate::types::RouteActivationState> {
         self.activation_state.as_ref()
     }
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-    pub fn methods(&self) -> std::option::Option<& [crate::types::HttpMethod]> {
+    pub fn methods(&self) -> std::option::Option<&[crate::types::HttpMethod]> {
         self.methods.as_deref()
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
@@ -59,7 +59,8 @@ impl UriPathRouteInputBuilder {
     }
     /// <p>The path to use to match traffic. Paths must start with <code>/</code> and are relative to the base of the application.</p>
     pub fn set_source_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_path = input; self
+        self.source_path = input;
+        self
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
     pub fn activation_state(mut self, input: crate::types::RouteActivationState) -> Self {
@@ -67,8 +68,12 @@ impl UriPathRouteInputBuilder {
         self
     }
     /// <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is created. </p>
-    pub fn set_activation_state(mut self, input: std::option::Option<crate::types::RouteActivationState>) -> Self {
-        self.activation_state = input; self
+    pub fn set_activation_state(
+        mut self,
+        input: std::option::Option<crate::types::RouteActivationState>,
+    ) -> Self {
+        self.activation_state = input;
+        self
     }
     /// Appends an item to `methods`.
     ///
@@ -77,13 +82,17 @@ impl UriPathRouteInputBuilder {
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
     pub fn methods(mut self, input: crate::types::HttpMethod) -> Self {
         let mut v = self.methods.unwrap_or_default();
-                        v.push(input);
-                        self.methods = Some(v);
-                        self
+        v.push(input);
+        self.methods = Some(v);
+        self
     }
     /// <p>A list of HTTP methods to match. An empty list matches all values. If a method is present, only HTTP requests using that method are forwarded to this route’s service. </p>
-    pub fn set_methods(mut self, input: std::option::Option<std::vec::Vec<crate::types::HttpMethod>>) -> Self {
-        self.methods = input; self
+    pub fn set_methods(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::HttpMethod>>,
+    ) -> Self {
+        self.methods = input;
+        self
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub fn include_child_paths(mut self, input: bool) -> Self {
@@ -92,20 +101,16 @@ impl UriPathRouteInputBuilder {
     }
     /// <p>Indicates whether to match all subpaths of the given source path. If this value is <code>false</code>, requests must match the source path exactly before they are forwarded to this route's service. </p>
     pub fn set_include_child_paths(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_child_paths = input; self
+        self.include_child_paths = input;
+        self
     }
     /// Consumes the builder and constructs a [`UriPathRouteInput`](crate::types::UriPathRouteInput).
     pub fn build(self) -> crate::types::UriPathRouteInput {
         crate::types::UriPathRouteInput {
-            source_path: self.source_path
-            ,
-            activation_state: self.activation_state
-            ,
-            methods: self.methods
-            ,
-            include_child_paths: self.include_child_paths
-            ,
+            source_path: self.source_path,
+            activation_state: self.activation_state,
+            methods: self.methods,
+            include_child_paths: self.include_child_paths,
         }
     }
 }
-

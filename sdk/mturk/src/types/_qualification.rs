@@ -3,7 +3,7 @@
 /// <p>The Qualification data structure represents a Qualification assigned to a user, including the Qualification type and the value (score).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Qualification  {
+pub struct Qualification {
     /// <p> The ID of the Qualification type for the Qualification.</p>
     #[doc(hidden)]
     pub qualification_type_id: std::option::Option<std::string::String>,
@@ -25,15 +25,15 @@ pub struct Qualification  {
 }
 impl Qualification {
     /// <p> The ID of the Qualification type for the Qualification.</p>
-    pub fn qualification_type_id(&self) -> std::option::Option<& str> {
+    pub fn qualification_type_id(&self) -> std::option::Option<&str> {
         self.qualification_type_id.as_deref()
     }
     /// <p> The ID of the Worker who possesses the Qualification. </p>
-    pub fn worker_id(&self) -> std::option::Option<& str> {
+    pub fn worker_id(&self) -> std::option::Option<&str> {
         self.worker_id.as_deref()
     }
     /// <p> The date and time the Qualification was granted to the Worker. If the Worker's Qualification was revoked, and then re-granted based on a new Qualification request, GrantTime is the date and time of the last call to the AcceptQualificationRequest operation.</p>
-    pub fn grant_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn grant_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.grant_time.as_ref()
     }
     /// <p> The value (score) of the Qualification, if the Qualification has an integer value.</p>
@@ -41,11 +41,11 @@ impl Qualification {
         self.integer_value
     }
     /// <p>The Locale data structure represents a geographical region or location.</p>
-    pub fn locale_value(&self) -> std::option::Option<& crate::types::Locale> {
+    pub fn locale_value(&self) -> std::option::Option<&crate::types::Locale> {
         self.locale_value.as_ref()
     }
     /// <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::QualificationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::QualificationStatus> {
         self.status.as_ref()
     }
 }
@@ -74,8 +74,12 @@ impl QualificationBuilder {
         self
     }
     /// <p> The ID of the Qualification type for the Qualification.</p>
-    pub fn set_qualification_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.qualification_type_id = input; self
+    pub fn set_qualification_type_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.qualification_type_id = input;
+        self
     }
     /// <p> The ID of the Worker who possesses the Qualification. </p>
     pub fn worker_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl QualificationBuilder {
     }
     /// <p> The ID of the Worker who possesses the Qualification. </p>
     pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.worker_id = input; self
+        self.worker_id = input;
+        self
     }
     /// <p> The date and time the Qualification was granted to the Worker. If the Worker's Qualification was revoked, and then re-granted based on a new Qualification request, GrantTime is the date and time of the last call to the AcceptQualificationRequest operation.</p>
     pub fn grant_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -92,8 +97,12 @@ impl QualificationBuilder {
         self
     }
     /// <p> The date and time the Qualification was granted to the Worker. If the Worker's Qualification was revoked, and then re-granted based on a new Qualification request, GrantTime is the date and time of the last call to the AcceptQualificationRequest operation.</p>
-    pub fn set_grant_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.grant_time = input; self
+    pub fn set_grant_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.grant_time = input;
+        self
     }
     /// <p> The value (score) of the Qualification, if the Qualification has an integer value.</p>
     pub fn integer_value(mut self, input: i32) -> Self {
@@ -102,7 +111,8 @@ impl QualificationBuilder {
     }
     /// <p> The value (score) of the Qualification, if the Qualification has an integer value.</p>
     pub fn set_integer_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.integer_value = input; self
+        self.integer_value = input;
+        self
     }
     /// <p>The Locale data structure represents a geographical region or location.</p>
     pub fn locale_value(mut self, input: crate::types::Locale) -> Self {
@@ -111,7 +121,8 @@ impl QualificationBuilder {
     }
     /// <p>The Locale data structure represents a geographical region or location.</p>
     pub fn set_locale_value(mut self, input: std::option::Option<crate::types::Locale>) -> Self {
-        self.locale_value = input; self
+        self.locale_value = input;
+        self
     }
     /// <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
     pub fn status(mut self, input: crate::types::QualificationStatus) -> Self {
@@ -119,25 +130,22 @@ impl QualificationBuilder {
         self
     }
     /// <p> The status of the Qualification. Valid values are Granted | Revoked.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::QualificationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::QualificationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`Qualification`](crate::types::Qualification).
     pub fn build(self) -> crate::types::Qualification {
         crate::types::Qualification {
-            qualification_type_id: self.qualification_type_id
-            ,
-            worker_id: self.worker_id
-            ,
-            grant_time: self.grant_time
-            ,
-            integer_value: self.integer_value
-            ,
-            locale_value: self.locale_value
-            ,
-            status: self.status
-            ,
+            qualification_type_id: self.qualification_type_id,
+            worker_id: self.worker_id,
+            grant_time: self.grant_time,
+            integer_value: self.integer_value,
+            locale_value: self.locale_value,
+            status: self.status,
         }
     }
 }
-

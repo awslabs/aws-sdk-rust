@@ -2,37 +2,41 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchExecuteStatementInput  {
+pub struct BatchExecuteStatementInput {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
     #[doc(hidden)]
     pub statements: std::option::Option<std::vec::Vec<crate::types::BatchStatementRequest>>,
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p> 
-    /// <ul> 
-    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> 
-    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> 
-    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> 
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
+    /// <ul>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub return_consumed_capacity: std::option::Option<crate::types::ReturnConsumedCapacity>,
 }
 impl BatchExecuteStatementInput {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
-    pub fn statements(&self) -> std::option::Option<& [crate::types::BatchStatementRequest]> {
+    pub fn statements(&self) -> std::option::Option<&[crate::types::BatchStatementRequest]> {
         self.statements.as_deref()
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p> 
-    /// <ul> 
-    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> 
-    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> 
-    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> 
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
+    /// <ul>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    pub fn return_consumed_capacity(&self) -> std::option::Option<& crate::types::ReturnConsumedCapacity> {
+    pub fn return_consumed_capacity(
+        &self,
+    ) -> std::option::Option<&crate::types::ReturnConsumedCapacity> {
         self.return_consumed_capacity.as_ref()
     }
 }
 impl BatchExecuteStatementInput {
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
-    pub fn builder() -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder
+    {
         crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder::default()
     }
 }
@@ -52,43 +56,53 @@ impl BatchExecuteStatementInputBuilder {
     /// <p>The list of PartiQL statements representing the batch to run.</p>
     pub fn statements(mut self, input: crate::types::BatchStatementRequest) -> Self {
         let mut v = self.statements.unwrap_or_default();
-                        v.push(input);
-                        self.statements = Some(v);
-                        self
+        v.push(input);
+        self.statements = Some(v);
+        self
     }
     /// <p>The list of PartiQL statements representing the batch to run.</p>
-    pub fn set_statements(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchStatementRequest>>) -> Self {
-        self.statements = input; self
+    pub fn set_statements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BatchStatementRequest>>,
+    ) -> Self {
+        self.statements = input;
+        self
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p> 
-    /// <ul> 
-    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> 
-    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> 
-    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> 
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
+    /// <ul>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
     pub fn return_consumed_capacity(mut self, input: crate::types::ReturnConsumedCapacity) -> Self {
         self.return_consumed_capacity = Some(input);
         self
     }
-    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p> 
-    /// <ul> 
-    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> 
-    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> 
-    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> 
+    /// <p>Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response:</p>
+    /// <ul>
+    /// <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li>
+    /// <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li>
+    /// <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li>
     /// </ul>
-    pub fn set_return_consumed_capacity(mut self, input: std::option::Option<crate::types::ReturnConsumedCapacity>) -> Self {
-        self.return_consumed_capacity = input; self
+    pub fn set_return_consumed_capacity(
+        mut self,
+        input: std::option::Option<crate::types::ReturnConsumedCapacity>,
+    ) -> Self {
+        self.return_consumed_capacity = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
-    pub fn build(self) -> Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_execute_statement::BatchExecuteStatementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_execute_statement::BatchExecuteStatementInput {
-                statements: self.statements
-                ,
-                return_consumed_capacity: self.return_consumed_capacity
-                ,
-            }
+                statements: self.statements,
+                return_consumed_capacity: self.return_consumed_capacity,
+            },
         )
     }
 }
-

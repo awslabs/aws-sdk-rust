@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectQualificationRequestInput  {
+pub struct RejectQualificationRequestInput {
     /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
     #[doc(hidden)]
     pub qualification_request_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct RejectQualificationRequestInput  {
 }
 impl RejectQualificationRequestInput {
     /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
-    pub fn qualification_request_id(&self) -> std::option::Option<& str> {
+    pub fn qualification_request_id(&self) -> std::option::Option<&str> {
         self.qualification_request_id.as_deref()
     }
     /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
 impl RejectQualificationRequestInput {
     /// Creates a new builder-style object to manufacture [`RejectQualificationRequestInput`](crate::operation::reject_qualification_request::RejectQualificationRequestInput).
-    pub fn builder() -> crate::operation::reject_qualification_request::builders::RejectQualificationRequestInputBuilder {
+    pub fn builder() -> crate::operation::reject_qualification_request::builders::RejectQualificationRequestInputBuilder{
         crate::operation::reject_qualification_request::builders::RejectQualificationRequestInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl RejectQualificationRequestInputBuilder {
         self
     }
     /// <p> The ID of the Qualification request, as returned by the <code>ListQualificationRequests</code> operation. </p>
-    pub fn set_qualification_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.qualification_request_id = input; self
+    pub fn set_qualification_request_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.qualification_request_id = input;
+        self
     }
     /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +55,21 @@ impl RejectQualificationRequestInputBuilder {
     }
     /// <p>A text message explaining why the request was rejected, to be shown to the Worker who made the request.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`RejectQualificationRequestInput`](crate::operation::reject_qualification_request::RejectQualificationRequestInput).
-    pub fn build(self) -> Result<crate::operation::reject_qualification_request::RejectQualificationRequestInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reject_qualification_request::RejectQualificationRequestInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::reject_qualification_request::RejectQualificationRequestInput {
-                qualification_request_id: self.qualification_request_id
-                ,
-                reason: self.reason
-                ,
-            }
+                qualification_request_id: self.qualification_request_id,
+                reason: self.reason,
+            },
         )
     }
 }
-

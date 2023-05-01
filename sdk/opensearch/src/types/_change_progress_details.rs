@@ -3,7 +3,7 @@
 /// <p>Container for information about a configuration change happening on a domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeProgressDetails  {
+pub struct ChangeProgressDetails {
     /// <p>The ID of the configuration change.</p>
     #[doc(hidden)]
     pub change_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ChangeProgressDetails  {
 }
 impl ChangeProgressDetails {
     /// <p>The ID of the configuration change.</p>
-    pub fn change_id(&self) -> std::option::Option<& str> {
+    pub fn change_id(&self) -> std::option::Option<&str> {
         self.change_id.as_deref()
     }
     /// <p>A message corresponding to the status of the configuration change.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ChangeProgressDetailsBuilder {
     }
     /// <p>The ID of the configuration change.</p>
     pub fn set_change_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_id = input; self
+        self.change_id = input;
+        self
     }
     /// <p>A message corresponding to the status of the configuration change.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ChangeProgressDetailsBuilder {
     }
     /// <p>A message corresponding to the status of the configuration change.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`ChangeProgressDetails`](crate::types::ChangeProgressDetails).
     pub fn build(self) -> crate::types::ChangeProgressDetails {
         crate::types::ChangeProgressDetails {
-            change_id: self.change_id
-            ,
-            message: self.message
-            ,
+            change_id: self.change_id,
+            message: self.message,
         }
     }
 }
-

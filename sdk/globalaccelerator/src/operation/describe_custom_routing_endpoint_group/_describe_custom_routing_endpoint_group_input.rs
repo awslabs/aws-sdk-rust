@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomRoutingEndpointGroupInput  {
+pub struct DescribeCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
     #[doc(hidden)]
     pub endpoint_group_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCustomRoutingEndpointGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-    pub fn endpoint_group_arn(&self) -> std::option::Option<& str> {
+    pub fn endpoint_group_arn(&self) -> std::option::Option<&str> {
         self.endpoint_group_arn.as_deref()
     }
 }
 impl DescribeCustomRoutingEndpointGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingEndpointGroupInput`](crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupInput).
-    pub fn builder() -> crate::operation::describe_custom_routing_endpoint_group::builders::DescribeCustomRoutingEndpointGroupInputBuilder {
+    pub fn builder() -> crate::operation::describe_custom_routing_endpoint_group::builders::DescribeCustomRoutingEndpointGroupInputBuilder{
         crate::operation::describe_custom_routing_endpoint_group::builders::DescribeCustomRoutingEndpointGroupInputBuilder::default()
     }
 }
@@ -33,11 +33,15 @@ impl DescribeCustomRoutingEndpointGroupInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the endpoint group to describe.</p>
-    pub fn set_endpoint_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_group_arn = input; self
+    pub fn set_endpoint_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.endpoint_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeCustomRoutingEndpointGroupInput`](crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupInput).
-    pub fn build(self) -> Result<crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_custom_routing_endpoint_group::DescribeCustomRoutingEndpointGroupInput {
                 endpoint_group_arn: self.endpoint_group_arn
@@ -46,4 +50,3 @@ impl DescribeCustomRoutingEndpointGroupInputBuilder {
         )
     }
 }
-

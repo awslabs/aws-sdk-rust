@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopBotRecommendationOutput  {
+pub struct StopBotRecommendationOutput {
     /// <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -22,34 +22,38 @@ pub struct StopBotRecommendationOutput  {
 }
 impl StopBotRecommendationOutput {
     /// <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The version of the bot containing the recommendation that is being stopped.</p>
-    pub fn bot_version(&self) -> std::option::Option<& str> {
+    pub fn bot_version(&self) -> std::option::Option<&str> {
         self.bot_version.as_deref()
     }
     /// <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
-    pub fn locale_id(&self) -> std::option::Option<& str> {
+    pub fn locale_id(&self) -> std::option::Option<&str> {
         self.locale_id.as_deref()
     }
     /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
-    pub fn bot_recommendation_status(&self) -> std::option::Option<& crate::types::BotRecommendationStatus> {
+    pub fn bot_recommendation_status(
+        &self,
+    ) -> std::option::Option<&crate::types::BotRecommendationStatus> {
         self.bot_recommendation_status.as_ref()
     }
     /// <p>The unique identifier of the bot recommendation that is being stopped.</p>
-    pub fn bot_recommendation_id(&self) -> std::option::Option<& str> {
+    pub fn bot_recommendation_id(&self) -> std::option::Option<&str> {
         self.bot_recommendation_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StopBotRecommendationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopBotRecommendationOutput {
     /// Creates a new builder-style object to manufacture [`StopBotRecommendationOutput`](crate::operation::stop_bot_recommendation::StopBotRecommendationOutput).
-    pub fn builder() -> crate::operation::stop_bot_recommendation::builders::StopBotRecommendationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_bot_recommendation::builders::StopBotRecommendationOutputBuilder
+    {
         crate::operation::stop_bot_recommendation::builders::StopBotRecommendationOutputBuilder::default()
     }
 }
@@ -61,7 +65,8 @@ pub struct StopBotRecommendationOutputBuilder {
     pub(crate) bot_id: std::option::Option<std::string::String>,
     pub(crate) bot_version: std::option::Option<std::string::String>,
     pub(crate) locale_id: std::option::Option<std::string::String>,
-    pub(crate) bot_recommendation_status: std::option::Option<crate::types::BotRecommendationStatus>,
+    pub(crate) bot_recommendation_status:
+        std::option::Option<crate::types::BotRecommendationStatus>,
     pub(crate) bot_recommendation_id: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -73,7 +78,8 @@ impl StopBotRecommendationOutputBuilder {
     }
     /// <p>The unique identifier of the bot containing the bot recommendation that is being stopped.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The version of the bot containing the recommendation that is being stopped.</p>
     pub fn bot_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +88,8 @@ impl StopBotRecommendationOutputBuilder {
     }
     /// <p>The version of the bot containing the recommendation that is being stopped.</p>
     pub fn set_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_version = input; self
+        self.bot_version = input;
+        self
     }
     /// <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn locale_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,16 +98,24 @@ impl StopBotRecommendationOutputBuilder {
     }
     /// <p>The identifier of the language and locale of the bot response to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </p>
     pub fn set_locale_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.locale_id = input; self
+        self.locale_id = input;
+        self
     }
     /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
-    pub fn bot_recommendation_status(mut self, input: crate::types::BotRecommendationStatus) -> Self {
+    pub fn bot_recommendation_status(
+        mut self,
+        input: crate::types::BotRecommendationStatus,
+    ) -> Self {
         self.bot_recommendation_status = Some(input);
         self
     }
     /// <p>The status of the bot recommendation. If the status is Failed, then the reasons for the failure are listed in the failureReasons field.</p>
-    pub fn set_bot_recommendation_status(mut self, input: std::option::Option<crate::types::BotRecommendationStatus>) -> Self {
-        self.bot_recommendation_status = input; self
+    pub fn set_bot_recommendation_status(
+        mut self,
+        input: std::option::Option<crate::types::BotRecommendationStatus>,
+    ) -> Self {
+        self.bot_recommendation_status = input;
+        self
     }
     /// <p>The unique identifier of the bot recommendation that is being stopped.</p>
     pub fn bot_recommendation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,33 +123,31 @@ impl StopBotRecommendationOutputBuilder {
         self
     }
     /// <p>The unique identifier of the bot recommendation that is being stopped.</p>
-    pub fn set_bot_recommendation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_recommendation_id = input; self
+    pub fn set_bot_recommendation_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.bot_recommendation_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopBotRecommendationOutput`](crate::operation::stop_bot_recommendation::StopBotRecommendationOutput).
     pub fn build(self) -> crate::operation::stop_bot_recommendation::StopBotRecommendationOutput {
         crate::operation::stop_bot_recommendation::StopBotRecommendationOutput {
-            bot_id: self.bot_id
-            ,
-            bot_version: self.bot_version
-            ,
-            locale_id: self.locale_id
-            ,
-            bot_recommendation_status: self.bot_recommendation_status
-            ,
-            bot_recommendation_id: self.bot_recommendation_id
-            ,
+            bot_id: self.bot_id,
+            bot_version: self.bot_version,
+            locale_id: self.locale_id,
+            bot_recommendation_status: self.bot_recommendation_status,
+            bot_recommendation_id: self.bot_recommendation_id,
             _request_id: self._request_id,
         }
     }
 }
-

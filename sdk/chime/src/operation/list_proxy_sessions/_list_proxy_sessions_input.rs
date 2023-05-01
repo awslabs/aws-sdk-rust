@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProxySessionsInput  {
+pub struct ListProxySessionsInput {
     /// <p>The Amazon Chime voice connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListProxySessionsInput  {
 }
 impl ListProxySessionsInput {
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The proxy session status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ProxySessionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ProxySessionStatus> {
         self.status.as_ref()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -36,7 +36,8 @@ impl ListProxySessionsInput {
 }
 impl ListProxySessionsInput {
     /// Creates a new builder-style object to manufacture [`ListProxySessionsInput`](crate::operation::list_proxy_sessions::ListProxySessionsInput).
-    pub fn builder() -> crate::operation::list_proxy_sessions::builders::ListProxySessionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_proxy_sessions::builders::ListProxySessionsInputBuilder {
         crate::operation::list_proxy_sessions::builders::ListProxySessionsInputBuilder::default()
     }
 }
@@ -57,8 +58,12 @@ impl ListProxySessionsInputBuilder {
         self
     }
     /// <p>The Amazon Chime voice connector ID.</p>
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     /// <p>The proxy session status.</p>
     pub fn status(mut self, input: crate::types::ProxySessionStatus) -> Self {
@@ -66,8 +71,12 @@ impl ListProxySessionsInputBuilder {
         self
     }
     /// <p>The proxy session status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ProxySessionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ProxySessionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +85,8 @@ impl ListProxySessionsInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +95,23 @@ impl ListProxySessionsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListProxySessionsInput`](crate::operation::list_proxy_sessions::ListProxySessionsInput).
-    pub fn build(self) -> Result<crate::operation::list_proxy_sessions::ListProxySessionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_proxy_sessions::ListProxySessionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_proxy_sessions::ListProxySessionsInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-                status: self.status
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+                status: self.status,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

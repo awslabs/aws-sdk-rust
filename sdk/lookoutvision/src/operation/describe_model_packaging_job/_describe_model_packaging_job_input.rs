@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeModelPackagingJobInput  {
+pub struct DescribeModelPackagingJobInput {
     /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeModelPackagingJobInput  {
 }
 impl DescribeModelPackagingJobInput {
     /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>The job name for the model packaging job. </p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
 }
 impl DescribeModelPackagingJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeModelPackagingJobInput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput).
-    pub fn builder() -> crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder {
+    pub fn builder() -> crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder{
         crate::operation::describe_model_packaging_job::builders::DescribeModelPackagingJobInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeModelPackagingJobInputBuilder {
     }
     /// <p>The name of the project that contains the model packaging job that you want to describe. </p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// <p>The job name for the model packaging job. </p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,21 @@ impl DescribeModelPackagingJobInputBuilder {
     }
     /// <p>The job name for the model packaging job. </p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeModelPackagingJobInput`](crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_model_packaging_job::DescribeModelPackagingJobInput {
-                project_name: self.project_name
-                ,
-                job_name: self.job_name
-                ,
-            }
+                project_name: self.project_name,
+                job_name: self.job_name,
+            },
         )
     }
 }
-

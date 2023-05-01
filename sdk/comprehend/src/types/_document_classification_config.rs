@@ -3,7 +3,7 @@
 /// <p>Configuration required for a custom classification model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentClassificationConfig  {
+pub struct DocumentClassificationConfig {
     /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
     #[doc(hidden)]
     pub mode: std::option::Option<crate::types::DocumentClassifierMode>,
@@ -13,11 +13,11 @@ pub struct DocumentClassificationConfig  {
 }
 impl DocumentClassificationConfig {
     /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
-    pub fn mode(&self) -> std::option::Option<& crate::types::DocumentClassifierMode> {
+    pub fn mode(&self) -> std::option::Option<&crate::types::DocumentClassifierMode> {
         self.mode.as_ref()
     }
     /// <p>One or more labels to associate with the custom classifier.</p>
-    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
         self.labels.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl DocumentClassificationConfigBuilder {
         self
     }
     /// <p>Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or <code>MULTI_LABEL</code>.</p>
-    pub fn set_mode(mut self, input: std::option::Option<crate::types::DocumentClassifierMode>) -> Self {
-        self.mode = input; self
+    pub fn set_mode(
+        mut self,
+        input: std::option::Option<crate::types::DocumentClassifierMode>,
+    ) -> Self {
+        self.mode = input;
+        self
     }
     /// Appends an item to `labels`.
     ///
@@ -52,22 +56,23 @@ impl DocumentClassificationConfigBuilder {
     /// <p>One or more labels to associate with the custom classifier.</p>
     pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-                        v.push(input.into());
-                        self.labels = Some(v);
-                        self
+        v.push(input.into());
+        self.labels = Some(v);
+        self
     }
     /// <p>One or more labels to associate with the custom classifier.</p>
-    pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.labels = input; self
+    pub fn set_labels(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.labels = input;
+        self
     }
     /// Consumes the builder and constructs a [`DocumentClassificationConfig`](crate::types::DocumentClassificationConfig).
     pub fn build(self) -> crate::types::DocumentClassificationConfig {
         crate::types::DocumentClassificationConfig {
-            mode: self.mode
-            ,
-            labels: self.labels
-            ,
+            mode: self.mode,
+            labels: self.labels,
         }
     }
 }
-

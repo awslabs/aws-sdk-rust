@@ -2,18 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScheduleGroupOutput  {
+pub struct DeleteScheduleGroupOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteScheduleGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteScheduleGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduleGroupOutput`](crate::operation::delete_schedule_group::DeleteScheduleGroupOutput).
-    pub fn builder() -> crate::operation::delete_schedule_group::builders::DeleteScheduleGroupOutputBuilder {
-        crate::operation::delete_schedule_group::builders::DeleteScheduleGroupOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_schedule_group::builders::DeleteScheduleGroupOutputBuilder {
+        crate::operation::delete_schedule_group::builders::DeleteScheduleGroupOutputBuilder::default(
+        )
     }
 }
 
@@ -25,14 +27,14 @@ pub struct DeleteScheduleGroupOutputBuilder {
 }
 impl DeleteScheduleGroupOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteScheduleGroupOutput`](crate::operation::delete_schedule_group::DeleteScheduleGroupOutput).
     pub fn build(self) -> crate::operation::delete_schedule_group::DeleteScheduleGroupOutput {
         crate::operation::delete_schedule_group::DeleteScheduleGroupOutput {
@@ -40,4 +42,3 @@ impl DeleteScheduleGroupOutputBuilder {
         }
     }
 }
-

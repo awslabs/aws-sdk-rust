@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMediaLiveConnectorPipelineOutput  {
+pub struct CreateMediaLiveConnectorPipelineOutput {
     /// <p>The new media live connector pipeline.</p>
     #[doc(hidden)]
-    pub media_live_connector_pipeline: std::option::Option<crate::types::MediaLiveConnectorPipeline>,
+    pub media_live_connector_pipeline:
+        std::option::Option<crate::types::MediaLiveConnectorPipeline>,
     _request_id: Option<String>,
 }
 impl CreateMediaLiveConnectorPipelineOutput {
     /// <p>The new media live connector pipeline.</p>
-    pub fn media_live_connector_pipeline(&self) -> std::option::Option<& crate::types::MediaLiveConnectorPipeline> {
+    pub fn media_live_connector_pipeline(
+        &self,
+    ) -> std::option::Option<&crate::types::MediaLiveConnectorPipeline> {
         self.media_live_connector_pipeline.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateMediaLiveConnectorPipelineOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateMediaLiveConnectorPipelineOutput {
     /// Creates a new builder-style object to manufacture [`CreateMediaLiveConnectorPipelineOutput`](crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineOutput).
-    pub fn builder() -> crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineOutputBuilder {
+    pub fn builder() -> crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineOutputBuilder{
         crate::operation::create_media_live_connector_pipeline::builders::CreateMediaLiveConnectorPipelineOutputBuilder::default()
     }
 }
@@ -30,30 +33,38 @@ impl CreateMediaLiveConnectorPipelineOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateMediaLiveConnectorPipelineOutputBuilder {
-    pub(crate) media_live_connector_pipeline: std::option::Option<crate::types::MediaLiveConnectorPipeline>,
+    pub(crate) media_live_connector_pipeline:
+        std::option::Option<crate::types::MediaLiveConnectorPipeline>,
     _request_id: Option<String>,
 }
 impl CreateMediaLiveConnectorPipelineOutputBuilder {
     /// <p>The new media live connector pipeline.</p>
-    pub fn media_live_connector_pipeline(mut self, input: crate::types::MediaLiveConnectorPipeline) -> Self {
+    pub fn media_live_connector_pipeline(
+        mut self,
+        input: crate::types::MediaLiveConnectorPipeline,
+    ) -> Self {
         self.media_live_connector_pipeline = Some(input);
         self
     }
     /// <p>The new media live connector pipeline.</p>
-    pub fn set_media_live_connector_pipeline(mut self, input: std::option::Option<crate::types::MediaLiveConnectorPipeline>) -> Self {
-        self.media_live_connector_pipeline = input; self
+    pub fn set_media_live_connector_pipeline(
+        mut self,
+        input: std::option::Option<crate::types::MediaLiveConnectorPipeline>,
+    ) -> Self {
+        self.media_live_connector_pipeline = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateMediaLiveConnectorPipelineOutput`](crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineOutput).
-    pub fn build(self) -> crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineOutput {
+    pub fn build(self) -> crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineOutput{
         crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineOutput {
             media_live_connector_pipeline: self.media_live_connector_pipeline
             ,
@@ -61,4 +72,3 @@ impl CreateMediaLiveConnectorPipelineOutputBuilder {
         }
     }
 }
-

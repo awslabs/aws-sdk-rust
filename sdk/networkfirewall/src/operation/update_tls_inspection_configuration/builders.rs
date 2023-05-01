@@ -4,82 +4,107 @@ pub use crate::operation::update_tls_inspection_configuration::_update_tls_inspe
 pub use crate::operation::update_tls_inspection_configuration::_update_tls_inspection_configuration_input::UpdateTlsInspectionConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateTLSInspectionConfiguration`.
-/// 
-/// <p>Updates the TLS inspection configuration settings for the specified TLS inspection configuration. You use a TLS inspection configuration by reference in one or more firewall policies. When you modify a TLS inspection configuration, you modify all firewall policies that use the TLS inspection configuration. </p> 
+///
+/// <p>Updates the TLS inspection configuration settings for the specified TLS inspection configuration. You use a TLS inspection configuration by reference in one or more firewall policies. When you modify a TLS inspection configuration, you modify all firewall policies that use the TLS inspection configuration. </p>
 /// <p>To update a TLS inspection configuration, first call <code>DescribeTLSInspectionConfiguration</code> to retrieve the current <code>TLSInspectionConfiguration</code> object, update the object as needed, and then provide the updated object to this call. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTLSInspectionConfigurationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_tls_inspection_configuration::builders::UpdateTlsInspectionConfigurationInputBuilder,
 }
-impl UpdateTLSInspectionConfigurationFluentBuilder  {
+impl UpdateTLSInspectionConfigurationFluentBuilder {
     /// Creates a new `UpdateTLSInspectionConfiguration`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::update_tls_inspection_configuration::UpdateTlsInspectionConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
-    pub fn tls_inspection_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tls_inspection_configuration_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tls_inspection_configuration_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
-    pub fn set_tls_inspection_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tls_inspection_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_tls_inspection_configuration_arn(input);
         self
     }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
-    pub fn tls_inspection_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tls_inspection_configuration_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tls_inspection_configuration_name(input.into());
         self
     }
     /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
-    pub fn set_tls_inspection_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tls_inspection_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_tls_inspection_configuration_name(input);
         self
     }
-    /// <p>The object that defines a TLS inspection configuration. This, along with <code>TLSInspectionConfigurationResponse</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p> 
-    /// <p>Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.</p> 
+    /// <p>The object that defines a TLS inspection configuration. This, along with <code>TLSInspectionConfigurationResponse</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
+    /// <p>Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.</p>
     /// <p>To use a TLS inspection configuration, you add it to a Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect inbound traffic. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn tls_inspection_configuration(mut self, input: crate::types::TlsInspectionConfiguration) -> Self {
+    pub fn tls_inspection_configuration(
+        mut self,
+        input: crate::types::TlsInspectionConfiguration,
+    ) -> Self {
         self.inner = self.inner.tls_inspection_configuration(input);
         self
     }
-    /// <p>The object that defines a TLS inspection configuration. This, along with <code>TLSInspectionConfigurationResponse</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p> 
-    /// <p>Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.</p> 
+    /// <p>The object that defines a TLS inspection configuration. This, along with <code>TLSInspectionConfigurationResponse</code>, define the TLS inspection configuration. You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>. </p>
+    /// <p>Network Firewall uses a TLS inspection configuration to decrypt traffic. Network Firewall re-encrypts the traffic before sending it to its destination.</p>
     /// <p>To use a TLS inspection configuration, you add it to a Network Firewall firewall policy, then you apply the firewall policy to a firewall. Network Firewall acts as a proxy service to decrypt and inspect inbound traffic. You can reference a TLS inspection configuration from more than one firewall policy, and you can use a firewall policy in more than one firewall. For more information about using TLS inspection configurations, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network Firewall Developer Guide</i>.</p>
-    pub fn set_tls_inspection_configuration(mut self, input: std::option::Option<crate::types::TlsInspectionConfiguration>) -> Self {
+    pub fn set_tls_inspection_configuration(
+        mut self,
+        input: std::option::Option<crate::types::TlsInspectionConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_tls_inspection_configuration(input);
         self
     }
@@ -94,26 +119,31 @@ impl UpdateTLSInspectionConfigurationFluentBuilder  {
         self
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your TLS inspection configuration.</p>
-    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+    pub fn encryption_configuration(
+        mut self,
+        input: crate::types::EncryptionConfiguration,
+    ) -> Self {
         self.inner = self.inner.encryption_configuration(input);
         self
     }
     /// <p>A complex type that contains the Amazon Web Services KMS encryption configuration settings for your TLS inspection configuration.</p>
-    pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
+    pub fn set_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_encryption_configuration(input);
         self
     }
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request. </p> 
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request. </p>
     /// <p>To make changes to the TLS inspection configuration, you provide the token in your request. Network Firewall uses the token to ensure that the TLS inspection configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the TLS inspection configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn update_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.update_token(input.into());
         self
     }
-    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request. </p> 
+    /// <p>A token used for optimistic locking. Network Firewall returns a token to your requests that access the TLS inspection configuration. The token marks the state of the TLS inspection configuration resource at the time of the request. </p>
     /// <p>To make changes to the TLS inspection configuration, you provide the token in your request. Network Firewall uses the token to ensure that the TLS inspection configuration hasn't changed since you last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>. If this happens, retrieve the TLS inspection configuration again to get a current copy of it with a current token. Reapply your changes as needed, then try the operation again using the new token. </p>
     pub fn set_update_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_update_token(input);
         self
     }
 }
-

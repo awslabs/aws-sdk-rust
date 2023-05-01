@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TranslateTextInput  {
+pub struct TranslateTextInput {
     /// <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
     /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
     #[doc(hidden)]
     pub terminology_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p> 
-    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note> 
-    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p> 
+    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
     /// </note>
     #[doc(hidden)]
     pub source_language_code: std::option::Option<std::string::String>,
@@ -24,26 +24,26 @@ pub struct TranslateTextInput  {
 }
 impl TranslateTextInput {
     /// <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
-    pub fn text(&self) -> std::option::Option<& str> {
+    pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
-    pub fn terminology_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn terminology_names(&self) -> std::option::Option<&[std::string::String]> {
         self.terminology_names.as_deref()
     }
-    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p> 
-    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note> 
-    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p> 
+    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
     /// </note>
-    pub fn source_language_code(&self) -> std::option::Option<& str> {
+    pub fn source_language_code(&self) -> std::option::Option<&str> {
         self.source_language_code.as_deref()
     }
     /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    pub fn target_language_code(&self) -> std::option::Option<& str> {
+    pub fn target_language_code(&self) -> std::option::Option<&str> {
         self.target_language_code.as_deref()
     }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-    pub fn settings(&self) -> std::option::Option<& crate::types::TranslationSettings> {
+    pub fn settings(&self) -> std::option::Option<&crate::types::TranslationSettings> {
         self.settings.as_ref()
     }
 }
@@ -72,7 +72,8 @@ impl TranslateTextInputBuilder {
     }
     /// <p>The text to translate. The text string can be a maximum of 10,000 bytes long. Depending on your character set, this may be fewer than 10,000 characters.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input; self
+        self.text = input;
+        self
     }
     /// Appends an item to `terminology_names`.
     ///
@@ -81,28 +82,36 @@ impl TranslateTextInputBuilder {
     /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
     pub fn terminology_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.terminology_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.terminology_names = Some(v);
-                        self
+        v.push(input.into());
+        self.terminology_names = Some(v);
+        self
     }
     /// <p>The name of the terminology list file to be used in the TranslateText request. You can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology lists can contain a maximum of 256 terms.</p>
-    pub fn set_terminology_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.terminology_names = input; self
+    pub fn set_terminology_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.terminology_names = input;
+        self
     }
-    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p> 
-    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note> 
-    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p> 
+    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
     /// </note>
     pub fn source_language_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_language_code = Some(input.into());
         self
     }
-    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p> 
-    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note> 
-    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p> 
+    /// <p>The language code for the language of the source text. The language must be a language supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>
+    /// <p>To have Amazon Translate determine the source language of your text, you can specify <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>, Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon Comprehend</a> to determine the source language.</p> <note>
+    /// <p>If you specify <code>auto</code>, you must send the <code>TranslateText</code> request in a region that supports Amazon Comprehend. Otherwise, the request returns an error indicating that autodetect is not supported. </p>
     /// </note>
-    pub fn set_source_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_language_code = input; self
+    pub fn set_source_language_code(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_language_code = input;
+        self
     }
     /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
     pub fn target_language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +119,12 @@ impl TranslateTextInputBuilder {
         self
     }
     /// <p>The language code requested for the language of the target text. The language must be a language supported by Amazon Translate.</p>
-    pub fn set_target_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_language_code = input; self
+    pub fn set_target_language_code(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_language_code = input;
+        self
     }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
     pub fn settings(mut self, input: crate::types::TranslationSettings) -> Self {
@@ -119,25 +132,26 @@ impl TranslateTextInputBuilder {
         self
     }
     /// <p>Settings to configure your translation output, including the option to set the formality level of the output text and the option to mask profane words and phrases.</p>
-    pub fn set_settings(mut self, input: std::option::Option<crate::types::TranslationSettings>) -> Self {
-        self.settings = input; self
+    pub fn set_settings(
+        mut self,
+        input: std::option::Option<crate::types::TranslationSettings>,
+    ) -> Self {
+        self.settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`TranslateTextInput`](crate::operation::translate_text::TranslateTextInput).
-    pub fn build(self) -> Result<crate::operation::translate_text::TranslateTextInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::translate_text::TranslateTextInput {
-                text: self.text
-                ,
-                terminology_names: self.terminology_names
-                ,
-                source_language_code: self.source_language_code
-                ,
-                target_language_code: self.target_language_code
-                ,
-                settings: self.settings
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::translate_text::TranslateTextInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::translate_text::TranslateTextInput {
+            text: self.text,
+            terminology_names: self.terminology_names,
+            source_language_code: self.source_language_code,
+            target_language_code: self.target_language_code,
+            settings: self.settings,
+        })
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecoveryPointInput  {
+pub struct GetRecoveryPointInput {
     /// <p>The unique identifier of the recovery point to return information for.</p>
     #[doc(hidden)]
     pub recovery_point_id: std::option::Option<std::string::String>,
 }
 impl GetRecoveryPointInput {
     /// <p>The unique identifier of the recovery point to return information for.</p>
-    pub fn recovery_point_id(&self) -> std::option::Option<& str> {
+    pub fn recovery_point_id(&self) -> std::option::Option<&str> {
         self.recovery_point_id.as_deref()
     }
 }
 impl GetRecoveryPointInput {
     /// Creates a new builder-style object to manufacture [`GetRecoveryPointInput`](crate::operation::get_recovery_point::GetRecoveryPointInput).
-    pub fn builder() -> crate::operation::get_recovery_point::builders::GetRecoveryPointInputBuilder {
+    pub fn builder() -> crate::operation::get_recovery_point::builders::GetRecoveryPointInputBuilder
+    {
         crate::operation::get_recovery_point::builders::GetRecoveryPointInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl GetRecoveryPointInputBuilder {
         self
     }
     /// <p>The unique identifier of the recovery point to return information for.</p>
-    pub fn set_recovery_point_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recovery_point_id = input; self
+    pub fn set_recovery_point_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.recovery_point_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRecoveryPointInput`](crate::operation::get_recovery_point::GetRecoveryPointInput).
-    pub fn build(self) -> Result<crate::operation::get_recovery_point::GetRecoveryPointInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_recovery_point::GetRecoveryPointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_recovery_point::GetRecoveryPointInput {
-                recovery_point_id: self.recovery_point_id
-                ,
-            }
+                recovery_point_id: self.recovery_point_id,
+            },
         )
     }
 }
-

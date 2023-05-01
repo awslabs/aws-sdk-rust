@@ -3,7 +3,7 @@
 /// <p>The result of an <code>IndexDocuments</code> request. Contains the status of the indexing operation, including the fields being indexed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IndexDocumentsOutput  {
+pub struct IndexDocumentsOutput {
     /// <p>The names of the fields that are currently being indexed.</p>
     #[doc(hidden)]
     pub field_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11,15 +11,15 @@ pub struct IndexDocumentsOutput  {
 }
 impl IndexDocumentsOutput {
     /// <p>The names of the fields that are currently being indexed.</p>
-    pub fn field_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn field_names(&self) -> std::option::Option<&[std::string::String]> {
         self.field_names.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for IndexDocumentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl IndexDocumentsOutput {
     /// Creates a new builder-style object to manufacture [`IndexDocumentsOutput`](crate::operation::index_documents::IndexDocumentsOutput).
     pub fn builder() -> crate::operation::index_documents::builders::IndexDocumentsOutputBuilder {
@@ -42,30 +42,32 @@ impl IndexDocumentsOutputBuilder {
     /// <p>The names of the fields that are currently being indexed.</p>
     pub fn field_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.field_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.field_names = Some(v);
-                        self
+        v.push(input.into());
+        self.field_names = Some(v);
+        self
     }
     /// <p>The names of the fields that are currently being indexed.</p>
-    pub fn set_field_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.field_names = input; self
+    pub fn set_field_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.field_names = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`IndexDocumentsOutput`](crate::operation::index_documents::IndexDocumentsOutput).
     pub fn build(self) -> crate::operation::index_documents::IndexDocumentsOutput {
         crate::operation::index_documents::IndexDocumentsOutput {
-            field_names: self.field_names
-            ,
+            field_names: self.field_names,
             _request_id: self._request_id,
         }
     }
 }
-

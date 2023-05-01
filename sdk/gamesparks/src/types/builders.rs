@@ -34,4 +34,3 @@ pub use crate::types::_extension_details::ExtensionDetailsBuilder;
 pub use crate::types::_import_game_configuration_source::ImportGameConfigurationSourceBuilder;
 
 pub use crate::types::_connection::ConnectionBuilder;
-

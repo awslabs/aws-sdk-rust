@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestInvokeAuthorizerOutput  {
+pub struct TestInvokeAuthorizerOutput {
     /// <p>True if the token is authenticated, otherwise false.</p>
     #[doc(hidden)]
     pub is_authenticated: std::option::Option<bool>,
@@ -26,11 +26,11 @@ impl TestInvokeAuthorizerOutput {
         self.is_authenticated
     }
     /// <p>The principal ID.</p>
-    pub fn principal_id(&self) -> std::option::Option<& str> {
+    pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
     /// <p>IAM policy documents.</p>
-    pub fn policy_documents(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn policy_documents(&self) -> std::option::Option<&[std::string::String]> {
         self.policy_documents.as_deref()
     }
     /// <p>The number of seconds after which the temporary credentials are refreshed.</p>
@@ -43,13 +43,14 @@ impl TestInvokeAuthorizerOutput {
     }
 }
 impl aws_http::request_id::RequestId for TestInvokeAuthorizerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl TestInvokeAuthorizerOutput {
     /// Creates a new builder-style object to manufacture [`TestInvokeAuthorizerOutput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput).
-    pub fn builder() -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder {
         crate::operation::test_invoke_authorizer::builders::TestInvokeAuthorizerOutputBuilder::default()
     }
 }
@@ -73,7 +74,8 @@ impl TestInvokeAuthorizerOutputBuilder {
     }
     /// <p>True if the token is authenticated, otherwise false.</p>
     pub fn set_is_authenticated(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_authenticated = input; self
+        self.is_authenticated = input;
+        self
     }
     /// <p>The principal ID.</p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +84,8 @@ impl TestInvokeAuthorizerOutputBuilder {
     }
     /// <p>The principal ID.</p>
     pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_id = input; self
+        self.principal_id = input;
+        self
     }
     /// Appends an item to `policy_documents`.
     ///
@@ -91,13 +94,17 @@ impl TestInvokeAuthorizerOutputBuilder {
     /// <p>IAM policy documents.</p>
     pub fn policy_documents(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.policy_documents.unwrap_or_default();
-                        v.push(input.into());
-                        self.policy_documents = Some(v);
-                        self
+        v.push(input.into());
+        self.policy_documents = Some(v);
+        self
     }
     /// <p>IAM policy documents.</p>
-    pub fn set_policy_documents(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.policy_documents = input; self
+    pub fn set_policy_documents(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.policy_documents = input;
+        self
     }
     /// <p>The number of seconds after which the temporary credentials are refreshed.</p>
     pub fn refresh_after_in_seconds(mut self, input: i32) -> Self {
@@ -106,7 +113,8 @@ impl TestInvokeAuthorizerOutputBuilder {
     }
     /// <p>The number of seconds after which the temporary credentials are refreshed.</p>
     pub fn set_refresh_after_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.refresh_after_in_seconds = input; self
+        self.refresh_after_in_seconds = input;
+        self
     }
     /// <p>The number of seconds after which the connection is terminated.</p>
     pub fn disconnect_after_in_seconds(mut self, input: i32) -> Self {
@@ -115,32 +123,27 @@ impl TestInvokeAuthorizerOutputBuilder {
     }
     /// <p>The number of seconds after which the connection is terminated.</p>
     pub fn set_disconnect_after_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.disconnect_after_in_seconds = input; self
+        self.disconnect_after_in_seconds = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`TestInvokeAuthorizerOutput`](crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput).
     pub fn build(self) -> crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput {
         crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput {
-            is_authenticated: self.is_authenticated
-            ,
-            principal_id: self.principal_id
-            ,
-            policy_documents: self.policy_documents
-            ,
-            refresh_after_in_seconds: self.refresh_after_in_seconds
-            ,
-            disconnect_after_in_seconds: self.disconnect_after_in_seconds
-            ,
+            is_authenticated: self.is_authenticated,
+            principal_id: self.principal_id,
+            policy_documents: self.policy_documents,
+            refresh_after_in_seconds: self.refresh_after_in_seconds,
+            disconnect_after_in_seconds: self.disconnect_after_in_seconds,
             _request_id: self._request_id,
         }
     }
 }
-

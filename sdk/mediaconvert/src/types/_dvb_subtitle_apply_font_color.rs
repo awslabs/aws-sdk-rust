@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let dvbsubtitleapplyfontcolor = unimplemented!();
 /// match dvbsubtitleapplyfontcolor {
@@ -30,55 +30,64 @@
 /// Specifically, when `dvbsubtitleapplyfontcolor` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DvbSubtitleApplyFontColor::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Ignore this setting unless Style Passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DvbSubtitleApplyFontColor {
     #[allow(missing_docs)] // documentation missing in model
     AllText,
     #[allow(missing_docs)] // documentation missing in model
     WhiteTextOnly,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DvbSubtitleApplyFontColor {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ALL_TEXT" => DvbSubtitleApplyFontColor::AllText,
-"WHITE_TEXT_ONLY" => DvbSubtitleApplyFontColor::WhiteTextOnly,
-other => DvbSubtitleApplyFontColor::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for DvbSubtitleApplyFontColor {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DvbSubtitleApplyFontColor::from(s))
-                }
-            }
-impl DvbSubtitleApplyFontColor {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DvbSubtitleApplyFontColor::AllText => "ALL_TEXT",
-    DvbSubtitleApplyFontColor::WhiteTextOnly => "WHITE_TEXT_ONLY",
-    DvbSubtitleApplyFontColor::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ALL_TEXT" => DvbSubtitleApplyFontColor::AllText,
+            "WHITE_TEXT_ONLY" => DvbSubtitleApplyFontColor::WhiteTextOnly,
+            other => DvbSubtitleApplyFontColor::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ALL_TEXT", "WHITE_TEXT_ONLY"]
-                }
-            }
-impl AsRef<str> for DvbSubtitleApplyFontColor {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DvbSubtitleApplyFontColor {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DvbSubtitleApplyFontColor::from(s))
+    }
+}
+impl DvbSubtitleApplyFontColor {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DvbSubtitleApplyFontColor::AllText => "ALL_TEXT",
+            DvbSubtitleApplyFontColor::WhiteTextOnly => "WHITE_TEXT_ONLY",
+            DvbSubtitleApplyFontColor::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ALL_TEXT", "WHITE_TEXT_ONLY"]
+    }
+}
+impl AsRef<str> for DvbSubtitleApplyFontColor {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

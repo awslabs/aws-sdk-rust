@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVolumeAttributeInput  {
+pub struct DescribeVolumeAttributeInput {
     /// <p>The attribute of the volume. This parameter is required.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::VolumeAttributeName>,
@@ -15,11 +15,11 @@ pub struct DescribeVolumeAttributeInput  {
 }
 impl DescribeVolumeAttributeInput {
     /// <p>The attribute of the volume. This parameter is required.</p>
-    pub fn attribute(&self) -> std::option::Option<& crate::types::VolumeAttributeName> {
+    pub fn attribute(&self) -> std::option::Option<&crate::types::VolumeAttributeName> {
         self.attribute.as_ref()
     }
     /// <p>The ID of the volume.</p>
-    pub fn volume_id(&self) -> std::option::Option<& str> {
+    pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,7 +29,9 @@ impl DescribeVolumeAttributeInput {
 }
 impl DescribeVolumeAttributeInput {
     /// Creates a new builder-style object to manufacture [`DescribeVolumeAttributeInput`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput).
-    pub fn builder() -> crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeInputBuilder
+    {
         crate::operation::describe_volume_attribute::builders::DescribeVolumeAttributeInputBuilder::default()
     }
 }
@@ -49,8 +51,12 @@ impl DescribeVolumeAttributeInputBuilder {
         self
     }
     /// <p>The attribute of the volume. This parameter is required.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<crate::types::VolumeAttributeName>) -> Self {
-        self.attribute = input; self
+    pub fn set_attribute(
+        mut self,
+        input: std::option::Option<crate::types::VolumeAttributeName>,
+    ) -> Self {
+        self.attribute = input;
+        self
     }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +65,8 @@ impl DescribeVolumeAttributeInputBuilder {
     }
     /// <p>The ID of the volume.</p>
     pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_id = input; self
+        self.volume_id = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -68,20 +75,22 @@ impl DescribeVolumeAttributeInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeVolumeAttributeInput`](crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput).
-    pub fn build(self) -> Result<crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_volume_attribute::DescribeVolumeAttributeInput {
-                attribute: self.attribute
-                ,
-                volume_id: self.volume_id
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                attribute: self.attribute,
+                volume_id: self.volume_id,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

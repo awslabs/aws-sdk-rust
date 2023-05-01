@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNamespaceInput  {
+pub struct DescribeNamespaceInput {
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
     #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
 }
 impl DescribeNamespaceInput {
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
-    pub fn namespace_name(&self) -> std::option::Option<& str> {
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
         self.namespace_name.as_deref()
     }
 }
 impl DescribeNamespaceInput {
     /// Creates a new builder-style object to manufacture [`DescribeNamespaceInput`](crate::operation::describe_namespace::DescribeNamespaceInput).
-    pub fn builder() -> crate::operation::describe_namespace::builders::DescribeNamespaceInputBuilder {
+    pub fn builder() -> crate::operation::describe_namespace::builders::DescribeNamespaceInputBuilder
+    {
         crate::operation::describe_namespace::builders::DescribeNamespaceInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeNamespaceInputBuilder {
     }
     /// <p>The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.</p>
     pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_name = input; self
+        self.namespace_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeNamespaceInput`](crate::operation::describe_namespace::DescribeNamespaceInput).
-    pub fn build(self) -> Result<crate::operation::describe_namespace::DescribeNamespaceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_namespace::DescribeNamespaceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_namespace::DescribeNamespaceInput {
-                namespace_name: self.namespace_name
-                ,
-            }
+                namespace_name: self.namespace_name,
+            },
         )
     }
 }
-

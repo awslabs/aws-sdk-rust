@@ -3,7 +3,7 @@
 /// <p> The input argument to the <code>TerminationProtection</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetTerminationProtectionInput  {
+pub struct SetTerminationProtectionInput {
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
     #[doc(hidden)]
     pub job_flow_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,7 +13,7 @@ pub struct SetTerminationProtectionInput  {
 }
 impl SetTerminationProtectionInput {
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
-    pub fn job_flow_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn job_flow_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.job_flow_ids.as_deref()
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
@@ -23,7 +23,9 @@ impl SetTerminationProtectionInput {
 }
 impl SetTerminationProtectionInput {
     /// Creates a new builder-style object to manufacture [`SetTerminationProtectionInput`](crate::operation::set_termination_protection::SetTerminationProtectionInput).
-    pub fn builder() -> crate::operation::set_termination_protection::builders::SetTerminationProtectionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_termination_protection::builders::SetTerminationProtectionInputBuilder
+    {
         crate::operation::set_termination_protection::builders::SetTerminationProtectionInputBuilder::default()
     }
 }
@@ -43,13 +45,17 @@ impl SetTerminationProtectionInputBuilder {
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
     pub fn job_flow_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.job_flow_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.job_flow_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.job_flow_ids = Some(v);
+        self
     }
     /// <p> A list of strings that uniquely identify the clusters to protect. This identifier is returned by <code>RunJobFlow</code> and can also be obtained from <code>DescribeJobFlows</code> . </p>
-    pub fn set_job_flow_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.job_flow_ids = input; self
+    pub fn set_job_flow_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.job_flow_ids = input;
+        self
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     pub fn termination_protected(mut self, input: bool) -> Self {
@@ -58,18 +64,21 @@ impl SetTerminationProtectionInputBuilder {
     }
     /// <p>A Boolean that indicates whether to protect the cluster and prevent the Amazon EC2 instances in the cluster from shutting down due to API calls, user intervention, or job-flow error.</p>
     pub fn set_termination_protected(mut self, input: std::option::Option<bool>) -> Self {
-        self.termination_protected = input; self
+        self.termination_protected = input;
+        self
     }
     /// Consumes the builder and constructs a [`SetTerminationProtectionInput`](crate::operation::set_termination_protection::SetTerminationProtectionInput).
-    pub fn build(self) -> Result<crate::operation::set_termination_protection::SetTerminationProtectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::set_termination_protection::SetTerminationProtectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::set_termination_protection::SetTerminationProtectionInput {
-                job_flow_ids: self.job_flow_ids
-                ,
-                termination_protected: self.termination_protected
-                ,
-            }
+                job_flow_ids: self.job_flow_ids,
+                termination_protected: self.termination_protected,
+            },
         )
     }
 }
-

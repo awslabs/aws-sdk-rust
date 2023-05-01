@@ -52,4 +52,3 @@ pub mod builders;
 
 /// Error types that Amazon Sagemaker Edge Manager can respond with.
 pub mod error;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPropertyValueHistoryOutput  {
+pub struct GetPropertyValueHistoryOutput {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     #[doc(hidden)]
     pub property_values: std::option::Option<std::vec::Vec<crate::types::PropertyValueHistory>>,
@@ -13,22 +13,24 @@ pub struct GetPropertyValueHistoryOutput  {
 }
 impl GetPropertyValueHistoryOutput {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn property_values(&self) -> std::option::Option<& [crate::types::PropertyValueHistory]> {
+    pub fn property_values(&self) -> std::option::Option<&[crate::types::PropertyValueHistory]> {
         self.property_values.as_deref()
     }
     /// <p>The string that specifies the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetPropertyValueHistoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetPropertyValueHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetPropertyValueHistoryOutput`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput).
-    pub fn builder() -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_property_value_history::builders::GetPropertyValueHistoryOutputBuilder
+    {
         crate::operation::get_property_value_history::builders::GetPropertyValueHistoryOutputBuilder::default()
     }
 }
@@ -37,7 +39,8 @@ impl GetPropertyValueHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetPropertyValueHistoryOutputBuilder {
-    pub(crate) property_values: std::option::Option<std::vec::Vec<crate::types::PropertyValueHistory>>,
+    pub(crate) property_values:
+        std::option::Option<std::vec::Vec<crate::types::PropertyValueHistory>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +52,17 @@ impl GetPropertyValueHistoryOutputBuilder {
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
     pub fn property_values(mut self, input: crate::types::PropertyValueHistory) -> Self {
         let mut v = self.property_values.unwrap_or_default();
-                        v.push(input);
-                        self.property_values = Some(v);
-                        self
+        v.push(input);
+        self.property_values = Some(v);
+        self
     }
     /// <p>An object that maps strings to the property definitions in the component type. Each string in the mapping must be unique to this object.</p>
-    pub fn set_property_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::PropertyValueHistory>>) -> Self {
-        self.property_values = input; self
+    pub fn set_property_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PropertyValueHistory>>,
+    ) -> Self {
+        self.property_values = input;
+        self
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +71,26 @@ impl GetPropertyValueHistoryOutputBuilder {
     }
     /// <p>The string that specifies the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetPropertyValueHistoryOutput`](crate::operation::get_property_value_history::GetPropertyValueHistoryOutput).
-    pub fn build(self) -> crate::operation::get_property_value_history::GetPropertyValueHistoryOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_property_value_history::GetPropertyValueHistoryOutput {
         crate::operation::get_property_value_history::GetPropertyValueHistoryOutput {
-            property_values: self.property_values
-            ,
-            next_token: self.next_token
-            ,
+            property_values: self.property_values,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

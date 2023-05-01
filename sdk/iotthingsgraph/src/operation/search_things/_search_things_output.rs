@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchThingsOutput  {
+pub struct SearchThingsOutput {
     /// <p>An array of things in the result set.</p>
     #[doc(hidden)]
     pub things: std::option::Option<std::vec::Vec<crate::types::Thing>>,
@@ -13,19 +13,19 @@ pub struct SearchThingsOutput  {
 }
 impl SearchThingsOutput {
     /// <p>An array of things in the result set.</p>
-    pub fn things(&self) -> std::option::Option<& [crate::types::Thing]> {
+    pub fn things(&self) -> std::option::Option<&[crate::types::Thing]> {
         self.things.as_deref()
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SearchThingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SearchThingsOutput {
     /// Creates a new builder-style object to manufacture [`SearchThingsOutput`](crate::operation::search_things::SearchThingsOutput).
     pub fn builder() -> crate::operation::search_things::builders::SearchThingsOutputBuilder {
@@ -49,13 +49,17 @@ impl SearchThingsOutputBuilder {
     /// <p>An array of things in the result set.</p>
     pub fn things(mut self, input: crate::types::Thing) -> Self {
         let mut v = self.things.unwrap_or_default();
-                        v.push(input);
-                        self.things = Some(v);
-                        self
+        v.push(input);
+        self.things = Some(v);
+        self
     }
     /// <p>An array of things in the result set.</p>
-    pub fn set_things(mut self, input: std::option::Option<std::vec::Vec<crate::types::Thing>>) -> Self {
-        self.things = input; self
+    pub fn set_things(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Thing>>,
+    ) -> Self {
+        self.things = input;
+        self
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl SearchThingsOutputBuilder {
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SearchThingsOutput`](crate::operation::search_things::SearchThingsOutput).
     pub fn build(self) -> crate::operation::search_things::SearchThingsOutput {
         crate::operation::search_things::SearchThingsOutput {
-            things: self.things
-            ,
-            next_token: self.next_token
-            ,
+            things: self.things,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

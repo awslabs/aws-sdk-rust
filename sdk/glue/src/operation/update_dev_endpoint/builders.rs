@@ -4,50 +4,70 @@ pub use crate::operation::update_dev_endpoint::_update_dev_endpoint_output::Upda
 pub use crate::operation::update_dev_endpoint::_update_dev_endpoint_input::UpdateDevEndpointInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateDevEndpoint`.
-/// 
+///
 /// <p>Updates a specified development endpoint.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDevEndpointFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_dev_endpoint::builders::UpdateDevEndpointInputBuilder,
+    inner: crate::operation::update_dev_endpoint::builders::UpdateDevEndpointInputBuilder,
 }
-impl UpdateDevEndpointFluentBuilder  {
+impl UpdateDevEndpointFluentBuilder {
     /// Creates a new `UpdateDevEndpoint`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_dev_endpoint::UpdateDevEndpoint, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_dev_endpoint::UpdateDevEndpointError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_dev_endpoint::UpdateDevEndpointOutput, aws_smithy_http::result::SdkError<crate::operation::update_dev_endpoint::UpdateDevEndpointError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_dev_endpoint::UpdateDevEndpoint,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_dev_endpoint::UpdateDevEndpointError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_dev_endpoint::UpdateDevEndpointOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_dev_endpoint::UpdateDevEndpointError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the <code>DevEndpoint</code> to be updated.</p>
     pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.endpoint_name(input.into());
@@ -78,7 +98,10 @@ impl UpdateDevEndpointFluentBuilder  {
         self
     }
     /// <p>The list of public keys for the <code>DevEndpoint</code> to use.</p>
-    pub fn set_add_public_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_add_public_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_add_public_keys(input);
         self
     }
@@ -92,7 +115,10 @@ impl UpdateDevEndpointFluentBuilder  {
         self
     }
     /// <p>The list of public keys to be deleted from the <code>DevEndpoint</code>.</p>
-    pub fn set_delete_public_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_delete_public_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_delete_public_keys(input);
         self
     }
@@ -102,7 +128,10 @@ impl UpdateDevEndpointFluentBuilder  {
         self
     }
     /// <p>Custom Python or Java libraries to be loaded in the <code>DevEndpoint</code>.</p>
-    pub fn set_custom_libraries(mut self, input: std::option::Option<crate::types::DevEndpointCustomLibraries>) -> Self {
+    pub fn set_custom_libraries(
+        mut self,
+        input: std::option::Option<crate::types::DevEndpointCustomLibraries>,
+    ) -> Self {
         self.inner = self.inner.set_custom_libraries(input);
         self
     }
@@ -126,7 +155,10 @@ impl UpdateDevEndpointFluentBuilder  {
         self
     }
     /// <p>The list of argument keys to be deleted from the map of arguments used to configure the <code>DevEndpoint</code>.</p>
-    pub fn set_delete_arguments(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_delete_arguments(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_delete_arguments(input);
         self
     }
@@ -134,25 +166,33 @@ impl UpdateDevEndpointFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_add_arguments`](Self::set_add_arguments).
     ///
-    /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p> 
-    /// <p>Valid arguments are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li> 
-    /// </ul> 
+    /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    /// <p>Valid arguments are:</p>
+    /// <ul>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn add_arguments(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn add_arguments(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.add_arguments(k.into(), v.into());
         self
     }
-    /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p> 
-    /// <p>Valid arguments are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li> 
-    /// </ul> 
+    /// <p>The map of arguments to add the map of arguments used to configure the <code>DevEndpoint</code>.</p>
+    /// <p>Valid arguments are:</p>
+    /// <ul>
+    /// <li> <p> <code>"--enable-glue-datacatalog": ""</code> </p> </li>
+    /// </ul>
     /// <p>You can specify a version of Python support for development endpoints by using the <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version defaults to Python 2.</p>
-    pub fn set_add_arguments(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_add_arguments(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_add_arguments(input);
         self
     }
 }
-

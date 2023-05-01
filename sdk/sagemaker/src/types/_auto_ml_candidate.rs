@@ -3,13 +3,14 @@
 /// <p>Information about a candidate produced by an AutoML training job, including its status, steps, and other properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoMlCandidate  {
+pub struct AutoMlCandidate {
     /// <p>The name of the candidate.</p>
     #[doc(hidden)]
     pub candidate_name: std::option::Option<std::string::String>,
     /// <p>The best candidate result from an AutoML training job.</p>
     #[doc(hidden)]
-    pub final_auto_ml_job_objective_metric: std::option::Option<crate::types::FinalAutoMlJobObjectiveMetric>,
+    pub final_auto_ml_job_objective_metric:
+        std::option::Option<crate::types::FinalAutoMlJobObjectiveMetric>,
     /// <p>The objective's status.</p>
     #[doc(hidden)]
     pub objective_status: std::option::Option<crate::types::ObjectiveStatus>,
@@ -21,7 +22,8 @@ pub struct AutoMlCandidate  {
     pub candidate_status: std::option::Option<crate::types::CandidateStatus>,
     /// <p>Information about the recommended inference container definitions.</p>
     #[doc(hidden)]
-    pub inference_containers: std::option::Option<std::vec::Vec<crate::types::AutoMlContainerDefinition>>,
+    pub inference_containers:
+        std::option::Option<std::vec::Vec<crate::types::AutoMlContainerDefinition>>,
     /// <p>The creation time.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -39,55 +41,71 @@ pub struct AutoMlCandidate  {
     pub candidate_properties: std::option::Option<crate::types::CandidateProperties>,
     /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
     #[doc(hidden)]
-    pub inference_container_definitions: std::option::Option<std::collections::HashMap<crate::types::AutoMlProcessingUnit, std::vec::Vec<crate::types::AutoMlContainerDefinition>>>,
+    pub inference_container_definitions: std::option::Option<
+        std::collections::HashMap<
+            crate::types::AutoMlProcessingUnit,
+            std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+        >,
+    >,
 }
 impl AutoMlCandidate {
     /// <p>The name of the candidate.</p>
-    pub fn candidate_name(&self) -> std::option::Option<& str> {
+    pub fn candidate_name(&self) -> std::option::Option<&str> {
         self.candidate_name.as_deref()
     }
     /// <p>The best candidate result from an AutoML training job.</p>
-    pub fn final_auto_ml_job_objective_metric(&self) -> std::option::Option<& crate::types::FinalAutoMlJobObjectiveMetric> {
+    pub fn final_auto_ml_job_objective_metric(
+        &self,
+    ) -> std::option::Option<&crate::types::FinalAutoMlJobObjectiveMetric> {
         self.final_auto_ml_job_objective_metric.as_ref()
     }
     /// <p>The objective's status.</p>
-    pub fn objective_status(&self) -> std::option::Option<& crate::types::ObjectiveStatus> {
+    pub fn objective_status(&self) -> std::option::Option<&crate::types::ObjectiveStatus> {
         self.objective_status.as_ref()
     }
     /// <p>Information about the candidate's steps.</p>
-    pub fn candidate_steps(&self) -> std::option::Option<& [crate::types::AutoMlCandidateStep]> {
+    pub fn candidate_steps(&self) -> std::option::Option<&[crate::types::AutoMlCandidateStep]> {
         self.candidate_steps.as_deref()
     }
     /// <p>The candidate's status.</p>
-    pub fn candidate_status(&self) -> std::option::Option<& crate::types::CandidateStatus> {
+    pub fn candidate_status(&self) -> std::option::Option<&crate::types::CandidateStatus> {
         self.candidate_status.as_ref()
     }
     /// <p>Information about the recommended inference container definitions.</p>
-    pub fn inference_containers(&self) -> std::option::Option<& [crate::types::AutoMlContainerDefinition]> {
+    pub fn inference_containers(
+        &self,
+    ) -> std::option::Option<&[crate::types::AutoMlContainerDefinition]> {
         self.inference_containers.as_deref()
     }
     /// <p>The creation time.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The end time.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The last modified time.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The failure reason.</p>
-    pub fn failure_reason(&self) -> std::option::Option<& str> {
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The properties of an AutoML candidate job.</p>
-    pub fn candidate_properties(&self) -> std::option::Option<& crate::types::CandidateProperties> {
+    pub fn candidate_properties(&self) -> std::option::Option<&crate::types::CandidateProperties> {
         self.candidate_properties.as_ref()
     }
     /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
-    pub fn inference_container_definitions(&self) -> std::option::Option<& std::collections::HashMap<crate::types::AutoMlProcessingUnit, std::vec::Vec<crate::types::AutoMlContainerDefinition>>> {
+    pub fn inference_container_definitions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::types::AutoMlProcessingUnit,
+            std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+        >,
+    > {
         self.inference_container_definitions.as_ref()
     }
 }
@@ -103,17 +121,25 @@ impl AutoMlCandidate {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AutoMlCandidateBuilder {
     pub(crate) candidate_name: std::option::Option<std::string::String>,
-    pub(crate) final_auto_ml_job_objective_metric: std::option::Option<crate::types::FinalAutoMlJobObjectiveMetric>,
+    pub(crate) final_auto_ml_job_objective_metric:
+        std::option::Option<crate::types::FinalAutoMlJobObjectiveMetric>,
     pub(crate) objective_status: std::option::Option<crate::types::ObjectiveStatus>,
-    pub(crate) candidate_steps: std::option::Option<std::vec::Vec<crate::types::AutoMlCandidateStep>>,
+    pub(crate) candidate_steps:
+        std::option::Option<std::vec::Vec<crate::types::AutoMlCandidateStep>>,
     pub(crate) candidate_status: std::option::Option<crate::types::CandidateStatus>,
-    pub(crate) inference_containers: std::option::Option<std::vec::Vec<crate::types::AutoMlContainerDefinition>>,
+    pub(crate) inference_containers:
+        std::option::Option<std::vec::Vec<crate::types::AutoMlContainerDefinition>>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) failure_reason: std::option::Option<std::string::String>,
     pub(crate) candidate_properties: std::option::Option<crate::types::CandidateProperties>,
-    pub(crate) inference_container_definitions: std::option::Option<std::collections::HashMap<crate::types::AutoMlProcessingUnit, std::vec::Vec<crate::types::AutoMlContainerDefinition>>>,
+    pub(crate) inference_container_definitions: std::option::Option<
+        std::collections::HashMap<
+            crate::types::AutoMlProcessingUnit,
+            std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+        >,
+    >,
 }
 impl AutoMlCandidateBuilder {
     /// <p>The name of the candidate.</p>
@@ -123,16 +149,24 @@ impl AutoMlCandidateBuilder {
     }
     /// <p>The name of the candidate.</p>
     pub fn set_candidate_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.candidate_name = input; self
+        self.candidate_name = input;
+        self
     }
     /// <p>The best candidate result from an AutoML training job.</p>
-    pub fn final_auto_ml_job_objective_metric(mut self, input: crate::types::FinalAutoMlJobObjectiveMetric) -> Self {
+    pub fn final_auto_ml_job_objective_metric(
+        mut self,
+        input: crate::types::FinalAutoMlJobObjectiveMetric,
+    ) -> Self {
         self.final_auto_ml_job_objective_metric = Some(input);
         self
     }
     /// <p>The best candidate result from an AutoML training job.</p>
-    pub fn set_final_auto_ml_job_objective_metric(mut self, input: std::option::Option<crate::types::FinalAutoMlJobObjectiveMetric>) -> Self {
-        self.final_auto_ml_job_objective_metric = input; self
+    pub fn set_final_auto_ml_job_objective_metric(
+        mut self,
+        input: std::option::Option<crate::types::FinalAutoMlJobObjectiveMetric>,
+    ) -> Self {
+        self.final_auto_ml_job_objective_metric = input;
+        self
     }
     /// <p>The objective's status.</p>
     pub fn objective_status(mut self, input: crate::types::ObjectiveStatus) -> Self {
@@ -140,8 +174,12 @@ impl AutoMlCandidateBuilder {
         self
     }
     /// <p>The objective's status.</p>
-    pub fn set_objective_status(mut self, input: std::option::Option<crate::types::ObjectiveStatus>) -> Self {
-        self.objective_status = input; self
+    pub fn set_objective_status(
+        mut self,
+        input: std::option::Option<crate::types::ObjectiveStatus>,
+    ) -> Self {
+        self.objective_status = input;
+        self
     }
     /// Appends an item to `candidate_steps`.
     ///
@@ -150,13 +188,17 @@ impl AutoMlCandidateBuilder {
     /// <p>Information about the candidate's steps.</p>
     pub fn candidate_steps(mut self, input: crate::types::AutoMlCandidateStep) -> Self {
         let mut v = self.candidate_steps.unwrap_or_default();
-                        v.push(input);
-                        self.candidate_steps = Some(v);
-                        self
+        v.push(input);
+        self.candidate_steps = Some(v);
+        self
     }
     /// <p>Information about the candidate's steps.</p>
-    pub fn set_candidate_steps(mut self, input: std::option::Option<std::vec::Vec<crate::types::AutoMlCandidateStep>>) -> Self {
-        self.candidate_steps = input; self
+    pub fn set_candidate_steps(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AutoMlCandidateStep>>,
+    ) -> Self {
+        self.candidate_steps = input;
+        self
     }
     /// <p>The candidate's status.</p>
     pub fn candidate_status(mut self, input: crate::types::CandidateStatus) -> Self {
@@ -164,8 +206,12 @@ impl AutoMlCandidateBuilder {
         self
     }
     /// <p>The candidate's status.</p>
-    pub fn set_candidate_status(mut self, input: std::option::Option<crate::types::CandidateStatus>) -> Self {
-        self.candidate_status = input; self
+    pub fn set_candidate_status(
+        mut self,
+        input: std::option::Option<crate::types::CandidateStatus>,
+    ) -> Self {
+        self.candidate_status = input;
+        self
     }
     /// Appends an item to `inference_containers`.
     ///
@@ -174,13 +220,17 @@ impl AutoMlCandidateBuilder {
     /// <p>Information about the recommended inference container definitions.</p>
     pub fn inference_containers(mut self, input: crate::types::AutoMlContainerDefinition) -> Self {
         let mut v = self.inference_containers.unwrap_or_default();
-                        v.push(input);
-                        self.inference_containers = Some(v);
-                        self
+        v.push(input);
+        self.inference_containers = Some(v);
+        self
     }
     /// <p>Information about the recommended inference container definitions.</p>
-    pub fn set_inference_containers(mut self, input: std::option::Option<std::vec::Vec<crate::types::AutoMlContainerDefinition>>) -> Self {
-        self.inference_containers = input; self
+    pub fn set_inference_containers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AutoMlContainerDefinition>>,
+    ) -> Self {
+        self.inference_containers = input;
+        self
     }
     /// <p>The creation time.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -188,8 +238,12 @@ impl AutoMlCandidateBuilder {
         self
     }
     /// <p>The creation time.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The end time.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -198,7 +252,8 @@ impl AutoMlCandidateBuilder {
     }
     /// <p>The end time.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The last modified time.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -206,8 +261,12 @@ impl AutoMlCandidateBuilder {
         self
     }
     /// <p>The last modified time.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// <p>The failure reason.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,7 +275,8 @@ impl AutoMlCandidateBuilder {
     }
     /// <p>The failure reason.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input; self
+        self.failure_reason = input;
+        self
     }
     /// <p>The properties of an AutoML candidate job.</p>
     pub fn candidate_properties(mut self, input: crate::types::CandidateProperties) -> Self {
@@ -224,52 +284,56 @@ impl AutoMlCandidateBuilder {
         self
     }
     /// <p>The properties of an AutoML candidate job.</p>
-    pub fn set_candidate_properties(mut self, input: std::option::Option<crate::types::CandidateProperties>) -> Self {
-        self.candidate_properties = input; self
+    pub fn set_candidate_properties(
+        mut self,
+        input: std::option::Option<crate::types::CandidateProperties>,
+    ) -> Self {
+        self.candidate_properties = input;
+        self
     }
     /// Adds a key-value pair to `inference_container_definitions`.
     ///
     /// To override the contents of this collection use [`set_inference_container_definitions`](Self::set_inference_container_definitions).
     ///
     /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
-    pub fn inference_container_definitions(mut self, k: crate::types::AutoMlProcessingUnit, v: std::vec::Vec<crate::types::AutoMlContainerDefinition>) -> Self {
+    pub fn inference_container_definitions(
+        mut self,
+        k: crate::types::AutoMlProcessingUnit,
+        v: std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+    ) -> Self {
         let mut hash_map = self.inference_container_definitions.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.inference_container_definitions = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.inference_container_definitions = Some(hash_map);
+        self
     }
     /// <p>The mapping of all supported processing unit (CPU, GPU, etc...) to inference container definitions for the candidate. This field is populated for the V2 API only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).</p>
-    pub fn set_inference_container_definitions(mut self, input: std::option::Option<std::collections::HashMap<crate::types::AutoMlProcessingUnit, std::vec::Vec<crate::types::AutoMlContainerDefinition>>>) -> Self {
-        self.inference_container_definitions = input; self
+    pub fn set_inference_container_definitions(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                crate::types::AutoMlProcessingUnit,
+                std::vec::Vec<crate::types::AutoMlContainerDefinition>,
+            >,
+        >,
+    ) -> Self {
+        self.inference_container_definitions = input;
+        self
     }
     /// Consumes the builder and constructs a [`AutoMlCandidate`](crate::types::AutoMlCandidate).
     pub fn build(self) -> crate::types::AutoMlCandidate {
         crate::types::AutoMlCandidate {
-            candidate_name: self.candidate_name
-            ,
-            final_auto_ml_job_objective_metric: self.final_auto_ml_job_objective_metric
-            ,
-            objective_status: self.objective_status
-            ,
-            candidate_steps: self.candidate_steps
-            ,
-            candidate_status: self.candidate_status
-            ,
-            inference_containers: self.inference_containers
-            ,
-            creation_time: self.creation_time
-            ,
-            end_time: self.end_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            failure_reason: self.failure_reason
-            ,
-            candidate_properties: self.candidate_properties
-            ,
-            inference_container_definitions: self.inference_container_definitions
-            ,
+            candidate_name: self.candidate_name,
+            final_auto_ml_job_objective_metric: self.final_auto_ml_job_objective_metric,
+            objective_status: self.objective_status,
+            candidate_steps: self.candidate_steps,
+            candidate_status: self.candidate_status,
+            inference_containers: self.inference_containers,
+            creation_time: self.creation_time,
+            end_time: self.end_time,
+            last_modified_time: self.last_modified_time,
+            failure_reason: self.failure_reason,
+            candidate_properties: self.candidate_properties,
+            inference_container_definitions: self.inference_container_definitions,
         }
     }
 }
-

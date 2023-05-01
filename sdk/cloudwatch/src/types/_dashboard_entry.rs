@@ -3,7 +3,7 @@
 /// <p>Represents a specific dashboard.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DashboardEntry  {
+pub struct DashboardEntry {
     /// <p>The name of the dashboard.</p>
     #[doc(hidden)]
     pub dashboard_name: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct DashboardEntry  {
 }
 impl DashboardEntry {
     /// <p>The name of the dashboard.</p>
-    pub fn dashboard_name(&self) -> std::option::Option<& str> {
+    pub fn dashboard_name(&self) -> std::option::Option<&str> {
         self.dashboard_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
-    pub fn dashboard_arn(&self) -> std::option::Option<& str> {
+    pub fn dashboard_arn(&self) -> std::option::Option<&str> {
         self.dashboard_arn.as_deref()
     }
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The size of the dashboard, in bytes.</p>
@@ -59,7 +59,8 @@ impl DashboardEntryBuilder {
     }
     /// <p>The name of the dashboard.</p>
     pub fn set_dashboard_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_name = input; self
+        self.dashboard_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub fn dashboard_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl DashboardEntryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the dashboard.</p>
     pub fn set_dashboard_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_arn = input; self
+        self.dashboard_arn = input;
+        self
     }
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,8 +78,12 @@ impl DashboardEntryBuilder {
         self
     }
     /// <p>The time stamp of when the dashboard was last modified, either by an API call or through the console. This number is expressed as the number of milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
-    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input; self
+    pub fn set_last_modified(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified = input;
+        self
     }
     /// <p>The size of the dashboard, in bytes.</p>
     pub fn size(mut self, input: i64) -> Self {
@@ -86,21 +92,16 @@ impl DashboardEntryBuilder {
     }
     /// <p>The size of the dashboard, in bytes.</p>
     pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.size = input; self
+        self.size = input;
+        self
     }
     /// Consumes the builder and constructs a [`DashboardEntry`](crate::types::DashboardEntry).
     pub fn build(self) -> crate::types::DashboardEntry {
         crate::types::DashboardEntry {
-            dashboard_name: self.dashboard_name
-            ,
-            dashboard_arn: self.dashboard_arn
-            ,
-            last_modified: self.last_modified
-            ,
-            size: self.size
-                .unwrap_or_default()
-            ,
+            dashboard_name: self.dashboard_name,
+            dashboard_arn: self.dashboard_arn,
+            last_modified: self.last_modified,
+            size: self.size.unwrap_or_default(),
         }
     }
 }
-

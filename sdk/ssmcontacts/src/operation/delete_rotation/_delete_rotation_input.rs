@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRotationInput  {
+pub struct DeleteRotationInput {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation to delete.</p>
     #[doc(hidden)]
     pub rotation_id: std::option::Option<std::string::String>,
 }
 impl DeleteRotationInput {
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation to delete.</p>
-    pub fn rotation_id(&self) -> std::option::Option<& str> {
+    pub fn rotation_id(&self) -> std::option::Option<&str> {
         self.rotation_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteRotationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation to delete.</p>
     pub fn set_rotation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rotation_id = input; self
+        self.rotation_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRotationInput`](crate::operation::delete_rotation::DeleteRotationInput).
-    pub fn build(self) -> Result<crate::operation::delete_rotation::DeleteRotationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_rotation::DeleteRotationInput {
-                rotation_id: self.rotation_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_rotation::DeleteRotationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_rotation::DeleteRotationInput {
+            rotation_id: self.rotation_id,
+        })
     }
 }
-

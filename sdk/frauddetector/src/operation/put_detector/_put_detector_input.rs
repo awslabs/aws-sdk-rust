@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDetectorInput  {
+pub struct PutDetectorInput {
     /// <p>The detector ID. </p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct PutDetectorInput  {
 }
 impl PutDetectorInput {
     /// <p>The detector ID. </p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The description of the detector.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the event type.</p>
-    pub fn event_type_name(&self) -> std::option::Option<& str> {
+    pub fn event_type_name(&self) -> std::option::Option<&str> {
         self.event_type_name.as_deref()
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl PutDetectorInputBuilder {
     }
     /// <p>The detector ID. </p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The description of the detector.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl PutDetectorInputBuilder {
     }
     /// <p>The description of the detector.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The name of the event type.</p>
     pub fn event_type_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl PutDetectorInputBuilder {
     }
     /// <p>The name of the event type.</p>
     pub fn set_event_type_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_type_name = input; self
+        self.event_type_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -85,28 +88,30 @@ impl PutDetectorInputBuilder {
     /// <p>A collection of key and value pairs.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A collection of key and value pairs.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutDetectorInput`](crate::operation::put_detector::PutDetectorInput).
-    pub fn build(self) -> Result<crate::operation::put_detector::PutDetectorInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_detector::PutDetectorInput {
-                detector_id: self.detector_id
-                ,
-                description: self.description
-                ,
-                event_type_name: self.event_type_name
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_detector::PutDetectorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_detector::PutDetectorInput {
+            detector_id: self.detector_id,
+            description: self.description,
+            event_type_name: self.event_type_name,
+            tags: self.tags,
+        })
     }
 }
-

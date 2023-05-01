@@ -3,14 +3,14 @@
 /// <p>Provides information about the category rule that was matched.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CategoryDetails  {
+pub struct CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
     #[doc(hidden)]
     pub points_of_interest: std::option::Option<std::vec::Vec<crate::types::PointOfInterest>>,
 }
 impl CategoryDetails {
     /// <p>The section of audio where the category rule was detected.</p>
-    pub fn points_of_interest(&self) -> std::option::Option<& [crate::types::PointOfInterest]> {
+    pub fn points_of_interest(&self) -> std::option::Option<&[crate::types::PointOfInterest]> {
         self.points_of_interest.as_deref()
     }
 }
@@ -25,7 +25,8 @@ impl CategoryDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CategoryDetailsBuilder {
-    pub(crate) points_of_interest: std::option::Option<std::vec::Vec<crate::types::PointOfInterest>>,
+    pub(crate) points_of_interest:
+        std::option::Option<std::vec::Vec<crate::types::PointOfInterest>>,
 }
 impl CategoryDetailsBuilder {
     /// Appends an item to `points_of_interest`.
@@ -35,20 +36,22 @@ impl CategoryDetailsBuilder {
     /// <p>The section of audio where the category rule was detected.</p>
     pub fn points_of_interest(mut self, input: crate::types::PointOfInterest) -> Self {
         let mut v = self.points_of_interest.unwrap_or_default();
-                        v.push(input);
-                        self.points_of_interest = Some(v);
-                        self
+        v.push(input);
+        self.points_of_interest = Some(v);
+        self
     }
     /// <p>The section of audio where the category rule was detected.</p>
-    pub fn set_points_of_interest(mut self, input: std::option::Option<std::vec::Vec<crate::types::PointOfInterest>>) -> Self {
-        self.points_of_interest = input; self
+    pub fn set_points_of_interest(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PointOfInterest>>,
+    ) -> Self {
+        self.points_of_interest = input;
+        self
     }
     /// Consumes the builder and constructs a [`CategoryDetails`](crate::types::CategoryDetails).
     pub fn build(self) -> crate::types::CategoryDetails {
         crate::types::CategoryDetails {
-            points_of_interest: self.points_of_interest
-            ,
+            points_of_interest: self.points_of_interest,
         }
     }
 }
-

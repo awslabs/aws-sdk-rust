@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRegistryOutput  {
+pub struct DeleteRegistryOutput {
     /// <p>The name of the registry being deleted.</p>
     #[doc(hidden)]
     pub registry_name: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct DeleteRegistryOutput  {
 }
 impl DeleteRegistryOutput {
     /// <p>The name of the registry being deleted.</p>
-    pub fn registry_name(&self) -> std::option::Option<& str> {
+    pub fn registry_name(&self) -> std::option::Option<&str> {
         self.registry_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the registry being deleted.</p>
-    pub fn registry_arn(&self) -> std::option::Option<& str> {
+    pub fn registry_arn(&self) -> std::option::Option<&str> {
         self.registry_arn.as_deref()
     }
     /// <p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::RegistryStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::RegistryStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteRegistryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteRegistryOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRegistryOutput`](crate::operation::delete_registry::DeleteRegistryOutput).
     pub fn builder() -> crate::operation::delete_registry::builders::DeleteRegistryOutputBuilder {
@@ -57,7 +57,8 @@ impl DeleteRegistryOutputBuilder {
     }
     /// <p>The name of the registry being deleted.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input; self
+        self.registry_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the registry being deleted.</p>
     pub fn registry_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl DeleteRegistryOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the registry being deleted.</p>
     pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_arn = input; self
+        self.registry_arn = input;
+        self
     }
     /// <p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>
     pub fn status(mut self, input: crate::types::RegistryStatus) -> Self {
@@ -75,28 +77,25 @@ impl DeleteRegistryOutputBuilder {
     }
     /// <p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::RegistryStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteRegistryOutput`](crate::operation::delete_registry::DeleteRegistryOutput).
     pub fn build(self) -> crate::operation::delete_registry::DeleteRegistryOutput {
         crate::operation::delete_registry::DeleteRegistryOutput {
-            registry_name: self.registry_name
-            ,
-            registry_arn: self.registry_arn
-            ,
-            status: self.status
-            ,
+            registry_name: self.registry_name,
+            registry_arn: self.registry_arn,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

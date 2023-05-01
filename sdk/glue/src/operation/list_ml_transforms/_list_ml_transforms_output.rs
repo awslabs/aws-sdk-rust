@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMlTransformsOutput  {
+pub struct ListMlTransformsOutput {
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
     #[doc(hidden)]
     pub transform_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,23 @@ pub struct ListMlTransformsOutput  {
 }
 impl ListMlTransformsOutput {
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
-    pub fn transform_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn transform_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.transform_ids.as_deref()
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMlTransformsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListMlTransformsOutput {
     /// Creates a new builder-style object to manufacture [`ListMlTransformsOutput`](crate::operation::list_ml_transforms::ListMlTransformsOutput).
-    pub fn builder() -> crate::operation::list_ml_transforms::builders::ListMlTransformsOutputBuilder {
+    pub fn builder() -> crate::operation::list_ml_transforms::builders::ListMlTransformsOutputBuilder
+    {
         crate::operation::list_ml_transforms::builders::ListMlTransformsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListMlTransformsOutputBuilder {
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
     pub fn transform_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.transform_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.transform_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.transform_ids = Some(v);
+        self
     }
     /// <p>The identifiers of all the machine learning transforms in the account, or the machine learning transforms with the specified tags.</p>
-    pub fn set_transform_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.transform_ids = input; self
+    pub fn set_transform_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.transform_ids = input;
+        self
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListMlTransformsOutputBuilder {
     }
     /// <p>A continuation token, if the returned list does not contain the last metric available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListMlTransformsOutput`](crate::operation::list_ml_transforms::ListMlTransformsOutput).
     pub fn build(self) -> crate::operation::list_ml_transforms::ListMlTransformsOutput {
         crate::operation::list_ml_transforms::ListMlTransformsOutput {
-            transform_ids: self.transform_ids
-            ,
-            next_token: self.next_token
-            ,
+            transform_ids: self.transform_ids,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

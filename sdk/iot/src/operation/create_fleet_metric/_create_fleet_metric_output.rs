@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFleetMetricOutput  {
+pub struct CreateFleetMetricOutput {
     /// <p>The name of the fleet metric to create.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct CreateFleetMetricOutput  {
 }
 impl CreateFleetMetricOutput {
     /// <p>The name of the fleet metric to create.</p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the new fleet metric.</p>
-    pub fn metric_arn(&self) -> std::option::Option<& str> {
+    pub fn metric_arn(&self) -> std::option::Option<&str> {
         self.metric_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateFleetMetricOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateFleetMetricOutput {
     /// Creates a new builder-style object to manufacture [`CreateFleetMetricOutput`](crate::operation::create_fleet_metric::CreateFleetMetricOutput).
-    pub fn builder() -> crate::operation::create_fleet_metric::builders::CreateFleetMetricOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_fleet_metric::builders::CreateFleetMetricOutputBuilder {
         crate::operation::create_fleet_metric::builders::CreateFleetMetricOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl CreateFleetMetricOutputBuilder {
     }
     /// <p>The name of the fleet metric to create.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the new fleet metric.</p>
     pub fn metric_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +60,24 @@ impl CreateFleetMetricOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the new fleet metric.</p>
     pub fn set_metric_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_arn = input; self
+        self.metric_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateFleetMetricOutput`](crate::operation::create_fleet_metric::CreateFleetMetricOutput).
     pub fn build(self) -> crate::operation::create_fleet_metric::CreateFleetMetricOutput {
         crate::operation::create_fleet_metric::CreateFleetMetricOutput {
-            metric_name: self.metric_name
-            ,
-            metric_arn: self.metric_arn
-            ,
+            metric_name: self.metric_name,
+            metric_arn: self.metric_arn,
             _request_id: self._request_id,
         }
     }
 }
-

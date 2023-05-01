@@ -3,14 +3,14 @@
 /// <p>A workload summary return object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkloadSummary  {
+pub struct WorkloadSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the workload.</p>
     #[doc(hidden)]
     pub workload_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the workload.</p> 
+    /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     #[doc(hidden)]
     pub workload_name: std::option::Option<std::string::String>,
@@ -32,36 +32,40 @@ pub struct WorkloadSummary  {
 }
 impl WorkloadSummary {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<& str> {
+    pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>The ARN for the workload.</p>
-    pub fn workload_arn(&self) -> std::option::Option<& str> {
+    pub fn workload_arn(&self) -> std::option::Option<&str> {
         self.workload_arn.as_deref()
     }
-    /// <p>The name of the workload.</p> 
+    /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(&self) -> std::option::Option<& str> {
+    pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> std::option::Option<& str> {
+    pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lenses(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn lenses(&self) -> std::option::Option<&[std::string::String]> {
         self.lenses.as_deref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn risk_counts(&self) -> std::option::Option<& std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn risk_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn improvement_status(&self) -> std::option::Option<& crate::types::WorkloadImprovementStatus> {
+    pub fn improvement_status(
+        &self,
+    ) -> std::option::Option<&crate::types::WorkloadImprovementStatus> {
         self.improvement_status.as_ref()
     }
 }
@@ -93,7 +97,8 @@ impl WorkloadSummaryBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_id = input; self
+        self.workload_id = input;
+        self
     }
     /// <p>The ARN for the workload.</p>
     pub fn workload_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,18 +107,20 @@ impl WorkloadSummaryBuilder {
     }
     /// <p>The ARN for the workload.</p>
     pub fn set_workload_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_arn = input; self
+        self.workload_arn = input;
+        self
     }
-    /// <p>The name of the workload.</p> 
+    /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.workload_name = Some(input.into());
         self
     }
-    /// <p>The name of the workload.</p> 
+    /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn set_workload_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_name = input; self
+        self.workload_name = input;
+        self
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +129,8 @@ impl WorkloadSummaryBuilder {
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// <p>The date and time recorded.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -130,8 +138,12 @@ impl WorkloadSummaryBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// Appends an item to `lenses`.
     ///
@@ -140,13 +152,17 @@ impl WorkloadSummaryBuilder {
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.lenses.unwrap_or_default();
-                        v.push(input.into());
-                        self.lenses = Some(v);
-                        self
+        v.push(input.into());
+        self.lenses = Some(v);
+        self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lenses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.lenses = input; self
+    pub fn set_lenses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.lenses = input;
+        self
     }
     /// Adds a key-value pair to `risk_counts`.
     ///
@@ -155,13 +171,17 @@ impl WorkloadSummaryBuilder {
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.risk_counts.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.risk_counts = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.risk_counts = Some(hash_map);
+        self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_risk_counts(mut self, input: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
-        self.risk_counts = input; self
+    pub fn set_risk_counts(
+        mut self,
+        input: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
+    ) -> Self {
+        self.risk_counts = input;
+        self
     }
     /// <p>The improvement status for a workload.</p>
     pub fn improvement_status(mut self, input: crate::types::WorkloadImprovementStatus) -> Self {
@@ -169,29 +189,24 @@ impl WorkloadSummaryBuilder {
         self
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn set_improvement_status(mut self, input: std::option::Option<crate::types::WorkloadImprovementStatus>) -> Self {
-        self.improvement_status = input; self
+    pub fn set_improvement_status(
+        mut self,
+        input: std::option::Option<crate::types::WorkloadImprovementStatus>,
+    ) -> Self {
+        self.improvement_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkloadSummary`](crate::types::WorkloadSummary).
     pub fn build(self) -> crate::types::WorkloadSummary {
         crate::types::WorkloadSummary {
-            workload_id: self.workload_id
-            ,
-            workload_arn: self.workload_arn
-            ,
-            workload_name: self.workload_name
-            ,
-            owner: self.owner
-            ,
-            updated_at: self.updated_at
-            ,
-            lenses: self.lenses
-            ,
-            risk_counts: self.risk_counts
-            ,
-            improvement_status: self.improvement_status
-            ,
+            workload_id: self.workload_id,
+            workload_arn: self.workload_arn,
+            workload_name: self.workload_name,
+            owner: self.owner,
+            updated_at: self.updated_at,
+            lenses: self.lenses,
+            risk_counts: self.risk_counts,
+            improvement_status: self.improvement_status,
         }
     }
 }
-

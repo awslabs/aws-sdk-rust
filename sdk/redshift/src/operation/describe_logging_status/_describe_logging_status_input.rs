@@ -3,22 +3,24 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLoggingStatusInput  {
-    /// <p>The identifier of the cluster from which to get the logging status.</p> 
+pub struct DescribeLoggingStatusInput {
+    /// <p>The identifier of the cluster from which to get the logging status.</p>
     /// <p>Example: <code>examplecluster</code> </p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeLoggingStatusInput {
-    /// <p>The identifier of the cluster from which to get the logging status.</p> 
+    /// <p>The identifier of the cluster from which to get the logging status.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
 }
 impl DescribeLoggingStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeLoggingStatusInput`](crate::operation::describe_logging_status::DescribeLoggingStatusInput).
-    pub fn builder() -> crate::operation::describe_logging_status::builders::DescribeLoggingStatusInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_logging_status::builders::DescribeLoggingStatusInputBuilder
+    {
         crate::operation::describe_logging_status::builders::DescribeLoggingStatusInputBuilder::default()
     }
 }
@@ -30,25 +32,32 @@ pub struct DescribeLoggingStatusInputBuilder {
     pub(crate) cluster_identifier: std::option::Option<std::string::String>,
 }
 impl DescribeLoggingStatusInputBuilder {
-    /// <p>The identifier of the cluster from which to get the logging status.</p> 
+    /// <p>The identifier of the cluster from which to get the logging status.</p>
     /// <p>Example: <code>examplecluster</code> </p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier of the cluster from which to get the logging status.</p> 
+    /// <p>The identifier of the cluster from which to get the logging status.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeLoggingStatusInput`](crate::operation::describe_logging_status::DescribeLoggingStatusInput).
-    pub fn build(self) -> Result<crate::operation::describe_logging_status::DescribeLoggingStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_logging_status::DescribeLoggingStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_logging_status::DescribeLoggingStatusInput {
-                cluster_identifier: self.cluster_identifier
-                ,
-            }
+                cluster_identifier: self.cluster_identifier,
+            },
         )
     }
 }
-

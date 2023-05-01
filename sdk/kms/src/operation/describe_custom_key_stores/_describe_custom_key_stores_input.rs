@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomKeyStoresInput  {
-    /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p> 
+pub struct DescribeCustomKeyStoresInput {
+    /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
     #[doc(hidden)]
     pub custom_key_store_id: std::option::Option<std::string::String>,
-    /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p> 
+    /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
     #[doc(hidden)]
     pub custom_key_store_name: std::option::Option<std::string::String>,
@@ -19,14 +19,14 @@ pub struct DescribeCustomKeyStoresInput  {
     pub marker: std::option::Option<std::string::String>,
 }
 impl DescribeCustomKeyStoresInput {
-    /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p> 
+    /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
-    pub fn custom_key_store_id(&self) -> std::option::Option<& str> {
+    pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
         self.custom_key_store_id.as_deref()
     }
-    /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p> 
+    /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
-    pub fn custom_key_store_name(&self) -> std::option::Option<& str> {
+    pub fn custom_key_store_name(&self) -> std::option::Option<&str> {
         self.custom_key_store_name.as_deref()
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
@@ -34,13 +34,15 @@ impl DescribeCustomKeyStoresInput {
         self.limit
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl DescribeCustomKeyStoresInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomKeyStoresInput`](crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresInput).
-    pub fn builder() -> crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresInputBuilder
+    {
         crate::operation::describe_custom_key_stores::builders::DescribeCustomKeyStoresInputBuilder::default()
     }
 }
@@ -55,27 +57,35 @@ pub struct DescribeCustomKeyStoresInputBuilder {
     pub(crate) marker: std::option::Option<std::string::String>,
 }
 impl DescribeCustomKeyStoresInputBuilder {
-    /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p> 
+    /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
     pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.custom_key_store_id = Some(input.into());
         self
     }
-    /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p> 
+    /// <p>Gets only information about the specified custom key store. Enter the key store ID.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
-    pub fn set_custom_key_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_key_store_id = input; self
+    pub fn set_custom_key_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.custom_key_store_id = input;
+        self
     }
-    /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p> 
+    /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
     pub fn custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.custom_key_store_name = Some(input.into());
         self
     }
-    /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p> 
+    /// <p>Gets only information about the specified custom key store. Enter the friendly name of the custom key store.</p>
     /// <p>By default, this operation gets information about all custom key stores in the account and Region. To limit the output to a particular custom key store, provide either the <code>CustomKeyStoreId</code> or <code>CustomKeyStoreName</code> parameter, but not both.</p>
-    pub fn set_custom_key_store_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_key_store_name = input; self
+    pub fn set_custom_key_store_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.custom_key_store_name = input;
+        self
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -84,7 +94,8 @@ impl DescribeCustomKeyStoresInputBuilder {
     }
     /// <p>Use this parameter to specify the maximum number of items to return. When this value is present, KMS does not return more than the specified number of items, but it might return fewer.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,22 +104,23 @@ impl DescribeCustomKeyStoresInputBuilder {
     }
     /// <p>Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of <code>NextMarker</code> from the truncated response you just received.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeCustomKeyStoresInput`](crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresInput).
-    pub fn build(self) -> Result<crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresInput {
-                custom_key_store_id: self.custom_key_store_id
-                ,
-                custom_key_store_name: self.custom_key_store_name
-                ,
-                limit: self.limit
-                ,
-                marker: self.marker
-                ,
-            }
+                custom_key_store_id: self.custom_key_store_id,
+                custom_key_store_name: self.custom_key_store_name,
+                limit: self.limit,
+                marker: self.marker,
+            },
         )
     }
 }
-

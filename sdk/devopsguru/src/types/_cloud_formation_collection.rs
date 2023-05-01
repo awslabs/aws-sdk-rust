@@ -3,14 +3,14 @@
 /// <p> Information about Amazon Web Services CloudFormation stacks. You can use up to 500 stacks to specify which Amazon Web Services resources in your account to analyze. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacks.html">Stacks</a> in the <i>Amazon Web Services CloudFormation User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudFormationCollection  {
+pub struct CloudFormationCollection {
     /// <p> An array of CloudFormation stack names. </p>
     #[doc(hidden)]
     pub stack_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl CloudFormationCollection {
     /// <p> An array of CloudFormation stack names. </p>
-    pub fn stack_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn stack_names(&self) -> std::option::Option<&[std::string::String]> {
         self.stack_names.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl CloudFormationCollectionBuilder {
     /// <p> An array of CloudFormation stack names. </p>
     pub fn stack_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.stack_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.stack_names = Some(v);
-                        self
+        v.push(input.into());
+        self.stack_names = Some(v);
+        self
     }
     /// <p> An array of CloudFormation stack names. </p>
-    pub fn set_stack_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.stack_names = input; self
+    pub fn set_stack_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.stack_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`CloudFormationCollection`](crate::types::CloudFormationCollection).
     pub fn build(self) -> crate::types::CloudFormationCollection {
         crate::types::CloudFormationCollection {
-            stack_names: self.stack_names
-            ,
+            stack_names: self.stack_names,
         }
     }
 }
-

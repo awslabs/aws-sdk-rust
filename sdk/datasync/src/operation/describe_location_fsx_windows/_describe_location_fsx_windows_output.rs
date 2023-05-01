@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLocationFsxWindowsOutput  {
+pub struct DescribeLocationFsxWindowsOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
     #[doc(hidden)]
     pub location_arn: std::option::Option<std::string::String>,
@@ -25,38 +25,38 @@ pub struct DescribeLocationFsxWindowsOutput  {
 }
 impl DescribeLocationFsxWindowsOutput {
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
-    pub fn location_arn(&self) -> std::option::Option<& str> {
+    pub fn location_arn(&self) -> std::option::Option<&str> {
         self.location_arn.as_deref()
     }
     /// <p>The URL of the FSx for Windows File Server location that was described.</p>
-    pub fn location_uri(&self) -> std::option::Option<& str> {
+    pub fn location_uri(&self) -> std::option::Option<&str> {
         self.location_uri.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
-    pub fn security_group_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_arns.as_deref()
     }
     /// <p>The time that the FSx for Windows File Server location was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
-    pub fn user(&self) -> std::option::Option<& str> {
+    pub fn user(&self) -> std::option::Option<&str> {
         self.user.as_deref()
     }
     /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLocationFsxWindowsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeLocationFsxWindowsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLocationFsxWindowsOutput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput).
-    pub fn builder() -> crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsOutputBuilder{
         crate::operation::describe_location_fsx_windows::builders::DescribeLocationFsxWindowsOutputBuilder::default()
     }
 }
@@ -81,7 +81,8 @@ impl DescribeLocationFsxWindowsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the FSx for Windows File Server location that was described.</p>
     pub fn set_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_arn = input; self
+        self.location_arn = input;
+        self
     }
     /// <p>The URL of the FSx for Windows File Server location that was described.</p>
     pub fn location_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,7 +91,8 @@ impl DescribeLocationFsxWindowsOutputBuilder {
     }
     /// <p>The URL of the FSx for Windows File Server location that was described.</p>
     pub fn set_location_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location_uri = input; self
+        self.location_uri = input;
+        self
     }
     /// Appends an item to `security_group_arns`.
     ///
@@ -99,13 +101,17 @@ impl DescribeLocationFsxWindowsOutputBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
     pub fn security_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_arns = Some(v);
+        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows File Server file system.</p>
-    pub fn set_security_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_arns = input; self
+    pub fn set_security_group_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_arns = input;
+        self
     }
     /// <p>The time that the FSx for Windows File Server location was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -113,8 +119,12 @@ impl DescribeLocationFsxWindowsOutputBuilder {
         self
     }
     /// <p>The time that the FSx for Windows File Server location was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
     pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +133,8 @@ impl DescribeLocationFsxWindowsOutputBuilder {
     }
     /// <p>The user who has the permissions to access files and folders in the FSx for Windows File Server file system.</p>
     pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user = input; self
+        self.user = input;
+        self
     }
     /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
     pub fn domain(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,34 +143,30 @@ impl DescribeLocationFsxWindowsOutputBuilder {
     }
     /// <p>The name of the Windows domain that the FSx for Windows File Server belongs to.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeLocationFsxWindowsOutput`](crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput).
-    pub fn build(self) -> crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput {
         crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput {
-            location_arn: self.location_arn
-            ,
-            location_uri: self.location_uri
-            ,
-            security_group_arns: self.security_group_arns
-            ,
-            creation_time: self.creation_time
-            ,
-            user: self.user
-            ,
-            domain: self.domain
-            ,
+            location_arn: self.location_arn,
+            location_uri: self.location_uri,
+            security_group_arns: self.security_group_arns,
+            creation_time: self.creation_time,
+            user: self.user,
+            domain: self.domain,
             _request_id: self._request_id,
         }
     }
 }
-

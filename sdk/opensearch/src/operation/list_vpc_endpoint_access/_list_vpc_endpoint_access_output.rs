@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVpcEndpointAccessOutput  {
+pub struct ListVpcEndpointAccessOutput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principals</a> that can currently access the domain.</p>
     #[doc(hidden)]
-    pub authorized_principal_list: std::option::Option<std::vec::Vec<crate::types::AuthorizedPrincipal>>,
+    pub authorized_principal_list:
+        std::option::Option<std::vec::Vec<crate::types::AuthorizedPrincipal>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct ListVpcEndpointAccessOutput  {
 }
 impl ListVpcEndpointAccessOutput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principals</a> that can currently access the domain.</p>
-    pub fn authorized_principal_list(&self) -> std::option::Option<& [crate::types::AuthorizedPrincipal]> {
+    pub fn authorized_principal_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::AuthorizedPrincipal]> {
         self.authorized_principal_list.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVpcEndpointAccessOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListVpcEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListVpcEndpointAccessOutput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput).
-    pub fn builder() -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder
+    {
         crate::operation::list_vpc_endpoint_access::builders::ListVpcEndpointAccessOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl ListVpcEndpointAccessOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListVpcEndpointAccessOutputBuilder {
-    pub(crate) authorized_principal_list: std::option::Option<std::vec::Vec<crate::types::AuthorizedPrincipal>>,
+    pub(crate) authorized_principal_list:
+        std::option::Option<std::vec::Vec<crate::types::AuthorizedPrincipal>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl ListVpcEndpointAccessOutputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principals</a> that can currently access the domain.</p>
     pub fn authorized_principal_list(mut self, input: crate::types::AuthorizedPrincipal) -> Self {
         let mut v = self.authorized_principal_list.unwrap_or_default();
-                        v.push(input);
-                        self.authorized_principal_list = Some(v);
-                        self
+        v.push(input);
+        self.authorized_principal_list = Some(v);
+        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM principals</a> that can currently access the domain.</p>
-    pub fn set_authorized_principal_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::AuthorizedPrincipal>>) -> Self {
-        self.authorized_principal_list = input; self
+    pub fn set_authorized_principal_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AuthorizedPrincipal>>,
+    ) -> Self {
+        self.authorized_principal_list = input;
+        self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,24 @@ impl ListVpcEndpointAccessOutputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListVpcEndpointAccessOutput`](crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput).
     pub fn build(self) -> crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput {
         crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput {
-            authorized_principal_list: self.authorized_principal_list
-            ,
-            next_token: self.next_token
-            ,
+            authorized_principal_list: self.authorized_principal_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagQueueInput  {
+pub struct UntagQueueInput {
     /// <p>The URL of the queue.</p>
     #[doc(hidden)]
     pub queue_url: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UntagQueueInput  {
 }
 impl UntagQueueInput {
     /// <p>The URL of the queue.</p>
-    pub fn queue_url(&self) -> std::option::Option<& str> {
+    pub fn queue_url(&self) -> std::option::Option<&str> {
         self.queue_url.as_deref()
     }
     /// <p>The list of tags to be removed from the specified queue.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl UntagQueueInputBuilder {
     }
     /// <p>The URL of the queue.</p>
     pub fn set_queue_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue_url = input; self
+        self.queue_url = input;
+        self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -51,24 +52,28 @@ impl UntagQueueInputBuilder {
     /// <p>The list of tags to be removed from the specified queue.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_keys = Some(v);
+        self
     }
     /// <p>The list of tags to be removed from the specified queue.</p>
-    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_keys = input; self
+    pub fn set_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`UntagQueueInput`](crate::operation::untag_queue::UntagQueueInput).
-    pub fn build(self) -> Result<crate::operation::untag_queue::UntagQueueInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::untag_queue::UntagQueueInput {
-                queue_url: self.queue_url
-                ,
-                tag_keys: self.tag_keys
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::untag_queue::UntagQueueInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::untag_queue::UntagQueueInput {
+            queue_url: self.queue_url,
+            tag_keys: self.tag_keys,
+        })
     }
 }
-

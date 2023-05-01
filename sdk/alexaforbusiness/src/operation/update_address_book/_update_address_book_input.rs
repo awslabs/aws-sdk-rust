@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAddressBookInput  {
+pub struct UpdateAddressBookInput {
     /// <p>The ARN of the room to update.</p>
     #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct UpdateAddressBookInput  {
 }
 impl UpdateAddressBookInput {
     /// <p>The ARN of the room to update.</p>
-    pub fn address_book_arn(&self) -> std::option::Option<& str> {
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
         self.address_book_arn.as_deref()
     }
     /// <p>The updated name of the room.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The updated description of the room.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
 impl UpdateAddressBookInput {
     /// Creates a new builder-style object to manufacture [`UpdateAddressBookInput`](crate::operation::update_address_book::UpdateAddressBookInput).
-    pub fn builder() -> crate::operation::update_address_book::builders::UpdateAddressBookInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_address_book::builders::UpdateAddressBookInputBuilder {
         crate::operation::update_address_book::builders::UpdateAddressBookInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl UpdateAddressBookInputBuilder {
     }
     /// <p>The ARN of the room to update.</p>
     pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address_book_arn = input; self
+        self.address_book_arn = input;
+        self
     }
     /// <p>The updated name of the room.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl UpdateAddressBookInputBuilder {
     }
     /// <p>The updated name of the room.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The updated description of the room.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl UpdateAddressBookInputBuilder {
     }
     /// <p>The updated description of the room.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAddressBookInput`](crate::operation::update_address_book::UpdateAddressBookInput).
-    pub fn build(self) -> Result<crate::operation::update_address_book::UpdateAddressBookInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_address_book::UpdateAddressBookInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_address_book::UpdateAddressBookInput {
-                address_book_arn: self.address_book_arn
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-            }
+                address_book_arn: self.address_book_arn,
+                name: self.name,
+                description: self.description,
+            },
         )
     }
 }
-

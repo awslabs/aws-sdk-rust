@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRobotApplicationInput  {
+pub struct UpdateRobotApplicationInput {
     /// <p>The application information for the robot application.</p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -21,29 +21,31 @@ pub struct UpdateRobotApplicationInput  {
 }
 impl UpdateRobotApplicationInput {
     /// <p>The application information for the robot application.</p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The sources of the robot application.</p>
-    pub fn sources(&self) -> std::option::Option<& [crate::types::SourceConfig]> {
+    pub fn sources(&self) -> std::option::Option<&[crate::types::SourceConfig]> {
         self.sources.as_deref()
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn robot_software_suite(&self) -> std::option::Option<& crate::types::RobotSoftwareSuite> {
+    pub fn robot_software_suite(&self) -> std::option::Option<&crate::types::RobotSoftwareSuite> {
         self.robot_software_suite.as_ref()
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn current_revision_id(&self) -> std::option::Option<& str> {
+    pub fn current_revision_id(&self) -> std::option::Option<&str> {
         self.current_revision_id.as_deref()
     }
     /// <p>The object that contains the Docker image URI for your robot application.</p>
-    pub fn environment(&self) -> std::option::Option<& crate::types::Environment> {
+    pub fn environment(&self) -> std::option::Option<&crate::types::Environment> {
         self.environment.as_ref()
     }
 }
 impl UpdateRobotApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateRobotApplicationInput`](crate::operation::update_robot_application::UpdateRobotApplicationInput).
-    pub fn builder() -> crate::operation::update_robot_application::builders::UpdateRobotApplicationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_robot_application::builders::UpdateRobotApplicationInputBuilder
+    {
         crate::operation::update_robot_application::builders::UpdateRobotApplicationInputBuilder::default()
     }
 }
@@ -66,7 +68,8 @@ impl UpdateRobotApplicationInputBuilder {
     }
     /// <p>The application information for the robot application.</p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input; self
+        self.application = input;
+        self
     }
     /// Appends an item to `sources`.
     ///
@@ -75,13 +78,17 @@ impl UpdateRobotApplicationInputBuilder {
     /// <p>The sources of the robot application.</p>
     pub fn sources(mut self, input: crate::types::SourceConfig) -> Self {
         let mut v = self.sources.unwrap_or_default();
-                        v.push(input);
-                        self.sources = Some(v);
-                        self
+        v.push(input);
+        self.sources = Some(v);
+        self
     }
     /// <p>The sources of the robot application.</p>
-    pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::SourceConfig>>) -> Self {
-        self.sources = input; self
+    pub fn set_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SourceConfig>>,
+    ) -> Self {
+        self.sources = input;
+        self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
     pub fn robot_software_suite(mut self, input: crate::types::RobotSoftwareSuite) -> Self {
@@ -89,8 +96,12 @@ impl UpdateRobotApplicationInputBuilder {
         self
     }
     /// <p>The robot software suite (ROS distribution) used by the robot application.</p>
-    pub fn set_robot_software_suite(mut self, input: std::option::Option<crate::types::RobotSoftwareSuite>) -> Self {
-        self.robot_software_suite = input; self
+    pub fn set_robot_software_suite(
+        mut self,
+        input: std::option::Option<crate::types::RobotSoftwareSuite>,
+    ) -> Self {
+        self.robot_software_suite = input;
+        self
     }
     /// <p>The revision id for the robot application.</p>
     pub fn current_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +109,12 @@ impl UpdateRobotApplicationInputBuilder {
         self
     }
     /// <p>The revision id for the robot application.</p>
-    pub fn set_current_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_revision_id = input; self
+    pub fn set_current_revision_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.current_revision_id = input;
+        self
     }
     /// <p>The object that contains the Docker image URI for your robot application.</p>
     pub fn environment(mut self, input: crate::types::Environment) -> Self {
@@ -107,25 +122,28 @@ impl UpdateRobotApplicationInputBuilder {
         self
     }
     /// <p>The object that contains the Docker image URI for your robot application.</p>
-    pub fn set_environment(mut self, input: std::option::Option<crate::types::Environment>) -> Self {
-        self.environment = input; self
+    pub fn set_environment(
+        mut self,
+        input: std::option::Option<crate::types::Environment>,
+    ) -> Self {
+        self.environment = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRobotApplicationInput`](crate::operation::update_robot_application::UpdateRobotApplicationInput).
-    pub fn build(self) -> Result<crate::operation::update_robot_application::UpdateRobotApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_robot_application::UpdateRobotApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_robot_application::UpdateRobotApplicationInput {
-                application: self.application
-                ,
-                sources: self.sources
-                ,
-                robot_software_suite: self.robot_software_suite
-                ,
-                current_revision_id: self.current_revision_id
-                ,
-                environment: self.environment
-                ,
-            }
+                application: self.application,
+                sources: self.sources,
+                robot_software_suite: self.robot_software_suite,
+                current_revision_id: self.current_revision_id,
+                environment: self.environment,
+            },
         )
     }
 }
-

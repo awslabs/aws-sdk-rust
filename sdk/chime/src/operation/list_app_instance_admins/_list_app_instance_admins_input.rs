@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListAppInstanceAdminsInput  {
+pub struct ListAppInstanceAdminsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListAppInstanceAdminsInput  {
 }
 impl ListAppInstanceAdminsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
     }
     /// <p>The maximum number of administrators that you want to return.</p>
@@ -23,11 +23,11 @@ impl ListAppInstanceAdminsInput {
         self.max_results
     }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListAppInstanceAdminsInput  {
+impl std::fmt::Debug for ListAppInstanceAdminsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListAppInstanceAdminsInput");
         formatter.field("app_instance_arn", &self.app_instance_arn);
@@ -38,7 +38,9 @@ impl  std::fmt::Debug for ListAppInstanceAdminsInput  {
 }
 impl ListAppInstanceAdminsInput {
     /// Creates a new builder-style object to manufacture [`ListAppInstanceAdminsInput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput).
-    pub fn builder() -> crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsInputBuilder
+    {
         crate::operation::list_app_instance_admins::builders::ListAppInstanceAdminsInputBuilder::default()
     }
 }
@@ -59,7 +61,8 @@ impl ListAppInstanceAdminsInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_arn = input; self
+        self.app_instance_arn = input;
+        self
     }
     /// <p>The maximum number of administrators that you want to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,7 +71,8 @@ impl ListAppInstanceAdminsInputBuilder {
     }
     /// <p>The maximum number of administrators that you want to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,19 +81,22 @@ impl ListAppInstanceAdminsInputBuilder {
     }
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAppInstanceAdminsInput`](crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput).
-    pub fn build(self) -> Result<crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_app_instance_admins::ListAppInstanceAdminsInput {
-                app_instance_arn: self.app_instance_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                app_instance_arn: self.app_instance_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
@@ -102,4 +109,3 @@ impl std::fmt::Debug for ListAppInstanceAdminsInputBuilder {
         formatter.finish()
     }
 }
-

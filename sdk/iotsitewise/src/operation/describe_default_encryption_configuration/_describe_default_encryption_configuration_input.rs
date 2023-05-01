@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDefaultEncryptionConfigurationInput  {
-}
+pub struct DescribeDefaultEncryptionConfigurationInput {}
 impl DescribeDefaultEncryptionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeDefaultEncryptionConfigurationInput`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationInput).
-    pub fn builder() -> crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationInputBuilder{
         crate::operation::describe_default_encryption_configuration::builders::DescribeDefaultEncryptionConfigurationInputBuilder::default()
     }
 }
@@ -14,15 +13,13 @@ impl DescribeDefaultEncryptionConfigurationInput {
 /// A builder for [`DescribeDefaultEncryptionConfigurationInput`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeDefaultEncryptionConfigurationInputBuilder {
-}
+pub struct DescribeDefaultEncryptionConfigurationInputBuilder {}
 impl DescribeDefaultEncryptionConfigurationInputBuilder {
     /// Consumes the builder and constructs a [`DescribeDefaultEncryptionConfigurationInput`](crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_default_encryption_configuration::DescribeDefaultEncryptionConfigurationInput {
             }
         )
     }
 }
-

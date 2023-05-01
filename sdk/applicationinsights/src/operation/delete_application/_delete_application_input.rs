@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationInput  {
+pub struct DeleteApplicationInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
 }
 impl DeleteApplicationInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<& str> {
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
 }
 impl DeleteApplicationInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
-    pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationInputBuilder {
+    pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationInputBuilder
+    {
         crate::operation::delete_application::builders::DeleteApplicationInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DeleteApplicationInputBuilder {
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_group_name = input; self
+    pub fn set_resource_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationInput`](crate::operation::delete_application::DeleteApplicationInput).
-    pub fn build(self) -> Result<crate::operation::delete_application::DeleteApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_application::DeleteApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_application::DeleteApplicationInput {
-                resource_group_name: self.resource_group_name
-                ,
-            }
+                resource_group_name: self.resource_group_name,
+            },
         )
     }
 }
-

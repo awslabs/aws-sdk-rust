@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePortalInput  {
+pub struct UpdatePortalInput {
     /// <p>The ID of the portal to update.</p>
     #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
@@ -15,10 +15,10 @@ pub struct UpdatePortalInput  {
     /// <p>The Amazon Web Services administrator's contact email address.</p>
     #[doc(hidden)]
     pub portal_contact_email: std::option::Option<std::string::String>,
-    /// <p>Contains an image that is one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li> 
-    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> 
+    /// <p>Contains an image that is one of the following:</p>
+    /// <ul>
+    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub portal_logo_image: std::option::Option<crate::types::Image>,
@@ -37,43 +37,43 @@ pub struct UpdatePortalInput  {
 }
 impl UpdatePortalInput {
     /// <p>The ID of the portal to update.</p>
-    pub fn portal_id(&self) -> std::option::Option<& str> {
+    pub fn portal_id(&self) -> std::option::Option<&str> {
         self.portal_id.as_deref()
     }
     /// <p>A new friendly name for the portal.</p>
-    pub fn portal_name(&self) -> std::option::Option<& str> {
+    pub fn portal_name(&self) -> std::option::Option<&str> {
         self.portal_name.as_deref()
     }
     /// <p>A new description for the portal.</p>
-    pub fn portal_description(&self) -> std::option::Option<& str> {
+    pub fn portal_description(&self) -> std::option::Option<&str> {
         self.portal_description.as_deref()
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn portal_contact_email(&self) -> std::option::Option<& str> {
+    pub fn portal_contact_email(&self) -> std::option::Option<&str> {
         self.portal_contact_email.as_deref()
     }
-    /// <p>Contains an image that is one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li> 
-    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> 
+    /// <p>Contains an image that is one of the following:</p>
+    /// <ul>
+    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
-    pub fn portal_logo_image(&self) -> std::option::Option<& crate::types::Image> {
+    pub fn portal_logo_image(&self) -> std::option::Option<&crate::types::Image> {
         self.portal_logo_image.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The email address that sends alarm notifications.</p>
-    pub fn notification_sender_email(&self) -> std::option::Option<& str> {
+    pub fn notification_sender_email(&self) -> std::option::Option<&str> {
         self.notification_sender_email.as_deref()
     }
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
-    pub fn alarms(&self) -> std::option::Option<& crate::types::Alarms> {
+    pub fn alarms(&self) -> std::option::Option<&crate::types::Alarms> {
         self.alarms.as_ref()
     }
 }
@@ -106,7 +106,8 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>The ID of the portal to update.</p>
     pub fn set_portal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portal_id = input; self
+        self.portal_id = input;
+        self
     }
     /// <p>A new friendly name for the portal.</p>
     pub fn portal_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +116,8 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>A new friendly name for the portal.</p>
     pub fn set_portal_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portal_name = input; self
+        self.portal_name = input;
+        self
     }
     /// <p>A new description for the portal.</p>
     pub fn portal_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +125,12 @@ impl UpdatePortalInputBuilder {
         self
     }
     /// <p>A new description for the portal.</p>
-    pub fn set_portal_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portal_description = input; self
+    pub fn set_portal_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.portal_description = input;
+        self
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
     pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,25 +138,33 @@ impl UpdatePortalInputBuilder {
         self
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn set_portal_contact_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portal_contact_email = input; self
+    pub fn set_portal_contact_email(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.portal_contact_email = input;
+        self
     }
-    /// <p>Contains an image that is one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li> 
-    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> 
+    /// <p>Contains an image that is one of the following:</p>
+    /// <ul>
+    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
     pub fn portal_logo_image(mut self, input: crate::types::Image) -> Self {
         self.portal_logo_image = Some(input);
         self
     }
-    /// <p>Contains an image that is one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li> 
-    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> 
+    /// <p>Contains an image that is one of the following:</p>
+    /// <ul>
+    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
-    pub fn set_portal_logo_image(mut self, input: std::option::Option<crate::types::Image>) -> Self {
-        self.portal_logo_image = input; self
+    pub fn set_portal_logo_image(
+        mut self,
+        input: std::option::Option<crate::types::Image>,
+    ) -> Self {
+        self.portal_logo_image = input;
+        self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +173,8 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +183,8 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The email address that sends alarm notifications.</p>
     pub fn notification_sender_email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,8 +192,12 @@ impl UpdatePortalInputBuilder {
         self
     }
     /// <p>The email address that sends alarm notifications.</p>
-    pub fn set_notification_sender_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notification_sender_email = input; self
+    pub fn set_notification_sender_email(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.notification_sender_email = input;
+        self
     }
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     pub fn alarms(mut self, input: crate::types::Alarms) -> Self {
@@ -186,32 +206,26 @@ impl UpdatePortalInputBuilder {
     }
     /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     pub fn set_alarms(mut self, input: std::option::Option<crate::types::Alarms>) -> Self {
-        self.alarms = input; self
+        self.alarms = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePortalInput`](crate::operation::update_portal::UpdatePortalInput).
-    pub fn build(self) -> Result<crate::operation::update_portal::UpdatePortalInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_portal::UpdatePortalInput {
-                portal_id: self.portal_id
-                ,
-                portal_name: self.portal_name
-                ,
-                portal_description: self.portal_description
-                ,
-                portal_contact_email: self.portal_contact_email
-                ,
-                portal_logo_image: self.portal_logo_image
-                ,
-                role_arn: self.role_arn
-                ,
-                client_token: self.client_token
-                ,
-                notification_sender_email: self.notification_sender_email
-                ,
-                alarms: self.alarms
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_portal::UpdatePortalInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_portal::UpdatePortalInput {
+            portal_id: self.portal_id,
+            portal_name: self.portal_name,
+            portal_description: self.portal_description,
+            portal_contact_email: self.portal_contact_email,
+            portal_logo_image: self.portal_logo_image,
+            role_arn: self.role_arn,
+            client_token: self.client_token,
+            notification_sender_email: self.notification_sender_email,
+            alarms: self.alarms,
+        })
     }
 }
-

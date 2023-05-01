@@ -4,66 +4,82 @@ pub use crate::operation::describe_record::_describe_record_output::DescribeReco
 pub use crate::operation::describe_record::_describe_record_input::DescribeRecordInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeRecord`.
-/// 
-/// <p>Gets information about the specified request operation.</p> 
-/// <p>Use this operation after calling a request operation (for example, <code>ProvisionProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>UpdateProvisionedProduct</code>). </p> <note> 
-/// <p>If a provisioned product was transferred to a new owner using <code>UpdateProvisionedProductProperties</code>, the new owner will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to use <code>ListRecordHistory</code> to see the product's history from when he was the owner.</p> 
+///
+/// <p>Gets information about the specified request operation.</p>
+/// <p>Use this operation after calling a request operation (for example, <code>ProvisionProduct</code>, <code>TerminateProvisionedProduct</code>, or <code>UpdateProvisionedProduct</code>). </p> <note>
+/// <p>If a provisioned product was transferred to a new owner using <code>UpdateProvisionedProductProperties</code>, the new owner will be able to describe all past records for that product. The previous owner will no longer be able to describe the records, but will be able to use <code>ListRecordHistory</code> to see the product's history from when he was the owner.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRecordFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_record::builders::DescribeRecordInputBuilder,
+    inner: crate::operation::describe_record::builders::DescribeRecordInputBuilder,
 }
-impl DescribeRecordFluentBuilder  {
+impl DescribeRecordFluentBuilder {
     /// Creates a new `DescribeRecord`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_record::DescribeRecord, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_record::DescribeRecordError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_record::DescribeRecordOutput, aws_smithy_http::result::SdkError<crate::operation::describe_record::DescribeRecordError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_record::DescribeRecord,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::describe_record::DescribeRecordError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_record::DescribeRecordOutput,
+        aws_smithy_http::result::SdkError<crate::operation::describe_record::DescribeRecordError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -100,4 +116,3 @@ impl DescribeRecordFluentBuilder  {
         self
     }
 }
-

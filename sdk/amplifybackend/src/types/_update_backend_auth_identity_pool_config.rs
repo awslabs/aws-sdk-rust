@@ -3,7 +3,7 @@
 /// <p>Describes the authorization configuration for the Amazon Cognito identity pool, provisioned as a part of your auth resource in the Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthIdentityPoolConfig  {
+pub struct UpdateBackendAuthIdentityPoolConfig {
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
     #[doc(hidden)]
     pub unauthenticated_login: bool,
@@ -35,15 +35,13 @@ impl UpdateBackendAuthIdentityPoolConfigBuilder {
     }
     /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
     pub fn set_unauthenticated_login(mut self, input: std::option::Option<bool>) -> Self {
-        self.unauthenticated_login = input; self
+        self.unauthenticated_login = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateBackendAuthIdentityPoolConfig`](crate::types::UpdateBackendAuthIdentityPoolConfig).
     pub fn build(self) -> crate::types::UpdateBackendAuthIdentityPoolConfig {
         crate::types::UpdateBackendAuthIdentityPoolConfig {
-            unauthenticated_login: self.unauthenticated_login
-                .unwrap_or_default()
-            ,
+            unauthenticated_login: self.unauthenticated_login.unwrap_or_default(),
         }
     }
 }
-

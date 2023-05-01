@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStreamingImageInput  {
+pub struct GetStreamingImageInput {
     /// <p>The streaming image ID.</p>
     #[doc(hidden)]
     pub streaming_image_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct GetStreamingImageInput  {
 }
 impl GetStreamingImageInput {
     /// <p>The streaming image ID.</p>
-    pub fn streaming_image_id(&self) -> std::option::Option<& str> {
+    pub fn streaming_image_id(&self) -> std::option::Option<&str> {
         self.streaming_image_id.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
 }
 impl GetStreamingImageInput {
     /// Creates a new builder-style object to manufacture [`GetStreamingImageInput`](crate::operation::get_streaming_image::GetStreamingImageInput).
-    pub fn builder() -> crate::operation::get_streaming_image::builders::GetStreamingImageInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_streaming_image::builders::GetStreamingImageInputBuilder {
         crate::operation::get_streaming_image::builders::GetStreamingImageInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl GetStreamingImageInputBuilder {
         self
     }
     /// <p>The streaming image ID.</p>
-    pub fn set_streaming_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.streaming_image_id = input; self
+    pub fn set_streaming_image_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.streaming_image_id = input;
+        self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +56,21 @@ impl GetStreamingImageInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetStreamingImageInput`](crate::operation::get_streaming_image::GetStreamingImageInput).
-    pub fn build(self) -> Result<crate::operation::get_streaming_image::GetStreamingImageInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_streaming_image::GetStreamingImageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_streaming_image::GetStreamingImageInput {
-                streaming_image_id: self.streaming_image_id
-                ,
-                studio_id: self.studio_id
-                ,
-            }
+                streaming_image_id: self.streaming_image_id,
+                studio_id: self.studio_id,
+            },
         )
     }
 }
-

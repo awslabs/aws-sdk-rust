@@ -3,7 +3,7 @@
 /// <p>Represents the settings used to enable server-side encryption.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SseSpecification  {
+pub struct SseSpecification {
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -35,14 +35,13 @@ impl SseSpecificationBuilder {
     }
     /// <p>Indicates whether server-side encryption is enabled (true) or disabled (false) on the cluster.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`SseSpecification`](crate::types::SseSpecification).
     pub fn build(self) -> crate::types::SseSpecification {
         crate::types::SseSpecification {
-            enabled: self.enabled
-            ,
+            enabled: self.enabled,
         }
     }
 }
-

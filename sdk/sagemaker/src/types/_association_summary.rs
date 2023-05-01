@@ -3,7 +3,7 @@
 /// <p>Lists a summary of the properties of an association. An association is an entity that links other lineage or experiment entities. An example would be an association between a training job and a model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociationSummary  {
+pub struct AssociationSummary {
     /// <p>The ARN of the source.</p>
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct AssociationSummary  {
 }
 impl AssociationSummary {
     /// <p>The ARN of the source.</p>
-    pub fn source_arn(&self) -> std::option::Option<& str> {
+    pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(&self) -> std::option::Option<& str> {
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
     /// <p>The source type.</p>
-    pub fn source_type(&self) -> std::option::Option<& str> {
+    pub fn source_type(&self) -> std::option::Option<&str> {
         self.source_type.as_deref()
     }
     /// <p>The destination type.</p>
-    pub fn destination_type(&self) -> std::option::Option<& str> {
+    pub fn destination_type(&self) -> std::option::Option<&str> {
         self.destination_type.as_deref()
     }
     /// <p>The type of the association.</p>
-    pub fn association_type(&self) -> std::option::Option<& crate::types::AssociationEdgeType> {
+    pub fn association_type(&self) -> std::option::Option<&crate::types::AssociationEdgeType> {
         self.association_type.as_ref()
     }
     /// <p>The name of the source.</p>
-    pub fn source_name(&self) -> std::option::Option<& str> {
+    pub fn source_name(&self) -> std::option::Option<&str> {
         self.source_name.as_deref()
     }
     /// <p>The name of the destination.</p>
-    pub fn destination_name(&self) -> std::option::Option<& str> {
+    pub fn destination_name(&self) -> std::option::Option<&str> {
         self.destination_name.as_deref()
     }
     /// <p>When the association was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
-    pub fn created_by(&self) -> std::option::Option<& crate::types::UserContext> {
+    pub fn created_by(&self) -> std::option::Option<&crate::types::UserContext> {
         self.created_by.as_ref()
     }
 }
@@ -99,7 +99,8 @@ impl AssociationSummaryBuilder {
     }
     /// <p>The ARN of the source.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input; self
+        self.source_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl AssociationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input; self
+        self.destination_arn = input;
+        self
     }
     /// <p>The source type.</p>
     pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +119,8 @@ impl AssociationSummaryBuilder {
     }
     /// <p>The source type.</p>
     pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_type = input; self
+        self.source_type = input;
+        self
     }
     /// <p>The destination type.</p>
     pub fn destination_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +129,8 @@ impl AssociationSummaryBuilder {
     }
     /// <p>The destination type.</p>
     pub fn set_destination_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_type = input; self
+        self.destination_type = input;
+        self
     }
     /// <p>The type of the association.</p>
     pub fn association_type(mut self, input: crate::types::AssociationEdgeType) -> Self {
@@ -134,8 +138,12 @@ impl AssociationSummaryBuilder {
         self
     }
     /// <p>The type of the association.</p>
-    pub fn set_association_type(mut self, input: std::option::Option<crate::types::AssociationEdgeType>) -> Self {
-        self.association_type = input; self
+    pub fn set_association_type(
+        mut self,
+        input: std::option::Option<crate::types::AssociationEdgeType>,
+    ) -> Self {
+        self.association_type = input;
+        self
     }
     /// <p>The name of the source.</p>
     pub fn source_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +152,8 @@ impl AssociationSummaryBuilder {
     }
     /// <p>The name of the source.</p>
     pub fn set_source_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_name = input; self
+        self.source_name = input;
+        self
     }
     /// <p>The name of the destination.</p>
     pub fn destination_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,7 +162,8 @@ impl AssociationSummaryBuilder {
     }
     /// <p>The name of the destination.</p>
     pub fn set_destination_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_name = input; self
+        self.destination_name = input;
+        self
     }
     /// <p>When the association was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -161,8 +171,12 @@ impl AssociationSummaryBuilder {
         self
     }
     /// <p>When the association was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn created_by(mut self, input: crate::types::UserContext) -> Self {
@@ -171,30 +185,21 @@ impl AssociationSummaryBuilder {
     }
     /// <p>Information about the user who created or modified an experiment, trial, trial component, lineage group, project, or model card.</p>
     pub fn set_created_by(mut self, input: std::option::Option<crate::types::UserContext>) -> Self {
-        self.created_by = input; self
+        self.created_by = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociationSummary`](crate::types::AssociationSummary).
     pub fn build(self) -> crate::types::AssociationSummary {
         crate::types::AssociationSummary {
-            source_arn: self.source_arn
-            ,
-            destination_arn: self.destination_arn
-            ,
-            source_type: self.source_type
-            ,
-            destination_type: self.destination_type
-            ,
-            association_type: self.association_type
-            ,
-            source_name: self.source_name
-            ,
-            destination_name: self.destination_name
-            ,
-            creation_time: self.creation_time
-            ,
-            created_by: self.created_by
-            ,
+            source_arn: self.source_arn,
+            destination_arn: self.destination_arn,
+            source_type: self.source_type,
+            destination_type: self.destination_type,
+            association_type: self.association_type,
+            source_name: self.source_name,
+            destination_name: self.destination_name,
+            creation_time: self.creation_time,
+            created_by: self.created_by,
         }
     }
 }
-

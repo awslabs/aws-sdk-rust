@@ -3,14 +3,14 @@
 /// <p>A workload return object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Workload  {
+pub struct Workload {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub workload_id: std::option::Option<std::string::String>,
     /// <p>The ARN for the workload.</p>
     #[doc(hidden)]
     pub workload_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the workload.</p> 
+    /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     #[doc(hidden)]
     pub workload_name: std::option::Option<std::string::String>,
@@ -41,40 +41,40 @@ pub struct Workload  {
     /// <p>The date and time recorded.</p>
     #[doc(hidden)]
     pub review_restriction_date: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p> 
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
     #[doc(hidden)]
     pub is_review_owner_update_acknowledged: bool,
-    /// <p>The industry type for the workload.</p> 
-    /// <p>If specified, must be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Agriculture</code> </p> </li> 
-    /// <li> <p> <code>Automobile</code> </p> </li> 
-    /// <li> <p> <code>Defense</code> </p> </li> 
-    /// <li> <p> <code>Design and Engineering</code> </p> </li> 
-    /// <li> <p> <code>Digital Advertising</code> </p> </li> 
-    /// <li> <p> <code>Education</code> </p> </li> 
-    /// <li> <p> <code>Environmental Protection</code> </p> </li> 
-    /// <li> <p> <code>Financial Services</code> </p> </li> 
-    /// <li> <p> <code>Gaming</code> </p> </li> 
-    /// <li> <p> <code>General Public Services</code> </p> </li> 
-    /// <li> <p> <code>Healthcare</code> </p> </li> 
-    /// <li> <p> <code>Hospitality</code> </p> </li> 
-    /// <li> <p> <code>InfoTech</code> </p> </li> 
-    /// <li> <p> <code>Justice and Public Safety</code> </p> </li> 
-    /// <li> <p> <code>Life Sciences</code> </p> </li> 
-    /// <li> <p> <code>Manufacturing</code> </p> </li> 
-    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li> 
-    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li> 
-    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li> 
-    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li> 
-    /// <li> <p> <code>Professional Services</code> </p> </li> 
-    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li> 
-    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li> 
-    /// <li> <p> <code>Social Protection</code> </p> </li> 
-    /// <li> <p> <code>Telecommunications</code> </p> </li> 
-    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li> 
-    /// <li> <p> <code>Other</code> </p> </li> 
+    /// <p>The industry type for the workload.</p>
+    /// <p>If specified, must be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub industry_type: std::option::Option<std::string::String>,
@@ -104,7 +104,8 @@ pub struct Workload  {
     pub share_invitation_id: std::option::Option<std::string::String>,
     /// <p>The tags associated with the workload.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Discovery configuration associated to the workload.</p>
     #[doc(hidden)]
     pub discovery_config: std::option::Option<crate::types::WorkloadDiscoveryConfig>,
@@ -114,135 +115,142 @@ pub struct Workload  {
 }
 impl Workload {
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
-    pub fn workload_id(&self) -> std::option::Option<& str> {
+    pub fn workload_id(&self) -> std::option::Option<&str> {
         self.workload_id.as_deref()
     }
     /// <p>The ARN for the workload.</p>
-    pub fn workload_arn(&self) -> std::option::Option<& str> {
+    pub fn workload_arn(&self) -> std::option::Option<&str> {
         self.workload_arn.as_deref()
     }
-    /// <p>The name of the workload.</p> 
+    /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
-    pub fn workload_name(&self) -> std::option::Option<& str> {
+    pub fn workload_name(&self) -> std::option::Option<&str> {
         self.workload_name.as_deref()
     }
     /// <p>The description for the workload.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The environment for the workload.</p>
-    pub fn environment(&self) -> std::option::Option<& crate::types::WorkloadEnvironment> {
+    pub fn environment(&self) -> std::option::Option<&crate::types::WorkloadEnvironment> {
         self.environment.as_ref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn aws_regions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn aws_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.aws_regions.as_deref()
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn non_aws_regions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn non_aws_regions(&self) -> std::option::Option<&[std::string::String]> {
         self.non_aws_regions.as_deref()
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn architectural_design(&self) -> std::option::Option<& str> {
+    pub fn architectural_design(&self) -> std::option::Option<&str> {
         self.architectural_design.as_deref()
     }
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
-    pub fn review_owner(&self) -> std::option::Option<& str> {
+    pub fn review_owner(&self) -> std::option::Option<&str> {
         self.review_owner.as_deref()
     }
     /// <p>The date and time recorded.</p>
-    pub fn review_restriction_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn review_restriction_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.review_restriction_date.as_ref()
     }
-    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p> 
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
     pub fn is_review_owner_update_acknowledged(&self) -> bool {
         self.is_review_owner_update_acknowledged
     }
-    /// <p>The industry type for the workload.</p> 
-    /// <p>If specified, must be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Agriculture</code> </p> </li> 
-    /// <li> <p> <code>Automobile</code> </p> </li> 
-    /// <li> <p> <code>Defense</code> </p> </li> 
-    /// <li> <p> <code>Design and Engineering</code> </p> </li> 
-    /// <li> <p> <code>Digital Advertising</code> </p> </li> 
-    /// <li> <p> <code>Education</code> </p> </li> 
-    /// <li> <p> <code>Environmental Protection</code> </p> </li> 
-    /// <li> <p> <code>Financial Services</code> </p> </li> 
-    /// <li> <p> <code>Gaming</code> </p> </li> 
-    /// <li> <p> <code>General Public Services</code> </p> </li> 
-    /// <li> <p> <code>Healthcare</code> </p> </li> 
-    /// <li> <p> <code>Hospitality</code> </p> </li> 
-    /// <li> <p> <code>InfoTech</code> </p> </li> 
-    /// <li> <p> <code>Justice and Public Safety</code> </p> </li> 
-    /// <li> <p> <code>Life Sciences</code> </p> </li> 
-    /// <li> <p> <code>Manufacturing</code> </p> </li> 
-    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li> 
-    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li> 
-    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li> 
-    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li> 
-    /// <li> <p> <code>Professional Services</code> </p> </li> 
-    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li> 
-    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li> 
-    /// <li> <p> <code>Social Protection</code> </p> </li> 
-    /// <li> <p> <code>Telecommunications</code> </p> </li> 
-    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li> 
-    /// <li> <p> <code>Other</code> </p> </li> 
+    /// <p>The industry type for the workload.</p>
+    /// <p>If specified, must be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
-    pub fn industry_type(&self) -> std::option::Option<& str> {
+    pub fn industry_type(&self) -> std::option::Option<&str> {
         self.industry_type.as_deref()
     }
     /// <p>The industry for the workload.</p>
-    pub fn industry(&self) -> std::option::Option<& str> {
+    pub fn industry(&self) -> std::option::Option<&str> {
         self.industry.as_deref()
     }
     /// <p>The notes associated with the workload.</p>
-    pub fn notes(&self) -> std::option::Option<& str> {
+    pub fn notes(&self) -> std::option::Option<&str> {
         self.notes.as_deref()
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn improvement_status(&self) -> std::option::Option<& crate::types::WorkloadImprovementStatus> {
+    pub fn improvement_status(
+        &self,
+    ) -> std::option::Option<&crate::types::WorkloadImprovementStatus> {
         self.improvement_status.as_ref()
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn risk_counts(&self) -> std::option::Option<& std::collections::HashMap<crate::types::Risk, i32>> {
+    pub fn risk_counts(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::types::Risk, i32>> {
         self.risk_counts.as_ref()
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn pillar_priorities(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn pillar_priorities(&self) -> std::option::Option<&[std::string::String]> {
         self.pillar_priorities.as_deref()
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn lenses(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn lenses(&self) -> std::option::Option<&[std::string::String]> {
         self.lenses.as_deref()
     }
     /// <p>An Amazon Web Services account ID.</p>
-    pub fn owner(&self) -> std::option::Option<& str> {
+    pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn share_invitation_id(&self) -> std::option::Option<& str> {
+    pub fn share_invitation_id(&self) -> std::option::Option<&str> {
         self.share_invitation_id.as_deref()
     }
     /// <p>The tags associated with the workload.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>Discovery configuration associated to the workload.</p>
-    pub fn discovery_config(&self) -> std::option::Option<& crate::types::WorkloadDiscoveryConfig> {
+    pub fn discovery_config(&self) -> std::option::Option<&crate::types::WorkloadDiscoveryConfig> {
         self.discovery_config.as_ref()
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn applications(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn applications(&self) -> std::option::Option<&[std::string::String]> {
         self.applications.as_deref()
     }
 }
@@ -279,7 +287,8 @@ pub struct WorkloadBuilder {
     pub(crate) lenses: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) owner: std::option::Option<std::string::String>,
     pub(crate) share_invitation_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) discovery_config: std::option::Option<crate::types::WorkloadDiscoveryConfig>,
     pub(crate) applications: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -291,7 +300,8 @@ impl WorkloadBuilder {
     }
     /// <p>The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.</p>
     pub fn set_workload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_id = input; self
+        self.workload_id = input;
+        self
     }
     /// <p>The ARN for the workload.</p>
     pub fn workload_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -300,18 +310,20 @@ impl WorkloadBuilder {
     }
     /// <p>The ARN for the workload.</p>
     pub fn set_workload_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_arn = input; self
+        self.workload_arn = input;
+        self
     }
-    /// <p>The name of the workload.</p> 
+    /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn workload_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.workload_name = Some(input.into());
         self
     }
-    /// <p>The name of the workload.</p> 
+    /// <p>The name of the workload.</p>
     /// <p>The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.</p>
     pub fn set_workload_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workload_name = input; self
+        self.workload_name = input;
+        self
     }
     /// <p>The description for the workload.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -320,7 +332,8 @@ impl WorkloadBuilder {
     }
     /// <p>The description for the workload.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The environment for the workload.</p>
     pub fn environment(mut self, input: crate::types::WorkloadEnvironment) -> Self {
@@ -328,8 +341,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The environment for the workload.</p>
-    pub fn set_environment(mut self, input: std::option::Option<crate::types::WorkloadEnvironment>) -> Self {
-        self.environment = input; self
+    pub fn set_environment(
+        mut self,
+        input: std::option::Option<crate::types::WorkloadEnvironment>,
+    ) -> Self {
+        self.environment = input;
+        self
     }
     /// <p>The date and time recorded.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -337,8 +354,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// Appends an item to `account_ids`.
     ///
@@ -347,13 +368,17 @@ impl WorkloadBuilder {
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.account_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
     }
     /// <p>The list of Amazon Web Services account IDs associated with the workload.</p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.account_ids = input; self
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
     }
     /// Appends an item to `aws_regions`.
     ///
@@ -362,13 +387,17 @@ impl WorkloadBuilder {
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
     pub fn aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.aws_regions.unwrap_or_default();
-                        v.push(input.into());
-                        self.aws_regions = Some(v);
-                        self
+        v.push(input.into());
+        self.aws_regions = Some(v);
+        self
     }
     /// <p>The list of Amazon Web Services Regions associated with the workload, for example, <code>us-east-2</code>, or <code>ca-central-1</code>.</p>
-    pub fn set_aws_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.aws_regions = input; self
+    pub fn set_aws_regions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.aws_regions = input;
+        self
     }
     /// Appends an item to `non_aws_regions`.
     ///
@@ -377,13 +406,17 @@ impl WorkloadBuilder {
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
     pub fn non_aws_regions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.non_aws_regions.unwrap_or_default();
-                        v.push(input.into());
-                        self.non_aws_regions = Some(v);
-                        self
+        v.push(input.into());
+        self.non_aws_regions = Some(v);
+        self
     }
     /// <p> The list of non-Amazon Web Services Regions associated with the workload.</p>
-    pub fn set_non_aws_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.non_aws_regions = input; self
+    pub fn set_non_aws_regions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.non_aws_regions = input;
+        self
     }
     /// <p>The URL of the architectural design for the workload.</p>
     pub fn architectural_design(mut self, input: impl Into<std::string::String>) -> Self {
@@ -391,8 +424,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The URL of the architectural design for the workload.</p>
-    pub fn set_architectural_design(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.architectural_design = input; self
+    pub fn set_architectural_design(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.architectural_design = input;
+        self
     }
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     pub fn review_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -401,7 +438,8 @@ impl WorkloadBuilder {
     }
     /// <p>The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.</p>
     pub fn set_review_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.review_owner = input; self
+        self.review_owner = input;
+        self
     }
     /// <p>The date and time recorded.</p>
     pub fn review_restriction_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -409,88 +447,97 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The date and time recorded.</p>
-    pub fn set_review_restriction_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.review_restriction_date = input; self
+    pub fn set_review_restriction_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.review_restriction_date = input;
+        self
     }
-    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p> 
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
     pub fn is_review_owner_update_acknowledged(mut self, input: bool) -> Self {
         self.is_review_owner_update_acknowledged = Some(input);
         self
     }
-    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p> 
+    /// <p>Flag indicating whether the workload owner has acknowledged that the <i>Review owner</i> field is required.</p>
     /// <p>If a <b>Review owner</b> is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.</p>
-    pub fn set_is_review_owner_update_acknowledged(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_review_owner_update_acknowledged = input; self
+    pub fn set_is_review_owner_update_acknowledged(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.is_review_owner_update_acknowledged = input;
+        self
     }
-    /// <p>The industry type for the workload.</p> 
-    /// <p>If specified, must be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Agriculture</code> </p> </li> 
-    /// <li> <p> <code>Automobile</code> </p> </li> 
-    /// <li> <p> <code>Defense</code> </p> </li> 
-    /// <li> <p> <code>Design and Engineering</code> </p> </li> 
-    /// <li> <p> <code>Digital Advertising</code> </p> </li> 
-    /// <li> <p> <code>Education</code> </p> </li> 
-    /// <li> <p> <code>Environmental Protection</code> </p> </li> 
-    /// <li> <p> <code>Financial Services</code> </p> </li> 
-    /// <li> <p> <code>Gaming</code> </p> </li> 
-    /// <li> <p> <code>General Public Services</code> </p> </li> 
-    /// <li> <p> <code>Healthcare</code> </p> </li> 
-    /// <li> <p> <code>Hospitality</code> </p> </li> 
-    /// <li> <p> <code>InfoTech</code> </p> </li> 
-    /// <li> <p> <code>Justice and Public Safety</code> </p> </li> 
-    /// <li> <p> <code>Life Sciences</code> </p> </li> 
-    /// <li> <p> <code>Manufacturing</code> </p> </li> 
-    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li> 
-    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li> 
-    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li> 
-    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li> 
-    /// <li> <p> <code>Professional Services</code> </p> </li> 
-    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li> 
-    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li> 
-    /// <li> <p> <code>Social Protection</code> </p> </li> 
-    /// <li> <p> <code>Telecommunications</code> </p> </li> 
-    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li> 
-    /// <li> <p> <code>Other</code> </p> </li> 
+    /// <p>The industry type for the workload.</p>
+    /// <p>If specified, must be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub fn industry_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.industry_type = Some(input.into());
         self
     }
-    /// <p>The industry type for the workload.</p> 
-    /// <p>If specified, must be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Agriculture</code> </p> </li> 
-    /// <li> <p> <code>Automobile</code> </p> </li> 
-    /// <li> <p> <code>Defense</code> </p> </li> 
-    /// <li> <p> <code>Design and Engineering</code> </p> </li> 
-    /// <li> <p> <code>Digital Advertising</code> </p> </li> 
-    /// <li> <p> <code>Education</code> </p> </li> 
-    /// <li> <p> <code>Environmental Protection</code> </p> </li> 
-    /// <li> <p> <code>Financial Services</code> </p> </li> 
-    /// <li> <p> <code>Gaming</code> </p> </li> 
-    /// <li> <p> <code>General Public Services</code> </p> </li> 
-    /// <li> <p> <code>Healthcare</code> </p> </li> 
-    /// <li> <p> <code>Hospitality</code> </p> </li> 
-    /// <li> <p> <code>InfoTech</code> </p> </li> 
-    /// <li> <p> <code>Justice and Public Safety</code> </p> </li> 
-    /// <li> <p> <code>Life Sciences</code> </p> </li> 
-    /// <li> <p> <code>Manufacturing</code> </p> </li> 
-    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li> 
-    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li> 
-    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li> 
-    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li> 
-    /// <li> <p> <code>Professional Services</code> </p> </li> 
-    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li> 
-    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li> 
-    /// <li> <p> <code>Social Protection</code> </p> </li> 
-    /// <li> <p> <code>Telecommunications</code> </p> </li> 
-    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li> 
-    /// <li> <p> <code>Other</code> </p> </li> 
+    /// <p>The industry type for the workload.</p>
+    /// <p>If specified, must be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>Agriculture</code> </p> </li>
+    /// <li> <p> <code>Automobile</code> </p> </li>
+    /// <li> <p> <code>Defense</code> </p> </li>
+    /// <li> <p> <code>Design and Engineering</code> </p> </li>
+    /// <li> <p> <code>Digital Advertising</code> </p> </li>
+    /// <li> <p> <code>Education</code> </p> </li>
+    /// <li> <p> <code>Environmental Protection</code> </p> </li>
+    /// <li> <p> <code>Financial Services</code> </p> </li>
+    /// <li> <p> <code>Gaming</code> </p> </li>
+    /// <li> <p> <code>General Public Services</code> </p> </li>
+    /// <li> <p> <code>Healthcare</code> </p> </li>
+    /// <li> <p> <code>Hospitality</code> </p> </li>
+    /// <li> <p> <code>InfoTech</code> </p> </li>
+    /// <li> <p> <code>Justice and Public Safety</code> </p> </li>
+    /// <li> <p> <code>Life Sciences</code> </p> </li>
+    /// <li> <p> <code>Manufacturing</code> </p> </li>
+    /// <li> <p> <code>Media &amp; Entertainment</code> </p> </li>
+    /// <li> <p> <code>Mining &amp; Resources</code> </p> </li>
+    /// <li> <p> <code>Oil &amp; Gas</code> </p> </li>
+    /// <li> <p> <code>Power &amp; Utilities</code> </p> </li>
+    /// <li> <p> <code>Professional Services</code> </p> </li>
+    /// <li> <p> <code>Real Estate &amp; Construction</code> </p> </li>
+    /// <li> <p> <code>Retail &amp; Wholesale</code> </p> </li>
+    /// <li> <p> <code>Social Protection</code> </p> </li>
+    /// <li> <p> <code>Telecommunications</code> </p> </li>
+    /// <li> <p> <code>Travel, Transportation &amp; Logistics</code> </p> </li>
+    /// <li> <p> <code>Other</code> </p> </li>
     /// </ul>
     pub fn set_industry_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.industry_type = input; self
+        self.industry_type = input;
+        self
     }
     /// <p>The industry for the workload.</p>
     pub fn industry(mut self, input: impl Into<std::string::String>) -> Self {
@@ -499,7 +546,8 @@ impl WorkloadBuilder {
     }
     /// <p>The industry for the workload.</p>
     pub fn set_industry(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.industry = input; self
+        self.industry = input;
+        self
     }
     /// <p>The notes associated with the workload.</p>
     pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
@@ -508,7 +556,8 @@ impl WorkloadBuilder {
     }
     /// <p>The notes associated with the workload.</p>
     pub fn set_notes(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notes = input; self
+        self.notes = input;
+        self
     }
     /// <p>The improvement status for a workload.</p>
     pub fn improvement_status(mut self, input: crate::types::WorkloadImprovementStatus) -> Self {
@@ -516,8 +565,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The improvement status for a workload.</p>
-    pub fn set_improvement_status(mut self, input: std::option::Option<crate::types::WorkloadImprovementStatus>) -> Self {
-        self.improvement_status = input; self
+    pub fn set_improvement_status(
+        mut self,
+        input: std::option::Option<crate::types::WorkloadImprovementStatus>,
+    ) -> Self {
+        self.improvement_status = input;
+        self
     }
     /// Adds a key-value pair to `risk_counts`.
     ///
@@ -526,13 +579,17 @@ impl WorkloadBuilder {
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
     pub fn risk_counts(mut self, k: crate::types::Risk, v: i32) -> Self {
         let mut hash_map = self.risk_counts.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.risk_counts = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.risk_counts = Some(hash_map);
+        self
     }
     /// <p>A map from risk names to the count of how many questions have that rating.</p>
-    pub fn set_risk_counts(mut self, input: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>) -> Self {
-        self.risk_counts = input; self
+    pub fn set_risk_counts(
+        mut self,
+        input: std::option::Option<std::collections::HashMap<crate::types::Risk, i32>>,
+    ) -> Self {
+        self.risk_counts = input;
+        self
     }
     /// Appends an item to `pillar_priorities`.
     ///
@@ -541,13 +598,17 @@ impl WorkloadBuilder {
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
     pub fn pillar_priorities(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.pillar_priorities.unwrap_or_default();
-                        v.push(input.into());
-                        self.pillar_priorities = Some(v);
-                        self
+        v.push(input.into());
+        self.pillar_priorities = Some(v);
+        self
     }
     /// <p>The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its <code>PillarReviewSummary$PillarId</code>.</p>
-    pub fn set_pillar_priorities(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.pillar_priorities = input; self
+    pub fn set_pillar_priorities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.pillar_priorities = input;
+        self
     }
     /// Appends an item to `lenses`.
     ///
@@ -556,13 +617,17 @@ impl WorkloadBuilder {
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
     pub fn lenses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.lenses.unwrap_or_default();
-                        v.push(input.into());
-                        self.lenses = Some(v);
-                        self
+        v.push(input.into());
+        self.lenses = Some(v);
+        self
     }
     /// <p>The list of lenses associated with the workload. Each lens is identified by its <code>LensSummary$LensAlias</code>.</p>
-    pub fn set_lenses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.lenses = input; self
+    pub fn set_lenses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.lenses = input;
+        self
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -571,7 +636,8 @@ impl WorkloadBuilder {
     }
     /// <p>An Amazon Web Services account ID.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// <p>The ID assigned to the share invitation.</p>
     pub fn share_invitation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -579,23 +645,37 @@ impl WorkloadBuilder {
         self
     }
     /// <p>The ID assigned to the share invitation.</p>
-    pub fn set_share_invitation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.share_invitation_id = input; self
+    pub fn set_share_invitation_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.share_invitation_id = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the workload.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags associated with the workload.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Discovery configuration associated to the workload.</p>
     pub fn discovery_config(mut self, input: crate::types::WorkloadDiscoveryConfig) -> Self {
@@ -603,8 +683,12 @@ impl WorkloadBuilder {
         self
     }
     /// <p>Discovery configuration associated to the workload.</p>
-    pub fn set_discovery_config(mut self, input: std::option::Option<crate::types::WorkloadDiscoveryConfig>) -> Self {
-        self.discovery_config = input; self
+    pub fn set_discovery_config(
+        mut self,
+        input: std::option::Option<crate::types::WorkloadDiscoveryConfig>,
+    ) -> Self {
+        self.discovery_config = input;
+        self
     }
     /// Appends an item to `applications`.
     ///
@@ -613,69 +697,48 @@ impl WorkloadBuilder {
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
     pub fn applications(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.applications.unwrap_or_default();
-                        v.push(input.into());
-                        self.applications = Some(v);
-                        self
+        v.push(input.into());
+        self.applications = Some(v);
+        self
     }
     /// <p>List of AppRegistry application ARNs associated to the workload.</p>
-    pub fn set_applications(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.applications = input; self
+    pub fn set_applications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.applications = input;
+        self
     }
     /// Consumes the builder and constructs a [`Workload`](crate::types::Workload).
     pub fn build(self) -> crate::types::Workload {
         crate::types::Workload {
-            workload_id: self.workload_id
-            ,
-            workload_arn: self.workload_arn
-            ,
-            workload_name: self.workload_name
-            ,
-            description: self.description
-            ,
-            environment: self.environment
-            ,
-            updated_at: self.updated_at
-            ,
-            account_ids: self.account_ids
-            ,
-            aws_regions: self.aws_regions
-            ,
-            non_aws_regions: self.non_aws_regions
-            ,
-            architectural_design: self.architectural_design
-            ,
-            review_owner: self.review_owner
-            ,
-            review_restriction_date: self.review_restriction_date
-            ,
-            is_review_owner_update_acknowledged: self.is_review_owner_update_acknowledged
-                .unwrap_or_default()
-            ,
-            industry_type: self.industry_type
-            ,
-            industry: self.industry
-            ,
-            notes: self.notes
-            ,
-            improvement_status: self.improvement_status
-            ,
-            risk_counts: self.risk_counts
-            ,
-            pillar_priorities: self.pillar_priorities
-            ,
-            lenses: self.lenses
-            ,
-            owner: self.owner
-            ,
-            share_invitation_id: self.share_invitation_id
-            ,
-            tags: self.tags
-            ,
-            discovery_config: self.discovery_config
-            ,
-            applications: self.applications
-            ,
+            workload_id: self.workload_id,
+            workload_arn: self.workload_arn,
+            workload_name: self.workload_name,
+            description: self.description,
+            environment: self.environment,
+            updated_at: self.updated_at,
+            account_ids: self.account_ids,
+            aws_regions: self.aws_regions,
+            non_aws_regions: self.non_aws_regions,
+            architectural_design: self.architectural_design,
+            review_owner: self.review_owner,
+            review_restriction_date: self.review_restriction_date,
+            is_review_owner_update_acknowledged: self
+                .is_review_owner_update_acknowledged
+                .unwrap_or_default(),
+            industry_type: self.industry_type,
+            industry: self.industry,
+            notes: self.notes,
+            improvement_status: self.improvement_status,
+            risk_counts: self.risk_counts,
+            pillar_priorities: self.pillar_priorities,
+            lenses: self.lenses,
+            owner: self.owner,
+            share_invitation_id: self.share_invitation_id,
+            tags: self.tags,
+            discovery_config: self.discovery_config,
+            applications: self.applications,
         }
     }
 }
-

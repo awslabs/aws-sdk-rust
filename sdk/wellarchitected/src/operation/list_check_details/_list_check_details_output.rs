@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCheckDetailsOutput  {
+pub struct ListCheckDetailsOutput {
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
     #[doc(hidden)]
     pub check_details: std::option::Option<std::vec::Vec<crate::types::CheckDetail>>,
@@ -13,22 +13,23 @@ pub struct ListCheckDetailsOutput  {
 }
 impl ListCheckDetailsOutput {
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
-    pub fn check_details(&self) -> std::option::Option<& [crate::types::CheckDetail]> {
+    pub fn check_details(&self) -> std::option::Option<&[crate::types::CheckDetail]> {
         self.check_details.as_deref()
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCheckDetailsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListCheckDetailsOutput {
     /// Creates a new builder-style object to manufacture [`ListCheckDetailsOutput`](crate::operation::list_check_details::ListCheckDetailsOutput).
-    pub fn builder() -> crate::operation::list_check_details::builders::ListCheckDetailsOutputBuilder {
+    pub fn builder() -> crate::operation::list_check_details::builders::ListCheckDetailsOutputBuilder
+    {
         crate::operation::list_check_details::builders::ListCheckDetailsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListCheckDetailsOutputBuilder {
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
     pub fn check_details(mut self, input: crate::types::CheckDetail) -> Self {
         let mut v = self.check_details.unwrap_or_default();
-                        v.push(input);
-                        self.check_details = Some(v);
-                        self
+        v.push(input);
+        self.check_details = Some(v);
+        self
     }
     /// <p>The details about the Trusted Advisor checks related to the Well-Architected best practice.</p>
-    pub fn set_check_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::CheckDetail>>) -> Self {
-        self.check_details = input; self
+    pub fn set_check_details(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CheckDetail>>,
+    ) -> Self {
+        self.check_details = input;
+        self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListCheckDetailsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListCheckDetailsOutput`](crate::operation::list_check_details::ListCheckDetailsOutput).
     pub fn build(self) -> crate::operation::list_check_details::ListCheckDetailsOutput {
         crate::operation::list_check_details::ListCheckDetailsOutput {
-            check_details: self.check_details
-            ,
-            next_token: self.next_token
-            ,
+            check_details: self.check_details,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

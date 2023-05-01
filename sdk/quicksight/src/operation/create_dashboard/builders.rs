@@ -4,51 +4,67 @@ pub use crate::operation::create_dashboard::_create_dashboard_output::CreateDash
 pub use crate::operation::create_dashboard::_create_dashboard_input::CreateDashboardInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDashboard`.
-/// 
-/// <p>Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>. To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation.</p> 
+///
+/// <p>Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>. To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation.</p>
 /// <p>A dashboard is an entity in Amazon QuickSight that identifies Amazon QuickSight reports, created from analyses. You can share Amazon QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. If you have the correct permissions, you can create a dashboard from a template that exists in a different Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDashboardFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_dashboard::builders::CreateDashboardInputBuilder,
+    inner: crate::operation::create_dashboard::builders::CreateDashboardInputBuilder,
 }
-impl CreateDashboardFluentBuilder  {
+impl CreateDashboardFluentBuilder {
     /// Creates a new `CreateDashboard`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_dashboard::CreateDashboard, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_dashboard::CreateDashboardError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_dashboard::CreateDashboardOutput, aws_smithy_http::result::SdkError<crate::operation::create_dashboard::CreateDashboardError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_dashboard::CreateDashboard,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_dashboard::CreateDashboardError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_dashboard::CreateDashboardOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_dashboard::CreateDashboardError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the Amazon Web Services account where you want to create the dashboard.</p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.aws_account_id(input.into());
@@ -93,29 +109,35 @@ impl CreateDashboardFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_permissions`](Self::set_permissions).
     ///
-    /// <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p> 
+    /// <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p>
     /// <p>To specify no permissions, omit the permissions list.</p>
     pub fn permissions(mut self, input: crate::types::ResourcePermission) -> Self {
         self.inner = self.inner.permissions(input);
         self
     }
-    /// <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p> 
+    /// <p>A structure that contains the permissions of the dashboard. You can use this structure for granting permissions by providing a list of IAM action information for each principal ARN. </p>
     /// <p>To specify no permissions, omit the permissions list.</p>
-    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>) -> Self {
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourcePermission>>,
+    ) -> Self {
         self.inner = self.inner.set_permissions(input);
         self
     }
-    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p> 
-    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p> 
+    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn source_entity(mut self, input: crate::types::DashboardSourceEntity) -> Self {
         self.inner = self.inner.source_entity(input);
         self
     }
-    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p> 
-    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p> 
+    /// <p>The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you specify the type of object you're using as source. You can only create a dashboard from a template, so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the analysis to a template by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services Region. </p>
+    /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets for the placeholders listed in the original. The schema in each dataset must match its placeholder. </p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
-    pub fn set_source_entity(mut self, input: std::option::Option<crate::types::DashboardSourceEntity>) -> Self {
+    pub fn set_source_entity(
+        mut self,
+        input: std::option::Option<crate::types::DashboardSourceEntity>,
+    ) -> Self {
         self.inner = self.inner.set_source_entity(input);
         self
     }
@@ -129,7 +151,10 @@ impl CreateDashboardFluentBuilder  {
         self
     }
     /// <p>Contains a map of the key-value pairs for the resource tag or tags assigned to the dashboard.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -139,27 +164,36 @@ impl CreateDashboardFluentBuilder  {
         self
     }
     /// <p>A description for the first version of the dashboard being created.</p>
-    pub fn set_version_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_version_description(input);
         self
     }
-    /// <p>Options for publishing the dashboard when you create it:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li> 
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li> 
-    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li> 
+    /// <p>Options for publishing the dashboard when you create it:</p>
+    /// <ul>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
     /// </ul>
-    pub fn dashboard_publish_options(mut self, input: crate::types::DashboardPublishOptions) -> Self {
+    pub fn dashboard_publish_options(
+        mut self,
+        input: crate::types::DashboardPublishOptions,
+    ) -> Self {
         self.inner = self.inner.dashboard_publish_options(input);
         self
     }
-    /// <p>Options for publishing the dashboard when you create it:</p> 
-    /// <ul> 
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li> 
-    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li> 
-    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li> 
+    /// <p>Options for publishing the dashboard when you create it:</p>
+    /// <ul>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>, Amazon QuickSight disables the left filter pane on the published dashboard, which can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p> </li>
+    /// <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default. </p> </li>
     /// </ul>
-    pub fn set_dashboard_publish_options(mut self, input: std::option::Option<crate::types::DashboardPublishOptions>) -> Self {
+    pub fn set_dashboard_publish_options(
+        mut self,
+        input: std::option::Option<crate::types::DashboardPublishOptions>,
+    ) -> Self {
         self.inner = self.inner.set_dashboard_publish_options(input);
         self
     }
@@ -173,19 +207,21 @@ impl CreateDashboardFluentBuilder  {
         self.inner = self.inner.set_theme_arn(input);
         self
     }
-    /// <p>The definition of a dashboard.</p> 
-    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p> 
+    /// <p>The definition of a dashboard.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
     pub fn definition(mut self, input: crate::types::DashboardVersionDefinition) -> Self {
         self.inner = self.inner.definition(input);
         self
     }
-    /// <p>The definition of a dashboard.</p> 
-    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p> 
+    /// <p>The definition of a dashboard.</p>
+    /// <p>A definition is the data model of all features in a Dashboard, Template, or Analysis.</p>
     /// <p>Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in order for the request to be valid.</p>
-    pub fn set_definition(mut self, input: std::option::Option<crate::types::DashboardVersionDefinition>) -> Self {
+    pub fn set_definition(
+        mut self,
+        input: std::option::Option<crate::types::DashboardVersionDefinition>,
+    ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
 }
-

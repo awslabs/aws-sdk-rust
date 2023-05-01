@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableVolumeIoInput  {
+pub struct EnableVolumeIoInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,7 +16,7 @@ impl EnableVolumeIoInput {
         self.dry_run
     }
     /// <p>The ID of the volume.</p>
-    pub fn volume_id(&self) -> std::option::Option<& str> {
+    pub fn volume_id(&self) -> std::option::Option<&str> {
         self.volume_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl EnableVolumeIoInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the volume.</p>
     pub fn volume_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl EnableVolumeIoInputBuilder {
     }
     /// <p>The ID of the volume.</p>
     pub fn set_volume_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_id = input; self
+        self.volume_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnableVolumeIoInput`](crate::operation::enable_volume_io::EnableVolumeIoInput).
-    pub fn build(self) -> Result<crate::operation::enable_volume_io::EnableVolumeIoInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::enable_volume_io::EnableVolumeIoInput {
-                dry_run: self.dry_run
-                ,
-                volume_id: self.volume_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::enable_volume_io::EnableVolumeIoInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::enable_volume_io::EnableVolumeIoInput {
+            dry_run: self.dry_run,
+            volume_id: self.volume_id,
+        })
     }
 }
-

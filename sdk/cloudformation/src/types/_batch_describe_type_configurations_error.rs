@@ -3,7 +3,7 @@
 /// <p>Detailed information concerning an error generated during the setting of configuration data for a CloudFormation extension.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDescribeTypeConfigurationsError  {
+pub struct BatchDescribeTypeConfigurationsError {
     /// <p>The error code.</p>
     #[doc(hidden)]
     pub error_code: std::option::Option<std::string::String>,
@@ -12,19 +12,22 @@ pub struct BatchDescribeTypeConfigurationsError  {
     pub error_message: std::option::Option<std::string::String>,
     /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
     #[doc(hidden)]
-    pub type_configuration_identifier: std::option::Option<crate::types::TypeConfigurationIdentifier>,
+    pub type_configuration_identifier:
+        std::option::Option<crate::types::TypeConfigurationIdentifier>,
 }
 impl BatchDescribeTypeConfigurationsError {
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<& str> {
+    pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The error message.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
-    pub fn type_configuration_identifier(&self) -> std::option::Option<& crate::types::TypeConfigurationIdentifier> {
+    pub fn type_configuration_identifier(
+        &self,
+    ) -> std::option::Option<&crate::types::TypeConfigurationIdentifier> {
         self.type_configuration_identifier.as_ref()
     }
 }
@@ -41,7 +44,8 @@ impl BatchDescribeTypeConfigurationsError {
 pub struct BatchDescribeTypeConfigurationsErrorBuilder {
     pub(crate) error_code: std::option::Option<std::string::String>,
     pub(crate) error_message: std::option::Option<std::string::String>,
-    pub(crate) type_configuration_identifier: std::option::Option<crate::types::TypeConfigurationIdentifier>,
+    pub(crate) type_configuration_identifier:
+        std::option::Option<crate::types::TypeConfigurationIdentifier>,
 }
 impl BatchDescribeTypeConfigurationsErrorBuilder {
     /// <p>The error code.</p>
@@ -51,7 +55,8 @@ impl BatchDescribeTypeConfigurationsErrorBuilder {
     }
     /// <p>The error code.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input; self
+        self.error_code = input;
+        self
     }
     /// <p>The error message.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,27 +65,31 @@ impl BatchDescribeTypeConfigurationsErrorBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
-    pub fn type_configuration_identifier(mut self, input: crate::types::TypeConfigurationIdentifier) -> Self {
+    pub fn type_configuration_identifier(
+        mut self,
+        input: crate::types::TypeConfigurationIdentifier,
+    ) -> Self {
         self.type_configuration_identifier = Some(input);
         self
     }
     /// <p>Identifying information for the configuration of a CloudFormation extension.</p>
-    pub fn set_type_configuration_identifier(mut self, input: std::option::Option<crate::types::TypeConfigurationIdentifier>) -> Self {
-        self.type_configuration_identifier = input; self
+    pub fn set_type_configuration_identifier(
+        mut self,
+        input: std::option::Option<crate::types::TypeConfigurationIdentifier>,
+    ) -> Self {
+        self.type_configuration_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDescribeTypeConfigurationsError`](crate::types::BatchDescribeTypeConfigurationsError).
     pub fn build(self) -> crate::types::BatchDescribeTypeConfigurationsError {
         crate::types::BatchDescribeTypeConfigurationsError {
-            error_code: self.error_code
-            ,
-            error_message: self.error_message
-            ,
-            type_configuration_identifier: self.type_configuration_identifier
-            ,
+            error_code: self.error_code,
+            error_message: self.error_message,
+            type_configuration_identifier: self.type_configuration_identifier,
         }
     }
 }
-

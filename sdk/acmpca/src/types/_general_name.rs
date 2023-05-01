@@ -3,7 +3,7 @@
 /// <p>Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC 5280</a>. Only one of the following naming options should be provided. Providing more than one option results in an <code>InvalidArgsException</code> error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeneralName  {
+pub struct GeneralName {
     /// <p>Represents <code>GeneralName</code> using an <code>OtherName</code> object.</p>
     #[doc(hidden)]
     pub other_name: std::option::Option<crate::types::OtherName>,
@@ -31,35 +31,35 @@ pub struct GeneralName  {
 }
 impl GeneralName {
     /// <p>Represents <code>GeneralName</code> using an <code>OtherName</code> object.</p>
-    pub fn other_name(&self) -> std::option::Option<& crate::types::OtherName> {
+    pub fn other_name(&self) -> std::option::Option<&crate::types::OtherName> {
         self.other_name.as_ref()
     }
     /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
-    pub fn rfc822_name(&self) -> std::option::Option<& str> {
+    pub fn rfc822_name(&self) -> std::option::Option<&str> {
         self.rfc822_name.as_deref()
     }
     /// <p>Represents <code>GeneralName</code> as a DNS name.</p>
-    pub fn dns_name(&self) -> std::option::Option<& str> {
+    pub fn dns_name(&self) -> std::option::Option<&str> {
         self.dns_name.as_deref()
     }
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
-    pub fn directory_name(&self) -> std::option::Option<& crate::types::Asn1Subject> {
+    pub fn directory_name(&self) -> std::option::Option<&crate::types::Asn1Subject> {
         self.directory_name.as_ref()
     }
     /// <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.</p>
-    pub fn edi_party_name(&self) -> std::option::Option<& crate::types::EdiPartyName> {
+    pub fn edi_party_name(&self) -> std::option::Option<&crate::types::EdiPartyName> {
         self.edi_party_name.as_ref()
     }
     /// <p>Represents <code>GeneralName</code> as a URI.</p>
-    pub fn uniform_resource_identifier(&self) -> std::option::Option<& str> {
+    pub fn uniform_resource_identifier(&self) -> std::option::Option<&str> {
         self.uniform_resource_identifier.as_deref()
     }
     /// <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
-    pub fn ip_address(&self) -> std::option::Option<& str> {
+    pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
     /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
-    pub fn registered_id(&self) -> std::option::Option<& str> {
+    pub fn registered_id(&self) -> std::option::Option<&str> {
         self.registered_id.as_deref()
     }
 }
@@ -91,7 +91,8 @@ impl GeneralNameBuilder {
     }
     /// <p>Represents <code>GeneralName</code> using an <code>OtherName</code> object.</p>
     pub fn set_other_name(mut self, input: std::option::Option<crate::types::OtherName>) -> Self {
-        self.other_name = input; self
+        self.other_name = input;
+        self
     }
     /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
     pub fn rfc822_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +101,8 @@ impl GeneralNameBuilder {
     }
     /// <p>Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC 822</a> email address.</p>
     pub fn set_rfc822_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rfc822_name = input; self
+        self.rfc822_name = input;
+        self
     }
     /// <p>Represents <code>GeneralName</code> as a DNS name.</p>
     pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +111,8 @@ impl GeneralNameBuilder {
     }
     /// <p>Represents <code>GeneralName</code> as a DNS name.</p>
     pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dns_name = input; self
+        self.dns_name = input;
+        self
     }
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
     pub fn directory_name(mut self, input: crate::types::Asn1Subject) -> Self {
@@ -117,8 +120,12 @@ impl GeneralNameBuilder {
         self
     }
     /// <p>Contains information about the certificate subject. The <code>Subject</code> field in the certificate identifies the entity that owns or controls the public key in the certificate. The entity can be a user, computer, device, or service. The <code>Subject </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names (RDNs). The RDNs are separated by commas in the certificate.</p>
-    pub fn set_directory_name(mut self, input: std::option::Option<crate::types::Asn1Subject>) -> Self {
-        self.directory_name = input; self
+    pub fn set_directory_name(
+        mut self,
+        input: std::option::Option<crate::types::Asn1Subject>,
+    ) -> Self {
+        self.directory_name = input;
+        self
     }
     /// <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.</p>
     pub fn edi_party_name(mut self, input: crate::types::EdiPartyName) -> Self {
@@ -126,8 +133,12 @@ impl GeneralNameBuilder {
         self
     }
     /// <p>Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.</p>
-    pub fn set_edi_party_name(mut self, input: std::option::Option<crate::types::EdiPartyName>) -> Self {
-        self.edi_party_name = input; self
+    pub fn set_edi_party_name(
+        mut self,
+        input: std::option::Option<crate::types::EdiPartyName>,
+    ) -> Self {
+        self.edi_party_name = input;
+        self
     }
     /// <p>Represents <code>GeneralName</code> as a URI.</p>
     pub fn uniform_resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,8 +146,12 @@ impl GeneralNameBuilder {
         self
     }
     /// <p>Represents <code>GeneralName</code> as a URI.</p>
-    pub fn set_uniform_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uniform_resource_identifier = input; self
+    pub fn set_uniform_resource_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.uniform_resource_identifier = input;
+        self
     }
     /// <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
     pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -145,7 +160,8 @@ impl GeneralNameBuilder {
     }
     /// <p>Represents <code>GeneralName</code> as an IPv4 or IPv6 address.</p>
     pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address = input; self
+        self.ip_address = input;
+        self
     }
     /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
     pub fn registered_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -154,28 +170,20 @@ impl GeneralNameBuilder {
     }
     /// <p> Represents <code>GeneralName</code> as an object identifier (OID).</p>
     pub fn set_registered_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registered_id = input; self
+        self.registered_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GeneralName`](crate::types::GeneralName).
     pub fn build(self) -> crate::types::GeneralName {
         crate::types::GeneralName {
-            other_name: self.other_name
-            ,
-            rfc822_name: self.rfc822_name
-            ,
-            dns_name: self.dns_name
-            ,
-            directory_name: self.directory_name
-            ,
-            edi_party_name: self.edi_party_name
-            ,
-            uniform_resource_identifier: self.uniform_resource_identifier
-            ,
-            ip_address: self.ip_address
-            ,
-            registered_id: self.registered_id
-            ,
+            other_name: self.other_name,
+            rfc822_name: self.rfc822_name,
+            dns_name: self.dns_name,
+            directory_name: self.directory_name,
+            edi_party_name: self.edi_party_name,
+            uniform_resource_identifier: self.uniform_resource_identifier,
+            ip_address: self.ip_address,
+            registered_id: self.registered_id,
         }
     }
 }
-

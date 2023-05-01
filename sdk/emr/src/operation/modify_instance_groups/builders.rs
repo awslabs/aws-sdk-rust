@@ -4,50 +4,70 @@ pub use crate::operation::modify_instance_groups::_modify_instance_groups_output
 pub use crate::operation::modify_instance_groups::_modify_instance_groups_input::ModifyInstanceGroupsInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyInstanceGroups`.
-/// 
+///
 /// <p>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyInstanceGroupsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsInputBuilder,
+    inner: crate::operation::modify_instance_groups::builders::ModifyInstanceGroupsInputBuilder,
 }
-impl ModifyInstanceGroupsFluentBuilder  {
+impl ModifyInstanceGroupsFluentBuilder {
     /// Creates a new `ModifyInstanceGroups`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_instance_groups::ModifyInstanceGroups, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_instance_groups::ModifyInstanceGroupsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_instance_groups::ModifyInstanceGroupsOutput, aws_smithy_http::result::SdkError<crate::operation::modify_instance_groups::ModifyInstanceGroupsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_instance_groups::ModifyInstanceGroups,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_groups::ModifyInstanceGroupsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_instance_groups::ModifyInstanceGroupsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_groups::ModifyInstanceGroupsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the cluster to which the instance group belongs.</p>
     pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());
@@ -68,9 +88,11 @@ impl ModifyInstanceGroupsFluentBuilder  {
         self
     }
     /// <p>Instance groups to change.</p>
-    pub fn set_instance_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceGroupModifyConfig>>) -> Self {
+    pub fn set_instance_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceGroupModifyConfig>>,
+    ) -> Self {
         self.inner = self.inner.set_instance_groups(input);
         self
     }
 }
-

@@ -3,20 +3,20 @@
 /// <p>Container for the parameters to the <code><code>StartElasticsearchServiceSoftwareUpdate</code></code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartElasticsearchServiceSoftwareUpdateInput  {
+pub struct StartElasticsearchServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl StartElasticsearchServiceSoftwareUpdateInput {
     /// <p>The name of the domain that you want to update to the latest service software.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
 }
 impl StartElasticsearchServiceSoftwareUpdateInput {
     /// Creates a new builder-style object to manufacture [`StartElasticsearchServiceSoftwareUpdateInput`](crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput).
-    pub fn builder() -> crate::operation::start_elasticsearch_service_software_update::builders::StartElasticsearchServiceSoftwareUpdateInputBuilder {
+    pub fn builder() -> crate::operation::start_elasticsearch_service_software_update::builders::StartElasticsearchServiceSoftwareUpdateInputBuilder{
         crate::operation::start_elasticsearch_service_software_update::builders::StartElasticsearchServiceSoftwareUpdateInputBuilder::default()
     }
 }
@@ -35,10 +35,11 @@ impl StartElasticsearchServiceSoftwareUpdateInputBuilder {
     }
     /// <p>The name of the domain that you want to update to the latest service software.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartElasticsearchServiceSoftwareUpdateInput`](crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput).
-    pub fn build(self) -> Result<crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::start_elasticsearch_service_software_update::StartElasticsearchServiceSoftwareUpdateInput {
                 domain_name: self.domain_name
@@ -47,4 +48,3 @@ impl StartElasticsearchServiceSoftwareUpdateInputBuilder {
         )
     }
 }
-

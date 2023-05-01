@@ -2,44 +2,44 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImpersonationRoleEffectInput  {
+pub struct GetImpersonationRoleEffectInput {
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>The impersonation role ID to test.</p>
     #[doc(hidden)]
     pub impersonation_role_id: std::option::Option<std::string::String>,
-    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub target_user: std::option::Option<std::string::String>,
 }
 impl GetImpersonationRoleEffectInput {
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The impersonation role ID to test.</p>
-    pub fn impersonation_role_id(&self) -> std::option::Option<& str> {
+    pub fn impersonation_role_id(&self) -> std::option::Option<&str> {
         self.impersonation_role_id.as_deref()
     }
-    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
-    pub fn target_user(&self) -> std::option::Option<& str> {
+    pub fn target_user(&self) -> std::option::Option<&str> {
         self.target_user.as_deref()
     }
 }
 impl GetImpersonationRoleEffectInput {
     /// Creates a new builder-style object to manufacture [`GetImpersonationRoleEffectInput`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput).
-    pub fn builder() -> crate::operation::get_impersonation_role_effect::builders::GetImpersonationRoleEffectInputBuilder {
+    pub fn builder() -> crate::operation::get_impersonation_role_effect::builders::GetImpersonationRoleEffectInputBuilder{
         crate::operation::get_impersonation_role_effect::builders::GetImpersonationRoleEffectInputBuilder::default()
     }
 }
@@ -60,7 +60,8 @@ impl GetImpersonationRoleEffectInputBuilder {
     }
     /// <p>The WorkMail organization where the impersonation role is defined.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The impersonation role ID to test.</p>
     pub fn impersonation_role_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,40 +69,46 @@ impl GetImpersonationRoleEffectInputBuilder {
         self
     }
     /// <p>The impersonation role ID to test.</p>
-    pub fn set_impersonation_role_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.impersonation_role_id = input; self
+    pub fn set_impersonation_role_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.impersonation_role_id = input;
+        self
     }
-    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn target_user(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_user = Some(input.into());
         self
     }
-    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn set_target_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_user = input; self
+        self.target_user = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetImpersonationRoleEffectInput`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput).
-    pub fn build(self) -> Result<crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectInput {
-                organization_id: self.organization_id
-                ,
-                impersonation_role_id: self.impersonation_role_id
-                ,
-                target_user: self.target_user
-                ,
-            }
+                organization_id: self.organization_id,
+                impersonation_role_id: self.impersonation_role_id,
+                target_user: self.target_user,
+            },
         )
     }
 }
-

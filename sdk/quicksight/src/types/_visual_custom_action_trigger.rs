@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let visualcustomactiontrigger = unimplemented!();
 /// match visualcustomactiontrigger {
@@ -30,55 +30,64 @@
 /// Specifically, when `visualcustomactiontrigger` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VisualCustomActionTrigger::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum VisualCustomActionTrigger {
     #[allow(missing_docs)] // documentation missing in model
     DataPointClick,
     #[allow(missing_docs)] // documentation missing in model
     DataPointMenu,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VisualCustomActionTrigger {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DATA_POINT_CLICK" => VisualCustomActionTrigger::DataPointClick,
-"DATA_POINT_MENU" => VisualCustomActionTrigger::DataPointMenu,
-other => VisualCustomActionTrigger::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for VisualCustomActionTrigger {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(VisualCustomActionTrigger::from(s))
-                }
-            }
-impl VisualCustomActionTrigger {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    VisualCustomActionTrigger::DataPointClick => "DATA_POINT_CLICK",
-    VisualCustomActionTrigger::DataPointMenu => "DATA_POINT_MENU",
-    VisualCustomActionTrigger::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "DATA_POINT_CLICK" => VisualCustomActionTrigger::DataPointClick,
+            "DATA_POINT_MENU" => VisualCustomActionTrigger::DataPointMenu,
+            other => VisualCustomActionTrigger::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DATA_POINT_CLICK", "DATA_POINT_MENU"]
-                }
-            }
-impl AsRef<str> for VisualCustomActionTrigger {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for VisualCustomActionTrigger {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VisualCustomActionTrigger::from(s))
+    }
+}
+impl VisualCustomActionTrigger {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VisualCustomActionTrigger::DataPointClick => "DATA_POINT_CLICK",
+            VisualCustomActionTrigger::DataPointMenu => "DATA_POINT_MENU",
+            VisualCustomActionTrigger::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DATA_POINT_CLICK", "DATA_POINT_MENU"]
+    }
+}
+impl AsRef<str> for VisualCustomActionTrigger {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

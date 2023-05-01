@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGatewayInformationOutput  {
+pub struct UpdateGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct UpdateGatewayInformationOutput  {
 }
 impl UpdateGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateGatewayInformationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateGatewayInformationOutput {
     /// Creates a new builder-style object to manufacture [`UpdateGatewayInformationOutput`](crate::operation::update_gateway_information::UpdateGatewayInformationOutput).
-    pub fn builder() -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_gateway_information::builders::UpdateGatewayInformationOutputBuilder
+    {
         crate::operation::update_gateway_information::builders::UpdateGatewayInformationOutputBuilder::default()
     }
 }
@@ -41,24 +43,25 @@ impl UpdateGatewayInformationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateGatewayInformationOutput`](crate::operation::update_gateway_information::UpdateGatewayInformationOutput).
-    pub fn build(self) -> crate::operation::update_gateway_information::UpdateGatewayInformationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_gateway_information::UpdateGatewayInformationOutput {
         crate::operation::update_gateway_information::UpdateGatewayInformationOutput {
-            gateway_arn: self.gateway_arn
-            ,
+            gateway_arn: self.gateway_arn,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -4,71 +4,97 @@ pub use crate::operation::describe_scaling_activities::_describe_scaling_activit
 pub use crate::operation::describe_scaling_activities::_describe_scaling_activities_input::DescribeScalingActivitiesInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeScalingActivities`.
-/// 
-/// <p>Gets information about the scaling activities in the account and Region.</p> 
-/// <p>When scaling events occur, you see a record of the scaling activity in the scaling activities. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-verify-scaling-activity.html">Verifying a scaling activity for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p> 
+///
+/// <p>Gets information about the scaling activities in the account and Region.</p>
+/// <p>When scaling events occur, you see a record of the scaling activity in the scaling activities. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-verify-scaling-activity.html">Verifying a scaling activity for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
 /// <p>If the scaling event succeeds, the value of the <code>StatusCode</code> element in the response is <code>Successful</code>. If an attempt to launch instances failed, the <code>StatusCode</code> value is <code>Failed</code> or <code>Cancelled</code> and the <code>StatusMessage</code> element in the response indicates the cause of the failure. For help interpreting the <code>StatusMessage</code>, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeScalingActivitiesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_scaling_activities::builders::DescribeScalingActivitiesInputBuilder,
 }
-impl DescribeScalingActivitiesFluentBuilder  {
+impl DescribeScalingActivitiesFluentBuilder {
     /// Creates a new `DescribeScalingActivities`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_scaling_activities::DescribeScalingActivities, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_scaling_activities::DescribeScalingActivitiesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_scaling_activities::DescribeScalingActivitiesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_scaling_activities::DescribeScalingActivities,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator {
-                                crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator
+    {
+        crate::operation::describe_scaling_activities::paginator::DescribeScalingActivitiesPaginator::new(self.handle, self.inner)
+    }
     /// Appends an item to `ActivityIds`.
     ///
     /// To override the contents of this collection use [`set_activity_ids`](Self::set_activity_ids).
     ///
-    /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p> 
+    /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
     pub fn activity_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.activity_ids(input.into());
         self
     }
-    /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p> 
+    /// <p>The activity IDs of the desired scaling activities. If you omit this property, all activities for the past six weeks are described. If unknown activities are requested, they are ignored with no error. If you specify an Auto Scaling group, the results are limited to that group.</p>
     /// <p>Array Members: Maximum number of 50 IDs.</p>
-    pub fn set_activity_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_activity_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_activity_ids(input);
         self
     }
@@ -78,7 +104,10 @@ impl DescribeScalingActivitiesFluentBuilder  {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -113,4 +142,3 @@ impl DescribeScalingActivitiesFluentBuilder  {
         self
     }
 }
-

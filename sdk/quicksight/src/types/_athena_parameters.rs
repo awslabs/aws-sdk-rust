@@ -3,7 +3,7 @@
 /// <p>Parameters for Amazon Athena.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AthenaParameters  {
+pub struct AthenaParameters {
     /// <p>The workgroup that Amazon Athena uses.</p>
     #[doc(hidden)]
     pub work_group: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AthenaParameters  {
 }
 impl AthenaParameters {
     /// <p>The workgroup that Amazon Athena uses.</p>
-    pub fn work_group(&self) -> std::option::Option<& str> {
+    pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
     /// <p>Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For example, say an account administrator has turned off all Athena access with an account-wide role. The administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena access is still active.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AthenaParametersBuilder {
     }
     /// <p>The workgroup that Amazon Athena uses.</p>
     pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_group = input; self
+        self.work_group = input;
+        self
     }
     /// <p>Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For example, say an account administrator has turned off all Athena access with an account-wide role. The administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena access is still active.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl AthenaParametersBuilder {
     }
     /// <p>Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For example, say an account administrator has turned off all Athena access with an account-wide role. The administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena access is still active.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AthenaParameters`](crate::types::AthenaParameters).
     pub fn build(self) -> crate::types::AthenaParameters {
         crate::types::AthenaParameters {
-            work_group: self.work_group
-            ,
-            role_arn: self.role_arn
-            ,
+            work_group: self.work_group,
+            role_arn: self.role_arn,
         }
     }
 }
-

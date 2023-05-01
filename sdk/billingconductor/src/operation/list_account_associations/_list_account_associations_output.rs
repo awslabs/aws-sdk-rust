@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountAssociationsOutput  {
+pub struct ListAccountAssociationsOutput {
     /// <p> The list of linked accounts in the payer account. </p>
     #[doc(hidden)]
-    pub linked_accounts: std::option::Option<std::vec::Vec<crate::types::AccountAssociationsListElement>>,
+    pub linked_accounts:
+        std::option::Option<std::vec::Vec<crate::types::AccountAssociationsListElement>>,
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct ListAccountAssociationsOutput  {
 }
 impl ListAccountAssociationsOutput {
     /// <p> The list of linked accounts in the payer account. </p>
-    pub fn linked_accounts(&self) -> std::option::Option<& [crate::types::AccountAssociationsListElement]> {
+    pub fn linked_accounts(
+        &self,
+    ) -> std::option::Option<&[crate::types::AccountAssociationsListElement]> {
         self.linked_accounts.as_deref()
     }
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAccountAssociationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAccountAssociationsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccountAssociationsOutput`](crate::operation::list_account_associations::ListAccountAssociationsOutput).
-    pub fn builder() -> crate::operation::list_account_associations::builders::ListAccountAssociationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_account_associations::builders::ListAccountAssociationsOutputBuilder
+    {
         crate::operation::list_account_associations::builders::ListAccountAssociationsOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl ListAccountAssociationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAccountAssociationsOutputBuilder {
-    pub(crate) linked_accounts: std::option::Option<std::vec::Vec<crate::types::AccountAssociationsListElement>>,
+    pub(crate) linked_accounts:
+        std::option::Option<std::vec::Vec<crate::types::AccountAssociationsListElement>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl ListAccountAssociationsOutputBuilder {
     /// <p> The list of linked accounts in the payer account. </p>
     pub fn linked_accounts(mut self, input: crate::types::AccountAssociationsListElement) -> Self {
         let mut v = self.linked_accounts.unwrap_or_default();
-                        v.push(input);
-                        self.linked_accounts = Some(v);
-                        self
+        v.push(input);
+        self.linked_accounts = Some(v);
+        self
     }
     /// <p> The list of linked accounts in the payer account. </p>
-    pub fn set_linked_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccountAssociationsListElement>>) -> Self {
-        self.linked_accounts = input; self
+    pub fn set_linked_accounts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AccountAssociationsListElement>>,
+    ) -> Self {
+        self.linked_accounts = input;
+        self
     }
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,26 @@ impl ListAccountAssociationsOutputBuilder {
     }
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAccountAssociationsOutput`](crate::operation::list_account_associations::ListAccountAssociationsOutput).
-    pub fn build(self) -> crate::operation::list_account_associations::ListAccountAssociationsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_account_associations::ListAccountAssociationsOutput {
         crate::operation::list_account_associations::ListAccountAssociationsOutput {
-            linked_accounts: self.linked_accounts
-            ,
-            next_token: self.next_token
-            ,
+            linked_accounts: self.linked_accounts,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

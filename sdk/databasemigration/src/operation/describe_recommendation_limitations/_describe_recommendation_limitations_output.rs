@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRecommendationLimitationsOutput  {
+pub struct DescribeRecommendationLimitationsOutput {
     /// <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct DescribeRecommendationLimitationsOutput  {
 }
 impl DescribeRecommendationLimitationsOutput {
     /// <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The list of limitations for recommendations of target Amazon Web Services engines.</p>
-    pub fn limitations(&self) -> std::option::Option<& [crate::types::Limitation]> {
+    pub fn limitations(&self) -> std::option::Option<&[crate::types::Limitation]> {
         self.limitations.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRecommendationLimitationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeRecommendationLimitationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationLimitationsOutput`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput).
-    pub fn builder() -> crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsOutputBuilder{
         crate::operation::describe_recommendation_limitations::builders::DescribeRecommendationLimitationsOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl DescribeRecommendationLimitationsOutputBuilder {
     }
     /// <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `limitations`.
     ///
@@ -58,25 +59,29 @@ impl DescribeRecommendationLimitationsOutputBuilder {
     /// <p>The list of limitations for recommendations of target Amazon Web Services engines.</p>
     pub fn limitations(mut self, input: crate::types::Limitation) -> Self {
         let mut v = self.limitations.unwrap_or_default();
-                        v.push(input);
-                        self.limitations = Some(v);
-                        self
+        v.push(input);
+        self.limitations = Some(v);
+        self
     }
     /// <p>The list of limitations for recommendations of target Amazon Web Services engines.</p>
-    pub fn set_limitations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Limitation>>) -> Self {
-        self.limitations = input; self
+    pub fn set_limitations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Limitation>>,
+    ) -> Self {
+        self.limitations = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeRecommendationLimitationsOutput`](crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput).
-    pub fn build(self) -> crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput {
+    pub fn build(self) -> crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput{
         crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput {
             next_token: self.next_token
             ,
@@ -86,4 +91,3 @@ impl DescribeRecommendationLimitationsOutputBuilder {
         }
     }
 }
-

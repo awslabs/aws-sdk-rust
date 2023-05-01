@@ -3,7 +3,7 @@
 /// <p>The details of a mailbox export job, including the user or resource ID associated with the mailbox and the S3 bucket that the mailbox contents are exported to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MailboxExportJob  {
+pub struct MailboxExportJob {
     /// <p>The identifier of the mailbox export job.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -34,23 +34,23 @@ pub struct MailboxExportJob  {
 }
 impl MailboxExportJob {
     /// <p>The identifier of the mailbox export job.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
-    pub fn entity_id(&self) -> std::option::Option<& str> {
+    pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
     /// <p>The mailbox export job description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the S3 bucket.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
-    pub fn s3_path(&self) -> std::option::Option<& str> {
+    pub fn s3_path(&self) -> std::option::Option<&str> {
         self.s3_path.as_deref()
     }
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
@@ -58,15 +58,15 @@ impl MailboxExportJob {
         self.estimated_progress
     }
     /// <p>The state of the mailbox export job.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::MailboxExportJobState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::MailboxExportJobState> {
         self.state.as_ref()
     }
     /// <p>The mailbox export job start timestamp.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The mailbox export job end timestamp.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
 }
@@ -99,7 +99,8 @@ impl MailboxExportJobBuilder {
     }
     /// <p>The identifier of the mailbox export job.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl MailboxExportJobBuilder {
     }
     /// <p>The identifier of the user or resource associated with the mailbox.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input; self
+        self.entity_id = input;
+        self
     }
     /// <p>The mailbox export job description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +119,8 @@ impl MailboxExportJobBuilder {
     }
     /// <p>The mailbox export job description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +129,8 @@ impl MailboxExportJobBuilder {
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input; self
+        self.s3_bucket_name = input;
+        self
     }
     /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
     pub fn s3_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +139,8 @@ impl MailboxExportJobBuilder {
     }
     /// <p>The path to the S3 bucket and file that the mailbox export job exports to.</p>
     pub fn set_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_path = input; self
+        self.s3_path = input;
+        self
     }
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
     pub fn estimated_progress(mut self, input: i32) -> Self {
@@ -144,7 +149,8 @@ impl MailboxExportJobBuilder {
     }
     /// <p>The estimated progress of the mailbox export job, in percentage points.</p>
     pub fn set_estimated_progress(mut self, input: std::option::Option<i32>) -> Self {
-        self.estimated_progress = input; self
+        self.estimated_progress = input;
+        self
     }
     /// <p>The state of the mailbox export job.</p>
     pub fn state(mut self, input: crate::types::MailboxExportJobState) -> Self {
@@ -152,8 +158,12 @@ impl MailboxExportJobBuilder {
         self
     }
     /// <p>The state of the mailbox export job.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::MailboxExportJobState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::MailboxExportJobState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>The mailbox export job start timestamp.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -161,8 +171,12 @@ impl MailboxExportJobBuilder {
         self
     }
     /// <p>The mailbox export job start timestamp.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The mailbox export job end timestamp.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -171,31 +185,21 @@ impl MailboxExportJobBuilder {
     }
     /// <p>The mailbox export job end timestamp.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`MailboxExportJob`](crate::types::MailboxExportJob).
     pub fn build(self) -> crate::types::MailboxExportJob {
         crate::types::MailboxExportJob {
-            job_id: self.job_id
-            ,
-            entity_id: self.entity_id
-            ,
-            description: self.description
-            ,
-            s3_bucket_name: self.s3_bucket_name
-            ,
-            s3_path: self.s3_path
-            ,
-            estimated_progress: self.estimated_progress
-                .unwrap_or_default()
-            ,
-            state: self.state
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
+            job_id: self.job_id,
+            entity_id: self.entity_id,
+            description: self.description,
+            s3_bucket_name: self.s3_bucket_name,
+            s3_path: self.s3_path,
+            estimated_progress: self.estimated_progress.unwrap_or_default(),
+            state: self.state,
+            start_time: self.start_time,
+            end_time: self.end_time,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReservationsOutput  {
+pub struct ListReservationsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct ListReservationsOutput  {
 }
 impl ListReservationsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// A list of all reservations that have been purchased by this account in the current AWS Region.
-    pub fn reservations(&self) -> std::option::Option<& [crate::types::Reservation]> {
+    pub fn reservations(&self) -> std::option::Option<&[crate::types::Reservation]> {
         self.reservations.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListReservationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListReservationsOutput {
     /// Creates a new builder-style object to manufacture [`ListReservationsOutput`](crate::operation::list_reservations::ListReservationsOutput).
-    pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_reservations::builders::ListReservationsOutputBuilder
+    {
         crate::operation::list_reservations::builders::ListReservationsOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl ListReservationsOutputBuilder {
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `reservations`.
     ///
@@ -58,32 +60,33 @@ impl ListReservationsOutputBuilder {
     /// A list of all reservations that have been purchased by this account in the current AWS Region.
     pub fn reservations(mut self, input: crate::types::Reservation) -> Self {
         let mut v = self.reservations.unwrap_or_default();
-                        v.push(input);
-                        self.reservations = Some(v);
-                        self
+        v.push(input);
+        self.reservations = Some(v);
+        self
     }
     /// A list of all reservations that have been purchased by this account in the current AWS Region.
-    pub fn set_reservations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Reservation>>) -> Self {
-        self.reservations = input; self
+    pub fn set_reservations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Reservation>>,
+    ) -> Self {
+        self.reservations = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListReservationsOutput`](crate::operation::list_reservations::ListReservationsOutput).
     pub fn build(self) -> crate::operation::list_reservations::ListReservationsOutput {
         crate::operation::list_reservations::ListReservationsOutput {
-            next_token: self.next_token
-            ,
-            reservations: self.reservations
-            ,
+            next_token: self.next_token,
+            reservations: self.reservations,
             _request_id: self._request_id,
         }
     }
 }
-

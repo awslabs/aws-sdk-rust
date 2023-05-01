@@ -4,52 +4,72 @@ pub use crate::operation::restore_db_cluster_from_snapshot::_restore_db_cluster_
 pub use crate::operation::restore_db_cluster_from_snapshot::_restore_db_cluster_from_snapshot_input::RestoreDbClusterFromSnapshotInputBuilder;
 
 /// Fluent builder constructing a request to `RestoreDBClusterFromSnapshot`.
-/// 
-/// <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p> 
-/// <p>If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default configuration and default security group.</p> 
+///
+/// <p>Creates a new DB cluster from a DB snapshot or DB cluster snapshot.</p>
+/// <p>If a DB snapshot is specified, the target DB cluster is created from the source DB snapshot with a default configuration and default security group.</p>
 /// <p>If a DB cluster snapshot is specified, the target DB cluster is created from the source DB cluster restore point with the same configuration as the original source DB cluster, except that the new DB cluster is created with the default security group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RestoreDBClusterFromSnapshotFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::restore_db_cluster_from_snapshot::builders::RestoreDbClusterFromSnapshotInputBuilder,
 }
-impl RestoreDBClusterFromSnapshotFluentBuilder  {
+impl RestoreDBClusterFromSnapshotFluentBuilder {
     /// Creates a new `RestoreDBClusterFromSnapshot`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshot, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput, aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `AvailabilityZones`.
     ///
     /// To override the contents of this collection use [`set_availability_zones`](Self::set_availability_zones).
@@ -60,63 +80,72 @@ impl RestoreDBClusterFromSnapshotFluentBuilder  {
         self
     }
     /// <p>Provides the list of EC2 Availability Zones that instances in the restored DB cluster can be created in.</p>
-    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_availability_zones(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_availability_zones(input);
         self
     }
-    /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> 
-    /// <li> <p>First character must be a letter</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> 
-    /// </ul> 
+    /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
     pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.db_cluster_identifier(input.into());
         self
     }
-    /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li> 
-    /// <li> <p>First character must be a letter</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> 
-    /// </ul> 
+    /// <p>The name of the DB cluster to create from the DB snapshot or DB cluster snapshot. This parameter isn't case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens</p> </li>
+    /// <li> <p>First character must be a letter</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li>
+    /// </ul>
     /// <p>Example: <code>my-snapshot-id</code> </p>
-    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_db_cluster_identifier(input);
         self
     }
-    /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p> 
-    /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing Snapshot.</p> </li> 
+    /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
+    /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing Snapshot.</p> </li>
     /// </ul>
     pub fn snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.snapshot_identifier(input.into());
         self
     }
-    /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p> 
-    /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing Snapshot.</p> </li> 
+    /// <p>The identifier for the DB snapshot or DB cluster snapshot to restore from.</p>
+    /// <p>You can use either the name or the Amazon Resource Name (ARN) to specify a DB cluster snapshot. However, you can use only the ARN to specify a DB snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing Snapshot.</p> </li>
     /// </ul>
-    pub fn set_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_snapshot_identifier(input);
         self
     }
-    /// <p>The database engine to use for the new DB cluster.</p> 
-    /// <p>Default: The same as source</p> 
+    /// <p>The database engine to use for the new DB cluster.</p>
+    /// <p>Default: The same as source</p>
     /// <p>Constraint: Must be compatible with the engine of the source</p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.engine(input.into());
         self
     }
-    /// <p>The database engine to use for the new DB cluster.</p> 
-    /// <p>Default: The same as source</p> 
+    /// <p>The database engine to use for the new DB cluster.</p>
+    /// <p>Default: The same as source</p>
     /// <p>Constraint: Must be compatible with the engine of the source</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_engine(input);
@@ -132,31 +161,34 @@ impl RestoreDBClusterFromSnapshotFluentBuilder  {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>The port number on which the new DB cluster accepts connections.</p> 
-    /// <p>Constraints: Value must be <code>1150-65535</code> </p> 
+    /// <p>The port number on which the new DB cluster accepts connections.</p>
+    /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
     pub fn port(mut self, input: i32) -> Self {
         self.inner = self.inner.port(input);
         self
     }
-    /// <p>The port number on which the new DB cluster accepts connections.</p> 
-    /// <p>Constraints: Value must be <code>1150-65535</code> </p> 
+    /// <p>The port number on which the new DB cluster accepts connections.</p>
+    /// <p>Constraints: Value must be <code>1150-65535</code> </p>
     /// <p>Default: The same port as the original DB cluster.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_port(input);
         self
     }
-    /// <p>The name of the DB subnet group to use for the new DB cluster.</p> 
-    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p> 
+    /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
+    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
     pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
     }
-    /// <p>The name of the DB subnet group to use for the new DB cluster.</p> 
-    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p> 
+    /// <p>The name of the DB subnet group to use for the new DB cluster.</p>
+    /// <p>Constraints: If supplied, must match the name of an existing DBSubnetGroup.</p>
     /// <p>Example: <code>mySubnetgroup</code> </p>
-    pub fn set_db_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_subnet_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
@@ -176,7 +208,10 @@ impl RestoreDBClusterFromSnapshotFluentBuilder  {
         self
     }
     /// <p> <i>(Not supported by Neptune)</i> </p>
-    pub fn set_option_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_option_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_option_group_name(input);
         self
     }
@@ -190,7 +225,10 @@ impl RestoreDBClusterFromSnapshotFluentBuilder  {
         self
     }
     /// <p>A list of VPC security groups that the new DB cluster will belong to.</p>
-    pub fn set_vpc_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_vpc_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
@@ -204,41 +242,47 @@ impl RestoreDBClusterFromSnapshotFluentBuilder  {
         self
     }
     /// <p>The tags to be assigned to the restored DB cluster.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p> 
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p> 
-    /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p> 
-    /// <ul> 
-    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> 
-    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li> 
+    /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+    /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
+    /// <ul>
+    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li>
+    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p> 
-    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p> 
-    /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p> 
-    /// <ul> 
-    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li> 
-    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li> 
+    /// <p>The Amazon KMS key identifier to use when restoring an encrypted DB cluster from a DB snapshot or DB cluster snapshot.</p>
+    /// <p>The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.</p>
+    /// <p>If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following will occur:</p>
+    /// <ul>
+    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted, then the restored DB cluster is encrypted using the KMS key that was used to encrypt the DB snapshot or DB cluster snapshot.</p> </li>
+    /// <li> <p>If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not encrypted, then the restored DB cluster is not encrypted.</p> </li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
-    /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p> 
+    /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
     pub fn enable_iam_database_authentication(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_iam_database_authentication(input);
         self
     }
-    /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p> 
+    /// <p>True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.</p>
     /// <p>Default: <code>false</code> </p>
-    pub fn set_enable_iam_database_authentication(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enable_iam_database_authentication(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
         self.inner = self.inner.set_enable_iam_database_authentication(input);
         self
     }
@@ -252,25 +296,34 @@ impl RestoreDBClusterFromSnapshotFluentBuilder  {
         self
     }
     /// <p>The list of logs that the restored DB cluster is to export to Amazon CloudWatch Logs.</p>
-    pub fn set_enable_cloudwatch_logs_exports(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_enable_cloudwatch_logs_exports(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_enable_cloudwatch_logs_exports(input);
         self
     }
-    /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li> 
+    /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn db_cluster_parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn db_cluster_parameter_group_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.db_cluster_parameter_group_name(input.into());
         self
     }
-    /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li> 
+    /// <p>The name of the DB cluster parameter group to associate with the new DB cluster.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>If supplied, must match the name of an existing DBClusterParameterGroup.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_cluster_parameter_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_db_cluster_parameter_group_name(input);
         self
     }
@@ -294,17 +347,22 @@ impl RestoreDBClusterFromSnapshotFluentBuilder  {
         self.inner = self.inner.set_copy_tags_to_snapshot(input);
         self
     }
-    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p> 
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    pub fn serverless_v2_scaling_configuration(mut self, input: crate::types::ServerlessV2ScalingConfiguration) -> Self {
+    pub fn serverless_v2_scaling_configuration(
+        mut self,
+        input: crate::types::ServerlessV2ScalingConfiguration,
+    ) -> Self {
         self.inner = self.inner.serverless_v2_scaling_configuration(input);
         self
     }
-    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p> 
+    /// <p>Contains the scaling configuration of a Neptune Serverless DB cluster.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html">Using Amazon Neptune Serverless</a> in the <i>Amazon Neptune User Guide</i>.</p>
-    pub fn set_serverless_v2_scaling_configuration(mut self, input: std::option::Option<crate::types::ServerlessV2ScalingConfiguration>) -> Self {
+    pub fn set_serverless_v2_scaling_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ServerlessV2ScalingConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_serverless_v2_scaling_configuration(input);
         self
     }
 }
-

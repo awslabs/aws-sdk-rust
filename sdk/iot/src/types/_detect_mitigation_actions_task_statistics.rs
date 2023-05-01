@@ -3,7 +3,7 @@
 /// <p> The statistics of a mitigation action task. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectMitigationActionsTaskStatistics  {
+pub struct DetectMitigationActionsTaskStatistics {
     /// <p> The actions that were performed. </p>
     #[doc(hidden)]
     pub actions_executed: std::option::Option<i64>,
@@ -51,7 +51,8 @@ impl DetectMitigationActionsTaskStatisticsBuilder {
     }
     /// <p> The actions that were performed. </p>
     pub fn set_actions_executed(mut self, input: std::option::Option<i64>) -> Self {
-        self.actions_executed = input; self
+        self.actions_executed = input;
+        self
     }
     /// <p> The actions that were skipped. </p>
     pub fn actions_skipped(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl DetectMitigationActionsTaskStatisticsBuilder {
     }
     /// <p> The actions that were skipped. </p>
     pub fn set_actions_skipped(mut self, input: std::option::Option<i64>) -> Self {
-        self.actions_skipped = input; self
+        self.actions_skipped = input;
+        self
     }
     /// <p> The actions that failed. </p>
     pub fn actions_failed(mut self, input: i64) -> Self {
@@ -69,18 +71,15 @@ impl DetectMitigationActionsTaskStatisticsBuilder {
     }
     /// <p> The actions that failed. </p>
     pub fn set_actions_failed(mut self, input: std::option::Option<i64>) -> Self {
-        self.actions_failed = input; self
+        self.actions_failed = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetectMitigationActionsTaskStatistics`](crate::types::DetectMitigationActionsTaskStatistics).
     pub fn build(self) -> crate::types::DetectMitigationActionsTaskStatistics {
         crate::types::DetectMitigationActionsTaskStatistics {
-            actions_executed: self.actions_executed
-            ,
-            actions_skipped: self.actions_skipped
-            ,
-            actions_failed: self.actions_failed
-            ,
+            actions_executed: self.actions_executed,
+            actions_skipped: self.actions_skipped,
+            actions_failed: self.actions_failed,
         }
     }
 }
-

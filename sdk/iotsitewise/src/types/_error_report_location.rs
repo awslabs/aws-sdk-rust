@@ -3,7 +3,7 @@
 /// <p>The Amazon S3 destination where errors associated with the job creation request are saved.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorReportLocation  {
+pub struct ErrorReportLocation {
     /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ErrorReportLocation  {
 }
 impl ErrorReportLocation {
     /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
-    pub fn prefix(&self) -> std::option::Option<& str> {
+    pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ErrorReportLocationBuilder {
     }
     /// <p>The name of the Amazon S3 bucket to which errors associated with the bulk import job are sent.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ErrorReportLocationBuilder {
     }
     /// <p>Amazon S3 uses the prefix as a folder name to organize data in the bucket. Each Amazon S3 object has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html">Organizing objects using prefixes</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input; self
+        self.prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`ErrorReportLocation`](crate::types::ErrorReportLocation).
     pub fn build(self) -> crate::types::ErrorReportLocation {
         crate::types::ErrorReportLocation {
-            bucket: self.bucket
-            ,
-            prefix: self.prefix
-            ,
+            bucket: self.bucket,
+            prefix: self.prefix,
         }
     }
 }
-

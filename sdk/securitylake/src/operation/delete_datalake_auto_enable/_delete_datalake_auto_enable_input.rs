@@ -2,20 +2,25 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDatalakeAutoEnableInput  {
+pub struct DeleteDatalakeAutoEnableInput {
     /// <p>Remove automatic enablement of configuration settings for new member accounts in Security Lake. </p>
     #[doc(hidden)]
-    pub remove_from_configuration_for_new_accounts: std::option::Option<std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>>,
+    pub remove_from_configuration_for_new_accounts:
+        std::option::Option<std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>>,
 }
 impl DeleteDatalakeAutoEnableInput {
     /// <p>Remove automatic enablement of configuration settings for new member accounts in Security Lake. </p>
-    pub fn remove_from_configuration_for_new_accounts(&self) -> std::option::Option<& [crate::types::AutoEnableNewRegionConfiguration]> {
+    pub fn remove_from_configuration_for_new_accounts(
+        &self,
+    ) -> std::option::Option<&[crate::types::AutoEnableNewRegionConfiguration]> {
         self.remove_from_configuration_for_new_accounts.as_deref()
     }
 }
 impl DeleteDatalakeAutoEnableInput {
     /// Creates a new builder-style object to manufacture [`DeleteDatalakeAutoEnableInput`](crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableInput).
-    pub fn builder() -> crate::operation::delete_datalake_auto_enable::builders::DeleteDatalakeAutoEnableInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_datalake_auto_enable::builders::DeleteDatalakeAutoEnableInputBuilder
+    {
         crate::operation::delete_datalake_auto_enable::builders::DeleteDatalakeAutoEnableInputBuilder::default()
     }
 }
@@ -24,7 +29,8 @@ impl DeleteDatalakeAutoEnableInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeleteDatalakeAutoEnableInputBuilder {
-    pub(crate) remove_from_configuration_for_new_accounts: std::option::Option<std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>>,
+    pub(crate) remove_from_configuration_for_new_accounts:
+        std::option::Option<std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>>,
 }
 impl DeleteDatalakeAutoEnableInputBuilder {
     /// Appends an item to `remove_from_configuration_for_new_accounts`.
@@ -32,24 +38,37 @@ impl DeleteDatalakeAutoEnableInputBuilder {
     /// To override the contents of this collection use [`set_remove_from_configuration_for_new_accounts`](Self::set_remove_from_configuration_for_new_accounts).
     ///
     /// <p>Remove automatic enablement of configuration settings for new member accounts in Security Lake. </p>
-    pub fn remove_from_configuration_for_new_accounts(mut self, input: crate::types::AutoEnableNewRegionConfiguration) -> Self {
-        let mut v = self.remove_from_configuration_for_new_accounts.unwrap_or_default();
-                        v.push(input);
-                        self.remove_from_configuration_for_new_accounts = Some(v);
-                        self
+    pub fn remove_from_configuration_for_new_accounts(
+        mut self,
+        input: crate::types::AutoEnableNewRegionConfiguration,
+    ) -> Self {
+        let mut v = self
+            .remove_from_configuration_for_new_accounts
+            .unwrap_or_default();
+        v.push(input);
+        self.remove_from_configuration_for_new_accounts = Some(v);
+        self
     }
     /// <p>Remove automatic enablement of configuration settings for new member accounts in Security Lake. </p>
-    pub fn set_remove_from_configuration_for_new_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>>) -> Self {
-        self.remove_from_configuration_for_new_accounts = input; self
+    pub fn set_remove_from_configuration_for_new_accounts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AutoEnableNewRegionConfiguration>>,
+    ) -> Self {
+        self.remove_from_configuration_for_new_accounts = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDatalakeAutoEnableInput`](crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableInput).
-    pub fn build(self) -> Result<crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_datalake_auto_enable::DeleteDatalakeAutoEnableInput {
-                remove_from_configuration_for_new_accounts: self.remove_from_configuration_for_new_accounts
-                ,
-            }
+                remove_from_configuration_for_new_accounts: self
+                    .remove_from_configuration_for_new_accounts,
+            },
         )
     }
 }
-

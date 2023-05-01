@@ -3,14 +3,14 @@
 /// <p>The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisDataStream  {
+pub struct KinesisDataStream {
     /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl KinesisDataStream {
     /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl KinesisDataStreamBuilder {
     }
     /// <p>ARN of the output Amazon Kinesis Data Streams stream.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`KinesisDataStream`](crate::types::KinesisDataStream).
     pub fn build(self) -> crate::types::KinesisDataStream {
-        crate::types::KinesisDataStream {
-            arn: self.arn
-            ,
-        }
+        crate::types::KinesisDataStream { arn: self.arn }
     }
 }
-

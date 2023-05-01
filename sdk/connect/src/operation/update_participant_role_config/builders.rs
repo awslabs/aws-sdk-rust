@@ -4,57 +4,77 @@ pub use crate::operation::update_participant_role_config::_update_participant_ro
 pub use crate::operation::update_participant_role_config::_update_participant_role_config_input::UpdateParticipantRoleConfigInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateParticipantRoleConfig`.
-/// 
-/// <p>Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically disconnected from a chat due to idleness. You can set four timers:</p> 
-/// <ul> 
-/// <li> <p>Customer idle timeout</p> </li> 
-/// <li> <p>Customer auto-disconnect timeout</p> </li> 
-/// <li> <p>Agent idle timeout</p> </li> 
-/// <li> <p>Agent auto-disconnect timeout</p> </li> 
-/// </ul> 
+///
+/// <p>Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically disconnected from a chat due to idleness. You can set four timers:</p>
+/// <ul>
+/// <li> <p>Customer idle timeout</p> </li>
+/// <li> <p>Customer auto-disconnect timeout</p> </li>
+/// <li> <p>Agent idle timeout</p> </li>
+/// <li> <p>Agent auto-disconnect timeout</p> </li>
+/// </ul>
 /// <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateParticipantRoleConfigFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_participant_role_config::builders::UpdateParticipantRoleConfigInputBuilder,
 }
-impl UpdateParticipantRoleConfigFluentBuilder  {
+impl UpdateParticipantRoleConfigFluentBuilder {
     /// Creates a new `UpdateParticipantRoleConfig`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_participant_role_config::UpdateParticipantRoleConfig, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput, aws_smithy_http::result::SdkError<crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_participant_role_config::UpdateParticipantRoleConfig,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -76,14 +96,19 @@ impl UpdateParticipantRoleConfigFluentBuilder  {
         self
     }
     /// <p>The Amazon Connect channel you want to configure.</p>
-    pub fn channel_configuration(mut self, input: crate::types::UpdateParticipantRoleConfigChannelInfo) -> Self {
+    pub fn channel_configuration(
+        mut self,
+        input: crate::types::UpdateParticipantRoleConfigChannelInfo,
+    ) -> Self {
         self.inner = self.inner.channel_configuration(input);
         self
     }
     /// <p>The Amazon Connect channel you want to configure.</p>
-    pub fn set_channel_configuration(mut self, input: std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo>) -> Self {
+    pub fn set_channel_configuration(
+        mut self,
+        input: std::option::Option<crate::types::UpdateParticipantRoleConfigChannelInfo>,
+    ) -> Self {
         self.inner = self.inner.set_channel_configuration(input);
         self
     }
 }
-

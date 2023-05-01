@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationOutput  {
+pub struct DeleteConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,23 +13,25 @@ pub struct DeleteConfigurationOutput  {
 }
 impl DeleteConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ConfigurationState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ConfigurationState> {
         self.state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationOutput`](crate::operation::delete_configuration::DeleteConfigurationOutput).
-    pub fn builder() -> crate::operation::delete_configuration::builders::DeleteConfigurationOutputBuilder {
-        crate::operation::delete_configuration::builders::DeleteConfigurationOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_configuration::builders::DeleteConfigurationOutputBuilder {
+        crate::operation::delete_configuration::builders::DeleteConfigurationOutputBuilder::default(
+        )
     }
 }
 
@@ -49,7 +51,8 @@ impl DeleteConfigurationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
     pub fn state(mut self, input: crate::types::ConfigurationState) -> Self {
@@ -57,27 +60,28 @@ impl DeleteConfigurationOutputBuilder {
         self
     }
     /// <p>The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED. </p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::ConfigurationState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::ConfigurationState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteConfigurationOutput`](crate::operation::delete_configuration::DeleteConfigurationOutput).
     pub fn build(self) -> crate::operation::delete_configuration::DeleteConfigurationOutput {
         crate::operation::delete_configuration::DeleteConfigurationOutput {
-            arn: self.arn
-            ,
-            state: self.state
-            ,
+            arn: self.arn,
+            state: self.state,
             _request_id: self._request_id,
         }
     }
 }
-

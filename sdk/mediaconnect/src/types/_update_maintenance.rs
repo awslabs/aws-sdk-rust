@@ -3,7 +3,7 @@
 /// Update maintenance setting for a flow
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMaintenance  {
+pub struct UpdateMaintenance {
     /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
     #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::types::MaintenanceDay>,
@@ -16,15 +16,15 @@ pub struct UpdateMaintenance  {
 }
 impl UpdateMaintenance {
     /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-    pub fn maintenance_day(&self) -> std::option::Option<& crate::types::MaintenanceDay> {
+    pub fn maintenance_day(&self) -> std::option::Option<&crate::types::MaintenanceDay> {
         self.maintenance_day.as_ref()
     }
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
-    pub fn maintenance_scheduled_date(&self) -> std::option::Option<& str> {
+    pub fn maintenance_scheduled_date(&self) -> std::option::Option<&str> {
         self.maintenance_scheduled_date.as_deref()
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn maintenance_start_hour(&self) -> std::option::Option<& str> {
+    pub fn maintenance_start_hour(&self) -> std::option::Option<&str> {
         self.maintenance_start_hour.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl UpdateMaintenanceBuilder {
         self
     }
     /// A day of a week when the maintenance will happen. use Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday.
-    pub fn set_maintenance_day(mut self, input: std::option::Option<crate::types::MaintenanceDay>) -> Self {
-        self.maintenance_day = input; self
+    pub fn set_maintenance_day(
+        mut self,
+        input: std::option::Option<crate::types::MaintenanceDay>,
+    ) -> Self {
+        self.maintenance_day = input;
+        self
     }
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
     pub fn maintenance_scheduled_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +63,12 @@ impl UpdateMaintenanceBuilder {
         self
     }
     /// A scheduled date in ISO UTC format when the maintenance will happen. Use YYYY-MM-DD format. Example: 2021-01-30.
-    pub fn set_maintenance_scheduled_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.maintenance_scheduled_date = input; self
+    pub fn set_maintenance_scheduled_date(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.maintenance_scheduled_date = input;
+        self
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
     pub fn maintenance_start_hour(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +76,19 @@ impl UpdateMaintenanceBuilder {
         self
     }
     /// UTC time when the maintenance will happen. Use 24-hour HH:MM format. Minutes must be 00. Example: 13:00. The default value is 02:00.
-    pub fn set_maintenance_start_hour(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.maintenance_start_hour = input; self
+    pub fn set_maintenance_start_hour(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.maintenance_start_hour = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateMaintenance`](crate::types::UpdateMaintenance).
     pub fn build(self) -> crate::types::UpdateMaintenance {
         crate::types::UpdateMaintenance {
-            maintenance_day: self.maintenance_day
-            ,
-            maintenance_scheduled_date: self.maintenance_scheduled_date
-            ,
-            maintenance_start_hour: self.maintenance_start_hour
-            ,
+            maintenance_day: self.maintenance_day,
+            maintenance_scheduled_date: self.maintenance_scheduled_date,
+            maintenance_start_hour: self.maintenance_start_hour,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDisassociateUserStackOutput  {
+pub struct BatchDisassociateUserStackOutput {
     /// <p>The list of UserStackAssociationError objects.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::UserStackAssociationError>>,
@@ -10,18 +10,18 @@ pub struct BatchDisassociateUserStackOutput  {
 }
 impl BatchDisassociateUserStackOutput {
     /// <p>The list of UserStackAssociationError objects.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::UserStackAssociationError]> {
+    pub fn errors(&self) -> std::option::Option<&[crate::types::UserStackAssociationError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchDisassociateUserStackOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchDisassociateUserStackOutput {
     /// Creates a new builder-style object to manufacture [`BatchDisassociateUserStackOutput`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput).
-    pub fn builder() -> crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackOutputBuilder {
+    pub fn builder() -> crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackOutputBuilder{
         crate::operation::batch_disassociate_user_stack::builders::BatchDisassociateUserStackOutputBuilder::default()
     }
 }
@@ -41,30 +41,34 @@ impl BatchDisassociateUserStackOutputBuilder {
     /// <p>The list of UserStackAssociationError objects.</p>
     pub fn errors(mut self, input: crate::types::UserStackAssociationError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>The list of UserStackAssociationError objects.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserStackAssociationError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserStackAssociationError>>,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchDisassociateUserStackOutput`](crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput).
-    pub fn build(self) -> crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput {
         crate::operation::batch_disassociate_user_stack::BatchDisassociateUserStackOutput {
-            errors: self.errors
-            ,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }
 }
-

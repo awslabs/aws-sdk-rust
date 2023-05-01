@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAccessPolicyOutput  {
+pub struct CreateAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
     #[doc(hidden)]
     pub access_policy_id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     #[doc(hidden)]
     pub access_policy_arn: std::option::Option<std::string::String>,
@@ -14,23 +14,24 @@ pub struct CreateAccessPolicyOutput  {
 }
 impl CreateAccessPolicyOutput {
     /// <p>The ID of the access policy.</p>
-    pub fn access_policy_id(&self) -> std::option::Option<& str> {
+    pub fn access_policy_id(&self) -> std::option::Option<&str> {
         self.access_policy_id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    pub fn access_policy_arn(&self) -> std::option::Option<& str> {
+    pub fn access_policy_arn(&self) -> std::option::Option<&str> {
         self.access_policy_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAccessPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateAccessPolicyOutput`](crate::operation::create_access_policy::CreateAccessPolicyOutput).
-    pub fn builder() -> crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder {
         crate::operation::create_access_policy::builders::CreateAccessPolicyOutputBuilder::default()
     }
 }
@@ -51,37 +52,39 @@ impl CreateAccessPolicyOutputBuilder {
     }
     /// <p>The ID of the access policy.</p>
     pub fn set_access_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_policy_id = input; self
+        self.access_policy_id = input;
+        self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
     pub fn access_policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.access_policy_arn = Some(input.into());
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p> 
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the access policy, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code> </p>
-    pub fn set_access_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_policy_arn = input; self
+    pub fn set_access_policy_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.access_policy_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAccessPolicyOutput`](crate::operation::create_access_policy::CreateAccessPolicyOutput).
     pub fn build(self) -> crate::operation::create_access_policy::CreateAccessPolicyOutput {
         crate::operation::create_access_policy::CreateAccessPolicyOutput {
-            access_policy_id: self.access_policy_id
-            ,
-            access_policy_arn: self.access_policy_arn
-            ,
+            access_policy_id: self.access_policy_id,
+            access_policy_arn: self.access_policy_arn,
             _request_id: self._request_id,
         }
     }
 }
-

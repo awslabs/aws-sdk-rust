@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterWirelessDeviceOutput  {
+pub struct DeregisterWirelessDeviceOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeregisterWirelessDeviceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeregisterWirelessDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterWirelessDeviceOutput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput).
-    pub fn builder() -> crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceOutputBuilder
+    {
         crate::operation::deregister_wireless_device::builders::DeregisterWirelessDeviceOutputBuilder::default()
     }
 }
@@ -25,19 +27,20 @@ pub struct DeregisterWirelessDeviceOutputBuilder {
 }
 impl DeregisterWirelessDeviceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeregisterWirelessDeviceOutput`](crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput).
-    pub fn build(self) -> crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput {
         crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput {
             _request_id: self._request_id,
         }
     }
 }
-

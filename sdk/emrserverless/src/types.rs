@@ -112,4 +112,3 @@ pub mod builders;
 
 /// Error types that EMR Serverless can respond with.
 pub mod error;
-

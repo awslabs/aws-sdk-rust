@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePortalInput  {
+pub struct DeletePortalInput {
     /// <p>The ID of the portal to delete.</p>
     #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeletePortalInput  {
 }
 impl DeletePortalInput {
     /// <p>The ID of the portal to delete.</p>
-    pub fn portal_id(&self) -> std::option::Option<& str> {
+    pub fn portal_id(&self) -> std::option::Option<&str> {
         self.portal_id.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DeletePortalInputBuilder {
     }
     /// <p>The ID of the portal to delete.</p>
     pub fn set_portal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portal_id = input; self
+        self.portal_id = input;
+        self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DeletePortalInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePortalInput`](crate::operation::delete_portal::DeletePortalInput).
-    pub fn build(self) -> Result<crate::operation::delete_portal::DeletePortalInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_portal::DeletePortalInput {
-                portal_id: self.portal_id
-                ,
-                client_token: self.client_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_portal::DeletePortalInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_portal::DeletePortalInput {
+            portal_id: self.portal_id,
+            client_token: self.client_token,
+        })
     }
 }
-

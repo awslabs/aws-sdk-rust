@@ -3,7 +3,7 @@
 /// <p>AWS Data Exchange Jobs are asynchronous import or export operations used to create or copy assets. A data set owner can both import and export as they see fit. Someone with an entitlement to a data set can only export. Jobs are deleted 90 days after they are created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobEntry  {
+pub struct JobEntry {
     /// <p>The ARN for the job.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct JobEntry  {
 }
 impl JobEntry {
     /// <p>The ARN for the job.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>Details of the operation to be performed by the job, such as export destination details or import source details.</p>
-    pub fn details(&self) -> std::option::Option<& crate::types::ResponseDetails> {
+    pub fn details(&self) -> std::option::Option<&crate::types::ResponseDetails> {
         self.details.as_ref()
     }
     /// <p>Errors for jobs.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::JobError]> {
+    pub fn errors(&self) -> std::option::Option<&[crate::types::JobError]> {
         self.errors.as_deref()
     }
     /// <p>The unique identifier for the job.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The state of the job.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::State> {
+    pub fn state(&self) -> std::option::Option<&crate::types::State> {
         self.state.as_ref()
     }
     /// <p>The job type.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::Type> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::Type> {
         self.r#type.as_ref()
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -91,7 +91,8 @@ impl JobEntryBuilder {
     }
     /// <p>The ARN for the job.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -99,8 +100,12 @@ impl JobEntryBuilder {
         self
     }
     /// <p>The date and time that the job was created, in ISO 8601 format.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>Details of the operation to be performed by the job, such as export destination details or import source details.</p>
     pub fn details(mut self, input: crate::types::ResponseDetails) -> Self {
@@ -108,8 +113,12 @@ impl JobEntryBuilder {
         self
     }
     /// <p>Details of the operation to be performed by the job, such as export destination details or import source details.</p>
-    pub fn set_details(mut self, input: std::option::Option<crate::types::ResponseDetails>) -> Self {
-        self.details = input; self
+    pub fn set_details(
+        mut self,
+        input: std::option::Option<crate::types::ResponseDetails>,
+    ) -> Self {
+        self.details = input;
+        self
     }
     /// Appends an item to `errors`.
     ///
@@ -118,13 +127,17 @@ impl JobEntryBuilder {
     /// <p>Errors for jobs.</p>
     pub fn errors(mut self, input: crate::types::JobError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>Errors for jobs.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::JobError>>,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     /// <p>The unique identifier for the job.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +146,8 @@ impl JobEntryBuilder {
     }
     /// <p>The unique identifier for the job.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The state of the job.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
@@ -142,7 +156,8 @@ impl JobEntryBuilder {
     }
     /// <p>The state of the job.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The job type.</p>
     pub fn r#type(mut self, input: crate::types::Type) -> Self {
@@ -151,7 +166,8 @@ impl JobEntryBuilder {
     }
     /// <p>The job type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::Type>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -159,29 +175,24 @@ impl JobEntryBuilder {
         self
     }
     /// <p>The date and time that the job was last updated, in ISO 8601 format.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// Consumes the builder and constructs a [`JobEntry`](crate::types::JobEntry).
     pub fn build(self) -> crate::types::JobEntry {
         crate::types::JobEntry {
-            arn: self.arn
-            ,
-            created_at: self.created_at
-            ,
-            details: self.details
-            ,
-            errors: self.errors
-            ,
-            id: self.id
-            ,
-            state: self.state
-            ,
-            r#type: self.r#type
-            ,
-            updated_at: self.updated_at
-            ,
+            arn: self.arn,
+            created_at: self.created_at,
+            details: self.details,
+            errors: self.errors,
+            id: self.id,
+            state: self.state,
+            r#type: self.r#type,
+            updated_at: self.updated_at,
         }
     }
 }
-

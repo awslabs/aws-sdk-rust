@@ -3,14 +3,14 @@
 /// <p>The filter for the lifecycle policy preview.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LifecyclePolicyPreviewFilter  {
+pub struct LifecyclePolicyPreviewFilter {
     /// <p>The tag status of the image.</p>
     #[doc(hidden)]
     pub tag_status: std::option::Option<crate::types::TagStatus>,
 }
 impl LifecyclePolicyPreviewFilter {
     /// <p>The tag status of the image.</p>
-    pub fn tag_status(&self) -> std::option::Option<& crate::types::TagStatus> {
+    pub fn tag_status(&self) -> std::option::Option<&crate::types::TagStatus> {
         self.tag_status.as_ref()
     }
 }
@@ -35,14 +35,13 @@ impl LifecyclePolicyPreviewFilterBuilder {
     }
     /// <p>The tag status of the image.</p>
     pub fn set_tag_status(mut self, input: std::option::Option<crate::types::TagStatus>) -> Self {
-        self.tag_status = input; self
+        self.tag_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`LifecyclePolicyPreviewFilter`](crate::types::LifecyclePolicyPreviewFilter).
     pub fn build(self) -> crate::types::LifecyclePolicyPreviewFilter {
         crate::types::LifecyclePolicyPreviewFilter {
-            tag_status: self.tag_status
-            ,
+            tag_status: self.tag_status,
         }
     }
 }
-

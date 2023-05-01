@@ -3,32 +3,32 @@
 /// <p>Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and object keys of a recommendations export file, and its associated metadata file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Destination  {
+pub struct S3Destination {
     /// <p>The name of the Amazon S3 bucket used as the destination of an export file.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 bucket key of an export file.</p> 
+    /// <p>The Amazon S3 bucket key of an export file.</p>
     /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 bucket key of a metadata file.</p> 
+    /// <p>The Amazon S3 bucket key of a metadata file.</p>
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
     #[doc(hidden)]
     pub metadata_key: std::option::Option<std::string::String>,
 }
 impl S3Destination {
     /// <p>The name of the Amazon S3 bucket used as the destination of an export file.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
-    /// <p>The Amazon S3 bucket key of an export file.</p> 
+    /// <p>The Amazon S3 bucket key of an export file.</p>
     /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The Amazon S3 bucket key of a metadata file.</p> 
+    /// <p>The Amazon S3 bucket key of a metadata file.</p>
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
-    pub fn metadata_key(&self) -> std::option::Option<& str> {
+    pub fn metadata_key(&self) -> std::option::Option<&str> {
         self.metadata_key.as_deref()
     }
 }
@@ -55,40 +55,39 @@ impl S3DestinationBuilder {
     }
     /// <p>The name of the Amazon S3 bucket used as the destination of an export file.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
-    /// <p>The Amazon S3 bucket key of an export file.</p> 
+    /// <p>The Amazon S3 bucket key of an export file.</p>
     /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
         self.key = Some(input.into());
         self
     }
-    /// <p>The Amazon S3 bucket key of an export file.</p> 
+    /// <p>The Amazon S3 bucket key of an export file.</p>
     /// <p>The key uniquely identifies the object, or export file, in the S3 bucket.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
-    /// <p>The Amazon S3 bucket key of a metadata file.</p> 
+    /// <p>The Amazon S3 bucket key of a metadata file.</p>
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
     pub fn metadata_key(mut self, input: impl Into<std::string::String>) -> Self {
         self.metadata_key = Some(input.into());
         self
     }
-    /// <p>The Amazon S3 bucket key of a metadata file.</p> 
+    /// <p>The Amazon S3 bucket key of a metadata file.</p>
     /// <p>The key uniquely identifies the object, or metadata file, in the S3 bucket.</p>
     pub fn set_metadata_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata_key = input; self
+        self.metadata_key = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3Destination`](crate::types::S3Destination).
     pub fn build(self) -> crate::types::S3Destination {
         crate::types::S3Destination {
-            bucket: self.bucket
-            ,
-            key: self.key
-            ,
-            metadata_key: self.metadata_key
-            ,
+            bucket: self.bucket,
+            key: self.key,
+            metadata_key: self.metadata_key,
         }
     }
 }
-

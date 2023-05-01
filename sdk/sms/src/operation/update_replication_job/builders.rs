@@ -4,57 +4,80 @@ pub use crate::operation::update_replication_job::_update_replication_job_output
 pub use crate::operation::update_replication_job::_update_replication_job_input::UpdateReplicationJobInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateReplicationJob`.
-/// 
+///
 /// <p>Updates the specified settings for the specified replication job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateReplicationJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_replication_job::builders::UpdateReplicationJobInputBuilder,
+    inner: crate::operation::update_replication_job::builders::UpdateReplicationJobInputBuilder,
 }
-impl UpdateReplicationJobFluentBuilder  {
+impl UpdateReplicationJobFluentBuilder {
     /// Creates a new `UpdateReplicationJob`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_replication_job::UpdateReplicationJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_replication_job::UpdateReplicationJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_replication_job::UpdateReplicationJobOutput, aws_smithy_http::result::SdkError<crate::operation::update_replication_job::UpdateReplicationJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_replication_job::UpdateReplicationJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_replication_job::UpdateReplicationJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_replication_job::UpdateReplicationJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_replication_job::UpdateReplicationJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the replication job.</p>
     pub fn replication_job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.replication_job_id(input.into());
         self
     }
     /// <p>The ID of the replication job.</p>
-    pub fn set_replication_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_replication_job_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_replication_job_id(input);
         self
     }
@@ -74,7 +97,10 @@ impl UpdateReplicationJobFluentBuilder  {
         self
     }
     /// <p>The start time of the next replication run.</p>
-    pub fn set_next_replication_run_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_next_replication_run_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_next_replication_run_start_time(input);
         self
     }
@@ -84,7 +110,10 @@ impl UpdateReplicationJobFluentBuilder  {
         self
     }
     /// <p>The license type to be used for the AMI created by a successful replication run.</p>
-    pub fn set_license_type(mut self, input: std::option::Option<crate::types::LicenseType>) -> Self {
+    pub fn set_license_type(
+        mut self,
+        input: std::option::Option<crate::types::LicenseType>,
+    ) -> Self {
         self.inner = self.inner.set_license_type(input);
         self
     }
@@ -128,29 +157,28 @@ impl UpdateReplicationJobFluentBuilder  {
         self.inner = self.inner.set_encrypted(input);
         self
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>KMS key ID</p> </li> 
-    /// <li> <p>KMS key alias</p> </li> 
-    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
-    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
-    /// </ul> 
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
+    /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p> 
-    /// <ul> 
-    /// <li> <p>KMS key ID</p> </li> 
-    /// <li> <p>KMS key alias</p> </li> 
-    /// <li> <p>ARN referring to the KMS key ID</p> </li> 
-    /// <li> <p>ARN referring to the KMS key alias</p> </li> 
-    /// </ul> 
+    /// <p>The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:</p>
+    /// <ul>
+    /// <li> <p>KMS key ID</p> </li>
+    /// <li> <p>KMS key alias</p> </li>
+    /// <li> <p>ARN referring to the KMS key ID</p> </li>
+    /// <li> <p>ARN referring to the KMS key alias</p> </li>
+    /// </ul>
     /// <p>If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
         self
     }
 }
-

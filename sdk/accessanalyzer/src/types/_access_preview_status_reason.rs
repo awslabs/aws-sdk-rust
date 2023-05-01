@@ -3,14 +3,14 @@
 /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPreviewStatusReason  {
+pub struct AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
 }
 impl AccessPreviewStatusReason {
     /// <p>The reason code for the current status of the access preview.</p>
-    pub fn code(&self) -> std::option::Option<& crate::types::AccessPreviewStatusReasonCode> {
+    pub fn code(&self) -> std::option::Option<&crate::types::AccessPreviewStatusReasonCode> {
         self.code.as_ref()
     }
 }
@@ -34,15 +34,15 @@ impl AccessPreviewStatusReasonBuilder {
         self
     }
     /// <p>The reason code for the current status of the access preview.</p>
-    pub fn set_code(mut self, input: std::option::Option<crate::types::AccessPreviewStatusReasonCode>) -> Self {
-        self.code = input; self
+    pub fn set_code(
+        mut self,
+        input: std::option::Option<crate::types::AccessPreviewStatusReasonCode>,
+    ) -> Self {
+        self.code = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccessPreviewStatusReason`](crate::types::AccessPreviewStatusReason).
     pub fn build(self) -> crate::types::AccessPreviewStatusReason {
-        crate::types::AccessPreviewStatusReason {
-            code: self.code
-            ,
-        }
+        crate::types::AccessPreviewStatusReason { code: self.code }
     }
 }
-

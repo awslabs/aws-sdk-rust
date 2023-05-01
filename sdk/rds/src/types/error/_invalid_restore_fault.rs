@@ -3,7 +3,7 @@
 /// <p>Cannot restore from VPC backup to non-VPC DB instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidRestoreFault  {
+pub struct InvalidRestoreFault {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,13 +11,15 @@ pub struct InvalidRestoreFault  {
 }
 impl InvalidRestoreFault {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for InvalidRestoreFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRestoreFault")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -32,7 +34,9 @@ impl aws_http::request_id::RequestId for crate::types::error::InvalidRestoreFaul
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidRestoreFault {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl InvalidRestoreFault {
     /// Creates a new builder-style object to manufacture [`InvalidRestoreFault`](crate::types::error::InvalidRestoreFault).
@@ -56,26 +60,28 @@ impl InvalidRestoreFaultBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`InvalidRestoreFault`](crate::types::error::InvalidRestoreFault).
     pub fn build(self) -> crate::types::error::InvalidRestoreFault {
         crate::types::error::InvalidRestoreFault {
-            message: self.message
-            ,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

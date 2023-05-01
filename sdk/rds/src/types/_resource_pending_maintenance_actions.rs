@@ -3,21 +3,24 @@
 /// <p>Describes the pending maintenance actions for a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePendingMaintenanceActions  {
+pub struct ResourcePendingMaintenanceActions {
     /// <p>The ARN of the resource that has pending maintenance actions.</p>
     #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
     /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
     #[doc(hidden)]
-    pub pending_maintenance_action_details: std::option::Option<std::vec::Vec<crate::types::PendingMaintenanceAction>>,
+    pub pending_maintenance_action_details:
+        std::option::Option<std::vec::Vec<crate::types::PendingMaintenanceAction>>,
 }
 impl ResourcePendingMaintenanceActions {
     /// <p>The ARN of the resource that has pending maintenance actions.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<& str> {
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
     /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
-    pub fn pending_maintenance_action_details(&self) -> std::option::Option<& [crate::types::PendingMaintenanceAction]> {
+    pub fn pending_maintenance_action_details(
+        &self,
+    ) -> std::option::Option<&[crate::types::PendingMaintenanceAction]> {
         self.pending_maintenance_action_details.as_deref()
     }
 }
@@ -33,7 +36,8 @@ impl ResourcePendingMaintenanceActions {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ResourcePendingMaintenanceActionsBuilder {
     pub(crate) resource_identifier: std::option::Option<std::string::String>,
-    pub(crate) pending_maintenance_action_details: std::option::Option<std::vec::Vec<crate::types::PendingMaintenanceAction>>,
+    pub(crate) pending_maintenance_action_details:
+        std::option::Option<std::vec::Vec<crate::types::PendingMaintenanceAction>>,
 }
 impl ResourcePendingMaintenanceActionsBuilder {
     /// <p>The ARN of the resource that has pending maintenance actions.</p>
@@ -42,32 +46,40 @@ impl ResourcePendingMaintenanceActionsBuilder {
         self
     }
     /// <p>The ARN of the resource that has pending maintenance actions.</p>
-    pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_identifier = input; self
+    pub fn set_resource_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_identifier = input;
+        self
     }
     /// Appends an item to `pending_maintenance_action_details`.
     ///
     /// To override the contents of this collection use [`set_pending_maintenance_action_details`](Self::set_pending_maintenance_action_details).
     ///
     /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
-    pub fn pending_maintenance_action_details(mut self, input: crate::types::PendingMaintenanceAction) -> Self {
+    pub fn pending_maintenance_action_details(
+        mut self,
+        input: crate::types::PendingMaintenanceAction,
+    ) -> Self {
         let mut v = self.pending_maintenance_action_details.unwrap_or_default();
-                        v.push(input);
-                        self.pending_maintenance_action_details = Some(v);
-                        self
+        v.push(input);
+        self.pending_maintenance_action_details = Some(v);
+        self
     }
     /// <p>A list that provides details about the pending maintenance actions for the resource.</p>
-    pub fn set_pending_maintenance_action_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::PendingMaintenanceAction>>) -> Self {
-        self.pending_maintenance_action_details = input; self
+    pub fn set_pending_maintenance_action_details(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PendingMaintenanceAction>>,
+    ) -> Self {
+        self.pending_maintenance_action_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourcePendingMaintenanceActions`](crate::types::ResourcePendingMaintenanceActions).
     pub fn build(self) -> crate::types::ResourcePendingMaintenanceActions {
         crate::types::ResourcePendingMaintenanceActions {
-            resource_identifier: self.resource_identifier
-            ,
-            pending_maintenance_action_details: self.pending_maintenance_action_details
-            ,
+            resource_identifier: self.resource_identifier,
+            pending_maintenance_action_details: self.pending_maintenance_action_details,
         }
     }
 }
-

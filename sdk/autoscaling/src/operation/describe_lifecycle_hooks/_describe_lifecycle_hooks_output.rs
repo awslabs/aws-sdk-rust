@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLifecycleHooksOutput  {
+pub struct DescribeLifecycleHooksOutput {
     /// <p>The lifecycle hooks for the specified group.</p>
     #[doc(hidden)]
     pub lifecycle_hooks: std::option::Option<std::vec::Vec<crate::types::LifecycleHook>>,
@@ -10,18 +10,20 @@ pub struct DescribeLifecycleHooksOutput  {
 }
 impl DescribeLifecycleHooksOutput {
     /// <p>The lifecycle hooks for the specified group.</p>
-    pub fn lifecycle_hooks(&self) -> std::option::Option<& [crate::types::LifecycleHook]> {
+    pub fn lifecycle_hooks(&self) -> std::option::Option<&[crate::types::LifecycleHook]> {
         self.lifecycle_hooks.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLifecycleHooksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeLifecycleHooksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLifecycleHooksOutput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput).
-    pub fn builder() -> crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksOutputBuilder
+    {
         crate::operation::describe_lifecycle_hooks::builders::DescribeLifecycleHooksOutputBuilder::default()
     }
 }
@@ -41,30 +43,32 @@ impl DescribeLifecycleHooksOutputBuilder {
     /// <p>The lifecycle hooks for the specified group.</p>
     pub fn lifecycle_hooks(mut self, input: crate::types::LifecycleHook) -> Self {
         let mut v = self.lifecycle_hooks.unwrap_or_default();
-                        v.push(input);
-                        self.lifecycle_hooks = Some(v);
-                        self
+        v.push(input);
+        self.lifecycle_hooks = Some(v);
+        self
     }
     /// <p>The lifecycle hooks for the specified group.</p>
-    pub fn set_lifecycle_hooks(mut self, input: std::option::Option<std::vec::Vec<crate::types::LifecycleHook>>) -> Self {
-        self.lifecycle_hooks = input; self
+    pub fn set_lifecycle_hooks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LifecycleHook>>,
+    ) -> Self {
+        self.lifecycle_hooks = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeLifecycleHooksOutput`](crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput).
     pub fn build(self) -> crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput {
         crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput {
-            lifecycle_hooks: self.lifecycle_hooks
-            ,
+            lifecycle_hooks: self.lifecycle_hooks,
             _request_id: self._request_id,
         }
     }
 }
-

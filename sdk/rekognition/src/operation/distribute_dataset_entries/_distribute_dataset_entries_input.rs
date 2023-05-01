@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DistributeDatasetEntriesInput  {
+pub struct DistributeDatasetEntriesInput {
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     #[doc(hidden)]
     pub datasets: std::option::Option<std::vec::Vec<crate::types::DistributeDataset>>,
 }
 impl DistributeDatasetEntriesInput {
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
-    pub fn datasets(&self) -> std::option::Option<& [crate::types::DistributeDataset]> {
+    pub fn datasets(&self) -> std::option::Option<&[crate::types::DistributeDataset]> {
         self.datasets.as_deref()
     }
 }
 impl DistributeDatasetEntriesInput {
     /// Creates a new builder-style object to manufacture [`DistributeDatasetEntriesInput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput).
-    pub fn builder() -> crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder
+    {
         crate::operation::distribute_dataset_entries::builders::DistributeDatasetEntriesInputBuilder::default()
     }
 }
@@ -34,22 +36,29 @@ impl DistributeDatasetEntriesInputBuilder {
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
     pub fn datasets(mut self, input: crate::types::DistributeDataset) -> Self {
         let mut v = self.datasets.unwrap_or_default();
-                        v.push(input);
-                        self.datasets = Some(v);
-                        self
+        v.push(input);
+        self.datasets = Some(v);
+        self
     }
     /// <p>The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty. </p>
-    pub fn set_datasets(mut self, input: std::option::Option<std::vec::Vec<crate::types::DistributeDataset>>) -> Self {
-        self.datasets = input; self
+    pub fn set_datasets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DistributeDataset>>,
+    ) -> Self {
+        self.datasets = input;
+        self
     }
     /// Consumes the builder and constructs a [`DistributeDatasetEntriesInput`](crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput).
-    pub fn build(self) -> Result<crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::distribute_dataset_entries::DistributeDatasetEntriesInput {
-                datasets: self.datasets
-                ,
-            }
+                datasets: self.datasets,
+            },
         )
     }
 }
-

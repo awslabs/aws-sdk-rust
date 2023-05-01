@@ -3,7 +3,7 @@
 /// <p>Output for GetVaultAccessPolicy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVaultAccessPolicyOutput  {
+pub struct GetVaultAccessPolicyOutput {
     /// <p>Contains the returned vault access policy as a JSON string.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::types::VaultAccessPolicy>,
@@ -11,18 +11,20 @@ pub struct GetVaultAccessPolicyOutput  {
 }
 impl GetVaultAccessPolicyOutput {
     /// <p>Contains the returned vault access policy as a JSON string.</p>
-    pub fn policy(&self) -> std::option::Option<& crate::types::VaultAccessPolicy> {
+    pub fn policy(&self) -> std::option::Option<&crate::types::VaultAccessPolicy> {
         self.policy.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetVaultAccessPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetVaultAccessPolicyOutput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyOutput).
-    pub fn builder() -> crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyOutputBuilder
+    {
         crate::operation::get_vault_access_policy::builders::GetVaultAccessPolicyOutputBuilder::default()
     }
 }
@@ -41,25 +43,27 @@ impl GetVaultAccessPolicyOutputBuilder {
         self
     }
     /// <p>Contains the returned vault access policy as a JSON string.</p>
-    pub fn set_policy(mut self, input: std::option::Option<crate::types::VaultAccessPolicy>) -> Self {
-        self.policy = input; self
+    pub fn set_policy(
+        mut self,
+        input: std::option::Option<crate::types::VaultAccessPolicy>,
+    ) -> Self {
+        self.policy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetVaultAccessPolicyOutput`](crate::operation::get_vault_access_policy::GetVaultAccessPolicyOutput).
     pub fn build(self) -> crate::operation::get_vault_access_policy::GetVaultAccessPolicyOutput {
         crate::operation::get_vault_access_policy::GetVaultAccessPolicyOutput {
-            policy: self.policy
-            ,
+            policy: self.policy,
             _request_id: self._request_id,
         }
     }
 }
-

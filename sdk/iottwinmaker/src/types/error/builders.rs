@@ -20,4 +20,3 @@ pub use crate::types::error::_connector_timeout_exception::ConnectorTimeoutExcep
 pub use crate::types::error::_connector_failure_exception::ConnectorFailureExceptionBuilder;
 
 pub use crate::types::error::_query_timeout_exception::QueryTimeoutExceptionBuilder;
-

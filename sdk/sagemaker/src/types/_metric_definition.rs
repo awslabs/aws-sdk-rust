@@ -3,7 +3,7 @@
 /// <p>Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. You can view these logs to understand how your training job performs and check for any errors encountered during training. SageMaker hyperparameter tuning captures all defined metrics. Specify one of the defined metrics to use as an objective metric using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-TuningObjective">TuningObjective</a> parameter in the <code>HyperParameterTrainingJobDefinition</code> API to evaluate job performance during hyperparameter tuning.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricDefinition  {
+pub struct MetricDefinition {
     /// <p>The name of the metric.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MetricDefinition  {
 }
 impl MetricDefinition {
     /// <p>The name of the metric.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Defining metrics and environment variables</a>.</p>
-    pub fn regex(&self) -> std::option::Option<& str> {
+    pub fn regex(&self) -> std::option::Option<&str> {
         self.regex.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl MetricDefinitionBuilder {
     }
     /// <p>The name of the metric.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Defining metrics and environment variables</a>.</p>
     pub fn regex(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl MetricDefinitionBuilder {
     }
     /// <p>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-metrics-variables.html">Defining metrics and environment variables</a>.</p>
     pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.regex = input; self
+        self.regex = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricDefinition`](crate::types::MetricDefinition).
     pub fn build(self) -> crate::types::MetricDefinition {
         crate::types::MetricDefinition {
-            name: self.name
-            ,
-            regex: self.regex
-            ,
+            name: self.name,
+            regex: self.regex,
         }
     }
 }
-

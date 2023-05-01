@@ -3,14 +3,14 @@
 /// Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to TTML.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TtmlDestinationSettings  {
+pub struct TtmlDestinationSettings {
     /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
     #[doc(hidden)]
     pub style_passthrough: std::option::Option<crate::types::TtmlStylePassthrough>,
 }
 impl TtmlDestinationSettings {
     /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
-    pub fn style_passthrough(&self) -> std::option::Option<& crate::types::TtmlStylePassthrough> {
+    pub fn style_passthrough(&self) -> std::option::Option<&crate::types::TtmlStylePassthrough> {
         self.style_passthrough.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl TtmlDestinationSettingsBuilder {
         self
     }
     /// Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML output.
-    pub fn set_style_passthrough(mut self, input: std::option::Option<crate::types::TtmlStylePassthrough>) -> Self {
-        self.style_passthrough = input; self
+    pub fn set_style_passthrough(
+        mut self,
+        input: std::option::Option<crate::types::TtmlStylePassthrough>,
+    ) -> Self {
+        self.style_passthrough = input;
+        self
     }
     /// Consumes the builder and constructs a [`TtmlDestinationSettings`](crate::types::TtmlDestinationSettings).
     pub fn build(self) -> crate::types::TtmlDestinationSettings {
         crate::types::TtmlDestinationSettings {
-            style_passthrough: self.style_passthrough
-            ,
+            style_passthrough: self.style_passthrough,
         }
     }
 }
-

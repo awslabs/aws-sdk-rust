@@ -3,7 +3,7 @@
 /// <p>Describes a name-value pair that is used to update the value of a parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterNameValue  {
+pub struct ParameterNameValue {
     /// <p>The name of the parameter</p>
     #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ParameterNameValue  {
 }
 impl ParameterNameValue {
     /// <p>The name of the parameter</p>
-    pub fn parameter_name(&self) -> std::option::Option<& str> {
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
     /// <p>The value of the parameter</p>
-    pub fn parameter_value(&self) -> std::option::Option<& str> {
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ParameterNameValueBuilder {
     }
     /// <p>The name of the parameter</p>
     pub fn set_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_name = input; self
+        self.parameter_name = input;
+        self
     }
     /// <p>The value of the parameter</p>
     pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ParameterNameValueBuilder {
     }
     /// <p>The value of the parameter</p>
     pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_value = input; self
+        self.parameter_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParameterNameValue`](crate::types::ParameterNameValue).
     pub fn build(self) -> crate::types::ParameterNameValue {
         crate::types::ParameterNameValue {
-            parameter_name: self.parameter_name
-            ,
-            parameter_value: self.parameter_value
-            ,
+            parameter_name: self.parameter_name,
+            parameter_value: self.parameter_value,
         }
     }
 }
-

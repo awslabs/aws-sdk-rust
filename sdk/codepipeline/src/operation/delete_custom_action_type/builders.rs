@@ -4,59 +4,83 @@ pub use crate::operation::delete_custom_action_type::_delete_custom_action_type_
 pub use crate::operation::delete_custom_action_type::_delete_custom_action_type_input::DeleteCustomActionTypeInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteCustomActionType`.
-/// 
-/// <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails after the action is marked for deletion. Used for custom actions only.</p> <important> 
-/// <p>To re-create a custom action after it has been deleted you must use a string in the version field that has never been used before. This string can be an incremented version number, for example. To restore a deleted custom action, use a JSON file that is identical to the deleted action, including the original string in the version field.</p> 
+///
+/// <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails after the action is marked for deletion. Used for custom actions only.</p> <important>
+/// <p>To re-create a custom action after it has been deleted you must use a string in the version field that has never been used before. This string can be an incremented version number, for example. To restore a deleted custom action, use a JSON file that is identical to the deleted action, including the original string in the version field.</p>
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteCustomActionTypeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeInputBuilder,
+    inner:
+        crate::operation::delete_custom_action_type::builders::DeleteCustomActionTypeInputBuilder,
 }
-impl DeleteCustomActionTypeFluentBuilder  {
+impl DeleteCustomActionTypeFluentBuilder {
     /// Creates a new `DeleteCustomActionType`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_custom_action_type::DeleteCustomActionType, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_custom_action_type::DeleteCustomActionTypeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput, aws_smithy_http::result::SdkError<crate::operation::delete_custom_action_type::DeleteCustomActionTypeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_custom_action_type::DeleteCustomActionType,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_action_type::DeleteCustomActionTypeError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_action_type::DeleteCustomActionTypeError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
     pub fn category(mut self, input: crate::types::ActionCategory) -> Self {
         self.inner = self.inner.category(input);
         self
     }
     /// <p>The category of the custom action that you want to delete, such as source or deploy.</p>
-    pub fn set_category(mut self, input: std::option::Option<crate::types::ActionCategory>) -> Self {
+    pub fn set_category(
+        mut self,
+        input: std::option::Option<crate::types::ActionCategory>,
+    ) -> Self {
         self.inner = self.inner.set_category(input);
         self
     }
@@ -81,4 +105,3 @@ impl DeleteCustomActionTypeFluentBuilder  {
         self
     }
 }
-

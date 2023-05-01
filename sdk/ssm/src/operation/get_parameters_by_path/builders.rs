@@ -4,57 +4,82 @@ pub use crate::operation::get_parameters_by_path::_get_parameters_by_path_output
 pub use crate::operation::get_parameters_by_path::_get_parameters_by_path_input::GetParametersByPathInputBuilder;
 
 /// Fluent builder constructing a request to `GetParametersByPath`.
-/// 
-/// <p>Retrieve information about one or more parameters in a specific hierarchy. </p> 
+///
+/// <p>Retrieve information about one or more parameters in a specific hierarchy. </p>
 /// <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code> in the request, the response includes information up to the limit specified. The number of items returned, however, can be between zero and the value of <code>MaxResults</code>. If the service reaches an internal limit while processing the results, it stops the operation and returns the matching values up to that point and a <code>NextToken</code>. You can specify the <code>NextToken</code> in a subsequent call to get the next set of results.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetParametersByPathFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder,
+    inner: crate::operation::get_parameters_by_path::builders::GetParametersByPathInputBuilder,
 }
-impl GetParametersByPathFluentBuilder  {
+impl GetParametersByPathFluentBuilder {
     /// Creates a new `GetParametersByPath`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_parameters_by_path::GetParametersByPath, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_parameters_by_path::GetParametersByPathError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_parameters_by_path::GetParametersByPathOutput, aws_smithy_http::result::SdkError<crate::operation::get_parameters_by_path::GetParametersByPathError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_parameters_by_path::GetParametersByPath,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_parameters_by_path::GetParametersByPathError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_parameters_by_path::GetParametersByPathOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_parameters_by_path::GetParametersByPathError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator {
-                                crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator {
+        crate::operation::get_parameters_by_path::paginator::GetParametersByPathPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierarchy is the parameter name except the last part of the parameter. For the API call to succeed, the last part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33 </code> </p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.path(input.into());
@@ -65,15 +90,15 @@ impl GetParametersByPathFluentBuilder  {
         self.inner = self.inner.set_path(input);
         self
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p> <important> 
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p> 
+    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
     pub fn recursive(mut self, input: bool) -> Self {
         self.inner = self.inner.recursive(input);
         self
     }
-    /// <p>Retrieve all parameters within a hierarchy.</p> <important> 
-    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p> 
+    /// <p>Retrieve all parameters within a hierarchy.</p> <important>
+    /// <p>If a user has access to a path, then the user can access all levels of that path. For example, if a user has permission to access path <code>/a</code>, then the user can also access <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
     pub fn set_recursive(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_recursive(input);
@@ -83,19 +108,22 @@ impl GetParametersByPathFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_parameter_filters`](Self::set_parameter_filters).
     ///
-    /// <p>Filters to limit the request results.</p> <note> 
-    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> 
-    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
+    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
     pub fn parameter_filters(mut self, input: crate::types::ParameterStringFilter) -> Self {
         self.inner = self.inner.parameter_filters(input);
         self
     }
-    /// <p>Filters to limit the request results.</p> <note> 
-    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p> 
-    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p> 
+    /// <p>Filters to limit the request results.</p> <note>
+    /// <p>The following <code>Key</code> values are supported for <code>GetParametersByPath</code>: <code>Type</code>, <code>KeyId</code>, and <code>Label</code>.</p>
+    /// <p>The following <code>Key</code> values aren't supported for <code>GetParametersByPath</code>: <code>tag</code>, <code>DataType</code>, <code>Name</code>, <code>Path</code>, and <code>Tier</code>.</p>
     /// </note>
-    pub fn set_parameter_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>) -> Self {
+    pub fn set_parameter_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ParameterStringFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_parameter_filters(input);
         self
     }
@@ -130,4 +158,3 @@ impl GetParametersByPathFluentBuilder  {
         self
     }
 }
-

@@ -189,4 +189,3 @@ pub mod update_resolver_endpoint;
 
 /// Types for the `UpdateResolverRule` operation.
 pub mod update_resolver_rule;
-

@@ -195,4 +195,3 @@ pub mod terminate_instance_in_auto_scaling_group;
 
 /// Types for the `UpdateAutoScalingGroup` operation.
 pub mod update_auto_scaling_group;
-

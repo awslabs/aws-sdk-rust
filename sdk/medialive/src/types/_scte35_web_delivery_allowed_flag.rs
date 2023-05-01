@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let scte35webdeliveryallowedflag = unimplemented!();
 /// match scte35webdeliveryallowedflag {
@@ -30,55 +30,64 @@
 /// Specifically, when `scte35webdeliveryallowedflag` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Scte35WebDeliveryAllowedFlag::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Corresponds to the web_delivery_allowed_flag parameter. A value of WEB_DELIVERY_NOT_ALLOWED corresponds to 0 (false) in the SCTE-35 specification. If you include one of the "restriction" flags then you must include all four of them.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Scte35WebDeliveryAllowedFlag {
     #[allow(missing_docs)] // documentation missing in model
     WebDeliveryAllowed,
     #[allow(missing_docs)] // documentation missing in model
     WebDeliveryNotAllowed,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Scte35WebDeliveryAllowedFlag {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "WEB_DELIVERY_ALLOWED" => Scte35WebDeliveryAllowedFlag::WebDeliveryAllowed,
-"WEB_DELIVERY_NOT_ALLOWED" => Scte35WebDeliveryAllowedFlag::WebDeliveryNotAllowed,
-other => Scte35WebDeliveryAllowedFlag::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Scte35WebDeliveryAllowedFlag {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Scte35WebDeliveryAllowedFlag::from(s))
-                }
-            }
-impl Scte35WebDeliveryAllowedFlag {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Scte35WebDeliveryAllowedFlag::WebDeliveryAllowed => "WEB_DELIVERY_ALLOWED",
-    Scte35WebDeliveryAllowedFlag::WebDeliveryNotAllowed => "WEB_DELIVERY_NOT_ALLOWED",
-    Scte35WebDeliveryAllowedFlag::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "WEB_DELIVERY_ALLOWED" => Scte35WebDeliveryAllowedFlag::WebDeliveryAllowed,
+            "WEB_DELIVERY_NOT_ALLOWED" => Scte35WebDeliveryAllowedFlag::WebDeliveryNotAllowed,
+            other => Scte35WebDeliveryAllowedFlag::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["WEB_DELIVERY_ALLOWED", "WEB_DELIVERY_NOT_ALLOWED"]
-                }
-            }
-impl AsRef<str> for Scte35WebDeliveryAllowedFlag {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Scte35WebDeliveryAllowedFlag {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Scte35WebDeliveryAllowedFlag::from(s))
+    }
+}
+impl Scte35WebDeliveryAllowedFlag {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Scte35WebDeliveryAllowedFlag::WebDeliveryAllowed => "WEB_DELIVERY_ALLOWED",
+            Scte35WebDeliveryAllowedFlag::WebDeliveryNotAllowed => "WEB_DELIVERY_NOT_ALLOWED",
+            Scte35WebDeliveryAllowedFlag::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["WEB_DELIVERY_ALLOWED", "WEB_DELIVERY_NOT_ALLOWED"]
+    }
+}
+impl AsRef<str> for Scte35WebDeliveryAllowedFlag {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

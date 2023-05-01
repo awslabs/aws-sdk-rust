@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApiDestinationsOutput  {
+pub struct ListApiDestinationsOutput {
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
     #[doc(hidden)]
     pub api_destinations: std::option::Option<std::vec::Vec<crate::types::ApiDestination>>,
@@ -13,23 +13,25 @@ pub struct ListApiDestinationsOutput  {
 }
 impl ListApiDestinationsOutput {
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
-    pub fn api_destinations(&self) -> std::option::Option<& [crate::types::ApiDestination]> {
+    pub fn api_destinations(&self) -> std::option::Option<&[crate::types::ApiDestination]> {
         self.api_destinations.as_deref()
     }
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListApiDestinationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListApiDestinationsOutput {
     /// Creates a new builder-style object to manufacture [`ListApiDestinationsOutput`](crate::operation::list_api_destinations::ListApiDestinationsOutput).
-    pub fn builder() -> crate::operation::list_api_destinations::builders::ListApiDestinationsOutputBuilder {
-        crate::operation::list_api_destinations::builders::ListApiDestinationsOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_api_destinations::builders::ListApiDestinationsOutputBuilder {
+        crate::operation::list_api_destinations::builders::ListApiDestinationsOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl ListApiDestinationsOutputBuilder {
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
     pub fn api_destinations(mut self, input: crate::types::ApiDestination) -> Self {
         let mut v = self.api_destinations.unwrap_or_default();
-                        v.push(input);
-                        self.api_destinations = Some(v);
-                        self
+        v.push(input);
+        self.api_destinations = Some(v);
+        self
     }
     /// <p>An array of <code>ApiDestination</code> objects that include information about an API destination.</p>
-    pub fn set_api_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ApiDestination>>) -> Self {
-        self.api_destinations = input; self
+    pub fn set_api_destinations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ApiDestination>>,
+    ) -> Self {
+        self.api_destinations = input;
+        self
     }
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListApiDestinationsOutputBuilder {
     }
     /// <p>A token you can use in a subsequent request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListApiDestinationsOutput`](crate::operation::list_api_destinations::ListApiDestinationsOutput).
     pub fn build(self) -> crate::operation::list_api_destinations::ListApiDestinationsOutput {
         crate::operation::list_api_destinations::ListApiDestinationsOutput {
-            api_destinations: self.api_destinations
-            ,
-            next_token: self.next_token
-            ,
+            api_destinations: self.api_destinations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

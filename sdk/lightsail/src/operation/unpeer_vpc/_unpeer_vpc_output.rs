@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnpeerVpcOutput  {
+pub struct UnpeerVpcOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::types::Operation>,
@@ -10,15 +10,15 @@ pub struct UnpeerVpcOutput  {
 }
 impl UnpeerVpcOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<& crate::types::Operation> {
+    pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UnpeerVpcOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UnpeerVpcOutput {
     /// Creates a new builder-style object to manufacture [`UnpeerVpcOutput`](crate::operation::unpeer_vpc::UnpeerVpcOutput).
     pub fn builder() -> crate::operation::unpeer_vpc::builders::UnpeerVpcOutputBuilder {
@@ -41,24 +41,23 @@ impl UnpeerVpcOutputBuilder {
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UnpeerVpcOutput`](crate::operation::unpeer_vpc::UnpeerVpcOutput).
     pub fn build(self) -> crate::operation::unpeer_vpc::UnpeerVpcOutput {
         crate::operation::unpeer_vpc::UnpeerVpcOutput {
-            operation: self.operation
-            ,
+            operation: self.operation,
             _request_id: self._request_id,
         }
     }
 }
-

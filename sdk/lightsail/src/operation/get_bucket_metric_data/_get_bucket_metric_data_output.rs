@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketMetricDataOutput  {
+pub struct GetBucketMetricDataOutput {
     /// <p>The name of the metric returned.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<crate::types::BucketMetricName>,
@@ -13,22 +13,23 @@ pub struct GetBucketMetricDataOutput  {
 }
 impl GetBucketMetricDataOutput {
     /// <p>The name of the metric returned.</p>
-    pub fn metric_name(&self) -> std::option::Option<& crate::types::BucketMetricName> {
+    pub fn metric_name(&self) -> std::option::Option<&crate::types::BucketMetricName> {
         self.metric_name.as_ref()
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn metric_data(&self) -> std::option::Option<& [crate::types::MetricDatapoint]> {
+    pub fn metric_data(&self) -> std::option::Option<&[crate::types::MetricDatapoint]> {
         self.metric_data.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetBucketMetricDataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetBucketMetricDataOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketMetricDataOutput`](crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput).
-    pub fn builder() -> crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataOutputBuilder {
         crate::operation::get_bucket_metric_data::builders::GetBucketMetricDataOutputBuilder::default()
     }
 }
@@ -48,8 +49,12 @@ impl GetBucketMetricDataOutputBuilder {
         self
     }
     /// <p>The name of the metric returned.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<crate::types::BucketMetricName>) -> Self {
-        self.metric_name = input; self
+    pub fn set_metric_name(
+        mut self,
+        input: std::option::Option<crate::types::BucketMetricName>,
+    ) -> Self {
+        self.metric_name = input;
+        self
     }
     /// Appends an item to `metric_data`.
     ///
@@ -58,32 +63,33 @@ impl GetBucketMetricDataOutputBuilder {
     /// <p>An array of objects that describe the metric data returned.</p>
     pub fn metric_data(mut self, input: crate::types::MetricDatapoint) -> Self {
         let mut v = self.metric_data.unwrap_or_default();
-                        v.push(input);
-                        self.metric_data = Some(v);
-                        self
+        v.push(input);
+        self.metric_data = Some(v);
+        self
     }
     /// <p>An array of objects that describe the metric data returned.</p>
-    pub fn set_metric_data(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricDatapoint>>) -> Self {
-        self.metric_data = input; self
+    pub fn set_metric_data(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricDatapoint>>,
+    ) -> Self {
+        self.metric_data = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetBucketMetricDataOutput`](crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput).
     pub fn build(self) -> crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput {
         crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput {
-            metric_name: self.metric_name
-            ,
-            metric_data: self.metric_data
-            ,
+            metric_name: self.metric_name,
+            metric_data: self.metric_data,
             _request_id: self._request_id,
         }
     }
 }
-

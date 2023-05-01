@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketWebsiteOutput  {
+pub struct GetBucketWebsiteOutput {
     /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub redirect_all_requests_to: std::option::Option<crate::types::RedirectAllRequestsTo>,
@@ -20,35 +20,38 @@ pub struct GetBucketWebsiteOutput  {
 }
 impl GetBucketWebsiteOutput {
     /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
-    pub fn redirect_all_requests_to(&self) -> std::option::Option<& crate::types::RedirectAllRequestsTo> {
+    pub fn redirect_all_requests_to(
+        &self,
+    ) -> std::option::Option<&crate::types::RedirectAllRequestsTo> {
         self.redirect_all_requests_to.as_ref()
     }
     /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
-    pub fn index_document(&self) -> std::option::Option<& crate::types::IndexDocument> {
+    pub fn index_document(&self) -> std::option::Option<&crate::types::IndexDocument> {
         self.index_document.as_ref()
     }
     /// <p>The object key name of the website error document to use for 4XX class errors.</p>
-    pub fn error_document(&self) -> std::option::Option<& crate::types::ErrorDocument> {
+    pub fn error_document(&self) -> std::option::Option<&crate::types::ErrorDocument> {
         self.error_document.as_ref()
     }
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-    pub fn routing_rules(&self) -> std::option::Option<& [crate::types::RoutingRule]> {
+    pub fn routing_rules(&self) -> std::option::Option<&[crate::types::RoutingRule]> {
         self.routing_rules.as_deref()
     }
 }
 impl crate::s3_request_id::RequestIdExt for GetBucketWebsiteOutput {
-                                fn extended_request_id(&self) -> Option<&str> {
-                                    self._extended_request_id.as_deref()
-                                }
-                            }
+    fn extended_request_id(&self) -> Option<&str> {
+        self._extended_request_id.as_deref()
+    }
+}
 impl aws_http::request_id::RequestId for GetBucketWebsiteOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetBucketWebsiteOutput {
     /// Creates a new builder-style object to manufacture [`GetBucketWebsiteOutput`](crate::operation::get_bucket_website::GetBucketWebsiteOutput).
-    pub fn builder() -> crate::operation::get_bucket_website::builders::GetBucketWebsiteOutputBuilder {
+    pub fn builder() -> crate::operation::get_bucket_website::builders::GetBucketWebsiteOutputBuilder
+    {
         crate::operation::get_bucket_website::builders::GetBucketWebsiteOutputBuilder::default()
     }
 }
@@ -71,8 +74,12 @@ impl GetBucketWebsiteOutputBuilder {
         self
     }
     /// <p>Specifies the redirect behavior of all requests to a website endpoint of an Amazon S3 bucket.</p>
-    pub fn set_redirect_all_requests_to(mut self, input: std::option::Option<crate::types::RedirectAllRequestsTo>) -> Self {
-        self.redirect_all_requests_to = input; self
+    pub fn set_redirect_all_requests_to(
+        mut self,
+        input: std::option::Option<crate::types::RedirectAllRequestsTo>,
+    ) -> Self {
+        self.redirect_all_requests_to = input;
+        self
     }
     /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
     pub fn index_document(mut self, input: crate::types::IndexDocument) -> Self {
@@ -80,8 +87,12 @@ impl GetBucketWebsiteOutputBuilder {
         self
     }
     /// <p>The name of the index document for the website (for example <code>index.html</code>).</p>
-    pub fn set_index_document(mut self, input: std::option::Option<crate::types::IndexDocument>) -> Self {
-        self.index_document = input; self
+    pub fn set_index_document(
+        mut self,
+        input: std::option::Option<crate::types::IndexDocument>,
+    ) -> Self {
+        self.index_document = input;
+        self
     }
     /// <p>The object key name of the website error document to use for 4XX class errors.</p>
     pub fn error_document(mut self, input: crate::types::ErrorDocument) -> Self {
@@ -89,8 +100,12 @@ impl GetBucketWebsiteOutputBuilder {
         self
     }
     /// <p>The object key name of the website error document to use for 4XX class errors.</p>
-    pub fn set_error_document(mut self, input: std::option::Option<crate::types::ErrorDocument>) -> Self {
-        self.error_document = input; self
+    pub fn set_error_document(
+        mut self,
+        input: std::option::Option<crate::types::ErrorDocument>,
+    ) -> Self {
+        self.error_document = input;
+        self
     }
     /// Appends an item to `routing_rules`.
     ///
@@ -99,46 +114,48 @@ impl GetBucketWebsiteOutputBuilder {
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
     pub fn routing_rules(mut self, input: crate::types::RoutingRule) -> Self {
         let mut v = self.routing_rules.unwrap_or_default();
-                        v.push(input);
-                        self.routing_rules = Some(v);
-                        self
+        v.push(input);
+        self.routing_rules = Some(v);
+        self
     }
     /// <p>Rules that define when a redirect is applied and the redirect behavior.</p>
-    pub fn set_routing_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::RoutingRule>>) -> Self {
-        self.routing_rules = input; self
+    pub fn set_routing_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RoutingRule>>,
+    ) -> Self {
+        self.routing_rules = input;
+        self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-                                    self._extended_request_id = Some(extended_request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-                                    self._extended_request_id = extended_request_id;
-                                    self
-                                }
+        self._extended_request_id = Some(extended_request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_extended_request_id(
+        &mut self,
+        extended_request_id: Option<String>,
+    ) -> &mut Self {
+        self._extended_request_id = extended_request_id;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetBucketWebsiteOutput`](crate::operation::get_bucket_website::GetBucketWebsiteOutput).
     pub fn build(self) -> crate::operation::get_bucket_website::GetBucketWebsiteOutput {
         crate::operation::get_bucket_website::GetBucketWebsiteOutput {
-            redirect_all_requests_to: self.redirect_all_requests_to
-            ,
-            index_document: self.index_document
-            ,
-            error_document: self.error_document
-            ,
-            routing_rules: self.routing_rules
-            ,
+            redirect_all_requests_to: self.redirect_all_requests_to,
+            index_document: self.index_document,
+            error_document: self.error_document,
+            routing_rules: self.routing_rules,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
     }
 }
-

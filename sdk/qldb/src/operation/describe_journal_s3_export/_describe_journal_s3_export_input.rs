@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJournalS3ExportInput  {
+pub struct DescribeJournalS3ExportInput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DescribeJournalS3ExportInput  {
 }
 impl DescribeJournalS3ExportInput {
     /// <p>The name of the ledger.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
-    pub fn export_id(&self) -> std::option::Option<& str> {
+    pub fn export_id(&self) -> std::option::Option<&str> {
         self.export_id.as_deref()
     }
 }
 impl DescribeJournalS3ExportInput {
     /// Creates a new builder-style object to manufacture [`DescribeJournalS3ExportInput`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput).
-    pub fn builder() -> crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder
+    {
         crate::operation::describe_journal_s3_export::builders::DescribeJournalS3ExportInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DescribeJournalS3ExportInputBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
     pub fn export_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl DescribeJournalS3ExportInputBuilder {
     }
     /// <p>The UUID (represented in Base62-encoded text) of the journal export job to describe.</p>
     pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_id = input; self
+        self.export_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeJournalS3ExportInput`](crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput).
-    pub fn build(self) -> Result<crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_journal_s3_export::DescribeJournalS3ExportInput {
-                name: self.name
-                ,
-                export_id: self.export_id
-                ,
-            }
+                name: self.name,
+                export_id: self.export_id,
+            },
         )
     }
 }
-

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDetectorVersionStatusOutput  {
+pub struct UpdateDetectorVersionStatusOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateDetectorVersionStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateDetectorVersionStatusOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDetectorVersionStatusOutput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput).
-    pub fn builder() -> crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusOutputBuilder {
+    pub fn builder() -> crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusOutputBuilder{
         crate::operation::update_detector_version_status::builders::UpdateDetectorVersionStatusOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct UpdateDetectorVersionStatusOutputBuilder {
 }
 impl UpdateDetectorVersionStatusOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateDetectorVersionStatusOutput`](crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput).
-    pub fn build(self) -> crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput {
         crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput {
             _request_id: self._request_id,
         }
     }
 }
-

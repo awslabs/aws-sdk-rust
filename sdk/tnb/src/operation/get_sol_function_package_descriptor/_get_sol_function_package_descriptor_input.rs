@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSolFunctionPackageDescriptorInput  {
+pub struct GetSolFunctionPackageDescriptorInput {
     /// <p>ID of the function package.</p>
     #[doc(hidden)]
     pub vnf_pkg_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct GetSolFunctionPackageDescriptorInput  {
 }
 impl GetSolFunctionPackageDescriptorInput {
     /// <p>ID of the function package.</p>
-    pub fn vnf_pkg_id(&self) -> std::option::Option<& str> {
+    pub fn vnf_pkg_id(&self) -> std::option::Option<&str> {
         self.vnf_pkg_id.as_deref()
     }
     /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
-    pub fn accept(&self) -> std::option::Option<& crate::types::DescriptorContentType> {
+    pub fn accept(&self) -> std::option::Option<&crate::types::DescriptorContentType> {
         self.accept.as_ref()
     }
 }
 impl GetSolFunctionPackageDescriptorInput {
     /// Creates a new builder-style object to manufacture [`GetSolFunctionPackageDescriptorInput`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput).
-    pub fn builder() -> crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorInputBuilder {
+    pub fn builder() -> crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorInputBuilder{
         crate::operation::get_sol_function_package_descriptor::builders::GetSolFunctionPackageDescriptorInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl GetSolFunctionPackageDescriptorInputBuilder {
     }
     /// <p>ID of the function package.</p>
     pub fn set_vnf_pkg_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vnf_pkg_id = input; self
+        self.vnf_pkg_id = input;
+        self
     }
     /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
     pub fn accept(mut self, input: crate::types::DescriptorContentType) -> Self {
@@ -50,11 +51,20 @@ impl GetSolFunctionPackageDescriptorInputBuilder {
         self
     }
     /// <p>Indicates which content types, expressed as MIME types, the client is able to understand.</p>
-    pub fn set_accept(mut self, input: std::option::Option<crate::types::DescriptorContentType>) -> Self {
-        self.accept = input; self
+    pub fn set_accept(
+        mut self,
+        input: std::option::Option<crate::types::DescriptorContentType>,
+    ) -> Self {
+        self.accept = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSolFunctionPackageDescriptorInput`](crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput).
-    pub fn build(self) -> Result<crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_sol_function_package_descriptor::GetSolFunctionPackageDescriptorInput {
                 vnf_pkg_id: self.vnf_pkg_id
@@ -65,4 +75,3 @@ impl GetSolFunctionPackageDescriptorInputBuilder {
         )
     }
 }
-

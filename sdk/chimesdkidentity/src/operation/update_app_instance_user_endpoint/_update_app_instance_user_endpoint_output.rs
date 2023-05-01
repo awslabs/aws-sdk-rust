@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateAppInstanceUserEndpointOutput  {
+pub struct UpdateAppInstanceUserEndpointOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct UpdateAppInstanceUserEndpointOutput  {
 }
 impl UpdateAppInstanceUserEndpointOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
-    pub fn endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn endpoint_id(&self) -> std::option::Option<&str> {
         self.endpoint_id.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateAppInstanceUserEndpointOutput  {
+impl std::fmt::Debug for UpdateAppInstanceUserEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateAppInstanceUserEndpointOutput");
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
@@ -31,13 +31,13 @@ impl  std::fmt::Debug for UpdateAppInstanceUserEndpointOutput  {
     }
 }
 impl aws_http::request_id::RequestId for UpdateAppInstanceUserEndpointOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateAppInstanceUserEndpointOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceUserEndpointOutput`](crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput).
-    pub fn builder() -> crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointOutputBuilder {
+    pub fn builder() -> crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointOutputBuilder{
         crate::operation::update_app_instance_user_endpoint::builders::UpdateAppInstanceUserEndpointOutputBuilder::default()
     }
 }
@@ -57,8 +57,12 @@ impl UpdateAppInstanceUserEndpointOutputBuilder {
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_user_arn = input; self
+    pub fn set_app_instance_user_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_instance_user_arn = input;
+        self
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,24 +71,26 @@ impl UpdateAppInstanceUserEndpointOutputBuilder {
     }
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     pub fn set_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_id = input; self
+        self.endpoint_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateAppInstanceUserEndpointOutput`](crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput).
-    pub fn build(self) -> crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput
+    {
         crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput {
-            app_instance_user_arn: self.app_instance_user_arn
-            ,
-            endpoint_id: self.endpoint_id
-            ,
+            app_instance_user_arn: self.app_instance_user_arn,
+            endpoint_id: self.endpoint_id,
             _request_id: self._request_id,
         }
     }
@@ -98,4 +104,3 @@ impl std::fmt::Debug for UpdateAppInstanceUserEndpointOutputBuilder {
         formatter.finish()
     }
 }
-

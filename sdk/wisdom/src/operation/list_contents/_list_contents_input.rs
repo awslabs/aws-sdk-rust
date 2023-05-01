@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContentsInput  {
+pub struct ListContentsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListContentsInput  {
 }
 impl ListContentsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -23,7 +23,7 @@ impl ListContentsInput {
         self.max_results
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl ListContentsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl ListContentsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,21 +69,24 @@ impl ListContentsInputBuilder {
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.knowledge_base_id = input; self
+    pub fn set_knowledge_base_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.knowledge_base_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListContentsInput`](crate::operation::list_contents::ListContentsInput).
-    pub fn build(self) -> Result<crate::operation::list_contents::ListContentsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_contents::ListContentsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                knowledge_base_id: self.knowledge_base_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_contents::ListContentsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_contents::ListContentsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            knowledge_base_id: self.knowledge_base_id,
+        })
     }
 }
-

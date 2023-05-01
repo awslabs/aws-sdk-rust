@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWirelessGatewayWithCertificateInput  {
+pub struct AssociateWirelessGatewayWithCertificateInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AssociateWirelessGatewayWithCertificateInput  {
 }
 impl AssociateWirelessGatewayWithCertificateInput {
     /// <p>The ID of the resource to update.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ID of the certificate to associate with the wireless gateway.</p>
-    pub fn iot_certificate_id(&self) -> std::option::Option<& str> {
+    pub fn iot_certificate_id(&self) -> std::option::Option<&str> {
         self.iot_certificate_id.as_deref()
     }
 }
 impl AssociateWirelessGatewayWithCertificateInput {
     /// Creates a new builder-style object to manufacture [`AssociateWirelessGatewayWithCertificateInput`](crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateInput).
-    pub fn builder() -> crate::operation::associate_wireless_gateway_with_certificate::builders::AssociateWirelessGatewayWithCertificateInputBuilder {
+    pub fn builder() -> crate::operation::associate_wireless_gateway_with_certificate::builders::AssociateWirelessGatewayWithCertificateInputBuilder{
         crate::operation::associate_wireless_gateway_with_certificate::builders::AssociateWirelessGatewayWithCertificateInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl AssociateWirelessGatewayWithCertificateInputBuilder {
     }
     /// <p>The ID of the resource to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The ID of the certificate to associate with the wireless gateway.</p>
     pub fn iot_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,11 +51,15 @@ impl AssociateWirelessGatewayWithCertificateInputBuilder {
         self
     }
     /// <p>The ID of the certificate to associate with the wireless gateway.</p>
-    pub fn set_iot_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iot_certificate_id = input; self
+    pub fn set_iot_certificate_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.iot_certificate_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateWirelessGatewayWithCertificateInput`](crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateInput).
-    pub fn build(self) -> Result<crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateInput {
                 id: self.id
@@ -65,4 +70,3 @@ impl AssociateWirelessGatewayWithCertificateInputBuilder {
         )
     }
 }
-

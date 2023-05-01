@@ -3,7 +3,7 @@
 /// Corresponds to SCTE-35 delivery_not_restricted_flag parameter. To declare delivery restrictions, include this element and its four "restriction" flags. To declare that there are no restrictions, omit this element.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Scte35DeliveryRestrictions  {
+pub struct Scte35DeliveryRestrictions {
     /// Corresponds to SCTE-35 archive_allowed_flag.
     #[doc(hidden)]
     pub archive_allowed_flag: std::option::Option<crate::types::Scte35ArchiveAllowedFlag>,
@@ -19,19 +19,27 @@ pub struct Scte35DeliveryRestrictions  {
 }
 impl Scte35DeliveryRestrictions {
     /// Corresponds to SCTE-35 archive_allowed_flag.
-    pub fn archive_allowed_flag(&self) -> std::option::Option<& crate::types::Scte35ArchiveAllowedFlag> {
+    pub fn archive_allowed_flag(
+        &self,
+    ) -> std::option::Option<&crate::types::Scte35ArchiveAllowedFlag> {
         self.archive_allowed_flag.as_ref()
     }
     /// Corresponds to SCTE-35 device_restrictions parameter.
-    pub fn device_restrictions(&self) -> std::option::Option<& crate::types::Scte35DeviceRestrictions> {
+    pub fn device_restrictions(
+        &self,
+    ) -> std::option::Option<&crate::types::Scte35DeviceRestrictions> {
         self.device_restrictions.as_ref()
     }
     /// Corresponds to SCTE-35 no_regional_blackout_flag parameter.
-    pub fn no_regional_blackout_flag(&self) -> std::option::Option<& crate::types::Scte35NoRegionalBlackoutFlag> {
+    pub fn no_regional_blackout_flag(
+        &self,
+    ) -> std::option::Option<&crate::types::Scte35NoRegionalBlackoutFlag> {
         self.no_regional_blackout_flag.as_ref()
     }
     /// Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
-    pub fn web_delivery_allowed_flag(&self) -> std::option::Option<& crate::types::Scte35WebDeliveryAllowedFlag> {
+    pub fn web_delivery_allowed_flag(
+        &self,
+    ) -> std::option::Option<&crate::types::Scte35WebDeliveryAllowedFlag> {
         self.web_delivery_allowed_flag.as_ref()
     }
 }
@@ -48,8 +56,10 @@ impl Scte35DeliveryRestrictions {
 pub struct Scte35DeliveryRestrictionsBuilder {
     pub(crate) archive_allowed_flag: std::option::Option<crate::types::Scte35ArchiveAllowedFlag>,
     pub(crate) device_restrictions: std::option::Option<crate::types::Scte35DeviceRestrictions>,
-    pub(crate) no_regional_blackout_flag: std::option::Option<crate::types::Scte35NoRegionalBlackoutFlag>,
-    pub(crate) web_delivery_allowed_flag: std::option::Option<crate::types::Scte35WebDeliveryAllowedFlag>,
+    pub(crate) no_regional_blackout_flag:
+        std::option::Option<crate::types::Scte35NoRegionalBlackoutFlag>,
+    pub(crate) web_delivery_allowed_flag:
+        std::option::Option<crate::types::Scte35WebDeliveryAllowedFlag>,
 }
 impl Scte35DeliveryRestrictionsBuilder {
     /// Corresponds to SCTE-35 archive_allowed_flag.
@@ -58,8 +68,12 @@ impl Scte35DeliveryRestrictionsBuilder {
         self
     }
     /// Corresponds to SCTE-35 archive_allowed_flag.
-    pub fn set_archive_allowed_flag(mut self, input: std::option::Option<crate::types::Scte35ArchiveAllowedFlag>) -> Self {
-        self.archive_allowed_flag = input; self
+    pub fn set_archive_allowed_flag(
+        mut self,
+        input: std::option::Option<crate::types::Scte35ArchiveAllowedFlag>,
+    ) -> Self {
+        self.archive_allowed_flag = input;
+        self
     }
     /// Corresponds to SCTE-35 device_restrictions parameter.
     pub fn device_restrictions(mut self, input: crate::types::Scte35DeviceRestrictions) -> Self {
@@ -67,39 +81,52 @@ impl Scte35DeliveryRestrictionsBuilder {
         self
     }
     /// Corresponds to SCTE-35 device_restrictions parameter.
-    pub fn set_device_restrictions(mut self, input: std::option::Option<crate::types::Scte35DeviceRestrictions>) -> Self {
-        self.device_restrictions = input; self
+    pub fn set_device_restrictions(
+        mut self,
+        input: std::option::Option<crate::types::Scte35DeviceRestrictions>,
+    ) -> Self {
+        self.device_restrictions = input;
+        self
     }
     /// Corresponds to SCTE-35 no_regional_blackout_flag parameter.
-    pub fn no_regional_blackout_flag(mut self, input: crate::types::Scte35NoRegionalBlackoutFlag) -> Self {
+    pub fn no_regional_blackout_flag(
+        mut self,
+        input: crate::types::Scte35NoRegionalBlackoutFlag,
+    ) -> Self {
         self.no_regional_blackout_flag = Some(input);
         self
     }
     /// Corresponds to SCTE-35 no_regional_blackout_flag parameter.
-    pub fn set_no_regional_blackout_flag(mut self, input: std::option::Option<crate::types::Scte35NoRegionalBlackoutFlag>) -> Self {
-        self.no_regional_blackout_flag = input; self
+    pub fn set_no_regional_blackout_flag(
+        mut self,
+        input: std::option::Option<crate::types::Scte35NoRegionalBlackoutFlag>,
+    ) -> Self {
+        self.no_regional_blackout_flag = input;
+        self
     }
     /// Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
-    pub fn web_delivery_allowed_flag(mut self, input: crate::types::Scte35WebDeliveryAllowedFlag) -> Self {
+    pub fn web_delivery_allowed_flag(
+        mut self,
+        input: crate::types::Scte35WebDeliveryAllowedFlag,
+    ) -> Self {
         self.web_delivery_allowed_flag = Some(input);
         self
     }
     /// Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
-    pub fn set_web_delivery_allowed_flag(mut self, input: std::option::Option<crate::types::Scte35WebDeliveryAllowedFlag>) -> Self {
-        self.web_delivery_allowed_flag = input; self
+    pub fn set_web_delivery_allowed_flag(
+        mut self,
+        input: std::option::Option<crate::types::Scte35WebDeliveryAllowedFlag>,
+    ) -> Self {
+        self.web_delivery_allowed_flag = input;
+        self
     }
     /// Consumes the builder and constructs a [`Scte35DeliveryRestrictions`](crate::types::Scte35DeliveryRestrictions).
     pub fn build(self) -> crate::types::Scte35DeliveryRestrictions {
         crate::types::Scte35DeliveryRestrictions {
-            archive_allowed_flag: self.archive_allowed_flag
-            ,
-            device_restrictions: self.device_restrictions
-            ,
-            no_regional_blackout_flag: self.no_regional_blackout_flag
-            ,
-            web_delivery_allowed_flag: self.web_delivery_allowed_flag
-            ,
+            archive_allowed_flag: self.archive_allowed_flag,
+            device_restrictions: self.device_restrictions,
+            no_regional_blackout_flag: self.no_regional_blackout_flag,
+            web_delivery_allowed_flag: self.web_delivery_allowed_flag,
         }
     }
 }
-

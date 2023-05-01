@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAcceleratorInput  {
+pub struct DescribeAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
     #[doc(hidden)]
     pub accelerator_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAcceleratorInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
-    pub fn accelerator_arn(&self) -> std::option::Option<& str> {
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
         self.accelerator_arn.as_deref()
     }
 }
 impl DescribeAcceleratorInput {
     /// Creates a new builder-style object to manufacture [`DescribeAcceleratorInput`](crate::operation::describe_accelerator::DescribeAcceleratorInput).
-    pub fn builder() -> crate::operation::describe_accelerator::builders::DescribeAcceleratorInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_accelerator::builders::DescribeAcceleratorInputBuilder {
         crate::operation::describe_accelerator::builders::DescribeAcceleratorInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeAcceleratorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator to describe.</p>
     pub fn set_accelerator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accelerator_arn = input; self
+        self.accelerator_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAcceleratorInput`](crate::operation::describe_accelerator::DescribeAcceleratorInput).
-    pub fn build(self) -> Result<crate::operation::describe_accelerator::DescribeAcceleratorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_accelerator::DescribeAcceleratorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_accelerator::DescribeAcceleratorInput {
-                accelerator_arn: self.accelerator_arn
-                ,
-            }
+                accelerator_arn: self.accelerator_arn,
+            },
         )
     }
 }
-

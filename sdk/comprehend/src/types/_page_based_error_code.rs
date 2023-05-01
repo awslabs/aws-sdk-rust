@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let pagebasederrorcode = unimplemented!();
 /// match pagebasederrorcode {
@@ -33,14 +33,22 @@
 /// Specifically, when `pagebasederrorcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PageBasedErrorCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PageBasedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     InternalServerError,
@@ -53,47 +61,58 @@ pub enum PageBasedErrorCode {
     #[allow(missing_docs)] // documentation missing in model
     TextractProvisionedThroughputExceeded,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PageBasedErrorCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "INTERNAL_SERVER_ERROR" => PageBasedErrorCode::InternalServerError,
-"PAGE_CHARACTERS_EXCEEDED" => PageBasedErrorCode::PageCharactersExceeded,
-"PAGE_SIZE_EXCEEDED" => PageBasedErrorCode::PageSizeExceeded,
-"TEXTRACT_BAD_PAGE" => PageBasedErrorCode::TextractBadPage,
-"TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED" => PageBasedErrorCode::TextractProvisionedThroughputExceeded,
-other => PageBasedErrorCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "INTERNAL_SERVER_ERROR" => PageBasedErrorCode::InternalServerError,
+            "PAGE_CHARACTERS_EXCEEDED" => PageBasedErrorCode::PageCharactersExceeded,
+            "PAGE_SIZE_EXCEEDED" => PageBasedErrorCode::PageSizeExceeded,
+            "TEXTRACT_BAD_PAGE" => PageBasedErrorCode::TextractBadPage,
+            "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED" => {
+                PageBasedErrorCode::TextractProvisionedThroughputExceeded
             }
-impl std::str::FromStr for PageBasedErrorCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(PageBasedErrorCode::from(s))
-                }
-            }
-impl PageBasedErrorCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    PageBasedErrorCode::InternalServerError => "INTERNAL_SERVER_ERROR",
-    PageBasedErrorCode::PageCharactersExceeded => "PAGE_CHARACTERS_EXCEEDED",
-    PageBasedErrorCode::PageSizeExceeded => "PAGE_SIZE_EXCEEDED",
-    PageBasedErrorCode::TextractBadPage => "TEXTRACT_BAD_PAGE",
-    PageBasedErrorCode::TextractProvisionedThroughputExceeded => "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED",
-    PageBasedErrorCode::Unknown(value) => value.as_str()
+            other => PageBasedErrorCode::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["INTERNAL_SERVER_ERROR", "PAGE_CHARACTERS_EXCEEDED", "PAGE_SIZE_EXCEEDED", "TEXTRACT_BAD_PAGE", "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED"]
-                }
-            }
-impl AsRef<str> for PageBasedErrorCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for PageBasedErrorCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PageBasedErrorCode::from(s))
+    }
+}
+impl PageBasedErrorCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PageBasedErrorCode::InternalServerError => "INTERNAL_SERVER_ERROR",
+            PageBasedErrorCode::PageCharactersExceeded => "PAGE_CHARACTERS_EXCEEDED",
+            PageBasedErrorCode::PageSizeExceeded => "PAGE_SIZE_EXCEEDED",
+            PageBasedErrorCode::TextractBadPage => "TEXTRACT_BAD_PAGE",
+            PageBasedErrorCode::TextractProvisionedThroughputExceeded => {
+                "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED"
+            }
+            PageBasedErrorCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "INTERNAL_SERVER_ERROR",
+            "PAGE_CHARACTERS_EXCEEDED",
+            "PAGE_SIZE_EXCEEDED",
+            "TEXTRACT_BAD_PAGE",
+            "TEXTRACT_PROVISIONED_THROUGHPUT_EXCEEDED",
+        ]
+    }
+}
+impl AsRef<str> for PageBasedErrorCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

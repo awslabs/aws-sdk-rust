@@ -60,4 +60,3 @@ pub mod update_worker;
 
 /// Types for the `UpdateWorkerFleet` operation.
 pub mod update_worker_fleet;
-

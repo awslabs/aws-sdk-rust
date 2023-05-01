@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCertificateOutput  {
+pub struct DeleteCertificateOutput {
     /// <p>The Secure Sockets Layer (SSL) certificate.</p>
     #[doc(hidden)]
     pub certificate: std::option::Option<crate::types::Certificate>,
@@ -10,18 +10,19 @@ pub struct DeleteCertificateOutput  {
 }
 impl DeleteCertificateOutput {
     /// <p>The Secure Sockets Layer (SSL) certificate.</p>
-    pub fn certificate(&self) -> std::option::Option<& crate::types::Certificate> {
+    pub fn certificate(&self) -> std::option::Option<&crate::types::Certificate> {
         self.certificate.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteCertificateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteCertificateOutput {
     /// Creates a new builder-style object to manufacture [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput).
-    pub fn builder() -> crate::operation::delete_certificate::builders::DeleteCertificateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_certificate::builders::DeleteCertificateOutputBuilder {
         crate::operation::delete_certificate::builders::DeleteCertificateOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl DeleteCertificateOutputBuilder {
         self
     }
     /// <p>The Secure Sockets Layer (SSL) certificate.</p>
-    pub fn set_certificate(mut self, input: std::option::Option<crate::types::Certificate>) -> Self {
-        self.certificate = input; self
+    pub fn set_certificate(
+        mut self,
+        input: std::option::Option<crate::types::Certificate>,
+    ) -> Self {
+        self.certificate = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteCertificateOutput`](crate::operation::delete_certificate::DeleteCertificateOutput).
     pub fn build(self) -> crate::operation::delete_certificate::DeleteCertificateOutput {
         crate::operation::delete_certificate::DeleteCertificateOutput {
-            certificate: self.certificate
-            ,
+            certificate: self.certificate,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateExclusionsPreviewInput  {
+pub struct CreateExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
     #[doc(hidden)]
     pub assessment_template_arn: std::option::Option<std::string::String>,
 }
 impl CreateExclusionsPreviewInput {
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
-    pub fn assessment_template_arn(&self) -> std::option::Option<& str> {
+    pub fn assessment_template_arn(&self) -> std::option::Option<&str> {
         self.assessment_template_arn.as_deref()
     }
 }
 impl CreateExclusionsPreviewInput {
     /// Creates a new builder-style object to manufacture [`CreateExclusionsPreviewInput`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewInput).
-    pub fn builder() -> crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewInputBuilder
+    {
         crate::operation::create_exclusions_preview::builders::CreateExclusionsPreviewInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl CreateExclusionsPreviewInputBuilder {
         self
     }
     /// <p>The ARN that specifies the assessment template for which you want to create an exclusions preview.</p>
-    pub fn set_assessment_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_template_arn = input; self
+    pub fn set_assessment_template_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.assessment_template_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateExclusionsPreviewInput`](crate::operation::create_exclusions_preview::CreateExclusionsPreviewInput).
-    pub fn build(self) -> Result<crate::operation::create_exclusions_preview::CreateExclusionsPreviewInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_exclusions_preview::CreateExclusionsPreviewInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_exclusions_preview::CreateExclusionsPreviewInput {
-                assessment_template_arn: self.assessment_template_arn
-                ,
-            }
+                assessment_template_arn: self.assessment_template_arn,
+            },
         )
     }
 }
-

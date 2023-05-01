@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutStorageLensConfigurationTaggingOutput  {
+pub struct PutStorageLensConfigurationTaggingOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutStorageLensConfigurationTaggingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutStorageLensConfigurationTaggingOutput {
     /// Creates a new builder-style object to manufacture [`PutStorageLensConfigurationTaggingOutput`](crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput).
-    pub fn builder() -> crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingOutputBuilder {
+    pub fn builder() -> crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingOutputBuilder{
         crate::operation::put_storage_lens_configuration_tagging::builders::PutStorageLensConfigurationTaggingOutputBuilder::default()
     }
 }
@@ -25,19 +25,18 @@ pub struct PutStorageLensConfigurationTaggingOutputBuilder {
 }
 impl PutStorageLensConfigurationTaggingOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutStorageLensConfigurationTaggingOutput`](crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput).
-    pub fn build(self) -> crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput {
+    pub fn build(self) -> crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput{
         crate::operation::put_storage_lens_configuration_tagging::PutStorageLensConfigurationTaggingOutput {
             _request_id: self._request_id,
         }
     }
 }
-

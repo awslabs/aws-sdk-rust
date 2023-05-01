@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDelegatedAdministratorsOutput  {
+pub struct ListDelegatedAdministratorsOutput {
     /// <p>The list of delegated administrators in your organization.</p>
     #[doc(hidden)]
-    pub delegated_administrators: std::option::Option<std::vec::Vec<crate::types::DelegatedAdministrator>>,
+    pub delegated_administrators:
+        std::option::Option<std::vec::Vec<crate::types::DelegatedAdministrator>>,
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct ListDelegatedAdministratorsOutput  {
 }
 impl ListDelegatedAdministratorsOutput {
     /// <p>The list of delegated administrators in your organization.</p>
-    pub fn delegated_administrators(&self) -> std::option::Option<& [crate::types::DelegatedAdministrator]> {
+    pub fn delegated_administrators(
+        &self,
+    ) -> std::option::Option<&[crate::types::DelegatedAdministrator]> {
         self.delegated_administrators.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDelegatedAdministratorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListDelegatedAdministratorsOutput {
     /// Creates a new builder-style object to manufacture [`ListDelegatedAdministratorsOutput`](crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput).
-    pub fn builder() -> crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsOutputBuilder {
+    pub fn builder() -> crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsOutputBuilder{
         crate::operation::list_delegated_administrators::builders::ListDelegatedAdministratorsOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl ListDelegatedAdministratorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDelegatedAdministratorsOutputBuilder {
-    pub(crate) delegated_administrators: std::option::Option<std::vec::Vec<crate::types::DelegatedAdministrator>>,
+    pub(crate) delegated_administrators:
+        std::option::Option<std::vec::Vec<crate::types::DelegatedAdministrator>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +53,17 @@ impl ListDelegatedAdministratorsOutputBuilder {
     /// <p>The list of delegated administrators in your organization.</p>
     pub fn delegated_administrators(mut self, input: crate::types::DelegatedAdministrator) -> Self {
         let mut v = self.delegated_administrators.unwrap_or_default();
-                        v.push(input);
-                        self.delegated_administrators = Some(v);
-                        self
+        v.push(input);
+        self.delegated_administrators = Some(v);
+        self
     }
     /// <p>The list of delegated administrators in your organization.</p>
-    pub fn set_delegated_administrators(mut self, input: std::option::Option<std::vec::Vec<crate::types::DelegatedAdministrator>>) -> Self {
-        self.delegated_administrators = input; self
+    pub fn set_delegated_administrators(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DelegatedAdministrator>>,
+    ) -> Self {
+        self.delegated_administrators = input;
+        self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +72,26 @@ impl ListDelegatedAdministratorsOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListDelegatedAdministratorsOutput`](crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput).
-    pub fn build(self) -> crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput {
         crate::operation::list_delegated_administrators::ListDelegatedAdministratorsOutput {
-            delegated_administrators: self.delegated_administrators
-            ,
-            next_token: self.next_token
-            ,
+            delegated_administrators: self.delegated_administrators,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

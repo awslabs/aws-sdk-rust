@@ -328,4 +328,3 @@ pub mod builders;
 
 /// Error types that Amazon EventBridge can respond with.
 pub mod error;
-

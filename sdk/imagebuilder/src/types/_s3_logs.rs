@@ -3,7 +3,7 @@
 /// <p>Amazon S3 logging configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Logs  {
+pub struct S3Logs {
     /// <p>The S3 bucket in which to store the logs.</p>
     #[doc(hidden)]
     pub s3_bucket_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct S3Logs  {
 }
 impl S3Logs {
     /// <p>The S3 bucket in which to store the logs.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<& str> {
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl S3LogsBuilder {
     }
     /// <p>The S3 bucket in which to store the logs.</p>
     pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket_name = input; self
+        self.s3_bucket_name = input;
+        self
     }
     /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
     pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl S3LogsBuilder {
     }
     /// <p>The Amazon S3 path to the bucket where the logs are stored.</p>
     pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key_prefix = input; self
+        self.s3_key_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3Logs`](crate::types::S3Logs).
     pub fn build(self) -> crate::types::S3Logs {
         crate::types::S3Logs {
-            s3_bucket_name: self.s3_bucket_name
-            ,
-            s3_key_prefix: self.s3_key_prefix
-            ,
+            s3_bucket_name: self.s3_bucket_name,
+            s3_key_prefix: self.s3_key_prefix,
         }
     }
 }
-

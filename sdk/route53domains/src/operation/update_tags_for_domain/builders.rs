@@ -4,51 +4,71 @@ pub use crate::operation::update_tags_for_domain::_update_tags_for_domain_output
 pub use crate::operation::update_tags_for_domain::_update_tags_for_domain_input::UpdateTagsForDomainInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateTagsForDomain`.
-/// 
-/// <p>This operation adds or updates tags for a specified domain.</p> 
+///
+/// <p>This operation adds or updates tags for a specified domain.</p>
 /// <p>All tag operations are eventually consistent; subsequent operations might not immediately represent all issued operations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTagsForDomainFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainInputBuilder,
+    inner: crate::operation::update_tags_for_domain::builders::UpdateTagsForDomainInputBuilder,
 }
-impl UpdateTagsForDomainFluentBuilder  {
+impl UpdateTagsForDomainFluentBuilder {
     /// Creates a new `UpdateTagsForDomain`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_tags_for_domain::UpdateTagsForDomain, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_tags_for_domain::UpdateTagsForDomainError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_tags_for_domain::UpdateTagsForDomainOutput, aws_smithy_http::result::SdkError<crate::operation::update_tags_for_domain::UpdateTagsForDomainError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_tags_for_domain::UpdateTagsForDomain,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_tags_for_domain::UpdateTagsForDomainError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_tags_for_domain::UpdateTagsForDomainOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_tags_for_domain::UpdateTagsForDomainError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The domain for which you want to add or update tags.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_name(input.into());
@@ -69,9 +89,11 @@ impl UpdateTagsForDomainFluentBuilder  {
         self
     }
     /// <p>A list of the tag keys and values that you want to add or update. If you specify a key that already exists, the corresponding value will be replaced.</p>
-    pub fn set_tags_to_update(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags_to_update(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags_to_update(input);
         self
     }
 }
-

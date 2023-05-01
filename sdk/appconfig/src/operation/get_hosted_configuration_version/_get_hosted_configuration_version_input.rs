@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHostedConfigurationVersionInput  {
+pub struct GetHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetHostedConfigurationVersionInput  {
 }
 impl GetHostedConfigurationVersionInput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The version.</p>
@@ -29,7 +29,7 @@ impl GetHostedConfigurationVersionInput {
 }
 impl GetHostedConfigurationVersionInput {
     /// Creates a new builder-style object to manufacture [`GetHostedConfigurationVersionInput`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput).
-    pub fn builder() -> crate::operation::get_hosted_configuration_version::builders::GetHostedConfigurationVersionInputBuilder {
+    pub fn builder() -> crate::operation::get_hosted_configuration_version::builders::GetHostedConfigurationVersionInputBuilder{
         crate::operation::get_hosted_configuration_version::builders::GetHostedConfigurationVersionInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl GetHostedConfigurationVersionInputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl GetHostedConfigurationVersionInputBuilder {
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_profile_id = input; self
+    pub fn set_configuration_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_profile_id = input;
+        self
     }
     /// <p>The version.</p>
     pub fn version_number(mut self, input: i32) -> Self {
@@ -68,10 +73,16 @@ impl GetHostedConfigurationVersionInputBuilder {
     }
     /// <p>The version.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.version_number = input; self
+        self.version_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetHostedConfigurationVersionInput`](crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput).
-    pub fn build(self) -> Result<crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionInput {
                 application_id: self.application_id
@@ -84,4 +95,3 @@ impl GetHostedConfigurationVersionInputBuilder {
         )
     }
 }
-

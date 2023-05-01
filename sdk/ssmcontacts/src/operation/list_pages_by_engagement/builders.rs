@@ -4,56 +4,81 @@ pub use crate::operation::list_pages_by_engagement::_list_pages_by_engagement_ou
 pub use crate::operation::list_pages_by_engagement::_list_pages_by_engagement_input::ListPagesByEngagementInputBuilder;
 
 /// Fluent builder constructing a request to `ListPagesByEngagement`.
-/// 
+///
 /// <p>Lists the engagements to contact channels that occurred by engaging a contact.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPagesByEngagementFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementInputBuilder,
+    inner: crate::operation::list_pages_by_engagement::builders::ListPagesByEngagementInputBuilder,
 }
-impl ListPagesByEngagementFluentBuilder  {
+impl ListPagesByEngagementFluentBuilder {
     /// Creates a new `ListPagesByEngagement`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_pages_by_engagement::ListPagesByEngagement, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_pages_by_engagement::ListPagesByEngagementError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput, aws_smithy_http::result::SdkError<crate::operation::list_pages_by_engagement::ListPagesByEngagementError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_pages_by_engagement::ListPagesByEngagement,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_pages_by_engagement::ListPagesByEngagementError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_pages_by_engagement::ListPagesByEngagementOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_pages_by_engagement::ListPagesByEngagementError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator {
-                                crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator {
+        crate::operation::list_pages_by_engagement::paginator::ListPagesByEngagementPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The Amazon Resource Name (ARN) of the engagement.</p>
     pub fn engagement_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.engagement_id(input.into());
@@ -85,4 +110,3 @@ impl ListPagesByEngagementFluentBuilder  {
         self
     }
 }
-

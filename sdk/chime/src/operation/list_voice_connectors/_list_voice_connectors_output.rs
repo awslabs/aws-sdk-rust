@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVoiceConnectorsOutput  {
+pub struct ListVoiceConnectorsOutput {
     /// <p>The details of the Amazon Chime Voice Connectors.</p>
     #[doc(hidden)]
     pub voice_connectors: std::option::Option<std::vec::Vec<crate::types::VoiceConnector>>,
@@ -13,23 +13,25 @@ pub struct ListVoiceConnectorsOutput  {
 }
 impl ListVoiceConnectorsOutput {
     /// <p>The details of the Amazon Chime Voice Connectors.</p>
-    pub fn voice_connectors(&self) -> std::option::Option<& [crate::types::VoiceConnector]> {
+    pub fn voice_connectors(&self) -> std::option::Option<&[crate::types::VoiceConnector]> {
         self.voice_connectors.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVoiceConnectorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListVoiceConnectorsOutput {
     /// Creates a new builder-style object to manufacture [`ListVoiceConnectorsOutput`](crate::operation::list_voice_connectors::ListVoiceConnectorsOutput).
-    pub fn builder() -> crate::operation::list_voice_connectors::builders::ListVoiceConnectorsOutputBuilder {
-        crate::operation::list_voice_connectors::builders::ListVoiceConnectorsOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_voice_connectors::builders::ListVoiceConnectorsOutputBuilder {
+        crate::operation::list_voice_connectors::builders::ListVoiceConnectorsOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl ListVoiceConnectorsOutputBuilder {
     /// <p>The details of the Amazon Chime Voice Connectors.</p>
     pub fn voice_connectors(mut self, input: crate::types::VoiceConnector) -> Self {
         let mut v = self.voice_connectors.unwrap_or_default();
-                        v.push(input);
-                        self.voice_connectors = Some(v);
-                        self
+        v.push(input);
+        self.voice_connectors = Some(v);
+        self
     }
     /// <p>The details of the Amazon Chime Voice Connectors.</p>
-    pub fn set_voice_connectors(mut self, input: std::option::Option<std::vec::Vec<crate::types::VoiceConnector>>) -> Self {
-        self.voice_connectors = input; self
+    pub fn set_voice_connectors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VoiceConnector>>,
+    ) -> Self {
+        self.voice_connectors = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListVoiceConnectorsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListVoiceConnectorsOutput`](crate::operation::list_voice_connectors::ListVoiceConnectorsOutput).
     pub fn build(self) -> crate::operation::list_voice_connectors::ListVoiceConnectorsOutput {
         crate::operation::list_voice_connectors::ListVoiceConnectorsOutput {
-            voice_connectors: self.voice_connectors
-            ,
-            next_token: self.next_token
-            ,
+            voice_connectors: self.voice_connectors,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

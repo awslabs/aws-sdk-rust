@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPermissionPolicyInput  {
+pub struct GetPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl GetPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
 impl GetPermissionPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetPermissionPolicyInput`](crate::operation::get_permission_policy::GetPermissionPolicyInput).
-    pub fn builder() -> crate::operation::get_permission_policy::builders::GetPermissionPolicyInputBuilder {
-        crate::operation::get_permission_policy::builders::GetPermissionPolicyInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_permission_policy::builders::GetPermissionPolicyInputBuilder {
+        crate::operation::get_permission_policy::builders::GetPermissionPolicyInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,20 @@ impl GetPermissionPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetPermissionPolicyInput`](crate::operation::get_permission_policy::GetPermissionPolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_permission_policy::GetPermissionPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_permission_policy::GetPermissionPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_permission_policy::GetPermissionPolicyInput {
-                resource_arn: self.resource_arn
-                ,
-            }
+                resource_arn: self.resource_arn,
+            },
         )
     }
 }
-

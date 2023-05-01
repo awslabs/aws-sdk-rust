@@ -3,7 +3,7 @@
 /// <p>The configuration of a free-form layout.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FreeFormLayoutConfiguration  {
+pub struct FreeFormLayoutConfiguration {
     /// <p>The elements that are included in a free-form layout.</p>
     #[doc(hidden)]
     pub elements: std::option::Option<std::vec::Vec<crate::types::FreeFormLayoutElement>>,
@@ -13,11 +13,13 @@ pub struct FreeFormLayoutConfiguration  {
 }
 impl FreeFormLayoutConfiguration {
     /// <p>The elements that are included in a free-form layout.</p>
-    pub fn elements(&self) -> std::option::Option<& [crate::types::FreeFormLayoutElement]> {
+    pub fn elements(&self) -> std::option::Option<&[crate::types::FreeFormLayoutElement]> {
         self.elements.as_deref()
     }
     /// <p>Configuration options for the canvas of a free-form layout.</p>
-    pub fn canvas_size_options(&self) -> std::option::Option<& crate::types::FreeFormLayoutCanvasSizeOptions> {
+    pub fn canvas_size_options(
+        &self,
+    ) -> std::option::Option<&crate::types::FreeFormLayoutCanvasSizeOptions> {
         self.canvas_size_options.as_ref()
     }
 }
@@ -33,7 +35,8 @@ impl FreeFormLayoutConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct FreeFormLayoutConfigurationBuilder {
     pub(crate) elements: std::option::Option<std::vec::Vec<crate::types::FreeFormLayoutElement>>,
-    pub(crate) canvas_size_options: std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
+    pub(crate) canvas_size_options:
+        std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
 }
 impl FreeFormLayoutConfigurationBuilder {
     /// Appends an item to `elements`.
@@ -43,31 +46,39 @@ impl FreeFormLayoutConfigurationBuilder {
     /// <p>The elements that are included in a free-form layout.</p>
     pub fn elements(mut self, input: crate::types::FreeFormLayoutElement) -> Self {
         let mut v = self.elements.unwrap_or_default();
-                        v.push(input);
-                        self.elements = Some(v);
-                        self
+        v.push(input);
+        self.elements = Some(v);
+        self
     }
     /// <p>The elements that are included in a free-form layout.</p>
-    pub fn set_elements(mut self, input: std::option::Option<std::vec::Vec<crate::types::FreeFormLayoutElement>>) -> Self {
-        self.elements = input; self
+    pub fn set_elements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FreeFormLayoutElement>>,
+    ) -> Self {
+        self.elements = input;
+        self
     }
     /// <p>Configuration options for the canvas of a free-form layout.</p>
-    pub fn canvas_size_options(mut self, input: crate::types::FreeFormLayoutCanvasSizeOptions) -> Self {
+    pub fn canvas_size_options(
+        mut self,
+        input: crate::types::FreeFormLayoutCanvasSizeOptions,
+    ) -> Self {
         self.canvas_size_options = Some(input);
         self
     }
     /// <p>Configuration options for the canvas of a free-form layout.</p>
-    pub fn set_canvas_size_options(mut self, input: std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>) -> Self {
-        self.canvas_size_options = input; self
+    pub fn set_canvas_size_options(
+        mut self,
+        input: std::option::Option<crate::types::FreeFormLayoutCanvasSizeOptions>,
+    ) -> Self {
+        self.canvas_size_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`FreeFormLayoutConfiguration`](crate::types::FreeFormLayoutConfiguration).
     pub fn build(self) -> crate::types::FreeFormLayoutConfiguration {
         crate::types::FreeFormLayoutConfiguration {
-            elements: self.elements
-            ,
-            canvas_size_options: self.canvas_size_options
-            ,
+            elements: self.elements,
+            canvas_size_options: self.canvas_size_options,
         }
     }
 }
-

@@ -32,4 +32,3 @@ pub use crate::types::_shipment_information::ShipmentInformationBuilder;
 pub use crate::types::_connection_details::ConnectionDetailsBuilder;
 
 pub use crate::types::_line_item_request::LineItemRequestBuilder;
-

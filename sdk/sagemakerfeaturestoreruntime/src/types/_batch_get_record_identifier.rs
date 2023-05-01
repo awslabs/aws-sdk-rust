@@ -3,7 +3,7 @@
 /// <p>The identifier that identifies the batch of Records you are retrieving in a batch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetRecordIdentifier  {
+pub struct BatchGetRecordIdentifier {
     /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
     #[doc(hidden)]
     pub feature_group_name: std::option::Option<std::string::String>,
@@ -16,15 +16,17 @@ pub struct BatchGetRecordIdentifier  {
 }
 impl BatchGetRecordIdentifier {
     /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
-    pub fn feature_group_name(&self) -> std::option::Option<& str> {
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The value for a list of record identifiers in string format.</p>
-    pub fn record_identifiers_value_as_string(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn record_identifiers_value_as_string(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
         self.record_identifiers_value_as_string.as_deref()
     }
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn feature_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn feature_names(&self) -> std::option::Option<&[std::string::String]> {
         self.feature_names.as_deref()
     }
 }
@@ -40,7 +42,8 @@ impl BatchGetRecordIdentifier {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetRecordIdentifierBuilder {
     pub(crate) feature_group_name: std::option::Option<std::string::String>,
-    pub(crate) record_identifiers_value_as_string: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) record_identifiers_value_as_string:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) feature_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetRecordIdentifierBuilder {
@@ -50,23 +53,34 @@ impl BatchGetRecordIdentifierBuilder {
         self
     }
     /// <p>A <code>FeatureGroupName</code> containing Records you are retrieving in a batch.</p>
-    pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_group_name = input; self
+    pub fn set_feature_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.feature_group_name = input;
+        self
     }
     /// Appends an item to `record_identifiers_value_as_string`.
     ///
     /// To override the contents of this collection use [`set_record_identifiers_value_as_string`](Self::set_record_identifiers_value_as_string).
     ///
     /// <p>The value for a list of record identifiers in string format.</p>
-    pub fn record_identifiers_value_as_string(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn record_identifiers_value_as_string(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         let mut v = self.record_identifiers_value_as_string.unwrap_or_default();
-                        v.push(input.into());
-                        self.record_identifiers_value_as_string = Some(v);
-                        self
+        v.push(input.into());
+        self.record_identifiers_value_as_string = Some(v);
+        self
     }
     /// <p>The value for a list of record identifiers in string format.</p>
-    pub fn set_record_identifiers_value_as_string(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.record_identifiers_value_as_string = input; self
+    pub fn set_record_identifiers_value_as_string(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.record_identifiers_value_as_string = input;
+        self
     }
     /// Appends an item to `feature_names`.
     ///
@@ -75,24 +89,24 @@ impl BatchGetRecordIdentifierBuilder {
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
     pub fn feature_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.feature_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.feature_names = Some(v);
-                        self
+        v.push(input.into());
+        self.feature_names = Some(v);
+        self
     }
     /// <p>List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.</p>
-    pub fn set_feature_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.feature_names = input; self
+    pub fn set_feature_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.feature_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetRecordIdentifier`](crate::types::BatchGetRecordIdentifier).
     pub fn build(self) -> crate::types::BatchGetRecordIdentifier {
         crate::types::BatchGetRecordIdentifier {
-            feature_group_name: self.feature_group_name
-            ,
-            record_identifiers_value_as_string: self.record_identifiers_value_as_string
-            ,
-            feature_names: self.feature_names
-            ,
+            feature_group_name: self.feature_group_name,
+            record_identifiers_value_as_string: self.record_identifiers_value_as_string,
+            feature_names: self.feature_names,
         }
     }
 }
-

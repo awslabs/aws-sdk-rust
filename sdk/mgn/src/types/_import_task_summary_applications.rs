@@ -3,7 +3,7 @@
 /// <p>Import task summary applications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportTaskSummaryApplications  {
+pub struct ImportTaskSummaryApplications {
     /// <p>Import task summary applications created count.</p>
     #[doc(hidden)]
     pub created_count: i64,
@@ -43,7 +43,8 @@ impl ImportTaskSummaryApplicationsBuilder {
     }
     /// <p>Import task summary applications created count.</p>
     pub fn set_created_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.created_count = input; self
+        self.created_count = input;
+        self
     }
     /// <p>Import task summary applications modified count.</p>
     pub fn modified_count(mut self, input: i64) -> Self {
@@ -52,18 +53,14 @@ impl ImportTaskSummaryApplicationsBuilder {
     }
     /// <p>Import task summary applications modified count.</p>
     pub fn set_modified_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.modified_count = input; self
+        self.modified_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportTaskSummaryApplications`](crate::types::ImportTaskSummaryApplications).
     pub fn build(self) -> crate::types::ImportTaskSummaryApplications {
         crate::types::ImportTaskSummaryApplications {
-            created_count: self.created_count
-                .unwrap_or_default()
-            ,
-            modified_count: self.modified_count
-                .unwrap_or_default()
-            ,
+            created_count: self.created_count.unwrap_or_default(),
+            modified_count: self.modified_count.unwrap_or_default(),
         }
     }
 }
-

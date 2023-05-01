@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let xavc4kprofilecodecprofile = unimplemented!();
 /// match xavc4kprofilecodecprofile {
@@ -30,55 +30,64 @@
 /// Specifically, when `xavc4kprofilecodecprofile` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Xavc4kProfileCodecProfile::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Xavc4kProfileCodecProfile {
     #[allow(missing_docs)] // documentation missing in model
     High,
     #[allow(missing_docs)] // documentation missing in model
     High422,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Xavc4kProfileCodecProfile {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "HIGH" => Xavc4kProfileCodecProfile::High,
-"HIGH_422" => Xavc4kProfileCodecProfile::High422,
-other => Xavc4kProfileCodecProfile::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Xavc4kProfileCodecProfile {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Xavc4kProfileCodecProfile::from(s))
-                }
-            }
-impl Xavc4kProfileCodecProfile {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Xavc4kProfileCodecProfile::High => "HIGH",
-    Xavc4kProfileCodecProfile::High422 => "HIGH_422",
-    Xavc4kProfileCodecProfile::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "HIGH" => Xavc4kProfileCodecProfile::High,
+            "HIGH_422" => Xavc4kProfileCodecProfile::High422,
+            other => Xavc4kProfileCodecProfile::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["HIGH", "HIGH_422"]
-                }
-            }
-impl AsRef<str> for Xavc4kProfileCodecProfile {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Xavc4kProfileCodecProfile {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Xavc4kProfileCodecProfile::from(s))
+    }
+}
+impl Xavc4kProfileCodecProfile {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Xavc4kProfileCodecProfile::High => "HIGH",
+            Xavc4kProfileCodecProfile::High422 => "HIGH_422",
+            Xavc4kProfileCodecProfile::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["HIGH", "HIGH_422"]
+    }
+}
+impl AsRef<str> for Xavc4kProfileCodecProfile {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

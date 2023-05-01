@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput  {
+pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The list of tags to add to a domain. </p> 
+    /// <p>The list of tags to add to a domain. </p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::ResourceTag>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The list of tags to add to a domain. </p> 
+    /// <p>The list of tags to add to a domain. </p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::ResourceTag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::ResourceTag]> {
         self.tags.as_deref()
     }
 }
@@ -44,35 +44,40 @@ impl TagResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the Amazon SWF domain.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The list of tags to add to a domain. </p> 
+    /// <p>The list of tags to add to a domain. </p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn tags(mut self, input: crate::types::ResourceTag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>The list of tags to add to a domain. </p> 
+    /// <p>The list of tags to add to a domain. </p>
     /// <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceTag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceTag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
-    pub fn build(self) -> Result<crate::operation::tag_resource::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::tag_resource::TagResourceInput {
-                resource_arn: self.resource_arn
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::tag_resource::TagResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::tag_resource::TagResourceInput {
+            resource_arn: self.resource_arn,
+            tags: self.tags,
+        })
     }
 }
-

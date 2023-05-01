@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDiscoveryJobInput  {
+pub struct StopDiscoveryJobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
     #[doc(hidden)]
     pub discovery_job_arn: std::option::Option<std::string::String>,
 }
 impl StopDiscoveryJobInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
-    pub fn discovery_job_arn(&self) -> std::option::Option<& str> {
+    pub fn discovery_job_arn(&self) -> std::option::Option<&str> {
         self.discovery_job_arn.as_deref()
     }
 }
 impl StopDiscoveryJobInput {
     /// Creates a new builder-style object to manufacture [`StopDiscoveryJobInput`](crate::operation::stop_discovery_job::StopDiscoveryJobInput).
-    pub fn builder() -> crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder {
+    pub fn builder() -> crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder
+    {
         crate::operation::stop_discovery_job::builders::StopDiscoveryJobInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl StopDiscoveryJobInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want to stop. </p>
-    pub fn set_discovery_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.discovery_job_arn = input; self
+    pub fn set_discovery_job_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.discovery_job_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopDiscoveryJobInput`](crate::operation::stop_discovery_job::StopDiscoveryJobInput).
-    pub fn build(self) -> Result<crate::operation::stop_discovery_job::StopDiscoveryJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_discovery_job::StopDiscoveryJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_discovery_job::StopDiscoveryJobInput {
-                discovery_job_arn: self.discovery_job_arn
-                ,
-            }
+                discovery_job_arn: self.discovery_job_arn,
+            },
         )
     }
 }
-

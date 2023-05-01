@@ -4,50 +4,57 @@ pub use crate::operation::create_distribution_configuration::_create_distributio
 pub use crate::operation::create_distribution_configuration::_create_distribution_configuration_input::CreateDistributionConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDistributionConfiguration`.
-/// 
+///
 /// <p>Creates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDistributionConfigurationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_distribution_configuration::builders::CreateDistributionConfigurationInputBuilder,
 }
-impl CreateDistributionConfigurationFluentBuilder  {
+impl CreateDistributionConfigurationFluentBuilder {
     /// Creates a new `CreateDistributionConfiguration`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::create_distribution_configuration::CreateDistributionConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::create_distribution_configuration::CreateDistributionConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::create_distribution_configuration::CreateDistributionConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_distribution_configuration::CreateDistributionConfigurationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the distribution configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -78,7 +85,10 @@ impl CreateDistributionConfigurationFluentBuilder  {
         self
     }
     /// <p>The distributions of the distribution configuration.</p>
-    pub fn set_distributions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Distribution>>) -> Self {
+    pub fn set_distributions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Distribution>>,
+    ) -> Self {
         self.inner = self.inner.set_distributions(input);
         self
     }
@@ -87,12 +97,21 @@ impl CreateDistributionConfigurationFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the distribution configuration.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags of the distribution configuration.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -107,4 +126,3 @@ impl CreateDistributionConfigurationFluentBuilder  {
         self
     }
 }
-

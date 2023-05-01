@@ -3,7 +3,7 @@
 /// <p>Contains information about the task in an ECS cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EcsTaskDetails  {
+pub struct EcsTaskDetails {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -37,43 +37,43 @@ pub struct EcsTaskDetails  {
 }
 impl EcsTaskDetails {
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ARN of the task definition that creates the task.</p>
-    pub fn definition_arn(&self) -> std::option::Option<& str> {
+    pub fn definition_arn(&self) -> std::option::Option<&str> {
         self.definition_arn.as_deref()
     }
     /// <p>The version counter for the task.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The Unix timestamp for the time when the task was created.</p>
-    pub fn task_created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn task_created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.task_created_at.as_ref()
     }
     /// <p>The Unix timestamp for the time when the task started.</p>
-    pub fn started_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn started_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_at.as_ref()
     }
     /// <p>Contains the tag specified when a task is started.</p>
-    pub fn started_by(&self) -> std::option::Option<& str> {
+    pub fn started_by(&self) -> std::option::Option<&str> {
         self.started_by.as_deref()
     }
     /// <p>The tags of the ECS Task.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The list of data volume definitions for the task.</p>
-    pub fn volumes(&self) -> std::option::Option<& [crate::types::Volume]> {
+    pub fn volumes(&self) -> std::option::Option<&[crate::types::Volume]> {
         self.volumes.as_deref()
     }
     /// <p>The containers that's associated with the task.</p>
-    pub fn containers(&self) -> std::option::Option<& [crate::types::Container]> {
+    pub fn containers(&self) -> std::option::Option<&[crate::types::Container]> {
         self.containers.as_deref()
     }
     /// <p>The name of the task group that's associated with the task.</p>
-    pub fn group(&self) -> std::option::Option<& str> {
+    pub fn group(&self) -> std::option::Option<&str> {
         self.group.as_deref()
     }
 }
@@ -107,7 +107,8 @@ impl EcsTaskDetailsBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the task.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The ARN of the task definition that creates the task.</p>
     pub fn definition_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +117,8 @@ impl EcsTaskDetailsBuilder {
     }
     /// <p>The ARN of the task definition that creates the task.</p>
     pub fn set_definition_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.definition_arn = input; self
+        self.definition_arn = input;
+        self
     }
     /// <p>The version counter for the task.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +127,8 @@ impl EcsTaskDetailsBuilder {
     }
     /// <p>The version counter for the task.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The Unix timestamp for the time when the task was created.</p>
     pub fn task_created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -133,8 +136,12 @@ impl EcsTaskDetailsBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task was created.</p>
-    pub fn set_task_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.task_created_at = input; self
+    pub fn set_task_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.task_created_at = input;
+        self
     }
     /// <p>The Unix timestamp for the time when the task started.</p>
     pub fn started_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,8 +149,12 @@ impl EcsTaskDetailsBuilder {
         self
     }
     /// <p>The Unix timestamp for the time when the task started.</p>
-    pub fn set_started_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.started_at = input; self
+    pub fn set_started_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.started_at = input;
+        self
     }
     /// <p>Contains the tag specified when a task is started.</p>
     pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,7 +163,8 @@ impl EcsTaskDetailsBuilder {
     }
     /// <p>Contains the tag specified when a task is started.</p>
     pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.started_by = input; self
+        self.started_by = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -161,13 +173,17 @@ impl EcsTaskDetailsBuilder {
     /// <p>The tags of the ECS Task.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags of the ECS Task.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Appends an item to `volumes`.
     ///
@@ -176,13 +192,17 @@ impl EcsTaskDetailsBuilder {
     /// <p>The list of data volume definitions for the task.</p>
     pub fn volumes(mut self, input: crate::types::Volume) -> Self {
         let mut v = self.volumes.unwrap_or_default();
-                        v.push(input);
-                        self.volumes = Some(v);
-                        self
+        v.push(input);
+        self.volumes = Some(v);
+        self
     }
     /// <p>The list of data volume definitions for the task.</p>
-    pub fn set_volumes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Volume>>) -> Self {
-        self.volumes = input; self
+    pub fn set_volumes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Volume>>,
+    ) -> Self {
+        self.volumes = input;
+        self
     }
     /// Appends an item to `containers`.
     ///
@@ -191,13 +211,17 @@ impl EcsTaskDetailsBuilder {
     /// <p>The containers that's associated with the task.</p>
     pub fn containers(mut self, input: crate::types::Container) -> Self {
         let mut v = self.containers.unwrap_or_default();
-                        v.push(input);
-                        self.containers = Some(v);
-                        self
+        v.push(input);
+        self.containers = Some(v);
+        self
     }
     /// <p>The containers that's associated with the task.</p>
-    pub fn set_containers(mut self, input: std::option::Option<std::vec::Vec<crate::types::Container>>) -> Self {
-        self.containers = input; self
+    pub fn set_containers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Container>>,
+    ) -> Self {
+        self.containers = input;
+        self
     }
     /// <p>The name of the task group that's associated with the task.</p>
     pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,32 +230,22 @@ impl EcsTaskDetailsBuilder {
     }
     /// <p>The name of the task group that's associated with the task.</p>
     pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group = input; self
+        self.group = input;
+        self
     }
     /// Consumes the builder and constructs a [`EcsTaskDetails`](crate::types::EcsTaskDetails).
     pub fn build(self) -> crate::types::EcsTaskDetails {
         crate::types::EcsTaskDetails {
-            arn: self.arn
-            ,
-            definition_arn: self.definition_arn
-            ,
-            version: self.version
-            ,
-            task_created_at: self.task_created_at
-            ,
-            started_at: self.started_at
-            ,
-            started_by: self.started_by
-            ,
-            tags: self.tags
-            ,
-            volumes: self.volumes
-            ,
-            containers: self.containers
-            ,
-            group: self.group
-            ,
+            arn: self.arn,
+            definition_arn: self.definition_arn,
+            version: self.version,
+            task_created_at: self.task_created_at,
+            started_at: self.started_at,
+            started_by: self.started_by,
+            tags: self.tags,
+            volumes: self.volumes,
+            containers: self.containers,
+            group: self.group,
         }
     }
 }
-

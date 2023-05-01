@@ -3,14 +3,14 @@
 /// <p>The partition key portion of the primary key is required and determines how Amazon Keyspaces stores the data. The partition key can be a single column, or it can be a compound value composed of two or more columns.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PartitionKey  {
+pub struct PartitionKey {
     /// <p>The name(s) of the partition key column(s).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl PartitionKey {
     /// <p>The name(s) of the partition key column(s).</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl PartitionKeyBuilder {
     }
     /// <p>The name(s) of the partition key column(s).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`PartitionKey`](crate::types::PartitionKey).
     pub fn build(self) -> crate::types::PartitionKey {
-        crate::types::PartitionKey {
-            name: self.name
-            ,
-        }
+        crate::types::PartitionKey { name: self.name }
     }
 }
-

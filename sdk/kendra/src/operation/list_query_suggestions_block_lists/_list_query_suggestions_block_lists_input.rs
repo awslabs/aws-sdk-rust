@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListQuerySuggestionsBlockListsInput  {
-    /// <p>The identifier of the index for a list of all block lists that exist for that index.</p> 
+pub struct ListQuerySuggestionsBlockListsInput {
+    /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -15,13 +15,13 @@ pub struct ListQuerySuggestionsBlockListsInput  {
     pub max_results: std::option::Option<i32>,
 }
 impl ListQuerySuggestionsBlockListsInput {
-    /// <p>The identifier of the index for a list of all block lists that exist for that index.</p> 
+    /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
-    pub fn index_id(&self) -> std::option::Option<& str> {
+    pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of block lists to return.</p>
@@ -31,7 +31,7 @@ impl ListQuerySuggestionsBlockListsInput {
 }
 impl ListQuerySuggestionsBlockListsInput {
     /// Creates a new builder-style object to manufacture [`ListQuerySuggestionsBlockListsInput`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsInput).
-    pub fn builder() -> crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsInputBuilder {
+    pub fn builder() -> crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsInputBuilder{
         crate::operation::list_query_suggestions_block_lists::builders::ListQuerySuggestionsBlockListsInputBuilder::default()
     }
 }
@@ -45,16 +45,17 @@ pub struct ListQuerySuggestionsBlockListsInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
 }
 impl ListQuerySuggestionsBlockListsInputBuilder {
-    /// <p>The identifier of the index for a list of all block lists that exist for that index.</p> 
+    /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.index_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the index for a list of all block lists that exist for that index.</p> 
+    /// <p>The identifier of the index for a list of all block lists that exist for that index.</p>
     /// <p>For information on the current quota limits for block lists, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input; self
+        self.index_id = input;
+        self
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,7 +64,8 @@ impl ListQuerySuggestionsBlockListsInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of block lists to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,10 +74,16 @@ impl ListQuerySuggestionsBlockListsInputBuilder {
     }
     /// <p>The maximum number of block lists to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListQuerySuggestionsBlockListsInput`](crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsInput).
-    pub fn build(self) -> Result<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsInput {
                 index_id: self.index_id
@@ -88,4 +96,3 @@ impl ListQuerySuggestionsBlockListsInputBuilder {
         )
     }
 }
-

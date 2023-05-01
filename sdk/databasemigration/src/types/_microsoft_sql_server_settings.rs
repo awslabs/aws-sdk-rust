@@ -3,7 +3,7 @@
 /// <p>Provides information that defines a Microsoft SQL Server endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MicrosoftSqlServerSettings  {
+pub struct MicrosoftSqlServerSettings {
     /// <p>Endpoint TCP port.</p>
     #[doc(hidden)]
     pub port: std::option::Option<i32>,
@@ -25,8 +25,8 @@ pub struct MicrosoftSqlServerSettings  {
     /// <p>When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and doesn't read from the active transaction log file during ongoing replication. Setting this parameter to <code>Y</code> enables you to control active transaction log file growth during full load and ongoing replication tasks. However, it can add some source latency to ongoing replication.</p>
     #[doc(hidden)]
     pub read_backup_only: std::option::Option<bool>,
-    /// <p>Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one of the following two methods.</p> 
-    /// <p> <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your database, then you must choose this method.</p> 
+    /// <p>Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one of the following two methods.</p>
+    /// <p> <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your database, then you must choose this method.</p>
     /// <p> <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS tasks against the same database, use the default method.</p>
     #[doc(hidden)]
     pub safeguard_policy: std::option::Option<crate::types::SafeguardPolicy>,
@@ -42,8 +42,8 @@ pub struct MicrosoftSqlServerSettings  {
     /// <p>When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they are created in native format.</p>
     #[doc(hidden)]
     pub use_third_party_backup_device: std::option::Option<bool>,
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
     pub secrets_manager_access_role_arn: std::option::Option<std::string::String>,
@@ -70,15 +70,15 @@ impl MicrosoftSqlServerSettings {
         self.bcp_packet_size
     }
     /// <p>Database name for the endpoint.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>Specifies a file group for the DMS internal tables. When the replication task starts, all the internal DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file group.</p>
-    pub fn control_tables_file_group(&self) -> std::option::Option<& str> {
+    pub fn control_tables_file_group(&self) -> std::option::Option<&str> {
         self.control_tables_file_group.as_deref()
     }
     /// <p>Endpoint connection password.</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An example is a situation where running an alter DDL statement on a table might result in different information about the table cached in the replication instance.</p>
@@ -89,18 +89,18 @@ impl MicrosoftSqlServerSettings {
     pub fn read_backup_only(&self) -> std::option::Option<bool> {
         self.read_backup_only
     }
-    /// <p>Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one of the following two methods.</p> 
-    /// <p> <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your database, then you must choose this method.</p> 
+    /// <p>Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one of the following two methods.</p>
+    /// <p> <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your database, then you must choose this method.</p>
     /// <p> <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS tasks against the same database, use the default method.</p>
-    pub fn safeguard_policy(&self) -> std::option::Option<& crate::types::SafeguardPolicy> {
+    pub fn safeguard_policy(&self) -> std::option::Option<&crate::types::SafeguardPolicy> {
         self.safeguard_policy.as_ref()
     }
     /// <p>Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
-    pub fn server_name(&self) -> std::option::Option<& str> {
+    pub fn server_name(&self) -> std::option::Option<&str> {
         self.server_name.as_deref()
     }
     /// <p>Endpoint connection user name.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>Use this to attribute to transfer data for full-load operations using BCP. When the target table contains an identity column that does not exist in the source table, you must disable the use BCP for loading table option.</p>
@@ -111,14 +111,14 @@ impl MicrosoftSqlServerSettings {
     pub fn use_third_party_backup_device(&self) -> std::option::Option<bool> {
         self.use_third_party_backup_device
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(&self) -> std::option::Option<& str> {
+    pub fn secrets_manager_access_role_arn(&self) -> std::option::Option<&str> {
         self.secrets_manager_access_role_arn.as_deref()
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SQL Server endpoint connection details.</p>
-    pub fn secrets_manager_secret_id(&self) -> std::option::Option<& str> {
+    pub fn secrets_manager_secret_id(&self) -> std::option::Option<&str> {
         self.secrets_manager_secret_id.as_deref()
     }
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
@@ -126,7 +126,7 @@ impl MicrosoftSqlServerSettings {
         self.trim_space_in_char
     }
     /// <p>Indicates the mode used to fetch CDC data.</p>
-    pub fn tlog_access_mode(&self) -> std::option::Option<& crate::types::TlogAccessMode> {
+    pub fn tlog_access_mode(&self) -> std::option::Option<&crate::types::TlogAccessMode> {
         self.tlog_access_mode.as_ref()
     }
     /// <p>Forces LOB lookup on inline LOB.</p>
@@ -134,7 +134,7 @@ impl MicrosoftSqlServerSettings {
         self.force_lob_lookup
     }
 }
-impl  std::fmt::Debug for MicrosoftSqlServerSettings  {
+impl std::fmt::Debug for MicrosoftSqlServerSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MicrosoftSqlServerSettings");
         formatter.field("port", &self.port);
@@ -142,14 +142,23 @@ impl  std::fmt::Debug for MicrosoftSqlServerSettings  {
         formatter.field("database_name", &self.database_name);
         formatter.field("control_tables_file_group", &self.control_tables_file_group);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
-        formatter.field("query_single_always_on_node", &self.query_single_always_on_node);
+        formatter.field(
+            "query_single_always_on_node",
+            &self.query_single_always_on_node,
+        );
         formatter.field("read_backup_only", &self.read_backup_only);
         formatter.field("safeguard_policy", &self.safeguard_policy);
         formatter.field("server_name", &self.server_name);
         formatter.field("username", &self.username);
         formatter.field("use_bcp_full_load", &self.use_bcp_full_load);
-        formatter.field("use_third_party_backup_device", &self.use_third_party_backup_device);
-        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
+        formatter.field(
+            "use_third_party_backup_device",
+            &self.use_third_party_backup_device,
+        );
+        formatter.field(
+            "secrets_manager_access_role_arn",
+            &self.secrets_manager_access_role_arn,
+        );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.field("tlog_access_mode", &self.tlog_access_mode);
@@ -194,7 +203,8 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>Endpoint TCP port.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>The maximum size of the packets (in bytes) used to transfer data using BCP.</p>
     pub fn bcp_packet_size(mut self, input: i32) -> Self {
@@ -203,7 +213,8 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>The maximum size of the packets (in bytes) used to transfer data using BCP.</p>
     pub fn set_bcp_packet_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.bcp_packet_size = input; self
+        self.bcp_packet_size = input;
+        self
     }
     /// <p>Database name for the endpoint.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,7 +223,8 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>Database name for the endpoint.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>Specifies a file group for the DMS internal tables. When the replication task starts, all the internal DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file group.</p>
     pub fn control_tables_file_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -220,8 +232,12 @@ impl MicrosoftSqlServerSettingsBuilder {
         self
     }
     /// <p>Specifies a file group for the DMS internal tables. When the replication task starts, all the internal DMS control tables (awsdms_ apply_exception, awsdms_apply, awsdms_changes) are created for the specified file group.</p>
-    pub fn set_control_tables_file_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.control_tables_file_group = input; self
+    pub fn set_control_tables_file_group(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.control_tables_file_group = input;
+        self
     }
     /// <p>Endpoint connection password.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -230,7 +246,8 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>Endpoint connection password.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An example is a situation where running an alter DDL statement on a table might result in different information about the table cached in the replication instance.</p>
     pub fn query_single_always_on_node(mut self, input: bool) -> Self {
@@ -239,7 +256,8 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>Cleans and recreates table metadata information on the replication instance when a mismatch occurs. An example is a situation where running an alter DDL statement on a table might result in different information about the table cached in the replication instance.</p>
     pub fn set_query_single_always_on_node(mut self, input: std::option::Option<bool>) -> Self {
-        self.query_single_always_on_node = input; self
+        self.query_single_always_on_node = input;
+        self
     }
     /// <p>When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and doesn't read from the active transaction log file during ongoing replication. Setting this parameter to <code>Y</code> enables you to control active transaction log file growth during full load and ongoing replication tasks. However, it can add some source latency to ongoing replication.</p>
     pub fn read_backup_only(mut self, input: bool) -> Self {
@@ -248,20 +266,25 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>When this attribute is set to <code>Y</code>, DMS only reads changes from transaction log backups and doesn't read from the active transaction log file during ongoing replication. Setting this parameter to <code>Y</code> enables you to control active transaction log file growth during full load and ongoing replication tasks. However, it can add some source latency to ongoing replication.</p>
     pub fn set_read_backup_only(mut self, input: std::option::Option<bool>) -> Self {
-        self.read_backup_only = input; self
+        self.read_backup_only = input;
+        self
     }
-    /// <p>Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one of the following two methods.</p> 
-    /// <p> <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your database, then you must choose this method.</p> 
+    /// <p>Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one of the following two methods.</p>
+    /// <p> <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your database, then you must choose this method.</p>
     /// <p> <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS tasks against the same database, use the default method.</p>
     pub fn safeguard_policy(mut self, input: crate::types::SafeguardPolicy) -> Self {
         self.safeguard_policy = Some(input);
         self
     }
-    /// <p>Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one of the following two methods.</p> 
-    /// <p> <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your database, then you must choose this method.</p> 
+    /// <p>Use this attribute to minimize the need to access the backup log and enable DMS to prevent truncation using one of the following two methods.</p>
+    /// <p> <i>Start transactions in the database:</i> This is the default method. When this method is used, DMS prevents TLOG truncation by mimicking a transaction in the database. As long as such a transaction is open, changes that appear after the transaction started aren't truncated. If you need Microsoft Replication to be enabled in your database, then you must choose this method.</p>
     /// <p> <i>Exclusively use sp_repldone within a single task</i>: When this method is used, DMS reads the changes and then uses sp_repldone to mark the TLOG transactions as ready for truncation. Although this method doesn't involve any transactional activities, it can only be used when Microsoft Replication isn't running. Also, when using this method, only one DMS task can access the database at any given time. Therefore, if you need to run parallel DMS tasks against the same database, use the default method.</p>
-    pub fn set_safeguard_policy(mut self, input: std::option::Option<crate::types::SafeguardPolicy>) -> Self {
-        self.safeguard_policy = input; self
+    pub fn set_safeguard_policy(
+        mut self,
+        input: std::option::Option<crate::types::SafeguardPolicy>,
+    ) -> Self {
+        self.safeguard_policy = input;
+        self
     }
     /// <p>Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -270,7 +293,8 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>, in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code> field.</p>
     pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_name = input; self
+        self.server_name = input;
+        self
     }
     /// <p>Endpoint connection user name.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -279,7 +303,8 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>Endpoint connection user name.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// <p>Use this to attribute to transfer data for full-load operations using BCP. When the target table contains an identity column that does not exist in the source table, you must disable the use BCP for loading table option.</p>
     pub fn use_bcp_full_load(mut self, input: bool) -> Self {
@@ -288,7 +313,8 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>Use this to attribute to transfer data for full-load operations using BCP. When the target table contains an identity column that does not exist in the source table, you must disable the use BCP for loading table option.</p>
     pub fn set_use_bcp_full_load(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_bcp_full_load = input; self
+        self.use_bcp_full_load = input;
+        self
     }
     /// <p>When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they are created in native format.</p>
     pub fn use_third_party_backup_device(mut self, input: bool) -> Self {
@@ -297,20 +323,28 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>When this attribute is set to <code>Y</code>, DMS processes third-party transaction log backups if they are created in native format.</p>
     pub fn set_use_third_party_backup_device(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_third_party_backup_device = input; self
+        self.use_third_party_backup_device = input;
+        self
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn secrets_manager_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn secrets_manager_access_role_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.secrets_manager_access_role_arn = Some(input.into());
         self
     }
-    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note> 
-    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p> 
+    /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>. The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code> has the value of the Amazon Web Services Secrets Manager secret that allows access to the SQL Server endpoint.</p> <note>
+    /// <p>You can specify one of two sets of values for these permissions. You can specify the values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>, and <code>Port</code>. You can't specify both. For more information on creating this <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code> and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using secrets to access Database Migration Service resources</a> in the <i>Database Migration Service User Guide</i>.</p>
     /// </note>
-    pub fn set_secrets_manager_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secrets_manager_access_role_arn = input; self
+    pub fn set_secrets_manager_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.secrets_manager_access_role_arn = input;
+        self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SQL Server endpoint connection details.</p>
     pub fn secrets_manager_secret_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -318,8 +352,12 @@ impl MicrosoftSqlServerSettingsBuilder {
         self
     }
     /// <p>The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code> that contains the SQL Server endpoint connection details.</p>
-    pub fn set_secrets_manager_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secrets_manager_secret_id = input; self
+    pub fn set_secrets_manager_secret_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.secrets_manager_secret_id = input;
+        self
     }
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     pub fn trim_space_in_char(mut self, input: bool) -> Self {
@@ -328,7 +366,8 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR and NCHAR data types during migration. The default value is <code>true</code>.</p>
     pub fn set_trim_space_in_char(mut self, input: std::option::Option<bool>) -> Self {
-        self.trim_space_in_char = input; self
+        self.trim_space_in_char = input;
+        self
     }
     /// <p>Indicates the mode used to fetch CDC data.</p>
     pub fn tlog_access_mode(mut self, input: crate::types::TlogAccessMode) -> Self {
@@ -336,8 +375,12 @@ impl MicrosoftSqlServerSettingsBuilder {
         self
     }
     /// <p>Indicates the mode used to fetch CDC data.</p>
-    pub fn set_tlog_access_mode(mut self, input: std::option::Option<crate::types::TlogAccessMode>) -> Self {
-        self.tlog_access_mode = input; self
+    pub fn set_tlog_access_mode(
+        mut self,
+        input: std::option::Option<crate::types::TlogAccessMode>,
+    ) -> Self {
+        self.tlog_access_mode = input;
+        self
     }
     /// <p>Forces LOB lookup on inline LOB.</p>
     pub fn force_lob_lookup(mut self, input: bool) -> Self {
@@ -346,45 +389,29 @@ impl MicrosoftSqlServerSettingsBuilder {
     }
     /// <p>Forces LOB lookup on inline LOB.</p>
     pub fn set_force_lob_lookup(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_lob_lookup = input; self
+        self.force_lob_lookup = input;
+        self
     }
     /// Consumes the builder and constructs a [`MicrosoftSqlServerSettings`](crate::types::MicrosoftSqlServerSettings).
     pub fn build(self) -> crate::types::MicrosoftSqlServerSettings {
         crate::types::MicrosoftSqlServerSettings {
-            port: self.port
-            ,
-            bcp_packet_size: self.bcp_packet_size
-            ,
-            database_name: self.database_name
-            ,
-            control_tables_file_group: self.control_tables_file_group
-            ,
-            password: self.password
-            ,
-            query_single_always_on_node: self.query_single_always_on_node
-            ,
-            read_backup_only: self.read_backup_only
-            ,
-            safeguard_policy: self.safeguard_policy
-            ,
-            server_name: self.server_name
-            ,
-            username: self.username
-            ,
-            use_bcp_full_load: self.use_bcp_full_load
-            ,
-            use_third_party_backup_device: self.use_third_party_backup_device
-            ,
-            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn
-            ,
-            secrets_manager_secret_id: self.secrets_manager_secret_id
-            ,
-            trim_space_in_char: self.trim_space_in_char
-            ,
-            tlog_access_mode: self.tlog_access_mode
-            ,
-            force_lob_lookup: self.force_lob_lookup
-            ,
+            port: self.port,
+            bcp_packet_size: self.bcp_packet_size,
+            database_name: self.database_name,
+            control_tables_file_group: self.control_tables_file_group,
+            password: self.password,
+            query_single_always_on_node: self.query_single_always_on_node,
+            read_backup_only: self.read_backup_only,
+            safeguard_policy: self.safeguard_policy,
+            server_name: self.server_name,
+            username: self.username,
+            use_bcp_full_load: self.use_bcp_full_load,
+            use_third_party_backup_device: self.use_third_party_backup_device,
+            secrets_manager_access_role_arn: self.secrets_manager_access_role_arn,
+            secrets_manager_secret_id: self.secrets_manager_secret_id,
+            trim_space_in_char: self.trim_space_in_char,
+            tlog_access_mode: self.tlog_access_mode,
+            force_lob_lookup: self.force_lob_lookup,
         }
     }
 }
@@ -396,14 +423,23 @@ impl std::fmt::Debug for MicrosoftSqlServerSettingsBuilder {
         formatter.field("database_name", &self.database_name);
         formatter.field("control_tables_file_group", &self.control_tables_file_group);
         formatter.field("password", &"*** Sensitive Data Redacted ***");
-        formatter.field("query_single_always_on_node", &self.query_single_always_on_node);
+        formatter.field(
+            "query_single_always_on_node",
+            &self.query_single_always_on_node,
+        );
         formatter.field("read_backup_only", &self.read_backup_only);
         formatter.field("safeguard_policy", &self.safeguard_policy);
         formatter.field("server_name", &self.server_name);
         formatter.field("username", &self.username);
         formatter.field("use_bcp_full_load", &self.use_bcp_full_load);
-        formatter.field("use_third_party_backup_device", &self.use_third_party_backup_device);
-        formatter.field("secrets_manager_access_role_arn", &self.secrets_manager_access_role_arn);
+        formatter.field(
+            "use_third_party_backup_device",
+            &self.use_third_party_backup_device,
+        );
+        formatter.field(
+            "secrets_manager_access_role_arn",
+            &self.secrets_manager_access_role_arn,
+        );
         formatter.field("secrets_manager_secret_id", &self.secrets_manager_secret_id);
         formatter.field("trim_space_in_char", &self.trim_space_in_char);
         formatter.field("tlog_access_mode", &self.tlog_access_mode);
@@ -411,4 +447,3 @@ impl std::fmt::Debug for MicrosoftSqlServerSettingsBuilder {
         formatter.finish()
     }
 }
-

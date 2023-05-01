@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFunctionsByCodeSigningConfigInput  {
+pub struct ListFunctionsByCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
     #[doc(hidden)]
     pub code_signing_config_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListFunctionsByCodeSigningConfigInput  {
 }
 impl ListFunctionsByCodeSigningConfigInput {
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn code_signing_config_arn(&self) -> std::option::Option<& str> {
+    pub fn code_signing_config_arn(&self) -> std::option::Option<&str> {
         self.code_signing_config_arn.as_deref()
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Maximum number of items to return.</p>
@@ -29,7 +29,7 @@ impl ListFunctionsByCodeSigningConfigInput {
 }
 impl ListFunctionsByCodeSigningConfigInput {
     /// Creates a new builder-style object to manufacture [`ListFunctionsByCodeSigningConfigInput`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput).
-    pub fn builder() -> crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigInputBuilder {
+    pub fn builder() -> crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigInputBuilder{
         crate::operation::list_functions_by_code_signing_config::builders::ListFunctionsByCodeSigningConfigInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
         self
     }
     /// <p>The The Amazon Resource Name (ARN) of the code signing configuration.</p>
-    pub fn set_code_signing_config_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code_signing_config_arn = input; self
+    pub fn set_code_signing_config_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.code_signing_config_arn = input;
+        self
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +63,8 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
     }
     /// <p>Specify the pagination token that's returned by a previous request to retrieve the next page of results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// <p>Maximum number of items to return.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -68,10 +73,11 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
     }
     /// <p>Maximum number of items to return.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input; self
+        self.max_items = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListFunctionsByCodeSigningConfigInput`](crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput).
-    pub fn build(self) -> Result<crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigInput {
                 code_signing_config_arn: self.code_signing_config_arn
@@ -84,4 +90,3 @@ impl ListFunctionsByCodeSigningConfigInputBuilder {
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Request to delete an existing Method resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMethodInput  {
+pub struct DeleteMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DeleteMethodInput  {
 }
 impl DeleteMethodInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<& str> {
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The Resource identifier for the Method resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The HTTP verb of the Method resource.</p>
-    pub fn http_method(&self) -> std::option::Option<& str> {
+    pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DeleteMethodInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input; self
+        self.rest_api_id = input;
+        self
     }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DeleteMethodInputBuilder {
     }
     /// <p>The Resource identifier for the Method resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +71,20 @@ impl DeleteMethodInputBuilder {
     }
     /// <p>The HTTP verb of the Method resource.</p>
     pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.http_method = input; self
+        self.http_method = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMethodInput`](crate::operation::delete_method::DeleteMethodInput).
-    pub fn build(self) -> Result<crate::operation::delete_method::DeleteMethodInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_method::DeleteMethodInput {
-                rest_api_id: self.rest_api_id
-                ,
-                resource_id: self.resource_id
-                ,
-                http_method: self.http_method
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_method::DeleteMethodInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_method::DeleteMethodInput {
+            rest_api_id: self.rest_api_id,
+            resource_id: self.resource_id,
+            http_method: self.http_method,
+        })
     }
 }
-

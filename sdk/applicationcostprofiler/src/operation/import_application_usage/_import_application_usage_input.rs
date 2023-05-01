@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportApplicationUsageInput  {
+pub struct ImportApplicationUsageInput {
     /// <p>Amazon S3 location to import application usage data from.</p>
     #[doc(hidden)]
     pub source_s3_location: std::option::Option<crate::types::SourceS3Location>,
 }
 impl ImportApplicationUsageInput {
     /// <p>Amazon S3 location to import application usage data from.</p>
-    pub fn source_s3_location(&self) -> std::option::Option<& crate::types::SourceS3Location> {
+    pub fn source_s3_location(&self) -> std::option::Option<&crate::types::SourceS3Location> {
         self.source_s3_location.as_ref()
     }
 }
 impl ImportApplicationUsageInput {
     /// Creates a new builder-style object to manufacture [`ImportApplicationUsageInput`](crate::operation::import_application_usage::ImportApplicationUsageInput).
-    pub fn builder() -> crate::operation::import_application_usage::builders::ImportApplicationUsageInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::import_application_usage::builders::ImportApplicationUsageInputBuilder
+    {
         crate::operation::import_application_usage::builders::ImportApplicationUsageInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl ImportApplicationUsageInputBuilder {
         self
     }
     /// <p>Amazon S3 location to import application usage data from.</p>
-    pub fn set_source_s3_location(mut self, input: std::option::Option<crate::types::SourceS3Location>) -> Self {
-        self.source_s3_location = input; self
+    pub fn set_source_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::SourceS3Location>,
+    ) -> Self {
+        self.source_s3_location = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportApplicationUsageInput`](crate::operation::import_application_usage::ImportApplicationUsageInput).
-    pub fn build(self) -> Result<crate::operation::import_application_usage::ImportApplicationUsageInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::import_application_usage::ImportApplicationUsageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::import_application_usage::ImportApplicationUsageInput {
-                source_s3_location: self.source_s3_location
-                ,
-            }
+                source_s3_location: self.source_s3_location,
+            },
         )
     }
 }
-

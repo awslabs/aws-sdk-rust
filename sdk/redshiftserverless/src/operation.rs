@@ -120,4 +120,3 @@ pub mod update_usage_limit;
 
 /// Types for the `UpdateWorkgroup` operation.
 pub mod update_workgroup;
-

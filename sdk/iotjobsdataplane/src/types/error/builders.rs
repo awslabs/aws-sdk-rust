@@ -12,4 +12,3 @@ pub use crate::types::error::_invalid_request_exception::InvalidRequestException
 pub use crate::types::error::_certificate_validation_exception::CertificateValidationExceptionBuilder;
 
 pub use crate::types::error::_terminal_state_exception::TerminalStateExceptionBuilder;
-

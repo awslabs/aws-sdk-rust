@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRawMessageContentInput  {
+pub struct PutRawMessageContentInput {
     /// <p>The identifier of the email message being updated.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct PutRawMessageContentInput  {
 }
 impl PutRawMessageContentInput {
     /// <p>The identifier of the email message being updated.</p>
-    pub fn message_id(&self) -> std::option::Option<& str> {
+    pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
     /// <p>Describes the raw message content of the updated email message.</p>
-    pub fn content(&self) -> std::option::Option<& crate::types::RawMessageContent> {
+    pub fn content(&self) -> std::option::Option<&crate::types::RawMessageContent> {
         self.content.as_ref()
     }
 }
 impl PutRawMessageContentInput {
     /// Creates a new builder-style object to manufacture [`PutRawMessageContentInput`](crate::operation::put_raw_message_content::PutRawMessageContentInput).
-    pub fn builder() -> crate::operation::put_raw_message_content::builders::PutRawMessageContentInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_raw_message_content::builders::PutRawMessageContentInputBuilder {
         crate::operation::put_raw_message_content::builders::PutRawMessageContentInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl PutRawMessageContentInputBuilder {
     }
     /// <p>The identifier of the email message being updated.</p>
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input; self
+        self.message_id = input;
+        self
     }
     /// <p>Describes the raw message content of the updated email message.</p>
     pub fn content(mut self, input: crate::types::RawMessageContent) -> Self {
@@ -50,19 +52,25 @@ impl PutRawMessageContentInputBuilder {
         self
     }
     /// <p>Describes the raw message content of the updated email message.</p>
-    pub fn set_content(mut self, input: std::option::Option<crate::types::RawMessageContent>) -> Self {
-        self.content = input; self
+    pub fn set_content(
+        mut self,
+        input: std::option::Option<crate::types::RawMessageContent>,
+    ) -> Self {
+        self.content = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutRawMessageContentInput`](crate::operation::put_raw_message_content::PutRawMessageContentInput).
-    pub fn build(self) -> Result<crate::operation::put_raw_message_content::PutRawMessageContentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_raw_message_content::PutRawMessageContentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_raw_message_content::PutRawMessageContentInput {
-                message_id: self.message_id
-                ,
-                content: self.content
-                ,
-            }
+                message_id: self.message_id,
+                content: self.content,
+            },
         )
     }
 }
-

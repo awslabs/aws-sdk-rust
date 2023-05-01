@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutProvisionedConcurrencyConfigOutput  {
+pub struct PutProvisionedConcurrencyConfigOutput {
     /// <p>The amount of provisioned concurrency requested.</p>
     #[doc(hidden)]
     pub requested_provisioned_concurrent_executions: std::option::Option<i32>,
@@ -37,26 +37,26 @@ impl PutProvisionedConcurrencyConfigOutput {
         self.allocated_provisioned_concurrent_executions
     }
     /// <p>The status of the allocation process.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ProvisionedConcurrencyStatusEnum> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ProvisionedConcurrencyStatusEnum> {
         self.status.as_ref()
     }
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
-    pub fn status_reason(&self) -> std::option::Option<& str> {
+    pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
-    pub fn last_modified(&self) -> std::option::Option<& str> {
+    pub fn last_modified(&self) -> std::option::Option<&str> {
         self.last_modified.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutProvisionedConcurrencyConfigOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutProvisionedConcurrencyConfigOutput {
     /// Creates a new builder-style object to manufacture [`PutProvisionedConcurrencyConfigOutput`](crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput).
-    pub fn builder() -> crate::operation::put_provisioned_concurrency_config::builders::PutProvisionedConcurrencyConfigOutputBuilder {
+    pub fn builder() -> crate::operation::put_provisioned_concurrency_config::builders::PutProvisionedConcurrencyConfigOutputBuilder{
         crate::operation::put_provisioned_concurrency_config::builders::PutProvisionedConcurrencyConfigOutputBuilder::default()
     }
 }
@@ -80,8 +80,12 @@ impl PutProvisionedConcurrencyConfigOutputBuilder {
         self
     }
     /// <p>The amount of provisioned concurrency requested.</p>
-    pub fn set_requested_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
-        self.requested_provisioned_concurrent_executions = input; self
+    pub fn set_requested_provisioned_concurrent_executions(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.requested_provisioned_concurrent_executions = input;
+        self
     }
     /// <p>The amount of provisioned concurrency available.</p>
     pub fn available_provisioned_concurrent_executions(mut self, input: i32) -> Self {
@@ -89,8 +93,12 @@ impl PutProvisionedConcurrencyConfigOutputBuilder {
         self
     }
     /// <p>The amount of provisioned concurrency available.</p>
-    pub fn set_available_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
-        self.available_provisioned_concurrent_executions = input; self
+    pub fn set_available_provisioned_concurrent_executions(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.available_provisioned_concurrent_executions = input;
+        self
     }
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
     pub fn allocated_provisioned_concurrent_executions(mut self, input: i32) -> Self {
@@ -98,8 +106,12 @@ impl PutProvisionedConcurrencyConfigOutputBuilder {
         self
     }
     /// <p>The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function versions.</p>
-    pub fn set_allocated_provisioned_concurrent_executions(mut self, input: std::option::Option<i32>) -> Self {
-        self.allocated_provisioned_concurrent_executions = input; self
+    pub fn set_allocated_provisioned_concurrent_executions(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.allocated_provisioned_concurrent_executions = input;
+        self
     }
     /// <p>The status of the allocation process.</p>
     pub fn status(mut self, input: crate::types::ProvisionedConcurrencyStatusEnum) -> Self {
@@ -107,8 +119,12 @@ impl PutProvisionedConcurrencyConfigOutputBuilder {
         self
     }
     /// <p>The status of the allocation process.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ProvisionedConcurrencyStatusEnum>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +133,8 @@ impl PutProvisionedConcurrencyConfigOutputBuilder {
     }
     /// <p>For failed allocations, the reason that provisioned concurrency could not be allocated.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input; self
+        self.status_reason = input;
+        self
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
     pub fn last_modified(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,19 +143,23 @@ impl PutProvisionedConcurrencyConfigOutputBuilder {
     }
     /// <p>The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a>.</p>
     pub fn set_last_modified(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified = input; self
+        self.last_modified = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutProvisionedConcurrencyConfigOutput`](crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput).
-    pub fn build(self) -> crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput
+    {
         crate::operation::put_provisioned_concurrency_config::PutProvisionedConcurrencyConfigOutput {
             requested_provisioned_concurrent_executions: self.requested_provisioned_concurrent_executions
             ,
@@ -156,4 +177,3 @@ impl PutProvisionedConcurrencyConfigOutputBuilder {
         }
     }
 }
-

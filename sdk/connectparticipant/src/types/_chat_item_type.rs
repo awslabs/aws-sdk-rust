@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let chatitemtype = unimplemented!();
 /// match chatitemtype {
@@ -40,14 +40,22 @@
 /// Specifically, when `chatitemtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ChatItemType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ChatItemType {
     #[allow(missing_docs)] // documentation missing in model
     Attachment,
@@ -74,61 +82,75 @@ pub enum ChatItemType {
     #[allow(missing_docs)] // documentation missing in model
     Typing,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ChatItemType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ATTACHMENT" => ChatItemType::Attachment,
-"CHAT_ENDED" => ChatItemType::ChatEnded,
-"CONNECTION_ACK" => ChatItemType::ConnectionAck,
-"EVENT" => ChatItemType::Event,
-"MESSAGE" => ChatItemType::Message,
-"MESSAGE_DELIVERED" => ChatItemType::MessageDelivered,
-"MESSAGE_READ" => ChatItemType::MessageRead,
-"PARTICIPANT_JOINED" => ChatItemType::ParticipantJoined,
-"PARTICIPANT_LEFT" => ChatItemType::ParticipantLeft,
-"TRANSFER_FAILED" => ChatItemType::TransferFailed,
-"TRANSFER_SUCCEEDED" => ChatItemType::TransferSucceeded,
-"TYPING" => ChatItemType::Typing,
-other => ChatItemType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ATTACHMENT" => ChatItemType::Attachment,
+            "CHAT_ENDED" => ChatItemType::ChatEnded,
+            "CONNECTION_ACK" => ChatItemType::ConnectionAck,
+            "EVENT" => ChatItemType::Event,
+            "MESSAGE" => ChatItemType::Message,
+            "MESSAGE_DELIVERED" => ChatItemType::MessageDelivered,
+            "MESSAGE_READ" => ChatItemType::MessageRead,
+            "PARTICIPANT_JOINED" => ChatItemType::ParticipantJoined,
+            "PARTICIPANT_LEFT" => ChatItemType::ParticipantLeft,
+            "TRANSFER_FAILED" => ChatItemType::TransferFailed,
+            "TRANSFER_SUCCEEDED" => ChatItemType::TransferSucceeded,
+            "TYPING" => ChatItemType::Typing,
+            other => {
+                ChatItemType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ChatItemType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ChatItemType::from(s))
-                }
-            }
-impl ChatItemType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ChatItemType::Attachment => "ATTACHMENT",
-    ChatItemType::ChatEnded => "CHAT_ENDED",
-    ChatItemType::ConnectionAck => "CONNECTION_ACK",
-    ChatItemType::Event => "EVENT",
-    ChatItemType::Message => "MESSAGE",
-    ChatItemType::MessageDelivered => "MESSAGE_DELIVERED",
-    ChatItemType::MessageRead => "MESSAGE_READ",
-    ChatItemType::ParticipantJoined => "PARTICIPANT_JOINED",
-    ChatItemType::ParticipantLeft => "PARTICIPANT_LEFT",
-    ChatItemType::TransferFailed => "TRANSFER_FAILED",
-    ChatItemType::TransferSucceeded => "TRANSFER_SUCCEEDED",
-    ChatItemType::Typing => "TYPING",
-    ChatItemType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ATTACHMENT", "CHAT_ENDED", "CONNECTION_ACK", "EVENT", "MESSAGE", "MESSAGE_DELIVERED", "MESSAGE_READ", "PARTICIPANT_JOINED", "PARTICIPANT_LEFT", "TRANSFER_FAILED", "TRANSFER_SUCCEEDED", "TYPING"]
-                }
-            }
-impl AsRef<str> for ChatItemType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ChatItemType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ChatItemType::from(s))
+    }
+}
+impl ChatItemType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ChatItemType::Attachment => "ATTACHMENT",
+            ChatItemType::ChatEnded => "CHAT_ENDED",
+            ChatItemType::ConnectionAck => "CONNECTION_ACK",
+            ChatItemType::Event => "EVENT",
+            ChatItemType::Message => "MESSAGE",
+            ChatItemType::MessageDelivered => "MESSAGE_DELIVERED",
+            ChatItemType::MessageRead => "MESSAGE_READ",
+            ChatItemType::ParticipantJoined => "PARTICIPANT_JOINED",
+            ChatItemType::ParticipantLeft => "PARTICIPANT_LEFT",
+            ChatItemType::TransferFailed => "TRANSFER_FAILED",
+            ChatItemType::TransferSucceeded => "TRANSFER_SUCCEEDED",
+            ChatItemType::Typing => "TYPING",
+            ChatItemType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ATTACHMENT",
+            "CHAT_ENDED",
+            "CONNECTION_ACK",
+            "EVENT",
+            "MESSAGE",
+            "MESSAGE_DELIVERED",
+            "MESSAGE_READ",
+            "PARTICIPANT_JOINED",
+            "PARTICIPANT_LEFT",
+            "TRANSFER_FAILED",
+            "TRANSFER_SUCCEEDED",
+            "TYPING",
+        ]
+    }
+}
+impl AsRef<str> for ChatItemType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

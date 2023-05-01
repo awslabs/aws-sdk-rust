@@ -4,63 +4,73 @@ pub use crate::operation::get_conformance_pack_compliance_details::_get_conforma
 pub use crate::operation::get_conformance_pack_compliance_details::_get_conformance_pack_compliance_details_input::GetConformancePackComplianceDetailsInputBuilder;
 
 /// Fluent builder constructing a request to `GetConformancePackComplianceDetails`.
-/// 
+///
 /// <p>Returns compliance details of a conformance pack for all Amazon Web Services resources that are monitered by conformance pack.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetConformancePackComplianceDetailsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_conformance_pack_compliance_details::builders::GetConformancePackComplianceDetailsInputBuilder,
 }
-impl GetConformancePackComplianceDetailsFluentBuilder  {
+impl GetConformancePackComplianceDetailsFluentBuilder {
     /// Creates a new `GetConformancePackComplianceDetails`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetails, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsOutput, aws_smithy_http::result::SdkError<crate::operation::get_conformance_pack_compliance_details::GetConformancePackComplianceDetailsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator {
-                                crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator{
+        crate::operation::get_conformance_pack_compliance_details::paginator::GetConformancePackComplianceDetailsPaginator::new(self.handle, self.inner)
+    }
     /// <p>Name of the conformance pack.</p>
     pub fn conformance_pack_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.conformance_pack_name(input.into());
         self
     }
     /// <p>Name of the conformance pack.</p>
-    pub fn set_conformance_pack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_conformance_pack_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_conformance_pack_name(input);
         self
     }
@@ -70,7 +80,10 @@ impl GetConformancePackComplianceDetailsFluentBuilder  {
         self
     }
     /// <p>A <code>ConformancePackEvaluationFilters</code> object.</p>
-    pub fn set_filters(mut self, input: std::option::Option<crate::types::ConformancePackEvaluationFilters>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<crate::types::ConformancePackEvaluationFilters>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -95,4 +108,3 @@ impl GetConformancePackComplianceDetailsFluentBuilder  {
         self
     }
 }
-

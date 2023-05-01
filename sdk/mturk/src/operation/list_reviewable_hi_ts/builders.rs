@@ -4,56 +4,81 @@ pub use crate::operation::list_reviewable_hi_ts::_list_reviewable_hi_ts_output::
 pub use crate::operation::list_reviewable_hi_ts::_list_reviewable_hi_ts_input::ListReviewableHiTsInputBuilder;
 
 /// Fluent builder constructing a request to `ListReviewableHITs`.
-/// 
+///
 /// <p> The <code>ListReviewableHITs</code> operation retrieves the HITs with Status equal to Reviewable or Status equal to Reviewing that belong to the Requester calling the operation. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReviewableHITsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder,
+    inner: crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder,
 }
-impl ListReviewableHITsFluentBuilder  {
+impl ListReviewableHITsFluentBuilder {
     /// Creates a new `ListReviewableHITs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_reviewable_hi_ts::ListReviewableHITs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hi_ts::ListReviewableHITsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput, aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hi_ts::ListReviewableHITsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_reviewable_hi_ts::ListReviewableHITs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator {
-                                crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator {
+        crate::operation::list_reviewable_hi_ts::paginator::ListReviewableHiTsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     pub fn hit_type_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.hit_type_id(input.into());
@@ -70,7 +95,10 @@ impl ListReviewableHITsFluentBuilder  {
         self
     }
     /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ReviewableHitStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ReviewableHitStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -95,4 +123,3 @@ impl ListReviewableHITsFluentBuilder  {
         self
     }
 }
-

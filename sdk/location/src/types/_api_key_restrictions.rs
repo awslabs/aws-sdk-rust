@@ -3,70 +3,70 @@
 /// <p>API Restrictions on the allowed actions, resources, and referers for an API key resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiKeyRestrictions  {
-    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note> 
-    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p> 
+pub struct ApiKeyRestrictions {
+    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note>
+    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p>
     /// </note>
     #[doc(hidden)]
     pub allow_actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p> 
-    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note> 
-    /// <p>In this preview, you can allow only map resources.</p> 
-    /// </note> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li> 
-    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li> 
-    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li> 
-    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li> 
-    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li> 
+    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p>
+    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note>
+    /// <p>In this preview, you can allow only map resources.</p>
+    /// </note>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li>
+    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
+    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
+    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li>
+    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub allow_resources: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9) or any symbols in this list <code>$\-._+!*`(),;/?:@=&amp;</code> </p> </li> 
-    /// <li> <p>May contain a percent (%) if followed by 2 hexadecimal digits (A-F, a-f, 0-9); this is used for URL encoding purposes.</p> </li> 
-    /// <li> <p>May contain wildcard characters question mark (?) and asterisk (*).</p> <p>Question mark (?) will replace any single character (including hexadecimal digits).</p> <p>Asterisk (*) will replace any multiple characters (including multiple hexadecimal digits).</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>https://example.com</code>.</p> </li> 
+    /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9) or any symbols in this list <code>$\-._+!*`(),;/?:@=&amp;</code> </p> </li>
+    /// <li> <p>May contain a percent (%) if followed by 2 hexadecimal digits (A-F, a-f, 0-9); this is used for URL encoding purposes.</p> </li>
+    /// <li> <p>May contain wildcard characters question mark (?) and asterisk (*).</p> <p>Question mark (?) will replace any single character (including hexadecimal digits).</p> <p>Asterisk (*) will replace any multiple characters (including multiple hexadecimal digits).</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>https://example.com</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub allow_referers: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ApiKeyRestrictions {
-    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note> 
-    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p> 
+    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note>
+    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p>
     /// </note>
-    pub fn allow_actions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn allow_actions(&self) -> std::option::Option<&[std::string::String]> {
         self.allow_actions.as_deref()
     }
-    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p> 
-    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note> 
-    /// <p>In this preview, you can allow only map resources.</p> 
-    /// </note> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li> 
-    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li> 
-    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li> 
-    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li> 
-    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li> 
+    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p>
+    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note>
+    /// <p>In this preview, you can allow only map resources.</p>
+    /// </note>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li>
+    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
+    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
+    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li>
+    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
-    pub fn allow_resources(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn allow_resources(&self) -> std::option::Option<&[std::string::String]> {
         self.allow_resources.as_deref()
     }
-    /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9) or any symbols in this list <code>$\-._+!*`(),;/?:@=&amp;</code> </p> </li> 
-    /// <li> <p>May contain a percent (%) if followed by 2 hexadecimal digits (A-F, a-f, 0-9); this is used for URL encoding purposes.</p> </li> 
-    /// <li> <p>May contain wildcard characters question mark (?) and asterisk (*).</p> <p>Question mark (?) will replace any single character (including hexadecimal digits).</p> <p>Asterisk (*) will replace any multiple characters (including multiple hexadecimal digits).</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>https://example.com</code>.</p> </li> 
+    /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9) or any symbols in this list <code>$\-._+!*`(),;/?:@=&amp;</code> </p> </li>
+    /// <li> <p>May contain a percent (%) if followed by 2 hexadecimal digits (A-F, a-f, 0-9); this is used for URL encoding purposes.</p> </li>
+    /// <li> <p>May contain wildcard characters question mark (?) and asterisk (*).</p> <p>Question mark (?) will replace any single character (including hexadecimal digits).</p> <p>Asterisk (*) will replace any multiple characters (including multiple hexadecimal digits).</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>https://example.com</code>.</p> </li>
     /// </ul>
-    pub fn allow_referers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn allow_referers(&self) -> std::option::Option<&[std::string::String]> {
         self.allow_referers.as_deref()
     }
 }
@@ -90,99 +90,107 @@ impl ApiKeyRestrictionsBuilder {
     ///
     /// To override the contents of this collection use [`set_allow_actions`](Self::set_allow_actions).
     ///
-    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note> 
-    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p> 
+    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note>
+    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p>
     /// </note>
     pub fn allow_actions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allow_actions.unwrap_or_default();
-                        v.push(input.into());
-                        self.allow_actions = Some(v);
-                        self
+        v.push(input.into());
+        self.allow_actions = Some(v);
+        self
     }
-    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note> 
-    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p> 
+    /// <p>A list of allowed actions that an API key resource grants permissions to perform</p> <note>
+    /// <p>Currently, the only valid action is <code>geo:GetMap*</code> as an input to the list. For example, <code>["geo:GetMap*"]</code> is valid but <code>["geo:GetMapTile"]</code> is not.</p>
     /// </note>
-    pub fn set_allow_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.allow_actions = input; self
+    pub fn set_allow_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.allow_actions = input;
+        self
     }
     /// Appends an item to `allow_resources`.
     ///
     /// To override the contents of this collection use [`set_allow_resources`](Self::set_allow_resources).
     ///
-    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p> 
-    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note> 
-    /// <p>In this preview, you can allow only map resources.</p> 
-    /// </note> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li> 
-    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li> 
-    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li> 
-    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li> 
-    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li> 
+    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p>
+    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note>
+    /// <p>In this preview, you can allow only map resources.</p>
+    /// </note>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li>
+    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
+    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
+    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li>
+    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
     pub fn allow_resources(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allow_resources.unwrap_or_default();
-                        v.push(input.into());
-                        self.allow_resources = Some(v);
-                        self
+        v.push(input.into());
+        self.allow_resources = Some(v);
+        self
     }
-    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p> 
-    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note> 
-    /// <p>In this preview, you can allow only map resources.</p> 
-    /// </note> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li> 
-    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li> 
-    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li> 
-    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li> 
-    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li> 
+    /// <p>A list of allowed resource ARNs that a API key bearer can perform actions on</p>
+    /// <p>For more information about ARN format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p> <note>
+    /// <p>In this preview, you can allow only map resources.</p>
+    /// </note>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Must be prefixed with <code>arn</code>.</p> </li>
+    /// <li> <p> <code>partition</code> and <code>service</code> must not be empty and should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
+    /// <li> <p> <code>region</code> and <code>account-id</code> can be empty or should begin with only alphanumeric characters (A–Z, a–z, 0–9) and contain only alphanumeric numbers, hyphens (-) and periods (.).</p> </li>
+    /// <li> <p> <code>resource-id</code> can begin with any character except for forward slash (/) and contain any characters after, including forward slashes to form a path.</p> <p> <code>resource-id</code> can also include wildcard characters, denoted by an asterisk (*).</p> </li>
+    /// <li> <p> <code>arn</code>, <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code> and <code>resource-id</code> must be delimited by a colon (:).</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.</p> </li>
     /// </ul>
-    pub fn set_allow_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.allow_resources = input; self
+    pub fn set_allow_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.allow_resources = input;
+        self
     }
     /// Appends an item to `allow_referers`.
     ///
     /// To override the contents of this collection use [`set_allow_referers`](Self::set_allow_referers).
     ///
-    /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9) or any symbols in this list <code>$\-._+!*`(),;/?:@=&amp;</code> </p> </li> 
-    /// <li> <p>May contain a percent (%) if followed by 2 hexadecimal digits (A-F, a-f, 0-9); this is used for URL encoding purposes.</p> </li> 
-    /// <li> <p>May contain wildcard characters question mark (?) and asterisk (*).</p> <p>Question mark (?) will replace any single character (including hexadecimal digits).</p> <p>Asterisk (*) will replace any multiple characters (including multiple hexadecimal digits).</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>https://example.com</code>.</p> </li> 
+    /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9) or any symbols in this list <code>$\-._+!*`(),;/?:@=&amp;</code> </p> </li>
+    /// <li> <p>May contain a percent (%) if followed by 2 hexadecimal digits (A-F, a-f, 0-9); this is used for URL encoding purposes.</p> </li>
+    /// <li> <p>May contain wildcard characters question mark (?) and asterisk (*).</p> <p>Question mark (?) will replace any single character (including hexadecimal digits).</p> <p>Asterisk (*) will replace any multiple characters (including multiple hexadecimal digits).</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>https://example.com</code>.</p> </li>
     /// </ul>
     pub fn allow_referers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allow_referers.unwrap_or_default();
-                        v.push(input.into());
-                        self.allow_referers = Some(v);
-                        self
+        v.push(input.into());
+        self.allow_referers = Some(v);
+        self
     }
-    /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9) or any symbols in this list <code>$\-._+!*`(),;/?:@=&amp;</code> </p> </li> 
-    /// <li> <p>May contain a percent (%) if followed by 2 hexadecimal digits (A-F, a-f, 0-9); this is used for URL encoding purposes.</p> </li> 
-    /// <li> <p>May contain wildcard characters question mark (?) and asterisk (*).</p> <p>Question mark (?) will replace any single character (including hexadecimal digits).</p> <p>Asterisk (*) will replace any multiple characters (including multiple hexadecimal digits).</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>https://example.com</code>.</p> </li> 
+    /// <p>An optional list of allowed HTTP referers for which requests must originate from. Requests using this API key from other domains will not be allowed.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9) or any symbols in this list <code>$\-._+!*`(),;/?:@=&amp;</code> </p> </li>
+    /// <li> <p>May contain a percent (%) if followed by 2 hexadecimal digits (A-F, a-f, 0-9); this is used for URL encoding purposes.</p> </li>
+    /// <li> <p>May contain wildcard characters question mark (?) and asterisk (*).</p> <p>Question mark (?) will replace any single character (including hexadecimal digits).</p> <p>Asterisk (*) will replace any multiple characters (including multiple hexadecimal digits).</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>https://example.com</code>.</p> </li>
     /// </ul>
-    pub fn set_allow_referers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.allow_referers = input; self
+    pub fn set_allow_referers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.allow_referers = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApiKeyRestrictions`](crate::types::ApiKeyRestrictions).
     pub fn build(self) -> crate::types::ApiKeyRestrictions {
         crate::types::ApiKeyRestrictions {
-            allow_actions: self.allow_actions
-            ,
-            allow_resources: self.allow_resources
-            ,
-            allow_referers: self.allow_referers
-            ,
+            allow_actions: self.allow_actions,
+            allow_resources: self.allow_resources,
+            allow_referers: self.allow_referers,
         }
     }
 }
-

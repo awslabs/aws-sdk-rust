@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectorInput  {
+pub struct DescribeConnectorInput {
     /// <p>The unique identifier for the connector.</p>
     #[doc(hidden)]
     pub connector_id: std::option::Option<std::string::String>,
 }
 impl DescribeConnectorInput {
     /// <p>The unique identifier for the connector.</p>
-    pub fn connector_id(&self) -> std::option::Option<& str> {
+    pub fn connector_id(&self) -> std::option::Option<&str> {
         self.connector_id.as_deref()
     }
 }
 impl DescribeConnectorInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
-    pub fn builder() -> crate::operation::describe_connector::builders::DescribeConnectorInputBuilder {
+    pub fn builder() -> crate::operation::describe_connector::builders::DescribeConnectorInputBuilder
+    {
         crate::operation::describe_connector::builders::DescribeConnectorInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeConnectorInputBuilder {
     }
     /// <p>The unique identifier for the connector.</p>
     pub fn set_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connector_id = input; self
+        self.connector_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeConnectorInput`](crate::operation::describe_connector::DescribeConnectorInput).
-    pub fn build(self) -> Result<crate::operation::describe_connector::DescribeConnectorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_connector::DescribeConnectorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_connector::DescribeConnectorInput {
-                connector_id: self.connector_id
-                ,
-            }
+                connector_id: self.connector_id,
+            },
         )
     }
 }
-

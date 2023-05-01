@@ -183,4 +183,3 @@ mod test {
         assert_eq!(Some("some-request-id"), err.extended_request_id());
     }
 }
-

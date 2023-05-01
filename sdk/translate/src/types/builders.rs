@@ -32,4 +32,3 @@ pub use crate::types::_terminology_data_location::TerminologyDataLocationBuilder
 pub use crate::types::_terminology_data::TerminologyDataBuilder;
 
 pub use crate::types::_parallel_data_data_location::ParallelDataDataLocationBuilder;
-

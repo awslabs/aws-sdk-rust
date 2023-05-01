@@ -3,7 +3,7 @@
 /// <p> Information about a line item asset. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LineItemAssetInformation  {
+pub struct LineItemAssetInformation {
     /// <p> The ID of the asset. </p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LineItemAssetInformation  {
 }
 impl LineItemAssetInformation {
     /// <p> The ID of the asset. </p>
-    pub fn asset_id(&self) -> std::option::Option<& str> {
+    pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
     /// <p> The MAC addresses of the asset. </p>
-    pub fn mac_address_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn mac_address_list(&self) -> std::option::Option<&[std::string::String]> {
         self.mac_address_list.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl LineItemAssetInformationBuilder {
     }
     /// <p> The ID of the asset. </p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input; self
+        self.asset_id = input;
+        self
     }
     /// Appends an item to `mac_address_list`.
     ///
@@ -52,22 +53,23 @@ impl LineItemAssetInformationBuilder {
     /// <p> The MAC addresses of the asset. </p>
     pub fn mac_address_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.mac_address_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.mac_address_list = Some(v);
-                        self
+        v.push(input.into());
+        self.mac_address_list = Some(v);
+        self
     }
     /// <p> The MAC addresses of the asset. </p>
-    pub fn set_mac_address_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.mac_address_list = input; self
+    pub fn set_mac_address_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.mac_address_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`LineItemAssetInformation`](crate::types::LineItemAssetInformation).
     pub fn build(self) -> crate::types::LineItemAssetInformation {
         crate::types::LineItemAssetInformation {
-            asset_id: self.asset_id
-            ,
-            mac_address_list: self.mac_address_list
-            ,
+            asset_id: self.asset_id,
+            mac_address_list: self.mac_address_list,
         }
     }
 }
-

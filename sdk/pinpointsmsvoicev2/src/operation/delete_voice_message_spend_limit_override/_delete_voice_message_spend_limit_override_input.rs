@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVoiceMessageSpendLimitOverrideInput  {
-}
+pub struct DeleteVoiceMessageSpendLimitOverrideInput {}
 impl DeleteVoiceMessageSpendLimitOverrideInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput).
-    pub fn builder() -> crate::operation::delete_voice_message_spend_limit_override::builders::DeleteVoiceMessageSpendLimitOverrideInputBuilder {
+    pub fn builder() -> crate::operation::delete_voice_message_spend_limit_override::builders::DeleteVoiceMessageSpendLimitOverrideInputBuilder{
         crate::operation::delete_voice_message_spend_limit_override::builders::DeleteVoiceMessageSpendLimitOverrideInputBuilder::default()
     }
 }
@@ -14,15 +13,13 @@ impl DeleteVoiceMessageSpendLimitOverrideInput {
 /// A builder for [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DeleteVoiceMessageSpendLimitOverrideInputBuilder {
-}
+pub struct DeleteVoiceMessageSpendLimitOverrideInputBuilder {}
 impl DeleteVoiceMessageSpendLimitOverrideInputBuilder {
     /// Consumes the builder and constructs a [`DeleteVoiceMessageSpendLimitOverrideInput`](crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput).
-    pub fn build(self) -> Result<crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideInput {
             }
         )
     }
 }
-

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateWirelessGatewayFromThingInput  {
+pub struct DisassociateWirelessGatewayFromThingInput {
     /// <p>The ID of the resource to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DisassociateWirelessGatewayFromThingInput {
     /// <p>The ID of the resource to update.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DisassociateWirelessGatewayFromThingInput {
     /// Creates a new builder-style object to manufacture [`DisassociateWirelessGatewayFromThingInput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput).
-    pub fn builder() -> crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingInputBuilder{
         crate::operation::disassociate_wireless_gateway_from_thing::builders::DisassociateWirelessGatewayFromThingInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl DisassociateWirelessGatewayFromThingInputBuilder {
     }
     /// <p>The ID of the resource to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateWirelessGatewayFromThingInput`](crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::disassociate_wireless_gateway_from_thing::DisassociateWirelessGatewayFromThingInput {
                 id: self.id
@@ -46,4 +47,3 @@ impl DisassociateWirelessGatewayFromThingInputBuilder {
         )
     }
 }
-

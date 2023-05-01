@@ -3,7 +3,7 @@
 /// <p>Represents the request to change a user password.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ChangePasswordInput  {
+pub struct ChangePasswordInput {
     /// <p>The old password.</p>
     #[doc(hidden)]
     pub previous_password: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct ChangePasswordInput  {
 }
 impl ChangePasswordInput {
     /// <p>The old password.</p>
-    pub fn previous_password(&self) -> std::option::Option<& str> {
+    pub fn previous_password(&self) -> std::option::Option<&str> {
         self.previous_password.as_deref()
     }
     /// <p>The new password.</p>
-    pub fn proposed_password(&self) -> std::option::Option<& str> {
+    pub fn proposed_password(&self) -> std::option::Option<&str> {
         self.proposed_password.as_deref()
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
-    pub fn access_token(&self) -> std::option::Option<& str> {
+    pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ChangePasswordInput  {
+impl std::fmt::Debug for ChangePasswordInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChangePasswordInput");
         formatter.field("previous_password", &"*** Sensitive Data Redacted ***");
@@ -59,8 +59,12 @@ impl ChangePasswordInputBuilder {
         self
     }
     /// <p>The old password.</p>
-    pub fn set_previous_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.previous_password = input; self
+    pub fn set_previous_password(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.previous_password = input;
+        self
     }
     /// <p>The new password.</p>
     pub fn proposed_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +72,12 @@ impl ChangePasswordInputBuilder {
         self
     }
     /// <p>The new password.</p>
-    pub fn set_proposed_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.proposed_password = input; self
+    pub fn set_proposed_password(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.proposed_password = input;
+        self
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
     pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,20 +86,21 @@ impl ChangePasswordInputBuilder {
     }
     /// <p>A valid access token that Amazon Cognito issued to the user whose password you want to change.</p>
     pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_token = input; self
+        self.access_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ChangePasswordInput`](crate::operation::change_password::ChangePasswordInput).
-    pub fn build(self) -> Result<crate::operation::change_password::ChangePasswordInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::change_password::ChangePasswordInput {
-                previous_password: self.previous_password
-                ,
-                proposed_password: self.proposed_password
-                ,
-                access_token: self.access_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::change_password::ChangePasswordInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::change_password::ChangePasswordInput {
+            previous_password: self.previous_password,
+            proposed_password: self.proposed_password,
+            access_token: self.access_token,
+        })
     }
 }
 impl std::fmt::Debug for ChangePasswordInputBuilder {
@@ -103,4 +112,3 @@ impl std::fmt::Debug for ChangePasswordInputBuilder {
         formatter.finish()
     }
 }
-

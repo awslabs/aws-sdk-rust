@@ -4,50 +4,70 @@ pub use crate::operation::disassociate_fraudster::_disassociate_fraudster_output
 pub use crate::operation::disassociate_fraudster::_disassociate_fraudster_input::DisassociateFraudsterInputBuilder;
 
 /// Fluent builder constructing a request to `DisassociateFraudster`.
-/// 
+///
 /// <p>Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster from its only watchlist, a <code>ValidationException</code> is thrown. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateFraudsterFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::disassociate_fraudster::builders::DisassociateFraudsterInputBuilder,
+    inner: crate::operation::disassociate_fraudster::builders::DisassociateFraudsterInputBuilder,
 }
-impl DisassociateFraudsterFluentBuilder  {
+impl DisassociateFraudsterFluentBuilder {
     /// Creates a new `DisassociateFraudster`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::disassociate_fraudster::DisassociateFraudster, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::disassociate_fraudster::DisassociateFraudsterError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::disassociate_fraudster::DisassociateFraudsterOutput, aws_smithy_http::result::SdkError<crate::operation::disassociate_fraudster::DisassociateFraudsterError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::disassociate_fraudster::DisassociateFraudster,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::disassociate_fraudster::DisassociateFraudsterOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the domain that contains the fraudster.</p>
     pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domain_id(input.into());
@@ -79,4 +99,3 @@ impl DisassociateFraudsterFluentBuilder  {
         self
     }
 }
-

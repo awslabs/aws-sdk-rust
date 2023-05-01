@@ -2,13 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterInstanceEventNotificationAttributesInput  {
+pub struct RegisterInstanceEventNotificationAttributesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
     /// <p>Information about the tag keys to register.</p>
     #[doc(hidden)]
-    pub instance_tag_attribute: std::option::Option<crate::types::RegisterInstanceTagAttributeRequest>,
+    pub instance_tag_attribute:
+        std::option::Option<crate::types::RegisterInstanceTagAttributeRequest>,
 }
 impl RegisterInstanceEventNotificationAttributesInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -16,13 +17,15 @@ impl RegisterInstanceEventNotificationAttributesInput {
         self.dry_run
     }
     /// <p>Information about the tag keys to register.</p>
-    pub fn instance_tag_attribute(&self) -> std::option::Option<& crate::types::RegisterInstanceTagAttributeRequest> {
+    pub fn instance_tag_attribute(
+        &self,
+    ) -> std::option::Option<&crate::types::RegisterInstanceTagAttributeRequest> {
         self.instance_tag_attribute.as_ref()
     }
 }
 impl RegisterInstanceEventNotificationAttributesInput {
     /// Creates a new builder-style object to manufacture [`RegisterInstanceEventNotificationAttributesInput`](crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesInput).
-    pub fn builder() -> crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesInputBuilder {
+    pub fn builder() -> crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesInputBuilder{
         crate::operation::register_instance_event_notification_attributes::builders::RegisterInstanceEventNotificationAttributesInputBuilder::default()
     }
 }
@@ -32,7 +35,8 @@ impl RegisterInstanceEventNotificationAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RegisterInstanceEventNotificationAttributesInputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
-    pub(crate) instance_tag_attribute: std::option::Option<crate::types::RegisterInstanceTagAttributeRequest>,
+    pub(crate) instance_tag_attribute:
+        std::option::Option<crate::types::RegisterInstanceTagAttributeRequest>,
 }
 impl RegisterInstanceEventNotificationAttributesInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -42,19 +46,27 @@ impl RegisterInstanceEventNotificationAttributesInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>Information about the tag keys to register.</p>
-    pub fn instance_tag_attribute(mut self, input: crate::types::RegisterInstanceTagAttributeRequest) -> Self {
+    pub fn instance_tag_attribute(
+        mut self,
+        input: crate::types::RegisterInstanceTagAttributeRequest,
+    ) -> Self {
         self.instance_tag_attribute = Some(input);
         self
     }
     /// <p>Information about the tag keys to register.</p>
-    pub fn set_instance_tag_attribute(mut self, input: std::option::Option<crate::types::RegisterInstanceTagAttributeRequest>) -> Self {
-        self.instance_tag_attribute = input; self
+    pub fn set_instance_tag_attribute(
+        mut self,
+        input: std::option::Option<crate::types::RegisterInstanceTagAttributeRequest>,
+    ) -> Self {
+        self.instance_tag_attribute = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegisterInstanceEventNotificationAttributesInput`](crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesInput).
-    pub fn build(self) -> Result<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesInput {
                 dry_run: self.dry_run
@@ -65,4 +77,3 @@ impl RegisterInstanceEventNotificationAttributesInputBuilder {
         )
     }
 }
-

@@ -4,50 +4,70 @@ pub use crate::operation::put_mobile_device_access_override::_put_mobile_device_
 pub use crate::operation::put_mobile_device_access_override::_put_mobile_device_access_override_input::PutMobileDeviceAccessOverrideInputBuilder;
 
 /// Fluent builder constructing a request to `PutMobileDeviceAccessOverride`.
-/// 
+///
 /// <p>Creates or updates a mobile device access override for the given WorkMail organization, user, and device.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutMobileDeviceAccessOverrideFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_mobile_device_access_override::builders::PutMobileDeviceAccessOverrideInputBuilder,
 }
-impl PutMobileDeviceAccessOverrideFluentBuilder  {
+impl PutMobileDeviceAccessOverrideFluentBuilder {
     /// Creates a new `PutMobileDeviceAccessOverride`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverride, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput, aws_smithy_http::result::SdkError<crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverride,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Identifies the WorkMail organization for which you create the override.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
@@ -58,21 +78,21 @@ impl PutMobileDeviceAccessOverrideFluentBuilder  {
         self.inner = self.inner.set_organization_id(input);
         self
     }
-    /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail user for which you create the override. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
@@ -94,7 +114,10 @@ impl PutMobileDeviceAccessOverrideFluentBuilder  {
         self
     }
     /// <p>The effect of the override, <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn set_effect(mut self, input: std::option::Option<crate::types::MobileDeviceAccessRuleEffect>) -> Self {
+    pub fn set_effect(
+        mut self,
+        input: std::option::Option<crate::types::MobileDeviceAccessRuleEffect>,
+    ) -> Self {
         self.inner = self.inner.set_effect(input);
         self
     }
@@ -109,4 +132,3 @@ impl PutMobileDeviceAccessOverrideFluentBuilder  {
         self
     }
 }
-

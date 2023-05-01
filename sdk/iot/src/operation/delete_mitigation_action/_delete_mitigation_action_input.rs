@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMitigationActionInput  {
+pub struct DeleteMitigationActionInput {
     /// <p>The name of the mitigation action that you want to delete.</p>
     #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
 }
 impl DeleteMitigationActionInput {
     /// <p>The name of the mitigation action that you want to delete.</p>
-    pub fn action_name(&self) -> std::option::Option<& str> {
+    pub fn action_name(&self) -> std::option::Option<&str> {
         self.action_name.as_deref()
     }
 }
 impl DeleteMitigationActionInput {
     /// Creates a new builder-style object to manufacture [`DeleteMitigationActionInput`](crate::operation::delete_mitigation_action::DeleteMitigationActionInput).
-    pub fn builder() -> crate::operation::delete_mitigation_action::builders::DeleteMitigationActionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_mitigation_action::builders::DeleteMitigationActionInputBuilder
+    {
         crate::operation::delete_mitigation_action::builders::DeleteMitigationActionInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteMitigationActionInputBuilder {
     }
     /// <p>The name of the mitigation action that you want to delete.</p>
     pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_name = input; self
+        self.action_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMitigationActionInput`](crate::operation::delete_mitigation_action::DeleteMitigationActionInput).
-    pub fn build(self) -> Result<crate::operation::delete_mitigation_action::DeleteMitigationActionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_mitigation_action::DeleteMitigationActionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_mitigation_action::DeleteMitigationActionInput {
-                action_name: self.action_name
-                ,
-            }
+                action_name: self.action_name,
+            },
         )
     }
 }
-

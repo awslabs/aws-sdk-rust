@@ -3,7 +3,7 @@
 /// <p>Details of the operation to be performed by the job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportRevisionsToS3RequestDetails  {
+pub struct ExportRevisionsToS3RequestDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
@@ -12,19 +12,22 @@ pub struct ExportRevisionsToS3RequestDetails  {
     pub encryption: std::option::Option<crate::types::ExportServerSideEncryption>,
     /// <p>The destination for the revision.</p>
     #[doc(hidden)]
-    pub revision_destinations: std::option::Option<std::vec::Vec<crate::types::RevisionDestinationEntry>>,
+    pub revision_destinations:
+        std::option::Option<std::vec::Vec<crate::types::RevisionDestinationEntry>>,
 }
 impl ExportRevisionsToS3RequestDetails {
     /// <p>The unique identifier for the data set associated with this export job.</p>
-    pub fn data_set_id(&self) -> std::option::Option<& str> {
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
     /// <p>Encryption configuration for the export job.</p>
-    pub fn encryption(&self) -> std::option::Option<& crate::types::ExportServerSideEncryption> {
+    pub fn encryption(&self) -> std::option::Option<&crate::types::ExportServerSideEncryption> {
         self.encryption.as_ref()
     }
     /// <p>The destination for the revision.</p>
-    pub fn revision_destinations(&self) -> std::option::Option<& [crate::types::RevisionDestinationEntry]> {
+    pub fn revision_destinations(
+        &self,
+    ) -> std::option::Option<&[crate::types::RevisionDestinationEntry]> {
         self.revision_destinations.as_deref()
     }
 }
@@ -41,7 +44,8 @@ impl ExportRevisionsToS3RequestDetails {
 pub struct ExportRevisionsToS3RequestDetailsBuilder {
     pub(crate) data_set_id: std::option::Option<std::string::String>,
     pub(crate) encryption: std::option::Option<crate::types::ExportServerSideEncryption>,
-    pub(crate) revision_destinations: std::option::Option<std::vec::Vec<crate::types::RevisionDestinationEntry>>,
+    pub(crate) revision_destinations:
+        std::option::Option<std::vec::Vec<crate::types::RevisionDestinationEntry>>,
 }
 impl ExportRevisionsToS3RequestDetailsBuilder {
     /// <p>The unique identifier for the data set associated with this export job.</p>
@@ -51,7 +55,8 @@ impl ExportRevisionsToS3RequestDetailsBuilder {
     }
     /// <p>The unique identifier for the data set associated with this export job.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input; self
+        self.data_set_id = input;
+        self
     }
     /// <p>Encryption configuration for the export job.</p>
     pub fn encryption(mut self, input: crate::types::ExportServerSideEncryption) -> Self {
@@ -59,8 +64,12 @@ impl ExportRevisionsToS3RequestDetailsBuilder {
         self
     }
     /// <p>Encryption configuration for the export job.</p>
-    pub fn set_encryption(mut self, input: std::option::Option<crate::types::ExportServerSideEncryption>) -> Self {
-        self.encryption = input; self
+    pub fn set_encryption(
+        mut self,
+        input: std::option::Option<crate::types::ExportServerSideEncryption>,
+    ) -> Self {
+        self.encryption = input;
+        self
     }
     /// Appends an item to `revision_destinations`.
     ///
@@ -69,24 +78,24 @@ impl ExportRevisionsToS3RequestDetailsBuilder {
     /// <p>The destination for the revision.</p>
     pub fn revision_destinations(mut self, input: crate::types::RevisionDestinationEntry) -> Self {
         let mut v = self.revision_destinations.unwrap_or_default();
-                        v.push(input);
-                        self.revision_destinations = Some(v);
-                        self
+        v.push(input);
+        self.revision_destinations = Some(v);
+        self
     }
     /// <p>The destination for the revision.</p>
-    pub fn set_revision_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::RevisionDestinationEntry>>) -> Self {
-        self.revision_destinations = input; self
+    pub fn set_revision_destinations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RevisionDestinationEntry>>,
+    ) -> Self {
+        self.revision_destinations = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExportRevisionsToS3RequestDetails`](crate::types::ExportRevisionsToS3RequestDetails).
     pub fn build(self) -> crate::types::ExportRevisionsToS3RequestDetails {
         crate::types::ExportRevisionsToS3RequestDetails {
-            data_set_id: self.data_set_id
-            ,
-            encryption: self.encryption
-            ,
-            revision_destinations: self.revision_destinations
-            ,
+            data_set_id: self.data_set_id,
+            encryption: self.encryption,
+            revision_destinations: self.revision_destinations,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Represents information about failure details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailureDetails  {
+pub struct FailureDetails {
     /// <p>The type of the failure.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::FailureType>,
@@ -16,15 +16,15 @@ pub struct FailureDetails  {
 }
 impl FailureDetails {
     /// <p>The type of the failure.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::FailureType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::FailureType> {
         self.r#type.as_ref()
     }
     /// <p>The message about the failure.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The external ID of the run of the action that failed.</p>
-    pub fn external_execution_id(&self) -> std::option::Option<& str> {
+    pub fn external_execution_id(&self) -> std::option::Option<&str> {
         self.external_execution_id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl FailureDetailsBuilder {
     }
     /// <p>The type of the failure.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::FailureType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The message about the failure.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl FailureDetailsBuilder {
     }
     /// <p>The message about the failure.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The external ID of the run of the action that failed.</p>
     pub fn external_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +70,19 @@ impl FailureDetailsBuilder {
         self
     }
     /// <p>The external ID of the run of the action that failed.</p>
-    pub fn set_external_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.external_execution_id = input; self
+    pub fn set_external_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.external_execution_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`FailureDetails`](crate::types::FailureDetails).
     pub fn build(self) -> crate::types::FailureDetails {
         crate::types::FailureDetails {
-            r#type: self.r#type
-            ,
-            message: self.message
-            ,
-            external_execution_id: self.external_execution_id
-            ,
+            r#type: self.r#type,
+            message: self.message,
+            external_execution_id: self.external_execution_id,
         }
     }
 }
-

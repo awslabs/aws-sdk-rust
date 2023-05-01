@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkspaceImageOutput  {
+pub struct CreateWorkspaceImageOutput {
     /// <p>The identifier of the new WorkSpace image.</p>
     #[doc(hidden)]
     pub image_id: std::option::Option<std::string::String>,
@@ -31,46 +31,49 @@ pub struct CreateWorkspaceImageOutput  {
 }
 impl CreateWorkspaceImageOutput {
     /// <p>The identifier of the new WorkSpace image.</p>
-    pub fn image_id(&self) -> std::option::Option<& str> {
+    pub fn image_id(&self) -> std::option::Option<&str> {
         self.image_id.as_deref()
     }
     /// <p>The name of the image.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the image.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The operating system that the image is running.</p>
-    pub fn operating_system(&self) -> std::option::Option<& crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> std::option::Option<&crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
     /// <p>The availability status of the image.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::WorkspaceImageState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::WorkspaceImageState> {
         self.state.as_ref()
     }
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
-    pub fn required_tenancy(&self) -> std::option::Option<& crate::types::WorkspaceImageRequiredTenancy> {
+    pub fn required_tenancy(
+        &self,
+    ) -> std::option::Option<&crate::types::WorkspaceImageRequiredTenancy> {
         self.required_tenancy.as_ref()
     }
     /// <p>The date when the image was created.</p>
-    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
-    pub fn owner_account_id(&self) -> std::option::Option<& str> {
+    pub fn owner_account_id(&self) -> std::option::Option<&str> {
         self.owner_account_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateWorkspaceImageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateWorkspaceImageOutput {
     /// Creates a new builder-style object to manufacture [`CreateWorkspaceImageOutput`](crate::operation::create_workspace_image::CreateWorkspaceImageOutput).
-    pub fn builder() -> crate::operation::create_workspace_image::builders::CreateWorkspaceImageOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_workspace_image::builders::CreateWorkspaceImageOutputBuilder {
         crate::operation::create_workspace_image::builders::CreateWorkspaceImageOutputBuilder::default()
     }
 }
@@ -97,7 +100,8 @@ impl CreateWorkspaceImageOutputBuilder {
     }
     /// <p>The identifier of the new WorkSpace image.</p>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_id = input; self
+        self.image_id = input;
+        self
     }
     /// <p>The name of the image.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +110,8 @@ impl CreateWorkspaceImageOutputBuilder {
     }
     /// <p>The name of the image.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the image.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +120,8 @@ impl CreateWorkspaceImageOutputBuilder {
     }
     /// <p>The description of the image.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The operating system that the image is running.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
@@ -123,8 +129,12 @@ impl CreateWorkspaceImageOutputBuilder {
         self
     }
     /// <p>The operating system that the image is running.</p>
-    pub fn set_operating_system(mut self, input: std::option::Option<crate::types::OperatingSystem>) -> Self {
-        self.operating_system = input; self
+    pub fn set_operating_system(
+        mut self,
+        input: std::option::Option<crate::types::OperatingSystem>,
+    ) -> Self {
+        self.operating_system = input;
+        self
     }
     /// <p>The availability status of the image.</p>
     pub fn state(mut self, input: crate::types::WorkspaceImageState) -> Self {
@@ -132,8 +142,12 @@ impl CreateWorkspaceImageOutputBuilder {
         self
     }
     /// <p>The availability status of the image.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::WorkspaceImageState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::WorkspaceImageState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
     pub fn required_tenancy(mut self, input: crate::types::WorkspaceImageRequiredTenancy) -> Self {
@@ -141,8 +155,12 @@ impl CreateWorkspaceImageOutputBuilder {
         self
     }
     /// <p>Specifies whether the image is running on dedicated hardware. When Bring Your Own License (BYOL) is enabled, this value is set to DEDICATED. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.htm"> Bring Your Own Windows Desktop Images.</a>.</p>
-    pub fn set_required_tenancy(mut self, input: std::option::Option<crate::types::WorkspaceImageRequiredTenancy>) -> Self {
-        self.required_tenancy = input; self
+    pub fn set_required_tenancy(
+        mut self,
+        input: std::option::Option<crate::types::WorkspaceImageRequiredTenancy>,
+    ) -> Self {
+        self.required_tenancy = input;
+        self
     }
     /// <p>The date when the image was created.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -151,7 +169,8 @@ impl CreateWorkspaceImageOutputBuilder {
     }
     /// <p>The date when the image was created.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input; self
+        self.created = input;
+        self
     }
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
     pub fn owner_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,38 +179,30 @@ impl CreateWorkspaceImageOutputBuilder {
     }
     /// <p>The identifier of the Amazon Web Services account that owns the image.</p>
     pub fn set_owner_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_account_id = input; self
+        self.owner_account_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWorkspaceImageOutput`](crate::operation::create_workspace_image::CreateWorkspaceImageOutput).
     pub fn build(self) -> crate::operation::create_workspace_image::CreateWorkspaceImageOutput {
         crate::operation::create_workspace_image::CreateWorkspaceImageOutput {
-            image_id: self.image_id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            operating_system: self.operating_system
-            ,
-            state: self.state
-            ,
-            required_tenancy: self.required_tenancy
-            ,
-            created: self.created
-            ,
-            owner_account_id: self.owner_account_id
-            ,
+            image_id: self.image_id,
+            name: self.name,
+            description: self.description,
+            operating_system: self.operating_system,
+            state: self.state,
+            required_tenancy: self.required_tenancy,
+            created: self.created,
+            owner_account_id: self.owner_account_id,
             _request_id: self._request_id,
         }
     }
 }
-

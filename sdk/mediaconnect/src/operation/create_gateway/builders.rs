@@ -4,50 +4,66 @@ pub use crate::operation::create_gateway::_create_gateway_output::CreateGatewayO
 pub use crate::operation::create_gateway::_create_gateway_input::CreateGatewayInputBuilder;
 
 /// Fluent builder constructing a request to `CreateGateway`.
-/// 
+///
 /// Creates a new gateway. The request must include at least one network (up to 4).
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGatewayFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_gateway::builders::CreateGatewayInputBuilder,
+    inner: crate::operation::create_gateway::builders::CreateGatewayInputBuilder,
 }
-impl CreateGatewayFluentBuilder  {
+impl CreateGatewayFluentBuilder {
     /// Creates a new `CreateGateway`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_gateway::CreateGateway, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_gateway::CreateGatewayError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_gateway::CreateGatewayOutput, aws_smithy_http::result::SdkError<crate::operation::create_gateway::CreateGatewayError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_gateway::CreateGateway,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_gateway::CreateGatewayError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_gateway::CreateGatewayOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_gateway::CreateGatewayError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `EgressCidrBlocks`.
     ///
     /// To override the contents of this collection use [`set_egress_cidr_blocks`](Self::set_egress_cidr_blocks).
@@ -58,7 +74,10 @@ impl CreateGatewayFluentBuilder  {
         self
     }
     /// The range of IP addresses that are allowed to contribute content or initiate output requests for flows communicating with this gateway. These IP addresses should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
-    pub fn set_egress_cidr_blocks(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_egress_cidr_blocks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_egress_cidr_blocks(input);
         self
     }
@@ -82,9 +101,11 @@ impl CreateGatewayFluentBuilder  {
         self
     }
     /// The list of networks that you want to add.
-    pub fn set_networks(mut self, input: std::option::Option<std::vec::Vec<crate::types::GatewayNetwork>>) -> Self {
+    pub fn set_networks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GatewayNetwork>>,
+    ) -> Self {
         self.inner = self.inner.set_networks(input);
         self
     }
 }
-

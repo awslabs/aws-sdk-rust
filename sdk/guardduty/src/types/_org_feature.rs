@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let orgfeature = unimplemented!();
 /// match orgfeature {
@@ -34,14 +34,22 @@
 /// Specifically, when `orgfeature` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OrgFeature::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum OrgFeature {
     #[allow(missing_docs)] // documentation missing in model
     EbsMalwareProtection,
@@ -56,49 +64,55 @@ pub enum OrgFeature {
     #[allow(missing_docs)] // documentation missing in model
     S3DataEvents,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OrgFeature {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "EBS_MALWARE_PROTECTION" => OrgFeature::EbsMalwareProtection,
-"EKS_AUDIT_LOGS" => OrgFeature::EksAuditLogs,
-"EKS_RUNTIME_MONITORING" => OrgFeature::EksRuntimeMonitoring,
-"LAMBDA_NETWORK_LOGS" => OrgFeature::LambdaNetworkLogs,
-"RDS_LOGIN_EVENTS" => OrgFeature::RdsLoginEvents,
-"S3_DATA_EVENTS" => OrgFeature::S3DataEvents,
-other => OrgFeature::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for OrgFeature {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(OrgFeature::from(s))
-                }
-            }
-impl OrgFeature {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    OrgFeature::EbsMalwareProtection => "EBS_MALWARE_PROTECTION",
-    OrgFeature::EksAuditLogs => "EKS_AUDIT_LOGS",
-    OrgFeature::EksRuntimeMonitoring => "EKS_RUNTIME_MONITORING",
-    OrgFeature::LambdaNetworkLogs => "LAMBDA_NETWORK_LOGS",
-    OrgFeature::RdsLoginEvents => "RDS_LOGIN_EVENTS",
-    OrgFeature::S3DataEvents => "S3_DATA_EVENTS",
-    OrgFeature::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "EBS_MALWARE_PROTECTION" => OrgFeature::EbsMalwareProtection,
+            "EKS_AUDIT_LOGS" => OrgFeature::EksAuditLogs,
+            "EKS_RUNTIME_MONITORING" => OrgFeature::EksRuntimeMonitoring,
+            "LAMBDA_NETWORK_LOGS" => OrgFeature::LambdaNetworkLogs,
+            "RDS_LOGIN_EVENTS" => OrgFeature::RdsLoginEvents,
+            "S3_DATA_EVENTS" => OrgFeature::S3DataEvents,
+            other => OrgFeature::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["EBS_MALWARE_PROTECTION", "EKS_AUDIT_LOGS", "EKS_RUNTIME_MONITORING", "LAMBDA_NETWORK_LOGS", "RDS_LOGIN_EVENTS", "S3_DATA_EVENTS"]
-                }
-            }
-impl AsRef<str> for OrgFeature {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for OrgFeature {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OrgFeature::from(s))
+    }
+}
+impl OrgFeature {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OrgFeature::EbsMalwareProtection => "EBS_MALWARE_PROTECTION",
+            OrgFeature::EksAuditLogs => "EKS_AUDIT_LOGS",
+            OrgFeature::EksRuntimeMonitoring => "EKS_RUNTIME_MONITORING",
+            OrgFeature::LambdaNetworkLogs => "LAMBDA_NETWORK_LOGS",
+            OrgFeature::RdsLoginEvents => "RDS_LOGIN_EVENTS",
+            OrgFeature::S3DataEvents => "S3_DATA_EVENTS",
+            OrgFeature::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "EBS_MALWARE_PROTECTION",
+            "EKS_AUDIT_LOGS",
+            "EKS_RUNTIME_MONITORING",
+            "LAMBDA_NETWORK_LOGS",
+            "RDS_LOGIN_EVENTS",
+            "S3_DATA_EVENTS",
+        ]
+    }
+}
+impl AsRef<str> for OrgFeature {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

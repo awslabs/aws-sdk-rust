@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetBuildsInput  {
+pub struct BatchGetBuildsInput {
     /// <p>The IDs of the builds.</p>
     #[doc(hidden)]
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchGetBuildsInput {
     /// <p>The IDs of the builds.</p>
-    pub fn ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn ids(&self) -> std::option::Option<&[std::string::String]> {
         self.ids.as_deref()
     }
 }
@@ -34,22 +34,25 @@ impl BatchGetBuildsInputBuilder {
     /// <p>The IDs of the builds.</p>
     pub fn ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.ids = Some(v);
-                        self
+        v.push(input.into());
+        self.ids = Some(v);
+        self
     }
     /// <p>The IDs of the builds.</p>
-    pub fn set_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.ids = input; self
+    pub fn set_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetBuildsInput`](crate::operation::batch_get_builds::BatchGetBuildsInput).
-    pub fn build(self) -> Result<crate::operation::batch_get_builds::BatchGetBuildsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::batch_get_builds::BatchGetBuildsInput {
-                ids: self.ids
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_get_builds::BatchGetBuildsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::batch_get_builds::BatchGetBuildsInput { ids: self.ids })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Includes information about the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceSummary  {
+pub struct DeviceSummary {
     /// <p>The ARN of the device.</p>
     #[doc(hidden)]
     pub device_arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct DeviceSummary  {
 }
 impl DeviceSummary {
     /// <p>The ARN of the device.</p>
-    pub fn device_arn(&self) -> std::option::Option<& str> {
+    pub fn device_arn(&self) -> std::option::Option<&str> {
         self.device_arn.as_deref()
     }
     /// <p>The name of the device.</p>
-    pub fn device_name(&self) -> std::option::Option<& str> {
+    pub fn device_name(&self) -> std::option::Option<&str> {
         self.device_name.as_deref()
     }
     /// <p>The provider of the device.</p>
-    pub fn provider_name(&self) -> std::option::Option<& str> {
+    pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
     /// <p>The type of the device.</p>
-    pub fn device_type(&self) -> std::option::Option<& crate::types::DeviceType> {
+    pub fn device_type(&self) -> std::option::Option<&crate::types::DeviceType> {
         self.device_type.as_ref()
     }
     /// <p>The status of the device.</p>
-    pub fn device_status(&self) -> std::option::Option<& crate::types::DeviceStatus> {
+    pub fn device_status(&self) -> std::option::Option<&crate::types::DeviceStatus> {
         self.device_status.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The ARN of the device.</p>
     pub fn set_device_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_arn = input; self
+        self.device_arn = input;
+        self
     }
     /// <p>The name of the device.</p>
     pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The name of the device.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_name = input; self
+        self.device_name = input;
+        self
     }
     /// <p>The provider of the device.</p>
     pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The provider of the device.</p>
     pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider_name = input; self
+        self.provider_name = input;
+        self
     }
     /// <p>The type of the device.</p>
     pub fn device_type(mut self, input: crate::types::DeviceType) -> Self {
@@ -94,7 +97,8 @@ impl DeviceSummaryBuilder {
     }
     /// <p>The type of the device.</p>
     pub fn set_device_type(mut self, input: std::option::Option<crate::types::DeviceType>) -> Self {
-        self.device_type = input; self
+        self.device_type = input;
+        self
     }
     /// <p>The status of the device.</p>
     pub fn device_status(mut self, input: crate::types::DeviceStatus) -> Self {
@@ -102,23 +106,21 @@ impl DeviceSummaryBuilder {
         self
     }
     /// <p>The status of the device.</p>
-    pub fn set_device_status(mut self, input: std::option::Option<crate::types::DeviceStatus>) -> Self {
-        self.device_status = input; self
+    pub fn set_device_status(
+        mut self,
+        input: std::option::Option<crate::types::DeviceStatus>,
+    ) -> Self {
+        self.device_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeviceSummary`](crate::types::DeviceSummary).
     pub fn build(self) -> crate::types::DeviceSummary {
         crate::types::DeviceSummary {
-            device_arn: self.device_arn
-            ,
-            device_name: self.device_name
-            ,
-            provider_name: self.provider_name
-            ,
-            device_type: self.device_type
-            ,
-            device_status: self.device_status
-            ,
+            device_arn: self.device_arn,
+            device_name: self.device_name,
+            provider_name: self.provider_name,
+            device_type: self.device_type,
+            device_status: self.device_status,
         }
     }
 }
-

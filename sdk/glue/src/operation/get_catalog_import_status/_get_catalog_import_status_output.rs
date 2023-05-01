@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCatalogImportStatusOutput  {
+pub struct GetCatalogImportStatusOutput {
     /// <p>The status of the specified catalog migration.</p>
     #[doc(hidden)]
     pub import_status: std::option::Option<crate::types::CatalogImportStatus>,
@@ -10,18 +10,20 @@ pub struct GetCatalogImportStatusOutput  {
 }
 impl GetCatalogImportStatusOutput {
     /// <p>The status of the specified catalog migration.</p>
-    pub fn import_status(&self) -> std::option::Option<& crate::types::CatalogImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<&crate::types::CatalogImportStatus> {
         self.import_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetCatalogImportStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCatalogImportStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetCatalogImportStatusOutput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput).
-    pub fn builder() -> crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusOutputBuilder
+    {
         crate::operation::get_catalog_import_status::builders::GetCatalogImportStatusOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl GetCatalogImportStatusOutputBuilder {
         self
     }
     /// <p>The status of the specified catalog migration.</p>
-    pub fn set_import_status(mut self, input: std::option::Option<crate::types::CatalogImportStatus>) -> Self {
-        self.import_status = input; self
+    pub fn set_import_status(
+        mut self,
+        input: std::option::Option<crate::types::CatalogImportStatus>,
+    ) -> Self {
+        self.import_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCatalogImportStatusOutput`](crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput).
-    pub fn build(self) -> crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput {
         crate::operation::get_catalog_import_status::GetCatalogImportStatusOutput {
-            import_status: self.import_status
-            ,
+            import_status: self.import_status,
             _request_id: self._request_id,
         }
     }
 }
-

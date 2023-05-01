@@ -4,57 +4,73 @@ pub use crate::operation::delete_stream::_delete_stream_output::DeleteStreamOutp
 pub use crate::operation::delete_stream::_delete_stream_input::DeleteStreamInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteStream`.
-/// 
-/// <p>Deletes a Kinesis data stream and all its shards and data. You must shut down any applications that are operating on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.</p> <note> 
-/// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p> 
-/// </note> 
-/// <p>If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code> request, the specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p> 
-/// <p> <b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations, such as <code>PutRecord</code>, <code>PutRecords</code>, and <code>GetRecords</code>, on a stream in the <code>DELETING</code> state until the stream deletion is complete.</p> 
-/// <p>When you delete a stream, any shards in that stream are also deleted, and any tags are dissociated from the stream.</p> 
-/// <p>You can use the <code>DescribeStreamSummary</code> operation to check the state of the stream, which is returned in <code>StreamStatus</code>.</p> 
+///
+/// <p>Deletes a Kinesis data stream and all its shards and data. You must shut down any applications that are operating on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.</p> <note>
+/// <p>When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the <code>StreamName</code> input parameter.</p>
+/// </note>
+/// <p>If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code> request, the specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.</p>
+/// <p> <b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations, such as <code>PutRecord</code>, <code>PutRecords</code>, and <code>GetRecords</code>, on a stream in the <code>DELETING</code> state until the stream deletion is complete.</p>
+/// <p>When you delete a stream, any shards in that stream are also deleted, and any tags are dissociated from the stream.</p>
+/// <p>You can use the <code>DescribeStreamSummary</code> operation to check the state of the stream, which is returned in <code>StreamStatus</code>.</p>
 /// <p> <code>DeleteStream</code> has a limit of five transactions per second per account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteStreamFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_stream::builders::DeleteStreamInputBuilder,
+    inner: crate::operation::delete_stream::builders::DeleteStreamInputBuilder,
 }
-impl DeleteStreamFluentBuilder  {
+impl DeleteStreamFluentBuilder {
     /// Creates a new `DeleteStream`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_stream::DeleteStream, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_stream::DeleteStreamError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_stream::DeleteStreamOutput, aws_smithy_http::result::SdkError<crate::operation::delete_stream::DeleteStreamError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_stream::DeleteStream,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::delete_stream::DeleteStreamError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_stream::DeleteStreamOutput,
+        aws_smithy_http::result::SdkError<crate::operation::delete_stream::DeleteStreamError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the stream to delete.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stream_name(input.into());
@@ -86,4 +102,3 @@ impl DeleteStreamFluentBuilder  {
         self
     }
 }
-

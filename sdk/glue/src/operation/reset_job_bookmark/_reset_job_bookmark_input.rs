@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetJobBookmarkInput  {
+pub struct ResetJobBookmarkInput {
     /// <p>The name of the job in question.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct ResetJobBookmarkInput  {
 }
 impl ResetJobBookmarkInput {
     /// <p>The name of the job in question.</p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The unique run identifier associated with this job run.</p>
-    pub fn run_id(&self) -> std::option::Option<& str> {
+    pub fn run_id(&self) -> std::option::Option<&str> {
         self.run_id.as_deref()
     }
 }
 impl ResetJobBookmarkInput {
     /// Creates a new builder-style object to manufacture [`ResetJobBookmarkInput`](crate::operation::reset_job_bookmark::ResetJobBookmarkInput).
-    pub fn builder() -> crate::operation::reset_job_bookmark::builders::ResetJobBookmarkInputBuilder {
+    pub fn builder() -> crate::operation::reset_job_bookmark::builders::ResetJobBookmarkInputBuilder
+    {
         crate::operation::reset_job_bookmark::builders::ResetJobBookmarkInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ResetJobBookmarkInputBuilder {
     }
     /// <p>The name of the job in question.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     /// <p>The unique run identifier associated with this job run.</p>
     pub fn run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl ResetJobBookmarkInputBuilder {
     }
     /// <p>The unique run identifier associated with this job run.</p>
     pub fn set_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.run_id = input; self
+        self.run_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResetJobBookmarkInput`](crate::operation::reset_job_bookmark::ResetJobBookmarkInput).
-    pub fn build(self) -> Result<crate::operation::reset_job_bookmark::ResetJobBookmarkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reset_job_bookmark::ResetJobBookmarkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::reset_job_bookmark::ResetJobBookmarkInput {
-                job_name: self.job_name
-                ,
-                run_id: self.run_id
-                ,
-            }
+                job_name: self.job_name,
+                run_id: self.run_id,
+            },
         )
     }
 }
-

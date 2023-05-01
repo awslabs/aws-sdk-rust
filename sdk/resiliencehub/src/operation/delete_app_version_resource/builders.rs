@@ -4,56 +4,76 @@ pub use crate::operation::delete_app_version_resource::_delete_app_version_resou
 pub use crate::operation::delete_app_version_resource::_delete_app_version_resource_input::DeleteAppVersionResourceInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteAppVersionResource`.
-/// 
-/// <p>Deletes a resource from the Resilience Hub application.</p> <note> 
-/// <ul> 
-/// <li> <p>You can only delete a manually added resource. To exclude non-manually added resources, use the <code>UpdateAppVersionResource</code> API.</p> </li> 
-/// <li> <p>This action has no effect outside Resilience Hub.</p> </li> 
-/// <li> <p>This API updates the Resilience Hub application draft version. To use this resource for running resiliency assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.</p> </li> 
-/// </ul> 
+///
+/// <p>Deletes a resource from the Resilience Hub application.</p> <note>
+/// <ul>
+/// <li> <p>You can only delete a manually added resource. To exclude non-manually added resources, use the <code>UpdateAppVersionResource</code> API.</p> </li>
+/// <li> <p>This action has no effect outside Resilience Hub.</p> </li>
+/// <li> <p>This API updates the Resilience Hub application draft version. To use this resource for running resiliency assessments, you must publish the Resilience Hub application using the <code>PublishAppVersion</code> API.</p> </li>
+/// </ul>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAppVersionResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_app_version_resource::builders::DeleteAppVersionResourceInputBuilder,
 }
-impl DeleteAppVersionResourceFluentBuilder  {
+impl DeleteAppVersionResourceFluentBuilder {
     /// Creates a new `DeleteAppVersionResource`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_app_version_resource::DeleteAppVersionResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_app_version_resource::DeleteAppVersionResourceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput, aws_smithy_http::result::SdkError<crate::operation::delete_app_version_resource::DeleteAppVersionResourceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_app_version_resource::DeleteAppVersionResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn app_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.app_arn(input.into());
@@ -80,7 +100,10 @@ impl DeleteAppVersionResourceFluentBuilder  {
         self
     }
     /// <p>The logical identifier of the resource.</p>
-    pub fn set_logical_resource_id(mut self, input: std::option::Option<crate::types::LogicalResourceId>) -> Self {
+    pub fn set_logical_resource_id(
+        mut self,
+        input: std::option::Option<crate::types::LogicalResourceId>,
+    ) -> Self {
         self.inner = self.inner.set_logical_resource_id(input);
         self
     }
@@ -90,7 +113,10 @@ impl DeleteAppVersionResourceFluentBuilder  {
         self
     }
     /// <p>The physical identifier of the resource.</p>
-    pub fn set_physical_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_physical_resource_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_physical_resource_id(input);
         self
     }
@@ -125,4 +151,3 @@ impl DeleteAppVersionResourceFluentBuilder  {
         self
     }
 }
-

@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStorageVirtualMachinesOutput  {
+pub struct DescribeStorageVirtualMachinesOutput {
     /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
     #[doc(hidden)]
-    pub storage_virtual_machines: std::option::Option<std::vec::Vec<crate::types::StorageVirtualMachine>>,
+    pub storage_virtual_machines:
+        std::option::Option<std::vec::Vec<crate::types::StorageVirtualMachine>>,
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DescribeStorageVirtualMachinesOutput  {
 }
 impl DescribeStorageVirtualMachinesOutput {
     /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
-    pub fn storage_virtual_machines(&self) -> std::option::Option<& [crate::types::StorageVirtualMachine]> {
+    pub fn storage_virtual_machines(
+        &self,
+    ) -> std::option::Option<&[crate::types::StorageVirtualMachine]> {
         self.storage_virtual_machines.as_deref()
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeStorageVirtualMachinesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeStorageVirtualMachinesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageVirtualMachinesOutput`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput).
-    pub fn builder() -> crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesOutputBuilder{
         crate::operation::describe_storage_virtual_machines::builders::DescribeStorageVirtualMachinesOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DescribeStorageVirtualMachinesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeStorageVirtualMachinesOutputBuilder {
-    pub(crate) storage_virtual_machines: std::option::Option<std::vec::Vec<crate::types::StorageVirtualMachine>>,
+    pub(crate) storage_virtual_machines:
+        std::option::Option<std::vec::Vec<crate::types::StorageVirtualMachine>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +53,17 @@ impl DescribeStorageVirtualMachinesOutputBuilder {
     /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
     pub fn storage_virtual_machines(mut self, input: crate::types::StorageVirtualMachine) -> Self {
         let mut v = self.storage_virtual_machines.unwrap_or_default();
-                        v.push(input);
-                        self.storage_virtual_machines = Some(v);
-                        self
+        v.push(input);
+        self.storage_virtual_machines = Some(v);
+        self
     }
     /// <p>Returned after a successful <code>DescribeStorageVirtualMachines</code> operation, describing each SVM.</p>
-    pub fn set_storage_virtual_machines(mut self, input: std::option::Option<std::vec::Vec<crate::types::StorageVirtualMachine>>) -> Self {
-        self.storage_virtual_machines = input; self
+    pub fn set_storage_virtual_machines(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StorageVirtualMachine>>,
+    ) -> Self {
+        self.storage_virtual_machines = input;
+        self
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +72,27 @@ impl DescribeStorageVirtualMachinesOutputBuilder {
     }
     /// <p>(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous <code>NextToken</code> value left off.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeStorageVirtualMachinesOutput`](crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput).
-    pub fn build(self) -> crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput
+    {
         crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput {
-            storage_virtual_machines: self.storage_virtual_machines
-            ,
-            next_token: self.next_token
-            ,
+            storage_virtual_machines: self.storage_virtual_machines,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

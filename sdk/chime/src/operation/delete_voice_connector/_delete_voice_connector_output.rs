@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVoiceConnectorOutput  {
+pub struct DeleteVoiceConnectorOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteVoiceConnectorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteVoiceConnectorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceConnectorOutput`](crate::operation::delete_voice_connector::DeleteVoiceConnectorOutput).
-    pub fn builder() -> crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorOutputBuilder {
         crate::operation::delete_voice_connector::builders::DeleteVoiceConnectorOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct DeleteVoiceConnectorOutputBuilder {
 }
 impl DeleteVoiceConnectorOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteVoiceConnectorOutput`](crate::operation::delete_voice_connector::DeleteVoiceConnectorOutput).
     pub fn build(self) -> crate::operation::delete_voice_connector::DeleteVoiceConnectorOutput {
         crate::operation::delete_voice_connector::DeleteVoiceConnectorOutput {
@@ -40,4 +41,3 @@ impl DeleteVoiceConnectorOutputBuilder {
         }
     }
 }
-

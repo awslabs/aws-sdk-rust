@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHealthEventsInput  {
+pub struct ListHealthEventsInput {
     /// <p>The name of the monitor.</p>
     #[doc(hidden)]
     pub monitor_name: std::option::Option<std::string::String>,
@@ -24,19 +24,19 @@ pub struct ListHealthEventsInput  {
 }
 impl ListHealthEventsInput {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> std::option::Option<& str> {
+    pub fn monitor_name(&self) -> std::option::Option<&str> {
         self.monitor_name.as_deref()
     }
     /// <p>The time when a health event started.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The number of health event objects that you want to return with this call. </p>
@@ -44,13 +44,14 @@ impl ListHealthEventsInput {
         self.max_results
     }
     /// <p>The status of a health event.</p>
-    pub fn event_status(&self) -> std::option::Option<& crate::types::HealthEventStatus> {
+    pub fn event_status(&self) -> std::option::Option<&crate::types::HealthEventStatus> {
         self.event_status.as_ref()
     }
 }
 impl ListHealthEventsInput {
     /// Creates a new builder-style object to manufacture [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
-    pub fn builder() -> crate::operation::list_health_events::builders::ListHealthEventsInputBuilder {
+    pub fn builder() -> crate::operation::list_health_events::builders::ListHealthEventsInputBuilder
+    {
         crate::operation::list_health_events::builders::ListHealthEventsInputBuilder::default()
     }
 }
@@ -74,7 +75,8 @@ impl ListHealthEventsInputBuilder {
     }
     /// <p>The name of the monitor.</p>
     pub fn set_monitor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitor_name = input; self
+        self.monitor_name = input;
+        self
     }
     /// <p>The time when a health event started.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -82,8 +84,12 @@ impl ListHealthEventsInputBuilder {
         self
     }
     /// <p>The time when a health event started.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -92,7 +98,8 @@ impl ListHealthEventsInputBuilder {
     }
     /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +108,8 @@ impl ListHealthEventsInputBuilder {
     }
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The number of health event objects that you want to return with this call. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -110,7 +118,8 @@ impl ListHealthEventsInputBuilder {
     }
     /// <p>The number of health event objects that you want to return with this call. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The status of a health event.</p>
     pub fn event_status(mut self, input: crate::types::HealthEventStatus) -> Self {
@@ -118,28 +127,29 @@ impl ListHealthEventsInputBuilder {
         self
     }
     /// <p>The status of a health event.</p>
-    pub fn set_event_status(mut self, input: std::option::Option<crate::types::HealthEventStatus>) -> Self {
-        self.event_status = input; self
+    pub fn set_event_status(
+        mut self,
+        input: std::option::Option<crate::types::HealthEventStatus>,
+    ) -> Self {
+        self.event_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
-    pub fn build(self) -> Result<crate::operation::list_health_events::ListHealthEventsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_health_events::ListHealthEventsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_health_events::ListHealthEventsInput {
-                monitor_name: self.monitor_name
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                event_status: self.event_status
-                ,
-            }
+                monitor_name: self.monitor_name,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                next_token: self.next_token,
+                max_results: self.max_results.unwrap_or_default(),
+                event_status: self.event_status,
+            },
         )
     }
 }
-

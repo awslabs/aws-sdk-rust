@@ -4,57 +4,64 @@ pub use crate::operation::get_unfiltered_partitions_metadata::_get_unfiltered_pa
 pub use crate::operation::get_unfiltered_partitions_metadata::_get_unfiltered_partitions_metadata_input::GetUnfilteredPartitionsMetadataInputBuilder;
 
 /// Fluent builder constructing a request to `GetUnfilteredPartitionsMetadata`.
-/// 
-/// <p>Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.</p> 
+///
+/// <p>Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.</p>
 /// <p>For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartitions</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetUnfilteredPartitionsMetadataFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_unfiltered_partitions_metadata::builders::GetUnfilteredPartitionsMetadataInputBuilder,
 }
-impl GetUnfilteredPartitionsMetadataFluentBuilder  {
+impl GetUnfilteredPartitionsMetadataFluentBuilder {
     /// Creates a new `GetUnfilteredPartitionsMetadata`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadata, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataOutput, aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_partitions_metadata::GetUnfilteredPartitionsMetadataError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator {
-                                crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator{
+        crate::operation::get_unfiltered_partitions_metadata::paginator::GetUnfilteredPartitionsMetadataPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is provided, the AWS account ID is used by default. </p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -85,143 +92,143 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder  {
         self.inner = self.inner.set_table_name(input);
         self
     }
-    /// <p>An expression that filters the partitions to be returned.</p> 
-    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p> 
-    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p> 
-    /// <dl> 
+    /// <p>An expression that filters the partitions to be returned.</p>
+    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
+    /// <dl>
     /// <dt>
     /// =
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p> 
-    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p> 
-    /// <p>(a = b) is not true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
+    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
+    /// <p>(a = b) is not true.</p>
+    /// </dd>
     /// <dt>
     /// &lt; &gt;
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p> 
-    /// <p>Example: (a &lt; &gt; b) is true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>
+    /// <p>Example: (a &lt; &gt; b) is true.</p>
+    /// </dd>
     /// <dt>
     /// &gt;
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p> 
-    /// <p>Example: (a &gt; b) is not true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &gt; b) is not true.</p>
+    /// </dd>
     /// <dt>
     /// &lt;
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p> 
-    /// <p>Example: (a &lt; b) is true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &lt; b) is true.</p>
+    /// </dd>
     /// <dt>
     /// &gt;=
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p> 
-    /// <p>Example: (a &gt;= b) is not true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &gt;= b) is not true.</p>
+    /// </dd>
     /// <dt>
     /// &lt;=
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p> 
-    /// <p>Example: (a &lt;= b) is true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &lt;= b) is true.</p>
+    /// </dd>
     /// <dt>
     /// AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL
-    /// </dt> 
-    /// <dd> 
-    /// <p>Logical operators.</p> 
-    /// </dd> 
-    /// </dl> 
-    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p> 
-    /// <ul> 
-    /// <li> <p> <code>string</code> </p> </li> 
-    /// <li> <p> <code>date</code> </p> </li> 
-    /// <li> <p> <code>timestamp</code> </p> </li> 
-    /// <li> <p> <code>int</code> </p> </li> 
-    /// <li> <p> <code>bigint</code> </p> </li> 
-    /// <li> <p> <code>long</code> </p> </li> 
-    /// <li> <p> <code>tinyint</code> </p> </li> 
-    /// <li> <p> <code>smallint</code> </p> </li> 
-    /// <li> <p> <code>decimal</code> </p> </li> 
-    /// </ul> 
+    /// </dt>
+    /// <dd>
+    /// <p>Logical operators.</p>
+    /// </dd>
+    /// </dl>
+    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
+    /// <ul>
+    /// <li> <p> <code>string</code> </p> </li>
+    /// <li> <p> <code>date</code> </p> </li>
+    /// <li> <p> <code>timestamp</code> </p> </li>
+    /// <li> <p> <code>int</code> </p> </li>
+    /// <li> <p> <code>bigint</code> </p> </li>
+    /// <li> <p> <code>long</code> </p> </li>
+    /// <li> <p> <code>tinyint</code> </p> </li>
+    /// <li> <p> <code>smallint</code> </p> </li>
+    /// <li> <p> <code>decimal</code> </p> </li>
+    /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.expression(input.into());
         self
     }
-    /// <p>An expression that filters the partitions to be returned.</p> 
-    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p> 
-    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p> 
-    /// <dl> 
+    /// <p>An expression that filters the partitions to be returned.</p>
+    /// <p>The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause. The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a> parses the expression. </p>
+    /// <p> <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code> API call:</p>
+    /// <dl>
     /// <dt>
     /// =
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p> 
-    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p> 
-    /// <p>(a = b) is not true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the values of the two operands are equal; if yes, then the condition becomes true.</p>
+    /// <p>Example: Assume 'variable a' holds 10 and 'variable b' holds 20. </p>
+    /// <p>(a = b) is not true.</p>
+    /// </dd>
     /// <dt>
     /// &lt; &gt;
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p> 
-    /// <p>Example: (a &lt; &gt; b) is true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the values of two operands are equal; if the values are not equal, then the condition becomes true.</p>
+    /// <p>Example: (a &lt; &gt; b) is true.</p>
+    /// </dd>
     /// <dt>
     /// &gt;
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p> 
-    /// <p>Example: (a &gt; b) is not true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &gt; b) is not true.</p>
+    /// </dd>
     /// <dt>
     /// &lt;
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p> 
-    /// <p>Example: (a &lt; b) is true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &lt; b) is true.</p>
+    /// </dd>
     /// <dt>
     /// &gt;=
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p> 
-    /// <p>Example: (a &gt;= b) is not true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &gt;= b) is not true.</p>
+    /// </dd>
     /// <dt>
     /// &lt;=
-    /// </dt> 
-    /// <dd> 
-    /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p> 
-    /// <p>Example: (a &lt;= b) is true.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Checks whether the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.</p>
+    /// <p>Example: (a &lt;= b) is true.</p>
+    /// </dd>
     /// <dt>
     /// AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL
-    /// </dt> 
-    /// <dd> 
-    /// <p>Logical operators.</p> 
-    /// </dd> 
-    /// </dl> 
-    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p> 
-    /// <ul> 
-    /// <li> <p> <code>string</code> </p> </li> 
-    /// <li> <p> <code>date</code> </p> </li> 
-    /// <li> <p> <code>timestamp</code> </p> </li> 
-    /// <li> <p> <code>int</code> </p> </li> 
-    /// <li> <p> <code>bigint</code> </p> </li> 
-    /// <li> <p> <code>long</code> </p> </li> 
-    /// <li> <p> <code>tinyint</code> </p> </li> 
-    /// <li> <p> <code>smallint</code> </p> </li> 
-    /// <li> <p> <code>decimal</code> </p> </li> 
-    /// </ul> 
+    /// </dt>
+    /// <dd>
+    /// <p>Logical operators.</p>
+    /// </dd>
+    /// </dl>
+    /// <p> <i>Supported Partition Key Types</i>: The following are the supported partition keys.</p>
+    /// <ul>
+    /// <li> <p> <code>string</code> </p> </li>
+    /// <li> <p> <code>date</code> </p> </li>
+    /// <li> <p> <code>timestamp</code> </p> </li>
+    /// <li> <p> <code>int</code> </p> </li>
+    /// <li> <p> <code>bigint</code> </p> </li>
+    /// <li> <p> <code>long</code> </p> </li>
+    /// <li> <p> <code>tinyint</code> </p> </li>
+    /// <li> <p> <code>smallint</code> </p> </li>
+    /// <li> <p> <code>decimal</code> </p> </li>
+    /// </ul>
     /// <p>If an type is encountered that is not valid, an exception is thrown. </p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_expression(input);
@@ -233,7 +240,10 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder  {
         self
     }
     /// <p>A structure containing Lake Formation audit context information.</p>
-    pub fn set_audit_context(mut self, input: std::option::Option<crate::types::AuditContext>) -> Self {
+    pub fn set_audit_context(
+        mut self,
+        input: std::option::Option<crate::types::AuditContext>,
+    ) -> Self {
         self.inner = self.inner.set_audit_context(input);
         self
     }
@@ -247,7 +257,10 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder  {
         self
     }
     /// <p>A list of supported permission types. </p>
-    pub fn set_supported_permission_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>) -> Self {
+    pub fn set_supported_permission_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PermissionType>>,
+    ) -> Self {
         self.inner = self.inner.set_supported_permission_types(input);
         self
     }
@@ -282,4 +295,3 @@ impl GetUnfilteredPartitionsMetadataFluentBuilder  {
         self
     }
 }
-

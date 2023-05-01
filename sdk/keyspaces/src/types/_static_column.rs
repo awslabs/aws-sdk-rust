@@ -3,14 +3,14 @@
 /// <p>The static columns of the table. Static columns store values that are shared by all rows in the same partition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StaticColumn  {
+pub struct StaticColumn {
     /// <p>The name of the static column.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StaticColumn {
     /// <p>The name of the static column.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl StaticColumnBuilder {
     }
     /// <p>The name of the static column.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StaticColumn`](crate::types::StaticColumn).
     pub fn build(self) -> crate::types::StaticColumn {
-        crate::types::StaticColumn {
-            name: self.name
-            ,
-        }
+        crate::types::StaticColumn { name: self.name }
     }
 }
-

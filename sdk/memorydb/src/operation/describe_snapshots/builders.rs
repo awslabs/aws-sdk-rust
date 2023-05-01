@@ -4,56 +4,81 @@ pub use crate::operation::describe_snapshots::_describe_snapshots_output::Descri
 pub use crate::operation::describe_snapshots::_describe_snapshots_input::DescribeSnapshotsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeSnapshots`.
-/// 
+///
 /// <p>Returns information about cluster snapshots. By default, DescribeSnapshots lists all of your snapshots; it can optionally describe a single snapshot, or just the snapshots associated with a particular cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSnapshotsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder,
+    inner: crate::operation::describe_snapshots::builders::DescribeSnapshotsInputBuilder,
 }
-impl DescribeSnapshotsFluentBuilder  {
+impl DescribeSnapshotsFluentBuilder {
     /// Creates a new `DescribeSnapshots`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_snapshots::DescribeSnapshots, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_snapshots::DescribeSnapshotsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_snapshots::DescribeSnapshotsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_snapshots::DescribeSnapshots,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshots::DescribeSnapshotsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_snapshots::DescribeSnapshotsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshots::DescribeSnapshotsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator {
-                                crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator {
+        crate::operation::describe_snapshots::paginator::DescribeSnapshotsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.</p>
     pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -115,4 +140,3 @@ impl DescribeSnapshotsFluentBuilder  {
         self
     }
 }
-

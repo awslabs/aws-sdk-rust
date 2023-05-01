@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDatasetOutput  {
+pub struct CreateDatasetOutput {
     /// <p>The name of the dataset being created. </p>
     #[doc(hidden)]
     pub dataset_name: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct CreateDatasetOutput  {
 }
 impl CreateDatasetOutput {
     /// <p>The name of the dataset being created. </p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
-    pub fn dataset_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::DatasetStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::DatasetStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDatasetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateDatasetOutput {
     /// Creates a new builder-style object to manufacture [`CreateDatasetOutput`](crate::operation::create_dataset::CreateDatasetOutput).
     pub fn builder() -> crate::operation::create_dataset::builders::CreateDatasetOutputBuilder {
@@ -57,7 +57,8 @@ impl CreateDatasetOutputBuilder {
     }
     /// <p>The name of the dataset being created. </p>
     pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_name = input; self
+        self.dataset_name = input;
+        self
     }
     /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
     pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl CreateDatasetOutputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the dataset being created. </p>
     pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_arn = input; self
+        self.dataset_arn = input;
+        self
     }
     /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
     pub fn status(mut self, input: crate::types::DatasetStatus) -> Self {
@@ -75,28 +77,25 @@ impl CreateDatasetOutputBuilder {
     }
     /// <p>Indicates the status of the <code>CreateDataset</code> operation. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::DatasetStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDatasetOutput`](crate::operation::create_dataset::CreateDatasetOutput).
     pub fn build(self) -> crate::operation::create_dataset::CreateDatasetOutput {
         crate::operation::create_dataset::CreateDatasetOutput {
-            dataset_name: self.dataset_name
-            ,
-            dataset_arn: self.dataset_arn
-            ,
-            status: self.status
-            ,
+            dataset_name: self.dataset_name,
+            dataset_arn: self.dataset_arn,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

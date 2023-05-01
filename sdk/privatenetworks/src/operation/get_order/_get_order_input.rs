@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOrderInput  {
+pub struct GetOrderInput {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     #[doc(hidden)]
     pub order_arn: std::option::Option<std::string::String>,
 }
 impl GetOrderInput {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
-    pub fn order_arn(&self) -> std::option::Option<& str> {
+    pub fn order_arn(&self) -> std::option::Option<&str> {
         self.order_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetOrderInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     pub fn set_order_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.order_arn = input; self
+        self.order_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetOrderInput`](crate::operation::get_order::GetOrderInput).
-    pub fn build(self) -> Result<crate::operation::get_order::GetOrderInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_order::GetOrderInput {
-                order_arn: self.order_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_order::GetOrderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_order::GetOrderInput {
+            order_arn: self.order_arn,
+        })
     }
 }
-

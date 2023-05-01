@@ -3,11 +3,11 @@
 /// <p> Information about CloudWatch Logs for a build project. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsConfig  {
-    /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li> 
-    /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li> 
+pub struct CloudWatchLogsConfig {
+    /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li>
+    /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::LogsConfigStatusType>,
@@ -19,20 +19,20 @@ pub struct CloudWatchLogsConfig  {
     pub stream_name: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsConfig {
-    /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li> 
-    /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li> 
+    /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li>
+    /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::LogsConfigStatusType> {
+    pub fn status(&self) -> std::option::Option<&crate::types::LogsConfigStatusType> {
         self.status.as_ref()
     }
     /// <p> The group name of the logs in CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p> The prefix of the stream name of the CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
-    pub fn stream_name(&self) -> std::option::Option<& str> {
+    pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
 }
@@ -52,22 +52,26 @@ pub struct CloudWatchLogsConfigBuilder {
     pub(crate) stream_name: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsConfigBuilder {
-    /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li> 
-    /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li> 
+    /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li>
+    /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::LogsConfigStatusType) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li> 
-    /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li> 
+    /// <p>The current status of the logs in CloudWatch Logs for a build project. Valid values are:</p>
+    /// <ul>
+    /// <li> <p> <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.</p> </li>
+    /// <li> <p> <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::LogsConfigStatusType>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::LogsConfigStatusType>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p> The group name of the logs in CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl CloudWatchLogsConfigBuilder {
     }
     /// <p> The group name of the logs in CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p> The prefix of the stream name of the CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,18 +90,15 @@ impl CloudWatchLogsConfigBuilder {
     }
     /// <p> The prefix of the stream name of the CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a>. </p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input; self
+        self.stream_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsConfig`](crate::types::CloudWatchLogsConfig).
     pub fn build(self) -> crate::types::CloudWatchLogsConfig {
         crate::types::CloudWatchLogsConfig {
-            status: self.status
-            ,
-            group_name: self.group_name
-            ,
-            stream_name: self.stream_name
-            ,
+            status: self.status,
+            group_name: self.group_name,
+            stream_name: self.stream_name,
         }
     }
 }
-

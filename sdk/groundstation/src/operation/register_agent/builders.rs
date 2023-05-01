@@ -4,60 +4,79 @@ pub use crate::operation::register_agent::_register_agent_output::RegisterAgentO
 pub use crate::operation::register_agent::_register_agent_input::RegisterAgentInputBuilder;
 
 /// Fluent builder constructing a request to `RegisterAgent`.
-/// 
-/// <note> 
-/// <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p> 
-/// </note> 
+///
+/// <note>
+/// <p> For use by AWS Ground Station Agent and shouldn't be called directly.</p>
+/// </note>
 /// <p> Registers a new agent with AWS Ground Station. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterAgentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_agent::builders::RegisterAgentInputBuilder,
+    inner: crate::operation::register_agent::builders::RegisterAgentInputBuilder,
 }
-impl RegisterAgentFluentBuilder  {
+impl RegisterAgentFluentBuilder {
     /// Creates a new `RegisterAgent`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::register_agent::RegisterAgent, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::register_agent::RegisterAgentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::register_agent::RegisterAgentOutput, aws_smithy_http::result::SdkError<crate::operation::register_agent::RegisterAgentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_agent::RegisterAgent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::register_agent::RegisterAgentError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::register_agent::RegisterAgentOutput,
+        aws_smithy_http::result::SdkError<crate::operation::register_agent::RegisterAgentError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
     pub fn discovery_data(mut self, input: crate::types::DiscoveryData) -> Self {
         self.inner = self.inner.discovery_data(input);
         self
     }
     /// <p>Data for associating an agent with the capabilities it is managing.</p>
-    pub fn set_discovery_data(mut self, input: std::option::Option<crate::types::DiscoveryData>) -> Self {
+    pub fn set_discovery_data(
+        mut self,
+        input: std::option::Option<crate::types::DiscoveryData>,
+    ) -> Self {
         self.inner = self.inner.set_discovery_data(input);
         self
     }
@@ -67,9 +86,11 @@ impl RegisterAgentFluentBuilder  {
         self
     }
     /// <p>Detailed information about the agent being registered.</p>
-    pub fn set_agent_details(mut self, input: std::option::Option<crate::types::AgentDetails>) -> Self {
+    pub fn set_agent_details(
+        mut self,
+        input: std::option::Option<crate::types::AgentDetails>,
+    ) -> Self {
         self.inner = self.inner.set_agent_details(input);
         self
     }
 }
-

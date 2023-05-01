@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLaunchProfileInitializationInput  {
+pub struct GetLaunchProfileInitializationInput {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     #[doc(hidden)]
     pub launch_profile_id: std::option::Option<std::string::String>,
@@ -21,29 +21,29 @@ pub struct GetLaunchProfileInitializationInput  {
 }
 impl GetLaunchProfileInitializationInput {
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn launch_profile_id(&self) -> std::option::Option<& str> {
+    pub fn launch_profile_id(&self) -> std::option::Option<&str> {
         self.launch_profile_id.as_deref()
     }
     /// <p>The launch profile protocol versions supported by the client.</p>
-    pub fn launch_profile_protocol_versions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn launch_profile_protocol_versions(&self) -> std::option::Option<&[std::string::String]> {
         self.launch_profile_protocol_versions.as_deref()
     }
     /// <p>The launch purpose.</p>
-    pub fn launch_purpose(&self) -> std::option::Option<& str> {
+    pub fn launch_purpose(&self) -> std::option::Option<&str> {
         self.launch_purpose.as_deref()
     }
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
-    pub fn platform(&self) -> std::option::Option<& str> {
+    pub fn platform(&self) -> std::option::Option<&str> {
         self.platform.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
 }
 impl GetLaunchProfileInitializationInput {
     /// Creates a new builder-style object to manufacture [`GetLaunchProfileInitializationInput`](crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput).
-    pub fn builder() -> crate::operation::get_launch_profile_initialization::builders::GetLaunchProfileInitializationInputBuilder {
+    pub fn builder() -> crate::operation::get_launch_profile_initialization::builders::GetLaunchProfileInitializationInputBuilder{
         crate::operation::get_launch_profile_initialization::builders::GetLaunchProfileInitializationInputBuilder::default()
     }
 }
@@ -53,7 +53,8 @@ impl GetLaunchProfileInitializationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetLaunchProfileInitializationInputBuilder {
     pub(crate) launch_profile_id: std::option::Option<std::string::String>,
-    pub(crate) launch_profile_protocol_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) launch_profile_protocol_versions:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) launch_purpose: std::option::Option<std::string::String>,
     pub(crate) platform: std::option::Option<std::string::String>,
     pub(crate) studio_id: std::option::Option<std::string::String>,
@@ -65,23 +66,34 @@ impl GetLaunchProfileInitializationInputBuilder {
         self
     }
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
-    pub fn set_launch_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_profile_id = input; self
+    pub fn set_launch_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_profile_id = input;
+        self
     }
     /// Appends an item to `launch_profile_protocol_versions`.
     ///
     /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
     ///
     /// <p>The launch profile protocol versions supported by the client.</p>
-    pub fn launch_profile_protocol_versions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn launch_profile_protocol_versions(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         let mut v = self.launch_profile_protocol_versions.unwrap_or_default();
-                        v.push(input.into());
-                        self.launch_profile_protocol_versions = Some(v);
-                        self
+        v.push(input.into());
+        self.launch_profile_protocol_versions = Some(v);
+        self
     }
     /// <p>The launch profile protocol versions supported by the client.</p>
-    pub fn set_launch_profile_protocol_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.launch_profile_protocol_versions = input; self
+    pub fn set_launch_profile_protocol_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.launch_profile_protocol_versions = input;
+        self
     }
     /// <p>The launch purpose.</p>
     pub fn launch_purpose(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,7 +102,8 @@ impl GetLaunchProfileInitializationInputBuilder {
     }
     /// <p>The launch purpose.</p>
     pub fn set_launch_purpose(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_purpose = input; self
+        self.launch_purpose = input;
+        self
     }
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
     pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +112,8 @@ impl GetLaunchProfileInitializationInputBuilder {
     }
     /// <p>The platform where this Launch Profile will be used, either Windows or Linux.</p>
     pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,10 +122,16 @@ impl GetLaunchProfileInitializationInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetLaunchProfileInitializationInput`](crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput).
-    pub fn build(self) -> Result<crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationInput {
                 launch_profile_id: self.launch_profile_id
@@ -128,4 +148,3 @@ impl GetLaunchProfileInitializationInputBuilder {
         )
     }
 }
-

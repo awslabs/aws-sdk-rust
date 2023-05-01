@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFhirExportJobsInput  {
+pub struct ListFhirExportJobsInput {
     /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
     #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
@@ -27,11 +27,11 @@ pub struct ListFhirExportJobsInput  {
 }
 impl ListFhirExportJobsInput {
     /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
-    pub fn datastore_id(&self) -> std::option::Option<& str> {
+    pub fn datastore_id(&self) -> std::option::Option<&str> {
         self.datastore_id.as_deref()
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
@@ -39,25 +39,26 @@ impl ListFhirExportJobsInput {
         self.max_results
     }
     /// <p> This parameter limits the response to the export job with the specified job name. </p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
-    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
-    pub fn submitted_before(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn submitted_before(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_before.as_ref()
     }
     /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
-    pub fn submitted_after(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn submitted_after(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_after.as_ref()
     }
 }
 impl ListFhirExportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListFhirExportJobsInput`](crate::operation::list_fhir_export_jobs::ListFhirExportJobsInput).
-    pub fn builder() -> crate::operation::list_fhir_export_jobs::builders::ListFhirExportJobsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_fhir_export_jobs::builders::ListFhirExportJobsInputBuilder {
         crate::operation::list_fhir_export_jobs::builders::ListFhirExportJobsInputBuilder::default()
     }
 }
@@ -82,7 +83,8 @@ impl ListFhirExportJobsInputBuilder {
     }
     /// <p> This parameter limits the response to the export job with the specified Data Store ID. </p>
     pub fn set_datastore_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.datastore_id = input; self
+        self.datastore_id = input;
+        self
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +93,8 @@ impl ListFhirExportJobsInputBuilder {
     }
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -100,7 +103,8 @@ impl ListFhirExportJobsInputBuilder {
     }
     /// <p> This parameter limits the number of results returned for a ListFHIRExportJobs to a maximum quantity specified by the user. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p> This parameter limits the response to the export job with the specified job name. </p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +113,8 @@ impl ListFhirExportJobsInputBuilder {
     }
     /// <p> This parameter limits the response to the export job with the specified job name. </p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -118,7 +123,8 @@ impl ListFhirExportJobsInputBuilder {
     }
     /// <p> This parameter limits the response to the export jobs with the specified job status. </p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input; self
+        self.job_status = input;
+        self
     }
     /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
     pub fn submitted_before(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -126,8 +132,12 @@ impl ListFhirExportJobsInputBuilder {
         self
     }
     /// <p> This parameter limits the response to FHIR export jobs submitted before a user specified date. </p>
-    pub fn set_submitted_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.submitted_before = input; self
+    pub fn set_submitted_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.submitted_before = input;
+        self
     }
     /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
     pub fn submitted_after(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,29 +145,30 @@ impl ListFhirExportJobsInputBuilder {
         self
     }
     /// <p> This parameter limits the response to FHIR export jobs submitted after a user specified date. </p>
-    pub fn set_submitted_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.submitted_after = input; self
+    pub fn set_submitted_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.submitted_after = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListFhirExportJobsInput`](crate::operation::list_fhir_export_jobs::ListFhirExportJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_fhir_export_jobs::ListFhirExportJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_fhir_export_jobs::ListFhirExportJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_fhir_export_jobs::ListFhirExportJobsInput {
-                datastore_id: self.datastore_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                job_name: self.job_name
-                ,
-                job_status: self.job_status
-                ,
-                submitted_before: self.submitted_before
-                ,
-                submitted_after: self.submitted_after
-                ,
-            }
+                datastore_id: self.datastore_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                job_name: self.job_name,
+                job_status: self.job_status,
+                submitted_before: self.submitted_before,
+                submitted_after: self.submitted_after,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Session keys for ABP v1.1</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionKeysAbpV11  {
+pub struct SessionKeysAbpV11 {
     /// <p>The FNwkSIntKey value.</p>
     #[doc(hidden)]
     pub f_nwk_s_int_key: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SessionKeysAbpV11  {
 }
 impl SessionKeysAbpV11 {
     /// <p>The FNwkSIntKey value.</p>
-    pub fn f_nwk_s_int_key(&self) -> std::option::Option<& str> {
+    pub fn f_nwk_s_int_key(&self) -> std::option::Option<&str> {
         self.f_nwk_s_int_key.as_deref()
     }
     /// <p>The SNwkSIntKey value.</p>
-    pub fn s_nwk_s_int_key(&self) -> std::option::Option<& str> {
+    pub fn s_nwk_s_int_key(&self) -> std::option::Option<&str> {
         self.s_nwk_s_int_key.as_deref()
     }
     /// <p>The NwkSEncKey value.</p>
-    pub fn nwk_s_enc_key(&self) -> std::option::Option<& str> {
+    pub fn nwk_s_enc_key(&self) -> std::option::Option<&str> {
         self.nwk_s_enc_key.as_deref()
     }
     /// <p>The AppSKey value.</p>
-    pub fn app_s_key(&self) -> std::option::Option<& str> {
+    pub fn app_s_key(&self) -> std::option::Option<&str> {
         self.app_s_key.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl SessionKeysAbpV11Builder {
     }
     /// <p>The FNwkSIntKey value.</p>
     pub fn set_f_nwk_s_int_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.f_nwk_s_int_key = input; self
+        self.f_nwk_s_int_key = input;
+        self
     }
     /// <p>The SNwkSIntKey value.</p>
     pub fn s_nwk_s_int_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl SessionKeysAbpV11Builder {
     }
     /// <p>The SNwkSIntKey value.</p>
     pub fn set_s_nwk_s_int_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s_nwk_s_int_key = input; self
+        self.s_nwk_s_int_key = input;
+        self
     }
     /// <p>The NwkSEncKey value.</p>
     pub fn nwk_s_enc_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl SessionKeysAbpV11Builder {
     }
     /// <p>The NwkSEncKey value.</p>
     pub fn set_nwk_s_enc_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.nwk_s_enc_key = input; self
+        self.nwk_s_enc_key = input;
+        self
     }
     /// <p>The AppSKey value.</p>
     pub fn app_s_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl SessionKeysAbpV11Builder {
     }
     /// <p>The AppSKey value.</p>
     pub fn set_app_s_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_s_key = input; self
+        self.app_s_key = input;
+        self
     }
     /// Consumes the builder and constructs a [`SessionKeysAbpV11`](crate::types::SessionKeysAbpV11).
     pub fn build(self) -> crate::types::SessionKeysAbpV11 {
         crate::types::SessionKeysAbpV11 {
-            f_nwk_s_int_key: self.f_nwk_s_int_key
-            ,
-            s_nwk_s_int_key: self.s_nwk_s_int_key
-            ,
-            nwk_s_enc_key: self.nwk_s_enc_key
-            ,
-            app_s_key: self.app_s_key
-            ,
+            f_nwk_s_int_key: self.f_nwk_s_int_key,
+            s_nwk_s_int_key: self.s_nwk_s_int_key,
+            nwk_s_enc_key: self.nwk_s_enc_key,
+            app_s_key: self.app_s_key,
         }
     }
 }
-

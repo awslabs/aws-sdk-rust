@@ -3,7 +3,7 @@
 /// <p>Describes the recipient type and ID, if available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SharePrincipal  {
+pub struct SharePrincipal {
     /// <p>The ID of the recipient.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SharePrincipal  {
 }
 impl SharePrincipal {
     /// <p>The ID of the recipient.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The type of the recipient.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::PrincipalType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::PrincipalType> {
         self.r#type.as_ref()
     }
     /// <p>The role of the recipient.</p>
-    pub fn role(&self) -> std::option::Option<& crate::types::RoleType> {
+    pub fn role(&self) -> std::option::Option<&crate::types::RoleType> {
         self.role.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl SharePrincipalBuilder {
     }
     /// <p>The ID of the recipient.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The type of the recipient.</p>
     pub fn r#type(mut self, input: crate::types::PrincipalType) -> Self {
@@ -60,7 +61,8 @@ impl SharePrincipalBuilder {
     }
     /// <p>The type of the recipient.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The role of the recipient.</p>
     pub fn role(mut self, input: crate::types::RoleType) -> Self {
@@ -69,18 +71,15 @@ impl SharePrincipalBuilder {
     }
     /// <p>The role of the recipient.</p>
     pub fn set_role(mut self, input: std::option::Option<crate::types::RoleType>) -> Self {
-        self.role = input; self
+        self.role = input;
+        self
     }
     /// Consumes the builder and constructs a [`SharePrincipal`](crate::types::SharePrincipal).
     pub fn build(self) -> crate::types::SharePrincipal {
         crate::types::SharePrincipal {
-            id: self.id
-            ,
-            r#type: self.r#type
-            ,
-            role: self.role
-            ,
+            id: self.id,
+            r#type: self.r#type,
+            role: self.role,
         }
     }
 }
-

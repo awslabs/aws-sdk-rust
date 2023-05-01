@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetLocationCapacityInput  {
+pub struct DescribeFleetLocationCapacityInput {
     /// <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeFleetLocationCapacityInput  {
 }
 impl DescribeFleetLocationCapacityInput {
     /// <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
     /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
-    pub fn location(&self) -> std::option::Option<& str> {
+    pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
 }
 impl DescribeFleetLocationCapacityInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetLocationCapacityInput`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityInput).
-    pub fn builder() -> crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityInputBuilder {
+    pub fn builder() -> crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityInputBuilder{
         crate::operation::describe_fleet_location_capacity::builders::DescribeFleetLocationCapacityInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeFleetLocationCapacityInputBuilder {
     }
     /// <p>A unique identifier for the fleet to request location capacity for. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,16 @@ impl DescribeFleetLocationCapacityInputBuilder {
     }
     /// <p>The fleet location to retrieve capacity information for. Specify a location in the form of an Amazon Web Services Region code, such as <code>us-west-2</code>.</p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeFleetLocationCapacityInput`](crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityInput).
-    pub fn build(self) -> Result<crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityInput {
                 fleet_id: self.fleet_id
@@ -65,4 +72,3 @@ impl DescribeFleetLocationCapacityInputBuilder {
         )
     }
 }
-

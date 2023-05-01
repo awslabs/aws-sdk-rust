@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchDataSetsInput  {
+pub struct SearchDataSetsInput {
     /// <p>The Amazon Web Services account ID.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct SearchDataSetsInput  {
 }
 impl SearchDataSetsInput {
     /// <p>The Amazon Web Services account ID.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The filters to apply to the search.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::DataSetSearchFilter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::DataSetSearchFilter]> {
         self.filters.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -58,7 +58,8 @@ impl SearchDataSetsInputBuilder {
     }
     /// <p>The Amazon Web Services account ID.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -67,13 +68,17 @@ impl SearchDataSetsInputBuilder {
     /// <p>The filters to apply to the search.</p>
     pub fn filters(mut self, input: crate::types::DataSetSearchFilter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>The filters to apply to the search.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataSetSearchFilter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DataSetSearchFilter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +87,8 @@ impl SearchDataSetsInputBuilder {
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -91,22 +97,21 @@ impl SearchDataSetsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchDataSetsInput`](crate::operation::search_data_sets::SearchDataSetsInput).
-    pub fn build(self) -> Result<crate::operation::search_data_sets::SearchDataSetsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::search_data_sets::SearchDataSetsInput {
-                aws_account_id: self.aws_account_id
-                ,
-                filters: self.filters
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::search_data_sets::SearchDataSetsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::search_data_sets::SearchDataSetsInput {
+            aws_account_id: self.aws_account_id,
+            filters: self.filters,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

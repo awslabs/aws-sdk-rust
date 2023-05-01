@@ -3,17 +3,19 @@
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationSetOutput  {
+pub struct DeleteConfigurationSetOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteConfigurationSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteConfigurationSetOutput {
     /// Creates a new builder-style object to manufacture [`DeleteConfigurationSetOutput`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput).
-    pub fn builder() -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_configuration_set::builders::DeleteConfigurationSetOutputBuilder
+    {
         crate::operation::delete_configuration_set::builders::DeleteConfigurationSetOutputBuilder::default()
     }
 }
@@ -26,14 +28,14 @@ pub struct DeleteConfigurationSetOutputBuilder {
 }
 impl DeleteConfigurationSetOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteConfigurationSetOutput`](crate::operation::delete_configuration_set::DeleteConfigurationSetOutput).
     pub fn build(self) -> crate::operation::delete_configuration_set::DeleteConfigurationSetOutput {
         crate::operation::delete_configuration_set::DeleteConfigurationSetOutput {
@@ -41,4 +43,3 @@ impl DeleteConfigurationSetOutputBuilder {
         }
     }
 }
-

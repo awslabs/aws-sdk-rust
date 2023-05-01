@@ -3,10 +3,11 @@
 /// <p>A complex type that contains the response information for the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTrafficPoliciesOutput  {
+pub struct ListTrafficPoliciesOutput {
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
     #[doc(hidden)]
-    pub traffic_policy_summaries: std::option::Option<std::vec::Vec<crate::types::TrafficPolicySummary>>,
+    pub traffic_policy_summaries:
+        std::option::Option<std::vec::Vec<crate::types::TrafficPolicySummary>>,
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
@@ -20,7 +21,9 @@ pub struct ListTrafficPoliciesOutput  {
 }
 impl ListTrafficPoliciesOutput {
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
-    pub fn traffic_policy_summaries(&self) -> std::option::Option<& [crate::types::TrafficPolicySummary]> {
+    pub fn traffic_policy_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::TrafficPolicySummary]> {
         self.traffic_policy_summaries.as_deref()
     }
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
@@ -28,7 +31,7 @@ impl ListTrafficPoliciesOutput {
         self.is_truncated
     }
     /// <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.</p>
-    pub fn traffic_policy_id_marker(&self) -> std::option::Option<& str> {
+    pub fn traffic_policy_id_marker(&self) -> std::option::Option<&str> {
         self.traffic_policy_id_marker.as_deref()
     }
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code> request that produced the current response.</p>
@@ -37,14 +40,16 @@ impl ListTrafficPoliciesOutput {
     }
 }
 impl aws_http::request_id::RequestId for ListTrafficPoliciesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTrafficPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListTrafficPoliciesOutput`](crate::operation::list_traffic_policies::ListTrafficPoliciesOutput).
-    pub fn builder() -> crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder {
-        crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder {
+        crate::operation::list_traffic_policies::builders::ListTrafficPoliciesOutputBuilder::default(
+        )
     }
 }
 
@@ -52,7 +57,8 @@ impl ListTrafficPoliciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListTrafficPoliciesOutputBuilder {
-    pub(crate) traffic_policy_summaries: std::option::Option<std::vec::Vec<crate::types::TrafficPolicySummary>>,
+    pub(crate) traffic_policy_summaries:
+        std::option::Option<std::vec::Vec<crate::types::TrafficPolicySummary>>,
     pub(crate) is_truncated: std::option::Option<bool>,
     pub(crate) traffic_policy_id_marker: std::option::Option<std::string::String>,
     pub(crate) max_items: std::option::Option<i32>,
@@ -66,13 +72,17 @@ impl ListTrafficPoliciesOutputBuilder {
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
     pub fn traffic_policy_summaries(mut self, input: crate::types::TrafficPolicySummary) -> Self {
         let mut v = self.traffic_policy_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.traffic_policy_summaries = Some(v);
-                        self
+        v.push(input);
+        self.traffic_policy_summaries = Some(v);
+        self
     }
     /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
-    pub fn set_traffic_policy_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::TrafficPolicySummary>>) -> Self {
-        self.traffic_policy_summaries = input; self
+    pub fn set_traffic_policy_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TrafficPolicySummary>>,
+    ) -> Self {
+        self.traffic_policy_summaries = input;
+        self
     }
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
@@ -81,7 +91,8 @@ impl ListTrafficPoliciesOutputBuilder {
     }
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of traffic policies by submitting another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code> in the <code>TrafficPolicyIdMarker</code> request parameter.</p>
     pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_truncated = input; self
+        self.is_truncated = input;
+        self
     }
     /// <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.</p>
     pub fn traffic_policy_id_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,8 +100,12 @@ impl ListTrafficPoliciesOutputBuilder {
         self
     }
     /// <p>If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code> is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic policies.</p>
-    pub fn set_traffic_policy_id_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.traffic_policy_id_marker = input; self
+    pub fn set_traffic_policy_id_marker(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.traffic_policy_id_marker = input;
+        self
     }
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code> request that produced the current response.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -99,31 +114,26 @@ impl ListTrafficPoliciesOutputBuilder {
     }
     /// <p>The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code> request that produced the current response.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input; self
+        self.max_items = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTrafficPoliciesOutput`](crate::operation::list_traffic_policies::ListTrafficPoliciesOutput).
     pub fn build(self) -> crate::operation::list_traffic_policies::ListTrafficPoliciesOutput {
         crate::operation::list_traffic_policies::ListTrafficPoliciesOutput {
-            traffic_policy_summaries: self.traffic_policy_summaries
-            ,
-            is_truncated: self.is_truncated
-                .unwrap_or_default()
-            ,
-            traffic_policy_id_marker: self.traffic_policy_id_marker
-            ,
-            max_items: self.max_items
-            ,
+            traffic_policy_summaries: self.traffic_policy_summaries,
+            is_truncated: self.is_truncated.unwrap_or_default(),
+            traffic_policy_id_marker: self.traffic_policy_id_marker,
+            max_items: self.max_items,
             _request_id: self._request_id,
         }
     }
 }
-

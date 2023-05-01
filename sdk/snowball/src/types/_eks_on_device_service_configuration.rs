@@ -3,7 +3,7 @@
 /// <p>An object representing the metadata and configuration settings of EKS Anywhere on the Snow Family device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EksOnDeviceServiceConfiguration  {
+pub struct EksOnDeviceServiceConfiguration {
     /// <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
     #[doc(hidden)]
     pub kubernetes_version: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EksOnDeviceServiceConfiguration  {
 }
 impl EksOnDeviceServiceConfiguration {
     /// <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
-    pub fn kubernetes_version(&self) -> std::option::Option<& str> {
+    pub fn kubernetes_version(&self) -> std::option::Option<&str> {
         self.kubernetes_version.as_deref()
     }
     /// <p>The version of EKS Anywhere on the Snow Family device.</p>
-    pub fn eks_anywhere_version(&self) -> std::option::Option<& str> {
+    pub fn eks_anywhere_version(&self) -> std::option::Option<&str> {
         self.eks_anywhere_version.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl EksOnDeviceServiceConfigurationBuilder {
         self
     }
     /// <p>The Kubernetes version for EKS Anywhere on the Snow Family device.</p>
-    pub fn set_kubernetes_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kubernetes_version = input; self
+    pub fn set_kubernetes_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.kubernetes_version = input;
+        self
     }
     /// <p>The version of EKS Anywhere on the Snow Family device.</p>
     pub fn eks_anywhere_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +55,18 @@ impl EksOnDeviceServiceConfigurationBuilder {
         self
     }
     /// <p>The version of EKS Anywhere on the Snow Family device.</p>
-    pub fn set_eks_anywhere_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.eks_anywhere_version = input; self
+    pub fn set_eks_anywhere_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.eks_anywhere_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`EksOnDeviceServiceConfiguration`](crate::types::EksOnDeviceServiceConfiguration).
     pub fn build(self) -> crate::types::EksOnDeviceServiceConfiguration {
         crate::types::EksOnDeviceServiceConfiguration {
-            kubernetes_version: self.kubernetes_version
-            ,
-            eks_anywhere_version: self.eks_anywhere_version
-            ,
+            kubernetes_version: self.kubernetes_version,
+            eks_anywhere_version: self.eks_anywhere_version,
         }
     }
 }
-

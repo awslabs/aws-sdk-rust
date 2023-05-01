@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddProfileKeyOutput  {
+pub struct AddProfileKeyOutput {
     /// <p>A searchable identifier of a customer profile.</p>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct AddProfileKeyOutput  {
 }
 impl AddProfileKeyOutput {
     /// <p>A searchable identifier of a customer profile.</p>
-    pub fn key_name(&self) -> std::option::Option<& str> {
+    pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
     /// <p>A list of key values.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AddProfileKeyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AddProfileKeyOutput {
     /// Creates a new builder-style object to manufacture [`AddProfileKeyOutput`](crate::operation::add_profile_key::AddProfileKeyOutput).
     pub fn builder() -> crate::operation::add_profile_key::builders::AddProfileKeyOutputBuilder {
@@ -49,7 +49,8 @@ impl AddProfileKeyOutputBuilder {
     }
     /// <p>A searchable identifier of a customer profile.</p>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input; self
+        self.key_name = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -58,32 +59,33 @@ impl AddProfileKeyOutputBuilder {
     /// <p>A list of key values.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>A list of key values.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AddProfileKeyOutput`](crate::operation::add_profile_key::AddProfileKeyOutput).
     pub fn build(self) -> crate::operation::add_profile_key::AddProfileKeyOutput {
         crate::operation::add_profile_key::AddProfileKeyOutput {
-            key_name: self.key_name
-            ,
-            values: self.values
-            ,
+            key_name: self.key_name,
+            values: self.values,
             _request_id: self._request_id,
         }
     }
 }
-

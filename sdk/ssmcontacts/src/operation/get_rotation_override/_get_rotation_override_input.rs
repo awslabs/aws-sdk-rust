@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRotationOverrideInput  {
+pub struct GetRotationOverrideInput {
     /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
     #[doc(hidden)]
     pub rotation_id: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct GetRotationOverrideInput  {
 }
 impl GetRotationOverrideInput {
     /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
-    pub fn rotation_id(&self) -> std::option::Option<& str> {
+    pub fn rotation_id(&self) -> std::option::Option<&str> {
         self.rotation_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
-    pub fn rotation_override_id(&self) -> std::option::Option<& str> {
+    pub fn rotation_override_id(&self) -> std::option::Option<&str> {
         self.rotation_override_id.as_deref()
     }
 }
 impl GetRotationOverrideInput {
     /// Creates a new builder-style object to manufacture [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
-    pub fn builder() -> crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder {
-        crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder {
+        crate::operation::get_rotation_override::builders::GetRotationOverrideInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl GetRotationOverrideInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the overridden rotation to retrieve information about.</p>
     pub fn set_rotation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rotation_id = input; self
+        self.rotation_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
     pub fn rotation_override_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl GetRotationOverrideInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the on-call rotation override to retrieve information about.</p>
-    pub fn set_rotation_override_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rotation_override_id = input; self
+    pub fn set_rotation_override_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.rotation_override_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRotationOverrideInput`](crate::operation::get_rotation_override::GetRotationOverrideInput).
-    pub fn build(self) -> Result<crate::operation::get_rotation_override::GetRotationOverrideInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_rotation_override::GetRotationOverrideInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_rotation_override::GetRotationOverrideInput {
-                rotation_id: self.rotation_id
-                ,
-                rotation_override_id: self.rotation_override_id
-                ,
-            }
+                rotation_id: self.rotation_id,
+                rotation_override_id: self.rotation_override_id,
+            },
         )
     }
 }
-

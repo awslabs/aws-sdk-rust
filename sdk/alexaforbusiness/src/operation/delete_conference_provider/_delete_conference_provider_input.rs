@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConferenceProviderInput  {
+pub struct DeleteConferenceProviderInput {
     /// <p>The ARN of the conference provider.</p>
     #[doc(hidden)]
     pub conference_provider_arn: std::option::Option<std::string::String>,
 }
 impl DeleteConferenceProviderInput {
     /// <p>The ARN of the conference provider.</p>
-    pub fn conference_provider_arn(&self) -> std::option::Option<& str> {
+    pub fn conference_provider_arn(&self) -> std::option::Option<&str> {
         self.conference_provider_arn.as_deref()
     }
 }
 impl DeleteConferenceProviderInput {
     /// Creates a new builder-style object to manufacture [`DeleteConferenceProviderInput`](crate::operation::delete_conference_provider::DeleteConferenceProviderInput).
-    pub fn builder() -> crate::operation::delete_conference_provider::builders::DeleteConferenceProviderInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_conference_provider::builders::DeleteConferenceProviderInputBuilder
+    {
         crate::operation::delete_conference_provider::builders::DeleteConferenceProviderInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteConferenceProviderInputBuilder {
         self
     }
     /// <p>The ARN of the conference provider.</p>
-    pub fn set_conference_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.conference_provider_arn = input; self
+    pub fn set_conference_provider_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.conference_provider_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteConferenceProviderInput`](crate::operation::delete_conference_provider::DeleteConferenceProviderInput).
-    pub fn build(self) -> Result<crate::operation::delete_conference_provider::DeleteConferenceProviderInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_conference_provider::DeleteConferenceProviderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_conference_provider::DeleteConferenceProviderInput {
-                conference_provider_arn: self.conference_provider_arn
-                ,
-            }
+                conference_provider_arn: self.conference_provider_arn,
+            },
         )
     }
 }
-

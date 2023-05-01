@@ -3,7 +3,7 @@
 /// <p>The details for a server host key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribedHostKey  {
+pub struct DescribedHostKey {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -16,13 +16,13 @@ pub struct DescribedHostKey  {
     /// <p>The text description for this host key.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ssh-rsa</code> </p> </li> 
-    /// <li> <p> <code>ssh-ed25519</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li> 
+    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ssh-rsa</code> </p> </li>
+    /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<std::string::String>,
@@ -35,38 +35,38 @@ pub struct DescribedHostKey  {
 }
 impl DescribedHostKey {
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>A unique identifier for the host key.</p>
-    pub fn host_key_id(&self) -> std::option::Option<& str> {
+    pub fn host_key_id(&self) -> std::option::Option<&str> {
         self.host_key_id.as_deref()
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
-    pub fn host_key_fingerprint(&self) -> std::option::Option<& str> {
+    pub fn host_key_fingerprint(&self) -> std::option::Option<&str> {
         self.host_key_fingerprint.as_deref()
     }
     /// <p>The text description for this host key.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ssh-rsa</code> </p> </li> 
-    /// <li> <p> <code>ssh-ed25519</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li> 
+    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ssh-rsa</code> </p> </li>
+    /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The date on which the host key was added to the server.</p>
-    pub fn date_imported(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn date_imported(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_imported.as_ref()
     }
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -97,7 +97,8 @@ impl DescribedHostKeyBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN) for the host key.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>A unique identifier for the host key.</p>
     pub fn host_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +107,8 @@ impl DescribedHostKeyBuilder {
     }
     /// <p>A unique identifier for the host key.</p>
     pub fn set_host_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_key_id = input; self
+        self.host_key_id = input;
+        self
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
     pub fn host_key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,8 +116,12 @@ impl DescribedHostKeyBuilder {
         self
     }
     /// <p>The public key fingerprint, which is a short sequence of bytes used to identify the longer public key.</p>
-    pub fn set_host_key_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_key_fingerprint = input; self
+    pub fn set_host_key_fingerprint(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.host_key_fingerprint = input;
+        self
     }
     /// <p>The text description for this host key.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,30 +130,32 @@ impl DescribedHostKeyBuilder {
     }
     /// <p>The text description for this host key.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
-    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ssh-rsa</code> </p> </li> 
-    /// <li> <p> <code>ssh-ed25519</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li> 
+    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ssh-rsa</code> </p> </li>
+    /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
     /// </ul>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
         self.r#type = Some(input.into());
         self
     }
-    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ssh-rsa</code> </p> </li> 
-    /// <li> <p> <code>ssh-ed25519</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li> 
-    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li> 
+    /// <p>The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one of the following values:</p>
+    /// <ul>
+    /// <li> <p> <code>ssh-rsa</code> </p> </li>
+    /// <li> <p> <code>ssh-ed25519</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp256</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp384</code> </p> </li>
+    /// <li> <p> <code>ecdsa-sha2-nistp521</code> </p> </li>
     /// </ul>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The date on which the host key was added to the server.</p>
     pub fn date_imported(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -155,8 +163,12 @@ impl DescribedHostKeyBuilder {
         self
     }
     /// <p>The date on which the host key was added to the server.</p>
-    pub fn set_date_imported(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date_imported = input; self
+    pub fn set_date_imported(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.date_imported = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -165,32 +177,28 @@ impl DescribedHostKeyBuilder {
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Key-value pairs that can be used to group and search for host keys.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribedHostKey`](crate::types::DescribedHostKey).
     pub fn build(self) -> crate::types::DescribedHostKey {
         crate::types::DescribedHostKey {
-            arn: self.arn
-            ,
-            host_key_id: self.host_key_id
-            ,
-            host_key_fingerprint: self.host_key_fingerprint
-            ,
-            description: self.description
-            ,
-            r#type: self.r#type
-            ,
-            date_imported: self.date_imported
-            ,
-            tags: self.tags
-            ,
+            arn: self.arn,
+            host_key_id: self.host_key_id,
+            host_key_fingerprint: self.host_key_fingerprint,
+            description: self.description,
+            r#type: self.r#type,
+            date_imported: self.date_imported,
+            tags: self.tags,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFieldsInput  {
+pub struct ListFieldsInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListFieldsInput  {
 }
 impl ListFieldsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -23,7 +23,7 @@ impl ListFieldsInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl ListFieldsInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl ListFieldsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl ListFieldsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListFieldsInput`](crate::operation::list_fields::ListFieldsInput).
-    pub fn build(self) -> Result<crate::operation::list_fields::ListFieldsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_fields::ListFieldsInput {
-                domain_id: self.domain_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_fields::ListFieldsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_fields::ListFieldsInput {
+            domain_id: self.domain_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

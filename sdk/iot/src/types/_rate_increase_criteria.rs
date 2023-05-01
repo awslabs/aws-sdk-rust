@@ -3,7 +3,7 @@
 /// <p>Allows you to define a criteria to initiate the increase in rate of rollout for a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RateIncreaseCriteria  {
+pub struct RateIncreaseCriteria {
     /// <p>The threshold for number of notified things that will initiate the increase in rate of rollout.</p>
     #[doc(hidden)]
     pub number_of_notified_things: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl RateIncreaseCriteriaBuilder {
     }
     /// <p>The threshold for number of notified things that will initiate the increase in rate of rollout.</p>
     pub fn set_number_of_notified_things(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_notified_things = input; self
+        self.number_of_notified_things = input;
+        self
     }
     /// <p>The threshold for number of succeeded things that will initiate the increase in rate of rollout.</p>
     pub fn number_of_succeeded_things(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl RateIncreaseCriteriaBuilder {
     }
     /// <p>The threshold for number of succeeded things that will initiate the increase in rate of rollout.</p>
     pub fn set_number_of_succeeded_things(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_succeeded_things = input; self
+        self.number_of_succeeded_things = input;
+        self
     }
     /// Consumes the builder and constructs a [`RateIncreaseCriteria`](crate::types::RateIncreaseCriteria).
     pub fn build(self) -> crate::types::RateIncreaseCriteria {
         crate::types::RateIncreaseCriteria {
-            number_of_notified_things: self.number_of_notified_things
-            ,
-            number_of_succeeded_things: self.number_of_succeeded_things
-            ,
+            number_of_notified_things: self.number_of_notified_things,
+            number_of_succeeded_things: self.number_of_succeeded_things,
         }
     }
 }
-

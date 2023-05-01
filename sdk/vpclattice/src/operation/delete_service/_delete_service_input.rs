@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceInput  {
+pub struct DeleteServiceInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     #[doc(hidden)]
     pub service_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteServiceInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> std::option::Option<& str> {
+    pub fn service_identifier(&self) -> std::option::Option<&str> {
         self.service_identifier.as_deref()
     }
 }
@@ -33,17 +33,22 @@ impl DeleteServiceInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_identifier = input; self
+    pub fn set_service_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
-    pub fn build(self) -> Result<crate::operation::delete_service::DeleteServiceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_service::DeleteServiceInput {
-                service_identifier: self.service_identifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_service::DeleteServiceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_service::DeleteServiceInput {
+            service_identifier: self.service_identifier,
+        })
     }
 }
-

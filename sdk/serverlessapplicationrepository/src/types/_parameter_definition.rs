@@ -3,7 +3,7 @@
 /// <p>Parameters supported by the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParameterDefinition  {
+pub struct ParameterDefinition {
     /// <p>A regular expression that represents the patterns to allow for String types.</p>
     #[doc(hidden)]
     pub allowed_pattern: std::option::Option<std::string::String>,
@@ -58,26 +58,26 @@ pub struct ParameterDefinition  {
 }
 impl ParameterDefinition {
     /// <p>A regular expression that represents the patterns to allow for String types.</p>
-    pub fn allowed_pattern(&self) -> std::option::Option<& str> {
+    pub fn allowed_pattern(&self) -> std::option::Option<&str> {
         self.allowed_pattern.as_deref()
     }
     /// <p>An array containing the list of values allowed for the parameter.</p>
-    pub fn allowed_values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn allowed_values(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_values.as_deref()
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
     /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
     /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
-    pub fn constraint_description(&self) -> std::option::Option<& str> {
+    pub fn constraint_description(&self) -> std::option::Option<&str> {
         self.constraint_description.as_deref()
     }
     /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
-    pub fn default_value(&self) -> std::option::Option<& str> {
+    pub fn default_value(&self) -> std::option::Option<&str> {
         self.default_value.as_deref()
     }
     /// <p>A string of up to 4,000 characters that describes the parameter.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
@@ -97,7 +97,7 @@ impl ParameterDefinition {
         self.min_value
     }
     /// <p>The name of the parameter.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
@@ -105,7 +105,7 @@ impl ParameterDefinition {
         self.no_echo
     }
     /// <p>A list of AWS SAM resources that use this parameter.</p>
-    pub fn referenced_by_resources(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn referenced_by_resources(&self) -> std::option::Option<&[std::string::String]> {
         self.referenced_by_resources.as_deref()
     }
     /// <p>The type of the parameter.</p>
@@ -118,7 +118,7 @@ impl ParameterDefinition {
     /// <p>For example, users might specify "80,20", and then Ref results in ["80","20"].</p>
     /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
     /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -155,7 +155,8 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>A regular expression that represents the patterns to allow for String types.</p>
     pub fn set_allowed_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allowed_pattern = input; self
+        self.allowed_pattern = input;
+        self
     }
     /// Appends an item to `allowed_values`.
     ///
@@ -164,13 +165,17 @@ impl ParameterDefinitionBuilder {
     /// <p>An array containing the list of values allowed for the parameter.</p>
     pub fn allowed_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allowed_values.unwrap_or_default();
-                        v.push(input.into());
-                        self.allowed_values = Some(v);
-                        self
+        v.push(input.into());
+        self.allowed_values = Some(v);
+        self
     }
     /// <p>An array containing the list of values allowed for the parameter.</p>
-    pub fn set_allowed_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.allowed_values = input; self
+    pub fn set_allowed_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.allowed_values = input;
+        self
     }
     /// <p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
     /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
@@ -184,8 +189,12 @@ impl ParameterDefinitionBuilder {
     /// <p> Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+ </p>
     /// <p>By adding a constraint description, such as "must contain only uppercase and lowercase letters and numbers," you can display the following customized error message:</p>
     /// <p> Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers. </p>
-    pub fn set_constraint_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.constraint_description = input; self
+    pub fn set_constraint_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.constraint_description = input;
+        self
     }
     /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
     pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -194,7 +203,8 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</p>
     pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_value = input; self
+        self.default_value = input;
+        self
     }
     /// <p>A string of up to 4,000 characters that describes the parameter.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -203,7 +213,8 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>A string of up to 4,000 characters that describes the parameter.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
     pub fn max_length(mut self, input: i32) -> Self {
@@ -212,7 +223,8 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>An integer value that determines the largest number of characters that you want to allow for String types.</p>
     pub fn set_max_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_length = input; self
+        self.max_length = input;
+        self
     }
     /// <p>A numeric value that determines the largest numeric value that you want to allow for Number types.</p>
     pub fn max_value(mut self, input: i32) -> Self {
@@ -221,7 +233,8 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>A numeric value that determines the largest numeric value that you want to allow for Number types.</p>
     pub fn set_max_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_value = input; self
+        self.max_value = input;
+        self
     }
     /// <p>An integer value that determines the smallest number of characters that you want to allow for String types.</p>
     pub fn min_length(mut self, input: i32) -> Self {
@@ -230,7 +243,8 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>An integer value that determines the smallest number of characters that you want to allow for String types.</p>
     pub fn set_min_length(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_length = input; self
+        self.min_length = input;
+        self
     }
     /// <p>A numeric value that determines the smallest numeric value that you want to allow for Number types.</p>
     pub fn min_value(mut self, input: i32) -> Self {
@@ -239,7 +253,8 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>A numeric value that determines the smallest numeric value that you want to allow for Number types.</p>
     pub fn set_min_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_value = input; self
+        self.min_value = input;
+        self
     }
     /// <p>The name of the parameter.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -248,7 +263,8 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>The name of the parameter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
     pub fn no_echo(mut self, input: bool) -> Self {
@@ -257,7 +273,8 @@ impl ParameterDefinitionBuilder {
     }
     /// <p>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (*****).</p>
     pub fn set_no_echo(mut self, input: std::option::Option<bool>) -> Self {
-        self.no_echo = input; self
+        self.no_echo = input;
+        self
     }
     /// Appends an item to `referenced_by_resources`.
     ///
@@ -266,13 +283,17 @@ impl ParameterDefinitionBuilder {
     /// <p>A list of AWS SAM resources that use this parameter.</p>
     pub fn referenced_by_resources(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.referenced_by_resources.unwrap_or_default();
-                        v.push(input.into());
-                        self.referenced_by_resources = Some(v);
-                        self
+        v.push(input.into());
+        self.referenced_by_resources = Some(v);
+        self
     }
     /// <p>A list of AWS SAM resources that use this parameter.</p>
-    pub fn set_referenced_by_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.referenced_by_resources = input; self
+    pub fn set_referenced_by_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.referenced_by_resources = input;
+        self
     }
     /// <p>The type of the parameter.</p>
     /// <p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList </p>
@@ -299,43 +320,25 @@ impl ParameterDefinitionBuilder {
     /// <p> CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
     /// <p>For example, users might specify "test,dev,prod", and then Ref results in ["test","dev","prod"].</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParameterDefinition`](crate::types::ParameterDefinition).
     pub fn build(self) -> crate::types::ParameterDefinition {
         crate::types::ParameterDefinition {
-            allowed_pattern: self.allowed_pattern
-            ,
-            allowed_values: self.allowed_values
-            ,
-            constraint_description: self.constraint_description
-            ,
-            default_value: self.default_value
-            ,
-            description: self.description
-            ,
-            max_length: self.max_length
-                .unwrap_or_default()
-            ,
-            max_value: self.max_value
-                .unwrap_or_default()
-            ,
-            min_length: self.min_length
-                .unwrap_or_default()
-            ,
-            min_value: self.min_value
-                .unwrap_or_default()
-            ,
-            name: self.name
-            ,
-            no_echo: self.no_echo
-                .unwrap_or_default()
-            ,
-            referenced_by_resources: self.referenced_by_resources
-            ,
-            r#type: self.r#type
-            ,
+            allowed_pattern: self.allowed_pattern,
+            allowed_values: self.allowed_values,
+            constraint_description: self.constraint_description,
+            default_value: self.default_value,
+            description: self.description,
+            max_length: self.max_length.unwrap_or_default(),
+            max_value: self.max_value.unwrap_or_default(),
+            min_length: self.min_length.unwrap_or_default(),
+            min_value: self.min_value.unwrap_or_default(),
+            name: self.name,
+            no_echo: self.no_echo.unwrap_or_default(),
+            referenced_by_resources: self.referenced_by_resources,
+            r#type: self.r#type,
         }
     }
 }
-

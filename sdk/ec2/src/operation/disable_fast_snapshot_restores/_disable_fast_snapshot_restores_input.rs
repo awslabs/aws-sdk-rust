@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableFastSnapshotRestoresInput  {
+pub struct DisableFastSnapshotRestoresInput {
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
     #[doc(hidden)]
     pub availability_zones: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,11 +15,11 @@ pub struct DisableFastSnapshotRestoresInput  {
 }
 impl DisableFastSnapshotRestoresInput {
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
-    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.</p>
-    pub fn source_snapshot_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn source_snapshot_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.source_snapshot_ids.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,7 +29,7 @@ impl DisableFastSnapshotRestoresInput {
 }
 impl DisableFastSnapshotRestoresInput {
     /// Creates a new builder-style object to manufacture [`DisableFastSnapshotRestoresInput`](crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresInput).
-    pub fn builder() -> crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresInputBuilder {
+    pub fn builder() -> crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresInputBuilder{
         crate::operation::disable_fast_snapshot_restores::builders::DisableFastSnapshotRestoresInputBuilder::default()
     }
 }
@@ -50,13 +50,17 @@ impl DisableFastSnapshotRestoresInputBuilder {
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
     pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-                        v.push(input.into());
-                        self.availability_zones = Some(v);
-                        self
+        v.push(input.into());
+        self.availability_zones = Some(v);
+        self
     }
     /// <p>One or more Availability Zones. For example, <code>us-east-2a</code>.</p>
-    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.availability_zones = input; self
+    pub fn set_availability_zones(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.availability_zones = input;
+        self
     }
     /// Appends an item to `source_snapshot_ids`.
     ///
@@ -65,13 +69,17 @@ impl DisableFastSnapshotRestoresInputBuilder {
     /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.</p>
     pub fn source_snapshot_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.source_snapshot_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.source_snapshot_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.source_snapshot_ids = Some(v);
+        self
     }
     /// <p>The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.</p>
-    pub fn set_source_snapshot_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.source_snapshot_ids = input; self
+    pub fn set_source_snapshot_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.source_snapshot_ids = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -80,20 +88,22 @@ impl DisableFastSnapshotRestoresInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableFastSnapshotRestoresInput`](crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresInput).
-    pub fn build(self) -> Result<crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disable_fast_snapshot_restores::DisableFastSnapshotRestoresInput {
-                availability_zones: self.availability_zones
-                ,
-                source_snapshot_ids: self.source_snapshot_ids
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                availability_zones: self.availability_zones,
+                source_snapshot_ids: self.source_snapshot_ids,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

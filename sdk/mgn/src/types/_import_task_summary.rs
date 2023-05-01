@@ -3,7 +3,7 @@
 /// <p>Import task summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportTaskSummary  {
+pub struct ImportTaskSummary {
     /// <p>Import task summary waves.</p>
     #[doc(hidden)]
     pub waves: std::option::Option<crate::types::ImportTaskSummaryWaves>,
@@ -16,15 +16,17 @@ pub struct ImportTaskSummary  {
 }
 impl ImportTaskSummary {
     /// <p>Import task summary waves.</p>
-    pub fn waves(&self) -> std::option::Option<& crate::types::ImportTaskSummaryWaves> {
+    pub fn waves(&self) -> std::option::Option<&crate::types::ImportTaskSummaryWaves> {
         self.waves.as_ref()
     }
     /// <p>Import task summary applications.</p>
-    pub fn applications(&self) -> std::option::Option<& crate::types::ImportTaskSummaryApplications> {
+    pub fn applications(
+        &self,
+    ) -> std::option::Option<&crate::types::ImportTaskSummaryApplications> {
         self.applications.as_ref()
     }
     /// <p>Import task summary servers.</p>
-    pub fn servers(&self) -> std::option::Option<& crate::types::ImportTaskSummaryServers> {
+    pub fn servers(&self) -> std::option::Option<&crate::types::ImportTaskSummaryServers> {
         self.servers.as_ref()
     }
 }
@@ -50,8 +52,12 @@ impl ImportTaskSummaryBuilder {
         self
     }
     /// <p>Import task summary waves.</p>
-    pub fn set_waves(mut self, input: std::option::Option<crate::types::ImportTaskSummaryWaves>) -> Self {
-        self.waves = input; self
+    pub fn set_waves(
+        mut self,
+        input: std::option::Option<crate::types::ImportTaskSummaryWaves>,
+    ) -> Self {
+        self.waves = input;
+        self
     }
     /// <p>Import task summary applications.</p>
     pub fn applications(mut self, input: crate::types::ImportTaskSummaryApplications) -> Self {
@@ -59,8 +65,12 @@ impl ImportTaskSummaryBuilder {
         self
     }
     /// <p>Import task summary applications.</p>
-    pub fn set_applications(mut self, input: std::option::Option<crate::types::ImportTaskSummaryApplications>) -> Self {
-        self.applications = input; self
+    pub fn set_applications(
+        mut self,
+        input: std::option::Option<crate::types::ImportTaskSummaryApplications>,
+    ) -> Self {
+        self.applications = input;
+        self
     }
     /// <p>Import task summary servers.</p>
     pub fn servers(mut self, input: crate::types::ImportTaskSummaryServers) -> Self {
@@ -68,19 +78,19 @@ impl ImportTaskSummaryBuilder {
         self
     }
     /// <p>Import task summary servers.</p>
-    pub fn set_servers(mut self, input: std::option::Option<crate::types::ImportTaskSummaryServers>) -> Self {
-        self.servers = input; self
+    pub fn set_servers(
+        mut self,
+        input: std::option::Option<crate::types::ImportTaskSummaryServers>,
+    ) -> Self {
+        self.servers = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportTaskSummary`](crate::types::ImportTaskSummary).
     pub fn build(self) -> crate::types::ImportTaskSummary {
         crate::types::ImportTaskSummary {
-            waves: self.waves
-            ,
-            applications: self.applications
-            ,
-            servers: self.servers
-            ,
+            waves: self.waves,
+            applications: self.applications,
+            servers: self.servers,
         }
     }
 }
-

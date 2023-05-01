@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEngagementInput  {
+pub struct DescribeEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
     #[doc(hidden)]
     pub engagement_id: std::option::Option<std::string::String>,
 }
 impl DescribeEngagementInput {
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
-    pub fn engagement_id(&self) -> std::option::Option<& str> {
+    pub fn engagement_id(&self) -> std::option::Option<&str> {
         self.engagement_id.as_deref()
     }
 }
 impl DescribeEngagementInput {
     /// Creates a new builder-style object to manufacture [`DescribeEngagementInput`](crate::operation::describe_engagement::DescribeEngagementInput).
-    pub fn builder() -> crate::operation::describe_engagement::builders::DescribeEngagementInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_engagement::builders::DescribeEngagementInputBuilder {
         crate::operation::describe_engagement::builders::DescribeEngagementInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeEngagementInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement you want the details of.</p>
     pub fn set_engagement_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engagement_id = input; self
+        self.engagement_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeEngagementInput`](crate::operation::describe_engagement::DescribeEngagementInput).
-    pub fn build(self) -> Result<crate::operation::describe_engagement::DescribeEngagementInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_engagement::DescribeEngagementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_engagement::DescribeEngagementInput {
-                engagement_id: self.engagement_id
-                ,
-            }
+                engagement_id: self.engagement_id,
+            },
         )
     }
 }
-

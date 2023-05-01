@@ -3,7 +3,7 @@
 /// <p>The network configuration for a device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NetworkPayload  {
+pub struct NetworkPayload {
     /// <p>Settings for Ethernet port 0.</p>
     #[doc(hidden)]
     pub ethernet0: std::option::Option<crate::types::EthernetPayload>,
@@ -16,15 +16,15 @@ pub struct NetworkPayload  {
 }
 impl NetworkPayload {
     /// <p>Settings for Ethernet port 0.</p>
-    pub fn ethernet0(&self) -> std::option::Option<& crate::types::EthernetPayload> {
+    pub fn ethernet0(&self) -> std::option::Option<&crate::types::EthernetPayload> {
         self.ethernet0.as_ref()
     }
     /// <p>Settings for Ethernet port 1.</p>
-    pub fn ethernet1(&self) -> std::option::Option<& crate::types::EthernetPayload> {
+    pub fn ethernet1(&self) -> std::option::Option<&crate::types::EthernetPayload> {
         self.ethernet1.as_ref()
     }
     /// <p>Network time protocol (NTP) server settings.</p>
-    pub fn ntp(&self) -> std::option::Option<& crate::types::NtpPayload> {
+    pub fn ntp(&self) -> std::option::Option<&crate::types::NtpPayload> {
         self.ntp.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl NetworkPayloadBuilder {
         self
     }
     /// <p>Settings for Ethernet port 0.</p>
-    pub fn set_ethernet0(mut self, input: std::option::Option<crate::types::EthernetPayload>) -> Self {
-        self.ethernet0 = input; self
+    pub fn set_ethernet0(
+        mut self,
+        input: std::option::Option<crate::types::EthernetPayload>,
+    ) -> Self {
+        self.ethernet0 = input;
+        self
     }
     /// <p>Settings for Ethernet port 1.</p>
     pub fn ethernet1(mut self, input: crate::types::EthernetPayload) -> Self {
@@ -59,8 +63,12 @@ impl NetworkPayloadBuilder {
         self
     }
     /// <p>Settings for Ethernet port 1.</p>
-    pub fn set_ethernet1(mut self, input: std::option::Option<crate::types::EthernetPayload>) -> Self {
-        self.ethernet1 = input; self
+    pub fn set_ethernet1(
+        mut self,
+        input: std::option::Option<crate::types::EthernetPayload>,
+    ) -> Self {
+        self.ethernet1 = input;
+        self
     }
     /// <p>Network time protocol (NTP) server settings.</p>
     pub fn ntp(mut self, input: crate::types::NtpPayload) -> Self {
@@ -69,18 +77,15 @@ impl NetworkPayloadBuilder {
     }
     /// <p>Network time protocol (NTP) server settings.</p>
     pub fn set_ntp(mut self, input: std::option::Option<crate::types::NtpPayload>) -> Self {
-        self.ntp = input; self
+        self.ntp = input;
+        self
     }
     /// Consumes the builder and constructs a [`NetworkPayload`](crate::types::NetworkPayload).
     pub fn build(self) -> crate::types::NetworkPayload {
         crate::types::NetworkPayload {
-            ethernet0: self.ethernet0
-            ,
-            ethernet1: self.ethernet1
-            ,
-            ntp: self.ntp
-            ,
+            ethernet0: self.ethernet0,
+            ethernet1: self.ethernet1,
+            ntp: self.ntp,
         }
     }
 }
-

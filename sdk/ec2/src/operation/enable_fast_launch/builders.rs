@@ -4,52 +4,72 @@ pub use crate::operation::enable_fast_launch::_enable_fast_launch_output::Enable
 pub use crate::operation::enable_fast_launch::_enable_fast_launch_input::EnableFastLaunchInputBuilder;
 
 /// Fluent builder constructing a request to `EnableFastLaunch`.
-/// 
-/// <p>When you enable faster launching for a Windows AMI, images are pre-provisioned, using snapshots to launch instances up to 65% faster. To create the optimized Windows image, Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required. Then it creates a set of reserved snapshots that are used for subsequent launches. The reserved snapshots are automatically replenished as they are used, depending on your settings for launch frequency.</p> <note> 
-/// <p>To change these settings, you must own the AMI.</p> 
+///
+/// <p>When you enable faster launching for a Windows AMI, images are pre-provisioned, using snapshots to launch instances up to 65% faster. To create the optimized Windows image, Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required. Then it creates a set of reserved snapshots that are used for subsequent launches. The reserved snapshots are automatically replenished as they are used, depending on your settings for launch frequency.</p> <note>
+/// <p>To change these settings, you must own the AMI.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableFastLaunchFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::enable_fast_launch::builders::EnableFastLaunchInputBuilder,
+    inner: crate::operation::enable_fast_launch::builders::EnableFastLaunchInputBuilder,
 }
-impl EnableFastLaunchFluentBuilder  {
+impl EnableFastLaunchFluentBuilder {
     /// Creates a new `EnableFastLaunch`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::enable_fast_launch::EnableFastLaunch, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::enable_fast_launch::EnableFastLaunchError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::enable_fast_launch::EnableFastLaunchOutput, aws_smithy_http::result::SdkError<crate::operation::enable_fast_launch::EnableFastLaunchError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::enable_fast_launch::EnableFastLaunch,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::enable_fast_launch::EnableFastLaunchError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::enable_fast_launch::EnableFastLaunchOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::enable_fast_launch::EnableFastLaunchError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the image for which you’re enabling faster launching.</p>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.image_id(input.into());
@@ -71,22 +91,34 @@ impl EnableFastLaunchFluentBuilder  {
         self
     }
     /// <p>Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.</p>
-    pub fn snapshot_configuration(mut self, input: crate::types::FastLaunchSnapshotConfigurationRequest) -> Self {
+    pub fn snapshot_configuration(
+        mut self,
+        input: crate::types::FastLaunchSnapshotConfigurationRequest,
+    ) -> Self {
         self.inner = self.inner.snapshot_configuration(input);
         self
     }
     /// <p>Configuration settings for creating and managing the snapshots that are used for pre-provisioning the Windows AMI for faster launching. The associated <code>ResourceType</code> must be <code>snapshot</code>.</p>
-    pub fn set_snapshot_configuration(mut self, input: std::option::Option<crate::types::FastLaunchSnapshotConfigurationRequest>) -> Self {
+    pub fn set_snapshot_configuration(
+        mut self,
+        input: std::option::Option<crate::types::FastLaunchSnapshotConfigurationRequest>,
+    ) -> Self {
         self.inner = self.inner.set_snapshot_configuration(input);
         self
     }
     /// <p>The launch template to use when launching Windows instances from pre-provisioned snapshots. Launch template parameters can include either the name or ID of the launch template, but not both.</p>
-    pub fn launch_template(mut self, input: crate::types::FastLaunchLaunchTemplateSpecificationRequest) -> Self {
+    pub fn launch_template(
+        mut self,
+        input: crate::types::FastLaunchLaunchTemplateSpecificationRequest,
+    ) -> Self {
         self.inner = self.inner.launch_template(input);
         self
     }
     /// <p>The launch template to use when launching Windows instances from pre-provisioned snapshots. Launch template parameters can include either the name or ID of the launch template, but not both.</p>
-    pub fn set_launch_template(mut self, input: std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationRequest>) -> Self {
+    pub fn set_launch_template(
+        mut self,
+        input: std::option::Option<crate::types::FastLaunchLaunchTemplateSpecificationRequest>,
+    ) -> Self {
         self.inner = self.inner.set_launch_template(input);
         self
     }
@@ -111,4 +143,3 @@ impl EnableFastLaunchFluentBuilder  {
         self
     }
 }
-

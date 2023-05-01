@@ -24,4 +24,3 @@ pub use crate::types::_tracking_information::TrackingInformationBuilder;
 pub use crate::types::_network::NetworkBuilder;
 
 pub use crate::types::_device_identifier::DeviceIdentifierBuilder;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct StopExecutionInput  {
+pub struct StopExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
     #[doc(hidden)]
     pub execution_arn: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct StopExecutionInput  {
 }
 impl StopExecutionInput {
     /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
-    pub fn execution_arn(&self) -> std::option::Option<& str> {
+    pub fn execution_arn(&self) -> std::option::Option<&str> {
         self.execution_arn.as_deref()
     }
     /// <p>The error code of the failure.</p>
-    pub fn error(&self) -> std::option::Option<& str> {
+    pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
-    pub fn cause(&self) -> std::option::Option<& str> {
+    pub fn cause(&self) -> std::option::Option<&str> {
         self.cause.as_deref()
     }
 }
-impl  std::fmt::Debug for StopExecutionInput  {
+impl std::fmt::Debug for StopExecutionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StopExecutionInput");
         formatter.field("execution_arn", &self.execution_arn);
@@ -59,7 +59,8 @@ impl StopExecutionInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the execution to stop.</p>
     pub fn set_execution_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_arn = input; self
+        self.execution_arn = input;
+        self
     }
     /// <p>The error code of the failure.</p>
     pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl StopExecutionInputBuilder {
     }
     /// <p>The error code of the failure.</p>
     pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error = input; self
+        self.error = input;
+        self
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,20 +79,21 @@ impl StopExecutionInputBuilder {
     }
     /// <p>A more detailed explanation of the cause of the failure.</p>
     pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cause = input; self
+        self.cause = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopExecutionInput`](crate::operation::stop_execution::StopExecutionInput).
-    pub fn build(self) -> Result<crate::operation::stop_execution::StopExecutionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_execution::StopExecutionInput {
-                execution_arn: self.execution_arn
-                ,
-                error: self.error
-                ,
-                cause: self.cause
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_execution::StopExecutionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_execution::StopExecutionInput {
+            execution_arn: self.execution_arn,
+            error: self.error,
+            cause: self.cause,
+        })
     }
 }
 impl std::fmt::Debug for StopExecutionInputBuilder {
@@ -102,4 +105,3 @@ impl std::fmt::Debug for StopExecutionInputBuilder {
         formatter.finish()
     }
 }
-

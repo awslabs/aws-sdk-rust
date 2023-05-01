@@ -40,4 +40,3 @@ pub mod builders;
 
 /// Error types that AWS IoT Secure Tunneling can respond with.
 pub mod error;
-

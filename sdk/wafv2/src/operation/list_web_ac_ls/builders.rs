@@ -4,65 +4,81 @@ pub use crate::operation::list_web_ac_ls::_list_web_ac_ls_output::ListWebAcLsOut
 pub use crate::operation::list_web_ac_ls::_list_web_ac_ls_input::ListWebAcLsInputBuilder;
 
 /// Fluent builder constructing a request to `ListWebACLs`.
-/// 
+///
 /// <p>Retrieves an array of <code>WebACLSummary</code> objects for the web ACLs that you manage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListWebACLsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_web_ac_ls::builders::ListWebAcLsInputBuilder,
+    inner: crate::operation::list_web_ac_ls::builders::ListWebAcLsInputBuilder,
 }
-impl ListWebACLsFluentBuilder  {
+impl ListWebACLsFluentBuilder {
     /// Creates a new `ListWebACLs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_web_ac_ls::ListWebACLs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_web_ac_ls::ListWebACLsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_web_ac_ls::ListWebAcLsOutput, aws_smithy_http::result::SdkError<crate::operation::list_web_ac_ls::ListWebACLsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_web_ac_ls::ListWebACLs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_web_ac_ls::ListWebACLsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_web_ac_ls::ListWebAcLsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_web_ac_ls::ListWebACLsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
@@ -89,4 +105,3 @@ impl ListWebACLsFluentBuilder  {
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJobInput  {
+pub struct CancelJobInput {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -12,25 +12,25 @@ pub struct CancelJobInput  {
     /// <p>An optional comment string describing why the job was canceled.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<std::string::String>,
-    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p> 
+    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
     /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
     #[doc(hidden)]
     pub force: std::option::Option<bool>,
 }
 impl CancelJobInput {
     /// <p>The unique identifier you assigned to this job when it was created.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>(Optional)A reason code string that explains why the job was canceled.</p>
-    pub fn reason_code(&self) -> std::option::Option<& str> {
+    pub fn reason_code(&self) -> std::option::Option<&str> {
         self.reason_code.as_deref()
     }
     /// <p>An optional comment string describing why the job was canceled.</p>
-    pub fn comment(&self) -> std::option::Option<& str> {
+    pub fn comment(&self) -> std::option::Option<&str> {
         self.comment.as_deref()
     }
-    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p> 
+    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
     /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
     pub fn force(&self) -> std::option::Option<bool> {
         self.force
@@ -60,7 +60,8 @@ impl CancelJobInputBuilder {
     }
     /// <p>The unique identifier you assigned to this job when it was created.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>(Optional)A reason code string that explains why the job was canceled.</p>
     pub fn reason_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,7 +70,8 @@ impl CancelJobInputBuilder {
     }
     /// <p>(Optional)A reason code string that explains why the job was canceled.</p>
     pub fn set_reason_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason_code = input; self
+        self.reason_code = input;
+        self
     }
     /// <p>An optional comment string describing why the job was canceled.</p>
     pub fn comment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,33 +80,33 @@ impl CancelJobInputBuilder {
     }
     /// <p>An optional comment string describing why the job was canceled.</p>
     pub fn set_comment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comment = input; self
+        self.comment = input;
+        self
     }
-    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p> 
+    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
     /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
     pub fn force(mut self, input: bool) -> Self {
         self.force = Some(input);
         self
     }
-    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p> 
+    /// <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p>
     /// <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
     pub fn set_force(mut self, input: std::option::Option<bool>) -> Self {
-        self.force = input; self
+        self.force = input;
+        self
     }
     /// Consumes the builder and constructs a [`CancelJobInput`](crate::operation::cancel_job::CancelJobInput).
-    pub fn build(self) -> Result<crate::operation::cancel_job::CancelJobInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::cancel_job::CancelJobInput {
-                job_id: self.job_id
-                ,
-                reason_code: self.reason_code
-                ,
-                comment: self.comment
-                ,
-                force: self.force
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::cancel_job::CancelJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::cancel_job::CancelJobInput {
+            job_id: self.job_id,
+            reason_code: self.reason_code,
+            comment: self.comment,
+            force: self.force,
+        })
     }
 }
-

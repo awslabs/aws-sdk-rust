@@ -3,7 +3,7 @@
 /// <p>A collection of data about the simulation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SimulationMetadata  {
+pub struct SimulationMetadata {
     /// <p>The name of the simulation.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct SimulationMetadata  {
 }
 impl SimulationMetadata {
     /// <p>The name of the simulation.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The current status of the simulation.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::SimulationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::SimulationStatus> {
         self.status.as_ref()
     }
     /// <p>The desired status of the simulation.</p>
-    pub fn target_status(&self) -> std::option::Option<& crate::types::SimulationTargetStatus> {
+    pub fn target_status(&self) -> std::option::Option<&crate::types::SimulationTargetStatus> {
         self.target_status.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl SimulationMetadataBuilder {
     }
     /// <p>The name of the simulation.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl SimulationMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the simulation. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,8 +86,12 @@ impl SimulationMetadataBuilder {
         self
     }
     /// <p>The time when the simulation was created, expressed as the number of seconds and milliseconds in UTC since the Unix epoch (0:0:0.000, January 1, 1970).</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The current status of the simulation.</p>
     pub fn status(mut self, input: crate::types::SimulationStatus) -> Self {
@@ -93,8 +99,12 @@ impl SimulationMetadataBuilder {
         self
     }
     /// <p>The current status of the simulation.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::SimulationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::SimulationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The desired status of the simulation.</p>
     pub fn target_status(mut self, input: crate::types::SimulationTargetStatus) -> Self {
@@ -102,23 +112,21 @@ impl SimulationMetadataBuilder {
         self
     }
     /// <p>The desired status of the simulation.</p>
-    pub fn set_target_status(mut self, input: std::option::Option<crate::types::SimulationTargetStatus>) -> Self {
-        self.target_status = input; self
+    pub fn set_target_status(
+        mut self,
+        input: std::option::Option<crate::types::SimulationTargetStatus>,
+    ) -> Self {
+        self.target_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`SimulationMetadata`](crate::types::SimulationMetadata).
     pub fn build(self) -> crate::types::SimulationMetadata {
         crate::types::SimulationMetadata {
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            creation_time: self.creation_time
-            ,
-            status: self.status
-            ,
-            target_status: self.target_status
-            ,
+            name: self.name,
+            arn: self.arn,
+            creation_time: self.creation_time,
+            status: self.status,
+            target_status: self.target_status,
         }
     }
 }
-

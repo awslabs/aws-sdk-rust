@@ -3,7 +3,7 @@
 /// <p>Describes an IP range used in a security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpRange  {
+pub struct IpRange {
     /// <p>The status of the IP range, for example, "authorized".</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct IpRange  {
 }
 impl IpRange {
     /// <p>The status of the IP range, for example, "authorized".</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
-    pub fn cidrip(&self) -> std::option::Option<& str> {
+    pub fn cidrip(&self) -> std::option::Option<&str> {
         self.cidrip.as_deref()
     }
     /// <p>The list of tags for the IP range.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl IpRangeBuilder {
     }
     /// <p>The status of the IP range, for example, "authorized".</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
     pub fn cidrip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl IpRangeBuilder {
     }
     /// <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
     pub fn set_cidrip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidrip = input; self
+        self.cidrip = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -69,24 +71,24 @@ impl IpRangeBuilder {
     /// <p>The list of tags for the IP range.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The list of tags for the IP range.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`IpRange`](crate::types::IpRange).
     pub fn build(self) -> crate::types::IpRange {
         crate::types::IpRange {
-            status: self.status
-            ,
-            cidrip: self.cidrip
-            ,
-            tags: self.tags
-            ,
+            status: self.status,
+            cidrip: self.cidrip,
+            tags: self.tags,
         }
     }
 }
-

@@ -3,27 +3,31 @@
 /// <p>Describes a Capacity Reservation Fleet that could not be cancelled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailedCapacityReservationFleetCancellationResult  {
+pub struct FailedCapacityReservationFleetCancellationResult {
     /// <p>The ID of the Capacity Reservation Fleet that could not be cancelled.</p>
     #[doc(hidden)]
     pub capacity_reservation_fleet_id: std::option::Option<std::string::String>,
     /// <p>Information about the Capacity Reservation Fleet cancellation error.</p>
     #[doc(hidden)]
-    pub cancel_capacity_reservation_fleet_error: std::option::Option<crate::types::CancelCapacityReservationFleetError>,
+    pub cancel_capacity_reservation_fleet_error:
+        std::option::Option<crate::types::CancelCapacityReservationFleetError>,
 }
 impl FailedCapacityReservationFleetCancellationResult {
     /// <p>The ID of the Capacity Reservation Fleet that could not be cancelled.</p>
-    pub fn capacity_reservation_fleet_id(&self) -> std::option::Option<& str> {
+    pub fn capacity_reservation_fleet_id(&self) -> std::option::Option<&str> {
         self.capacity_reservation_fleet_id.as_deref()
     }
     /// <p>Information about the Capacity Reservation Fleet cancellation error.</p>
-    pub fn cancel_capacity_reservation_fleet_error(&self) -> std::option::Option<& crate::types::CancelCapacityReservationFleetError> {
+    pub fn cancel_capacity_reservation_fleet_error(
+        &self,
+    ) -> std::option::Option<&crate::types::CancelCapacityReservationFleetError> {
         self.cancel_capacity_reservation_fleet_error.as_ref()
     }
 }
 impl FailedCapacityReservationFleetCancellationResult {
     /// Creates a new builder-style object to manufacture [`FailedCapacityReservationFleetCancellationResult`](crate::types::FailedCapacityReservationFleetCancellationResult).
-    pub fn builder() -> crate::types::builders::FailedCapacityReservationFleetCancellationResultBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::FailedCapacityReservationFleetCancellationResultBuilder {
         crate::types::builders::FailedCapacityReservationFleetCancellationResultBuilder::default()
     }
 }
@@ -33,7 +37,8 @@ impl FailedCapacityReservationFleetCancellationResult {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct FailedCapacityReservationFleetCancellationResultBuilder {
     pub(crate) capacity_reservation_fleet_id: std::option::Option<std::string::String>,
-    pub(crate) cancel_capacity_reservation_fleet_error: std::option::Option<crate::types::CancelCapacityReservationFleetError>,
+    pub(crate) cancel_capacity_reservation_fleet_error:
+        std::option::Option<crate::types::CancelCapacityReservationFleetError>,
 }
 impl FailedCapacityReservationFleetCancellationResultBuilder {
     /// <p>The ID of the Capacity Reservation Fleet that could not be cancelled.</p>
@@ -42,26 +47,34 @@ impl FailedCapacityReservationFleetCancellationResultBuilder {
         self
     }
     /// <p>The ID of the Capacity Reservation Fleet that could not be cancelled.</p>
-    pub fn set_capacity_reservation_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.capacity_reservation_fleet_id = input; self
+    pub fn set_capacity_reservation_fleet_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.capacity_reservation_fleet_id = input;
+        self
     }
     /// <p>Information about the Capacity Reservation Fleet cancellation error.</p>
-    pub fn cancel_capacity_reservation_fleet_error(mut self, input: crate::types::CancelCapacityReservationFleetError) -> Self {
+    pub fn cancel_capacity_reservation_fleet_error(
+        mut self,
+        input: crate::types::CancelCapacityReservationFleetError,
+    ) -> Self {
         self.cancel_capacity_reservation_fleet_error = Some(input);
         self
     }
     /// <p>Information about the Capacity Reservation Fleet cancellation error.</p>
-    pub fn set_cancel_capacity_reservation_fleet_error(mut self, input: std::option::Option<crate::types::CancelCapacityReservationFleetError>) -> Self {
-        self.cancel_capacity_reservation_fleet_error = input; self
+    pub fn set_cancel_capacity_reservation_fleet_error(
+        mut self,
+        input: std::option::Option<crate::types::CancelCapacityReservationFleetError>,
+    ) -> Self {
+        self.cancel_capacity_reservation_fleet_error = input;
+        self
     }
     /// Consumes the builder and constructs a [`FailedCapacityReservationFleetCancellationResult`](crate::types::FailedCapacityReservationFleetCancellationResult).
     pub fn build(self) -> crate::types::FailedCapacityReservationFleetCancellationResult {
         crate::types::FailedCapacityReservationFleetCancellationResult {
-            capacity_reservation_fleet_id: self.capacity_reservation_fleet_id
-            ,
-            cancel_capacity_reservation_fleet_error: self.cancel_capacity_reservation_fleet_error
-            ,
+            capacity_reservation_fleet_id: self.capacity_reservation_fleet_id,
+            cancel_capacity_reservation_fleet_error: self.cancel_capacity_reservation_fleet_error,
         }
     }
 }
-

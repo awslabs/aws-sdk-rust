@@ -3,7 +3,7 @@
 /// <p>Retrieves a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingInput  {
+pub struct GetFindingInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
     #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct GetFindingInput  {
 }
 impl GetFindingInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
-    pub fn analyzer_arn(&self) -> std::option::Option<& str> {
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>The ID of the finding to retrieve.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl GetFindingInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
     pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analyzer_arn = input; self
+        self.analyzer_arn = input;
+        self
     }
     /// <p>The ID of the finding to retrieve.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +53,19 @@ impl GetFindingInputBuilder {
     }
     /// <p>The ID of the finding to retrieve.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetFindingInput`](crate::operation::get_finding::GetFindingInput).
-    pub fn build(self) -> Result<crate::operation::get_finding::GetFindingInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_finding::GetFindingInput {
-                analyzer_arn: self.analyzer_arn
-                ,
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_finding::GetFindingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_finding::GetFindingInput {
+            analyzer_arn: self.analyzer_arn,
+            id: self.id,
+        })
     }
 }
-

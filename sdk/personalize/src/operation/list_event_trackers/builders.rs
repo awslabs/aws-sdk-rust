@@ -4,63 +4,91 @@ pub use crate::operation::list_event_trackers::_list_event_trackers_output::List
 pub use crate::operation::list_event_trackers::_list_event_trackers_input::ListEventTrackersInputBuilder;
 
 /// Fluent builder constructing a request to `ListEventTrackers`.
-/// 
+///
 /// <p>Returns the list of event trackers associated with the account. The response provides the properties for each event tracker, including the Amazon Resource Name (ARN) and tracking ID. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListEventTrackersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_event_trackers::builders::ListEventTrackersInputBuilder,
+    inner: crate::operation::list_event_trackers::builders::ListEventTrackersInputBuilder,
 }
-impl ListEventTrackersFluentBuilder  {
+impl ListEventTrackersFluentBuilder {
     /// Creates a new `ListEventTrackers`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_event_trackers::ListEventTrackers, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_event_trackers::ListEventTrackersError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_event_trackers::ListEventTrackersOutput, aws_smithy_http::result::SdkError<crate::operation::list_event_trackers::ListEventTrackersError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_event_trackers::ListEventTrackers,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_event_trackers::ListEventTrackersError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_event_trackers::ListEventTrackersOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_event_trackers::ListEventTrackersError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator {
-                                crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator {
+        crate::operation::list_event_trackers::paginator::ListEventTrackersPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ARN of a dataset group used to filter the response.</p>
     pub fn dataset_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.dataset_group_arn(input.into());
         self
     }
     /// <p>The ARN of a dataset group used to filter the response.</p>
-    pub fn set_dataset_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_dataset_group_arn(input);
         self
     }
@@ -85,4 +113,3 @@ impl ListEventTrackersFluentBuilder  {
         self
     }
 }
-

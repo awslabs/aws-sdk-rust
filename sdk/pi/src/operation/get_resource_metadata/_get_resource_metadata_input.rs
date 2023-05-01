@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceMetadataInput  {
+pub struct GetResourceMetadataInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     #[doc(hidden)]
     pub service_type: std::option::Option<crate::types::ServiceType>,
@@ -12,18 +12,20 @@ pub struct GetResourceMetadataInput  {
 }
 impl GetResourceMetadataInput {
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn service_type(&self) -> std::option::Option<& crate::types::ServiceType> {
+    pub fn service_type(&self) -> std::option::Option<&crate::types::ServiceType> {
         self.service_type.as_ref()
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
 }
 impl GetResourceMetadataInput {
     /// Creates a new builder-style object to manufacture [`GetResourceMetadataInput`](crate::operation::get_resource_metadata::GetResourceMetadataInput).
-    pub fn builder() -> crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder {
-        crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder {
+        crate::operation::get_resource_metadata::builders::GetResourceMetadataInputBuilder::default(
+        )
     }
 }
 
@@ -41,8 +43,12 @@ impl GetResourceMetadataInputBuilder {
         self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn set_service_type(mut self, input: std::option::Option<crate::types::ServiceType>) -> Self {
-        self.service_type = input; self
+    pub fn set_service_type(
+        mut self,
+        input: std::option::Option<crate::types::ServiceType>,
+    ) -> Self {
+        self.service_type = input;
+        self
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
     pub fn identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl GetResourceMetadataInputBuilder {
     }
     /// <p>An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>. </p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetResourceMetadataInput`](crate::operation::get_resource_metadata::GetResourceMetadataInput).
-    pub fn build(self) -> Result<crate::operation::get_resource_metadata::GetResourceMetadataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_resource_metadata::GetResourceMetadataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_resource_metadata::GetResourceMetadataInput {
-                service_type: self.service_type
-                ,
-                identifier: self.identifier
-                ,
-            }
+                service_type: self.service_type,
+                identifier: self.identifier,
+            },
         )
     }
 }
-

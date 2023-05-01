@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBridgeStateOutput  {
+pub struct UpdateBridgeStateOutput {
     /// The Amazon Resource Number (ARN) of the bridge.
     #[doc(hidden)]
     pub bridge_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct UpdateBridgeStateOutput  {
 }
 impl UpdateBridgeStateOutput {
     /// The Amazon Resource Number (ARN) of the bridge.
-    pub fn bridge_arn(&self) -> std::option::Option<& str> {
+    pub fn bridge_arn(&self) -> std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
     /// The state of the bridge. ACTIVE or STANDBY.
-    pub fn desired_state(&self) -> std::option::Option<& crate::types::DesiredState> {
+    pub fn desired_state(&self) -> std::option::Option<&crate::types::DesiredState> {
         self.desired_state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateBridgeStateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateBridgeStateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateBridgeStateOutput`](crate::operation::update_bridge_state::UpdateBridgeStateOutput).
-    pub fn builder() -> crate::operation::update_bridge_state::builders::UpdateBridgeStateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_bridge_state::builders::UpdateBridgeStateOutputBuilder {
         crate::operation::update_bridge_state::builders::UpdateBridgeStateOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl UpdateBridgeStateOutputBuilder {
     }
     /// The Amazon Resource Number (ARN) of the bridge.
     pub fn set_bridge_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bridge_arn = input; self
+        self.bridge_arn = input;
+        self
     }
     /// The state of the bridge. ACTIVE or STANDBY.
     pub fn desired_state(mut self, input: crate::types::DesiredState) -> Self {
@@ -57,27 +59,28 @@ impl UpdateBridgeStateOutputBuilder {
         self
     }
     /// The state of the bridge. ACTIVE or STANDBY.
-    pub fn set_desired_state(mut self, input: std::option::Option<crate::types::DesiredState>) -> Self {
-        self.desired_state = input; self
+    pub fn set_desired_state(
+        mut self,
+        input: std::option::Option<crate::types::DesiredState>,
+    ) -> Self {
+        self.desired_state = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateBridgeStateOutput`](crate::operation::update_bridge_state::UpdateBridgeStateOutput).
     pub fn build(self) -> crate::operation::update_bridge_state::UpdateBridgeStateOutput {
         crate::operation::update_bridge_state::UpdateBridgeStateOutput {
-            bridge_arn: self.bridge_arn
-            ,
-            desired_state: self.desired_state
-            ,
+            bridge_arn: self.bridge_arn,
+            desired_state: self.desired_state,
             _request_id: self._request_id,
         }
     }
 }
-

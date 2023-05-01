@@ -3,7 +3,7 @@
 /// <p>Describes a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Principal  {
+pub struct Principal {
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Principal  {
 }
 impl Principal {
     /// <p>The ID of the resource.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The type of resource.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::PrincipalType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::PrincipalType> {
         self.r#type.as_ref()
     }
     /// <p>The permission information for the resource.</p>
-    pub fn roles(&self) -> std::option::Option<& [crate::types::PermissionInfo]> {
+    pub fn roles(&self) -> std::option::Option<&[crate::types::PermissionInfo]> {
         self.roles.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl PrincipalBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The type of resource.</p>
     pub fn r#type(mut self, input: crate::types::PrincipalType) -> Self {
@@ -60,7 +61,8 @@ impl PrincipalBuilder {
     }
     /// <p>The type of resource.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Appends an item to `roles`.
     ///
@@ -69,24 +71,24 @@ impl PrincipalBuilder {
     /// <p>The permission information for the resource.</p>
     pub fn roles(mut self, input: crate::types::PermissionInfo) -> Self {
         let mut v = self.roles.unwrap_or_default();
-                        v.push(input);
-                        self.roles = Some(v);
-                        self
+        v.push(input);
+        self.roles = Some(v);
+        self
     }
     /// <p>The permission information for the resource.</p>
-    pub fn set_roles(mut self, input: std::option::Option<std::vec::Vec<crate::types::PermissionInfo>>) -> Self {
-        self.roles = input; self
+    pub fn set_roles(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PermissionInfo>>,
+    ) -> Self {
+        self.roles = input;
+        self
     }
     /// Consumes the builder and constructs a [`Principal`](crate::types::Principal).
     pub fn build(self) -> crate::types::Principal {
         crate::types::Principal {
-            id: self.id
-            ,
-            r#type: self.r#type
-            ,
-            roles: self.roles
-            ,
+            id: self.id,
+            r#type: self.r#type,
+            roles: self.roles,
         }
     }
 }
-

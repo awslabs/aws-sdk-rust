@@ -2,4 +2,3 @@
 pub use crate::types::error::_document_service_exception::DocumentServiceExceptionBuilder;
 
 pub use crate::types::error::_search_exception::SearchExceptionBuilder;
-

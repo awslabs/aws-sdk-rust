@@ -3,7 +3,7 @@
 /// <p>Information about the policy used to set the permissions boundary for an IAM principal.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsIamPermissionsBoundary  {
+pub struct AwsIamPermissionsBoundary {
     /// <p>The ARN of the policy used to set the permissions boundary.</p>
     #[doc(hidden)]
     pub permissions_boundary_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsIamPermissionsBoundary  {
 }
 impl AwsIamPermissionsBoundary {
     /// <p>The ARN of the policy used to set the permissions boundary.</p>
-    pub fn permissions_boundary_arn(&self) -> std::option::Option<& str> {
+    pub fn permissions_boundary_arn(&self) -> std::option::Option<&str> {
         self.permissions_boundary_arn.as_deref()
     }
     /// <p>The usage type for the permissions boundary.</p>
-    pub fn permissions_boundary_type(&self) -> std::option::Option<& str> {
+    pub fn permissions_boundary_type(&self) -> std::option::Option<&str> {
         self.permissions_boundary_type.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl AwsIamPermissionsBoundaryBuilder {
         self
     }
     /// <p>The ARN of the policy used to set the permissions boundary.</p>
-    pub fn set_permissions_boundary_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.permissions_boundary_arn = input; self
+    pub fn set_permissions_boundary_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.permissions_boundary_arn = input;
+        self
     }
     /// <p>The usage type for the permissions boundary.</p>
     pub fn permissions_boundary_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +55,18 @@ impl AwsIamPermissionsBoundaryBuilder {
         self
     }
     /// <p>The usage type for the permissions boundary.</p>
-    pub fn set_permissions_boundary_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.permissions_boundary_type = input; self
+    pub fn set_permissions_boundary_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.permissions_boundary_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsIamPermissionsBoundary`](crate::types::AwsIamPermissionsBoundary).
     pub fn build(self) -> crate::types::AwsIamPermissionsBoundary {
         crate::types::AwsIamPermissionsBoundary {
-            permissions_boundary_arn: self.permissions_boundary_arn
-            ,
-            permissions_boundary_type: self.permissions_boundary_type
-            ,
+            permissions_boundary_arn: self.permissions_boundary_arn,
+            permissions_boundary_type: self.permissions_boundary_type,
         }
     }
 }
-

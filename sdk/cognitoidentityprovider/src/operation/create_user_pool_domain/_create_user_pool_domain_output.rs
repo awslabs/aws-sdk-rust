@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserPoolDomainOutput  {
+pub struct CreateUserPoolDomainOutput {
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
     #[doc(hidden)]
     pub cloud_front_domain: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct CreateUserPoolDomainOutput  {
 }
 impl CreateUserPoolDomainOutput {
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
-    pub fn cloud_front_domain(&self) -> std::option::Option<& str> {
+    pub fn cloud_front_domain(&self) -> std::option::Option<&str> {
         self.cloud_front_domain.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateUserPoolDomainOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateUserPoolDomainOutput {
     /// Creates a new builder-style object to manufacture [`CreateUserPoolDomainOutput`](crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput).
-    pub fn builder() -> crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainOutputBuilder
+    {
         crate::operation::create_user_pool_domain::builders::CreateUserPoolDomainOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CreateUserPoolDomainOutputBuilder {
         self
     }
     /// <p>The Amazon CloudFront endpoint that you use as the target of the alias that you set up with your Domain Name Service (DNS) provider.</p>
-    pub fn set_cloud_front_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cloud_front_domain = input; self
+    pub fn set_cloud_front_domain(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cloud_front_domain = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateUserPoolDomainOutput`](crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput).
     pub fn build(self) -> crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput {
         crate::operation::create_user_pool_domain::CreateUserPoolDomainOutput {
-            cloud_front_domain: self.cloud_front_domain
-            ,
+            cloud_front_domain: self.cloud_front_domain,
             _request_id: self._request_id,
         }
     }
 }
-

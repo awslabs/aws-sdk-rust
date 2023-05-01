@@ -3,7 +3,7 @@
 /// <p>An object describing a project's placement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlacementDescription  {
+pub struct PlacementDescription {
     /// <p>The name of the project containing the placement.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
@@ -12,7 +12,8 @@ pub struct PlacementDescription  {
     pub placement_name: std::option::Option<std::string::String>,
     /// <p>The user-defined attributes associated with the placement.</p>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
     #[doc(hidden)]
     pub created_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -22,23 +23,26 @@ pub struct PlacementDescription  {
 }
 impl PlacementDescription {
     /// <p>The name of the project containing the placement.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>The name of the placement.</p>
-    pub fn placement_name(&self) -> std::option::Option<& str> {
+    pub fn placement_name(&self) -> std::option::Option<&str> {
         self.placement_name.as_deref()
     }
     /// <p>The user-defined attributes associated with the placement.</p>
-    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.attributes.as_ref()
     }
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
-    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
 }
@@ -55,7 +59,8 @@ impl PlacementDescription {
 pub struct PlacementDescriptionBuilder {
     pub(crate) project_name: std::option::Option<std::string::String>,
     pub(crate) placement_name: std::option::Option<std::string::String>,
-    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) updated_date: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -67,7 +72,8 @@ impl PlacementDescriptionBuilder {
     }
     /// <p>The name of the project containing the placement.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// <p>The name of the placement.</p>
     pub fn placement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,22 +82,33 @@ impl PlacementDescriptionBuilder {
     }
     /// <p>The name of the placement.</p>
     pub fn set_placement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.placement_name = input; self
+        self.placement_name = input;
+        self
     }
     /// Adds a key-value pair to `attributes`.
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>The user-defined attributes associated with the placement.</p>
-    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn attributes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.attributes = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.attributes = Some(hash_map);
+        self
     }
     /// <p>The user-defined attributes associated with the placement.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
     pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -99,8 +116,12 @@ impl PlacementDescriptionBuilder {
         self
     }
     /// <p>The date when the placement was initially created, in UNIX epoch time format.</p>
-    pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input; self
+    pub fn set_created_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_date = input;
+        self
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -108,23 +129,21 @@ impl PlacementDescriptionBuilder {
         self
     }
     /// <p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn set_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_date = input; self
+    pub fn set_updated_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`PlacementDescription`](crate::types::PlacementDescription).
     pub fn build(self) -> crate::types::PlacementDescription {
         crate::types::PlacementDescription {
-            project_name: self.project_name
-            ,
-            placement_name: self.placement_name
-            ,
-            attributes: self.attributes
-            ,
-            created_date: self.created_date
-            ,
-            updated_date: self.updated_date
-            ,
+            project_name: self.project_name,
+            placement_name: self.placement_name,
+            attributes: self.attributes,
+            created_date: self.created_date,
+            updated_date: self.updated_date,
         }
     }
 }
-

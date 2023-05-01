@@ -3,21 +3,21 @@
 /// <p>The configuration settings of the Amazon Kinesis Data Streams destination for an Amazon QLDB journal stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisConfiguration  {
+pub struct KinesisConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
     #[doc(hidden)]
     pub stream_arn: std::option::Option<std::string::String>,
-    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p> 
+    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
     /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     #[doc(hidden)]
     pub aggregation_enabled: std::option::Option<bool>,
 }
 impl KinesisConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
-    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p> 
+    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
     /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn aggregation_enabled(&self) -> std::option::Option<bool> {
         self.aggregation_enabled
@@ -45,27 +45,26 @@ impl KinesisConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Kinesis Data Streams resource.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
-    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p> 
+    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
     /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn aggregation_enabled(mut self, input: bool) -> Self {
         self.aggregation_enabled = Some(input);
         self
     }
-    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p> 
+    /// <p>Enables QLDB to publish multiple data records in a single Kinesis Data Streams record, increasing the number of records sent per API call.</p>
     /// <p> <i>This option is enabled by default.</i> Record aggregation has important implications for processing records and requires de-aggregation in your stream consumer. To learn more, see <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL Key Concepts</a> and <a href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
     pub fn set_aggregation_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.aggregation_enabled = input; self
+        self.aggregation_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`KinesisConfiguration`](crate::types::KinesisConfiguration).
     pub fn build(self) -> crate::types::KinesisConfiguration {
         crate::types::KinesisConfiguration {
-            stream_arn: self.stream_arn
-            ,
-            aggregation_enabled: self.aggregation_enabled
-            ,
+            stream_arn: self.stream_arn,
+            aggregation_enabled: self.aggregation_enabled,
         }
     }
 }
-

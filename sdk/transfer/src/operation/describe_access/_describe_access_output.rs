@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAccessOutput  {
+pub struct DescribeAccessOutput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct DescribeAccessOutput  {
 }
 impl DescribeAccessOutput {
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
-    pub fn server_id(&self) -> std::option::Option<& str> {
+    pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
     /// <p>The external identifier of the server that the access is attached to.</p>
-    pub fn access(&self) -> std::option::Option<& crate::types::DescribedAccess> {
+    pub fn access(&self) -> std::option::Option<&crate::types::DescribedAccess> {
         self.access.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAccessOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAccessOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAccessOutput`](crate::operation::describe_access::DescribeAccessOutput).
     pub fn builder() -> crate::operation::describe_access::builders::DescribeAccessOutputBuilder {
@@ -49,7 +49,8 @@ impl DescribeAccessOutputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server that has this access assigned.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input; self
+        self.server_id = input;
+        self
     }
     /// <p>The external identifier of the server that the access is attached to.</p>
     pub fn access(mut self, input: crate::types::DescribedAccess) -> Self {
@@ -58,26 +59,24 @@ impl DescribeAccessOutputBuilder {
     }
     /// <p>The external identifier of the server that the access is attached to.</p>
     pub fn set_access(mut self, input: std::option::Option<crate::types::DescribedAccess>) -> Self {
-        self.access = input; self
+        self.access = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAccessOutput`](crate::operation::describe_access::DescribeAccessOutput).
     pub fn build(self) -> crate::operation::describe_access::DescribeAccessOutput {
         crate::operation::describe_access::DescribeAccessOutput {
-            server_id: self.server_id
-            ,
-            access: self.access
-            ,
+            server_id: self.server_id,
+            access: self.access,
             _request_id: self._request_id,
         }
     }
 }
-

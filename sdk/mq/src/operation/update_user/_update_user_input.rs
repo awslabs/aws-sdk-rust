@@ -3,7 +3,7 @@
 /// <p>Updates the information for an ActiveMQ user.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserInput  {
+pub struct UpdateUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     #[doc(hidden)]
     pub broker_id: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct UpdateUserInput  {
 }
 impl UpdateUserInput {
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
-    pub fn broker_id(&self) -> std::option::Option<& str> {
+    pub fn broker_id(&self) -> std::option::Option<&str> {
         self.broker_id.as_deref()
     }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
@@ -30,15 +30,15 @@ impl UpdateUserInput {
         self.console_access
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn groups(&self) -> std::option::Option<&[std::string::String]> {
         self.groups.as_deref()
     }
     /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The unique ID that Amazon MQ generates for the broker.</p>
     pub fn set_broker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.broker_id = input; self
+        self.broker_id = input;
+        self
     }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn console_access(mut self, input: bool) -> Self {
@@ -76,7 +77,8 @@ impl UpdateUserInputBuilder {
     }
     /// <p>Enables access to the the ActiveMQ Web Console for the ActiveMQ user.</p>
     pub fn set_console_access(mut self, input: std::option::Option<bool>) -> Self {
-        self.console_access = input; self
+        self.console_access = input;
+        self
     }
     /// Appends an item to `groups`.
     ///
@@ -85,13 +87,17 @@ impl UpdateUserInputBuilder {
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.groups.unwrap_or_default();
-                        v.push(input.into());
-                        self.groups = Some(v);
-                        self
+        v.push(input.into());
+        self.groups = Some(v);
+        self
     }
     /// <p>The list of groups (20 maximum) to which the ActiveMQ user belongs. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
-    pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.groups = input; self
+    pub fn set_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.groups = input;
+        self
     }
     /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +106,8 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The password of the user. This value must be at least 12 characters long, must contain at least 4 unique characters, and must not contain commas, colons, or equal signs (,:=).</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,25 +116,22 @@ impl UpdateUserInputBuilder {
     }
     /// <p>The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateUserInput`](crate::operation::update_user::UpdateUserInput).
-    pub fn build(self) -> Result<crate::operation::update_user::UpdateUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_user::UpdateUserInput {
-                broker_id: self.broker_id
-                ,
-                console_access: self.console_access
-                    .unwrap_or_default()
-                ,
-                groups: self.groups
-                ,
-                password: self.password
-                ,
-                username: self.username
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_user::UpdateUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_user::UpdateUserInput {
+            broker_id: self.broker_id,
+            console_access: self.console_access.unwrap_or_default(),
+            groups: self.groups,
+            password: self.password,
+            username: self.username,
+        })
     }
 }
-

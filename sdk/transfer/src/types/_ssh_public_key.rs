@@ -3,11 +3,11 @@
 /// <p>Provides information about the public Secure Shell (SSH) key that is associated with a user account for the specific file transfer protocol-enabled server (as identified by <code>ServerId</code>). The information returned includes the date the key was imported, the public key contents, and the public key ID. A user can store more than one SSH public key associated with their user name on a specific server.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SshPublicKey  {
+pub struct SshPublicKey {
     /// <p>Specifies the date that the public key was added to the user account.</p>
     #[doc(hidden)]
     pub date_imported: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p> 
+    /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     #[doc(hidden)]
     pub ssh_public_key_body: std::option::Option<std::string::String>,
@@ -17,16 +17,16 @@ pub struct SshPublicKey  {
 }
 impl SshPublicKey {
     /// <p>Specifies the date that the public key was added to the user account.</p>
-    pub fn date_imported(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn date_imported(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_imported.as_ref()
     }
-    /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p> 
+    /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn ssh_public_key_body(&self) -> std::option::Option<& str> {
+    pub fn ssh_public_key_body(&self) -> std::option::Option<&str> {
         self.ssh_public_key_body.as_deref()
     }
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
-    pub fn ssh_public_key_id(&self) -> std::option::Option<& str> {
+    pub fn ssh_public_key_id(&self) -> std::option::Option<&str> {
         self.ssh_public_key_id.as_deref()
     }
 }
@@ -52,19 +52,27 @@ impl SshPublicKeyBuilder {
         self
     }
     /// <p>Specifies the date that the public key was added to the user account.</p>
-    pub fn set_date_imported(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date_imported = input; self
+    pub fn set_date_imported(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.date_imported = input;
+        self
     }
-    /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p> 
+    /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
     pub fn ssh_public_key_body(mut self, input: impl Into<std::string::String>) -> Self {
         self.ssh_public_key_body = Some(input.into());
         self
     }
-    /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p> 
+    /// <p>Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.</p>
     /// <p>Transfer Family accepts RSA, ECDSA, and ED25519 keys.</p>
-    pub fn set_ssh_public_key_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssh_public_key_body = input; self
+    pub fn set_ssh_public_key_body(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ssh_public_key_body = input;
+        self
     }
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
     pub fn ssh_public_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,19 +80,19 @@ impl SshPublicKeyBuilder {
         self
     }
     /// <p>Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.</p>
-    pub fn set_ssh_public_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssh_public_key_id = input; self
+    pub fn set_ssh_public_key_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ssh_public_key_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`SshPublicKey`](crate::types::SshPublicKey).
     pub fn build(self) -> crate::types::SshPublicKey {
         crate::types::SshPublicKey {
-            date_imported: self.date_imported
-            ,
-            ssh_public_key_body: self.ssh_public_key_body
-            ,
-            ssh_public_key_id: self.ssh_public_key_id
-            ,
+            date_imported: self.date_imported,
+            ssh_public_key_body: self.ssh_public_key_body,
+            ssh_public_key_id: self.ssh_public_key_id,
         }
     }
 }
-

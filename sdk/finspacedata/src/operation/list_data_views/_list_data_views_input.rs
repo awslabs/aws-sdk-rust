@@ -3,7 +3,7 @@
 /// Request for a list data views.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataViewsInput  {
+pub struct ListDataViewsInput {
     /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
     #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct ListDataViewsInput  {
 }
 impl ListDataViewsInput {
     /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
-    pub fn dataset_id(&self) -> std::option::Option<& str> {
+    pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results per page.</p>
@@ -51,7 +51,8 @@ impl ListDataViewsInputBuilder {
     }
     /// <p>The unique identifier of the Dataset for which to retrieve Dataviews.</p>
     pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_id = input; self
+        self.dataset_id = input;
+        self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ListDataViewsInputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -69,20 +71,20 @@ impl ListDataViewsInputBuilder {
     }
     /// <p>The maximum number of results per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDataViewsInput`](crate::operation::list_data_views::ListDataViewsInput).
-    pub fn build(self) -> Result<crate::operation::list_data_views::ListDataViewsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_data_views::ListDataViewsInput {
-                dataset_id: self.dataset_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_data_views::ListDataViewsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_data_views::ListDataViewsInput {
+            dataset_id: self.dataset_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

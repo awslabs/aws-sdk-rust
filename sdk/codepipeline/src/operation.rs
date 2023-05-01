@@ -117,4 +117,3 @@ pub mod update_action_type;
 
 /// Types for the `UpdatePipeline` operation.
 pub mod update_pipeline;
-

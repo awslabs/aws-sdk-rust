@@ -3,7 +3,7 @@
 /// <p>Container for the request parameters to the <code>ListDomainsForPackage</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDomainsForPackageInput  {
+pub struct ListDomainsForPackageInput {
     /// <p>The unique identifier of the package for which to list associated domains.</p>
     #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListDomainsForPackageInput  {
 }
 impl ListDomainsForPackageInput {
     /// <p>The unique identifier of the package for which to list associated domains.</p>
-    pub fn package_id(&self) -> std::option::Option<& str> {
+    pub fn package_id(&self) -> std::option::Option<&str> {
         self.package_id.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
@@ -24,13 +24,15 @@ impl ListDomainsForPackageInput {
         self.max_results
     }
     /// <p>If your initial <code>ListDomainsForPackage</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainsForPackage</code> operations, which returns results in the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListDomainsForPackageInput {
     /// Creates a new builder-style object to manufacture [`ListDomainsForPackageInput`](crate::operation::list_domains_for_package::ListDomainsForPackageInput).
-    pub fn builder() -> crate::operation::list_domains_for_package::builders::ListDomainsForPackageInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_domains_for_package::builders::ListDomainsForPackageInputBuilder
+    {
         crate::operation::list_domains_for_package::builders::ListDomainsForPackageInputBuilder::default()
     }
 }
@@ -51,7 +53,8 @@ impl ListDomainsForPackageInputBuilder {
     }
     /// <p>The unique identifier of the package for which to list associated domains.</p>
     pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_id = input; self
+        self.package_id = input;
+        self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,7 +63,8 @@ impl ListDomainsForPackageInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If your initial <code>ListDomainsForPackage</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainsForPackage</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +73,22 @@ impl ListDomainsForPackageInputBuilder {
     }
     /// <p>If your initial <code>ListDomainsForPackage</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainsForPackage</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDomainsForPackageInput`](crate::operation::list_domains_for_package::ListDomainsForPackageInput).
-    pub fn build(self) -> Result<crate::operation::list_domains_for_package::ListDomainsForPackageInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_domains_for_package::ListDomainsForPackageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_domains_for_package::ListDomainsForPackageInput {
-                package_id: self.package_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                package_id: self.package_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

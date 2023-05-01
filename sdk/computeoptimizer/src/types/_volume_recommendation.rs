@@ -3,7 +3,7 @@
 /// <p>Describes an Amazon Elastic Block Store (Amazon EBS) volume recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeRecommendation  {
+pub struct VolumeRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
     #[doc(hidden)]
     pub volume_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct VolumeRecommendation  {
     /// <p>An array of objects that describe the current configuration of the volume.</p>
     #[doc(hidden)]
     pub current_configuration: std::option::Option<crate::types::VolumeConfiguration>,
-    /// <p>The finding classification of the volume.</p> 
-    /// <p>Findings for volumes include:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li> 
-    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li> 
+    /// <p>The finding classification of the volume.</p>
+    /// <p>Findings for volumes include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub finding: std::option::Option<crate::types::EbsFinding>,
@@ -29,7 +29,8 @@ pub struct VolumeRecommendation  {
     pub look_back_period_in_days: f64,
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
     #[doc(hidden)]
-    pub volume_recommendation_options: std::option::Option<std::vec::Vec<crate::types::VolumeRecommendationOption>>,
+    pub volume_recommendation_options:
+        std::option::Option<std::vec::Vec<crate::types::VolumeRecommendationOption>>,
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
     #[doc(hidden)]
     pub last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -39,28 +40,30 @@ pub struct VolumeRecommendation  {
 }
 impl VolumeRecommendation {
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
-    pub fn volume_arn(&self) -> std::option::Option<& str> {
+    pub fn volume_arn(&self) -> std::option::Option<&str> {
         self.volume_arn.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the volume.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>An array of objects that describe the current configuration of the volume.</p>
-    pub fn current_configuration(&self) -> std::option::Option<& crate::types::VolumeConfiguration> {
+    pub fn current_configuration(&self) -> std::option::Option<&crate::types::VolumeConfiguration> {
         self.current_configuration.as_ref()
     }
-    /// <p>The finding classification of the volume.</p> 
-    /// <p>Findings for volumes include:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li> 
-    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li> 
+    /// <p>The finding classification of the volume.</p>
+    /// <p>Findings for volumes include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
     /// </ul>
-    pub fn finding(&self) -> std::option::Option<& crate::types::EbsFinding> {
+    pub fn finding(&self) -> std::option::Option<&crate::types::EbsFinding> {
         self.finding.as_ref()
     }
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
-    pub fn utilization_metrics(&self) -> std::option::Option<& [crate::types::EbsUtilizationMetric]> {
+    pub fn utilization_metrics(
+        &self,
+    ) -> std::option::Option<&[crate::types::EbsUtilizationMetric]> {
         self.utilization_metrics.as_deref()
     }
     /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
@@ -68,15 +71,19 @@ impl VolumeRecommendation {
         self.look_back_period_in_days
     }
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
-    pub fn volume_recommendation_options(&self) -> std::option::Option<& [crate::types::VolumeRecommendationOption]> {
+    pub fn volume_recommendation_options(
+        &self,
+    ) -> std::option::Option<&[crate::types::VolumeRecommendationOption]> {
         self.volume_recommendation_options.as_deref()
     }
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
-    pub fn last_refresh_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_refresh_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_refresh_timestamp.as_ref()
     }
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
-    pub fn current_performance_risk(&self) -> std::option::Option<& crate::types::CurrentPerformanceRisk> {
+    pub fn current_performance_risk(
+        &self,
+    ) -> std::option::Option<&crate::types::CurrentPerformanceRisk> {
         self.current_performance_risk.as_ref()
     }
 }
@@ -95,9 +102,11 @@ pub struct VolumeRecommendationBuilder {
     pub(crate) account_id: std::option::Option<std::string::String>,
     pub(crate) current_configuration: std::option::Option<crate::types::VolumeConfiguration>,
     pub(crate) finding: std::option::Option<crate::types::EbsFinding>,
-    pub(crate) utilization_metrics: std::option::Option<std::vec::Vec<crate::types::EbsUtilizationMetric>>,
+    pub(crate) utilization_metrics:
+        std::option::Option<std::vec::Vec<crate::types::EbsUtilizationMetric>>,
     pub(crate) look_back_period_in_days: std::option::Option<f64>,
-    pub(crate) volume_recommendation_options: std::option::Option<std::vec::Vec<crate::types::VolumeRecommendationOption>>,
+    pub(crate) volume_recommendation_options:
+        std::option::Option<std::vec::Vec<crate::types::VolumeRecommendationOption>>,
     pub(crate) last_refresh_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) current_performance_risk: std::option::Option<crate::types::CurrentPerformanceRisk>,
 }
@@ -109,7 +118,8 @@ impl VolumeRecommendationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the current volume.</p>
     pub fn set_volume_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_arn = input; self
+        self.volume_arn = input;
+        self
     }
     /// <p>The Amazon Web Services account ID of the volume.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,7 +128,8 @@ impl VolumeRecommendationBuilder {
     }
     /// <p>The Amazon Web Services account ID of the volume.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>An array of objects that describe the current configuration of the volume.</p>
     pub fn current_configuration(mut self, input: crate::types::VolumeConfiguration) -> Self {
@@ -126,27 +137,32 @@ impl VolumeRecommendationBuilder {
         self
     }
     /// <p>An array of objects that describe the current configuration of the volume.</p>
-    pub fn set_current_configuration(mut self, input: std::option::Option<crate::types::VolumeConfiguration>) -> Self {
-        self.current_configuration = input; self
+    pub fn set_current_configuration(
+        mut self,
+        input: std::option::Option<crate::types::VolumeConfiguration>,
+    ) -> Self {
+        self.current_configuration = input;
+        self
     }
-    /// <p>The finding classification of the volume.</p> 
-    /// <p>Findings for volumes include:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li> 
-    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li> 
+    /// <p>The finding classification of the volume.</p>
+    /// <p>Findings for volumes include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
     /// </ul>
     pub fn finding(mut self, input: crate::types::EbsFinding) -> Self {
         self.finding = Some(input);
         self
     }
-    /// <p>The finding classification of the volume.</p> 
-    /// <p>Findings for volumes include:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li> 
-    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li> 
+    /// <p>The finding classification of the volume.</p>
+    /// <p>Findings for volumes include:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute Optimizer identifies a recommendation that can provide better performance for your workload.</p> </li>
+    /// <li> <p> <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer determines that the volume is correctly provisioned to run your workload based on the chosen volume type. For optimized resources, Compute Optimizer might recommend a new generation volume type.</p> </li>
     /// </ul>
     pub fn set_finding(mut self, input: std::option::Option<crate::types::EbsFinding>) -> Self {
-        self.finding = input; self
+        self.finding = input;
+        self
     }
     /// Appends an item to `utilization_metrics`.
     ///
@@ -155,13 +171,17 @@ impl VolumeRecommendationBuilder {
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
     pub fn utilization_metrics(mut self, input: crate::types::EbsUtilizationMetric) -> Self {
         let mut v = self.utilization_metrics.unwrap_or_default();
-                        v.push(input);
-                        self.utilization_metrics = Some(v);
-                        self
+        v.push(input);
+        self.utilization_metrics = Some(v);
+        self
     }
     /// <p>An array of objects that describe the utilization metrics of the volume.</p>
-    pub fn set_utilization_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::types::EbsUtilizationMetric>>) -> Self {
-        self.utilization_metrics = input; self
+    pub fn set_utilization_metrics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EbsUtilizationMetric>>,
+    ) -> Self {
+        self.utilization_metrics = input;
+        self
     }
     /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
     pub fn look_back_period_in_days(mut self, input: f64) -> Self {
@@ -170,22 +190,30 @@ impl VolumeRecommendationBuilder {
     }
     /// <p>The number of days for which utilization metrics were analyzed for the volume.</p>
     pub fn set_look_back_period_in_days(mut self, input: std::option::Option<f64>) -> Self {
-        self.look_back_period_in_days = input; self
+        self.look_back_period_in_days = input;
+        self
     }
     /// Appends an item to `volume_recommendation_options`.
     ///
     /// To override the contents of this collection use [`set_volume_recommendation_options`](Self::set_volume_recommendation_options).
     ///
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
-    pub fn volume_recommendation_options(mut self, input: crate::types::VolumeRecommendationOption) -> Self {
+    pub fn volume_recommendation_options(
+        mut self,
+        input: crate::types::VolumeRecommendationOption,
+    ) -> Self {
         let mut v = self.volume_recommendation_options.unwrap_or_default();
-                        v.push(input);
-                        self.volume_recommendation_options = Some(v);
-                        self
+        v.push(input);
+        self.volume_recommendation_options = Some(v);
+        self
     }
     /// <p>An array of objects that describe the recommendation options for the volume.</p>
-    pub fn set_volume_recommendation_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::VolumeRecommendationOption>>) -> Self {
-        self.volume_recommendation_options = input; self
+    pub fn set_volume_recommendation_options(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VolumeRecommendationOption>>,
+    ) -> Self {
+        self.volume_recommendation_options = input;
+        self
     }
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
     pub fn last_refresh_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -193,8 +221,12 @@ impl VolumeRecommendationBuilder {
         self
     }
     /// <p>The timestamp of when the volume recommendation was last generated.</p>
-    pub fn set_last_refresh_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_refresh_timestamp = input; self
+    pub fn set_last_refresh_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_refresh_timestamp = input;
+        self
     }
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
     pub fn current_performance_risk(mut self, input: crate::types::CurrentPerformanceRisk) -> Self {
@@ -202,32 +234,25 @@ impl VolumeRecommendationBuilder {
         self
     }
     /// <p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>
-    pub fn set_current_performance_risk(mut self, input: std::option::Option<crate::types::CurrentPerformanceRisk>) -> Self {
-        self.current_performance_risk = input; self
+    pub fn set_current_performance_risk(
+        mut self,
+        input: std::option::Option<crate::types::CurrentPerformanceRisk>,
+    ) -> Self {
+        self.current_performance_risk = input;
+        self
     }
     /// Consumes the builder and constructs a [`VolumeRecommendation`](crate::types::VolumeRecommendation).
     pub fn build(self) -> crate::types::VolumeRecommendation {
         crate::types::VolumeRecommendation {
-            volume_arn: self.volume_arn
-            ,
-            account_id: self.account_id
-            ,
-            current_configuration: self.current_configuration
-            ,
-            finding: self.finding
-            ,
-            utilization_metrics: self.utilization_metrics
-            ,
-            look_back_period_in_days: self.look_back_period_in_days
-                .unwrap_or_default()
-            ,
-            volume_recommendation_options: self.volume_recommendation_options
-            ,
-            last_refresh_timestamp: self.last_refresh_timestamp
-            ,
-            current_performance_risk: self.current_performance_risk
-            ,
+            volume_arn: self.volume_arn,
+            account_id: self.account_id,
+            current_configuration: self.current_configuration,
+            finding: self.finding,
+            utilization_metrics: self.utilization_metrics,
+            look_back_period_in_days: self.look_back_period_in_days.unwrap_or_default(),
+            volume_recommendation_options: self.volume_recommendation_options,
+            last_refresh_timestamp: self.last_refresh_timestamp,
+            current_performance_risk: self.current_performance_risk,
         }
     }
 }
-

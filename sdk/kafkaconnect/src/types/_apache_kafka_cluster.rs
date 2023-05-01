@@ -3,7 +3,7 @@
 /// <p>The details of the Apache Kafka cluster to which the connector is connected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApacheKafkaCluster  {
+pub struct ApacheKafkaCluster {
     /// <p>The bootstrap servers of the cluster.</p>
     #[doc(hidden)]
     pub bootstrap_servers: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ApacheKafkaCluster  {
 }
 impl ApacheKafkaCluster {
     /// <p>The bootstrap servers of the cluster.</p>
-    pub fn bootstrap_servers(&self) -> std::option::Option<& str> {
+    pub fn bootstrap_servers(&self) -> std::option::Option<&str> {
         self.bootstrap_servers.as_deref()
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
-    pub fn vpc(&self) -> std::option::Option<& crate::types::Vpc> {
+    pub fn vpc(&self) -> std::option::Option<&crate::types::Vpc> {
         self.vpc.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl ApacheKafkaClusterBuilder {
         self
     }
     /// <p>The bootstrap servers of the cluster.</p>
-    pub fn set_bootstrap_servers(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bootstrap_servers = input; self
+    pub fn set_bootstrap_servers(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.bootstrap_servers = input;
+        self
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn vpc(mut self, input: crate::types::Vpc) -> Self {
@@ -52,16 +56,14 @@ impl ApacheKafkaClusterBuilder {
     }
     /// <p>Details of an Amazon VPC which has network connectivity to the Apache Kafka cluster.</p>
     pub fn set_vpc(mut self, input: std::option::Option<crate::types::Vpc>) -> Self {
-        self.vpc = input; self
+        self.vpc = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApacheKafkaCluster`](crate::types::ApacheKafkaCluster).
     pub fn build(self) -> crate::types::ApacheKafkaCluster {
         crate::types::ApacheKafkaCluster {
-            bootstrap_servers: self.bootstrap_servers
-            ,
-            vpc: self.vpc
-            ,
+            bootstrap_servers: self.bootstrap_servers,
+            vpc: self.vpc,
         }
     }
 }
-

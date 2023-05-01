@@ -3,17 +3,18 @@
 /// <p>The response from the server for a set user settings request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetUserSettingsOutput  {
+pub struct SetUserSettingsOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SetUserSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SetUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`SetUserSettingsOutput`](crate::operation::set_user_settings::SetUserSettingsOutput).
-    pub fn builder() -> crate::operation::set_user_settings::builders::SetUserSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::set_user_settings::builders::SetUserSettingsOutputBuilder
+    {
         crate::operation::set_user_settings::builders::SetUserSettingsOutputBuilder::default()
     }
 }
@@ -26,14 +27,14 @@ pub struct SetUserSettingsOutputBuilder {
 }
 impl SetUserSettingsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SetUserSettingsOutput`](crate::operation::set_user_settings::SetUserSettingsOutput).
     pub fn build(self) -> crate::operation::set_user_settings::SetUserSettingsOutput {
         crate::operation::set_user_settings::SetUserSettingsOutput {
@@ -41,4 +42,3 @@ impl SetUserSettingsOutputBuilder {
         }
     }
 }
-

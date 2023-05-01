@@ -3,7 +3,7 @@
 /// <p>The summary of the database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatabaseSummary  {
+pub struct DatabaseSummary {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -21,31 +21,35 @@ pub struct DatabaseSummary  {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The tags of the database.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DatabaseSummary {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the component.</p>
-    pub fn component_id(&self) -> std::option::Option<& str> {
+    pub fn component_id(&self) -> std::option::Option<&str> {
         self.component_id.as_deref()
     }
     /// <p>The ID of the database.</p>
-    pub fn database_id(&self) -> std::option::Option<& str> {
+    pub fn database_id(&self) -> std::option::Option<&str> {
         self.database_id.as_deref()
     }
     /// <p>The type of the database.</p>
-    pub fn database_type(&self) -> std::option::Option<& crate::types::DatabaseType> {
+    pub fn database_type(&self) -> std::option::Option<&crate::types::DatabaseType> {
         self.database_type.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The tags of the database.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -65,7 +69,8 @@ pub struct DatabaseSummaryBuilder {
     pub(crate) database_id: std::option::Option<std::string::String>,
     pub(crate) database_type: std::option::Option<crate::types::DatabaseType>,
     pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl DatabaseSummaryBuilder {
     /// <p>The ID of the application.</p>
@@ -75,7 +80,8 @@ impl DatabaseSummaryBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The ID of the component.</p>
     pub fn component_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +90,8 @@ impl DatabaseSummaryBuilder {
     }
     /// <p>The ID of the component.</p>
     pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_id = input; self
+        self.component_id = input;
+        self
     }
     /// <p>The ID of the database.</p>
     pub fn database_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +100,8 @@ impl DatabaseSummaryBuilder {
     }
     /// <p>The ID of the database.</p>
     pub fn set_database_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_id = input; self
+        self.database_id = input;
+        self
     }
     /// <p>The type of the database.</p>
     pub fn database_type(mut self, input: crate::types::DatabaseType) -> Self {
@@ -101,8 +109,12 @@ impl DatabaseSummaryBuilder {
         self
     }
     /// <p>The type of the database.</p>
-    pub fn set_database_type(mut self, input: std::option::Option<crate::types::DatabaseType>) -> Self {
-        self.database_type = input; self
+    pub fn set_database_type(
+        mut self,
+        input: std::option::Option<crate::types::DatabaseType>,
+    ) -> Self {
+        self.database_type = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,39 +123,43 @@ impl DatabaseSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the database.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the database.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags of the database.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`DatabaseSummary`](crate::types::DatabaseSummary).
     pub fn build(self) -> crate::types::DatabaseSummary {
         crate::types::DatabaseSummary {
-            application_id: self.application_id
-            ,
-            component_id: self.component_id
-            ,
-            database_id: self.database_id
-            ,
-            database_type: self.database_type
-            ,
-            arn: self.arn
-            ,
-            tags: self.tags
-            ,
+            application_id: self.application_id,
+            component_id: self.component_id,
+            database_id: self.database_id,
+            database_type: self.database_type,
+            arn: self.arn,
+            tags: self.tags,
         }
     }
 }
-

@@ -4,50 +4,66 @@ pub use crate::operation::cancel_steps::_cancel_steps_output::CancelStepsOutputB
 pub use crate::operation::cancel_steps::_cancel_steps_input::CancelStepsInputBuilder;
 
 /// Fluent builder constructing a request to `CancelSteps`.
-/// 
+///
 /// <p>Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is successfully submitted. When you use Amazon EMR versions 5.28.0 and later, you can cancel steps that are in a <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon EMR, you can only cancel steps that are in a <code>PENDING</code> state. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelStepsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::cancel_steps::builders::CancelStepsInputBuilder,
+    inner: crate::operation::cancel_steps::builders::CancelStepsInputBuilder,
 }
-impl CancelStepsFluentBuilder  {
+impl CancelStepsFluentBuilder {
     /// Creates a new `CancelSteps`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::cancel_steps::CancelSteps, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::cancel_steps::CancelStepsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::cancel_steps::CancelStepsOutput, aws_smithy_http::result::SdkError<crate::operation::cancel_steps::CancelStepsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::cancel_steps::CancelSteps,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::cancel_steps::CancelStepsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::cancel_steps::CancelStepsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::cancel_steps::CancelStepsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use <code>RunJobFlow</code> and <code>ListClusters</code> to get ClusterIDs. </p>
     pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_id(input.into());
@@ -68,7 +84,10 @@ impl CancelStepsFluentBuilder  {
         self
     }
     /// <p>The list of <code>StepIDs</code> to cancel. Use <code>ListSteps</code> to get steps and their states for the specified cluster.</p>
-    pub fn set_step_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_step_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_step_ids(input);
         self
     }
@@ -78,9 +97,11 @@ impl CancelStepsFluentBuilder  {
         self
     }
     /// <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the value is <code>SEND_INTERRUPT</code>.</p>
-    pub fn set_step_cancellation_option(mut self, input: std::option::Option<crate::types::StepCancellationOption>) -> Self {
+    pub fn set_step_cancellation_option(
+        mut self,
+        input: std::option::Option<crate::types::StepCancellationOption>,
+    ) -> Self {
         self.inner = self.inner.set_step_cancellation_option(input);
         self
     }
 }
-

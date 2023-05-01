@@ -3,7 +3,7 @@
 /// <p>Details related to problems with AWS TNB resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProblemDetails  {
+pub struct ProblemDetails {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
     #[doc(hidden)]
     pub detail: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ProblemDetails  {
 }
 impl ProblemDetails {
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
-    pub fn detail(&self) -> std::option::Option<& str> {
+    pub fn detail(&self) -> std::option::Option<&str> {
         self.detail.as_deref()
     }
     /// <p>A human-readable title of the problem type.</p>
-    pub fn title(&self) -> std::option::Option<& str> {
+    pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ProblemDetailsBuilder {
     }
     /// <p>A human-readable explanation specific to this occurrence of the problem.</p>
     pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detail = input; self
+        self.detail = input;
+        self
     }
     /// <p>A human-readable title of the problem type.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ProblemDetailsBuilder {
     }
     /// <p>A human-readable title of the problem type.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input; self
+        self.title = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProblemDetails`](crate::types::ProblemDetails).
     pub fn build(self) -> crate::types::ProblemDetails {
         crate::types::ProblemDetails {
-            detail: self.detail
-            ,
-            title: self.title
-            ,
+            detail: self.detail,
+            title: self.title,
         }
     }
 }
-

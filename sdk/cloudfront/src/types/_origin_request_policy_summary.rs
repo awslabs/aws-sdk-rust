@@ -3,7 +3,7 @@
 /// <p>Contains an origin request policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OriginRequestPolicySummary  {
+pub struct OriginRequestPolicySummary {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::OriginRequestPolicyType>,
@@ -13,11 +13,11 @@ pub struct OriginRequestPolicySummary  {
 }
 impl OriginRequestPolicySummary {
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::OriginRequestPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::OriginRequestPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The origin request policy.</p>
-    pub fn origin_request_policy(&self) -> std::option::Option<& crate::types::OriginRequestPolicy> {
+    pub fn origin_request_policy(&self) -> std::option::Option<&crate::types::OriginRequestPolicy> {
         self.origin_request_policy.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl OriginRequestPolicySummaryBuilder {
         self
     }
     /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or <code>custom</code> (created in this Amazon Web Services account).</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::OriginRequestPolicyType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::OriginRequestPolicyType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The origin request policy.</p>
     pub fn origin_request_policy(mut self, input: crate::types::OriginRequestPolicy) -> Self {
@@ -51,17 +55,18 @@ impl OriginRequestPolicySummaryBuilder {
         self
     }
     /// <p>The origin request policy.</p>
-    pub fn set_origin_request_policy(mut self, input: std::option::Option<crate::types::OriginRequestPolicy>) -> Self {
-        self.origin_request_policy = input; self
+    pub fn set_origin_request_policy(
+        mut self,
+        input: std::option::Option<crate::types::OriginRequestPolicy>,
+    ) -> Self {
+        self.origin_request_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`OriginRequestPolicySummary`](crate::types::OriginRequestPolicySummary).
     pub fn build(self) -> crate::types::OriginRequestPolicySummary {
         crate::types::OriginRequestPolicySummary {
-            r#type: self.r#type
-            ,
-            origin_request_policy: self.origin_request_policy
-            ,
+            r#type: self.r#type,
+            origin_request_policy: self.origin_request_policy,
         }
     }
 }
-

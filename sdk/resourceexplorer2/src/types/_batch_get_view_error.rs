@@ -3,7 +3,7 @@
 /// <p>A collection of error messages for any views that Amazon Web Services Resource Explorer couldn't retrieve details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetViewError  {
+pub struct BatchGetViewError {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
     #[doc(hidden)]
     pub view_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct BatchGetViewError  {
 }
 impl BatchGetViewError {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
-    pub fn view_arn(&self) -> std::option::Option<& str> {
+    pub fn view_arn(&self) -> std::option::Option<&str> {
         self.view_arn.as_deref()
     }
     /// <p>The description of the error for the specified view.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl BatchGetViewErrorBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view for which Resource Explorer failed to retrieve details.</p>
     pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.view_arn = input; self
+        self.view_arn = input;
+        self
     }
     /// <p>The description of the error for the specified view.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl BatchGetViewErrorBuilder {
     }
     /// <p>The description of the error for the specified view.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetViewError`](crate::types::BatchGetViewError).
     pub fn build(self) -> crate::types::BatchGetViewError {
         crate::types::BatchGetViewError {
-            view_arn: self.view_arn
-            ,
-            error_message: self.error_message
-            ,
+            view_arn: self.view_arn,
+            error_message: self.error_message,
         }
     }
 }
-

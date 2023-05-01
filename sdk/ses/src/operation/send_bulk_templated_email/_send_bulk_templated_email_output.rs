@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendBulkTemplatedEmailOutput  {
+pub struct SendBulkTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::vec::Vec<crate::types::BulkEmailDestinationStatus>>,
@@ -10,18 +10,20 @@ pub struct SendBulkTemplatedEmailOutput  {
 }
 impl SendBulkTemplatedEmailOutput {
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
-    pub fn status(&self) -> std::option::Option<& [crate::types::BulkEmailDestinationStatus]> {
+    pub fn status(&self) -> std::option::Option<&[crate::types::BulkEmailDestinationStatus]> {
         self.status.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for SendBulkTemplatedEmailOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SendBulkTemplatedEmailOutput {
     /// Creates a new builder-style object to manufacture [`SendBulkTemplatedEmailOutput`](crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput).
-    pub fn builder() -> crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailOutputBuilder
+    {
         crate::operation::send_bulk_templated_email::builders::SendBulkTemplatedEmailOutputBuilder::default()
     }
 }
@@ -41,30 +43,34 @@ impl SendBulkTemplatedEmailOutputBuilder {
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
     pub fn status(mut self, input: crate::types::BulkEmailDestinationStatus) -> Self {
         let mut v = self.status.unwrap_or_default();
-                        v.push(input);
-                        self.status = Some(v);
-                        self
+        v.push(input);
+        self.status = Some(v);
+        self
     }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> action.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::vec::Vec<crate::types::BulkEmailDestinationStatus>>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BulkEmailDestinationStatus>>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SendBulkTemplatedEmailOutput`](crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput).
-    pub fn build(self) -> crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput {
         crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput {
-            status: self.status
-            ,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

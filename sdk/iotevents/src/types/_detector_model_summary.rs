@@ -3,7 +3,7 @@
 /// <p>Information about the detector model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorModelSummary  {
+pub struct DetectorModelSummary {
     /// <p>The name of the detector model.</p>
     #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DetectorModelSummary  {
 }
 impl DetectorModelSummary {
     /// <p>The name of the detector model.</p>
-    pub fn detector_model_name(&self) -> std::option::Option<& str> {
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
         self.detector_model_name.as_deref()
     }
     /// <p>A brief description of the detector model.</p>
-    pub fn detector_model_description(&self) -> std::option::Option<& str> {
+    pub fn detector_model_description(&self) -> std::option::Option<&str> {
         self.detector_model_description.as_deref()
     }
     /// <p>The time the detector model was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl DetectorModelSummaryBuilder {
         self
     }
     /// <p>The name of the detector model.</p>
-    pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_model_name = input; self
+    pub fn set_detector_model_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.detector_model_name = input;
+        self
     }
     /// <p>A brief description of the detector model.</p>
     pub fn detector_model_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +63,12 @@ impl DetectorModelSummaryBuilder {
         self
     }
     /// <p>A brief description of the detector model.</p>
-    pub fn set_detector_model_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_model_description = input; self
+    pub fn set_detector_model_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.detector_model_description = input;
+        self
     }
     /// <p>The time the detector model was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,19 +76,19 @@ impl DetectorModelSummaryBuilder {
         self
     }
     /// <p>The time the detector model was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetectorModelSummary`](crate::types::DetectorModelSummary).
     pub fn build(self) -> crate::types::DetectorModelSummary {
         crate::types::DetectorModelSummary {
-            detector_model_name: self.detector_model_name
-            ,
-            detector_model_description: self.detector_model_description
-            ,
-            creation_time: self.creation_time
-            ,
+            detector_model_name: self.detector_model_name,
+            detector_model_description: self.detector_model_description,
+            creation_time: self.creation_time,
         }
     }
 }
-

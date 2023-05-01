@@ -4,54 +4,74 @@ pub use crate::operation::reboot_cache_cluster::_reboot_cache_cluster_output::Re
 pub use crate::operation::reboot_cache_cluster::_reboot_cache_cluster_input::RebootCacheClusterInputBuilder;
 
 /// Fluent builder constructing a request to `RebootCacheCluster`.
-/// 
-/// <p>Reboots some, or all, of the cache nodes within a provisioned cluster. This operation applies any modified cache parameter groups to the cluster. The reboot operation takes place as soon as possible, and results in a momentary outage to the cluster. During the reboot, the cluster status is set to REBOOTING.</p> 
-/// <p>The reboot causes the contents of the cache (for each cache node being rebooted) to be lost.</p> 
-/// <p>When the reboot is complete, a cluster event is created.</p> 
-/// <p>Rebooting a cluster is currently supported on Memcached and Redis (cluster mode disabled) clusters. Rebooting is not supported on Redis (cluster mode enabled) clusters.</p> 
+///
+/// <p>Reboots some, or all, of the cache nodes within a provisioned cluster. This operation applies any modified cache parameter groups to the cluster. The reboot operation takes place as soon as possible, and results in a momentary outage to the cluster. During the reboot, the cluster status is set to REBOOTING.</p>
+/// <p>The reboot causes the contents of the cache (for each cache node being rebooted) to be lost.</p>
+/// <p>When the reboot is complete, a cluster event is created.</p>
+/// <p>Rebooting a cluster is currently supported on Memcached and Redis (cluster mode disabled) clusters. Rebooting is not supported on Redis (cluster mode enabled) clusters.</p>
 /// <p>If you make changes to parameters that require a Redis (cluster mode enabled) cluster reboot for the changes to be applied, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/nodes.rebooting.html">Rebooting a Cluster</a> for an alternate process.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RebootCacheClusterFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reboot_cache_cluster::builders::RebootCacheClusterInputBuilder,
+    inner: crate::operation::reboot_cache_cluster::builders::RebootCacheClusterInputBuilder,
 }
-impl RebootCacheClusterFluentBuilder  {
+impl RebootCacheClusterFluentBuilder {
     /// Creates a new `RebootCacheCluster`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::reboot_cache_cluster::RebootCacheCluster, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::reboot_cache_cluster::RebootCacheClusterError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::reboot_cache_cluster::RebootCacheClusterOutput, aws_smithy_http::result::SdkError<crate::operation::reboot_cache_cluster::RebootCacheClusterError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::reboot_cache_cluster::RebootCacheCluster,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::reboot_cache_cluster::RebootCacheClusterError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::reboot_cache_cluster::RebootCacheClusterOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::reboot_cache_cluster::RebootCacheClusterError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
     pub fn cache_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cache_cluster_id(input.into());
@@ -72,9 +92,11 @@ impl RebootCacheClusterFluentBuilder  {
         self
     }
     /// <p>A list of cache node IDs to reboot. A node ID is a numeric identifier (0001, 0002, etc.). To reboot an entire cluster, specify all of the cache node IDs.</p>
-    pub fn set_cache_node_ids_to_reboot(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_cache_node_ids_to_reboot(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_cache_node_ids_to_reboot(input);
         self
     }
 }
-

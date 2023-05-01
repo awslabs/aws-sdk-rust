@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SearchResourcesInput  {
+pub struct SearchResourcesInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -17,7 +17,8 @@ pub struct SearchResourcesInput  {
     pub organization_id: std::option::Option<std::string::String>,
     /// <p>A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.</p>
     #[doc(hidden)]
-    pub additional_response_fields: std::option::Option<std::vec::Vec<crate::types::AdditionalResponseFieldType>>,
+    pub additional_response_fields:
+        std::option::Option<std::vec::Vec<crate::types::AdditionalResponseFieldType>>,
     /// <p>Filters results based on entity metadata.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::types::Filters>,
@@ -33,31 +34,33 @@ pub struct SearchResourcesInput  {
 }
 impl SearchResourcesInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.</p>
-    pub fn query_text(&self) -> std::option::Option<& str> {
+    pub fn query_text(&self) -> std::option::Option<&str> {
         self.query_text.as_deref()
     }
     /// <p>Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content</p>
-    pub fn query_scopes(&self) -> std::option::Option<& [crate::types::SearchQueryScopeType]> {
+    pub fn query_scopes(&self) -> std::option::Option<&[crate::types::SearchQueryScopeType]> {
         self.query_scopes.as_deref()
     }
     /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.</p>
-    pub fn additional_response_fields(&self) -> std::option::Option<& [crate::types::AdditionalResponseFieldType]> {
+    pub fn additional_response_fields(
+        &self,
+    ) -> std::option::Option<&[crate::types::AdditionalResponseFieldType]> {
         self.additional_response_fields.as_deref()
     }
     /// <p>Filters results based on entity metadata.</p>
-    pub fn filters(&self) -> std::option::Option<& crate::types::Filters> {
+    pub fn filters(&self) -> std::option::Option<&crate::types::Filters> {
         self.filters.as_ref()
     }
     /// <p>Order by results in one or more categories.</p>
-    pub fn order_by(&self) -> std::option::Option<& [crate::types::SearchSortResult]> {
+    pub fn order_by(&self) -> std::option::Option<&[crate::types::SearchSortResult]> {
         self.order_by.as_deref()
     }
     /// <p>Max results count per page.</p>
@@ -65,18 +68,21 @@ impl SearchResourcesInput {
         self.limit
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl  std::fmt::Debug for SearchResourcesInput  {
+impl std::fmt::Debug for SearchResourcesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SearchResourcesInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
         formatter.field("query_text", &"*** Sensitive Data Redacted ***");
         formatter.field("query_scopes", &self.query_scopes);
         formatter.field("organization_id", &self.organization_id);
-        formatter.field("additional_response_fields", &self.additional_response_fields);
+        formatter.field(
+            "additional_response_fields",
+            &self.additional_response_fields,
+        );
         formatter.field("filters", &self.filters);
         formatter.field("order_by", &self.order_by);
         formatter.field("limit", &self.limit);
@@ -99,7 +105,8 @@ pub struct SearchResourcesInputBuilder {
     pub(crate) query_text: std::option::Option<std::string::String>,
     pub(crate) query_scopes: std::option::Option<std::vec::Vec<crate::types::SearchQueryScopeType>>,
     pub(crate) organization_id: std::option::Option<std::string::String>,
-    pub(crate) additional_response_fields: std::option::Option<std::vec::Vec<crate::types::AdditionalResponseFieldType>>,
+    pub(crate) additional_response_fields:
+        std::option::Option<std::vec::Vec<crate::types::AdditionalResponseFieldType>>,
     pub(crate) filters: std::option::Option<crate::types::Filters>,
     pub(crate) order_by: std::option::Option<std::vec::Vec<crate::types::SearchSortResult>>,
     pub(crate) limit: std::option::Option<i32>,
@@ -112,8 +119,12 @@ impl SearchResourcesInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.</p>
     pub fn query_text(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +133,8 @@ impl SearchResourcesInputBuilder {
     }
     /// <p>The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.</p>
     pub fn set_query_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_text = input; self
+        self.query_text = input;
+        self
     }
     /// Appends an item to `query_scopes`.
     ///
@@ -131,13 +143,17 @@ impl SearchResourcesInputBuilder {
     /// <p>Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content</p>
     pub fn query_scopes(mut self, input: crate::types::SearchQueryScopeType) -> Self {
         let mut v = self.query_scopes.unwrap_or_default();
-                        v.push(input);
-                        self.query_scopes = Some(v);
-                        self
+        v.push(input);
+        self.query_scopes = Some(v);
+        self
     }
     /// <p>Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content</p>
-    pub fn set_query_scopes(mut self, input: std::option::Option<std::vec::Vec<crate::types::SearchQueryScopeType>>) -> Self {
-        self.query_scopes = input; self
+    pub fn set_query_scopes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SearchQueryScopeType>>,
+    ) -> Self {
+        self.query_scopes = input;
+        self
     }
     /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,22 +162,30 @@ impl SearchResourcesInputBuilder {
     }
     /// <p>Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// Appends an item to `additional_response_fields`.
     ///
     /// To override the contents of this collection use [`set_additional_response_fields`](Self::set_additional_response_fields).
     ///
     /// <p>A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.</p>
-    pub fn additional_response_fields(mut self, input: crate::types::AdditionalResponseFieldType) -> Self {
+    pub fn additional_response_fields(
+        mut self,
+        input: crate::types::AdditionalResponseFieldType,
+    ) -> Self {
         let mut v = self.additional_response_fields.unwrap_or_default();
-                        v.push(input);
-                        self.additional_response_fields = Some(v);
-                        self
+        v.push(input);
+        self.additional_response_fields = Some(v);
+        self
     }
     /// <p>A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.</p>
-    pub fn set_additional_response_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdditionalResponseFieldType>>) -> Self {
-        self.additional_response_fields = input; self
+    pub fn set_additional_response_fields(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AdditionalResponseFieldType>>,
+    ) -> Self {
+        self.additional_response_fields = input;
+        self
     }
     /// <p>Filters results based on entity metadata.</p>
     pub fn filters(mut self, input: crate::types::Filters) -> Self {
@@ -170,7 +194,8 @@ impl SearchResourcesInputBuilder {
     }
     /// <p>Filters results based on entity metadata.</p>
     pub fn set_filters(mut self, input: std::option::Option<crate::types::Filters>) -> Self {
-        self.filters = input; self
+        self.filters = input;
+        self
     }
     /// Appends an item to `order_by`.
     ///
@@ -179,13 +204,17 @@ impl SearchResourcesInputBuilder {
     /// <p>Order by results in one or more categories.</p>
     pub fn order_by(mut self, input: crate::types::SearchSortResult) -> Self {
         let mut v = self.order_by.unwrap_or_default();
-                        v.push(input);
-                        self.order_by = Some(v);
-                        self
+        v.push(input);
+        self.order_by = Some(v);
+        self
     }
     /// <p>Order by results in one or more categories.</p>
-    pub fn set_order_by(mut self, input: std::option::Option<std::vec::Vec<crate::types::SearchSortResult>>) -> Self {
-        self.order_by = input; self
+    pub fn set_order_by(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SearchSortResult>>,
+    ) -> Self {
+        self.order_by = input;
+        self
     }
     /// <p>Max results count per page.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -194,7 +223,8 @@ impl SearchResourcesInputBuilder {
     }
     /// <p>Max results count per page.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -203,32 +233,27 @@ impl SearchResourcesInputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchResourcesInput`](crate::operation::search_resources::SearchResourcesInput).
-    pub fn build(self) -> Result<crate::operation::search_resources::SearchResourcesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::search_resources::SearchResourcesInput {
-                authentication_token: self.authentication_token
-                ,
-                query_text: self.query_text
-                ,
-                query_scopes: self.query_scopes
-                ,
-                organization_id: self.organization_id
-                ,
-                additional_response_fields: self.additional_response_fields
-                ,
-                filters: self.filters
-                ,
-                order_by: self.order_by
-                ,
-                limit: self.limit
-                ,
-                marker: self.marker
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::search_resources::SearchResourcesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::search_resources::SearchResourcesInput {
+            authentication_token: self.authentication_token,
+            query_text: self.query_text,
+            query_scopes: self.query_scopes,
+            organization_id: self.organization_id,
+            additional_response_fields: self.additional_response_fields,
+            filters: self.filters,
+            order_by: self.order_by,
+            limit: self.limit,
+            marker: self.marker,
+        })
     }
 }
 impl std::fmt::Debug for SearchResourcesInputBuilder {
@@ -238,7 +263,10 @@ impl std::fmt::Debug for SearchResourcesInputBuilder {
         formatter.field("query_text", &"*** Sensitive Data Redacted ***");
         formatter.field("query_scopes", &self.query_scopes);
         formatter.field("organization_id", &self.organization_id);
-        formatter.field("additional_response_fields", &self.additional_response_fields);
+        formatter.field(
+            "additional_response_fields",
+            &self.additional_response_fields,
+        );
         formatter.field("filters", &self.filters);
         formatter.field("order_by", &self.order_by);
         formatter.field("limit", &self.limit);
@@ -246,4 +274,3 @@ impl std::fmt::Debug for SearchResourcesInputBuilder {
         formatter.finish()
     }
 }
-

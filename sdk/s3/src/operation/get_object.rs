@@ -5,88 +5,155 @@ impl GetObjectInput {
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    async fn _make_presigned_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::get_object::GetObject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
-        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
-        .set_use_fips(_config.use_fips)
-        .set_use_dual_stack(_config.use_dual_stack)
-        .set_endpoint(_config.endpoint_url
-        .clone())
-        .set_force_path_style(_config.force_path_style)
-        .set_use_arn_region(_config.use_arn_region)
-        .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
-        .set_accelerate(_config.accelerate)
-        .set_bucket(self.bucket.clone()).build()
-                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
-                                let (endpoint_result, params) = match params_result {
-                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
-                                    Err(e) => (Err(e), None)
-                                };
+    async fn _make_presigned_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::get_object::GetObject,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
+            .set_endpoint(_config.endpoint_url.clone())
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
-            fn uri_base(_input: &crate::operation::get_object::GetObjectInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(
+                _input: &crate::operation::get_object::GetObjectInput,
+                output: &mut String,
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 use std::fmt::Write as _;
                 let input_1 = &_input.key;
-                let input_1 = input_1.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_1, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_1,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
-                            }
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
                 write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::operation::get_object::GetObjectInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(
+                _input: &crate::operation::get_object::GetObjectInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(output);
                 query.push_kv("x-id", "GetObject");
                 if let Some(inner_2) = &_input.response_cache_control {
-                     {
-                        query.push_kv("response-cache-control", &aws_smithy_http::query::fmt_string(&inner_2));
+                    {
+                        query.push_kv(
+                            "response-cache-control",
+                            &aws_smithy_http::query::fmt_string(&inner_2),
+                        );
                     }
                 }
                 if let Some(inner_3) = &_input.response_content_disposition {
-                     {
-                        query.push_kv("response-content-disposition", &aws_smithy_http::query::fmt_string(&inner_3));
+                    {
+                        query.push_kv(
+                            "response-content-disposition",
+                            &aws_smithy_http::query::fmt_string(&inner_3),
+                        );
                     }
                 }
                 if let Some(inner_4) = &_input.response_content_encoding {
-                     {
-                        query.push_kv("response-content-encoding", &aws_smithy_http::query::fmt_string(&inner_4));
+                    {
+                        query.push_kv(
+                            "response-content-encoding",
+                            &aws_smithy_http::query::fmt_string(&inner_4),
+                        );
                     }
                 }
                 if let Some(inner_5) = &_input.response_content_language {
-                     {
-                        query.push_kv("response-content-language", &aws_smithy_http::query::fmt_string(&inner_5));
+                    {
+                        query.push_kv(
+                            "response-content-language",
+                            &aws_smithy_http::query::fmt_string(&inner_5),
+                        );
                     }
                 }
                 if let Some(inner_6) = &_input.response_content_type {
-                     {
-                        query.push_kv("response-content-type", &aws_smithy_http::query::fmt_string(&inner_6));
+                    {
+                        query.push_kv(
+                            "response-content-type",
+                            &aws_smithy_http::query::fmt_string(&inner_6),
+                        );
                     }
                 }
                 if let Some(inner_7) = &_input.response_expires {
-                     {
-                        query.push_kv("response-expires", &aws_smithy_http::query::fmt_timestamp(inner_7, aws_smithy_types::date_time::Format::HttpDate)?);
+                    {
+                        query.push_kv(
+                            "response-expires",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_7,
+                                aws_smithy_types::date_time::Format::HttpDate,
+                            )?,
+                        );
                     }
                 }
                 if let Some(inner_8) = &_input.version_id {
-                     {
+                    {
                         query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_8));
                     }
                 }
                 if let Some(inner_9) = &_input.part_number {
                     if *inner_9 != 0 {
-                        query.push_kv("partNumber", aws_smithy_types::primitive::Encoder::from(*inner_9).encode());
+                        query.push_kv(
+                            "partNumber",
+                            aws_smithy_types::primitive::Encoder::from(*inner_9).encode(),
+                        );
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                            input: &crate::operation::get_object::GetObjectInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                input: &crate::operation::get_object::GetObjectInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::protocol_serde::shape_get_object::ser_get_object_headers(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object::ser_get_object_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -94,172 +161,256 @@ impl GetObjectInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params { request.properties_mut().insert(params); }
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                                aws_types::os_shim_internal::Env::real(),
-                                crate::meta::API_METADATA.clone(),
-                            );
-                            if let Some(app_name) = _config.app_name() {
-                                user_agent = user_agent.with_app_name(app_name.clone());
-                            }
-                            request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::meta::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         if let Some(checksum_mode) = self.checksum_mode.as_ref() {
-                                    let checksum_mode = checksum_mode.clone();
-                                    // Place crate::types::ChecksumMode in the property bag so we can check
-                                    // it during response deserialization to see if we need to checksum validate
-                                    // the response body.
-                                    let _ = request.properties_mut().insert(checksum_mode);
-                                }
+            let checksum_mode = checksum_mode.clone();
+            // Place crate::types::ChecksumMode in the property bag so we can check
+            // it during response deserialization to see if we need to checksum validate
+            // the response body.
+            let _ = request.properties_mut().insert(checksum_mode);
+        }
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
         signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::get_object::GetObject::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetObject", "s3"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_credentials_cache(
+            &mut request.properties_mut(),
+            _config.credentials_cache.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::get_object::GetObject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new("GetObject", "s3"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
-    /// 
+    ///
     /// Creates a presigned request for this operation.
-    /// 
+    ///
     /// The credentials provider from the `config` will be used to generate the request's signature.
     /// The `presigning_config` provides additional presigning-specific config values, such as the
     /// amount of time the request should be valid for after creation.
-    /// 
+    ///
     /// Presigned requests can be given to other users or applications to access a resource or perform
     /// an operation without having access to the AWS security credentials.
-    /// 
+    ///
     pub async fn presigned(
-                    self,
-                    config: &crate::config::Config,
-                    presigning_config: crate::presigning::PresigningConfig
-                ) -> Result<crate::presigning::PresignedRequest, aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError>> {
-        let (mut request, _) = self._make_presigned_operation(config)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .into_request_response();
-         {
+        self,
+        config: &crate::config::Config,
+        presigning_config: crate::presigning::PresigningConfig,
+    ) -> Result<
+        crate::presigning::PresignedRequest,
+        aws_smithy_http::result::SdkError<crate::operation::get_object::GetObjectError>,
+    > {
+        let (mut request, _) = self
+            ._make_presigned_operation(config)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .into_request_response();
+        {
             // Change signature type to query params and wire up presigning config
-                                let mut props = request.properties_mut();
-                                props.insert(presigning_config.start_time());
-            props.insert(
-                aws_sigv4::http_request::SignableBody::UnsignedPayload
-            );
-            let mut config = props.get_mut::<aws_sig_auth::signer::OperationSigningConfig>()
-                                    .expect("signing config added by make_operation()");
-                                config.signature_type = aws_sig_auth::signer::HttpSignatureType::HttpRequestQueryParams;
-                                config.expires_in = Some(presigning_config.expires());
+            let mut props = request.properties_mut();
+            props.insert(presigning_config.start_time());
+            props.insert(aws_sigv4::http_request::SignableBody::UnsignedPayload);
+            let mut config = props
+                .get_mut::<aws_sig_auth::signer::OperationSigningConfig>()
+                .expect("signing config added by make_operation()");
+            config.signature_type = aws_sig_auth::signer::HttpSignatureType::HttpRequestQueryParams;
+            config.expires_in = Some(presigning_config.expires());
         }
         let middleware = crate::middleware::DefaultMiddleware::default();
-                        let mut svc = tower::builder::ServiceBuilder::new()
-                            .layer(&middleware)
-                            .service(crate::presigning::service::PresignedRequestService::new());
-        
-                        use tower::{Service, ServiceExt};
-                        Ok(svc.ready().await?.call(request).await?)
+        let mut svc = tower::builder::ServiceBuilder::new()
+            .layer(&middleware)
+            .service(crate::presigning::service::PresignedRequestService::new());
+
+        use tower::{Service, ServiceExt};
+        Ok(svc.ready().await?.call(request).await?)
     }
     /// Consumes the builder and constructs an Operation<[`GetObject`](crate::operation::get_object::GetObject)>
     #[allow(unused_mut)]
     #[allow(clippy::let_and_return)]
     #[allow(clippy::needless_borrow)]
-    pub async fn make_operation(&self, _config: &crate::config::Config) -> std::result::Result<aws_smithy_http::operation::Operation<crate::operation::get_object::GetObject, aws_http::retry::AwsResponseRetryClassifier>, aws_smithy_http::operation::error::BuildError> {
-        let params_result = crate::endpoint::Params::builder().set_region(_config.region.as_ref().map(|r|r.as_ref().to_owned()))
-        .set_use_fips(_config.use_fips)
-        .set_use_dual_stack(_config.use_dual_stack)
-        .set_endpoint(_config.endpoint_url
-        .clone())
-        .set_force_path_style(_config.force_path_style)
-        .set_use_arn_region(_config.use_arn_region)
-        .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
-        .set_accelerate(_config.accelerate)
-        .set_bucket(self.bucket.clone()).build()
-                                    .map_err(|err|aws_smithy_http::endpoint::ResolveEndpointError::from_source("could not construct endpoint parameters", err));
-                                let (endpoint_result, params) = match params_result {
-                                    Ok(params) => (_config.endpoint_resolver.resolve_endpoint(&params), Some(params)),
-                                    Err(e) => (Err(e), None)
-                                };
+    pub async fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        aws_smithy_http::operation::Operation<
+            crate::operation::get_object::GetObject,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        let params_result = crate::endpoint::Params::builder()
+            .set_region(_config.region.as_ref().map(|r| r.as_ref().to_owned()))
+            .set_use_fips(_config.use_fips)
+            .set_use_dual_stack(_config.use_dual_stack)
+            .set_endpoint(_config.endpoint_url.clone())
+            .set_force_path_style(_config.force_path_style)
+            .set_use_arn_region(_config.use_arn_region)
+            .set_disable_multi_region_access_points(_config.disable_multi_region_access_points)
+            .set_accelerate(_config.accelerate)
+            .set_bucket(self.bucket.clone())
+            .build()
+            .map_err(|err| {
+                aws_smithy_http::endpoint::ResolveEndpointError::from_source(
+                    "could not construct endpoint parameters",
+                    err,
+                )
+            });
+        let (endpoint_result, params) = match params_result {
+            Ok(params) => (
+                _config.endpoint_resolver.resolve_endpoint(&params),
+                Some(params),
+            ),
+            Err(e) => (Err(e), None),
+        };
         let mut request = {
-            fn uri_base(_input: &crate::operation::get_object::GetObjectInput, output: &mut String) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_base(
+                _input: &crate::operation::get_object::GetObjectInput,
+                output: &mut String,
+            ) -> std::result::Result<(), aws_smithy_http::operation::error::BuildError>
+            {
                 use std::fmt::Write as _;
                 let input_10 = &_input.key;
-                let input_10 = input_10.as_ref().ok_or_else(|| aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))?;
-                let key = aws_smithy_http::label::fmt_string(input_10, aws_smithy_http::label::EncodingStrategy::Greedy);
+                let input_10 = input_10.as_ref().ok_or_else(|| {
+                    aws_smithy_http::operation::error::BuildError::missing_field(
+                        "key",
+                        "cannot be empty or unset",
+                    )
+                })?;
+                let key = aws_smithy_http::label::fmt_string(
+                    input_10,
+                    aws_smithy_http::label::EncodingStrategy::Greedy,
+                );
                 if key.is_empty() {
-                                return Err(aws_smithy_http::operation::error::BuildError::missing_field("key", "cannot be empty or unset"))
-                            }
+                    return Err(
+                        aws_smithy_http::operation::error::BuildError::missing_field(
+                            "key",
+                            "cannot be empty or unset",
+                        ),
+                    );
+                }
                 write!(output, "/{Key}", Key = key).expect("formatting should succeed");
                 Ok(())
             }
-            fn uri_query(_input: &crate::operation::get_object::GetObjectInput, mut output: &mut String) -> Result<(), aws_smithy_http::operation::error::BuildError> {
+            fn uri_query(
+                _input: &crate::operation::get_object::GetObjectInput,
+                mut output: &mut String,
+            ) -> Result<(), aws_smithy_http::operation::error::BuildError> {
                 let mut query = aws_smithy_http::query::Writer::new(output);
                 query.push_kv("x-id", "GetObject");
                 if let Some(inner_11) = &_input.response_cache_control {
-                     {
-                        query.push_kv("response-cache-control", &aws_smithy_http::query::fmt_string(&inner_11));
+                    {
+                        query.push_kv(
+                            "response-cache-control",
+                            &aws_smithy_http::query::fmt_string(&inner_11),
+                        );
                     }
                 }
                 if let Some(inner_12) = &_input.response_content_disposition {
-                     {
-                        query.push_kv("response-content-disposition", &aws_smithy_http::query::fmt_string(&inner_12));
+                    {
+                        query.push_kv(
+                            "response-content-disposition",
+                            &aws_smithy_http::query::fmt_string(&inner_12),
+                        );
                     }
                 }
                 if let Some(inner_13) = &_input.response_content_encoding {
-                     {
-                        query.push_kv("response-content-encoding", &aws_smithy_http::query::fmt_string(&inner_13));
+                    {
+                        query.push_kv(
+                            "response-content-encoding",
+                            &aws_smithy_http::query::fmt_string(&inner_13),
+                        );
                     }
                 }
                 if let Some(inner_14) = &_input.response_content_language {
-                     {
-                        query.push_kv("response-content-language", &aws_smithy_http::query::fmt_string(&inner_14));
+                    {
+                        query.push_kv(
+                            "response-content-language",
+                            &aws_smithy_http::query::fmt_string(&inner_14),
+                        );
                     }
                 }
                 if let Some(inner_15) = &_input.response_content_type {
-                     {
-                        query.push_kv("response-content-type", &aws_smithy_http::query::fmt_string(&inner_15));
+                    {
+                        query.push_kv(
+                            "response-content-type",
+                            &aws_smithy_http::query::fmt_string(&inner_15),
+                        );
                     }
                 }
                 if let Some(inner_16) = &_input.response_expires {
-                     {
-                        query.push_kv("response-expires", &aws_smithy_http::query::fmt_timestamp(inner_16, aws_smithy_types::date_time::Format::HttpDate)?);
+                    {
+                        query.push_kv(
+                            "response-expires",
+                            &aws_smithy_http::query::fmt_timestamp(
+                                inner_16,
+                                aws_smithy_types::date_time::Format::HttpDate,
+                            )?,
+                        );
                     }
                 }
                 if let Some(inner_17) = &_input.version_id {
-                     {
+                    {
                         query.push_kv("versionId", &aws_smithy_http::query::fmt_string(&inner_17));
                     }
                 }
                 if let Some(inner_18) = &_input.part_number {
                     if *inner_18 != 0 {
-                        query.push_kv("partNumber", aws_smithy_types::primitive::Encoder::from(*inner_18).encode());
+                        query.push_kv(
+                            "partNumber",
+                            aws_smithy_types::primitive::Encoder::from(*inner_18).encode(),
+                        );
                     }
                 }
                 Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]
             fn update_http_builder(
-                            input: &crate::operation::get_object::GetObjectInput,
-                            builder: http::request::Builder
-                        ) -> std::result::Result<http::request::Builder, aws_smithy_http::operation::error::BuildError> {
+                input: &crate::operation::get_object::GetObjectInput,
+                builder: http::request::Builder,
+            ) -> std::result::Result<
+                http::request::Builder,
+                aws_smithy_http::operation::error::BuildError,
+            > {
                 let mut uri = String::new();
                 uri_base(input, &mut uri)?;
                 uri_query(input, &mut uri)?;
-                let builder = crate::protocol_serde::shape_get_object::ser_get_object_headers(input, builder)?;
+                let builder = crate::protocol_serde::shape_get_object::ser_get_object_headers(
+                    input, builder,
+                )?;
                 Ok(builder.method("GET").uri(uri))
             }
             let mut builder = update_http_builder(&self, http::request::Builder::new())?;
@@ -267,44 +418,58 @@ impl GetObjectInput {
         };
         let mut properties = aws_smithy_http::property_bag::SharedPropertyBag::new();
         #[allow(clippy::useless_conversion)]
-        let body = aws_smithy_http::body::SdkBody::from(
-            ""
-        );
+        let body = aws_smithy_http::body::SdkBody::from("");
         let request = request.body(body).expect("should be valid request");
         let mut request = aws_smithy_http::operation::Request::from_parts(request, properties);
         request.properties_mut().insert(endpoint_result);
-        if let Some(params) = params { request.properties_mut().insert(params); }
-        request.properties_mut().insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
+        if let Some(params) = params {
+            request.properties_mut().insert(params);
+        }
+        request
+            .properties_mut()
+            .insert(aws_smithy_http::http_versions::DEFAULT_HTTP_VERSION_LIST.clone());
         let mut user_agent = aws_http::user_agent::AwsUserAgent::new_from_environment(
-                                aws_types::os_shim_internal::Env::real(),
-                                crate::meta::API_METADATA.clone(),
-                            );
-                            if let Some(app_name) = _config.app_name() {
-                                user_agent = user_agent.with_app_name(app_name.clone());
-                            }
-                            request.properties_mut().insert(user_agent);
+            aws_types::os_shim_internal::Env::real(),
+            crate::meta::API_METADATA.clone(),
+        );
+        if let Some(app_name) = _config.app_name() {
+            user_agent = user_agent.with_app_name(app_name.clone());
+        }
+        request.properties_mut().insert(user_agent);
         if let Some(checksum_mode) = self.checksum_mode.as_ref() {
-                                    let checksum_mode = checksum_mode.clone();
-                                    // Place crate::types::ChecksumMode in the property bag so we can check
-                                    // it during response deserialization to see if we need to checksum validate
-                                    // the response body.
-                                    let _ = request.properties_mut().insert(checksum_mode);
-                                }
+            let checksum_mode = checksum_mode.clone();
+            // Place crate::types::ChecksumMode in the property bag so we can check
+            // it during response deserialization to see if we need to checksum validate
+            // the response body.
+            let _ = request.properties_mut().insert(checksum_mode);
+        }
         let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
         signing_config.signing_options.content_sha256_header = true;
         signing_config.signing_options.double_uri_encode = false;
         signing_config.signing_options.normalize_uri_path = false;
         request.properties_mut().insert(signing_config);
-                            request.properties_mut().insert(aws_types::SigningService::from_static(_config.signing_service()));
-                            if let Some(region) = &_config.region {
-                                request.properties_mut().insert(aws_types::region::SigningRegion::from(region.clone()));
-                            }
+        request
+            .properties_mut()
+            .insert(aws_types::SigningService::from_static(
+                _config.signing_service(),
+            ));
         if let Some(region) = &_config.region {
-                                request.properties_mut().insert(region.clone());
-                            }
-        aws_http::auth::set_credentials_cache(&mut request.properties_mut(), _config.credentials_cache.clone());
-        let op = aws_smithy_http::operation::Operation::new(request, crate::operation::get_object::GetObject::new())
-                            .with_metadata(aws_smithy_http::operation::Metadata::new("GetObject", "s3"));
+            request
+                .properties_mut()
+                .insert(aws_types::region::SigningRegion::from(region.clone()));
+        }
+        if let Some(region) = &_config.region {
+            request.properties_mut().insert(region.clone());
+        }
+        aws_http::auth::set_credentials_cache(
+            &mut request.properties_mut(),
+            _config.credentials_cache.clone(),
+        );
+        let op = aws_smithy_http::operation::Operation::new(
+            request,
+            crate::operation::get_object::GetObject::new(),
+        )
+        .with_metadata(aws_smithy_http::operation::Metadata::new("GetObject", "s3"));
         let op = op.with_retry_classifier(aws_http::retry::AwsResponseRetryClassifier::new());
         Ok(op)
     }
@@ -321,27 +486,39 @@ impl GetObject {
     }
 }
 impl aws_smithy_http::response::ParseHttpResponse for GetObject {
-                type Output = std::result::Result<crate::operation::get_object::GetObjectOutput, crate::operation::get_object::GetObjectError>;
-                fn parse_unloaded(&self, response: &mut aws_smithy_http::operation::Response) -> Option<Self::Output> {
-                     tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
-tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
-                    // This is an error, defer to the non-streaming parser
-                    if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
-                        return None;
-                    }
-                    Some(crate::protocol_serde::shape_get_object::de_get_object_op_response(response))
-                }
-                fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
-                    // if streaming, we only hit this case if its an error
-                    crate::protocol_serde::shape_get_object::de_get_object_http_error(response.status().as_u16(), response.headers(), response.body().as_ref())
-                }
-            }
+    type Output = std::result::Result<
+        crate::operation::get_object::GetObjectOutput,
+        crate::operation::get_object::GetObjectError,
+    >;
+    fn parse_unloaded(
+        &self,
+        response: &mut aws_smithy_http::operation::Response,
+    ) -> Option<Self::Output> {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
+        // This is an error, defer to the non-streaming parser
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
+            return None;
+        }
+        Some(crate::protocol_serde::shape_get_object::de_get_object_op_response(response))
+    }
+    fn parse_loaded(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        // if streaming, we only hit this case if its an error
+        crate::protocol_serde::shape_get_object::de_get_object_http_error(
+            response.status().as_u16(),
+            response.headers(),
+            response.body().as_ref(),
+        )
+    }
+}
 
 /// Do not use this.
-            ///
-            /// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
-            #[deprecated(note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).")]
-            pub type GetObjectErrorKind = GetObjectError;
+///
+/// Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now).
+#[deprecated(
+    note = "Operation `*Error/*ErrorKind` types were combined into a single `*Error` enum. The `.kind` field on `*Error` no longer exists and isn't needed anymore (you can just match on the error directly since it's an enum now)."
+)]
+pub type GetObjectErrorKind = GetObjectError;
 /// Error type for the `GetObjectError` operation.
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
@@ -351,46 +528,38 @@ pub enum GetObjectError {
     /// <p>The specified key does not exist.</p>
     NoSuchKey(crate::types::error::NoSuchKey),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-                    Unhandled(aws_smithy_types::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl aws_smithy_http::result::CreateUnhandledError for GetObjectError {
-    
-                    fn create_unhandled_error(
-                        source: Box<dyn std::error::Error + Send + Sync + 'static>,
-                        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>
-                    ) -> Self
-                     {
+    fn create_unhandled_error(
+        source: Box<dyn std::error::Error + Send + Sync + 'static>,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> Self {
         Self::Unhandled({
-                                let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
-                                builder.set_meta(meta);
-                                builder.build()
-                            })
+            let mut builder = aws_smithy_types::error::Unhandled::builder().source(source);
+            builder.set_meta(meta);
+            builder.build()
+        })
     }
 }
 impl std::fmt::Display for GetObjectError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            Self::InvalidObjectState(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::NoSuchKey(_inner) =>
-            _inner.fmt(f)
-            ,
-            Self::Unhandled(_inner) => {
-                _inner.fmt(f)
-            }
+            Self::InvalidObjectState(_inner) => _inner.fmt(f),
+            Self::NoSuchKey(_inner) => _inner.fmt(f),
+            Self::Unhandled(_inner) => _inner.fmt(f),
         }
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for GetObjectError {
     fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         match self {
-            Self::InvalidObjectState(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
-            Self::NoSuchKey(_inner) =>
-            aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
-            ,
+            Self::InvalidObjectState(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
+            Self::NoSuchKey(_inner) => {
+                aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
+            }
             Self::Unhandled(_inner) => {
                 aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(_inner)
             }
@@ -398,15 +567,15 @@ impl aws_smithy_types::error::metadata::ProvideErrorMetadata for GetObjectError 
     }
 }
 impl crate::s3_request_id::RequestIdExt for crate::operation::get_object::GetObjectError {
-                            fn extended_request_id(&self) -> Option<&str> {
-                                self.meta().extended_request_id()
-                            }
-                        }
+    fn extended_request_id(&self) -> Option<&str> {
+        self.meta().extended_request_id()
+    }
+}
 impl aws_http::request_id::RequestId for crate::operation::get_object::GetObjectError {
-                            fn request_id(&self) -> Option<&str> {
-                                self.meta().request_id()
-                            }
-                        }
+    fn request_id(&self) -> Option<&str> {
+        self.meta().request_id()
+    }
+}
 impl aws_smithy_types::retry::ProvideErrorKind for GetObjectError {
     fn code(&self) -> std::option::Option<&str> {
         aws_smithy_types::error::metadata::ProvideErrorMetadata::code(self)
@@ -417,18 +586,27 @@ impl aws_smithy_types::retry::ProvideErrorKind for GetObjectError {
 }
 impl GetObjectError {
     /// Creates the `GetObjectError::Unhandled` variant from any error type.
-                    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err).build())
-                    }
-    
-                    /// Creates the `GetObjectError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
-                    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
-                        Self::Unhandled(aws_smithy_types::error::Unhandled::builder().source(err.clone()).meta(err).build())
-                    }
-    /// 
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err)
+                .build(),
+        )
+    }
+
+    /// Creates the `GetObjectError::Unhandled` variant from a `aws_smithy_types::error::ErrorMetadata`.
+    pub fn generic(err: aws_smithy_types::error::ErrorMetadata) -> Self {
+        Self::Unhandled(
+            aws_smithy_types::error::Unhandled::builder()
+                .source(err.clone())
+                .meta(err)
+                .build(),
+        )
+    }
+    ///
     /// Returns error metadata, which includes the error code, message,
     /// request ID, and potentially additional information.
-    /// 
+    ///
     pub fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         match self {
@@ -449,15 +627,9 @@ impl GetObjectError {
 impl std::error::Error for GetObjectError {
     fn source(&self) -> std::option::Option<&(dyn std::error::Error + 'static)> {
         match self {
-            Self::InvalidObjectState(_inner) =>
-            Some(_inner)
-            ,
-            Self::NoSuchKey(_inner) =>
-            Some(_inner)
-            ,
-            Self::Unhandled(_inner) => {
-                Some(_inner)
-            }
+            Self::InvalidObjectState(_inner) => Some(_inner),
+            Self::NoSuchKey(_inner) => Some(_inner),
+            Self::Unhandled(_inner) => Some(_inner),
         }
     }
 }
@@ -472,4 +644,3 @@ mod _get_object_output;
 
 /// Builders
 pub mod builders;
-

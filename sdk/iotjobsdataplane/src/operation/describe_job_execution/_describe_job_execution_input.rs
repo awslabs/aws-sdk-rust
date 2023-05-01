@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobExecutionInput  {
+pub struct DescribeJobExecutionInput {
     /// <p>The unique identifier assigned to this job when it was created.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeJobExecutionInput  {
 }
 impl DescribeJobExecutionInput {
     /// <p>The unique identifier assigned to this job when it was created.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The thing name associated with the device the job execution is running on.</p>
-    pub fn thing_name(&self) -> std::option::Option<& str> {
+    pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
@@ -36,7 +36,8 @@ impl DescribeJobExecutionInput {
 }
 impl DescribeJobExecutionInput {
     /// Creates a new builder-style object to manufacture [`DescribeJobExecutionInput`](crate::operation::describe_job_execution::DescribeJobExecutionInput).
-    pub fn builder() -> crate::operation::describe_job_execution::builders::DescribeJobExecutionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_job_execution::builders::DescribeJobExecutionInputBuilder {
         crate::operation::describe_job_execution::builders::DescribeJobExecutionInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl DescribeJobExecutionInputBuilder {
     }
     /// <p>The unique identifier assigned to this job when it was created.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>The thing name associated with the device the job execution is running on.</p>
     pub fn thing_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl DescribeJobExecutionInputBuilder {
     }
     /// <p>The thing name associated with the device the job execution is running on.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input; self
+        self.thing_name = input;
+        self
     }
     /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
     pub fn include_job_document(mut self, input: bool) -> Self {
@@ -76,7 +79,8 @@ impl DescribeJobExecutionInputBuilder {
     }
     /// <p>Optional. When set to true, the response contains the job document. The default is false.</p>
     pub fn set_include_job_document(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_job_document = input; self
+        self.include_job_document = input;
+        self
     }
     /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
     pub fn execution_number(mut self, input: i64) -> Self {
@@ -85,22 +89,23 @@ impl DescribeJobExecutionInputBuilder {
     }
     /// <p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>
     pub fn set_execution_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.execution_number = input; self
+        self.execution_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeJobExecutionInput`](crate::operation::describe_job_execution::DescribeJobExecutionInput).
-    pub fn build(self) -> Result<crate::operation::describe_job_execution::DescribeJobExecutionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_job_execution::DescribeJobExecutionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_job_execution::DescribeJobExecutionInput {
-                job_id: self.job_id
-                ,
-                thing_name: self.thing_name
-                ,
-                include_job_document: self.include_job_document
-                ,
-                execution_number: self.execution_number
-                ,
-            }
+                job_id: self.job_id,
+                thing_name: self.thing_name,
+                include_job_document: self.include_job_document,
+                execution_number: self.execution_number,
+            },
         )
     }
 }
-

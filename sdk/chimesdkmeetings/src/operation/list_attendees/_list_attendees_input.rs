@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAttendeesInput  {
+pub struct ListAttendeesInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
     #[doc(hidden)]
     pub meeting_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListAttendeesInput  {
 }
 impl ListAttendeesInput {
     /// <p>The Amazon Chime SDK meeting ID.</p>
-    pub fn meeting_id(&self) -> std::option::Option<& str> {
+    pub fn meeting_id(&self) -> std::option::Option<&str> {
         self.meeting_id.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -50,7 +50,8 @@ impl ListAttendeesInputBuilder {
     }
     /// <p>The Amazon Chime SDK meeting ID.</p>
     pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.meeting_id = input; self
+        self.meeting_id = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl ListAttendeesInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +70,20 @@ impl ListAttendeesInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAttendeesInput`](crate::operation::list_attendees::ListAttendeesInput).
-    pub fn build(self) -> Result<crate::operation::list_attendees::ListAttendeesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_attendees::ListAttendeesInput {
-                meeting_id: self.meeting_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_attendees::ListAttendeesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_attendees::ListAttendeesInput {
+            meeting_id: self.meeting_id,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

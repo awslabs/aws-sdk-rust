@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImagesInRecycleBinOutput  {
+pub struct ListImagesInRecycleBinOutput {
     /// <p>Information about the AMIs.</p>
     #[doc(hidden)]
     pub images: std::option::Option<std::vec::Vec<crate::types::ImageRecycleBinInfo>>,
@@ -13,22 +13,24 @@ pub struct ListImagesInRecycleBinOutput  {
 }
 impl ListImagesInRecycleBinOutput {
     /// <p>Information about the AMIs.</p>
-    pub fn images(&self) -> std::option::Option<& [crate::types::ImageRecycleBinInfo]> {
+    pub fn images(&self) -> std::option::Option<&[crate::types::ImageRecycleBinInfo]> {
         self.images.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListImagesInRecycleBinOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListImagesInRecycleBinOutput {
     /// Creates a new builder-style object to manufacture [`ListImagesInRecycleBinOutput`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput).
-    pub fn builder() -> crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinOutputBuilder
+    {
         crate::operation::list_images_in_recycle_bin::builders::ListImagesInRecycleBinOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl ListImagesInRecycleBinOutputBuilder {
     /// <p>Information about the AMIs.</p>
     pub fn images(mut self, input: crate::types::ImageRecycleBinInfo) -> Self {
         let mut v = self.images.unwrap_or_default();
-                        v.push(input);
-                        self.images = Some(v);
-                        self
+        v.push(input);
+        self.images = Some(v);
+        self
     }
     /// <p>Information about the AMIs.</p>
-    pub fn set_images(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImageRecycleBinInfo>>) -> Self {
-        self.images = input; self
+    pub fn set_images(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ImageRecycleBinInfo>>,
+    ) -> Self {
+        self.images = input;
+        self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,26 @@ impl ListImagesInRecycleBinOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListImagesInRecycleBinOutput`](crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput).
-    pub fn build(self) -> crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput {
         crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput {
-            images: self.images
-            ,
-            next_token: self.next_token
-            ,
+            images: self.images,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

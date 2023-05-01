@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RequestServiceQuotaIncreaseInput  {
+pub struct RequestServiceQuotaIncreaseInput {
     /// <p>The service identifier.</p>
     #[doc(hidden)]
     pub service_code: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct RequestServiceQuotaIncreaseInput  {
 }
 impl RequestServiceQuotaIncreaseInput {
     /// <p>The service identifier.</p>
-    pub fn service_code(&self) -> std::option::Option<& str> {
+    pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
     /// <p>The quota identifier.</p>
-    pub fn quota_code(&self) -> std::option::Option<& str> {
+    pub fn quota_code(&self) -> std::option::Option<&str> {
         self.quota_code.as_deref()
     }
     /// <p>The new, increased value for the quota.</p>
@@ -29,7 +29,7 @@ impl RequestServiceQuotaIncreaseInput {
 }
 impl RequestServiceQuotaIncreaseInput {
     /// Creates a new builder-style object to manufacture [`RequestServiceQuotaIncreaseInput`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseInput).
-    pub fn builder() -> crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseInputBuilder {
+    pub fn builder() -> crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseInputBuilder{
         crate::operation::request_service_quota_increase::builders::RequestServiceQuotaIncreaseInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl RequestServiceQuotaIncreaseInputBuilder {
     }
     /// <p>The service identifier.</p>
     pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_code = input; self
+        self.service_code = input;
+        self
     }
     /// <p>The quota identifier.</p>
     pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl RequestServiceQuotaIncreaseInputBuilder {
     }
     /// <p>The quota identifier.</p>
     pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quota_code = input; self
+        self.quota_code = input;
+        self
     }
     /// <p>The new, increased value for the quota.</p>
     pub fn desired_value(mut self, input: f64) -> Self {
@@ -68,20 +70,22 @@ impl RequestServiceQuotaIncreaseInputBuilder {
     }
     /// <p>The new, increased value for the quota.</p>
     pub fn set_desired_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.desired_value = input; self
+        self.desired_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`RequestServiceQuotaIncreaseInput`](crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseInput).
-    pub fn build(self) -> Result<crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseInput {
-                service_code: self.service_code
-                ,
-                quota_code: self.quota_code
-                ,
-                desired_value: self.desired_value
-                ,
-            }
+                service_code: self.service_code,
+                quota_code: self.quota_code,
+                desired_value: self.desired_value,
+            },
         )
     }
 }
-

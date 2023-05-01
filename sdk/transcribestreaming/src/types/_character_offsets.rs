@@ -3,7 +3,7 @@
 /// <p>Provides the location, using character count, in your transcript where a match is identified. For example, the location of an issue or a category match within a segment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CharacterOffsets  {
+pub struct CharacterOffsets {
     /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
     #[doc(hidden)]
     pub begin: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl CharacterOffsetsBuilder {
     }
     /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
     pub fn set_begin(mut self, input: std::option::Option<i32>) -> Self {
-        self.begin = input; self
+        self.begin = input;
+        self
     }
     /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
     pub fn end(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl CharacterOffsetsBuilder {
     }
     /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
     pub fn set_end(mut self, input: std::option::Option<i32>) -> Self {
-        self.end = input; self
+        self.end = input;
+        self
     }
     /// Consumes the builder and constructs a [`CharacterOffsets`](crate::types::CharacterOffsets).
     pub fn build(self) -> crate::types::CharacterOffsets {
         crate::types::CharacterOffsets {
-            begin: self.begin
-            ,
-            end: self.end
-            ,
+            begin: self.begin,
+            end: self.end,
         }
     }
 }
-

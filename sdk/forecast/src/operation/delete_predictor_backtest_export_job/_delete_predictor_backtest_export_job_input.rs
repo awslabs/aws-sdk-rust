@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePredictorBacktestExportJobInput  {
+pub struct DeletePredictorBacktestExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
     #[doc(hidden)]
     pub predictor_backtest_export_job_arn: std::option::Option<std::string::String>,
 }
 impl DeletePredictorBacktestExportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
-    pub fn predictor_backtest_export_job_arn(&self) -> std::option::Option<& str> {
+    pub fn predictor_backtest_export_job_arn(&self) -> std::option::Option<&str> {
         self.predictor_backtest_export_job_arn.as_deref()
     }
 }
 impl DeletePredictorBacktestExportJobInput {
     /// Creates a new builder-style object to manufacture [`DeletePredictorBacktestExportJobInput`](crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobInput).
-    pub fn builder() -> crate::operation::delete_predictor_backtest_export_job::builders::DeletePredictorBacktestExportJobInputBuilder {
+    pub fn builder() -> crate::operation::delete_predictor_backtest_export_job::builders::DeletePredictorBacktestExportJobInputBuilder{
         crate::operation::delete_predictor_backtest_export_job::builders::DeletePredictorBacktestExportJobInputBuilder::default()
     }
 }
@@ -28,16 +28,23 @@ pub struct DeletePredictorBacktestExportJobInputBuilder {
 }
 impl DeletePredictorBacktestExportJobInputBuilder {
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
-    pub fn predictor_backtest_export_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn predictor_backtest_export_job_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.predictor_backtest_export_job_arn = Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor backtest export job to delete.</p>
-    pub fn set_predictor_backtest_export_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.predictor_backtest_export_job_arn = input; self
+    pub fn set_predictor_backtest_export_job_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.predictor_backtest_export_job_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePredictorBacktestExportJobInput`](crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobInput).
-    pub fn build(self) -> Result<crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobInput {
                 predictor_backtest_export_job_arn: self.predictor_backtest_export_job_arn
@@ -46,4 +53,3 @@ impl DeletePredictorBacktestExportJobInputBuilder {
         )
     }
 }
-

@@ -4,54 +4,61 @@ pub use crate::operation::unassign_private_nat_gateway_address::_unassign_privat
 pub use crate::operation::unassign_private_nat_gateway_address::_unassign_private_nat_gateway_address_input::UnassignPrivateNatGatewayAddressInputBuilder;
 
 /// Fluent builder constructing a request to `UnassignPrivateNatGatewayAddress`.
-/// 
-/// <p>Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> 
-/// <p>While unassigning is in progress, you cannot assign/unassign additional IP addresses while the connections are being drained. You are, however, allowed to delete the NAT gateway.</p> 
-/// <p>A private IP address will only be released at the end of MaxDrainDurationSeconds. The private IP addresses stay associated and support the existing connections but do not support any new connections (new connections are distributed across the remaining assigned private IP address). After the existing connections drain out, the private IP addresses get released. </p> 
-/// <p></p> 
+///
+/// <p>Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>While unassigning is in progress, you cannot assign/unassign additional IP addresses while the connections are being drained. You are, however, allowed to delete the NAT gateway.</p>
+/// <p>A private IP address will only be released at the end of MaxDrainDurationSeconds. The private IP addresses stay associated and support the existing connections but do not support any new connections (new connections are distributed across the remaining assigned private IP address). After the existing connections drain out, the private IP addresses get released. </p>
+/// <p></p>
 /// <p></p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UnassignPrivateNatGatewayAddressFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::unassign_private_nat_gateway_address::builders::UnassignPrivateNatGatewayAddressInputBuilder,
 }
-impl UnassignPrivateNatGatewayAddressFluentBuilder  {
+impl UnassignPrivateNatGatewayAddressFluentBuilder {
     /// Creates a new `UnassignPrivateNatGatewayAddress`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddress, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput, aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The NAT gateway ID.</p>
     pub fn nat_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.nat_gateway_id(input.into());
@@ -72,7 +79,10 @@ impl UnassignPrivateNatGatewayAddressFluentBuilder  {
         self
     }
     /// <p>The private IPv4 addresses you want to unassign.</p>
-    pub fn set_private_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_private_ip_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
     }
@@ -97,4 +107,3 @@ impl UnassignPrivateNatGatewayAddressFluentBuilder  {
         self
     }
 }
-

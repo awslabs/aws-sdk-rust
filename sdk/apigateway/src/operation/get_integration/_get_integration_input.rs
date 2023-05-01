@@ -3,7 +3,7 @@
 /// <p>Represents a request to get the integration configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIntegrationInput  {
+pub struct GetIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct GetIntegrationInput  {
 }
 impl GetIntegrationInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<& str> {
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>Specifies a get integration request's resource identifier</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>Specifies a get integration request's HTTP method.</p>
-    pub fn http_method(&self) -> std::option::Option<& str> {
+    pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl GetIntegrationInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input; self
+        self.rest_api_id = input;
+        self
     }
     /// <p>Specifies a get integration request's resource identifier</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl GetIntegrationInputBuilder {
     }
     /// <p>Specifies a get integration request's resource identifier</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>Specifies a get integration request's HTTP method.</p>
     pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +71,20 @@ impl GetIntegrationInputBuilder {
     }
     /// <p>Specifies a get integration request's HTTP method.</p>
     pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.http_method = input; self
+        self.http_method = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetIntegrationInput`](crate::operation::get_integration::GetIntegrationInput).
-    pub fn build(self) -> Result<crate::operation::get_integration::GetIntegrationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_integration::GetIntegrationInput {
-                rest_api_id: self.rest_api_id
-                ,
-                resource_id: self.resource_id
-                ,
-                http_method: self.http_method
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_integration::GetIntegrationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_integration::GetIntegrationInput {
+            rest_api_id: self.rest_api_id,
+            resource_id: self.resource_id,
+            http_method: self.http_method,
+        })
     }
 }
-

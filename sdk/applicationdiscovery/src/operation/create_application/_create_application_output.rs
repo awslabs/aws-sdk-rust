@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationOutput  {
+pub struct CreateApplicationOutput {
     /// <p>Configuration ID of an application to be created.</p>
     #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct CreateApplicationOutput  {
 }
 impl CreateApplicationOutput {
     /// <p>Configuration ID of an application to be created.</p>
-    pub fn configuration_id(&self) -> std::option::Option<& str> {
+    pub fn configuration_id(&self) -> std::option::Option<&str> {
         self.configuration_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateApplicationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput).
-    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_application::builders::CreateApplicationOutputBuilder {
         crate::operation::create_application::builders::CreateApplicationOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>Configuration ID of an application to be created.</p>
     pub fn set_configuration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_id = input; self
+        self.configuration_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput).
     pub fn build(self) -> crate::operation::create_application::CreateApplicationOutput {
         crate::operation::create_application::CreateApplicationOutput {
-            configuration_id: self.configuration_id
-            ,
+            configuration_id: self.configuration_id,
             _request_id: self._request_id,
         }
     }
 }
-

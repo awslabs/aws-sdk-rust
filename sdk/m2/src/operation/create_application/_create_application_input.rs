@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationInput  {
+pub struct CreateApplicationInput {
     /// <p>The unique identifier of the application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -17,7 +17,8 @@ pub struct CreateApplicationInput  {
     pub definition: std::option::Option<crate::types::Definition>,
     /// <p>A list of tags to apply to the application.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -27,37 +28,41 @@ pub struct CreateApplicationInput  {
 }
 impl CreateApplicationInput {
     /// <p>The unique identifier of the application.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the application.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of the target platform for this application.</p>
-    pub fn engine_type(&self) -> std::option::Option<& crate::types::EngineType> {
+    pub fn engine_type(&self) -> std::option::Option<&crate::types::EngineType> {
         self.engine_type.as_ref()
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
-    pub fn definition(&self) -> std::option::Option<& crate::types::Definition> {
+    pub fn definition(&self) -> std::option::Option<&crate::types::Definition> {
         self.definition.as_ref()
     }
     /// <p>A list of tags to apply to the application.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The identifier of a customer managed key.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
 impl CreateApplicationInput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder {
+    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationInputBuilder
+    {
         crate::operation::create_application::builders::CreateApplicationInputBuilder::default()
     }
 }
@@ -70,7 +75,8 @@ pub struct CreateApplicationInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) engine_type: std::option::Option<crate::types::EngineType>,
     pub(crate) definition: std::option::Option<crate::types::Definition>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) client_token: std::option::Option<std::string::String>,
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
 }
@@ -82,7 +88,8 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The unique identifier of the application.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the application.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +98,8 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The description of the application.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The type of the target platform for this application.</p>
     pub fn engine_type(mut self, input: crate::types::EngineType) -> Self {
@@ -100,7 +108,8 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The type of the target platform for this application.</p>
     pub fn set_engine_type(mut self, input: std::option::Option<crate::types::EngineType>) -> Self {
-        self.engine_type = input; self
+        self.engine_type = input;
+        self
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
@@ -109,22 +118,33 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub fn set_definition(mut self, input: std::option::Option<crate::types::Definition>) -> Self {
-        self.definition = input; self
+        self.definition = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags to apply to the application.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A list of tags to apply to the application.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +153,8 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier the service generates to ensure the idempotency of the request to create an application. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The identifier of a customer managed key.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,28 +163,26 @@ impl CreateApplicationInputBuilder {
     }
     /// <p>The identifier of a customer managed key.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    pub fn build(self) -> Result<crate::operation::create_application::CreateApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_application::CreateApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_application::CreateApplicationInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                engine_type: self.engine_type
-                ,
-                definition: self.definition
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-                kms_key_id: self.kms_key_id
-                ,
-            }
+                name: self.name,
+                description: self.description,
+                engine_type: self.engine_type,
+                definition: self.definition,
+                tags: self.tags,
+                client_token: self.client_token,
+                kms_key_id: self.kms_key_id,
+            },
         )
     }
 }
-

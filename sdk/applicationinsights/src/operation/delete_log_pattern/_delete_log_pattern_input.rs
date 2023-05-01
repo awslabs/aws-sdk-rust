@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLogPatternInput  {
+pub struct DeleteLogPatternInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct DeleteLogPatternInput  {
 }
 impl DeleteLogPatternInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<& str> {
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The name of the log pattern set.</p>
-    pub fn pattern_set_name(&self) -> std::option::Option<& str> {
+    pub fn pattern_set_name(&self) -> std::option::Option<&str> {
         self.pattern_set_name.as_deref()
     }
     /// <p>The name of the log pattern.</p>
-    pub fn pattern_name(&self) -> std::option::Option<& str> {
+    pub fn pattern_name(&self) -> std::option::Option<&str> {
         self.pattern_name.as_deref()
     }
 }
 impl DeleteLogPatternInput {
     /// Creates a new builder-style object to manufacture [`DeleteLogPatternInput`](crate::operation::delete_log_pattern::DeleteLogPatternInput).
-    pub fn builder() -> crate::operation::delete_log_pattern::builders::DeleteLogPatternInputBuilder {
+    pub fn builder() -> crate::operation::delete_log_pattern::builders::DeleteLogPatternInputBuilder
+    {
         crate::operation::delete_log_pattern::builders::DeleteLogPatternInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl DeleteLogPatternInputBuilder {
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_group_name = input; self
+    pub fn set_resource_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_group_name = input;
+        self
     }
     /// <p>The name of the log pattern set.</p>
     pub fn pattern_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +64,8 @@ impl DeleteLogPatternInputBuilder {
     }
     /// <p>The name of the log pattern set.</p>
     pub fn set_pattern_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pattern_set_name = input; self
+        self.pattern_set_name = input;
+        self
     }
     /// <p>The name of the log pattern.</p>
     pub fn pattern_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +74,22 @@ impl DeleteLogPatternInputBuilder {
     }
     /// <p>The name of the log pattern.</p>
     pub fn set_pattern_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pattern_name = input; self
+        self.pattern_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteLogPatternInput`](crate::operation::delete_log_pattern::DeleteLogPatternInput).
-    pub fn build(self) -> Result<crate::operation::delete_log_pattern::DeleteLogPatternInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_log_pattern::DeleteLogPatternInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_log_pattern::DeleteLogPatternInput {
-                resource_group_name: self.resource_group_name
-                ,
-                pattern_set_name: self.pattern_set_name
-                ,
-                pattern_name: self.pattern_name
-                ,
-            }
+                resource_group_name: self.resource_group_name,
+                pattern_set_name: self.pattern_set_name,
+                pattern_name: self.pattern_name,
+            },
         )
     }
 }
-

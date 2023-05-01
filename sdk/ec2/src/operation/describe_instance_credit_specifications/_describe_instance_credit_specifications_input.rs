@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInstanceCreditSpecificationsInput  {
+pub struct DescribeInstanceCreditSpecificationsInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
-    /// <p>The instance IDs.</p> 
-    /// <p>Default: Describes all your instances.</p> 
+    /// <p>The instance IDs.</p>
+    /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 1000 explicitly specified instance IDs.</p>
     #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p> 
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     /// <p>You cannot specify this parameter and the instance IDs parameter in the same call.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -30,32 +30,32 @@ impl DescribeInstanceCreditSpecificationsInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
-    /// <p>The instance IDs.</p> 
-    /// <p>Default: Describes all your instances.</p> 
+    /// <p>The instance IDs.</p>
+    /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 1000 explicitly specified instance IDs.</p>
-    pub fn instance_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
     }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p> 
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     /// <p>You cannot specify this parameter and the instance IDs parameter in the same call.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeInstanceCreditSpecificationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeInstanceCreditSpecificationsInput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput).
-    pub fn builder() -> crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsInputBuilder {
+    pub fn builder() -> crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsInputBuilder{
         crate::operation::describe_instance_credit_specifications::builders::DescribeInstanceCreditSpecificationsInputBuilder::default()
     }
 }
@@ -78,58 +78,68 @@ impl DescribeInstanceCreditSpecificationsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>instance-id</code> - The ID of the instance.</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Appends an item to `instance_ids`.
     ///
     /// To override the contents of this collection use [`set_instance_ids`](Self::set_instance_ids).
     ///
-    /// <p>The instance IDs.</p> 
-    /// <p>Default: Describes all your instances.</p> 
+    /// <p>The instance IDs.</p>
+    /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 1000 explicitly specified instance IDs.</p>
     pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.instance_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.instance_ids = Some(v);
+        self
     }
-    /// <p>The instance IDs.</p> 
-    /// <p>Default: Describes all your instances.</p> 
+    /// <p>The instance IDs.</p>
+    /// <p>Default: Describes all your instances.</p>
     /// <p>Constraints: Maximum 1000 explicitly specified instance IDs.</p>
-    pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.instance_ids = input; self
+    pub fn set_instance_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.instance_ids = input;
+        self
     }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p> 
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     /// <p>You cannot specify this parameter and the instance IDs parameter in the same call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p> 
+    /// <p>The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
     /// <p>You cannot specify this parameter and the instance IDs parameter in the same call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,10 +148,11 @@ impl DescribeInstanceCreditSpecificationsInputBuilder {
     }
     /// <p>The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeInstanceCreditSpecificationsInput`](crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsInput {
                 dry_run: self.dry_run
@@ -158,4 +169,3 @@ impl DescribeInstanceCreditSpecificationsInputBuilder {
         )
     }
 }
-

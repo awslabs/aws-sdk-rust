@@ -3,7 +3,7 @@
 /// <p>The parameters for Amazon Redshift. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RedshiftParameters  {
+pub struct RedshiftParameters {
     /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
     #[doc(hidden)]
     pub host: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct RedshiftParameters  {
 }
 impl RedshiftParameters {
     /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
-    pub fn host(&self) -> std::option::Option<& str> {
+    pub fn host(&self) -> std::option::Option<&str> {
         self.host.as_deref()
     }
     /// <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
@@ -27,11 +27,11 @@ impl RedshiftParameters {
         self.port
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
-    pub fn cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl RedshiftParametersBuilder {
     }
     /// <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
     pub fn set_host(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host = input; self
+        self.host = input;
+        self
     }
     /// <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl RedshiftParametersBuilder {
     }
     /// <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>Database.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl RedshiftParametersBuilder {
     }
     /// <p>Database.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input; self
+        self.database = input;
+        self
     }
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub fn cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,21 +89,16 @@ impl RedshiftParametersBuilder {
     }
     /// <p>Cluster ID. This field can be blank if the <code>Host</code> and <code>Port</code> are provided.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input; self
+        self.cluster_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RedshiftParameters`](crate::types::RedshiftParameters).
     pub fn build(self) -> crate::types::RedshiftParameters {
         crate::types::RedshiftParameters {
-            host: self.host
-            ,
-            port: self.port
-                .unwrap_or_default()
-            ,
-            database: self.database
-            ,
-            cluster_id: self.cluster_id
-            ,
+            host: self.host,
+            port: self.port.unwrap_or_default(),
+            database: self.database,
+            cluster_id: self.cluster_id,
         }
     }
 }
-

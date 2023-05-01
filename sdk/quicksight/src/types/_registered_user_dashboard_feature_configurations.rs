@@ -3,20 +3,23 @@
 /// <p>The feature configuration for an embedded dashboard.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisteredUserDashboardFeatureConfigurations  {
+pub struct RegisteredUserDashboardFeatureConfigurations {
     /// <p>The state persistence settings of an embedded dashboard.</p>
     #[doc(hidden)]
     pub state_persistence: std::option::Option<crate::types::StatePersistenceConfigurations>,
 }
 impl RegisteredUserDashboardFeatureConfigurations {
     /// <p>The state persistence settings of an embedded dashboard.</p>
-    pub fn state_persistence(&self) -> std::option::Option<& crate::types::StatePersistenceConfigurations> {
+    pub fn state_persistence(
+        &self,
+    ) -> std::option::Option<&crate::types::StatePersistenceConfigurations> {
         self.state_persistence.as_ref()
     }
 }
 impl RegisteredUserDashboardFeatureConfigurations {
     /// Creates a new builder-style object to manufacture [`RegisteredUserDashboardFeatureConfigurations`](crate::types::RegisteredUserDashboardFeatureConfigurations).
-    pub fn builder() -> crate::types::builders::RegisteredUserDashboardFeatureConfigurationsBuilder {
+    pub fn builder() -> crate::types::builders::RegisteredUserDashboardFeatureConfigurationsBuilder
+    {
         crate::types::builders::RegisteredUserDashboardFeatureConfigurationsBuilder::default()
     }
 }
@@ -29,20 +32,25 @@ pub struct RegisteredUserDashboardFeatureConfigurationsBuilder {
 }
 impl RegisteredUserDashboardFeatureConfigurationsBuilder {
     /// <p>The state persistence settings of an embedded dashboard.</p>
-    pub fn state_persistence(mut self, input: crate::types::StatePersistenceConfigurations) -> Self {
+    pub fn state_persistence(
+        mut self,
+        input: crate::types::StatePersistenceConfigurations,
+    ) -> Self {
         self.state_persistence = Some(input);
         self
     }
     /// <p>The state persistence settings of an embedded dashboard.</p>
-    pub fn set_state_persistence(mut self, input: std::option::Option<crate::types::StatePersistenceConfigurations>) -> Self {
-        self.state_persistence = input; self
+    pub fn set_state_persistence(
+        mut self,
+        input: std::option::Option<crate::types::StatePersistenceConfigurations>,
+    ) -> Self {
+        self.state_persistence = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegisteredUserDashboardFeatureConfigurations`](crate::types::RegisteredUserDashboardFeatureConfigurations).
     pub fn build(self) -> crate::types::RegisteredUserDashboardFeatureConfigurations {
         crate::types::RegisteredUserDashboardFeatureConfigurations {
-            state_persistence: self.state_persistence
-            ,
+            state_persistence: self.state_persistence,
         }
     }
 }
-

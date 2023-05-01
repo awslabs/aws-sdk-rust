@@ -4,50 +4,70 @@ pub use crate::operation::create_launch_profile::_create_launch_profile_output::
 pub use crate::operation::create_launch_profile::_create_launch_profile_input::CreateLaunchProfileInputBuilder;
 
 /// Fluent builder constructing a request to `CreateLaunchProfile`.
-/// 
+///
 /// <p>Create a launch profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLaunchProfileFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_launch_profile::builders::CreateLaunchProfileInputBuilder,
+    inner: crate::operation::create_launch_profile::builders::CreateLaunchProfileInputBuilder,
 }
-impl CreateLaunchProfileFluentBuilder  {
+impl CreateLaunchProfileFluentBuilder {
     /// Creates a new `CreateLaunchProfile`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_launch_profile::CreateLaunchProfile, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_launch_profile::CreateLaunchProfileError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_launch_profile::CreateLaunchProfileOutput, aws_smithy_http::result::SdkError<crate::operation::create_launch_profile::CreateLaunchProfileError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_launch_profile::CreateLaunchProfile,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_launch_profile::CreateLaunchProfileError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_launch_profile::CreateLaunchProfileOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_launch_profile::CreateLaunchProfileError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -78,7 +98,10 @@ impl CreateLaunchProfileFluentBuilder  {
         self
     }
     /// <p>Specifies the IDs of the EC2 subnets where streaming sessions will be accessible from. These subnets must support the specified instance types. </p>
-    pub fn set_ec2_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_ec2_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_ec2_subnet_ids(input);
         self
     }
@@ -87,12 +110,18 @@ impl CreateLaunchProfileFluentBuilder  {
     /// To override the contents of this collection use [`set_launch_profile_protocol_versions`](Self::set_launch_profile_protocol_versions).
     ///
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn launch_profile_protocol_versions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn launch_profile_protocol_versions(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.launch_profile_protocol_versions(input.into());
         self
     }
     /// <p>The version number of the protocol that is used by the launch profile. The only valid version is "2021-03-31".</p>
-    pub fn set_launch_profile_protocol_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_launch_profile_protocol_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_launch_profile_protocol_versions(input);
         self
     }
@@ -112,7 +141,10 @@ impl CreateLaunchProfileFluentBuilder  {
         self
     }
     /// <p>A configuration for a streaming session.</p>
-    pub fn set_stream_configuration(mut self, input: std::option::Option<crate::types::StreamConfigurationCreate>) -> Self {
+    pub fn set_stream_configuration(
+        mut self,
+        input: std::option::Option<crate::types::StreamConfigurationCreate>,
+    ) -> Self {
         self.inner = self.inner.set_stream_configuration(input);
         self
     }
@@ -126,7 +158,10 @@ impl CreateLaunchProfileFluentBuilder  {
         self
     }
     /// <p>Unique identifiers for a collection of studio components that can be used with this launch profile.</p>
-    pub fn set_studio_component_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_studio_component_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_studio_component_ids(input);
         self
     }
@@ -145,14 +180,22 @@ impl CreateLaunchProfileFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A collection of labels, in the form of key-value pairs, that apply to this resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

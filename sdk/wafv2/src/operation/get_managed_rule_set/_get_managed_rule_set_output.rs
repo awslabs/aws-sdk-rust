@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetManagedRuleSetOutput  {
+pub struct GetManagedRuleSetOutput {
     /// <p>The managed rule set that you requested. </p>
     #[doc(hidden)]
     pub managed_rule_set: std::option::Option<crate::types::ManagedRuleSet>,
@@ -13,22 +13,23 @@ pub struct GetManagedRuleSetOutput  {
 }
 impl GetManagedRuleSetOutput {
     /// <p>The managed rule set that you requested. </p>
-    pub fn managed_rule_set(&self) -> std::option::Option<& crate::types::ManagedRuleSet> {
+    pub fn managed_rule_set(&self) -> std::option::Option<&crate::types::ManagedRuleSet> {
         self.managed_rule_set.as_ref()
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn lock_token(&self) -> std::option::Option<& str> {
+    pub fn lock_token(&self) -> std::option::Option<&str> {
         self.lock_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetManagedRuleSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetManagedRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`GetManagedRuleSetOutput`](crate::operation::get_managed_rule_set::GetManagedRuleSetOutput).
-    pub fn builder() -> crate::operation::get_managed_rule_set::builders::GetManagedRuleSetOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_managed_rule_set::builders::GetManagedRuleSetOutputBuilder {
         crate::operation::get_managed_rule_set::builders::GetManagedRuleSetOutputBuilder::default()
     }
 }
@@ -48,8 +49,12 @@ impl GetManagedRuleSetOutputBuilder {
         self
     }
     /// <p>The managed rule set that you requested. </p>
-    pub fn set_managed_rule_set(mut self, input: std::option::Option<crate::types::ManagedRuleSet>) -> Self {
-        self.managed_rule_set = input; self
+    pub fn set_managed_rule_set(
+        mut self,
+        input: std::option::Option<crate::types::ManagedRuleSet>,
+    ) -> Self {
+        self.managed_rule_set = input;
+        self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +63,24 @@ impl GetManagedRuleSetOutputBuilder {
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lock_token = input; self
+        self.lock_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetManagedRuleSetOutput`](crate::operation::get_managed_rule_set::GetManagedRuleSetOutput).
     pub fn build(self) -> crate::operation::get_managed_rule_set::GetManagedRuleSetOutput {
         crate::operation::get_managed_rule_set::GetManagedRuleSetOutput {
-            managed_rule_set: self.managed_rule_set
-            ,
-            lock_token: self.lock_token
-            ,
+            managed_rule_set: self.managed_rule_set,
+            lock_token: self.lock_token,
             _request_id: self._request_id,
         }
     }
 }
-

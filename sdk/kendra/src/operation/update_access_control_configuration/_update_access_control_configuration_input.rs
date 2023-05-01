@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccessControlConfigurationInput  {
+pub struct UpdateAccessControlConfigurationInput {
     /// <p>The identifier of the index for an access control configuration.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -20,37 +20,40 @@ pub struct UpdateAccessControlConfigurationInput  {
     pub access_control_list: std::option::Option<std::vec::Vec<crate::types::Principal>>,
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
     #[doc(hidden)]
-    pub hierarchical_access_control_list: std::option::Option<std::vec::Vec<crate::types::HierarchicalPrincipal>>,
+    pub hierarchical_access_control_list:
+        std::option::Option<std::vec::Vec<crate::types::HierarchicalPrincipal>>,
 }
 impl UpdateAccessControlConfigurationInput {
     /// <p>The identifier of the index for an access control configuration.</p>
-    pub fn index_id(&self) -> std::option::Option<& str> {
+    pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the access control configuration you want to update.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A new name for the access control configuration.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A new description for the access control configuration.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn access_control_list(&self) -> std::option::Option<& [crate::types::Principal]> {
+    pub fn access_control_list(&self) -> std::option::Option<&[crate::types::Principal]> {
         self.access_control_list.as_deref()
     }
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn hierarchical_access_control_list(&self) -> std::option::Option<& [crate::types::HierarchicalPrincipal]> {
+    pub fn hierarchical_access_control_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::HierarchicalPrincipal]> {
         self.hierarchical_access_control_list.as_deref()
     }
 }
 impl UpdateAccessControlConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccessControlConfigurationInput`](crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput).
-    pub fn builder() -> crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationInputBuilder{
         crate::operation::update_access_control_configuration::builders::UpdateAccessControlConfigurationInputBuilder::default()
     }
 }
@@ -64,7 +67,8 @@ pub struct UpdateAccessControlConfigurationInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) access_control_list: std::option::Option<std::vec::Vec<crate::types::Principal>>,
-    pub(crate) hierarchical_access_control_list: std::option::Option<std::vec::Vec<crate::types::HierarchicalPrincipal>>,
+    pub(crate) hierarchical_access_control_list:
+        std::option::Option<std::vec::Vec<crate::types::HierarchicalPrincipal>>,
 }
 impl UpdateAccessControlConfigurationInputBuilder {
     /// <p>The identifier of the index for an access control configuration.</p>
@@ -74,7 +78,8 @@ impl UpdateAccessControlConfigurationInputBuilder {
     }
     /// <p>The identifier of the index for an access control configuration.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input; self
+        self.index_id = input;
+        self
     }
     /// <p>The identifier of the access control configuration you want to update.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +88,8 @@ impl UpdateAccessControlConfigurationInputBuilder {
     }
     /// <p>The identifier of the access control configuration you want to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>A new name for the access control configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +98,8 @@ impl UpdateAccessControlConfigurationInputBuilder {
     }
     /// <p>A new name for the access control configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A new description for the access control configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +108,8 @@ impl UpdateAccessControlConfigurationInputBuilder {
     }
     /// <p>A new description for the access control configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `access_control_list`.
     ///
@@ -110,31 +118,42 @@ impl UpdateAccessControlConfigurationInputBuilder {
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
     pub fn access_control_list(mut self, input: crate::types::Principal) -> Self {
         let mut v = self.access_control_list.unwrap_or_default();
-                        v.push(input);
-                        self.access_control_list = Some(v);
-                        self
+        v.push(input);
+        self.access_control_list = Some(v);
+        self
     }
     /// <p>Information you want to update on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>
-    pub fn set_access_control_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Principal>>) -> Self {
-        self.access_control_list = input; self
+    pub fn set_access_control_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Principal>>,
+    ) -> Self {
+        self.access_control_list = input;
+        self
     }
     /// Appends an item to `hierarchical_access_control_list`.
     ///
     /// To override the contents of this collection use [`set_hierarchical_access_control_list`](Self::set_hierarchical_access_control_list).
     ///
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn hierarchical_access_control_list(mut self, input: crate::types::HierarchicalPrincipal) -> Self {
+    pub fn hierarchical_access_control_list(
+        mut self,
+        input: crate::types::HierarchicalPrincipal,
+    ) -> Self {
         let mut v = self.hierarchical_access_control_list.unwrap_or_default();
-                        v.push(input);
-                        self.hierarchical_access_control_list = Some(v);
-                        self
+        v.push(input);
+        self.hierarchical_access_control_list = Some(v);
+        self
     }
     /// <p>The updated list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists that define the hierarchy for which documents users should have access to.</p>
-    pub fn set_hierarchical_access_control_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::HierarchicalPrincipal>>) -> Self {
-        self.hierarchical_access_control_list = input; self
+    pub fn set_hierarchical_access_control_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::HierarchicalPrincipal>>,
+    ) -> Self {
+        self.hierarchical_access_control_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAccessControlConfigurationInput`](crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_access_control_configuration::UpdateAccessControlConfigurationInput {
                 index_id: self.index_id
@@ -153,4 +172,3 @@ impl UpdateAccessControlConfigurationInputBuilder {
         )
     }
 }
-

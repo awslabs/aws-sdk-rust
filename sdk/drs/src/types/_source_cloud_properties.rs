@@ -3,7 +3,7 @@
 /// <p>Properties of the cloud environment where this Source Server originated from.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceCloudProperties  {
+pub struct SourceCloudProperties {
     /// <p>AWS Account ID for an EC2-originated Source Server.</p>
     #[doc(hidden)]
     pub origin_account_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SourceCloudProperties  {
 }
 impl SourceCloudProperties {
     /// <p>AWS Account ID for an EC2-originated Source Server.</p>
-    pub fn origin_account_id(&self) -> std::option::Option<& str> {
+    pub fn origin_account_id(&self) -> std::option::Option<&str> {
         self.origin_account_id.as_deref()
     }
     /// <p>AWS Region for an EC2-originated Source Server.</p>
-    pub fn origin_region(&self) -> std::option::Option<& str> {
+    pub fn origin_region(&self) -> std::option::Option<&str> {
         self.origin_region.as_deref()
     }
     /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
-    pub fn origin_availability_zone(&self) -> std::option::Option<& str> {
+    pub fn origin_availability_zone(&self) -> std::option::Option<&str> {
         self.origin_availability_zone.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl SourceCloudPropertiesBuilder {
         self
     }
     /// <p>AWS Account ID for an EC2-originated Source Server.</p>
-    pub fn set_origin_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.origin_account_id = input; self
+    pub fn set_origin_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.origin_account_id = input;
+        self
     }
     /// <p>AWS Region for an EC2-originated Source Server.</p>
     pub fn origin_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl SourceCloudPropertiesBuilder {
     }
     /// <p>AWS Region for an EC2-originated Source Server.</p>
     pub fn set_origin_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.origin_region = input; self
+        self.origin_region = input;
+        self
     }
     /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
     pub fn origin_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +73,19 @@ impl SourceCloudPropertiesBuilder {
         self
     }
     /// <p>AWS Availability Zone for an EC2-originated Source Server.</p>
-    pub fn set_origin_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.origin_availability_zone = input; self
+    pub fn set_origin_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.origin_availability_zone = input;
+        self
     }
     /// Consumes the builder and constructs a [`SourceCloudProperties`](crate::types::SourceCloudProperties).
     pub fn build(self) -> crate::types::SourceCloudProperties {
         crate::types::SourceCloudProperties {
-            origin_account_id: self.origin_account_id
-            ,
-            origin_region: self.origin_region
-            ,
-            origin_availability_zone: self.origin_availability_zone
-            ,
+            origin_account_id: self.origin_account_id,
+            origin_region: self.origin_region,
+            origin_availability_zone: self.origin_availability_zone,
         }
     }
 }
-

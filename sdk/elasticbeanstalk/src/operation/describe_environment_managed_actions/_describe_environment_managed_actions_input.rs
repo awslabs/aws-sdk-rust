@@ -3,7 +3,7 @@
 /// <p>Request to list an environment's upcoming and in-progress managed actions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEnvironmentManagedActionsInput  {
+pub struct DescribeEnvironmentManagedActionsInput {
     /// <p>The name of the target environment.</p>
     #[doc(hidden)]
     pub environment_name: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct DescribeEnvironmentManagedActionsInput  {
 }
 impl DescribeEnvironmentManagedActionsInput {
     /// <p>The name of the target environment.</p>
-    pub fn environment_name(&self) -> std::option::Option<& str> {
+    pub fn environment_name(&self) -> std::option::Option<&str> {
         self.environment_name.as_deref()
     }
     /// <p>The environment ID of the target environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>To show only actions with a particular status, specify a status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ActionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ActionStatus> {
         self.status.as_ref()
     }
 }
 impl DescribeEnvironmentManagedActionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentManagedActionsInput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput).
-    pub fn builder() -> crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsInputBuilder{
         crate::operation::describe_environment_managed_actions::builders::DescribeEnvironmentManagedActionsInputBuilder::default()
     }
 }
@@ -51,7 +51,8 @@ impl DescribeEnvironmentManagedActionsInputBuilder {
     }
     /// <p>The name of the target environment.</p>
     pub fn set_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_name = input; self
+        self.environment_name = input;
+        self
     }
     /// <p>The environment ID of the target environment.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DescribeEnvironmentManagedActionsInputBuilder {
     }
     /// <p>The environment ID of the target environment.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// <p>To show only actions with a particular status, specify a status.</p>
     pub fn status(mut self, input: crate::types::ActionStatus) -> Self {
@@ -69,10 +71,11 @@ impl DescribeEnvironmentManagedActionsInputBuilder {
     }
     /// <p>To show only actions with a particular status, specify a status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ActionStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentManagedActionsInput`](crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_environment_managed_actions::DescribeEnvironmentManagedActionsInput {
                 environment_name: self.environment_name
@@ -85,4 +88,3 @@ impl DescribeEnvironmentManagedActionsInputBuilder {
         )
     }
 }
-

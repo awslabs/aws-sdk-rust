@@ -3,7 +3,7 @@
 /// <p>The URL reference.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UrlReference  {
+pub struct UrlReference {
     /// <p>Identifier of the URL reference.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UrlReference  {
 }
 impl UrlReference {
     /// <p>Identifier of the URL reference.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A valid URL.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl UrlReferenceBuilder {
     }
     /// <p>Identifier of the URL reference.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A valid URL.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl UrlReferenceBuilder {
     }
     /// <p>A valid URL.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`UrlReference`](crate::types::UrlReference).
     pub fn build(self) -> crate::types::UrlReference {
         crate::types::UrlReference {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

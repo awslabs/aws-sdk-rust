@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpcIngressConnectionOutput  {
+pub struct DeleteVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
     #[doc(hidden)]
     pub vpc_ingress_connection: std::option::Option<crate::types::VpcIngressConnection>,
@@ -10,18 +10,20 @@ pub struct DeleteVpcIngressConnectionOutput  {
 }
 impl DeleteVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
-    pub fn vpc_ingress_connection(&self) -> std::option::Option<& crate::types::VpcIngressConnection> {
+    pub fn vpc_ingress_connection(
+        &self,
+    ) -> std::option::Option<&crate::types::VpcIngressConnection> {
         self.vpc_ingress_connection.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteVpcIngressConnectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteVpcIngressConnectionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcIngressConnectionOutput`](crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionOutput).
-    pub fn builder() -> crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionOutputBuilder{
         crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl DeleteVpcIngressConnectionOutputBuilder {
         self
     }
     /// <p>A description of the App Runner VPC Ingress Connection that this request just deleted.</p>
-    pub fn set_vpc_ingress_connection(mut self, input: std::option::Option<crate::types::VpcIngressConnection>) -> Self {
-        self.vpc_ingress_connection = input; self
+    pub fn set_vpc_ingress_connection(
+        mut self,
+        input: std::option::Option<crate::types::VpcIngressConnection>,
+    ) -> Self {
+        self.vpc_ingress_connection = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteVpcIngressConnectionOutput`](crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionOutput).
-    pub fn build(self) -> crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionOutput {
         crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionOutput {
-            vpc_ingress_connection: self.vpc_ingress_connection
-            ,
+            vpc_ingress_connection: self.vpc_ingress_connection,
             _request_id: self._request_id,
         }
     }
 }
-

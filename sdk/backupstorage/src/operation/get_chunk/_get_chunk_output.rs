@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetChunkOutput  {
+pub struct GetChunkOutput {
     /// Chunk data
     pub data: aws_smithy_http::byte_stream::ByteStream,
     /// Data length
@@ -18,7 +18,7 @@ pub struct GetChunkOutput  {
 }
 impl GetChunkOutput {
     /// Chunk data
-    pub fn data(&self) -> & aws_smithy_http::byte_stream::ByteStream {
+    pub fn data(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.data
     }
     /// Data length
@@ -26,19 +26,19 @@ impl GetChunkOutput {
         self.length
     }
     /// Data checksum
-    pub fn checksum(&self) -> std::option::Option<& str> {
+    pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// Checksum algorithm
-    pub fn checksum_algorithm(&self) -> std::option::Option<& crate::types::DataChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::types::DataChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetChunkOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetChunkOutput {
     /// Creates a new builder-style object to manufacture [`GetChunkOutput`](crate::operation::get_chunk::GetChunkOutput).
     pub fn builder() -> crate::operation::get_chunk::builders::GetChunkOutputBuilder {
@@ -63,8 +63,12 @@ impl GetChunkOutputBuilder {
         self
     }
     /// Chunk data
-    pub fn set_data(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
-        self.data = input; self
+    pub fn set_data(
+        mut self,
+        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+    ) -> Self {
+        self.data = input;
+        self
     }
     /// Data length
     pub fn length(mut self, input: i64) -> Self {
@@ -73,7 +77,8 @@ impl GetChunkOutputBuilder {
     }
     /// Data length
     pub fn set_length(mut self, input: std::option::Option<i64>) -> Self {
-        self.length = input; self
+        self.length = input;
+        self
     }
     /// Data checksum
     pub fn checksum(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +87,8 @@ impl GetChunkOutputBuilder {
     }
     /// Data checksum
     pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.checksum = input; self
+        self.checksum = input;
+        self
     }
     /// Checksum algorithm
     pub fn checksum_algorithm(mut self, input: crate::types::DataChecksumAlgorithm) -> Self {
@@ -90,33 +96,30 @@ impl GetChunkOutputBuilder {
         self
     }
     /// Checksum algorithm
-    pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::types::DataChecksumAlgorithm>) -> Self {
-        self.checksum_algorithm = input; self
+    pub fn set_checksum_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::DataChecksumAlgorithm>,
+    ) -> Self {
+        self.checksum_algorithm = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetChunkOutput`](crate::operation::get_chunk::GetChunkOutput).
     pub fn build(self) -> crate::operation::get_chunk::GetChunkOutput {
         crate::operation::get_chunk::GetChunkOutput {
-            data: self.data
-                .unwrap_or_default()
-            ,
-            length: self.length
-                .unwrap_or_default()
-            ,
-            checksum: self.checksum
-            ,
-            checksum_algorithm: self.checksum_algorithm
-            ,
+            data: self.data.unwrap_or_default(),
+            length: self.length.unwrap_or_default(),
+            checksum: self.checksum,
+            checksum_algorithm: self.checksum_algorithm,
             _request_id: self._request_id,
         }
     }
 }
-

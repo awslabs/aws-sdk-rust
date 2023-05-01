@@ -4,52 +4,73 @@ pub use crate::operation::lookup_developer_identity::_lookup_developer_identity_
 pub use crate::operation::lookup_developer_identity::_lookup_developer_identity_input::LookupDeveloperIdentityInputBuilder;
 
 /// Fluent builder constructing a request to `LookupDeveloperIdentity`.
-/// 
-/// <p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p> 
-/// <p> <code>LookupDeveloperIdentity</code> is intended for low-throughput control plane operations: for example, to enable customer service to locate an identity ID by username. If you are using it for higher-volume operations such as user authentication, your requests are likely to be throttled. <code>GetOpenIdTokenForDeveloperIdentity</code> is a better option for higher-volume operations for user authentication.</p> 
+///
+/// <p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p>
+/// <p> <code>LookupDeveloperIdentity</code> is intended for low-throughput control plane operations: for example, to enable customer service to locate an identity ID by username. If you are using it for higher-volume operations such as user authentication, your requests are likely to be throttled. <code>GetOpenIdTokenForDeveloperIdentity</code> is a better option for higher-volume operations for user authentication.</p>
 /// <p>You must use AWS Developer credentials to call this API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct LookupDeveloperIdentityFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder,
+    inner:
+        crate::operation::lookup_developer_identity::builders::LookupDeveloperIdentityInputBuilder,
 }
-impl LookupDeveloperIdentityFluentBuilder  {
+impl LookupDeveloperIdentityFluentBuilder {
     /// Creates a new `LookupDeveloperIdentity`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::lookup_developer_identity::LookupDeveloperIdentity, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::lookup_developer_identity::LookupDeveloperIdentityError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput, aws_smithy_http::result::SdkError<crate::operation::lookup_developer_identity::LookupDeveloperIdentityError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::lookup_developer_identity::LookupDeveloperIdentity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>An identity pool ID in the format REGION:GUID.</p>
     pub fn identity_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.identity_pool_id(input.into());
@@ -76,7 +97,10 @@ impl LookupDeveloperIdentityFluentBuilder  {
         self
     }
     /// <p>A unique ID used by your backend authentication process to identify a user. Typically, a developer identity provider would issue many developer user identifiers, in keeping with the number of users.</p>
-    pub fn set_developer_user_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_developer_user_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_developer_user_identifier(input);
         self
     }
@@ -101,4 +125,3 @@ impl LookupDeveloperIdentityFluentBuilder  {
         self
     }
 }
-

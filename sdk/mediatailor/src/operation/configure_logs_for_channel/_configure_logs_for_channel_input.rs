@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureLogsForChannelInput  {
+pub struct ConfigureLogsForChannelInput {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct ConfigureLogsForChannelInput  {
 }
 impl ConfigureLogsForChannelInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> std::option::Option<& str> {
+    pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
     /// <p>The types of logs to collect.</p>
-    pub fn log_types(&self) -> std::option::Option<& [crate::types::LogType]> {
+    pub fn log_types(&self) -> std::option::Option<&[crate::types::LogType]> {
         self.log_types.as_deref()
     }
 }
 impl ConfigureLogsForChannelInput {
     /// Creates a new builder-style object to manufacture [`ConfigureLogsForChannelInput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput).
-    pub fn builder() -> crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder
+    {
         crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl ConfigureLogsForChannelInputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input; self
+        self.channel_name = input;
+        self
     }
     /// Appends an item to `log_types`.
     ///
@@ -51,24 +54,30 @@ impl ConfigureLogsForChannelInputBuilder {
     /// <p>The types of logs to collect.</p>
     pub fn log_types(mut self, input: crate::types::LogType) -> Self {
         let mut v = self.log_types.unwrap_or_default();
-                        v.push(input);
-                        self.log_types = Some(v);
-                        self
+        v.push(input);
+        self.log_types = Some(v);
+        self
     }
     /// <p>The types of logs to collect.</p>
-    pub fn set_log_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::LogType>>) -> Self {
-        self.log_types = input; self
+    pub fn set_log_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LogType>>,
+    ) -> Self {
+        self.log_types = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConfigureLogsForChannelInput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput).
-    pub fn build(self) -> Result<crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput {
-                channel_name: self.channel_name
-                ,
-                log_types: self.log_types
-                ,
-            }
+                channel_name: self.channel_name,
+                log_types: self.log_types,
+            },
         )
     }
 }
-

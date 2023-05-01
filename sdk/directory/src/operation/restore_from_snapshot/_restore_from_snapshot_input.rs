@@ -3,21 +3,23 @@
 /// <p>An object representing the inputs for the <code>RestoreFromSnapshot</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreFromSnapshotInput  {
+pub struct RestoreFromSnapshotInput {
     /// <p>The identifier of the snapshot to restore from.</p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
 }
 impl RestoreFromSnapshotInput {
     /// <p>The identifier of the snapshot to restore from.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<& str> {
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
 }
 impl RestoreFromSnapshotInput {
     /// Creates a new builder-style object to manufacture [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
-    pub fn builder() -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotInputBuilder {
-        crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotInputBuilder {
+        crate::operation::restore_from_snapshot::builders::RestoreFromSnapshotInputBuilder::default(
+        )
     }
 }
 
@@ -35,16 +37,20 @@ impl RestoreFromSnapshotInputBuilder {
     }
     /// <p>The identifier of the snapshot to restore from.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input; self
+        self.snapshot_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RestoreFromSnapshotInput`](crate::operation::restore_from_snapshot::RestoreFromSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::restore_from_snapshot::RestoreFromSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::restore_from_snapshot::RestoreFromSnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::restore_from_snapshot::RestoreFromSnapshotInput {
-                snapshot_id: self.snapshot_id
-                ,
-            }
+                snapshot_id: self.snapshot_id,
+            },
         )
     }
 }
-

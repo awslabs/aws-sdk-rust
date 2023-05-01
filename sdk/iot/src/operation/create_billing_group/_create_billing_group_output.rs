@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBillingGroupOutput  {
+pub struct CreateBillingGroupOutput {
     /// <p>The name you gave to the billing group.</p>
     #[doc(hidden)]
     pub billing_group_name: std::option::Option<std::string::String>,
@@ -16,26 +16,27 @@ pub struct CreateBillingGroupOutput  {
 }
 impl CreateBillingGroupOutput {
     /// <p>The name you gave to the billing group.</p>
-    pub fn billing_group_name(&self) -> std::option::Option<& str> {
+    pub fn billing_group_name(&self) -> std::option::Option<&str> {
         self.billing_group_name.as_deref()
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn billing_group_arn(&self) -> std::option::Option<& str> {
+    pub fn billing_group_arn(&self) -> std::option::Option<&str> {
         self.billing_group_arn.as_deref()
     }
     /// <p>The ID of the billing group.</p>
-    pub fn billing_group_id(&self) -> std::option::Option<& str> {
+    pub fn billing_group_id(&self) -> std::option::Option<&str> {
         self.billing_group_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateBillingGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateBillingGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateBillingGroupOutput`](crate::operation::create_billing_group::CreateBillingGroupOutput).
-    pub fn builder() -> crate::operation::create_billing_group::builders::CreateBillingGroupOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_billing_group::builders::CreateBillingGroupOutputBuilder {
         crate::operation::create_billing_group::builders::CreateBillingGroupOutputBuilder::default()
     }
 }
@@ -56,8 +57,12 @@ impl CreateBillingGroupOutputBuilder {
         self
     }
     /// <p>The name you gave to the billing group.</p>
-    pub fn set_billing_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_group_name = input; self
+    pub fn set_billing_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.billing_group_name = input;
+        self
     }
     /// <p>The ARN of the billing group.</p>
     pub fn billing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,8 +70,12 @@ impl CreateBillingGroupOutputBuilder {
         self
     }
     /// <p>The ARN of the billing group.</p>
-    pub fn set_billing_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_group_arn = input; self
+    pub fn set_billing_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.billing_group_arn = input;
+        self
     }
     /// <p>The ID of the billing group.</p>
     pub fn billing_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,28 +84,25 @@ impl CreateBillingGroupOutputBuilder {
     }
     /// <p>The ID of the billing group.</p>
     pub fn set_billing_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.billing_group_id = input; self
+        self.billing_group_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateBillingGroupOutput`](crate::operation::create_billing_group::CreateBillingGroupOutput).
     pub fn build(self) -> crate::operation::create_billing_group::CreateBillingGroupOutput {
         crate::operation::create_billing_group::CreateBillingGroupOutput {
-            billing_group_name: self.billing_group_name
-            ,
-            billing_group_arn: self.billing_group_arn
-            ,
-            billing_group_id: self.billing_group_id
-            ,
+            billing_group_name: self.billing_group_name,
+            billing_group_arn: self.billing_group_arn,
+            billing_group_id: self.billing_group_id,
             _request_id: self._request_id,
         }
     }
 }
-

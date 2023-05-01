@@ -3,42 +3,42 @@
 /// <p>Provides a regular expression used to validate the value of a slot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlotTypeRegexConfiguration  {
-    /// <p>A regular expression used to validate the value of a slot. </p> 
-    /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p> 
-    /// <ul> 
-    /// <li> <p>A-Z, a-z</p> </li> 
-    /// <li> <p>0-9</p> </li> 
+pub struct SlotTypeRegexConfiguration {
+    /// <p>A regular expression used to validate the value of a slot. </p>
+    /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
+    /// <ul>
+    /// <li> <p>A-Z, a-z</p> </li>
+    /// <li> <p>0-9</p> </li>
     /// <li> <p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li> 
-    /// </ul> 
-    /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p> 
-    /// <p>The following regular expression operators are not supported:</p> 
-    /// <ul> 
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li> 
-    /// <li> <p>Wild card (.)</p> </li> 
+    /// </unicode></p> </li>
+    /// </ul>
+    /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p>
+    /// <p>The following regular expression operators are not supported:</p>
+    /// <ul>
+    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
+    /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub pattern: std::option::Option<std::string::String>,
 }
 impl SlotTypeRegexConfiguration {
-    /// <p>A regular expression used to validate the value of a slot. </p> 
-    /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p> 
-    /// <ul> 
-    /// <li> <p>A-Z, a-z</p> </li> 
-    /// <li> <p>0-9</p> </li> 
+    /// <p>A regular expression used to validate the value of a slot. </p>
+    /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
+    /// <ul>
+    /// <li> <p>A-Z, a-z</p> </li>
+    /// <li> <p>0-9</p> </li>
     /// <li> <p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li> 
-    /// </ul> 
-    /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p> 
-    /// <p>The following regular expression operators are not supported:</p> 
-    /// <ul> 
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li> 
-    /// <li> <p>Wild card (.)</p> </li> 
+    /// </unicode></p> </li>
     /// </ul>
-    pub fn pattern(&self) -> std::option::Option<& str> {
+    /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p>
+    /// <p>The following regular expression operators are not supported:</p>
+    /// <ul>
+    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
+    /// <li> <p>Wild card (.)</p> </li>
+    /// </ul>
+    pub fn pattern(&self) -> std::option::Option<&str> {
         self.pattern.as_deref()
     }
 }
@@ -56,49 +56,48 @@ pub struct SlotTypeRegexConfigurationBuilder {
     pub(crate) pattern: std::option::Option<std::string::String>,
 }
 impl SlotTypeRegexConfigurationBuilder {
-    /// <p>A regular expression used to validate the value of a slot. </p> 
-    /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p> 
-    /// <ul> 
-    /// <li> <p>A-Z, a-z</p> </li> 
-    /// <li> <p>0-9</p> </li> 
+    /// <p>A regular expression used to validate the value of a slot. </p>
+    /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
+    /// <ul>
+    /// <li> <p>A-Z, a-z</p> </li>
+    /// <li> <p>0-9</p> </li>
     /// <li> <p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li> 
-    /// </ul> 
-    /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p> 
-    /// <p>The following regular expression operators are not supported:</p> 
-    /// <ul> 
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li> 
-    /// <li> <p>Wild card (.)</p> </li> 
+    /// </unicode></p> </li>
+    /// </ul>
+    /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p>
+    /// <p>The following regular expression operators are not supported:</p>
+    /// <ul>
+    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
+    /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
     pub fn pattern(mut self, input: impl Into<std::string::String>) -> Self {
         self.pattern = Some(input.into());
         self
     }
-    /// <p>A regular expression used to validate the value of a slot. </p> 
-    /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p> 
-    /// <ul> 
-    /// <li> <p>A-Z, a-z</p> </li> 
-    /// <li> <p>0-9</p> </li> 
+    /// <p>A regular expression used to validate the value of a slot. </p>
+    /// <p>Use a standard regular expression. Amazon Lex supports the following characters in the regular expression:</p>
+    /// <ul>
+    /// <li> <p>A-Z, a-z</p> </li>
+    /// <li> <p>0-9</p> </li>
     /// <li> <p>Unicode characters ("\ u<unicode>
     /// ")
-    /// </unicode></p> </li> 
-    /// </ul> 
-    /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p> 
-    /// <p>The following regular expression operators are not supported:</p> 
-    /// <ul> 
-    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li> 
-    /// <li> <p>Wild card (.)</p> </li> 
+    /// </unicode></p> </li>
+    /// </ul>
+    /// <p>Represent Unicode characters with four digits, for example "\u0041" or "\u005A".</p>
+    /// <p>The following regular expression operators are not supported:</p>
+    /// <ul>
+    /// <li> <p>Infinite repeaters: *, +, or {x,} with no upper bound.</p> </li>
+    /// <li> <p>Wild card (.)</p> </li>
     /// </ul>
     pub fn set_pattern(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pattern = input; self
+        self.pattern = input;
+        self
     }
     /// Consumes the builder and constructs a [`SlotTypeRegexConfiguration`](crate::types::SlotTypeRegexConfiguration).
     pub fn build(self) -> crate::types::SlotTypeRegexConfiguration {
         crate::types::SlotTypeRegexConfiguration {
-            pattern: self.pattern
-            ,
+            pattern: self.pattern,
         }
     }
 }
-

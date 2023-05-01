@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRoleAliasesOutput  {
+pub struct ListRoleAliasesOutput {
     /// <p>The role aliases.</p>
     #[doc(hidden)]
     pub role_aliases: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,23 @@ pub struct ListRoleAliasesOutput  {
 }
 impl ListRoleAliasesOutput {
     /// <p>The role aliases.</p>
-    pub fn role_aliases(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn role_aliases(&self) -> std::option::Option<&[std::string::String]> {
         self.role_aliases.as_deref()
     }
     /// <p>A marker used to get the next set of results.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRoleAliasesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListRoleAliasesOutput {
     /// Creates a new builder-style object to manufacture [`ListRoleAliasesOutput`](crate::operation::list_role_aliases::ListRoleAliasesOutput).
-    pub fn builder() -> crate::operation::list_role_aliases::builders::ListRoleAliasesOutputBuilder {
+    pub fn builder() -> crate::operation::list_role_aliases::builders::ListRoleAliasesOutputBuilder
+    {
         crate::operation::list_role_aliases::builders::ListRoleAliasesOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListRoleAliasesOutputBuilder {
     /// <p>The role aliases.</p>
     pub fn role_aliases(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.role_aliases.unwrap_or_default();
-                        v.push(input.into());
-                        self.role_aliases = Some(v);
-                        self
+        v.push(input.into());
+        self.role_aliases = Some(v);
+        self
     }
     /// <p>The role aliases.</p>
-    pub fn set_role_aliases(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.role_aliases = input; self
+    pub fn set_role_aliases(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.role_aliases = input;
+        self
     }
     /// <p>A marker used to get the next set of results.</p>
     pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListRoleAliasesOutputBuilder {
     }
     /// <p>A marker used to get the next set of results.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListRoleAliasesOutput`](crate::operation::list_role_aliases::ListRoleAliasesOutput).
     pub fn build(self) -> crate::operation::list_role_aliases::ListRoleAliasesOutput {
         crate::operation::list_role_aliases::ListRoleAliasesOutput {
-            role_aliases: self.role_aliases
-            ,
-            next_marker: self.next_marker
-            ,
+            role_aliases: self.role_aliases,
+            next_marker: self.next_marker,
             _request_id: self._request_id,
         }
     }
 }
-

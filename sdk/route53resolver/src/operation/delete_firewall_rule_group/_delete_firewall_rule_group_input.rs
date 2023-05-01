@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFirewallRuleGroupInput  {
+pub struct DeleteFirewallRuleGroupInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
     #[doc(hidden)]
     pub firewall_rule_group_id: std::option::Option<std::string::String>,
 }
 impl DeleteFirewallRuleGroupInput {
     /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
-    pub fn firewall_rule_group_id(&self) -> std::option::Option<& str> {
+    pub fn firewall_rule_group_id(&self) -> std::option::Option<&str> {
         self.firewall_rule_group_id.as_deref()
     }
 }
 impl DeleteFirewallRuleGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallRuleGroupInput`](crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupInput).
-    pub fn builder() -> crate::operation::delete_firewall_rule_group::builders::DeleteFirewallRuleGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_firewall_rule_group::builders::DeleteFirewallRuleGroupInputBuilder
+    {
         crate::operation::delete_firewall_rule_group::builders::DeleteFirewallRuleGroupInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteFirewallRuleGroupInputBuilder {
         self
     }
     /// <p>The unique identifier of the firewall rule group that you want to delete. </p>
-    pub fn set_firewall_rule_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firewall_rule_group_id = input; self
+    pub fn set_firewall_rule_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.firewall_rule_group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFirewallRuleGroupInput`](crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupInput {
-                firewall_rule_group_id: self.firewall_rule_group_id
-                ,
-            }
+                firewall_rule_group_id: self.firewall_rule_group_id,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateProjectInput  {
+pub struct CreateProjectInput {
     /// <p>The ID of the portal in which to create the project.</p>
     #[doc(hidden)]
     pub portal_id: std::option::Option<std::string::String>,
@@ -17,27 +17,31 @@ pub struct CreateProjectInput  {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateProjectInput {
     /// <p>The ID of the portal in which to create the project.</p>
-    pub fn portal_id(&self) -> std::option::Option<& str> {
+    pub fn portal_id(&self) -> std::option::Option<&str> {
         self.portal_id.as_deref()
     }
     /// <p>A friendly name for the project.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>A description for the project.</p>
-    pub fn project_description(&self) -> std::option::Option<& str> {
+    pub fn project_description(&self) -> std::option::Option<&str> {
         self.project_description.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -56,7 +60,8 @@ pub struct CreateProjectInputBuilder {
     pub(crate) project_name: std::option::Option<std::string::String>,
     pub(crate) project_description: std::option::Option<std::string::String>,
     pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateProjectInputBuilder {
     /// <p>The ID of the portal in which to create the project.</p>
@@ -66,7 +71,8 @@ impl CreateProjectInputBuilder {
     }
     /// <p>The ID of the portal in which to create the project.</p>
     pub fn set_portal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portal_id = input; self
+        self.portal_id = input;
+        self
     }
     /// <p>A friendly name for the project.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +81,8 @@ impl CreateProjectInputBuilder {
     }
     /// <p>A friendly name for the project.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// <p>A description for the project.</p>
     pub fn project_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +90,12 @@ impl CreateProjectInputBuilder {
         self
     }
     /// <p>A description for the project.</p>
-    pub fn set_project_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_description = input; self
+    pub fn set_project_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.project_description = input;
+        self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,39 +104,47 @@ impl CreateProjectInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A list of key-value pairs that contain metadata for the project. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
-    pub fn build(self) -> Result<crate::operation::create_project::CreateProjectInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_project::CreateProjectInput {
-                portal_id: self.portal_id
-                ,
-                project_name: self.project_name
-                ,
-                project_description: self.project_description
-                ,
-                client_token: self.client_token
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_project::CreateProjectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_project::CreateProjectInput {
+            portal_id: self.portal_id,
+            project_name: self.project_name,
+            project_description: self.project_description,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }
-

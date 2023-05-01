@@ -4,59 +4,79 @@ pub use crate::operation::update_regex_pattern_set::_update_regex_pattern_set_ou
 pub use crate::operation::update_regex_pattern_set::_update_regex_pattern_set_input::UpdateRegexPatternSetInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateRegexPatternSet`.
-/// 
-/// <p>Updates the specified <code>RegexPatternSet</code>.</p> <note> 
-/// <p>This operation completely replaces the mutable specifications that you already have for the regex pattern set with the ones that you provide to this call. </p> 
-/// <p>To modify a regex pattern set, do the following: </p> 
-/// <ol> 
-/// <li> <p>Retrieve it by calling <code>GetRegexPatternSet</code> </p> </li> 
-/// <li> <p>Update its settings as needed</p> </li> 
-/// <li> <p>Provide the complete regex pattern set specification to this call</p> </li> 
-/// </ol> 
-/// </note> 
+///
+/// <p>Updates the specified <code>RegexPatternSet</code>.</p> <note>
+/// <p>This operation completely replaces the mutable specifications that you already have for the regex pattern set with the ones that you provide to this call. </p>
+/// <p>To modify a regex pattern set, do the following: </p>
+/// <ol>
+/// <li> <p>Retrieve it by calling <code>GetRegexPatternSet</code> </p> </li>
+/// <li> <p>Update its settings as needed</p> </li>
+/// <li> <p>Provide the complete regex pattern set specification to this call</p> </li>
+/// </ol>
+/// </note>
 /// <p>When you make changes to web ACLs or web ACL components, like rules and rule groups, WAF propagates the changes everywhere that the web ACL and its components are stored and used. Your changes are applied within seconds, but there might be a brief period of inconsistency when the changes have arrived in some places and not in others. So, for example, if you change a rule action setting, the action might be the old action in one area and the new action in another area. Or if you add an IP address to an IP set used in a blocking rule, the new address might briefly be blocked in one area while still allowed in another. This temporary inconsistency can occur when you first associate a web ACL with an Amazon Web Services resource and when you change a web ACL that is already associated with a resource. Generally, any inconsistencies of this type last only a few seconds.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRegexPatternSetFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder,
+    inner: crate::operation::update_regex_pattern_set::builders::UpdateRegexPatternSetInputBuilder,
 }
-impl UpdateRegexPatternSetFluentBuilder  {
+impl UpdateRegexPatternSetFluentBuilder {
     /// Creates a new `UpdateRegexPatternSet`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_regex_pattern_set::UpdateRegexPatternSet, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput, aws_smithy_http::result::SdkError<crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSet,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the set. You cannot change the name after you create the set.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -67,21 +87,21 @@ impl UpdateRegexPatternSetFluentBuilder  {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
@@ -117,7 +137,10 @@ impl UpdateRegexPatternSetFluentBuilder  {
         self
     }
     /// <p></p>
-    pub fn set_regular_expression_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Regex>>) -> Self {
+    pub fn set_regular_expression_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Regex>>,
+    ) -> Self {
         self.inner = self.inner.set_regular_expression_list(input);
         self
     }
@@ -132,4 +155,3 @@ impl UpdateRegexPatternSetFluentBuilder  {
         self
     }
 }
-

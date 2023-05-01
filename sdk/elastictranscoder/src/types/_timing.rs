@@ -3,7 +3,7 @@
 /// <p>Details about the timing of a job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Timing  {
+pub struct Timing {
     /// <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
     #[doc(hidden)]
     pub submit_time_millis: std::option::Option<i64>,
@@ -51,7 +51,8 @@ impl TimingBuilder {
     }
     /// <p>The time the job was submitted to Elastic Transcoder, in epoch milliseconds.</p>
     pub fn set_submit_time_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.submit_time_millis = input; self
+        self.submit_time_millis = input;
+        self
     }
     /// <p>The time the job began transcoding, in epoch milliseconds.</p>
     pub fn start_time_millis(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl TimingBuilder {
     }
     /// <p>The time the job began transcoding, in epoch milliseconds.</p>
     pub fn set_start_time_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.start_time_millis = input; self
+        self.start_time_millis = input;
+        self
     }
     /// <p>The time the job finished transcoding, in epoch milliseconds.</p>
     pub fn finish_time_millis(mut self, input: i64) -> Self {
@@ -69,18 +71,15 @@ impl TimingBuilder {
     }
     /// <p>The time the job finished transcoding, in epoch milliseconds.</p>
     pub fn set_finish_time_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.finish_time_millis = input; self
+        self.finish_time_millis = input;
+        self
     }
     /// Consumes the builder and constructs a [`Timing`](crate::types::Timing).
     pub fn build(self) -> crate::types::Timing {
         crate::types::Timing {
-            submit_time_millis: self.submit_time_millis
-            ,
-            start_time_millis: self.start_time_millis
-            ,
-            finish_time_millis: self.finish_time_millis
-            ,
+            submit_time_millis: self.submit_time_millis,
+            start_time_millis: self.start_time_millis,
+            finish_time_millis: self.finish_time_millis,
         }
     }
 }
-

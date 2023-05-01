@@ -3,7 +3,7 @@
 /// <p>An internal server error occurred.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternalServerErrorException  {
+pub struct InternalServerErrorException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -17,7 +17,7 @@ pub struct InternalServerErrorException  {
 }
 impl InternalServerErrorException {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn class_name(&self) -> std::option::Option<& str> {
+    pub fn class_name(&self) -> std::option::Option<&str> {
         self.class_name.as_deref()
     }
     #[allow(missing_docs)] // documentation missing in model
@@ -27,13 +27,15 @@ impl InternalServerErrorException {
 }
 impl InternalServerErrorException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for InternalServerErrorException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InternalServerErrorException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -48,7 +50,9 @@ impl aws_http::request_id::RequestId for crate::types::error::InternalServerErro
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InternalServerErrorException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl InternalServerErrorException {
     /// Creates a new builder-style object to manufacture [`InternalServerErrorException`](crate::types::error::InternalServerErrorException).
@@ -74,7 +78,8 @@ impl InternalServerErrorExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn class_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +88,8 @@ impl InternalServerErrorExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_class_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.class_name = input; self
+        self.class_name = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn code(mut self, input: i32) -> Self {
@@ -92,31 +98,30 @@ impl InternalServerErrorExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`InternalServerErrorException`](crate::types::error::InternalServerErrorException).
     pub fn build(self) -> crate::types::error::InternalServerErrorException {
         crate::types::error::InternalServerErrorException {
-            message: self.message
-            ,
-            class_name: self.class_name
-            ,
-            code: self.code
-                .unwrap_or_default()
-            ,
+            message: self.message,
+            class_name: self.class_name,
+            code: self.code.unwrap_or_default(),
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

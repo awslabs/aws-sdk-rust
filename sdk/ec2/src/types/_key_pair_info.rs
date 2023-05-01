@@ -3,19 +3,19 @@
 /// <p>Describes a key pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KeyPairInfo  {
+pub struct KeyPairInfo {
     /// <p>The ID of the key pair.</p>
     #[doc(hidden)]
     pub key_pair_id: std::option::Option<std::string::String>,
-    /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p> 
-    /// <ul> 
-    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li> 
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
-    /// </ul> 
-    /// <p>If you used <code>ImportKeyPair</code> to provide Amazon Web Services the public key:</p> 
-    /// <ul> 
-    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li> 
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
+    /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+    /// </ul>
+    /// <p>If you used <code>ImportKeyPair</code> to provide Amazon Web Services the public key:</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub key_fingerprint: std::option::Option<std::string::String>,
@@ -31,48 +31,48 @@ pub struct KeyPairInfo  {
     /// <p>The public key material.</p>
     #[doc(hidden)]
     pub public_key: std::option::Option<std::string::String>,
-    /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p> 
+    /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     /// <p>If you imported an existing key pair to Amazon EC2, this is the date and time the key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl KeyPairInfo {
     /// <p>The ID of the key pair.</p>
-    pub fn key_pair_id(&self) -> std::option::Option<& str> {
+    pub fn key_pair_id(&self) -> std::option::Option<&str> {
         self.key_pair_id.as_deref()
     }
-    /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p> 
-    /// <ul> 
-    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li> 
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
-    /// </ul> 
-    /// <p>If you used <code>ImportKeyPair</code> to provide Amazon Web Services the public key:</p> 
-    /// <ul> 
-    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li> 
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
+    /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
-    pub fn key_fingerprint(&self) -> std::option::Option<& str> {
+    /// <p>If you used <code>ImportKeyPair</code> to provide Amazon Web Services the public key:</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+    /// </ul>
+    pub fn key_fingerprint(&self) -> std::option::Option<&str> {
         self.key_fingerprint.as_deref()
     }
     /// <p>The name of the key pair.</p>
-    pub fn key_name(&self) -> std::option::Option<& str> {
+    pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
     /// <p>The type of key pair.</p>
-    pub fn key_type(&self) -> std::option::Option<& crate::types::KeyType> {
+    pub fn key_type(&self) -> std::option::Option<&crate::types::KeyType> {
         self.key_type.as_ref()
     }
     /// <p>Any tags applied to the key pair.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The public key material.</p>
-    pub fn public_key(&self) -> std::option::Option<& str> {
+    pub fn public_key(&self) -> std::option::Option<&str> {
         self.public_key.as_deref()
     }
-    /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p> 
+    /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     /// <p>If you imported an existing key pair to Amazon EC2, this is the date and time the key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
@@ -103,34 +103,36 @@ impl KeyPairInfoBuilder {
     }
     /// <p>The ID of the key pair.</p>
     pub fn set_key_pair_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_pair_id = input; self
+        self.key_pair_id = input;
+        self
     }
-    /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p> 
-    /// <ul> 
-    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li> 
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
-    /// </ul> 
-    /// <p>If you used <code>ImportKeyPair</code> to provide Amazon Web Services the public key:</p> 
-    /// <ul> 
-    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li> 
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
+    /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+    /// </ul>
+    /// <p>If you used <code>ImportKeyPair</code> to provide Amazon Web Services the public key:</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
     pub fn key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
         self.key_fingerprint = Some(input.into());
         self
     }
-    /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p> 
-    /// <ul> 
-    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li> 
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
-    /// </ul> 
-    /// <p>If you used <code>ImportKeyPair</code> to provide Amazon Web Services the public key:</p> 
-    /// <ul> 
-    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li> 
-    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li> 
+    /// <p>If you used <code>CreateKeyPair</code> to create the key pair:</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
+    /// </ul>
+    /// <p>If you used <code>ImportKeyPair</code> to provide Amazon Web Services the public key:</p>
+    /// <ul>
+    /// <li> <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p> </li>
+    /// <li> <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p> </li>
     /// </ul>
     pub fn set_key_fingerprint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_fingerprint = input; self
+        self.key_fingerprint = input;
+        self
     }
     /// <p>The name of the key pair.</p>
     pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,7 +141,8 @@ impl KeyPairInfoBuilder {
     }
     /// <p>The name of the key pair.</p>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input; self
+        self.key_name = input;
+        self
     }
     /// <p>The type of key pair.</p>
     pub fn key_type(mut self, input: crate::types::KeyType) -> Self {
@@ -148,7 +151,8 @@ impl KeyPairInfoBuilder {
     }
     /// <p>The type of key pair.</p>
     pub fn set_key_type(mut self, input: std::option::Option<crate::types::KeyType>) -> Self {
-        self.key_type = input; self
+        self.key_type = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -157,13 +161,17 @@ impl KeyPairInfoBuilder {
     /// <p>Any tags applied to the key pair.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Any tags applied to the key pair.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The public key material.</p>
     pub fn public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -172,37 +180,34 @@ impl KeyPairInfoBuilder {
     }
     /// <p>The public key material.</p>
     pub fn set_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_key = input; self
+        self.public_key = input;
+        self
     }
-    /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p> 
+    /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     /// <p>If you imported an existing key pair to Amazon EC2, this is the date and time the key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.create_time = Some(input);
         self
     }
-    /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p> 
+    /// <p>If you used Amazon EC2 to create the key pair, this is the date and time when the key was created, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
     /// <p>If you imported an existing key pair to Amazon EC2, this is the date and time the key was imported, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 date-time format</a>, in the UTC time zone.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`KeyPairInfo`](crate::types::KeyPairInfo).
     pub fn build(self) -> crate::types::KeyPairInfo {
         crate::types::KeyPairInfo {
-            key_pair_id: self.key_pair_id
-            ,
-            key_fingerprint: self.key_fingerprint
-            ,
-            key_name: self.key_name
-            ,
-            key_type: self.key_type
-            ,
-            tags: self.tags
-            ,
-            public_key: self.public_key
-            ,
-            create_time: self.create_time
-            ,
+            key_pair_id: self.key_pair_id,
+            key_fingerprint: self.key_fingerprint,
+            key_name: self.key_name,
+            key_type: self.key_type,
+            tags: self.tags,
+            public_key: self.public_key,
+            create_time: self.create_time,
         }
     }
 }
-

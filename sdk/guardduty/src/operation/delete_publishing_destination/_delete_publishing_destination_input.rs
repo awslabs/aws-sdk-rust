@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePublishingDestinationInput  {
+pub struct DeletePublishingDestinationInput {
     /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeletePublishingDestinationInput  {
 }
 impl DeletePublishingDestinationInput {
     /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The ID of the publishing destination to delete.</p>
-    pub fn destination_id(&self) -> std::option::Option<& str> {
+    pub fn destination_id(&self) -> std::option::Option<&str> {
         self.destination_id.as_deref()
     }
 }
 impl DeletePublishingDestinationInput {
     /// Creates a new builder-style object to manufacture [`DeletePublishingDestinationInput`](crate::operation::delete_publishing_destination::DeletePublishingDestinationInput).
-    pub fn builder() -> crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationInputBuilder {
+    pub fn builder() -> crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationInputBuilder{
         crate::operation::delete_publishing_destination::builders::DeletePublishingDestinationInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DeletePublishingDestinationInputBuilder {
     }
     /// <p>The unique ID of the detector associated with the publishing destination to delete.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The ID of the publishing destination to delete.</p>
     pub fn destination_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,21 @@ impl DeletePublishingDestinationInputBuilder {
     }
     /// <p>The ID of the publishing destination to delete.</p>
     pub fn set_destination_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_id = input; self
+        self.destination_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePublishingDestinationInput`](crate::operation::delete_publishing_destination::DeletePublishingDestinationInput).
-    pub fn build(self) -> Result<crate::operation::delete_publishing_destination::DeletePublishingDestinationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_publishing_destination::DeletePublishingDestinationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_publishing_destination::DeletePublishingDestinationInput {
-                detector_id: self.detector_id
-                ,
-                destination_id: self.destination_id
-                ,
-            }
+                detector_id: self.detector_id,
+                destination_id: self.destination_id,
+            },
         )
     }
 }
-

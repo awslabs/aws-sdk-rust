@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeApplicationInput  {
+pub struct DescribeApplicationInput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeApplicationInput  {
 }
 impl DescribeApplicationInput {
     /// <p>The name of the application.</p>
-    pub fn application_name(&self) -> std::option::Option<& str> {
+    pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
@@ -22,7 +22,8 @@ impl DescribeApplicationInput {
 }
 impl DescribeApplicationInput {
     /// Creates a new builder-style object to manufacture [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
-    pub fn builder() -> crate::operation::describe_application::builders::DescribeApplicationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_application::builders::DescribeApplicationInputBuilder {
         crate::operation::describe_application::builders::DescribeApplicationInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DescribeApplicationInputBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input; self
+        self.application_name = input;
+        self
     }
     /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
     pub fn include_additional_details(mut self, input: bool) -> Self {
@@ -51,18 +53,21 @@ impl DescribeApplicationInputBuilder {
     }
     /// <p>Displays verbose information about a Kinesis Data Analytics application, including the application's job plan.</p>
     pub fn set_include_additional_details(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_additional_details = input; self
+        self.include_additional_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeApplicationInput`](crate::operation::describe_application::DescribeApplicationInput).
-    pub fn build(self) -> Result<crate::operation::describe_application::DescribeApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_application::DescribeApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_application::DescribeApplicationInput {
-                application_name: self.application_name
-                ,
-                include_additional_details: self.include_additional_details
-                ,
-            }
+                application_name: self.application_name,
+                include_additional_details: self.include_additional_details,
+            },
         )
     }
 }
-

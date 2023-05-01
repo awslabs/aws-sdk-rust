@@ -4,71 +4,95 @@ pub use crate::operation::list_principals::_list_principals_output::ListPrincipa
 pub use crate::operation::list_principals::_list_principals_input::ListPrincipalsInputBuilder;
 
 /// Fluent builder constructing a request to `ListPrincipals`.
-/// 
+///
 /// <p>Lists the principals that you are sharing resources with or that are sharing resources with you.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPrincipalsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_principals::builders::ListPrincipalsInputBuilder,
+    inner: crate::operation::list_principals::builders::ListPrincipalsInputBuilder,
 }
-impl ListPrincipalsFluentBuilder  {
+impl ListPrincipalsFluentBuilder {
     /// Creates a new `ListPrincipals`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_principals::ListPrincipals, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_principals::ListPrincipalsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_principals::ListPrincipalsOutput, aws_smithy_http::result::SdkError<crate::operation::list_principals::ListPrincipalsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_principals::ListPrincipals,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_principals::ListPrincipalsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_principals::ListPrincipalsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_principals::ListPrincipalsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_principals::paginator::ListPrincipalsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_principals::paginator::ListPrincipalsPaginator {
-                                crate::operation::list_principals::paginator::ListPrincipalsPaginator::new(self.handle, self.inner)
-                            }
-    /// <p>Specifies that you want to list information for only resource shares that match the following:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li> 
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_principals::paginator::ListPrincipalsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_principals::paginator::ListPrincipalsPaginator {
+        crate::operation::list_principals::paginator::ListPrincipalsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
+    /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
     /// </ul>
     pub fn resource_owner(mut self, input: crate::types::ResourceOwner) -> Self {
         self.inner = self.inner.resource_owner(input);
         self
     }
-    /// <p>Specifies that you want to list information for only resource shares that match the following:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li> 
-    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li> 
+    /// <p>Specifies that you want to list information for only resource shares that match the following:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>SELF</code> </b> – principals that your account is sharing resources with</p> </li>
+    /// <li> <p> <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with your account</p> </li>
     /// </ul>
-    pub fn set_resource_owner(mut self, input: std::option::Option<crate::types::ResourceOwner>) -> Self {
+    pub fn set_resource_owner(
+        mut self,
+        input: std::option::Option<crate::types::ResourceOwner>,
+    ) -> Self {
         self.inner = self.inner.set_resource_owner(input);
         self
     }
@@ -86,43 +110,46 @@ impl ListPrincipalsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
     ///
-    /// <p>Specifies that you want to list information for only the listed principals.</p> 
-    /// <p>You can include the following values:</p> 
-    /// <ul> 
-    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li> 
-    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li> 
-    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p> 
+    /// <p>Specifies that you want to list information for only the listed principals.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.principals(input.into());
         self
     }
-    /// <p>Specifies that you want to list information for only the listed principals.</p> 
-    /// <p>You can include the following values:</p> 
-    /// <ul> 
-    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li> 
-    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li> 
-    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p> 
+    /// <p>Specifies that you want to list information for only the listed principals.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_principals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_principals(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_principals(input);
         self
     }
-    /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p> 
+    /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
     /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
-    /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p> 
+    /// <p>Specifies that you want to list information for only principals associated with resource shares that include the specified resource type.</p>
     /// <p>For a list of valid values, query the <code>ListResourceTypes</code> operation.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
@@ -138,7 +165,10 @@ impl ListPrincipalsFluentBuilder  {
         self
     }
     /// <p>Specifies that you want to list information for only principals associated with the resource shares specified by a list the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a>.</p>
-    pub fn set_resource_share_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_resource_share_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_resource_share_arns(input);
         self
     }
@@ -163,4 +193,3 @@ impl ListPrincipalsFluentBuilder  {
         self
     }
 }
-

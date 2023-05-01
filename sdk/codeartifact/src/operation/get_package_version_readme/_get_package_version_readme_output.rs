@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPackageVersionReadmeOutput  {
+pub struct GetPackageVersionReadmeOutput {
     /// <p> The format of the package with the requested readme file. </p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::PackageFormat>,
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -30,43 +30,45 @@ pub struct GetPackageVersionReadmeOutput  {
 }
 impl GetPackageVersionReadmeOutput {
     /// <p> The format of the package with the requested readme file. </p>
-    pub fn format(&self) -> std::option::Option<& crate::types::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package that contains the returned readme file. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> The version of the package with the requested readme file. </p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p> The current revision associated with the package version. </p>
-    pub fn version_revision(&self) -> std::option::Option<& str> {
+    pub fn version_revision(&self) -> std::option::Option<&str> {
         self.version_revision.as_deref()
     }
     /// <p> The text of the returned readme file. </p>
-    pub fn readme(&self) -> std::option::Option<& str> {
+    pub fn readme(&self) -> std::option::Option<&str> {
         self.readme.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetPackageVersionReadmeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetPackageVersionReadmeOutput {
     /// Creates a new builder-style object to manufacture [`GetPackageVersionReadmeOutput`](crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput).
-    pub fn builder() -> crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeOutputBuilder
+    {
         crate::operation::get_package_version_readme::builders::GetPackageVersionReadmeOutputBuilder::default()
     }
 }
@@ -91,26 +93,28 @@ impl GetPackageVersionReadmeOutputBuilder {
     }
     /// <p> The format of the package with the requested readme file. </p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace = Some(input.into());
         self
     }
-    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li> 
+    /// <p>The namespace of the package version with the requested readme file. The package version component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package version is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package version is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// <p> The name of the package that contains the returned readme file. </p>
     pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +123,8 @@ impl GetPackageVersionReadmeOutputBuilder {
     }
     /// <p> The name of the package that contains the returned readme file. </p>
     pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package = input; self
+        self.package = input;
+        self
     }
     /// <p> The version of the package with the requested readme file. </p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +133,8 @@ impl GetPackageVersionReadmeOutputBuilder {
     }
     /// <p> The version of the package with the requested readme file. </p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p> The current revision associated with the package version. </p>
     pub fn version_revision(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,7 +143,8 @@ impl GetPackageVersionReadmeOutputBuilder {
     }
     /// <p> The current revision associated with the package version. </p>
     pub fn set_version_revision(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_revision = input; self
+        self.version_revision = input;
+        self
     }
     /// <p> The text of the returned readme file. </p>
     pub fn readme(mut self, input: impl Into<std::string::String>) -> Self {
@@ -146,34 +153,30 @@ impl GetPackageVersionReadmeOutputBuilder {
     }
     /// <p> The text of the returned readme file. </p>
     pub fn set_readme(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.readme = input; self
+        self.readme = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetPackageVersionReadmeOutput`](crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput).
-    pub fn build(self) -> crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput {
         crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput {
-            format: self.format
-            ,
-            namespace: self.namespace
-            ,
-            package: self.package
-            ,
-            version: self.version
-            ,
-            version_revision: self.version_revision
-            ,
-            readme: self.readme
-            ,
+            format: self.format,
+            namespace: self.namespace,
+            package: self.package,
+            version: self.version,
+            version_revision: self.version_revision,
+            readme: self.readme,
             _request_id: self._request_id,
         }
     }
 }
-

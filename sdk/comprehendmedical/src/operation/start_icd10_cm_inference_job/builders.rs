@@ -4,57 +4,80 @@ pub use crate::operation::start_icd10_cm_inference_job::_start_icd10_cm_inferenc
 pub use crate::operation::start_icd10_cm_inference_job::_start_icd10_cm_inference_job_input::StartIcd10CmInferenceJobInputBuilder;
 
 /// Fluent builder constructing a request to `StartICD10CMInferenceJob`.
-/// 
+///
 /// <p>Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology. Use the <code>DescribeICD10CMInferenceJob</code> operation to track the status of a job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartICD10CMInferenceJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_icd10_cm_inference_job::builders::StartIcd10CmInferenceJobInputBuilder,
 }
-impl StartICD10CMInferenceJobFluentBuilder  {
+impl StartICD10CMInferenceJobFluentBuilder {
     /// Creates a new `StartICD10CMInferenceJob`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobOutput, aws_smithy_http::result::SdkError<crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_icd10_cm_inference_job::StartIcd10CmInferenceJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_icd10_cm_inference_job::StartICD10CMInferenceJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Specifies the format and location of the input data for the job.</p>
     pub fn input_data_config(mut self, input: crate::types::InputDataConfig) -> Self {
         self.inner = self.inner.input_data_config(input);
         self
     }
     /// <p>Specifies the format and location of the input data for the job.</p>
-    pub fn set_input_data_config(mut self, input: std::option::Option<crate::types::InputDataConfig>) -> Self {
+    pub fn set_input_data_config(
+        mut self,
+        input: std::option::Option<crate::types::InputDataConfig>,
+    ) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -64,7 +87,10 @@ impl StartICD10CMInferenceJobFluentBuilder  {
         self
     }
     /// <p>Specifies where to send the output files.</p>
-    pub fn set_output_data_config(mut self, input: std::option::Option<crate::types::OutputDataConfig>) -> Self {
+    pub fn set_output_data_config(
+        mut self,
+        input: std::option::Option<crate::types::OutputDataConfig>,
+    ) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -74,7 +100,10 @@ impl StartICD10CMInferenceJobFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Comprehend Medical; read access to your input data. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions-med.html#auth-role-permissions-med"> Role-Based Permissions Required for Asynchronous Operations</a>.</p>
-    pub fn set_data_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_data_access_role_arn(input);
         self
     }
@@ -94,7 +123,10 @@ impl StartICD10CMInferenceJobFluentBuilder  {
         self
     }
     /// <p>A unique identifier for the request. If you don't set the client request token, Comprehend Medical; generates one.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -114,9 +146,11 @@ impl StartICD10CMInferenceJobFluentBuilder  {
         self
     }
     /// <p>The language of the input documents. All documents must be in the same language.</p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::LanguageCode>) -> Self {
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::LanguageCode>,
+    ) -> Self {
         self.inner = self.inner.set_language_code(input);
         self
     }
 }
-

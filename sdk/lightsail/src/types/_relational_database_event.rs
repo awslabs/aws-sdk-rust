@@ -3,7 +3,7 @@
 /// <p>Describes an event for a database.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RelationalDatabaseEvent  {
+pub struct RelationalDatabaseEvent {
     /// <p>The database that the database event relates to.</p>
     #[doc(hidden)]
     pub resource: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct RelationalDatabaseEvent  {
 }
 impl RelationalDatabaseEvent {
     /// <p>The database that the database event relates to.</p>
-    pub fn resource(&self) -> std::option::Option<& str> {
+    pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>The timestamp when the database event was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The message of the database event.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>The category that the database event belongs to.</p>
-    pub fn event_categories(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn event_categories(&self) -> std::option::Option<&[std::string::String]> {
         self.event_categories.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl RelationalDatabaseEventBuilder {
     }
     /// <p>The database that the database event relates to.</p>
     pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource = input; self
+        self.resource = input;
+        self
     }
     /// <p>The timestamp when the database event was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -67,8 +68,12 @@ impl RelationalDatabaseEventBuilder {
         self
     }
     /// <p>The timestamp when the database event was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The message of the database event.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +82,8 @@ impl RelationalDatabaseEventBuilder {
     }
     /// <p>The message of the database event.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Appends an item to `event_categories`.
     ///
@@ -86,26 +92,25 @@ impl RelationalDatabaseEventBuilder {
     /// <p>The category that the database event belongs to.</p>
     pub fn event_categories(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.event_categories.unwrap_or_default();
-                        v.push(input.into());
-                        self.event_categories = Some(v);
-                        self
+        v.push(input.into());
+        self.event_categories = Some(v);
+        self
     }
     /// <p>The category that the database event belongs to.</p>
-    pub fn set_event_categories(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.event_categories = input; self
+    pub fn set_event_categories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.event_categories = input;
+        self
     }
     /// Consumes the builder and constructs a [`RelationalDatabaseEvent`](crate::types::RelationalDatabaseEvent).
     pub fn build(self) -> crate::types::RelationalDatabaseEvent {
         crate::types::RelationalDatabaseEvent {
-            resource: self.resource
-            ,
-            created_at: self.created_at
-            ,
-            message: self.message
-            ,
-            event_categories: self.event_categories
-            ,
+            resource: self.resource,
+            created_at: self.created_at,
+            message: self.message,
+            event_categories: self.event_categories,
         }
     }
 }
-

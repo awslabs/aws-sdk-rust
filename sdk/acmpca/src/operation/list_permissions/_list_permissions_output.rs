@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionsOutput  {
+pub struct ListPermissionsOutput {
     /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
     #[doc(hidden)]
     pub permissions: std::option::Option<std::vec::Vec<crate::types::Permission>>,
@@ -13,19 +13,19 @@ pub struct ListPermissionsOutput  {
 }
 impl ListPermissionsOutput {
     /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
-    pub fn permissions(&self) -> std::option::Option<& [crate::types::Permission]> {
+    pub fn permissions(&self) -> std::option::Option<&[crate::types::Permission]> {
         self.permissions.as_deref()
     }
     /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPermissionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput).
     pub fn builder() -> crate::operation::list_permissions::builders::ListPermissionsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListPermissionsOutputBuilder {
     /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
     pub fn permissions(mut self, input: crate::types::Permission) -> Self {
         let mut v = self.permissions.unwrap_or_default();
-                        v.push(input);
-                        self.permissions = Some(v);
-                        self
+        v.push(input);
+        self.permissions = Some(v);
+        self
     }
     /// <p>Summary information about each permission assigned by the specified private CA, including the action enabled, the policy provided, and the time of creation.</p>
-    pub fn set_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Permission>>) -> Self {
-        self.permissions = input; self
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Permission>>,
+    ) -> Self {
+        self.permissions = input;
+        self
     }
     /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListPermissionsOutputBuilder {
     }
     /// <p>When the list is truncated, this value is present and should be used for the <b>NextToken</b> parameter in a subsequent pagination request. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListPermissionsOutput`](crate::operation::list_permissions::ListPermissionsOutput).
     pub fn build(self) -> crate::operation::list_permissions::ListPermissionsOutput {
         crate::operation::list_permissions::ListPermissionsOutput {
-            permissions: self.permissions
-            ,
-            next_token: self.next_token
-            ,
+            permissions: self.permissions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

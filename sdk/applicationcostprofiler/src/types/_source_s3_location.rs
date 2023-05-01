@@ -3,7 +3,7 @@
 /// <p>Represents the Amazon Simple Storage Service (Amazon S3) location where usage data is read from.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceS3Location  {
+pub struct SourceS3Location {
     /// <p>Name of the bucket.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SourceS3Location  {
 }
 impl SourceS3Location {
     /// <p>Name of the bucket.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>Key of the object.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
-    pub fn region(&self) -> std::option::Option<& crate::types::S3BucketRegion> {
+    pub fn region(&self) -> std::option::Option<&crate::types::S3BucketRegion> {
         self.region.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl SourceS3LocationBuilder {
     }
     /// <p>Name of the bucket.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>Key of the object.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl SourceS3LocationBuilder {
     }
     /// <p>Key of the object.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
     pub fn region(mut self, input: crate::types::S3BucketRegion) -> Self {
@@ -69,18 +71,15 @@ impl SourceS3LocationBuilder {
     }
     /// <p>Region of the bucket. Only required for Regions that are disabled by default. For more infomration about Regions that are disabled by default, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable"> Enabling a Region</a> in the <i>AWS General Reference guide</i>.</p>
     pub fn set_region(mut self, input: std::option::Option<crate::types::S3BucketRegion>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// Consumes the builder and constructs a [`SourceS3Location`](crate::types::SourceS3Location).
     pub fn build(self) -> crate::types::SourceS3Location {
         crate::types::SourceS3Location {
-            bucket: self.bucket
-            ,
-            key: self.key
-            ,
-            region: self.region
-            ,
+            bucket: self.bucket,
+            key: self.key,
+            region: self.region,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>The service integration information about the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceIntegrations  {
+pub struct ResourceIntegrations {
     /// <p>The information about the integration of Resource Groups.</p>
     #[doc(hidden)]
     pub resource_group: std::option::Option<crate::types::ResourceGroup>,
 }
 impl ResourceIntegrations {
     /// <p>The information about the integration of Resource Groups.</p>
-    pub fn resource_group(&self) -> std::option::Option<& crate::types::ResourceGroup> {
+    pub fn resource_group(&self) -> std::option::Option<&crate::types::ResourceGroup> {
         self.resource_group.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ResourceIntegrationsBuilder {
         self
     }
     /// <p>The information about the integration of Resource Groups.</p>
-    pub fn set_resource_group(mut self, input: std::option::Option<crate::types::ResourceGroup>) -> Self {
-        self.resource_group = input; self
+    pub fn set_resource_group(
+        mut self,
+        input: std::option::Option<crate::types::ResourceGroup>,
+    ) -> Self {
+        self.resource_group = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceIntegrations`](crate::types::ResourceIntegrations).
     pub fn build(self) -> crate::types::ResourceIntegrations {
         crate::types::ResourceIntegrations {
-            resource_group: self.resource_group
-            ,
+            resource_group: self.resource_group,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPolicyAttachmentsOutput  {
+pub struct ListPolicyAttachmentsOutput {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     #[doc(hidden)]
     pub object_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,24 @@ pub struct ListPolicyAttachmentsOutput  {
 }
 impl ListPolicyAttachmentsOutput {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-    pub fn object_identifiers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn object_identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.object_identifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListPolicyAttachmentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListPolicyAttachmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListPolicyAttachmentsOutput`](crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput).
-    pub fn builder() -> crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsOutputBuilder
+    {
         crate::operation::list_policy_attachments::builders::ListPolicyAttachmentsOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl ListPolicyAttachmentsOutputBuilder {
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
     pub fn object_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.object_identifiers.unwrap_or_default();
-                        v.push(input.into());
-                        self.object_identifiers = Some(v);
-                        self
+        v.push(input.into());
+        self.object_identifiers = Some(v);
+        self
     }
     /// <p>A list of <code>ObjectIdentifiers</code> to which the policy is attached.</p>
-    pub fn set_object_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.object_identifiers = input; self
+    pub fn set_object_identifiers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.object_identifiers = input;
+        self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListPolicyAttachmentsOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListPolicyAttachmentsOutput`](crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput).
     pub fn build(self) -> crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput {
         crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput {
-            object_identifiers: self.object_identifiers
-            ,
-            next_token: self.next_token
-            ,
+            object_identifiers: self.object_identifiers,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

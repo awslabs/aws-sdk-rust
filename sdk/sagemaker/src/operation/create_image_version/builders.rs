@@ -4,51 +4,71 @@ pub use crate::operation::create_image_version::_create_image_version_output::Cr
 pub use crate::operation::create_image_version::_create_image_version_input::CreateImageVersionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateImageVersion`.
-/// 
+///
 /// <p>Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon Elastic Container Registry (ECR) container image specified by <code>BaseImage</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateImageVersionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_image_version::builders::CreateImageVersionInputBuilder,
+    inner: crate::operation::create_image_version::builders::CreateImageVersionInputBuilder,
 }
-impl CreateImageVersionFluentBuilder  {
+impl CreateImageVersionFluentBuilder {
     /// Creates a new `CreateImageVersion`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_image_version::CreateImageVersion, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_image_version::CreateImageVersionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_image_version::CreateImageVersionOutput, aws_smithy_http::result::SdkError<crate::operation::create_image_version::CreateImageVersionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_image_version::CreateImageVersion,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_image_version::CreateImageVersionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_image_version::CreateImageVersionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_image_version::CreateImageVersionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
     /// <p> <code>
     /// <acct-id>
     /// .dkr.ecr.
@@ -61,7 +81,7 @@ impl CreateImageVersionFluentBuilder  {
         self.inner = self.inner.base_image(input.into());
         self
     }
-    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p> 
+    /// <p>The registry path of the container image to use as the starting point for this version. The path is an Amazon Elastic Container Registry (ECR) URI in the following format:</p>
     /// <p> <code>
     /// <acct-id>
     /// .dkr.ecr.
@@ -104,47 +124,53 @@ impl CreateImageVersionFluentBuilder  {
         self
     }
     /// <p>A list of aliases created with the image version.</p>
-    pub fn set_aliases(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_aliases(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_aliases(input);
         self
     }
-    /// <p>The stability of the image version, specified by the maintainer.</p> 
-    /// <ul> 
-    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li> 
-    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li> 
-    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li> 
-    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li> 
+    /// <p>The stability of the image version, specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
     pub fn vendor_guidance(mut self, input: crate::types::VendorGuidance) -> Self {
         self.inner = self.inner.vendor_guidance(input);
         self
     }
-    /// <p>The stability of the image version, specified by the maintainer.</p> 
-    /// <ul> 
-    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li> 
-    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li> 
-    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li> 
-    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li> 
+    /// <p>The stability of the image version, specified by the maintainer.</p>
+    /// <ul>
+    /// <li> <p> <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.</p> </li>
+    /// <li> <p> <code>STABLE</code>: The image version is stable.</p> </li>
+    /// <li> <p> <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be archived are automatically archived after three months.</p> </li>
+    /// <li> <p> <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no longer actively supported. </p> </li>
     /// </ul>
-    pub fn set_vendor_guidance(mut self, input: std::option::Option<crate::types::VendorGuidance>) -> Self {
+    pub fn set_vendor_guidance(
+        mut self,
+        input: std::option::Option<crate::types::VendorGuidance>,
+    ) -> Self {
         self.inner = self.inner.set_vendor_guidance(input);
         self
     }
-    /// <p>Indicates SageMaker job type compatibility.</p> 
-    /// <ul> 
-    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li> 
-    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li> 
-    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li> 
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
     /// </ul>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.inner = self.inner.job_type(input);
         self
     }
-    /// <p>Indicates SageMaker job type compatibility.</p> 
-    /// <ul> 
-    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li> 
-    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li> 
-    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li> 
+    /// <p>Indicates SageMaker job type compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.</p> </li>
+    /// <li> <p> <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.</p> </li>
+    /// <li> <p> <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.</p> </li>
     /// </ul>
     pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
         self.inner = self.inner.set_job_type(input);
@@ -170,19 +196,19 @@ impl CreateImageVersionFluentBuilder  {
         self.inner = self.inner.set_programming_lang(input);
         self
     }
-    /// <p>Indicates CPU or GPU compatibility.</p> 
-    /// <ul> 
-    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li> 
-    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li> 
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
     /// </ul>
     pub fn processor(mut self, input: crate::types::Processor) -> Self {
         self.inner = self.inner.processor(input);
         self
     }
-    /// <p>Indicates CPU or GPU compatibility.</p> 
-    /// <ul> 
-    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li> 
-    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li> 
+    /// <p>Indicates CPU or GPU compatibility.</p>
+    /// <ul>
+    /// <li> <p> <code>CPU</code>: The image version is compatible with CPU.</p> </li>
+    /// <li> <p> <code>GPU</code>: The image version is compatible with GPU.</p> </li>
     /// </ul>
     pub fn set_processor(mut self, input: std::option::Option<crate::types::Processor>) -> Self {
         self.inner = self.inner.set_processor(input);
@@ -209,4 +235,3 @@ impl CreateImageVersionFluentBuilder  {
         self
     }
 }
-

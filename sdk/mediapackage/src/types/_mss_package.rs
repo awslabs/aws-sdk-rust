@@ -3,7 +3,7 @@
 /// A Microsoft Smooth Streaming (MSS) packaging configuration.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MssPackage  {
+pub struct MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
     #[doc(hidden)]
     pub encryption: std::option::Option<crate::types::MssEncryption>,
@@ -19,7 +19,7 @@ pub struct MssPackage  {
 }
 impl MssPackage {
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
-    pub fn encryption(&self) -> std::option::Option<& crate::types::MssEncryption> {
+    pub fn encryption(&self) -> std::option::Option<&crate::types::MssEncryption> {
         self.encryption.as_ref()
     }
     /// The time window (in seconds) contained in each manifest.
@@ -31,7 +31,7 @@ impl MssPackage {
         self.segment_duration_seconds
     }
     /// A StreamSelection configuration.
-    pub fn stream_selection(&self) -> std::option::Option<& crate::types::StreamSelection> {
+    pub fn stream_selection(&self) -> std::option::Option<&crate::types::StreamSelection> {
         self.stream_selection.as_ref()
     }
 }
@@ -58,8 +58,12 @@ impl MssPackageBuilder {
         self
     }
     /// A Microsoft Smooth Streaming (MSS) encryption configuration.
-    pub fn set_encryption(mut self, input: std::option::Option<crate::types::MssEncryption>) -> Self {
-        self.encryption = input; self
+    pub fn set_encryption(
+        mut self,
+        input: std::option::Option<crate::types::MssEncryption>,
+    ) -> Self {
+        self.encryption = input;
+        self
     }
     /// The time window (in seconds) contained in each manifest.
     pub fn manifest_window_seconds(mut self, input: i32) -> Self {
@@ -68,7 +72,8 @@ impl MssPackageBuilder {
     }
     /// The time window (in seconds) contained in each manifest.
     pub fn set_manifest_window_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.manifest_window_seconds = input; self
+        self.manifest_window_seconds = input;
+        self
     }
     /// The duration (in seconds) of each segment.
     pub fn segment_duration_seconds(mut self, input: i32) -> Self {
@@ -77,7 +82,8 @@ impl MssPackageBuilder {
     }
     /// The duration (in seconds) of each segment.
     pub fn set_segment_duration_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.segment_duration_seconds = input; self
+        self.segment_duration_seconds = input;
+        self
     }
     /// A StreamSelection configuration.
     pub fn stream_selection(mut self, input: crate::types::StreamSelection) -> Self {
@@ -85,23 +91,20 @@ impl MssPackageBuilder {
         self
     }
     /// A StreamSelection configuration.
-    pub fn set_stream_selection(mut self, input: std::option::Option<crate::types::StreamSelection>) -> Self {
-        self.stream_selection = input; self
+    pub fn set_stream_selection(
+        mut self,
+        input: std::option::Option<crate::types::StreamSelection>,
+    ) -> Self {
+        self.stream_selection = input;
+        self
     }
     /// Consumes the builder and constructs a [`MssPackage`](crate::types::MssPackage).
     pub fn build(self) -> crate::types::MssPackage {
         crate::types::MssPackage {
-            encryption: self.encryption
-            ,
-            manifest_window_seconds: self.manifest_window_seconds
-                .unwrap_or_default()
-            ,
-            segment_duration_seconds: self.segment_duration_seconds
-                .unwrap_or_default()
-            ,
-            stream_selection: self.stream_selection
-            ,
+            encryption: self.encryption,
+            manifest_window_seconds: self.manifest_window_seconds.unwrap_or_default(),
+            segment_duration_seconds: self.segment_duration_seconds.unwrap_or_default(),
+            stream_selection: self.stream_selection,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWarmPoolInput  {
+pub struct DescribeWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeWarmPoolInput  {
 }
 impl DescribeWarmPoolInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The maximum number of instances to return with this call. The maximum value is <code>50</code>.</p>
@@ -23,13 +23,14 @@ impl DescribeWarmPoolInput {
         self.max_records
     }
     /// <p>The token for the next set of instances to return. (You received this token from a previous call.)</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeWarmPoolInput {
     /// Creates a new builder-style object to manufacture [`DescribeWarmPoolInput`](crate::operation::describe_warm_pool::DescribeWarmPoolInput).
-    pub fn builder() -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolInputBuilder {
+    pub fn builder() -> crate::operation::describe_warm_pool::builders::DescribeWarmPoolInputBuilder
+    {
         crate::operation::describe_warm_pool::builders::DescribeWarmPoolInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl DescribeWarmPoolInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// <p>The maximum number of instances to return with this call. The maximum value is <code>50</code>.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -59,7 +64,8 @@ impl DescribeWarmPoolInputBuilder {
     }
     /// <p>The maximum number of instances to return with this call. The maximum value is <code>50</code>.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input; self
+        self.max_records = input;
+        self
     }
     /// <p>The token for the next set of instances to return. (You received this token from a previous call.)</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +74,22 @@ impl DescribeWarmPoolInputBuilder {
     }
     /// <p>The token for the next set of instances to return. (You received this token from a previous call.)</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeWarmPoolInput`](crate::operation::describe_warm_pool::DescribeWarmPoolInput).
-    pub fn build(self) -> Result<crate::operation::describe_warm_pool::DescribeWarmPoolInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_warm_pool::DescribeWarmPoolInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_warm_pool::DescribeWarmPoolInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                max_records: self.max_records
-                ,
-                next_token: self.next_token
-                ,
-            }
+                auto_scaling_group_name: self.auto_scaling_group_name,
+                max_records: self.max_records,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCaseEventConfigurationInput  {
+pub struct GetCaseEventConfigurationInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
 }
 impl GetCaseEventConfigurationInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
 }
 impl GetCaseEventConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetCaseEventConfigurationInput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationInput).
-    pub fn builder() -> crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationInputBuilder{
         crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl GetCaseEventConfigurationInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetCaseEventConfigurationInput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_case_event_configuration::GetCaseEventConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_case_event_configuration::GetCaseEventConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_case_event_configuration::GetCaseEventConfigurationInput {
-                domain_id: self.domain_id
-                ,
-            }
+                domain_id: self.domain_id,
+            },
         )
     }
 }
-

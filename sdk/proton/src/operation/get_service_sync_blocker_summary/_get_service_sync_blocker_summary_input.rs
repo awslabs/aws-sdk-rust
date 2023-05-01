@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceSyncBlockerSummaryInput  {
+pub struct GetServiceSyncBlockerSummaryInput {
     /// <p>The name of the service that you want to get the service sync blocker summary for. If given only the service name, all instances are blocked.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct GetServiceSyncBlockerSummaryInput  {
 }
 impl GetServiceSyncBlockerSummaryInput {
     /// <p>The name of the service that you want to get the service sync blocker summary for. If given only the service name, all instances are blocked.</p>
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
     /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
-    pub fn service_instance_name(&self) -> std::option::Option<& str> {
+    pub fn service_instance_name(&self) -> std::option::Option<&str> {
         self.service_instance_name.as_deref()
     }
 }
 impl GetServiceSyncBlockerSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetServiceSyncBlockerSummaryInput`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput).
-    pub fn builder() -> crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder {
+    pub fn builder() -> crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder{
         crate::operation::get_service_sync_blocker_summary::builders::GetServiceSyncBlockerSummaryInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl GetServiceSyncBlockerSummaryInputBuilder {
     }
     /// <p>The name of the service that you want to get the service sync blocker summary for. If given only the service name, all instances are blocked.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
     /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
     pub fn service_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,25 @@ impl GetServiceSyncBlockerSummaryInputBuilder {
         self
     }
     /// <p>The name of the service instance that you want to get the service sync blocker summary for. If given bothe the instance name and the service name, only the instance is blocked.</p>
-    pub fn set_service_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_instance_name = input; self
+    pub fn set_service_instance_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_instance_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetServiceSyncBlockerSummaryInput`](crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput).
-    pub fn build(self) -> Result<crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryInput {
-                service_name: self.service_name
-                ,
-                service_instance_name: self.service_instance_name
-                ,
-            }
+                service_name: self.service_name,
+                service_instance_name: self.service_instance_name,
+            },
         )
     }
 }
-

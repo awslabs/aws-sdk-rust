@@ -3,7 +3,7 @@
 /// <p>Represents an operating-system neutral workspace for running and managing tests.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Project  {
+pub struct Project {
     /// <p>The project's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,11 +22,11 @@ pub struct Project  {
 }
 impl Project {
     /// <p>The project's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The project's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The default number of minutes (at the project level) a test run executes before it times out. The default value is 150 minutes.</p>
@@ -34,11 +34,11 @@ impl Project {
         self.default_job_timeout_minutes
     }
     /// <p>When the project was created.</p>
-    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
-    pub fn vpc_config(&self) -> std::option::Option<& crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl ProjectBuilder {
     }
     /// <p>The project's ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The project's name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl ProjectBuilder {
     }
     /// <p>The project's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The default number of minutes (at the project level) a test run executes before it times out. The default value is 150 minutes.</p>
     pub fn default_job_timeout_minutes(mut self, input: i32) -> Self {
@@ -85,7 +87,8 @@ impl ProjectBuilder {
     }
     /// <p>The default number of minutes (at the project level) a test run executes before it times out. The default value is 150 minutes.</p>
     pub fn set_default_job_timeout_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.default_job_timeout_minutes = input; self
+        self.default_job_timeout_minutes = input;
+        self
     }
     /// <p>When the project was created.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -94,7 +97,8 @@ impl ProjectBuilder {
     }
     /// <p>When the project was created.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input; self
+        self.created = input;
+        self
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
@@ -103,22 +107,17 @@ impl ProjectBuilder {
     }
     /// <p>The VPC security groups and subnets that are attached to a project.</p>
     pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input; self
+        self.vpc_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`Project`](crate::types::Project).
     pub fn build(self) -> crate::types::Project {
         crate::types::Project {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            default_job_timeout_minutes: self.default_job_timeout_minutes
-            ,
-            created: self.created
-            ,
-            vpc_config: self.vpc_config
-            ,
+            arn: self.arn,
+            name: self.name,
+            default_job_timeout_minutes: self.default_job_timeout_minutes,
+            created: self.created,
+            vpc_config: self.vpc_config,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The <code>TransferDomainToAnotherAwsAccount</code> response includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransferDomainToAnotherAwsAccountOutput  {
+pub struct TransferDomainToAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
@@ -14,22 +14,22 @@ pub struct TransferDomainToAnotherAwsAccountOutput  {
 }
 impl TransferDomainToAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
-    pub fn operation_id(&self) -> std::option::Option<& str> {
+    pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
     /// <p>To finish transferring a domain to another Amazon Web Services account, the account that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.</p>
-    pub fn password(&self) -> std::option::Option<& str> {
+    pub fn password(&self) -> std::option::Option<&str> {
         self.password.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for TransferDomainToAnotherAwsAccountOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl TransferDomainToAnotherAwsAccountOutput {
     /// Creates a new builder-style object to manufacture [`TransferDomainToAnotherAwsAccountOutput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput).
-    pub fn builder() -> crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountOutputBuilder {
+    pub fn builder() -> crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountOutputBuilder{
         crate::operation::transfer_domain_to_another_aws_account::builders::TransferDomainToAnotherAwsAccountOutputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl TransferDomainToAnotherAwsAccountOutputBuilder {
     }
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input; self
+        self.operation_id = input;
+        self
     }
     /// <p>To finish transferring a domain to another Amazon Web Services account, the account that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.</p>
     pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,19 +60,20 @@ impl TransferDomainToAnotherAwsAccountOutputBuilder {
     }
     /// <p>To finish transferring a domain to another Amazon Web Services account, the account that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.</p>
     pub fn set_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.password = input; self
+        self.password = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`TransferDomainToAnotherAwsAccountOutput`](crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput).
-    pub fn build(self) -> crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput {
+    pub fn build(self) -> crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput{
         crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput {
             operation_id: self.operation_id
             ,
@@ -81,4 +83,3 @@ impl TransferDomainToAnotherAwsAccountOutputBuilder {
         }
     }
 }
-

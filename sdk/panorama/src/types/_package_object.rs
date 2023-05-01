@@ -3,7 +3,7 @@
 /// <p>A package object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageObject  {
+pub struct PackageObject {
     /// <p>The object's name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct PackageObject  {
 }
 impl PackageObject {
     /// <p>The object's name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The object's package version.</p>
-    pub fn package_version(&self) -> std::option::Option<& str> {
+    pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
     }
     /// <p>The object's patch version.</p>
-    pub fn patch_version(&self) -> std::option::Option<& str> {
+    pub fn patch_version(&self) -> std::option::Option<&str> {
         self.patch_version.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl PackageObjectBuilder {
     }
     /// <p>The object's name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The object's package version.</p>
     pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl PackageObjectBuilder {
     }
     /// <p>The object's package version.</p>
     pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_version = input; self
+        self.package_version = input;
+        self
     }
     /// <p>The object's patch version.</p>
     pub fn patch_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl PackageObjectBuilder {
     }
     /// <p>The object's patch version.</p>
     pub fn set_patch_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.patch_version = input; self
+        self.patch_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`PackageObject`](crate::types::PackageObject).
     pub fn build(self) -> crate::types::PackageObject {
         crate::types::PackageObject {
-            name: self.name
-            ,
-            package_version: self.package_version
-            ,
-            patch_version: self.patch_version
-            ,
+            name: self.name,
+            package_version: self.package_version,
+            patch_version: self.patch_version,
         }
     }
 }
-

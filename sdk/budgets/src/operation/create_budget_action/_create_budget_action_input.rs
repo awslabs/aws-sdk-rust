@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBudgetActionInput  {
+pub struct CreateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -33,45 +33,46 @@ pub struct CreateBudgetActionInput  {
 }
 impl CreateBudgetActionInput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
-    pub fn budget_name(&self) -> std::option::Option<& str> {
+    pub fn budget_name(&self) -> std::option::Option<&str> {
         self.budget_name.as_deref()
     }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    pub fn notification_type(&self) -> std::option::Option<& crate::types::NotificationType> {
+    pub fn notification_type(&self) -> std::option::Option<&crate::types::NotificationType> {
         self.notification_type.as_ref()
     }
     /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
-    pub fn action_type(&self) -> std::option::Option<& crate::types::ActionType> {
+    pub fn action_type(&self) -> std::option::Option<&crate::types::ActionType> {
         self.action_type.as_ref()
     }
     /// <p>The trigger threshold of the action. </p>
-    pub fn action_threshold(&self) -> std::option::Option<& crate::types::ActionThreshold> {
+    pub fn action_threshold(&self) -> std::option::Option<&crate::types::ActionThreshold> {
         self.action_threshold.as_ref()
     }
     /// <p>Specifies all of the type-specific parameters. </p>
-    pub fn definition(&self) -> std::option::Option<& crate::types::Definition> {
+    pub fn definition(&self) -> std::option::Option<&crate::types::Definition> {
         self.definition.as_ref()
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
     /// <p> This specifies if the action needs manual or automatic approval. </p>
-    pub fn approval_model(&self) -> std::option::Option<& crate::types::ApprovalModel> {
+    pub fn approval_model(&self) -> std::option::Option<&crate::types::ApprovalModel> {
         self.approval_model.as_ref()
     }
     /// <p> A list of subscribers.</p>
-    pub fn subscribers(&self) -> std::option::Option<& [crate::types::Subscriber]> {
+    pub fn subscribers(&self) -> std::option::Option<&[crate::types::Subscriber]> {
         self.subscribers.as_deref()
     }
 }
 impl CreateBudgetActionInput {
     /// Creates a new builder-style object to manufacture [`CreateBudgetActionInput`](crate::operation::create_budget_action::CreateBudgetActionInput).
-    pub fn builder() -> crate::operation::create_budget_action::builders::CreateBudgetActionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_budget_action::builders::CreateBudgetActionInputBuilder {
         crate::operation::create_budget_action::builders::CreateBudgetActionInputBuilder::default()
     }
 }
@@ -98,7 +99,8 @@ impl CreateBudgetActionInputBuilder {
     }
     /// <p>The account ID of the user. It's a 12-digit number.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn budget_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +109,8 @@ impl CreateBudgetActionInputBuilder {
     }
     /// <p> A string that represents the budget name. The ":" and "\" characters aren't allowed.</p>
     pub fn set_budget_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.budget_name = input; self
+        self.budget_name = input;
+        self
     }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
     pub fn notification_type(mut self, input: crate::types::NotificationType) -> Self {
@@ -115,8 +118,12 @@ impl CreateBudgetActionInputBuilder {
         self
     }
     /// <p> The type of a notification. It must be ACTUAL or FORECASTED.</p>
-    pub fn set_notification_type(mut self, input: std::option::Option<crate::types::NotificationType>) -> Self {
-        self.notification_type = input; self
+    pub fn set_notification_type(
+        mut self,
+        input: std::option::Option<crate::types::NotificationType>,
+    ) -> Self {
+        self.notification_type = input;
+        self
     }
     /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn action_type(mut self, input: crate::types::ActionType) -> Self {
@@ -125,7 +132,8 @@ impl CreateBudgetActionInputBuilder {
     }
     /// <p> The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition. </p>
     pub fn set_action_type(mut self, input: std::option::Option<crate::types::ActionType>) -> Self {
-        self.action_type = input; self
+        self.action_type = input;
+        self
     }
     /// <p>The trigger threshold of the action. </p>
     pub fn action_threshold(mut self, input: crate::types::ActionThreshold) -> Self {
@@ -133,8 +141,12 @@ impl CreateBudgetActionInputBuilder {
         self
     }
     /// <p>The trigger threshold of the action. </p>
-    pub fn set_action_threshold(mut self, input: std::option::Option<crate::types::ActionThreshold>) -> Self {
-        self.action_threshold = input; self
+    pub fn set_action_threshold(
+        mut self,
+        input: std::option::Option<crate::types::ActionThreshold>,
+    ) -> Self {
+        self.action_threshold = input;
+        self
     }
     /// <p>Specifies all of the type-specific parameters. </p>
     pub fn definition(mut self, input: crate::types::Definition) -> Self {
@@ -143,7 +155,8 @@ impl CreateBudgetActionInputBuilder {
     }
     /// <p>Specifies all of the type-specific parameters. </p>
     pub fn set_definition(mut self, input: std::option::Option<crate::types::Definition>) -> Self {
-        self.definition = input; self
+        self.definition = input;
+        self
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
     pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,8 +164,12 @@ impl CreateBudgetActionInputBuilder {
         self
     }
     /// <p> The role passed for action execution and reversion. Roles and actions must be in the same account. </p>
-    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_role_arn = input; self
+    pub fn set_execution_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.execution_role_arn = input;
+        self
     }
     /// <p> This specifies if the action needs manual or automatic approval. </p>
     pub fn approval_model(mut self, input: crate::types::ApprovalModel) -> Self {
@@ -160,8 +177,12 @@ impl CreateBudgetActionInputBuilder {
         self
     }
     /// <p> This specifies if the action needs manual or automatic approval. </p>
-    pub fn set_approval_model(mut self, input: std::option::Option<crate::types::ApprovalModel>) -> Self {
-        self.approval_model = input; self
+    pub fn set_approval_model(
+        mut self,
+        input: std::option::Option<crate::types::ApprovalModel>,
+    ) -> Self {
+        self.approval_model = input;
+        self
     }
     /// Appends an item to `subscribers`.
     ///
@@ -170,38 +191,37 @@ impl CreateBudgetActionInputBuilder {
     /// <p> A list of subscribers.</p>
     pub fn subscribers(mut self, input: crate::types::Subscriber) -> Self {
         let mut v = self.subscribers.unwrap_or_default();
-                        v.push(input);
-                        self.subscribers = Some(v);
-                        self
+        v.push(input);
+        self.subscribers = Some(v);
+        self
     }
     /// <p> A list of subscribers.</p>
-    pub fn set_subscribers(mut self, input: std::option::Option<std::vec::Vec<crate::types::Subscriber>>) -> Self {
-        self.subscribers = input; self
+    pub fn set_subscribers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Subscriber>>,
+    ) -> Self {
+        self.subscribers = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBudgetActionInput`](crate::operation::create_budget_action::CreateBudgetActionInput).
-    pub fn build(self) -> Result<crate::operation::create_budget_action::CreateBudgetActionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_budget_action::CreateBudgetActionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_budget_action::CreateBudgetActionInput {
-                account_id: self.account_id
-                ,
-                budget_name: self.budget_name
-                ,
-                notification_type: self.notification_type
-                ,
-                action_type: self.action_type
-                ,
-                action_threshold: self.action_threshold
-                ,
-                definition: self.definition
-                ,
-                execution_role_arn: self.execution_role_arn
-                ,
-                approval_model: self.approval_model
-                ,
-                subscribers: self.subscribers
-                ,
-            }
+                account_id: self.account_id,
+                budget_name: self.budget_name,
+                notification_type: self.notification_type,
+                action_type: self.action_type,
+                action_threshold: self.action_threshold,
+                definition: self.definition,
+                execution_role_arn: self.execution_role_arn,
+                approval_model: self.approval_model,
+                subscribers: self.subscribers,
+            },
         )
     }
 }
-

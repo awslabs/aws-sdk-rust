@@ -3,21 +3,24 @@
 /// <p>The definition of the stateless rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleGroupSourceStatelessRuleDefinition  {
+pub struct RuleGroupSourceStatelessRuleDefinition {
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
     #[doc(hidden)]
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The criteria for Network Firewall to use to inspect an individual packet in a stateless rule inspection.</p>
     #[doc(hidden)]
-    pub match_attributes: std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
+    pub match_attributes:
+        std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
 }
 impl RuleGroupSourceStatelessRuleDefinition {
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-    pub fn actions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }
     /// <p>The criteria for Network Firewall to use to inspect an individual packet in a stateless rule inspection.</p>
-    pub fn match_attributes(&self) -> std::option::Option<& crate::types::RuleGroupSourceStatelessRuleMatchAttributes> {
+    pub fn match_attributes(
+        &self,
+    ) -> std::option::Option<&crate::types::RuleGroupSourceStatelessRuleMatchAttributes> {
         self.match_attributes.as_ref()
     }
 }
@@ -33,7 +36,8 @@ impl RuleGroupSourceStatelessRuleDefinition {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RuleGroupSourceStatelessRuleDefinitionBuilder {
     pub(crate) actions: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) match_attributes: std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
+    pub(crate) match_attributes:
+        std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
 }
 impl RuleGroupSourceStatelessRuleDefinitionBuilder {
     /// Appends an item to `actions`.
@@ -43,31 +47,39 @@ impl RuleGroupSourceStatelessRuleDefinitionBuilder {
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
     pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
-                        v.push(input.into());
-                        self.actions = Some(v);
-                        self
+        v.push(input.into());
+        self.actions = Some(v);
+        self
     }
     /// <p>The actions to take on a packet that matches one of the stateless rule definition's match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>, or <code>aws:forward_to_sfe</code>). You can then add custom actions.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.actions = input; self
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.actions = input;
+        self
     }
     /// <p>The criteria for Network Firewall to use to inspect an individual packet in a stateless rule inspection.</p>
-    pub fn match_attributes(mut self, input: crate::types::RuleGroupSourceStatelessRuleMatchAttributes) -> Self {
+    pub fn match_attributes(
+        mut self,
+        input: crate::types::RuleGroupSourceStatelessRuleMatchAttributes,
+    ) -> Self {
         self.match_attributes = Some(input);
         self
     }
     /// <p>The criteria for Network Firewall to use to inspect an individual packet in a stateless rule inspection.</p>
-    pub fn set_match_attributes(mut self, input: std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>) -> Self {
-        self.match_attributes = input; self
+    pub fn set_match_attributes(
+        mut self,
+        input: std::option::Option<crate::types::RuleGroupSourceStatelessRuleMatchAttributes>,
+    ) -> Self {
+        self.match_attributes = input;
+        self
     }
     /// Consumes the builder and constructs a [`RuleGroupSourceStatelessRuleDefinition`](crate::types::RuleGroupSourceStatelessRuleDefinition).
     pub fn build(self) -> crate::types::RuleGroupSourceStatelessRuleDefinition {
         crate::types::RuleGroupSourceStatelessRuleDefinition {
-            actions: self.actions
-            ,
-            match_attributes: self.match_attributes
-            ,
+            actions: self.actions,
+            match_attributes: self.match_attributes,
         }
     }
 }
-

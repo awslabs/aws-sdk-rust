@@ -3,7 +3,7 @@
 /// <p>The sort configuration of a word cloud visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WordCloudSortConfiguration  {
+pub struct WordCloudSortConfiguration {
     /// <p>The limit on the number of groups that are displayed in a word cloud.</p>
     #[doc(hidden)]
     pub category_items_limit: std::option::Option<crate::types::ItemsLimitConfiguration>,
@@ -13,11 +13,13 @@ pub struct WordCloudSortConfiguration  {
 }
 impl WordCloudSortConfiguration {
     /// <p>The limit on the number of groups that are displayed in a word cloud.</p>
-    pub fn category_items_limit(&self) -> std::option::Option<& crate::types::ItemsLimitConfiguration> {
+    pub fn category_items_limit(
+        &self,
+    ) -> std::option::Option<&crate::types::ItemsLimitConfiguration> {
         self.category_items_limit.as_ref()
     }
     /// <p>The sort configuration of group by fields.</p>
-    pub fn category_sort(&self) -> std::option::Option<& [crate::types::FieldSortOptions]> {
+    pub fn category_sort(&self) -> std::option::Option<&[crate::types::FieldSortOptions]> {
         self.category_sort.as_deref()
     }
 }
@@ -42,8 +44,12 @@ impl WordCloudSortConfigurationBuilder {
         self
     }
     /// <p>The limit on the number of groups that are displayed in a word cloud.</p>
-    pub fn set_category_items_limit(mut self, input: std::option::Option<crate::types::ItemsLimitConfiguration>) -> Self {
-        self.category_items_limit = input; self
+    pub fn set_category_items_limit(
+        mut self,
+        input: std::option::Option<crate::types::ItemsLimitConfiguration>,
+    ) -> Self {
+        self.category_items_limit = input;
+        self
     }
     /// Appends an item to `category_sort`.
     ///
@@ -52,22 +58,23 @@ impl WordCloudSortConfigurationBuilder {
     /// <p>The sort configuration of group by fields.</p>
     pub fn category_sort(mut self, input: crate::types::FieldSortOptions) -> Self {
         let mut v = self.category_sort.unwrap_or_default();
-                        v.push(input);
-                        self.category_sort = Some(v);
-                        self
+        v.push(input);
+        self.category_sort = Some(v);
+        self
     }
     /// <p>The sort configuration of group by fields.</p>
-    pub fn set_category_sort(mut self, input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>) -> Self {
-        self.category_sort = input; self
+    pub fn set_category_sort(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FieldSortOptions>>,
+    ) -> Self {
+        self.category_sort = input;
+        self
     }
     /// Consumes the builder and constructs a [`WordCloudSortConfiguration`](crate::types::WordCloudSortConfiguration).
     pub fn build(self) -> crate::types::WordCloudSortConfiguration {
         crate::types::WordCloudSortConfiguration {
-            category_items_limit: self.category_items_limit
-            ,
-            category_sort: self.category_sort
-            ,
+            category_items_limit: self.category_items_limit,
+            category_sort: self.category_sort,
         }
     }
 }
-

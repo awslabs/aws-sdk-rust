@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDbClusterSnapshotInput  {
-    /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter.</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
-    /// </ul> 
+pub struct CreateDbClusterSnapshotInput {
+    /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
     /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
     #[doc(hidden)]
     pub db_cluster_snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li> 
-    /// </ul> 
+    /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
@@ -26,34 +26,36 @@ pub struct CreateDbClusterSnapshotInput  {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbClusterSnapshotInput {
-    /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter.</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
-    /// </ul> 
+    /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
     /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
-    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_snapshot_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_snapshot_identifier.as_deref()
     }
-    /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li> 
-    /// </ul> 
+    /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateDbClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CreateDbClusterSnapshotInput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput).
-    pub fn builder() -> crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotInputBuilder
+    {
         crate::operation::create_db_cluster_snapshot::builders::CreateDbClusterSnapshotInputBuilder::default()
     }
 }
@@ -67,47 +69,55 @@ pub struct CreateDbClusterSnapshotInputBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateDbClusterSnapshotInputBuilder {
-    /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter.</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
-    /// </ul> 
+    /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
     /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
     pub fn db_cluster_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_cluster_snapshot_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter.</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
-    /// </ul> 
+    /// <p>The identifier of the DB cluster snapshot. This parameter is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// </ul>
     /// <p>Example: <code>my-cluster1-snapshot1</code> </p>
-    pub fn set_db_cluster_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_snapshot_identifier = input; self
+    pub fn set_db_cluster_snapshot_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_snapshot_identifier = input;
+        self
     }
-    /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li> 
-    /// </ul> 
+    /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
     pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li> 
-    /// </ul> 
+    /// <p>The identifier of the DB cluster to create a snapshot for. This parameter is not case-sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing DBCluster.</p> </li>
+    /// </ul>
     /// <p>Example: <code>my-cluster1</code> </p>
-    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_identifier = input; self
+    pub fn set_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -116,26 +126,31 @@ impl CreateDbClusterSnapshotInputBuilder {
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags to be assigned to the DB cluster snapshot.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDbClusterSnapshotInput`](crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotInput {
-                db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier
-                ,
-                db_cluster_identifier: self.db_cluster_identifier
-                ,
-                tags: self.tags
-                ,
-            }
+                db_cluster_snapshot_identifier: self.db_cluster_snapshot_identifier,
+                db_cluster_identifier: self.db_cluster_identifier,
+                tags: self.tags,
+            },
         )
     }
 }
-

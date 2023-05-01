@@ -15,4 +15,3 @@ pub mod get_products;
 
 /// Types for the `ListPriceLists` operation.
 pub mod list_price_lists;
-

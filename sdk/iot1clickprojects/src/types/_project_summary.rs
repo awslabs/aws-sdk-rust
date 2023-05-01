@@ -3,7 +3,7 @@
 /// <p>An object providing summary information for a particular project for an associated AWS account and region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectSummary  {
+pub struct ProjectSummary {
     /// <p>The ARN of the project.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -18,27 +18,31 @@ pub struct ProjectSummary  {
     pub updated_date: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ProjectSummary {
     /// <p>The ARN of the project.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the project being summarized.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn updated_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_date.as_ref()
     }
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -57,7 +61,8 @@ pub struct ProjectSummaryBuilder {
     pub(crate) project_name: std::option::Option<std::string::String>,
     pub(crate) created_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) updated_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ProjectSummaryBuilder {
     /// <p>The ARN of the project.</p>
@@ -67,7 +72,8 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The ARN of the project.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the project being summarized.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +82,8 @@ impl ProjectSummaryBuilder {
     }
     /// <p>The name of the project being summarized.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
     pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,8 +91,12 @@ impl ProjectSummaryBuilder {
         self
     }
     /// <p>The date when the project was originally created, in UNIX epoch time format.</p>
-    pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input; self
+    pub fn set_created_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_date = input;
+        self
     }
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
     pub fn updated_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,38 +104,46 @@ impl ProjectSummaryBuilder {
         self
     }
     /// <p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>
-    pub fn set_updated_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_date = input; self
+    pub fn set_updated_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_date = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags (metadata key/value pairs) associated with the project.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProjectSummary`](crate::types::ProjectSummary).
     pub fn build(self) -> crate::types::ProjectSummary {
         crate::types::ProjectSummary {
-            arn: self.arn
-            ,
-            project_name: self.project_name
-            ,
-            created_date: self.created_date
-            ,
-            updated_date: self.updated_date
-            ,
-            tags: self.tags
-            ,
+            arn: self.arn,
+            project_name: self.project_name,
+            created_date: self.created_date,
+            updated_date: self.updated_date,
+            tags: self.tags,
         }
     }
 }
-

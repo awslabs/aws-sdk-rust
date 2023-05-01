@@ -4,58 +4,79 @@ pub use crate::operation::describe_events::_describe_events_output::DescribeEven
 pub use crate::operation::describe_events::_describe_events_input::DescribeEventsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeEvents`.
-/// 
-/// <p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> 
-/// <p>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</p> 
+///
+/// <p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note>
+/// <p>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEventsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_events::builders::DescribeEventsInputBuilder,
+    inner: crate::operation::describe_events::builders::DescribeEventsInputBuilder,
 }
-impl DescribeEventsFluentBuilder  {
+impl DescribeEventsFluentBuilder {
     /// Creates a new `DescribeEvents`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_events::DescribeEvents, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_events::DescribeEventsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_events::DescribeEventsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_events::DescribeEventsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_events::DescribeEvents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::describe_events::DescribeEventsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_events::DescribeEventsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::describe_events::DescribeEventsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_events::paginator::DescribeEventsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_events::paginator::DescribeEventsPaginator {
-                                crate::operation::describe_events::paginator::DescribeEventsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_events::paginator::DescribeEventsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_events::paginator::DescribeEventsPaginator {
+        crate::operation::describe_events::paginator::DescribeEventsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.</p>
     pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_name(input.into());
@@ -142,7 +163,10 @@ impl DescribeEventsFluentBuilder  {
         self
     }
     /// <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -177,4 +201,3 @@ impl DescribeEventsFluentBuilder  {
         self
     }
 }
-

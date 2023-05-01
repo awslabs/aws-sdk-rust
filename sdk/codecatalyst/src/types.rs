@@ -120,4 +120,3 @@ pub mod builders;
 
 /// Error types that Amazon CodeCatalyst can respond with.
 pub mod error;
-

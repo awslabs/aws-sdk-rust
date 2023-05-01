@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartQueryInput  {
+pub struct StartQueryInput {
     /// <p>The SQL code of your query.</p>
     #[doc(hidden)]
     pub query_statement: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct StartQueryInput  {
 }
 impl StartQueryInput {
     /// <p>The SQL code of your query.</p>
-    pub fn query_statement(&self) -> std::option::Option<& str> {
+    pub fn query_statement(&self) -> std::option::Option<&str> {
         self.query_statement.as_deref()
     }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
-    pub fn delivery_s3_uri(&self) -> std::option::Option<& str> {
+    pub fn delivery_s3_uri(&self) -> std::option::Option<&str> {
         self.delivery_s3_uri.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl StartQueryInputBuilder {
     }
     /// <p>The SQL code of your query.</p>
     pub fn set_query_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_statement = input; self
+        self.query_statement = input;
+        self
     }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
     pub fn delivery_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl StartQueryInputBuilder {
     }
     /// <p> The URI for the S3 bucket where CloudTrail delivers the query results. </p>
     pub fn set_delivery_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delivery_s3_uri = input; self
+        self.delivery_s3_uri = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartQueryInput`](crate::operation::start_query::StartQueryInput).
-    pub fn build(self) -> Result<crate::operation::start_query::StartQueryInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_query::StartQueryInput {
-                query_statement: self.query_statement
-                ,
-                delivery_s3_uri: self.delivery_s3_uri
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_query::StartQueryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_query::StartQueryInput {
+            query_statement: self.query_statement,
+            delivery_s3_uri: self.delivery_s3_uri,
+        })
     }
 }
-

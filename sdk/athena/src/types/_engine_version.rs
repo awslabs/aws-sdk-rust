@@ -3,7 +3,7 @@
 /// <p>The Athena engine version for running queries, or the PySpark engine version for running sessions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EngineVersion  {
+pub struct EngineVersion {
     /// <p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including AUTO. The default is AUTO.</p>
     #[doc(hidden)]
     pub selected_engine_version: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EngineVersion  {
 }
 impl EngineVersion {
     /// <p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including AUTO. The default is AUTO.</p>
-    pub fn selected_engine_version(&self) -> std::option::Option<& str> {
+    pub fn selected_engine_version(&self) -> std::option::Option<&str> {
         self.selected_engine_version.as_deref()
     }
     /// <p>Read only. The engine version on which the query runs. If the user requests a valid engine version other than Auto, the effective engine version is the same as the engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code> field is ignored.</p>
-    pub fn effective_engine_version(&self) -> std::option::Option<& str> {
+    pub fn effective_engine_version(&self) -> std::option::Option<&str> {
         self.effective_engine_version.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl EngineVersionBuilder {
         self
     }
     /// <p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including AUTO. The default is AUTO.</p>
-    pub fn set_selected_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.selected_engine_version = input; self
+    pub fn set_selected_engine_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.selected_engine_version = input;
+        self
     }
     /// <p>Read only. The engine version on which the query runs. If the user requests a valid engine version other than Auto, the effective engine version is the same as the engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code> field is ignored.</p>
     pub fn effective_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +55,18 @@ impl EngineVersionBuilder {
         self
     }
     /// <p>Read only. The engine version on which the query runs. If the user requests a valid engine version other than Auto, the effective engine version is the same as the engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code> field is ignored.</p>
-    pub fn set_effective_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.effective_engine_version = input; self
+    pub fn set_effective_engine_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.effective_engine_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`EngineVersion`](crate::types::EngineVersion).
     pub fn build(self) -> crate::types::EngineVersion {
         crate::types::EngineVersion {
-            selected_engine_version: self.selected_engine_version
-            ,
-            effective_engine_version: self.effective_engine_version
-            ,
+            selected_engine_version: self.selected_engine_version,
+            effective_engine_version: self.effective_engine_version,
         }
     }
 }
-

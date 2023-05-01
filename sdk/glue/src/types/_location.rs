@@ -3,7 +3,7 @@
 /// <p>The location of resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Location  {
+pub struct Location {
     /// <p>A JDBC location.</p>
     #[doc(hidden)]
     pub jdbc: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
@@ -16,15 +16,15 @@ pub struct Location  {
 }
 impl Location {
     /// <p>A JDBC location.</p>
-    pub fn jdbc(&self) -> std::option::Option<& [crate::types::CodeGenNodeArg]> {
+    pub fn jdbc(&self) -> std::option::Option<&[crate::types::CodeGenNodeArg]> {
         self.jdbc.as_deref()
     }
     /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-    pub fn s3(&self) -> std::option::Option<& [crate::types::CodeGenNodeArg]> {
+    pub fn s3(&self) -> std::option::Option<&[crate::types::CodeGenNodeArg]> {
         self.s3.as_deref()
     }
     /// <p>An Amazon DynamoDB table location.</p>
-    pub fn dynamo_db(&self) -> std::option::Option<& [crate::types::CodeGenNodeArg]> {
+    pub fn dynamo_db(&self) -> std::option::Option<&[crate::types::CodeGenNodeArg]> {
         self.dynamo_db.as_deref()
     }
 }
@@ -51,13 +51,17 @@ impl LocationBuilder {
     /// <p>A JDBC location.</p>
     pub fn jdbc(mut self, input: crate::types::CodeGenNodeArg) -> Self {
         let mut v = self.jdbc.unwrap_or_default();
-                        v.push(input);
-                        self.jdbc = Some(v);
-                        self
+        v.push(input);
+        self.jdbc = Some(v);
+        self
     }
     /// <p>A JDBC location.</p>
-    pub fn set_jdbc(mut self, input: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>) -> Self {
-        self.jdbc = input; self
+    pub fn set_jdbc(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    ) -> Self {
+        self.jdbc = input;
+        self
     }
     /// Appends an item to `s3`.
     ///
@@ -66,13 +70,17 @@ impl LocationBuilder {
     /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
     pub fn s3(mut self, input: crate::types::CodeGenNodeArg) -> Self {
         let mut v = self.s3.unwrap_or_default();
-                        v.push(input);
-                        self.s3 = Some(v);
-                        self
+        v.push(input);
+        self.s3 = Some(v);
+        self
     }
     /// <p>An Amazon Simple Storage Service (Amazon S3) location.</p>
-    pub fn set_s3(mut self, input: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>) -> Self {
-        self.s3 = input; self
+    pub fn set_s3(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    ) -> Self {
+        self.s3 = input;
+        self
     }
     /// Appends an item to `dynamo_db`.
     ///
@@ -81,24 +89,24 @@ impl LocationBuilder {
     /// <p>An Amazon DynamoDB table location.</p>
     pub fn dynamo_db(mut self, input: crate::types::CodeGenNodeArg) -> Self {
         let mut v = self.dynamo_db.unwrap_or_default();
-                        v.push(input);
-                        self.dynamo_db = Some(v);
-                        self
+        v.push(input);
+        self.dynamo_db = Some(v);
+        self
     }
     /// <p>An Amazon DynamoDB table location.</p>
-    pub fn set_dynamo_db(mut self, input: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>) -> Self {
-        self.dynamo_db = input; self
+    pub fn set_dynamo_db(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CodeGenNodeArg>>,
+    ) -> Self {
+        self.dynamo_db = input;
+        self
     }
     /// Consumes the builder and constructs a [`Location`](crate::types::Location).
     pub fn build(self) -> crate::types::Location {
         crate::types::Location {
-            jdbc: self.jdbc
-            ,
-            s3: self.s3
-            ,
-            dynamo_db: self.dynamo_db
-            ,
+            jdbc: self.jdbc,
+            s3: self.s3,
+            dynamo_db: self.dynamo_db,
         }
     }
 }
-

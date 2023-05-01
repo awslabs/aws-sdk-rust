@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGameServerGroupOutput  {
+pub struct DeleteGameServerGroupOutput {
     /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
     #[doc(hidden)]
     pub game_server_group: std::option::Option<crate::types::GameServerGroup>,
@@ -10,18 +10,20 @@ pub struct DeleteGameServerGroupOutput  {
 }
 impl DeleteGameServerGroupOutput {
     /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
-    pub fn game_server_group(&self) -> std::option::Option<& crate::types::GameServerGroup> {
+    pub fn game_server_group(&self) -> std::option::Option<&crate::types::GameServerGroup> {
         self.game_server_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteGameServerGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteGameServerGroupOutput {
     /// Creates a new builder-style object to manufacture [`DeleteGameServerGroupOutput`](crate::operation::delete_game_server_group::DeleteGameServerGroupOutput).
-    pub fn builder() -> crate::operation::delete_game_server_group::builders::DeleteGameServerGroupOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_game_server_group::builders::DeleteGameServerGroupOutputBuilder
+    {
         crate::operation::delete_game_server_group::builders::DeleteGameServerGroupOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl DeleteGameServerGroupOutputBuilder {
         self
     }
     /// <p>An object that describes the deleted game server group resource, with status updated to <code>DELETE_SCHEDULED</code>. </p>
-    pub fn set_game_server_group(mut self, input: std::option::Option<crate::types::GameServerGroup>) -> Self {
-        self.game_server_group = input; self
+    pub fn set_game_server_group(
+        mut self,
+        input: std::option::Option<crate::types::GameServerGroup>,
+    ) -> Self {
+        self.game_server_group = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteGameServerGroupOutput`](crate::operation::delete_game_server_group::DeleteGameServerGroupOutput).
     pub fn build(self) -> crate::operation::delete_game_server_group::DeleteGameServerGroupOutput {
         crate::operation::delete_game_server_group::DeleteGameServerGroupOutput {
-            game_server_group: self.game_server_group
-            ,
+            game_server_group: self.game_server_group,
             _request_id: self._request_id,
         }
     }
 }
-

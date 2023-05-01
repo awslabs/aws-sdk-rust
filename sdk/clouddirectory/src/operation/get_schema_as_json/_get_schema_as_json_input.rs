@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSchemaAsJsonInput  {
+pub struct GetSchemaAsJsonInput {
     /// <p>The ARN of the schema to retrieve.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
 }
 impl GetSchemaAsJsonInput {
     /// <p>The ARN of the schema to retrieve.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
 }
 impl GetSchemaAsJsonInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaAsJsonInput`](crate::operation::get_schema_as_json::GetSchemaAsJsonInput).
-    pub fn builder() -> crate::operation::get_schema_as_json::builders::GetSchemaAsJsonInputBuilder {
+    pub fn builder() -> crate::operation::get_schema_as_json::builders::GetSchemaAsJsonInputBuilder
+    {
         crate::operation::get_schema_as_json::builders::GetSchemaAsJsonInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl GetSchemaAsJsonInputBuilder {
     }
     /// <p>The ARN of the schema to retrieve.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSchemaAsJsonInput`](crate::operation::get_schema_as_json::GetSchemaAsJsonInput).
-    pub fn build(self) -> Result<crate::operation::get_schema_as_json::GetSchemaAsJsonInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_schema_as_json::GetSchemaAsJsonInput {
-                schema_arn: self.schema_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_schema_as_json::GetSchemaAsJsonInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_schema_as_json::GetSchemaAsJsonInput {
+            schema_arn: self.schema_arn,
+        })
     }
 }
-

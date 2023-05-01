@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateIngressGatewayBridgeRequest  {
+pub struct UpdateIngressGatewayBridgeRequest {
     /// The maximum expected bitrate (in bps).
     #[doc(hidden)]
     pub max_bitrate: i32,
@@ -42,7 +42,8 @@ impl UpdateIngressGatewayBridgeRequestBuilder {
     }
     /// The maximum expected bitrate (in bps).
     pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_bitrate = input; self
+        self.max_bitrate = input;
+        self
     }
     /// The maximum number of expected outputs.
     pub fn max_outputs(mut self, input: i32) -> Self {
@@ -51,18 +52,14 @@ impl UpdateIngressGatewayBridgeRequestBuilder {
     }
     /// The maximum number of expected outputs.
     pub fn set_max_outputs(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_outputs = input; self
+        self.max_outputs = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateIngressGatewayBridgeRequest`](crate::types::UpdateIngressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::UpdateIngressGatewayBridgeRequest {
         crate::types::UpdateIngressGatewayBridgeRequest {
-            max_bitrate: self.max_bitrate
-                .unwrap_or_default()
-            ,
-            max_outputs: self.max_outputs
-                .unwrap_or_default()
-            ,
+            max_bitrate: self.max_bitrate.unwrap_or_default(),
+            max_outputs: self.max_outputs.unwrap_or_default(),
         }
     }
 }
-

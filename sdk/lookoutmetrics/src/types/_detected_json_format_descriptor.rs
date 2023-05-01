@@ -3,7 +3,7 @@
 /// <p>A detected JSON format descriptor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectedJsonFormatDescriptor  {
+pub struct DetectedJsonFormatDescriptor {
     /// <p>The format's file compression.</p>
     #[doc(hidden)]
     pub file_compression: std::option::Option<crate::types::DetectedField>,
@@ -13,11 +13,11 @@ pub struct DetectedJsonFormatDescriptor  {
 }
 impl DetectedJsonFormatDescriptor {
     /// <p>The format's file compression.</p>
-    pub fn file_compression(&self) -> std::option::Option<& crate::types::DetectedField> {
+    pub fn file_compression(&self) -> std::option::Option<&crate::types::DetectedField> {
         self.file_compression.as_ref()
     }
     /// <p>The format's character set.</p>
-    pub fn charset(&self) -> std::option::Option<& crate::types::DetectedField> {
+    pub fn charset(&self) -> std::option::Option<&crate::types::DetectedField> {
         self.charset.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl DetectedJsonFormatDescriptorBuilder {
         self
     }
     /// <p>The format's file compression.</p>
-    pub fn set_file_compression(mut self, input: std::option::Option<crate::types::DetectedField>) -> Self {
-        self.file_compression = input; self
+    pub fn set_file_compression(
+        mut self,
+        input: std::option::Option<crate::types::DetectedField>,
+    ) -> Self {
+        self.file_compression = input;
+        self
     }
     /// <p>The format's character set.</p>
     pub fn charset(mut self, input: crate::types::DetectedField) -> Self {
@@ -52,16 +56,14 @@ impl DetectedJsonFormatDescriptorBuilder {
     }
     /// <p>The format's character set.</p>
     pub fn set_charset(mut self, input: std::option::Option<crate::types::DetectedField>) -> Self {
-        self.charset = input; self
+        self.charset = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetectedJsonFormatDescriptor`](crate::types::DetectedJsonFormatDescriptor).
     pub fn build(self) -> crate::types::DetectedJsonFormatDescriptor {
         crate::types::DetectedJsonFormatDescriptor {
-            file_compression: self.file_compression
-            ,
-            charset: self.charset
-            ,
+            file_compression: self.file_compression,
+            charset: self.charset,
         }
     }
 }
-

@@ -2,20 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRemediationConfigurationsInput  {
+pub struct PutRemediationConfigurationsInput {
     /// <p>A list of remediation configuration objects.</p>
     #[doc(hidden)]
-    pub remediation_configurations: std::option::Option<std::vec::Vec<crate::types::RemediationConfiguration>>,
+    pub remediation_configurations:
+        std::option::Option<std::vec::Vec<crate::types::RemediationConfiguration>>,
 }
 impl PutRemediationConfigurationsInput {
     /// <p>A list of remediation configuration objects.</p>
-    pub fn remediation_configurations(&self) -> std::option::Option<& [crate::types::RemediationConfiguration]> {
+    pub fn remediation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::RemediationConfiguration]> {
         self.remediation_configurations.as_deref()
     }
 }
 impl PutRemediationConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`PutRemediationConfigurationsInput`](crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput).
-    pub fn builder() -> crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsInputBuilder {
+    pub fn builder() -> crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsInputBuilder{
         crate::operation::put_remediation_configurations::builders::PutRemediationConfigurationsInputBuilder::default()
     }
 }
@@ -24,7 +27,8 @@ impl PutRemediationConfigurationsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutRemediationConfigurationsInputBuilder {
-    pub(crate) remediation_configurations: std::option::Option<std::vec::Vec<crate::types::RemediationConfiguration>>,
+    pub(crate) remediation_configurations:
+        std::option::Option<std::vec::Vec<crate::types::RemediationConfiguration>>,
 }
 impl PutRemediationConfigurationsInputBuilder {
     /// Appends an item to `remediation_configurations`.
@@ -32,24 +36,34 @@ impl PutRemediationConfigurationsInputBuilder {
     /// To override the contents of this collection use [`set_remediation_configurations`](Self::set_remediation_configurations).
     ///
     /// <p>A list of remediation configuration objects.</p>
-    pub fn remediation_configurations(mut self, input: crate::types::RemediationConfiguration) -> Self {
+    pub fn remediation_configurations(
+        mut self,
+        input: crate::types::RemediationConfiguration,
+    ) -> Self {
         let mut v = self.remediation_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.remediation_configurations = Some(v);
-                        self
+        v.push(input);
+        self.remediation_configurations = Some(v);
+        self
     }
     /// <p>A list of remediation configuration objects.</p>
-    pub fn set_remediation_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::RemediationConfiguration>>) -> Self {
-        self.remediation_configurations = input; self
+    pub fn set_remediation_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RemediationConfiguration>>,
+    ) -> Self {
+        self.remediation_configurations = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutRemediationConfigurationsInput`](crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_remediation_configurations::PutRemediationConfigurationsInput {
-                remediation_configurations: self.remediation_configurations
-                ,
-            }
+                remediation_configurations: self.remediation_configurations,
+            },
         )
     }
 }
-

@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAutoScalingConfigurationInput  {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p> 
+pub struct DescribeAutoScalingConfigurationInput {
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
     #[doc(hidden)]
     pub auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAutoScalingConfigurationInput {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
-    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_configuration_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_configuration_arn.as_deref()
     }
 }
 impl DescribeAutoScalingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeAutoScalingConfigurationInput`](crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationInput).
-    pub fn builder() -> crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationInputBuilder{
         crate::operation::describe_auto_scaling_configuration::builders::DescribeAutoScalingConfigurationInputBuilder::default()
     }
 }
@@ -29,19 +29,23 @@ pub struct DescribeAutoScalingConfigurationInputBuilder {
     pub(crate) auto_scaling_configuration_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAutoScalingConfigurationInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
     pub fn auto_scaling_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.auto_scaling_configuration_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the App Runner auto scaling configuration that you want a description for.</p>
     /// <p>The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>. If a revision isn't specified, the latest active revision is described.</p>
-    pub fn set_auto_scaling_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_configuration_arn = input; self
+    pub fn set_auto_scaling_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_configuration_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAutoScalingConfigurationInput`](crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_auto_scaling_configuration::DescribeAutoScalingConfigurationInput {
                 auto_scaling_configuration_arn: self.auto_scaling_configuration_arn
@@ -50,4 +54,3 @@ impl DescribeAutoScalingConfigurationInputBuilder {
         )
     }
 }
-

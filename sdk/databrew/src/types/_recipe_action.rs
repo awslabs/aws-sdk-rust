@@ -3,21 +3,25 @@
 /// <p>Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see <a href="https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html">Recipe actions reference</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecipeAction  {
+pub struct RecipeAction {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
     /// <p>Contextual parameters for the transformation.</p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RecipeAction {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-    pub fn operation(&self) -> std::option::Option<& str> {
+    pub fn operation(&self) -> std::option::Option<&str> {
         self.operation.as_deref()
     }
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn parameters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.parameters.as_ref()
     }
 }
@@ -33,7 +37,8 @@ impl RecipeAction {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RecipeActionBuilder {
     pub(crate) operation: std::option::Option<std::string::String>,
-    pub(crate) parameters: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) parameters:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl RecipeActionBuilder {
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
@@ -43,31 +48,39 @@ impl RecipeActionBuilder {
     }
     /// <p>The name of a valid DataBrew transformation to be performed on the data.</p>
     pub fn set_operation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
     /// Adds a key-value pair to `parameters`.
     ///
     /// To override the contents of this collection use [`set_parameters`](Self::set_parameters).
     ///
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.parameters.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.parameters = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.parameters = Some(hash_map);
+        self
     }
     /// <p>Contextual parameters for the transformation.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecipeAction`](crate::types::RecipeAction).
     pub fn build(self) -> crate::types::RecipeAction {
         crate::types::RecipeAction {
-            operation: self.operation
-            ,
-            parameters: self.parameters
-            ,
+            operation: self.operation,
+            parameters: self.parameters,
         }
     }
 }
-

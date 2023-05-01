@@ -4,51 +4,58 @@ pub use crate::operation::modify_vpc_endpoint_service_permissions::_modify_vpc_e
 pub use crate::operation::modify_vpc_endpoint_service_permissions::_modify_vpc_endpoint_service_permissions_input::ModifyVpcEndpointServicePermissionsInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyVpcEndpointServicePermissions`.
-/// 
-/// <p>Modifies the permissions for your VPC endpoint service. You can add or remove permissions for service consumers (Amazon Web Services accounts, users, and IAM roles) to connect to your endpoint service.</p> 
+///
+/// <p>Modifies the permissions for your VPC endpoint service. You can add or remove permissions for service consumers (Amazon Web Services accounts, users, and IAM roles) to connect to your endpoint service.</p>
 /// <p>If you grant permissions to all principals, the service is public. Any users who know the name of a public service can send a request to attach an endpoint. If the service does not require manual approval, attachments are automatically approved.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpcEndpointServicePermissionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsInputBuilder,
 }
-impl ModifyVpcEndpointServicePermissionsFluentBuilder  {
+impl ModifyVpcEndpointServicePermissionsFluentBuilder {
     /// Creates a new `ModifyVpcEndpointServicePermissions`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissions, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput, aws_smithy_http::result::SdkError<crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -79,7 +86,10 @@ impl ModifyVpcEndpointServicePermissionsFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are granted to the principals in this list. To grant permissions to all principals, specify an asterisk (*).</p>
-    pub fn set_add_allowed_principals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_add_allowed_principals(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_add_allowed_principals(input);
         self
     }
@@ -93,9 +103,11 @@ impl ModifyVpcEndpointServicePermissionsFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the principals. Permissions are revoked for principals in this list.</p>
-    pub fn set_remove_allowed_principals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_remove_allowed_principals(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_remove_allowed_principals(input);
         self
     }
 }
-

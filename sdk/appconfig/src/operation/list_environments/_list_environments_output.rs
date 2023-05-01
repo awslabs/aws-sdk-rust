@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentsOutput  {
+pub struct ListEnvironmentsOutput {
     /// <p>The elements from this collection.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::Environment>>,
@@ -13,22 +13,23 @@ pub struct ListEnvironmentsOutput  {
 }
 impl ListEnvironmentsOutput {
     /// <p>The elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<& [crate::types::Environment]> {
+    pub fn items(&self) -> std::option::Option<&[crate::types::Environment]> {
         self.items.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEnvironmentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListEnvironmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
-    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder {
+    pub fn builder() -> crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder
+    {
         crate::operation::list_environments::builders::ListEnvironmentsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListEnvironmentsOutputBuilder {
     /// <p>The elements from this collection.</p>
     pub fn items(mut self, input: crate::types::Environment) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input);
-                        self.items = Some(v);
-                        self
+        v.push(input);
+        self.items = Some(v);
+        self
     }
     /// <p>The elements from this collection.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::Environment>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Environment>>,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListEnvironmentsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::operation::list_environments::ListEnvironmentsOutput).
     pub fn build(self) -> crate::operation::list_environments::ListEnvironmentsOutput {
         crate::operation::list_environments::ListEnvironmentsOutput {
-            items: self.items
-            ,
-            next_token: self.next_token
-            ,
+            items: self.items,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

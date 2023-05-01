@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeThemePermissionsInput  {
+pub struct DescribeThemePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DescribeThemePermissionsInput  {
 }
 impl DescribeThemePermissionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the theme that you want to describe permissions for.</p>
-    pub fn theme_id(&self) -> std::option::Option<& str> {
+    pub fn theme_id(&self) -> std::option::Option<&str> {
         self.theme_id.as_deref()
     }
 }
 impl DescribeThemePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeThemePermissionsInput`](crate::operation::describe_theme_permissions::DescribeThemePermissionsInput).
-    pub fn builder() -> crate::operation::describe_theme_permissions::builders::DescribeThemePermissionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_theme_permissions::builders::DescribeThemePermissionsInputBuilder
+    {
         crate::operation::describe_theme_permissions::builders::DescribeThemePermissionsInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DescribeThemePermissionsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The ID for the theme that you want to describe permissions for.</p>
     pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl DescribeThemePermissionsInputBuilder {
     }
     /// <p>The ID for the theme that you want to describe permissions for.</p>
     pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.theme_id = input; self
+        self.theme_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeThemePermissionsInput`](crate::operation::describe_theme_permissions::DescribeThemePermissionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_theme_permissions::DescribeThemePermissionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_theme_permissions::DescribeThemePermissionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_theme_permissions::DescribeThemePermissionsInput {
-                aws_account_id: self.aws_account_id
-                ,
-                theme_id: self.theme_id
-                ,
-            }
+                aws_account_id: self.aws_account_id,
+                theme_id: self.theme_id,
+            },
         )
     }
 }
-

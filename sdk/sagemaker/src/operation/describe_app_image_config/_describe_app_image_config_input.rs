@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppImageConfigInput  {
+pub struct DescribeAppImageConfigInput {
     /// <p>The name of the AppImageConfig to describe.</p>
     #[doc(hidden)]
     pub app_image_config_name: std::option::Option<std::string::String>,
 }
 impl DescribeAppImageConfigInput {
     /// <p>The name of the AppImageConfig to describe.</p>
-    pub fn app_image_config_name(&self) -> std::option::Option<& str> {
+    pub fn app_image_config_name(&self) -> std::option::Option<&str> {
         self.app_image_config_name.as_deref()
     }
 }
 impl DescribeAppImageConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppImageConfigInput`](crate::operation::describe_app_image_config::DescribeAppImageConfigInput).
-    pub fn builder() -> crate::operation::describe_app_image_config::builders::DescribeAppImageConfigInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_app_image_config::builders::DescribeAppImageConfigInputBuilder
+    {
         crate::operation::describe_app_image_config::builders::DescribeAppImageConfigInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeAppImageConfigInputBuilder {
         self
     }
     /// <p>The name of the AppImageConfig to describe.</p>
-    pub fn set_app_image_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_image_config_name = input; self
+    pub fn set_app_image_config_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_image_config_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAppImageConfigInput`](crate::operation::describe_app_image_config::DescribeAppImageConfigInput).
-    pub fn build(self) -> Result<crate::operation::describe_app_image_config::DescribeAppImageConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_app_image_config::DescribeAppImageConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_app_image_config::DescribeAppImageConfigInput {
-                app_image_config_name: self.app_image_config_name
-                ,
-            }
+                app_image_config_name: self.app_image_config_name,
+            },
         )
     }
 }
-

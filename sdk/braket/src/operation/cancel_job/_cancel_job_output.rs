@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CancelJobOutput  {
+pub struct CancelJobOutput {
     /// <p>The ARN of the Amazon Braket job.</p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct CancelJobOutput  {
 }
 impl CancelJobOutput {
     /// <p>The ARN of the Amazon Braket job.</p>
-    pub fn job_arn(&self) -> std::option::Option<& str> {
+    pub fn job_arn(&self) -> std::option::Option<&str> {
         self.job_arn.as_deref()
     }
     /// <p>The status of the job cancellation request.</p>
-    pub fn cancellation_status(&self) -> std::option::Option<& crate::types::CancellationStatus> {
+    pub fn cancellation_status(&self) -> std::option::Option<&crate::types::CancellationStatus> {
         self.cancellation_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CancelJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CancelJobOutput {
     /// Creates a new builder-style object to manufacture [`CancelJobOutput`](crate::operation::cancel_job::CancelJobOutput).
     pub fn builder() -> crate::operation::cancel_job::builders::CancelJobOutputBuilder {
@@ -49,7 +49,8 @@ impl CancelJobOutputBuilder {
     }
     /// <p>The ARN of the Amazon Braket job.</p>
     pub fn set_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_arn = input; self
+        self.job_arn = input;
+        self
     }
     /// <p>The status of the job cancellation request.</p>
     pub fn cancellation_status(mut self, input: crate::types::CancellationStatus) -> Self {
@@ -57,27 +58,28 @@ impl CancelJobOutputBuilder {
         self
     }
     /// <p>The status of the job cancellation request.</p>
-    pub fn set_cancellation_status(mut self, input: std::option::Option<crate::types::CancellationStatus>) -> Self {
-        self.cancellation_status = input; self
+    pub fn set_cancellation_status(
+        mut self,
+        input: std::option::Option<crate::types::CancellationStatus>,
+    ) -> Self {
+        self.cancellation_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CancelJobOutput`](crate::operation::cancel_job::CancelJobOutput).
     pub fn build(self) -> crate::operation::cancel_job::CancelJobOutput {
         crate::operation::cancel_job::CancelJobOutput {
-            job_arn: self.job_arn
-            ,
-            cancellation_status: self.cancellation_status
-            ,
+            job_arn: self.job_arn,
+            cancellation_status: self.cancellation_status,
             _request_id: self._request_id,
         }
     }
 }
-

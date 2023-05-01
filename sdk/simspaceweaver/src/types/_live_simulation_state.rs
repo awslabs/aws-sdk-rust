@@ -3,25 +3,25 @@
 /// <p>A collection of additional state information, such as domain and clock configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LiveSimulationState  {
+pub struct LiveSimulationState {
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
     #[doc(hidden)]
     pub domains: std::option::Option<std::vec::Vec<crate::types::Domain>>,
-    /// <p>A list of simulation clocks.</p> <note> 
-    /// <p>At this time, a simulation has only one clock.</p> 
+    /// <p>A list of simulation clocks.</p> <note>
+    /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
     #[doc(hidden)]
     pub clocks: std::option::Option<std::vec::Vec<crate::types::SimulationClock>>,
 }
 impl LiveSimulationState {
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
-    pub fn domains(&self) -> std::option::Option<& [crate::types::Domain]> {
+    pub fn domains(&self) -> std::option::Option<&[crate::types::Domain]> {
         self.domains.as_deref()
     }
-    /// <p>A list of simulation clocks.</p> <note> 
-    /// <p>At this time, a simulation has only one clock.</p> 
+    /// <p>A list of simulation clocks.</p> <note>
+    /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
-    pub fn clocks(&self) -> std::option::Option<& [crate::types::SimulationClock]> {
+    pub fn clocks(&self) -> std::option::Option<&[crate::types::SimulationClock]> {
         self.clocks.as_deref()
     }
 }
@@ -47,41 +47,46 @@ impl LiveSimulationStateBuilder {
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
     pub fn domains(mut self, input: crate::types::Domain) -> Self {
         let mut v = self.domains.unwrap_or_default();
-                        v.push(input);
-                        self.domains = Some(v);
-                        self
+        v.push(input);
+        self.domains = Some(v);
+        self
     }
     /// <p>A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
-    pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<crate::types::Domain>>) -> Self {
-        self.domains = input; self
+    pub fn set_domains(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Domain>>,
+    ) -> Self {
+        self.domains = input;
+        self
     }
     /// Appends an item to `clocks`.
     ///
     /// To override the contents of this collection use [`set_clocks`](Self::set_clocks).
     ///
-    /// <p>A list of simulation clocks.</p> <note> 
-    /// <p>At this time, a simulation has only one clock.</p> 
+    /// <p>A list of simulation clocks.</p> <note>
+    /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
     pub fn clocks(mut self, input: crate::types::SimulationClock) -> Self {
         let mut v = self.clocks.unwrap_or_default();
-                        v.push(input);
-                        self.clocks = Some(v);
-                        self
+        v.push(input);
+        self.clocks = Some(v);
+        self
     }
-    /// <p>A list of simulation clocks.</p> <note> 
-    /// <p>At this time, a simulation has only one clock.</p> 
+    /// <p>A list of simulation clocks.</p> <note>
+    /// <p>At this time, a simulation has only one clock.</p>
     /// </note>
-    pub fn set_clocks(mut self, input: std::option::Option<std::vec::Vec<crate::types::SimulationClock>>) -> Self {
-        self.clocks = input; self
+    pub fn set_clocks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SimulationClock>>,
+    ) -> Self {
+        self.clocks = input;
+        self
     }
     /// Consumes the builder and constructs a [`LiveSimulationState`](crate::types::LiveSimulationState).
     pub fn build(self) -> crate::types::LiveSimulationState {
         crate::types::LiveSimulationState {
-            domains: self.domains
-            ,
-            clocks: self.clocks
-            ,
+            domains: self.domains,
+            clocks: self.clocks,
         }
     }
 }
-

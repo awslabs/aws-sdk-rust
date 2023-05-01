@@ -2,65 +2,65 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateResourceShareInput  {
+pub struct DisassociateResourceShareInput {
     /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.</p>
     #[doc(hidden)]
     pub resource_share_arn: std::option::Option<std::string::String>,
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p> 
-    /// <p>You can include the following values:</p> 
-    /// <ul> 
-    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li> 
-    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li> 
-    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p> 
+    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     #[doc(hidden)]
     pub principals: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl DisassociateResourceShareInput {
     /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
-    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arns.as_deref()
     }
-    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p> 
-    /// <p>You can include the following values:</p> 
-    /// <ul> 
-    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li> 
-    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li> 
-    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p> 
+    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn principals(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn principals(&self) -> std::option::Option<&[std::string::String]> {
         self.principals.as_deref()
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl DisassociateResourceShareInput {
     /// Creates a new builder-style object to manufacture [`DisassociateResourceShareInput`](crate::operation::disassociate_resource_share::DisassociateResourceShareInput).
-    pub fn builder() -> crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder{
         crate::operation::disassociate_resource_share::builders::DisassociateResourceShareInputBuilder::default()
     }
 }
@@ -81,8 +81,12 @@ impl DisassociateResourceShareInputBuilder {
         self
     }
     /// <p>Specifies <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share that you want to remove resources or principals from.</p>
-    pub fn set_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_share_arn = input; self
+    pub fn set_resource_share_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_arn = input;
+        self
     }
     /// Appends an item to `resource_arns`.
     ///
@@ -91,76 +95,85 @@ impl DisassociateResourceShareInputBuilder {
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
     pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.resource_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.resource_arns = Some(v);
+        self
     }
     /// <p>Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for one or more resources that you want to remove from the resource share. After the operation runs, these resources are no longer shared with principals associated with the resource share.</p>
-    pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resource_arns = input; self
+    pub fn set_resource_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resource_arns = input;
+        self
     }
     /// Appends an item to `principals`.
     ///
     /// To override the contents of this collection use [`set_principals`](Self::set_principals).
     ///
-    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p> 
-    /// <p>You can include the following values:</p> 
-    /// <ul> 
-    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li> 
-    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li> 
-    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p> 
+    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
     pub fn principals(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.principals.unwrap_or_default();
-                        v.push(input.into());
-                        self.principals = Some(v);
-                        self
+        v.push(input.into());
+        self.principals = Some(v);
+        self
     }
-    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p> 
-    /// <p>You can include the following values:</p> 
-    /// <ul> 
-    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li> 
-    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li> 
-    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li> 
-    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li> 
-    /// </ul> <note> 
-    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p> 
+    /// <p>Specifies a list of one or more principals that no longer are to have access to the resources in this resource share.</p>
+    /// <p>You can include the following values:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Web Services account ID, for example: <code>123456789012</code> </p> </li>
+    /// <li> <p>An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code> </p> </li>
+    /// <li> <p>An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code> </p> </li>
+    /// <li> <p>An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> </p> </li>
+    /// <li> <p>An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> </p> </li>
+    /// </ul> <note>
+    /// <p>Not all resource types can be shared with IAM roles and users. For more information, see <a href="https://docs.aws.amazon.com/ram/latest/userguide/permissions.html#permissions-rbp-supported-resource-types">Sharing with IAM roles and users</a> in the <i>Resource Access Manager User Guide</i>.</p>
     /// </note>
-    pub fn set_principals(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.principals = input; self
+    pub fn set_principals(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.principals = input;
+        self
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateResourceShareInput`](crate::operation::disassociate_resource_share::DisassociateResourceShareInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_resource_share::DisassociateResourceShareInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_resource_share::DisassociateResourceShareInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disassociate_resource_share::DisassociateResourceShareInput {
-                resource_share_arn: self.resource_share_arn
-                ,
-                resource_arns: self.resource_arns
-                ,
-                principals: self.principals
-                ,
-                client_token: self.client_token
-                ,
-            }
+                resource_share_arn: self.resource_share_arn,
+                resource_arns: self.resource_arns,
+                principals: self.principals,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

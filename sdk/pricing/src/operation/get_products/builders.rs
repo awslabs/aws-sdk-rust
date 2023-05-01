@@ -4,56 +4,75 @@ pub use crate::operation::get_products::_get_products_output::GetProductsOutputB
 pub use crate::operation::get_products::_get_products_input::GetProductsInputBuilder;
 
 /// Fluent builder constructing a request to `GetProducts`.
-/// 
+///
 /// <p>Returns a list of all products that match the filter criteria.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetProductsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_products::builders::GetProductsInputBuilder,
+    inner: crate::operation::get_products::builders::GetProductsInputBuilder,
 }
-impl GetProductsFluentBuilder  {
+impl GetProductsFluentBuilder {
     /// Creates a new `GetProducts`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_products::GetProducts, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_products::GetProductsOutput, aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_products::GetProducts,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_products::GetProductsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::get_products::GetProductsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_products::paginator::GetProductsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_products::paginator::GetProductsPaginator {
-                                crate::operation::get_products::paginator::GetProductsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_products::paginator::GetProductsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::get_products::paginator::GetProductsPaginator {
+        crate::operation::get_products::paginator::GetProductsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The code for the service whose products you want to retrieve. </p>
     pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_code(input.into());
@@ -74,17 +93,20 @@ impl GetProductsFluentBuilder  {
         self
     }
     /// <p>The list of filters that limit the returned products. only products that match all filters are returned.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
-    /// <p>The format version that you want the response to be in.</p> 
+    /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn format_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.format_version(input.into());
         self
     }
-    /// <p>The format version that you want the response to be in.</p> 
+    /// <p>The format version that you want the response to be in.</p>
     /// <p>Valid values are: <code>aws_v1</code> </p>
     pub fn set_format_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_format_version(input);
@@ -111,4 +133,3 @@ impl GetProductsFluentBuilder  {
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCalculationExecutionStatusOutput  {
+pub struct GetCalculationExecutionStatusOutput {
     /// <p>Contains information about the calculation execution status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::CalculationStatus>,
@@ -13,22 +13,22 @@ pub struct GetCalculationExecutionStatusOutput  {
 }
 impl GetCalculationExecutionStatusOutput {
     /// <p>Contains information about the calculation execution status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::CalculationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::CalculationStatus> {
         self.status.as_ref()
     }
     /// <p>Contains information about the DPU execution time and progress.</p>
-    pub fn statistics(&self) -> std::option::Option<& crate::types::CalculationStatistics> {
+    pub fn statistics(&self) -> std::option::Option<&crate::types::CalculationStatistics> {
         self.statistics.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetCalculationExecutionStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCalculationExecutionStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetCalculationExecutionStatusOutput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput).
-    pub fn builder() -> crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusOutputBuilder {
+    pub fn builder() -> crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusOutputBuilder{
         crate::operation::get_calculation_execution_status::builders::GetCalculationExecutionStatusOutputBuilder::default()
     }
 }
@@ -48,8 +48,12 @@ impl GetCalculationExecutionStatusOutputBuilder {
         self
     }
     /// <p>Contains information about the calculation execution status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::CalculationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::CalculationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Contains information about the DPU execution time and progress.</p>
     pub fn statistics(mut self, input: crate::types::CalculationStatistics) -> Self {
@@ -57,27 +61,31 @@ impl GetCalculationExecutionStatusOutputBuilder {
         self
     }
     /// <p>Contains information about the DPU execution time and progress.</p>
-    pub fn set_statistics(mut self, input: std::option::Option<crate::types::CalculationStatistics>) -> Self {
-        self.statistics = input; self
+    pub fn set_statistics(
+        mut self,
+        input: std::option::Option<crate::types::CalculationStatistics>,
+    ) -> Self {
+        self.statistics = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCalculationExecutionStatusOutput`](crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput).
-    pub fn build(self) -> crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput
+    {
         crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput {
-            status: self.status
-            ,
-            statistics: self.statistics
-            ,
+            status: self.status,
+            statistics: self.statistics,
             _request_id: self._request_id,
         }
     }
 }
-

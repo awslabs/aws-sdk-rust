@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListChannelsInput  {
+pub struct ListChannelsInput {
     /// <p> The maximum number of CloudTrail channels to display on a single page. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,7 +16,7 @@ impl ListChannelsInput {
         self.max_results
     }
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl ListChannelsInputBuilder {
     }
     /// <p> The maximum number of CloudTrail channels to display on a single page. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl ListChannelsInputBuilder {
     }
     /// <p>The token to use to get the next page of results after a previous API call. This token must be passed in with the same parameters that were specified in the original call. For example, if the original call specified an AttributeKey of 'Username' with a value of 'root', the call with NextToken should include those same parameters.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListChannelsInput`](crate::operation::list_channels::ListChannelsInput).
-    pub fn build(self) -> Result<crate::operation::list_channels::ListChannelsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_channels::ListChannelsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_channels::ListChannelsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_channels::ListChannelsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A complex type that contains optional Amazon Web Services Key Management Service (KMS) encryption settings for your Network Firewall resources. Your data is encrypted by default with an Amazon Web Services owned key that Amazon Web Services owns and manages for you. You can use either the Amazon Web Services owned key, or provide your own customer managed key. To learn more about KMS encryption of your Network Firewall resources, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-encryption-at-rest.html">Encryption at rest with Amazon Web Services Key Managment Service</a> in the <i>Network Firewall Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncryptionConfiguration  {
+pub struct EncryptionConfiguration {
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EncryptionConfiguration  {
 }
 impl EncryptionConfiguration {
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
-    pub fn key_id(&self) -> std::option::Option<& str> {
+    pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
     /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::EncryptionType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::EncryptionType> {
         self.r#type.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl EncryptionConfigurationBuilder {
     }
     /// <p>The ID of the Amazon Web Services Key Management Service (KMS) customer managed key. You can use any of the key identifiers that KMS supports, unless you're using a key that's managed by another account. If you're using a key managed by another account, then specify the key ARN. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id">Key ID</a> in the <i>Amazon Web Services KMS Developer Guide</i>.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input; self
+        self.key_id = input;
+        self
     }
     /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
     pub fn r#type(mut self, input: crate::types::EncryptionType) -> Self {
@@ -52,16 +53,14 @@ impl EncryptionConfigurationBuilder {
     }
     /// <p>The type of Amazon Web Services KMS key to use for encryption of your Network Firewall resources.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`EncryptionConfiguration`](crate::types::EncryptionConfiguration).
     pub fn build(self) -> crate::types::EncryptionConfiguration {
         crate::types::EncryptionConfiguration {
-            key_id: self.key_id
-            ,
-            r#type: self.r#type
-            ,
+            key_id: self.key_id,
+            r#type: self.r#type,
         }
     }
 }
-

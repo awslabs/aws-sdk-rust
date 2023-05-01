@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyLocalGatewayRouteInput  {
+pub struct ModifyLocalGatewayRouteInput {
     /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
     #[doc(hidden)]
     pub destination_cidr_block: std::option::Option<std::string::String>,
@@ -24,19 +24,19 @@ pub struct ModifyLocalGatewayRouteInput  {
 }
 impl ModifyLocalGatewayRouteInput {
     /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn destination_cidr_block(&self) -> std::option::Option<& str> {
+    pub fn destination_cidr_block(&self) -> std::option::Option<&str> {
         self.destination_cidr_block.as_deref()
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn local_gateway_route_table_id(&self) -> std::option::Option<& str> {
+    pub fn local_gateway_route_table_id(&self) -> std::option::Option<&str> {
         self.local_gateway_route_table_id.as_deref()
     }
     /// <p> The ID of the virtual interface group. </p>
-    pub fn local_gateway_virtual_interface_group_id(&self) -> std::option::Option<& str> {
+    pub fn local_gateway_virtual_interface_group_id(&self) -> std::option::Option<&str> {
         self.local_gateway_virtual_interface_group_id.as_deref()
     }
     /// <p>The ID of the network interface.</p>
-    pub fn network_interface_id(&self) -> std::option::Option<& str> {
+    pub fn network_interface_id(&self) -> std::option::Option<&str> {
         self.network_interface_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -44,13 +44,15 @@ impl ModifyLocalGatewayRouteInput {
         self.dry_run
     }
     /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn destination_prefix_list_id(&self) -> std::option::Option<& str> {
+    pub fn destination_prefix_list_id(&self) -> std::option::Option<&str> {
         self.destination_prefix_list_id.as_deref()
     }
 }
 impl ModifyLocalGatewayRouteInput {
     /// Creates a new builder-style object to manufacture [`ModifyLocalGatewayRouteInput`](crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput).
-    pub fn builder() -> crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder
+    {
         crate::operation::modify_local_gateway_route::builders::ModifyLocalGatewayRouteInputBuilder::default()
     }
 }
@@ -73,8 +75,12 @@ impl ModifyLocalGatewayRouteInputBuilder {
         self
     }
     /// <p>The CIDR block used for destination matches. The value that you provide must match the CIDR of an existing route in the table.</p>
-    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_cidr_block = input; self
+    pub fn set_destination_cidr_block(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_cidr_block = input;
+        self
     }
     /// <p>The ID of the local gateway route table.</p>
     pub fn local_gateway_route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,17 +88,28 @@ impl ModifyLocalGatewayRouteInputBuilder {
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_gateway_route_table_id = input; self
+    pub fn set_local_gateway_route_table_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.local_gateway_route_table_id = input;
+        self
     }
     /// <p> The ID of the virtual interface group. </p>
-    pub fn local_gateway_virtual_interface_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn local_gateway_virtual_interface_group_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.local_gateway_virtual_interface_group_id = Some(input.into());
         self
     }
     /// <p> The ID of the virtual interface group. </p>
-    pub fn set_local_gateway_virtual_interface_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_gateway_virtual_interface_group_id = input; self
+    pub fn set_local_gateway_virtual_interface_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.local_gateway_virtual_interface_group_id = input;
+        self
     }
     /// <p>The ID of the network interface.</p>
     pub fn network_interface_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +117,12 @@ impl ModifyLocalGatewayRouteInputBuilder {
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_interface_id = input; self
+    pub fn set_network_interface_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.network_interface_id = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -110,7 +131,8 @@ impl ModifyLocalGatewayRouteInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
     pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,27 +140,30 @@ impl ModifyLocalGatewayRouteInputBuilder {
         self
     }
     /// <p> The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn set_destination_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_prefix_list_id = input; self
+    pub fn set_destination_prefix_list_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_prefix_list_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyLocalGatewayRouteInput`](crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput).
-    pub fn build(self) -> Result<crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteInput {
-                destination_cidr_block: self.destination_cidr_block
-                ,
-                local_gateway_route_table_id: self.local_gateway_route_table_id
-                ,
-                local_gateway_virtual_interface_group_id: self.local_gateway_virtual_interface_group_id
-                ,
-                network_interface_id: self.network_interface_id
-                ,
-                dry_run: self.dry_run
-                ,
-                destination_prefix_list_id: self.destination_prefix_list_id
-                ,
-            }
+                destination_cidr_block: self.destination_cidr_block,
+                local_gateway_route_table_id: self.local_gateway_route_table_id,
+                local_gateway_virtual_interface_group_id: self
+                    .local_gateway_virtual_interface_group_id,
+                network_interface_id: self.network_interface_id,
+                dry_run: self.dry_run,
+                destination_prefix_list_id: self.destination_prefix_list_id,
+            },
         )
     }
 }
-

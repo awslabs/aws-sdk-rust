@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateWatchlistInput  {
+pub struct UpdateWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -18,23 +18,23 @@ pub struct UpdateWatchlistInput  {
 }
 impl UpdateWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the watchlist to be updated.</p>
-    pub fn watchlist_id(&self) -> std::option::Option<& str> {
+    pub fn watchlist_id(&self) -> std::option::Option<&str> {
         self.watchlist_id.as_deref()
     }
     /// <p>The name of the watchlist.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A brief description about this watchlist.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateWatchlistInput  {
+impl std::fmt::Debug for UpdateWatchlistInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateWatchlistInput");
         formatter.field("domain_id", &self.domain_id);
@@ -68,7 +68,8 @@ impl UpdateWatchlistInputBuilder {
     }
     /// <p>The identifier of the domain that contains the watchlist.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The identifier of the watchlist to be updated.</p>
     pub fn watchlist_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +78,8 @@ impl UpdateWatchlistInputBuilder {
     }
     /// <p>The identifier of the watchlist to be updated.</p>
     pub fn set_watchlist_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.watchlist_id = input; self
+        self.watchlist_id = input;
+        self
     }
     /// <p>The name of the watchlist.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +88,8 @@ impl UpdateWatchlistInputBuilder {
     }
     /// <p>The name of the watchlist.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A brief description about this watchlist.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,22 +98,22 @@ impl UpdateWatchlistInputBuilder {
     }
     /// <p>A brief description about this watchlist.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateWatchlistInput`](crate::operation::update_watchlist::UpdateWatchlistInput).
-    pub fn build(self) -> Result<crate::operation::update_watchlist::UpdateWatchlistInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_watchlist::UpdateWatchlistInput {
-                domain_id: self.domain_id
-                ,
-                watchlist_id: self.watchlist_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_watchlist::UpdateWatchlistInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_watchlist::UpdateWatchlistInput {
+            domain_id: self.domain_id,
+            watchlist_id: self.watchlist_id,
+            name: self.name,
+            description: self.description,
+        })
     }
 }
 impl std::fmt::Debug for UpdateWatchlistInputBuilder {
@@ -123,4 +126,3 @@ impl std::fmt::Debug for UpdateWatchlistInputBuilder {
         formatter.finish()
     }
 }
-

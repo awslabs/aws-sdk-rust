@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMetricFiltersOutput  {
+pub struct DescribeMetricFiltersOutput {
     /// <p>The metric filters.</p>
     #[doc(hidden)]
     pub metric_filters: std::option::Option<std::vec::Vec<crate::types::MetricFilter>>,
@@ -13,22 +13,24 @@ pub struct DescribeMetricFiltersOutput  {
 }
 impl DescribeMetricFiltersOutput {
     /// <p>The metric filters.</p>
-    pub fn metric_filters(&self) -> std::option::Option<& [crate::types::MetricFilter]> {
+    pub fn metric_filters(&self) -> std::option::Option<&[crate::types::MetricFilter]> {
         self.metric_filters.as_deref()
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeMetricFiltersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeMetricFiltersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMetricFiltersOutput`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput).
-    pub fn builder() -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_metric_filters::builders::DescribeMetricFiltersOutputBuilder
+    {
         crate::operation::describe_metric_filters::builders::DescribeMetricFiltersOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl DescribeMetricFiltersOutputBuilder {
     /// <p>The metric filters.</p>
     pub fn metric_filters(mut self, input: crate::types::MetricFilter) -> Self {
         let mut v = self.metric_filters.unwrap_or_default();
-                        v.push(input);
-                        self.metric_filters = Some(v);
-                        self
+        v.push(input);
+        self.metric_filters = Some(v);
+        self
     }
     /// <p>The metric filters.</p>
-    pub fn set_metric_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricFilter>>) -> Self {
-        self.metric_filters = input; self
+    pub fn set_metric_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricFilter>>,
+    ) -> Self {
+        self.metric_filters = input;
+        self
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl DescribeMetricFiltersOutputBuilder {
     }
     /// <p>The token for the next set of items to return. The token expires after 24 hours.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeMetricFiltersOutput`](crate::operation::describe_metric_filters::DescribeMetricFiltersOutput).
     pub fn build(self) -> crate::operation::describe_metric_filters::DescribeMetricFiltersOutput {
         crate::operation::describe_metric_filters::DescribeMetricFiltersOutput {
-            metric_filters: self.metric_filters
-            ,
-            next_token: self.next_token
-            ,
+            metric_filters: self.metric_filters,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

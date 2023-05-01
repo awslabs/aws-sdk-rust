@@ -3,14 +3,16 @@
 /// Runtime configuration for a thing.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuntimeConfiguration  {
+pub struct RuntimeConfiguration {
     /// Configuration for telemetry service.
     #[doc(hidden)]
     pub telemetry_configuration: std::option::Option<crate::types::TelemetryConfiguration>,
 }
 impl RuntimeConfiguration {
     /// Configuration for telemetry service.
-    pub fn telemetry_configuration(&self) -> std::option::Option<& crate::types::TelemetryConfiguration> {
+    pub fn telemetry_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::TelemetryConfiguration> {
         self.telemetry_configuration.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl RuntimeConfigurationBuilder {
         self
     }
     /// Configuration for telemetry service.
-    pub fn set_telemetry_configuration(mut self, input: std::option::Option<crate::types::TelemetryConfiguration>) -> Self {
-        self.telemetry_configuration = input; self
+    pub fn set_telemetry_configuration(
+        mut self,
+        input: std::option::Option<crate::types::TelemetryConfiguration>,
+    ) -> Self {
+        self.telemetry_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`RuntimeConfiguration`](crate::types::RuntimeConfiguration).
     pub fn build(self) -> crate::types::RuntimeConfiguration {
         crate::types::RuntimeConfiguration {
-            telemetry_configuration: self.telemetry_configuration
-            ,
+            telemetry_configuration: self.telemetry_configuration,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelOutput  {
+pub struct CreateChannelOutput {
     /// <p>The name of the channel.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
@@ -16,23 +16,23 @@ pub struct CreateChannelOutput  {
 }
 impl CreateChannelOutput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> std::option::Option<& str> {
+    pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
     /// <p>How long, in days, message data is kept for the channel.</p>
-    pub fn retention_period(&self) -> std::option::Option<& crate::types::RetentionPeriod> {
+    pub fn retention_period(&self) -> std::option::Option<&crate::types::RetentionPeriod> {
         self.retention_period.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateChannelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateChannelOutput {
     /// Creates a new builder-style object to manufacture [`CreateChannelOutput`](crate::operation::create_channel::CreateChannelOutput).
     pub fn builder() -> crate::operation::create_channel::builders::CreateChannelOutputBuilder {
@@ -57,7 +57,8 @@ impl CreateChannelOutputBuilder {
     }
     /// <p>The name of the channel.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input; self
+        self.channel_name = input;
+        self
     }
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl CreateChannelOutputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input; self
+        self.channel_arn = input;
+        self
     }
     /// <p>How long, in days, message data is kept for the channel.</p>
     pub fn retention_period(mut self, input: crate::types::RetentionPeriod) -> Self {
@@ -74,29 +76,29 @@ impl CreateChannelOutputBuilder {
         self
     }
     /// <p>How long, in days, message data is kept for the channel.</p>
-    pub fn set_retention_period(mut self, input: std::option::Option<crate::types::RetentionPeriod>) -> Self {
-        self.retention_period = input; self
+    pub fn set_retention_period(
+        mut self,
+        input: std::option::Option<crate::types::RetentionPeriod>,
+    ) -> Self {
+        self.retention_period = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::operation::create_channel::CreateChannelOutput).
     pub fn build(self) -> crate::operation::create_channel::CreateChannelOutput {
         crate::operation::create_channel::CreateChannelOutput {
-            channel_name: self.channel_name
-            ,
-            channel_arn: self.channel_arn
-            ,
-            retention_period: self.retention_period
-            ,
+            channel_name: self.channel_name,
+            channel_arn: self.channel_arn,
+            retention_period: self.retention_period,
             _request_id: self._request_id,
         }
     }
 }
-

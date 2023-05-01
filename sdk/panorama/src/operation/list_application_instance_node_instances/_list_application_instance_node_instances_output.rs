@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationInstanceNodeInstancesOutput  {
+pub struct ListApplicationInstanceNodeInstancesOutput {
     /// <p>A list of node instances.</p>
     #[doc(hidden)]
     pub node_instances: std::option::Option<std::vec::Vec<crate::types::NodeInstance>>,
@@ -13,22 +13,22 @@ pub struct ListApplicationInstanceNodeInstancesOutput  {
 }
 impl ListApplicationInstanceNodeInstancesOutput {
     /// <p>A list of node instances.</p>
-    pub fn node_instances(&self) -> std::option::Option<& [crate::types::NodeInstance]> {
+    pub fn node_instances(&self) -> std::option::Option<&[crate::types::NodeInstance]> {
         self.node_instances.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListApplicationInstanceNodeInstancesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListApplicationInstanceNodeInstancesOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationInstanceNodeInstancesOutput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput).
-    pub fn builder() -> crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesOutputBuilder{
         crate::operation::list_application_instance_node_instances::builders::ListApplicationInstanceNodeInstancesOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListApplicationInstanceNodeInstancesOutputBuilder {
     /// <p>A list of node instances.</p>
     pub fn node_instances(mut self, input: crate::types::NodeInstance) -> Self {
         let mut v = self.node_instances.unwrap_or_default();
-                        v.push(input);
-                        self.node_instances = Some(v);
-                        self
+        v.push(input);
+        self.node_instances = Some(v);
+        self
     }
     /// <p>A list of node instances.</p>
-    pub fn set_node_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::NodeInstance>>) -> Self {
-        self.node_instances = input; self
+    pub fn set_node_instances(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NodeInstance>>,
+    ) -> Self {
+        self.node_instances = input;
+        self
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +68,20 @@ impl ListApplicationInstanceNodeInstancesOutputBuilder {
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListApplicationInstanceNodeInstancesOutput`](crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput).
-    pub fn build(self) -> crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput {
+    pub fn build(self) -> crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput{
         crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput {
             node_instances: self.node_instances
             ,
@@ -86,4 +91,3 @@ impl ListApplicationInstanceNodeInstancesOutputBuilder {
         }
     }
 }
-

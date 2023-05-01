@@ -3,7 +3,7 @@
 /// <p>The option that determines the hierarchy of the fields for a visual element.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnHierarchy  {
+pub struct ColumnHierarchy {
     /// <p>The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.</p>
     #[doc(hidden)]
     pub explicit_hierarchy: std::option::Option<crate::types::ExplicitHierarchy>,
@@ -16,15 +16,15 @@ pub struct ColumnHierarchy  {
 }
 impl ColumnHierarchy {
     /// <p>The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.</p>
-    pub fn explicit_hierarchy(&self) -> std::option::Option<& crate::types::ExplicitHierarchy> {
+    pub fn explicit_hierarchy(&self) -> std::option::Option<&crate::types::ExplicitHierarchy> {
         self.explicit_hierarchy.as_ref()
     }
     /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
-    pub fn date_time_hierarchy(&self) -> std::option::Option<& crate::types::DateTimeHierarchy> {
+    pub fn date_time_hierarchy(&self) -> std::option::Option<&crate::types::DateTimeHierarchy> {
         self.date_time_hierarchy.as_ref()
     }
     /// <p>The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.</p>
-    pub fn predefined_hierarchy(&self) -> std::option::Option<& crate::types::PredefinedHierarchy> {
+    pub fn predefined_hierarchy(&self) -> std::option::Option<&crate::types::PredefinedHierarchy> {
         self.predefined_hierarchy.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl ColumnHierarchyBuilder {
         self
     }
     /// <p>The option that determines the hierarchy of the fields that are built within a visual's field wells. These fields can't be duplicated to other visuals.</p>
-    pub fn set_explicit_hierarchy(mut self, input: std::option::Option<crate::types::ExplicitHierarchy>) -> Self {
-        self.explicit_hierarchy = input; self
+    pub fn set_explicit_hierarchy(
+        mut self,
+        input: std::option::Option<crate::types::ExplicitHierarchy>,
+    ) -> Self {
+        self.explicit_hierarchy = input;
+        self
     }
     /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
     pub fn date_time_hierarchy(mut self, input: crate::types::DateTimeHierarchy) -> Self {
@@ -59,8 +63,12 @@ impl ColumnHierarchyBuilder {
         self
     }
     /// <p>The option that determines the hierarchy of any <code>DateTime</code> fields.</p>
-    pub fn set_date_time_hierarchy(mut self, input: std::option::Option<crate::types::DateTimeHierarchy>) -> Self {
-        self.date_time_hierarchy = input; self
+    pub fn set_date_time_hierarchy(
+        mut self,
+        input: std::option::Option<crate::types::DateTimeHierarchy>,
+    ) -> Self {
+        self.date_time_hierarchy = input;
+        self
     }
     /// <p>The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.</p>
     pub fn predefined_hierarchy(mut self, input: crate::types::PredefinedHierarchy) -> Self {
@@ -68,19 +76,19 @@ impl ColumnHierarchyBuilder {
         self
     }
     /// <p>The option that determines the hierarchy of the fields that are defined during data preparation. These fields are available to use in any analysis that uses the data source.</p>
-    pub fn set_predefined_hierarchy(mut self, input: std::option::Option<crate::types::PredefinedHierarchy>) -> Self {
-        self.predefined_hierarchy = input; self
+    pub fn set_predefined_hierarchy(
+        mut self,
+        input: std::option::Option<crate::types::PredefinedHierarchy>,
+    ) -> Self {
+        self.predefined_hierarchy = input;
+        self
     }
     /// Consumes the builder and constructs a [`ColumnHierarchy`](crate::types::ColumnHierarchy).
     pub fn build(self) -> crate::types::ColumnHierarchy {
         crate::types::ColumnHierarchy {
-            explicit_hierarchy: self.explicit_hierarchy
-            ,
-            date_time_hierarchy: self.date_time_hierarchy
-            ,
-            predefined_hierarchy: self.predefined_hierarchy
-            ,
+            explicit_hierarchy: self.explicit_hierarchy,
+            date_time_hierarchy: self.date_time_hierarchy,
+            predefined_hierarchy: self.predefined_hierarchy,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Details about the assets imported from an AWS Lake Formation tag policy request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportAssetsFromLakeFormationTagPolicyRequestDetails  {
+pub struct ImportAssetsFromLakeFormationTagPolicyRequestDetails {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -25,34 +25,38 @@ pub struct ImportAssetsFromLakeFormationTagPolicyRequestDetails  {
 }
 impl ImportAssetsFromLakeFormationTagPolicyRequestDetails {
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>A structure for the database object.</p>
-    pub fn database(&self) -> std::option::Option<& crate::types::DatabaseLfTagPolicyAndPermissions> {
+    pub fn database(
+        &self,
+    ) -> std::option::Option<&crate::types::DatabaseLfTagPolicyAndPermissions> {
         self.database.as_ref()
     }
     /// <p>A structure for the table object.</p>
-    pub fn table(&self) -> std::option::Option<& crate::types::TableLfTagPolicyAndPermissions> {
+    pub fn table(&self) -> std::option::Option<&crate::types::TableLfTagPolicyAndPermissions> {
         self.table.as_ref()
     }
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions of subscribers to AWS Lake Formation data permissions.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
-    pub fn data_set_id(&self) -> std::option::Option<& str> {
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
-    pub fn revision_id(&self) -> std::option::Option<& str> {
+    pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
 }
 impl ImportAssetsFromLakeFormationTagPolicyRequestDetails {
     /// Creates a new builder-style object to manufacture [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::types::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
-    pub fn builder() -> crate::types::builders::ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
-        crate::types::builders::ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder::default()
+    pub fn builder(
+    ) -> crate::types::builders::ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
+        crate::types::builders::ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder::default(
+        )
     }
 }
 
@@ -75,7 +79,8 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
     }
     /// <p>The identifier for the AWS Glue Data Catalog.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>A structure for the database object.</p>
     pub fn database(mut self, input: crate::types::DatabaseLfTagPolicyAndPermissions) -> Self {
@@ -83,8 +88,12 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
         self
     }
     /// <p>A structure for the database object.</p>
-    pub fn set_database(mut self, input: std::option::Option<crate::types::DatabaseLfTagPolicyAndPermissions>) -> Self {
-        self.database = input; self
+    pub fn set_database(
+        mut self,
+        input: std::option::Option<crate::types::DatabaseLfTagPolicyAndPermissions>,
+    ) -> Self {
+        self.database = input;
+        self
     }
     /// <p>A structure for the table object.</p>
     pub fn table(mut self, input: crate::types::TableLfTagPolicyAndPermissions) -> Self {
@@ -92,8 +101,12 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
         self
     }
     /// <p>A structure for the table object.</p>
-    pub fn set_table(mut self, input: std::option::Option<crate::types::TableLfTagPolicyAndPermissions>) -> Self {
-        self.table = input; self
+    pub fn set_table(
+        mut self,
+        input: std::option::Option<crate::types::TableLfTagPolicyAndPermissions>,
+    ) -> Self {
+        self.table = input;
+        self
     }
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions of subscribers to AWS Lake Formation data permissions.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +115,8 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
     }
     /// <p>The IAM role's ARN that allows AWS Data Exchange to assume the role and grant and revoke permissions of subscribers to AWS Lake Formation data permissions.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +125,8 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the data set associated with this import job.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input; self
+        self.data_set_id = input;
+        self
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
     pub fn revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,24 +135,18 @@ impl ImportAssetsFromLakeFormationTagPolicyRequestDetailsBuilder {
     }
     /// <p>The unique identifier for the revision associated with this import job.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input; self
+        self.revision_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportAssetsFromLakeFormationTagPolicyRequestDetails`](crate::types::ImportAssetsFromLakeFormationTagPolicyRequestDetails).
     pub fn build(self) -> crate::types::ImportAssetsFromLakeFormationTagPolicyRequestDetails {
         crate::types::ImportAssetsFromLakeFormationTagPolicyRequestDetails {
-            catalog_id: self.catalog_id
-            ,
-            database: self.database
-            ,
-            table: self.table
-            ,
-            role_arn: self.role_arn
-            ,
-            data_set_id: self.data_set_id
-            ,
-            revision_id: self.revision_id
-            ,
+            catalog_id: self.catalog_id,
+            database: self.database,
+            table: self.table,
+            role_arn: self.role_arn,
+            data_set_id: self.data_set_id,
+            revision_id: self.revision_id,
         }
     }
 }
-

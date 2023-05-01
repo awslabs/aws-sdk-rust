@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSubscribedRuleGroupsInput  {
+pub struct ListSubscribedRuleGroupsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListSubscribedRuleGroupsInput  {
 }
 impl ListSubscribedRuleGroupsInput {
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
@@ -22,7 +22,9 @@ impl ListSubscribedRuleGroupsInput {
 }
 impl ListSubscribedRuleGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListSubscribedRuleGroupsInput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput).
-    pub fn builder() -> crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsInputBuilder
+    {
         crate::operation::list_subscribed_rule_groups::builders::ListSubscribedRuleGroupsInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl ListSubscribedRuleGroupsInputBuilder {
     }
     /// <p>If you specify a value for <code>Limit</code> and you have more <code>ByteMatchSets</code>subscribed rule groups than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the response that allows you to list another group of subscribed rule groups. For the second and subsequent <code>ListSubscribedRuleGroupsRequest</code> requests, specify the value of <code>NextMarker</code> from the previous response to get information about another batch of subscribed rule groups.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -51,19 +54,21 @@ impl ListSubscribedRuleGroupsInputBuilder {
     }
     /// <p>Specifies the number of subscribed rule groups that you want AWS WAF to return for this request. If you have more objects than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value that you can use to get another batch of objects.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSubscribedRuleGroupsInput`](crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput).
-    pub fn build(self) -> Result<crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_subscribed_rule_groups::ListSubscribedRuleGroupsInput {
-                next_marker: self.next_marker
-                ,
-                limit: self.limit
-                    .unwrap_or_default()
-                ,
-            }
+                next_marker: self.next_marker,
+                limit: self.limit.unwrap_or_default(),
+            },
         )
     }
 }
-

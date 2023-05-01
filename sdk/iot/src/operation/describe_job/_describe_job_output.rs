@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeJobOutput  {
+pub struct DescribeJobOutput {
     /// <p>An S3 link to the job document.</p>
     #[doc(hidden)]
     pub document_source: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct DescribeJobOutput  {
 }
 impl DescribeJobOutput {
     /// <p>An S3 link to the job document.</p>
-    pub fn document_source(&self) -> std::option::Option<& str> {
+    pub fn document_source(&self) -> std::option::Option<&str> {
         self.document_source.as_deref()
     }
     /// <p>Information about the job.</p>
-    pub fn job(&self) -> std::option::Option<& crate::types::Job> {
+    pub fn job(&self) -> std::option::Option<&crate::types::Job> {
         self.job.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeJobOutput {
     /// Creates a new builder-style object to manufacture [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
     pub fn builder() -> crate::operation::describe_job::builders::DescribeJobOutputBuilder {
@@ -49,7 +49,8 @@ impl DescribeJobOutputBuilder {
     }
     /// <p>An S3 link to the job document.</p>
     pub fn set_document_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_source = input; self
+        self.document_source = input;
+        self
     }
     /// <p>Information about the job.</p>
     pub fn job(mut self, input: crate::types::Job) -> Self {
@@ -58,26 +59,24 @@ impl DescribeJobOutputBuilder {
     }
     /// <p>Information about the job.</p>
     pub fn set_job(mut self, input: std::option::Option<crate::types::Job>) -> Self {
-        self.job = input; self
+        self.job = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeJobOutput`](crate::operation::describe_job::DescribeJobOutput).
     pub fn build(self) -> crate::operation::describe_job::DescribeJobOutput {
         crate::operation::describe_job::DescribeJobOutput {
-            document_source: self.document_source
-            ,
-            job: self.job
-            ,
+            document_source: self.document_source,
+            job: self.job,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,21 +3,24 @@
 /// <p>Information about a forward action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ForwardActionConfig  {
+pub struct ForwardActionConfig {
     /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
     #[doc(hidden)]
     pub target_groups: std::option::Option<std::vec::Vec<crate::types::TargetGroupTuple>>,
     /// <p>The target group stickiness for the rule.</p>
     #[doc(hidden)]
-    pub target_group_stickiness_config: std::option::Option<crate::types::TargetGroupStickinessConfig>,
+    pub target_group_stickiness_config:
+        std::option::Option<crate::types::TargetGroupStickinessConfig>,
 }
 impl ForwardActionConfig {
     /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
-    pub fn target_groups(&self) -> std::option::Option<& [crate::types::TargetGroupTuple]> {
+    pub fn target_groups(&self) -> std::option::Option<&[crate::types::TargetGroupTuple]> {
         self.target_groups.as_deref()
     }
     /// <p>The target group stickiness for the rule.</p>
-    pub fn target_group_stickiness_config(&self) -> std::option::Option<& crate::types::TargetGroupStickinessConfig> {
+    pub fn target_group_stickiness_config(
+        &self,
+    ) -> std::option::Option<&crate::types::TargetGroupStickinessConfig> {
         self.target_group_stickiness_config.as_ref()
     }
 }
@@ -33,7 +36,8 @@ impl ForwardActionConfig {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ForwardActionConfigBuilder {
     pub(crate) target_groups: std::option::Option<std::vec::Vec<crate::types::TargetGroupTuple>>,
-    pub(crate) target_group_stickiness_config: std::option::Option<crate::types::TargetGroupStickinessConfig>,
+    pub(crate) target_group_stickiness_config:
+        std::option::Option<crate::types::TargetGroupStickinessConfig>,
 }
 impl ForwardActionConfigBuilder {
     /// Appends an item to `target_groups`.
@@ -43,31 +47,39 @@ impl ForwardActionConfigBuilder {
     /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
     pub fn target_groups(mut self, input: crate::types::TargetGroupTuple) -> Self {
         let mut v = self.target_groups.unwrap_or_default();
-                        v.push(input);
-                        self.target_groups = Some(v);
-                        self
+        v.push(input);
+        self.target_groups = Some(v);
+        self
     }
     /// <p>The target groups. For Network Load Balancers, you can specify a single target group.</p>
-    pub fn set_target_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::TargetGroupTuple>>) -> Self {
-        self.target_groups = input; self
+    pub fn set_target_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TargetGroupTuple>>,
+    ) -> Self {
+        self.target_groups = input;
+        self
     }
     /// <p>The target group stickiness for the rule.</p>
-    pub fn target_group_stickiness_config(mut self, input: crate::types::TargetGroupStickinessConfig) -> Self {
+    pub fn target_group_stickiness_config(
+        mut self,
+        input: crate::types::TargetGroupStickinessConfig,
+    ) -> Self {
         self.target_group_stickiness_config = Some(input);
         self
     }
     /// <p>The target group stickiness for the rule.</p>
-    pub fn set_target_group_stickiness_config(mut self, input: std::option::Option<crate::types::TargetGroupStickinessConfig>) -> Self {
-        self.target_group_stickiness_config = input; self
+    pub fn set_target_group_stickiness_config(
+        mut self,
+        input: std::option::Option<crate::types::TargetGroupStickinessConfig>,
+    ) -> Self {
+        self.target_group_stickiness_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`ForwardActionConfig`](crate::types::ForwardActionConfig).
     pub fn build(self) -> crate::types::ForwardActionConfig {
         crate::types::ForwardActionConfig {
-            target_groups: self.target_groups
-            ,
-            target_group_stickiness_config: self.target_group_stickiness_config
-            ,
+            target_groups: self.target_groups,
+            target_group_stickiness_config: self.target_group_stickiness_config,
         }
     }
 }
-

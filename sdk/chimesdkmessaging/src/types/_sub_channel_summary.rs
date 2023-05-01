@@ -3,7 +3,7 @@
 /// <p>Summary of the sub-channels associated with the elastic channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubChannelSummary  {
+pub struct SubChannelSummary {
     /// <p>The unique ID of a SubChannel.</p>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct SubChannelSummary  {
 }
 impl SubChannelSummary {
     /// <p>The unique ID of a SubChannel.</p>
-    pub fn sub_channel_id(&self) -> std::option::Option<& str> {
+    pub fn sub_channel_id(&self) -> std::option::Option<&str> {
         self.sub_channel_id.as_deref()
     }
     /// <p>The number of members in a SubChannel.</p>
@@ -43,7 +43,8 @@ impl SubChannelSummaryBuilder {
     }
     /// <p>The unique ID of a SubChannel.</p>
     pub fn set_sub_channel_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sub_channel_id = input; self
+        self.sub_channel_id = input;
+        self
     }
     /// <p>The number of members in a SubChannel.</p>
     pub fn membership_count(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl SubChannelSummaryBuilder {
     }
     /// <p>The number of members in a SubChannel.</p>
     pub fn set_membership_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.membership_count = input; self
+        self.membership_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`SubChannelSummary`](crate::types::SubChannelSummary).
     pub fn build(self) -> crate::types::SubChannelSummary {
         crate::types::SubChannelSummary {
-            sub_channel_id: self.sub_channel_id
-            ,
-            membership_count: self.membership_count
-            ,
+            sub_channel_id: self.sub_channel_id,
+            membership_count: self.membership_count,
         }
     }
 }
-

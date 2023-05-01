@@ -4,57 +4,80 @@ pub use crate::operation::batch_update_rule::_batch_update_rule_output::BatchUpd
 pub use crate::operation::batch_update_rule::_batch_update_rule_input::BatchUpdateRuleInputBuilder;
 
 /// Fluent builder constructing a request to `BatchUpdateRule`.
-/// 
+///
 /// <p>Updates the listener rules in a batch. You can use this operation to change the priority of listener rules. This can be useful when bulk updating or swapping rule priority. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct BatchUpdateRuleFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::batch_update_rule::builders::BatchUpdateRuleInputBuilder,
+    inner: crate::operation::batch_update_rule::builders::BatchUpdateRuleInputBuilder,
 }
-impl BatchUpdateRuleFluentBuilder  {
+impl BatchUpdateRuleFluentBuilder {
     /// Creates a new `BatchUpdateRule`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::batch_update_rule::BatchUpdateRule, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::batch_update_rule::BatchUpdateRuleError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::batch_update_rule::BatchUpdateRuleOutput, aws_smithy_http::result::SdkError<crate::operation::batch_update_rule::BatchUpdateRuleError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::batch_update_rule::BatchUpdateRule,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_rule::BatchUpdateRuleError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::batch_update_rule::BatchUpdateRuleOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_rule::BatchUpdateRuleError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     pub fn service_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.service_identifier(input.into());
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_service_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_service_identifier(input);
         self
     }
@@ -64,7 +87,10 @@ impl BatchUpdateRuleFluentBuilder  {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_listener_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_listener_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_listener_identifier(input);
         self
     }
@@ -78,9 +104,11 @@ impl BatchUpdateRuleFluentBuilder  {
         self
     }
     /// <p>The rules for the specified listener.</p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::RuleUpdate>>) -> Self {
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RuleUpdate>>,
+    ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
 }
-

@@ -4,53 +4,73 @@ pub use crate::operation::create_chat_token::_create_chat_token_output::CreateCh
 pub use crate::operation::create_chat_token::_create_chat_token_input::CreateChatTokenInputBuilder;
 
 /// Fluent builder constructing a request to `CreateChatToken`.
-/// 
-/// <p>Creates an encrypted token that is used by a chat participant to establish an individual WebSocket chat connection to a room. When the token is used to connect to chat, the connection is valid for the session duration specified in the request. The token becomes invalid at the token-expiration timestamp included in the response.</p> 
-/// <p>Use the <code>capabilities</code> field to permit an end user to send messages or moderate a room.</p> 
-/// <p>The <code>attributes</code> field securely attaches structured data to the chat session; the data is included within each message sent by the end user and received by other participants in the room. Common use cases for attributes include passing end-user profile data like an icon, display name, colors, badges, and other display features.</p> 
+///
+/// <p>Creates an encrypted token that is used by a chat participant to establish an individual WebSocket chat connection to a room. When the token is used to connect to chat, the connection is valid for the session duration specified in the request. The token becomes invalid at the token-expiration timestamp included in the response.</p>
+/// <p>Use the <code>capabilities</code> field to permit an end user to send messages or moderate a room.</p>
+/// <p>The <code>attributes</code> field securely attaches structured data to the chat session; the data is included within each message sent by the end user and received by other participants in the room. Common use cases for attributes include passing end-user profile data like an icon, display name, colors, badges, and other display features.</p>
 /// <p>Encryption keys are owned by Amazon IVS Chat and never used directly by your application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChatTokenFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_chat_token::builders::CreateChatTokenInputBuilder,
+    inner: crate::operation::create_chat_token::builders::CreateChatTokenInputBuilder,
 }
-impl CreateChatTokenFluentBuilder  {
+impl CreateChatTokenFluentBuilder {
     /// Creates a new `CreateChatToken`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_chat_token::CreateChatToken, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_chat_token::CreateChatTokenError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_chat_token::CreateChatTokenOutput, aws_smithy_http::result::SdkError<crate::operation::create_chat_token::CreateChatTokenError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_chat_token::CreateChatToken,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_chat_token::CreateChatTokenError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_chat_token::CreateChatTokenOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_chat_token::CreateChatTokenError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
     pub fn room_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.room_identifier(input.into());
@@ -81,7 +101,10 @@ impl CreateChatTokenFluentBuilder  {
         self
     }
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
-    pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChatTokenCapability>>) -> Self {
+    pub fn set_capabilities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ChatTokenCapability>>,
+    ) -> Self {
         self.inner = self.inner.set_capabilities(input);
         self
     }
@@ -100,14 +123,22 @@ impl CreateChatTokenFluentBuilder  {
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
-    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn attributes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.attributes(k.into(), v.into());
         self
     }
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_attributes(input);
         self
     }
 }
-

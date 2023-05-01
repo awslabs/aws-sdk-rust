@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDocumentClassificationJobInput  {
+pub struct DescribeDocumentClassificationJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartDocumentClassificationJob</code> operation returns this identifier in its response.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeDocumentClassificationJobInput {
     /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartDocumentClassificationJob</code> operation returns this identifier in its response.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl DescribeDocumentClassificationJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeDocumentClassificationJobInput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput).
-    pub fn builder() -> crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobInputBuilder {
+    pub fn builder() -> crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobInputBuilder{
         crate::operation::describe_document_classification_job::builders::DescribeDocumentClassificationJobInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl DescribeDocumentClassificationJobInputBuilder {
     }
     /// <p>The identifier that Amazon Comprehend generated for the job. The <code>StartDocumentClassificationJob</code> operation returns this identifier in its response.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDocumentClassificationJobInput`](crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobInput {
                 job_id: self.job_id
@@ -46,4 +47,3 @@ impl DescribeDocumentClassificationJobInputBuilder {
         )
     }
 }
-

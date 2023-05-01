@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEnvironmentStatusInput  {
+pub struct DescribeEnvironmentStatusInput {
     /// <p>The ID of the environment to get status information about.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
 }
 impl DescribeEnvironmentStatusInput {
     /// <p>The ID of the environment to get status information about.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
 }
 impl DescribeEnvironmentStatusInput {
     /// Creates a new builder-style object to manufacture [`DescribeEnvironmentStatusInput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusInput).
-    pub fn builder() -> crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusInputBuilder {
+    pub fn builder() -> crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusInputBuilder{
         crate::operation::describe_environment_status::builders::DescribeEnvironmentStatusInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DescribeEnvironmentStatusInputBuilder {
     }
     /// <p>The ID of the environment to get status information about.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeEnvironmentStatusInput`](crate::operation::describe_environment_status::DescribeEnvironmentStatusInput).
-    pub fn build(self) -> Result<crate::operation::describe_environment_status::DescribeEnvironmentStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_environment_status::DescribeEnvironmentStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_environment_status::DescribeEnvironmentStatusInput {
-                environment_id: self.environment_id
-                ,
-            }
+                environment_id: self.environment_id,
+            },
         )
     }
 }
-

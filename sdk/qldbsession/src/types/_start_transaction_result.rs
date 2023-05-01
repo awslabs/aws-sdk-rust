@@ -3,7 +3,7 @@
 /// <p>Contains the details of the started transaction.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTransactionResult  {
+pub struct StartTransactionResult {
     /// <p>The transaction ID of the started transaction.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct StartTransactionResult  {
 }
 impl StartTransactionResult {
     /// <p>The transaction ID of the started transaction.</p>
-    pub fn transaction_id(&self) -> std::option::Option<& str> {
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn timing_information(&self) -> std::option::Option<& crate::types::TimingInformation> {
+    pub fn timing_information(&self) -> std::option::Option<&crate::types::TimingInformation> {
         self.timing_information.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl StartTransactionResultBuilder {
     }
     /// <p>The transaction ID of the started transaction.</p>
     pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transaction_id = input; self
+        self.transaction_id = input;
+        self
     }
     /// <p>Contains server-side performance information for the command.</p>
     pub fn timing_information(mut self, input: crate::types::TimingInformation) -> Self {
@@ -51,17 +52,18 @@ impl StartTransactionResultBuilder {
         self
     }
     /// <p>Contains server-side performance information for the command.</p>
-    pub fn set_timing_information(mut self, input: std::option::Option<crate::types::TimingInformation>) -> Self {
-        self.timing_information = input; self
+    pub fn set_timing_information(
+        mut self,
+        input: std::option::Option<crate::types::TimingInformation>,
+    ) -> Self {
+        self.timing_information = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartTransactionResult`](crate::types::StartTransactionResult).
     pub fn build(self) -> crate::types::StartTransactionResult {
         crate::types::StartTransactionResult {
-            transaction_id: self.transaction_id
-            ,
-            timing_information: self.timing_information
-            ,
+            transaction_id: self.transaction_id,
+            timing_information: self.timing_information,
         }
     }
 }
-

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePredictorInput  {
+pub struct DeletePredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
     #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
 }
 impl DeletePredictorInput {
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
-    pub fn predictor_arn(&self) -> std::option::Option<& str> {
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
         self.predictor_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeletePredictorInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor to delete.</p>
     pub fn set_predictor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.predictor_arn = input; self
+        self.predictor_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePredictorInput`](crate::operation::delete_predictor::DeletePredictorInput).
-    pub fn build(self) -> Result<crate::operation::delete_predictor::DeletePredictorInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_predictor::DeletePredictorInput {
-                predictor_arn: self.predictor_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_predictor::DeletePredictorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_predictor::DeletePredictorInput {
+            predictor_arn: self.predictor_arn,
+        })
     }
 }
-

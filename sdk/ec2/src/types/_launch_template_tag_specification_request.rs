@@ -3,9 +3,9 @@
 /// <p>The tags specification for the resources that are created during instance launch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LaunchTemplateTagSpecificationRequest  {
-    /// <p>The type of resource to tag.</p> 
-    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p> 
+pub struct LaunchTemplateTagSpecificationRequest {
+    /// <p>The type of resource to tag.</p>
+    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ResourceType>,
@@ -14,14 +14,14 @@ pub struct LaunchTemplateTagSpecificationRequest  {
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl LaunchTemplateTagSpecificationRequest {
-    /// <p>The type of resource to tag.</p> 
-    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p> 
+    /// <p>The type of resource to tag.</p>
+    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The tags to apply to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -40,18 +40,22 @@ pub struct LaunchTemplateTagSpecificationRequestBuilder {
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
 }
 impl LaunchTemplateTagSpecificationRequestBuilder {
-    /// <p>The type of resource to tag.</p> 
-    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p> 
+    /// <p>The type of resource to tag.</p>
+    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = Some(input);
         self
     }
-    /// <p>The type of resource to tag.</p> 
-    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p> 
+    /// <p>The type of resource to tag.</p>
+    /// <p>The <code>Valid Values</code> are all the resource types that can be tagged. However, when creating a launch template, you can specify tags for the following resource types only: <code>instance</code> | <code>volume</code> | <code>elastic-gpu</code> | <code>network-interface</code> | <code>spot-instances-request</code> </p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -60,22 +64,23 @@ impl LaunchTemplateTagSpecificationRequestBuilder {
     /// <p>The tags to apply to the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags to apply to the resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`LaunchTemplateTagSpecificationRequest`](crate::types::LaunchTemplateTagSpecificationRequest).
     pub fn build(self) -> crate::types::LaunchTemplateTagSpecificationRequest {
         crate::types::LaunchTemplateTagSpecificationRequest {
-            resource_type: self.resource_type
-            ,
-            tags: self.tags
-            ,
+            resource_type: self.resource_type,
+            tags: self.tags,
         }
     }
 }
-

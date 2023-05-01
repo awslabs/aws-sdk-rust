@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateUserProfileInput  {
+pub struct UpdateUserProfileInput {
     /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
     #[doc(hidden)]
     pub iam_user_arn: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct UpdateUserProfileInput  {
 }
 impl UpdateUserProfileInput {
     /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
-    pub fn iam_user_arn(&self) -> std::option::Option<& str> {
+    pub fn iam_user_arn(&self) -> std::option::Option<&str> {
         self.iam_user_arn.as_deref()
     }
     /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
-    pub fn ssh_username(&self) -> std::option::Option<& str> {
+    pub fn ssh_username(&self) -> std::option::Option<&str> {
         self.ssh_username.as_deref()
     }
     /// <p>The user's new SSH public key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<& str> {
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
     /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
@@ -36,7 +36,8 @@ impl UpdateUserProfileInput {
 }
 impl UpdateUserProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
-    pub fn builder() -> crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder {
         crate::operation::update_user_profile::builders::UpdateUserProfileInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl UpdateUserProfileInputBuilder {
     }
     /// <p>The user IAM ARN. This can also be a federated user's ARN.</p>
     pub fn set_iam_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_user_arn = input; self
+        self.iam_user_arn = input;
+        self
     }
     /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
     pub fn ssh_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl UpdateUserProfileInputBuilder {
     }
     /// <p>The user's SSH user name. The allowable characters are [a-z], [A-Z], [0-9], '-', and '_'. If the specified name includes other punctuation marks, AWS OpsWorks Stacks removes them. For example, <code>my.name</code> will be changed to <code>myname</code>. If you do not specify an SSH user name, AWS OpsWorks Stacks generates one from the IAM user name. </p>
     pub fn set_ssh_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssh_username = input; self
+        self.ssh_username = input;
+        self
     }
     /// <p>The user's new SSH public key.</p>
     pub fn ssh_public_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +79,8 @@ impl UpdateUserProfileInputBuilder {
     }
     /// <p>The user's new SSH public key.</p>
     pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssh_public_key = input; self
+        self.ssh_public_key = input;
+        self
     }
     /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     pub fn allow_self_management(mut self, input: bool) -> Self {
@@ -85,22 +89,23 @@ impl UpdateUserProfileInputBuilder {
     }
     /// <p>Whether users can specify their own SSH public key through the My Settings page. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing User Permissions</a>.</p>
     pub fn set_allow_self_management(mut self, input: std::option::Option<bool>) -> Self {
-        self.allow_self_management = input; self
+        self.allow_self_management = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateUserProfileInput`](crate::operation::update_user_profile::UpdateUserProfileInput).
-    pub fn build(self) -> Result<crate::operation::update_user_profile::UpdateUserProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_user_profile::UpdateUserProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_user_profile::UpdateUserProfileInput {
-                iam_user_arn: self.iam_user_arn
-                ,
-                ssh_username: self.ssh_username
-                ,
-                ssh_public_key: self.ssh_public_key
-                ,
-                allow_self_management: self.allow_self_management
-                ,
-            }
+                iam_user_arn: self.iam_user_arn,
+                ssh_username: self.ssh_username,
+                ssh_public_key: self.ssh_public_key,
+                allow_self_management: self.allow_self_management,
+            },
         )
     }
 }
-

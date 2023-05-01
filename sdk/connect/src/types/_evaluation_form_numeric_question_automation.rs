@@ -20,8 +20,14 @@ impl EvaluationFormNumericQuestionAutomation {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`PropertyValue`](crate::types::EvaluationFormNumericQuestionAutomation::PropertyValue), extracting the inner [`NumericQuestionPropertyValueAutomation`](crate::types::NumericQuestionPropertyValueAutomation).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_property_value(&self) -> std::result::Result<&crate::types::NumericQuestionPropertyValueAutomation, &Self> {
-        if let EvaluationFormNumericQuestionAutomation::PropertyValue(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_property_value(
+        &self,
+    ) -> std::result::Result<&crate::types::NumericQuestionPropertyValueAutomation, &Self> {
+        if let EvaluationFormNumericQuestionAutomation::PropertyValue(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`PropertyValue`](crate::types::EvaluationFormNumericQuestionAutomation::PropertyValue).
     pub fn is_property_value(&self) -> bool {
@@ -32,4 +38,3 @@ impl EvaluationFormNumericQuestionAutomation {
         matches!(self, Self::Unknown)
     }
 }
-

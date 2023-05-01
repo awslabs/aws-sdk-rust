@@ -3,7 +3,7 @@
 /// <p>An IPAM discovered resource CIDR. A discovered resource is a resource CIDR monitored under a resource discovery. The following resources can be discovered: VPCs, Public IPv4 pools, VPC subnets, and Elastic IP addresses. The discovered resource CIDR is the IP address range in CIDR notation that is associated with the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IpamDiscoveredResourceCidr  {
+pub struct IpamDiscoveredResourceCidr {
     /// <p>The resource discovery ID.</p>
     #[doc(hidden)]
     pub ipam_resource_discovery_id: std::option::Option<std::string::String>,
@@ -25,11 +25,11 @@ pub struct IpamDiscoveredResourceCidr  {
     /// <p>The resource tags.</p>
     #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::types::IpamResourceTag>>,
-    /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p> 
-    /// <ul> 
-    /// <li> <p>For resources that are VPCs, this is the percentage of IP address space in the VPC that's taken up by subnet CIDRs. </p> </li> 
-    /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li> 
-    /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li> 
+    /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
+    /// <ul>
+    /// <li> <p>For resources that are VPCs, this is the percentage of IP address space in the VPC that's taken up by subnet CIDRs. </p> </li>
+    /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li>
+    /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub ip_usage: std::option::Option<f64>,
@@ -42,48 +42,48 @@ pub struct IpamDiscoveredResourceCidr  {
 }
 impl IpamDiscoveredResourceCidr {
     /// <p>The resource discovery ID.</p>
-    pub fn ipam_resource_discovery_id(&self) -> std::option::Option<& str> {
+    pub fn ipam_resource_discovery_id(&self) -> std::option::Option<&str> {
         self.ipam_resource_discovery_id.as_deref()
     }
     /// <p>The resource Region.</p>
-    pub fn resource_region(&self) -> std::option::Option<& str> {
+    pub fn resource_region(&self) -> std::option::Option<&str> {
         self.resource_region.as_deref()
     }
     /// <p>The resource ID.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource owner ID.</p>
-    pub fn resource_owner_id(&self) -> std::option::Option<& str> {
+    pub fn resource_owner_id(&self) -> std::option::Option<&str> {
         self.resource_owner_id.as_deref()
     }
     /// <p>The resource CIDR.</p>
-    pub fn resource_cidr(&self) -> std::option::Option<& str> {
+    pub fn resource_cidr(&self) -> std::option::Option<&str> {
         self.resource_cidr.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::IpamResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::IpamResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The resource tags.</p>
-    pub fn resource_tags(&self) -> std::option::Option<& [crate::types::IpamResourceTag]> {
+    pub fn resource_tags(&self) -> std::option::Option<&[crate::types::IpamResourceTag]> {
         self.resource_tags.as_deref()
     }
-    /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p> 
-    /// <ul> 
-    /// <li> <p>For resources that are VPCs, this is the percentage of IP address space in the VPC that's taken up by subnet CIDRs. </p> </li> 
-    /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li> 
-    /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li> 
+    /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
+    /// <ul>
+    /// <li> <p>For resources that are VPCs, this is the percentage of IP address space in the VPC that's taken up by subnet CIDRs. </p> </li>
+    /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li>
+    /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li>
     /// </ul>
     pub fn ip_usage(&self) -> std::option::Option<f64> {
         self.ip_usage
     }
     /// <p>The VPC ID.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The last successful resource discovery time.</p>
-    pub fn sample_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn sample_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sample_time.as_ref()
     }
 }
@@ -116,8 +116,12 @@ impl IpamDiscoveredResourceCidrBuilder {
         self
     }
     /// <p>The resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_resource_discovery_id = input; self
+    pub fn set_ipam_resource_discovery_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ipam_resource_discovery_id = input;
+        self
     }
     /// <p>The resource Region.</p>
     pub fn resource_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +130,8 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The resource Region.</p>
     pub fn set_resource_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_region = input; self
+        self.resource_region = input;
+        self
     }
     /// <p>The resource ID.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +140,8 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The resource ID.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The resource owner ID.</p>
     pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +149,12 @@ impl IpamDiscoveredResourceCidrBuilder {
         self
     }
     /// <p>The resource owner ID.</p>
-    pub fn set_resource_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_owner_id = input; self
+    pub fn set_resource_owner_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_owner_id = input;
+        self
     }
     /// <p>The resource CIDR.</p>
     pub fn resource_cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,7 +163,8 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The resource CIDR.</p>
     pub fn set_resource_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_cidr = input; self
+        self.resource_cidr = input;
+        self
     }
     /// <p>The resource type.</p>
     pub fn resource_type(mut self, input: crate::types::IpamResourceType) -> Self {
@@ -161,8 +172,12 @@ impl IpamDiscoveredResourceCidrBuilder {
         self
     }
     /// <p>The resource type.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::IpamResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::IpamResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// Appends an item to `resource_tags`.
     ///
@@ -171,32 +186,37 @@ impl IpamDiscoveredResourceCidrBuilder {
     /// <p>The resource tags.</p>
     pub fn resource_tags(mut self, input: crate::types::IpamResourceTag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-                        v.push(input);
-                        self.resource_tags = Some(v);
-                        self
+        v.push(input);
+        self.resource_tags = Some(v);
+        self
     }
     /// <p>The resource tags.</p>
-    pub fn set_resource_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpamResourceTag>>) -> Self {
-        self.resource_tags = input; self
+    pub fn set_resource_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IpamResourceTag>>,
+    ) -> Self {
+        self.resource_tags = input;
+        self
     }
-    /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p> 
-    /// <ul> 
-    /// <li> <p>For resources that are VPCs, this is the percentage of IP address space in the VPC that's taken up by subnet CIDRs. </p> </li> 
-    /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li> 
-    /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li> 
+    /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
+    /// <ul>
+    /// <li> <p>For resources that are VPCs, this is the percentage of IP address space in the VPC that's taken up by subnet CIDRs. </p> </li>
+    /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li>
+    /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li>
     /// </ul>
     pub fn ip_usage(mut self, input: f64) -> Self {
         self.ip_usage = Some(input);
         self
     }
-    /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p> 
-    /// <ul> 
-    /// <li> <p>For resources that are VPCs, this is the percentage of IP address space in the VPC that's taken up by subnet CIDRs. </p> </li> 
-    /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li> 
-    /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li> 
+    /// <p>The percentage of IP address space in use. To convert the decimal to a percentage, multiply the decimal by 100. Note the following:</p>
+    /// <ul>
+    /// <li> <p>For resources that are VPCs, this is the percentage of IP address space in the VPC that's taken up by subnet CIDRs. </p> </li>
+    /// <li> <p>For resources that are subnets, if the subnet has an IPv4 CIDR provisioned to it, this is the percentage of IPv4 address space in the subnet that's in use. If the subnet has an IPv6 CIDR provisioned to it, the percentage of IPv6 address space in use is not represented. The percentage of IPv6 address space in use cannot currently be calculated. </p> </li>
+    /// <li> <p>For resources that are public IPv4 pools, this is the percentage of IP address space in the pool that's been allocated to Elastic IP addresses (EIPs). </p> </li>
     /// </ul>
     pub fn set_ip_usage(mut self, input: std::option::Option<f64>) -> Self {
-        self.ip_usage = input; self
+        self.ip_usage = input;
+        self
     }
     /// <p>The VPC ID.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,7 +225,8 @@ impl IpamDiscoveredResourceCidrBuilder {
     }
     /// <p>The VPC ID.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// <p>The last successful resource discovery time.</p>
     pub fn sample_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -213,33 +234,26 @@ impl IpamDiscoveredResourceCidrBuilder {
         self
     }
     /// <p>The last successful resource discovery time.</p>
-    pub fn set_sample_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.sample_time = input; self
+    pub fn set_sample_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.sample_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`IpamDiscoveredResourceCidr`](crate::types::IpamDiscoveredResourceCidr).
     pub fn build(self) -> crate::types::IpamDiscoveredResourceCidr {
         crate::types::IpamDiscoveredResourceCidr {
-            ipam_resource_discovery_id: self.ipam_resource_discovery_id
-            ,
-            resource_region: self.resource_region
-            ,
-            resource_id: self.resource_id
-            ,
-            resource_owner_id: self.resource_owner_id
-            ,
-            resource_cidr: self.resource_cidr
-            ,
-            resource_type: self.resource_type
-            ,
-            resource_tags: self.resource_tags
-            ,
-            ip_usage: self.ip_usage
-            ,
-            vpc_id: self.vpc_id
-            ,
-            sample_time: self.sample_time
-            ,
+            ipam_resource_discovery_id: self.ipam_resource_discovery_id,
+            resource_region: self.resource_region,
+            resource_id: self.resource_id,
+            resource_owner_id: self.resource_owner_id,
+            resource_cidr: self.resource_cidr,
+            resource_type: self.resource_type,
+            resource_tags: self.resource_tags,
+            ip_usage: self.ip_usage,
+            vpc_id: self.vpc_id,
+            sample_time: self.sample_time,
         }
     }
 }
-

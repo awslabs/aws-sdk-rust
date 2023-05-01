@@ -3,7 +3,7 @@
 /// <p>An Amazon FSx for NetApp ONTAP storage virtual machine (SVM) has four endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager. They are the <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and <code>Smb</code> endpoints.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SvmEndpoint  {
+pub struct SvmEndpoint {
     /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.</p>
     #[doc(hidden)]
     pub dns_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SvmEndpoint  {
 }
 impl SvmEndpoint {
     /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.</p>
-    pub fn dns_name(&self) -> std::option::Option<& str> {
+    pub fn dns_name(&self) -> std::option::Option<&str> {
         self.dns_name.as_deref()
     }
     /// <p>The SVM endpoint's IP addresses.</p>
-    pub fn ip_addresses(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn ip_addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.ip_addresses.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl SvmEndpointBuilder {
     }
     /// <p>The Domain Name Service (DNS) name for the file system. You can mount your file system using its DNS name.</p>
     pub fn set_dns_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dns_name = input; self
+        self.dns_name = input;
+        self
     }
     /// Appends an item to `ip_addresses`.
     ///
@@ -52,22 +53,23 @@ impl SvmEndpointBuilder {
     /// <p>The SVM endpoint's IP addresses.</p>
     pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ip_addresses.unwrap_or_default();
-                        v.push(input.into());
-                        self.ip_addresses = Some(v);
-                        self
+        v.push(input.into());
+        self.ip_addresses = Some(v);
+        self
     }
     /// <p>The SVM endpoint's IP addresses.</p>
-    pub fn set_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.ip_addresses = input; self
+    pub fn set_ip_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.ip_addresses = input;
+        self
     }
     /// Consumes the builder and constructs a [`SvmEndpoint`](crate::types::SvmEndpoint).
     pub fn build(self) -> crate::types::SvmEndpoint {
         crate::types::SvmEndpoint {
-            dns_name: self.dns_name
-            ,
-            ip_addresses: self.ip_addresses
-            ,
+            dns_name: self.dns_name,
+            ip_addresses: self.ip_addresses,
         }
     }
 }
-

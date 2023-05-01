@@ -4,56 +4,63 @@ pub use crate::operation::describe_vpc_endpoint_connection_notifications::_descr
 pub use crate::operation::describe_vpc_endpoint_connection_notifications::_describe_vpc_endpoint_connection_notifications_input::DescribeVpcEndpointConnectionNotificationsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeVpcEndpointConnectionNotifications`.
-/// 
+///
 /// <p>Describes the connection notifications for VPC endpoints and VPC endpoint services.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVpcEndpointConnectionNotificationsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_vpc_endpoint_connection_notifications::builders::DescribeVpcEndpointConnectionNotificationsInputBuilder,
 }
-impl DescribeVpcEndpointConnectionNotificationsFluentBuilder  {
+impl DescribeVpcEndpointConnectionNotificationsFluentBuilder {
     /// Creates a new `DescribeVpcEndpointConnectionNotifications`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotifications, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_vpc_endpoint_connection_notifications::paginator::DescribeVpcEndpointConnectionNotificationsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_vpc_endpoint_connection_notifications::paginator::DescribeVpcEndpointConnectionNotificationsPaginator {
-                                crate::operation::describe_vpc_endpoint_connection_notifications::paginator::DescribeVpcEndpointConnectionNotificationsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_vpc_endpoint_connection_notifications::paginator::DescribeVpcEndpointConnectionNotificationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_vpc_endpoint_connection_notifications::paginator::DescribeVpcEndpointConnectionNotificationsPaginator{
+        crate::operation::describe_vpc_endpoint_connection_notifications::paginator::DescribeVpcEndpointConnectionNotificationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -70,7 +77,10 @@ impl DescribeVpcEndpointConnectionNotificationsFluentBuilder  {
         self
     }
     /// <p>The ID of the notification.</p>
-    pub fn set_connection_notification_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connection_notification_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_connection_notification_id(input);
         self
     }
@@ -78,29 +88,32 @@ impl DescribeVpcEndpointConnectionNotificationsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li> 
-    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li> 
-    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> 
-    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li> 
-    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li> 
-    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li> 
-    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li> 
-    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li> 
-    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li> 
-    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li> 
-    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-id</code> - The ID of the notification.</p> </li>
+    /// <li> <p> <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code> | <code>Disabled</code>).</p> </li>
+    /// <li> <p> <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).</p> </li>
+    /// <li> <p> <code>service-id</code> - The ID of the endpoint service.</p> </li>
+    /// <li> <p> <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -125,4 +138,3 @@ impl DescribeVpcEndpointConnectionNotificationsFluentBuilder  {
         self
     }
 }
-

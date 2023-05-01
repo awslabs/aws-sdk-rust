@@ -3,17 +3,17 @@
 /// <p>The response from the server when a request is made to delete the remote access session.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRemoteAccessSessionOutput  {
+pub struct DeleteRemoteAccessSessionOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteRemoteAccessSessionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteRemoteAccessSessionOutput {
     /// Creates a new builder-style object to manufacture [`DeleteRemoteAccessSessionOutput`](crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionOutput).
-    pub fn builder() -> crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionOutputBuilder {
+    pub fn builder() -> crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionOutputBuilder{
         crate::operation::delete_remote_access_session::builders::DeleteRemoteAccessSessionOutputBuilder::default()
     }
 }
@@ -26,19 +26,20 @@ pub struct DeleteRemoteAccessSessionOutputBuilder {
 }
 impl DeleteRemoteAccessSessionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteRemoteAccessSessionOutput`](crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionOutput).
-    pub fn build(self) -> crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionOutput {
         crate::operation::delete_remote_access_session::DeleteRemoteAccessSessionOutput {
             _request_id: self._request_id,
         }
     }
 }
-

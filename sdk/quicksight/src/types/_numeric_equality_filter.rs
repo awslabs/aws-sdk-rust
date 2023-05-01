@@ -3,7 +3,7 @@
 /// <p>A <code>NumericEqualityFilter</code> filters values that are equal to the specified value.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NumericEqualityFilter  {
+pub struct NumericEqualityFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     #[doc(hidden)]
     pub filter_id: std::option::Option<std::string::String>,
@@ -13,9 +13,9 @@ pub struct NumericEqualityFilter  {
     /// <p>The input value.</p>
     #[doc(hidden)]
     pub value: std::option::Option<f64>,
-    /// <p>Select all of the values. Null is not the assigned value of select all.</p> 
-    /// <ul> 
-    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li> 
+    /// <p>Select all of the values. Null is not the assigned value of select all.</p>
+    /// <ul>
+    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub select_all_options: std::option::Option<crate::types::NumericFilterSelectAllOptions>,
@@ -28,54 +28,58 @@ pub struct NumericEqualityFilter  {
     /// <p>The parameter whose value should be used for the filter value.</p>
     #[doc(hidden)]
     pub parameter_name: std::option::Option<std::string::String>,
-    /// <p>This option determines how null values should be treated when filtering data.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li> 
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub null_option: std::option::Option<crate::types::FilterNullOption>,
 }
 impl NumericEqualityFilter {
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
-    pub fn filter_id(&self) -> std::option::Option<& str> {
+    pub fn filter_id(&self) -> std::option::Option<&str> {
         self.filter_id.as_deref()
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The input value.</p>
     pub fn value(&self) -> std::option::Option<f64> {
         self.value
     }
-    /// <p>Select all of the values. Null is not the assigned value of select all.</p> 
-    /// <ul> 
-    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li> 
+    /// <p>Select all of the values. Null is not the assigned value of select all.</p>
+    /// <ul>
+    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn select_all_options(&self) -> std::option::Option<& crate::types::NumericFilterSelectAllOptions> {
+    pub fn select_all_options(
+        &self,
+    ) -> std::option::Option<&crate::types::NumericFilterSelectAllOptions> {
         self.select_all_options.as_ref()
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn match_operator(&self) -> std::option::Option<& crate::types::NumericEqualityMatchOperator> {
+    pub fn match_operator(
+        &self,
+    ) -> std::option::Option<&crate::types::NumericEqualityMatchOperator> {
         self.match_operator.as_ref()
     }
     /// <p>The aggregation function of the filter.</p>
-    pub fn aggregation_function(&self) -> std::option::Option<& crate::types::AggregationFunction> {
+    pub fn aggregation_function(&self) -> std::option::Option<&crate::types::AggregationFunction> {
         self.aggregation_function.as_ref()
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
-    pub fn parameter_name(&self) -> std::option::Option<& str> {
+    pub fn parameter_name(&self) -> std::option::Option<&str> {
         self.parameter_name.as_deref()
     }
-    /// <p>This option determines how null values should be treated when filtering data.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li> 
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub fn null_option(&self) -> std::option::Option<& crate::types::FilterNullOption> {
+    pub fn null_option(&self) -> std::option::Option<&crate::types::FilterNullOption> {
         self.null_option.as_ref()
     }
 }
@@ -107,7 +111,8 @@ impl NumericEqualityFilterBuilder {
     }
     /// <p>An identifier that uniquely identifies a filter within a dashboard, analysis, or template.</p>
     pub fn set_filter_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_id = input; self
+        self.filter_id = input;
+        self
     }
     /// <p>The column that the filter is applied to.</p>
     pub fn column(mut self, input: crate::types::ColumnIdentifier) -> Self {
@@ -115,8 +120,12 @@ impl NumericEqualityFilterBuilder {
         self
     }
     /// <p>The column that the filter is applied to.</p>
-    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input; self
+    pub fn set_column(
+        mut self,
+        input: std::option::Option<crate::types::ColumnIdentifier>,
+    ) -> Self {
+        self.column = input;
+        self
     }
     /// <p>The input value.</p>
     pub fn value(mut self, input: f64) -> Self {
@@ -125,22 +134,30 @@ impl NumericEqualityFilterBuilder {
     }
     /// <p>The input value.</p>
     pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
-    /// <p>Select all of the values. Null is not the assigned value of select all.</p> 
-    /// <ul> 
-    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li> 
+    /// <p>Select all of the values. Null is not the assigned value of select all.</p>
+    /// <ul>
+    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn select_all_options(mut self, input: crate::types::NumericFilterSelectAllOptions) -> Self {
+    pub fn select_all_options(
+        mut self,
+        input: crate::types::NumericFilterSelectAllOptions,
+    ) -> Self {
         self.select_all_options = Some(input);
         self
     }
-    /// <p>Select all of the values. Null is not the assigned value of select all.</p> 
-    /// <ul> 
-    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li> 
+    /// <p>Select all of the values. Null is not the assigned value of select all.</p>
+    /// <ul>
+    /// <li> <p> <code>FILTER_ALL_VALUES</code> </p> </li>
     /// </ul>
-    pub fn set_select_all_options(mut self, input: std::option::Option<crate::types::NumericFilterSelectAllOptions>) -> Self {
-        self.select_all_options = input; self
+    pub fn set_select_all_options(
+        mut self,
+        input: std::option::Option<crate::types::NumericFilterSelectAllOptions>,
+    ) -> Self {
+        self.select_all_options = input;
+        self
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
     pub fn match_operator(mut self, input: crate::types::NumericEqualityMatchOperator) -> Self {
@@ -148,8 +165,12 @@ impl NumericEqualityFilterBuilder {
         self
     }
     /// <p>The match operator that is used to determine if a filter should be applied.</p>
-    pub fn set_match_operator(mut self, input: std::option::Option<crate::types::NumericEqualityMatchOperator>) -> Self {
-        self.match_operator = input; self
+    pub fn set_match_operator(
+        mut self,
+        input: std::option::Option<crate::types::NumericEqualityMatchOperator>,
+    ) -> Self {
+        self.match_operator = input;
+        self
     }
     /// <p>The aggregation function of the filter.</p>
     pub fn aggregation_function(mut self, input: crate::types::AggregationFunction) -> Self {
@@ -157,8 +178,12 @@ impl NumericEqualityFilterBuilder {
         self
     }
     /// <p>The aggregation function of the filter.</p>
-    pub fn set_aggregation_function(mut self, input: std::option::Option<crate::types::AggregationFunction>) -> Self {
-        self.aggregation_function = input; self
+    pub fn set_aggregation_function(
+        mut self,
+        input: std::option::Option<crate::types::AggregationFunction>,
+    ) -> Self {
+        self.aggregation_function = input;
+        self
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
     pub fn parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,47 +192,43 @@ impl NumericEqualityFilterBuilder {
     }
     /// <p>The parameter whose value should be used for the filter value.</p>
     pub fn set_parameter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_name = input; self
+        self.parameter_name = input;
+        self
     }
-    /// <p>This option determines how null values should be treated when filtering data.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li> 
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
     pub fn null_option(mut self, input: crate::types::FilterNullOption) -> Self {
         self.null_option = Some(input);
         self
     }
-    /// <p>This option determines how null values should be treated when filtering data.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li> 
-    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li> 
+    /// <p>This option determines how null values should be treated when filtering data.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VALUES</code>: Include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NULLS_ONLY</code>: Only include null values in filtered results.</p> </li>
+    /// <li> <p> <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.</p> </li>
     /// </ul>
-    pub fn set_null_option(mut self, input: std::option::Option<crate::types::FilterNullOption>) -> Self {
-        self.null_option = input; self
+    pub fn set_null_option(
+        mut self,
+        input: std::option::Option<crate::types::FilterNullOption>,
+    ) -> Self {
+        self.null_option = input;
+        self
     }
     /// Consumes the builder and constructs a [`NumericEqualityFilter`](crate::types::NumericEqualityFilter).
     pub fn build(self) -> crate::types::NumericEqualityFilter {
         crate::types::NumericEqualityFilter {
-            filter_id: self.filter_id
-            ,
-            column: self.column
-            ,
-            value: self.value
-            ,
-            select_all_options: self.select_all_options
-            ,
-            match_operator: self.match_operator
-            ,
-            aggregation_function: self.aggregation_function
-            ,
-            parameter_name: self.parameter_name
-            ,
-            null_option: self.null_option
-            ,
+            filter_id: self.filter_id,
+            column: self.column,
+            value: self.value,
+            select_all_options: self.select_all_options,
+            match_operator: self.match_operator,
+            aggregation_function: self.aggregation_function,
+            parameter_name: self.parameter_name,
+            null_option: self.null_option,
         }
     }
 }
-

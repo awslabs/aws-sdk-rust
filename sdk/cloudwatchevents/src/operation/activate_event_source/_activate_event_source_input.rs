@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateEventSourceInput  {
+pub struct ActivateEventSourceInput {
     /// <p>The name of the partner event source to activate.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl ActivateEventSourceInput {
     /// <p>The name of the partner event source to activate.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl ActivateEventSourceInput {
     /// Creates a new builder-style object to manufacture [`ActivateEventSourceInput`](crate::operation::activate_event_source::ActivateEventSourceInput).
-    pub fn builder() -> crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder {
-        crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder {
+        crate::operation::activate_event_source::builders::ActivateEventSourceInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,16 @@ impl ActivateEventSourceInputBuilder {
     }
     /// <p>The name of the partner event source to activate.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ActivateEventSourceInput`](crate::operation::activate_event_source::ActivateEventSourceInput).
-    pub fn build(self) -> Result<crate::operation::activate_event_source::ActivateEventSourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::activate_event_source::ActivateEventSourceInput {
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::activate_event_source::ActivateEventSourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::activate_event_source::ActivateEventSourceInput { name: self.name })
     }
 }
-

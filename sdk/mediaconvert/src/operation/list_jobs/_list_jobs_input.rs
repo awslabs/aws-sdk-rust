@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListJobsInput  {
+pub struct ListJobsInput {
     /// Optional. Number of jobs, up to twenty, that will be returned at one time.
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -25,19 +25,19 @@ impl ListJobsInput {
         self.max_results
     }
     /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
-    pub fn order(&self) -> std::option::Option<& crate::types::Order> {
+    pub fn order(&self) -> std::option::Option<&crate::types::Order> {
         self.order.as_ref()
     }
     /// Optional. Provide a queue name to get back only jobs from that queue.
-    pub fn queue(&self) -> std::option::Option<& str> {
+    pub fn queue(&self) -> std::option::Option<&str> {
         self.queue.as_deref()
     }
     /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
-    pub fn status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.status.as_ref()
     }
 }
@@ -66,7 +66,8 @@ impl ListJobsInputBuilder {
     }
     /// Optional. Number of jobs, up to twenty, that will be returned at one time.
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl ListJobsInputBuilder {
     }
     /// Optional. Use this string, provided with the response to a previous request, to request the next batch of jobs.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn order(mut self, input: crate::types::Order) -> Self {
@@ -84,7 +86,8 @@ impl ListJobsInputBuilder {
     }
     /// Optional. When you request lists of resources, you can specify whether they are sorted in ASCENDING or DESCENDING order. Default varies by resource.
     pub fn set_order(mut self, input: std::option::Option<crate::types::Order>) -> Self {
-        self.order = input; self
+        self.order = input;
+        self
     }
     /// Optional. Provide a queue name to get back only jobs from that queue.
     pub fn queue(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +96,8 @@ impl ListJobsInputBuilder {
     }
     /// Optional. Provide a queue name to get back only jobs from that queue.
     pub fn set_queue(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.queue = input; self
+        self.queue = input;
+        self
     }
     /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
@@ -102,24 +106,22 @@ impl ListJobsInputBuilder {
     }
     /// Optional. A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
     pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListJobsInput`](crate::operation::list_jobs::ListJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_jobs::ListJobsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_jobs::ListJobsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                order: self.order
-                ,
-                queue: self.queue
-                ,
-                status: self.status
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_jobs::ListJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_jobs::ListJobsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+            order: self.order,
+            queue: self.queue,
+            status: self.status,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A specification for an environment configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceConfiguration  {
+pub struct SourceConfiguration {
     /// <p>The name of the application associated with the configuration.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SourceConfiguration  {
 }
 impl SourceConfiguration {
     /// <p>The name of the application associated with the configuration.</p>
-    pub fn application_name(&self) -> std::option::Option<& str> {
+    pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The name of the configuration template.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl SourceConfigurationBuilder {
     }
     /// <p>The name of the application associated with the configuration.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input; self
+        self.application_name = input;
+        self
     }
     /// <p>The name of the configuration template.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl SourceConfigurationBuilder {
     }
     /// <p>The name of the configuration template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`SourceConfiguration`](crate::types::SourceConfiguration).
     pub fn build(self) -> crate::types::SourceConfiguration {
         crate::types::SourceConfiguration {
-            application_name: self.application_name
-            ,
-            template_name: self.template_name
-            ,
+            application_name: self.application_name,
+            template_name: self.template_name,
         }
     }
 }
-

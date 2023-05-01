@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartResourceEvaluationInput  {
+pub struct StartResourceEvaluationInput {
     /// <p>Returns a <code>ResourceDetails</code> object.</p>
     #[doc(hidden)]
     pub resource_details: std::option::Option<crate::types::ResourceDetails>,
@@ -15,39 +15,41 @@ pub struct StartResourceEvaluationInput  {
     /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
     pub evaluation_timeout: std::option::Option<i32>,
-    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note> 
-    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p> 
+    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
     /// </note>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
 }
 impl StartResourceEvaluationInput {
     /// <p>Returns a <code>ResourceDetails</code> object.</p>
-    pub fn resource_details(&self) -> std::option::Option<& crate::types::ResourceDetails> {
+    pub fn resource_details(&self) -> std::option::Option<&crate::types::ResourceDetails> {
         self.resource_details.as_ref()
     }
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
-    pub fn evaluation_context(&self) -> std::option::Option<& crate::types::EvaluationContext> {
+    pub fn evaluation_context(&self) -> std::option::Option<&crate::types::EvaluationContext> {
         self.evaluation_context.as_ref()
     }
     /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
-    pub fn evaluation_mode(&self) -> std::option::Option<& crate::types::EvaluationMode> {
+    pub fn evaluation_mode(&self) -> std::option::Option<&crate::types::EvaluationMode> {
         self.evaluation_mode.as_ref()
     }
     /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
     pub fn evaluation_timeout(&self) -> std::option::Option<i32> {
         self.evaluation_timeout
     }
-    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note> 
-    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p> 
+    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
     /// </note>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl StartResourceEvaluationInput {
     /// Creates a new builder-style object to manufacture [`StartResourceEvaluationInput`](crate::operation::start_resource_evaluation::StartResourceEvaluationInput).
-    pub fn builder() -> crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder
+    {
         crate::operation::start_resource_evaluation::builders::StartResourceEvaluationInputBuilder::default()
     }
 }
@@ -69,8 +71,12 @@ impl StartResourceEvaluationInputBuilder {
         self
     }
     /// <p>Returns a <code>ResourceDetails</code> object.</p>
-    pub fn set_resource_details(mut self, input: std::option::Option<crate::types::ResourceDetails>) -> Self {
-        self.resource_details = input; self
+    pub fn set_resource_details(
+        mut self,
+        input: std::option::Option<crate::types::ResourceDetails>,
+    ) -> Self {
+        self.resource_details = input;
+        self
     }
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
     pub fn evaluation_context(mut self, input: crate::types::EvaluationContext) -> Self {
@@ -78,8 +84,12 @@ impl StartResourceEvaluationInputBuilder {
         self
     }
     /// <p>Returns an <code>EvaluationContext</code> object.</p>
-    pub fn set_evaluation_context(mut self, input: std::option::Option<crate::types::EvaluationContext>) -> Self {
-        self.evaluation_context = input; self
+    pub fn set_evaluation_context(
+        mut self,
+        input: std::option::Option<crate::types::EvaluationContext>,
+    ) -> Self {
+        self.evaluation_context = input;
+        self
     }
     /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
     pub fn evaluation_mode(mut self, input: crate::types::EvaluationMode) -> Self {
@@ -87,8 +97,12 @@ impl StartResourceEvaluationInputBuilder {
         self
     }
     /// <p>The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code> and <code>PROACTIVE</code>.</p>
-    pub fn set_evaluation_mode(mut self, input: std::option::Option<crate::types::EvaluationMode>) -> Self {
-        self.evaluation_mode = input; self
+    pub fn set_evaluation_mode(
+        mut self,
+        input: std::option::Option<crate::types::EvaluationMode>,
+    ) -> Self {
+        self.evaluation_mode = input;
+        self
     }
     /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
     pub fn evaluation_timeout(mut self, input: i32) -> Self {
@@ -97,37 +111,38 @@ impl StartResourceEvaluationInputBuilder {
     }
     /// <p>The timeout for an evaluation. The default is 900 seconds. You cannot specify a number greater than 3600. If you specify 0, Config uses the default.</p>
     pub fn set_evaluation_timeout(mut self, input: std::option::Option<i32>) -> Self {
-        self.evaluation_timeout = input; self
+        self.evaluation_timeout = input;
+        self
     }
-    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note> 
-    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p> 
+    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
     /// </note>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note> 
-    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p> 
+    /// <p>A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request.</p> <note>
+    /// <p>Avoid reusing the same client token for other API requests. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, other than the Region or Availability Zone, the retry fails with an IdempotentParameterMismatch error.</p>
     /// </note>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartResourceEvaluationInput`](crate::operation::start_resource_evaluation::StartResourceEvaluationInput).
-    pub fn build(self) -> Result<crate::operation::start_resource_evaluation::StartResourceEvaluationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_resource_evaluation::StartResourceEvaluationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_resource_evaluation::StartResourceEvaluationInput {
-                resource_details: self.resource_details
-                ,
-                evaluation_context: self.evaluation_context
-                ,
-                evaluation_mode: self.evaluation_mode
-                ,
-                evaluation_timeout: self.evaluation_timeout
-                ,
-                client_token: self.client_token
-                ,
-            }
+                resource_details: self.resource_details,
+                evaluation_context: self.evaluation_context,
+                evaluation_mode: self.evaluation_mode,
+                evaluation_timeout: self.evaluation_timeout,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

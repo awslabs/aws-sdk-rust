@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOrganizationalUnitsForParentOutput  {
+pub struct ListOrganizationalUnitsForParentOutput {
     /// <p>A list of the OUs in the specified root or parent OU.</p>
     #[doc(hidden)]
     pub organizational_units: std::option::Option<std::vec::Vec<crate::types::OrganizationalUnit>>,
@@ -13,22 +13,22 @@ pub struct ListOrganizationalUnitsForParentOutput  {
 }
 impl ListOrganizationalUnitsForParentOutput {
     /// <p>A list of the OUs in the specified root or parent OU.</p>
-    pub fn organizational_units(&self) -> std::option::Option<& [crate::types::OrganizationalUnit]> {
+    pub fn organizational_units(&self) -> std::option::Option<&[crate::types::OrganizationalUnit]> {
         self.organizational_units.as_deref()
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListOrganizationalUnitsForParentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListOrganizationalUnitsForParentOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationalUnitsForParentOutput`](crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput).
-    pub fn builder() -> crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentOutputBuilder {
+    pub fn builder() -> crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentOutputBuilder{
         crate::operation::list_organizational_units_for_parent::builders::ListOrganizationalUnitsForParentOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl ListOrganizationalUnitsForParentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListOrganizationalUnitsForParentOutputBuilder {
-    pub(crate) organizational_units: std::option::Option<std::vec::Vec<crate::types::OrganizationalUnit>>,
+    pub(crate) organizational_units:
+        std::option::Option<std::vec::Vec<crate::types::OrganizationalUnit>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl ListOrganizationalUnitsForParentOutputBuilder {
     /// <p>A list of the OUs in the specified root or parent OU.</p>
     pub fn organizational_units(mut self, input: crate::types::OrganizationalUnit) -> Self {
         let mut v = self.organizational_units.unwrap_or_default();
-                        v.push(input);
-                        self.organizational_units = Some(v);
-                        self
+        v.push(input);
+        self.organizational_units = Some(v);
+        self
     }
     /// <p>A list of the OUs in the specified root or parent OU.</p>
-    pub fn set_organizational_units(mut self, input: std::option::Option<std::vec::Vec<crate::types::OrganizationalUnit>>) -> Self {
-        self.organizational_units = input; self
+    pub fn set_organizational_units(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OrganizationalUnit>>,
+    ) -> Self {
+        self.organizational_units = input;
+        self
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +69,20 @@ impl ListOrganizationalUnitsForParentOutputBuilder {
     }
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListOrganizationalUnitsForParentOutput`](crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput).
-    pub fn build(self) -> crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput {
+    pub fn build(self) -> crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput{
         crate::operation::list_organizational_units_for_parent::ListOrganizationalUnitsForParentOutput {
             organizational_units: self.organizational_units
             ,
@@ -86,4 +92,3 @@ impl ListOrganizationalUnitsForParentOutputBuilder {
         }
     }
 }
-

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRelationalDatabaseSnapshotInput  {
+pub struct GetRelationalDatabaseSnapshotInput {
     /// <p>The name of the database snapshot for which to get information.</p>
     #[doc(hidden)]
     pub relational_database_snapshot_name: std::option::Option<std::string::String>,
 }
 impl GetRelationalDatabaseSnapshotInput {
     /// <p>The name of the database snapshot for which to get information.</p>
-    pub fn relational_database_snapshot_name(&self) -> std::option::Option<& str> {
+    pub fn relational_database_snapshot_name(&self) -> std::option::Option<&str> {
         self.relational_database_snapshot_name.as_deref()
     }
 }
 impl GetRelationalDatabaseSnapshotInput {
     /// Creates a new builder-style object to manufacture [`GetRelationalDatabaseSnapshotInput`](crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput).
-    pub fn builder() -> crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotInputBuilder {
+    pub fn builder() -> crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotInputBuilder{
         crate::operation::get_relational_database_snapshot::builders::GetRelationalDatabaseSnapshotInputBuilder::default()
     }
 }
@@ -28,16 +28,28 @@ pub struct GetRelationalDatabaseSnapshotInputBuilder {
 }
 impl GetRelationalDatabaseSnapshotInputBuilder {
     /// <p>The name of the database snapshot for which to get information.</p>
-    pub fn relational_database_snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn relational_database_snapshot_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.relational_database_snapshot_name = Some(input.into());
         self
     }
     /// <p>The name of the database snapshot for which to get information.</p>
-    pub fn set_relational_database_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.relational_database_snapshot_name = input; self
+    pub fn set_relational_database_snapshot_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.relational_database_snapshot_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRelationalDatabaseSnapshotInput`](crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_relational_database_snapshot::GetRelationalDatabaseSnapshotInput {
                 relational_database_snapshot_name: self.relational_database_snapshot_name
@@ -46,4 +58,3 @@ impl GetRelationalDatabaseSnapshotInputBuilder {
         )
     }
 }
-

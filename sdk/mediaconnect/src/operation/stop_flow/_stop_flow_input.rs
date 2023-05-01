@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopFlowInput  {
+pub struct StopFlowInput {
     /// The ARN of the flow that you want to stop.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
 }
 impl StopFlowInput {
     /// The ARN of the flow that you want to stop.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl StopFlowInputBuilder {
     }
     /// The ARN of the flow that you want to stop.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input; self
+        self.flow_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopFlowInput`](crate::operation::stop_flow::StopFlowInput).
-    pub fn build(self) -> Result<crate::operation::stop_flow::StopFlowInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_flow::StopFlowInput {
-                flow_arn: self.flow_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_flow::StopFlowInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_flow::StopFlowInput {
+            flow_arn: self.flow_arn,
+        })
     }
 }
-

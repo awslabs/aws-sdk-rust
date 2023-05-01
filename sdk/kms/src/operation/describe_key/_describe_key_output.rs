@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeKeyOutput  {
+pub struct DescribeKeyOutput {
     /// <p>Metadata associated with the key.</p>
     #[doc(hidden)]
     pub key_metadata: std::option::Option<crate::types::KeyMetadata>,
@@ -10,15 +10,15 @@ pub struct DescribeKeyOutput  {
 }
 impl DescribeKeyOutput {
     /// <p>Metadata associated with the key.</p>
-    pub fn key_metadata(&self) -> std::option::Option<& crate::types::KeyMetadata> {
+    pub fn key_metadata(&self) -> std::option::Option<&crate::types::KeyMetadata> {
         self.key_metadata.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeKeyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeKeyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeKeyOutput`](crate::operation::describe_key::DescribeKeyOutput).
     pub fn builder() -> crate::operation::describe_key::builders::DescribeKeyOutputBuilder {
@@ -40,25 +40,27 @@ impl DescribeKeyOutputBuilder {
         self
     }
     /// <p>Metadata associated with the key.</p>
-    pub fn set_key_metadata(mut self, input: std::option::Option<crate::types::KeyMetadata>) -> Self {
-        self.key_metadata = input; self
+    pub fn set_key_metadata(
+        mut self,
+        input: std::option::Option<crate::types::KeyMetadata>,
+    ) -> Self {
+        self.key_metadata = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeKeyOutput`](crate::operation::describe_key::DescribeKeyOutput).
     pub fn build(self) -> crate::operation::describe_key::DescribeKeyOutput {
         crate::operation::describe_key::DescribeKeyOutput {
-            key_metadata: self.key_metadata
-            ,
+            key_metadata: self.key_metadata,
             _request_id: self._request_id,
         }
     }
 }
-

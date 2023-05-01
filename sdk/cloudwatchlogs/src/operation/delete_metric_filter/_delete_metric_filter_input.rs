@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMetricFilterInput  {
+pub struct DeleteMetricFilterInput {
     /// <p>The name of the log group.</p>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteMetricFilterInput  {
 }
 impl DeleteMetricFilterInput {
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<& str> {
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
     /// <p>The name of the metric filter.</p>
-    pub fn filter_name(&self) -> std::option::Option<& str> {
+    pub fn filter_name(&self) -> std::option::Option<&str> {
         self.filter_name.as_deref()
     }
 }
 impl DeleteMetricFilterInput {
     /// Creates a new builder-style object to manufacture [`DeleteMetricFilterInput`](crate::operation::delete_metric_filter::DeleteMetricFilterInput).
-    pub fn builder() -> crate::operation::delete_metric_filter::builders::DeleteMetricFilterInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_metric_filter::builders::DeleteMetricFilterInputBuilder {
         crate::operation::delete_metric_filter::builders::DeleteMetricFilterInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteMetricFilterInputBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_name = input; self
+        self.log_group_name = input;
+        self
     }
     /// <p>The name of the metric filter.</p>
     pub fn filter_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeleteMetricFilterInputBuilder {
     }
     /// <p>The name of the metric filter.</p>
     pub fn set_filter_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_name = input; self
+        self.filter_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMetricFilterInput`](crate::operation::delete_metric_filter::DeleteMetricFilterInput).
-    pub fn build(self) -> Result<crate::operation::delete_metric_filter::DeleteMetricFilterInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_metric_filter::DeleteMetricFilterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_metric_filter::DeleteMetricFilterInput {
-                log_group_name: self.log_group_name
-                ,
-                filter_name: self.filter_name
-                ,
-            }
+                log_group_name: self.log_group_name,
+                filter_name: self.filter_name,
+            },
         )
     }
 }
-

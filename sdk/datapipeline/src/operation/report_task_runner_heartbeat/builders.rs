@@ -4,57 +4,77 @@ pub use crate::operation::report_task_runner_heartbeat::_report_task_runner_hear
 pub use crate::operation::report_task_runner_heartbeat::_report_task_runner_heartbeat_input::ReportTaskRunnerHeartbeatInputBuilder;
 
 /// Fluent builder constructing a request to `ReportTaskRunnerHeartbeat`.
-/// 
-/// <p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.</p> <examples> 
+///
+/// <p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.</p> <examples>
 /// <request>
-/// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.ReportTaskRunnerHeartbeat Content-Length: 84 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"taskrunnerId": "1234567890", "workerGroup": "wg-12345", "hostname": "example.com"} 
-/// </request> 
+/// POST / HTTP/1.1 Content-Type: application/x-amz-json-1.1 X-Amz-Target: DataPipeline.ReportTaskRunnerHeartbeat Content-Length: 84 Host: datapipeline.us-east-1.amazonaws.com X-Amz-Date: Mon, 12 Nov 2012 17:49:52 GMT Authorization: AuthParams {"taskrunnerId": "1234567890", "workerGroup": "wg-12345", "hostname": "example.com"}
+/// </request>
 /// <response>
-/// Status: x-amzn-RequestId: b3104dc5-0734-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 20 Date: Mon, 12 Nov 2012 17:50:53 GMT {"terminate": false} 
-/// </response> 
+/// Status: x-amzn-RequestId: b3104dc5-0734-11e2-af6f-6bc7a6be60d9 Content-Type: application/x-amz-json-1.1 Content-Length: 20 Date: Mon, 12 Nov 2012 17:50:53 GMT {"terminate": false}
+/// </response>
 /// </examples>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ReportTaskRunnerHeartbeatFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::report_task_runner_heartbeat::builders::ReportTaskRunnerHeartbeatInputBuilder,
 }
-impl ReportTaskRunnerHeartbeatFluentBuilder  {
+impl ReportTaskRunnerHeartbeatFluentBuilder {
     /// Creates a new `ReportTaskRunnerHeartbeat`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeat, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput, aws_smithy_http::result::SdkError<crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeat,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the task runner. This value should be unique across your AWS account. In the case of AWS Data Pipeline Task Runner launched on a resource managed by AWS Data Pipeline, the web service provides a unique identifier when it launches the application. If you have written a custom task runner, you should assign a unique identifier for the task runner.</p>
     pub fn taskrunner_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.taskrunner_id(input.into());
@@ -86,4 +106,3 @@ impl ReportTaskRunnerHeartbeatFluentBuilder  {
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The input fails to satisfy the constraints specified by the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BadRequestException  {
+pub struct BadRequestException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -17,23 +17,25 @@ pub struct BadRequestException  {
 }
 impl BadRequestException {
     /// <p>Code indicating the reason the request was invalid.</p>
-    pub fn reason(&self) -> std::option::Option<& crate::types::BadRequestReason> {
+    pub fn reason(&self) -> std::option::Option<&crate::types::BadRequestReason> {
         self.reason.as_ref()
     }
     /// <p>Details describing why the request was invalid.</p>
-    pub fn details(&self) -> std::option::Option<& crate::types::BadRequestDetails> {
+    pub fn details(&self) -> std::option::Option<&crate::types::BadRequestDetails> {
         self.details.as_ref()
     }
 }
 impl BadRequestException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -48,7 +50,9 @@ impl aws_http::request_id::RequestId for crate::types::error::BadRequestExceptio
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for BadRequestException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::types::error::BadRequestException).
@@ -74,7 +78,8 @@ impl BadRequestExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>Code indicating the reason the request was invalid.</p>
     pub fn reason(mut self, input: crate::types::BadRequestReason) -> Self {
@@ -82,8 +87,12 @@ impl BadRequestExceptionBuilder {
         self
     }
     /// <p>Code indicating the reason the request was invalid.</p>
-    pub fn set_reason(mut self, input: std::option::Option<crate::types::BadRequestReason>) -> Self {
-        self.reason = input; self
+    pub fn set_reason(
+        mut self,
+        input: std::option::Option<crate::types::BadRequestReason>,
+    ) -> Self {
+        self.reason = input;
+        self
     }
     /// <p>Details describing why the request was invalid.</p>
     pub fn details(mut self, input: crate::types::BadRequestDetails) -> Self {
@@ -91,31 +100,34 @@ impl BadRequestExceptionBuilder {
         self
     }
     /// <p>Details describing why the request was invalid.</p>
-    pub fn set_details(mut self, input: std::option::Option<crate::types::BadRequestDetails>) -> Self {
-        self.details = input; self
+    pub fn set_details(
+        mut self,
+        input: std::option::Option<crate::types::BadRequestDetails>,
+    ) -> Self {
+        self.details = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`BadRequestException`](crate::types::error::BadRequestException).
     pub fn build(self) -> crate::types::error::BadRequestException {
         crate::types::error::BadRequestException {
-            message: self.message
-            ,
-            reason: self.reason
-            ,
-            details: self.details
-            ,
+            message: self.message,
+            reason: self.reason,
+            details: self.details,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

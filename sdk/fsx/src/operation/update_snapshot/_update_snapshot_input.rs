@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSnapshotInput  {
+pub struct UpdateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateSnapshotInput  {
 }
 impl UpdateSnapshotInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The name of the snapshot to update.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<& str> {
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
 }
@@ -49,8 +49,12 @@ impl UpdateSnapshotInputBuilder {
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// <p>The name of the snapshot to update.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +63,8 @@ impl UpdateSnapshotInputBuilder {
     }
     /// <p>The name of the snapshot to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +73,20 @@ impl UpdateSnapshotInputBuilder {
     }
     /// <p>The ID of the snapshot that you want to update, in the format <code>fsvolsnap-0123456789abcdef0</code>.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input; self
+        self.snapshot_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSnapshotInput`](crate::operation::update_snapshot::UpdateSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::update_snapshot::UpdateSnapshotInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_snapshot::UpdateSnapshotInput {
-                client_request_token: self.client_request_token
-                ,
-                name: self.name
-                ,
-                snapshot_id: self.snapshot_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_snapshot::UpdateSnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_snapshot::UpdateSnapshotInput {
+            client_request_token: self.client_request_token,
+            name: self.name,
+            snapshot_id: self.snapshot_id,
+        })
     }
 }
-

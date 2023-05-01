@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateResolverRuleInput  {
+pub struct AssociateResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
     #[doc(hidden)]
     pub resolver_rule_id: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct AssociateResolverRuleInput  {
 }
 impl AssociateResolverRuleInput {
     /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
-    pub fn resolver_rule_id(&self) -> std::option::Option<& str> {
+    pub fn resolver_rule_id(&self) -> std::option::Option<&str> {
         self.resolver_rule_id.as_deref()
     }
     /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
 impl AssociateResolverRuleInput {
     /// Creates a new builder-style object to manufacture [`AssociateResolverRuleInput`](crate::operation::associate_resolver_rule::AssociateResolverRuleInput).
-    pub fn builder() -> crate::operation::associate_resolver_rule::builders::AssociateResolverRuleInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_resolver_rule::builders::AssociateResolverRuleInputBuilder
+    {
         crate::operation::associate_resolver_rule::builders::AssociateResolverRuleInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl AssociateResolverRuleInputBuilder {
     }
     /// <p>The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>.</p>
     pub fn set_resolver_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resolver_rule_id = input; self
+        self.resolver_rule_id = input;
+        self
     }
     /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl AssociateResolverRuleInputBuilder {
     }
     /// <p>A name for the association that you're creating between a Resolver rule and a VPC.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl AssociateResolverRuleInputBuilder {
     }
     /// <p>The ID of the VPC that you want to associate the Resolver rule with.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateResolverRuleInput`](crate::operation::associate_resolver_rule::AssociateResolverRuleInput).
-    pub fn build(self) -> Result<crate::operation::associate_resolver_rule::AssociateResolverRuleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_resolver_rule::AssociateResolverRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_resolver_rule::AssociateResolverRuleInput {
-                resolver_rule_id: self.resolver_rule_id
-                ,
-                name: self.name
-                ,
-                vpc_id: self.vpc_id
-                ,
-            }
+                resolver_rule_id: self.resolver_rule_id,
+                name: self.name,
+                vpc_id: self.vpc_id,
+            },
         )
     }
 }
-

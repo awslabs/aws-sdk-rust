@@ -3,7 +3,7 @@
 /// <p>Contains details about a vulnerability scan finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImageScanFinding  {
+pub struct ImageScanFinding {
     /// <p>The Amazon Web Services account ID that's associated with the finding.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -42,50 +42,51 @@ pub struct ImageScanFinding  {
     pub inspector_score_details: std::option::Option<crate::types::InspectorScoreDetails>,
     /// <p>An object that contains the details of a package vulnerability finding.</p>
     #[doc(hidden)]
-    pub package_vulnerability_details: std::option::Option<crate::types::PackageVulnerabilityDetails>,
+    pub package_vulnerability_details:
+        std::option::Option<crate::types::PackageVulnerabilityDetails>,
     /// <p>Details about whether a fix is available for any of the packages that are identified in the finding through a version update.</p>
     #[doc(hidden)]
     pub fix_available: std::option::Option<std::string::String>,
 }
 impl ImageScanFinding {
     /// <p>The Amazon Web Services account ID that's associated with the finding.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the image build version that's associated with the finding.</p>
-    pub fn image_build_version_arn(&self) -> std::option::Option<& str> {
+    pub fn image_build_version_arn(&self) -> std::option::Option<&str> {
         self.image_build_version_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that's associated with the finding.</p>
-    pub fn image_pipeline_arn(&self) -> std::option::Option<& str> {
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
         self.image_pipeline_arn.as_deref()
     }
     /// <p>The type of the finding. Image Builder looks for findings of the type <code>PACKAGE_VULNERABILITY</code> that apply to output images, and excludes other types.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The description of the finding.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The title of the finding.</p>
-    pub fn title(&self) -> std::option::Option<& str> {
+    pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>An object that contains the details about how to remediate the finding.</p>
-    pub fn remediation(&self) -> std::option::Option<& crate::types::Remediation> {
+    pub fn remediation(&self) -> std::option::Option<&crate::types::Remediation> {
         self.remediation.as_ref()
     }
     /// <p>The severity of the finding.</p>
-    pub fn severity(&self) -> std::option::Option<& str> {
+    pub fn severity(&self) -> std::option::Option<&str> {
         self.severity.as_deref()
     }
     /// <p>The date and time when the finding was first observed.</p>
-    pub fn first_observed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn first_observed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.first_observed_at.as_ref()
     }
     /// <p>The timestamp when the finding was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>The score that Amazon Inspector assigned for the finding.</p>
@@ -93,15 +94,19 @@ impl ImageScanFinding {
         self.inspector_score
     }
     /// <p>An object that contains details of the Amazon Inspector score.</p>
-    pub fn inspector_score_details(&self) -> std::option::Option<& crate::types::InspectorScoreDetails> {
+    pub fn inspector_score_details(
+        &self,
+    ) -> std::option::Option<&crate::types::InspectorScoreDetails> {
         self.inspector_score_details.as_ref()
     }
     /// <p>An object that contains the details of a package vulnerability finding.</p>
-    pub fn package_vulnerability_details(&self) -> std::option::Option<& crate::types::PackageVulnerabilityDetails> {
+    pub fn package_vulnerability_details(
+        &self,
+    ) -> std::option::Option<&crate::types::PackageVulnerabilityDetails> {
         self.package_vulnerability_details.as_ref()
     }
     /// <p>Details about whether a fix is available for any of the packages that are identified in the finding through a version update.</p>
-    pub fn fix_available(&self) -> std::option::Option<& str> {
+    pub fn fix_available(&self) -> std::option::Option<&str> {
         self.fix_available.as_deref()
     }
 }
@@ -128,7 +133,8 @@ pub struct ImageScanFindingBuilder {
     pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) inspector_score: std::option::Option<f64>,
     pub(crate) inspector_score_details: std::option::Option<crate::types::InspectorScoreDetails>,
-    pub(crate) package_vulnerability_details: std::option::Option<crate::types::PackageVulnerabilityDetails>,
+    pub(crate) package_vulnerability_details:
+        std::option::Option<crate::types::PackageVulnerabilityDetails>,
     pub(crate) fix_available: std::option::Option<std::string::String>,
 }
 impl ImageScanFindingBuilder {
@@ -139,7 +145,8 @@ impl ImageScanFindingBuilder {
     }
     /// <p>The Amazon Web Services account ID that's associated with the finding.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the image build version that's associated with the finding.</p>
     pub fn image_build_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,8 +154,12 @@ impl ImageScanFindingBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image build version that's associated with the finding.</p>
-    pub fn set_image_build_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_build_version_arn = input; self
+    pub fn set_image_build_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.image_build_version_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that's associated with the finding.</p>
     pub fn image_pipeline_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,8 +167,12 @@ impl ImageScanFindingBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that's associated with the finding.</p>
-    pub fn set_image_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_pipeline_arn = input; self
+    pub fn set_image_pipeline_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.image_pipeline_arn = input;
+        self
     }
     /// <p>The type of the finding. Image Builder looks for findings of the type <code>PACKAGE_VULNERABILITY</code> that apply to output images, and excludes other types.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,7 +181,8 @@ impl ImageScanFindingBuilder {
     }
     /// <p>The type of the finding. Image Builder looks for findings of the type <code>PACKAGE_VULNERABILITY</code> that apply to output images, and excludes other types.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The description of the finding.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,7 +191,8 @@ impl ImageScanFindingBuilder {
     }
     /// <p>The description of the finding.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The title of the finding.</p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,7 +201,8 @@ impl ImageScanFindingBuilder {
     }
     /// <p>The title of the finding.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input; self
+        self.title = input;
+        self
     }
     /// <p>An object that contains the details about how to remediate the finding.</p>
     pub fn remediation(mut self, input: crate::types::Remediation) -> Self {
@@ -192,8 +210,12 @@ impl ImageScanFindingBuilder {
         self
     }
     /// <p>An object that contains the details about how to remediate the finding.</p>
-    pub fn set_remediation(mut self, input: std::option::Option<crate::types::Remediation>) -> Self {
-        self.remediation = input; self
+    pub fn set_remediation(
+        mut self,
+        input: std::option::Option<crate::types::Remediation>,
+    ) -> Self {
+        self.remediation = input;
+        self
     }
     /// <p>The severity of the finding.</p>
     pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -202,7 +224,8 @@ impl ImageScanFindingBuilder {
     }
     /// <p>The severity of the finding.</p>
     pub fn set_severity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.severity = input; self
+        self.severity = input;
+        self
     }
     /// <p>The date and time when the finding was first observed.</p>
     pub fn first_observed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -210,8 +233,12 @@ impl ImageScanFindingBuilder {
         self
     }
     /// <p>The date and time when the finding was first observed.</p>
-    pub fn set_first_observed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.first_observed_at = input; self
+    pub fn set_first_observed_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.first_observed_at = input;
+        self
     }
     /// <p>The timestamp when the finding was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -219,8 +246,12 @@ impl ImageScanFindingBuilder {
         self
     }
     /// <p>The timestamp when the finding was last updated.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// <p>The score that Amazon Inspector assigned for the finding.</p>
     pub fn inspector_score(mut self, input: f64) -> Self {
@@ -229,7 +260,8 @@ impl ImageScanFindingBuilder {
     }
     /// <p>The score that Amazon Inspector assigned for the finding.</p>
     pub fn set_inspector_score(mut self, input: std::option::Option<f64>) -> Self {
-        self.inspector_score = input; self
+        self.inspector_score = input;
+        self
     }
     /// <p>An object that contains details of the Amazon Inspector score.</p>
     pub fn inspector_score_details(mut self, input: crate::types::InspectorScoreDetails) -> Self {
@@ -237,17 +269,28 @@ impl ImageScanFindingBuilder {
         self
     }
     /// <p>An object that contains details of the Amazon Inspector score.</p>
-    pub fn set_inspector_score_details(mut self, input: std::option::Option<crate::types::InspectorScoreDetails>) -> Self {
-        self.inspector_score_details = input; self
+    pub fn set_inspector_score_details(
+        mut self,
+        input: std::option::Option<crate::types::InspectorScoreDetails>,
+    ) -> Self {
+        self.inspector_score_details = input;
+        self
     }
     /// <p>An object that contains the details of a package vulnerability finding.</p>
-    pub fn package_vulnerability_details(mut self, input: crate::types::PackageVulnerabilityDetails) -> Self {
+    pub fn package_vulnerability_details(
+        mut self,
+        input: crate::types::PackageVulnerabilityDetails,
+    ) -> Self {
         self.package_vulnerability_details = Some(input);
         self
     }
     /// <p>An object that contains the details of a package vulnerability finding.</p>
-    pub fn set_package_vulnerability_details(mut self, input: std::option::Option<crate::types::PackageVulnerabilityDetails>) -> Self {
-        self.package_vulnerability_details = input; self
+    pub fn set_package_vulnerability_details(
+        mut self,
+        input: std::option::Option<crate::types::PackageVulnerabilityDetails>,
+    ) -> Self {
+        self.package_vulnerability_details = input;
+        self
     }
     /// <p>Details about whether a fix is available for any of the packages that are identified in the finding through a version update.</p>
     pub fn fix_available(mut self, input: impl Into<std::string::String>) -> Self {
@@ -256,40 +299,26 @@ impl ImageScanFindingBuilder {
     }
     /// <p>Details about whether a fix is available for any of the packages that are identified in the finding through a version update.</p>
     pub fn set_fix_available(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fix_available = input; self
+        self.fix_available = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImageScanFinding`](crate::types::ImageScanFinding).
     pub fn build(self) -> crate::types::ImageScanFinding {
         crate::types::ImageScanFinding {
-            aws_account_id: self.aws_account_id
-            ,
-            image_build_version_arn: self.image_build_version_arn
-            ,
-            image_pipeline_arn: self.image_pipeline_arn
-            ,
-            r#type: self.r#type
-            ,
-            description: self.description
-            ,
-            title: self.title
-            ,
-            remediation: self.remediation
-            ,
-            severity: self.severity
-            ,
-            first_observed_at: self.first_observed_at
-            ,
-            updated_at: self.updated_at
-            ,
-            inspector_score: self.inspector_score
-            ,
-            inspector_score_details: self.inspector_score_details
-            ,
-            package_vulnerability_details: self.package_vulnerability_details
-            ,
-            fix_available: self.fix_available
-            ,
+            aws_account_id: self.aws_account_id,
+            image_build_version_arn: self.image_build_version_arn,
+            image_pipeline_arn: self.image_pipeline_arn,
+            r#type: self.r#type,
+            description: self.description,
+            title: self.title,
+            remediation: self.remediation,
+            severity: self.severity,
+            first_observed_at: self.first_observed_at,
+            updated_at: self.updated_at,
+            inspector_score: self.inspector_score,
+            inspector_score_details: self.inspector_score_details,
+            package_vulnerability_details: self.package_vulnerability_details,
+            fix_available: self.fix_available,
         }
     }
 }
-

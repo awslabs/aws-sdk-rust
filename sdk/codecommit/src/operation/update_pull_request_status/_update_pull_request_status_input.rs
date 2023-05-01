@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePullRequestStatusInput  {
+pub struct UpdatePullRequestStatusInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     #[doc(hidden)]
     pub pull_request_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct UpdatePullRequestStatusInput  {
 }
 impl UpdatePullRequestStatusInput {
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
-    pub fn pull_request_id(&self) -> std::option::Option<& str> {
+    pub fn pull_request_id(&self) -> std::option::Option<&str> {
         self.pull_request_id.as_deref()
     }
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-    pub fn pull_request_status(&self) -> std::option::Option<& crate::types::PullRequestStatusEnum> {
+    pub fn pull_request_status(&self) -> std::option::Option<&crate::types::PullRequestStatusEnum> {
         self.pull_request_status.as_ref()
     }
 }
 impl UpdatePullRequestStatusInput {
     /// Creates a new builder-style object to manufacture [`UpdatePullRequestStatusInput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusInput).
-    pub fn builder() -> crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder
+    {
         crate::operation::update_pull_request_status::builders::UpdatePullRequestStatusInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl UpdatePullRequestStatusInputBuilder {
     }
     /// <p>The system-generated ID of the pull request. To get this ID, use <code>ListPullRequests</code>.</p>
     pub fn set_pull_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pull_request_id = input; self
+        self.pull_request_id = input;
+        self
     }
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
     pub fn pull_request_status(mut self, input: crate::types::PullRequestStatusEnum) -> Self {
@@ -50,19 +53,25 @@ impl UpdatePullRequestStatusInputBuilder {
         self
     }
     /// <p>The status of the pull request. The only valid operations are to update the status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
-    pub fn set_pull_request_status(mut self, input: std::option::Option<crate::types::PullRequestStatusEnum>) -> Self {
-        self.pull_request_status = input; self
+    pub fn set_pull_request_status(
+        mut self,
+        input: std::option::Option<crate::types::PullRequestStatusEnum>,
+    ) -> Self {
+        self.pull_request_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePullRequestStatusInput`](crate::operation::update_pull_request_status::UpdatePullRequestStatusInput).
-    pub fn build(self) -> Result<crate::operation::update_pull_request_status::UpdatePullRequestStatusInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_pull_request_status::UpdatePullRequestStatusInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_pull_request_status::UpdatePullRequestStatusInput {
-                pull_request_id: self.pull_request_id
-                ,
-                pull_request_status: self.pull_request_status
-                ,
-            }
+                pull_request_id: self.pull_request_id,
+                pull_request_status: self.pull_request_status,
+            },
         )
     }
 }
-

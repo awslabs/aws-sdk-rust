@@ -3,7 +3,7 @@
 /// <p>A complex type that contains information about the request to create a hosted zone.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReusableDelegationSetLimitInput  {
+pub struct GetReusableDelegationSetLimitInput {
     /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ReusableDelegationSetLimitType>,
@@ -13,17 +13,17 @@ pub struct GetReusableDelegationSetLimitInput  {
 }
 impl GetReusableDelegationSetLimitInput {
     /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ReusableDelegationSetLimitType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ReusableDelegationSetLimitType> {
         self.r#type.as_ref()
     }
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
-    pub fn delegation_set_id(&self) -> std::option::Option<& str> {
+    pub fn delegation_set_id(&self) -> std::option::Option<&str> {
         self.delegation_set_id.as_deref()
     }
 }
 impl GetReusableDelegationSetLimitInput {
     /// Creates a new builder-style object to manufacture [`GetReusableDelegationSetLimitInput`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput).
-    pub fn builder() -> crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder {
+    pub fn builder() -> crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder{
         crate::operation::get_reusable_delegation_set_limit::builders::GetReusableDelegationSetLimitInputBuilder::default()
     }
 }
@@ -42,8 +42,12 @@ impl GetReusableDelegationSetLimitInputBuilder {
         self
     }
     /// <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum number of hosted zones that you can associate with the specified reusable delegation set.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ReusableDelegationSetLimitType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::ReusableDelegationSetLimitType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
     pub fn delegation_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,11 +55,20 @@ impl GetReusableDelegationSetLimitInputBuilder {
         self
     }
     /// <p>The ID of the delegation set that you want to get the limit for.</p>
-    pub fn set_delegation_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delegation_set_id = input; self
+    pub fn set_delegation_set_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.delegation_set_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetReusableDelegationSetLimitInput`](crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput).
-    pub fn build(self) -> Result<crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_reusable_delegation_set_limit::GetReusableDelegationSetLimitInput {
                 r#type: self.r#type
@@ -66,4 +79,3 @@ impl GetReusableDelegationSetLimitInputBuilder {
         )
     }
 }
-

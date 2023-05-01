@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteCustomDataIdentifierInput  {
+pub struct DeleteCustomDataIdentifierInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteCustomDataIdentifierInput {
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeleteCustomDataIdentifierInput {
     /// Creates a new builder-style object to manufacture [`DeleteCustomDataIdentifierInput`](crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput).
-    pub fn builder() -> crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierInputBuilder {
+    pub fn builder() -> crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierInputBuilder{
         crate::operation::delete_custom_data_identifier::builders::DeleteCustomDataIdentifierInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DeleteCustomDataIdentifierInputBuilder {
     }
     /// <p>The unique identifier for the Amazon Macie resource that the request applies to.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteCustomDataIdentifierInput`](crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput).
-    pub fn build(self) -> Result<crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierInput {
-                id: self.id
-                ,
-            }
+                id: self.id,
+            },
         )
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Details about your login page password field for request inspection, used in the <code>AWSManagedRulesATPRuleSet</code> <code>RequestInspection</code> configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PasswordField  {
+pub struct PasswordField {
     /// <p>The name of the password field. For example <code>/form/password</code>.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
 }
 impl PasswordField {
     /// <p>The name of the password field. For example <code>/form/password</code>.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl PasswordFieldBuilder {
     }
     /// <p>The name of the password field. For example <code>/form/password</code>.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`PasswordField`](crate::types::PasswordField).
     pub fn build(self) -> crate::types::PasswordField {
         crate::types::PasswordField {
-            identifier: self.identifier
-            ,
+            identifier: self.identifier,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p> Information about the resource that is being monitored, including the name of the resource, the type of resource, and whether or not permission is given to DevOps Guru to access that resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MonitoredResourceIdentifier  {
+pub struct MonitoredResourceIdentifier {
     /// <p> The name of the resource being monitored. </p>
     #[doc(hidden)]
     pub monitored_resource_name: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct MonitoredResourceIdentifier  {
 }
 impl MonitoredResourceIdentifier {
     /// <p> The name of the resource being monitored. </p>
-    pub fn monitored_resource_name(&self) -> std::option::Option<& str> {
+    pub fn monitored_resource_name(&self) -> std::option::Option<&str> {
         self.monitored_resource_name.as_deref()
     }
     /// <p> The type of resource being monitored. </p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p> The permission status of a resource. </p>
-    pub fn resource_permission(&self) -> std::option::Option<& crate::types::ResourcePermission> {
+    pub fn resource_permission(&self) -> std::option::Option<&crate::types::ResourcePermission> {
         self.resource_permission.as_ref()
     }
     /// <p> The time at which DevOps Guru last updated this resource. </p>
-    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn resource_collection(&self) -> std::option::Option<& crate::types::ResourceCollection> {
+    pub fn resource_collection(&self) -> std::option::Option<&crate::types::ResourceCollection> {
         self.resource_collection.as_ref()
     }
 }
@@ -66,8 +66,12 @@ impl MonitoredResourceIdentifierBuilder {
         self
     }
     /// <p> The name of the resource being monitored. </p>
-    pub fn set_monitored_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.monitored_resource_name = input; self
+    pub fn set_monitored_resource_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.monitored_resource_name = input;
+        self
     }
     /// <p> The type of resource being monitored. </p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl MonitoredResourceIdentifierBuilder {
     }
     /// <p> The type of resource being monitored. </p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p> The permission status of a resource. </p>
     pub fn resource_permission(mut self, input: crate::types::ResourcePermission) -> Self {
@@ -84,8 +89,12 @@ impl MonitoredResourceIdentifierBuilder {
         self
     }
     /// <p> The permission status of a resource. </p>
-    pub fn set_resource_permission(mut self, input: std::option::Option<crate::types::ResourcePermission>) -> Self {
-        self.resource_permission = input; self
+    pub fn set_resource_permission(
+        mut self,
+        input: std::option::Option<crate::types::ResourcePermission>,
+    ) -> Self {
+        self.resource_permission = input;
+        self
     }
     /// <p> The time at which DevOps Guru last updated this resource. </p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +102,12 @@ impl MonitoredResourceIdentifierBuilder {
         self
     }
     /// <p> The time at which DevOps Guru last updated this resource. </p>
-    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input; self
+    pub fn set_last_updated(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated = input;
+        self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
     pub fn resource_collection(mut self, input: crate::types::ResourceCollection) -> Self {
@@ -102,23 +115,21 @@ impl MonitoredResourceIdentifierBuilder {
         self
     }
     /// <p> A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>
-    pub fn set_resource_collection(mut self, input: std::option::Option<crate::types::ResourceCollection>) -> Self {
-        self.resource_collection = input; self
+    pub fn set_resource_collection(
+        mut self,
+        input: std::option::Option<crate::types::ResourceCollection>,
+    ) -> Self {
+        self.resource_collection = input;
+        self
     }
     /// Consumes the builder and constructs a [`MonitoredResourceIdentifier`](crate::types::MonitoredResourceIdentifier).
     pub fn build(self) -> crate::types::MonitoredResourceIdentifier {
         crate::types::MonitoredResourceIdentifier {
-            monitored_resource_name: self.monitored_resource_name
-            ,
-            r#type: self.r#type
-            ,
-            resource_permission: self.resource_permission
-            ,
-            last_updated: self.last_updated
-            ,
-            resource_collection: self.resource_collection
-            ,
+            monitored_resource_name: self.monitored_resource_name,
+            r#type: self.r#type,
+            resource_permission: self.resource_permission,
+            last_updated: self.last_updated,
+            resource_collection: self.resource_collection,
         }
     }
 }
-

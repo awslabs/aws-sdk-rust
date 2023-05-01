@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let statementstate = unimplemented!();
 /// match statementstate {
@@ -34,14 +34,22 @@
 /// Specifically, when `statementstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StatementState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum StatementState {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -56,49 +64,57 @@ pub enum StatementState {
     #[allow(missing_docs)] // documentation missing in model
     Waiting,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StatementState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AVAILABLE" => StatementState::Available,
-"CANCELLED" => StatementState::Cancelled,
-"CANCELLING" => StatementState::Cancelling,
-"ERROR" => StatementState::Error,
-"RUNNING" => StatementState::Running,
-"WAITING" => StatementState::Waiting,
-other => StatementState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AVAILABLE" => StatementState::Available,
+            "CANCELLED" => StatementState::Cancelled,
+            "CANCELLING" => StatementState::Cancelling,
+            "ERROR" => StatementState::Error,
+            "RUNNING" => StatementState::Running,
+            "WAITING" => StatementState::Waiting,
+            other => {
+                StatementState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for StatementState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(StatementState::from(s))
-                }
-            }
-impl StatementState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    StatementState::Available => "AVAILABLE",
-    StatementState::Cancelled => "CANCELLED",
-    StatementState::Cancelling => "CANCELLING",
-    StatementState::Error => "ERROR",
-    StatementState::Running => "RUNNING",
-    StatementState::Waiting => "WAITING",
-    StatementState::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AVAILABLE", "CANCELLED", "CANCELLING", "ERROR", "RUNNING", "WAITING"]
-                }
-            }
-impl AsRef<str> for StatementState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for StatementState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StatementState::from(s))
+    }
+}
+impl StatementState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StatementState::Available => "AVAILABLE",
+            StatementState::Cancelled => "CANCELLED",
+            StatementState::Cancelling => "CANCELLING",
+            StatementState::Error => "ERROR",
+            StatementState::Running => "RUNNING",
+            StatementState::Waiting => "WAITING",
+            StatementState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AVAILABLE",
+            "CANCELLED",
+            "CANCELLING",
+            "ERROR",
+            "RUNNING",
+            "WAITING",
+        ]
+    }
+}
+impl AsRef<str> for StatementState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

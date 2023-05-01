@@ -3,7 +3,7 @@
 /// <p>The structure holding all the information returned by AnalyzeExpense</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpenseDocument  {
+pub struct ExpenseDocument {
     /// <p>Denotes which invoice or receipt in the document the information is coming from. First document will be 1, the second 2, and so on.</p>
     #[doc(hidden)]
     pub expense_index: std::option::Option<i32>,
@@ -23,15 +23,15 @@ impl ExpenseDocument {
         self.expense_index
     }
     /// <p>Any information found outside of a table by Amazon Textract.</p>
-    pub fn summary_fields(&self) -> std::option::Option<& [crate::types::ExpenseField]> {
+    pub fn summary_fields(&self) -> std::option::Option<&[crate::types::ExpenseField]> {
         self.summary_fields.as_deref()
     }
     /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
-    pub fn line_item_groups(&self) -> std::option::Option<& [crate::types::LineItemGroup]> {
+    pub fn line_item_groups(&self) -> std::option::Option<&[crate::types::LineItemGroup]> {
         self.line_item_groups.as_deref()
     }
     /// <p>This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level recognition of text.</p>
-    pub fn blocks(&self) -> std::option::Option<& [crate::types::Block]> {
+    pub fn blocks(&self) -> std::option::Option<&[crate::types::Block]> {
         self.blocks.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl ExpenseDocumentBuilder {
     }
     /// <p>Denotes which invoice or receipt in the document the information is coming from. First document will be 1, the second 2, and so on.</p>
     pub fn set_expense_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.expense_index = input; self
+        self.expense_index = input;
+        self
     }
     /// Appends an item to `summary_fields`.
     ///
@@ -68,13 +69,17 @@ impl ExpenseDocumentBuilder {
     /// <p>Any information found outside of a table by Amazon Textract.</p>
     pub fn summary_fields(mut self, input: crate::types::ExpenseField) -> Self {
         let mut v = self.summary_fields.unwrap_or_default();
-                        v.push(input);
-                        self.summary_fields = Some(v);
-                        self
+        v.push(input);
+        self.summary_fields = Some(v);
+        self
     }
     /// <p>Any information found outside of a table by Amazon Textract.</p>
-    pub fn set_summary_fields(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExpenseField>>) -> Self {
-        self.summary_fields = input; self
+    pub fn set_summary_fields(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExpenseField>>,
+    ) -> Self {
+        self.summary_fields = input;
+        self
     }
     /// Appends an item to `line_item_groups`.
     ///
@@ -83,13 +88,17 @@ impl ExpenseDocumentBuilder {
     /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
     pub fn line_item_groups(mut self, input: crate::types::LineItemGroup) -> Self {
         let mut v = self.line_item_groups.unwrap_or_default();
-                        v.push(input);
-                        self.line_item_groups = Some(v);
-                        self
+        v.push(input);
+        self.line_item_groups = Some(v);
+        self
     }
     /// <p>Information detected on each table of a document, seperated into <code>LineItems</code>.</p>
-    pub fn set_line_item_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::LineItemGroup>>) -> Self {
-        self.line_item_groups = input; self
+    pub fn set_line_item_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LineItemGroup>>,
+    ) -> Self {
+        self.line_item_groups = input;
+        self
     }
     /// Appends an item to `blocks`.
     ///
@@ -98,26 +107,25 @@ impl ExpenseDocumentBuilder {
     /// <p>This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level recognition of text.</p>
     pub fn blocks(mut self, input: crate::types::Block) -> Self {
         let mut v = self.blocks.unwrap_or_default();
-                        v.push(input);
-                        self.blocks = Some(v);
-                        self
+        v.push(input);
+        self.blocks = Some(v);
+        self
     }
     /// <p>This is a block object, the same as reported when DetectDocumentText is run on a document. It provides word level recognition of text.</p>
-    pub fn set_blocks(mut self, input: std::option::Option<std::vec::Vec<crate::types::Block>>) -> Self {
-        self.blocks = input; self
+    pub fn set_blocks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Block>>,
+    ) -> Self {
+        self.blocks = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExpenseDocument`](crate::types::ExpenseDocument).
     pub fn build(self) -> crate::types::ExpenseDocument {
         crate::types::ExpenseDocument {
-            expense_index: self.expense_index
-            ,
-            summary_fields: self.summary_fields
-            ,
-            line_item_groups: self.line_item_groups
-            ,
-            blocks: self.blocks
-            ,
+            expense_index: self.expense_index,
+            summary_fields: self.summary_fields,
+            line_item_groups: self.line_item_groups,
+            blocks: self.blocks,
         }
     }
 }
-

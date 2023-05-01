@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListChannelsModeratedByAppInstanceUserOutput  {
+pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
     #[doc(hidden)]
-    pub channels: std::option::Option<std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>>,
+    pub channels:
+        std::option::Option<std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>>,
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,15 +14,17 @@ pub struct ListChannelsModeratedByAppInstanceUserOutput  {
 }
 impl ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
-    pub fn channels(&self) -> std::option::Option<& [crate::types::ChannelModeratedByAppInstanceUserSummary]> {
+    pub fn channels(
+        &self,
+    ) -> std::option::Option<&[crate::types::ChannelModeratedByAppInstanceUserSummary]> {
         self.channels.as_deref()
     }
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl  std::fmt::Debug for ListChannelsModeratedByAppInstanceUserOutput  {
+impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListChannelsModeratedByAppInstanceUserOutput");
         formatter.field("channels", &self.channels);
@@ -31,13 +34,13 @@ impl  std::fmt::Debug for ListChannelsModeratedByAppInstanceUserOutput  {
     }
 }
 impl aws_http::request_id::RequestId for ListChannelsModeratedByAppInstanceUserOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListChannelsModeratedByAppInstanceUserOutput {
     /// Creates a new builder-style object to manufacture [`ListChannelsModeratedByAppInstanceUserOutput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput).
-    pub fn builder() -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserOutputBuilder {
+    pub fn builder() -> crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserOutputBuilder{
         crate::operation::list_channels_moderated_by_app_instance_user::builders::ListChannelsModeratedByAppInstanceUserOutputBuilder::default()
     }
 }
@@ -46,7 +49,8 @@ impl ListChannelsModeratedByAppInstanceUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct ListChannelsModeratedByAppInstanceUserOutputBuilder {
-    pub(crate) channels: std::option::Option<std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>>,
+    pub(crate) channels:
+        std::option::Option<std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -56,15 +60,24 @@ impl ListChannelsModeratedByAppInstanceUserOutputBuilder {
     /// To override the contents of this collection use [`set_channels`](Self::set_channels).
     ///
     /// <p>The moderated channels in the request.</p>
-    pub fn channels(mut self, input: crate::types::ChannelModeratedByAppInstanceUserSummary) -> Self {
+    pub fn channels(
+        mut self,
+        input: crate::types::ChannelModeratedByAppInstanceUserSummary,
+    ) -> Self {
         let mut v = self.channels.unwrap_or_default();
-                        v.push(input);
-                        self.channels = Some(v);
-                        self
+        v.push(input);
+        self.channels = Some(v);
+        self
     }
     /// <p>The moderated channels in the request.</p>
-    pub fn set_channels(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>>) -> Self {
-        self.channels = input; self
+    pub fn set_channels(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::ChannelModeratedByAppInstanceUserSummary>,
+        >,
+    ) -> Self {
+        self.channels = input;
+        self
     }
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -73,19 +86,20 @@ impl ListChannelsModeratedByAppInstanceUserOutputBuilder {
     }
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListChannelsModeratedByAppInstanceUserOutput`](crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput).
-    pub fn build(self) -> crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput {
+    pub fn build(self) -> crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput{
         crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput {
             channels: self.channels
             ,
@@ -104,4 +118,3 @@ impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserOutputBuilder {
         formatter.finish()
     }
 }
-

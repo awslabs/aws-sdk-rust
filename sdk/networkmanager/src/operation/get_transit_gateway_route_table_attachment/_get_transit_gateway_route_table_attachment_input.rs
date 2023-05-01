@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTransitGatewayRouteTableAttachmentInput  {
+pub struct GetTransitGatewayRouteTableAttachmentInput {
     /// <p>The ID of the transit gateway route table attachment.</p>
     #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl GetTransitGatewayRouteTableAttachmentInput {
     /// <p>The ID of the transit gateway route table attachment.</p>
-    pub fn attachment_id(&self) -> std::option::Option<& str> {
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
 }
 impl GetTransitGatewayRouteTableAttachmentInput {
     /// Creates a new builder-style object to manufacture [`GetTransitGatewayRouteTableAttachmentInput`](crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput).
-    pub fn builder() -> crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentInputBuilder {
+    pub fn builder() -> crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentInputBuilder{
         crate::operation::get_transit_gateway_route_table_attachment::builders::GetTransitGatewayRouteTableAttachmentInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl GetTransitGatewayRouteTableAttachmentInputBuilder {
     }
     /// <p>The ID of the transit gateway route table attachment.</p>
     pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attachment_id = input; self
+        self.attachment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTransitGatewayRouteTableAttachmentInput`](crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput).
-    pub fn build(self) -> Result<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_transit_gateway_route_table_attachment::GetTransitGatewayRouteTableAttachmentInput {
                 attachment_id: self.attachment_id
@@ -46,4 +47,3 @@ impl GetTransitGatewayRouteTableAttachmentInputBuilder {
         )
     }
 }
-

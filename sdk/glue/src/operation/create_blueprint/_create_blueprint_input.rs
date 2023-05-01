@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBlueprintInput  {
+pub struct CreateBlueprintInput {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -14,23 +14,27 @@ pub struct CreateBlueprintInput  {
     pub blueprint_location: std::option::Option<std::string::String>,
     /// <p>The tags to be applied to this blueprint.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateBlueprintInput {
     /// <p>The name of the blueprint.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the blueprint.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-    pub fn blueprint_location(&self) -> std::option::Option<& str> {
+    pub fn blueprint_location(&self) -> std::option::Option<&str> {
         self.blueprint_location.as_deref()
     }
     /// <p>The tags to be applied to this blueprint.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -48,7 +52,8 @@ pub struct CreateBlueprintInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) blueprint_location: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateBlueprintInputBuilder {
     /// <p>The name of the blueprint.</p>
@@ -58,7 +63,8 @@ impl CreateBlueprintInputBuilder {
     }
     /// <p>The name of the blueprint.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description of the blueprint.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +73,8 @@ impl CreateBlueprintInputBuilder {
     }
     /// <p>A description of the blueprint.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
     pub fn blueprint_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,38 +82,50 @@ impl CreateBlueprintInputBuilder {
         self
     }
     /// <p>Specifies a path in Amazon S3 where the blueprint is published.</p>
-    pub fn set_blueprint_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.blueprint_location = input; self
+    pub fn set_blueprint_location(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.blueprint_location = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to be applied to this blueprint.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags to be applied to this blueprint.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBlueprintInput`](crate::operation::create_blueprint::CreateBlueprintInput).
-    pub fn build(self) -> Result<crate::operation::create_blueprint::CreateBlueprintInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_blueprint::CreateBlueprintInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                blueprint_location: self.blueprint_location
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_blueprint::CreateBlueprintInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_blueprint::CreateBlueprintInput {
+            name: self.name,
+            description: self.description,
+            blueprint_location: self.blueprint_location,
+            tags: self.tags,
+        })
     }
 }
-

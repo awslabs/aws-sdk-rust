@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerminateRecoveryInstancesInput  {
+pub struct TerminateRecoveryInstancesInput {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
     #[doc(hidden)]
     pub recovery_instance_i_ds: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl TerminateRecoveryInstancesInput {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn recovery_instance_i_ds(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn recovery_instance_i_ds(&self) -> std::option::Option<&[std::string::String]> {
         self.recovery_instance_i_ds.as_deref()
     }
 }
 impl TerminateRecoveryInstancesInput {
     /// Creates a new builder-style object to manufacture [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
-    pub fn builder() -> crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder {
+    pub fn builder() -> crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder{
         crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder::default()
     }
 }
@@ -34,22 +34,29 @@ impl TerminateRecoveryInstancesInputBuilder {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
     pub fn recovery_instance_i_ds(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.recovery_instance_i_ds.unwrap_or_default();
-                        v.push(input.into());
-                        self.recovery_instance_i_ds = Some(v);
-                        self
+        v.push(input.into());
+        self.recovery_instance_i_ds = Some(v);
+        self
     }
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn set_recovery_instance_i_ds(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.recovery_instance_i_ds = input; self
+    pub fn set_recovery_instance_i_ds(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.recovery_instance_i_ds = input;
+        self
     }
     /// Consumes the builder and constructs a [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
-    pub fn build(self) -> Result<crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput {
-                recovery_instance_i_ds: self.recovery_instance_i_ds
-                ,
-            }
+                recovery_instance_i_ds: self.recovery_instance_i_ds,
+            },
         )
     }
 }
-

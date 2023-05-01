@@ -3,14 +3,14 @@
 /// <p>Information about the broker access configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectivityInfo  {
+pub struct ConnectivityInfo {
     /// <p>Public access control for brokers.</p>
     #[doc(hidden)]
     pub public_access: std::option::Option<crate::types::PublicAccess>,
 }
 impl ConnectivityInfo {
     /// <p>Public access control for brokers.</p>
-    pub fn public_access(&self) -> std::option::Option<& crate::types::PublicAccess> {
+    pub fn public_access(&self) -> std::option::Option<&crate::types::PublicAccess> {
         self.public_access.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ConnectivityInfoBuilder {
         self
     }
     /// <p>Public access control for brokers.</p>
-    pub fn set_public_access(mut self, input: std::option::Option<crate::types::PublicAccess>) -> Self {
-        self.public_access = input; self
+    pub fn set_public_access(
+        mut self,
+        input: std::option::Option<crate::types::PublicAccess>,
+    ) -> Self {
+        self.public_access = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConnectivityInfo`](crate::types::ConnectivityInfo).
     pub fn build(self) -> crate::types::ConnectivityInfo {
         crate::types::ConnectivityInfo {
-            public_access: self.public_access
-            ,
+            public_access: self.public_access,
         }
     }
 }
-

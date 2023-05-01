@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyInput  {
-    /// <p>The ARN or name of the secret to attach the resource-based policy.</p> 
+pub struct PutResourcePolicyInput {
+    /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     #[doc(hidden)]
     pub secret_id: std::option::Option<std::string::String>,
@@ -15,13 +15,13 @@ pub struct PutResourcePolicyInput  {
     pub block_public_policy: std::option::Option<bool>,
 }
 impl PutResourcePolicyInput {
-    /// <p>The ARN or name of the secret to attach the resource-based policy.</p> 
+    /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
-    pub fn secret_id(&self) -> std::option::Option<& str> {
+    pub fn secret_id(&self) -> std::option::Option<&str> {
         self.secret_id.as_deref()
     }
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
-    pub fn resource_policy(&self) -> std::option::Option<& str> {
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
         self.resource_policy.as_deref()
     }
     /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
@@ -31,7 +31,8 @@ impl PutResourcePolicyInput {
 }
 impl PutResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn builder() -> crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder {
         crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder::default()
     }
 }
@@ -45,16 +46,17 @@ pub struct PutResourcePolicyInputBuilder {
     pub(crate) block_public_policy: std::option::Option<bool>,
 }
 impl PutResourcePolicyInputBuilder {
-    /// <p>The ARN or name of the secret to attach the resource-based policy.</p> 
+    /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn secret_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.secret_id = Some(input.into());
         self
     }
-    /// <p>The ARN or name of the secret to attach the resource-based policy.</p> 
+    /// <p>The ARN or name of the secret to attach the resource-based policy.</p>
     /// <p>For an ARN, we recommend that you specify a complete ARN rather than a partial ARN. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot.html#ARN_secretnamehyphen">Finding a secret from a partial ARN</a>.</p>
     pub fn set_secret_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_id = input; self
+        self.secret_id = input;
+        self
     }
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -63,7 +65,8 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. For example policies, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions policy examples</a>.</p>
     pub fn set_resource_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_policy = input; self
+        self.resource_policy = input;
+        self
     }
     /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
     pub fn block_public_policy(mut self, input: bool) -> Self {
@@ -72,20 +75,22 @@ impl PutResourcePolicyInputBuilder {
     }
     /// <p>Specifies whether to block resource-based policies that allow broad access to the secret, for example those that use a wildcard for the principal. By default, public policies aren't blocked.</p>
     pub fn set_block_public_policy(mut self, input: std::option::Option<bool>) -> Self {
-        self.block_public_policy = input; self
+        self.block_public_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    pub fn build(self) -> Result<crate::operation::put_resource_policy::PutResourcePolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_resource_policy::PutResourcePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_resource_policy::PutResourcePolicyInput {
-                secret_id: self.secret_id
-                ,
-                resource_policy: self.resource_policy
-                ,
-                block_public_policy: self.block_public_policy
-                ,
-            }
+                secret_id: self.secret_id,
+                resource_policy: self.resource_policy,
+                block_public_policy: self.block_public_policy,
+            },
         )
     }
 }
-

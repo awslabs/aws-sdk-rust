@@ -4,62 +4,82 @@ pub use crate::operation::create_call_analytics_category::_create_call_analytics
 pub use crate::operation::create_call_analytics_category::_create_call_analytics_category_input::CreateCallAnalyticsCategoryInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCallAnalyticsCategory`.
-/// 
-/// <p>Creates a new Call Analytics category.</p> 
-/// <p>All categories are automatically applied to your Call Analytics transcriptions. Note that in order to apply categories to your transcriptions, you must create them before submitting your transcription request, as categories cannot be applied retroactively.</p> 
-/// <p>When creating a new category, you can use the <code>InputType</code> parameter to label the category as a <code>POST_CALL</code> or a <code>REAL_TIME</code> category. <code>POST_CALL</code> categories can only be applied to post-call transcriptions and <code>REAL_TIME</code> categories can only be applied to real-time transcriptions. If you do not include <code>InputType</code>, your category is created as a <code>POST_CALL</code> category by default.</p> 
-/// <p>Call Analytics categories are composed of rules. For each category, you must create between 1 and 20 rules. Rules can include these parameters: , , , and .</p> 
-/// <p>To update an existing category, see .</p> 
+///
+/// <p>Creates a new Call Analytics category.</p>
+/// <p>All categories are automatically applied to your Call Analytics transcriptions. Note that in order to apply categories to your transcriptions, you must create them before submitting your transcription request, as categories cannot be applied retroactively.</p>
+/// <p>When creating a new category, you can use the <code>InputType</code> parameter to label the category as a <code>POST_CALL</code> or a <code>REAL_TIME</code> category. <code>POST_CALL</code> categories can only be applied to post-call transcriptions and <code>REAL_TIME</code> categories can only be applied to real-time transcriptions. If you do not include <code>InputType</code>, your category is created as a <code>POST_CALL</code> category by default.</p>
+/// <p>Call Analytics categories are composed of rules. For each category, you must create between 1 and 20 rules. Rules can include these parameters: , , , and .</p>
+/// <p>To update an existing category, see .</p>
 /// <p>To learn more about Call Analytics categories, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for post-call transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for real-time transcriptions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCallAnalyticsCategoryFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_call_analytics_category::builders::CreateCallAnalyticsCategoryInputBuilder,
 }
-impl CreateCallAnalyticsCategoryFluentBuilder  {
+impl CreateCallAnalyticsCategoryFluentBuilder {
     /// Creates a new `CreateCallAnalyticsCategory`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategory, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput, aws_smithy_http::result::SdkError<crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategory,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_call_analytics_category::CreateCallAnalyticsCategoryError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
     pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.category_name(input.into());
         self
     }
-    /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p> 
+    /// <p>A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use <code>sentiment-positive-last30seconds</code> for a category over a generic name like <code>test-category</code>.</p>
     /// <p>Category names are case sensitive.</p>
     pub fn set_category_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_category_name(input);
@@ -75,25 +95,27 @@ impl CreateCallAnalyticsCategoryFluentBuilder  {
         self
     }
     /// <p>Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.</p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::Rule>>) -> Self {
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+    ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
-    /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p> 
-    /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p> 
-    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p> 
+    /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
+    /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
+    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
     /// <p>If you do not include <code>InputType</code>, your category is created as a post-call category by default.</p>
     pub fn input_type(mut self, input: crate::types::InputType) -> Self {
         self.inner = self.inner.input_type(input);
         self
     }
-    /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p> 
-    /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p> 
-    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p> 
+    /// <p>Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.</p>
+    /// <p>Specifying <code>POST_CALL</code> assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.</p>
+    /// <p>Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.</p>
     /// <p>If you do not include <code>InputType</code>, your category is created as a post-call category by default.</p>
     pub fn set_input_type(mut self, input: std::option::Option<crate::types::InputType>) -> Self {
         self.inner = self.inner.set_input_type(input);
         self
     }
 }
-

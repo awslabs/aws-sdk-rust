@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteDevicePositionHistoryOutput  {
+pub struct BatchDeleteDevicePositionHistoryOutput {
     /// <p>Contains error details for each device history that failed to delete.</p>
     #[doc(hidden)]
-    pub errors: std::option::Option<std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>,
+    pub errors:
+        std::option::Option<std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDevicePositionHistoryOutput {
     /// <p>Contains error details for each device history that failed to delete.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::BatchDeleteDevicePositionHistoryError]> {
+    pub fn errors(
+        &self,
+    ) -> std::option::Option<&[crate::types::BatchDeleteDevicePositionHistoryError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchDeleteDevicePositionHistoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchDeleteDevicePositionHistoryOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteDevicePositionHistoryOutput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput).
-    pub fn builder() -> crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryOutputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryOutputBuilder{
         crate::operation::batch_delete_device_position_history::builders::BatchDeleteDevicePositionHistoryOutputBuilder::default()
     }
 }
@@ -30,7 +33,8 @@ impl BatchDeleteDevicePositionHistoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchDeleteDevicePositionHistoryOutputBuilder {
-    pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>,
+    pub(crate) errors:
+        std::option::Option<std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>,
     _request_id: Option<String>,
 }
 impl BatchDeleteDevicePositionHistoryOutputBuilder {
@@ -41,25 +45,31 @@ impl BatchDeleteDevicePositionHistoryOutputBuilder {
     /// <p>Contains error details for each device history that failed to delete.</p>
     pub fn errors(mut self, input: crate::types::BatchDeleteDevicePositionHistoryError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>Contains error details for each device history that failed to delete.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::BatchDeleteDevicePositionHistoryError>,
+        >,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryOutput`](crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput).
-    pub fn build(self) -> crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput {
+    pub fn build(self) -> crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput{
         crate::operation::batch_delete_device_position_history::BatchDeleteDevicePositionHistoryOutput {
             errors: self.errors
             ,
@@ -67,4 +77,3 @@ impl BatchDeleteDevicePositionHistoryOutputBuilder {
         }
     }
 }
-

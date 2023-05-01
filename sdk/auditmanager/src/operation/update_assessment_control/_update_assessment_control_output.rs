@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssessmentControlOutput  {
+pub struct UpdateAssessmentControlOutput {
     /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
     #[doc(hidden)]
     pub control: std::option::Option<crate::types::AssessmentControl>,
@@ -10,18 +10,20 @@ pub struct UpdateAssessmentControlOutput  {
 }
 impl UpdateAssessmentControlOutput {
     /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
-    pub fn control(&self) -> std::option::Option<& crate::types::AssessmentControl> {
+    pub fn control(&self) -> std::option::Option<&crate::types::AssessmentControl> {
         self.control.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAssessmentControlOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateAssessmentControlOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssessmentControlOutput`](crate::operation::update_assessment_control::UpdateAssessmentControlOutput).
-    pub fn builder() -> crate::operation::update_assessment_control::builders::UpdateAssessmentControlOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_assessment_control::builders::UpdateAssessmentControlOutputBuilder
+    {
         crate::operation::update_assessment_control::builders::UpdateAssessmentControlOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl UpdateAssessmentControlOutputBuilder {
         self
     }
     /// <p> The name of the updated control set that the <code>UpdateAssessmentControl</code> API returned. </p>
-    pub fn set_control(mut self, input: std::option::Option<crate::types::AssessmentControl>) -> Self {
-        self.control = input; self
+    pub fn set_control(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentControl>,
+    ) -> Self {
+        self.control = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateAssessmentControlOutput`](crate::operation::update_assessment_control::UpdateAssessmentControlOutput).
-    pub fn build(self) -> crate::operation::update_assessment_control::UpdateAssessmentControlOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_assessment_control::UpdateAssessmentControlOutput {
         crate::operation::update_assessment_control::UpdateAssessmentControlOutput {
-            control: self.control
-            ,
+            control: self.control,
             _request_id: self._request_id,
         }
     }
 }
-

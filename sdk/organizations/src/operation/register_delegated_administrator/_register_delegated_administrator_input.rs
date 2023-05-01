@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDelegatedAdministratorInput  {
+pub struct RegisterDelegatedAdministratorInput {
     /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct RegisterDelegatedAdministratorInput  {
 }
 impl RegisterDelegatedAdministratorInput {
     /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
-    pub fn service_principal(&self) -> std::option::Option<& str> {
+    pub fn service_principal(&self) -> std::option::Option<&str> {
         self.service_principal.as_deref()
     }
 }
 impl RegisterDelegatedAdministratorInput {
     /// Creates a new builder-style object to manufacture [`RegisterDelegatedAdministratorInput`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput).
-    pub fn builder() -> crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder {
+    pub fn builder() -> crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder{
         crate::operation::register_delegated_administrator::builders::RegisterDelegatedAdministratorInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl RegisterDelegatedAdministratorInputBuilder {
     }
     /// <p>The account ID number of the member account in the organization to register as a delegated administrator.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
     pub fn service_principal(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,11 +51,20 @@ impl RegisterDelegatedAdministratorInputBuilder {
         self
     }
     /// <p>The service principal of the Amazon Web Services service for which you want to make the member account a delegated administrator.</p>
-    pub fn set_service_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_principal = input; self
+    pub fn set_service_principal(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_principal = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegisterDelegatedAdministratorInput`](crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput).
-    pub fn build(self) -> Result<crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorInput {
                 account_id: self.account_id
@@ -65,4 +75,3 @@ impl RegisterDelegatedAdministratorInputBuilder {
         )
     }
 }
-

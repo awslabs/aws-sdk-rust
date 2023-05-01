@@ -3,31 +3,33 @@
 /// <p>Represents a single metric data query to include in a batch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetMetricDataQuery  {
+pub struct BatchGetMetricDataQuery {
     /// <p>The query identifier.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The query namespace - e.g. <code>VDM</code> </p>
     #[doc(hidden)]
     pub namespace: std::option::Option<crate::types::MetricNamespace>,
-    /// <p>The queried metric. This can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li> 
-    /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li> 
-    /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li> 
-    /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li> 
+    /// <p>The queried metric. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li>
+    /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub metric: std::option::Option<crate::types::Metric>,
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
     #[doc(hidden)]
-    pub dimensions: std::option::Option<std::collections::HashMap<crate::types::MetricDimensionName, std::string::String>>,
+    pub dimensions: std::option::Option<
+        std::collections::HashMap<crate::types::MetricDimensionName, std::string::String>,
+    >,
     /// <p>Represents the start date for the query interval.</p>
     #[doc(hidden)]
     pub start_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -37,39 +39,43 @@ pub struct BatchGetMetricDataQuery  {
 }
 impl BatchGetMetricDataQuery {
     /// <p>The query identifier.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The query namespace - e.g. <code>VDM</code> </p>
-    pub fn namespace(&self) -> std::option::Option<& crate::types::MetricNamespace> {
+    pub fn namespace(&self) -> std::option::Option<&crate::types::MetricNamespace> {
         self.namespace.as_ref()
     }
-    /// <p>The queried metric. This can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li> 
-    /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li> 
-    /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li> 
-    /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li> 
+    /// <p>The queried metric. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li>
+    /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
     /// </ul>
-    pub fn metric(&self) -> std::option::Option<& crate::types::Metric> {
+    pub fn metric(&self) -> std::option::Option<&crate::types::Metric> {
         self.metric.as_ref()
     }
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
-    pub fn dimensions(&self) -> std::option::Option<& std::collections::HashMap<crate::types::MetricDimensionName, std::string::String>> {
+    pub fn dimensions(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::types::MetricDimensionName, std::string::String>,
+    > {
         self.dimensions.as_ref()
     }
     /// <p>Represents the start date for the query interval.</p>
-    pub fn start_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>Represents the end date for the query interval.</p>
-    pub fn end_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date.as_ref()
     }
 }
@@ -87,7 +93,9 @@ pub struct BatchGetMetricDataQueryBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) namespace: std::option::Option<crate::types::MetricNamespace>,
     pub(crate) metric: std::option::Option<crate::types::Metric>,
-    pub(crate) dimensions: std::option::Option<std::collections::HashMap<crate::types::MetricDimensionName, std::string::String>>,
+    pub(crate) dimensions: std::option::Option<
+        std::collections::HashMap<crate::types::MetricDimensionName, std::string::String>,
+    >,
     pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) end_date: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -99,7 +107,8 @@ impl BatchGetMetricDataQueryBuilder {
     }
     /// <p>The query identifier.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The query namespace - e.g. <code>VDM</code> </p>
     pub fn namespace(mut self, input: crate::types::MetricNamespace) -> Self {
@@ -107,56 +116,71 @@ impl BatchGetMetricDataQueryBuilder {
         self
     }
     /// <p>The query namespace - e.g. <code>VDM</code> </p>
-    pub fn set_namespace(mut self, input: std::option::Option<crate::types::MetricNamespace>) -> Self {
-        self.namespace = input; self
+    pub fn set_namespace(
+        mut self,
+        input: std::option::Option<crate::types::MetricNamespace>,
+    ) -> Self {
+        self.namespace = input;
+        self
     }
-    /// <p>The queried metric. This can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li> 
-    /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li> 
-    /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li> 
-    /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li> 
+    /// <p>The queried metric. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li>
+    /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
     /// </ul>
     pub fn metric(mut self, input: crate::types::Metric) -> Self {
         self.metric = Some(input);
         self
     }
-    /// <p>The queried metric. This can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li> 
-    /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li> 
-    /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li> 
-    /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li> 
-    /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li> 
+    /// <p>The queried metric. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This excludes emails sent to the mailbox simulator and emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient</p> </li>
+    /// <li> <p> <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating from your account-level suppression list (if enabled), and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox simulator, and those for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>OPEN</code> – Unique open events for emails including open trackers. Excludes opens for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes clicks for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator and for emails addressed to more than one recipient.</p> </li>
+    /// <li> <p> <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without open trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails without click trackers.</p> </li>
+    /// <li> <p> <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts. Excludes deliveries to the mailbox simulator, for emails addressed to more than one recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES does not have a feedback loop agreement.</p> </li>
     /// </ul>
     pub fn set_metric(mut self, input: std::option::Option<crate::types::Metric>) -> Self {
-        self.metric = input; self
+        self.metric = input;
+        self
     }
     /// Adds a key-value pair to `dimensions`.
     ///
     /// To override the contents of this collection use [`set_dimensions`](Self::set_dimensions).
     ///
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
-    pub fn dimensions(mut self, k: crate::types::MetricDimensionName, v: impl Into<std::string::String>) -> Self {
+    pub fn dimensions(
+        mut self,
+        k: crate::types::MetricDimensionName,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.dimensions.unwrap_or_default();
-                        hash_map.insert(k, v.into());
-                        self.dimensions = Some(hash_map);
-                        self
+        hash_map.insert(k, v.into());
+        self.dimensions = Some(hash_map);
+        self
     }
     /// <p>An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code> to filter metrics by.</p>
-    pub fn set_dimensions(mut self, input: std::option::Option<std::collections::HashMap<crate::types::MetricDimensionName, std::string::String>>) -> Self {
-        self.dimensions = input; self
+    pub fn set_dimensions(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<crate::types::MetricDimensionName, std::string::String>,
+        >,
+    ) -> Self {
+        self.dimensions = input;
+        self
     }
     /// <p>Represents the start date for the query interval.</p>
     pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -164,8 +188,12 @@ impl BatchGetMetricDataQueryBuilder {
         self
     }
     /// <p>Represents the start date for the query interval.</p>
-    pub fn set_start_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_date = input; self
+    pub fn set_start_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_date = input;
+        self
     }
     /// <p>Represents the end date for the query interval.</p>
     pub fn end_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -174,24 +202,18 @@ impl BatchGetMetricDataQueryBuilder {
     }
     /// <p>Represents the end date for the query interval.</p>
     pub fn set_end_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_date = input; self
+        self.end_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetMetricDataQuery`](crate::types::BatchGetMetricDataQuery).
     pub fn build(self) -> crate::types::BatchGetMetricDataQuery {
         crate::types::BatchGetMetricDataQuery {
-            id: self.id
-            ,
-            namespace: self.namespace
-            ,
-            metric: self.metric
-            ,
-            dimensions: self.dimensions
-            ,
-            start_date: self.start_date
-            ,
-            end_date: self.end_date
-            ,
+            id: self.id,
+            namespace: self.namespace,
+            metric: self.metric,
+            dimensions: self.dimensions,
+            start_date: self.start_date,
+            end_date: self.end_date,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestAvailabilityConfigurationOutput  {
+pub struct TestAvailabilityConfigurationOutput {
     /// <p>Boolean indicating whether the test passed or failed.</p>
     #[doc(hidden)]
     pub test_passed: bool,
@@ -17,18 +17,18 @@ impl TestAvailabilityConfigurationOutput {
         self.test_passed
     }
     /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
-    pub fn failure_reason(&self) -> std::option::Option<& str> {
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for TestAvailabilityConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl TestAvailabilityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`TestAvailabilityConfigurationOutput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput).
-    pub fn builder() -> crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationOutputBuilder{
         crate::operation::test_availability_configuration::builders::TestAvailabilityConfigurationOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl TestAvailabilityConfigurationOutputBuilder {
     }
     /// <p>Boolean indicating whether the test passed or failed.</p>
     pub fn set_test_passed(mut self, input: std::option::Option<bool>) -> Self {
-        self.test_passed = input; self
+        self.test_passed = input;
+        self
     }
     /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,27 +59,27 @@ impl TestAvailabilityConfigurationOutputBuilder {
     }
     /// <p>String containing the reason for a failed test if <code>TestPassed</code> is false.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input; self
+        self.failure_reason = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`TestAvailabilityConfigurationOutput`](crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput).
-    pub fn build(self) -> crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput
+    {
         crate::operation::test_availability_configuration::TestAvailabilityConfigurationOutput {
-            test_passed: self.test_passed
-                .unwrap_or_default()
-            ,
-            failure_reason: self.failure_reason
-            ,
+            test_passed: self.test_passed.unwrap_or_default(),
+            failure_reason: self.failure_reason,
             _request_id: self._request_id,
         }
     }
 }
-

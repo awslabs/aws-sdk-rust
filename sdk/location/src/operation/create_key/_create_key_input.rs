@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateKeyInput  {
-    /// <p>A custom name for the API key resource.</p> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> 
-    /// <li> <p>Must be a unique API key name.</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li> 
+pub struct CreateKeyInput {
+    /// <p>A custom name for the API key resource.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+    /// <li> <p>Must be a unique API key name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub key_name: std::option::Option<std::string::String>,
@@ -24,59 +24,63 @@ pub struct CreateKeyInput  {
     /// <p>Optionally set to <code>true</code> to set no expiration time for the API key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
     #[doc(hidden)]
     pub no_expiry: std::option::Option<bool>,
-    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p> 
-    /// <p>Format: <code>"key" : "value"</code> </p> 
-    /// <p>Restrictions:</p> 
-    /// <ul> 
-    /// <li> <p>Maximum 50 tags per resource</p> </li> 
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li> 
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li> 
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> 
+    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Restrictions:</p>
+    /// <ul>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateKeyInput {
-    /// <p>A custom name for the API key resource.</p> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> 
-    /// <li> <p>Must be a unique API key name.</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li> 
+    /// <p>A custom name for the API key resource.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+    /// <li> <p>Must be a unique API key name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li>
     /// </ul>
-    pub fn key_name(&self) -> std::option::Option<& str> {
+    pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
     /// <p>The API key restrictions for the API key resource.</p>
-    pub fn restrictions(&self) -> std::option::Option<& crate::types::ApiKeyRestrictions> {
+    pub fn restrictions(&self) -> std::option::Option<&crate::types::ApiKeyRestrictions> {
         self.restrictions.as_ref()
     }
     /// <p>An optional description for the API key resource.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The optional timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
-    pub fn expire_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expire_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expire_time.as_ref()
     }
     /// <p>Optionally set to <code>true</code> to set no expiration time for the API key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
     pub fn no_expiry(&self) -> std::option::Option<bool> {
         self.no_expiry
     }
-    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p> 
-    /// <p>Format: <code>"key" : "value"</code> </p> 
-    /// <p>Restrictions:</p> 
-    /// <ul> 
-    /// <li> <p>Maximum 50 tags per resource</p> </li> 
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li> 
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li> 
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> 
+    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Restrictions:</p>
+    /// <ul>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -96,29 +100,31 @@ pub struct CreateKeyInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) expire_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) no_expiry: std::option::Option<bool>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateKeyInputBuilder {
-    /// <p>A custom name for the API key resource.</p> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> 
-    /// <li> <p>Must be a unique API key name.</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li> 
+    /// <p>A custom name for the API key resource.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+    /// <li> <p>Must be a unique API key name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li>
     /// </ul>
     pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.key_name = Some(input.into());
         self
     }
-    /// <p>A custom name for the API key resource.</p> 
-    /// <p>Requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li> 
-    /// <li> <p>Must be a unique API key name.</p> </li> 
-    /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li> 
+    /// <p>A custom name for the API key resource.</p>
+    /// <p>Requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_). </p> </li>
+    /// <li> <p>Must be a unique API key name.</p> </li>
+    /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li>
     /// </ul>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input; self
+        self.key_name = input;
+        self
     }
     /// <p>The API key restrictions for the API key resource.</p>
     pub fn restrictions(mut self, input: crate::types::ApiKeyRestrictions) -> Self {
@@ -126,8 +132,12 @@ impl CreateKeyInputBuilder {
         self
     }
     /// <p>The API key restrictions for the API key resource.</p>
-    pub fn set_restrictions(mut self, input: std::option::Option<crate::types::ApiKeyRestrictions>) -> Self {
-        self.restrictions = input; self
+    pub fn set_restrictions(
+        mut self,
+        input: std::option::Option<crate::types::ApiKeyRestrictions>,
+    ) -> Self {
+        self.restrictions = input;
+        self
     }
     /// <p>An optional description for the API key resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,7 +146,8 @@ impl CreateKeyInputBuilder {
     }
     /// <p>An optional description for the API key resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The optional timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
     pub fn expire_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -144,8 +155,12 @@ impl CreateKeyInputBuilder {
         self
     }
     /// <p>The optional timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
-    pub fn set_expire_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expire_time = input; self
+    pub fn set_expire_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.expire_time = input;
+        self
     }
     /// <p>Optionally set to <code>true</code> to set no expiration time for the API key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
     pub fn no_expiry(mut self, input: bool) -> Self {
@@ -154,61 +169,68 @@ impl CreateKeyInputBuilder {
     }
     /// <p>Optionally set to <code>true</code> to set no expiration time for the API key. One of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.</p>
     pub fn set_no_expiry(mut self, input: std::option::Option<bool>) -> Self {
-        self.no_expiry = input; self
+        self.no_expiry = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p> 
-    /// <p>Format: <code>"key" : "value"</code> </p> 
-    /// <p>Restrictions:</p> 
-    /// <ul> 
-    /// <li> <p>Maximum 50 tags per resource</p> </li> 
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li> 
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li> 
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> 
+    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Restrictions:</p>
+    /// <ul>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
-    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p> 
-    /// <p>Format: <code>"key" : "value"</code> </p> 
-    /// <p>Restrictions:</p> 
-    /// <ul> 
-    /// <li> <p>Maximum 50 tags per resource</p> </li> 
-    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li> 
-    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li> 
-    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li> 
+    /// <p>Applies one or more tags to the map resource. A tag is a key-value pair that helps manage, identify, search, and filter your resources by labelling them.</p>
+    /// <p>Format: <code>"key" : "value"</code> </p>
+    /// <p>Restrictions:</p>
+    /// <ul>
+    /// <li> <p>Maximum 50 tags per resource</p> </li>
+    /// <li> <p>Each resource tag must be unique with a maximum of one value.</p> </li>
+    /// <li> <p>Maximum key length: 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length: 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @. </p> </li>
+    /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
-    pub fn build(self) -> Result<crate::operation::create_key::CreateKeyInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_key::CreateKeyInput {
-                key_name: self.key_name
-                ,
-                restrictions: self.restrictions
-                ,
-                description: self.description
-                ,
-                expire_time: self.expire_time
-                ,
-                no_expiry: self.no_expiry
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_key::CreateKeyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_key::CreateKeyInput {
+            key_name: self.key_name,
+            restrictions: self.restrictions,
+            description: self.description,
+            expire_time: self.expire_time,
+            no_expiry: self.no_expiry,
+            tags: self.tags,
+        })
     }
 }
-

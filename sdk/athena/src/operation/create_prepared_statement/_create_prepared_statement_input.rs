@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePreparedStatementInput  {
+pub struct CreatePreparedStatementInput {
     /// <p>The name of the prepared statement.</p>
     #[doc(hidden)]
     pub statement_name: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct CreatePreparedStatementInput  {
 }
 impl CreatePreparedStatementInput {
     /// <p>The name of the prepared statement.</p>
-    pub fn statement_name(&self) -> std::option::Option<& str> {
+    pub fn statement_name(&self) -> std::option::Option<&str> {
         self.statement_name.as_deref()
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
-    pub fn work_group(&self) -> std::option::Option<& str> {
+    pub fn work_group(&self) -> std::option::Option<&str> {
         self.work_group.as_deref()
     }
     /// <p>The query string for the prepared statement.</p>
-    pub fn query_statement(&self) -> std::option::Option<& str> {
+    pub fn query_statement(&self) -> std::option::Option<&str> {
         self.query_statement.as_deref()
     }
     /// <p>The description of the prepared statement.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
 impl CreatePreparedStatementInput {
     /// Creates a new builder-style object to manufacture [`CreatePreparedStatementInput`](crate::operation::create_prepared_statement::CreatePreparedStatementInput).
-    pub fn builder() -> crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder
+    {
         crate::operation::create_prepared_statement::builders::CreatePreparedStatementInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl CreatePreparedStatementInputBuilder {
     }
     /// <p>The name of the prepared statement.</p>
     pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.statement_name = input; self
+        self.statement_name = input;
+        self
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
     pub fn work_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl CreatePreparedStatementInputBuilder {
     }
     /// <p>The name of the workgroup to which the prepared statement belongs.</p>
     pub fn set_work_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.work_group = input; self
+        self.work_group = input;
+        self
     }
     /// <p>The query string for the prepared statement.</p>
     pub fn query_statement(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl CreatePreparedStatementInputBuilder {
     }
     /// <p>The query string for the prepared statement.</p>
     pub fn set_query_statement(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_statement = input; self
+        self.query_statement = input;
+        self
     }
     /// <p>The description of the prepared statement.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +90,23 @@ impl CreatePreparedStatementInputBuilder {
     }
     /// <p>The description of the prepared statement.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePreparedStatementInput`](crate::operation::create_prepared_statement::CreatePreparedStatementInput).
-    pub fn build(self) -> Result<crate::operation::create_prepared_statement::CreatePreparedStatementInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_prepared_statement::CreatePreparedStatementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_prepared_statement::CreatePreparedStatementInput {
-                statement_name: self.statement_name
-                ,
-                work_group: self.work_group
-                ,
-                query_statement: self.query_statement
-                ,
-                description: self.description
-                ,
-            }
+                statement_name: self.statement_name,
+                work_group: self.work_group,
+                query_statement: self.query_statement,
+                description: self.description,
+            },
         )
     }
 }
-

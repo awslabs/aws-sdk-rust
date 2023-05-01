@@ -4,77 +4,105 @@ pub use crate::operation::describe_data_sources::_describe_data_sources_output::
 pub use crate::operation::describe_data_sources::_describe_data_sources_input::DescribeDataSourcesInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeDataSources`.
-/// 
+///
 /// <p>Returns a list of <code>DataSource</code> that match the search criteria in the request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDataSourcesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_data_sources::builders::DescribeDataSourcesInputBuilder,
+    inner: crate::operation::describe_data_sources::builders::DescribeDataSourcesInputBuilder,
 }
-impl DescribeDataSourcesFluentBuilder  {
+impl DescribeDataSourcesFluentBuilder {
     /// Creates a new `DescribeDataSources`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_data_sources::DescribeDataSources, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_data_sources::DescribeDataSourcesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_data_sources::DescribeDataSourcesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_data_sources::DescribeDataSourcesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_data_sources::DescribeDataSources,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_sources::DescribeDataSourcesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_data_sources::DescribeDataSourcesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_sources::DescribeDataSourcesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator {
-                                crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::new(self.handle, self.inner)
-                            }
-    /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li> 
-    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li> 
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li> 
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator {
+        crate::operation::describe_data_sources::paginator::DescribeDataSourcesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
+    /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
     pub fn filter_variable(mut self, input: crate::types::DataSourceFilterVariable) -> Self {
         self.inner = self.inner.filter_variable(input);
         self
     }
-    /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li> 
-    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li> 
-    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li> 
-    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li> 
-    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li> 
+    /// <p>Use one of the following variables to filter a list of <code>DataSource</code>:</p>
+    /// <ul>
+    /// <li> <p> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</p> </li>
+    /// <li> <p> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</p> </li>
+    /// <li> <p> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.</p> </li>
+    /// <li> <p> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</p> </li>
+    /// <li> <p> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</p> </li>
     /// </ul>
-    pub fn set_filter_variable(mut self, input: std::option::Option<crate::types::DataSourceFilterVariable>) -> Self {
+    pub fn set_filter_variable(
+        mut self,
+        input: std::option::Option<crate::types::DataSourceFilterVariable>,
+    ) -> Self {
         self.inner = self.inner.set_filter_variable(input);
         self
     }
@@ -138,43 +166,43 @@ impl DescribeDataSourcesFluentBuilder  {
         self.inner = self.inner.set_ne(input);
         self
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
-    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
-    /// <ul> 
-    /// <li> <p>2014-09</p> </li> 
-    /// <li> <p>2014-09-09</p> </li> 
-    /// <li> <p>2014-09-09-Holiday</p> </li> 
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
+    /// <ul>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub fn prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.prefix(input.into());
         self
     }
-    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p> 
-    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p> 
-    /// <ul> 
-    /// <li> <p>2014-09</p> </li> 
-    /// <li> <p>2014-09-09</p> </li> 
-    /// <li> <p>2014-09-09-Holiday</p> </li> 
+    /// <p>A string that is found at the beginning of a variable, such as <code>Name</code> or <code>Id</code>.</p>
+    /// <p>For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>. To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code> and any of the following strings for the <code>Prefix</code>: </p>
+    /// <ul>
+    /// <li> <p>2014-09</p> </li>
+    /// <li> <p>2014-09-09</p> </li>
+    /// <li> <p>2014-09-09-Holiday</p> </li>
     /// </ul>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_prefix(input);
         self
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p> 
-    /// <ul> 
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
-    /// </ul> 
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p> 
-    /// <ul> 
-    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li> 
-    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li> 
-    /// </ul> 
+    /// <p>A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
+    /// <ul>
+    /// <li> <p> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</p> </li>
+    /// <li> <p> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</p> </li>
+    /// </ul>
     /// <p>Results are sorted by <code>FilterVariable</code>.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
@@ -201,4 +229,3 @@ impl DescribeDataSourcesFluentBuilder  {
         self
     }
 }
-

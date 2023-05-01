@@ -3,7 +3,7 @@
 /// <p>Saves the data binding information for a theme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThemeData  {
+pub struct UpdateThemeData {
     /// <p>The unique ID of the theme to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct UpdateThemeData  {
 }
 impl UpdateThemeData {
     /// <p>The unique ID of the theme to update.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the theme to update.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub fn values(&self) -> std::option::Option<& [crate::types::ThemeValues]> {
+    pub fn values(&self) -> std::option::Option<&[crate::types::ThemeValues]> {
         self.values.as_deref()
     }
     /// <p>Describes the properties that can be overriden to customize the theme.</p>
-    pub fn overrides(&self) -> std::option::Option<& [crate::types::ThemeValues]> {
+    pub fn overrides(&self) -> std::option::Option<&[crate::types::ThemeValues]> {
         self.overrides.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl UpdateThemeDataBuilder {
     }
     /// <p>The unique ID of the theme to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the theme to update.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl UpdateThemeDataBuilder {
     }
     /// <p>The name of the theme to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -77,13 +79,17 @@ impl UpdateThemeDataBuilder {
     /// <p>A list of key-value pairs that define the theme's properties.</p>
     pub fn values(mut self, input: crate::types::ThemeValues) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input);
-                        self.values = Some(v);
-                        self
+        v.push(input);
+        self.values = Some(v);
+        self
     }
     /// <p>A list of key-value pairs that define the theme's properties.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Appends an item to `overrides`.
     ///
@@ -92,26 +98,25 @@ impl UpdateThemeDataBuilder {
     /// <p>Describes the properties that can be overriden to customize the theme.</p>
     pub fn overrides(mut self, input: crate::types::ThemeValues) -> Self {
         let mut v = self.overrides.unwrap_or_default();
-                        v.push(input);
-                        self.overrides = Some(v);
-                        self
+        v.push(input);
+        self.overrides = Some(v);
+        self
     }
     /// <p>Describes the properties that can be overriden to customize the theme.</p>
-    pub fn set_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>) -> Self {
-        self.overrides = input; self
+    pub fn set_overrides(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ThemeValues>>,
+    ) -> Self {
+        self.overrides = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateThemeData`](crate::types::UpdateThemeData).
     pub fn build(self) -> crate::types::UpdateThemeData {
         crate::types::UpdateThemeData {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            values: self.values
-            ,
-            overrides: self.overrides
-            ,
+            id: self.id,
+            name: self.name,
+            values: self.values,
+            overrides: self.overrides,
         }
     }
 }
-

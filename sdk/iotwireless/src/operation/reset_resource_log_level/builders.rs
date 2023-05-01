@@ -4,57 +4,80 @@ pub use crate::operation::reset_resource_log_level::_reset_resource_log_level_ou
 pub use crate::operation::reset_resource_log_level::_reset_resource_log_level_input::ResetResourceLogLevelInputBuilder;
 
 /// Fluent builder constructing a request to `ResetResourceLogLevel`.
-/// 
+///
 /// <p>Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ResetResourceLogLevelFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelInputBuilder,
+    inner: crate::operation::reset_resource_log_level::builders::ResetResourceLogLevelInputBuilder,
 }
-impl ResetResourceLogLevelFluentBuilder  {
+impl ResetResourceLogLevelFluentBuilder {
     /// Creates a new `ResetResourceLogLevel`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::reset_resource_log_level::ResetResourceLogLevel, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::reset_resource_log_level::ResetResourceLogLevelError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput, aws_smithy_http::result::SdkError<crate::operation::reset_resource_log_level::ResetResourceLogLevelError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::reset_resource_log_level::ResetResourceLogLevel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
     pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_identifier(input.into());
         self
     }
     /// <p>The identifier of the resource. For a Wireless Device, it is the wireless device ID. For a wireless gateway, it is the wireless gateway ID.</p>
-    pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
@@ -69,4 +92,3 @@ impl ResetResourceLogLevelFluentBuilder  {
         self
     }
 }
-

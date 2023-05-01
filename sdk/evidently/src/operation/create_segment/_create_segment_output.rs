@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSegmentOutput  {
+pub struct CreateSegmentOutput {
     /// <p>A structure that contains the complete information about the segment that was just created.</p>
     #[doc(hidden)]
     pub segment: std::option::Option<crate::types::Segment>,
@@ -10,15 +10,15 @@ pub struct CreateSegmentOutput  {
 }
 impl CreateSegmentOutput {
     /// <p>A structure that contains the complete information about the segment that was just created.</p>
-    pub fn segment(&self) -> std::option::Option<& crate::types::Segment> {
+    pub fn segment(&self) -> std::option::Option<&crate::types::Segment> {
         self.segment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSegmentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateSegmentOutput {
     /// Creates a new builder-style object to manufacture [`CreateSegmentOutput`](crate::operation::create_segment::CreateSegmentOutput).
     pub fn builder() -> crate::operation::create_segment::builders::CreateSegmentOutputBuilder {
@@ -41,24 +41,23 @@ impl CreateSegmentOutputBuilder {
     }
     /// <p>A structure that contains the complete information about the segment that was just created.</p>
     pub fn set_segment(mut self, input: std::option::Option<crate::types::Segment>) -> Self {
-        self.segment = input; self
+        self.segment = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateSegmentOutput`](crate::operation::create_segment::CreateSegmentOutput).
     pub fn build(self) -> crate::operation::create_segment::CreateSegmentOutput {
         crate::operation::create_segment::CreateSegmentOutput {
-            segment: self.segment
-            ,
+            segment: self.segment,
             _request_id: self._request_id,
         }
     }
 }
-

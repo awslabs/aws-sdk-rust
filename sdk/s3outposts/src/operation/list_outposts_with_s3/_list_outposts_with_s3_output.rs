@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOutpostsWithS3Output  {
-    /// <p>Returns the list of Outposts that have the following characteristics:</p> 
-    /// <ul> 
-    /// <li> <p>outposts that have S3 provisioned</p> </li> 
-    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li> 
-    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li> 
+pub struct ListOutpostsWithS3Output {
+    /// <p>Returns the list of Outposts that have the following characteristics:</p>
+    /// <ul>
+    /// <li> <p>outposts that have S3 provisioned</p> </li>
+    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
+    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub outposts: std::option::Option<std::vec::Vec<crate::types::Outpost>>,
@@ -17,29 +17,31 @@ pub struct ListOutpostsWithS3Output  {
     _request_id: Option<String>,
 }
 impl ListOutpostsWithS3Output {
-    /// <p>Returns the list of Outposts that have the following characteristics:</p> 
-    /// <ul> 
-    /// <li> <p>outposts that have S3 provisioned</p> </li> 
-    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li> 
-    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li> 
+    /// <p>Returns the list of Outposts that have the following characteristics:</p>
+    /// <ul>
+    /// <li> <p>outposts that have S3 provisioned</p> </li>
+    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
+    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
     /// </ul>
-    pub fn outposts(&self) -> std::option::Option<& [crate::types::Outpost]> {
+    pub fn outposts(&self) -> std::option::Option<&[crate::types::Outpost]> {
         self.outposts.as_deref()
     }
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListOutpostsWithS3Output {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListOutpostsWithS3Output {
     /// Creates a new builder-style object to manufacture [`ListOutpostsWithS3Output`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output).
-    pub fn builder() -> crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3OutputBuilder {
-        crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3OutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3OutputBuilder {
+        crate::operation::list_outposts_with_s3::builders::ListOutpostsWithS3OutputBuilder::default(
+        )
     }
 }
 
@@ -56,26 +58,30 @@ impl ListOutpostsWithS3OutputBuilder {
     ///
     /// To override the contents of this collection use [`set_outposts`](Self::set_outposts).
     ///
-    /// <p>Returns the list of Outposts that have the following characteristics:</p> 
-    /// <ul> 
-    /// <li> <p>outposts that have S3 provisioned</p> </li> 
-    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li> 
-    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li> 
+    /// <p>Returns the list of Outposts that have the following characteristics:</p>
+    /// <ul>
+    /// <li> <p>outposts that have S3 provisioned</p> </li>
+    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
+    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
     /// </ul>
     pub fn outposts(mut self, input: crate::types::Outpost) -> Self {
         let mut v = self.outposts.unwrap_or_default();
-                        v.push(input);
-                        self.outposts = Some(v);
-                        self
+        v.push(input);
+        self.outposts = Some(v);
+        self
     }
-    /// <p>Returns the list of Outposts that have the following characteristics:</p> 
-    /// <ul> 
-    /// <li> <p>outposts that have S3 provisioned</p> </li> 
-    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li> 
-    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li> 
+    /// <p>Returns the list of Outposts that have the following characteristics:</p>
+    /// <ul>
+    /// <li> <p>outposts that have S3 provisioned</p> </li>
+    /// <li> <p>outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)</p> </li>
+    /// <li> <p>outposts to which the the calling Amazon Web Services account has access</p> </li>
     /// </ul>
-    pub fn set_outposts(mut self, input: std::option::Option<std::vec::Vec<crate::types::Outpost>>) -> Self {
-        self.outposts = input; self
+    pub fn set_outposts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Outpost>>,
+    ) -> Self {
+        self.outposts = input;
+        self
     }
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,26 +90,24 @@ impl ListOutpostsWithS3OutputBuilder {
     }
     /// <p>Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and receive additional results, if there are any.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListOutpostsWithS3Output`](crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output).
     pub fn build(self) -> crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output {
         crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output {
-            outposts: self.outposts
-            ,
-            next_token: self.next_token
-            ,
+            outposts: self.outposts,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

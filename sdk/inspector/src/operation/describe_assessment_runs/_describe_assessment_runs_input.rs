@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssessmentRunsInput  {
+pub struct DescribeAssessmentRunsInput {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
     #[doc(hidden)]
     pub assessment_run_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeAssessmentRunsInput {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn assessment_run_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn assessment_run_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.assessment_run_arns.as_deref()
     }
 }
 impl DescribeAssessmentRunsInput {
     /// Creates a new builder-style object to manufacture [`DescribeAssessmentRunsInput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput).
-    pub fn builder() -> crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsInputBuilder
+    {
         crate::operation::describe_assessment_runs::builders::DescribeAssessmentRunsInputBuilder::default()
     }
 }
@@ -34,22 +36,29 @@ impl DescribeAssessmentRunsInputBuilder {
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
     pub fn assessment_run_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.assessment_run_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.assessment_run_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.assessment_run_arns = Some(v);
+        self
     }
     /// <p>The ARN that specifies the assessment run that you want to describe.</p>
-    pub fn set_assessment_run_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.assessment_run_arns = input; self
+    pub fn set_assessment_run_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.assessment_run_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAssessmentRunsInput`](crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput).
-    pub fn build(self) -> Result<crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_assessment_runs::DescribeAssessmentRunsInput {
-                assessment_run_arns: self.assessment_run_arns
-                ,
-            }
+                assessment_run_arns: self.assessment_run_arns,
+            },
         )
     }
 }
-

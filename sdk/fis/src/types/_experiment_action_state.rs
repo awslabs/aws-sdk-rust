@@ -3,7 +3,7 @@
 /// <p>Describes the state of an action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentActionState  {
+pub struct ExperimentActionState {
     /// <p>The state of the action.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ExperimentActionStatus>,
@@ -13,11 +13,11 @@ pub struct ExperimentActionState  {
 }
 impl ExperimentActionState {
     /// <p>The state of the action.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ExperimentActionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ExperimentActionStatus> {
         self.status.as_ref()
     }
     /// <p>The reason for the state.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ExperimentActionStateBuilder {
         self
     }
     /// <p>The state of the action.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ExperimentActionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ExperimentActionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The reason for the state.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl ExperimentActionStateBuilder {
     }
     /// <p>The reason for the state.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExperimentActionState`](crate::types::ExperimentActionState).
     pub fn build(self) -> crate::types::ExperimentActionState {
         crate::types::ExperimentActionState {
-            status: self.status
-            ,
-            reason: self.reason
-            ,
+            status: self.status,
+            reason: self.reason,
         }
     }
 }
-

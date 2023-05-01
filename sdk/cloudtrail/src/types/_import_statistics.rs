@@ -3,7 +3,7 @@
 /// <p> Provides statistics for the specified <code>ImportID</code>. CloudTrail does not update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail updates statistics incrementally over the course of the import. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportStatistics  {
+pub struct ImportStatistics {
     /// <p> The number of S3 prefixes found for the import. </p>
     #[doc(hidden)]
     pub prefixes_found: std::option::Option<i64>,
@@ -67,7 +67,8 @@ impl ImportStatisticsBuilder {
     }
     /// <p> The number of S3 prefixes found for the import. </p>
     pub fn set_prefixes_found(mut self, input: std::option::Option<i64>) -> Self {
-        self.prefixes_found = input; self
+        self.prefixes_found = input;
+        self
     }
     /// <p> The number of S3 prefixes that completed import. </p>
     pub fn prefixes_completed(mut self, input: i64) -> Self {
@@ -76,7 +77,8 @@ impl ImportStatisticsBuilder {
     }
     /// <p> The number of S3 prefixes that completed import. </p>
     pub fn set_prefixes_completed(mut self, input: std::option::Option<i64>) -> Self {
-        self.prefixes_completed = input; self
+        self.prefixes_completed = input;
+        self
     }
     /// <p>The number of log files that completed import.</p>
     pub fn files_completed(mut self, input: i64) -> Self {
@@ -85,7 +87,8 @@ impl ImportStatisticsBuilder {
     }
     /// <p>The number of log files that completed import.</p>
     pub fn set_files_completed(mut self, input: std::option::Option<i64>) -> Self {
-        self.files_completed = input; self
+        self.files_completed = input;
+        self
     }
     /// <p> The number of trail events imported into the event data store. </p>
     pub fn events_completed(mut self, input: i64) -> Self {
@@ -94,7 +97,8 @@ impl ImportStatisticsBuilder {
     }
     /// <p> The number of trail events imported into the event data store. </p>
     pub fn set_events_completed(mut self, input: std::option::Option<i64>) -> Self {
-        self.events_completed = input; self
+        self.events_completed = input;
+        self
     }
     /// <p> The number of failed entries. </p>
     pub fn failed_entries(mut self, input: i64) -> Self {
@@ -103,22 +107,17 @@ impl ImportStatisticsBuilder {
     }
     /// <p> The number of failed entries. </p>
     pub fn set_failed_entries(mut self, input: std::option::Option<i64>) -> Self {
-        self.failed_entries = input; self
+        self.failed_entries = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportStatistics`](crate::types::ImportStatistics).
     pub fn build(self) -> crate::types::ImportStatistics {
         crate::types::ImportStatistics {
-            prefixes_found: self.prefixes_found
-            ,
-            prefixes_completed: self.prefixes_completed
-            ,
-            files_completed: self.files_completed
-            ,
-            events_completed: self.events_completed
-            ,
-            failed_entries: self.failed_entries
-            ,
+            prefixes_found: self.prefixes_found,
+            prefixes_completed: self.prefixes_completed,
+            files_completed: self.files_completed,
+            events_completed: self.events_completed,
+            failed_entries: self.failed_entries,
         }
     }
 }
-

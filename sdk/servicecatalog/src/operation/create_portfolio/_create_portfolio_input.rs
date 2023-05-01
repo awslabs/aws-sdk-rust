@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePortfolioInput  {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+pub struct CreatePortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -27,32 +27,32 @@ pub struct CreatePortfolioInput  {
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreatePortfolioInput {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<& str> {
+    pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
     /// <p>The name to use for display purposes.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The description of the portfolio.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the portfolio provider.</p>
-    pub fn provider_name(&self) -> std::option::Option<& str> {
+    pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
     /// <p>One or more tags.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<& str> {
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
 }
@@ -75,22 +75,23 @@ pub struct CreatePortfolioInputBuilder {
     pub(crate) idempotency_token: std::option::Option<std::string::String>,
 }
 impl CreatePortfolioInputBuilder {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input; self
+        self.accept_language = input;
+        self
     }
     /// <p>The name to use for display purposes.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +100,8 @@ impl CreatePortfolioInputBuilder {
     }
     /// <p>The name to use for display purposes.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The description of the portfolio.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +110,8 @@ impl CreatePortfolioInputBuilder {
     }
     /// <p>The description of the portfolio.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The name of the portfolio provider.</p>
     pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +120,8 @@ impl CreatePortfolioInputBuilder {
     }
     /// <p>The name of the portfolio provider.</p>
     pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider_name = input; self
+        self.provider_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -126,13 +130,17 @@ impl CreatePortfolioInputBuilder {
     /// <p>One or more tags.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>One or more tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
     pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,27 +148,27 @@ impl CreatePortfolioInputBuilder {
         self
     }
     /// <p>A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.</p>
-    pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.idempotency_token = input; self
+    pub fn set_idempotency_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.idempotency_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePortfolioInput`](crate::operation::create_portfolio::CreatePortfolioInput).
-    pub fn build(self) -> Result<crate::operation::create_portfolio::CreatePortfolioInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_portfolio::CreatePortfolioInput {
-                accept_language: self.accept_language
-                ,
-                display_name: self.display_name
-                ,
-                description: self.description
-                ,
-                provider_name: self.provider_name
-                ,
-                tags: self.tags
-                ,
-                idempotency_token: self.idempotency_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_portfolio::CreatePortfolioInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_portfolio::CreatePortfolioInput {
+            accept_language: self.accept_language,
+            display_name: self.display_name,
+            description: self.description,
+            provider_name: self.provider_name,
+            tags: self.tags,
+            idempotency_token: self.idempotency_token,
+        })
     }
 }
-

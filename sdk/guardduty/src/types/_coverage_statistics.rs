@@ -3,21 +3,27 @@
 /// <p>Information about the coverage statistics for a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoverageStatistics  {
+pub struct CoverageStatistics {
     /// <p>Represents coverage statistics for EKS clusters aggregated by resource type.</p>
     #[doc(hidden)]
-    pub count_by_resource_type: std::option::Option<std::collections::HashMap<crate::types::ResourceType, i64>>,
+    pub count_by_resource_type:
+        std::option::Option<std::collections::HashMap<crate::types::ResourceType, i64>>,
     /// <p>Represents coverage statistics for EKS clusters aggregated by coverage status.</p>
     #[doc(hidden)]
-    pub count_by_coverage_status: std::option::Option<std::collections::HashMap<crate::types::CoverageStatus, i64>>,
+    pub count_by_coverage_status:
+        std::option::Option<std::collections::HashMap<crate::types::CoverageStatus, i64>>,
 }
 impl CoverageStatistics {
     /// <p>Represents coverage statistics for EKS clusters aggregated by resource type.</p>
-    pub fn count_by_resource_type(&self) -> std::option::Option<& std::collections::HashMap<crate::types::ResourceType, i64>> {
+    pub fn count_by_resource_type(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::types::ResourceType, i64>> {
         self.count_by_resource_type.as_ref()
     }
     /// <p>Represents coverage statistics for EKS clusters aggregated by coverage status.</p>
-    pub fn count_by_coverage_status(&self) -> std::option::Option<& std::collections::HashMap<crate::types::CoverageStatus, i64>> {
+    pub fn count_by_coverage_status(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<crate::types::CoverageStatus, i64>> {
         self.count_by_coverage_status.as_ref()
     }
 }
@@ -32,8 +38,10 @@ impl CoverageStatistics {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CoverageStatisticsBuilder {
-    pub(crate) count_by_resource_type: std::option::Option<std::collections::HashMap<crate::types::ResourceType, i64>>,
-    pub(crate) count_by_coverage_status: std::option::Option<std::collections::HashMap<crate::types::CoverageStatus, i64>>,
+    pub(crate) count_by_resource_type:
+        std::option::Option<std::collections::HashMap<crate::types::ResourceType, i64>>,
+    pub(crate) count_by_coverage_status:
+        std::option::Option<std::collections::HashMap<crate::types::CoverageStatus, i64>>,
 }
 impl CoverageStatisticsBuilder {
     /// Adds a key-value pair to `count_by_resource_type`.
@@ -43,13 +51,17 @@ impl CoverageStatisticsBuilder {
     /// <p>Represents coverage statistics for EKS clusters aggregated by resource type.</p>
     pub fn count_by_resource_type(mut self, k: crate::types::ResourceType, v: i64) -> Self {
         let mut hash_map = self.count_by_resource_type.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.count_by_resource_type = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.count_by_resource_type = Some(hash_map);
+        self
     }
     /// <p>Represents coverage statistics for EKS clusters aggregated by resource type.</p>
-    pub fn set_count_by_resource_type(mut self, input: std::option::Option<std::collections::HashMap<crate::types::ResourceType, i64>>) -> Self {
-        self.count_by_resource_type = input; self
+    pub fn set_count_by_resource_type(
+        mut self,
+        input: std::option::Option<std::collections::HashMap<crate::types::ResourceType, i64>>,
+    ) -> Self {
+        self.count_by_resource_type = input;
+        self
     }
     /// Adds a key-value pair to `count_by_coverage_status`.
     ///
@@ -58,22 +70,23 @@ impl CoverageStatisticsBuilder {
     /// <p>Represents coverage statistics for EKS clusters aggregated by coverage status.</p>
     pub fn count_by_coverage_status(mut self, k: crate::types::CoverageStatus, v: i64) -> Self {
         let mut hash_map = self.count_by_coverage_status.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.count_by_coverage_status = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.count_by_coverage_status = Some(hash_map);
+        self
     }
     /// <p>Represents coverage statistics for EKS clusters aggregated by coverage status.</p>
-    pub fn set_count_by_coverage_status(mut self, input: std::option::Option<std::collections::HashMap<crate::types::CoverageStatus, i64>>) -> Self {
-        self.count_by_coverage_status = input; self
+    pub fn set_count_by_coverage_status(
+        mut self,
+        input: std::option::Option<std::collections::HashMap<crate::types::CoverageStatus, i64>>,
+    ) -> Self {
+        self.count_by_coverage_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`CoverageStatistics`](crate::types::CoverageStatistics).
     pub fn build(self) -> crate::types::CoverageStatistics {
         crate::types::CoverageStatistics {
-            count_by_resource_type: self.count_by_resource_type
-            ,
-            count_by_coverage_status: self.count_by_coverage_status
-            ,
+            count_by_resource_type: self.count_by_resource_type,
+            count_by_coverage_status: self.count_by_coverage_status,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains information about settings for logging access for the stage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsApiGatewayAccessLogSettings  {
+pub struct AwsApiGatewayAccessLogSettings {
     /// <p>A single-line format of the access logs of data, as specified by selected <code>$context</code> variables. The format must include at least <code>$context.requestId</code>.</p>
     #[doc(hidden)]
     pub format: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsApiGatewayAccessLogSettings  {
 }
 impl AwsApiGatewayAccessLogSettings {
     /// <p>A single-line format of the access logs of data, as specified by selected <code>$context</code> variables. The format must include at least <code>$context.requestId</code>.</p>
-    pub fn format(&self) -> std::option::Option<& str> {
+    pub fn format(&self) -> std::option::Option<&str> {
         self.format.as_deref()
     }
     /// <p>The ARN of the CloudWatch Logs log group that receives the access logs.</p>
-    pub fn destination_arn(&self) -> std::option::Option<& str> {
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AwsApiGatewayAccessLogSettingsBuilder {
     }
     /// <p>A single-line format of the access logs of data, as specified by selected <code>$context</code> variables. The format must include at least <code>$context.requestId</code>.</p>
     pub fn set_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
     /// <p>The ARN of the CloudWatch Logs log group that receives the access logs.</p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl AwsApiGatewayAccessLogSettingsBuilder {
     }
     /// <p>The ARN of the CloudWatch Logs log group that receives the access logs.</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input; self
+        self.destination_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayAccessLogSettings`](crate::types::AwsApiGatewayAccessLogSettings).
     pub fn build(self) -> crate::types::AwsApiGatewayAccessLogSettings {
         crate::types::AwsApiGatewayAccessLogSettings {
-            format: self.format
-            ,
-            destination_arn: self.destination_arn
-            ,
+            format: self.format,
+            destination_arn: self.destination_arn,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAnalysisOutput  {
+pub struct UpdateAnalysisOutput {
     /// <p>The ARN of the analysis that you're updating.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,15 +22,15 @@ pub struct UpdateAnalysisOutput  {
 }
 impl UpdateAnalysisOutput {
     /// <p>The ARN of the analysis that you're updating.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the analysis.</p>
-    pub fn analysis_id(&self) -> std::option::Option<& str> {
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
     /// <p>The update status of the last update that was made to the analysis.</p>
-    pub fn update_status(&self) -> std::option::Option<& crate::types::ResourceStatus> {
+    pub fn update_status(&self) -> std::option::Option<&crate::types::ResourceStatus> {
         self.update_status.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -38,15 +38,15 @@ impl UpdateAnalysisOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAnalysisOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateAnalysisOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAnalysisOutput`](crate::operation::update_analysis::UpdateAnalysisOutput).
     pub fn builder() -> crate::operation::update_analysis::builders::UpdateAnalysisOutputBuilder {
@@ -73,7 +73,8 @@ impl UpdateAnalysisOutputBuilder {
     }
     /// <p>The ARN of the analysis that you're updating.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The ID of the analysis.</p>
     pub fn analysis_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +83,8 @@ impl UpdateAnalysisOutputBuilder {
     }
     /// <p>The ID of the analysis.</p>
     pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analysis_id = input; self
+        self.analysis_id = input;
+        self
     }
     /// <p>The update status of the last update that was made to the analysis.</p>
     pub fn update_status(mut self, input: crate::types::ResourceStatus) -> Self {
@@ -90,8 +92,12 @@ impl UpdateAnalysisOutputBuilder {
         self
     }
     /// <p>The update status of the last update that was made to the analysis.</p>
-    pub fn set_update_status(mut self, input: std::option::Option<crate::types::ResourceStatus>) -> Self {
-        self.update_status = input; self
+    pub fn set_update_status(
+        mut self,
+        input: std::option::Option<crate::types::ResourceStatus>,
+    ) -> Self {
+        self.update_status = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -100,7 +106,8 @@ impl UpdateAnalysisOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,33 +116,27 @@ impl UpdateAnalysisOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateAnalysisOutput`](crate::operation::update_analysis::UpdateAnalysisOutput).
     pub fn build(self) -> crate::operation::update_analysis::UpdateAnalysisOutput {
         crate::operation::update_analysis::UpdateAnalysisOutput {
-            arn: self.arn
-            ,
-            analysis_id: self.analysis_id
-            ,
-            update_status: self.update_status
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
+            arn: self.arn,
+            analysis_id: self.analysis_id,
+            update_status: self.update_status,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSchemaInput  {
+pub struct CreateSchemaInput {
     /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CreateSchemaInput {
     /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl CreateSchemaInputBuilder {
     }
     /// <p>The name that is associated with the schema. This is unique to each account and in each region.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSchemaInput`](crate::operation::create_schema::CreateSchemaInput).
-    pub fn build(self) -> Result<crate::operation::create_schema::CreateSchemaInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_schema::CreateSchemaInput {
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_schema::CreateSchemaInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_schema::CreateSchemaInput { name: self.name })
     }
 }
-

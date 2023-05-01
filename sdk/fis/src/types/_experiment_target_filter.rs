@@ -3,7 +3,7 @@
 /// <p>Describes a filter used for the target resources in an experiment.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentTargetFilter  {
+pub struct ExperimentTargetFilter {
     /// <p>The attribute path for the filter.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExperimentTargetFilter  {
 }
 impl ExperimentTargetFilter {
     /// <p>The attribute path for the filter.</p>
-    pub fn path(&self) -> std::option::Option<& str> {
+    pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>The attribute values for the filter.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ExperimentTargetFilterBuilder {
     }
     /// <p>The attribute path for the filter.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input; self
+        self.path = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -52,22 +53,23 @@ impl ExperimentTargetFilterBuilder {
     /// <p>The attribute values for the filter.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The attribute values for the filter.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExperimentTargetFilter`](crate::types::ExperimentTargetFilter).
     pub fn build(self) -> crate::types::ExperimentTargetFilter {
         crate::types::ExperimentTargetFilter {
-            path: self.path
-            ,
-            values: self.values
-            ,
+            path: self.path,
+            values: self.values,
         }
     }
 }
-

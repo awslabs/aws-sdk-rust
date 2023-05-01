@@ -4,50 +4,66 @@ pub use crate::operation::create_workgroup::_create_workgroup_output::CreateWork
 pub use crate::operation::create_workgroup::_create_workgroup_input::CreateWorkgroupInputBuilder;
 
 /// Fluent builder constructing a request to `CreateWorkgroup`.
-/// 
+///
 /// <p>Creates an workgroup in Amazon Redshift Serverless.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWorkgroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_workgroup::builders::CreateWorkgroupInputBuilder,
+    inner: crate::operation::create_workgroup::builders::CreateWorkgroupInputBuilder,
 }
-impl CreateWorkgroupFluentBuilder  {
+impl CreateWorkgroupFluentBuilder {
     /// Creates a new `CreateWorkgroup`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_workgroup::CreateWorkgroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_workgroup::CreateWorkgroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_workgroup::CreateWorkgroupOutput, aws_smithy_http::result::SdkError<crate::operation::create_workgroup::CreateWorkgroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_workgroup::CreateWorkgroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_workgroup::CreateWorkgroupError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_workgroup::CreateWorkgroupOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_workgroup::CreateWorkgroupError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the created workgroup.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workgroup_name(input.into());
@@ -98,7 +114,10 @@ impl CreateWorkgroupFluentBuilder  {
         self
     }
     /// <p>An array of parameters to set for advanced control over a database. The options are <code>auto_mv</code>, <code>datestyle</code>, <code>enable_case_sensitivity_identifier</code>, <code>enable_user_activity_logging</code>, <code>query_group</code>, <code>search_path</code>, and query monitoring metrics that let you define performance boundaries. For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless"> Query monitoring metrics for Amazon Redshift Serverless</a>.</p>
-    pub fn set_config_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::ConfigParameter>>) -> Self {
+    pub fn set_config_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ConfigParameter>>,
+    ) -> Self {
         self.inner = self.inner.set_config_parameters(input);
         self
     }
@@ -112,7 +131,10 @@ impl CreateWorkgroupFluentBuilder  {
         self
     }
     /// <p>An array of security group IDs to associate with the workgroup.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
@@ -126,7 +148,10 @@ impl CreateWorkgroupFluentBuilder  {
         self
     }
     /// <p>An array of VPC subnet IDs to associate with the workgroup.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -150,7 +175,10 @@ impl CreateWorkgroupFluentBuilder  {
         self
     }
     /// <p>A array of tag instances.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -165,4 +193,3 @@ impl CreateWorkgroupFluentBuilder  {
         self
     }
 }
-

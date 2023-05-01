@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRoomSkillParameterInput  {
+pub struct PutRoomSkillParameterInput {
     /// <p>The ARN of the room associated with the room skill parameter. Required.</p>
     #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct PutRoomSkillParameterInput  {
 }
 impl PutRoomSkillParameterInput {
     /// <p>The ARN of the room associated with the room skill parameter. Required.</p>
-    pub fn room_arn(&self) -> std::option::Option<& str> {
+    pub fn room_arn(&self) -> std::option::Option<&str> {
         self.room_arn.as_deref()
     }
     /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
-    pub fn skill_id(&self) -> std::option::Option<& str> {
+    pub fn skill_id(&self) -> std::option::Option<&str> {
         self.skill_id.as_deref()
     }
     /// <p>The updated room skill parameter. Required.</p>
-    pub fn room_skill_parameter(&self) -> std::option::Option<& crate::types::RoomSkillParameter> {
+    pub fn room_skill_parameter(&self) -> std::option::Option<&crate::types::RoomSkillParameter> {
         self.room_skill_parameter.as_ref()
     }
 }
 impl PutRoomSkillParameterInput {
     /// Creates a new builder-style object to manufacture [`PutRoomSkillParameterInput`](crate::operation::put_room_skill_parameter::PutRoomSkillParameterInput).
-    pub fn builder() -> crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterInputBuilder
+    {
         crate::operation::put_room_skill_parameter::builders::PutRoomSkillParameterInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl PutRoomSkillParameterInputBuilder {
     }
     /// <p>The ARN of the room associated with the room skill parameter. Required.</p>
     pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_arn = input; self
+        self.room_arn = input;
+        self
     }
     /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
     pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl PutRoomSkillParameterInputBuilder {
     }
     /// <p>The ARN of the skill associated with the room skill parameter. Required.</p>
     pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.skill_id = input; self
+        self.skill_id = input;
+        self
     }
     /// <p>The updated room skill parameter. Required.</p>
     pub fn room_skill_parameter(mut self, input: crate::types::RoomSkillParameter) -> Self {
@@ -67,21 +71,26 @@ impl PutRoomSkillParameterInputBuilder {
         self
     }
     /// <p>The updated room skill parameter. Required.</p>
-    pub fn set_room_skill_parameter(mut self, input: std::option::Option<crate::types::RoomSkillParameter>) -> Self {
-        self.room_skill_parameter = input; self
+    pub fn set_room_skill_parameter(
+        mut self,
+        input: std::option::Option<crate::types::RoomSkillParameter>,
+    ) -> Self {
+        self.room_skill_parameter = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutRoomSkillParameterInput`](crate::operation::put_room_skill_parameter::PutRoomSkillParameterInput).
-    pub fn build(self) -> Result<crate::operation::put_room_skill_parameter::PutRoomSkillParameterInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_room_skill_parameter::PutRoomSkillParameterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_room_skill_parameter::PutRoomSkillParameterInput {
-                room_arn: self.room_arn
-                ,
-                skill_id: self.skill_id
-                ,
-                room_skill_parameter: self.room_skill_parameter
-                ,
-            }
+                room_arn: self.room_arn,
+                skill_id: self.skill_id,
+                room_skill_parameter: self.room_skill_parameter,
+            },
         )
     }
 }
-

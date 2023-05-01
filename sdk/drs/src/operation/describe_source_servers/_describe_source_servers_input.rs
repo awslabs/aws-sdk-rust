@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSourceServersInput  {
+pub struct DescribeSourceServersInput {
     /// <p>A set of filters by which to return Source Servers.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::types::DescribeSourceServersRequestFilters>,
@@ -15,7 +15,9 @@ pub struct DescribeSourceServersInput  {
 }
 impl DescribeSourceServersInput {
     /// <p>A set of filters by which to return Source Servers.</p>
-    pub fn filters(&self) -> std::option::Option<& crate::types::DescribeSourceServersRequestFilters> {
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&crate::types::DescribeSourceServersRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum number of Source Servers to retrieve.</p>
@@ -23,13 +25,15 @@ impl DescribeSourceServersInput {
         self.max_results
     }
     /// <p>The token of the next Source Server to retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeSourceServersInput {
     /// Creates a new builder-style object to manufacture [`DescribeSourceServersInput`](crate::operation::describe_source_servers::DescribeSourceServersInput).
-    pub fn builder() -> crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder
+    {
         crate::operation::describe_source_servers::builders::DescribeSourceServersInputBuilder::default()
     }
 }
@@ -49,8 +53,12 @@ impl DescribeSourceServersInputBuilder {
         self
     }
     /// <p>A set of filters by which to return Source Servers.</p>
-    pub fn set_filters(mut self, input: std::option::Option<crate::types::DescribeSourceServersRequestFilters>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<crate::types::DescribeSourceServersRequestFilters>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>Maximum number of Source Servers to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +67,8 @@ impl DescribeSourceServersInputBuilder {
     }
     /// <p>Maximum number of Source Servers to retrieve.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token of the next Source Server to retrieve.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,21 +77,22 @@ impl DescribeSourceServersInputBuilder {
     }
     /// <p>The token of the next Source Server to retrieve.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSourceServersInput`](crate::operation::describe_source_servers::DescribeSourceServersInput).
-    pub fn build(self) -> Result<crate::operation::describe_source_servers::DescribeSourceServersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_source_servers::DescribeSourceServersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_source_servers::DescribeSourceServersInput {
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                filters: self.filters,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

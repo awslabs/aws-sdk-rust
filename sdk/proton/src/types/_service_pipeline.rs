@@ -3,7 +3,7 @@
 /// <p>Detailed data of an Proton service instance pipeline resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ServicePipeline  {
+pub struct ServicePipeline {
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -37,58 +37,67 @@ pub struct ServicePipeline  {
 }
 impl ServicePipeline {
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The time when the service pipeline was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The time when a deployment of the service pipeline was last attempted.</p>
-    pub fn last_deployment_attempted_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_deployment_attempted_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_attempted_at.as_ref()
     }
     /// <p>The time when the service pipeline was last deployed successfully.</p>
-    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_deployment_succeeded_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_deployment_succeeded_at.as_ref()
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    pub fn template_major_version(&self) -> std::option::Option<& str> {
+    pub fn template_major_version(&self) -> std::option::Option<&str> {
         self.template_major_version.as_deref()
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    pub fn template_minor_version(&self) -> std::option::Option<& str> {
+    pub fn template_minor_version(&self) -> std::option::Option<&str> {
         self.template_minor_version.as_deref()
     }
     /// <p>The deployment status of the service pipeline.</p>
-    pub fn deployment_status(&self) -> std::option::Option<& crate::types::DeploymentStatus> {
+    pub fn deployment_status(&self) -> std::option::Option<&crate::types::DeploymentStatus> {
         self.deployment_status.as_ref()
     }
     /// <p>A service pipeline deployment status message.</p>
-    pub fn deployment_status_message(&self) -> std::option::Option<& str> {
+    pub fn deployment_status_message(&self) -> std::option::Option<&str> {
         self.deployment_status_message.as_deref()
     }
     /// <p>The service spec that was used to create the service pipeline.</p>
-    pub fn spec(&self) -> std::option::Option<& str> {
+    pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
 }
-impl  std::fmt::Debug for ServicePipeline  {
+impl std::fmt::Debug for ServicePipeline {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ServicePipeline");
         formatter.field("arn", &self.arn);
         formatter.field("created_at", &self.created_at);
-        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
-        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
+        formatter.field(
+            "last_deployment_attempted_at",
+            &self.last_deployment_attempted_at,
+        );
+        formatter.field(
+            "last_deployment_succeeded_at",
+            &self.last_deployment_succeeded_at,
+        );
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "deployment_status_message",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
@@ -123,7 +132,8 @@ impl ServicePipelineBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service pipeline.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The time when the service pipeline was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -131,8 +141,12 @@ impl ServicePipelineBuilder {
         self
     }
     /// <p>The time when the service pipeline was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The time when a deployment of the service pipeline was last attempted.</p>
     pub fn last_deployment_attempted_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -140,8 +154,12 @@ impl ServicePipelineBuilder {
         self
     }
     /// <p>The time when a deployment of the service pipeline was last attempted.</p>
-    pub fn set_last_deployment_attempted_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_deployment_attempted_at = input; self
+    pub fn set_last_deployment_attempted_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_deployment_attempted_at = input;
+        self
     }
     /// <p>The time when the service pipeline was last deployed successfully.</p>
     pub fn last_deployment_succeeded_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -149,8 +167,12 @@ impl ServicePipelineBuilder {
         self
     }
     /// <p>The time when the service pipeline was last deployed successfully.</p>
-    pub fn set_last_deployment_succeeded_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_deployment_succeeded_at = input; self
+    pub fn set_last_deployment_succeeded_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_deployment_succeeded_at = input;
+        self
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +181,8 @@ impl ServicePipelineBuilder {
     }
     /// <p>The name of the service template that was used to create the service pipeline.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
     pub fn template_major_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +190,12 @@ impl ServicePipelineBuilder {
         self
     }
     /// <p>The major version of the service template that was used to create the service pipeline.</p>
-    pub fn set_template_major_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_major_version = input; self
+    pub fn set_template_major_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.template_major_version = input;
+        self
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
     pub fn template_minor_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,8 +203,12 @@ impl ServicePipelineBuilder {
         self
     }
     /// <p>The minor version of the service template that was used to create the service pipeline.</p>
-    pub fn set_template_minor_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_minor_version = input; self
+    pub fn set_template_minor_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.template_minor_version = input;
+        self
     }
     /// <p>The deployment status of the service pipeline.</p>
     pub fn deployment_status(mut self, input: crate::types::DeploymentStatus) -> Self {
@@ -185,8 +216,12 @@ impl ServicePipelineBuilder {
         self
     }
     /// <p>The deployment status of the service pipeline.</p>
-    pub fn set_deployment_status(mut self, input: std::option::Option<crate::types::DeploymentStatus>) -> Self {
-        self.deployment_status = input; self
+    pub fn set_deployment_status(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentStatus>,
+    ) -> Self {
+        self.deployment_status = input;
+        self
     }
     /// <p>A service pipeline deployment status message.</p>
     pub fn deployment_status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -194,8 +229,12 @@ impl ServicePipelineBuilder {
         self
     }
     /// <p>A service pipeline deployment status message.</p>
-    pub fn set_deployment_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_status_message = input; self
+    pub fn set_deployment_status_message(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.deployment_status_message = input;
+        self
     }
     /// <p>The service spec that was used to create the service pipeline.</p>
     pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,31 +243,22 @@ impl ServicePipelineBuilder {
     }
     /// <p>The service spec that was used to create the service pipeline.</p>
     pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.spec = input; self
+        self.spec = input;
+        self
     }
     /// Consumes the builder and constructs a [`ServicePipeline`](crate::types::ServicePipeline).
     pub fn build(self) -> crate::types::ServicePipeline {
         crate::types::ServicePipeline {
-            arn: self.arn
-            ,
-            created_at: self.created_at
-            ,
-            last_deployment_attempted_at: self.last_deployment_attempted_at
-            ,
-            last_deployment_succeeded_at: self.last_deployment_succeeded_at
-            ,
-            template_name: self.template_name
-            ,
-            template_major_version: self.template_major_version
-            ,
-            template_minor_version: self.template_minor_version
-            ,
-            deployment_status: self.deployment_status
-            ,
-            deployment_status_message: self.deployment_status_message
-            ,
-            spec: self.spec
-            ,
+            arn: self.arn,
+            created_at: self.created_at,
+            last_deployment_attempted_at: self.last_deployment_attempted_at,
+            last_deployment_succeeded_at: self.last_deployment_succeeded_at,
+            template_name: self.template_name,
+            template_major_version: self.template_major_version,
+            template_minor_version: self.template_minor_version,
+            deployment_status: self.deployment_status,
+            deployment_status_message: self.deployment_status_message,
+            spec: self.spec,
         }
     }
 }
@@ -237,15 +267,23 @@ impl std::fmt::Debug for ServicePipelineBuilder {
         let mut formatter = f.debug_struct("ServicePipelineBuilder");
         formatter.field("arn", &self.arn);
         formatter.field("created_at", &self.created_at);
-        formatter.field("last_deployment_attempted_at", &self.last_deployment_attempted_at);
-        formatter.field("last_deployment_succeeded_at", &self.last_deployment_succeeded_at);
+        formatter.field(
+            "last_deployment_attempted_at",
+            &self.last_deployment_attempted_at,
+        );
+        formatter.field(
+            "last_deployment_succeeded_at",
+            &self.last_deployment_succeeded_at,
+        );
         formatter.field("template_name", &self.template_name);
         formatter.field("template_major_version", &self.template_major_version);
         formatter.field("template_minor_version", &self.template_minor_version);
         formatter.field("deployment_status", &self.deployment_status);
-        formatter.field("deployment_status_message", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "deployment_status_message",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("spec", &"*** Sensitive Data Redacted ***");
         formatter.finish()
     }
 }
-

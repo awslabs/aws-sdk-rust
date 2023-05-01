@@ -3,7 +3,7 @@
 /// <p>The options that determine the presentation of the data labels.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataLabelOptions  {
+pub struct DataLabelOptions {
     /// <p>Determines the visibility of the data labels.</p>
     #[doc(hidden)]
     pub visibility: std::option::Option<crate::types::Visibility>,
@@ -34,39 +34,41 @@ pub struct DataLabelOptions  {
 }
 impl DataLabelOptions {
     /// <p>Determines the visibility of the data labels.</p>
-    pub fn visibility(&self) -> std::option::Option<& crate::types::Visibility> {
+    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>Determines the visibility of the category field labels.</p>
-    pub fn category_label_visibility(&self) -> std::option::Option<& crate::types::Visibility> {
+    pub fn category_label_visibility(&self) -> std::option::Option<&crate::types::Visibility> {
         self.category_label_visibility.as_ref()
     }
     /// <p>Determines the visibility of the measure field labels.</p>
-    pub fn measure_label_visibility(&self) -> std::option::Option<& crate::types::Visibility> {
+    pub fn measure_label_visibility(&self) -> std::option::Option<&crate::types::Visibility> {
         self.measure_label_visibility.as_ref()
     }
     /// <p>The option that determines the data label type.</p>
-    pub fn data_label_types(&self) -> std::option::Option<& [crate::types::DataLabelType]> {
+    pub fn data_label_types(&self) -> std::option::Option<&[crate::types::DataLabelType]> {
         self.data_label_types.as_deref()
     }
     /// <p>Determines the position of the data labels.</p>
-    pub fn position(&self) -> std::option::Option<& crate::types::DataLabelPosition> {
+    pub fn position(&self) -> std::option::Option<&crate::types::DataLabelPosition> {
         self.position.as_ref()
     }
     /// <p>Determines the content of the data labels.</p>
-    pub fn label_content(&self) -> std::option::Option<& crate::types::DataLabelContent> {
+    pub fn label_content(&self) -> std::option::Option<&crate::types::DataLabelContent> {
         self.label_content.as_ref()
     }
     /// <p>Determines the font configuration of the data labels.</p>
-    pub fn label_font_configuration(&self) -> std::option::Option<& crate::types::FontConfiguration> {
+    pub fn label_font_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::FontConfiguration> {
         self.label_font_configuration.as_ref()
     }
     /// <p>Determines the color of the data labels.</p>
-    pub fn label_color(&self) -> std::option::Option<& str> {
+    pub fn label_color(&self) -> std::option::Option<&str> {
         self.label_color.as_deref()
     }
     /// <p>Determines whether overlap is enabled or disabled for the data labels.</p>
-    pub fn overlap(&self) -> std::option::Option<& crate::types::DataLabelOverlap> {
+    pub fn overlap(&self) -> std::option::Option<&crate::types::DataLabelOverlap> {
         self.overlap.as_ref()
     }
 }
@@ -99,7 +101,8 @@ impl DataLabelOptionsBuilder {
     }
     /// <p>Determines the visibility of the data labels.</p>
     pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input; self
+        self.visibility = input;
+        self
     }
     /// <p>Determines the visibility of the category field labels.</p>
     pub fn category_label_visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -107,8 +110,12 @@ impl DataLabelOptionsBuilder {
         self
     }
     /// <p>Determines the visibility of the category field labels.</p>
-    pub fn set_category_label_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
-        self.category_label_visibility = input; self
+    pub fn set_category_label_visibility(
+        mut self,
+        input: std::option::Option<crate::types::Visibility>,
+    ) -> Self {
+        self.category_label_visibility = input;
+        self
     }
     /// <p>Determines the visibility of the measure field labels.</p>
     pub fn measure_label_visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -116,8 +123,12 @@ impl DataLabelOptionsBuilder {
         self
     }
     /// <p>Determines the visibility of the measure field labels.</p>
-    pub fn set_measure_label_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
-        self.measure_label_visibility = input; self
+    pub fn set_measure_label_visibility(
+        mut self,
+        input: std::option::Option<crate::types::Visibility>,
+    ) -> Self {
+        self.measure_label_visibility = input;
+        self
     }
     /// Appends an item to `data_label_types`.
     ///
@@ -126,13 +137,17 @@ impl DataLabelOptionsBuilder {
     /// <p>The option that determines the data label type.</p>
     pub fn data_label_types(mut self, input: crate::types::DataLabelType) -> Self {
         let mut v = self.data_label_types.unwrap_or_default();
-                        v.push(input);
-                        self.data_label_types = Some(v);
-                        self
+        v.push(input);
+        self.data_label_types = Some(v);
+        self
     }
     /// <p>The option that determines the data label type.</p>
-    pub fn set_data_label_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataLabelType>>) -> Self {
-        self.data_label_types = input; self
+    pub fn set_data_label_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DataLabelType>>,
+    ) -> Self {
+        self.data_label_types = input;
+        self
     }
     /// <p>Determines the position of the data labels.</p>
     pub fn position(mut self, input: crate::types::DataLabelPosition) -> Self {
@@ -140,8 +155,12 @@ impl DataLabelOptionsBuilder {
         self
     }
     /// <p>Determines the position of the data labels.</p>
-    pub fn set_position(mut self, input: std::option::Option<crate::types::DataLabelPosition>) -> Self {
-        self.position = input; self
+    pub fn set_position(
+        mut self,
+        input: std::option::Option<crate::types::DataLabelPosition>,
+    ) -> Self {
+        self.position = input;
+        self
     }
     /// <p>Determines the content of the data labels.</p>
     pub fn label_content(mut self, input: crate::types::DataLabelContent) -> Self {
@@ -149,8 +168,12 @@ impl DataLabelOptionsBuilder {
         self
     }
     /// <p>Determines the content of the data labels.</p>
-    pub fn set_label_content(mut self, input: std::option::Option<crate::types::DataLabelContent>) -> Self {
-        self.label_content = input; self
+    pub fn set_label_content(
+        mut self,
+        input: std::option::Option<crate::types::DataLabelContent>,
+    ) -> Self {
+        self.label_content = input;
+        self
     }
     /// <p>Determines the font configuration of the data labels.</p>
     pub fn label_font_configuration(mut self, input: crate::types::FontConfiguration) -> Self {
@@ -158,8 +181,12 @@ impl DataLabelOptionsBuilder {
         self
     }
     /// <p>Determines the font configuration of the data labels.</p>
-    pub fn set_label_font_configuration(mut self, input: std::option::Option<crate::types::FontConfiguration>) -> Self {
-        self.label_font_configuration = input; self
+    pub fn set_label_font_configuration(
+        mut self,
+        input: std::option::Option<crate::types::FontConfiguration>,
+    ) -> Self {
+        self.label_font_configuration = input;
+        self
     }
     /// <p>Determines the color of the data labels.</p>
     pub fn label_color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +195,8 @@ impl DataLabelOptionsBuilder {
     }
     /// <p>Determines the color of the data labels.</p>
     pub fn set_label_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_color = input; self
+        self.label_color = input;
+        self
     }
     /// <p>Determines whether overlap is enabled or disabled for the data labels.</p>
     pub fn overlap(mut self, input: crate::types::DataLabelOverlap) -> Self {
@@ -176,31 +204,25 @@ impl DataLabelOptionsBuilder {
         self
     }
     /// <p>Determines whether overlap is enabled or disabled for the data labels.</p>
-    pub fn set_overlap(mut self, input: std::option::Option<crate::types::DataLabelOverlap>) -> Self {
-        self.overlap = input; self
+    pub fn set_overlap(
+        mut self,
+        input: std::option::Option<crate::types::DataLabelOverlap>,
+    ) -> Self {
+        self.overlap = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataLabelOptions`](crate::types::DataLabelOptions).
     pub fn build(self) -> crate::types::DataLabelOptions {
         crate::types::DataLabelOptions {
-            visibility: self.visibility
-            ,
-            category_label_visibility: self.category_label_visibility
-            ,
-            measure_label_visibility: self.measure_label_visibility
-            ,
-            data_label_types: self.data_label_types
-            ,
-            position: self.position
-            ,
-            label_content: self.label_content
-            ,
-            label_font_configuration: self.label_font_configuration
-            ,
-            label_color: self.label_color
-            ,
-            overlap: self.overlap
-            ,
+            visibility: self.visibility,
+            category_label_visibility: self.category_label_visibility,
+            measure_label_visibility: self.measure_label_visibility,
+            data_label_types: self.data_label_types,
+            position: self.position,
+            label_content: self.label_content,
+            label_font_configuration: self.label_font_configuration,
+            label_color: self.label_color,
+            overlap: self.overlap,
         }
     }
 }
-

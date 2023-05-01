@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetServiceOutput  {
+pub struct GetServiceOutput {
     /// <p>The ID of the service.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -43,59 +43,59 @@ pub struct GetServiceOutput  {
 }
 impl GetServiceOutput {
     /// <p>The ID of the service.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The date and time that the service was created, specified in ISO-8601 format.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The date and time that the service was last updated, specified in ISO-8601 format.</p>
-    pub fn last_updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_at.as_ref()
     }
     /// <p>The DNS name of the service.</p>
-    pub fn dns_entry(&self) -> std::option::Option<& crate::types::DnsEntry> {
+    pub fn dns_entry(&self) -> std::option::Option<&crate::types::DnsEntry> {
         self.dns_entry.as_ref()
     }
     /// <p>The custom domain name of the service.</p>
-    pub fn custom_domain_name(&self) -> std::option::Option<& str> {
+    pub fn custom_domain_name(&self) -> std::option::Option<&str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The status of the service.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ServiceStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ServiceStatus> {
         self.status.as_ref()
     }
     /// <p>The type of IAM policy.</p>
-    pub fn auth_type(&self) -> std::option::Option<& crate::types::AuthType> {
+    pub fn auth_type(&self) -> std::option::Option<&crate::types::AuthType> {
         self.auth_type.as_ref()
     }
     /// <p>The failure code.</p>
-    pub fn failure_code(&self) -> std::option::Option<& str> {
+    pub fn failure_code(&self) -> std::option::Option<&str> {
         self.failure_code.as_deref()
     }
     /// <p>The failure message.</p>
-    pub fn failure_message(&self) -> std::option::Option<& str> {
+    pub fn failure_message(&self) -> std::option::Option<&str> {
         self.failure_message.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetServiceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetServiceOutput {
     /// Creates a new builder-style object to manufacture [`GetServiceOutput`](crate::operation::get_service::GetServiceOutput).
     pub fn builder() -> crate::operation::get_service::builders::GetServiceOutputBuilder {
@@ -129,7 +129,8 @@ impl GetServiceOutputBuilder {
     }
     /// <p>The ID of the service.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the service.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,7 +139,8 @@ impl GetServiceOutputBuilder {
     }
     /// <p>The name of the service.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,7 +149,8 @@ impl GetServiceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The date and time that the service was created, specified in ISO-8601 format.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -155,8 +158,12 @@ impl GetServiceOutputBuilder {
         self
     }
     /// <p>The date and time that the service was created, specified in ISO-8601 format.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The date and time that the service was last updated, specified in ISO-8601 format.</p>
     pub fn last_updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -164,8 +171,12 @@ impl GetServiceOutputBuilder {
         self
     }
     /// <p>The date and time that the service was last updated, specified in ISO-8601 format.</p>
-    pub fn set_last_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_at = input; self
+    pub fn set_last_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_at = input;
+        self
     }
     /// <p>The DNS name of the service.</p>
     pub fn dns_entry(mut self, input: crate::types::DnsEntry) -> Self {
@@ -174,7 +185,8 @@ impl GetServiceOutputBuilder {
     }
     /// <p>The DNS name of the service.</p>
     pub fn set_dns_entry(mut self, input: std::option::Option<crate::types::DnsEntry>) -> Self {
-        self.dns_entry = input; self
+        self.dns_entry = input;
+        self
     }
     /// <p>The custom domain name of the service.</p>
     pub fn custom_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -182,8 +194,12 @@ impl GetServiceOutputBuilder {
         self
     }
     /// <p>The custom domain name of the service.</p>
-    pub fn set_custom_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_domain_name = input; self
+    pub fn set_custom_domain_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.custom_domain_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -192,7 +208,8 @@ impl GetServiceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input; self
+        self.certificate_arn = input;
+        self
     }
     /// <p>The status of the service.</p>
     pub fn status(mut self, input: crate::types::ServiceStatus) -> Self {
@@ -201,7 +218,8 @@ impl GetServiceOutputBuilder {
     }
     /// <p>The status of the service.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ServiceStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The type of IAM policy.</p>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
@@ -210,7 +228,8 @@ impl GetServiceOutputBuilder {
     }
     /// <p>The type of IAM policy.</p>
     pub fn set_auth_type(mut self, input: std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input; self
+        self.auth_type = input;
+        self
     }
     /// <p>The failure code.</p>
     pub fn failure_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,7 +238,8 @@ impl GetServiceOutputBuilder {
     }
     /// <p>The failure code.</p>
     pub fn set_failure_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_code = input; self
+        self.failure_code = input;
+        self
     }
     /// <p>The failure message.</p>
     pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,46 +248,34 @@ impl GetServiceOutputBuilder {
     }
     /// <p>The failure message.</p>
     pub fn set_failure_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_message = input; self
+        self.failure_message = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetServiceOutput`](crate::operation::get_service::GetServiceOutput).
     pub fn build(self) -> crate::operation::get_service::GetServiceOutput {
         crate::operation::get_service::GetServiceOutput {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            created_at: self.created_at
-            ,
-            last_updated_at: self.last_updated_at
-            ,
-            dns_entry: self.dns_entry
-            ,
-            custom_domain_name: self.custom_domain_name
-            ,
-            certificate_arn: self.certificate_arn
-            ,
-            status: self.status
-            ,
-            auth_type: self.auth_type
-            ,
-            failure_code: self.failure_code
-            ,
-            failure_message: self.failure_message
-            ,
+            id: self.id,
+            name: self.name,
+            arn: self.arn,
+            created_at: self.created_at,
+            last_updated_at: self.last_updated_at,
+            dns_entry: self.dns_entry,
+            custom_domain_name: self.custom_domain_name,
+            certificate_arn: self.certificate_arn,
+            status: self.status,
+            auth_type: self.auth_type,
+            failure_code: self.failure_code,
+            failure_message: self.failure_message,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubmitMultiRegionAccessPointRoutesInput  {
+pub struct SubmitMultiRegionAccessPointRoutesInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -11,25 +11,28 @@ pub struct SubmitMultiRegionAccessPointRoutesInput  {
     pub mrap: std::option::Option<std::string::String>,
     /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
     #[doc(hidden)]
-    pub route_updates: std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,
+    pub route_updates:
+        std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,
 }
 impl SubmitMultiRegionAccessPointRoutesInput {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The Multi-Region Access Point ARN.</p>
-    pub fn mrap(&self) -> std::option::Option<& str> {
+    pub fn mrap(&self) -> std::option::Option<&str> {
         self.mrap.as_deref()
     }
     /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    pub fn route_updates(&self) -> std::option::Option<& [crate::types::MultiRegionAccessPointRoute]> {
+    pub fn route_updates(
+        &self,
+    ) -> std::option::Option<&[crate::types::MultiRegionAccessPointRoute]> {
         self.route_updates.as_deref()
     }
 }
 impl SubmitMultiRegionAccessPointRoutesInput {
     /// Creates a new builder-style object to manufacture [`SubmitMultiRegionAccessPointRoutesInput`](crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput).
-    pub fn builder() -> crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesInputBuilder {
+    pub fn builder() -> crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesInputBuilder{
         crate::operation::submit_multi_region_access_point_routes::builders::SubmitMultiRegionAccessPointRoutesInputBuilder::default()
     }
 }
@@ -40,7 +43,8 @@ impl SubmitMultiRegionAccessPointRoutesInput {
 pub struct SubmitMultiRegionAccessPointRoutesInputBuilder {
     pub(crate) account_id: std::option::Option<std::string::String>,
     pub(crate) mrap: std::option::Option<std::string::String>,
-    pub(crate) route_updates: std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,
+    pub(crate) route_updates:
+        std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,
 }
 impl SubmitMultiRegionAccessPointRoutesInputBuilder {
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
@@ -50,7 +54,8 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
     }
     /// <p>The Amazon Web Services account ID for the owner of the Multi-Region Access Point.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The Multi-Region Access Point ARN.</p>
     pub fn mrap(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +64,8 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
     }
     /// <p>The Multi-Region Access Point ARN.</p>
     pub fn set_mrap(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mrap = input; self
+        self.mrap = input;
+        self
     }
     /// Appends an item to `route_updates`.
     ///
@@ -68,16 +74,20 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
     /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
     pub fn route_updates(mut self, input: crate::types::MultiRegionAccessPointRoute) -> Self {
         let mut v = self.route_updates.unwrap_or_default();
-                        v.push(input);
-                        self.route_updates = Some(v);
-                        self
+        v.push(input);
+        self.route_updates = Some(v);
+        self
     }
     /// <p>The different routes that make up the new route configuration. Active routes return a value of <code>100</code>, and passive routes return a value of <code>0</code>.</p>
-    pub fn set_route_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>) -> Self {
-        self.route_updates = input; self
+    pub fn set_route_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MultiRegionAccessPointRoute>>,
+    ) -> Self {
+        self.route_updates = input;
+        self
     }
     /// Consumes the builder and constructs a [`SubmitMultiRegionAccessPointRoutesInput`](crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput).
-    pub fn build(self) -> Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesInput {
                 account_id: self.account_id
@@ -90,4 +100,3 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
         )
     }
 }
-

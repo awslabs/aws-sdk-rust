@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFailuresForLicenseConfigurationOperationsInput  {
+pub struct ListFailuresForLicenseConfigurationOperationsInput {
     /// <p>Amazon Resource Name of the license configuration.</p>
     #[doc(hidden)]
     pub license_configuration_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListFailuresForLicenseConfigurationOperationsInput  {
 }
 impl ListFailuresForLicenseConfigurationOperationsInput {
     /// <p>Amazon Resource Name of the license configuration.</p>
-    pub fn license_configuration_arn(&self) -> std::option::Option<& str> {
+    pub fn license_configuration_arn(&self) -> std::option::Option<&str> {
         self.license_configuration_arn.as_deref()
     }
     /// <p>Maximum number of results to return in a single call.</p>
@@ -23,13 +23,13 @@ impl ListFailuresForLicenseConfigurationOperationsInput {
         self.max_results
     }
     /// <p>Token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListFailuresForLicenseConfigurationOperationsInput {
     /// Creates a new builder-style object to manufacture [`ListFailuresForLicenseConfigurationOperationsInput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput).
-    pub fn builder() -> crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsInputBuilder {
+    pub fn builder() -> crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsInputBuilder{
         crate::operation::list_failures_for_license_configuration_operations::builders::ListFailuresForLicenseConfigurationOperationsInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
         self
     }
     /// <p>Amazon Resource Name of the license configuration.</p>
-    pub fn set_license_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_configuration_arn = input; self
+    pub fn set_license_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.license_configuration_arn = input;
+        self
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +63,8 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
     }
     /// <p>Maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,10 +73,11 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
     }
     /// <p>Token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListFailuresForLicenseConfigurationOperationsInput`](crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput).
-    pub fn build(self) -> Result<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_failures_for_license_configuration_operations::ListFailuresForLicenseConfigurationOperationsInput {
                 license_configuration_arn: self.license_configuration_arn
@@ -84,4 +90,3 @@ impl ListFailuresForLicenseConfigurationOperationsInputBuilder {
         )
     }
 }
-

@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTrackerOutput  {
+pub struct DescribeTrackerOutput {
     /// <p>The name of the tracker resource.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub tracker_arn: std::option::Option<std::string::String>,
@@ -16,7 +16,10 @@ pub struct DescribeTrackerOutput  {
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     #[doc(hidden)]
     pub pricing_plan: std::option::Option<crate::types::PricingPlan>,
     /// <p>No longer used. Always returns an empty string.</p>
@@ -25,7 +28,8 @@ pub struct DescribeTrackerOutput  {
     pub pricing_plan_data_source: std::option::Option<std::string::String>,
     /// <p>The tags associated with the tracker resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -42,56 +46,62 @@ pub struct DescribeTrackerOutput  {
 }
 impl DescribeTrackerOutput {
     /// <p>The name of the tracker resource.</p>
-    pub fn tracker_name(&self) -> std::option::Option<& str> {
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
-    pub fn tracker_arn(&self) -> std::option::Option<& str> {
+    pub fn tracker_arn(&self) -> std::option::Option<&str> {
         self.tracker_arn.as_deref()
     }
     /// <p>The optional description for the tracker resource.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    pub fn pricing_plan(&self) -> std::option::Option<& crate::types::PricingPlan> {
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn pricing_plan(&self) -> std::option::Option<&crate::types::PricingPlan> {
         self.pricing_plan.as_ref()
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    pub fn pricing_plan_data_source(&self) -> std::option::Option<& str> {
+    pub fn pricing_plan_data_source(&self) -> std::option::Option<&str> {
         self.pricing_plan_data_source.as_deref()
     }
     /// <p>The tags associated with the tracker resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a> assigned to the Amazon Location resource.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The position filtering method of the tracker resource.</p>
-    pub fn position_filtering(&self) -> std::option::Option<& crate::types::PositionFiltering> {
+    pub fn position_filtering(&self) -> std::option::Option<&crate::types::PositionFiltering> {
         self.position_filtering.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeTrackerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeTrackerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTrackerOutput`](crate::operation::describe_tracker::DescribeTrackerOutput).
     pub fn builder() -> crate::operation::describe_tracker::builders::DescribeTrackerOutputBuilder {
@@ -108,7 +118,8 @@ pub struct DescribeTrackerOutputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) pricing_plan: std::option::Option<crate::types::PricingPlan>,
     pub(crate) pricing_plan_data_source: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -123,22 +134,24 @@ impl DescribeTrackerOutputBuilder {
     }
     /// <p>The name of the tracker resource.</p>
     pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracker_name = input; self
+        self.tracker_name = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub fn tracker_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.tracker_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code> </p> </li>
     /// </ul>
     pub fn set_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracker_arn = input; self
+        self.tracker_arn = input;
+        self
     }
     /// <p>The optional description for the tracker resource.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,18 +160,29 @@ impl DescribeTrackerOutputBuilder {
     }
     /// <p>The optional description for the tracker resource.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
     pub fn pricing_plan(mut self, input: crate::types::PricingPlan) -> Self {
         self.pricing_plan = Some(input);
         self
     }
     /// <p>Always returns <code>RequestBasedUsage</code>.</p>
-    #[deprecated(note = "Deprecated. Always returns RequestBasedUsage.", since = "2022-02-01")]
-    pub fn set_pricing_plan(mut self, input: std::option::Option<crate::types::PricingPlan>) -> Self {
-        self.pricing_plan = input; self
+    #[deprecated(
+        note = "Deprecated. Always returns RequestBasedUsage.",
+        since = "2022-02-01"
+    )]
+    pub fn set_pricing_plan(
+        mut self,
+        input: std::option::Option<crate::types::PricingPlan>,
+    ) -> Self {
+        self.pricing_plan = input;
+        self
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
@@ -168,23 +192,37 @@ impl DescribeTrackerOutputBuilder {
     }
     /// <p>No longer used. Always returns an empty string.</p>
     #[deprecated(note = "Deprecated. Unused.", since = "2022-02-01")]
-    pub fn set_pricing_plan_data_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pricing_plan_data_source = input; self
+    pub fn set_pricing_plan_data_source(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.pricing_plan_data_source = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags associated with the tracker resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags associated with the tracker resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -192,8 +230,12 @@ impl DescribeTrackerOutputBuilder {
         self
     }
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -201,8 +243,12 @@ impl DescribeTrackerOutputBuilder {
         self
     }
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input; self
+    pub fn set_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_time = input;
+        self
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a> assigned to the Amazon Location resource.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -211,7 +257,8 @@ impl DescribeTrackerOutputBuilder {
     }
     /// <p>A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon Web Services KMS customer managed key</a> assigned to the Amazon Location resource.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>The position filtering method of the tracker resource.</p>
     pub fn position_filtering(mut self, input: crate::types::PositionFiltering) -> Self {
@@ -219,43 +266,36 @@ impl DescribeTrackerOutputBuilder {
         self
     }
     /// <p>The position filtering method of the tracker resource.</p>
-    pub fn set_position_filtering(mut self, input: std::option::Option<crate::types::PositionFiltering>) -> Self {
-        self.position_filtering = input; self
+    pub fn set_position_filtering(
+        mut self,
+        input: std::option::Option<crate::types::PositionFiltering>,
+    ) -> Self {
+        self.position_filtering = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeTrackerOutput`](crate::operation::describe_tracker::DescribeTrackerOutput).
     pub fn build(self) -> crate::operation::describe_tracker::DescribeTrackerOutput {
         crate::operation::describe_tracker::DescribeTrackerOutput {
-            tracker_name: self.tracker_name
-            ,
-            tracker_arn: self.tracker_arn
-            ,
-            description: self.description
-            ,
-            pricing_plan: self.pricing_plan
-            ,
-            pricing_plan_data_source: self.pricing_plan_data_source
-            ,
-            tags: self.tags
-            ,
-            create_time: self.create_time
-            ,
-            update_time: self.update_time
-            ,
-            kms_key_id: self.kms_key_id
-            ,
-            position_filtering: self.position_filtering
-            ,
+            tracker_name: self.tracker_name,
+            tracker_arn: self.tracker_arn,
+            description: self.description,
+            pricing_plan: self.pricing_plan,
+            pricing_plan_data_source: self.pricing_plan_data_source,
+            tags: self.tags,
+            create_time: self.create_time,
+            update_time: self.update_time,
+            kms_key_id: self.kms_key_id,
+            position_filtering: self.position_filtering,
             _request_id: self._request_id,
         }
     }
 }
-

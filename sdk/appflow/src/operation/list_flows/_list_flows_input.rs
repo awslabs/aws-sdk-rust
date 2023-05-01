@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFlowsInput  {
+pub struct ListFlowsInput {
     /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,7 +16,7 @@ impl ListFlowsInput {
         self.max_results
     }
     /// <p> The pagination token for next page of data. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl ListFlowsInputBuilder {
     }
     /// <p> Specifies the maximum number of items that should be returned in the result set. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p> The pagination token for next page of data. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl ListFlowsInputBuilder {
     }
     /// <p> The pagination token for next page of data. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListFlowsInput`](crate::operation::list_flows::ListFlowsInput).
-    pub fn build(self) -> Result<crate::operation::list_flows::ListFlowsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_flows::ListFlowsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_flows::ListFlowsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_flows::ListFlowsInput {
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

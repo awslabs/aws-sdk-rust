@@ -4,63 +4,73 @@ pub use crate::operation::describe_maintenance_window_execution_task_invocations
 pub use crate::operation::describe_maintenance_window_execution_task_invocations::_describe_maintenance_window_execution_task_invocations_input::DescribeMaintenanceWindowExecutionTaskInvocationsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeMaintenanceWindowExecutionTaskInvocations`.
-/// 
+///
 /// <p>Retrieves the individual task executions (one per target) for a particular task run as part of a maintenance window execution.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_maintenance_window_execution_task_invocations::builders::DescribeMaintenanceWindowExecutionTaskInvocationsInputBuilder,
 }
-impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder  {
+impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder {
     /// Creates a new `DescribeMaintenanceWindowExecutionTaskInvocations`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocations, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_execution_task_invocations::DescribeMaintenanceWindowExecutionTaskInvocationsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_execution_task_invocations::paginator::DescribeMaintenanceWindowExecutionTaskInvocationsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_execution_task_invocations::paginator::DescribeMaintenanceWindowExecutionTaskInvocationsPaginator {
-                                crate::operation::describe_maintenance_window_execution_task_invocations::paginator::DescribeMaintenanceWindowExecutionTaskInvocationsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_execution_task_invocations::paginator::DescribeMaintenanceWindowExecutionTaskInvocationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_execution_task_invocations::paginator::DescribeMaintenanceWindowExecutionTaskInvocationsPaginator{
+        crate::operation::describe_maintenance_window_execution_task_invocations::paginator::DescribeMaintenanceWindowExecutionTaskInvocationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the maintenance window execution the task is part of.</p>
     pub fn window_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.window_execution_id(input.into());
         self
     }
     /// <p>The ID of the maintenance window execution the task is part of.</p>
-    pub fn set_window_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_window_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_window_execution_id(input);
         self
     }
@@ -84,7 +94,10 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder  {
         self
     }
     /// <p>Optional filters used to scope down the returned task invocations. The supported filter key is <code>STATUS</code> with the corresponding values <code>PENDING</code>, <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindowFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MaintenanceWindowFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -109,4 +122,3 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsFluentBuilder  {
         self
     }
 }
-

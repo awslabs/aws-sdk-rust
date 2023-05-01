@@ -3,7 +3,7 @@
 /// <p> A finalized document that's generated from an Audit Manager assessment. These reports summarize the relevant evidence that was collected for your audit, and link to the relevant evidence folders. These evidence folders are named and organized according to the controls that are specified in your assessment. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentReport  {
+pub struct AssessmentReport {
     /// <p> The unique identifier for the assessment report. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct AssessmentReport  {
 }
 impl AssessmentReport {
     /// <p> The unique identifier for the assessment report. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The name that's given to the assessment report. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The description of the specified assessment report. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The identifier for the specified Amazon Web Services account. </p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p> The identifier for the specified assessment. </p>
-    pub fn assessment_id(&self) -> std::option::Option<& str> {
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
     /// <p> The name of the associated assessment. </p>
-    pub fn assessment_name(&self) -> std::option::Option<& str> {
+    pub fn assessment_name(&self) -> std::option::Option<&str> {
         self.assessment_name.as_deref()
     }
     /// <p> The name of the user who created the assessment report. </p>
-    pub fn author(&self) -> std::option::Option<& str> {
+    pub fn author(&self) -> std::option::Option<&str> {
         self.author.as_deref()
     }
     /// <p> The current status of the specified assessment report. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AssessmentReportStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AssessmentReportStatus> {
         self.status.as_ref()
     }
     /// <p> Specifies when the assessment report was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -99,7 +99,8 @@ impl AssessmentReportBuilder {
     }
     /// <p> The unique identifier for the assessment report. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p> The name that's given to the assessment report. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl AssessmentReportBuilder {
     }
     /// <p> The name that's given to the assessment report. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> The description of the specified assessment report. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +119,8 @@ impl AssessmentReportBuilder {
     }
     /// <p> The description of the specified assessment report. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p> The identifier for the specified Amazon Web Services account. </p>
     pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +129,8 @@ impl AssessmentReportBuilder {
     }
     /// <p> The identifier for the specified Amazon Web Services account. </p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p> The identifier for the specified assessment. </p>
     pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +139,8 @@ impl AssessmentReportBuilder {
     }
     /// <p> The identifier for the specified assessment. </p>
     pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_id = input; self
+        self.assessment_id = input;
+        self
     }
     /// <p> The name of the associated assessment. </p>
     pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +149,8 @@ impl AssessmentReportBuilder {
     }
     /// <p> The name of the associated assessment. </p>
     pub fn set_assessment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_name = input; self
+        self.assessment_name = input;
+        self
     }
     /// <p> The name of the user who created the assessment report. </p>
     pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,7 +159,8 @@ impl AssessmentReportBuilder {
     }
     /// <p> The name of the user who created the assessment report. </p>
     pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.author = input; self
+        self.author = input;
+        self
     }
     /// <p> The current status of the specified assessment report. </p>
     pub fn status(mut self, input: crate::types::AssessmentReportStatus) -> Self {
@@ -161,8 +168,12 @@ impl AssessmentReportBuilder {
         self
     }
     /// <p> The current status of the specified assessment report. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AssessmentReportStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentReportStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p> Specifies when the assessment report was created. </p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -170,31 +181,25 @@ impl AssessmentReportBuilder {
         self
     }
     /// <p> Specifies when the assessment report was created. </p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssessmentReport`](crate::types::AssessmentReport).
     pub fn build(self) -> crate::types::AssessmentReport {
         crate::types::AssessmentReport {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            aws_account_id: self.aws_account_id
-            ,
-            assessment_id: self.assessment_id
-            ,
-            assessment_name: self.assessment_name
-            ,
-            author: self.author
-            ,
-            status: self.status
-            ,
-            creation_time: self.creation_time
-            ,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            aws_account_id: self.aws_account_id,
+            assessment_id: self.assessment_id,
+            assessment_name: self.assessment_name,
+            author: self.author,
+            status: self.status,
+            creation_time: self.creation_time,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBucketAnalyticsConfigurationInput  {
+pub struct PutBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket to which an analytics configuration is stored.</p>
     #[doc(hidden)]
     pub bucket: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct PutBucketAnalyticsConfigurationInput  {
 }
 impl PutBucketAnalyticsConfigurationInput {
     /// <p>The name of the bucket to which an analytics configuration is stored.</p>
-    pub fn bucket(&self) -> std::option::Option<& str> {
+    pub fn bucket(&self) -> std::option::Option<&str> {
         self.bucket.as_deref()
     }
     /// <p>The ID that identifies the analytics configuration.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The configuration and any analyses for the analytics filter.</p>
-    pub fn analytics_configuration(&self) -> std::option::Option<& crate::types::AnalyticsConfiguration> {
+    pub fn analytics_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::AnalyticsConfiguration> {
         self.analytics_configuration.as_ref()
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn expected_bucket_owner(&self) -> std::option::Option<& str> {
+    pub fn expected_bucket_owner(&self) -> std::option::Option<&str> {
         self.expected_bucket_owner.as_deref()
     }
 }
 impl PutBucketAnalyticsConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutBucketAnalyticsConfigurationInput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput).
-    pub fn builder() -> crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationInputBuilder{
         crate::operation::put_bucket_analytics_configuration::builders::PutBucketAnalyticsConfigurationInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
     }
     /// <p>The name of the bucket to which an analytics configuration is stored.</p>
     pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket = input; self
+        self.bucket = input;
+        self
     }
     /// <p>The ID that identifies the analytics configuration.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
     }
     /// <p>The ID that identifies the analytics configuration.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The configuration and any analyses for the analytics filter.</p>
     pub fn analytics_configuration(mut self, input: crate::types::AnalyticsConfiguration) -> Self {
@@ -75,8 +79,12 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
         self
     }
     /// <p>The configuration and any analyses for the analytics filter.</p>
-    pub fn set_analytics_configuration(mut self, input: std::option::Option<crate::types::AnalyticsConfiguration>) -> Self {
-        self.analytics_configuration = input; self
+    pub fn set_analytics_configuration(
+        mut self,
+        input: std::option::Option<crate::types::AnalyticsConfiguration>,
+    ) -> Self {
+        self.analytics_configuration = input;
+        self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
     pub fn expected_bucket_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,11 +92,20 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
         self
     }
     /// <p>The account ID of the expected bucket owner. If the bucket is owned by a different account, the request fails with the HTTP status code <code>403 Forbidden</code> (access denied).</p>
-    pub fn set_expected_bucket_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expected_bucket_owner = input; self
+    pub fn set_expected_bucket_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.expected_bucket_owner = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutBucketAnalyticsConfigurationInput`](crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_bucket_analytics_configuration::PutBucketAnalyticsConfigurationInput {
                 bucket: self.bucket
@@ -103,4 +120,3 @@ impl PutBucketAnalyticsConfigurationInputBuilder {
         )
     }
 }
-

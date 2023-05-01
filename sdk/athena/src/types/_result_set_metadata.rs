@@ -3,14 +3,14 @@
 /// <p>The metadata that describes the column structure and data types of a table of query results. To return a <code>ResultSetMetadata</code> object, use <code>GetQueryResults</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultSetMetadata  {
+pub struct ResultSetMetadata {
     /// <p>Information about the columns returned in a query result metadata.</p>
     #[doc(hidden)]
     pub column_info: std::option::Option<std::vec::Vec<crate::types::ColumnInfo>>,
 }
 impl ResultSetMetadata {
     /// <p>Information about the columns returned in a query result metadata.</p>
-    pub fn column_info(&self) -> std::option::Option<& [crate::types::ColumnInfo]> {
+    pub fn column_info(&self) -> std::option::Option<&[crate::types::ColumnInfo]> {
         self.column_info.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl ResultSetMetadataBuilder {
     /// <p>Information about the columns returned in a query result metadata.</p>
     pub fn column_info(mut self, input: crate::types::ColumnInfo) -> Self {
         let mut v = self.column_info.unwrap_or_default();
-                        v.push(input);
-                        self.column_info = Some(v);
-                        self
+        v.push(input);
+        self.column_info = Some(v);
+        self
     }
     /// <p>Information about the columns returned in a query result metadata.</p>
-    pub fn set_column_info(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnInfo>>) -> Self {
-        self.column_info = input; self
+    pub fn set_column_info(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ColumnInfo>>,
+    ) -> Self {
+        self.column_info = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResultSetMetadata`](crate::types::ResultSetMetadata).
     pub fn build(self) -> crate::types::ResultSetMetadata {
         crate::types::ResultSetMetadata {
-            column_info: self.column_info
-            ,
+            column_info: self.column_info,
         }
     }
 }
-

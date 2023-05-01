@@ -3,7 +3,7 @@
 /// <p>Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Activity  {
+pub struct Activity {
     /// <p>The ID of the activity.</p>
     #[doc(hidden)]
     pub activity_id: std::option::Option<std::string::String>,
@@ -43,35 +43,35 @@ pub struct Activity  {
 }
 impl Activity {
     /// <p>The ID of the activity.</p>
-    pub fn activity_id(&self) -> std::option::Option<& str> {
+    pub fn activity_id(&self) -> std::option::Option<&str> {
         self.activity_id.as_deref()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>A friendly, more verbose description of the activity.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The reason the activity began.</p>
-    pub fn cause(&self) -> std::option::Option<& str> {
+    pub fn cause(&self) -> std::option::Option<&str> {
         self.cause.as_deref()
     }
     /// <p>The start time of the activity.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end time of the activity.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The current status of the activity.</p>
-    pub fn status_code(&self) -> std::option::Option<& crate::types::ScalingActivityStatusCode> {
+    pub fn status_code(&self) -> std::option::Option<&crate::types::ScalingActivityStatusCode> {
         self.status_code.as_ref()
     }
     /// <p>A friendly, more verbose description of the activity status.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>A value between 0 and 100 that indicates the progress of the activity.</p>
@@ -79,15 +79,15 @@ impl Activity {
         self.progress
     }
     /// <p>The details about the activity.</p>
-    pub fn details(&self) -> std::option::Option<& str> {
+    pub fn details(&self) -> std::option::Option<&str> {
         self.details.as_deref()
     }
     /// <p>The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.</p>
-    pub fn auto_scaling_group_state(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_state(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_state.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_arn(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_arn(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_arn.as_deref()
     }
 }
@@ -123,7 +123,8 @@ impl ActivityBuilder {
     }
     /// <p>The ID of the activity.</p>
     pub fn set_activity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.activity_id = input; self
+        self.activity_id = input;
+        self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +132,12 @@ impl ActivityBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// <p>A friendly, more verbose description of the activity.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +146,8 @@ impl ActivityBuilder {
     }
     /// <p>A friendly, more verbose description of the activity.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The reason the activity began.</p>
     pub fn cause(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +156,8 @@ impl ActivityBuilder {
     }
     /// <p>The reason the activity began.</p>
     pub fn set_cause(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cause = input; self
+        self.cause = input;
+        self
     }
     /// <p>The start time of the activity.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -158,8 +165,12 @@ impl ActivityBuilder {
         self
     }
     /// <p>The start time of the activity.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The end time of the activity.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -168,7 +179,8 @@ impl ActivityBuilder {
     }
     /// <p>The end time of the activity.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The current status of the activity.</p>
     pub fn status_code(mut self, input: crate::types::ScalingActivityStatusCode) -> Self {
@@ -176,8 +188,12 @@ impl ActivityBuilder {
         self
     }
     /// <p>The current status of the activity.</p>
-    pub fn set_status_code(mut self, input: std::option::Option<crate::types::ScalingActivityStatusCode>) -> Self {
-        self.status_code = input; self
+    pub fn set_status_code(
+        mut self,
+        input: std::option::Option<crate::types::ScalingActivityStatusCode>,
+    ) -> Self {
+        self.status_code = input;
+        self
     }
     /// <p>A friendly, more verbose description of the activity status.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -186,7 +202,8 @@ impl ActivityBuilder {
     }
     /// <p>A friendly, more verbose description of the activity status.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// <p>A value between 0 and 100 that indicates the progress of the activity.</p>
     pub fn progress(mut self, input: i32) -> Self {
@@ -195,7 +212,8 @@ impl ActivityBuilder {
     }
     /// <p>A value between 0 and 100 that indicates the progress of the activity.</p>
     pub fn set_progress(mut self, input: std::option::Option<i32>) -> Self {
-        self.progress = input; self
+        self.progress = input;
+        self
     }
     /// <p>The details about the activity.</p>
     pub fn details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,7 +222,8 @@ impl ActivityBuilder {
     }
     /// <p>The details about the activity.</p>
     pub fn set_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.details = input; self
+        self.details = input;
+        self
     }
     /// <p>The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.</p>
     pub fn auto_scaling_group_state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,8 +231,12 @@ impl ActivityBuilder {
         self
     }
     /// <p>The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.</p>
-    pub fn set_auto_scaling_group_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_state = input; self
+    pub fn set_auto_scaling_group_state(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_state = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
     pub fn auto_scaling_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -221,38 +244,28 @@ impl ActivityBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_arn = input; self
+    pub fn set_auto_scaling_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`Activity`](crate::types::Activity).
     pub fn build(self) -> crate::types::Activity {
         crate::types::Activity {
-            activity_id: self.activity_id
-            ,
-            auto_scaling_group_name: self.auto_scaling_group_name
-            ,
-            description: self.description
-            ,
-            cause: self.cause
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
-            status_code: self.status_code
-            ,
-            status_message: self.status_message
-            ,
-            progress: self.progress
-                .unwrap_or_default()
-            ,
-            details: self.details
-            ,
-            auto_scaling_group_state: self.auto_scaling_group_state
-            ,
-            auto_scaling_group_arn: self.auto_scaling_group_arn
-            ,
+            activity_id: self.activity_id,
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            description: self.description,
+            cause: self.cause,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            status_code: self.status_code,
+            status_message: self.status_message,
+            progress: self.progress.unwrap_or_default(),
+            details: self.details,
+            auto_scaling_group_state: self.auto_scaling_group_state,
+            auto_scaling_group_arn: self.auto_scaling_group_arn,
         }
     }
 }
-

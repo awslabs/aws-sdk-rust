@@ -3,7 +3,7 @@
 /// <p>The input failed to meet the constraints specified by the Amazon Web Services service in a specified field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ValidationExceptionField  {
+pub struct ValidationExceptionField {
     /// <p>The field name where the invalid entry was detected.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct ValidationExceptionField  {
 }
 impl ValidationExceptionField {
     /// <p>The field name where the invalid entry was detected.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A message about the validation exception.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl  std::fmt::Debug for ValidationExceptionField  {
+impl std::fmt::Debug for ValidationExceptionField {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationExceptionField");
         formatter.field("name", &self.name);
@@ -51,7 +51,8 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>The field name where the invalid entry was detected.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A message about the validation exception.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,15 +61,14 @@ impl ValidationExceptionFieldBuilder {
     }
     /// <p>A message about the validation exception.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`ValidationExceptionField`](crate::types::ValidationExceptionField).
     pub fn build(self) -> crate::types::ValidationExceptionField {
         crate::types::ValidationExceptionField {
-            name: self.name
-            ,
-            message: self.message
-            ,
+            name: self.name,
+            message: self.message,
         }
     }
 }
@@ -80,4 +80,3 @@ impl std::fmt::Debug for ValidationExceptionFieldBuilder {
         formatter.finish()
     }
 }
-

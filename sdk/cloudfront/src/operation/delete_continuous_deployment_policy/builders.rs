@@ -4,51 +4,58 @@ pub use crate::operation::delete_continuous_deployment_policy::_delete_continuou
 pub use crate::operation::delete_continuous_deployment_policy::_delete_continuous_deployment_policy_input::DeleteContinuousDeploymentPolicyInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteContinuousDeploymentPolicy`.
-/// 
-/// <p>Deletes a continuous deployment policy.</p> 
+///
+/// <p>Deletes a continuous deployment policy.</p>
 /// <p>You cannot delete a continuous deployment policy that's attached to a primary distribution. First update your distribution to remove the continuous deployment policy, then you can delete the policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteContinuousDeploymentPolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyInputBuilder,
 }
-impl DeleteContinuousDeploymentPolicyFluentBuilder  {
+impl DeleteContinuousDeploymentPolicyFluentBuilder {
     /// Creates a new `DeleteContinuousDeploymentPolicy`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicy, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyOutput, aws_smithy_http::result::SdkError<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -70,4 +77,3 @@ impl DeleteContinuousDeploymentPolicyFluentBuilder  {
         self
     }
 }
-

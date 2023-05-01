@@ -3,7 +3,7 @@
 /// <p>The list of supported product configurations that allow user-supplied arguments. EMR accepts these arguments and forwards them to the corresponding installation script as bootstrap action arguments.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SupportedProductConfig  {
+pub struct SupportedProductConfig {
     /// <p>The name of the product configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SupportedProductConfig  {
 }
 impl SupportedProductConfig {
     /// <p>The name of the product configuration.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The list of user-supplied arguments.</p>
-    pub fn args(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn args(&self) -> std::option::Option<&[std::string::String]> {
         self.args.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl SupportedProductConfigBuilder {
     }
     /// <p>The name of the product configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `args`.
     ///
@@ -52,22 +53,23 @@ impl SupportedProductConfigBuilder {
     /// <p>The list of user-supplied arguments.</p>
     pub fn args(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.args.unwrap_or_default();
-                        v.push(input.into());
-                        self.args = Some(v);
-                        self
+        v.push(input.into());
+        self.args = Some(v);
+        self
     }
     /// <p>The list of user-supplied arguments.</p>
-    pub fn set_args(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.args = input; self
+    pub fn set_args(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.args = input;
+        self
     }
     /// Consumes the builder and constructs a [`SupportedProductConfig`](crate::types::SupportedProductConfig).
     pub fn build(self) -> crate::types::SupportedProductConfig {
         crate::types::SupportedProductConfig {
-            name: self.name
-            ,
-            args: self.args
-            ,
+            name: self.name,
+            args: self.args,
         }
     }
 }
-

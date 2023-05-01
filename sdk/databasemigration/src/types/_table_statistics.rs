@@ -3,7 +3,7 @@
 /// <p>Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TableStatistics  {
+pub struct TableStatistics {
     /// <p>The schema name.</p>
     #[doc(hidden)]
     pub schema_name: std::option::Option<std::string::String>,
@@ -55,7 +55,7 @@ pub struct TableStatistics  {
     /// <p>The last time a table was updated.</p>
     #[doc(hidden)]
     pub last_update_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The state of the tables described.</p> 
+    /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
     #[doc(hidden)]
     pub table_state: std::option::Option<std::string::String>,
@@ -68,20 +68,20 @@ pub struct TableStatistics  {
     /// <p>The number of records that couldn't be validated.</p>
     #[doc(hidden)]
     pub validation_suspended_records: i64,
-    /// <p>The validation state of the table.</p> 
-    /// <p>This parameter can have the following values:</p> 
-    /// <ul> 
-    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li> 
-    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li> 
-    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li> 
-    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li> 
-    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li> 
-    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li> 
-    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li> 
-    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li> 
-    /// <li> <p>Pending validation – The table is waiting validation.</p> </li> 
-    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li> 
-    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li> 
+    /// <p>The validation state of the table.</p>
+    /// <p>This parameter can have the following values:</p>
+    /// <ul>
+    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li>
+    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li>
+    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li>
+    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li>
+    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li>
+    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li>
+    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li>
+    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li>
+    /// <li> <p>Pending validation – The table is waiting validation.</p> </li>
+    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
+    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub validation_state: std::option::Option<std::string::String>,
@@ -91,11 +91,11 @@ pub struct TableStatistics  {
 }
 impl TableStatistics {
     /// <p>The schema name.</p>
-    pub fn schema_name(&self) -> std::option::Option<& str> {
+    pub fn schema_name(&self) -> std::option::Option<&str> {
         self.schema_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The number of insert actions performed on a table.</p>
@@ -143,11 +143,11 @@ impl TableStatistics {
         self.full_load_error_rows
     }
     /// <p>The time when the full load operation started.</p>
-    pub fn full_load_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn full_load_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.full_load_start_time.as_ref()
     }
     /// <p>The time when the full load operation completed.</p>
-    pub fn full_load_end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn full_load_end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.full_load_end_time.as_ref()
     }
     /// <p>A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load operation (<code>false</code>).</p>
@@ -155,12 +155,12 @@ impl TableStatistics {
         self.full_load_reloaded
     }
     /// <p>The last time a table was updated.</p>
-    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
-    /// <p>The state of the tables described.</p> 
+    /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
-    pub fn table_state(&self) -> std::option::Option<& str> {
+    pub fn table_state(&self) -> std::option::Option<&str> {
         self.table_state.as_deref()
     }
     /// <p>The number of records that have yet to be validated.</p>
@@ -175,26 +175,26 @@ impl TableStatistics {
     pub fn validation_suspended_records(&self) -> i64 {
         self.validation_suspended_records
     }
-    /// <p>The validation state of the table.</p> 
-    /// <p>This parameter can have the following values:</p> 
-    /// <ul> 
-    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li> 
-    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li> 
-    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li> 
-    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li> 
-    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li> 
-    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li> 
-    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li> 
-    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li> 
-    /// <li> <p>Pending validation – The table is waiting validation.</p> </li> 
-    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li> 
-    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li> 
+    /// <p>The validation state of the table.</p>
+    /// <p>This parameter can have the following values:</p>
+    /// <ul>
+    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li>
+    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li>
+    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li>
+    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li>
+    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li>
+    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li>
+    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li>
+    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li>
+    /// <li> <p>Pending validation – The table is waiting validation.</p> </li>
+    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
+    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
-    pub fn validation_state(&self) -> std::option::Option<& str> {
+    pub fn validation_state(&self) -> std::option::Option<&str> {
         self.validation_state.as_deref()
     }
     /// <p>Additional details about the state of validation.</p>
-    pub fn validation_state_details(&self) -> std::option::Option<& str> {
+    pub fn validation_state_details(&self) -> std::option::Option<&str> {
         self.validation_state_details.as_deref()
     }
 }
@@ -241,7 +241,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The schema name.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input; self
+        self.schema_name = input;
+        self
     }
     /// <p>The name of the table.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -250,7 +251,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The name of the table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// <p>The number of insert actions performed on a table.</p>
     pub fn inserts(mut self, input: i64) -> Self {
@@ -259,7 +261,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of insert actions performed on a table.</p>
     pub fn set_inserts(mut self, input: std::option::Option<i64>) -> Self {
-        self.inserts = input; self
+        self.inserts = input;
+        self
     }
     /// <p>The number of delete actions performed on a table.</p>
     pub fn deletes(mut self, input: i64) -> Self {
@@ -268,7 +271,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of delete actions performed on a table.</p>
     pub fn set_deletes(mut self, input: std::option::Option<i64>) -> Self {
-        self.deletes = input; self
+        self.deletes = input;
+        self
     }
     /// <p>The number of update actions performed on a table.</p>
     pub fn updates(mut self, input: i64) -> Self {
@@ -277,7 +281,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of update actions performed on a table.</p>
     pub fn set_updates(mut self, input: std::option::Option<i64>) -> Self {
-        self.updates = input; self
+        self.updates = input;
+        self
     }
     /// <p>The data definition language (DDL) used to build and modify the structure of your tables.</p>
     pub fn ddls(mut self, input: i64) -> Self {
@@ -286,7 +291,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The data definition language (DDL) used to build and modify the structure of your tables.</p>
     pub fn set_ddls(mut self, input: std::option::Option<i64>) -> Self {
-        self.ddls = input; self
+        self.ddls = input;
+        self
     }
     /// <p>The number of insert actions applied on a target table.</p>
     pub fn applied_inserts(mut self, input: i64) -> Self {
@@ -295,7 +301,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of insert actions applied on a target table.</p>
     pub fn set_applied_inserts(mut self, input: std::option::Option<i64>) -> Self {
-        self.applied_inserts = input; self
+        self.applied_inserts = input;
+        self
     }
     /// <p>The number of delete actions applied on a target table.</p>
     pub fn applied_deletes(mut self, input: i64) -> Self {
@@ -304,7 +311,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of delete actions applied on a target table.</p>
     pub fn set_applied_deletes(mut self, input: std::option::Option<i64>) -> Self {
-        self.applied_deletes = input; self
+        self.applied_deletes = input;
+        self
     }
     /// <p>The number of update actions applied on a target table.</p>
     pub fn applied_updates(mut self, input: i64) -> Self {
@@ -313,7 +321,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of update actions applied on a target table.</p>
     pub fn set_applied_updates(mut self, input: std::option::Option<i64>) -> Self {
-        self.applied_updates = input; self
+        self.applied_updates = input;
+        self
     }
     /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
     pub fn applied_ddls(mut self, input: i64) -> Self {
@@ -322,7 +331,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of data definition language (DDL) statements used to build and modify the structure of your tables applied on the target.</p>
     pub fn set_applied_ddls(mut self, input: std::option::Option<i64>) -> Self {
-        self.applied_ddls = input; self
+        self.applied_ddls = input;
+        self
     }
     /// <p>The number of rows added during the full load operation.</p>
     pub fn full_load_rows(mut self, input: i64) -> Self {
@@ -331,7 +341,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of rows added during the full load operation.</p>
     pub fn set_full_load_rows(mut self, input: std::option::Option<i64>) -> Self {
-        self.full_load_rows = input; self
+        self.full_load_rows = input;
+        self
     }
     /// <p>The number of rows that failed conditional checks during the full load operation (valid only for migrations where DynamoDB is the target).</p>
     pub fn full_load_condtnl_chk_failed_rows(mut self, input: i64) -> Self {
@@ -339,8 +350,12 @@ impl TableStatisticsBuilder {
         self
     }
     /// <p>The number of rows that failed conditional checks during the full load operation (valid only for migrations where DynamoDB is the target).</p>
-    pub fn set_full_load_condtnl_chk_failed_rows(mut self, input: std::option::Option<i64>) -> Self {
-        self.full_load_condtnl_chk_failed_rows = input; self
+    pub fn set_full_load_condtnl_chk_failed_rows(
+        mut self,
+        input: std::option::Option<i64>,
+    ) -> Self {
+        self.full_load_condtnl_chk_failed_rows = input;
+        self
     }
     /// <p>The number of rows that failed to load during the full load operation (valid only for migrations where DynamoDB is the target).</p>
     pub fn full_load_error_rows(mut self, input: i64) -> Self {
@@ -349,7 +364,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of rows that failed to load during the full load operation (valid only for migrations where DynamoDB is the target).</p>
     pub fn set_full_load_error_rows(mut self, input: std::option::Option<i64>) -> Self {
-        self.full_load_error_rows = input; self
+        self.full_load_error_rows = input;
+        self
     }
     /// <p>The time when the full load operation started.</p>
     pub fn full_load_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -357,8 +373,12 @@ impl TableStatisticsBuilder {
         self
     }
     /// <p>The time when the full load operation started.</p>
-    pub fn set_full_load_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.full_load_start_time = input; self
+    pub fn set_full_load_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.full_load_start_time = input;
+        self
     }
     /// <p>The time when the full load operation completed.</p>
     pub fn full_load_end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -366,8 +386,12 @@ impl TableStatisticsBuilder {
         self
     }
     /// <p>The time when the full load operation completed.</p>
-    pub fn set_full_load_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.full_load_end_time = input; self
+    pub fn set_full_load_end_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.full_load_end_time = input;
+        self
     }
     /// <p>A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load operation (<code>false</code>).</p>
     pub fn full_load_reloaded(mut self, input: bool) -> Self {
@@ -376,7 +400,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>A value that indicates if the table was reloaded (<code>true</code>) or loaded as part of a new full load operation (<code>false</code>).</p>
     pub fn set_full_load_reloaded(mut self, input: std::option::Option<bool>) -> Self {
-        self.full_load_reloaded = input; self
+        self.full_load_reloaded = input;
+        self
     }
     /// <p>The last time a table was updated.</p>
     pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -384,19 +409,24 @@ impl TableStatisticsBuilder {
         self
     }
     /// <p>The last time a table was updated.</p>
-    pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input; self
+    pub fn set_last_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_time = input;
+        self
     }
-    /// <p>The state of the tables described.</p> 
+    /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
     pub fn table_state(mut self, input: impl Into<std::string::String>) -> Self {
         self.table_state = Some(input.into());
         self
     }
-    /// <p>The state of the tables described.</p> 
+    /// <p>The state of the tables described.</p>
     /// <p>Valid states: Table does not exist | Before load | Full load | Table completed | Table cancelled | Table error | Table is being reloaded</p>
     pub fn set_table_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_state = input; self
+        self.table_state = input;
+        self
     }
     /// <p>The number of records that have yet to be validated.</p>
     pub fn validation_pending_records(mut self, input: i64) -> Self {
@@ -405,7 +435,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of records that have yet to be validated.</p>
     pub fn set_validation_pending_records(mut self, input: std::option::Option<i64>) -> Self {
-        self.validation_pending_records = input; self
+        self.validation_pending_records = input;
+        self
     }
     /// <p>The number of records that failed validation.</p>
     pub fn validation_failed_records(mut self, input: i64) -> Self {
@@ -414,7 +445,8 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of records that failed validation.</p>
     pub fn set_validation_failed_records(mut self, input: std::option::Option<i64>) -> Self {
-        self.validation_failed_records = input; self
+        self.validation_failed_records = input;
+        self
     }
     /// <p>The number of records that couldn't be validated.</p>
     pub fn validation_suspended_records(mut self, input: i64) -> Self {
@@ -423,44 +455,46 @@ impl TableStatisticsBuilder {
     }
     /// <p>The number of records that couldn't be validated.</p>
     pub fn set_validation_suspended_records(mut self, input: std::option::Option<i64>) -> Self {
-        self.validation_suspended_records = input; self
+        self.validation_suspended_records = input;
+        self
     }
-    /// <p>The validation state of the table.</p> 
-    /// <p>This parameter can have the following values:</p> 
-    /// <ul> 
-    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li> 
-    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li> 
-    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li> 
-    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li> 
-    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li> 
-    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li> 
-    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li> 
-    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li> 
-    /// <li> <p>Pending validation – The table is waiting validation.</p> </li> 
-    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li> 
-    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li> 
+    /// <p>The validation state of the table.</p>
+    /// <p>This parameter can have the following values:</p>
+    /// <ul>
+    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li>
+    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li>
+    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li>
+    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li>
+    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li>
+    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li>
+    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li>
+    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li>
+    /// <li> <p>Pending validation – The table is waiting validation.</p> </li>
+    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
+    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
     pub fn validation_state(mut self, input: impl Into<std::string::String>) -> Self {
         self.validation_state = Some(input.into());
         self
     }
-    /// <p>The validation state of the table.</p> 
-    /// <p>This parameter can have the following values:</p> 
-    /// <ul> 
-    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li> 
-    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li> 
-    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li> 
-    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li> 
-    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li> 
-    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li> 
-    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li> 
-    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li> 
-    /// <li> <p>Pending validation – The table is waiting validation.</p> </li> 
-    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li> 
-    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li> 
+    /// <p>The validation state of the table.</p>
+    /// <p>This parameter can have the following values:</p>
+    /// <ul>
+    /// <li> <p>Not enabled – Validation isn't enabled for the table in the migration task.</p> </li>
+    /// <li> <p>Pending records – Some records in the table are waiting for validation.</p> </li>
+    /// <li> <p>Mismatched records – Some records in the table don't match between the source and target.</p> </li>
+    /// <li> <p>Suspended records – Some records in the table couldn't be validated.</p> </li>
+    /// <li> <p>No primary key –The table couldn't be validated because it has no primary key.</p> </li>
+    /// <li> <p>Table error – The table wasn't validated because it's in an error state and some data wasn't migrated.</p> </li>
+    /// <li> <p>Validated – All rows in the table are validated. If the table is updated, the status can change from Validated.</p> </li>
+    /// <li> <p>Error – The table couldn't be validated because of an unexpected error.</p> </li>
+    /// <li> <p>Pending validation – The table is waiting validation.</p> </li>
+    /// <li> <p>Preparing table – Preparing the table enabled in the migration task for validation.</p> </li>
+    /// <li> <p>Pending revalidation – All rows in the table are pending validation after the table was updated.</p> </li>
     /// </ul>
     pub fn set_validation_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.validation_state = input; self
+        self.validation_state = input;
+        self
     }
     /// <p>Additional details about the state of validation.</p>
     pub fn validation_state_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -468,69 +502,41 @@ impl TableStatisticsBuilder {
         self
     }
     /// <p>Additional details about the state of validation.</p>
-    pub fn set_validation_state_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.validation_state_details = input; self
+    pub fn set_validation_state_details(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.validation_state_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`TableStatistics`](crate::types::TableStatistics).
     pub fn build(self) -> crate::types::TableStatistics {
         crate::types::TableStatistics {
-            schema_name: self.schema_name
-            ,
-            table_name: self.table_name
-            ,
-            inserts: self.inserts
-                .unwrap_or_default()
-            ,
-            deletes: self.deletes
-                .unwrap_or_default()
-            ,
-            updates: self.updates
-                .unwrap_or_default()
-            ,
-            ddls: self.ddls
-                .unwrap_or_default()
-            ,
-            applied_inserts: self.applied_inserts
-            ,
-            applied_deletes: self.applied_deletes
-            ,
-            applied_updates: self.applied_updates
-            ,
-            applied_ddls: self.applied_ddls
-            ,
-            full_load_rows: self.full_load_rows
-                .unwrap_or_default()
-            ,
-            full_load_condtnl_chk_failed_rows: self.full_load_condtnl_chk_failed_rows
-                .unwrap_or_default()
-            ,
-            full_load_error_rows: self.full_load_error_rows
-                .unwrap_or_default()
-            ,
-            full_load_start_time: self.full_load_start_time
-            ,
-            full_load_end_time: self.full_load_end_time
-            ,
-            full_load_reloaded: self.full_load_reloaded
-            ,
-            last_update_time: self.last_update_time
-            ,
-            table_state: self.table_state
-            ,
-            validation_pending_records: self.validation_pending_records
-                .unwrap_or_default()
-            ,
-            validation_failed_records: self.validation_failed_records
-                .unwrap_or_default()
-            ,
-            validation_suspended_records: self.validation_suspended_records
-                .unwrap_or_default()
-            ,
-            validation_state: self.validation_state
-            ,
-            validation_state_details: self.validation_state_details
-            ,
+            schema_name: self.schema_name,
+            table_name: self.table_name,
+            inserts: self.inserts.unwrap_or_default(),
+            deletes: self.deletes.unwrap_or_default(),
+            updates: self.updates.unwrap_or_default(),
+            ddls: self.ddls.unwrap_or_default(),
+            applied_inserts: self.applied_inserts,
+            applied_deletes: self.applied_deletes,
+            applied_updates: self.applied_updates,
+            applied_ddls: self.applied_ddls,
+            full_load_rows: self.full_load_rows.unwrap_or_default(),
+            full_load_condtnl_chk_failed_rows: self
+                .full_load_condtnl_chk_failed_rows
+                .unwrap_or_default(),
+            full_load_error_rows: self.full_load_error_rows.unwrap_or_default(),
+            full_load_start_time: self.full_load_start_time,
+            full_load_end_time: self.full_load_end_time,
+            full_load_reloaded: self.full_load_reloaded,
+            last_update_time: self.last_update_time,
+            table_state: self.table_state,
+            validation_pending_records: self.validation_pending_records.unwrap_or_default(),
+            validation_failed_records: self.validation_failed_records.unwrap_or_default(),
+            validation_suspended_records: self.validation_suspended_records.unwrap_or_default(),
+            validation_state: self.validation_state,
+            validation_state_details: self.validation_state_details,
         }
     }
 }
-

@@ -24,7 +24,11 @@ impl DatabaseMigrationPreference {
     /// Tries to convert the enum instance into [`Heterogeneous`](crate::types::DatabaseMigrationPreference::Heterogeneous), extracting the inner [`Heterogeneous`](crate::types::Heterogeneous).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_heterogeneous(&self) -> std::result::Result<&crate::types::Heterogeneous, &Self> {
-        if let DatabaseMigrationPreference::Heterogeneous(val) = &self { Ok(val) } else { Err(self) }
+        if let DatabaseMigrationPreference::Heterogeneous(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Heterogeneous`](crate::types::DatabaseMigrationPreference::Heterogeneous).
     pub fn is_heterogeneous(&self) -> bool {
@@ -33,7 +37,11 @@ impl DatabaseMigrationPreference {
     /// Tries to convert the enum instance into [`Homogeneous`](crate::types::DatabaseMigrationPreference::Homogeneous), extracting the inner [`Homogeneous`](crate::types::Homogeneous).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_homogeneous(&self) -> std::result::Result<&crate::types::Homogeneous, &Self> {
-        if let DatabaseMigrationPreference::Homogeneous(val) = &self { Ok(val) } else { Err(self) }
+        if let DatabaseMigrationPreference::Homogeneous(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Homogeneous`](crate::types::DatabaseMigrationPreference::Homogeneous).
     pub fn is_homogeneous(&self) -> bool {
@@ -41,8 +49,14 @@ impl DatabaseMigrationPreference {
     }
     /// Tries to convert the enum instance into [`NoPreference`](crate::types::DatabaseMigrationPreference::NoPreference), extracting the inner [`NoDatabaseMigrationPreference`](crate::types::NoDatabaseMigrationPreference).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_no_preference(&self) -> std::result::Result<&crate::types::NoDatabaseMigrationPreference, &Self> {
-        if let DatabaseMigrationPreference::NoPreference(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_no_preference(
+        &self,
+    ) -> std::result::Result<&crate::types::NoDatabaseMigrationPreference, &Self> {
+        if let DatabaseMigrationPreference::NoPreference(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`NoPreference`](crate::types::DatabaseMigrationPreference::NoPreference).
     pub fn is_no_preference(&self) -> bool {
@@ -53,4 +67,3 @@ impl DatabaseMigrationPreference {
         matches!(self, Self::Unknown)
     }
 }
-

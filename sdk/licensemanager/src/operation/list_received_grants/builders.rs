@@ -4,50 +4,70 @@ pub use crate::operation::list_received_grants::_list_received_grants_output::Li
 pub use crate::operation::list_received_grants::_list_received_grants_input::ListReceivedGrantsInputBuilder;
 
 /// Fluent builder constructing a request to `ListReceivedGrants`.
-/// 
+///
 /// <p>Lists grants that are received. Received grants are grants created while specifying the recipient as this Amazon Web Services account, your organization, or an organizational unit (OU) to which this member account belongs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListReceivedGrantsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_received_grants::builders::ListReceivedGrantsInputBuilder,
+    inner: crate::operation::list_received_grants::builders::ListReceivedGrantsInputBuilder,
 }
-impl ListReceivedGrantsFluentBuilder  {
+impl ListReceivedGrantsFluentBuilder {
     /// Creates a new `ListReceivedGrants`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_received_grants::ListReceivedGrants, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_received_grants::ListReceivedGrantsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_received_grants::ListReceivedGrantsOutput, aws_smithy_http::result::SdkError<crate::operation::list_received_grants::ListReceivedGrantsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_received_grants::ListReceivedGrants,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_received_grants::ListReceivedGrantsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_received_grants::ListReceivedGrantsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_received_grants::ListReceivedGrantsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `GrantArns`.
     ///
     /// To override the contents of this collection use [`set_grant_arns`](Self::set_grant_arns).
@@ -58,7 +78,10 @@ impl ListReceivedGrantsFluentBuilder  {
         self
     }
     /// <p>Amazon Resource Names (ARNs) of the grants.</p>
-    pub fn set_grant_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_grant_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_grant_arns(input);
         self
     }
@@ -66,27 +89,30 @@ impl ListReceivedGrantsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Filters to scope the results. The following filters are supported:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ProductSKU</code> </p> </li> 
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
-    /// <li> <p> <code>LicenseArn</code> </p> </li> 
-    /// <li> <p> <code>GrantStatus</code> </p> </li> 
-    /// <li> <p> <code>GranterAccountId</code> </p> </li> 
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+    /// <li> <p> <code>LicenseArn</code> </p> </li>
+    /// <li> <p> <code>GrantStatus</code> </p> </li>
+    /// <li> <p> <code>GranterAccountId</code> </p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Filters to scope the results. The following filters are supported:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ProductSKU</code> </p> </li> 
-    /// <li> <p> <code>LicenseIssuerName</code> </p> </li> 
-    /// <li> <p> <code>LicenseArn</code> </p> </li> 
-    /// <li> <p> <code>GrantStatus</code> </p> </li> 
-    /// <li> <p> <code>GranterAccountId</code> </p> </li> 
+    /// <p>Filters to scope the results. The following filters are supported:</p>
+    /// <ul>
+    /// <li> <p> <code>ProductSKU</code> </p> </li>
+    /// <li> <p> <code>LicenseIssuerName</code> </p> </li>
+    /// <li> <p> <code>LicenseArn</code> </p> </li>
+    /// <li> <p> <code>GrantStatus</code> </p> </li>
+    /// <li> <p> <code>GranterAccountId</code> </p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -111,4 +137,3 @@ impl ListReceivedGrantsFluentBuilder  {
         self
     }
 }
-

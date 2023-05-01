@@ -3,18 +3,18 @@
 /// <p>A structure that contains the configuration settings for an AWS Lambda function's data sink.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LambdaFunctionSinkConfiguration  {
+pub struct LambdaFunctionSinkConfiguration {
     /// <p>The ARN of the sink.</p>
     #[doc(hidden)]
     pub insights_target: std::option::Option<std::string::String>,
 }
 impl LambdaFunctionSinkConfiguration {
     /// <p>The ARN of the sink.</p>
-    pub fn insights_target(&self) -> std::option::Option<& str> {
+    pub fn insights_target(&self) -> std::option::Option<&str> {
         self.insights_target.as_deref()
     }
 }
-impl  std::fmt::Debug for LambdaFunctionSinkConfiguration  {
+impl std::fmt::Debug for LambdaFunctionSinkConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("LambdaFunctionSinkConfiguration");
         formatter.field("insights_target", &"*** Sensitive Data Redacted ***");
@@ -42,13 +42,13 @@ impl LambdaFunctionSinkConfigurationBuilder {
     }
     /// <p>The ARN of the sink.</p>
     pub fn set_insights_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insights_target = input; self
+        self.insights_target = input;
+        self
     }
     /// Consumes the builder and constructs a [`LambdaFunctionSinkConfiguration`](crate::types::LambdaFunctionSinkConfiguration).
     pub fn build(self) -> crate::types::LambdaFunctionSinkConfiguration {
         crate::types::LambdaFunctionSinkConfiguration {
-            insights_target: self.insights_target
-            ,
+            insights_target: self.insights_target,
         }
     }
 }
@@ -59,4 +59,3 @@ impl std::fmt::Debug for LambdaFunctionSinkConfigurationBuilder {
         formatter.finish()
     }
 }
-

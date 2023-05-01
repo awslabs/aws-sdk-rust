@@ -4,65 +4,75 @@ pub use crate::operation::get_aggregate_config_rule_compliance_summary::_get_agg
 pub use crate::operation::get_aggregate_config_rule_compliance_summary::_get_aggregate_config_rule_compliance_summary_input::GetAggregateConfigRuleComplianceSummaryInputBuilder;
 
 /// Fluent builder constructing a request to `GetAggregateConfigRuleComplianceSummary`.
-/// 
-/// <p>Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.</p> <note> 
-/// <p>The results can return an empty result page, but if you have a nextToken, the results are displayed on the next page.</p> 
+///
+/// <p>Returns the number of compliant and noncompliant rules for one or more accounts and regions in an aggregator.</p> <note>
+/// <p>The results can return an empty result page, but if you have a nextToken, the results are displayed on the next page.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAggregateConfigRuleComplianceSummaryFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_aggregate_config_rule_compliance_summary::builders::GetAggregateConfigRuleComplianceSummaryInputBuilder,
 }
-impl GetAggregateConfigRuleComplianceSummaryFluentBuilder  {
+impl GetAggregateConfigRuleComplianceSummaryFluentBuilder {
     /// Creates a new `GetAggregateConfigRuleComplianceSummary`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummary, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryOutput, aws_smithy_http::result::SdkError<crate::operation::get_aggregate_config_rule_compliance_summary::GetAggregateConfigRuleComplianceSummaryError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_aggregate_config_rule_compliance_summary::paginator::GetAggregateConfigRuleComplianceSummaryPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_aggregate_config_rule_compliance_summary::paginator::GetAggregateConfigRuleComplianceSummaryPaginator {
-                                crate::operation::get_aggregate_config_rule_compliance_summary::paginator::GetAggregateConfigRuleComplianceSummaryPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_aggregate_config_rule_compliance_summary::paginator::GetAggregateConfigRuleComplianceSummaryPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::get_aggregate_config_rule_compliance_summary::paginator::GetAggregateConfigRuleComplianceSummaryPaginator{
+        crate::operation::get_aggregate_config_rule_compliance_summary::paginator::GetAggregateConfigRuleComplianceSummaryPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of the configuration aggregator.</p>
     pub fn configuration_aggregator_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.configuration_aggregator_name(input.into());
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_configuration_aggregator_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_configuration_aggregator_name(input);
         self
     }
@@ -72,17 +82,26 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder  {
         self
     }
     /// <p>Filters the results based on the ConfigRuleComplianceSummaryFilters object.</p>
-    pub fn set_filters(mut self, input: std::option::Option<crate::types::ConfigRuleComplianceSummaryFilters>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<crate::types::ConfigRuleComplianceSummaryFilters>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
     /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
-    pub fn group_by_key(mut self, input: crate::types::ConfigRuleComplianceSummaryGroupKey) -> Self {
+    pub fn group_by_key(
+        mut self,
+        input: crate::types::ConfigRuleComplianceSummaryGroupKey,
+    ) -> Self {
         self.inner = self.inner.group_by_key(input);
         self
     }
     /// <p>Groups the result based on ACCOUNT_ID or AWS_REGION.</p>
-    pub fn set_group_by_key(mut self, input: std::option::Option<crate::types::ConfigRuleComplianceSummaryGroupKey>) -> Self {
+    pub fn set_group_by_key(
+        mut self,
+        input: std::option::Option<crate::types::ConfigRuleComplianceSummaryGroupKey>,
+    ) -> Self {
         self.inner = self.inner.set_group_by_key(input);
         self
     }
@@ -107,4 +126,3 @@ impl GetAggregateConfigRuleComplianceSummaryFluentBuilder  {
         self
     }
 }
-

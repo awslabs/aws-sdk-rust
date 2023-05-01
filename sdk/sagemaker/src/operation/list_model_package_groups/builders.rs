@@ -4,63 +4,93 @@ pub use crate::operation::list_model_package_groups::_list_model_package_groups_
 pub use crate::operation::list_model_package_groups::_list_model_package_groups_input::ListModelPackageGroupsInputBuilder;
 
 /// Fluent builder constructing a request to `ListModelPackageGroups`.
-/// 
+///
 /// <p>Gets a list of the model groups in your Amazon Web Services account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListModelPackageGroupsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder,
+    inner:
+        crate::operation::list_model_package_groups::builders::ListModelPackageGroupsInputBuilder,
 }
-impl ListModelPackageGroupsFluentBuilder  {
+impl ListModelPackageGroupsFluentBuilder {
     /// Creates a new `ListModelPackageGroups`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_model_package_groups::ListModelPackageGroups, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_model_package_groups::ListModelPackageGroupsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_model_package_groups::ListModelPackageGroupsOutput, aws_smithy_http::result::SdkError<crate::operation::list_model_package_groups::ListModelPackageGroupsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_model_package_groups::ListModelPackageGroups,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_model_package_groups::ListModelPackageGroupsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_model_package_groups::ListModelPackageGroupsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_model_package_groups::ListModelPackageGroupsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator {
-                                crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator
+    {
+        crate::operation::list_model_package_groups::paginator::ListModelPackageGroupsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>A filter that returns only model groups created after the specified time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>A filter that returns only model groups created after the specified time.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -70,7 +100,10 @@ impl ListModelPackageGroupsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only model groups created before the specified time.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -110,7 +143,10 @@ impl ListModelPackageGroupsFluentBuilder  {
         self
     }
     /// <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ModelPackageGroupSortBy>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::ModelPackageGroupSortBy>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -125,4 +161,3 @@ impl ListModelPackageGroupsFluentBuilder  {
         self
     }
 }
-

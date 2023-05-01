@@ -4,126 +4,153 @@ pub use crate::operation::describe_patch_properties::_describe_patch_properties_
 pub use crate::operation::describe_patch_properties::_describe_patch_properties_input::DescribePatchPropertiesInputBuilder;
 
 /// Fluent builder constructing a request to `DescribePatchProperties`.
-/// 
-/// <p>Lists the properties of available patches organized by product, product family, classification, severity, and other properties of available patches. You can use the reported properties in the filters you specify in requests for operations such as <code>CreatePatchBaseline</code>, <code>UpdatePatchBaseline</code>, <code>DescribeAvailablePatches</code>, and <code>DescribePatchBaselines</code>.</p> 
-/// <p>The following section lists the properties that can be used in filters for each major operating system type:</p> 
-/// <dl> 
+///
+/// <p>Lists the properties of available patches organized by product, product family, classification, severity, and other properties of available patches. You can use the reported properties in the filters you specify in requests for operations such as <code>CreatePatchBaseline</code>, <code>UpdatePatchBaseline</code>, <code>DescribeAvailablePatches</code>, and <code>DescribePatchBaselines</code>.</p>
+/// <p>The following section lists the properties that can be used in filters for each major operating system type:</p>
+/// <dl>
 /// <dt>
 /// AMAZON_LINUX
-/// </dt> 
-/// <dd> 
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> 
-/// </dd> 
+/// </dt>
+/// <dd>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// </dd>
 /// <dt>
 /// AMAZON_LINUX_2
-/// </dt> 
-/// <dd> 
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> 
-/// </dd> 
+/// </dt>
+/// <dd>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// </dd>
 /// <dt>
 /// CENTOS
-/// </dt> 
-/// <dd> 
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> 
-/// </dd> 
+/// </dt>
+/// <dd>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// </dd>
 /// <dt>
 /// DEBIAN
-/// </dt> 
-/// <dd> 
-/// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> </p> 
-/// </dd> 
+/// </dt>
+/// <dd>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> </p>
+/// </dd>
 /// <dt>
 /// MACOS
-/// </dt> 
-/// <dd> 
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> </p> 
-/// </dd> 
+/// </dt>
+/// <dd>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> </p>
+/// </dd>
 /// <dt>
 /// ORACLE_LINUX
-/// </dt> 
-/// <dd> 
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> 
-/// </dd> 
+/// </dt>
+/// <dd>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// </dd>
 /// <dt>
 /// REDHAT_ENTERPRISE_LINUX
-/// </dt> 
-/// <dd> 
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> 
-/// </dd> 
+/// </dt>
+/// <dd>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// </dd>
 /// <dt>
 /// SUSE
-/// </dt> 
-/// <dd> 
-/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p> 
-/// </dd> 
+/// </dt>
+/// <dd>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> | <code>SEVERITY</code> </p>
+/// </dd>
 /// <dt>
 /// UBUNTU
-/// </dt> 
-/// <dd> 
-/// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> </p> 
-/// </dd> 
+/// </dt>
+/// <dd>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code> </p>
+/// </dd>
 /// <dt>
 /// WINDOWS
-/// </dt> 
-/// <dd> 
-/// <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> | <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code> </p> 
-/// </dd> 
+/// </dt>
+/// <dd>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> | <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code> </p>
+/// </dd>
 /// </dl>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePatchPropertiesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder,
+    inner:
+        crate::operation::describe_patch_properties::builders::DescribePatchPropertiesInputBuilder,
 }
-impl DescribePatchPropertiesFluentBuilder  {
+impl DescribePatchPropertiesFluentBuilder {
     /// Creates a new `DescribePatchProperties`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_patch_properties::DescribePatchProperties, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_patch_properties::DescribePatchPropertiesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_patch_properties::DescribePatchPropertiesOutput, aws_smithy_http::result::SdkError<crate::operation::describe_patch_properties::DescribePatchPropertiesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_patch_properties::DescribePatchProperties,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_patch_properties::DescribePatchPropertiesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_patch_properties::DescribePatchPropertiesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_patch_properties::DescribePatchPropertiesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator {
-                                crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator
+    {
+        crate::operation::describe_patch_properties::paginator::DescribePatchPropertiesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The operating system type for which to list patches.</p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
         self.inner = self.inner.operating_system(input);
         self
     }
     /// <p>The operating system type for which to list patches.</p>
-    pub fn set_operating_system(mut self, input: std::option::Option<crate::types::OperatingSystem>) -> Self {
+    pub fn set_operating_system(
+        mut self,
+        input: std::option::Option<crate::types::OperatingSystem>,
+    ) -> Self {
         self.inner = self.inner.set_operating_system(input);
         self
     }
@@ -168,4 +195,3 @@ impl DescribePatchPropertiesFluentBuilder  {
         self
     }
 }
-

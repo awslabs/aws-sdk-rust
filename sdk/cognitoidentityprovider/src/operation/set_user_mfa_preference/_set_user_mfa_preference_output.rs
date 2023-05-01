@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetUserMfaPreferenceOutput  {
+pub struct SetUserMfaPreferenceOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SetUserMfaPreferenceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SetUserMfaPreferenceOutput {
     /// Creates a new builder-style object to manufacture [`SetUserMfaPreferenceOutput`](crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput).
-    pub fn builder() -> crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceOutputBuilder
+    {
         crate::operation::set_user_mfa_preference::builders::SetUserMfaPreferenceOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct SetUserMfaPreferenceOutputBuilder {
 }
 impl SetUserMfaPreferenceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SetUserMfaPreferenceOutput`](crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput).
     pub fn build(self) -> crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput {
         crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput {
@@ -40,4 +42,3 @@ impl SetUserMfaPreferenceOutputBuilder {
         }
     }
 }
-

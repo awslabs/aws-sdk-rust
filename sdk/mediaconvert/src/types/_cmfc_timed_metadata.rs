@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let cmfctimedmetadata = unimplemented!();
 /// match cmfctimedmetadata {
@@ -30,55 +30,64 @@
 /// Specifically, when `cmfctimedmetadata` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CmfcTimedMetadata::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// To include ID3 metadata in this output: Set ID3 metadata (timedMetadata) to Passthrough (PASSTHROUGH). Specify this ID3 metadata in Custom ID3 metadata inserter (timedMetadataInsertion). MediaConvert writes each instance of ID3 metadata in a separate Event Message (eMSG) box. To exclude this ID3 metadata: Set ID3 metadata to None (NONE) or leave blank.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum CmfcTimedMetadata {
     #[allow(missing_docs)] // documentation missing in model
     None,
     #[allow(missing_docs)] // documentation missing in model
     Passthrough,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CmfcTimedMetadata {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "NONE" => CmfcTimedMetadata::None,
-"PASSTHROUGH" => CmfcTimedMetadata::Passthrough,
-other => CmfcTimedMetadata::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "NONE" => CmfcTimedMetadata::None,
+            "PASSTHROUGH" => CmfcTimedMetadata::Passthrough,
+            other => {
+                CmfcTimedMetadata::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for CmfcTimedMetadata {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(CmfcTimedMetadata::from(s))
-                }
-            }
-impl CmfcTimedMetadata {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    CmfcTimedMetadata::None => "NONE",
-    CmfcTimedMetadata::Passthrough => "PASSTHROUGH",
-    CmfcTimedMetadata::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["NONE", "PASSTHROUGH"]
-                }
-            }
-impl AsRef<str> for CmfcTimedMetadata {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for CmfcTimedMetadata {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CmfcTimedMetadata::from(s))
+    }
+}
+impl CmfcTimedMetadata {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CmfcTimedMetadata::None => "NONE",
+            CmfcTimedMetadata::Passthrough => "PASSTHROUGH",
+            CmfcTimedMetadata::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["NONE", "PASSTHROUGH"]
+    }
+}
+impl AsRef<str> for CmfcTimedMetadata {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

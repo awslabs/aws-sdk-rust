@@ -3,7 +3,7 @@
 /// <p>Provides ownership and status information for an Amazon EC2 security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2SecurityGroup  {
+pub struct Ec2SecurityGroup {
     /// <p>The status of the Amazon EC2 security group.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Ec2SecurityGroup  {
 }
 impl Ec2SecurityGroup {
     /// <p>The status of the Amazon EC2 security group.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The name of the Amazon EC2 security group.</p>
-    pub fn ec2_security_group_name(&self) -> std::option::Option<& str> {
+    pub fn ec2_security_group_name(&self) -> std::option::Option<&str> {
         self.ec2_security_group_name.as_deref()
     }
     /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
-    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<& str> {
+    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
         self.ec2_security_group_owner_id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl Ec2SecurityGroupBuilder {
     }
     /// <p>The status of the Amazon EC2 security group.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The name of the Amazon EC2 security group.</p>
     pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +60,12 @@ impl Ec2SecurityGroupBuilder {
         self
     }
     /// <p>The name of the Amazon EC2 security group.</p>
-    pub fn set_ec2_security_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ec2_security_group_name = input; self
+    pub fn set_ec2_security_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ec2_security_group_name = input;
+        self
     }
     /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
     pub fn ec2_security_group_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +73,19 @@ impl Ec2SecurityGroupBuilder {
         self
     }
     /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
-    pub fn set_ec2_security_group_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ec2_security_group_owner_id = input; self
+    pub fn set_ec2_security_group_owner_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ec2_security_group_owner_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`Ec2SecurityGroup`](crate::types::Ec2SecurityGroup).
     pub fn build(self) -> crate::types::Ec2SecurityGroup {
         crate::types::Ec2SecurityGroup {
-            status: self.status
-            ,
-            ec2_security_group_name: self.ec2_security_group_name
-            ,
-            ec2_security_group_owner_id: self.ec2_security_group_owner_id
-            ,
+            status: self.status,
+            ec2_security_group_name: self.ec2_security_group_name,
+            ec2_security_group_owner_id: self.ec2_security_group_owner_id,
         }
     }
 }
-

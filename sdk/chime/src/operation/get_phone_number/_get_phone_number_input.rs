@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPhoneNumberInput  {
+pub struct GetPhoneNumberInput {
     /// <p>The phone number ID.</p>
     #[doc(hidden)]
     pub phone_number_id: std::option::Option<std::string::String>,
 }
 impl GetPhoneNumberInput {
     /// <p>The phone number ID.</p>
-    pub fn phone_number_id(&self) -> std::option::Option<& str> {
+    pub fn phone_number_id(&self) -> std::option::Option<&str> {
         self.phone_number_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetPhoneNumberInputBuilder {
     }
     /// <p>The phone number ID.</p>
     pub fn set_phone_number_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number_id = input; self
+        self.phone_number_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetPhoneNumberInput`](crate::operation::get_phone_number::GetPhoneNumberInput).
-    pub fn build(self) -> Result<crate::operation::get_phone_number::GetPhoneNumberInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_phone_number::GetPhoneNumberInput {
-                phone_number_id: self.phone_number_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_phone_number::GetPhoneNumberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_phone_number::GetPhoneNumberInput {
+            phone_number_id: self.phone_number_id,
+        })
     }
 }
-

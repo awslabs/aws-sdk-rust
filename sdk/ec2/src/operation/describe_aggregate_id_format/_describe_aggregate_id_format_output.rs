@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAggregateIdFormatOutput  {
+pub struct DescribeAggregateIdFormatOutput {
     /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
     #[doc(hidden)]
     pub use_long_ids_aggregated: std::option::Option<bool>,
@@ -17,18 +17,18 @@ impl DescribeAggregateIdFormatOutput {
         self.use_long_ids_aggregated
     }
     /// <p>Information about each resource's ID format.</p>
-    pub fn statuses(&self) -> std::option::Option<& [crate::types::IdFormat]> {
+    pub fn statuses(&self) -> std::option::Option<&[crate::types::IdFormat]> {
         self.statuses.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAggregateIdFormatOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAggregateIdFormatOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAggregateIdFormatOutput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput).
-    pub fn builder() -> crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatOutputBuilder {
+    pub fn builder() -> crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatOutputBuilder{
         crate::operation::describe_aggregate_id_format::builders::DescribeAggregateIdFormatOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl DescribeAggregateIdFormatOutputBuilder {
     }
     /// <p>Indicates whether all resource types in the Region are configured to use longer IDs. This value is only <code>true</code> if all users are configured to use longer IDs for all resources types in the Region.</p>
     pub fn set_use_long_ids_aggregated(mut self, input: std::option::Option<bool>) -> Self {
-        self.use_long_ids_aggregated = input; self
+        self.use_long_ids_aggregated = input;
+        self
     }
     /// Appends an item to `statuses`.
     ///
@@ -58,32 +59,35 @@ impl DescribeAggregateIdFormatOutputBuilder {
     /// <p>Information about each resource's ID format.</p>
     pub fn statuses(mut self, input: crate::types::IdFormat) -> Self {
         let mut v = self.statuses.unwrap_or_default();
-                        v.push(input);
-                        self.statuses = Some(v);
-                        self
+        v.push(input);
+        self.statuses = Some(v);
+        self
     }
     /// <p>Information about each resource's ID format.</p>
-    pub fn set_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::types::IdFormat>>) -> Self {
-        self.statuses = input; self
+    pub fn set_statuses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IdFormat>>,
+    ) -> Self {
+        self.statuses = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAggregateIdFormatOutput`](crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput).
-    pub fn build(self) -> crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput {
         crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput {
-            use_long_ids_aggregated: self.use_long_ids_aggregated
-            ,
-            statuses: self.statuses
-            ,
+            use_long_ids_aggregated: self.use_long_ids_aggregated,
+            statuses: self.statuses,
             _request_id: self._request_id,
         }
     }
 }
-

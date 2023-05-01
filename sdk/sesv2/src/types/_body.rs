@@ -3,7 +3,7 @@
 /// <p>Represents the body of the email message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Body  {
+pub struct Body {
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
     #[doc(hidden)]
     pub text: std::option::Option<crate::types::Content>,
@@ -13,11 +13,11 @@ pub struct Body  {
 }
 impl Body {
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
-    pub fn text(&self) -> std::option::Option<& crate::types::Content> {
+    pub fn text(&self) -> std::option::Option<&crate::types::Content> {
         self.text.as_ref()
     }
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
-    pub fn html(&self) -> std::option::Option<& crate::types::Content> {
+    pub fn html(&self) -> std::option::Option<&crate::types::Content> {
         self.html.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl BodyBuilder {
     }
     /// <p>An object that represents the version of the message that is displayed in email clients that don't support HTML, or clients where the recipient has disabled HTML rendering.</p>
     pub fn set_text(mut self, input: std::option::Option<crate::types::Content>) -> Self {
-        self.text = input; self
+        self.text = input;
+        self
     }
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
     pub fn html(mut self, input: crate::types::Content) -> Self {
@@ -52,16 +53,14 @@ impl BodyBuilder {
     }
     /// <p>An object that represents the version of the message that is displayed in email clients that support HTML. HTML messages can include formatted text, hyperlinks, images, and more. </p>
     pub fn set_html(mut self, input: std::option::Option<crate::types::Content>) -> Self {
-        self.html = input; self
+        self.html = input;
+        self
     }
     /// Consumes the builder and constructs a [`Body`](crate::types::Body).
     pub fn build(self) -> crate::types::Body {
         crate::types::Body {
-            text: self.text
-            ,
-            html: self.html
-            ,
+            text: self.text,
+            html: self.html,
         }
     }
 }
-

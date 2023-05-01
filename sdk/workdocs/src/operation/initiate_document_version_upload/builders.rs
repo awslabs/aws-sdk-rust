@@ -4,59 +4,82 @@ pub use crate::operation::initiate_document_version_upload::_initiate_document_v
 pub use crate::operation::initiate_document_version_upload::_initiate_document_version_upload_input::InitiateDocumentVersionUploadInputBuilder;
 
 /// Fluent builder constructing a request to `InitiateDocumentVersionUpload`.
-/// 
-/// <p>Creates a new document object and version object.</p> 
-/// <p>The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call <code>UpdateDocumentVersion</code>.</p> 
+///
+/// <p>Creates a new document object and version object.</p>
+/// <p>The client specifies the parent folder ID and name of the document to upload. The ID is optionally specified when creating a new version of an existing document. This is the first step to upload a document. Next, upload the document to the URL returned from the call, and then call <code>UpdateDocumentVersion</code>.</p>
 /// <p>To cancel the document upload, call <code>AbortDocumentVersionUpload</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct InitiateDocumentVersionUploadFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::initiate_document_version_upload::builders::InitiateDocumentVersionUploadInputBuilder,
 }
-impl InitiateDocumentVersionUploadFluentBuilder  {
+impl InitiateDocumentVersionUploadFluentBuilder {
     /// Creates a new `InitiateDocumentVersionUpload`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUpload, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput, aws_smithy_http::result::SdkError<crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUpload,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     pub fn authentication_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authentication_token(input.into());
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_authentication_token(input);
         self
     }
@@ -86,7 +109,10 @@ impl InitiateDocumentVersionUploadFluentBuilder  {
         self
     }
     /// <p>The timestamp when the content of the document was originally created.</p>
-    pub fn set_content_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_content_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_content_created_timestamp(input);
         self
     }
@@ -96,7 +122,10 @@ impl InitiateDocumentVersionUploadFluentBuilder  {
         self
     }
     /// <p>The timestamp when the content of the document was modified.</p>
-    pub fn set_content_modified_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_content_modified_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_content_modified_timestamp(input);
         self
     }
@@ -131,4 +160,3 @@ impl InitiateDocumentVersionUploadFluentBuilder  {
         self
     }
 }
-

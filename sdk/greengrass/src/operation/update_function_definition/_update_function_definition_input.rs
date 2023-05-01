@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFunctionDefinitionInput  {
+pub struct UpdateFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
     #[doc(hidden)]
     pub function_definition_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct UpdateFunctionDefinitionInput  {
 }
 impl UpdateFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(&self) -> std::option::Option<& str> {
+    pub fn function_definition_id(&self) -> std::option::Option<&str> {
         self.function_definition_id.as_deref()
     }
     /// The name of the definition.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl UpdateFunctionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`UpdateFunctionDefinitionInput`](crate::operation::update_function_definition::UpdateFunctionDefinitionInput).
-    pub fn builder() -> crate::operation::update_function_definition::builders::UpdateFunctionDefinitionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_function_definition::builders::UpdateFunctionDefinitionInputBuilder
+    {
         crate::operation::update_function_definition::builders::UpdateFunctionDefinitionInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl UpdateFunctionDefinitionInputBuilder {
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_definition_id = input; self
+    pub fn set_function_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.function_definition_id = input;
+        self
     }
     /// The name of the definition.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl UpdateFunctionDefinitionInputBuilder {
     }
     /// The name of the definition.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFunctionDefinitionInput`](crate::operation::update_function_definition::UpdateFunctionDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::update_function_definition::UpdateFunctionDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_function_definition::UpdateFunctionDefinitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_function_definition::UpdateFunctionDefinitionInput {
-                function_definition_id: self.function_definition_id
-                ,
-                name: self.name
-                ,
-            }
+                function_definition_id: self.function_definition_id,
+                name: self.name,
+            },
         )
     }
 }
-

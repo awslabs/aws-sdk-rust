@@ -3,17 +3,18 @@
 /// <p>Describes the status of a SSL/TLS certificate renewal managed by Amazon Lightsail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RenewalSummary  {
+pub struct RenewalSummary {
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
     #[doc(hidden)]
-    pub domain_validation_records: std::option::Option<std::vec::Vec<crate::types::DomainValidationRecord>>,
-    /// <p>The renewal status of the certificate.</p> 
-    /// <p>The following renewal status are possible:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of the certificate. No further action is required. </p> </li> 
-    /// <li> <p> <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.</p> </li> 
-    /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li> 
-    /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li> 
+    pub domain_validation_records:
+        std::option::Option<std::vec::Vec<crate::types::DomainValidationRecord>>,
+    /// <p>The renewal status of the certificate.</p>
+    /// <p>The following renewal status are possible:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of the certificate. No further action is required. </p> </li>
+    /// <li> <p> <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.</p> </li>
+    /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li>
+    /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub renewal_status: std::option::Option<crate::types::RenewalStatus>,
@@ -26,26 +27,28 @@ pub struct RenewalSummary  {
 }
 impl RenewalSummary {
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub fn domain_validation_records(&self) -> std::option::Option<& [crate::types::DomainValidationRecord]> {
+    pub fn domain_validation_records(
+        &self,
+    ) -> std::option::Option<&[crate::types::DomainValidationRecord]> {
         self.domain_validation_records.as_deref()
     }
-    /// <p>The renewal status of the certificate.</p> 
-    /// <p>The following renewal status are possible:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of the certificate. No further action is required. </p> </li> 
-    /// <li> <p> <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.</p> </li> 
-    /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li> 
-    /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li> 
+    /// <p>The renewal status of the certificate.</p>
+    /// <p>The following renewal status are possible:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of the certificate. No further action is required. </p> </li>
+    /// <li> <p> <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.</p> </li>
+    /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li>
+    /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
-    pub fn renewal_status(&self) -> std::option::Option<& crate::types::RenewalStatus> {
+    pub fn renewal_status(&self) -> std::option::Option<&crate::types::RenewalStatus> {
         self.renewal_status.as_ref()
     }
     /// <p>The reason for the renewal status of the certificate.</p>
-    pub fn renewal_status_reason(&self) -> std::option::Option<& str> {
+    pub fn renewal_status_reason(&self) -> std::option::Option<&str> {
         self.renewal_status_reason.as_deref()
     }
     /// <p>The timestamp when the certificate was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -60,7 +63,8 @@ impl RenewalSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RenewalSummaryBuilder {
-    pub(crate) domain_validation_records: std::option::Option<std::vec::Vec<crate::types::DomainValidationRecord>>,
+    pub(crate) domain_validation_records:
+        std::option::Option<std::vec::Vec<crate::types::DomainValidationRecord>>,
     pub(crate) renewal_status: std::option::Option<crate::types::RenewalStatus>,
     pub(crate) renewal_status_reason: std::option::Option<std::string::String>,
     pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -71,38 +75,49 @@ impl RenewalSummaryBuilder {
     /// To override the contents of this collection use [`set_domain_validation_records`](Self::set_domain_validation_records).
     ///
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub fn domain_validation_records(mut self, input: crate::types::DomainValidationRecord) -> Self {
+    pub fn domain_validation_records(
+        mut self,
+        input: crate::types::DomainValidationRecord,
+    ) -> Self {
         let mut v = self.domain_validation_records.unwrap_or_default();
-                        v.push(input);
-                        self.domain_validation_records = Some(v);
-                        self
+        v.push(input);
+        self.domain_validation_records = Some(v);
+        self
     }
     /// <p>An array of objects that describe the domain validation records of the certificate.</p>
-    pub fn set_domain_validation_records(mut self, input: std::option::Option<std::vec::Vec<crate::types::DomainValidationRecord>>) -> Self {
-        self.domain_validation_records = input; self
+    pub fn set_domain_validation_records(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DomainValidationRecord>>,
+    ) -> Self {
+        self.domain_validation_records = input;
+        self
     }
-    /// <p>The renewal status of the certificate.</p> 
-    /// <p>The following renewal status are possible:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of the certificate. No further action is required. </p> </li> 
-    /// <li> <p> <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.</p> </li> 
-    /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li> 
-    /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li> 
+    /// <p>The renewal status of the certificate.</p>
+    /// <p>The following renewal status are possible:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of the certificate. No further action is required. </p> </li>
+    /// <li> <p> <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.</p> </li>
+    /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li>
+    /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
     pub fn renewal_status(mut self, input: crate::types::RenewalStatus) -> Self {
         self.renewal_status = Some(input);
         self
     }
-    /// <p>The renewal status of the certificate.</p> 
-    /// <p>The following renewal status are possible:</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of the certificate. No further action is required. </p> </li> 
-    /// <li> <p> <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.</p> </li> 
-    /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li> 
-    /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li> 
+    /// <p>The renewal status of the certificate.</p>
+    /// <p>The following renewal status are possible:</p>
+    /// <ul>
+    /// <li> <p> <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of the certificate. No further action is required. </p> </li>
+    /// <li> <p> <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate remains in use.</p> </li>
+    /// <li> <p> <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the certificate. No further action is required. </p> </li>
+    /// <li> <p> <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code> action.</p> </li>
     /// </ul>
-    pub fn set_renewal_status(mut self, input: std::option::Option<crate::types::RenewalStatus>) -> Self {
-        self.renewal_status = input; self
+    pub fn set_renewal_status(
+        mut self,
+        input: std::option::Option<crate::types::RenewalStatus>,
+    ) -> Self {
+        self.renewal_status = input;
+        self
     }
     /// <p>The reason for the renewal status of the certificate.</p>
     pub fn renewal_status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +125,12 @@ impl RenewalSummaryBuilder {
         self
     }
     /// <p>The reason for the renewal status of the certificate.</p>
-    pub fn set_renewal_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.renewal_status_reason = input; self
+    pub fn set_renewal_status_reason(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.renewal_status_reason = input;
+        self
     }
     /// <p>The timestamp when the certificate was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,21 +138,20 @@ impl RenewalSummaryBuilder {
         self
     }
     /// <p>The timestamp when the certificate was last updated.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// Consumes the builder and constructs a [`RenewalSummary`](crate::types::RenewalSummary).
     pub fn build(self) -> crate::types::RenewalSummary {
         crate::types::RenewalSummary {
-            domain_validation_records: self.domain_validation_records
-            ,
-            renewal_status: self.renewal_status
-            ,
-            renewal_status_reason: self.renewal_status_reason
-            ,
-            updated_at: self.updated_at
-            ,
+            domain_validation_records: self.domain_validation_records,
+            renewal_status: self.renewal_status,
+            renewal_status_reason: self.renewal_status_reason,
+            updated_at: self.updated_at,
         }
     }
 }
-

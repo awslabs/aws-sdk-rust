@@ -3,7 +3,7 @@
 /// <p>Represents a log event, which is a record of activity that was recorded by the application or resource being monitored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputLogEvent  {
+pub struct InputLogEvent {
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<i64>,
@@ -17,7 +17,7 @@ impl InputLogEvent {
         self.timestamp
     }
     /// <p>The raw event message.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl InputLogEventBuilder {
     }
     /// <p>The time the event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<i64>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
     /// <p>The raw event message.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl InputLogEventBuilder {
     }
     /// <p>The raw event message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`InputLogEvent`](crate::types::InputLogEvent).
     pub fn build(self) -> crate::types::InputLogEvent {
         crate::types::InputLogEvent {
-            timestamp: self.timestamp
-            ,
-            message: self.message
-            ,
+            timestamp: self.timestamp,
+            message: self.message,
         }
     }
 }
-

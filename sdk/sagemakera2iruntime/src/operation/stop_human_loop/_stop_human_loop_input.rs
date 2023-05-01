@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopHumanLoopInput  {
+pub struct StopHumanLoopInput {
     /// <p>The name of the human loop that you want to stop.</p>
     #[doc(hidden)]
     pub human_loop_name: std::option::Option<std::string::String>,
 }
 impl StopHumanLoopInput {
     /// <p>The name of the human loop that you want to stop.</p>
-    pub fn human_loop_name(&self) -> std::option::Option<& str> {
+    pub fn human_loop_name(&self) -> std::option::Option<&str> {
         self.human_loop_name.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl StopHumanLoopInputBuilder {
     }
     /// <p>The name of the human loop that you want to stop.</p>
     pub fn set_human_loop_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.human_loop_name = input; self
+        self.human_loop_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopHumanLoopInput`](crate::operation::stop_human_loop::StopHumanLoopInput).
-    pub fn build(self) -> Result<crate::operation::stop_human_loop::StopHumanLoopInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_human_loop::StopHumanLoopInput {
-                human_loop_name: self.human_loop_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_human_loop::StopHumanLoopInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_human_loop::StopHumanLoopInput {
+            human_loop_name: self.human_loop_name,
+        })
     }
 }
-

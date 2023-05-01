@@ -3,14 +3,14 @@
 /// <p>Input for DeleteEndpoint action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEndpointInput  {
+pub struct DeleteEndpointInput {
     /// <p>EndpointArn of endpoint to delete.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl DeleteEndpointInput {
     /// <p>EndpointArn of endpoint to delete.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
 }
@@ -35,16 +35,18 @@ impl DeleteEndpointInputBuilder {
     }
     /// <p>EndpointArn of endpoint to delete.</p>
     pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_arn = input; self
+        self.endpoint_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteEndpointInput`](crate::operation::delete_endpoint::DeleteEndpointInput).
-    pub fn build(self) -> Result<crate::operation::delete_endpoint::DeleteEndpointInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_endpoint::DeleteEndpointInput {
-                endpoint_arn: self.endpoint_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_endpoint::DeleteEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_endpoint::DeleteEndpointInput {
+            endpoint_arn: self.endpoint_arn,
+        })
     }
 }
-

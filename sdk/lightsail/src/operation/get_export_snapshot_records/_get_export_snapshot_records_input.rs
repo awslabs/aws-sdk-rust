@@ -2,22 +2,24 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExportSnapshotRecordsInput  {
-    /// <p>The token to advance to the next page of results from your request.</p> 
+pub struct GetExportSnapshotRecordsInput {
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
 }
 impl GetExportSnapshotRecordsInput {
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
 }
 impl GetExportSnapshotRecordsInput {
     /// Creates a new builder-style object to manufacture [`GetExportSnapshotRecordsInput`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsInput).
-    pub fn builder() -> crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder
+    {
         crate::operation::get_export_snapshot_records::builders::GetExportSnapshotRecordsInputBuilder::default()
     }
 }
@@ -29,25 +31,29 @@ pub struct GetExportSnapshotRecordsInputBuilder {
     pub(crate) page_token: std::option::Option<std::string::String>,
 }
 impl GetExportSnapshotRecordsInputBuilder {
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.page_token = Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetExportSnapshotRecords</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetExportSnapshotRecordsInput`](crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsInput).
-    pub fn build(self) -> Result<crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_export_snapshot_records::GetExportSnapshotRecordsInput {
-                page_token: self.page_token
-                ,
-            }
+                page_token: self.page_token,
+            },
         )
     }
 }
-

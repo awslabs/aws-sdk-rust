@@ -4,50 +4,57 @@ pub use crate::operation::notify_provision_product_engine_workflow_result::_noti
 pub use crate::operation::notify_provision_product_engine_workflow_result::_notify_provision_product_engine_workflow_result_input::NotifyProvisionProductEngineWorkflowResultInputBuilder;
 
 /// Fluent builder constructing a request to `NotifyProvisionProductEngineWorkflowResult`.
-/// 
+///
 /// <p> Notifies the result of the provisioning engine execution. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct NotifyProvisionProductEngineWorkflowResultFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::notify_provision_product_engine_workflow_result::builders::NotifyProvisionProductEngineWorkflowResultInputBuilder,
 }
-impl NotifyProvisionProductEngineWorkflowResultFluentBuilder  {
+impl NotifyProvisionProductEngineWorkflowResultFluentBuilder {
     /// Creates a new `NotifyProvisionProductEngineWorkflowResult`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResult, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput, aws_smithy_http::result::SdkError<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The encrypted contents of the provisioning engine execution payload that Service Catalog sends after the Terraform product provisioning workflow starts. </p>
     pub fn workflow_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.workflow_token(input.into());
@@ -74,7 +81,10 @@ impl NotifyProvisionProductEngineWorkflowResultFluentBuilder  {
         self
     }
     /// <p> The status of the provisioning engine execution. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::EngineWorkflowStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::EngineWorkflowStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -89,12 +99,18 @@ impl NotifyProvisionProductEngineWorkflowResultFluentBuilder  {
         self
     }
     /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
-    pub fn resource_identifier(mut self, input: crate::types::EngineWorkflowResourceIdentifier) -> Self {
+    pub fn resource_identifier(
+        mut self,
+        input: crate::types::EngineWorkflowResourceIdentifier,
+    ) -> Self {
         self.inner = self.inner.resource_identifier(input);
         self
     }
     /// <p> The ID for the provisioned product resources that are part of a resource group. </p>
-    pub fn set_resource_identifier(mut self, input: std::option::Option<crate::types::EngineWorkflowResourceIdentifier>) -> Self {
+    pub fn set_resource_identifier(
+        mut self,
+        input: std::option::Option<crate::types::EngineWorkflowResourceIdentifier>,
+    ) -> Self {
         self.inner = self.inner.set_resource_identifier(input);
         self
     }
@@ -108,7 +124,10 @@ impl NotifyProvisionProductEngineWorkflowResultFluentBuilder  {
         self
     }
     /// <p> The output of the provisioning engine execution. </p>
-    pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecordOutput>>) -> Self {
+    pub fn set_outputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RecordOutput>>,
+    ) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
@@ -118,9 +137,11 @@ impl NotifyProvisionProductEngineWorkflowResultFluentBuilder  {
         self
     }
     /// <p> The idempotency token that identifies the provisioning engine execution. </p>
-    pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_idempotency_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_idempotency_token(input);
         self
     }
 }
-

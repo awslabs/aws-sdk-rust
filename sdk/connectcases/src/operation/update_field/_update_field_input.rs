@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFieldInput  {
+pub struct UpdateFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct UpdateFieldInput  {
 }
 impl UpdateFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The unique identifier of a field.</p>
-    pub fn field_id(&self) -> std::option::Option<& str> {
+    pub fn field_id(&self) -> std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The name of the field.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of a field.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl UpdateFieldInputBuilder {
     }
     /// <p>The unique identifier of the Cases domain. </p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The unique identifier of a field.</p>
     pub fn field_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl UpdateFieldInputBuilder {
     }
     /// <p>The unique identifier of a field.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input; self
+        self.field_id = input;
+        self
     }
     /// <p>The name of the field.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl UpdateFieldInputBuilder {
     }
     /// <p>The name of the field.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of a field.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +88,21 @@ impl UpdateFieldInputBuilder {
     }
     /// <p>The description of a field.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFieldInput`](crate::operation::update_field::UpdateFieldInput).
-    pub fn build(self) -> Result<crate::operation::update_field::UpdateFieldInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_field::UpdateFieldInput {
-                domain_id: self.domain_id
-                ,
-                field_id: self.field_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_field::UpdateFieldInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_field::UpdateFieldInput {
+            domain_id: self.domain_id,
+            field_id: self.field_id,
+            name: self.name,
+            description: self.description,
+        })
     }
 }
-

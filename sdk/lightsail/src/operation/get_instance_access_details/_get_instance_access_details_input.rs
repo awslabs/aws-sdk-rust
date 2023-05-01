@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInstanceAccessDetailsInput  {
+pub struct GetInstanceAccessDetailsInput {
     /// <p>The name of the instance to access.</p>
     #[doc(hidden)]
     pub instance_name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct GetInstanceAccessDetailsInput  {
 }
 impl GetInstanceAccessDetailsInput {
     /// <p>The name of the instance to access.</p>
-    pub fn instance_name(&self) -> std::option::Option<& str> {
+    pub fn instance_name(&self) -> std::option::Option<&str> {
         self.instance_name.as_deref()
     }
     /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
-    pub fn protocol(&self) -> std::option::Option<& crate::types::InstanceAccessProtocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::InstanceAccessProtocol> {
         self.protocol.as_ref()
     }
 }
 impl GetInstanceAccessDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetInstanceAccessDetailsInput`](crate::operation::get_instance_access_details::GetInstanceAccessDetailsInput).
-    pub fn builder() -> crate::operation::get_instance_access_details::builders::GetInstanceAccessDetailsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_instance_access_details::builders::GetInstanceAccessDetailsInputBuilder
+    {
         crate::operation::get_instance_access_details::builders::GetInstanceAccessDetailsInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl GetInstanceAccessDetailsInputBuilder {
     }
     /// <p>The name of the instance to access.</p>
     pub fn set_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_name = input; self
+        self.instance_name = input;
+        self
     }
     /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
     pub fn protocol(mut self, input: crate::types::InstanceAccessProtocol) -> Self {
@@ -50,19 +53,25 @@ impl GetInstanceAccessDetailsInputBuilder {
         self
     }
     /// <p>The protocol to use to connect to your instance. Defaults to <code>ssh</code>.</p>
-    pub fn set_protocol(mut self, input: std::option::Option<crate::types::InstanceAccessProtocol>) -> Self {
-        self.protocol = input; self
+    pub fn set_protocol(
+        mut self,
+        input: std::option::Option<crate::types::InstanceAccessProtocol>,
+    ) -> Self {
+        self.protocol = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetInstanceAccessDetailsInput`](crate::operation::get_instance_access_details::GetInstanceAccessDetailsInput).
-    pub fn build(self) -> Result<crate::operation::get_instance_access_details::GetInstanceAccessDetailsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_instance_access_details::GetInstanceAccessDetailsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_instance_access_details::GetInstanceAccessDetailsInput {
-                instance_name: self.instance_name
-                ,
-                protocol: self.protocol
-                ,
-            }
+                instance_name: self.instance_name,
+                protocol: self.protocol,
+            },
         )
     }
 }
-

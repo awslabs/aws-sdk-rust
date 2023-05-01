@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let xavchdprofiletelecine = unimplemented!();
 /// match xavchdprofiletelecine {
@@ -30,55 +30,64 @@
 /// Specifically, when `xavchdprofiletelecine` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `XavcHdProfileTelecine::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum XavcHdProfileTelecine {
     #[allow(missing_docs)] // documentation missing in model
     Hard,
     #[allow(missing_docs)] // documentation missing in model
     None,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for XavcHdProfileTelecine {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "HARD" => XavcHdProfileTelecine::Hard,
-"NONE" => XavcHdProfileTelecine::None,
-other => XavcHdProfileTelecine::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for XavcHdProfileTelecine {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(XavcHdProfileTelecine::from(s))
-                }
-            }
-impl XavcHdProfileTelecine {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    XavcHdProfileTelecine::Hard => "HARD",
-    XavcHdProfileTelecine::None => "NONE",
-    XavcHdProfileTelecine::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "HARD" => XavcHdProfileTelecine::Hard,
+            "NONE" => XavcHdProfileTelecine::None,
+            other => XavcHdProfileTelecine::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["HARD", "NONE"]
-                }
-            }
-impl AsRef<str> for XavcHdProfileTelecine {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for XavcHdProfileTelecine {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(XavcHdProfileTelecine::from(s))
+    }
+}
+impl XavcHdProfileTelecine {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            XavcHdProfileTelecine::Hard => "HARD",
+            XavcHdProfileTelecine::None => "NONE",
+            XavcHdProfileTelecine::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["HARD", "NONE"]
+    }
+}
+impl AsRef<str> for XavcHdProfileTelecine {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

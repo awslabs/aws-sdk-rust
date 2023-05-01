@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAuthorizerInput  {
+pub struct DeleteAuthorizerInput {
     /// <p>The API identifier.</p>
     #[doc(hidden)]
     pub api_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteAuthorizerInput  {
 }
 impl DeleteAuthorizerInput {
     /// <p>The API identifier.</p>
-    pub fn api_id(&self) -> std::option::Option<& str> {
+    pub fn api_id(&self) -> std::option::Option<&str> {
         self.api_id.as_deref()
     }
     /// <p>The authorizer identifier.</p>
-    pub fn authorizer_id(&self) -> std::option::Option<& str> {
+    pub fn authorizer_id(&self) -> std::option::Option<&str> {
         self.authorizer_id.as_deref()
     }
 }
 impl DeleteAuthorizerInput {
     /// Creates a new builder-style object to manufacture [`DeleteAuthorizerInput`](crate::operation::delete_authorizer::DeleteAuthorizerInput).
-    pub fn builder() -> crate::operation::delete_authorizer::builders::DeleteAuthorizerInputBuilder {
+    pub fn builder() -> crate::operation::delete_authorizer::builders::DeleteAuthorizerInputBuilder
+    {
         crate::operation::delete_authorizer::builders::DeleteAuthorizerInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteAuthorizerInputBuilder {
     }
     /// <p>The API identifier.</p>
     pub fn set_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_id = input; self
+        self.api_id = input;
+        self
     }
     /// <p>The authorizer identifier.</p>
     pub fn authorizer_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,19 @@ impl DeleteAuthorizerInputBuilder {
     }
     /// <p>The authorizer identifier.</p>
     pub fn set_authorizer_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authorizer_id = input; self
+        self.authorizer_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAuthorizerInput`](crate::operation::delete_authorizer::DeleteAuthorizerInput).
-    pub fn build(self) -> Result<crate::operation::delete_authorizer::DeleteAuthorizerInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_authorizer::DeleteAuthorizerInput {
-                api_id: self.api_id
-                ,
-                authorizer_id: self.authorizer_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_authorizer::DeleteAuthorizerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_authorizer::DeleteAuthorizerInput {
+            api_id: self.api_id,
+            authorizer_id: self.authorizer_id,
+        })
     }
 }
-

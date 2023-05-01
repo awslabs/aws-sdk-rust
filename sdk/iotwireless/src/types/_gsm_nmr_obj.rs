@@ -3,7 +3,7 @@
 /// <p>GSM object for network measurement reports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GsmNmrObj  {
+pub struct GsmNmrObj {
     /// <p>GSM base station identity code (BSIC).</p>
     #[doc(hidden)]
     pub bsic: std::option::Option<i32>,
@@ -31,7 +31,7 @@ impl GsmNmrObj {
         self.rx_level
     }
     /// <p>Global identity information of the GSM object.</p>
-    pub fn global_identity(&self) -> std::option::Option<& crate::types::GlobalIdentity> {
+    pub fn global_identity(&self) -> std::option::Option<&crate::types::GlobalIdentity> {
         self.global_identity.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl GsmNmrObjBuilder {
     }
     /// <p>GSM base station identity code (BSIC).</p>
     pub fn set_bsic(mut self, input: std::option::Option<i32>) -> Self {
-        self.bsic = input; self
+        self.bsic = input;
+        self
     }
     /// <p>GSM broadcast control channel.</p>
     pub fn bcch(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl GsmNmrObjBuilder {
     }
     /// <p>GSM broadcast control channel.</p>
     pub fn set_bcch(mut self, input: std::option::Option<i32>) -> Self {
-        self.bcch = input; self
+        self.bcch = input;
+        self
     }
     /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
     pub fn rx_level(mut self, input: i32) -> Self {
@@ -77,7 +79,8 @@ impl GsmNmrObjBuilder {
     }
     /// <p>Rx level, which is the received signal power, measured in dBm (decibel-milliwatts).</p>
     pub fn set_rx_level(mut self, input: std::option::Option<i32>) -> Self {
-        self.rx_level = input; self
+        self.rx_level = input;
+        self
     }
     /// <p>Global identity information of the GSM object.</p>
     pub fn global_identity(mut self, input: crate::types::GlobalIdentity) -> Self {
@@ -85,21 +88,20 @@ impl GsmNmrObjBuilder {
         self
     }
     /// <p>Global identity information of the GSM object.</p>
-    pub fn set_global_identity(mut self, input: std::option::Option<crate::types::GlobalIdentity>) -> Self {
-        self.global_identity = input; self
+    pub fn set_global_identity(
+        mut self,
+        input: std::option::Option<crate::types::GlobalIdentity>,
+    ) -> Self {
+        self.global_identity = input;
+        self
     }
     /// Consumes the builder and constructs a [`GsmNmrObj`](crate::types::GsmNmrObj).
     pub fn build(self) -> crate::types::GsmNmrObj {
         crate::types::GsmNmrObj {
-            bsic: self.bsic
-            ,
-            bcch: self.bcch
-            ,
-            rx_level: self.rx_level
-            ,
-            global_identity: self.global_identity
-            ,
+            bsic: self.bsic,
+            bcch: self.bcch,
+            rx_level: self.rx_level,
+            global_identity: self.global_identity,
         }
     }
 }
-

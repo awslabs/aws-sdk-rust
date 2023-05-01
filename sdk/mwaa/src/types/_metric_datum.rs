@@ -3,7 +3,7 @@
 /// <p> <b>Internal only</b>. Collects Apache Airflow metrics. To learn more about the metrics published to Amazon CloudWatch, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/cw-metrics.html">Amazon MWAA performance metrics in Amazon CloudWatch</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricDatum  {
+pub struct MetricDatum {
     /// <p> <b>Internal only</b>. The name of the metric.</p>
     #[doc(hidden)]
     pub metric_name: std::option::Option<std::string::String>,
@@ -25,15 +25,15 @@ pub struct MetricDatum  {
 }
 impl MetricDatum {
     /// <p> <b>Internal only</b>. The name of the metric.</p>
-    pub fn metric_name(&self) -> std::option::Option<& str> {
+    pub fn metric_name(&self) -> std::option::Option<&str> {
         self.metric_name.as_deref()
     }
     /// <p> <b>Internal only</b>. The time the metric data was received.</p>
-    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p> <b>Internal only</b>. The dimensions associated with the metric.</p>
-    pub fn dimensions(&self) -> std::option::Option<& [crate::types::Dimension]> {
+    pub fn dimensions(&self) -> std::option::Option<&[crate::types::Dimension]> {
         self.dimensions.as_deref()
     }
     /// <p> <b>Internal only</b>. The value for the metric.</p>
@@ -41,11 +41,11 @@ impl MetricDatum {
         self.value
     }
     /// <p> <b>Internal only</b>. The unit used to store the metric.</p>
-    pub fn unit(&self) -> std::option::Option<& crate::types::Unit> {
+    pub fn unit(&self) -> std::option::Option<&crate::types::Unit> {
         self.unit.as_ref()
     }
     /// <p> <b>Internal only</b>. The statistical values for the metric.</p>
-    pub fn statistic_values(&self) -> std::option::Option<& crate::types::StatisticSet> {
+    pub fn statistic_values(&self) -> std::option::Option<&crate::types::StatisticSet> {
         self.statistic_values.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl MetricDatumBuilder {
     }
     /// <p> <b>Internal only</b>. The name of the metric.</p>
     pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric_name = input; self
+        self.metric_name = input;
+        self
     }
     /// <p> <b>Internal only</b>. The time the metric data was received.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,7 +85,8 @@ impl MetricDatumBuilder {
     }
     /// <p> <b>Internal only</b>. The time the metric data was received.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
     /// Appends an item to `dimensions`.
     ///
@@ -93,13 +95,17 @@ impl MetricDatumBuilder {
     /// <p> <b>Internal only</b>. The dimensions associated with the metric.</p>
     pub fn dimensions(mut self, input: crate::types::Dimension) -> Self {
         let mut v = self.dimensions.unwrap_or_default();
-                        v.push(input);
-                        self.dimensions = Some(v);
-                        self
+        v.push(input);
+        self.dimensions = Some(v);
+        self
     }
     /// <p> <b>Internal only</b>. The dimensions associated with the metric.</p>
-    pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Dimension>>) -> Self {
-        self.dimensions = input; self
+    pub fn set_dimensions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+    ) -> Self {
+        self.dimensions = input;
+        self
     }
     /// <p> <b>Internal only</b>. The value for the metric.</p>
     pub fn value(mut self, input: f64) -> Self {
@@ -108,7 +114,8 @@ impl MetricDatumBuilder {
     }
     /// <p> <b>Internal only</b>. The value for the metric.</p>
     pub fn set_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p> <b>Internal only</b>. The unit used to store the metric.</p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
@@ -117,7 +124,8 @@ impl MetricDatumBuilder {
     }
     /// <p> <b>Internal only</b>. The unit used to store the metric.</p>
     pub fn set_unit(mut self, input: std::option::Option<crate::types::Unit>) -> Self {
-        self.unit = input; self
+        self.unit = input;
+        self
     }
     /// <p> <b>Internal only</b>. The statistical values for the metric.</p>
     pub fn statistic_values(mut self, input: crate::types::StatisticSet) -> Self {
@@ -125,25 +133,22 @@ impl MetricDatumBuilder {
         self
     }
     /// <p> <b>Internal only</b>. The statistical values for the metric.</p>
-    pub fn set_statistic_values(mut self, input: std::option::Option<crate::types::StatisticSet>) -> Self {
-        self.statistic_values = input; self
+    pub fn set_statistic_values(
+        mut self,
+        input: std::option::Option<crate::types::StatisticSet>,
+    ) -> Self {
+        self.statistic_values = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricDatum`](crate::types::MetricDatum).
     pub fn build(self) -> crate::types::MetricDatum {
         crate::types::MetricDatum {
-            metric_name: self.metric_name
-            ,
-            timestamp: self.timestamp
-            ,
-            dimensions: self.dimensions
-            ,
-            value: self.value
-            ,
-            unit: self.unit
-            ,
-            statistic_values: self.statistic_values
-            ,
+            metric_name: self.metric_name,
+            timestamp: self.timestamp,
+            dimensions: self.dimensions,
+            value: self.value,
+            unit: self.unit,
+            statistic_values: self.statistic_values,
         }
     }
 }
-

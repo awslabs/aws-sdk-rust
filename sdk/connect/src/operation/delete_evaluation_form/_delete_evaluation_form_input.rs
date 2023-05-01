@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEvaluationFormInput  {
+pub struct DeleteEvaluationFormInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct DeleteEvaluationFormInput  {
 }
 impl DeleteEvaluationFormInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> std::option::Option<& str> {
+    pub fn evaluation_form_id(&self) -> std::option::Option<&str> {
         self.evaluation_form_id.as_deref()
     }
     /// <p>The unique identifier for the evaluation form.</p>
@@ -29,7 +29,8 @@ impl DeleteEvaluationFormInput {
 }
 impl DeleteEvaluationFormInput {
     /// Creates a new builder-style object to manufacture [`DeleteEvaluationFormInput`](crate::operation::delete_evaluation_form::DeleteEvaluationFormInput).
-    pub fn builder() -> crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormInputBuilder {
         crate::operation::delete_evaluation_form::builders::DeleteEvaluationFormInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DeleteEvaluationFormInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn evaluation_form_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +60,12 @@ impl DeleteEvaluationFormInputBuilder {
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_form_id = input; self
+    pub fn set_evaluation_form_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evaluation_form_id = input;
+        self
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn evaluation_form_version(mut self, input: i32) -> Self {
@@ -68,20 +74,22 @@ impl DeleteEvaluationFormInputBuilder {
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn set_evaluation_form_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.evaluation_form_version = input; self
+        self.evaluation_form_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteEvaluationFormInput`](crate::operation::delete_evaluation_form::DeleteEvaluationFormInput).
-    pub fn build(self) -> Result<crate::operation::delete_evaluation_form::DeleteEvaluationFormInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_evaluation_form::DeleteEvaluationFormInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_evaluation_form::DeleteEvaluationFormInput {
-                instance_id: self.instance_id
-                ,
-                evaluation_form_id: self.evaluation_form_id
-                ,
-                evaluation_form_version: self.evaluation_form_version
-                ,
-            }
+                instance_id: self.instance_id,
+                evaluation_form_id: self.evaluation_form_id,
+                evaluation_form_version: self.evaluation_form_version,
+            },
         )
     }
 }
-

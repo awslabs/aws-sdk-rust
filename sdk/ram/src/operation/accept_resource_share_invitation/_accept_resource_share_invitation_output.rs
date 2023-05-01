@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptResourceShareInvitationOutput  {
+pub struct AcceptResourceShareInvitationOutput {
     /// <p>An object that contains information about the specified invitation.</p>
     #[doc(hidden)]
     pub resource_share_invitation: std::option::Option<crate::types::ResourceShareInvitation>,
@@ -13,22 +13,24 @@ pub struct AcceptResourceShareInvitationOutput  {
 }
 impl AcceptResourceShareInvitationOutput {
     /// <p>An object that contains information about the specified invitation.</p>
-    pub fn resource_share_invitation(&self) -> std::option::Option<& crate::types::ResourceShareInvitation> {
+    pub fn resource_share_invitation(
+        &self,
+    ) -> std::option::Option<&crate::types::ResourceShareInvitation> {
         self.resource_share_invitation.as_ref()
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AcceptResourceShareInvitationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AcceptResourceShareInvitationOutput {
     /// Creates a new builder-style object to manufacture [`AcceptResourceShareInvitationOutput`](crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationOutput).
-    pub fn builder() -> crate::operation::accept_resource_share_invitation::builders::AcceptResourceShareInvitationOutputBuilder {
+    pub fn builder() -> crate::operation::accept_resource_share_invitation::builders::AcceptResourceShareInvitationOutputBuilder{
         crate::operation::accept_resource_share_invitation::builders::AcceptResourceShareInvitationOutputBuilder::default()
     }
 }
@@ -37,19 +39,27 @@ impl AcceptResourceShareInvitationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AcceptResourceShareInvitationOutputBuilder {
-    pub(crate) resource_share_invitation: std::option::Option<crate::types::ResourceShareInvitation>,
+    pub(crate) resource_share_invitation:
+        std::option::Option<crate::types::ResourceShareInvitation>,
     pub(crate) client_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl AcceptResourceShareInvitationOutputBuilder {
     /// <p>An object that contains information about the specified invitation.</p>
-    pub fn resource_share_invitation(mut self, input: crate::types::ResourceShareInvitation) -> Self {
+    pub fn resource_share_invitation(
+        mut self,
+        input: crate::types::ResourceShareInvitation,
+    ) -> Self {
         self.resource_share_invitation = Some(input);
         self
     }
     /// <p>An object that contains information about the specified invitation.</p>
-    pub fn set_resource_share_invitation(mut self, input: std::option::Option<crate::types::ResourceShareInvitation>) -> Self {
-        self.resource_share_invitation = input; self
+    pub fn set_resource_share_invitation(
+        mut self,
+        input: std::option::Option<crate::types::ResourceShareInvitation>,
+    ) -> Self {
+        self.resource_share_invitation = input;
+        self
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +68,27 @@ impl AcceptResourceShareInvitationOutputBuilder {
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AcceptResourceShareInvitationOutput`](crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationOutput).
-    pub fn build(self) -> crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationOutput
+    {
         crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationOutput {
-            resource_share_invitation: self.resource_share_invitation
-            ,
-            client_token: self.client_token
-            ,
+            resource_share_invitation: self.resource_share_invitation,
+            client_token: self.client_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssociationInput  {
+pub struct DeleteAssociationInput {
     /// <p>The ARN of the source.</p>
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteAssociationInput  {
 }
 impl DeleteAssociationInput {
     /// <p>The ARN of the source.</p>
-    pub fn source_arn(&self) -> std::option::Option<& str> {
+    pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
-    pub fn destination_arn(&self) -> std::option::Option<& str> {
+    pub fn destination_arn(&self) -> std::option::Option<&str> {
         self.destination_arn.as_deref()
     }
 }
 impl DeleteAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
-    pub fn builder() -> crate::operation::delete_association::builders::DeleteAssociationInputBuilder {
+    pub fn builder() -> crate::operation::delete_association::builders::DeleteAssociationInputBuilder
+    {
         crate::operation::delete_association::builders::DeleteAssociationInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteAssociationInputBuilder {
     }
     /// <p>The ARN of the source.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input; self
+        self.source_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeleteAssociationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the destination.</p>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_arn = input; self
+        self.destination_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAssociationInput`](crate::operation::delete_association::DeleteAssociationInput).
-    pub fn build(self) -> Result<crate::operation::delete_association::DeleteAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_association::DeleteAssociationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_association::DeleteAssociationInput {
-                source_arn: self.source_arn
-                ,
-                destination_arn: self.destination_arn
-                ,
-            }
+                source_arn: self.source_arn,
+                destination_arn: self.destination_arn,
+            },
         )
     }
 }
-

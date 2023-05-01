@@ -232,4 +232,3 @@ pub mod builders;
 
 /// Error types that Amazon Route 53 can respond with.
 pub mod error;
-

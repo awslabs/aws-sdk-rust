@@ -3,14 +3,14 @@
 /// <p>The structure representing Polygon Geometry based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolygonGeometryInput  {
+pub struct PolygonGeometryInput {
     /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
     #[doc(hidden)]
     pub coordinates: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
 }
 impl PolygonGeometryInput {
     /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
-    pub fn coordinates(&self) -> std::option::Option<& [std::vec::Vec<std::vec::Vec<f64>>]> {
+    pub fn coordinates(&self) -> std::option::Option<&[std::vec::Vec<std::vec::Vec<f64>>]> {
         self.coordinates.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl PolygonGeometryInputBuilder {
     /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
     pub fn coordinates(mut self, input: std::vec::Vec<std::vec::Vec<f64>>) -> Self {
         let mut v = self.coordinates.unwrap_or_default();
-                        v.push(input);
-                        self.coordinates = Some(v);
-                        self
+        v.push(input);
+        self.coordinates = Some(v);
+        self
     }
     /// <p>Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson spec</a>.</p>
-    pub fn set_coordinates(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>) -> Self {
-        self.coordinates = input; self
+    pub fn set_coordinates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::vec::Vec<std::vec::Vec<f64>>>>,
+    ) -> Self {
+        self.coordinates = input;
+        self
     }
     /// Consumes the builder and constructs a [`PolygonGeometryInput`](crate::types::PolygonGeometryInput).
     pub fn build(self) -> crate::types::PolygonGeometryInput {
         crate::types::PolygonGeometryInput {
-            coordinates: self.coordinates
-            ,
+            coordinates: self.coordinates,
         }
     }
 }
-

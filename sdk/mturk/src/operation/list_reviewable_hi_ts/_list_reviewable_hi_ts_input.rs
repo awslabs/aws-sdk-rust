@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReviewableHiTsInput  {
+pub struct ListReviewableHiTsInput {
     /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     #[doc(hidden)]
     pub hit_type_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListReviewableHiTsInput  {
 }
 impl ListReviewableHiTsInput {
     /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
-    pub fn hit_type_id(&self) -> std::option::Option<& str> {
+    pub fn hit_type_id(&self) -> std::option::Option<&str> {
         self.hit_type_id.as_deref()
     }
     /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ReviewableHitStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ReviewableHitStatus> {
         self.status.as_ref()
     }
     /// <p>Pagination Token</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> Limit the number of results returned. </p>
@@ -36,7 +36,8 @@ impl ListReviewableHiTsInput {
 }
 impl ListReviewableHiTsInput {
     /// Creates a new builder-style object to manufacture [`ListReviewableHiTsInput`](crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput).
-    pub fn builder() -> crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder {
         crate::operation::list_reviewable_hi_ts::builders::ListReviewableHiTsInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl ListReviewableHiTsInputBuilder {
     }
     /// <p> The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered </p>
     pub fn set_hit_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hit_type_id = input; self
+        self.hit_type_id = input;
+        self
     }
     /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
     pub fn status(mut self, input: crate::types::ReviewableHitStatus) -> Self {
@@ -66,8 +68,12 @@ impl ListReviewableHiTsInputBuilder {
         self
     }
     /// <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the default value. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ReviewableHitStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ReviewableHitStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Pagination Token</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +82,8 @@ impl ListReviewableHiTsInputBuilder {
     }
     /// <p>Pagination Token</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p> Limit the number of results returned. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +92,23 @@ impl ListReviewableHiTsInputBuilder {
     }
     /// <p> Limit the number of results returned. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListReviewableHiTsInput`](crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput).
-    pub fn build(self) -> Result<crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_reviewable_hi_ts::ListReviewableHiTsInput {
-                hit_type_id: self.hit_type_id
-                ,
-                status: self.status
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                hit_type_id: self.hit_type_id,
+                status: self.status,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

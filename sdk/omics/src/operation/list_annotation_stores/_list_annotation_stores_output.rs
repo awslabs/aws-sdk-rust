@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnnotationStoresOutput  {
+pub struct ListAnnotationStoresOutput {
     /// <p>A list of stores.</p>
     #[doc(hidden)]
     pub annotation_stores: std::option::Option<std::vec::Vec<crate::types::AnnotationStoreItem>>,
@@ -13,22 +13,23 @@ pub struct ListAnnotationStoresOutput  {
 }
 impl ListAnnotationStoresOutput {
     /// <p>A list of stores.</p>
-    pub fn annotation_stores(&self) -> std::option::Option<& [crate::types::AnnotationStoreItem]> {
+    pub fn annotation_stores(&self) -> std::option::Option<&[crate::types::AnnotationStoreItem]> {
         self.annotation_stores.as_deref()
     }
     /// <p>A pagination token that's included if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAnnotationStoresOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAnnotationStoresOutput {
     /// Creates a new builder-style object to manufacture [`ListAnnotationStoresOutput`](crate::operation::list_annotation_stores::ListAnnotationStoresOutput).
-    pub fn builder() -> crate::operation::list_annotation_stores::builders::ListAnnotationStoresOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_annotation_stores::builders::ListAnnotationStoresOutputBuilder {
         crate::operation::list_annotation_stores::builders::ListAnnotationStoresOutputBuilder::default()
     }
 }
@@ -37,7 +38,8 @@ impl ListAnnotationStoresOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAnnotationStoresOutputBuilder {
-    pub(crate) annotation_stores: std::option::Option<std::vec::Vec<crate::types::AnnotationStoreItem>>,
+    pub(crate) annotation_stores:
+        std::option::Option<std::vec::Vec<crate::types::AnnotationStoreItem>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +51,17 @@ impl ListAnnotationStoresOutputBuilder {
     /// <p>A list of stores.</p>
     pub fn annotation_stores(mut self, input: crate::types::AnnotationStoreItem) -> Self {
         let mut v = self.annotation_stores.unwrap_or_default();
-                        v.push(input);
-                        self.annotation_stores = Some(v);
-                        self
+        v.push(input);
+        self.annotation_stores = Some(v);
+        self
     }
     /// <p>A list of stores.</p>
-    pub fn set_annotation_stores(mut self, input: std::option::Option<std::vec::Vec<crate::types::AnnotationStoreItem>>) -> Self {
-        self.annotation_stores = input; self
+    pub fn set_annotation_stores(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AnnotationStoreItem>>,
+    ) -> Self {
+        self.annotation_stores = input;
+        self
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListAnnotationStoresOutputBuilder {
     }
     /// <p>A pagination token that's included if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAnnotationStoresOutput`](crate::operation::list_annotation_stores::ListAnnotationStoresOutput).
     pub fn build(self) -> crate::operation::list_annotation_stores::ListAnnotationStoresOutput {
         crate::operation::list_annotation_stores::ListAnnotationStoresOutput {
-            annotation_stores: self.annotation_stores
-            ,
-            next_token: self.next_token
-            ,
+            annotation_stores: self.annotation_stores,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

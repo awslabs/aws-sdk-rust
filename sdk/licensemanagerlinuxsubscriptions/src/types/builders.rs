@@ -6,4 +6,3 @@ pub use crate::types::_subscription::SubscriptionBuilder;
 pub use crate::types::_filter::FilterBuilder;
 
 pub use crate::types::_instance::InstanceBuilder;
-

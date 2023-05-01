@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let adsondeliveryrestrictions = unimplemented!();
 /// match adsondeliveryrestrictions {
@@ -32,7 +32,7 @@
 /// Specifically, when `adsondeliveryrestrictions` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AdsOnDeliveryRestrictions::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -46,7 +46,15 @@
 /// AdTriggers will be treated as ads.  Note that Splice Insert messages do not have these flags
 /// and are always treated as ads if specified in AdTriggers.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AdsOnDeliveryRestrictions {
     #[allow(missing_docs)] // documentation missing in model
     Both,
@@ -57,45 +65,46 @@ pub enum AdsOnDeliveryRestrictions {
     #[allow(missing_docs)] // documentation missing in model
     Unrestricted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AdsOnDeliveryRestrictions {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BOTH" => AdsOnDeliveryRestrictions::Both,
-"NONE" => AdsOnDeliveryRestrictions::None,
-"RESTRICTED" => AdsOnDeliveryRestrictions::Restricted,
-"UNRESTRICTED" => AdsOnDeliveryRestrictions::Unrestricted,
-other => AdsOnDeliveryRestrictions::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for AdsOnDeliveryRestrictions {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AdsOnDeliveryRestrictions::from(s))
-                }
-            }
-impl AdsOnDeliveryRestrictions {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AdsOnDeliveryRestrictions::Both => "BOTH",
-    AdsOnDeliveryRestrictions::None => "NONE",
-    AdsOnDeliveryRestrictions::Restricted => "RESTRICTED",
-    AdsOnDeliveryRestrictions::Unrestricted => "UNRESTRICTED",
-    AdsOnDeliveryRestrictions::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "BOTH" => AdsOnDeliveryRestrictions::Both,
+            "NONE" => AdsOnDeliveryRestrictions::None,
+            "RESTRICTED" => AdsOnDeliveryRestrictions::Restricted,
+            "UNRESTRICTED" => AdsOnDeliveryRestrictions::Unrestricted,
+            other => AdsOnDeliveryRestrictions::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BOTH", "NONE", "RESTRICTED", "UNRESTRICTED"]
-                }
-            }
-impl AsRef<str> for AdsOnDeliveryRestrictions {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AdsOnDeliveryRestrictions {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AdsOnDeliveryRestrictions::from(s))
+    }
+}
+impl AdsOnDeliveryRestrictions {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AdsOnDeliveryRestrictions::Both => "BOTH",
+            AdsOnDeliveryRestrictions::None => "NONE",
+            AdsOnDeliveryRestrictions::Restricted => "RESTRICTED",
+            AdsOnDeliveryRestrictions::Unrestricted => "UNRESTRICTED",
+            AdsOnDeliveryRestrictions::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["BOTH", "NONE", "RESTRICTED", "UNRESTRICTED"]
+    }
+}
+impl AsRef<str> for AdsOnDeliveryRestrictions {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

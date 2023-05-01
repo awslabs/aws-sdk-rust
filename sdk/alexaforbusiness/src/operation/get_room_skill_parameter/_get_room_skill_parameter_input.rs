@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRoomSkillParameterInput  {
+pub struct GetRoomSkillParameterInput {
     /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     #[doc(hidden)]
     pub room_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct GetRoomSkillParameterInput  {
 }
 impl GetRoomSkillParameterInput {
     /// <p>The ARN of the room from which to get the room skill parameter details. </p>
-    pub fn room_arn(&self) -> std::option::Option<& str> {
+    pub fn room_arn(&self) -> std::option::Option<&str> {
         self.room_arn.as_deref()
     }
     /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
-    pub fn skill_id(&self) -> std::option::Option<& str> {
+    pub fn skill_id(&self) -> std::option::Option<&str> {
         self.skill_id.as_deref()
     }
     /// <p>The room skill parameter key for which to get details. Required.</p>
-    pub fn parameter_key(&self) -> std::option::Option<& str> {
+    pub fn parameter_key(&self) -> std::option::Option<&str> {
         self.parameter_key.as_deref()
     }
 }
 impl GetRoomSkillParameterInput {
     /// Creates a new builder-style object to manufacture [`GetRoomSkillParameterInput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput).
-    pub fn builder() -> crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterInputBuilder
+    {
         crate::operation::get_room_skill_parameter::builders::GetRoomSkillParameterInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl GetRoomSkillParameterInputBuilder {
     }
     /// <p>The ARN of the room from which to get the room skill parameter details. </p>
     pub fn set_room_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_arn = input; self
+        self.room_arn = input;
+        self
     }
     /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
     pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl GetRoomSkillParameterInputBuilder {
     }
     /// <p>The ARN of the skill from which to get the room skill parameter details. Required.</p>
     pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.skill_id = input; self
+        self.skill_id = input;
+        self
     }
     /// <p>The room skill parameter key for which to get details. Required.</p>
     pub fn parameter_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl GetRoomSkillParameterInputBuilder {
     }
     /// <p>The room skill parameter key for which to get details. Required.</p>
     pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_key = input; self
+        self.parameter_key = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetRoomSkillParameterInput`](crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput).
-    pub fn build(self) -> Result<crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_room_skill_parameter::GetRoomSkillParameterInput {
-                room_arn: self.room_arn
-                ,
-                skill_id: self.skill_id
-                ,
-                parameter_key: self.parameter_key
-                ,
-            }
+                room_arn: self.room_arn,
+                skill_id: self.skill_id,
+                parameter_key: self.parameter_key,
+            },
         )
     }
 }
-

@@ -3,16 +3,16 @@
 /// <p> Details about a package, including its format, namespace, and name. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PackageSummary  {
+pub struct PackageSummary {
     /// <p> The format of the package. </p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::PackageFormat>,
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -25,25 +25,27 @@ pub struct PackageSummary  {
 }
 impl PackageSummary {
     /// <p> The format of the package. </p>
-    pub fn format(&self) -> std::option::Option<& crate::types::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
-    pub fn origin_configuration(&self) -> std::option::Option<& crate::types::PackageOriginConfiguration> {
+    pub fn origin_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::PackageOriginConfiguration> {
         self.origin_configuration.as_ref()
     }
 }
@@ -71,28 +73,30 @@ impl PackageSummaryBuilder {
     }
     /// <p> The format of the package. </p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace = Some(input.into());
         self
     }
-    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
+    /// <p>The namespace of the package. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// <p> The name of the package. </p>
     pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +105,8 @@ impl PackageSummaryBuilder {
     }
     /// <p> The name of the package. </p>
     pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package = input; self
+        self.package = input;
+        self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
     pub fn origin_configuration(mut self, input: crate::types::PackageOriginConfiguration) -> Self {
@@ -109,21 +114,20 @@ impl PackageSummaryBuilder {
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginConfiguration.html">PackageOriginConfiguration</a> object that contains a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a> object that contains information about the upstream and publish package origin restrictions.</p>
-    pub fn set_origin_configuration(mut self, input: std::option::Option<crate::types::PackageOriginConfiguration>) -> Self {
-        self.origin_configuration = input; self
+    pub fn set_origin_configuration(
+        mut self,
+        input: std::option::Option<crate::types::PackageOriginConfiguration>,
+    ) -> Self {
+        self.origin_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`PackageSummary`](crate::types::PackageSummary).
     pub fn build(self) -> crate::types::PackageSummary {
         crate::types::PackageSummary {
-            format: self.format
-            ,
-            namespace: self.namespace
-            ,
-            package: self.package
-            ,
-            origin_configuration: self.origin_configuration
-            ,
+            format: self.format,
+            namespace: self.namespace,
+            package: self.package,
+            origin_configuration: self.origin_configuration,
         }
     }
 }
-

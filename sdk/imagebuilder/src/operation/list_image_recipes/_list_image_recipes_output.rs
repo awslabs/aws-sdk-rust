@@ -2,13 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImageRecipesOutput  {
+pub struct ListImageRecipesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
     /// <p>The list of image pipelines.</p>
     #[doc(hidden)]
-    pub image_recipe_summary_list: std::option::Option<std::vec::Vec<crate::types::ImageRecipeSummary>>,
+    pub image_recipe_summary_list:
+        std::option::Option<std::vec::Vec<crate::types::ImageRecipeSummary>>,
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,26 +17,29 @@ pub struct ListImageRecipesOutput  {
 }
 impl ListImageRecipesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The list of image pipelines.</p>
-    pub fn image_recipe_summary_list(&self) -> std::option::Option<& [crate::types::ImageRecipeSummary]> {
+    pub fn image_recipe_summary_list(
+        &self,
+    ) -> std::option::Option<&[crate::types::ImageRecipeSummary]> {
         self.image_recipe_summary_list.as_deref()
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListImageRecipesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListImageRecipesOutput {
     /// Creates a new builder-style object to manufacture [`ListImageRecipesOutput`](crate::operation::list_image_recipes::ListImageRecipesOutput).
-    pub fn builder() -> crate::operation::list_image_recipes::builders::ListImageRecipesOutputBuilder {
+    pub fn builder() -> crate::operation::list_image_recipes::builders::ListImageRecipesOutputBuilder
+    {
         crate::operation::list_image_recipes::builders::ListImageRecipesOutputBuilder::default()
     }
 }
@@ -45,7 +49,8 @@ impl ListImageRecipesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListImageRecipesOutputBuilder {
     pub(crate) request_id: std::option::Option<std::string::String>,
-    pub(crate) image_recipe_summary_list: std::option::Option<std::vec::Vec<crate::types::ImageRecipeSummary>>,
+    pub(crate) image_recipe_summary_list:
+        std::option::Option<std::vec::Vec<crate::types::ImageRecipeSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -57,7 +62,8 @@ impl ListImageRecipesOutputBuilder {
     }
     /// <p>The request ID that uniquely identifies this request.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// Appends an item to `image_recipe_summary_list`.
     ///
@@ -66,13 +72,17 @@ impl ListImageRecipesOutputBuilder {
     /// <p>The list of image pipelines.</p>
     pub fn image_recipe_summary_list(mut self, input: crate::types::ImageRecipeSummary) -> Self {
         let mut v = self.image_recipe_summary_list.unwrap_or_default();
-                        v.push(input);
-                        self.image_recipe_summary_list = Some(v);
-                        self
+        v.push(input);
+        self.image_recipe_summary_list = Some(v);
+        self
     }
     /// <p>The list of image pipelines.</p>
-    pub fn set_image_recipe_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImageRecipeSummary>>) -> Self {
-        self.image_recipe_summary_list = input; self
+    pub fn set_image_recipe_summary_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ImageRecipeSummary>>,
+    ) -> Self {
+        self.image_recipe_summary_list = input;
+        self
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,28 +91,25 @@ impl ListImageRecipesOutputBuilder {
     }
     /// <p>The next token used for paginated responses. When this field isn't empty, there are additional elements that the service has'ot included in this request. Use this token with the next request to retrieve additional objects.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListImageRecipesOutput`](crate::operation::list_image_recipes::ListImageRecipesOutput).
     pub fn build(self) -> crate::operation::list_image_recipes::ListImageRecipesOutput {
         crate::operation::list_image_recipes::ListImageRecipesOutput {
-            request_id: self.request_id
-            ,
-            image_recipe_summary_list: self.image_recipe_summary_list
-            ,
-            next_token: self.next_token
-            ,
+            request_id: self.request_id,
+            image_recipe_summary_list: self.image_recipe_summary_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

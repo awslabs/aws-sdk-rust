@@ -3,7 +3,7 @@
 /// <p>Describes a database log event.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogEvent  {
+pub struct LogEvent {
     /// <p>The timestamp when the database log event was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct LogEvent  {
 }
 impl LogEvent {
     /// <p>The timestamp when the database log event was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The message of the database log event.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl LogEventBuilder {
         self
     }
     /// <p>The timestamp when the database log event was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The message of the database log event.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl LogEventBuilder {
     }
     /// <p>The message of the database log event.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`LogEvent`](crate::types::LogEvent).
     pub fn build(self) -> crate::types::LogEvent {
         crate::types::LogEvent {
-            created_at: self.created_at
-            ,
-            message: self.message
-            ,
+            created_at: self.created_at,
+            message: self.message,
         }
     }
 }
-

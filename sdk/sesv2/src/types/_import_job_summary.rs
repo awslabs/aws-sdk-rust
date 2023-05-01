@@ -3,7 +3,7 @@
 /// <p>A summary of the import job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportJobSummary  {
+pub struct ImportJobSummary {
     /// <p>A string that represents the import job ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -25,19 +25,19 @@ pub struct ImportJobSummary  {
 }
 impl ImportJobSummary {
     /// <p>A string that represents the import job ID.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>An object that contains details about the resource destination the import job is going to target.</p>
-    pub fn import_destination(&self) -> std::option::Option<& crate::types::ImportDestination> {
+    pub fn import_destination(&self) -> std::option::Option<&crate::types::ImportDestination> {
         self.import_destination.as_ref()
     }
     /// <p>The status of the import job.</p>
-    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>The date and time when the import job was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The current number of records processed.</p>
@@ -75,7 +75,8 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>A string that represents the import job ID.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>An object that contains details about the resource destination the import job is going to target.</p>
     pub fn import_destination(mut self, input: crate::types::ImportDestination) -> Self {
@@ -83,8 +84,12 @@ impl ImportJobSummaryBuilder {
         self
     }
     /// <p>An object that contains details about the resource destination the import job is going to target.</p>
-    pub fn set_import_destination(mut self, input: std::option::Option<crate::types::ImportDestination>) -> Self {
-        self.import_destination = input; self
+    pub fn set_import_destination(
+        mut self,
+        input: std::option::Option<crate::types::ImportDestination>,
+    ) -> Self {
+        self.import_destination = input;
+        self
     }
     /// <p>The status of the import job.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -93,7 +98,8 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The status of the import job.</p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input; self
+        self.job_status = input;
+        self
     }
     /// <p>The date and time when the import job was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -101,8 +107,12 @@ impl ImportJobSummaryBuilder {
         self
     }
     /// <p>The date and time when the import job was created.</p>
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     /// <p>The current number of records processed.</p>
     pub fn processed_records_count(mut self, input: i32) -> Self {
@@ -111,7 +121,8 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The current number of records processed.</p>
     pub fn set_processed_records_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.processed_records_count = input; self
+        self.processed_records_count = input;
+        self
     }
     /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
     pub fn failed_records_count(mut self, input: i32) -> Self {
@@ -120,24 +131,18 @@ impl ImportJobSummaryBuilder {
     }
     /// <p>The number of records that failed processing because of invalid input or other reasons.</p>
     pub fn set_failed_records_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.failed_records_count = input; self
+        self.failed_records_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportJobSummary`](crate::types::ImportJobSummary).
     pub fn build(self) -> crate::types::ImportJobSummary {
         crate::types::ImportJobSummary {
-            job_id: self.job_id
-            ,
-            import_destination: self.import_destination
-            ,
-            job_status: self.job_status
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            processed_records_count: self.processed_records_count
-            ,
-            failed_records_count: self.failed_records_count
-            ,
+            job_id: self.job_id,
+            import_destination: self.import_destination,
+            job_status: self.job_status,
+            created_timestamp: self.created_timestamp,
+            processed_records_count: self.processed_records_count,
+            failed_records_count: self.failed_records_count,
         }
     }
 }
-

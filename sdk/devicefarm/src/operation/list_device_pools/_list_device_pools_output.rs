@@ -3,7 +3,7 @@
 /// <p>Represents the result of a list device pools request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDevicePoolsOutput  {
+pub struct ListDevicePoolsOutput {
     /// <p>Information about the device pools.</p>
     #[doc(hidden)]
     pub device_pools: std::option::Option<std::vec::Vec<crate::types::DevicePool>>,
@@ -14,22 +14,23 @@ pub struct ListDevicePoolsOutput  {
 }
 impl ListDevicePoolsOutput {
     /// <p>Information about the device pools.</p>
-    pub fn device_pools(&self) -> std::option::Option<& [crate::types::DevicePool]> {
+    pub fn device_pools(&self) -> std::option::Option<&[crate::types::DevicePool]> {
         self.device_pools.as_deref()
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDevicePoolsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListDevicePoolsOutput {
     /// Creates a new builder-style object to manufacture [`ListDevicePoolsOutput`](crate::operation::list_device_pools::ListDevicePoolsOutput).
-    pub fn builder() -> crate::operation::list_device_pools::builders::ListDevicePoolsOutputBuilder {
+    pub fn builder() -> crate::operation::list_device_pools::builders::ListDevicePoolsOutputBuilder
+    {
         crate::operation::list_device_pools::builders::ListDevicePoolsOutputBuilder::default()
     }
 }
@@ -50,13 +51,17 @@ impl ListDevicePoolsOutputBuilder {
     /// <p>Information about the device pools.</p>
     pub fn device_pools(mut self, input: crate::types::DevicePool) -> Self {
         let mut v = self.device_pools.unwrap_or_default();
-                        v.push(input);
-                        self.device_pools = Some(v);
-                        self
+        v.push(input);
+        self.device_pools = Some(v);
+        self
     }
     /// <p>Information about the device pools.</p>
-    pub fn set_device_pools(mut self, input: std::option::Option<std::vec::Vec<crate::types::DevicePool>>) -> Self {
-        self.device_pools = input; self
+    pub fn set_device_pools(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DevicePool>>,
+    ) -> Self {
+        self.device_pools = input;
+        self
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +70,24 @@ impl ListDevicePoolsOutputBuilder {
     }
     /// <p>If the number of items that are returned is significantly large, this is an identifier that is also returned. It can be used in a subsequent call to this operation to return the next set of items in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListDevicePoolsOutput`](crate::operation::list_device_pools::ListDevicePoolsOutput).
     pub fn build(self) -> crate::operation::list_device_pools::ListDevicePoolsOutput {
         crate::operation::list_device_pools::ListDevicePoolsOutput {
-            device_pools: self.device_pools
-            ,
-            next_token: self.next_token
-            ,
+            device_pools: self.device_pools,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

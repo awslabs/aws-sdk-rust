@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIncomingTypedLinksOutput  {
+pub struct ListIncomingTypedLinksOutput {
     /// <p>Returns one or more typed link specifiers as output.</p>
     #[doc(hidden)]
     pub link_specifiers: std::option::Option<std::vec::Vec<crate::types::TypedLinkSpecifier>>,
@@ -13,22 +13,24 @@ pub struct ListIncomingTypedLinksOutput  {
 }
 impl ListIncomingTypedLinksOutput {
     /// <p>Returns one or more typed link specifiers as output.</p>
-    pub fn link_specifiers(&self) -> std::option::Option<& [crate::types::TypedLinkSpecifier]> {
+    pub fn link_specifiers(&self) -> std::option::Option<&[crate::types::TypedLinkSpecifier]> {
         self.link_specifiers.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListIncomingTypedLinksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListIncomingTypedLinksOutput {
     /// Creates a new builder-style object to manufacture [`ListIncomingTypedLinksOutput`](crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput).
-    pub fn builder() -> crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksOutputBuilder
+    {
         crate::operation::list_incoming_typed_links::builders::ListIncomingTypedLinksOutputBuilder::default()
     }
 }
@@ -37,7 +39,8 @@ impl ListIncomingTypedLinksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListIncomingTypedLinksOutputBuilder {
-    pub(crate) link_specifiers: std::option::Option<std::vec::Vec<crate::types::TypedLinkSpecifier>>,
+    pub(crate) link_specifiers:
+        std::option::Option<std::vec::Vec<crate::types::TypedLinkSpecifier>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +52,17 @@ impl ListIncomingTypedLinksOutputBuilder {
     /// <p>Returns one or more typed link specifiers as output.</p>
     pub fn link_specifiers(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
         let mut v = self.link_specifiers.unwrap_or_default();
-                        v.push(input);
-                        self.link_specifiers = Some(v);
-                        self
+        v.push(input);
+        self.link_specifiers = Some(v);
+        self
     }
     /// <p>Returns one or more typed link specifiers as output.</p>
-    pub fn set_link_specifiers(mut self, input: std::option::Option<std::vec::Vec<crate::types::TypedLinkSpecifier>>) -> Self {
-        self.link_specifiers = input; self
+    pub fn set_link_specifiers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TypedLinkSpecifier>>,
+    ) -> Self {
+        self.link_specifiers = input;
+        self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +71,26 @@ impl ListIncomingTypedLinksOutputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListIncomingTypedLinksOutput`](crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput).
-    pub fn build(self) -> crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput {
         crate::operation::list_incoming_typed_links::ListIncomingTypedLinksOutput {
-            link_specifiers: self.link_specifiers
-            ,
-            next_token: self.next_token
-            ,
+            link_specifiers: self.link_specifiers,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

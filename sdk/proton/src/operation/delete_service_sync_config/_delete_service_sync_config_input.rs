@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceSyncConfigInput  {
+pub struct DeleteServiceSyncConfigInput {
     /// <p>The name of the service that you want to delete the service sync configuration for.</p>
     #[doc(hidden)]
     pub service_name: std::option::Option<std::string::String>,
 }
 impl DeleteServiceSyncConfigInput {
     /// <p>The name of the service that you want to delete the service sync configuration for.</p>
-    pub fn service_name(&self) -> std::option::Option<& str> {
+    pub fn service_name(&self) -> std::option::Option<&str> {
         self.service_name.as_deref()
     }
 }
 impl DeleteServiceSyncConfigInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceSyncConfigInput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput).
-    pub fn builder() -> crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder
+    {
         crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteServiceSyncConfigInputBuilder {
     }
     /// <p>The name of the service that you want to delete the service sync configuration for.</p>
     pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_name = input; self
+        self.service_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteServiceSyncConfigInput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput).
-    pub fn build(self) -> Result<crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput {
-                service_name: self.service_name
-                ,
-            }
+                service_name: self.service_name,
+            },
         )
     }
 }
-

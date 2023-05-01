@@ -3,7 +3,7 @@
 /// <p>Information about the result of a document review request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReviewInformation  {
+pub struct ReviewInformation {
     /// <p>The time that the reviewer took action on the document review request.</p>
     #[doc(hidden)]
     pub reviewed_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -16,15 +16,15 @@ pub struct ReviewInformation  {
 }
 impl ReviewInformation {
     /// <p>The time that the reviewer took action on the document review request.</p>
-    pub fn reviewed_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn reviewed_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.reviewed_time.as_ref()
     }
     /// <p>The current status of the document review request.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ReviewStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ReviewStatus> {
         self.status.as_ref()
     }
     /// <p>The reviewer assigned to take action on the document review request.</p>
-    pub fn reviewer(&self) -> std::option::Option<& str> {
+    pub fn reviewer(&self) -> std::option::Option<&str> {
         self.reviewer.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl ReviewInformationBuilder {
         self
     }
     /// <p>The time that the reviewer took action on the document review request.</p>
-    pub fn set_reviewed_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.reviewed_time = input; self
+    pub fn set_reviewed_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.reviewed_time = input;
+        self
     }
     /// <p>The current status of the document review request.</p>
     pub fn status(mut self, input: crate::types::ReviewStatus) -> Self {
@@ -60,7 +64,8 @@ impl ReviewInformationBuilder {
     }
     /// <p>The current status of the document review request.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ReviewStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The reviewer assigned to take action on the document review request.</p>
     pub fn reviewer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +74,15 @@ impl ReviewInformationBuilder {
     }
     /// <p>The reviewer assigned to take action on the document review request.</p>
     pub fn set_reviewer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reviewer = input; self
+        self.reviewer = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReviewInformation`](crate::types::ReviewInformation).
     pub fn build(self) -> crate::types::ReviewInformation {
         crate::types::ReviewInformation {
-            reviewed_time: self.reviewed_time
-            ,
-            status: self.status
-            ,
-            reviewer: self.reviewer
-            ,
+            reviewed_time: self.reviewed_time,
+            status: self.status,
+            reviewer: self.reviewer,
         }
     }
 }
-

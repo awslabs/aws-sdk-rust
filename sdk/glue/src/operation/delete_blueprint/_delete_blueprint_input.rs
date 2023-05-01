@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBlueprintInput  {
+pub struct DeleteBlueprintInput {
     /// <p>The name of the blueprint to delete.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteBlueprintInput {
     /// <p>The name of the blueprint to delete.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl DeleteBlueprintInputBuilder {
     }
     /// <p>The name of the blueprint to delete.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBlueprintInput`](crate::operation::delete_blueprint::DeleteBlueprintInput).
-    pub fn build(self) -> Result<crate::operation::delete_blueprint::DeleteBlueprintInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_blueprint::DeleteBlueprintInput {
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_blueprint::DeleteBlueprintInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_blueprint::DeleteBlueprintInput { name: self.name })
     }
 }
-

@@ -3,14 +3,16 @@
 /// <p>Information needed to evaluate data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleEvaluation  {
+pub struct RuleEvaluation {
     /// <p>Information needed to compare two values with a comparison operator.</p>
     #[doc(hidden)]
     pub simple_rule_evaluation: std::option::Option<crate::types::SimpleRuleEvaluation>,
 }
 impl RuleEvaluation {
     /// <p>Information needed to compare two values with a comparison operator.</p>
-    pub fn simple_rule_evaluation(&self) -> std::option::Option<& crate::types::SimpleRuleEvaluation> {
+    pub fn simple_rule_evaluation(
+        &self,
+    ) -> std::option::Option<&crate::types::SimpleRuleEvaluation> {
         self.simple_rule_evaluation.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl RuleEvaluationBuilder {
         self
     }
     /// <p>Information needed to compare two values with a comparison operator.</p>
-    pub fn set_simple_rule_evaluation(mut self, input: std::option::Option<crate::types::SimpleRuleEvaluation>) -> Self {
-        self.simple_rule_evaluation = input; self
+    pub fn set_simple_rule_evaluation(
+        mut self,
+        input: std::option::Option<crate::types::SimpleRuleEvaluation>,
+    ) -> Self {
+        self.simple_rule_evaluation = input;
+        self
     }
     /// Consumes the builder and constructs a [`RuleEvaluation`](crate::types::RuleEvaluation).
     pub fn build(self) -> crate::types::RuleEvaluation {
         crate::types::RuleEvaluation {
-            simple_rule_evaluation: self.simple_rule_evaluation
-            ,
+            simple_rule_evaluation: self.simple_rule_evaluation,
         }
     }
 }
-

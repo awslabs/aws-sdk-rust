@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartInferenceExperimentInput  {
+pub struct StartInferenceExperimentInput {
     /// <p>The name of the inference experiment to start.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StartInferenceExperimentInput {
     /// <p>The name of the inference experiment to start.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl StartInferenceExperimentInput {
     /// Creates a new builder-style object to manufacture [`StartInferenceExperimentInput`](crate::operation::start_inference_experiment::StartInferenceExperimentInput).
-    pub fn builder() -> crate::operation::start_inference_experiment::builders::StartInferenceExperimentInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_inference_experiment::builders::StartInferenceExperimentInputBuilder
+    {
         crate::operation::start_inference_experiment::builders::StartInferenceExperimentInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl StartInferenceExperimentInputBuilder {
     }
     /// <p>The name of the inference experiment to start.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartInferenceExperimentInput`](crate::operation::start_inference_experiment::StartInferenceExperimentInput).
-    pub fn build(self) -> Result<crate::operation::start_inference_experiment::StartInferenceExperimentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_inference_experiment::StartInferenceExperimentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_inference_experiment::StartInferenceExperimentInput {
-                name: self.name
-                ,
-            }
+                name: self.name,
+            },
         )
     }
 }
-

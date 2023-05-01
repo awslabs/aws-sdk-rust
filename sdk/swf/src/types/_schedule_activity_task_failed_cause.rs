@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let scheduleactivitytaskfailedcause = unimplemented!();
 /// match scheduleactivitytaskfailedcause {
@@ -39,14 +39,22 @@
 /// Specifically, when `scheduleactivitytaskfailedcause` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ScheduleActivityTaskFailedCause::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ScheduleActivityTaskFailedCause {
     #[allow(missing_docs)] // documentation missing in model
     ActivityCreationRateExceeded,
@@ -71,59 +79,104 @@ pub enum ScheduleActivityTaskFailedCause {
     #[allow(missing_docs)] // documentation missing in model
     OperationNotPermitted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ScheduleActivityTaskFailedCause {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVITY_CREATION_RATE_EXCEEDED" => ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded,
-"ACTIVITY_ID_ALREADY_IN_USE" => ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse,
-"ACTIVITY_TYPE_DEPRECATED" => ScheduleActivityTaskFailedCause::ActivityTypeDeprecated,
-"ACTIVITY_TYPE_DOES_NOT_EXIST" => ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist,
-"DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined,
-"DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined,
-"DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined,
-"DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined,
-"DEFAULT_TASK_LIST_UNDEFINED" => ScheduleActivityTaskFailedCause::DefaultTaskListUndefined,
-"OPEN_ACTIVITIES_LIMIT_EXCEEDED" => ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded,
-"OPERATION_NOT_PERMITTED" => ScheduleActivityTaskFailedCause::OperationNotPermitted,
-other => ScheduleActivityTaskFailedCause::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVITY_CREATION_RATE_EXCEEDED" => {
+                ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded
             }
-impl std::str::FromStr for ScheduleActivityTaskFailedCause {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ScheduleActivityTaskFailedCause::from(s))
-                }
+            "ACTIVITY_ID_ALREADY_IN_USE" => ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse,
+            "ACTIVITY_TYPE_DEPRECATED" => ScheduleActivityTaskFailedCause::ActivityTypeDeprecated,
+            "ACTIVITY_TYPE_DOES_NOT_EXIST" => {
+                ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist
             }
-impl ScheduleActivityTaskFailedCause {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => "ACTIVITY_CREATION_RATE_EXCEEDED",
-    ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse => "ACTIVITY_ID_ALREADY_IN_USE",
-    ScheduleActivityTaskFailedCause::ActivityTypeDeprecated => "ACTIVITY_TYPE_DEPRECATED",
-    ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist => "ACTIVITY_TYPE_DOES_NOT_EXIST",
-    ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined => "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED",
-    ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined => "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED",
-    ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined => "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED",
-    ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined => "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED",
-    ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => "DEFAULT_TASK_LIST_UNDEFINED",
-    ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => "OPEN_ACTIVITIES_LIMIT_EXCEEDED",
-    ScheduleActivityTaskFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
-    ScheduleActivityTaskFailedCause::Unknown(value) => value.as_str()
+            "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED" => {
+                ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined
+            }
+            "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED" => {
+                ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined
+            }
+            "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED" => {
+                ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined
+            }
+            "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED" => {
+                ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined
+            }
+            "DEFAULT_TASK_LIST_UNDEFINED" => {
+                ScheduleActivityTaskFailedCause::DefaultTaskListUndefined
+            }
+            "OPEN_ACTIVITIES_LIMIT_EXCEEDED" => {
+                ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded
+            }
+            "OPERATION_NOT_PERMITTED" => ScheduleActivityTaskFailedCause::OperationNotPermitted,
+            other => ScheduleActivityTaskFailedCause::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVITY_CREATION_RATE_EXCEEDED", "ACTIVITY_ID_ALREADY_IN_USE", "ACTIVITY_TYPE_DEPRECATED", "ACTIVITY_TYPE_DOES_NOT_EXIST", "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED", "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED", "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED", "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED", "DEFAULT_TASK_LIST_UNDEFINED", "OPEN_ACTIVITIES_LIMIT_EXCEEDED", "OPERATION_NOT_PERMITTED"]
-                }
-            }
-impl AsRef<str> for ScheduleActivityTaskFailedCause {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ScheduleActivityTaskFailedCause {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ScheduleActivityTaskFailedCause::from(s))
+    }
+}
+impl ScheduleActivityTaskFailedCause {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ScheduleActivityTaskFailedCause::ActivityCreationRateExceeded => {
+                "ACTIVITY_CREATION_RATE_EXCEEDED"
+            }
+            ScheduleActivityTaskFailedCause::ActivityIdAlreadyInUse => "ACTIVITY_ID_ALREADY_IN_USE",
+            ScheduleActivityTaskFailedCause::ActivityTypeDeprecated => "ACTIVITY_TYPE_DEPRECATED",
+            ScheduleActivityTaskFailedCause::ActivityTypeDoesNotExist => {
+                "ACTIVITY_TYPE_DOES_NOT_EXIST"
+            }
+            ScheduleActivityTaskFailedCause::DefaultHeartbeatTimeoutUndefined => {
+                "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED"
+            }
+            ScheduleActivityTaskFailedCause::DefaultScheduleToCloseTimeoutUndefined => {
+                "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED"
+            }
+            ScheduleActivityTaskFailedCause::DefaultScheduleToStartTimeoutUndefined => {
+                "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED"
+            }
+            ScheduleActivityTaskFailedCause::DefaultStartToCloseTimeoutUndefined => {
+                "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED"
+            }
+            ScheduleActivityTaskFailedCause::DefaultTaskListUndefined => {
+                "DEFAULT_TASK_LIST_UNDEFINED"
+            }
+            ScheduleActivityTaskFailedCause::OpenActivitiesLimitExceeded => {
+                "OPEN_ACTIVITIES_LIMIT_EXCEEDED"
+            }
+            ScheduleActivityTaskFailedCause::OperationNotPermitted => "OPERATION_NOT_PERMITTED",
+            ScheduleActivityTaskFailedCause::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVITY_CREATION_RATE_EXCEEDED",
+            "ACTIVITY_ID_ALREADY_IN_USE",
+            "ACTIVITY_TYPE_DEPRECATED",
+            "ACTIVITY_TYPE_DOES_NOT_EXIST",
+            "DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED",
+            "DEFAULT_SCHEDULE_TO_CLOSE_TIMEOUT_UNDEFINED",
+            "DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED",
+            "DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED",
+            "DEFAULT_TASK_LIST_UNDEFINED",
+            "OPEN_ACTIVITIES_LIMIT_EXCEEDED",
+            "OPERATION_NOT_PERMITTED",
+        ]
+    }
+}
+impl AsRef<str> for ScheduleActivityTaskFailedCause {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListViolationEventsOutput  {
+pub struct ListViolationEventsOutput {
     /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
     #[doc(hidden)]
     pub violation_events: std::option::Option<std::vec::Vec<crate::types::ViolationEvent>>,
@@ -13,23 +13,25 @@ pub struct ListViolationEventsOutput  {
 }
 impl ListViolationEventsOutput {
     /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
-    pub fn violation_events(&self) -> std::option::Option<& [crate::types::ViolationEvent]> {
+    pub fn violation_events(&self) -> std::option::Option<&[crate::types::ViolationEvent]> {
         self.violation_events.as_deref()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListViolationEventsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListViolationEventsOutput {
     /// Creates a new builder-style object to manufacture [`ListViolationEventsOutput`](crate::operation::list_violation_events::ListViolationEventsOutput).
-    pub fn builder() -> crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder {
-        crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder {
+        crate::operation::list_violation_events::builders::ListViolationEventsOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl ListViolationEventsOutputBuilder {
     /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
     pub fn violation_events(mut self, input: crate::types::ViolationEvent) -> Self {
         let mut v = self.violation_events.unwrap_or_default();
-                        v.push(input);
-                        self.violation_events = Some(v);
-                        self
+        v.push(input);
+        self.violation_events = Some(v);
+        self
     }
     /// <p>The security profile violation alerts issued for this account during the given time period, potentially filtered by security profile, behavior violated, or thing (device) violating.</p>
-    pub fn set_violation_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::ViolationEvent>>) -> Self {
-        self.violation_events = input; self
+    pub fn set_violation_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ViolationEvent>>,
+    ) -> Self {
+        self.violation_events = input;
+        self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListViolationEventsOutputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListViolationEventsOutput`](crate::operation::list_violation_events::ListViolationEventsOutput).
     pub fn build(self) -> crate::operation::list_violation_events::ListViolationEventsOutput {
         crate::operation::list_violation_events::ListViolationEventsOutput {
-            violation_events: self.violation_events
-            ,
-            next_token: self.next_token
-            ,
+            violation_events: self.violation_events,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

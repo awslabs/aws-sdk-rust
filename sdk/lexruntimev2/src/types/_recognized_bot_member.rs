@@ -3,7 +3,7 @@
 /// <p>The bot member that processes the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecognizedBotMember  {
+pub struct RecognizedBotMember {
     /// <p>The identifier of the bot member that processes the request.</p>
     #[doc(hidden)]
     pub bot_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RecognizedBotMember  {
 }
 impl RecognizedBotMember {
     /// <p>The identifier of the bot member that processes the request.</p>
-    pub fn bot_id(&self) -> std::option::Option<& str> {
+    pub fn bot_id(&self) -> std::option::Option<&str> {
         self.bot_id.as_deref()
     }
     /// <p>The name of the bot member that processes the request.</p>
-    pub fn bot_name(&self) -> std::option::Option<& str> {
+    pub fn bot_name(&self) -> std::option::Option<&str> {
         self.bot_name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl RecognizedBotMemberBuilder {
     }
     /// <p>The identifier of the bot member that processes the request.</p>
     pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_id = input; self
+        self.bot_id = input;
+        self
     }
     /// <p>The name of the bot member that processes the request.</p>
     pub fn bot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl RecognizedBotMemberBuilder {
     }
     /// <p>The name of the bot member that processes the request.</p>
     pub fn set_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bot_name = input; self
+        self.bot_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecognizedBotMember`](crate::types::RecognizedBotMember).
     pub fn build(self) -> crate::types::RecognizedBotMember {
         crate::types::RecognizedBotMember {
-            bot_id: self.bot_id
-            ,
-            bot_name: self.bot_name
-            ,
+            bot_id: self.bot_id,
+            bot_name: self.bot_name,
         }
     }
 }
-

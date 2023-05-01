@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let targetdbtype = unimplemented!();
 /// match targetdbtype {
@@ -30,55 +30,64 @@
 /// Specifically, when `targetdbtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetDbType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TargetDbType {
     #[allow(missing_docs)] // documentation missing in model
     MultipleDatabases,
     #[allow(missing_docs)] // documentation missing in model
     SpecificDatabase,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TargetDbType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "multiple-databases" => TargetDbType::MultipleDatabases,
-"specific-database" => TargetDbType::SpecificDatabase,
-other => TargetDbType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "multiple-databases" => TargetDbType::MultipleDatabases,
+            "specific-database" => TargetDbType::SpecificDatabase,
+            other => {
+                TargetDbType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for TargetDbType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TargetDbType::from(s))
-                }
-            }
-impl TargetDbType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TargetDbType::MultipleDatabases => "multiple-databases",
-    TargetDbType::SpecificDatabase => "specific-database",
-    TargetDbType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["multiple-databases", "specific-database"]
-                }
-            }
-impl AsRef<str> for TargetDbType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TargetDbType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetDbType::from(s))
+    }
+}
+impl TargetDbType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetDbType::MultipleDatabases => "multiple-databases",
+            TargetDbType::SpecificDatabase => "specific-database",
+            TargetDbType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["multiple-databases", "specific-database"]
+    }
+}
+impl AsRef<str> for TargetDbType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

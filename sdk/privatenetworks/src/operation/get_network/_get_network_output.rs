@@ -2,26 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetNetworkOutput  {
+pub struct GetNetworkOutput {
     /// <p>Information about the network.</p>
     #[doc(hidden)]
     pub network: std::option::Option<crate::types::Network>,
     /// <p> The network tags. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetNetworkOutput {
     /// <p>Information about the network.</p>
-    pub fn network(&self) -> std::option::Option<& crate::types::Network> {
+    pub fn network(&self) -> std::option::Option<&crate::types::Network> {
         self.network.as_ref()
     }
     /// <p> The network tags. </p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for GetNetworkOutput  {
+impl std::fmt::Debug for GetNetworkOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetNetworkOutput");
         formatter.field("network", &self.network);
@@ -31,10 +35,10 @@ impl  std::fmt::Debug for GetNetworkOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetNetworkOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetNetworkOutput {
     /// Creates a new builder-style object to manufacture [`GetNetworkOutput`](crate::operation::get_network::GetNetworkOutput).
     pub fn builder() -> crate::operation::get_network::builders::GetNetworkOutputBuilder {
@@ -47,7 +51,8 @@ impl GetNetworkOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct GetNetworkOutputBuilder {
     pub(crate) network: std::option::Option<crate::types::Network>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetNetworkOutputBuilder {
@@ -58,39 +63,48 @@ impl GetNetworkOutputBuilder {
     }
     /// <p>Information about the network.</p>
     pub fn set_network(mut self, input: std::option::Option<crate::types::Network>) -> Self {
-        self.network = input; self
+        self.network = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The network tags. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p> The network tags. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetNetworkOutput`](crate::operation::get_network::GetNetworkOutput).
     pub fn build(self) -> crate::operation::get_network::GetNetworkOutput {
         crate::operation::get_network::GetNetworkOutput {
-            network: self.network
-            ,
-            tags: self.tags
-            ,
+            network: self.network,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
@@ -104,4 +118,3 @@ impl std::fmt::Debug for GetNetworkOutputBuilder {
         formatter.finish()
     }
 }
-

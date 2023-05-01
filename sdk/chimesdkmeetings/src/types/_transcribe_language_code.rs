@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let transcribelanguagecode = unimplemented!();
 /// match transcribelanguagecode {
@@ -42,14 +42,22 @@
 /// Specifically, when `transcribelanguagecode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TranscribeLanguageCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TranscribeLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     DeDe,
@@ -80,65 +88,69 @@ pub enum TranscribeLanguageCode {
     #[allow(missing_docs)] // documentation missing in model
     ZhCn,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TranscribeLanguageCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "de-DE" => TranscribeLanguageCode::DeDe,
-"en-AU" => TranscribeLanguageCode::EnAu,
-"en-GB" => TranscribeLanguageCode::EnGb,
-"en-US" => TranscribeLanguageCode::EnUs,
-"es-US" => TranscribeLanguageCode::EsUs,
-"fr-CA" => TranscribeLanguageCode::FrCa,
-"fr-FR" => TranscribeLanguageCode::FrFr,
-"hi-IN" => TranscribeLanguageCode::HiIn,
-"it-IT" => TranscribeLanguageCode::ItIt,
-"ja-JP" => TranscribeLanguageCode::JaJp,
-"ko-KR" => TranscribeLanguageCode::KoKr,
-"pt-BR" => TranscribeLanguageCode::PtBr,
-"th-TH" => TranscribeLanguageCode::ThTh,
-"zh-CN" => TranscribeLanguageCode::ZhCn,
-other => TranscribeLanguageCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for TranscribeLanguageCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TranscribeLanguageCode::from(s))
-                }
-            }
-impl TranscribeLanguageCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TranscribeLanguageCode::DeDe => "de-DE",
-    TranscribeLanguageCode::EnAu => "en-AU",
-    TranscribeLanguageCode::EnGb => "en-GB",
-    TranscribeLanguageCode::EnUs => "en-US",
-    TranscribeLanguageCode::EsUs => "es-US",
-    TranscribeLanguageCode::FrCa => "fr-CA",
-    TranscribeLanguageCode::FrFr => "fr-FR",
-    TranscribeLanguageCode::HiIn => "hi-IN",
-    TranscribeLanguageCode::ItIt => "it-IT",
-    TranscribeLanguageCode::JaJp => "ja-JP",
-    TranscribeLanguageCode::KoKr => "ko-KR",
-    TranscribeLanguageCode::PtBr => "pt-BR",
-    TranscribeLanguageCode::ThTh => "th-TH",
-    TranscribeLanguageCode::ZhCn => "zh-CN",
-    TranscribeLanguageCode::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "de-DE" => TranscribeLanguageCode::DeDe,
+            "en-AU" => TranscribeLanguageCode::EnAu,
+            "en-GB" => TranscribeLanguageCode::EnGb,
+            "en-US" => TranscribeLanguageCode::EnUs,
+            "es-US" => TranscribeLanguageCode::EsUs,
+            "fr-CA" => TranscribeLanguageCode::FrCa,
+            "fr-FR" => TranscribeLanguageCode::FrFr,
+            "hi-IN" => TranscribeLanguageCode::HiIn,
+            "it-IT" => TranscribeLanguageCode::ItIt,
+            "ja-JP" => TranscribeLanguageCode::JaJp,
+            "ko-KR" => TranscribeLanguageCode::KoKr,
+            "pt-BR" => TranscribeLanguageCode::PtBr,
+            "th-TH" => TranscribeLanguageCode::ThTh,
+            "zh-CN" => TranscribeLanguageCode::ZhCn,
+            other => TranscribeLanguageCode::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR", "pt-BR", "th-TH", "zh-CN"]
-                }
-            }
-impl AsRef<str> for TranscribeLanguageCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TranscribeLanguageCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscribeLanguageCode::from(s))
+    }
+}
+impl TranscribeLanguageCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscribeLanguageCode::DeDe => "de-DE",
+            TranscribeLanguageCode::EnAu => "en-AU",
+            TranscribeLanguageCode::EnGb => "en-GB",
+            TranscribeLanguageCode::EnUs => "en-US",
+            TranscribeLanguageCode::EsUs => "es-US",
+            TranscribeLanguageCode::FrCa => "fr-CA",
+            TranscribeLanguageCode::FrFr => "fr-FR",
+            TranscribeLanguageCode::HiIn => "hi-IN",
+            TranscribeLanguageCode::ItIt => "it-IT",
+            TranscribeLanguageCode::JaJp => "ja-JP",
+            TranscribeLanguageCode::KoKr => "ko-KR",
+            TranscribeLanguageCode::PtBr => "pt-BR",
+            TranscribeLanguageCode::ThTh => "th-TH",
+            TranscribeLanguageCode::ZhCn => "zh-CN",
+            TranscribeLanguageCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "de-DE", "en-AU", "en-GB", "en-US", "es-US", "fr-CA", "fr-FR", "hi-IN", "it-IT",
+            "ja-JP", "ko-KR", "pt-BR", "th-TH", "zh-CN",
+        ]
+    }
+}
+impl AsRef<str> for TranscribeLanguageCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

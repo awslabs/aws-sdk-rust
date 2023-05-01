@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAppMonitorDataOutput  {
+pub struct GetAppMonitorDataOutput {
     /// <p>The events that RUM collected that match your request.</p>
     #[doc(hidden)]
     pub events: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,23 @@ pub struct GetAppMonitorDataOutput  {
 }
 impl GetAppMonitorDataOutput {
     /// <p>The events that RUM collected that match your request.</p>
-    pub fn events(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn events(&self) -> std::option::Option<&[std::string::String]> {
         self.events.as_deref()
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetAppMonitorDataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetAppMonitorDataOutput {
     /// Creates a new builder-style object to manufacture [`GetAppMonitorDataOutput`](crate::operation::get_app_monitor_data::GetAppMonitorDataOutput).
-    pub fn builder() -> crate::operation::get_app_monitor_data::builders::GetAppMonitorDataOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_app_monitor_data::builders::GetAppMonitorDataOutputBuilder {
         crate::operation::get_app_monitor_data::builders::GetAppMonitorDataOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl GetAppMonitorDataOutputBuilder {
     /// <p>The events that RUM collected that match your request.</p>
     pub fn events(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.events.unwrap_or_default();
-                        v.push(input.into());
-                        self.events = Some(v);
-                        self
+        v.push(input.into());
+        self.events = Some(v);
+        self
     }
     /// <p>The events that RUM collected that match your request.</p>
-    pub fn set_events(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.events = input; self
+    pub fn set_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.events = input;
+        self
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl GetAppMonitorDataOutputBuilder {
     }
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetAppMonitorDataOutput`](crate::operation::get_app_monitor_data::GetAppMonitorDataOutput).
     pub fn build(self) -> crate::operation::get_app_monitor_data::GetAppMonitorDataOutput {
         crate::operation::get_app_monitor_data::GetAppMonitorDataOutput {
-            events: self.events
-            ,
-            next_token: self.next_token
-            ,
+            events: self.events,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

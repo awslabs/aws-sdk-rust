@@ -3,7 +3,7 @@
 /// <p>The maximum capacity limits for all OpenSearch Serverless collections, in OpenSearch Compute Units (OCUs). These limits are used to scale your collections based on the current workload. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing capacity limits for Amazon OpenSearch Serverless</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CapacityLimits  {
+pub struct CapacityLimits {
     /// <p>The maximum indexing capacity for collections.</p>
     #[doc(hidden)]
     pub max_indexing_capacity_in_ocu: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl CapacityLimitsBuilder {
     }
     /// <p>The maximum indexing capacity for collections.</p>
     pub fn set_max_indexing_capacity_in_ocu(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_indexing_capacity_in_ocu = input; self
+        self.max_indexing_capacity_in_ocu = input;
+        self
     }
     /// <p>The maximum search capacity for collections.</p>
     pub fn max_search_capacity_in_ocu(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl CapacityLimitsBuilder {
     }
     /// <p>The maximum search capacity for collections.</p>
     pub fn set_max_search_capacity_in_ocu(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_search_capacity_in_ocu = input; self
+        self.max_search_capacity_in_ocu = input;
+        self
     }
     /// Consumes the builder and constructs a [`CapacityLimits`](crate::types::CapacityLimits).
     pub fn build(self) -> crate::types::CapacityLimits {
         crate::types::CapacityLimits {
-            max_indexing_capacity_in_ocu: self.max_indexing_capacity_in_ocu
-            ,
-            max_search_capacity_in_ocu: self.max_search_capacity_in_ocu
-            ,
+            max_indexing_capacity_in_ocu: self.max_indexing_capacity_in_ocu,
+            max_search_capacity_in_ocu: self.max_search_capacity_in_ocu,
         }
     }
 }
-

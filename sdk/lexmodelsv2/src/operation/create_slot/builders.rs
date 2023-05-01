@@ -4,50 +4,66 @@ pub use crate::operation::create_slot::_create_slot_output::CreateSlotOutputBuil
 pub use crate::operation::create_slot::_create_slot_input::CreateSlotInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSlot`.
-/// 
+///
 /// <p>Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an <code>OrderPizza</code> intent might need slots for size, crust, and number of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to elicit a response from the user. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSlotFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_slot::builders::CreateSlotInputBuilder,
+    inner: crate::operation::create_slot::builders::CreateSlotInputBuilder,
 }
-impl CreateSlotFluentBuilder  {
+impl CreateSlotFluentBuilder {
     /// Creates a new `CreateSlot`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_slot::CreateSlot, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_slot::CreateSlotError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_slot::CreateSlotOutput, aws_smithy_http::result::SdkError<crate::operation::create_slot::CreateSlotError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_slot::CreateSlot,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_slot::CreateSlotError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_slot::CreateSlotOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_slot::CreateSlotError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the slot. Slot names must be unique within the bot that contains the slot.</p>
     pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.slot_name(input.into());
@@ -79,24 +95,33 @@ impl CreateSlotFluentBuilder  {
         self
     }
     /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
-    pub fn value_elicitation_setting(mut self, input: crate::types::SlotValueElicitationSetting) -> Self {
+    pub fn value_elicitation_setting(
+        mut self,
+        input: crate::types::SlotValueElicitationSetting,
+    ) -> Self {
         self.inner = self.inner.value_elicitation_setting(input);
         self
     }
     /// <p>Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot. </p>
-    pub fn set_value_elicitation_setting(mut self, input: std::option::Option<crate::types::SlotValueElicitationSetting>) -> Self {
+    pub fn set_value_elicitation_setting(
+        mut self,
+        input: std::option::Option<crate::types::SlotValueElicitationSetting>,
+    ) -> Self {
         self.inner = self.inner.set_value_elicitation_setting(input);
         self
     }
-    /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p> 
+    /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
     /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
     pub fn obfuscation_setting(mut self, input: crate::types::ObfuscationSetting) -> Self {
         self.inner = self.inner.obfuscation_setting(input);
         self
     }
-    /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p> 
+    /// <p>Determines how slot values are used in Amazon CloudWatch logs. If the value of the <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot values are obfuscated in the log output. If the value is <code>None</code>, the actual value is present in the log output.</p>
     /// <p>The default is to obfuscate values in the CloudWatch logs.</p>
-    pub fn set_obfuscation_setting(mut self, input: std::option::Option<crate::types::ObfuscationSetting>) -> Self {
+    pub fn set_obfuscation_setting(
+        mut self,
+        input: std::option::Option<crate::types::ObfuscationSetting>,
+    ) -> Self {
         self.inner = self.inner.set_obfuscation_setting(input);
         self
     }
@@ -140,15 +165,18 @@ impl CreateSlotFluentBuilder  {
         self.inner = self.inner.set_intent_id(input);
         self
     }
-    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p> 
+    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
     pub fn multiple_values_setting(mut self, input: crate::types::MultipleValuesSetting) -> Self {
         self.inner = self.inner.multiple_values_setting(input);
         self
     }
-    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p> 
+    /// <p>Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the en-US locale. If you set this value to <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>. </p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.</p>
-    pub fn set_multiple_values_setting(mut self, input: std::option::Option<crate::types::MultipleValuesSetting>) -> Self {
+    pub fn set_multiple_values_setting(
+        mut self,
+        input: std::option::Option<crate::types::MultipleValuesSetting>,
+    ) -> Self {
         self.inner = self.inner.set_multiple_values_setting(input);
         self
     }
@@ -158,9 +186,11 @@ impl CreateSlotFluentBuilder  {
         self
     }
     /// <p>Specifications for the constituent sub slots and the expression for the composite slot.</p>
-    pub fn set_sub_slot_setting(mut self, input: std::option::Option<crate::types::SubSlotSetting>) -> Self {
+    pub fn set_sub_slot_setting(
+        mut self,
+        input: std::option::Option<crate::types::SubSlotSetting>,
+    ) -> Self {
         self.inner = self.inner.set_sub_slot_setting(input);
         self
     }
 }
-

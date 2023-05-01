@@ -3,7 +3,7 @@
 /// <p>Details about when an on-call rotation shift begins or ends.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HandOffTime  {
+pub struct HandOffTime {
     /// <p>The hour when an on-call rotation shift begins or ends.</p>
     #[doc(hidden)]
     pub hour_of_day: i32,
@@ -43,7 +43,8 @@ impl HandOffTimeBuilder {
     }
     /// <p>The hour when an on-call rotation shift begins or ends.</p>
     pub fn set_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
-        self.hour_of_day = input; self
+        self.hour_of_day = input;
+        self
     }
     /// <p>The minute when an on-call rotation shift begins or ends.</p>
     pub fn minute_of_hour(mut self, input: i32) -> Self {
@@ -52,18 +53,14 @@ impl HandOffTimeBuilder {
     }
     /// <p>The minute when an on-call rotation shift begins or ends.</p>
     pub fn set_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
-        self.minute_of_hour = input; self
+        self.minute_of_hour = input;
+        self
     }
     /// Consumes the builder and constructs a [`HandOffTime`](crate::types::HandOffTime).
     pub fn build(self) -> crate::types::HandOffTime {
         crate::types::HandOffTime {
-            hour_of_day: self.hour_of_day
-                .unwrap_or_default()
-            ,
-            minute_of_hour: self.minute_of_hour
-                .unwrap_or_default()
-            ,
+            hour_of_day: self.hour_of_day.unwrap_or_default(),
+            minute_of_hour: self.minute_of_hour.unwrap_or_default(),
         }
     }
 }
-

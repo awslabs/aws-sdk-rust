@@ -3,7 +3,7 @@
 /// <p>A wrapper type for the attributes of an Amazon SNS subscription.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subscription  {
+pub struct Subscription {
     /// <p>The subscription's ARN.</p>
     #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct Subscription  {
 }
 impl Subscription {
     /// <p>The subscription's ARN.</p>
-    pub fn subscription_arn(&self) -> std::option::Option<& str> {
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
         self.subscription_arn.as_deref()
     }
     /// <p>The subscription's owner.</p>
-    pub fn owner(&self) -> std::option::Option<& str> {
+    pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>The subscription's protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<& str> {
+    pub fn protocol(&self) -> std::option::Option<&str> {
         self.protocol.as_deref()
     }
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
-    pub fn endpoint(&self) -> std::option::Option<& str> {
+    pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
     /// <p>The ARN of the subscription's topic.</p>
-    pub fn topic_arn(&self) -> std::option::Option<& str> {
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl SubscriptionBuilder {
     }
     /// <p>The subscription's ARN.</p>
     pub fn set_subscription_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscription_arn = input; self
+        self.subscription_arn = input;
+        self
     }
     /// <p>The subscription's owner.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl SubscriptionBuilder {
     }
     /// <p>The subscription's owner.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// <p>The subscription's protocol.</p>
     pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl SubscriptionBuilder {
     }
     /// <p>The subscription's protocol.</p>
     pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
     pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl SubscriptionBuilder {
     }
     /// <p>The subscription's endpoint (format depends on the protocol).</p>
     pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint = input; self
+        self.endpoint = input;
+        self
     }
     /// <p>The ARN of the subscription's topic.</p>
     pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +107,17 @@ impl SubscriptionBuilder {
     }
     /// <p>The ARN of the subscription's topic.</p>
     pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic_arn = input; self
+        self.topic_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`Subscription`](crate::types::Subscription).
     pub fn build(self) -> crate::types::Subscription {
         crate::types::Subscription {
-            subscription_arn: self.subscription_arn
-            ,
-            owner: self.owner
-            ,
-            protocol: self.protocol
-            ,
-            endpoint: self.endpoint
-            ,
-            topic_arn: self.topic_arn
-            ,
+            subscription_arn: self.subscription_arn,
+            owner: self.owner,
+            protocol: self.protocol,
+            endpoint: self.endpoint,
+            topic_arn: self.topic_arn,
         }
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccessTokenInput  {
+pub struct DeleteAccessTokenInput {
     /// <p>The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling <code>ListAccessTokens</code>.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteAccessTokenInput {
     /// <p>The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling <code>ListAccessTokens</code>.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeleteAccessTokenInput {
     /// Creates a new builder-style object to manufacture [`DeleteAccessTokenInput`](crate::operation::delete_access_token::DeleteAccessTokenInput).
-    pub fn builder() -> crate::operation::delete_access_token::builders::DeleteAccessTokenInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_access_token::builders::DeleteAccessTokenInputBuilder {
         crate::operation::delete_access_token::builders::DeleteAccessTokenInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl DeleteAccessTokenInputBuilder {
     }
     /// <p>The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling <code>ListAccessTokens</code>.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAccessTokenInput`](crate::operation::delete_access_token::DeleteAccessTokenInput).
-    pub fn build(self) -> Result<crate::operation::delete_access_token::DeleteAccessTokenInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_access_token::DeleteAccessTokenInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_access_token::DeleteAccessTokenInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_access_token::DeleteAccessTokenInput { id: self.id })
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProtectionGroupInput  {
+pub struct DescribeProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
     #[doc(hidden)]
     pub protection_group_id: std::option::Option<std::string::String>,
 }
 impl DescribeProtectionGroupInput {
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn protection_group_id(&self) -> std::option::Option<& str> {
+    pub fn protection_group_id(&self) -> std::option::Option<&str> {
         self.protection_group_id.as_deref()
     }
 }
 impl DescribeProtectionGroupInput {
     /// Creates a new builder-style object to manufacture [`DescribeProtectionGroupInput`](crate::operation::describe_protection_group::DescribeProtectionGroupInput).
-    pub fn builder() -> crate::operation::describe_protection_group::builders::DescribeProtectionGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_protection_group::builders::DescribeProtectionGroupInputBuilder
+    {
         crate::operation::describe_protection_group::builders::DescribeProtectionGroupInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeProtectionGroupInputBuilder {
         self
     }
     /// <p>The name of the protection group. You use this to identify the protection group in lists and to manage the protection group, for example to update, delete, or describe it. </p>
-    pub fn set_protection_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.protection_group_id = input; self
+    pub fn set_protection_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.protection_group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeProtectionGroupInput`](crate::operation::describe_protection_group::DescribeProtectionGroupInput).
-    pub fn build(self) -> Result<crate::operation::describe_protection_group::DescribeProtectionGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_protection_group::DescribeProtectionGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_protection_group::DescribeProtectionGroupInput {
-                protection_group_id: self.protection_group_id
-                ,
-            }
+                protection_group_id: self.protection_group_id,
+            },
         )
     }
 }
-

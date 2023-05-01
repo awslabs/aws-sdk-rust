@@ -4,56 +4,81 @@ pub use crate::operation::get_query_results::_get_query_results_output::GetQuery
 pub use crate::operation::get_query_results::_get_query_results_input::GetQueryResultsInputBuilder;
 
 /// Fluent builder constructing a request to `GetQueryResults`.
-/// 
+///
 /// <p>Gets event data results of a query. You must specify the <code>QueryID</code> value returned by the <code>StartQuery</code> operation, and an ARN for <code>EventDataStore</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetQueryResultsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_query_results::builders::GetQueryResultsInputBuilder,
+    inner: crate::operation::get_query_results::builders::GetQueryResultsInputBuilder,
 }
-impl GetQueryResultsFluentBuilder  {
+impl GetQueryResultsFluentBuilder {
     /// Creates a new `GetQueryResults`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_query_results::GetQueryResults, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_query_results::GetQueryResultsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_query_results::GetQueryResultsOutput, aws_smithy_http::result::SdkError<crate::operation::get_query_results::GetQueryResultsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_query_results::GetQueryResults,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_query_results::GetQueryResultsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_query_results::GetQueryResultsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_query_results::GetQueryResultsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_query_results::paginator::GetQueryResultsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_query_results::paginator::GetQueryResultsPaginator {
-                                crate::operation::get_query_results::paginator::GetQueryResultsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_query_results::paginator::GetQueryResultsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_query_results::paginator::GetQueryResultsPaginator {
+        crate::operation::get_query_results::paginator::GetQueryResultsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ARN (or ID suffix of the ARN) of the event data store against which the query was run.</p>
     #[deprecated(note = "EventDataStore is no longer required by GetQueryResultsRequest")]
     pub fn event_data_store(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,4 +122,3 @@ impl GetQueryResultsFluentBuilder  {
         self
     }
 }
-

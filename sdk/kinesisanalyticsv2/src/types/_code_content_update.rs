@@ -3,7 +3,7 @@
 /// <p>Describes an update to the code of an application. Not supported for Apache Zeppelin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeContentUpdate  {
+pub struct CodeContentUpdate {
     /// <p>Describes an update to the text code for an application.</p>
     #[doc(hidden)]
     pub text_content_update: std::option::Option<std::string::String>,
@@ -16,15 +16,17 @@ pub struct CodeContentUpdate  {
 }
 impl CodeContentUpdate {
     /// <p>Describes an update to the text code for an application.</p>
-    pub fn text_content_update(&self) -> std::option::Option<& str> {
+    pub fn text_content_update(&self) -> std::option::Option<&str> {
         self.text_content_update.as_deref()
     }
     /// <p>Describes an update to the zipped code for an application.</p>
-    pub fn zip_file_content_update(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn zip_file_content_update(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.zip_file_content_update.as_ref()
     }
     /// <p>Describes an update to the location of code for an application.</p>
-    pub fn s3_content_location_update(&self) -> std::option::Option<& crate::types::S3ContentLocationUpdate> {
+    pub fn s3_content_location_update(
+        &self,
+    ) -> std::option::Option<&crate::types::S3ContentLocationUpdate> {
         self.s3_content_location_update.as_ref()
     }
 }
@@ -41,7 +43,8 @@ impl CodeContentUpdate {
 pub struct CodeContentUpdateBuilder {
     pub(crate) text_content_update: std::option::Option<std::string::String>,
     pub(crate) zip_file_content_update: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) s3_content_location_update: std::option::Option<crate::types::S3ContentLocationUpdate>,
+    pub(crate) s3_content_location_update:
+        std::option::Option<crate::types::S3ContentLocationUpdate>,
 }
 impl CodeContentUpdateBuilder {
     /// <p>Describes an update to the text code for an application.</p>
@@ -50,8 +53,12 @@ impl CodeContentUpdateBuilder {
         self
     }
     /// <p>Describes an update to the text code for an application.</p>
-    pub fn set_text_content_update(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text_content_update = input; self
+    pub fn set_text_content_update(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.text_content_update = input;
+        self
     }
     /// <p>Describes an update to the zipped code for an application.</p>
     pub fn zip_file_content_update(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -59,28 +66,35 @@ impl CodeContentUpdateBuilder {
         self
     }
     /// <p>Describes an update to the zipped code for an application.</p>
-    pub fn set_zip_file_content_update(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.zip_file_content_update = input; self
+    pub fn set_zip_file_content_update(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
+        self.zip_file_content_update = input;
+        self
     }
     /// <p>Describes an update to the location of code for an application.</p>
-    pub fn s3_content_location_update(mut self, input: crate::types::S3ContentLocationUpdate) -> Self {
+    pub fn s3_content_location_update(
+        mut self,
+        input: crate::types::S3ContentLocationUpdate,
+    ) -> Self {
         self.s3_content_location_update = Some(input);
         self
     }
     /// <p>Describes an update to the location of code for an application.</p>
-    pub fn set_s3_content_location_update(mut self, input: std::option::Option<crate::types::S3ContentLocationUpdate>) -> Self {
-        self.s3_content_location_update = input; self
+    pub fn set_s3_content_location_update(
+        mut self,
+        input: std::option::Option<crate::types::S3ContentLocationUpdate>,
+    ) -> Self {
+        self.s3_content_location_update = input;
+        self
     }
     /// Consumes the builder and constructs a [`CodeContentUpdate`](crate::types::CodeContentUpdate).
     pub fn build(self) -> crate::types::CodeContentUpdate {
         crate::types::CodeContentUpdate {
-            text_content_update: self.text_content_update
-            ,
-            zip_file_content_update: self.zip_file_content_update
-            ,
-            s3_content_location_update: self.s3_content_location_update
-            ,
+            text_content_update: self.text_content_update,
+            zip_file_content_update: self.zip_file_content_update,
+            s3_content_location_update: self.s3_content_location_update,
         }
     }
 }
-

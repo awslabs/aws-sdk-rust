@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContentInput  {
+pub struct GetContentInput {
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
     pub content_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetContentInput  {
 }
 impl GetContentInput {
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn content_id(&self) -> std::option::Option<& str> {
+    pub fn content_id(&self) -> std::option::Option<&str> {
         self.content_id.as_deref()
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> std::option::Option<& str> {
+    pub fn knowledge_base_id(&self) -> std::option::Option<&str> {
         self.knowledge_base_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetContentInputBuilder {
     }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_content_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_id = input; self
+        self.content_id = input;
+        self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn knowledge_base_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,23 @@ impl GetContentInputBuilder {
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.knowledge_base_id = input; self
+    pub fn set_knowledge_base_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.knowledge_base_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetContentInput`](crate::operation::get_content::GetContentInput).
-    pub fn build(self) -> Result<crate::operation::get_content::GetContentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_content::GetContentInput {
-                content_id: self.content_id
-                ,
-                knowledge_base_id: self.knowledge_base_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_content::GetContentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_content::GetContentInput {
+            content_id: self.content_id,
+            knowledge_base_id: self.knowledge_base_id,
+        })
     }
 }
-

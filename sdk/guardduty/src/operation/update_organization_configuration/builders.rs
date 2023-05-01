@@ -4,51 +4,58 @@ pub use crate::operation::update_organization_configuration::_update_organizatio
 pub use crate::operation::update_organization_configuration::_update_organization_configuration_input::UpdateOrganizationConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateOrganizationConfiguration`.
-/// 
-/// <p>Configures the delegated administrator account with the provided values. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>. </p> 
+///
+/// <p>Configures the delegated administrator account with the provided values. You must provide the value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>. </p>
 /// <p>There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions and endpoints</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateOrganizationConfigurationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_organization_configuration::builders::UpdateOrganizationConfigurationInputBuilder,
 }
-impl UpdateOrganizationConfigurationFluentBuilder  {
+impl UpdateOrganizationConfigurationFluentBuilder {
     /// Creates a new `UpdateOrganizationConfiguration`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_organization_configuration::UpdateOrganizationConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::update_organization_configuration::UpdateOrganizationConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_organization_configuration::UpdateOrganizationConfigurationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the detector that configures the delegated administrator.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -59,14 +66,14 @@ impl UpdateOrganizationConfigurationFluentBuilder  {
         self.inner = self.inner.set_detector_id(input);
         self
     }
-    /// <p>Indicates whether to automatically enable member accounts in the organization.</p> 
+    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
     /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub fn auto_enable(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_enable(input);
         self
     }
-    /// <p>Indicates whether to automatically enable member accounts in the organization.</p> 
+    /// <p>Indicates whether to automatically enable member accounts in the organization.</p>
     /// <p>Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code> to achieve the similar results.</p>
     #[deprecated(note = "This field is deprecated, use AutoEnableOrganizationMembers instead")]
     pub fn set_auto_enable(mut self, input: std::option::Option<bool>) -> Self {
@@ -75,13 +82,19 @@ impl UpdateOrganizationConfigurationFluentBuilder  {
     }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn data_sources(mut self, input: crate::types::OrganizationDataSourceConfigurations) -> Self {
+    pub fn data_sources(
+        mut self,
+        input: crate::types::OrganizationDataSourceConfigurations,
+    ) -> Self {
         self.inner = self.inner.data_sources(input);
         self
     }
     /// <p>Describes which data sources will be updated.</p>
     #[deprecated(note = "This parameter is deprecated, use Features instead")]
-    pub fn set_data_sources(mut self, input: std::option::Option<crate::types::OrganizationDataSourceConfigurations>) -> Self {
+    pub fn set_data_sources(
+        mut self,
+        input: std::option::Option<crate::types::OrganizationDataSourceConfigurations>,
+    ) -> Self {
         self.inner = self.inner.set_data_sources(input);
         self
     }
@@ -95,29 +108,37 @@ impl UpdateOrganizationConfigurationFluentBuilder  {
         self
     }
     /// <p>A list of features that will be configured for the organization.</p>
-    pub fn set_features(mut self, input: std::option::Option<std::vec::Vec<crate::types::OrganizationFeatureConfiguration>>) -> Self {
+    pub fn set_features(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OrganizationFeatureConfiguration>>,
+    ) -> Self {
         self.inner = self.inner.set_features(input);
         self
     }
-    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. </p> 
-    /// <ul> 
-    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically. </p> </li> 
-    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li> 
-    /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li> 
+    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. </p>
+    /// <ul>
+    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically. </p> </li>
+    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>
+    /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>
     /// </ul>
-    pub fn auto_enable_organization_members(mut self, input: crate::types::AutoEnableMembers) -> Self {
+    pub fn auto_enable_organization_members(
+        mut self,
+        input: crate::types::AutoEnableMembers,
+    ) -> Self {
         self.inner = self.inner.auto_enable_organization_members(input);
         self
     }
-    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. </p> 
-    /// <ul> 
-    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically. </p> </li> 
-    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li> 
-    /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li> 
+    /// <p>Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. </p>
+    /// <ul>
+    /// <li> <p> <code>NEW</code>: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically. </p> </li>
+    /// <li> <p> <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.</p> </li>
+    /// <li> <p> <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for any accounts in the organization. GuardDuty must be managed for each account individually by the administrator.</p> </li>
     /// </ul>
-    pub fn set_auto_enable_organization_members(mut self, input: std::option::Option<crate::types::AutoEnableMembers>) -> Self {
+    pub fn set_auto_enable_organization_members(
+        mut self,
+        input: std::option::Option<crate::types::AutoEnableMembers>,
+    ) -> Self {
         self.inner = self.inner.set_auto_enable_organization_members(input);
         self
     }
 }
-

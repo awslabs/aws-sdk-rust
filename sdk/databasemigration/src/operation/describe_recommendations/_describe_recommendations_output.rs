@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRecommendationsOutput  {
+pub struct DescribeRecommendationsOutput {
     /// <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct DescribeRecommendationsOutput  {
 }
 impl DescribeRecommendationsOutput {
     /// <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The list of recommendations of target engines that Fleet Advisor created for the source database.</p>
-    pub fn recommendations(&self) -> std::option::Option<& [crate::types::Recommendation]> {
+    pub fn recommendations(&self) -> std::option::Option<&[crate::types::Recommendation]> {
         self.recommendations.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRecommendationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeRecommendationsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommendationsOutput`](crate::operation::describe_recommendations::DescribeRecommendationsOutput).
-    pub fn builder() -> crate::operation::describe_recommendations::builders::DescribeRecommendationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_recommendations::builders::DescribeRecommendationsOutputBuilder
+    {
         crate::operation::describe_recommendations::builders::DescribeRecommendationsOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl DescribeRecommendationsOutputBuilder {
     }
     /// <p>The unique pagination token returned for you to pass to a subsequent request. Fleet Advisor returns this token when the number of records in the response is greater than the <code>MaxRecords</code> value. To retrieve the next page, make the call again using the returned token and keeping all other arguments unchanged.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `recommendations`.
     ///
@@ -58,32 +61,35 @@ impl DescribeRecommendationsOutputBuilder {
     /// <p>The list of recommendations of target engines that Fleet Advisor created for the source database.</p>
     pub fn recommendations(mut self, input: crate::types::Recommendation) -> Self {
         let mut v = self.recommendations.unwrap_or_default();
-                        v.push(input);
-                        self.recommendations = Some(v);
-                        self
+        v.push(input);
+        self.recommendations = Some(v);
+        self
     }
     /// <p>The list of recommendations of target engines that Fleet Advisor created for the source database.</p>
-    pub fn set_recommendations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Recommendation>>) -> Self {
-        self.recommendations = input; self
+    pub fn set_recommendations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Recommendation>>,
+    ) -> Self {
+        self.recommendations = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeRecommendationsOutput`](crate::operation::describe_recommendations::DescribeRecommendationsOutput).
-    pub fn build(self) -> crate::operation::describe_recommendations::DescribeRecommendationsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_recommendations::DescribeRecommendationsOutput {
         crate::operation::describe_recommendations::DescribeRecommendationsOutput {
-            next_token: self.next_token
-            ,
-            recommendations: self.recommendations
-            ,
+            next_token: self.next_token,
+            recommendations: self.recommendations,
             _request_id: self._request_id,
         }
     }
 }
-

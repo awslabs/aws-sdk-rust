@@ -3,7 +3,7 @@
 /// <p>Represents a request to enable or disable the email sending capabilities for your entire Amazon SES account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccountSendingEnabledInput  {
+pub struct UpdateAccountSendingEnabledInput {
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -16,7 +16,7 @@ impl UpdateAccountSendingEnabledInput {
 }
 impl UpdateAccountSendingEnabledInput {
     /// Creates a new builder-style object to manufacture [`UpdateAccountSendingEnabledInput`](crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput).
-    pub fn builder() -> crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder {
+    pub fn builder() -> crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder{
         crate::operation::update_account_sending_enabled::builders::UpdateAccountSendingEnabledInputBuilder::default()
     }
 }
@@ -35,17 +35,20 @@ impl UpdateAccountSendingEnabledInputBuilder {
     }
     /// <p>Describes whether email sending is enabled or disabled for your Amazon SES account in the current AWS Region.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAccountSendingEnabledInput`](crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput).
-    pub fn build(self) -> Result<crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledInput {
-                enabled: self.enabled
-                    .unwrap_or_default()
-                ,
-            }
+                enabled: self.enabled.unwrap_or_default(),
+            },
         )
     }
 }
-

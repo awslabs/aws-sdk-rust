@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTopicRuleOutput  {
+pub struct CreateTopicRuleOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CreateTopicRuleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateTopicRuleOutput {
     /// Creates a new builder-style object to manufacture [`CreateTopicRuleOutput`](crate::operation::create_topic_rule::CreateTopicRuleOutput).
-    pub fn builder() -> crate::operation::create_topic_rule::builders::CreateTopicRuleOutputBuilder {
+    pub fn builder() -> crate::operation::create_topic_rule::builders::CreateTopicRuleOutputBuilder
+    {
         crate::operation::create_topic_rule::builders::CreateTopicRuleOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct CreateTopicRuleOutputBuilder {
 }
 impl CreateTopicRuleOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateTopicRuleOutput`](crate::operation::create_topic_rule::CreateTopicRuleOutput).
     pub fn build(self) -> crate::operation::create_topic_rule::CreateTopicRuleOutput {
         crate::operation::create_topic_rule::CreateTopicRuleOutput {
@@ -40,4 +41,3 @@ impl CreateTopicRuleOutputBuilder {
         }
     }
 }
-

@@ -324,4 +324,3 @@ pub mod builders;
 
 /// Error types that Amazon Forecast Service can respond with.
 pub mod error;
-

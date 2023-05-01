@@ -3,7 +3,7 @@
 /// <p>Container for the parameters to the <code>DescribeDomainAutoTunes</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainAutoTunesInput  {
+pub struct DescribeDomainAutoTunesInput {
     /// <p>Specifies the domain name for which you want Auto-Tune action details.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct DescribeDomainAutoTunesInput  {
 }
 impl DescribeDomainAutoTunesInput {
     /// <p>Specifies the domain name for which you want Auto-Tune action details.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
@@ -24,13 +24,15 @@ impl DescribeDomainAutoTunesInput {
         self.max_results
     }
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeDomainAutoTunesInput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesInput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput).
-    pub fn builder() -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder
+    {
         crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesInputBuilder::default()
     }
 }
@@ -51,7 +53,8 @@ impl DescribeDomainAutoTunesInputBuilder {
     }
     /// <p>Specifies the domain name for which you want Auto-Tune action details.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -60,7 +63,8 @@ impl DescribeDomainAutoTunesInputBuilder {
     }
     /// <p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,21 +73,22 @@ impl DescribeDomainAutoTunesInputBuilder {
     }
     /// <p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDomainAutoTunesInput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput).
-    pub fn build(self) -> Result<crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesInput {
-                domain_name: self.domain_name
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                domain_name: self.domain_name,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

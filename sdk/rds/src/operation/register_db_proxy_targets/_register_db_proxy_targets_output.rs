@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterDbProxyTargetsOutput  {
+pub struct RegisterDbProxyTargetsOutput {
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
     #[doc(hidden)]
     pub db_proxy_targets: std::option::Option<std::vec::Vec<crate::types::DbProxyTarget>>,
@@ -10,18 +10,20 @@ pub struct RegisterDbProxyTargetsOutput  {
 }
 impl RegisterDbProxyTargetsOutput {
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
-    pub fn db_proxy_targets(&self) -> std::option::Option<& [crate::types::DbProxyTarget]> {
+    pub fn db_proxy_targets(&self) -> std::option::Option<&[crate::types::DbProxyTarget]> {
         self.db_proxy_targets.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterDbProxyTargetsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RegisterDbProxyTargetsOutput {
     /// Creates a new builder-style object to manufacture [`RegisterDbProxyTargetsOutput`](crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput).
-    pub fn builder() -> crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder
+    {
         crate::operation::register_db_proxy_targets::builders::RegisterDbProxyTargetsOutputBuilder::default()
     }
 }
@@ -41,30 +43,34 @@ impl RegisterDbProxyTargetsOutputBuilder {
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
     pub fn db_proxy_targets(mut self, input: crate::types::DbProxyTarget) -> Self {
         let mut v = self.db_proxy_targets.unwrap_or_default();
-                        v.push(input);
-                        self.db_proxy_targets = Some(v);
-                        self
+        v.push(input);
+        self.db_proxy_targets = Some(v);
+        self
     }
     /// <p>One or more <code>DBProxyTarget</code> objects that are created when you register targets with a target group.</p>
-    pub fn set_db_proxy_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::DbProxyTarget>>) -> Self {
-        self.db_proxy_targets = input; self
+    pub fn set_db_proxy_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DbProxyTarget>>,
+    ) -> Self {
+        self.db_proxy_targets = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RegisterDbProxyTargetsOutput`](crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput).
-    pub fn build(self) -> crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput {
         crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput {
-            db_proxy_targets: self.db_proxy_targets
-            ,
+            db_proxy_targets: self.db_proxy_targets,
             _request_id: self._request_id,
         }
     }
 }
-

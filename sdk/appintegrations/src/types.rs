@@ -32,4 +32,3 @@ pub mod builders;
 
 /// Error types that Amazon AppIntegrations Service can respond with.
 pub mod error;
-

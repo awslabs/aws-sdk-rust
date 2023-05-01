@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeployablePatchSnapshotForInstanceOutput  {
+pub struct GetDeployablePatchSnapshotForInstanceOutput {
     /// <p>The managed node ID.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -19,30 +19,30 @@ pub struct GetDeployablePatchSnapshotForInstanceOutput  {
 }
 impl GetDeployablePatchSnapshotForInstanceOutput {
     /// <p>The managed node ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The user-defined snapshot ID.</p>
-    pub fn snapshot_id(&self) -> std::option::Option<& str> {
+    pub fn snapshot_id(&self) -> std::option::Option<&str> {
         self.snapshot_id.as_deref()
     }
     /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
-    pub fn snapshot_download_url(&self) -> std::option::Option<& str> {
+    pub fn snapshot_download_url(&self) -> std::option::Option<&str> {
         self.snapshot_download_url.as_deref()
     }
     /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
-    pub fn product(&self) -> std::option::Option<& str> {
+    pub fn product(&self) -> std::option::Option<&str> {
         self.product.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDeployablePatchSnapshotForInstanceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDeployablePatchSnapshotForInstanceOutput {
     /// Creates a new builder-style object to manufacture [`GetDeployablePatchSnapshotForInstanceOutput`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput).
-    pub fn builder() -> crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceOutputBuilder {
+    pub fn builder() -> crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceOutputBuilder{
         crate::operation::get_deployable_patch_snapshot_for_instance::builders::GetDeployablePatchSnapshotForInstanceOutputBuilder::default()
     }
 }
@@ -65,7 +65,8 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
     }
     /// <p>The managed node ID.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The user-defined snapshot ID.</p>
     pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +75,8 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
     }
     /// <p>The user-defined snapshot ID.</p>
     pub fn set_snapshot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_id = input; self
+        self.snapshot_id = input;
+        self
     }
     /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
     pub fn snapshot_download_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +84,12 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
         self
     }
     /// <p>A pre-signed Amazon Simple Storage Service (Amazon S3) URL that can be used to download the patch snapshot.</p>
-    pub fn set_snapshot_download_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_download_url = input; self
+    pub fn set_snapshot_download_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.snapshot_download_url = input;
+        self
     }
     /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
     pub fn product(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,19 +98,20 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
     }
     /// <p>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the managed node for the specified patch snapshot.</p>
     pub fn set_product(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product = input; self
+        self.product = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDeployablePatchSnapshotForInstanceOutput`](crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput).
-    pub fn build(self) -> crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput {
+    pub fn build(self) -> crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput{
         crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput {
             instance_id: self.instance_id
             ,
@@ -118,4 +125,3 @@ impl GetDeployablePatchSnapshotForInstanceOutputBuilder {
         }
     }
 }
-

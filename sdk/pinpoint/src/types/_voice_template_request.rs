@@ -3,7 +3,7 @@
 /// <p>Specifies the content and settings for a message template that can be used in messages that are sent through the voice channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VoiceTemplateRequest  {
+pub struct VoiceTemplateRequest {
     /// <p>The text of the script to use in messages that are based on the message template, in plain text format.</p>
     #[doc(hidden)]
     pub body: std::option::Option<std::string::String>,
@@ -15,7 +15,8 @@ pub struct VoiceTemplateRequest  {
     pub language_code: std::option::Option<std::string::String>,
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A custom description of the message template.</p>
     #[doc(hidden)]
     pub template_description: std::option::Option<std::string::String>,
@@ -25,27 +26,30 @@ pub struct VoiceTemplateRequest  {
 }
 impl VoiceTemplateRequest {
     /// <p>The text of the script to use in messages that are based on the message template, in plain text format.</p>
-    pub fn body(&self) -> std::option::Option<& str> {
+    pub fn body(&self) -> std::option::Option<&str> {
         self.body.as_deref()
     }
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
-    pub fn default_substitutions(&self) -> std::option::Option<& str> {
+    pub fn default_substitutions(&self) -> std::option::Option<&str> {
         self.default_substitutions.as_deref()
     }
     /// <p>The code for the language to use when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
-    pub fn language_code(&self) -> std::option::Option<& str> {
+    pub fn language_code(&self) -> std::option::Option<&str> {
         self.language_code.as_deref()
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>A custom description of the message template.</p>
-    pub fn template_description(&self) -> std::option::Option<& str> {
+    pub fn template_description(&self) -> std::option::Option<&str> {
         self.template_description.as_deref()
     }
     /// <p>The name of the voice to use when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
-    pub fn voice_id(&self) -> std::option::Option<& str> {
+    pub fn voice_id(&self) -> std::option::Option<&str> {
         self.voice_id.as_deref()
     }
 }
@@ -63,7 +67,8 @@ pub struct VoiceTemplateRequestBuilder {
     pub(crate) body: std::option::Option<std::string::String>,
     pub(crate) default_substitutions: std::option::Option<std::string::String>,
     pub(crate) language_code: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) template_description: std::option::Option<std::string::String>,
     pub(crate) voice_id: std::option::Option<std::string::String>,
 }
@@ -75,7 +80,8 @@ impl VoiceTemplateRequestBuilder {
     }
     /// <p>The text of the script to use in messages that are based on the message template, in plain text format.</p>
     pub fn set_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.body = input; self
+        self.body = input;
+        self
     }
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
     pub fn default_substitutions(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,8 +89,12 @@ impl VoiceTemplateRequestBuilder {
         self
     }
     /// <p>A JSON object that specifies the default values to use for message variables in the message template. This object is a set of key-value pairs. Each key defines a message variable in the template. The corresponding value defines the default value for that variable. When you create a message that's based on the template, you can override these defaults with message-specific and address-specific variables and values.</p>
-    pub fn set_default_substitutions(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.default_substitutions = input; self
+    pub fn set_default_substitutions(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.default_substitutions = input;
+        self
     }
     /// <p>The code for the language to use when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn language_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,22 +103,33 @@ impl VoiceTemplateRequestBuilder {
     }
     /// <p>The code for the language to use when synthesizing the text of the script in messages that are based on the message template. For a list of supported languages and the code for each one, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn set_language_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.language_code = input; self
+        self.language_code = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>A custom description of the message template.</p>
     pub fn template_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +137,12 @@ impl VoiceTemplateRequestBuilder {
         self
     }
     /// <p>A custom description of the message template.</p>
-    pub fn set_template_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_description = input; self
+    pub fn set_template_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.template_description = input;
+        self
     }
     /// <p>The name of the voice to use when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn voice_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,24 +151,18 @@ impl VoiceTemplateRequestBuilder {
     }
     /// <p>The name of the voice to use when delivering messages that are based on the message template. For a list of supported voices, see the <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">Amazon Polly Developer Guide</a>.</p>
     pub fn set_voice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_id = input; self
+        self.voice_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`VoiceTemplateRequest`](crate::types::VoiceTemplateRequest).
     pub fn build(self) -> crate::types::VoiceTemplateRequest {
         crate::types::VoiceTemplateRequest {
-            body: self.body
-            ,
-            default_substitutions: self.default_substitutions
-            ,
-            language_code: self.language_code
-            ,
-            tags: self.tags
-            ,
-            template_description: self.template_description
-            ,
-            voice_id: self.voice_id
-            ,
+            body: self.body,
+            default_substitutions: self.default_substitutions,
+            language_code: self.language_code,
+            tags: self.tags,
+            template_description: self.template_description,
+            voice_id: self.voice_id,
         }
     }
 }
-

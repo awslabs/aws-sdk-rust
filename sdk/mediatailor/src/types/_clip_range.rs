@@ -3,7 +3,7 @@
 /// <p>Clip range configuration for the VOD source associated with the program.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClipRange  {
+pub struct ClipRange {
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
     #[doc(hidden)]
     pub end_offset_millis: i64,
@@ -35,15 +35,13 @@ impl ClipRangeBuilder {
     }
     /// <p>The end offset of the clip range, in milliseconds, starting from the beginning of the VOD source associated with the program.</p>
     pub fn set_end_offset_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.end_offset_millis = input; self
+        self.end_offset_millis = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClipRange`](crate::types::ClipRange).
     pub fn build(self) -> crate::types::ClipRange {
         crate::types::ClipRange {
-            end_offset_millis: self.end_offset_millis
-                .unwrap_or_default()
-            ,
+            end_offset_millis: self.end_offset_millis.unwrap_or_default(),
         }
     }
 }
-

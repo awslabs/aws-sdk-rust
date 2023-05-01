@@ -2,60 +2,60 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CountOpenWorkflowExecutionsInput  {
+pub struct CountOpenWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
     #[doc(hidden)]
     pub start_time_filter: std::option::Option<crate::types::ExecutionTimeFilter>,
-    /// <p>Specifies the type of the workflow executions to be counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     #[doc(hidden)]
     pub type_filter: std::option::Option<crate::types::WorkflowTypeFilter>,
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     #[doc(hidden)]
     pub tag_filter: std::option::Option<crate::types::TagFilter>,
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     #[doc(hidden)]
     pub execution_filter: std::option::Option<crate::types::WorkflowExecutionFilter>,
 }
 impl CountOpenWorkflowExecutionsInput {
     /// <p>The name of the domain containing the workflow executions to count.</p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
-    pub fn start_time_filter(&self) -> std::option::Option<& crate::types::ExecutionTimeFilter> {
+    pub fn start_time_filter(&self) -> std::option::Option<&crate::types::ExecutionTimeFilter> {
         self.start_time_filter.as_ref()
     }
-    /// <p>Specifies the type of the workflow executions to be counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn type_filter(&self) -> std::option::Option<& crate::types::WorkflowTypeFilter> {
+    pub fn type_filter(&self) -> std::option::Option<&crate::types::WorkflowTypeFilter> {
         self.type_filter.as_ref()
     }
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn tag_filter(&self) -> std::option::Option<& crate::types::TagFilter> {
+    pub fn tag_filter(&self) -> std::option::Option<&crate::types::TagFilter> {
         self.tag_filter.as_ref()
     }
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn execution_filter(&self) -> std::option::Option<& crate::types::WorkflowExecutionFilter> {
+    pub fn execution_filter(&self) -> std::option::Option<&crate::types::WorkflowExecutionFilter> {
         self.execution_filter.as_ref()
     }
 }
 impl CountOpenWorkflowExecutionsInput {
     /// Creates a new builder-style object to manufacture [`CountOpenWorkflowExecutionsInput`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput).
-    pub fn builder() -> crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder {
+    pub fn builder() -> crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder{
         crate::operation::count_open_workflow_executions::builders::CountOpenWorkflowExecutionsInputBuilder::default()
     }
 }
@@ -78,7 +78,8 @@ impl CountOpenWorkflowExecutionsInputBuilder {
     }
     /// <p>The name of the domain containing the workflow executions to count.</p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
     pub fn start_time_filter(mut self, input: crate::types::ExecutionTimeFilter) -> Self {
@@ -86,64 +87,76 @@ impl CountOpenWorkflowExecutionsInputBuilder {
         self
     }
     /// <p>Specifies the start time criteria that workflow executions must meet in order to be counted.</p>
-    pub fn set_start_time_filter(mut self, input: std::option::Option<crate::types::ExecutionTimeFilter>) -> Self {
-        self.start_time_filter = input; self
+    pub fn set_start_time_filter(
+        mut self,
+        input: std::option::Option<crate::types::ExecutionTimeFilter>,
+    ) -> Self {
+        self.start_time_filter = input;
+        self
     }
-    /// <p>Specifies the type of the workflow executions to be counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn type_filter(mut self, input: crate::types::WorkflowTypeFilter) -> Self {
         self.type_filter = Some(input);
         self
     }
-    /// <p>Specifies the type of the workflow executions to be counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>Specifies the type of the workflow executions to be counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_type_filter(mut self, input: std::option::Option<crate::types::WorkflowTypeFilter>) -> Self {
-        self.type_filter = input; self
+    pub fn set_type_filter(
+        mut self,
+        input: std::option::Option<crate::types::WorkflowTypeFilter>,
+    ) -> Self {
+        self.type_filter = input;
+        self
     }
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn tag_filter(mut self, input: crate::types::TagFilter) -> Self {
         self.tag_filter = Some(input);
         self
     }
-    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>If specified, only executions that have a tag that matches the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn set_tag_filter(mut self, input: std::option::Option<crate::types::TagFilter>) -> Self {
-        self.tag_filter = input; self
+        self.tag_filter = input;
+        self
     }
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
     pub fn execution_filter(mut self, input: crate::types::WorkflowExecutionFilter) -> Self {
         self.execution_filter = Some(input);
         self
     }
-    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note> 
-    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p> 
+    /// <p>If specified, only workflow executions matching the <code>WorkflowId</code> in the filter are counted.</p> <note>
+    /// <p> <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You can specify at most one of these in a request.</p>
     /// </note>
-    pub fn set_execution_filter(mut self, input: std::option::Option<crate::types::WorkflowExecutionFilter>) -> Self {
-        self.execution_filter = input; self
+    pub fn set_execution_filter(
+        mut self,
+        input: std::option::Option<crate::types::WorkflowExecutionFilter>,
+    ) -> Self {
+        self.execution_filter = input;
+        self
     }
     /// Consumes the builder and constructs a [`CountOpenWorkflowExecutionsInput`](crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput).
-    pub fn build(self) -> Result<crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsInput {
-                domain: self.domain
-                ,
-                start_time_filter: self.start_time_filter
-                ,
-                type_filter: self.type_filter
-                ,
-                tag_filter: self.tag_filter
-                ,
-                execution_filter: self.execution_filter
-                ,
-            }
+                domain: self.domain,
+                start_time_filter: self.start_time_filter,
+                type_filter: self.type_filter,
+                tag_filter: self.tag_filter,
+                execution_filter: self.execution_filter,
+            },
         )
     }
 }
-

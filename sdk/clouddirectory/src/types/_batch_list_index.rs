@@ -3,10 +3,11 @@
 /// <p>Lists objects attached to the specified index inside a <code>BatchRead</code> operation. For more information, see <code>ListIndex</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchListIndex  {
+pub struct BatchListIndex {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
     #[doc(hidden)]
-    pub ranges_on_indexed_values: std::option::Option<std::vec::Vec<crate::types::ObjectAttributeRange>>,
+    pub ranges_on_indexed_values:
+        std::option::Option<std::vec::Vec<crate::types::ObjectAttributeRange>>,
     /// <p>The reference to the index to list.</p>
     #[doc(hidden)]
     pub index_reference: std::option::Option<crate::types::ObjectReference>,
@@ -19,11 +20,13 @@ pub struct BatchListIndex  {
 }
 impl BatchListIndex {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    pub fn ranges_on_indexed_values(&self) -> std::option::Option<& [crate::types::ObjectAttributeRange]> {
+    pub fn ranges_on_indexed_values(
+        &self,
+    ) -> std::option::Option<&[crate::types::ObjectAttributeRange]> {
         self.ranges_on_indexed_values.as_deref()
     }
     /// <p>The reference to the index to list.</p>
-    pub fn index_reference(&self) -> std::option::Option<& crate::types::ObjectReference> {
+    pub fn index_reference(&self) -> std::option::Option<&crate::types::ObjectReference> {
         self.index_reference.as_ref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -31,7 +34,7 @@ impl BatchListIndex {
         self.max_results
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -46,7 +49,8 @@ impl BatchListIndex {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchListIndexBuilder {
-    pub(crate) ranges_on_indexed_values: std::option::Option<std::vec::Vec<crate::types::ObjectAttributeRange>>,
+    pub(crate) ranges_on_indexed_values:
+        std::option::Option<std::vec::Vec<crate::types::ObjectAttributeRange>>,
     pub(crate) index_reference: std::option::Option<crate::types::ObjectReference>,
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
@@ -59,13 +63,17 @@ impl BatchListIndexBuilder {
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
     pub fn ranges_on_indexed_values(mut self, input: crate::types::ObjectAttributeRange) -> Self {
         let mut v = self.ranges_on_indexed_values.unwrap_or_default();
-                        v.push(input);
-                        self.ranges_on_indexed_values = Some(v);
-                        self
+        v.push(input);
+        self.ranges_on_indexed_values = Some(v);
+        self
     }
     /// <p>Specifies the ranges of indexed values that you want to query.</p>
-    pub fn set_ranges_on_indexed_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::ObjectAttributeRange>>) -> Self {
-        self.ranges_on_indexed_values = input; self
+    pub fn set_ranges_on_indexed_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ObjectAttributeRange>>,
+    ) -> Self {
+        self.ranges_on_indexed_values = input;
+        self
     }
     /// <p>The reference to the index to list.</p>
     pub fn index_reference(mut self, input: crate::types::ObjectReference) -> Self {
@@ -73,8 +81,12 @@ impl BatchListIndexBuilder {
         self
     }
     /// <p>The reference to the index to list.</p>
-    pub fn set_index_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
-        self.index_reference = input; self
+    pub fn set_index_reference(
+        mut self,
+        input: std::option::Option<crate::types::ObjectReference>,
+    ) -> Self {
+        self.index_reference = input;
+        self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -83,7 +95,8 @@ impl BatchListIndexBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,20 +105,16 @@ impl BatchListIndexBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchListIndex`](crate::types::BatchListIndex).
     pub fn build(self) -> crate::types::BatchListIndex {
         crate::types::BatchListIndex {
-            ranges_on_indexed_values: self.ranges_on_indexed_values
-            ,
-            index_reference: self.index_reference
-            ,
-            max_results: self.max_results
-            ,
-            next_token: self.next_token
-            ,
+            ranges_on_indexed_values: self.ranges_on_indexed_values,
+            index_reference: self.index_reference,
+            max_results: self.max_results,
+            next_token: self.next_token,
         }
     }
 }
-

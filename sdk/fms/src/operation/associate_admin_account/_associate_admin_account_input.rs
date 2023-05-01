@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateAdminAccountInput  {
+pub struct AssociateAdminAccountInput {
     /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager default administrator account. This account must be a member account of the organization in Organizations whose resources you want to protect. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
     #[doc(hidden)]
     pub admin_account: std::option::Option<std::string::String>,
 }
 impl AssociateAdminAccountInput {
     /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager default administrator account. This account must be a member account of the organization in Organizations whose resources you want to protect. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
-    pub fn admin_account(&self) -> std::option::Option<& str> {
+    pub fn admin_account(&self) -> std::option::Option<&str> {
         self.admin_account.as_deref()
     }
 }
 impl AssociateAdminAccountInput {
     /// Creates a new builder-style object to manufacture [`AssociateAdminAccountInput`](crate::operation::associate_admin_account::AssociateAdminAccountInput).
-    pub fn builder() -> crate::operation::associate_admin_account::builders::AssociateAdminAccountInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_admin_account::builders::AssociateAdminAccountInputBuilder
+    {
         crate::operation::associate_admin_account::builders::AssociateAdminAccountInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl AssociateAdminAccountInputBuilder {
     }
     /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager default administrator account. This account must be a member account of the organization in Organizations whose resources you want to protect. For more information about Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>. </p>
     pub fn set_admin_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.admin_account = input; self
+        self.admin_account = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateAdminAccountInput`](crate::operation::associate_admin_account::AssociateAdminAccountInput).
-    pub fn build(self) -> Result<crate::operation::associate_admin_account::AssociateAdminAccountInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_admin_account::AssociateAdminAccountInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_admin_account::AssociateAdminAccountInput {
-                admin_account: self.admin_account
-                ,
-            }
+                admin_account: self.admin_account,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Specifies the Amazon S3 object key name to filter on and whether to filter on the suffix or prefix of the key name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterRule  {
+pub struct FilterRule {
     /// <p>The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::FilterRuleName>,
@@ -13,11 +13,11 @@ pub struct FilterRule  {
 }
 impl FilterRule {
     /// <p>The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::FilterRuleName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::FilterRuleName> {
         self.name.as_ref()
     }
     /// <p>The value that the filter searches for in object key names.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl FilterRuleBuilder {
     }
     /// <p>The object key name prefix or suffix identifying one or more objects to which the filtering rule applies. The maximum length is 1,024 characters. Overlapping prefixes and suffixes are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring Event Notifications</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::FilterRuleName>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The value that the filter searches for in object key names.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl FilterRuleBuilder {
     }
     /// <p>The value that the filter searches for in object key names.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`FilterRule`](crate::types::FilterRule).
     pub fn build(self) -> crate::types::FilterRule {
         crate::types::FilterRule {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

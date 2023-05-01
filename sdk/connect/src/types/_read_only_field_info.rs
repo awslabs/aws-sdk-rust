@@ -3,14 +3,14 @@
 /// <p>Indicates a field that is read-only to an agent.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReadOnlyFieldInfo  {
+pub struct ReadOnlyFieldInfo {
     /// <p>Identifier of the read-only field.</p>
     #[doc(hidden)]
     pub id: std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
 }
 impl ReadOnlyFieldInfo {
     /// <p>Identifier of the read-only field.</p>
-    pub fn id(&self) -> std::option::Option<& crate::types::TaskTemplateFieldIdentifier> {
+    pub fn id(&self) -> std::option::Option<&crate::types::TaskTemplateFieldIdentifier> {
         self.id.as_ref()
     }
 }
@@ -34,15 +34,15 @@ impl ReadOnlyFieldInfoBuilder {
         self
     }
     /// <p>Identifier of the read-only field.</p>
-    pub fn set_id(mut self, input: std::option::Option<crate::types::TaskTemplateFieldIdentifier>) -> Self {
-        self.id = input; self
+    pub fn set_id(
+        mut self,
+        input: std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
+    ) -> Self {
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReadOnlyFieldInfo`](crate::types::ReadOnlyFieldInfo).
     pub fn build(self) -> crate::types::ReadOnlyFieldInfo {
-        crate::types::ReadOnlyFieldInfo {
-            id: self.id
-            ,
-        }
+        crate::types::ReadOnlyFieldInfo { id: self.id }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBackupVaultsInput  {
+pub struct ListBackupVaultsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListBackupVaultsInput  {
 }
 impl ListBackupVaultsInput {
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of items to be returned.</p>
@@ -22,7 +22,8 @@ impl ListBackupVaultsInput {
 }
 impl ListBackupVaultsInput {
     /// Creates a new builder-style object to manufacture [`ListBackupVaultsInput`](crate::operation::list_backup_vaults::ListBackupVaultsInput).
-    pub fn builder() -> crate::operation::list_backup_vaults::builders::ListBackupVaultsInputBuilder {
+    pub fn builder() -> crate::operation::list_backup_vaults::builders::ListBackupVaultsInputBuilder
+    {
         crate::operation::list_backup_vaults::builders::ListBackupVaultsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListBackupVaultsInputBuilder {
     }
     /// <p>The next item following a partial list of returned items. For example, if a request is made to return <code>maxResults</code> number of items, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -51,18 +53,21 @@ impl ListBackupVaultsInputBuilder {
     }
     /// <p>The maximum number of items to be returned.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBackupVaultsInput`](crate::operation::list_backup_vaults::ListBackupVaultsInput).
-    pub fn build(self) -> Result<crate::operation::list_backup_vaults::ListBackupVaultsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_backup_vaults::ListBackupVaultsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_backup_vaults::ListBackupVaultsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>The input for the DeletePolicy operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePolicyInput  {
+pub struct DeletePolicyInput {
     /// <p>The name of the policy to delete.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
 }
 impl DeletePolicyInput {
     /// <p>The name of the policy to delete.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
 }
@@ -35,16 +35,18 @@ impl DeletePolicyInputBuilder {
     }
     /// <p>The name of the policy to delete.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePolicyInput`](crate::operation::delete_policy::DeletePolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_policy::DeletePolicyInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_policy::DeletePolicyInput {
-                policy_name: self.policy_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_policy::DeletePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_policy::DeletePolicyInput {
+            policy_name: self.policy_name,
+        })
     }
 }
-

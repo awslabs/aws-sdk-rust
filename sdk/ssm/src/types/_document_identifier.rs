@@ -3,7 +3,7 @@
 /// <p>Describes the name of a SSM document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentIdentifier  {
+pub struct DocumentIdentifier {
     /// <p>The name of the SSM document.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -52,63 +52,63 @@ pub struct DocumentIdentifier  {
 }
 impl DocumentIdentifier {
     /// <p>The name of the SSM document.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The date the SSM document was created.</p>
-    pub fn created_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_date.as_ref()
     }
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The Amazon Web Services user that created the document.</p>
-    pub fn owner(&self) -> std::option::Option<& str> {
+    pub fn owner(&self) -> std::option::Option<&str> {
         self.owner.as_deref()
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
-    pub fn version_name(&self) -> std::option::Option<& str> {
+    pub fn version_name(&self) -> std::option::Option<&str> {
         self.version_name.as_deref()
     }
     /// <p>The operating system platform. </p>
-    pub fn platform_types(&self) -> std::option::Option<& [crate::types::PlatformType]> {
+    pub fn platform_types(&self) -> std::option::Option<&[crate::types::PlatformType]> {
         self.platform_types.as_deref()
     }
     /// <p>The document version.</p>
-    pub fn document_version(&self) -> std::option::Option<& str> {
+    pub fn document_version(&self) -> std::option::Option<&str> {
         self.document_version.as_deref()
     }
     /// <p>The document type.</p>
-    pub fn document_type(&self) -> std::option::Option<& crate::types::DocumentType> {
+    pub fn document_type(&self) -> std::option::Option<&crate::types::DocumentType> {
         self.document_type.as_ref()
     }
     /// <p>The schema version.</p>
-    pub fn schema_version(&self) -> std::option::Option<& str> {
+    pub fn schema_version(&self) -> std::option::Option<&str> {
         self.schema_version.as_deref()
     }
     /// <p>The document format, either JSON or YAML.</p>
-    pub fn document_format(&self) -> std::option::Option<& crate::types::DocumentFormat> {
+    pub fn document_format(&self) -> std::option::Option<&crate::types::DocumentFormat> {
         self.document_format.as_ref()
     }
     /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
-    pub fn target_type(&self) -> std::option::Option<& str> {
+    pub fn target_type(&self) -> std::option::Option<&str> {
         self.target_type.as_deref()
     }
     /// <p>The tags, or metadata, that have been applied to the document.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn requires(&self) -> std::option::Option<& [crate::types::DocumentRequires]> {
+    pub fn requires(&self) -> std::option::Option<&[crate::types::DocumentRequires]> {
         self.requires.as_deref()
     }
     /// <p>The current status of a document review.</p>
-    pub fn review_status(&self) -> std::option::Option<& crate::types::ReviewStatus> {
+    pub fn review_status(&self) -> std::option::Option<&crate::types::ReviewStatus> {
         self.review_status.as_ref()
     }
     /// <p>The user in your organization who created the document.</p>
-    pub fn author(&self) -> std::option::Option<& str> {
+    pub fn author(&self) -> std::option::Option<&str> {
         self.author.as_deref()
     }
 }
@@ -147,7 +147,8 @@ impl DocumentIdentifierBuilder {
     }
     /// <p>The name of the SSM document.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The date the SSM document was created.</p>
     pub fn created_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -155,8 +156,12 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>The date the SSM document was created.</p>
-    pub fn set_created_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_date = input; self
+    pub fn set_created_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_date = input;
+        self
     }
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,7 +170,8 @@ impl DocumentIdentifierBuilder {
     }
     /// <p>An optional field where you can specify a friendly name for the SSM document. This value can differ for each version of the document. If you want to update this value, see <code>UpdateDocument</code>.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The Amazon Web Services user that created the document.</p>
     pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,7 +180,8 @@ impl DocumentIdentifierBuilder {
     }
     /// <p>The Amazon Web Services user that created the document.</p>
     pub fn set_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,7 +190,8 @@ impl DocumentIdentifierBuilder {
     }
     /// <p>An optional field specifying the version of the artifact associated with the document. For example, "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_name = input; self
+        self.version_name = input;
+        self
     }
     /// Appends an item to `platform_types`.
     ///
@@ -192,13 +200,17 @@ impl DocumentIdentifierBuilder {
     /// <p>The operating system platform. </p>
     pub fn platform_types(mut self, input: crate::types::PlatformType) -> Self {
         let mut v = self.platform_types.unwrap_or_default();
-                        v.push(input);
-                        self.platform_types = Some(v);
-                        self
+        v.push(input);
+        self.platform_types = Some(v);
+        self
     }
     /// <p>The operating system platform. </p>
-    pub fn set_platform_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::PlatformType>>) -> Self {
-        self.platform_types = input; self
+    pub fn set_platform_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PlatformType>>,
+    ) -> Self {
+        self.platform_types = input;
+        self
     }
     /// <p>The document version.</p>
     pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -207,7 +219,8 @@ impl DocumentIdentifierBuilder {
     }
     /// <p>The document version.</p>
     pub fn set_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_version = input; self
+        self.document_version = input;
+        self
     }
     /// <p>The document type.</p>
     pub fn document_type(mut self, input: crate::types::DocumentType) -> Self {
@@ -215,8 +228,12 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>The document type.</p>
-    pub fn set_document_type(mut self, input: std::option::Option<crate::types::DocumentType>) -> Self {
-        self.document_type = input; self
+    pub fn set_document_type(
+        mut self,
+        input: std::option::Option<crate::types::DocumentType>,
+    ) -> Self {
+        self.document_type = input;
+        self
     }
     /// <p>The schema version.</p>
     pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -225,7 +242,8 @@ impl DocumentIdentifierBuilder {
     }
     /// <p>The schema version.</p>
     pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_version = input; self
+        self.schema_version = input;
+        self
     }
     /// <p>The document format, either JSON or YAML.</p>
     pub fn document_format(mut self, input: crate::types::DocumentFormat) -> Self {
@@ -233,8 +251,12 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>The document format, either JSON or YAML.</p>
-    pub fn set_document_format(mut self, input: std::option::Option<crate::types::DocumentFormat>) -> Self {
-        self.document_format = input; self
+    pub fn set_document_format(
+        mut self,
+        input: std::option::Option<crate::types::DocumentFormat>,
+    ) -> Self {
+        self.document_format = input;
+        self
     }
     /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
     pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -243,7 +265,8 @@ impl DocumentIdentifierBuilder {
     }
     /// <p>The target type which defines the kinds of resources the document can run on. For example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
     pub fn set_target_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_type = input; self
+        self.target_type = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -252,13 +275,17 @@ impl DocumentIdentifierBuilder {
     /// <p>The tags, or metadata, that have been applied to the document.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags, or metadata, that have been applied to the document.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Appends an item to `requires`.
     ///
@@ -267,13 +294,17 @@ impl DocumentIdentifierBuilder {
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
     pub fn requires(mut self, input: crate::types::DocumentRequires) -> Self {
         let mut v = self.requires.unwrap_or_default();
-                        v.push(input);
-                        self.requires = Some(v);
-                        self
+        v.push(input);
+        self.requires = Some(v);
+        self
     }
     /// <p>A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code> document.</p>
-    pub fn set_requires(mut self, input: std::option::Option<std::vec::Vec<crate::types::DocumentRequires>>) -> Self {
-        self.requires = input; self
+    pub fn set_requires(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DocumentRequires>>,
+    ) -> Self {
+        self.requires = input;
+        self
     }
     /// <p>The current status of a document review.</p>
     pub fn review_status(mut self, input: crate::types::ReviewStatus) -> Self {
@@ -281,8 +312,12 @@ impl DocumentIdentifierBuilder {
         self
     }
     /// <p>The current status of a document review.</p>
-    pub fn set_review_status(mut self, input: std::option::Option<crate::types::ReviewStatus>) -> Self {
-        self.review_status = input; self
+    pub fn set_review_status(
+        mut self,
+        input: std::option::Option<crate::types::ReviewStatus>,
+    ) -> Self {
+        self.review_status = input;
+        self
     }
     /// <p>The user in your organization who created the document.</p>
     pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
@@ -291,42 +326,27 @@ impl DocumentIdentifierBuilder {
     }
     /// <p>The user in your organization who created the document.</p>
     pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.author = input; self
+        self.author = input;
+        self
     }
     /// Consumes the builder and constructs a [`DocumentIdentifier`](crate::types::DocumentIdentifier).
     pub fn build(self) -> crate::types::DocumentIdentifier {
         crate::types::DocumentIdentifier {
-            name: self.name
-            ,
-            created_date: self.created_date
-            ,
-            display_name: self.display_name
-            ,
-            owner: self.owner
-            ,
-            version_name: self.version_name
-            ,
-            platform_types: self.platform_types
-            ,
-            document_version: self.document_version
-            ,
-            document_type: self.document_type
-            ,
-            schema_version: self.schema_version
-            ,
-            document_format: self.document_format
-            ,
-            target_type: self.target_type
-            ,
-            tags: self.tags
-            ,
-            requires: self.requires
-            ,
-            review_status: self.review_status
-            ,
-            author: self.author
-            ,
+            name: self.name,
+            created_date: self.created_date,
+            display_name: self.display_name,
+            owner: self.owner,
+            version_name: self.version_name,
+            platform_types: self.platform_types,
+            document_version: self.document_version,
+            document_type: self.document_type,
+            schema_version: self.schema_version,
+            document_format: self.document_format,
+            target_type: self.target_type,
+            tags: self.tags,
+            requires: self.requires,
+            review_status: self.review_status,
+            author: self.author,
         }
     }
 }
-

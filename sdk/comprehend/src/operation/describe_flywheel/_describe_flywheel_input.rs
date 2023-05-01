@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFlywheelInput  {
+pub struct DescribeFlywheelInput {
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
     #[doc(hidden)]
     pub flywheel_arn: std::option::Option<std::string::String>,
 }
 impl DescribeFlywheelInput {
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
-    pub fn flywheel_arn(&self) -> std::option::Option<& str> {
+    pub fn flywheel_arn(&self) -> std::option::Option<&str> {
         self.flywheel_arn.as_deref()
     }
 }
 impl DescribeFlywheelInput {
     /// Creates a new builder-style object to manufacture [`DescribeFlywheelInput`](crate::operation::describe_flywheel::DescribeFlywheelInput).
-    pub fn builder() -> crate::operation::describe_flywheel::builders::DescribeFlywheelInputBuilder {
+    pub fn builder() -> crate::operation::describe_flywheel::builders::DescribeFlywheelInputBuilder
+    {
         crate::operation::describe_flywheel::builders::DescribeFlywheelInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl DescribeFlywheelInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
     pub fn set_flywheel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flywheel_arn = input; self
+        self.flywheel_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeFlywheelInput`](crate::operation::describe_flywheel::DescribeFlywheelInput).
-    pub fn build(self) -> Result<crate::operation::describe_flywheel::DescribeFlywheelInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_flywheel::DescribeFlywheelInput {
-                flywheel_arn: self.flywheel_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_flywheel::DescribeFlywheelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_flywheel::DescribeFlywheelInput {
+            flywheel_arn: self.flywheel_arn,
+        })
     }
 }
-

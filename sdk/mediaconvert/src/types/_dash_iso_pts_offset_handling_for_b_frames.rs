@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let dashisoptsoffsethandlingforbframes = unimplemented!();
 /// match dashisoptsoffsethandlingforbframes {
@@ -30,55 +30,64 @@
 /// Specifically, when `dashisoptsoffsethandlingforbframes` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DashIsoPtsOffsetHandlingForBFrames::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Use this setting only when your output video stream has B-frames, which causes the initial presentation time stamp (PTS) to be offset from the initial decode time stamp (DTS). Specify how MediaConvert handles PTS when writing time stamps in output DASH manifests. Choose Match initial PTS (MATCH_INITIAL_PTS) when you want MediaConvert to use the initial PTS as the first time stamp in the manifest. Choose Zero-based (ZERO_BASED) to have MediaConvert ignore the initial PTS in the video stream and instead write the initial time stamp as zero in the manifest. For outputs that don't have B-frames, the time stamps in your DASH manifests start at zero regardless of your choice here.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DashIsoPtsOffsetHandlingForBFrames {
     #[allow(missing_docs)] // documentation missing in model
     MatchInitialPts,
     #[allow(missing_docs)] // documentation missing in model
     ZeroBased,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DashIsoPtsOffsetHandlingForBFrames {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "MATCH_INITIAL_PTS" => DashIsoPtsOffsetHandlingForBFrames::MatchInitialPts,
-"ZERO_BASED" => DashIsoPtsOffsetHandlingForBFrames::ZeroBased,
-other => DashIsoPtsOffsetHandlingForBFrames::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for DashIsoPtsOffsetHandlingForBFrames {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DashIsoPtsOffsetHandlingForBFrames::from(s))
-                }
-            }
-impl DashIsoPtsOffsetHandlingForBFrames {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DashIsoPtsOffsetHandlingForBFrames::MatchInitialPts => "MATCH_INITIAL_PTS",
-    DashIsoPtsOffsetHandlingForBFrames::ZeroBased => "ZERO_BASED",
-    DashIsoPtsOffsetHandlingForBFrames::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "MATCH_INITIAL_PTS" => DashIsoPtsOffsetHandlingForBFrames::MatchInitialPts,
+            "ZERO_BASED" => DashIsoPtsOffsetHandlingForBFrames::ZeroBased,
+            other => DashIsoPtsOffsetHandlingForBFrames::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["MATCH_INITIAL_PTS", "ZERO_BASED"]
-                }
-            }
-impl AsRef<str> for DashIsoPtsOffsetHandlingForBFrames {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DashIsoPtsOffsetHandlingForBFrames {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DashIsoPtsOffsetHandlingForBFrames::from(s))
+    }
+}
+impl DashIsoPtsOffsetHandlingForBFrames {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DashIsoPtsOffsetHandlingForBFrames::MatchInitialPts => "MATCH_INITIAL_PTS",
+            DashIsoPtsOffsetHandlingForBFrames::ZeroBased => "ZERO_BASED",
+            DashIsoPtsOffsetHandlingForBFrames::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["MATCH_INITIAL_PTS", "ZERO_BASED"]
+    }
+}
+impl AsRef<str> for DashIsoPtsOffsetHandlingForBFrames {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

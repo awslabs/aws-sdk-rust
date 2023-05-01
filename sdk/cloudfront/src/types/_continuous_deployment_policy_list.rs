@@ -3,7 +3,7 @@
 /// <p>Contains a list of continuous deployment policies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContinuousDeploymentPolicyList  {
+pub struct ContinuousDeploymentPolicyList {
     /// <p>Indicates the next page of continuous deployment policies. To get the next page of the list, use this value in the <code>Marker</code> field of your request.</p>
     #[doc(hidden)]
     pub next_marker: std::option::Option<std::string::String>,
@@ -19,7 +19,7 @@ pub struct ContinuousDeploymentPolicyList  {
 }
 impl ContinuousDeploymentPolicyList {
     /// <p>Indicates the next page of continuous deployment policies. To get the next page of the list, use this value in the <code>Marker</code> field of your request.</p>
-    pub fn next_marker(&self) -> std::option::Option<& str> {
+    pub fn next_marker(&self) -> std::option::Option<&str> {
         self.next_marker.as_deref()
     }
     /// <p>The maximum number of continuous deployment policies that were specified in your request.</p>
@@ -31,7 +31,7 @@ impl ContinuousDeploymentPolicyList {
         self.quantity
     }
     /// <p>A list of continuous deployment policy items.</p>
-    pub fn items(&self) -> std::option::Option<& [crate::types::ContinuousDeploymentPolicySummary]> {
+    pub fn items(&self) -> std::option::Option<&[crate::types::ContinuousDeploymentPolicySummary]> {
         self.items.as_deref()
     }
 }
@@ -49,7 +49,8 @@ pub struct ContinuousDeploymentPolicyListBuilder {
     pub(crate) next_marker: std::option::Option<std::string::String>,
     pub(crate) max_items: std::option::Option<i32>,
     pub(crate) quantity: std::option::Option<i32>,
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>,
+    pub(crate) items:
+        std::option::Option<std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>,
 }
 impl ContinuousDeploymentPolicyListBuilder {
     /// <p>Indicates the next page of continuous deployment policies. To get the next page of the list, use this value in the <code>Marker</code> field of your request.</p>
@@ -59,7 +60,8 @@ impl ContinuousDeploymentPolicyListBuilder {
     }
     /// <p>Indicates the next page of continuous deployment policies. To get the next page of the list, use this value in the <code>Marker</code> field of your request.</p>
     pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_marker = input; self
+        self.next_marker = input;
+        self
     }
     /// <p>The maximum number of continuous deployment policies that were specified in your request.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -68,7 +70,8 @@ impl ContinuousDeploymentPolicyListBuilder {
     }
     /// <p>The maximum number of continuous deployment policies that were specified in your request.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input; self
+        self.max_items = input;
+        self
     }
     /// <p>The total number of continuous deployment policies in your Amazon Web Services account, regardless of the <code>MaxItems</code> value.</p>
     pub fn quantity(mut self, input: i32) -> Self {
@@ -77,7 +80,8 @@ impl ContinuousDeploymentPolicyListBuilder {
     }
     /// <p>The total number of continuous deployment policies in your Amazon Web Services account, regardless of the <code>MaxItems</code> value.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input; self
+        self.quantity = input;
+        self
     }
     /// Appends an item to `items`.
     ///
@@ -86,26 +90,25 @@ impl ContinuousDeploymentPolicyListBuilder {
     /// <p>A list of continuous deployment policy items.</p>
     pub fn items(mut self, input: crate::types::ContinuousDeploymentPolicySummary) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input);
-                        self.items = Some(v);
-                        self
+        v.push(input);
+        self.items = Some(v);
+        self
     }
     /// <p>A list of continuous deployment policy items.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ContinuousDeploymentPolicySummary>>,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// Consumes the builder and constructs a [`ContinuousDeploymentPolicyList`](crate::types::ContinuousDeploymentPolicyList).
     pub fn build(self) -> crate::types::ContinuousDeploymentPolicyList {
         crate::types::ContinuousDeploymentPolicyList {
-            next_marker: self.next_marker
-            ,
-            max_items: self.max_items
-            ,
-            quantity: self.quantity
-            ,
-            items: self.items
-            ,
+            next_marker: self.next_marker,
+            max_items: self.max_items,
+            quantity: self.quantity,
+            items: self.items,
         }
     }
 }
-

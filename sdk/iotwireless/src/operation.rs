@@ -327,4 +327,3 @@ pub mod update_wireless_device_import_task;
 
 /// Types for the `UpdateWirelessGateway` operation.
 pub mod update_wireless_gateway;
-

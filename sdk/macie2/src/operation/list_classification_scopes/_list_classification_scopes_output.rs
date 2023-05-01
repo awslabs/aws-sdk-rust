@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListClassificationScopesOutput  {
+pub struct ListClassificationScopesOutput {
     /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
     #[doc(hidden)]
-    pub classification_scopes: std::option::Option<std::vec::Vec<crate::types::ClassificationScopeSummary>>,
+    pub classification_scopes:
+        std::option::Option<std::vec::Vec<crate::types::ClassificationScopeSummary>>,
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct ListClassificationScopesOutput  {
 }
 impl ListClassificationScopesOutput {
     /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
-    pub fn classification_scopes(&self) -> std::option::Option<& [crate::types::ClassificationScopeSummary]> {
+    pub fn classification_scopes(
+        &self,
+    ) -> std::option::Option<&[crate::types::ClassificationScopeSummary]> {
         self.classification_scopes.as_deref()
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListClassificationScopesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListClassificationScopesOutput {
     /// Creates a new builder-style object to manufacture [`ListClassificationScopesOutput`](crate::operation::list_classification_scopes::ListClassificationScopesOutput).
-    pub fn builder() -> crate::operation::list_classification_scopes::builders::ListClassificationScopesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_classification_scopes::builders::ListClassificationScopesOutputBuilder
+    {
         crate::operation::list_classification_scopes::builders::ListClassificationScopesOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl ListClassificationScopesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListClassificationScopesOutputBuilder {
-    pub(crate) classification_scopes: std::option::Option<std::vec::Vec<crate::types::ClassificationScopeSummary>>,
+    pub(crate) classification_scopes:
+        std::option::Option<std::vec::Vec<crate::types::ClassificationScopeSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +53,22 @@ impl ListClassificationScopesOutputBuilder {
     /// To override the contents of this collection use [`set_classification_scopes`](Self::set_classification_scopes).
     ///
     /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
-    pub fn classification_scopes(mut self, input: crate::types::ClassificationScopeSummary) -> Self {
+    pub fn classification_scopes(
+        mut self,
+        input: crate::types::ClassificationScopeSummary,
+    ) -> Self {
         let mut v = self.classification_scopes.unwrap_or_default();
-                        v.push(input);
-                        self.classification_scopes = Some(v);
-                        self
+        v.push(input);
+        self.classification_scopes = Some(v);
+        self
     }
     /// <p>An array that specifies the unique identifier and name of the classification scope for the account.</p>
-    pub fn set_classification_scopes(mut self, input: std::option::Option<std::vec::Vec<crate::types::ClassificationScopeSummary>>) -> Self {
-        self.classification_scopes = input; self
+    pub fn set_classification_scopes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ClassificationScopeSummary>>,
+    ) -> Self {
+        self.classification_scopes = input;
+        self
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +77,26 @@ impl ListClassificationScopesOutputBuilder {
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListClassificationScopesOutput`](crate::operation::list_classification_scopes::ListClassificationScopesOutput).
-    pub fn build(self) -> crate::operation::list_classification_scopes::ListClassificationScopesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_classification_scopes::ListClassificationScopesOutput {
         crate::operation::list_classification_scopes::ListClassificationScopesOutput {
-            classification_scopes: self.classification_scopes
-            ,
-            next_token: self.next_token
-            ,
+            classification_scopes: self.classification_scopes,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

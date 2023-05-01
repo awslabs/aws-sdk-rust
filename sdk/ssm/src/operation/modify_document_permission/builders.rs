@@ -4,50 +4,70 @@ pub use crate::operation::modify_document_permission::_modify_document_permissio
 pub use crate::operation::modify_document_permission::_modify_document_permission_input::ModifyDocumentPermissionInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyDocumentPermission`.
-/// 
+///
 /// <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a document privately, you must specify the Amazon Web Services user IDs for those people who can use the document. If you share a document publicly, you must specify <i>All</i> as the account ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDocumentPermissionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::modify_document_permission::builders::ModifyDocumentPermissionInputBuilder,
 }
-impl ModifyDocumentPermissionFluentBuilder  {
+impl ModifyDocumentPermissionFluentBuilder {
     /// Creates a new `ModifyDocumentPermission`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_document_permission::ModifyDocumentPermission, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_document_permission::ModifyDocumentPermissionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_document_permission::ModifyDocumentPermissionOutput, aws_smithy_http::result::SdkError<crate::operation::modify_document_permission::ModifyDocumentPermissionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_document_permission::ModifyDocumentPermission,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_document_permission::ModifyDocumentPermissionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_document_permission::ModifyDocumentPermissionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_document_permission::ModifyDocumentPermissionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the document that you want to share.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -64,7 +84,10 @@ impl ModifyDocumentPermissionFluentBuilder  {
         self
     }
     /// <p>The permission type for the document. The permission type can be <i>Share</i>.</p>
-    pub fn set_permission_type(mut self, input: std::option::Option<crate::types::DocumentPermissionType>) -> Self {
+    pub fn set_permission_type(
+        mut self,
+        input: std::option::Option<crate::types::DocumentPermissionType>,
+    ) -> Self {
         self.inner = self.inner.set_permission_type(input);
         self
     }
@@ -78,7 +101,10 @@ impl ModifyDocumentPermissionFluentBuilder  {
         self
     }
     /// <p>The Amazon Web Services users that should have access to the document. The account IDs can either be a group of account IDs or <i>All</i>.</p>
-    pub fn set_account_ids_to_add(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_account_ids_to_add(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_account_ids_to_add(input);
         self
     }
@@ -92,7 +118,10 @@ impl ModifyDocumentPermissionFluentBuilder  {
         self
     }
     /// <p>The Amazon Web Services users that should no longer have access to the document. The Amazon Web Services user can either be a group of account IDs or <i>All</i>. This action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to add and the same ID to remove, the system removes access to the document.</p>
-    pub fn set_account_ids_to_remove(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_account_ids_to_remove(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_account_ids_to_remove(input);
         self
     }
@@ -102,9 +131,11 @@ impl ModifyDocumentPermissionFluentBuilder  {
         self
     }
     /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose the <code>Default</code> version to share.</p>
-    pub fn set_shared_document_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_shared_document_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_shared_document_version(input);
         self
     }
 }
-

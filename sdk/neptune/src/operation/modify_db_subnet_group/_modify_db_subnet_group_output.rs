@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyDbSubnetGroupOutput  {
-    /// <p>Contains the details of an Amazon Neptune DB subnet group.</p> 
+pub struct ModifyDbSubnetGroupOutput {
+    /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     #[doc(hidden)]
     pub db_subnet_group: std::option::Option<crate::types::DbSubnetGroup>,
     _request_id: Option<String>,
 }
 impl ModifyDbSubnetGroupOutput {
-    /// <p>Contains the details of an Amazon Neptune DB subnet group.</p> 
+    /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
-    pub fn db_subnet_group(&self) -> std::option::Option<& crate::types::DbSubnetGroup> {
+    pub fn db_subnet_group(&self) -> std::option::Option<&crate::types::DbSubnetGroup> {
         self.db_subnet_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyDbSubnetGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifyDbSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`ModifyDbSubnetGroupOutput`](crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput).
-    pub fn builder() -> crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupOutputBuilder {
         crate::operation::modify_db_subnet_group::builders::ModifyDbSubnetGroupOutputBuilder::default()
     }
 }
@@ -36,33 +37,35 @@ pub struct ModifyDbSubnetGroupOutputBuilder {
     _request_id: Option<String>,
 }
 impl ModifyDbSubnetGroupOutputBuilder {
-    /// <p>Contains the details of an Amazon Neptune DB subnet group.</p> 
+    /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
     pub fn db_subnet_group(mut self, input: crate::types::DbSubnetGroup) -> Self {
         self.db_subnet_group = Some(input);
         self
     }
-    /// <p>Contains the details of an Amazon Neptune DB subnet group.</p> 
+    /// <p>Contains the details of an Amazon Neptune DB subnet group.</p>
     /// <p>This data type is used as a response element in the <code>DescribeDBSubnetGroups</code> action.</p>
-    pub fn set_db_subnet_group(mut self, input: std::option::Option<crate::types::DbSubnetGroup>) -> Self {
-        self.db_subnet_group = input; self
+    pub fn set_db_subnet_group(
+        mut self,
+        input: std::option::Option<crate::types::DbSubnetGroup>,
+    ) -> Self {
+        self.db_subnet_group = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyDbSubnetGroupOutput`](crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput).
     pub fn build(self) -> crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput {
         crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput {
-            db_subnet_group: self.db_subnet_group
-            ,
+            db_subnet_group: self.db_subnet_group,
             _request_id: self._request_id,
         }
     }
 }
-

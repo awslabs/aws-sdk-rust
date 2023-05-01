@@ -3,7 +3,7 @@
 /// <p>Provides information about stream encryption. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsKinesisStreamStreamEncryptionDetails  {
+pub struct AwsKinesisStreamStreamEncryptionDetails {
     /// <p>The encryption type to use. </p>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AwsKinesisStreamStreamEncryptionDetails  {
 }
 impl AwsKinesisStreamStreamEncryptionDetails {
     /// <p>The encryption type to use. </p>
-    pub fn encryption_type(&self) -> std::option::Option<& str> {
+    pub fn encryption_type(&self) -> std::option::Option<&str> {
         self.encryption_type.as_deref()
     }
     /// <p>The globally unique identifier for the customer-managed KMS key to use for encryption. </p>
-    pub fn key_id(&self) -> std::option::Option<& str> {
+    pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AwsKinesisStreamStreamEncryptionDetailsBuilder {
     }
     /// <p>The encryption type to use. </p>
     pub fn set_encryption_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.encryption_type = input; self
+        self.encryption_type = input;
+        self
     }
     /// <p>The globally unique identifier for the customer-managed KMS key to use for encryption. </p>
     pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl AwsKinesisStreamStreamEncryptionDetailsBuilder {
     }
     /// <p>The globally unique identifier for the customer-managed KMS key to use for encryption. </p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input; self
+        self.key_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsKinesisStreamStreamEncryptionDetails`](crate::types::AwsKinesisStreamStreamEncryptionDetails).
     pub fn build(self) -> crate::types::AwsKinesisStreamStreamEncryptionDetails {
         crate::types::AwsKinesisStreamStreamEncryptionDetails {
-            encryption_type: self.encryption_type
-            ,
-            key_id: self.key_id
-            ,
+            encryption_type: self.encryption_type,
+            key_id: self.key_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Error information for the data source creation or update.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSourceErrorInfo  {
+pub struct DataSourceErrorInfo {
     /// <p>Error type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::DataSourceErrorInfoType>,
@@ -13,11 +13,11 @@ pub struct DataSourceErrorInfo  {
 }
 impl DataSourceErrorInfo {
     /// <p>Error type.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::DataSourceErrorInfoType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::DataSourceErrorInfoType> {
         self.r#type.as_ref()
     }
     /// <p>Error message.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl DataSourceErrorInfoBuilder {
         self
     }
     /// <p>Error type.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DataSourceErrorInfoType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::DataSourceErrorInfoType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>Error message.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl DataSourceErrorInfoBuilder {
     }
     /// <p>Error message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataSourceErrorInfo`](crate::types::DataSourceErrorInfo).
     pub fn build(self) -> crate::types::DataSourceErrorInfo {
         crate::types::DataSourceErrorInfo {
-            r#type: self.r#type
-            ,
-            message: self.message
-            ,
+            r#type: self.r#type,
+            message: self.message,
         }
     }
 }
-

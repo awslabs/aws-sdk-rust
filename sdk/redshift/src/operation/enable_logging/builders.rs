@@ -4,111 +4,130 @@ pub use crate::operation::enable_logging::_enable_logging_output::EnableLoggingO
 pub use crate::operation::enable_logging::_enable_logging_input::EnableLoggingInputBuilder;
 
 /// Fluent builder constructing a request to `EnableLogging`.
-/// 
+///
 /// <p>Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct EnableLoggingFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::enable_logging::builders::EnableLoggingInputBuilder,
+    inner: crate::operation::enable_logging::builders::EnableLoggingInputBuilder,
 }
-impl EnableLoggingFluentBuilder  {
+impl EnableLoggingFluentBuilder {
     /// Creates a new `EnableLogging`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::enable_logging::EnableLogging, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::enable_logging::EnableLoggingOutput, aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The identifier of the cluster on which logging is to be started.</p> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::enable_logging::EnableLogging,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::enable_logging::EnableLoggingOutput,
+        aws_smithy_http::result::SdkError<crate::operation::enable_logging::EnableLoggingError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_identifier(input.into());
         self
     }
-    /// <p>The identifier of the cluster on which logging is to be started.</p> 
+    /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cluster_identifier(input);
         self
     }
-    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be in the same region as the cluster</p> </li> 
-    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li> 
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the same region as the cluster</p> </li>
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
     pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bucket_name(input.into());
         self
     }
-    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be in the same region as the cluster</p> </li> 
-    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li> 
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the same region as the cluster</p> </li>
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_bucket_name(input);
         self
     }
-    /// <p>The prefix applied to the log file names.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Cannot exceed 512 characters</p> </li> 
-    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> 
-    /// <ul> 
-    /// <li> <p>x00 to x20</p> </li> 
-    /// <li> <p>x22</p> </li> 
-    /// <li> <p>x27</p> </li> 
-    /// <li> <p>x5c</p> </li> 
-    /// <li> <p>x7f or larger</p> </li> 
-    /// </ul> </li> 
+    /// <p>The prefix applied to the log file names.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot exceed 512 characters</p> </li>
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
+    /// <ul>
+    /// <li> <p>x00 to x20</p> </li>
+    /// <li> <p>x22</p> </li>
+    /// <li> <p>x27</p> </li>
+    /// <li> <p>x5c</p> </li>
+    /// <li> <p>x7f or larger</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.s3_key_prefix(input.into());
         self
     }
-    /// <p>The prefix applied to the log file names.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Cannot exceed 512 characters</p> </li> 
-    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> 
-    /// <ul> 
-    /// <li> <p>x00 to x20</p> </li> 
-    /// <li> <p>x22</p> </li> 
-    /// <li> <p>x27</p> </li> 
-    /// <li> <p>x5c</p> </li> 
-    /// <li> <p>x7f or larger</p> </li> 
-    /// </ul> </li> 
+    /// <p>The prefix applied to the log file names.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot exceed 512 characters</p> </li>
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
+    /// <ul>
+    /// <li> <p>x00 to x20</p> </li>
+    /// <li> <p>x22</p> </li>
+    /// <li> <p>x27</p> </li>
+    /// <li> <p>x5c</p> </li>
+    /// <li> <p>x7f or larger</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_s3_key_prefix(input);
@@ -120,7 +139,10 @@ impl EnableLoggingFluentBuilder  {
         self
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    pub fn set_log_destination_type(mut self, input: std::option::Option<crate::types::LogDestinationType>) -> Self {
+    pub fn set_log_destination_type(
+        mut self,
+        input: std::option::Option<crate::types::LogDestinationType>,
+    ) -> Self {
         self.inner = self.inner.set_log_destination_type(input);
         self
     }
@@ -134,9 +156,11 @@ impl EnableLoggingFluentBuilder  {
         self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn set_log_exports(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_log_exports(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_log_exports(input);
         self
     }
 }
-

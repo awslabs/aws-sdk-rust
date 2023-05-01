@@ -4,51 +4,71 @@ pub use crate::operation::register_rds_db_instance::_register_rds_db_instance_ou
 pub use crate::operation::register_rds_db_instance::_register_rds_db_instance_input::RegisterRdsDbInstanceInputBuilder;
 
 /// Fluent builder constructing a request to `RegisterRdsDbInstance`.
-/// 
-/// <p>Registers an Amazon RDS instance with a stack.</p> 
+///
+/// <p>Registers an Amazon RDS instance with a stack.</p>
 /// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterRdsDbInstanceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceInputBuilder,
+    inner: crate::operation::register_rds_db_instance::builders::RegisterRdsDbInstanceInputBuilder,
 }
-impl RegisterRdsDbInstanceFluentBuilder  {
+impl RegisterRdsDbInstanceFluentBuilder {
     /// Creates a new `RegisterRdsDbInstance`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::register_rds_db_instance::RegisterRdsDbInstance, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::register_rds_db_instance::RegisterRdsDbInstanceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::register_rds_db_instance::RegisterRdsDbInstanceOutput, aws_smithy_http::result::SdkError<crate::operation::register_rds_db_instance::RegisterRdsDbInstanceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::register_rds_db_instance::RegisterRdsDbInstance,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::register_rds_db_instance::RegisterRdsDbInstanceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::register_rds_db_instance::RegisterRdsDbInstanceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::register_rds_db_instance::RegisterRdsDbInstanceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The stack ID.</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stack_id(input.into());
@@ -65,7 +85,10 @@ impl RegisterRdsDbInstanceFluentBuilder  {
         self
     }
     /// <p>The Amazon RDS instance's ARN.</p>
-    pub fn set_rds_db_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_rds_db_instance_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_rds_db_instance_arn(input);
         self
     }
@@ -90,4 +113,3 @@ impl RegisterRdsDbInstanceFluentBuilder  {
         self
     }
 }
-

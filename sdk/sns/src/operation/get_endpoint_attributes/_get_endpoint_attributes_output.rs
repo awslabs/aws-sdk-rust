@@ -3,40 +3,46 @@
 /// <p>Response from GetEndpointAttributes of the EndpointArn.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEndpointAttributesOutput  {
-    /// <p>Attributes include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li> 
-    /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li> 
-    /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> <note> 
-    /// <p>The device token for the iOS platform is returned in lowercase.</p> 
-    /// </note> </li> 
+pub struct GetEndpointAttributesOutput {
+    /// <p>Attributes include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li>
+    /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>
+    /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> <note>
+    /// <p>The device token for the iOS platform is returned in lowercase.</p>
+    /// </note> </li>
     /// </ul>
     #[doc(hidden)]
-    pub attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEndpointAttributesOutput {
-    /// <p>Attributes include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li> 
-    /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li> 
-    /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> <note> 
-    /// <p>The device token for the iOS platform is returned in lowercase.</p> 
-    /// </note> </li> 
+    /// <p>Attributes include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li>
+    /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>
+    /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> <note>
+    /// <p>The device token for the iOS platform is returned in lowercase.</p>
+    /// </note> </li>
     /// </ul>
-    pub fn attributes(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn attributes(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.attributes.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetEndpointAttributesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetEndpointAttributesOutput {
     /// Creates a new builder-style object to manufacture [`GetEndpointAttributesOutput`](crate::operation::get_endpoint_attributes::GetEndpointAttributesOutput).
-    pub fn builder() -> crate::operation::get_endpoint_attributes::builders::GetEndpointAttributesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_endpoint_attributes::builders::GetEndpointAttributesOutputBuilder
+    {
         crate::operation::get_endpoint_attributes::builders::GetEndpointAttributesOutputBuilder::default()
     }
 }
@@ -45,7 +51,8 @@ impl GetEndpointAttributesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetEndpointAttributesOutputBuilder {
-    pub(crate) attributes: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attributes:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetEndpointAttributesOutputBuilder {
@@ -53,47 +60,55 @@ impl GetEndpointAttributesOutputBuilder {
     ///
     /// To override the contents of this collection use [`set_attributes`](Self::set_attributes).
     ///
-    /// <p>Attributes include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li> 
-    /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li> 
-    /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> <note> 
-    /// <p>The device token for the iOS platform is returned in lowercase.</p> 
-    /// </note> </li> 
+    /// <p>Attributes include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li>
+    /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>
+    /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> <note>
+    /// <p>The device token for the iOS platform is returned in lowercase.</p>
+    /// </note> </li>
     /// </ul>
-    pub fn attributes(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn attributes(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.attributes.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.attributes = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.attributes = Some(hash_map);
+        self
     }
-    /// <p>Attributes include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li> 
-    /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li> 
-    /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> <note> 
-    /// <p>The device token for the iOS platform is returned in lowercase.</p> 
-    /// </note> </li> 
+    /// <p>Attributes include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>CustomUserData</code> – arbitrary user data to associate with the endpoint. Amazon SNS does not use this data. The data must be in UTF-8 format and less than 2KB.</p> </li>
+    /// <li> <p> <code>Enabled</code> – flag that enables/disables delivery to the endpoint. Amazon SNS will set this to false when a notification service indicates to Amazon SNS that the endpoint is invalid. Users can set it back to true, typically after updating Token.</p> </li>
+    /// <li> <p> <code>Token</code> – device token, also referred to as a registration id, for an app and mobile device. This is returned from the notification service when an app and mobile device are registered with the notification service.</p> <note>
+    /// <p>The device token for the iOS platform is returned in lowercase.</p>
+    /// </note> </li>
     /// </ul>
-    pub fn set_attributes(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetEndpointAttributesOutput`](crate::operation::get_endpoint_attributes::GetEndpointAttributesOutput).
     pub fn build(self) -> crate::operation::get_endpoint_attributes::GetEndpointAttributesOutput {
         crate::operation::get_endpoint_attributes::GetEndpointAttributesOutput {
-            attributes: self.attributes
-            ,
+            attributes: self.attributes,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterApplicationInput  {
+pub struct DeregisterApplicationInput {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeregisterApplicationInput {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
 }
 impl DeregisterApplicationInput {
     /// Creates a new builder-style object to manufacture [`DeregisterApplicationInput`](crate::operation::deregister_application::DeregisterApplicationInput).
-    pub fn builder() -> crate::operation::deregister_application::builders::DeregisterApplicationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deregister_application::builders::DeregisterApplicationInputBuilder {
         crate::operation::deregister_application::builders::DeregisterApplicationInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeregisterApplicationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeregisterApplicationInput`](crate::operation::deregister_application::DeregisterApplicationInput).
-    pub fn build(self) -> Result<crate::operation::deregister_application::DeregisterApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deregister_application::DeregisterApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::deregister_application::DeregisterApplicationInput {
-                application_id: self.application_id
-                ,
-            }
+                application_id: self.application_id,
+            },
         )
     }
 }
-

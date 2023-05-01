@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>DescribeAgentVersions</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAgentVersionsOutput  {
+pub struct DescribeAgentVersionsOutput {
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
     #[doc(hidden)]
     pub agent_versions: std::option::Option<std::vec::Vec<crate::types::AgentVersion>>,
@@ -11,18 +11,20 @@ pub struct DescribeAgentVersionsOutput  {
 }
 impl DescribeAgentVersionsOutput {
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
-    pub fn agent_versions(&self) -> std::option::Option<& [crate::types::AgentVersion]> {
+    pub fn agent_versions(&self) -> std::option::Option<&[crate::types::AgentVersion]> {
         self.agent_versions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAgentVersionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAgentVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAgentVersionsOutput`](crate::operation::describe_agent_versions::DescribeAgentVersionsOutput).
-    pub fn builder() -> crate::operation::describe_agent_versions::builders::DescribeAgentVersionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_agent_versions::builders::DescribeAgentVersionsOutputBuilder
+    {
         crate::operation::describe_agent_versions::builders::DescribeAgentVersionsOutputBuilder::default()
     }
 }
@@ -42,30 +44,32 @@ impl DescribeAgentVersionsOutputBuilder {
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
     pub fn agent_versions(mut self, input: crate::types::AgentVersion) -> Self {
         let mut v = self.agent_versions.unwrap_or_default();
-                        v.push(input);
-                        self.agent_versions = Some(v);
-                        self
+        v.push(input);
+        self.agent_versions = Some(v);
+        self
     }
     /// <p>The agent versions for the specified stack or configuration manager. Note that this value is the complete version number, not the abbreviated number used by the console.</p>
-    pub fn set_agent_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::AgentVersion>>) -> Self {
-        self.agent_versions = input; self
+    pub fn set_agent_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AgentVersion>>,
+    ) -> Self {
+        self.agent_versions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAgentVersionsOutput`](crate::operation::describe_agent_versions::DescribeAgentVersionsOutput).
     pub fn build(self) -> crate::operation::describe_agent_versions::DescribeAgentVersionsOutput {
         crate::operation::describe_agent_versions::DescribeAgentVersionsOutput {
-            agent_versions: self.agent_versions
-            ,
+            agent_versions: self.agent_versions,
             _request_id: self._request_id,
         }
     }
 }
-

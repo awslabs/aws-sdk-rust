@@ -3,7 +3,7 @@
 /// <p>Information about the evaluation performance of a trained model. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelPerformance  {
+pub struct ModelPerformance {
     /// <p>The overall F1 score metric for the trained model.</p>
     #[doc(hidden)]
     pub f1_score: std::option::Option<f32>,
@@ -51,7 +51,8 @@ impl ModelPerformanceBuilder {
     }
     /// <p>The overall F1 score metric for the trained model.</p>
     pub fn set_f1_score(mut self, input: std::option::Option<f32>) -> Self {
-        self.f1_score = input; self
+        self.f1_score = input;
+        self
     }
     /// <p>The overall recall metric value for the trained model. </p>
     pub fn recall(mut self, input: f32) -> Self {
@@ -60,7 +61,8 @@ impl ModelPerformanceBuilder {
     }
     /// <p>The overall recall metric value for the trained model. </p>
     pub fn set_recall(mut self, input: std::option::Option<f32>) -> Self {
-        self.recall = input; self
+        self.recall = input;
+        self
     }
     /// <p>The overall precision metric value for the trained model.</p>
     pub fn precision(mut self, input: f32) -> Self {
@@ -69,18 +71,15 @@ impl ModelPerformanceBuilder {
     }
     /// <p>The overall precision metric value for the trained model.</p>
     pub fn set_precision(mut self, input: std::option::Option<f32>) -> Self {
-        self.precision = input; self
+        self.precision = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModelPerformance`](crate::types::ModelPerformance).
     pub fn build(self) -> crate::types::ModelPerformance {
         crate::types::ModelPerformance {
-            f1_score: self.f1_score
-            ,
-            recall: self.recall
-            ,
-            precision: self.precision
-            ,
+            f1_score: self.f1_score,
+            recall: self.recall,
+            precision: self.precision,
         }
     }
 }
-

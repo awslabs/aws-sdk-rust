@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let aggregationtype = unimplemented!();
 /// match aggregationtype {
@@ -39,14 +39,22 @@
 /// Specifically, when `aggregationtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AggregationType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AggregationType {
     #[allow(missing_docs)] // documentation missing in model
     Account,
@@ -71,59 +79,72 @@ pub enum AggregationType {
     #[allow(missing_docs)] // documentation missing in model
     Title,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AggregationType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACCOUNT" => AggregationType::Account,
-"AMI" => AggregationType::Ami,
-"AWS_EC2_INSTANCE" => AggregationType::AwsEc2Instance,
-"AWS_ECR_CONTAINER" => AggregationType::AwsEcrContainer,
-"AWS_LAMBDA_FUNCTION" => AggregationType::AwsLambdaFunction,
-"FINDING_TYPE" => AggregationType::FindingType,
-"IMAGE_LAYER" => AggregationType::ImageLayer,
-"LAMBDA_LAYER" => AggregationType::LambdaLayer,
-"PACKAGE" => AggregationType::Package,
-"REPOSITORY" => AggregationType::Repository,
-"TITLE" => AggregationType::Title,
-other => AggregationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCOUNT" => AggregationType::Account,
+            "AMI" => AggregationType::Ami,
+            "AWS_EC2_INSTANCE" => AggregationType::AwsEc2Instance,
+            "AWS_ECR_CONTAINER" => AggregationType::AwsEcrContainer,
+            "AWS_LAMBDA_FUNCTION" => AggregationType::AwsLambdaFunction,
+            "FINDING_TYPE" => AggregationType::FindingType,
+            "IMAGE_LAYER" => AggregationType::ImageLayer,
+            "LAMBDA_LAYER" => AggregationType::LambdaLayer,
+            "PACKAGE" => AggregationType::Package,
+            "REPOSITORY" => AggregationType::Repository,
+            "TITLE" => AggregationType::Title,
+            other => {
+                AggregationType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for AggregationType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AggregationType::from(s))
-                }
-            }
-impl AggregationType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AggregationType::Account => "ACCOUNT",
-    AggregationType::Ami => "AMI",
-    AggregationType::AwsEc2Instance => "AWS_EC2_INSTANCE",
-    AggregationType::AwsEcrContainer => "AWS_ECR_CONTAINER",
-    AggregationType::AwsLambdaFunction => "AWS_LAMBDA_FUNCTION",
-    AggregationType::FindingType => "FINDING_TYPE",
-    AggregationType::ImageLayer => "IMAGE_LAYER",
-    AggregationType::LambdaLayer => "LAMBDA_LAYER",
-    AggregationType::Package => "PACKAGE",
-    AggregationType::Repository => "REPOSITORY",
-    AggregationType::Title => "TITLE",
-    AggregationType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACCOUNT", "AMI", "AWS_EC2_INSTANCE", "AWS_ECR_CONTAINER", "AWS_LAMBDA_FUNCTION", "FINDING_TYPE", "IMAGE_LAYER", "LAMBDA_LAYER", "PACKAGE", "REPOSITORY", "TITLE"]
-                }
-            }
-impl AsRef<str> for AggregationType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AggregationType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AggregationType::from(s))
+    }
+}
+impl AggregationType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AggregationType::Account => "ACCOUNT",
+            AggregationType::Ami => "AMI",
+            AggregationType::AwsEc2Instance => "AWS_EC2_INSTANCE",
+            AggregationType::AwsEcrContainer => "AWS_ECR_CONTAINER",
+            AggregationType::AwsLambdaFunction => "AWS_LAMBDA_FUNCTION",
+            AggregationType::FindingType => "FINDING_TYPE",
+            AggregationType::ImageLayer => "IMAGE_LAYER",
+            AggregationType::LambdaLayer => "LAMBDA_LAYER",
+            AggregationType::Package => "PACKAGE",
+            AggregationType::Repository => "REPOSITORY",
+            AggregationType::Title => "TITLE",
+            AggregationType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCOUNT",
+            "AMI",
+            "AWS_EC2_INSTANCE",
+            "AWS_ECR_CONTAINER",
+            "AWS_LAMBDA_FUNCTION",
+            "FINDING_TYPE",
+            "IMAGE_LAYER",
+            "LAMBDA_LAYER",
+            "PACKAGE",
+            "REPOSITORY",
+            "TITLE",
+        ]
+    }
+}
+impl AsRef<str> for AggregationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

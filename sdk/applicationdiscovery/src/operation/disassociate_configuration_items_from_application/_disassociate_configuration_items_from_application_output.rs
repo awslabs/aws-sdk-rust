@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateConfigurationItemsFromApplicationOutput  {
+pub struct DisassociateConfigurationItemsFromApplicationOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisassociateConfigurationItemsFromApplicationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateConfigurationItemsFromApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateConfigurationItemsFromApplicationOutput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput).
-    pub fn builder() -> crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationOutputBuilder{
         crate::operation::disassociate_configuration_items_from_application::builders::DisassociateConfigurationItemsFromApplicationOutputBuilder::default()
     }
 }
@@ -25,19 +25,18 @@ pub struct DisassociateConfigurationItemsFromApplicationOutputBuilder {
 }
 impl DisassociateConfigurationItemsFromApplicationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateConfigurationItemsFromApplicationOutput`](crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput).
-    pub fn build(self) -> crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput {
+    pub fn build(self) -> crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput{
         crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput {
             _request_id: self._request_id,
         }
     }
 }
-

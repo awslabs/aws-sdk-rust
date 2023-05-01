@@ -3,14 +3,14 @@
 /// <p>The version of a bot used for a bot locale.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotVersionLocaleDetails  {
+pub struct BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
     #[doc(hidden)]
     pub source_bot_version: std::option::Option<std::string::String>,
 }
 impl BotVersionLocaleDetails {
     /// <p>The version of a bot used for a bot locale.</p>
-    pub fn source_bot_version(&self) -> std::option::Option<& str> {
+    pub fn source_bot_version(&self) -> std::option::Option<&str> {
         self.source_bot_version.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl BotVersionLocaleDetailsBuilder {
         self
     }
     /// <p>The version of a bot used for a bot locale.</p>
-    pub fn set_source_bot_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_bot_version = input; self
+    pub fn set_source_bot_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_bot_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`BotVersionLocaleDetails`](crate::types::BotVersionLocaleDetails).
     pub fn build(self) -> crate::types::BotVersionLocaleDetails {
         crate::types::BotVersionLocaleDetails {
-            source_bot_version: self.source_bot_version
-            ,
+            source_bot_version: self.source_bot_version,
         }
     }
 }
-

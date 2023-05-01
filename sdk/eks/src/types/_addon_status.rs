@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let addonstatus = unimplemented!();
 /// match addonstatus {
@@ -36,14 +36,22 @@
 /// Specifically, when `addonstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AddonStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AddonStatus {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -62,53 +70,61 @@ pub enum AddonStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AddonStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVE" => AddonStatus::Active,
-"CREATE_FAILED" => AddonStatus::CreateFailed,
-"CREATING" => AddonStatus::Creating,
-"DEGRADED" => AddonStatus::Degraded,
-"DELETE_FAILED" => AddonStatus::DeleteFailed,
-"DELETING" => AddonStatus::Deleting,
-"UPDATE_FAILED" => AddonStatus::UpdateFailed,
-"UPDATING" => AddonStatus::Updating,
-other => AddonStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for AddonStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AddonStatus::from(s))
-                }
-            }
-impl AddonStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AddonStatus::Active => "ACTIVE",
-    AddonStatus::CreateFailed => "CREATE_FAILED",
-    AddonStatus::Creating => "CREATING",
-    AddonStatus::Degraded => "DEGRADED",
-    AddonStatus::DeleteFailed => "DELETE_FAILED",
-    AddonStatus::Deleting => "DELETING",
-    AddonStatus::UpdateFailed => "UPDATE_FAILED",
-    AddonStatus::Updating => "UPDATING",
-    AddonStatus::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => AddonStatus::Active,
+            "CREATE_FAILED" => AddonStatus::CreateFailed,
+            "CREATING" => AddonStatus::Creating,
+            "DEGRADED" => AddonStatus::Degraded,
+            "DELETE_FAILED" => AddonStatus::DeleteFailed,
+            "DELETING" => AddonStatus::Deleting,
+            "UPDATE_FAILED" => AddonStatus::UpdateFailed,
+            "UPDATING" => AddonStatus::Updating,
+            other => AddonStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVE", "CREATE_FAILED", "CREATING", "DEGRADED", "DELETE_FAILED", "DELETING", "UPDATE_FAILED", "UPDATING"]
-                }
-            }
-impl AsRef<str> for AddonStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AddonStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AddonStatus::from(s))
+    }
+}
+impl AddonStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AddonStatus::Active => "ACTIVE",
+            AddonStatus::CreateFailed => "CREATE_FAILED",
+            AddonStatus::Creating => "CREATING",
+            AddonStatus::Degraded => "DEGRADED",
+            AddonStatus::DeleteFailed => "DELETE_FAILED",
+            AddonStatus::Deleting => "DELETING",
+            AddonStatus::UpdateFailed => "UPDATE_FAILED",
+            AddonStatus::Updating => "UPDATING",
+            AddonStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATE_FAILED",
+            "CREATING",
+            "DEGRADED",
+            "DELETE_FAILED",
+            "DELETING",
+            "UPDATE_FAILED",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for AddonStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

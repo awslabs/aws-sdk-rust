@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStorageVirtualMachineInput  {
+pub struct DeleteStorageVirtualMachineInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteStorageVirtualMachineInput  {
 }
 impl DeleteStorageVirtualMachineInput {
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The ID of the SVM that you want to delete.</p>
-    pub fn storage_virtual_machine_id(&self) -> std::option::Option<& str> {
+    pub fn storage_virtual_machine_id(&self) -> std::option::Option<&str> {
         self.storage_virtual_machine_id.as_deref()
     }
 }
 impl DeleteStorageVirtualMachineInput {
     /// Creates a new builder-style object to manufacture [`DeleteStorageVirtualMachineInput`](crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineInput).
-    pub fn builder() -> crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineInputBuilder {
+    pub fn builder() -> crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineInputBuilder{
         crate::operation::delete_storage_virtual_machine::builders::DeleteStorageVirtualMachineInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl DeleteStorageVirtualMachineInputBuilder {
         self
     }
     /// <p>(Optional) An idempotency token for resource creation, in a string of up to 63 ASCII characters. This token is automatically filled on your behalf when you use the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// <p>The ID of the SVM that you want to delete.</p>
     pub fn storage_virtual_machine_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +54,25 @@ impl DeleteStorageVirtualMachineInputBuilder {
         self
     }
     /// <p>The ID of the SVM that you want to delete.</p>
-    pub fn set_storage_virtual_machine_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.storage_virtual_machine_id = input; self
+    pub fn set_storage_virtual_machine_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.storage_virtual_machine_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteStorageVirtualMachineInput`](crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineInput).
-    pub fn build(self) -> Result<crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineInput {
-                client_request_token: self.client_request_token
-                ,
-                storage_virtual_machine_id: self.storage_virtual_machine_id
-                ,
-            }
+                client_request_token: self.client_request_token,
+                storage_virtual_machine_id: self.storage_virtual_machine_id,
+            },
         )
     }
 }
-

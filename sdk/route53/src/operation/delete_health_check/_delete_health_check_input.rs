@@ -3,20 +3,21 @@
 /// <p>This action deletes a health check.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHealthCheckInput  {
+pub struct DeleteHealthCheckInput {
     /// <p>The ID of the health check that you want to delete.</p>
     #[doc(hidden)]
     pub health_check_id: std::option::Option<std::string::String>,
 }
 impl DeleteHealthCheckInput {
     /// <p>The ID of the health check that you want to delete.</p>
-    pub fn health_check_id(&self) -> std::option::Option<& str> {
+    pub fn health_check_id(&self) -> std::option::Option<&str> {
         self.health_check_id.as_deref()
     }
 }
 impl DeleteHealthCheckInput {
     /// Creates a new builder-style object to manufacture [`DeleteHealthCheckInput`](crate::operation::delete_health_check::DeleteHealthCheckInput).
-    pub fn builder() -> crate::operation::delete_health_check::builders::DeleteHealthCheckInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_health_check::builders::DeleteHealthCheckInputBuilder {
         crate::operation::delete_health_check::builders::DeleteHealthCheckInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl DeleteHealthCheckInputBuilder {
     }
     /// <p>The ID of the health check that you want to delete.</p>
     pub fn set_health_check_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.health_check_id = input; self
+        self.health_check_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteHealthCheckInput`](crate::operation::delete_health_check::DeleteHealthCheckInput).
-    pub fn build(self) -> Result<crate::operation::delete_health_check::DeleteHealthCheckInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_health_check::DeleteHealthCheckInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_health_check::DeleteHealthCheckInput {
-                health_check_id: self.health_check_id
-                ,
-            }
+                health_check_id: self.health_check_id,
+            },
         )
     }
 }
-

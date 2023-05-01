@@ -3,7 +3,7 @@
 /// <p>Contains information about the hours of operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HoursOfOperationConfig  {
+pub struct HoursOfOperationConfig {
     /// <p>The day that the hours of operation applies to.</p>
     #[doc(hidden)]
     pub day: std::option::Option<crate::types::HoursOfOperationDays>,
@@ -16,15 +16,15 @@ pub struct HoursOfOperationConfig  {
 }
 impl HoursOfOperationConfig {
     /// <p>The day that the hours of operation applies to.</p>
-    pub fn day(&self) -> std::option::Option<& crate::types::HoursOfOperationDays> {
+    pub fn day(&self) -> std::option::Option<&crate::types::HoursOfOperationDays> {
         self.day.as_ref()
     }
     /// <p>The start time that your contact center opens.</p>
-    pub fn start_time(&self) -> std::option::Option<& crate::types::HoursOfOperationTimeSlice> {
+    pub fn start_time(&self) -> std::option::Option<&crate::types::HoursOfOperationTimeSlice> {
         self.start_time.as_ref()
     }
     /// <p>The end time that your contact center closes.</p>
-    pub fn end_time(&self) -> std::option::Option<& crate::types::HoursOfOperationTimeSlice> {
+    pub fn end_time(&self) -> std::option::Option<&crate::types::HoursOfOperationTimeSlice> {
         self.end_time.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl HoursOfOperationConfigBuilder {
         self
     }
     /// <p>The day that the hours of operation applies to.</p>
-    pub fn set_day(mut self, input: std::option::Option<crate::types::HoursOfOperationDays>) -> Self {
-        self.day = input; self
+    pub fn set_day(
+        mut self,
+        input: std::option::Option<crate::types::HoursOfOperationDays>,
+    ) -> Self {
+        self.day = input;
+        self
     }
     /// <p>The start time that your contact center opens.</p>
     pub fn start_time(mut self, input: crate::types::HoursOfOperationTimeSlice) -> Self {
@@ -59,8 +63,12 @@ impl HoursOfOperationConfigBuilder {
         self
     }
     /// <p>The start time that your contact center opens.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<crate::types::HoursOfOperationTimeSlice>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<crate::types::HoursOfOperationTimeSlice>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The end time that your contact center closes.</p>
     pub fn end_time(mut self, input: crate::types::HoursOfOperationTimeSlice) -> Self {
@@ -68,19 +76,19 @@ impl HoursOfOperationConfigBuilder {
         self
     }
     /// <p>The end time that your contact center closes.</p>
-    pub fn set_end_time(mut self, input: std::option::Option<crate::types::HoursOfOperationTimeSlice>) -> Self {
-        self.end_time = input; self
+    pub fn set_end_time(
+        mut self,
+        input: std::option::Option<crate::types::HoursOfOperationTimeSlice>,
+    ) -> Self {
+        self.end_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`HoursOfOperationConfig`](crate::types::HoursOfOperationConfig).
     pub fn build(self) -> crate::types::HoursOfOperationConfig {
         crate::types::HoursOfOperationConfig {
-            day: self.day
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
+            day: self.day,
+            start_time: self.start_time,
+            end_time: self.end_time,
         }
     }
 }
-

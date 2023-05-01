@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWatchlistsInput  {
+pub struct ListWatchlistsInput {
     /// <p>The identifier of the domain.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListWatchlistsInput  {
 }
 impl ListWatchlistsInput {
     /// <p>The identifier of the domain.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
@@ -23,7 +23,7 @@ impl ListWatchlistsInput {
         self.max_results
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl ListWatchlistsInputBuilder {
     }
     /// <p>The identifier of the domain.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl ListWatchlistsInputBuilder {
     }
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl ListWatchlistsInputBuilder {
     }
     /// <p>If <code>NextToken</code> is returned, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListWatchlistsInput`](crate::operation::list_watchlists::ListWatchlistsInput).
-    pub fn build(self) -> Result<crate::operation::list_watchlists::ListWatchlistsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_watchlists::ListWatchlistsInput {
-                domain_id: self.domain_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_watchlists::ListWatchlistsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_watchlists::ListWatchlistsInput {
+            domain_id: self.domain_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

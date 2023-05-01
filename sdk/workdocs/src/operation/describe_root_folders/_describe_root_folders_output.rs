@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRootFoldersOutput  {
+pub struct DescribeRootFoldersOutput {
     /// <p>The user's special folders.</p>
     #[doc(hidden)]
     pub folders: std::option::Option<std::vec::Vec<crate::types::FolderMetadata>>,
@@ -13,23 +13,25 @@ pub struct DescribeRootFoldersOutput  {
 }
 impl DescribeRootFoldersOutput {
     /// <p>The user's special folders.</p>
-    pub fn folders(&self) -> std::option::Option<& [crate::types::FolderMetadata]> {
+    pub fn folders(&self) -> std::option::Option<&[crate::types::FolderMetadata]> {
         self.folders.as_deref()
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRootFoldersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeRootFoldersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRootFoldersOutput`](crate::operation::describe_root_folders::DescribeRootFoldersOutput).
-    pub fn builder() -> crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder {
-        crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder {
+        crate::operation::describe_root_folders::builders::DescribeRootFoldersOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl DescribeRootFoldersOutputBuilder {
     /// <p>The user's special folders.</p>
     pub fn folders(mut self, input: crate::types::FolderMetadata) -> Self {
         let mut v = self.folders.unwrap_or_default();
-                        v.push(input);
-                        self.folders = Some(v);
-                        self
+        v.push(input);
+        self.folders = Some(v);
+        self
     }
     /// <p>The user's special folders.</p>
-    pub fn set_folders(mut self, input: std::option::Option<std::vec::Vec<crate::types::FolderMetadata>>) -> Self {
-        self.folders = input; self
+    pub fn set_folders(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FolderMetadata>>,
+    ) -> Self {
+        self.folders = input;
+        self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl DescribeRootFoldersOutputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeRootFoldersOutput`](crate::operation::describe_root_folders::DescribeRootFoldersOutput).
     pub fn build(self) -> crate::operation::describe_root_folders::DescribeRootFoldersOutput {
         crate::operation::describe_root_folders::DescribeRootFoldersOutput {
-            folders: self.folders
-            ,
-            marker: self.marker
-            ,
+            folders: self.folders,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

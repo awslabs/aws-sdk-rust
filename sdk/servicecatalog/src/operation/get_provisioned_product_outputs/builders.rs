@@ -4,69 +4,89 @@ pub use crate::operation::get_provisioned_product_outputs::_get_provisioned_prod
 pub use crate::operation::get_provisioned_product_outputs::_get_provisioned_product_outputs_input::GetProvisionedProductOutputsInputBuilder;
 
 /// Fluent builder constructing a request to `GetProvisionedProductOutputs`.
-/// 
+///
 /// <p>This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a list of one or more output keys, and responds with the key/value pairs of those outputs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetProvisionedProductOutputsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_provisioned_product_outputs::builders::GetProvisionedProductOutputsInputBuilder,
 }
-impl GetProvisionedProductOutputsFluentBuilder  {
+impl GetProvisionedProductOutputsFluentBuilder {
     /// Creates a new `GetProvisionedProductOutputs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput, aws_smithy_http::result::SdkError<crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator {
-                                crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator::new(self.handle, self.inner)
-                            }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator{
+        crate::operation::get_provisioned_product_outputs::paginator::GetProvisionedProductOutputsPaginator::new(self.handle, self.inner)
+    }
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.accept_language(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_accept_language(input);
@@ -78,7 +98,10 @@ impl GetProvisionedProductOutputsFluentBuilder  {
         self
     }
     /// <p>The identifier of the provisioned product that you want the outputs from.</p>
-    pub fn set_provisioned_product_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provisioned_product_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provisioned_product_id(input);
         self
     }
@@ -88,7 +111,10 @@ impl GetProvisionedProductOutputsFluentBuilder  {
         self
     }
     /// <p>The name of the provisioned product that you want the outputs from.</p>
-    pub fn set_provisioned_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provisioned_product_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provisioned_product_name(input);
         self
     }
@@ -102,7 +128,10 @@ impl GetProvisionedProductOutputsFluentBuilder  {
         self
     }
     /// <p>The list of keys that the API should return with their values. If none are provided, the API will return all outputs of the provisioned product.</p>
-    pub fn set_output_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_output_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_output_keys(input);
         self
     }
@@ -127,4 +156,3 @@ impl GetProvisionedProductOutputsFluentBuilder  {
         self
     }
 }
-

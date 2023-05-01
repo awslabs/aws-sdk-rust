@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOrganizationOutput  {
+pub struct CreateOrganizationOutput {
     /// <p>The organization ID.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct CreateOrganizationOutput  {
 }
 impl CreateOrganizationOutput {
     /// <p>The organization ID.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateOrganizationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`CreateOrganizationOutput`](crate::operation::create_organization::CreateOrganizationOutput).
-    pub fn builder() -> crate::operation::create_organization::builders::CreateOrganizationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_organization::builders::CreateOrganizationOutputBuilder {
         crate::operation::create_organization::builders::CreateOrganizationOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl CreateOrganizationOutputBuilder {
     }
     /// <p>The organization ID.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateOrganizationOutput`](crate::operation::create_organization::CreateOrganizationOutput).
     pub fn build(self) -> crate::operation::create_organization::CreateOrganizationOutput {
         crate::operation::create_organization::CreateOrganizationOutput {
-            organization_id: self.organization_id
-            ,
+            organization_id: self.organization_id,
             _request_id: self._request_id,
         }
     }
 }
-

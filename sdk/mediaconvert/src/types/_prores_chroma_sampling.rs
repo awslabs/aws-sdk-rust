@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let proreschromasampling = unimplemented!();
 /// match proreschromasampling {
@@ -30,55 +30,64 @@
 /// Specifically, when `proreschromasampling` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProresChromaSampling::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop duplicate (DUPLICATE_DROP).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ProresChromaSampling {
     #[allow(missing_docs)] // documentation missing in model
     Preserve444Sampling,
     #[allow(missing_docs)] // documentation missing in model
     SubsampleTo422,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProresChromaSampling {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "PRESERVE_444_SAMPLING" => ProresChromaSampling::Preserve444Sampling,
-"SUBSAMPLE_TO_422" => ProresChromaSampling::SubsampleTo422,
-other => ProresChromaSampling::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ProresChromaSampling {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ProresChromaSampling::from(s))
-                }
-            }
-impl ProresChromaSampling {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ProresChromaSampling::Preserve444Sampling => "PRESERVE_444_SAMPLING",
-    ProresChromaSampling::SubsampleTo422 => "SUBSAMPLE_TO_422",
-    ProresChromaSampling::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "PRESERVE_444_SAMPLING" => ProresChromaSampling::Preserve444Sampling,
+            "SUBSAMPLE_TO_422" => ProresChromaSampling::SubsampleTo422,
+            other => ProresChromaSampling::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["PRESERVE_444_SAMPLING", "SUBSAMPLE_TO_422"]
-                }
-            }
-impl AsRef<str> for ProresChromaSampling {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ProresChromaSampling {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ProresChromaSampling::from(s))
+    }
+}
+impl ProresChromaSampling {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ProresChromaSampling::Preserve444Sampling => "PRESERVE_444_SAMPLING",
+            ProresChromaSampling::SubsampleTo422 => "SUBSAMPLE_TO_422",
+            ProresChromaSampling::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["PRESERVE_444_SAMPLING", "SUBSAMPLE_TO_422"]
+    }
+}
+impl AsRef<str> for ProresChromaSampling {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

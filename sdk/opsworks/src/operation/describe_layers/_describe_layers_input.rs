@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLayersInput  {
+pub struct DescribeLayersInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DescribeLayersInput  {
 }
 impl DescribeLayersInput {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
-    pub fn layer_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn layer_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.layer_ids.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeLayersInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// Appends an item to `layer_ids`.
     ///
@@ -51,24 +52,28 @@ impl DescribeLayersInputBuilder {
     /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
     pub fn layer_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.layer_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.layer_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.layer_ids = Some(v);
+        self
     }
     /// <p>An array of layer IDs that specify the layers to be described. If you omit this parameter, <code>DescribeLayers</code> returns a description of every layer in the specified stack.</p>
-    pub fn set_layer_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.layer_ids = input; self
+    pub fn set_layer_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.layer_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeLayersInput`](crate::operation::describe_layers::DescribeLayersInput).
-    pub fn build(self) -> Result<crate::operation::describe_layers::DescribeLayersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_layers::DescribeLayersInput {
-                stack_id: self.stack_id
-                ,
-                layer_ids: self.layer_ids
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_layers::DescribeLayersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_layers::DescribeLayersInput {
+            stack_id: self.stack_id,
+            layer_ids: self.layer_ids,
+        })
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Contains information about a phone number for a quick connect.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhoneNumberQuickConnectConfig  {
+pub struct PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
     #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
 }
 impl PhoneNumberQuickConnectConfig {
     /// <p>The phone number in E.164 format.</p>
-    pub fn phone_number(&self) -> std::option::Option<& str> {
+    pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl PhoneNumberQuickConnectConfigBuilder {
     }
     /// <p>The phone number in E.164 format.</p>
     pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number = input; self
+        self.phone_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`PhoneNumberQuickConnectConfig`](crate::types::PhoneNumberQuickConnectConfig).
     pub fn build(self) -> crate::types::PhoneNumberQuickConnectConfig {
         crate::types::PhoneNumberQuickConnectConfig {
-            phone_number: self.phone_number
-            ,
+            phone_number: self.phone_number,
         }
     }
 }
-

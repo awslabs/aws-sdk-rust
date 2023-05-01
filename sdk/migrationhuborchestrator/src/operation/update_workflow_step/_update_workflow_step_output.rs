@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkflowStepOutput  {
+pub struct UpdateWorkflowStepOutput {
     /// <p>The ID of the step.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,30 +19,31 @@ pub struct UpdateWorkflowStepOutput  {
 }
 impl UpdateWorkflowStepOutput {
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> std::option::Option<& str> {
+    pub fn step_group_id(&self) -> std::option::Option<&str> {
         self.step_group_id.as_deref()
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> std::option::Option<& str> {
+    pub fn workflow_id(&self) -> std::option::Option<&str> {
         self.workflow_id.as_deref()
     }
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateWorkflowStepOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateWorkflowStepOutput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkflowStepOutput`](crate::operation::update_workflow_step::UpdateWorkflowStepOutput).
-    pub fn builder() -> crate::operation::update_workflow_step::builders::UpdateWorkflowStepOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_workflow_step::builders::UpdateWorkflowStepOutputBuilder {
         crate::operation::update_workflow_step::builders::UpdateWorkflowStepOutputBuilder::default()
     }
 }
@@ -65,7 +66,8 @@ impl UpdateWorkflowStepOutputBuilder {
     }
     /// <p>The ID of the step.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The ID of the step group.</p>
     pub fn step_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +76,8 @@ impl UpdateWorkflowStepOutputBuilder {
     }
     /// <p>The ID of the step group.</p>
     pub fn set_step_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.step_group_id = input; self
+        self.step_group_id = input;
+        self
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn workflow_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +86,8 @@ impl UpdateWorkflowStepOutputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_workflow_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_id = input; self
+        self.workflow_id = input;
+        self
     }
     /// <p>The name of the step.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,30 +96,26 @@ impl UpdateWorkflowStepOutputBuilder {
     }
     /// <p>The name of the step.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateWorkflowStepOutput`](crate::operation::update_workflow_step::UpdateWorkflowStepOutput).
     pub fn build(self) -> crate::operation::update_workflow_step::UpdateWorkflowStepOutput {
         crate::operation::update_workflow_step::UpdateWorkflowStepOutput {
-            id: self.id
-            ,
-            step_group_id: self.step_group_id
-            ,
-            workflow_id: self.workflow_id
-            ,
-            name: self.name
-            ,
+            id: self.id,
+            step_group_id: self.step_group_id,
+            workflow_id: self.workflow_id,
+            name: self.name,
             _request_id: self._request_id,
         }
     }
 }
-

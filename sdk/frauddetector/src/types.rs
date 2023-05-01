@@ -344,4 +344,3 @@ pub mod builders;
 
 /// Error types that Amazon Fraud Detector can respond with.
 pub mod error;
-

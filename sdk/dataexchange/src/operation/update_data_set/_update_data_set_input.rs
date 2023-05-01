@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataSetInput  {
+pub struct UpdateDataSetInput {
     /// <p>The unique identifier for a data set.</p>
     #[doc(hidden)]
     pub data_set_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct UpdateDataSetInput  {
 }
 impl UpdateDataSetInput {
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> std::option::Option<& str> {
+    pub fn data_set_id(&self) -> std::option::Option<&str> {
         self.data_set_id.as_deref()
     }
     /// <p>The description for the data set.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The name of the data set.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl UpdateDataSetInputBuilder {
     }
     /// <p>The unique identifier for a data set.</p>
     pub fn set_data_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_id = input; self
+        self.data_set_id = input;
+        self
     }
     /// <p>The description for the data set.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl UpdateDataSetInputBuilder {
     }
     /// <p>The description for the data set.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The name of the data set.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl UpdateDataSetInputBuilder {
     }
     /// <p>The name of the data set.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDataSetInput`](crate::operation::update_data_set::UpdateDataSetInput).
-    pub fn build(self) -> Result<crate::operation::update_data_set::UpdateDataSetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_data_set::UpdateDataSetInput {
-                data_set_id: self.data_set_id
-                ,
-                description: self.description
-                ,
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_data_set::UpdateDataSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_data_set::UpdateDataSetInput {
+            data_set_id: self.data_set_id,
+            description: self.description,
+            name: self.name,
+        })
     }
 }
-

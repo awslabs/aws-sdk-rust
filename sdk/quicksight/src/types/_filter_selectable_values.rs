@@ -3,14 +3,14 @@
 /// <p>A list of selectable values that are used in a control.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterSelectableValues  {
+pub struct FilterSelectableValues {
     /// <p>The values that are used in the <code>FilterSelectableValues</code>.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FilterSelectableValues {
     /// <p>The values that are used in the <code>FilterSelectableValues</code>.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl FilterSelectableValuesBuilder {
     /// <p>The values that are used in the <code>FilterSelectableValues</code>.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The values that are used in the <code>FilterSelectableValues</code>.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Consumes the builder and constructs a [`FilterSelectableValues`](crate::types::FilterSelectableValues).
     pub fn build(self) -> crate::types::FilterSelectableValues {
         crate::types::FilterSelectableValues {
-            values: self.values
-            ,
+            values: self.values,
         }
     }
 }
-

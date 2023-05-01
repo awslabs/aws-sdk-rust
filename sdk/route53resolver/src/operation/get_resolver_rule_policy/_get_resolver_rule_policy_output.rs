@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverRulePolicyOutput  {
+pub struct GetResolverRulePolicyOutput {
     /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
     #[doc(hidden)]
     pub resolver_rule_policy: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct GetResolverRulePolicyOutput  {
 }
 impl GetResolverRulePolicyOutput {
     /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
-    pub fn resolver_rule_policy(&self) -> std::option::Option<& str> {
+    pub fn resolver_rule_policy(&self) -> std::option::Option<&str> {
         self.resolver_rule_policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetResolverRulePolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetResolverRulePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResolverRulePolicyOutput`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyOutput).
-    pub fn builder() -> crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyOutputBuilder
+    {
         crate::operation::get_resolver_rule_policy::builders::GetResolverRulePolicyOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl GetResolverRulePolicyOutputBuilder {
         self
     }
     /// <p>The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.</p>
-    pub fn set_resolver_rule_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resolver_rule_policy = input; self
+    pub fn set_resolver_rule_policy(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resolver_rule_policy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetResolverRulePolicyOutput`](crate::operation::get_resolver_rule_policy::GetResolverRulePolicyOutput).
     pub fn build(self) -> crate::operation::get_resolver_rule_policy::GetResolverRulePolicyOutput {
         crate::operation::get_resolver_rule_policy::GetResolverRulePolicyOutput {
-            resolver_rule_policy: self.resolver_rule_policy
-            ,
+            resolver_rule_policy: self.resolver_rule_policy,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMobileDeviceAccessOverrideInput  {
+pub struct DeleteMobileDeviceAccessOverrideInput {
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
     #[doc(hidden)]
     pub organization_id: std::option::Option<std::string::String>,
-    /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -20,26 +20,26 @@ pub struct DeleteMobileDeviceAccessOverrideInput  {
 }
 impl DeleteMobileDeviceAccessOverrideInput {
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
-    /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
 }
 impl DeleteMobileDeviceAccessOverrideInput {
     /// Creates a new builder-style object to manufacture [`DeleteMobileDeviceAccessOverrideInput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput).
-    pub fn builder() -> crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideInputBuilder {
+    pub fn builder() -> crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideInputBuilder{
         crate::operation::delete_mobile_device_access_override::builders::DeleteMobileDeviceAccessOverrideInputBuilder::default()
     }
 }
@@ -60,26 +60,28 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
     }
     /// <p>The WorkMail organization for which the access override will be deleted.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
-    /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.user_id = Some(input.into());
         self
     }
-    /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail user for which you want to delete the override. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
     pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,10 +90,11 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
     }
     /// <p>The mobile device for which you delete the override. <code>DeviceId</code> is case insensitive.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMobileDeviceAccessOverrideInput`](crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput).
-    pub fn build(self) -> Result<crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideInput {
                 organization_id: self.organization_id
@@ -104,4 +107,3 @@ impl DeleteMobileDeviceAccessOverrideInputBuilder {
         )
     }
 }
-

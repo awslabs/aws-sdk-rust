@@ -3,7 +3,7 @@
 /// <p>Container for human task user interface information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct HumanTaskUiSummary  {
+pub struct HumanTaskUiSummary {
     /// <p>The name of the human task user interface.</p>
     #[doc(hidden)]
     pub human_task_ui_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct HumanTaskUiSummary  {
 }
 impl HumanTaskUiSummary {
     /// <p>The name of the human task user interface.</p>
-    pub fn human_task_ui_name(&self) -> std::option::Option<& str> {
+    pub fn human_task_ui_name(&self) -> std::option::Option<&str> {
         self.human_task_ui_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
-    pub fn human_task_ui_arn(&self) -> std::option::Option<& str> {
+    pub fn human_task_ui_arn(&self) -> std::option::Option<&str> {
         self.human_task_ui_arn.as_deref()
     }
     /// <p>A timestamp when SageMaker created the human task user interface.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl HumanTaskUiSummaryBuilder {
         self
     }
     /// <p>The name of the human task user interface.</p>
-    pub fn set_human_task_ui_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.human_task_ui_name = input; self
+    pub fn set_human_task_ui_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.human_task_ui_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
     pub fn human_task_ui_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +63,12 @@ impl HumanTaskUiSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the human task user interface.</p>
-    pub fn set_human_task_ui_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.human_task_ui_arn = input; self
+    pub fn set_human_task_ui_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.human_task_ui_arn = input;
+        self
     }
     /// <p>A timestamp when SageMaker created the human task user interface.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,19 +76,19 @@ impl HumanTaskUiSummaryBuilder {
         self
     }
     /// <p>A timestamp when SageMaker created the human task user interface.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`HumanTaskUiSummary`](crate::types::HumanTaskUiSummary).
     pub fn build(self) -> crate::types::HumanTaskUiSummary {
         crate::types::HumanTaskUiSummary {
-            human_task_ui_name: self.human_task_ui_name
-            ,
-            human_task_ui_arn: self.human_task_ui_arn
-            ,
-            creation_time: self.creation_time
-            ,
+            human_task_ui_name: self.human_task_ui_name,
+            human_task_ui_arn: self.human_task_ui_arn,
+            creation_time: self.creation_time,
         }
     }
 }
-

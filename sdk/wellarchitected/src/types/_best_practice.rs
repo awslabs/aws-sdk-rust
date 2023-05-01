@@ -3,7 +3,7 @@
 /// <p>A best practice, or question choice, that has been identified as a risk in this question.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BestPractice  {
+pub struct BestPractice {
     /// <p>The ID of a choice.</p>
     #[doc(hidden)]
     pub choice_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct BestPractice  {
 }
 impl BestPractice {
     /// <p>The ID of a choice.</p>
-    pub fn choice_id(&self) -> std::option::Option<& str> {
+    pub fn choice_id(&self) -> std::option::Option<&str> {
         self.choice_id.as_deref()
     }
     /// <p>The title of a choice.</p>
-    pub fn choice_title(&self) -> std::option::Option<& str> {
+    pub fn choice_title(&self) -> std::option::Option<&str> {
         self.choice_title.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl BestPracticeBuilder {
     }
     /// <p>The ID of a choice.</p>
     pub fn set_choice_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.choice_id = input; self
+        self.choice_id = input;
+        self
     }
     /// <p>The title of a choice.</p>
     pub fn choice_title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl BestPracticeBuilder {
     }
     /// <p>The title of a choice.</p>
     pub fn set_choice_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.choice_title = input; self
+        self.choice_title = input;
+        self
     }
     /// Consumes the builder and constructs a [`BestPractice`](crate::types::BestPractice).
     pub fn build(self) -> crate::types::BestPractice {
         crate::types::BestPractice {
-            choice_id: self.choice_id
-            ,
-            choice_title: self.choice_title
-            ,
+            choice_id: self.choice_id,
+            choice_title: self.choice_title,
         }
     }
 }
-

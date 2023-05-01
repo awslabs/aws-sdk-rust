@@ -21,7 +21,11 @@ impl InputDataConfig {
     /// Tries to convert the enum instance into [`S3Uri`](crate::types::InputDataConfig::S3Uri), extracting the inner [`String`](std::string::String).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_s3_uri(&self) -> std::result::Result<&std::string::String, &Self> {
-        if let InputDataConfig::S3Uri(val) = &self { Ok(val) } else { Err(self) }
+        if let InputDataConfig::S3Uri(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`S3Uri`](crate::types::InputDataConfig::S3Uri).
     pub fn is_s3_uri(&self) -> bool {
@@ -32,4 +36,3 @@ impl InputDataConfig {
         matches!(self, Self::Unknown)
     }
 }
-

@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMediaInsightsPipelineConfigurationsOutput  {
+pub struct ListMediaInsightsPipelineConfigurationsOutput {
     /// <p>The requested list of media insights pipeline configurations.</p>
     #[doc(hidden)]
-    pub media_insights_pipeline_configurations: std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationSummary>>,
+    pub media_insights_pipeline_configurations:
+        std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationSummary>>,
     /// <p>The token used to return the next page of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct ListMediaInsightsPipelineConfigurationsOutput  {
 }
 impl ListMediaInsightsPipelineConfigurationsOutput {
     /// <p>The requested list of media insights pipeline configurations.</p>
-    pub fn media_insights_pipeline_configurations(&self) -> std::option::Option<& [crate::types::MediaInsightsPipelineConfigurationSummary]> {
+    pub fn media_insights_pipeline_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::MediaInsightsPipelineConfigurationSummary]> {
         self.media_insights_pipeline_configurations.as_deref()
     }
     /// <p>The token used to return the next page of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMediaInsightsPipelineConfigurationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListMediaInsightsPipelineConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListMediaInsightsPipelineConfigurationsOutput`](crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput).
-    pub fn builder() -> crate::operation::list_media_insights_pipeline_configurations::builders::ListMediaInsightsPipelineConfigurationsOutputBuilder {
+    pub fn builder() -> crate::operation::list_media_insights_pipeline_configurations::builders::ListMediaInsightsPipelineConfigurationsOutputBuilder{
         crate::operation::list_media_insights_pipeline_configurations::builders::ListMediaInsightsPipelineConfigurationsOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl ListMediaInsightsPipelineConfigurationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListMediaInsightsPipelineConfigurationsOutputBuilder {
-    pub(crate) media_insights_pipeline_configurations: std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationSummary>>,
+    pub(crate) media_insights_pipeline_configurations:
+        std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +51,26 @@ impl ListMediaInsightsPipelineConfigurationsOutputBuilder {
     /// To override the contents of this collection use [`set_media_insights_pipeline_configurations`](Self::set_media_insights_pipeline_configurations).
     ///
     /// <p>The requested list of media insights pipeline configurations.</p>
-    pub fn media_insights_pipeline_configurations(mut self, input: crate::types::MediaInsightsPipelineConfigurationSummary) -> Self {
-        let mut v = self.media_insights_pipeline_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.media_insights_pipeline_configurations = Some(v);
-                        self
+    pub fn media_insights_pipeline_configurations(
+        mut self,
+        input: crate::types::MediaInsightsPipelineConfigurationSummary,
+    ) -> Self {
+        let mut v = self
+            .media_insights_pipeline_configurations
+            .unwrap_or_default();
+        v.push(input);
+        self.media_insights_pipeline_configurations = Some(v);
+        self
     }
     /// <p>The requested list of media insights pipeline configurations.</p>
-    pub fn set_media_insights_pipeline_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationSummary>>) -> Self {
-        self.media_insights_pipeline_configurations = input; self
+    pub fn set_media_insights_pipeline_configurations(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::MediaInsightsPipelineConfigurationSummary>,
+        >,
+    ) -> Self {
+        self.media_insights_pipeline_configurations = input;
+        self
     }
     /// <p>The token used to return the next page of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +79,20 @@ impl ListMediaInsightsPipelineConfigurationsOutputBuilder {
     }
     /// <p>The token used to return the next page of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListMediaInsightsPipelineConfigurationsOutput`](crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput).
-    pub fn build(self) -> crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput {
+    pub fn build(self) -> crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput{
         crate::operation::list_media_insights_pipeline_configurations::ListMediaInsightsPipelineConfigurationsOutput {
             media_insights_pipeline_configurations: self.media_insights_pipeline_configurations
             ,
@@ -86,4 +102,3 @@ impl ListMediaInsightsPipelineConfigurationsOutputBuilder {
         }
     }
 }
-

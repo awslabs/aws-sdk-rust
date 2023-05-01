@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImagePipelineImagesInput  {
+pub struct ListImagePipelineImagesInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>version</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -22,15 +22,15 @@ pub struct ListImagePipelineImagesInput  {
 }
 impl ListImagePipelineImagesInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
-    pub fn image_pipeline_arn(&self) -> std::option::Option<& str> {
+    pub fn image_pipeline_arn(&self) -> std::option::Option<&str> {
         self.image_pipeline_arn.as_deref()
     }
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>version</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -38,13 +38,15 @@ impl ListImagePipelineImagesInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListImagePipelineImagesInput {
     /// Creates a new builder-style object to manufacture [`ListImagePipelineImagesInput`](crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput).
-    pub fn builder() -> crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder
+    {
         crate::operation::list_image_pipeline_images::builders::ListImagePipelineImagesInputBuilder::default()
     }
 }
@@ -65,31 +67,39 @@ impl ListImagePipelineImagesInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
-    pub fn set_image_pipeline_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_pipeline_arn = input; self
+    pub fn set_image_pipeline_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.image_pipeline_arn = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>version</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>version</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -98,7 +108,8 @@ impl ListImagePipelineImagesInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,22 +118,23 @@ impl ListImagePipelineImagesInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListImagePipelineImagesInput`](crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput).
-    pub fn build(self) -> Result<crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_image_pipeline_images::ListImagePipelineImagesInput {
-                image_pipeline_arn: self.image_pipeline_arn
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                image_pipeline_arn: self.image_pipeline_arn,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>A list of algorithms that were used to create a model package.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SourceAlgorithmSpecification  {
+pub struct SourceAlgorithmSpecification {
     /// <p>A list of the algorithms that were used to create a model package.</p>
     #[doc(hidden)]
     pub source_algorithms: std::option::Option<std::vec::Vec<crate::types::SourceAlgorithm>>,
 }
 impl SourceAlgorithmSpecification {
     /// <p>A list of the algorithms that were used to create a model package.</p>
-    pub fn source_algorithms(&self) -> std::option::Option<& [crate::types::SourceAlgorithm]> {
+    pub fn source_algorithms(&self) -> std::option::Option<&[crate::types::SourceAlgorithm]> {
         self.source_algorithms.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl SourceAlgorithmSpecificationBuilder {
     /// <p>A list of the algorithms that were used to create a model package.</p>
     pub fn source_algorithms(mut self, input: crate::types::SourceAlgorithm) -> Self {
         let mut v = self.source_algorithms.unwrap_or_default();
-                        v.push(input);
-                        self.source_algorithms = Some(v);
-                        self
+        v.push(input);
+        self.source_algorithms = Some(v);
+        self
     }
     /// <p>A list of the algorithms that were used to create a model package.</p>
-    pub fn set_source_algorithms(mut self, input: std::option::Option<std::vec::Vec<crate::types::SourceAlgorithm>>) -> Self {
-        self.source_algorithms = input; self
+    pub fn set_source_algorithms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SourceAlgorithm>>,
+    ) -> Self {
+        self.source_algorithms = input;
+        self
     }
     /// Consumes the builder and constructs a [`SourceAlgorithmSpecification`](crate::types::SourceAlgorithmSpecification).
     pub fn build(self) -> crate::types::SourceAlgorithmSpecification {
         crate::types::SourceAlgorithmSpecification {
-            source_algorithms: self.source_algorithms
-            ,
+            source_algorithms: self.source_algorithms,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Contains information about the configuration of the connector being registered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectorProvisioningConfig  {
+pub struct ConnectorProvisioningConfig {
     /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
     #[doc(hidden)]
     pub lambda: std::option::Option<crate::types::LambdaConnectorProvisioningConfig>,
 }
 impl ConnectorProvisioningConfig {
     /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-    pub fn lambda(&self) -> std::option::Option<& crate::types::LambdaConnectorProvisioningConfig> {
+    pub fn lambda(&self) -> std::option::Option<&crate::types::LambdaConnectorProvisioningConfig> {
         self.lambda.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ConnectorProvisioningConfigBuilder {
         self
     }
     /// <p>Contains information about the configuration of the lambda which is being registered as the connector.</p>
-    pub fn set_lambda(mut self, input: std::option::Option<crate::types::LambdaConnectorProvisioningConfig>) -> Self {
-        self.lambda = input; self
+    pub fn set_lambda(
+        mut self,
+        input: std::option::Option<crate::types::LambdaConnectorProvisioningConfig>,
+    ) -> Self {
+        self.lambda = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConnectorProvisioningConfig`](crate::types::ConnectorProvisioningConfig).
     pub fn build(self) -> crate::types::ConnectorProvisioningConfig {
         crate::types::ConnectorProvisioningConfig {
-            lambda: self.lambda
-            ,
+            lambda: self.lambda,
         }
     }
 }
-

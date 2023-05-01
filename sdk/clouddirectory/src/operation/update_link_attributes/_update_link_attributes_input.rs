@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLinkAttributesInput  {
+pub struct UpdateLinkAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     #[doc(hidden)]
     pub directory_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct UpdateLinkAttributesInput  {
 }
 impl UpdateLinkAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
-    pub fn directory_arn(&self) -> std::option::Option<& str> {
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<& crate::types::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::types::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
     /// <p>The attributes update structure.</p>
-    pub fn attribute_updates(&self) -> std::option::Option<& [crate::types::LinkAttributeUpdate]> {
+    pub fn attribute_updates(&self) -> std::option::Option<&[crate::types::LinkAttributeUpdate]> {
         self.attribute_updates.as_deref()
     }
 }
 impl UpdateLinkAttributesInput {
     /// Creates a new builder-style object to manufacture [`UpdateLinkAttributesInput`](crate::operation::update_link_attributes::UpdateLinkAttributesInput).
-    pub fn builder() -> crate::operation::update_link_attributes::builders::UpdateLinkAttributesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_link_attributes::builders::UpdateLinkAttributesInputBuilder {
         crate::operation::update_link_attributes::builders::UpdateLinkAttributesInputBuilder::default()
     }
 }
@@ -40,7 +41,8 @@ impl UpdateLinkAttributesInput {
 pub struct UpdateLinkAttributesInputBuilder {
     pub(crate) directory_arn: std::option::Option<std::string::String>,
     pub(crate) typed_link_specifier: std::option::Option<crate::types::TypedLinkSpecifier>,
-    pub(crate) attribute_updates: std::option::Option<std::vec::Vec<crate::types::LinkAttributeUpdate>>,
+    pub(crate) attribute_updates:
+        std::option::Option<std::vec::Vec<crate::types::LinkAttributeUpdate>>,
 }
 impl UpdateLinkAttributesInputBuilder {
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
@@ -50,7 +52,8 @@ impl UpdateLinkAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the Directory where the updated typed link resides. For more information, see <code>arns</code> or <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input; self
+        self.directory_arn = input;
+        self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     pub fn typed_link_specifier(mut self, input: crate::types::TypedLinkSpecifier) -> Self {
@@ -58,8 +61,12 @@ impl UpdateLinkAttributesInputBuilder {
         self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
-        self.typed_link_specifier = input; self
+    pub fn set_typed_link_specifier(
+        mut self,
+        input: std::option::Option<crate::types::TypedLinkSpecifier>,
+    ) -> Self {
+        self.typed_link_specifier = input;
+        self
     }
     /// Appends an item to `attribute_updates`.
     ///
@@ -68,26 +75,31 @@ impl UpdateLinkAttributesInputBuilder {
     /// <p>The attributes update structure.</p>
     pub fn attribute_updates(mut self, input: crate::types::LinkAttributeUpdate) -> Self {
         let mut v = self.attribute_updates.unwrap_or_default();
-                        v.push(input);
-                        self.attribute_updates = Some(v);
-                        self
+        v.push(input);
+        self.attribute_updates = Some(v);
+        self
     }
     /// <p>The attributes update structure.</p>
-    pub fn set_attribute_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::LinkAttributeUpdate>>) -> Self {
-        self.attribute_updates = input; self
+    pub fn set_attribute_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LinkAttributeUpdate>>,
+    ) -> Self {
+        self.attribute_updates = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateLinkAttributesInput`](crate::operation::update_link_attributes::UpdateLinkAttributesInput).
-    pub fn build(self) -> Result<crate::operation::update_link_attributes::UpdateLinkAttributesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_link_attributes::UpdateLinkAttributesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_link_attributes::UpdateLinkAttributesInput {
-                directory_arn: self.directory_arn
-                ,
-                typed_link_specifier: self.typed_link_specifier
-                ,
-                attribute_updates: self.attribute_updates
-                ,
-            }
+                directory_arn: self.directory_arn,
+                typed_link_specifier: self.typed_link_specifier,
+                attribute_updates: self.attribute_updates,
+            },
         )
     }
 }
-

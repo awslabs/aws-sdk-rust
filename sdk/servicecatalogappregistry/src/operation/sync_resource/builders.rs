@@ -4,58 +4,77 @@ pub use crate::operation::sync_resource::_sync_resource_output::SyncResourceOutp
 pub use crate::operation::sync_resource::_sync_resource_input::SyncResourceInputBuilder;
 
 /// Fluent builder constructing a request to `SyncResource`.
-/// 
-/// <p>Syncs the resource with current AppRegistry records.</p> 
+///
+/// <p>Syncs the resource with current AppRegistry records.</p>
 /// <p>Specifically, the resource’s AppRegistry system tags sync with its associated application. We remove the resource's AppRegistry system tags if it does not associate with the application. The caller must have permissions to read and update the resource.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SyncResourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::sync_resource::builders::SyncResourceInputBuilder,
+    inner: crate::operation::sync_resource::builders::SyncResourceInputBuilder,
 }
-impl SyncResourceFluentBuilder  {
+impl SyncResourceFluentBuilder {
     /// Creates a new `SyncResource`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::sync_resource::SyncResource, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::sync_resource::SyncResourceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::sync_resource::SyncResourceOutput, aws_smithy_http::result::SdkError<crate::operation::sync_resource::SyncResourceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::sync_resource::SyncResource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::sync_resource::SyncResourceError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::sync_resource::SyncResourceOutput,
+        aws_smithy_http::result::SdkError<crate::operation::sync_resource::SyncResourceError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The type of resource of which the application will be associated.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.inner = self.inner.resource_type(input);
         self
     }
     /// <p>The type of resource of which the application will be associated.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -70,4 +89,3 @@ impl SyncResourceFluentBuilder  {
         self
     }
 }
-

@@ -4,50 +4,66 @@ pub use crate::operation::import_component::_import_component_output::ImportComp
 pub use crate::operation::import_component::_import_component_input::ImportComponentInputBuilder;
 
 /// Fluent builder constructing a request to `ImportComponent`.
-/// 
+///
 /// <p>Imports a component and transforms its data into a component document.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ImportComponentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::import_component::builders::ImportComponentInputBuilder,
+    inner: crate::operation::import_component::builders::ImportComponentInputBuilder,
 }
-impl ImportComponentFluentBuilder  {
+impl ImportComponentFluentBuilder {
     /// Creates a new `ImportComponent`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::import_component::ImportComponent, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::import_component::ImportComponentOutput, aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::import_component::ImportComponent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::import_component::ImportComponentOutput,
+        aws_smithy_http::result::SdkError<crate::operation::import_component::ImportComponentError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the component.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -58,7 +74,7 @@ impl ImportComponentFluentBuilder  {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -70,14 +86,14 @@ impl ImportComponentFluentBuilder  {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note> 
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -89,8 +105,8 @@ impl ImportComponentFluentBuilder  {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p> 
+    /// </major></p>
+    /// <p> <b>Filtering:</b> With semantic versioning, you have the flexibility to use wildcards (x) to specify the most recent versions or nodes when selecting the base image or components for your recipe. When you use a wildcard in any node, all nodes to the right of the first wildcard must also be wildcards.</p>
     /// </note>
     pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
@@ -112,7 +128,10 @@ impl ImportComponentFluentBuilder  {
         self
     }
     /// <p>The change description of the component. This description indicates the change that has been made in this version, or what makes this version different from other versions of this component.</p>
-    pub fn set_change_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_change_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_change_description(input);
         self
     }
@@ -181,12 +200,21 @@ impl ImportComponentFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the component.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags of the component.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -201,4 +229,3 @@ impl ImportComponentFluentBuilder  {
         self
     }
 }
-

@@ -2,16 +2,16 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateStateMachineInput  {
-    /// <p>The name of the state machine. </p> 
-    /// <p>A name must <i>not</i> contain:</p> 
-    /// <ul> 
-    /// <li> <p>white space</p> </li> 
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
-    /// </ul> 
+pub struct CreateStateMachineInput {
+    /// <p>The name of the state machine. </p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -24,13 +24,13 @@ pub struct CreateStateMachineInput  {
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::StateMachineType>,
-    /// <p>Defines what execution history events are logged and where they are logged.</p> <note> 
-    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p> 
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::types::LoggingConfiguration>,
-    /// <p>Tags to be added when creating a state machine.</p> 
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p> 
+    /// <p>Tags to be added when creating a state machine.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -39,49 +39,53 @@ pub struct CreateStateMachineInput  {
     pub tracing_configuration: std::option::Option<crate::types::TracingConfiguration>,
 }
 impl CreateStateMachineInput {
-    /// <p>The name of the state machine. </p> 
-    /// <p>A name must <i>not</i> contain:</p> 
-    /// <ul> 
-    /// <li> <p>white space</p> </li> 
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
-    /// </ul> 
+    /// <p>The name of the state machine. </p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
-    pub fn definition(&self) -> std::option::Option<& str> {
+    pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::StateMachineType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::StateMachineType> {
         self.r#type.as_ref()
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p> <note> 
-    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p> 
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
-    pub fn logging_configuration(&self) -> std::option::Option<& crate::types::LoggingConfiguration> {
+    pub fn logging_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::LoggingConfiguration> {
         self.logging_configuration.as_ref()
     }
-    /// <p>Tags to be added when creating a state machine.</p> 
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p> 
+    /// <p>Tags to be added when creating a state machine.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn tracing_configuration(&self) -> std::option::Option<& crate::types::TracingConfiguration> {
+    pub fn tracing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::TracingConfiguration> {
         self.tracing_configuration.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateStateMachineInput  {
+impl std::fmt::Debug for CreateStateMachineInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateStateMachineInput");
         formatter.field("name", &self.name);
@@ -96,7 +100,8 @@ impl  std::fmt::Debug for CreateStateMachineInput  {
 }
 impl CreateStateMachineInput {
     /// Creates a new builder-style object to manufacture [`CreateStateMachineInput`](crate::operation::create_state_machine::CreateStateMachineInput).
-    pub fn builder() -> crate::operation::create_state_machine::builders::CreateStateMachineInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_state_machine::builders::CreateStateMachineInputBuilder {
         crate::operation::create_state_machine::builders::CreateStateMachineInputBuilder::default()
     }
 }
@@ -114,32 +119,33 @@ pub struct CreateStateMachineInputBuilder {
     pub(crate) tracing_configuration: std::option::Option<crate::types::TracingConfiguration>,
 }
 impl CreateStateMachineInputBuilder {
-    /// <p>The name of the state machine. </p> 
-    /// <p>A name must <i>not</i> contain:</p> 
-    /// <ul> 
-    /// <li> <p>white space</p> </li> 
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
-    /// </ul> 
+    /// <p>The name of the state machine. </p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the state machine. </p> 
-    /// <p>A name must <i>not</i> contain:</p> 
-    /// <ul> 
-    /// <li> <p>white space</p> </li> 
-    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li> 
-    /// <li> <p>wildcard characters <code>? *</code> </p> </li> 
-    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> 
-    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li> 
-    /// </ul> 
+    /// <p>The name of the state machine. </p>
+    /// <p>A name must <i>not</i> contain:</p>
+    /// <ul>
+    /// <li> <p>white space</p> </li>
+    /// <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p> </li>
+    /// <li> <p>wildcard characters <code>? *</code> </p> </li>
+    /// <li> <p>special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li>
+    /// <li> <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p> </li>
+    /// </ul>
     /// <p>To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +154,8 @@ impl CreateStateMachineInputBuilder {
     }
     /// <p>The Amazon States Language definition of the state machine. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>.</p>
     pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.definition = input; self
+        self.definition = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,7 +164,8 @@ impl CreateStateMachineInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to use for this state machine.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
     pub fn r#type(mut self, input: crate::types::StateMachineType) -> Self {
@@ -166,39 +174,48 @@ impl CreateStateMachineInputBuilder {
     }
     /// <p>Determines whether a Standard or Express state machine is created. The default is <code>STANDARD</code>. You cannot update the <code>type</code> of a state machine once it has been created.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::StateMachineType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p> <note> 
-    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p> 
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
     pub fn logging_configuration(mut self, input: crate::types::LoggingConfiguration) -> Self {
         self.logging_configuration = Some(input);
         self
     }
-    /// <p>Defines what execution history events are logged and where they are logged.</p> <note> 
-    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p> 
+    /// <p>Defines what execution history events are logged and where they are logged.</p> <note>
+    /// <p>By default, the <code>level</code> is set to <code>OFF</code>. For more information see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/cloudwatch-log-level.html">Log Levels</a> in the Step Functions User Guide.</p>
     /// </note>
-    pub fn set_logging_configuration(mut self, input: std::option::Option<crate::types::LoggingConfiguration>) -> Self {
-        self.logging_configuration = input; self
+    pub fn set_logging_configuration(
+        mut self,
+        input: std::option::Option<crate::types::LoggingConfiguration>,
+    ) -> Self {
+        self.logging_configuration = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>Tags to be added when creating a state machine.</p> 
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p> 
+    /// <p>Tags to be added when creating a state machine.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>Tags to be added when creating a state machine.</p> 
-    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p> 
+    /// <p>Tags to be added when creating a state machine.</p>
+    /// <p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
     /// <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
     pub fn tracing_configuration(mut self, input: crate::types::TracingConfiguration) -> Self {
@@ -206,28 +223,30 @@ impl CreateStateMachineInputBuilder {
         self
     }
     /// <p>Selects whether X-Ray tracing is enabled.</p>
-    pub fn set_tracing_configuration(mut self, input: std::option::Option<crate::types::TracingConfiguration>) -> Self {
-        self.tracing_configuration = input; self
+    pub fn set_tracing_configuration(
+        mut self,
+        input: std::option::Option<crate::types::TracingConfiguration>,
+    ) -> Self {
+        self.tracing_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateStateMachineInput`](crate::operation::create_state_machine::CreateStateMachineInput).
-    pub fn build(self) -> Result<crate::operation::create_state_machine::CreateStateMachineInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_state_machine::CreateStateMachineInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_state_machine::CreateStateMachineInput {
-                name: self.name
-                ,
-                definition: self.definition
-                ,
-                role_arn: self.role_arn
-                ,
-                r#type: self.r#type
-                ,
-                logging_configuration: self.logging_configuration
-                ,
-                tags: self.tags
-                ,
-                tracing_configuration: self.tracing_configuration
-                ,
-            }
+                name: self.name,
+                definition: self.definition,
+                role_arn: self.role_arn,
+                r#type: self.r#type,
+                logging_configuration: self.logging_configuration,
+                tags: self.tags,
+                tracing_configuration: self.tracing_configuration,
+            },
         )
     }
 }
@@ -244,4 +263,3 @@ impl std::fmt::Debug for CreateStateMachineInputBuilder {
         formatter.finish()
     }
 }
-

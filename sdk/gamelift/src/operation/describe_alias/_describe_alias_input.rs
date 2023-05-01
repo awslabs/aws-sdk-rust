@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAliasInput  {
+pub struct DescribeAliasInput {
     /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
     #[doc(hidden)]
     pub alias_id: std::option::Option<std::string::String>,
 }
 impl DescribeAliasInput {
     /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
-    pub fn alias_id(&self) -> std::option::Option<& str> {
+    pub fn alias_id(&self) -> std::option::Option<&str> {
         self.alias_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DescribeAliasInputBuilder {
     }
     /// <p>The unique identifier for the fleet alias that you want to retrieve. You can use either the alias ID or ARN value. </p>
     pub fn set_alias_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias_id = input; self
+        self.alias_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAliasInput`](crate::operation::describe_alias::DescribeAliasInput).
-    pub fn build(self) -> Result<crate::operation::describe_alias::DescribeAliasInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_alias::DescribeAliasInput {
-                alias_id: self.alias_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_alias::DescribeAliasInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_alias::DescribeAliasInput {
+            alias_id: self.alias_id,
+        })
     }
 }
-

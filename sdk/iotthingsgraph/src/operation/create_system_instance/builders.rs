@@ -4,55 +4,75 @@ pub use crate::operation::create_system_instance::_create_system_instance_output
 pub use crate::operation::create_system_instance::_create_system_instance_input::CreateSystemInstanceInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSystemInstance`.
-/// 
-/// <p>Creates a system instance. </p> 
-/// <p>This action validates the system instance, prepares the deployment-related resources. For Greengrass deployments, it updates the Greengrass group that is specified by the <code>greengrassGroupName</code> parameter. It also adds a file to the S3 bucket specified by the <code>s3BucketName</code> parameter. You need to call <code>DeploySystemInstance</code> after running this action.</p> 
-/// <p>For Greengrass deployments, since this action modifies and adds resources to a Greengrass group and an S3 bucket on the caller's behalf, the calling identity must have write permissions to both the specified Greengrass group and S3 bucket. Otherwise, the call will fail with an authorization error.</p> 
-/// <p>For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value. This is an IAM role that has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it executes.</p> 
+///
+/// <p>Creates a system instance. </p>
+/// <p>This action validates the system instance, prepares the deployment-related resources. For Greengrass deployments, it updates the Greengrass group that is specified by the <code>greengrassGroupName</code> parameter. It also adds a file to the S3 bucket specified by the <code>s3BucketName</code> parameter. You need to call <code>DeploySystemInstance</code> after running this action.</p>
+/// <p>For Greengrass deployments, since this action modifies and adds resources to a Greengrass group and an S3 bucket on the caller's behalf, the calling identity must have write permissions to both the specified Greengrass group and S3 bucket. Otherwise, the call will fail with an authorization error.</p>
+/// <p>For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value. This is an IAM role that has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it executes.</p>
 /// <p>If the definition document doesn't specify a version of the user's namespace, the latest version will be used by default.</p>
 #[deprecated(note = "since: 2022-08-30")]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSystemInstanceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_system_instance::builders::CreateSystemInstanceInputBuilder,
+    inner: crate::operation::create_system_instance::builders::CreateSystemInstanceInputBuilder,
 }
-impl CreateSystemInstanceFluentBuilder  {
+impl CreateSystemInstanceFluentBuilder {
     /// Creates a new `CreateSystemInstance`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_system_instance::CreateSystemInstance, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_system_instance::CreateSystemInstanceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_system_instance::CreateSystemInstanceOutput, aws_smithy_http::result::SdkError<crate::operation::create_system_instance::CreateSystemInstanceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_system_instance::CreateSystemInstance,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_system_instance::CreateSystemInstanceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_system_instance::CreateSystemInstanceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_system_instance::CreateSystemInstanceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
@@ -63,7 +83,10 @@ impl CreateSystemInstanceFluentBuilder  {
         self
     }
     /// <p>Metadata, consisting of key-value pairs, that can be used to categorize your system instances.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -73,7 +96,10 @@ impl CreateSystemInstanceFluentBuilder  {
         self
     }
     /// <p>A document that defines an entity. </p>
-    pub fn set_definition(mut self, input: std::option::Option<crate::types::DefinitionDocument>) -> Self {
+    pub fn set_definition(
+        mut self,
+        input: std::option::Option<crate::types::DefinitionDocument>,
+    ) -> Self {
         self.inner = self.inner.set_definition(input);
         self
     }
@@ -83,7 +109,10 @@ impl CreateSystemInstanceFluentBuilder  {
         self
     }
     /// <p>The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.</p>
-    pub fn set_target(mut self, input: std::option::Option<crate::types::DeploymentTarget>) -> Self {
+    pub fn set_target(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentTarget>,
+    ) -> Self {
         self.inner = self.inner.set_target(input);
         self
     }
@@ -93,7 +122,10 @@ impl CreateSystemInstanceFluentBuilder  {
         self
     }
     /// <p>The name of the Greengrass group where the system instance will be deployed. This value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.</p>
-    pub fn set_greengrass_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_greengrass_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_greengrass_group_name(input);
         self
     }
@@ -113,7 +145,10 @@ impl CreateSystemInstanceFluentBuilder  {
         self
     }
     /// <p>An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics.</p>
-    pub fn set_metrics_configuration(mut self, input: std::option::Option<crate::types::MetricsConfiguration>) -> Self {
+    pub fn set_metrics_configuration(
+        mut self,
+        input: std::option::Option<crate::types::MetricsConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_metrics_configuration(input);
         self
     }
@@ -123,9 +158,11 @@ impl CreateSystemInstanceFluentBuilder  {
         self
     }
     /// <p>The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the flow. This role must have read and write access to AWS Lambda and AWS IoT and any other AWS services that the flow uses when it executes. This value is required if the value of the <code>target</code> parameter is <code>CLOUD</code>.</p>
-    pub fn set_flow_actions_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_actions_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_flow_actions_role_arn(input);
         self
     }
 }
-

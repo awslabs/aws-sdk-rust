@@ -3,35 +3,37 @@
 /// <p>A request to change the account suppression list preferences for a specific configuration set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetSuppressionOptionsInput  {
+pub struct PutConfigurationSetSuppressionOptionsInput {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
     #[doc(hidden)]
     pub configuration_set_name: std::option::Option<std::string::String>,
-    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li> 
-    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li> 
+    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub suppressed_reasons: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl PutConfigurationSetSuppressionOptionsInput {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
-    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li> 
-    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li> 
+    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn suppressed_reasons(&self) -> std::option::Option<& [crate::types::SuppressionListReason]> {
+    pub fn suppressed_reasons(
+        &self,
+    ) -> std::option::Option<&[crate::types::SuppressionListReason]> {
         self.suppressed_reasons.as_deref()
     }
 }
 impl PutConfigurationSetSuppressionOptionsInput {
     /// Creates a new builder-style object to manufacture [`PutConfigurationSetSuppressionOptionsInput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput).
-    pub fn builder() -> crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsInputBuilder {
+    pub fn builder() -> crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsInputBuilder{
         crate::operation::put_configuration_set_suppression_options::builders::PutConfigurationSetSuppressionOptionsInputBuilder::default()
     }
 }
@@ -41,7 +43,8 @@ impl PutConfigurationSetSuppressionOptionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PutConfigurationSetSuppressionOptionsInputBuilder {
     pub(crate) configuration_set_name: std::option::Option<std::string::String>,
-    pub(crate) suppressed_reasons: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
+    pub(crate) suppressed_reasons:
+        std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
 }
 impl PutConfigurationSetSuppressionOptionsInputBuilder {
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
@@ -50,34 +53,42 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
         self
     }
     /// <p>The name of the configuration set to change the suppression list preferences for.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_name = input; self
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = input;
+        self
     }
     /// Appends an item to `suppressed_reasons`.
     ///
     /// To override the contents of this collection use [`set_suppressed_reasons`](Self::set_suppressed_reasons).
     ///
-    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li> 
-    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li> 
+    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
     pub fn suppressed_reasons(mut self, input: crate::types::SuppressionListReason) -> Self {
         let mut v = self.suppressed_reasons.unwrap_or_default();
-                        v.push(input);
-                        self.suppressed_reasons = Some(v);
-                        self
+        v.push(input);
+        self.suppressed_reasons = Some(v);
+        self
     }
-    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li> 
-    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li> 
+    /// <p>A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.</p> </li>
+    /// <li> <p> <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.</p> </li>
     /// </ul>
-    pub fn set_suppressed_reasons(mut self, input: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>) -> Self {
-        self.suppressed_reasons = input; self
+    pub fn set_suppressed_reasons(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SuppressionListReason>>,
+    ) -> Self {
+        self.suppressed_reasons = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutConfigurationSetSuppressionOptionsInput`](crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput).
-    pub fn build(self) -> Result<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsInput {
                 configuration_set_name: self.configuration_set_name
@@ -88,4 +99,3 @@ impl PutConfigurationSetSuppressionOptionsInputBuilder {
         )
     }
 }
-

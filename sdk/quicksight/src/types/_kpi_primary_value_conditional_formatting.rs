@@ -3,7 +3,7 @@
 /// <p>The conditional formatting for the primary value of a KPI visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KpiPrimaryValueConditionalFormatting  {
+pub struct KpiPrimaryValueConditionalFormatting {
     /// <p>The conditional formatting of the primary value's text color.</p>
     #[doc(hidden)]
     pub text_color: std::option::Option<crate::types::ConditionalFormattingColor>,
@@ -13,11 +13,11 @@ pub struct KpiPrimaryValueConditionalFormatting  {
 }
 impl KpiPrimaryValueConditionalFormatting {
     /// <p>The conditional formatting of the primary value's text color.</p>
-    pub fn text_color(&self) -> std::option::Option<& crate::types::ConditionalFormattingColor> {
+    pub fn text_color(&self) -> std::option::Option<&crate::types::ConditionalFormattingColor> {
         self.text_color.as_ref()
     }
     /// <p>The conditional formatting of the primary value's icon.</p>
-    pub fn icon(&self) -> std::option::Option<& crate::types::ConditionalFormattingIcon> {
+    pub fn icon(&self) -> std::option::Option<&crate::types::ConditionalFormattingIcon> {
         self.icon.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl KpiPrimaryValueConditionalFormattingBuilder {
         self
     }
     /// <p>The conditional formatting of the primary value's text color.</p>
-    pub fn set_text_color(mut self, input: std::option::Option<crate::types::ConditionalFormattingColor>) -> Self {
-        self.text_color = input; self
+    pub fn set_text_color(
+        mut self,
+        input: std::option::Option<crate::types::ConditionalFormattingColor>,
+    ) -> Self {
+        self.text_color = input;
+        self
     }
     /// <p>The conditional formatting of the primary value's icon.</p>
     pub fn icon(mut self, input: crate::types::ConditionalFormattingIcon) -> Self {
@@ -51,17 +55,18 @@ impl KpiPrimaryValueConditionalFormattingBuilder {
         self
     }
     /// <p>The conditional formatting of the primary value's icon.</p>
-    pub fn set_icon(mut self, input: std::option::Option<crate::types::ConditionalFormattingIcon>) -> Self {
-        self.icon = input; self
+    pub fn set_icon(
+        mut self,
+        input: std::option::Option<crate::types::ConditionalFormattingIcon>,
+    ) -> Self {
+        self.icon = input;
+        self
     }
     /// Consumes the builder and constructs a [`KpiPrimaryValueConditionalFormatting`](crate::types::KpiPrimaryValueConditionalFormatting).
     pub fn build(self) -> crate::types::KpiPrimaryValueConditionalFormatting {
         crate::types::KpiPrimaryValueConditionalFormatting {
-            text_color: self.text_color
-            ,
-            icon: self.icon
-            ,
+            text_color: self.text_color,
+            icon: self.icon,
         }
     }
 }
-

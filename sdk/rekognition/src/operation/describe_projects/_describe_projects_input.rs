@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProjectsInput  {
+pub struct DescribeProjectsInput {
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct DescribeProjectsInput  {
 }
 impl DescribeProjectsInput {
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
@@ -23,13 +23,14 @@ impl DescribeProjectsInput {
         self.max_results
     }
     /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn project_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn project_names(&self) -> std::option::Option<&[std::string::String]> {
         self.project_names.as_deref()
     }
 }
 impl DescribeProjectsInput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectsInput`](crate::operation::describe_projects::DescribeProjectsInput).
-    pub fn builder() -> crate::operation::describe_projects::builders::DescribeProjectsInputBuilder {
+    pub fn builder() -> crate::operation::describe_projects::builders::DescribeProjectsInputBuilder
+    {
         crate::operation::describe_projects::builders::DescribeProjectsInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl DescribeProjectsInputBuilder {
     }
     /// <p>If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +61,8 @@ impl DescribeProjectsInputBuilder {
     }
     /// <p>The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Appends an item to `project_names`.
     ///
@@ -68,26 +71,29 @@ impl DescribeProjectsInputBuilder {
     /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
     pub fn project_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.project_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.project_names = Some(v);
-                        self
+        v.push(input.into());
+        self.project_names = Some(v);
+        self
     }
     /// <p>A list of the projects that you want Amazon Rekognition Custom Labels to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.</p>
-    pub fn set_project_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.project_names = input; self
+    pub fn set_project_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.project_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeProjectsInput`](crate::operation::describe_projects::DescribeProjectsInput).
-    pub fn build(self) -> Result<crate::operation::describe_projects::DescribeProjectsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_projects::DescribeProjectsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                project_names: self.project_names
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_projects::DescribeProjectsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_projects::DescribeProjectsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            project_names: self.project_names,
+        })
     }
 }
-

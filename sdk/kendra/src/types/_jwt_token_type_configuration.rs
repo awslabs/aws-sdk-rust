@@ -3,7 +3,7 @@
 /// <p>Provides the configuration information for the JWT token type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JwtTokenTypeConfiguration  {
+pub struct JwtTokenTypeConfiguration {
     /// <p>The location of the key.</p>
     #[doc(hidden)]
     pub key_location: std::option::Option<crate::types::KeyLocation>,
@@ -28,31 +28,31 @@ pub struct JwtTokenTypeConfiguration  {
 }
 impl JwtTokenTypeConfiguration {
     /// <p>The location of the key.</p>
-    pub fn key_location(&self) -> std::option::Option<& crate::types::KeyLocation> {
+    pub fn key_location(&self) -> std::option::Option<&crate::types::KeyLocation> {
         self.key_location.as_ref()
     }
     /// <p>The signing key URL.</p>
-    pub fn url(&self) -> std::option::Option<& str> {
+    pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
-    pub fn secret_manager_arn(&self) -> std::option::Option<& str> {
+    pub fn secret_manager_arn(&self) -> std::option::Option<&str> {
         self.secret_manager_arn.as_deref()
     }
     /// <p>The user name attribute field.</p>
-    pub fn user_name_attribute_field(&self) -> std::option::Option<& str> {
+    pub fn user_name_attribute_field(&self) -> std::option::Option<&str> {
         self.user_name_attribute_field.as_deref()
     }
     /// <p>The group attribute field.</p>
-    pub fn group_attribute_field(&self) -> std::option::Option<& str> {
+    pub fn group_attribute_field(&self) -> std::option::Option<&str> {
         self.group_attribute_field.as_deref()
     }
     /// <p>The issuer of the token.</p>
-    pub fn issuer(&self) -> std::option::Option<& str> {
+    pub fn issuer(&self) -> std::option::Option<&str> {
         self.issuer.as_deref()
     }
     /// <p>The regular expression that identifies the claim.</p>
-    pub fn claim_regex(&self) -> std::option::Option<& str> {
+    pub fn claim_regex(&self) -> std::option::Option<&str> {
         self.claim_regex.as_deref()
     }
 }
@@ -82,8 +82,12 @@ impl JwtTokenTypeConfigurationBuilder {
         self
     }
     /// <p>The location of the key.</p>
-    pub fn set_key_location(mut self, input: std::option::Option<crate::types::KeyLocation>) -> Self {
-        self.key_location = input; self
+    pub fn set_key_location(
+        mut self,
+        input: std::option::Option<crate::types::KeyLocation>,
+    ) -> Self {
+        self.key_location = input;
+        self
     }
     /// <p>The signing key URL.</p>
     pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +96,8 @@ impl JwtTokenTypeConfigurationBuilder {
     }
     /// <p>The signing key URL.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input; self
+        self.url = input;
+        self
     }
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
     pub fn secret_manager_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +105,12 @@ impl JwtTokenTypeConfigurationBuilder {
         self
     }
     /// <p>The Amazon Resource Name (arn) of the secret.</p>
-    pub fn set_secret_manager_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_manager_arn = input; self
+    pub fn set_secret_manager_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.secret_manager_arn = input;
+        self
     }
     /// <p>The user name attribute field.</p>
     pub fn user_name_attribute_field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +118,12 @@ impl JwtTokenTypeConfigurationBuilder {
         self
     }
     /// <p>The user name attribute field.</p>
-    pub fn set_user_name_attribute_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name_attribute_field = input; self
+    pub fn set_user_name_attribute_field(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.user_name_attribute_field = input;
+        self
     }
     /// <p>The group attribute field.</p>
     pub fn group_attribute_field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +131,12 @@ impl JwtTokenTypeConfigurationBuilder {
         self
     }
     /// <p>The group attribute field.</p>
-    pub fn set_group_attribute_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_attribute_field = input; self
+    pub fn set_group_attribute_field(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.group_attribute_field = input;
+        self
     }
     /// <p>The issuer of the token.</p>
     pub fn issuer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +145,8 @@ impl JwtTokenTypeConfigurationBuilder {
     }
     /// <p>The issuer of the token.</p>
     pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.issuer = input; self
+        self.issuer = input;
+        self
     }
     /// <p>The regular expression that identifies the claim.</p>
     pub fn claim_regex(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,26 +155,19 @@ impl JwtTokenTypeConfigurationBuilder {
     }
     /// <p>The regular expression that identifies the claim.</p>
     pub fn set_claim_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.claim_regex = input; self
+        self.claim_regex = input;
+        self
     }
     /// Consumes the builder and constructs a [`JwtTokenTypeConfiguration`](crate::types::JwtTokenTypeConfiguration).
     pub fn build(self) -> crate::types::JwtTokenTypeConfiguration {
         crate::types::JwtTokenTypeConfiguration {
-            key_location: self.key_location
-            ,
-            url: self.url
-            ,
-            secret_manager_arn: self.secret_manager_arn
-            ,
-            user_name_attribute_field: self.user_name_attribute_field
-            ,
-            group_attribute_field: self.group_attribute_field
-            ,
-            issuer: self.issuer
-            ,
-            claim_regex: self.claim_regex
-            ,
+            key_location: self.key_location,
+            url: self.url,
+            secret_manager_arn: self.secret_manager_arn,
+            user_name_attribute_field: self.user_name_attribute_field,
+            group_attribute_field: self.group_attribute_field,
+            issuer: self.issuer,
+            claim_regex: self.claim_regex,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDocumentClassificationJobsInput  {
+pub struct ListDocumentClassificationJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
     #[doc(hidden)]
     pub filter: std::option::Option<crate::types::DocumentClassificationJobFilter>,
@@ -15,11 +15,11 @@ pub struct ListDocumentClassificationJobsInput  {
 }
 impl ListDocumentClassificationJobsInput {
     /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::types::DocumentClassificationJobFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::types::DocumentClassificationJobFilter> {
         self.filter.as_ref()
     }
     /// <p>Identifies the next page of results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
@@ -29,7 +29,7 @@ impl ListDocumentClassificationJobsInput {
 }
 impl ListDocumentClassificationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDocumentClassificationJobsInput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput).
-    pub fn builder() -> crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsInputBuilder {
+    pub fn builder() -> crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsInputBuilder{
         crate::operation::list_document_classification_jobs::builders::ListDocumentClassificationJobsInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl ListDocumentClassificationJobsInputBuilder {
         self
     }
     /// <p>Filters the jobs that are returned. You can filter jobs on their names, status, or the date and time that they were submitted. You can only set one filter at a time.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::DocumentClassificationJobFilter>) -> Self {
-        self.filter = input; self
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::DocumentClassificationJobFilter>,
+    ) -> Self {
+        self.filter = input;
+        self
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +63,8 @@ impl ListDocumentClassificationJobsInputBuilder {
     }
     /// <p>Identifies the next page of results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,10 +73,16 @@ impl ListDocumentClassificationJobsInputBuilder {
     }
     /// <p>The maximum number of results to return in each page. The default is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDocumentClassificationJobsInput`](crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_document_classification_jobs::ListDocumentClassificationJobsInput {
                 filter: self.filter
@@ -84,4 +95,3 @@ impl ListDocumentClassificationJobsInputBuilder {
         )
     }
 }
-

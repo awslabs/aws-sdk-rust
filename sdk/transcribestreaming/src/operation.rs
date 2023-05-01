@@ -9,4 +9,3 @@ pub mod start_medical_stream_transcription;
 
 /// Types for the `StartStreamTranscription` operation.
 pub mod start_stream_transcription;
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeResourceGroupsInput  {
+pub struct DescribeResourceGroupsInput {
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
     #[doc(hidden)]
     pub resource_group_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeResourceGroupsInput {
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
-    pub fn resource_group_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resource_group_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_group_arns.as_deref()
     }
 }
 impl DescribeResourceGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceGroupsInput`](crate::operation::describe_resource_groups::DescribeResourceGroupsInput).
-    pub fn builder() -> crate::operation::describe_resource_groups::builders::DescribeResourceGroupsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_resource_groups::builders::DescribeResourceGroupsInputBuilder
+    {
         crate::operation::describe_resource_groups::builders::DescribeResourceGroupsInputBuilder::default()
     }
 }
@@ -34,22 +36,29 @@ impl DescribeResourceGroupsInputBuilder {
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
     pub fn resource_group_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_group_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.resource_group_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.resource_group_arns = Some(v);
+        self
     }
     /// <p>The ARN that specifies the resource group that you want to describe.</p>
-    pub fn set_resource_group_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resource_group_arns = input; self
+    pub fn set_resource_group_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resource_group_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeResourceGroupsInput`](crate::operation::describe_resource_groups::DescribeResourceGroupsInput).
-    pub fn build(self) -> Result<crate::operation::describe_resource_groups::DescribeResourceGroupsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_resource_groups::DescribeResourceGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_resource_groups::DescribeResourceGroupsInput {
-                resource_group_arns: self.resource_group_arns
-                ,
-            }
+                resource_group_arns: self.resource_group_arns,
+            },
         )
     }
 }
-

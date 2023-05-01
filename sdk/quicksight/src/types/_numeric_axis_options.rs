@@ -3,7 +3,7 @@
 /// <p>The options for an axis with a numeric field.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NumericAxisOptions  {
+pub struct NumericAxisOptions {
     /// <p>The scale setup of a numeric axis.</p>
     #[doc(hidden)]
     pub scale: std::option::Option<crate::types::AxisScale>,
@@ -13,11 +13,11 @@ pub struct NumericAxisOptions  {
 }
 impl NumericAxisOptions {
     /// <p>The scale setup of a numeric axis.</p>
-    pub fn scale(&self) -> std::option::Option<& crate::types::AxisScale> {
+    pub fn scale(&self) -> std::option::Option<&crate::types::AxisScale> {
         self.scale.as_ref()
     }
     /// <p>The range setup of a numeric axis.</p>
-    pub fn range(&self) -> std::option::Option<& crate::types::AxisDisplayRange> {
+    pub fn range(&self) -> std::option::Option<&crate::types::AxisDisplayRange> {
         self.range.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl NumericAxisOptionsBuilder {
     }
     /// <p>The scale setup of a numeric axis.</p>
     pub fn set_scale(mut self, input: std::option::Option<crate::types::AxisScale>) -> Self {
-        self.scale = input; self
+        self.scale = input;
+        self
     }
     /// <p>The range setup of a numeric axis.</p>
     pub fn range(mut self, input: crate::types::AxisDisplayRange) -> Self {
@@ -52,16 +53,14 @@ impl NumericAxisOptionsBuilder {
     }
     /// <p>The range setup of a numeric axis.</p>
     pub fn set_range(mut self, input: std::option::Option<crate::types::AxisDisplayRange>) -> Self {
-        self.range = input; self
+        self.range = input;
+        self
     }
     /// Consumes the builder and constructs a [`NumericAxisOptions`](crate::types::NumericAxisOptions).
     pub fn build(self) -> crate::types::NumericAxisOptions {
         crate::types::NumericAxisOptions {
-            scale: self.scale
-            ,
-            range: self.range
-            ,
+            scale: self.scale,
+            range: self.range,
         }
     }
 }
-

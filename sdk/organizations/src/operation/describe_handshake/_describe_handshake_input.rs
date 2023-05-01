@@ -2,22 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHandshakeInput  {
-    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p> 
+pub struct DescribeHandshakeInput {
+    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     #[doc(hidden)]
     pub handshake_id: std::option::Option<std::string::String>,
 }
 impl DescribeHandshakeInput {
-    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p> 
+    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
-    pub fn handshake_id(&self) -> std::option::Option<& str> {
+    pub fn handshake_id(&self) -> std::option::Option<&str> {
         self.handshake_id.as_deref()
     }
 }
 impl DescribeHandshakeInput {
     /// Creates a new builder-style object to manufacture [`DescribeHandshakeInput`](crate::operation::describe_handshake::DescribeHandshakeInput).
-    pub fn builder() -> crate::operation::describe_handshake::builders::DescribeHandshakeInputBuilder {
+    pub fn builder() -> crate::operation::describe_handshake::builders::DescribeHandshakeInputBuilder
+    {
         crate::operation::describe_handshake::builders::DescribeHandshakeInputBuilder::default()
     }
 }
@@ -29,25 +30,29 @@ pub struct DescribeHandshakeInputBuilder {
     pub(crate) handshake_id: std::option::Option<std::string::String>,
 }
 impl DescribeHandshakeInputBuilder {
-    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p> 
+    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn handshake_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.handshake_id = Some(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p> 
+    /// <p>The unique identifier (ID) of the handshake that you want information about. You can get the ID from the original call to <code>InviteAccountToOrganization</code>, or from a call to <code>ListHandshakesForAccount</code> or <code>ListHandshakesForOrganization</code>.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
     pub fn set_handshake_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.handshake_id = input; self
+        self.handshake_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeHandshakeInput`](crate::operation::describe_handshake::DescribeHandshakeInput).
-    pub fn build(self) -> Result<crate::operation::describe_handshake::DescribeHandshakeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_handshake::DescribeHandshakeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_handshake::DescribeHandshakeInput {
-                handshake_id: self.handshake_id
-                ,
-            }
+                handshake_id: self.handshake_id,
+            },
         )
     }
 }
-

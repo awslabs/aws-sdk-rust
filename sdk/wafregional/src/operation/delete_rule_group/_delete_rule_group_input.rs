@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleGroupInput  {
+pub struct DeleteRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     #[doc(hidden)]
     pub rule_group_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteRuleGroupInput  {
 }
 impl DeleteRuleGroupInput {
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
-    pub fn rule_group_id(&self) -> std::option::Option<& str> {
+    pub fn rule_group_id(&self) -> std::option::Option<&str> {
         self.rule_group_id.as_deref()
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<& str> {
+    pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteRuleGroupInputBuilder {
     }
     /// <p>The <code>RuleGroupId</code> of the <code>RuleGroup</code> that you want to delete. <code>RuleGroupId</code> is returned by <code>CreateRuleGroup</code> and by <code>ListRuleGroups</code>.</p>
     pub fn set_rule_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_group_id = input; self
+        self.rule_group_id = input;
+        self
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DeleteRuleGroupInputBuilder {
     }
     /// <p>The value returned by the most recent call to <code>GetChangeToken</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input; self
+        self.change_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRuleGroupInput`](crate::operation::delete_rule_group::DeleteRuleGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_rule_group::DeleteRuleGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_rule_group::DeleteRuleGroupInput {
-                rule_group_id: self.rule_group_id
-                ,
-                change_token: self.change_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_rule_group::DeleteRuleGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_rule_group::DeleteRuleGroupInput {
+            rule_group_id: self.rule_group_id,
+            change_token: self.change_token,
+        })
     }
 }
-

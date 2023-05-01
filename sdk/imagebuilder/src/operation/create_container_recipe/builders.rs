@@ -4,57 +4,80 @@ pub use crate::operation::create_container_recipe::_create_container_recipe_outp
 pub use crate::operation::create_container_recipe::_create_container_recipe_input::CreateContainerRecipeInputBuilder;
 
 /// Fluent builder constructing a request to `CreateContainerRecipe`.
-/// 
+///
 /// <p>Creates a new container recipe. Container recipes define how images are configured, tested, and assessed.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateContainerRecipeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_container_recipe::builders::CreateContainerRecipeInputBuilder,
+    inner: crate::operation::create_container_recipe::builders::CreateContainerRecipeInputBuilder,
 }
-impl CreateContainerRecipeFluentBuilder  {
+impl CreateContainerRecipeFluentBuilder {
     /// Creates a new `CreateContainerRecipe`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_container_recipe::CreateContainerRecipe, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_container_recipe::CreateContainerRecipeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_container_recipe::CreateContainerRecipeOutput, aws_smithy_http::result::SdkError<crate::operation::create_container_recipe::CreateContainerRecipeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_container_recipe::CreateContainerRecipe,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_container_recipe::CreateContainerRecipeError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_container_recipe::CreateContainerRecipeOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_container_recipe::CreateContainerRecipeError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The type of container to create.</p>
     pub fn container_type(mut self, input: crate::types::ContainerType) -> Self {
         self.inner = self.inner.container_type(input);
         self
     }
     /// <p>The type of container to create.</p>
-    pub fn set_container_type(mut self, input: std::option::Option<crate::types::ContainerType>) -> Self {
+    pub fn set_container_type(
+        mut self,
+        input: std::option::Option<crate::types::ContainerType>,
+    ) -> Self {
         self.inner = self.inner.set_container_type(input);
         self
     }
@@ -78,7 +101,7 @@ impl CreateContainerRecipeFluentBuilder  {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note> 
+    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -90,15 +113,15 @@ impl CreateContainerRecipeFluentBuilder  {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.semantic_version(input.into());
         self
     }
-    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note> 
+    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p> <note>
     /// <p>The semantic version has four nodes: <major>
     /// .
     /// <minor>
@@ -110,9 +133,9 @@ impl CreateContainerRecipeFluentBuilder  {
     /// </build>
     /// </patch>
     /// </minor>
-    /// </major></p> 
-    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p> 
-    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p> 
+    /// </major></p>
+    /// <p> <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the build number to the fourth node.</p>
+    /// <p> <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or a date, such as 2021.01.01.</p>
     /// </note>
     pub fn set_semantic_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_semantic_version(input);
@@ -128,7 +151,10 @@ impl CreateContainerRecipeFluentBuilder  {
         self
     }
     /// <p>Components for build and test that are included in the container recipe. Recipes require a minimum of one build component, and can have a maximum of 20 build and test components in any combination.</p>
-    pub fn set_components(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComponentConfiguration>>) -> Self {
+    pub fn set_components(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ComponentConfiguration>>,
+    ) -> Self {
         self.inner = self.inner.set_components(input);
         self
     }
@@ -138,7 +164,10 @@ impl CreateContainerRecipeFluentBuilder  {
         self
     }
     /// <p>A group of options that can be used to configure an instance for building and testing container images.</p>
-    pub fn set_instance_configuration(mut self, input: std::option::Option<crate::types::InstanceConfiguration>) -> Self {
+    pub fn set_instance_configuration(
+        mut self,
+        input: std::option::Option<crate::types::InstanceConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_instance_configuration(input);
         self
     }
@@ -148,7 +177,10 @@ impl CreateContainerRecipeFluentBuilder  {
         self
     }
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
-    pub fn set_dockerfile_template_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dockerfile_template_data(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_dockerfile_template_data(input);
         self
     }
@@ -158,7 +190,10 @@ impl CreateContainerRecipeFluentBuilder  {
         self
     }
     /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
-    pub fn set_dockerfile_template_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dockerfile_template_uri(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_dockerfile_template_uri(input);
         self
     }
@@ -168,7 +203,10 @@ impl CreateContainerRecipeFluentBuilder  {
         self
     }
     /// <p>Specifies the operating system platform when you use a custom base image.</p>
-    pub fn set_platform_override(mut self, input: std::option::Option<crate::types::Platform>) -> Self {
+    pub fn set_platform_override(
+        mut self,
+        input: std::option::Option<crate::types::Platform>,
+    ) -> Self {
         self.inner = self.inner.set_platform_override(input);
         self
     }
@@ -178,7 +216,10 @@ impl CreateContainerRecipeFluentBuilder  {
         self
     }
     /// <p>Specifies the operating system version for the base image.</p>
-    pub fn set_image_os_version_override(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_image_os_version_override(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_image_os_version_override(input);
         self
     }
@@ -197,12 +238,21 @@ impl CreateContainerRecipeFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags that are attached to the container recipe.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -212,7 +262,10 @@ impl CreateContainerRecipeFluentBuilder  {
         self
     }
     /// <p>The working directory for use during build and test workflows.</p>
-    pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_working_directory(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_working_directory(input);
         self
     }
@@ -222,7 +275,10 @@ impl CreateContainerRecipeFluentBuilder  {
         self
     }
     /// <p>The destination repository for the container image.</p>
-    pub fn set_target_repository(mut self, input: std::option::Option<crate::types::TargetContainerRepository>) -> Self {
+    pub fn set_target_repository(
+        mut self,
+        input: std::option::Option<crate::types::TargetContainerRepository>,
+    ) -> Self {
         self.inner = self.inner.set_target_repository(input);
         self
     }
@@ -247,4 +303,3 @@ impl CreateContainerRecipeFluentBuilder  {
         self
     }
 }
-

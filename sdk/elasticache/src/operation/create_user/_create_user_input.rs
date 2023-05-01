@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateUserInput  {
+pub struct CreateUserInput {
     /// <p>The ID of the user.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -30,23 +30,23 @@ pub struct CreateUserInput  {
 }
 impl CreateUserInput {
     /// <p>The ID of the user.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>The username of the user.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
     /// <p>The current supported value is Redis. </p>
-    pub fn engine(&self) -> std::option::Option<& str> {
+    pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
-    pub fn passwords(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn passwords(&self) -> std::option::Option<&[std::string::String]> {
         self.passwords.as_deref()
     }
     /// <p>Access permissions string used for this user.</p>
-    pub fn access_string(&self) -> std::option::Option<& str> {
+    pub fn access_string(&self) -> std::option::Option<&str> {
         self.access_string.as_deref()
     }
     /// <p>Indicates a password is not required for this user.</p>
@@ -54,11 +54,11 @@ impl CreateUserInput {
         self.no_password_required
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Specifies how to authenticate the user.</p>
-    pub fn authentication_mode(&self) -> std::option::Option<& crate::types::AuthenticationMode> {
+    pub fn authentication_mode(&self) -> std::option::Option<&crate::types::AuthenticationMode> {
         self.authentication_mode.as_ref()
     }
 }
@@ -90,7 +90,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The ID of the user.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>The username of the user.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +100,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The username of the user.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// <p>The current supported value is Redis. </p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +110,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The current supported value is Redis. </p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input; self
+        self.engine = input;
+        self
     }
     /// Appends an item to `passwords`.
     ///
@@ -117,13 +120,17 @@ impl CreateUserInputBuilder {
     /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
     pub fn passwords(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.passwords.unwrap_or_default();
-                        v.push(input.into());
-                        self.passwords = Some(v);
-                        self
+        v.push(input.into());
+        self.passwords = Some(v);
+        self
     }
     /// <p>Passwords used for this user. You can create up to two passwords for each user.</p>
-    pub fn set_passwords(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.passwords = input; self
+    pub fn set_passwords(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.passwords = input;
+        self
     }
     /// <p>Access permissions string used for this user.</p>
     pub fn access_string(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +139,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>Access permissions string used for this user.</p>
     pub fn set_access_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_string = input; self
+        self.access_string = input;
+        self
     }
     /// <p>Indicates a password is not required for this user.</p>
     pub fn no_password_required(mut self, input: bool) -> Self {
@@ -141,7 +149,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>Indicates a password is not required for this user.</p>
     pub fn set_no_password_required(mut self, input: std::option::Option<bool>) -> Self {
-        self.no_password_required = input; self
+        self.no_password_required = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -150,13 +159,17 @@ impl CreateUserInputBuilder {
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Specifies how to authenticate the user.</p>
     pub fn authentication_mode(mut self, input: crate::types::AuthenticationMode) -> Self {
@@ -164,31 +177,29 @@ impl CreateUserInputBuilder {
         self
     }
     /// <p>Specifies how to authenticate the user.</p>
-    pub fn set_authentication_mode(mut self, input: std::option::Option<crate::types::AuthenticationMode>) -> Self {
-        self.authentication_mode = input; self
+    pub fn set_authentication_mode(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationMode>,
+    ) -> Self {
+        self.authentication_mode = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(self) -> Result<crate::operation::create_user::CreateUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_user::CreateUserInput {
-                user_id: self.user_id
-                ,
-                user_name: self.user_name
-                ,
-                engine: self.engine
-                ,
-                passwords: self.passwords
-                ,
-                access_string: self.access_string
-                ,
-                no_password_required: self.no_password_required
-                ,
-                tags: self.tags
-                ,
-                authentication_mode: self.authentication_mode
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_user::CreateUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_user::CreateUserInput {
+            user_id: self.user_id,
+            user_name: self.user_name,
+            engine: self.engine,
+            passwords: self.passwords,
+            access_string: self.access_string,
+            no_password_required: self.no_password_required,
+            tags: self.tags,
+            authentication_mode: self.authentication_mode,
+        })
     }
 }
-

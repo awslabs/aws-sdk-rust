@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateScheduleGroupOutput  {
+pub struct CreateScheduleGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     #[doc(hidden)]
     pub schedule_group_arn: std::option::Option<std::string::String>,
@@ -10,19 +10,21 @@ pub struct CreateScheduleGroupOutput  {
 }
 impl CreateScheduleGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    pub fn schedule_group_arn(&self) -> std::option::Option<& str> {
+    pub fn schedule_group_arn(&self) -> std::option::Option<&str> {
         self.schedule_group_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateScheduleGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateScheduleGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateScheduleGroupOutput`](crate::operation::create_schedule_group::CreateScheduleGroupOutput).
-    pub fn builder() -> crate::operation::create_schedule_group::builders::CreateScheduleGroupOutputBuilder {
-        crate::operation::create_schedule_group::builders::CreateScheduleGroupOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_schedule_group::builders::CreateScheduleGroupOutputBuilder {
+        crate::operation::create_schedule_group::builders::CreateScheduleGroupOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl CreateScheduleGroupOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule group.</p>
-    pub fn set_schedule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schedule_group_arn = input; self
+    pub fn set_schedule_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.schedule_group_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateScheduleGroupOutput`](crate::operation::create_schedule_group::CreateScheduleGroupOutput).
     pub fn build(self) -> crate::operation::create_schedule_group::CreateScheduleGroupOutput {
         crate::operation::create_schedule_group::CreateScheduleGroupOutput {
-            schedule_group_arn: self.schedule_group_arn
-            ,
+            schedule_group_arn: self.schedule_group_arn,
             _request_id: self._request_id,
         }
     }
 }
-

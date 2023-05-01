@@ -3,14 +3,14 @@
 /// <p>Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishFindingToSnsParams  {
+pub struct PublishFindingToSnsParams {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
     #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
 }
 impl PublishFindingToSnsParams {
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
-    pub fn topic_arn(&self) -> std::option::Option<& str> {
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl PublishFindingToSnsParamsBuilder {
     }
     /// <p>The ARN of the topic to which you want to publish the findings.</p>
     pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic_arn = input; self
+        self.topic_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`PublishFindingToSnsParams`](crate::types::PublishFindingToSnsParams).
     pub fn build(self) -> crate::types::PublishFindingToSnsParams {
         crate::types::PublishFindingToSnsParams {
-            topic_arn: self.topic_arn
-            ,
+            topic_arn: self.topic_arn,
         }
     }
 }
-

@@ -3,16 +3,16 @@
 /// <p>Specifies the TLS configuration for an integration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TlsConfig  {
-    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important> 
-    /// <p>Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle attacks.</p> 
+pub struct TlsConfig {
+    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+    /// <p>Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle attacks.</p>
     /// </important>
     #[doc(hidden)]
     pub insecure_skip_verification: bool,
 }
 impl TlsConfig {
-    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important> 
-    /// <p>Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle attacks.</p> 
+    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+    /// <p>Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle attacks.</p>
     /// </important>
     pub fn insecure_skip_verification(&self) -> bool {
         self.insecure_skip_verification
@@ -32,26 +32,24 @@ pub struct TlsConfigBuilder {
     pub(crate) insecure_skip_verification: std::option::Option<bool>,
 }
 impl TlsConfigBuilder {
-    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important> 
-    /// <p>Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle attacks.</p> 
+    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+    /// <p>Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle attacks.</p>
     /// </important>
     pub fn insecure_skip_verification(mut self, input: bool) -> Self {
         self.insecure_skip_verification = Some(input);
         self
     }
-    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important> 
-    /// <p>Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle attacks.</p> 
+    /// <p>Specifies whether or not API Gateway skips verification that the certificate for an integration endpoint is issued by a supported certificate authority. This isn’t recommended, but it enables you to use certificates that are signed by private certificate authorities, or certificates that are self-signed. If enabled, API Gateway still performs basic certificate validation, which includes checking the certificate's expiration date, hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code> and <code>HTTP_PROXY</code> integrations.</p> <important>
+    /// <p>Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>, you increase the risk of man-in-the-middle attacks.</p>
     /// </important>
     pub fn set_insecure_skip_verification(mut self, input: std::option::Option<bool>) -> Self {
-        self.insecure_skip_verification = input; self
+        self.insecure_skip_verification = input;
+        self
     }
     /// Consumes the builder and constructs a [`TlsConfig`](crate::types::TlsConfig).
     pub fn build(self) -> crate::types::TlsConfig {
         crate::types::TlsConfig {
-            insecure_skip_verification: self.insecure_skip_verification
-                .unwrap_or_default()
-            ,
+            insecure_skip_verification: self.insecure_skip_verification.unwrap_or_default(),
         }
     }
 }
-

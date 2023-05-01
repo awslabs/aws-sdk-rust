@@ -3,7 +3,7 @@
 /// Eac3 Settings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Eac3Settings  {
+pub struct Eac3Settings {
     /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
     #[doc(hidden)]
     pub attenuation_control: std::option::Option<crate::types::Eac3AttenuationControl>,
@@ -67,7 +67,9 @@ pub struct Eac3Settings  {
 }
 impl Eac3Settings {
     /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
-    pub fn attenuation_control(&self) -> std::option::Option<& crate::types::Eac3AttenuationControl> {
+    pub fn attenuation_control(
+        &self,
+    ) -> std::option::Option<&crate::types::Eac3AttenuationControl> {
         self.attenuation_control.as_ref()
     }
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
@@ -75,15 +77,15 @@ impl Eac3Settings {
         self.bitrate
     }
     /// Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
-    pub fn bitstream_mode(&self) -> std::option::Option<& crate::types::Eac3BitstreamMode> {
+    pub fn bitstream_mode(&self) -> std::option::Option<&crate::types::Eac3BitstreamMode> {
         self.bitstream_mode.as_ref()
     }
     /// Dolby Digital Plus coding mode. Determines number of channels.
-    pub fn coding_mode(&self) -> std::option::Option<& crate::types::Eac3CodingMode> {
+    pub fn coding_mode(&self) -> std::option::Option<&crate::types::Eac3CodingMode> {
         self.coding_mode.as_ref()
     }
     /// When set to enabled, activates a DC highpass filter for all input channels.
-    pub fn dc_filter(&self) -> std::option::Option<& crate::types::Eac3DcFilter> {
+    pub fn dc_filter(&self) -> std::option::Option<&crate::types::Eac3DcFilter> {
         self.dc_filter.as_ref()
     }
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
@@ -91,19 +93,19 @@ impl Eac3Settings {
         self.dialnorm
     }
     /// Sets the Dolby dynamic range compression profile.
-    pub fn drc_line(&self) -> std::option::Option<& crate::types::Eac3DrcLine> {
+    pub fn drc_line(&self) -> std::option::Option<&crate::types::Eac3DrcLine> {
         self.drc_line.as_ref()
     }
     /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
-    pub fn drc_rf(&self) -> std::option::Option<& crate::types::Eac3DrcRf> {
+    pub fn drc_rf(&self) -> std::option::Option<&crate::types::Eac3DrcRf> {
         self.drc_rf.as_ref()
     }
     /// When encoding 3/2 audio, setting to lfe enables the LFE channel
-    pub fn lfe_control(&self) -> std::option::Option<& crate::types::Eac3LfeControl> {
+    pub fn lfe_control(&self) -> std::option::Option<&crate::types::Eac3LfeControl> {
         self.lfe_control.as_ref()
     }
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with codingMode32 coding mode.
-    pub fn lfe_filter(&self) -> std::option::Option<& crate::types::Eac3LfeFilter> {
+    pub fn lfe_filter(&self) -> std::option::Option<&crate::types::Eac3LfeFilter> {
         self.lfe_filter.as_ref()
     }
     /// Left only/Right only center mix level. Only used for 3/2 coding mode.
@@ -123,27 +125,29 @@ impl Eac3Settings {
         self.lt_rt_surround_mix_level
     }
     /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    pub fn metadata_control(&self) -> std::option::Option<& crate::types::Eac3MetadataControl> {
+    pub fn metadata_control(&self) -> std::option::Option<&crate::types::Eac3MetadataControl> {
         self.metadata_control.as_ref()
     }
     /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
-    pub fn passthrough_control(&self) -> std::option::Option<& crate::types::Eac3PassthroughControl> {
+    pub fn passthrough_control(
+        &self,
+    ) -> std::option::Option<&crate::types::Eac3PassthroughControl> {
         self.passthrough_control.as_ref()
     }
     /// When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.
-    pub fn phase_control(&self) -> std::option::Option<& crate::types::Eac3PhaseControl> {
+    pub fn phase_control(&self) -> std::option::Option<&crate::types::Eac3PhaseControl> {
         self.phase_control.as_ref()
     }
     /// Stereo downmix preference. Only used for 3/2 coding mode.
-    pub fn stereo_downmix(&self) -> std::option::Option<& crate::types::Eac3StereoDownmix> {
+    pub fn stereo_downmix(&self) -> std::option::Option<&crate::types::Eac3StereoDownmix> {
         self.stereo_downmix.as_ref()
     }
     /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
-    pub fn surround_ex_mode(&self) -> std::option::Option<& crate::types::Eac3SurroundExMode> {
+    pub fn surround_ex_mode(&self) -> std::option::Option<&crate::types::Eac3SurroundExMode> {
         self.surround_ex_mode.as_ref()
     }
     /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
-    pub fn surround_mode(&self) -> std::option::Option<& crate::types::Eac3SurroundMode> {
+    pub fn surround_mode(&self) -> std::option::Option<&crate::types::Eac3SurroundMode> {
         self.surround_mode.as_ref()
     }
 }
@@ -186,8 +190,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.
-    pub fn set_attenuation_control(mut self, input: std::option::Option<crate::types::Eac3AttenuationControl>) -> Self {
-        self.attenuation_control = input; self
+    pub fn set_attenuation_control(
+        mut self,
+        input: std::option::Option<crate::types::Eac3AttenuationControl>,
+    ) -> Self {
+        self.attenuation_control = input;
+        self
     }
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     pub fn bitrate(mut self, input: f64) -> Self {
@@ -196,7 +204,8 @@ impl Eac3SettingsBuilder {
     }
     /// Average bitrate in bits/second. Valid bitrates depend on the coding mode.
     pub fn set_bitrate(mut self, input: std::option::Option<f64>) -> Self {
-        self.bitrate = input; self
+        self.bitrate = input;
+        self
     }
     /// Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
     pub fn bitstream_mode(mut self, input: crate::types::Eac3BitstreamMode) -> Self {
@@ -204,8 +213,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.
-    pub fn set_bitstream_mode(mut self, input: std::option::Option<crate::types::Eac3BitstreamMode>) -> Self {
-        self.bitstream_mode = input; self
+    pub fn set_bitstream_mode(
+        mut self,
+        input: std::option::Option<crate::types::Eac3BitstreamMode>,
+    ) -> Self {
+        self.bitstream_mode = input;
+        self
     }
     /// Dolby Digital Plus coding mode. Determines number of channels.
     pub fn coding_mode(mut self, input: crate::types::Eac3CodingMode) -> Self {
@@ -213,8 +226,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Dolby Digital Plus coding mode. Determines number of channels.
-    pub fn set_coding_mode(mut self, input: std::option::Option<crate::types::Eac3CodingMode>) -> Self {
-        self.coding_mode = input; self
+    pub fn set_coding_mode(
+        mut self,
+        input: std::option::Option<crate::types::Eac3CodingMode>,
+    ) -> Self {
+        self.coding_mode = input;
+        self
     }
     /// When set to enabled, activates a DC highpass filter for all input channels.
     pub fn dc_filter(mut self, input: crate::types::Eac3DcFilter) -> Self {
@@ -223,7 +240,8 @@ impl Eac3SettingsBuilder {
     }
     /// When set to enabled, activates a DC highpass filter for all input channels.
     pub fn set_dc_filter(mut self, input: std::option::Option<crate::types::Eac3DcFilter>) -> Self {
-        self.dc_filter = input; self
+        self.dc_filter = input;
+        self
     }
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
     pub fn dialnorm(mut self, input: i32) -> Self {
@@ -232,7 +250,8 @@ impl Eac3SettingsBuilder {
     }
     /// Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.
     pub fn set_dialnorm(mut self, input: std::option::Option<i32>) -> Self {
-        self.dialnorm = input; self
+        self.dialnorm = input;
+        self
     }
     /// Sets the Dolby dynamic range compression profile.
     pub fn drc_line(mut self, input: crate::types::Eac3DrcLine) -> Self {
@@ -241,7 +260,8 @@ impl Eac3SettingsBuilder {
     }
     /// Sets the Dolby dynamic range compression profile.
     pub fn set_drc_line(mut self, input: std::option::Option<crate::types::Eac3DrcLine>) -> Self {
-        self.drc_line = input; self
+        self.drc_line = input;
+        self
     }
     /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
     pub fn drc_rf(mut self, input: crate::types::Eac3DrcRf) -> Self {
@@ -250,7 +270,8 @@ impl Eac3SettingsBuilder {
     }
     /// Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.
     pub fn set_drc_rf(mut self, input: std::option::Option<crate::types::Eac3DrcRf>) -> Self {
-        self.drc_rf = input; self
+        self.drc_rf = input;
+        self
     }
     /// When encoding 3/2 audio, setting to lfe enables the LFE channel
     pub fn lfe_control(mut self, input: crate::types::Eac3LfeControl) -> Self {
@@ -258,8 +279,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When encoding 3/2 audio, setting to lfe enables the LFE channel
-    pub fn set_lfe_control(mut self, input: std::option::Option<crate::types::Eac3LfeControl>) -> Self {
-        self.lfe_control = input; self
+    pub fn set_lfe_control(
+        mut self,
+        input: std::option::Option<crate::types::Eac3LfeControl>,
+    ) -> Self {
+        self.lfe_control = input;
+        self
     }
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with codingMode32 coding mode.
     pub fn lfe_filter(mut self, input: crate::types::Eac3LfeFilter) -> Self {
@@ -267,8 +292,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with codingMode32 coding mode.
-    pub fn set_lfe_filter(mut self, input: std::option::Option<crate::types::Eac3LfeFilter>) -> Self {
-        self.lfe_filter = input; self
+    pub fn set_lfe_filter(
+        mut self,
+        input: std::option::Option<crate::types::Eac3LfeFilter>,
+    ) -> Self {
+        self.lfe_filter = input;
+        self
     }
     /// Left only/Right only center mix level. Only used for 3/2 coding mode.
     pub fn lo_ro_center_mix_level(mut self, input: f64) -> Self {
@@ -277,7 +306,8 @@ impl Eac3SettingsBuilder {
     }
     /// Left only/Right only center mix level. Only used for 3/2 coding mode.
     pub fn set_lo_ro_center_mix_level(mut self, input: std::option::Option<f64>) -> Self {
-        self.lo_ro_center_mix_level = input; self
+        self.lo_ro_center_mix_level = input;
+        self
     }
     /// Left only/Right only surround mix level. Only used for 3/2 coding mode.
     pub fn lo_ro_surround_mix_level(mut self, input: f64) -> Self {
@@ -286,7 +316,8 @@ impl Eac3SettingsBuilder {
     }
     /// Left only/Right only surround mix level. Only used for 3/2 coding mode.
     pub fn set_lo_ro_surround_mix_level(mut self, input: std::option::Option<f64>) -> Self {
-        self.lo_ro_surround_mix_level = input; self
+        self.lo_ro_surround_mix_level = input;
+        self
     }
     /// Left total/Right total center mix level. Only used for 3/2 coding mode.
     pub fn lt_rt_center_mix_level(mut self, input: f64) -> Self {
@@ -295,7 +326,8 @@ impl Eac3SettingsBuilder {
     }
     /// Left total/Right total center mix level. Only used for 3/2 coding mode.
     pub fn set_lt_rt_center_mix_level(mut self, input: std::option::Option<f64>) -> Self {
-        self.lt_rt_center_mix_level = input; self
+        self.lt_rt_center_mix_level = input;
+        self
     }
     /// Left total/Right total surround mix level. Only used for 3/2 coding mode.
     pub fn lt_rt_surround_mix_level(mut self, input: f64) -> Self {
@@ -304,7 +336,8 @@ impl Eac3SettingsBuilder {
     }
     /// Left total/Right total surround mix level. Only used for 3/2 coding mode.
     pub fn set_lt_rt_surround_mix_level(mut self, input: std::option::Option<f64>) -> Self {
-        self.lt_rt_surround_mix_level = input; self
+        self.lt_rt_surround_mix_level = input;
+        self
     }
     /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
     pub fn metadata_control(mut self, input: crate::types::Eac3MetadataControl) -> Self {
@@ -312,8 +345,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.
-    pub fn set_metadata_control(mut self, input: std::option::Option<crate::types::Eac3MetadataControl>) -> Self {
-        self.metadata_control = input; self
+    pub fn set_metadata_control(
+        mut self,
+        input: std::option::Option<crate::types::Eac3MetadataControl>,
+    ) -> Self {
+        self.metadata_control = input;
+        self
     }
     /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
     pub fn passthrough_control(mut self, input: crate::types::Eac3PassthroughControl) -> Self {
@@ -321,8 +358,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.
-    pub fn set_passthrough_control(mut self, input: std::option::Option<crate::types::Eac3PassthroughControl>) -> Self {
-        self.passthrough_control = input; self
+    pub fn set_passthrough_control(
+        mut self,
+        input: std::option::Option<crate::types::Eac3PassthroughControl>,
+    ) -> Self {
+        self.passthrough_control = input;
+        self
     }
     /// When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.
     pub fn phase_control(mut self, input: crate::types::Eac3PhaseControl) -> Self {
@@ -330,8 +371,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.
-    pub fn set_phase_control(mut self, input: std::option::Option<crate::types::Eac3PhaseControl>) -> Self {
-        self.phase_control = input; self
+    pub fn set_phase_control(
+        mut self,
+        input: std::option::Option<crate::types::Eac3PhaseControl>,
+    ) -> Self {
+        self.phase_control = input;
+        self
     }
     /// Stereo downmix preference. Only used for 3/2 coding mode.
     pub fn stereo_downmix(mut self, input: crate::types::Eac3StereoDownmix) -> Self {
@@ -339,8 +384,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// Stereo downmix preference. Only used for 3/2 coding mode.
-    pub fn set_stereo_downmix(mut self, input: std::option::Option<crate::types::Eac3StereoDownmix>) -> Self {
-        self.stereo_downmix = input; self
+    pub fn set_stereo_downmix(
+        mut self,
+        input: std::option::Option<crate::types::Eac3StereoDownmix>,
+    ) -> Self {
+        self.stereo_downmix = input;
+        self
     }
     /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
     pub fn surround_ex_mode(mut self, input: crate::types::Eac3SurroundExMode) -> Self {
@@ -348,8 +397,12 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.
-    pub fn set_surround_ex_mode(mut self, input: std::option::Option<crate::types::Eac3SurroundExMode>) -> Self {
-        self.surround_ex_mode = input; self
+    pub fn set_surround_ex_mode(
+        mut self,
+        input: std::option::Option<crate::types::Eac3SurroundExMode>,
+    ) -> Self {
+        self.surround_ex_mode = input;
+        self
     }
     /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
     pub fn surround_mode(mut self, input: crate::types::Eac3SurroundMode) -> Self {
@@ -357,59 +410,36 @@ impl Eac3SettingsBuilder {
         self
     }
     /// When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.
-    pub fn set_surround_mode(mut self, input: std::option::Option<crate::types::Eac3SurroundMode>) -> Self {
-        self.surround_mode = input; self
+    pub fn set_surround_mode(
+        mut self,
+        input: std::option::Option<crate::types::Eac3SurroundMode>,
+    ) -> Self {
+        self.surround_mode = input;
+        self
     }
     /// Consumes the builder and constructs a [`Eac3Settings`](crate::types::Eac3Settings).
     pub fn build(self) -> crate::types::Eac3Settings {
         crate::types::Eac3Settings {
-            attenuation_control: self.attenuation_control
-            ,
-            bitrate: self.bitrate
-                .unwrap_or_default()
-            ,
-            bitstream_mode: self.bitstream_mode
-            ,
-            coding_mode: self.coding_mode
-            ,
-            dc_filter: self.dc_filter
-            ,
-            dialnorm: self.dialnorm
-                .unwrap_or_default()
-            ,
-            drc_line: self.drc_line
-            ,
-            drc_rf: self.drc_rf
-            ,
-            lfe_control: self.lfe_control
-            ,
-            lfe_filter: self.lfe_filter
-            ,
-            lo_ro_center_mix_level: self.lo_ro_center_mix_level
-                .unwrap_or_default()
-            ,
-            lo_ro_surround_mix_level: self.lo_ro_surround_mix_level
-                .unwrap_or_default()
-            ,
-            lt_rt_center_mix_level: self.lt_rt_center_mix_level
-                .unwrap_or_default()
-            ,
-            lt_rt_surround_mix_level: self.lt_rt_surround_mix_level
-                .unwrap_or_default()
-            ,
-            metadata_control: self.metadata_control
-            ,
-            passthrough_control: self.passthrough_control
-            ,
-            phase_control: self.phase_control
-            ,
-            stereo_downmix: self.stereo_downmix
-            ,
-            surround_ex_mode: self.surround_ex_mode
-            ,
-            surround_mode: self.surround_mode
-            ,
+            attenuation_control: self.attenuation_control,
+            bitrate: self.bitrate.unwrap_or_default(),
+            bitstream_mode: self.bitstream_mode,
+            coding_mode: self.coding_mode,
+            dc_filter: self.dc_filter,
+            dialnorm: self.dialnorm.unwrap_or_default(),
+            drc_line: self.drc_line,
+            drc_rf: self.drc_rf,
+            lfe_control: self.lfe_control,
+            lfe_filter: self.lfe_filter,
+            lo_ro_center_mix_level: self.lo_ro_center_mix_level.unwrap_or_default(),
+            lo_ro_surround_mix_level: self.lo_ro_surround_mix_level.unwrap_or_default(),
+            lt_rt_center_mix_level: self.lt_rt_center_mix_level.unwrap_or_default(),
+            lt_rt_surround_mix_level: self.lt_rt_surround_mix_level.unwrap_or_default(),
+            metadata_control: self.metadata_control,
+            passthrough_control: self.passthrough_control,
+            phase_control: self.phase_control,
+            stereo_downmix: self.stereo_downmix,
+            surround_ex_mode: self.surround_ex_mode,
+            surround_mode: self.surround_mode,
         }
     }
 }
-

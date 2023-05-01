@@ -12,4 +12,3 @@ pub mod builders;
 
 /// Error types that Amazon Forecast Query Service can respond with.
 pub mod error;
-

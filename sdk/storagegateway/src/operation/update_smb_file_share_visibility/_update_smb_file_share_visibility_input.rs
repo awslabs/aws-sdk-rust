@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSmbFileShareVisibilityInput  {
+pub struct UpdateSmbFileShareVisibilityInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct UpdateSmbFileShareVisibilityInput  {
 }
 impl UpdateSmbFileShareVisibilityInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The shares on this gateway appear when listing shares.</p>
@@ -22,7 +22,7 @@ impl UpdateSmbFileShareVisibilityInput {
 }
 impl UpdateSmbFileShareVisibilityInput {
     /// Creates a new builder-style object to manufacture [`UpdateSmbFileShareVisibilityInput`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput).
-    pub fn builder() -> crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder {
+    pub fn builder() -> crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder{
         crate::operation::update_smb_file_share_visibility::builders::UpdateSmbFileShareVisibilityInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl UpdateSmbFileShareVisibilityInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// <p>The shares on this gateway appear when listing shares.</p>
     pub fn file_shares_visible(mut self, input: bool) -> Self {
@@ -51,18 +52,21 @@ impl UpdateSmbFileShareVisibilityInputBuilder {
     }
     /// <p>The shares on this gateway appear when listing shares.</p>
     pub fn set_file_shares_visible(mut self, input: std::option::Option<bool>) -> Self {
-        self.file_shares_visible = input; self
+        self.file_shares_visible = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSmbFileShareVisibilityInput`](crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput).
-    pub fn build(self) -> Result<crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityInput {
-                gateway_arn: self.gateway_arn
-                ,
-                file_shares_visible: self.file_shares_visible
-                ,
-            }
+                gateway_arn: self.gateway_arn,
+                file_shares_visible: self.file_shares_visible,
+            },
         )
     }
 }
-

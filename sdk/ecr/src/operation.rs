@@ -123,4 +123,3 @@ pub mod untag_resource;
 
 /// Types for the `UploadLayerPart` operation.
 pub mod upload_layer_part;
-

@@ -2,10 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDataQualityRuleRecommendationRunsOutput  {
+pub struct ListDataQualityRuleRecommendationRunsOutput {
     /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
     #[doc(hidden)]
-    pub runs: std::option::Option<std::vec::Vec<crate::types::DataQualityRuleRecommendationRunDescription>>,
+    pub runs: std::option::Option<
+        std::vec::Vec<crate::types::DataQualityRuleRecommendationRunDescription>,
+    >,
     /// <p>A pagination token, if more results are available.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +15,24 @@ pub struct ListDataQualityRuleRecommendationRunsOutput  {
 }
 impl ListDataQualityRuleRecommendationRunsOutput {
     /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
-    pub fn runs(&self) -> std::option::Option<& [crate::types::DataQualityRuleRecommendationRunDescription]> {
+    pub fn runs(
+        &self,
+    ) -> std::option::Option<&[crate::types::DataQualityRuleRecommendationRunDescription]> {
         self.runs.as_deref()
     }
     /// <p>A pagination token, if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDataQualityRuleRecommendationRunsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListDataQualityRuleRecommendationRunsOutput {
     /// Creates a new builder-style object to manufacture [`ListDataQualityRuleRecommendationRunsOutput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput).
-    pub fn builder() -> crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsOutputBuilder {
+    pub fn builder() -> crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsOutputBuilder{
         crate::operation::list_data_quality_rule_recommendation_runs::builders::ListDataQualityRuleRecommendationRunsOutputBuilder::default()
     }
 }
@@ -37,7 +41,9 @@ impl ListDataQualityRuleRecommendationRunsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListDataQualityRuleRecommendationRunsOutputBuilder {
-    pub(crate) runs: std::option::Option<std::vec::Vec<crate::types::DataQualityRuleRecommendationRunDescription>>,
+    pub(crate) runs: std::option::Option<
+        std::vec::Vec<crate::types::DataQualityRuleRecommendationRunDescription>,
+    >,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +53,24 @@ impl ListDataQualityRuleRecommendationRunsOutputBuilder {
     /// To override the contents of this collection use [`set_runs`](Self::set_runs).
     ///
     /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
-    pub fn runs(mut self, input: crate::types::DataQualityRuleRecommendationRunDescription) -> Self {
+    pub fn runs(
+        mut self,
+        input: crate::types::DataQualityRuleRecommendationRunDescription,
+    ) -> Self {
         let mut v = self.runs.unwrap_or_default();
-                        v.push(input);
-                        self.runs = Some(v);
-                        self
+        v.push(input);
+        self.runs = Some(v);
+        self
     }
     /// <p>A list of <code>DataQualityRuleRecommendationRunDescription</code> objects.</p>
-    pub fn set_runs(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataQualityRuleRecommendationRunDescription>>) -> Self {
-        self.runs = input; self
+    pub fn set_runs(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::DataQualityRuleRecommendationRunDescription>,
+        >,
+    ) -> Self {
+        self.runs = input;
+        self
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +79,20 @@ impl ListDataQualityRuleRecommendationRunsOutputBuilder {
     }
     /// <p>A pagination token, if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListDataQualityRuleRecommendationRunsOutput`](crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput).
-    pub fn build(self) -> crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput {
+    pub fn build(self) -> crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput{
         crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput {
             runs: self.runs
             ,
@@ -86,4 +102,3 @@ impl ListDataQualityRuleRecommendationRunsOutputBuilder {
         }
     }
 }
-

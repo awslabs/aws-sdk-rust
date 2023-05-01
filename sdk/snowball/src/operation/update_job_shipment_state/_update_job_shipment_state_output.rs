@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateJobShipmentStateOutput  {
+pub struct UpdateJobShipmentStateOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateJobShipmentStateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateJobShipmentStateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateJobShipmentStateOutput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput).
-    pub fn builder() -> crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateOutputBuilder
+    {
         crate::operation::update_job_shipment_state::builders::UpdateJobShipmentStateOutputBuilder::default()
     }
 }
@@ -25,19 +27,20 @@ pub struct UpdateJobShipmentStateOutputBuilder {
 }
 impl UpdateJobShipmentStateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateJobShipmentStateOutput`](crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput).
-    pub fn build(self) -> crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput {
         crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput {
             _request_id: self._request_id,
         }
     }
 }
-

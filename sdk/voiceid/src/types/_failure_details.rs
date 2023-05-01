@@ -3,7 +3,7 @@
 /// <p>Contains error details for a failed batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailureDetails  {
+pub struct FailureDetails {
     /// <p>An HTTP status code representing the nature of the error.</p>
     #[doc(hidden)]
     pub status_code: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl FailureDetails {
         self.status_code
     }
     /// <p>A description of the error that caused the batch job failure.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl FailureDetailsBuilder {
     }
     /// <p>An HTTP status code representing the nature of the error.</p>
     pub fn set_status_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.status_code = input; self
+        self.status_code = input;
+        self
     }
     /// <p>A description of the error that caused the batch job failure.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl FailureDetailsBuilder {
     }
     /// <p>A description of the error that caused the batch job failure.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`FailureDetails`](crate::types::FailureDetails).
     pub fn build(self) -> crate::types::FailureDetails {
         crate::types::FailureDetails {
-            status_code: self.status_code
-            ,
-            message: self.message
-            ,
+            status_code: self.status_code,
+            message: self.message,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowRunsInput  {
+pub struct GetWorkflowRunsInput {
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct GetWorkflowRunsInput  {
 }
 impl GetWorkflowRunsInput {
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
@@ -26,7 +26,7 @@ impl GetWorkflowRunsInput {
         self.include_graph
     }
     /// <p>The maximum size of the response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of workflow runs to be included in the response.</p>
@@ -58,7 +58,8 @@ impl GetWorkflowRunsInputBuilder {
     }
     /// <p>Name of the workflow whose metadata of runs should be returned.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
     pub fn include_graph(mut self, input: bool) -> Self {
@@ -67,7 +68,8 @@ impl GetWorkflowRunsInputBuilder {
     }
     /// <p>Specifies whether to include the workflow graph in response or not.</p>
     pub fn set_include_graph(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_graph = input; self
+        self.include_graph = input;
+        self
     }
     /// <p>The maximum size of the response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl GetWorkflowRunsInputBuilder {
     }
     /// <p>The maximum size of the response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of workflow runs to be included in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +88,21 @@ impl GetWorkflowRunsInputBuilder {
     }
     /// <p>The maximum number of workflow runs to be included in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetWorkflowRunsInput`](crate::operation::get_workflow_runs::GetWorkflowRunsInput).
-    pub fn build(self) -> Result<crate::operation::get_workflow_runs::GetWorkflowRunsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_workflow_runs::GetWorkflowRunsInput {
-                name: self.name
-                ,
-                include_graph: self.include_graph
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_workflow_runs::GetWorkflowRunsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_workflow_runs::GetWorkflowRunsInput {
+            name: self.name,
+            include_graph: self.include_graph,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

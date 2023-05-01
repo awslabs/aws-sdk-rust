@@ -4,63 +4,92 @@ pub use crate::operation::list_coverage_statistics::_list_coverage_statistics_ou
 pub use crate::operation::list_coverage_statistics::_list_coverage_statistics_input::ListCoverageStatisticsInputBuilder;
 
 /// Fluent builder constructing a request to `ListCoverageStatistics`.
-/// 
+///
 /// <p>Lists Amazon Inspector coverage statistics for your environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCoverageStatisticsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder,
+    inner: crate::operation::list_coverage_statistics::builders::ListCoverageStatisticsInputBuilder,
 }
-impl ListCoverageStatisticsFluentBuilder  {
+impl ListCoverageStatisticsFluentBuilder {
     /// Creates a new `ListCoverageStatistics`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_coverage_statistics::ListCoverageStatistics, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_coverage_statistics::ListCoverageStatisticsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput, aws_smithy_http::result::SdkError<crate::operation::list_coverage_statistics::ListCoverageStatisticsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_coverage_statistics::ListCoverageStatistics,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_coverage_statistics::ListCoverageStatisticsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_coverage_statistics::ListCoverageStatisticsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator {
-                                crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator
+    {
+        crate::operation::list_coverage_statistics::paginator::ListCoverageStatisticsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
     pub fn filter_criteria(mut self, input: crate::types::CoverageFilterCriteria) -> Self {
         self.inner = self.inner.filter_criteria(input);
         self
     }
     /// <p>An object that contains details on the filters to apply to the coverage data for your environment.</p>
-    pub fn set_filter_criteria(mut self, input: std::option::Option<crate::types::CoverageFilterCriteria>) -> Self {
+    pub fn set_filter_criteria(
+        mut self,
+        input: std::option::Option<crate::types::CoverageFilterCriteria>,
+    ) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
@@ -85,4 +114,3 @@ impl ListCoverageStatisticsFluentBuilder  {
         self
     }
 }
-

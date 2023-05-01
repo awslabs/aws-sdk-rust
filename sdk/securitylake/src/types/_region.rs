@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let region = unimplemented!();
 /// match region {
@@ -35,14 +35,22 @@
 /// Specifically, when `region` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Region::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Region {
     #[allow(missing_docs)] // documentation missing in model
     ApNortheast1,
@@ -59,51 +67,58 @@ pub enum Region {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Region {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ap-northeast-1" => Region::ApNortheast1,
-"ap-southeast-2" => Region::ApSoutheast2,
-"eu-central-1" => Region::EuCentral1,
-"eu-west-1" => Region::EuWest1,
-"us-east-1" => Region::UsEast1,
-"us-east-2" => Region::UsEast2,
-"us-west-2" => Region::UsWest2,
-other => Region::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Region {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Region::from(s))
-                }
-            }
-impl Region {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Region::ApNortheast1 => "ap-northeast-1",
-    Region::ApSoutheast2 => "ap-southeast-2",
-    Region::EuCentral1 => "eu-central-1",
-    Region::EuWest1 => "eu-west-1",
-    Region::UsEast1 => "us-east-1",
-    Region::UsEast2 => "us-east-2",
-    Region::UsWest2 => "us-west-2",
-    Region::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ap-northeast-1" => Region::ApNortheast1,
+            "ap-southeast-2" => Region::ApSoutheast2,
+            "eu-central-1" => Region::EuCentral1,
+            "eu-west-1" => Region::EuWest1,
+            "us-east-1" => Region::UsEast1,
+            "us-east-2" => Region::UsEast2,
+            "us-west-2" => Region::UsWest2,
+            other => Region::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ap-northeast-1", "ap-southeast-2", "eu-central-1", "eu-west-1", "us-east-1", "us-east-2", "us-west-2"]
-                }
-            }
-impl AsRef<str> for Region {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Region {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Region::from(s))
+    }
+}
+impl Region {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Region::ApNortheast1 => "ap-northeast-1",
+            Region::ApSoutheast2 => "ap-southeast-2",
+            Region::EuCentral1 => "eu-central-1",
+            Region::EuWest1 => "eu-west-1",
+            Region::UsEast1 => "us-east-1",
+            Region::UsEast2 => "us-east-2",
+            Region::UsWest2 => "us-west-2",
+            Region::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ap-northeast-1",
+            "ap-southeast-2",
+            "eu-central-1",
+            "eu-west-1",
+            "us-east-1",
+            "us-east-2",
+            "us-west-2",
+        ]
+    }
+}
+impl AsRef<str> for Region {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

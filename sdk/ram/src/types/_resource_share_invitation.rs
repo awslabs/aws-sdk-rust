@@ -3,7 +3,7 @@
 /// <p>Describes an invitation for an Amazon Web Services account to join a resource share.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceShareInvitation  {
+pub struct ResourceShareInvitation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation.</p>
     #[doc(hidden)]
     pub resource_share_invitation_arn: std::option::Option<std::string::String>,
@@ -28,47 +28,50 @@ pub struct ResourceShareInvitation  {
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
     #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
     #[doc(hidden)]
-    pub resource_share_associations: std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>,
+    pub resource_share_associations:
+        std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>,
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the IAM user or role that received the invitation.</p>
     #[doc(hidden)]
     pub receiver_arn: std::option::Option<std::string::String>,
 }
 impl ResourceShareInvitation {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation.</p>
-    pub fn resource_share_invitation_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_share_invitation_arn(&self) -> std::option::Option<&str> {
         self.resource_share_invitation_arn.as_deref()
     }
     /// <p>The name of the resource share.</p>
-    pub fn resource_share_name(&self) -> std::option::Option<& str> {
+    pub fn resource_share_name(&self) -> std::option::Option<&str> {
         self.resource_share_name.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
-    pub fn resource_share_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_share_arn(&self) -> std::option::Option<&str> {
         self.resource_share_arn.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
-    pub fn sender_account_id(&self) -> std::option::Option<& str> {
+    pub fn sender_account_id(&self) -> std::option::Option<&str> {
         self.sender_account_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
-    pub fn receiver_account_id(&self) -> std::option::Option<& str> {
+    pub fn receiver_account_id(&self) -> std::option::Option<&str> {
         self.receiver_account_id.as_deref()
     }
     /// <p>The date and time when the invitation was sent.</p>
-    pub fn invitation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn invitation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invitation_timestamp.as_ref()
     }
     /// <p>The current status of the invitation.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ResourceShareInvitationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ResourceShareInvitationStatus> {
         self.status.as_ref()
     }
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
     #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
-    pub fn resource_share_associations(&self) -> std::option::Option<& [crate::types::ResourceShareAssociation]> {
+    pub fn resource_share_associations(
+        &self,
+    ) -> std::option::Option<&[crate::types::ResourceShareAssociation]> {
         self.resource_share_associations.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the IAM user or role that received the invitation.</p>
-    pub fn receiver_arn(&self) -> std::option::Option<& str> {
+    pub fn receiver_arn(&self) -> std::option::Option<&str> {
         self.receiver_arn.as_deref()
     }
 }
@@ -90,7 +93,8 @@ pub struct ResourceShareInvitationBuilder {
     pub(crate) receiver_account_id: std::option::Option<std::string::String>,
     pub(crate) invitation_timestamp: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) status: std::option::Option<crate::types::ResourceShareInvitationStatus>,
-    pub(crate) resource_share_associations: std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>,
+    pub(crate) resource_share_associations:
+        std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>,
     pub(crate) receiver_arn: std::option::Option<std::string::String>,
 }
 impl ResourceShareInvitationBuilder {
@@ -100,8 +104,12 @@ impl ResourceShareInvitationBuilder {
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation.</p>
-    pub fn set_resource_share_invitation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_share_invitation_arn = input; self
+    pub fn set_resource_share_invitation_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_invitation_arn = input;
+        self
     }
     /// <p>The name of the resource share.</p>
     pub fn resource_share_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,8 +117,12 @@ impl ResourceShareInvitationBuilder {
         self
     }
     /// <p>The name of the resource share.</p>
-    pub fn set_resource_share_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_share_name = input; self
+    pub fn set_resource_share_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_name = input;
+        self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
     pub fn resource_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,8 +130,12 @@ impl ResourceShareInvitationBuilder {
         self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the resource share</p>
-    pub fn set_resource_share_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_share_arn = input; self
+    pub fn set_resource_share_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_share_arn = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
     pub fn sender_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,8 +143,12 @@ impl ResourceShareInvitationBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account that sent the invitation.</p>
-    pub fn set_sender_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sender_account_id = input; self
+    pub fn set_sender_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sender_account_id = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
     pub fn receiver_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,8 +156,12 @@ impl ResourceShareInvitationBuilder {
         self
     }
     /// <p>The ID of the Amazon Web Services account that received the invitation.</p>
-    pub fn set_receiver_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.receiver_account_id = input; self
+    pub fn set_receiver_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.receiver_account_id = input;
+        self
     }
     /// <p>The date and time when the invitation was sent.</p>
     pub fn invitation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -145,8 +169,12 @@ impl ResourceShareInvitationBuilder {
         self
     }
     /// <p>The date and time when the invitation was sent.</p>
-    pub fn set_invitation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.invitation_timestamp = input; self
+    pub fn set_invitation_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.invitation_timestamp = input;
+        self
     }
     /// <p>The current status of the invitation.</p>
     pub fn status(mut self, input: crate::types::ResourceShareInvitationStatus) -> Self {
@@ -154,8 +182,12 @@ impl ResourceShareInvitationBuilder {
         self
     }
     /// <p>The current status of the invitation.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ResourceShareInvitationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ResourceShareInvitationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Appends an item to `resource_share_associations`.
     ///
@@ -163,16 +195,23 @@ impl ResourceShareInvitationBuilder {
     ///
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
     #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
-    pub fn resource_share_associations(mut self, input: crate::types::ResourceShareAssociation) -> Self {
+    pub fn resource_share_associations(
+        mut self,
+        input: crate::types::ResourceShareAssociation,
+    ) -> Self {
         let mut v = self.resource_share_associations.unwrap_or_default();
-                        v.push(input);
-                        self.resource_share_associations = Some(v);
-                        self
+        v.push(input);
+        self.resource_share_associations = Some(v);
+        self
     }
     /// <p>To view the resources associated with a pending resource share invitation, use <code>ListPendingInvitationResources</code>.</p>
     #[deprecated(note = "This member has been deprecated. Use ListPendingInvitationResources.")]
-    pub fn set_resource_share_associations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>) -> Self {
-        self.resource_share_associations = input; self
+    pub fn set_resource_share_associations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceShareAssociation>>,
+    ) -> Self {
+        self.resource_share_associations = input;
+        self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the IAM user or role that received the invitation.</p>
     pub fn receiver_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,30 +220,21 @@ impl ResourceShareInvitationBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the IAM user or role that received the invitation.</p>
     pub fn set_receiver_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.receiver_arn = input; self
+        self.receiver_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceShareInvitation`](crate::types::ResourceShareInvitation).
     pub fn build(self) -> crate::types::ResourceShareInvitation {
         crate::types::ResourceShareInvitation {
-            resource_share_invitation_arn: self.resource_share_invitation_arn
-            ,
-            resource_share_name: self.resource_share_name
-            ,
-            resource_share_arn: self.resource_share_arn
-            ,
-            sender_account_id: self.sender_account_id
-            ,
-            receiver_account_id: self.receiver_account_id
-            ,
-            invitation_timestamp: self.invitation_timestamp
-            ,
-            status: self.status
-            ,
-            resource_share_associations: self.resource_share_associations
-            ,
-            receiver_arn: self.receiver_arn
-            ,
+            resource_share_invitation_arn: self.resource_share_invitation_arn,
+            resource_share_name: self.resource_share_name,
+            resource_share_arn: self.resource_share_arn,
+            sender_account_id: self.sender_account_id,
+            receiver_account_id: self.receiver_account_id,
+            invitation_timestamp: self.invitation_timestamp,
+            status: self.status,
+            resource_share_associations: self.resource_share_associations,
+            receiver_arn: self.receiver_arn,
         }
     }
 }
-

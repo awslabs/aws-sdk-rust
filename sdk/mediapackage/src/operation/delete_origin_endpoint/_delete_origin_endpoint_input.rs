@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOriginEndpointInput  {
+pub struct DeleteOriginEndpointInput {
     /// The ID of the OriginEndpoint to delete.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteOriginEndpointInput {
     /// The ID of the OriginEndpoint to delete.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeleteOriginEndpointInput {
     /// Creates a new builder-style object to manufacture [`DeleteOriginEndpointInput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput).
-    pub fn builder() -> crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointInputBuilder {
         crate::operation::delete_origin_endpoint::builders::DeleteOriginEndpointInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl DeleteOriginEndpointInputBuilder {
     }
     /// The ID of the OriginEndpoint to delete.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteOriginEndpointInput`](crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput).
-    pub fn build(self) -> Result<crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_origin_endpoint::DeleteOriginEndpointInput { id: self.id })
     }
 }
-

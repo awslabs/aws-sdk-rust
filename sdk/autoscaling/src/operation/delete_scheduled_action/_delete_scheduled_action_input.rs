@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScheduledActionInput  {
+pub struct DeleteScheduledActionInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteScheduledActionInput  {
 }
 impl DeleteScheduledActionInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The name of the action to delete.</p>
-    pub fn scheduled_action_name(&self) -> std::option::Option<& str> {
+    pub fn scheduled_action_name(&self) -> std::option::Option<&str> {
         self.scheduled_action_name.as_deref()
     }
 }
 impl DeleteScheduledActionInput {
     /// Creates a new builder-style object to manufacture [`DeleteScheduledActionInput`](crate::operation::delete_scheduled_action::DeleteScheduledActionInput).
-    pub fn builder() -> crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder
+    {
         crate::operation::delete_scheduled_action::builders::DeleteScheduledActionInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl DeleteScheduledActionInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// <p>The name of the action to delete.</p>
     pub fn scheduled_action_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +56,25 @@ impl DeleteScheduledActionInputBuilder {
         self
     }
     /// <p>The name of the action to delete.</p>
-    pub fn set_scheduled_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scheduled_action_name = input; self
+    pub fn set_scheduled_action_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.scheduled_action_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteScheduledActionInput`](crate::operation::delete_scheduled_action::DeleteScheduledActionInput).
-    pub fn build(self) -> Result<crate::operation::delete_scheduled_action::DeleteScheduledActionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_scheduled_action::DeleteScheduledActionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_scheduled_action::DeleteScheduledActionInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                scheduled_action_name: self.scheduled_action_name
-                ,
-            }
+                auto_scaling_group_name: self.auto_scaling_group_name,
+                scheduled_action_name: self.scheduled_action_name,
+            },
         )
     }
 }
-

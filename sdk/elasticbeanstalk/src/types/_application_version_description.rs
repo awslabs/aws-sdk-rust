@@ -3,7 +3,7 @@
 /// <p>Describes the properties of an application version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationVersionDescription  {
+pub struct ApplicationVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the application version.</p>
     #[doc(hidden)]
     pub application_version_arn: std::option::Option<std::string::String>,
@@ -31,63 +31,65 @@ pub struct ApplicationVersionDescription  {
     /// <p>The last modified date of the application version.</p>
     #[doc(hidden)]
     pub date_updated: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li> 
-    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li> 
-    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li> 
-    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li> 
-    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li> 
+    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
+    /// <ul>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::ApplicationVersionStatus>,
 }
 impl ApplicationVersionDescription {
     /// <p>The Amazon Resource Name (ARN) of the application version.</p>
-    pub fn application_version_arn(&self) -> std::option::Option<& str> {
+    pub fn application_version_arn(&self) -> std::option::Option<&str> {
         self.application_version_arn.as_deref()
     }
     /// <p>The name of the application to which the application version belongs.</p>
-    pub fn application_name(&self) -> std::option::Option<& str> {
+    pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The description of the application version.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A unique identifier for the application version.</p>
-    pub fn version_label(&self) -> std::option::Option<& str> {
+    pub fn version_label(&self) -> std::option::Option<&str> {
         self.version_label.as_deref()
     }
     /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
-    pub fn source_build_information(&self) -> std::option::Option<& crate::types::SourceBuildInformation> {
+    pub fn source_build_information(
+        &self,
+    ) -> std::option::Option<&crate::types::SourceBuildInformation> {
         self.source_build_information.as_ref()
     }
     /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
-    pub fn build_arn(&self) -> std::option::Option<& str> {
+    pub fn build_arn(&self) -> std::option::Option<&str> {
         self.build_arn.as_deref()
     }
     /// <p>The storage location of the application version's source bundle in Amazon S3.</p>
-    pub fn source_bundle(&self) -> std::option::Option<& crate::types::S3Location> {
+    pub fn source_bundle(&self) -> std::option::Option<&crate::types::S3Location> {
         self.source_bundle.as_ref()
     }
     /// <p>The creation date of the application version.</p>
-    pub fn date_created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn date_created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_created.as_ref()
     }
     /// <p>The last modified date of the application version.</p>
-    pub fn date_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn date_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.date_updated.as_ref()
     }
-    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li> 
-    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li> 
-    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li> 
-    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li> 
-    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li> 
+    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
+    /// <ul>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::ApplicationVersionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ApplicationVersionStatus> {
         self.status.as_ref()
     }
 }
@@ -120,8 +122,12 @@ impl ApplicationVersionDescriptionBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the application version.</p>
-    pub fn set_application_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_version_arn = input; self
+    pub fn set_application_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_version_arn = input;
+        self
     }
     /// <p>The name of the application to which the application version belongs.</p>
     pub fn application_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +136,8 @@ impl ApplicationVersionDescriptionBuilder {
     }
     /// <p>The name of the application to which the application version belongs.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input; self
+        self.application_name = input;
+        self
     }
     /// <p>The description of the application version.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -139,7 +146,8 @@ impl ApplicationVersionDescriptionBuilder {
     }
     /// <p>The description of the application version.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A unique identifier for the application version.</p>
     pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +156,8 @@ impl ApplicationVersionDescriptionBuilder {
     }
     /// <p>A unique identifier for the application version.</p>
     pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_label = input; self
+        self.version_label = input;
+        self
     }
     /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
     pub fn source_build_information(mut self, input: crate::types::SourceBuildInformation) -> Self {
@@ -156,8 +165,12 @@ impl ApplicationVersionDescriptionBuilder {
         self
     }
     /// <p>If the version's source code was retrieved from AWS CodeCommit, the location of the source code for the application version.</p>
-    pub fn set_source_build_information(mut self, input: std::option::Option<crate::types::SourceBuildInformation>) -> Self {
-        self.source_build_information = input; self
+    pub fn set_source_build_information(
+        mut self,
+        input: std::option::Option<crate::types::SourceBuildInformation>,
+    ) -> Self {
+        self.source_build_information = input;
+        self
     }
     /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
     pub fn build_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,7 +179,8 @@ impl ApplicationVersionDescriptionBuilder {
     }
     /// <p>Reference to the artifact from the AWS CodeBuild build.</p>
     pub fn set_build_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.build_arn = input; self
+        self.build_arn = input;
+        self
     }
     /// <p>The storage location of the application version's source bundle in Amazon S3.</p>
     pub fn source_bundle(mut self, input: crate::types::S3Location) -> Self {
@@ -174,8 +188,12 @@ impl ApplicationVersionDescriptionBuilder {
         self
     }
     /// <p>The storage location of the application version's source bundle in Amazon S3.</p>
-    pub fn set_source_bundle(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
-        self.source_bundle = input; self
+    pub fn set_source_bundle(
+        mut self,
+        input: std::option::Option<crate::types::S3Location>,
+    ) -> Self {
+        self.source_bundle = input;
+        self
     }
     /// <p>The creation date of the application version.</p>
     pub fn date_created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -183,8 +201,12 @@ impl ApplicationVersionDescriptionBuilder {
         self
     }
     /// <p>The creation date of the application version.</p>
-    pub fn set_date_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date_created = input; self
+    pub fn set_date_created(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.date_created = input;
+        self
     }
     /// <p>The last modified date of the application version.</p>
     pub fn date_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -192,56 +214,53 @@ impl ApplicationVersionDescriptionBuilder {
         self
     }
     /// <p>The last modified date of the application version.</p>
-    pub fn set_date_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.date_updated = input; self
+    pub fn set_date_updated(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.date_updated = input;
+        self
     }
-    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li> 
-    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li> 
-    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li> 
-    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li> 
-    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li> 
+    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
+    /// <ul>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::ApplicationVersionStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li> 
-    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li> 
-    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li> 
-    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li> 
-    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li> 
+    /// <p>The processing status of the application version. Reflects the state of the application version during its creation. Many of the values are only applicable if you specified <code>True</code> for the <code>Process</code> parameter of the <code>CreateApplicationVersion</code> action. The following list describes the possible values.</p>
+    /// <ul>
+    /// <li> <p> <code>Unprocessed</code> – Application version wasn't pre-processed or validated. Elastic Beanstalk will validate configuration files during deployment of the application version to an environment.</p> </li>
+    /// <li> <p> <code>Processing</code> – Elastic Beanstalk is currently processing the application version.</p> </li>
+    /// <li> <p> <code>Building</code> – Application version is currently undergoing an AWS CodeBuild build.</p> </li>
+    /// <li> <p> <code>Processed</code> – Elastic Beanstalk was successfully pre-processed and validated.</p> </li>
+    /// <li> <p> <code>Failed</code> – Either the AWS CodeBuild build failed or configuration files didn't pass validation. This application version isn't usable.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ApplicationVersionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ApplicationVersionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApplicationVersionDescription`](crate::types::ApplicationVersionDescription).
     pub fn build(self) -> crate::types::ApplicationVersionDescription {
         crate::types::ApplicationVersionDescription {
-            application_version_arn: self.application_version_arn
-            ,
-            application_name: self.application_name
-            ,
-            description: self.description
-            ,
-            version_label: self.version_label
-            ,
-            source_build_information: self.source_build_information
-            ,
-            build_arn: self.build_arn
-            ,
-            source_bundle: self.source_bundle
-            ,
-            date_created: self.date_created
-            ,
-            date_updated: self.date_updated
-            ,
-            status: self.status
-            ,
+            application_version_arn: self.application_version_arn,
+            application_name: self.application_name,
+            description: self.description,
+            version_label: self.version_label,
+            source_build_information: self.source_build_information,
+            build_arn: self.build_arn,
+            source_bundle: self.source_bundle,
+            date_created: self.date_created,
+            date_updated: self.date_updated,
+            status: self.status,
         }
     }
 }
-

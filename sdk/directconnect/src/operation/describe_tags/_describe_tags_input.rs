@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTagsInput  {
+pub struct DescribeTagsInput {
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     #[doc(hidden)]
     pub resource_arns: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl DescribeTagsInput {
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    pub fn resource_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resource_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_arns.as_deref()
     }
 }
@@ -34,22 +34,27 @@ impl DescribeTagsInputBuilder {
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
     pub fn resource_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.resource_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.resource_arns = Some(v);
+        self
     }
     /// <p>The Amazon Resource Names (ARNs) of the resources.</p>
-    pub fn set_resource_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resource_arns = input; self
+    pub fn set_resource_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resource_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeTagsInput`](crate::operation::describe_tags::DescribeTagsInput).
-    pub fn build(self) -> Result<crate::operation::describe_tags::DescribeTagsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_tags::DescribeTagsInput {
-                resource_arns: self.resource_arns
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_tags::DescribeTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_tags::DescribeTagsInput {
+            resource_arns: self.resource_arns,
+        })
     }
 }
-

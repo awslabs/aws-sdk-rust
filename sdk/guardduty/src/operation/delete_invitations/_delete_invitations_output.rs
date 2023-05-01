@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInvitationsOutput  {
+pub struct DeleteInvitationsOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
@@ -10,18 +10,19 @@ pub struct DeleteInvitationsOutput  {
 }
 impl DeleteInvitationsOutput {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
-    pub fn unprocessed_accounts(&self) -> std::option::Option<& [crate::types::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::types::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteInvitationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteInvitationsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInvitationsOutput`](crate::operation::delete_invitations::DeleteInvitationsOutput).
-    pub fn builder() -> crate::operation::delete_invitations::builders::DeleteInvitationsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_invitations::builders::DeleteInvitationsOutputBuilder {
         crate::operation::delete_invitations::builders::DeleteInvitationsOutputBuilder::default()
     }
 }
@@ -30,7 +31,8 @@ impl DeleteInvitationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeleteInvitationsOutputBuilder {
-    pub(crate) unprocessed_accounts: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) unprocessed_accounts:
+        std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl DeleteInvitationsOutputBuilder {
@@ -41,30 +43,32 @@ impl DeleteInvitationsOutputBuilder {
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
     pub fn unprocessed_accounts(mut self, input: crate::types::UnprocessedAccount) -> Self {
         let mut v = self.unprocessed_accounts.unwrap_or_default();
-                        v.push(input);
-                        self.unprocessed_accounts = Some(v);
-                        self
+        v.push(input);
+        self.unprocessed_accounts = Some(v);
+        self
     }
     /// <p>A list of objects that contain the unprocessed account and a result string that explains why it was unprocessed.</p>
-    pub fn set_unprocessed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
-        self.unprocessed_accounts = input; self
+    pub fn set_unprocessed_accounts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
+    ) -> Self {
+        self.unprocessed_accounts = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteInvitationsOutput`](crate::operation::delete_invitations::DeleteInvitationsOutput).
     pub fn build(self) -> crate::operation::delete_invitations::DeleteInvitationsOutput {
         crate::operation::delete_invitations::DeleteInvitationsOutput {
-            unprocessed_accounts: self.unprocessed_accounts
-            ,
+            unprocessed_accounts: self.unprocessed_accounts,
             _request_id: self._request_id,
         }
     }
 }
-

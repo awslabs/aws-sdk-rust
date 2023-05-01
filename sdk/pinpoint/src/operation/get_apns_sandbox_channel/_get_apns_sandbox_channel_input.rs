@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApnsSandboxChannelInput  {
+pub struct GetApnsSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl GetApnsSandboxChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
 }
 impl GetApnsSandboxChannelInput {
     /// Creates a new builder-style object to manufacture [`GetApnsSandboxChannelInput`](crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelInput).
-    pub fn builder() -> crate::operation::get_apns_sandbox_channel::builders::GetApnsSandboxChannelInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_apns_sandbox_channel::builders::GetApnsSandboxChannelInputBuilder
+    {
         crate::operation::get_apns_sandbox_channel::builders::GetApnsSandboxChannelInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl GetApnsSandboxChannelInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetApnsSandboxChannelInput`](crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelInput).
-    pub fn build(self) -> Result<crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelInput {
-                application_id: self.application_id
-                ,
-            }
+                application_id: self.application_id,
+            },
         )
     }
 }
-

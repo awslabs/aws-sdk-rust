@@ -4,50 +4,66 @@ pub use crate::operation::create_computer::_create_computer_output::CreateComput
 pub use crate::operation::create_computer::_create_computer_input::CreateComputerInputBuilder;
 
 /// Fluent builder constructing a request to `CreateComputer`.
-/// 
+///
 /// <p>Creates an Active Directory computer object in the specified directory.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateComputerFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_computer::builders::CreateComputerInputBuilder,
+    inner: crate::operation::create_computer::builders::CreateComputerInputBuilder,
 }
-impl CreateComputerFluentBuilder  {
+impl CreateComputerFluentBuilder {
     /// Creates a new `CreateComputer`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_computer::CreateComputer, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_computer::CreateComputerError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_computer::CreateComputerOutput, aws_smithy_http::result::SdkError<crate::operation::create_computer::CreateComputerError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_computer::CreateComputer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_computer::CreateComputerError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_computer::CreateComputerOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_computer::CreateComputerError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the directory in which to create the computer account.</p>
     pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_id(input.into());
@@ -79,12 +95,20 @@ impl CreateComputerFluentBuilder  {
         self
     }
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
-    pub fn organizational_unit_distinguished_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.inner = self.inner.organizational_unit_distinguished_name(input.into());
+    pub fn organizational_unit_distinguished_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        self.inner = self
+            .inner
+            .organizational_unit_distinguished_name(input.into());
         self
     }
     /// <p>The fully-qualified distinguished name of the organizational unit to place the computer account in.</p>
-    pub fn set_organizational_unit_distinguished_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_organizational_unit_distinguished_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_organizational_unit_distinguished_name(input);
         self
     }
@@ -98,9 +122,11 @@ impl CreateComputerFluentBuilder  {
         self
     }
     /// <p>An array of <code>Attribute</code> objects that contain any LDAP attributes to apply to the computer account.</p>
-    pub fn set_computer_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::Attribute>>) -> Self {
+    pub fn set_computer_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Attribute>>,
+    ) -> Self {
         self.inner = self.inner.set_computer_attributes(input);
         self
     }
 }
-

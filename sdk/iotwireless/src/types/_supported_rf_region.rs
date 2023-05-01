@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let supportedrfregion = unimplemented!();
 /// match supportedrfregion {
@@ -41,14 +41,22 @@
 /// Specifically, when `supportedrfregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SupportedRfRegion::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>Supported RfRegions</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SupportedRfRegion {
     #[allow(missing_docs)] // documentation missing in model
     As9231,
@@ -77,63 +85,67 @@ pub enum SupportedRfRegion {
     #[allow(missing_docs)] // documentation missing in model
     Us915,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SupportedRfRegion {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AS923-1" => SupportedRfRegion::As9231,
-"AS923-2" => SupportedRfRegion::As9232,
-"AS923-3" => SupportedRfRegion::As9233,
-"AS923-4" => SupportedRfRegion::As9234,
-"AU915" => SupportedRfRegion::Au915,
-"CN470" => SupportedRfRegion::Cn470,
-"CN779" => SupportedRfRegion::Cn779,
-"EU433" => SupportedRfRegion::Eu433,
-"EU868" => SupportedRfRegion::Eu868,
-"IN865" => SupportedRfRegion::In865,
-"KR920" => SupportedRfRegion::Kr920,
-"RU864" => SupportedRfRegion::Ru864,
-"US915" => SupportedRfRegion::Us915,
-other => SupportedRfRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AS923-1" => SupportedRfRegion::As9231,
+            "AS923-2" => SupportedRfRegion::As9232,
+            "AS923-3" => SupportedRfRegion::As9233,
+            "AS923-4" => SupportedRfRegion::As9234,
+            "AU915" => SupportedRfRegion::Au915,
+            "CN470" => SupportedRfRegion::Cn470,
+            "CN779" => SupportedRfRegion::Cn779,
+            "EU433" => SupportedRfRegion::Eu433,
+            "EU868" => SupportedRfRegion::Eu868,
+            "IN865" => SupportedRfRegion::In865,
+            "KR920" => SupportedRfRegion::Kr920,
+            "RU864" => SupportedRfRegion::Ru864,
+            "US915" => SupportedRfRegion::Us915,
+            other => {
+                SupportedRfRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for SupportedRfRegion {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(SupportedRfRegion::from(s))
-                }
-            }
-impl SupportedRfRegion {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    SupportedRfRegion::As9231 => "AS923-1",
-    SupportedRfRegion::As9232 => "AS923-2",
-    SupportedRfRegion::As9233 => "AS923-3",
-    SupportedRfRegion::As9234 => "AS923-4",
-    SupportedRfRegion::Au915 => "AU915",
-    SupportedRfRegion::Cn470 => "CN470",
-    SupportedRfRegion::Cn779 => "CN779",
-    SupportedRfRegion::Eu433 => "EU433",
-    SupportedRfRegion::Eu868 => "EU868",
-    SupportedRfRegion::In865 => "IN865",
-    SupportedRfRegion::Kr920 => "KR920",
-    SupportedRfRegion::Ru864 => "RU864",
-    SupportedRfRegion::Us915 => "US915",
-    SupportedRfRegion::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AS923-1", "AS923-2", "AS923-3", "AS923-4", "AU915", "CN470", "CN779", "EU433", "EU868", "IN865", "KR920", "RU864", "US915"]
-                }
-            }
-impl AsRef<str> for SupportedRfRegion {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for SupportedRfRegion {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SupportedRfRegion::from(s))
+    }
+}
+impl SupportedRfRegion {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SupportedRfRegion::As9231 => "AS923-1",
+            SupportedRfRegion::As9232 => "AS923-2",
+            SupportedRfRegion::As9233 => "AS923-3",
+            SupportedRfRegion::As9234 => "AS923-4",
+            SupportedRfRegion::Au915 => "AU915",
+            SupportedRfRegion::Cn470 => "CN470",
+            SupportedRfRegion::Cn779 => "CN779",
+            SupportedRfRegion::Eu433 => "EU433",
+            SupportedRfRegion::Eu868 => "EU868",
+            SupportedRfRegion::In865 => "IN865",
+            SupportedRfRegion::Kr920 => "KR920",
+            SupportedRfRegion::Ru864 => "RU864",
+            SupportedRfRegion::Us915 => "US915",
+            SupportedRfRegion::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AS923-1", "AS923-2", "AS923-3", "AS923-4", "AU915", "CN470", "CN779", "EU433",
+            "EU868", "IN865", "KR920", "RU864", "US915",
+        ]
+    }
+}
+impl AsRef<str> for SupportedRfRegion {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

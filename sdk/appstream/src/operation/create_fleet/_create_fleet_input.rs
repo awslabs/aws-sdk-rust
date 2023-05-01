@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFleetInput  {
+pub struct CreateFleetInput {
     /// <p>A unique name for the fleet.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -12,68 +12,68 @@ pub struct CreateFleetInput  {
     /// <p>The ARN of the public, private, or shared image to use.</p>
     #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
-    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p> 
-    /// <ul> 
-    /// <li> <p>stream.standard.small</p> </li> 
-    /// <li> <p>stream.standard.medium</p> </li> 
-    /// <li> <p>stream.standard.large</p> </li> 
-    /// <li> <p>stream.standard.xlarge</p> </li> 
-    /// <li> <p>stream.standard.2xlarge</p> </li> 
-    /// <li> <p>stream.compute.large</p> </li> 
-    /// <li> <p>stream.compute.xlarge</p> </li> 
-    /// <li> <p>stream.compute.2xlarge</p> </li> 
-    /// <li> <p>stream.compute.4xlarge</p> </li> 
-    /// <li> <p>stream.compute.8xlarge</p> </li> 
-    /// <li> <p>stream.memory.large</p> </li> 
-    /// <li> <p>stream.memory.xlarge</p> </li> 
-    /// <li> <p>stream.memory.2xlarge</p> </li> 
-    /// <li> <p>stream.memory.4xlarge</p> </li> 
-    /// <li> <p>stream.memory.8xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.large</p> </li> 
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.large</p> </li> 
-    /// <li> <p>stream.graphics-design.xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
-    /// </ul> 
-    /// <p>The following instance types are available for Elastic fleets:</p> 
-    /// <ul> 
-    /// <li> <p>stream.standard.small</p> </li> 
-    /// <li> <p>stream.standard.medium</p> </li> 
-    /// <li> <p>stream.standard.large</p> </li> 
-    /// <li> <p>stream.standard.xlarge</p> </li> 
-    /// <li> <p>stream.standard.2xlarge</p> </li> 
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// </ul>
+    /// <p>The following instance types are available for Elastic fleets:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The fleet type.</p> 
-    /// <dl> 
+    /// <p>The fleet type.</p>
+    /// <dl>
     /// <dt>
     /// ALWAYS_ON
-    /// </dt> 
-    /// <dd> 
-    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// </dd>
     /// <dt>
     /// ON_DEMAND
-    /// </dt> 
-    /// <dd> 
-    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
+    /// </dd>
     /// </dl>
     #[doc(hidden)]
     pub fleet_type: std::option::Option<crate::types::FleetType>,
@@ -83,11 +83,11 @@ pub struct CreateFleetInput  {
     /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
     #[doc(hidden)]
     pub vpc_config: std::option::Option<crate::types::VpcConfig>,
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p> 
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
     #[doc(hidden)]
     pub max_user_duration_in_seconds: std::option::Option<i32>,
-    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p> 
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
     /// <p>Specify a value between 60 and 360000.</p>
     #[doc(hidden)]
     pub disconnect_timeout_in_seconds: std::option::Option<i32>,
@@ -103,24 +103,25 @@ pub struct CreateFleetInput  {
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
     #[doc(hidden)]
     pub domain_join_info: std::option::Option<crate::types::DomainJoinInfo>,
-    /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p> 
-    /// <p>If you do not specify a value, the value is set to an empty string.</p> 
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p> 
-    /// <p>_ . : / = + \ - @</p> 
+    /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p> 
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note> 
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p> 
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
     #[doc(hidden)]
     pub idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p> 
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     #[doc(hidden)]
     pub stream_view: std::option::Option<crate::types::StreamView>,
@@ -139,108 +140,108 @@ pub struct CreateFleetInput  {
 }
 impl CreateFleetInput {
     /// <p>A unique name for the fleet.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the image used to create the fleet.</p>
-    pub fn image_name(&self) -> std::option::Option<& str> {
+    pub fn image_name(&self) -> std::option::Option<&str> {
         self.image_name.as_deref()
     }
     /// <p>The ARN of the public, private, or shared image to use.</p>
-    pub fn image_arn(&self) -> std::option::Option<& str> {
+    pub fn image_arn(&self) -> std::option::Option<&str> {
         self.image_arn.as_deref()
     }
-    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p> 
-    /// <ul> 
-    /// <li> <p>stream.standard.small</p> </li> 
-    /// <li> <p>stream.standard.medium</p> </li> 
-    /// <li> <p>stream.standard.large</p> </li> 
-    /// <li> <p>stream.standard.xlarge</p> </li> 
-    /// <li> <p>stream.standard.2xlarge</p> </li> 
-    /// <li> <p>stream.compute.large</p> </li> 
-    /// <li> <p>stream.compute.xlarge</p> </li> 
-    /// <li> <p>stream.compute.2xlarge</p> </li> 
-    /// <li> <p>stream.compute.4xlarge</p> </li> 
-    /// <li> <p>stream.compute.8xlarge</p> </li> 
-    /// <li> <p>stream.memory.large</p> </li> 
-    /// <li> <p>stream.memory.xlarge</p> </li> 
-    /// <li> <p>stream.memory.2xlarge</p> </li> 
-    /// <li> <p>stream.memory.4xlarge</p> </li> 
-    /// <li> <p>stream.memory.8xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.large</p> </li> 
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.large</p> </li> 
-    /// <li> <p>stream.graphics-design.xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
-    /// </ul> 
-    /// <p>The following instance types are available for Elastic fleets:</p> 
-    /// <ul> 
-    /// <li> <p>stream.standard.small</p> </li> 
-    /// <li> <p>stream.standard.medium</p> </li> 
-    /// <li> <p>stream.standard.large</p> </li> 
-    /// <li> <p>stream.standard.xlarge</p> </li> 
-    /// <li> <p>stream.standard.2xlarge</p> </li> 
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
     /// </ul>
-    pub fn instance_type(&self) -> std::option::Option<& str> {
+    /// <p>The following instance types are available for Elastic fleets:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// </ul>
+    pub fn instance_type(&self) -> std::option::Option<&str> {
         self.instance_type.as_deref()
     }
-    /// <p>The fleet type.</p> 
-    /// <dl> 
+    /// <p>The fleet type.</p>
+    /// <dl>
     /// <dt>
     /// ALWAYS_ON
-    /// </dt> 
-    /// <dd> 
-    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// </dd>
     /// <dt>
     /// ON_DEMAND
-    /// </dt> 
-    /// <dd> 
-    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
+    /// </dd>
     /// </dl>
-    pub fn fleet_type(&self) -> std::option::Option<& crate::types::FleetType> {
+    pub fn fleet_type(&self) -> std::option::Option<&crate::types::FleetType> {
         self.fleet_type.as_ref()
     }
     /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
-    pub fn compute_capacity(&self) -> std::option::Option<& crate::types::ComputeCapacity> {
+    pub fn compute_capacity(&self) -> std::option::Option<&crate::types::ComputeCapacity> {
         self.compute_capacity.as_ref()
     }
     /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
-    pub fn vpc_config(&self) -> std::option::Option<& crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p> 
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
     pub fn max_user_duration_in_seconds(&self) -> std::option::Option<i32> {
         self.max_user_duration_in_seconds
     }
-    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p> 
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
     /// <p>Specify a value between 60 and 360000.</p>
     pub fn disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.disconnect_timeout_in_seconds
     }
     /// <p>The description to display.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The fleet name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>Enables or disables default internet access for the fleet.</p>
@@ -248,36 +249,39 @@ impl CreateFleetInput {
         self.enable_default_internet_access
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
-    pub fn domain_join_info(&self) -> std::option::Option<& crate::types::DomainJoinInfo> {
+    pub fn domain_join_info(&self) -> std::option::Option<&crate::types::DomainJoinInfo> {
         self.domain_join_info.as_ref()
     }
-    /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p> 
-    /// <p>If you do not specify a value, the value is set to an empty string.</p> 
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p> 
-    /// <p>_ . : / = + \ - @</p> 
+    /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p> 
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note> 
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p> 
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
     pub fn idle_disconnect_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.idle_disconnect_timeout_in_seconds
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn iam_role_arn(&self) -> std::option::Option<& str> {
+    pub fn iam_role_arn(&self) -> std::option::Option<&str> {
         self.iam_role_arn.as_deref()
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p> 
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
-    pub fn stream_view(&self) -> std::option::Option<& crate::types::StreamView> {
+    pub fn stream_view(&self) -> std::option::Option<&crate::types::StreamView> {
         self.stream_view.as_ref()
     }
     /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
-    pub fn platform(&self) -> std::option::Option<& crate::types::PlatformType> {
+    pub fn platform(&self) -> std::option::Option<&crate::types::PlatformType> {
         self.platform.as_ref()
     }
     /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
@@ -285,11 +289,11 @@ impl CreateFleetInput {
         self.max_concurrent_sessions
     }
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
-    pub fn usb_device_filter_strings(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn usb_device_filter_strings(&self) -> std::option::Option<&[std::string::String]> {
         self.usb_device_filter_strings.as_deref()
     }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
-    pub fn session_script_s3_location(&self) -> std::option::Option<& crate::types::S3Location> {
+    pub fn session_script_s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
         self.session_script_s3_location.as_ref()
     }
 }
@@ -317,7 +321,8 @@ pub struct CreateFleetInputBuilder {
     pub(crate) display_name: std::option::Option<std::string::String>,
     pub(crate) enable_default_internet_access: std::option::Option<bool>,
     pub(crate) domain_join_info: std::option::Option<crate::types::DomainJoinInfo>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) idle_disconnect_timeout_in_seconds: std::option::Option<i32>,
     pub(crate) iam_role_arn: std::option::Option<std::string::String>,
     pub(crate) stream_view: std::option::Option<crate::types::StreamView>,
@@ -334,7 +339,8 @@ impl CreateFleetInputBuilder {
     }
     /// <p>A unique name for the fleet.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the image used to create the fleet.</p>
     pub fn image_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -343,7 +349,8 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The name of the image used to create the fleet.</p>
     pub fn set_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_name = input; self
+        self.image_name = input;
+        self
     }
     /// <p>The ARN of the public, private, or shared image to use.</p>
     pub fn image_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -352,143 +359,146 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The ARN of the public, private, or shared image to use.</p>
     pub fn set_image_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_arn = input; self
+        self.image_arn = input;
+        self
     }
-    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p> 
-    /// <ul> 
-    /// <li> <p>stream.standard.small</p> </li> 
-    /// <li> <p>stream.standard.medium</p> </li> 
-    /// <li> <p>stream.standard.large</p> </li> 
-    /// <li> <p>stream.standard.xlarge</p> </li> 
-    /// <li> <p>stream.standard.2xlarge</p> </li> 
-    /// <li> <p>stream.compute.large</p> </li> 
-    /// <li> <p>stream.compute.xlarge</p> </li> 
-    /// <li> <p>stream.compute.2xlarge</p> </li> 
-    /// <li> <p>stream.compute.4xlarge</p> </li> 
-    /// <li> <p>stream.compute.8xlarge</p> </li> 
-    /// <li> <p>stream.memory.large</p> </li> 
-    /// <li> <p>stream.memory.xlarge</p> </li> 
-    /// <li> <p>stream.memory.2xlarge</p> </li> 
-    /// <li> <p>stream.memory.4xlarge</p> </li> 
-    /// <li> <p>stream.memory.8xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.large</p> </li> 
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.large</p> </li> 
-    /// <li> <p>stream.graphics-design.xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
-    /// </ul> 
-    /// <p>The following instance types are available for Elastic fleets:</p> 
-    /// <ul> 
-    /// <li> <p>stream.standard.small</p> </li> 
-    /// <li> <p>stream.standard.medium</p> </li> 
-    /// <li> <p>stream.standard.large</p> </li> 
-    /// <li> <p>stream.standard.xlarge</p> </li> 
-    /// <li> <p>stream.standard.2xlarge</p> </li> 
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// </ul>
+    /// <p>The following instance types are available for Elastic fleets:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.instance_type = Some(input.into());
         self
     }
-    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p> 
-    /// <ul> 
-    /// <li> <p>stream.standard.small</p> </li> 
-    /// <li> <p>stream.standard.medium</p> </li> 
-    /// <li> <p>stream.standard.large</p> </li> 
-    /// <li> <p>stream.standard.xlarge</p> </li> 
-    /// <li> <p>stream.standard.2xlarge</p> </li> 
-    /// <li> <p>stream.compute.large</p> </li> 
-    /// <li> <p>stream.compute.xlarge</p> </li> 
-    /// <li> <p>stream.compute.2xlarge</p> </li> 
-    /// <li> <p>stream.compute.4xlarge</p> </li> 
-    /// <li> <p>stream.compute.8xlarge</p> </li> 
-    /// <li> <p>stream.memory.large</p> </li> 
-    /// <li> <p>stream.memory.xlarge</p> </li> 
-    /// <li> <p>stream.memory.2xlarge</p> </li> 
-    /// <li> <p>stream.memory.4xlarge</p> </li> 
-    /// <li> <p>stream.memory.8xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.large</p> </li> 
-    /// <li> <p>stream.memory.z1d.xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.2xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.3xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.6xlarge</p> </li> 
-    /// <li> <p>stream.memory.z1d.12xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.large</p> </li> 
-    /// <li> <p>stream.graphics-design.xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics-design.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li> 
-    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.4xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.8xlarge</p> </li> 
-    /// <li> <p>stream.graphics-pro.16xlarge</p> </li> 
-    /// </ul> 
-    /// <p>The following instance types are available for Elastic fleets:</p> 
-    /// <ul> 
-    /// <li> <p>stream.standard.small</p> </li> 
-    /// <li> <p>stream.standard.medium</p> </li> 
-    /// <li> <p>stream.standard.large</p> </li> 
-    /// <li> <p>stream.standard.xlarge</p> </li> 
-    /// <li> <p>stream.standard.2xlarge</p> </li> 
+    /// <p>The instance type to use when launching fleet instances. The following instance types are available:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
+    /// <li> <p>stream.compute.large</p> </li>
+    /// <li> <p>stream.compute.xlarge</p> </li>
+    /// <li> <p>stream.compute.2xlarge</p> </li>
+    /// <li> <p>stream.compute.4xlarge</p> </li>
+    /// <li> <p>stream.compute.8xlarge</p> </li>
+    /// <li> <p>stream.memory.large</p> </li>
+    /// <li> <p>stream.memory.xlarge</p> </li>
+    /// <li> <p>stream.memory.2xlarge</p> </li>
+    /// <li> <p>stream.memory.4xlarge</p> </li>
+    /// <li> <p>stream.memory.8xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.large</p> </li>
+    /// <li> <p>stream.memory.z1d.xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.2xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.3xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.6xlarge</p> </li>
+    /// <li> <p>stream.memory.z1d.12xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.large</p> </li>
+    /// <li> <p>stream.graphics-design.xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.2xlarge</p> </li>
+    /// <li> <p>stream.graphics-design.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-desktop.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.2xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.4xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.8xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.12xlarge</p> </li>
+    /// <li> <p>stream.graphics.g4dn.16xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.4xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.8xlarge</p> </li>
+    /// <li> <p>stream.graphics-pro.16xlarge</p> </li>
+    /// </ul>
+    /// <p>The following instance types are available for Elastic fleets:</p>
+    /// <ul>
+    /// <li> <p>stream.standard.small</p> </li>
+    /// <li> <p>stream.standard.medium</p> </li>
+    /// <li> <p>stream.standard.large</p> </li>
+    /// <li> <p>stream.standard.xlarge</p> </li>
+    /// <li> <p>stream.standard.2xlarge</p> </li>
     /// </ul>
     pub fn set_instance_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_type = input; self
+        self.instance_type = input;
+        self
     }
-    /// <p>The fleet type.</p> 
-    /// <dl> 
+    /// <p>The fleet type.</p>
+    /// <dl>
     /// <dt>
     /// ALWAYS_ON
-    /// </dt> 
-    /// <dd> 
-    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// </dd>
     /// <dt>
     /// ON_DEMAND
-    /// </dt> 
-    /// <dd> 
-    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
+    /// </dd>
     /// </dl>
     pub fn fleet_type(mut self, input: crate::types::FleetType) -> Self {
         self.fleet_type = Some(input);
         self
     }
-    /// <p>The fleet type.</p> 
-    /// <dl> 
+    /// <p>The fleet type.</p>
+    /// <dl>
     /// <dt>
     /// ALWAYS_ON
-    /// </dt> 
-    /// <dd> 
-    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+    /// </dd>
     /// <dt>
     /// ON_DEMAND
-    /// </dt> 
-    /// <dd> 
-    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
+    /// </dd>
     /// </dl>
     pub fn set_fleet_type(mut self, input: std::option::Option<crate::types::FleetType>) -> Self {
-        self.fleet_type = input; self
+        self.fleet_type = input;
+        self
     }
     /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
     pub fn compute_capacity(mut self, input: crate::types::ComputeCapacity) -> Self {
@@ -496,8 +506,12 @@ impl CreateFleetInputBuilder {
         self
     }
     /// <p>The desired capacity for the fleet. This is not allowed for Elastic fleets. For Elastic fleets, specify MaxConcurrentSessions instead.</p>
-    pub fn set_compute_capacity(mut self, input: std::option::Option<crate::types::ComputeCapacity>) -> Self {
-        self.compute_capacity = input; self
+    pub fn set_compute_capacity(
+        mut self,
+        input: std::option::Option<crate::types::ComputeCapacity>,
+    ) -> Self {
+        self.compute_capacity = input;
+        self
     }
     /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
@@ -506,29 +520,32 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The VPC configuration for the fleet. This is required for Elastic fleets, but not required for other fleet types. Elastic fleets require that you specify at least two subnets in different availability zones.</p>
     pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input; self
+        self.vpc_config = input;
+        self
     }
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p> 
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
     pub fn max_user_duration_in_seconds(mut self, input: i32) -> Self {
         self.max_user_duration_in_seconds = Some(input);
         self
     }
-    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p> 
+    /// <p>The maximum amount of time that a streaming session can remain active, in seconds. If users are still connected to a streaming instance five minutes before this limit is reached, they are prompted to save any open documents before being disconnected. After this time elapses, the instance is terminated and replaced by a new instance.</p>
     /// <p>Specify a value between 600 and 360000.</p>
     pub fn set_max_user_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_user_duration_in_seconds = input; self
+        self.max_user_duration_in_seconds = input;
+        self
     }
-    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p> 
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
     /// <p>Specify a value between 60 and 360000.</p>
     pub fn disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
         self.disconnect_timeout_in_seconds = Some(input);
         self
     }
-    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p> 
+    /// <p>The amount of time that a streaming session remains active after users disconnect. If users try to reconnect to the streaming session after a disconnection or network interruption within this time interval, they are connected to their previous session. Otherwise, they are connected to a new session with a new streaming instance. </p>
     /// <p>Specify a value between 60 and 360000.</p>
     pub fn set_disconnect_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.disconnect_timeout_in_seconds = input; self
+        self.disconnect_timeout_in_seconds = input;
+        self
     }
     /// <p>The description to display.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -537,7 +554,8 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The description to display.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The fleet name to display.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -546,7 +564,8 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The fleet name to display.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>Enables or disables default internet access for the fleet.</p>
     pub fn enable_default_internet_access(mut self, input: bool) -> Self {
@@ -555,7 +574,8 @@ impl CreateFleetInputBuilder {
     }
     /// <p>Enables or disables default internet access for the fleet.</p>
     pub fn set_enable_default_internet_access(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_default_internet_access = input; self
+        self.enable_default_internet_access = input;
+        self
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
     pub fn domain_join_info(mut self, input: crate::types::DomainJoinInfo) -> Self {
@@ -563,68 +583,88 @@ impl CreateFleetInputBuilder {
         self
     }
     /// <p>The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory domain. This is not allowed for Elastic fleets. </p>
-    pub fn set_domain_join_info(mut self, input: std::option::Option<crate::types::DomainJoinInfo>) -> Self {
-        self.domain_join_info = input; self
+    pub fn set_domain_join_info(
+        mut self,
+        input: std::option::Option<crate::types::DomainJoinInfo>,
+    ) -> Self {
+        self.domain_join_info = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p> 
-    /// <p>If you do not specify a value, the value is set to an empty string.</p> 
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p> 
-    /// <p>_ . : / = + \ - @</p> 
+    /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
-    /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p> 
-    /// <p>If you do not specify a value, the value is set to an empty string.</p> 
-    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p> 
-    /// <p>_ . : / = + \ - @</p> 
+    /// <p>The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=. </p>
+    /// <p>If you do not specify a value, the value is set to an empty string.</p>
+    /// <p>Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters: </p>
+    /// <p>_ . : / = + \ - @</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p> 
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note> 
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p> 
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
     pub fn idle_disconnect_timeout_in_seconds(mut self, input: i32) -> Self {
         self.idle_disconnect_timeout_in_seconds = Some(input);
         self
     }
-    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p> 
-    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note> 
-    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p> 
+    /// <p>The amount of time that users can be idle (inactive) before they are disconnected from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time interval begins. Users are notified before they are disconnected due to inactivity. If they try to reconnect to the streaming session before the time interval specified in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous session. Users are considered idle when they stop providing keyboard or mouse input during their streaming session. File uploads and downloads, audio in, audio out, and pixels changing do not qualify as user activity. If users continue to be idle after the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are disconnected.</p>
+    /// <p>To prevent users from being disconnected due to inactivity, specify a value of 0. Otherwise, specify a value between 60 and 3600. The default value is 0.</p> <note>
+    /// <p>If you enable this feature, we recommend that you specify a value that corresponds exactly to a whole number of minutes (for example, 60, 120, and 180). If you don't do this, the value is rounded to the nearest minute. For example, if you specify a value of 70, users are disconnected after 1 minute of inactivity. If you specify a value that is at the midpoint between two different minutes, the value is rounded up. For example, if you specify a value of 90, users are disconnected after 2 minutes of inactivity. </p>
     /// </note>
-    pub fn set_idle_disconnect_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.idle_disconnect_timeout_in_seconds = input; self
+    pub fn set_idle_disconnect_timeout_in_seconds(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
+        self.idle_disconnect_timeout_in_seconds = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn iam_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.iam_role_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html">Using an IAM Role to Grant Permissions to Applications and Scripts Running on AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.</p>
     pub fn set_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.iam_role_arn = input; self
+        self.iam_role_arn = input;
+        self
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p> 
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub fn stream_view(mut self, input: crate::types::StreamView) -> Self {
         self.stream_view = Some(input);
         self
     }
-    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p> 
+    /// <p>The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system displays.</p>
     /// <p>The default value is <code>APP</code>.</p>
     pub fn set_stream_view(mut self, input: std::option::Option<crate::types::StreamView>) -> Self {
-        self.stream_view = input; self
+        self.stream_view = input;
+        self
     }
     /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
     pub fn platform(mut self, input: crate::types::PlatformType) -> Self {
@@ -633,7 +673,8 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The fleet platform. WINDOWS_SERVER_2019 and AMAZON_LINUX2 are supported for Elastic fleets. </p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::PlatformType>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
     pub fn max_concurrent_sessions(mut self, input: i32) -> Self {
@@ -642,7 +683,8 @@ impl CreateFleetInputBuilder {
     }
     /// <p>The maximum concurrent sessions of the Elastic fleet. This is required for Elastic fleets, and not allowed for other fleet types.</p>
     pub fn set_max_concurrent_sessions(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_concurrent_sessions = input; self
+        self.max_concurrent_sessions = input;
+        self
     }
     /// Appends an item to `usb_device_filter_strings`.
     ///
@@ -651,13 +693,17 @@ impl CreateFleetInputBuilder {
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
     pub fn usb_device_filter_strings(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.usb_device_filter_strings.unwrap_or_default();
-                        v.push(input.into());
-                        self.usb_device_filter_strings = Some(v);
-                        self
+        v.push(input.into());
+        self.usb_device_filter_strings = Some(v);
+        self
     }
     /// <p>The USB device filter strings that specify which USB devices a user can redirect to the fleet streaming session, when using the Windows native client. This is allowed but not required for Elastic fleets.</p>
-    pub fn set_usb_device_filter_strings(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.usb_device_filter_strings = input; self
+    pub fn set_usb_device_filter_strings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.usb_device_filter_strings = input;
+        self
     }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
     pub fn session_script_s3_location(mut self, input: crate::types::S3Location) -> Self {
@@ -665,57 +711,42 @@ impl CreateFleetInputBuilder {
         self
     }
     /// <p>The S3 location of the session scripts configuration zip file. This only applies to Elastic fleets.</p>
-    pub fn set_session_script_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
-        self.session_script_s3_location = input; self
+    pub fn set_session_script_s3_location(
+        mut self,
+        input: std::option::Option<crate::types::S3Location>,
+    ) -> Self {
+        self.session_script_s3_location = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
-    pub fn build(self) -> Result<crate::operation::create_fleet::CreateFleetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_fleet::CreateFleetInput {
-                name: self.name
-                ,
-                image_name: self.image_name
-                ,
-                image_arn: self.image_arn
-                ,
-                instance_type: self.instance_type
-                ,
-                fleet_type: self.fleet_type
-                ,
-                compute_capacity: self.compute_capacity
-                ,
-                vpc_config: self.vpc_config
-                ,
-                max_user_duration_in_seconds: self.max_user_duration_in_seconds
-                ,
-                disconnect_timeout_in_seconds: self.disconnect_timeout_in_seconds
-                ,
-                description: self.description
-                ,
-                display_name: self.display_name
-                ,
-                enable_default_internet_access: self.enable_default_internet_access
-                ,
-                domain_join_info: self.domain_join_info
-                ,
-                tags: self.tags
-                ,
-                idle_disconnect_timeout_in_seconds: self.idle_disconnect_timeout_in_seconds
-                ,
-                iam_role_arn: self.iam_role_arn
-                ,
-                stream_view: self.stream_view
-                ,
-                platform: self.platform
-                ,
-                max_concurrent_sessions: self.max_concurrent_sessions
-                ,
-                usb_device_filter_strings: self.usb_device_filter_strings
-                ,
-                session_script_s3_location: self.session_script_s3_location
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_fleet::CreateFleetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_fleet::CreateFleetInput {
+            name: self.name,
+            image_name: self.image_name,
+            image_arn: self.image_arn,
+            instance_type: self.instance_type,
+            fleet_type: self.fleet_type,
+            compute_capacity: self.compute_capacity,
+            vpc_config: self.vpc_config,
+            max_user_duration_in_seconds: self.max_user_duration_in_seconds,
+            disconnect_timeout_in_seconds: self.disconnect_timeout_in_seconds,
+            description: self.description,
+            display_name: self.display_name,
+            enable_default_internet_access: self.enable_default_internet_access,
+            domain_join_info: self.domain_join_info,
+            tags: self.tags,
+            idle_disconnect_timeout_in_seconds: self.idle_disconnect_timeout_in_seconds,
+            iam_role_arn: self.iam_role_arn,
+            stream_view: self.stream_view,
+            platform: self.platform,
+            max_concurrent_sessions: self.max_concurrent_sessions,
+            usb_device_filter_strings: self.usb_device_filter_strings,
+            session_script_s3_location: self.session_script_s3_location,
+        })
     }
 }
-

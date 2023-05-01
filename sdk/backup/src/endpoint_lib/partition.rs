@@ -459,7 +459,7 @@ mod test {
     use regex::Regex;
     use std::collections::HashMap;
 
-    fn resolve<'a, 'b>(resolver: &'a PartitionResolver, region: &'b str) -> Partition<'a> {
+    fn resolve<'a>(resolver: &'a PartitionResolver, region: &str) -> Partition<'a> {
         resolver
             .resolve_partition(region, &mut DiagnosticCollector::new())
             .expect("could not resolve partition")
@@ -616,4 +616,3 @@ mod test {
         assert_eq!(resolve(&resolver, "mars-east-2").dns_suffix, "mars.aws");
     }
 }
-

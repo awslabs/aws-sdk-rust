@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConformancePackInput  {
+pub struct DeleteConformancePackInput {
     /// <p>Name of the conformance pack you want to delete.</p>
     #[doc(hidden)]
     pub conformance_pack_name: std::option::Option<std::string::String>,
 }
 impl DeleteConformancePackInput {
     /// <p>Name of the conformance pack you want to delete.</p>
-    pub fn conformance_pack_name(&self) -> std::option::Option<& str> {
+    pub fn conformance_pack_name(&self) -> std::option::Option<&str> {
         self.conformance_pack_name.as_deref()
     }
 }
 impl DeleteConformancePackInput {
     /// Creates a new builder-style object to manufacture [`DeleteConformancePackInput`](crate::operation::delete_conformance_pack::DeleteConformancePackInput).
-    pub fn builder() -> crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder
+    {
         crate::operation::delete_conformance_pack::builders::DeleteConformancePackInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteConformancePackInputBuilder {
         self
     }
     /// <p>Name of the conformance pack you want to delete.</p>
-    pub fn set_conformance_pack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.conformance_pack_name = input; self
+    pub fn set_conformance_pack_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.conformance_pack_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteConformancePackInput`](crate::operation::delete_conformance_pack::DeleteConformancePackInput).
-    pub fn build(self) -> Result<crate::operation::delete_conformance_pack::DeleteConformancePackInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_conformance_pack::DeleteConformancePackInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_conformance_pack::DeleteConformancePackInput {
-                conformance_pack_name: self.conformance_pack_name
-                ,
-            }
+                conformance_pack_name: self.conformance_pack_name,
+            },
         )
     }
 }
-

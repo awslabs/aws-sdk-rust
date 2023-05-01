@@ -3,7 +3,7 @@
 /// <p>Contains details about items that were processed in all of the child workflow executions that were started by a Map Run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MapRunItemCounts  {
+pub struct MapRunItemCounts {
     /// <p>The total number of items to process in child workflow executions that haven't started running yet.</p>
     #[doc(hidden)]
     pub pending: i64,
@@ -91,7 +91,8 @@ impl MapRunItemCountsBuilder {
     }
     /// <p>The total number of items to process in child workflow executions that haven't started running yet.</p>
     pub fn set_pending(mut self, input: std::option::Option<i64>) -> Self {
-        self.pending = input; self
+        self.pending = input;
+        self
     }
     /// <p>The total number of items being processed in child workflow executions that are currently in-progress.</p>
     pub fn running(mut self, input: i64) -> Self {
@@ -100,7 +101,8 @@ impl MapRunItemCountsBuilder {
     }
     /// <p>The total number of items being processed in child workflow executions that are currently in-progress.</p>
     pub fn set_running(mut self, input: std::option::Option<i64>) -> Self {
-        self.running = input; self
+        self.running = input;
+        self
     }
     /// <p>The total number of items processed in child workflow executions that have completed successfully.</p>
     pub fn succeeded(mut self, input: i64) -> Self {
@@ -109,7 +111,8 @@ impl MapRunItemCountsBuilder {
     }
     /// <p>The total number of items processed in child workflow executions that have completed successfully.</p>
     pub fn set_succeeded(mut self, input: std::option::Option<i64>) -> Self {
-        self.succeeded = input; self
+        self.succeeded = input;
+        self
     }
     /// <p>The total number of items processed in child workflow executions that have failed.</p>
     pub fn failed(mut self, input: i64) -> Self {
@@ -118,7 +121,8 @@ impl MapRunItemCountsBuilder {
     }
     /// <p>The total number of items processed in child workflow executions that have failed.</p>
     pub fn set_failed(mut self, input: std::option::Option<i64>) -> Self {
-        self.failed = input; self
+        self.failed = input;
+        self
     }
     /// <p>The total number of items processed in child workflow executions that have timed out.</p>
     pub fn timed_out(mut self, input: i64) -> Self {
@@ -127,7 +131,8 @@ impl MapRunItemCountsBuilder {
     }
     /// <p>The total number of items processed in child workflow executions that have timed out.</p>
     pub fn set_timed_out(mut self, input: std::option::Option<i64>) -> Self {
-        self.timed_out = input; self
+        self.timed_out = input;
+        self
     }
     /// <p>The total number of items processed in child workflow executions that were either stopped by the user or by Step Functions, because the Map Run failed.</p>
     pub fn aborted(mut self, input: i64) -> Self {
@@ -136,7 +141,8 @@ impl MapRunItemCountsBuilder {
     }
     /// <p>The total number of items processed in child workflow executions that were either stopped by the user or by Step Functions, because the Map Run failed.</p>
     pub fn set_aborted(mut self, input: std::option::Option<i64>) -> Self {
-        self.aborted = input; self
+        self.aborted = input;
+        self
     }
     /// <p>The total number of items processed in all the child workflow executions started by a Map Run.</p>
     pub fn total(mut self, input: i64) -> Self {
@@ -145,7 +151,8 @@ impl MapRunItemCountsBuilder {
     }
     /// <p>The total number of items processed in all the child workflow executions started by a Map Run.</p>
     pub fn set_total(mut self, input: std::option::Option<i64>) -> Self {
-        self.total = input; self
+        self.total = input;
+        self
     }
     /// <p>Returns the count of items whose results were written by <code>ResultWriter</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultwriter.html">ResultWriter</a> in the <i>Step Functions Developer Guide</i>.</p>
     pub fn results_written(mut self, input: i64) -> Self {
@@ -154,36 +161,20 @@ impl MapRunItemCountsBuilder {
     }
     /// <p>Returns the count of items whose results were written by <code>ResultWriter</code>. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultwriter.html">ResultWriter</a> in the <i>Step Functions Developer Guide</i>.</p>
     pub fn set_results_written(mut self, input: std::option::Option<i64>) -> Self {
-        self.results_written = input; self
+        self.results_written = input;
+        self
     }
     /// Consumes the builder and constructs a [`MapRunItemCounts`](crate::types::MapRunItemCounts).
     pub fn build(self) -> crate::types::MapRunItemCounts {
         crate::types::MapRunItemCounts {
-            pending: self.pending
-                .unwrap_or_default()
-            ,
-            running: self.running
-                .unwrap_or_default()
-            ,
-            succeeded: self.succeeded
-                .unwrap_or_default()
-            ,
-            failed: self.failed
-                .unwrap_or_default()
-            ,
-            timed_out: self.timed_out
-                .unwrap_or_default()
-            ,
-            aborted: self.aborted
-                .unwrap_or_default()
-            ,
-            total: self.total
-                .unwrap_or_default()
-            ,
-            results_written: self.results_written
-                .unwrap_or_default()
-            ,
+            pending: self.pending.unwrap_or_default(),
+            running: self.running.unwrap_or_default(),
+            succeeded: self.succeeded.unwrap_or_default(),
+            failed: self.failed.unwrap_or_default(),
+            timed_out: self.timed_out.unwrap_or_default(),
+            aborted: self.aborted.unwrap_or_default(),
+            total: self.total.unwrap_or_default(),
+            results_written: self.results_written.unwrap_or_default(),
         }
     }
 }
-

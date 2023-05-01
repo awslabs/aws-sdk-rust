@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateResourceInput  {
+pub struct AssociateResourceInput {
     /// <p> The name, ID, or ARN of the application. </p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct AssociateResourceInput  {
 }
 impl AssociateResourceInput {
     /// <p> The name, ID, or ARN of the application. </p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p>The type of resource of which the application will be associated.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The name or ID of the resource of which the application will be associated.</p>
-    pub fn resource(&self) -> std::option::Option<& str> {
+    pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
 }
 impl AssociateResourceInput {
     /// Creates a new builder-style object to manufacture [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
-    pub fn builder() -> crate::operation::associate_resource::builders::AssociateResourceInputBuilder {
+    pub fn builder() -> crate::operation::associate_resource::builders::AssociateResourceInputBuilder
+    {
         crate::operation::associate_resource::builders::AssociateResourceInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl AssociateResourceInputBuilder {
     }
     /// <p> The name, ID, or ARN of the application. </p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input; self
+        self.application = input;
+        self
     }
     /// <p>The type of resource of which the application will be associated.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -58,8 +60,12 @@ impl AssociateResourceInputBuilder {
         self
     }
     /// <p>The type of resource of which the application will be associated.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The name or ID of the resource of which the application will be associated.</p>
     pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +74,22 @@ impl AssociateResourceInputBuilder {
     }
     /// <p>The name or ID of the resource of which the application will be associated.</p>
     pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource = input; self
+        self.resource = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateResourceInput`](crate::operation::associate_resource::AssociateResourceInput).
-    pub fn build(self) -> Result<crate::operation::associate_resource::AssociateResourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_resource::AssociateResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_resource::AssociateResourceInput {
-                application: self.application
-                ,
-                resource_type: self.resource_type
-                ,
-                resource: self.resource
-                ,
-            }
+                application: self.application,
+                resource_type: self.resource_type,
+                resource: self.resource,
+            },
         )
     }
 }
-

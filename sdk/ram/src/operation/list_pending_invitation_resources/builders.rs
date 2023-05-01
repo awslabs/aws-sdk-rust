@@ -4,63 +4,73 @@ pub use crate::operation::list_pending_invitation_resources::_list_pending_invit
 pub use crate::operation::list_pending_invitation_resources::_list_pending_invitation_resources_input::ListPendingInvitationResourcesInputBuilder;
 
 /// Fluent builder constructing a request to `ListPendingInvitationResources`.
-/// 
+///
 /// <p>Lists the resources in a resource share that is shared with you but for which the invitation is still <code>PENDING</code>. That means that you haven't accepted or rejected the invitation and the invitation hasn't expired.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPendingInvitationResourcesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_pending_invitation_resources::builders::ListPendingInvitationResourcesInputBuilder,
 }
-impl ListPendingInvitationResourcesFluentBuilder  {
+impl ListPendingInvitationResourcesFluentBuilder {
     /// Creates a new `ListPendingInvitationResources`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_pending_invitation_resources::ListPendingInvitationResources, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput, aws_smithy_http::result::SdkError<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator {
-                                crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator{
+        crate::operation::list_pending_invitation_resources::paginator::ListPendingInvitationResourcesPaginator::new(self.handle, self.inner)
+    }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
     pub fn resource_share_invitation_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_share_invitation_arn(input.into());
         self
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the invitation. You can use <code>GetResourceShareInvitations</code> to find the ARN of the invitation.</p>
-    pub fn set_resource_share_invitation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_share_invitation_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_resource_share_invitation_arn(input);
         self
     }
@@ -84,27 +94,29 @@ impl ListPendingInvitationResourcesFluentBuilder  {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li> 
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li> 
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li> 
-    /// </ul> 
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
     pub fn resource_region_scope(mut self, input: crate::types::ResourceRegionScopeFilter) -> Self {
         self.inner = self.inner.resource_region_scope(input);
         self
     }
-    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li> 
-    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li> 
-    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li> 
-    /// </ul> 
+    /// <p>Specifies that you want the results to include only resources that have the specified scope.</p>
+    /// <ul>
+    /// <li> <p> <code>ALL</code> – the results include both global and regional resources or resource types.</p> </li>
+    /// <li> <p> <code>GLOBAL</code> – the results include only global resources or resource types.</p> </li>
+    /// <li> <p> <code>REGIONAL</code> – the results include only regional resources or resource types.</p> </li>
+    /// </ul>
     /// <p>The default value is <code>ALL</code>.</p>
-    pub fn set_resource_region_scope(mut self, input: std::option::Option<crate::types::ResourceRegionScopeFilter>) -> Self {
+    pub fn set_resource_region_scope(
+        mut self,
+        input: std::option::Option<crate::types::ResourceRegionScopeFilter>,
+    ) -> Self {
         self.inner = self.inner.set_resource_region_scope(input);
         self
     }
 }
-

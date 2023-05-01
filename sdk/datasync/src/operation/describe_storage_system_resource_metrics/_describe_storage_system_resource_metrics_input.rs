@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStorageSystemResourceMetricsInput  {
+pub struct DescribeStorageSystemResourceMetricsInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
     #[doc(hidden)]
     pub discovery_job_arn: std::option::Option<std::string::String>,
@@ -27,23 +27,23 @@ pub struct DescribeStorageSystemResourceMetricsInput  {
 }
 impl DescribeStorageSystemResourceMetricsInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
-    pub fn discovery_job_arn(&self) -> std::option::Option<& str> {
+    pub fn discovery_job_arn(&self) -> std::option::Option<&str> {
         self.discovery_job_arn.as_deref()
     }
     /// <p>Specifies the kind of storage system resource that you want information about.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::DiscoveryResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::DiscoveryResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Specifies the universally unique identifier (UUID) of the storage system resource that you want information about.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>EndTime</code>.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>StartTime</code>.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Specifies how many results that you want in the response.</p>
@@ -51,13 +51,13 @@ impl DescribeStorageSystemResourceMetricsInput {
         self.max_results
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeStorageSystemResourceMetricsInput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageSystemResourceMetricsInput`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsInput).
-    pub fn builder() -> crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsInputBuilder {
+    pub fn builder() -> crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsInputBuilder{
         crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsInputBuilder::default()
     }
 }
@@ -81,8 +81,12 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the discovery job that collects information about your on-premises storage system.</p>
-    pub fn set_discovery_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.discovery_job_arn = input; self
+    pub fn set_discovery_job_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.discovery_job_arn = input;
+        self
     }
     /// <p>Specifies the kind of storage system resource that you want information about.</p>
     pub fn resource_type(mut self, input: crate::types::DiscoveryResourceType) -> Self {
@@ -90,8 +94,12 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
         self
     }
     /// <p>Specifies the kind of storage system resource that you want information about.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::DiscoveryResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::DiscoveryResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>Specifies the universally unique identifier (UUID) of the storage system resource that you want information about.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +108,8 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
     }
     /// <p>Specifies the universally unique identifier (UUID) of the storage system resource that you want information about.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>EndTime</code>.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -108,8 +117,12 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
         self
     }
     /// <p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>EndTime</code>.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>StartTime</code>.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -118,7 +131,8 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
     }
     /// <p>Specifies a time within the total duration that the discovery job ran. To see information gathered during a certain time frame, use this parameter with <code>StartTime</code>.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>Specifies how many results that you want in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -127,7 +141,8 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
     }
     /// <p>Specifies how many results that you want in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,10 +151,11 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeStorageSystemResourceMetricsInput`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsInput).
-    pub fn build(self) -> Result<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsInput {
                 discovery_job_arn: self.discovery_job_arn
@@ -160,4 +176,3 @@ impl DescribeStorageSystemResourceMetricsInputBuilder {
         )
     }
 }
-

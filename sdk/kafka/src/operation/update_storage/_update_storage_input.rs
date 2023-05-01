@@ -3,7 +3,7 @@
 /// <p>Request object for UpdateStorage api. Its used to update the storage attributes for the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStorageInput  {
+pub struct UpdateStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     #[doc(hidden)]
     pub cluster_arn: std::option::Option<std::string::String>,
@@ -22,19 +22,21 @@ pub struct UpdateStorageInput  {
 }
 impl UpdateStorageInput {
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
-    pub fn cluster_arn(&self) -> std::option::Option<& str> {
+    pub fn cluster_arn(&self) -> std::option::Option<&str> {
         self.cluster_arn.as_deref()
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
-    pub fn current_version(&self) -> std::option::Option<& str> {
+    pub fn current_version(&self) -> std::option::Option<&str> {
         self.current_version.as_deref()
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn provisioned_throughput(&self) -> std::option::Option<& crate::types::ProvisionedThroughput> {
+    pub fn provisioned_throughput(
+        &self,
+    ) -> std::option::Option<&crate::types::ProvisionedThroughput> {
         self.provisioned_throughput.as_ref()
     }
     /// <p>Controls storage mode for supported storage tiers.</p>
-    pub fn storage_mode(&self) -> std::option::Option<& crate::types::StorageMode> {
+    pub fn storage_mode(&self) -> std::option::Option<&crate::types::StorageMode> {
         self.storage_mode.as_ref()
     }
     /// <p>size of the EBS volume to update.</p>
@@ -67,7 +69,8 @@ impl UpdateStorageInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster to be updated.</p>
     pub fn set_cluster_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_arn = input; self
+        self.cluster_arn = input;
+        self
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn current_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +79,8 @@ impl UpdateStorageInputBuilder {
     }
     /// <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
     pub fn set_current_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.current_version = input; self
+        self.current_version = input;
+        self
     }
     /// <p>EBS volume provisioned throughput information.</p>
     pub fn provisioned_throughput(mut self, input: crate::types::ProvisionedThroughput) -> Self {
@@ -84,8 +88,12 @@ impl UpdateStorageInputBuilder {
         self
     }
     /// <p>EBS volume provisioned throughput information.</p>
-    pub fn set_provisioned_throughput(mut self, input: std::option::Option<crate::types::ProvisionedThroughput>) -> Self {
-        self.provisioned_throughput = input; self
+    pub fn set_provisioned_throughput(
+        mut self,
+        input: std::option::Option<crate::types::ProvisionedThroughput>,
+    ) -> Self {
+        self.provisioned_throughput = input;
+        self
     }
     /// <p>Controls storage mode for supported storage tiers.</p>
     pub fn storage_mode(mut self, input: crate::types::StorageMode) -> Self {
@@ -93,8 +101,12 @@ impl UpdateStorageInputBuilder {
         self
     }
     /// <p>Controls storage mode for supported storage tiers.</p>
-    pub fn set_storage_mode(mut self, input: std::option::Option<crate::types::StorageMode>) -> Self {
-        self.storage_mode = input; self
+    pub fn set_storage_mode(
+        mut self,
+        input: std::option::Option<crate::types::StorageMode>,
+    ) -> Self {
+        self.storage_mode = input;
+        self
     }
     /// <p>size of the EBS volume to update.</p>
     pub fn volume_size_gb(mut self, input: i32) -> Self {
@@ -103,24 +115,22 @@ impl UpdateStorageInputBuilder {
     }
     /// <p>size of the EBS volume to update.</p>
     pub fn set_volume_size_gb(mut self, input: std::option::Option<i32>) -> Self {
-        self.volume_size_gb = input; self
+        self.volume_size_gb = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateStorageInput`](crate::operation::update_storage::UpdateStorageInput).
-    pub fn build(self) -> Result<crate::operation::update_storage::UpdateStorageInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_storage::UpdateStorageInput {
-                cluster_arn: self.cluster_arn
-                ,
-                current_version: self.current_version
-                ,
-                provisioned_throughput: self.provisioned_throughput
-                ,
-                storage_mode: self.storage_mode
-                ,
-                volume_size_gb: self.volume_size_gb
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_storage::UpdateStorageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_storage::UpdateStorageInput {
+            cluster_arn: self.cluster_arn,
+            current_version: self.current_version,
+            provisioned_throughput: self.provisioned_throughput,
+            storage_mode: self.storage_mode,
+            volume_size_gb: self.volume_size_gb,
+        })
     }
 }
-

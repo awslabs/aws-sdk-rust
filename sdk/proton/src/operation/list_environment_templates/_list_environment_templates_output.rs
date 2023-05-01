@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEnvironmentTemplatesOutput  {
+pub struct ListEnvironmentTemplatesOutput {
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct ListEnvironmentTemplatesOutput  {
 }
 impl ListEnvironmentTemplatesOutput {
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An array of environment templates with detail data.</p>
-    pub fn templates(&self) -> std::option::Option<& [crate::types::EnvironmentTemplateSummary]> {
+    pub fn templates(&self) -> std::option::Option<&[crate::types::EnvironmentTemplateSummary]> {
         self.templates.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEnvironmentTemplatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListEnvironmentTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListEnvironmentTemplatesOutput`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput).
-    pub fn builder() -> crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesOutputBuilder
+    {
         crate::operation::list_environment_templates::builders::ListEnvironmentTemplatesOutputBuilder::default()
     }
 }
@@ -38,7 +40,8 @@ impl ListEnvironmentTemplatesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListEnvironmentTemplatesOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) templates: std::option::Option<std::vec::Vec<crate::types::EnvironmentTemplateSummary>>,
+    pub(crate) templates:
+        std::option::Option<std::vec::Vec<crate::types::EnvironmentTemplateSummary>>,
     _request_id: Option<String>,
 }
 impl ListEnvironmentTemplatesOutputBuilder {
@@ -49,7 +52,8 @@ impl ListEnvironmentTemplatesOutputBuilder {
     }
     /// <p>A token that indicates the location of the next environment template in the array of environment templates, after the current requested list of environment templates.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `templates`.
     ///
@@ -58,32 +62,35 @@ impl ListEnvironmentTemplatesOutputBuilder {
     /// <p>An array of environment templates with detail data.</p>
     pub fn templates(mut self, input: crate::types::EnvironmentTemplateSummary) -> Self {
         let mut v = self.templates.unwrap_or_default();
-                        v.push(input);
-                        self.templates = Some(v);
-                        self
+        v.push(input);
+        self.templates = Some(v);
+        self
     }
     /// <p>An array of environment templates with detail data.</p>
-    pub fn set_templates(mut self, input: std::option::Option<std::vec::Vec<crate::types::EnvironmentTemplateSummary>>) -> Self {
-        self.templates = input; self
+    pub fn set_templates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentTemplateSummary>>,
+    ) -> Self {
+        self.templates = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListEnvironmentTemplatesOutput`](crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput {
         crate::operation::list_environment_templates::ListEnvironmentTemplatesOutput {
-            next_token: self.next_token
-            ,
-            templates: self.templates
-            ,
+            next_token: self.next_token,
+            templates: self.templates,
             _request_id: self._request_id,
         }
     }
 }
-

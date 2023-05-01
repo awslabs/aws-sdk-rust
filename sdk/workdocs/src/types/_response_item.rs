@@ -3,7 +3,7 @@
 /// <p>List of Documents, Folders, Comments, and Document Versions matching the query.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ResponseItem  {
+pub struct ResponseItem {
     /// <p>The type of item being returned.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ResponseItemType>,
@@ -25,31 +25,33 @@ pub struct ResponseItem  {
 }
 impl ResponseItem {
     /// <p>The type of item being returned.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResponseItemType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResponseItemType> {
         self.resource_type.as_ref()
     }
     /// <p>The webUrl of the item being returned.</p>
-    pub fn web_url(&self) -> std::option::Option<& str> {
+    pub fn web_url(&self) -> std::option::Option<&str> {
         self.web_url.as_deref()
     }
     /// <p>The document that matches the query.</p>
-    pub fn document_metadata(&self) -> std::option::Option<& crate::types::DocumentMetadata> {
+    pub fn document_metadata(&self) -> std::option::Option<&crate::types::DocumentMetadata> {
         self.document_metadata.as_ref()
     }
     /// <p>The folder that matches the query.</p>
-    pub fn folder_metadata(&self) -> std::option::Option<& crate::types::FolderMetadata> {
+    pub fn folder_metadata(&self) -> std::option::Option<&crate::types::FolderMetadata> {
         self.folder_metadata.as_ref()
     }
     /// <p>The comment that matches the query.</p>
-    pub fn comment_metadata(&self) -> std::option::Option<& crate::types::CommentMetadata> {
+    pub fn comment_metadata(&self) -> std::option::Option<&crate::types::CommentMetadata> {
         self.comment_metadata.as_ref()
     }
     /// <p>The document version that matches the metadata.</p>
-    pub fn document_version_metadata(&self) -> std::option::Option<& crate::types::DocumentVersionMetadata> {
+    pub fn document_version_metadata(
+        &self,
+    ) -> std::option::Option<&crate::types::DocumentVersionMetadata> {
         self.document_version_metadata.as_ref()
     }
 }
-impl  std::fmt::Debug for ResponseItem  {
+impl std::fmt::Debug for ResponseItem {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ResponseItem");
         formatter.field("resource_type", &self.resource_type);
@@ -77,7 +79,8 @@ pub struct ResponseItemBuilder {
     pub(crate) document_metadata: std::option::Option<crate::types::DocumentMetadata>,
     pub(crate) folder_metadata: std::option::Option<crate::types::FolderMetadata>,
     pub(crate) comment_metadata: std::option::Option<crate::types::CommentMetadata>,
-    pub(crate) document_version_metadata: std::option::Option<crate::types::DocumentVersionMetadata>,
+    pub(crate) document_version_metadata:
+        std::option::Option<crate::types::DocumentVersionMetadata>,
 }
 impl ResponseItemBuilder {
     /// <p>The type of item being returned.</p>
@@ -86,8 +89,12 @@ impl ResponseItemBuilder {
         self
     }
     /// <p>The type of item being returned.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResponseItemType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResponseItemType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The webUrl of the item being returned.</p>
     pub fn web_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,7 +103,8 @@ impl ResponseItemBuilder {
     }
     /// <p>The webUrl of the item being returned.</p>
     pub fn set_web_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.web_url = input; self
+        self.web_url = input;
+        self
     }
     /// <p>The document that matches the query.</p>
     pub fn document_metadata(mut self, input: crate::types::DocumentMetadata) -> Self {
@@ -104,8 +112,12 @@ impl ResponseItemBuilder {
         self
     }
     /// <p>The document that matches the query.</p>
-    pub fn set_document_metadata(mut self, input: std::option::Option<crate::types::DocumentMetadata>) -> Self {
-        self.document_metadata = input; self
+    pub fn set_document_metadata(
+        mut self,
+        input: std::option::Option<crate::types::DocumentMetadata>,
+    ) -> Self {
+        self.document_metadata = input;
+        self
     }
     /// <p>The folder that matches the query.</p>
     pub fn folder_metadata(mut self, input: crate::types::FolderMetadata) -> Self {
@@ -113,8 +125,12 @@ impl ResponseItemBuilder {
         self
     }
     /// <p>The folder that matches the query.</p>
-    pub fn set_folder_metadata(mut self, input: std::option::Option<crate::types::FolderMetadata>) -> Self {
-        self.folder_metadata = input; self
+    pub fn set_folder_metadata(
+        mut self,
+        input: std::option::Option<crate::types::FolderMetadata>,
+    ) -> Self {
+        self.folder_metadata = input;
+        self
     }
     /// <p>The comment that matches the query.</p>
     pub fn comment_metadata(mut self, input: crate::types::CommentMetadata) -> Self {
@@ -122,33 +138,38 @@ impl ResponseItemBuilder {
         self
     }
     /// <p>The comment that matches the query.</p>
-    pub fn set_comment_metadata(mut self, input: std::option::Option<crate::types::CommentMetadata>) -> Self {
-        self.comment_metadata = input; self
+    pub fn set_comment_metadata(
+        mut self,
+        input: std::option::Option<crate::types::CommentMetadata>,
+    ) -> Self {
+        self.comment_metadata = input;
+        self
     }
     /// <p>The document version that matches the metadata.</p>
-    pub fn document_version_metadata(mut self, input: crate::types::DocumentVersionMetadata) -> Self {
+    pub fn document_version_metadata(
+        mut self,
+        input: crate::types::DocumentVersionMetadata,
+    ) -> Self {
         self.document_version_metadata = Some(input);
         self
     }
     /// <p>The document version that matches the metadata.</p>
-    pub fn set_document_version_metadata(mut self, input: std::option::Option<crate::types::DocumentVersionMetadata>) -> Self {
-        self.document_version_metadata = input; self
+    pub fn set_document_version_metadata(
+        mut self,
+        input: std::option::Option<crate::types::DocumentVersionMetadata>,
+    ) -> Self {
+        self.document_version_metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResponseItem`](crate::types::ResponseItem).
     pub fn build(self) -> crate::types::ResponseItem {
         crate::types::ResponseItem {
-            resource_type: self.resource_type
-            ,
-            web_url: self.web_url
-            ,
-            document_metadata: self.document_metadata
-            ,
-            folder_metadata: self.folder_metadata
-            ,
-            comment_metadata: self.comment_metadata
-            ,
-            document_version_metadata: self.document_version_metadata
-            ,
+            resource_type: self.resource_type,
+            web_url: self.web_url,
+            document_metadata: self.document_metadata,
+            folder_metadata: self.folder_metadata,
+            comment_metadata: self.comment_metadata,
+            document_version_metadata: self.document_version_metadata,
         }
     }
 }
@@ -164,4 +185,3 @@ impl std::fmt::Debug for ResponseItemBuilder {
         formatter.finish()
     }
 }
-

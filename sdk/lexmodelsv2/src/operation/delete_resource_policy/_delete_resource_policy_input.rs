@@ -2,29 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyInput  {
+pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p> 
+    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
     /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
     #[doc(hidden)]
     pub expected_revision_id: std::option::Option<std::string::String>,
 }
 impl DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
-    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p> 
+    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
     /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
-    pub fn expected_revision_id(&self) -> std::option::Option<& str> {
+    pub fn expected_revision_id(&self) -> std::option::Option<&str> {
         self.expected_revision_id.as_deref()
     }
 }
 impl DeleteResourcePolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn builder() -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder {
         crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder::default()
     }
 }
@@ -44,29 +45,36 @@ impl DeleteResourcePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
-    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p> 
+    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
     /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
     pub fn expected_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.expected_revision_id = Some(input.into());
         self
     }
-    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p> 
+    /// <p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p>
     /// <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
-    pub fn set_expected_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expected_revision_id = input; self
+    pub fn set_expected_revision_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.expected_revision_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_resource_policy::DeleteResourcePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
-                resource_arn: self.resource_arn
-                ,
-                expected_revision_id: self.expected_revision_id
-                ,
-            }
+                resource_arn: self.resource_arn,
+                expected_revision_id: self.expected_revision_id,
+            },
         )
     }
 }
-

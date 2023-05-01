@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTargetsForSecurityProfileOutput  {
+pub struct ListTargetsForSecurityProfileOutput {
     /// <p>The thing groups to which the security profile is attached.</p>
     #[doc(hidden)]
-    pub security_profile_targets: std::option::Option<std::vec::Vec<crate::types::SecurityProfileTarget>>,
+    pub security_profile_targets:
+        std::option::Option<std::vec::Vec<crate::types::SecurityProfileTarget>>,
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct ListTargetsForSecurityProfileOutput  {
 }
 impl ListTargetsForSecurityProfileOutput {
     /// <p>The thing groups to which the security profile is attached.</p>
-    pub fn security_profile_targets(&self) -> std::option::Option<& [crate::types::SecurityProfileTarget]> {
+    pub fn security_profile_targets(
+        &self,
+    ) -> std::option::Option<&[crate::types::SecurityProfileTarget]> {
         self.security_profile_targets.as_deref()
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTargetsForSecurityProfileOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTargetsForSecurityProfileOutput {
     /// Creates a new builder-style object to manufacture [`ListTargetsForSecurityProfileOutput`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput).
-    pub fn builder() -> crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileOutputBuilder {
+    pub fn builder() -> crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileOutputBuilder{
         crate::operation::list_targets_for_security_profile::builders::ListTargetsForSecurityProfileOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl ListTargetsForSecurityProfileOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListTargetsForSecurityProfileOutputBuilder {
-    pub(crate) security_profile_targets: std::option::Option<std::vec::Vec<crate::types::SecurityProfileTarget>>,
+    pub(crate) security_profile_targets:
+        std::option::Option<std::vec::Vec<crate::types::SecurityProfileTarget>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +53,17 @@ impl ListTargetsForSecurityProfileOutputBuilder {
     /// <p>The thing groups to which the security profile is attached.</p>
     pub fn security_profile_targets(mut self, input: crate::types::SecurityProfileTarget) -> Self {
         let mut v = self.security_profile_targets.unwrap_or_default();
-                        v.push(input);
-                        self.security_profile_targets = Some(v);
-                        self
+        v.push(input);
+        self.security_profile_targets = Some(v);
+        self
     }
     /// <p>The thing groups to which the security profile is attached.</p>
-    pub fn set_security_profile_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::SecurityProfileTarget>>) -> Self {
-        self.security_profile_targets = input; self
+    pub fn set_security_profile_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SecurityProfileTarget>>,
+    ) -> Self {
+        self.security_profile_targets = input;
+        self
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +72,27 @@ impl ListTargetsForSecurityProfileOutputBuilder {
     }
     /// <p>A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTargetsForSecurityProfileOutput`](crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput).
-    pub fn build(self) -> crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput
+    {
         crate::operation::list_targets_for_security_profile::ListTargetsForSecurityProfileOutput {
-            security_profile_targets: self.security_profile_targets
-            ,
-            next_token: self.next_token
-            ,
+            security_profile_targets: self.security_profile_targets,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

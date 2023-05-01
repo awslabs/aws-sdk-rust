@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourceEventConfigurationInput  {
+pub struct GetResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct GetResourceEventConfigurationInput  {
 }
 impl GetResourceEventConfigurationInput {
     /// <p>Resource identifier to opt in for event messaging.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    pub fn identifier_type(&self) -> std::option::Option<& crate::types::IdentifierType> {
+    pub fn identifier_type(&self) -> std::option::Option<&crate::types::IdentifierType> {
         self.identifier_type.as_ref()
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
-    pub fn partner_type(&self) -> std::option::Option<& crate::types::EventNotificationPartnerType> {
+    pub fn partner_type(&self) -> std::option::Option<&crate::types::EventNotificationPartnerType> {
         self.partner_type.as_ref()
     }
 }
 impl GetResourceEventConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetResourceEventConfigurationInput`](crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput).
-    pub fn builder() -> crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder{
         crate::operation::get_resource_event_configuration::builders::GetResourceEventConfigurationInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl GetResourceEventConfigurationInputBuilder {
     }
     /// <p>Resource identifier to opt in for event messaging.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
     pub fn identifier_type(mut self, input: crate::types::IdentifierType) -> Self {
@@ -58,8 +59,12 @@ impl GetResourceEventConfigurationInputBuilder {
         self
     }
     /// <p>Identifier type of the particular resource identifier for event configuration.</p>
-    pub fn set_identifier_type(mut self, input: std::option::Option<crate::types::IdentifierType>) -> Self {
-        self.identifier_type = input; self
+    pub fn set_identifier_type(
+        mut self,
+        input: std::option::Option<crate::types::IdentifierType>,
+    ) -> Self {
+        self.identifier_type = input;
+        self
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
     pub fn partner_type(mut self, input: crate::types::EventNotificationPartnerType) -> Self {
@@ -67,11 +72,20 @@ impl GetResourceEventConfigurationInputBuilder {
         self
     }
     /// <p>Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.</p>
-    pub fn set_partner_type(mut self, input: std::option::Option<crate::types::EventNotificationPartnerType>) -> Self {
-        self.partner_type = input; self
+    pub fn set_partner_type(
+        mut self,
+        input: std::option::Option<crate::types::EventNotificationPartnerType>,
+    ) -> Self {
+        self.partner_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetResourceEventConfigurationInput`](crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_resource_event_configuration::GetResourceEventConfigurationInput {
                 identifier: self.identifier
@@ -84,4 +98,3 @@ impl GetResourceEventConfigurationInputBuilder {
         )
     }
 }
-

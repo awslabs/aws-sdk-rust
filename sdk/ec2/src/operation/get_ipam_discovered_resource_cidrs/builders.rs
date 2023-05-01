@@ -4,56 +4,63 @@ pub use crate::operation::get_ipam_discovered_resource_cidrs::_get_ipam_discover
 pub use crate::operation::get_ipam_discovered_resource_cidrs::_get_ipam_discovered_resource_cidrs_input::GetIpamDiscoveredResourceCidrsInputBuilder;
 
 /// Fluent builder constructing a request to `GetIpamDiscoveredResourceCidrs`.
-/// 
+///
 /// <p>Returns the resource CIDRs that are monitored as part of a resource discovery. A discovered resource is a resource CIDR monitored under a resource discovery. The following resources can be discovered: VPCs, Public IPv4 pools, VPC subnets, and Elastic IP addresses. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetIpamDiscoveredResourceCidrsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::get_ipam_discovered_resource_cidrs::builders::GetIpamDiscoveredResourceCidrsInputBuilder,
 }
-impl GetIpamDiscoveredResourceCidrsFluentBuilder  {
+impl GetIpamDiscoveredResourceCidrsFluentBuilder {
     /// Creates a new `GetIpamDiscoveredResourceCidrs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrs, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput, aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_discovered_resource_cidrs::paginator::GetIpamDiscoveredResourceCidrsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_ipam_discovered_resource_cidrs::paginator::GetIpamDiscoveredResourceCidrsPaginator {
-                                crate::operation::get_ipam_discovered_resource_cidrs::paginator::GetIpamDiscoveredResourceCidrsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_ipam_discovered_resource_cidrs::paginator::GetIpamDiscoveredResourceCidrsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::get_ipam_discovered_resource_cidrs::paginator::GetIpamDiscoveredResourceCidrsPaginator{
+        crate::operation::get_ipam_discovered_resource_cidrs::paginator::GetIpamDiscoveredResourceCidrsPaginator::new(self.handle, self.inner)
+    }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -70,7 +77,10 @@ impl GetIpamDiscoveredResourceCidrsFluentBuilder  {
         self
     }
     /// <p>A resource discovery ID.</p>
-    pub fn set_ipam_resource_discovery_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ipam_resource_discovery_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ipam_resource_discovery_id(input);
         self
     }
@@ -94,7 +104,10 @@ impl GetIpamDiscoveredResourceCidrsFluentBuilder  {
         self
     }
     /// <p>Filters.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -119,4 +132,3 @@ impl GetIpamDiscoveredResourceCidrsFluentBuilder  {
         self
     }
 }
-

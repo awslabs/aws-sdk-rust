@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVirtualRouterOutput  {
+pub struct UpdateVirtualRouterOutput {
     /// <p>A full description of the virtual router that was updated.</p>
     #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::types::VirtualRouterData>,
@@ -10,19 +10,21 @@ pub struct UpdateVirtualRouterOutput  {
 }
 impl UpdateVirtualRouterOutput {
     /// <p>A full description of the virtual router that was updated.</p>
-    pub fn virtual_router(&self) -> std::option::Option<& crate::types::VirtualRouterData> {
+    pub fn virtual_router(&self) -> std::option::Option<&crate::types::VirtualRouterData> {
         self.virtual_router.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateVirtualRouterOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateVirtualRouterOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualRouterOutput`](crate::operation::update_virtual_router::UpdateVirtualRouterOutput).
-    pub fn builder() -> crate::operation::update_virtual_router::builders::UpdateVirtualRouterOutputBuilder {
-        crate::operation::update_virtual_router::builders::UpdateVirtualRouterOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::update_virtual_router::builders::UpdateVirtualRouterOutputBuilder {
+        crate::operation::update_virtual_router::builders::UpdateVirtualRouterOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl UpdateVirtualRouterOutputBuilder {
         self
     }
     /// <p>A full description of the virtual router that was updated.</p>
-    pub fn set_virtual_router(mut self, input: std::option::Option<crate::types::VirtualRouterData>) -> Self {
-        self.virtual_router = input; self
+    pub fn set_virtual_router(
+        mut self,
+        input: std::option::Option<crate::types::VirtualRouterData>,
+    ) -> Self {
+        self.virtual_router = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateVirtualRouterOutput`](crate::operation::update_virtual_router::UpdateVirtualRouterOutput).
     pub fn build(self) -> crate::operation::update_virtual_router::UpdateVirtualRouterOutput {
         crate::operation::update_virtual_router::UpdateVirtualRouterOutput {
-            virtual_router: self.virtual_router
-            ,
+            virtual_router: self.virtual_router,
             _request_id: self._request_id,
         }
     }
 }
-

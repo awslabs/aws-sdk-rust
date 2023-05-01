@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAppInstanceUserExpirationSettingsInput  {
+pub struct PutAppInstanceUserExpirationSettingsInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct PutAppInstanceUserExpirationSettingsInput  {
 }
 impl PutAppInstanceUserExpirationSettingsInput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn expiration_settings(&self) -> std::option::Option<& crate::types::ExpirationSettings> {
+    pub fn expiration_settings(&self) -> std::option::Option<&crate::types::ExpirationSettings> {
         self.expiration_settings.as_ref()
     }
 }
 impl PutAppInstanceUserExpirationSettingsInput {
     /// Creates a new builder-style object to manufacture [`PutAppInstanceUserExpirationSettingsInput`](crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput).
-    pub fn builder() -> crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsInputBuilder {
+    pub fn builder() -> crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsInputBuilder{
         crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl PutAppInstanceUserExpirationSettingsInputBuilder {
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_user_arn = input; self
+    pub fn set_app_instance_user_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_instance_user_arn = input;
+        self
     }
     /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
@@ -50,11 +54,15 @@ impl PutAppInstanceUserExpirationSettingsInputBuilder {
         self
     }
     /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn set_expiration_settings(mut self, input: std::option::Option<crate::types::ExpirationSettings>) -> Self {
-        self.expiration_settings = input; self
+    pub fn set_expiration_settings(
+        mut self,
+        input: std::option::Option<crate::types::ExpirationSettings>,
+    ) -> Self {
+        self.expiration_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutAppInstanceUserExpirationSettingsInput`](crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput).
-    pub fn build(self) -> Result<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput {
                 app_instance_user_arn: self.app_instance_user_arn
@@ -65,4 +73,3 @@ impl PutAppInstanceUserExpirationSettingsInputBuilder {
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The dynamic configuration of the reference line data configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReferenceLineDynamicDataConfiguration  {
+pub struct ReferenceLineDynamicDataConfiguration {
     /// <p>The column that the dynamic data targets.</p>
     #[doc(hidden)]
     pub column: std::option::Option<crate::types::ColumnIdentifier>,
@@ -16,15 +16,17 @@ pub struct ReferenceLineDynamicDataConfiguration  {
 }
 impl ReferenceLineDynamicDataConfiguration {
     /// <p>The column that the dynamic data targets.</p>
-    pub fn column(&self) -> std::option::Option<& crate::types::ColumnIdentifier> {
+    pub fn column(&self) -> std::option::Option<&crate::types::ColumnIdentifier> {
         self.column.as_ref()
     }
     /// <p>The aggregation function that is used in the dynamic data.</p>
-    pub fn measure_aggregation_function(&self) -> std::option::Option<& crate::types::AggregationFunction> {
+    pub fn measure_aggregation_function(
+        &self,
+    ) -> std::option::Option<&crate::types::AggregationFunction> {
         self.measure_aggregation_function.as_ref()
     }
     /// <p>The calculation that is used in the dynamic data.</p>
-    pub fn calculation(&self) -> std::option::Option<& crate::types::NumericalAggregationFunction> {
+    pub fn calculation(&self) -> std::option::Option<&crate::types::NumericalAggregationFunction> {
         self.calculation.as_ref()
     }
 }
@@ -50,17 +52,28 @@ impl ReferenceLineDynamicDataConfigurationBuilder {
         self
     }
     /// <p>The column that the dynamic data targets.</p>
-    pub fn set_column(mut self, input: std::option::Option<crate::types::ColumnIdentifier>) -> Self {
-        self.column = input; self
+    pub fn set_column(
+        mut self,
+        input: std::option::Option<crate::types::ColumnIdentifier>,
+    ) -> Self {
+        self.column = input;
+        self
     }
     /// <p>The aggregation function that is used in the dynamic data.</p>
-    pub fn measure_aggregation_function(mut self, input: crate::types::AggregationFunction) -> Self {
+    pub fn measure_aggregation_function(
+        mut self,
+        input: crate::types::AggregationFunction,
+    ) -> Self {
         self.measure_aggregation_function = Some(input);
         self
     }
     /// <p>The aggregation function that is used in the dynamic data.</p>
-    pub fn set_measure_aggregation_function(mut self, input: std::option::Option<crate::types::AggregationFunction>) -> Self {
-        self.measure_aggregation_function = input; self
+    pub fn set_measure_aggregation_function(
+        mut self,
+        input: std::option::Option<crate::types::AggregationFunction>,
+    ) -> Self {
+        self.measure_aggregation_function = input;
+        self
     }
     /// <p>The calculation that is used in the dynamic data.</p>
     pub fn calculation(mut self, input: crate::types::NumericalAggregationFunction) -> Self {
@@ -68,19 +81,19 @@ impl ReferenceLineDynamicDataConfigurationBuilder {
         self
     }
     /// <p>The calculation that is used in the dynamic data.</p>
-    pub fn set_calculation(mut self, input: std::option::Option<crate::types::NumericalAggregationFunction>) -> Self {
-        self.calculation = input; self
+    pub fn set_calculation(
+        mut self,
+        input: std::option::Option<crate::types::NumericalAggregationFunction>,
+    ) -> Self {
+        self.calculation = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReferenceLineDynamicDataConfiguration`](crate::types::ReferenceLineDynamicDataConfiguration).
     pub fn build(self) -> crate::types::ReferenceLineDynamicDataConfiguration {
         crate::types::ReferenceLineDynamicDataConfiguration {
-            column: self.column
-            ,
-            measure_aggregation_function: self.measure_aggregation_function
-            ,
-            calculation: self.calculation
-            ,
+            column: self.column,
+            measure_aggregation_function: self.measure_aggregation_function,
+            calculation: self.calculation,
         }
     }
 }
-

@@ -104,4 +104,3 @@ pub mod builders;
 
 /// Error types that GameSparks can respond with.
 pub mod error;
-

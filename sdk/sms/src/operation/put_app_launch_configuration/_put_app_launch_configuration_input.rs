@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAppLaunchConfigurationInput  {
+pub struct PutAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -14,15 +14,16 @@ pub struct PutAppLaunchConfigurationInput  {
     pub auto_launch: std::option::Option<bool>,
     /// <p>Information about the launch configurations for server groups in the application.</p>
     #[doc(hidden)]
-    pub server_group_launch_configurations: std::option::Option<std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
+    pub server_group_launch_configurations:
+        std::option::Option<std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
 }
 impl PutAppLaunchConfigurationInput {
     /// <p>The ID of the application.</p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
-    pub fn role_name(&self) -> std::option::Option<& str> {
+    pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
@@ -30,13 +31,15 @@ impl PutAppLaunchConfigurationInput {
         self.auto_launch
     }
     /// <p>Information about the launch configurations for server groups in the application.</p>
-    pub fn server_group_launch_configurations(&self) -> std::option::Option<& [crate::types::ServerGroupLaunchConfiguration]> {
+    pub fn server_group_launch_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::ServerGroupLaunchConfiguration]> {
         self.server_group_launch_configurations.as_deref()
     }
 }
 impl PutAppLaunchConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutAppLaunchConfigurationInput`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput).
-    pub fn builder() -> crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder{
         crate::operation::put_app_launch_configuration::builders::PutAppLaunchConfigurationInputBuilder::default()
     }
 }
@@ -48,7 +51,8 @@ pub struct PutAppLaunchConfigurationInputBuilder {
     pub(crate) app_id: std::option::Option<std::string::String>,
     pub(crate) role_name: std::option::Option<std::string::String>,
     pub(crate) auto_launch: std::option::Option<bool>,
-    pub(crate) server_group_launch_configurations: std::option::Option<std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
+    pub(crate) server_group_launch_configurations:
+        std::option::Option<std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
 }
 impl PutAppLaunchConfigurationInputBuilder {
     /// <p>The ID of the application.</p>
@@ -58,7 +62,8 @@ impl PutAppLaunchConfigurationInputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
     pub fn role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +72,8 @@ impl PutAppLaunchConfigurationInputBuilder {
     }
     /// <p>The name of service role in the customer's account that CloudFormation uses to launch the application.</p>
     pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_name = input; self
+        self.role_name = input;
+        self
     }
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
     pub fn auto_launch(mut self, input: bool) -> Self {
@@ -76,37 +82,45 @@ impl PutAppLaunchConfigurationInputBuilder {
     }
     /// <p>Indicates whether the application is configured to launch automatically after replication is complete.</p>
     pub fn set_auto_launch(mut self, input: std::option::Option<bool>) -> Self {
-        self.auto_launch = input; self
+        self.auto_launch = input;
+        self
     }
     /// Appends an item to `server_group_launch_configurations`.
     ///
     /// To override the contents of this collection use [`set_server_group_launch_configurations`](Self::set_server_group_launch_configurations).
     ///
     /// <p>Information about the launch configurations for server groups in the application.</p>
-    pub fn server_group_launch_configurations(mut self, input: crate::types::ServerGroupLaunchConfiguration) -> Self {
+    pub fn server_group_launch_configurations(
+        mut self,
+        input: crate::types::ServerGroupLaunchConfiguration,
+    ) -> Self {
         let mut v = self.server_group_launch_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.server_group_launch_configurations = Some(v);
-                        self
+        v.push(input);
+        self.server_group_launch_configurations = Some(v);
+        self
     }
     /// <p>Information about the launch configurations for server groups in the application.</p>
-    pub fn set_server_group_launch_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>) -> Self {
-        self.server_group_launch_configurations = input; self
+    pub fn set_server_group_launch_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ServerGroupLaunchConfiguration>>,
+    ) -> Self {
+        self.server_group_launch_configurations = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutAppLaunchConfigurationInput`](crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationInput {
-                app_id: self.app_id
-                ,
-                role_name: self.role_name
-                ,
-                auto_launch: self.auto_launch
-                ,
-                server_group_launch_configurations: self.server_group_launch_configurations
-                ,
-            }
+                app_id: self.app_id,
+                role_name: self.role_name,
+                auto_launch: self.auto_launch,
+                server_group_launch_configurations: self.server_group_launch_configurations,
+            },
         )
     }
 }
-

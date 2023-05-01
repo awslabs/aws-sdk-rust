@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGatewayGroupsInput  {
+pub struct ListGatewayGroupsInput {
     /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListGatewayGroupsInput  {
 }
 impl ListGatewayGroupsInput {
     /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of gateway group summaries to return. The default is 50.</p>
@@ -22,7 +22,8 @@ impl ListGatewayGroupsInput {
 }
 impl ListGatewayGroupsInput {
     /// Creates a new builder-style object to manufacture [`ListGatewayGroupsInput`](crate::operation::list_gateway_groups::ListGatewayGroupsInput).
-    pub fn builder() -> crate::operation::list_gateway_groups::builders::ListGatewayGroupsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_gateway_groups::builders::ListGatewayGroupsInputBuilder {
         crate::operation::list_gateway_groups::builders::ListGatewayGroupsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListGatewayGroupsInputBuilder {
     }
     /// <p>The token used to paginate though multiple pages of gateway group summaries.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of gateway group summaries to return. The default is 50.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -51,18 +53,21 @@ impl ListGatewayGroupsInputBuilder {
     }
     /// <p>The maximum number of gateway group summaries to return. The default is 50.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListGatewayGroupsInput`](crate::operation::list_gateway_groups::ListGatewayGroupsInput).
-    pub fn build(self) -> Result<crate::operation::list_gateway_groups::ListGatewayGroupsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_gateway_groups::ListGatewayGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_gateway_groups::ListGatewayGroupsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

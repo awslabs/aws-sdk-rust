@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let domainavailability = unimplemented!();
 /// match domainavailability {
@@ -36,14 +36,22 @@
 /// Specifically, when `domainavailability` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DomainAvailability::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DomainAvailability {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -62,53 +70,63 @@ pub enum DomainAvailability {
     #[allow(missing_docs)] // documentation missing in model
     UnavailableRestricted,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DomainAvailability {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AVAILABLE" => DomainAvailability::Available,
-"AVAILABLE_PREORDER" => DomainAvailability::AvailablePreorder,
-"AVAILABLE_RESERVED" => DomainAvailability::AvailableReserved,
-"DONT_KNOW" => DomainAvailability::DontKnow,
-"RESERVED" => DomainAvailability::Reserved,
-"UNAVAILABLE" => DomainAvailability::Unavailable,
-"UNAVAILABLE_PREMIUM" => DomainAvailability::UnavailablePremium,
-"UNAVAILABLE_RESTRICTED" => DomainAvailability::UnavailableRestricted,
-other => DomainAvailability::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for DomainAvailability {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DomainAvailability::from(s))
-                }
-            }
-impl DomainAvailability {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DomainAvailability::Available => "AVAILABLE",
-    DomainAvailability::AvailablePreorder => "AVAILABLE_PREORDER",
-    DomainAvailability::AvailableReserved => "AVAILABLE_RESERVED",
-    DomainAvailability::DontKnow => "DONT_KNOW",
-    DomainAvailability::Reserved => "RESERVED",
-    DomainAvailability::Unavailable => "UNAVAILABLE",
-    DomainAvailability::UnavailablePremium => "UNAVAILABLE_PREMIUM",
-    DomainAvailability::UnavailableRestricted => "UNAVAILABLE_RESTRICTED",
-    DomainAvailability::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AVAILABLE" => DomainAvailability::Available,
+            "AVAILABLE_PREORDER" => DomainAvailability::AvailablePreorder,
+            "AVAILABLE_RESERVED" => DomainAvailability::AvailableReserved,
+            "DONT_KNOW" => DomainAvailability::DontKnow,
+            "RESERVED" => DomainAvailability::Reserved,
+            "UNAVAILABLE" => DomainAvailability::Unavailable,
+            "UNAVAILABLE_PREMIUM" => DomainAvailability::UnavailablePremium,
+            "UNAVAILABLE_RESTRICTED" => DomainAvailability::UnavailableRestricted,
+            other => DomainAvailability::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AVAILABLE", "AVAILABLE_PREORDER", "AVAILABLE_RESERVED", "DONT_KNOW", "RESERVED", "UNAVAILABLE", "UNAVAILABLE_PREMIUM", "UNAVAILABLE_RESTRICTED"]
-                }
-            }
-impl AsRef<str> for DomainAvailability {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DomainAvailability {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DomainAvailability::from(s))
+    }
+}
+impl DomainAvailability {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DomainAvailability::Available => "AVAILABLE",
+            DomainAvailability::AvailablePreorder => "AVAILABLE_PREORDER",
+            DomainAvailability::AvailableReserved => "AVAILABLE_RESERVED",
+            DomainAvailability::DontKnow => "DONT_KNOW",
+            DomainAvailability::Reserved => "RESERVED",
+            DomainAvailability::Unavailable => "UNAVAILABLE",
+            DomainAvailability::UnavailablePremium => "UNAVAILABLE_PREMIUM",
+            DomainAvailability::UnavailableRestricted => "UNAVAILABLE_RESTRICTED",
+            DomainAvailability::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AVAILABLE",
+            "AVAILABLE_PREORDER",
+            "AVAILABLE_RESERVED",
+            "DONT_KNOW",
+            "RESERVED",
+            "UNAVAILABLE",
+            "UNAVAILABLE_PREMIUM",
+            "UNAVAILABLE_RESTRICTED",
+        ]
+    }
+}
+impl AsRef<str> for DomainAvailability {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

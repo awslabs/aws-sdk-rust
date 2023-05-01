@@ -2,11 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRegistryCatalogDataInput  {
-}
+pub struct GetRegistryCatalogDataInput {}
 impl GetRegistryCatalogDataInput {
     /// Creates a new builder-style object to manufacture [`GetRegistryCatalogDataInput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataInput).
-    pub fn builder() -> crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataInputBuilder
+    {
         crate::operation::get_registry_catalog_data::builders::GetRegistryCatalogDataInputBuilder::default()
     }
 }
@@ -14,15 +15,15 @@ impl GetRegistryCatalogDataInput {
 /// A builder for [`GetRegistryCatalogDataInput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetRegistryCatalogDataInputBuilder {
-}
+pub struct GetRegistryCatalogDataInputBuilder {}
 impl GetRegistryCatalogDataInputBuilder {
     /// Consumes the builder and constructs a [`GetRegistryCatalogDataInput`](crate::operation::get_registry_catalog_data::GetRegistryCatalogDataInput).
-    pub fn build(self) -> Result<crate::operation::get_registry_catalog_data::GetRegistryCatalogDataInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_registry_catalog_data::GetRegistryCatalogDataInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_registry_catalog_data::GetRegistryCatalogDataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_registry_catalog_data::GetRegistryCatalogDataInput {})
     }
 }
-

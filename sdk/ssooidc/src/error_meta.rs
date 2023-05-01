@@ -28,7 +28,7 @@ pub enum Error {
     /// <p>Indicates that the grant type in the request is not supported by the service.</p>
     UnsupportedGrantTypeException(crate::types::error::UnsupportedGrantTypeException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -45,51 +45,103 @@ impl std::fmt::Display for Error {
             Error::SlowDownException(inner) => inner.fmt(f),
             Error::UnauthorizedClientException(inner) => inner.fmt(f),
             Error::UnsupportedGrantTypeException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f)
+            Error::Unhandled(inner) => inner.fmt(f),
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError, R>) -> Self {
+impl<R> From<aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<crate::operation::create_token::CreateTokenError, R>,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::create_token::CreateTokenError> for Error {
     fn from(err: crate::operation::create_token::CreateTokenError) -> Self {
         match err {
-            crate::operation::create_token::CreateTokenError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::operation::create_token::CreateTokenError::AuthorizationPendingException(inner) => Error::AuthorizationPendingException(inner),
-            crate::operation::create_token::CreateTokenError::ExpiredTokenException(inner) => Error::ExpiredTokenException(inner),
-            crate::operation::create_token::CreateTokenError::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::operation::create_token::CreateTokenError::InvalidClientException(inner) => Error::InvalidClientException(inner),
-            crate::operation::create_token::CreateTokenError::InvalidGrantException(inner) => Error::InvalidGrantException(inner),
-            crate::operation::create_token::CreateTokenError::InvalidRequestException(inner) => Error::InvalidRequestException(inner),
-            crate::operation::create_token::CreateTokenError::InvalidScopeException(inner) => Error::InvalidScopeException(inner),
-            crate::operation::create_token::CreateTokenError::SlowDownException(inner) => Error::SlowDownException(inner),
-            crate::operation::create_token::CreateTokenError::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
-            crate::operation::create_token::CreateTokenError::UnsupportedGrantTypeException(inner) => Error::UnsupportedGrantTypeException(inner),
-            crate::operation::create_token::CreateTokenError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::create_token::CreateTokenError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::operation::create_token::CreateTokenError::AuthorizationPendingException(
+                inner,
+            ) => Error::AuthorizationPendingException(inner),
+            crate::operation::create_token::CreateTokenError::ExpiredTokenException(inner) => {
+                Error::ExpiredTokenException(inner)
+            }
+            crate::operation::create_token::CreateTokenError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::operation::create_token::CreateTokenError::InvalidClientException(inner) => {
+                Error::InvalidClientException(inner)
+            }
+            crate::operation::create_token::CreateTokenError::InvalidGrantException(inner) => {
+                Error::InvalidGrantException(inner)
+            }
+            crate::operation::create_token::CreateTokenError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::operation::create_token::CreateTokenError::InvalidScopeException(inner) => {
+                Error::InvalidScopeException(inner)
+            }
+            crate::operation::create_token::CreateTokenError::SlowDownException(inner) => {
+                Error::SlowDownException(inner)
+            }
+            crate::operation::create_token::CreateTokenError::UnauthorizedClientException(
+                inner,
+            ) => Error::UnauthorizedClientException(inner),
+            crate::operation::create_token::CreateTokenError::UnsupportedGrantTypeException(
+                inner,
+            ) => Error::UnsupportedGrantTypeException(inner),
+            crate::operation::create_token::CreateTokenError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::register_client::RegisterClientError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::register_client::RegisterClientError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::register_client::RegisterClientError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::register_client::RegisterClientError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
@@ -104,21 +156,41 @@ impl From<crate::operation::register_client::RegisterClientError> for Error {
         }
     }
 }
-impl<R> From<aws_smithy_http::result::SdkError<crate::operation::start_device_authorization::StartDeviceAuthorizationError, R>> for Error where R: Send + Sync + std::fmt::Debug + 'static {
-    fn from(err: aws_smithy_http::result::SdkError<crate::operation::start_device_authorization::StartDeviceAuthorizationError, R>) -> Self {
+impl<R>
+    From<
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_device_authorization::StartDeviceAuthorizationError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: aws_smithy_http::result::SdkError<
+            crate::operation::start_device_authorization::StartDeviceAuthorizationError,
+            R,
+        >,
+    ) -> Self {
         match err {
-            aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
+            aws_smithy_http::result::SdkError::ServiceError(context) => {
+                Self::from(context.into_err())
+            }
             _ => Error::Unhandled(
-                                            aws_smithy_types::error::Unhandled::builder()
-                                                .meta(aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone())
-                                                .source(err)
-                                                .build()
-                                        ),
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::operation::start_device_authorization::StartDeviceAuthorizationError> for Error {
-    fn from(err: crate::operation::start_device_authorization::StartDeviceAuthorizationError) -> Self {
+    fn from(
+        err: crate::operation::start_device_authorization::StartDeviceAuthorizationError,
+    ) -> Self {
         match err {
             crate::operation::start_device_authorization::StartDeviceAuthorizationError::InternalServerException(inner) => Error::InternalServerException(inner),
             crate::operation::start_device_authorization::StartDeviceAuthorizationError::InvalidClientException(inner) => Error::InvalidClientException(inner),
@@ -144,7 +216,7 @@ impl std::error::Error for Error {
             Error::SlowDownException(inner) => inner.source(),
             Error::UnauthorizedClientException(inner) => inner.source(),
             Error::UnsupportedGrantTypeException(inner) => inner.source(),
-            Error::Unhandled(inner) => inner.source()
+            Error::Unhandled(inner) => inner.source(),
         }
     }
 }
@@ -167,4 +239,3 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
-

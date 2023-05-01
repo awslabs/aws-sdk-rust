@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTableStorageOptimizerOutput  {
+pub struct UpdateTableStorageOptimizerOutput {
     /// <p>A response indicating the success of failure of the operation.</p>
     #[doc(hidden)]
     pub result: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct UpdateTableStorageOptimizerOutput  {
 }
 impl UpdateTableStorageOptimizerOutput {
     /// <p>A response indicating the success of failure of the operation.</p>
-    pub fn result(&self) -> std::option::Option<& str> {
+    pub fn result(&self) -> std::option::Option<&str> {
         self.result.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateTableStorageOptimizerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateTableStorageOptimizerOutput {
     /// Creates a new builder-style object to manufacture [`UpdateTableStorageOptimizerOutput`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput).
-    pub fn builder() -> crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerOutputBuilder {
+    pub fn builder() -> crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerOutputBuilder{
         crate::operation::update_table_storage_optimizer::builders::UpdateTableStorageOptimizerOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl UpdateTableStorageOptimizerOutputBuilder {
     }
     /// <p>A response indicating the success of failure of the operation.</p>
     pub fn set_result(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.result = input; self
+        self.result = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateTableStorageOptimizerOutput`](crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput).
-    pub fn build(self) -> crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput {
         crate::operation::update_table_storage_optimizer::UpdateTableStorageOptimizerOutput {
-            result: self.result
-            ,
+            result: self.result,
             _request_id: self._request_id,
         }
     }
 }
-

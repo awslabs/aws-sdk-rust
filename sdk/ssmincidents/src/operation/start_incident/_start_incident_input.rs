@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartIncidentInput  {
+pub struct StartIncidentInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -12,14 +12,14 @@ pub struct StartIncidentInput  {
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
-    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p> 
-    /// <p class="title"> <b>Possible impacts:</b> </p> 
-    /// <ul> 
-    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li> 
-    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li> 
-    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li> 
-    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li> 
-    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li> 
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub impact: std::option::Option<i32>,
@@ -32,35 +32,35 @@ pub struct StartIncidentInput  {
 }
 impl StartIncidentInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    pub fn response_plan_arn(&self) -> std::option::Option<& str> {
+    pub fn response_plan_arn(&self) -> std::option::Option<&str> {
         self.response_plan_arn.as_deref()
     }
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
-    pub fn title(&self) -> std::option::Option<& str> {
+    pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
-    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p> 
-    /// <p class="title"> <b>Possible impacts:</b> </p> 
-    /// <ul> 
-    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li> 
-    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li> 
-    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li> 
-    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li> 
-    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li> 
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
     pub fn impact(&self) -> std::option::Option<i32> {
         self.impact
     }
     /// <p>Details of what created the incident record in Incident Manager.</p>
-    pub fn trigger_details(&self) -> std::option::Option<& crate::types::TriggerDetails> {
+    pub fn trigger_details(&self) -> std::option::Option<&crate::types::TriggerDetails> {
         self.trigger_details.as_ref()
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-    pub fn related_items(&self) -> std::option::Option<& [crate::types::RelatedItem]> {
+    pub fn related_items(&self) -> std::option::Option<&[crate::types::RelatedItem]> {
         self.related_items.as_deref()
     }
 }
@@ -90,7 +90,8 @@ impl StartIncidentInputBuilder {
     }
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
     pub fn response_plan_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +99,12 @@ impl StartIncidentInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    pub fn set_response_plan_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.response_plan_arn = input; self
+    pub fn set_response_plan_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.response_plan_arn = input;
+        self
     }
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub fn title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,32 +113,34 @@ impl StartIncidentInputBuilder {
     }
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input; self
+        self.title = input;
+        self
     }
-    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p> 
-    /// <p class="title"> <b>Possible impacts:</b> </p> 
-    /// <ul> 
-    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li> 
-    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li> 
-    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li> 
-    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li> 
-    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li> 
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
     pub fn impact(mut self, input: i32) -> Self {
         self.impact = Some(input);
         self
     }
-    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p> 
-    /// <p class="title"> <b>Possible impacts:</b> </p> 
-    /// <ul> 
-    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li> 
-    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li> 
-    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li> 
-    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li> 
-    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li> 
+    /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
+    /// <p class="title"> <b>Possible impacts:</b> </p>
+    /// <ul>
+    /// <li> <p> <code>1</code> - Critical impact, this typically relates to full application failure that impacts many to all customers. </p> </li>
+    /// <li> <p> <code>2</code> - High impact, partial application failure with impact to many customers.</p> </li>
+    /// <li> <p> <code>3</code> - Medium impact, the application is providing reduced service to customers.</p> </li>
+    /// <li> <p> <code>4</code> - Low impact, customer might aren't impacted by the problem yet.</p> </li>
+    /// <li> <p> <code>5</code> - No impact, customers aren't currently impacted but urgent action is needed to avoid impact.</p> </li>
     /// </ul>
     pub fn set_impact(mut self, input: std::option::Option<i32>) -> Self {
-        self.impact = input; self
+        self.impact = input;
+        self
     }
     /// <p>Details of what created the incident record in Incident Manager.</p>
     pub fn trigger_details(mut self, input: crate::types::TriggerDetails) -> Self {
@@ -141,8 +148,12 @@ impl StartIncidentInputBuilder {
         self
     }
     /// <p>Details of what created the incident record in Incident Manager.</p>
-    pub fn set_trigger_details(mut self, input: std::option::Option<crate::types::TriggerDetails>) -> Self {
-        self.trigger_details = input; self
+    pub fn set_trigger_details(
+        mut self,
+        input: std::option::Option<crate::types::TriggerDetails>,
+    ) -> Self {
+        self.trigger_details = input;
+        self
     }
     /// Appends an item to `related_items`.
     ///
@@ -151,32 +162,32 @@ impl StartIncidentInputBuilder {
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
     pub fn related_items(mut self, input: crate::types::RelatedItem) -> Self {
         let mut v = self.related_items.unwrap_or_default();
-                        v.push(input);
-                        self.related_items = Some(v);
-                        self
+        v.push(input);
+        self.related_items = Some(v);
+        self
     }
     /// <p>Add related items to the incident for other responders to use. Related items are Amazon Web Services resources, external links, or files uploaded to an Amazon S3 bucket. </p>
-    pub fn set_related_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::RelatedItem>>) -> Self {
-        self.related_items = input; self
+    pub fn set_related_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RelatedItem>>,
+    ) -> Self {
+        self.related_items = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartIncidentInput`](crate::operation::start_incident::StartIncidentInput).
-    pub fn build(self) -> Result<crate::operation::start_incident::StartIncidentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_incident::StartIncidentInput {
-                client_token: self.client_token
-                ,
-                response_plan_arn: self.response_plan_arn
-                ,
-                title: self.title
-                ,
-                impact: self.impact
-                ,
-                trigger_details: self.trigger_details
-                ,
-                related_items: self.related_items
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_incident::StartIncidentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_incident::StartIncidentInput {
+            client_token: self.client_token,
+            response_plan_arn: self.response_plan_arn,
+            title: self.title,
+            impact: self.impact,
+            trigger_details: self.trigger_details,
+            related_items: self.related_items,
+        })
     }
 }
-

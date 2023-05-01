@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateCustomerGatewayOutput  {
+pub struct AssociateCustomerGatewayOutput {
     /// <p>The customer gateway association.</p>
     #[doc(hidden)]
     pub customer_gateway_association: std::option::Option<crate::types::CustomerGatewayAssociation>,
@@ -10,18 +10,22 @@ pub struct AssociateCustomerGatewayOutput  {
 }
 impl AssociateCustomerGatewayOutput {
     /// <p>The customer gateway association.</p>
-    pub fn customer_gateway_association(&self) -> std::option::Option<& crate::types::CustomerGatewayAssociation> {
+    pub fn customer_gateway_association(
+        &self,
+    ) -> std::option::Option<&crate::types::CustomerGatewayAssociation> {
         self.customer_gateway_association.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateCustomerGatewayOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociateCustomerGatewayOutput {
     /// Creates a new builder-style object to manufacture [`AssociateCustomerGatewayOutput`](crate::operation::associate_customer_gateway::AssociateCustomerGatewayOutput).
-    pub fn builder() -> crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayOutputBuilder
+    {
         crate::operation::associate_customer_gateway::builders::AssociateCustomerGatewayOutputBuilder::default()
     }
 }
@@ -30,35 +34,43 @@ impl AssociateCustomerGatewayOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AssociateCustomerGatewayOutputBuilder {
-    pub(crate) customer_gateway_association: std::option::Option<crate::types::CustomerGatewayAssociation>,
+    pub(crate) customer_gateway_association:
+        std::option::Option<crate::types::CustomerGatewayAssociation>,
     _request_id: Option<String>,
 }
 impl AssociateCustomerGatewayOutputBuilder {
     /// <p>The customer gateway association.</p>
-    pub fn customer_gateway_association(mut self, input: crate::types::CustomerGatewayAssociation) -> Self {
+    pub fn customer_gateway_association(
+        mut self,
+        input: crate::types::CustomerGatewayAssociation,
+    ) -> Self {
         self.customer_gateway_association = Some(input);
         self
     }
     /// <p>The customer gateway association.</p>
-    pub fn set_customer_gateway_association(mut self, input: std::option::Option<crate::types::CustomerGatewayAssociation>) -> Self {
-        self.customer_gateway_association = input; self
+    pub fn set_customer_gateway_association(
+        mut self,
+        input: std::option::Option<crate::types::CustomerGatewayAssociation>,
+    ) -> Self {
+        self.customer_gateway_association = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateCustomerGatewayOutput`](crate::operation::associate_customer_gateway::AssociateCustomerGatewayOutput).
-    pub fn build(self) -> crate::operation::associate_customer_gateway::AssociateCustomerGatewayOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::associate_customer_gateway::AssociateCustomerGatewayOutput {
         crate::operation::associate_customer_gateway::AssociateCustomerGatewayOutput {
-            customer_gateway_association: self.customer_gateway_association
-            ,
+            customer_gateway_association: self.customer_gateway_association,
             _request_id: self._request_id,
         }
     }
 }
-

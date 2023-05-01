@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let parameterexceptionfield = unimplemented!();
 /// match parameterexceptionfield {
@@ -95,14 +95,22 @@
 /// Specifically, when `parameterexceptionfield` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ParameterExceptionField::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     AndStatement,
@@ -239,171 +247,256 @@ pub enum ParameterExceptionField {
     #[allow(missing_docs)] // documentation missing in model
     XssMatchStatement,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ParameterExceptionField {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AND_STATEMENT" => ParameterExceptionField::AndStatement,
-"ASSOCIABLE_RESOURCE" => ParameterExceptionField::AssociableResource,
-"ASSOCIATED_RESOURCE_TYPE" => ParameterExceptionField::AssociatedResourceType,
-"ATP_RULE_SET_RESPONSE_INSPECTION" => ParameterExceptionField::AtpRuleSetResponseInspection,
-"BODY_PARSING_FALLBACK_BEHAVIOR" => ParameterExceptionField::BodyParsingFallbackBehavior,
-"BYTE_MATCH_STATEMENT" => ParameterExceptionField::ByteMatchStatement,
-"CHALLENGE_CONFIG" => ParameterExceptionField::ChallengeConfig,
-"CHANGE_PROPAGATION_STATUS" => ParameterExceptionField::ChangePropagationStatus,
-"COOKIE_MATCH_PATTERN" => ParameterExceptionField::CookieMatchPattern,
-"CUSTOM_REQUEST_HANDLING" => ParameterExceptionField::CustomRequestHandling,
-"CUSTOM_RESPONSE" => ParameterExceptionField::CustomResponse,
-"CUSTOM_RESPONSE_BODY" => ParameterExceptionField::CustomResponseBody,
-"DEFAULT_ACTION" => ParameterExceptionField::DefaultAction,
-"ENTITY_LIMIT" => ParameterExceptionField::EntityLimit,
-"EXCLUDED_RULE" => ParameterExceptionField::ExcludedRule,
-"EXPIRE_TIMESTAMP" => ParameterExceptionField::ExpireTimestamp,
-"FALLBACK_BEHAVIOR" => ParameterExceptionField::FallbackBehavior,
-"FIELD_TO_MATCH" => ParameterExceptionField::FieldToMatch,
-"FILTER_CONDITION" => ParameterExceptionField::FilterCondition,
-"FIREWALL_MANAGER_STATEMENT" => ParameterExceptionField::FirewallManagerStatement,
-"FORWARDED_IP_CONFIG" => ParameterExceptionField::ForwardedIpConfig,
-"GEO_MATCH_STATEMENT" => ParameterExceptionField::GeoMatchStatement,
-"HEADER_MATCH_PATTERN" => ParameterExceptionField::HeaderMatchPattern,
-"HEADER_NAME" => ParameterExceptionField::HeaderName,
-"IP_ADDRESS" => ParameterExceptionField::IpAddress,
-"IP_ADDRESS_VERSION" => ParameterExceptionField::IpAddressVersion,
-"IP_SET" => ParameterExceptionField::IpSet,
-"IP_SET_FORWARDED_IP_CONFIG" => ParameterExceptionField::IpSetForwardedIpConfig,
-"IP_SET_REFERENCE_STATEMENT" => ParameterExceptionField::IpSetReferenceStatement,
-"JSON_MATCH_PATTERN" => ParameterExceptionField::JsonMatchPattern,
-"JSON_MATCH_SCOPE" => ParameterExceptionField::JsonMatchScope,
-"LABEL_MATCH_STATEMENT" => ParameterExceptionField::LabelMatchStatement,
-"LOGGING_FILTER" => ParameterExceptionField::LoggingFilter,
-"LOG_DESTINATION" => ParameterExceptionField::LogDestination,
-"MANAGED_RULE_GROUP_CONFIG" => ParameterExceptionField::ManagedRuleGroupConfig,
-"MANAGED_RULE_SET" => ParameterExceptionField::ManagedRuleSet,
-"MANAGED_RULE_SET_STATEMENT" => ParameterExceptionField::ManagedRuleSetStatement,
-"MAP_MATCH_SCOPE" => ParameterExceptionField::MapMatchScope,
-"METRIC_NAME" => ParameterExceptionField::MetricName,
-"NOT_STATEMENT" => ParameterExceptionField::NotStatement,
-"OR_STATEMENT" => ParameterExceptionField::OrStatement,
-"OVERRIDE_ACTION" => ParameterExceptionField::OverrideAction,
-"OVERSIZE_HANDLING" => ParameterExceptionField::OversizeHandling,
-"PAYLOAD_TYPE" => ParameterExceptionField::PayloadType,
-"POSITION" => ParameterExceptionField::Position,
-"RATE_BASED_STATEMENT" => ParameterExceptionField::RateBasedStatement,
-"REGEX_PATTERN_REFERENCE_STATEMENT" => ParameterExceptionField::RegexPatternReferenceStatement,
-"REGEX_PATTERN_SET" => ParameterExceptionField::RegexPatternSet,
-"RESOURCE_ARN" => ParameterExceptionField::ResourceArn,
-"RESOURCE_TYPE" => ParameterExceptionField::ResourceType,
-"RESPONSE_CONTENT_TYPE" => ParameterExceptionField::ResponseContentType,
-"RULE" => ParameterExceptionField::Rule,
-"RULE_ACTION" => ParameterExceptionField::RuleAction,
-"RULE_GROUP" => ParameterExceptionField::RuleGroup,
-"RULE_GROUP_REFERENCE_STATEMENT" => ParameterExceptionField::RuleGroupReferenceStatement,
-"SCOPE_VALUE" => ParameterExceptionField::ScopeValue,
-"SINGLE_HEADER" => ParameterExceptionField::SingleHeader,
-"SINGLE_QUERY_ARGUMENT" => ParameterExceptionField::SingleQueryArgument,
-"SIZE_CONSTRAINT_STATEMENT" => ParameterExceptionField::SizeConstraintStatement,
-"SQLI_MATCH_STATEMENT" => ParameterExceptionField::SqliMatchStatement,
-"STATEMENT" => ParameterExceptionField::Statement,
-"TAGS" => ParameterExceptionField::Tags,
-"TAG_KEYS" => ParameterExceptionField::TagKeys,
-"TEXT_TRANSFORMATION" => ParameterExceptionField::TextTransformation,
-"TOKEN_DOMAIN" => ParameterExceptionField::TokenDomain,
-"WEB_ACL" => ParameterExceptionField::WebAcl,
-"XSS_MATCH_STATEMENT" => ParameterExceptionField::XssMatchStatement,
-other => ParameterExceptionField::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AND_STATEMENT" => ParameterExceptionField::AndStatement,
+            "ASSOCIABLE_RESOURCE" => ParameterExceptionField::AssociableResource,
+            "ASSOCIATED_RESOURCE_TYPE" => ParameterExceptionField::AssociatedResourceType,
+            "ATP_RULE_SET_RESPONSE_INSPECTION" => {
+                ParameterExceptionField::AtpRuleSetResponseInspection
             }
-impl std::str::FromStr for ParameterExceptionField {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ParameterExceptionField::from(s))
-                }
+            "BODY_PARSING_FALLBACK_BEHAVIOR" => {
+                ParameterExceptionField::BodyParsingFallbackBehavior
             }
-impl ParameterExceptionField {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ParameterExceptionField::AndStatement => "AND_STATEMENT",
-    ParameterExceptionField::AssociableResource => "ASSOCIABLE_RESOURCE",
-    ParameterExceptionField::AssociatedResourceType => "ASSOCIATED_RESOURCE_TYPE",
-    ParameterExceptionField::AtpRuleSetResponseInspection => "ATP_RULE_SET_RESPONSE_INSPECTION",
-    ParameterExceptionField::BodyParsingFallbackBehavior => "BODY_PARSING_FALLBACK_BEHAVIOR",
-    ParameterExceptionField::ByteMatchStatement => "BYTE_MATCH_STATEMENT",
-    ParameterExceptionField::ChallengeConfig => "CHALLENGE_CONFIG",
-    ParameterExceptionField::ChangePropagationStatus => "CHANGE_PROPAGATION_STATUS",
-    ParameterExceptionField::CookieMatchPattern => "COOKIE_MATCH_PATTERN",
-    ParameterExceptionField::CustomRequestHandling => "CUSTOM_REQUEST_HANDLING",
-    ParameterExceptionField::CustomResponse => "CUSTOM_RESPONSE",
-    ParameterExceptionField::CustomResponseBody => "CUSTOM_RESPONSE_BODY",
-    ParameterExceptionField::DefaultAction => "DEFAULT_ACTION",
-    ParameterExceptionField::EntityLimit => "ENTITY_LIMIT",
-    ParameterExceptionField::ExcludedRule => "EXCLUDED_RULE",
-    ParameterExceptionField::ExpireTimestamp => "EXPIRE_TIMESTAMP",
-    ParameterExceptionField::FallbackBehavior => "FALLBACK_BEHAVIOR",
-    ParameterExceptionField::FieldToMatch => "FIELD_TO_MATCH",
-    ParameterExceptionField::FilterCondition => "FILTER_CONDITION",
-    ParameterExceptionField::FirewallManagerStatement => "FIREWALL_MANAGER_STATEMENT",
-    ParameterExceptionField::ForwardedIpConfig => "FORWARDED_IP_CONFIG",
-    ParameterExceptionField::GeoMatchStatement => "GEO_MATCH_STATEMENT",
-    ParameterExceptionField::HeaderMatchPattern => "HEADER_MATCH_PATTERN",
-    ParameterExceptionField::HeaderName => "HEADER_NAME",
-    ParameterExceptionField::IpAddress => "IP_ADDRESS",
-    ParameterExceptionField::IpAddressVersion => "IP_ADDRESS_VERSION",
-    ParameterExceptionField::IpSet => "IP_SET",
-    ParameterExceptionField::IpSetForwardedIpConfig => "IP_SET_FORWARDED_IP_CONFIG",
-    ParameterExceptionField::IpSetReferenceStatement => "IP_SET_REFERENCE_STATEMENT",
-    ParameterExceptionField::JsonMatchPattern => "JSON_MATCH_PATTERN",
-    ParameterExceptionField::JsonMatchScope => "JSON_MATCH_SCOPE",
-    ParameterExceptionField::LabelMatchStatement => "LABEL_MATCH_STATEMENT",
-    ParameterExceptionField::LoggingFilter => "LOGGING_FILTER",
-    ParameterExceptionField::LogDestination => "LOG_DESTINATION",
-    ParameterExceptionField::ManagedRuleGroupConfig => "MANAGED_RULE_GROUP_CONFIG",
-    ParameterExceptionField::ManagedRuleSet => "MANAGED_RULE_SET",
-    ParameterExceptionField::ManagedRuleSetStatement => "MANAGED_RULE_SET_STATEMENT",
-    ParameterExceptionField::MapMatchScope => "MAP_MATCH_SCOPE",
-    ParameterExceptionField::MetricName => "METRIC_NAME",
-    ParameterExceptionField::NotStatement => "NOT_STATEMENT",
-    ParameterExceptionField::OrStatement => "OR_STATEMENT",
-    ParameterExceptionField::OverrideAction => "OVERRIDE_ACTION",
-    ParameterExceptionField::OversizeHandling => "OVERSIZE_HANDLING",
-    ParameterExceptionField::PayloadType => "PAYLOAD_TYPE",
-    ParameterExceptionField::Position => "POSITION",
-    ParameterExceptionField::RateBasedStatement => "RATE_BASED_STATEMENT",
-    ParameterExceptionField::RegexPatternReferenceStatement => "REGEX_PATTERN_REFERENCE_STATEMENT",
-    ParameterExceptionField::RegexPatternSet => "REGEX_PATTERN_SET",
-    ParameterExceptionField::ResourceArn => "RESOURCE_ARN",
-    ParameterExceptionField::ResourceType => "RESOURCE_TYPE",
-    ParameterExceptionField::ResponseContentType => "RESPONSE_CONTENT_TYPE",
-    ParameterExceptionField::Rule => "RULE",
-    ParameterExceptionField::RuleAction => "RULE_ACTION",
-    ParameterExceptionField::RuleGroup => "RULE_GROUP",
-    ParameterExceptionField::RuleGroupReferenceStatement => "RULE_GROUP_REFERENCE_STATEMENT",
-    ParameterExceptionField::ScopeValue => "SCOPE_VALUE",
-    ParameterExceptionField::SingleHeader => "SINGLE_HEADER",
-    ParameterExceptionField::SingleQueryArgument => "SINGLE_QUERY_ARGUMENT",
-    ParameterExceptionField::SizeConstraintStatement => "SIZE_CONSTRAINT_STATEMENT",
-    ParameterExceptionField::SqliMatchStatement => "SQLI_MATCH_STATEMENT",
-    ParameterExceptionField::Statement => "STATEMENT",
-    ParameterExceptionField::Tags => "TAGS",
-    ParameterExceptionField::TagKeys => "TAG_KEYS",
-    ParameterExceptionField::TextTransformation => "TEXT_TRANSFORMATION",
-    ParameterExceptionField::TokenDomain => "TOKEN_DOMAIN",
-    ParameterExceptionField::WebAcl => "WEB_ACL",
-    ParameterExceptionField::XssMatchStatement => "XSS_MATCH_STATEMENT",
-    ParameterExceptionField::Unknown(value) => value.as_str()
+            "BYTE_MATCH_STATEMENT" => ParameterExceptionField::ByteMatchStatement,
+            "CHALLENGE_CONFIG" => ParameterExceptionField::ChallengeConfig,
+            "CHANGE_PROPAGATION_STATUS" => ParameterExceptionField::ChangePropagationStatus,
+            "COOKIE_MATCH_PATTERN" => ParameterExceptionField::CookieMatchPattern,
+            "CUSTOM_REQUEST_HANDLING" => ParameterExceptionField::CustomRequestHandling,
+            "CUSTOM_RESPONSE" => ParameterExceptionField::CustomResponse,
+            "CUSTOM_RESPONSE_BODY" => ParameterExceptionField::CustomResponseBody,
+            "DEFAULT_ACTION" => ParameterExceptionField::DefaultAction,
+            "ENTITY_LIMIT" => ParameterExceptionField::EntityLimit,
+            "EXCLUDED_RULE" => ParameterExceptionField::ExcludedRule,
+            "EXPIRE_TIMESTAMP" => ParameterExceptionField::ExpireTimestamp,
+            "FALLBACK_BEHAVIOR" => ParameterExceptionField::FallbackBehavior,
+            "FIELD_TO_MATCH" => ParameterExceptionField::FieldToMatch,
+            "FILTER_CONDITION" => ParameterExceptionField::FilterCondition,
+            "FIREWALL_MANAGER_STATEMENT" => ParameterExceptionField::FirewallManagerStatement,
+            "FORWARDED_IP_CONFIG" => ParameterExceptionField::ForwardedIpConfig,
+            "GEO_MATCH_STATEMENT" => ParameterExceptionField::GeoMatchStatement,
+            "HEADER_MATCH_PATTERN" => ParameterExceptionField::HeaderMatchPattern,
+            "HEADER_NAME" => ParameterExceptionField::HeaderName,
+            "IP_ADDRESS" => ParameterExceptionField::IpAddress,
+            "IP_ADDRESS_VERSION" => ParameterExceptionField::IpAddressVersion,
+            "IP_SET" => ParameterExceptionField::IpSet,
+            "IP_SET_FORWARDED_IP_CONFIG" => ParameterExceptionField::IpSetForwardedIpConfig,
+            "IP_SET_REFERENCE_STATEMENT" => ParameterExceptionField::IpSetReferenceStatement,
+            "JSON_MATCH_PATTERN" => ParameterExceptionField::JsonMatchPattern,
+            "JSON_MATCH_SCOPE" => ParameterExceptionField::JsonMatchScope,
+            "LABEL_MATCH_STATEMENT" => ParameterExceptionField::LabelMatchStatement,
+            "LOGGING_FILTER" => ParameterExceptionField::LoggingFilter,
+            "LOG_DESTINATION" => ParameterExceptionField::LogDestination,
+            "MANAGED_RULE_GROUP_CONFIG" => ParameterExceptionField::ManagedRuleGroupConfig,
+            "MANAGED_RULE_SET" => ParameterExceptionField::ManagedRuleSet,
+            "MANAGED_RULE_SET_STATEMENT" => ParameterExceptionField::ManagedRuleSetStatement,
+            "MAP_MATCH_SCOPE" => ParameterExceptionField::MapMatchScope,
+            "METRIC_NAME" => ParameterExceptionField::MetricName,
+            "NOT_STATEMENT" => ParameterExceptionField::NotStatement,
+            "OR_STATEMENT" => ParameterExceptionField::OrStatement,
+            "OVERRIDE_ACTION" => ParameterExceptionField::OverrideAction,
+            "OVERSIZE_HANDLING" => ParameterExceptionField::OversizeHandling,
+            "PAYLOAD_TYPE" => ParameterExceptionField::PayloadType,
+            "POSITION" => ParameterExceptionField::Position,
+            "RATE_BASED_STATEMENT" => ParameterExceptionField::RateBasedStatement,
+            "REGEX_PATTERN_REFERENCE_STATEMENT" => {
+                ParameterExceptionField::RegexPatternReferenceStatement
+            }
+            "REGEX_PATTERN_SET" => ParameterExceptionField::RegexPatternSet,
+            "RESOURCE_ARN" => ParameterExceptionField::ResourceArn,
+            "RESOURCE_TYPE" => ParameterExceptionField::ResourceType,
+            "RESPONSE_CONTENT_TYPE" => ParameterExceptionField::ResponseContentType,
+            "RULE" => ParameterExceptionField::Rule,
+            "RULE_ACTION" => ParameterExceptionField::RuleAction,
+            "RULE_GROUP" => ParameterExceptionField::RuleGroup,
+            "RULE_GROUP_REFERENCE_STATEMENT" => {
+                ParameterExceptionField::RuleGroupReferenceStatement
+            }
+            "SCOPE_VALUE" => ParameterExceptionField::ScopeValue,
+            "SINGLE_HEADER" => ParameterExceptionField::SingleHeader,
+            "SINGLE_QUERY_ARGUMENT" => ParameterExceptionField::SingleQueryArgument,
+            "SIZE_CONSTRAINT_STATEMENT" => ParameterExceptionField::SizeConstraintStatement,
+            "SQLI_MATCH_STATEMENT" => ParameterExceptionField::SqliMatchStatement,
+            "STATEMENT" => ParameterExceptionField::Statement,
+            "TAGS" => ParameterExceptionField::Tags,
+            "TAG_KEYS" => ParameterExceptionField::TagKeys,
+            "TEXT_TRANSFORMATION" => ParameterExceptionField::TextTransformation,
+            "TOKEN_DOMAIN" => ParameterExceptionField::TokenDomain,
+            "WEB_ACL" => ParameterExceptionField::WebAcl,
+            "XSS_MATCH_STATEMENT" => ParameterExceptionField::XssMatchStatement,
+            other => ParameterExceptionField::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AND_STATEMENT", "ASSOCIABLE_RESOURCE", "ASSOCIATED_RESOURCE_TYPE", "ATP_RULE_SET_RESPONSE_INSPECTION", "BODY_PARSING_FALLBACK_BEHAVIOR", "BYTE_MATCH_STATEMENT", "CHALLENGE_CONFIG", "CHANGE_PROPAGATION_STATUS", "COOKIE_MATCH_PATTERN", "CUSTOM_REQUEST_HANDLING", "CUSTOM_RESPONSE", "CUSTOM_RESPONSE_BODY", "DEFAULT_ACTION", "ENTITY_LIMIT", "EXCLUDED_RULE", "EXPIRE_TIMESTAMP", "FALLBACK_BEHAVIOR", "FIELD_TO_MATCH", "FILTER_CONDITION", "FIREWALL_MANAGER_STATEMENT", "FORWARDED_IP_CONFIG", "GEO_MATCH_STATEMENT", "HEADER_MATCH_PATTERN", "HEADER_NAME", "IP_ADDRESS", "IP_ADDRESS_VERSION", "IP_SET", "IP_SET_FORWARDED_IP_CONFIG", "IP_SET_REFERENCE_STATEMENT", "JSON_MATCH_PATTERN", "JSON_MATCH_SCOPE", "LABEL_MATCH_STATEMENT", "LOGGING_FILTER", "LOG_DESTINATION", "MANAGED_RULE_GROUP_CONFIG", "MANAGED_RULE_SET", "MANAGED_RULE_SET_STATEMENT", "MAP_MATCH_SCOPE", "METRIC_NAME", "NOT_STATEMENT", "OR_STATEMENT", "OVERRIDE_ACTION", "OVERSIZE_HANDLING", "PAYLOAD_TYPE", "POSITION", "RATE_BASED_STATEMENT", "REGEX_PATTERN_REFERENCE_STATEMENT", "REGEX_PATTERN_SET", "RESOURCE_ARN", "RESOURCE_TYPE", "RESPONSE_CONTENT_TYPE", "RULE", "RULE_ACTION", "RULE_GROUP", "RULE_GROUP_REFERENCE_STATEMENT", "SCOPE_VALUE", "SINGLE_HEADER", "SINGLE_QUERY_ARGUMENT", "SIZE_CONSTRAINT_STATEMENT", "SQLI_MATCH_STATEMENT", "STATEMENT", "TAGS", "TAG_KEYS", "TEXT_TRANSFORMATION", "TOKEN_DOMAIN", "WEB_ACL", "XSS_MATCH_STATEMENT"]
-                }
-            }
-impl AsRef<str> for ParameterExceptionField {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ParameterExceptionField {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ParameterExceptionField::from(s))
+    }
+}
+impl ParameterExceptionField {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ParameterExceptionField::AndStatement => "AND_STATEMENT",
+            ParameterExceptionField::AssociableResource => "ASSOCIABLE_RESOURCE",
+            ParameterExceptionField::AssociatedResourceType => "ASSOCIATED_RESOURCE_TYPE",
+            ParameterExceptionField::AtpRuleSetResponseInspection => {
+                "ATP_RULE_SET_RESPONSE_INSPECTION"
+            }
+            ParameterExceptionField::BodyParsingFallbackBehavior => {
+                "BODY_PARSING_FALLBACK_BEHAVIOR"
+            }
+            ParameterExceptionField::ByteMatchStatement => "BYTE_MATCH_STATEMENT",
+            ParameterExceptionField::ChallengeConfig => "CHALLENGE_CONFIG",
+            ParameterExceptionField::ChangePropagationStatus => "CHANGE_PROPAGATION_STATUS",
+            ParameterExceptionField::CookieMatchPattern => "COOKIE_MATCH_PATTERN",
+            ParameterExceptionField::CustomRequestHandling => "CUSTOM_REQUEST_HANDLING",
+            ParameterExceptionField::CustomResponse => "CUSTOM_RESPONSE",
+            ParameterExceptionField::CustomResponseBody => "CUSTOM_RESPONSE_BODY",
+            ParameterExceptionField::DefaultAction => "DEFAULT_ACTION",
+            ParameterExceptionField::EntityLimit => "ENTITY_LIMIT",
+            ParameterExceptionField::ExcludedRule => "EXCLUDED_RULE",
+            ParameterExceptionField::ExpireTimestamp => "EXPIRE_TIMESTAMP",
+            ParameterExceptionField::FallbackBehavior => "FALLBACK_BEHAVIOR",
+            ParameterExceptionField::FieldToMatch => "FIELD_TO_MATCH",
+            ParameterExceptionField::FilterCondition => "FILTER_CONDITION",
+            ParameterExceptionField::FirewallManagerStatement => "FIREWALL_MANAGER_STATEMENT",
+            ParameterExceptionField::ForwardedIpConfig => "FORWARDED_IP_CONFIG",
+            ParameterExceptionField::GeoMatchStatement => "GEO_MATCH_STATEMENT",
+            ParameterExceptionField::HeaderMatchPattern => "HEADER_MATCH_PATTERN",
+            ParameterExceptionField::HeaderName => "HEADER_NAME",
+            ParameterExceptionField::IpAddress => "IP_ADDRESS",
+            ParameterExceptionField::IpAddressVersion => "IP_ADDRESS_VERSION",
+            ParameterExceptionField::IpSet => "IP_SET",
+            ParameterExceptionField::IpSetForwardedIpConfig => "IP_SET_FORWARDED_IP_CONFIG",
+            ParameterExceptionField::IpSetReferenceStatement => "IP_SET_REFERENCE_STATEMENT",
+            ParameterExceptionField::JsonMatchPattern => "JSON_MATCH_PATTERN",
+            ParameterExceptionField::JsonMatchScope => "JSON_MATCH_SCOPE",
+            ParameterExceptionField::LabelMatchStatement => "LABEL_MATCH_STATEMENT",
+            ParameterExceptionField::LoggingFilter => "LOGGING_FILTER",
+            ParameterExceptionField::LogDestination => "LOG_DESTINATION",
+            ParameterExceptionField::ManagedRuleGroupConfig => "MANAGED_RULE_GROUP_CONFIG",
+            ParameterExceptionField::ManagedRuleSet => "MANAGED_RULE_SET",
+            ParameterExceptionField::ManagedRuleSetStatement => "MANAGED_RULE_SET_STATEMENT",
+            ParameterExceptionField::MapMatchScope => "MAP_MATCH_SCOPE",
+            ParameterExceptionField::MetricName => "METRIC_NAME",
+            ParameterExceptionField::NotStatement => "NOT_STATEMENT",
+            ParameterExceptionField::OrStatement => "OR_STATEMENT",
+            ParameterExceptionField::OverrideAction => "OVERRIDE_ACTION",
+            ParameterExceptionField::OversizeHandling => "OVERSIZE_HANDLING",
+            ParameterExceptionField::PayloadType => "PAYLOAD_TYPE",
+            ParameterExceptionField::Position => "POSITION",
+            ParameterExceptionField::RateBasedStatement => "RATE_BASED_STATEMENT",
+            ParameterExceptionField::RegexPatternReferenceStatement => {
+                "REGEX_PATTERN_REFERENCE_STATEMENT"
+            }
+            ParameterExceptionField::RegexPatternSet => "REGEX_PATTERN_SET",
+            ParameterExceptionField::ResourceArn => "RESOURCE_ARN",
+            ParameterExceptionField::ResourceType => "RESOURCE_TYPE",
+            ParameterExceptionField::ResponseContentType => "RESPONSE_CONTENT_TYPE",
+            ParameterExceptionField::Rule => "RULE",
+            ParameterExceptionField::RuleAction => "RULE_ACTION",
+            ParameterExceptionField::RuleGroup => "RULE_GROUP",
+            ParameterExceptionField::RuleGroupReferenceStatement => {
+                "RULE_GROUP_REFERENCE_STATEMENT"
+            }
+            ParameterExceptionField::ScopeValue => "SCOPE_VALUE",
+            ParameterExceptionField::SingleHeader => "SINGLE_HEADER",
+            ParameterExceptionField::SingleQueryArgument => "SINGLE_QUERY_ARGUMENT",
+            ParameterExceptionField::SizeConstraintStatement => "SIZE_CONSTRAINT_STATEMENT",
+            ParameterExceptionField::SqliMatchStatement => "SQLI_MATCH_STATEMENT",
+            ParameterExceptionField::Statement => "STATEMENT",
+            ParameterExceptionField::Tags => "TAGS",
+            ParameterExceptionField::TagKeys => "TAG_KEYS",
+            ParameterExceptionField::TextTransformation => "TEXT_TRANSFORMATION",
+            ParameterExceptionField::TokenDomain => "TOKEN_DOMAIN",
+            ParameterExceptionField::WebAcl => "WEB_ACL",
+            ParameterExceptionField::XssMatchStatement => "XSS_MATCH_STATEMENT",
+            ParameterExceptionField::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AND_STATEMENT",
+            "ASSOCIABLE_RESOURCE",
+            "ASSOCIATED_RESOURCE_TYPE",
+            "ATP_RULE_SET_RESPONSE_INSPECTION",
+            "BODY_PARSING_FALLBACK_BEHAVIOR",
+            "BYTE_MATCH_STATEMENT",
+            "CHALLENGE_CONFIG",
+            "CHANGE_PROPAGATION_STATUS",
+            "COOKIE_MATCH_PATTERN",
+            "CUSTOM_REQUEST_HANDLING",
+            "CUSTOM_RESPONSE",
+            "CUSTOM_RESPONSE_BODY",
+            "DEFAULT_ACTION",
+            "ENTITY_LIMIT",
+            "EXCLUDED_RULE",
+            "EXPIRE_TIMESTAMP",
+            "FALLBACK_BEHAVIOR",
+            "FIELD_TO_MATCH",
+            "FILTER_CONDITION",
+            "FIREWALL_MANAGER_STATEMENT",
+            "FORWARDED_IP_CONFIG",
+            "GEO_MATCH_STATEMENT",
+            "HEADER_MATCH_PATTERN",
+            "HEADER_NAME",
+            "IP_ADDRESS",
+            "IP_ADDRESS_VERSION",
+            "IP_SET",
+            "IP_SET_FORWARDED_IP_CONFIG",
+            "IP_SET_REFERENCE_STATEMENT",
+            "JSON_MATCH_PATTERN",
+            "JSON_MATCH_SCOPE",
+            "LABEL_MATCH_STATEMENT",
+            "LOGGING_FILTER",
+            "LOG_DESTINATION",
+            "MANAGED_RULE_GROUP_CONFIG",
+            "MANAGED_RULE_SET",
+            "MANAGED_RULE_SET_STATEMENT",
+            "MAP_MATCH_SCOPE",
+            "METRIC_NAME",
+            "NOT_STATEMENT",
+            "OR_STATEMENT",
+            "OVERRIDE_ACTION",
+            "OVERSIZE_HANDLING",
+            "PAYLOAD_TYPE",
+            "POSITION",
+            "RATE_BASED_STATEMENT",
+            "REGEX_PATTERN_REFERENCE_STATEMENT",
+            "REGEX_PATTERN_SET",
+            "RESOURCE_ARN",
+            "RESOURCE_TYPE",
+            "RESPONSE_CONTENT_TYPE",
+            "RULE",
+            "RULE_ACTION",
+            "RULE_GROUP",
+            "RULE_GROUP_REFERENCE_STATEMENT",
+            "SCOPE_VALUE",
+            "SINGLE_HEADER",
+            "SINGLE_QUERY_ARGUMENT",
+            "SIZE_CONSTRAINT_STATEMENT",
+            "SQLI_MATCH_STATEMENT",
+            "STATEMENT",
+            "TAGS",
+            "TAG_KEYS",
+            "TEXT_TRANSFORMATION",
+            "TOKEN_DOMAIN",
+            "WEB_ACL",
+            "XSS_MATCH_STATEMENT",
+        ]
+    }
+}
+impl AsRef<str> for ParameterExceptionField {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

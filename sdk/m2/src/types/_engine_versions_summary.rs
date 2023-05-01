@@ -3,7 +3,7 @@
 /// <p>A subset of information about the engine version for a specific application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EngineVersionsSummary  {
+pub struct EngineVersionsSummary {
     /// <p>The type of target platform for the application.</p>
     #[doc(hidden)]
     pub engine_type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct EngineVersionsSummary  {
 }
 impl EngineVersionsSummary {
     /// <p>The type of target platform for the application.</p>
-    pub fn engine_type(&self) -> std::option::Option<& str> {
+    pub fn engine_type(&self) -> std::option::Option<&str> {
         self.engine_type.as_deref()
     }
     /// <p>The version of the engine type used by the application.</p>
-    pub fn engine_version(&self) -> std::option::Option<& str> {
+    pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl EngineVersionsSummaryBuilder {
     }
     /// <p>The type of target platform for the application.</p>
     pub fn set_engine_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_type = input; self
+        self.engine_type = input;
+        self
     }
     /// <p>The version of the engine type used by the application.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl EngineVersionsSummaryBuilder {
     }
     /// <p>The version of the engine type used by the application.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input; self
+        self.engine_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`EngineVersionsSummary`](crate::types::EngineVersionsSummary).
     pub fn build(self) -> crate::types::EngineVersionsSummary {
         crate::types::EngineVersionsSummary {
-            engine_type: self.engine_type
-            ,
-            engine_version: self.engine_version
-            ,
+            engine_type: self.engine_type,
+            engine_version: self.engine_version,
         }
     }
 }
-

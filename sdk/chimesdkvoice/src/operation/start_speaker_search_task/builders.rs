@@ -4,59 +4,83 @@ pub use crate::operation::start_speaker_search_task::_start_speaker_search_task_
 pub use crate::operation::start_speaker_search_task::_start_speaker_search_task_input::StartSpeakerSearchTaskInputBuilder;
 
 /// Fluent builder constructing a request to `StartSpeakerSearchTask`.
-/// 
-/// <p>Starts a speaker search task.</p> <important> 
-/// <p>Before starting any speaker search tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the Amazon Chime SDK.</p> 
+///
+/// <p>Starts a speaker search task.</p> <important>
+/// <p>Before starting any speaker search tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the Amazon Chime SDK.</p>
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartSpeakerSearchTaskFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskInputBuilder,
+    inner:
+        crate::operation::start_speaker_search_task::builders::StartSpeakerSearchTaskInputBuilder,
 }
-impl StartSpeakerSearchTaskFluentBuilder  {
+impl StartSpeakerSearchTaskFluentBuilder {
     /// Creates a new `StartSpeakerSearchTask`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_speaker_search_task::StartSpeakerSearchTask, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_speaker_search_task::StartSpeakerSearchTaskOutput, aws_smithy_http::result::SdkError<crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTask,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_speaker_search_task::StartSpeakerSearchTaskOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_speaker_search_task::StartSpeakerSearchTaskError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Voice Connector ID.</p>
     pub fn voice_connector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.voice_connector_id(input.into());
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_voice_connector_id(input);
         self
     }
@@ -76,7 +100,10 @@ impl StartSpeakerSearchTaskFluentBuilder  {
         self
     }
     /// <p>The ID of the voice profile domain that will store the voice profile.</p>
-    pub fn set_voice_profile_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_voice_profile_domain_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_voice_profile_domain_id(input);
         self
     }
@@ -86,9 +113,11 @@ impl StartSpeakerSearchTaskFluentBuilder  {
         self
     }
     /// <p>The unique identifier for the client request. Use a different token for different speaker search tasks.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
 }
-

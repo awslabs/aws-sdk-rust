@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let av1framerateconversionalgorithm = unimplemented!();
 /// match av1framerateconversionalgorithm {
@@ -31,14 +31,22 @@
 /// Specifically, when `av1framerateconversionalgorithm` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Av1FramerateConversionAlgorithm::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. For numerically simple conversions, such as 60 fps to 30 fps: We recommend that you keep the default value, Drop duplicate. For numerically complex conversions, to avoid stutter: Choose Interpolate. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence: Choose FrameFormer to do motion-compensated interpolation. FrameFormer uses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost. When you choose FrameFormer, your input video resolution must be at least 128x96.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Av1FramerateConversionAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     DuplicateDrop,
@@ -47,43 +55,44 @@ pub enum Av1FramerateConversionAlgorithm {
     #[allow(missing_docs)] // documentation missing in model
     Interpolate,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Av1FramerateConversionAlgorithm {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DUPLICATE_DROP" => Av1FramerateConversionAlgorithm::DuplicateDrop,
-"FRAMEFORMER" => Av1FramerateConversionAlgorithm::Frameformer,
-"INTERPOLATE" => Av1FramerateConversionAlgorithm::Interpolate,
-other => Av1FramerateConversionAlgorithm::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Av1FramerateConversionAlgorithm {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Av1FramerateConversionAlgorithm::from(s))
-                }
-            }
-impl Av1FramerateConversionAlgorithm {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Av1FramerateConversionAlgorithm::DuplicateDrop => "DUPLICATE_DROP",
-    Av1FramerateConversionAlgorithm::Frameformer => "FRAMEFORMER",
-    Av1FramerateConversionAlgorithm::Interpolate => "INTERPOLATE",
-    Av1FramerateConversionAlgorithm::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "DUPLICATE_DROP" => Av1FramerateConversionAlgorithm::DuplicateDrop,
+            "FRAMEFORMER" => Av1FramerateConversionAlgorithm::Frameformer,
+            "INTERPOLATE" => Av1FramerateConversionAlgorithm::Interpolate,
+            other => Av1FramerateConversionAlgorithm::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DUPLICATE_DROP", "FRAMEFORMER", "INTERPOLATE"]
-                }
-            }
-impl AsRef<str> for Av1FramerateConversionAlgorithm {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Av1FramerateConversionAlgorithm {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Av1FramerateConversionAlgorithm::from(s))
+    }
+}
+impl Av1FramerateConversionAlgorithm {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Av1FramerateConversionAlgorithm::DuplicateDrop => "DUPLICATE_DROP",
+            Av1FramerateConversionAlgorithm::Frameformer => "FRAMEFORMER",
+            Av1FramerateConversionAlgorithm::Interpolate => "INTERPOLATE",
+            Av1FramerateConversionAlgorithm::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DUPLICATE_DROP", "FRAMEFORMER", "INTERPOLATE"]
+    }
+}
+impl AsRef<str> for Av1FramerateConversionAlgorithm {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeScheduledAuditInput  {
+pub struct DescribeScheduledAuditInput {
     /// <p>The name of the scheduled audit whose information you want to get.</p>
     #[doc(hidden)]
     pub scheduled_audit_name: std::option::Option<std::string::String>,
 }
 impl DescribeScheduledAuditInput {
     /// <p>The name of the scheduled audit whose information you want to get.</p>
-    pub fn scheduled_audit_name(&self) -> std::option::Option<& str> {
+    pub fn scheduled_audit_name(&self) -> std::option::Option<&str> {
         self.scheduled_audit_name.as_deref()
     }
 }
 impl DescribeScheduledAuditInput {
     /// Creates a new builder-style object to manufacture [`DescribeScheduledAuditInput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput).
-    pub fn builder() -> crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder
+    {
         crate::operation::describe_scheduled_audit::builders::DescribeScheduledAuditInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeScheduledAuditInputBuilder {
         self
     }
     /// <p>The name of the scheduled audit whose information you want to get.</p>
-    pub fn set_scheduled_audit_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scheduled_audit_name = input; self
+    pub fn set_scheduled_audit_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.scheduled_audit_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeScheduledAuditInput`](crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput).
-    pub fn build(self) -> Result<crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_scheduled_audit::DescribeScheduledAuditInput {
-                scheduled_audit_name: self.scheduled_audit_name
-                ,
-            }
+                scheduled_audit_name: self.scheduled_audit_name,
+            },
         )
     }
 }
-

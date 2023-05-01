@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartStreamProcessorOutput  {
+pub struct StartStreamProcessorOutput {
     /// <p> A unique identifier for the stream processing session. </p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct StartStreamProcessorOutput  {
 }
 impl StartStreamProcessorOutput {
     /// <p> A unique identifier for the stream processing session. </p>
-    pub fn session_id(&self) -> std::option::Option<& str> {
+    pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartStreamProcessorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartStreamProcessorOutput {
     /// Creates a new builder-style object to manufacture [`StartStreamProcessorOutput`](crate::operation::start_stream_processor::StartStreamProcessorOutput).
-    pub fn builder() -> crate::operation::start_stream_processor::builders::StartStreamProcessorOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_stream_processor::builders::StartStreamProcessorOutputBuilder {
         crate::operation::start_stream_processor::builders::StartStreamProcessorOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl StartStreamProcessorOutputBuilder {
     }
     /// <p> A unique identifier for the stream processing session. </p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input; self
+        self.session_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartStreamProcessorOutput`](crate::operation::start_stream_processor::StartStreamProcessorOutput).
     pub fn build(self) -> crate::operation::start_stream_processor::StartStreamProcessorOutput {
         crate::operation::start_stream_processor::StartStreamProcessorOutput {
-            session_id: self.session_id
-            ,
+            session_id: self.session_id,
             _request_id: self._request_id,
         }
     }
 }
-

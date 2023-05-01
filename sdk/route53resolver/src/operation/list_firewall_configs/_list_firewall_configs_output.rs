@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFirewallConfigsOutput  {
+pub struct ListFirewallConfigsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,23 +13,25 @@ pub struct ListFirewallConfigsOutput  {
 }
 impl ListFirewallConfigsOutput {
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
-    pub fn firewall_configs(&self) -> std::option::Option<& [crate::types::FirewallConfig]> {
+    pub fn firewall_configs(&self) -> std::option::Option<&[crate::types::FirewallConfig]> {
         self.firewall_configs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFirewallConfigsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListFirewallConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListFirewallConfigsOutput`](crate::operation::list_firewall_configs::ListFirewallConfigsOutput).
-    pub fn builder() -> crate::operation::list_firewall_configs::builders::ListFirewallConfigsOutputBuilder {
-        crate::operation::list_firewall_configs::builders::ListFirewallConfigsOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_firewall_configs::builders::ListFirewallConfigsOutputBuilder {
+        crate::operation::list_firewall_configs::builders::ListFirewallConfigsOutputBuilder::default(
+        )
     }
 }
 
@@ -49,7 +51,8 @@ impl ListFirewallConfigsOutputBuilder {
     }
     /// <p>If objects are still available for retrieval, Resolver returns this token in the response. To retrieve the next batch of objects, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `firewall_configs`.
     ///
@@ -58,32 +61,33 @@ impl ListFirewallConfigsOutputBuilder {
     /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
     pub fn firewall_configs(mut self, input: crate::types::FirewallConfig) -> Self {
         let mut v = self.firewall_configs.unwrap_or_default();
-                        v.push(input);
-                        self.firewall_configs = Some(v);
-                        self
+        v.push(input);
+        self.firewall_configs = Some(v);
+        self
     }
     /// <p>The configurations for the firewall behavior provided by DNS Firewall for VPCs from Amazon Virtual Private Cloud (Amazon VPC). </p>
-    pub fn set_firewall_configs(mut self, input: std::option::Option<std::vec::Vec<crate::types::FirewallConfig>>) -> Self {
-        self.firewall_configs = input; self
+    pub fn set_firewall_configs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FirewallConfig>>,
+    ) -> Self {
+        self.firewall_configs = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFirewallConfigsOutput`](crate::operation::list_firewall_configs::ListFirewallConfigsOutput).
     pub fn build(self) -> crate::operation::list_firewall_configs::ListFirewallConfigsOutput {
         crate::operation::list_firewall_configs::ListFirewallConfigsOutput {
-            next_token: self.next_token
-            ,
-            firewall_configs: self.firewall_configs
-            ,
+            next_token: self.next_token,
+            firewall_configs: self.firewall_configs,
             _request_id: self._request_id,
         }
     }
 }
-

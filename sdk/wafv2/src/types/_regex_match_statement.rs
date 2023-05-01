@@ -3,7 +3,7 @@
 /// <p>A rule statement used to search web request components for a match against a single regular expression. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegexMatchStatement  {
+pub struct RegexMatchStatement {
     /// <p>The string representing the regular expression.</p>
     #[doc(hidden)]
     pub regex_string: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct RegexMatchStatement  {
 }
 impl RegexMatchStatement {
     /// <p>The string representing the regular expression.</p>
-    pub fn regex_string(&self) -> std::option::Option<& str> {
+    pub fn regex_string(&self) -> std::option::Option<&str> {
         self.regex_string.as_deref()
     }
     /// <p>The part of the web request that you want WAF to inspect. </p>
-    pub fn field_to_match(&self) -> std::option::Option<& crate::types::FieldToMatch> {
+    pub fn field_to_match(&self) -> std::option::Option<&crate::types::FieldToMatch> {
         self.field_to_match.as_ref()
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-    pub fn text_transformations(&self) -> std::option::Option<& [crate::types::TextTransformation]> {
+    pub fn text_transformations(&self) -> std::option::Option<&[crate::types::TextTransformation]> {
         self.text_transformations.as_deref()
     }
 }
@@ -41,7 +41,8 @@ impl RegexMatchStatement {
 pub struct RegexMatchStatementBuilder {
     pub(crate) regex_string: std::option::Option<std::string::String>,
     pub(crate) field_to_match: std::option::Option<crate::types::FieldToMatch>,
-    pub(crate) text_transformations: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
+    pub(crate) text_transformations:
+        std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
 }
 impl RegexMatchStatementBuilder {
     /// <p>The string representing the regular expression.</p>
@@ -51,7 +52,8 @@ impl RegexMatchStatementBuilder {
     }
     /// <p>The string representing the regular expression.</p>
     pub fn set_regex_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.regex_string = input; self
+        self.regex_string = input;
+        self
     }
     /// <p>The part of the web request that you want WAF to inspect. </p>
     pub fn field_to_match(mut self, input: crate::types::FieldToMatch) -> Self {
@@ -59,8 +61,12 @@ impl RegexMatchStatementBuilder {
         self
     }
     /// <p>The part of the web request that you want WAF to inspect. </p>
-    pub fn set_field_to_match(mut self, input: std::option::Option<crate::types::FieldToMatch>) -> Self {
-        self.field_to_match = input; self
+    pub fn set_field_to_match(
+        mut self,
+        input: std::option::Option<crate::types::FieldToMatch>,
+    ) -> Self {
+        self.field_to_match = input;
+        self
     }
     /// Appends an item to `text_transformations`.
     ///
@@ -69,24 +75,24 @@ impl RegexMatchStatementBuilder {
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
     pub fn text_transformations(mut self, input: crate::types::TextTransformation) -> Self {
         let mut v = self.text_transformations.unwrap_or_default();
-                        v.push(input);
-                        self.text_transformations = Some(v);
-                        self
+        v.push(input);
+        self.text_transformations = Some(v);
+        self
     }
     /// <p>Text transformations eliminate some of the unusual formatting that attackers use in web requests in an effort to bypass detection. If you specify one or more transformations in a rule statement, WAF performs all transformations on the content of the request component identified by <code>FieldToMatch</code>, starting from the lowest priority setting, before inspecting the content for a match.</p>
-    pub fn set_text_transformations(mut self, input: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>) -> Self {
-        self.text_transformations = input; self
+    pub fn set_text_transformations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TextTransformation>>,
+    ) -> Self {
+        self.text_transformations = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegexMatchStatement`](crate::types::RegexMatchStatement).
     pub fn build(self) -> crate::types::RegexMatchStatement {
         crate::types::RegexMatchStatement {
-            regex_string: self.regex_string
-            ,
-            field_to_match: self.field_to_match
-            ,
-            text_transformations: self.text_transformations
-            ,
+            regex_string: self.regex_string,
+            field_to_match: self.field_to_match,
+            text_transformations: self.text_transformations,
         }
     }
 }
-

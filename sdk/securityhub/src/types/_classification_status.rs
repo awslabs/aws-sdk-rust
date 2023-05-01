@@ -3,7 +3,7 @@
 /// <p>Provides details about the current status of the sensitive data detection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClassificationStatus  {
+pub struct ClassificationStatus {
     /// <p>The code that represents the status of the sensitive data detection.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ClassificationStatus  {
 }
 impl ClassificationStatus {
     /// <p>The code that represents the status of the sensitive data detection.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>A longer description of the current status of the sensitive data detection.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ClassificationStatusBuilder {
     }
     /// <p>The code that represents the status of the sensitive data detection.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>A longer description of the current status of the sensitive data detection.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ClassificationStatusBuilder {
     }
     /// <p>A longer description of the current status of the sensitive data detection.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClassificationStatus`](crate::types::ClassificationStatus).
     pub fn build(self) -> crate::types::ClassificationStatus {
         crate::types::ClassificationStatus {
-            code: self.code
-            ,
-            reason: self.reason
-            ,
+            code: self.code,
+            reason: self.reason,
         }
     }
 }
-

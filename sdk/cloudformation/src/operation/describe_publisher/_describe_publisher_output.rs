@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePublisherOutput  {
+pub struct DescribePublisherOutput {
     /// <p>The ID of the extension publisher.</p>
     #[doc(hidden)]
     pub publisher_id: std::option::Option<std::string::String>,
@@ -19,30 +19,31 @@ pub struct DescribePublisherOutput  {
 }
 impl DescribePublisherOutput {
     /// <p>The ID of the extension publisher.</p>
-    pub fn publisher_id(&self) -> std::option::Option<& str> {
+    pub fn publisher_id(&self) -> std::option::Option<&str> {
         self.publisher_id.as_deref()
     }
     /// <p>Whether the publisher is verified. Currently, all registered publishers are verified.</p>
-    pub fn publisher_status(&self) -> std::option::Option<& crate::types::PublisherStatus> {
+    pub fn publisher_status(&self) -> std::option::Option<&crate::types::PublisherStatus> {
         self.publisher_status.as_ref()
     }
     /// <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
-    pub fn identity_provider(&self) -> std::option::Option<& crate::types::IdentityProvider> {
+    pub fn identity_provider(&self) -> std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The URL to the publisher's profile with the identity provider.</p>
-    pub fn publisher_profile(&self) -> std::option::Option<& str> {
+    pub fn publisher_profile(&self) -> std::option::Option<&str> {
         self.publisher_profile.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePublisherOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribePublisherOutput {
     /// Creates a new builder-style object to manufacture [`DescribePublisherOutput`](crate::operation::describe_publisher::DescribePublisherOutput).
-    pub fn builder() -> crate::operation::describe_publisher::builders::DescribePublisherOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_publisher::builders::DescribePublisherOutputBuilder {
         crate::operation::describe_publisher::builders::DescribePublisherOutputBuilder::default()
     }
 }
@@ -65,7 +66,8 @@ impl DescribePublisherOutputBuilder {
     }
     /// <p>The ID of the extension publisher.</p>
     pub fn set_publisher_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.publisher_id = input; self
+        self.publisher_id = input;
+        self
     }
     /// <p>Whether the publisher is verified. Currently, all registered publishers are verified.</p>
     pub fn publisher_status(mut self, input: crate::types::PublisherStatus) -> Self {
@@ -73,8 +75,12 @@ impl DescribePublisherOutputBuilder {
         self
     }
     /// <p>Whether the publisher is verified. Currently, all registered publishers are verified.</p>
-    pub fn set_publisher_status(mut self, input: std::option::Option<crate::types::PublisherStatus>) -> Self {
-        self.publisher_status = input; self
+    pub fn set_publisher_status(
+        mut self,
+        input: std::option::Option<crate::types::PublisherStatus>,
+    ) -> Self {
+        self.publisher_status = input;
+        self
     }
     /// <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
     pub fn identity_provider(mut self, input: crate::types::IdentityProvider) -> Self {
@@ -82,8 +88,12 @@ impl DescribePublisherOutputBuilder {
         self
     }
     /// <p>The type of account used as the identity provider when registering this publisher with CloudFormation.</p>
-    pub fn set_identity_provider(mut self, input: std::option::Option<crate::types::IdentityProvider>) -> Self {
-        self.identity_provider = input; self
+    pub fn set_identity_provider(
+        mut self,
+        input: std::option::Option<crate::types::IdentityProvider>,
+    ) -> Self {
+        self.identity_provider = input;
+        self
     }
     /// <p>The URL to the publisher's profile with the identity provider.</p>
     pub fn publisher_profile(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,31 +101,30 @@ impl DescribePublisherOutputBuilder {
         self
     }
     /// <p>The URL to the publisher's profile with the identity provider.</p>
-    pub fn set_publisher_profile(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.publisher_profile = input; self
+    pub fn set_publisher_profile(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.publisher_profile = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribePublisherOutput`](crate::operation::describe_publisher::DescribePublisherOutput).
     pub fn build(self) -> crate::operation::describe_publisher::DescribePublisherOutput {
         crate::operation::describe_publisher::DescribePublisherOutput {
-            publisher_id: self.publisher_id
-            ,
-            publisher_status: self.publisher_status
-            ,
-            identity_provider: self.identity_provider
-            ,
-            publisher_profile: self.publisher_profile
-            ,
+            publisher_id: self.publisher_id,
+            publisher_status: self.publisher_status,
+            identity_provider: self.identity_provider,
+            publisher_profile: self.publisher_profile,
             _request_id: self._request_id,
         }
     }
 }
-

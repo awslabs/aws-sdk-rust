@@ -4,73 +4,89 @@ pub use crate::operation::update_trail::_update_trail_output::UpdateTrailOutputB
 pub use crate::operation::update_trail::_update_trail_input::UpdateTrailInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateTrail`.
-/// 
+///
 /// <p>Updates trail settings that control what events you are logging, and how to handle log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateTrailFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_trail::builders::UpdateTrailInputBuilder,
+    inner: crate::operation::update_trail::builders::UpdateTrailInputBuilder,
 }
-impl UpdateTrailFluentBuilder  {
+impl UpdateTrailFluentBuilder {
     /// Creates a new `UpdateTrail`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_trail::UpdateTrail, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_trail::UpdateTrailError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_trail::UpdateTrailOutput, aws_smithy_http::result::SdkError<crate::operation::update_trail::UpdateTrailError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li> 
-    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li> 
-    /// <li> <p>Be between 3 and 128 characters</p> </li> 
-    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li> 
-    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> 
-    /// </ul> 
-    /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_trail::UpdateTrail,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_trail::UpdateTrailError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_trail::UpdateTrailOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_trail::UpdateTrailError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+    /// </ul>
+    /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p> 
-    /// <ul> 
-    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li> 
-    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li> 
-    /// <li> <p>Be between 3 and 128 characters</p> </li> 
-    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li> 
-    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li> 
-    /// </ul> 
-    /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p> 
+    /// <p>Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name, the string must meet the following requirements:</p>
+    /// <ul>
+    /// <li> <p>Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)</p> </li>
+    /// <li> <p>Start with a letter or number, and end with a letter or number</p> </li>
+    /// <li> <p>Be between 3 and 128 characters</p> </li>
+    /// <li> <p>Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code> and <code>my--namespace</code> are not valid.</p> </li>
+    /// <li> <p>Not be in IP address format (for example, 192.168.5.4)</p> </li>
+    /// </ul>
+    /// <p>If <code>Name</code> is a trail ARN, it must be in the following format.</p>
     /// <p> <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
@@ -126,29 +142,32 @@ impl UpdateTrailFluentBuilder  {
         self.inner = self.inner.set_is_multi_region_trail(input);
         self
     }
-    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note> 
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p> 
+    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub fn enable_log_file_validation(mut self, input: bool) -> Self {
         self.inner = self.inner.enable_log_file_validation(input);
         self
     }
-    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note> 
-    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p> 
+    /// <p>Specifies whether log file validation is enabled. The default is false.</p> <note>
+    /// <p>When you disable log file integrity validation, the chain of digest files is broken after one hour. CloudTrail does not create digest files for log files that were delivered during a period in which log file integrity validation was disabled. For example, if you enable log file integrity validation at noon on January 1, disable it at noon on January 2, and re-enable it at noon on January 10, digest files will not be created for the log files delivered from noon on January 2 to noon on January 10. The same applies whenever you stop CloudTrail logging or delete a trail.</p>
     /// </note>
     pub fn set_enable_log_file_validation(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_enable_log_file_validation(input);
         self
     }
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p> 
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
     /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
     pub fn cloud_watch_logs_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cloud_watch_logs_log_group_arn(input.into());
         self
     }
-    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p> 
+    /// <p>Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier that represents the log group to which CloudTrail logs are delivered. You must use a log group that exists in your account.</p>
     /// <p>Not required unless you specify <code>CloudWatchLogsRoleArn</code>.</p>
-    pub fn set_cloud_watch_logs_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cloud_watch_logs_log_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_log_group_arn(input);
         self
     }
@@ -158,31 +177,34 @@ impl UpdateTrailFluentBuilder  {
         self
     }
     /// <p>Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's log group. You must use a role that exists in your account.</p>
-    pub fn set_cloud_watch_logs_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cloud_watch_logs_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cloud_watch_logs_role_arn(input);
         self
     }
-    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> 
-    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p> 
-    /// <p>Examples:</p> 
-    /// <ul> 
-    /// <li> <p>alias/MyAliasName</p> </li> 
-    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> 
-    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li> 
-    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li> 
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Examples:</p>
+    /// <ul>
+    /// <li> <p>alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.kms_key_id(input.into());
         self
     }
-    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p> 
-    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p> 
-    /// <p>Examples:</p> 
-    /// <ul> 
-    /// <li> <p>alias/MyAliasName</p> </li> 
-    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li> 
-    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li> 
-    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li> 
+    /// <p>Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value can be an alias name prefixed by "alias/", a fully specified ARN to an alias, a fully specified ARN to a key, or a globally unique identifier.</p>
+    /// <p>CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
+    /// <p>Examples:</p>
+    /// <ul>
+    /// <li> <p>alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</p> </li>
+    /// <li> <p>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</p> </li>
+    /// <li> <p>12345678-1234-1234-1234-123456789012</p> </li>
     /// </ul>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_kms_key_id(input);
@@ -199,4 +221,3 @@ impl UpdateTrailFluentBuilder  {
         self
     }
 }
-

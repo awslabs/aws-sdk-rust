@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLoggerDefinitionOutput  {
+pub struct UpdateLoggerDefinitionOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateLoggerDefinitionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateLoggerDefinitionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLoggerDefinitionOutput`](crate::operation::update_logger_definition::UpdateLoggerDefinitionOutput).
-    pub fn builder() -> crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionOutputBuilder
+    {
         crate::operation::update_logger_definition::builders::UpdateLoggerDefinitionOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct UpdateLoggerDefinitionOutputBuilder {
 }
 impl UpdateLoggerDefinitionOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateLoggerDefinitionOutput`](crate::operation::update_logger_definition::UpdateLoggerDefinitionOutput).
     pub fn build(self) -> crate::operation::update_logger_definition::UpdateLoggerDefinitionOutput {
         crate::operation::update_logger_definition::UpdateLoggerDefinitionOutput {
@@ -40,4 +42,3 @@ impl UpdateLoggerDefinitionOutputBuilder {
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartTaskInput  {
+pub struct StartTaskInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<std::string::String>,
@@ -21,8 +21,8 @@ pub struct StartTaskInput  {
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     #[doc(hidden)]
     pub network_configuration: std::option::Option<crate::types::NetworkConfiguration>,
-    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note> 
-    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p> 
+    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note>
+    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
     /// </note>
     #[doc(hidden)]
     pub overrides: std::option::Option<crate::types::TaskOverride>,
@@ -32,20 +32,20 @@ pub struct StartTaskInput  {
     /// <p>The reference ID to use for the task.</p>
     #[doc(hidden)]
     pub reference_id: std::option::Option<std::string::String>,
-    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p> 
+    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
     #[doc(hidden)]
     pub started_by: std::option::Option<std::string::String>,
-    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> 
-    /// <p>The following basic restrictions apply to tags:</p> 
-    /// <ul> 
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -55,11 +55,11 @@ pub struct StartTaskInput  {
 }
 impl StartTaskInput {
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
-    pub fn cluster(&self) -> std::option::Option<& str> {
+    pub fn cluster(&self) -> std::option::Option<&str> {
         self.cluster.as_deref()
     }
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    pub fn container_instances(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn container_instances(&self) -> std::option::Option<&[std::string::String]> {
         self.container_instances.as_deref()
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -71,48 +71,50 @@ impl StartTaskInput {
         self.enable_execute_command
     }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
-    pub fn group(&self) -> std::option::Option<& str> {
+    pub fn group(&self) -> std::option::Option<&str> {
         self.group.as_deref()
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    pub fn network_configuration(&self) -> std::option::Option<& crate::types::NetworkConfiguration> {
+    pub fn network_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::NetworkConfiguration> {
         self.network_configuration.as_ref()
     }
-    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note> 
-    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p> 
+    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note>
+    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
     /// </note>
-    pub fn overrides(&self) -> std::option::Option<& crate::types::TaskOverride> {
+    pub fn overrides(&self) -> std::option::Option<&crate::types::TaskOverride> {
         self.overrides.as_ref()
     }
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
-    pub fn propagate_tags(&self) -> std::option::Option<& crate::types::PropagateTags> {
+    pub fn propagate_tags(&self) -> std::option::Option<&crate::types::PropagateTags> {
         self.propagate_tags.as_ref()
     }
     /// <p>The reference ID to use for the task.</p>
-    pub fn reference_id(&self) -> std::option::Option<& str> {
+    pub fn reference_id(&self) -> std::option::Option<&str> {
         self.reference_id.as_deref()
     }
-    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p> 
+    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
-    pub fn started_by(&self) -> std::option::Option<& str> {
+    pub fn started_by(&self) -> std::option::Option<&str> {
         self.started_by.as_deref()
     }
-    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> 
-    /// <p>The following basic restrictions apply to tags:</p> 
-    /// <ul> 
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
-    pub fn task_definition(&self) -> std::option::Option<& str> {
+    pub fn task_definition(&self) -> std::option::Option<&str> {
         self.task_definition.as_deref()
     }
 }
@@ -148,7 +150,8 @@ impl StartTaskInputBuilder {
     }
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster where to start your task. If you do not specify a cluster, the default cluster is assumed.</p>
     pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster = input; self
+        self.cluster = input;
+        self
     }
     /// Appends an item to `container_instances`.
     ///
@@ -157,13 +160,17 @@ impl StartTaskInputBuilder {
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
     pub fn container_instances(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.container_instances.unwrap_or_default();
-                        v.push(input.into());
-                        self.container_instances = Some(v);
-                        self
+        v.push(input.into());
+        self.container_instances = Some(v);
+        self
     }
     /// <p>The container instance IDs or full ARN entries for the container instances where you would like to place your task. You can specify up to 10 container instances.</p>
-    pub fn set_container_instances(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.container_instances = input; self
+    pub fn set_container_instances(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.container_instances = input;
+        self
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
@@ -172,7 +179,8 @@ impl StartTaskInputBuilder {
     }
     /// <p>Specifies whether to use Amazon ECS managed tags for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_ecs_managed_tags = input; self
+        self.enable_ecs_managed_tags = input;
+        self
     }
     /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this turns on the execute command functionality on all containers in the task.</p>
     pub fn enable_execute_command(mut self, input: bool) -> Self {
@@ -181,7 +189,8 @@ impl StartTaskInputBuilder {
     }
     /// <p>Whether or not the execute command functionality is turned on for the task. If <code>true</code>, this turns on the execute command functionality on all containers in the task.</p>
     pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_execute_command = input; self
+        self.enable_execute_command = input;
+        self
     }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
     pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -190,7 +199,8 @@ impl StartTaskInputBuilder {
     }
     /// <p>The name of the task group to associate with the task. The default value is the family name of the task definition (for example, family:my-family-name).</p>
     pub fn set_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group = input; self
+        self.group = input;
+        self
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
     pub fn network_configuration(mut self, input: crate::types::NetworkConfiguration) -> Self {
@@ -198,21 +208,26 @@ impl StartTaskInputBuilder {
         self
     }
     /// <p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <code>awsvpc</code> networking mode.</p>
-    pub fn set_network_configuration(mut self, input: std::option::Option<crate::types::NetworkConfiguration>) -> Self {
-        self.network_configuration = input; self
+    pub fn set_network_configuration(
+        mut self,
+        input: std::option::Option<crate::types::NetworkConfiguration>,
+    ) -> Self {
+        self.network_configuration = input;
+        self
     }
-    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note> 
-    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p> 
+    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note>
+    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
     /// </note>
     pub fn overrides(mut self, input: crate::types::TaskOverride) -> Self {
         self.overrides = Some(input);
         self
     }
-    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note> 
-    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p> 
+    /// <p>A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it receives. You can override the default command for a container (that's specified in the task definition or Docker image) with a <code>command</code> override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an <code>environment</code> override.</p> <note>
+    /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.</p>
     /// </note>
     pub fn set_overrides(mut self, input: std::option::Option<crate::types::TaskOverride>) -> Self {
-        self.overrides = input; self
+        self.overrides = input;
+        self
     }
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
     pub fn propagate_tags(mut self, input: crate::types::PropagateTags) -> Self {
@@ -220,8 +235,12 @@ impl StartTaskInputBuilder {
         self
     }
     /// <p>Specifies whether to propagate the tags from the task definition or the service to the task. If no value is specified, the tags aren't propagated.</p>
-    pub fn set_propagate_tags(mut self, input: std::option::Option<crate::types::PropagateTags>) -> Self {
-        self.propagate_tags = input; self
+    pub fn set_propagate_tags(
+        mut self,
+        input: std::option::Option<crate::types::PropagateTags>,
+    ) -> Self {
+        self.propagate_tags = input;
+        self
     }
     /// <p>The reference ID to use for the task.</p>
     pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -230,53 +249,59 @@ impl StartTaskInputBuilder {
     }
     /// <p>The reference ID to use for the task.</p>
     pub fn set_reference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reference_id = input; self
+        self.reference_id = input;
+        self
     }
-    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p> 
+    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
     pub fn started_by(mut self, input: impl Into<std::string::String>) -> Self {
         self.started_by = Some(input.into());
         self
     }
-    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p> 
+    /// <p>An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the <code>startedBy</code> parameter. You can then identify which tasks belong to that job by filtering the results of a <code>ListTasks</code> call with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens (-), and underscores (_) are allowed.</p>
     /// <p>If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter contains the deployment ID of the service that starts it.</p>
     pub fn set_started_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.started_by = input; self
+        self.started_by = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> 
-    /// <p>The following basic restrictions apply to tags:</p> 
-    /// <ul> 
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
-    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p> 
-    /// <p>The following basic restrictions apply to tags:</p> 
-    /// <ul> 
-    /// <li> <p>Maximum number of tags per resource - 50</p> </li> 
-    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li> 
-    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li> 
-    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li> 
-    /// <li> <p>Tag keys and values are case-sensitive.</p> </li> 
-    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li> 
+    /// <p>The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.</p>
+    /// <p>The following basic restrictions apply to tags:</p>
+    /// <ul>
+    /// <li> <p>Maximum number of tags per resource - 50</p> </li>
+    /// <li> <p>For each resource, each tag key must be unique, and each tag key can have only one value.</p> </li>
+    /// <li> <p>Maximum key length - 128 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>Maximum value length - 256 Unicode characters in UTF-8</p> </li>
+    /// <li> <p>If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.</p> </li>
+    /// <li> <p>Tag keys and values are case-sensitive.</p> </li>
+    /// <li> <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.</p> </li>
     /// </ul>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -285,38 +310,29 @@ impl StartTaskInputBuilder {
     }
     /// <p>The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or full ARN of the task definition to start. If a <code>revision</code> isn't specified, the latest <code>ACTIVE</code> revision is used.</p>
     pub fn set_task_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_definition = input; self
+        self.task_definition = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartTaskInput`](crate::operation::start_task::StartTaskInput).
-    pub fn build(self) -> Result<crate::operation::start_task::StartTaskInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_task::StartTaskInput {
-                cluster: self.cluster
-                ,
-                container_instances: self.container_instances
-                ,
-                enable_ecs_managed_tags: self.enable_ecs_managed_tags
-                ,
-                enable_execute_command: self.enable_execute_command
-                ,
-                group: self.group
-                ,
-                network_configuration: self.network_configuration
-                ,
-                overrides: self.overrides
-                ,
-                propagate_tags: self.propagate_tags
-                ,
-                reference_id: self.reference_id
-                ,
-                started_by: self.started_by
-                ,
-                tags: self.tags
-                ,
-                task_definition: self.task_definition
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_task::StartTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_task::StartTaskInput {
+            cluster: self.cluster,
+            container_instances: self.container_instances,
+            enable_ecs_managed_tags: self.enable_ecs_managed_tags,
+            enable_execute_command: self.enable_execute_command,
+            group: self.group,
+            network_configuration: self.network_configuration,
+            overrides: self.overrides,
+            propagate_tags: self.propagate_tags,
+            reference_id: self.reference_id,
+            started_by: self.started_by,
+            tags: self.tags,
+            task_definition: self.task_definition,
+        })
     }
 }
-

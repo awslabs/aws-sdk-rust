@@ -4,57 +4,78 @@ pub use crate::operation::list_networks::_list_networks_output::ListNetworksOutp
 pub use crate::operation::list_networks::_list_networks_input::ListNetworksInputBuilder;
 
 /// Fluent builder constructing a request to `ListNetworks`.
-/// 
-/// <p>Returns information about the networks in which the current Amazon Web Services account participates.</p> 
+///
+/// <p>Returns information about the networks in which the current Amazon Web Services account participates.</p>
 /// <p>Applies to Hyperledger Fabric and Ethereum.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNetworksFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_networks::builders::ListNetworksInputBuilder,
+    inner: crate::operation::list_networks::builders::ListNetworksInputBuilder,
 }
-impl ListNetworksFluentBuilder  {
+impl ListNetworksFluentBuilder {
     /// Creates a new `ListNetworks`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_networks::ListNetworks, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_networks::ListNetworksError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_networks::ListNetworksOutput, aws_smithy_http::result::SdkError<crate::operation::list_networks::ListNetworksError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_networks::ListNetworks,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_networks::ListNetworksError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_networks::ListNetworksOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_networks::ListNetworksError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_networks::paginator::ListNetworksPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_networks::paginator::ListNetworksPaginator {
-                                crate::operation::list_networks::paginator::ListNetworksPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_networks::paginator::ListNetworksPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_networks::paginator::ListNetworksPaginator {
+        crate::operation::list_networks::paginator::ListNetworksPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The name of the network.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -75,13 +96,13 @@ impl ListNetworksFluentBuilder  {
         self.inner = self.inner.set_framework(input);
         self
     }
-    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p> 
+    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn status(mut self, input: crate::types::NetworkStatus) -> Self {
         self.inner = self.inner.status(input);
         self
     }
-    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p> 
+    /// <p>An optional status specifier. If provided, only networks currently in this status are listed.</p>
     /// <p>Applies only to Hyperledger Fabric.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::NetworkStatus>) -> Self {
         self.inner = self.inner.set_status(input);
@@ -108,4 +129,3 @@ impl ListNetworksFluentBuilder  {
         self
     }
 }
-

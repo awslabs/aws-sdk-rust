@@ -3,7 +3,7 @@
 /// <p>Contains details about a task submitted to a resource .</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TaskSubmittedEventDetails  {
+pub struct TaskSubmittedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
@@ -19,23 +19,25 @@ pub struct TaskSubmittedEventDetails  {
 }
 impl TaskSubmittedEventDetails {
     /// <p>The service name of the resource in a task state.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The action of the resource called by a task state.</p>
-    pub fn resource(&self) -> std::option::Option<& str> {
+    pub fn resource(&self) -> std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>The response from a resource when a task has started. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
-    pub fn output(&self) -> std::option::Option<& str> {
+    pub fn output(&self) -> std::option::Option<&str> {
         self.output.as_deref()
     }
     /// <p>Contains details about the output of an execution history event.</p>
-    pub fn output_details(&self) -> std::option::Option<& crate::types::HistoryEventExecutionDataDetails> {
+    pub fn output_details(
+        &self,
+    ) -> std::option::Option<&crate::types::HistoryEventExecutionDataDetails> {
         self.output_details.as_ref()
     }
 }
-impl  std::fmt::Debug for TaskSubmittedEventDetails  {
+impl std::fmt::Debug for TaskSubmittedEventDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TaskSubmittedEventDetails");
         formatter.field("resource_type", &self.resource_type);
@@ -69,7 +71,8 @@ impl TaskSubmittedEventDetailsBuilder {
     }
     /// <p>The service name of the resource in a task state.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>The action of the resource called by a task state.</p>
     pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,7 +81,8 @@ impl TaskSubmittedEventDetailsBuilder {
     }
     /// <p>The action of the resource called by a task state.</p>
     pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource = input; self
+        self.resource = input;
+        self
     }
     /// <p>The response from a resource when a task has started. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn output(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,7 +91,8 @@ impl TaskSubmittedEventDetailsBuilder {
     }
     /// <p>The response from a resource when a task has started. Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_output(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.output = input; self
+        self.output = input;
+        self
     }
     /// <p>Contains details about the output of an execution history event.</p>
     pub fn output_details(mut self, input: crate::types::HistoryEventExecutionDataDetails) -> Self {
@@ -95,20 +100,20 @@ impl TaskSubmittedEventDetailsBuilder {
         self
     }
     /// <p>Contains details about the output of an execution history event.</p>
-    pub fn set_output_details(mut self, input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>) -> Self {
-        self.output_details = input; self
+    pub fn set_output_details(
+        mut self,
+        input: std::option::Option<crate::types::HistoryEventExecutionDataDetails>,
+    ) -> Self {
+        self.output_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`TaskSubmittedEventDetails`](crate::types::TaskSubmittedEventDetails).
     pub fn build(self) -> crate::types::TaskSubmittedEventDetails {
         crate::types::TaskSubmittedEventDetails {
-            resource_type: self.resource_type
-            ,
-            resource: self.resource
-            ,
-            output: self.output
-            ,
-            output_details: self.output_details
-            ,
+            resource_type: self.resource_type,
+            resource: self.resource,
+            output: self.output,
+            output_details: self.output_details,
         }
     }
 }
@@ -122,4 +127,3 @@ impl std::fmt::Debug for TaskSubmittedEventDetailsBuilder {
         formatter.finish()
     }
 }
-

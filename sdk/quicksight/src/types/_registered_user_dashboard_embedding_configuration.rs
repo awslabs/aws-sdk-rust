@@ -3,29 +3,33 @@
 /// <p>Information about the dashboard you want to embed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisteredUserDashboardEmbeddingConfiguration  {
-    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p> 
+pub struct RegisteredUserDashboardEmbeddingConfiguration {
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p>
     /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
     #[doc(hidden)]
     pub initial_dashboard_id: std::option::Option<std::string::String>,
     /// <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
     #[doc(hidden)]
-    pub feature_configurations: std::option::Option<crate::types::RegisteredUserDashboardFeatureConfigurations>,
+    pub feature_configurations:
+        std::option::Option<crate::types::RegisteredUserDashboardFeatureConfigurations>,
 }
 impl RegisteredUserDashboardEmbeddingConfiguration {
-    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p> 
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p>
     /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
-    pub fn initial_dashboard_id(&self) -> std::option::Option<& str> {
+    pub fn initial_dashboard_id(&self) -> std::option::Option<&str> {
         self.initial_dashboard_id.as_deref()
     }
     /// <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
-    pub fn feature_configurations(&self) -> std::option::Option<& crate::types::RegisteredUserDashboardFeatureConfigurations> {
+    pub fn feature_configurations(
+        &self,
+    ) -> std::option::Option<&crate::types::RegisteredUserDashboardFeatureConfigurations> {
         self.feature_configurations.as_ref()
     }
 }
 impl RegisteredUserDashboardEmbeddingConfiguration {
     /// Creates a new builder-style object to manufacture [`RegisteredUserDashboardEmbeddingConfiguration`](crate::types::RegisteredUserDashboardEmbeddingConfiguration).
-    pub fn builder() -> crate::types::builders::RegisteredUserDashboardEmbeddingConfigurationBuilder {
+    pub fn builder() -> crate::types::builders::RegisteredUserDashboardEmbeddingConfigurationBuilder
+    {
         crate::types::builders::RegisteredUserDashboardEmbeddingConfigurationBuilder::default()
     }
 }
@@ -35,37 +39,46 @@ impl RegisteredUserDashboardEmbeddingConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RegisteredUserDashboardEmbeddingConfigurationBuilder {
     pub(crate) initial_dashboard_id: std::option::Option<std::string::String>,
-    pub(crate) feature_configurations: std::option::Option<crate::types::RegisteredUserDashboardFeatureConfigurations>,
+    pub(crate) feature_configurations:
+        std::option::Option<crate::types::RegisteredUserDashboardFeatureConfigurations>,
 }
 impl RegisteredUserDashboardEmbeddingConfigurationBuilder {
-    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p> 
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p>
     /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
     pub fn initial_dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.initial_dashboard_id = Some(input.into());
         self
     }
-    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p> 
+    /// <p>The dashboard ID for the dashboard that you want the user to see first. This ID is included in the output URL. When the URL in response is accessed, Amazon QuickSight renders this dashboard if the user has permissions to view it.</p>
     /// <p>If the user does not have permission to view this dashboard, they see a permissions error message.</p>
-    pub fn set_initial_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.initial_dashboard_id = input; self
+    pub fn set_initial_dashboard_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.initial_dashboard_id = input;
+        self
     }
     /// <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
-    pub fn feature_configurations(mut self, input: crate::types::RegisteredUserDashboardFeatureConfigurations) -> Self {
+    pub fn feature_configurations(
+        mut self,
+        input: crate::types::RegisteredUserDashboardFeatureConfigurations,
+    ) -> Self {
         self.feature_configurations = Some(input);
         self
     }
     /// <p>The feature configurations of an embbedded Amazon QuickSight dashboard.</p>
-    pub fn set_feature_configurations(mut self, input: std::option::Option<crate::types::RegisteredUserDashboardFeatureConfigurations>) -> Self {
-        self.feature_configurations = input; self
+    pub fn set_feature_configurations(
+        mut self,
+        input: std::option::Option<crate::types::RegisteredUserDashboardFeatureConfigurations>,
+    ) -> Self {
+        self.feature_configurations = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegisteredUserDashboardEmbeddingConfiguration`](crate::types::RegisteredUserDashboardEmbeddingConfiguration).
     pub fn build(self) -> crate::types::RegisteredUserDashboardEmbeddingConfiguration {
         crate::types::RegisteredUserDashboardEmbeddingConfiguration {
-            initial_dashboard_id: self.initial_dashboard_id
-            ,
-            feature_configurations: self.feature_configurations
-            ,
+            initial_dashboard_id: self.initial_dashboard_id,
+            feature_configurations: self.feature_configurations,
         }
     }
 }
-

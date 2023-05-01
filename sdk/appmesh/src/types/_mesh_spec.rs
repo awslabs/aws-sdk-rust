@@ -3,7 +3,7 @@
 /// <p>An object that represents the specification of a service mesh.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MeshSpec  {
+pub struct MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
     #[doc(hidden)]
     pub egress_filter: std::option::Option<crate::types::EgressFilter>,
@@ -13,11 +13,11 @@ pub struct MeshSpec  {
 }
 impl MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
-    pub fn egress_filter(&self) -> std::option::Option<& crate::types::EgressFilter> {
+    pub fn egress_filter(&self) -> std::option::Option<&crate::types::EgressFilter> {
         self.egress_filter.as_ref()
     }
     /// <p>An object that represents the service discovery information for a service mesh.</p>
-    pub fn service_discovery(&self) -> std::option::Option<& crate::types::MeshServiceDiscovery> {
+    pub fn service_discovery(&self) -> std::option::Option<&crate::types::MeshServiceDiscovery> {
         self.service_discovery.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl MeshSpecBuilder {
         self
     }
     /// <p>The egress filter rules for the service mesh.</p>
-    pub fn set_egress_filter(mut self, input: std::option::Option<crate::types::EgressFilter>) -> Self {
-        self.egress_filter = input; self
+    pub fn set_egress_filter(
+        mut self,
+        input: std::option::Option<crate::types::EgressFilter>,
+    ) -> Self {
+        self.egress_filter = input;
+        self
     }
     /// <p>An object that represents the service discovery information for a service mesh.</p>
     pub fn service_discovery(mut self, input: crate::types::MeshServiceDiscovery) -> Self {
@@ -51,17 +55,18 @@ impl MeshSpecBuilder {
         self
     }
     /// <p>An object that represents the service discovery information for a service mesh.</p>
-    pub fn set_service_discovery(mut self, input: std::option::Option<crate::types::MeshServiceDiscovery>) -> Self {
-        self.service_discovery = input; self
+    pub fn set_service_discovery(
+        mut self,
+        input: std::option::Option<crate::types::MeshServiceDiscovery>,
+    ) -> Self {
+        self.service_discovery = input;
+        self
     }
     /// Consumes the builder and constructs a [`MeshSpec`](crate::types::MeshSpec).
     pub fn build(self) -> crate::types::MeshSpec {
         crate::types::MeshSpec {
-            egress_filter: self.egress_filter
-            ,
-            service_discovery: self.service_discovery
-            ,
+            egress_filter: self.egress_filter,
+            service_discovery: self.service_discovery,
         }
     }
 }
-

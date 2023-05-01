@@ -3,7 +3,7 @@
 /// <p>Describes the attachment of a VPC to an internet gateway or an egress-only internet gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InternetGatewayAttachment  {
+pub struct InternetGatewayAttachment {
     /// <p>The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached to a VPC; otherwise, this value is not returned.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::AttachmentStatus>,
@@ -13,11 +13,11 @@ pub struct InternetGatewayAttachment  {
 }
 impl InternetGatewayAttachment {
     /// <p>The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached to a VPC; otherwise, this value is not returned.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::AttachmentStatus> {
+    pub fn state(&self) -> std::option::Option<&crate::types::AttachmentStatus> {
         self.state.as_ref()
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl InternetGatewayAttachmentBuilder {
     }
     /// <p>The current state of the attachment. For an internet gateway, the state is <code>available</code> when attached to a VPC; otherwise, this value is not returned.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::AttachmentStatus>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl InternetGatewayAttachmentBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`InternetGatewayAttachment`](crate::types::InternetGatewayAttachment).
     pub fn build(self) -> crate::types::InternetGatewayAttachment {
         crate::types::InternetGatewayAttachment {
-            state: self.state
-            ,
-            vpc_id: self.vpc_id
-            ,
+            state: self.state,
+            vpc_id: self.vpc_id,
         }
     }
 }
-

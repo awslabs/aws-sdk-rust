@@ -3,7 +3,7 @@
 /// <p> The asset model property identifer of the input routed from AWS IoT SiteWise. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IotSiteWiseAssetModelPropertyIdentifier  {
+pub struct IotSiteWiseAssetModelPropertyIdentifier {
     /// <p> The ID of the AWS IoT SiteWise asset model. </p>
     #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct IotSiteWiseAssetModelPropertyIdentifier  {
 }
 impl IotSiteWiseAssetModelPropertyIdentifier {
     /// <p> The ID of the AWS IoT SiteWise asset model. </p>
-    pub fn asset_model_id(&self) -> std::option::Option<& str> {
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
         self.asset_model_id.as_deref()
     }
     /// <p> The ID of the AWS IoT SiteWise asset property. </p>
-    pub fn property_id(&self) -> std::option::Option<& str> {
+    pub fn property_id(&self) -> std::option::Option<&str> {
         self.property_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl IotSiteWiseAssetModelPropertyIdentifierBuilder {
     }
     /// <p> The ID of the AWS IoT SiteWise asset model. </p>
     pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_model_id = input; self
+        self.asset_model_id = input;
+        self
     }
     /// <p> The ID of the AWS IoT SiteWise asset property. </p>
     pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl IotSiteWiseAssetModelPropertyIdentifierBuilder {
     }
     /// <p> The ID of the AWS IoT SiteWise asset property. </p>
     pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.property_id = input; self
+        self.property_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`IotSiteWiseAssetModelPropertyIdentifier`](crate::types::IotSiteWiseAssetModelPropertyIdentifier).
     pub fn build(self) -> crate::types::IotSiteWiseAssetModelPropertyIdentifier {
         crate::types::IotSiteWiseAssetModelPropertyIdentifier {
-            asset_model_id: self.asset_model_id
-            ,
-            property_id: self.property_id
-            ,
+            asset_model_id: self.asset_model_id,
+            property_id: self.property_id,
         }
     }
 }
-

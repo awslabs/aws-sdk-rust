@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorldTemplateBodyOutput  {
+pub struct GetWorldTemplateBodyOutput {
     /// <p>The world template body.</p>
     #[doc(hidden)]
     pub template_body: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct GetWorldTemplateBodyOutput  {
 }
 impl GetWorldTemplateBodyOutput {
     /// <p>The world template body.</p>
-    pub fn template_body(&self) -> std::option::Option<& str> {
+    pub fn template_body(&self) -> std::option::Option<&str> {
         self.template_body.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetWorldTemplateBodyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetWorldTemplateBodyOutput {
     /// Creates a new builder-style object to manufacture [`GetWorldTemplateBodyOutput`](crate::operation::get_world_template_body::GetWorldTemplateBodyOutput).
-    pub fn builder() -> crate::operation::get_world_template_body::builders::GetWorldTemplateBodyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_world_template_body::builders::GetWorldTemplateBodyOutputBuilder
+    {
         crate::operation::get_world_template_body::builders::GetWorldTemplateBodyOutputBuilder::default()
     }
 }
@@ -41,24 +43,23 @@ impl GetWorldTemplateBodyOutputBuilder {
     }
     /// <p>The world template body.</p>
     pub fn set_template_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_body = input; self
+        self.template_body = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetWorldTemplateBodyOutput`](crate::operation::get_world_template_body::GetWorldTemplateBodyOutput).
     pub fn build(self) -> crate::operation::get_world_template_body::GetWorldTemplateBodyOutput {
         crate::operation::get_world_template_body::GetWorldTemplateBodyOutput {
-            template_body: self.template_body
-            ,
+            template_body: self.template_body,
             _request_id: self._request_id,
         }
     }
 }
-

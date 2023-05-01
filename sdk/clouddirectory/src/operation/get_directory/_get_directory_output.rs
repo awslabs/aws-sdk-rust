@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDirectoryOutput  {
+pub struct GetDirectoryOutput {
     /// <p>Metadata about the directory.</p>
     #[doc(hidden)]
     pub directory: std::option::Option<crate::types::Directory>,
@@ -10,15 +10,15 @@ pub struct GetDirectoryOutput  {
 }
 impl GetDirectoryOutput {
     /// <p>Metadata about the directory.</p>
-    pub fn directory(&self) -> std::option::Option<& crate::types::Directory> {
+    pub fn directory(&self) -> std::option::Option<&crate::types::Directory> {
         self.directory.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDirectoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDirectoryOutput {
     /// Creates a new builder-style object to manufacture [`GetDirectoryOutput`](crate::operation::get_directory::GetDirectoryOutput).
     pub fn builder() -> crate::operation::get_directory::builders::GetDirectoryOutputBuilder {
@@ -41,24 +41,23 @@ impl GetDirectoryOutputBuilder {
     }
     /// <p>Metadata about the directory.</p>
     pub fn set_directory(mut self, input: std::option::Option<crate::types::Directory>) -> Self {
-        self.directory = input; self
+        self.directory = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDirectoryOutput`](crate::operation::get_directory::GetDirectoryOutput).
     pub fn build(self) -> crate::operation::get_directory::GetDirectoryOutput {
         crate::operation::get_directory::GetDirectoryOutput {
-            directory: self.directory
-            ,
+            directory: self.directory,
             _request_id: self._request_id,
         }
     }
 }
-

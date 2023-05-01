@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomPluginInput  {
+pub struct CreateCustomPluginInput {
     /// <p>The type of the plugin file.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<crate::types::CustomPluginContentType>,
@@ -18,25 +18,26 @@ pub struct CreateCustomPluginInput  {
 }
 impl CreateCustomPluginInput {
     /// <p>The type of the plugin file.</p>
-    pub fn content_type(&self) -> std::option::Option<& crate::types::CustomPluginContentType> {
+    pub fn content_type(&self) -> std::option::Option<&crate::types::CustomPluginContentType> {
         self.content_type.as_ref()
     }
     /// <p>A summary description of the custom plugin.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Information about the location of a custom plugin.</p>
-    pub fn location(&self) -> std::option::Option<& crate::types::CustomPluginLocation> {
+    pub fn location(&self) -> std::option::Option<&crate::types::CustomPluginLocation> {
         self.location.as_ref()
     }
     /// <p>The name of the custom plugin.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl CreateCustomPluginInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomPluginInput`](crate::operation::create_custom_plugin::CreateCustomPluginInput).
-    pub fn builder() -> crate::operation::create_custom_plugin::builders::CreateCustomPluginInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_custom_plugin::builders::CreateCustomPluginInputBuilder {
         crate::operation::create_custom_plugin::builders::CreateCustomPluginInputBuilder::default()
     }
 }
@@ -57,8 +58,12 @@ impl CreateCustomPluginInputBuilder {
         self
     }
     /// <p>The type of the plugin file.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<crate::types::CustomPluginContentType>) -> Self {
-        self.content_type = input; self
+    pub fn set_content_type(
+        mut self,
+        input: std::option::Option<crate::types::CustomPluginContentType>,
+    ) -> Self {
+        self.content_type = input;
+        self
     }
     /// <p>A summary description of the custom plugin.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +72,8 @@ impl CreateCustomPluginInputBuilder {
     }
     /// <p>A summary description of the custom plugin.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Information about the location of a custom plugin.</p>
     pub fn location(mut self, input: crate::types::CustomPluginLocation) -> Self {
@@ -75,8 +81,12 @@ impl CreateCustomPluginInputBuilder {
         self
     }
     /// <p>Information about the location of a custom plugin.</p>
-    pub fn set_location(mut self, input: std::option::Option<crate::types::CustomPluginLocation>) -> Self {
-        self.location = input; self
+    pub fn set_location(
+        mut self,
+        input: std::option::Option<crate::types::CustomPluginLocation>,
+    ) -> Self {
+        self.location = input;
+        self
     }
     /// <p>The name of the custom plugin.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +95,23 @@ impl CreateCustomPluginInputBuilder {
     }
     /// <p>The name of the custom plugin.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateCustomPluginInput`](crate::operation::create_custom_plugin::CreateCustomPluginInput).
-    pub fn build(self) -> Result<crate::operation::create_custom_plugin::CreateCustomPluginInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_custom_plugin::CreateCustomPluginInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_custom_plugin::CreateCustomPluginInput {
-                content_type: self.content_type
-                ,
-                description: self.description
-                ,
-                location: self.location
-                ,
-                name: self.name
-                ,
-            }
+                content_type: self.content_type,
+                description: self.description,
+                location: self.location,
+                name: self.name,
+            },
         )
     }
 }
-

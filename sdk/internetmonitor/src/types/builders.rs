@@ -20,4 +20,3 @@ pub use crate::types::_availability_measurement::AvailabilityMeasurementBuilder;
 pub use crate::types::_network_impairment::NetworkImpairmentBuilder;
 
 pub use crate::types::_network::NetworkBuilder;
-

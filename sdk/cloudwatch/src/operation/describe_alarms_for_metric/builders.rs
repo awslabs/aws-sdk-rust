@@ -4,51 +4,72 @@ pub use crate::operation::describe_alarms_for_metric::_describe_alarms_for_metri
 pub use crate::operation::describe_alarms_for_metric::_describe_alarms_for_metric_input::DescribeAlarmsForMetricInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeAlarmsForMetric`.
-/// 
-/// <p>Retrieves the alarms for the specified metric. To filter the results, specify a statistic, period, or unit.</p> 
+///
+/// <p>Retrieves the alarms for the specified metric. To filter the results, specify a statistic, period, or unit.</p>
 /// <p>This operation retrieves only standard alarms that are based on the specified metric. It does not return alarms based on math expressions that use the specified metric, or composite alarms that use the specified metric.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAlarmsForMetricFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder,
+    inner:
+        crate::operation::describe_alarms_for_metric::builders::DescribeAlarmsForMetricInputBuilder,
 }
-impl DescribeAlarmsForMetricFluentBuilder  {
+impl DescribeAlarmsForMetricFluentBuilder {
     /// Creates a new `DescribeAlarmsForMetric`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetric, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput, aws_smithy_http::result::SdkError<crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetric,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the metric.</p>
     pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
@@ -85,7 +106,10 @@ impl DescribeAlarmsForMetricFluentBuilder  {
         self
     }
     /// <p>The percentile statistic for the metric. Specify a value between p0.0 and p100.</p>
-    pub fn set_extended_statistic(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_extended_statistic(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_extended_statistic(input);
         self
     }
@@ -99,7 +123,10 @@ impl DescribeAlarmsForMetricFluentBuilder  {
         self
     }
     /// <p>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</p>
-    pub fn set_dimensions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Dimension>>) -> Self {
+    pub fn set_dimensions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+    ) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
     }
@@ -124,4 +151,3 @@ impl DescribeAlarmsForMetricFluentBuilder  {
         self
     }
 }
-

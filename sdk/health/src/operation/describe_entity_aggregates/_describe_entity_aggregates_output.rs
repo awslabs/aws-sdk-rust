@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEntityAggregatesOutput  {
+pub struct DescribeEntityAggregatesOutput {
     /// <p>The number of entities that are affected by each of the specified events.</p>
     #[doc(hidden)]
     pub entity_aggregates: std::option::Option<std::vec::Vec<crate::types::EntityAggregate>>,
@@ -10,18 +10,20 @@ pub struct DescribeEntityAggregatesOutput  {
 }
 impl DescribeEntityAggregatesOutput {
     /// <p>The number of entities that are affected by each of the specified events.</p>
-    pub fn entity_aggregates(&self) -> std::option::Option<& [crate::types::EntityAggregate]> {
+    pub fn entity_aggregates(&self) -> std::option::Option<&[crate::types::EntityAggregate]> {
         self.entity_aggregates.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEntityAggregatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEntityAggregatesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEntityAggregatesOutput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput).
-    pub fn builder() -> crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesOutputBuilder
+    {
         crate::operation::describe_entity_aggregates::builders::DescribeEntityAggregatesOutputBuilder::default()
     }
 }
@@ -41,30 +43,34 @@ impl DescribeEntityAggregatesOutputBuilder {
     /// <p>The number of entities that are affected by each of the specified events.</p>
     pub fn entity_aggregates(mut self, input: crate::types::EntityAggregate) -> Self {
         let mut v = self.entity_aggregates.unwrap_or_default();
-                        v.push(input);
-                        self.entity_aggregates = Some(v);
-                        self
+        v.push(input);
+        self.entity_aggregates = Some(v);
+        self
     }
     /// <p>The number of entities that are affected by each of the specified events.</p>
-    pub fn set_entity_aggregates(mut self, input: std::option::Option<std::vec::Vec<crate::types::EntityAggregate>>) -> Self {
-        self.entity_aggregates = input; self
+    pub fn set_entity_aggregates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EntityAggregate>>,
+    ) -> Self {
+        self.entity_aggregates = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEntityAggregatesOutput`](crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput).
-    pub fn build(self) -> crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput {
         crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput {
-            entity_aggregates: self.entity_aggregates
-            ,
+            entity_aggregates: self.entity_aggregates,
             _request_id: self._request_id,
         }
     }
 }
-

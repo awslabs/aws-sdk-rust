@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDbProxyEndpointsOutput  {
+pub struct DescribeDbProxyEndpointsOutput {
     /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
     #[doc(hidden)]
     pub db_proxy_endpoints: std::option::Option<std::vec::Vec<crate::types::DbProxyEndpoint>>,
@@ -13,22 +13,22 @@ pub struct DescribeDbProxyEndpointsOutput  {
 }
 impl DescribeDbProxyEndpointsOutput {
     /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
-    pub fn db_proxy_endpoints(&self) -> std::option::Option<& [crate::types::DbProxyEndpoint]> {
+    pub fn db_proxy_endpoints(&self) -> std::option::Option<&[crate::types::DbProxyEndpoint]> {
         self.db_proxy_endpoints.as_deref()
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDbProxyEndpointsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDbProxyEndpointsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDbProxyEndpointsOutput`](crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput).
-    pub fn builder() -> crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsOutputBuilder{
         crate::operation::describe_db_proxy_endpoints::builders::DescribeDbProxyEndpointsOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl DescribeDbProxyEndpointsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDbProxyEndpointsOutputBuilder {
-    pub(crate) db_proxy_endpoints: std::option::Option<std::vec::Vec<crate::types::DbProxyEndpoint>>,
+    pub(crate) db_proxy_endpoints:
+        std::option::Option<std::vec::Vec<crate::types::DbProxyEndpoint>>,
     pub(crate) marker: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl DescribeDbProxyEndpointsOutputBuilder {
     /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
     pub fn db_proxy_endpoints(mut self, input: crate::types::DbProxyEndpoint) -> Self {
         let mut v = self.db_proxy_endpoints.unwrap_or_default();
-                        v.push(input);
-                        self.db_proxy_endpoints = Some(v);
-                        self
+        v.push(input);
+        self.db_proxy_endpoints = Some(v);
+        self
     }
     /// <p>The list of <code>ProxyEndpoint</code> objects returned by the API operation.</p>
-    pub fn set_db_proxy_endpoints(mut self, input: std::option::Option<std::vec::Vec<crate::types::DbProxyEndpoint>>) -> Self {
-        self.db_proxy_endpoints = input; self
+    pub fn set_db_proxy_endpoints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DbProxyEndpoint>>,
+    ) -> Self {
+        self.db_proxy_endpoints = input;
+        self
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,26 @@ impl DescribeDbProxyEndpointsOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDbProxyEndpointsOutput`](crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput).
-    pub fn build(self) -> crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput {
         crate::operation::describe_db_proxy_endpoints::DescribeDbProxyEndpointsOutput {
-            db_proxy_endpoints: self.db_proxy_endpoints
-            ,
-            marker: self.marker
-            ,
+            db_proxy_endpoints: self.db_proxy_endpoints,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

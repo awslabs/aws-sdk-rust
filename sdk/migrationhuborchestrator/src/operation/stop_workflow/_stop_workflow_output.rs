@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopWorkflowOutput  {
+pub struct StopWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -22,31 +22,31 @@ pub struct StopWorkflowOutput  {
 }
 impl StopWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::MigrationWorkflowStatusEnum> {
+    pub fn status(&self) -> std::option::Option<&crate::types::MigrationWorkflowStatusEnum> {
         self.status.as_ref()
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The time at which the migration workflow was stopped.</p>
-    pub fn last_stop_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_stop_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StopWorkflowOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopWorkflowOutput {
     /// Creates a new builder-style object to manufacture [`StopWorkflowOutput`](crate::operation::stop_workflow::StopWorkflowOutput).
     pub fn builder() -> crate::operation::stop_workflow::builders::StopWorkflowOutputBuilder {
@@ -73,7 +73,8 @@ impl StopWorkflowOutputBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +83,8 @@ impl StopWorkflowOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the migration workflow.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The status of the migration workflow.</p>
     pub fn status(mut self, input: crate::types::MigrationWorkflowStatusEnum) -> Self {
@@ -90,8 +92,12 @@ impl StopWorkflowOutputBuilder {
         self
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::MigrationWorkflowStatusEnum>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +106,8 @@ impl StopWorkflowOutputBuilder {
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// <p>The time at which the migration workflow was stopped.</p>
     pub fn last_stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -108,33 +115,31 @@ impl StopWorkflowOutputBuilder {
         self
     }
     /// <p>The time at which the migration workflow was stopped.</p>
-    pub fn set_last_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_stop_time = input; self
+    pub fn set_last_stop_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_stop_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopWorkflowOutput`](crate::operation::stop_workflow::StopWorkflowOutput).
     pub fn build(self) -> crate::operation::stop_workflow::StopWorkflowOutput {
         crate::operation::stop_workflow::StopWorkflowOutput {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            status: self.status
-            ,
-            status_message: self.status_message
-            ,
-            last_stop_time: self.last_stop_time
-            ,
+            id: self.id,
+            arn: self.arn,
+            status: self.status,
+            status_message: self.status_message,
+            last_stop_time: self.last_stop_time,
             _request_id: self._request_id,
         }
     }
 }
-

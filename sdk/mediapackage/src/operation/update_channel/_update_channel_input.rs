@@ -3,7 +3,7 @@
 /// Configuration parameters used to update the Channel.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChannelInput  {
+pub struct UpdateChannelInput {
     /// A short text description of the Channel.
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct UpdateChannelInput  {
 }
 impl UpdateChannelInput {
     /// A short text description of the Channel.
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// The ID of the Channel to update.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl UpdateChannelInputBuilder {
     }
     /// A short text description of the Channel.
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// The ID of the Channel to update.
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +53,19 @@ impl UpdateChannelInputBuilder {
     }
     /// The ID of the Channel to update.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateChannelInput`](crate::operation::update_channel::UpdateChannelInput).
-    pub fn build(self) -> Result<crate::operation::update_channel::UpdateChannelInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_channel::UpdateChannelInput {
-                description: self.description
-                ,
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_channel::UpdateChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_channel::UpdateChannelInput {
+            description: self.description,
+            id: self.id,
+        })
     }
 }
-

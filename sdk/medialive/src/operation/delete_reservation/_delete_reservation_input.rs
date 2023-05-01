@@ -3,20 +3,21 @@
 /// Placeholder documentation for DeleteReservationRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteReservationInput  {
+pub struct DeleteReservationInput {
     /// Unique reservation ID, e.g. '1234567'
     #[doc(hidden)]
     pub reservation_id: std::option::Option<std::string::String>,
 }
 impl DeleteReservationInput {
     /// Unique reservation ID, e.g. '1234567'
-    pub fn reservation_id(&self) -> std::option::Option<& str> {
+    pub fn reservation_id(&self) -> std::option::Option<&str> {
         self.reservation_id.as_deref()
     }
 }
 impl DeleteReservationInput {
     /// Creates a new builder-style object to manufacture [`DeleteReservationInput`](crate::operation::delete_reservation::DeleteReservationInput).
-    pub fn builder() -> crate::operation::delete_reservation::builders::DeleteReservationInputBuilder {
+    pub fn builder() -> crate::operation::delete_reservation::builders::DeleteReservationInputBuilder
+    {
         crate::operation::delete_reservation::builders::DeleteReservationInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl DeleteReservationInputBuilder {
     }
     /// Unique reservation ID, e.g. '1234567'
     pub fn set_reservation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reservation_id = input; self
+        self.reservation_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteReservationInput`](crate::operation::delete_reservation::DeleteReservationInput).
-    pub fn build(self) -> Result<crate::operation::delete_reservation::DeleteReservationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_reservation::DeleteReservationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_reservation::DeleteReservationInput {
-                reservation_id: self.reservation_id
-                ,
-            }
+                reservation_id: self.reservation_id,
+            },
         )
     }
 }
-

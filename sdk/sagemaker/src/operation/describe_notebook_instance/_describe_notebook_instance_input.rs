@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNotebookInstanceInput  {
+pub struct DescribeNotebookInstanceInput {
     /// <p>The name of the notebook instance that you want information about.</p>
     #[doc(hidden)]
     pub notebook_instance_name: std::option::Option<std::string::String>,
 }
 impl DescribeNotebookInstanceInput {
     /// <p>The name of the notebook instance that you want information about.</p>
-    pub fn notebook_instance_name(&self) -> std::option::Option<& str> {
+    pub fn notebook_instance_name(&self) -> std::option::Option<&str> {
         self.notebook_instance_name.as_deref()
     }
 }
 impl DescribeNotebookInstanceInput {
     /// Creates a new builder-style object to manufacture [`DescribeNotebookInstanceInput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput).
-    pub fn builder() -> crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceInputBuilder
+    {
         crate::operation::describe_notebook_instance::builders::DescribeNotebookInstanceInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeNotebookInstanceInputBuilder {
         self
     }
     /// <p>The name of the notebook instance that you want information about.</p>
-    pub fn set_notebook_instance_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_instance_name = input; self
+    pub fn set_notebook_instance_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.notebook_instance_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeNotebookInstanceInput`](crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput).
-    pub fn build(self) -> Result<crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_notebook_instance::DescribeNotebookInstanceInput {
-                notebook_instance_name: self.notebook_instance_name
-                ,
-            }
+                notebook_instance_name: self.notebook_instance_name,
+            },
         )
     }
 }
-

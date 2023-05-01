@@ -3,7 +3,7 @@
 /// <p>Describes a quota for an Amazon Web Services account, for example the number of replication instances allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccountQuota  {
+pub struct AccountQuota {
     /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
     #[doc(hidden)]
     pub account_quota_name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct AccountQuota  {
 }
 impl AccountQuota {
     /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
-    pub fn account_quota_name(&self) -> std::option::Option<& str> {
+    pub fn account_quota_name(&self) -> std::option::Option<&str> {
         self.account_quota_name.as_deref()
     }
     /// <p>The amount currently used toward the quota maximum.</p>
@@ -50,8 +50,12 @@ impl AccountQuotaBuilder {
         self
     }
     /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
-    pub fn set_account_quota_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_quota_name = input; self
+    pub fn set_account_quota_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.account_quota_name = input;
+        self
     }
     /// <p>The amount currently used toward the quota maximum.</p>
     pub fn used(mut self, input: i64) -> Self {
@@ -60,7 +64,8 @@ impl AccountQuotaBuilder {
     }
     /// <p>The amount currently used toward the quota maximum.</p>
     pub fn set_used(mut self, input: std::option::Option<i64>) -> Self {
-        self.used = input; self
+        self.used = input;
+        self
     }
     /// <p>The maximum allowed value for the quota.</p>
     pub fn max(mut self, input: i64) -> Self {
@@ -69,20 +74,15 @@ impl AccountQuotaBuilder {
     }
     /// <p>The maximum allowed value for the quota.</p>
     pub fn set_max(mut self, input: std::option::Option<i64>) -> Self {
-        self.max = input; self
+        self.max = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccountQuota`](crate::types::AccountQuota).
     pub fn build(self) -> crate::types::AccountQuota {
         crate::types::AccountQuota {
-            account_quota_name: self.account_quota_name
-            ,
-            used: self.used
-                .unwrap_or_default()
-            ,
-            max: self.max
-                .unwrap_or_default()
-            ,
+            account_quota_name: self.account_quota_name,
+            used: self.used.unwrap_or_default(),
+            max: self.max.unwrap_or_default(),
         }
     }
 }
-

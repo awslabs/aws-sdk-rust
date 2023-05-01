@@ -3,7 +3,7 @@
 /// <p> Provides details about a control's enablement status in a specified standard. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StandardsControlAssociationDetail  {
+pub struct StandardsControlAssociationDetail {
     /// <p> The Amazon Resource Name (ARN) of a security standard. </p>
     #[doc(hidden)]
     pub standards_arn: std::option::Option<std::string::String>,
@@ -37,43 +37,43 @@ pub struct StandardsControlAssociationDetail  {
 }
 impl StandardsControlAssociationDetail {
     /// <p> The Amazon Resource Name (ARN) of a security standard. </p>
-    pub fn standards_arn(&self) -> std::option::Option<& str> {
+    pub fn standards_arn(&self) -> std::option::Option<&str> {
         self.standards_arn.as_deref()
     }
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
-    pub fn security_control_id(&self) -> std::option::Option<& str> {
+    pub fn security_control_id(&self) -> std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
     /// <p> The ARN of a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard. </p>
-    pub fn security_control_arn(&self) -> std::option::Option<& str> {
+    pub fn security_control_arn(&self) -> std::option::Option<&str> {
         self.security_control_arn.as_deref()
     }
     /// <p> Specifies whether a control is enabled or disabled in a specified standard. </p>
-    pub fn association_status(&self) -> std::option::Option<& crate::types::AssociationStatus> {
+    pub fn association_status(&self) -> std::option::Option<&crate::types::AssociationStatus> {
         self.association_status.as_ref()
     }
     /// <p> The requirement that underlies a control in the compliance framework related to the standard. </p>
-    pub fn related_requirements(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn related_requirements(&self) -> std::option::Option<&[std::string::String]> {
         self.related_requirements.as_deref()
     }
     /// <p> The time at which the enablement status of the control in the specified standard was last updated. </p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p> The reason for updating the enablement status of a control in a specified standard. </p>
-    pub fn updated_reason(&self) -> std::option::Option<& str> {
+    pub fn updated_reason(&self) -> std::option::Option<&str> {
         self.updated_reason.as_deref()
     }
     /// <p> The title of a control. This field may reference a specific standard. </p>
-    pub fn standards_control_title(&self) -> std::option::Option<& str> {
+    pub fn standards_control_title(&self) -> std::option::Option<&str> {
         self.standards_control_title.as_deref()
     }
     /// <p> The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard. </p>
-    pub fn standards_control_description(&self) -> std::option::Option<& str> {
+    pub fn standards_control_description(&self) -> std::option::Option<&str> {
         self.standards_control_description.as_deref()
     }
     /// <p> Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard. </p>
-    pub fn standards_control_arns(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn standards_control_arns(&self) -> std::option::Option<&[std::string::String]> {
         self.standards_control_arns.as_deref()
     }
 }
@@ -107,7 +107,8 @@ impl StandardsControlAssociationDetailBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of a security standard. </p>
     pub fn set_standards_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.standards_arn = input; self
+        self.standards_arn = input;
+        self
     }
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
     pub fn security_control_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +116,12 @@ impl StandardsControlAssociationDetailBuilder {
         self
     }
     /// <p> The unique identifier of a security control across standards. Values for this field typically consist of an Amazon Web Service name and a number, such as APIGateway.3. </p>
-    pub fn set_security_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_control_id = input; self
+    pub fn set_security_control_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_control_id = input;
+        self
     }
     /// <p> The ARN of a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard. </p>
     pub fn security_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,8 +129,12 @@ impl StandardsControlAssociationDetailBuilder {
         self
     }
     /// <p> The ARN of a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>. This parameter doesn't mention a specific standard. </p>
-    pub fn set_security_control_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_control_arn = input; self
+    pub fn set_security_control_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_control_arn = input;
+        self
     }
     /// <p> Specifies whether a control is enabled or disabled in a specified standard. </p>
     pub fn association_status(mut self, input: crate::types::AssociationStatus) -> Self {
@@ -133,8 +142,12 @@ impl StandardsControlAssociationDetailBuilder {
         self
     }
     /// <p> Specifies whether a control is enabled or disabled in a specified standard. </p>
-    pub fn set_association_status(mut self, input: std::option::Option<crate::types::AssociationStatus>) -> Self {
-        self.association_status = input; self
+    pub fn set_association_status(
+        mut self,
+        input: std::option::Option<crate::types::AssociationStatus>,
+    ) -> Self {
+        self.association_status = input;
+        self
     }
     /// Appends an item to `related_requirements`.
     ///
@@ -143,13 +156,17 @@ impl StandardsControlAssociationDetailBuilder {
     /// <p> The requirement that underlies a control in the compliance framework related to the standard. </p>
     pub fn related_requirements(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.related_requirements.unwrap_or_default();
-                        v.push(input.into());
-                        self.related_requirements = Some(v);
-                        self
+        v.push(input.into());
+        self.related_requirements = Some(v);
+        self
     }
     /// <p> The requirement that underlies a control in the compliance framework related to the standard. </p>
-    pub fn set_related_requirements(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.related_requirements = input; self
+    pub fn set_related_requirements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.related_requirements = input;
+        self
     }
     /// <p> The time at which the enablement status of the control in the specified standard was last updated. </p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -157,8 +174,12 @@ impl StandardsControlAssociationDetailBuilder {
         self
     }
     /// <p> The time at which the enablement status of the control in the specified standard was last updated. </p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// <p> The reason for updating the enablement status of a control in a specified standard. </p>
     pub fn updated_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,7 +188,8 @@ impl StandardsControlAssociationDetailBuilder {
     }
     /// <p> The reason for updating the enablement status of a control in a specified standard. </p>
     pub fn set_updated_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.updated_reason = input; self
+        self.updated_reason = input;
+        self
     }
     /// <p> The title of a control. This field may reference a specific standard. </p>
     pub fn standards_control_title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -175,8 +197,12 @@ impl StandardsControlAssociationDetailBuilder {
         self
     }
     /// <p> The title of a control. This field may reference a specific standard. </p>
-    pub fn set_standards_control_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.standards_control_title = input; self
+    pub fn set_standards_control_title(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.standards_control_title = input;
+        self
     }
     /// <p> The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard. </p>
     pub fn standards_control_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,8 +210,12 @@ impl StandardsControlAssociationDetailBuilder {
         self
     }
     /// <p> The description of a control. This typically summarizes how Security Hub evaluates the control and the conditions under which it produces a failed finding. This parameter may reference a specific standard. </p>
-    pub fn set_standards_control_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.standards_control_description = input; self
+    pub fn set_standards_control_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.standards_control_description = input;
+        self
     }
     /// Appends an item to `standards_control_arns`.
     ///
@@ -194,38 +224,31 @@ impl StandardsControlAssociationDetailBuilder {
     /// <p> Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard. </p>
     pub fn standards_control_arns(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.standards_control_arns.unwrap_or_default();
-                        v.push(input.into());
-                        self.standards_control_arns = Some(v);
-                        self
+        v.push(input.into());
+        self.standards_control_arns = Some(v);
+        self
     }
     /// <p> Provides the input parameter that Security Hub uses to call the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_UpdateStandardsControl.html">UpdateStandardsControl</a> API. This API can be used to enable or disable a control in a specified standard. </p>
-    pub fn set_standards_control_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.standards_control_arns = input; self
+    pub fn set_standards_control_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.standards_control_arns = input;
+        self
     }
     /// Consumes the builder and constructs a [`StandardsControlAssociationDetail`](crate::types::StandardsControlAssociationDetail).
     pub fn build(self) -> crate::types::StandardsControlAssociationDetail {
         crate::types::StandardsControlAssociationDetail {
-            standards_arn: self.standards_arn
-            ,
-            security_control_id: self.security_control_id
-            ,
-            security_control_arn: self.security_control_arn
-            ,
-            association_status: self.association_status
-            ,
-            related_requirements: self.related_requirements
-            ,
-            updated_at: self.updated_at
-            ,
-            updated_reason: self.updated_reason
-            ,
-            standards_control_title: self.standards_control_title
-            ,
-            standards_control_description: self.standards_control_description
-            ,
-            standards_control_arns: self.standards_control_arns
-            ,
+            standards_arn: self.standards_arn,
+            security_control_id: self.security_control_id,
+            security_control_arn: self.security_control_arn,
+            association_status: self.association_status,
+            related_requirements: self.related_requirements,
+            updated_at: self.updated_at,
+            updated_reason: self.updated_reason,
+            standards_control_title: self.standards_control_title,
+            standards_control_description: self.standards_control_description,
+            standards_control_arns: self.standards_control_arns,
         }
     }
 }
-

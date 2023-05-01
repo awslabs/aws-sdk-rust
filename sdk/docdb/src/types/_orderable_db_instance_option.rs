@@ -3,7 +3,7 @@
 /// <p>The options that are available for an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrderableDbInstanceOption  {
+pub struct OrderableDbInstanceOption {
     /// <p>The engine type of an instance.</p>
     #[doc(hidden)]
     pub engine: std::option::Option<std::string::String>,
@@ -25,23 +25,23 @@ pub struct OrderableDbInstanceOption  {
 }
 impl OrderableDbInstanceOption {
     /// <p>The engine type of an instance.</p>
-    pub fn engine(&self) -> std::option::Option<& str> {
+    pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The engine version of an instance.</p>
-    pub fn engine_version(&self) -> std::option::Option<& str> {
+    pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The instance class for an instance.</p>
-    pub fn db_instance_class(&self) -> std::option::Option<& str> {
+    pub fn db_instance_class(&self) -> std::option::Option<&str> {
         self.db_instance_class.as_deref()
     }
     /// <p>The license model for an instance.</p>
-    pub fn license_model(&self) -> std::option::Option<& str> {
+    pub fn license_model(&self) -> std::option::Option<&str> {
         self.license_model.as_deref()
     }
     /// <p>A list of Availability Zones for an instance.</p>
-    pub fn availability_zones(&self) -> std::option::Option<& [crate::types::AvailabilityZone]> {
+    pub fn availability_zones(&self) -> std::option::Option<&[crate::types::AvailabilityZone]> {
         self.availability_zones.as_deref()
     }
     /// <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
@@ -64,7 +64,8 @@ pub struct OrderableDbInstanceOptionBuilder {
     pub(crate) engine_version: std::option::Option<std::string::String>,
     pub(crate) db_instance_class: std::option::Option<std::string::String>,
     pub(crate) license_model: std::option::Option<std::string::String>,
-    pub(crate) availability_zones: std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub(crate) availability_zones:
+        std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
     pub(crate) vpc: std::option::Option<bool>,
 }
 impl OrderableDbInstanceOptionBuilder {
@@ -75,7 +76,8 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>The engine type of an instance.</p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input; self
+        self.engine = input;
+        self
     }
     /// <p>The engine version of an instance.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +86,8 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>The engine version of an instance.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input; self
+        self.engine_version = input;
+        self
     }
     /// <p>The instance class for an instance.</p>
     pub fn db_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,8 +95,12 @@ impl OrderableDbInstanceOptionBuilder {
         self
     }
     /// <p>The instance class for an instance.</p>
-    pub fn set_db_instance_class(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_instance_class = input; self
+    pub fn set_db_instance_class(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_instance_class = input;
+        self
     }
     /// <p>The license model for an instance.</p>
     pub fn license_model(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +109,8 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>The license model for an instance.</p>
     pub fn set_license_model(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_model = input; self
+        self.license_model = input;
+        self
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -111,13 +119,17 @@ impl OrderableDbInstanceOptionBuilder {
     /// <p>A list of Availability Zones for an instance.</p>
     pub fn availability_zones(mut self, input: crate::types::AvailabilityZone) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-                        v.push(input);
-                        self.availability_zones = Some(v);
-                        self
+        v.push(input);
+        self.availability_zones = Some(v);
+        self
     }
     /// <p>A list of Availability Zones for an instance.</p>
-    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>) -> Self {
-        self.availability_zones = input; self
+    pub fn set_availability_zones(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+    ) -> Self {
+        self.availability_zones = input;
+        self
     }
     /// <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
     pub fn vpc(mut self, input: bool) -> Self {
@@ -126,25 +138,18 @@ impl OrderableDbInstanceOptionBuilder {
     }
     /// <p>Indicates whether an instance is in a virtual private cloud (VPC).</p>
     pub fn set_vpc(mut self, input: std::option::Option<bool>) -> Self {
-        self.vpc = input; self
+        self.vpc = input;
+        self
     }
     /// Consumes the builder and constructs a [`OrderableDbInstanceOption`](crate::types::OrderableDbInstanceOption).
     pub fn build(self) -> crate::types::OrderableDbInstanceOption {
         crate::types::OrderableDbInstanceOption {
-            engine: self.engine
-            ,
-            engine_version: self.engine_version
-            ,
-            db_instance_class: self.db_instance_class
-            ,
-            license_model: self.license_model
-            ,
-            availability_zones: self.availability_zones
-            ,
-            vpc: self.vpc
-                .unwrap_or_default()
-            ,
+            engine: self.engine,
+            engine_version: self.engine_version,
+            db_instance_class: self.db_instance_class,
+            license_model: self.license_model,
+            availability_zones: self.availability_zones,
+            vpc: self.vpc.unwrap_or_default(),
         }
     }
 }
-

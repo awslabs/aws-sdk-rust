@@ -4,59 +4,81 @@ pub use crate::operation::remove_storage_system::_remove_storage_system_output::
 pub use crate::operation::remove_storage_system::_remove_storage_system_input::RemoveStorageSystemInputBuilder;
 
 /// Fluent builder constructing a request to `RemoveStorageSystem`.
-/// 
+///
 /// <p>Permanently removes a storage system resource from DataSync Discovery, including the associated discovery jobs, collected data, and recommendations.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveStorageSystemFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_storage_system::builders::RemoveStorageSystemInputBuilder,
+    inner: crate::operation::remove_storage_system::builders::RemoveStorageSystemInputBuilder,
 }
-impl RemoveStorageSystemFluentBuilder  {
+impl RemoveStorageSystemFluentBuilder {
     /// Creates a new `RemoveStorageSystem`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::remove_storage_system::RemoveStorageSystem, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::remove_storage_system::RemoveStorageSystemError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::remove_storage_system::RemoveStorageSystemOutput, aws_smithy_http::result::SdkError<crate::operation::remove_storage_system::RemoveStorageSystemError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::remove_storage_system::RemoveStorageSystem,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_storage_system::RemoveStorageSystemError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::remove_storage_system::RemoveStorageSystemOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_storage_system::RemoveStorageSystemError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
     pub fn storage_system_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.storage_system_arn(input.into());
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of the storage system that you want to permanently remove from DataSync Discovery.</p>
-    pub fn set_storage_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_storage_system_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_storage_system_arn(input);
         self
     }
 }
-

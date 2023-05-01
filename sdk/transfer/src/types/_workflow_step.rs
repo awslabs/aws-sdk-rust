@@ -3,95 +3,95 @@
 /// <p>The basic building block of a workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkflowStep  {
-    /// <p> Currently, the following step types are supported. </p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+pub struct WorkflowStep {
+    /// <p> Currently, the following step types are supported. </p>
+    /// <ul>
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::WorkflowStepType>,
-    /// <p>Details for a step that performs a file copy.</p> 
-    /// <p> Consists of the following values: </p> 
-    /// <ul> 
-    /// <li> <p>A description</p> </li> 
-    /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li> 
-    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li> 
+    /// <p>Details for a step that performs a file copy.</p>
+    /// <p> Consists of the following values: </p>
+    /// <ul>
+    /// <li> <p>A description</p> </li>
+    /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li>
+    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub copy_step_details: std::option::Option<crate::types::CopyStepDetails>,
-    /// <p>Details for a step that invokes an Lambda function.</p> 
+    /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds). </p>
     #[doc(hidden)]
     pub custom_step_details: std::option::Option<crate::types::CustomStepDetails>,
     /// <p>Details for a step that deletes the file.</p>
     #[doc(hidden)]
     pub delete_step_details: std::option::Option<crate::types::DeleteStepDetails>,
-    /// <p>Details for a step that creates one or more tags.</p> 
+    /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
     #[doc(hidden)]
     pub tag_step_details: std::option::Option<crate::types::TagStepDetails>,
-    /// <p>Details for a step that decrypts an encrypted file.</p> 
-    /// <p>Consists of the following values:</p> 
-    /// <ul> 
-    /// <li> <p>A descriptive name</p> </li> 
-    /// <li> <p>An Amazon S3 or Amazon Elastic File System (Amazon EFS) location for the source file to decrypt.</p> </li> 
-    /// <li> <p>An S3 or Amazon EFS location for the destination of the file decryption.</p> </li> 
-    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li> 
-    /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li> 
+    /// <p>Details for a step that decrypts an encrypted file.</p>
+    /// <p>Consists of the following values:</p>
+    /// <ul>
+    /// <li> <p>A descriptive name</p> </li>
+    /// <li> <p>An Amazon S3 or Amazon Elastic File System (Amazon EFS) location for the source file to decrypt.</p> </li>
+    /// <li> <p>An S3 or Amazon EFS location for the destination of the file decryption.</p> </li>
+    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
+    /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub decrypt_step_details: std::option::Option<crate::types::DecryptStepDetails>,
 }
 impl WorkflowStep {
-    /// <p> Currently, the following step types are supported. </p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+    /// <p> Currently, the following step types are supported. </p>
+    /// <ul>
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::WorkflowStepType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::WorkflowStepType> {
         self.r#type.as_ref()
     }
-    /// <p>Details for a step that performs a file copy.</p> 
-    /// <p> Consists of the following values: </p> 
-    /// <ul> 
-    /// <li> <p>A description</p> </li> 
-    /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li> 
-    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li> 
+    /// <p>Details for a step that performs a file copy.</p>
+    /// <p> Consists of the following values: </p>
+    /// <ul>
+    /// <li> <p>A description</p> </li>
+    /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li>
+    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
     /// </ul>
-    pub fn copy_step_details(&self) -> std::option::Option<& crate::types::CopyStepDetails> {
+    pub fn copy_step_details(&self) -> std::option::Option<&crate::types::CopyStepDetails> {
         self.copy_step_details.as_ref()
     }
-    /// <p>Details for a step that invokes an Lambda function.</p> 
+    /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds). </p>
-    pub fn custom_step_details(&self) -> std::option::Option<& crate::types::CustomStepDetails> {
+    pub fn custom_step_details(&self) -> std::option::Option<&crate::types::CustomStepDetails> {
         self.custom_step_details.as_ref()
     }
     /// <p>Details for a step that deletes the file.</p>
-    pub fn delete_step_details(&self) -> std::option::Option<& crate::types::DeleteStepDetails> {
+    pub fn delete_step_details(&self) -> std::option::Option<&crate::types::DeleteStepDetails> {
         self.delete_step_details.as_ref()
     }
-    /// <p>Details for a step that creates one or more tags.</p> 
+    /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
-    pub fn tag_step_details(&self) -> std::option::Option<& crate::types::TagStepDetails> {
+    pub fn tag_step_details(&self) -> std::option::Option<&crate::types::TagStepDetails> {
         self.tag_step_details.as_ref()
     }
-    /// <p>Details for a step that decrypts an encrypted file.</p> 
-    /// <p>Consists of the following values:</p> 
-    /// <ul> 
-    /// <li> <p>A descriptive name</p> </li> 
-    /// <li> <p>An Amazon S3 or Amazon Elastic File System (Amazon EFS) location for the source file to decrypt.</p> </li> 
-    /// <li> <p>An S3 or Amazon EFS location for the destination of the file decryption.</p> </li> 
-    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li> 
-    /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li> 
+    /// <p>Details for a step that decrypts an encrypted file.</p>
+    /// <p>Consists of the following values:</p>
+    /// <ul>
+    /// <li> <p>A descriptive name</p> </li>
+    /// <li> <p>An Amazon S3 or Amazon Elastic File System (Amazon EFS) location for the source file to decrypt.</p> </li>
+    /// <li> <p>An S3 or Amazon EFS location for the destination of the file decryption.</p> </li>
+    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
+    /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li>
     /// </ul>
-    pub fn decrypt_step_details(&self) -> std::option::Option<& crate::types::DecryptStepDetails> {
+    pub fn decrypt_step_details(&self) -> std::option::Option<&crate::types::DecryptStepDetails> {
         self.decrypt_step_details.as_ref()
     }
 }
@@ -114,60 +114,69 @@ pub struct WorkflowStepBuilder {
     pub(crate) decrypt_step_details: std::option::Option<crate::types::DecryptStepDetails>,
 }
 impl WorkflowStepBuilder {
-    /// <p> Currently, the following step types are supported. </p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+    /// <p> Currently, the following step types are supported. </p>
+    /// <ul>
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::WorkflowStepType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p> Currently, the following step types are supported. </p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+    /// <p> Currently, the following step types are supported. </p>
+    /// <ul>
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
     pub fn set_type(mut self, input: std::option::Option<crate::types::WorkflowStepType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
-    /// <p>Details for a step that performs a file copy.</p> 
-    /// <p> Consists of the following values: </p> 
-    /// <ul> 
-    /// <li> <p>A description</p> </li> 
-    /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li> 
-    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li> 
+    /// <p>Details for a step that performs a file copy.</p>
+    /// <p> Consists of the following values: </p>
+    /// <ul>
+    /// <li> <p>A description</p> </li>
+    /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li>
+    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
     /// </ul>
     pub fn copy_step_details(mut self, input: crate::types::CopyStepDetails) -> Self {
         self.copy_step_details = Some(input);
         self
     }
-    /// <p>Details for a step that performs a file copy.</p> 
-    /// <p> Consists of the following values: </p> 
-    /// <ul> 
-    /// <li> <p>A description</p> </li> 
-    /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li> 
-    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li> 
+    /// <p>Details for a step that performs a file copy.</p>
+    /// <p> Consists of the following values: </p>
+    /// <ul>
+    /// <li> <p>A description</p> </li>
+    /// <li> <p>An Amazon S3 location for the destination of the file copy.</p> </li>
+    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
     /// </ul>
-    pub fn set_copy_step_details(mut self, input: std::option::Option<crate::types::CopyStepDetails>) -> Self {
-        self.copy_step_details = input; self
+    pub fn set_copy_step_details(
+        mut self,
+        input: std::option::Option<crate::types::CopyStepDetails>,
+    ) -> Self {
+        self.copy_step_details = input;
+        self
     }
-    /// <p>Details for a step that invokes an Lambda function.</p> 
+    /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds). </p>
     pub fn custom_step_details(mut self, input: crate::types::CustomStepDetails) -> Self {
         self.custom_step_details = Some(input);
         self
     }
-    /// <p>Details for a step that invokes an Lambda function.</p> 
+    /// <p>Details for a step that invokes an Lambda function.</p>
     /// <p>Consists of the Lambda function's name, target, and timeout (in seconds). </p>
-    pub fn set_custom_step_details(mut self, input: std::option::Option<crate::types::CustomStepDetails>) -> Self {
-        self.custom_step_details = input; self
+    pub fn set_custom_step_details(
+        mut self,
+        input: std::option::Option<crate::types::CustomStepDetails>,
+    ) -> Self {
+        self.custom_step_details = input;
+        self
     }
     /// <p>Details for a step that deletes the file.</p>
     pub fn delete_step_details(mut self, input: crate::types::DeleteStepDetails) -> Self {
@@ -175,61 +184,66 @@ impl WorkflowStepBuilder {
         self
     }
     /// <p>Details for a step that deletes the file.</p>
-    pub fn set_delete_step_details(mut self, input: std::option::Option<crate::types::DeleteStepDetails>) -> Self {
-        self.delete_step_details = input; self
+    pub fn set_delete_step_details(
+        mut self,
+        input: std::option::Option<crate::types::DeleteStepDetails>,
+    ) -> Self {
+        self.delete_step_details = input;
+        self
     }
-    /// <p>Details for a step that creates one or more tags.</p> 
+    /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
     pub fn tag_step_details(mut self, input: crate::types::TagStepDetails) -> Self {
         self.tag_step_details = Some(input);
         self
     }
-    /// <p>Details for a step that creates one or more tags.</p> 
+    /// <p>Details for a step that creates one or more tags.</p>
     /// <p>You specify one or more tags. Each tag contains a key-value pair.</p>
-    pub fn set_tag_step_details(mut self, input: std::option::Option<crate::types::TagStepDetails>) -> Self {
-        self.tag_step_details = input; self
+    pub fn set_tag_step_details(
+        mut self,
+        input: std::option::Option<crate::types::TagStepDetails>,
+    ) -> Self {
+        self.tag_step_details = input;
+        self
     }
-    /// <p>Details for a step that decrypts an encrypted file.</p> 
-    /// <p>Consists of the following values:</p> 
-    /// <ul> 
-    /// <li> <p>A descriptive name</p> </li> 
-    /// <li> <p>An Amazon S3 or Amazon Elastic File System (Amazon EFS) location for the source file to decrypt.</p> </li> 
-    /// <li> <p>An S3 or Amazon EFS location for the destination of the file decryption.</p> </li> 
-    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li> 
-    /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li> 
+    /// <p>Details for a step that decrypts an encrypted file.</p>
+    /// <p>Consists of the following values:</p>
+    /// <ul>
+    /// <li> <p>A descriptive name</p> </li>
+    /// <li> <p>An Amazon S3 or Amazon Elastic File System (Amazon EFS) location for the source file to decrypt.</p> </li>
+    /// <li> <p>An S3 or Amazon EFS location for the destination of the file decryption.</p> </li>
+    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
+    /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li>
     /// </ul>
     pub fn decrypt_step_details(mut self, input: crate::types::DecryptStepDetails) -> Self {
         self.decrypt_step_details = Some(input);
         self
     }
-    /// <p>Details for a step that decrypts an encrypted file.</p> 
-    /// <p>Consists of the following values:</p> 
-    /// <ul> 
-    /// <li> <p>A descriptive name</p> </li> 
-    /// <li> <p>An Amazon S3 or Amazon Elastic File System (Amazon EFS) location for the source file to decrypt.</p> </li> 
-    /// <li> <p>An S3 or Amazon EFS location for the destination of the file decryption.</p> </li> 
-    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li> 
-    /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li> 
+    /// <p>Details for a step that decrypts an encrypted file.</p>
+    /// <p>Consists of the following values:</p>
+    /// <ul>
+    /// <li> <p>A descriptive name</p> </li>
+    /// <li> <p>An Amazon S3 or Amazon Elastic File System (Amazon EFS) location for the source file to decrypt.</p> </li>
+    /// <li> <p>An S3 or Amazon EFS location for the destination of the file decryption.</p> </li>
+    /// <li> <p>A flag that indicates whether to overwrite an existing file of the same name. The default is <code>FALSE</code>.</p> </li>
+    /// <li> <p>The type of encryption that's used. Currently, only PGP encryption is supported.</p> </li>
     /// </ul>
-    pub fn set_decrypt_step_details(mut self, input: std::option::Option<crate::types::DecryptStepDetails>) -> Self {
-        self.decrypt_step_details = input; self
+    pub fn set_decrypt_step_details(
+        mut self,
+        input: std::option::Option<crate::types::DecryptStepDetails>,
+    ) -> Self {
+        self.decrypt_step_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkflowStep`](crate::types::WorkflowStep).
     pub fn build(self) -> crate::types::WorkflowStep {
         crate::types::WorkflowStep {
-            r#type: self.r#type
-            ,
-            copy_step_details: self.copy_step_details
-            ,
-            custom_step_details: self.custom_step_details
-            ,
-            delete_step_details: self.delete_step_details
-            ,
-            tag_step_details: self.tag_step_details
-            ,
-            decrypt_step_details: self.decrypt_step_details
-            ,
+            r#type: self.r#type,
+            copy_step_details: self.copy_step_details,
+            custom_step_details: self.custom_step_details,
+            delete_step_details: self.delete_step_details,
+            tag_step_details: self.tag_step_details,
+            decrypt_step_details: self.decrypt_step_details,
         }
     }
 }
-

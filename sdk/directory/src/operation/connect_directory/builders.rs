@@ -4,51 +4,71 @@ pub use crate::operation::connect_directory::_connect_directory_output::ConnectD
 pub use crate::operation::connect_directory::_connect_directory_input::ConnectDirectoryInputBuilder;
 
 /// Fluent builder constructing a request to `ConnectDirectory`.
-/// 
-/// <p>Creates an AD Connector to connect to a self-managed directory.</p> 
+///
+/// <p>Creates an AD Connector to connect to a self-managed directory.</p>
 /// <p>Before you call <code>ConnectDirectory</code>, ensure that all of the required permissions have been explicitly granted through a policy. For details about what permissions are required to run the <code>ConnectDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ConnectDirectoryFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::connect_directory::builders::ConnectDirectoryInputBuilder,
+    inner: crate::operation::connect_directory::builders::ConnectDirectoryInputBuilder,
 }
-impl ConnectDirectoryFluentBuilder  {
+impl ConnectDirectoryFluentBuilder {
     /// Creates a new `ConnectDirectory`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::connect_directory::ConnectDirectory, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::connect_directory::ConnectDirectoryError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::connect_directory::ConnectDirectoryOutput, aws_smithy_http::result::SdkError<crate::operation::connect_directory::ConnectDirectoryError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::connect_directory::ConnectDirectory,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::connect_directory::ConnectDirectoryError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::connect_directory::ConnectDirectoryOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::connect_directory::ConnectDirectoryError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The fully qualified name of your self-managed directory, such as <code>corp.example.com</code>.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -105,7 +125,10 @@ impl ConnectDirectoryFluentBuilder  {
         self
     }
     /// <p>A <code>DirectoryConnectSettings</code> object that contains additional information for the operation.</p>
-    pub fn set_connect_settings(mut self, input: std::option::Option<crate::types::DirectoryConnectSettings>) -> Self {
+    pub fn set_connect_settings(
+        mut self,
+        input: std::option::Option<crate::types::DirectoryConnectSettings>,
+    ) -> Self {
         self.inner = self.inner.set_connect_settings(input);
         self
     }
@@ -119,9 +142,11 @@ impl ConnectDirectoryFluentBuilder  {
         self
     }
     /// <p>The tags to be assigned to AD Connector.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

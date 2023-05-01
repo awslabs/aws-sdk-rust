@@ -4,56 +4,63 @@ pub use crate::operation::describe_maintenance_window_schedule::_describe_mainte
 pub use crate::operation::describe_maintenance_window_schedule::_describe_maintenance_window_schedule_input::DescribeMaintenanceWindowScheduleInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeMaintenanceWindowSchedule`.
-/// 
+///
 /// <p>Retrieves information about upcoming executions of a maintenance window.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowScheduleFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_maintenance_window_schedule::builders::DescribeMaintenanceWindowScheduleInputBuilder,
 }
-impl DescribeMaintenanceWindowScheduleFluentBuilder  {
+impl DescribeMaintenanceWindowScheduleFluentBuilder {
     /// Creates a new `DescribeMaintenanceWindowSchedule`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowSchedule, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput, aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator {
-                                crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator{
+        crate::operation::describe_maintenance_window_schedule::paginator::DescribeMaintenanceWindowSchedulePaginator::new(self.handle, self.inner)
+    }
     /// <p>The ID of the maintenance window to retrieve information about.</p>
     pub fn window_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.window_id(input.into());
@@ -74,7 +81,10 @@ impl DescribeMaintenanceWindowScheduleFluentBuilder  {
         self
     }
     /// <p>The managed node ID or key-value pair to retrieve information about.</p>
-    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
+    pub fn set_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
+    ) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
@@ -84,7 +94,10 @@ impl DescribeMaintenanceWindowScheduleFluentBuilder  {
         self
     }
     /// <p>The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::MaintenanceWindowResourceType>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::MaintenanceWindowResourceType>,
+    ) -> Self {
         self.inner = self.inner.set_resource_type(input);
         self
     }
@@ -98,7 +111,10 @@ impl DescribeMaintenanceWindowScheduleFluentBuilder  {
         self
     }
     /// <p>Filters used to limit the range of results. For example, you can limit maintenance window executions to only those scheduled before or after a certain date and time.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::PatchOrchestratorFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PatchOrchestratorFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -123,4 +139,3 @@ impl DescribeMaintenanceWindowScheduleFluentBuilder  {
         self
     }
 }
-

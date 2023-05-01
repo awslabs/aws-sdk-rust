@@ -3,14 +3,16 @@
 /// <p>For a SQL-based Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputProcessingConfiguration  {
+pub struct InputProcessingConfiguration {
     /// <p>The <code>InputLambdaProcessor</code> that is used to preprocess the records in the stream before being processed by your application code.</p>
     #[doc(hidden)]
     pub input_lambda_processor: std::option::Option<crate::types::InputLambdaProcessor>,
 }
 impl InputProcessingConfiguration {
     /// <p>The <code>InputLambdaProcessor</code> that is used to preprocess the records in the stream before being processed by your application code.</p>
-    pub fn input_lambda_processor(&self) -> std::option::Option<& crate::types::InputLambdaProcessor> {
+    pub fn input_lambda_processor(
+        &self,
+    ) -> std::option::Option<&crate::types::InputLambdaProcessor> {
         self.input_lambda_processor.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl InputProcessingConfigurationBuilder {
         self
     }
     /// <p>The <code>InputLambdaProcessor</code> that is used to preprocess the records in the stream before being processed by your application code.</p>
-    pub fn set_input_lambda_processor(mut self, input: std::option::Option<crate::types::InputLambdaProcessor>) -> Self {
-        self.input_lambda_processor = input; self
+    pub fn set_input_lambda_processor(
+        mut self,
+        input: std::option::Option<crate::types::InputLambdaProcessor>,
+    ) -> Self {
+        self.input_lambda_processor = input;
+        self
     }
     /// Consumes the builder and constructs a [`InputProcessingConfiguration`](crate::types::InputProcessingConfiguration).
     pub fn build(self) -> crate::types::InputProcessingConfiguration {
         crate::types::InputProcessingConfiguration {
-            input_lambda_processor: self.input_lambda_processor
-            ,
+            input_lambda_processor: self.input_lambda_processor,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartModelInput  {
+pub struct StartModelInput {
     /// <p>The name of the project that contains the model that you want to start.</p>
     #[doc(hidden)]
     pub project_name: std::option::Option<std::string::String>,
@@ -12,8 +12,8 @@ pub struct StartModelInput  {
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     #[doc(hidden)]
     pub min_inference_units: std::option::Option<i32>,
-    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p> 
-    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p> 
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -23,21 +23,21 @@ pub struct StartModelInput  {
 }
 impl StartModelInput {
     /// <p>The name of the project that contains the model that you want to start.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>The version of the model that you want to start.</p>
-    pub fn model_version(&self) -> std::option::Option<& str> {
+    pub fn model_version(&self) -> std::option::Option<&str> {
         self.model_version.as_deref()
     }
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub fn min_inference_units(&self) -> std::option::Option<i32> {
         self.min_inference_units
     }
-    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p> 
-    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p> 
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
@@ -70,7 +70,8 @@ impl StartModelInputBuilder {
     }
     /// <p>The name of the project that contains the model that you want to start.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// <p>The version of the model that you want to start.</p>
     pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -79,7 +80,8 @@ impl StartModelInputBuilder {
     }
     /// <p>The version of the model that you want to start.</p>
     pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_version = input; self
+        self.model_version = input;
+        self
     }
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub fn min_inference_units(mut self, input: i32) -> Self {
@@ -88,20 +90,22 @@ impl StartModelInputBuilder {
     }
     /// <p>The minimum number of inference units to use. A single inference unit represents 1 hour of processing. Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use. </p>
     pub fn set_min_inference_units(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_inference_units = input; self
+        self.min_inference_units = input;
+        self
     }
-    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p> 
-    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p> 
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p> 
-    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p> 
+    /// <p>ClientToken is an idempotency token that ensures a call to <code>StartModel</code> completes only once. You choose the value to pass. For example, An issue might prevent you from getting a response from <code>StartModel</code>. In this case, safely retry your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter value. </p>
+    /// <p>If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using inserts a value for you. This prevents retries after a network error from making multiple start requests. You'll need to provide your own value for other use cases. </p>
     /// <p>An error occurs if the other input parameters are not the same as in the first request. Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>. An idempotency token is active for 8 hours. </p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
     pub fn max_inference_units(mut self, input: i32) -> Self {
@@ -110,24 +114,22 @@ impl StartModelInputBuilder {
     }
     /// <p>The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Lookout for Vision doesn't auto-scale the model.</p>
     pub fn set_max_inference_units(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_inference_units = input; self
+        self.max_inference_units = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartModelInput`](crate::operation::start_model::StartModelInput).
-    pub fn build(self) -> Result<crate::operation::start_model::StartModelInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::start_model::StartModelInput {
-                project_name: self.project_name
-                ,
-                model_version: self.model_version
-                ,
-                min_inference_units: self.min_inference_units
-                ,
-                client_token: self.client_token
-                ,
-                max_inference_units: self.max_inference_units
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_model::StartModelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::start_model::StartModelInput {
+            project_name: self.project_name,
+            model_version: self.model_version,
+            min_inference_units: self.min_inference_units,
+            client_token: self.client_token,
+            max_inference_units: self.max_inference_units,
+        })
     }
 }
-

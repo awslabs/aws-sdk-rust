@@ -3,7 +3,7 @@
 /// <p>Gives a detailed description of failed messages in the batch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchResultErrorEntry  {
+pub struct BatchResultErrorEntry {
     /// <p>The <code>Id</code> of an entry in a batch request</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct BatchResultErrorEntry  {
 }
 impl BatchResultErrorEntry {
     /// <p>The <code>Id</code> of an entry in a batch request</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>An error code representing why the action failed on this entry.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>A message explaining why the action failed on this entry.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
@@ -59,7 +59,8 @@ impl BatchResultErrorEntryBuilder {
     }
     /// <p>The <code>Id</code> of an entry in a batch request</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>An error code representing why the action failed on this entry.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl BatchResultErrorEntryBuilder {
     }
     /// <p>An error code representing why the action failed on this entry.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>A message explaining why the action failed on this entry.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl BatchResultErrorEntryBuilder {
     }
     /// <p>A message explaining why the action failed on this entry.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
     pub fn sender_fault(mut self, input: bool) -> Self {
@@ -86,21 +89,16 @@ impl BatchResultErrorEntryBuilder {
     }
     /// <p>Specifies whether the error happened due to the caller of the batch API action.</p>
     pub fn set_sender_fault(mut self, input: std::option::Option<bool>) -> Self {
-        self.sender_fault = input; self
+        self.sender_fault = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchResultErrorEntry`](crate::types::BatchResultErrorEntry).
     pub fn build(self) -> crate::types::BatchResultErrorEntry {
         crate::types::BatchResultErrorEntry {
-            id: self.id
-            ,
-            code: self.code
-            ,
-            message: self.message
-            ,
-            sender_fault: self.sender_fault
-                .unwrap_or_default()
-            ,
+            id: self.id,
+            code: self.code,
+            message: self.message,
+            sender_fault: self.sender_fault.unwrap_or_default(),
         }
     }
 }
-

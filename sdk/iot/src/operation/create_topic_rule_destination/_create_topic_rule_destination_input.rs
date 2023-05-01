@@ -2,20 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTopicRuleDestinationInput  {
+pub struct CreateTopicRuleDestinationInput {
     /// <p>The topic rule destination configuration.</p>
     #[doc(hidden)]
-    pub destination_configuration: std::option::Option<crate::types::TopicRuleDestinationConfiguration>,
+    pub destination_configuration:
+        std::option::Option<crate::types::TopicRuleDestinationConfiguration>,
 }
 impl CreateTopicRuleDestinationInput {
     /// <p>The topic rule destination configuration.</p>
-    pub fn destination_configuration(&self) -> std::option::Option<& crate::types::TopicRuleDestinationConfiguration> {
+    pub fn destination_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::TopicRuleDestinationConfiguration> {
         self.destination_configuration.as_ref()
     }
 }
 impl CreateTopicRuleDestinationInput {
     /// Creates a new builder-style object to manufacture [`CreateTopicRuleDestinationInput`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput).
-    pub fn builder() -> crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationInputBuilder {
+    pub fn builder() -> crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationInputBuilder{
         crate::operation::create_topic_rule_destination::builders::CreateTopicRuleDestinationInputBuilder::default()
     }
 }
@@ -24,26 +27,37 @@ impl CreateTopicRuleDestinationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateTopicRuleDestinationInputBuilder {
-    pub(crate) destination_configuration: std::option::Option<crate::types::TopicRuleDestinationConfiguration>,
+    pub(crate) destination_configuration:
+        std::option::Option<crate::types::TopicRuleDestinationConfiguration>,
 }
 impl CreateTopicRuleDestinationInputBuilder {
     /// <p>The topic rule destination configuration.</p>
-    pub fn destination_configuration(mut self, input: crate::types::TopicRuleDestinationConfiguration) -> Self {
+    pub fn destination_configuration(
+        mut self,
+        input: crate::types::TopicRuleDestinationConfiguration,
+    ) -> Self {
         self.destination_configuration = Some(input);
         self
     }
     /// <p>The topic rule destination configuration.</p>
-    pub fn set_destination_configuration(mut self, input: std::option::Option<crate::types::TopicRuleDestinationConfiguration>) -> Self {
-        self.destination_configuration = input; self
+    pub fn set_destination_configuration(
+        mut self,
+        input: std::option::Option<crate::types::TopicRuleDestinationConfiguration>,
+    ) -> Self {
+        self.destination_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateTopicRuleDestinationInput`](crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput).
-    pub fn build(self) -> Result<crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationInput {
-                destination_configuration: self.destination_configuration
-                ,
-            }
+                destination_configuration: self.destination_configuration,
+            },
         )
     }
 }
-

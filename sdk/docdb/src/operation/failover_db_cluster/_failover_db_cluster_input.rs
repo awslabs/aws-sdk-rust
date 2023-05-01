@@ -3,37 +3,38 @@
 /// <p>Represents the input to <code>FailoverDBCluster</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FailoverDbClusterInput  {
-    /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li> 
+pub struct FailoverDbClusterInput {
+    /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The name of the instance to promote to the primary instance.</p> 
+    /// <p>The name of the instance to promote to the primary instance.</p>
     /// <p>You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example, <code>mydbcluster-replica1</code>.</p>
     #[doc(hidden)]
     pub target_db_instance_identifier: std::option::Option<std::string::String>,
 }
 impl FailoverDbClusterInput {
-    /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li> 
+    /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
-    /// <p>The name of the instance to promote to the primary instance.</p> 
+    /// <p>The name of the instance to promote to the primary instance.</p>
     /// <p>You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example, <code>mydbcluster-replica1</code>.</p>
-    pub fn target_db_instance_identifier(&self) -> std::option::Option<& str> {
+    pub fn target_db_instance_identifier(&self) -> std::option::Option<&str> {
         self.target_db_instance_identifier.as_deref()
     }
 }
 impl FailoverDbClusterInput {
     /// Creates a new builder-style object to manufacture [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
-    pub fn builder() -> crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder {
         crate::operation::failover_db_cluster::builders::FailoverDbClusterInputBuilder::default()
     }
 }
@@ -46,44 +47,54 @@ pub struct FailoverDbClusterInputBuilder {
     pub(crate) target_db_instance_identifier: std::option::Option<std::string::String>,
 }
 impl FailoverDbClusterInputBuilder {
-    /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li> 
+    /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
     pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.db_cluster_identifier = Some(input.into());
         self
     }
-    /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li> 
+    /// <p>A cluster identifier to force a failover for. This parameter is not case sensitive.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must match the identifier of an existing <code>DBCluster</code>.</p> </li>
     /// </ul>
-    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_identifier = input; self
+    pub fn set_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = input;
+        self
     }
-    /// <p>The name of the instance to promote to the primary instance.</p> 
+    /// <p>The name of the instance to promote to the primary instance.</p>
     /// <p>You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example, <code>mydbcluster-replica1</code>.</p>
     pub fn target_db_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_db_instance_identifier = Some(input.into());
         self
     }
-    /// <p>The name of the instance to promote to the primary instance.</p> 
+    /// <p>The name of the instance to promote to the primary instance.</p>
     /// <p>You must specify the instance identifier for an Amazon DocumentDB replica in the cluster. For example, <code>mydbcluster-replica1</code>.</p>
-    pub fn set_target_db_instance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_db_instance_identifier = input; self
+    pub fn set_target_db_instance_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_db_instance_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`FailoverDbClusterInput`](crate::operation::failover_db_cluster::FailoverDbClusterInput).
-    pub fn build(self) -> Result<crate::operation::failover_db_cluster::FailoverDbClusterInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::failover_db_cluster::FailoverDbClusterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::failover_db_cluster::FailoverDbClusterInput {
-                db_cluster_identifier: self.db_cluster_identifier
-                ,
-                target_db_instance_identifier: self.target_db_instance_identifier
-                ,
-            }
+                db_cluster_identifier: self.db_cluster_identifier,
+                target_db_instance_identifier: self.target_db_instance_identifier,
+            },
         )
     }
 }
-

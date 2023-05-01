@@ -113,7 +113,7 @@ pub(super) fn merge_in(
     }
 }
 
-fn merge_into_base<'a>(target: &mut Profile, profile: HashMap<&str, Cow<'a, str>>) {
+fn merge_into_base(target: &mut Profile, profile: HashMap<&str, Cow<'_, str>>) {
     for (k, v) in profile {
         match validate_identifier(k) {
             Ok(k) => {

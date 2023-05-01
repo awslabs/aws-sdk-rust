@@ -3,7 +3,7 @@
 /// <p>Provides the test case run.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestCaseRun  {
+pub struct TestCaseRun {
     /// <p>Provides the test case run ID.</p>
     #[doc(hidden)]
     pub test_case_run_id: std::option::Option<std::string::String>,
@@ -13,16 +13,16 @@ pub struct TestCaseRun  {
     /// <p>Provides the test case run definition name.</p>
     #[doc(hidden)]
     pub test_case_definition_name: std::option::Option<std::string::String>,
-    /// <p>Provides the test case run status. Status is one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
-    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
-    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
-    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
-    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
-    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
-    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
+    /// <p>Provides the test case run status. Status is one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::Status>,
@@ -47,53 +47,53 @@ pub struct TestCaseRun  {
 }
 impl TestCaseRun {
     /// <p>Provides the test case run ID.</p>
-    pub fn test_case_run_id(&self) -> std::option::Option<& str> {
+    pub fn test_case_run_id(&self) -> std::option::Option<&str> {
         self.test_case_run_id.as_deref()
     }
     /// <p>Provides the test case run definition ID.</p>
-    pub fn test_case_definition_id(&self) -> std::option::Option<& str> {
+    pub fn test_case_definition_id(&self) -> std::option::Option<&str> {
         self.test_case_definition_id.as_deref()
     }
     /// <p>Provides the test case run definition name.</p>
-    pub fn test_case_definition_name(&self) -> std::option::Option<& str> {
+    pub fn test_case_definition_name(&self) -> std::option::Option<&str> {
         self.test_case_definition_name.as_deref()
     }
-    /// <p>Provides the test case run status. Status is one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
-    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
-    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
-    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
-    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
-    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
-    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
+    /// <p>Provides the test case run status. Status is one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>Provides test case run start time.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>Provides test case run end time.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Provides test case run log URL.</p>
-    pub fn log_url(&self) -> std::option::Option<& str> {
+    pub fn log_url(&self) -> std::option::Option<&str> {
         self.log_url.as_deref()
     }
     /// <p>Provides test case run warnings.</p>
-    pub fn warnings(&self) -> std::option::Option<& str> {
+    pub fn warnings(&self) -> std::option::Option<&str> {
         self.warnings.as_deref()
     }
     /// <p>Provides test case run failure result.</p>
-    pub fn failure(&self) -> std::option::Option<& str> {
+    pub fn failure(&self) -> std::option::Option<&str> {
         self.failure.as_deref()
     }
     /// <p> Provides the test scenarios for the test case run. </p>
-    pub fn test_scenarios(&self) -> std::option::Option<& [crate::types::TestCaseScenario]> {
+    pub fn test_scenarios(&self) -> std::option::Option<&[crate::types::TestCaseScenario]> {
         self.test_scenarios.as_deref()
     }
 }
@@ -127,7 +127,8 @@ impl TestCaseRunBuilder {
     }
     /// <p>Provides the test case run ID.</p>
     pub fn set_test_case_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.test_case_run_id = input; self
+        self.test_case_run_id = input;
+        self
     }
     /// <p>Provides the test case run definition ID.</p>
     pub fn test_case_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,8 +136,12 @@ impl TestCaseRunBuilder {
         self
     }
     /// <p>Provides the test case run definition ID.</p>
-    pub fn set_test_case_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.test_case_definition_id = input; self
+    pub fn set_test_case_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.test_case_definition_id = input;
+        self
     }
     /// <p>Provides the test case run definition name.</p>
     pub fn test_case_definition_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,37 +149,42 @@ impl TestCaseRunBuilder {
         self
     }
     /// <p>Provides the test case run definition name.</p>
-    pub fn set_test_case_definition_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.test_case_definition_name = input; self
+    pub fn set_test_case_definition_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.test_case_definition_name = input;
+        self
     }
-    /// <p>Provides the test case run status. Status is one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
-    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
-    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
-    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
-    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
-    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
-    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
+    /// <p>Provides the test case run status. Status is one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::Status) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>Provides the test case run status. Status is one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PASS</code>: Test passed.</p> </li> 
-    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li> 
-    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li> 
-    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li> 
-    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li> 
-    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li> 
-    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li> 
-    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li> 
+    /// <p>Provides the test case run status. Status is one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>PASS</code>: Test passed.</p> </li>
+    /// <li> <p> <code>FAIL</code>: Test failed.</p> </li>
+    /// <li> <p> <code>PENDING</code>: Test has not started running but is scheduled.</p> </li>
+    /// <li> <p> <code>RUNNING</code>: Test is running.</p> </li>
+    /// <li> <p> <code>STOPPING</code>: Test is performing cleanup steps. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>STOPPED</code> Test is stopped. You will see this status only if you stop a suite run.</p> </li>
+    /// <li> <p> <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.</p> </li>
+    /// <li> <p> <code>ERORR</code>: Test faced an error when running due to an internal issue.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>Provides test case run start time.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -182,8 +192,12 @@ impl TestCaseRunBuilder {
         self
     }
     /// <p>Provides test case run start time.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>Provides test case run end time.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -192,7 +206,8 @@ impl TestCaseRunBuilder {
     }
     /// <p>Provides test case run end time.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>Provides test case run log URL.</p>
     pub fn log_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,7 +216,8 @@ impl TestCaseRunBuilder {
     }
     /// <p>Provides test case run log URL.</p>
     pub fn set_log_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_url = input; self
+        self.log_url = input;
+        self
     }
     /// <p>Provides test case run warnings.</p>
     pub fn warnings(mut self, input: impl Into<std::string::String>) -> Self {
@@ -210,7 +226,8 @@ impl TestCaseRunBuilder {
     }
     /// <p>Provides test case run warnings.</p>
     pub fn set_warnings(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.warnings = input; self
+        self.warnings = input;
+        self
     }
     /// <p>Provides test case run failure result.</p>
     pub fn failure(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,7 +236,8 @@ impl TestCaseRunBuilder {
     }
     /// <p>Provides test case run failure result.</p>
     pub fn set_failure(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure = input; self
+        self.failure = input;
+        self
     }
     /// Appends an item to `test_scenarios`.
     ///
@@ -228,38 +246,31 @@ impl TestCaseRunBuilder {
     /// <p> Provides the test scenarios for the test case run. </p>
     pub fn test_scenarios(mut self, input: crate::types::TestCaseScenario) -> Self {
         let mut v = self.test_scenarios.unwrap_or_default();
-                        v.push(input);
-                        self.test_scenarios = Some(v);
-                        self
+        v.push(input);
+        self.test_scenarios = Some(v);
+        self
     }
     /// <p> Provides the test scenarios for the test case run. </p>
-    pub fn set_test_scenarios(mut self, input: std::option::Option<std::vec::Vec<crate::types::TestCaseScenario>>) -> Self {
-        self.test_scenarios = input; self
+    pub fn set_test_scenarios(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TestCaseScenario>>,
+    ) -> Self {
+        self.test_scenarios = input;
+        self
     }
     /// Consumes the builder and constructs a [`TestCaseRun`](crate::types::TestCaseRun).
     pub fn build(self) -> crate::types::TestCaseRun {
         crate::types::TestCaseRun {
-            test_case_run_id: self.test_case_run_id
-            ,
-            test_case_definition_id: self.test_case_definition_id
-            ,
-            test_case_definition_name: self.test_case_definition_name
-            ,
-            status: self.status
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
-            log_url: self.log_url
-            ,
-            warnings: self.warnings
-            ,
-            failure: self.failure
-            ,
-            test_scenarios: self.test_scenarios
-            ,
+            test_case_run_id: self.test_case_run_id,
+            test_case_definition_id: self.test_case_definition_id,
+            test_case_definition_name: self.test_case_definition_name,
+            status: self.status,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            log_url: self.log_url,
+            warnings: self.warnings,
+            failure: self.failure,
+            test_scenarios: self.test_scenarios,
         }
     }
 }
-

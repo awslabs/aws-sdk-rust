@@ -3,41 +3,44 @@
 /// <p>Use the split charge rule to split the cost of one Cost Category value across several other target values. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostCategorySplitChargeRule  {
+pub struct CostCategorySplitChargeRule {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The method that's used to define how to split your source costs across your targets. </p> 
-    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p> 
-    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p> 
+    /// <p>The method that's used to define how to split your source costs across your targets. </p>
+    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
+    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
     #[doc(hidden)]
     pub method: std::option::Option<crate::types::CostCategorySplitChargeMethod>,
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
     #[doc(hidden)]
-    pub parameters: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
+    pub parameters:
+        std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
 }
 impl CostCategorySplitChargeRule {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
-    pub fn targets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn targets(&self) -> std::option::Option<&[std::string::String]> {
         self.targets.as_deref()
     }
-    /// <p>The method that's used to define how to split your source costs across your targets. </p> 
-    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p> 
-    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p> 
+    /// <p>The method that's used to define how to split your source costs across your targets. </p>
+    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
+    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
-    pub fn method(&self) -> std::option::Option<& crate::types::CostCategorySplitChargeMethod> {
+    pub fn method(&self) -> std::option::Option<&crate::types::CostCategorySplitChargeMethod> {
         self.method.as_ref()
     }
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::CostCategorySplitChargeRuleParameter]> {
+    pub fn parameters(
+        &self,
+    ) -> std::option::Option<&[crate::types::CostCategorySplitChargeRuleParameter]> {
         self.parameters.as_deref()
     }
 }
@@ -55,7 +58,8 @@ pub struct CostCategorySplitChargeRuleBuilder {
     pub(crate) source: std::option::Option<std::string::String>,
     pub(crate) targets: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) method: std::option::Option<crate::types::CostCategorySplitChargeMethod>,
-    pub(crate) parameters: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
+    pub(crate) parameters:
+        std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>,
 }
 impl CostCategorySplitChargeRuleBuilder {
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
@@ -65,7 +69,8 @@ impl CostCategorySplitChargeRuleBuilder {
     }
     /// <p>The Cost Category value that you want to split. That value can't be used as a source or a target in other split charge rules. To indicate uncategorized costs, you can use an empty string as the source.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// Appends an item to `targets`.
     ///
@@ -74,28 +79,36 @@ impl CostCategorySplitChargeRuleBuilder {
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
     pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.targets.unwrap_or_default();
-                        v.push(input.into());
-                        self.targets = Some(v);
-                        self
+        v.push(input.into());
+        self.targets = Some(v);
+        self
     }
     /// <p>The Cost Category values that you want to split costs across. These values can't be used as a source in other split charge rules. </p>
-    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.targets = input; self
+    pub fn set_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.targets = input;
+        self
     }
-    /// <p>The method that's used to define how to split your source costs across your targets. </p> 
-    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p> 
-    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p> 
+    /// <p>The method that's used to define how to split your source costs across your targets. </p>
+    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
+    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
     pub fn method(mut self, input: crate::types::CostCategorySplitChargeMethod) -> Self {
         self.method = Some(input);
         self
     }
-    /// <p>The method that's used to define how to split your source costs across your targets. </p> 
-    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p> 
-    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p> 
+    /// <p>The method that's used to define how to split your source costs across your targets. </p>
+    /// <p> <code>Proportional</code> - Allocates charges across your targets based on the proportional weighted cost of each target.</p>
+    /// <p> <code>Fixed</code> - Allocates charges across your targets based on your defined allocation percentage.</p>
     /// <p>&gt;<code>Even</code> - Allocates costs evenly across all targets.</p>
-    pub fn set_method(mut self, input: std::option::Option<crate::types::CostCategorySplitChargeMethod>) -> Self {
-        self.method = input; self
+    pub fn set_method(
+        mut self,
+        input: std::option::Option<crate::types::CostCategorySplitChargeMethod>,
+    ) -> Self {
+        self.method = input;
+        self
     }
     /// Appends an item to `parameters`.
     ///
@@ -104,26 +117,27 @@ impl CostCategorySplitChargeRuleBuilder {
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
     pub fn parameters(mut self, input: crate::types::CostCategorySplitChargeRuleParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
     /// <p>The parameters for a split charge method. This is only required for the <code>FIXED</code> method. </p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::CostCategorySplitChargeRuleParameter>,
+        >,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`CostCategorySplitChargeRule`](crate::types::CostCategorySplitChargeRule).
     pub fn build(self) -> crate::types::CostCategorySplitChargeRule {
         crate::types::CostCategorySplitChargeRule {
-            source: self.source
-            ,
-            targets: self.targets
-            ,
-            method: self.method
-            ,
-            parameters: self.parameters
-            ,
+            source: self.source,
+            targets: self.targets,
+            method: self.method,
+            parameters: self.parameters,
         }
     }
 }
-

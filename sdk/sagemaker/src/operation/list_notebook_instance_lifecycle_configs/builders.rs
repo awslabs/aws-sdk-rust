@@ -4,56 +4,63 @@ pub use crate::operation::list_notebook_instance_lifecycle_configs::_list_notebo
 pub use crate::operation::list_notebook_instance_lifecycle_configs::_list_notebook_instance_lifecycle_configs_input::ListNotebookInstanceLifecycleConfigsInputBuilder;
 
 /// Fluent builder constructing a request to `ListNotebookInstanceLifecycleConfigs`.
-/// 
+///
 /// <p>Lists notebook instance lifestyle configurations created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a> API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListNotebookInstanceLifecycleConfigsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsInputBuilder,
 }
-impl ListNotebookInstanceLifecycleConfigsFluentBuilder  {
+impl ListNotebookInstanceLifecycleConfigsFluentBuilder {
     /// Creates a new `ListNotebookInstanceLifecycleConfigs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigs, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput, aws_smithy_http::result::SdkError<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator {
-                                crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator{
+        crate::operation::list_notebook_instance_lifecycle_configs::paginator::ListNotebookInstanceLifecycleConfigsPaginator::new(self.handle, self.inner)
+    }
     /// <p>If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated, the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -80,17 +87,26 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>Sorts the list of results. The default is <code>CreationTime</code>.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortKey>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortKey>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
     /// <p>The sort order for results.</p>
-    pub fn sort_order(mut self, input: crate::types::NotebookInstanceLifecycleConfigSortOrder) -> Self {
+    pub fn sort_order(
+        mut self,
+        input: crate::types::NotebookInstanceLifecycleConfigSortOrder,
+    ) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
     /// <p>The sort order for results.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortOrder>) -> Self {
+    pub fn set_sort_order(
+        mut self,
+        input: std::option::Option<crate::types::NotebookInstanceLifecycleConfigSortOrder>,
+    ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -110,7 +126,10 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only lifecycle configurations that were created before the specified time (timestamp).</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -120,7 +139,10 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only lifecycle configurations that were created after the specified time (timestamp).</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -130,7 +152,10 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only lifecycle configurations that were modified before the specified time (timestamp).</p>
-    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
@@ -140,9 +165,11 @@ impl ListNotebookInstanceLifecycleConfigsFluentBuilder  {
         self
     }
     /// <p>A filter that returns only lifecycle configurations that were modified after the specified time (timestamp).</p>
-    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
 }
-

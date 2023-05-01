@@ -3,7 +3,7 @@
 /// <p>The infrastructure used when building Amazon EC2 AMIs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InfrastructureConfigurationSummary  {
+pub struct InfrastructureConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -21,10 +21,12 @@ pub struct InfrastructureConfigurationSummary  {
     pub date_updated: std::option::Option<std::string::String>,
     /// <p>The tags attached to the image created by Image Builder.</p>
     #[doc(hidden)]
-    pub resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub resource_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The tags of the infrastructure configuration.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The instance types of the infrastructure configuration.</p>
     #[doc(hidden)]
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -34,39 +36,45 @@ pub struct InfrastructureConfigurationSummary  {
 }
 impl InfrastructureConfigurationSummary {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the infrastructure configuration.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the infrastructure configuration.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The date on which the infrastructure configuration was created.</p>
-    pub fn date_created(&self) -> std::option::Option<& str> {
+    pub fn date_created(&self) -> std::option::Option<&str> {
         self.date_created.as_deref()
     }
     /// <p>The date on which the infrastructure configuration was last updated.</p>
-    pub fn date_updated(&self) -> std::option::Option<& str> {
+    pub fn date_updated(&self) -> std::option::Option<&str> {
         self.date_updated.as_deref()
     }
     /// <p>The tags attached to the image created by Image Builder.</p>
-    pub fn resource_tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn resource_tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.resource_tags.as_ref()
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub fn instance_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn instance_types(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_types.as_deref()
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
-    pub fn instance_profile_name(&self) -> std::option::Option<& str> {
+    pub fn instance_profile_name(&self) -> std::option::Option<&str> {
         self.instance_profile_name.as_deref()
     }
 }
@@ -86,8 +94,10 @@ pub struct InfrastructureConfigurationSummaryBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) date_created: std::option::Option<std::string::String>,
     pub(crate) date_updated: std::option::Option<std::string::String>,
-    pub(crate) resource_tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) resource_tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) instance_profile_name: std::option::Option<std::string::String>,
 }
@@ -99,7 +109,8 @@ impl InfrastructureConfigurationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the infrastructure configuration.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +119,8 @@ impl InfrastructureConfigurationSummaryBuilder {
     }
     /// <p>The name of the infrastructure configuration.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the infrastructure configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +129,8 @@ impl InfrastructureConfigurationSummaryBuilder {
     }
     /// <p>The description of the infrastructure configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The date on which the infrastructure configuration was created.</p>
     pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +139,8 @@ impl InfrastructureConfigurationSummaryBuilder {
     }
     /// <p>The date on which the infrastructure configuration was created.</p>
     pub fn set_date_created(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.date_created = input; self
+        self.date_created = input;
+        self
     }
     /// <p>The date on which the infrastructure configuration was last updated.</p>
     pub fn date_updated(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,37 +149,58 @@ impl InfrastructureConfigurationSummaryBuilder {
     }
     /// <p>The date on which the infrastructure configuration was last updated.</p>
     pub fn set_date_updated(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.date_updated = input; self
+        self.date_updated = input;
+        self
     }
     /// Adds a key-value pair to `resource_tags`.
     ///
     /// To override the contents of this collection use [`set_resource_tags`](Self::set_resource_tags).
     ///
     /// <p>The tags attached to the image created by Image Builder.</p>
-    pub fn resource_tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn resource_tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.resource_tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.resource_tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.resource_tags = Some(hash_map);
+        self
     }
     /// <p>The tags attached to the image created by Image Builder.</p>
-    pub fn set_resource_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.resource_tags = input; self
+    pub fn set_resource_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.resource_tags = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags of the infrastructure configuration.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Appends an item to `instance_types`.
     ///
@@ -174,13 +209,17 @@ impl InfrastructureConfigurationSummaryBuilder {
     /// <p>The instance types of the infrastructure configuration.</p>
     pub fn instance_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.instance_types = Some(v);
-                        self
+        v.push(input.into());
+        self.instance_types = Some(v);
+        self
     }
     /// <p>The instance types of the infrastructure configuration.</p>
-    pub fn set_instance_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.instance_types = input; self
+    pub fn set_instance_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.instance_types = input;
+        self
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
     pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,31 +227,25 @@ impl InfrastructureConfigurationSummaryBuilder {
         self
     }
     /// <p>The instance profile of the infrastructure configuration.</p>
-    pub fn set_instance_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_profile_name = input; self
+    pub fn set_instance_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.instance_profile_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`InfrastructureConfigurationSummary`](crate::types::InfrastructureConfigurationSummary).
     pub fn build(self) -> crate::types::InfrastructureConfigurationSummary {
         crate::types::InfrastructureConfigurationSummary {
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            date_created: self.date_created
-            ,
-            date_updated: self.date_updated
-            ,
-            resource_tags: self.resource_tags
-            ,
-            tags: self.tags
-            ,
-            instance_types: self.instance_types
-            ,
-            instance_profile_name: self.instance_profile_name
-            ,
+            arn: self.arn,
+            name: self.name,
+            description: self.description,
+            date_created: self.date_created,
+            date_updated: self.date_updated,
+            resource_tags: self.resource_tags,
+            tags: self.tags,
+            instance_types: self.instance_types,
+            instance_profile_name: self.instance_profile_name,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Details about how frequently reports are generated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReportFrequency  {
+pub struct ReportFrequency {
     /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
     #[doc(hidden)]
     pub value: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ReportFrequency {
         self.value
     }
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
-    pub fn period(&self) -> std::option::Option<& crate::types::ReportFrequencyType> {
+    pub fn period(&self) -> std::option::Option<&crate::types::ReportFrequencyType> {
         self.period.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl ReportFrequencyBuilder {
     }
     /// <p>Number of times within the frequency period that a report is generated. The only supported value is <code>1</code>.</p>
     pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
     pub fn period(mut self, input: crate::types::ReportFrequencyType) -> Self {
@@ -51,17 +52,18 @@ impl ReportFrequencyBuilder {
         self
     }
     /// <p>Time period between each report. The period can be daily, weekly, or monthly.</p>
-    pub fn set_period(mut self, input: std::option::Option<crate::types::ReportFrequencyType>) -> Self {
-        self.period = input; self
+    pub fn set_period(
+        mut self,
+        input: std::option::Option<crate::types::ReportFrequencyType>,
+    ) -> Self {
+        self.period = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReportFrequency`](crate::types::ReportFrequency).
     pub fn build(self) -> crate::types::ReportFrequency {
         crate::types::ReportFrequency {
-            value: self.value
-            ,
-            period: self.period
-            ,
+            value: self.value,
+            period: self.period,
         }
     }
 }
-

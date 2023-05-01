@@ -4,56 +4,81 @@ pub use crate::operation::list_user_profiles::_list_user_profiles_output::ListUs
 pub use crate::operation::list_user_profiles::_list_user_profiles_input::ListUserProfilesInputBuilder;
 
 /// Fluent builder constructing a request to `ListUserProfiles`.
-/// 
+///
 /// <p>Lists user profiles.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListUserProfilesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder,
+    inner: crate::operation::list_user_profiles::builders::ListUserProfilesInputBuilder,
 }
-impl ListUserProfilesFluentBuilder  {
+impl ListUserProfilesFluentBuilder {
     /// Creates a new `ListUserProfiles`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_user_profiles::ListUserProfiles, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_user_profiles::ListUserProfilesOutput, aws_smithy_http::result::SdkError<crate::operation::list_user_profiles::ListUserProfilesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_user_profiles::ListUserProfiles,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_user_profiles::ListUserProfilesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_user_profiles::ListUserProfilesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_user_profiles::ListUserProfilesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator {
-                                crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator {
+        crate::operation::list_user_profiles::paginator::ListUserProfilesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -90,7 +115,10 @@ impl ListUserProfilesFluentBuilder  {
         self
     }
     /// <p>The parameter by which to sort the results. The default is CreationTime.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::UserProfileSortKey>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::UserProfileSortKey>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -110,9 +138,11 @@ impl ListUserProfilesFluentBuilder  {
         self
     }
     /// <p>A parameter by which to filter the results.</p>
-    pub fn set_user_profile_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_user_profile_name_contains(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_user_profile_name_contains(input);
         self
     }
 }
-

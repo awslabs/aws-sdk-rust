@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDetectorVersionInput  {
+pub struct DeleteDetectorVersionInput {
     /// <p>The ID of the parent detector for the detector version to delete.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteDetectorVersionInput  {
 }
 impl DeleteDetectorVersionInput {
     /// <p>The ID of the parent detector for the detector version to delete.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The ID of the detector version to delete.</p>
-    pub fn detector_version_id(&self) -> std::option::Option<& str> {
+    pub fn detector_version_id(&self) -> std::option::Option<&str> {
         self.detector_version_id.as_deref()
     }
 }
 impl DeleteDetectorVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteDetectorVersionInput`](crate::operation::delete_detector_version::DeleteDetectorVersionInput).
-    pub fn builder() -> crate::operation::delete_detector_version::builders::DeleteDetectorVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_detector_version::builders::DeleteDetectorVersionInputBuilder
+    {
         crate::operation::delete_detector_version::builders::DeleteDetectorVersionInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeleteDetectorVersionInputBuilder {
     }
     /// <p>The ID of the parent detector for the detector version to delete.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The ID of the detector version to delete.</p>
     pub fn detector_version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl DeleteDetectorVersionInputBuilder {
         self
     }
     /// <p>The ID of the detector version to delete.</p>
-    pub fn set_detector_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_version_id = input; self
+    pub fn set_detector_version_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.detector_version_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDetectorVersionInput`](crate::operation::delete_detector_version::DeleteDetectorVersionInput).
-    pub fn build(self) -> Result<crate::operation::delete_detector_version::DeleteDetectorVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_detector_version::DeleteDetectorVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_detector_version::DeleteDetectorVersionInput {
-                detector_id: self.detector_id
-                ,
-                detector_version_id: self.detector_version_id
-                ,
-            }
+                detector_id: self.detector_id,
+                detector_version_id: self.detector_version_id,
+            },
         )
     }
 }
-

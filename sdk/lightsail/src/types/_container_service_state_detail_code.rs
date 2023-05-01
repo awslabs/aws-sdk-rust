@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let containerservicestatedetailcode = unimplemented!();
 /// match containerservicestatedetailcode {
@@ -37,14 +37,22 @@
 /// Specifically, when `containerservicestatedetailcode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ContainerServiceStateDetailCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ContainerServiceStateDetailCode {
     #[allow(missing_docs)] // documentation missing in model
     ActivatingDeployment,
@@ -65,55 +73,74 @@ pub enum ContainerServiceStateDetailCode {
     #[allow(missing_docs)] // documentation missing in model
     UnknownError,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ContainerServiceStateDetailCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVATING_DEPLOYMENT" => ContainerServiceStateDetailCode::ActivatingDeployment,
-"CERTIFICATE_LIMIT_EXCEEDED" => ContainerServiceStateDetailCode::CertificateLimitExceeded,
-"CREATING_DEPLOYMENT" => ContainerServiceStateDetailCode::CreatingDeployment,
-"CREATING_NETWORK_INFRASTRUCTURE" => ContainerServiceStateDetailCode::CreatingNetworkInfrastructure,
-"CREATING_SYSTEM_RESOURCES" => ContainerServiceStateDetailCode::CreatingSystemResources,
-"EVALUATING_HEALTH_CHECK" => ContainerServiceStateDetailCode::EvaluatingHealthCheck,
-"PROVISIONING_CERTIFICATE" => ContainerServiceStateDetailCode::ProvisioningCertificate,
-"PROVISIONING_SERVICE" => ContainerServiceStateDetailCode::ProvisioningService,
-"UNKNOWN_ERROR" => ContainerServiceStateDetailCode::UnknownError,
-other => ContainerServiceStateDetailCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVATING_DEPLOYMENT" => ContainerServiceStateDetailCode::ActivatingDeployment,
+            "CERTIFICATE_LIMIT_EXCEEDED" => {
+                ContainerServiceStateDetailCode::CertificateLimitExceeded
             }
-impl std::str::FromStr for ContainerServiceStateDetailCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ContainerServiceStateDetailCode::from(s))
-                }
+            "CREATING_DEPLOYMENT" => ContainerServiceStateDetailCode::CreatingDeployment,
+            "CREATING_NETWORK_INFRASTRUCTURE" => {
+                ContainerServiceStateDetailCode::CreatingNetworkInfrastructure
             }
-impl ContainerServiceStateDetailCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ContainerServiceStateDetailCode::ActivatingDeployment => "ACTIVATING_DEPLOYMENT",
-    ContainerServiceStateDetailCode::CertificateLimitExceeded => "CERTIFICATE_LIMIT_EXCEEDED",
-    ContainerServiceStateDetailCode::CreatingDeployment => "CREATING_DEPLOYMENT",
-    ContainerServiceStateDetailCode::CreatingNetworkInfrastructure => "CREATING_NETWORK_INFRASTRUCTURE",
-    ContainerServiceStateDetailCode::CreatingSystemResources => "CREATING_SYSTEM_RESOURCES",
-    ContainerServiceStateDetailCode::EvaluatingHealthCheck => "EVALUATING_HEALTH_CHECK",
-    ContainerServiceStateDetailCode::ProvisioningCertificate => "PROVISIONING_CERTIFICATE",
-    ContainerServiceStateDetailCode::ProvisioningService => "PROVISIONING_SERVICE",
-    ContainerServiceStateDetailCode::UnknownError => "UNKNOWN_ERROR",
-    ContainerServiceStateDetailCode::Unknown(value) => value.as_str()
+            "CREATING_SYSTEM_RESOURCES" => ContainerServiceStateDetailCode::CreatingSystemResources,
+            "EVALUATING_HEALTH_CHECK" => ContainerServiceStateDetailCode::EvaluatingHealthCheck,
+            "PROVISIONING_CERTIFICATE" => ContainerServiceStateDetailCode::ProvisioningCertificate,
+            "PROVISIONING_SERVICE" => ContainerServiceStateDetailCode::ProvisioningService,
+            "UNKNOWN_ERROR" => ContainerServiceStateDetailCode::UnknownError,
+            other => ContainerServiceStateDetailCode::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVATING_DEPLOYMENT", "CERTIFICATE_LIMIT_EXCEEDED", "CREATING_DEPLOYMENT", "CREATING_NETWORK_INFRASTRUCTURE", "CREATING_SYSTEM_RESOURCES", "EVALUATING_HEALTH_CHECK", "PROVISIONING_CERTIFICATE", "PROVISIONING_SERVICE", "UNKNOWN_ERROR"]
-                }
-            }
-impl AsRef<str> for ContainerServiceStateDetailCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ContainerServiceStateDetailCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ContainerServiceStateDetailCode::from(s))
+    }
+}
+impl ContainerServiceStateDetailCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ContainerServiceStateDetailCode::ActivatingDeployment => "ACTIVATING_DEPLOYMENT",
+            ContainerServiceStateDetailCode::CertificateLimitExceeded => {
+                "CERTIFICATE_LIMIT_EXCEEDED"
+            }
+            ContainerServiceStateDetailCode::CreatingDeployment => "CREATING_DEPLOYMENT",
+            ContainerServiceStateDetailCode::CreatingNetworkInfrastructure => {
+                "CREATING_NETWORK_INFRASTRUCTURE"
+            }
+            ContainerServiceStateDetailCode::CreatingSystemResources => "CREATING_SYSTEM_RESOURCES",
+            ContainerServiceStateDetailCode::EvaluatingHealthCheck => "EVALUATING_HEALTH_CHECK",
+            ContainerServiceStateDetailCode::ProvisioningCertificate => "PROVISIONING_CERTIFICATE",
+            ContainerServiceStateDetailCode::ProvisioningService => "PROVISIONING_SERVICE",
+            ContainerServiceStateDetailCode::UnknownError => "UNKNOWN_ERROR",
+            ContainerServiceStateDetailCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVATING_DEPLOYMENT",
+            "CERTIFICATE_LIMIT_EXCEEDED",
+            "CREATING_DEPLOYMENT",
+            "CREATING_NETWORK_INFRASTRUCTURE",
+            "CREATING_SYSTEM_RESOURCES",
+            "EVALUATING_HEALTH_CHECK",
+            "PROVISIONING_CERTIFICATE",
+            "PROVISIONING_SERVICE",
+            "UNKNOWN_ERROR",
+        ]
+    }
+}
+impl AsRef<str> for ContainerServiceStateDetailCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

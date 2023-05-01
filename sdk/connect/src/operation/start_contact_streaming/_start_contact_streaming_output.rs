@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartContactStreamingOutput  {
+pub struct StartContactStreamingOutput {
     /// <p>The identifier of the streaming configuration enabled. </p>
     #[doc(hidden)]
     pub streaming_id: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct StartContactStreamingOutput  {
 }
 impl StartContactStreamingOutput {
     /// <p>The identifier of the streaming configuration enabled. </p>
-    pub fn streaming_id(&self) -> std::option::Option<& str> {
+    pub fn streaming_id(&self) -> std::option::Option<&str> {
         self.streaming_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartContactStreamingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartContactStreamingOutput {
     /// Creates a new builder-style object to manufacture [`StartContactStreamingOutput`](crate::operation::start_contact_streaming::StartContactStreamingOutput).
-    pub fn builder() -> crate::operation::start_contact_streaming::builders::StartContactStreamingOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_contact_streaming::builders::StartContactStreamingOutputBuilder
+    {
         crate::operation::start_contact_streaming::builders::StartContactStreamingOutputBuilder::default()
     }
 }
@@ -41,24 +43,23 @@ impl StartContactStreamingOutputBuilder {
     }
     /// <p>The identifier of the streaming configuration enabled. </p>
     pub fn set_streaming_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.streaming_id = input; self
+        self.streaming_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartContactStreamingOutput`](crate::operation::start_contact_streaming::StartContactStreamingOutput).
     pub fn build(self) -> crate::operation::start_contact_streaming::StartContactStreamingOutput {
         crate::operation::start_contact_streaming::StartContactStreamingOutput {
-            streaming_id: self.streaming_id
-            ,
+            streaming_id: self.streaming_id,
             _request_id: self._request_id,
         }
     }
 }
-

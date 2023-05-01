@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInferenceSchedulerInput  {
+pub struct DeleteInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be deleted. </p>
     #[doc(hidden)]
     pub inference_scheduler_name: std::option::Option<std::string::String>,
 }
 impl DeleteInferenceSchedulerInput {
     /// <p>The name of the inference scheduler to be deleted. </p>
-    pub fn inference_scheduler_name(&self) -> std::option::Option<& str> {
+    pub fn inference_scheduler_name(&self) -> std::option::Option<&str> {
         self.inference_scheduler_name.as_deref()
     }
 }
 impl DeleteInferenceSchedulerInput {
     /// Creates a new builder-style object to manufacture [`DeleteInferenceSchedulerInput`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerInput).
-    pub fn builder() -> crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerInputBuilder
+    {
         crate::operation::delete_inference_scheduler::builders::DeleteInferenceSchedulerInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteInferenceSchedulerInputBuilder {
         self
     }
     /// <p>The name of the inference scheduler to be deleted. </p>
-    pub fn set_inference_scheduler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.inference_scheduler_name = input; self
+    pub fn set_inference_scheduler_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.inference_scheduler_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteInferenceSchedulerInput`](crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerInput).
-    pub fn build(self) -> Result<crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerInput {
-                inference_scheduler_name: self.inference_scheduler_name
-                ,
-            }
+                inference_scheduler_name: self.inference_scheduler_name,
+            },
         )
     }
 }
-

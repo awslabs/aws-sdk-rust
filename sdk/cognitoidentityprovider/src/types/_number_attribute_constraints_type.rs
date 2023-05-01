@@ -3,7 +3,7 @@
 /// <p>The minimum and maximum values of an attribute that is of the number data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NumberAttributeConstraintsType  {
+pub struct NumberAttributeConstraintsType {
     /// <p>The minimum value of an attribute that is of the number data type.</p>
     #[doc(hidden)]
     pub min_value: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct NumberAttributeConstraintsType  {
 }
 impl NumberAttributeConstraintsType {
     /// <p>The minimum value of an attribute that is of the number data type.</p>
-    pub fn min_value(&self) -> std::option::Option<& str> {
+    pub fn min_value(&self) -> std::option::Option<&str> {
         self.min_value.as_deref()
     }
     /// <p>The maximum value of an attribute that is of the number data type.</p>
-    pub fn max_value(&self) -> std::option::Option<& str> {
+    pub fn max_value(&self) -> std::option::Option<&str> {
         self.max_value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl NumberAttributeConstraintsTypeBuilder {
     }
     /// <p>The minimum value of an attribute that is of the number data type.</p>
     pub fn set_min_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.min_value = input; self
+        self.min_value = input;
+        self
     }
     /// <p>The maximum value of an attribute that is of the number data type.</p>
     pub fn max_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl NumberAttributeConstraintsTypeBuilder {
     }
     /// <p>The maximum value of an attribute that is of the number data type.</p>
     pub fn set_max_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max_value = input; self
+        self.max_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`NumberAttributeConstraintsType`](crate::types::NumberAttributeConstraintsType).
     pub fn build(self) -> crate::types::NumberAttributeConstraintsType {
         crate::types::NumberAttributeConstraintsType {
-            min_value: self.min_value
-            ,
-            max_value: self.max_value
-            ,
+            min_value: self.min_value,
+            max_value: self.max_value,
         }
     }
 }
-

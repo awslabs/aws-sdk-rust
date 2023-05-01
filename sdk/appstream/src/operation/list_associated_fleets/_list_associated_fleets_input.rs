@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociatedFleetsInput  {
+pub struct ListAssociatedFleetsInput {
     /// <p>The name of the stack.</p>
     #[doc(hidden)]
     pub stack_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct ListAssociatedFleetsInput  {
 }
 impl ListAssociatedFleetsInput {
     /// <p>The name of the stack.</p>
-    pub fn stack_name(&self) -> std::option::Option<& str> {
+    pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListAssociatedFleetsInput {
     /// Creates a new builder-style object to manufacture [`ListAssociatedFleetsInput`](crate::operation::list_associated_fleets::ListAssociatedFleetsInput).
-    pub fn builder() -> crate::operation::list_associated_fleets::builders::ListAssociatedFleetsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_associated_fleets::builders::ListAssociatedFleetsInputBuilder {
         crate::operation::list_associated_fleets::builders::ListAssociatedFleetsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListAssociatedFleetsInputBuilder {
     }
     /// <p>The name of the stack.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input; self
+        self.stack_name = input;
+        self
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl ListAssociatedFleetsInputBuilder {
     }
     /// <p>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAssociatedFleetsInput`](crate::operation::list_associated_fleets::ListAssociatedFleetsInput).
-    pub fn build(self) -> Result<crate::operation::list_associated_fleets::ListAssociatedFleetsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_associated_fleets::ListAssociatedFleetsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_associated_fleets::ListAssociatedFleetsInput {
-                stack_name: self.stack_name
-                ,
-                next_token: self.next_token
-                ,
-            }
+                stack_name: self.stack_name,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

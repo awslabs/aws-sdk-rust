@@ -3,7 +3,7 @@
 /// <p>Defines the policy types that the specified Firewall Manager administrator can manage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PolicyTypeScope  {
+pub struct PolicyTypeScope {
     /// <p>The list of policy types that the specified Firewall Manager administrator can manage.</p>
     #[doc(hidden)]
     pub policy_types: std::option::Option<std::vec::Vec<crate::types::SecurityServiceType>>,
@@ -13,7 +13,7 @@ pub struct PolicyTypeScope  {
 }
 impl PolicyTypeScope {
     /// <p>The list of policy types that the specified Firewall Manager administrator can manage.</p>
-    pub fn policy_types(&self) -> std::option::Option<& [crate::types::SecurityServiceType]> {
+    pub fn policy_types(&self) -> std::option::Option<&[crate::types::SecurityServiceType]> {
         self.policy_types.as_deref()
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Firewall Manager policy types, except for third-party policy types. Third-party policy types can only be managed by the Firewall Manager default administrator.</p>
@@ -43,13 +43,17 @@ impl PolicyTypeScopeBuilder {
     /// <p>The list of policy types that the specified Firewall Manager administrator can manage.</p>
     pub fn policy_types(mut self, input: crate::types::SecurityServiceType) -> Self {
         let mut v = self.policy_types.unwrap_or_default();
-                        v.push(input);
-                        self.policy_types = Some(v);
-                        self
+        v.push(input);
+        self.policy_types = Some(v);
+        self
     }
     /// <p>The list of policy types that the specified Firewall Manager administrator can manage.</p>
-    pub fn set_policy_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::SecurityServiceType>>) -> Self {
-        self.policy_types = input; self
+    pub fn set_policy_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SecurityServiceType>>,
+    ) -> Self {
+        self.policy_types = input;
+        self
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Firewall Manager policy types, except for third-party policy types. Third-party policy types can only be managed by the Firewall Manager default administrator.</p>
     pub fn all_policy_types_enabled(mut self, input: bool) -> Self {
@@ -58,17 +62,14 @@ impl PolicyTypeScopeBuilder {
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Firewall Manager policy types, except for third-party policy types. Third-party policy types can only be managed by the Firewall Manager default administrator.</p>
     pub fn set_all_policy_types_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.all_policy_types_enabled = input; self
+        self.all_policy_types_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`PolicyTypeScope`](crate::types::PolicyTypeScope).
     pub fn build(self) -> crate::types::PolicyTypeScope {
         crate::types::PolicyTypeScope {
-            policy_types: self.policy_types
-            ,
-            all_policy_types_enabled: self.all_policy_types_enabled
-                .unwrap_or_default()
-            ,
+            policy_types: self.policy_types,
+            all_policy_types_enabled: self.all_policy_types_enabled.unwrap_or_default(),
         }
     }
 }
-

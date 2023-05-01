@@ -4,56 +4,77 @@ pub use crate::operation::search_content::_search_content_output::SearchContentO
 pub use crate::operation::search_content::_search_content_input::SearchContentInputBuilder;
 
 /// Fluent builder constructing a request to `SearchContent`.
-/// 
+///
 /// <p>Searches for content in a specified knowledge base. Can be used to get a specific content resource by its name.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SearchContentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::search_content::builders::SearchContentInputBuilder,
+    inner: crate::operation::search_content::builders::SearchContentInputBuilder,
 }
-impl SearchContentFluentBuilder  {
+impl SearchContentFluentBuilder {
     /// Creates a new `SearchContent`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::search_content::SearchContent, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::search_content::SearchContentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::search_content::SearchContentOutput, aws_smithy_http::result::SdkError<crate::operation::search_content::SearchContentError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::search_content::SearchContent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::search_content::SearchContentError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::search_content::SearchContentOutput,
+        aws_smithy_http::result::SdkError<crate::operation::search_content::SearchContentError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::search_content::paginator::SearchContentPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::search_content::paginator::SearchContentPaginator {
-                                crate::operation::search_content::paginator::SearchContentPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::search_content::paginator::SearchContentPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::search_content::paginator::SearchContentPaginator {
+        crate::operation::search_content::paginator::SearchContentPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -80,7 +101,10 @@ impl SearchContentFluentBuilder  {
         self
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_knowledge_base_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_knowledge_base_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_knowledge_base_id(input);
         self
     }
@@ -90,9 +114,11 @@ impl SearchContentFluentBuilder  {
         self
     }
     /// <p>The search expression to filter results.</p>
-    pub fn set_search_expression(mut self, input: std::option::Option<crate::types::SearchExpression>) -> Self {
+    pub fn set_search_expression(
+        mut self,
+        input: std::option::Option<crate::types::SearchExpression>,
+    ) -> Self {
         self.inner = self.inner.set_search_expression(input);
         self
     }
 }
-

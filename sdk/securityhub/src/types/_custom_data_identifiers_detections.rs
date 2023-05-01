@@ -3,7 +3,7 @@
 /// <p>The list of detected instances of sensitive data.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomDataIdentifiersDetections  {
+pub struct CustomDataIdentifiersDetections {
     /// <p>The total number of occurrences of sensitive data that were detected.</p>
     #[doc(hidden)]
     pub count: i64,
@@ -23,15 +23,15 @@ impl CustomDataIdentifiersDetections {
         self.count
     }
     /// <p>The ARN of the custom identifier that was used to detect the sensitive data.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>he name of the custom identifier that detected the sensitive data.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Details about the sensitive data that was detected.</p>
-    pub fn occurrences(&self) -> std::option::Option<& crate::types::Occurrences> {
+    pub fn occurrences(&self) -> std::option::Option<&crate::types::Occurrences> {
         self.occurrences.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl CustomDataIdentifiersDetectionsBuilder {
     }
     /// <p>The total number of occurrences of sensitive data that were detected.</p>
     pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.count = input; self
+        self.count = input;
+        self
     }
     /// <p>The ARN of the custom identifier that was used to detect the sensitive data.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl CustomDataIdentifiersDetectionsBuilder {
     }
     /// <p>The ARN of the custom identifier that was used to detect the sensitive data.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>he name of the custom identifier that detected the sensitive data.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl CustomDataIdentifiersDetectionsBuilder {
     }
     /// <p>he name of the custom identifier that detected the sensitive data.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Details about the sensitive data that was detected.</p>
     pub fn occurrences(mut self, input: crate::types::Occurrences) -> Self {
@@ -85,22 +88,20 @@ impl CustomDataIdentifiersDetectionsBuilder {
         self
     }
     /// <p>Details about the sensitive data that was detected.</p>
-    pub fn set_occurrences(mut self, input: std::option::Option<crate::types::Occurrences>) -> Self {
-        self.occurrences = input; self
+    pub fn set_occurrences(
+        mut self,
+        input: std::option::Option<crate::types::Occurrences>,
+    ) -> Self {
+        self.occurrences = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomDataIdentifiersDetections`](crate::types::CustomDataIdentifiersDetections).
     pub fn build(self) -> crate::types::CustomDataIdentifiersDetections {
         crate::types::CustomDataIdentifiersDetections {
-            count: self.count
-                .unwrap_or_default()
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            occurrences: self.occurrences
-            ,
+            count: self.count.unwrap_or_default(),
+            arn: self.arn,
+            name: self.name,
+            occurrences: self.occurrences,
         }
     }
 }
-

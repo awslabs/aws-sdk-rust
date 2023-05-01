@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOpenIdConnectProviderThumbprintInput  {
-    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p> 
+pub struct UpdateOpenIdConnectProviderThumbprintInput {
+    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     #[doc(hidden)]
     pub open_id_connect_provider_arn: std::option::Option<std::string::String>,
@@ -12,19 +12,19 @@ pub struct UpdateOpenIdConnectProviderThumbprintInput  {
     pub thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateOpenIdConnectProviderThumbprintInput {
-    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<& str> {
+    pub fn open_id_connect_provider_arn(&self) -> std::option::Option<&str> {
         self.open_id_connect_provider_arn.as_deref()
     }
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    pub fn thumbprint_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn thumbprint_list(&self) -> std::option::Option<&[std::string::String]> {
         self.thumbprint_list.as_deref()
     }
 }
 impl UpdateOpenIdConnectProviderThumbprintInput {
     /// Creates a new builder-style object to manufacture [`UpdateOpenIdConnectProviderThumbprintInput`](crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIdConnectProviderThumbprintInput).
-    pub fn builder() -> crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIdConnectProviderThumbprintInputBuilder {
+    pub fn builder() -> crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIdConnectProviderThumbprintInputBuilder{
         crate::operation::update_open_id_connect_provider_thumbprint::builders::UpdateOpenIdConnectProviderThumbprintInputBuilder::default()
     }
 }
@@ -37,16 +37,20 @@ pub struct UpdateOpenIdConnectProviderThumbprintInputBuilder {
     pub(crate) thumbprint_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdateOpenIdConnectProviderThumbprintInputBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn open_id_connect_provider_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.open_id_connect_provider_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM OIDC provider resource object for which you want to update the thumbprint. You can get a list of OIDC provider ARNs by using the <code>ListOpenIDConnectProviders</code> operation.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_open_id_connect_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.open_id_connect_provider_arn = input; self
+    pub fn set_open_id_connect_provider_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.open_id_connect_provider_arn = input;
+        self
     }
     /// Appends an item to `thumbprint_list`.
     ///
@@ -55,16 +59,20 @@ impl UpdateOpenIdConnectProviderThumbprintInputBuilder {
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
     pub fn thumbprint_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.thumbprint_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.thumbprint_list = Some(v);
-                        self
+        v.push(input.into());
+        self.thumbprint_list = Some(v);
+        self
     }
     /// <p>A list of certificate thumbprints that are associated with the specified IAM OpenID Connect provider. For more information, see <code>CreateOpenIDConnectProvider</code>. </p>
-    pub fn set_thumbprint_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.thumbprint_list = input; self
+    pub fn set_thumbprint_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.thumbprint_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateOpenIdConnectProviderThumbprintInput`](crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIdConnectProviderThumbprintInput).
-    pub fn build(self) -> Result<crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIdConnectProviderThumbprintInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIdConnectProviderThumbprintInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIdConnectProviderThumbprintInput {
                 open_id_connect_provider_arn: self.open_id_connect_provider_arn
@@ -75,4 +83,3 @@ impl UpdateOpenIdConnectProviderThumbprintInputBuilder {
         )
     }
 }
-

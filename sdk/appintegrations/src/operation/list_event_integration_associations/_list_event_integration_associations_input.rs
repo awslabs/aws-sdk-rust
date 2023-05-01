@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventIntegrationAssociationsInput  {
+pub struct ListEventIntegrationAssociationsInput {
     /// <p>The name of the event integration. </p>
     #[doc(hidden)]
     pub event_integration_name: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListEventIntegrationAssociationsInput  {
 }
 impl ListEventIntegrationAssociationsInput {
     /// <p>The name of the event integration. </p>
-    pub fn event_integration_name(&self) -> std::option::Option<& str> {
+    pub fn event_integration_name(&self) -> std::option::Option<&str> {
         self.event_integration_name.as_deref()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -29,7 +29,7 @@ impl ListEventIntegrationAssociationsInput {
 }
 impl ListEventIntegrationAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListEventIntegrationAssociationsInput`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput).
-    pub fn builder() -> crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsInputBuilder {
+    pub fn builder() -> crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsInputBuilder{
         crate::operation::list_event_integration_associations::builders::ListEventIntegrationAssociationsInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl ListEventIntegrationAssociationsInputBuilder {
         self
     }
     /// <p>The name of the event integration. </p>
-    pub fn set_event_integration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_integration_name = input; self
+    pub fn set_event_integration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.event_integration_name = input;
+        self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +63,8 @@ impl ListEventIntegrationAssociationsInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,10 +73,11 @@ impl ListEventIntegrationAssociationsInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEventIntegrationAssociationsInput`](crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput).
-    pub fn build(self) -> Result<crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_event_integration_associations::ListEventIntegrationAssociationsInput {
                 event_integration_name: self.event_integration_name
@@ -84,4 +90,3 @@ impl ListEventIntegrationAssociationsInputBuilder {
         )
     }
 }
-

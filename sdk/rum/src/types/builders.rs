@@ -30,4 +30,3 @@ pub use crate::types::_rum_event::RumEventBuilder;
 pub use crate::types::_user_details::UserDetailsBuilder;
 
 pub use crate::types::_app_monitor_details::AppMonitorDetailsBuilder;
-

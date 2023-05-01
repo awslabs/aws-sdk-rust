@@ -228,4 +228,3 @@ pub use crate::types::_endpoint_request::EndpointRequestBuilder;
 pub use crate::types::_container_service_deployment_request::ContainerServiceDeploymentRequestBuilder;
 
 pub use crate::types::_instance_entry::InstanceEntryBuilder;
-

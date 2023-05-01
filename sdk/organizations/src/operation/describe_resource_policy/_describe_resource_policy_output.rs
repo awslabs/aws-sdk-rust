@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeResourcePolicyOutput  {
+pub struct DescribeResourcePolicyOutput {
     /// <p>A structure that contains details about the resource policy.</p>
     #[doc(hidden)]
     pub resource_policy: std::option::Option<crate::types::ResourcePolicy>,
@@ -10,18 +10,20 @@ pub struct DescribeResourcePolicyOutput  {
 }
 impl DescribeResourcePolicyOutput {
     /// <p>A structure that contains details about the resource policy.</p>
-    pub fn resource_policy(&self) -> std::option::Option<& crate::types::ResourcePolicy> {
+    pub fn resource_policy(&self) -> std::option::Option<&crate::types::ResourcePolicy> {
         self.resource_policy.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeResourcePolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePolicyOutput`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput).
-    pub fn builder() -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder
+    {
         crate::operation::describe_resource_policy::builders::DescribeResourcePolicyOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl DescribeResourcePolicyOutputBuilder {
         self
     }
     /// <p>A structure that contains details about the resource policy.</p>
-    pub fn set_resource_policy(mut self, input: std::option::Option<crate::types::ResourcePolicy>) -> Self {
-        self.resource_policy = input; self
+    pub fn set_resource_policy(
+        mut self,
+        input: std::option::Option<crate::types::ResourcePolicy>,
+    ) -> Self {
+        self.resource_policy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeResourcePolicyOutput`](crate::operation::describe_resource_policy::DescribeResourcePolicyOutput).
     pub fn build(self) -> crate::operation::describe_resource_policy::DescribeResourcePolicyOutput {
         crate::operation::describe_resource_policy::DescribeResourcePolicyOutput {
-            resource_policy: self.resource_policy
-            ,
+            resource_policy: self.resource_policy,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutMaintenanceStartTimeInput  {
+pub struct PutMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -15,14 +15,14 @@ pub struct PutMaintenanceStartTimeInput  {
     /// <p>The day of the week to start maintenance on a gateway.</p>
     #[doc(hidden)]
     pub day_of_week: std::option::Option<i32>,
-    /// <p>The day of the month start maintenance on a gateway.</p> 
+    /// <p>The day of the month start maintenance on a gateway.</p>
     /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
     #[doc(hidden)]
     pub day_of_month: std::option::Option<i32>,
 }
 impl PutMaintenanceStartTimeInput {
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The hour of the day to start maintenance on a gateway.</p>
@@ -37,7 +37,7 @@ impl PutMaintenanceStartTimeInput {
     pub fn day_of_week(&self) -> std::option::Option<i32> {
         self.day_of_week
     }
-    /// <p>The day of the month start maintenance on a gateway.</p> 
+    /// <p>The day of the month start maintenance on a gateway.</p>
     /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
     pub fn day_of_month(&self) -> std::option::Option<i32> {
         self.day_of_month
@@ -45,7 +45,9 @@ impl PutMaintenanceStartTimeInput {
 }
 impl PutMaintenanceStartTimeInput {
     /// Creates a new builder-style object to manufacture [`PutMaintenanceStartTimeInput`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput).
-    pub fn builder() -> crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder
+    {
         crate::operation::put_maintenance_start_time::builders::PutMaintenanceStartTimeInputBuilder::default()
     }
 }
@@ -68,7 +70,8 @@ impl PutMaintenanceStartTimeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// <p>The hour of the day to start maintenance on a gateway.</p>
     pub fn hour_of_day(mut self, input: i32) -> Self {
@@ -77,7 +80,8 @@ impl PutMaintenanceStartTimeInputBuilder {
     }
     /// <p>The hour of the day to start maintenance on a gateway.</p>
     pub fn set_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
-        self.hour_of_day = input; self
+        self.hour_of_day = input;
+        self
     }
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
     pub fn minute_of_hour(mut self, input: i32) -> Self {
@@ -86,7 +90,8 @@ impl PutMaintenanceStartTimeInputBuilder {
     }
     /// <p>The minute of the hour to start maintenance on a gateway.</p>
     pub fn set_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
-        self.minute_of_hour = input; self
+        self.minute_of_hour = input;
+        self
     }
     /// <p>The day of the week to start maintenance on a gateway.</p>
     pub fn day_of_week(mut self, input: i32) -> Self {
@@ -95,35 +100,36 @@ impl PutMaintenanceStartTimeInputBuilder {
     }
     /// <p>The day of the week to start maintenance on a gateway.</p>
     pub fn set_day_of_week(mut self, input: std::option::Option<i32>) -> Self {
-        self.day_of_week = input; self
+        self.day_of_week = input;
+        self
     }
-    /// <p>The day of the month start maintenance on a gateway.</p> 
+    /// <p>The day of the month start maintenance on a gateway.</p>
     /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
     pub fn day_of_month(mut self, input: i32) -> Self {
         self.day_of_month = Some(input);
         self
     }
-    /// <p>The day of the month start maintenance on a gateway.</p> 
+    /// <p>The day of the month start maintenance on a gateway.</p>
     /// <p>Valid values range from <code>Sunday</code> to <code>Saturday</code>.</p>
     pub fn set_day_of_month(mut self, input: std::option::Option<i32>) -> Self {
-        self.day_of_month = input; self
+        self.day_of_month = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutMaintenanceStartTimeInput`](crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput).
-    pub fn build(self) -> Result<crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeInput {
-                gateway_arn: self.gateway_arn
-                ,
-                hour_of_day: self.hour_of_day
-                ,
-                minute_of_hour: self.minute_of_hour
-                ,
-                day_of_week: self.day_of_week
-                ,
-                day_of_month: self.day_of_month
-                ,
-            }
+                gateway_arn: self.gateway_arn,
+                hour_of_day: self.hour_of_day,
+                minute_of_hour: self.minute_of_hour,
+                day_of_week: self.day_of_week,
+                day_of_month: self.day_of_month,
+            },
         )
     }
 }
-

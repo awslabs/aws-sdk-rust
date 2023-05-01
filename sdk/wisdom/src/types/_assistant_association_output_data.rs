@@ -20,8 +20,14 @@ impl AssistantAssociationOutputData {
     #[allow(irrefutable_let_patterns)]
     /// Tries to convert the enum instance into [`KnowledgeBaseAssociation`](crate::types::AssistantAssociationOutputData::KnowledgeBaseAssociation), extracting the inner [`KnowledgeBaseAssociationData`](crate::types::KnowledgeBaseAssociationData).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_knowledge_base_association(&self) -> std::result::Result<&crate::types::KnowledgeBaseAssociationData, &Self> {
-        if let AssistantAssociationOutputData::KnowledgeBaseAssociation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_knowledge_base_association(
+        &self,
+    ) -> std::result::Result<&crate::types::KnowledgeBaseAssociationData, &Self> {
+        if let AssistantAssociationOutputData::KnowledgeBaseAssociation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`KnowledgeBaseAssociation`](crate::types::AssistantAssociationOutputData::KnowledgeBaseAssociation).
     pub fn is_knowledge_base_association(&self) -> bool {
@@ -32,4 +38,3 @@ impl AssistantAssociationOutputData {
         matches!(self, Self::Unknown)
     }
 }
-

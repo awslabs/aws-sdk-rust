@@ -3,14 +3,14 @@
 /// <p>Information about the Amazon Inspector score given to a finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScoreDetails  {
+pub struct ScoreDetails {
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
     #[doc(hidden)]
     pub cvss: std::option::Option<crate::types::CvssScoreDetails>,
 }
 impl ScoreDetails {
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
-    pub fn cvss(&self) -> std::option::Option<& crate::types::CvssScoreDetails> {
+    pub fn cvss(&self) -> std::option::Option<&crate::types::CvssScoreDetails> {
         self.cvss.as_ref()
     }
 }
@@ -35,14 +35,11 @@ impl ScoreDetailsBuilder {
     }
     /// <p>An object that contains details about the CVSS score given to a finding.</p>
     pub fn set_cvss(mut self, input: std::option::Option<crate::types::CvssScoreDetails>) -> Self {
-        self.cvss = input; self
+        self.cvss = input;
+        self
     }
     /// Consumes the builder and constructs a [`ScoreDetails`](crate::types::ScoreDetails).
     pub fn build(self) -> crate::types::ScoreDetails {
-        crate::types::ScoreDetails {
-            cvss: self.cvss
-            ,
-        }
+        crate::types::ScoreDetails { cvss: self.cvss }
     }
 }
-

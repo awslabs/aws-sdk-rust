@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBridgeInput  {
+pub struct DeleteBridgeInput {
     /// The ARN of the bridge that you want to delete.
     #[doc(hidden)]
     pub bridge_arn: std::option::Option<std::string::String>,
 }
 impl DeleteBridgeInput {
     /// The ARN of the bridge that you want to delete.
-    pub fn bridge_arn(&self) -> std::option::Option<& str> {
+    pub fn bridge_arn(&self) -> std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteBridgeInputBuilder {
     }
     /// The ARN of the bridge that you want to delete.
     pub fn set_bridge_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bridge_arn = input; self
+        self.bridge_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteBridgeInput`](crate::operation::delete_bridge::DeleteBridgeInput).
-    pub fn build(self) -> Result<crate::operation::delete_bridge::DeleteBridgeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_bridge::DeleteBridgeInput {
-                bridge_arn: self.bridge_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_bridge::DeleteBridgeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_bridge::DeleteBridgeInput {
+            bridge_arn: self.bridge_arn,
+        })
     }
 }
-

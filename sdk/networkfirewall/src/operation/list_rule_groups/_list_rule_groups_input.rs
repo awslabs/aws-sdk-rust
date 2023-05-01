@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRuleGroupsInput  {
+pub struct ListRuleGroupsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -21,7 +21,7 @@ pub struct ListRuleGroupsInput  {
 }
 impl ListRuleGroupsInput {
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
@@ -29,15 +29,15 @@ impl ListRuleGroupsInput {
         self.max_results
     }
     /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
-    pub fn scope(&self) -> std::option::Option<& crate::types::ResourceManagedStatus> {
+    pub fn scope(&self) -> std::option::Option<&crate::types::ResourceManagedStatus> {
         self.scope.as_ref()
     }
     /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
-    pub fn managed_type(&self) -> std::option::Option<& crate::types::ResourceManagedType> {
+    pub fn managed_type(&self) -> std::option::Option<&crate::types::ResourceManagedType> {
         self.managed_type.as_ref()
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::RuleGroupType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::RuleGroupType> {
         self.r#type.as_ref()
     }
 }
@@ -66,7 +66,8 @@ impl ListRuleGroupsInputBuilder {
     }
     /// <p>When you request a list of objects with a <code>MaxResults</code> setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a <code>NextToken</code> value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,7 +76,8 @@ impl ListRuleGroupsInputBuilder {
     }
     /// <p>The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
     pub fn scope(mut self, input: crate::types::ResourceManagedStatus) -> Self {
@@ -83,8 +85,12 @@ impl ListRuleGroupsInputBuilder {
         self
     }
     /// <p>The scope of the request. The default setting of <code>ACCOUNT</code> or a setting of <code>NULL</code> returns all of the rule groups in your account. A setting of <code>MANAGED</code> returns all available managed rule groups.</p>
-    pub fn set_scope(mut self, input: std::option::Option<crate::types::ResourceManagedStatus>) -> Self {
-        self.scope = input; self
+    pub fn set_scope(
+        mut self,
+        input: std::option::Option<crate::types::ResourceManagedStatus>,
+    ) -> Self {
+        self.scope = input;
+        self
     }
     /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
     pub fn managed_type(mut self, input: crate::types::ResourceManagedType) -> Self {
@@ -92,8 +98,12 @@ impl ListRuleGroupsInputBuilder {
         self
     }
     /// <p>Indicates the general category of the Amazon Web Services managed rule group.</p>
-    pub fn set_managed_type(mut self, input: std::option::Option<crate::types::ResourceManagedType>) -> Self {
-        self.managed_type = input; self
+    pub fn set_managed_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceManagedType>,
+    ) -> Self {
+        self.managed_type = input;
+        self
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     pub fn r#type(mut self, input: crate::types::RuleGroupType) -> Self {
@@ -102,24 +112,22 @@ impl ListRuleGroupsInputBuilder {
     }
     /// <p>Indicates whether the rule group is stateless or stateful. If the rule group is stateless, it contains stateless rules. If it is stateful, it contains stateful rules.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::RuleGroupType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListRuleGroupsInput`](crate::operation::list_rule_groups::ListRuleGroupsInput).
-    pub fn build(self) -> Result<crate::operation::list_rule_groups::ListRuleGroupsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_rule_groups::ListRuleGroupsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                scope: self.scope
-                ,
-                managed_type: self.managed_type
-                ,
-                r#type: self.r#type
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_rule_groups::ListRuleGroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_rule_groups::ListRuleGroupsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            scope: self.scope,
+            managed_type: self.managed_type,
+            r#type: self.r#type,
+        })
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let opsitemfilterkey = unimplemented!();
 /// match opsitemfilterkey {
@@ -56,14 +56,22 @@
 /// Specifically, when `opsitemfilterkey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OpsItemFilterKey::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum OpsItemFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     AccountId,
@@ -122,93 +130,127 @@ pub enum OpsItemFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     Title,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OpsItemFilterKey {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AccountId" => OpsItemFilterKey::AccountId,
-"ActualEndTime" => OpsItemFilterKey::ActualEndTime,
-"ActualStartTime" => OpsItemFilterKey::ActualStartTime,
-"AutomationId" => OpsItemFilterKey::AutomationId,
-"Category" => OpsItemFilterKey::Category,
-"ChangeRequestByApproverArn" => OpsItemFilterKey::ChangeRequestApproverArn,
-"ChangeRequestByApproverName" => OpsItemFilterKey::ChangeRequestApproverName,
-"ChangeRequestByRequesterArn" => OpsItemFilterKey::ChangeRequestRequesterArn,
-"ChangeRequestByRequesterName" => OpsItemFilterKey::ChangeRequestRequesterName,
-"ChangeRequestByTargetsResourceGroup" => OpsItemFilterKey::ChangeRequestTargetsResourceGroup,
-"ChangeRequestByTemplate" => OpsItemFilterKey::ChangeRequestTemplate,
-"CreatedBy" => OpsItemFilterKey::CreatedBy,
-"CreatedTime" => OpsItemFilterKey::CreatedTime,
-"InsightByType" => OpsItemFilterKey::InsightType,
-"LastModifiedTime" => OpsItemFilterKey::LastModifiedTime,
-"OperationalData" => OpsItemFilterKey::OperationalData,
-"OperationalDataKey" => OpsItemFilterKey::OperationalDataKey,
-"OperationalDataValue" => OpsItemFilterKey::OperationalDataValue,
-"OpsItemId" => OpsItemFilterKey::OpsitemId,
-"OpsItemType" => OpsItemFilterKey::OpsitemType,
-"PlannedEndTime" => OpsItemFilterKey::PlannedEndTime,
-"PlannedStartTime" => OpsItemFilterKey::PlannedStartTime,
-"Priority" => OpsItemFilterKey::Priority,
-"ResourceId" => OpsItemFilterKey::ResourceId,
-"Severity" => OpsItemFilterKey::Severity,
-"Source" => OpsItemFilterKey::Source,
-"Status" => OpsItemFilterKey::Status,
-"Title" => OpsItemFilterKey::Title,
-other => OpsItemFilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AccountId" => OpsItemFilterKey::AccountId,
+            "ActualEndTime" => OpsItemFilterKey::ActualEndTime,
+            "ActualStartTime" => OpsItemFilterKey::ActualStartTime,
+            "AutomationId" => OpsItemFilterKey::AutomationId,
+            "Category" => OpsItemFilterKey::Category,
+            "ChangeRequestByApproverArn" => OpsItemFilterKey::ChangeRequestApproverArn,
+            "ChangeRequestByApproverName" => OpsItemFilterKey::ChangeRequestApproverName,
+            "ChangeRequestByRequesterArn" => OpsItemFilterKey::ChangeRequestRequesterArn,
+            "ChangeRequestByRequesterName" => OpsItemFilterKey::ChangeRequestRequesterName,
+            "ChangeRequestByTargetsResourceGroup" => {
+                OpsItemFilterKey::ChangeRequestTargetsResourceGroup
             }
-impl std::str::FromStr for OpsItemFilterKey {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(OpsItemFilterKey::from(s))
-                }
+            "ChangeRequestByTemplate" => OpsItemFilterKey::ChangeRequestTemplate,
+            "CreatedBy" => OpsItemFilterKey::CreatedBy,
+            "CreatedTime" => OpsItemFilterKey::CreatedTime,
+            "InsightByType" => OpsItemFilterKey::InsightType,
+            "LastModifiedTime" => OpsItemFilterKey::LastModifiedTime,
+            "OperationalData" => OpsItemFilterKey::OperationalData,
+            "OperationalDataKey" => OpsItemFilterKey::OperationalDataKey,
+            "OperationalDataValue" => OpsItemFilterKey::OperationalDataValue,
+            "OpsItemId" => OpsItemFilterKey::OpsitemId,
+            "OpsItemType" => OpsItemFilterKey::OpsitemType,
+            "PlannedEndTime" => OpsItemFilterKey::PlannedEndTime,
+            "PlannedStartTime" => OpsItemFilterKey::PlannedStartTime,
+            "Priority" => OpsItemFilterKey::Priority,
+            "ResourceId" => OpsItemFilterKey::ResourceId,
+            "Severity" => OpsItemFilterKey::Severity,
+            "Source" => OpsItemFilterKey::Source,
+            "Status" => OpsItemFilterKey::Status,
+            "Title" => OpsItemFilterKey::Title,
+            other => {
+                OpsItemFilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl OpsItemFilterKey {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    OpsItemFilterKey::AccountId => "AccountId",
-    OpsItemFilterKey::ActualEndTime => "ActualEndTime",
-    OpsItemFilterKey::ActualStartTime => "ActualStartTime",
-    OpsItemFilterKey::AutomationId => "AutomationId",
-    OpsItemFilterKey::Category => "Category",
-    OpsItemFilterKey::ChangeRequestApproverArn => "ChangeRequestByApproverArn",
-    OpsItemFilterKey::ChangeRequestApproverName => "ChangeRequestByApproverName",
-    OpsItemFilterKey::ChangeRequestRequesterArn => "ChangeRequestByRequesterArn",
-    OpsItemFilterKey::ChangeRequestRequesterName => "ChangeRequestByRequesterName",
-    OpsItemFilterKey::ChangeRequestTargetsResourceGroup => "ChangeRequestByTargetsResourceGroup",
-    OpsItemFilterKey::ChangeRequestTemplate => "ChangeRequestByTemplate",
-    OpsItemFilterKey::CreatedBy => "CreatedBy",
-    OpsItemFilterKey::CreatedTime => "CreatedTime",
-    OpsItemFilterKey::InsightType => "InsightByType",
-    OpsItemFilterKey::LastModifiedTime => "LastModifiedTime",
-    OpsItemFilterKey::OperationalData => "OperationalData",
-    OpsItemFilterKey::OperationalDataKey => "OperationalDataKey",
-    OpsItemFilterKey::OperationalDataValue => "OperationalDataValue",
-    OpsItemFilterKey::OpsitemId => "OpsItemId",
-    OpsItemFilterKey::OpsitemType => "OpsItemType",
-    OpsItemFilterKey::PlannedEndTime => "PlannedEndTime",
-    OpsItemFilterKey::PlannedStartTime => "PlannedStartTime",
-    OpsItemFilterKey::Priority => "Priority",
-    OpsItemFilterKey::ResourceId => "ResourceId",
-    OpsItemFilterKey::Severity => "Severity",
-    OpsItemFilterKey::Source => "Source",
-    OpsItemFilterKey::Status => "Status",
-    OpsItemFilterKey::Title => "Title",
-    OpsItemFilterKey::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AccountId", "ActualEndTime", "ActualStartTime", "AutomationId", "Category", "ChangeRequestByApproverArn", "ChangeRequestByApproverName", "ChangeRequestByRequesterArn", "ChangeRequestByRequesterName", "ChangeRequestByTargetsResourceGroup", "ChangeRequestByTemplate", "CreatedBy", "CreatedTime", "InsightByType", "LastModifiedTime", "OperationalData", "OperationalDataKey", "OperationalDataValue", "OpsItemId", "OpsItemType", "PlannedEndTime", "PlannedStartTime", "Priority", "ResourceId", "Severity", "Source", "Status", "Title"]
-                }
-            }
-impl AsRef<str> for OpsItemFilterKey {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for OpsItemFilterKey {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OpsItemFilterKey::from(s))
+    }
+}
+impl OpsItemFilterKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OpsItemFilterKey::AccountId => "AccountId",
+            OpsItemFilterKey::ActualEndTime => "ActualEndTime",
+            OpsItemFilterKey::ActualStartTime => "ActualStartTime",
+            OpsItemFilterKey::AutomationId => "AutomationId",
+            OpsItemFilterKey::Category => "Category",
+            OpsItemFilterKey::ChangeRequestApproverArn => "ChangeRequestByApproverArn",
+            OpsItemFilterKey::ChangeRequestApproverName => "ChangeRequestByApproverName",
+            OpsItemFilterKey::ChangeRequestRequesterArn => "ChangeRequestByRequesterArn",
+            OpsItemFilterKey::ChangeRequestRequesterName => "ChangeRequestByRequesterName",
+            OpsItemFilterKey::ChangeRequestTargetsResourceGroup => {
+                "ChangeRequestByTargetsResourceGroup"
+            }
+            OpsItemFilterKey::ChangeRequestTemplate => "ChangeRequestByTemplate",
+            OpsItemFilterKey::CreatedBy => "CreatedBy",
+            OpsItemFilterKey::CreatedTime => "CreatedTime",
+            OpsItemFilterKey::InsightType => "InsightByType",
+            OpsItemFilterKey::LastModifiedTime => "LastModifiedTime",
+            OpsItemFilterKey::OperationalData => "OperationalData",
+            OpsItemFilterKey::OperationalDataKey => "OperationalDataKey",
+            OpsItemFilterKey::OperationalDataValue => "OperationalDataValue",
+            OpsItemFilterKey::OpsitemId => "OpsItemId",
+            OpsItemFilterKey::OpsitemType => "OpsItemType",
+            OpsItemFilterKey::PlannedEndTime => "PlannedEndTime",
+            OpsItemFilterKey::PlannedStartTime => "PlannedStartTime",
+            OpsItemFilterKey::Priority => "Priority",
+            OpsItemFilterKey::ResourceId => "ResourceId",
+            OpsItemFilterKey::Severity => "Severity",
+            OpsItemFilterKey::Source => "Source",
+            OpsItemFilterKey::Status => "Status",
+            OpsItemFilterKey::Title => "Title",
+            OpsItemFilterKey::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AccountId",
+            "ActualEndTime",
+            "ActualStartTime",
+            "AutomationId",
+            "Category",
+            "ChangeRequestByApproverArn",
+            "ChangeRequestByApproverName",
+            "ChangeRequestByRequesterArn",
+            "ChangeRequestByRequesterName",
+            "ChangeRequestByTargetsResourceGroup",
+            "ChangeRequestByTemplate",
+            "CreatedBy",
+            "CreatedTime",
+            "InsightByType",
+            "LastModifiedTime",
+            "OperationalData",
+            "OperationalDataKey",
+            "OperationalDataValue",
+            "OpsItemId",
+            "OpsItemType",
+            "PlannedEndTime",
+            "PlannedStartTime",
+            "Priority",
+            "ResourceId",
+            "Severity",
+            "Source",
+            "Status",
+            "Title",
+        ]
+    }
+}
+impl AsRef<str> for OpsItemFilterKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

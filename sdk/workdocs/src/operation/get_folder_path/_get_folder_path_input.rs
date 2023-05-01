@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetFolderPathInput  {
+pub struct GetFolderPathInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct GetFolderPathInput  {
 }
 impl GetFolderPathInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<& str> {
+    pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
     /// <p>The maximum number of levels in the hierarchy to return.</p>
@@ -33,15 +33,15 @@ impl GetFolderPathInput {
         self.limit
     }
     /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
-    pub fn fields(&self) -> std::option::Option<& str> {
+    pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
     /// <p>This value is not supported.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl  std::fmt::Debug for GetFolderPathInput  {
+impl std::fmt::Debug for GetFolderPathInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetFolderPathInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -76,8 +76,12 @@ impl GetFolderPathInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +90,8 @@ impl GetFolderPathInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.folder_id = input; self
+        self.folder_id = input;
+        self
     }
     /// <p>The maximum number of levels in the hierarchy to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -95,7 +100,8 @@ impl GetFolderPathInputBuilder {
     }
     /// <p>The maximum number of levels in the hierarchy to return.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
     pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +110,8 @@ impl GetFolderPathInputBuilder {
     }
     /// <p>A comma-separated list of values. Specify "NAME" to include the names of the parent folders.</p>
     pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fields = input; self
+        self.fields = input;
+        self
     }
     /// <p>This value is not supported.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,24 +120,23 @@ impl GetFolderPathInputBuilder {
     }
     /// <p>This value is not supported.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetFolderPathInput`](crate::operation::get_folder_path::GetFolderPathInput).
-    pub fn build(self) -> Result<crate::operation::get_folder_path::GetFolderPathInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_folder_path::GetFolderPathInput {
-                authentication_token: self.authentication_token
-                ,
-                folder_id: self.folder_id
-                ,
-                limit: self.limit
-                ,
-                fields: self.fields
-                ,
-                marker: self.marker
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_folder_path::GetFolderPathInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_folder_path::GetFolderPathInput {
+            authentication_token: self.authentication_token,
+            folder_id: self.folder_id,
+            limit: self.limit,
+            fields: self.fields,
+            marker: self.marker,
+        })
     }
 }
 impl std::fmt::Debug for GetFolderPathInputBuilder {
@@ -144,4 +150,3 @@ impl std::fmt::Debug for GetFolderPathInputBuilder {
         formatter.finish()
     }
 }
-

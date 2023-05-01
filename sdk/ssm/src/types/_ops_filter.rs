@@ -3,7 +3,7 @@
 /// <p>A filter for viewing OpsData summaries.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpsFilter  {
+pub struct OpsFilter {
     /// <p>The name of the filter.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct OpsFilter  {
 }
 impl OpsFilter {
     /// <p>The name of the filter.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The filter value.</p>
-    pub fn values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn values(&self) -> std::option::Option<&[std::string::String]> {
         self.values.as_deref()
     }
     /// <p>The type of filter.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::OpsFilterOperatorType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::OpsFilterOperatorType> {
         self.r#type.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl OpsFilterBuilder {
     }
     /// <p>The name of the filter.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// Appends an item to `values`.
     ///
@@ -60,13 +61,17 @@ impl OpsFilterBuilder {
     /// <p>The filter value.</p>
     pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input.into());
-                        self.values = Some(v);
-                        self
+        v.push(input.into());
+        self.values = Some(v);
+        self
     }
     /// <p>The filter value.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// <p>The type of filter.</p>
     pub fn r#type(mut self, input: crate::types::OpsFilterOperatorType) -> Self {
@@ -74,19 +79,19 @@ impl OpsFilterBuilder {
         self
     }
     /// <p>The type of filter.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::OpsFilterOperatorType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::OpsFilterOperatorType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpsFilter`](crate::types::OpsFilter).
     pub fn build(self) -> crate::types::OpsFilter {
         crate::types::OpsFilter {
-            key: self.key
-            ,
-            values: self.values
-            ,
-            r#type: self.r#type
-            ,
+            key: self.key,
+            values: self.values,
+            r#type: self.r#type,
         }
     }
 }
-

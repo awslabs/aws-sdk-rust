@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRecordBatchInput  {
+pub struct PutRecordBatchInput {
     /// <p>The name of the delivery stream.</p>
     #[doc(hidden)]
     pub delivery_stream_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct PutRecordBatchInput  {
 }
 impl PutRecordBatchInput {
     /// <p>The name of the delivery stream.</p>
-    pub fn delivery_stream_name(&self) -> std::option::Option<& str> {
+    pub fn delivery_stream_name(&self) -> std::option::Option<&str> {
         self.delivery_stream_name.as_deref()
     }
     /// <p>One or more records.</p>
-    pub fn records(&self) -> std::option::Option<& [crate::types::Record]> {
+    pub fn records(&self) -> std::option::Option<&[crate::types::Record]> {
         self.records.as_deref()
     }
 }
@@ -41,8 +41,12 @@ impl PutRecordBatchInputBuilder {
         self
     }
     /// <p>The name of the delivery stream.</p>
-    pub fn set_delivery_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delivery_stream_name = input; self
+    pub fn set_delivery_stream_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.delivery_stream_name = input;
+        self
     }
     /// Appends an item to `records`.
     ///
@@ -51,24 +55,28 @@ impl PutRecordBatchInputBuilder {
     /// <p>One or more records.</p>
     pub fn records(mut self, input: crate::types::Record) -> Self {
         let mut v = self.records.unwrap_or_default();
-                        v.push(input);
-                        self.records = Some(v);
-                        self
+        v.push(input);
+        self.records = Some(v);
+        self
     }
     /// <p>One or more records.</p>
-    pub fn set_records(mut self, input: std::option::Option<std::vec::Vec<crate::types::Record>>) -> Self {
-        self.records = input; self
+    pub fn set_records(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Record>>,
+    ) -> Self {
+        self.records = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutRecordBatchInput`](crate::operation::put_record_batch::PutRecordBatchInput).
-    pub fn build(self) -> Result<crate::operation::put_record_batch::PutRecordBatchInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_record_batch::PutRecordBatchInput {
-                delivery_stream_name: self.delivery_stream_name
-                ,
-                records: self.records
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_record_batch::PutRecordBatchInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_record_batch::PutRecordBatchInput {
+            delivery_stream_name: self.delivery_stream_name,
+            records: self.records,
+        })
     }
 }
-

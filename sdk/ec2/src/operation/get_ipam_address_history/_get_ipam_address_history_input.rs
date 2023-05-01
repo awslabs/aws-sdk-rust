@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIpamAddressHistoryInput  {
+pub struct GetIpamAddressHistoryInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -34,23 +34,23 @@ impl GetIpamAddressHistoryInput {
         self.dry_run
     }
     /// <p>The CIDR you want the history of. The CIDR can be an IPv4 or IPv6 IP address range. If you enter a /16 IPv4 CIDR, you will get records that match it exactly. You will not get records for any subnets within the /16 CIDR.</p>
-    pub fn cidr(&self) -> std::option::Option<& str> {
+    pub fn cidr(&self) -> std::option::Option<&str> {
         self.cidr.as_deref()
     }
     /// <p>The ID of the IPAM scope that the CIDR is in.</p>
-    pub fn ipam_scope_id(&self) -> std::option::Option<& str> {
+    pub fn ipam_scope_id(&self) -> std::option::Option<&str> {
         self.ipam_scope_id.as_deref()
     }
     /// <p>The ID of the VPC you want your history records filtered by.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The start of the time period for which you are looking for history. If you omit this option, it will default to the value of EndTime.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The end of the time period for which you are looking for history. If you omit this option, it will default to the current time.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The maximum number of historical results you would like returned per page. Defaults to 100.</p>
@@ -58,13 +58,15 @@ impl GetIpamAddressHistoryInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetIpamAddressHistoryInput {
     /// Creates a new builder-style object to manufacture [`GetIpamAddressHistoryInput`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput).
-    pub fn builder() -> crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryInputBuilder
+    {
         crate::operation::get_ipam_address_history::builders::GetIpamAddressHistoryInputBuilder::default()
     }
 }
@@ -90,7 +92,8 @@ impl GetIpamAddressHistoryInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The CIDR you want the history of. The CIDR can be an IPv4 or IPv6 IP address range. If you enter a /16 IPv4 CIDR, you will get records that match it exactly. You will not get records for any subnets within the /16 CIDR.</p>
     pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +102,8 @@ impl GetIpamAddressHistoryInputBuilder {
     }
     /// <p>The CIDR you want the history of. The CIDR can be an IPv4 or IPv6 IP address range. If you enter a /16 IPv4 CIDR, you will get records that match it exactly. You will not get records for any subnets within the /16 CIDR.</p>
     pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr = input; self
+        self.cidr = input;
+        self
     }
     /// <p>The ID of the IPAM scope that the CIDR is in.</p>
     pub fn ipam_scope_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +112,8 @@ impl GetIpamAddressHistoryInputBuilder {
     }
     /// <p>The ID of the IPAM scope that the CIDR is in.</p>
     pub fn set_ipam_scope_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_scope_id = input; self
+        self.ipam_scope_id = input;
+        self
     }
     /// <p>The ID of the VPC you want your history records filtered by.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +122,8 @@ impl GetIpamAddressHistoryInputBuilder {
     }
     /// <p>The ID of the VPC you want your history records filtered by.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// <p>The start of the time period for which you are looking for history. If you omit this option, it will default to the value of EndTime.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,8 +131,12 @@ impl GetIpamAddressHistoryInputBuilder {
         self
     }
     /// <p>The start of the time period for which you are looking for history. If you omit this option, it will default to the value of EndTime.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The end of the time period for which you are looking for history. If you omit this option, it will default to the current time.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,7 +145,8 @@ impl GetIpamAddressHistoryInputBuilder {
     }
     /// <p>The end of the time period for which you are looking for history. If you omit this option, it will default to the current time.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The maximum number of historical results you would like returned per page. Defaults to 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -144,7 +155,8 @@ impl GetIpamAddressHistoryInputBuilder {
     }
     /// <p>The maximum number of historical results you would like returned per page. Defaults to 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -153,30 +165,27 @@ impl GetIpamAddressHistoryInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetIpamAddressHistoryInput`](crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput).
-    pub fn build(self) -> Result<crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_ipam_address_history::GetIpamAddressHistoryInput {
-                dry_run: self.dry_run
-                ,
-                cidr: self.cidr
-                ,
-                ipam_scope_id: self.ipam_scope_id
-                ,
-                vpc_id: self.vpc_id
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                dry_run: self.dry_run,
+                cidr: self.cidr,
+                ipam_scope_id: self.ipam_scope_id,
+                vpc_id: self.vpc_id,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

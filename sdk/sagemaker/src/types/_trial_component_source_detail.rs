@@ -3,7 +3,7 @@
 /// <p>Detailed information about the source of a trial component. Either <code>ProcessingJob</code> or <code>TrainingJob</code> is returned.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrialComponentSourceDetail  {
+pub struct TrialComponentSourceDetail {
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct TrialComponentSourceDetail  {
 }
 impl TrialComponentSourceDetail {
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
-    pub fn source_arn(&self) -> std::option::Option<& str> {
+    pub fn source_arn(&self) -> std::option::Option<&str> {
         self.source_arn.as_deref()
     }
     /// <p>Information about a training job that's the source of a trial component.</p>
-    pub fn training_job(&self) -> std::option::Option<& crate::types::TrainingJob> {
+    pub fn training_job(&self) -> std::option::Option<&crate::types::TrainingJob> {
         self.training_job.as_ref()
     }
     /// <p>Information about a processing job that's the source of a trial component.</p>
-    pub fn processing_job(&self) -> std::option::Option<& crate::types::ProcessingJob> {
+    pub fn processing_job(&self) -> std::option::Option<&crate::types::ProcessingJob> {
         self.processing_job.as_ref()
     }
     /// <p>Information about a transform job that's the source of a trial component.</p>
-    pub fn transform_job(&self) -> std::option::Option<& crate::types::TransformJob> {
+    pub fn transform_job(&self) -> std::option::Option<&crate::types::TransformJob> {
         self.transform_job.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl TrialComponentSourceDetailBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the source.</p>
     pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_arn = input; self
+        self.source_arn = input;
+        self
     }
     /// <p>Information about a training job that's the source of a trial component.</p>
     pub fn training_job(mut self, input: crate::types::TrainingJob) -> Self {
@@ -67,8 +68,12 @@ impl TrialComponentSourceDetailBuilder {
         self
     }
     /// <p>Information about a training job that's the source of a trial component.</p>
-    pub fn set_training_job(mut self, input: std::option::Option<crate::types::TrainingJob>) -> Self {
-        self.training_job = input; self
+    pub fn set_training_job(
+        mut self,
+        input: std::option::Option<crate::types::TrainingJob>,
+    ) -> Self {
+        self.training_job = input;
+        self
     }
     /// <p>Information about a processing job that's the source of a trial component.</p>
     pub fn processing_job(mut self, input: crate::types::ProcessingJob) -> Self {
@@ -76,8 +81,12 @@ impl TrialComponentSourceDetailBuilder {
         self
     }
     /// <p>Information about a processing job that's the source of a trial component.</p>
-    pub fn set_processing_job(mut self, input: std::option::Option<crate::types::ProcessingJob>) -> Self {
-        self.processing_job = input; self
+    pub fn set_processing_job(
+        mut self,
+        input: std::option::Option<crate::types::ProcessingJob>,
+    ) -> Self {
+        self.processing_job = input;
+        self
     }
     /// <p>Information about a transform job that's the source of a trial component.</p>
     pub fn transform_job(mut self, input: crate::types::TransformJob) -> Self {
@@ -85,21 +94,20 @@ impl TrialComponentSourceDetailBuilder {
         self
     }
     /// <p>Information about a transform job that's the source of a trial component.</p>
-    pub fn set_transform_job(mut self, input: std::option::Option<crate::types::TransformJob>) -> Self {
-        self.transform_job = input; self
+    pub fn set_transform_job(
+        mut self,
+        input: std::option::Option<crate::types::TransformJob>,
+    ) -> Self {
+        self.transform_job = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrialComponentSourceDetail`](crate::types::TrialComponentSourceDetail).
     pub fn build(self) -> crate::types::TrialComponentSourceDetail {
         crate::types::TrialComponentSourceDetail {
-            source_arn: self.source_arn
-            ,
-            training_job: self.training_job
-            ,
-            processing_job: self.processing_job
-            ,
-            transform_job: self.transform_job
-            ,
+            source_arn: self.source_arn,
+            training_job: self.training_job,
+            processing_job: self.processing_job,
+            transform_job: self.transform_job,
         }
     }
 }
-

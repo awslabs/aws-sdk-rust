@@ -3,7 +3,7 @@
 #[deprecated(note = "This operation is no longer supported.")]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPositionConfigurationInput  {
+pub struct PutPositionConfigurationInput {
     /// <p>Resource identifier used to update the position configuration.</p>
     #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
@@ -19,25 +19,27 @@ pub struct PutPositionConfigurationInput  {
 }
 impl PutPositionConfigurationInput {
     /// <p>Resource identifier used to update the position configuration.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<& str> {
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
     /// <p>Resource type of the resource for which you want to update the position configuration.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::PositionResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::PositionResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
-    pub fn solvers(&self) -> std::option::Option<& crate::types::PositionSolverConfigurations> {
+    pub fn solvers(&self) -> std::option::Option<&crate::types::PositionSolverConfigurations> {
         self.solvers.as_ref()
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
-    pub fn destination(&self) -> std::option::Option<& str> {
+    pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
 }
 impl PutPositionConfigurationInput {
     /// Creates a new builder-style object to manufacture [`PutPositionConfigurationInput`](crate::operation::put_position_configuration::PutPositionConfigurationInput).
-    pub fn builder() -> crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder
+    {
         crate::operation::put_position_configuration::builders::PutPositionConfigurationInputBuilder::default()
     }
 }
@@ -58,8 +60,12 @@ impl PutPositionConfigurationInputBuilder {
         self
     }
     /// <p>Resource identifier used to update the position configuration.</p>
-    pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_identifier = input; self
+    pub fn set_resource_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_identifier = input;
+        self
     }
     /// <p>Resource type of the resource for which you want to update the position configuration.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
@@ -67,8 +73,12 @@ impl PutPositionConfigurationInputBuilder {
         self
     }
     /// <p>Resource type of the resource for which you want to update the position configuration.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::PositionResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::PositionResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
     pub fn solvers(mut self, input: crate::types::PositionSolverConfigurations) -> Self {
@@ -76,8 +86,12 @@ impl PutPositionConfigurationInputBuilder {
         self
     }
     /// <p>The positioning solvers used to update the position configuration of the resource.</p>
-    pub fn set_solvers(mut self, input: std::option::Option<crate::types::PositionSolverConfigurations>) -> Self {
-        self.solvers = input; self
+    pub fn set_solvers(
+        mut self,
+        input: std::option::Option<crate::types::PositionSolverConfigurations>,
+    ) -> Self {
+        self.solvers = input;
+        self
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
     pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,22 +100,23 @@ impl PutPositionConfigurationInputBuilder {
     }
     /// <p>The position data destination that describes the AWS IoT rule that processes the device's position data for use by AWS IoT Core for LoRaWAN.</p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination = input; self
+        self.destination = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutPositionConfigurationInput`](crate::operation::put_position_configuration::PutPositionConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::put_position_configuration::PutPositionConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_position_configuration::PutPositionConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_position_configuration::PutPositionConfigurationInput {
-                resource_identifier: self.resource_identifier
-                ,
-                resource_type: self.resource_type
-                ,
-                solvers: self.solvers
-                ,
-                destination: self.destination
-                ,
-            }
+                resource_identifier: self.resource_identifier,
+                resource_type: self.resource_type,
+                solvers: self.solvers,
+                destination: self.destination,
+            },
         )
     }
 }
-

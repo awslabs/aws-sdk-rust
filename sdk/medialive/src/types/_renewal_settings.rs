@@ -3,7 +3,7 @@
 /// The Renewal settings for Reservations
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RenewalSettings  {
+pub struct RenewalSettings {
     /// Automatic renewal status for the reservation
     #[doc(hidden)]
     pub automatic_renewal: std::option::Option<crate::types::ReservationAutomaticRenewal>,
@@ -13,7 +13,9 @@ pub struct RenewalSettings  {
 }
 impl RenewalSettings {
     /// Automatic renewal status for the reservation
-    pub fn automatic_renewal(&self) -> std::option::Option<& crate::types::ReservationAutomaticRenewal> {
+    pub fn automatic_renewal(
+        &self,
+    ) -> std::option::Option<&crate::types::ReservationAutomaticRenewal> {
         self.automatic_renewal.as_ref()
     }
     /// Count for the reservation renewal
@@ -42,8 +44,12 @@ impl RenewalSettingsBuilder {
         self
     }
     /// Automatic renewal status for the reservation
-    pub fn set_automatic_renewal(mut self, input: std::option::Option<crate::types::ReservationAutomaticRenewal>) -> Self {
-        self.automatic_renewal = input; self
+    pub fn set_automatic_renewal(
+        mut self,
+        input: std::option::Option<crate::types::ReservationAutomaticRenewal>,
+    ) -> Self {
+        self.automatic_renewal = input;
+        self
     }
     /// Count for the reservation renewal
     pub fn renewal_count(mut self, input: i32) -> Self {
@@ -52,17 +58,14 @@ impl RenewalSettingsBuilder {
     }
     /// Count for the reservation renewal
     pub fn set_renewal_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.renewal_count = input; self
+        self.renewal_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`RenewalSettings`](crate::types::RenewalSettings).
     pub fn build(self) -> crate::types::RenewalSettings {
         crate::types::RenewalSettings {
-            automatic_renewal: self.automatic_renewal
-            ,
-            renewal_count: self.renewal_count
-                .unwrap_or_default()
-            ,
+            automatic_renewal: self.automatic_renewal,
+            renewal_count: self.renewal_count.unwrap_or_default(),
         }
     }
 }
-

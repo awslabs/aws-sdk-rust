@@ -3,14 +3,14 @@
 /// <p> Specifies one or more service names that are used to list anomalies. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnomaliesForInsightFilters  {
+pub struct ListAnomaliesForInsightFilters {
     /// <p>A collection of the names of Amazon Web Services services.</p>
     #[doc(hidden)]
     pub service_collection: std::option::Option<crate::types::ServiceCollection>,
 }
 impl ListAnomaliesForInsightFilters {
     /// <p>A collection of the names of Amazon Web Services services.</p>
-    pub fn service_collection(&self) -> std::option::Option<& crate::types::ServiceCollection> {
+    pub fn service_collection(&self) -> std::option::Option<&crate::types::ServiceCollection> {
         self.service_collection.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ListAnomaliesForInsightFiltersBuilder {
         self
     }
     /// <p>A collection of the names of Amazon Web Services services.</p>
-    pub fn set_service_collection(mut self, input: std::option::Option<crate::types::ServiceCollection>) -> Self {
-        self.service_collection = input; self
+    pub fn set_service_collection(
+        mut self,
+        input: std::option::Option<crate::types::ServiceCollection>,
+    ) -> Self {
+        self.service_collection = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAnomaliesForInsightFilters`](crate::types::ListAnomaliesForInsightFilters).
     pub fn build(self) -> crate::types::ListAnomaliesForInsightFilters {
         crate::types::ListAnomaliesForInsightFilters {
-            service_collection: self.service_collection
-            ,
+            service_collection: self.service_collection,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a> that specifies the tip of a branch in an associated repository.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryHeadSourceCodeType  {
+pub struct RepositoryHeadSourceCodeType {
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
     #[doc(hidden)]
     pub branch_name: std::option::Option<std::string::String>,
 }
 impl RepositoryHeadSourceCodeType {
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
-    pub fn branch_name(&self) -> std::option::Option<& str> {
+    pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl RepositoryHeadSourceCodeTypeBuilder {
     }
     /// <p>The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code> specifies the tip of this branch.</p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input; self
+        self.branch_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`RepositoryHeadSourceCodeType`](crate::types::RepositoryHeadSourceCodeType).
     pub fn build(self) -> crate::types::RepositoryHeadSourceCodeType {
         crate::types::RepositoryHeadSourceCodeType {
-            branch_name: self.branch_name
-            ,
+            branch_name: self.branch_name,
         }
     }
 }
-

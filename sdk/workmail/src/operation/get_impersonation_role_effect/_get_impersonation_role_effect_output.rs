@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImpersonationRoleEffectOutput  {
+pub struct GetImpersonationRoleEffectOutput {
     /// <p>The impersonation role type.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::ImpersonationRoleType>,
@@ -16,26 +16,26 @@ pub struct GetImpersonationRoleEffectOutput  {
 }
 impl GetImpersonationRoleEffectOutput {
     /// <p>The impersonation role type.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ImpersonationRoleType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ImpersonationRoleType> {
         self.r#type.as_ref()
     }
     /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
-    pub fn effect(&self) -> std::option::Option<& crate::types::AccessEffect> {
+    pub fn effect(&self) -> std::option::Option<&crate::types::AccessEffect> {
         self.effect.as_ref()
     }
     /// <p>A list of the rules that match the input and produce the configured effect.</p>
-    pub fn matched_rules(&self) -> std::option::Option<& [crate::types::ImpersonationMatchedRule]> {
+    pub fn matched_rules(&self) -> std::option::Option<&[crate::types::ImpersonationMatchedRule]> {
         self.matched_rules.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetImpersonationRoleEffectOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetImpersonationRoleEffectOutput {
     /// Creates a new builder-style object to manufacture [`GetImpersonationRoleEffectOutput`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput).
-    pub fn builder() -> crate::operation::get_impersonation_role_effect::builders::GetImpersonationRoleEffectOutputBuilder {
+    pub fn builder() -> crate::operation::get_impersonation_role_effect::builders::GetImpersonationRoleEffectOutputBuilder{
         crate::operation::get_impersonation_role_effect::builders::GetImpersonationRoleEffectOutputBuilder::default()
     }
 }
@@ -46,7 +46,8 @@ impl GetImpersonationRoleEffectOutput {
 pub struct GetImpersonationRoleEffectOutputBuilder {
     pub(crate) r#type: std::option::Option<crate::types::ImpersonationRoleType>,
     pub(crate) effect: std::option::Option<crate::types::AccessEffect>,
-    pub(crate) matched_rules: std::option::Option<std::vec::Vec<crate::types::ImpersonationMatchedRule>>,
+    pub(crate) matched_rules:
+        std::option::Option<std::vec::Vec<crate::types::ImpersonationMatchedRule>>,
     _request_id: Option<String>,
 }
 impl GetImpersonationRoleEffectOutputBuilder {
@@ -56,8 +57,12 @@ impl GetImpersonationRoleEffectOutputBuilder {
         self
     }
     /// <p>The impersonation role type.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ImpersonationRoleType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::ImpersonationRoleType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn effect(mut self, input: crate::types::AccessEffect) -> Self {
@@ -66,7 +71,8 @@ impl GetImpersonationRoleEffectOutputBuilder {
     }
     /// <p> <code></code>Effect of the impersonation role on the target user based on its rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
     pub fn set_effect(mut self, input: std::option::Option<crate::types::AccessEffect>) -> Self {
-        self.effect = input; self
+        self.effect = input;
+        self
     }
     /// Appends an item to `matched_rules`.
     ///
@@ -75,34 +81,36 @@ impl GetImpersonationRoleEffectOutputBuilder {
     /// <p>A list of the rules that match the input and produce the configured effect.</p>
     pub fn matched_rules(mut self, input: crate::types::ImpersonationMatchedRule) -> Self {
         let mut v = self.matched_rules.unwrap_or_default();
-                        v.push(input);
-                        self.matched_rules = Some(v);
-                        self
+        v.push(input);
+        self.matched_rules = Some(v);
+        self
     }
     /// <p>A list of the rules that match the input and produce the configured effect.</p>
-    pub fn set_matched_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImpersonationMatchedRule>>) -> Self {
-        self.matched_rules = input; self
+    pub fn set_matched_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ImpersonationMatchedRule>>,
+    ) -> Self {
+        self.matched_rules = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetImpersonationRoleEffectOutput`](crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput).
-    pub fn build(self) -> crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput {
         crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput {
-            r#type: self.r#type
-            ,
-            effect: self.effect
-            ,
-            matched_rules: self.matched_rules
-            ,
+            r#type: self.r#type,
+            effect: self.effect,
+            matched_rules: self.matched_rules,
             _request_id: self._request_id,
         }
     }
 }
-

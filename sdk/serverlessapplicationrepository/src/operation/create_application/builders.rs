@@ -4,50 +4,70 @@ pub use crate::operation::create_application::_create_application_output::Create
 pub use crate::operation::create_application::_create_application_input::CreateApplicationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateApplication`.
-/// 
+///
 /// <p>Creates an application, optionally including an AWS SAM file to create the first application version in the same call.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateApplicationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_application::builders::CreateApplicationInputBuilder,
+    inner: crate::operation::create_application::builders::CreateApplicationInputBuilder,
 }
-impl CreateApplicationFluentBuilder  {
+impl CreateApplicationFluentBuilder {
     /// Creates a new `CreateApplication`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_application::CreateApplication, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_application::CreateApplicationOutput, aws_smithy_http::result::SdkError<crate::operation::create_application::CreateApplicationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_application::CreateApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_application::CreateApplicationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_application::CreateApplicationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_application::CreateApplicationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the author publishing the app.</p>
     /// <p>Minimum length=1. Maximum length=127.</p>
     /// <p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
@@ -98,7 +118,10 @@ impl CreateApplicationFluentBuilder  {
     /// <p>Labels to improve discovery of apps in search results.</p>
     /// <p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
     /// <p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
-    pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_labels(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_labels(input);
         self
     }
@@ -192,7 +215,10 @@ impl CreateApplicationFluentBuilder  {
     }
     /// <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p>
     /// <p>Maximum size 50 MB</p>
-    pub fn set_source_code_archive_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_code_archive_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_code_archive_url(input);
         self
     }
@@ -241,4 +267,3 @@ impl CreateApplicationFluentBuilder  {
         self
     }
 }
-

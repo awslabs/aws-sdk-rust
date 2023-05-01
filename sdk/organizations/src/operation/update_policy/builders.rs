@@ -4,70 +4,86 @@ pub use crate::operation::update_policy::_update_policy_output::UpdatePolicyOutp
 pub use crate::operation::update_policy::_update_policy_input::UpdatePolicyInputBuilder;
 
 /// Fluent builder constructing a request to `UpdatePolicy`.
-/// 
-/// <p>Updates an existing policy with a new name, description, or content. If you don't supply any parameter, that value remains unchanged. You can't change a policy's type.</p> 
+///
+/// <p>Updates an existing policy with a new name, description, or content. If you don't supply any parameter, that value remains unchanged. You can't change a policy's type.</p>
 /// <p>This operation can be called only from the organization's management account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_policy::builders::UpdatePolicyInputBuilder,
+    inner: crate::operation::update_policy::builders::UpdatePolicyInputBuilder,
 }
-impl UpdatePolicyFluentBuilder  {
+impl UpdatePolicyFluentBuilder {
     /// Creates a new `UpdatePolicy`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_policy::UpdatePolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_policy::UpdatePolicyError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_policy::UpdatePolicyOutput, aws_smithy_http::result::SdkError<crate::operation::update_policy::UpdatePolicyError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The unique identifier (ID) of the policy that you want to update.</p> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_policy::UpdatePolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_policy::UpdatePolicyError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_policy::UpdatePolicyOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_policy::UpdatePolicyError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The unique identifier (ID) of the policy that you want to update.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.policy_id(input.into());
         self
     }
-    /// <p>The unique identifier (ID) of the policy that you want to update.</p> 
+    /// <p>The unique identifier (ID) of the policy that you want to update.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).</p>
     pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_policy_id(input);
         self
     }
-    /// <p>If provided, the new name for the policy.</p> 
+    /// <p>If provided, the new name for the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>If provided, the new name for the policy.</p> 
+    /// <p>If provided, the new name for the policy.</p>
     /// <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to validate this parameter is a string of any of the characters in the ASCII character range.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
@@ -94,4 +110,3 @@ impl UpdatePolicyFluentBuilder  {
         self
     }
 }
-

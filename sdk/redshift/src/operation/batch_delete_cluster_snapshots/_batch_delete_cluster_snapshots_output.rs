@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteClusterSnapshotsOutput  {
+pub struct BatchDeleteClusterSnapshotsOutput {
     /// <p>A list of the snapshot identifiers that were deleted. </p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,22 @@ pub struct BatchDeleteClusterSnapshotsOutput  {
 }
 impl BatchDeleteClusterSnapshotsOutput {
     /// <p>A list of the snapshot identifiers that were deleted. </p>
-    pub fn resources(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
     }
     /// <p>A list of any errors returned.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::SnapshotErrorMessage]> {
+    pub fn errors(&self) -> std::option::Option<&[crate::types::SnapshotErrorMessage]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchDeleteClusterSnapshotsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchDeleteClusterSnapshotsOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteClusterSnapshotsOutput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput).
-    pub fn builder() -> crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsOutputBuilder {
+    pub fn builder() -> crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsOutputBuilder{
         crate::operation::batch_delete_cluster_snapshots::builders::BatchDeleteClusterSnapshotsOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl BatchDeleteClusterSnapshotsOutputBuilder {
     /// <p>A list of the snapshot identifiers that were deleted. </p>
     pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-                        v.push(input.into());
-                        self.resources = Some(v);
-                        self
+        v.push(input.into());
+        self.resources = Some(v);
+        self
     }
     /// <p>A list of the snapshot identifiers that were deleted. </p>
-    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resources = input; self
+    pub fn set_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resources = input;
+        self
     }
     /// Appends an item to `errors`.
     ///
@@ -64,32 +68,35 @@ impl BatchDeleteClusterSnapshotsOutputBuilder {
     /// <p>A list of any errors returned.</p>
     pub fn errors(mut self, input: crate::types::SnapshotErrorMessage) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>A list of any errors returned.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::SnapshotErrorMessage>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SnapshotErrorMessage>>,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchDeleteClusterSnapshotsOutput`](crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput).
-    pub fn build(self) -> crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput {
         crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput {
-            resources: self.resources
-            ,
-            errors: self.errors
-            ,
+            resources: self.resources,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }
 }
-

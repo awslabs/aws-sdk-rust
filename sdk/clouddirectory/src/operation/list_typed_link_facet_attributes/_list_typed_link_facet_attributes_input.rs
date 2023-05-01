@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTypedLinkFacetAttributesInput  {
+pub struct ListTypedLinkFacetAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListTypedLinkFacetAttributesInput  {
 }
 impl ListTypedLinkFacetAttributesInput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The unique name of the typed link facet.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to retrieve.</p>
@@ -36,7 +36,7 @@ impl ListTypedLinkFacetAttributesInput {
 }
 impl ListTypedLinkFacetAttributesInput {
     /// Creates a new builder-style object to manufacture [`ListTypedLinkFacetAttributesInput`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput).
-    pub fn builder() -> crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder {
+    pub fn builder() -> crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder{
         crate::operation::list_typed_link_facet_attributes::builders::ListTypedLinkFacetAttributesInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl ListTypedLinkFacetAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     /// <p>The unique name of the typed link facet.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl ListTypedLinkFacetAttributesInputBuilder {
     }
     /// <p>The unique name of the typed link facet.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl ListTypedLinkFacetAttributesInputBuilder {
     }
     /// <p>The pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +88,23 @@ impl ListTypedLinkFacetAttributesInputBuilder {
     }
     /// <p>The maximum number of results to retrieve.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTypedLinkFacetAttributesInput`](crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput).
-    pub fn build(self) -> Result<crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesInput {
-                schema_arn: self.schema_arn
-                ,
-                name: self.name
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                schema_arn: self.schema_arn,
+                name: self.name,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

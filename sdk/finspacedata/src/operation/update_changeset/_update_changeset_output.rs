@@ -3,7 +3,7 @@
 /// The response from a update changeset operation.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateChangesetOutput  {
+pub struct UpdateChangesetOutput {
     /// <p>The unique identifier for the Changeset to update.</p>
     #[doc(hidden)]
     pub changeset_id: std::option::Option<std::string::String>,
@@ -14,19 +14,19 @@ pub struct UpdateChangesetOutput  {
 }
 impl UpdateChangesetOutput {
     /// <p>The unique identifier for the Changeset to update.</p>
-    pub fn changeset_id(&self) -> std::option::Option<& str> {
+    pub fn changeset_id(&self) -> std::option::Option<&str> {
         self.changeset_id.as_deref()
     }
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
-    pub fn dataset_id(&self) -> std::option::Option<& str> {
+    pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateChangesetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateChangesetOutput {
     /// Creates a new builder-style object to manufacture [`UpdateChangesetOutput`](crate::operation::update_changeset::UpdateChangesetOutput).
     pub fn builder() -> crate::operation::update_changeset::builders::UpdateChangesetOutputBuilder {
@@ -50,7 +50,8 @@ impl UpdateChangesetOutputBuilder {
     }
     /// <p>The unique identifier for the Changeset to update.</p>
     pub fn set_changeset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.changeset_id = input; self
+        self.changeset_id = input;
+        self
     }
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
     pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,26 +60,24 @@ impl UpdateChangesetOutputBuilder {
     }
     /// <p>The unique identifier for the FinSpace Dataset in which the Changeset is created.</p>
     pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_id = input; self
+        self.dataset_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateChangesetOutput`](crate::operation::update_changeset::UpdateChangesetOutput).
     pub fn build(self) -> crate::operation::update_changeset::UpdateChangesetOutput {
         crate::operation::update_changeset::UpdateChangesetOutput {
-            changeset_id: self.changeset_id
-            ,
-            dataset_id: self.dataset_id
-            ,
+            changeset_id: self.changeset_id,
+            dataset_id: self.dataset_id,
             _request_id: self._request_id,
         }
     }
 }
-

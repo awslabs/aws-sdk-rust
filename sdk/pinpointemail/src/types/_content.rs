@@ -3,7 +3,7 @@
 /// <p>An object that represents the content of the email, and optionally a character set specification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Content  {
+pub struct Content {
     /// <p>The content of the message itself.</p>
     #[doc(hidden)]
     pub data: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Content  {
 }
 impl Content {
     /// <p>The content of the message itself.</p>
-    pub fn data(&self) -> std::option::Option<& str> {
+    pub fn data(&self) -> std::option::Option<&str> {
         self.data.as_deref()
     }
     /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon Pinpoint uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
-    pub fn charset(&self) -> std::option::Option<& str> {
+    pub fn charset(&self) -> std::option::Option<&str> {
         self.charset.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ContentBuilder {
     }
     /// <p>The content of the message itself.</p>
     pub fn set_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data = input; self
+        self.data = input;
+        self
     }
     /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon Pinpoint uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
     pub fn charset(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ContentBuilder {
     }
     /// <p>The character set for the content. Because of the constraints of the SMTP protocol, Amazon Pinpoint uses 7-bit ASCII by default. If the text includes characters outside of the ASCII range, you have to specify a character set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.</p>
     pub fn set_charset(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.charset = input; self
+        self.charset = input;
+        self
     }
     /// Consumes the builder and constructs a [`Content`](crate::types::Content).
     pub fn build(self) -> crate::types::Content {
         crate::types::Content {
-            data: self.data
-            ,
-            charset: self.charset
-            ,
+            data: self.data,
+            charset: self.charset,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Input object for the model.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModelInput  {
+pub struct ModelInput {
     /// <p>The input configuration object for the model.</p>
     #[doc(hidden)]
     pub data_input_config: std::option::Option<std::string::String>,
 }
 impl ModelInput {
     /// <p>The input configuration object for the model.</p>
-    pub fn data_input_config(&self) -> std::option::Option<& str> {
+    pub fn data_input_config(&self) -> std::option::Option<&str> {
         self.data_input_config.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl ModelInputBuilder {
         self
     }
     /// <p>The input configuration object for the model.</p>
-    pub fn set_data_input_config(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_input_config = input; self
+    pub fn set_data_input_config(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.data_input_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModelInput`](crate::types::ModelInput).
     pub fn build(self) -> crate::types::ModelInput {
         crate::types::ModelInput {
-            data_input_config: self.data_input_config
-            ,
+            data_input_config: self.data_input_config,
         }
     }
 }
-

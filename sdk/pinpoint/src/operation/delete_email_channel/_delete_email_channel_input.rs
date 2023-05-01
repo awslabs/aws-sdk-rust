@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEmailChannelInput  {
+pub struct DeleteEmailChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
 }
 impl DeleteEmailChannelInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
 }
 impl DeleteEmailChannelInput {
     /// Creates a new builder-style object to manufacture [`DeleteEmailChannelInput`](crate::operation::delete_email_channel::DeleteEmailChannelInput).
-    pub fn builder() -> crate::operation::delete_email_channel::builders::DeleteEmailChannelInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_email_channel::builders::DeleteEmailChannelInputBuilder {
         crate::operation::delete_email_channel::builders::DeleteEmailChannelInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteEmailChannelInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteEmailChannelInput`](crate::operation::delete_email_channel::DeleteEmailChannelInput).
-    pub fn build(self) -> Result<crate::operation::delete_email_channel::DeleteEmailChannelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_email_channel::DeleteEmailChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_email_channel::DeleteEmailChannelInput {
-                application_id: self.application_id
-                ,
-            }
+                application_id: self.application_id,
+            },
         )
     }
 }
-

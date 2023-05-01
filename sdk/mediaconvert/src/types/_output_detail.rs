@@ -3,7 +3,7 @@
 /// Details regarding output
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OutputDetail  {
+pub struct OutputDetail {
     /// Duration in milliseconds
     #[doc(hidden)]
     pub duration_in_ms: i32,
@@ -17,7 +17,7 @@ impl OutputDetail {
         self.duration_in_ms
     }
     /// Contains details about the output's video stream
-    pub fn video_details(&self) -> std::option::Option<& crate::types::VideoDetail> {
+    pub fn video_details(&self) -> std::option::Option<&crate::types::VideoDetail> {
         self.video_details.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl OutputDetailBuilder {
     }
     /// Duration in milliseconds
     pub fn set_duration_in_ms(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration_in_ms = input; self
+        self.duration_in_ms = input;
+        self
     }
     /// Contains details about the output's video stream
     pub fn video_details(mut self, input: crate::types::VideoDetail) -> Self {
@@ -51,18 +52,18 @@ impl OutputDetailBuilder {
         self
     }
     /// Contains details about the output's video stream
-    pub fn set_video_details(mut self, input: std::option::Option<crate::types::VideoDetail>) -> Self {
-        self.video_details = input; self
+    pub fn set_video_details(
+        mut self,
+        input: std::option::Option<crate::types::VideoDetail>,
+    ) -> Self {
+        self.video_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`OutputDetail`](crate::types::OutputDetail).
     pub fn build(self) -> crate::types::OutputDetail {
         crate::types::OutputDetail {
-            duration_in_ms: self.duration_in_ms
-                .unwrap_or_default()
-            ,
-            video_details: self.video_details
-            ,
+            duration_in_ms: self.duration_in_ms.unwrap_or_default(),
+            video_details: self.video_details,
         }
     }
 }
-

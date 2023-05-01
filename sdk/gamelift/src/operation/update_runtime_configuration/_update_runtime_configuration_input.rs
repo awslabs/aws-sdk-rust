@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRuntimeConfigurationInput  {
+pub struct UpdateRuntimeConfigurationInput {
     /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct UpdateRuntimeConfigurationInput  {
 }
 impl UpdateRuntimeConfigurationInput {
     /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
-    pub fn runtime_configuration(&self) -> std::option::Option<& crate::types::RuntimeConfiguration> {
+    pub fn runtime_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::RuntimeConfiguration> {
         self.runtime_configuration.as_ref()
     }
 }
 impl UpdateRuntimeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`UpdateRuntimeConfigurationInput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput).
-    pub fn builder() -> crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder{
         crate::operation::update_runtime_configuration::builders::UpdateRuntimeConfigurationInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl UpdateRuntimeConfigurationInputBuilder {
     }
     /// <p>A unique identifier for the fleet to update runtime configuration for. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
     pub fn runtime_configuration(mut self, input: crate::types::RuntimeConfiguration) -> Self {
@@ -50,19 +53,25 @@ impl UpdateRuntimeConfigurationInputBuilder {
         self
     }
     /// <p>Instructions for launching server processes on each instance in the fleet. Server processes run either a custom game build executable or a Realtime Servers script. The runtime configuration lists the types of server processes to run on an instance, how to launch them, and the number of processes to run concurrently.</p>
-    pub fn set_runtime_configuration(mut self, input: std::option::Option<crate::types::RuntimeConfiguration>) -> Self {
-        self.runtime_configuration = input; self
+    pub fn set_runtime_configuration(
+        mut self,
+        input: std::option::Option<crate::types::RuntimeConfiguration>,
+    ) -> Self {
+        self.runtime_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRuntimeConfigurationInput`](crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_runtime_configuration::UpdateRuntimeConfigurationInput {
-                fleet_id: self.fleet_id
-                ,
-                runtime_configuration: self.runtime_configuration
-                ,
-            }
+                fleet_id: self.fleet_id,
+                runtime_configuration: self.runtime_configuration,
+            },
         )
     }
 }
-

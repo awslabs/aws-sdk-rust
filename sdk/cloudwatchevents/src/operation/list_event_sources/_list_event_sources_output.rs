@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventSourcesOutput  {
+pub struct ListEventSourcesOutput {
     /// <p>The list of event sources.</p>
     #[doc(hidden)]
     pub event_sources: std::option::Option<std::vec::Vec<crate::types::EventSource>>,
@@ -13,22 +13,23 @@ pub struct ListEventSourcesOutput  {
 }
 impl ListEventSourcesOutput {
     /// <p>The list of event sources.</p>
-    pub fn event_sources(&self) -> std::option::Option<& [crate::types::EventSource]> {
+    pub fn event_sources(&self) -> std::option::Option<&[crate::types::EventSource]> {
         self.event_sources.as_deref()
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEventSourcesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListEventSourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListEventSourcesOutput`](crate::operation::list_event_sources::ListEventSourcesOutput).
-    pub fn builder() -> crate::operation::list_event_sources::builders::ListEventSourcesOutputBuilder {
+    pub fn builder() -> crate::operation::list_event_sources::builders::ListEventSourcesOutputBuilder
+    {
         crate::operation::list_event_sources::builders::ListEventSourcesOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListEventSourcesOutputBuilder {
     /// <p>The list of event sources.</p>
     pub fn event_sources(mut self, input: crate::types::EventSource) -> Self {
         let mut v = self.event_sources.unwrap_or_default();
-                        v.push(input);
-                        self.event_sources = Some(v);
-                        self
+        v.push(input);
+        self.event_sources = Some(v);
+        self
     }
     /// <p>The list of event sources.</p>
-    pub fn set_event_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventSource>>) -> Self {
-        self.event_sources = input; self
+    pub fn set_event_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventSource>>,
+    ) -> Self {
+        self.event_sources = input;
+        self
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListEventSourcesOutputBuilder {
     }
     /// <p>A token you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListEventSourcesOutput`](crate::operation::list_event_sources::ListEventSourcesOutput).
     pub fn build(self) -> crate::operation::list_event_sources::ListEventSourcesOutput {
         crate::operation::list_event_sources::ListEventSourcesOutput {
-            event_sources: self.event_sources
-            ,
-            next_token: self.next_token
-            ,
+            event_sources: self.event_sources,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DeleteDocumentVersionInput  {
+pub struct DeleteDocumentVersionInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct DeleteDocumentVersionInput  {
 }
 impl DeleteDocumentVersionInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the document associated with the version being deleted.</p>
-    pub fn document_id(&self) -> std::option::Option<& str> {
+    pub fn document_id(&self) -> std::option::Option<&str> {
         self.document_id.as_deref()
     }
     /// <p>The ID of the version being deleted.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>Deletes all versions of a document prior to the current version.</p>
@@ -34,7 +34,7 @@ impl DeleteDocumentVersionInput {
         self.delete_prior_versions
     }
 }
-impl  std::fmt::Debug for DeleteDocumentVersionInput  {
+impl std::fmt::Debug for DeleteDocumentVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteDocumentVersionInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -46,7 +46,9 @@ impl  std::fmt::Debug for DeleteDocumentVersionInput  {
 }
 impl DeleteDocumentVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteDocumentVersionInput`](crate::operation::delete_document_version::DeleteDocumentVersionInput).
-    pub fn builder() -> crate::operation::delete_document_version::builders::DeleteDocumentVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_document_version::builders::DeleteDocumentVersionInputBuilder
+    {
         crate::operation::delete_document_version::builders::DeleteDocumentVersionInputBuilder::default()
     }
 }
@@ -67,8 +69,12 @@ impl DeleteDocumentVersionInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The ID of the document associated with the version being deleted.</p>
     pub fn document_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +83,8 @@ impl DeleteDocumentVersionInputBuilder {
     }
     /// <p>The ID of the document associated with the version being deleted.</p>
     pub fn set_document_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.document_id = input; self
+        self.document_id = input;
+        self
     }
     /// <p>The ID of the version being deleted.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +93,8 @@ impl DeleteDocumentVersionInputBuilder {
     }
     /// <p>The ID of the version being deleted.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// <p>Deletes all versions of a document prior to the current version.</p>
     pub fn delete_prior_versions(mut self, input: bool) -> Self {
@@ -95,21 +103,23 @@ impl DeleteDocumentVersionInputBuilder {
     }
     /// <p>Deletes all versions of a document prior to the current version.</p>
     pub fn set_delete_prior_versions(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_prior_versions = input; self
+        self.delete_prior_versions = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDocumentVersionInput`](crate::operation::delete_document_version::DeleteDocumentVersionInput).
-    pub fn build(self) -> Result<crate::operation::delete_document_version::DeleteDocumentVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_document_version::DeleteDocumentVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_document_version::DeleteDocumentVersionInput {
-                authentication_token: self.authentication_token
-                ,
-                document_id: self.document_id
-                ,
-                version_id: self.version_id
-                ,
-                delete_prior_versions: self.delete_prior_versions
-                ,
-            }
+                authentication_token: self.authentication_token,
+                document_id: self.document_id,
+                version_id: self.version_id,
+                delete_prior_versions: self.delete_prior_versions,
+            },
         )
     }
 }
@@ -123,4 +133,3 @@ impl std::fmt::Debug for DeleteDocumentVersionInputBuilder {
         formatter.finish()
     }
 }
-

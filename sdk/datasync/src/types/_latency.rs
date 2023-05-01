@@ -3,7 +3,7 @@
 /// <p>The latency peaks for an on-premises storage system resource. Each data point represents the 95th percentile peak value during a 1-hour interval.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Latency  {
+pub struct Latency {
     /// <p>Peak latency for read operations.</p>
     #[doc(hidden)]
     pub read: std::option::Option<f64>,
@@ -51,7 +51,8 @@ impl LatencyBuilder {
     }
     /// <p>Peak latency for read operations.</p>
     pub fn set_read(mut self, input: std::option::Option<f64>) -> Self {
-        self.read = input; self
+        self.read = input;
+        self
     }
     /// <p>Peak latency for write operations.</p>
     pub fn write(mut self, input: f64) -> Self {
@@ -60,7 +61,8 @@ impl LatencyBuilder {
     }
     /// <p>Peak latency for write operations.</p>
     pub fn set_write(mut self, input: std::option::Option<f64>) -> Self {
-        self.write = input; self
+        self.write = input;
+        self
     }
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
     pub fn other(mut self, input: f64) -> Self {
@@ -69,18 +71,15 @@ impl LatencyBuilder {
     }
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
     pub fn set_other(mut self, input: std::option::Option<f64>) -> Self {
-        self.other = input; self
+        self.other = input;
+        self
     }
     /// Consumes the builder and constructs a [`Latency`](crate::types::Latency).
     pub fn build(self) -> crate::types::Latency {
         crate::types::Latency {
-            read: self.read
-            ,
-            write: self.write
-            ,
-            other: self.other
-            ,
+            read: self.read,
+            write: self.write,
+            other: self.other,
         }
     }
 }
-

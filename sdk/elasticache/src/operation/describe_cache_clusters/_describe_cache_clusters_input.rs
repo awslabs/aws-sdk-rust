@@ -3,12 +3,12 @@
 /// <p>Represents the input of a <code>DescribeCacheClusters</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCacheClustersInput  {
+pub struct DescribeCacheClustersInput {
     /// <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.</p>
     #[doc(hidden)]
     pub cache_cluster_id: std::option::Option<std::string::String>,
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> 
-    /// <p>Default: 100</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -24,17 +24,17 @@ pub struct DescribeCacheClustersInput  {
 }
 impl DescribeCacheClustersInput {
     /// <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.</p>
-    pub fn cache_cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cache_cluster_id(&self) -> std::option::Option<&str> {
         self.cache_cluster_id.as_deref()
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> 
-    /// <p>Default: 100</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub fn max_records(&self) -> std::option::Option<i32> {
         self.max_records
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information about the individual cache nodes.</p>
@@ -48,7 +48,9 @@ impl DescribeCacheClustersInput {
 }
 impl DescribeCacheClustersInput {
     /// Creates a new builder-style object to manufacture [`DescribeCacheClustersInput`](crate::operation::describe_cache_clusters::DescribeCacheClustersInput).
-    pub fn builder() -> crate::operation::describe_cache_clusters::builders::DescribeCacheClustersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_cache_clusters::builders::DescribeCacheClustersInputBuilder
+    {
         crate::operation::describe_cache_clusters::builders::DescribeCacheClustersInputBuilder::default()
     }
 }
@@ -71,20 +73,22 @@ impl DescribeCacheClustersInputBuilder {
     }
     /// <p>The user-supplied cluster identifier. If this parameter is specified, only information about that specific cluster is returned. This parameter isn't case sensitive.</p>
     pub fn set_cache_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_cluster_id = input; self
+        self.cache_cluster_id = input;
+        self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> 
-    /// <p>Default: 100</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.max_records = Some(input);
         self
     }
-    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p> 
-    /// <p>Default: 100</p> 
+    /// <p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a marker is included in the response so that the remaining results can be retrieved.</p>
+    /// <p>Default: 100</p>
     /// <p>Constraints: minimum 20; maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input; self
+        self.max_records = input;
+        self
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +97,8 @@ impl DescribeCacheClustersInputBuilder {
     }
     /// <p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <code>MaxRecords</code>.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information about the individual cache nodes.</p>
     pub fn show_cache_node_info(mut self, input: bool) -> Self {
@@ -102,7 +107,8 @@ impl DescribeCacheClustersInputBuilder {
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to retrieve information about the individual cache nodes.</p>
     pub fn set_show_cache_node_info(mut self, input: std::option::Option<bool>) -> Self {
-        self.show_cache_node_info = input; self
+        self.show_cache_node_info = input;
+        self
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.</p>
     pub fn show_cache_clusters_not_in_replication_groups(mut self, input: bool) -> Self {
@@ -110,25 +116,29 @@ impl DescribeCacheClustersInputBuilder {
         self
     }
     /// <p>An optional flag that can be included in the <code>DescribeCacheCluster</code> request to show only nodes (API/CLI: clusters) that are not members of a replication group. In practice, this mean Memcached and single node Redis clusters.</p>
-    pub fn set_show_cache_clusters_not_in_replication_groups(mut self, input: std::option::Option<bool>) -> Self {
-        self.show_cache_clusters_not_in_replication_groups = input; self
+    pub fn set_show_cache_clusters_not_in_replication_groups(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.show_cache_clusters_not_in_replication_groups = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeCacheClustersInput`](crate::operation::describe_cache_clusters::DescribeCacheClustersInput).
-    pub fn build(self) -> Result<crate::operation::describe_cache_clusters::DescribeCacheClustersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_cache_clusters::DescribeCacheClustersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_cache_clusters::DescribeCacheClustersInput {
-                cache_cluster_id: self.cache_cluster_id
-                ,
-                max_records: self.max_records
-                ,
-                marker: self.marker
-                ,
-                show_cache_node_info: self.show_cache_node_info
-                ,
-                show_cache_clusters_not_in_replication_groups: self.show_cache_clusters_not_in_replication_groups
-                ,
-            }
+                cache_cluster_id: self.cache_cluster_id,
+                max_records: self.max_records,
+                marker: self.marker,
+                show_cache_node_info: self.show_cache_node_info,
+                show_cache_clusters_not_in_replication_groups: self
+                    .show_cache_clusters_not_in_replication_groups,
+            },
         )
     }
 }
-

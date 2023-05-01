@@ -87,4 +87,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateConnectivityInfo` operation.
 pub mod update_connectivity_info;
-

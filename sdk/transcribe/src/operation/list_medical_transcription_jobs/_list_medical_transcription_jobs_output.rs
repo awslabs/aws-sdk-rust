@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMedicalTranscriptionJobsOutput  {
+pub struct ListMedicalTranscriptionJobsOutput {
     /// <p>Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::TranscriptionJobStatus>,
@@ -11,31 +11,34 @@ pub struct ListMedicalTranscriptionJobsOutput  {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Provides a summary of information about each result.</p>
     #[doc(hidden)]
-    pub medical_transcription_job_summaries: std::option::Option<std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>>,
+    pub medical_transcription_job_summaries:
+        std::option::Option<std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListMedicalTranscriptionJobsOutput {
     /// <p>Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::TranscriptionJobStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::TranscriptionJobStatus> {
         self.status.as_ref()
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn medical_transcription_job_summaries(&self) -> std::option::Option<& [crate::types::MedicalTranscriptionJobSummary]> {
+    pub fn medical_transcription_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::MedicalTranscriptionJobSummary]> {
         self.medical_transcription_job_summaries.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListMedicalTranscriptionJobsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListMedicalTranscriptionJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListMedicalTranscriptionJobsOutput`](crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput).
-    pub fn builder() -> crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsOutputBuilder {
+    pub fn builder() -> crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsOutputBuilder{
         crate::operation::list_medical_transcription_jobs::builders::ListMedicalTranscriptionJobsOutputBuilder::default()
     }
 }
@@ -46,7 +49,8 @@ impl ListMedicalTranscriptionJobsOutput {
 pub struct ListMedicalTranscriptionJobsOutputBuilder {
     pub(crate) status: std::option::Option<crate::types::TranscriptionJobStatus>,
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) medical_transcription_job_summaries: std::option::Option<std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>>,
+    pub(crate) medical_transcription_job_summaries:
+        std::option::Option<std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>>,
     _request_id: Option<String>,
 }
 impl ListMedicalTranscriptionJobsOutputBuilder {
@@ -56,8 +60,12 @@ impl ListMedicalTranscriptionJobsOutputBuilder {
         self
     }
     /// <p>Lists all medical transcription jobs that have the status specified in your request. Jobs are ordered by creation date, with the newest job first.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TranscriptionJobStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::TranscriptionJobStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,43 +74,49 @@ impl ListMedicalTranscriptionJobsOutputBuilder {
     }
     /// <p>If <code>NextToken</code> is present in your response, it indicates that not all results are displayed. To view the next set of results, copy the string associated with the <code>NextToken</code> parameter in your results output, then run your request again including <code>NextToken</code> with the value of the copied string. Repeat as needed to view all your results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `medical_transcription_job_summaries`.
     ///
     /// To override the contents of this collection use [`set_medical_transcription_job_summaries`](Self::set_medical_transcription_job_summaries).
     ///
     /// <p>Provides a summary of information about each result.</p>
-    pub fn medical_transcription_job_summaries(mut self, input: crate::types::MedicalTranscriptionJobSummary) -> Self {
+    pub fn medical_transcription_job_summaries(
+        mut self,
+        input: crate::types::MedicalTranscriptionJobSummary,
+    ) -> Self {
         let mut v = self.medical_transcription_job_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.medical_transcription_job_summaries = Some(v);
-                        self
+        v.push(input);
+        self.medical_transcription_job_summaries = Some(v);
+        self
     }
     /// <p>Provides a summary of information about each result.</p>
-    pub fn set_medical_transcription_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>>) -> Self {
-        self.medical_transcription_job_summaries = input; self
+    pub fn set_medical_transcription_job_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MedicalTranscriptionJobSummary>>,
+    ) -> Self {
+        self.medical_transcription_job_summaries = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListMedicalTranscriptionJobsOutput`](crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput).
-    pub fn build(self) -> crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput {
         crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput {
-            status: self.status
-            ,
-            next_token: self.next_token
-            ,
-            medical_transcription_job_summaries: self.medical_transcription_job_summaries
-            ,
+            status: self.status,
+            next_token: self.next_token,
+            medical_transcription_job_summaries: self.medical_transcription_job_summaries,
             _request_id: self._request_id,
         }
     }
 }
-

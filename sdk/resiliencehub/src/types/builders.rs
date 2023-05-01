@@ -62,4 +62,3 @@ pub use crate::types::_app_assessment_summary::AppAssessmentSummaryBuilder;
 pub use crate::types::_alarm_recommendation::AlarmRecommendationBuilder;
 
 pub use crate::types::_eks_source::EksSourceBuilder;
-

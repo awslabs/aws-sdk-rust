@@ -3,7 +3,7 @@
 /// <p> The metadata objects that are associated with the specified assessment report. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssessmentReportMetadata  {
+pub struct AssessmentReportMetadata {
     /// <p> The unique identifier for the assessment report. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct AssessmentReportMetadata  {
 }
 impl AssessmentReportMetadata {
     /// <p> The unique identifier for the assessment report. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p> The name of the assessment report. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The description of the assessment report. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The unique identifier for the associated assessment. </p>
-    pub fn assessment_id(&self) -> std::option::Option<& str> {
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
     /// <p>The name of the associated assessment. </p>
-    pub fn assessment_name(&self) -> std::option::Option<& str> {
+    pub fn assessment_name(&self) -> std::option::Option<&str> {
         self.assessment_name.as_deref()
     }
     /// <p> The name of the user who created the assessment report. </p>
-    pub fn author(&self) -> std::option::Option<& str> {
+    pub fn author(&self) -> std::option::Option<&str> {
         self.author.as_deref()
     }
     /// <p> The current status of the assessment report. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AssessmentReportStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AssessmentReportStatus> {
         self.status.as_ref()
     }
     /// <p> Specifies when the assessment report was created. </p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
 }
@@ -91,7 +91,8 @@ impl AssessmentReportMetadataBuilder {
     }
     /// <p> The unique identifier for the assessment report. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p> The name of the assessment report. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +101,8 @@ impl AssessmentReportMetadataBuilder {
     }
     /// <p> The name of the assessment report. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> The description of the assessment report. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +111,8 @@ impl AssessmentReportMetadataBuilder {
     }
     /// <p> The description of the assessment report. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p> The unique identifier for the associated assessment. </p>
     pub fn assessment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,7 +121,8 @@ impl AssessmentReportMetadataBuilder {
     }
     /// <p> The unique identifier for the associated assessment. </p>
     pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_id = input; self
+        self.assessment_id = input;
+        self
     }
     /// <p>The name of the associated assessment. </p>
     pub fn assessment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,7 +131,8 @@ impl AssessmentReportMetadataBuilder {
     }
     /// <p>The name of the associated assessment. </p>
     pub fn set_assessment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_name = input; self
+        self.assessment_name = input;
+        self
     }
     /// <p> The name of the user who created the assessment report. </p>
     pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
@@ -136,7 +141,8 @@ impl AssessmentReportMetadataBuilder {
     }
     /// <p> The name of the user who created the assessment report. </p>
     pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.author = input; self
+        self.author = input;
+        self
     }
     /// <p> The current status of the assessment report. </p>
     pub fn status(mut self, input: crate::types::AssessmentReportStatus) -> Self {
@@ -144,8 +150,12 @@ impl AssessmentReportMetadataBuilder {
         self
     }
     /// <p> The current status of the assessment report. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AssessmentReportStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentReportStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p> Specifies when the assessment report was created. </p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -153,29 +163,24 @@ impl AssessmentReportMetadataBuilder {
         self
     }
     /// <p> Specifies when the assessment report was created. </p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssessmentReportMetadata`](crate::types::AssessmentReportMetadata).
     pub fn build(self) -> crate::types::AssessmentReportMetadata {
         crate::types::AssessmentReportMetadata {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            assessment_id: self.assessment_id
-            ,
-            assessment_name: self.assessment_name
-            ,
-            author: self.author
-            ,
-            status: self.status
-            ,
-            creation_time: self.creation_time
-            ,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            assessment_id: self.assessment_id,
+            assessment_name: self.assessment_name,
+            author: self.author,
+            status: self.status,
+            creation_time: self.creation_time,
         }
     }
 }
-

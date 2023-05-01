@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateGroupInput  {
+pub struct CreateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
     #[doc(hidden)]
     pub identity_store_id: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct CreateGroupInput  {
 }
 impl CreateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> std::option::Option<& str> {
+    pub fn identity_store_id(&self) -> std::option::Option<&str> {
         self.identity_store_id.as_deref()
     }
     /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>A string containing the description of the group.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateGroupInput  {
+impl std::fmt::Debug for CreateGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateGroupInput");
         formatter.field("identity_store_id", &self.identity_store_id);
@@ -58,8 +58,12 @@ impl CreateGroupInputBuilder {
         self
     }
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn set_identity_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_store_id = input; self
+    pub fn set_identity_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_store_id = input;
+        self
     }
     /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +72,8 @@ impl CreateGroupInputBuilder {
     }
     /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. "Administrator" and "AWSAdministrators" are reserved names and can't be used for users or groups.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>A string containing the description of the group.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,20 +82,21 @@ impl CreateGroupInputBuilder {
     }
     /// <p>A string containing the description of the group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
-    pub fn build(self) -> Result<crate::operation::create_group::CreateGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_group::CreateGroupInput {
-                identity_store_id: self.identity_store_id
-                ,
-                display_name: self.display_name
-                ,
-                description: self.description
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_group::CreateGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_group::CreateGroupInput {
+            identity_store_id: self.identity_store_id,
+            display_name: self.display_name,
+            description: self.description,
+        })
     }
 }
 impl std::fmt::Debug for CreateGroupInputBuilder {
@@ -102,4 +108,3 @@ impl std::fmt::Debug for CreateGroupInputBuilder {
         formatter.finish()
     }
 }
-

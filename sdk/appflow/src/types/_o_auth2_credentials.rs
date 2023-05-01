@@ -3,7 +3,7 @@
 /// <p>The OAuth 2.0 credentials required for OAuth 2.0 authentication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OAuth2Credentials  {
+pub struct OAuth2Credentials {
     /// <p>The identifier for the desired client.</p>
     #[doc(hidden)]
     pub client_id: std::option::Option<std::string::String>,
@@ -22,27 +22,27 @@ pub struct OAuth2Credentials  {
 }
 impl OAuth2Credentials {
     /// <p>The identifier for the desired client.</p>
-    pub fn client_id(&self) -> std::option::Option<& str> {
+    pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The client secret used by the OAuth client to authenticate to the authorization server.</p>
-    pub fn client_secret(&self) -> std::option::Option<& str> {
+    pub fn client_secret(&self) -> std::option::Option<&str> {
         self.client_secret.as_deref()
     }
     /// <p>The access token used to access the connector on your behalf.</p>
-    pub fn access_token(&self) -> std::option::Option<& str> {
+    pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p>The refresh token used to refresh an expired access token.</p>
-    pub fn refresh_token(&self) -> std::option::Option<& str> {
+    pub fn refresh_token(&self) -> std::option::Option<&str> {
         self.refresh_token.as_deref()
     }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
-    pub fn o_auth_request(&self) -> std::option::Option<& crate::types::ConnectorOAuthRequest> {
+    pub fn o_auth_request(&self) -> std::option::Option<&crate::types::ConnectorOAuthRequest> {
         self.o_auth_request.as_ref()
     }
 }
-impl  std::fmt::Debug for OAuth2Credentials  {
+impl std::fmt::Debug for OAuth2Credentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("OAuth2Credentials");
         formatter.field("client_id", &self.client_id);
@@ -78,7 +78,8 @@ impl OAuth2CredentialsBuilder {
     }
     /// <p>The identifier for the desired client.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input; self
+        self.client_id = input;
+        self
     }
     /// <p>The client secret used by the OAuth client to authenticate to the authorization server.</p>
     pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
@@ -87,7 +88,8 @@ impl OAuth2CredentialsBuilder {
     }
     /// <p>The client secret used by the OAuth client to authenticate to the authorization server.</p>
     pub fn set_client_secret(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_secret = input; self
+        self.client_secret = input;
+        self
     }
     /// <p>The access token used to access the connector on your behalf.</p>
     pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,7 +98,8 @@ impl OAuth2CredentialsBuilder {
     }
     /// <p>The access token used to access the connector on your behalf.</p>
     pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_token = input; self
+        self.access_token = input;
+        self
     }
     /// <p>The refresh token used to refresh an expired access token.</p>
     pub fn refresh_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,7 +108,8 @@ impl OAuth2CredentialsBuilder {
     }
     /// <p>The refresh token used to refresh an expired access token.</p>
     pub fn set_refresh_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.refresh_token = input; self
+        self.refresh_token = input;
+        self
     }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
     pub fn o_auth_request(mut self, input: crate::types::ConnectorOAuthRequest) -> Self {
@@ -113,22 +117,21 @@ impl OAuth2CredentialsBuilder {
         self
     }
     /// <p> Used by select connectors for which the OAuth workflow is supported, such as Salesforce, Google Analytics, Marketo, Zendesk, and Slack. </p>
-    pub fn set_o_auth_request(mut self, input: std::option::Option<crate::types::ConnectorOAuthRequest>) -> Self {
-        self.o_auth_request = input; self
+    pub fn set_o_auth_request(
+        mut self,
+        input: std::option::Option<crate::types::ConnectorOAuthRequest>,
+    ) -> Self {
+        self.o_auth_request = input;
+        self
     }
     /// Consumes the builder and constructs a [`OAuth2Credentials`](crate::types::OAuth2Credentials).
     pub fn build(self) -> crate::types::OAuth2Credentials {
         crate::types::OAuth2Credentials {
-            client_id: self.client_id
-            ,
-            client_secret: self.client_secret
-            ,
-            access_token: self.access_token
-            ,
-            refresh_token: self.refresh_token
-            ,
-            o_auth_request: self.o_auth_request
-            ,
+            client_id: self.client_id,
+            client_secret: self.client_secret,
+            access_token: self.access_token,
+            refresh_token: self.refresh_token,
+            o_auth_request: self.o_auth_request,
         }
     }
 }
@@ -143,4 +146,3 @@ impl std::fmt::Debug for OAuth2CredentialsBuilder {
         formatter.finish()
     }
 }
-

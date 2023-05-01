@@ -3,7 +3,7 @@
 /// <p>Describes a subnet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Subnet  {
+pub struct Subnet {
     /// <p>The Availability Zone of the subnet.</p>
     #[doc(hidden)]
     pub availability_zone: std::option::Option<std::string::String>,
@@ -48,7 +48,8 @@ pub struct Subnet  {
     pub assign_ipv6_address_on_creation: std::option::Option<bool>,
     /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
     #[doc(hidden)]
-    pub ipv6_cidr_block_association_set: std::option::Option<std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
+    pub ipv6_cidr_block_association_set:
+        std::option::Option<std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
     /// <p>Any tags assigned to the subnet.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
@@ -66,15 +67,16 @@ pub struct Subnet  {
     pub ipv6_native: std::option::Option<bool>,
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
     #[doc(hidden)]
-    pub private_dns_name_options_on_launch: std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
+    pub private_dns_name_options_on_launch:
+        std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
 }
 impl Subnet {
     /// <p>The Availability Zone of the subnet.</p>
-    pub fn availability_zone(&self) -> std::option::Option<& str> {
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The AZ ID of the subnet.</p>
-    pub fn availability_zone_id(&self) -> std::option::Option<& str> {
+    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
@@ -82,7 +84,7 @@ impl Subnet {
         self.available_ip_address_count
     }
     /// <p>The IPv4 CIDR block assigned to the subnet.</p>
-    pub fn cidr_block(&self) -> std::option::Option<& str> {
+    pub fn cidr_block(&self) -> std::option::Option<&str> {
         self.cidr_block.as_deref()
     }
     /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
@@ -102,23 +104,23 @@ impl Subnet {
         self.map_customer_owned_ip_on_launch
     }
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
-    pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<& str> {
+    pub fn customer_owned_ipv4_pool(&self) -> std::option::Option<&str> {
         self.customer_owned_ipv4_pool.as_deref()
     }
     /// <p>The current state of the subnet.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::SubnetState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::SubnetState> {
         self.state.as_ref()
     }
     /// <p>The ID of the subnet.</p>
-    pub fn subnet_id(&self) -> std::option::Option<& str> {
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>The ID of the VPC the subnet is in.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
-    pub fn owner_id(&self) -> std::option::Option<& str> {
+    pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives an IPv6 address.</p>
@@ -126,19 +128,21 @@ impl Subnet {
         self.assign_ipv6_address_on_creation
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
-    pub fn ipv6_cidr_block_association_set(&self) -> std::option::Option<& [crate::types::SubnetIpv6CidrBlockAssociation]> {
+    pub fn ipv6_cidr_block_association_set(
+        &self,
+    ) -> std::option::Option<&[crate::types::SubnetIpv6CidrBlockAssociation]> {
         self.ipv6_cidr_block_association_set.as_deref()
     }
     /// <p>Any tags assigned to the subnet.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the subnet.</p>
-    pub fn subnet_arn(&self) -> std::option::Option<& str> {
+    pub fn subnet_arn(&self) -> std::option::Option<&str> {
         self.subnet_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
-    pub fn outpost_arn(&self) -> std::option::Option<& str> {
+    pub fn outpost_arn(&self) -> std::option::Option<&str> {
         self.outpost_arn.as_deref()
     }
     /// <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations.</p>
@@ -150,7 +154,9 @@ impl Subnet {
         self.ipv6_native
     }
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
-    pub fn private_dns_name_options_on_launch(&self) -> std::option::Option<& crate::types::PrivateDnsNameOptionsOnLaunch> {
+    pub fn private_dns_name_options_on_launch(
+        &self,
+    ) -> std::option::Option<&crate::types::PrivateDnsNameOptionsOnLaunch> {
         self.private_dns_name_options_on_launch.as_ref()
     }
 }
@@ -179,13 +185,15 @@ pub struct SubnetBuilder {
     pub(crate) vpc_id: std::option::Option<std::string::String>,
     pub(crate) owner_id: std::option::Option<std::string::String>,
     pub(crate) assign_ipv6_address_on_creation: std::option::Option<bool>,
-    pub(crate) ipv6_cidr_block_association_set: std::option::Option<std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
+    pub(crate) ipv6_cidr_block_association_set:
+        std::option::Option<std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) subnet_arn: std::option::Option<std::string::String>,
     pub(crate) outpost_arn: std::option::Option<std::string::String>,
     pub(crate) enable_dns64: std::option::Option<bool>,
     pub(crate) ipv6_native: std::option::Option<bool>,
-    pub(crate) private_dns_name_options_on_launch: std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
+    pub(crate) private_dns_name_options_on_launch:
+        std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
 }
 impl SubnetBuilder {
     /// <p>The Availability Zone of the subnet.</p>
@@ -194,8 +202,12 @@ impl SubnetBuilder {
         self
     }
     /// <p>The Availability Zone of the subnet.</p>
-    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.availability_zone = input; self
+    pub fn set_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.availability_zone = input;
+        self
     }
     /// <p>The AZ ID of the subnet.</p>
     pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -203,8 +215,12 @@ impl SubnetBuilder {
         self
     }
     /// <p>The AZ ID of the subnet.</p>
-    pub fn set_availability_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.availability_zone_id = input; self
+    pub fn set_availability_zone_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.availability_zone_id = input;
+        self
     }
     /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
     pub fn available_ip_address_count(mut self, input: i32) -> Self {
@@ -213,7 +229,8 @@ impl SubnetBuilder {
     }
     /// <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses for any stopped instances are considered unavailable.</p>
     pub fn set_available_ip_address_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.available_ip_address_count = input; self
+        self.available_ip_address_count = input;
+        self
     }
     /// <p>The IPv4 CIDR block assigned to the subnet.</p>
     pub fn cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
@@ -222,7 +239,8 @@ impl SubnetBuilder {
     }
     /// <p>The IPv4 CIDR block assigned to the subnet.</p>
     pub fn set_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cidr_block = input; self
+        self.cidr_block = input;
+        self
     }
     /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
     pub fn default_for_az(mut self, input: bool) -> Self {
@@ -231,7 +249,8 @@ impl SubnetBuilder {
     }
     /// <p>Indicates whether this is the default subnet for the Availability Zone.</p>
     pub fn set_default_for_az(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_for_az = input; self
+        self.default_for_az = input;
+        self
     }
     /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). </p>
     pub fn enable_lni_at_device_index(mut self, input: i32) -> Self {
@@ -240,7 +259,8 @@ impl SubnetBuilder {
     }
     /// <p> Indicates the device position for local network interfaces in this subnet. For example, <code>1</code> indicates local network interfaces in this subnet are the secondary network interface (eth1). </p>
     pub fn set_enable_lni_at_device_index(mut self, input: std::option::Option<i32>) -> Self {
-        self.enable_lni_at_device_index = input; self
+        self.enable_lni_at_device_index = input;
+        self
     }
     /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
     pub fn map_public_ip_on_launch(mut self, input: bool) -> Self {
@@ -249,7 +269,8 @@ impl SubnetBuilder {
     }
     /// <p>Indicates whether instances launched in this subnet receive a public IPv4 address.</p>
     pub fn set_map_public_ip_on_launch(mut self, input: std::option::Option<bool>) -> Self {
-        self.map_public_ip_on_launch = input; self
+        self.map_public_ip_on_launch = input;
+        self
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives a customer-owned IPv4 address.</p>
     pub fn map_customer_owned_ip_on_launch(mut self, input: bool) -> Self {
@@ -258,7 +279,8 @@ impl SubnetBuilder {
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives a customer-owned IPv4 address.</p>
     pub fn set_map_customer_owned_ip_on_launch(mut self, input: std::option::Option<bool>) -> Self {
-        self.map_customer_owned_ip_on_launch = input; self
+        self.map_customer_owned_ip_on_launch = input;
+        self
     }
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
     pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,8 +288,12 @@ impl SubnetBuilder {
         self
     }
     /// <p>The customer-owned IPv4 address pool associated with the subnet.</p>
-    pub fn set_customer_owned_ipv4_pool(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.customer_owned_ipv4_pool = input; self
+    pub fn set_customer_owned_ipv4_pool(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.customer_owned_ipv4_pool = input;
+        self
     }
     /// <p>The current state of the subnet.</p>
     pub fn state(mut self, input: crate::types::SubnetState) -> Self {
@@ -276,7 +302,8 @@ impl SubnetBuilder {
     }
     /// <p>The current state of the subnet.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::SubnetState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The ID of the subnet.</p>
     pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -285,7 +312,8 @@ impl SubnetBuilder {
     }
     /// <p>The ID of the subnet.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input; self
+        self.subnet_id = input;
+        self
     }
     /// <p>The ID of the VPC the subnet is in.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -294,7 +322,8 @@ impl SubnetBuilder {
     }
     /// <p>The ID of the VPC the subnet is in.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
     pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -303,7 +332,8 @@ impl SubnetBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input; self
+        self.owner_id = input;
+        self
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives an IPv6 address.</p>
     pub fn assign_ipv6_address_on_creation(mut self, input: bool) -> Self {
@@ -312,22 +342,30 @@ impl SubnetBuilder {
     }
     /// <p>Indicates whether a network interface created in this subnet (including a network interface created by <code>RunInstances</code>) receives an IPv6 address.</p>
     pub fn set_assign_ipv6_address_on_creation(mut self, input: std::option::Option<bool>) -> Self {
-        self.assign_ipv6_address_on_creation = input; self
+        self.assign_ipv6_address_on_creation = input;
+        self
     }
     /// Appends an item to `ipv6_cidr_block_association_set`.
     ///
     /// To override the contents of this collection use [`set_ipv6_cidr_block_association_set`](Self::set_ipv6_cidr_block_association_set).
     ///
     /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
-    pub fn ipv6_cidr_block_association_set(mut self, input: crate::types::SubnetIpv6CidrBlockAssociation) -> Self {
+    pub fn ipv6_cidr_block_association_set(
+        mut self,
+        input: crate::types::SubnetIpv6CidrBlockAssociation,
+    ) -> Self {
         let mut v = self.ipv6_cidr_block_association_set.unwrap_or_default();
-                        v.push(input);
-                        self.ipv6_cidr_block_association_set = Some(v);
-                        self
+        v.push(input);
+        self.ipv6_cidr_block_association_set = Some(v);
+        self
     }
     /// <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
-    pub fn set_ipv6_cidr_block_association_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>) -> Self {
-        self.ipv6_cidr_block_association_set = input; self
+    pub fn set_ipv6_cidr_block_association_set(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SubnetIpv6CidrBlockAssociation>>,
+    ) -> Self {
+        self.ipv6_cidr_block_association_set = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -336,13 +374,17 @@ impl SubnetBuilder {
     /// <p>Any tags assigned to the subnet.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Any tags assigned to the subnet.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the subnet.</p>
     pub fn subnet_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -351,7 +393,8 @@ impl SubnetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the subnet.</p>
     pub fn set_subnet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_arn = input; self
+        self.subnet_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -360,7 +403,8 @@ impl SubnetBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub fn set_outpost_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.outpost_arn = input; self
+        self.outpost_arn = input;
+        self
     }
     /// <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations.</p>
     pub fn enable_dns64(mut self, input: bool) -> Self {
@@ -369,7 +413,8 @@ impl SubnetBuilder {
     }
     /// <p>Indicates whether DNS queries made to the Amazon-provided DNS Resolver in this subnet should return synthetic IPv6 addresses for IPv4-only destinations.</p>
     pub fn set_enable_dns64(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_dns64 = input; self
+        self.enable_dns64 = input;
+        self
     }
     /// <p>Indicates whether this is an IPv6 only subnet.</p>
     pub fn ipv6_native(mut self, input: bool) -> Self {
@@ -378,63 +423,49 @@ impl SubnetBuilder {
     }
     /// <p>Indicates whether this is an IPv6 only subnet.</p>
     pub fn set_ipv6_native(mut self, input: std::option::Option<bool>) -> Self {
-        self.ipv6_native = input; self
+        self.ipv6_native = input;
+        self
     }
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
-    pub fn private_dns_name_options_on_launch(mut self, input: crate::types::PrivateDnsNameOptionsOnLaunch) -> Self {
+    pub fn private_dns_name_options_on_launch(
+        mut self,
+        input: crate::types::PrivateDnsNameOptionsOnLaunch,
+    ) -> Self {
         self.private_dns_name_options_on_launch = Some(input);
         self
     }
     /// <p>The type of hostnames to assign to instances in the subnet at launch. An instance hostname is based on the IPv4 address or ID of the instance.</p>
-    pub fn set_private_dns_name_options_on_launch(mut self, input: std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>) -> Self {
-        self.private_dns_name_options_on_launch = input; self
+    pub fn set_private_dns_name_options_on_launch(
+        mut self,
+        input: std::option::Option<crate::types::PrivateDnsNameOptionsOnLaunch>,
+    ) -> Self {
+        self.private_dns_name_options_on_launch = input;
+        self
     }
     /// Consumes the builder and constructs a [`Subnet`](crate::types::Subnet).
     pub fn build(self) -> crate::types::Subnet {
         crate::types::Subnet {
-            availability_zone: self.availability_zone
-            ,
-            availability_zone_id: self.availability_zone_id
-            ,
-            available_ip_address_count: self.available_ip_address_count
-            ,
-            cidr_block: self.cidr_block
-            ,
-            default_for_az: self.default_for_az
-            ,
-            enable_lni_at_device_index: self.enable_lni_at_device_index
-            ,
-            map_public_ip_on_launch: self.map_public_ip_on_launch
-            ,
-            map_customer_owned_ip_on_launch: self.map_customer_owned_ip_on_launch
-            ,
-            customer_owned_ipv4_pool: self.customer_owned_ipv4_pool
-            ,
-            state: self.state
-            ,
-            subnet_id: self.subnet_id
-            ,
-            vpc_id: self.vpc_id
-            ,
-            owner_id: self.owner_id
-            ,
-            assign_ipv6_address_on_creation: self.assign_ipv6_address_on_creation
-            ,
-            ipv6_cidr_block_association_set: self.ipv6_cidr_block_association_set
-            ,
-            tags: self.tags
-            ,
-            subnet_arn: self.subnet_arn
-            ,
-            outpost_arn: self.outpost_arn
-            ,
-            enable_dns64: self.enable_dns64
-            ,
-            ipv6_native: self.ipv6_native
-            ,
-            private_dns_name_options_on_launch: self.private_dns_name_options_on_launch
-            ,
+            availability_zone: self.availability_zone,
+            availability_zone_id: self.availability_zone_id,
+            available_ip_address_count: self.available_ip_address_count,
+            cidr_block: self.cidr_block,
+            default_for_az: self.default_for_az,
+            enable_lni_at_device_index: self.enable_lni_at_device_index,
+            map_public_ip_on_launch: self.map_public_ip_on_launch,
+            map_customer_owned_ip_on_launch: self.map_customer_owned_ip_on_launch,
+            customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
+            state: self.state,
+            subnet_id: self.subnet_id,
+            vpc_id: self.vpc_id,
+            owner_id: self.owner_id,
+            assign_ipv6_address_on_creation: self.assign_ipv6_address_on_creation,
+            ipv6_cidr_block_association_set: self.ipv6_cidr_block_association_set,
+            tags: self.tags,
+            subnet_arn: self.subnet_arn,
+            outpost_arn: self.outpost_arn,
+            enable_dns64: self.enable_dns64,
+            ipv6_native: self.ipv6_native,
+            private_dns_name_options_on_launch: self.private_dns_name_options_on_launch,
         }
     }
 }
-

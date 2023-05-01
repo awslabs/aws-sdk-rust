@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let ipamresourcediscoverystate = unimplemented!();
 /// match ipamresourcediscoverystate {
@@ -40,14 +40,22 @@
 /// Specifically, when `ipamresourcediscoverystate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IpamResourceDiscoveryState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum IpamResourceDiscoveryState {
     #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
@@ -74,61 +82,75 @@ pub enum IpamResourceDiscoveryState {
     #[allow(missing_docs)] // documentation missing in model
     RestoreInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IpamResourceDiscoveryState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "create-complete" => IpamResourceDiscoveryState::CreateComplete,
-"create-failed" => IpamResourceDiscoveryState::CreateFailed,
-"create-in-progress" => IpamResourceDiscoveryState::CreateInProgress,
-"delete-complete" => IpamResourceDiscoveryState::DeleteComplete,
-"delete-failed" => IpamResourceDiscoveryState::DeleteFailed,
-"delete-in-progress" => IpamResourceDiscoveryState::DeleteInProgress,
-"isolate-complete" => IpamResourceDiscoveryState::IsolateComplete,
-"isolate-in-progress" => IpamResourceDiscoveryState::IsolateInProgress,
-"modify-complete" => IpamResourceDiscoveryState::ModifyComplete,
-"modify-failed" => IpamResourceDiscoveryState::ModifyFailed,
-"modify-in-progress" => IpamResourceDiscoveryState::ModifyInProgress,
-"restore-in-progress" => IpamResourceDiscoveryState::RestoreInProgress,
-other => IpamResourceDiscoveryState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for IpamResourceDiscoveryState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(IpamResourceDiscoveryState::from(s))
-                }
-            }
-impl IpamResourceDiscoveryState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    IpamResourceDiscoveryState::CreateComplete => "create-complete",
-    IpamResourceDiscoveryState::CreateFailed => "create-failed",
-    IpamResourceDiscoveryState::CreateInProgress => "create-in-progress",
-    IpamResourceDiscoveryState::DeleteComplete => "delete-complete",
-    IpamResourceDiscoveryState::DeleteFailed => "delete-failed",
-    IpamResourceDiscoveryState::DeleteInProgress => "delete-in-progress",
-    IpamResourceDiscoveryState::IsolateComplete => "isolate-complete",
-    IpamResourceDiscoveryState::IsolateInProgress => "isolate-in-progress",
-    IpamResourceDiscoveryState::ModifyComplete => "modify-complete",
-    IpamResourceDiscoveryState::ModifyFailed => "modify-failed",
-    IpamResourceDiscoveryState::ModifyInProgress => "modify-in-progress",
-    IpamResourceDiscoveryState::RestoreInProgress => "restore-in-progress",
-    IpamResourceDiscoveryState::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "create-complete" => IpamResourceDiscoveryState::CreateComplete,
+            "create-failed" => IpamResourceDiscoveryState::CreateFailed,
+            "create-in-progress" => IpamResourceDiscoveryState::CreateInProgress,
+            "delete-complete" => IpamResourceDiscoveryState::DeleteComplete,
+            "delete-failed" => IpamResourceDiscoveryState::DeleteFailed,
+            "delete-in-progress" => IpamResourceDiscoveryState::DeleteInProgress,
+            "isolate-complete" => IpamResourceDiscoveryState::IsolateComplete,
+            "isolate-in-progress" => IpamResourceDiscoveryState::IsolateInProgress,
+            "modify-complete" => IpamResourceDiscoveryState::ModifyComplete,
+            "modify-failed" => IpamResourceDiscoveryState::ModifyFailed,
+            "modify-in-progress" => IpamResourceDiscoveryState::ModifyInProgress,
+            "restore-in-progress" => IpamResourceDiscoveryState::RestoreInProgress,
+            other => IpamResourceDiscoveryState::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["create-complete", "create-failed", "create-in-progress", "delete-complete", "delete-failed", "delete-in-progress", "isolate-complete", "isolate-in-progress", "modify-complete", "modify-failed", "modify-in-progress", "restore-in-progress"]
-                }
-            }
-impl AsRef<str> for IpamResourceDiscoveryState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for IpamResourceDiscoveryState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IpamResourceDiscoveryState::from(s))
+    }
+}
+impl IpamResourceDiscoveryState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            IpamResourceDiscoveryState::CreateComplete => "create-complete",
+            IpamResourceDiscoveryState::CreateFailed => "create-failed",
+            IpamResourceDiscoveryState::CreateInProgress => "create-in-progress",
+            IpamResourceDiscoveryState::DeleteComplete => "delete-complete",
+            IpamResourceDiscoveryState::DeleteFailed => "delete-failed",
+            IpamResourceDiscoveryState::DeleteInProgress => "delete-in-progress",
+            IpamResourceDiscoveryState::IsolateComplete => "isolate-complete",
+            IpamResourceDiscoveryState::IsolateInProgress => "isolate-in-progress",
+            IpamResourceDiscoveryState::ModifyComplete => "modify-complete",
+            IpamResourceDiscoveryState::ModifyFailed => "modify-failed",
+            IpamResourceDiscoveryState::ModifyInProgress => "modify-in-progress",
+            IpamResourceDiscoveryState::RestoreInProgress => "restore-in-progress",
+            IpamResourceDiscoveryState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "create-complete",
+            "create-failed",
+            "create-in-progress",
+            "delete-complete",
+            "delete-failed",
+            "delete-in-progress",
+            "isolate-complete",
+            "isolate-in-progress",
+            "modify-complete",
+            "modify-failed",
+            "modify-in-progress",
+            "restore-in-progress",
+        ]
+    }
+}
+impl AsRef<str> for IpamResourceDiscoveryState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

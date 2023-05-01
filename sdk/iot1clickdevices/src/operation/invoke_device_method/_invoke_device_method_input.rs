@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvokeDeviceMethodInput  {
+pub struct InvokeDeviceMethodInput {
     /// <p>The unique identifier of the device.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct InvokeDeviceMethodInput  {
 }
 impl InvokeDeviceMethodInput {
     /// <p>The unique identifier of the device.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>The device method to invoke.</p>
-    pub fn device_method(&self) -> std::option::Option<& crate::types::DeviceMethod> {
+    pub fn device_method(&self) -> std::option::Option<&crate::types::DeviceMethod> {
         self.device_method.as_ref()
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
-    pub fn device_method_parameters(&self) -> std::option::Option<& str> {
+    pub fn device_method_parameters(&self) -> std::option::Option<&str> {
         self.device_method_parameters.as_deref()
     }
 }
 impl InvokeDeviceMethodInput {
     /// Creates a new builder-style object to manufacture [`InvokeDeviceMethodInput`](crate::operation::invoke_device_method::InvokeDeviceMethodInput).
-    pub fn builder() -> crate::operation::invoke_device_method::builders::InvokeDeviceMethodInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::invoke_device_method::builders::InvokeDeviceMethodInputBuilder {
         crate::operation::invoke_device_method::builders::InvokeDeviceMethodInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl InvokeDeviceMethodInputBuilder {
     }
     /// <p>The unique identifier of the device.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// <p>The device method to invoke.</p>
     pub fn device_method(mut self, input: crate::types::DeviceMethod) -> Self {
@@ -58,8 +60,12 @@ impl InvokeDeviceMethodInputBuilder {
         self
     }
     /// <p>The device method to invoke.</p>
-    pub fn set_device_method(mut self, input: std::option::Option<crate::types::DeviceMethod>) -> Self {
-        self.device_method = input; self
+    pub fn set_device_method(
+        mut self,
+        input: std::option::Option<crate::types::DeviceMethod>,
+    ) -> Self {
+        self.device_method = input;
+        self
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
     pub fn device_method_parameters(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,21 +73,26 @@ impl InvokeDeviceMethodInputBuilder {
         self
     }
     /// <p>A JSON encoded string containing the device method request parameters.</p>
-    pub fn set_device_method_parameters(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_method_parameters = input; self
+    pub fn set_device_method_parameters(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.device_method_parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`InvokeDeviceMethodInput`](crate::operation::invoke_device_method::InvokeDeviceMethodInput).
-    pub fn build(self) -> Result<crate::operation::invoke_device_method::InvokeDeviceMethodInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::invoke_device_method::InvokeDeviceMethodInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::invoke_device_method::InvokeDeviceMethodInput {
-                device_id: self.device_id
-                ,
-                device_method: self.device_method
-                ,
-                device_method_parameters: self.device_method_parameters
-                ,
-            }
+                device_id: self.device_id,
+                device_method: self.device_method,
+                device_method_parameters: self.device_method_parameters,
+            },
         )
     }
 }
-

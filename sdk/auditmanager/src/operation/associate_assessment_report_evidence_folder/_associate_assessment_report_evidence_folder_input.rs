@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateAssessmentReportEvidenceFolderInput  {
+pub struct AssociateAssessmentReportEvidenceFolderInput {
     /// <p> The identifier for the assessment. </p>
     #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AssociateAssessmentReportEvidenceFolderInput  {
 }
 impl AssociateAssessmentReportEvidenceFolderInput {
     /// <p> The identifier for the assessment. </p>
-    pub fn assessment_id(&self) -> std::option::Option<& str> {
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    pub fn evidence_folder_id(&self) -> std::option::Option<& str> {
+    pub fn evidence_folder_id(&self) -> std::option::Option<&str> {
         self.evidence_folder_id.as_deref()
     }
 }
 impl AssociateAssessmentReportEvidenceFolderInput {
     /// Creates a new builder-style object to manufacture [`AssociateAssessmentReportEvidenceFolderInput`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput).
-    pub fn builder() -> crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderInputBuilder {
+    pub fn builder() -> crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderInputBuilder{
         crate::operation::associate_assessment_report_evidence_folder::builders::AssociateAssessmentReportEvidenceFolderInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl AssociateAssessmentReportEvidenceFolderInputBuilder {
     }
     /// <p> The identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_id = input; self
+        self.assessment_id = input;
+        self
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
     pub fn evidence_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,11 +51,15 @@ impl AssociateAssessmentReportEvidenceFolderInputBuilder {
         self
     }
     /// <p> The identifier for the folder that the evidence is stored in. </p>
-    pub fn set_evidence_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evidence_folder_id = input; self
+    pub fn set_evidence_folder_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evidence_folder_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateAssessmentReportEvidenceFolderInput`](crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput).
-    pub fn build(self) -> Result<crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderInput {
                 assessment_id: self.assessment_id
@@ -65,4 +70,3 @@ impl AssociateAssessmentReportEvidenceFolderInputBuilder {
         )
     }
 }
-

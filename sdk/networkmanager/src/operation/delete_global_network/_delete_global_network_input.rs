@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGlobalNetworkInput  {
+pub struct DeleteGlobalNetworkInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
 }
 impl DeleteGlobalNetworkInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
 }
 impl DeleteGlobalNetworkInput {
     /// Creates a new builder-style object to manufacture [`DeleteGlobalNetworkInput`](crate::operation::delete_global_network::DeleteGlobalNetworkInput).
-    pub fn builder() -> crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder {
-        crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder {
+        crate::operation::delete_global_network::builders::DeleteGlobalNetworkInputBuilder::default(
+        )
     }
 }
 
@@ -33,17 +35,24 @@ impl DeleteGlobalNetworkInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteGlobalNetworkInput`](crate::operation::delete_global_network::DeleteGlobalNetworkInput).
-    pub fn build(self) -> Result<crate::operation::delete_global_network::DeleteGlobalNetworkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_global_network::DeleteGlobalNetworkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_global_network::DeleteGlobalNetworkInput {
-                global_network_id: self.global_network_id
-                ,
-            }
+                global_network_id: self.global_network_id,
+            },
         )
     }
 }
-

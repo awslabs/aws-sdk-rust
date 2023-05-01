@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAuditTaskInput  {
+pub struct DescribeAuditTaskInput {
     /// <p>The ID of the audit whose information you want to get.</p>
     #[doc(hidden)]
     pub task_id: std::option::Option<std::string::String>,
 }
 impl DescribeAuditTaskInput {
     /// <p>The ID of the audit whose information you want to get.</p>
-    pub fn task_id(&self) -> std::option::Option<& str> {
+    pub fn task_id(&self) -> std::option::Option<&str> {
         self.task_id.as_deref()
     }
 }
 impl DescribeAuditTaskInput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditTaskInput`](crate::operation::describe_audit_task::DescribeAuditTaskInput).
-    pub fn builder() -> crate::operation::describe_audit_task::builders::DescribeAuditTaskInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_audit_task::builders::DescribeAuditTaskInputBuilder {
         crate::operation::describe_audit_task::builders::DescribeAuditTaskInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeAuditTaskInputBuilder {
     }
     /// <p>The ID of the audit whose information you want to get.</p>
     pub fn set_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_id = input; self
+        self.task_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAuditTaskInput`](crate::operation::describe_audit_task::DescribeAuditTaskInput).
-    pub fn build(self) -> Result<crate::operation::describe_audit_task::DescribeAuditTaskInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_audit_task::DescribeAuditTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_audit_task::DescribeAuditTaskInput {
-                task_id: self.task_id
-                ,
-            }
+                task_id: self.task_id,
+            },
         )
     }
 }
-

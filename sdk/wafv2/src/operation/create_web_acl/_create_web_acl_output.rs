@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWebAclOutput  {
+pub struct CreateWebAclOutput {
     /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::types::WebAclSummary>,
@@ -10,15 +10,15 @@ pub struct CreateWebAclOutput  {
 }
 impl CreateWebAclOutput {
     /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
-    pub fn summary(&self) -> std::option::Option<& crate::types::WebAclSummary> {
+    pub fn summary(&self) -> std::option::Option<&crate::types::WebAclSummary> {
         self.summary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateWebAclOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateWebAclOutput {
     /// Creates a new builder-style object to manufacture [`CreateWebAclOutput`](crate::operation::create_web_acl::CreateWebAclOutput).
     pub fn builder() -> crate::operation::create_web_acl::builders::CreateWebAclOutputBuilder {
@@ -41,24 +41,23 @@ impl CreateWebAclOutputBuilder {
     }
     /// <p>High-level information about a <code>WebACL</code>, returned by operations like create and list. This provides information like the ID, that you can use to retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to operations like <code>AssociateWebACL</code>.</p>
     pub fn set_summary(mut self, input: std::option::Option<crate::types::WebAclSummary>) -> Self {
-        self.summary = input; self
+        self.summary = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateWebAclOutput`](crate::operation::create_web_acl::CreateWebAclOutput).
     pub fn build(self) -> crate::operation::create_web_acl::CreateWebAclOutput {
         crate::operation::create_web_acl::CreateWebAclOutput {
-            summary: self.summary
-            ,
+            summary: self.summary,
             _request_id: self._request_id,
         }
     }
 }
-

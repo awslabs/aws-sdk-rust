@@ -3,7 +3,7 @@
 /// <p>A structure that allows an LF-admin to grant permissions on certain conditions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LfTag  {
+pub struct LfTag {
     /// <p>The key name for the LF-tag.</p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LfTag  {
 }
 impl LfTag {
     /// <p>The key name for the LF-tag.</p>
-    pub fn tag_key(&self) -> std::option::Option<& str> {
+    pub fn tag_key(&self) -> std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>A list of LF-tag values.</p>
-    pub fn tag_values(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_values(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_values.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl LfTagBuilder {
     }
     /// <p>The key name for the LF-tag.</p>
     pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tag_key = input; self
+        self.tag_key = input;
+        self
     }
     /// Appends an item to `tag_values`.
     ///
@@ -52,22 +53,23 @@ impl LfTagBuilder {
     /// <p>A list of LF-tag values.</p>
     pub fn tag_values(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_values.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_values = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_values = Some(v);
+        self
     }
     /// <p>A list of LF-tag values.</p>
-    pub fn set_tag_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_values = input; self
+    pub fn set_tag_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_values = input;
+        self
     }
     /// Consumes the builder and constructs a [`LfTag`](crate::types::LfTag).
     pub fn build(self) -> crate::types::LfTag {
         crate::types::LfTag {
-            tag_key: self.tag_key
-            ,
-            tag_values: self.tag_values
-            ,
+            tag_key: self.tag_key,
+            tag_values: self.tag_values,
         }
     }
 }
-

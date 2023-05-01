@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRecommendationsInput  {
+pub struct ListRecommendationsInput {
     /// <p>Pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListRecommendationsInput  {
 }
 impl ListRecommendationsInput {
     /// <p>Pagination token.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
@@ -23,13 +23,14 @@ impl ListRecommendationsInput {
         self.max_results
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
-    pub fn code_review_arn(&self) -> std::option::Option<& str> {
+    pub fn code_review_arn(&self) -> std::option::Option<&str> {
         self.code_review_arn.as_deref()
     }
 }
 impl ListRecommendationsInput {
     /// Creates a new builder-style object to manufacture [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
-    pub fn builder() -> crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder {
         crate::operation::list_recommendations::builders::ListRecommendationsInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>Pagination token.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +61,8 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The maximum number of results that are returned per call. The default is 100.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     pub fn code_review_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl ListRecommendationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html">CodeReview</a> object. </p>
     pub fn set_code_review_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code_review_arn = input; self
+        self.code_review_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListRecommendationsInput`](crate::operation::list_recommendations::ListRecommendationsInput).
-    pub fn build(self) -> Result<crate::operation::list_recommendations::ListRecommendationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_recommendations::ListRecommendationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_recommendations::ListRecommendationsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                code_review_arn: self.code_review_arn
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                code_review_arn: self.code_review_arn,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVpcIngressConnectionOutput  {
+pub struct UpdateVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
     #[doc(hidden)]
     pub vpc_ingress_connection: std::option::Option<crate::types::VpcIngressConnection>,
@@ -10,18 +10,20 @@ pub struct UpdateVpcIngressConnectionOutput  {
 }
 impl UpdateVpcIngressConnectionOutput {
     /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
-    pub fn vpc_ingress_connection(&self) -> std::option::Option<& crate::types::VpcIngressConnection> {
+    pub fn vpc_ingress_connection(
+        &self,
+    ) -> std::option::Option<&crate::types::VpcIngressConnection> {
         self.vpc_ingress_connection.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateVpcIngressConnectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateVpcIngressConnectionOutput {
     /// Creates a new builder-style object to manufacture [`UpdateVpcIngressConnectionOutput`](crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionOutput).
-    pub fn builder() -> crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionOutputBuilder {
+    pub fn builder() -> crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionOutputBuilder{
         crate::operation::update_vpc_ingress_connection::builders::UpdateVpcIngressConnectionOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl UpdateVpcIngressConnectionOutputBuilder {
         self
     }
     /// <p>A description of the App Runner VPC Ingress Connection resource that's updated by this request.</p>
-    pub fn set_vpc_ingress_connection(mut self, input: std::option::Option<crate::types::VpcIngressConnection>) -> Self {
-        self.vpc_ingress_connection = input; self
+    pub fn set_vpc_ingress_connection(
+        mut self,
+        input: std::option::Option<crate::types::VpcIngressConnection>,
+    ) -> Self {
+        self.vpc_ingress_connection = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateVpcIngressConnectionOutput`](crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionOutput).
-    pub fn build(self) -> crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionOutput {
         crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionOutput {
-            vpc_ingress_connection: self.vpc_ingress_connection
-            ,
+            vpc_ingress_connection: self.vpc_ingress_connection,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p> Process data collector that runs in the environment that you specify. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Collector  {
+pub struct Collector {
     /// <p> The ID of the collector. </p>
     #[doc(hidden)]
     pub collector_id: std::option::Option<std::string::String>,
@@ -31,35 +31,37 @@ pub struct Collector  {
 }
 impl Collector {
     /// <p> The ID of the collector. </p>
-    pub fn collector_id(&self) -> std::option::Option<& str> {
+    pub fn collector_id(&self) -> std::option::Option<&str> {
         self.collector_id.as_deref()
     }
     /// <p> IP address of the server that is hosting the collector. </p>
-    pub fn ip_address(&self) -> std::option::Option<& str> {
+    pub fn ip_address(&self) -> std::option::Option<&str> {
         self.ip_address.as_deref()
     }
     /// <p> Hostname of the server that is hosting the collector. </p>
-    pub fn host_name(&self) -> std::option::Option<& str> {
+    pub fn host_name(&self) -> std::option::Option<&str> {
         self.host_name.as_deref()
     }
     /// <p> Indicates the health of a collector. </p>
-    pub fn collector_health(&self) -> std::option::Option<& crate::types::CollectorHealth> {
+    pub fn collector_health(&self) -> std::option::Option<&crate::types::CollectorHealth> {
         self.collector_health.as_ref()
     }
     /// <p> Current version of the collector that is running in the environment that you specify. </p>
-    pub fn collector_version(&self) -> std::option::Option<& str> {
+    pub fn collector_version(&self) -> std::option::Option<&str> {
         self.collector_version.as_deref()
     }
     /// <p> Time when the collector registered with the service. </p>
-    pub fn registered_time_stamp(&self) -> std::option::Option<& str> {
+    pub fn registered_time_stamp(&self) -> std::option::Option<&str> {
         self.registered_time_stamp.as_deref()
     }
     /// <p> Time when the collector last pinged the service. </p>
-    pub fn last_activity_time_stamp(&self) -> std::option::Option<& str> {
+    pub fn last_activity_time_stamp(&self) -> std::option::Option<&str> {
         self.last_activity_time_stamp.as_deref()
     }
     /// <p>Summary of the collector configuration.</p>
-    pub fn configuration_summary(&self) -> std::option::Option<& crate::types::ConfigurationSummary> {
+    pub fn configuration_summary(
+        &self,
+    ) -> std::option::Option<&crate::types::ConfigurationSummary> {
         self.configuration_summary.as_ref()
     }
 }
@@ -91,7 +93,8 @@ impl CollectorBuilder {
     }
     /// <p> The ID of the collector. </p>
     pub fn set_collector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collector_id = input; self
+        self.collector_id = input;
+        self
     }
     /// <p> IP address of the server that is hosting the collector. </p>
     pub fn ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +103,8 @@ impl CollectorBuilder {
     }
     /// <p> IP address of the server that is hosting the collector. </p>
     pub fn set_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_address = input; self
+        self.ip_address = input;
+        self
     }
     /// <p> Hostname of the server that is hosting the collector. </p>
     pub fn host_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,7 +113,8 @@ impl CollectorBuilder {
     }
     /// <p> Hostname of the server that is hosting the collector. </p>
     pub fn set_host_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_name = input; self
+        self.host_name = input;
+        self
     }
     /// <p> Indicates the health of a collector. </p>
     pub fn collector_health(mut self, input: crate::types::CollectorHealth) -> Self {
@@ -117,8 +122,12 @@ impl CollectorBuilder {
         self
     }
     /// <p> Indicates the health of a collector. </p>
-    pub fn set_collector_health(mut self, input: std::option::Option<crate::types::CollectorHealth>) -> Self {
-        self.collector_health = input; self
+    pub fn set_collector_health(
+        mut self,
+        input: std::option::Option<crate::types::CollectorHealth>,
+    ) -> Self {
+        self.collector_health = input;
+        self
     }
     /// <p> Current version of the collector that is running in the environment that you specify. </p>
     pub fn collector_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,8 +135,12 @@ impl CollectorBuilder {
         self
     }
     /// <p> Current version of the collector that is running in the environment that you specify. </p>
-    pub fn set_collector_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collector_version = input; self
+    pub fn set_collector_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.collector_version = input;
+        self
     }
     /// <p> Time when the collector registered with the service. </p>
     pub fn registered_time_stamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,8 +148,12 @@ impl CollectorBuilder {
         self
     }
     /// <p> Time when the collector registered with the service. </p>
-    pub fn set_registered_time_stamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registered_time_stamp = input; self
+    pub fn set_registered_time_stamp(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.registered_time_stamp = input;
+        self
     }
     /// <p> Time when the collector last pinged the service. </p>
     pub fn last_activity_time_stamp(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,8 +161,12 @@ impl CollectorBuilder {
         self
     }
     /// <p> Time when the collector last pinged the service. </p>
-    pub fn set_last_activity_time_stamp(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_activity_time_stamp = input; self
+    pub fn set_last_activity_time_stamp(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_activity_time_stamp = input;
+        self
     }
     /// <p>Summary of the collector configuration.</p>
     pub fn configuration_summary(mut self, input: crate::types::ConfigurationSummary) -> Self {
@@ -153,29 +174,24 @@ impl CollectorBuilder {
         self
     }
     /// <p>Summary of the collector configuration.</p>
-    pub fn set_configuration_summary(mut self, input: std::option::Option<crate::types::ConfigurationSummary>) -> Self {
-        self.configuration_summary = input; self
+    pub fn set_configuration_summary(
+        mut self,
+        input: std::option::Option<crate::types::ConfigurationSummary>,
+    ) -> Self {
+        self.configuration_summary = input;
+        self
     }
     /// Consumes the builder and constructs a [`Collector`](crate::types::Collector).
     pub fn build(self) -> crate::types::Collector {
         crate::types::Collector {
-            collector_id: self.collector_id
-            ,
-            ip_address: self.ip_address
-            ,
-            host_name: self.host_name
-            ,
-            collector_health: self.collector_health
-            ,
-            collector_version: self.collector_version
-            ,
-            registered_time_stamp: self.registered_time_stamp
-            ,
-            last_activity_time_stamp: self.last_activity_time_stamp
-            ,
-            configuration_summary: self.configuration_summary
-            ,
+            collector_id: self.collector_id,
+            ip_address: self.ip_address,
+            host_name: self.host_name,
+            collector_health: self.collector_health,
+            collector_version: self.collector_version,
+            registered_time_stamp: self.registered_time_stamp,
+            last_activity_time_stamp: self.last_activity_time_stamp,
+            configuration_summary: self.configuration_summary,
         }
     }
 }
-

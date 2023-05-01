@@ -3,14 +3,16 @@
 /// Add an output to a bridge.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddBridgeOutputRequest  {
+pub struct AddBridgeOutputRequest {
     /// Add a network output to an existing bridge.
     #[doc(hidden)]
     pub network_output: std::option::Option<crate::types::AddBridgeNetworkOutputRequest>,
 }
 impl AddBridgeOutputRequest {
     /// Add a network output to an existing bridge.
-    pub fn network_output(&self) -> std::option::Option<& crate::types::AddBridgeNetworkOutputRequest> {
+    pub fn network_output(
+        &self,
+    ) -> std::option::Option<&crate::types::AddBridgeNetworkOutputRequest> {
         self.network_output.as_ref()
     }
 }
@@ -34,15 +36,17 @@ impl AddBridgeOutputRequestBuilder {
         self
     }
     /// Add a network output to an existing bridge.
-    pub fn set_network_output(mut self, input: std::option::Option<crate::types::AddBridgeNetworkOutputRequest>) -> Self {
-        self.network_output = input; self
+    pub fn set_network_output(
+        mut self,
+        input: std::option::Option<crate::types::AddBridgeNetworkOutputRequest>,
+    ) -> Self {
+        self.network_output = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddBridgeOutputRequest`](crate::types::AddBridgeOutputRequest).
     pub fn build(self) -> crate::types::AddBridgeOutputRequest {
         crate::types::AddBridgeOutputRequest {
-            network_output: self.network_output
-            ,
+            network_output: self.network_output,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains the details about the policy generation error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobError  {
+pub struct JobError {
     /// <p>The job error code.</p>
     #[doc(hidden)]
     pub code: std::option::Option<crate::types::JobErrorCode>,
@@ -13,11 +13,11 @@ pub struct JobError  {
 }
 impl JobError {
     /// <p>The job error code.</p>
-    pub fn code(&self) -> std::option::Option<& crate::types::JobErrorCode> {
+    pub fn code(&self) -> std::option::Option<&crate::types::JobErrorCode> {
         self.code.as_ref()
     }
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl JobErrorBuilder {
     }
     /// <p>The job error code.</p>
     pub fn set_code(mut self, input: std::option::Option<crate::types::JobErrorCode>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl JobErrorBuilder {
     }
     /// <p>Specific information about the error. For example, which service quota was exceeded or which resource was not found.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`JobError`](crate::types::JobError).
     pub fn build(self) -> crate::types::JobError {
         crate::types::JobError {
-            code: self.code
-            ,
-            message: self.message
-            ,
+            code: self.code,
+            message: self.message,
         }
     }
 }
-

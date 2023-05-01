@@ -3,7 +3,7 @@
 /// <p>An object that consists of a member Amazon Resource Name (ARN) and a member ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MemberIdArnPair  {
+pub struct MemberIdArnPair {
     /// <p>The ID of the member.</p>
     #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MemberIdArnPair  {
 }
 impl MemberIdArnPair {
     /// <p>The ID of the member.</p>
-    pub fn member_id(&self) -> std::option::Option<& str> {
+    pub fn member_id(&self) -> std::option::Option<&str> {
         self.member_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
-    pub fn member_arn(&self) -> std::option::Option<& str> {
+    pub fn member_arn(&self) -> std::option::Option<&str> {
         self.member_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl MemberIdArnPairBuilder {
     }
     /// <p>The ID of the member.</p>
     pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_id = input; self
+        self.member_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
     pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl MemberIdArnPairBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the member.</p>
     pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_arn = input; self
+        self.member_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`MemberIdArnPair`](crate::types::MemberIdArnPair).
     pub fn build(self) -> crate::types::MemberIdArnPair {
         crate::types::MemberIdArnPair {
-            member_id: self.member_id
-            ,
-            member_arn: self.member_arn
-            ,
+            member_id: self.member_id,
+            member_arn: self.member_arn,
         }
     }
 }
-

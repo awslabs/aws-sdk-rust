@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLaunchTemplateInput  {
+pub struct DeleteLaunchTemplateInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
-    /// <p>The ID of the launch template.</p> 
+    /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
-    /// <p>The name of the launch template.</p> 
+    /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     #[doc(hidden)]
     pub launch_template_name: std::option::Option<std::string::String>,
@@ -20,20 +20,21 @@ impl DeleteLaunchTemplateInput {
     pub fn dry_run(&self) -> std::option::Option<bool> {
         self.dry_run
     }
-    /// <p>The ID of the launch template.</p> 
+    /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<& str> {
+    pub fn launch_template_id(&self) -> std::option::Option<&str> {
         self.launch_template_id.as_deref()
     }
-    /// <p>The name of the launch template.</p> 
+    /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn launch_template_name(&self) -> std::option::Option<& str> {
+    pub fn launch_template_name(&self) -> std::option::Option<&str> {
         self.launch_template_name.as_deref()
     }
 }
 impl DeleteLaunchTemplateInput {
     /// Creates a new builder-style object to manufacture [`DeleteLaunchTemplateInput`](crate::operation::delete_launch_template::DeleteLaunchTemplateInput).
-    pub fn builder() -> crate::operation::delete_launch_template::builders::DeleteLaunchTemplateInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_launch_template::builders::DeleteLaunchTemplateInputBuilder {
         crate::operation::delete_launch_template::builders::DeleteLaunchTemplateInputBuilder::default()
     }
 }
@@ -54,42 +55,52 @@ impl DeleteLaunchTemplateInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
-    /// <p>The ID of the launch template.</p> 
+    /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
     pub fn launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.launch_template_id = Some(input.into());
         self
     }
-    /// <p>The ID of the launch template.</p> 
+    /// <p>The ID of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>, but not both.</p>
-    pub fn set_launch_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_template_id = input; self
+    pub fn set_launch_template_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_template_id = input;
+        self
     }
-    /// <p>The name of the launch template.</p> 
+    /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
     pub fn launch_template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.launch_template_name = Some(input.into());
         self
     }
-    /// <p>The name of the launch template.</p> 
+    /// <p>The name of the launch template.</p>
     /// <p>You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>, but not both.</p>
-    pub fn set_launch_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_template_name = input; self
+    pub fn set_launch_template_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launch_template_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteLaunchTemplateInput`](crate::operation::delete_launch_template::DeleteLaunchTemplateInput).
-    pub fn build(self) -> Result<crate::operation::delete_launch_template::DeleteLaunchTemplateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_launch_template::DeleteLaunchTemplateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_launch_template::DeleteLaunchTemplateInput {
-                dry_run: self.dry_run
-                ,
-                launch_template_id: self.launch_template_id
-                ,
-                launch_template_name: self.launch_template_name
-                ,
-            }
+                dry_run: self.dry_run,
+                launch_template_id: self.launch_template_id,
+                launch_template_name: self.launch_template_name,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessPolicyOutput  {
+pub struct GetAccessPolicyOutput {
     /// <p>Details about the requested access policy.</p>
     #[doc(hidden)]
     pub access_policy_detail: std::option::Option<crate::types::AccessPolicyDetail>,
@@ -10,18 +10,19 @@ pub struct GetAccessPolicyOutput  {
 }
 impl GetAccessPolicyOutput {
     /// <p>Details about the requested access policy.</p>
-    pub fn access_policy_detail(&self) -> std::option::Option<& crate::types::AccessPolicyDetail> {
+    pub fn access_policy_detail(&self) -> std::option::Option<&crate::types::AccessPolicyDetail> {
         self.access_policy_detail.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAccessPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessPolicyOutput`](crate::operation::get_access_policy::GetAccessPolicyOutput).
-    pub fn builder() -> crate::operation::get_access_policy::builders::GetAccessPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::get_access_policy::builders::GetAccessPolicyOutputBuilder
+    {
         crate::operation::get_access_policy::builders::GetAccessPolicyOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl GetAccessPolicyOutputBuilder {
         self
     }
     /// <p>Details about the requested access policy.</p>
-    pub fn set_access_policy_detail(mut self, input: std::option::Option<crate::types::AccessPolicyDetail>) -> Self {
-        self.access_policy_detail = input; self
+    pub fn set_access_policy_detail(
+        mut self,
+        input: std::option::Option<crate::types::AccessPolicyDetail>,
+    ) -> Self {
+        self.access_policy_detail = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetAccessPolicyOutput`](crate::operation::get_access_policy::GetAccessPolicyOutput).
     pub fn build(self) -> crate::operation::get_access_policy::GetAccessPolicyOutput {
         crate::operation::get_access_policy::GetAccessPolicyOutput {
-            access_policy_detail: self.access_policy_detail
-            ,
+            access_policy_detail: self.access_policy_detail,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUsageStatisticsOutput  {
+pub struct GetUsageStatisticsOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,26 +16,27 @@ pub struct GetUsageStatisticsOutput  {
 }
 impl GetUsageStatisticsOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
-    pub fn records(&self) -> std::option::Option<& [crate::types::UsageRecord]> {
+    pub fn records(&self) -> std::option::Option<&[crate::types::UsageRecord]> {
         self.records.as_deref()
     }
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
-    pub fn time_range(&self) -> std::option::Option<& crate::types::TimeRange> {
+    pub fn time_range(&self) -> std::option::Option<&crate::types::TimeRange> {
         self.time_range.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetUsageStatisticsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetUsageStatisticsOutput {
     /// Creates a new builder-style object to manufacture [`GetUsageStatisticsOutput`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput).
-    pub fn builder() -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_usage_statistics::builders::GetUsageStatisticsOutputBuilder {
         crate::operation::get_usage_statistics::builders::GetUsageStatisticsOutputBuilder::default()
     }
 }
@@ -57,7 +58,8 @@ impl GetUsageStatisticsOutputBuilder {
     }
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `records`.
     ///
@@ -66,13 +68,17 @@ impl GetUsageStatisticsOutputBuilder {
     /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
     pub fn records(mut self, input: crate::types::UsageRecord) -> Self {
         let mut v = self.records.unwrap_or_default();
-                        v.push(input);
-                        self.records = Some(v);
-                        self
+        v.push(input);
+        self.records = Some(v);
+        self
     }
     /// <p>An array of objects that contains the results of the query. Each object contains the data for an account that matches the filter criteria specified in the request.</p>
-    pub fn set_records(mut self, input: std::option::Option<std::vec::Vec<crate::types::UsageRecord>>) -> Self {
-        self.records = input; self
+    pub fn set_records(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UsageRecord>>,
+    ) -> Self {
+        self.records = input;
+        self
     }
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     pub fn time_range(mut self, input: crate::types::TimeRange) -> Self {
@@ -81,28 +87,25 @@ impl GetUsageStatisticsOutputBuilder {
     }
     /// <p>The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.</p>
     pub fn set_time_range(mut self, input: std::option::Option<crate::types::TimeRange>) -> Self {
-        self.time_range = input; self
+        self.time_range = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetUsageStatisticsOutput`](crate::operation::get_usage_statistics::GetUsageStatisticsOutput).
     pub fn build(self) -> crate::operation::get_usage_statistics::GetUsageStatisticsOutput {
         crate::operation::get_usage_statistics::GetUsageStatisticsOutput {
-            next_token: self.next_token
-            ,
-            records: self.records
-            ,
-            time_range: self.time_range
-            ,
+            next_token: self.next_token,
+            records: self.records,
+            time_range: self.time_range,
             _request_id: self._request_id,
         }
     }
 }
-

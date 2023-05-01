@@ -3,10 +3,11 @@
 /// <p>This data type is used as a response element in the <code>ModifyDBCluster</code> operation and contains changes that will be applied during the next maintenance window.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterPendingModifiedValues  {
+pub struct ClusterPendingModifiedValues {
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
     #[doc(hidden)]
-    pub pending_cloudwatch_logs_exports: std::option::Option<crate::types::PendingCloudwatchLogsExports>,
+    pub pending_cloudwatch_logs_exports:
+        std::option::Option<crate::types::PendingCloudwatchLogsExports>,
     /// <p>The DBClusterIdentifier value for the DB cluster.</p>
     #[doc(hidden)]
     pub db_cluster_identifier: std::option::Option<std::string::String>,
@@ -31,15 +32,17 @@ pub struct ClusterPendingModifiedValues  {
 }
 impl ClusterPendingModifiedValues {
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
-    pub fn pending_cloudwatch_logs_exports(&self) -> std::option::Option<& crate::types::PendingCloudwatchLogsExports> {
+    pub fn pending_cloudwatch_logs_exports(
+        &self,
+    ) -> std::option::Option<&crate::types::PendingCloudwatchLogsExports> {
         self.pending_cloudwatch_logs_exports.as_ref()
     }
     /// <p>The DBClusterIdentifier value for the DB cluster.</p>
-    pub fn db_cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn db_cluster_identifier(&self) -> std::option::Option<&str> {
         self.db_cluster_identifier.as_deref()
     }
     /// <p>The master credentials for the DB cluster.</p>
-    pub fn master_user_password(&self) -> std::option::Option<& str> {
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
     /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
@@ -47,7 +50,7 @@ impl ClusterPendingModifiedValues {
         self.iam_database_authentication_enabled
     }
     /// <p>The database engine version.</p>
-    pub fn engine_version(&self) -> std::option::Option<& str> {
+    pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
@@ -74,7 +77,8 @@ impl ClusterPendingModifiedValues {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ClusterPendingModifiedValuesBuilder {
-    pub(crate) pending_cloudwatch_logs_exports: std::option::Option<crate::types::PendingCloudwatchLogsExports>,
+    pub(crate) pending_cloudwatch_logs_exports:
+        std::option::Option<crate::types::PendingCloudwatchLogsExports>,
     pub(crate) db_cluster_identifier: std::option::Option<std::string::String>,
     pub(crate) master_user_password: std::option::Option<std::string::String>,
     pub(crate) iam_database_authentication_enabled: std::option::Option<bool>,
@@ -85,13 +89,20 @@ pub struct ClusterPendingModifiedValuesBuilder {
 }
 impl ClusterPendingModifiedValuesBuilder {
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
-    pub fn pending_cloudwatch_logs_exports(mut self, input: crate::types::PendingCloudwatchLogsExports) -> Self {
+    pub fn pending_cloudwatch_logs_exports(
+        mut self,
+        input: crate::types::PendingCloudwatchLogsExports,
+    ) -> Self {
         self.pending_cloudwatch_logs_exports = Some(input);
         self
     }
     /// <p>A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated.</p>
-    pub fn set_pending_cloudwatch_logs_exports(mut self, input: std::option::Option<crate::types::PendingCloudwatchLogsExports>) -> Self {
-        self.pending_cloudwatch_logs_exports = input; self
+    pub fn set_pending_cloudwatch_logs_exports(
+        mut self,
+        input: std::option::Option<crate::types::PendingCloudwatchLogsExports>,
+    ) -> Self {
+        self.pending_cloudwatch_logs_exports = input;
+        self
     }
     /// <p>The DBClusterIdentifier value for the DB cluster.</p>
     pub fn db_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +110,12 @@ impl ClusterPendingModifiedValuesBuilder {
         self
     }
     /// <p>The DBClusterIdentifier value for the DB cluster.</p>
-    pub fn set_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_cluster_identifier = input; self
+    pub fn set_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.db_cluster_identifier = input;
+        self
     }
     /// <p>The master credentials for the DB cluster.</p>
     pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +123,12 @@ impl ClusterPendingModifiedValuesBuilder {
         self
     }
     /// <p>The master credentials for the DB cluster.</p>
-    pub fn set_master_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.master_user_password = input; self
+    pub fn set_master_user_password(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.master_user_password = input;
+        self
     }
     /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
     pub fn iam_database_authentication_enabled(mut self, input: bool) -> Self {
@@ -117,8 +136,12 @@ impl ClusterPendingModifiedValuesBuilder {
         self
     }
     /// <p>A value that indicates whether mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts is enabled.</p>
-    pub fn set_iam_database_authentication_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.iam_database_authentication_enabled = input; self
+    pub fn set_iam_database_authentication_enabled(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.iam_database_authentication_enabled = input;
+        self
     }
     /// <p>The database engine version.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,7 +150,8 @@ impl ClusterPendingModifiedValuesBuilder {
     }
     /// <p>The database engine version.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input; self
+        self.engine_version = input;
+        self
     }
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub fn backup_retention_period(mut self, input: i32) -> Self {
@@ -136,7 +160,8 @@ impl ClusterPendingModifiedValuesBuilder {
     }
     /// <p>The number of days for which automatic DB snapshots are retained.</p>
     pub fn set_backup_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.backup_retention_period = input; self
+        self.backup_retention_period = input;
+        self
     }
     /// <p>The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub fn allocated_storage(mut self, input: i32) -> Self {
@@ -145,7 +170,8 @@ impl ClusterPendingModifiedValuesBuilder {
     }
     /// <p>The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically adjusts as needed.</p>
     pub fn set_allocated_storage(mut self, input: std::option::Option<i32>) -> Self {
-        self.allocated_storage = input; self
+        self.allocated_storage = input;
+        self
     }
     /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn iops(mut self, input: i32) -> Self {
@@ -154,28 +180,20 @@ impl ClusterPendingModifiedValuesBuilder {
     }
     /// <p>The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.</p>
     pub fn set_iops(mut self, input: std::option::Option<i32>) -> Self {
-        self.iops = input; self
+        self.iops = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClusterPendingModifiedValues`](crate::types::ClusterPendingModifiedValues).
     pub fn build(self) -> crate::types::ClusterPendingModifiedValues {
         crate::types::ClusterPendingModifiedValues {
-            pending_cloudwatch_logs_exports: self.pending_cloudwatch_logs_exports
-            ,
-            db_cluster_identifier: self.db_cluster_identifier
-            ,
-            master_user_password: self.master_user_password
-            ,
-            iam_database_authentication_enabled: self.iam_database_authentication_enabled
-            ,
-            engine_version: self.engine_version
-            ,
-            backup_retention_period: self.backup_retention_period
-            ,
-            allocated_storage: self.allocated_storage
-            ,
-            iops: self.iops
-            ,
+            pending_cloudwatch_logs_exports: self.pending_cloudwatch_logs_exports,
+            db_cluster_identifier: self.db_cluster_identifier,
+            master_user_password: self.master_user_password,
+            iam_database_authentication_enabled: self.iam_database_authentication_enabled,
+            engine_version: self.engine_version,
+            backup_retention_period: self.backup_retention_period,
+            allocated_storage: self.allocated_storage,
+            iops: self.iops,
         }
     }
 }
-

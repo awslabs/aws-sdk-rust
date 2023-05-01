@@ -3,7 +3,7 @@
 /// <p>Contains a summary of each geofence that was successfully stored in a given geofence collection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchPutGeofenceSuccess  {
+pub struct BatchPutGeofenceSuccess {
     /// <p>The geofence successfully stored in a geofence collection.</p>
     #[doc(hidden)]
     pub geofence_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct BatchPutGeofenceSuccess  {
 }
 impl BatchPutGeofenceSuccess {
     /// <p>The geofence successfully stored in a geofence collection.</p>
-    pub fn geofence_id(&self) -> std::option::Option<& str> {
+    pub fn geofence_id(&self) -> std::option::Option<&str> {
         self.geofence_id.as_deref()
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.update_time.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl BatchPutGeofenceSuccessBuilder {
     }
     /// <p>The geofence successfully stored in a geofence collection.</p>
     pub fn set_geofence_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.geofence_id = input; self
+        self.geofence_id = input;
+        self
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -59,8 +60,12 @@ impl BatchPutGeofenceSuccessBuilder {
         self
     }
     /// <p>The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,19 +73,19 @@ impl BatchPutGeofenceSuccessBuilder {
         self
     }
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.update_time = input; self
+    pub fn set_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.update_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchPutGeofenceSuccess`](crate::types::BatchPutGeofenceSuccess).
     pub fn build(self) -> crate::types::BatchPutGeofenceSuccess {
         crate::types::BatchPutGeofenceSuccess {
-            geofence_id: self.geofence_id
-            ,
-            create_time: self.create_time
-            ,
-            update_time: self.update_time
-            ,
+            geofence_id: self.geofence_id,
+            create_time: self.create_time,
+            update_time: self.update_time,
         }
     }
 }
-

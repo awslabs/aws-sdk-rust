@@ -4,73 +4,91 @@ pub use crate::operation::describe_tls_inspection_configuration::_describe_tls_i
 pub use crate::operation::describe_tls_inspection_configuration::_describe_tls_inspection_configuration_input::DescribeTlsInspectionConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeTLSInspectionConfiguration`.
-/// 
+///
 /// <p>Returns the data objects for the specified TLS inspection configuration.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTLSInspectionConfigurationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_tls_inspection_configuration::builders::DescribeTlsInspectionConfigurationInputBuilder,
 }
-impl DescribeTLSInspectionConfigurationFluentBuilder  {
+impl DescribeTLSInspectionConfigurationFluentBuilder {
     /// Creates a new `DescribeTLSInspectionConfiguration`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_tls_inspection_configuration::DescribeTlsInspectionConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::describe_tls_inspection_configuration::DescribeTLSInspectionConfigurationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p> 
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn tls_inspection_configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tls_inspection_configuration_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tls_inspection_configuration_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_tls_inspection_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tls_inspection_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_tls_inspection_configuration_arn(input);
         self
     }
-    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p> 
+    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn tls_inspection_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tls_inspection_configuration_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tls_inspection_configuration_name(input.into());
         self
     }
-    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p> 
+    /// <p>The descriptive name of the TLS inspection configuration. You can't change the name of a TLS inspection configuration after you create it.</p>
     /// <p>You must specify the ARN or the name, and you can specify both. </p>
-    pub fn set_tls_inspection_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_tls_inspection_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_tls_inspection_configuration_name(input);
         self
     }
 }
-

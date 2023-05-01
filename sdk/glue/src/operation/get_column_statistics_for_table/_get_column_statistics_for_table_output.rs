@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetColumnStatisticsForTableOutput  {
+pub struct GetColumnStatisticsForTableOutput {
     /// <p>List of ColumnStatistics.</p>
     #[doc(hidden)]
     pub column_statistics_list: std::option::Option<std::vec::Vec<crate::types::ColumnStatistics>>,
@@ -13,22 +13,22 @@ pub struct GetColumnStatisticsForTableOutput  {
 }
 impl GetColumnStatisticsForTableOutput {
     /// <p>List of ColumnStatistics.</p>
-    pub fn column_statistics_list(&self) -> std::option::Option<& [crate::types::ColumnStatistics]> {
+    pub fn column_statistics_list(&self) -> std::option::Option<&[crate::types::ColumnStatistics]> {
         self.column_statistics_list.as_deref()
     }
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::ColumnError]> {
+    pub fn errors(&self) -> std::option::Option<&[crate::types::ColumnError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetColumnStatisticsForTableOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetColumnStatisticsForTableOutput {
     /// Creates a new builder-style object to manufacture [`GetColumnStatisticsForTableOutput`](crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableOutput).
-    pub fn builder() -> crate::operation::get_column_statistics_for_table::builders::GetColumnStatisticsForTableOutputBuilder {
+    pub fn builder() -> crate::operation::get_column_statistics_for_table::builders::GetColumnStatisticsForTableOutputBuilder{
         crate::operation::get_column_statistics_for_table::builders::GetColumnStatisticsForTableOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl GetColumnStatisticsForTableOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetColumnStatisticsForTableOutputBuilder {
-    pub(crate) column_statistics_list: std::option::Option<std::vec::Vec<crate::types::ColumnStatistics>>,
+    pub(crate) column_statistics_list:
+        std::option::Option<std::vec::Vec<crate::types::ColumnStatistics>>,
     pub(crate) errors: std::option::Option<std::vec::Vec<crate::types::ColumnError>>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl GetColumnStatisticsForTableOutputBuilder {
     /// <p>List of ColumnStatistics.</p>
     pub fn column_statistics_list(mut self, input: crate::types::ColumnStatistics) -> Self {
         let mut v = self.column_statistics_list.unwrap_or_default();
-                        v.push(input);
-                        self.column_statistics_list = Some(v);
-                        self
+        v.push(input);
+        self.column_statistics_list = Some(v);
+        self
     }
     /// <p>List of ColumnStatistics.</p>
-    pub fn set_column_statistics_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnStatistics>>) -> Self {
-        self.column_statistics_list = input; self
+    pub fn set_column_statistics_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ColumnStatistics>>,
+    ) -> Self {
+        self.column_statistics_list = input;
+        self
     }
     /// Appends an item to `errors`.
     ///
@@ -64,32 +69,35 @@ impl GetColumnStatisticsForTableOutputBuilder {
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
     pub fn errors(mut self, input: crate::types::ColumnError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>List of ColumnStatistics that failed to be retrieved.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ColumnError>>,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetColumnStatisticsForTableOutput`](crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableOutput).
-    pub fn build(self) -> crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableOutput {
         crate::operation::get_column_statistics_for_table::GetColumnStatisticsForTableOutput {
-            column_statistics_list: self.column_statistics_list
-            ,
-            errors: self.errors
-            ,
+            column_statistics_list: self.column_statistics_list,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }
 }
-

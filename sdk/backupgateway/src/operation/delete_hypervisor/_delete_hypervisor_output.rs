@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHypervisorOutput  {
+pub struct DeleteHypervisorOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct DeleteHypervisorOutput  {
 }
 impl DeleteHypervisorOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
-    pub fn hypervisor_arn(&self) -> std::option::Option<& str> {
+    pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
         self.hypervisor_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteHypervisorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteHypervisorOutput {
     /// Creates a new builder-style object to manufacture [`DeleteHypervisorOutput`](crate::operation::delete_hypervisor::DeleteHypervisorOutput).
-    pub fn builder() -> crate::operation::delete_hypervisor::builders::DeleteHypervisorOutputBuilder {
+    pub fn builder() -> crate::operation::delete_hypervisor::builders::DeleteHypervisorOutputBuilder
+    {
         crate::operation::delete_hypervisor::builders::DeleteHypervisorOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl DeleteHypervisorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
     pub fn set_hypervisor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hypervisor_arn = input; self
+        self.hypervisor_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteHypervisorOutput`](crate::operation::delete_hypervisor::DeleteHypervisorOutput).
     pub fn build(self) -> crate::operation::delete_hypervisor::DeleteHypervisorOutput {
         crate::operation::delete_hypervisor::DeleteHypervisorOutput {
-            hypervisor_arn: self.hypervisor_arn
-            ,
+            hypervisor_arn: self.hypervisor_arn,
             _request_id: self._request_id,
         }
     }
 }
-

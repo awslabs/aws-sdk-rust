@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDetectorModelAnalysisInput  {
+pub struct DescribeDetectorModelAnalysisInput {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
     #[doc(hidden)]
     pub analysis_id: std::option::Option<std::string::String>,
 }
 impl DescribeDetectorModelAnalysisInput {
     /// <p>The ID of the analysis result that you want to retrieve.</p>
-    pub fn analysis_id(&self) -> std::option::Option<& str> {
+    pub fn analysis_id(&self) -> std::option::Option<&str> {
         self.analysis_id.as_deref()
     }
 }
 impl DescribeDetectorModelAnalysisInput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorModelAnalysisInput`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisInput).
-    pub fn builder() -> crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisInputBuilder {
+    pub fn builder() -> crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisInputBuilder{
         crate::operation::describe_detector_model_analysis::builders::DescribeDetectorModelAnalysisInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl DescribeDetectorModelAnalysisInputBuilder {
     }
     /// <p>The ID of the analysis result that you want to retrieve.</p>
     pub fn set_analysis_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analysis_id = input; self
+        self.analysis_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDetectorModelAnalysisInput`](crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisInput).
-    pub fn build(self) -> Result<crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_detector_model_analysis::DescribeDetectorModelAnalysisInput {
                 analysis_id: self.analysis_id
@@ -46,4 +52,3 @@ impl DescribeDetectorModelAnalysisInputBuilder {
         )
     }
 }
-

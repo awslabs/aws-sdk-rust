@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDatalakeExceptionsSubscriptionInput  {
-}
+pub struct GetDatalakeExceptionsSubscriptionInput {}
 impl GetDatalakeExceptionsSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`GetDatalakeExceptionsSubscriptionInput`](crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionInput).
-    pub fn builder() -> crate::operation::get_datalake_exceptions_subscription::builders::GetDatalakeExceptionsSubscriptionInputBuilder {
+    pub fn builder() -> crate::operation::get_datalake_exceptions_subscription::builders::GetDatalakeExceptionsSubscriptionInputBuilder{
         crate::operation::get_datalake_exceptions_subscription::builders::GetDatalakeExceptionsSubscriptionInputBuilder::default()
     }
 }
@@ -14,15 +13,13 @@ impl GetDatalakeExceptionsSubscriptionInput {
 /// A builder for [`GetDatalakeExceptionsSubscriptionInput`](crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetDatalakeExceptionsSubscriptionInputBuilder {
-}
+pub struct GetDatalakeExceptionsSubscriptionInputBuilder {}
 impl GetDatalakeExceptionsSubscriptionInputBuilder {
     /// Consumes the builder and constructs a [`GetDatalakeExceptionsSubscriptionInput`](crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionInput).
-    pub fn build(self) -> Result<crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_datalake_exceptions_subscription::GetDatalakeExceptionsSubscriptionInput {
             }
         )
     }
 }
-

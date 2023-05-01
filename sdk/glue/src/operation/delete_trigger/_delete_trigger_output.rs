@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTriggerOutput  {
+pub struct DeleteTriggerOutput {
     /// <p>The name of the trigger that was deleted.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct DeleteTriggerOutput  {
 }
 impl DeleteTriggerOutput {
     /// <p>The name of the trigger that was deleted.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteTriggerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteTriggerOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTriggerOutput`](crate::operation::delete_trigger::DeleteTriggerOutput).
     pub fn builder() -> crate::operation::delete_trigger::builders::DeleteTriggerOutputBuilder {
@@ -41,24 +41,23 @@ impl DeleteTriggerOutputBuilder {
     }
     /// <p>The name of the trigger that was deleted.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteTriggerOutput`](crate::operation::delete_trigger::DeleteTriggerOutput).
     pub fn build(self) -> crate::operation::delete_trigger::DeleteTriggerOutput {
         crate::operation::delete_trigger::DeleteTriggerOutput {
-            name: self.name
-            ,
+            name: self.name,
             _request_id: self._request_id,
         }
     }
 }
-

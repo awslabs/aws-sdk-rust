@@ -3,7 +3,7 @@
 /// <p>The input for the CreateCertificateFromCsr operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCertificateFromCsrInput  {
+pub struct CreateCertificateFromCsrInput {
     /// <p>The certificate signing request (CSR).</p>
     #[doc(hidden)]
     pub certificate_signing_request: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct CreateCertificateFromCsrInput  {
 }
 impl CreateCertificateFromCsrInput {
     /// <p>The certificate signing request (CSR).</p>
-    pub fn certificate_signing_request(&self) -> std::option::Option<& str> {
+    pub fn certificate_signing_request(&self) -> std::option::Option<&str> {
         self.certificate_signing_request.as_deref()
     }
     /// <p>Specifies whether the certificate is active.</p>
@@ -23,7 +23,9 @@ impl CreateCertificateFromCsrInput {
 }
 impl CreateCertificateFromCsrInput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateFromCsrInput`](crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput).
-    pub fn builder() -> crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder
+    {
         crate::operation::create_certificate_from_csr::builders::CreateCertificateFromCsrInputBuilder::default()
     }
 }
@@ -42,8 +44,12 @@ impl CreateCertificateFromCsrInputBuilder {
         self
     }
     /// <p>The certificate signing request (CSR).</p>
-    pub fn set_certificate_signing_request(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_signing_request = input; self
+    pub fn set_certificate_signing_request(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.certificate_signing_request = input;
+        self
     }
     /// <p>Specifies whether the certificate is active.</p>
     pub fn set_as_active(mut self, input: bool) -> Self {
@@ -52,18 +58,21 @@ impl CreateCertificateFromCsrInputBuilder {
     }
     /// <p>Specifies whether the certificate is active.</p>
     pub fn set_set_as_active(mut self, input: std::option::Option<bool>) -> Self {
-        self.set_as_active = input; self
+        self.set_as_active = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateCertificateFromCsrInput`](crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput).
-    pub fn build(self) -> Result<crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_certificate_from_csr::CreateCertificateFromCsrInput {
-                certificate_signing_request: self.certificate_signing_request
-                ,
-                set_as_active: self.set_as_active
-                ,
-            }
+                certificate_signing_request: self.certificate_signing_request,
+                set_as_active: self.set_as_active,
+            },
         )
     }
 }
-

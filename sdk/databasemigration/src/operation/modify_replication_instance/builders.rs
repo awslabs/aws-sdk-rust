@@ -4,59 +4,82 @@ pub use crate::operation::modify_replication_instance::_modify_replication_insta
 pub use crate::operation::modify_replication_instance::_modify_replication_instance_input::ModifyReplicationInstanceInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyReplicationInstance`.
-/// 
-/// <p>Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request.</p> 
-/// <p>Some settings are applied during the maintenance window.</p> 
+///
+/// <p>Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request.</p>
+/// <p>Some settings are applied during the maintenance window.</p>
 /// <p></p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyReplicationInstanceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::modify_replication_instance::builders::ModifyReplicationInstanceInputBuilder,
 }
-impl ModifyReplicationInstanceFluentBuilder  {
+impl ModifyReplicationInstanceFluentBuilder {
     /// Creates a new `ModifyReplicationInstance`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_replication_instance::ModifyReplicationInstance, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_replication_instance::ModifyReplicationInstanceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput, aws_smithy_http::result::SdkError<crate::operation::modify_replication_instance::ModifyReplicationInstanceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_replication_instance::ModifyReplicationInstance,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_replication_instance::ModifyReplicationInstanceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_replication_instance::ModifyReplicationInstanceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.replication_instance_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
-    pub fn set_replication_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_replication_instance_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_replication_instance_arn(input);
         self
     }
@@ -80,15 +103,18 @@ impl ModifyReplicationInstanceFluentBuilder  {
         self.inner = self.inner.set_apply_immediately(input);
         self
     }
-    /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p> 
+    /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
     pub fn replication_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.replication_instance_class(input.into());
         self
     }
-    /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p> 
+    /// <p>The compute and memory capacity of the replication instance as defined for the specified replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
     /// <p>For more information on the settings and capacities for the available replication instance classes, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth"> Selecting the right DMS replication instance for your migration</a>. </p>
-    pub fn set_replication_instance_class(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_replication_instance_class(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_replication_instance_class(input);
         self
     }
@@ -102,25 +128,31 @@ impl ModifyReplicationInstanceFluentBuilder  {
         self
     }
     /// <p> Specifies the VPC security group to be used with the replication instance. The VPC security group must work with the VPC containing the replication instance. </p>
-    pub fn set_vpc_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_vpc_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_vpc_security_group_ids(input);
         self
     }
-    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p> 
-    /// <p>Default: Uses existing setting</p> 
-    /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> 
-    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p> 
+    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
+    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
     pub fn preferred_maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.preferred_maintenance_window(input.into());
         self
     }
-    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p> 
-    /// <p>Default: Uses existing setting</p> 
-    /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> 
-    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p> 
+    /// <p>The weekly time range (in UTC) during which system maintenance can occur, which might result in an outage. Changing this parameter does not result in an outage, except in the following situation, and the change is asynchronously applied as soon as possible. If moving this window to the current time, there must be at least 30 minutes between the current time and end of the window to ensure pending changes are applied.</p>
+    /// <p>Default: Uses existing setting</p>
+    /// <p>Format: ddd:hh24:mi-ddd:hh24:mi</p>
+    /// <p>Valid Days: Mon | Tue | Wed | Thu | Fri | Sat | Sun</p>
     /// <p>Constraints: Must be at least 30 minutes</p>
-    pub fn set_preferred_maintenance_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_preferred_maintenance_window(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_preferred_maintenance_window(input);
         self
     }
@@ -134,63 +166,69 @@ impl ModifyReplicationInstanceFluentBuilder  {
         self.inner = self.inner.set_multi_az(input);
         self
     }
-    /// <p>The engine version number of the replication instance.</p> 
+    /// <p>The engine version number of the replication instance.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.engine_version(input.into());
         self
     }
-    /// <p>The engine version number of the replication instance.</p> 
+    /// <p>The engine version number of the replication instance.</p>
     /// <p>When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to <code>true</code>.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_engine_version(input);
         self
     }
-    /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p> 
+    /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
     pub fn allow_major_version_upgrade(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_major_version_upgrade(input);
         self
     }
-    /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p> 
+    /// <p>Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage, and the change is asynchronously applied as soon as possible.</p>
     /// <p>This parameter must be set to <code>true</code> when specifying a value for the <code>EngineVersion</code> parameter that is a different major version than the replication instance's current version.</p>
     pub fn set_allow_major_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_allow_major_version_upgrade(input);
         self
     }
-    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p> 
-    /// <p>An outage does result if these factors apply: </p> 
-    /// <ul> 
-    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li> 
-    /// <li> <p>A newer minor version is available. </p> </li> 
-    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li> 
-    /// </ul> 
-    /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p> 
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
+    /// <p>An outage does result if these factors apply: </p>
+    /// <ul>
+    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+    /// <li> <p>A newer minor version is available. </p> </li>
+    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
+    /// </ul>
+    /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p>
     /// <p>If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication instance, DMS uses the engine version specified by the <code>EngineVersion</code> parameter.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
         self.inner = self.inner.auto_minor_version_upgrade(input);
         self
     }
-    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p> 
-    /// <p>An outage does result if these factors apply: </p> 
-    /// <ul> 
-    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li> 
-    /// <li> <p>A newer minor version is available. </p> </li> 
-    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li> 
-    /// </ul> 
-    /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p> 
+    /// <p>A value that indicates that minor version upgrades are applied automatically to the replication instance during the maintenance window. Changing this parameter doesn't result in an outage, except in the case described following. The change is asynchronously applied as soon as possible. </p>
+    /// <p>An outage does result if these factors apply: </p>
+    /// <ul>
+    /// <li> <p>This parameter is set to <code>true</code> during the maintenance window.</p> </li>
+    /// <li> <p>A newer minor version is available. </p> </li>
+    /// <li> <p>DMS has enabled automatic patching for the given engine version. </p> </li>
+    /// </ul>
+    /// <p>When <code>AutoMinorVersionUpgrade</code> is enabled, DMS uses the current default engine version when you modify a replication instance. For example, if you set <code>EngineVersion</code> to a lower version number than the current default version, DMS uses the default version.</p>
     /// <p>If <code>AutoMinorVersionUpgrade</code> <i>isn’t</i> enabled when you modify a replication instance, DMS uses the engine version specified by the <code>EngineVersion</code> parameter.</p>
     pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_auto_minor_version_upgrade(input);
         self
     }
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
-    pub fn replication_instance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn replication_instance_identifier(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.replication_instance_identifier(input.into());
         self
     }
     /// <p>The replication instance identifier. This parameter is stored as a lowercase string.</p>
-    pub fn set_replication_instance_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_replication_instance_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_replication_instance_identifier(input);
         self
     }
@@ -205,4 +243,3 @@ impl ModifyReplicationInstanceFluentBuilder  {
         self
     }
 }
-

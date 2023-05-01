@@ -104,4 +104,3 @@ pub use crate::types::_report::ReportBuilder;
 pub use crate::types::_code_coverage_report_summary::CodeCoverageReportSummaryBuilder;
 
 pub use crate::types::_test_report_summary::TestReportSummaryBuilder;
-

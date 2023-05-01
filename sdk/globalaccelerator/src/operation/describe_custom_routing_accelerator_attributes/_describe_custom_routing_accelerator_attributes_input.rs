@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCustomRoutingAcceleratorAttributesInput  {
+pub struct DescribeCustomRoutingAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
     #[doc(hidden)]
     pub accelerator_arn: std::option::Option<std::string::String>,
 }
 impl DescribeCustomRoutingAcceleratorAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
-    pub fn accelerator_arn(&self) -> std::option::Option<& str> {
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
         self.accelerator_arn.as_deref()
     }
 }
 impl DescribeCustomRoutingAcceleratorAttributesInput {
     /// Creates a new builder-style object to manufacture [`DescribeCustomRoutingAcceleratorAttributesInput`](crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesInput).
-    pub fn builder() -> crate::operation::describe_custom_routing_accelerator_attributes::builders::DescribeCustomRoutingAcceleratorAttributesInputBuilder {
+    pub fn builder() -> crate::operation::describe_custom_routing_accelerator_attributes::builders::DescribeCustomRoutingAcceleratorAttributesInputBuilder{
         crate::operation::describe_custom_routing_accelerator_attributes::builders::DescribeCustomRoutingAcceleratorAttributesInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl DescribeCustomRoutingAcceleratorAttributesInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.</p>
     pub fn set_accelerator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accelerator_arn = input; self
+        self.accelerator_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeCustomRoutingAcceleratorAttributesInput`](crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesInput).
-    pub fn build(self) -> Result<crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_custom_routing_accelerator_attributes::DescribeCustomRoutingAcceleratorAttributesInput {
                 accelerator_arn: self.accelerator_arn
@@ -46,4 +47,3 @@ impl DescribeCustomRoutingAcceleratorAttributesInputBuilder {
         )
     }
 }
-

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRoutingProfileNameOutput  {
+pub struct UpdateRoutingProfileNameOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateRoutingProfileNameOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateRoutingProfileNameOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRoutingProfileNameOutput`](crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput).
-    pub fn builder() -> crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameOutputBuilder {
+    pub fn builder() -> crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameOutputBuilder{
         crate::operation::update_routing_profile_name::builders::UpdateRoutingProfileNameOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct UpdateRoutingProfileNameOutputBuilder {
 }
 impl UpdateRoutingProfileNameOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateRoutingProfileNameOutput`](crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput).
-    pub fn build(self) -> crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput {
         crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput {
             _request_id: self._request_id,
         }
     }
 }
-

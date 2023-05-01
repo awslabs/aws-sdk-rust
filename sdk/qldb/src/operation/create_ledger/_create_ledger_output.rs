@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLedgerOutput  {
+pub struct CreateLedgerOutput {
     /// <p>The name of the ledger.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct CreateLedgerOutput  {
     /// <p>The permissions mode of the ledger that you created.</p>
     #[doc(hidden)]
     pub permissions_mode: std::option::Option<crate::types::PermissionsMode>,
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> 
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     #[doc(hidden)]
     pub deletion_protection: std::option::Option<bool>,
@@ -29,40 +29,40 @@ pub struct CreateLedgerOutput  {
 }
 impl CreateLedgerOutput {
     /// <p>The name of the ledger.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The current status of the ledger.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::LedgerState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::LedgerState> {
         self.state.as_ref()
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The permissions mode of the ledger that you created.</p>
-    pub fn permissions_mode(&self) -> std::option::Option<& crate::types::PermissionsMode> {
+    pub fn permissions_mode(&self) -> std::option::Option<&crate::types::PermissionsMode> {
         self.permissions_mode.as_ref()
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> 
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub fn deletion_protection(&self) -> std::option::Option<bool> {
         self.deletion_protection
     }
     /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLedgerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateLedgerOutput {
     /// Creates a new builder-style object to manufacture [`CreateLedgerOutput`](crate::operation::create_ledger::CreateLedgerOutput).
     pub fn builder() -> crate::operation::create_ledger::builders::CreateLedgerOutputBuilder {
@@ -91,7 +91,8 @@ impl CreateLedgerOutputBuilder {
     }
     /// <p>The name of the ledger.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,7 +101,8 @@ impl CreateLedgerOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the ledger.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The current status of the ledger.</p>
     pub fn state(mut self, input: crate::types::LedgerState) -> Self {
@@ -109,7 +111,8 @@ impl CreateLedgerOutputBuilder {
     }
     /// <p>The current status of the ledger.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::LedgerState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -117,8 +120,12 @@ impl CreateLedgerOutputBuilder {
         self
     }
     /// <p>The date and time, in epoch time format, when the ledger was created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970 UTC.)</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The permissions mode of the ledger that you created.</p>
     pub fn permissions_mode(mut self, input: crate::types::PermissionsMode) -> Self {
@@ -126,19 +133,24 @@ impl CreateLedgerOutputBuilder {
         self
     }
     /// <p>The permissions mode of the ledger that you created.</p>
-    pub fn set_permissions_mode(mut self, input: std::option::Option<crate::types::PermissionsMode>) -> Self {
-        self.permissions_mode = input; self
+    pub fn set_permissions_mode(
+        mut self,
+        input: std::option::Option<crate::types::PermissionsMode>,
+    ) -> Self {
+        self.permissions_mode = input;
+        self
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> 
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub fn deletion_protection(mut self, input: bool) -> Self {
         self.deletion_protection = Some(input);
         self
     }
-    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> 
+    /// <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p>
     /// <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
     pub fn set_deletion_protection(mut self, input: std::option::Option<bool>) -> Self {
-        self.deletion_protection = input; self
+        self.deletion_protection = input;
+        self
     }
     /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,36 +159,29 @@ impl CreateLedgerOutputBuilder {
     }
     /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input; self
+        self.kms_key_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateLedgerOutput`](crate::operation::create_ledger::CreateLedgerOutput).
     pub fn build(self) -> crate::operation::create_ledger::CreateLedgerOutput {
         crate::operation::create_ledger::CreateLedgerOutput {
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            state: self.state
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            permissions_mode: self.permissions_mode
-            ,
-            deletion_protection: self.deletion_protection
-            ,
-            kms_key_arn: self.kms_key_arn
-            ,
+            name: self.name,
+            arn: self.arn,
+            state: self.state,
+            creation_date_time: self.creation_date_time,
+            permissions_mode: self.permissions_mode,
+            deletion_protection: self.deletion_protection,
+            kms_key_arn: self.kms_key_arn,
             _request_id: self._request_id,
         }
     }
 }
-

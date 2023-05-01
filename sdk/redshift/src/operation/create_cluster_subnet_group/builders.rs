@@ -4,72 +4,95 @@ pub use crate::operation::create_cluster_subnet_group::_create_cluster_subnet_gr
 pub use crate::operation::create_cluster_subnet_group::_create_cluster_subnet_group_input::CreateClusterSubnetGroupInputBuilder;
 
 /// Fluent builder constructing a request to `CreateClusterSubnetGroup`.
-/// 
-/// <p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p> 
+///
+/// <p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p>
 /// <p> For information about subnet groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html">Amazon Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateClusterSubnetGroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_cluster_subnet_group::builders::CreateClusterSubnetGroupInputBuilder,
 }
-impl CreateClusterSubnetGroupFluentBuilder  {
+impl CreateClusterSubnetGroupFluentBuilder {
     /// Creates a new `CreateClusterSubnetGroup`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput, aws_smithy_http::result::SdkError<crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> 
-    /// <li> <p>Must not be "Default".</p> </li> 
-    /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li> 
-    /// </ul> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Must not be "Default".</p> </li>
+    /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
+    /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code> </p>
     pub fn cluster_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_subnet_group_name(input.into());
         self
     }
-    /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li> 
-    /// <li> <p>Must not be "Default".</p> </li> 
-    /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li> 
-    /// </ul> 
+    /// <p>The name for the subnet group. Amazon Redshift stores the value as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain no more than 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>Must not be "Default".</p> </li>
+    /// <li> <p>Must be unique for all subnet groups that are created by your Amazon Web Services account.</p> </li>
+    /// </ul>
     /// <p>Example: <code>examplesubnetgroup</code> </p>
-    pub fn set_cluster_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_subnet_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_cluster_subnet_group_name(input);
         self
     }
@@ -93,7 +116,10 @@ impl CreateClusterSubnetGroupFluentBuilder  {
         self
     }
     /// <p>An array of VPC subnet IDs. A maximum of 20 subnets can be modified in a single request.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -107,9 +133,11 @@ impl CreateClusterSubnetGroupFluentBuilder  {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

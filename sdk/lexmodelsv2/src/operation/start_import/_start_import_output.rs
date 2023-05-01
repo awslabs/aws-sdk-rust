@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartImportOutput  {
+pub struct StartImportOutput {
     /// <p>A unique identifier for the import.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -22,31 +22,33 @@ pub struct StartImportOutput  {
 }
 impl StartImportOutput {
     /// <p>A unique identifier for the import.</p>
-    pub fn import_id(&self) -> std::option::Option<& str> {
+    pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
     /// <p>The parameters used when importing the resource.</p>
-    pub fn resource_specification(&self) -> std::option::Option<& crate::types::ImportResourceSpecification> {
+    pub fn resource_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::ImportResourceSpecification> {
         self.resource_specification.as_ref()
     }
     /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    pub fn merge_strategy(&self) -> std::option::Option<& crate::types::MergeStrategy> {
+    pub fn merge_strategy(&self) -> std::option::Option<&crate::types::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
     /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
-    pub fn import_status(&self) -> std::option::Option<& crate::types::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<&crate::types::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p>The date and time that the import request was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartImportOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartImportOutput {
     /// Creates a new builder-style object to manufacture [`StartImportOutput`](crate::operation::start_import::StartImportOutput).
     pub fn builder() -> crate::operation::start_import::builders::StartImportOutputBuilder {
@@ -59,7 +61,8 @@ impl StartImportOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct StartImportOutputBuilder {
     pub(crate) import_id: std::option::Option<std::string::String>,
-    pub(crate) resource_specification: std::option::Option<crate::types::ImportResourceSpecification>,
+    pub(crate) resource_specification:
+        std::option::Option<crate::types::ImportResourceSpecification>,
     pub(crate) merge_strategy: std::option::Option<crate::types::MergeStrategy>,
     pub(crate) import_status: std::option::Option<crate::types::ImportStatus>,
     pub(crate) creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -73,16 +76,24 @@ impl StartImportOutputBuilder {
     }
     /// <p>A unique identifier for the import.</p>
     pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_id = input; self
+        self.import_id = input;
+        self
     }
     /// <p>The parameters used when importing the resource.</p>
-    pub fn resource_specification(mut self, input: crate::types::ImportResourceSpecification) -> Self {
+    pub fn resource_specification(
+        mut self,
+        input: crate::types::ImportResourceSpecification,
+    ) -> Self {
         self.resource_specification = Some(input);
         self
     }
     /// <p>The parameters used when importing the resource.</p>
-    pub fn set_resource_specification(mut self, input: std::option::Option<crate::types::ImportResourceSpecification>) -> Self {
-        self.resource_specification = input; self
+    pub fn set_resource_specification(
+        mut self,
+        input: std::option::Option<crate::types::ImportResourceSpecification>,
+    ) -> Self {
+        self.resource_specification = input;
+        self
     }
     /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
@@ -90,8 +101,12 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>The strategy used when there was a name conflict between the imported resource and an existing resource. When the merge strategy is <code>FailOnConflict</code> existing resources are not overwritten and the import fails.</p>
-    pub fn set_merge_strategy(mut self, input: std::option::Option<crate::types::MergeStrategy>) -> Self {
-        self.merge_strategy = input; self
+    pub fn set_merge_strategy(
+        mut self,
+        input: std::option::Option<crate::types::MergeStrategy>,
+    ) -> Self {
+        self.merge_strategy = input;
+        self
     }
     /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -99,8 +114,12 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>The current status of the import. When the status is <code>Complete</code> the bot, bot alias, or custom vocabulary is ready to use.</p>
-    pub fn set_import_status(mut self, input: std::option::Option<crate::types::ImportStatus>) -> Self {
-        self.import_status = input; self
+    pub fn set_import_status(
+        mut self,
+        input: std::option::Option<crate::types::ImportStatus>,
+    ) -> Self {
+        self.import_status = input;
+        self
     }
     /// <p>The date and time that the import request was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -108,33 +127,31 @@ impl StartImportOutputBuilder {
         self
     }
     /// <p>The date and time that the import request was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartImportOutput`](crate::operation::start_import::StartImportOutput).
     pub fn build(self) -> crate::operation::start_import::StartImportOutput {
         crate::operation::start_import::StartImportOutput {
-            import_id: self.import_id
-            ,
-            resource_specification: self.resource_specification
-            ,
-            merge_strategy: self.merge_strategy
-            ,
-            import_status: self.import_status
-            ,
-            creation_date_time: self.creation_date_time
-            ,
+            import_id: self.import_id,
+            resource_specification: self.resource_specification,
+            merge_strategy: self.merge_strategy,
+            import_status: self.import_status,
+            creation_date_time: self.creation_date_time,
             _request_id: self._request_id,
         }
     }
 }
-

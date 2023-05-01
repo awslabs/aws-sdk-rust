@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpcLinkInput  {
+pub struct DeleteVpcLinkInput {
     /// <p>The ID of the VPC link.</p>
     #[doc(hidden)]
     pub vpc_link_id: std::option::Option<std::string::String>,
 }
 impl DeleteVpcLinkInput {
     /// <p>The ID of the VPC link.</p>
-    pub fn vpc_link_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_link_id(&self) -> std::option::Option<&str> {
         self.vpc_link_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteVpcLinkInputBuilder {
     }
     /// <p>The ID of the VPC link.</p>
     pub fn set_vpc_link_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_link_id = input; self
+        self.vpc_link_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVpcLinkInput`](crate::operation::delete_vpc_link::DeleteVpcLinkInput).
-    pub fn build(self) -> Result<crate::operation::delete_vpc_link::DeleteVpcLinkInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_vpc_link::DeleteVpcLinkInput {
-                vpc_link_id: self.vpc_link_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_vpc_link::DeleteVpcLinkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_vpc_link::DeleteVpcLinkInput {
+            vpc_link_id: self.vpc_link_id,
+        })
     }
 }
-

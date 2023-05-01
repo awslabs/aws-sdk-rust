@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCrawlerOutput  {
+pub struct GetCrawlerOutput {
     /// <p>The metadata for the specified crawler.</p>
     #[doc(hidden)]
     pub crawler: std::option::Option<crate::types::Crawler>,
@@ -10,15 +10,15 @@ pub struct GetCrawlerOutput  {
 }
 impl GetCrawlerOutput {
     /// <p>The metadata for the specified crawler.</p>
-    pub fn crawler(&self) -> std::option::Option<& crate::types::Crawler> {
+    pub fn crawler(&self) -> std::option::Option<&crate::types::Crawler> {
         self.crawler.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetCrawlerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetCrawlerOutput {
     /// Creates a new builder-style object to manufacture [`GetCrawlerOutput`](crate::operation::get_crawler::GetCrawlerOutput).
     pub fn builder() -> crate::operation::get_crawler::builders::GetCrawlerOutputBuilder {
@@ -41,24 +41,23 @@ impl GetCrawlerOutputBuilder {
     }
     /// <p>The metadata for the specified crawler.</p>
     pub fn set_crawler(mut self, input: std::option::Option<crate::types::Crawler>) -> Self {
-        self.crawler = input; self
+        self.crawler = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetCrawlerOutput`](crate::operation::get_crawler::GetCrawlerOutput).
     pub fn build(self) -> crate::operation::get_crawler::GetCrawlerOutput {
         crate::operation::get_crawler::GetCrawlerOutput {
-            crawler: self.crawler
-            ,
+            crawler: self.crawler,
             _request_id: self._request_id,
         }
     }
 }
-

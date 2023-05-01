@@ -3,7 +3,7 @@
 /// <p>Information about an account or service that has access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AuthorizedPrincipal  {
+pub struct AuthorizedPrincipal {
     /// <p>The type of principal.</p>
     #[doc(hidden)]
     pub principal_type: std::option::Option<crate::types::PrincipalType>,
@@ -13,11 +13,11 @@ pub struct AuthorizedPrincipal  {
 }
 impl AuthorizedPrincipal {
     /// <p>The type of principal.</p>
-    pub fn principal_type(&self) -> std::option::Option<& crate::types::PrincipalType> {
+    pub fn principal_type(&self) -> std::option::Option<&crate::types::PrincipalType> {
         self.principal_type.as_ref()
     }
     /// <p>The IAM principal that is allowed access to the domain.</p>
-    pub fn principal(&self) -> std::option::Option<& str> {
+    pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl AuthorizedPrincipalBuilder {
         self
     }
     /// <p>The type of principal.</p>
-    pub fn set_principal_type(mut self, input: std::option::Option<crate::types::PrincipalType>) -> Self {
-        self.principal_type = input; self
+    pub fn set_principal_type(
+        mut self,
+        input: std::option::Option<crate::types::PrincipalType>,
+    ) -> Self {
+        self.principal_type = input;
+        self
     }
     /// <p>The IAM principal that is allowed access to the domain.</p>
     pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl AuthorizedPrincipalBuilder {
     }
     /// <p>The IAM principal that is allowed access to the domain.</p>
     pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal = input; self
+        self.principal = input;
+        self
     }
     /// Consumes the builder and constructs a [`AuthorizedPrincipal`](crate::types::AuthorizedPrincipal).
     pub fn build(self) -> crate::types::AuthorizedPrincipal {
         crate::types::AuthorizedPrincipal {
-            principal_type: self.principal_type
-            ,
-            principal: self.principal
-            ,
+            principal_type: self.principal_type,
+            principal: self.principal,
         }
     }
 }
-

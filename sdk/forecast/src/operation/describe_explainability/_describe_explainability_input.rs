@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeExplainabilityInput  {
+pub struct DescribeExplainabilityInput {
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
     #[doc(hidden)]
     pub explainability_arn: std::option::Option<std::string::String>,
 }
 impl DescribeExplainabilityInput {
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
-    pub fn explainability_arn(&self) -> std::option::Option<& str> {
+    pub fn explainability_arn(&self) -> std::option::Option<&str> {
         self.explainability_arn.as_deref()
     }
 }
 impl DescribeExplainabilityInput {
     /// Creates a new builder-style object to manufacture [`DescribeExplainabilityInput`](crate::operation::describe_explainability::DescribeExplainabilityInput).
-    pub fn builder() -> crate::operation::describe_explainability::builders::DescribeExplainabilityInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_explainability::builders::DescribeExplainabilityInputBuilder
+    {
         crate::operation::describe_explainability::builders::DescribeExplainabilityInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeExplainabilityInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the Explaianability to describe.</p>
-    pub fn set_explainability_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.explainability_arn = input; self
+    pub fn set_explainability_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.explainability_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeExplainabilityInput`](crate::operation::describe_explainability::DescribeExplainabilityInput).
-    pub fn build(self) -> Result<crate::operation::describe_explainability::DescribeExplainabilityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_explainability::DescribeExplainabilityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_explainability::DescribeExplainabilityInput {
-                explainability_arn: self.explainability_arn
-                ,
-            }
+                explainability_arn: self.explainability_arn,
+            },
         )
     }
 }
-

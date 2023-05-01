@@ -3,7 +3,7 @@
 /// Placeholder documentation for MaintenanceUpdateSettings
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaintenanceUpdateSettings  {
+pub struct MaintenanceUpdateSettings {
     /// Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows.
     #[doc(hidden)]
     pub maintenance_day: std::option::Option<crate::types::MaintenanceDay>,
@@ -16,15 +16,15 @@ pub struct MaintenanceUpdateSettings  {
 }
 impl MaintenanceUpdateSettings {
     /// Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows.
-    pub fn maintenance_day(&self) -> std::option::Option<& crate::types::MaintenanceDay> {
+    pub fn maintenance_day(&self) -> std::option::Option<&crate::types::MaintenanceDay> {
         self.maintenance_day.as_ref()
     }
     /// Choose a specific date for maintenance to occur. The chosen date is used for the next maintenance window only.
-    pub fn maintenance_scheduled_date(&self) -> std::option::Option<& str> {
+    pub fn maintenance_scheduled_date(&self) -> std::option::Option<&str> {
         self.maintenance_scheduled_date.as_deref()
     }
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
-    pub fn maintenance_start_time(&self) -> std::option::Option<& str> {
+    pub fn maintenance_start_time(&self) -> std::option::Option<&str> {
         self.maintenance_start_time.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl MaintenanceUpdateSettingsBuilder {
         self
     }
     /// Choose one day of the week for maintenance. The chosen day is used for all future maintenance windows.
-    pub fn set_maintenance_day(mut self, input: std::option::Option<crate::types::MaintenanceDay>) -> Self {
-        self.maintenance_day = input; self
+    pub fn set_maintenance_day(
+        mut self,
+        input: std::option::Option<crate::types::MaintenanceDay>,
+    ) -> Self {
+        self.maintenance_day = input;
+        self
     }
     /// Choose a specific date for maintenance to occur. The chosen date is used for the next maintenance window only.
     pub fn maintenance_scheduled_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +63,12 @@ impl MaintenanceUpdateSettingsBuilder {
         self
     }
     /// Choose a specific date for maintenance to occur. The chosen date is used for the next maintenance window only.
-    pub fn set_maintenance_scheduled_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.maintenance_scheduled_date = input; self
+    pub fn set_maintenance_scheduled_date(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.maintenance_scheduled_date = input;
+        self
     }
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
     pub fn maintenance_start_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +76,19 @@ impl MaintenanceUpdateSettingsBuilder {
         self
     }
     /// Choose the hour that maintenance will start. The chosen time is used for all future maintenance windows.
-    pub fn set_maintenance_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.maintenance_start_time = input; self
+    pub fn set_maintenance_start_time(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.maintenance_start_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`MaintenanceUpdateSettings`](crate::types::MaintenanceUpdateSettings).
     pub fn build(self) -> crate::types::MaintenanceUpdateSettings {
         crate::types::MaintenanceUpdateSettings {
-            maintenance_day: self.maintenance_day
-            ,
-            maintenance_scheduled_date: self.maintenance_scheduled_date
-            ,
-            maintenance_start_time: self.maintenance_start_time
-            ,
+            maintenance_day: self.maintenance_day,
+            maintenance_scheduled_date: self.maintenance_scheduled_date,
+            maintenance_start_time: self.maintenance_start_time,
         }
     }
 }
-

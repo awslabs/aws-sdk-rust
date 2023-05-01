@@ -2,48 +2,48 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutePolicyInput  {
+pub struct ExecutePolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the policy.</p>
     #[doc(hidden)]
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p> 
+    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p>
     /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     #[doc(hidden)]
     pub honor_cooldown: std::option::Option<bool>,
-    /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p> 
-    /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p> 
+    /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p>
+    /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     #[doc(hidden)]
     pub metric_value: std::option::Option<f64>,
-    /// <p>The breach threshold for the alarm.</p> 
+    /// <p>The breach threshold for the alarm.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     #[doc(hidden)]
     pub breach_threshold: std::option::Option<f64>,
 }
 impl ExecutePolicyInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The name or ARN of the policy.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
-    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p> 
+    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p>
     /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn honor_cooldown(&self) -> std::option::Option<bool> {
         self.honor_cooldown
     }
-    /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p> 
-    /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p> 
+    /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p>
+    /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     pub fn metric_value(&self) -> std::option::Option<f64> {
         self.metric_value
     }
-    /// <p>The breach threshold for the alarm.</p> 
+    /// <p>The breach threshold for the alarm.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     pub fn breach_threshold(&self) -> std::option::Option<f64> {
         self.breach_threshold
@@ -73,8 +73,12 @@ impl ExecutePolicyInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// <p>The name or ARN of the policy.</p>
     pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,59 +87,60 @@ impl ExecutePolicyInputBuilder {
     }
     /// <p>The name or ARN of the policy.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
-    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p> 
+    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p>
     /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn honor_cooldown(mut self, input: bool) -> Self {
         self.honor_cooldown = Some(input);
         self
     }
-    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p> 
+    /// <p>Indicates whether Amazon EC2 Auto Scaling waits for the cooldown period to complete before executing the policy.</p>
     /// <p>Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
     pub fn set_honor_cooldown(mut self, input: std::option::Option<bool>) -> Self {
-        self.honor_cooldown = input; self
+        self.honor_cooldown = input;
+        self
     }
-    /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p> 
-    /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p> 
+    /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p>
+    /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     pub fn metric_value(mut self, input: f64) -> Self {
         self.metric_value = Some(input);
         self
     }
-    /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p> 
-    /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p> 
+    /// <p>The metric value to compare to <code>BreachThreshold</code>. This enables you to execute a policy of type <code>StepScaling</code> and determine which step adjustment to use. For example, if the breach threshold is 50 and you want to use a step adjustment with a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.</p>
+    /// <p>If you specify a metric value that doesn't correspond to a step adjustment for the policy, the call returns an error.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     pub fn set_metric_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.metric_value = input; self
+        self.metric_value = input;
+        self
     }
-    /// <p>The breach threshold for the alarm.</p> 
+    /// <p>The breach threshold for the alarm.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     pub fn breach_threshold(mut self, input: f64) -> Self {
         self.breach_threshold = Some(input);
         self
     }
-    /// <p>The breach threshold for the alarm.</p> 
+    /// <p>The breach threshold for the alarm.</p>
     /// <p>Required if the policy type is <code>StepScaling</code> and not supported otherwise.</p>
     pub fn set_breach_threshold(mut self, input: std::option::Option<f64>) -> Self {
-        self.breach_threshold = input; self
+        self.breach_threshold = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExecutePolicyInput`](crate::operation::execute_policy::ExecutePolicyInput).
-    pub fn build(self) -> Result<crate::operation::execute_policy::ExecutePolicyInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::execute_policy::ExecutePolicyInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                policy_name: self.policy_name
-                ,
-                honor_cooldown: self.honor_cooldown
-                ,
-                metric_value: self.metric_value
-                ,
-                breach_threshold: self.breach_threshold
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::execute_policy::ExecutePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::execute_policy::ExecutePolicyInput {
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            policy_name: self.policy_name,
+            honor_cooldown: self.honor_cooldown,
+            metric_value: self.metric_value,
+            breach_threshold: self.breach_threshold,
+        })
     }
 }
-

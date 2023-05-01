@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let applicationstatus = unimplemented!();
 /// match applicationstatus {
@@ -39,14 +39,22 @@
 /// Specifically, when `applicationstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ApplicationStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ApplicationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Autoscaling,
@@ -71,59 +79,72 @@ pub enum ApplicationStatus {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ApplicationStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AUTOSCALING" => ApplicationStatus::Autoscaling,
-"DELETING" => ApplicationStatus::Deleting,
-"FORCE_STOPPING" => ApplicationStatus::ForceStopping,
-"MAINTENANCE" => ApplicationStatus::Maintenance,
-"READY" => ApplicationStatus::Ready,
-"ROLLED_BACK" => ApplicationStatus::RolledBack,
-"ROLLING_BACK" => ApplicationStatus::RollingBack,
-"RUNNING" => ApplicationStatus::Running,
-"STARTING" => ApplicationStatus::Starting,
-"STOPPING" => ApplicationStatus::Stopping,
-"UPDATING" => ApplicationStatus::Updating,
-other => ApplicationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTOSCALING" => ApplicationStatus::Autoscaling,
+            "DELETING" => ApplicationStatus::Deleting,
+            "FORCE_STOPPING" => ApplicationStatus::ForceStopping,
+            "MAINTENANCE" => ApplicationStatus::Maintenance,
+            "READY" => ApplicationStatus::Ready,
+            "ROLLED_BACK" => ApplicationStatus::RolledBack,
+            "ROLLING_BACK" => ApplicationStatus::RollingBack,
+            "RUNNING" => ApplicationStatus::Running,
+            "STARTING" => ApplicationStatus::Starting,
+            "STOPPING" => ApplicationStatus::Stopping,
+            "UPDATING" => ApplicationStatus::Updating,
+            other => {
+                ApplicationStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ApplicationStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ApplicationStatus::from(s))
-                }
-            }
-impl ApplicationStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ApplicationStatus::Autoscaling => "AUTOSCALING",
-    ApplicationStatus::Deleting => "DELETING",
-    ApplicationStatus::ForceStopping => "FORCE_STOPPING",
-    ApplicationStatus::Maintenance => "MAINTENANCE",
-    ApplicationStatus::Ready => "READY",
-    ApplicationStatus::RolledBack => "ROLLED_BACK",
-    ApplicationStatus::RollingBack => "ROLLING_BACK",
-    ApplicationStatus::Running => "RUNNING",
-    ApplicationStatus::Starting => "STARTING",
-    ApplicationStatus::Stopping => "STOPPING",
-    ApplicationStatus::Updating => "UPDATING",
-    ApplicationStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AUTOSCALING", "DELETING", "FORCE_STOPPING", "MAINTENANCE", "READY", "ROLLED_BACK", "ROLLING_BACK", "RUNNING", "STARTING", "STOPPING", "UPDATING"]
-                }
-            }
-impl AsRef<str> for ApplicationStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ApplicationStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ApplicationStatus::from(s))
+    }
+}
+impl ApplicationStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ApplicationStatus::Autoscaling => "AUTOSCALING",
+            ApplicationStatus::Deleting => "DELETING",
+            ApplicationStatus::ForceStopping => "FORCE_STOPPING",
+            ApplicationStatus::Maintenance => "MAINTENANCE",
+            ApplicationStatus::Ready => "READY",
+            ApplicationStatus::RolledBack => "ROLLED_BACK",
+            ApplicationStatus::RollingBack => "ROLLING_BACK",
+            ApplicationStatus::Running => "RUNNING",
+            ApplicationStatus::Starting => "STARTING",
+            ApplicationStatus::Stopping => "STOPPING",
+            ApplicationStatus::Updating => "UPDATING",
+            ApplicationStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AUTOSCALING",
+            "DELETING",
+            "FORCE_STOPPING",
+            "MAINTENANCE",
+            "READY",
+            "ROLLED_BACK",
+            "ROLLING_BACK",
+            "RUNNING",
+            "STARTING",
+            "STOPPING",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for ApplicationStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

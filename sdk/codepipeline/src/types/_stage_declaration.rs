@@ -3,7 +3,7 @@
 /// <p>Represents information about a stage and its definition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StageDeclaration  {
+pub struct StageDeclaration {
     /// <p>The name of the stage.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct StageDeclaration  {
 }
 impl StageDeclaration {
     /// <p>The name of the stage.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Reserved for future use.</p>
-    pub fn blockers(&self) -> std::option::Option<& [crate::types::BlockerDeclaration]> {
+    pub fn blockers(&self) -> std::option::Option<&[crate::types::BlockerDeclaration]> {
         self.blockers.as_deref()
     }
     /// <p>The actions included in a stage.</p>
-    pub fn actions(&self) -> std::option::Option<& [crate::types::ActionDeclaration]> {
+    pub fn actions(&self) -> std::option::Option<&[crate::types::ActionDeclaration]> {
         self.actions.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl StageDeclarationBuilder {
     }
     /// <p>The name of the stage.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `blockers`.
     ///
@@ -60,13 +61,17 @@ impl StageDeclarationBuilder {
     /// <p>Reserved for future use.</p>
     pub fn blockers(mut self, input: crate::types::BlockerDeclaration) -> Self {
         let mut v = self.blockers.unwrap_or_default();
-                        v.push(input);
-                        self.blockers = Some(v);
-                        self
+        v.push(input);
+        self.blockers = Some(v);
+        self
     }
     /// <p>Reserved for future use.</p>
-    pub fn set_blockers(mut self, input: std::option::Option<std::vec::Vec<crate::types::BlockerDeclaration>>) -> Self {
-        self.blockers = input; self
+    pub fn set_blockers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BlockerDeclaration>>,
+    ) -> Self {
+        self.blockers = input;
+        self
     }
     /// Appends an item to `actions`.
     ///
@@ -75,24 +80,24 @@ impl StageDeclarationBuilder {
     /// <p>The actions included in a stage.</p>
     pub fn actions(mut self, input: crate::types::ActionDeclaration) -> Self {
         let mut v = self.actions.unwrap_or_default();
-                        v.push(input);
-                        self.actions = Some(v);
-                        self
+        v.push(input);
+        self.actions = Some(v);
+        self
     }
     /// <p>The actions included in a stage.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ActionDeclaration>>) -> Self {
-        self.actions = input; self
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ActionDeclaration>>,
+    ) -> Self {
+        self.actions = input;
+        self
     }
     /// Consumes the builder and constructs a [`StageDeclaration`](crate::types::StageDeclaration).
     pub fn build(self) -> crate::types::StageDeclaration {
         crate::types::StageDeclaration {
-            name: self.name
-            ,
-            blockers: self.blockers
-            ,
-            actions: self.actions
-            ,
+            name: self.name,
+            blockers: self.blockers,
+            actions: self.actions,
         }
     }
 }
-

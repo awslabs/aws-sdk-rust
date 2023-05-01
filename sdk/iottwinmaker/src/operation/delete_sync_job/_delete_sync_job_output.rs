@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSyncJobOutput  {
+pub struct DeleteSyncJobOutput {
     /// <p>The SyncJob response state.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::SyncJobState>,
@@ -10,15 +10,15 @@ pub struct DeleteSyncJobOutput  {
 }
 impl DeleteSyncJobOutput {
     /// <p>The SyncJob response state.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::SyncJobState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::SyncJobState> {
         self.state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteSyncJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteSyncJobOutput {
     /// Creates a new builder-style object to manufacture [`DeleteSyncJobOutput`](crate::operation::delete_sync_job::DeleteSyncJobOutput).
     pub fn builder() -> crate::operation::delete_sync_job::builders::DeleteSyncJobOutputBuilder {
@@ -41,24 +41,23 @@ impl DeleteSyncJobOutputBuilder {
     }
     /// <p>The SyncJob response state.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::SyncJobState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteSyncJobOutput`](crate::operation::delete_sync_job::DeleteSyncJobOutput).
     pub fn build(self) -> crate::operation::delete_sync_job::DeleteSyncJobOutput {
         crate::operation::delete_sync_job::DeleteSyncJobOutput {
-            state: self.state
-            ,
+            state: self.state,
             _request_id: self._request_id,
         }
     }
 }
-

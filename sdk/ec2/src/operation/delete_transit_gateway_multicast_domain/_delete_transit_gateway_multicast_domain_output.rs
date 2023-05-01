@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTransitGatewayMulticastDomainOutput  {
+pub struct DeleteTransitGatewayMulticastDomainOutput {
     /// <p>Information about the deleted transit gateway multicast domain.</p>
     #[doc(hidden)]
-    pub transit_gateway_multicast_domain: std::option::Option<crate::types::TransitGatewayMulticastDomain>,
+    pub transit_gateway_multicast_domain:
+        std::option::Option<crate::types::TransitGatewayMulticastDomain>,
     _request_id: Option<String>,
 }
 impl DeleteTransitGatewayMulticastDomainOutput {
     /// <p>Information about the deleted transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain(&self) -> std::option::Option<& crate::types::TransitGatewayMulticastDomain> {
+    pub fn transit_gateway_multicast_domain(
+        &self,
+    ) -> std::option::Option<&crate::types::TransitGatewayMulticastDomain> {
         self.transit_gateway_multicast_domain.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteTransitGatewayMulticastDomainOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteTransitGatewayMulticastDomainOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayMulticastDomainOutput`](crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainOutput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_multicast_domain::builders::DeleteTransitGatewayMulticastDomainOutputBuilder {
+    pub fn builder() -> crate::operation::delete_transit_gateway_multicast_domain::builders::DeleteTransitGatewayMulticastDomainOutputBuilder{
         crate::operation::delete_transit_gateway_multicast_domain::builders::DeleteTransitGatewayMulticastDomainOutputBuilder::default()
     }
 }
@@ -30,30 +33,38 @@ impl DeleteTransitGatewayMulticastDomainOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DeleteTransitGatewayMulticastDomainOutputBuilder {
-    pub(crate) transit_gateway_multicast_domain: std::option::Option<crate::types::TransitGatewayMulticastDomain>,
+    pub(crate) transit_gateway_multicast_domain:
+        std::option::Option<crate::types::TransitGatewayMulticastDomain>,
     _request_id: Option<String>,
 }
 impl DeleteTransitGatewayMulticastDomainOutputBuilder {
     /// <p>Information about the deleted transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain(mut self, input: crate::types::TransitGatewayMulticastDomain) -> Self {
+    pub fn transit_gateway_multicast_domain(
+        mut self,
+        input: crate::types::TransitGatewayMulticastDomain,
+    ) -> Self {
         self.transit_gateway_multicast_domain = Some(input);
         self
     }
     /// <p>Information about the deleted transit gateway multicast domain.</p>
-    pub fn set_transit_gateway_multicast_domain(mut self, input: std::option::Option<crate::types::TransitGatewayMulticastDomain>) -> Self {
-        self.transit_gateway_multicast_domain = input; self
+    pub fn set_transit_gateway_multicast_domain(
+        mut self,
+        input: std::option::Option<crate::types::TransitGatewayMulticastDomain>,
+    ) -> Self {
+        self.transit_gateway_multicast_domain = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayMulticastDomainOutput`](crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainOutput).
-    pub fn build(self) -> crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainOutput {
+    pub fn build(self) -> crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainOutput{
         crate::operation::delete_transit_gateway_multicast_domain::DeleteTransitGatewayMulticastDomainOutput {
             transit_gateway_multicast_domain: self.transit_gateway_multicast_domain
             ,
@@ -61,4 +72,3 @@ impl DeleteTransitGatewayMulticastDomainOutputBuilder {
         }
     }
 }
-

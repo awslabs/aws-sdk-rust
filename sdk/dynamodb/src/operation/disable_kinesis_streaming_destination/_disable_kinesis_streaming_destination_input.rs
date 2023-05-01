@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableKinesisStreamingDestinationInput  {
+pub struct DisableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
     #[doc(hidden)]
     pub table_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisableKinesisStreamingDestinationInput  {
 }
 impl DisableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The ARN for a Kinesis data stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
 }
 impl DisableKinesisStreamingDestinationInput {
     /// Creates a new builder-style object to manufacture [`DisableKinesisStreamingDestinationInput`](crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationInput).
-    pub fn builder() -> crate::operation::disable_kinesis_streaming_destination::builders::DisableKinesisStreamingDestinationInputBuilder {
+    pub fn builder() -> crate::operation::disable_kinesis_streaming_destination::builders::DisableKinesisStreamingDestinationInputBuilder{
         crate::operation::disable_kinesis_streaming_destination::builders::DisableKinesisStreamingDestinationInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DisableKinesisStreamingDestinationInputBuilder {
     }
     /// <p>The name of the DynamoDB table.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// <p>The ARN for a Kinesis data stream.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,11 @@ impl DisableKinesisStreamingDestinationInputBuilder {
     }
     /// <p>The ARN for a Kinesis data stream.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableKinesisStreamingDestinationInput`](crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationInput).
-    pub fn build(self) -> Result<crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationInput {
                 table_name: self.table_name
@@ -65,4 +67,3 @@ impl DisableKinesisStreamingDestinationInputBuilder {
         )
     }
 }
-

@@ -3,20 +3,20 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMountTargetSecurityGroupsInput  {
+pub struct DescribeMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
     #[doc(hidden)]
     pub mount_target_id: std::option::Option<std::string::String>,
 }
 impl DescribeMountTargetSecurityGroupsInput {
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
-    pub fn mount_target_id(&self) -> std::option::Option<& str> {
+    pub fn mount_target_id(&self) -> std::option::Option<&str> {
         self.mount_target_id.as_deref()
     }
 }
 impl DescribeMountTargetSecurityGroupsInput {
     /// Creates a new builder-style object to manufacture [`DescribeMountTargetSecurityGroupsInput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput).
-    pub fn builder() -> crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsInputBuilder {
+    pub fn builder() -> crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsInputBuilder{
         crate::operation::describe_mount_target_security_groups::builders::DescribeMountTargetSecurityGroupsInputBuilder::default()
     }
 }
@@ -35,10 +35,11 @@ impl DescribeMountTargetSecurityGroupsInputBuilder {
     }
     /// <p>The ID of the mount target whose security groups you want to retrieve.</p>
     pub fn set_mount_target_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mount_target_id = input; self
+        self.mount_target_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeMountTargetSecurityGroupsInput`](crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput).
-    pub fn build(self) -> Result<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_mount_target_security_groups::DescribeMountTargetSecurityGroupsInput {
                 mount_target_id: self.mount_target_id
@@ -47,4 +48,3 @@ impl DescribeMountTargetSecurityGroupsInputBuilder {
         )
     }
 }
-

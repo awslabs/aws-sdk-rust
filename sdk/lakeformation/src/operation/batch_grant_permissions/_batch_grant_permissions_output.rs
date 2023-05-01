@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGrantPermissionsOutput  {
+pub struct BatchGrantPermissionsOutput {
     /// <p>A list of failures to grant permissions to the resources.</p>
     #[doc(hidden)]
     pub failures: std::option::Option<std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
@@ -10,18 +10,20 @@ pub struct BatchGrantPermissionsOutput  {
 }
 impl BatchGrantPermissionsOutput {
     /// <p>A list of failures to grant permissions to the resources.</p>
-    pub fn failures(&self) -> std::option::Option<& [crate::types::BatchPermissionsFailureEntry]> {
+    pub fn failures(&self) -> std::option::Option<&[crate::types::BatchPermissionsFailureEntry]> {
         self.failures.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGrantPermissionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchGrantPermissionsOutput {
     /// Creates a new builder-style object to manufacture [`BatchGrantPermissionsOutput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsOutput).
-    pub fn builder() -> crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsOutputBuilder
+    {
         crate::operation::batch_grant_permissions::builders::BatchGrantPermissionsOutputBuilder::default()
     }
 }
@@ -30,7 +32,8 @@ impl BatchGrantPermissionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGrantPermissionsOutputBuilder {
-    pub(crate) failures: std::option::Option<std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
+    pub(crate) failures:
+        std::option::Option<std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
     _request_id: Option<String>,
 }
 impl BatchGrantPermissionsOutputBuilder {
@@ -41,30 +44,32 @@ impl BatchGrantPermissionsOutputBuilder {
     /// <p>A list of failures to grant permissions to the resources.</p>
     pub fn failures(mut self, input: crate::types::BatchPermissionsFailureEntry) -> Self {
         let mut v = self.failures.unwrap_or_default();
-                        v.push(input);
-                        self.failures = Some(v);
-                        self
+        v.push(input);
+        self.failures = Some(v);
+        self
     }
     /// <p>A list of failures to grant permissions to the resources.</p>
-    pub fn set_failures(mut self, input: std::option::Option<std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>) -> Self {
-        self.failures = input; self
+    pub fn set_failures(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::BatchPermissionsFailureEntry>>,
+    ) -> Self {
+        self.failures = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchGrantPermissionsOutput`](crate::operation::batch_grant_permissions::BatchGrantPermissionsOutput).
     pub fn build(self) -> crate::operation::batch_grant_permissions::BatchGrantPermissionsOutput {
         crate::operation::batch_grant_permissions::BatchGrantPermissionsOutput {
-            failures: self.failures
-            ,
+            failures: self.failures,
             _request_id: self._request_id,
         }
     }
 }
-

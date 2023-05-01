@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSensitivityInspectionTemplateOutput  {
+pub struct UpdateSensitivityInspectionTemplateOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateSensitivityInspectionTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateSensitivityInspectionTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSensitivityInspectionTemplateOutput`](crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateOutput).
-    pub fn builder() -> crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateOutputBuilder{
         crate::operation::update_sensitivity_inspection_template::builders::UpdateSensitivityInspectionTemplateOutputBuilder::default()
     }
 }
@@ -25,19 +25,18 @@ pub struct UpdateSensitivityInspectionTemplateOutputBuilder {
 }
 impl UpdateSensitivityInspectionTemplateOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSensitivityInspectionTemplateOutput`](crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateOutput).
-    pub fn build(self) -> crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateOutput {
+    pub fn build(self) -> crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateOutput{
         crate::operation::update_sensitivity_inspection_template::UpdateSensitivityInspectionTemplateOutput {
             _request_id: self._request_id,
         }
     }
 }
-

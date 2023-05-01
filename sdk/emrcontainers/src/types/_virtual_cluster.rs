@@ -3,7 +3,7 @@
 /// <p>This entity describes a virtual cluster. A virtual cluster is a Kubernetes namespace that Amazon EMR is registered with. Amazon EMR uses virtual clusters to run jobs and host endpoints. Multiple virtual clusters can be backed by the same physical cluster. However, each virtual cluster maps to one namespace on an Amazon EKS cluster. Virtual clusters do not create any active resources that contribute to your bill or that require lifecycle management outside the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualCluster  {
+pub struct VirtualCluster {
     /// <p>The ID of the virtual cluster.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -24,35 +24,39 @@ pub struct VirtualCluster  {
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The assigned tags of the virtual cluster.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl VirtualCluster {
     /// <p>The ID of the virtual cluster.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the virtual cluster.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the virtual cluster.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The state of the virtual cluster.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::VirtualClusterState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::VirtualClusterState> {
         self.state.as_ref()
     }
     /// <p>The container provider of the virtual cluster.</p>
-    pub fn container_provider(&self) -> std::option::Option<& crate::types::ContainerProvider> {
+    pub fn container_provider(&self) -> std::option::Option<&crate::types::ContainerProvider> {
         self.container_provider.as_ref()
     }
     /// <p>The date and time when the virtual cluster is created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The assigned tags of the virtual cluster.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -73,7 +77,8 @@ pub struct VirtualClusterBuilder {
     pub(crate) state: std::option::Option<crate::types::VirtualClusterState>,
     pub(crate) container_provider: std::option::Option<crate::types::ContainerProvider>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl VirtualClusterBuilder {
     /// <p>The ID of the virtual cluster.</p>
@@ -83,7 +88,8 @@ impl VirtualClusterBuilder {
     }
     /// <p>The ID of the virtual cluster.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the virtual cluster.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +98,8 @@ impl VirtualClusterBuilder {
     }
     /// <p>The name of the virtual cluster.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ARN of the virtual cluster.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +108,8 @@ impl VirtualClusterBuilder {
     }
     /// <p>The ARN of the virtual cluster.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The state of the virtual cluster.</p>
     pub fn state(mut self, input: crate::types::VirtualClusterState) -> Self {
@@ -109,8 +117,12 @@ impl VirtualClusterBuilder {
         self
     }
     /// <p>The state of the virtual cluster.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::VirtualClusterState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::VirtualClusterState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>The container provider of the virtual cluster.</p>
     pub fn container_provider(mut self, input: crate::types::ContainerProvider) -> Self {
@@ -118,8 +130,12 @@ impl VirtualClusterBuilder {
         self
     }
     /// <p>The container provider of the virtual cluster.</p>
-    pub fn set_container_provider(mut self, input: std::option::Option<crate::types::ContainerProvider>) -> Self {
-        self.container_provider = input; self
+    pub fn set_container_provider(
+        mut self,
+        input: std::option::Option<crate::types::ContainerProvider>,
+    ) -> Self {
+        self.container_provider = input;
+        self
     }
     /// <p>The date and time when the virtual cluster is created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -127,42 +143,48 @@ impl VirtualClusterBuilder {
         self
     }
     /// <p>The date and time when the virtual cluster is created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The assigned tags of the virtual cluster.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The assigned tags of the virtual cluster.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`VirtualCluster`](crate::types::VirtualCluster).
     pub fn build(self) -> crate::types::VirtualCluster {
         crate::types::VirtualCluster {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            state: self.state
-            ,
-            container_provider: self.container_provider
-            ,
-            created_at: self.created_at
-            ,
-            tags: self.tags
-            ,
+            id: self.id,
+            name: self.name,
+            arn: self.arn,
+            state: self.state,
+            container_provider: self.container_provider,
+            created_at: self.created_at,
+            tags: self.tags,
         }
     }
 }
-

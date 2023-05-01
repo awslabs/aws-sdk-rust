@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDeviceOutput  {
+pub struct DeleteDeviceOutput {
     /// <p>Information about the device.</p>
     #[doc(hidden)]
     pub device: std::option::Option<crate::types::Device>,
@@ -10,15 +10,15 @@ pub struct DeleteDeviceOutput  {
 }
 impl DeleteDeviceOutput {
     /// <p>Information about the device.</p>
-    pub fn device(&self) -> std::option::Option<& crate::types::Device> {
+    pub fn device(&self) -> std::option::Option<&crate::types::Device> {
         self.device.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteDeviceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteDeviceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteDeviceOutput`](crate::operation::delete_device::DeleteDeviceOutput).
     pub fn builder() -> crate::operation::delete_device::builders::DeleteDeviceOutputBuilder {
@@ -41,24 +41,23 @@ impl DeleteDeviceOutputBuilder {
     }
     /// <p>Information about the device.</p>
     pub fn set_device(mut self, input: std::option::Option<crate::types::Device>) -> Self {
-        self.device = input; self
+        self.device = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteDeviceOutput`](crate::operation::delete_device::DeleteDeviceOutput).
     pub fn build(self) -> crate::operation::delete_device::DeleteDeviceOutput {
         crate::operation::delete_device::DeleteDeviceOutput {
-            device: self.device
-            ,
+            device: self.device,
             _request_id: self._request_id,
         }
     }
 }
-

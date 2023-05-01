@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteViewInput  {
+pub struct DeleteViewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to delete.</p>
     #[doc(hidden)]
     pub view_arn: std::option::Option<std::string::String>,
 }
 impl DeleteViewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to delete.</p>
-    pub fn view_arn(&self) -> std::option::Option<& str> {
+    pub fn view_arn(&self) -> std::option::Option<&str> {
         self.view_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteViewInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to delete.</p>
     pub fn set_view_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.view_arn = input; self
+        self.view_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteViewInput`](crate::operation::delete_view::DeleteViewInput).
-    pub fn build(self) -> Result<crate::operation::delete_view::DeleteViewInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_view::DeleteViewInput {
-                view_arn: self.view_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_view::DeleteViewInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_view::DeleteViewInput {
+            view_arn: self.view_arn,
+        })
     }
 }
-

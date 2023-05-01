@@ -3,7 +3,7 @@
 /// <p>The result of a <code>DescribeAnalysisSchemes</code> request. Contains the analysis schemes configured for the domain specified in the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAnalysisSchemesOutput  {
+pub struct DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
     #[doc(hidden)]
     pub analysis_schemes: std::option::Option<std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
@@ -11,18 +11,20 @@ pub struct DescribeAnalysisSchemesOutput  {
 }
 impl DescribeAnalysisSchemesOutput {
     /// <p>The analysis scheme descriptions.</p>
-    pub fn analysis_schemes(&self) -> std::option::Option<& [crate::types::AnalysisSchemeStatus]> {
+    pub fn analysis_schemes(&self) -> std::option::Option<&[crate::types::AnalysisSchemeStatus]> {
         self.analysis_schemes.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAnalysisSchemesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAnalysisSchemesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput).
-    pub fn builder() -> crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder
+    {
         crate::operation::describe_analysis_schemes::builders::DescribeAnalysisSchemesOutputBuilder::default()
     }
 }
@@ -31,7 +33,8 @@ impl DescribeAnalysisSchemesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeAnalysisSchemesOutputBuilder {
-    pub(crate) analysis_schemes: std::option::Option<std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
+    pub(crate) analysis_schemes:
+        std::option::Option<std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
     _request_id: Option<String>,
 }
 impl DescribeAnalysisSchemesOutputBuilder {
@@ -42,30 +45,34 @@ impl DescribeAnalysisSchemesOutputBuilder {
     /// <p>The analysis scheme descriptions.</p>
     pub fn analysis_schemes(mut self, input: crate::types::AnalysisSchemeStatus) -> Self {
         let mut v = self.analysis_schemes.unwrap_or_default();
-                        v.push(input);
-                        self.analysis_schemes = Some(v);
-                        self
+        v.push(input);
+        self.analysis_schemes = Some(v);
+        self
     }
     /// <p>The analysis scheme descriptions.</p>
-    pub fn set_analysis_schemes(mut self, input: std::option::Option<std::vec::Vec<crate::types::AnalysisSchemeStatus>>) -> Self {
-        self.analysis_schemes = input; self
+    pub fn set_analysis_schemes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AnalysisSchemeStatus>>,
+    ) -> Self {
+        self.analysis_schemes = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAnalysisSchemesOutput`](crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput).
-    pub fn build(self) -> crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
         crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput {
-            analysis_schemes: self.analysis_schemes
-            ,
+            analysis_schemes: self.analysis_schemes,
             _request_id: self._request_id,
         }
     }
 }
-

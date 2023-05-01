@@ -3,7 +3,7 @@
 /// <p>Contains an asset model hierarchy used in asset model creation. An asset model hierarchy determines the kind (or type) of asset that can belong to a hierarchy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetModelHierarchyDefinition  {
+pub struct AssetModelHierarchyDefinition {
     /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AssetModelHierarchyDefinition  {
 }
 impl AssetModelHierarchyDefinition {
     /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of an asset model for this hierarchy.</p>
-    pub fn child_asset_model_id(&self) -> std::option::Option<& str> {
+    pub fn child_asset_model_id(&self) -> std::option::Option<&str> {
         self.child_asset_model_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AssetModelHierarchyDefinitionBuilder {
     }
     /// <p>The name of the asset model hierarchy definition (as specified in the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html">CreateAssetModel</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a> API operation).</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of an asset model for this hierarchy.</p>
     pub fn child_asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +52,18 @@ impl AssetModelHierarchyDefinitionBuilder {
         self
     }
     /// <p>The ID of an asset model for this hierarchy.</p>
-    pub fn set_child_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.child_asset_model_id = input; self
+    pub fn set_child_asset_model_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.child_asset_model_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssetModelHierarchyDefinition`](crate::types::AssetModelHierarchyDefinition).
     pub fn build(self) -> crate::types::AssetModelHierarchyDefinition {
         crate::types::AssetModelHierarchyDefinition {
-            name: self.name
-            ,
-            child_asset_model_id: self.child_asset_model_id
-            ,
+            name: self.name,
+            child_asset_model_id: self.child_asset_model_id,
         }
     }
 }
-

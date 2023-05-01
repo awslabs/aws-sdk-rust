@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReplicationSubnetGroupOutput  {
+pub struct CreateReplicationSubnetGroupOutput {
     /// <p>The replication subnet group that was created.</p>
     #[doc(hidden)]
     pub replication_subnet_group: std::option::Option<crate::types::ReplicationSubnetGroup>,
@@ -11,18 +11,20 @@ pub struct CreateReplicationSubnetGroupOutput  {
 }
 impl CreateReplicationSubnetGroupOutput {
     /// <p>The replication subnet group that was created.</p>
-    pub fn replication_subnet_group(&self) -> std::option::Option<& crate::types::ReplicationSubnetGroup> {
+    pub fn replication_subnet_group(
+        &self,
+    ) -> std::option::Option<&crate::types::ReplicationSubnetGroup> {
         self.replication_subnet_group.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateReplicationSubnetGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateReplicationSubnetGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateReplicationSubnetGroupOutput`](crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupOutput).
-    pub fn builder() -> crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupOutputBuilder{
         crate::operation::create_replication_subnet_group::builders::CreateReplicationSubnetGroupOutputBuilder::default()
     }
 }
@@ -41,25 +43,29 @@ impl CreateReplicationSubnetGroupOutputBuilder {
         self
     }
     /// <p>The replication subnet group that was created.</p>
-    pub fn set_replication_subnet_group(mut self, input: std::option::Option<crate::types::ReplicationSubnetGroup>) -> Self {
-        self.replication_subnet_group = input; self
+    pub fn set_replication_subnet_group(
+        mut self,
+        input: std::option::Option<crate::types::ReplicationSubnetGroup>,
+    ) -> Self {
+        self.replication_subnet_group = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateReplicationSubnetGroupOutput`](crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupOutput).
-    pub fn build(self) -> crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupOutput {
         crate::operation::create_replication_subnet_group::CreateReplicationSubnetGroupOutput {
-            replication_subnet_group: self.replication_subnet_group
-            ,
+            replication_subnet_group: self.replication_subnet_group,
             _request_id: self._request_id,
         }
     }
 }
-

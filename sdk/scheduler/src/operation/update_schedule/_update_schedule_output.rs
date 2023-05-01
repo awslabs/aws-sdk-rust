@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateScheduleOutput  {
+pub struct UpdateScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
     #[doc(hidden)]
     pub schedule_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct UpdateScheduleOutput  {
 }
 impl UpdateScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
-    pub fn schedule_arn(&self) -> std::option::Option<& str> {
+    pub fn schedule_arn(&self) -> std::option::Option<&str> {
         self.schedule_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateScheduleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateScheduleOutput {
     /// Creates a new builder-style object to manufacture [`UpdateScheduleOutput`](crate::operation::update_schedule::UpdateScheduleOutput).
     pub fn builder() -> crate::operation::update_schedule::builders::UpdateScheduleOutputBuilder {
@@ -41,24 +41,23 @@ impl UpdateScheduleOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schedule that you updated.</p>
     pub fn set_schedule_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schedule_arn = input; self
+        self.schedule_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateScheduleOutput`](crate::operation::update_schedule::UpdateScheduleOutput).
     pub fn build(self) -> crate::operation::update_schedule::UpdateScheduleOutput {
         crate::operation::update_schedule::UpdateScheduleOutput {
-            schedule_arn: self.schedule_arn
-            ,
+            schedule_arn: self.schedule_arn,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateRandomInput  {
+pub struct GenerateRandomInput {
     /// <p>The length of the random byte string. This parameter is required.</p>
     #[doc(hidden)]
     pub number_of_bytes: std::option::Option<i32>,
-    /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+    /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>External key store IDs are not valid for this parameter. If you specify the ID of an external key store, <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.</p>
     #[doc(hidden)]
     pub custom_key_store_id: std::option::Option<std::string::String>,
@@ -16,9 +16,9 @@ impl GenerateRandomInput {
     pub fn number_of_bytes(&self) -> std::option::Option<i32> {
         self.number_of_bytes
     }
-    /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+    /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>External key store IDs are not valid for this parameter. If you specify the ID of an external key store, <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.</p>
-    pub fn custom_key_store_id(&self) -> std::option::Option<& str> {
+    pub fn custom_key_store_id(&self) -> std::option::Option<&str> {
         self.custom_key_store_id.as_deref()
     }
 }
@@ -44,29 +44,34 @@ impl GenerateRandomInputBuilder {
     }
     /// <p>The length of the random byte string. This parameter is required.</p>
     pub fn set_number_of_bytes(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_bytes = input; self
+        self.number_of_bytes = input;
+        self
     }
-    /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+    /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>External key store IDs are not valid for this parameter. If you specify the ID of an external key store, <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.</p>
     pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.custom_key_store_id = Some(input.into());
         self
     }
-    /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p> 
+    /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key store. To find the ID of a custom key store, use the <code>DescribeCustomKeyStores</code> operation.</p>
     /// <p>External key store IDs are not valid for this parameter. If you specify the ID of an external key store, <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.</p>
-    pub fn set_custom_key_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_key_store_id = input; self
+    pub fn set_custom_key_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.custom_key_store_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GenerateRandomInput`](crate::operation::generate_random::GenerateRandomInput).
-    pub fn build(self) -> Result<crate::operation::generate_random::GenerateRandomInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::generate_random::GenerateRandomInput {
-                number_of_bytes: self.number_of_bytes
-                ,
-                custom_key_store_id: self.custom_key_store_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::generate_random::GenerateRandomInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::generate_random::GenerateRandomInput {
+            number_of_bytes: self.number_of_bytes,
+            custom_key_store_id: self.custom_key_store_id,
+        })
     }
 }
-

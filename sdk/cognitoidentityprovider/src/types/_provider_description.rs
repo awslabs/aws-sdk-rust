@@ -3,7 +3,7 @@
 /// <p>A container for IdP details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProviderDescription  {
+pub struct ProviderDescription {
     /// <p>The IdP name.</p>
     #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ProviderDescription  {
 }
 impl ProviderDescription {
     /// <p>The IdP name.</p>
-    pub fn provider_name(&self) -> std::option::Option<& str> {
+    pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
     /// <p>The IdP type.</p>
-    pub fn provider_type(&self) -> std::option::Option<& crate::types::IdentityProviderTypeType> {
+    pub fn provider_type(&self) -> std::option::Option<&crate::types::IdentityProviderTypeType> {
         self.provider_type.as_ref()
     }
     /// <p>The date the provider was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date the provider was added to the user pool.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl ProviderDescriptionBuilder {
     }
     /// <p>The IdP name.</p>
     pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider_name = input; self
+        self.provider_name = input;
+        self
     }
     /// <p>The IdP type.</p>
     pub fn provider_type(mut self, input: crate::types::IdentityProviderTypeType) -> Self {
@@ -67,8 +68,12 @@ impl ProviderDescriptionBuilder {
         self
     }
     /// <p>The IdP type.</p>
-    pub fn set_provider_type(mut self, input: std::option::Option<crate::types::IdentityProviderTypeType>) -> Self {
-        self.provider_type = input; self
+    pub fn set_provider_type(
+        mut self,
+        input: std::option::Option<crate::types::IdentityProviderTypeType>,
+    ) -> Self {
+        self.provider_type = input;
+        self
     }
     /// <p>The date the provider was last modified.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,8 +81,12 @@ impl ProviderDescriptionBuilder {
         self
     }
     /// <p>The date the provider was last modified.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     /// <p>The date the provider was added to the user pool.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -85,21 +94,20 @@ impl ProviderDescriptionBuilder {
         self
     }
     /// <p>The date the provider was added to the user pool.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProviderDescription`](crate::types::ProviderDescription).
     pub fn build(self) -> crate::types::ProviderDescription {
         crate::types::ProviderDescription {
-            provider_name: self.provider_name
-            ,
-            provider_type: self.provider_type
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            creation_date: self.creation_date
-            ,
+            provider_name: self.provider_name,
+            provider_type: self.provider_type,
+            last_modified_date: self.last_modified_date,
+            creation_date: self.creation_date,
         }
     }
 }
-

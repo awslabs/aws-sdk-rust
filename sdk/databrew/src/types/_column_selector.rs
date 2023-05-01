@@ -3,7 +3,7 @@
 /// <p>Selector of a column from a dataset for profile job configuration. One selector includes either a column name or a regular expression.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnSelector  {
+pub struct ColumnSelector {
     /// <p>A regular expression for selecting a column from a dataset.</p>
     #[doc(hidden)]
     pub regex: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ColumnSelector  {
 }
 impl ColumnSelector {
     /// <p>A regular expression for selecting a column from a dataset.</p>
-    pub fn regex(&self) -> std::option::Option<& str> {
+    pub fn regex(&self) -> std::option::Option<&str> {
         self.regex.as_deref()
     }
     /// <p>The name of a column from a dataset.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ColumnSelectorBuilder {
     }
     /// <p>A regular expression for selecting a column from a dataset.</p>
     pub fn set_regex(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.regex = input; self
+        self.regex = input;
+        self
     }
     /// <p>The name of a column from a dataset.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ColumnSelectorBuilder {
     }
     /// <p>The name of a column from a dataset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ColumnSelector`](crate::types::ColumnSelector).
     pub fn build(self) -> crate::types::ColumnSelector {
         crate::types::ColumnSelector {
-            regex: self.regex
-            ,
-            name: self.name
-            ,
+            regex: self.regex,
+            name: self.name,
         }
     }
 }
-

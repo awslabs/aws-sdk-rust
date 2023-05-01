@@ -3,7 +3,7 @@
 /// <p>A metadata entry for a folder or object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Item  {
+pub struct Item {
     /// <p>The name of the item.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,23 +25,23 @@ pub struct Item  {
 }
 impl Item {
     /// <p>The name of the item.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The item type (folder or object).</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ItemType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ItemType> {
         self.r#type.as_ref()
     }
     /// <p>The ETag that represents a unique instance of the item.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
     /// <p>The date and time that the item was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The content type of the item.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The length of the item in bytes.</p>
@@ -75,7 +75,8 @@ impl ItemBuilder {
     }
     /// <p>The name of the item.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The item type (folder or object).</p>
     pub fn r#type(mut self, input: crate::types::ItemType) -> Self {
@@ -84,7 +85,8 @@ impl ItemBuilder {
     }
     /// <p>The item type (folder or object).</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::ItemType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The ETag that represents a unique instance of the item.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl ItemBuilder {
     }
     /// <p>The ETag that represents a unique instance of the item.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     /// <p>The date and time that the item was last modified.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -101,8 +104,12 @@ impl ItemBuilder {
         self
     }
     /// <p>The date and time that the item was last modified.</p>
-    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input; self
+    pub fn set_last_modified(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified = input;
+        self
     }
     /// <p>The content type of the item.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +118,8 @@ impl ItemBuilder {
     }
     /// <p>The content type of the item.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     /// <p>The length of the item in bytes.</p>
     pub fn content_length(mut self, input: i64) -> Self {
@@ -120,24 +128,18 @@ impl ItemBuilder {
     }
     /// <p>The length of the item in bytes.</p>
     pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
-        self.content_length = input; self
+        self.content_length = input;
+        self
     }
     /// Consumes the builder and constructs a [`Item`](crate::types::Item).
     pub fn build(self) -> crate::types::Item {
         crate::types::Item {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            e_tag: self.e_tag
-            ,
-            last_modified: self.last_modified
-            ,
-            content_type: self.content_type
-            ,
-            content_length: self.content_length
-            ,
+            name: self.name,
+            r#type: self.r#type,
+            e_tag: self.e_tag,
+            last_modified: self.last_modified,
+            content_type: self.content_type,
+            content_length: self.content_length,
         }
     }
 }
-

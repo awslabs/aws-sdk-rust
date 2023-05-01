@@ -3,7 +3,7 @@
 /// <p>The minimum and maximum setup for an axis display range.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AxisDisplayMinMaxRange  {
+pub struct AxisDisplayMinMaxRange {
     /// <p>The minimum setup for an axis display range.</p>
     #[doc(hidden)]
     pub minimum: std::option::Option<f64>,
@@ -43,7 +43,8 @@ impl AxisDisplayMinMaxRangeBuilder {
     }
     /// <p>The minimum setup for an axis display range.</p>
     pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
-        self.minimum = input; self
+        self.minimum = input;
+        self
     }
     /// <p>The maximum setup for an axis display range.</p>
     pub fn maximum(mut self, input: f64) -> Self {
@@ -52,16 +53,14 @@ impl AxisDisplayMinMaxRangeBuilder {
     }
     /// <p>The maximum setup for an axis display range.</p>
     pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
-        self.maximum = input; self
+        self.maximum = input;
+        self
     }
     /// Consumes the builder and constructs a [`AxisDisplayMinMaxRange`](crate::types::AxisDisplayMinMaxRange).
     pub fn build(self) -> crate::types::AxisDisplayMinMaxRange {
         crate::types::AxisDisplayMinMaxRange {
-            minimum: self.minimum
-            ,
-            maximum: self.maximum
-            ,
+            minimum: self.minimum,
+            maximum: self.maximum,
         }
     }
 }
-

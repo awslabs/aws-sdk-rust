@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCoreNetworkChangeSetInput  {
+pub struct GetCoreNetworkChangeSetInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct GetCoreNetworkChangeSetInput  {
 }
 impl GetCoreNetworkChangeSetInput {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> std::option::Option<& str> {
+    pub fn core_network_id(&self) -> std::option::Option<&str> {
         self.core_network_id.as_deref()
     }
     /// <p>The ID of the policy version.</p>
@@ -30,13 +30,15 @@ impl GetCoreNetworkChangeSetInput {
         self.max_results
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetCoreNetworkChangeSetInput {
     /// Creates a new builder-style object to manufacture [`GetCoreNetworkChangeSetInput`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetInput).
-    pub fn builder() -> crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetInputBuilder
+    {
         crate::operation::get_core_network_change_set::builders::GetCoreNetworkChangeSetInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl GetCoreNetworkChangeSetInputBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.core_network_id = input; self
+        self.core_network_id = input;
+        self
     }
     /// <p>The ID of the policy version.</p>
     pub fn policy_version_id(mut self, input: i32) -> Self {
@@ -67,7 +70,8 @@ impl GetCoreNetworkChangeSetInputBuilder {
     }
     /// <p>The ID of the policy version.</p>
     pub fn set_policy_version_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.policy_version_id = input; self
+        self.policy_version_id = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,7 +80,8 @@ impl GetCoreNetworkChangeSetInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +90,23 @@ impl GetCoreNetworkChangeSetInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetCoreNetworkChangeSetInput`](crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetInput).
-    pub fn build(self) -> Result<crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_core_network_change_set::GetCoreNetworkChangeSetInput {
-                core_network_id: self.core_network_id
-                ,
-                policy_version_id: self.policy_version_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                core_network_id: self.core_network_id,
+                policy_version_id: self.policy_version_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

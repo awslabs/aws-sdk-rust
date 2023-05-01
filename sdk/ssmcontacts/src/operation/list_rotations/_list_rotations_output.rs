@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRotationsOutput  {
+pub struct ListRotationsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListRotationsOutput  {
 }
 impl ListRotationsOutput {
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Information about rotations that meet the filter criteria.</p>
-    pub fn rotations(&self) -> std::option::Option<& [crate::types::Rotation]> {
+    pub fn rotations(&self) -> std::option::Option<&[crate::types::Rotation]> {
         self.rotations.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRotationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListRotationsOutput {
     /// Creates a new builder-style object to manufacture [`ListRotationsOutput`](crate::operation::list_rotations::ListRotationsOutput).
     pub fn builder() -> crate::operation::list_rotations::builders::ListRotationsOutputBuilder {
@@ -49,7 +49,8 @@ impl ListRotationsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `rotations`.
     ///
@@ -58,32 +59,33 @@ impl ListRotationsOutputBuilder {
     /// <p>Information about rotations that meet the filter criteria.</p>
     pub fn rotations(mut self, input: crate::types::Rotation) -> Self {
         let mut v = self.rotations.unwrap_or_default();
-                        v.push(input);
-                        self.rotations = Some(v);
-                        self
+        v.push(input);
+        self.rotations = Some(v);
+        self
     }
     /// <p>Information about rotations that meet the filter criteria.</p>
-    pub fn set_rotations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Rotation>>) -> Self {
-        self.rotations = input; self
+    pub fn set_rotations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Rotation>>,
+    ) -> Self {
+        self.rotations = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListRotationsOutput`](crate::operation::list_rotations::ListRotationsOutput).
     pub fn build(self) -> crate::operation::list_rotations::ListRotationsOutput {
         crate::operation::list_rotations::ListRotationsOutput {
-            next_token: self.next_token
-            ,
-            rotations: self.rotations
-            ,
+            next_token: self.next_token,
+            rotations: self.rotations,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let lastupdatestatusreasoncode = unimplemented!();
 /// match lastupdatestatusreasoncode {
@@ -49,14 +49,22 @@
 /// Specifically, when `lastupdatestatusreasoncode` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LastUpdateStatusReasonCode::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     DisabledKmsKey,
@@ -101,79 +109,106 @@ pub enum LastUpdateStatusReasonCode {
     #[allow(missing_docs)] // documentation missing in model
     SubnetOutOfIpAddresses,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LastUpdateStatusReasonCode {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DisabledKMSKey" => LastUpdateStatusReasonCode::DisabledKmsKey,
-"EFSIOError" => LastUpdateStatusReasonCode::EfsioError,
-"EFSMountConnectivityError" => LastUpdateStatusReasonCode::EfsMountConnectivityError,
-"EFSMountFailure" => LastUpdateStatusReasonCode::EfsMountFailure,
-"EFSMountTimeout" => LastUpdateStatusReasonCode::EfsMountTimeout,
-"EniLimitExceeded" => LastUpdateStatusReasonCode::EniLimitExceeded,
-"FunctionError" => LastUpdateStatusReasonCode::FunctionError,
-"ImageAccessDenied" => LastUpdateStatusReasonCode::ImageAccessDenied,
-"ImageDeleted" => LastUpdateStatusReasonCode::ImageDeleted,
-"InsufficientRolePermissions" => LastUpdateStatusReasonCode::InsufficientRolePermissions,
-"InternalError" => LastUpdateStatusReasonCode::InternalError,
-"InvalidConfiguration" => LastUpdateStatusReasonCode::InvalidConfiguration,
-"InvalidImage" => LastUpdateStatusReasonCode::InvalidImage,
-"InvalidRuntime" => LastUpdateStatusReasonCode::InvalidRuntime,
-"InvalidSecurityGroup" => LastUpdateStatusReasonCode::InvalidSecurityGroup,
-"InvalidStateKMSKey" => LastUpdateStatusReasonCode::InvalidStateKmsKey,
-"InvalidSubnet" => LastUpdateStatusReasonCode::InvalidSubnet,
-"InvalidZipFileException" => LastUpdateStatusReasonCode::InvalidZipFileException,
-"KMSKeyAccessDenied" => LastUpdateStatusReasonCode::KmsKeyAccessDenied,
-"KMSKeyNotFound" => LastUpdateStatusReasonCode::KmsKeyNotFound,
-"SubnetOutOfIPAddresses" => LastUpdateStatusReasonCode::SubnetOutOfIpAddresses,
-other => LastUpdateStatusReasonCode::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "DisabledKMSKey" => LastUpdateStatusReasonCode::DisabledKmsKey,
+            "EFSIOError" => LastUpdateStatusReasonCode::EfsioError,
+            "EFSMountConnectivityError" => LastUpdateStatusReasonCode::EfsMountConnectivityError,
+            "EFSMountFailure" => LastUpdateStatusReasonCode::EfsMountFailure,
+            "EFSMountTimeout" => LastUpdateStatusReasonCode::EfsMountTimeout,
+            "EniLimitExceeded" => LastUpdateStatusReasonCode::EniLimitExceeded,
+            "FunctionError" => LastUpdateStatusReasonCode::FunctionError,
+            "ImageAccessDenied" => LastUpdateStatusReasonCode::ImageAccessDenied,
+            "ImageDeleted" => LastUpdateStatusReasonCode::ImageDeleted,
+            "InsufficientRolePermissions" => {
+                LastUpdateStatusReasonCode::InsufficientRolePermissions
             }
-impl std::str::FromStr for LastUpdateStatusReasonCode {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(LastUpdateStatusReasonCode::from(s))
-                }
-            }
-impl LastUpdateStatusReasonCode {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    LastUpdateStatusReasonCode::DisabledKmsKey => "DisabledKMSKey",
-    LastUpdateStatusReasonCode::EfsioError => "EFSIOError",
-    LastUpdateStatusReasonCode::EfsMountConnectivityError => "EFSMountConnectivityError",
-    LastUpdateStatusReasonCode::EfsMountFailure => "EFSMountFailure",
-    LastUpdateStatusReasonCode::EfsMountTimeout => "EFSMountTimeout",
-    LastUpdateStatusReasonCode::EniLimitExceeded => "EniLimitExceeded",
-    LastUpdateStatusReasonCode::FunctionError => "FunctionError",
-    LastUpdateStatusReasonCode::ImageAccessDenied => "ImageAccessDenied",
-    LastUpdateStatusReasonCode::ImageDeleted => "ImageDeleted",
-    LastUpdateStatusReasonCode::InsufficientRolePermissions => "InsufficientRolePermissions",
-    LastUpdateStatusReasonCode::InternalError => "InternalError",
-    LastUpdateStatusReasonCode::InvalidConfiguration => "InvalidConfiguration",
-    LastUpdateStatusReasonCode::InvalidImage => "InvalidImage",
-    LastUpdateStatusReasonCode::InvalidRuntime => "InvalidRuntime",
-    LastUpdateStatusReasonCode::InvalidSecurityGroup => "InvalidSecurityGroup",
-    LastUpdateStatusReasonCode::InvalidStateKmsKey => "InvalidStateKMSKey",
-    LastUpdateStatusReasonCode::InvalidSubnet => "InvalidSubnet",
-    LastUpdateStatusReasonCode::InvalidZipFileException => "InvalidZipFileException",
-    LastUpdateStatusReasonCode::KmsKeyAccessDenied => "KMSKeyAccessDenied",
-    LastUpdateStatusReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
-    LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
-    LastUpdateStatusReasonCode::Unknown(value) => value.as_str()
+            "InternalError" => LastUpdateStatusReasonCode::InternalError,
+            "InvalidConfiguration" => LastUpdateStatusReasonCode::InvalidConfiguration,
+            "InvalidImage" => LastUpdateStatusReasonCode::InvalidImage,
+            "InvalidRuntime" => LastUpdateStatusReasonCode::InvalidRuntime,
+            "InvalidSecurityGroup" => LastUpdateStatusReasonCode::InvalidSecurityGroup,
+            "InvalidStateKMSKey" => LastUpdateStatusReasonCode::InvalidStateKmsKey,
+            "InvalidSubnet" => LastUpdateStatusReasonCode::InvalidSubnet,
+            "InvalidZipFileException" => LastUpdateStatusReasonCode::InvalidZipFileException,
+            "KMSKeyAccessDenied" => LastUpdateStatusReasonCode::KmsKeyAccessDenied,
+            "KMSKeyNotFound" => LastUpdateStatusReasonCode::KmsKeyNotFound,
+            "SubnetOutOfIPAddresses" => LastUpdateStatusReasonCode::SubnetOutOfIpAddresses,
+            other => LastUpdateStatusReasonCode::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DisabledKMSKey", "EFSIOError", "EFSMountConnectivityError", "EFSMountFailure", "EFSMountTimeout", "EniLimitExceeded", "FunctionError", "ImageAccessDenied", "ImageDeleted", "InsufficientRolePermissions", "InternalError", "InvalidConfiguration", "InvalidImage", "InvalidRuntime", "InvalidSecurityGroup", "InvalidStateKMSKey", "InvalidSubnet", "InvalidZipFileException", "KMSKeyAccessDenied", "KMSKeyNotFound", "SubnetOutOfIPAddresses"]
-                }
-            }
-impl AsRef<str> for LastUpdateStatusReasonCode {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for LastUpdateStatusReasonCode {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LastUpdateStatusReasonCode::from(s))
+    }
+}
+impl LastUpdateStatusReasonCode {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LastUpdateStatusReasonCode::DisabledKmsKey => "DisabledKMSKey",
+            LastUpdateStatusReasonCode::EfsioError => "EFSIOError",
+            LastUpdateStatusReasonCode::EfsMountConnectivityError => "EFSMountConnectivityError",
+            LastUpdateStatusReasonCode::EfsMountFailure => "EFSMountFailure",
+            LastUpdateStatusReasonCode::EfsMountTimeout => "EFSMountTimeout",
+            LastUpdateStatusReasonCode::EniLimitExceeded => "EniLimitExceeded",
+            LastUpdateStatusReasonCode::FunctionError => "FunctionError",
+            LastUpdateStatusReasonCode::ImageAccessDenied => "ImageAccessDenied",
+            LastUpdateStatusReasonCode::ImageDeleted => "ImageDeleted",
+            LastUpdateStatusReasonCode::InsufficientRolePermissions => {
+                "InsufficientRolePermissions"
+            }
+            LastUpdateStatusReasonCode::InternalError => "InternalError",
+            LastUpdateStatusReasonCode::InvalidConfiguration => "InvalidConfiguration",
+            LastUpdateStatusReasonCode::InvalidImage => "InvalidImage",
+            LastUpdateStatusReasonCode::InvalidRuntime => "InvalidRuntime",
+            LastUpdateStatusReasonCode::InvalidSecurityGroup => "InvalidSecurityGroup",
+            LastUpdateStatusReasonCode::InvalidStateKmsKey => "InvalidStateKMSKey",
+            LastUpdateStatusReasonCode::InvalidSubnet => "InvalidSubnet",
+            LastUpdateStatusReasonCode::InvalidZipFileException => "InvalidZipFileException",
+            LastUpdateStatusReasonCode::KmsKeyAccessDenied => "KMSKeyAccessDenied",
+            LastUpdateStatusReasonCode::KmsKeyNotFound => "KMSKeyNotFound",
+            LastUpdateStatusReasonCode::SubnetOutOfIpAddresses => "SubnetOutOfIPAddresses",
+            LastUpdateStatusReasonCode::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "DisabledKMSKey",
+            "EFSIOError",
+            "EFSMountConnectivityError",
+            "EFSMountFailure",
+            "EFSMountTimeout",
+            "EniLimitExceeded",
+            "FunctionError",
+            "ImageAccessDenied",
+            "ImageDeleted",
+            "InsufficientRolePermissions",
+            "InternalError",
+            "InvalidConfiguration",
+            "InvalidImage",
+            "InvalidRuntime",
+            "InvalidSecurityGroup",
+            "InvalidStateKMSKey",
+            "InvalidSubnet",
+            "InvalidZipFileException",
+            "KMSKeyAccessDenied",
+            "KMSKeyNotFound",
+            "SubnetOutOfIPAddresses",
+        ]
+    }
+}
+impl AsRef<str> for LastUpdateStatusReasonCode {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

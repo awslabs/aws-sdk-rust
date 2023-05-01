@@ -3,7 +3,7 @@
 /// <p> This exception occurs if you attempt to start a task with the same task-id as an existing task but with a different clientRequestToken. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskAlreadyExistsException  {
+pub struct TaskAlreadyExistsException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,13 +11,15 @@ pub struct TaskAlreadyExistsException  {
 }
 impl TaskAlreadyExistsException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for TaskAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TaskAlreadyExistsException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -32,7 +34,9 @@ impl aws_http::request_id::RequestId for crate::types::error::TaskAlreadyExistsE
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for TaskAlreadyExistsException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl TaskAlreadyExistsException {
     /// Creates a new builder-style object to manufacture [`TaskAlreadyExistsException`](crate::types::error::TaskAlreadyExistsException).
@@ -56,26 +60,28 @@ impl TaskAlreadyExistsExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`TaskAlreadyExistsException`](crate::types::error::TaskAlreadyExistsException).
     pub fn build(self) -> crate::types::error::TaskAlreadyExistsException {
         crate::types::error::TaskAlreadyExistsException {
-            message: self.message
-            ,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

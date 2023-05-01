@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCollectionsInput  {
+pub struct ListCollectionsInput {
     /// <p>Pagination token from the previous response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListCollectionsInput  {
 }
 impl ListCollectionsInput {
     /// <p>Pagination token from the previous response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of collection IDs to return. </p>
@@ -42,7 +42,8 @@ impl ListCollectionsInputBuilder {
     }
     /// <p>Pagination token from the previous response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Maximum number of collection IDs to return. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -51,18 +52,19 @@ impl ListCollectionsInputBuilder {
     }
     /// <p>Maximum number of collection IDs to return. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListCollectionsInput`](crate::operation::list_collections::ListCollectionsInput).
-    pub fn build(self) -> Result<crate::operation::list_collections::ListCollectionsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_collections::ListCollectionsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_collections::ListCollectionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_collections::ListCollectionsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

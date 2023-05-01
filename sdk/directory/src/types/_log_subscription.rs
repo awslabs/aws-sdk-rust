@@ -3,7 +3,7 @@
 /// <p>Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogSubscription  {
+pub struct LogSubscription {
     /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -16,15 +16,17 @@ pub struct LogSubscription  {
 }
 impl LogSubscription {
     /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The name of the log group.</p>
-    pub fn log_group_name(&self) -> std::option::Option<& str> {
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
     /// <p>The date and time that the log subscription was created.</p>
-    pub fn subscription_created_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn subscription_created_date_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.subscription_created_date_time.as_ref()
     }
 }
@@ -51,7 +53,8 @@ impl LogSubscriptionBuilder {
     }
     /// <p>Identifier (ID) of the directory that you want to associate with the log subscription.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The name of the log group.</p>
     pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +63,8 @@ impl LogSubscriptionBuilder {
     }
     /// <p>The name of the log group.</p>
     pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_name = input; self
+        self.log_group_name = input;
+        self
     }
     /// <p>The date and time that the log subscription was created.</p>
     pub fn subscription_created_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,19 +72,19 @@ impl LogSubscriptionBuilder {
         self
     }
     /// <p>The date and time that the log subscription was created.</p>
-    pub fn set_subscription_created_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.subscription_created_date_time = input; self
+    pub fn set_subscription_created_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.subscription_created_date_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`LogSubscription`](crate::types::LogSubscription).
     pub fn build(self) -> crate::types::LogSubscription {
         crate::types::LogSubscription {
-            directory_id: self.directory_id
-            ,
-            log_group_name: self.log_group_name
-            ,
-            subscription_created_date_time: self.subscription_created_date_time
-            ,
+            directory_id: self.directory_id,
+            log_group_name: self.log_group_name,
+            subscription_created_date_time: self.subscription_created_date_time,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Information about the resource for each individual EKS cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CoverageResourceDetails  {
+pub struct CoverageResourceDetails {
     /// <p>EKS cluster details involved in the coverage statistics.</p>
     #[doc(hidden)]
     pub eks_cluster_details: std::option::Option<crate::types::CoverageEksClusterDetails>,
@@ -13,11 +13,13 @@ pub struct CoverageResourceDetails  {
 }
 impl CoverageResourceDetails {
     /// <p>EKS cluster details involved in the coverage statistics.</p>
-    pub fn eks_cluster_details(&self) -> std::option::Option<& crate::types::CoverageEksClusterDetails> {
+    pub fn eks_cluster_details(
+        &self,
+    ) -> std::option::Option<&crate::types::CoverageEksClusterDetails> {
         self.eks_cluster_details.as_ref()
     }
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
 }
@@ -42,8 +44,12 @@ impl CoverageResourceDetailsBuilder {
         self
     }
     /// <p>EKS cluster details involved in the coverage statistics.</p>
-    pub fn set_eks_cluster_details(mut self, input: std::option::Option<crate::types::CoverageEksClusterDetails>) -> Self {
-        self.eks_cluster_details = input; self
+    pub fn set_eks_cluster_details(
+        mut self,
+        input: std::option::Option<crate::types::CoverageEksClusterDetails>,
+    ) -> Self {
+        self.eks_cluster_details = input;
+        self
     }
     /// <p>The type of Amazon Web Services resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -51,17 +57,18 @@ impl CoverageResourceDetailsBuilder {
         self
     }
     /// <p>The type of Amazon Web Services resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`CoverageResourceDetails`](crate::types::CoverageResourceDetails).
     pub fn build(self) -> crate::types::CoverageResourceDetails {
         crate::types::CoverageResourceDetails {
-            eks_cluster_details: self.eks_cluster_details
-            ,
-            resource_type: self.resource_type
-            ,
+            eks_cluster_details: self.eks_cluster_details,
+            resource_type: self.resource_type,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeploymentsInput  {
+pub struct ListDeploymentsInput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListDeploymentsInput  {
 }
 impl ListDeploymentsInput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The environment ID.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p>
@@ -30,7 +30,7 @@ impl ListDeploymentsInput {
         self.max_results
     }
     /// <p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The environment ID.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The environment ID.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// <p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,7 +78,8 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The maximum number of items that may be returned for this call. If there are items that have not yet been returned, the response will include a non-null <code>NextToken</code> that you can provide in a subsequent call to get the next set of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +88,21 @@ impl ListDeploymentsInputBuilder {
     }
     /// <p>The token returned by a prior call to this operation indicating the next set of results to be returned. If not specified, the operation will return the first set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDeploymentsInput`](crate::operation::list_deployments::ListDeploymentsInput).
-    pub fn build(self) -> Result<crate::operation::list_deployments::ListDeploymentsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_deployments::ListDeploymentsInput {
-                application_id: self.application_id
-                ,
-                environment_id: self.environment_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_deployments::ListDeploymentsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_deployments::ListDeploymentsInput {
+            application_id: self.application_id,
+            environment_id: self.environment_id,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

@@ -3,15 +3,16 @@
 /// <p>Describes the updated maintenance configuration for the application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApplicationMaintenanceConfigurationUpdate  {
+pub struct ApplicationMaintenanceConfigurationUpdate {
     /// <p>The updated start time for the maintenance window.</p>
     #[doc(hidden)]
     pub application_maintenance_window_start_time_update: std::option::Option<std::string::String>,
 }
 impl ApplicationMaintenanceConfigurationUpdate {
     /// <p>The updated start time for the maintenance window.</p>
-    pub fn application_maintenance_window_start_time_update(&self) -> std::option::Option<& str> {
-        self.application_maintenance_window_start_time_update.as_deref()
+    pub fn application_maintenance_window_start_time_update(&self) -> std::option::Option<&str> {
+        self.application_maintenance_window_start_time_update
+            .as_deref()
     }
 }
 impl ApplicationMaintenanceConfigurationUpdate {
@@ -25,24 +26,31 @@ impl ApplicationMaintenanceConfigurationUpdate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ApplicationMaintenanceConfigurationUpdateBuilder {
-    pub(crate) application_maintenance_window_start_time_update: std::option::Option<std::string::String>,
+    pub(crate) application_maintenance_window_start_time_update:
+        std::option::Option<std::string::String>,
 }
 impl ApplicationMaintenanceConfigurationUpdateBuilder {
     /// <p>The updated start time for the maintenance window.</p>
-    pub fn application_maintenance_window_start_time_update(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn application_maintenance_window_start_time_update(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.application_maintenance_window_start_time_update = Some(input.into());
         self
     }
     /// <p>The updated start time for the maintenance window.</p>
-    pub fn set_application_maintenance_window_start_time_update(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_maintenance_window_start_time_update = input; self
+    pub fn set_application_maintenance_window_start_time_update(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.application_maintenance_window_start_time_update = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApplicationMaintenanceConfigurationUpdate`](crate::types::ApplicationMaintenanceConfigurationUpdate).
     pub fn build(self) -> crate::types::ApplicationMaintenanceConfigurationUpdate {
         crate::types::ApplicationMaintenanceConfigurationUpdate {
-            application_maintenance_window_start_time_update: self.application_maintenance_window_start_time_update
-            ,
+            application_maintenance_window_start_time_update: self
+                .application_maintenance_window_start_time_update,
         }
     }
 }
-

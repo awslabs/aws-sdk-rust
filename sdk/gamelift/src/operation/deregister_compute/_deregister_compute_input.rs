@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterComputeInput  {
+pub struct DeregisterComputeInput {
     /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeregisterComputeInput  {
 }
 impl DeregisterComputeInput {
     /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
     /// <p>The name of the compute resource you want to delete.</p>
-    pub fn compute_name(&self) -> std::option::Option<& str> {
+    pub fn compute_name(&self) -> std::option::Option<&str> {
         self.compute_name.as_deref()
     }
 }
 impl DeregisterComputeInput {
     /// Creates a new builder-style object to manufacture [`DeregisterComputeInput`](crate::operation::deregister_compute::DeregisterComputeInput).
-    pub fn builder() -> crate::operation::deregister_compute::builders::DeregisterComputeInputBuilder {
+    pub fn builder() -> crate::operation::deregister_compute::builders::DeregisterComputeInputBuilder
+    {
         crate::operation::deregister_compute::builders::DeregisterComputeInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeregisterComputeInputBuilder {
     }
     /// <p>&gt;A unique identifier for the fleet the compute resource is registered to.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// <p>The name of the compute resource you want to delete.</p>
     pub fn compute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeregisterComputeInputBuilder {
     }
     /// <p>The name of the compute resource you want to delete.</p>
     pub fn set_compute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compute_name = input; self
+        self.compute_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeregisterComputeInput`](crate::operation::deregister_compute::DeregisterComputeInput).
-    pub fn build(self) -> Result<crate::operation::deregister_compute::DeregisterComputeInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deregister_compute::DeregisterComputeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::deregister_compute::DeregisterComputeInput {
-                fleet_id: self.fleet_id
-                ,
-                compute_name: self.compute_name
-                ,
-            }
+                fleet_id: self.fleet_id,
+                compute_name: self.compute_name,
+            },
         )
     }
 }
-

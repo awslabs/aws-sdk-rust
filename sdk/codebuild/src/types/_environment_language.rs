@@ -3,7 +3,7 @@
 /// <p>A set of Docker images that are related by programming language and are managed by CodeBuild.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentLanguage  {
+pub struct EnvironmentLanguage {
     /// <p>The programming language for the Docker images.</p>
     #[doc(hidden)]
     pub language: std::option::Option<crate::types::LanguageType>,
@@ -13,11 +13,11 @@ pub struct EnvironmentLanguage  {
 }
 impl EnvironmentLanguage {
     /// <p>The programming language for the Docker images.</p>
-    pub fn language(&self) -> std::option::Option<& crate::types::LanguageType> {
+    pub fn language(&self) -> std::option::Option<&crate::types::LanguageType> {
         self.language.as_ref()
     }
     /// <p>The list of Docker images that are related by the specified programming language.</p>
-    pub fn images(&self) -> std::option::Option<& [crate::types::EnvironmentImage]> {
+    pub fn images(&self) -> std::option::Option<&[crate::types::EnvironmentImage]> {
         self.images.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl EnvironmentLanguageBuilder {
     }
     /// <p>The programming language for the Docker images.</p>
     pub fn set_language(mut self, input: std::option::Option<crate::types::LanguageType>) -> Self {
-        self.language = input; self
+        self.language = input;
+        self
     }
     /// Appends an item to `images`.
     ///
@@ -52,22 +53,23 @@ impl EnvironmentLanguageBuilder {
     /// <p>The list of Docker images that are related by the specified programming language.</p>
     pub fn images(mut self, input: crate::types::EnvironmentImage) -> Self {
         let mut v = self.images.unwrap_or_default();
-                        v.push(input);
-                        self.images = Some(v);
-                        self
+        v.push(input);
+        self.images = Some(v);
+        self
     }
     /// <p>The list of Docker images that are related by the specified programming language.</p>
-    pub fn set_images(mut self, input: std::option::Option<std::vec::Vec<crate::types::EnvironmentImage>>) -> Self {
-        self.images = input; self
+    pub fn set_images(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentImage>>,
+    ) -> Self {
+        self.images = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnvironmentLanguage`](crate::types::EnvironmentLanguage).
     pub fn build(self) -> crate::types::EnvironmentLanguage {
         crate::types::EnvironmentLanguage {
-            language: self.language
-            ,
-            images: self.images
-            ,
+            language: self.language,
+            images: self.images,
         }
     }
 }
-

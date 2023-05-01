@@ -3,7 +3,7 @@
 /// <p>Describes a disk image volume.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DiskImageVolumeDescription  {
+pub struct DiskImageVolumeDescription {
     /// <p>The volume identifier.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct DiskImageVolumeDescription  {
 }
 impl DiskImageVolumeDescription {
     /// <p>The volume identifier.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The size of the volume, in GiB.</p>
@@ -43,7 +43,8 @@ impl DiskImageVolumeDescriptionBuilder {
     }
     /// <p>The volume identifier.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn size(mut self, input: i64) -> Self {
@@ -52,16 +53,14 @@ impl DiskImageVolumeDescriptionBuilder {
     }
     /// <p>The size of the volume, in GiB.</p>
     pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.size = input; self
+        self.size = input;
+        self
     }
     /// Consumes the builder and constructs a [`DiskImageVolumeDescription`](crate::types::DiskImageVolumeDescription).
     pub fn build(self) -> crate::types::DiskImageVolumeDescription {
         crate::types::DiskImageVolumeDescription {
-            id: self.id
-            ,
-            size: self.size
-            ,
+            id: self.id,
+            size: self.size,
         }
     }
 }
-

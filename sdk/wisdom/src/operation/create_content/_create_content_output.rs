@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateContentOutput  {
+pub struct CreateContentOutput {
     /// <p>The content.</p>
     #[doc(hidden)]
     pub content: std::option::Option<crate::types::ContentData>,
@@ -10,15 +10,15 @@ pub struct CreateContentOutput  {
 }
 impl CreateContentOutput {
     /// <p>The content.</p>
-    pub fn content(&self) -> std::option::Option<& crate::types::ContentData> {
+    pub fn content(&self) -> std::option::Option<&crate::types::ContentData> {
         self.content.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateContentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateContentOutput {
     /// Creates a new builder-style object to manufacture [`CreateContentOutput`](crate::operation::create_content::CreateContentOutput).
     pub fn builder() -> crate::operation::create_content::builders::CreateContentOutputBuilder {
@@ -41,24 +41,23 @@ impl CreateContentOutputBuilder {
     }
     /// <p>The content.</p>
     pub fn set_content(mut self, input: std::option::Option<crate::types::ContentData>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateContentOutput`](crate::operation::create_content::CreateContentOutput).
     pub fn build(self) -> crate::operation::create_content::CreateContentOutput {
         crate::operation::create_content::CreateContentOutput {
-            content: self.content
-            ,
+            content: self.content,
             _request_id: self._request_id,
         }
     }
 }
-

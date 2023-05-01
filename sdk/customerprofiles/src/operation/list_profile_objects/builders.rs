@@ -4,50 +4,70 @@ pub use crate::operation::list_profile_objects::_list_profile_objects_output::Li
 pub use crate::operation::list_profile_objects::_list_profile_objects_input::ListProfileObjectsInputBuilder;
 
 /// Fluent builder constructing a request to `ListProfileObjects`.
-/// 
+///
 /// <p>Returns a list of objects associated with a profile of a given ProfileObjectType.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListProfileObjectsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_profile_objects::builders::ListProfileObjectsInputBuilder,
+    inner: crate::operation::list_profile_objects::builders::ListProfileObjectsInputBuilder,
 }
-impl ListProfileObjectsFluentBuilder  {
+impl ListProfileObjectsFluentBuilder {
     /// Creates a new `ListProfileObjects`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_profile_objects::ListProfileObjects, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_profile_objects::ListProfileObjectsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_profile_objects::ListProfileObjectsOutput, aws_smithy_http::result::SdkError<crate::operation::list_profile_objects::ListProfileObjectsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_profile_objects::ListProfileObjects,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_profile_objects::ListProfileObjectsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_profile_objects::ListProfileObjectsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_profile_objects::ListProfileObjectsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The pagination token from the previous call to ListProfileObjects.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -104,9 +124,11 @@ impl ListProfileObjectsFluentBuilder  {
         self
     }
     /// <p>Applies a filter to the response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.</p>
-    pub fn set_object_filter(mut self, input: std::option::Option<crate::types::ObjectFilter>) -> Self {
+    pub fn set_object_filter(
+        mut self,
+        input: std::option::Option<crate::types::ObjectFilter>,
+    ) -> Self {
         self.inner = self.inner.set_object_filter(input);
         self
     }
 }
-

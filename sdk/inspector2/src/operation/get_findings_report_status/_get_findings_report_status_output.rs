@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFindingsReportStatusOutput  {
+pub struct GetFindingsReportStatusOutput {
     /// <p>The ID of the report.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
@@ -25,38 +25,40 @@ pub struct GetFindingsReportStatusOutput  {
 }
 impl GetFindingsReportStatusOutput {
     /// <p>The ID of the report.</p>
-    pub fn report_id(&self) -> std::option::Option<& str> {
+    pub fn report_id(&self) -> std::option::Option<&str> {
         self.report_id.as_deref()
     }
     /// <p>The status of the report.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ExternalReportStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ExternalReportStatus> {
         self.status.as_ref()
     }
     /// <p>The error code of the report.</p>
-    pub fn error_code(&self) -> std::option::Option<& crate::types::ReportingErrorCode> {
+    pub fn error_code(&self) -> std::option::Option<&crate::types::ReportingErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The error message of the report.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>The destination of the report.</p>
-    pub fn destination(&self) -> std::option::Option<& crate::types::Destination> {
+    pub fn destination(&self) -> std::option::Option<&crate::types::Destination> {
         self.destination.as_ref()
     }
     /// <p>The filter criteria associated with the report.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<& crate::types::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::types::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetFindingsReportStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetFindingsReportStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetFindingsReportStatusOutput`](crate::operation::get_findings_report_status::GetFindingsReportStatusOutput).
-    pub fn builder() -> crate::operation::get_findings_report_status::builders::GetFindingsReportStatusOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_findings_report_status::builders::GetFindingsReportStatusOutputBuilder
+    {
         crate::operation::get_findings_report_status::builders::GetFindingsReportStatusOutputBuilder::default()
     }
 }
@@ -81,7 +83,8 @@ impl GetFindingsReportStatusOutputBuilder {
     }
     /// <p>The ID of the report.</p>
     pub fn set_report_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.report_id = input; self
+        self.report_id = input;
+        self
     }
     /// <p>The status of the report.</p>
     pub fn status(mut self, input: crate::types::ExternalReportStatus) -> Self {
@@ -89,8 +92,12 @@ impl GetFindingsReportStatusOutputBuilder {
         self
     }
     /// <p>The status of the report.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ExternalReportStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ExternalReportStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The error code of the report.</p>
     pub fn error_code(mut self, input: crate::types::ReportingErrorCode) -> Self {
@@ -98,8 +105,12 @@ impl GetFindingsReportStatusOutputBuilder {
         self
     }
     /// <p>The error code of the report.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::ReportingErrorCode>) -> Self {
-        self.error_code = input; self
+    pub fn set_error_code(
+        mut self,
+        input: std::option::Option<crate::types::ReportingErrorCode>,
+    ) -> Self {
+        self.error_code = input;
+        self
     }
     /// <p>The error message of the report.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +119,8 @@ impl GetFindingsReportStatusOutputBuilder {
     }
     /// <p>The error message of the report.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// <p>The destination of the report.</p>
     pub fn destination(mut self, input: crate::types::Destination) -> Self {
@@ -116,8 +128,12 @@ impl GetFindingsReportStatusOutputBuilder {
         self
     }
     /// <p>The destination of the report.</p>
-    pub fn set_destination(mut self, input: std::option::Option<crate::types::Destination>) -> Self {
-        self.destination = input; self
+    pub fn set_destination(
+        mut self,
+        input: std::option::Option<crate::types::Destination>,
+    ) -> Self {
+        self.destination = input;
+        self
     }
     /// <p>The filter criteria associated with the report.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
@@ -125,35 +141,34 @@ impl GetFindingsReportStatusOutputBuilder {
         self
     }
     /// <p>The filter criteria associated with the report.</p>
-    pub fn set_filter_criteria(mut self, input: std::option::Option<crate::types::FilterCriteria>) -> Self {
-        self.filter_criteria = input; self
+    pub fn set_filter_criteria(
+        mut self,
+        input: std::option::Option<crate::types::FilterCriteria>,
+    ) -> Self {
+        self.filter_criteria = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetFindingsReportStatusOutput`](crate::operation::get_findings_report_status::GetFindingsReportStatusOutput).
-    pub fn build(self) -> crate::operation::get_findings_report_status::GetFindingsReportStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_findings_report_status::GetFindingsReportStatusOutput {
         crate::operation::get_findings_report_status::GetFindingsReportStatusOutput {
-            report_id: self.report_id
-            ,
-            status: self.status
-            ,
-            error_code: self.error_code
-            ,
-            error_message: self.error_message
-            ,
-            destination: self.destination
-            ,
-            filter_criteria: self.filter_criteria
-            ,
+            report_id: self.report_id,
+            status: self.status,
+            error_code: self.error_code,
+            error_message: self.error_message,
+            destination: self.destination,
+            filter_criteria: self.filter_criteria,
             _request_id: self._request_id,
         }
     }
 }
-

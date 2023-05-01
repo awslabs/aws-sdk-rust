@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUserSettingsOutput  {
+pub struct ListUserSettingsOutput {
     /// <p>The user settings.</p>
     #[doc(hidden)]
     pub user_settings: std::option::Option<std::vec::Vec<crate::types::UserSettingsSummary>>,
@@ -13,22 +13,23 @@ pub struct ListUserSettingsOutput  {
 }
 impl ListUserSettingsOutput {
     /// <p>The user settings.</p>
-    pub fn user_settings(&self) -> std::option::Option<& [crate::types::UserSettingsSummary]> {
+    pub fn user_settings(&self) -> std::option::Option<&[crate::types::UserSettingsSummary]> {
         self.user_settings.as_deref()
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListUserSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListUserSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ListUserSettingsOutput`](crate::operation::list_user_settings::ListUserSettingsOutput).
-    pub fn builder() -> crate::operation::list_user_settings::builders::ListUserSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::list_user_settings::builders::ListUserSettingsOutputBuilder
+    {
         crate::operation::list_user_settings::builders::ListUserSettingsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListUserSettingsOutputBuilder {
     /// <p>The user settings.</p>
     pub fn user_settings(mut self, input: crate::types::UserSettingsSummary) -> Self {
         let mut v = self.user_settings.unwrap_or_default();
-                        v.push(input);
-                        self.user_settings = Some(v);
-                        self
+        v.push(input);
+        self.user_settings = Some(v);
+        self
     }
     /// <p>The user settings.</p>
-    pub fn set_user_settings(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserSettingsSummary>>) -> Self {
-        self.user_settings = input; self
+    pub fn set_user_settings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserSettingsSummary>>,
+    ) -> Self {
+        self.user_settings = input;
+        self
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListUserSettingsOutputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListUserSettingsOutput`](crate::operation::list_user_settings::ListUserSettingsOutput).
     pub fn build(self) -> crate::operation::list_user_settings::ListUserSettingsOutput {
         crate::operation::list_user_settings::ListUserSettingsOutput {
-            user_settings: self.user_settings
-            ,
-            next_token: self.next_token
-            ,
+            user_settings: self.user_settings,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

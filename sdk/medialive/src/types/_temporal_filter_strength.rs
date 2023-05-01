@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let temporalfilterstrength = unimplemented!();
 /// match temporalfilterstrength {
@@ -45,14 +45,22 @@
 /// Specifically, when `temporalfilterstrength` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TemporalFilterStrength::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Temporal Filter Strength
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TemporalFilterStrength {
     #[allow(missing_docs)] // documentation missing in model
     Auto,
@@ -89,71 +97,90 @@ pub enum TemporalFilterStrength {
     #[allow(missing_docs)] // documentation missing in model
     Strength9,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TemporalFilterStrength {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AUTO" => TemporalFilterStrength::Auto,
-"STRENGTH_1" => TemporalFilterStrength::Strength1,
-"STRENGTH_10" => TemporalFilterStrength::Strength10,
-"STRENGTH_11" => TemporalFilterStrength::Strength11,
-"STRENGTH_12" => TemporalFilterStrength::Strength12,
-"STRENGTH_13" => TemporalFilterStrength::Strength13,
-"STRENGTH_14" => TemporalFilterStrength::Strength14,
-"STRENGTH_15" => TemporalFilterStrength::Strength15,
-"STRENGTH_16" => TemporalFilterStrength::Strength16,
-"STRENGTH_2" => TemporalFilterStrength::Strength2,
-"STRENGTH_3" => TemporalFilterStrength::Strength3,
-"STRENGTH_4" => TemporalFilterStrength::Strength4,
-"STRENGTH_5" => TemporalFilterStrength::Strength5,
-"STRENGTH_6" => TemporalFilterStrength::Strength6,
-"STRENGTH_7" => TemporalFilterStrength::Strength7,
-"STRENGTH_8" => TemporalFilterStrength::Strength8,
-"STRENGTH_9" => TemporalFilterStrength::Strength9,
-other => TemporalFilterStrength::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for TemporalFilterStrength {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TemporalFilterStrength::from(s))
-                }
-            }
-impl TemporalFilterStrength {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TemporalFilterStrength::Auto => "AUTO",
-    TemporalFilterStrength::Strength1 => "STRENGTH_1",
-    TemporalFilterStrength::Strength10 => "STRENGTH_10",
-    TemporalFilterStrength::Strength11 => "STRENGTH_11",
-    TemporalFilterStrength::Strength12 => "STRENGTH_12",
-    TemporalFilterStrength::Strength13 => "STRENGTH_13",
-    TemporalFilterStrength::Strength14 => "STRENGTH_14",
-    TemporalFilterStrength::Strength15 => "STRENGTH_15",
-    TemporalFilterStrength::Strength16 => "STRENGTH_16",
-    TemporalFilterStrength::Strength2 => "STRENGTH_2",
-    TemporalFilterStrength::Strength3 => "STRENGTH_3",
-    TemporalFilterStrength::Strength4 => "STRENGTH_4",
-    TemporalFilterStrength::Strength5 => "STRENGTH_5",
-    TemporalFilterStrength::Strength6 => "STRENGTH_6",
-    TemporalFilterStrength::Strength7 => "STRENGTH_7",
-    TemporalFilterStrength::Strength8 => "STRENGTH_8",
-    TemporalFilterStrength::Strength9 => "STRENGTH_9",
-    TemporalFilterStrength::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AUTO" => TemporalFilterStrength::Auto,
+            "STRENGTH_1" => TemporalFilterStrength::Strength1,
+            "STRENGTH_10" => TemporalFilterStrength::Strength10,
+            "STRENGTH_11" => TemporalFilterStrength::Strength11,
+            "STRENGTH_12" => TemporalFilterStrength::Strength12,
+            "STRENGTH_13" => TemporalFilterStrength::Strength13,
+            "STRENGTH_14" => TemporalFilterStrength::Strength14,
+            "STRENGTH_15" => TemporalFilterStrength::Strength15,
+            "STRENGTH_16" => TemporalFilterStrength::Strength16,
+            "STRENGTH_2" => TemporalFilterStrength::Strength2,
+            "STRENGTH_3" => TemporalFilterStrength::Strength3,
+            "STRENGTH_4" => TemporalFilterStrength::Strength4,
+            "STRENGTH_5" => TemporalFilterStrength::Strength5,
+            "STRENGTH_6" => TemporalFilterStrength::Strength6,
+            "STRENGTH_7" => TemporalFilterStrength::Strength7,
+            "STRENGTH_8" => TemporalFilterStrength::Strength8,
+            "STRENGTH_9" => TemporalFilterStrength::Strength9,
+            other => TemporalFilterStrength::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AUTO", "STRENGTH_1", "STRENGTH_10", "STRENGTH_11", "STRENGTH_12", "STRENGTH_13", "STRENGTH_14", "STRENGTH_15", "STRENGTH_16", "STRENGTH_2", "STRENGTH_3", "STRENGTH_4", "STRENGTH_5", "STRENGTH_6", "STRENGTH_7", "STRENGTH_8", "STRENGTH_9"]
-                }
-            }
-impl AsRef<str> for TemporalFilterStrength {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TemporalFilterStrength {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TemporalFilterStrength::from(s))
+    }
+}
+impl TemporalFilterStrength {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TemporalFilterStrength::Auto => "AUTO",
+            TemporalFilterStrength::Strength1 => "STRENGTH_1",
+            TemporalFilterStrength::Strength10 => "STRENGTH_10",
+            TemporalFilterStrength::Strength11 => "STRENGTH_11",
+            TemporalFilterStrength::Strength12 => "STRENGTH_12",
+            TemporalFilterStrength::Strength13 => "STRENGTH_13",
+            TemporalFilterStrength::Strength14 => "STRENGTH_14",
+            TemporalFilterStrength::Strength15 => "STRENGTH_15",
+            TemporalFilterStrength::Strength16 => "STRENGTH_16",
+            TemporalFilterStrength::Strength2 => "STRENGTH_2",
+            TemporalFilterStrength::Strength3 => "STRENGTH_3",
+            TemporalFilterStrength::Strength4 => "STRENGTH_4",
+            TemporalFilterStrength::Strength5 => "STRENGTH_5",
+            TemporalFilterStrength::Strength6 => "STRENGTH_6",
+            TemporalFilterStrength::Strength7 => "STRENGTH_7",
+            TemporalFilterStrength::Strength8 => "STRENGTH_8",
+            TemporalFilterStrength::Strength9 => "STRENGTH_9",
+            TemporalFilterStrength::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AUTO",
+            "STRENGTH_1",
+            "STRENGTH_10",
+            "STRENGTH_11",
+            "STRENGTH_12",
+            "STRENGTH_13",
+            "STRENGTH_14",
+            "STRENGTH_15",
+            "STRENGTH_16",
+            "STRENGTH_2",
+            "STRENGTH_3",
+            "STRENGTH_4",
+            "STRENGTH_5",
+            "STRENGTH_6",
+            "STRENGTH_7",
+            "STRENGTH_8",
+            "STRENGTH_9",
+        ]
+    }
+}
+impl AsRef<str> for TemporalFilterStrength {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMemberDetectorsOutput  {
+pub struct UpdateMemberDetectorsOutput {
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     #[doc(hidden)]
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
@@ -10,18 +10,20 @@ pub struct UpdateMemberDetectorsOutput  {
 }
 impl UpdateMemberDetectorsOutput {
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn unprocessed_accounts(&self) -> std::option::Option<& [crate::types::UnprocessedAccount]> {
+    pub fn unprocessed_accounts(&self) -> std::option::Option<&[crate::types::UnprocessedAccount]> {
         self.unprocessed_accounts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateMemberDetectorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateMemberDetectorsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateMemberDetectorsOutput`](crate::operation::update_member_detectors::UpdateMemberDetectorsOutput).
-    pub fn builder() -> crate::operation::update_member_detectors::builders::UpdateMemberDetectorsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_member_detectors::builders::UpdateMemberDetectorsOutputBuilder
+    {
         crate::operation::update_member_detectors::builders::UpdateMemberDetectorsOutputBuilder::default()
     }
 }
@@ -30,7 +32,8 @@ impl UpdateMemberDetectorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateMemberDetectorsOutputBuilder {
-    pub(crate) unprocessed_accounts: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
+    pub(crate) unprocessed_accounts:
+        std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
     _request_id: Option<String>,
 }
 impl UpdateMemberDetectorsOutputBuilder {
@@ -41,30 +44,32 @@ impl UpdateMemberDetectorsOutputBuilder {
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
     pub fn unprocessed_accounts(mut self, input: crate::types::UnprocessedAccount) -> Self {
         let mut v = self.unprocessed_accounts.unwrap_or_default();
-                        v.push(input);
-                        self.unprocessed_accounts = Some(v);
-                        self
+        v.push(input);
+        self.unprocessed_accounts = Some(v);
+        self
     }
     /// <p>A list of member account IDs that were unable to be processed along with an explanation for why they were not processed.</p>
-    pub fn set_unprocessed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>) -> Self {
-        self.unprocessed_accounts = input; self
+    pub fn set_unprocessed_accounts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UnprocessedAccount>>,
+    ) -> Self {
+        self.unprocessed_accounts = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateMemberDetectorsOutput`](crate::operation::update_member_detectors::UpdateMemberDetectorsOutput).
     pub fn build(self) -> crate::operation::update_member_detectors::UpdateMemberDetectorsOutput {
         crate::operation::update_member_detectors::UpdateMemberDetectorsOutput {
-            unprocessed_accounts: self.unprocessed_accounts
-            ,
+            unprocessed_accounts: self.unprocessed_accounts,
             _request_id: self._request_id,
         }
     }
 }
-

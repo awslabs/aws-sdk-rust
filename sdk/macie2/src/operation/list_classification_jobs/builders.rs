@@ -4,63 +4,92 @@ pub use crate::operation::list_classification_jobs::_list_classification_jobs_ou
 pub use crate::operation::list_classification_jobs::_list_classification_jobs_input::ListClassificationJobsInputBuilder;
 
 /// Fluent builder constructing a request to `ListClassificationJobs`.
-/// 
+///
 /// <p>Retrieves a subset of information about one or more classification jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListClassificationJobsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_classification_jobs::builders::ListClassificationJobsInputBuilder,
+    inner: crate::operation::list_classification_jobs::builders::ListClassificationJobsInputBuilder,
 }
-impl ListClassificationJobsFluentBuilder  {
+impl ListClassificationJobsFluentBuilder {
     /// Creates a new `ListClassificationJobs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_classification_jobs::ListClassificationJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_classification_jobs::ListClassificationJobsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_classification_jobs::ListClassificationJobsOutput, aws_smithy_http::result::SdkError<crate::operation::list_classification_jobs::ListClassificationJobsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_classification_jobs::ListClassificationJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_classification_jobs::ListClassificationJobsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_classification_jobs::ListClassificationJobsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_classification_jobs::ListClassificationJobsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator {
-                                crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator
+    {
+        crate::operation::list_classification_jobs::paginator::ListClassificationJobsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The criteria to use to filter the results.</p>
     pub fn filter_criteria(mut self, input: crate::types::ListJobsFilterCriteria) -> Self {
         self.inner = self.inner.filter_criteria(input);
         self
     }
     /// <p>The criteria to use to filter the results.</p>
-    pub fn set_filter_criteria(mut self, input: std::option::Option<crate::types::ListJobsFilterCriteria>) -> Self {
+    pub fn set_filter_criteria(
+        mut self,
+        input: std::option::Option<crate::types::ListJobsFilterCriteria>,
+    ) -> Self {
         self.inner = self.inner.set_filter_criteria(input);
         self
     }
@@ -90,9 +119,11 @@ impl ListClassificationJobsFluentBuilder  {
         self
     }
     /// <p>The criteria to use to sort the results.</p>
-    pub fn set_sort_criteria(mut self, input: std::option::Option<crate::types::ListJobsSortCriteria>) -> Self {
+    pub fn set_sort_criteria(
+        mut self,
+        input: std::option::Option<crate::types::ListJobsSortCriteria>,
+    ) -> Self {
         self.inner = self.inner.set_sort_criteria(input);
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains session configuration information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SessionConfiguration  {
+pub struct SessionConfiguration {
     /// <p>The ARN of the execution role used for the session.</p>
     #[doc(hidden)]
     pub execution_role: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct SessionConfiguration  {
 }
 impl SessionConfiguration {
     /// <p>The ARN of the execution role used for the session.</p>
-    pub fn execution_role(&self) -> std::option::Option<& str> {
+    pub fn execution_role(&self) -> std::option::Option<&str> {
         self.execution_role.as_deref()
     }
     /// <p>The Amazon S3 location that stores information for the notebook.</p>
-    pub fn working_directory(&self) -> std::option::Option<& str> {
+    pub fn working_directory(&self) -> std::option::Option<&str> {
         self.working_directory.as_deref()
     }
     /// <p>The idle timeout in seconds for the session.</p>
@@ -31,7 +31,9 @@ impl SessionConfiguration {
         self.idle_timeout_seconds
     }
     /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
-    pub fn encryption_configuration(&self) -> std::option::Option<& crate::types::EncryptionConfiguration> {
+    pub fn encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::EncryptionConfiguration> {
         self.encryption_configuration.as_ref()
     }
 }
@@ -59,7 +61,8 @@ impl SessionConfigurationBuilder {
     }
     /// <p>The ARN of the execution role used for the session.</p>
     pub fn set_execution_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_role = input; self
+        self.execution_role = input;
+        self
     }
     /// <p>The Amazon S3 location that stores information for the notebook.</p>
     pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +70,12 @@ impl SessionConfigurationBuilder {
         self
     }
     /// <p>The Amazon S3 location that stores information for the notebook.</p>
-    pub fn set_working_directory(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.working_directory = input; self
+    pub fn set_working_directory(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.working_directory = input;
+        self
     }
     /// <p>The idle timeout in seconds for the session.</p>
     pub fn idle_timeout_seconds(mut self, input: i64) -> Self {
@@ -77,29 +84,32 @@ impl SessionConfigurationBuilder {
     }
     /// <p>The idle timeout in seconds for the session.</p>
     pub fn set_idle_timeout_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.idle_timeout_seconds = input; self
+        self.idle_timeout_seconds = input;
+        self
     }
     /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
-    pub fn encryption_configuration(mut self, input: crate::types::EncryptionConfiguration) -> Self {
+    pub fn encryption_configuration(
+        mut self,
+        input: crate::types::EncryptionConfiguration,
+    ) -> Self {
         self.encryption_configuration = Some(input);
         self
     }
     /// <p>If query and calculation results are encrypted in Amazon S3, indicates the encryption option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.</p>
-    pub fn set_encryption_configuration(mut self, input: std::option::Option<crate::types::EncryptionConfiguration>) -> Self {
-        self.encryption_configuration = input; self
+    pub fn set_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionConfiguration>,
+    ) -> Self {
+        self.encryption_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`SessionConfiguration`](crate::types::SessionConfiguration).
     pub fn build(self) -> crate::types::SessionConfiguration {
         crate::types::SessionConfiguration {
-            execution_role: self.execution_role
-            ,
-            working_directory: self.working_directory
-            ,
-            idle_timeout_seconds: self.idle_timeout_seconds
-            ,
-            encryption_configuration: self.encryption_configuration
-            ,
+            execution_role: self.execution_role,
+            working_directory: self.working_directory,
+            idle_timeout_seconds: self.idle_timeout_seconds,
+            encryption_configuration: self.encryption_configuration,
         }
     }
 }
-

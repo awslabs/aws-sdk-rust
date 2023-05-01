@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImageRecipesInput  {
+pub struct ListImageRecipesInput {
     /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<crate::types::Ownership>,
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>parentImage</code> </p> </li> 
-    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -23,16 +23,16 @@ pub struct ListImageRecipesInput  {
 }
 impl ListImageRecipesInput {
     /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
-    pub fn owner(&self) -> std::option::Option<& crate::types::Ownership> {
+    pub fn owner(&self) -> std::option::Option<&crate::types::Ownership> {
         self.owner.as_ref()
     }
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>parentImage</code> </p> </li> 
-    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The maximum items to return in a request.</p>
@@ -40,13 +40,14 @@ impl ListImageRecipesInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListImageRecipesInput {
     /// Creates a new builder-style object to manufacture [`ListImageRecipesInput`](crate::operation::list_image_recipes::ListImageRecipesInput).
-    pub fn builder() -> crate::operation::list_image_recipes::builders::ListImageRecipesInputBuilder {
+    pub fn builder() -> crate::operation::list_image_recipes::builders::ListImageRecipesInputBuilder
+    {
         crate::operation::list_image_recipes::builders::ListImageRecipesInputBuilder::default()
     }
 }
@@ -68,32 +69,37 @@ impl ListImageRecipesInputBuilder {
     }
     /// <p>The owner defines which image recipes you want to list. By default, this request will only show image recipes owned by your account. You can use this field to specify if you want to view image recipes owned by yourself, by Amazon, or those image recipes that have been shared with you by other customers.</p>
     pub fn set_owner(mut self, input: std::option::Option<crate::types::Ownership>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>parentImage</code> </p> </li> 
-    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>parentImage</code> </p> </li> 
-    /// <li> <p> <code>platform</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>parentImage</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -102,7 +108,8 @@ impl ListImageRecipesInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,22 +118,23 @@ impl ListImageRecipesInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListImageRecipesInput`](crate::operation::list_image_recipes::ListImageRecipesInput).
-    pub fn build(self) -> Result<crate::operation::list_image_recipes::ListImageRecipesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_image_recipes::ListImageRecipesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_image_recipes::ListImageRecipesInput {
-                owner: self.owner
-                ,
-                filters: self.filters
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                owner: self.owner,
+                filters: self.filters,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

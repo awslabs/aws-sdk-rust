@@ -3,7 +3,7 @@
 /// <p>The current status of the retry policy executed on the job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetryPolicyExecution  {
+pub struct RetryPolicyExecution {
     /// <p>The current number of attempts made on the driver of the job.</p>
     #[doc(hidden)]
     pub current_attempt_count: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl RetryPolicyExecutionBuilder {
     }
     /// <p>The current number of attempts made on the driver of the job.</p>
     pub fn set_current_attempt_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.current_attempt_count = input; self
+        self.current_attempt_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`RetryPolicyExecution`](crate::types::RetryPolicyExecution).
     pub fn build(self) -> crate::types::RetryPolicyExecution {
         crate::types::RetryPolicyExecution {
-            current_attempt_count: self.current_attempt_count
-            ,
+            current_attempt_count: self.current_attempt_count,
         }
     }
 }
-

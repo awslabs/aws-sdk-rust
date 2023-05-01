@@ -4,50 +4,66 @@ pub use crate::operation::create_namespace::_create_namespace_output::CreateName
 pub use crate::operation::create_namespace::_create_namespace_input::CreateNamespaceInputBuilder;
 
 /// Fluent builder constructing a request to `CreateNamespace`.
-/// 
+///
 /// <p>Creates a namespace in Amazon Redshift Serverless.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNamespaceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_namespace::builders::CreateNamespaceInputBuilder,
+    inner: crate::operation::create_namespace::builders::CreateNamespaceInputBuilder,
 }
-impl CreateNamespaceFluentBuilder  {
+impl CreateNamespaceFluentBuilder {
     /// Creates a new `CreateNamespace`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_namespace::CreateNamespace, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_namespace::CreateNamespaceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_namespace::CreateNamespaceOutput, aws_smithy_http::result::SdkError<crate::operation::create_namespace::CreateNamespaceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_namespace::CreateNamespace,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_namespace::CreateNamespaceError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_namespace::CreateNamespaceOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_namespace::CreateNamespaceError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the namespace.</p>
     pub fn namespace_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.namespace_name(input.into());
@@ -74,7 +90,10 @@ impl CreateNamespaceFluentBuilder  {
         self
     }
     /// <p>The password of the administrator for the first database created in the namespace.</p>
-    pub fn set_admin_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_admin_user_password(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_admin_user_password(input);
         self
     }
@@ -104,7 +123,10 @@ impl CreateNamespaceFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the namespace.</p>
-    pub fn set_default_iam_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_iam_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_default_iam_role_arn(input);
         self
     }
@@ -118,7 +140,10 @@ impl CreateNamespaceFluentBuilder  {
         self
     }
     /// <p>A list of IAM roles to associate with the namespace.</p>
-    pub fn set_iam_roles(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_iam_roles(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_iam_roles(input);
         self
     }
@@ -132,7 +157,10 @@ impl CreateNamespaceFluentBuilder  {
         self
     }
     /// <p>The types of logs the namespace can export. Available export types are <code>userlog</code>, <code>connectionlog</code>, and <code>useractivitylog</code>.</p>
-    pub fn set_log_exports(mut self, input: std::option::Option<std::vec::Vec<crate::types::LogExport>>) -> Self {
+    pub fn set_log_exports(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LogExport>>,
+    ) -> Self {
         self.inner = self.inner.set_log_exports(input);
         self
     }
@@ -146,9 +174,11 @@ impl CreateNamespaceFluentBuilder  {
         self
     }
     /// <p>A list of tag instances.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

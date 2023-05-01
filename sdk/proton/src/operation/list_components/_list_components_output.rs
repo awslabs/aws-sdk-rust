@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListComponentsOutput  {
+pub struct ListComponentsOutput {
     /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListComponentsOutput  {
 }
 impl ListComponentsOutput {
     /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An array of components with summary data.</p>
-    pub fn components(&self) -> std::option::Option<& [crate::types::ComponentSummary]> {
+    pub fn components(&self) -> std::option::Option<&[crate::types::ComponentSummary]> {
         self.components.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListComponentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListComponentsOutput {
     /// Creates a new builder-style object to manufacture [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
     pub fn builder() -> crate::operation::list_components::builders::ListComponentsOutputBuilder {
@@ -49,7 +49,8 @@ impl ListComponentsOutputBuilder {
     }
     /// <p>A token that indicates the location of the next component in the array of components, after the current requested list of components.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `components`.
     ///
@@ -58,32 +59,33 @@ impl ListComponentsOutputBuilder {
     /// <p>An array of components with summary data.</p>
     pub fn components(mut self, input: crate::types::ComponentSummary) -> Self {
         let mut v = self.components.unwrap_or_default();
-                        v.push(input);
-                        self.components = Some(v);
-                        self
+        v.push(input);
+        self.components = Some(v);
+        self
     }
     /// <p>An array of components with summary data.</p>
-    pub fn set_components(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComponentSummary>>) -> Self {
-        self.components = input; self
+    pub fn set_components(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ComponentSummary>>,
+    ) -> Self {
+        self.components = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::operation::list_components::ListComponentsOutput).
     pub fn build(self) -> crate::operation::list_components::ListComponentsOutput {
         crate::operation::list_components::ListComponentsOutput {
-            next_token: self.next_token
-            ,
-            components: self.components
-            ,
+            next_token: self.next_token,
+            components: self.components,
             _request_id: self._request_id,
         }
     }
 }
-

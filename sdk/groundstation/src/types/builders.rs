@@ -94,4 +94,3 @@ pub use crate::types::_discovery_data::DiscoveryDataBuilder;
 pub use crate::types::_component_status_data::ComponentStatusDataBuilder;
 
 pub use crate::types::_aggregate_status::AggregateStatusBuilder;
-

@@ -3,7 +3,7 @@
 /// <p>An object that defines an Amazon S3 object to be deleted if a transaction cancels, provided that <code>VirtualPut</code> was called before writing the object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VirtualObject  {
+pub struct VirtualObject {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct VirtualObject  {
 }
 impl VirtualObject {
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
-    pub fn uri(&self) -> std::option::Option<& str> {
+    pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// <p>The ETag of the Amazon S3 object.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl VirtualObjectBuilder {
     }
     /// <p>The path to the Amazon S3 object. Must start with s3://</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input; self
+        self.uri = input;
+        self
     }
     /// <p>The ETag of the Amazon S3 object.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl VirtualObjectBuilder {
     }
     /// <p>The ETag of the Amazon S3 object.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     /// Consumes the builder and constructs a [`VirtualObject`](crate::types::VirtualObject).
     pub fn build(self) -> crate::types::VirtualObject {
         crate::types::VirtualObject {
-            uri: self.uri
-            ,
-            e_tag: self.e_tag
-            ,
+            uri: self.uri,
+            e_tag: self.e_tag,
         }
     }
 }
-

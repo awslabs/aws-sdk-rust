@@ -4,57 +4,80 @@ pub use crate::operation::send_voice_message::_send_voice_message_output::SendVo
 pub use crate::operation::send_voice_message::_send_voice_message_input::SendVoiceMessageInputBuilder;
 
 /// Fluent builder constructing a request to `SendVoiceMessage`.
-/// 
+///
 /// <p>Allows you to send a request that sends a text message through Amazon Pinpoint. This operation uses <a href="http://aws.amazon.com/polly/">Amazon Polly</a> to convert a text script into a voice message.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendVoiceMessageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder,
+    inner: crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder,
 }
-impl SendVoiceMessageFluentBuilder  {
+impl SendVoiceMessageFluentBuilder {
     /// Creates a new `SendVoiceMessage`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::send_voice_message::SendVoiceMessage, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::send_voice_message::SendVoiceMessageError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::send_voice_message::SendVoiceMessageOutput, aws_smithy_http::result::SdkError<crate::operation::send_voice_message::SendVoiceMessageError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::send_voice_message::SendVoiceMessage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_voice_message::SendVoiceMessageError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::send_voice_message::SendVoiceMessageOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::send_voice_message::SendVoiceMessageError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The destination phone number in E.164 format.</p>
     pub fn destination_phone_number(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.destination_phone_number(input.into());
         self
     }
     /// <p>The destination phone number in E.164 format.</p>
-    pub fn set_destination_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_phone_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_phone_number(input);
         self
     }
@@ -64,7 +87,10 @@ impl SendVoiceMessageFluentBuilder  {
         self
     }
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
-    pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_origination_identity(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_origination_identity(input);
         self
     }
@@ -78,21 +104,24 @@ impl SendVoiceMessageFluentBuilder  {
         self.inner = self.inner.set_message_body(input);
         self
     }
-    /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p> 
-    /// <ul> 
-    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li> 
-    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li> 
+    /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
+    /// <ul>
+    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
+    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
     /// </ul>
     pub fn message_body_text_type(mut self, input: crate::types::VoiceMessageBodyTextType) -> Self {
         self.inner = self.inner.message_body_text_type(input);
         self
     }
-    /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p> 
-    /// <ul> 
-    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li> 
-    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li> 
+    /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
+    /// <ul>
+    /// <li> <p>TEXT: This is the default value. When used the maximum character limit is 3000.</p> </li>
+    /// <li> <p>SSML: When used the maximum character limit is 6000 including SSML tagging.</p> </li>
     /// </ul>
-    pub fn set_message_body_text_type(mut self, input: std::option::Option<crate::types::VoiceMessageBodyTextType>) -> Self {
+    pub fn set_message_body_text_type(
+        mut self,
+        input: std::option::Option<crate::types::VoiceMessageBodyTextType>,
+    ) -> Self {
         self.inner = self.inner.set_message_body_text_type(input);
         self
     }
@@ -112,7 +141,10 @@ impl SendVoiceMessageFluentBuilder  {
         self
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_configuration_set_name(input);
         self
     }
@@ -122,7 +154,10 @@ impl SendVoiceMessageFluentBuilder  {
         self
     }
     /// <p>The maximum amount to spend per voice message, in US dollars.</p>
-    pub fn set_max_price_per_minute(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_max_price_per_minute(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_max_price_per_minute(input);
         self
     }
@@ -141,12 +176,21 @@ impl SendVoiceMessageFluentBuilder  {
     /// To override the contents of this collection use [`set_context`](Self::set_context).
     ///
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn context(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn context(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.context(k.into(), v.into());
         self
     }
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn set_context(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_context(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_context(input);
         self
     }
@@ -161,4 +205,3 @@ impl SendVoiceMessageFluentBuilder  {
         self
     }
 }
-

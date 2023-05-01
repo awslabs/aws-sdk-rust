@@ -3,7 +3,7 @@
 /// <p>The configuration applied to an organization's folders by its retention policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FolderConfiguration  {
+pub struct FolderConfiguration {
     /// <p>The folder name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::FolderName>,
@@ -16,11 +16,11 @@ pub struct FolderConfiguration  {
 }
 impl FolderConfiguration {
     /// <p>The folder name.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::FolderName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::FolderName> {
         self.name.as_ref()
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
-    pub fn action(&self) -> std::option::Option<& crate::types::RetentionAction> {
+    pub fn action(&self) -> std::option::Option<&crate::types::RetentionAction> {
         self.action.as_ref()
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
@@ -51,7 +51,8 @@ impl FolderConfigurationBuilder {
     }
     /// <p>The folder name.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::FolderName>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
     pub fn action(mut self, input: crate::types::RetentionAction) -> Self {
@@ -60,7 +61,8 @@ impl FolderConfigurationBuilder {
     }
     /// <p>The action to take on the folder contents at the end of the folder configuration period.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::RetentionAction>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub fn period(mut self, input: i32) -> Self {
@@ -69,18 +71,15 @@ impl FolderConfigurationBuilder {
     }
     /// <p>The number of days for which the folder-configuration action applies.</p>
     pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.period = input; self
+        self.period = input;
+        self
     }
     /// Consumes the builder and constructs a [`FolderConfiguration`](crate::types::FolderConfiguration).
     pub fn build(self) -> crate::types::FolderConfiguration {
         crate::types::FolderConfiguration {
-            name: self.name
-            ,
-            action: self.action
-            ,
-            period: self.period
-            ,
+            name: self.name,
+            action: self.action,
+            period: self.period,
         }
     }
 }
-

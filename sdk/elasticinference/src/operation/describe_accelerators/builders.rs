@@ -4,57 +4,82 @@ pub use crate::operation::describe_accelerators::_describe_accelerators_output::
 pub use crate::operation::describe_accelerators::_describe_accelerators_input::DescribeAcceleratorsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeAccelerators`.
-/// 
-/// <p> Describes information over a provided set of accelerators belonging to an account. </p> 
+///
+/// <p> Describes information over a provided set of accelerators belonging to an account. </p>
 /// <p> February 15, 2023: Starting April 15, 2023, AWS will not onboard new customers to Amazon Elastic Inference (EI), and will help current customers migrate their workloads to options that offer better price and performance. After April 15, 2023, new customers will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once during the past 30-day period are considered current customers and will be able to continue using the service. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAcceleratorsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_accelerators::builders::DescribeAcceleratorsInputBuilder,
+    inner: crate::operation::describe_accelerators::builders::DescribeAcceleratorsInputBuilder,
 }
-impl DescribeAcceleratorsFluentBuilder  {
+impl DescribeAcceleratorsFluentBuilder {
     /// Creates a new `DescribeAccelerators`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_accelerators::DescribeAccelerators, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_accelerators::DescribeAcceleratorsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_accelerators::DescribeAcceleratorsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_accelerators::DescribeAcceleratorsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_accelerators::DescribeAccelerators,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_accelerators::DescribeAcceleratorsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_accelerators::DescribeAcceleratorsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_accelerators::DescribeAcceleratorsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_accelerators::paginator::DescribeAcceleratorsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_accelerators::paginator::DescribeAcceleratorsPaginator {
-                                crate::operation::describe_accelerators::paginator::DescribeAcceleratorsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_accelerators::paginator::DescribeAcceleratorsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_accelerators::paginator::DescribeAcceleratorsPaginator {
+        crate::operation::describe_accelerators::paginator::DescribeAcceleratorsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// Appends an item to `acceleratorIds`.
     ///
     /// To override the contents of this collection use [`set_accelerator_ids`](Self::set_accelerator_ids).
@@ -65,7 +90,10 @@ impl DescribeAcceleratorsFluentBuilder  {
         self
     }
     /// <p> The IDs of the accelerators to describe. </p>
-    pub fn set_accelerator_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_accelerator_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_accelerator_ids(input);
         self
     }
@@ -79,7 +107,10 @@ impl DescribeAcceleratorsFluentBuilder  {
         self
     }
     /// <p> One or more filters. Filter names and values are case-sensitive. Valid filter names are: accelerator-types: can provide a list of accelerator type names to filter for. instance-id: can provide a list of EC2 instance ids to filter for. </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -104,4 +135,3 @@ impl DescribeAcceleratorsFluentBuilder  {
         self
     }
 }
-

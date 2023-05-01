@@ -4,65 +4,84 @@ pub use crate::operation::create_route::_create_route_output::CreateRouteOutputB
 pub use crate::operation::create_route::_create_route_input::CreateRouteInputBuilder;
 
 /// Fluent builder constructing a request to `CreateRoute`.
-/// 
-/// <p>Creates a route in a route table within a VPC.</p> 
-/// <p>You must specify either a destination CIDR block or a prefix list ID. You must also specify exactly one of the resources from the parameter list.</p> 
-/// <p>When determining how to route traffic, we use the route with the most specific match. For example, traffic is destined for the IPv4 address <code>192.0.2.3</code>, and the route table includes the following two IPv4 routes:</p> 
-/// <ul> 
-/// <li> <p> <code>192.0.2.0/24</code> (goes to some target A)</p> </li> 
-/// <li> <p> <code>192.0.2.0/28</code> (goes to some target B)</p> </li> 
-/// </ul> 
-/// <p>Both routes apply to the traffic destined for <code>192.0.2.3</code>. However, the second route in the list covers a smaller number of IP addresses and is therefore more specific, so we use that route to determine where to target the traffic.</p> 
+///
+/// <p>Creates a route in a route table within a VPC.</p>
+/// <p>You must specify either a destination CIDR block or a prefix list ID. You must also specify exactly one of the resources from the parameter list.</p>
+/// <p>When determining how to route traffic, we use the route with the most specific match. For example, traffic is destined for the IPv4 address <code>192.0.2.3</code>, and the route table includes the following two IPv4 routes:</p>
+/// <ul>
+/// <li> <p> <code>192.0.2.0/24</code> (goes to some target A)</p> </li>
+/// <li> <p> <code>192.0.2.0/28</code> (goes to some target B)</p> </li>
+/// </ul>
+/// <p>Both routes apply to the traffic destined for <code>192.0.2.3</code>. However, the second route in the list covers a smaller number of IP addresses and is therefore more specific, so we use that route to determine where to target the traffic.</p>
 /// <p>For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRouteFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_route::builders::CreateRouteInputBuilder,
+    inner: crate::operation::create_route::builders::CreateRouteInputBuilder,
 }
-impl CreateRouteFluentBuilder  {
+impl CreateRouteFluentBuilder {
     /// Creates a new `CreateRoute`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_route::CreateRoute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_route::CreateRouteOutput, aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_route::CreateRoute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_route::CreateRouteOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific match. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
     pub fn destination_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
     /// <p>The IPv4 CIDR address block used for the destination match. Routing decisions are based on the most specific match. We modify the specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.</p>
-    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_cidr_block(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
@@ -72,7 +91,10 @@ impl CreateRouteFluentBuilder  {
         self
     }
     /// <p>The IPv6 CIDR block used for the destination match. Routing decisions are based on the most specific match.</p>
-    pub fn set_destination_ipv6_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_ipv6_cidr_block(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_ipv6_cidr_block(input);
         self
     }
@@ -82,7 +104,10 @@ impl CreateRouteFluentBuilder  {
         self
     }
     /// <p>The ID of a prefix list used for the destination match.</p>
-    pub fn set_destination_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_prefix_list_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_prefix_list_id(input);
         self
     }
@@ -107,12 +132,18 @@ impl CreateRouteFluentBuilder  {
         self
     }
     /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
-    pub fn egress_only_internet_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn egress_only_internet_gateway_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.egress_only_internet_gateway_id(input.into());
         self
     }
     /// <p>[IPv6 traffic only] The ID of an egress-only internet gateway.</p>
-    pub fn set_egress_only_internet_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_egress_only_internet_gateway_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_egress_only_internet_gateway_id(input);
         self
     }
@@ -152,7 +183,10 @@ impl CreateRouteFluentBuilder  {
         self
     }
     /// <p>The ID of a transit gateway.</p>
-    pub fn set_transit_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transit_gateway_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_transit_gateway_id(input);
         self
     }
@@ -166,15 +200,18 @@ impl CreateRouteFluentBuilder  {
         self.inner = self.inner.set_local_gateway_id(input);
         self
     }
-    /// <p>The ID of the carrier gateway.</p> 
+    /// <p>The ID of the carrier gateway.</p>
     /// <p>You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.</p>
     pub fn carrier_gateway_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.carrier_gateway_id(input.into());
         self
     }
-    /// <p>The ID of the carrier gateway.</p> 
+    /// <p>The ID of the carrier gateway.</p>
     /// <p>You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.</p>
-    pub fn set_carrier_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_carrier_gateway_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_carrier_gateway_id(input);
         self
     }
@@ -184,7 +221,10 @@ impl CreateRouteFluentBuilder  {
         self
     }
     /// <p>The ID of a network interface.</p>
-    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_interface_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -204,7 +244,10 @@ impl CreateRouteFluentBuilder  {
         self
     }
     /// <p>The ID of a VPC peering connection.</p>
-    pub fn set_vpc_peering_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_peering_connection_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_vpc_peering_connection_id(input);
         self
     }
@@ -219,4 +262,3 @@ impl CreateRouteFluentBuilder  {
         self
     }
 }
-

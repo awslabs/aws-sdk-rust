@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMembershipInput  {
+pub struct DeleteMembershipInput {
     /// <p>The identifier for a membership resource.</p>
     #[doc(hidden)]
     pub membership_identifier: std::option::Option<std::string::String>,
 }
 impl DeleteMembershipInput {
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> std::option::Option<& str> {
+    pub fn membership_identifier(&self) -> std::option::Option<&str> {
         self.membership_identifier.as_deref()
     }
 }
 impl DeleteMembershipInput {
     /// Creates a new builder-style object to manufacture [`DeleteMembershipInput`](crate::operation::delete_membership::DeleteMembershipInput).
-    pub fn builder() -> crate::operation::delete_membership::builders::DeleteMembershipInputBuilder {
+    pub fn builder() -> crate::operation::delete_membership::builders::DeleteMembershipInputBuilder
+    {
         crate::operation::delete_membership::builders::DeleteMembershipInputBuilder::default()
     }
 }
@@ -33,17 +34,22 @@ impl DeleteMembershipInputBuilder {
         self
     }
     /// <p>The identifier for a membership resource.</p>
-    pub fn set_membership_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.membership_identifier = input; self
+    pub fn set_membership_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.membership_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMembershipInput`](crate::operation::delete_membership::DeleteMembershipInput).
-    pub fn build(self) -> Result<crate::operation::delete_membership::DeleteMembershipInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_membership::DeleteMembershipInput {
-                membership_identifier: self.membership_identifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_membership::DeleteMembershipInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_membership::DeleteMembershipInput {
+            membership_identifier: self.membership_identifier,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateRoleToGroupOutput  {
+pub struct AssociateRoleToGroupOutput {
     /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
     #[doc(hidden)]
     pub associated_at: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct AssociateRoleToGroupOutput  {
 }
 impl AssociateRoleToGroupOutput {
     /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
-    pub fn associated_at(&self) -> std::option::Option<& str> {
+    pub fn associated_at(&self) -> std::option::Option<&str> {
         self.associated_at.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AssociateRoleToGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AssociateRoleToGroupOutput {
     /// Creates a new builder-style object to manufacture [`AssociateRoleToGroupOutput`](crate::operation::associate_role_to_group::AssociateRoleToGroupOutput).
-    pub fn builder() -> crate::operation::associate_role_to_group::builders::AssociateRoleToGroupOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_role_to_group::builders::AssociateRoleToGroupOutputBuilder
+    {
         crate::operation::associate_role_to_group::builders::AssociateRoleToGroupOutputBuilder::default()
     }
 }
@@ -41,24 +43,23 @@ impl AssociateRoleToGroupOutputBuilder {
     }
     /// The time, in milliseconds since the epoch, when the role ARN was associated with the group.
     pub fn set_associated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.associated_at = input; self
+        self.associated_at = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AssociateRoleToGroupOutput`](crate::operation::associate_role_to_group::AssociateRoleToGroupOutput).
     pub fn build(self) -> crate::operation::associate_role_to_group::AssociateRoleToGroupOutput {
         crate::operation::associate_role_to_group::AssociateRoleToGroupOutput {
-            associated_at: self.associated_at
-            ,
+            associated_at: self.associated_at,
             _request_id: self._request_id,
         }
     }
 }
-

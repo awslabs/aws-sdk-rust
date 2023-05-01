@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataCatalogEncryptionSettingsInput  {
+pub struct GetDataCatalogEncryptionSettingsInput {
     /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
 }
 impl GetDataCatalogEncryptionSettingsInput {
     /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
 }
 impl GetDataCatalogEncryptionSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetDataCatalogEncryptionSettingsInput`](crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput).
-    pub fn builder() -> crate::operation::get_data_catalog_encryption_settings::builders::GetDataCatalogEncryptionSettingsInputBuilder {
+    pub fn builder() -> crate::operation::get_data_catalog_encryption_settings::builders::GetDataCatalogEncryptionSettingsInputBuilder{
         crate::operation::get_data_catalog_encryption_settings::builders::GetDataCatalogEncryptionSettingsInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl GetDataCatalogEncryptionSettingsInputBuilder {
     }
     /// <p>The ID of the Data Catalog to retrieve the security configuration for. If none is provided, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDataCatalogEncryptionSettingsInput`](crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput).
-    pub fn build(self) -> Result<crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_data_catalog_encryption_settings::GetDataCatalogEncryptionSettingsInput {
                 catalog_id: self.catalog_id
@@ -46,4 +47,3 @@ impl GetDataCatalogEncryptionSettingsInputBuilder {
         )
     }
 }
-

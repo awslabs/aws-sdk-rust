@@ -3,7 +3,7 @@
 /// <p>Describes the destination options for a flow log.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DestinationOptionsResponse  {
+pub struct DestinationOptionsResponse {
     /// <p>The format for the flow log.</p>
     #[doc(hidden)]
     pub file_format: std::option::Option<crate::types::DestinationFileFormat>,
@@ -16,7 +16,7 @@ pub struct DestinationOptionsResponse  {
 }
 impl DestinationOptionsResponse {
     /// <p>The format for the flow log.</p>
-    pub fn file_format(&self) -> std::option::Option<& crate::types::DestinationFileFormat> {
+    pub fn file_format(&self) -> std::option::Option<&crate::types::DestinationFileFormat> {
         self.file_format.as_ref()
     }
     /// <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.</p>
@@ -50,8 +50,12 @@ impl DestinationOptionsResponseBuilder {
         self
     }
     /// <p>The format for the flow log.</p>
-    pub fn set_file_format(mut self, input: std::option::Option<crate::types::DestinationFileFormat>) -> Self {
-        self.file_format = input; self
+    pub fn set_file_format(
+        mut self,
+        input: std::option::Option<crate::types::DestinationFileFormat>,
+    ) -> Self {
+        self.file_format = input;
+        self
     }
     /// <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.</p>
     pub fn hive_compatible_partitions(mut self, input: bool) -> Self {
@@ -60,7 +64,8 @@ impl DestinationOptionsResponseBuilder {
     }
     /// <p>Indicates whether to use Hive-compatible prefixes for flow logs stored in Amazon S3.</p>
     pub fn set_hive_compatible_partitions(mut self, input: std::option::Option<bool>) -> Self {
-        self.hive_compatible_partitions = input; self
+        self.hive_compatible_partitions = input;
+        self
     }
     /// <p>Indicates whether to partition the flow log per hour.</p>
     pub fn per_hour_partition(mut self, input: bool) -> Self {
@@ -69,18 +74,15 @@ impl DestinationOptionsResponseBuilder {
     }
     /// <p>Indicates whether to partition the flow log per hour.</p>
     pub fn set_per_hour_partition(mut self, input: std::option::Option<bool>) -> Self {
-        self.per_hour_partition = input; self
+        self.per_hour_partition = input;
+        self
     }
     /// Consumes the builder and constructs a [`DestinationOptionsResponse`](crate::types::DestinationOptionsResponse).
     pub fn build(self) -> crate::types::DestinationOptionsResponse {
         crate::types::DestinationOptionsResponse {
-            file_format: self.file_format
-            ,
-            hive_compatible_partitions: self.hive_compatible_partitions
-            ,
-            per_hour_partition: self.per_hour_partition
-            ,
+            file_format: self.file_format,
+            hive_compatible_partitions: self.hive_compatible_partitions,
+            per_hour_partition: self.per_hour_partition,
         }
     }
 }
-

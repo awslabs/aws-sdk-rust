@@ -3,7 +3,7 @@
 /// <p>Filters applied to the technical cue or shot detection segments. For more information, see <code>StartSegmentDetection</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSegmentDetectionFilters  {
+pub struct StartSegmentDetectionFilters {
     /// <p>Filters that are specific to technical cues.</p>
     #[doc(hidden)]
     pub technical_cue_filter: std::option::Option<crate::types::StartTechnicalCueDetectionFilter>,
@@ -13,11 +13,13 @@ pub struct StartSegmentDetectionFilters  {
 }
 impl StartSegmentDetectionFilters {
     /// <p>Filters that are specific to technical cues.</p>
-    pub fn technical_cue_filter(&self) -> std::option::Option<& crate::types::StartTechnicalCueDetectionFilter> {
+    pub fn technical_cue_filter(
+        &self,
+    ) -> std::option::Option<&crate::types::StartTechnicalCueDetectionFilter> {
         self.technical_cue_filter.as_ref()
     }
     /// <p>Filters that are specific to shot detections.</p>
-    pub fn shot_filter(&self) -> std::option::Option<& crate::types::StartShotDetectionFilter> {
+    pub fn shot_filter(&self) -> std::option::Option<&crate::types::StartShotDetectionFilter> {
         self.shot_filter.as_ref()
     }
 }
@@ -32,18 +34,26 @@ impl StartSegmentDetectionFilters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct StartSegmentDetectionFiltersBuilder {
-    pub(crate) technical_cue_filter: std::option::Option<crate::types::StartTechnicalCueDetectionFilter>,
+    pub(crate) technical_cue_filter:
+        std::option::Option<crate::types::StartTechnicalCueDetectionFilter>,
     pub(crate) shot_filter: std::option::Option<crate::types::StartShotDetectionFilter>,
 }
 impl StartSegmentDetectionFiltersBuilder {
     /// <p>Filters that are specific to technical cues.</p>
-    pub fn technical_cue_filter(mut self, input: crate::types::StartTechnicalCueDetectionFilter) -> Self {
+    pub fn technical_cue_filter(
+        mut self,
+        input: crate::types::StartTechnicalCueDetectionFilter,
+    ) -> Self {
         self.technical_cue_filter = Some(input);
         self
     }
     /// <p>Filters that are specific to technical cues.</p>
-    pub fn set_technical_cue_filter(mut self, input: std::option::Option<crate::types::StartTechnicalCueDetectionFilter>) -> Self {
-        self.technical_cue_filter = input; self
+    pub fn set_technical_cue_filter(
+        mut self,
+        input: std::option::Option<crate::types::StartTechnicalCueDetectionFilter>,
+    ) -> Self {
+        self.technical_cue_filter = input;
+        self
     }
     /// <p>Filters that are specific to shot detections.</p>
     pub fn shot_filter(mut self, input: crate::types::StartShotDetectionFilter) -> Self {
@@ -51,17 +61,18 @@ impl StartSegmentDetectionFiltersBuilder {
         self
     }
     /// <p>Filters that are specific to shot detections.</p>
-    pub fn set_shot_filter(mut self, input: std::option::Option<crate::types::StartShotDetectionFilter>) -> Self {
-        self.shot_filter = input; self
+    pub fn set_shot_filter(
+        mut self,
+        input: std::option::Option<crate::types::StartShotDetectionFilter>,
+    ) -> Self {
+        self.shot_filter = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartSegmentDetectionFilters`](crate::types::StartSegmentDetectionFilters).
     pub fn build(self) -> crate::types::StartSegmentDetectionFilters {
         crate::types::StartSegmentDetectionFilters {
-            technical_cue_filter: self.technical_cue_filter
-            ,
-            shot_filter: self.shot_filter
-            ,
+            technical_cue_filter: self.technical_cue_filter,
+            shot_filter: self.shot_filter,
         }
     }
 }
-

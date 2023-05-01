@@ -3,24 +3,24 @@
 /// <p>Describes an instance refresh for an Auto Scaling group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceRefresh  {
+pub struct InstanceRefresh {
     /// <p>The instance refresh ID.</p>
     #[doc(hidden)]
     pub instance_refresh_id: std::option::Option<std::string::String>,
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
-    /// <p>The current status for the instance refresh operation:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Pending</code> - The request was created, but the instance refresh has not started.</p> </li> 
-    /// <li> <p> <code>InProgress</code> - An instance refresh is in progress.</p> </li> 
-    /// <li> <p> <code>Successful</code> - An instance refresh completed successfully.</p> </li> 
-    /// <li> <p> <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and the scaling activities. </p> </li> 
-    /// <li> <p> <code>Cancelling</code> - An ongoing instance refresh is being cancelled.</p> </li> 
-    /// <li> <p> <code>Cancelled</code> - The instance refresh is cancelled. </p> </li> 
-    /// <li> <p> <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p> </li> 
-    /// <li> <p> <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and the scaling activities.</p> </li> 
-    /// <li> <p> <code>RollbackSuccessful</code> - The rollback completed successfully.</p> </li> 
+    /// <p>The current status for the instance refresh operation:</p>
+    /// <ul>
+    /// <li> <p> <code>Pending</code> - The request was created, but the instance refresh has not started.</p> </li>
+    /// <li> <p> <code>InProgress</code> - An instance refresh is in progress.</p> </li>
+    /// <li> <p> <code>Successful</code> - An instance refresh completed successfully.</p> </li>
+    /// <li> <p> <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and the scaling activities. </p> </li>
+    /// <li> <p> <code>Cancelling</code> - An ongoing instance refresh is being cancelled.</p> </li>
+    /// <li> <p> <code>Cancelled</code> - The instance refresh is cancelled. </p> </li>
+    /// <li> <p> <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p> </li>
+    /// <li> <p> <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and the scaling activities.</p> </li>
+    /// <li> <p> <code>RollbackSuccessful</code> - The rollback completed successfully.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::InstanceRefreshStatus>,
@@ -33,13 +33,13 @@ pub struct InstanceRefresh  {
     /// <p>The date and time at which the instance refresh ended.</p>
     #[doc(hidden)]
     pub end_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p> <note> 
-    /// <p> <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value gradually goes back down to zero during a rollback.</p> 
+    /// <p>The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p> <note>
+    /// <p> <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value gradually goes back down to zero during a rollback.</p>
     /// </note>
     #[doc(hidden)]
     pub percentage_complete: std::option::Option<i32>,
-    /// <p>The number of instances remaining to update before the instance refresh is complete.</p> <note> 
-    /// <p>If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the rollback.</p> 
+    /// <p>The number of instances remaining to update before the instance refresh is complete.</p> <note>
+    /// <p>If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the rollback.</p>
     /// </note>
     #[doc(hidden)]
     pub instances_to_update: std::option::Option<i32>,
@@ -58,66 +58,70 @@ pub struct InstanceRefresh  {
 }
 impl InstanceRefresh {
     /// <p>The instance refresh ID.</p>
-    pub fn instance_refresh_id(&self) -> std::option::Option<& str> {
+    pub fn instance_refresh_id(&self) -> std::option::Option<&str> {
         self.instance_refresh_id.as_deref()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
-    /// <p>The current status for the instance refresh operation:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Pending</code> - The request was created, but the instance refresh has not started.</p> </li> 
-    /// <li> <p> <code>InProgress</code> - An instance refresh is in progress.</p> </li> 
-    /// <li> <p> <code>Successful</code> - An instance refresh completed successfully.</p> </li> 
-    /// <li> <p> <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and the scaling activities. </p> </li> 
-    /// <li> <p> <code>Cancelling</code> - An ongoing instance refresh is being cancelled.</p> </li> 
-    /// <li> <p> <code>Cancelled</code> - The instance refresh is cancelled. </p> </li> 
-    /// <li> <p> <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p> </li> 
-    /// <li> <p> <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and the scaling activities.</p> </li> 
-    /// <li> <p> <code>RollbackSuccessful</code> - The rollback completed successfully.</p> </li> 
+    /// <p>The current status for the instance refresh operation:</p>
+    /// <ul>
+    /// <li> <p> <code>Pending</code> - The request was created, but the instance refresh has not started.</p> </li>
+    /// <li> <p> <code>InProgress</code> - An instance refresh is in progress.</p> </li>
+    /// <li> <p> <code>Successful</code> - An instance refresh completed successfully.</p> </li>
+    /// <li> <p> <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and the scaling activities. </p> </li>
+    /// <li> <p> <code>Cancelling</code> - An ongoing instance refresh is being cancelled.</p> </li>
+    /// <li> <p> <code>Cancelled</code> - The instance refresh is cancelled. </p> </li>
+    /// <li> <p> <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p> </li>
+    /// <li> <p> <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and the scaling activities.</p> </li>
+    /// <li> <p> <code>RollbackSuccessful</code> - The rollback completed successfully.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::InstanceRefreshStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::InstanceRefreshStatus> {
         self.status.as_ref()
     }
     /// <p>The explanation for the specific status assigned to this operation.</p>
-    pub fn status_reason(&self) -> std::option::Option<& str> {
+    pub fn status_reason(&self) -> std::option::Option<&str> {
         self.status_reason.as_deref()
     }
     /// <p>The date and time at which the instance refresh began.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The date and time at which the instance refresh ended.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
-    /// <p>The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p> <note> 
-    /// <p> <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value gradually goes back down to zero during a rollback.</p> 
+    /// <p>The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p> <note>
+    /// <p> <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value gradually goes back down to zero during a rollback.</p>
     /// </note>
     pub fn percentage_complete(&self) -> std::option::Option<i32> {
         self.percentage_complete
     }
-    /// <p>The number of instances remaining to update before the instance refresh is complete.</p> <note> 
-    /// <p>If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the rollback.</p> 
+    /// <p>The number of instances remaining to update before the instance refresh is complete.</p> <note>
+    /// <p>If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the rollback.</p>
     /// </note>
     pub fn instances_to_update(&self) -> std::option::Option<i32> {
         self.instances_to_update
     }
     /// <p>Additional progress details for an Auto Scaling group that has a warm pool.</p>
-    pub fn progress_details(&self) -> std::option::Option<& crate::types::InstanceRefreshProgressDetails> {
+    pub fn progress_details(
+        &self,
+    ) -> std::option::Option<&crate::types::InstanceRefreshProgressDetails> {
         self.progress_details.as_ref()
     }
     /// <p>The preferences for an instance refresh.</p>
-    pub fn preferences(&self) -> std::option::Option<& crate::types::RefreshPreferences> {
+    pub fn preferences(&self) -> std::option::Option<&crate::types::RefreshPreferences> {
         self.preferences.as_ref()
     }
     /// <p>Describes the desired configuration for the instance refresh.</p>
-    pub fn desired_configuration(&self) -> std::option::Option<& crate::types::DesiredConfiguration> {
+    pub fn desired_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::DesiredConfiguration> {
         self.desired_configuration.as_ref()
     }
     /// <p>The rollback details.</p>
-    pub fn rollback_details(&self) -> std::option::Option<& crate::types::RollbackDetails> {
+    pub fn rollback_details(&self) -> std::option::Option<&crate::types::RollbackDetails> {
         self.rollback_details.as_ref()
     }
 }
@@ -152,8 +156,12 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>The instance refresh ID.</p>
-    pub fn set_instance_refresh_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_refresh_id = input; self
+    pub fn set_instance_refresh_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.instance_refresh_id = input;
+        self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -161,39 +169,47 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
-    /// <p>The current status for the instance refresh operation:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Pending</code> - The request was created, but the instance refresh has not started.</p> </li> 
-    /// <li> <p> <code>InProgress</code> - An instance refresh is in progress.</p> </li> 
-    /// <li> <p> <code>Successful</code> - An instance refresh completed successfully.</p> </li> 
-    /// <li> <p> <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and the scaling activities. </p> </li> 
-    /// <li> <p> <code>Cancelling</code> - An ongoing instance refresh is being cancelled.</p> </li> 
-    /// <li> <p> <code>Cancelled</code> - The instance refresh is cancelled. </p> </li> 
-    /// <li> <p> <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p> </li> 
-    /// <li> <p> <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and the scaling activities.</p> </li> 
-    /// <li> <p> <code>RollbackSuccessful</code> - The rollback completed successfully.</p> </li> 
+    /// <p>The current status for the instance refresh operation:</p>
+    /// <ul>
+    /// <li> <p> <code>Pending</code> - The request was created, but the instance refresh has not started.</p> </li>
+    /// <li> <p> <code>InProgress</code> - An instance refresh is in progress.</p> </li>
+    /// <li> <p> <code>Successful</code> - An instance refresh completed successfully.</p> </li>
+    /// <li> <p> <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and the scaling activities. </p> </li>
+    /// <li> <p> <code>Cancelling</code> - An ongoing instance refresh is being cancelled.</p> </li>
+    /// <li> <p> <code>Cancelled</code> - The instance refresh is cancelled. </p> </li>
+    /// <li> <p> <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p> </li>
+    /// <li> <p> <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and the scaling activities.</p> </li>
+    /// <li> <p> <code>RollbackSuccessful</code> - The rollback completed successfully.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::InstanceRefreshStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The current status for the instance refresh operation:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Pending</code> - The request was created, but the instance refresh has not started.</p> </li> 
-    /// <li> <p> <code>InProgress</code> - An instance refresh is in progress.</p> </li> 
-    /// <li> <p> <code>Successful</code> - An instance refresh completed successfully.</p> </li> 
-    /// <li> <p> <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and the scaling activities. </p> </li> 
-    /// <li> <p> <code>Cancelling</code> - An ongoing instance refresh is being cancelled.</p> </li> 
-    /// <li> <p> <code>Cancelled</code> - The instance refresh is cancelled. </p> </li> 
-    /// <li> <p> <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p> </li> 
-    /// <li> <p> <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and the scaling activities.</p> </li> 
-    /// <li> <p> <code>RollbackSuccessful</code> - The rollback completed successfully.</p> </li> 
+    /// <p>The current status for the instance refresh operation:</p>
+    /// <ul>
+    /// <li> <p> <code>Pending</code> - The request was created, but the instance refresh has not started.</p> </li>
+    /// <li> <p> <code>InProgress</code> - An instance refresh is in progress.</p> </li>
+    /// <li> <p> <code>Successful</code> - An instance refresh completed successfully.</p> </li>
+    /// <li> <p> <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot using the status reason and the scaling activities. </p> </li>
+    /// <li> <p> <code>Cancelling</code> - An ongoing instance refresh is being cancelled.</p> </li>
+    /// <li> <p> <code>Cancelled</code> - The instance refresh is cancelled. </p> </li>
+    /// <li> <p> <code>RollbackInProgress</code> - An instance refresh is being rolled back.</p> </li>
+    /// <li> <p> <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot using the status reason and the scaling activities.</p> </li>
+    /// <li> <p> <code>RollbackSuccessful</code> - The rollback completed successfully.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::InstanceRefreshStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::InstanceRefreshStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The explanation for the specific status assigned to this operation.</p>
     pub fn status_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -202,7 +218,8 @@ impl InstanceRefreshBuilder {
     }
     /// <p>The explanation for the specific status assigned to this operation.</p>
     pub fn set_status_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_reason = input; self
+        self.status_reason = input;
+        self
     }
     /// <p>The date and time at which the instance refresh began.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -210,8 +227,12 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>The date and time at which the instance refresh began.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The date and time at which the instance refresh ended.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -220,33 +241,36 @@ impl InstanceRefreshBuilder {
     }
     /// <p>The date and time at which the instance refresh ended.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
-    /// <p>The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p> <note> 
-    /// <p> <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value gradually goes back down to zero during a rollback.</p> 
+    /// <p>The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p> <note>
+    /// <p> <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value gradually goes back down to zero during a rollback.</p>
     /// </note>
     pub fn percentage_complete(mut self, input: i32) -> Self {
         self.percentage_complete = Some(input);
         self
     }
-    /// <p>The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p> <note> 
-    /// <p> <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value gradually goes back down to zero during a rollback.</p> 
+    /// <p>The percentage of the instance refresh that is complete. For each instance replacement, Amazon EC2 Auto Scaling tracks the instance's health status and warm-up time. When the instance's health status changes to healthy and the specified warm-up time passes, the instance is considered updated and is added to the percentage complete.</p> <note>
+    /// <p> <code>PercentageComplete</code> does not include instances that are replaced during a rollback. This value gradually goes back down to zero during a rollback.</p>
     /// </note>
     pub fn set_percentage_complete(mut self, input: std::option::Option<i32>) -> Self {
-        self.percentage_complete = input; self
+        self.percentage_complete = input;
+        self
     }
-    /// <p>The number of instances remaining to update before the instance refresh is complete.</p> <note> 
-    /// <p>If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the rollback.</p> 
+    /// <p>The number of instances remaining to update before the instance refresh is complete.</p> <note>
+    /// <p>If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the rollback.</p>
     /// </note>
     pub fn instances_to_update(mut self, input: i32) -> Self {
         self.instances_to_update = Some(input);
         self
     }
-    /// <p>The number of instances remaining to update before the instance refresh is complete.</p> <note> 
-    /// <p>If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the rollback.</p> 
+    /// <p>The number of instances remaining to update before the instance refresh is complete.</p> <note>
+    /// <p>If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the number of instances that were not yet updated by the instance refresh. Therefore, these instances don't need to be replaced as part of the rollback.</p>
     /// </note>
     pub fn set_instances_to_update(mut self, input: std::option::Option<i32>) -> Self {
-        self.instances_to_update = input; self
+        self.instances_to_update = input;
+        self
     }
     /// <p>Additional progress details for an Auto Scaling group that has a warm pool.</p>
     pub fn progress_details(mut self, input: crate::types::InstanceRefreshProgressDetails) -> Self {
@@ -254,8 +278,12 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>Additional progress details for an Auto Scaling group that has a warm pool.</p>
-    pub fn set_progress_details(mut self, input: std::option::Option<crate::types::InstanceRefreshProgressDetails>) -> Self {
-        self.progress_details = input; self
+    pub fn set_progress_details(
+        mut self,
+        input: std::option::Option<crate::types::InstanceRefreshProgressDetails>,
+    ) -> Self {
+        self.progress_details = input;
+        self
     }
     /// <p>The preferences for an instance refresh.</p>
     pub fn preferences(mut self, input: crate::types::RefreshPreferences) -> Self {
@@ -263,8 +291,12 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>The preferences for an instance refresh.</p>
-    pub fn set_preferences(mut self, input: std::option::Option<crate::types::RefreshPreferences>) -> Self {
-        self.preferences = input; self
+    pub fn set_preferences(
+        mut self,
+        input: std::option::Option<crate::types::RefreshPreferences>,
+    ) -> Self {
+        self.preferences = input;
+        self
     }
     /// <p>Describes the desired configuration for the instance refresh.</p>
     pub fn desired_configuration(mut self, input: crate::types::DesiredConfiguration) -> Self {
@@ -272,8 +304,12 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>Describes the desired configuration for the instance refresh.</p>
-    pub fn set_desired_configuration(mut self, input: std::option::Option<crate::types::DesiredConfiguration>) -> Self {
-        self.desired_configuration = input; self
+    pub fn set_desired_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DesiredConfiguration>,
+    ) -> Self {
+        self.desired_configuration = input;
+        self
     }
     /// <p>The rollback details.</p>
     pub fn rollback_details(mut self, input: crate::types::RollbackDetails) -> Self {
@@ -281,37 +317,28 @@ impl InstanceRefreshBuilder {
         self
     }
     /// <p>The rollback details.</p>
-    pub fn set_rollback_details(mut self, input: std::option::Option<crate::types::RollbackDetails>) -> Self {
-        self.rollback_details = input; self
+    pub fn set_rollback_details(
+        mut self,
+        input: std::option::Option<crate::types::RollbackDetails>,
+    ) -> Self {
+        self.rollback_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceRefresh`](crate::types::InstanceRefresh).
     pub fn build(self) -> crate::types::InstanceRefresh {
         crate::types::InstanceRefresh {
-            instance_refresh_id: self.instance_refresh_id
-            ,
-            auto_scaling_group_name: self.auto_scaling_group_name
-            ,
-            status: self.status
-            ,
-            status_reason: self.status_reason
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
-            percentage_complete: self.percentage_complete
-            ,
-            instances_to_update: self.instances_to_update
-            ,
-            progress_details: self.progress_details
-            ,
-            preferences: self.preferences
-            ,
-            desired_configuration: self.desired_configuration
-            ,
-            rollback_details: self.rollback_details
-            ,
+            instance_refresh_id: self.instance_refresh_id,
+            auto_scaling_group_name: self.auto_scaling_group_name,
+            status: self.status,
+            status_reason: self.status_reason,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            percentage_complete: self.percentage_complete,
+            instances_to_update: self.instances_to_update,
+            progress_details: self.progress_details,
+            preferences: self.preferences,
+            desired_configuration: self.desired_configuration,
+            rollback_details: self.rollback_details,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceInput  {
+pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UntagResourceInput  {
 }
 impl UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
-    pub fn resource_tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resource_tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.resource_tag_keys.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl UntagResourceInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the resource. For a list of supported resources, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_ResourceTag.html">ResourceTag</a>. </p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Appends an item to `resource_tag_keys`.
     ///
@@ -51,24 +52,28 @@ impl UntagResourceInputBuilder {
     /// <p>A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
     pub fn resource_tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resource_tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.resource_tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.resource_tag_keys = Some(v);
+        self
     }
     /// <p>A list of tag keys associated with tags that need to be removed from the resource. If you specify a tag key that doesn't exist, it's ignored. Although the maximum number of array members is 200, user-tag maximum is 50. The remaining are reserved for Amazon Web Services use. </p>
-    pub fn set_resource_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resource_tag_keys = input; self
+    pub fn set_resource_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resource_tag_keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`UntagResourceInput`](crate::operation::untag_resource::UntagResourceInput).
-    pub fn build(self) -> Result<crate::operation::untag_resource::UntagResourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::untag_resource::UntagResourceInput {
-                resource_arn: self.resource_arn
-                ,
-                resource_tag_keys: self.resource_tag_keys
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::untag_resource::UntagResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::untag_resource::UntagResourceInput {
+            resource_arn: self.resource_arn,
+            resource_tag_keys: self.resource_tag_keys,
+        })
     }
 }
-

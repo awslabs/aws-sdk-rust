@@ -4,50 +4,70 @@ pub use crate::operation::remove_listener_certificates::_remove_listener_certifi
 pub use crate::operation::remove_listener_certificates::_remove_listener_certificates_input::RemoveListenerCertificatesInputBuilder;
 
 /// Fluent builder constructing a request to `RemoveListenerCertificates`.
-/// 
+///
 /// <p>Removes the specified certificate from the certificate list for the specified HTTPS or TLS listener.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveListenerCertificatesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::remove_listener_certificates::builders::RemoveListenerCertificatesInputBuilder,
 }
-impl RemoveListenerCertificatesFluentBuilder  {
+impl RemoveListenerCertificatesFluentBuilder {
     /// Creates a new `RemoveListenerCertificates`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::remove_listener_certificates::RemoveListenerCertificates, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::remove_listener_certificates::RemoveListenerCertificatesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput, aws_smithy_http::result::SdkError<crate::operation::remove_listener_certificates::RemoveListenerCertificatesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::remove_listener_certificates::RemoveListenerCertificates,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_listener_certificates::RemoveListenerCertificatesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_listener_certificates::RemoveListenerCertificatesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the listener.</p>
     pub fn listener_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.listener_arn(input.into());
@@ -68,9 +88,11 @@ impl RemoveListenerCertificatesFluentBuilder  {
         self
     }
     /// <p>The certificate to remove. You can specify one certificate per call. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.</p>
-    pub fn set_certificates(mut self, input: std::option::Option<std::vec::Vec<crate::types::Certificate>>) -> Self {
+    pub fn set_certificates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Certificate>>,
+    ) -> Self {
         self.inner = self.inner.set_certificates(input);
         self
     }
 }
-

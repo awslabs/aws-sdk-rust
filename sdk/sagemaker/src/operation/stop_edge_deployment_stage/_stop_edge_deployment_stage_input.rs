@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopEdgeDeploymentStageInput  {
+pub struct StopEdgeDeploymentStageInput {
     /// <p>The name of the edge deployment plan to stop.</p>
     #[doc(hidden)]
     pub edge_deployment_plan_name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct StopEdgeDeploymentStageInput  {
 }
 impl StopEdgeDeploymentStageInput {
     /// <p>The name of the edge deployment plan to stop.</p>
-    pub fn edge_deployment_plan_name(&self) -> std::option::Option<& str> {
+    pub fn edge_deployment_plan_name(&self) -> std::option::Option<&str> {
         self.edge_deployment_plan_name.as_deref()
     }
     /// <p>The name of the stage to stop.</p>
-    pub fn stage_name(&self) -> std::option::Option<& str> {
+    pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
 }
 impl StopEdgeDeploymentStageInput {
     /// Creates a new builder-style object to manufacture [`StopEdgeDeploymentStageInput`](crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageInput).
-    pub fn builder() -> crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageInputBuilder
+    {
         crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl StopEdgeDeploymentStageInputBuilder {
         self
     }
     /// <p>The name of the edge deployment plan to stop.</p>
-    pub fn set_edge_deployment_plan_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.edge_deployment_plan_name = input; self
+    pub fn set_edge_deployment_plan_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.edge_deployment_plan_name = input;
+        self
     }
     /// <p>The name of the stage to stop.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +57,21 @@ impl StopEdgeDeploymentStageInputBuilder {
     }
     /// <p>The name of the stage to stop.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input; self
+        self.stage_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopEdgeDeploymentStageInput`](crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageInput).
-    pub fn build(self) -> Result<crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageInput {
-                edge_deployment_plan_name: self.edge_deployment_plan_name
-                ,
-                stage_name: self.stage_name
-                ,
-            }
+                edge_deployment_plan_name: self.edge_deployment_plan_name,
+                stage_name: self.stage_name,
+            },
         )
     }
 }
-

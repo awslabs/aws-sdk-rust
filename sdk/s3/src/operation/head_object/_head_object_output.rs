@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HeadObjectOutput  {
+pub struct HeadObjectOutput {
     /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
     #[doc(hidden)]
     pub delete_marker: bool,
@@ -12,10 +12,10 @@ pub struct HeadObjectOutput  {
     /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
     #[doc(hidden)]
     pub expiration: std::option::Option<std::string::String>,
-    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p> 
-    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p> 
-    /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> 
-    /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p> 
+    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
+    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p>
+    /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p>
+    /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p>
     /// <p>For more information about archiving objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning Objects: General Considerations</a>.</p>
     #[doc(hidden)]
     pub restore: std::option::Option<std::string::String>,
@@ -75,7 +75,8 @@ pub struct HeadObjectOutput  {
     pub server_side_encryption: std::option::Option<crate::types::ServerSideEncryption>,
     /// <p>A map of metadata to store with the object in S3.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     #[doc(hidden)]
     pub sse_customer_algorithm: std::option::Option<std::string::String>,
@@ -88,20 +89,20 @@ pub struct HeadObjectOutput  {
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     #[doc(hidden)]
     pub bucket_key_enabled: bool,
-    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p> 
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
     #[doc(hidden)]
     pub storage_class: std::option::Option<crate::types::StorageClass>,
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     #[doc(hidden)]
     pub request_charged: std::option::Option<crate::types::RequestCharged>,
-    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p> 
-    /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li> 
-    /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li> 
-    /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li> 
-    /// </ul> 
+    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
+    /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
+    /// <ul>
+    /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+    /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+    /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
     #[doc(hidden)]
     pub replication_status: std::option::Option<crate::types::ReplicationStatus>,
@@ -126,27 +127,27 @@ impl HeadObjectOutput {
         self.delete_marker
     }
     /// <p>Indicates that a range of bytes was specified.</p>
-    pub fn accept_ranges(&self) -> std::option::Option<& str> {
+    pub fn accept_ranges(&self) -> std::option::Option<&str> {
         self.accept_ranges.as_deref()
     }
     /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
-    pub fn expiration(&self) -> std::option::Option<& str> {
+    pub fn expiration(&self) -> std::option::Option<&str> {
         self.expiration.as_deref()
     }
-    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p> 
-    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p> 
-    /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> 
-    /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p> 
+    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
+    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p>
+    /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p>
+    /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p>
     /// <p>For more information about archiving objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning Objects: General Considerations</a>.</p>
-    pub fn restore(&self) -> std::option::Option<& str> {
+    pub fn restore(&self) -> std::option::Option<&str> {
         self.restore.as_deref()
     }
     /// <p>The archive state of the head object.</p>
-    pub fn archive_status(&self) -> std::option::Option<& crate::types::ArchiveStatus> {
+    pub fn archive_status(&self) -> std::option::Option<&crate::types::ArchiveStatus> {
         self.archive_status.as_ref()
     }
     /// <p>Creation date of the object.</p>
-    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>Size of the body in bytes.</p>
@@ -154,23 +155,23 @@ impl HeadObjectOutput {
         self.content_length
     }
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_crc32(&self) -> std::option::Option<& str> {
+    pub fn checksum_crc32(&self) -> std::option::Option<&str> {
         self.checksum_crc32.as_deref()
     }
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_crc32_c(&self) -> std::option::Option<& str> {
+    pub fn checksum_crc32_c(&self) -> std::option::Option<&str> {
         self.checksum_crc32_c.as_deref()
     }
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_sha1(&self) -> std::option::Option<& str> {
+    pub fn checksum_sha1(&self) -> std::option::Option<&str> {
         self.checksum_sha1.as_deref()
     }
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn checksum_sha256(&self) -> std::option::Option<& str> {
+    pub fn checksum_sha256(&self) -> std::option::Option<&str> {
         self.checksum_sha256.as_deref()
     }
     /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
     /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
@@ -178,79 +179,84 @@ impl HeadObjectOutput {
         self.missing_meta
     }
     /// <p>Version of the object.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
-    pub fn cache_control(&self) -> std::option::Option<& str> {
+    pub fn cache_control(&self) -> std::option::Option<&str> {
         self.cache_control.as_deref()
     }
     /// <p>Specifies presentational information for the object.</p>
-    pub fn content_disposition(&self) -> std::option::Option<& str> {
+    pub fn content_disposition(&self) -> std::option::Option<&str> {
         self.content_disposition.as_deref()
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
-    pub fn content_encoding(&self) -> std::option::Option<& str> {
+    pub fn content_encoding(&self) -> std::option::Option<&str> {
         self.content_encoding.as_deref()
     }
     /// <p>The language the content is in.</p>
-    pub fn content_language(&self) -> std::option::Option<& str> {
+    pub fn content_language(&self) -> std::option::Option<&str> {
         self.content_language.as_deref()
     }
     /// <p>A standard MIME type describing the format of the object data.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
-    pub fn expires(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn expires(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.expires.as_ref()
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
-    pub fn website_redirect_location(&self) -> std::option::Option<& str> {
+    pub fn website_redirect_location(&self) -> std::option::Option<&str> {
         self.website_redirect_location.as_deref()
     }
     /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or an Amazon S3-managed encryption key, the response includes this header with the value of the server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
-    pub fn server_side_encryption(&self) -> std::option::Option<& crate::types::ServerSideEncryption> {
+    pub fn server_side_encryption(
+        &self,
+    ) -> std::option::Option<&crate::types::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.metadata.as_ref()
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
-    pub fn sse_customer_algorithm(&self) -> std::option::Option<& str> {
+    pub fn sse_customer_algorithm(&self) -> std::option::Option<&str> {
         self.sse_customer_algorithm.as_deref()
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
-    pub fn sse_customer_key_md5(&self) -> std::option::Option<& str> {
+    pub fn sse_customer_key_md5(&self) -> std::option::Option<&str> {
         self.sse_customer_key_md5.as_deref()
     }
     /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
-    pub fn ssekms_key_id(&self) -> std::option::Option<& str> {
+    pub fn ssekms_key_id(&self) -> std::option::Option<&str> {
         self.ssekms_key_id.as_deref()
     }
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub fn bucket_key_enabled(&self) -> bool {
         self.bucket_key_enabled
     }
-    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p> 
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
-    pub fn storage_class(&self) -> std::option::Option<& crate::types::StorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<&crate::types::StorageClass> {
         self.storage_class.as_ref()
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn request_charged(&self) -> std::option::Option<& crate::types::RequestCharged> {
+    pub fn request_charged(&self) -> std::option::Option<&crate::types::RequestCharged> {
         self.request_charged.as_ref()
     }
-    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p> 
-    /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li> 
-    /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li> 
-    /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li> 
-    /// </ul> 
+    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
+    /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
+    /// <ul>
+    /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+    /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+    /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
-    pub fn replication_status(&self) -> std::option::Option<& crate::types::ReplicationStatus> {
+    pub fn replication_status(&self) -> std::option::Option<&crate::types::ReplicationStatus> {
         self.replication_status.as_ref()
     }
     /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
@@ -258,19 +264,23 @@ impl HeadObjectOutput {
         self.parts_count
     }
     /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>. </p>
-    pub fn object_lock_mode(&self) -> std::option::Option<& crate::types::ObjectLockMode> {
+    pub fn object_lock_mode(&self) -> std::option::Option<&crate::types::ObjectLockMode> {
         self.object_lock_mode.as_ref()
     }
     /// <p>The date and time when the Object Lock retention period expires. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
-    pub fn object_lock_retain_until_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn object_lock_retain_until_date(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.object_lock_retain_until_date.as_ref()
     }
     /// <p>Specifies whether a legal hold is in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This header is not returned if the specified version of this object has never had a legal hold applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
-    pub fn object_lock_legal_hold_status(&self) -> std::option::Option<& crate::types::ObjectLockLegalHoldStatus> {
+    pub fn object_lock_legal_hold_status(
+        &self,
+    ) -> std::option::Option<&crate::types::ObjectLockLegalHoldStatus> {
         self.object_lock_legal_hold_status.as_ref()
     }
 }
-impl  std::fmt::Debug for HeadObjectOutput  {
+impl std::fmt::Debug for HeadObjectOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("HeadObjectOutput");
         formatter.field("delete_marker", &self.delete_marker);
@@ -305,23 +315,29 @@ impl  std::fmt::Debug for HeadObjectOutput  {
         formatter.field("replication_status", &self.replication_status);
         formatter.field("parts_count", &self.parts_count);
         formatter.field("object_lock_mode", &self.object_lock_mode);
-        formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
-        formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
+        formatter.field(
+            "object_lock_retain_until_date",
+            &self.object_lock_retain_until_date,
+        );
+        formatter.field(
+            "object_lock_legal_hold_status",
+            &self.object_lock_legal_hold_status,
+        );
         formatter.field("_extended_request_id", &self._extended_request_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
 impl crate::s3_request_id::RequestIdExt for HeadObjectOutput {
-                                fn extended_request_id(&self) -> Option<&str> {
-                                    self._extended_request_id.as_deref()
-                                }
-                            }
+    fn extended_request_id(&self) -> Option<&str> {
+        self._extended_request_id.as_deref()
+    }
+}
 impl aws_http::request_id::RequestId for HeadObjectOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl HeadObjectOutput {
     /// Creates a new builder-style object to manufacture [`HeadObjectOutput`](crate::operation::head_object::HeadObjectOutput).
     pub fn builder() -> crate::operation::head_object::builders::HeadObjectOutputBuilder {
@@ -355,7 +371,8 @@ pub struct HeadObjectOutputBuilder {
     pub(crate) expires: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) website_redirect_location: std::option::Option<std::string::String>,
     pub(crate) server_side_encryption: std::option::Option<crate::types::ServerSideEncryption>,
-    pub(crate) metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) sse_customer_algorithm: std::option::Option<std::string::String>,
     pub(crate) sse_customer_key_md5: std::option::Option<std::string::String>,
     pub(crate) ssekms_key_id: std::option::Option<std::string::String>,
@@ -366,7 +383,8 @@ pub struct HeadObjectOutputBuilder {
     pub(crate) parts_count: std::option::Option<i32>,
     pub(crate) object_lock_mode: std::option::Option<crate::types::ObjectLockMode>,
     pub(crate) object_lock_retain_until_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) object_lock_legal_hold_status: std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    pub(crate) object_lock_legal_hold_status:
+        std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
     _extended_request_id: Option<String>,
     _request_id: Option<String>,
 }
@@ -378,7 +396,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>Specifies whether the object retrieved was (true) or was not (false) a Delete Marker. If false, this response header does not appear in the response.</p>
     pub fn set_delete_marker(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_marker = input; self
+        self.delete_marker = input;
+        self
     }
     /// <p>Indicates that a range of bytes was specified.</p>
     pub fn accept_ranges(mut self, input: impl Into<std::string::String>) -> Self {
@@ -387,7 +406,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>Indicates that a range of bytes was specified.</p>
     pub fn set_accept_ranges(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_ranges = input; self
+        self.accept_ranges = input;
+        self
     }
     /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
     pub fn expiration(mut self, input: impl Into<std::string::String>) -> Self {
@@ -396,24 +416,26 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>If the object expiration is configured (see PUT Bucket lifecycle), the response includes this header. It includes the <code>expiry-date</code> and <code>rule-id</code> key-value pairs providing object expiration information. The value of the <code>rule-id</code> is URL-encoded.</p>
     pub fn set_expiration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expiration = input; self
+        self.expiration = input;
+        self
     }
-    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p> 
-    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p> 
-    /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> 
-    /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p> 
+    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
+    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p>
+    /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p>
+    /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p>
     /// <p>For more information about archiving objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning Objects: General Considerations</a>.</p>
     pub fn restore(mut self, input: impl Into<std::string::String>) -> Self {
         self.restore = Some(input.into());
         self
     }
-    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p> 
-    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p> 
-    /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p> 
-    /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p> 
+    /// <p>If the object is an archived object (an object whose storage class is GLACIER), the response includes this header if either the archive restoration is in progress (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a> or an archive copy is already restored.</p>
+    /// <p> If an archive copy is already restored, the header value indicates when Amazon S3 is scheduled to delete the object copy. For example:</p>
+    /// <p> <code>x-amz-restore: ongoing-request="false", expiry-date="Fri, 21 Dec 2012 00:00:00 GMT"</code> </p>
+    /// <p>If the object restoration is in progress, the header returns the value <code>ongoing-request="true"</code>.</p>
     /// <p>For more information about archiving objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-transition-general-considerations">Transitioning Objects: General Considerations</a>.</p>
     pub fn set_restore(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.restore = input; self
+        self.restore = input;
+        self
     }
     /// <p>The archive state of the head object.</p>
     pub fn archive_status(mut self, input: crate::types::ArchiveStatus) -> Self {
@@ -421,8 +443,12 @@ impl HeadObjectOutputBuilder {
         self
     }
     /// <p>The archive state of the head object.</p>
-    pub fn set_archive_status(mut self, input: std::option::Option<crate::types::ArchiveStatus>) -> Self {
-        self.archive_status = input; self
+    pub fn set_archive_status(
+        mut self,
+        input: std::option::Option<crate::types::ArchiveStatus>,
+    ) -> Self {
+        self.archive_status = input;
+        self
     }
     /// <p>Creation date of the object.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -430,8 +456,12 @@ impl HeadObjectOutputBuilder {
         self
     }
     /// <p>Creation date of the object.</p>
-    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input; self
+    pub fn set_last_modified(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified = input;
+        self
     }
     /// <p>Size of the body in bytes.</p>
     pub fn content_length(mut self, input: i64) -> Self {
@@ -440,7 +470,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>Size of the body in bytes.</p>
     pub fn set_content_length(mut self, input: std::option::Option<i64>) -> Self {
-        self.content_length = input; self
+        self.content_length = input;
+        self
     }
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_crc32(mut self, input: impl Into<std::string::String>) -> Self {
@@ -449,7 +480,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>The base64-encoded, 32-bit CRC32 checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_crc32(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.checksum_crc32 = input; self
+        self.checksum_crc32 = input;
+        self
     }
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_crc32_c(mut self, input: impl Into<std::string::String>) -> Self {
@@ -458,7 +490,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>The base64-encoded, 32-bit CRC32C checksum of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_crc32_c(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.checksum_crc32_c = input; self
+        self.checksum_crc32_c = input;
+        self
     }
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha1(mut self, input: impl Into<std::string::String>) -> Self {
@@ -467,7 +500,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>The base64-encoded, 160-bit SHA-1 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_sha1(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.checksum_sha1 = input; self
+        self.checksum_sha1 = input;
+        self
     }
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn checksum_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -476,7 +510,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>The base64-encoded, 256-bit SHA-256 digest of the object. This will only be present if it was uploaded with the object. With multipart uploads, this may not be a checksum value of the object. For more information about how checksums are calculated with multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html#large-object-checksums"> Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_checksum_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.checksum_sha256 = input; self
+        self.checksum_sha256 = input;
+        self
     }
     /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -485,7 +520,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>An entity tag (ETag) is an opaque identifier assigned by a web server to a specific version of a resource found at a URL.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub fn missing_meta(mut self, input: i32) -> Self {
@@ -494,7 +530,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>This is set to the number of metadata entries not returned in <code>x-amz-meta</code> headers. This can happen if you create metadata using an API like SOAP that supports more flexible metadata than the REST API. For example, using SOAP, you can create metadata whose values are not legal HTTP headers.</p>
     pub fn set_missing_meta(mut self, input: std::option::Option<i32>) -> Self {
-        self.missing_meta = input; self
+        self.missing_meta = input;
+        self
     }
     /// <p>Version of the object.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -503,7 +540,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>Version of the object.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub fn cache_control(mut self, input: impl Into<std::string::String>) -> Self {
@@ -512,7 +550,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>Specifies caching behavior along the request/reply chain.</p>
     pub fn set_cache_control(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cache_control = input; self
+        self.cache_control = input;
+        self
     }
     /// <p>Specifies presentational information for the object.</p>
     pub fn content_disposition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -520,8 +559,12 @@ impl HeadObjectOutputBuilder {
         self
     }
     /// <p>Specifies presentational information for the object.</p>
-    pub fn set_content_disposition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_disposition = input; self
+    pub fn set_content_disposition(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.content_disposition = input;
+        self
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub fn content_encoding(mut self, input: impl Into<std::string::String>) -> Self {
@@ -530,7 +573,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>Specifies what content encodings have been applied to the object and thus what decoding mechanisms must be applied to obtain the media-type referenced by the Content-Type header field.</p>
     pub fn set_content_encoding(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_encoding = input; self
+        self.content_encoding = input;
+        self
     }
     /// <p>The language the content is in.</p>
     pub fn content_language(mut self, input: impl Into<std::string::String>) -> Self {
@@ -539,7 +583,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>The language the content is in.</p>
     pub fn set_content_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_language = input; self
+        self.content_language = input;
+        self
     }
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -548,7 +593,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>A standard MIME type describing the format of the object data.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub fn expires(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -557,7 +603,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>The date and time at which the object is no longer cacheable.</p>
     pub fn set_expires(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.expires = input; self
+        self.expires = input;
+        self
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
     pub fn website_redirect_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -565,8 +612,12 @@ impl HeadObjectOutputBuilder {
         self
     }
     /// <p>If the bucket is configured as a website, redirects requests for this object to another object in the same bucket or to an external URL. Amazon S3 stores the value of this header in the object metadata.</p>
-    pub fn set_website_redirect_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.website_redirect_location = input; self
+    pub fn set_website_redirect_location(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.website_redirect_location = input;
+        self
     }
     /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or an Amazon S3-managed encryption key, the response includes this header with the value of the server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
@@ -574,23 +625,37 @@ impl HeadObjectOutputBuilder {
         self
     }
     /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS key or an Amazon S3-managed encryption key, the response includes this header with the value of the server-side encryption algorithm used when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
-    pub fn set_server_side_encryption(mut self, input: std::option::Option<crate::types::ServerSideEncryption>) -> Self {
-        self.server_side_encryption = input; self
+    pub fn set_server_side_encryption(
+        mut self,
+        input: std::option::Option<crate::types::ServerSideEncryption>,
+    ) -> Self {
+        self.server_side_encryption = input;
+        self
     }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.metadata = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.metadata = Some(hash_map);
+        self
     }
     /// <p>A map of metadata to store with the object in S3.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
     pub fn sse_customer_algorithm(mut self, input: impl Into<std::string::String>) -> Self {
@@ -598,8 +663,12 @@ impl HeadObjectOutputBuilder {
         self
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</p>
-    pub fn set_sse_customer_algorithm(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sse_customer_algorithm = input; self
+    pub fn set_sse_customer_algorithm(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sse_customer_algorithm = input;
+        self
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
     pub fn sse_customer_key_md5(mut self, input: impl Into<std::string::String>) -> Self {
@@ -607,8 +676,12 @@ impl HeadObjectOutputBuilder {
         self
     }
     /// <p>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round-trip message integrity verification of the customer-provided encryption key.</p>
-    pub fn set_sse_customer_key_md5(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sse_customer_key_md5 = input; self
+    pub fn set_sse_customer_key_md5(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sse_customer_key_md5 = input;
+        self
     }
     /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -617,7 +690,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed key that was used for the object.</p>
     pub fn set_ssekms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssekms_key_id = input; self
+        self.ssekms_key_id = input;
+        self
     }
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub fn bucket_key_enabled(mut self, input: bool) -> Self {
@@ -626,18 +700,23 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub fn set_bucket_key_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.bucket_key_enabled = input; self
+        self.bucket_key_enabled = input;
+        self
     }
-    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p> 
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
         self.storage_class = Some(input);
         self
     }
-    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p> 
+    /// <p>Provides storage class information of the object. Amazon S3 returns this header for all objects except for S3 Standard storage class objects.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a>.</p>
-    pub fn set_storage_class(mut self, input: std::option::Option<crate::types::StorageClass>) -> Self {
-        self.storage_class = input; self
+    pub fn set_storage_class(
+        mut self,
+        input: std::option::Option<crate::types::StorageClass>,
+    ) -> Self {
+        self.storage_class = input;
+        self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
     pub fn request_charged(mut self, input: crate::types::RequestCharged) -> Self {
@@ -645,31 +724,39 @@ impl HeadObjectOutputBuilder {
         self
     }
     /// <p>If present, indicates that the requester was successfully charged for the request.</p>
-    pub fn set_request_charged(mut self, input: std::option::Option<crate::types::RequestCharged>) -> Self {
-        self.request_charged = input; self
+    pub fn set_request_charged(
+        mut self,
+        input: std::option::Option<crate::types::RequestCharged>,
+    ) -> Self {
+        self.request_charged = input;
+        self
     }
-    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p> 
-    /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li> 
-    /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li> 
-    /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li> 
-    /// </ul> 
+    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
+    /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
+    /// <ul>
+    /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+    /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+    /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
     pub fn replication_status(mut self, input: crate::types::ReplicationStatus) -> Self {
         self.replication_status = Some(input);
         self
     }
-    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p> 
-    /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li> 
-    /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li> 
-    /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li> 
-    /// </ul> 
+    /// <p>Amazon S3 can return this header if your request involves a bucket that is either a source or a destination in a replication rule.</p>
+    /// <p>In replication, you have a source bucket on which you configure replication and destination bucket or buckets where Amazon S3 stores object replicas. When you request an object (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header in the response as follows:</p>
+    /// <ul>
+    /// <li> <p> <b>If requesting an object from the source bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header if the object in your request is eligible for replication.</p> <p> For example, suppose that in your replication configuration, you specify object prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix, for example <code>TaxDocs/document1.pdf</code>, are eligible for replication. For any object request with this key name prefix, Amazon S3 will return the <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or FAILED indicating object replication status.</p> </li>
+    /// <li> <p> <b>If requesting an object from a destination bucket</b>, Amazon S3 will return the <code>x-amz-replication-status</code> header with value REPLICA if the object in your request is a replica that Amazon S3 created and there is no replica modification replication in progress.</p> </li>
+    /// <li> <p> <b>When replicating objects to multiple destination buckets</b>, the <code>x-amz-replication-status</code> header acts differently. The header of the source object will only return a value of COMPLETED when replication is successful to all destinations. The header will remain at value PENDING until replication has completed for all destinations. If one or more destinations fails replication the header will return FAILED. </p> </li>
+    /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
-    pub fn set_replication_status(mut self, input: std::option::Option<crate::types::ReplicationStatus>) -> Self {
-        self.replication_status = input; self
+    pub fn set_replication_status(
+        mut self,
+        input: std::option::Option<crate::types::ReplicationStatus>,
+    ) -> Self {
+        self.replication_status = input;
+        self
     }
     /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
     pub fn parts_count(mut self, input: i32) -> Self {
@@ -678,7 +765,8 @@ impl HeadObjectOutputBuilder {
     }
     /// <p>The count of parts this object has. This value is only returned if you specify <code>partNumber</code> in your request and the object was uploaded as a multipart upload.</p>
     pub fn set_parts_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.parts_count = input; self
+        self.parts_count = input;
+        self
     }
     /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>. </p>
     pub fn object_lock_mode(mut self, input: crate::types::ObjectLockMode) -> Self {
@@ -686,8 +774,12 @@ impl HeadObjectOutputBuilder {
         self
     }
     /// <p>The Object Lock mode, if any, that's in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>. </p>
-    pub fn set_object_lock_mode(mut self, input: std::option::Option<crate::types::ObjectLockMode>) -> Self {
-        self.object_lock_mode = input; self
+    pub fn set_object_lock_mode(
+        mut self,
+        input: std::option::Option<crate::types::ObjectLockMode>,
+    ) -> Self {
+        self.object_lock_mode = input;
+        self
     }
     /// <p>The date and time when the Object Lock retention period expires. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
     pub fn object_lock_retain_until_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -695,112 +787,87 @@ impl HeadObjectOutputBuilder {
         self
     }
     /// <p>The date and time when the Object Lock retention period expires. This header is only returned if the requester has the <code>s3:GetObjectRetention</code> permission.</p>
-    pub fn set_object_lock_retain_until_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.object_lock_retain_until_date = input; self
+    pub fn set_object_lock_retain_until_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.object_lock_retain_until_date = input;
+        self
     }
     /// <p>Specifies whether a legal hold is in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This header is not returned if the specified version of this object has never had a legal hold applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
-    pub fn object_lock_legal_hold_status(mut self, input: crate::types::ObjectLockLegalHoldStatus) -> Self {
+    pub fn object_lock_legal_hold_status(
+        mut self,
+        input: crate::types::ObjectLockLegalHoldStatus,
+    ) -> Self {
         self.object_lock_legal_hold_status = Some(input);
         self
     }
     /// <p>Specifies whether a legal hold is in effect for this object. This header is only returned if the requester has the <code>s3:GetObjectLegalHold</code> permission. This header is not returned if the specified version of this object has never had a legal hold applied. For more information about S3 Object Lock, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object Lock</a>.</p>
-    pub fn set_object_lock_legal_hold_status(mut self, input: std::option::Option<crate::types::ObjectLockLegalHoldStatus>) -> Self {
-        self.object_lock_legal_hold_status = input; self
+    pub fn set_object_lock_legal_hold_status(
+        mut self,
+        input: std::option::Option<crate::types::ObjectLockLegalHoldStatus>,
+    ) -> Self {
+        self.object_lock_legal_hold_status = input;
+        self
     }
     pub(crate) fn _extended_request_id(mut self, extended_request_id: impl Into<String>) -> Self {
-                                    self._extended_request_id = Some(extended_request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_extended_request_id(&mut self, extended_request_id: Option<String>) -> &mut Self {
-                                    self._extended_request_id = extended_request_id;
-                                    self
-                                }
+        self._extended_request_id = Some(extended_request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_extended_request_id(
+        &mut self,
+        extended_request_id: Option<String>,
+    ) -> &mut Self {
+        self._extended_request_id = extended_request_id;
+        self
+    }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`HeadObjectOutput`](crate::operation::head_object::HeadObjectOutput).
     pub fn build(self) -> crate::operation::head_object::HeadObjectOutput {
         crate::operation::head_object::HeadObjectOutput {
-            delete_marker: self.delete_marker
-                .unwrap_or_default()
-            ,
-            accept_ranges: self.accept_ranges
-            ,
-            expiration: self.expiration
-            ,
-            restore: self.restore
-            ,
-            archive_status: self.archive_status
-            ,
-            last_modified: self.last_modified
-            ,
-            content_length: self.content_length
-                .unwrap_or_default()
-            ,
-            checksum_crc32: self.checksum_crc32
-            ,
-            checksum_crc32_c: self.checksum_crc32_c
-            ,
-            checksum_sha1: self.checksum_sha1
-            ,
-            checksum_sha256: self.checksum_sha256
-            ,
-            e_tag: self.e_tag
-            ,
-            missing_meta: self.missing_meta
-                .unwrap_or_default()
-            ,
-            version_id: self.version_id
-            ,
-            cache_control: self.cache_control
-            ,
-            content_disposition: self.content_disposition
-            ,
-            content_encoding: self.content_encoding
-            ,
-            content_language: self.content_language
-            ,
-            content_type: self.content_type
-            ,
-            expires: self.expires
-            ,
-            website_redirect_location: self.website_redirect_location
-            ,
-            server_side_encryption: self.server_side_encryption
-            ,
-            metadata: self.metadata
-            ,
-            sse_customer_algorithm: self.sse_customer_algorithm
-            ,
-            sse_customer_key_md5: self.sse_customer_key_md5
-            ,
-            ssekms_key_id: self.ssekms_key_id
-            ,
-            bucket_key_enabled: self.bucket_key_enabled
-                .unwrap_or_default()
-            ,
-            storage_class: self.storage_class
-            ,
-            request_charged: self.request_charged
-            ,
-            replication_status: self.replication_status
-            ,
-            parts_count: self.parts_count
-                .unwrap_or_default()
-            ,
-            object_lock_mode: self.object_lock_mode
-            ,
-            object_lock_retain_until_date: self.object_lock_retain_until_date
-            ,
-            object_lock_legal_hold_status: self.object_lock_legal_hold_status
-            ,
+            delete_marker: self.delete_marker.unwrap_or_default(),
+            accept_ranges: self.accept_ranges,
+            expiration: self.expiration,
+            restore: self.restore,
+            archive_status: self.archive_status,
+            last_modified: self.last_modified,
+            content_length: self.content_length.unwrap_or_default(),
+            checksum_crc32: self.checksum_crc32,
+            checksum_crc32_c: self.checksum_crc32_c,
+            checksum_sha1: self.checksum_sha1,
+            checksum_sha256: self.checksum_sha256,
+            e_tag: self.e_tag,
+            missing_meta: self.missing_meta.unwrap_or_default(),
+            version_id: self.version_id,
+            cache_control: self.cache_control,
+            content_disposition: self.content_disposition,
+            content_encoding: self.content_encoding,
+            content_language: self.content_language,
+            content_type: self.content_type,
+            expires: self.expires,
+            website_redirect_location: self.website_redirect_location,
+            server_side_encryption: self.server_side_encryption,
+            metadata: self.metadata,
+            sse_customer_algorithm: self.sse_customer_algorithm,
+            sse_customer_key_md5: self.sse_customer_key_md5,
+            ssekms_key_id: self.ssekms_key_id,
+            bucket_key_enabled: self.bucket_key_enabled.unwrap_or_default(),
+            storage_class: self.storage_class,
+            request_charged: self.request_charged,
+            replication_status: self.replication_status,
+            parts_count: self.parts_count.unwrap_or_default(),
+            object_lock_mode: self.object_lock_mode,
+            object_lock_retain_until_date: self.object_lock_retain_until_date,
+            object_lock_legal_hold_status: self.object_lock_legal_hold_status,
             _extended_request_id: self._extended_request_id,
             _request_id: self._request_id,
         }
@@ -841,11 +908,16 @@ impl std::fmt::Debug for HeadObjectOutputBuilder {
         formatter.field("replication_status", &self.replication_status);
         formatter.field("parts_count", &self.parts_count);
         formatter.field("object_lock_mode", &self.object_lock_mode);
-        formatter.field("object_lock_retain_until_date", &self.object_lock_retain_until_date);
-        formatter.field("object_lock_legal_hold_status", &self.object_lock_legal_hold_status);
+        formatter.field(
+            "object_lock_retain_until_date",
+            &self.object_lock_retain_until_date,
+        );
+        formatter.field(
+            "object_lock_legal_hold_status",
+            &self.object_lock_legal_hold_status,
+        );
         formatter.field("_extended_request_id", &self._extended_request_id);
         formatter.field("_request_id", &self._request_id);
         formatter.finish()
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let cmafimagebasedtrickplay = unimplemented!();
 /// match cmafimagebasedtrickplay {
@@ -32,14 +32,22 @@
 /// Specifically, when `cmafimagebasedtrickplay` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CmafImageBasedTrickPlay::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest (WriteHlsManifest), MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum CmafImageBasedTrickPlay {
     #[allow(missing_docs)] // documentation missing in model
     Advanced,
@@ -50,45 +58,46 @@ pub enum CmafImageBasedTrickPlay {
     #[allow(missing_docs)] // documentation missing in model
     ThumbnailAndFullframe,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CmafImageBasedTrickPlay {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ADVANCED" => CmafImageBasedTrickPlay::Advanced,
-"NONE" => CmafImageBasedTrickPlay::None,
-"THUMBNAIL" => CmafImageBasedTrickPlay::Thumbnail,
-"THUMBNAIL_AND_FULLFRAME" => CmafImageBasedTrickPlay::ThumbnailAndFullframe,
-other => CmafImageBasedTrickPlay::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for CmafImageBasedTrickPlay {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(CmafImageBasedTrickPlay::from(s))
-                }
-            }
-impl CmafImageBasedTrickPlay {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    CmafImageBasedTrickPlay::Advanced => "ADVANCED",
-    CmafImageBasedTrickPlay::None => "NONE",
-    CmafImageBasedTrickPlay::Thumbnail => "THUMBNAIL",
-    CmafImageBasedTrickPlay::ThumbnailAndFullframe => "THUMBNAIL_AND_FULLFRAME",
-    CmafImageBasedTrickPlay::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ADVANCED" => CmafImageBasedTrickPlay::Advanced,
+            "NONE" => CmafImageBasedTrickPlay::None,
+            "THUMBNAIL" => CmafImageBasedTrickPlay::Thumbnail,
+            "THUMBNAIL_AND_FULLFRAME" => CmafImageBasedTrickPlay::ThumbnailAndFullframe,
+            other => CmafImageBasedTrickPlay::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ADVANCED", "NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME"]
-                }
-            }
-impl AsRef<str> for CmafImageBasedTrickPlay {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for CmafImageBasedTrickPlay {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CmafImageBasedTrickPlay::from(s))
+    }
+}
+impl CmafImageBasedTrickPlay {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CmafImageBasedTrickPlay::Advanced => "ADVANCED",
+            CmafImageBasedTrickPlay::None => "NONE",
+            CmafImageBasedTrickPlay::Thumbnail => "THUMBNAIL",
+            CmafImageBasedTrickPlay::ThumbnailAndFullframe => "THUMBNAIL_AND_FULLFRAME",
+            CmafImageBasedTrickPlay::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["ADVANCED", "NONE", "THUMBNAIL", "THUMBNAIL_AND_FULLFRAME"]
+    }
+}
+impl AsRef<str> for CmafImageBasedTrickPlay {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssetInput  {
+pub struct UpdateAssetInput {
     /// <p>The ID of the asset to update.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct UpdateAssetInput  {
 }
 impl UpdateAssetInput {
     /// <p>The ID of the asset to update.</p>
-    pub fn asset_id(&self) -> std::option::Option<& str> {
+    pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
     /// <p>A friendly name for the asset.</p>
-    pub fn asset_name(&self) -> std::option::Option<& str> {
+    pub fn asset_name(&self) -> std::option::Option<&str> {
         self.asset_name.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>A description for the asset.</p>
-    pub fn asset_description(&self) -> std::option::Option<& str> {
+    pub fn asset_description(&self) -> std::option::Option<&str> {
         self.asset_description.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl UpdateAssetInputBuilder {
     }
     /// <p>The ID of the asset to update.</p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input; self
+        self.asset_id = input;
+        self
     }
     /// <p>A friendly name for the asset.</p>
     pub fn asset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl UpdateAssetInputBuilder {
     }
     /// <p>A friendly name for the asset.</p>
     pub fn set_asset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_name = input; self
+        self.asset_name = input;
+        self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl UpdateAssetInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>A description for the asset.</p>
     pub fn asset_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,23 +87,25 @@ impl UpdateAssetInputBuilder {
         self
     }
     /// <p>A description for the asset.</p>
-    pub fn set_asset_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_description = input; self
+    pub fn set_asset_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.asset_description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAssetInput`](crate::operation::update_asset::UpdateAssetInput).
-    pub fn build(self) -> Result<crate::operation::update_asset::UpdateAssetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_asset::UpdateAssetInput {
-                asset_id: self.asset_id
-                ,
-                asset_name: self.asset_name
-                ,
-                client_token: self.client_token
-                ,
-                asset_description: self.asset_description
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_asset::UpdateAssetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_asset::UpdateAssetInput {
+            asset_id: self.asset_id,
+            asset_name: self.asset_name,
+            client_token: self.client_token,
+            asset_description: self.asset_description,
+        })
     }
 }
-

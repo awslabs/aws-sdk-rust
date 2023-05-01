@@ -3,7 +3,7 @@
 /// <p>An object that describes the deployment of a solution version. For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Campaign  {
+pub struct Campaign {
     /// <p>The name of the campaign.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct Campaign  {
     /// <p>The configuration details of a campaign.</p>
     #[doc(hidden)]
     pub campaign_config: std::option::Option<crate::types::CampaignConfig>,
-    /// <p>The status of the campaign.</p> 
-    /// <p>A campaign can be in one of the following states:</p> 
-    /// <ul> 
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
+    /// <p>The status of the campaign.</p>
+    /// <p>A campaign can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -42,15 +42,15 @@ pub struct Campaign  {
 }
 impl Campaign {
     /// <p>The name of the campaign.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
-    pub fn campaign_arn(&self) -> std::option::Option<& str> {
+    pub fn campaign_arn(&self) -> std::option::Option<&str> {
         self.campaign_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
@@ -58,32 +58,34 @@ impl Campaign {
         self.min_provisioned_tps
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn campaign_config(&self) -> std::option::Option<& crate::types::CampaignConfig> {
+    pub fn campaign_config(&self) -> std::option::Option<&crate::types::CampaignConfig> {
         self.campaign_config.as_ref()
     }
-    /// <p>The status of the campaign.</p> 
-    /// <p>A campaign can be in one of the following states:</p> 
-    /// <ul> 
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
+    /// <p>The status of the campaign.</p>
+    /// <p>A campaign can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>If a campaign fails, the reason behind the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<& str> {
+    pub fn failure_reason(&self) -> std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
     /// <p>The date and time (in Unix format) that the campaign was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
-    pub fn latest_campaign_update(&self) -> std::option::Option<& crate::types::CampaignUpdateSummary> {
+    pub fn latest_campaign_update(
+        &self,
+    ) -> std::option::Option<&crate::types::CampaignUpdateSummary> {
         self.latest_campaign_update.as_ref()
     }
 }
@@ -117,7 +119,8 @@ impl CampaignBuilder {
     }
     /// <p>The name of the campaign.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
     pub fn campaign_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +129,8 @@ impl CampaignBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the campaign. </p>
     pub fn set_campaign_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.campaign_arn = input; self
+        self.campaign_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
     pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,8 +138,12 @@ impl CampaignBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of a specific version of the solution.</p>
-    pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.solution_version_arn = input; self
+    pub fn set_solution_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.solution_version_arn = input;
+        self
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
     pub fn min_provisioned_tps(mut self, input: i32) -> Self {
@@ -144,7 +152,8 @@ impl CampaignBuilder {
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second.</p>
     pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_provisioned_tps = input; self
+        self.min_provisioned_tps = input;
+        self
     }
     /// <p>The configuration details of a campaign.</p>
     pub fn campaign_config(mut self, input: crate::types::CampaignConfig) -> Self {
@@ -152,27 +161,32 @@ impl CampaignBuilder {
         self
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn set_campaign_config(mut self, input: std::option::Option<crate::types::CampaignConfig>) -> Self {
-        self.campaign_config = input; self
+    pub fn set_campaign_config(
+        mut self,
+        input: std::option::Option<crate::types::CampaignConfig>,
+    ) -> Self {
+        self.campaign_config = input;
+        self
     }
-    /// <p>The status of the campaign.</p> 
-    /// <p>A campaign can be in one of the following states:</p> 
-    /// <ul> 
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
+    /// <p>The status of the campaign.</p>
+    /// <p>A campaign can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p>The status of the campaign.</p> 
-    /// <p>A campaign can be in one of the following states:</p> 
-    /// <ul> 
-    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> 
-    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li> 
+    /// <p>The status of the campaign.</p>
+    /// <p>A campaign can be in one of the following states:</p>
+    /// <ul>
+    /// <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li>
+    /// <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>If a campaign fails, the reason behind the failure.</p>
     pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,7 +195,8 @@ impl CampaignBuilder {
     }
     /// <p>If a campaign fails, the reason behind the failure.</p>
     pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_reason = input; self
+        self.failure_reason = input;
+        self
     }
     /// <p>The date and time (in Unix format) that the campaign was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -189,8 +204,12 @@ impl CampaignBuilder {
         self
     }
     /// <p>The date and time (in Unix format) that the campaign was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -198,8 +217,12 @@ impl CampaignBuilder {
         self
     }
     /// <p>The date and time (in Unix format) that the campaign was last updated.</p>
-    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input; self
+    pub fn set_last_updated_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_date_time = input;
+        self
     }
     /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
     pub fn latest_campaign_update(mut self, input: crate::types::CampaignUpdateSummary) -> Self {
@@ -207,33 +230,26 @@ impl CampaignBuilder {
         self
     }
     /// <p>Provides a summary of the properties of a campaign update. For a complete listing, call the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeCampaign.html">DescribeCampaign</a> API.</p>
-    pub fn set_latest_campaign_update(mut self, input: std::option::Option<crate::types::CampaignUpdateSummary>) -> Self {
-        self.latest_campaign_update = input; self
+    pub fn set_latest_campaign_update(
+        mut self,
+        input: std::option::Option<crate::types::CampaignUpdateSummary>,
+    ) -> Self {
+        self.latest_campaign_update = input;
+        self
     }
     /// Consumes the builder and constructs a [`Campaign`](crate::types::Campaign).
     pub fn build(self) -> crate::types::Campaign {
         crate::types::Campaign {
-            name: self.name
-            ,
-            campaign_arn: self.campaign_arn
-            ,
-            solution_version_arn: self.solution_version_arn
-            ,
-            min_provisioned_tps: self.min_provisioned_tps
-            ,
-            campaign_config: self.campaign_config
-            ,
-            status: self.status
-            ,
-            failure_reason: self.failure_reason
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            last_updated_date_time: self.last_updated_date_time
-            ,
-            latest_campaign_update: self.latest_campaign_update
-            ,
+            name: self.name,
+            campaign_arn: self.campaign_arn,
+            solution_version_arn: self.solution_version_arn,
+            min_provisioned_tps: self.min_provisioned_tps,
+            campaign_config: self.campaign_config,
+            status: self.status,
+            failure_reason: self.failure_reason,
+            creation_date_time: self.creation_date_time,
+            last_updated_date_time: self.last_updated_date_time,
+            latest_campaign_update: self.latest_campaign_update,
         }
     }
 }
-

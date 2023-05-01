@@ -3,7 +3,7 @@
 /// <p>Field-level encryption content type-profile.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContentTypeProfiles  {
+pub struct ContentTypeProfiles {
     /// <p>The number of field-level encryption content type-profile mappings.</p>
     #[doc(hidden)]
     pub quantity: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl ContentTypeProfiles {
         self.quantity
     }
     /// <p>Items in a field-level encryption content type-profile mapping.</p>
-    pub fn items(&self) -> std::option::Option<& [crate::types::ContentTypeProfile]> {
+    pub fn items(&self) -> std::option::Option<&[crate::types::ContentTypeProfile]> {
         self.items.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ContentTypeProfilesBuilder {
     }
     /// <p>The number of field-level encryption content type-profile mappings.</p>
     pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
-        self.quantity = input; self
+        self.quantity = input;
+        self
     }
     /// Appends an item to `items`.
     ///
@@ -52,22 +53,23 @@ impl ContentTypeProfilesBuilder {
     /// <p>Items in a field-level encryption content type-profile mapping.</p>
     pub fn items(mut self, input: crate::types::ContentTypeProfile) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input);
-                        self.items = Some(v);
-                        self
+        v.push(input);
+        self.items = Some(v);
+        self
     }
     /// <p>Items in a field-level encryption content type-profile mapping.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContentTypeProfile>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ContentTypeProfile>>,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// Consumes the builder and constructs a [`ContentTypeProfiles`](crate::types::ContentTypeProfiles).
     pub fn build(self) -> crate::types::ContentTypeProfiles {
         crate::types::ContentTypeProfiles {
-            quantity: self.quantity
-            ,
-            items: self.items
-            ,
+            quantity: self.quantity,
+            items: self.items,
         }
     }
 }
-

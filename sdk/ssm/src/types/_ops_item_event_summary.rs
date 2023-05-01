@@ -3,7 +3,7 @@
 /// <p>Summary information about an OpsItem event or that associated an OpsItem with a related item.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpsItemEventSummary  {
+pub struct OpsItemEventSummary {
     /// <p>The ID of the OpsItem.</p>
     #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct OpsItemEventSummary  {
 }
 impl OpsItemEventSummary {
     /// <p>The ID of the OpsItem.</p>
-    pub fn ops_item_id(&self) -> std::option::Option<& str> {
+    pub fn ops_item_id(&self) -> std::option::Option<&str> {
         self.ops_item_id.as_deref()
     }
     /// <p>The ID of the OpsItem event.</p>
-    pub fn event_id(&self) -> std::option::Option<& str> {
+    pub fn event_id(&self) -> std::option::Option<&str> {
         self.event_id.as_deref()
     }
     /// <p>The source of the OpsItem event.</p>
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>The type of information provided as a detail.</p>
-    pub fn detail_type(&self) -> std::option::Option<& str> {
+    pub fn detail_type(&self) -> std::option::Option<&str> {
         self.detail_type.as_deref()
     }
     /// <p>Specific information about the OpsItem event.</p>
-    pub fn detail(&self) -> std::option::Option<& str> {
+    pub fn detail(&self) -> std::option::Option<&str> {
         self.detail.as_deref()
     }
     /// <p>Information about the user or resource that created the OpsItem event.</p>
-    pub fn created_by(&self) -> std::option::Option<& crate::types::OpsItemIdentity> {
+    pub fn created_by(&self) -> std::option::Option<&crate::types::OpsItemIdentity> {
         self.created_by.as_ref()
     }
     /// <p>The date and time the OpsItem event was created.</p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl OpsItemEventSummaryBuilder {
     }
     /// <p>The ID of the OpsItem.</p>
     pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ops_item_id = input; self
+        self.ops_item_id = input;
+        self
     }
     /// <p>The ID of the OpsItem event.</p>
     pub fn event_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +93,8 @@ impl OpsItemEventSummaryBuilder {
     }
     /// <p>The ID of the OpsItem event.</p>
     pub fn set_event_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_id = input; self
+        self.event_id = input;
+        self
     }
     /// <p>The source of the OpsItem event.</p>
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +103,8 @@ impl OpsItemEventSummaryBuilder {
     }
     /// <p>The source of the OpsItem event.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// <p>The type of information provided as a detail.</p>
     pub fn detail_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +113,8 @@ impl OpsItemEventSummaryBuilder {
     }
     /// <p>The type of information provided as a detail.</p>
     pub fn set_detail_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detail_type = input; self
+        self.detail_type = input;
+        self
     }
     /// <p>Specific information about the OpsItem event.</p>
     pub fn detail(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +123,8 @@ impl OpsItemEventSummaryBuilder {
     }
     /// <p>Specific information about the OpsItem event.</p>
     pub fn set_detail(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detail = input; self
+        self.detail = input;
+        self
     }
     /// <p>Information about the user or resource that created the OpsItem event.</p>
     pub fn created_by(mut self, input: crate::types::OpsItemIdentity) -> Self {
@@ -127,8 +132,12 @@ impl OpsItemEventSummaryBuilder {
         self
     }
     /// <p>Information about the user or resource that created the OpsItem event.</p>
-    pub fn set_created_by(mut self, input: std::option::Option<crate::types::OpsItemIdentity>) -> Self {
-        self.created_by = input; self
+    pub fn set_created_by(
+        mut self,
+        input: std::option::Option<crate::types::OpsItemIdentity>,
+    ) -> Self {
+        self.created_by = input;
+        self
     }
     /// <p>The date and time the OpsItem event was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -136,27 +145,23 @@ impl OpsItemEventSummaryBuilder {
         self
     }
     /// <p>The date and time the OpsItem event was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpsItemEventSummary`](crate::types::OpsItemEventSummary).
     pub fn build(self) -> crate::types::OpsItemEventSummary {
         crate::types::OpsItemEventSummary {
-            ops_item_id: self.ops_item_id
-            ,
-            event_id: self.event_id
-            ,
-            source: self.source
-            ,
-            detail_type: self.detail_type
-            ,
-            detail: self.detail
-            ,
-            created_by: self.created_by
-            ,
-            created_time: self.created_time
-            ,
+            ops_item_id: self.ops_item_id,
+            event_id: self.event_id,
+            source: self.source,
+            detail_type: self.detail_type,
+            detail: self.detail,
+            created_by: self.created_by,
+            created_time: self.created_time,
         }
     }
 }
-

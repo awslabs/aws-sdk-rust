@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendTextMessageInput  {
+pub struct SendTextMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
     #[doc(hidden)]
     pub destination_phone_number: std::option::Option<std::string::String>,
@@ -29,41 +29,47 @@ pub struct SendTextMessageInput  {
     pub time_to_live: std::option::Option<i32>,
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
     #[doc(hidden)]
-    pub context: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub context:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
     #[doc(hidden)]
-    pub destination_country_parameters: std::option::Option<std::collections::HashMap<crate::types::DestinationCountryParameterKey, std::string::String>>,
+    pub destination_country_parameters: std::option::Option<
+        std::collections::HashMap<
+            crate::types::DestinationCountryParameterKey,
+            std::string::String,
+        >,
+    >,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
     #[doc(hidden)]
     pub dry_run: bool,
 }
 impl SendTextMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
-    pub fn destination_phone_number(&self) -> std::option::Option<& str> {
+    pub fn destination_phone_number(&self) -> std::option::Option<&str> {
         self.destination_phone_number.as_deref()
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
-    pub fn origination_identity(&self) -> std::option::Option<& str> {
+    pub fn origination_identity(&self) -> std::option::Option<&str> {
         self.origination_identity.as_deref()
     }
     /// <p>The body of the text message.</p>
-    pub fn message_body(&self) -> std::option::Option<& str> {
+    pub fn message_body(&self) -> std::option::Option<&str> {
         self.message_body.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> std::option::Option<& crate::types::MessageType> {
+    pub fn message_type(&self) -> std::option::Option<&crate::types::MessageType> {
         self.message_type.as_ref()
     }
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
-    pub fn keyword(&self) -> std::option::Option<& str> {
+    pub fn keyword(&self) -> std::option::Option<&str> {
         self.keyword.as_deref()
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_set_name(&self) -> std::option::Option<&str> {
         self.configuration_set_name.as_deref()
     }
     /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
-    pub fn max_price(&self) -> std::option::Option<& str> {
+    pub fn max_price(&self) -> std::option::Option<&str> {
         self.max_price.as_deref()
     }
     /// <p>How long the text message is valid for. By default this is 72 hours.</p>
@@ -71,11 +77,21 @@ impl SendTextMessageInput {
         self.time_to_live
     }
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn context(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn context(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.context.as_ref()
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
-    pub fn destination_country_parameters(&self) -> std::option::Option<& std::collections::HashMap<crate::types::DestinationCountryParameterKey, std::string::String>> {
+    pub fn destination_country_parameters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<
+            crate::types::DestinationCountryParameterKey,
+            std::string::String,
+        >,
+    > {
         self.destination_country_parameters.as_ref()
     }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
@@ -102,8 +118,14 @@ pub struct SendTextMessageInputBuilder {
     pub(crate) configuration_set_name: std::option::Option<std::string::String>,
     pub(crate) max_price: std::option::Option<std::string::String>,
     pub(crate) time_to_live: std::option::Option<i32>,
-    pub(crate) context: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) destination_country_parameters: std::option::Option<std::collections::HashMap<crate::types::DestinationCountryParameterKey, std::string::String>>,
+    pub(crate) context:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) destination_country_parameters: std::option::Option<
+        std::collections::HashMap<
+            crate::types::DestinationCountryParameterKey,
+            std::string::String,
+        >,
+    >,
     pub(crate) dry_run: std::option::Option<bool>,
 }
 impl SendTextMessageInputBuilder {
@@ -113,8 +135,12 @@ impl SendTextMessageInputBuilder {
         self
     }
     /// <p>The destination phone number in E.164 format.</p>
-    pub fn set_destination_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_phone_number = input; self
+    pub fn set_destination_phone_number(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_phone_number = input;
+        self
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
     pub fn origination_identity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +148,12 @@ impl SendTextMessageInputBuilder {
         self
     }
     /// <p>The origination identity of the message. This can be either the PhoneNumber, PhoneNumberId, PhoneNumberArn, SenderId, SenderIdArn, PoolId, or PoolArn.</p>
-    pub fn set_origination_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.origination_identity = input; self
+    pub fn set_origination_identity(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.origination_identity = input;
+        self
     }
     /// <p>The body of the text message.</p>
     pub fn message_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +162,8 @@ impl SendTextMessageInputBuilder {
     }
     /// <p>The body of the text message.</p>
     pub fn set_message_body(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_body = input; self
+        self.message_body = input;
+        self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
     pub fn message_type(mut self, input: crate::types::MessageType) -> Self {
@@ -140,8 +171,12 @@ impl SendTextMessageInputBuilder {
         self
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn set_message_type(mut self, input: std::option::Option<crate::types::MessageType>) -> Self {
-        self.message_type = input; self
+    pub fn set_message_type(
+        mut self,
+        input: std::option::Option<crate::types::MessageType>,
+    ) -> Self {
+        self.message_type = input;
+        self
     }
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
     pub fn keyword(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +185,8 @@ impl SendTextMessageInputBuilder {
     }
     /// <p>When you register a short code in the US, you must specify a program name. If you don’t have a US short code, omit this attribute.</p>
     pub fn set_keyword(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.keyword = input; self
+        self.keyword = input;
+        self
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
     pub fn configuration_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,8 +194,12 @@ impl SendTextMessageInputBuilder {
         self
     }
     /// <p>The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn set_configuration_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_set_name = input; self
+    pub fn set_configuration_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_set_name = input;
+        self
     }
     /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
     pub fn max_price(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +208,8 @@ impl SendTextMessageInputBuilder {
     }
     /// <p>The maximum amount that you want to spend, in US dollars, per each text message part. A text message can contain multiple parts.</p>
     pub fn set_max_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max_price = input; self
+        self.max_price = input;
+        self
     }
     /// <p>How long the text message is valid for. By default this is 72 hours.</p>
     pub fn time_to_live(mut self, input: i32) -> Self {
@@ -177,37 +218,61 @@ impl SendTextMessageInputBuilder {
     }
     /// <p>How long the text message is valid for. By default this is 72 hours.</p>
     pub fn set_time_to_live(mut self, input: std::option::Option<i32>) -> Self {
-        self.time_to_live = input; self
+        self.time_to_live = input;
+        self
     }
     /// Adds a key-value pair to `context`.
     ///
     /// To override the contents of this collection use [`set_context`](Self::set_context).
     ///
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn context(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn context(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.context.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.context = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.context = Some(hash_map);
+        self
     }
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
-    pub fn set_context(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.context = input; self
+    pub fn set_context(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.context = input;
+        self
     }
     /// Adds a key-value pair to `destination_country_parameters`.
     ///
     /// To override the contents of this collection use [`set_destination_country_parameters`](Self::set_destination_country_parameters).
     ///
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
-    pub fn destination_country_parameters(mut self, k: crate::types::DestinationCountryParameterKey, v: impl Into<std::string::String>) -> Self {
+    pub fn destination_country_parameters(
+        mut self,
+        k: crate::types::DestinationCountryParameterKey,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.destination_country_parameters.unwrap_or_default();
-                        hash_map.insert(k, v.into());
-                        self.destination_country_parameters = Some(hash_map);
-                        self
+        hash_map.insert(k, v.into());
+        self.destination_country_parameters = Some(hash_map);
+        self
     }
     /// <p>This field is used for any country-specific registration requirements. Currently, this setting is only used when you send messages to recipients in India using a sender ID. For more information see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-senderid-india.html">Special requirements for sending SMS messages to recipients in India</a>. </p>
-    pub fn set_destination_country_parameters(mut self, input: std::option::Option<std::collections::HashMap<crate::types::DestinationCountryParameterKey, std::string::String>>) -> Self {
-        self.destination_country_parameters = input; self
+    pub fn set_destination_country_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                crate::types::DestinationCountryParameterKey,
+                std::string::String,
+            >,
+        >,
+    ) -> Self {
+        self.destination_country_parameters = input;
+        self
     }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -216,37 +281,28 @@ impl SendTextMessageInputBuilder {
     }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`SendTextMessageInput`](crate::operation::send_text_message::SendTextMessageInput).
-    pub fn build(self) -> Result<crate::operation::send_text_message::SendTextMessageInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::send_text_message::SendTextMessageInput {
-                destination_phone_number: self.destination_phone_number
-                ,
-                origination_identity: self.origination_identity
-                ,
-                message_body: self.message_body
-                ,
-                message_type: self.message_type
-                ,
-                keyword: self.keyword
-                ,
-                configuration_set_name: self.configuration_set_name
-                ,
-                max_price: self.max_price
-                ,
-                time_to_live: self.time_to_live
-                ,
-                context: self.context
-                ,
-                destination_country_parameters: self.destination_country_parameters
-                ,
-                dry_run: self.dry_run
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::send_text_message::SendTextMessageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::send_text_message::SendTextMessageInput {
+            destination_phone_number: self.destination_phone_number,
+            origination_identity: self.origination_identity,
+            message_body: self.message_body,
+            message_type: self.message_type,
+            keyword: self.keyword,
+            configuration_set_name: self.configuration_set_name,
+            max_price: self.max_price,
+            time_to_live: self.time_to_live,
+            context: self.context,
+            destination_country_parameters: self.destination_country_parameters,
+            dry_run: self.dry_run.unwrap_or_default(),
+        })
     }
 }
-

@@ -40,10 +40,9 @@ pub(crate) const BASE_SET: &AsciiSet = &CONTROLS
     .add(b'\\');
 
 // Returns `Option` for forwards compatibility
-pub(crate) fn uri_encode<'a, 'b>(
+pub(crate) fn uri_encode<'a>(
     s: &'a str,
-    _e: &'b mut DiagnosticCollector,
+    _e: &mut DiagnosticCollector,
 ) -> std::borrow::Cow<'a, str> {
     utf8_percent_encode(s, BASE_SET).into()
 }
-

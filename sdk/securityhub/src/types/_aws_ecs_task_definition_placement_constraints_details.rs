@@ -3,7 +3,7 @@
 /// <p>A placement constraint object to use for tasks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsTaskDefinitionPlacementConstraintsDetails  {
+pub struct AwsEcsTaskDefinitionPlacementConstraintsDetails {
     /// <p>A cluster query language expression to apply to the constraint.</p>
     #[doc(hidden)]
     pub expression: std::option::Option<std::string::String>,
@@ -13,17 +13,18 @@ pub struct AwsEcsTaskDefinitionPlacementConstraintsDetails  {
 }
 impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
     /// <p>A cluster query language expression to apply to the constraint.</p>
-    pub fn expression(&self) -> std::option::Option<& str> {
+    pub fn expression(&self) -> std::option::Option<&str> {
         self.expression.as_deref()
     }
     /// <p>The type of constraint.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
 impl AwsEcsTaskDefinitionPlacementConstraintsDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder {
         crate::types::builders::AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder::default()
     }
 }
@@ -43,7 +44,8 @@ impl AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder {
     }
     /// <p>A cluster query language expression to apply to the constraint.</p>
     pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.expression = input; self
+        self.expression = input;
+        self
     }
     /// <p>The type of constraint.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +54,14 @@ impl AwsEcsTaskDefinitionPlacementConstraintsDetailsBuilder {
     }
     /// <p>The type of constraint.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEcsTaskDefinitionPlacementConstraintsDetails`](crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails).
     pub fn build(self) -> crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails {
         crate::types::AwsEcsTaskDefinitionPlacementConstraintsDetails {
-            expression: self.expression
-            ,
-            r#type: self.r#type
-            ,
+            expression: self.expression,
+            r#type: self.r#type,
         }
     }
 }
-

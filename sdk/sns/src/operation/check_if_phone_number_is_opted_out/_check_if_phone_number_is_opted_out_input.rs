@@ -3,20 +3,20 @@
 /// <p>The input for the <code>CheckIfPhoneNumberIsOptedOut</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckIfPhoneNumberIsOptedOutInput  {
+pub struct CheckIfPhoneNumberIsOptedOutInput {
     /// <p>The phone number for which you want to check the opt out status.</p>
     #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
 }
 impl CheckIfPhoneNumberIsOptedOutInput {
     /// <p>The phone number for which you want to check the opt out status.</p>
-    pub fn phone_number(&self) -> std::option::Option<& str> {
+    pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
 }
 impl CheckIfPhoneNumberIsOptedOutInput {
     /// Creates a new builder-style object to manufacture [`CheckIfPhoneNumberIsOptedOutInput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput).
-    pub fn builder() -> crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutInputBuilder {
+    pub fn builder() -> crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutInputBuilder{
         crate::operation::check_if_phone_number_is_opted_out::builders::CheckIfPhoneNumberIsOptedOutInputBuilder::default()
     }
 }
@@ -35,10 +35,16 @@ impl CheckIfPhoneNumberIsOptedOutInputBuilder {
     }
     /// <p>The phone number for which you want to check the opt out status.</p>
     pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number = input; self
+        self.phone_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`CheckIfPhoneNumberIsOptedOutInput`](crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput).
-    pub fn build(self) -> Result<crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutInput {
                 phone_number: self.phone_number
@@ -47,4 +53,3 @@ impl CheckIfPhoneNumberIsOptedOutInputBuilder {
         )
     }
 }
-

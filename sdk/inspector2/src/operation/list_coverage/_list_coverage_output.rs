@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCoverageOutput  {
+pub struct ListCoverageOutput {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListCoverageOutput  {
 }
 impl ListCoverageOutput {
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An object that contains details on the covered resources in your environment.</p>
-    pub fn covered_resources(&self) -> std::option::Option<& [crate::types::CoveredResource]> {
+    pub fn covered_resources(&self) -> std::option::Option<&[crate::types::CoveredResource]> {
         self.covered_resources.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListCoverageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListCoverageOutput {
     /// Creates a new builder-style object to manufacture [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput).
     pub fn builder() -> crate::operation::list_coverage::builders::ListCoverageOutputBuilder {
@@ -49,7 +49,8 @@ impl ListCoverageOutputBuilder {
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `covered_resources`.
     ///
@@ -58,32 +59,33 @@ impl ListCoverageOutputBuilder {
     /// <p>An object that contains details on the covered resources in your environment.</p>
     pub fn covered_resources(mut self, input: crate::types::CoveredResource) -> Self {
         let mut v = self.covered_resources.unwrap_or_default();
-                        v.push(input);
-                        self.covered_resources = Some(v);
-                        self
+        v.push(input);
+        self.covered_resources = Some(v);
+        self
     }
     /// <p>An object that contains details on the covered resources in your environment.</p>
-    pub fn set_covered_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::CoveredResource>>) -> Self {
-        self.covered_resources = input; self
+    pub fn set_covered_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CoveredResource>>,
+    ) -> Self {
+        self.covered_resources = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListCoverageOutput`](crate::operation::list_coverage::ListCoverageOutput).
     pub fn build(self) -> crate::operation::list_coverage::ListCoverageOutput {
         crate::operation::list_coverage::ListCoverageOutput {
-            next_token: self.next_token
-            ,
-            covered_resources: self.covered_resources
-            ,
+            next_token: self.next_token,
+            covered_resources: self.covered_resources,
             _request_id: self._request_id,
         }
     }
 }
-

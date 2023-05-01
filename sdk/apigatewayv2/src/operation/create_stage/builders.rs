@@ -4,57 +4,76 @@ pub use crate::operation::create_stage::_create_stage_output::CreateStageOutputB
 pub use crate::operation::create_stage::_create_stage_input::CreateStageInputBuilder;
 
 /// Fluent builder constructing a request to `CreateStage`.
-/// 
+///
 /// <p>Creates a Stage for an API.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateStageFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_stage::builders::CreateStageInputBuilder,
+    inner: crate::operation::create_stage::builders::CreateStageInputBuilder,
 }
-impl CreateStageFluentBuilder  {
+impl CreateStageFluentBuilder {
     /// Creates a new `CreateStage`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_stage::CreateStage, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_stage::CreateStageOutput, aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_stage::CreateStage,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_stage::CreateStageOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_stage::CreateStageError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Settings for logging access in this stage.</p>
     pub fn access_log_settings(mut self, input: crate::types::AccessLogSettings) -> Self {
         self.inner = self.inner.access_log_settings(input);
         self
     }
     /// <p>Settings for logging access in this stage.</p>
-    pub fn set_access_log_settings(mut self, input: std::option::Option<crate::types::AccessLogSettings>) -> Self {
+    pub fn set_access_log_settings(
+        mut self,
+        input: std::option::Option<crate::types::AccessLogSettings>,
+    ) -> Self {
         self.inner = self.inner.set_access_log_settings(input);
         self
     }
@@ -84,7 +103,10 @@ impl CreateStageFluentBuilder  {
         self
     }
     /// <p>The identifier of a client certificate for a Stage. Supported only for WebSocket APIs.</p>
-    pub fn set_client_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_certificate_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_certificate_id(input);
         self
     }
@@ -94,7 +116,10 @@ impl CreateStageFluentBuilder  {
         self
     }
     /// <p>The default route settings for the stage.</p>
-    pub fn set_default_route_settings(mut self, input: std::option::Option<crate::types::RouteSettings>) -> Self {
+    pub fn set_default_route_settings(
+        mut self,
+        input: std::option::Option<crate::types::RouteSettings>,
+    ) -> Self {
         self.inner = self.inner.set_default_route_settings(input);
         self
     }
@@ -123,12 +148,21 @@ impl CreateStageFluentBuilder  {
     /// To override the contents of this collection use [`set_route_settings`](Self::set_route_settings).
     ///
     /// <p>Route settings for the stage, by routeKey.</p>
-    pub fn route_settings(mut self, k: impl Into<std::string::String>, v: crate::types::RouteSettings) -> Self {
+    pub fn route_settings(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::RouteSettings,
+    ) -> Self {
         self.inner = self.inner.route_settings(k.into(), v);
         self
     }
     /// <p>Route settings for the stage, by routeKey.</p>
-    pub fn set_route_settings(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::RouteSettings>>) -> Self {
+    pub fn set_route_settings(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::RouteSettings>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_route_settings(input);
         self
     }
@@ -147,12 +181,21 @@ impl CreateStageFluentBuilder  {
     /// To override the contents of this collection use [`set_stage_variables`](Self::set_stage_variables).
     ///
     /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    pub fn stage_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn stage_variables(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.stage_variables(k.into(), v.into());
         self
     }
     /// <p>A map that defines the stage variables for a Stage. Variable names can have alphanumeric and underscore characters, and the values must match [A-Za-z0-9-._~:/?#&amp;=,]+.</p>
-    pub fn set_stage_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_stage_variables(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_stage_variables(input);
         self
     }
@@ -161,14 +204,22 @@ impl CreateStageFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The collection of tags. Each tag element is associated with a given resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

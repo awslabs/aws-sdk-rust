@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let stackdriftstatus = unimplemented!();
 /// match stackdriftstatus {
@@ -32,14 +32,22 @@
 /// Specifically, when `stackdriftstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StackDriftStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// _Note: `StackDriftStatus::Unknown` has been renamed to `::UnknownValue`._
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum StackDriftStatus {
     #[allow(missing_docs)] // documentation missing in model
     Drifted,
@@ -50,45 +58,46 @@ pub enum StackDriftStatus {
     /// _Note: `::Unknown` has been renamed to `::UnknownValue`._
     UnknownValue,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StackDriftStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DRIFTED" => StackDriftStatus::Drifted,
-"IN_SYNC" => StackDriftStatus::InSync,
-"NOT_CHECKED" => StackDriftStatus::NotChecked,
-"UNKNOWN" => StackDriftStatus::UnknownValue,
-other => StackDriftStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "DRIFTED" => StackDriftStatus::Drifted,
+            "IN_SYNC" => StackDriftStatus::InSync,
+            "NOT_CHECKED" => StackDriftStatus::NotChecked,
+            "UNKNOWN" => StackDriftStatus::UnknownValue,
+            other => {
+                StackDriftStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for StackDriftStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(StackDriftStatus::from(s))
-                }
-            }
-impl StackDriftStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    StackDriftStatus::Drifted => "DRIFTED",
-    StackDriftStatus::InSync => "IN_SYNC",
-    StackDriftStatus::NotChecked => "NOT_CHECKED",
-    StackDriftStatus::UnknownValue => "UNKNOWN",
-    StackDriftStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DRIFTED", "IN_SYNC", "NOT_CHECKED", "UNKNOWN"]
-                }
-            }
-impl AsRef<str> for StackDriftStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for StackDriftStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StackDriftStatus::from(s))
+    }
+}
+impl StackDriftStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StackDriftStatus::Drifted => "DRIFTED",
+            StackDriftStatus::InSync => "IN_SYNC",
+            StackDriftStatus::NotChecked => "NOT_CHECKED",
+            StackDriftStatus::UnknownValue => "UNKNOWN",
+            StackDriftStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DRIFTED", "IN_SYNC", "NOT_CHECKED", "UNKNOWN"]
+    }
+}
+impl AsRef<str> for StackDriftStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

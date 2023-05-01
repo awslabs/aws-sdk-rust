@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAssetInput  {
+pub struct DescribeAssetInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeAssetInput  {
 }
 impl DescribeAssetInput {
     /// <p>The ID of the asset.</p>
-    pub fn asset_id(&self) -> std::option::Option<& str> {
+    pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
     /// <p> Whether or not to exclude asset properties from the response. </p>
@@ -42,7 +42,8 @@ impl DescribeAssetInputBuilder {
     }
     /// <p>The ID of the asset.</p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input; self
+        self.asset_id = input;
+        self
     }
     /// <p> Whether or not to exclude asset properties from the response. </p>
     pub fn exclude_properties(mut self, input: bool) -> Self {
@@ -51,18 +52,19 @@ impl DescribeAssetInputBuilder {
     }
     /// <p> Whether or not to exclude asset properties from the response. </p>
     pub fn set_exclude_properties(mut self, input: std::option::Option<bool>) -> Self {
-        self.exclude_properties = input; self
+        self.exclude_properties = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAssetInput`](crate::operation::describe_asset::DescribeAssetInput).
-    pub fn build(self) -> Result<crate::operation::describe_asset::DescribeAssetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_asset::DescribeAssetInput {
-                asset_id: self.asset_id
-                ,
-                exclude_properties: self.exclude_properties
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_asset::DescribeAssetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_asset::DescribeAssetInput {
+            asset_id: self.asset_id,
+            exclude_properties: self.exclude_properties,
+        })
     }
 }
-

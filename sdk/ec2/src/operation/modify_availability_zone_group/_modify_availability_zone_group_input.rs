@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyAvailabilityZoneGroupInput  {
+pub struct ModifyAvailabilityZoneGroupInput {
     /// <p>The name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -15,11 +15,13 @@ pub struct ModifyAvailabilityZoneGroupInput  {
 }
 impl ModifyAvailabilityZoneGroupInput {
     /// <p>The name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
-    pub fn opt_in_status(&self) -> std::option::Option<& crate::types::ModifyAvailabilityZoneOptInStatus> {
+    pub fn opt_in_status(
+        &self,
+    ) -> std::option::Option<&crate::types::ModifyAvailabilityZoneOptInStatus> {
         self.opt_in_status.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -29,7 +31,7 @@ impl ModifyAvailabilityZoneGroupInput {
 }
 impl ModifyAvailabilityZoneGroupInput {
     /// Creates a new builder-style object to manufacture [`ModifyAvailabilityZoneGroupInput`](crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupInput).
-    pub fn builder() -> crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupInputBuilder {
+    pub fn builder() -> crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupInputBuilder{
         crate::operation::modify_availability_zone_group::builders::ModifyAvailabilityZoneGroupInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl ModifyAvailabilityZoneGroupInputBuilder {
     }
     /// <p>The name of the Availability Zone group, Local Zone group, or Wavelength Zone group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
     pub fn opt_in_status(mut self, input: crate::types::ModifyAvailabilityZoneOptInStatus) -> Self {
@@ -58,8 +61,12 @@ impl ModifyAvailabilityZoneGroupInputBuilder {
         self
     }
     /// <p>Indicates whether you are opted in to the Local Zone group or Wavelength Zone group. The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.</p>
-    pub fn set_opt_in_status(mut self, input: std::option::Option<crate::types::ModifyAvailabilityZoneOptInStatus>) -> Self {
-        self.opt_in_status = input; self
+    pub fn set_opt_in_status(
+        mut self,
+        input: std::option::Option<crate::types::ModifyAvailabilityZoneOptInStatus>,
+    ) -> Self {
+        self.opt_in_status = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -68,20 +75,22 @@ impl ModifyAvailabilityZoneGroupInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyAvailabilityZoneGroupInput`](crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupInput).
-    pub fn build(self) -> Result<crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupInput {
-                group_name: self.group_name
-                ,
-                opt_in_status: self.opt_in_status
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                group_name: self.group_name,
+                opt_in_status: self.opt_in_status,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

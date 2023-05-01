@@ -4,66 +4,94 @@ pub use crate::operation::list_game_servers::_list_game_servers_output::ListGame
 pub use crate::operation::list_game_servers::_list_game_servers_input::ListGameServersInputBuilder;
 
 /// Fluent builder constructing a request to `ListGameServers`.
-/// 
-/// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p> 
-/// <p>Retrieves information on all game servers that are currently active in a specified game server group. You can opt to sort the list by game server age. Use the pagination parameters to retrieve results in a set of sequential segments. </p> 
-/// <p> <b>Learn more</b> </p> 
+///
+/// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>
+/// <p>Retrieves information on all game servers that are currently active in a specified game server group. You can opt to sort the list by game server age. Use the pagination parameters to retrieve results in a set of sequential segments. </p>
+/// <p> <b>Learn more</b> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon GameLift FleetIQ Guide</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGameServersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_game_servers::builders::ListGameServersInputBuilder,
+    inner: crate::operation::list_game_servers::builders::ListGameServersInputBuilder,
 }
-impl ListGameServersFluentBuilder  {
+impl ListGameServersFluentBuilder {
     /// Creates a new `ListGameServers`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_game_servers::ListGameServers, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_game_servers::ListGameServersError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_game_servers::ListGameServersOutput, aws_smithy_http::result::SdkError<crate::operation::list_game_servers::ListGameServersError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_game_servers::ListGameServers,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_game_servers::ListGameServersError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_game_servers::ListGameServersOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_game_servers::ListGameServersError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_game_servers::paginator::ListGameServersPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_game_servers::paginator::ListGameServersPaginator {
-                                crate::operation::list_game_servers::paginator::ListGameServersPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_game_servers::paginator::ListGameServersPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_game_servers::paginator::ListGameServersPaginator {
+        crate::operation::list_game_servers::paginator::ListGameServersPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the name or ARN value.</p>
     pub fn game_server_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.game_server_group_name(input.into());
         self
     }
     /// <p>An identifier for the game server group to retrieve a list of game servers from. Use either the name or ARN value.</p>
-    pub fn set_game_server_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_server_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_game_server_group_name(input);
         self
     }
@@ -98,4 +126,3 @@ impl ListGameServersFluentBuilder  {
         self
     }
 }
-

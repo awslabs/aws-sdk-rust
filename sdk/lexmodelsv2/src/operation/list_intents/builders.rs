@@ -4,56 +4,75 @@ pub use crate::operation::list_intents::_list_intents_output::ListIntentsOutputB
 pub use crate::operation::list_intents::_list_intents_input::ListIntentsInputBuilder;
 
 /// Fluent builder constructing a request to `ListIntents`.
-/// 
+///
 /// <p>Get a list of intents that meet the specified criteria.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListIntentsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_intents::builders::ListIntentsInputBuilder,
+    inner: crate::operation::list_intents::builders::ListIntentsInputBuilder,
 }
-impl ListIntentsFluentBuilder  {
+impl ListIntentsFluentBuilder {
     /// Creates a new `ListIntents`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_intents::ListIntents, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_intents::ListIntentsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_intents::ListIntentsOutput, aws_smithy_http::result::SdkError<crate::operation::list_intents::ListIntentsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_intents::ListIntents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_intents::ListIntentsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_intents::ListIntentsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_intents::ListIntentsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_intents::paginator::ListIntentsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_intents::paginator::ListIntentsPaginator {
-                                crate::operation::list_intents::paginator::ListIntentsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_intents::paginator::ListIntentsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_intents::paginator::ListIntentsPaginator {
+        crate::operation::list_intents::paginator::ListIntentsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The unique identifier of the bot that contains the intent.</p>
     pub fn bot_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.bot_id(input.into());
@@ -104,7 +123,10 @@ impl ListIntentsFluentBuilder  {
         self
     }
     /// <p>Provides the specification of a filter used to limit the intents in the response to only those that match the filter specification. You can only specify one filter and only one string to filter on.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::IntentFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IntentFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -118,17 +140,16 @@ impl ListIntentsFluentBuilder  {
         self.inner = self.inner.set_max_results(input);
         self
     }
-    /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p> 
+    /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListIntents</code> request to return the next page of results. For a complete set of results, call the <code>ListIntents</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
-    /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p> 
+    /// <p>If the response from the <code>ListIntents</code> operation contains more results than specified in the <code>maxResults</code> parameter, a token is returned in the response.</p>
     /// <p>Use the returned token in the <code>nextToken</code> parameter of a <code>ListIntents</code> request to return the next page of results. For a complete set of results, call the <code>ListIntents</code> operation until the <code>nextToken</code> returned in the response is null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
 }
-

@@ -4,51 +4,67 @@ pub use crate::operation::create_disk::_create_disk_output::CreateDiskOutputBuil
 pub use crate::operation::create_disk::_create_disk_input::CreateDiskInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDisk`.
-/// 
-/// <p>Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone (e.g., <code>us-east-2a</code>).</p> 
+///
+/// <p>Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same Availability Zone (e.g., <code>us-east-2a</code>).</p>
 /// <p>The <code>create disk</code> operation supports tag-based access control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDiskFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_disk::builders::CreateDiskInputBuilder,
+    inner: crate::operation::create_disk::builders::CreateDiskInputBuilder,
 }
-impl CreateDiskFluentBuilder  {
+impl CreateDiskFluentBuilder {
     /// Creates a new `CreateDisk`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_disk::CreateDisk, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_disk::CreateDiskError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_disk::CreateDiskOutput, aws_smithy_http::result::SdkError<crate::operation::create_disk::CreateDiskError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_disk::CreateDisk,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_disk::CreateDiskError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_disk::CreateDiskOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_disk::CreateDiskError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
     pub fn disk_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.disk_name(input.into());
@@ -59,15 +75,18 @@ impl CreateDiskFluentBuilder  {
         self.inner = self.inner.set_disk_name(input);
         self
     }
-    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p> 
+    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
     /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
     pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.availability_zone(input.into());
         self
     }
-    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p> 
+    /// <p>The Availability Zone where you want to create the disk (e.g., <code>us-east-2a</code>). Use the same Availability Zone as the Lightsail instance to which you want to attach the disk.</p>
     /// <p>Use the <code>get regions</code> operation to list the Availability Zones where Lightsail is currently available.</p>
-    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_availability_zone(input);
         self
     }
@@ -85,15 +104,18 @@ impl CreateDiskFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
-    /// <p>The tag keys and optional values to add to the resource during create.</p> 
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         self.inner = self.inner.tags(input);
         self
     }
-    /// <p>The tag keys and optional values to add to the resource during create.</p> 
+    /// <p>The tag keys and optional values to add to the resource during create.</p>
     /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -107,9 +129,11 @@ impl CreateDiskFluentBuilder  {
         self
     }
     /// <p>An array of objects that represent the add-ons to enable for the new disk.</p>
-    pub fn set_add_ons(mut self, input: std::option::Option<std::vec::Vec<crate::types::AddOnRequest>>) -> Self {
+    pub fn set_add_ons(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AddOnRequest>>,
+    ) -> Self {
         self.inner = self.inner.set_add_ons(input);
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssetPropertyValueInput  {
+pub struct GetAssetPropertyValueInput {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub asset_id: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct GetAssetPropertyValueInput  {
 }
 impl GetAssetPropertyValueInput {
     /// <p>The ID of the asset.</p>
-    pub fn asset_id(&self) -> std::option::Option<& str> {
+    pub fn asset_id(&self) -> std::option::Option<&str> {
         self.asset_id.as_deref()
     }
     /// <p>The ID of the asset property.</p>
-    pub fn property_id(&self) -> std::option::Option<& str> {
+    pub fn property_id(&self) -> std::option::Option<&str> {
         self.property_id.as_deref()
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
-    pub fn property_alias(&self) -> std::option::Option<& str> {
+    pub fn property_alias(&self) -> std::option::Option<&str> {
         self.property_alias.as_deref()
     }
 }
 impl GetAssetPropertyValueInput {
     /// Creates a new builder-style object to manufacture [`GetAssetPropertyValueInput`](crate::operation::get_asset_property_value::GetAssetPropertyValueInput).
-    pub fn builder() -> crate::operation::get_asset_property_value::builders::GetAssetPropertyValueInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_asset_property_value::builders::GetAssetPropertyValueInputBuilder
+    {
         crate::operation::get_asset_property_value::builders::GetAssetPropertyValueInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl GetAssetPropertyValueInputBuilder {
     }
     /// <p>The ID of the asset.</p>
     pub fn set_asset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_id = input; self
+        self.asset_id = input;
+        self
     }
     /// <p>The ID of the asset property.</p>
     pub fn property_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl GetAssetPropertyValueInputBuilder {
     }
     /// <p>The ID of the asset property.</p>
     pub fn set_property_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.property_id = input; self
+        self.property_id = input;
+        self
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl GetAssetPropertyValueInputBuilder {
     }
     /// <p>The alias that identifies the property, such as an OPC-UA server data stream path (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub fn set_property_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.property_alias = input; self
+        self.property_alias = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAssetPropertyValueInput`](crate::operation::get_asset_property_value::GetAssetPropertyValueInput).
-    pub fn build(self) -> Result<crate::operation::get_asset_property_value::GetAssetPropertyValueInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_asset_property_value::GetAssetPropertyValueInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_asset_property_value::GetAssetPropertyValueInput {
-                asset_id: self.asset_id
-                ,
-                property_id: self.property_id
-                ,
-                property_alias: self.property_alias
-                ,
-            }
+                asset_id: self.asset_id,
+                property_id: self.property_id,
+                property_alias: self.property_alias,
+            },
         )
     }
 }
-

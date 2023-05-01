@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectionInput  {
+pub struct DeleteConnectionInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteConnectionInput  {
 }
 impl DeleteConnectionInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ID of the connection.</p>
-    pub fn connection_id(&self) -> std::option::Option<& str> {
+    pub fn connection_id(&self) -> std::option::Option<&str> {
         self.connection_id.as_deref()
     }
 }
 impl DeleteConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
-    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionInputBuilder {
+    pub fn builder() -> crate::operation::delete_connection::builders::DeleteConnectionInputBuilder
+    {
         crate::operation::delete_connection::builders::DeleteConnectionInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl DeleteConnectionInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// <p>The ID of the connection.</p>
     pub fn connection_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +56,19 @@ impl DeleteConnectionInputBuilder {
     }
     /// <p>The ID of the connection.</p>
     pub fn set_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_id = input; self
+        self.connection_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteConnectionInput`](crate::operation::delete_connection::DeleteConnectionInput).
-    pub fn build(self) -> Result<crate::operation::delete_connection::DeleteConnectionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_connection::DeleteConnectionInput {
-                global_network_id: self.global_network_id
-                ,
-                connection_id: self.connection_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_connection::DeleteConnectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_connection::DeleteConnectionInput {
+            global_network_id: self.global_network_id,
+            connection_id: self.connection_id,
+        })
     }
 }
-

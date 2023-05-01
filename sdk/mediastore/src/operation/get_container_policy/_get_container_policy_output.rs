@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerPolicyOutput  {
+pub struct GetContainerPolicyOutput {
     /// <p>The contents of the access policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct GetContainerPolicyOutput  {
 }
 impl GetContainerPolicyOutput {
     /// <p>The contents of the access policy.</p>
-    pub fn policy(&self) -> std::option::Option<& str> {
+    pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetContainerPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetContainerPolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetContainerPolicyOutput`](crate::operation::get_container_policy::GetContainerPolicyOutput).
-    pub fn builder() -> crate::operation::get_container_policy::builders::GetContainerPolicyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_container_policy::builders::GetContainerPolicyOutputBuilder {
         crate::operation::get_container_policy::builders::GetContainerPolicyOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl GetContainerPolicyOutputBuilder {
     }
     /// <p>The contents of the access policy.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetContainerPolicyOutput`](crate::operation::get_container_policy::GetContainerPolicyOutput).
     pub fn build(self) -> crate::operation::get_container_policy::GetContainerPolicyOutput {
         crate::operation::get_container_policy::GetContainerPolicyOutput {
-            policy: self.policy
-            ,
+            policy: self.policy,
             _request_id: self._request_id,
         }
     }
 }
-

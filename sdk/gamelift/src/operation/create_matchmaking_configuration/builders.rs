@@ -4,55 +4,75 @@ pub use crate::operation::create_matchmaking_configuration::_create_matchmaking_
 pub use crate::operation::create_matchmaking_configuration::_create_matchmaking_configuration_input::CreateMatchmakingConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateMatchmakingConfiguration`.
-/// 
-/// <p>Defines a new matchmaking configuration for use with FlexMatch. Whether your are using FlexMatch with Amazon GameLift hosting or as a standalone matchmaking service, the matchmaking configuration sets out rules for matching players and forming teams. If you're also using Amazon GameLift hosting, it defines how to start game sessions for each match. Your matchmaking system can use multiple configurations to handle different game scenarios. All matchmaking requests identify the matchmaking configuration to use and provide player attributes consistent with that configuration. </p> 
-/// <p>To create a matchmaking configuration, you must provide the following: configuration name and FlexMatch mode (with or without Amazon GameLift hosting); a rule set that specifies how to evaluate players and find acceptable matches; whether player acceptance is required; and the maximum time allowed for a matchmaking attempt. When using FlexMatch with Amazon GameLift hosting, you also need to identify the game session queue to use when starting a game session for the match.</p> 
-/// <p>In addition, you must set up an Amazon Simple Notification Service topic to receive matchmaking notifications. Provide the topic ARN in the matchmaking configuration.</p> 
-/// <p> <b>Learn more</b> </p> 
-/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html"> Design a FlexMatch matchmaker</a> </p> 
+///
+/// <p>Defines a new matchmaking configuration for use with FlexMatch. Whether your are using FlexMatch with Amazon GameLift hosting or as a standalone matchmaking service, the matchmaking configuration sets out rules for matching players and forming teams. If you're also using Amazon GameLift hosting, it defines how to start game sessions for each match. Your matchmaking system can use multiple configurations to handle different game scenarios. All matchmaking requests identify the matchmaking configuration to use and provide player attributes consistent with that configuration. </p>
+/// <p>To create a matchmaking configuration, you must provide the following: configuration name and FlexMatch mode (with or without Amazon GameLift hosting); a rule set that specifies how to evaluate players and find acceptable matches; whether player acceptance is required; and the maximum time allowed for a matchmaking attempt. When using FlexMatch with Amazon GameLift hosting, you also need to identify the game session queue to use when starting a game session for the match.</p>
+/// <p>In addition, you must set up an Amazon Simple Notification Service topic to receive matchmaking notifications. Provide the topic ARN in the matchmaking configuration.</p>
+/// <p> <b>Learn more</b> </p>
+/// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-configuration.html"> Design a FlexMatch matchmaker</a> </p>
 /// <p> <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Set up FlexMatch event notification</a> </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateMatchmakingConfigurationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_matchmaking_configuration::builders::CreateMatchmakingConfigurationInputBuilder,
 }
-impl CreateMatchmakingConfigurationFluentBuilder  {
+impl CreateMatchmakingConfigurationFluentBuilder {
     /// Creates a new `CreateMatchmakingConfiguration`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_matchmaking_configuration::CreateMatchmakingConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A unique identifier for the matchmaking configuration. This name is used to identify the configuration associated with a matchmaking request or ticket.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -91,7 +111,10 @@ impl CreateMatchmakingConfigurationFluentBuilder  {
     /// ::gamesessionqueue/
     /// <queue name></queue>
     /// </region></code>. Queues can be located in any Region. Queues are used to start new Amazon GameLift-hosted game sessions for matches that are created with this matchmaking configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter. </p>
-    pub fn set_game_session_queue_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_game_session_queue_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_game_session_queue_arns(input);
         self
     }
@@ -141,7 +164,10 @@ impl CreateMatchmakingConfigurationFluentBuilder  {
         self
     }
     /// <p>An SNS topic ARN that is set up to receive matchmaking notifications. See <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-notification.html"> Setting up notifications for matchmaking</a> for more information.</p>
-    pub fn set_notification_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notification_target(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_notification_target(input);
         self
     }
@@ -161,7 +187,10 @@ impl CreateMatchmakingConfigurationFluentBuilder  {
         self
     }
     /// <p>Information to be added to all events related to this matchmaking configuration. </p>
-    pub fn set_custom_event_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_custom_event_data(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_custom_event_data(input);
         self
     }
@@ -175,7 +204,10 @@ impl CreateMatchmakingConfigurationFluentBuilder  {
         self
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-    pub fn set_game_properties(mut self, input: std::option::Option<std::vec::Vec<crate::types::GameProperty>>) -> Self {
+    pub fn set_game_properties(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GameProperty>>,
+    ) -> Self {
         self.inner = self.inner.set_game_properties(input);
         self
     }
@@ -185,7 +217,10 @@ impl CreateMatchmakingConfigurationFluentBuilder  {
         self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-    pub fn set_game_session_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_session_data(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_game_session_data(input);
         self
     }
@@ -195,25 +230,31 @@ impl CreateMatchmakingConfigurationFluentBuilder  {
         self
     }
     /// <p>The method used to backfill game sessions that are created with this matchmaking configuration. Specify <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature. Specify <code>AUTOMATIC</code> to have Amazon GameLift create a backfill request whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.</p>
-    pub fn set_backfill_mode(mut self, input: std::option::Option<crate::types::BackfillMode>) -> Self {
+    pub fn set_backfill_mode(
+        mut self,
+        input: std::option::Option<crate::types::BackfillMode>,
+    ) -> Self {
         self.inner = self.inner.set_backfill_mode(input);
         self
     }
-    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution. </p> 
-    /// <ul> 
-    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li> 
-    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match. </p> </li> 
+    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution. </p>
+    /// <ul>
+    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match. </p> </li>
     /// </ul>
     pub fn flex_match_mode(mut self, input: crate::types::FlexMatchMode) -> Self {
         self.inner = self.inner.flex_match_mode(input);
         self
     }
-    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution. </p> 
-    /// <ul> 
-    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li> 
-    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match. </p> </li> 
+    /// <p>Indicates whether this matchmaking configuration is being used with Amazon GameLift hosting or as a standalone matchmaking solution. </p>
+    /// <ul>
+    /// <li> <p> <b>STANDALONE</b> - FlexMatch forms matches and returns match information, including players and team assignments, in a <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded"> MatchmakingSucceeded</a> event.</p> </li>
+    /// <li> <p> <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift queue to start a game session for the match. </p> </li>
     /// </ul>
-    pub fn set_flex_match_mode(mut self, input: std::option::Option<crate::types::FlexMatchMode>) -> Self {
+    pub fn set_flex_match_mode(
+        mut self,
+        input: std::option::Option<crate::types::FlexMatchMode>,
+    ) -> Self {
         self.inner = self.inner.set_flex_match_mode(input);
         self
     }
@@ -227,9 +268,11 @@ impl CreateMatchmakingConfigurationFluentBuilder  {
         self
     }
     /// <p>A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

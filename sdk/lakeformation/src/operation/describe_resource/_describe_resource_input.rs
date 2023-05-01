@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeResourceInput  {
+pub struct DescribeResourceInput {
     /// <p>The resource ARN.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl DescribeResourceInput {
     /// <p>The resource ARN.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
 impl DescribeResourceInput {
     /// Creates a new builder-style object to manufacture [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
-    pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceInputBuilder {
+    pub fn builder() -> crate::operation::describe_resource::builders::DescribeResourceInputBuilder
+    {
         crate::operation::describe_resource::builders::DescribeResourceInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl DescribeResourceInputBuilder {
     }
     /// <p>The resource ARN.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeResourceInput`](crate::operation::describe_resource::DescribeResourceInput).
-    pub fn build(self) -> Result<crate::operation::describe_resource::DescribeResourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_resource::DescribeResourceInput {
-                resource_arn: self.resource_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_resource::DescribeResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_resource::DescribeResourceInput {
+            resource_arn: self.resource_arn,
+        })
     }
 }
-

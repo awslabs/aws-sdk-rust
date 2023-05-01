@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteStudioInput  {
+pub struct DeleteStudioInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
     #[doc(hidden)]
     pub studio_id: std::option::Option<std::string::String>,
 }
 impl DeleteStudioInput {
     /// <p>The ID of the Amazon EMR Studio.</p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteStudioInputBuilder {
     }
     /// <p>The ID of the Amazon EMR Studio.</p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteStudioInput`](crate::operation::delete_studio::DeleteStudioInput).
-    pub fn build(self) -> Result<crate::operation::delete_studio::DeleteStudioInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_studio::DeleteStudioInput {
-                studio_id: self.studio_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_studio::DeleteStudioInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_studio::DeleteStudioInput {
+            studio_id: self.studio_id,
+        })
     }
 }
-

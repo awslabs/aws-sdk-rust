@@ -4,57 +4,67 @@ pub use crate::operation::list_savings_plans_purchase_recommendation_generation:
 pub use crate::operation::list_savings_plans_purchase_recommendation_generation::_list_savings_plans_purchase_recommendation_generation_input::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder;
 
 /// Fluent builder constructing a request to `ListSavingsPlansPurchaseRecommendationGeneration`.
-/// 
+///
 /// <p>Retrieves a list of your historical recommendation generations within the past 30 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_savings_plans_purchase_recommendation_generation::builders::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder,
 }
-impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder  {
+impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder {
     /// Creates a new `ListSavingsPlansPurchaseRecommendationGeneration`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGeneration, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput, aws_smithy_http::result::SdkError<crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The status of the recommendation generation.</p>
     pub fn generation_status(mut self, input: crate::types::GenerationStatus) -> Self {
         self.inner = self.inner.generation_status(input);
         self
     }
     /// <p>The status of the recommendation generation.</p>
-    pub fn set_generation_status(mut self, input: std::option::Option<crate::types::GenerationStatus>) -> Self {
+    pub fn set_generation_status(
+        mut self,
+        input: std::option::Option<crate::types::GenerationStatus>,
+    ) -> Self {
         self.inner = self.inner.set_generation_status(input);
         self
     }
@@ -68,7 +78,10 @@ impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder  {
         self
     }
     /// <p>The IDs for each specific recommendation.</p>
-    pub fn set_recommendation_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_recommendation_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_recommendation_ids(input);
         self
     }
@@ -93,4 +106,3 @@ impl ListSavingsPlansPurchaseRecommendationGenerationFluentBuilder  {
         self
     }
 }
-

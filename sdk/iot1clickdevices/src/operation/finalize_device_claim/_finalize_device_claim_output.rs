@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FinalizeDeviceClaimOutput  {
+pub struct FinalizeDeviceClaimOutput {
     /// <p>The device's final claim state.</p>
     #[doc(hidden)]
     pub state: std::option::Option<std::string::String>,
@@ -10,19 +10,21 @@ pub struct FinalizeDeviceClaimOutput  {
 }
 impl FinalizeDeviceClaimOutput {
     /// <p>The device's final claim state.</p>
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for FinalizeDeviceClaimOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl FinalizeDeviceClaimOutput {
     /// Creates a new builder-style object to manufacture [`FinalizeDeviceClaimOutput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimOutput).
-    pub fn builder() -> crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimOutputBuilder {
-        crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimOutputBuilder {
+        crate::operation::finalize_device_claim::builders::FinalizeDeviceClaimOutputBuilder::default(
+        )
     }
 }
 
@@ -41,24 +43,23 @@ impl FinalizeDeviceClaimOutputBuilder {
     }
     /// <p>The device's final claim state.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`FinalizeDeviceClaimOutput`](crate::operation::finalize_device_claim::FinalizeDeviceClaimOutput).
     pub fn build(self) -> crate::operation::finalize_device_claim::FinalizeDeviceClaimOutput {
         crate::operation::finalize_device_claim::FinalizeDeviceClaimOutput {
-            state: self.state
-            ,
+            state: self.state,
             _request_id: self._request_id,
         }
     }
 }
-

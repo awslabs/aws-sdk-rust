@@ -3,7 +3,7 @@
 /// <p>Describes a license that is granted to a grantee.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GrantedLicense  {
+pub struct GrantedLicense {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     #[doc(hidden)]
     pub license_arn: std::option::Option<std::string::String>,
@@ -52,63 +52,65 @@ pub struct GrantedLicense  {
 }
 impl GrantedLicense {
     /// <p>Amazon Resource Name (ARN) of the license.</p>
-    pub fn license_arn(&self) -> std::option::Option<& str> {
+    pub fn license_arn(&self) -> std::option::Option<&str> {
         self.license_arn.as_deref()
     }
     /// <p>License name.</p>
-    pub fn license_name(&self) -> std::option::Option<& str> {
+    pub fn license_name(&self) -> std::option::Option<&str> {
         self.license_name.as_deref()
     }
     /// <p>Product name.</p>
-    pub fn product_name(&self) -> std::option::Option<& str> {
+    pub fn product_name(&self) -> std::option::Option<&str> {
         self.product_name.as_deref()
     }
     /// <p>Product SKU.</p>
-    pub fn product_sku(&self) -> std::option::Option<& str> {
+    pub fn product_sku(&self) -> std::option::Option<&str> {
         self.product_sku.as_deref()
     }
     /// <p>Granted license issuer.</p>
-    pub fn issuer(&self) -> std::option::Option<& crate::types::IssuerDetails> {
+    pub fn issuer(&self) -> std::option::Option<&crate::types::IssuerDetails> {
         self.issuer.as_ref()
     }
     /// <p>Home Region of the granted license.</p>
-    pub fn home_region(&self) -> std::option::Option<& str> {
+    pub fn home_region(&self) -> std::option::Option<&str> {
         self.home_region.as_deref()
     }
     /// <p>Granted license status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::LicenseStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::LicenseStatus> {
         self.status.as_ref()
     }
     /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
-    pub fn validity(&self) -> std::option::Option<& crate::types::DatetimeRange> {
+    pub fn validity(&self) -> std::option::Option<&crate::types::DatetimeRange> {
         self.validity.as_ref()
     }
     /// <p>Granted license beneficiary.</p>
-    pub fn beneficiary(&self) -> std::option::Option<& str> {
+    pub fn beneficiary(&self) -> std::option::Option<&str> {
         self.beneficiary.as_deref()
     }
     /// <p>License entitlements.</p>
-    pub fn entitlements(&self) -> std::option::Option<& [crate::types::Entitlement]> {
+    pub fn entitlements(&self) -> std::option::Option<&[crate::types::Entitlement]> {
         self.entitlements.as_deref()
     }
     /// <p>Configuration for consumption of the license.</p>
-    pub fn consumption_configuration(&self) -> std::option::Option<& crate::types::ConsumptionConfiguration> {
+    pub fn consumption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ConsumptionConfiguration> {
         self.consumption_configuration.as_ref()
     }
     /// <p>Granted license metadata.</p>
-    pub fn license_metadata(&self) -> std::option::Option<& [crate::types::Metadata]> {
+    pub fn license_metadata(&self) -> std::option::Option<&[crate::types::Metadata]> {
         self.license_metadata.as_deref()
     }
     /// <p>Creation time of the granted license.</p>
-    pub fn create_time(&self) -> std::option::Option<& str> {
+    pub fn create_time(&self) -> std::option::Option<&str> {
         self.create_time.as_deref()
     }
     /// <p>Version of the granted license.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>Granted license received metadata.</p>
-    pub fn received_metadata(&self) -> std::option::Option<& crate::types::ReceivedMetadata> {
+    pub fn received_metadata(&self) -> std::option::Option<&crate::types::ReceivedMetadata> {
         self.received_metadata.as_ref()
     }
 }
@@ -133,7 +135,8 @@ pub struct GrantedLicenseBuilder {
     pub(crate) validity: std::option::Option<crate::types::DatetimeRange>,
     pub(crate) beneficiary: std::option::Option<std::string::String>,
     pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::types::Entitlement>>,
-    pub(crate) consumption_configuration: std::option::Option<crate::types::ConsumptionConfiguration>,
+    pub(crate) consumption_configuration:
+        std::option::Option<crate::types::ConsumptionConfiguration>,
     pub(crate) license_metadata: std::option::Option<std::vec::Vec<crate::types::Metadata>>,
     pub(crate) create_time: std::option::Option<std::string::String>,
     pub(crate) version: std::option::Option<std::string::String>,
@@ -147,7 +150,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the license.</p>
     pub fn set_license_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_arn = input; self
+        self.license_arn = input;
+        self
     }
     /// <p>License name.</p>
     pub fn license_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,7 +160,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>License name.</p>
     pub fn set_license_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_name = input; self
+        self.license_name = input;
+        self
     }
     /// <p>Product name.</p>
     pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,7 +170,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>Product name.</p>
     pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_name = input; self
+        self.product_name = input;
+        self
     }
     /// <p>Product SKU.</p>
     pub fn product_sku(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,7 +180,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>Product SKU.</p>
     pub fn set_product_sku(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_sku = input; self
+        self.product_sku = input;
+        self
     }
     /// <p>Granted license issuer.</p>
     pub fn issuer(mut self, input: crate::types::IssuerDetails) -> Self {
@@ -183,7 +190,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>Granted license issuer.</p>
     pub fn set_issuer(mut self, input: std::option::Option<crate::types::IssuerDetails>) -> Self {
-        self.issuer = input; self
+        self.issuer = input;
+        self
     }
     /// <p>Home Region of the granted license.</p>
     pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -192,7 +200,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>Home Region of the granted license.</p>
     pub fn set_home_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.home_region = input; self
+        self.home_region = input;
+        self
     }
     /// <p>Granted license status.</p>
     pub fn status(mut self, input: crate::types::LicenseStatus) -> Self {
@@ -201,7 +210,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>Granted license status.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::LicenseStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
     pub fn validity(mut self, input: crate::types::DatetimeRange) -> Self {
@@ -210,7 +220,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>Date and time range during which the granted license is valid, in ISO8601-UTC format.</p>
     pub fn set_validity(mut self, input: std::option::Option<crate::types::DatetimeRange>) -> Self {
-        self.validity = input; self
+        self.validity = input;
+        self
     }
     /// <p>Granted license beneficiary.</p>
     pub fn beneficiary(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,7 +230,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>Granted license beneficiary.</p>
     pub fn set_beneficiary(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.beneficiary = input; self
+        self.beneficiary = input;
+        self
     }
     /// Appends an item to `entitlements`.
     ///
@@ -228,22 +240,33 @@ impl GrantedLicenseBuilder {
     /// <p>License entitlements.</p>
     pub fn entitlements(mut self, input: crate::types::Entitlement) -> Self {
         let mut v = self.entitlements.unwrap_or_default();
-                        v.push(input);
-                        self.entitlements = Some(v);
-                        self
+        v.push(input);
+        self.entitlements = Some(v);
+        self
     }
     /// <p>License entitlements.</p>
-    pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::types::Entitlement>>) -> Self {
-        self.entitlements = input; self
+    pub fn set_entitlements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Entitlement>>,
+    ) -> Self {
+        self.entitlements = input;
+        self
     }
     /// <p>Configuration for consumption of the license.</p>
-    pub fn consumption_configuration(mut self, input: crate::types::ConsumptionConfiguration) -> Self {
+    pub fn consumption_configuration(
+        mut self,
+        input: crate::types::ConsumptionConfiguration,
+    ) -> Self {
         self.consumption_configuration = Some(input);
         self
     }
     /// <p>Configuration for consumption of the license.</p>
-    pub fn set_consumption_configuration(mut self, input: std::option::Option<crate::types::ConsumptionConfiguration>) -> Self {
-        self.consumption_configuration = input; self
+    pub fn set_consumption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ConsumptionConfiguration>,
+    ) -> Self {
+        self.consumption_configuration = input;
+        self
     }
     /// Appends an item to `license_metadata`.
     ///
@@ -252,13 +275,17 @@ impl GrantedLicenseBuilder {
     /// <p>Granted license metadata.</p>
     pub fn license_metadata(mut self, input: crate::types::Metadata) -> Self {
         let mut v = self.license_metadata.unwrap_or_default();
-                        v.push(input);
-                        self.license_metadata = Some(v);
-                        self
+        v.push(input);
+        self.license_metadata = Some(v);
+        self
     }
     /// <p>Granted license metadata.</p>
-    pub fn set_license_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::types::Metadata>>) -> Self {
-        self.license_metadata = input; self
+    pub fn set_license_metadata(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Metadata>>,
+    ) -> Self {
+        self.license_metadata = input;
+        self
     }
     /// <p>Creation time of the granted license.</p>
     pub fn create_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -267,7 +294,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>Creation time of the granted license.</p>
     pub fn set_create_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.create_time = input; self
+        self.create_time = input;
+        self
     }
     /// <p>Version of the granted license.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -276,7 +304,8 @@ impl GrantedLicenseBuilder {
     }
     /// <p>Version of the granted license.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>Granted license received metadata.</p>
     pub fn received_metadata(mut self, input: crate::types::ReceivedMetadata) -> Self {
@@ -284,43 +313,31 @@ impl GrantedLicenseBuilder {
         self
     }
     /// <p>Granted license received metadata.</p>
-    pub fn set_received_metadata(mut self, input: std::option::Option<crate::types::ReceivedMetadata>) -> Self {
-        self.received_metadata = input; self
+    pub fn set_received_metadata(
+        mut self,
+        input: std::option::Option<crate::types::ReceivedMetadata>,
+    ) -> Self {
+        self.received_metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`GrantedLicense`](crate::types::GrantedLicense).
     pub fn build(self) -> crate::types::GrantedLicense {
         crate::types::GrantedLicense {
-            license_arn: self.license_arn
-            ,
-            license_name: self.license_name
-            ,
-            product_name: self.product_name
-            ,
-            product_sku: self.product_sku
-            ,
-            issuer: self.issuer
-            ,
-            home_region: self.home_region
-            ,
-            status: self.status
-            ,
-            validity: self.validity
-            ,
-            beneficiary: self.beneficiary
-            ,
-            entitlements: self.entitlements
-            ,
-            consumption_configuration: self.consumption_configuration
-            ,
-            license_metadata: self.license_metadata
-            ,
-            create_time: self.create_time
-            ,
-            version: self.version
-            ,
-            received_metadata: self.received_metadata
-            ,
+            license_arn: self.license_arn,
+            license_name: self.license_name,
+            product_name: self.product_name,
+            product_sku: self.product_sku,
+            issuer: self.issuer,
+            home_region: self.home_region,
+            status: self.status,
+            validity: self.validity,
+            beneficiary: self.beneficiary,
+            entitlements: self.entitlements,
+            consumption_configuration: self.consumption_configuration,
+            license_metadata: self.license_metadata,
+            create_time: self.create_time,
+            version: self.version,
+            received_metadata: self.received_metadata,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFacesOutput  {
+pub struct DeleteFacesOutput {
     /// <p>An array of strings (face IDs) of the faces that were deleted.</p>
     #[doc(hidden)]
     pub deleted_faces: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -10,15 +10,15 @@ pub struct DeleteFacesOutput  {
 }
 impl DeleteFacesOutput {
     /// <p>An array of strings (face IDs) of the faces that were deleted.</p>
-    pub fn deleted_faces(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn deleted_faces(&self) -> std::option::Option<&[std::string::String]> {
         self.deleted_faces.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteFacesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteFacesOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFacesOutput`](crate::operation::delete_faces::DeleteFacesOutput).
     pub fn builder() -> crate::operation::delete_faces::builders::DeleteFacesOutputBuilder {
@@ -41,30 +41,32 @@ impl DeleteFacesOutputBuilder {
     /// <p>An array of strings (face IDs) of the faces that were deleted.</p>
     pub fn deleted_faces(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.deleted_faces.unwrap_or_default();
-                        v.push(input.into());
-                        self.deleted_faces = Some(v);
-                        self
+        v.push(input.into());
+        self.deleted_faces = Some(v);
+        self
     }
     /// <p>An array of strings (face IDs) of the faces that were deleted.</p>
-    pub fn set_deleted_faces(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.deleted_faces = input; self
+    pub fn set_deleted_faces(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.deleted_faces = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteFacesOutput`](crate::operation::delete_faces::DeleteFacesOutput).
     pub fn build(self) -> crate::operation::delete_faces::DeleteFacesOutput {
         crate::operation::delete_faces::DeleteFacesOutput {
-            deleted_faces: self.deleted_faces
-            ,
+            deleted_faces: self.deleted_faces,
             _request_id: self._request_id,
         }
     }
 }
-

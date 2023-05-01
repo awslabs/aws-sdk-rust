@@ -4,50 +4,70 @@ pub use crate::operation::grant_flow_entitlements::_grant_flow_entitlements_outp
 pub use crate::operation::grant_flow_entitlements::_grant_flow_entitlements_input::GrantFlowEntitlementsInputBuilder;
 
 /// Fluent builder constructing a request to `GrantFlowEntitlements`.
-/// 
+///
 /// Grants entitlements to an existing flow.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GrantFlowEntitlementsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsInputBuilder,
+    inner: crate::operation::grant_flow_entitlements::builders::GrantFlowEntitlementsInputBuilder,
 }
-impl GrantFlowEntitlementsFluentBuilder  {
+impl GrantFlowEntitlementsFluentBuilder {
     /// Creates a new `GrantFlowEntitlements`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::grant_flow_entitlements::GrantFlowEntitlements, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput, aws_smithy_http::result::SdkError<crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::grant_flow_entitlements::GrantFlowEntitlements,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `Entitlements`.
     ///
     /// To override the contents of this collection use [`set_entitlements`](Self::set_entitlements).
@@ -58,7 +78,10 @@ impl GrantFlowEntitlementsFluentBuilder  {
         self
     }
     /// The list of entitlements that you want to grant.
-    pub fn set_entitlements(mut self, input: std::option::Option<std::vec::Vec<crate::types::GrantEntitlementRequest>>) -> Self {
+    pub fn set_entitlements(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GrantEntitlementRequest>>,
+    ) -> Self {
         self.inner = self.inner.set_entitlements(input);
         self
     }
@@ -73,4 +96,3 @@ impl GrantFlowEntitlementsFluentBuilder  {
         self
     }
 }
-

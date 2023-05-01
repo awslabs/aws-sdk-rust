@@ -3,7 +3,7 @@
 /// <p> Information about the position of the asset in a rack. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetLocation  {
+pub struct AssetLocation {
     /// <p> The position of an asset in a rack measured in rack units. </p>
     #[doc(hidden)]
     pub rack_elevation: std::option::Option<f32>,
@@ -35,14 +35,13 @@ impl AssetLocationBuilder {
     }
     /// <p> The position of an asset in a rack measured in rack units. </p>
     pub fn set_rack_elevation(mut self, input: std::option::Option<f32>) -> Self {
-        self.rack_elevation = input; self
+        self.rack_elevation = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssetLocation`](crate::types::AssetLocation).
     pub fn build(self) -> crate::types::AssetLocation {
         crate::types::AssetLocation {
-            rack_elevation: self.rack_elevation
-            ,
+            rack_elevation: self.rack_elevation,
         }
     }
 }
-

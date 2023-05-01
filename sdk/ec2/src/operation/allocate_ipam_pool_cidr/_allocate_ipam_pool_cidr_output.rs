@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AllocateIpamPoolCidrOutput  {
+pub struct AllocateIpamPoolCidrOutput {
     /// <p>Information about the allocation created.</p>
     #[doc(hidden)]
     pub ipam_pool_allocation: std::option::Option<crate::types::IpamPoolAllocation>,
@@ -10,18 +10,20 @@ pub struct AllocateIpamPoolCidrOutput  {
 }
 impl AllocateIpamPoolCidrOutput {
     /// <p>Information about the allocation created.</p>
-    pub fn ipam_pool_allocation(&self) -> std::option::Option<& crate::types::IpamPoolAllocation> {
+    pub fn ipam_pool_allocation(&self) -> std::option::Option<&crate::types::IpamPoolAllocation> {
         self.ipam_pool_allocation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for AllocateIpamPoolCidrOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AllocateIpamPoolCidrOutput {
     /// Creates a new builder-style object to manufacture [`AllocateIpamPoolCidrOutput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput).
-    pub fn builder() -> crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrOutputBuilder
+    {
         crate::operation::allocate_ipam_pool_cidr::builders::AllocateIpamPoolCidrOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl AllocateIpamPoolCidrOutputBuilder {
         self
     }
     /// <p>Information about the allocation created.</p>
-    pub fn set_ipam_pool_allocation(mut self, input: std::option::Option<crate::types::IpamPoolAllocation>) -> Self {
-        self.ipam_pool_allocation = input; self
+    pub fn set_ipam_pool_allocation(
+        mut self,
+        input: std::option::Option<crate::types::IpamPoolAllocation>,
+    ) -> Self {
+        self.ipam_pool_allocation = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AllocateIpamPoolCidrOutput`](crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput).
     pub fn build(self) -> crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput {
         crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput {
-            ipam_pool_allocation: self.ipam_pool_allocation
-            ,
+            ipam_pool_allocation: self.ipam_pool_allocation,
             _request_id: self._request_id,
         }
     }
 }
-

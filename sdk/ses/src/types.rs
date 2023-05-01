@@ -232,4 +232,3 @@ pub mod builders;
 
 /// Error types that Amazon Simple Email Service can respond with.
 pub mod error;
-

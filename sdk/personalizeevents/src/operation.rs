@@ -9,4 +9,3 @@ pub mod put_items;
 
 /// Types for the `PutUsers` operation.
 pub mod put_users;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStageOutput  {
+pub struct UpdateStageOutput {
     /// <p>Properties that provide details of the updated stage.</p>
     #[doc(hidden)]
     pub stage: std::option::Option<crate::types::StageDetails>,
@@ -10,15 +10,15 @@ pub struct UpdateStageOutput  {
 }
 impl UpdateStageOutput {
     /// <p>Properties that provide details of the updated stage.</p>
-    pub fn stage(&self) -> std::option::Option<& crate::types::StageDetails> {
+    pub fn stage(&self) -> std::option::Option<&crate::types::StageDetails> {
         self.stage.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateStageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateStageOutput {
     /// Creates a new builder-style object to manufacture [`UpdateStageOutput`](crate::operation::update_stage::UpdateStageOutput).
     pub fn builder() -> crate::operation::update_stage::builders::UpdateStageOutputBuilder {
@@ -41,24 +41,23 @@ impl UpdateStageOutputBuilder {
     }
     /// <p>Properties that provide details of the updated stage.</p>
     pub fn set_stage(mut self, input: std::option::Option<crate::types::StageDetails>) -> Self {
-        self.stage = input; self
+        self.stage = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateStageOutput`](crate::operation::update_stage::UpdateStageOutput).
     pub fn build(self) -> crate::operation::update_stage::UpdateStageOutput {
         crate::operation::update_stage::UpdateStageOutput {
-            stage: self.stage
-            ,
+            stage: self.stage,
             _request_id: self._request_id,
         }
     }
 }
-

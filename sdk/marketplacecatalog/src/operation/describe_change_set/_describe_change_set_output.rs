@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChangeSetOutput  {
+pub struct DescribeChangeSetOutput {
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
     #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
@@ -34,50 +34,51 @@ pub struct DescribeChangeSetOutput  {
 }
 impl DescribeChangeSetOutput {
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_id(&self) -> std::option::Option<& str> {
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
-    pub fn change_set_arn(&self) -> std::option::Option<& str> {
+    pub fn change_set_arn(&self) -> std::option::Option<&str> {
         self.change_set_arn.as_deref()
     }
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
-    pub fn change_set_name(&self) -> std::option::Option<& str> {
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
-    pub fn start_time(&self) -> std::option::Option<& str> {
+    pub fn start_time(&self) -> std::option::Option<&str> {
         self.start_time.as_deref()
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
-    pub fn end_time(&self) -> std::option::Option<& str> {
+    pub fn end_time(&self) -> std::option::Option<&str> {
         self.end_time.as_deref()
     }
     /// <p>The status of the change request.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ChangeStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ChangeStatus> {
         self.status.as_ref()
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-    pub fn failure_code(&self) -> std::option::Option<& crate::types::FailureCode> {
+    pub fn failure_code(&self) -> std::option::Option<&crate::types::FailureCode> {
         self.failure_code.as_ref()
     }
     /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
-    pub fn failure_description(&self) -> std::option::Option<& str> {
+    pub fn failure_description(&self) -> std::option::Option<&str> {
         self.failure_description.as_deref()
     }
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
-    pub fn change_set(&self) -> std::option::Option<& [crate::types::ChangeSummary]> {
+    pub fn change_set(&self) -> std::option::Option<&[crate::types::ChangeSummary]> {
         self.change_set.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeChangeSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeChangeSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChangeSetOutput`](crate::operation::describe_change_set::DescribeChangeSetOutput).
-    pub fn builder() -> crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder {
         crate::operation::describe_change_set::builders::DescribeChangeSetOutputBuilder::default()
     }
 }
@@ -105,7 +106,8 @@ impl DescribeChangeSetOutputBuilder {
     }
     /// <p>Required. The unique identifier for the change set referenced in this request.</p>
     pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_id = input; self
+        self.change_set_id = input;
+        self
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
     pub fn change_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +116,8 @@ impl DescribeChangeSetOutputBuilder {
     }
     /// <p>The ARN associated with the unique identifier for the change set referenced in this request.</p>
     pub fn set_change_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_arn = input; self
+        self.change_set_arn = input;
+        self
     }
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
     pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +126,8 @@ impl DescribeChangeSetOutputBuilder {
     }
     /// <p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>
     pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_name = input; self
+        self.change_set_name = input;
+        self
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
     pub fn start_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +136,8 @@ impl DescribeChangeSetOutputBuilder {
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>
     pub fn set_start_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_time = input; self
+        self.start_time = input;
+        self
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
     pub fn end_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +146,8 @@ impl DescribeChangeSetOutputBuilder {
     }
     /// <p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>
     pub fn set_end_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The status of the change request.</p>
     pub fn status(mut self, input: crate::types::ChangeStatus) -> Self {
@@ -150,7 +156,8 @@ impl DescribeChangeSetOutputBuilder {
     }
     /// <p>The status of the change request.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ChangeStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
     pub fn failure_code(mut self, input: crate::types::FailureCode) -> Self {
@@ -158,8 +165,12 @@ impl DescribeChangeSetOutputBuilder {
         self
     }
     /// <p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>
-    pub fn set_failure_code(mut self, input: std::option::Option<crate::types::FailureCode>) -> Self {
-        self.failure_code = input; self
+    pub fn set_failure_code(
+        mut self,
+        input: std::option::Option<crate::types::FailureCode>,
+    ) -> Self {
+        self.failure_code = input;
+        self
     }
     /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
     pub fn failure_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,8 +178,12 @@ impl DescribeChangeSetOutputBuilder {
         self
     }
     /// <p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>
-    pub fn set_failure_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.failure_description = input; self
+    pub fn set_failure_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.failure_description = input;
+        self
     }
     /// Appends an item to `change_set`.
     ///
@@ -177,46 +192,40 @@ impl DescribeChangeSetOutputBuilder {
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
     pub fn change_set(mut self, input: crate::types::ChangeSummary) -> Self {
         let mut v = self.change_set.unwrap_or_default();
-                        v.push(input);
-                        self.change_set = Some(v);
-                        self
+        v.push(input);
+        self.change_set = Some(v);
+        self
     }
     /// <p>An array of <code>ChangeSummary</code> objects.</p>
-    pub fn set_change_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChangeSummary>>) -> Self {
-        self.change_set = input; self
+    pub fn set_change_set(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ChangeSummary>>,
+    ) -> Self {
+        self.change_set = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeChangeSetOutput`](crate::operation::describe_change_set::DescribeChangeSetOutput).
     pub fn build(self) -> crate::operation::describe_change_set::DescribeChangeSetOutput {
         crate::operation::describe_change_set::DescribeChangeSetOutput {
-            change_set_id: self.change_set_id
-            ,
-            change_set_arn: self.change_set_arn
-            ,
-            change_set_name: self.change_set_name
-            ,
-            start_time: self.start_time
-            ,
-            end_time: self.end_time
-            ,
-            status: self.status
-            ,
-            failure_code: self.failure_code
-            ,
-            failure_description: self.failure_description
-            ,
-            change_set: self.change_set
-            ,
+            change_set_id: self.change_set_id,
+            change_set_arn: self.change_set_arn,
+            change_set_name: self.change_set_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            status: self.status,
+            failure_code: self.failure_code,
+            failure_description: self.failure_description,
+            change_set: self.change_set,
             _request_id: self._request_id,
         }
     }
 }
-

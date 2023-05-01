@@ -3,7 +3,7 @@
 /// A successful request identified by the unique client token.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuccessfulRequest  {
+pub struct SuccessfulRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct SuccessfulRequest  {
 }
 impl SuccessfulRequest {
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// Identifier representing a Dial request
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl SuccessfulRequestBuilder {
     }
     /// Client provided parameter used for idempotency. Its value must be unique for each request.
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Identifier representing a Dial request
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl SuccessfulRequestBuilder {
     }
     /// Identifier representing a Dial request
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`SuccessfulRequest`](crate::types::SuccessfulRequest).
     pub fn build(self) -> crate::types::SuccessfulRequest {
         crate::types::SuccessfulRequest {
-            client_token: self.client_token
-            ,
-            id: self.id
-            ,
+            client_token: self.client_token,
+            id: self.id,
         }
     }
 }
-

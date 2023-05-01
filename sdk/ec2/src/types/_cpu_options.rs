@@ -3,7 +3,7 @@
 /// <p>The CPU options for the instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CpuOptions  {
+pub struct CpuOptions {
     /// <p>The number of CPU cores for the instance.</p>
     #[doc(hidden)]
     pub core_count: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl CpuOptionsBuilder {
     }
     /// <p>The number of CPU cores for the instance.</p>
     pub fn set_core_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.core_count = input; self
+        self.core_count = input;
+        self
     }
     /// <p>The number of threads per CPU core.</p>
     pub fn threads_per_core(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl CpuOptionsBuilder {
     }
     /// <p>The number of threads per CPU core.</p>
     pub fn set_threads_per_core(mut self, input: std::option::Option<i32>) -> Self {
-        self.threads_per_core = input; self
+        self.threads_per_core = input;
+        self
     }
     /// Consumes the builder and constructs a [`CpuOptions`](crate::types::CpuOptions).
     pub fn build(self) -> crate::types::CpuOptions {
         crate::types::CpuOptions {
-            core_count: self.core_count
-            ,
-            threads_per_core: self.threads_per_core
-            ,
+            core_count: self.core_count,
+            threads_per_core: self.threads_per_core,
         }
     }
 }
-

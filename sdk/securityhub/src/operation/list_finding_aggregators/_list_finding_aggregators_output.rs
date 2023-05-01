@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFindingAggregatorsOutput  {
+pub struct ListFindingAggregatorsOutput {
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
     #[doc(hidden)]
     pub finding_aggregators: std::option::Option<std::vec::Vec<crate::types::FindingAggregator>>,
-    /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p> 
+    /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
     /// <p>This operation currently only returns a single result. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,23 +14,25 @@ pub struct ListFindingAggregatorsOutput  {
 }
 impl ListFindingAggregatorsOutput {
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
-    pub fn finding_aggregators(&self) -> std::option::Option<& [crate::types::FindingAggregator]> {
+    pub fn finding_aggregators(&self) -> std::option::Option<&[crate::types::FindingAggregator]> {
         self.finding_aggregators.as_deref()
     }
-    /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p> 
+    /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
     /// <p>This operation currently only returns a single result. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFindingAggregatorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListFindingAggregatorsOutput {
     /// Creates a new builder-style object to manufacture [`ListFindingAggregatorsOutput`](crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput).
-    pub fn builder() -> crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsOutputBuilder
+    {
         crate::operation::list_finding_aggregators::builders::ListFindingAggregatorsOutputBuilder::default()
     }
 }
@@ -39,7 +41,8 @@ impl ListFindingAggregatorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListFindingAggregatorsOutputBuilder {
-    pub(crate) finding_aggregators: std::option::Option<std::vec::Vec<crate::types::FindingAggregator>>,
+    pub(crate) finding_aggregators:
+        std::option::Option<std::vec::Vec<crate::types::FindingAggregator>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -51,43 +54,45 @@ impl ListFindingAggregatorsOutputBuilder {
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
     pub fn finding_aggregators(mut self, input: crate::types::FindingAggregator) -> Self {
         let mut v = self.finding_aggregators.unwrap_or_default();
-                        v.push(input);
-                        self.finding_aggregators = Some(v);
-                        self
+        v.push(input);
+        self.finding_aggregators = Some(v);
+        self
     }
     /// <p>The list of finding aggregators. This operation currently only returns a single result.</p>
-    pub fn set_finding_aggregators(mut self, input: std::option::Option<std::vec::Vec<crate::types::FindingAggregator>>) -> Self {
-        self.finding_aggregators = input; self
+    pub fn set_finding_aggregators(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FindingAggregator>>,
+    ) -> Self {
+        self.finding_aggregators = input;
+        self
     }
-    /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p> 
+    /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
     /// <p>This operation currently only returns a single result. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p> 
+    /// <p>If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.</p>
     /// <p>This operation currently only returns a single result. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFindingAggregatorsOutput`](crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput).
     pub fn build(self) -> crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput {
         crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput {
-            finding_aggregators: self.finding_aggregators
-            ,
-            next_token: self.next_token
-            ,
+            finding_aggregators: self.finding_aggregators,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

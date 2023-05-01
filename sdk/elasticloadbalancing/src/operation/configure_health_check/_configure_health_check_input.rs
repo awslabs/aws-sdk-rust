@@ -3,7 +3,7 @@
 /// <p>Contains the parameters for ConfigureHealthCheck.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfigureHealthCheckInput  {
+pub struct ConfigureHealthCheckInput {
     /// <p>The name of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_name: std::option::Option<std::string::String>,
@@ -13,17 +13,18 @@ pub struct ConfigureHealthCheckInput  {
 }
 impl ConfigureHealthCheckInput {
     /// <p>The name of the load balancer.</p>
-    pub fn load_balancer_name(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_name(&self) -> std::option::Option<&str> {
         self.load_balancer_name.as_deref()
     }
     /// <p>The configuration information.</p>
-    pub fn health_check(&self) -> std::option::Option<& crate::types::HealthCheck> {
+    pub fn health_check(&self) -> std::option::Option<&crate::types::HealthCheck> {
         self.health_check.as_ref()
     }
 }
 impl ConfigureHealthCheckInput {
     /// Creates a new builder-style object to manufacture [`ConfigureHealthCheckInput`](crate::operation::configure_health_check::ConfigureHealthCheckInput).
-    pub fn builder() -> crate::operation::configure_health_check::builders::ConfigureHealthCheckInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::configure_health_check::builders::ConfigureHealthCheckInputBuilder {
         crate::operation::configure_health_check::builders::ConfigureHealthCheckInputBuilder::default()
     }
 }
@@ -42,8 +43,12 @@ impl ConfigureHealthCheckInputBuilder {
         self
     }
     /// <p>The name of the load balancer.</p>
-    pub fn set_load_balancer_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.load_balancer_name = input; self
+    pub fn set_load_balancer_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.load_balancer_name = input;
+        self
     }
     /// <p>The configuration information.</p>
     pub fn health_check(mut self, input: crate::types::HealthCheck) -> Self {
@@ -51,19 +56,25 @@ impl ConfigureHealthCheckInputBuilder {
         self
     }
     /// <p>The configuration information.</p>
-    pub fn set_health_check(mut self, input: std::option::Option<crate::types::HealthCheck>) -> Self {
-        self.health_check = input; self
+    pub fn set_health_check(
+        mut self,
+        input: std::option::Option<crate::types::HealthCheck>,
+    ) -> Self {
+        self.health_check = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConfigureHealthCheckInput`](crate::operation::configure_health_check::ConfigureHealthCheckInput).
-    pub fn build(self) -> Result<crate::operation::configure_health_check::ConfigureHealthCheckInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::configure_health_check::ConfigureHealthCheckInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::configure_health_check::ConfigureHealthCheckInput {
-                load_balancer_name: self.load_balancer_name
-                ,
-                health_check: self.health_check
-                ,
-            }
+                load_balancer_name: self.load_balancer_name,
+                health_check: self.health_check,
+            },
         )
     }
 }
-

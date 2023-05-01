@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSchemaOutput  {
+pub struct CreateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CreateSchemaOutput  {
 }
 impl CreateSchemaOutput {
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSchemaOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateSchemaOutput {
     /// Creates a new builder-style object to manufacture [`CreateSchemaOutput`](crate::operation::create_schema::CreateSchemaOutput).
     pub fn builder() -> crate::operation::create_schema::builders::CreateSchemaOutputBuilder {
@@ -41,24 +41,23 @@ impl CreateSchemaOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that is associated with the schema. For more information, see <code>arns</code>.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateSchemaOutput`](crate::operation::create_schema::CreateSchemaOutput).
     pub fn build(self) -> crate::operation::create_schema::CreateSchemaOutput {
         crate::operation::create_schema::CreateSchemaOutput {
-            schema_arn: self.schema_arn
-            ,
+            schema_arn: self.schema_arn,
             _request_id: self._request_id,
         }
     }
 }
-

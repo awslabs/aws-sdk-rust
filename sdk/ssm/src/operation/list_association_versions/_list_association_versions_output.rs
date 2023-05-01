@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssociationVersionsOutput  {
+pub struct ListAssociationVersionsOutput {
     /// <p>Information about all versions of the association for the specified association ID.</p>
     #[doc(hidden)]
-    pub association_versions: std::option::Option<std::vec::Vec<crate::types::AssociationVersionInfo>>,
+    pub association_versions:
+        std::option::Option<std::vec::Vec<crate::types::AssociationVersionInfo>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct ListAssociationVersionsOutput  {
 }
 impl ListAssociationVersionsOutput {
     /// <p>Information about all versions of the association for the specified association ID.</p>
-    pub fn association_versions(&self) -> std::option::Option<& [crate::types::AssociationVersionInfo]> {
+    pub fn association_versions(
+        &self,
+    ) -> std::option::Option<&[crate::types::AssociationVersionInfo]> {
         self.association_versions.as_deref()
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAssociationVersionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAssociationVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssociationVersionsOutput`](crate::operation::list_association_versions::ListAssociationVersionsOutput).
-    pub fn builder() -> crate::operation::list_association_versions::builders::ListAssociationVersionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_association_versions::builders::ListAssociationVersionsOutputBuilder
+    {
         crate::operation::list_association_versions::builders::ListAssociationVersionsOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl ListAssociationVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAssociationVersionsOutputBuilder {
-    pub(crate) association_versions: std::option::Option<std::vec::Vec<crate::types::AssociationVersionInfo>>,
+    pub(crate) association_versions:
+        std::option::Option<std::vec::Vec<crate::types::AssociationVersionInfo>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl ListAssociationVersionsOutputBuilder {
     /// <p>Information about all versions of the association for the specified association ID.</p>
     pub fn association_versions(mut self, input: crate::types::AssociationVersionInfo) -> Self {
         let mut v = self.association_versions.unwrap_or_default();
-                        v.push(input);
-                        self.association_versions = Some(v);
-                        self
+        v.push(input);
+        self.association_versions = Some(v);
+        self
     }
     /// <p>Information about all versions of the association for the specified association ID.</p>
-    pub fn set_association_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssociationVersionInfo>>) -> Self {
-        self.association_versions = input; self
+    pub fn set_association_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AssociationVersionInfo>>,
+    ) -> Self {
+        self.association_versions = input;
+        self
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,26 @@ impl ListAssociationVersionsOutputBuilder {
     }
     /// <p>The token for the next set of items to return. Use this token to get the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAssociationVersionsOutput`](crate::operation::list_association_versions::ListAssociationVersionsOutput).
-    pub fn build(self) -> crate::operation::list_association_versions::ListAssociationVersionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_association_versions::ListAssociationVersionsOutput {
         crate::operation::list_association_versions::ListAssociationVersionsOutput {
-            association_versions: self.association_versions
-            ,
-            next_token: self.next_token
-            ,
+            association_versions: self.association_versions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

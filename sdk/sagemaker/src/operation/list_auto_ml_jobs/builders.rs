@@ -4,63 +4,87 @@ pub use crate::operation::list_auto_ml_jobs::_list_auto_ml_jobs_output::ListAuto
 pub use crate::operation::list_auto_ml_jobs::_list_auto_ml_jobs_input::ListAutoMlJobsInputBuilder;
 
 /// Fluent builder constructing a request to `ListAutoMLJobs`.
-/// 
+///
 /// <p>Request a list of jobs.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAutoMLJobsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_auto_ml_jobs::builders::ListAutoMlJobsInputBuilder,
+    inner: crate::operation::list_auto_ml_jobs::builders::ListAutoMlJobsInputBuilder,
 }
-impl ListAutoMLJobsFluentBuilder  {
+impl ListAutoMLJobsFluentBuilder {
     /// Creates a new `ListAutoMLJobs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_auto_ml_jobs::ListAutoMLJobs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_auto_ml_jobs::ListAutoMLJobsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_auto_ml_jobs::ListAutoMlJobsOutput, aws_smithy_http::result::SdkError<crate::operation::list_auto_ml_jobs::ListAutoMLJobsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_auto_ml_jobs::ListAutoMLJobs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_auto_ml_jobs::ListAutoMLJobsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_auto_ml_jobs::ListAutoMlJobsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_auto_ml_jobs::ListAutoMLJobsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_auto_ml_jobs::paginator::ListAutoMlJobsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_auto_ml_jobs::paginator::ListAutoMlJobsPaginator {
-                                crate::operation::list_auto_ml_jobs::paginator::ListAutoMlJobsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_auto_ml_jobs::paginator::ListAutoMlJobsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_auto_ml_jobs::paginator::ListAutoMlJobsPaginator {
+        crate::operation::list_auto_ml_jobs::paginator::ListAutoMlJobsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>Request a list of jobs, using a filter for time.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -70,7 +94,10 @@ impl ListAutoMLJobsFluentBuilder  {
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -80,7 +107,10 @@ impl ListAutoMLJobsFluentBuilder  {
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn set_last_modified_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_last_modified_time_after(input);
         self
     }
@@ -90,7 +120,10 @@ impl ListAutoMLJobsFluentBuilder  {
         self
     }
     /// <p>Request a list of jobs, using a filter for time.</p>
-    pub fn set_last_modified_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_last_modified_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_last_modified_time_before(input);
         self
     }
@@ -110,7 +143,10 @@ impl ListAutoMLJobsFluentBuilder  {
         self
     }
     /// <p>Request a list of jobs, using a filter for status.</p>
-    pub fn set_status_equals(mut self, input: std::option::Option<crate::types::AutoMlJobStatus>) -> Self {
+    pub fn set_status_equals(
+        mut self,
+        input: std::option::Option<crate::types::AutoMlJobStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status_equals(input);
         self
     }
@@ -120,7 +156,10 @@ impl ListAutoMLJobsFluentBuilder  {
         self
     }
     /// <p>The sort order for the results. The default is <code>Descending</code>.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::AutoMlSortOrder>) -> Self {
+    pub fn set_sort_order(
+        mut self,
+        input: std::option::Option<crate::types::AutoMlSortOrder>,
+    ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -155,4 +194,3 @@ impl ListAutoMLJobsFluentBuilder  {
         self
     }
 }
-

@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDirectConnectGatewayAssociationProposalsOutput  {
+pub struct DescribeDirectConnectGatewayAssociationProposalsOutput {
     /// <p>Describes the Direct Connect gateway association proposals.</p>
     #[doc(hidden)]
-    pub direct_connect_gateway_association_proposals: std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociationProposal>>,
+    pub direct_connect_gateway_association_proposals:
+        std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociationProposal>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DescribeDirectConnectGatewayAssociationProposalsOutput  {
 }
 impl DescribeDirectConnectGatewayAssociationProposalsOutput {
     /// <p>Describes the Direct Connect gateway association proposals.</p>
-    pub fn direct_connect_gateway_association_proposals(&self) -> std::option::Option<& [crate::types::DirectConnectGatewayAssociationProposal]> {
+    pub fn direct_connect_gateway_association_proposals(
+        &self,
+    ) -> std::option::Option<&[crate::types::DirectConnectGatewayAssociationProposal]> {
         self.direct_connect_gateway_association_proposals.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDirectConnectGatewayAssociationProposalsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDirectConnectGatewayAssociationProposalsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsOutput).
-    pub fn builder() -> crate::operation::describe_direct_connect_gateway_association_proposals::builders::DescribeDirectConnectGatewayAssociationProposalsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_direct_connect_gateway_association_proposals::builders::DescribeDirectConnectGatewayAssociationProposalsOutputBuilder{
         crate::operation::describe_direct_connect_gateway_association_proposals::builders::DescribeDirectConnectGatewayAssociationProposalsOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDirectConnectGatewayAssociationProposalsOutputBuilder {
-    pub(crate) direct_connect_gateway_association_proposals: std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociationProposal>>,
+    pub(crate) direct_connect_gateway_association_proposals:
+        std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociationProposal>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +51,26 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutputBuilder {
     /// To override the contents of this collection use [`set_direct_connect_gateway_association_proposals`](Self::set_direct_connect_gateway_association_proposals).
     ///
     /// <p>Describes the Direct Connect gateway association proposals.</p>
-    pub fn direct_connect_gateway_association_proposals(mut self, input: crate::types::DirectConnectGatewayAssociationProposal) -> Self {
-        let mut v = self.direct_connect_gateway_association_proposals.unwrap_or_default();
-                        v.push(input);
-                        self.direct_connect_gateway_association_proposals = Some(v);
-                        self
+    pub fn direct_connect_gateway_association_proposals(
+        mut self,
+        input: crate::types::DirectConnectGatewayAssociationProposal,
+    ) -> Self {
+        let mut v = self
+            .direct_connect_gateway_association_proposals
+            .unwrap_or_default();
+        v.push(input);
+        self.direct_connect_gateway_association_proposals = Some(v);
+        self
     }
     /// <p>Describes the Direct Connect gateway association proposals.</p>
-    pub fn set_direct_connect_gateway_association_proposals(mut self, input: std::option::Option<std::vec::Vec<crate::types::DirectConnectGatewayAssociationProposal>>) -> Self {
-        self.direct_connect_gateway_association_proposals = input; self
+    pub fn set_direct_connect_gateway_association_proposals(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::DirectConnectGatewayAssociationProposal>,
+        >,
+    ) -> Self {
+        self.direct_connect_gateway_association_proposals = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +79,20 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsOutput).
-    pub fn build(self) -> crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsOutput {
+    pub fn build(self) -> crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsOutput{
         crate::operation::describe_direct_connect_gateway_association_proposals::DescribeDirectConnectGatewayAssociationProposalsOutput {
             direct_connect_gateway_association_proposals: self.direct_connect_gateway_association_proposals
             ,
@@ -86,4 +102,3 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutputBuilder {
         }
     }
 }
-

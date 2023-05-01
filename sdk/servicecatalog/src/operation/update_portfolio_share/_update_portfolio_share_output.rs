@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePortfolioShareOutput  {
+pub struct UpdatePortfolioShareOutput {
     /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
     #[doc(hidden)]
     pub portfolio_share_token: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct UpdatePortfolioShareOutput  {
 }
 impl UpdatePortfolioShareOutput {
     /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
-    pub fn portfolio_share_token(&self) -> std::option::Option<& str> {
+    pub fn portfolio_share_token(&self) -> std::option::Option<&str> {
         self.portfolio_share_token.as_deref()
     }
     /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ShareStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ShareStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdatePortfolioShareOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdatePortfolioShareOutput {
     /// Creates a new builder-style object to manufacture [`UpdatePortfolioShareOutput`](crate::operation::update_portfolio_share::UpdatePortfolioShareOutput).
-    pub fn builder() -> crate::operation::update_portfolio_share::builders::UpdatePortfolioShareOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_portfolio_share::builders::UpdatePortfolioShareOutputBuilder {
         crate::operation::update_portfolio_share::builders::UpdatePortfolioShareOutputBuilder::default()
     }
 }
@@ -48,8 +49,12 @@ impl UpdatePortfolioShareOutputBuilder {
         self
     }
     /// <p>The token that tracks the status of the <code>UpdatePortfolioShare</code> operation for external account to account or organizational type sharing.</p>
-    pub fn set_portfolio_share_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portfolio_share_token = input; self
+    pub fn set_portfolio_share_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.portfolio_share_token = input;
+        self
     }
     /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
@@ -58,26 +63,24 @@ impl UpdatePortfolioShareOutputBuilder {
     }
     /// <p>The status of <code>UpdatePortfolioShare</code> operation. You can also obtain the operation status using <code>DescribePortfolioShareStatus</code> API. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ShareStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdatePortfolioShareOutput`](crate::operation::update_portfolio_share::UpdatePortfolioShareOutput).
     pub fn build(self) -> crate::operation::update_portfolio_share::UpdatePortfolioShareOutput {
         crate::operation::update_portfolio_share::UpdatePortfolioShareOutput {
-            portfolio_share_token: self.portfolio_share_token
-            ,
-            status: self.status
-            ,
+            portfolio_share_token: self.portfolio_share_token,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

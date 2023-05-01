@@ -3,7 +3,7 @@
 /// <p>Contains list of scanned and skipped EBS volumes with details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EbsVolumeDetails  {
+pub struct EbsVolumeDetails {
     /// <p>List of EBS volumes that were scanned.</p>
     #[doc(hidden)]
     pub scanned_volume_details: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>,
@@ -13,11 +13,11 @@ pub struct EbsVolumeDetails  {
 }
 impl EbsVolumeDetails {
     /// <p>List of EBS volumes that were scanned.</p>
-    pub fn scanned_volume_details(&self) -> std::option::Option<& [crate::types::VolumeDetail]> {
+    pub fn scanned_volume_details(&self) -> std::option::Option<&[crate::types::VolumeDetail]> {
         self.scanned_volume_details.as_deref()
     }
     /// <p>List of EBS volumes that were skipped from the malware scan.</p>
-    pub fn skipped_volume_details(&self) -> std::option::Option<& [crate::types::VolumeDetail]> {
+    pub fn skipped_volume_details(&self) -> std::option::Option<&[crate::types::VolumeDetail]> {
         self.skipped_volume_details.as_deref()
     }
 }
@@ -32,8 +32,10 @@ impl EbsVolumeDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct EbsVolumeDetailsBuilder {
-    pub(crate) scanned_volume_details: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>,
-    pub(crate) skipped_volume_details: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>,
+    pub(crate) scanned_volume_details:
+        std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>,
+    pub(crate) skipped_volume_details:
+        std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>,
 }
 impl EbsVolumeDetailsBuilder {
     /// Appends an item to `scanned_volume_details`.
@@ -43,13 +45,17 @@ impl EbsVolumeDetailsBuilder {
     /// <p>List of EBS volumes that were scanned.</p>
     pub fn scanned_volume_details(mut self, input: crate::types::VolumeDetail) -> Self {
         let mut v = self.scanned_volume_details.unwrap_or_default();
-                        v.push(input);
-                        self.scanned_volume_details = Some(v);
-                        self
+        v.push(input);
+        self.scanned_volume_details = Some(v);
+        self
     }
     /// <p>List of EBS volumes that were scanned.</p>
-    pub fn set_scanned_volume_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>) -> Self {
-        self.scanned_volume_details = input; self
+    pub fn set_scanned_volume_details(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>,
+    ) -> Self {
+        self.scanned_volume_details = input;
+        self
     }
     /// Appends an item to `skipped_volume_details`.
     ///
@@ -58,22 +64,23 @@ impl EbsVolumeDetailsBuilder {
     /// <p>List of EBS volumes that were skipped from the malware scan.</p>
     pub fn skipped_volume_details(mut self, input: crate::types::VolumeDetail) -> Self {
         let mut v = self.skipped_volume_details.unwrap_or_default();
-                        v.push(input);
-                        self.skipped_volume_details = Some(v);
-                        self
+        v.push(input);
+        self.skipped_volume_details = Some(v);
+        self
     }
     /// <p>List of EBS volumes that were skipped from the malware scan.</p>
-    pub fn set_skipped_volume_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>) -> Self {
-        self.skipped_volume_details = input; self
+    pub fn set_skipped_volume_details(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VolumeDetail>>,
+    ) -> Self {
+        self.skipped_volume_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`EbsVolumeDetails`](crate::types::EbsVolumeDetails).
     pub fn build(self) -> crate::types::EbsVolumeDetails {
         crate::types::EbsVolumeDetails {
-            scanned_volume_details: self.scanned_volume_details
-            ,
-            skipped_volume_details: self.skipped_volume_details
-            ,
+            scanned_volume_details: self.scanned_volume_details,
+            skipped_volume_details: self.skipped_volume_details,
         }
     }
 }
-

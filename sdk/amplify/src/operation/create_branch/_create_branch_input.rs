@@ -3,7 +3,7 @@
 /// <p> The request structure for the create branch request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateBranchInput  {
+pub struct CreateBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
     #[doc(hidden)]
     pub app_id: std::option::Option<std::string::String>,
@@ -27,20 +27,22 @@ pub struct CreateBranchInput  {
     pub enable_auto_build: std::option::Option<bool>,
     /// <p> The environment variables for the branch. </p>
     #[doc(hidden)]
-    pub environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     #[doc(hidden)]
     pub basic_auth_credentials: std::option::Option<std::string::String>,
     /// <p> Enables basic authorization for the branch. </p>
     #[doc(hidden)]
     pub enable_basic_auth: std::option::Option<bool>,
-    /// <p>Enables performance mode for the branch.</p> 
+    /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     #[doc(hidden)]
     pub enable_performance_mode: std::option::Option<bool>,
     /// <p> The tag for the branch. </p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p> The build specification (build spec) for the branch. </p>
     #[doc(hidden)]
     pub build_spec: std::option::Option<std::string::String>,
@@ -62,23 +64,23 @@ pub struct CreateBranchInput  {
 }
 impl CreateBranchInput {
     /// <p> The unique ID for an Amplify app. </p>
-    pub fn app_id(&self) -> std::option::Option<& str> {
+    pub fn app_id(&self) -> std::option::Option<&str> {
         self.app_id.as_deref()
     }
     /// <p> The name for the branch. </p>
-    pub fn branch_name(&self) -> std::option::Option<& str> {
+    pub fn branch_name(&self) -> std::option::Option<&str> {
         self.branch_name.as_deref()
     }
     /// <p> The description for the branch. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> Describes the current stage for the branch. </p>
-    pub fn stage(&self) -> std::option::Option<& crate::types::Stage> {
+    pub fn stage(&self) -> std::option::Option<&crate::types::Stage> {
         self.stage.as_ref()
     }
     /// <p> The framework for the branch. </p>
-    pub fn framework(&self) -> std::option::Option<& str> {
+    pub fn framework(&self) -> std::option::Option<&str> {
         self.framework.as_deref()
     }
     /// <p> Enables notifications for the branch. </p>
@@ -90,36 +92,42 @@ impl CreateBranchInput {
         self.enable_auto_build
     }
     /// <p> The environment variables for the branch. </p>
-    pub fn environment_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.environment_variables.as_ref()
     }
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn basic_auth_credentials(&self) -> std::option::Option<& str> {
+    pub fn basic_auth_credentials(&self) -> std::option::Option<&str> {
         self.basic_auth_credentials.as_deref()
     }
     /// <p> Enables basic authorization for the branch. </p>
     pub fn enable_basic_auth(&self) -> std::option::Option<bool> {
         self.enable_basic_auth
     }
-    /// <p>Enables performance mode for the branch.</p> 
+    /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn enable_performance_mode(&self) -> std::option::Option<bool> {
         self.enable_performance_mode
     }
     /// <p> The tag for the branch. </p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p> The build specification (build spec) for the branch. </p>
-    pub fn build_spec(&self) -> std::option::Option<& str> {
+    pub fn build_spec(&self) -> std::option::Option<&str> {
         self.build_spec.as_deref()
     }
     /// <p> The content Time To Live (TTL) for the website in seconds. </p>
-    pub fn ttl(&self) -> std::option::Option<& str> {
+    pub fn ttl(&self) -> std::option::Option<&str> {
         self.ttl.as_deref()
     }
     /// <p> The display name for a branch. This is used as the default domain prefix. </p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p> Enables pull request previews for this branch. </p>
@@ -127,15 +135,15 @@ impl CreateBranchInput {
         self.enable_pull_request_preview
     }
     /// <p> The Amplify environment name for the pull request. </p>
-    pub fn pull_request_environment_name(&self) -> std::option::Option<& str> {
+    pub fn pull_request_environment_name(&self) -> std::option::Option<&str> {
         self.pull_request_environment_name.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn backend_environment_arn(&self) -> std::option::Option<& str> {
+    pub fn backend_environment_arn(&self) -> std::option::Option<&str> {
         self.backend_environment_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateBranchInput  {
+impl std::fmt::Debug for CreateBranchInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateBranchInput");
         formatter.field("app_id", &self.app_id);
@@ -153,8 +161,14 @@ impl  std::fmt::Debug for CreateBranchInput  {
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("ttl", &self.ttl);
         formatter.field("display_name", &self.display_name);
-        formatter.field("enable_pull_request_preview", &self.enable_pull_request_preview);
-        formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
+        formatter.field(
+            "enable_pull_request_preview",
+            &self.enable_pull_request_preview,
+        );
+        formatter.field(
+            "pull_request_environment_name",
+            &self.pull_request_environment_name,
+        );
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
         formatter.finish()
     }
@@ -177,11 +191,13 @@ pub struct CreateBranchInputBuilder {
     pub(crate) framework: std::option::Option<std::string::String>,
     pub(crate) enable_notification: std::option::Option<bool>,
     pub(crate) enable_auto_build: std::option::Option<bool>,
-    pub(crate) environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) environment_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) basic_auth_credentials: std::option::Option<std::string::String>,
     pub(crate) enable_basic_auth: std::option::Option<bool>,
     pub(crate) enable_performance_mode: std::option::Option<bool>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) build_spec: std::option::Option<std::string::String>,
     pub(crate) ttl: std::option::Option<std::string::String>,
     pub(crate) display_name: std::option::Option<std::string::String>,
@@ -197,7 +213,8 @@ impl CreateBranchInputBuilder {
     }
     /// <p> The unique ID for an Amplify app. </p>
     pub fn set_app_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_id = input; self
+        self.app_id = input;
+        self
     }
     /// <p> The name for the branch. </p>
     pub fn branch_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -206,7 +223,8 @@ impl CreateBranchInputBuilder {
     }
     /// <p> The name for the branch. </p>
     pub fn set_branch_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.branch_name = input; self
+        self.branch_name = input;
+        self
     }
     /// <p> The description for the branch. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -215,7 +233,8 @@ impl CreateBranchInputBuilder {
     }
     /// <p> The description for the branch. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p> Describes the current stage for the branch. </p>
     pub fn stage(mut self, input: crate::types::Stage) -> Self {
@@ -224,7 +243,8 @@ impl CreateBranchInputBuilder {
     }
     /// <p> Describes the current stage for the branch. </p>
     pub fn set_stage(mut self, input: std::option::Option<crate::types::Stage>) -> Self {
-        self.stage = input; self
+        self.stage = input;
+        self
     }
     /// <p> The framework for the branch. </p>
     pub fn framework(mut self, input: impl Into<std::string::String>) -> Self {
@@ -233,7 +253,8 @@ impl CreateBranchInputBuilder {
     }
     /// <p> The framework for the branch. </p>
     pub fn set_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.framework = input; self
+        self.framework = input;
+        self
     }
     /// <p> Enables notifications for the branch. </p>
     pub fn enable_notification(mut self, input: bool) -> Self {
@@ -242,7 +263,8 @@ impl CreateBranchInputBuilder {
     }
     /// <p> Enables notifications for the branch. </p>
     pub fn set_enable_notification(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_notification = input; self
+        self.enable_notification = input;
+        self
     }
     /// <p> Enables auto building for the branch. </p>
     pub fn enable_auto_build(mut self, input: bool) -> Self {
@@ -251,22 +273,33 @@ impl CreateBranchInputBuilder {
     }
     /// <p> Enables auto building for the branch. </p>
     pub fn set_enable_auto_build(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_auto_build = input; self
+        self.enable_auto_build = input;
+        self
     }
     /// Adds a key-value pair to `environment_variables`.
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
     /// <p> The environment variables for the branch. </p>
-    pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn environment_variables(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.environment_variables = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.environment_variables = Some(hash_map);
+        self
     }
     /// <p> The environment variables for the branch. </p>
-    pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.environment_variables = input; self
+    pub fn set_environment_variables(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.environment_variables = input;
+        self
     }
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
     pub fn basic_auth_credentials(mut self, input: impl Into<std::string::String>) -> Self {
@@ -274,8 +307,12 @@ impl CreateBranchInputBuilder {
         self
     }
     /// <p> The basic authorization credentials for the branch. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn set_basic_auth_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.basic_auth_credentials = input; self
+    pub fn set_basic_auth_credentials(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.basic_auth_credentials = input;
+        self
     }
     /// <p> Enables basic authorization for the branch. </p>
     pub fn enable_basic_auth(mut self, input: bool) -> Self {
@@ -284,33 +321,45 @@ impl CreateBranchInputBuilder {
     }
     /// <p> Enables basic authorization for the branch. </p>
     pub fn set_enable_basic_auth(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_basic_auth = input; self
+        self.enable_basic_auth = input;
+        self
     }
-    /// <p>Enables performance mode for the branch.</p> 
+    /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn enable_performance_mode(mut self, input: bool) -> Self {
         self.enable_performance_mode = Some(input);
         self
     }
-    /// <p>Enables performance mode for the branch.</p> 
+    /// <p>Enables performance mode for the branch.</p>
     /// <p>Performance mode optimizes for faster hosting performance by keeping content cached at the edge for a longer interval. When performance mode is enabled, hosting configuration or code changes can take up to 10 minutes to roll out. </p>
     pub fn set_enable_performance_mode(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_performance_mode = input; self
+        self.enable_performance_mode = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tag for the branch. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p> The tag for the branch. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p> The build specification (build spec) for the branch. </p>
     pub fn build_spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -319,7 +368,8 @@ impl CreateBranchInputBuilder {
     }
     /// <p> The build specification (build spec) for the branch. </p>
     pub fn set_build_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.build_spec = input; self
+        self.build_spec = input;
+        self
     }
     /// <p> The content Time To Live (TTL) for the website in seconds. </p>
     pub fn ttl(mut self, input: impl Into<std::string::String>) -> Self {
@@ -328,7 +378,8 @@ impl CreateBranchInputBuilder {
     }
     /// <p> The content Time To Live (TTL) for the website in seconds. </p>
     pub fn set_ttl(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ttl = input; self
+        self.ttl = input;
+        self
     }
     /// <p> The display name for a branch. This is used as the default domain prefix. </p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -337,7 +388,8 @@ impl CreateBranchInputBuilder {
     }
     /// <p> The display name for a branch. This is used as the default domain prefix. </p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p> Enables pull request previews for this branch. </p>
     pub fn enable_pull_request_preview(mut self, input: bool) -> Self {
@@ -346,7 +398,8 @@ impl CreateBranchInputBuilder {
     }
     /// <p> Enables pull request previews for this branch. </p>
     pub fn set_enable_pull_request_preview(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_pull_request_preview = input; self
+        self.enable_pull_request_preview = input;
+        self
     }
     /// <p> The Amplify environment name for the pull request. </p>
     pub fn pull_request_environment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -354,8 +407,12 @@ impl CreateBranchInputBuilder {
         self
     }
     /// <p> The Amplify environment name for the pull request. </p>
-    pub fn set_pull_request_environment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pull_request_environment_name = input; self
+    pub fn set_pull_request_environment_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.pull_request_environment_name = input;
+        self
     }
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
     pub fn backend_environment_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -363,51 +420,40 @@ impl CreateBranchInputBuilder {
         self
     }
     /// <p> The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app. </p>
-    pub fn set_backend_environment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backend_environment_arn = input; self
+    pub fn set_backend_environment_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.backend_environment_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBranchInput`](crate::operation::create_branch::CreateBranchInput).
-    pub fn build(self) -> Result<crate::operation::create_branch::CreateBranchInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_branch::CreateBranchInput {
-                app_id: self.app_id
-                ,
-                branch_name: self.branch_name
-                ,
-                description: self.description
-                ,
-                stage: self.stage
-                ,
-                framework: self.framework
-                ,
-                enable_notification: self.enable_notification
-                ,
-                enable_auto_build: self.enable_auto_build
-                ,
-                environment_variables: self.environment_variables
-                ,
-                basic_auth_credentials: self.basic_auth_credentials
-                ,
-                enable_basic_auth: self.enable_basic_auth
-                ,
-                enable_performance_mode: self.enable_performance_mode
-                ,
-                tags: self.tags
-                ,
-                build_spec: self.build_spec
-                ,
-                ttl: self.ttl
-                ,
-                display_name: self.display_name
-                ,
-                enable_pull_request_preview: self.enable_pull_request_preview
-                ,
-                pull_request_environment_name: self.pull_request_environment_name
-                ,
-                backend_environment_arn: self.backend_environment_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_branch::CreateBranchInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_branch::CreateBranchInput {
+            app_id: self.app_id,
+            branch_name: self.branch_name,
+            description: self.description,
+            stage: self.stage,
+            framework: self.framework,
+            enable_notification: self.enable_notification,
+            enable_auto_build: self.enable_auto_build,
+            environment_variables: self.environment_variables,
+            basic_auth_credentials: self.basic_auth_credentials,
+            enable_basic_auth: self.enable_basic_auth,
+            enable_performance_mode: self.enable_performance_mode,
+            tags: self.tags,
+            build_spec: self.build_spec,
+            ttl: self.ttl,
+            display_name: self.display_name,
+            enable_pull_request_preview: self.enable_pull_request_preview,
+            pull_request_environment_name: self.pull_request_environment_name,
+            backend_environment_arn: self.backend_environment_arn,
+        })
     }
 }
 impl std::fmt::Debug for CreateBranchInputBuilder {
@@ -428,10 +474,15 @@ impl std::fmt::Debug for CreateBranchInputBuilder {
         formatter.field("build_spec", &"*** Sensitive Data Redacted ***");
         formatter.field("ttl", &self.ttl);
         formatter.field("display_name", &self.display_name);
-        formatter.field("enable_pull_request_preview", &self.enable_pull_request_preview);
-        formatter.field("pull_request_environment_name", &self.pull_request_environment_name);
+        formatter.field(
+            "enable_pull_request_preview",
+            &self.enable_pull_request_preview,
+        );
+        formatter.field(
+            "pull_request_environment_name",
+            &self.pull_request_environment_name,
+        );
         formatter.field("backend_environment_arn", &self.backend_environment_arn);
         formatter.finish()
     }
 }
-

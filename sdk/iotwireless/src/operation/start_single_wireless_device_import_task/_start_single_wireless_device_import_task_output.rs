@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartSingleWirelessDeviceImportTaskOutput  {
+pub struct StartSingleWirelessDeviceImportTaskOutput {
     /// <p>The import task ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct StartSingleWirelessDeviceImportTaskOutput  {
 }
 impl StartSingleWirelessDeviceImportTaskOutput {
     /// <p>The import task ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartSingleWirelessDeviceImportTaskOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartSingleWirelessDeviceImportTaskOutput {
     /// Creates a new builder-style object to manufacture [`StartSingleWirelessDeviceImportTaskOutput`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput).
-    pub fn builder() -> crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskOutputBuilder {
+    pub fn builder() -> crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskOutputBuilder{
         crate::operation::start_single_wireless_device_import_task::builders::StartSingleWirelessDeviceImportTaskOutputBuilder::default()
     }
 }
@@ -49,7 +49,8 @@ impl StartSingleWirelessDeviceImportTaskOutputBuilder {
     }
     /// <p>The import task ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,19 +59,20 @@ impl StartSingleWirelessDeviceImportTaskOutputBuilder {
     }
     /// <p>The ARN (Amazon Resource Name) of the import task.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartSingleWirelessDeviceImportTaskOutput`](crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput).
-    pub fn build(self) -> crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput {
+    pub fn build(self) -> crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput{
         crate::operation::start_single_wireless_device_import_task::StartSingleWirelessDeviceImportTaskOutput {
             id: self.id
             ,
@@ -80,4 +82,3 @@ impl StartSingleWirelessDeviceImportTaskOutputBuilder {
         }
     }
 }
-

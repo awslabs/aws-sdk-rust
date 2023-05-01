@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStackInstancesForProvisionedProductOutput  {
+pub struct ListStackInstancesForProvisionedProductOutput {
     /// <p>List of stack instances.</p>
     #[doc(hidden)]
     pub stack_instances: std::option::Option<std::vec::Vec<crate::types::StackInstance>>,
@@ -13,22 +13,22 @@ pub struct ListStackInstancesForProvisionedProductOutput  {
 }
 impl ListStackInstancesForProvisionedProductOutput {
     /// <p>List of stack instances.</p>
-    pub fn stack_instances(&self) -> std::option::Option<& [crate::types::StackInstance]> {
+    pub fn stack_instances(&self) -> std::option::Option<&[crate::types::StackInstance]> {
         self.stack_instances.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<& str> {
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListStackInstancesForProvisionedProductOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListStackInstancesForProvisionedProductOutput {
     /// Creates a new builder-style object to manufacture [`ListStackInstancesForProvisionedProductOutput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput).
-    pub fn builder() -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductOutputBuilder {
+    pub fn builder() -> crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductOutputBuilder{
         crate::operation::list_stack_instances_for_provisioned_product::builders::ListStackInstancesForProvisionedProductOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListStackInstancesForProvisionedProductOutputBuilder {
     /// <p>List of stack instances.</p>
     pub fn stack_instances(mut self, input: crate::types::StackInstance) -> Self {
         let mut v = self.stack_instances.unwrap_or_default();
-                        v.push(input);
-                        self.stack_instances = Some(v);
-                        self
+        v.push(input);
+        self.stack_instances = Some(v);
+        self
     }
     /// <p>List of stack instances.</p>
-    pub fn set_stack_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::StackInstance>>) -> Self {
-        self.stack_instances = input; self
+    pub fn set_stack_instances(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StackInstance>>,
+    ) -> Self {
+        self.stack_instances = input;
+        self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +68,20 @@ impl ListStackInstancesForProvisionedProductOutputBuilder {
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input; self
+        self.next_page_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListStackInstancesForProvisionedProductOutput`](crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput).
-    pub fn build(self) -> crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput {
+    pub fn build(self) -> crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput{
         crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput {
             stack_instances: self.stack_instances
             ,
@@ -86,4 +91,3 @@ impl ListStackInstancesForProvisionedProductOutputBuilder {
         }
     }
 }
-

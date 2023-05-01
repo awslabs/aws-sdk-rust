@@ -3,7 +3,7 @@
 /// <p>Command to be run on a particular operating system.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlatformCommand  {
+pub struct PlatformCommand {
     /// <p>Command for Linux.</p>
     #[doc(hidden)]
     pub linux: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PlatformCommand  {
 }
 impl PlatformCommand {
     /// <p>Command for Linux.</p>
-    pub fn linux(&self) -> std::option::Option<& str> {
+    pub fn linux(&self) -> std::option::Option<&str> {
         self.linux.as_deref()
     }
     /// <p>Command for Windows.</p>
-    pub fn windows(&self) -> std::option::Option<& str> {
+    pub fn windows(&self) -> std::option::Option<&str> {
         self.windows.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl PlatformCommandBuilder {
     }
     /// <p>Command for Linux.</p>
     pub fn set_linux(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.linux = input; self
+        self.linux = input;
+        self
     }
     /// <p>Command for Windows.</p>
     pub fn windows(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl PlatformCommandBuilder {
     }
     /// <p>Command for Windows.</p>
     pub fn set_windows(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.windows = input; self
+        self.windows = input;
+        self
     }
     /// Consumes the builder and constructs a [`PlatformCommand`](crate::types::PlatformCommand).
     pub fn build(self) -> crate::types::PlatformCommand {
         crate::types::PlatformCommand {
-            linux: self.linux
-            ,
-            windows: self.windows
-            ,
+            linux: self.linux,
+            windows: self.windows,
         }
     }
 }
-

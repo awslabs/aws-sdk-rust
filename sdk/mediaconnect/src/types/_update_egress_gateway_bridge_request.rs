@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEgressGatewayBridgeRequest  {
+pub struct UpdateEgressGatewayBridgeRequest {
     /// Update an existing egress-type bridge.
     #[doc(hidden)]
     pub max_bitrate: i32,
@@ -34,15 +34,13 @@ impl UpdateEgressGatewayBridgeRequestBuilder {
     }
     /// Update an existing egress-type bridge.
     pub fn set_max_bitrate(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_bitrate = input; self
+        self.max_bitrate = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateEgressGatewayBridgeRequest`](crate::types::UpdateEgressGatewayBridgeRequest).
     pub fn build(self) -> crate::types::UpdateEgressGatewayBridgeRequest {
         crate::types::UpdateEgressGatewayBridgeRequest {
-            max_bitrate: self.max_bitrate
-                .unwrap_or_default()
-            ,
+            max_bitrate: self.max_bitrate.unwrap_or_default(),
         }
     }
 }
-

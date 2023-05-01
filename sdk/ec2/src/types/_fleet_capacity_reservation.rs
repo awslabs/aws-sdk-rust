@@ -3,7 +3,7 @@
 /// <p>Information about a Capacity Reservation in a Capacity Reservation Fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FleetCapacityReservation  {
+pub struct FleetCapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
     #[doc(hidden)]
     pub capacity_reservation_id: std::option::Option<std::string::String>,
@@ -40,23 +40,25 @@ pub struct FleetCapacityReservation  {
 }
 impl FleetCapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn capacity_reservation_id(&self) -> std::option::Option<& str> {
+    pub fn capacity_reservation_id(&self) -> std::option::Option<&str> {
         self.capacity_reservation_id.as_deref()
     }
     /// <p>The ID of the Availability Zone in which the Capacity Reservation reserves capacity.</p>
-    pub fn availability_zone_id(&self) -> std::option::Option<& str> {
+    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The instance type for which the Capacity Reservation reserves capacity.</p>
-    pub fn instance_type(&self) -> std::option::Option<& crate::types::InstanceType> {
+    pub fn instance_type(&self) -> std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn instance_platform(&self) -> std::option::Option<& crate::types::CapacityReservationInstancePlatform> {
+    pub fn instance_platform(
+        &self,
+    ) -> std::option::Option<&crate::types::CapacityReservationInstancePlatform> {
         self.instance_platform.as_ref()
     }
     /// <p>The Availability Zone in which the Capacity Reservation reserves capacity.</p>
-    pub fn availability_zone(&self) -> std::option::Option<& str> {
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
     /// <p>The total number of instances for which the Capacity Reservation reserves capacity.</p>
@@ -72,7 +74,7 @@ impl FleetCapacityReservation {
         self.ebs_optimized
     }
     /// <p>The date and time at which the Capacity Reservation was created.</p>
-    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight"> Instance type weight</a> in the Amazon EC2 User Guide.</p>
@@ -98,7 +100,8 @@ pub struct FleetCapacityReservationBuilder {
     pub(crate) capacity_reservation_id: std::option::Option<std::string::String>,
     pub(crate) availability_zone_id: std::option::Option<std::string::String>,
     pub(crate) instance_type: std::option::Option<crate::types::InstanceType>,
-    pub(crate) instance_platform: std::option::Option<crate::types::CapacityReservationInstancePlatform>,
+    pub(crate) instance_platform:
+        std::option::Option<crate::types::CapacityReservationInstancePlatform>,
     pub(crate) availability_zone: std::option::Option<std::string::String>,
     pub(crate) total_instance_count: std::option::Option<i32>,
     pub(crate) fulfilled_capacity: std::option::Option<f64>,
@@ -114,8 +117,12 @@ impl FleetCapacityReservationBuilder {
         self
     }
     /// <p>The ID of the Capacity Reservation.</p>
-    pub fn set_capacity_reservation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.capacity_reservation_id = input; self
+    pub fn set_capacity_reservation_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.capacity_reservation_id = input;
+        self
     }
     /// <p>The ID of the Availability Zone in which the Capacity Reservation reserves capacity.</p>
     pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,8 +130,12 @@ impl FleetCapacityReservationBuilder {
         self
     }
     /// <p>The ID of the Availability Zone in which the Capacity Reservation reserves capacity.</p>
-    pub fn set_availability_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.availability_zone_id = input; self
+    pub fn set_availability_zone_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.availability_zone_id = input;
+        self
     }
     /// <p>The instance type for which the Capacity Reservation reserves capacity.</p>
     pub fn instance_type(mut self, input: crate::types::InstanceType) -> Self {
@@ -132,17 +143,28 @@ impl FleetCapacityReservationBuilder {
         self
     }
     /// <p>The instance type for which the Capacity Reservation reserves capacity.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<crate::types::InstanceType>) -> Self {
-        self.instance_type = input; self
+    pub fn set_instance_type(
+        mut self,
+        input: std::option::Option<crate::types::InstanceType>,
+    ) -> Self {
+        self.instance_type = input;
+        self
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn instance_platform(mut self, input: crate::types::CapacityReservationInstancePlatform) -> Self {
+    pub fn instance_platform(
+        mut self,
+        input: crate::types::CapacityReservationInstancePlatform,
+    ) -> Self {
         self.instance_platform = Some(input);
         self
     }
     /// <p>The type of operating system for which the Capacity Reservation reserves capacity.</p>
-    pub fn set_instance_platform(mut self, input: std::option::Option<crate::types::CapacityReservationInstancePlatform>) -> Self {
-        self.instance_platform = input; self
+    pub fn set_instance_platform(
+        mut self,
+        input: std::option::Option<crate::types::CapacityReservationInstancePlatform>,
+    ) -> Self {
+        self.instance_platform = input;
+        self
     }
     /// <p>The Availability Zone in which the Capacity Reservation reserves capacity.</p>
     pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,8 +172,12 @@ impl FleetCapacityReservationBuilder {
         self
     }
     /// <p>The Availability Zone in which the Capacity Reservation reserves capacity.</p>
-    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.availability_zone = input; self
+    pub fn set_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.availability_zone = input;
+        self
     }
     /// <p>The total number of instances for which the Capacity Reservation reserves capacity.</p>
     pub fn total_instance_count(mut self, input: i32) -> Self {
@@ -160,7 +186,8 @@ impl FleetCapacityReservationBuilder {
     }
     /// <p>The total number of instances for which the Capacity Reservation reserves capacity.</p>
     pub fn set_total_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_instance_count = input; self
+        self.total_instance_count = input;
+        self
     }
     /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
     pub fn fulfilled_capacity(mut self, input: f64) -> Self {
@@ -169,7 +196,8 @@ impl FleetCapacityReservationBuilder {
     }
     /// <p>The number of capacity units fulfilled by the Capacity Reservation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#target-capacity"> Total target capacity</a> in the Amazon EC2 User Guide.</p>
     pub fn set_fulfilled_capacity(mut self, input: std::option::Option<f64>) -> Self {
-        self.fulfilled_capacity = input; self
+        self.fulfilled_capacity = input;
+        self
     }
     /// <p>Indicates whether the Capacity Reservation reserves capacity for EBS-optimized instance types.</p>
     pub fn ebs_optimized(mut self, input: bool) -> Self {
@@ -178,7 +206,8 @@ impl FleetCapacityReservationBuilder {
     }
     /// <p>Indicates whether the Capacity Reservation reserves capacity for EBS-optimized instance types.</p>
     pub fn set_ebs_optimized(mut self, input: std::option::Option<bool>) -> Self {
-        self.ebs_optimized = input; self
+        self.ebs_optimized = input;
+        self
     }
     /// <p>The date and time at which the Capacity Reservation was created.</p>
     pub fn create_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -186,8 +215,12 @@ impl FleetCapacityReservationBuilder {
         self
     }
     /// <p>The date and time at which the Capacity Reservation was created.</p>
-    pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input; self
+    pub fn set_create_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_date = input;
+        self
     }
     /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight"> Instance type weight</a> in the Amazon EC2 User Guide.</p>
     pub fn weight(mut self, input: f64) -> Self {
@@ -196,7 +229,8 @@ impl FleetCapacityReservationBuilder {
     }
     /// <p>The weight of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-weight"> Instance type weight</a> in the Amazon EC2 User Guide.</p>
     pub fn set_weight(mut self, input: std::option::Option<f64>) -> Self {
-        self.weight = input; self
+        self.weight = input;
+        self
     }
     /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority"> Instance type priority</a> in the Amazon EC2 User Guide.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -205,34 +239,23 @@ impl FleetCapacityReservationBuilder {
     }
     /// <p>The priority of the instance type in the Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/crfleet-concepts.html#instance-priority"> Instance type priority</a> in the Amazon EC2 User Guide.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input; self
+        self.priority = input;
+        self
     }
     /// Consumes the builder and constructs a [`FleetCapacityReservation`](crate::types::FleetCapacityReservation).
     pub fn build(self) -> crate::types::FleetCapacityReservation {
         crate::types::FleetCapacityReservation {
-            capacity_reservation_id: self.capacity_reservation_id
-            ,
-            availability_zone_id: self.availability_zone_id
-            ,
-            instance_type: self.instance_type
-            ,
-            instance_platform: self.instance_platform
-            ,
-            availability_zone: self.availability_zone
-            ,
-            total_instance_count: self.total_instance_count
-            ,
-            fulfilled_capacity: self.fulfilled_capacity
-            ,
-            ebs_optimized: self.ebs_optimized
-            ,
-            create_date: self.create_date
-            ,
-            weight: self.weight
-            ,
-            priority: self.priority
-            ,
+            capacity_reservation_id: self.capacity_reservation_id,
+            availability_zone_id: self.availability_zone_id,
+            instance_type: self.instance_type,
+            instance_platform: self.instance_platform,
+            availability_zone: self.availability_zone,
+            total_instance_count: self.total_instance_count,
+            fulfilled_capacity: self.fulfilled_capacity,
+            ebs_optimized: self.ebs_optimized,
+            create_date: self.create_date,
+            weight: self.weight,
+            priority: self.priority,
         }
     }
 }
-

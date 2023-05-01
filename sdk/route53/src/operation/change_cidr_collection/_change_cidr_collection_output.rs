@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangeCidrCollectionOutput  {
+pub struct ChangeCidrCollectionOutput {
     /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct ChangeCidrCollectionOutput  {
 }
 impl ChangeCidrCollectionOutput {
     /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ChangeCidrCollectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ChangeCidrCollectionOutput {
     /// Creates a new builder-style object to manufacture [`ChangeCidrCollectionOutput`](crate::operation::change_cidr_collection::ChangeCidrCollectionOutput).
-    pub fn builder() -> crate::operation::change_cidr_collection::builders::ChangeCidrCollectionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::change_cidr_collection::builders::ChangeCidrCollectionOutputBuilder {
         crate::operation::change_cidr_collection::builders::ChangeCidrCollectionOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl ChangeCidrCollectionOutputBuilder {
     }
     /// <p>The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input to <code>GetChange</code> to see if a CIDR collection change has propagated or not.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ChangeCidrCollectionOutput`](crate::operation::change_cidr_collection::ChangeCidrCollectionOutput).
     pub fn build(self) -> crate::operation::change_cidr_collection::ChangeCidrCollectionOutput {
         crate::operation::change_cidr_collection::ChangeCidrCollectionOutput {
-            id: self.id
-            ,
+            id: self.id,
             _request_id: self._request_id,
         }
     }
 }
-

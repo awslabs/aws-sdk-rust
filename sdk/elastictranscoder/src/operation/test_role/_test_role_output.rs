@@ -4,7 +4,7 @@
 #[deprecated]
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestRoleOutput  {
+pub struct TestRoleOutput {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     #[doc(hidden)]
     pub success: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct TestRoleOutput  {
 }
 impl TestRoleOutput {
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
-    pub fn success(&self) -> std::option::Option<& str> {
+    pub fn success(&self) -> std::option::Option<&str> {
         self.success.as_deref()
     }
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
-    pub fn messages(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn messages(&self) -> std::option::Option<&[std::string::String]> {
         self.messages.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for TestRoleOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl TestRoleOutput {
     /// Creates a new builder-style object to manufacture [`TestRoleOutput`](crate::operation::test_role::TestRoleOutput).
     pub fn builder() -> crate::operation::test_role::builders::TestRoleOutputBuilder {
@@ -51,7 +51,8 @@ impl TestRoleOutputBuilder {
     }
     /// <p>If the operation is successful, this value is <code>true</code>; otherwise, the value is <code>false</code>.</p>
     pub fn set_success(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.success = input; self
+        self.success = input;
+        self
     }
     /// Appends an item to `messages`.
     ///
@@ -60,32 +61,33 @@ impl TestRoleOutputBuilder {
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
     pub fn messages(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.messages.unwrap_or_default();
-                        v.push(input.into());
-                        self.messages = Some(v);
-                        self
+        v.push(input.into());
+        self.messages = Some(v);
+        self
     }
     /// <p>If the <code>Success</code> element contains <code>false</code>, this value is an array of one or more error messages that were generated during the test process.</p>
-    pub fn set_messages(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.messages = input; self
+    pub fn set_messages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.messages = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`TestRoleOutput`](crate::operation::test_role::TestRoleOutput).
     pub fn build(self) -> crate::operation::test_role::TestRoleOutput {
         crate::operation::test_role::TestRoleOutput {
-            success: self.success
-            ,
-            messages: self.messages
-            ,
+            success: self.success,
+            messages: self.messages,
             _request_id: self._request_id,
         }
     }
 }
-

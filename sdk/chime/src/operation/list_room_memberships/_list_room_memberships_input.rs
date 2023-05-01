@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRoomMembershipsInput  {
+pub struct ListRoomMembershipsInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListRoomMembershipsInput  {
 }
 impl ListRoomMembershipsInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The room ID.</p>
-    pub fn room_id(&self) -> std::option::Option<& str> {
+    pub fn room_id(&self) -> std::option::Option<&str> {
         self.room_id.as_deref()
     }
     /// <p>The maximum number of results to return in a single call.</p>
@@ -30,14 +30,16 @@ impl ListRoomMembershipsInput {
         self.max_results
     }
     /// <p>The token to use to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListRoomMembershipsInput {
     /// Creates a new builder-style object to manufacture [`ListRoomMembershipsInput`](crate::operation::list_room_memberships::ListRoomMembershipsInput).
-    pub fn builder() -> crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder {
-        crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder {
+        crate::operation::list_room_memberships::builders::ListRoomMembershipsInputBuilder::default(
+        )
     }
 }
 
@@ -58,7 +60,8 @@ impl ListRoomMembershipsInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The room ID.</p>
     pub fn room_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl ListRoomMembershipsInputBuilder {
     }
     /// <p>The room ID.</p>
     pub fn set_room_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.room_id = input; self
+        self.room_id = input;
+        self
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,7 +80,8 @@ impl ListRoomMembershipsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +90,23 @@ impl ListRoomMembershipsInputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListRoomMembershipsInput`](crate::operation::list_room_memberships::ListRoomMembershipsInput).
-    pub fn build(self) -> Result<crate::operation::list_room_memberships::ListRoomMembershipsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_room_memberships::ListRoomMembershipsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_room_memberships::ListRoomMembershipsInput {
-                account_id: self.account_id
-                ,
-                room_id: self.room_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                account_id: self.account_id,
+                room_id: self.room_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

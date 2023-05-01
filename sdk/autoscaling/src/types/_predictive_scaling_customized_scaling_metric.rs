@@ -3,14 +3,14 @@
 /// <p>Describes a custom scaling metric for a predictive scaling policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PredictiveScalingCustomizedScalingMetric  {
+pub struct PredictiveScalingCustomizedScalingMetric {
     /// <p>One or more metric data queries to provide the data points for a scaling metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     #[doc(hidden)]
     pub metric_data_queries: std::option::Option<std::vec::Vec<crate::types::MetricDataQuery>>,
 }
 impl PredictiveScalingCustomizedScalingMetric {
     /// <p>One or more metric data queries to provide the data points for a scaling metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
-    pub fn metric_data_queries(&self) -> std::option::Option<& [crate::types::MetricDataQuery]> {
+    pub fn metric_data_queries(&self) -> std::option::Option<&[crate::types::MetricDataQuery]> {
         self.metric_data_queries.as_deref()
     }
 }
@@ -25,7 +25,8 @@ impl PredictiveScalingCustomizedScalingMetric {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PredictiveScalingCustomizedScalingMetricBuilder {
-    pub(crate) metric_data_queries: std::option::Option<std::vec::Vec<crate::types::MetricDataQuery>>,
+    pub(crate) metric_data_queries:
+        std::option::Option<std::vec::Vec<crate::types::MetricDataQuery>>,
 }
 impl PredictiveScalingCustomizedScalingMetricBuilder {
     /// Appends an item to `metric_data_queries`.
@@ -35,20 +36,22 @@ impl PredictiveScalingCustomizedScalingMetricBuilder {
     /// <p>One or more metric data queries to provide the data points for a scaling metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
     pub fn metric_data_queries(mut self, input: crate::types::MetricDataQuery) -> Self {
         let mut v = self.metric_data_queries.unwrap_or_default();
-                        v.push(input);
-                        self.metric_data_queries = Some(v);
-                        self
+        v.push(input);
+        self.metric_data_queries = Some(v);
+        self
     }
     /// <p>One or more metric data queries to provide the data points for a scaling metric. Use multiple metric data queries only if you are performing a math expression on returned data. </p>
-    pub fn set_metric_data_queries(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricDataQuery>>) -> Self {
-        self.metric_data_queries = input; self
+    pub fn set_metric_data_queries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricDataQuery>>,
+    ) -> Self {
+        self.metric_data_queries = input;
+        self
     }
     /// Consumes the builder and constructs a [`PredictiveScalingCustomizedScalingMetric`](crate::types::PredictiveScalingCustomizedScalingMetric).
     pub fn build(self) -> crate::types::PredictiveScalingCustomizedScalingMetric {
         crate::types::PredictiveScalingCustomizedScalingMetric {
-            metric_data_queries: self.metric_data_queries
-            ,
+            metric_data_queries: self.metric_data_queries,
         }
     }
 }
-

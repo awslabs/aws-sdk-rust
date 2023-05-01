@@ -3,7 +3,7 @@
 /// <p>A job for a device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Job  {
+pub struct Job {
     /// <p>The job's ID.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Job  {
 }
 impl Job {
     /// <p>The job's ID.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The target device's ID.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl JobBuilder {
     }
     /// <p>The job's ID.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>The target device's ID.</p>
     pub fn device_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl JobBuilder {
     }
     /// <p>The target device's ID.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`Job`](crate::types::Job).
     pub fn build(self) -> crate::types::Job {
         crate::types::Job {
-            job_id: self.job_id
-            ,
-            device_id: self.device_id
-            ,
+            job_id: self.job_id,
+            device_id: self.device_id,
         }
     }
 }
-

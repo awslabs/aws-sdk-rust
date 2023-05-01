@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServicePipelineOutput  {
+pub struct UpdateServicePipelineOutput {
     /// <p>The pipeline details that are returned by Proton.</p>
     #[doc(hidden)]
     pub pipeline: std::option::Option<crate::types::ServicePipeline>,
@@ -10,18 +10,20 @@ pub struct UpdateServicePipelineOutput  {
 }
 impl UpdateServicePipelineOutput {
     /// <p>The pipeline details that are returned by Proton.</p>
-    pub fn pipeline(&self) -> std::option::Option<& crate::types::ServicePipeline> {
+    pub fn pipeline(&self) -> std::option::Option<&crate::types::ServicePipeline> {
         self.pipeline.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateServicePipelineOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateServicePipelineOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServicePipelineOutput`](crate::operation::update_service_pipeline::UpdateServicePipelineOutput).
-    pub fn builder() -> crate::operation::update_service_pipeline::builders::UpdateServicePipelineOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_service_pipeline::builders::UpdateServicePipelineOutputBuilder
+    {
         crate::operation::update_service_pipeline::builders::UpdateServicePipelineOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl UpdateServicePipelineOutputBuilder {
         self
     }
     /// <p>The pipeline details that are returned by Proton.</p>
-    pub fn set_pipeline(mut self, input: std::option::Option<crate::types::ServicePipeline>) -> Self {
-        self.pipeline = input; self
+    pub fn set_pipeline(
+        mut self,
+        input: std::option::Option<crate::types::ServicePipeline>,
+    ) -> Self {
+        self.pipeline = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateServicePipelineOutput`](crate::operation::update_service_pipeline::UpdateServicePipelineOutput).
     pub fn build(self) -> crate::operation::update_service_pipeline::UpdateServicePipelineOutput {
         crate::operation::update_service_pipeline::UpdateServicePipelineOutput {
-            pipeline: self.pipeline
-            ,
+            pipeline: self.pipeline,
             _request_id: self._request_id,
         }
     }
 }
-

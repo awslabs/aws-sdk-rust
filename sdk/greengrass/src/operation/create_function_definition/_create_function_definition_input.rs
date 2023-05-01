@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFunctionDefinitionInput  {
+pub struct CreateFunctionDefinitionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
@@ -14,29 +14,35 @@ pub struct CreateFunctionDefinitionInput  {
     pub name: std::option::Option<std::string::String>,
     /// Tag(s) to add to the new resource.
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFunctionDefinitionInput {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> std::option::Option<& str> {
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
         self.amzn_client_token.as_deref()
     }
     /// Information about the initial version of the function definition.
-    pub fn initial_version(&self) -> std::option::Option<& crate::types::FunctionDefinitionVersion> {
+    pub fn initial_version(&self) -> std::option::Option<&crate::types::FunctionDefinitionVersion> {
         self.initial_version.as_ref()
     }
     /// The name of the function definition.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// Tag(s) to add to the new resource.
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl CreateFunctionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`CreateFunctionDefinitionInput`](crate::operation::create_function_definition::CreateFunctionDefinitionInput).
-    pub fn builder() -> crate::operation::create_function_definition::builders::CreateFunctionDefinitionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_function_definition::builders::CreateFunctionDefinitionInputBuilder
+    {
         crate::operation::create_function_definition::builders::CreateFunctionDefinitionInputBuilder::default()
     }
 }
@@ -48,7 +54,8 @@ pub struct CreateFunctionDefinitionInputBuilder {
     pub(crate) amzn_client_token: std::option::Option<std::string::String>,
     pub(crate) initial_version: std::option::Option<crate::types::FunctionDefinitionVersion>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateFunctionDefinitionInputBuilder {
     /// A client token used to correlate requests and responses.
@@ -57,8 +64,12 @@ impl CreateFunctionDefinitionInputBuilder {
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amzn_client_token = input; self
+    pub fn set_amzn_client_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.amzn_client_token = input;
+        self
     }
     /// Information about the initial version of the function definition.
     pub fn initial_version(mut self, input: crate::types::FunctionDefinitionVersion) -> Self {
@@ -66,8 +77,12 @@ impl CreateFunctionDefinitionInputBuilder {
         self
     }
     /// Information about the initial version of the function definition.
-    pub fn set_initial_version(mut self, input: std::option::Option<crate::types::FunctionDefinitionVersion>) -> Self {
-        self.initial_version = input; self
+    pub fn set_initial_version(
+        mut self,
+        input: std::option::Option<crate::types::FunctionDefinitionVersion>,
+    ) -> Self {
+        self.initial_version = input;
+        self
     }
     /// The name of the function definition.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,37 +91,48 @@ impl CreateFunctionDefinitionInputBuilder {
     }
     /// The name of the function definition.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// Tag(s) to add to the new resource.
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// Tag(s) to add to the new resource.
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFunctionDefinitionInput`](crate::operation::create_function_definition::CreateFunctionDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::create_function_definition::CreateFunctionDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_function_definition::CreateFunctionDefinitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_function_definition::CreateFunctionDefinitionInput {
-                amzn_client_token: self.amzn_client_token
-                ,
-                initial_version: self.initial_version
-                ,
-                name: self.name
-                ,
-                tags: self.tags
-                ,
-            }
+                amzn_client_token: self.amzn_client_token,
+                initial_version: self.initial_version,
+                name: self.name,
+                tags: self.tags,
+            },
         )
     }
 }
-

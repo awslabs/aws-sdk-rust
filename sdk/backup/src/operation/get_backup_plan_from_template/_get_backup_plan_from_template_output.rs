@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBackupPlanFromTemplateOutput  {
+pub struct GetBackupPlanFromTemplateOutput {
     /// <p>Returns the body of a backup plan based on the target template, including the name, rules, and backup vault of the plan.</p>
     #[doc(hidden)]
     pub backup_plan_document: std::option::Option<crate::types::BackupPlan>,
@@ -10,18 +10,18 @@ pub struct GetBackupPlanFromTemplateOutput  {
 }
 impl GetBackupPlanFromTemplateOutput {
     /// <p>Returns the body of a backup plan based on the target template, including the name, rules, and backup vault of the plan.</p>
-    pub fn backup_plan_document(&self) -> std::option::Option<& crate::types::BackupPlan> {
+    pub fn backup_plan_document(&self) -> std::option::Option<&crate::types::BackupPlan> {
         self.backup_plan_document.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetBackupPlanFromTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetBackupPlanFromTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GetBackupPlanFromTemplateOutput`](crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput).
-    pub fn builder() -> crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateOutputBuilder{
         crate::operation::get_backup_plan_from_template::builders::GetBackupPlanFromTemplateOutputBuilder::default()
     }
 }
@@ -40,25 +40,29 @@ impl GetBackupPlanFromTemplateOutputBuilder {
         self
     }
     /// <p>Returns the body of a backup plan based on the target template, including the name, rules, and backup vault of the plan.</p>
-    pub fn set_backup_plan_document(mut self, input: std::option::Option<crate::types::BackupPlan>) -> Self {
-        self.backup_plan_document = input; self
+    pub fn set_backup_plan_document(
+        mut self,
+        input: std::option::Option<crate::types::BackupPlan>,
+    ) -> Self {
+        self.backup_plan_document = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetBackupPlanFromTemplateOutput`](crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput).
-    pub fn build(self) -> crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput {
         crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput {
-            backup_plan_document: self.backup_plan_document
-            ,
+            backup_plan_document: self.backup_plan_document,
             _request_id: self._request_id,
         }
     }
 }
-

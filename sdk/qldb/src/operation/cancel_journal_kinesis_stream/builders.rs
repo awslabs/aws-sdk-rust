@@ -4,51 +4,71 @@ pub use crate::operation::cancel_journal_kinesis_stream::_cancel_journal_kinesis
 pub use crate::operation::cancel_journal_kinesis_stream::_cancel_journal_kinesis_stream_input::CancelJournalKinesisStreamInputBuilder;
 
 /// Fluent builder constructing a request to `CancelJournalKinesisStream`.
-/// 
-/// <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be <code>ACTIVE</code>.</p> 
+///
+/// <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be <code>ACTIVE</code>.</p>
 /// <p>You can't restart a stream after you cancel it. Canceled QLDB stream resources are subject to a 7-day retention period, so they are automatically deleted after this limit expires.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CancelJournalKinesisStreamFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::cancel_journal_kinesis_stream::builders::CancelJournalKinesisStreamInputBuilder,
 }
-impl CancelJournalKinesisStreamFluentBuilder  {
+impl CancelJournalKinesisStreamFluentBuilder {
     /// Creates a new `CancelJournalKinesisStream`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStream, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamOutput, aws_smithy_http::result::SdkError<crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStream,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the ledger.</p>
     pub fn ledger_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ledger_name(input.into());
@@ -70,4 +90,3 @@ impl CancelJournalKinesisStreamFluentBuilder  {
         self
     }
 }
-

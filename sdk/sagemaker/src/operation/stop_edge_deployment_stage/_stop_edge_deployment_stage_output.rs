@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopEdgeDeploymentStageOutput  {
+pub struct StopEdgeDeploymentStageOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for StopEdgeDeploymentStageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StopEdgeDeploymentStageOutput {
     /// Creates a new builder-style object to manufacture [`StopEdgeDeploymentStageOutput`](crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput).
-    pub fn builder() -> crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageOutputBuilder
+    {
         crate::operation::stop_edge_deployment_stage::builders::StopEdgeDeploymentStageOutputBuilder::default()
     }
 }
@@ -25,19 +27,20 @@ pub struct StopEdgeDeploymentStageOutputBuilder {
 }
 impl StopEdgeDeploymentStageOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StopEdgeDeploymentStageOutput`](crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput).
-    pub fn build(self) -> crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput {
         crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput {
             _request_id: self._request_id,
         }
     }
 }
-

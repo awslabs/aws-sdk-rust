@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRulesOutput  {
+pub struct ListRulesOutput {
     /// <p>The rules that match the specified criteria.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::types::Rule>>,
@@ -13,19 +13,19 @@ pub struct ListRulesOutput  {
 }
 impl ListRulesOutput {
     /// <p>The rules that match the specified criteria.</p>
-    pub fn rules(&self) -> std::option::Option<& [crate::types::Rule]> {
+    pub fn rules(&self) -> std::option::Option<&[crate::types::Rule]> {
         self.rules.as_deref()
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRulesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListRulesOutput {
     /// Creates a new builder-style object to manufacture [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput).
     pub fn builder() -> crate::operation::list_rules::builders::ListRulesOutputBuilder {
@@ -49,13 +49,17 @@ impl ListRulesOutputBuilder {
     /// <p>The rules that match the specified criteria.</p>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-                        v.push(input);
-                        self.rules = Some(v);
-                        self
+        v.push(input);
+        self.rules = Some(v);
+        self
     }
     /// <p>The rules that match the specified criteria.</p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::Rule>>) -> Self {
-        self.rules = input; self
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+    ) -> Self {
+        self.rules = input;
+        self
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListRulesOutputBuilder {
     }
     /// <p>Indicates whether there are additional results to retrieve. If there are no more results, the value is null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListRulesOutput`](crate::operation::list_rules::ListRulesOutput).
     pub fn build(self) -> crate::operation::list_rules::ListRulesOutput {
         crate::operation::list_rules::ListRulesOutput {
-            rules: self.rules
-            ,
-            next_token: self.next_token
-            ,
+            rules: self.rules,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

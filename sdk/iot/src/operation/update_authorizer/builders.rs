@@ -4,51 +4,71 @@ pub use crate::operation::update_authorizer::_update_authorizer_output::UpdateAu
 pub use crate::operation::update_authorizer::_update_authorizer_input::UpdateAuthorizerInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateAuthorizer`.
-/// 
-/// <p>Updates an authorizer.</p> 
+///
+/// <p>Updates an authorizer.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAuthorizer</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAuthorizerFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder,
+    inner: crate::operation::update_authorizer::builders::UpdateAuthorizerInputBuilder,
 }
-impl UpdateAuthorizerFluentBuilder  {
+impl UpdateAuthorizerFluentBuilder {
     /// Creates a new `UpdateAuthorizer`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_authorizer::UpdateAuthorizer, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_authorizer::UpdateAuthorizerError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_authorizer::UpdateAuthorizerOutput, aws_smithy_http::result::SdkError<crate::operation::update_authorizer::UpdateAuthorizerError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_authorizer::UpdateAuthorizer,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_authorizer::UpdateAuthorizerError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_authorizer::UpdateAuthorizerOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_authorizer::UpdateAuthorizerError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The authorizer name.</p>
     pub fn authorizer_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.authorizer_name(input.into());
@@ -65,7 +85,10 @@ impl UpdateAuthorizerFluentBuilder  {
         self
     }
     /// <p>The ARN of the authorizer's Lambda function.</p>
-    pub fn set_authorizer_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_authorizer_function_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_authorizer_function_arn(input);
         self
     }
@@ -84,12 +107,21 @@ impl UpdateAuthorizerFluentBuilder  {
     /// To override the contents of this collection use [`set_token_signing_public_keys`](Self::set_token_signing_public_keys).
     ///
     /// <p>The public keys used to verify the token signature.</p>
-    pub fn token_signing_public_keys(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn token_signing_public_keys(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.token_signing_public_keys(k.into(), v.into());
         self
     }
     /// <p>The public keys used to verify the token signature.</p>
-    pub fn set_token_signing_public_keys(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_token_signing_public_keys(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_token_signing_public_keys(input);
         self
     }
@@ -99,7 +131,10 @@ impl UpdateAuthorizerFluentBuilder  {
         self
     }
     /// <p>The status of the update authorizer request.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AuthorizerStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AuthorizerStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -114,4 +149,3 @@ impl UpdateAuthorizerFluentBuilder  {
         self
     }
 }
-

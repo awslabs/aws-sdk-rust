@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListArchivesInput  {
+pub struct ListArchivesInput {
     /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
     #[doc(hidden)]
     pub name_prefix: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct ListArchivesInput  {
 }
 impl ListArchivesInput {
     /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
-    pub fn name_prefix(&self) -> std::option::Option<& str> {
+    pub fn name_prefix(&self) -> std::option::Option<&str> {
         self.name_prefix.as_deref()
     }
     /// <p>The ARN of the event source associated with the archive.</p>
-    pub fn event_source_arn(&self) -> std::option::Option<& str> {
+    pub fn event_source_arn(&self) -> std::option::Option<&str> {
         self.event_source_arn.as_deref()
     }
     /// <p>The state of the archive.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ArchiveState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ArchiveState> {
         self.state.as_ref()
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -66,7 +66,8 @@ impl ListArchivesInputBuilder {
     }
     /// <p>A name prefix to filter the archives returned. Only archives with name that match the prefix are returned.</p>
     pub fn set_name_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_prefix = input; self
+        self.name_prefix = input;
+        self
     }
     /// <p>The ARN of the event source associated with the archive.</p>
     pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +76,8 @@ impl ListArchivesInputBuilder {
     }
     /// <p>The ARN of the event source associated with the archive.</p>
     pub fn set_event_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_source_arn = input; self
+        self.event_source_arn = input;
+        self
     }
     /// <p>The state of the archive.</p>
     pub fn state(mut self, input: crate::types::ArchiveState) -> Self {
@@ -84,7 +86,8 @@ impl ListArchivesInputBuilder {
     }
     /// <p>The state of the archive.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ArchiveState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +96,8 @@ impl ListArchivesInputBuilder {
     }
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -102,24 +106,22 @@ impl ListArchivesInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListArchivesInput`](crate::operation::list_archives::ListArchivesInput).
-    pub fn build(self) -> Result<crate::operation::list_archives::ListArchivesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_archives::ListArchivesInput {
-                name_prefix: self.name_prefix
-                ,
-                event_source_arn: self.event_source_arn
-                ,
-                state: self.state
-                ,
-                next_token: self.next_token
-                ,
-                limit: self.limit
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_archives::ListArchivesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_archives::ListArchivesInput {
+            name_prefix: self.name_prefix,
+            event_source_arn: self.event_source_arn,
+            state: self.state,
+            next_token: self.next_token,
+            limit: self.limit,
+        })
     }
 }
-

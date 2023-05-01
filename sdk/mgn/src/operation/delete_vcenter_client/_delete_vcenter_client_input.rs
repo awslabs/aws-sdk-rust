@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVcenterClientInput  {
+pub struct DeleteVcenterClientInput {
     /// <p>ID of resource to be deleted.</p>
     #[doc(hidden)]
     pub vcenter_client_id: std::option::Option<std::string::String>,
 }
 impl DeleteVcenterClientInput {
     /// <p>ID of resource to be deleted.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
         self.vcenter_client_id.as_deref()
     }
 }
 impl DeleteVcenterClientInput {
     /// Creates a new builder-style object to manufacture [`DeleteVcenterClientInput`](crate::operation::delete_vcenter_client::DeleteVcenterClientInput).
-    pub fn builder() -> crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder {
-        crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder {
+        crate::operation::delete_vcenter_client::builders::DeleteVcenterClientInputBuilder::default(
+        )
     }
 }
 
@@ -33,17 +35,24 @@ impl DeleteVcenterClientInputBuilder {
         self
     }
     /// <p>ID of resource to be deleted.</p>
-    pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vcenter_client_id = input; self
+    pub fn set_vcenter_client_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vcenter_client_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVcenterClientInput`](crate::operation::delete_vcenter_client::DeleteVcenterClientInput).
-    pub fn build(self) -> Result<crate::operation::delete_vcenter_client::DeleteVcenterClientInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_vcenter_client::DeleteVcenterClientInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_vcenter_client::DeleteVcenterClientInput {
-                vcenter_client_id: self.vcenter_client_id
-                ,
-            }
+                vcenter_client_id: self.vcenter_client_id,
+            },
         )
     }
 }
-

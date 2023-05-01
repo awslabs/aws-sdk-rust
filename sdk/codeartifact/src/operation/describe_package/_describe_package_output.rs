@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePackageOutput  {
+pub struct DescribePackageOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
     #[doc(hidden)]
     pub package: std::option::Option<crate::types::PackageDescription>,
@@ -10,15 +10,15 @@ pub struct DescribePackageOutput  {
 }
 impl DescribePackageOutput {
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
-    pub fn package(&self) -> std::option::Option<& crate::types::PackageDescription> {
+    pub fn package(&self) -> std::option::Option<&crate::types::PackageDescription> {
         self.package.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePackageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribePackageOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackageOutput`](crate::operation::describe_package::DescribePackageOutput).
     pub fn builder() -> crate::operation::describe_package::builders::DescribePackageOutputBuilder {
@@ -40,25 +40,27 @@ impl DescribePackageOutputBuilder {
         self
     }
     /// <p>A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a> object that contains information about the requested package.</p>
-    pub fn set_package(mut self, input: std::option::Option<crate::types::PackageDescription>) -> Self {
-        self.package = input; self
+    pub fn set_package(
+        mut self,
+        input: std::option::Option<crate::types::PackageDescription>,
+    ) -> Self {
+        self.package = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribePackageOutput`](crate::operation::describe_package::DescribePackageOutput).
     pub fn build(self) -> crate::operation::describe_package::DescribePackageOutput {
         crate::operation::describe_package::DescribePackageOutput {
-            package: self.package
-            ,
+            package: self.package,
             _request_id: self._request_id,
         }
     }
 }
-

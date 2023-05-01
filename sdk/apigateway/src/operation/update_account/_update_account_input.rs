@@ -3,14 +3,14 @@
 /// <p>Requests API Gateway to change information about the current Account resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAccountInput  {
+pub struct UpdateAccountInput {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     #[doc(hidden)]
     pub patch_operations: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
 }
 impl UpdateAccountInput {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn patch_operations(&self) -> std::option::Option<& [crate::types::PatchOperation]> {
+    pub fn patch_operations(&self) -> std::option::Option<&[crate::types::PatchOperation]> {
         self.patch_operations.as_deref()
     }
 }
@@ -35,22 +35,27 @@ impl UpdateAccountInputBuilder {
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
     pub fn patch_operations(mut self, input: crate::types::PatchOperation) -> Self {
         let mut v = self.patch_operations.unwrap_or_default();
-                        v.push(input);
-                        self.patch_operations = Some(v);
-                        self
+        v.push(input);
+        self.patch_operations = Some(v);
+        self
     }
     /// <p>For more information about supported patch operations, see <a href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch Operations</a>.</p>
-    pub fn set_patch_operations(mut self, input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>) -> Self {
-        self.patch_operations = input; self
+    pub fn set_patch_operations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PatchOperation>>,
+    ) -> Self {
+        self.patch_operations = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateAccountInput`](crate::operation::update_account::UpdateAccountInput).
-    pub fn build(self) -> Result<crate::operation::update_account::UpdateAccountInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_account::UpdateAccountInput {
-                patch_operations: self.patch_operations
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_account::UpdateAccountInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_account::UpdateAccountInput {
+            patch_operations: self.patch_operations,
+        })
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let fuotataskstatus = unimplemented!();
 /// match fuotataskstatus {
@@ -33,14 +33,22 @@
 /// Specifically, when `fuotataskstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FuotaTaskStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// <p>The status of a FUOTA task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum FuotaTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     DeleteWaiting,
@@ -53,47 +61,54 @@ pub enum FuotaTaskStatus {
     #[allow(missing_docs)] // documentation missing in model
     Pending,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FuotaTaskStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "Delete_Waiting" => FuotaTaskStatus::DeleteWaiting,
-"FuotaDone" => FuotaTaskStatus::FuotaDone,
-"FuotaSession_Waiting" => FuotaTaskStatus::FuotaSessionWaiting,
-"In_FuotaSession" => FuotaTaskStatus::InFuotaSession,
-"Pending" => FuotaTaskStatus::Pending,
-other => FuotaTaskStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "Delete_Waiting" => FuotaTaskStatus::DeleteWaiting,
+            "FuotaDone" => FuotaTaskStatus::FuotaDone,
+            "FuotaSession_Waiting" => FuotaTaskStatus::FuotaSessionWaiting,
+            "In_FuotaSession" => FuotaTaskStatus::InFuotaSession,
+            "Pending" => FuotaTaskStatus::Pending,
+            other => {
+                FuotaTaskStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for FuotaTaskStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(FuotaTaskStatus::from(s))
-                }
-            }
-impl FuotaTaskStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    FuotaTaskStatus::DeleteWaiting => "Delete_Waiting",
-    FuotaTaskStatus::FuotaDone => "FuotaDone",
-    FuotaTaskStatus::FuotaSessionWaiting => "FuotaSession_Waiting",
-    FuotaTaskStatus::InFuotaSession => "In_FuotaSession",
-    FuotaTaskStatus::Pending => "Pending",
-    FuotaTaskStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["Delete_Waiting", "FuotaDone", "FuotaSession_Waiting", "In_FuotaSession", "Pending"]
-                }
-            }
-impl AsRef<str> for FuotaTaskStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for FuotaTaskStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FuotaTaskStatus::from(s))
+    }
+}
+impl FuotaTaskStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FuotaTaskStatus::DeleteWaiting => "Delete_Waiting",
+            FuotaTaskStatus::FuotaDone => "FuotaDone",
+            FuotaTaskStatus::FuotaSessionWaiting => "FuotaSession_Waiting",
+            FuotaTaskStatus::InFuotaSession => "In_FuotaSession",
+            FuotaTaskStatus::Pending => "Pending",
+            FuotaTaskStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "Delete_Waiting",
+            "FuotaDone",
+            "FuotaSession_Waiting",
+            "In_FuotaSession",
+            "Pending",
+        ]
+    }
+}
+impl AsRef<str> for FuotaTaskStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

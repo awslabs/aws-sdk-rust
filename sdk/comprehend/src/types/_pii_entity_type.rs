@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let piientitytype = unimplemented!();
 /// match piientitytype {
@@ -65,14 +65,22 @@
 /// Specifically, when `piientitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `PiiEntityType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum PiiEntityType {
     #[allow(missing_docs)] // documentation missing in model
     Address,
@@ -149,111 +157,154 @@ pub enum PiiEntityType {
     #[allow(missing_docs)] // documentation missing in model
     VehicleIdentificationNumber,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for PiiEntityType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ADDRESS" => PiiEntityType::Address,
-"AGE" => PiiEntityType::Age,
-"ALL" => PiiEntityType::All,
-"AWS_ACCESS_KEY" => PiiEntityType::AwsAccessKey,
-"AWS_SECRET_KEY" => PiiEntityType::AwsSecretKey,
-"BANK_ACCOUNT_NUMBER" => PiiEntityType::BankAccountNumber,
-"BANK_ROUTING" => PiiEntityType::BankRouting,
-"CA_HEALTH_NUMBER" => PiiEntityType::CaHealthNumber,
-"CA_SOCIAL_INSURANCE_NUMBER" => PiiEntityType::CaSocialInsuranceNumber,
-"CREDIT_DEBIT_CVV" => PiiEntityType::CreditDebitCvv,
-"CREDIT_DEBIT_EXPIRY" => PiiEntityType::CreditDebitExpiry,
-"CREDIT_DEBIT_NUMBER" => PiiEntityType::CreditDebitNumber,
-"DATE_TIME" => PiiEntityType::DateTime,
-"DRIVER_ID" => PiiEntityType::DriverId,
-"EMAIL" => PiiEntityType::Email,
-"INTERNATIONAL_BANK_ACCOUNT_NUMBER" => PiiEntityType::InternationalBankAccountNumber,
-"IN_AADHAAR" => PiiEntityType::InAadhaar,
-"IN_NREGA" => PiiEntityType::InNrega,
-"IN_PERMANENT_ACCOUNT_NUMBER" => PiiEntityType::InPermanentAccountNumber,
-"IN_VOTER_NUMBER" => PiiEntityType::InVoterNumber,
-"IP_ADDRESS" => PiiEntityType::IpAddress,
-"LICENSE_PLATE" => PiiEntityType::LicensePlate,
-"MAC_ADDRESS" => PiiEntityType::MacAddress,
-"NAME" => PiiEntityType::Name,
-"PASSPORT_NUMBER" => PiiEntityType::PassportNumber,
-"PASSWORD" => PiiEntityType::Password,
-"PHONE" => PiiEntityType::Phone,
-"PIN" => PiiEntityType::Pin,
-"SSN" => PiiEntityType::Ssn,
-"SWIFT_CODE" => PiiEntityType::SwiftCode,
-"UK_NATIONAL_HEALTH_SERVICE_NUMBER" => PiiEntityType::UkNationalHealthServiceNumber,
-"UK_NATIONAL_INSURANCE_NUMBER" => PiiEntityType::UkNationalInsuranceNumber,
-"UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER" => PiiEntityType::UkUniqueTaxpayerReferenceNumber,
-"URL" => PiiEntityType::Url,
-"USERNAME" => PiiEntityType::Username,
-"US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER" => PiiEntityType::UsIndividualTaxIdentificationNumber,
-"VEHICLE_IDENTIFICATION_NUMBER" => PiiEntityType::VehicleIdentificationNumber,
-other => PiiEntityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ADDRESS" => PiiEntityType::Address,
+            "AGE" => PiiEntityType::Age,
+            "ALL" => PiiEntityType::All,
+            "AWS_ACCESS_KEY" => PiiEntityType::AwsAccessKey,
+            "AWS_SECRET_KEY" => PiiEntityType::AwsSecretKey,
+            "BANK_ACCOUNT_NUMBER" => PiiEntityType::BankAccountNumber,
+            "BANK_ROUTING" => PiiEntityType::BankRouting,
+            "CA_HEALTH_NUMBER" => PiiEntityType::CaHealthNumber,
+            "CA_SOCIAL_INSURANCE_NUMBER" => PiiEntityType::CaSocialInsuranceNumber,
+            "CREDIT_DEBIT_CVV" => PiiEntityType::CreditDebitCvv,
+            "CREDIT_DEBIT_EXPIRY" => PiiEntityType::CreditDebitExpiry,
+            "CREDIT_DEBIT_NUMBER" => PiiEntityType::CreditDebitNumber,
+            "DATE_TIME" => PiiEntityType::DateTime,
+            "DRIVER_ID" => PiiEntityType::DriverId,
+            "EMAIL" => PiiEntityType::Email,
+            "INTERNATIONAL_BANK_ACCOUNT_NUMBER" => PiiEntityType::InternationalBankAccountNumber,
+            "IN_AADHAAR" => PiiEntityType::InAadhaar,
+            "IN_NREGA" => PiiEntityType::InNrega,
+            "IN_PERMANENT_ACCOUNT_NUMBER" => PiiEntityType::InPermanentAccountNumber,
+            "IN_VOTER_NUMBER" => PiiEntityType::InVoterNumber,
+            "IP_ADDRESS" => PiiEntityType::IpAddress,
+            "LICENSE_PLATE" => PiiEntityType::LicensePlate,
+            "MAC_ADDRESS" => PiiEntityType::MacAddress,
+            "NAME" => PiiEntityType::Name,
+            "PASSPORT_NUMBER" => PiiEntityType::PassportNumber,
+            "PASSWORD" => PiiEntityType::Password,
+            "PHONE" => PiiEntityType::Phone,
+            "PIN" => PiiEntityType::Pin,
+            "SSN" => PiiEntityType::Ssn,
+            "SWIFT_CODE" => PiiEntityType::SwiftCode,
+            "UK_NATIONAL_HEALTH_SERVICE_NUMBER" => PiiEntityType::UkNationalHealthServiceNumber,
+            "UK_NATIONAL_INSURANCE_NUMBER" => PiiEntityType::UkNationalInsuranceNumber,
+            "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER" => PiiEntityType::UkUniqueTaxpayerReferenceNumber,
+            "URL" => PiiEntityType::Url,
+            "USERNAME" => PiiEntityType::Username,
+            "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER" => {
+                PiiEntityType::UsIndividualTaxIdentificationNumber
             }
-impl std::str::FromStr for PiiEntityType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(PiiEntityType::from(s))
-                }
+            "VEHICLE_IDENTIFICATION_NUMBER" => PiiEntityType::VehicleIdentificationNumber,
+            other => {
+                PiiEntityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl PiiEntityType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    PiiEntityType::Address => "ADDRESS",
-    PiiEntityType::Age => "AGE",
-    PiiEntityType::All => "ALL",
-    PiiEntityType::AwsAccessKey => "AWS_ACCESS_KEY",
-    PiiEntityType::AwsSecretKey => "AWS_SECRET_KEY",
-    PiiEntityType::BankAccountNumber => "BANK_ACCOUNT_NUMBER",
-    PiiEntityType::BankRouting => "BANK_ROUTING",
-    PiiEntityType::CaHealthNumber => "CA_HEALTH_NUMBER",
-    PiiEntityType::CaSocialInsuranceNumber => "CA_SOCIAL_INSURANCE_NUMBER",
-    PiiEntityType::CreditDebitCvv => "CREDIT_DEBIT_CVV",
-    PiiEntityType::CreditDebitExpiry => "CREDIT_DEBIT_EXPIRY",
-    PiiEntityType::CreditDebitNumber => "CREDIT_DEBIT_NUMBER",
-    PiiEntityType::DateTime => "DATE_TIME",
-    PiiEntityType::DriverId => "DRIVER_ID",
-    PiiEntityType::Email => "EMAIL",
-    PiiEntityType::InternationalBankAccountNumber => "INTERNATIONAL_BANK_ACCOUNT_NUMBER",
-    PiiEntityType::InAadhaar => "IN_AADHAAR",
-    PiiEntityType::InNrega => "IN_NREGA",
-    PiiEntityType::InPermanentAccountNumber => "IN_PERMANENT_ACCOUNT_NUMBER",
-    PiiEntityType::InVoterNumber => "IN_VOTER_NUMBER",
-    PiiEntityType::IpAddress => "IP_ADDRESS",
-    PiiEntityType::LicensePlate => "LICENSE_PLATE",
-    PiiEntityType::MacAddress => "MAC_ADDRESS",
-    PiiEntityType::Name => "NAME",
-    PiiEntityType::PassportNumber => "PASSPORT_NUMBER",
-    PiiEntityType::Password => "PASSWORD",
-    PiiEntityType::Phone => "PHONE",
-    PiiEntityType::Pin => "PIN",
-    PiiEntityType::Ssn => "SSN",
-    PiiEntityType::SwiftCode => "SWIFT_CODE",
-    PiiEntityType::UkNationalHealthServiceNumber => "UK_NATIONAL_HEALTH_SERVICE_NUMBER",
-    PiiEntityType::UkNationalInsuranceNumber => "UK_NATIONAL_INSURANCE_NUMBER",
-    PiiEntityType::UkUniqueTaxpayerReferenceNumber => "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER",
-    PiiEntityType::Url => "URL",
-    PiiEntityType::Username => "USERNAME",
-    PiiEntityType::UsIndividualTaxIdentificationNumber => "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER",
-    PiiEntityType::VehicleIdentificationNumber => "VEHICLE_IDENTIFICATION_NUMBER",
-    PiiEntityType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ADDRESS", "AGE", "ALL", "AWS_ACCESS_KEY", "AWS_SECRET_KEY", "BANK_ACCOUNT_NUMBER", "BANK_ROUTING", "CA_HEALTH_NUMBER", "CA_SOCIAL_INSURANCE_NUMBER", "CREDIT_DEBIT_CVV", "CREDIT_DEBIT_EXPIRY", "CREDIT_DEBIT_NUMBER", "DATE_TIME", "DRIVER_ID", "EMAIL", "INTERNATIONAL_BANK_ACCOUNT_NUMBER", "IN_AADHAAR", "IN_NREGA", "IN_PERMANENT_ACCOUNT_NUMBER", "IN_VOTER_NUMBER", "IP_ADDRESS", "LICENSE_PLATE", "MAC_ADDRESS", "NAME", "PASSPORT_NUMBER", "PASSWORD", "PHONE", "PIN", "SSN", "SWIFT_CODE", "UK_NATIONAL_HEALTH_SERVICE_NUMBER", "UK_NATIONAL_INSURANCE_NUMBER", "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER", "URL", "USERNAME", "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER", "VEHICLE_IDENTIFICATION_NUMBER"]
-                }
-            }
-impl AsRef<str> for PiiEntityType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for PiiEntityType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PiiEntityType::from(s))
+    }
+}
+impl PiiEntityType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            PiiEntityType::Address => "ADDRESS",
+            PiiEntityType::Age => "AGE",
+            PiiEntityType::All => "ALL",
+            PiiEntityType::AwsAccessKey => "AWS_ACCESS_KEY",
+            PiiEntityType::AwsSecretKey => "AWS_SECRET_KEY",
+            PiiEntityType::BankAccountNumber => "BANK_ACCOUNT_NUMBER",
+            PiiEntityType::BankRouting => "BANK_ROUTING",
+            PiiEntityType::CaHealthNumber => "CA_HEALTH_NUMBER",
+            PiiEntityType::CaSocialInsuranceNumber => "CA_SOCIAL_INSURANCE_NUMBER",
+            PiiEntityType::CreditDebitCvv => "CREDIT_DEBIT_CVV",
+            PiiEntityType::CreditDebitExpiry => "CREDIT_DEBIT_EXPIRY",
+            PiiEntityType::CreditDebitNumber => "CREDIT_DEBIT_NUMBER",
+            PiiEntityType::DateTime => "DATE_TIME",
+            PiiEntityType::DriverId => "DRIVER_ID",
+            PiiEntityType::Email => "EMAIL",
+            PiiEntityType::InternationalBankAccountNumber => "INTERNATIONAL_BANK_ACCOUNT_NUMBER",
+            PiiEntityType::InAadhaar => "IN_AADHAAR",
+            PiiEntityType::InNrega => "IN_NREGA",
+            PiiEntityType::InPermanentAccountNumber => "IN_PERMANENT_ACCOUNT_NUMBER",
+            PiiEntityType::InVoterNumber => "IN_VOTER_NUMBER",
+            PiiEntityType::IpAddress => "IP_ADDRESS",
+            PiiEntityType::LicensePlate => "LICENSE_PLATE",
+            PiiEntityType::MacAddress => "MAC_ADDRESS",
+            PiiEntityType::Name => "NAME",
+            PiiEntityType::PassportNumber => "PASSPORT_NUMBER",
+            PiiEntityType::Password => "PASSWORD",
+            PiiEntityType::Phone => "PHONE",
+            PiiEntityType::Pin => "PIN",
+            PiiEntityType::Ssn => "SSN",
+            PiiEntityType::SwiftCode => "SWIFT_CODE",
+            PiiEntityType::UkNationalHealthServiceNumber => "UK_NATIONAL_HEALTH_SERVICE_NUMBER",
+            PiiEntityType::UkNationalInsuranceNumber => "UK_NATIONAL_INSURANCE_NUMBER",
+            PiiEntityType::UkUniqueTaxpayerReferenceNumber => "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER",
+            PiiEntityType::Url => "URL",
+            PiiEntityType::Username => "USERNAME",
+            PiiEntityType::UsIndividualTaxIdentificationNumber => {
+                "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER"
+            }
+            PiiEntityType::VehicleIdentificationNumber => "VEHICLE_IDENTIFICATION_NUMBER",
+            PiiEntityType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ADDRESS",
+            "AGE",
+            "ALL",
+            "AWS_ACCESS_KEY",
+            "AWS_SECRET_KEY",
+            "BANK_ACCOUNT_NUMBER",
+            "BANK_ROUTING",
+            "CA_HEALTH_NUMBER",
+            "CA_SOCIAL_INSURANCE_NUMBER",
+            "CREDIT_DEBIT_CVV",
+            "CREDIT_DEBIT_EXPIRY",
+            "CREDIT_DEBIT_NUMBER",
+            "DATE_TIME",
+            "DRIVER_ID",
+            "EMAIL",
+            "INTERNATIONAL_BANK_ACCOUNT_NUMBER",
+            "IN_AADHAAR",
+            "IN_NREGA",
+            "IN_PERMANENT_ACCOUNT_NUMBER",
+            "IN_VOTER_NUMBER",
+            "IP_ADDRESS",
+            "LICENSE_PLATE",
+            "MAC_ADDRESS",
+            "NAME",
+            "PASSPORT_NUMBER",
+            "PASSWORD",
+            "PHONE",
+            "PIN",
+            "SSN",
+            "SWIFT_CODE",
+            "UK_NATIONAL_HEALTH_SERVICE_NUMBER",
+            "UK_NATIONAL_INSURANCE_NUMBER",
+            "UK_UNIQUE_TAXPAYER_REFERENCE_NUMBER",
+            "URL",
+            "USERNAME",
+            "US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER",
+            "VEHICLE_IDENTIFICATION_NUMBER",
+        ]
+    }
+}
+impl AsRef<str> for PiiEntityType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

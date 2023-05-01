@@ -3,7 +3,7 @@
 /// <p> The output for the <code>AddJobFlowSteps</code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddJobFlowStepsOutput  {
+pub struct AddJobFlowStepsOutput {
     /// <p>The identifiers of the list of steps added to the job flow.</p>
     #[doc(hidden)]
     pub step_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -11,18 +11,19 @@ pub struct AddJobFlowStepsOutput  {
 }
 impl AddJobFlowStepsOutput {
     /// <p>The identifiers of the list of steps added to the job flow.</p>
-    pub fn step_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn step_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.step_ids.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AddJobFlowStepsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AddJobFlowStepsOutput {
     /// Creates a new builder-style object to manufacture [`AddJobFlowStepsOutput`](crate::operation::add_job_flow_steps::AddJobFlowStepsOutput).
-    pub fn builder() -> crate::operation::add_job_flow_steps::builders::AddJobFlowStepsOutputBuilder {
+    pub fn builder() -> crate::operation::add_job_flow_steps::builders::AddJobFlowStepsOutputBuilder
+    {
         crate::operation::add_job_flow_steps::builders::AddJobFlowStepsOutputBuilder::default()
     }
 }
@@ -42,30 +43,32 @@ impl AddJobFlowStepsOutputBuilder {
     /// <p>The identifiers of the list of steps added to the job flow.</p>
     pub fn step_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.step_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.step_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.step_ids = Some(v);
+        self
     }
     /// <p>The identifiers of the list of steps added to the job flow.</p>
-    pub fn set_step_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.step_ids = input; self
+    pub fn set_step_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.step_ids = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AddJobFlowStepsOutput`](crate::operation::add_job_flow_steps::AddJobFlowStepsOutput).
     pub fn build(self) -> crate::operation::add_job_flow_steps::AddJobFlowStepsOutput {
         crate::operation::add_job_flow_steps::AddJobFlowStepsOutput {
-            step_ids: self.step_ids
-            ,
+            step_ids: self.step_ids,
             _request_id: self._request_id,
         }
     }
 }
-

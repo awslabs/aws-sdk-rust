@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateHostedConfigurationVersionOutput  {
+pub struct CreateHostedConfigurationVersionOutput {
     /// <p>The application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -28,11 +28,11 @@ pub struct CreateHostedConfigurationVersionOutput  {
 }
 impl CreateHostedConfigurationVersionOutput {
     /// <p>The application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The configuration profile ID.</p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
     }
     /// <p>The configuration version.</p>
@@ -40,23 +40,23 @@ impl CreateHostedConfigurationVersionOutput {
         self.version_number
     }
     /// <p>A description of the configuration.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The content of the configuration or the configuration data.</p>
-    pub fn content(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.content.as_ref()
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
-    pub fn content_type(&self) -> std::option::Option<& str> {
+    pub fn content_type(&self) -> std::option::Option<&str> {
         self.content_type.as_deref()
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
-    pub fn version_label(&self) -> std::option::Option<& str> {
+    pub fn version_label(&self) -> std::option::Option<&str> {
         self.version_label.as_deref()
     }
 }
-impl  std::fmt::Debug for CreateHostedConfigurationVersionOutput  {
+impl std::fmt::Debug for CreateHostedConfigurationVersionOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateHostedConfigurationVersionOutput");
         formatter.field("application_id", &self.application_id);
@@ -71,13 +71,13 @@ impl  std::fmt::Debug for CreateHostedConfigurationVersionOutput  {
     }
 }
 impl aws_http::request_id::RequestId for CreateHostedConfigurationVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateHostedConfigurationVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateHostedConfigurationVersionOutput`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput).
-    pub fn builder() -> crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionOutputBuilder {
+    pub fn builder() -> crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionOutputBuilder{
         crate::operation::create_hosted_configuration_version::builders::CreateHostedConfigurationVersionOutputBuilder::default()
     }
 }
@@ -103,7 +103,8 @@ impl CreateHostedConfigurationVersionOutputBuilder {
     }
     /// <p>The application ID.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The configuration profile ID.</p>
     pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,8 +112,12 @@ impl CreateHostedConfigurationVersionOutputBuilder {
         self
     }
     /// <p>The configuration profile ID.</p>
-    pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_profile_id = input; self
+    pub fn set_configuration_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_profile_id = input;
+        self
     }
     /// <p>The configuration version.</p>
     pub fn version_number(mut self, input: i32) -> Self {
@@ -121,7 +126,8 @@ impl CreateHostedConfigurationVersionOutputBuilder {
     }
     /// <p>The configuration version.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.version_number = input; self
+        self.version_number = input;
+        self
     }
     /// <p>A description of the configuration.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +136,8 @@ impl CreateHostedConfigurationVersionOutputBuilder {
     }
     /// <p>A description of the configuration.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The content of the configuration or the configuration data.</p>
     pub fn content(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -139,7 +146,8 @@ impl CreateHostedConfigurationVersionOutputBuilder {
     }
     /// <p>The content of the configuration or the configuration data.</p>
     pub fn set_content(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +156,8 @@ impl CreateHostedConfigurationVersionOutputBuilder {
     }
     /// <p>A standard MIME type describing the format of the configuration content. For more information, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">Content-Type</a>.</p>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_type = input; self
+        self.content_type = input;
+        self
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -157,19 +166,23 @@ impl CreateHostedConfigurationVersionOutputBuilder {
     }
     /// <p>A user-defined label for an AppConfig hosted configuration version.</p>
     pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_label = input; self
+        self.version_label = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateHostedConfigurationVersionOutput`](crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput).
-    pub fn build(self) -> crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput
+    {
         crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput {
             application_id: self.application_id
             ,
@@ -204,4 +217,3 @@ impl std::fmt::Debug for CreateHostedConfigurationVersionOutputBuilder {
         formatter.finish()
     }
 }
-

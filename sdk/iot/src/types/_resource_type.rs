@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let resourcetype = unimplemented!();
 /// match resourcetype {
@@ -37,14 +37,22 @@
 /// Specifically, when `resourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     AccountSettings,
@@ -65,55 +73,66 @@ pub enum ResourceType {
     #[allow(missing_docs)] // documentation missing in model
     RoleAlias,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACCOUNT_SETTINGS" => ResourceType::AccountSettings,
-"CA_CERTIFICATE" => ResourceType::CaCertificate,
-"CLIENT_ID" => ResourceType::ClientId,
-"COGNITO_IDENTITY_POOL" => ResourceType::CognitoIdentityPool,
-"DEVICE_CERTIFICATE" => ResourceType::DeviceCertificate,
-"IAM_ROLE" => ResourceType::IamRole,
-"IOT_POLICY" => ResourceType::IotPolicy,
-"ISSUER_CERTIFICATE" => ResourceType::IssuerCertificate,
-"ROLE_ALIAS" => ResourceType::RoleAlias,
-other => ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCOUNT_SETTINGS" => ResourceType::AccountSettings,
+            "CA_CERTIFICATE" => ResourceType::CaCertificate,
+            "CLIENT_ID" => ResourceType::ClientId,
+            "COGNITO_IDENTITY_POOL" => ResourceType::CognitoIdentityPool,
+            "DEVICE_CERTIFICATE" => ResourceType::DeviceCertificate,
+            "IAM_ROLE" => ResourceType::IamRole,
+            "IOT_POLICY" => ResourceType::IotPolicy,
+            "ISSUER_CERTIFICATE" => ResourceType::IssuerCertificate,
+            "ROLE_ALIAS" => ResourceType::RoleAlias,
+            other => {
+                ResourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ResourceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ResourceType::from(s))
-                }
-            }
-impl ResourceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ResourceType::AccountSettings => "ACCOUNT_SETTINGS",
-    ResourceType::CaCertificate => "CA_CERTIFICATE",
-    ResourceType::ClientId => "CLIENT_ID",
-    ResourceType::CognitoIdentityPool => "COGNITO_IDENTITY_POOL",
-    ResourceType::DeviceCertificate => "DEVICE_CERTIFICATE",
-    ResourceType::IamRole => "IAM_ROLE",
-    ResourceType::IotPolicy => "IOT_POLICY",
-    ResourceType::IssuerCertificate => "ISSUER_CERTIFICATE",
-    ResourceType::RoleAlias => "ROLE_ALIAS",
-    ResourceType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACCOUNT_SETTINGS", "CA_CERTIFICATE", "CLIENT_ID", "COGNITO_IDENTITY_POOL", "DEVICE_CERTIFICATE", "IAM_ROLE", "IOT_POLICY", "ISSUER_CERTIFICATE", "ROLE_ALIAS"]
-                }
-            }
-impl AsRef<str> for ResourceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ResourceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceType::from(s))
+    }
+}
+impl ResourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceType::AccountSettings => "ACCOUNT_SETTINGS",
+            ResourceType::CaCertificate => "CA_CERTIFICATE",
+            ResourceType::ClientId => "CLIENT_ID",
+            ResourceType::CognitoIdentityPool => "COGNITO_IDENTITY_POOL",
+            ResourceType::DeviceCertificate => "DEVICE_CERTIFICATE",
+            ResourceType::IamRole => "IAM_ROLE",
+            ResourceType::IotPolicy => "IOT_POLICY",
+            ResourceType::IssuerCertificate => "ISSUER_CERTIFICATE",
+            ResourceType::RoleAlias => "ROLE_ALIAS",
+            ResourceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCOUNT_SETTINGS",
+            "CA_CERTIFICATE",
+            "CLIENT_ID",
+            "COGNITO_IDENTITY_POOL",
+            "DEVICE_CERTIFICATE",
+            "IAM_ROLE",
+            "IOT_POLICY",
+            "ISSUER_CERTIFICATE",
+            "ROLE_ALIAS",
+        ]
+    }
+}
+impl AsRef<str> for ResourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

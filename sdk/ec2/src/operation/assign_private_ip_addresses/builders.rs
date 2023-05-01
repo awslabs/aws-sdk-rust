@@ -4,55 +4,75 @@ pub use crate::operation::assign_private_ip_addresses::_assign_private_ip_addres
 pub use crate::operation::assign_private_ip_addresses::_assign_private_ip_addresses_input::AssignPrivateIpAddressesInputBuilder;
 
 /// Fluent builder constructing a request to `AssignPrivateIpAddresses`.
-/// 
-/// <p>Assigns one or more secondary private IP addresses to the specified network interface.</p> 
-/// <p>You can specify one or more specific secondary IP addresses, or you can specify the number of secondary IP addresses to be automatically assigned within the subnet's CIDR block range. The number of secondary IP addresses that you can assign to an instance varies by instance type. For information about instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> 
-/// <p>When you move a secondary private IP address to another network interface, any Elastic IP address that is associated with the IP address is also moved.</p> 
-/// <p>Remapping an IP address is an asynchronous operation. When you move an IP address from one network interface to another, check <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to confirm that the remapping is complete.</p> 
-/// <p>You must specify either the IP addresses or the IP address count in the request.</p> 
+///
+/// <p>Assigns one or more secondary private IP addresses to the specified network interface.</p>
+/// <p>You can specify one or more specific secondary IP addresses, or you can specify the number of secondary IP addresses to be automatically assigned within the subnet's CIDR block range. The number of secondary IP addresses that you can assign to an instance varies by instance type. For information about instance types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about Elastic IP addresses, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>When you move a secondary private IP address to another network interface, any Elastic IP address that is associated with the IP address is also moved.</p>
+/// <p>Remapping an IP address is an asynchronous operation. When you move an IP address from one network interface to another, check <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance metadata to confirm that the remapping is complete.</p>
+/// <p>You must specify either the IP addresses or the IP address count in the request.</p>
 /// <p>You can optionally use Prefix Delegation on the network interface. You must specify either the IPv4 Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-eni.html"> Assigning prefixes to Amazon EC2 network interfaces</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct AssignPrivateIpAddressesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::assign_private_ip_addresses::builders::AssignPrivateIpAddressesInputBuilder,
 }
-impl AssignPrivateIpAddressesFluentBuilder  {
+impl AssignPrivateIpAddressesFluentBuilder {
     /// Creates a new `AssignPrivateIpAddresses`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddresses, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput, aws_smithy_http::result::SdkError<crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddresses,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Indicates whether to allow an IP address that is already assigned to another network interface or instance to be reassigned to the specified network interface.</p>
     pub fn allow_reassignment(mut self, input: bool) -> Self {
         self.inner = self.inner.allow_reassignment(input);
@@ -69,7 +89,10 @@ impl AssignPrivateIpAddressesFluentBuilder  {
         self
     }
     /// <p>The ID of the network interface.</p>
-    pub fn set_network_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_network_interface_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_network_interface_id(input);
         self
     }
@@ -77,15 +100,18 @@ impl AssignPrivateIpAddressesFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_private_ip_addresses`](Self::set_private_ip_addresses).
     ///
-    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p> 
+    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
     pub fn private_ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.private_ip_addresses(input.into());
         self
     }
-    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p> 
+    /// <p>The IP addresses to be assigned as a secondary private IP address to the network interface. You can't specify this parameter when also specifying a number of secondary IP addresses.</p>
     /// <p>If you don't specify an IP address, Amazon EC2 automatically selects an IP address within the subnet range.</p>
-    pub fn set_private_ip_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_private_ip_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_private_ip_addresses(input);
         self
     }
@@ -95,7 +121,10 @@ impl AssignPrivateIpAddressesFluentBuilder  {
         self
     }
     /// <p>The number of secondary IP addresses to assign to the network interface. You can't specify this parameter when also specifying private IP addresses.</p>
-    pub fn set_secondary_private_ip_address_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_secondary_private_ip_address_count(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
         self.inner = self.inner.set_secondary_private_ip_address_count(input);
         self
     }
@@ -109,7 +138,10 @@ impl AssignPrivateIpAddressesFluentBuilder  {
         self
     }
     /// <p>One or more IPv4 prefixes assigned to the network interface. You cannot use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
-    pub fn set_ipv4_prefixes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_ipv4_prefixes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_ipv4_prefixes(input);
         self
     }
@@ -124,4 +156,3 @@ impl AssignPrivateIpAddressesFluentBuilder  {
         self
     }
 }
-

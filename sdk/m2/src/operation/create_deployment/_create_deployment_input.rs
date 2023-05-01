@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeploymentInput  {
+pub struct CreateDeploymentInput {
     /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
     #[doc(hidden)]
     pub environment_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct CreateDeploymentInput  {
 }
 impl CreateDeploymentInput {
     /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The application identifier.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The version of the application to deploy.</p>
@@ -30,13 +30,14 @@ impl CreateDeploymentInput {
         self.application_version
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl CreateDeploymentInput {
     /// Creates a new builder-style object to manufacture [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder {
+    pub fn builder() -> crate::operation::create_deployment::builders::CreateDeploymentInputBuilder
+    {
         crate::operation::create_deployment::builders::CreateDeploymentInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The identifier of the runtime environment where you want to deploy this application.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// <p>The application identifier.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The application identifier.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The version of the application to deploy.</p>
     pub fn application_version(mut self, input: i32) -> Self {
@@ -76,7 +79,8 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>The version of the application to deploy.</p>
     pub fn set_application_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.application_version = input; self
+        self.application_version = input;
+        self
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +89,21 @@ impl CreateDeploymentInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request to create a deployment. The service generates the clientToken when the API call is triggered. The token expires after one hour, so if you retry the API within this timeframe with the same clientToken, you will get the same response. The service also handles deleting the clientToken after it expires. </p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::operation::create_deployment::CreateDeploymentInput).
-    pub fn build(self) -> Result<crate::operation::create_deployment::CreateDeploymentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_deployment::CreateDeploymentInput {
-                environment_id: self.environment_id
-                ,
-                application_id: self.application_id
-                ,
-                application_version: self.application_version
-                ,
-                client_token: self.client_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_deployment::CreateDeploymentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_deployment::CreateDeploymentInput {
+            environment_id: self.environment_id,
+            application_id: self.application_id,
+            application_version: self.application_version,
+            client_token: self.client_token,
+        })
     }
 }
-

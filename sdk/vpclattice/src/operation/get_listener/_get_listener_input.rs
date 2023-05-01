@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetListenerInput  {
+pub struct GetListenerInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     #[doc(hidden)]
     pub service_identifier: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetListenerInput  {
 }
 impl GetListenerInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> std::option::Option<& str> {
+    pub fn service_identifier(&self) -> std::option::Option<&str> {
         self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> std::option::Option<& str> {
+    pub fn listener_identifier(&self) -> std::option::Option<&str> {
         self.listener_identifier.as_deref()
     }
 }
@@ -41,8 +41,12 @@ impl GetListenerInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_identifier = input; self
+    pub fn set_service_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_identifier = input;
+        self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn listener_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +54,23 @@ impl GetListenerInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_listener_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.listener_identifier = input; self
+    pub fn set_listener_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.listener_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetListenerInput`](crate::operation::get_listener::GetListenerInput).
-    pub fn build(self) -> Result<crate::operation::get_listener::GetListenerInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_listener::GetListenerInput {
-                service_identifier: self.service_identifier
-                ,
-                listener_identifier: self.listener_identifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_listener::GetListenerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_listener::GetListenerInput {
+            service_identifier: self.service_identifier,
+            listener_identifier: self.listener_identifier,
+        })
     }
 }
-

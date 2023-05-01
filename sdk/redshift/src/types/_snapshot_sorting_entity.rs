@@ -3,7 +3,7 @@
 /// <p>Describes a sorting entity</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotSortingEntity  {
+pub struct SnapshotSortingEntity {
     /// <p>The category for sorting the snapshots.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::SnapshotAttributeToSortBy>,
@@ -13,11 +13,11 @@ pub struct SnapshotSortingEntity  {
 }
 impl SnapshotSortingEntity {
     /// <p>The category for sorting the snapshots.</p>
-    pub fn attribute(&self) -> std::option::Option<& crate::types::SnapshotAttributeToSortBy> {
+    pub fn attribute(&self) -> std::option::Option<&crate::types::SnapshotAttributeToSortBy> {
         self.attribute.as_ref()
     }
     /// <p>The order for listing the attributes.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortByOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortByOrder> {
         self.sort_order.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl SnapshotSortingEntityBuilder {
         self
     }
     /// <p>The category for sorting the snapshots.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<crate::types::SnapshotAttributeToSortBy>) -> Self {
-        self.attribute = input; self
+    pub fn set_attribute(
+        mut self,
+        input: std::option::Option<crate::types::SnapshotAttributeToSortBy>,
+    ) -> Self {
+        self.attribute = input;
+        self
     }
     /// <p>The order for listing the attributes.</p>
     pub fn sort_order(mut self, input: crate::types::SortByOrder) -> Self {
@@ -52,16 +56,14 @@ impl SnapshotSortingEntityBuilder {
     }
     /// <p>The order for listing the attributes.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortByOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// Consumes the builder and constructs a [`SnapshotSortingEntity`](crate::types::SnapshotSortingEntity).
     pub fn build(self) -> crate::types::SnapshotSortingEntity {
         crate::types::SnapshotSortingEntity {
-            attribute: self.attribute
-            ,
-            sort_order: self.sort_order
-            ,
+            attribute: self.attribute,
+            sort_order: self.sort_order,
         }
     }
 }
-

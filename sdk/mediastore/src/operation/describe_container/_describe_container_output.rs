@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeContainerOutput  {
+pub struct DescribeContainerOutput {
     /// <p>The name of the queried container.</p>
     #[doc(hidden)]
     pub container: std::option::Option<crate::types::Container>,
@@ -10,18 +10,19 @@ pub struct DescribeContainerOutput  {
 }
 impl DescribeContainerOutput {
     /// <p>The name of the queried container.</p>
-    pub fn container(&self) -> std::option::Option<& crate::types::Container> {
+    pub fn container(&self) -> std::option::Option<&crate::types::Container> {
         self.container.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeContainerOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeContainerOutput {
     /// Creates a new builder-style object to manufacture [`DescribeContainerOutput`](crate::operation::describe_container::DescribeContainerOutput).
-    pub fn builder() -> crate::operation::describe_container::builders::DescribeContainerOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_container::builders::DescribeContainerOutputBuilder {
         crate::operation::describe_container::builders::DescribeContainerOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl DescribeContainerOutputBuilder {
     }
     /// <p>The name of the queried container.</p>
     pub fn set_container(mut self, input: std::option::Option<crate::types::Container>) -> Self {
-        self.container = input; self
+        self.container = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeContainerOutput`](crate::operation::describe_container::DescribeContainerOutput).
     pub fn build(self) -> crate::operation::describe_container::DescribeContainerOutput {
         crate::operation::describe_container::DescribeContainerOutput {
-            container: self.container
-            ,
+            container: self.container,
             _request_id: self._request_id,
         }
     }
 }
-

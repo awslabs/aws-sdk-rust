@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomRoutingListenerInput  {
+pub struct CreateCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
     #[doc(hidden)]
     pub accelerator_arn: std::option::Option<std::string::String>,
-    /// <p>The port range to support for connections from clients to your accelerator.</p> 
+    /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
     #[doc(hidden)]
     pub port_ranges: std::option::Option<std::vec::Vec<crate::types::PortRange>>,
@@ -16,22 +16,22 @@ pub struct CreateCustomRoutingListenerInput  {
 }
 impl CreateCustomRoutingListenerInput {
     /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
-    pub fn accelerator_arn(&self) -> std::option::Option<& str> {
+    pub fn accelerator_arn(&self) -> std::option::Option<&str> {
         self.accelerator_arn.as_deref()
     }
-    /// <p>The port range to support for connections from clients to your accelerator.</p> 
+    /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn port_ranges(&self) -> std::option::Option<& [crate::types::PortRange]> {
+    pub fn port_ranges(&self) -> std::option::Option<&[crate::types::PortRange]> {
         self.port_ranges.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn idempotency_token(&self) -> std::option::Option<& str> {
+    pub fn idempotency_token(&self) -> std::option::Option<&str> {
         self.idempotency_token.as_deref()
     }
 }
 impl CreateCustomRoutingListenerInput {
     /// Creates a new builder-style object to manufacture [`CreateCustomRoutingListenerInput`](crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerInput).
-    pub fn builder() -> crate::operation::create_custom_routing_listener::builders::CreateCustomRoutingListenerInputBuilder {
+    pub fn builder() -> crate::operation::create_custom_routing_listener::builders::CreateCustomRoutingListenerInputBuilder{
         crate::operation::create_custom_routing_listener::builders::CreateCustomRoutingListenerInputBuilder::default()
     }
 }
@@ -52,24 +52,29 @@ impl CreateCustomRoutingListenerInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.</p>
     pub fn set_accelerator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accelerator_arn = input; self
+        self.accelerator_arn = input;
+        self
     }
     /// Appends an item to `port_ranges`.
     ///
     /// To override the contents of this collection use [`set_port_ranges`](Self::set_port_ranges).
     ///
-    /// <p>The port range to support for connections from clients to your accelerator.</p> 
+    /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
     pub fn port_ranges(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.port_ranges.unwrap_or_default();
-                        v.push(input);
-                        self.port_ranges = Some(v);
-                        self
+        v.push(input);
+        self.port_ranges = Some(v);
+        self
     }
-    /// <p>The port range to support for connections from clients to your accelerator.</p> 
+    /// <p>The port range to support for connections from clients to your accelerator.</p>
     /// <p>Separately, you set port ranges for endpoints. For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html">About endpoints for custom routing accelerators</a>.</p>
-    pub fn set_port_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.port_ranges = input; self
+    pub fn set_port_ranges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PortRange>>,
+    ) -> Self {
+        self.port_ranges = input;
+        self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
     pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,21 +82,26 @@ impl CreateCustomRoutingListenerInputBuilder {
         self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.</p>
-    pub fn set_idempotency_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.idempotency_token = input; self
+    pub fn set_idempotency_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.idempotency_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateCustomRoutingListenerInput`](crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerInput).
-    pub fn build(self) -> Result<crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerInput {
-                accelerator_arn: self.accelerator_arn
-                ,
-                port_ranges: self.port_ranges
-                ,
-                idempotency_token: self.idempotency_token
-                ,
-            }
+                accelerator_arn: self.accelerator_arn,
+                port_ranges: self.port_ranges,
+                idempotency_token: self.idempotency_token,
+            },
         )
     }
 }
-

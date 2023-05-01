@@ -270,4 +270,3 @@ pub mod update_snapshot_schedule;
 
 /// Types for the `UpdateVTLDeviceType` operation.
 pub mod update_vtl_device_type;
-

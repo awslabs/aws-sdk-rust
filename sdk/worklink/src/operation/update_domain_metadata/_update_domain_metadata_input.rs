@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDomainMetadataInput  {
+pub struct UpdateDomainMetadataInput {
     /// <p>The ARN of the fleet.</p>
     #[doc(hidden)]
     pub fleet_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct UpdateDomainMetadataInput  {
 }
 impl UpdateDomainMetadataInput {
     /// <p>The ARN of the fleet.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<& str> {
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The name to display.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
 }
 impl UpdateDomainMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateDomainMetadataInput`](crate::operation::update_domain_metadata::UpdateDomainMetadataInput).
-    pub fn builder() -> crate::operation::update_domain_metadata::builders::UpdateDomainMetadataInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_domain_metadata::builders::UpdateDomainMetadataInputBuilder {
         crate::operation::update_domain_metadata::builders::UpdateDomainMetadataInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl UpdateDomainMetadataInputBuilder {
     }
     /// <p>The ARN of the fleet.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input; self
+        self.fleet_arn = input;
+        self
     }
     /// <p>The name of the domain.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl UpdateDomainMetadataInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>The name to display.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl UpdateDomainMetadataInputBuilder {
     }
     /// <p>The name to display.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDomainMetadataInput`](crate::operation::update_domain_metadata::UpdateDomainMetadataInput).
-    pub fn build(self) -> Result<crate::operation::update_domain_metadata::UpdateDomainMetadataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_domain_metadata::UpdateDomainMetadataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_domain_metadata::UpdateDomainMetadataInput {
-                fleet_arn: self.fleet_arn
-                ,
-                domain_name: self.domain_name
-                ,
-                display_name: self.display_name
-                ,
-            }
+                fleet_arn: self.fleet_arn,
+                domain_name: self.domain_name,
+                display_name: self.display_name,
+            },
         )
     }
 }
-

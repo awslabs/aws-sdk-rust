@@ -3,14 +3,14 @@
 /// <p>Specifies a CloudWatch Logs location where chat logs will be stored.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsDestinationConfiguration  {
+pub struct CloudWatchLogsDestinationConfiguration {
     /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
     #[doc(hidden)]
     pub log_group_name: std::option::Option<std::string::String>,
 }
 impl CloudWatchLogsDestinationConfiguration {
     /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
-    pub fn log_group_name(&self) -> std::option::Option<& str> {
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl CloudWatchLogsDestinationConfigurationBuilder {
     }
     /// <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be logged.</p>
     pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_name = input; self
+        self.log_group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsDestinationConfiguration`](crate::types::CloudWatchLogsDestinationConfiguration).
     pub fn build(self) -> crate::types::CloudWatchLogsDestinationConfiguration {
         crate::types::CloudWatchLogsDestinationConfiguration {
-            log_group_name: self.log_group_name
-            ,
+            log_group_name: self.log_group_name,
         }
     }
 }
-

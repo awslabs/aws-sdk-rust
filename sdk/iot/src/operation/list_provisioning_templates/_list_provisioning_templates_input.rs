@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProvisioningTemplatesInput  {
+pub struct ListProvisioningTemplatesInput {
     /// <p>The maximum number of results to return at one time.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,13 +16,13 @@ impl ListProvisioningTemplatesInput {
         self.max_results
     }
     /// <p>A token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListProvisioningTemplatesInput {
     /// Creates a new builder-style object to manufacture [`ListProvisioningTemplatesInput`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesInput).
-    pub fn builder() -> crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesInputBuilder {
+    pub fn builder() -> crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesInputBuilder{
         crate::operation::list_provisioning_templates::builders::ListProvisioningTemplatesInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl ListProvisioningTemplatesInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,21 @@ impl ListProvisioningTemplatesInputBuilder {
     }
     /// <p>A token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListProvisioningTemplatesInput`](crate::operation::list_provisioning_templates::ListProvisioningTemplatesInput).
-    pub fn build(self) -> Result<crate::operation::list_provisioning_templates::ListProvisioningTemplatesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_provisioning_templates::ListProvisioningTemplatesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_provisioning_templates::ListProvisioningTemplatesInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBuildBatchesInput  {
+pub struct ListBuildBatchesInput {
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
     #[doc(hidden)]
     pub filter: std::option::Option<crate::types::BuildBatchFilter>,
     /// <p>The maximum number of results to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
-    /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub sort_order: std::option::Option<crate::types::SortOrderType>,
@@ -22,29 +22,30 @@ pub struct ListBuildBatchesInput  {
 }
 impl ListBuildBatchesInput {
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::types::BuildBatchFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::types::BuildBatchFilter> {
         self.filter.as_ref()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
     }
-    /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
     /// </ul>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrderType> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrderType> {
         self.sort_order.as_ref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListBuildBatchesInput {
     /// Creates a new builder-style object to manufacture [`ListBuildBatchesInput`](crate::operation::list_build_batches::ListBuildBatchesInput).
-    pub fn builder() -> crate::operation::list_build_batches::builders::ListBuildBatchesInputBuilder {
+    pub fn builder() -> crate::operation::list_build_batches::builders::ListBuildBatchesInputBuilder
+    {
         crate::operation::list_build_batches::builders::ListBuildBatchesInputBuilder::default()
     }
 }
@@ -65,8 +66,12 @@ impl ListBuildBatchesInputBuilder {
         self
     }
     /// <p>A <code>BuildBatchFilter</code> object that specifies the filters for the search.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::BuildBatchFilter>) -> Self {
-        self.filter = input; self
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::BuildBatchFilter>,
+    ) -> Self {
+        self.filter = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,24 +80,29 @@ impl ListBuildBatchesInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
-    /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.sort_order = Some(input);
         self
     }
-    /// <p>Specifies the sort order of the returned items. Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li> 
+    /// <p>Specifies the sort order of the returned items. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List the batch build identifiers in descending order by identifier.</p> </li>
     /// </ul>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrderType>) -> Self {
-        self.sort_order = input; self
+    pub fn set_sort_order(
+        mut self,
+        input: std::option::Option<crate::types::SortOrderType>,
+    ) -> Self {
+        self.sort_order = input;
+        self
     }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,22 +111,23 @@ impl ListBuildBatchesInputBuilder {
     }
     /// <p>The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>. This specifies the next item to return. To return the beginning of the list, exclude this parameter.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBuildBatchesInput`](crate::operation::list_build_batches::ListBuildBatchesInput).
-    pub fn build(self) -> Result<crate::operation::list_build_batches::ListBuildBatchesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_build_batches::ListBuildBatchesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_build_batches::ListBuildBatchesInput {
-                filter: self.filter
-                ,
-                max_results: self.max_results
-                ,
-                sort_order: self.sort_order
-                ,
-                next_token: self.next_token
-                ,
-            }
+                filter: self.filter,
+                max_results: self.max_results,
+                sort_order: self.sort_order,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

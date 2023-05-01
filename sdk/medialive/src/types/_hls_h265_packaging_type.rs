@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let hlsh265packagingtype = unimplemented!();
 /// match hlsh265packagingtype {
@@ -30,55 +30,64 @@
 /// Specifically, when `hlsh265packagingtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HlsH265PackagingType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Hls H265 Packaging Type
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum HlsH265PackagingType {
     #[allow(missing_docs)] // documentation missing in model
     Hev1,
     #[allow(missing_docs)] // documentation missing in model
     Hvc1,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HlsH265PackagingType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "HEV1" => HlsH265PackagingType::Hev1,
-"HVC1" => HlsH265PackagingType::Hvc1,
-other => HlsH265PackagingType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for HlsH265PackagingType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(HlsH265PackagingType::from(s))
-                }
-            }
-impl HlsH265PackagingType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    HlsH265PackagingType::Hev1 => "HEV1",
-    HlsH265PackagingType::Hvc1 => "HVC1",
-    HlsH265PackagingType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "HEV1" => HlsH265PackagingType::Hev1,
+            "HVC1" => HlsH265PackagingType::Hvc1,
+            other => HlsH265PackagingType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["HEV1", "HVC1"]
-                }
-            }
-impl AsRef<str> for HlsH265PackagingType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for HlsH265PackagingType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HlsH265PackagingType::from(s))
+    }
+}
+impl HlsH265PackagingType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HlsH265PackagingType::Hev1 => "HEV1",
+            HlsH265PackagingType::Hvc1 => "HVC1",
+            HlsH265PackagingType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["HEV1", "HVC1"]
+    }
+}
+impl AsRef<str> for HlsH265PackagingType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

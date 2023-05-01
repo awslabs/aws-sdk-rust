@@ -3,7 +3,7 @@
 /// <p>Describes an instance to export.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceExportDetails  {
+pub struct InstanceExportDetails {
     /// <p>The ID of the resource being exported.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct InstanceExportDetails  {
 }
 impl InstanceExportDetails {
     /// <p>The ID of the resource being exported.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The target virtualization environment.</p>
-    pub fn target_environment(&self) -> std::option::Option<& crate::types::ExportEnvironment> {
+    pub fn target_environment(&self) -> std::option::Option<&crate::types::ExportEnvironment> {
         self.target_environment.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl InstanceExportDetailsBuilder {
     }
     /// <p>The ID of the resource being exported.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The target virtualization environment.</p>
     pub fn target_environment(mut self, input: crate::types::ExportEnvironment) -> Self {
@@ -51,17 +52,18 @@ impl InstanceExportDetailsBuilder {
         self
     }
     /// <p>The target virtualization environment.</p>
-    pub fn set_target_environment(mut self, input: std::option::Option<crate::types::ExportEnvironment>) -> Self {
-        self.target_environment = input; self
+    pub fn set_target_environment(
+        mut self,
+        input: std::option::Option<crate::types::ExportEnvironment>,
+    ) -> Self {
+        self.target_environment = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceExportDetails`](crate::types::InstanceExportDetails).
     pub fn build(self) -> crate::types::InstanceExportDetails {
         crate::types::InstanceExportDetails {
-            instance_id: self.instance_id
-            ,
-            target_environment: self.target_environment
-            ,
+            instance_id: self.instance_id,
+            target_environment: self.target_environment,
         }
     }
 }
-

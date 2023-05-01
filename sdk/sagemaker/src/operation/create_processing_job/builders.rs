@@ -4,50 +4,70 @@ pub use crate::operation::create_processing_job::_create_processing_job_output::
 pub use crate::operation::create_processing_job::_create_processing_job_input::CreateProcessingJobInputBuilder;
 
 /// Fluent builder constructing a request to `CreateProcessingJob`.
-/// 
+///
 /// <p>Creates a processing job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateProcessingJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_processing_job::builders::CreateProcessingJobInputBuilder,
+    inner: crate::operation::create_processing_job::builders::CreateProcessingJobInputBuilder,
 }
-impl CreateProcessingJobFluentBuilder  {
+impl CreateProcessingJobFluentBuilder {
     /// Creates a new `CreateProcessingJob`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_processing_job::CreateProcessingJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_processing_job::CreateProcessingJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_processing_job::CreateProcessingJobOutput, aws_smithy_http::result::SdkError<crate::operation::create_processing_job::CreateProcessingJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_processing_job::CreateProcessingJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_processing_job::CreateProcessingJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_processing_job::CreateProcessingJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_processing_job::CreateProcessingJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `ProcessingInputs`.
     ///
     /// To override the contents of this collection use [`set_processing_inputs`](Self::set_processing_inputs).
@@ -58,7 +78,10 @@ impl CreateProcessingJobFluentBuilder  {
         self
     }
     /// <p>An array of inputs configuring the data to download into the processing container.</p>
-    pub fn set_processing_inputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProcessingInput>>) -> Self {
+    pub fn set_processing_inputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ProcessingInput>>,
+    ) -> Self {
         self.inner = self.inner.set_processing_inputs(input);
         self
     }
@@ -68,7 +91,10 @@ impl CreateProcessingJobFluentBuilder  {
         self
     }
     /// <p>Output configuration for the processing job.</p>
-    pub fn set_processing_output_config(mut self, input: std::option::Option<crate::types::ProcessingOutputConfig>) -> Self {
+    pub fn set_processing_output_config(
+        mut self,
+        input: std::option::Option<crate::types::ProcessingOutputConfig>,
+    ) -> Self {
         self.inner = self.inner.set_processing_output_config(input);
         self
     }
@@ -78,7 +104,10 @@ impl CreateProcessingJobFluentBuilder  {
         self
     }
     /// <p> The name of the processing job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.</p>
-    pub fn set_processing_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_processing_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_processing_job_name(input);
         self
     }
@@ -88,7 +117,10 @@ impl CreateProcessingJobFluentBuilder  {
         self
     }
     /// <p>Identifies the resources, ML compute instances, and ML storage volumes to deploy for a processing job. In distributed training, you specify more than one instance.</p>
-    pub fn set_processing_resources(mut self, input: std::option::Option<crate::types::ProcessingResources>) -> Self {
+    pub fn set_processing_resources(
+        mut self,
+        input: std::option::Option<crate::types::ProcessingResources>,
+    ) -> Self {
         self.inner = self.inner.set_processing_resources(input);
         self
     }
@@ -98,7 +130,10 @@ impl CreateProcessingJobFluentBuilder  {
         self
     }
     /// <p>The time limit for how long the processing job is allowed to run.</p>
-    pub fn set_stopping_condition(mut self, input: std::option::Option<crate::types::ProcessingStoppingCondition>) -> Self {
+    pub fn set_stopping_condition(
+        mut self,
+        input: std::option::Option<crate::types::ProcessingStoppingCondition>,
+    ) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
@@ -108,7 +143,10 @@ impl CreateProcessingJobFluentBuilder  {
         self
     }
     /// <p>Configures the processing job to run a specified Docker container image.</p>
-    pub fn set_app_specification(mut self, input: std::option::Option<crate::types::AppSpecification>) -> Self {
+    pub fn set_app_specification(
+        mut self,
+        input: std::option::Option<crate::types::AppSpecification>,
+    ) -> Self {
         self.inner = self.inner.set_app_specification(input);
         self
     }
@@ -117,12 +155,21 @@ impl CreateProcessingJobFluentBuilder  {
     /// To override the contents of this collection use [`set_environment`](Self::set_environment).
     ///
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
-    pub fn environment(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn environment(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.environment(k.into(), v.into());
         self
     }
     /// <p>The environment variables to set in the Docker container. Up to 100 key and values entries in the map are supported.</p>
-    pub fn set_environment(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_environment(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_environment(input);
         self
     }
@@ -132,7 +179,10 @@ impl CreateProcessingJobFluentBuilder  {
         self
     }
     /// <p>Networking options for a processing job, such as whether to allow inbound and outbound network calls to and from processing containers, and the VPC subnets and security groups to use for VPC-enabled processing jobs.</p>
-    pub fn set_network_config(mut self, input: std::option::Option<crate::types::NetworkConfig>) -> Self {
+    pub fn set_network_config(
+        mut self,
+        input: std::option::Option<crate::types::NetworkConfig>,
+    ) -> Self {
         self.inner = self.inner.set_network_config(input);
         self
     }
@@ -156,29 +206,34 @@ impl CreateProcessingJobFluentBuilder  {
         self
     }
     /// <p>(Optional) An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-whatURL">Using Cost Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p> 
-    /// <ul> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li> 
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
     pub fn experiment_config(mut self, input: crate::types::ExperimentConfig) -> Self {
         self.inner = self.inner.experiment_config(input);
         self
     }
-    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p> 
-    /// <ul> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li> 
-    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li> 
+    /// <p>Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following APIs:</p>
+    /// <ul>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a> </p> </li>
+    /// <li> <p> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a> </p> </li>
     /// </ul>
-    pub fn set_experiment_config(mut self, input: std::option::Option<crate::types::ExperimentConfig>) -> Self {
+    pub fn set_experiment_config(
+        mut self,
+        input: std::option::Option<crate::types::ExperimentConfig>,
+    ) -> Self {
         self.inner = self.inner.set_experiment_config(input);
         self
     }
 }
-

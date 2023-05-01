@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReserveContactInput  {
+pub struct ReserveContactInput {
     /// <p>ARN of a mission profile.</p>
     #[doc(hidden)]
     pub mission_profile_arn: std::option::Option<std::string::String>,
@@ -21,31 +21,35 @@ pub struct ReserveContactInput  {
     pub ground_station: std::option::Option<std::string::String>,
     /// <p>Tags assigned to a contact.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ReserveContactInput {
     /// <p>ARN of a mission profile.</p>
-    pub fn mission_profile_arn(&self) -> std::option::Option<& str> {
+    pub fn mission_profile_arn(&self) -> std::option::Option<&str> {
         self.mission_profile_arn.as_deref()
     }
     /// <p>ARN of a satellite</p>
-    pub fn satellite_arn(&self) -> std::option::Option<& str> {
+    pub fn satellite_arn(&self) -> std::option::Option<&str> {
         self.satellite_arn.as_deref()
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>End time of a contact in UTC.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>Name of a ground station.</p>
-    pub fn ground_station(&self) -> std::option::Option<& str> {
+    pub fn ground_station(&self) -> std::option::Option<&str> {
         self.ground_station.as_deref()
     }
     /// <p>Tags assigned to a contact.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -65,7 +69,8 @@ pub struct ReserveContactInputBuilder {
     pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) ground_station: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ReserveContactInputBuilder {
     /// <p>ARN of a mission profile.</p>
@@ -74,8 +79,12 @@ impl ReserveContactInputBuilder {
         self
     }
     /// <p>ARN of a mission profile.</p>
-    pub fn set_mission_profile_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.mission_profile_arn = input; self
+    pub fn set_mission_profile_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.mission_profile_arn = input;
+        self
     }
     /// <p>ARN of a satellite</p>
     pub fn satellite_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +93,8 @@ impl ReserveContactInputBuilder {
     }
     /// <p>ARN of a satellite</p>
     pub fn set_satellite_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.satellite_arn = input; self
+        self.satellite_arn = input;
+        self
     }
     /// <p>Start time of a contact in UTC.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -92,8 +102,12 @@ impl ReserveContactInputBuilder {
         self
     }
     /// <p>Start time of a contact in UTC.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>End time of a contact in UTC.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -102,7 +116,8 @@ impl ReserveContactInputBuilder {
     }
     /// <p>End time of a contact in UTC.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>Name of a ground station.</p>
     pub fn ground_station(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,41 +126,48 @@ impl ReserveContactInputBuilder {
     }
     /// <p>Name of a ground station.</p>
     pub fn set_ground_station(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ground_station = input; self
+        self.ground_station = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags assigned to a contact.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Tags assigned to a contact.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReserveContactInput`](crate::operation::reserve_contact::ReserveContactInput).
-    pub fn build(self) -> Result<crate::operation::reserve_contact::ReserveContactInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::reserve_contact::ReserveContactInput {
-                mission_profile_arn: self.mission_profile_arn
-                ,
-                satellite_arn: self.satellite_arn
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-                ground_station: self.ground_station
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reserve_contact::ReserveContactInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::reserve_contact::ReserveContactInput {
+            mission_profile_arn: self.mission_profile_arn,
+            satellite_arn: self.satellite_arn,
+            start_time: self.start_time,
+            end_time: self.end_time,
+            ground_station: self.ground_station,
+            tags: self.tags,
+        })
     }
 }
-

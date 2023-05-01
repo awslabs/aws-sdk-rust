@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchVocabulariesInput  {
+pub struct SearchVocabulariesInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -24,7 +24,7 @@ pub struct SearchVocabulariesInput  {
 }
 impl SearchVocabulariesInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
@@ -32,25 +32,26 @@ impl SearchVocabulariesInput {
         self.max_results
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The current state of the custom vocabulary.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::VocabularyState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::VocabularyState> {
         self.state.as_ref()
     }
     /// <p>The starting pattern of the name of the vocabulary.</p>
-    pub fn name_starts_with(&self) -> std::option::Option<& str> {
+    pub fn name_starts_with(&self) -> std::option::Option<&str> {
         self.name_starts_with.as_deref()
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn language_code(&self) -> std::option::Option<& crate::types::VocabularyLanguageCode> {
+    pub fn language_code(&self) -> std::option::Option<&crate::types::VocabularyLanguageCode> {
         self.language_code.as_ref()
     }
 }
 impl SearchVocabulariesInput {
     /// Creates a new builder-style object to manufacture [`SearchVocabulariesInput`](crate::operation::search_vocabularies::SearchVocabulariesInput).
-    pub fn builder() -> crate::operation::search_vocabularies::builders::SearchVocabulariesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::search_vocabularies::builders::SearchVocabulariesInputBuilder {
         crate::operation::search_vocabularies::builders::SearchVocabulariesInputBuilder::default()
     }
 }
@@ -74,7 +75,8 @@ impl SearchVocabulariesInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -83,7 +85,8 @@ impl SearchVocabulariesInputBuilder {
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +95,8 @@ impl SearchVocabulariesInputBuilder {
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The current state of the custom vocabulary.</p>
     pub fn state(mut self, input: crate::types::VocabularyState) -> Self {
@@ -101,7 +105,8 @@ impl SearchVocabulariesInputBuilder {
     }
     /// <p>The current state of the custom vocabulary.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::VocabularyState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The starting pattern of the name of the vocabulary.</p>
     pub fn name_starts_with(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +115,8 @@ impl SearchVocabulariesInputBuilder {
     }
     /// <p>The starting pattern of the name of the vocabulary.</p>
     pub fn set_name_starts_with(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name_starts_with = input; self
+        self.name_starts_with = input;
+        self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
     pub fn language_code(mut self, input: crate::types::VocabularyLanguageCode) -> Self {
@@ -118,27 +124,29 @@ impl SearchVocabulariesInputBuilder {
         self
     }
     /// <p>The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> </p>
-    pub fn set_language_code(mut self, input: std::option::Option<crate::types::VocabularyLanguageCode>) -> Self {
-        self.language_code = input; self
+    pub fn set_language_code(
+        mut self,
+        input: std::option::Option<crate::types::VocabularyLanguageCode>,
+    ) -> Self {
+        self.language_code = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchVocabulariesInput`](crate::operation::search_vocabularies::SearchVocabulariesInput).
-    pub fn build(self) -> Result<crate::operation::search_vocabularies::SearchVocabulariesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::search_vocabularies::SearchVocabulariesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::search_vocabularies::SearchVocabulariesInput {
-                instance_id: self.instance_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                state: self.state
-                ,
-                name_starts_with: self.name_starts_with
-                ,
-                language_code: self.language_code
-                ,
-            }
+                instance_id: self.instance_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                state: self.state,
+                name_starts_with: self.name_starts_with,
+                language_code: self.language_code,
+            },
         )
     }
 }
-

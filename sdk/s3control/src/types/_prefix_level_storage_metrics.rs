@@ -3,7 +3,7 @@
 /// <p>A container for the prefix-level storage metrics for S3 Storage Lens.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PrefixLevelStorageMetrics  {
+pub struct PrefixLevelStorageMetrics {
     /// <p>A container for whether prefix-level storage metrics are enabled.</p>
     #[doc(hidden)]
     pub is_enabled: bool,
@@ -17,7 +17,7 @@ impl PrefixLevelStorageMetrics {
         self.is_enabled
     }
     /// <p></p>
-    pub fn selection_criteria(&self) -> std::option::Option<& crate::types::SelectionCriteria> {
+    pub fn selection_criteria(&self) -> std::option::Option<&crate::types::SelectionCriteria> {
         self.selection_criteria.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl PrefixLevelStorageMetricsBuilder {
     }
     /// <p>A container for whether prefix-level storage metrics are enabled.</p>
     pub fn set_is_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_enabled = input; self
+        self.is_enabled = input;
+        self
     }
     /// <p></p>
     pub fn selection_criteria(mut self, input: crate::types::SelectionCriteria) -> Self {
@@ -51,18 +52,18 @@ impl PrefixLevelStorageMetricsBuilder {
         self
     }
     /// <p></p>
-    pub fn set_selection_criteria(mut self, input: std::option::Option<crate::types::SelectionCriteria>) -> Self {
-        self.selection_criteria = input; self
+    pub fn set_selection_criteria(
+        mut self,
+        input: std::option::Option<crate::types::SelectionCriteria>,
+    ) -> Self {
+        self.selection_criteria = input;
+        self
     }
     /// Consumes the builder and constructs a [`PrefixLevelStorageMetrics`](crate::types::PrefixLevelStorageMetrics).
     pub fn build(self) -> crate::types::PrefixLevelStorageMetrics {
         crate::types::PrefixLevelStorageMetrics {
-            is_enabled: self.is_enabled
-                .unwrap_or_default()
-            ,
-            selection_criteria: self.selection_criteria
-            ,
+            is_enabled: self.is_enabled.unwrap_or_default(),
+            selection_criteria: self.selection_criteria,
         }
     }
 }
-

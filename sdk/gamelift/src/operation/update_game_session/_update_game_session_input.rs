@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateGameSessionInput  {
+pub struct UpdateGameSessionInput {
     /// <p>A unique identifier for the game session to update. </p>
     #[doc(hidden)]
     pub game_session_id: std::option::Option<std::string::String>,
@@ -14,18 +14,19 @@ pub struct UpdateGameSessionInput  {
     pub name: std::option::Option<std::string::String>,
     /// <p>A policy that determines whether the game session is accepting new players.</p>
     #[doc(hidden)]
-    pub player_session_creation_policy: std::option::Option<crate::types::PlayerSessionCreationPolicy>,
-    /// <p>Game session protection policy to apply to this game session only.</p> 
-    /// <ul> 
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li> 
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li> 
+    pub player_session_creation_policy:
+        std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+    /// <p>Game session protection policy to apply to this game session only.</p>
+    /// <ul>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub protection_policy: std::option::Option<crate::types::ProtectionPolicy>,
 }
 impl UpdateGameSessionInput {
     /// <p>A unique identifier for the game session to update. </p>
-    pub fn game_session_id(&self) -> std::option::Option<& str> {
+    pub fn game_session_id(&self) -> std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
@@ -33,25 +34,28 @@ impl UpdateGameSessionInput {
         self.maximum_player_session_count
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn player_session_creation_policy(&self) -> std::option::Option<& crate::types::PlayerSessionCreationPolicy> {
+    pub fn player_session_creation_policy(
+        &self,
+    ) -> std::option::Option<&crate::types::PlayerSessionCreationPolicy> {
         self.player_session_creation_policy.as_ref()
     }
-    /// <p>Game session protection policy to apply to this game session only.</p> 
-    /// <ul> 
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li> 
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li> 
+    /// <p>Game session protection policy to apply to this game session only.</p>
+    /// <ul>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn protection_policy(&self) -> std::option::Option<& crate::types::ProtectionPolicy> {
+    pub fn protection_policy(&self) -> std::option::Option<&crate::types::ProtectionPolicy> {
         self.protection_policy.as_ref()
     }
 }
 impl UpdateGameSessionInput {
     /// Creates a new builder-style object to manufacture [`UpdateGameSessionInput`](crate::operation::update_game_session::UpdateGameSessionInput).
-    pub fn builder() -> crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder {
         crate::operation::update_game_session::builders::UpdateGameSessionInputBuilder::default()
     }
 }
@@ -63,7 +67,8 @@ pub struct UpdateGameSessionInputBuilder {
     pub(crate) game_session_id: std::option::Option<std::string::String>,
     pub(crate) maximum_player_session_count: std::option::Option<i32>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) player_session_creation_policy: std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+    pub(crate) player_session_creation_policy:
+        std::option::Option<crate::types::PlayerSessionCreationPolicy>,
     pub(crate) protection_policy: std::option::Option<crate::types::ProtectionPolicy>,
 }
 impl UpdateGameSessionInputBuilder {
@@ -74,7 +79,8 @@ impl UpdateGameSessionInputBuilder {
     }
     /// <p>A unique identifier for the game session to update. </p>
     pub fn set_game_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_session_id = input; self
+        self.game_session_id = input;
+        self
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn maximum_player_session_count(mut self, input: i32) -> Self {
@@ -83,7 +89,8 @@ impl UpdateGameSessionInputBuilder {
     }
     /// <p>The maximum number of players that can be connected simultaneously to the game session.</p>
     pub fn set_maximum_player_session_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.maximum_player_session_count = input; self
+        self.maximum_player_session_count = input;
+        self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,50 +99,61 @@ impl UpdateGameSessionInputBuilder {
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn player_session_creation_policy(mut self, input: crate::types::PlayerSessionCreationPolicy) -> Self {
+    pub fn player_session_creation_policy(
+        mut self,
+        input: crate::types::PlayerSessionCreationPolicy,
+    ) -> Self {
         self.player_session_creation_policy = Some(input);
         self
     }
     /// <p>A policy that determines whether the game session is accepting new players.</p>
-    pub fn set_player_session_creation_policy(mut self, input: std::option::Option<crate::types::PlayerSessionCreationPolicy>) -> Self {
-        self.player_session_creation_policy = input; self
+    pub fn set_player_session_creation_policy(
+        mut self,
+        input: std::option::Option<crate::types::PlayerSessionCreationPolicy>,
+    ) -> Self {
+        self.player_session_creation_policy = input;
+        self
     }
-    /// <p>Game session protection policy to apply to this game session only.</p> 
-    /// <ul> 
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li> 
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li> 
+    /// <p>Game session protection policy to apply to this game session only.</p>
+    /// <ul>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
     pub fn protection_policy(mut self, input: crate::types::ProtectionPolicy) -> Self {
         self.protection_policy = Some(input);
         self
     }
-    /// <p>Game session protection policy to apply to this game session only.</p> 
-    /// <ul> 
-    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li> 
-    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li> 
+    /// <p>Game session protection policy to apply to this game session only.</p>
+    /// <ul>
+    /// <li> <p> <b>NoProtection</b> -- The game session can be terminated during a scale-down event.</p> </li>
+    /// <li> <p> <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status, it cannot be terminated during a scale-down event.</p> </li>
     /// </ul>
-    pub fn set_protection_policy(mut self, input: std::option::Option<crate::types::ProtectionPolicy>) -> Self {
-        self.protection_policy = input; self
+    pub fn set_protection_policy(
+        mut self,
+        input: std::option::Option<crate::types::ProtectionPolicy>,
+    ) -> Self {
+        self.protection_policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateGameSessionInput`](crate::operation::update_game_session::UpdateGameSessionInput).
-    pub fn build(self) -> Result<crate::operation::update_game_session::UpdateGameSessionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_game_session::UpdateGameSessionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_game_session::UpdateGameSessionInput {
-                game_session_id: self.game_session_id
-                ,
-                maximum_player_session_count: self.maximum_player_session_count
-                ,
-                name: self.name
-                ,
-                player_session_creation_policy: self.player_session_creation_policy
-                ,
-                protection_policy: self.protection_policy
-                ,
-            }
+                game_session_id: self.game_session_id,
+                maximum_player_session_count: self.maximum_player_session_count,
+                name: self.name,
+                player_session_creation_policy: self.player_session_creation_policy,
+                protection_policy: self.protection_policy,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateEdgePackagingJobInput  {
+pub struct CreateEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
     #[doc(hidden)]
     pub edge_packaging_job_name: std::option::Option<std::string::String>,
@@ -30,41 +30,43 @@ pub struct CreateEdgePackagingJobInput  {
 }
 impl CreateEdgePackagingJobInput {
     /// <p>The name of the edge packaging job.</p>
-    pub fn edge_packaging_job_name(&self) -> std::option::Option<& str> {
+    pub fn edge_packaging_job_name(&self) -> std::option::Option<&str> {
         self.edge_packaging_job_name.as_deref()
     }
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-    pub fn compilation_job_name(&self) -> std::option::Option<& str> {
+    pub fn compilation_job_name(&self) -> std::option::Option<&str> {
         self.compilation_job_name.as_deref()
     }
     /// <p>The name of the model.</p>
-    pub fn model_name(&self) -> std::option::Option<& str> {
+    pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>The version of the model.</p>
-    pub fn model_version(&self) -> std::option::Option<& str> {
+    pub fn model_version(&self) -> std::option::Option<&str> {
         self.model_version.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Provides information about the output location for the packaged model.</p>
-    pub fn output_config(&self) -> std::option::Option<& crate::types::EdgeOutputConfig> {
+    pub fn output_config(&self) -> std::option::Option<&crate::types::EdgeOutputConfig> {
         self.output_config.as_ref()
     }
     /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
-    pub fn resource_key(&self) -> std::option::Option<& str> {
+    pub fn resource_key(&self) -> std::option::Option<&str> {
         self.resource_key.as_deref()
     }
     /// <p>Creates tags for the packaging job.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateEdgePackagingJobInput {
     /// Creates a new builder-style object to manufacture [`CreateEdgePackagingJobInput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput).
-    pub fn builder() -> crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder
+    {
         crate::operation::create_edge_packaging_job::builders::CreateEdgePackagingJobInputBuilder::default()
     }
 }
@@ -89,8 +91,12 @@ impl CreateEdgePackagingJobInputBuilder {
         self
     }
     /// <p>The name of the edge packaging job.</p>
-    pub fn set_edge_packaging_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.edge_packaging_job_name = input; self
+    pub fn set_edge_packaging_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.edge_packaging_job_name = input;
+        self
     }
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
     pub fn compilation_job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +104,12 @@ impl CreateEdgePackagingJobInputBuilder {
         self
     }
     /// <p>The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.</p>
-    pub fn set_compilation_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.compilation_job_name = input; self
+    pub fn set_compilation_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.compilation_job_name = input;
+        self
     }
     /// <p>The name of the model.</p>
     pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +118,8 @@ impl CreateEdgePackagingJobInputBuilder {
     }
     /// <p>The name of the model.</p>
     pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_name = input; self
+        self.model_name = input;
+        self
     }
     /// <p>The version of the model.</p>
     pub fn model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +128,8 @@ impl CreateEdgePackagingJobInputBuilder {
     }
     /// <p>The version of the model.</p>
     pub fn set_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_version = input; self
+        self.model_version = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +138,8 @@ impl CreateEdgePackagingJobInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>Provides information about the output location for the packaged model.</p>
     pub fn output_config(mut self, input: crate::types::EdgeOutputConfig) -> Self {
@@ -134,8 +147,12 @@ impl CreateEdgePackagingJobInputBuilder {
         self
     }
     /// <p>Provides information about the output location for the packaged model.</p>
-    pub fn set_output_config(mut self, input: std::option::Option<crate::types::EdgeOutputConfig>) -> Self {
-        self.output_config = input; self
+    pub fn set_output_config(
+        mut self,
+        input: std::option::Option<crate::types::EdgeOutputConfig>,
+    ) -> Self {
+        self.output_config = input;
+        self
     }
     /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
     pub fn resource_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +161,8 @@ impl CreateEdgePackagingJobInputBuilder {
     }
     /// <p>The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.</p>
     pub fn set_resource_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_key = input; self
+        self.resource_key = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -153,36 +171,36 @@ impl CreateEdgePackagingJobInputBuilder {
     /// <p>Creates tags for the packaging job.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Creates tags for the packaging job.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateEdgePackagingJobInput`](crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput).
-    pub fn build(self) -> Result<crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_edge_packaging_job::CreateEdgePackagingJobInput {
-                edge_packaging_job_name: self.edge_packaging_job_name
-                ,
-                compilation_job_name: self.compilation_job_name
-                ,
-                model_name: self.model_name
-                ,
-                model_version: self.model_version
-                ,
-                role_arn: self.role_arn
-                ,
-                output_config: self.output_config
-                ,
-                resource_key: self.resource_key
-                ,
-                tags: self.tags
-                ,
-            }
+                edge_packaging_job_name: self.edge_packaging_job_name,
+                compilation_job_name: self.compilation_job_name,
+                model_name: self.model_name,
+                model_version: self.model_version,
+                role_arn: self.role_arn,
+                output_config: self.output_config,
+                resource_key: self.resource_key,
+                tags: self.tags,
+            },
         )
     }
 }
-

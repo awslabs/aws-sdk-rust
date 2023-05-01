@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVoiceProfileDomainInput  {
+pub struct DeleteVoiceProfileDomainInput {
     /// <p>The voice profile domain ID.</p>
     #[doc(hidden)]
     pub voice_profile_domain_id: std::option::Option<std::string::String>,
 }
 impl DeleteVoiceProfileDomainInput {
     /// <p>The voice profile domain ID.</p>
-    pub fn voice_profile_domain_id(&self) -> std::option::Option<& str> {
+    pub fn voice_profile_domain_id(&self) -> std::option::Option<&str> {
         self.voice_profile_domain_id.as_deref()
     }
 }
 impl DeleteVoiceProfileDomainInput {
     /// Creates a new builder-style object to manufacture [`DeleteVoiceProfileDomainInput`](crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput).
-    pub fn builder() -> crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainInputBuilder
+    {
         crate::operation::delete_voice_profile_domain::builders::DeleteVoiceProfileDomainInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteVoiceProfileDomainInputBuilder {
         self
     }
     /// <p>The voice profile domain ID.</p>
-    pub fn set_voice_profile_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_profile_domain_id = input; self
+    pub fn set_voice_profile_domain_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_profile_domain_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVoiceProfileDomainInput`](crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput).
-    pub fn build(self) -> Result<crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainInput {
-                voice_profile_domain_id: self.voice_profile_domain_id
-                ,
-            }
+                voice_profile_domain_id: self.voice_profile_domain_id,
+            },
         )
     }
 }
-

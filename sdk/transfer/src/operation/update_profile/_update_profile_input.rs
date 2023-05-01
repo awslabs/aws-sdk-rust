@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProfileInput  {
+pub struct UpdateProfileInput {
     /// <p>The identifier of the profile object that you are updating.</p>
     #[doc(hidden)]
     pub profile_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateProfileInput  {
 }
 impl UpdateProfileInput {
     /// <p>The identifier of the profile object that you are updating.</p>
-    pub fn profile_id(&self) -> std::option::Option<& str> {
+    pub fn profile_id(&self) -> std::option::Option<&str> {
         self.profile_id.as_deref()
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn certificate_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn certificate_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.certificate_ids.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl UpdateProfileInputBuilder {
     }
     /// <p>The identifier of the profile object that you are updating.</p>
     pub fn set_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.profile_id = input; self
+        self.profile_id = input;
+        self
     }
     /// Appends an item to `certificate_ids`.
     ///
@@ -51,24 +52,28 @@ impl UpdateProfileInputBuilder {
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
     pub fn certificate_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.certificate_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.certificate_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.certificate_ids = Some(v);
+        self
     }
     /// <p>An array of identifiers for the imported certificates. You use this identifier for working with profiles and partner profiles.</p>
-    pub fn set_certificate_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.certificate_ids = input; self
+    pub fn set_certificate_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.certificate_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateProfileInput`](crate::operation::update_profile::UpdateProfileInput).
-    pub fn build(self) -> Result<crate::operation::update_profile::UpdateProfileInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_profile::UpdateProfileInput {
-                profile_id: self.profile_id
-                ,
-                certificate_ids: self.certificate_ids
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_profile::UpdateProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_profile::UpdateProfileInput {
+            profile_id: self.profile_id,
+            certificate_ids: self.certificate_ids,
+        })
     }
 }
-

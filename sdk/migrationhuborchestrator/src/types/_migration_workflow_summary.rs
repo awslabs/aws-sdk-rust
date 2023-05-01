@@ -3,7 +3,7 @@
 /// <p>The summary of a migration workflow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MigrationWorkflowSummary  {
+pub struct MigrationWorkflowSummary {
     /// <p>The ID of the migration workflow.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -37,35 +37,35 @@ pub struct MigrationWorkflowSummary  {
 }
 impl MigrationWorkflowSummary {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the migration workflow.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the template.</p>
-    pub fn template_id(&self) -> std::option::Option<& str> {
+    pub fn template_id(&self) -> std::option::Option<&str> {
         self.template_id.as_deref()
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_name(&self) -> std::option::Option<& str> {
+    pub fn ads_application_configuration_name(&self) -> std::option::Option<&str> {
         self.ads_application_configuration_name.as_deref()
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::MigrationWorkflowStatusEnum> {
+    pub fn status(&self) -> std::option::Option<&crate::types::MigrationWorkflowStatusEnum> {
         self.status.as_ref()
     }
     /// <p>The time at which the migration workflow was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The time at which the migration workflow ended.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The status message of the migration workflow.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The steps completed in the migration workflow.</p>
@@ -107,7 +107,8 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The ID of the migration workflow.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the migration workflow.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +117,8 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The name of the migration workflow.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of the template.</p>
     pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,16 +127,24 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The ID of the template.</p>
     pub fn set_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_id = input; self
+        self.template_id = input;
+        self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn ads_application_configuration_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ads_application_configuration_name(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.ads_application_configuration_name = Some(input.into());
         self
     }
     /// <p>The name of the application configured in Application Discovery Service.</p>
-    pub fn set_ads_application_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ads_application_configuration_name = input; self
+    pub fn set_ads_application_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ads_application_configuration_name = input;
+        self
     }
     /// <p>The status of the migration workflow.</p>
     pub fn status(mut self, input: crate::types::MigrationWorkflowStatusEnum) -> Self {
@@ -142,8 +152,12 @@ impl MigrationWorkflowSummaryBuilder {
         self
     }
     /// <p>The status of the migration workflow.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::MigrationWorkflowStatusEnum>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::MigrationWorkflowStatusEnum>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The time at which the migration workflow was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -151,8 +165,12 @@ impl MigrationWorkflowSummaryBuilder {
         self
     }
     /// <p>The time at which the migration workflow was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The time at which the migration workflow ended.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -161,7 +179,8 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The time at which the migration workflow ended.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,7 +189,8 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The status message of the migration workflow.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// <p>The steps completed in the migration workflow.</p>
     pub fn completed_steps(mut self, input: i32) -> Self {
@@ -179,7 +199,8 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>The steps completed in the migration workflow.</p>
     pub fn set_completed_steps(mut self, input: std::option::Option<i32>) -> Self {
-        self.completed_steps = input; self
+        self.completed_steps = input;
+        self
     }
     /// <p>All the steps in a migration workflow.</p>
     pub fn total_steps(mut self, input: i32) -> Self {
@@ -188,32 +209,22 @@ impl MigrationWorkflowSummaryBuilder {
     }
     /// <p>All the steps in a migration workflow.</p>
     pub fn set_total_steps(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_steps = input; self
+        self.total_steps = input;
+        self
     }
     /// Consumes the builder and constructs a [`MigrationWorkflowSummary`](crate::types::MigrationWorkflowSummary).
     pub fn build(self) -> crate::types::MigrationWorkflowSummary {
         crate::types::MigrationWorkflowSummary {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            template_id: self.template_id
-            ,
-            ads_application_configuration_name: self.ads_application_configuration_name
-            ,
-            status: self.status
-            ,
-            creation_time: self.creation_time
-            ,
-            end_time: self.end_time
-            ,
-            status_message: self.status_message
-            ,
-            completed_steps: self.completed_steps
-            ,
-            total_steps: self.total_steps
-            ,
+            id: self.id,
+            name: self.name,
+            template_id: self.template_id,
+            ads_application_configuration_name: self.ads_application_configuration_name,
+            status: self.status,
+            creation_time: self.creation_time,
+            end_time: self.end_time,
+            status_message: self.status_message,
+            completed_steps: self.completed_steps,
+            total_steps: self.total_steps,
         }
     }
 }
-

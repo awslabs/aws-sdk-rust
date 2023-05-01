@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOpsMetadataInput  {
+pub struct DeleteOpsMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
     #[doc(hidden)]
     pub ops_metadata_arn: std::option::Option<std::string::String>,
 }
 impl DeleteOpsMetadataInput {
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
-    pub fn ops_metadata_arn(&self) -> std::option::Option<& str> {
+    pub fn ops_metadata_arn(&self) -> std::option::Option<&str> {
         self.ops_metadata_arn.as_deref()
     }
 }
 impl DeleteOpsMetadataInput {
     /// Creates a new builder-style object to manufacture [`DeleteOpsMetadataInput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataInput).
-    pub fn builder() -> crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataInputBuilder {
         crate::operation::delete_ops_metadata::builders::DeleteOpsMetadataInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteOpsMetadataInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
     pub fn set_ops_metadata_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ops_metadata_arn = input; self
+        self.ops_metadata_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteOpsMetadataInput`](crate::operation::delete_ops_metadata::DeleteOpsMetadataInput).
-    pub fn build(self) -> Result<crate::operation::delete_ops_metadata::DeleteOpsMetadataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_ops_metadata::DeleteOpsMetadataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_ops_metadata::DeleteOpsMetadataInput {
-                ops_metadata_arn: self.ops_metadata_arn
-                ,
-            }
+                ops_metadata_arn: self.ops_metadata_arn,
+            },
         )
     }
 }
-

@@ -4,57 +4,80 @@ pub use crate::operation::create_variant_store::_create_variant_store_output::Cr
 pub use crate::operation::create_variant_store::_create_variant_store_input::CreateVariantStoreInputBuilder;
 
 /// Fluent builder constructing a request to `CreateVariantStore`.
-/// 
+///
 /// <p>Creates a variant store.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVariantStoreFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_variant_store::builders::CreateVariantStoreInputBuilder,
+    inner: crate::operation::create_variant_store::builders::CreateVariantStoreInputBuilder,
 }
-impl CreateVariantStoreFluentBuilder  {
+impl CreateVariantStoreFluentBuilder {
     /// Creates a new `CreateVariantStore`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_variant_store::CreateVariantStore, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_variant_store::CreateVariantStoreError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_variant_store::CreateVariantStoreOutput, aws_smithy_http::result::SdkError<crate::operation::create_variant_store::CreateVariantStoreError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_variant_store::CreateVariantStore,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_variant_store::CreateVariantStoreError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_variant_store::CreateVariantStoreOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_variant_store::CreateVariantStoreError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The genome reference for the store's variants.</p>
     pub fn reference(mut self, input: crate::types::ReferenceItem) -> Self {
         self.inner = self.inner.reference(input);
         self
     }
     /// <p>The genome reference for the store's variants.</p>
-    pub fn set_reference(mut self, input: std::option::Option<crate::types::ReferenceItem>) -> Self {
+    pub fn set_reference(
+        mut self,
+        input: std::option::Option<crate::types::ReferenceItem>,
+    ) -> Self {
         self.inner = self.inner.set_reference(input);
         self
     }
@@ -83,12 +106,21 @@ impl CreateVariantStoreFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Tags for the store.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>Tags for the store.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -103,4 +135,3 @@ impl CreateVariantStoreFluentBuilder  {
         self
     }
 }
-

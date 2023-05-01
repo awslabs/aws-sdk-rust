@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePullRequestInput  {
+pub struct CreatePullRequestInput {
     /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
     #[doc(hidden)]
     pub title: std::option::Option<std::string::String>,
@@ -12,35 +12,36 @@ pub struct CreatePullRequestInput  {
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
     #[doc(hidden)]
     pub targets: std::option::Option<std::vec::Vec<crate::types::Target>>,
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note> 
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p> 
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
+    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl CreatePullRequestInput {
     /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
-    pub fn title(&self) -> std::option::Option<& str> {
+    pub fn title(&self) -> std::option::Option<&str> {
         self.title.as_deref()
     }
     /// <p>A description of the pull request.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
-    pub fn targets(&self) -> std::option::Option<& [crate::types::Target]> {
+    pub fn targets(&self) -> std::option::Option<&[crate::types::Target]> {
         self.targets.as_deref()
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note> 
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p> 
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
+    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
 }
 impl CreatePullRequestInput {
     /// Creates a new builder-style object to manufacture [`CreatePullRequestInput`](crate::operation::create_pull_request::CreatePullRequestInput).
-    pub fn builder() -> crate::operation::create_pull_request::builders::CreatePullRequestInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_pull_request::builders::CreatePullRequestInputBuilder {
         crate::operation::create_pull_request::builders::CreatePullRequestInputBuilder::default()
     }
 }
@@ -62,7 +63,8 @@ impl CreatePullRequestInputBuilder {
     }
     /// <p>The title of the pull request. This title is used to identify the pull request to other users in the repository.</p>
     pub fn set_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.title = input; self
+        self.title = input;
+        self
     }
     /// <p>A description of the pull request.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -71,7 +73,8 @@ impl CreatePullRequestInputBuilder {
     }
     /// <p>A description of the pull request.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `targets`.
     ///
@@ -80,41 +83,49 @@ impl CreatePullRequestInputBuilder {
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
     pub fn targets(mut self, input: crate::types::Target) -> Self {
         let mut v = self.targets.unwrap_or_default();
-                        v.push(input);
-                        self.targets = Some(v);
-                        self
+        v.push(input);
+        self.targets = Some(v);
+        self
     }
     /// <p>The targets for the pull request, including the source of the code to be reviewed (the source branch) and the destination where the creator of the pull request intends the code to be merged after the pull request is closed (the destination branch).</p>
-    pub fn set_targets(mut self, input: std::option::Option<std::vec::Vec<crate::types::Target>>) -> Self {
-        self.targets = input; self
+    pub fn set_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Target>>,
+    ) -> Self {
+        self.targets = input;
+        self
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note> 
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p> 
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
+    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_request_token = Some(input.into());
         self
     }
-    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note> 
-    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p> 
+    /// <p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request returns information about the initial request that used that token.</p> <note>
+    /// <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>
     /// </note>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePullRequestInput`](crate::operation::create_pull_request::CreatePullRequestInput).
-    pub fn build(self) -> Result<crate::operation::create_pull_request::CreatePullRequestInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_pull_request::CreatePullRequestInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_pull_request::CreatePullRequestInput {
-                title: self.title
-                ,
-                description: self.description
-                ,
-                targets: self.targets
-                ,
-                client_request_token: self.client_request_token
-                ,
-            }
+                title: self.title,
+                description: self.description,
+                targets: self.targets,
+                client_request_token: self.client_request_token,
+            },
         )
     }
 }
-

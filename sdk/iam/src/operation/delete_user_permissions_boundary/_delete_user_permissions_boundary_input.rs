@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserPermissionsBoundaryInput  {
+pub struct DeleteUserPermissionsBoundaryInput {
     /// <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the permissions boundary.</p>
     #[doc(hidden)]
     pub user_name: std::option::Option<std::string::String>,
 }
 impl DeleteUserPermissionsBoundaryInput {
     /// <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the permissions boundary.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
 }
 impl DeleteUserPermissionsBoundaryInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserPermissionsBoundaryInput`](crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryInput).
-    pub fn builder() -> crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryInputBuilder {
+    pub fn builder() -> crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryInputBuilder{
         crate::operation::delete_user_permissions_boundary::builders::DeleteUserPermissionsBoundaryInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl DeleteUserPermissionsBoundaryInputBuilder {
     }
     /// <p>The name (friendly name, not ARN) of the IAM user from which you want to remove the permissions boundary.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteUserPermissionsBoundaryInput`](crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryInput).
-    pub fn build(self) -> Result<crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryInput {
                 user_name: self.user_name
@@ -46,4 +52,3 @@ impl DeleteUserPermissionsBoundaryInputBuilder {
         )
     }
 }
-

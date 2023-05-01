@@ -3,14 +3,14 @@
 /// <p>The category that applies to a given label.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LabelCategory  {
+pub struct LabelCategory {
     /// <p>The name of a category that applies to a given label.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl LabelCategory {
     /// <p>The name of a category that applies to a given label.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl LabelCategoryBuilder {
     }
     /// <p>The name of a category that applies to a given label.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`LabelCategory`](crate::types::LabelCategory).
     pub fn build(self) -> crate::types::LabelCategory {
-        crate::types::LabelCategory {
-            name: self.name
-            ,
-        }
+        crate::types::LabelCategory { name: self.name }
     }
 }
-

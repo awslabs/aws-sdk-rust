@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIndexOutput  {
+pub struct DescribeIndexOutput {
     /// <p>The name of the index.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -17,7 +17,8 @@ pub struct DescribeIndexOutput  {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     #[doc(hidden)]
-    pub server_side_encryption_configuration: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub server_side_encryption_configuration:
+        std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::IndexStatus>,
@@ -32,7 +33,8 @@ pub struct DescribeIndexOutput  {
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
     #[doc(hidden)]
-    pub document_metadata_configurations: std::option::Option<std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
+    pub document_metadata_configurations:
+        std::option::Option<std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
     /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
     #[doc(hidden)]
     pub index_statistics: std::option::Option<crate::types::IndexStatistics>,
@@ -44,86 +46,96 @@ pub struct DescribeIndexOutput  {
     pub capacity_units: std::option::Option<crate::types::CapacityUnitsConfiguration>,
     /// <p>The user token configuration for the Amazon Kendra index.</p>
     #[doc(hidden)]
-    pub user_token_configurations: std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    pub user_token_configurations:
+        std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
     /// <p>The user context policy for the Amazon Kendra index.</p>
     #[doc(hidden)]
     pub user_context_policy: std::option::Option<crate::types::UserContextPolicy>,
     /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
     #[doc(hidden)]
-    pub user_group_resolution_configuration: std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    pub user_group_resolution_configuration:
+        std::option::Option<crate::types::UserGroupResolutionConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeIndexOutput {
     /// <p>The name of the index.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The identifier of the index.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
-    pub fn edition(&self) -> std::option::Option<& crate::types::IndexEdition> {
+    pub fn edition(&self) -> std::option::Option<&crate::types::IndexEdition> {
         self.edition.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn server_side_encryption_configuration(&self) -> std::option::Option<& crate::types::ServerSideEncryptionConfiguration> {
+    pub fn server_side_encryption_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ServerSideEncryptionConfiguration> {
         self.server_side_encryption_configuration.as_ref()
     }
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::IndexStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::IndexStatus> {
         self.status.as_ref()
     }
     /// <p>The description for the index.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The Unix timestamp when the index was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Unix when the index was last updated.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    pub fn document_metadata_configurations(&self) -> std::option::Option<& [crate::types::DocumentMetadataConfiguration]> {
+    pub fn document_metadata_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::DocumentMetadataConfiguration]> {
         self.document_metadata_configurations.as_deref()
     }
     /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
-    pub fn index_statistics(&self) -> std::option::Option<& crate::types::IndexStatistics> {
+    pub fn index_statistics(&self) -> std::option::Option<&crate::types::IndexStatistics> {
         self.index_statistics.as_ref()
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn capacity_units(&self) -> std::option::Option<& crate::types::CapacityUnitsConfiguration> {
+    pub fn capacity_units(&self) -> std::option::Option<&crate::types::CapacityUnitsConfiguration> {
         self.capacity_units.as_ref()
     }
     /// <p>The user token configuration for the Amazon Kendra index.</p>
-    pub fn user_token_configurations(&self) -> std::option::Option<& [crate::types::UserTokenConfiguration]> {
+    pub fn user_token_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::UserTokenConfiguration]> {
         self.user_token_configurations.as_deref()
     }
     /// <p>The user context policy for the Amazon Kendra index.</p>
-    pub fn user_context_policy(&self) -> std::option::Option<& crate::types::UserContextPolicy> {
+    pub fn user_context_policy(&self) -> std::option::Option<&crate::types::UserContextPolicy> {
         self.user_context_policy.as_ref()
     }
     /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
-    pub fn user_group_resolution_configuration(&self) -> std::option::Option<& crate::types::UserGroupResolutionConfiguration> {
+    pub fn user_group_resolution_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::UserGroupResolutionConfiguration> {
         self.user_group_resolution_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeIndexOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeIndexOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIndexOutput`](crate::operation::describe_index::DescribeIndexOutput).
     pub fn builder() -> crate::operation::describe_index::builders::DescribeIndexOutputBuilder {
@@ -139,18 +151,22 @@ pub struct DescribeIndexOutputBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) edition: std::option::Option<crate::types::IndexEdition>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) server_side_encryption_configuration: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    pub(crate) server_side_encryption_configuration:
+        std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
     pub(crate) status: std::option::Option<crate::types::IndexStatus>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) document_metadata_configurations: std::option::Option<std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
+    pub(crate) document_metadata_configurations:
+        std::option::Option<std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
     pub(crate) index_statistics: std::option::Option<crate::types::IndexStatistics>,
     pub(crate) error_message: std::option::Option<std::string::String>,
     pub(crate) capacity_units: std::option::Option<crate::types::CapacityUnitsConfiguration>,
-    pub(crate) user_token_configurations: std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    pub(crate) user_token_configurations:
+        std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
     pub(crate) user_context_policy: std::option::Option<crate::types::UserContextPolicy>,
-    pub(crate) user_group_resolution_configuration: std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    pub(crate) user_group_resolution_configuration:
+        std::option::Option<crate::types::UserGroupResolutionConfiguration>,
     _request_id: Option<String>,
 }
 impl DescribeIndexOutputBuilder {
@@ -161,7 +177,8 @@ impl DescribeIndexOutputBuilder {
     }
     /// <p>The name of the index.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The identifier of the index.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -170,7 +187,8 @@ impl DescribeIndexOutputBuilder {
     }
     /// <p>The identifier of the index.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
     pub fn edition(mut self, input: crate::types::IndexEdition) -> Self {
@@ -179,7 +197,8 @@ impl DescribeIndexOutputBuilder {
     }
     /// <p>The Amazon Kendra edition used for the index. You decide the edition when you create the index.</p>
     pub fn set_edition(mut self, input: std::option::Option<crate::types::IndexEdition>) -> Self {
-        self.edition = input; self
+        self.edition = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -188,16 +207,24 @@ impl DescribeIndexOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra permission to write to your Amazon Cloudwatch logs.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn server_side_encryption_configuration(mut self, input: crate::types::ServerSideEncryptionConfiguration) -> Self {
+    pub fn server_side_encryption_configuration(
+        mut self,
+        input: crate::types::ServerSideEncryptionConfiguration,
+    ) -> Self {
         self.server_side_encryption_configuration = Some(input);
         self
     }
     /// <p>The identifier of the KMScustomer master key (CMK) that is used to encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
-    pub fn set_server_side_encryption_configuration(mut self, input: std::option::Option<crate::types::ServerSideEncryptionConfiguration>) -> Self {
-        self.server_side_encryption_configuration = input; self
+    pub fn set_server_side_encryption_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ServerSideEncryptionConfiguration>,
+    ) -> Self {
+        self.server_side_encryption_configuration = input;
+        self
     }
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn status(mut self, input: crate::types::IndexStatus) -> Self {
@@ -206,7 +233,8 @@ impl DescribeIndexOutputBuilder {
     }
     /// <p>The current status of the index. When the value is <code>ACTIVE</code>, the index is ready for use. If the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::IndexStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The description for the index.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -215,7 +243,8 @@ impl DescribeIndexOutputBuilder {
     }
     /// <p>The description for the index.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The Unix timestamp when the index was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -223,8 +252,12 @@ impl DescribeIndexOutputBuilder {
         self
     }
     /// <p>The Unix timestamp when the index was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The Unix when the index was last updated.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -232,23 +265,34 @@ impl DescribeIndexOutputBuilder {
         self
     }
     /// <p>The Unix when the index was last updated.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// Appends an item to `document_metadata_configurations`.
     ///
     /// To override the contents of this collection use [`set_document_metadata_configurations`](Self::set_document_metadata_configurations).
     ///
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    pub fn document_metadata_configurations(mut self, input: crate::types::DocumentMetadataConfiguration) -> Self {
+    pub fn document_metadata_configurations(
+        mut self,
+        input: crate::types::DocumentMetadataConfiguration,
+    ) -> Self {
         let mut v = self.document_metadata_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.document_metadata_configurations = Some(v);
-                        self
+        v.push(input);
+        self.document_metadata_configurations = Some(v);
+        self
     }
     /// <p>Configuration information for document metadata or fields. Document metadata are fields or attributes associated with your documents. For example, the company department name associated with each document.</p>
-    pub fn set_document_metadata_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::DocumentMetadataConfiguration>>) -> Self {
-        self.document_metadata_configurations = input; self
+    pub fn set_document_metadata_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DocumentMetadataConfiguration>>,
+    ) -> Self {
+        self.document_metadata_configurations = input;
+        self
     }
     /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
     pub fn index_statistics(mut self, input: crate::types::IndexStatistics) -> Self {
@@ -256,8 +300,12 @@ impl DescribeIndexOutputBuilder {
         self
     }
     /// <p>Provides information about the number of FAQ questions and answers and the number of text documents indexed.</p>
-    pub fn set_index_statistics(mut self, input: std::option::Option<crate::types::IndexStatistics>) -> Self {
-        self.index_statistics = input; self
+    pub fn set_index_statistics(
+        mut self,
+        input: std::option::Option<crate::types::IndexStatistics>,
+    ) -> Self {
+        self.index_statistics = input;
+        self
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -266,7 +314,8 @@ impl DescribeIndexOutputBuilder {
     }
     /// <p>When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that explains why.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
     pub fn capacity_units(mut self, input: crate::types::CapacityUnitsConfiguration) -> Self {
@@ -274,23 +323,34 @@ impl DescribeIndexOutputBuilder {
         self
     }
     /// <p>For Enterprise Edition indexes, you can choose to use additional capacity to meet the needs of your application. This contains the capacity units used for the index. A query or document storage capacity of zero indicates that the index is using the default capacity. For more information on the default capacity for an index and adjusting this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/adjusting-capacity.html">Adjusting capacity</a>.</p>
-    pub fn set_capacity_units(mut self, input: std::option::Option<crate::types::CapacityUnitsConfiguration>) -> Self {
-        self.capacity_units = input; self
+    pub fn set_capacity_units(
+        mut self,
+        input: std::option::Option<crate::types::CapacityUnitsConfiguration>,
+    ) -> Self {
+        self.capacity_units = input;
+        self
     }
     /// Appends an item to `user_token_configurations`.
     ///
     /// To override the contents of this collection use [`set_user_token_configurations`](Self::set_user_token_configurations).
     ///
     /// <p>The user token configuration for the Amazon Kendra index.</p>
-    pub fn user_token_configurations(mut self, input: crate::types::UserTokenConfiguration) -> Self {
+    pub fn user_token_configurations(
+        mut self,
+        input: crate::types::UserTokenConfiguration,
+    ) -> Self {
         let mut v = self.user_token_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.user_token_configurations = Some(v);
-                        self
+        v.push(input);
+        self.user_token_configurations = Some(v);
+        self
     }
     /// <p>The user token configuration for the Amazon Kendra index.</p>
-    pub fn set_user_token_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>) -> Self {
-        self.user_token_configurations = input; self
+    pub fn set_user_token_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UserTokenConfiguration>>,
+    ) -> Self {
+        self.user_token_configurations = input;
+        self
     }
     /// <p>The user context policy for the Amazon Kendra index.</p>
     pub fn user_context_policy(mut self, input: crate::types::UserContextPolicy) -> Self {
@@ -298,64 +358,58 @@ impl DescribeIndexOutputBuilder {
         self
     }
     /// <p>The user context policy for the Amazon Kendra index.</p>
-    pub fn set_user_context_policy(mut self, input: std::option::Option<crate::types::UserContextPolicy>) -> Self {
-        self.user_context_policy = input; self
+    pub fn set_user_context_policy(
+        mut self,
+        input: std::option::Option<crate::types::UserContextPolicy>,
+    ) -> Self {
+        self.user_context_policy = input;
+        self
     }
     /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
-    pub fn user_group_resolution_configuration(mut self, input: crate::types::UserGroupResolutionConfiguration) -> Self {
+    pub fn user_group_resolution_configuration(
+        mut self,
+        input: crate::types::UserGroupResolutionConfiguration,
+    ) -> Self {
         self.user_group_resolution_configuration = Some(input);
         self
     }
     /// <p>Whether you have enabled the configuration for fetching access levels of groups and users from an IAM Identity Center (successor to Single Sign-On) identity source.</p>
-    pub fn set_user_group_resolution_configuration(mut self, input: std::option::Option<crate::types::UserGroupResolutionConfiguration>) -> Self {
-        self.user_group_resolution_configuration = input; self
+    pub fn set_user_group_resolution_configuration(
+        mut self,
+        input: std::option::Option<crate::types::UserGroupResolutionConfiguration>,
+    ) -> Self {
+        self.user_group_resolution_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeIndexOutput`](crate::operation::describe_index::DescribeIndexOutput).
     pub fn build(self) -> crate::operation::describe_index::DescribeIndexOutput {
         crate::operation::describe_index::DescribeIndexOutput {
-            name: self.name
-            ,
-            id: self.id
-            ,
-            edition: self.edition
-            ,
-            role_arn: self.role_arn
-            ,
-            server_side_encryption_configuration: self.server_side_encryption_configuration
-            ,
-            status: self.status
-            ,
-            description: self.description
-            ,
-            created_at: self.created_at
-            ,
-            updated_at: self.updated_at
-            ,
-            document_metadata_configurations: self.document_metadata_configurations
-            ,
-            index_statistics: self.index_statistics
-            ,
-            error_message: self.error_message
-            ,
-            capacity_units: self.capacity_units
-            ,
-            user_token_configurations: self.user_token_configurations
-            ,
-            user_context_policy: self.user_context_policy
-            ,
-            user_group_resolution_configuration: self.user_group_resolution_configuration
-            ,
+            name: self.name,
+            id: self.id,
+            edition: self.edition,
+            role_arn: self.role_arn,
+            server_side_encryption_configuration: self.server_side_encryption_configuration,
+            status: self.status,
+            description: self.description,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
+            document_metadata_configurations: self.document_metadata_configurations,
+            index_statistics: self.index_statistics,
+            error_message: self.error_message,
+            capacity_units: self.capacity_units,
+            user_token_configurations: self.user_token_configurations,
+            user_context_policy: self.user_context_policy,
+            user_group_resolution_configuration: self.user_group_resolution_configuration,
             _request_id: self._request_id,
         }
     }
 }
-

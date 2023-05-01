@@ -3,7 +3,7 @@
 /// <p>A DNS Firewall rule group that Firewall Manager tried to associate with a VPC is already associated with the VPC and can't be associated again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnsDuplicateRuleGroupViolation  {
+pub struct DnsDuplicateRuleGroupViolation {
     /// <p>Information about the VPC ID. </p>
     #[doc(hidden)]
     pub violation_target: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DnsDuplicateRuleGroupViolation  {
 }
 impl DnsDuplicateRuleGroupViolation {
     /// <p>Information about the VPC ID. </p>
-    pub fn violation_target(&self) -> std::option::Option<& str> {
+    pub fn violation_target(&self) -> std::option::Option<&str> {
         self.violation_target.as_deref()
     }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
-    pub fn violation_target_description(&self) -> std::option::Option<& str> {
+    pub fn violation_target_description(&self) -> std::option::Option<&str> {
         self.violation_target_description.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DnsDuplicateRuleGroupViolationBuilder {
     }
     /// <p>Information about the VPC ID. </p>
     pub fn set_violation_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.violation_target = input; self
+        self.violation_target = input;
+        self
     }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
     pub fn violation_target_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +52,18 @@ impl DnsDuplicateRuleGroupViolationBuilder {
         self
     }
     /// <p>A description of the violation that specifies the rule group and VPC.</p>
-    pub fn set_violation_target_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.violation_target_description = input; self
+    pub fn set_violation_target_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.violation_target_description = input;
+        self
     }
     /// Consumes the builder and constructs a [`DnsDuplicateRuleGroupViolation`](crate::types::DnsDuplicateRuleGroupViolation).
     pub fn build(self) -> crate::types::DnsDuplicateRuleGroupViolation {
         crate::types::DnsDuplicateRuleGroupViolation {
-            violation_target: self.violation_target
-            ,
-            violation_target_description: self.violation_target_description
-            ,
+            violation_target: self.violation_target,
+            violation_target_description: self.violation_target_description,
         }
     }
 }
-

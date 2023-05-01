@@ -3,7 +3,7 @@
 /// <p>The structure for a Dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Dataset  {
+pub struct Dataset {
     /// <p>An identifier for a Dataset.</p>
     #[doc(hidden)]
     pub dataset_id: std::option::Option<std::string::String>,
@@ -13,10 +13,10 @@ pub struct Dataset  {
     /// <p>Display title for a Dataset.</p>
     #[doc(hidden)]
     pub dataset_title: std::option::Option<std::string::String>,
-    /// <p>The format in which Dataset data is structured.</p> 
-    /// <ul> 
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> 
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li> 
+    /// <p>The format in which Dataset data is structured.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub kind: std::option::Option<crate::types::DatasetKind>,
@@ -41,31 +41,31 @@ pub struct Dataset  {
 }
 impl Dataset {
     /// <p>An identifier for a Dataset.</p>
-    pub fn dataset_id(&self) -> std::option::Option<& str> {
+    pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
     /// <p>The ARN identifier of the Dataset.</p>
-    pub fn dataset_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_arn(&self) -> std::option::Option<&str> {
         self.dataset_arn.as_deref()
     }
     /// <p>Display title for a Dataset.</p>
-    pub fn dataset_title(&self) -> std::option::Option<& str> {
+    pub fn dataset_title(&self) -> std::option::Option<&str> {
         self.dataset_title.as_deref()
     }
-    /// <p>The format in which Dataset data is structured.</p> 
-    /// <ul> 
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> 
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li> 
+    /// <p>The format in which Dataset data is structured.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
-    pub fn kind(&self) -> std::option::Option<& crate::types::DatasetKind> {
+    pub fn kind(&self) -> std::option::Option<&crate::types::DatasetKind> {
         self.kind.as_ref()
     }
     /// <p>Description for a Dataset.</p>
-    pub fn dataset_description(&self) -> std::option::Option<& str> {
+    pub fn dataset_description(&self) -> std::option::Option<&str> {
         self.dataset_description.as_deref()
     }
     /// <p>Contact information for a Dataset owner.</p>
-    pub fn owner_info(&self) -> std::option::Option<& crate::types::DatasetOwnerInfo> {
+    pub fn owner_info(&self) -> std::option::Option<&crate::types::DatasetOwnerInfo> {
         self.owner_info.as_ref()
     }
     /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
@@ -77,11 +77,11 @@ impl Dataset {
         self.last_modified_time
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
-    pub fn schema_definition(&self) -> std::option::Option<& crate::types::SchemaUnion> {
+    pub fn schema_definition(&self) -> std::option::Option<&crate::types::SchemaUnion> {
         self.schema_definition.as_ref()
     }
     /// <p>The unique resource identifier for a Dataset.</p>
-    pub fn alias(&self) -> std::option::Option<& str> {
+    pub fn alias(&self) -> std::option::Option<&str> {
         self.alias.as_deref()
     }
 }
@@ -115,7 +115,8 @@ impl DatasetBuilder {
     }
     /// <p>An identifier for a Dataset.</p>
     pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_id = input; self
+        self.dataset_id = input;
+        self
     }
     /// <p>The ARN identifier of the Dataset.</p>
     pub fn dataset_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +125,8 @@ impl DatasetBuilder {
     }
     /// <p>The ARN identifier of the Dataset.</p>
     pub fn set_dataset_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_arn = input; self
+        self.dataset_arn = input;
+        self
     }
     /// <p>Display title for a Dataset.</p>
     pub fn dataset_title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,24 +135,26 @@ impl DatasetBuilder {
     }
     /// <p>Display title for a Dataset.</p>
     pub fn set_dataset_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_title = input; self
+        self.dataset_title = input;
+        self
     }
-    /// <p>The format in which Dataset data is structured.</p> 
-    /// <ul> 
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> 
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li> 
+    /// <p>The format in which Dataset data is structured.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn kind(mut self, input: crate::types::DatasetKind) -> Self {
         self.kind = Some(input);
         self
     }
-    /// <p>The format in which Dataset data is structured.</p> 
-    /// <ul> 
-    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li> 
-    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li> 
+    /// <p>The format in which Dataset data is structured.</p>
+    /// <ul>
+    /// <li> <p> <code>TABULAR</code> – Data is structured in a tabular format.</p> </li>
+    /// <li> <p> <code>NON_TABULAR</code> – Data is structured in a non-tabular format.</p> </li>
     /// </ul>
     pub fn set_kind(mut self, input: std::option::Option<crate::types::DatasetKind>) -> Self {
-        self.kind = input; self
+        self.kind = input;
+        self
     }
     /// <p>Description for a Dataset.</p>
     pub fn dataset_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,8 +162,12 @@ impl DatasetBuilder {
         self
     }
     /// <p>Description for a Dataset.</p>
-    pub fn set_dataset_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_description = input; self
+    pub fn set_dataset_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dataset_description = input;
+        self
     }
     /// <p>Contact information for a Dataset owner.</p>
     pub fn owner_info(mut self, input: crate::types::DatasetOwnerInfo) -> Self {
@@ -167,8 +175,12 @@ impl DatasetBuilder {
         self
     }
     /// <p>Contact information for a Dataset owner.</p>
-    pub fn set_owner_info(mut self, input: std::option::Option<crate::types::DatasetOwnerInfo>) -> Self {
-        self.owner_info = input; self
+    pub fn set_owner_info(
+        mut self,
+        input: std::option::Option<crate::types::DatasetOwnerInfo>,
+    ) -> Self {
+        self.owner_info = input;
+        self
     }
     /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn create_time(mut self, input: i64) -> Self {
@@ -177,7 +189,8 @@ impl DatasetBuilder {
     }
     /// <p>The timestamp at which the Dataset was created in FinSpace. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_create_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.create_time = input; self
+        self.create_time = input;
+        self
     }
     /// <p>The last time that the Dataset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn last_modified_time(mut self, input: i64) -> Self {
@@ -186,7 +199,8 @@ impl DatasetBuilder {
     }
     /// <p>The last time that the Dataset was modified. The value is determined as epoch time in milliseconds. For example, the value for Monday, November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
     pub fn set_last_modified_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_modified_time = input; self
+        self.last_modified_time = input;
+        self
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
     pub fn schema_definition(mut self, input: crate::types::SchemaUnion) -> Self {
@@ -194,8 +208,12 @@ impl DatasetBuilder {
         self
     }
     /// <p>Definition for a schema on a tabular Dataset.</p>
-    pub fn set_schema_definition(mut self, input: std::option::Option<crate::types::SchemaUnion>) -> Self {
-        self.schema_definition = input; self
+    pub fn set_schema_definition(
+        mut self,
+        input: std::option::Option<crate::types::SchemaUnion>,
+    ) -> Self {
+        self.schema_definition = input;
+        self
     }
     /// <p>The unique resource identifier for a Dataset.</p>
     pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
@@ -204,34 +222,22 @@ impl DatasetBuilder {
     }
     /// <p>The unique resource identifier for a Dataset.</p>
     pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias = input; self
+        self.alias = input;
+        self
     }
     /// Consumes the builder and constructs a [`Dataset`](crate::types::Dataset).
     pub fn build(self) -> crate::types::Dataset {
         crate::types::Dataset {
-            dataset_id: self.dataset_id
-            ,
-            dataset_arn: self.dataset_arn
-            ,
-            dataset_title: self.dataset_title
-            ,
-            kind: self.kind
-            ,
-            dataset_description: self.dataset_description
-            ,
-            owner_info: self.owner_info
-            ,
-            create_time: self.create_time
-                .unwrap_or_default()
-            ,
-            last_modified_time: self.last_modified_time
-                .unwrap_or_default()
-            ,
-            schema_definition: self.schema_definition
-            ,
-            alias: self.alias
-            ,
+            dataset_id: self.dataset_id,
+            dataset_arn: self.dataset_arn,
+            dataset_title: self.dataset_title,
+            kind: self.kind,
+            dataset_description: self.dataset_description,
+            owner_info: self.owner_info,
+            create_time: self.create_time.unwrap_or_default(),
+            last_modified_time: self.last_modified_time.unwrap_or_default(),
+            schema_definition: self.schema_definition,
+            alias: self.alias,
         }
     }
 }
-

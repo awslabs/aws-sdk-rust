@@ -3,14 +3,14 @@
 /// <p>The filter that is applied to the options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SheetVisualScopingConfiguration  {
+pub struct SheetVisualScopingConfiguration {
     /// <p>The selected sheet that the filter is applied to.</p>
     #[doc(hidden)]
     pub sheet_id: std::option::Option<std::string::String>,
-    /// <p>The scope of the applied entities. Choose one of the following options:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VISUALS</code> </p> </li> 
-    /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li> 
+    /// <p>The scope of the applied entities. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VISUALS</code> </p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub scope: std::option::Option<crate::types::FilterVisualScope>,
@@ -20,19 +20,19 @@ pub struct SheetVisualScopingConfiguration  {
 }
 impl SheetVisualScopingConfiguration {
     /// <p>The selected sheet that the filter is applied to.</p>
-    pub fn sheet_id(&self) -> std::option::Option<& str> {
+    pub fn sheet_id(&self) -> std::option::Option<&str> {
         self.sheet_id.as_deref()
     }
-    /// <p>The scope of the applied entities. Choose one of the following options:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VISUALS</code> </p> </li> 
-    /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li> 
+    /// <p>The scope of the applied entities. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VISUALS</code> </p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li>
     /// </ul>
-    pub fn scope(&self) -> std::option::Option<& crate::types::FilterVisualScope> {
+    pub fn scope(&self) -> std::option::Option<&crate::types::FilterVisualScope> {
         self.scope.as_ref()
     }
     /// <p>The selected visuals that the filter is applied to.</p>
-    pub fn visual_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn visual_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.visual_ids.as_deref()
     }
 }
@@ -59,24 +59,29 @@ impl SheetVisualScopingConfigurationBuilder {
     }
     /// <p>The selected sheet that the filter is applied to.</p>
     pub fn set_sheet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sheet_id = input; self
+        self.sheet_id = input;
+        self
     }
-    /// <p>The scope of the applied entities. Choose one of the following options:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VISUALS</code> </p> </li> 
-    /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li> 
+    /// <p>The scope of the applied entities. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VISUALS</code> </p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::FilterVisualScope) -> Self {
         self.scope = Some(input);
         self
     }
-    /// <p>The scope of the applied entities. Choose one of the following options:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ALL_VISUALS</code> </p> </li> 
-    /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li> 
+    /// <p>The scope of the applied entities. Choose one of the following options:</p>
+    /// <ul>
+    /// <li> <p> <code>ALL_VISUALS</code> </p> </li>
+    /// <li> <p> <code>SELECTED_VISUALS</code> </p> </li>
     /// </ul>
-    pub fn set_scope(mut self, input: std::option::Option<crate::types::FilterVisualScope>) -> Self {
-        self.scope = input; self
+    pub fn set_scope(
+        mut self,
+        input: std::option::Option<crate::types::FilterVisualScope>,
+    ) -> Self {
+        self.scope = input;
+        self
     }
     /// Appends an item to `visual_ids`.
     ///
@@ -85,24 +90,24 @@ impl SheetVisualScopingConfigurationBuilder {
     /// <p>The selected visuals that the filter is applied to.</p>
     pub fn visual_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.visual_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.visual_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.visual_ids = Some(v);
+        self
     }
     /// <p>The selected visuals that the filter is applied to.</p>
-    pub fn set_visual_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.visual_ids = input; self
+    pub fn set_visual_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.visual_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`SheetVisualScopingConfiguration`](crate::types::SheetVisualScopingConfiguration).
     pub fn build(self) -> crate::types::SheetVisualScopingConfiguration {
         crate::types::SheetVisualScopingConfiguration {
-            sheet_id: self.sheet_id
-            ,
-            scope: self.scope
-            ,
-            visual_ids: self.visual_ids
-            ,
+            sheet_id: self.sheet_id,
+            scope: self.scope,
+            visual_ids: self.visual_ids,
         }
     }
 }
-

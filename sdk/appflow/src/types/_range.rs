@@ -3,7 +3,7 @@
 /// <p>The range of values that the property supports.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Range  {
+pub struct Range {
     /// <p>Maximum value supported by the field.</p>
     #[doc(hidden)]
     pub maximum: f64,
@@ -43,7 +43,8 @@ impl RangeBuilder {
     }
     /// <p>Maximum value supported by the field.</p>
     pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
-        self.maximum = input; self
+        self.maximum = input;
+        self
     }
     /// <p>Minimum value supported by the field.</p>
     pub fn minimum(mut self, input: f64) -> Self {
@@ -52,18 +53,14 @@ impl RangeBuilder {
     }
     /// <p>Minimum value supported by the field.</p>
     pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
-        self.minimum = input; self
+        self.minimum = input;
+        self
     }
     /// Consumes the builder and constructs a [`Range`](crate::types::Range).
     pub fn build(self) -> crate::types::Range {
         crate::types::Range {
-            maximum: self.maximum
-                .unwrap_or_default()
-            ,
-            minimum: self.minimum
-                .unwrap_or_default()
-            ,
+            maximum: self.maximum.unwrap_or_default(),
+            minimum: self.minimum.unwrap_or_default(),
         }
     }
 }
-

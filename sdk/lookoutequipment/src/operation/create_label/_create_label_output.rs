@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLabelOutput  {
+pub struct CreateLabelOutput {
     /// <p> The ID of the label that you have created. </p>
     #[doc(hidden)]
     pub label_id: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct CreateLabelOutput  {
 }
 impl CreateLabelOutput {
     /// <p> The ID of the label that you have created. </p>
-    pub fn label_id(&self) -> std::option::Option<& str> {
+    pub fn label_id(&self) -> std::option::Option<&str> {
         self.label_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLabelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateLabelOutput {
     /// Creates a new builder-style object to manufacture [`CreateLabelOutput`](crate::operation::create_label::CreateLabelOutput).
     pub fn builder() -> crate::operation::create_label::builders::CreateLabelOutputBuilder {
@@ -41,24 +41,23 @@ impl CreateLabelOutputBuilder {
     }
     /// <p> The ID of the label that you have created. </p>
     pub fn set_label_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_id = input; self
+        self.label_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateLabelOutput`](crate::operation::create_label::CreateLabelOutput).
     pub fn build(self) -> crate::operation::create_label::CreateLabelOutput {
         crate::operation::create_label::CreateLabelOutput {
-            label_id: self.label_id
-            ,
+            label_id: self.label_id,
             _request_id: self._request_id,
         }
     }
 }
-

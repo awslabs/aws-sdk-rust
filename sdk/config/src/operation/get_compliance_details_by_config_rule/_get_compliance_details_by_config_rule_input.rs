@@ -3,11 +3,11 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComplianceDetailsByConfigRuleInput  {
+pub struct GetComplianceDetailsByConfigRuleInput {
     /// <p>The name of the Config rule for which you want compliance information.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
-    /// <p>Filters the results by compliance.</p> 
+    /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     #[doc(hidden)]
     pub compliance_types: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>,
@@ -20,12 +20,12 @@ pub struct GetComplianceDetailsByConfigRuleInput  {
 }
 impl GetComplianceDetailsByConfigRuleInput {
     /// <p>The name of the Config rule for which you want compliance information.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<& str> {
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
-    /// <p>Filters the results by compliance.</p> 
+    /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn compliance_types(&self) -> std::option::Option<& [crate::types::ComplianceType]> {
+    pub fn compliance_types(&self) -> std::option::Option<&[crate::types::ComplianceType]> {
         self.compliance_types.as_deref()
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
@@ -33,13 +33,13 @@ impl GetComplianceDetailsByConfigRuleInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetComplianceDetailsByConfigRuleInput {
     /// Creates a new builder-style object to manufacture [`GetComplianceDetailsByConfigRuleInput`](crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput).
-    pub fn builder() -> crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder {
+    pub fn builder() -> crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder{
         crate::operation::get_compliance_details_by_config_rule::builders::GetComplianceDetailsByConfigRuleInputBuilder::default()
     }
 }
@@ -61,24 +61,29 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
     }
     /// <p>The name of the Config rule for which you want compliance information.</p>
     pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_rule_name = input; self
+        self.config_rule_name = input;
+        self
     }
     /// Appends an item to `compliance_types`.
     ///
     /// To override the contents of this collection use [`set_compliance_types`](Self::set_compliance_types).
     ///
-    /// <p>Filters the results by compliance.</p> 
+    /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
     pub fn compliance_types(mut self, input: crate::types::ComplianceType) -> Self {
         let mut v = self.compliance_types.unwrap_or_default();
-                        v.push(input);
-                        self.compliance_types = Some(v);
-                        self
+        v.push(input);
+        self.compliance_types = Some(v);
+        self
     }
-    /// <p>Filters the results by compliance.</p> 
+    /// <p>Filters the results by compliance.</p>
     /// <p> <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a <code>ComplianceType</code> for filtering results.</p>
-    pub fn set_compliance_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>) -> Self {
-        self.compliance_types = input; self
+    pub fn set_compliance_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ComplianceType>>,
+    ) -> Self {
+        self.compliance_types = input;
+        self
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -87,7 +92,8 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
     }
     /// <p>The maximum number of evaluation results returned on each page. The default is 10. You cannot specify a number greater than 100. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,10 +102,11 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetComplianceDetailsByConfigRuleInput`](crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput).
-    pub fn build(self) -> Result<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_compliance_details_by_config_rule::GetComplianceDetailsByConfigRuleInput {
                 config_rule_name: self.config_rule_name
@@ -114,4 +121,3 @@ impl GetComplianceDetailsByConfigRuleInputBuilder {
         )
     }
 }
-

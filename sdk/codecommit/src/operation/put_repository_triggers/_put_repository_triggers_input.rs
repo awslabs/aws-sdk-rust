@@ -3,7 +3,7 @@
 /// <p>Represents the input of a put repository triggers operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRepositoryTriggersInput  {
+pub struct PutRepositoryTriggersInput {
     /// <p>The name of the repository where you want to create or update the trigger.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -13,17 +13,19 @@ pub struct PutRepositoryTriggersInput  {
 }
 impl PutRepositoryTriggersInput {
     /// <p>The name of the repository where you want to create or update the trigger.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The JSON block of configuration information for each trigger.</p>
-    pub fn triggers(&self) -> std::option::Option<& [crate::types::RepositoryTrigger]> {
+    pub fn triggers(&self) -> std::option::Option<&[crate::types::RepositoryTrigger]> {
         self.triggers.as_deref()
     }
 }
 impl PutRepositoryTriggersInput {
     /// Creates a new builder-style object to manufacture [`PutRepositoryTriggersInput`](crate::operation::put_repository_triggers::PutRepositoryTriggersInput).
-    pub fn builder() -> crate::operation::put_repository_triggers::builders::PutRepositoryTriggersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_repository_triggers::builders::PutRepositoryTriggersInputBuilder
+    {
         crate::operation::put_repository_triggers::builders::PutRepositoryTriggersInputBuilder::default()
     }
 }
@@ -43,7 +45,8 @@ impl PutRepositoryTriggersInputBuilder {
     }
     /// <p>The name of the repository where you want to create or update the trigger.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// Appends an item to `triggers`.
     ///
@@ -52,24 +55,30 @@ impl PutRepositoryTriggersInputBuilder {
     /// <p>The JSON block of configuration information for each trigger.</p>
     pub fn triggers(mut self, input: crate::types::RepositoryTrigger) -> Self {
         let mut v = self.triggers.unwrap_or_default();
-                        v.push(input);
-                        self.triggers = Some(v);
-                        self
+        v.push(input);
+        self.triggers = Some(v);
+        self
     }
     /// <p>The JSON block of configuration information for each trigger.</p>
-    pub fn set_triggers(mut self, input: std::option::Option<std::vec::Vec<crate::types::RepositoryTrigger>>) -> Self {
-        self.triggers = input; self
+    pub fn set_triggers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RepositoryTrigger>>,
+    ) -> Self {
+        self.triggers = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutRepositoryTriggersInput`](crate::operation::put_repository_triggers::PutRepositoryTriggersInput).
-    pub fn build(self) -> Result<crate::operation::put_repository_triggers::PutRepositoryTriggersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_repository_triggers::PutRepositoryTriggersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_repository_triggers::PutRepositoryTriggersInput {
-                repository_name: self.repository_name
-                ,
-                triggers: self.triggers
-                ,
-            }
+                repository_name: self.repository_name,
+                triggers: self.triggers,
+            },
         )
     }
 }
-

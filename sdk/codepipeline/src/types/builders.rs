@@ -134,4 +134,3 @@ pub use crate::types::_artifact_revision::ArtifactRevisionBuilder;
 pub use crate::types::_pipeline_metadata::PipelineMetadataBuilder;
 
 pub use crate::types::_job_details::JobDetailsBuilder;
-

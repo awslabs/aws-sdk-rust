@@ -3,7 +3,7 @@
 /// <p>The OAuth configurations for authenticating users into your Amplify app.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthOAuthConfig  {
+pub struct UpdateBackendAuthOAuthConfig {
     /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
     #[doc(hidden)]
     pub domain_prefix: std::option::Option<std::string::String>,
@@ -25,27 +25,29 @@ pub struct UpdateBackendAuthOAuthConfig  {
 }
 impl UpdateBackendAuthOAuthConfig {
     /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
-    pub fn domain_prefix(&self) -> std::option::Option<& str> {
+    pub fn domain_prefix(&self) -> std::option::Option<&str> {
         self.domain_prefix.as_deref()
     }
     /// <p>The OAuth grant type to allow app users to authenticate from your Amplify app.</p>
-    pub fn o_auth_grant_type(&self) -> std::option::Option<& crate::types::OAuthGrantType> {
+    pub fn o_auth_grant_type(&self) -> std::option::Option<&crate::types::OAuthGrantType> {
         self.o_auth_grant_type.as_ref()
     }
     /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
-    pub fn o_auth_scopes(&self) -> std::option::Option<& [crate::types::OAuthScopesElement]> {
+    pub fn o_auth_scopes(&self) -> std::option::Option<&[crate::types::OAuthScopesElement]> {
         self.o_auth_scopes.as_deref()
     }
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-    pub fn redirect_sign_in_ur_is(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn redirect_sign_in_ur_is(&self) -> std::option::Option<&[std::string::String]> {
         self.redirect_sign_in_ur_is.as_deref()
     }
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn redirect_sign_out_ur_is(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn redirect_sign_out_ur_is(&self) -> std::option::Option<&[std::string::String]> {
         self.redirect_sign_out_ur_is.as_deref()
     }
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
-    pub fn social_provider_settings(&self) -> std::option::Option<& crate::types::SocialProviderSettings> {
+    pub fn social_provider_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::SocialProviderSettings> {
         self.social_provider_settings.as_ref()
     }
 }
@@ -75,7 +77,8 @@ impl UpdateBackendAuthOAuthConfigBuilder {
     }
     /// <p>The Amazon Cognito domain prefix used to create a hosted UI for authentication.</p>
     pub fn set_domain_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_prefix = input; self
+        self.domain_prefix = input;
+        self
     }
     /// <p>The OAuth grant type to allow app users to authenticate from your Amplify app.</p>
     pub fn o_auth_grant_type(mut self, input: crate::types::OAuthGrantType) -> Self {
@@ -83,8 +86,12 @@ impl UpdateBackendAuthOAuthConfigBuilder {
         self
     }
     /// <p>The OAuth grant type to allow app users to authenticate from your Amplify app.</p>
-    pub fn set_o_auth_grant_type(mut self, input: std::option::Option<crate::types::OAuthGrantType>) -> Self {
-        self.o_auth_grant_type = input; self
+    pub fn set_o_auth_grant_type(
+        mut self,
+        input: std::option::Option<crate::types::OAuthGrantType>,
+    ) -> Self {
+        self.o_auth_grant_type = input;
+        self
     }
     /// Appends an item to `o_auth_scopes`.
     ///
@@ -93,13 +100,17 @@ impl UpdateBackendAuthOAuthConfigBuilder {
     /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
     pub fn o_auth_scopes(mut self, input: crate::types::OAuthScopesElement) -> Self {
         let mut v = self.o_auth_scopes.unwrap_or_default();
-                        v.push(input);
-                        self.o_auth_scopes = Some(v);
-                        self
+        v.push(input);
+        self.o_auth_scopes = Some(v);
+        self
     }
     /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
-    pub fn set_o_auth_scopes(mut self, input: std::option::Option<std::vec::Vec<crate::types::OAuthScopesElement>>) -> Self {
-        self.o_auth_scopes = input; self
+    pub fn set_o_auth_scopes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OAuthScopesElement>>,
+    ) -> Self {
+        self.o_auth_scopes = input;
+        self
     }
     /// Appends an item to `redirect_sign_in_ur_is`.
     ///
@@ -108,13 +119,17 @@ impl UpdateBackendAuthOAuthConfigBuilder {
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
     pub fn redirect_sign_in_ur_is(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.redirect_sign_in_ur_is.unwrap_or_default();
-                        v.push(input.into());
-                        self.redirect_sign_in_ur_is = Some(v);
-                        self
+        v.push(input.into());
+        self.redirect_sign_in_ur_is = Some(v);
+        self
     }
     /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
-    pub fn set_redirect_sign_in_ur_is(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.redirect_sign_in_ur_is = input; self
+    pub fn set_redirect_sign_in_ur_is(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.redirect_sign_in_ur_is = input;
+        self
     }
     /// Appends an item to `redirect_sign_out_ur_is`.
     ///
@@ -123,13 +138,17 @@ impl UpdateBackendAuthOAuthConfigBuilder {
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
     pub fn redirect_sign_out_ur_is(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.redirect_sign_out_ur_is.unwrap_or_default();
-                        v.push(input.into());
-                        self.redirect_sign_out_ur_is = Some(v);
-                        self
+        v.push(input.into());
+        self.redirect_sign_out_ur_is = Some(v);
+        self
     }
     /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
-    pub fn set_redirect_sign_out_ur_is(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.redirect_sign_out_ur_is = input; self
+    pub fn set_redirect_sign_out_ur_is(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.redirect_sign_out_ur_is = input;
+        self
     }
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
     pub fn social_provider_settings(mut self, input: crate::types::SocialProviderSettings) -> Self {
@@ -137,25 +156,22 @@ impl UpdateBackendAuthOAuthConfigBuilder {
         self
     }
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
-    pub fn set_social_provider_settings(mut self, input: std::option::Option<crate::types::SocialProviderSettings>) -> Self {
-        self.social_provider_settings = input; self
+    pub fn set_social_provider_settings(
+        mut self,
+        input: std::option::Option<crate::types::SocialProviderSettings>,
+    ) -> Self {
+        self.social_provider_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateBackendAuthOAuthConfig`](crate::types::UpdateBackendAuthOAuthConfig).
     pub fn build(self) -> crate::types::UpdateBackendAuthOAuthConfig {
         crate::types::UpdateBackendAuthOAuthConfig {
-            domain_prefix: self.domain_prefix
-            ,
-            o_auth_grant_type: self.o_auth_grant_type
-            ,
-            o_auth_scopes: self.o_auth_scopes
-            ,
-            redirect_sign_in_ur_is: self.redirect_sign_in_ur_is
-            ,
-            redirect_sign_out_ur_is: self.redirect_sign_out_ur_is
-            ,
-            social_provider_settings: self.social_provider_settings
-            ,
+            domain_prefix: self.domain_prefix,
+            o_auth_grant_type: self.o_auth_grant_type,
+            o_auth_scopes: self.o_auth_scopes,
+            redirect_sign_in_ur_is: self.redirect_sign_in_ur_is,
+            redirect_sign_out_ur_is: self.redirect_sign_out_ur_is,
+            social_provider_settings: self.social_provider_settings,
         }
     }
 }
-

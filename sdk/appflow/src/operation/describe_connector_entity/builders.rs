@@ -4,57 +4,81 @@ pub use crate::operation::describe_connector_entity::_describe_connector_entity_
 pub use crate::operation::describe_connector_entity::_describe_connector_entity_input::DescribeConnectorEntityInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeConnectorEntity`.
-/// 
+///
 /// <p> Provides details regarding the entity used with the connector, with a description of the data model for each field in that entity. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeConnectorEntityFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder,
+    inner:
+        crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder,
 }
-impl DescribeConnectorEntityFluentBuilder  {
+impl DescribeConnectorEntityFluentBuilder {
     /// Creates a new `DescribeConnectorEntity`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_connector_entity::DescribeConnectorEntity, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_connector_entity::DescribeConnectorEntityError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_connector_entity::DescribeConnectorEntityOutput, aws_smithy_http::result::SdkError<crate::operation::describe_connector_entity::DescribeConnectorEntityError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_connector_entity::DescribeConnectorEntity,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_connector_entity::DescribeConnectorEntityError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_connector_entity::DescribeConnectorEntityOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_connector_entity::DescribeConnectorEntityError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The entity name for that connector. </p>
     pub fn connector_entity_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.connector_entity_name(input.into());
         self
     }
     /// <p> The entity name for that connector. </p>
-    pub fn set_connector_entity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connector_entity_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_connector_entity_name(input);
         self
     }
@@ -64,7 +88,10 @@ impl DescribeConnectorEntityFluentBuilder  {
         self
     }
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(mut self, input: std::option::Option<crate::types::ConnectorType>) -> Self {
+    pub fn set_connector_type(
+        mut self,
+        input: std::option::Option<crate::types::ConnectorType>,
+    ) -> Self {
         self.inner = self.inner.set_connector_type(input);
         self
     }
@@ -74,7 +101,10 @@ impl DescribeConnectorEntityFluentBuilder  {
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_connector_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_connector_profile_name(input);
         self
     }
@@ -89,4 +119,3 @@ impl DescribeConnectorEntityFluentBuilder  {
         self
     }
 }
-

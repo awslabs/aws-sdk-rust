@@ -4,50 +4,70 @@ pub use crate::operation::update_object_attributes::_update_object_attributes_ou
 pub use crate::operation::update_object_attributes::_update_object_attributes_input::UpdateObjectAttributesInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateObjectAttributes`.
-/// 
+///
 /// <p>Updates a given object's attributes.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateObjectAttributesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_object_attributes::builders::UpdateObjectAttributesInputBuilder,
+    inner: crate::operation::update_object_attributes::builders::UpdateObjectAttributesInputBuilder,
 }
-impl UpdateObjectAttributesFluentBuilder  {
+impl UpdateObjectAttributesFluentBuilder {
     /// Creates a new `UpdateObjectAttributes`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_object_attributes::UpdateObjectAttributes, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_object_attributes::UpdateObjectAttributesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_object_attributes::UpdateObjectAttributesOutput, aws_smithy_http::result::SdkError<crate::operation::update_object_attributes::UpdateObjectAttributesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_object_attributes::UpdateObjectAttributes,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_object_attributes::UpdateObjectAttributesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_object_attributes::UpdateObjectAttributesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_object_attributes::UpdateObjectAttributesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) that is associated with the <code>Directory</code> where the object resides. For more information, see <code>arns</code>.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.directory_arn(input.into());
@@ -64,7 +84,10 @@ impl UpdateObjectAttributesFluentBuilder  {
         self
     }
     /// <p>The reference that identifies the object.</p>
-    pub fn set_object_reference(mut self, input: std::option::Option<crate::types::ObjectReference>) -> Self {
+    pub fn set_object_reference(
+        mut self,
+        input: std::option::Option<crate::types::ObjectReference>,
+    ) -> Self {
         self.inner = self.inner.set_object_reference(input);
         self
     }
@@ -78,9 +101,11 @@ impl UpdateObjectAttributesFluentBuilder  {
         self
     }
     /// <p>The attributes update structure.</p>
-    pub fn set_attribute_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::ObjectAttributeUpdate>>) -> Self {
+    pub fn set_attribute_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ObjectAttributeUpdate>>,
+    ) -> Self {
         self.inner = self.inner.set_attribute_updates(input);
         self
     }
 }
-

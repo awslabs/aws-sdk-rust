@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordLifecycleActionHeartbeatInput  {
+pub struct RecordLifecycleActionHeartbeatInput {
     /// <p>The name of the lifecycle hook.</p>
     #[doc(hidden)]
     pub lifecycle_hook_name: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct RecordLifecycleActionHeartbeatInput  {
 }
 impl RecordLifecycleActionHeartbeatInput {
     /// <p>The name of the lifecycle hook.</p>
-    pub fn lifecycle_hook_name(&self) -> std::option::Option<& str> {
+    pub fn lifecycle_hook_name(&self) -> std::option::Option<&str> {
         self.lifecycle_hook_name.as_deref()
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
-    pub fn lifecycle_action_token(&self) -> std::option::Option<& str> {
+    pub fn lifecycle_action_token(&self) -> std::option::Option<&str> {
         self.lifecycle_action_token.as_deref()
     }
     /// <p>The ID of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
 }
 impl RecordLifecycleActionHeartbeatInput {
     /// Creates a new builder-style object to manufacture [`RecordLifecycleActionHeartbeatInput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput).
-    pub fn builder() -> crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatInputBuilder {
+    pub fn builder() -> crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatInputBuilder{
         crate::operation::record_lifecycle_action_heartbeat::builders::RecordLifecycleActionHeartbeatInputBuilder::default()
     }
 }
@@ -57,8 +57,12 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         self
     }
     /// <p>The name of the lifecycle hook.</p>
-    pub fn set_lifecycle_hook_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lifecycle_hook_name = input; self
+    pub fn set_lifecycle_hook_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.lifecycle_hook_name = input;
+        self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +70,12 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
     pub fn lifecycle_action_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +83,12 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         self
     }
     /// <p>A token that uniquely identifies a specific lifecycle action associated with an instance. Amazon EC2 Auto Scaling sends this token to the notification target that you specified when you created the lifecycle hook.</p>
-    pub fn set_lifecycle_action_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lifecycle_action_token = input; self
+    pub fn set_lifecycle_action_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.lifecycle_action_token = input;
+        self
     }
     /// <p>The ID of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,10 +97,16 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
     }
     /// <p>The ID of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecordLifecycleActionHeartbeatInput`](crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput).
-    pub fn build(self) -> Result<crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::record_lifecycle_action_heartbeat::RecordLifecycleActionHeartbeatInput {
                 lifecycle_hook_name: self.lifecycle_hook_name
@@ -103,4 +121,3 @@ impl RecordLifecycleActionHeartbeatInputBuilder {
         )
     }
 }
-

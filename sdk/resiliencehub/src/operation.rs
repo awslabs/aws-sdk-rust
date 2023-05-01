@@ -156,4 +156,3 @@ pub mod update_app_version_resource;
 
 /// Types for the `UpdateResiliencyPolicy` operation.
 pub mod update_resiliency_policy;
-

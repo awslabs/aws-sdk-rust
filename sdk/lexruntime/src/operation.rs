@@ -15,4 +15,3 @@ pub mod post_text;
 
 /// Types for the `PutSession` operation.
 pub mod put_session;
-

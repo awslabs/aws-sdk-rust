@@ -3,14 +3,14 @@
 /// <p>A container for the information associated with a <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMultiRegionAccessPointInput  {
+pub struct DeleteMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl DeleteMultiRegionAccessPointInput {
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl DeleteMultiRegionAccessPointInputBuilder {
     }
     /// <p>The name of the Multi-Region Access Point associated with this request.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteMultiRegionAccessPointInput`](crate::types::DeleteMultiRegionAccessPointInput).
     pub fn build(self) -> crate::types::DeleteMultiRegionAccessPointInput {
-        crate::types::DeleteMultiRegionAccessPointInput {
-            name: self.name
-            ,
-        }
+        crate::types::DeleteMultiRegionAccessPointInput { name: self.name }
     }
 }
-

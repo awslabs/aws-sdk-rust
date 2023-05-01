@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RefreshTokenOutput  {
+pub struct RefreshTokenOutput {
     /// <p>The access token.</p>
     #[doc(hidden)]
     pub access_token: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct RefreshTokenOutput  {
 }
 impl RefreshTokenOutput {
     /// <p>The access token.</p>
-    pub fn access_token(&self) -> std::option::Option<& str> {
+    pub fn access_token(&self) -> std::option::Option<&str> {
         self.access_token.as_deref()
     }
     /// <p>The date and time when the new access token expires.</p>
@@ -21,7 +21,7 @@ impl RefreshTokenOutput {
         self.expires_in
     }
 }
-impl  std::fmt::Debug for RefreshTokenOutput  {
+impl std::fmt::Debug for RefreshTokenOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RefreshTokenOutput");
         formatter.field("access_token", &"*** Sensitive Data Redacted ***");
@@ -31,10 +31,10 @@ impl  std::fmt::Debug for RefreshTokenOutput  {
     }
 }
 impl aws_http::request_id::RequestId for RefreshTokenOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RefreshTokenOutput {
     /// Creates a new builder-style object to manufacture [`RefreshTokenOutput`](crate::operation::refresh_token::RefreshTokenOutput).
     pub fn builder() -> crate::operation::refresh_token::builders::RefreshTokenOutputBuilder {
@@ -58,7 +58,8 @@ impl RefreshTokenOutputBuilder {
     }
     /// <p>The access token.</p>
     pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_token = input; self
+        self.access_token = input;
+        self
     }
     /// <p>The date and time when the new access token expires.</p>
     pub fn expires_in(mut self, input: i32) -> Self {
@@ -67,24 +68,23 @@ impl RefreshTokenOutputBuilder {
     }
     /// <p>The date and time when the new access token expires.</p>
     pub fn set_expires_in(mut self, input: std::option::Option<i32>) -> Self {
-        self.expires_in = input; self
+        self.expires_in = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RefreshTokenOutput`](crate::operation::refresh_token::RefreshTokenOutput).
     pub fn build(self) -> crate::operation::refresh_token::RefreshTokenOutput {
         crate::operation::refresh_token::RefreshTokenOutput {
-            access_token: self.access_token
-            ,
-            expires_in: self.expires_in
-            ,
+            access_token: self.access_token,
+            expires_in: self.expires_in,
             _request_id: self._request_id,
         }
     }
@@ -98,4 +98,3 @@ impl std::fmt::Debug for RefreshTokenOutputBuilder {
         formatter.finish()
     }
 }
-

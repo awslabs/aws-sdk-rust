@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateComponentTypeOutput  {
+pub struct UpdateComponentTypeOutput {
     /// <p>The ID of the workspace that contains the component type.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -19,31 +19,33 @@ pub struct UpdateComponentTypeOutput  {
 }
 impl UpdateComponentTypeOutput {
     /// <p>The ID of the workspace that contains the component type.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ARN of the component type.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the component type.</p>
-    pub fn component_type_id(&self) -> std::option::Option<& str> {
+    pub fn component_type_id(&self) -> std::option::Option<&str> {
         self.component_type_id.as_deref()
     }
     /// <p>The current state of the component type.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::State> {
+    pub fn state(&self) -> std::option::Option<&crate::types::State> {
         self.state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateComponentTypeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateComponentTypeOutput {
     /// Creates a new builder-style object to manufacture [`UpdateComponentTypeOutput`](crate::operation::update_component_type::UpdateComponentTypeOutput).
-    pub fn builder() -> crate::operation::update_component_type::builders::UpdateComponentTypeOutputBuilder {
-        crate::operation::update_component_type::builders::UpdateComponentTypeOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::update_component_type::builders::UpdateComponentTypeOutputBuilder {
+        crate::operation::update_component_type::builders::UpdateComponentTypeOutputBuilder::default(
+        )
     }
 }
 
@@ -65,7 +67,8 @@ impl UpdateComponentTypeOutputBuilder {
     }
     /// <p>The ID of the workspace that contains the component type.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// <p>The ARN of the component type.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,7 +77,8 @@ impl UpdateComponentTypeOutputBuilder {
     }
     /// <p>The ARN of the component type.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The ID of the component type.</p>
     pub fn component_type_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,8 +86,12 @@ impl UpdateComponentTypeOutputBuilder {
         self
     }
     /// <p>The ID of the component type.</p>
-    pub fn set_component_type_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_type_id = input; self
+    pub fn set_component_type_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.component_type_id = input;
+        self
     }
     /// <p>The current state of the component type.</p>
     pub fn state(mut self, input: crate::types::State) -> Self {
@@ -92,30 +100,26 @@ impl UpdateComponentTypeOutputBuilder {
     }
     /// <p>The current state of the component type.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateComponentTypeOutput`](crate::operation::update_component_type::UpdateComponentTypeOutput).
     pub fn build(self) -> crate::operation::update_component_type::UpdateComponentTypeOutput {
         crate::operation::update_component_type::UpdateComponentTypeOutput {
-            workspace_id: self.workspace_id
-            ,
-            arn: self.arn
-            ,
-            component_type_id: self.component_type_id
-            ,
-            state: self.state
-            ,
+            workspace_id: self.workspace_id,
+            arn: self.arn,
+            component_type_id: self.component_type_id,
+            state: self.state,
             _request_id: self._request_id,
         }
     }
 }
-

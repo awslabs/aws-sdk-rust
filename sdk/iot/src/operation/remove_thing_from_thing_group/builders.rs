@@ -4,52 +4,72 @@ pub use crate::operation::remove_thing_from_thing_group::_remove_thing_from_thin
 pub use crate::operation::remove_thing_from_thing_group::_remove_thing_from_thing_group_input::RemoveThingFromThingGroupInputBuilder;
 
 /// Fluent builder constructing a request to `RemoveThingFromThingGroup`.
-/// 
-/// <p>Remove the specified thing from the specified group.</p> 
-/// <p>You must specify either a <code>thingGroupArn</code> or a <code>thingGroupName</code> to identify the thing group and either a <code>thingArn</code> or a <code>thingName</code> to identify the thing to remove from the thing group. </p> 
+///
+/// <p>Remove the specified thing from the specified group.</p>
+/// <p>You must specify either a <code>thingGroupArn</code> or a <code>thingGroupName</code> to identify the thing group and either a <code>thingArn</code> or a <code>thingName</code> to identify the thing to remove from the thing group. </p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RemoveThingFromThingGroup</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveThingFromThingGroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::remove_thing_from_thing_group::builders::RemoveThingFromThingGroupInputBuilder,
 }
-impl RemoveThingFromThingGroupFluentBuilder  {
+impl RemoveThingFromThingGroupFluentBuilder {
     /// Creates a new `RemoveThingFromThingGroup`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput, aws_smithy_http::result::SdkError<crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The group name.</p>
     pub fn thing_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.thing_group_name(input.into());
@@ -91,4 +111,3 @@ impl RemoveThingFromThingGroupFluentBuilder  {
         self
     }
 }
-

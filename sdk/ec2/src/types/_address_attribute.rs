@@ -3,7 +3,7 @@
 /// <p>The attributes associated with an Elastic IP address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddressAttribute  {
+pub struct AddressAttribute {
     /// <p>The public IP address.</p>
     #[doc(hidden)]
     pub public_ip: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct AddressAttribute  {
 }
 impl AddressAttribute {
     /// <p>The public IP address.</p>
-    pub fn public_ip(&self) -> std::option::Option<& str> {
+    pub fn public_ip(&self) -> std::option::Option<&str> {
         self.public_ip.as_deref()
     }
     /// <p>[EC2-VPC] The allocation ID.</p>
-    pub fn allocation_id(&self) -> std::option::Option<& str> {
+    pub fn allocation_id(&self) -> std::option::Option<&str> {
         self.allocation_id.as_deref()
     }
     /// <p>The pointer (PTR) record for the IP address.</p>
-    pub fn ptr_record(&self) -> std::option::Option<& str> {
+    pub fn ptr_record(&self) -> std::option::Option<&str> {
         self.ptr_record.as_deref()
     }
     /// <p>The updated PTR record for the IP address.</p>
-    pub fn ptr_record_update(&self) -> std::option::Option<& crate::types::PtrUpdateStatus> {
+    pub fn ptr_record_update(&self) -> std::option::Option<&crate::types::PtrUpdateStatus> {
         self.ptr_record_update.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl AddressAttributeBuilder {
     }
     /// <p>The public IP address.</p>
     pub fn set_public_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_ip = input; self
+        self.public_ip = input;
+        self
     }
     /// <p>[EC2-VPC] The allocation ID.</p>
     pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl AddressAttributeBuilder {
     }
     /// <p>[EC2-VPC] The allocation ID.</p>
     pub fn set_allocation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.allocation_id = input; self
+        self.allocation_id = input;
+        self
     }
     /// <p>The pointer (PTR) record for the IP address.</p>
     pub fn ptr_record(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl AddressAttributeBuilder {
     }
     /// <p>The pointer (PTR) record for the IP address.</p>
     pub fn set_ptr_record(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ptr_record = input; self
+        self.ptr_record = input;
+        self
     }
     /// <p>The updated PTR record for the IP address.</p>
     pub fn ptr_record_update(mut self, input: crate::types::PtrUpdateStatus) -> Self {
@@ -85,21 +88,20 @@ impl AddressAttributeBuilder {
         self
     }
     /// <p>The updated PTR record for the IP address.</p>
-    pub fn set_ptr_record_update(mut self, input: std::option::Option<crate::types::PtrUpdateStatus>) -> Self {
-        self.ptr_record_update = input; self
+    pub fn set_ptr_record_update(
+        mut self,
+        input: std::option::Option<crate::types::PtrUpdateStatus>,
+    ) -> Self {
+        self.ptr_record_update = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddressAttribute`](crate::types::AddressAttribute).
     pub fn build(self) -> crate::types::AddressAttribute {
         crate::types::AddressAttribute {
-            public_ip: self.public_ip
-            ,
-            allocation_id: self.allocation_id
-            ,
-            ptr_record: self.ptr_record
-            ,
-            ptr_record_update: self.ptr_record_update
-            ,
+            public_ip: self.public_ip,
+            allocation_id: self.allocation_id,
+            ptr_record: self.ptr_record,
+            ptr_record_update: self.ptr_record_update,
         }
     }
 }
-

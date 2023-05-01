@@ -3,7 +3,7 @@
 /// <p>Describes an potential intermediate component of a feasible path.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AlternatePathHint  {
+pub struct AlternatePathHint {
     /// <p>The ID of the component.</p>
     #[doc(hidden)]
     pub component_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AlternatePathHint  {
 }
 impl AlternatePathHint {
     /// <p>The ID of the component.</p>
-    pub fn component_id(&self) -> std::option::Option<& str> {
+    pub fn component_id(&self) -> std::option::Option<&str> {
         self.component_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
-    pub fn component_arn(&self) -> std::option::Option<& str> {
+    pub fn component_arn(&self) -> std::option::Option<&str> {
         self.component_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AlternatePathHintBuilder {
     }
     /// <p>The ID of the component.</p>
     pub fn set_component_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_id = input; self
+        self.component_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn component_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl AlternatePathHintBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub fn set_component_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_arn = input; self
+        self.component_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AlternatePathHint`](crate::types::AlternatePathHint).
     pub fn build(self) -> crate::types::AlternatePathHint {
         crate::types::AlternatePathHint {
-            component_id: self.component_id
-            ,
-            component_arn: self.component_arn
-            ,
+            component_id: self.component_id,
+            component_arn: self.component_arn,
         }
     }
 }
-

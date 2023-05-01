@@ -3,7 +3,7 @@
 /// <p>The arc configuration of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArcConfiguration  {
+pub struct ArcConfiguration {
     /// <p>The option that determines the arc angle of a <code>GaugeChartVisual</code>.</p>
     #[doc(hidden)]
     pub arc_angle: std::option::Option<f64>,
@@ -17,7 +17,7 @@ impl ArcConfiguration {
         self.arc_angle
     }
     /// <p>The options that determine the arc thickness of a <code>GaugeChartVisual</code>.</p>
-    pub fn arc_thickness(&self) -> std::option::Option<& crate::types::ArcThicknessOptions> {
+    pub fn arc_thickness(&self) -> std::option::Option<&crate::types::ArcThicknessOptions> {
         self.arc_thickness.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl ArcConfigurationBuilder {
     }
     /// <p>The option that determines the arc angle of a <code>GaugeChartVisual</code>.</p>
     pub fn set_arc_angle(mut self, input: std::option::Option<f64>) -> Self {
-        self.arc_angle = input; self
+        self.arc_angle = input;
+        self
     }
     /// <p>The options that determine the arc thickness of a <code>GaugeChartVisual</code>.</p>
     pub fn arc_thickness(mut self, input: crate::types::ArcThicknessOptions) -> Self {
@@ -51,17 +52,18 @@ impl ArcConfigurationBuilder {
         self
     }
     /// <p>The options that determine the arc thickness of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_arc_thickness(mut self, input: std::option::Option<crate::types::ArcThicknessOptions>) -> Self {
-        self.arc_thickness = input; self
+    pub fn set_arc_thickness(
+        mut self,
+        input: std::option::Option<crate::types::ArcThicknessOptions>,
+    ) -> Self {
+        self.arc_thickness = input;
+        self
     }
     /// Consumes the builder and constructs a [`ArcConfiguration`](crate::types::ArcConfiguration).
     pub fn build(self) -> crate::types::ArcConfiguration {
         crate::types::ArcConfiguration {
-            arc_angle: self.arc_angle
-            ,
-            arc_thickness: self.arc_thickness
-            ,
+            arc_angle: self.arc_angle,
+            arc_thickness: self.arc_thickness,
         }
     }
 }
-

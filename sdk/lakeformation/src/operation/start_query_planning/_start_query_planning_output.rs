@@ -3,7 +3,7 @@
 /// <p>A structure for the output.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartQueryPlanningOutput  {
+pub struct StartQueryPlanningOutput {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
     #[doc(hidden)]
     pub query_id: std::option::Option<std::string::String>,
@@ -11,18 +11,19 @@ pub struct StartQueryPlanningOutput  {
 }
 impl StartQueryPlanningOutput {
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
-    pub fn query_id(&self) -> std::option::Option<& str> {
+    pub fn query_id(&self) -> std::option::Option<&str> {
         self.query_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartQueryPlanningOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartQueryPlanningOutput {
     /// Creates a new builder-style object to manufacture [`StartQueryPlanningOutput`](crate::operation::start_query_planning::StartQueryPlanningOutput).
-    pub fn builder() -> crate::operation::start_query_planning::builders::StartQueryPlanningOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_query_planning::builders::StartQueryPlanningOutputBuilder {
         crate::operation::start_query_planning::builders::StartQueryPlanningOutputBuilder::default()
     }
 }
@@ -42,24 +43,23 @@ impl StartQueryPlanningOutputBuilder {
     }
     /// <p>The ID of the plan query operation can be used to fetch the actual work unit descriptors that are produced as the result of the operation. The ID is also used to get the query state and as an input to the <code>Execute</code> operation.</p>
     pub fn set_query_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query_id = input; self
+        self.query_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartQueryPlanningOutput`](crate::operation::start_query_planning::StartQueryPlanningOutput).
     pub fn build(self) -> crate::operation::start_query_planning::StartQueryPlanningOutput {
         crate::operation::start_query_planning::StartQueryPlanningOutput {
-            query_id: self.query_id
-            ,
+            query_id: self.query_id,
             _request_id: self._request_id,
         }
     }
 }
-

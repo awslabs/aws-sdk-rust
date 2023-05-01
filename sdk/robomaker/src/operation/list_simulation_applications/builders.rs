@@ -4,63 +4,86 @@ pub use crate::operation::list_simulation_applications::_list_simulation_applica
 pub use crate::operation::list_simulation_applications::_list_simulation_applications_input::ListSimulationApplicationsInputBuilder;
 
 /// Fluent builder constructing a request to `ListSimulationApplications`.
-/// 
+///
 /// <p>Returns a list of simulation applications. You can optionally provide filters to retrieve specific simulation applications. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSimulationApplicationsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_simulation_applications::builders::ListSimulationApplicationsInputBuilder,
 }
-impl ListSimulationApplicationsFluentBuilder  {
+impl ListSimulationApplicationsFluentBuilder {
     /// Creates a new `ListSimulationApplications`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_simulation_applications::ListSimulationApplications, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_simulation_applications::ListSimulationApplicationsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_simulation_applications::ListSimulationApplicationsOutput, aws_smithy_http::result::SdkError<crate::operation::list_simulation_applications::ListSimulationApplicationsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_simulation_applications::ListSimulationApplications,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_simulation_applications::ListSimulationApplicationsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_simulation_applications::ListSimulationApplicationsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_simulation_applications::ListSimulationApplicationsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_simulation_applications::paginator::ListSimulationApplicationsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_simulation_applications::paginator::ListSimulationApplicationsPaginator {
-                                crate::operation::list_simulation_applications::paginator::ListSimulationApplicationsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_simulation_applications::paginator::ListSimulationApplicationsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_simulation_applications::paginator::ListSimulationApplicationsPaginator{
+        crate::operation::list_simulation_applications::paginator::ListSimulationApplicationsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The version qualifier of the simulation application.</p>
     pub fn version_qualifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.version_qualifier(input.into());
         self
     }
     /// <p>The version qualifier of the simulation application.</p>
-    pub fn set_version_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version_qualifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_version_qualifier(input);
         self
     }
@@ -88,17 +111,19 @@ impl ListSimulationApplicationsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Optional list of filters to limit results.</p> 
+    /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>Optional list of filters to limit results.</p> 
+    /// <p>Optional list of filters to limit results.</p>
     /// <p>The filter name <code>name</code> is supported. When filtering, you must use the complete value of the filtered item. You can use up to three filters.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
 }
-

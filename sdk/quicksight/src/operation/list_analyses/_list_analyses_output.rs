@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnalysesOutput  {
+pub struct ListAnalysesOutput {
     /// <p>Metadata describing each of the analyses that are listed.</p>
     #[doc(hidden)]
     pub analysis_summary_list: std::option::Option<std::vec::Vec<crate::types::AnalysisSummary>>,
@@ -19,11 +19,11 @@ pub struct ListAnalysesOutput  {
 }
 impl ListAnalysesOutput {
     /// <p>Metadata describing each of the analyses that are listed.</p>
-    pub fn analysis_summary_list(&self) -> std::option::Option<& [crate::types::AnalysisSummary]> {
+    pub fn analysis_summary_list(&self) -> std::option::Option<&[crate::types::AnalysisSummary]> {
         self.analysis_summary_list.as_deref()
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -31,15 +31,15 @@ impl ListAnalysesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAnalysesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAnalysesOutput {
     /// Creates a new builder-style object to manufacture [`ListAnalysesOutput`](crate::operation::list_analyses::ListAnalysesOutput).
     pub fn builder() -> crate::operation::list_analyses::builders::ListAnalysesOutputBuilder {
@@ -51,7 +51,8 @@ impl ListAnalysesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAnalysesOutputBuilder {
-    pub(crate) analysis_summary_list: std::option::Option<std::vec::Vec<crate::types::AnalysisSummary>>,
+    pub(crate) analysis_summary_list:
+        std::option::Option<std::vec::Vec<crate::types::AnalysisSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) status: std::option::Option<i32>,
     pub(crate) request_id: std::option::Option<std::string::String>,
@@ -65,13 +66,17 @@ impl ListAnalysesOutputBuilder {
     /// <p>Metadata describing each of the analyses that are listed.</p>
     pub fn analysis_summary_list(mut self, input: crate::types::AnalysisSummary) -> Self {
         let mut v = self.analysis_summary_list.unwrap_or_default();
-                        v.push(input);
-                        self.analysis_summary_list = Some(v);
-                        self
+        v.push(input);
+        self.analysis_summary_list = Some(v);
+        self
     }
     /// <p>Metadata describing each of the analyses that are listed.</p>
-    pub fn set_analysis_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::AnalysisSummary>>) -> Self {
-        self.analysis_summary_list = input; self
+    pub fn set_analysis_summary_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AnalysisSummary>>,
+    ) -> Self {
+        self.analysis_summary_list = input;
+        self
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,7 +85,8 @@ impl ListAnalysesOutputBuilder {
     }
     /// <p>A pagination token that can be used in a subsequent request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -89,7 +95,8 @@ impl ListAnalysesOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,31 +105,26 @@ impl ListAnalysesOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAnalysesOutput`](crate::operation::list_analyses::ListAnalysesOutput).
     pub fn build(self) -> crate::operation::list_analyses::ListAnalysesOutput {
         crate::operation::list_analyses::ListAnalysesOutput {
-            analysis_summary_list: self.analysis_summary_list
-            ,
-            next_token: self.next_token
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
+            analysis_summary_list: self.analysis_summary_list,
+            next_token: self.next_token,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }
 }
-

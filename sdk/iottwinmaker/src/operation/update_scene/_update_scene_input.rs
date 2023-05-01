@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSceneInput  {
+pub struct UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
     #[doc(hidden)]
     pub workspace_id: std::option::Option<std::string::String>,
@@ -20,31 +20,35 @@ pub struct UpdateSceneInput  {
     pub capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The scene metadata.</p>
     #[doc(hidden)]
-    pub scene_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub scene_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub fn workspace_id(&self) -> std::option::Option<& str> {
+    pub fn workspace_id(&self) -> std::option::Option<&str> {
         self.workspace_id.as_deref()
     }
     /// <p>The ID of the scene.</p>
-    pub fn scene_id(&self) -> std::option::Option<& str> {
+    pub fn scene_id(&self) -> std::option::Option<&str> {
         self.scene_id.as_deref()
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
-    pub fn content_location(&self) -> std::option::Option<& str> {
+    pub fn content_location(&self) -> std::option::Option<&str> {
         self.content_location.as_deref()
     }
     /// <p>The description of this scene.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub fn capabilities(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn capabilities(&self) -> std::option::Option<&[std::string::String]> {
         self.capabilities.as_deref()
     }
     /// <p>The scene metadata.</p>
-    pub fn scene_metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn scene_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.scene_metadata.as_ref()
     }
 }
@@ -64,7 +68,8 @@ pub struct UpdateSceneInputBuilder {
     pub(crate) content_location: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) capabilities: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) scene_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) scene_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateSceneInputBuilder {
     /// <p>The ID of the workspace that contains the scene.</p>
@@ -74,7 +79,8 @@ impl UpdateSceneInputBuilder {
     }
     /// <p>The ID of the workspace that contains the scene.</p>
     pub fn set_workspace_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_id = input; self
+        self.workspace_id = input;
+        self
     }
     /// <p>The ID of the scene.</p>
     pub fn scene_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +89,8 @@ impl UpdateSceneInputBuilder {
     }
     /// <p>The ID of the scene.</p>
     pub fn set_scene_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.scene_id = input; self
+        self.scene_id = input;
+        self
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn content_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +99,8 @@ impl UpdateSceneInputBuilder {
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn set_content_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content_location = input; self
+        self.content_location = input;
+        self
     }
     /// <p>The description of this scene.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +109,8 @@ impl UpdateSceneInputBuilder {
     }
     /// <p>The description of this scene.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `capabilities`.
     ///
@@ -110,47 +119,57 @@ impl UpdateSceneInputBuilder {
     /// <p>A list of capabilities that the scene uses to render.</p>
     pub fn capabilities(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.capabilities.unwrap_or_default();
-                        v.push(input.into());
-                        self.capabilities = Some(v);
-                        self
+        v.push(input.into());
+        self.capabilities = Some(v);
+        self
     }
     /// <p>A list of capabilities that the scene uses to render.</p>
-    pub fn set_capabilities(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.capabilities = input; self
+    pub fn set_capabilities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.capabilities = input;
+        self
     }
     /// Adds a key-value pair to `scene_metadata`.
     ///
     /// To override the contents of this collection use [`set_scene_metadata`](Self::set_scene_metadata).
     ///
     /// <p>The scene metadata.</p>
-    pub fn scene_metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn scene_metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.scene_metadata.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.scene_metadata = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.scene_metadata = Some(hash_map);
+        self
     }
     /// <p>The scene metadata.</p>
-    pub fn set_scene_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.scene_metadata = input; self
+    pub fn set_scene_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.scene_metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSceneInput`](crate::operation::update_scene::UpdateSceneInput).
-    pub fn build(self) -> Result<crate::operation::update_scene::UpdateSceneInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_scene::UpdateSceneInput {
-                workspace_id: self.workspace_id
-                ,
-                scene_id: self.scene_id
-                ,
-                content_location: self.content_location
-                ,
-                description: self.description
-                ,
-                capabilities: self.capabilities
-                ,
-                scene_metadata: self.scene_metadata
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_scene::UpdateSceneInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_scene::UpdateSceneInput {
+            workspace_id: self.workspace_id,
+            scene_id: self.scene_id,
+            content_location: self.content_location,
+            description: self.description,
+            capabilities: self.capabilities,
+            scene_metadata: self.scene_metadata,
+        })
     }
 }
-

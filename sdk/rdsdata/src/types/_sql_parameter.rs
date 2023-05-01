@@ -3,44 +3,44 @@
 /// <p>A parameter used in a SQL statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SqlParameter  {
+pub struct SqlParameter {
     /// <p>The name of the parameter.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The value of the parameter.</p>
     #[doc(hidden)]
     pub value: std::option::Option<crate::types::Field>,
-    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li> 
-    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li> 
-    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li> 
-    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li> 
-    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> 
-    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li> 
+    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
+    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
+    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub type_hint: std::option::Option<crate::types::TypeHint>,
 }
 impl SqlParameter {
     /// <p>The name of the parameter.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The value of the parameter.</p>
-    pub fn value(&self) -> std::option::Option<& crate::types::Field> {
+    pub fn value(&self) -> std::option::Option<&crate::types::Field> {
         self.value.as_ref()
     }
-    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li> 
-    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li> 
-    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li> 
-    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li> 
-    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> 
-    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li> 
+    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
+    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
+    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
-    pub fn type_hint(&self) -> std::option::Option<& crate::types::TypeHint> {
+    pub fn type_hint(&self) -> std::option::Option<&crate::types::TypeHint> {
         self.type_hint.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl SqlParameterBuilder {
     }
     /// <p>The name of the parameter.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The value of the parameter.</p>
     pub fn value(mut self, input: crate::types::Field) -> Self {
@@ -76,43 +77,41 @@ impl SqlParameterBuilder {
     }
     /// <p>The value of the parameter.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::Field>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
-    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li> 
-    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li> 
-    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li> 
-    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li> 
-    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> 
-    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li> 
+    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
+    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
+    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
     pub fn type_hint(mut self, input: crate::types::TypeHint) -> Self {
         self.type_hint = Some(input);
         self
     }
-    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p> 
-    /// <ul> 
-    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li> 
-    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li> 
-    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li> 
-    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li> 
-    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> 
-    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li> 
+    /// <p>A hint that specifies the correct object type for data type mapping. Possible values are as follows:</p>
+    /// <ul>
+    /// <li> <p> <code>DATE</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.</p> </li>
+    /// <li> <p> <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>DECIMAL</code> type to the database.</p> </li>
+    /// <li> <p> <code>JSON</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>JSON</code> type to the database.</p> </li>
+    /// <li> <p> <code>TIME</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li>
+    /// <li> <p> <code>UUID</code> - The corresponding <code>String</code> parameter value is sent as an object of <code>UUID</code> type to the database. </p> </li>
     /// </ul>
     pub fn set_type_hint(mut self, input: std::option::Option<crate::types::TypeHint>) -> Self {
-        self.type_hint = input; self
+        self.type_hint = input;
+        self
     }
     /// Consumes the builder and constructs a [`SqlParameter`](crate::types::SqlParameter).
     pub fn build(self) -> crate::types::SqlParameter {
         crate::types::SqlParameter {
-            name: self.name
-            ,
-            value: self.value
-            ,
-            type_hint: self.type_hint
-            ,
+            name: self.name,
+            value: self.value,
+            type_hint: self.type_hint,
         }
     }
 }
-

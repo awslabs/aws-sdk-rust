@@ -4,57 +4,80 @@ pub use crate::operation::put_playback_configuration::_put_playback_configuratio
 pub use crate::operation::put_playback_configuration::_put_playback_configuration_input::PutPlaybackConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `PutPlaybackConfiguration`.
-/// 
+///
 /// <p>Creates a playback configuration. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutPlaybackConfigurationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::put_playback_configuration::builders::PutPlaybackConfigurationInputBuilder,
 }
-impl PutPlaybackConfigurationFluentBuilder  {
+impl PutPlaybackConfigurationFluentBuilder {
     /// Creates a new `PutPlaybackConfiguration`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_playback_configuration::PutPlaybackConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_playback_configuration::PutPlaybackConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_playback_configuration::PutPlaybackConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::put_playback_configuration::PutPlaybackConfigurationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_playback_configuration::PutPlaybackConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_playback_configuration::PutPlaybackConfigurationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_playback_configuration::PutPlaybackConfigurationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_playback_configuration::PutPlaybackConfigurationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
     pub fn ad_decision_server_url(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.ad_decision_server_url(input.into());
         self
     }
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
-    pub fn set_ad_decision_server_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_ad_decision_server_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_ad_decision_server_url(input);
         self
     }
@@ -64,7 +87,10 @@ impl PutPlaybackConfigurationFluentBuilder  {
         self
     }
     /// <p>The configuration for avail suppression, also known as ad suppression. For more information about ad suppression, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Suppression</a>.</p>
-    pub fn set_avail_suppression(mut self, input: std::option::Option<crate::types::AvailSuppression>) -> Self {
+    pub fn set_avail_suppression(
+        mut self,
+        input: std::option::Option<crate::types::AvailSuppression>,
+    ) -> Self {
         self.inner = self.inner.set_avail_suppression(input);
         self
     }
@@ -84,7 +110,10 @@ impl PutPlaybackConfigurationFluentBuilder  {
         self
     }
     /// <p>The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management.</p>
-    pub fn set_cdn_configuration(mut self, input: std::option::Option<crate::types::CdnConfiguration>) -> Self {
+    pub fn set_cdn_configuration(
+        mut self,
+        input: std::option::Option<crate::types::CdnConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_cdn_configuration(input);
         self
     }
@@ -93,12 +122,24 @@ impl PutPlaybackConfigurationFluentBuilder  {
     /// To override the contents of this collection use [`set_configuration_aliases`](Self::set_configuration_aliases).
     ///
     /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
-    pub fn configuration_aliases(mut self, k: impl Into<std::string::String>, v: std::collections::HashMap<std::string::String, std::string::String>) -> Self {
+    pub fn configuration_aliases(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::collections::HashMap<std::string::String, std::string::String>,
+    ) -> Self {
         self.inner = self.inner.configuration_aliases(k.into(), v);
         self
     }
     /// <p>The player parameters and aliases used as dynamic variables during session initialization. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain Variables</a>.</p>
-    pub fn set_configuration_aliases(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::collections::HashMap<std::string::String, std::string::String>>>) -> Self {
+    pub fn set_configuration_aliases(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_configuration_aliases(input);
         self
     }
@@ -108,27 +149,42 @@ impl PutPlaybackConfigurationFluentBuilder  {
         self
     }
     /// <p>The configuration for DASH content.</p>
-    pub fn set_dash_configuration(mut self, input: std::option::Option<crate::types::DashConfigurationForPut>) -> Self {
+    pub fn set_dash_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DashConfigurationForPut>,
+    ) -> Self {
         self.inner = self.inner.set_dash_configuration(input);
         self
     }
     /// <p>The configuration for pre-roll ad insertion.</p>
-    pub fn live_pre_roll_configuration(mut self, input: crate::types::LivePreRollConfiguration) -> Self {
+    pub fn live_pre_roll_configuration(
+        mut self,
+        input: crate::types::LivePreRollConfiguration,
+    ) -> Self {
         self.inner = self.inner.live_pre_roll_configuration(input);
         self
     }
     /// <p>The configuration for pre-roll ad insertion.</p>
-    pub fn set_live_pre_roll_configuration(mut self, input: std::option::Option<crate::types::LivePreRollConfiguration>) -> Self {
+    pub fn set_live_pre_roll_configuration(
+        mut self,
+        input: std::option::Option<crate::types::LivePreRollConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_live_pre_roll_configuration(input);
         self
     }
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
-    pub fn manifest_processing_rules(mut self, input: crate::types::ManifestProcessingRules) -> Self {
+    pub fn manifest_processing_rules(
+        mut self,
+        input: crate::types::ManifestProcessingRules,
+    ) -> Self {
         self.inner = self.inner.manifest_processing_rules(input);
         self
     }
     /// <p>The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.</p>
-    pub fn set_manifest_processing_rules(mut self, input: std::option::Option<crate::types::ManifestProcessingRules>) -> Self {
+    pub fn set_manifest_processing_rules(
+        mut self,
+        input: std::option::Option<crate::types::ManifestProcessingRules>,
+    ) -> Self {
         self.inner = self.inner.set_manifest_processing_rules(input);
         self
     }
@@ -148,7 +204,10 @@ impl PutPlaybackConfigurationFluentBuilder  {
         self
     }
     /// <p>Defines the maximum duration of underfilled ad time (in seconds) allowed in an ad break. If the duration of underfilled ad time exceeds the personalization threshold, then the personalization of the ad break is abandoned and the underlying content is shown. This feature applies to <i>ad replacement</i> in live and VOD streams, rather than ad insertion, because it relies on an underlying content stream. For more information about ad break behavior, including ad replacement and insertion, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/ad-behavior.html">Ad Behavior in AWS Elemental MediaTailor</a>.</p>
-    pub fn set_personalization_threshold_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_personalization_threshold_seconds(
+        mut self,
+        input: std::option::Option<i32>,
+    ) -> Self {
         self.inner = self.inner.set_personalization_threshold_seconds(input);
         self
     }
@@ -167,12 +226,21 @@ impl PutPlaybackConfigurationFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to assign to the playback configuration. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -182,7 +250,10 @@ impl PutPlaybackConfigurationFluentBuilder  {
         self
     }
     /// <p>The name that is used to associate this playback configuration with a custom transcode profile. This overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with the help of AWS Support.</p>
-    pub fn set_transcode_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_transcode_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_transcode_profile_name(input);
         self
     }
@@ -192,9 +263,11 @@ impl PutPlaybackConfigurationFluentBuilder  {
         self
     }
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
-    pub fn set_video_content_source_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_video_content_source_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_video_content_source_url(input);
         self
     }
 }
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let mediaformat = unimplemented!();
 /// match mediaformat {
@@ -35,14 +35,22 @@
 /// Specifically, when `mediaformat` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MediaFormat::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum MediaFormat {
     #[allow(missing_docs)] // documentation missing in model
     Amr,
@@ -59,51 +67,50 @@ pub enum MediaFormat {
     #[allow(missing_docs)] // documentation missing in model
     Webm,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MediaFormat {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "amr" => MediaFormat::Amr,
-"flac" => MediaFormat::Flac,
-"mp3" => MediaFormat::Mp3,
-"mp4" => MediaFormat::Mp4,
-"ogg" => MediaFormat::Ogg,
-"wav" => MediaFormat::Wav,
-"webm" => MediaFormat::Webm,
-other => MediaFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for MediaFormat {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(MediaFormat::from(s))
-                }
-            }
-impl MediaFormat {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    MediaFormat::Amr => "amr",
-    MediaFormat::Flac => "flac",
-    MediaFormat::Mp3 => "mp3",
-    MediaFormat::Mp4 => "mp4",
-    MediaFormat::Ogg => "ogg",
-    MediaFormat::Wav => "wav",
-    MediaFormat::Webm => "webm",
-    MediaFormat::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "amr" => MediaFormat::Amr,
+            "flac" => MediaFormat::Flac,
+            "mp3" => MediaFormat::Mp3,
+            "mp4" => MediaFormat::Mp4,
+            "ogg" => MediaFormat::Ogg,
+            "wav" => MediaFormat::Wav,
+            "webm" => MediaFormat::Webm,
+            other => MediaFormat::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["amr", "flac", "mp3", "mp4", "ogg", "wav", "webm"]
-                }
-            }
-impl AsRef<str> for MediaFormat {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for MediaFormat {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MediaFormat::from(s))
+    }
+}
+impl MediaFormat {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MediaFormat::Amr => "amr",
+            MediaFormat::Flac => "flac",
+            MediaFormat::Mp3 => "mp3",
+            MediaFormat::Mp4 => "mp4",
+            MediaFormat::Ogg => "ogg",
+            MediaFormat::Wav => "wav",
+            MediaFormat::Webm => "webm",
+            MediaFormat::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["amr", "flac", "mp3", "mp4", "ogg", "wav", "webm"]
+    }
+}
+impl AsRef<str> for MediaFormat {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

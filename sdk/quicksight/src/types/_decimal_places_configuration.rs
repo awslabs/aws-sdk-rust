@@ -3,7 +3,7 @@
 /// <p>The option that determines the decimal places configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecimalPlacesConfiguration  {
+pub struct DecimalPlacesConfiguration {
     /// <p>The values of the decimal places.</p>
     #[doc(hidden)]
     pub decimal_places: std::option::Option<i64>,
@@ -35,14 +35,13 @@ impl DecimalPlacesConfigurationBuilder {
     }
     /// <p>The values of the decimal places.</p>
     pub fn set_decimal_places(mut self, input: std::option::Option<i64>) -> Self {
-        self.decimal_places = input; self
+        self.decimal_places = input;
+        self
     }
     /// Consumes the builder and constructs a [`DecimalPlacesConfiguration`](crate::types::DecimalPlacesConfiguration).
     pub fn build(self) -> crate::types::DecimalPlacesConfiguration {
         crate::types::DecimalPlacesConfiguration {
-            decimal_places: self.decimal_places
-            ,
+            decimal_places: self.decimal_places,
         }
     }
 }
-

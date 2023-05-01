@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMitigationActionOutput  {
+pub struct DescribeMitigationActionOutput {
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
     #[doc(hidden)]
     pub action_name: std::option::Option<std::string::String>,
@@ -31,46 +31,48 @@ pub struct DescribeMitigationActionOutput  {
 }
 impl DescribeMitigationActionOutput {
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
-    pub fn action_name(&self) -> std::option::Option<& str> {
+    pub fn action_name(&self) -> std::option::Option<&str> {
         self.action_name.as_deref()
     }
     /// <p>The type of mitigation action.</p>
-    pub fn action_type(&self) -> std::option::Option<& crate::types::MitigationActionType> {
+    pub fn action_type(&self) -> std::option::Option<&crate::types::MitigationActionType> {
         self.action_type.as_ref()
     }
     /// <p>The ARN that identifies this migration action.</p>
-    pub fn action_arn(&self) -> std::option::Option<& str> {
+    pub fn action_arn(&self) -> std::option::Option<&str> {
         self.action_arn.as_deref()
     }
     /// <p>A unique identifier for this action.</p>
-    pub fn action_id(&self) -> std::option::Option<& str> {
+    pub fn action_id(&self) -> std::option::Option<&str> {
         self.action_id.as_deref()
     }
     /// <p>The ARN of the IAM role used to apply this action.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
-    pub fn action_params(&self) -> std::option::Option<& crate::types::MitigationActionParams> {
+    pub fn action_params(&self) -> std::option::Option<&crate::types::MitigationActionParams> {
         self.action_params.as_ref()
     }
     /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date and time when the mitigation action was last changed.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeMitigationActionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeMitigationActionOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMitigationActionOutput`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput).
-    pub fn builder() -> crate::operation::describe_mitigation_action::builders::DescribeMitigationActionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_mitigation_action::builders::DescribeMitigationActionOutputBuilder
+    {
         crate::operation::describe_mitigation_action::builders::DescribeMitigationActionOutputBuilder::default()
     }
 }
@@ -97,7 +99,8 @@ impl DescribeMitigationActionOutputBuilder {
     }
     /// <p>The friendly name that uniquely identifies the mitigation action.</p>
     pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_name = input; self
+        self.action_name = input;
+        self
     }
     /// <p>The type of mitigation action.</p>
     pub fn action_type(mut self, input: crate::types::MitigationActionType) -> Self {
@@ -105,8 +108,12 @@ impl DescribeMitigationActionOutputBuilder {
         self
     }
     /// <p>The type of mitigation action.</p>
-    pub fn set_action_type(mut self, input: std::option::Option<crate::types::MitigationActionType>) -> Self {
-        self.action_type = input; self
+    pub fn set_action_type(
+        mut self,
+        input: std::option::Option<crate::types::MitigationActionType>,
+    ) -> Self {
+        self.action_type = input;
+        self
     }
     /// <p>The ARN that identifies this migration action.</p>
     pub fn action_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +122,8 @@ impl DescribeMitigationActionOutputBuilder {
     }
     /// <p>The ARN that identifies this migration action.</p>
     pub fn set_action_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_arn = input; self
+        self.action_arn = input;
+        self
     }
     /// <p>A unique identifier for this action.</p>
     pub fn action_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +132,8 @@ impl DescribeMitigationActionOutputBuilder {
     }
     /// <p>A unique identifier for this action.</p>
     pub fn set_action_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_id = input; self
+        self.action_id = input;
+        self
     }
     /// <p>The ARN of the IAM role used to apply this action.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +142,8 @@ impl DescribeMitigationActionOutputBuilder {
     }
     /// <p>The ARN of the IAM role used to apply this action.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
     pub fn action_params(mut self, input: crate::types::MitigationActionParams) -> Self {
@@ -141,8 +151,12 @@ impl DescribeMitigationActionOutputBuilder {
         self
     }
     /// <p>Parameters that control how the mitigation action is applied, specific to the type of mitigation action.</p>
-    pub fn set_action_params(mut self, input: std::option::Option<crate::types::MitigationActionParams>) -> Self {
-        self.action_params = input; self
+    pub fn set_action_params(
+        mut self,
+        input: std::option::Option<crate::types::MitigationActionParams>,
+    ) -> Self {
+        self.action_params = input;
+        self
     }
     /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -150,8 +164,12 @@ impl DescribeMitigationActionOutputBuilder {
         self
     }
     /// <p>The date and time when the mitigation action was added to your Amazon Web Services accounts.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>The date and time when the mitigation action was last changed.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -159,39 +177,36 @@ impl DescribeMitigationActionOutputBuilder {
         self
     }
     /// <p>The date and time when the mitigation action was last changed.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeMitigationActionOutput`](crate::operation::describe_mitigation_action::DescribeMitigationActionOutput).
-    pub fn build(self) -> crate::operation::describe_mitigation_action::DescribeMitigationActionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_mitigation_action::DescribeMitigationActionOutput {
         crate::operation::describe_mitigation_action::DescribeMitigationActionOutput {
-            action_name: self.action_name
-            ,
-            action_type: self.action_type
-            ,
-            action_arn: self.action_arn
-            ,
-            action_id: self.action_id
-            ,
-            role_arn: self.role_arn
-            ,
-            action_params: self.action_params
-            ,
-            creation_date: self.creation_date
-            ,
-            last_modified_date: self.last_modified_date
-            ,
+            action_name: self.action_name,
+            action_type: self.action_type,
+            action_arn: self.action_arn,
+            action_id: self.action_id,
+            role_arn: self.role_arn,
+            action_params: self.action_params,
+            creation_date: self.creation_date,
+            last_modified_date: self.last_modified_date,
             _request_id: self._request_id,
         }
     }
 }
-

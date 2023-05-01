@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetAdvisorLsaAnalysisInput  {
+pub struct DescribeFleetAdvisorLsaAnalysisInput {
     /// <p>Sets the maximum number of records returned in the response.</p>
     #[doc(hidden)]
     pub max_records: std::option::Option<i32>,
@@ -16,13 +16,13 @@ impl DescribeFleetAdvisorLsaAnalysisInput {
         self.max_records
     }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeFleetAdvisorLsaAnalysisInput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetAdvisorLsaAnalysisInput`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput).
-    pub fn builder() -> crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisInputBuilder {
+    pub fn builder() -> crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisInputBuilder{
         crate::operation::describe_fleet_advisor_lsa_analysis::builders::DescribeFleetAdvisorLsaAnalysisInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeFleetAdvisorLsaAnalysisInputBuilder {
     }
     /// <p>Sets the maximum number of records returned in the response.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input; self
+        self.max_records = input;
+        self
     }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,16 @@ impl DescribeFleetAdvisorLsaAnalysisInputBuilder {
     }
     /// <p>If <code>NextToken</code> is returned by a previous response, there are more results available. The value of <code>NextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeFleetAdvisorLsaAnalysisInput`](crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput).
-    pub fn build(self) -> Result<crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_fleet_advisor_lsa_analysis::DescribeFleetAdvisorLsaAnalysisInput {
                 max_records: self.max_records
@@ -65,4 +72,3 @@ impl DescribeFleetAdvisorLsaAnalysisInputBuilder {
         )
     }
 }
-

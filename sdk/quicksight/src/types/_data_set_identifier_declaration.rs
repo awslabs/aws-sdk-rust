@@ -3,7 +3,7 @@
 /// <p>A data set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSetIdentifierDeclaration  {
+pub struct DataSetIdentifierDeclaration {
     /// <p>The identifier of the data set, typically the data set's name.</p>
     #[doc(hidden)]
     pub identifier: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct DataSetIdentifierDeclaration  {
 }
 impl DataSetIdentifierDeclaration {
     /// <p>The identifier of the data set, typically the data set's name.</p>
-    pub fn identifier(&self) -> std::option::Option<& str> {
+    pub fn identifier(&self) -> std::option::Option<&str> {
         self.identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
-    pub fn data_set_arn(&self) -> std::option::Option<& str> {
+    pub fn data_set_arn(&self) -> std::option::Option<&str> {
         self.data_set_arn.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl DataSetIdentifierDeclarationBuilder {
     }
     /// <p>The identifier of the data set, typically the data set's name.</p>
     pub fn set_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identifier = input; self
+        self.identifier = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
     pub fn data_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl DataSetIdentifierDeclarationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the data set.</p>
     pub fn set_data_set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_set_arn = input; self
+        self.data_set_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataSetIdentifierDeclaration`](crate::types::DataSetIdentifierDeclaration).
     pub fn build(self) -> crate::types::DataSetIdentifierDeclaration {
         crate::types::DataSetIdentifierDeclaration {
-            identifier: self.identifier
-            ,
-            data_set_arn: self.data_set_arn
-            ,
+            identifier: self.identifier,
+            data_set_arn: self.data_set_arn,
         }
     }
 }
-

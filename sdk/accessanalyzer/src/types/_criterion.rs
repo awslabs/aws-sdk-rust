@@ -3,7 +3,7 @@
 /// <p>The criteria to use in the filter that defines the archive rule. For more information on available filter keys, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">IAM Access Analyzer filter keys</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Criterion  {
+pub struct Criterion {
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
     #[doc(hidden)]
     pub eq: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19,15 +19,15 @@ pub struct Criterion  {
 }
 impl Criterion {
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
-    pub fn eq(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn eq(&self) -> std::option::Option<&[std::string::String]> {
         self.eq.as_deref()
     }
     /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
-    pub fn neq(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn neq(&self) -> std::option::Option<&[std::string::String]> {
         self.neq.as_deref()
     }
     /// <p>A "contains" operator to match for the filter used to create the rule.</p>
-    pub fn contains(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn contains(&self) -> std::option::Option<&[std::string::String]> {
         self.contains.as_deref()
     }
     /// <p>An "exists" operator to match for the filter used to create the rule. </p>
@@ -59,13 +59,17 @@ impl CriterionBuilder {
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
     pub fn eq(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.eq.unwrap_or_default();
-                        v.push(input.into());
-                        self.eq = Some(v);
-                        self
+        v.push(input.into());
+        self.eq = Some(v);
+        self
     }
     /// <p>An "equals" operator to match for the filter used to create the rule.</p>
-    pub fn set_eq(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.eq = input; self
+    pub fn set_eq(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.eq = input;
+        self
     }
     /// Appends an item to `neq`.
     ///
@@ -74,13 +78,17 @@ impl CriterionBuilder {
     /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
     pub fn neq(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.neq.unwrap_or_default();
-                        v.push(input.into());
-                        self.neq = Some(v);
-                        self
+        v.push(input.into());
+        self.neq = Some(v);
+        self
     }
     /// <p>A "not equals" operator to match for the filter used to create the rule.</p>
-    pub fn set_neq(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.neq = input; self
+    pub fn set_neq(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.neq = input;
+        self
     }
     /// Appends an item to `contains`.
     ///
@@ -89,13 +97,17 @@ impl CriterionBuilder {
     /// <p>A "contains" operator to match for the filter used to create the rule.</p>
     pub fn contains(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.contains.unwrap_or_default();
-                        v.push(input.into());
-                        self.contains = Some(v);
-                        self
+        v.push(input.into());
+        self.contains = Some(v);
+        self
     }
     /// <p>A "contains" operator to match for the filter used to create the rule.</p>
-    pub fn set_contains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.contains = input; self
+    pub fn set_contains(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.contains = input;
+        self
     }
     /// <p>An "exists" operator to match for the filter used to create the rule. </p>
     pub fn exists(mut self, input: bool) -> Self {
@@ -104,20 +116,16 @@ impl CriterionBuilder {
     }
     /// <p>An "exists" operator to match for the filter used to create the rule. </p>
     pub fn set_exists(mut self, input: std::option::Option<bool>) -> Self {
-        self.exists = input; self
+        self.exists = input;
+        self
     }
     /// Consumes the builder and constructs a [`Criterion`](crate::types::Criterion).
     pub fn build(self) -> crate::types::Criterion {
         crate::types::Criterion {
-            eq: self.eq
-            ,
-            neq: self.neq
-            ,
-            contains: self.contains
-            ,
-            exists: self.exists
-            ,
+            eq: self.eq,
+            neq: self.neq,
+            contains: self.contains,
+            exists: self.exists,
         }
     }
 }
-

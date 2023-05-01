@@ -3,7 +3,7 @@
 /// <p>Provides information about a type of sensitive data that was detected by a managed data identifier and produced a sensitive data finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultDetection  {
+pub struct DefaultDetection {
     /// <p>The total number of occurrences of the type of sensitive data that was detected.</p>
     #[doc(hidden)]
     pub count: i64,
@@ -20,11 +20,11 @@ impl DefaultDetection {
         self.count
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
-    pub fn occurrences(&self) -> std::option::Option<& crate::types::Occurrences> {
+    pub fn occurrences(&self) -> std::option::Option<&crate::types::Occurrences> {
         self.occurrences.as_ref()
     }
     /// <p>The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DefaultDetectionBuilder {
     }
     /// <p>The total number of occurrences of the type of sensitive data that was detected.</p>
     pub fn set_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.count = input; self
+        self.count = input;
+        self
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
     pub fn occurrences(mut self, input: crate::types::Occurrences) -> Self {
@@ -59,8 +60,12 @@ impl DefaultDetectionBuilder {
         self
     }
     /// <p>The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a maximum of 15 occurrences of sensitive data.</p>
-    pub fn set_occurrences(mut self, input: std::option::Option<crate::types::Occurrences>) -> Self {
-        self.occurrences = input; self
+    pub fn set_occurrences(
+        mut self,
+        input: std::option::Option<crate::types::Occurrences>,
+    ) -> Self {
+        self.occurrences = input;
+        self
     }
     /// <p>The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,19 +74,15 @@ impl DefaultDetectionBuilder {
     }
     /// <p>The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`DefaultDetection`](crate::types::DefaultDetection).
     pub fn build(self) -> crate::types::DefaultDetection {
         crate::types::DefaultDetection {
-            count: self.count
-                .unwrap_or_default()
-            ,
-            occurrences: self.occurrences
-            ,
-            r#type: self.r#type
-            ,
+            count: self.count.unwrap_or_default(),
+            occurrences: self.occurrences,
+            r#type: self.r#type,
         }
     }
 }
-

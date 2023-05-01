@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopDevEnvironmentInput  {
+pub struct StopDevEnvironmentInput {
     /// <p>The name of the space.</p>
     #[doc(hidden)]
     pub space_name: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct StopDevEnvironmentInput  {
 }
 impl StopDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> std::option::Option<& str> {
+    pub fn space_name(&self) -> std::option::Option<&str> {
         self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl StopDevEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`StopDevEnvironmentInput`](crate::operation::stop_dev_environment::StopDevEnvironmentInput).
-    pub fn builder() -> crate::operation::stop_dev_environment::builders::StopDevEnvironmentInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_dev_environment::builders::StopDevEnvironmentInputBuilder {
         crate::operation::stop_dev_environment::builders::StopDevEnvironmentInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl StopDevEnvironmentInputBuilder {
     }
     /// <p>The name of the space.</p>
     pub fn set_space_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.space_name = input; self
+        self.space_name = input;
+        self
     }
     /// <p>The name of the project in the space.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl StopDevEnvironmentInputBuilder {
     }
     /// <p>The name of the project in the space.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl StopDevEnvironmentInputBuilder {
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopDevEnvironmentInput`](crate::operation::stop_dev_environment::StopDevEnvironmentInput).
-    pub fn build(self) -> Result<crate::operation::stop_dev_environment::StopDevEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_dev_environment::StopDevEnvironmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_dev_environment::StopDevEnvironmentInput {
-                space_name: self.space_name
-                ,
-                project_name: self.project_name
-                ,
-                id: self.id
-                ,
-            }
+                space_name: self.space_name,
+                project_name: self.project_name,
+                id: self.id,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p> Container for request parameters to <code> <code>UpgradeElasticsearchDomain</code> </code> operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpgradeElasticsearchDomainInput  {
+pub struct UpgradeElasticsearchDomainInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct UpgradeElasticsearchDomainInput  {
 }
 impl UpgradeElasticsearchDomainInput {
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
-    pub fn target_version(&self) -> std::option::Option<& str> {
+    pub fn target_version(&self) -> std::option::Option<&str> {
         self.target_version.as_deref()
     }
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
@@ -30,7 +30,7 @@ impl UpgradeElasticsearchDomainInput {
 }
 impl UpgradeElasticsearchDomainInput {
     /// Creates a new builder-style object to manufacture [`UpgradeElasticsearchDomainInput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput).
-    pub fn builder() -> crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainInputBuilder {
+    pub fn builder() -> crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainInputBuilder{
         crate::operation::upgrade_elasticsearch_domain::builders::UpgradeElasticsearchDomainInputBuilder::default()
     }
 }
@@ -51,7 +51,8 @@ impl UpgradeElasticsearchDomainInputBuilder {
     }
     /// <p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
     pub fn target_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl UpgradeElasticsearchDomainInputBuilder {
     }
     /// <p>The version of Elasticsearch that you intend to upgrade the domain to.</p>
     pub fn set_target_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_version = input; self
+        self.target_version = input;
+        self
     }
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     pub fn perform_check_only(mut self, input: bool) -> Self {
@@ -69,20 +71,22 @@ impl UpgradeElasticsearchDomainInputBuilder {
     }
     /// <p> This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. </p>
     pub fn set_perform_check_only(mut self, input: std::option::Option<bool>) -> Self {
-        self.perform_check_only = input; self
+        self.perform_check_only = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpgradeElasticsearchDomainInput`](crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput).
-    pub fn build(self) -> Result<crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainInput {
-                domain_name: self.domain_name
-                ,
-                target_version: self.target_version
-                ,
-                perform_check_only: self.perform_check_only
-                ,
-            }
+                domain_name: self.domain_name,
+                target_version: self.target_version,
+                perform_check_only: self.perform_check_only,
+            },
         )
     }
 }
-

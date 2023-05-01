@@ -3,7 +3,7 @@
 /// Required when you set (Codec) under (VideoDescription)&gt;(CodecSettings) to the value FRAME_CAPTURE.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FrameCaptureSettings  {
+pub struct FrameCaptureSettings {
     /// Frame capture will encode the first frame of the output stream, then one frame every framerateDenominator/framerateNumerator seconds. For example, settings of framerateNumerator = 1 and framerateDenominator = 3 (a rate of 1/3 frame per second) will capture the first frame, then 1 frame every 3s. Files will be named as filename.n.jpg where n is the 0-based sequence number of each Capture.
     #[doc(hidden)]
     pub framerate_denominator: i32,
@@ -59,7 +59,8 @@ impl FrameCaptureSettingsBuilder {
     }
     /// Frame capture will encode the first frame of the output stream, then one frame every framerateDenominator/framerateNumerator seconds. For example, settings of framerateNumerator = 1 and framerateDenominator = 3 (a rate of 1/3 frame per second) will capture the first frame, then 1 frame every 3s. Files will be named as filename.n.jpg where n is the 0-based sequence number of each Capture.
     pub fn set_framerate_denominator(mut self, input: std::option::Option<i32>) -> Self {
-        self.framerate_denominator = input; self
+        self.framerate_denominator = input;
+        self
     }
     /// Frame capture will encode the first frame of the output stream, then one frame every framerateDenominator/framerateNumerator seconds. For example, settings of framerateNumerator = 1 and framerateDenominator = 3 (a rate of 1/3 frame per second) will capture the first frame, then 1 frame every 3s. Files will be named as filename.NNNNNNN.jpg where N is the 0-based frame sequence number zero padded to 7 decimal places.
     pub fn framerate_numerator(mut self, input: i32) -> Self {
@@ -68,7 +69,8 @@ impl FrameCaptureSettingsBuilder {
     }
     /// Frame capture will encode the first frame of the output stream, then one frame every framerateDenominator/framerateNumerator seconds. For example, settings of framerateNumerator = 1 and framerateDenominator = 3 (a rate of 1/3 frame per second) will capture the first frame, then 1 frame every 3s. Files will be named as filename.NNNNNNN.jpg where N is the 0-based frame sequence number zero padded to 7 decimal places.
     pub fn set_framerate_numerator(mut self, input: std::option::Option<i32>) -> Self {
-        self.framerate_numerator = input; self
+        self.framerate_numerator = input;
+        self
     }
     /// Maximum number of captures (encoded jpg output files).
     pub fn max_captures(mut self, input: i32) -> Self {
@@ -77,7 +79,8 @@ impl FrameCaptureSettingsBuilder {
     }
     /// Maximum number of captures (encoded jpg output files).
     pub fn set_max_captures(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_captures = input; self
+        self.max_captures = input;
+        self
     }
     /// JPEG Quality - a higher value equals higher quality.
     pub fn quality(mut self, input: i32) -> Self {
@@ -86,24 +89,16 @@ impl FrameCaptureSettingsBuilder {
     }
     /// JPEG Quality - a higher value equals higher quality.
     pub fn set_quality(mut self, input: std::option::Option<i32>) -> Self {
-        self.quality = input; self
+        self.quality = input;
+        self
     }
     /// Consumes the builder and constructs a [`FrameCaptureSettings`](crate::types::FrameCaptureSettings).
     pub fn build(self) -> crate::types::FrameCaptureSettings {
         crate::types::FrameCaptureSettings {
-            framerate_denominator: self.framerate_denominator
-                .unwrap_or_default()
-            ,
-            framerate_numerator: self.framerate_numerator
-                .unwrap_or_default()
-            ,
-            max_captures: self.max_captures
-                .unwrap_or_default()
-            ,
-            quality: self.quality
-                .unwrap_or_default()
-            ,
+            framerate_denominator: self.framerate_denominator.unwrap_or_default(),
+            framerate_numerator: self.framerate_numerator.unwrap_or_default(),
+            max_captures: self.max_captures.unwrap_or_default(),
+            quality: self.quality.unwrap_or_default(),
         }
     }
 }
-

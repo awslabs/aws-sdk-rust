@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNamespaceOutput  {
+pub struct GetNamespaceOutput {
     /// <p>A complex type that contains information about the specified namespace.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<crate::types::Namespace>,
@@ -10,15 +10,15 @@ pub struct GetNamespaceOutput  {
 }
 impl GetNamespaceOutput {
     /// <p>A complex type that contains information about the specified namespace.</p>
-    pub fn namespace(&self) -> std::option::Option<& crate::types::Namespace> {
+    pub fn namespace(&self) -> std::option::Option<&crate::types::Namespace> {
         self.namespace.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetNamespaceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`GetNamespaceOutput`](crate::operation::get_namespace::GetNamespaceOutput).
     pub fn builder() -> crate::operation::get_namespace::builders::GetNamespaceOutputBuilder {
@@ -41,24 +41,23 @@ impl GetNamespaceOutputBuilder {
     }
     /// <p>A complex type that contains information about the specified namespace.</p>
     pub fn set_namespace(mut self, input: std::option::Option<crate::types::Namespace>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetNamespaceOutput`](crate::operation::get_namespace::GetNamespaceOutput).
     pub fn build(self) -> crate::operation::get_namespace::GetNamespaceOutput {
         crate::operation::get_namespace::GetNamespaceOutput {
-            namespace: self.namespace
-            ,
+            namespace: self.namespace,
             _request_id: self._request_id,
         }
     }
 }
-

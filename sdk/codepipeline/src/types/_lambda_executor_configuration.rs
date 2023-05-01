@@ -3,14 +3,14 @@
 /// <p>Details about the configuration for the <code>Lambda</code> action engine, or executor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaExecutorConfiguration  {
+pub struct LambdaExecutorConfiguration {
     /// <p>The ARN of the Lambda function used by the action engine.</p>
     #[doc(hidden)]
     pub lambda_function_arn: std::option::Option<std::string::String>,
 }
 impl LambdaExecutorConfiguration {
     /// <p>The ARN of the Lambda function used by the action engine.</p>
-    pub fn lambda_function_arn(&self) -> std::option::Option<& str> {
+    pub fn lambda_function_arn(&self) -> std::option::Option<&str> {
         self.lambda_function_arn.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl LambdaExecutorConfigurationBuilder {
         self
     }
     /// <p>The ARN of the Lambda function used by the action engine.</p>
-    pub fn set_lambda_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lambda_function_arn = input; self
+    pub fn set_lambda_function_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.lambda_function_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`LambdaExecutorConfiguration`](crate::types::LambdaExecutorConfiguration).
     pub fn build(self) -> crate::types::LambdaExecutorConfiguration {
         crate::types::LambdaExecutorConfiguration {
-            lambda_function_arn: self.lambda_function_arn
-            ,
+            lambda_function_arn: self.lambda_function_arn,
         }
     }
 }
-

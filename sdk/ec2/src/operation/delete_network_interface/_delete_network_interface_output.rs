@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNetworkInterfaceOutput  {
+pub struct DeleteNetworkInterfaceOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteNetworkInterfaceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteNetworkInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteNetworkInterfaceOutput`](crate::operation::delete_network_interface::DeleteNetworkInterfaceOutput).
-    pub fn builder() -> crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceOutputBuilder
+    {
         crate::operation::delete_network_interface::builders::DeleteNetworkInterfaceOutputBuilder::default()
     }
 }
@@ -25,14 +27,14 @@ pub struct DeleteNetworkInterfaceOutputBuilder {
 }
 impl DeleteNetworkInterfaceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteNetworkInterfaceOutput`](crate::operation::delete_network_interface::DeleteNetworkInterfaceOutput).
     pub fn build(self) -> crate::operation::delete_network_interface::DeleteNetworkInterfaceOutput {
         crate::operation::delete_network_interface::DeleteNetworkInterfaceOutput {
@@ -40,4 +42,3 @@ impl DeleteNetworkInterfaceOutputBuilder {
         }
     }
 }
-

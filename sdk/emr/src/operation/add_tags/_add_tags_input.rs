@@ -3,7 +3,7 @@
 /// <p>This input identifies an Amazon EMR resource and a list of tags to attach.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsInput  {
+pub struct AddTagsInput {
     /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AddTagsInput  {
 }
 impl AddTagsInput {
     /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl AddTagsInputBuilder {
     }
     /// <p>The Amazon EMR resource identifier to which tags will be added. For example, a cluster identifier or an Amazon EMR Studio ID.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -52,24 +53,28 @@ impl AddTagsInputBuilder {
     /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of tags to associate with a resource. Tags are user-defined key-value pairs that consist of a required key string with a maximum of 128 characters, and an optional value string with a maximum of 256 characters.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddTagsInput`](crate::operation::add_tags::AddTagsInput).
-    pub fn build(self) -> Result<crate::operation::add_tags::AddTagsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::add_tags::AddTagsInput {
-                resource_id: self.resource_id
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_tags::AddTagsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::add_tags::AddTagsInput {
+            resource_id: self.resource_id,
+            tags: self.tags,
+        })
     }
 }
-

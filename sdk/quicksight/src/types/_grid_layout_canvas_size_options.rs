@@ -3,14 +3,17 @@
 /// <p>Configuration options for the canvas of a grid layout.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GridLayoutCanvasSizeOptions  {
+pub struct GridLayoutCanvasSizeOptions {
     /// <p>The options that determine the sizing of the canvas used in a grid layout.</p>
     #[doc(hidden)]
-    pub screen_canvas_size_options: std::option::Option<crate::types::GridLayoutScreenCanvasSizeOptions>,
+    pub screen_canvas_size_options:
+        std::option::Option<crate::types::GridLayoutScreenCanvasSizeOptions>,
 }
 impl GridLayoutCanvasSizeOptions {
     /// <p>The options that determine the sizing of the canvas used in a grid layout.</p>
-    pub fn screen_canvas_size_options(&self) -> std::option::Option<& crate::types::GridLayoutScreenCanvasSizeOptions> {
+    pub fn screen_canvas_size_options(
+        &self,
+    ) -> std::option::Option<&crate::types::GridLayoutScreenCanvasSizeOptions> {
         self.screen_canvas_size_options.as_ref()
     }
 }
@@ -25,24 +28,30 @@ impl GridLayoutCanvasSizeOptions {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GridLayoutCanvasSizeOptionsBuilder {
-    pub(crate) screen_canvas_size_options: std::option::Option<crate::types::GridLayoutScreenCanvasSizeOptions>,
+    pub(crate) screen_canvas_size_options:
+        std::option::Option<crate::types::GridLayoutScreenCanvasSizeOptions>,
 }
 impl GridLayoutCanvasSizeOptionsBuilder {
     /// <p>The options that determine the sizing of the canvas used in a grid layout.</p>
-    pub fn screen_canvas_size_options(mut self, input: crate::types::GridLayoutScreenCanvasSizeOptions) -> Self {
+    pub fn screen_canvas_size_options(
+        mut self,
+        input: crate::types::GridLayoutScreenCanvasSizeOptions,
+    ) -> Self {
         self.screen_canvas_size_options = Some(input);
         self
     }
     /// <p>The options that determine the sizing of the canvas used in a grid layout.</p>
-    pub fn set_screen_canvas_size_options(mut self, input: std::option::Option<crate::types::GridLayoutScreenCanvasSizeOptions>) -> Self {
-        self.screen_canvas_size_options = input; self
+    pub fn set_screen_canvas_size_options(
+        mut self,
+        input: std::option::Option<crate::types::GridLayoutScreenCanvasSizeOptions>,
+    ) -> Self {
+        self.screen_canvas_size_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`GridLayoutCanvasSizeOptions`](crate::types::GridLayoutCanvasSizeOptions).
     pub fn build(self) -> crate::types::GridLayoutCanvasSizeOptions {
         crate::types::GridLayoutCanvasSizeOptions {
-            screen_canvas_size_options: self.screen_canvas_size_options
-            ,
+            screen_canvas_size_options: self.screen_canvas_size_options,
         }
     }
 }
-

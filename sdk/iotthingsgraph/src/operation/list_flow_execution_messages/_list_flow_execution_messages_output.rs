@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFlowExecutionMessagesOutput  {
+pub struct ListFlowExecutionMessagesOutput {
     /// <p>A list of objects that contain information about events in the specified flow execution.</p>
     #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::types::FlowExecutionMessage>>,
@@ -13,22 +13,22 @@ pub struct ListFlowExecutionMessagesOutput  {
 }
 impl ListFlowExecutionMessagesOutput {
     /// <p>A list of objects that contain information about events in the specified flow execution.</p>
-    pub fn messages(&self) -> std::option::Option<& [crate::types::FlowExecutionMessage]> {
+    pub fn messages(&self) -> std::option::Option<&[crate::types::FlowExecutionMessage]> {
         self.messages.as_deref()
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFlowExecutionMessagesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListFlowExecutionMessagesOutput {
     /// Creates a new builder-style object to manufacture [`ListFlowExecutionMessagesOutput`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput).
-    pub fn builder() -> crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesOutputBuilder {
+    pub fn builder() -> crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesOutputBuilder{
         crate::operation::list_flow_execution_messages::builders::ListFlowExecutionMessagesOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListFlowExecutionMessagesOutputBuilder {
     /// <p>A list of objects that contain information about events in the specified flow execution.</p>
     pub fn messages(mut self, input: crate::types::FlowExecutionMessage) -> Self {
         let mut v = self.messages.unwrap_or_default();
-                        v.push(input);
-                        self.messages = Some(v);
-                        self
+        v.push(input);
+        self.messages = Some(v);
+        self
     }
     /// <p>A list of objects that contain information about events in the specified flow execution.</p>
-    pub fn set_messages(mut self, input: std::option::Option<std::vec::Vec<crate::types::FlowExecutionMessage>>) -> Self {
-        self.messages = input; self
+    pub fn set_messages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FlowExecutionMessage>>,
+    ) -> Self {
+        self.messages = input;
+        self
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,26 @@ impl ListFlowExecutionMessagesOutputBuilder {
     }
     /// <p>The string to specify as <code>nextToken</code> when you request the next page of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFlowExecutionMessagesOutput`](crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput).
-    pub fn build(self) -> crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput {
         crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput {
-            messages: self.messages
-            ,
-            next_token: self.next_token
-            ,
+            messages: self.messages,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

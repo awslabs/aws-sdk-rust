@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResolverQueryLogConfigsOutput  {
+pub struct ListResolverQueryLogConfigsOutput {
     /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -14,12 +14,13 @@ pub struct ListResolverQueryLogConfigsOutput  {
     pub total_filtered_count: i32,
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
     #[doc(hidden)]
-    pub resolver_query_log_configs: std::option::Option<std::vec::Vec<crate::types::ResolverQueryLogConfig>>,
+    pub resolver_query_log_configs:
+        std::option::Option<std::vec::Vec<crate::types::ResolverQueryLogConfig>>,
     _request_id: Option<String>,
 }
 impl ListResolverQueryLogConfigsOutput {
     /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
@@ -31,18 +32,20 @@ impl ListResolverQueryLogConfigsOutput {
         self.total_filtered_count
     }
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn resolver_query_log_configs(&self) -> std::option::Option<& [crate::types::ResolverQueryLogConfig]> {
+    pub fn resolver_query_log_configs(
+        &self,
+    ) -> std::option::Option<&[crate::types::ResolverQueryLogConfig]> {
         self.resolver_query_log_configs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListResolverQueryLogConfigsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListResolverQueryLogConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListResolverQueryLogConfigsOutput`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput).
-    pub fn builder() -> crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsOutputBuilder {
+    pub fn builder() -> crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsOutputBuilder{
         crate::operation::list_resolver_query_log_configs::builders::ListResolverQueryLogConfigsOutputBuilder::default()
     }
 }
@@ -54,7 +57,8 @@ pub struct ListResolverQueryLogConfigsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) total_count: std::option::Option<i32>,
     pub(crate) total_filtered_count: std::option::Option<i32>,
-    pub(crate) resolver_query_log_configs: std::option::Option<std::vec::Vec<crate::types::ResolverQueryLogConfig>>,
+    pub(crate) resolver_query_log_configs:
+        std::option::Option<std::vec::Vec<crate::types::ResolverQueryLogConfig>>,
     _request_id: Option<String>,
 }
 impl ListResolverQueryLogConfigsOutputBuilder {
@@ -65,7 +69,8 @@ impl ListResolverQueryLogConfigsOutputBuilder {
     }
     /// <p>If there are more than <code>MaxResults</code> query logging configurations, you can submit another <code>ListResolverQueryLogConfigs</code> request to get the next group of configurations. In the next request, specify the value of <code>NextToken</code> from the previous response. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
     pub fn total_count(mut self, input: i32) -> Self {
@@ -74,7 +79,8 @@ impl ListResolverQueryLogConfigsOutputBuilder {
     }
     /// <p>The total number of query logging configurations that were created by the current account in the specified Region. This count can differ from the number of query logging configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response, depending on the values that you specify in the request.</p>
     pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_count = input; self
+        self.total_count = input;
+        self
     }
     /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
     pub fn total_filtered_count(mut self, input: i32) -> Self {
@@ -83,47 +89,50 @@ impl ListResolverQueryLogConfigsOutputBuilder {
     }
     /// <p>The total number of query logging configurations that were created by the current account in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigs</code> request. For the total number of query logging configurations that were created by the current account in the specified Region, see <code>TotalCount</code>.</p>
     pub fn set_total_filtered_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_filtered_count = input; self
+        self.total_filtered_count = input;
+        self
     }
     /// Appends an item to `resolver_query_log_configs`.
     ///
     /// To override the contents of this collection use [`set_resolver_query_log_configs`](Self::set_resolver_query_log_configs).
     ///
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn resolver_query_log_configs(mut self, input: crate::types::ResolverQueryLogConfig) -> Self {
+    pub fn resolver_query_log_configs(
+        mut self,
+        input: crate::types::ResolverQueryLogConfig,
+    ) -> Self {
         let mut v = self.resolver_query_log_configs.unwrap_or_default();
-                        v.push(input);
-                        self.resolver_query_log_configs = Some(v);
-                        self
+        v.push(input);
+        self.resolver_query_log_configs = Some(v);
+        self
     }
     /// <p>A list that contains one <code>ResolverQueryLogConfig</code> element for each query logging configuration that matches the values that you specified for <code>Filter</code>.</p>
-    pub fn set_resolver_query_log_configs(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResolverQueryLogConfig>>) -> Self {
-        self.resolver_query_log_configs = input; self
+    pub fn set_resolver_query_log_configs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResolverQueryLogConfig>>,
+    ) -> Self {
+        self.resolver_query_log_configs = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListResolverQueryLogConfigsOutput`](crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput).
-    pub fn build(self) -> crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput {
         crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput {
-            next_token: self.next_token
-            ,
-            total_count: self.total_count
-                .unwrap_or_default()
-            ,
-            total_filtered_count: self.total_filtered_count
-                .unwrap_or_default()
-            ,
-            resolver_query_log_configs: self.resolver_query_log_configs
-            ,
+            next_token: self.next_token,
+            total_count: self.total_count.unwrap_or_default(),
+            total_filtered_count: self.total_filtered_count.unwrap_or_default(),
+            resolver_query_log_configs: self.resolver_query_log_configs,
             _request_id: self._request_id,
         }
     }
 }
-

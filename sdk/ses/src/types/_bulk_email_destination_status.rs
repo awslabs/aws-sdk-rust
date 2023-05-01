@@ -3,24 +3,24 @@
 /// <p>An object that contains the response from the <code>SendBulkTemplatedEmail</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BulkEmailDestinationStatus  {
-    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p> 
-    /// <p>Possible values for this parameter include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.</p> </li> 
-    /// <li> <p> <code>MessageRejected</code>: The message was rejected because it contained a virus.</p> </li> 
-    /// <li> <p> <code>MailFromDomainNotVerified</code>: The sender's email address or domain was not verified.</p> </li> 
-    /// <li> <p> <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified does not exist.</p> </li> 
-    /// <li> <p> <code>TemplateDoesNotExist</code>: The template you specified does not exist.</p> </li> 
-    /// <li> <p> <code>AccountSuspended</code>: Your account has been shut down because of issues related to your email sending practices.</p> </li> 
-    /// <li> <p> <code>AccountThrottled</code>: The number of emails you can send has been reduced because your account has exceeded its allocated sending limit.</p> </li> 
-    /// <li> <p> <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the maximum number of emails you can send from your account in a 24-hour period.</p> </li> 
-    /// <li> <p> <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does not exist.</p> </li> 
-    /// <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the <code>UpdateAccountSendingEnabled</code> operation.</p> </li> 
-    /// <li> <p> <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the <code>UpdateConfigurationSetSendingEnabled</code> operation.</p> </li> 
-    /// <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was invalid. See the error message for additional information.</p> </li> 
-    /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li> 
-    /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li> 
+pub struct BulkEmailDestinationStatus {
+    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
+    /// <p>Possible values for this parameter include:</p>
+    /// <ul>
+    /// <li> <p> <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.</p> </li>
+    /// <li> <p> <code>MessageRejected</code>: The message was rejected because it contained a virus.</p> </li>
+    /// <li> <p> <code>MailFromDomainNotVerified</code>: The sender's email address or domain was not verified.</p> </li>
+    /// <li> <p> <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified does not exist.</p> </li>
+    /// <li> <p> <code>TemplateDoesNotExist</code>: The template you specified does not exist.</p> </li>
+    /// <li> <p> <code>AccountSuspended</code>: Your account has been shut down because of issues related to your email sending practices.</p> </li>
+    /// <li> <p> <code>AccountThrottled</code>: The number of emails you can send has been reduced because your account has exceeded its allocated sending limit.</p> </li>
+    /// <li> <p> <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the maximum number of emails you can send from your account in a 24-hour period.</p> </li>
+    /// <li> <p> <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does not exist.</p> </li>
+    /// <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the <code>UpdateAccountSendingEnabled</code> operation.</p> </li>
+    /// <li> <p> <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the <code>UpdateConfigurationSetSendingEnabled</code> operation.</p> </li>
+    /// <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was invalid. See the error message for additional information.</p> </li>
+    /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
+    /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::BulkEmailStatus>,
@@ -32,33 +32,33 @@ pub struct BulkEmailDestinationStatus  {
     pub message_id: std::option::Option<std::string::String>,
 }
 impl BulkEmailDestinationStatus {
-    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p> 
-    /// <p>Possible values for this parameter include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.</p> </li> 
-    /// <li> <p> <code>MessageRejected</code>: The message was rejected because it contained a virus.</p> </li> 
-    /// <li> <p> <code>MailFromDomainNotVerified</code>: The sender's email address or domain was not verified.</p> </li> 
-    /// <li> <p> <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified does not exist.</p> </li> 
-    /// <li> <p> <code>TemplateDoesNotExist</code>: The template you specified does not exist.</p> </li> 
-    /// <li> <p> <code>AccountSuspended</code>: Your account has been shut down because of issues related to your email sending practices.</p> </li> 
-    /// <li> <p> <code>AccountThrottled</code>: The number of emails you can send has been reduced because your account has exceeded its allocated sending limit.</p> </li> 
-    /// <li> <p> <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the maximum number of emails you can send from your account in a 24-hour period.</p> </li> 
-    /// <li> <p> <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does not exist.</p> </li> 
-    /// <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the <code>UpdateAccountSendingEnabled</code> operation.</p> </li> 
-    /// <li> <p> <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the <code>UpdateConfigurationSetSendingEnabled</code> operation.</p> </li> 
-    /// <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was invalid. See the error message for additional information.</p> </li> 
-    /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li> 
-    /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li> 
+    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
+    /// <p>Possible values for this parameter include:</p>
+    /// <ul>
+    /// <li> <p> <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.</p> </li>
+    /// <li> <p> <code>MessageRejected</code>: The message was rejected because it contained a virus.</p> </li>
+    /// <li> <p> <code>MailFromDomainNotVerified</code>: The sender's email address or domain was not verified.</p> </li>
+    /// <li> <p> <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified does not exist.</p> </li>
+    /// <li> <p> <code>TemplateDoesNotExist</code>: The template you specified does not exist.</p> </li>
+    /// <li> <p> <code>AccountSuspended</code>: Your account has been shut down because of issues related to your email sending practices.</p> </li>
+    /// <li> <p> <code>AccountThrottled</code>: The number of emails you can send has been reduced because your account has exceeded its allocated sending limit.</p> </li>
+    /// <li> <p> <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the maximum number of emails you can send from your account in a 24-hour period.</p> </li>
+    /// <li> <p> <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does not exist.</p> </li>
+    /// <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the <code>UpdateAccountSendingEnabled</code> operation.</p> </li>
+    /// <li> <p> <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the <code>UpdateConfigurationSetSendingEnabled</code> operation.</p> </li>
+    /// <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was invalid. See the error message for additional information.</p> </li>
+    /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
+    /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::BulkEmailStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::BulkEmailStatus> {
         self.status.as_ref()
     }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
-    pub fn error(&self) -> std::option::Option<& str> {
+    pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
     }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
-    pub fn message_id(&self) -> std::option::Option<& str> {
+    pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
 }
@@ -78,48 +78,49 @@ pub struct BulkEmailDestinationStatusBuilder {
     pub(crate) message_id: std::option::Option<std::string::String>,
 }
 impl BulkEmailDestinationStatusBuilder {
-    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p> 
-    /// <p>Possible values for this parameter include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.</p> </li> 
-    /// <li> <p> <code>MessageRejected</code>: The message was rejected because it contained a virus.</p> </li> 
-    /// <li> <p> <code>MailFromDomainNotVerified</code>: The sender's email address or domain was not verified.</p> </li> 
-    /// <li> <p> <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified does not exist.</p> </li> 
-    /// <li> <p> <code>TemplateDoesNotExist</code>: The template you specified does not exist.</p> </li> 
-    /// <li> <p> <code>AccountSuspended</code>: Your account has been shut down because of issues related to your email sending practices.</p> </li> 
-    /// <li> <p> <code>AccountThrottled</code>: The number of emails you can send has been reduced because your account has exceeded its allocated sending limit.</p> </li> 
-    /// <li> <p> <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the maximum number of emails you can send from your account in a 24-hour period.</p> </li> 
-    /// <li> <p> <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does not exist.</p> </li> 
-    /// <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the <code>UpdateAccountSendingEnabled</code> operation.</p> </li> 
-    /// <li> <p> <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the <code>UpdateConfigurationSetSendingEnabled</code> operation.</p> </li> 
-    /// <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was invalid. See the error message for additional information.</p> </li> 
-    /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li> 
-    /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li> 
+    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
+    /// <p>Possible values for this parameter include:</p>
+    /// <ul>
+    /// <li> <p> <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.</p> </li>
+    /// <li> <p> <code>MessageRejected</code>: The message was rejected because it contained a virus.</p> </li>
+    /// <li> <p> <code>MailFromDomainNotVerified</code>: The sender's email address or domain was not verified.</p> </li>
+    /// <li> <p> <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified does not exist.</p> </li>
+    /// <li> <p> <code>TemplateDoesNotExist</code>: The template you specified does not exist.</p> </li>
+    /// <li> <p> <code>AccountSuspended</code>: Your account has been shut down because of issues related to your email sending practices.</p> </li>
+    /// <li> <p> <code>AccountThrottled</code>: The number of emails you can send has been reduced because your account has exceeded its allocated sending limit.</p> </li>
+    /// <li> <p> <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the maximum number of emails you can send from your account in a 24-hour period.</p> </li>
+    /// <li> <p> <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does not exist.</p> </li>
+    /// <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the <code>UpdateAccountSendingEnabled</code> operation.</p> </li>
+    /// <li> <p> <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the <code>UpdateConfigurationSetSendingEnabled</code> operation.</p> </li>
+    /// <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was invalid. See the error message for additional information.</p> </li>
+    /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
+    /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::BulkEmailStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p> 
-    /// <p>Possible values for this parameter include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.</p> </li> 
-    /// <li> <p> <code>MessageRejected</code>: The message was rejected because it contained a virus.</p> </li> 
-    /// <li> <p> <code>MailFromDomainNotVerified</code>: The sender's email address or domain was not verified.</p> </li> 
-    /// <li> <p> <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified does not exist.</p> </li> 
-    /// <li> <p> <code>TemplateDoesNotExist</code>: The template you specified does not exist.</p> </li> 
-    /// <li> <p> <code>AccountSuspended</code>: Your account has been shut down because of issues related to your email sending practices.</p> </li> 
-    /// <li> <p> <code>AccountThrottled</code>: The number of emails you can send has been reduced because your account has exceeded its allocated sending limit.</p> </li> 
-    /// <li> <p> <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the maximum number of emails you can send from your account in a 24-hour period.</p> </li> 
-    /// <li> <p> <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does not exist.</p> </li> 
-    /// <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the <code>UpdateAccountSendingEnabled</code> operation.</p> </li> 
-    /// <li> <p> <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the <code>UpdateConfigurationSetSendingEnabled</code> operation.</p> </li> 
-    /// <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was invalid. See the error message for additional information.</p> </li> 
-    /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li> 
-    /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li> 
+    /// <p>The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
+    /// <p>Possible values for this parameter include:</p>
+    /// <ul>
+    /// <li> <p> <code>Success</code>: Amazon SES accepted the message, and will attempt to deliver it to the recipients.</p> </li>
+    /// <li> <p> <code>MessageRejected</code>: The message was rejected because it contained a virus.</p> </li>
+    /// <li> <p> <code>MailFromDomainNotVerified</code>: The sender's email address or domain was not verified.</p> </li>
+    /// <li> <p> <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified does not exist.</p> </li>
+    /// <li> <p> <code>TemplateDoesNotExist</code>: The template you specified does not exist.</p> </li>
+    /// <li> <p> <code>AccountSuspended</code>: Your account has been shut down because of issues related to your email sending practices.</p> </li>
+    /// <li> <p> <code>AccountThrottled</code>: The number of emails you can send has been reduced because your account has exceeded its allocated sending limit.</p> </li>
+    /// <li> <p> <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the maximum number of emails you can send from your account in a 24-hour period.</p> </li>
+    /// <li> <p> <code>InvalidSendingPoolName</code>: The configuration set you specified refers to an IP pool that does not exist.</p> </li>
+    /// <li> <p> <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled using the <code>UpdateAccountSendingEnabled</code> operation.</p> </li>
+    /// <li> <p> <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration set was disabled using the <code>UpdateConfigurationSetSendingEnabled</code> operation.</p> </li>
+    /// <li> <p> <code>InvalidParameterValue</code>: One or more of the parameters you specified when calling this operation was invalid. See the error message for additional information.</p> </li>
+    /// <li> <p> <code>TransientFailure</code>: Amazon SES was unable to process your request because of a temporary issue.</p> </li>
+    /// <li> <p> <code>Failed</code>: Amazon SES was unable to process your request. See the error message for additional information.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::BulkEmailStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn error(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +129,8 @@ impl BulkEmailDestinationStatusBuilder {
     }
     /// <p>A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn set_error(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error = input; self
+        self.error = input;
+        self
     }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -137,18 +139,15 @@ impl BulkEmailDestinationStatusBuilder {
     }
     /// <p>The unique message identifier returned from the <code>SendBulkTemplatedEmail</code> operation.</p>
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input; self
+        self.message_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`BulkEmailDestinationStatus`](crate::types::BulkEmailDestinationStatus).
     pub fn build(self) -> crate::types::BulkEmailDestinationStatus {
         crate::types::BulkEmailDestinationStatus {
-            status: self.status
-            ,
-            error: self.error
-            ,
-            message_id: self.message_id
-            ,
+            status: self.status,
+            error: self.error,
+            message_id: self.message_id,
         }
     }
 }
-

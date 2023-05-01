@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDeviceResourcesOutput  {
+pub struct ListDeviceResourcesOutput {
     /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
     #[doc(hidden)]
     pub resources: std::option::Option<std::vec::Vec<crate::types::ResourceSummary>>,
@@ -13,23 +13,25 @@ pub struct ListDeviceResourcesOutput  {
 }
 impl ListDeviceResourcesOutput {
     /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
-    pub fn resources(&self) -> std::option::Option<& [crate::types::ResourceSummary]> {
+    pub fn resources(&self) -> std::option::Option<&[crate::types::ResourceSummary]> {
         self.resources.as_deref()
     }
     /// <p>A pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListDeviceResourcesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListDeviceResourcesOutput {
     /// Creates a new builder-style object to manufacture [`ListDeviceResourcesOutput`](crate::operation::list_device_resources::ListDeviceResourcesOutput).
-    pub fn builder() -> crate::operation::list_device_resources::builders::ListDeviceResourcesOutputBuilder {
-        crate::operation::list_device_resources::builders::ListDeviceResourcesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_device_resources::builders::ListDeviceResourcesOutputBuilder {
+        crate::operation::list_device_resources::builders::ListDeviceResourcesOutputBuilder::default(
+        )
     }
 }
 
@@ -49,13 +51,17 @@ impl ListDeviceResourcesOutputBuilder {
     /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
     pub fn resources(mut self, input: crate::types::ResourceSummary) -> Self {
         let mut v = self.resources.unwrap_or_default();
-                        v.push(input);
-                        self.resources = Some(v);
-                        self
+        v.push(input);
+        self.resources = Some(v);
+        self
     }
     /// <p>A structure defining the resource's type, Amazon Resource Name (ARN), and ID.</p>
-    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceSummary>>) -> Self {
-        self.resources = input; self
+    pub fn set_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceSummary>>,
+    ) -> Self {
+        self.resources = input;
+        self
     }
     /// <p>A pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListDeviceResourcesOutputBuilder {
     }
     /// <p>A pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListDeviceResourcesOutput`](crate::operation::list_device_resources::ListDeviceResourcesOutput).
     pub fn build(self) -> crate::operation::list_device_resources::ListDeviceResourcesOutput {
         crate::operation::list_device_resources::ListDeviceResourcesOutput {
-            resources: self.resources
-            ,
-            next_token: self.next_token
-            ,
+            resources: self.resources,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

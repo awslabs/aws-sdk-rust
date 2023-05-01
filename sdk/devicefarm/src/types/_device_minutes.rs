@@ -3,7 +3,7 @@
 /// <p>Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceMinutes  {
+pub struct DeviceMinutes {
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     #[doc(hidden)]
     pub total: std::option::Option<f64>,
@@ -51,7 +51,8 @@ impl DeviceMinutesBuilder {
     }
     /// <p>When specified, represents the total minutes used by the resource to run tests.</p>
     pub fn set_total(mut self, input: std::option::Option<f64>) -> Self {
-        self.total = input; self
+        self.total = input;
+        self
     }
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
     pub fn metered(mut self, input: f64) -> Self {
@@ -60,7 +61,8 @@ impl DeviceMinutesBuilder {
     }
     /// <p>When specified, represents only the sum of metered minutes used by the resource to run tests.</p>
     pub fn set_metered(mut self, input: std::option::Option<f64>) -> Self {
-        self.metered = input; self
+        self.metered = input;
+        self
     }
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     pub fn unmetered(mut self, input: f64) -> Self {
@@ -69,18 +71,15 @@ impl DeviceMinutesBuilder {
     }
     /// <p>When specified, represents only the sum of unmetered minutes used by the resource to run tests.</p>
     pub fn set_unmetered(mut self, input: std::option::Option<f64>) -> Self {
-        self.unmetered = input; self
+        self.unmetered = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeviceMinutes`](crate::types::DeviceMinutes).
     pub fn build(self) -> crate::types::DeviceMinutes {
         crate::types::DeviceMinutes {
-            total: self.total
-            ,
-            metered: self.metered
-            ,
-            unmetered: self.unmetered
-            ,
+            total: self.total,
+            metered: self.metered,
+            unmetered: self.unmetered,
         }
     }
 }
-

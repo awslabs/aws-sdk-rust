@@ -3,7 +3,7 @@
 /// <p>The status of the last <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request. This is set to Completed after the configuration is updated, or removed if deletion of the data lake is successful.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateStatus  {
+pub struct UpdateStatus {
     /// <p>The unique ID for the <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request.</p>
     #[doc(hidden)]
     pub last_update_request_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct UpdateStatus  {
 }
 impl UpdateStatus {
     /// <p>The unique ID for the <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request.</p>
-    pub fn last_update_request_id(&self) -> std::option::Option<& str> {
+    pub fn last_update_request_id(&self) -> std::option::Option<&str> {
         self.last_update_request_id.as_deref()
     }
     /// <p>The status of the last <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request that was requested.</p>
-    pub fn last_update_status(&self) -> std::option::Option<& crate::types::SettingsStatus> {
+    pub fn last_update_status(&self) -> std::option::Option<&crate::types::SettingsStatus> {
         self.last_update_status.as_ref()
     }
     /// <p>The details of the last <code>UpdateDatalake</code>or <code>DeleteDatalake</code> API request which failed.</p>
-    pub fn last_update_failure(&self) -> std::option::Option<& crate::types::LastUpdateFailure> {
+    pub fn last_update_failure(&self) -> std::option::Option<&crate::types::LastUpdateFailure> {
         self.last_update_failure.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl UpdateStatusBuilder {
         self
     }
     /// <p>The unique ID for the <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request.</p>
-    pub fn set_last_update_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_update_request_id = input; self
+    pub fn set_last_update_request_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_update_request_id = input;
+        self
     }
     /// <p>The status of the last <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request that was requested.</p>
     pub fn last_update_status(mut self, input: crate::types::SettingsStatus) -> Self {
@@ -59,8 +63,12 @@ impl UpdateStatusBuilder {
         self
     }
     /// <p>The status of the last <code>UpdateDatalake</code> or <code>DeleteDatalake</code> API request that was requested.</p>
-    pub fn set_last_update_status(mut self, input: std::option::Option<crate::types::SettingsStatus>) -> Self {
-        self.last_update_status = input; self
+    pub fn set_last_update_status(
+        mut self,
+        input: std::option::Option<crate::types::SettingsStatus>,
+    ) -> Self {
+        self.last_update_status = input;
+        self
     }
     /// <p>The details of the last <code>UpdateDatalake</code>or <code>DeleteDatalake</code> API request which failed.</p>
     pub fn last_update_failure(mut self, input: crate::types::LastUpdateFailure) -> Self {
@@ -68,19 +76,19 @@ impl UpdateStatusBuilder {
         self
     }
     /// <p>The details of the last <code>UpdateDatalake</code>or <code>DeleteDatalake</code> API request which failed.</p>
-    pub fn set_last_update_failure(mut self, input: std::option::Option<crate::types::LastUpdateFailure>) -> Self {
-        self.last_update_failure = input; self
+    pub fn set_last_update_failure(
+        mut self,
+        input: std::option::Option<crate::types::LastUpdateFailure>,
+    ) -> Self {
+        self.last_update_failure = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateStatus`](crate::types::UpdateStatus).
     pub fn build(self) -> crate::types::UpdateStatus {
         crate::types::UpdateStatus {
-            last_update_request_id: self.last_update_request_id
-            ,
-            last_update_status: self.last_update_status
-            ,
-            last_update_failure: self.last_update_failure
-            ,
+            last_update_request_id: self.last_update_request_id,
+            last_update_status: self.last_update_status,
+            last_update_failure: self.last_update_failure,
         }
     }
 }
-

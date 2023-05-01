@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociatePhoneNumbersFromVoiceConnectorInput  {
+pub struct DisassociatePhoneNumbersFromVoiceConnectorInput {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DisassociatePhoneNumbersFromVoiceConnectorInput  {
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn e164_phone_numbers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn e164_phone_numbers(&self) -> std::option::Option<&[std::string::String]> {
         self.e164_phone_numbers.as_deref()
     }
 }
 impl DisassociatePhoneNumbersFromVoiceConnectorInput {
     /// Creates a new builder-style object to manufacture [`DisassociatePhoneNumbersFromVoiceConnectorInput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorInput).
-    pub fn builder() -> crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorInputBuilder{
         crate::operation::disassociate_phone_numbers_from_voice_connector::builders::DisassociatePhoneNumbersFromVoiceConnectorInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInputBuilder {
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     /// Appends an item to `e164_phone_numbers`.
     ///
@@ -51,16 +55,20 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInputBuilder {
     /// <p>List of phone numbers, in E.164 format.</p>
     pub fn e164_phone_numbers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.e164_phone_numbers.unwrap_or_default();
-                        v.push(input.into());
-                        self.e164_phone_numbers = Some(v);
-                        self
+        v.push(input.into());
+        self.e164_phone_numbers = Some(v);
+        self
     }
     /// <p>List of phone numbers, in E.164 format.</p>
-    pub fn set_e164_phone_numbers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.e164_phone_numbers = input; self
+    pub fn set_e164_phone_numbers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.e164_phone_numbers = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociatePhoneNumbersFromVoiceConnectorInput`](crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::disassociate_phone_numbers_from_voice_connector::DisassociatePhoneNumbersFromVoiceConnectorInput {
                 voice_connector_id: self.voice_connector_id
@@ -71,4 +79,3 @@ impl DisassociatePhoneNumbersFromVoiceConnectorInputBuilder {
         )
     }
 }
-

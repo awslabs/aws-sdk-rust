@@ -3,7 +3,7 @@
 /// The source configuration for cloud flows receiving a stream from a bridge.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetGatewayBridgeSourceRequest  {
+pub struct SetGatewayBridgeSourceRequest {
     /// The ARN of the bridge feeding this flow.
     #[doc(hidden)]
     pub bridge_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,13 @@ pub struct SetGatewayBridgeSourceRequest  {
 }
 impl SetGatewayBridgeSourceRequest {
     /// The ARN of the bridge feeding this flow.
-    pub fn bridge_arn(&self) -> std::option::Option<& str> {
+    pub fn bridge_arn(&self) -> std::option::Option<&str> {
         self.bridge_arn.as_deref()
     }
     /// The name of the VPC interface attachment to use for this bridge source.
-    pub fn vpc_interface_attachment(&self) -> std::option::Option<& crate::types::VpcInterfaceAttachment> {
+    pub fn vpc_interface_attachment(
+        &self,
+    ) -> std::option::Option<&crate::types::VpcInterfaceAttachment> {
         self.vpc_interface_attachment.as_ref()
     }
 }
@@ -43,7 +45,8 @@ impl SetGatewayBridgeSourceRequestBuilder {
     }
     /// The ARN of the bridge feeding this flow.
     pub fn set_bridge_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bridge_arn = input; self
+        self.bridge_arn = input;
+        self
     }
     /// The name of the VPC interface attachment to use for this bridge source.
     pub fn vpc_interface_attachment(mut self, input: crate::types::VpcInterfaceAttachment) -> Self {
@@ -51,17 +54,18 @@ impl SetGatewayBridgeSourceRequestBuilder {
         self
     }
     /// The name of the VPC interface attachment to use for this bridge source.
-    pub fn set_vpc_interface_attachment(mut self, input: std::option::Option<crate::types::VpcInterfaceAttachment>) -> Self {
-        self.vpc_interface_attachment = input; self
+    pub fn set_vpc_interface_attachment(
+        mut self,
+        input: std::option::Option<crate::types::VpcInterfaceAttachment>,
+    ) -> Self {
+        self.vpc_interface_attachment = input;
+        self
     }
     /// Consumes the builder and constructs a [`SetGatewayBridgeSourceRequest`](crate::types::SetGatewayBridgeSourceRequest).
     pub fn build(self) -> crate::types::SetGatewayBridgeSourceRequest {
         crate::types::SetGatewayBridgeSourceRequest {
-            bridge_arn: self.bridge_arn
-            ,
-            vpc_interface_attachment: self.vpc_interface_attachment
-            ,
+            bridge_arn: self.bridge_arn,
+            vpc_interface_attachment: self.vpc_interface_attachment,
         }
     }
 }
-

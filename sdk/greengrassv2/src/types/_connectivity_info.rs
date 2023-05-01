@@ -3,7 +3,7 @@
 /// <p>Contains information about an endpoint and port where client devices can connect to an MQTT broker on a Greengrass core device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConnectivityInfo  {
+pub struct ConnectivityInfo {
     /// <p>An ID for the connectivity information.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct ConnectivityInfo  {
 }
 impl ConnectivityInfo {
     /// <p>An ID for the connectivity information.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
-    pub fn host_address(&self) -> std::option::Option<& str> {
+    pub fn host_address(&self) -> std::option::Option<&str> {
         self.host_address.as_deref()
     }
     /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
@@ -31,7 +31,7 @@ impl ConnectivityInfo {
         self.port_number
     }
     /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
-    pub fn metadata(&self) -> std::option::Option<& str> {
+    pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl ConnectivityInfoBuilder {
     }
     /// <p>An ID for the connectivity information.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
     pub fn host_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl ConnectivityInfoBuilder {
     }
     /// <p>The IP address or DNS address where client devices can connect to an MQTT broker on the Greengrass core device.</p>
     pub fn set_host_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.host_address = input; self
+        self.host_address = input;
+        self
     }
     /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
     pub fn port_number(mut self, input: i32) -> Self {
@@ -77,7 +79,8 @@ impl ConnectivityInfoBuilder {
     }
     /// <p>The port where the MQTT broker operates on the core device. This port is typically 8883, which is the default port for the MQTT broker component that runs on core devices.</p>
     pub fn set_port_number(mut self, input: std::option::Option<i32>) -> Self {
-        self.port_number = input; self
+        self.port_number = input;
+        self
     }
     /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,21 +89,16 @@ impl ConnectivityInfoBuilder {
     }
     /// <p>Additional metadata to provide to client devices that connect to this core device.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input; self
+        self.metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConnectivityInfo`](crate::types::ConnectivityInfo).
     pub fn build(self) -> crate::types::ConnectivityInfo {
         crate::types::ConnectivityInfo {
-            id: self.id
-            ,
-            host_address: self.host_address
-            ,
-            port_number: self.port_number
-                .unwrap_or_default()
-            ,
-            metadata: self.metadata
-            ,
+            id: self.id,
+            host_address: self.host_address,
+            port_number: self.port_number.unwrap_or_default(),
+            metadata: self.metadata,
         }
     }
 }
-

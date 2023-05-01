@@ -48,4 +48,3 @@ pub mod builders;
 
 /// Error types that AWS Migration Hub can respond with.
 pub mod error;
-

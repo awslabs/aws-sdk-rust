@@ -3,7 +3,7 @@
 /// <p>The description for the approval rule template is not valid because it exceeds the maximum characters allowed for a description. For more information about limits in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidApprovalRuleTemplateDescriptionException  {
+pub struct InvalidApprovalRuleTemplateDescriptionException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,13 +11,15 @@ pub struct InvalidApprovalRuleTemplateDescriptionException  {
 }
 impl InvalidApprovalRuleTemplateDescriptionException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for InvalidApprovalRuleTemplateDescriptionException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidApprovalRuleTemplateDescriptionException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -25,18 +27,25 @@ impl std::fmt::Display for InvalidApprovalRuleTemplateDescriptionException {
     }
 }
 impl std::error::Error for InvalidApprovalRuleTemplateDescriptionException {}
-impl aws_http::request_id::RequestId for crate::types::error::InvalidApprovalRuleTemplateDescriptionException {
+impl aws_http::request_id::RequestId
+    for crate::types::error::InvalidApprovalRuleTemplateDescriptionException
+{
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidApprovalRuleTemplateDescriptionException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for InvalidApprovalRuleTemplateDescriptionException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl InvalidApprovalRuleTemplateDescriptionException {
     /// Creates a new builder-style object to manufacture [`InvalidApprovalRuleTemplateDescriptionException`](crate::types::error::InvalidApprovalRuleTemplateDescriptionException).
-    pub fn builder() -> crate::types::error::builders::InvalidApprovalRuleTemplateDescriptionExceptionBuilder {
+    pub fn builder(
+    ) -> crate::types::error::builders::InvalidApprovalRuleTemplateDescriptionExceptionBuilder {
         crate::types::error::builders::InvalidApprovalRuleTemplateDescriptionExceptionBuilder::default()
     }
 }
@@ -56,26 +65,28 @@ impl InvalidApprovalRuleTemplateDescriptionExceptionBuilder {
     }
     /// <p>Any message associated with the exception.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`InvalidApprovalRuleTemplateDescriptionException`](crate::types::error::InvalidApprovalRuleTemplateDescriptionException).
     pub fn build(self) -> crate::types::error::InvalidApprovalRuleTemplateDescriptionException {
         crate::types::error::InvalidApprovalRuleTemplateDescriptionException {
-            message: self.message
-            ,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

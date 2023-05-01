@@ -3,7 +3,7 @@
 /// <p>Defines the traffic pattern.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Phase  {
+pub struct Phase {
     /// <p>Specifies how many concurrent users to start with.</p>
     #[doc(hidden)]
     pub initial_number_of_users: std::option::Option<i32>,
@@ -51,7 +51,8 @@ impl PhaseBuilder {
     }
     /// <p>Specifies how many concurrent users to start with.</p>
     pub fn set_initial_number_of_users(mut self, input: std::option::Option<i32>) -> Self {
-        self.initial_number_of_users = input; self
+        self.initial_number_of_users = input;
+        self
     }
     /// <p>Specified how many new users to spawn in a minute.</p>
     pub fn spawn_rate(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl PhaseBuilder {
     }
     /// <p>Specified how many new users to spawn in a minute.</p>
     pub fn set_spawn_rate(mut self, input: std::option::Option<i32>) -> Self {
-        self.spawn_rate = input; self
+        self.spawn_rate = input;
+        self
     }
     /// <p>Specifies how long traffic phase should be.</p>
     pub fn duration_in_seconds(mut self, input: i32) -> Self {
@@ -69,18 +71,15 @@ impl PhaseBuilder {
     }
     /// <p>Specifies how long traffic phase should be.</p>
     pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input; self
+        self.duration_in_seconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`Phase`](crate::types::Phase).
     pub fn build(self) -> crate::types::Phase {
         crate::types::Phase {
-            initial_number_of_users: self.initial_number_of_users
-            ,
-            spawn_rate: self.spawn_rate
-            ,
-            duration_in_seconds: self.duration_in_seconds
-            ,
+            initial_number_of_users: self.initial_number_of_users,
+            spawn_rate: self.spawn_rate,
+            duration_in_seconds: self.duration_in_seconds,
         }
     }
 }
-

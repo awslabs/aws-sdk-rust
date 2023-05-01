@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptMatchInput  {
+pub struct AcceptMatchInput {
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
     #[doc(hidden)]
     pub ticket_id: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct AcceptMatchInput  {
 }
 impl AcceptMatchInput {
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
-    pub fn ticket_id(&self) -> std::option::Option<& str> {
+    pub fn ticket_id(&self) -> std::option::Option<&str> {
         self.ticket_id.as_deref()
     }
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
-    pub fn player_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn player_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.player_ids.as_deref()
     }
     /// <p>Player response to the proposed match.</p>
-    pub fn acceptance_type(&self) -> std::option::Option<& crate::types::AcceptanceType> {
+    pub fn acceptance_type(&self) -> std::option::Option<&crate::types::AcceptanceType> {
         self.acceptance_type.as_ref()
     }
 }
@@ -50,7 +50,8 @@ impl AcceptMatchInputBuilder {
     }
     /// <p>A unique identifier for a matchmaking ticket. The ticket must be in status <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
     pub fn set_ticket_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ticket_id = input; self
+        self.ticket_id = input;
+        self
     }
     /// Appends an item to `player_ids`.
     ///
@@ -59,13 +60,17 @@ impl AcceptMatchInputBuilder {
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
     pub fn player_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.player_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.player_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.player_ids = Some(v);
+        self
     }
     /// <p>A unique identifier for a player delivering the response. This parameter can include one or multiple player IDs.</p>
-    pub fn set_player_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.player_ids = input; self
+    pub fn set_player_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.player_ids = input;
+        self
     }
     /// <p>Player response to the proposed match.</p>
     pub fn acceptance_type(mut self, input: crate::types::AcceptanceType) -> Self {
@@ -73,21 +78,24 @@ impl AcceptMatchInputBuilder {
         self
     }
     /// <p>Player response to the proposed match.</p>
-    pub fn set_acceptance_type(mut self, input: std::option::Option<crate::types::AcceptanceType>) -> Self {
-        self.acceptance_type = input; self
+    pub fn set_acceptance_type(
+        mut self,
+        input: std::option::Option<crate::types::AcceptanceType>,
+    ) -> Self {
+        self.acceptance_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`AcceptMatchInput`](crate::operation::accept_match::AcceptMatchInput).
-    pub fn build(self) -> Result<crate::operation::accept_match::AcceptMatchInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::accept_match::AcceptMatchInput {
-                ticket_id: self.ticket_id
-                ,
-                player_ids: self.player_ids
-                ,
-                acceptance_type: self.acceptance_type
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::accept_match::AcceptMatchInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::accept_match::AcceptMatchInput {
+            ticket_id: self.ticket_id,
+            player_ids: self.player_ids,
+            acceptance_type: self.acceptance_type,
+        })
     }
 }
-

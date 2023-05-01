@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeCommunicationsInput  {
+pub struct DescribeCommunicationsInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     #[doc(hidden)]
     pub case_id: std::option::Option<std::string::String>,
@@ -21,19 +21,19 @@ pub struct DescribeCommunicationsInput  {
 }
 impl DescribeCommunicationsInput {
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
-    pub fn case_id(&self) -> std::option::Option<& str> {
+    pub fn case_id(&self) -> std::option::Option<&str> {
         self.case_id.as_deref()
     }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    pub fn before_time(&self) -> std::option::Option<& str> {
+    pub fn before_time(&self) -> std::option::Option<&str> {
         self.before_time.as_deref()
     }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
-    pub fn after_time(&self) -> std::option::Option<& str> {
+    pub fn after_time(&self) -> std::option::Option<&str> {
         self.after_time.as_deref()
     }
     /// <p>A resumption point for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return before paginating.</p>
@@ -43,7 +43,9 @@ impl DescribeCommunicationsInput {
 }
 impl DescribeCommunicationsInput {
     /// Creates a new builder-style object to manufacture [`DescribeCommunicationsInput`](crate::operation::describe_communications::DescribeCommunicationsInput).
-    pub fn builder() -> crate::operation::describe_communications::builders::DescribeCommunicationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_communications::builders::DescribeCommunicationsInputBuilder
+    {
         crate::operation::describe_communications::builders::DescribeCommunicationsInputBuilder::default()
     }
 }
@@ -66,7 +68,8 @@ impl DescribeCommunicationsInputBuilder {
     }
     /// <p>The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
     pub fn set_case_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.case_id = input; self
+        self.case_id = input;
+        self
     }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn before_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +78,8 @@ impl DescribeCommunicationsInputBuilder {
     }
     /// <p>The end date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn set_before_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.before_time = input; self
+        self.before_time = input;
+        self
     }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn after_time(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +88,8 @@ impl DescribeCommunicationsInputBuilder {
     }
     /// <p>The start date for a filtered date search on support case communications. Case communications are available for 12 months after creation.</p>
     pub fn set_after_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.after_time = input; self
+        self.after_time = input;
+        self
     }
     /// <p>A resumption point for pagination.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +98,8 @@ impl DescribeCommunicationsInputBuilder {
     }
     /// <p>A resumption point for pagination.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return before paginating.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -102,24 +108,24 @@ impl DescribeCommunicationsInputBuilder {
     }
     /// <p>The maximum number of results to return before paginating.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeCommunicationsInput`](crate::operation::describe_communications::DescribeCommunicationsInput).
-    pub fn build(self) -> Result<crate::operation::describe_communications::DescribeCommunicationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_communications::DescribeCommunicationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_communications::DescribeCommunicationsInput {
-                case_id: self.case_id
-                ,
-                before_time: self.before_time
-                ,
-                after_time: self.after_time
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                case_id: self.case_id,
+                before_time: self.before_time,
+                after_time: self.after_time,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

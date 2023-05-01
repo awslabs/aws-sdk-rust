@@ -3,7 +3,7 @@
 /// <p> Range of area under curve (auc) expected from the model. A range greater than 0.1 indicates higher model uncertainity. A range is the difference between upper and lower bound of auc. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UncertaintyRange  {
+pub struct UncertaintyRange {
     /// <p> The lower bound value of the area under curve (auc). </p>
     #[doc(hidden)]
     pub lower_bound_value: std::option::Option<f32>,
@@ -43,7 +43,8 @@ impl UncertaintyRangeBuilder {
     }
     /// <p> The lower bound value of the area under curve (auc). </p>
     pub fn set_lower_bound_value(mut self, input: std::option::Option<f32>) -> Self {
-        self.lower_bound_value = input; self
+        self.lower_bound_value = input;
+        self
     }
     /// <p> The lower bound value of the area under curve (auc). </p>
     pub fn upper_bound_value(mut self, input: f32) -> Self {
@@ -52,16 +53,14 @@ impl UncertaintyRangeBuilder {
     }
     /// <p> The lower bound value of the area under curve (auc). </p>
     pub fn set_upper_bound_value(mut self, input: std::option::Option<f32>) -> Self {
-        self.upper_bound_value = input; self
+        self.upper_bound_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`UncertaintyRange`](crate::types::UncertaintyRange).
     pub fn build(self) -> crate::types::UncertaintyRange {
         crate::types::UncertaintyRange {
-            lower_bound_value: self.lower_bound_value
-            ,
-            upper_bound_value: self.upper_bound_value
-            ,
+            lower_bound_value: self.lower_bound_value,
+            upper_bound_value: self.upper_bound_value,
         }
     }
 }
-

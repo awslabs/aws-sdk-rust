@@ -3,7 +3,7 @@
 /// <p>Specifies configuration information for the input data for the inference, including timestamp format and delimiter. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InferenceInputNameConfiguration  {
+pub struct InferenceInputNameConfiguration {
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
     #[doc(hidden)]
     pub timestamp_format: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct InferenceInputNameConfiguration  {
 }
 impl InferenceInputNameConfiguration {
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
-    pub fn timestamp_format(&self) -> std::option::Option<& str> {
+    pub fn timestamp_format(&self) -> std::option::Option<&str> {
         self.timestamp_format.as_deref()
     }
     /// <p>Indicates the delimiter character used between items in the data. </p>
-    pub fn component_timestamp_delimiter(&self) -> std::option::Option<& str> {
+    pub fn component_timestamp_delimiter(&self) -> std::option::Option<&str> {
         self.component_timestamp_delimiter.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl InferenceInputNameConfigurationBuilder {
     }
     /// <p>The format of the timestamp, whether Epoch time, or standard, with or without hyphens (-). </p>
     pub fn set_timestamp_format(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timestamp_format = input; self
+        self.timestamp_format = input;
+        self
     }
     /// <p>Indicates the delimiter character used between items in the data. </p>
     pub fn component_timestamp_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,17 +52,18 @@ impl InferenceInputNameConfigurationBuilder {
         self
     }
     /// <p>Indicates the delimiter character used between items in the data. </p>
-    pub fn set_component_timestamp_delimiter(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_timestamp_delimiter = input; self
+    pub fn set_component_timestamp_delimiter(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.component_timestamp_delimiter = input;
+        self
     }
     /// Consumes the builder and constructs a [`InferenceInputNameConfiguration`](crate::types::InferenceInputNameConfiguration).
     pub fn build(self) -> crate::types::InferenceInputNameConfiguration {
         crate::types::InferenceInputNameConfiguration {
-            timestamp_format: self.timestamp_format
-            ,
-            component_timestamp_delimiter: self.component_timestamp_delimiter
-            ,
+            timestamp_format: self.timestamp_format,
+            component_timestamp_delimiter: self.component_timestamp_delimiter,
         }
     }
 }
-

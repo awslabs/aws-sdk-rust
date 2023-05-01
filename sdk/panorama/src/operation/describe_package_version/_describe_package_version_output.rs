@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePackageVersionOutput  {
+pub struct DescribePackageVersionOutput {
     /// <p>The account ID of the version's owner.</p>
     #[doc(hidden)]
     pub owner_account: std::option::Option<std::string::String>,
@@ -37,27 +37,27 @@ pub struct DescribePackageVersionOutput  {
 }
 impl DescribePackageVersionOutput {
     /// <p>The account ID of the version's owner.</p>
-    pub fn owner_account(&self) -> std::option::Option<& str> {
+    pub fn owner_account(&self) -> std::option::Option<&str> {
         self.owner_account.as_deref()
     }
     /// <p>The version's ID.</p>
-    pub fn package_id(&self) -> std::option::Option<& str> {
+    pub fn package_id(&self) -> std::option::Option<&str> {
         self.package_id.as_deref()
     }
     /// <p>The ARN of the package.</p>
-    pub fn package_arn(&self) -> std::option::Option<& str> {
+    pub fn package_arn(&self) -> std::option::Option<&str> {
         self.package_arn.as_deref()
     }
     /// <p>The version's name.</p>
-    pub fn package_name(&self) -> std::option::Option<& str> {
+    pub fn package_name(&self) -> std::option::Option<&str> {
         self.package_name.as_deref()
     }
     /// <p>The version's version.</p>
-    pub fn package_version(&self) -> std::option::Option<& str> {
+    pub fn package_version(&self) -> std::option::Option<&str> {
         self.package_version.as_deref()
     }
     /// <p>The version's patch version.</p>
-    pub fn patch_version(&self) -> std::option::Option<& str> {
+    pub fn patch_version(&self) -> std::option::Option<&str> {
         self.patch_version.as_deref()
     }
     /// <p>Whether the version is the latest available.</p>
@@ -65,26 +65,28 @@ impl DescribePackageVersionOutput {
         self.is_latest_patch
     }
     /// <p>The version's status.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::PackageVersionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p>The version's status description.</p>
-    pub fn status_description(&self) -> std::option::Option<& str> {
+    pub fn status_description(&self) -> std::option::Option<&str> {
         self.status_description.as_deref()
     }
     /// <p>The version's registered time.</p>
-    pub fn registered_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn registered_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.registered_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePackageVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribePackageVersionOutput {
     /// Creates a new builder-style object to manufacture [`DescribePackageVersionOutput`](crate::operation::describe_package_version::DescribePackageVersionOutput).
-    pub fn builder() -> crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder
+    {
         crate::operation::describe_package_version::builders::DescribePackageVersionOutputBuilder::default()
     }
 }
@@ -113,7 +115,8 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The account ID of the version's owner.</p>
     pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_account = input; self
+        self.owner_account = input;
+        self
     }
     /// <p>The version's ID.</p>
     pub fn package_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +125,8 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's ID.</p>
     pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_id = input; self
+        self.package_id = input;
+        self
     }
     /// <p>The ARN of the package.</p>
     pub fn package_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,7 +135,8 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The ARN of the package.</p>
     pub fn set_package_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_arn = input; self
+        self.package_arn = input;
+        self
     }
     /// <p>The version's name.</p>
     pub fn package_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,7 +145,8 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's name.</p>
     pub fn set_package_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_name = input; self
+        self.package_name = input;
+        self
     }
     /// <p>The version's version.</p>
     pub fn package_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,7 +155,8 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's version.</p>
     pub fn set_package_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_version = input; self
+        self.package_version = input;
+        self
     }
     /// <p>The version's patch version.</p>
     pub fn patch_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,7 +165,8 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>The version's patch version.</p>
     pub fn set_patch_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.patch_version = input; self
+        self.patch_version = input;
+        self
     }
     /// <p>Whether the version is the latest available.</p>
     pub fn is_latest_patch(mut self, input: bool) -> Self {
@@ -167,7 +175,8 @@ impl DescribePackageVersionOutputBuilder {
     }
     /// <p>Whether the version is the latest available.</p>
     pub fn set_is_latest_patch(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_latest_patch = input; self
+        self.is_latest_patch = input;
+        self
     }
     /// <p>The version's status.</p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
@@ -175,8 +184,12 @@ impl DescribePackageVersionOutputBuilder {
         self
     }
     /// <p>The version's status.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::PackageVersionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::PackageVersionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The version's status description.</p>
     pub fn status_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -184,8 +197,12 @@ impl DescribePackageVersionOutputBuilder {
         self
     }
     /// <p>The version's status description.</p>
-    pub fn set_status_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_description = input; self
+    pub fn set_status_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.status_description = input;
+        self
     }
     /// <p>The version's registered time.</p>
     pub fn registered_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -193,44 +210,36 @@ impl DescribePackageVersionOutputBuilder {
         self
     }
     /// <p>The version's registered time.</p>
-    pub fn set_registered_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.registered_time = input; self
+    pub fn set_registered_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.registered_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribePackageVersionOutput`](crate::operation::describe_package_version::DescribePackageVersionOutput).
     pub fn build(self) -> crate::operation::describe_package_version::DescribePackageVersionOutput {
         crate::operation::describe_package_version::DescribePackageVersionOutput {
-            owner_account: self.owner_account
-            ,
-            package_id: self.package_id
-            ,
-            package_arn: self.package_arn
-            ,
-            package_name: self.package_name
-            ,
-            package_version: self.package_version
-            ,
-            patch_version: self.patch_version
-            ,
-            is_latest_patch: self.is_latest_patch
-                .unwrap_or_default()
-            ,
-            status: self.status
-            ,
-            status_description: self.status_description
-            ,
-            registered_time: self.registered_time
-            ,
+            owner_account: self.owner_account,
+            package_id: self.package_id,
+            package_arn: self.package_arn,
+            package_name: self.package_name,
+            package_version: self.package_version,
+            patch_version: self.patch_version,
+            is_latest_patch: self.is_latest_patch.unwrap_or_default(),
+            status: self.status,
+            status_description: self.status_description,
+            registered_time: self.registered_time,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes the domain name system (DNS) records to add to your domain's DNS to validate it for an Amazon Lightsail certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceRecord  {
+pub struct ResourceRecord {
     /// <p>The name of the record.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResourceRecord  {
 }
 impl ResourceRecord {
     /// <p>The name of the record.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The DNS record type.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The value for the DNS record.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ResourceRecordBuilder {
     }
     /// <p>The name of the record.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The DNS record type.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ResourceRecordBuilder {
     }
     /// <p>The DNS record type.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The value for the DNS record.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl ResourceRecordBuilder {
     }
     /// <p>The value for the DNS record.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceRecord`](crate::types::ResourceRecord).
     pub fn build(self) -> crate::types::ResourceRecord {
         crate::types::ResourceRecord {
-            name: self.name
-            ,
-            r#type: self.r#type
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            r#type: self.r#type,
+            value: self.value,
         }
     }
 }
-

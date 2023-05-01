@@ -2,27 +2,27 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePermissionInput  {
+pub struct CreatePermissionInput {
     /// <p>Specifies the name of the customer managed permission. The name must be unique within the Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p> 
+    /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
     /// <p>The format is <code> <i>
     /// <service-code></service-code></i>:<i>
     /// <resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li> 
-    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li> 
-    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li> 
-    /// </ul> 
+    /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p>
+    /// <ul>
+    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li>
+    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
     #[doc(hidden)]
     pub policy_template: std::option::Option<std::string::String>,
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -32,40 +32,41 @@ pub struct CreatePermissionInput  {
 }
 impl CreatePermissionInput {
     /// <p>Specifies the name of the customer managed permission. The name must be unique within the Amazon Web Services Region.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p> 
+    /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
     /// <p>The format is <code> <i>
     /// <service-code></service-code></i>:<i>
     /// <resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
-    /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li> 
-    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li> 
-    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li> 
-    /// </ul> 
+    /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p>
+    /// <ul>
+    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li>
+    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
-    pub fn policy_template(&self) -> std::option::Option<& str> {
+    pub fn policy_template(&self) -> std::option::Option<&str> {
         self.policy_template.as_deref()
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Specifies a list of one or more tag key and value pairs to attach to the permission.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreatePermissionInput {
     /// Creates a new builder-style object to manufacture [`CreatePermissionInput`](crate::operation::create_permission::CreatePermissionInput).
-    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionInputBuilder {
+    pub fn builder() -> crate::operation::create_permission::builders::CreatePermissionInputBuilder
+    {
         crate::operation::create_permission::builders::CreatePermissionInputBuilder::default()
     }
 }
@@ -88,9 +89,10 @@ impl CreatePermissionInputBuilder {
     }
     /// <p>Specifies the name of the customer managed permission. The name must be unique within the Amazon Web Services Region.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p> 
+    /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
     /// <p>The format is <code> <i>
     /// <service-code></service-code></i>:<i>
     /// <resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
@@ -98,46 +100,49 @@ impl CreatePermissionInputBuilder {
         self.resource_type = Some(input.into());
         self
     }
-    /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p> 
+    /// <p>Specifies the name of the resource type that this customer managed permission applies to.</p>
     /// <p>The format is <code> <i>
     /// <service-code></service-code></i>:<i>
     /// <resource-type></resource-type></i> </code> and is not case sensitive. For example, to specify an Amazon EC2 Subnet, you can use the string <code>ec2:subnet</code>. To see the list of valid values for this parameter, query the <code>ListResourceTypes</code> operation.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
-    /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li> 
-    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li> 
-    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li> 
-    /// </ul> 
+    /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p>
+    /// <ul>
+    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li>
+    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
     pub fn policy_template(mut self, input: impl Into<std::string::String>) -> Self {
         self.policy_template = Some(input.into());
         self
     }
-    /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li> 
-    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li> 
-    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li> 
-    /// </ul> 
+    /// <p>A string in JSON format string that contains the following elements of a resource-based policy:</p>
+    /// <ul>
+    /// <li> <p> <b>Effect</b>: must be set to <code>ALLOW</code>.</p> </li>
+    /// <li> <p> <b>Action</b>: specifies the actions that are allowed by this customer managed permission. The list must contain only actions that are supported by the specified resource type. For a list of all actions supported by each resource type, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// <li> <p> <b>Condition</b>: (optional) specifies conditional parameters that must evaluate to true when a user attempts an action for that action to be allowed. For more information about the Condition element, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html">IAM policies: Condition element</a> in the <i>Identity and Access Management User Guide</i>.</p> </li>
+    /// </ul>
     /// <p>This template can't include either the <code>Resource</code> or <code>Principal</code> elements. Those are both filled in by RAM when it instantiates the resource-based policy on each resource shared using this managed permission. The <code>Resource</code> comes from the ARN of the specific resource that you are sharing. The <code>Principal</code> comes from the list of identities added to the resource share.</p>
     pub fn set_policy_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_template = input; self
+        self.policy_template = input;
+        self
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.client_token = Some(input.into());
         self
     }
-    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p> 
-    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p> 
+    /// <p>Specifies a unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of value.</a>.</p>
+    /// <p>If you don't provide this value, then Amazon Web Services generates a random one for you.</p>
     /// <p>If you retry the operation with the same <code>ClientToken</code>, but with different parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -146,30 +151,31 @@ impl CreatePermissionInputBuilder {
     /// <p>Specifies a list of one or more tag key and value pairs to attach to the permission.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Specifies a list of one or more tag key and value pairs to attach to the permission.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePermissionInput`](crate::operation::create_permission::CreatePermissionInput).
-    pub fn build(self) -> Result<crate::operation::create_permission::CreatePermissionInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_permission::CreatePermissionInput {
-                name: self.name
-                ,
-                resource_type: self.resource_type
-                ,
-                policy_template: self.policy_template
-                ,
-                client_token: self.client_token
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_permission::CreatePermissionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_permission::CreatePermissionInput {
+            name: self.name,
+            resource_type: self.resource_type,
+            policy_template: self.policy_template,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }
-

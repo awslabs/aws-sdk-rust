@@ -2,11 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountPasswordPolicyInput  {
-}
+pub struct GetAccountPasswordPolicyInput {}
 impl GetAccountPasswordPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetAccountPasswordPolicyInput`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyInput).
-    pub fn builder() -> crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyInputBuilder
+    {
         crate::operation::get_account_password_policy::builders::GetAccountPasswordPolicyInputBuilder::default()
     }
 }
@@ -14,15 +15,15 @@ impl GetAccountPasswordPolicyInput {
 /// A builder for [`GetAccountPasswordPolicyInput`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetAccountPasswordPolicyInputBuilder {
-}
+pub struct GetAccountPasswordPolicyInputBuilder {}
 impl GetAccountPasswordPolicyInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountPasswordPolicyInput`](crate::operation::get_account_password_policy::GetAccountPasswordPolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_account_password_policy::GetAccountPasswordPolicyInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_account_password_policy::GetAccountPasswordPolicyInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_account_password_policy::GetAccountPasswordPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_account_password_policy::GetAccountPasswordPolicyInput {})
     }
 }
-

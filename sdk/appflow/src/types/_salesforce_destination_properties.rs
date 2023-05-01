@@ -3,7 +3,7 @@
 /// <p> The properties that are applied when Salesforce is being used as a destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SalesforceDestinationProperties  {
+pub struct SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
     #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
@@ -16,75 +16,77 @@ pub struct SalesforceDestinationProperties  {
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
     #[doc(hidden)]
     pub write_operation_type: std::option::Option<crate::types::WriteOperationType>,
-    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p> 
-    /// <dl> 
+    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
+    /// <dl>
     /// <dt>
     /// AUTOMATIC
-    /// </dt> 
-    /// <dd> 
-    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p> 
-    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p> 
-    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+    /// </dd>
     /// <dt>
     /// BULKV2
-    /// </dt> 
-    /// <dd> 
-    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p> 
-    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+    /// </dd>
     /// <dt>
     /// REST_SYNC
-    /// </dt> 
-    /// <dd> 
-    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p>
+    /// </dd>
     /// </dl>
     #[doc(hidden)]
     pub data_transfer_api: std::option::Option<crate::types::SalesforceDataTransferApi>,
 }
 impl SalesforceDestinationProperties {
     /// <p> The object specified in the Salesforce flow destination. </p>
-    pub fn object(&self) -> std::option::Option<& str> {
+    pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
-    pub fn id_field_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn id_field_names(&self) -> std::option::Option<&[std::string::String]> {
         self.id_field_names.as_deref()
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    pub fn error_handling_config(&self) -> std::option::Option<& crate::types::ErrorHandlingConfig> {
+    pub fn error_handling_config(&self) -> std::option::Option<&crate::types::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
-    pub fn write_operation_type(&self) -> std::option::Option<& crate::types::WriteOperationType> {
+    pub fn write_operation_type(&self) -> std::option::Option<&crate::types::WriteOperationType> {
         self.write_operation_type.as_ref()
     }
-    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p> 
-    /// <dl> 
+    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
+    /// <dl>
     /// <dt>
     /// AUTOMATIC
-    /// </dt> 
-    /// <dd> 
-    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p> 
-    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p> 
-    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+    /// </dd>
     /// <dt>
     /// BULKV2
-    /// </dt> 
-    /// <dd> 
-    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p> 
-    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+    /// </dd>
     /// <dt>
     /// REST_SYNC
-    /// </dt> 
-    /// <dd> 
-    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p>
+    /// </dd>
     /// </dl>
-    pub fn data_transfer_api(&self) -> std::option::Option<& crate::types::SalesforceDataTransferApi> {
+    pub fn data_transfer_api(
+        &self,
+    ) -> std::option::Option<&crate::types::SalesforceDataTransferApi> {
         self.data_transfer_api.as_ref()
     }
 }
@@ -113,7 +115,8 @@ impl SalesforceDestinationPropertiesBuilder {
     }
     /// <p> The object specified in the Salesforce flow destination. </p>
     pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object = input; self
+        self.object = input;
+        self
     }
     /// Appends an item to `id_field_names`.
     ///
@@ -122,13 +125,17 @@ impl SalesforceDestinationPropertiesBuilder {
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
     pub fn id_field_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.id_field_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.id_field_names = Some(v);
-                        self
+        v.push(input.into());
+        self.id_field_names = Some(v);
+        self
     }
     /// <p> The name of the field that Amazon AppFlow uses as an ID when performing a write operation such as update or delete. </p>
-    pub fn set_id_field_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.id_field_names = input; self
+    pub fn set_id_field_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.id_field_names = input;
+        self
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(mut self, input: crate::types::ErrorHandlingConfig) -> Self {
@@ -136,8 +143,12 @@ impl SalesforceDestinationPropertiesBuilder {
         self
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Salesforce destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    pub fn set_error_handling_config(mut self, input: std::option::Option<crate::types::ErrorHandlingConfig>) -> Self {
-        self.error_handling_config = input; self
+    pub fn set_error_handling_config(
+        mut self,
+        input: std::option::Option<crate::types::ErrorHandlingConfig>,
+    ) -> Self {
+        self.error_handling_config = input;
+        self
     }
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
     pub fn write_operation_type(mut self, input: crate::types::WriteOperationType) -> Self {
@@ -145,78 +156,80 @@ impl SalesforceDestinationPropertiesBuilder {
         self
     }
     /// <p> This specifies the type of write operation to be performed in Salesforce. When the value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. </p>
-    pub fn set_write_operation_type(mut self, input: std::option::Option<crate::types::WriteOperationType>) -> Self {
-        self.write_operation_type = input; self
+    pub fn set_write_operation_type(
+        mut self,
+        input: std::option::Option<crate::types::WriteOperationType>,
+    ) -> Self {
+        self.write_operation_type = input;
+        self
     }
-    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p> 
-    /// <dl> 
+    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
+    /// <dl>
     /// <dt>
     /// AUTOMATIC
-    /// </dt> 
-    /// <dd> 
-    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p> 
-    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p> 
-    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+    /// </dd>
     /// <dt>
     /// BULKV2
-    /// </dt> 
-    /// <dd> 
-    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p> 
-    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+    /// </dd>
     /// <dt>
     /// REST_SYNC
-    /// </dt> 
-    /// <dd> 
-    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p>
+    /// </dd>
     /// </dl>
     pub fn data_transfer_api(mut self, input: crate::types::SalesforceDataTransferApi) -> Self {
         self.data_transfer_api = Some(input);
         self
     }
-    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p> 
-    /// <dl> 
+    /// <p>Specifies which Salesforce API is used by Amazon AppFlow when your flow transfers data to Salesforce.</p>
+    /// <dl>
     /// <dt>
     /// AUTOMATIC
-    /// </dt> 
-    /// <dd> 
-    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p> 
-    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p> 
-    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>The default. Amazon AppFlow selects which API to use based on the number of records that your flow transfers to Salesforce. If your flow transfers fewer than 1,000 records, Amazon AppFlow uses Salesforce REST API. If your flow transfers 1,000 records or more, Amazon AppFlow uses Salesforce Bulk API 2.0.</p>
+    /// <p>Each of these Salesforce APIs structures data differently. If Amazon AppFlow selects the API automatically, be aware that, for recurring flows, the data output might vary from one flow run to the next. For example, if a flow runs daily, it might use REST API on one day to transfer 900 records, and it might use Bulk API 2.0 on the next day to transfer 1,100 records. For each of these flow runs, the respective Salesforce API formats the data differently. Some of the differences include how dates are formatted and null values are represented. Also, Bulk API 2.0 doesn't transfer Salesforce compound fields.</p>
+    /// <p>By choosing this option, you optimize flow performance for both small and large data transfers, but the tradeoff is inconsistent formatting in the output.</p>
+    /// </dd>
     /// <dt>
     /// BULKV2
-    /// </dt> 
-    /// <dd> 
-    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p> 
-    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce Bulk API 2.0. This API runs asynchronous data transfers, and it's optimal for large sets of data. By choosing this option, you ensure that your flow writes consistent output, but you optimize performance only for large data transfers.</p>
+    /// <p>Note that Bulk API 2.0 does not transfer Salesforce compound fields.</p>
+    /// </dd>
     /// <dt>
     /// REST_SYNC
-    /// </dt> 
-    /// <dd> 
-    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Amazon AppFlow uses only Salesforce REST API. By choosing this option, you ensure that your flow writes consistent output, but you decrease performance for large data transfers that are better suited for Bulk API 2.0. In some cases, if your flow attempts to transfer a vary large set of data, it might fail with a timed out error.</p>
+    /// </dd>
     /// </dl>
-    pub fn set_data_transfer_api(mut self, input: std::option::Option<crate::types::SalesforceDataTransferApi>) -> Self {
-        self.data_transfer_api = input; self
+    pub fn set_data_transfer_api(
+        mut self,
+        input: std::option::Option<crate::types::SalesforceDataTransferApi>,
+    ) -> Self {
+        self.data_transfer_api = input;
+        self
     }
     /// Consumes the builder and constructs a [`SalesforceDestinationProperties`](crate::types::SalesforceDestinationProperties).
     pub fn build(self) -> crate::types::SalesforceDestinationProperties {
         crate::types::SalesforceDestinationProperties {
-            object: self.object
-            ,
-            id_field_names: self.id_field_names
-            ,
-            error_handling_config: self.error_handling_config
-            ,
-            write_operation_type: self.write_operation_type
-            ,
-            data_transfer_api: self.data_transfer_api
-            ,
+            object: self.object,
+            id_field_names: self.id_field_names,
+            error_handling_config: self.error_handling_config,
+            write_operation_type: self.write_operation_type,
+            data_transfer_api: self.data_transfer_api,
         }
     }
 }
-

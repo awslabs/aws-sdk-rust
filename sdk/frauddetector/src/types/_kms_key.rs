@@ -3,14 +3,14 @@
 /// <p>The KMS key details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KmsKey  {
+pub struct KmsKey {
     /// <p>The encryption key ARN.</p>
     #[doc(hidden)]
     pub kms_encryption_key_arn: std::option::Option<std::string::String>,
 }
 impl KmsKey {
     /// <p>The encryption key ARN.</p>
-    pub fn kms_encryption_key_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_encryption_key_arn(&self) -> std::option::Option<&str> {
         self.kms_encryption_key_arn.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl KmsKeyBuilder {
         self
     }
     /// <p>The encryption key ARN.</p>
-    pub fn set_kms_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_encryption_key_arn = input; self
+    pub fn set_kms_encryption_key_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.kms_encryption_key_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`KmsKey`](crate::types::KmsKey).
     pub fn build(self) -> crate::types::KmsKey {
         crate::types::KmsKey {
-            kms_encryption_key_arn: self.kms_encryption_key_arn
-            ,
+            kms_encryption_key_arn: self.kms_encryption_key_arn,
         }
     }
 }
-

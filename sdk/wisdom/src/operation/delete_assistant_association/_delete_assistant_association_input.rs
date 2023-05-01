@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssistantAssociationInput  {
+pub struct DeleteAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     #[doc(hidden)]
     pub assistant_association_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteAssistantAssociationInput  {
 }
 impl DeleteAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_association_id(&self) -> std::option::Option<& str> {
+    pub fn assistant_association_id(&self) -> std::option::Option<&str> {
         self.assistant_association_id.as_deref()
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> std::option::Option<& str> {
+    pub fn assistant_id(&self) -> std::option::Option<&str> {
         self.assistant_id.as_deref()
     }
 }
 impl DeleteAssistantAssociationInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssistantAssociationInput`](crate::operation::delete_assistant_association::DeleteAssistantAssociationInput).
-    pub fn builder() -> crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationInputBuilder {
+    pub fn builder() -> crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationInputBuilder{
         crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl DeleteAssistantAssociationInputBuilder {
         self
     }
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn set_assistant_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_association_id = input; self
+    pub fn set_assistant_association_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.assistant_association_id = input;
+        self
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn assistant_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +55,21 @@ impl DeleteAssistantAssociationInputBuilder {
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
     pub fn set_assistant_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assistant_id = input; self
+        self.assistant_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAssistantAssociationInput`](crate::operation::delete_assistant_association::DeleteAssistantAssociationInput).
-    pub fn build(self) -> Result<crate::operation::delete_assistant_association::DeleteAssistantAssociationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_assistant_association::DeleteAssistantAssociationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_assistant_association::DeleteAssistantAssociationInput {
-                assistant_association_id: self.assistant_association_id
-                ,
-                assistant_id: self.assistant_id
-                ,
-            }
+                assistant_association_id: self.assistant_association_id,
+                assistant_id: self.assistant_id,
+            },
         )
     }
 }
-

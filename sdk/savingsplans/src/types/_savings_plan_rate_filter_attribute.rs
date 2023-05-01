@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let savingsplanratefilterattribute = unimplemented!();
 /// match savingsplanratefilterattribute {
@@ -34,14 +34,22 @@
 /// Specifically, when `savingsplanratefilterattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SavingsPlanRateFilterAttribute::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SavingsPlanRateFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
     InstanceFamily,
@@ -56,49 +64,57 @@ pub enum SavingsPlanRateFilterAttribute {
     #[allow(missing_docs)] // documentation missing in model
     Tenancy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SavingsPlanRateFilterAttribute {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "instanceFamily" => SavingsPlanRateFilterAttribute::InstanceFamily,
-"instanceType" => SavingsPlanRateFilterAttribute::InstanceType,
-"productDescription" => SavingsPlanRateFilterAttribute::ProductDescription,
-"productId" => SavingsPlanRateFilterAttribute::ProductId,
-"region" => SavingsPlanRateFilterAttribute::Region,
-"tenancy" => SavingsPlanRateFilterAttribute::Tenancy,
-other => SavingsPlanRateFilterAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for SavingsPlanRateFilterAttribute {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(SavingsPlanRateFilterAttribute::from(s))
-                }
-            }
-impl SavingsPlanRateFilterAttribute {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    SavingsPlanRateFilterAttribute::InstanceFamily => "instanceFamily",
-    SavingsPlanRateFilterAttribute::InstanceType => "instanceType",
-    SavingsPlanRateFilterAttribute::ProductDescription => "productDescription",
-    SavingsPlanRateFilterAttribute::ProductId => "productId",
-    SavingsPlanRateFilterAttribute::Region => "region",
-    SavingsPlanRateFilterAttribute::Tenancy => "tenancy",
-    SavingsPlanRateFilterAttribute::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "instanceFamily" => SavingsPlanRateFilterAttribute::InstanceFamily,
+            "instanceType" => SavingsPlanRateFilterAttribute::InstanceType,
+            "productDescription" => SavingsPlanRateFilterAttribute::ProductDescription,
+            "productId" => SavingsPlanRateFilterAttribute::ProductId,
+            "region" => SavingsPlanRateFilterAttribute::Region,
+            "tenancy" => SavingsPlanRateFilterAttribute::Tenancy,
+            other => SavingsPlanRateFilterAttribute::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["instanceFamily", "instanceType", "productDescription", "productId", "region", "tenancy"]
-                }
-            }
-impl AsRef<str> for SavingsPlanRateFilterAttribute {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for SavingsPlanRateFilterAttribute {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SavingsPlanRateFilterAttribute::from(s))
+    }
+}
+impl SavingsPlanRateFilterAttribute {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SavingsPlanRateFilterAttribute::InstanceFamily => "instanceFamily",
+            SavingsPlanRateFilterAttribute::InstanceType => "instanceType",
+            SavingsPlanRateFilterAttribute::ProductDescription => "productDescription",
+            SavingsPlanRateFilterAttribute::ProductId => "productId",
+            SavingsPlanRateFilterAttribute::Region => "region",
+            SavingsPlanRateFilterAttribute::Tenancy => "tenancy",
+            SavingsPlanRateFilterAttribute::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "instanceFamily",
+            "instanceType",
+            "productDescription",
+            "productId",
+            "region",
+            "tenancy",
+        ]
+    }
+}
+impl AsRef<str> for SavingsPlanRateFilterAttribute {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

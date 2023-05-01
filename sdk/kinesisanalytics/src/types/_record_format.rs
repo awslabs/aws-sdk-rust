@@ -3,7 +3,7 @@
 /// <p> Describes the record format and relevant mapping information that should be applied to schematize the records on the stream. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RecordFormat  {
+pub struct RecordFormat {
     /// <p>The type of record format.</p>
     #[doc(hidden)]
     pub record_format_type: std::option::Option<crate::types::RecordFormatType>,
@@ -13,11 +13,11 @@ pub struct RecordFormat  {
 }
 impl RecordFormat {
     /// <p>The type of record format.</p>
-    pub fn record_format_type(&self) -> std::option::Option<& crate::types::RecordFormatType> {
+    pub fn record_format_type(&self) -> std::option::Option<&crate::types::RecordFormatType> {
         self.record_format_type.as_ref()
     }
     /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
-    pub fn mapping_parameters(&self) -> std::option::Option<& crate::types::MappingParameters> {
+    pub fn mapping_parameters(&self) -> std::option::Option<&crate::types::MappingParameters> {
         self.mapping_parameters.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl RecordFormatBuilder {
         self
     }
     /// <p>The type of record format.</p>
-    pub fn set_record_format_type(mut self, input: std::option::Option<crate::types::RecordFormatType>) -> Self {
-        self.record_format_type = input; self
+    pub fn set_record_format_type(
+        mut self,
+        input: std::option::Option<crate::types::RecordFormatType>,
+    ) -> Self {
+        self.record_format_type = input;
+        self
     }
     /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
     pub fn mapping_parameters(mut self, input: crate::types::MappingParameters) -> Self {
@@ -51,17 +55,18 @@ impl RecordFormatBuilder {
         self
     }
     /// <p>When configuring application input at the time of creating or updating an application, provides additional mapping information specific to the record format (such as JSON, CSV, or record fields delimited by some delimiter) on the streaming source.</p>
-    pub fn set_mapping_parameters(mut self, input: std::option::Option<crate::types::MappingParameters>) -> Self {
-        self.mapping_parameters = input; self
+    pub fn set_mapping_parameters(
+        mut self,
+        input: std::option::Option<crate::types::MappingParameters>,
+    ) -> Self {
+        self.mapping_parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`RecordFormat`](crate::types::RecordFormat).
     pub fn build(self) -> crate::types::RecordFormat {
         crate::types::RecordFormat {
-            record_format_type: self.record_format_type
-            ,
-            mapping_parameters: self.mapping_parameters
-            ,
+            record_format_type: self.record_format_type,
+            mapping_parameters: self.mapping_parameters,
         }
     }
 }
-

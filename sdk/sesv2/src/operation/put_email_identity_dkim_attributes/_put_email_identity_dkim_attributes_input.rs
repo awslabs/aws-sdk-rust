@@ -3,21 +3,21 @@
 /// <p>A request to enable or disable DKIM signing of email that you send from an email identity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityDkimAttributesInput  {
+pub struct PutEmailIdentityDkimAttributesInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
     pub email_identity: std::option::Option<std::string::String>,
-    /// <p>Sets the DKIM signing configuration for the identity.</p> 
+    /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     #[doc(hidden)]
     pub signing_enabled: std::option::Option<bool>,
 }
 impl PutEmailIdentityDkimAttributesInput {
     /// <p>The email identity.</p>
-    pub fn email_identity(&self) -> std::option::Option<& str> {
+    pub fn email_identity(&self) -> std::option::Option<&str> {
         self.email_identity.as_deref()
     }
-    /// <p>Sets the DKIM signing configuration for the identity.</p> 
+    /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     pub fn signing_enabled(&self) -> std::option::Option<bool> {
         self.signing_enabled
@@ -25,7 +25,7 @@ impl PutEmailIdentityDkimAttributesInput {
 }
 impl PutEmailIdentityDkimAttributesInput {
     /// Creates a new builder-style object to manufacture [`PutEmailIdentityDkimAttributesInput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput).
-    pub fn builder() -> crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesInputBuilder {
+    pub fn builder() -> crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesInputBuilder{
         crate::operation::put_email_identity_dkim_attributes::builders::PutEmailIdentityDkimAttributesInputBuilder::default()
     }
 }
@@ -45,21 +45,28 @@ impl PutEmailIdentityDkimAttributesInputBuilder {
     }
     /// <p>The email identity.</p>
     pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email_identity = input; self
+        self.email_identity = input;
+        self
     }
-    /// <p>Sets the DKIM signing configuration for the identity.</p> 
+    /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     pub fn signing_enabled(mut self, input: bool) -> Self {
         self.signing_enabled = Some(input);
         self
     }
-    /// <p>Sets the DKIM signing configuration for the identity.</p> 
+    /// <p>Sets the DKIM signing configuration for the identity.</p>
     /// <p>When you set this value <code>true</code>, then the messages that are sent from the identity are signed using DKIM. If you set this value to <code>false</code>, your messages are sent without DKIM signing.</p>
     pub fn set_signing_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.signing_enabled = input; self
+        self.signing_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutEmailIdentityDkimAttributesInput`](crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput).
-    pub fn build(self) -> Result<crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_email_identity_dkim_attributes::PutEmailIdentityDkimAttributesInput {
                 email_identity: self.email_identity
@@ -70,4 +77,3 @@ impl PutEmailIdentityDkimAttributesInputBuilder {
         )
     }
 }
-

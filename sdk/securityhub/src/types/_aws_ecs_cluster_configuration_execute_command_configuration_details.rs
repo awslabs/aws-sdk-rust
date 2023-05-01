@@ -3,34 +3,42 @@
 /// <p>Contains the run command configuration for the cluster.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationDetails  {
+pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
     /// <p>The identifier of the KMS key that is used to encrypt the data between the local client and the container.</p>
     #[doc(hidden)]
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The log configuration for the results of the run command actions. Required if <code>Logging</code> is <code>NONE</code>.</p>
     #[doc(hidden)]
-    pub log_configuration: std::option::Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails>,
+    pub log_configuration: std::option::Option<
+        crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails,
+    >,
     /// <p>The log setting to use for redirecting logs for run command results.</p>
     #[doc(hidden)]
     pub logging: std::option::Option<std::string::String>,
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
     /// <p>The identifier of the KMS key that is used to encrypt the data between the local client and the container.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The log configuration for the results of the run command actions. Required if <code>Logging</code> is <code>NONE</code>.</p>
-    pub fn log_configuration(&self) -> std::option::Option<& crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails> {
+    pub fn log_configuration(
+        &self,
+    ) -> std::option::Option<
+        &crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails,
+    > {
         self.log_configuration.as_ref()
     }
     /// <p>The log setting to use for redirecting logs for run command results.</p>
-    pub fn logging(&self) -> std::option::Option<& str> {
+    pub fn logging(&self) -> std::option::Option<&str> {
         self.logging.as_deref()
     }
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
     /// Creates a new builder-style object to manufacture [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
-    pub fn builder() -> crate::types::builders::AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsBuilder
+    {
         crate::types::builders::AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsBuilder::default()
     }
 }
@@ -40,7 +48,9 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsBuilder {
     pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) log_configuration: std::option::Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails>,
+    pub(crate) log_configuration: std::option::Option<
+        crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails,
+    >,
     pub(crate) logging: std::option::Option<std::string::String>,
 }
 impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsBuilder {
@@ -51,16 +61,24 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsBuilder {
     }
     /// <p>The identifier of the KMS key that is used to encrypt the data between the local client and the container.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>The log configuration for the results of the run command actions. Required if <code>Logging</code> is <code>NONE</code>.</p>
-    pub fn log_configuration(mut self, input: crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails) -> Self {
+    pub fn log_configuration(
+        mut self,
+        input: crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails,
+    ) -> Self {
         self.log_configuration = Some(input);
         self
     }
     /// <p>The log configuration for the results of the run command actions. Required if <code>Logging</code> is <code>NONE</code>.</p>
-    pub fn set_log_configuration(mut self, input: std::option::Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails>) -> Self {
-        self.log_configuration = input; self
+    pub fn set_log_configuration(
+        mut self,
+        input: std::option::Option<crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails>,
+    ) -> Self {
+        self.log_configuration = input;
+        self
     }
     /// <p>The log setting to use for redirecting logs for run command results.</p>
     pub fn logging(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +87,17 @@ impl AwsEcsClusterConfigurationExecuteCommandConfigurationDetailsBuilder {
     }
     /// <p>The log setting to use for redirecting logs for run command results.</p>
     pub fn set_logging(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.logging = input; self
+        self.logging = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEcsClusterConfigurationExecuteCommandConfigurationDetails`](crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails).
-    pub fn build(self) -> crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
+    pub fn build(
+        self,
+    ) -> crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
         crate::types::AwsEcsClusterConfigurationExecuteCommandConfigurationDetails {
-            kms_key_id: self.kms_key_id
-            ,
-            log_configuration: self.log_configuration
-            ,
-            logging: self.logging
-            ,
+            kms_key_id: self.kms_key_id,
+            log_configuration: self.log_configuration,
+            logging: self.logging,
         }
     }
 }
-

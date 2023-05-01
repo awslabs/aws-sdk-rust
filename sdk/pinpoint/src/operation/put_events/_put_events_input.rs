@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEventsInput  {
+pub struct PutEventsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct PutEventsInput  {
 }
 impl PutEventsInput {
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>Specifies a batch of events to process.</p>
-    pub fn events_request(&self) -> std::option::Option<& crate::types::EventsRequest> {
+    pub fn events_request(&self) -> std::option::Option<&crate::types::EventsRequest> {
         self.events_request.as_ref()
     }
 }
@@ -42,7 +42,8 @@ impl PutEventsInputBuilder {
     }
     /// <p>The unique identifier for the application. This identifier is displayed as the <b>Project ID</b> on the Amazon Pinpoint console.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>Specifies a batch of events to process.</p>
     pub fn events_request(mut self, input: crate::types::EventsRequest) -> Self {
@@ -50,19 +51,23 @@ impl PutEventsInputBuilder {
         self
     }
     /// <p>Specifies a batch of events to process.</p>
-    pub fn set_events_request(mut self, input: std::option::Option<crate::types::EventsRequest>) -> Self {
-        self.events_request = input; self
+    pub fn set_events_request(
+        mut self,
+        input: std::option::Option<crate::types::EventsRequest>,
+    ) -> Self {
+        self.events_request = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutEventsInput`](crate::operation::put_events::PutEventsInput).
-    pub fn build(self) -> Result<crate::operation::put_events::PutEventsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::put_events::PutEventsInput {
-                application_id: self.application_id
-                ,
-                events_request: self.events_request
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_events::PutEventsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::put_events::PutEventsInput {
+            application_id: self.application_id,
+            events_request: self.events_request,
+        })
     }
 }
-

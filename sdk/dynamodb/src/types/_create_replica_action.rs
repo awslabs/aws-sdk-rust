@@ -3,14 +3,14 @@
 /// <p>Represents a replica to be added.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateReplicaAction  {
+pub struct CreateReplicaAction {
     /// <p>The Region of the replica to be added.</p>
     #[doc(hidden)]
     pub region_name: std::option::Option<std::string::String>,
 }
 impl CreateReplicaAction {
     /// <p>The Region of the replica to be added.</p>
-    pub fn region_name(&self) -> std::option::Option<& str> {
+    pub fn region_name(&self) -> std::option::Option<&str> {
         self.region_name.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl CreateReplicaActionBuilder {
     }
     /// <p>The Region of the replica to be added.</p>
     pub fn set_region_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region_name = input; self
+        self.region_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateReplicaAction`](crate::types::CreateReplicaAction).
     pub fn build(self) -> crate::types::CreateReplicaAction {
         crate::types::CreateReplicaAction {
-            region_name: self.region_name
-            ,
+            region_name: self.region_name,
         }
     }
 }
-

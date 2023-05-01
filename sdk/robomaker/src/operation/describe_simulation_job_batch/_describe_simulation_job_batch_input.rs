@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSimulationJobBatchInput  {
+pub struct DescribeSimulationJobBatchInput {
     /// <p>The id of the batch to describe.</p>
     #[doc(hidden)]
     pub batch: std::option::Option<std::string::String>,
 }
 impl DescribeSimulationJobBatchInput {
     /// <p>The id of the batch to describe.</p>
-    pub fn batch(&self) -> std::option::Option<& str> {
+    pub fn batch(&self) -> std::option::Option<&str> {
         self.batch.as_deref()
     }
 }
 impl DescribeSimulationJobBatchInput {
     /// Creates a new builder-style object to manufacture [`DescribeSimulationJobBatchInput`](crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput).
-    pub fn builder() -> crate::operation::describe_simulation_job_batch::builders::DescribeSimulationJobBatchInputBuilder {
+    pub fn builder() -> crate::operation::describe_simulation_job_batch::builders::DescribeSimulationJobBatchInputBuilder{
         crate::operation::describe_simulation_job_batch::builders::DescribeSimulationJobBatchInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DescribeSimulationJobBatchInputBuilder {
     }
     /// <p>The id of the batch to describe.</p>
     pub fn set_batch(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.batch = input; self
+        self.batch = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSimulationJobBatchInput`](crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput).
-    pub fn build(self) -> Result<crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_simulation_job_batch::DescribeSimulationJobBatchInput {
-                batch: self.batch
-                ,
-            }
+                batch: self.batch,
+            },
         )
     }
 }
-

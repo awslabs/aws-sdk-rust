@@ -3,7 +3,7 @@
 /// <p>Provides text and information about where to highlight the text.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextWithHighlights  {
+pub struct TextWithHighlights {
     /// <p>The text to display to the user.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TextWithHighlights  {
 }
 impl TextWithHighlights {
     /// <p>The text to display to the user.</p>
-    pub fn text(&self) -> std::option::Option<& str> {
+    pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>The beginning and end of the text that should be highlighted.</p>
-    pub fn highlights(&self) -> std::option::Option<& [crate::types::Highlight]> {
+    pub fn highlights(&self) -> std::option::Option<&[crate::types::Highlight]> {
         self.highlights.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl TextWithHighlightsBuilder {
     }
     /// <p>The text to display to the user.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input; self
+        self.text = input;
+        self
     }
     /// Appends an item to `highlights`.
     ///
@@ -52,22 +53,23 @@ impl TextWithHighlightsBuilder {
     /// <p>The beginning and end of the text that should be highlighted.</p>
     pub fn highlights(mut self, input: crate::types::Highlight) -> Self {
         let mut v = self.highlights.unwrap_or_default();
-                        v.push(input);
-                        self.highlights = Some(v);
-                        self
+        v.push(input);
+        self.highlights = Some(v);
+        self
     }
     /// <p>The beginning and end of the text that should be highlighted.</p>
-    pub fn set_highlights(mut self, input: std::option::Option<std::vec::Vec<crate::types::Highlight>>) -> Self {
-        self.highlights = input; self
+    pub fn set_highlights(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Highlight>>,
+    ) -> Self {
+        self.highlights = input;
+        self
     }
     /// Consumes the builder and constructs a [`TextWithHighlights`](crate::types::TextWithHighlights).
     pub fn build(self) -> crate::types::TextWithHighlights {
         crate::types::TextWithHighlights {
-            text: self.text
-            ,
-            highlights: self.highlights
-            ,
+            text: self.text,
+            highlights: self.highlights,
         }
     }
 }
-

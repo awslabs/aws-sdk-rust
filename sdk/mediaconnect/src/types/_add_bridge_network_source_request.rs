@@ -3,7 +3,7 @@
 /// Add a network source to an existing bridge.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddBridgeNetworkSourceRequest  {
+pub struct AddBridgeNetworkSourceRequest {
     /// The network source multicast IP.
     #[doc(hidden)]
     pub multicast_ip: std::option::Option<std::string::String>,
@@ -22,15 +22,15 @@ pub struct AddBridgeNetworkSourceRequest  {
 }
 impl AddBridgeNetworkSourceRequest {
     /// The network source multicast IP.
-    pub fn multicast_ip(&self) -> std::option::Option<& str> {
+    pub fn multicast_ip(&self) -> std::option::Option<&str> {
         self.multicast_ip.as_deref()
     }
     /// The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// The network source's gateway network name.
-    pub fn network_name(&self) -> std::option::Option<& str> {
+    pub fn network_name(&self) -> std::option::Option<&str> {
         self.network_name.as_deref()
     }
     /// The network source port.
@@ -38,7 +38,7 @@ impl AddBridgeNetworkSourceRequest {
         self.port
     }
     /// The network source protocol.
-    pub fn protocol(&self) -> std::option::Option<& crate::types::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::Protocol> {
         self.protocol.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl AddBridgeNetworkSourceRequestBuilder {
     }
     /// The network source multicast IP.
     pub fn set_multicast_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.multicast_ip = input; self
+        self.multicast_ip = input;
+        self
     }
     /// The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl AddBridgeNetworkSourceRequestBuilder {
     }
     /// The name of the network source. This name is used to reference the source and must be unique among sources in this bridge.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// The network source's gateway network name.
     pub fn network_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl AddBridgeNetworkSourceRequestBuilder {
     }
     /// The network source's gateway network name.
     pub fn set_network_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_name = input; self
+        self.network_name = input;
+        self
     }
     /// The network source port.
     pub fn port(mut self, input: i32) -> Self {
@@ -94,7 +97,8 @@ impl AddBridgeNetworkSourceRequestBuilder {
     }
     /// The network source port.
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// The network source protocol.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
@@ -103,23 +107,17 @@ impl AddBridgeNetworkSourceRequestBuilder {
     }
     /// The network source protocol.
     pub fn set_protocol(mut self, input: std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddBridgeNetworkSourceRequest`](crate::types::AddBridgeNetworkSourceRequest).
     pub fn build(self) -> crate::types::AddBridgeNetworkSourceRequest {
         crate::types::AddBridgeNetworkSourceRequest {
-            multicast_ip: self.multicast_ip
-            ,
-            name: self.name
-            ,
-            network_name: self.network_name
-            ,
-            port: self.port
-                .unwrap_or_default()
-            ,
-            protocol: self.protocol
-            ,
+            multicast_ip: self.multicast_ip,
+            name: self.name,
+            network_name: self.network_name,
+            port: self.port.unwrap_or_default(),
+            protocol: self.protocol,
         }
     }
 }
-

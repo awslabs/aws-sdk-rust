@@ -3,7 +3,7 @@
 /// <p> A resource association result for a percentage custom line item. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateResourceResponseElement  {
+pub struct AssociateResourceResponseElement {
     /// <p> The resource ARN that was associated to the custom line item. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AssociateResourceResponseElement  {
 }
 impl AssociateResourceResponseElement {
     /// <p> The resource ARN that was associated to the custom line item. </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p> An <code>AssociateResourceError</code> that will populate if the resource association fails. </p>
-    pub fn error(&self) -> std::option::Option<& crate::types::AssociateResourceError> {
+    pub fn error(&self) -> std::option::Option<&crate::types::AssociateResourceError> {
         self.error.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl AssociateResourceResponseElementBuilder {
     }
     /// <p> The resource ARN that was associated to the custom line item. </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p> An <code>AssociateResourceError</code> that will populate if the resource association fails. </p>
     pub fn error(mut self, input: crate::types::AssociateResourceError) -> Self {
@@ -51,17 +52,18 @@ impl AssociateResourceResponseElementBuilder {
         self
     }
     /// <p> An <code>AssociateResourceError</code> that will populate if the resource association fails. </p>
-    pub fn set_error(mut self, input: std::option::Option<crate::types::AssociateResourceError>) -> Self {
-        self.error = input; self
+    pub fn set_error(
+        mut self,
+        input: std::option::Option<crate::types::AssociateResourceError>,
+    ) -> Self {
+        self.error = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateResourceResponseElement`](crate::types::AssociateResourceResponseElement).
     pub fn build(self) -> crate::types::AssociateResourceResponseElement {
         crate::types::AssociateResourceResponseElement {
-            arn: self.arn
-            ,
-            error: self.error
-            ,
+            arn: self.arn,
+            error: self.error,
         }
     }
 }
-

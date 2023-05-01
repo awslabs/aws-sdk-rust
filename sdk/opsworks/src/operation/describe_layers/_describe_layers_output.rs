@@ -3,7 +3,7 @@
 /// <p>Contains the response to a <code>DescribeLayers</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLayersOutput  {
+pub struct DescribeLayersOutput {
     /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
     #[doc(hidden)]
     pub layers: std::option::Option<std::vec::Vec<crate::types::Layer>>,
@@ -11,15 +11,15 @@ pub struct DescribeLayersOutput  {
 }
 impl DescribeLayersOutput {
     /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    pub fn layers(&self) -> std::option::Option<& [crate::types::Layer]> {
+    pub fn layers(&self) -> std::option::Option<&[crate::types::Layer]> {
         self.layers.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLayersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeLayersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLayersOutput`](crate::operation::describe_layers::DescribeLayersOutput).
     pub fn builder() -> crate::operation::describe_layers::builders::DescribeLayersOutputBuilder {
@@ -42,30 +42,32 @@ impl DescribeLayersOutputBuilder {
     /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
     pub fn layers(mut self, input: crate::types::Layer) -> Self {
         let mut v = self.layers.unwrap_or_default();
-                        v.push(input);
-                        self.layers = Some(v);
-                        self
+        v.push(input);
+        self.layers = Some(v);
+        self
     }
     /// <p>An array of <code>Layer</code> objects that describe the layers.</p>
-    pub fn set_layers(mut self, input: std::option::Option<std::vec::Vec<crate::types::Layer>>) -> Self {
-        self.layers = input; self
+    pub fn set_layers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Layer>>,
+    ) -> Self {
+        self.layers = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeLayersOutput`](crate::operation::describe_layers::DescribeLayersOutput).
     pub fn build(self) -> crate::operation::describe_layers::DescribeLayersOutput {
         crate::operation::describe_layers::DescribeLayersOutput {
-            layers: self.layers
-            ,
+            layers: self.layers,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTriggersInput  {
+pub struct GetTriggersInput {
     /// <p>A continuation token, if this is a continuation call.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct GetTriggersInput  {
 }
 impl GetTriggersInput {
     /// <p>A continuation token, if this is a continuation call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
-    pub fn dependent_job_name(&self) -> std::option::Option<& str> {
+    pub fn dependent_job_name(&self) -> std::option::Option<&str> {
         self.dependent_job_name.as_deref()
     }
     /// <p>The maximum size of the response.</p>
@@ -50,7 +50,8 @@ impl GetTriggersInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
     pub fn dependent_job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +59,12 @@ impl GetTriggersInputBuilder {
         self
     }
     /// <p>The name of the job to retrieve triggers for. The trigger that can start this job is returned, and if there is no such trigger, all triggers are returned.</p>
-    pub fn set_dependent_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dependent_job_name = input; self
+    pub fn set_dependent_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dependent_job_name = input;
+        self
     }
     /// <p>The maximum size of the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +73,20 @@ impl GetTriggersInputBuilder {
     }
     /// <p>The maximum size of the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTriggersInput`](crate::operation::get_triggers::GetTriggersInput).
-    pub fn build(self) -> Result<crate::operation::get_triggers::GetTriggersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_triggers::GetTriggersInput {
-                next_token: self.next_token
-                ,
-                dependent_job_name: self.dependent_job_name
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_triggers::GetTriggersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_triggers::GetTriggersInput {
+            next_token: self.next_token,
+            dependent_job_name: self.dependent_job_name,
+            max_results: self.max_results,
+        })
     }
 }
-

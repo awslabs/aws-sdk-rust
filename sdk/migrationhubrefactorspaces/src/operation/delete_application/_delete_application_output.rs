@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationOutput  {
+pub struct DeleteApplicationOutput {
     /// <p>The name of the application.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,38 +25,39 @@ pub struct DeleteApplicationOutput  {
 }
 impl DeleteApplicationOutput {
     /// <p>The name of the application.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The unique identifier of the application’s environment.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The current state of the application. </p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ApplicationState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ApplicationState> {
         self.state.as_ref()
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn last_updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteApplicationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteApplicationOutput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput).
-    pub fn builder() -> crate::operation::delete_application::builders::DeleteApplicationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_application::builders::DeleteApplicationOutputBuilder {
         crate::operation::delete_application::builders::DeleteApplicationOutputBuilder::default()
     }
 }
@@ -81,7 +82,8 @@ impl DeleteApplicationOutputBuilder {
     }
     /// <p>The name of the application.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,7 +92,8 @@ impl DeleteApplicationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The ID of the application.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +102,8 @@ impl DeleteApplicationOutputBuilder {
     }
     /// <p>The ID of the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The unique identifier of the application’s environment.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +112,8 @@ impl DeleteApplicationOutputBuilder {
     }
     /// <p>The unique identifier of the application’s environment.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// <p>The current state of the application. </p>
     pub fn state(mut self, input: crate::types::ApplicationState) -> Self {
@@ -117,7 +122,8 @@ impl DeleteApplicationOutputBuilder {
     }
     /// <p>The current state of the application. </p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ApplicationState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
     pub fn last_updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -125,35 +131,32 @@ impl DeleteApplicationOutputBuilder {
         self
     }
     /// <p>A timestamp that indicates when the environment was last updated. </p>
-    pub fn set_last_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_time = input; self
+    pub fn set_last_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::operation::delete_application::DeleteApplicationOutput).
     pub fn build(self) -> crate::operation::delete_application::DeleteApplicationOutput {
         crate::operation::delete_application::DeleteApplicationOutput {
-            name: self.name
-            ,
-            arn: self.arn
-            ,
-            application_id: self.application_id
-            ,
-            environment_id: self.environment_id
-            ,
-            state: self.state
-            ,
-            last_updated_time: self.last_updated_time
-            ,
+            name: self.name,
+            arn: self.arn,
+            application_id: self.application_id,
+            environment_id: self.environment_id,
+            state: self.state,
+            last_updated_time: self.last_updated_time,
             _request_id: self._request_id,
         }
     }
 }
-

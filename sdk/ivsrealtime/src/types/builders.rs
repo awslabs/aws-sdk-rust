@@ -6,4 +6,3 @@ pub use crate::types::_stage_summary::StageSummaryBuilder;
 pub use crate::types::_participant_token::ParticipantTokenBuilder;
 
 pub use crate::types::_participant_token_configuration::ParticipantTokenConfigurationBuilder;
-

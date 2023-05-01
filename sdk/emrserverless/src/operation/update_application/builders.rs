@@ -4,50 +4,70 @@ pub use crate::operation::update_application::_update_application_output::Update
 pub use crate::operation::update_application::_update_application_input::UpdateApplicationInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateApplication`.
-/// 
+///
 /// <p>Updates a specified application. An application has to be in a stopped or created state in order to be updated.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateApplicationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_application::builders::UpdateApplicationInputBuilder,
+    inner: crate::operation::update_application::builders::UpdateApplicationInputBuilder,
 }
-impl UpdateApplicationFluentBuilder  {
+impl UpdateApplicationFluentBuilder {
     /// Creates a new `UpdateApplication`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_application::UpdateApplication, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_application::UpdateApplicationOutput, aws_smithy_http::result::SdkError<crate::operation::update_application::UpdateApplicationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_application::UpdateApplication,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_application::UpdateApplicationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_application::UpdateApplicationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_application::UpdateApplicationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the application to update.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.application_id(input.into());
@@ -73,12 +93,21 @@ impl UpdateApplicationFluentBuilder  {
     /// To override the contents of this collection use [`set_initial_capacity`](Self::set_initial_capacity).
     ///
     /// <p>The capacity to initialize when the application is updated.</p>
-    pub fn initial_capacity(mut self, k: impl Into<std::string::String>, v: crate::types::InitialCapacityConfig) -> Self {
+    pub fn initial_capacity(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::InitialCapacityConfig,
+    ) -> Self {
         self.inner = self.inner.initial_capacity(k.into(), v);
         self
     }
     /// <p>The capacity to initialize when the application is updated.</p>
-    pub fn set_initial_capacity(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::InitialCapacityConfig>>) -> Self {
+    pub fn set_initial_capacity(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::InitialCapacityConfig>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_initial_capacity(input);
         self
     }
@@ -88,7 +117,10 @@ impl UpdateApplicationFluentBuilder  {
         self
     }
     /// <p>The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.</p>
-    pub fn set_maximum_capacity(mut self, input: std::option::Option<crate::types::MaximumAllowedResources>) -> Self {
+    pub fn set_maximum_capacity(
+        mut self,
+        input: std::option::Option<crate::types::MaximumAllowedResources>,
+    ) -> Self {
         self.inner = self.inner.set_maximum_capacity(input);
         self
     }
@@ -98,7 +130,10 @@ impl UpdateApplicationFluentBuilder  {
         self
     }
     /// <p>The configuration for an application to automatically start on job submission.</p>
-    pub fn set_auto_start_configuration(mut self, input: std::option::Option<crate::types::AutoStartConfig>) -> Self {
+    pub fn set_auto_start_configuration(
+        mut self,
+        input: std::option::Option<crate::types::AutoStartConfig>,
+    ) -> Self {
         self.inner = self.inner.set_auto_start_configuration(input);
         self
     }
@@ -108,7 +143,10 @@ impl UpdateApplicationFluentBuilder  {
         self
     }
     /// <p>The configuration for an application to automatically stop after a certain amount of time being idle.</p>
-    pub fn set_auto_stop_configuration(mut self, input: std::option::Option<crate::types::AutoStopConfig>) -> Self {
+    pub fn set_auto_stop_configuration(
+        mut self,
+        input: std::option::Option<crate::types::AutoStopConfig>,
+    ) -> Self {
         self.inner = self.inner.set_auto_stop_configuration(input);
         self
     }
@@ -118,7 +156,10 @@ impl UpdateApplicationFluentBuilder  {
         self
     }
     /// <p>The network configuration for customer VPC connectivity.</p>
-    pub fn set_network_configuration(mut self, input: std::option::Option<crate::types::NetworkConfiguration>) -> Self {
+    pub fn set_network_configuration(
+        mut self,
+        input: std::option::Option<crate::types::NetworkConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_network_configuration(input);
         self
     }
@@ -128,7 +169,10 @@ impl UpdateApplicationFluentBuilder  {
         self
     }
     /// <p>The CPU architecture of an application.</p>
-    pub fn set_architecture(mut self, input: std::option::Option<crate::types::Architecture>) -> Self {
+    pub fn set_architecture(
+        mut self,
+        input: std::option::Option<crate::types::Architecture>,
+    ) -> Self {
         self.inner = self.inner.set_architecture(input);
         self
     }
@@ -138,7 +182,10 @@ impl UpdateApplicationFluentBuilder  {
         self
     }
     /// <p>The image configuration to be used for all worker types. You can either set this parameter or <code>imageConfiguration</code> for each worker type in <code>WorkerTypeSpecificationInput</code>.</p>
-    pub fn set_image_configuration(mut self, input: std::option::Option<crate::types::ImageConfigurationInput>) -> Self {
+    pub fn set_image_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ImageConfigurationInput>,
+    ) -> Self {
         self.inner = self.inner.set_image_configuration(input);
         self
     }
@@ -147,14 +194,25 @@ impl UpdateApplicationFluentBuilder  {
     /// To override the contents of this collection use [`set_worker_type_specifications`](Self::set_worker_type_specifications).
     ///
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
-    pub fn worker_type_specifications(mut self, k: impl Into<std::string::String>, v: crate::types::WorkerTypeSpecificationInput) -> Self {
+    pub fn worker_type_specifications(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::WorkerTypeSpecificationInput,
+    ) -> Self {
         self.inner = self.inner.worker_type_specifications(k.into(), v);
         self
     }
     /// <p>The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications. You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code> for all worker types.</p>
-    pub fn set_worker_type_specifications(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::WorkerTypeSpecificationInput>>) -> Self {
+    pub fn set_worker_type_specifications(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::types::WorkerTypeSpecificationInput,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_worker_type_specifications(input);
         self
     }
 }
-

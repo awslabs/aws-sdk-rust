@@ -3,7 +3,7 @@
 /// <p>A custom label detected in an image by a call to <code>DetectCustomLabels</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomLabel  {
+pub struct CustomLabel {
     /// <p>The name of the custom label.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct CustomLabel  {
 }
 impl CustomLabel {
     /// <p>The name of the custom label.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The confidence that the model has in the detection of the custom label. The range is 0-100. A higher value indicates a higher confidence.</p>
@@ -24,7 +24,7 @@ impl CustomLabel {
         self.confidence
     }
     /// <p>The location of the detected object on the image that corresponds to the custom label. Includes an axis aligned coarse bounding box surrounding the object and a finer grain polygon for more accurate spatial information.</p>
-    pub fn geometry(&self) -> std::option::Option<& crate::types::Geometry> {
+    pub fn geometry(&self) -> std::option::Option<&crate::types::Geometry> {
         self.geometry.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl CustomLabelBuilder {
     }
     /// <p>The name of the custom label.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The confidence that the model has in the detection of the custom label. The range is 0-100. A higher value indicates a higher confidence.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -60,7 +61,8 @@ impl CustomLabelBuilder {
     }
     /// <p>The confidence that the model has in the detection of the custom label. The range is 0-100. A higher value indicates a higher confidence.</p>
     pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-        self.confidence = input; self
+        self.confidence = input;
+        self
     }
     /// <p>The location of the detected object on the image that corresponds to the custom label. Includes an axis aligned coarse bounding box surrounding the object and a finer grain polygon for more accurate spatial information.</p>
     pub fn geometry(mut self, input: crate::types::Geometry) -> Self {
@@ -69,18 +71,15 @@ impl CustomLabelBuilder {
     }
     /// <p>The location of the detected object on the image that corresponds to the custom label. Includes an axis aligned coarse bounding box surrounding the object and a finer grain polygon for more accurate spatial information.</p>
     pub fn set_geometry(mut self, input: std::option::Option<crate::types::Geometry>) -> Self {
-        self.geometry = input; self
+        self.geometry = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomLabel`](crate::types::CustomLabel).
     pub fn build(self) -> crate::types::CustomLabel {
         crate::types::CustomLabel {
-            name: self.name
-            ,
-            confidence: self.confidence
-            ,
-            geometry: self.geometry
-            ,
+            name: self.name,
+            confidence: self.confidence,
+            geometry: self.geometry,
         }
     }
 }
-

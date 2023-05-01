@@ -3,7 +3,7 @@
 /// <p>Specifies the connection endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsRdsDbInstanceEndpoint  {
+pub struct AwsRdsDbInstanceEndpoint {
     /// <p>Specifies the DNS address of the DB instance.</p>
     #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct AwsRdsDbInstanceEndpoint  {
 }
 impl AwsRdsDbInstanceEndpoint {
     /// <p>Specifies the DNS address of the DB instance.</p>
-    pub fn address(&self) -> std::option::Option<& str> {
+    pub fn address(&self) -> std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
@@ -24,7 +24,7 @@ impl AwsRdsDbInstanceEndpoint {
         self.port
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
-    pub fn hosted_zone_id(&self) -> std::option::Option<& str> {
+    pub fn hosted_zone_id(&self) -> std::option::Option<&str> {
         self.hosted_zone_id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl AwsRdsDbInstanceEndpointBuilder {
     }
     /// <p>Specifies the DNS address of the DB instance.</p>
     pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address = input; self
+        self.address = input;
+        self
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl AwsRdsDbInstanceEndpointBuilder {
     }
     /// <p>Specifies the port that the database engine is listening on.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,19 +71,15 @@ impl AwsRdsDbInstanceEndpointBuilder {
     }
     /// <p>Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.</p>
     pub fn set_hosted_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hosted_zone_id = input; self
+        self.hosted_zone_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsRdsDbInstanceEndpoint`](crate::types::AwsRdsDbInstanceEndpoint).
     pub fn build(self) -> crate::types::AwsRdsDbInstanceEndpoint {
         crate::types::AwsRdsDbInstanceEndpoint {
-            address: self.address
-            ,
-            port: self.port
-                .unwrap_or_default()
-            ,
-            hosted_zone_id: self.hosted_zone_id
-            ,
+            address: self.address,
+            port: self.port.unwrap_or_default(),
+            hosted_zone_id: self.hosted_zone_id,
         }
     }
 }
-

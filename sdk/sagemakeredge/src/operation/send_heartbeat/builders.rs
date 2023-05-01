@@ -4,50 +4,66 @@ pub use crate::operation::send_heartbeat::_send_heartbeat_output::SendHeartbeatO
 pub use crate::operation::send_heartbeat::_send_heartbeat_input::SendHeartbeatInputBuilder;
 
 /// Fluent builder constructing a request to `SendHeartbeat`.
-/// 
+///
 /// <p>Use to get the current status of devices registered on SageMaker Edge Manager.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendHeartbeatFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_heartbeat::builders::SendHeartbeatInputBuilder,
+    inner: crate::operation::send_heartbeat::builders::SendHeartbeatInputBuilder,
 }
-impl SendHeartbeatFluentBuilder  {
+impl SendHeartbeatFluentBuilder {
     /// Creates a new `SendHeartbeat`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::send_heartbeat::SendHeartbeat, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::send_heartbeat::SendHeartbeatError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::send_heartbeat::SendHeartbeatOutput, aws_smithy_http::result::SdkError<crate::operation::send_heartbeat::SendHeartbeatError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::send_heartbeat::SendHeartbeat,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::send_heartbeat::SendHeartbeatError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::send_heartbeat::SendHeartbeatOutput,
+        aws_smithy_http::result::SdkError<crate::operation::send_heartbeat::SendHeartbeatError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `AgentMetrics`.
     ///
     /// To override the contents of this collection use [`set_agent_metrics`](Self::set_agent_metrics).
@@ -58,7 +74,10 @@ impl SendHeartbeatFluentBuilder  {
         self
     }
     /// <p>For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.</p>
-    pub fn set_agent_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::types::EdgeMetric>>) -> Self {
+    pub fn set_agent_metrics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EdgeMetric>>,
+    ) -> Self {
         self.inner = self.inner.set_agent_metrics(input);
         self
     }
@@ -72,7 +91,10 @@ impl SendHeartbeatFluentBuilder  {
         self
     }
     /// <p>Returns a list of models deployed on the the device.</p>
-    pub fn set_models(mut self, input: std::option::Option<std::vec::Vec<crate::types::Model>>) -> Self {
+    pub fn set_models(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Model>>,
+    ) -> Self {
         self.inner = self.inner.set_models(input);
         self
     }
@@ -102,7 +124,10 @@ impl SendHeartbeatFluentBuilder  {
         self
     }
     /// <p>The name of the fleet that the device belongs to.</p>
-    pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_device_fleet_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_device_fleet_name(input);
         self
     }
@@ -112,9 +137,11 @@ impl SendHeartbeatFluentBuilder  {
         self
     }
     /// <p>Returns the result of a deployment on the device.</p>
-    pub fn set_deployment_result(mut self, input: std::option::Option<crate::types::DeploymentResult>) -> Self {
+    pub fn set_deployment_result(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentResult>,
+    ) -> Self {
         self.inner = self.inner.set_deployment_result(input);
         self
     }
 }
-

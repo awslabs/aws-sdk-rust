@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIdentityProviderInput  {
+pub struct DeleteIdentityProviderInput {
     /// <p>The ARN of the identity provider.</p>
     #[doc(hidden)]
     pub identity_provider_arn: std::option::Option<std::string::String>,
 }
 impl DeleteIdentityProviderInput {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(&self) -> std::option::Option<& str> {
+    pub fn identity_provider_arn(&self) -> std::option::Option<&str> {
         self.identity_provider_arn.as_deref()
     }
 }
 impl DeleteIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
-    pub fn builder() -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_identity_provider::builders::DeleteIdentityProviderInputBuilder
+    {
         crate::operation::delete_identity_provider::builders::DeleteIdentityProviderInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteIdentityProviderInputBuilder {
         self
     }
     /// <p>The ARN of the identity provider.</p>
-    pub fn set_identity_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_provider_arn = input; self
+    pub fn set_identity_provider_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_provider_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteIdentityProviderInput`](crate::operation::delete_identity_provider::DeleteIdentityProviderInput).
-    pub fn build(self) -> Result<crate::operation::delete_identity_provider::DeleteIdentityProviderInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_identity_provider::DeleteIdentityProviderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_identity_provider::DeleteIdentityProviderInput {
-                identity_provider_arn: self.identity_provider_arn
-                ,
-            }
+                identity_provider_arn: self.identity_provider_arn,
+            },
         )
     }
 }
-

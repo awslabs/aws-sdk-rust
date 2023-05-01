@@ -3,7 +3,7 @@
 /// <p>Describes a site.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct Site  {
+pub struct Site {
     /// <p>The ID of the site.</p>
     #[doc(hidden)]
     pub site_id: std::option::Option<std::string::String>,
@@ -31,39 +31,39 @@ pub struct Site  {
 }
 impl Site {
     /// <p>The ID of the site.</p>
-    pub fn site_id(&self) -> std::option::Option<& str> {
+    pub fn site_id(&self) -> std::option::Option<&str> {
         self.site_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
-    pub fn site_arn(&self) -> std::option::Option<& str> {
+    pub fn site_arn(&self) -> std::option::Option<&str> {
         self.site_arn.as_deref()
     }
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The description of the site.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The location of the site.</p>
-    pub fn location(&self) -> std::option::Option<& crate::types::Location> {
+    pub fn location(&self) -> std::option::Option<&crate::types::Location> {
         self.location.as_ref()
     }
     /// <p>The date and time that the site was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The state of the site.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::SiteState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::SiteState> {
         self.state.as_ref()
     }
     /// <p>The tags for the site.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl  std::fmt::Debug for Site  {
+impl std::fmt::Debug for Site {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Site");
         formatter.field("site_id", &self.site_id);
@@ -105,7 +105,8 @@ impl SiteBuilder {
     }
     /// <p>The ID of the site.</p>
     pub fn set_site_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.site_id = input; self
+        self.site_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     pub fn site_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -114,7 +115,8 @@ impl SiteBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the site.</p>
     pub fn set_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.site_arn = input; self
+        self.site_arn = input;
+        self
     }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,8 +124,12 @@ impl SiteBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// <p>The description of the site.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +138,8 @@ impl SiteBuilder {
     }
     /// <p>The description of the site.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The location of the site.</p>
     pub fn location(mut self, input: crate::types::Location) -> Self {
@@ -141,7 +148,8 @@ impl SiteBuilder {
     }
     /// <p>The location of the site.</p>
     pub fn set_location(mut self, input: std::option::Option<crate::types::Location>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     /// <p>The date and time that the site was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -149,8 +157,12 @@ impl SiteBuilder {
         self
     }
     /// <p>The date and time that the site was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// <p>The state of the site.</p>
     pub fn state(mut self, input: crate::types::SiteState) -> Self {
@@ -159,7 +171,8 @@ impl SiteBuilder {
     }
     /// <p>The state of the site.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::SiteState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -168,33 +181,29 @@ impl SiteBuilder {
     /// <p>The tags for the site.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags for the site.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`Site`](crate::types::Site).
     pub fn build(self) -> crate::types::Site {
         crate::types::Site {
-            site_id: self.site_id
-            ,
-            site_arn: self.site_arn
-            ,
-            global_network_id: self.global_network_id
-            ,
-            description: self.description
-            ,
-            location: self.location
-            ,
-            created_at: self.created_at
-            ,
-            state: self.state
-            ,
-            tags: self.tags
-            ,
+            site_id: self.site_id,
+            site_arn: self.site_arn,
+            global_network_id: self.global_network_id,
+            description: self.description,
+            location: self.location,
+            created_at: self.created_at,
+            state: self.state,
+            tags: self.tags,
         }
     }
 }
@@ -212,4 +221,3 @@ impl std::fmt::Debug for SiteBuilder {
         formatter.finish()
     }
 }
-

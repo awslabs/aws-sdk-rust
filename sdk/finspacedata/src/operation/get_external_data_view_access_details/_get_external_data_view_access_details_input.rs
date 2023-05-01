@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetExternalDataViewAccessDetailsInput  {
+pub struct GetExternalDataViewAccessDetailsInput {
     /// <p>The unique identifier for the Dataview that you want to access.</p>
     #[doc(hidden)]
     pub data_view_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct GetExternalDataViewAccessDetailsInput  {
 }
 impl GetExternalDataViewAccessDetailsInput {
     /// <p>The unique identifier for the Dataview that you want to access.</p>
-    pub fn data_view_id(&self) -> std::option::Option<& str> {
+    pub fn data_view_id(&self) -> std::option::Option<&str> {
         self.data_view_id.as_deref()
     }
     /// <p>The unique identifier for the Dataset.</p>
-    pub fn dataset_id(&self) -> std::option::Option<& str> {
+    pub fn dataset_id(&self) -> std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
 }
 impl GetExternalDataViewAccessDetailsInput {
     /// Creates a new builder-style object to manufacture [`GetExternalDataViewAccessDetailsInput`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput).
-    pub fn builder() -> crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsInputBuilder {
+    pub fn builder() -> crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsInputBuilder{
         crate::operation::get_external_data_view_access_details::builders::GetExternalDataViewAccessDetailsInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl GetExternalDataViewAccessDetailsInputBuilder {
     }
     /// <p>The unique identifier for the Dataview that you want to access.</p>
     pub fn set_data_view_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.data_view_id = input; self
+        self.data_view_id = input;
+        self
     }
     /// <p>The unique identifier for the Dataset.</p>
     pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,11 @@ impl GetExternalDataViewAccessDetailsInputBuilder {
     }
     /// <p>The unique identifier for the Dataset.</p>
     pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_id = input; self
+        self.dataset_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetExternalDataViewAccessDetailsInput`](crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput).
-    pub fn build(self) -> Result<crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_external_data_view_access_details::GetExternalDataViewAccessDetailsInput {
                 data_view_id: self.data_view_id
@@ -65,4 +67,3 @@ impl GetExternalDataViewAccessDetailsInputBuilder {
         )
     }
 }
-

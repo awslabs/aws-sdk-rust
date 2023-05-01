@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWebAclForResourceOutput  {
+pub struct GetWebAclForResourceOutput {
     /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
     #[doc(hidden)]
     pub web_acl: std::option::Option<crate::types::WebAcl>,
@@ -10,18 +10,20 @@ pub struct GetWebAclForResourceOutput  {
 }
 impl GetWebAclForResourceOutput {
     /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
-    pub fn web_acl(&self) -> std::option::Option<& crate::types::WebAcl> {
+    pub fn web_acl(&self) -> std::option::Option<&crate::types::WebAcl> {
         self.web_acl.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetWebAclForResourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetWebAclForResourceOutput {
     /// Creates a new builder-style object to manufacture [`GetWebAclForResourceOutput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceOutput).
-    pub fn builder() -> crate::operation::get_web_acl_for_resource::builders::GetWebAclForResourceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_web_acl_for_resource::builders::GetWebAclForResourceOutputBuilder
+    {
         crate::operation::get_web_acl_for_resource::builders::GetWebAclForResourceOutputBuilder::default()
     }
 }
@@ -41,24 +43,23 @@ impl GetWebAclForResourceOutputBuilder {
     }
     /// <p>The web ACL that is associated with the resource. If there is no associated resource, WAF returns a null web ACL.</p>
     pub fn set_web_acl(mut self, input: std::option::Option<crate::types::WebAcl>) -> Self {
-        self.web_acl = input; self
+        self.web_acl = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetWebAclForResourceOutput`](crate::operation::get_web_acl_for_resource::GetWebAclForResourceOutput).
     pub fn build(self) -> crate::operation::get_web_acl_for_resource::GetWebAclForResourceOutput {
         crate::operation::get_web_acl_for_resource::GetWebAclForResourceOutput {
-            web_acl: self.web_acl
-            ,
+            web_acl: self.web_acl,
             _request_id: self._request_id,
         }
     }
 }
-

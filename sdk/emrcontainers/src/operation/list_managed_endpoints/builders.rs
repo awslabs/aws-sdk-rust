@@ -4,63 +4,91 @@ pub use crate::operation::list_managed_endpoints::_list_managed_endpoints_output
 pub use crate::operation::list_managed_endpoints::_list_managed_endpoints_input::ListManagedEndpointsInputBuilder;
 
 /// Fluent builder constructing a request to `ListManagedEndpoints`.
-/// 
+///
 /// <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListManagedEndpointsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder,
+    inner: crate::operation::list_managed_endpoints::builders::ListManagedEndpointsInputBuilder,
 }
-impl ListManagedEndpointsFluentBuilder  {
+impl ListManagedEndpointsFluentBuilder {
     /// Creates a new `ListManagedEndpoints`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_managed_endpoints::ListManagedEndpoints, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_managed_endpoints::ListManagedEndpointsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_managed_endpoints::ListManagedEndpointsOutput, aws_smithy_http::result::SdkError<crate::operation::list_managed_endpoints::ListManagedEndpointsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_managed_endpoints::ListManagedEndpoints,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_endpoints::ListManagedEndpointsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_managed_endpoints::ListManagedEndpointsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_endpoints::ListManagedEndpointsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator {
-                                crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator {
+        crate::operation::list_managed_endpoints::paginator::ListManagedEndpointsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ID of the virtual cluster.</p>
     pub fn virtual_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.virtual_cluster_id(input.into());
         self
     }
     /// <p>The ID of the virtual cluster.</p>
-    pub fn set_virtual_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_virtual_cluster_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_virtual_cluster_id(input);
         self
     }
@@ -70,7 +98,10 @@ impl ListManagedEndpointsFluentBuilder  {
         self
     }
     /// <p>The date and time before which the endpoints are created.</p>
-    pub fn set_created_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_created_before(input);
         self
     }
@@ -80,7 +111,10 @@ impl ListManagedEndpointsFluentBuilder  {
         self
     }
     /// <p> The date and time after which the endpoints are created.</p>
-    pub fn set_created_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_created_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_created_after(input);
         self
     }
@@ -94,7 +128,10 @@ impl ListManagedEndpointsFluentBuilder  {
         self
     }
     /// <p>The types of the managed endpoints.</p>
-    pub fn set_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_types(input);
         self
     }
@@ -108,7 +145,10 @@ impl ListManagedEndpointsFluentBuilder  {
         self
     }
     /// <p>The states of the managed endpoints.</p>
-    pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::EndpointState>>) -> Self {
+    pub fn set_states(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EndpointState>>,
+    ) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
@@ -133,4 +173,3 @@ impl ListManagedEndpointsFluentBuilder  {
         self
     }
 }
-

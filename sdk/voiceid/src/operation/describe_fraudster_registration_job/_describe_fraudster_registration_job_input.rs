@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFraudsterRegistrationJobInput  {
+pub struct DescribeFraudsterRegistrationJobInput {
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeFraudsterRegistrationJobInput  {
 }
 impl DescribeFraudsterRegistrationJobInput {
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The identifier of the fraudster registration job you are describing.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl DescribeFraudsterRegistrationJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeFraudsterRegistrationJobInput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput).
-    pub fn builder() -> crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobInputBuilder {
+    pub fn builder() -> crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobInputBuilder{
         crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeFraudsterRegistrationJobInputBuilder {
     }
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The identifier of the fraudster registration job you are describing.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,11 @@ impl DescribeFraudsterRegistrationJobInputBuilder {
     }
     /// <p>The identifier of the fraudster registration job you are describing.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeFraudsterRegistrationJobInput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput {
                 domain_id: self.domain_id
@@ -65,4 +67,3 @@ impl DescribeFraudsterRegistrationJobInputBuilder {
         )
     }
 }
-

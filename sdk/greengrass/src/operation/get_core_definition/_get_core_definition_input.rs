@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCoreDefinitionInput  {
+pub struct GetCoreDefinitionInput {
     /// The ID of the core definition.
     #[doc(hidden)]
     pub core_definition_id: std::option::Option<std::string::String>,
 }
 impl GetCoreDefinitionInput {
     /// The ID of the core definition.
-    pub fn core_definition_id(&self) -> std::option::Option<& str> {
+    pub fn core_definition_id(&self) -> std::option::Option<&str> {
         self.core_definition_id.as_deref()
     }
 }
 impl GetCoreDefinitionInput {
     /// Creates a new builder-style object to manufacture [`GetCoreDefinitionInput`](crate::operation::get_core_definition::GetCoreDefinitionInput).
-    pub fn builder() -> crate::operation::get_core_definition::builders::GetCoreDefinitionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_core_definition::builders::GetCoreDefinitionInputBuilder {
         crate::operation::get_core_definition::builders::GetCoreDefinitionInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl GetCoreDefinitionInputBuilder {
         self
     }
     /// The ID of the core definition.
-    pub fn set_core_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.core_definition_id = input; self
+    pub fn set_core_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.core_definition_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetCoreDefinitionInput`](crate::operation::get_core_definition::GetCoreDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::get_core_definition::GetCoreDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_core_definition::GetCoreDefinitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_core_definition::GetCoreDefinitionInput {
-                core_definition_id: self.core_definition_id
-                ,
-            }
+                core_definition_id: self.core_definition_id,
+            },
         )
     }
 }
-

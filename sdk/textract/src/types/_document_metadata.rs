@@ -3,7 +3,7 @@
 /// <p>Information about the input document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentMetadata  {
+pub struct DocumentMetadata {
     /// <p>The number of pages that are detected in the document.</p>
     #[doc(hidden)]
     pub pages: std::option::Option<i32>,
@@ -35,14 +35,11 @@ impl DocumentMetadataBuilder {
     }
     /// <p>The number of pages that are detected in the document.</p>
     pub fn set_pages(mut self, input: std::option::Option<i32>) -> Self {
-        self.pages = input; self
+        self.pages = input;
+        self
     }
     /// Consumes the builder and constructs a [`DocumentMetadata`](crate::types::DocumentMetadata).
     pub fn build(self) -> crate::types::DocumentMetadata {
-        crate::types::DocumentMetadata {
-            pages: self.pages
-            ,
-        }
+        crate::types::DocumentMetadata { pages: self.pages }
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRecommenderInput  {
+pub struct DescribeRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
     #[doc(hidden)]
     pub recommender_arn: std::option::Option<std::string::String>,
 }
 impl DescribeRecommenderInput {
     /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
-    pub fn recommender_arn(&self) -> std::option::Option<& str> {
+    pub fn recommender_arn(&self) -> std::option::Option<&str> {
         self.recommender_arn.as_deref()
     }
 }
 impl DescribeRecommenderInput {
     /// Creates a new builder-style object to manufacture [`DescribeRecommenderInput`](crate::operation::describe_recommender::DescribeRecommenderInput).
-    pub fn builder() -> crate::operation::describe_recommender::builders::DescribeRecommenderInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_recommender::builders::DescribeRecommenderInputBuilder {
         crate::operation::describe_recommender::builders::DescribeRecommenderInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeRecommenderInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the recommender to describe.</p>
     pub fn set_recommender_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recommender_arn = input; self
+        self.recommender_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeRecommenderInput`](crate::operation::describe_recommender::DescribeRecommenderInput).
-    pub fn build(self) -> Result<crate::operation::describe_recommender::DescribeRecommenderInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_recommender::DescribeRecommenderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_recommender::DescribeRecommenderInput {
-                recommender_arn: self.recommender_arn
-                ,
-            }
+                recommender_arn: self.recommender_arn,
+            },
         )
     }
 }
-

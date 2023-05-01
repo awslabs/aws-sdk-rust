@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeIndexOutput  {
+pub struct DescribeIndexOutput {
     /// <p>The index name.</p>
     #[doc(hidden)]
     pub index_name: std::option::Option<std::string::String>,
     /// <p>The index status.</p>
     #[doc(hidden)]
     pub index_status: std::option::Option<crate::types::IndexStatus>,
-    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li> 
-    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li> 
+    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li>
+    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
+    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub schema: std::option::Option<std::string::String>,
@@ -23,30 +23,30 @@ pub struct DescribeIndexOutput  {
 }
 impl DescribeIndexOutput {
     /// <p>The index name.</p>
-    pub fn index_name(&self) -> std::option::Option<& str> {
+    pub fn index_name(&self) -> std::option::Option<&str> {
         self.index_name.as_deref()
     }
     /// <p>The index status.</p>
-    pub fn index_status(&self) -> std::option::Option<& crate::types::IndexStatus> {
+    pub fn index_status(&self) -> std::option::Option<&crate::types::IndexStatus> {
         self.index_status.as_ref()
     }
-    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li> 
-    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li> 
+    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li>
+    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
+    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
     /// </ul>
-    pub fn schema(&self) -> std::option::Option<& str> {
+    pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeIndexOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeIndexOutput {
     /// Creates a new builder-style object to manufacture [`DescribeIndexOutput`](crate::operation::describe_index::DescribeIndexOutput).
     pub fn builder() -> crate::operation::describe_index::builders::DescribeIndexOutputBuilder {
@@ -71,7 +71,8 @@ impl DescribeIndexOutputBuilder {
     }
     /// <p>The index name.</p>
     pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_name = input; self
+        self.index_name = input;
+        self
     }
     /// <p>The index status.</p>
     pub fn index_status(mut self, input: crate::types::IndexStatus) -> Self {
@@ -79,52 +80,53 @@ impl DescribeIndexOutputBuilder {
         self
     }
     /// <p>The index status.</p>
-    pub fn set_index_status(mut self, input: std::option::Option<crate::types::IndexStatus>) -> Self {
-        self.index_status = input; self
+    pub fn set_index_status(
+        mut self,
+        input: std::option::Option<crate::types::IndexStatus>,
+    ) -> Self {
+        self.index_status = input;
+        self
     }
-    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li> 
-    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li> 
+    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li>
+    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
+    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
     /// </ul>
     pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
         self.schema = Some(input.into());
         self
     }
-    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p> 
-    /// <ul> 
-    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li> 
-    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li> 
-    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li> 
+    /// <p>Contains a value that specifies the type of indexing performed. Valid values are:</p>
+    /// <ul>
+    /// <li> <p>REGISTRY – Your thing index contains only registry data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW - Your thing index contains registry data and shadow data.</p> </li>
+    /// <li> <p>REGISTRY_AND_CONNECTIVITY_STATUS - Your thing index contains registry data and thing connectivity status data.</p> </li>
+    /// <li> <p>REGISTRY_AND_SHADOW_AND_CONNECTIVITY_STATUS - Your thing index contains registry data, shadow data, and thing connectivity status data.</p> </li>
+    /// <li> <p>MULTI_INDEXING_MODE - Your thing index contains multiple data sources. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_GetIndexingConfiguration.html">GetIndexingConfiguration</a>.</p> </li>
     /// </ul>
     pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema = input; self
+        self.schema = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeIndexOutput`](crate::operation::describe_index::DescribeIndexOutput).
     pub fn build(self) -> crate::operation::describe_index::DescribeIndexOutput {
         crate::operation::describe_index::DescribeIndexOutput {
-            index_name: self.index_name
-            ,
-            index_status: self.index_status
-            ,
-            schema: self.schema
-            ,
+            index_name: self.index_name,
+            index_status: self.index_status,
+            schema: self.schema,
             _request_id: self._request_id,
         }
     }
 }
-

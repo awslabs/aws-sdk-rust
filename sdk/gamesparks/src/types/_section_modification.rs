@@ -3,39 +3,39 @@
 /// <p>A single modification to the configuration section.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SectionModification  {
+pub struct SectionModification {
     /// <p>The name of the section to be modified.</p>
     #[doc(hidden)]
     pub section: std::option::Option<std::string::String>,
     /// <p>The path within the section content to be modified.</p>
     #[doc(hidden)]
     pub path: std::option::Option<std::string::String>,
-    /// <p>The operation to be performed on a configuration section.</p> 
+    /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
     #[doc(hidden)]
     pub operation: std::option::Option<crate::types::Operation>,
-    /// <p>For add and replace operations, this is the value that will be used.</p> 
+    /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
     #[doc(hidden)]
     pub value: std::option::Option<aws_smithy_types::Document>,
 }
 impl SectionModification {
     /// <p>The name of the section to be modified.</p>
-    pub fn section(&self) -> std::option::Option<& str> {
+    pub fn section(&self) -> std::option::Option<&str> {
         self.section.as_deref()
     }
     /// <p>The path within the section content to be modified.</p>
-    pub fn path(&self) -> std::option::Option<& str> {
+    pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
-    /// <p>The operation to be performed on a configuration section.</p> 
+    /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
-    pub fn operation(&self) -> std::option::Option<& crate::types::Operation> {
+    pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
-    /// <p>For add and replace operations, this is the value that will be used.</p> 
+    /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
-    pub fn value(&self) -> std::option::Option<& aws_smithy_types::Document> {
+    pub fn value(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.value.as_ref()
     }
 }
@@ -63,7 +63,8 @@ impl SectionModificationBuilder {
     }
     /// <p>The name of the section to be modified.</p>
     pub fn set_section(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.section = input; self
+        self.section = input;
+        self
     }
     /// <p>The path within the section content to be modified.</p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,42 +73,40 @@ impl SectionModificationBuilder {
     }
     /// <p>The path within the section content to be modified.</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input; self
+        self.path = input;
+        self
     }
-    /// <p>The operation to be performed on a configuration section.</p> 
+    /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
         self.operation = Some(input);
         self
     }
-    /// <p>The operation to be performed on a configuration section.</p> 
+    /// <p>The operation to be performed on a configuration section.</p>
     /// <p> Content can be added, deleted, or replaced within a section. </p>
     pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
-    /// <p>For add and replace operations, this is the value that will be used.</p> 
+    /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
     pub fn value(mut self, input: aws_smithy_types::Document) -> Self {
         self.value = Some(input);
         self
     }
-    /// <p>For add and replace operations, this is the value that will be used.</p> 
+    /// <p>For add and replace operations, this is the value that will be used.</p>
     /// <p> This field should be omitted for delete operations. </p>
     pub fn set_value(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`SectionModification`](crate::types::SectionModification).
     pub fn build(self) -> crate::types::SectionModification {
         crate::types::SectionModification {
-            section: self.section
-            ,
-            path: self.path
-            ,
-            operation: self.operation
-            ,
-            value: self.value
-            ,
+            section: self.section,
+            path: self.path,
+            operation: self.operation,
+            value: self.value,
         }
     }
 }
-

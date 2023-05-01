@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListImagesInput  {
+pub struct ListImagesInput {
     /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
     #[doc(hidden)]
     pub owner: std::option::Option<crate::types::Ownership>,
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>osVersion</code> </p> </li> 
-    /// <li> <p> <code>platform</code> </p> </li> 
-    /// <li> <p> <code>type</code> </p> </li> 
-    /// <li> <p> <code>version</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>osVersion</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -31,18 +31,18 @@ pub struct ListImagesInput  {
 }
 impl ListImagesInput {
     /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
-    pub fn owner(&self) -> std::option::Option<& crate::types::Ownership> {
+    pub fn owner(&self) -> std::option::Option<&crate::types::Ownership> {
         self.owner.as_ref()
     }
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>osVersion</code> </p> </li> 
-    /// <li> <p> <code>platform</code> </p> </li> 
-    /// <li> <p> <code>type</code> </p> </li> 
-    /// <li> <p> <code>version</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>osVersion</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>Requests a list of images with a specific recipe name.</p>
@@ -54,7 +54,7 @@ impl ListImagesInput {
         self.max_results
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Includes deprecated images in the response list.</p>
@@ -88,36 +88,41 @@ impl ListImagesInputBuilder {
     }
     /// <p>The owner defines which images you want to list. By default, this request will only show images owned by your account. You can use this field to specify if you want to view images owned by yourself, by Amazon, or those images that have been shared with you by other customers.</p>
     pub fn set_owner(mut self, input: std::option::Option<crate::types::Ownership>) -> Self {
-        self.owner = input; self
+        self.owner = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>osVersion</code> </p> </li> 
-    /// <li> <p> <code>platform</code> </p> </li> 
-    /// <li> <p> <code>type</code> </p> </li> 
-    /// <li> <p> <code>version</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>osVersion</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>Use the following filters to streamline results:</p> 
-    /// <ul> 
-    /// <li> <p> <code>name</code> </p> </li> 
-    /// <li> <p> <code>osVersion</code> </p> </li> 
-    /// <li> <p> <code>platform</code> </p> </li> 
-    /// <li> <p> <code>type</code> </p> </li> 
-    /// <li> <p> <code>version</code> </p> </li> 
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li> <p> <code>name</code> </p> </li>
+    /// <li> <p> <code>osVersion</code> </p> </li>
+    /// <li> <p> <code>platform</code> </p> </li>
+    /// <li> <p> <code>type</code> </p> </li>
+    /// <li> <p> <code>version</code> </p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>Requests a list of images with a specific recipe name.</p>
     pub fn by_name(mut self, input: bool) -> Self {
@@ -126,7 +131,8 @@ impl ListImagesInputBuilder {
     }
     /// <p>Requests a list of images with a specific recipe name.</p>
     pub fn set_by_name(mut self, input: std::option::Option<bool>) -> Self {
-        self.by_name = input; self
+        self.by_name = input;
+        self
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -135,7 +141,8 @@ impl ListImagesInputBuilder {
     }
     /// <p>The maximum items to return in a request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +151,8 @@ impl ListImagesInputBuilder {
     }
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Includes deprecated images in the response list.</p>
     pub fn include_deprecated(mut self, input: bool) -> Self {
@@ -153,26 +161,23 @@ impl ListImagesInputBuilder {
     }
     /// <p>Includes deprecated images in the response list.</p>
     pub fn set_include_deprecated(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_deprecated = input; self
+        self.include_deprecated = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListImagesInput`](crate::operation::list_images::ListImagesInput).
-    pub fn build(self) -> Result<crate::operation::list_images::ListImagesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_images::ListImagesInput {
-                owner: self.owner
-                ,
-                filters: self.filters
-                ,
-                by_name: self.by_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                include_deprecated: self.include_deprecated
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_images::ListImagesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_images::ListImagesInput {
+            owner: self.owner,
+            filters: self.filters,
+            by_name: self.by_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+            include_deprecated: self.include_deprecated,
+        })
     }
 }
-

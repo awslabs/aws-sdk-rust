@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyVpcEndpointServicePermissionsOutput  {
+pub struct ModifyVpcEndpointServicePermissionsOutput {
     /// <p>Information about the added principals.</p>
     #[doc(hidden)]
     pub added_principals: std::option::Option<std::vec::Vec<crate::types::AddedPrincipal>>,
@@ -13,7 +13,7 @@ pub struct ModifyVpcEndpointServicePermissionsOutput  {
 }
 impl ModifyVpcEndpointServicePermissionsOutput {
     /// <p>Information about the added principals.</p>
-    pub fn added_principals(&self) -> std::option::Option<& [crate::types::AddedPrincipal]> {
+    pub fn added_principals(&self) -> std::option::Option<&[crate::types::AddedPrincipal]> {
         self.added_principals.as_deref()
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
@@ -22,13 +22,13 @@ impl ModifyVpcEndpointServicePermissionsOutput {
     }
 }
 impl aws_http::request_id::RequestId for ModifyVpcEndpointServicePermissionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifyVpcEndpointServicePermissionsOutput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointServicePermissionsOutput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput).
-    pub fn builder() -> crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsOutputBuilder {
+    pub fn builder() -> crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsOutputBuilder{
         crate::operation::modify_vpc_endpoint_service_permissions::builders::ModifyVpcEndpointServicePermissionsOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ModifyVpcEndpointServicePermissionsOutputBuilder {
     /// <p>Information about the added principals.</p>
     pub fn added_principals(mut self, input: crate::types::AddedPrincipal) -> Self {
         let mut v = self.added_principals.unwrap_or_default();
-                        v.push(input);
-                        self.added_principals = Some(v);
-                        self
+        v.push(input);
+        self.added_principals = Some(v);
+        self
     }
     /// <p>Information about the added principals.</p>
-    pub fn set_added_principals(mut self, input: std::option::Option<std::vec::Vec<crate::types::AddedPrincipal>>) -> Self {
-        self.added_principals = input; self
+    pub fn set_added_principals(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AddedPrincipal>>,
+    ) -> Self {
+        self.added_principals = input;
+        self
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn return_value(mut self, input: bool) -> Self {
@@ -64,19 +68,20 @@ impl ModifyVpcEndpointServicePermissionsOutputBuilder {
     }
     /// <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an error.</p>
     pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.return_value = input; self
+        self.return_value = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointServicePermissionsOutput`](crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput).
-    pub fn build(self) -> crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput {
+    pub fn build(self) -> crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput{
         crate::operation::modify_vpc_endpoint_service_permissions::ModifyVpcEndpointServicePermissionsOutput {
             added_principals: self.added_principals
             ,
@@ -86,4 +91,3 @@ impl ModifyVpcEndpointServicePermissionsOutputBuilder {
         }
     }
 }
-

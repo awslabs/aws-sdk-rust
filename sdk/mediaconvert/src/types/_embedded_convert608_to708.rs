@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let embeddedconvert608to708 = unimplemented!();
 /// match embeddedconvert608to708 {
@@ -30,55 +30,64 @@
 /// Specifically, when `embeddedconvert608to708` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EmbeddedConvert608To708::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum EmbeddedConvert608To708 {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Upconvert,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EmbeddedConvert608To708 {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DISABLED" => EmbeddedConvert608To708::Disabled,
-"UPCONVERT" => EmbeddedConvert608To708::Upconvert,
-other => EmbeddedConvert608To708::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for EmbeddedConvert608To708 {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(EmbeddedConvert608To708::from(s))
-                }
-            }
-impl EmbeddedConvert608To708 {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    EmbeddedConvert608To708::Disabled => "DISABLED",
-    EmbeddedConvert608To708::Upconvert => "UPCONVERT",
-    EmbeddedConvert608To708::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => EmbeddedConvert608To708::Disabled,
+            "UPCONVERT" => EmbeddedConvert608To708::Upconvert,
+            other => EmbeddedConvert608To708::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DISABLED", "UPCONVERT"]
-                }
-            }
-impl AsRef<str> for EmbeddedConvert608To708 {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for EmbeddedConvert608To708 {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EmbeddedConvert608To708::from(s))
+    }
+}
+impl EmbeddedConvert608To708 {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EmbeddedConvert608To708::Disabled => "DISABLED",
+            EmbeddedConvert608To708::Upconvert => "UPCONVERT",
+            EmbeddedConvert608To708::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DISABLED", "UPCONVERT"]
+    }
+}
+impl AsRef<str> for EmbeddedConvert608To708 {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

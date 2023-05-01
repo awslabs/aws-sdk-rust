@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the response to a <code>GetHealthCheckCount</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHealthCheckCountOutput  {
+pub struct GetHealthCheckCountOutput {
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
     pub health_check_count: std::option::Option<i64>,
@@ -16,13 +16,14 @@ impl GetHealthCheckCountOutput {
     }
 }
 impl aws_http::request_id::RequestId for GetHealthCheckCountOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetHealthCheckCountOutput {
     /// Creates a new builder-style object to manufacture [`GetHealthCheckCountOutput`](crate::operation::get_health_check_count::GetHealthCheckCountOutput).
-    pub fn builder() -> crate::operation::get_health_check_count::builders::GetHealthCheckCountOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_health_check_count::builders::GetHealthCheckCountOutputBuilder {
         crate::operation::get_health_check_count::builders::GetHealthCheckCountOutputBuilder::default()
     }
 }
@@ -42,24 +43,23 @@ impl GetHealthCheckCountOutputBuilder {
     }
     /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
     pub fn set_health_check_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.health_check_count = input; self
+        self.health_check_count = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetHealthCheckCountOutput`](crate::operation::get_health_check_count::GetHealthCheckCountOutput).
     pub fn build(self) -> crate::operation::get_health_check_count::GetHealthCheckCountOutput {
         crate::operation::get_health_check_count::GetHealthCheckCountOutput {
-            health_check_count: self.health_check_count
-            ,
+            health_check_count: self.health_check_count,
             _request_id: self._request_id,
         }
     }
 }
-

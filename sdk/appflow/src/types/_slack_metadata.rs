@@ -3,14 +3,14 @@
 /// <p> The connector metadata specific to Slack. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SlackMetadata  {
+pub struct SlackMetadata {
     /// <p> The desired authorization scope for the Slack account. </p>
     #[doc(hidden)]
     pub o_auth_scopes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SlackMetadata {
     /// <p> The desired authorization scope for the Slack account. </p>
-    pub fn o_auth_scopes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn o_auth_scopes(&self) -> std::option::Option<&[std::string::String]> {
         self.o_auth_scopes.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl SlackMetadataBuilder {
     /// <p> The desired authorization scope for the Slack account. </p>
     pub fn o_auth_scopes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.o_auth_scopes.unwrap_or_default();
-                        v.push(input.into());
-                        self.o_auth_scopes = Some(v);
-                        self
+        v.push(input.into());
+        self.o_auth_scopes = Some(v);
+        self
     }
     /// <p> The desired authorization scope for the Slack account. </p>
-    pub fn set_o_auth_scopes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.o_auth_scopes = input; self
+    pub fn set_o_auth_scopes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.o_auth_scopes = input;
+        self
     }
     /// Consumes the builder and constructs a [`SlackMetadata`](crate::types::SlackMetadata).
     pub fn build(self) -> crate::types::SlackMetadata {
         crate::types::SlackMetadata {
-            o_auth_scopes: self.o_auth_scopes
-            ,
+            o_auth_scopes: self.o_auth_scopes,
         }
     }
 }
-

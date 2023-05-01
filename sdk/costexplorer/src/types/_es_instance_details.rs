@@ -3,7 +3,7 @@
 /// <p>Details about the Amazon OpenSearch Service instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EsInstanceDetails  {
+pub struct EsInstanceDetails {
     /// <p>The class of instance that Amazon Web Services recommends.</p>
     #[doc(hidden)]
     pub instance_class: std::option::Option<std::string::String>,
@@ -22,15 +22,15 @@ pub struct EsInstanceDetails  {
 }
 impl EsInstanceDetails {
     /// <p>The class of instance that Amazon Web Services recommends.</p>
-    pub fn instance_class(&self) -> std::option::Option<& str> {
+    pub fn instance_class(&self) -> std::option::Option<&str> {
         self.instance_class.as_deref()
     }
     /// <p>The size of instance that Amazon Web Services recommends.</p>
-    pub fn instance_size(&self) -> std::option::Option<& str> {
+    pub fn instance_size(&self) -> std::option::Option<&str> {
         self.instance_size.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(&self) -> std::option::Option<& str> {
+    pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
@@ -67,7 +67,8 @@ impl EsInstanceDetailsBuilder {
     }
     /// <p>The class of instance that Amazon Web Services recommends.</p>
     pub fn set_instance_class(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_class = input; self
+        self.instance_class = input;
+        self
     }
     /// <p>The size of instance that Amazon Web Services recommends.</p>
     pub fn instance_size(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl EsInstanceDetailsBuilder {
     }
     /// <p>The size of instance that Amazon Web Services recommends.</p>
     pub fn set_instance_size(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_size = input; self
+        self.instance_size = input;
+        self
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl EsInstanceDetailsBuilder {
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
     pub fn current_generation(mut self, input: bool) -> Self {
@@ -94,7 +97,8 @@ impl EsInstanceDetailsBuilder {
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
     pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
-        self.current_generation = input; self
+        self.current_generation = input;
+        self
     }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(mut self, input: bool) -> Self {
@@ -103,24 +107,17 @@ impl EsInstanceDetailsBuilder {
     }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
-        self.size_flex_eligible = input; self
+        self.size_flex_eligible = input;
+        self
     }
     /// Consumes the builder and constructs a [`EsInstanceDetails`](crate::types::EsInstanceDetails).
     pub fn build(self) -> crate::types::EsInstanceDetails {
         crate::types::EsInstanceDetails {
-            instance_class: self.instance_class
-            ,
-            instance_size: self.instance_size
-            ,
-            region: self.region
-            ,
-            current_generation: self.current_generation
-                .unwrap_or_default()
-            ,
-            size_flex_eligible: self.size_flex_eligible
-                .unwrap_or_default()
-            ,
+            instance_class: self.instance_class,
+            instance_size: self.instance_size,
+            region: self.region,
+            current_generation: self.current_generation.unwrap_or_default(),
+            size_flex_eligible: self.size_flex_eligible.unwrap_or_default(),
         }
     }
 }
-

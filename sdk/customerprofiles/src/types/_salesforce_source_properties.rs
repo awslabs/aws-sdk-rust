@@ -3,7 +3,7 @@
 /// <p>The properties that are applied when Salesforce is being used as a source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SalesforceSourceProperties  {
+pub struct SalesforceSourceProperties {
     /// <p>The object specified in the Salesforce flow source.</p>
     #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct SalesforceSourceProperties  {
 }
 impl SalesforceSourceProperties {
     /// <p>The object specified in the Salesforce flow source.</p>
-    pub fn object(&self) -> std::option::Option<& str> {
+    pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
@@ -51,7 +51,8 @@ impl SalesforceSourcePropertiesBuilder {
     }
     /// <p>The object specified in the Salesforce flow source.</p>
     pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object = input; self
+        self.object = input;
+        self
     }
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
     pub fn enable_dynamic_field_update(mut self, input: bool) -> Self {
@@ -60,7 +61,8 @@ impl SalesforceSourcePropertiesBuilder {
     }
     /// <p>The flag that enables dynamic fetching of new (recently added) fields in the Salesforce objects while running a flow.</p>
     pub fn set_enable_dynamic_field_update(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_dynamic_field_update = input; self
+        self.enable_dynamic_field_update = input;
+        self
     }
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
     pub fn include_deleted_records(mut self, input: bool) -> Self {
@@ -69,20 +71,15 @@ impl SalesforceSourcePropertiesBuilder {
     }
     /// <p>Indicates whether Amazon AppFlow includes deleted files in the flow run.</p>
     pub fn set_include_deleted_records(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_deleted_records = input; self
+        self.include_deleted_records = input;
+        self
     }
     /// Consumes the builder and constructs a [`SalesforceSourceProperties`](crate::types::SalesforceSourceProperties).
     pub fn build(self) -> crate::types::SalesforceSourceProperties {
         crate::types::SalesforceSourceProperties {
-            object: self.object
-            ,
-            enable_dynamic_field_update: self.enable_dynamic_field_update
-                .unwrap_or_default()
-            ,
-            include_deleted_records: self.include_deleted_records
-                .unwrap_or_default()
-            ,
+            object: self.object,
+            enable_dynamic_field_update: self.enable_dynamic_field_update.unwrap_or_default(),
+            include_deleted_records: self.include_deleted_records.unwrap_or_default(),
         }
     }
 }
-

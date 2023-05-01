@@ -3,7 +3,7 @@
 /// <p>Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotificationConfiguration  {
+pub struct NotificationConfiguration {
     /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
     #[doc(hidden)]
     pub topic_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct NotificationConfiguration  {
 }
 impl NotificationConfiguration {
     /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
-    pub fn topic_arn(&self) -> std::option::Option<& str> {
+    pub fn topic_arn(&self) -> std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
-    pub fn topic_status(&self) -> std::option::Option<& str> {
+    pub fn topic_status(&self) -> std::option::Option<&str> {
         self.topic_status.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl NotificationConfigurationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) that identifies the topic. </p>
     pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic_arn = input; self
+        self.topic_arn = input;
+        self
     }
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
     pub fn topic_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl NotificationConfigurationBuilder {
     }
     /// <p>The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.</p>
     pub fn set_topic_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.topic_status = input; self
+        self.topic_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`NotificationConfiguration`](crate::types::NotificationConfiguration).
     pub fn build(self) -> crate::types::NotificationConfiguration {
         crate::types::NotificationConfiguration {
-            topic_arn: self.topic_arn
-            ,
-            topic_status: self.topic_status
-            ,
+            topic_arn: self.topic_arn,
+            topic_status: self.topic_status,
         }
     }
 }
-

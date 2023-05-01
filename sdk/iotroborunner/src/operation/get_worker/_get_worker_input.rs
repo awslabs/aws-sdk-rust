@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkerInput  {
+pub struct GetWorkerInput {
     /// Full ARN of the worker.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetWorkerInput {
     /// Full ARN of the worker.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl GetWorkerInputBuilder {
     }
     /// Full ARN of the worker.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetWorkerInput`](crate::operation::get_worker::GetWorkerInput).
-    pub fn build(self) -> Result<crate::operation::get_worker::GetWorkerInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_worker::GetWorkerInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_worker::GetWorkerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_worker::GetWorkerInput { id: self.id })
     }
 }
-

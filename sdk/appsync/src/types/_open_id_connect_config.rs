@@ -3,7 +3,7 @@
 /// <p>Describes an OpenID Connect (OIDC) configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpenIdConnectConfig  {
+pub struct OpenIdConnectConfig {
     /// <p>The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.</p>
     #[doc(hidden)]
     pub issuer: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct OpenIdConnectConfig  {
 }
 impl OpenIdConnectConfig {
     /// <p>The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.</p>
-    pub fn issuer(&self) -> std::option::Option<& str> {
+    pub fn issuer(&self) -> std::option::Option<&str> {
         self.issuer.as_deref()
     }
     /// <p>The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time.</p>
-    pub fn client_id(&self) -> std::option::Option<& str> {
+    pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The number of milliseconds that a token is valid after it's issued to a user.</p>
@@ -59,7 +59,8 @@ impl OpenIdConnectConfigBuilder {
     }
     /// <p>The issuer for the OIDC configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.</p>
     pub fn set_issuer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.issuer = input; self
+        self.issuer = input;
+        self
     }
     /// <p>The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl OpenIdConnectConfigBuilder {
     }
     /// <p>The client identifier of the relying party at the OpenID identity provider. This identifier is typically obtained when the relying party is registered with the OpenID identity provider. You can specify a regular expression so that AppSync can validate against multiple client identifiers at a time.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input; self
+        self.client_id = input;
+        self
     }
     /// <p>The number of milliseconds that a token is valid after it's issued to a user.</p>
     pub fn iat_ttl(mut self, input: i64) -> Self {
@@ -77,7 +79,8 @@ impl OpenIdConnectConfigBuilder {
     }
     /// <p>The number of milliseconds that a token is valid after it's issued to a user.</p>
     pub fn set_iat_ttl(mut self, input: std::option::Option<i64>) -> Self {
-        self.iat_ttl = input; self
+        self.iat_ttl = input;
+        self
     }
     /// <p>The number of milliseconds that a token is valid after being authenticated.</p>
     pub fn auth_ttl(mut self, input: i64) -> Self {
@@ -86,22 +89,16 @@ impl OpenIdConnectConfigBuilder {
     }
     /// <p>The number of milliseconds that a token is valid after being authenticated.</p>
     pub fn set_auth_ttl(mut self, input: std::option::Option<i64>) -> Self {
-        self.auth_ttl = input; self
+        self.auth_ttl = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpenIdConnectConfig`](crate::types::OpenIdConnectConfig).
     pub fn build(self) -> crate::types::OpenIdConnectConfig {
         crate::types::OpenIdConnectConfig {
-            issuer: self.issuer
-            ,
-            client_id: self.client_id
-            ,
-            iat_ttl: self.iat_ttl
-                .unwrap_or_default()
-            ,
-            auth_ttl: self.auth_ttl
-                .unwrap_or_default()
-            ,
+            issuer: self.issuer,
+            client_id: self.client_id,
+            iat_ttl: self.iat_ttl.unwrap_or_default(),
+            auth_ttl: self.auth_ttl.unwrap_or_default(),
         }
     }
 }
-

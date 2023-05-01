@@ -3,7 +3,7 @@
 /// <p>Metadata information about a contact evaluation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluationMetadata  {
+pub struct EvaluationMetadata {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct EvaluationMetadata  {
 }
 impl EvaluationMetadata {
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
-    pub fn contact_id(&self) -> std::option::Option<& str> {
+    pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn evaluator_arn(&self) -> std::option::Option<& str> {
+    pub fn evaluator_arn(&self) -> std::option::Option<&str> {
         self.evaluator_arn.as_deref()
     }
     /// <p>The identifier of the agent who performed the contact.</p>
-    pub fn contact_agent_id(&self) -> std::option::Option<& str> {
+    pub fn contact_agent_id(&self) -> std::option::Option<&str> {
         self.contact_agent_id.as_deref()
     }
     /// <p>The overall score of the contact evaluation.</p>
-    pub fn score(&self) -> std::option::Option<& crate::types::EvaluationScore> {
+    pub fn score(&self) -> std::option::Option<&crate::types::EvaluationScore> {
         self.score.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl EvaluationMetadataBuilder {
     }
     /// <p>The identifier of the contact in this instance of Amazon Connect. </p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input; self
+        self.contact_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     pub fn evaluator_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl EvaluationMetadataBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     pub fn set_evaluator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluator_arn = input; self
+        self.evaluator_arn = input;
+        self
     }
     /// <p>The identifier of the agent who performed the contact.</p>
     pub fn contact_agent_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl EvaluationMetadataBuilder {
     }
     /// <p>The identifier of the agent who performed the contact.</p>
     pub fn set_contact_agent_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_agent_id = input; self
+        self.contact_agent_id = input;
+        self
     }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn score(mut self, input: crate::types::EvaluationScore) -> Self {
@@ -86,20 +89,16 @@ impl EvaluationMetadataBuilder {
     }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn set_score(mut self, input: std::option::Option<crate::types::EvaluationScore>) -> Self {
-        self.score = input; self
+        self.score = input;
+        self
     }
     /// Consumes the builder and constructs a [`EvaluationMetadata`](crate::types::EvaluationMetadata).
     pub fn build(self) -> crate::types::EvaluationMetadata {
         crate::types::EvaluationMetadata {
-            contact_id: self.contact_id
-            ,
-            evaluator_arn: self.evaluator_arn
-            ,
-            contact_agent_id: self.contact_agent_id
-            ,
-            score: self.score
-            ,
+            contact_id: self.contact_id,
+            evaluator_arn: self.evaluator_arn,
+            contact_agent_id: self.contact_agent_id,
+            score: self.score,
         }
     }
 }
-

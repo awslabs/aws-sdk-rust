@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePackageInput  {
+pub struct DescribePackageInput {
     /// <p>The package's ID.</p>
     #[doc(hidden)]
     pub package_id: std::option::Option<std::string::String>,
 }
 impl DescribePackageInput {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> std::option::Option<& str> {
+    pub fn package_id(&self) -> std::option::Option<&str> {
         self.package_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DescribePackageInputBuilder {
     }
     /// <p>The package's ID.</p>
     pub fn set_package_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package_id = input; self
+        self.package_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribePackageInput`](crate::operation::describe_package::DescribePackageInput).
-    pub fn build(self) -> Result<crate::operation::describe_package::DescribePackageInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_package::DescribePackageInput {
-                package_id: self.package_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_package::DescribePackageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_package::DescribePackageInput {
+            package_id: self.package_id,
+        })
     }
 }
-

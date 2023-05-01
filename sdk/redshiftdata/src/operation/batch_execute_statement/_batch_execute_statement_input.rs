@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchExecuteStatementInput  {
+pub struct BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
     #[doc(hidden)]
     pub sqls: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -33,23 +33,23 @@ pub struct BatchExecuteStatementInput  {
 }
 impl BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    pub fn sqls(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn sqls(&self) -> std::option::Option<&[std::string::String]> {
         self.sqls.as_deref()
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
-    pub fn secret_arn(&self) -> std::option::Option<& str> {
+    pub fn secret_arn(&self) -> std::option::Option<&str> {
         self.secret_arn.as_deref()
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
-    pub fn db_user(&self) -> std::option::Option<& str> {
+    pub fn db_user(&self) -> std::option::Option<&str> {
         self.db_user.as_deref()
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
@@ -57,21 +57,23 @@ impl BatchExecuteStatementInput {
         self.with_event
     }
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
-    pub fn statement_name(&self) -> std::option::Option<& str> {
+    pub fn statement_name(&self) -> std::option::Option<&str> {
         self.statement_name.as_deref()
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
-    pub fn workgroup_name(&self) -> std::option::Option<& str> {
+    pub fn workgroup_name(&self) -> std::option::Option<&str> {
         self.workgroup_name.as_deref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl BatchExecuteStatementInput {
     /// Creates a new builder-style object to manufacture [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
-    pub fn builder() -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder
+    {
         crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder::default()
     }
 }
@@ -98,13 +100,17 @@ impl BatchExecuteStatementInputBuilder {
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
     pub fn sqls(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.sqls.unwrap_or_default();
-                        v.push(input.into());
-                        self.sqls = Some(v);
-                        self
+        v.push(input.into());
+        self.sqls = Some(v);
+        self
     }
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    pub fn set_sqls(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.sqls = input; self
+    pub fn set_sqls(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.sqls = input;
+        self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,8 +118,12 @@ impl BatchExecuteStatementInputBuilder {
         self
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +132,8 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn set_secret_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_arn = input; self
+        self.secret_arn = input;
+        self
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn db_user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,7 +142,8 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub fn set_db_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.db_user = input; self
+        self.db_user = input;
+        self
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,7 +152,8 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input; self
+        self.database = input;
+        self
     }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
     pub fn with_event(mut self, input: bool) -> Self {
@@ -149,7 +162,8 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
     pub fn set_with_event(mut self, input: std::option::Option<bool>) -> Self {
-        self.with_event = input; self
+        self.with_event = input;
+        self
     }
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
     pub fn statement_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,7 +172,8 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
     pub fn set_statement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.statement_name = input; self
+        self.statement_name = input;
+        self
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn workgroup_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,7 +182,8 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub fn set_workgroup_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workgroup_name = input; self
+        self.workgroup_name = input;
+        self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,32 +192,28 @@ impl BatchExecuteStatementInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
-    pub fn build(self) -> Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_execute_statement::BatchExecuteStatementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_execute_statement::BatchExecuteStatementInput {
-                sqls: self.sqls
-                ,
-                cluster_identifier: self.cluster_identifier
-                ,
-                secret_arn: self.secret_arn
-                ,
-                db_user: self.db_user
-                ,
-                database: self.database
-                ,
-                with_event: self.with_event
-                ,
-                statement_name: self.statement_name
-                ,
-                workgroup_name: self.workgroup_name
-                ,
-                client_token: self.client_token
-                ,
-            }
+                sqls: self.sqls,
+                cluster_identifier: self.cluster_identifier,
+                secret_arn: self.secret_arn,
+                db_user: self.db_user,
+                database: self.database,
+                with_event: self.with_event,
+                statement_name: self.statement_name,
+                workgroup_name: self.workgroup_name,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

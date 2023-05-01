@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSolNetworkPackageDescriptorInput  {
+pub struct GetSolNetworkPackageDescriptorInput {
     /// <p>ID of the network service descriptor in the network package.</p>
     #[doc(hidden)]
     pub nsd_info_id: std::option::Option<std::string::String>,
 }
 impl GetSolNetworkPackageDescriptorInput {
     /// <p>ID of the network service descriptor in the network package.</p>
-    pub fn nsd_info_id(&self) -> std::option::Option<& str> {
+    pub fn nsd_info_id(&self) -> std::option::Option<&str> {
         self.nsd_info_id.as_deref()
     }
 }
 impl GetSolNetworkPackageDescriptorInput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkPackageDescriptorInput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput).
-    pub fn builder() -> crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorInputBuilder {
+    pub fn builder() -> crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorInputBuilder{
         crate::operation::get_sol_network_package_descriptor::builders::GetSolNetworkPackageDescriptorInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl GetSolNetworkPackageDescriptorInputBuilder {
     }
     /// <p>ID of the network service descriptor in the network package.</p>
     pub fn set_nsd_info_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.nsd_info_id = input; self
+        self.nsd_info_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSolNetworkPackageDescriptorInput`](crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput).
-    pub fn build(self) -> Result<crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_sol_network_package_descriptor::GetSolNetworkPackageDescriptorInput {
                 nsd_info_id: self.nsd_info_id
@@ -46,4 +52,3 @@ impl GetSolNetworkPackageDescriptorInputBuilder {
         )
     }
 }
-

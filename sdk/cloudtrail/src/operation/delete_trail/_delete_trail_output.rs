@@ -3,14 +3,14 @@
 /// <p>Returns the objects or data listed below if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrailOutput  {
+pub struct DeleteTrailOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DeleteTrailOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteTrailOutput {
     /// Creates a new builder-style object to manufacture [`DeleteTrailOutput`](crate::operation::delete_trail::DeleteTrailOutput).
     pub fn builder() -> crate::operation::delete_trail::builders::DeleteTrailOutputBuilder {
@@ -26,14 +26,14 @@ pub struct DeleteTrailOutputBuilder {
 }
 impl DeleteTrailOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteTrailOutput`](crate::operation::delete_trail::DeleteTrailOutput).
     pub fn build(self) -> crate::operation::delete_trail::DeleteTrailOutput {
         crate::operation::delete_trail::DeleteTrailOutput {
@@ -41,4 +41,3 @@ impl DeleteTrailOutputBuilder {
         }
     }
 }
-

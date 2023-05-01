@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAutoScalingGroupInput  {
+pub struct DeleteAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteAutoScalingGroupInput  {
 }
 impl DeleteAutoScalingGroupInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This action also deletes any outstanding lifecycle actions associated with the group.</p>
@@ -22,7 +22,9 @@ impl DeleteAutoScalingGroupInput {
 }
 impl DeleteAutoScalingGroupInput {
     /// Creates a new builder-style object to manufacture [`DeleteAutoScalingGroupInput`](crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput).
-    pub fn builder() -> crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder
+    {
         crate::operation::delete_auto_scaling_group::builders::DeleteAutoScalingGroupInputBuilder::default()
     }
 }
@@ -41,8 +43,12 @@ impl DeleteAutoScalingGroupInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// <p>Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This action also deletes any outstanding lifecycle actions associated with the group.</p>
     pub fn force_delete(mut self, input: bool) -> Self {
@@ -51,18 +57,21 @@ impl DeleteAutoScalingGroupInputBuilder {
     }
     /// <p>Specifies that the group is to be deleted along with all instances associated with the group, without waiting for all instances to be terminated. This action also deletes any outstanding lifecycle actions associated with the group.</p>
     pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
-        self.force_delete = input; self
+        self.force_delete = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAutoScalingGroupInput`](crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput).
-    pub fn build(self) -> Result<crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_auto_scaling_group::DeleteAutoScalingGroupInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                force_delete: self.force_delete
-                ,
-            }
+                auto_scaling_group_name: self.auto_scaling_group_name,
+                force_delete: self.force_delete,
+            },
         )
     }
 }
-

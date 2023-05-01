@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let hookstatus = unimplemented!();
 /// match hookstatus {
@@ -32,14 +32,22 @@
 /// Specifically, when `hookstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HookStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum HookStatus {
     #[allow(missing_docs)] // documentation missing in model
     HookCompleteFailed,
@@ -50,45 +58,49 @@ pub enum HookStatus {
     #[allow(missing_docs)] // documentation missing in model
     HookInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HookStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "HOOK_COMPLETE_FAILED" => HookStatus::HookCompleteFailed,
-"HOOK_COMPLETE_SUCCEEDED" => HookStatus::HookCompleteSucceeded,
-"HOOK_FAILED" => HookStatus::HookFailed,
-"HOOK_IN_PROGRESS" => HookStatus::HookInProgress,
-other => HookStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for HookStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(HookStatus::from(s))
-                }
-            }
-impl HookStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    HookStatus::HookCompleteFailed => "HOOK_COMPLETE_FAILED",
-    HookStatus::HookCompleteSucceeded => "HOOK_COMPLETE_SUCCEEDED",
-    HookStatus::HookFailed => "HOOK_FAILED",
-    HookStatus::HookInProgress => "HOOK_IN_PROGRESS",
-    HookStatus::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "HOOK_COMPLETE_FAILED" => HookStatus::HookCompleteFailed,
+            "HOOK_COMPLETE_SUCCEEDED" => HookStatus::HookCompleteSucceeded,
+            "HOOK_FAILED" => HookStatus::HookFailed,
+            "HOOK_IN_PROGRESS" => HookStatus::HookInProgress,
+            other => HookStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["HOOK_COMPLETE_FAILED", "HOOK_COMPLETE_SUCCEEDED", "HOOK_FAILED", "HOOK_IN_PROGRESS"]
-                }
-            }
-impl AsRef<str> for HookStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for HookStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HookStatus::from(s))
+    }
+}
+impl HookStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HookStatus::HookCompleteFailed => "HOOK_COMPLETE_FAILED",
+            HookStatus::HookCompleteSucceeded => "HOOK_COMPLETE_SUCCEEDED",
+            HookStatus::HookFailed => "HOOK_FAILED",
+            HookStatus::HookInProgress => "HOOK_IN_PROGRESS",
+            HookStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "HOOK_COMPLETE_FAILED",
+            "HOOK_COMPLETE_SUCCEEDED",
+            "HOOK_FAILED",
+            "HOOK_IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for HookStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

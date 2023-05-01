@@ -3,7 +3,7 @@
 /// <p> The result structure for the get webhook request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWebhookOutput  {
+pub struct GetWebhookOutput {
     /// <p> Describes the structure of a webhook. </p>
     #[doc(hidden)]
     pub webhook: std::option::Option<crate::types::Webhook>,
@@ -11,15 +11,15 @@ pub struct GetWebhookOutput  {
 }
 impl GetWebhookOutput {
     /// <p> Describes the structure of a webhook. </p>
-    pub fn webhook(&self) -> std::option::Option<& crate::types::Webhook> {
+    pub fn webhook(&self) -> std::option::Option<&crate::types::Webhook> {
         self.webhook.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetWebhookOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetWebhookOutput {
     /// Creates a new builder-style object to manufacture [`GetWebhookOutput`](crate::operation::get_webhook::GetWebhookOutput).
     pub fn builder() -> crate::operation::get_webhook::builders::GetWebhookOutputBuilder {
@@ -42,24 +42,23 @@ impl GetWebhookOutputBuilder {
     }
     /// <p> Describes the structure of a webhook. </p>
     pub fn set_webhook(mut self, input: std::option::Option<crate::types::Webhook>) -> Self {
-        self.webhook = input; self
+        self.webhook = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetWebhookOutput`](crate::operation::get_webhook::GetWebhookOutput).
     pub fn build(self) -> crate::operation::get_webhook::GetWebhookOutput {
         crate::operation::get_webhook::GetWebhookOutput {
-            webhook: self.webhook
-            ,
+            webhook: self.webhook,
             _request_id: self._request_id,
         }
     }
 }
-

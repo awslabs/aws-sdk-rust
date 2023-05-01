@@ -3,7 +3,7 @@
 /// <p>Specifies an Amazon S3 data store in the Glue Data Catalog.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3CatalogSource  {
+pub struct S3CatalogSource {
     /// <p>The name of the data store.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,23 +22,25 @@ pub struct S3CatalogSource  {
 }
 impl S3CatalogSource {
     /// <p>The name of the data store.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The database to read from.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>The database table to read from.</p>
-    pub fn table(&self) -> std::option::Option<& str> {
+    pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
     }
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
-    pub fn partition_predicate(&self) -> std::option::Option<& str> {
+    pub fn partition_predicate(&self) -> std::option::Option<&str> {
         self.partition_predicate.as_deref()
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn additional_options(&self) -> std::option::Option<& crate::types::S3SourceAdditionalOptions> {
+    pub fn additional_options(
+        &self,
+    ) -> std::option::Option<&crate::types::S3SourceAdditionalOptions> {
         self.additional_options.as_ref()
     }
 }
@@ -67,7 +69,8 @@ impl S3CatalogSourceBuilder {
     }
     /// <p>The name of the data store.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The database to read from.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +79,8 @@ impl S3CatalogSourceBuilder {
     }
     /// <p>The database to read from.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input; self
+        self.database = input;
+        self
     }
     /// <p>The database table to read from.</p>
     pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +89,8 @@ impl S3CatalogSourceBuilder {
     }
     /// <p>The database table to read from.</p>
     pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table = input; self
+        self.table = input;
+        self
     }
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
     pub fn partition_predicate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,8 +98,12 @@ impl S3CatalogSourceBuilder {
         self
     }
     /// <p>Partitions satisfying this predicate are deleted. Files within the retention period in these partitions are not deleted. Set to <code>""</code> – empty by default.</p>
-    pub fn set_partition_predicate(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partition_predicate = input; self
+    pub fn set_partition_predicate(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.partition_predicate = input;
+        self
     }
     /// <p>Specifies additional connection options.</p>
     pub fn additional_options(mut self, input: crate::types::S3SourceAdditionalOptions) -> Self {
@@ -102,23 +111,21 @@ impl S3CatalogSourceBuilder {
         self
     }
     /// <p>Specifies additional connection options.</p>
-    pub fn set_additional_options(mut self, input: std::option::Option<crate::types::S3SourceAdditionalOptions>) -> Self {
-        self.additional_options = input; self
+    pub fn set_additional_options(
+        mut self,
+        input: std::option::Option<crate::types::S3SourceAdditionalOptions>,
+    ) -> Self {
+        self.additional_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3CatalogSource`](crate::types::S3CatalogSource).
     pub fn build(self) -> crate::types::S3CatalogSource {
         crate::types::S3CatalogSource {
-            name: self.name
-            ,
-            database: self.database
-            ,
-            table: self.table
-            ,
-            partition_predicate: self.partition_predicate
-            ,
-            additional_options: self.additional_options
-            ,
+            name: self.name,
+            database: self.database,
+            table: self.table,
+            partition_predicate: self.partition_predicate,
+            additional_options: self.additional_options,
         }
     }
 }
-

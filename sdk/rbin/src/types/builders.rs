@@ -10,4 +10,3 @@ pub use crate::types::_unlock_delay::UnlockDelayBuilder;
 pub use crate::types::_tag::TagBuilder;
 
 pub use crate::types::_rule_summary::RuleSummaryBuilder;
-

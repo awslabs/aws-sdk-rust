@@ -4,50 +4,66 @@ pub use crate::operation::update_portal::_update_portal_output::UpdatePortalOutp
 pub use crate::operation::update_portal::_update_portal_input::UpdatePortalInputBuilder;
 
 /// Fluent builder constructing a request to `UpdatePortal`.
-/// 
+///
 /// <p>Updates an IoT SiteWise Monitor portal.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePortalFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_portal::builders::UpdatePortalInputBuilder,
+    inner: crate::operation::update_portal::builders::UpdatePortalInputBuilder,
 }
-impl UpdatePortalFluentBuilder  {
+impl UpdatePortalFluentBuilder {
     /// Creates a new `UpdatePortal`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_portal::UpdatePortal, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_portal::UpdatePortalError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_portal::UpdatePortalOutput, aws_smithy_http::result::SdkError<crate::operation::update_portal::UpdatePortalError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_portal::UpdatePortal,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_portal::UpdatePortalError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_portal::UpdatePortalOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_portal::UpdatePortalError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the portal to update.</p>
     pub fn portal_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.portal_id(input.into());
@@ -74,7 +90,10 @@ impl UpdatePortalFluentBuilder  {
         self
     }
     /// <p>A new description for the portal.</p>
-    pub fn set_portal_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_portal_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_portal_description(input);
         self
     }
@@ -84,25 +103,31 @@ impl UpdatePortalFluentBuilder  {
         self
     }
     /// <p>The Amazon Web Services administrator's contact email address.</p>
-    pub fn set_portal_contact_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_portal_contact_email(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_portal_contact_email(input);
         self
     }
-    /// <p>Contains an image that is one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li> 
-    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> 
+    /// <p>Contains an image that is one of the following:</p>
+    /// <ul>
+    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
     pub fn portal_logo_image(mut self, input: crate::types::Image) -> Self {
         self.inner = self.inner.portal_logo_image(input);
         self
     }
-    /// <p>Contains an image that is one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li> 
-    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li> 
+    /// <p>Contains an image that is one of the following:</p>
+    /// <ul>
+    /// <li> <p>An image file. Choose this option to upload a new image.</p> </li>
+    /// <li> <p>The ID of an existing image. Choose this option to keep an existing image.</p> </li>
     /// </ul>
-    pub fn set_portal_logo_image(mut self, input: std::option::Option<crate::types::Image>) -> Self {
+    pub fn set_portal_logo_image(
+        mut self,
+        input: std::option::Option<crate::types::Image>,
+    ) -> Self {
         self.inner = self.inner.set_portal_logo_image(input);
         self
     }
@@ -132,7 +157,10 @@ impl UpdatePortalFluentBuilder  {
         self
     }
     /// <p>The email address that sends alarm notifications.</p>
-    pub fn set_notification_sender_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_notification_sender_email(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_notification_sender_email(input);
         self
     }
@@ -147,4 +175,3 @@ impl UpdatePortalFluentBuilder  {
         self
     }
 }
-

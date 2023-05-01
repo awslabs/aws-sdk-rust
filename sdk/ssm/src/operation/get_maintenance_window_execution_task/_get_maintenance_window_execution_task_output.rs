@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct GetMaintenanceWindowExecutionTaskOutput  {
+pub struct GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
     #[doc(hidden)]
     pub window_execution_id: std::option::Option<std::string::String>,
@@ -18,16 +18,23 @@ pub struct GetMaintenanceWindowExecutionTaskOutput  {
     /// <p>The type of task that was run.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    /// <p>The parameters passed to the task when it was run.</p> <note> 
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
-    /// </note> 
-    /// <p>The map has the following format:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li> 
-    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li> 
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// </note>
+    /// <p>The map has the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub task_parameters: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>>,
+    pub task_parameters: std::option::Option<
+        std::vec::Vec<
+            std::collections::HashMap<
+                std::string::String,
+                crate::types::MaintenanceWindowTaskParameterValueExpression,
+            >,
+        >,
+    >,
     /// <p>The priority of the task.</p>
     #[doc(hidden)]
     pub priority: i32,
@@ -59,34 +66,41 @@ pub struct GetMaintenanceWindowExecutionTaskOutput  {
 }
 impl GetMaintenanceWindowExecutionTaskOutput {
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn window_execution_id(&self) -> std::option::Option<& str> {
+    pub fn window_execution_id(&self) -> std::option::Option<&str> {
         self.window_execution_id.as_deref()
     }
     /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
-    pub fn task_execution_id(&self) -> std::option::Option<& str> {
+    pub fn task_execution_id(&self) -> std::option::Option<&str> {
         self.task_execution_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
-    pub fn task_arn(&self) -> std::option::Option<& str> {
+    pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
     /// <p>The role that was assumed when running the task.</p>
-    pub fn service_role(&self) -> std::option::Option<& str> {
+    pub fn service_role(&self) -> std::option::Option<&str> {
         self.service_role.as_deref()
     }
     /// <p>The type of task that was run.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::MaintenanceWindowTaskType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::MaintenanceWindowTaskType> {
         self.r#type.as_ref()
     }
-    /// <p>The parameters passed to the task when it was run.</p> <note> 
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
-    /// </note> 
-    /// <p>The map has the following format:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li> 
-    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li> 
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// </note>
+    /// <p>The map has the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
-    pub fn task_parameters(&self) -> std::option::Option<& [std::collections::HashMap<std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>]> {
+    pub fn task_parameters(
+        &self,
+    ) -> std::option::Option<
+        &[std::collections::HashMap<
+            std::string::String,
+            crate::types::MaintenanceWindowTaskParameterValueExpression,
+        >],
+    > {
         self.task_parameters.as_deref()
     }
     /// <p>The priority of the task.</p>
@@ -94,39 +108,39 @@ impl GetMaintenanceWindowExecutionTaskOutput {
         self.priority
     }
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
-    pub fn max_concurrency(&self) -> std::option::Option<& str> {
+    pub fn max_concurrency(&self) -> std::option::Option<&str> {
         self.max_concurrency.as_deref()
     }
     /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
-    pub fn max_errors(&self) -> std::option::Option<& str> {
+    pub fn max_errors(&self) -> std::option::Option<&str> {
         self.max_errors.as_deref()
     }
     /// <p>The status of the task.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::MaintenanceWindowExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::MaintenanceWindowExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
-    pub fn status_details(&self) -> std::option::Option<& str> {
+    pub fn status_details(&self) -> std::option::Option<&str> {
         self.status_details.as_deref()
     }
     /// <p>The time the task execution started.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time the task execution completed.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    pub fn alarm_configuration(&self) -> std::option::Option<& crate::types::AlarmConfiguration> {
+    pub fn alarm_configuration(&self) -> std::option::Option<&crate::types::AlarmConfiguration> {
         self.alarm_configuration.as_ref()
     }
     /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
-    pub fn triggered_alarms(&self) -> std::option::Option<& [crate::types::AlarmStateInformation]> {
+    pub fn triggered_alarms(&self) -> std::option::Option<&[crate::types::AlarmStateInformation]> {
         self.triggered_alarms.as_deref()
     }
 }
-impl  std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput  {
+impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetMaintenanceWindowExecutionTaskOutput");
         formatter.field("window_execution_id", &self.window_execution_id);
@@ -149,13 +163,13 @@ impl  std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutput  {
     }
 }
 impl aws_http::request_id::RequestId for GetMaintenanceWindowExecutionTaskOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetMaintenanceWindowExecutionTaskOutput {
     /// Creates a new builder-style object to manufacture [`GetMaintenanceWindowExecutionTaskOutput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput).
-    pub fn builder() -> crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskOutputBuilder {
+    pub fn builder() -> crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskOutputBuilder{
         crate::operation::get_maintenance_window_execution_task::builders::GetMaintenanceWindowExecutionTaskOutputBuilder::default()
     }
 }
@@ -169,7 +183,14 @@ pub struct GetMaintenanceWindowExecutionTaskOutputBuilder {
     pub(crate) task_arn: std::option::Option<std::string::String>,
     pub(crate) service_role: std::option::Option<std::string::String>,
     pub(crate) r#type: std::option::Option<crate::types::MaintenanceWindowTaskType>,
-    pub(crate) task_parameters: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>>,
+    pub(crate) task_parameters: std::option::Option<
+        std::vec::Vec<
+            std::collections::HashMap<
+                std::string::String,
+                crate::types::MaintenanceWindowTaskParameterValueExpression,
+            >,
+        >,
+    >,
     pub(crate) priority: std::option::Option<i32>,
     pub(crate) max_concurrency: std::option::Option<std::string::String>,
     pub(crate) max_errors: std::option::Option<std::string::String>,
@@ -178,7 +199,8 @@ pub struct GetMaintenanceWindowExecutionTaskOutputBuilder {
     pub(crate) start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) end_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) alarm_configuration: std::option::Option<crate::types::AlarmConfiguration>,
-    pub(crate) triggered_alarms: std::option::Option<std::vec::Vec<crate::types::AlarmStateInformation>>,
+    pub(crate) triggered_alarms:
+        std::option::Option<std::vec::Vec<crate::types::AlarmStateInformation>>,
     _request_id: Option<String>,
 }
 impl GetMaintenanceWindowExecutionTaskOutputBuilder {
@@ -188,8 +210,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The ID of the maintenance window execution that includes the task.</p>
-    pub fn set_window_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.window_execution_id = input; self
+    pub fn set_window_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.window_execution_id = input;
+        self
     }
     /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
     pub fn task_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -197,8 +223,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The ID of the specific task execution in the maintenance window task that was retrieved.</p>
-    pub fn set_task_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_execution_id = input; self
+    pub fn set_task_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.task_execution_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
     pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -207,7 +237,8 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
     pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_arn = input; self
+        self.task_arn = input;
+        self
     }
     /// <p>The role that was assumed when running the task.</p>
     pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -216,7 +247,8 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     }
     /// <p>The role that was assumed when running the task.</p>
     pub fn set_service_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_role = input; self
+        self.service_role = input;
+        self
     }
     /// <p>The type of task that was run.</p>
     pub fn r#type(mut self, input: crate::types::MaintenanceWindowTaskType) -> Self {
@@ -224,37 +256,58 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The type of task that was run.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::MaintenanceWindowTaskType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::MaintenanceWindowTaskType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// Appends an item to `task_parameters`.
     ///
     /// To override the contents of this collection use [`set_task_parameters`](Self::set_task_parameters).
     ///
-    /// <p>The parameters passed to the task when it was run.</p> <note> 
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
-    /// </note> 
-    /// <p>The map has the following format:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li> 
-    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li> 
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// </note>
+    /// <p>The map has the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
-    pub fn task_parameters(mut self, input: std::collections::HashMap<std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>) -> Self {
+    pub fn task_parameters(
+        mut self,
+        input: std::collections::HashMap<
+            std::string::String,
+            crate::types::MaintenanceWindowTaskParameterValueExpression,
+        >,
+    ) -> Self {
         let mut v = self.task_parameters.unwrap_or_default();
-                        v.push(input);
-                        self.task_parameters = Some(v);
-                        self
+        v.push(input);
+        self.task_parameters = Some(v);
+        self
     }
-    /// <p>The parameters passed to the task when it was run.</p> <note> 
-    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p> 
-    /// </note> 
-    /// <p>The map has the following format:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li> 
-    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li> 
+    /// <p>The parameters passed to the task when it was run.</p> <note>
+    /// <p> <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
+    /// </note>
+    /// <p>The map has the following format:</p>
+    /// <ul>
+    /// <li> <p> <code>Key</code>: string, between 1 and 255 characters</p> </li>
+    /// <li> <p> <code>Value</code>: an array of strings, each between 1 and 255 characters</p> </li>
     /// </ul>
-    pub fn set_task_parameters(mut self, input: std::option::Option<std::vec::Vec<std::collections::HashMap<std::string::String, crate::types::MaintenanceWindowTaskParameterValueExpression>>>) -> Self {
-        self.task_parameters = input; self
+    pub fn set_task_parameters(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<
+                std::collections::HashMap<
+                    std::string::String,
+                    crate::types::MaintenanceWindowTaskParameterValueExpression,
+                >,
+            >,
+        >,
+    ) -> Self {
+        self.task_parameters = input;
+        self
     }
     /// <p>The priority of the task.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -263,7 +316,8 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     }
     /// <p>The priority of the task.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input; self
+        self.priority = input;
+        self
     }
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
     pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -272,7 +326,8 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     }
     /// <p>The defined maximum number of task executions that could be run in parallel.</p>
     pub fn set_max_concurrency(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max_concurrency = input; self
+        self.max_concurrency = input;
+        self
     }
     /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
     pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
@@ -281,7 +336,8 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     }
     /// <p>The defined maximum number of task execution errors allowed before scheduling of the task execution would have been stopped.</p>
     pub fn set_max_errors(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max_errors = input; self
+        self.max_errors = input;
+        self
     }
     /// <p>The status of the task.</p>
     pub fn status(mut self, input: crate::types::MaintenanceWindowExecutionStatus) -> Self {
@@ -289,8 +345,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The status of the task.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::MaintenanceWindowExecutionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::MaintenanceWindowExecutionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
     pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
@@ -299,7 +359,8 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     }
     /// <p>The details explaining the status. Not available for all status values.</p>
     pub fn set_status_details(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_details = input; self
+        self.status_details = input;
+        self
     }
     /// <p>The time the task execution started.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -307,8 +368,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The time the task execution started.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The time the task execution completed.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -317,7 +382,8 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     }
     /// <p>The time the task execution completed.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
     pub fn alarm_configuration(mut self, input: crate::types::AlarmConfiguration) -> Self {
@@ -325,8 +391,12 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
         self
     }
     /// <p>The details for the CloudWatch alarm you applied to your maintenance window task.</p>
-    pub fn set_alarm_configuration(mut self, input: std::option::Option<crate::types::AlarmConfiguration>) -> Self {
-        self.alarm_configuration = input; self
+    pub fn set_alarm_configuration(
+        mut self,
+        input: std::option::Option<crate::types::AlarmConfiguration>,
+    ) -> Self {
+        self.alarm_configuration = input;
+        self
     }
     /// Appends an item to `triggered_alarms`.
     ///
@@ -335,25 +405,29 @@ impl GetMaintenanceWindowExecutionTaskOutputBuilder {
     /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
     pub fn triggered_alarms(mut self, input: crate::types::AlarmStateInformation) -> Self {
         let mut v = self.triggered_alarms.unwrap_or_default();
-                        v.push(input);
-                        self.triggered_alarms = Some(v);
-                        self
+        v.push(input);
+        self.triggered_alarms = Some(v);
+        self
     }
     /// <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
-    pub fn set_triggered_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::types::AlarmStateInformation>>) -> Self {
-        self.triggered_alarms = input; self
+    pub fn set_triggered_alarms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AlarmStateInformation>>,
+    ) -> Self {
+        self.triggered_alarms = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetMaintenanceWindowExecutionTaskOutput`](crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput).
-    pub fn build(self) -> crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput {
+    pub fn build(self) -> crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput{
         crate::operation::get_maintenance_window_execution_task::GetMaintenanceWindowExecutionTaskOutput {
             window_execution_id: self.window_execution_id
             ,
@@ -412,4 +486,3 @@ impl std::fmt::Debug for GetMaintenanceWindowExecutionTaskOutputBuilder {
         formatter.finish()
     }
 }
-

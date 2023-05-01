@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSolutionVersionInput  {
+pub struct DescribeSolutionVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
     #[doc(hidden)]
     pub solution_version_arn: std::option::Option<std::string::String>,
 }
 impl DescribeSolutionVersionInput {
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
 }
 impl DescribeSolutionVersionInput {
     /// Creates a new builder-style object to manufacture [`DescribeSolutionVersionInput`](crate::operation::describe_solution_version::DescribeSolutionVersionInput).
-    pub fn builder() -> crate::operation::describe_solution_version::builders::DescribeSolutionVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_solution_version::builders::DescribeSolutionVersionInputBuilder
+    {
         crate::operation::describe_solution_version::builders::DescribeSolutionVersionInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeSolutionVersionInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version.</p>
-    pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.solution_version_arn = input; self
+    pub fn set_solution_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.solution_version_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSolutionVersionInput`](crate::operation::describe_solution_version::DescribeSolutionVersionInput).
-    pub fn build(self) -> Result<crate::operation::describe_solution_version::DescribeSolutionVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_solution_version::DescribeSolutionVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_solution_version::DescribeSolutionVersionInput {
-                solution_version_arn: self.solution_version_arn
-                ,
-            }
+                solution_version_arn: self.solution_version_arn,
+            },
         )
     }
 }
-

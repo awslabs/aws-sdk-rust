@@ -3,14 +3,14 @@
 /// <p>Describes the root volume for a WorkSpace bundle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RootStorage  {
+pub struct RootStorage {
     /// <p>The size of the root volume.</p>
     #[doc(hidden)]
     pub capacity: std::option::Option<std::string::String>,
 }
 impl RootStorage {
     /// <p>The size of the root volume.</p>
-    pub fn capacity(&self) -> std::option::Option<& str> {
+    pub fn capacity(&self) -> std::option::Option<&str> {
         self.capacity.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl RootStorageBuilder {
     }
     /// <p>The size of the root volume.</p>
     pub fn set_capacity(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.capacity = input; self
+        self.capacity = input;
+        self
     }
     /// Consumes the builder and constructs a [`RootStorage`](crate::types::RootStorage).
     pub fn build(self) -> crate::types::RootStorage {
         crate::types::RootStorage {
-            capacity: self.capacity
-            ,
+            capacity: self.capacity,
         }
     }
 }
-

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportSnapshotInput  {
+pub struct ExportSnapshotInput {
     /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
     #[doc(hidden)]
     pub source_snapshot_name: std::option::Option<std::string::String>,
 }
 impl ExportSnapshotInput {
     /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-    pub fn source_snapshot_name(&self) -> std::option::Option<& str> {
+    pub fn source_snapshot_name(&self) -> std::option::Option<&str> {
         self.source_snapshot_name.as_deref()
     }
 }
@@ -33,17 +33,22 @@ impl ExportSnapshotInputBuilder {
         self
     }
     /// <p>The name of the instance or disk snapshot to be exported to Amazon EC2.</p>
-    pub fn set_source_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_snapshot_name = input; self
+    pub fn set_source_snapshot_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_snapshot_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExportSnapshotInput`](crate::operation::export_snapshot::ExportSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::export_snapshot::ExportSnapshotInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::export_snapshot::ExportSnapshotInput {
-                source_snapshot_name: self.source_snapshot_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::export_snapshot::ExportSnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::export_snapshot::ExportSnapshotInput {
+            source_snapshot_name: self.source_snapshot_name,
+        })
     }
 }
-

@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutManagedInsightRulesInput  {
+pub struct PutManagedInsightRulesInput {
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
     #[doc(hidden)]
     pub managed_rules: std::option::Option<std::vec::Vec<crate::types::ManagedRule>>,
 }
 impl PutManagedInsightRulesInput {
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
-    pub fn managed_rules(&self) -> std::option::Option<& [crate::types::ManagedRule]> {
+    pub fn managed_rules(&self) -> std::option::Option<&[crate::types::ManagedRule]> {
         self.managed_rules.as_deref()
     }
 }
 impl PutManagedInsightRulesInput {
     /// Creates a new builder-style object to manufacture [`PutManagedInsightRulesInput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput).
-    pub fn builder() -> crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder
+    {
         crate::operation::put_managed_insight_rules::builders::PutManagedInsightRulesInputBuilder::default()
     }
 }
@@ -34,22 +36,29 @@ impl PutManagedInsightRulesInputBuilder {
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
     pub fn managed_rules(mut self, input: crate::types::ManagedRule) -> Self {
         let mut v = self.managed_rules.unwrap_or_default();
-                        v.push(input);
-                        self.managed_rules = Some(v);
-                        self
+        v.push(input);
+        self.managed_rules = Some(v);
+        self
     }
     /// <p> A list of <code>ManagedRules</code> to enable. </p>
-    pub fn set_managed_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::ManagedRule>>) -> Self {
-        self.managed_rules = input; self
+    pub fn set_managed_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ManagedRule>>,
+    ) -> Self {
+        self.managed_rules = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutManagedInsightRulesInput`](crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput).
-    pub fn build(self) -> Result<crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_managed_insight_rules::PutManagedInsightRulesInput {
-                managed_rules: self.managed_rules
-                ,
-            }
+                managed_rules: self.managed_rules,
+            },
         )
     }
 }
-

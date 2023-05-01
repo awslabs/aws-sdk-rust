@@ -3,7 +3,7 @@
 /// Settings related to DVB-Sub captions. Set up DVB-Sub captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/dvb-sub-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to DVB_SUB.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DvbSubDestinationSettings  {
+pub struct DvbSubDestinationSettings {
     /// Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Within your job settings, all of your DVB-Sub settings must be identical.
     #[doc(hidden)]
     pub alignment: std::option::Option<crate::types::DvbSubtitleAlignment>,
@@ -88,15 +88,19 @@ pub struct DvbSubDestinationSettings  {
 }
 impl DvbSubDestinationSettings {
     /// Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn alignment(&self) -> std::option::Option<& crate::types::DvbSubtitleAlignment> {
+    pub fn alignment(&self) -> std::option::Option<&crate::types::DvbSubtitleAlignment> {
         self.alignment.as_ref()
     }
     /// Ignore this setting unless Style Passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
-    pub fn apply_font_color(&self) -> std::option::Option<& crate::types::DvbSubtitleApplyFontColor> {
+    pub fn apply_font_color(
+        &self,
+    ) -> std::option::Option<&crate::types::DvbSubtitleApplyFontColor> {
         self.apply_font_color.as_ref()
     }
     /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
-    pub fn background_color(&self) -> std::option::Option<& crate::types::DvbSubtitleBackgroundColor> {
+    pub fn background_color(
+        &self,
+    ) -> std::option::Option<&crate::types::DvbSubtitleBackgroundColor> {
         self.background_color.as_ref()
     }
     /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions. Within your job settings, all of your DVB-Sub settings must be identical.
@@ -104,7 +108,7 @@ impl DvbSubDestinationSettings {
         self.background_opacity
     }
     /// Specify how MediaConvert handles the display definition segment (DDS). To exclude the DDS from this set of captions: Keep the default, None. To include the DDS: Choose Specified. When you do, also specify the offset coordinates of the display window with DDS x-coordinate and DDS y-coordinate. To include the DDS, but not include display window data: Choose No display window. When you do, you can write position metadata to the page composition segment (PCS) with DDS x-coordinate and DDS y-coordinate. For video resolutions with a height of 576 pixels or less, MediaConvert doesn't include the DDS, regardless of the value you choose for DDS handling. All burn-in and DVB-Sub font settings must match.
-    pub fn dds_handling(&self) -> std::option::Option<& crate::types::DvbddsHandling> {
+    pub fn dds_handling(&self) -> std::option::Option<&crate::types::DvbddsHandling> {
         self.dds_handling.as_ref()
     }
     /// Use this setting, along with DDS y-coordinate (ddsYCoordinate), to specify the upper left corner of the display definition segment (DDS) display window. With this setting, specify the distance, in pixels, between the left side of the frame and the left side of the DDS display window. Keep the default value, 0, to have MediaConvert automatically choose this offset. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). MediaConvert uses these values to determine whether to write page position data to the DDS or to the page composition segment (PCS). All burn-in and DVB-Sub font settings must match.
@@ -116,11 +120,11 @@ impl DvbSubDestinationSettings {
         self.dds_y_coordinate
     }
     /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
-    pub fn fallback_font(&self) -> std::option::Option<& crate::types::DvbSubSubtitleFallbackFont> {
+    pub fn fallback_font(&self) -> std::option::Option<&crate::types::DvbSubSubtitleFallbackFont> {
         self.fallback_font.as_ref()
     }
     /// Specify the color of the captions text. Leave Font color (FontColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn font_color(&self) -> std::option::Option<& crate::types::DvbSubtitleFontColor> {
+    pub fn font_color(&self) -> std::option::Option<&crate::types::DvbSubtitleFontColor> {
         self.font_color.as_ref()
     }
     /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent. Within your job settings, all of your DVB-Sub settings must be identical.
@@ -132,7 +136,7 @@ impl DvbSubDestinationSettings {
         self.font_resolution
     }
     /// Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn font_script(&self) -> std::option::Option<& crate::types::FontScript> {
+    pub fn font_script(&self) -> std::option::Option<&crate::types::FontScript> {
         self.font_script.as_ref()
     }
     /// Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size. Within your job settings, all of your DVB-Sub settings must be identical.
@@ -144,11 +148,11 @@ impl DvbSubDestinationSettings {
         self.height
     }
     /// Ignore this setting unless your Font color is set to Hex. Enter either six or eight hexidecimal digits, representing red, green, and blue, with two optional extra digits for alpha. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
-    pub fn hex_font_color(&self) -> std::option::Option<& str> {
+    pub fn hex_font_color(&self) -> std::option::Option<&str> {
         self.hex_font_color.as_deref()
     }
     /// Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font outline color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn outline_color(&self) -> std::option::Option<& crate::types::DvbSubtitleOutlineColor> {
+    pub fn outline_color(&self) -> std::option::Option<&crate::types::DvbSubtitleOutlineColor> {
         self.outline_color.as_ref()
     }
     /// Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set Style passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
@@ -156,7 +160,7 @@ impl DvbSubDestinationSettings {
         self.outline_size
     }
     /// Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn shadow_color(&self) -> std::option::Option<& crate::types::DvbSubtitleShadowColor> {
+    pub fn shadow_color(&self) -> std::option::Option<&crate::types::DvbSubtitleShadowColor> {
         self.shadow_color.as_ref()
     }
     /// Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to pass through the shadow style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all shadows from your output captions. Within your job settings, all of your DVB-Sub settings must be identical.
@@ -172,15 +176,19 @@ impl DvbSubDestinationSettings {
         self.shadow_y_offset
     }
     /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
-    pub fn style_passthrough(&self) -> std::option::Option<& crate::types::DvbSubtitleStylePassthrough> {
+    pub fn style_passthrough(
+        &self,
+    ) -> std::option::Option<&crate::types::DvbSubtitleStylePassthrough> {
         self.style_passthrough.as_ref()
     }
     /// Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
-    pub fn subtitling_type(&self) -> std::option::Option<& crate::types::DvbSubtitlingType> {
+    pub fn subtitling_type(&self) -> std::option::Option<&crate::types::DvbSubtitlingType> {
         self.subtitling_type.as_ref()
     }
     /// Specify whether the Text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn teletext_spacing(&self) -> std::option::Option<& crate::types::DvbSubtitleTeletextSpacing> {
+    pub fn teletext_spacing(
+        &self,
+    ) -> std::option::Option<&crate::types::DvbSubtitleTeletextSpacing> {
         self.teletext_spacing.as_ref()
     }
     /// Specify the width, in pixels, of this set of DVB-Sub captions. The default value is 720 pixels. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and DVB-Sub font settings must match.
@@ -242,8 +250,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn set_alignment(mut self, input: std::option::Option<crate::types::DvbSubtitleAlignment>) -> Self {
-        self.alignment = input; self
+    pub fn set_alignment(
+        mut self,
+        input: std::option::Option<crate::types::DvbSubtitleAlignment>,
+    ) -> Self {
+        self.alignment = input;
+        self
     }
     /// Ignore this setting unless Style Passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
     pub fn apply_font_color(mut self, input: crate::types::DvbSubtitleApplyFontColor) -> Self {
@@ -251,8 +263,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Ignore this setting unless Style Passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
-    pub fn set_apply_font_color(mut self, input: std::option::Option<crate::types::DvbSubtitleApplyFontColor>) -> Self {
-        self.apply_font_color = input; self
+    pub fn set_apply_font_color(
+        mut self,
+        input: std::option::Option<crate::types::DvbSubtitleApplyFontColor>,
+    ) -> Self {
+        self.apply_font_color = input;
+        self
     }
     /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
     pub fn background_color(mut self, input: crate::types::DvbSubtitleBackgroundColor) -> Self {
@@ -260,8 +276,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
-    pub fn set_background_color(mut self, input: std::option::Option<crate::types::DvbSubtitleBackgroundColor>) -> Self {
-        self.background_color = input; self
+    pub fn set_background_color(
+        mut self,
+        input: std::option::Option<crate::types::DvbSubtitleBackgroundColor>,
+    ) -> Self {
+        self.background_color = input;
+        self
     }
     /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn background_opacity(mut self, input: i32) -> Self {
@@ -270,7 +290,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the opacity of the background rectangle. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to enabled, leave blank to pass through the background style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all backgrounds from your output captions. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_background_opacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.background_opacity = input; self
+        self.background_opacity = input;
+        self
     }
     /// Specify how MediaConvert handles the display definition segment (DDS). To exclude the DDS from this set of captions: Keep the default, None. To include the DDS: Choose Specified. When you do, also specify the offset coordinates of the display window with DDS x-coordinate and DDS y-coordinate. To include the DDS, but not include display window data: Choose No display window. When you do, you can write position metadata to the page composition segment (PCS) with DDS x-coordinate and DDS y-coordinate. For video resolutions with a height of 576 pixels or less, MediaConvert doesn't include the DDS, regardless of the value you choose for DDS handling. All burn-in and DVB-Sub font settings must match.
     pub fn dds_handling(mut self, input: crate::types::DvbddsHandling) -> Self {
@@ -278,8 +299,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Specify how MediaConvert handles the display definition segment (DDS). To exclude the DDS from this set of captions: Keep the default, None. To include the DDS: Choose Specified. When you do, also specify the offset coordinates of the display window with DDS x-coordinate and DDS y-coordinate. To include the DDS, but not include display window data: Choose No display window. When you do, you can write position metadata to the page composition segment (PCS) with DDS x-coordinate and DDS y-coordinate. For video resolutions with a height of 576 pixels or less, MediaConvert doesn't include the DDS, regardless of the value you choose for DDS handling. All burn-in and DVB-Sub font settings must match.
-    pub fn set_dds_handling(mut self, input: std::option::Option<crate::types::DvbddsHandling>) -> Self {
-        self.dds_handling = input; self
+    pub fn set_dds_handling(
+        mut self,
+        input: std::option::Option<crate::types::DvbddsHandling>,
+    ) -> Self {
+        self.dds_handling = input;
+        self
     }
     /// Use this setting, along with DDS y-coordinate (ddsYCoordinate), to specify the upper left corner of the display definition segment (DDS) display window. With this setting, specify the distance, in pixels, between the left side of the frame and the left side of the DDS display window. Keep the default value, 0, to have MediaConvert automatically choose this offset. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). MediaConvert uses these values to determine whether to write page position data to the DDS or to the page composition segment (PCS). All burn-in and DVB-Sub font settings must match.
     pub fn dds_x_coordinate(mut self, input: i32) -> Self {
@@ -288,7 +313,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Use this setting, along with DDS y-coordinate (ddsYCoordinate), to specify the upper left corner of the display definition segment (DDS) display window. With this setting, specify the distance, in pixels, between the left side of the frame and the left side of the DDS display window. Keep the default value, 0, to have MediaConvert automatically choose this offset. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). MediaConvert uses these values to determine whether to write page position data to the DDS or to the page composition segment (PCS). All burn-in and DVB-Sub font settings must match.
     pub fn set_dds_x_coordinate(mut self, input: std::option::Option<i32>) -> Self {
-        self.dds_x_coordinate = input; self
+        self.dds_x_coordinate = input;
+        self
     }
     /// Use this setting, along with DDS x-coordinate (ddsXCoordinate), to specify the upper left corner of the display definition segment (DDS) display window. With this setting, specify the distance, in pixels, between the top of the frame and the top of the DDS display window. Keep the default value, 0, to have MediaConvert automatically choose this offset. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). MediaConvert uses these values to determine whether to write page position data to the DDS or to the page composition segment (PCS). All burn-in and DVB-Sub font settings must match.
     pub fn dds_y_coordinate(mut self, input: i32) -> Self {
@@ -297,7 +323,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Use this setting, along with DDS x-coordinate (ddsXCoordinate), to specify the upper left corner of the display definition segment (DDS) display window. With this setting, specify the distance, in pixels, between the top of the frame and the top of the DDS display window. Keep the default value, 0, to have MediaConvert automatically choose this offset. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). MediaConvert uses these values to determine whether to write page position data to the DDS or to the page composition segment (PCS). All burn-in and DVB-Sub font settings must match.
     pub fn set_dds_y_coordinate(mut self, input: std::option::Option<i32>) -> Self {
-        self.dds_y_coordinate = input; self
+        self.dds_y_coordinate = input;
+        self
     }
     /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
     pub fn fallback_font(mut self, input: crate::types::DvbSubSubtitleFallbackFont) -> Self {
@@ -305,8 +332,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
-    pub fn set_fallback_font(mut self, input: std::option::Option<crate::types::DvbSubSubtitleFallbackFont>) -> Self {
-        self.fallback_font = input; self
+    pub fn set_fallback_font(
+        mut self,
+        input: std::option::Option<crate::types::DvbSubSubtitleFallbackFont>,
+    ) -> Self {
+        self.fallback_font = input;
+        self
     }
     /// Specify the color of the captions text. Leave Font color (FontColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn font_color(mut self, input: crate::types::DvbSubtitleFontColor) -> Self {
@@ -314,8 +345,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Specify the color of the captions text. Leave Font color (FontColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn set_font_color(mut self, input: std::option::Option<crate::types::DvbSubtitleFontColor>) -> Self {
-        self.font_color = input; self
+    pub fn set_font_color(
+        mut self,
+        input: std::option::Option<crate::types::DvbSubtitleFontColor>,
+    ) -> Self {
+        self.font_color = input;
+        self
     }
     /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn font_opacity(mut self, input: i32) -> Self {
@@ -324,7 +359,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the opacity of the burned-in captions. 255 is opaque; 0 is transparent. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_font_opacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.font_opacity = input; self
+        self.font_opacity = input;
+        self
     }
     /// Specify the Font resolution (FontResolution) in DPI (dots per inch). Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn font_resolution(mut self, input: i32) -> Self {
@@ -333,7 +369,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the Font resolution (FontResolution) in DPI (dots per inch). Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_font_resolution(mut self, input: std::option::Option<i32>) -> Self {
-        self.font_resolution = input; self
+        self.font_resolution = input;
+        self
     }
     /// Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn font_script(mut self, input: crate::types::FontScript) -> Self {
@@ -342,7 +379,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Set Font script (FontScript) to Automatically determined (AUTOMATIC), or leave blank, to automatically determine the font script in your input captions. Otherwise, set to Simplified Chinese (HANS) or Traditional Chinese (HANT) if your input font script uses Simplified or Traditional Chinese. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_font_script(mut self, input: std::option::Option<crate::types::FontScript>) -> Self {
-        self.font_script = input; self
+        self.font_script = input;
+        self
     }
     /// Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn font_size(mut self, input: i32) -> Self {
@@ -351,7 +389,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the Font size (FontSize) in pixels. Must be a positive integer. Set to 0, or leave blank, for automatic font size. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_font_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.font_size = input; self
+        self.font_size = input;
+        self
     }
     /// Specify the height, in pixels, of this set of DVB-Sub captions. The default value is 576 pixels. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and DVB-Sub font settings must match.
     pub fn height(mut self, input: i32) -> Self {
@@ -360,7 +399,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the height, in pixels, of this set of DVB-Sub captions. The default value is 576 pixels. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and DVB-Sub font settings must match.
     pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
-        self.height = input; self
+        self.height = input;
+        self
     }
     /// Ignore this setting unless your Font color is set to Hex. Enter either six or eight hexidecimal digits, representing red, green, and blue, with two optional extra digits for alpha. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
     pub fn hex_font_color(mut self, input: impl Into<std::string::String>) -> Self {
@@ -369,7 +409,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Ignore this setting unless your Font color is set to Hex. Enter either six or eight hexidecimal digits, representing red, green, and blue, with two optional extra digits for alpha. For example a value of 1122AABB is a red value of 0x11, a green value of 0x22, a blue value of 0xAA, and an alpha value of 0xBB.
     pub fn set_hex_font_color(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hex_font_color = input; self
+        self.hex_font_color = input;
+        self
     }
     /// Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font outline color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn outline_color(mut self, input: crate::types::DvbSubtitleOutlineColor) -> Self {
@@ -377,8 +418,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font outline color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn set_outline_color(mut self, input: std::option::Option<crate::types::DvbSubtitleOutlineColor>) -> Self {
-        self.outline_color = input; self
+    pub fn set_outline_color(
+        mut self,
+        input: std::option::Option<crate::types::DvbSubtitleOutlineColor>,
+    ) -> Self {
+        self.outline_color = input;
+        self
     }
     /// Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set Style passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn outline_size(mut self, input: i32) -> Self {
@@ -387,7 +432,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the Outline size (OutlineSize) of the caption text, in pixels. Leave Outline size blank and set Style passthrough (StylePassthrough) to enabled to use the outline size data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_outline_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.outline_size = input; self
+        self.outline_size = input;
+        self
     }
     /// Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn shadow_color(mut self, input: crate::types::DvbSubtitleShadowColor) -> Self {
@@ -395,8 +441,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn set_shadow_color(mut self, input: std::option::Option<crate::types::DvbSubtitleShadowColor>) -> Self {
-        self.shadow_color = input; self
+    pub fn set_shadow_color(
+        mut self,
+        input: std::option::Option<crate::types::DvbSubtitleShadowColor>,
+    ) -> Self {
+        self.shadow_color = input;
+        self
     }
     /// Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to pass through the shadow style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all shadows from your output captions. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn shadow_opacity(mut self, input: i32) -> Self {
@@ -405,7 +455,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the opacity of the shadow. Enter a value from 0 to 255, where 0 is transparent and 255 is opaque. If Style passthrough (StylePassthrough) is set to Enabled, leave Shadow opacity (ShadowOpacity) blank to pass through the shadow style information in your input captions to your output captions. If Style passthrough is set to disabled, leave blank to use a value of 0 and remove all shadows from your output captions. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_shadow_opacity(mut self, input: std::option::Option<i32>) -> Self {
-        self.shadow_opacity = input; self
+        self.shadow_opacity = input;
+        self
     }
     /// Specify the horizontal offset of the shadow, relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn shadow_x_offset(mut self, input: i32) -> Self {
@@ -414,7 +465,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the horizontal offset of the shadow, relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_shadow_x_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.shadow_x_offset = input; self
+        self.shadow_x_offset = input;
+        self
     }
     /// Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn shadow_y_offset(mut self, input: i32) -> Self {
@@ -423,7 +475,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. Leave Shadow y-offset (ShadowYOffset) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow y-offset data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_shadow_y_offset(mut self, input: std::option::Option<i32>) -> Self {
-        self.shadow_y_offset = input; self
+        self.shadow_y_offset = input;
+        self
     }
     /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
     pub fn style_passthrough(mut self, input: crate::types::DvbSubtitleStylePassthrough) -> Self {
@@ -431,8 +484,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
-    pub fn set_style_passthrough(mut self, input: std::option::Option<crate::types::DvbSubtitleStylePassthrough>) -> Self {
-        self.style_passthrough = input; self
+    pub fn set_style_passthrough(
+        mut self,
+        input: std::option::Option<crate::types::DvbSubtitleStylePassthrough>,
+    ) -> Self {
+        self.style_passthrough = input;
+        self
     }
     /// Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
     pub fn subtitling_type(mut self, input: crate::types::DvbSubtitlingType) -> Self {
@@ -440,8 +497,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
-    pub fn set_subtitling_type(mut self, input: std::option::Option<crate::types::DvbSubtitlingType>) -> Self {
-        self.subtitling_type = input; self
+    pub fn set_subtitling_type(
+        mut self,
+        input: std::option::Option<crate::types::DvbSubtitlingType>,
+    ) -> Self {
+        self.subtitling_type = input;
+        self
     }
     /// Specify whether the Text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn teletext_spacing(mut self, input: crate::types::DvbSubtitleTeletextSpacing) -> Self {
@@ -449,8 +510,12 @@ impl DvbSubDestinationSettingsBuilder {
         self
     }
     /// Specify whether the Text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
-    pub fn set_teletext_spacing(mut self, input: std::option::Option<crate::types::DvbSubtitleTeletextSpacing>) -> Self {
-        self.teletext_spacing = input; self
+    pub fn set_teletext_spacing(
+        mut self,
+        input: std::option::Option<crate::types::DvbSubtitleTeletextSpacing>,
+    ) -> Self {
+        self.teletext_spacing = input;
+        self
     }
     /// Specify the width, in pixels, of this set of DVB-Sub captions. The default value is 720 pixels. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and DVB-Sub font settings must match.
     pub fn width(mut self, input: i32) -> Self {
@@ -459,7 +524,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the width, in pixels, of this set of DVB-Sub captions. The default value is 720 pixels. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). All burn-in and DVB-Sub font settings must match.
     pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
-        self.width = input; self
+        self.width = input;
+        self
     }
     /// Specify the horizontal position (XPosition) of the captions, relative to the left side of the outputin pixels. A value of 10 would result in the captions starting 10 pixels from the left ofthe output. If no explicit x_position is provided, the horizontal caption position will bedetermined by the alignment parameter. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn x_position(mut self, input: i32) -> Self {
@@ -468,7 +534,8 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the horizontal position (XPosition) of the captions, relative to the left side of the outputin pixels. A value of 10 would result in the captions starting 10 pixels from the left ofthe output. If no explicit x_position is provided, the horizontal caption position will bedetermined by the alignment parameter. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_x_position(mut self, input: std::option::Option<i32>) -> Self {
-        self.x_position = input; self
+        self.x_position = input;
+        self
     }
     /// Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the caption will be positioned towards the bottom of the output. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn y_position(mut self, input: i32) -> Self {
@@ -477,80 +544,39 @@ impl DvbSubDestinationSettingsBuilder {
     }
     /// Specify the vertical position (YPosition) of the captions, relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit y_position is provided, the caption will be positioned towards the bottom of the output. Within your job settings, all of your DVB-Sub settings must be identical.
     pub fn set_y_position(mut self, input: std::option::Option<i32>) -> Self {
-        self.y_position = input; self
+        self.y_position = input;
+        self
     }
     /// Consumes the builder and constructs a [`DvbSubDestinationSettings`](crate::types::DvbSubDestinationSettings).
     pub fn build(self) -> crate::types::DvbSubDestinationSettings {
         crate::types::DvbSubDestinationSettings {
-            alignment: self.alignment
-            ,
-            apply_font_color: self.apply_font_color
-            ,
-            background_color: self.background_color
-            ,
-            background_opacity: self.background_opacity
-                .unwrap_or_default()
-            ,
-            dds_handling: self.dds_handling
-            ,
-            dds_x_coordinate: self.dds_x_coordinate
-                .unwrap_or_default()
-            ,
-            dds_y_coordinate: self.dds_y_coordinate
-                .unwrap_or_default()
-            ,
-            fallback_font: self.fallback_font
-            ,
-            font_color: self.font_color
-            ,
-            font_opacity: self.font_opacity
-                .unwrap_or_default()
-            ,
-            font_resolution: self.font_resolution
-                .unwrap_or_default()
-            ,
-            font_script: self.font_script
-            ,
-            font_size: self.font_size
-                .unwrap_or_default()
-            ,
-            height: self.height
-                .unwrap_or_default()
-            ,
-            hex_font_color: self.hex_font_color
-            ,
-            outline_color: self.outline_color
-            ,
-            outline_size: self.outline_size
-                .unwrap_or_default()
-            ,
-            shadow_color: self.shadow_color
-            ,
-            shadow_opacity: self.shadow_opacity
-                .unwrap_or_default()
-            ,
-            shadow_x_offset: self.shadow_x_offset
-                .unwrap_or_default()
-            ,
-            shadow_y_offset: self.shadow_y_offset
-                .unwrap_or_default()
-            ,
-            style_passthrough: self.style_passthrough
-            ,
-            subtitling_type: self.subtitling_type
-            ,
-            teletext_spacing: self.teletext_spacing
-            ,
-            width: self.width
-                .unwrap_or_default()
-            ,
-            x_position: self.x_position
-                .unwrap_or_default()
-            ,
-            y_position: self.y_position
-                .unwrap_or_default()
-            ,
+            alignment: self.alignment,
+            apply_font_color: self.apply_font_color,
+            background_color: self.background_color,
+            background_opacity: self.background_opacity.unwrap_or_default(),
+            dds_handling: self.dds_handling,
+            dds_x_coordinate: self.dds_x_coordinate.unwrap_or_default(),
+            dds_y_coordinate: self.dds_y_coordinate.unwrap_or_default(),
+            fallback_font: self.fallback_font,
+            font_color: self.font_color,
+            font_opacity: self.font_opacity.unwrap_or_default(),
+            font_resolution: self.font_resolution.unwrap_or_default(),
+            font_script: self.font_script,
+            font_size: self.font_size.unwrap_or_default(),
+            height: self.height.unwrap_or_default(),
+            hex_font_color: self.hex_font_color,
+            outline_color: self.outline_color,
+            outline_size: self.outline_size.unwrap_or_default(),
+            shadow_color: self.shadow_color,
+            shadow_opacity: self.shadow_opacity.unwrap_or_default(),
+            shadow_x_offset: self.shadow_x_offset.unwrap_or_default(),
+            shadow_y_offset: self.shadow_y_offset.unwrap_or_default(),
+            style_passthrough: self.style_passthrough,
+            subtitling_type: self.subtitling_type,
+            teletext_spacing: self.teletext_spacing,
+            width: self.width.unwrap_or_default(),
+            x_position: self.x_position.unwrap_or_default(),
+            y_position: self.y_position.unwrap_or_default(),
         }
     }
 }
-

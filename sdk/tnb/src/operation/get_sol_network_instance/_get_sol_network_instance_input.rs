@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSolNetworkInstanceInput  {
+pub struct GetSolNetworkInstanceInput {
     /// <p>ID of the network instance.</p>
     #[doc(hidden)]
     pub ns_instance_id: std::option::Option<std::string::String>,
 }
 impl GetSolNetworkInstanceInput {
     /// <p>ID of the network instance.</p>
-    pub fn ns_instance_id(&self) -> std::option::Option<& str> {
+    pub fn ns_instance_id(&self) -> std::option::Option<&str> {
         self.ns_instance_id.as_deref()
     }
 }
 impl GetSolNetworkInstanceInput {
     /// Creates a new builder-style object to manufacture [`GetSolNetworkInstanceInput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput).
-    pub fn builder() -> crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceInputBuilder
+    {
         crate::operation::get_sol_network_instance::builders::GetSolNetworkInstanceInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl GetSolNetworkInstanceInputBuilder {
     }
     /// <p>ID of the network instance.</p>
     pub fn set_ns_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ns_instance_id = input; self
+        self.ns_instance_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSolNetworkInstanceInput`](crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput).
-    pub fn build(self) -> Result<crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_sol_network_instance::GetSolNetworkInstanceInput {
-                ns_instance_id: self.ns_instance_id
-                ,
-            }
+                ns_instance_id: self.ns_instance_id,
+            },
         )
     }
 }
-

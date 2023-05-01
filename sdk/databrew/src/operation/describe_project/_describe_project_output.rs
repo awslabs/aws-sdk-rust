@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProjectOutput  {
+pub struct DescribeProjectOutput {
     /// <p>The date and time that the project was created.</p>
     #[doc(hidden)]
     pub create_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -35,12 +35,13 @@ pub struct DescribeProjectOutput  {
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Metadata tags associated with this project.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Describes the current state of the session:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li> 
-    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li> 
-    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li> 
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Describes the current state of the session:</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
+    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
+    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub session_status: std::option::Option<crate::types::SessionStatus>,
@@ -54,72 +55,75 @@ pub struct DescribeProjectOutput  {
 }
 impl DescribeProjectOutput {
     /// <p>The date and time that the project was created.</p>
-    pub fn create_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_date.as_ref()
     }
     /// <p>The identifier (user name) of the user who created the project.</p>
-    pub fn created_by(&self) -> std::option::Option<& str> {
+    pub fn created_by(&self) -> std::option::Option<&str> {
         self.created_by.as_deref()
     }
     /// <p>The dataset associated with the project.</p>
-    pub fn dataset_name(&self) -> std::option::Option<& str> {
+    pub fn dataset_name(&self) -> std::option::Option<&str> {
         self.dataset_name.as_deref()
     }
     /// <p>The date and time that the project was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The identifier (user name) of the user who last modified the project.</p>
-    pub fn last_modified_by(&self) -> std::option::Option<& str> {
+    pub fn last_modified_by(&self) -> std::option::Option<&str> {
         self.last_modified_by.as_deref()
     }
     /// <p>The name of the project.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The recipe associated with this job.</p>
-    pub fn recipe_name(&self) -> std::option::Option<& str> {
+    pub fn recipe_name(&self) -> std::option::Option<&str> {
         self.recipe_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
-    pub fn sample(&self) -> std::option::Option<& crate::types::Sample> {
+    pub fn sample(&self) -> std::option::Option<&crate::types::Sample> {
         self.sample.as_ref()
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>Metadata tags associated with this project.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
-    /// <p>Describes the current state of the session:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li> 
-    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li> 
-    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li> 
+    /// <p>Describes the current state of the session:</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
+    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
+    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
     /// </ul>
-    pub fn session_status(&self) -> std::option::Option<& crate::types::SessionStatus> {
+    pub fn session_status(&self) -> std::option::Option<&crate::types::SessionStatus> {
         self.session_status.as_ref()
     }
     /// <p>The identifier (user name) of the user that opened the project for use. </p>
-    pub fn opened_by(&self) -> std::option::Option<& str> {
+    pub fn opened_by(&self) -> std::option::Option<&str> {
         self.opened_by.as_deref()
     }
     /// <p>The date and time when the project was opened. </p>
-    pub fn open_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn open_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.open_date.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProjectOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeProjectOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn builder() -> crate::operation::describe_project::builders::DescribeProjectOutputBuilder {
@@ -141,7 +145,8 @@ pub struct DescribeProjectOutputBuilder {
     pub(crate) resource_arn: std::option::Option<std::string::String>,
     pub(crate) sample: std::option::Option<crate::types::Sample>,
     pub(crate) role_arn: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) session_status: std::option::Option<crate::types::SessionStatus>,
     pub(crate) opened_by: std::option::Option<std::string::String>,
     pub(crate) open_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -154,8 +159,12 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The date and time that the project was created.</p>
-    pub fn set_create_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_date = input; self
+    pub fn set_create_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_date = input;
+        self
     }
     /// <p>The identifier (user name) of the user who created the project.</p>
     pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -164,7 +173,8 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The identifier (user name) of the user who created the project.</p>
     pub fn set_created_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_by = input; self
+        self.created_by = input;
+        self
     }
     /// <p>The dataset associated with the project.</p>
     pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -173,7 +183,8 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The dataset associated with the project.</p>
     pub fn set_dataset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_name = input; self
+        self.dataset_name = input;
+        self
     }
     /// <p>The date and time that the project was last modified.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -181,8 +192,12 @@ impl DescribeProjectOutputBuilder {
         self
     }
     /// <p>The date and time that the project was last modified.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     /// <p>The identifier (user name) of the user who last modified the project.</p>
     pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -191,7 +206,8 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The identifier (user name) of the user who last modified the project.</p>
     pub fn set_last_modified_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified_by = input; self
+        self.last_modified_by = input;
+        self
     }
     /// <p>The name of the project.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -200,7 +216,8 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The name of the project.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The recipe associated with this job.</p>
     pub fn recipe_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,7 +226,8 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The recipe associated with this job.</p>
     pub fn set_recipe_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recipe_name = input; self
+        self.recipe_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -218,7 +236,8 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub fn sample(mut self, input: crate::types::Sample) -> Self {
@@ -227,7 +246,8 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>Represents the sample size and sampling type for DataBrew to use for interactive data analysis.</p>
     pub fn set_sample(mut self, input: std::option::Option<crate::types::Sample>) -> Self {
-        self.sample = input; self
+        self.sample = input;
+        self
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -236,41 +256,56 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The ARN of the Identity and Access Management (IAM) role to be assumed when DataBrew runs the job.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Metadata tags associated with this project.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Metadata tags associated with this project.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
-    /// <p>Describes the current state of the session:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li> 
-    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li> 
-    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li> 
+    /// <p>Describes the current state of the session:</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
+    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
+    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
     /// </ul>
     pub fn session_status(mut self, input: crate::types::SessionStatus) -> Self {
         self.session_status = Some(input);
         self
     }
-    /// <p>Describes the current state of the session:</p> 
-    /// <ul> 
-    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li> 
-    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li> 
-    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li> 
+    /// <p>Describes the current state of the session:</p>
+    /// <ul>
+    /// <li> <p> <code>PROVISIONING</code> - allocating resources for the session.</p> </li>
+    /// <li> <p> <code>INITIALIZING</code> - getting the session ready for first use.</p> </li>
+    /// <li> <p> <code>ASSIGNED</code> - the session is ready for use.</p> </li>
     /// </ul>
-    pub fn set_session_status(mut self, input: std::option::Option<crate::types::SessionStatus>) -> Self {
-        self.session_status = input; self
+    pub fn set_session_status(
+        mut self,
+        input: std::option::Option<crate::types::SessionStatus>,
+    ) -> Self {
+        self.session_status = input;
+        self
     }
     /// <p>The identifier (user name) of the user that opened the project for use. </p>
     pub fn opened_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -279,7 +314,8 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The identifier (user name) of the user that opened the project for use. </p>
     pub fn set_opened_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.opened_by = input; self
+        self.opened_by = input;
+        self
     }
     /// <p>The date and time when the project was opened. </p>
     pub fn open_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -288,50 +324,36 @@ impl DescribeProjectOutputBuilder {
     }
     /// <p>The date and time when the project was opened. </p>
     pub fn set_open_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.open_date = input; self
+        self.open_date = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::operation::describe_project::DescribeProjectOutput).
     pub fn build(self) -> crate::operation::describe_project::DescribeProjectOutput {
         crate::operation::describe_project::DescribeProjectOutput {
-            create_date: self.create_date
-            ,
-            created_by: self.created_by
-            ,
-            dataset_name: self.dataset_name
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            last_modified_by: self.last_modified_by
-            ,
-            name: self.name
-            ,
-            recipe_name: self.recipe_name
-            ,
-            resource_arn: self.resource_arn
-            ,
-            sample: self.sample
-            ,
-            role_arn: self.role_arn
-            ,
-            tags: self.tags
-            ,
-            session_status: self.session_status
-            ,
-            opened_by: self.opened_by
-            ,
-            open_date: self.open_date
-            ,
+            create_date: self.create_date,
+            created_by: self.created_by,
+            dataset_name: self.dataset_name,
+            last_modified_date: self.last_modified_date,
+            last_modified_by: self.last_modified_by,
+            name: self.name,
+            recipe_name: self.recipe_name,
+            resource_arn: self.resource_arn,
+            sample: self.sample,
+            role_arn: self.role_arn,
+            tags: self.tags,
+            session_status: self.session_status,
+            opened_by: self.opened_by,
+            open_date: self.open_date,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -66,4 +66,3 @@ pub mod update_campaign_name;
 
 /// Types for the `UpdateCampaignOutboundCallConfig` operation.
 pub mod update_campaign_outbound_call_config;
-

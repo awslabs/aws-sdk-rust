@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSolNetworkInstanceInput  {
+pub struct DeleteSolNetworkInstanceInput {
     /// <p>Network instance ID.</p>
     #[doc(hidden)]
     pub ns_instance_id: std::option::Option<std::string::String>,
 }
 impl DeleteSolNetworkInstanceInput {
     /// <p>Network instance ID.</p>
-    pub fn ns_instance_id(&self) -> std::option::Option<& str> {
+    pub fn ns_instance_id(&self) -> std::option::Option<&str> {
         self.ns_instance_id.as_deref()
     }
 }
 impl DeleteSolNetworkInstanceInput {
     /// Creates a new builder-style object to manufacture [`DeleteSolNetworkInstanceInput`](crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput).
-    pub fn builder() -> crate::operation::delete_sol_network_instance::builders::DeleteSolNetworkInstanceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_sol_network_instance::builders::DeleteSolNetworkInstanceInputBuilder
+    {
         crate::operation::delete_sol_network_instance::builders::DeleteSolNetworkInstanceInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteSolNetworkInstanceInputBuilder {
     }
     /// <p>Network instance ID.</p>
     pub fn set_ns_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ns_instance_id = input; self
+        self.ns_instance_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSolNetworkInstanceInput`](crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput).
-    pub fn build(self) -> Result<crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceInput {
-                ns_instance_id: self.ns_instance_id
-                ,
-            }
+                ns_instance_id: self.ns_instance_id,
+            },
         )
     }
 }
-

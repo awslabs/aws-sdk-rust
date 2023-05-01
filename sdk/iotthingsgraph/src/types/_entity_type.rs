@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let entitytype = unimplemented!();
 /// match entitytype {
@@ -38,14 +38,22 @@
 /// Specifically, when `entitytype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `EntityType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum EntityType {
     #[allow(missing_docs)] // documentation missing in model
     Action,
@@ -68,57 +76,67 @@ pub enum EntityType {
     #[allow(missing_docs)] // documentation missing in model
     State,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for EntityType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTION" => EntityType::Action,
-"CAPABILITY" => EntityType::Capability,
-"DEVICE" => EntityType::Device,
-"DEVICE_MODEL" => EntityType::DeviceModel,
-"ENUM" => EntityType::Enum,
-"EVENT" => EntityType::Event,
-"MAPPING" => EntityType::Mapping,
-"PROPERTY" => EntityType::Property,
-"SERVICE" => EntityType::Service,
-"STATE" => EntityType::State,
-other => EntityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for EntityType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(EntityType::from(s))
-                }
-            }
-impl EntityType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    EntityType::Action => "ACTION",
-    EntityType::Capability => "CAPABILITY",
-    EntityType::Device => "DEVICE",
-    EntityType::DeviceModel => "DEVICE_MODEL",
-    EntityType::Enum => "ENUM",
-    EntityType::Event => "EVENT",
-    EntityType::Mapping => "MAPPING",
-    EntityType::Property => "PROPERTY",
-    EntityType::Service => "SERVICE",
-    EntityType::State => "STATE",
-    EntityType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTION" => EntityType::Action,
+            "CAPABILITY" => EntityType::Capability,
+            "DEVICE" => EntityType::Device,
+            "DEVICE_MODEL" => EntityType::DeviceModel,
+            "ENUM" => EntityType::Enum,
+            "EVENT" => EntityType::Event,
+            "MAPPING" => EntityType::Mapping,
+            "PROPERTY" => EntityType::Property,
+            "SERVICE" => EntityType::Service,
+            "STATE" => EntityType::State,
+            other => EntityType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTION", "CAPABILITY", "DEVICE", "DEVICE_MODEL", "ENUM", "EVENT", "MAPPING", "PROPERTY", "SERVICE", "STATE"]
-                }
-            }
-impl AsRef<str> for EntityType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for EntityType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(EntityType::from(s))
+    }
+}
+impl EntityType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            EntityType::Action => "ACTION",
+            EntityType::Capability => "CAPABILITY",
+            EntityType::Device => "DEVICE",
+            EntityType::DeviceModel => "DEVICE_MODEL",
+            EntityType::Enum => "ENUM",
+            EntityType::Event => "EVENT",
+            EntityType::Mapping => "MAPPING",
+            EntityType::Property => "PROPERTY",
+            EntityType::Service => "SERVICE",
+            EntityType::State => "STATE",
+            EntityType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTION",
+            "CAPABILITY",
+            "DEVICE",
+            "DEVICE_MODEL",
+            "ENUM",
+            "EVENT",
+            "MAPPING",
+            "PROPERTY",
+            "SERVICE",
+            "STATE",
+        ]
+    }
+}
+impl AsRef<str> for EntityType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

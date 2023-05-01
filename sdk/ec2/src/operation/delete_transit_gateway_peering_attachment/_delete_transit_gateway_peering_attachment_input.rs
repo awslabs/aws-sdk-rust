@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTransitGatewayPeeringAttachmentInput  {
+pub struct DeleteTransitGatewayPeeringAttachmentInput {
     /// <p>The ID of the transit gateway peering attachment.</p>
     #[doc(hidden)]
     pub transit_gateway_attachment_id: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DeleteTransitGatewayPeeringAttachmentInput  {
 }
 impl DeleteTransitGatewayPeeringAttachmentInput {
     /// <p>The ID of the transit gateway peering attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<& str> {
+    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<&str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -22,7 +22,7 @@ impl DeleteTransitGatewayPeeringAttachmentInput {
 }
 impl DeleteTransitGatewayPeeringAttachmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteTransitGatewayPeeringAttachmentInput`](crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentInput).
-    pub fn builder() -> crate::operation::delete_transit_gateway_peering_attachment::builders::DeleteTransitGatewayPeeringAttachmentInputBuilder {
+    pub fn builder() -> crate::operation::delete_transit_gateway_peering_attachment::builders::DeleteTransitGatewayPeeringAttachmentInputBuilder{
         crate::operation::delete_transit_gateway_peering_attachment::builders::DeleteTransitGatewayPeeringAttachmentInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl DeleteTransitGatewayPeeringAttachmentInputBuilder {
         self
     }
     /// <p>The ID of the transit gateway peering attachment.</p>
-    pub fn set_transit_gateway_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = input; self
+    pub fn set_transit_gateway_attachment_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transit_gateway_attachment_id = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -51,10 +55,11 @@ impl DeleteTransitGatewayPeeringAttachmentInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTransitGatewayPeeringAttachmentInput`](crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentInput).
-    pub fn build(self) -> Result<crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_transit_gateway_peering_attachment::DeleteTransitGatewayPeeringAttachmentInput {
                 transit_gateway_attachment_id: self.transit_gateway_attachment_id
@@ -65,4 +70,3 @@ impl DeleteTransitGatewayPeeringAttachmentInputBuilder {
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The timeline of the instance group lifecycle.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceGroupTimeline  {
+pub struct InstanceGroupTimeline {
     /// <p>The creation date and time of the instance group.</p>
     #[doc(hidden)]
     pub creation_date_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -16,15 +16,15 @@ pub struct InstanceGroupTimeline  {
 }
 impl InstanceGroupTimeline {
     /// <p>The creation date and time of the instance group.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time when the instance group became ready to perform tasks.</p>
-    pub fn ready_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn ready_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.ready_date_time.as_ref()
     }
     /// <p>The date and time when the instance group terminated.</p>
-    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl InstanceGroupTimelineBuilder {
         self
     }
     /// <p>The creation date and time of the instance group.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The date and time when the instance group became ready to perform tasks.</p>
     pub fn ready_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -59,8 +63,12 @@ impl InstanceGroupTimelineBuilder {
         self
     }
     /// <p>The date and time when the instance group became ready to perform tasks.</p>
-    pub fn set_ready_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.ready_date_time = input; self
+    pub fn set_ready_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.ready_date_time = input;
+        self
     }
     /// <p>The date and time when the instance group terminated.</p>
     pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,19 +76,19 @@ impl InstanceGroupTimelineBuilder {
         self
     }
     /// <p>The date and time when the instance group terminated.</p>
-    pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_date_time = input; self
+    pub fn set_end_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.end_date_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceGroupTimeline`](crate::types::InstanceGroupTimeline).
     pub fn build(self) -> crate::types::InstanceGroupTimeline {
         crate::types::InstanceGroupTimeline {
-            creation_date_time: self.creation_date_time
-            ,
-            ready_date_time: self.ready_date_time
-            ,
-            end_date_time: self.end_date_time
-            ,
+            creation_date_time: self.creation_date_time,
+            ready_date_time: self.ready_date_time,
+            end_date_time: self.end_date_time,
         }
     }
 }
-

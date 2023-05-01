@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddRoleToInstanceProfileOutput  {
+pub struct AddRoleToInstanceProfileOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for AddRoleToInstanceProfileOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AddRoleToInstanceProfileOutput {
     /// Creates a new builder-style object to manufacture [`AddRoleToInstanceProfileOutput`](crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput).
-    pub fn builder() -> crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileOutputBuilder {
+    pub fn builder() -> crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileOutputBuilder{
         crate::operation::add_role_to_instance_profile::builders::AddRoleToInstanceProfileOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct AddRoleToInstanceProfileOutputBuilder {
 }
 impl AddRoleToInstanceProfileOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AddRoleToInstanceProfileOutput`](crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput).
-    pub fn build(self) -> crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput {
         crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput {
             _request_id: self._request_id,
         }
     }
 }
-

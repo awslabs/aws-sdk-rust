@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachTrafficSourcesInput  {
+pub struct AttachTrafficSourcesInput {
     /// <p>The name of the Auto Scaling group.</p>
     #[doc(hidden)]
     pub auto_scaling_group_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct AttachTrafficSourcesInput  {
 }
 impl AttachTrafficSourcesInput {
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(&self) -> std::option::Option<& str> {
+    pub fn auto_scaling_group_name(&self) -> std::option::Option<&str> {
         self.auto_scaling_group_name.as_deref()
     }
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    pub fn traffic_sources(&self) -> std::option::Option<& [crate::types::TrafficSourceIdentifier]> {
+    pub fn traffic_sources(&self) -> std::option::Option<&[crate::types::TrafficSourceIdentifier]> {
         self.traffic_sources.as_deref()
     }
 }
 impl AttachTrafficSourcesInput {
     /// Creates a new builder-style object to manufacture [`AttachTrafficSourcesInput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesInput).
-    pub fn builder() -> crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesInputBuilder {
         crate::operation::attach_traffic_sources::builders::AttachTrafficSourcesInputBuilder::default()
     }
 }
@@ -32,7 +33,8 @@ impl AttachTrafficSourcesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AttachTrafficSourcesInputBuilder {
     pub(crate) auto_scaling_group_name: std::option::Option<std::string::String>,
-    pub(crate) traffic_sources: std::option::Option<std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
+    pub(crate) traffic_sources:
+        std::option::Option<std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
 }
 impl AttachTrafficSourcesInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -41,8 +43,12 @@ impl AttachTrafficSourcesInputBuilder {
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auto_scaling_group_name = input; self
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.auto_scaling_group_name = input;
+        self
     }
     /// Appends an item to `traffic_sources`.
     ///
@@ -51,24 +57,30 @@ impl AttachTrafficSourcesInputBuilder {
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
     pub fn traffic_sources(mut self, input: crate::types::TrafficSourceIdentifier) -> Self {
         let mut v = self.traffic_sources.unwrap_or_default();
-                        v.push(input);
-                        self.traffic_sources = Some(v);
-                        self
+        v.push(input);
+        self.traffic_sources = Some(v);
+        self
     }
     /// <p>The unique identifiers of one or more traffic sources. You can specify up to 10 traffic sources.</p>
-    pub fn set_traffic_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::TrafficSourceIdentifier>>) -> Self {
-        self.traffic_sources = input; self
+    pub fn set_traffic_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TrafficSourceIdentifier>>,
+    ) -> Self {
+        self.traffic_sources = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttachTrafficSourcesInput`](crate::operation::attach_traffic_sources::AttachTrafficSourcesInput).
-    pub fn build(self) -> Result<crate::operation::attach_traffic_sources::AttachTrafficSourcesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::attach_traffic_sources::AttachTrafficSourcesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::attach_traffic_sources::AttachTrafficSourcesInput {
-                auto_scaling_group_name: self.auto_scaling_group_name
-                ,
-                traffic_sources: self.traffic_sources
-                ,
-            }
+                auto_scaling_group_name: self.auto_scaling_group_name,
+                traffic_sources: self.traffic_sources,
+            },
         )
     }
 }
-

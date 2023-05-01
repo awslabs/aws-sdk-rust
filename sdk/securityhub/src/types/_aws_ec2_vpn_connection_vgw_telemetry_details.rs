@@ -3,14 +3,14 @@
 /// <p>Information about the VPN tunnel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEc2VpnConnectionVgwTelemetryDetails  {
+pub struct AwsEc2VpnConnectionVgwTelemetryDetails {
     /// <p>The number of accepted routes.</p>
     #[doc(hidden)]
     pub accepted_route_count: i32,
     /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
     #[doc(hidden)]
     pub certificate_arn: std::option::Option<std::string::String>,
-    /// <p>The date and time of the last change in status.</p> 
+    /// <p>The date and time of the last change in status.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub last_status_change: std::option::Option<std::string::String>,
@@ -30,24 +30,24 @@ impl AwsEc2VpnConnectionVgwTelemetryDetails {
         self.accepted_route_count
     }
     /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
-    pub fn certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
-    /// <p>The date and time of the last change in status.</p> 
+    /// <p>The date and time of the last change in status.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn last_status_change(&self) -> std::option::Option<& str> {
+    pub fn last_status_change(&self) -> std::option::Option<&str> {
         self.last_status_change.as_deref()
     }
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    pub fn outside_ip_address(&self) -> std::option::Option<& str> {
+    pub fn outside_ip_address(&self) -> std::option::Option<&str> {
         self.outside_ip_address.as_deref()
     }
     /// <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>If an error occurs, a description of the error.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -77,7 +77,8 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
     }
     /// <p>The number of accepted routes.</p>
     pub fn set_accepted_route_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.accepted_route_count = input; self
+        self.accepted_route_count = input;
+        self
     }
     /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
     pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,18 +87,23 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
     }
     /// <p>The ARN of the VPN tunnel endpoint certificate.</p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input; self
+        self.certificate_arn = input;
+        self
     }
-    /// <p>The date and time of the last change in status.</p> 
+    /// <p>The date and time of the last change in status.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn last_status_change(mut self, input: impl Into<std::string::String>) -> Self {
         self.last_status_change = Some(input.into());
         self
     }
-    /// <p>The date and time of the last change in status.</p> 
+    /// <p>The date and time of the last change in status.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn set_last_status_change(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_status_change = input; self
+    pub fn set_last_status_change(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_status_change = input;
+        self
     }
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
     pub fn outside_ip_address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +111,12 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
         self
     }
     /// <p>The Internet-routable IP address of the virtual private gateway's outside interface.</p>
-    pub fn set_outside_ip_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.outside_ip_address = input; self
+    pub fn set_outside_ip_address(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.outside_ip_address = input;
+        self
     }
     /// <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +125,8 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
     }
     /// <p>The status of the VPN tunnel. Valid values are <code>DOWN</code> or <code>UP</code>.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>If an error occurs, a description of the error.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,25 +135,18 @@ impl AwsEc2VpnConnectionVgwTelemetryDetailsBuilder {
     }
     /// <p>If an error occurs, a description of the error.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEc2VpnConnectionVgwTelemetryDetails`](crate::types::AwsEc2VpnConnectionVgwTelemetryDetails).
     pub fn build(self) -> crate::types::AwsEc2VpnConnectionVgwTelemetryDetails {
         crate::types::AwsEc2VpnConnectionVgwTelemetryDetails {
-            accepted_route_count: self.accepted_route_count
-                .unwrap_or_default()
-            ,
-            certificate_arn: self.certificate_arn
-            ,
-            last_status_change: self.last_status_change
-            ,
-            outside_ip_address: self.outside_ip_address
-            ,
-            status: self.status
-            ,
-            status_message: self.status_message
-            ,
+            accepted_route_count: self.accepted_route_count.unwrap_or_default(),
+            certificate_arn: self.certificate_arn,
+            last_status_change: self.last_status_change,
+            outside_ip_address: self.outside_ip_address,
+            status: self.status,
+            status_message: self.status_message,
         }
     }
 }
-

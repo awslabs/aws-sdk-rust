@@ -3,7 +3,7 @@
 /// <p>Represents the search status of a log stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchedLogStream  {
+pub struct SearchedLogStream {
     /// <p>The name of the log stream.</p>
     #[doc(hidden)]
     pub log_stream_name: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct SearchedLogStream  {
 }
 impl SearchedLogStream {
     /// <p>The name of the log stream.</p>
-    pub fn log_stream_name(&self) -> std::option::Option<& str> {
+    pub fn log_stream_name(&self) -> std::option::Option<&str> {
         self.log_stream_name.as_deref()
     }
     /// <p>Indicates whether all the events in this log stream were searched.</p>
@@ -43,7 +43,8 @@ impl SearchedLogStreamBuilder {
     }
     /// <p>The name of the log stream.</p>
     pub fn set_log_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_stream_name = input; self
+        self.log_stream_name = input;
+        self
     }
     /// <p>Indicates whether all the events in this log stream were searched.</p>
     pub fn searched_completely(mut self, input: bool) -> Self {
@@ -52,16 +53,14 @@ impl SearchedLogStreamBuilder {
     }
     /// <p>Indicates whether all the events in this log stream were searched.</p>
     pub fn set_searched_completely(mut self, input: std::option::Option<bool>) -> Self {
-        self.searched_completely = input; self
+        self.searched_completely = input;
+        self
     }
     /// Consumes the builder and constructs a [`SearchedLogStream`](crate::types::SearchedLogStream).
     pub fn build(self) -> crate::types::SearchedLogStream {
         crate::types::SearchedLogStream {
-            log_stream_name: self.log_stream_name
-            ,
-            searched_completely: self.searched_completely
-            ,
+            log_stream_name: self.log_stream_name,
+            searched_completely: self.searched_completely,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProvisioningTemplateVersionsInput  {
+pub struct ListProvisioningTemplateVersionsInput {
     /// <p>The name of the provisioning template.</p>
     #[doc(hidden)]
     pub template_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListProvisioningTemplateVersionsInput  {
 }
 impl ListProvisioningTemplateVersionsInput {
     /// <p>The name of the provisioning template.</p>
-    pub fn template_name(&self) -> std::option::Option<& str> {
+    pub fn template_name(&self) -> std::option::Option<&str> {
         self.template_name.as_deref()
     }
     /// <p>The maximum number of results to return at one time.</p>
@@ -23,13 +23,13 @@ impl ListProvisioningTemplateVersionsInput {
         self.max_results
     }
     /// <p>A token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListProvisioningTemplateVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListProvisioningTemplateVersionsInput`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsInput).
-    pub fn builder() -> crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsInputBuilder{
         crate::operation::list_provisioning_template_versions::builders::ListProvisioningTemplateVersionsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListProvisioningTemplateVersionsInputBuilder {
     }
     /// <p>The name of the provisioning template.</p>
     pub fn set_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_name = input; self
+        self.template_name = input;
+        self
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl ListProvisioningTemplateVersionsInputBuilder {
     }
     /// <p>The maximum number of results to return at one time.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,10 +70,11 @@ impl ListProvisioningTemplateVersionsInputBuilder {
     }
     /// <p>A token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListProvisioningTemplateVersionsInput`](crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsInput).
-    pub fn build(self) -> Result<crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsInput {
                 template_name: self.template_name
@@ -84,4 +87,3 @@ impl ListProvisioningTemplateVersionsInputBuilder {
         )
     }
 }
-

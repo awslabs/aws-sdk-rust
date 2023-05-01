@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConferenceProviderOutput  {
+pub struct GetConferenceProviderOutput {
     /// <p>The conference provider.</p>
     #[doc(hidden)]
     pub conference_provider: std::option::Option<crate::types::ConferenceProvider>,
@@ -10,18 +10,20 @@ pub struct GetConferenceProviderOutput  {
 }
 impl GetConferenceProviderOutput {
     /// <p>The conference provider.</p>
-    pub fn conference_provider(&self) -> std::option::Option<& crate::types::ConferenceProvider> {
+    pub fn conference_provider(&self) -> std::option::Option<&crate::types::ConferenceProvider> {
         self.conference_provider.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetConferenceProviderOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetConferenceProviderOutput {
     /// Creates a new builder-style object to manufacture [`GetConferenceProviderOutput`](crate::operation::get_conference_provider::GetConferenceProviderOutput).
-    pub fn builder() -> crate::operation::get_conference_provider::builders::GetConferenceProviderOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_conference_provider::builders::GetConferenceProviderOutputBuilder
+    {
         crate::operation::get_conference_provider::builders::GetConferenceProviderOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl GetConferenceProviderOutputBuilder {
         self
     }
     /// <p>The conference provider.</p>
-    pub fn set_conference_provider(mut self, input: std::option::Option<crate::types::ConferenceProvider>) -> Self {
-        self.conference_provider = input; self
+    pub fn set_conference_provider(
+        mut self,
+        input: std::option::Option<crate::types::ConferenceProvider>,
+    ) -> Self {
+        self.conference_provider = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetConferenceProviderOutput`](crate::operation::get_conference_provider::GetConferenceProviderOutput).
     pub fn build(self) -> crate::operation::get_conference_provider::GetConferenceProviderOutput {
         crate::operation::get_conference_provider::GetConferenceProviderOutput {
-            conference_provider: self.conference_provider
-            ,
+            conference_provider: self.conference_provider,
             _request_id: self._request_id,
         }
     }
 }
-

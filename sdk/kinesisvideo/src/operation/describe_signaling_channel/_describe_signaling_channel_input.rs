@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSignalingChannelInput  {
+pub struct DescribeSignalingChannelInput {
     /// <p>The name of the signaling channel that you want to describe.</p>
     #[doc(hidden)]
     pub channel_name: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DescribeSignalingChannelInput  {
 }
 impl DescribeSignalingChannelInput {
     /// <p>The name of the signaling channel that you want to describe.</p>
-    pub fn channel_name(&self) -> std::option::Option<& str> {
+    pub fn channel_name(&self) -> std::option::Option<&str> {
         self.channel_name.as_deref()
     }
     /// <p>The ARN of the signaling channel that you want to describe.</p>
-    pub fn channel_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
 }
 impl DescribeSignalingChannelInput {
     /// Creates a new builder-style object to manufacture [`DescribeSignalingChannelInput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelInput).
-    pub fn builder() -> crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelInputBuilder
+    {
         crate::operation::describe_signaling_channel::builders::DescribeSignalingChannelInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DescribeSignalingChannelInputBuilder {
     }
     /// <p>The name of the signaling channel that you want to describe.</p>
     pub fn set_channel_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_name = input; self
+        self.channel_name = input;
+        self
     }
     /// <p>The ARN of the signaling channel that you want to describe.</p>
     pub fn channel_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl DescribeSignalingChannelInputBuilder {
     }
     /// <p>The ARN of the signaling channel that you want to describe.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input; self
+        self.channel_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSignalingChannelInput`](crate::operation::describe_signaling_channel::DescribeSignalingChannelInput).
-    pub fn build(self) -> Result<crate::operation::describe_signaling_channel::DescribeSignalingChannelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_signaling_channel::DescribeSignalingChannelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_signaling_channel::DescribeSignalingChannelInput {
-                channel_name: self.channel_name
-                ,
-                channel_arn: self.channel_arn
-                ,
-            }
+                channel_name: self.channel_name,
+                channel_arn: self.channel_arn,
+            },
         )
     }
 }
-

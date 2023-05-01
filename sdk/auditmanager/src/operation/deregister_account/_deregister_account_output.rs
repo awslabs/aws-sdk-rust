@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterAccountOutput  {
+pub struct DeregisterAccountOutput {
     /// <p> The registration status of the account. </p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AccountStatus>,
@@ -10,18 +10,19 @@ pub struct DeregisterAccountOutput  {
 }
 impl DeregisterAccountOutput {
     /// <p> The registration status of the account. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AccountStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AccountStatus> {
         self.status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeregisterAccountOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeregisterAccountOutput {
     /// Creates a new builder-style object to manufacture [`DeregisterAccountOutput`](crate::operation::deregister_account::DeregisterAccountOutput).
-    pub fn builder() -> crate::operation::deregister_account::builders::DeregisterAccountOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deregister_account::builders::DeregisterAccountOutputBuilder {
         crate::operation::deregister_account::builders::DeregisterAccountOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl DeregisterAccountOutputBuilder {
     }
     /// <p> The registration status of the account. </p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::AccountStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeregisterAccountOutput`](crate::operation::deregister_account::DeregisterAccountOutput).
     pub fn build(self) -> crate::operation::deregister_account::DeregisterAccountOutput {
         crate::operation::deregister_account::DeregisterAccountOutput {
-            status: self.status
-            ,
+            status: self.status,
             _request_id: self._request_id,
         }
     }
 }
-

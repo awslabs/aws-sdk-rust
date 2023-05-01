@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactReferencesOutput  {
+pub struct ListContactReferencesOutput {
     /// <p>Information about the flows.</p>
     #[doc(hidden)]
     pub reference_summary_list: std::option::Option<std::vec::Vec<crate::types::ReferenceSummary>>,
-    /// <p>If there are additional results, this is the token for the next set of results.</p> <important> 
-    /// <p>This is always returned as null in the response.</p> 
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
+    /// <p>This is always returned as null in the response.</p>
     /// </important>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,24 +15,26 @@ pub struct ListContactReferencesOutput  {
 }
 impl ListContactReferencesOutput {
     /// <p>Information about the flows.</p>
-    pub fn reference_summary_list(&self) -> std::option::Option<& [crate::types::ReferenceSummary]> {
+    pub fn reference_summary_list(&self) -> std::option::Option<&[crate::types::ReferenceSummary]> {
         self.reference_summary_list.as_deref()
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p> <important> 
-    /// <p>This is always returned as null in the response.</p> 
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
+    /// <p>This is always returned as null in the response.</p>
     /// </important>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListContactReferencesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListContactReferencesOutput {
     /// Creates a new builder-style object to manufacture [`ListContactReferencesOutput`](crate::operation::list_contact_references::ListContactReferencesOutput).
-    pub fn builder() -> crate::operation::list_contact_references::builders::ListContactReferencesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_contact_references::builders::ListContactReferencesOutputBuilder
+    {
         crate::operation::list_contact_references::builders::ListContactReferencesOutputBuilder::default()
     }
 }
@@ -41,7 +43,8 @@ impl ListContactReferencesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListContactReferencesOutputBuilder {
-    pub(crate) reference_summary_list: std::option::Option<std::vec::Vec<crate::types::ReferenceSummary>>,
+    pub(crate) reference_summary_list:
+        std::option::Option<std::vec::Vec<crate::types::ReferenceSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -53,45 +56,47 @@ impl ListContactReferencesOutputBuilder {
     /// <p>Information about the flows.</p>
     pub fn reference_summary_list(mut self, input: crate::types::ReferenceSummary) -> Self {
         let mut v = self.reference_summary_list.unwrap_or_default();
-                        v.push(input);
-                        self.reference_summary_list = Some(v);
-                        self
+        v.push(input);
+        self.reference_summary_list = Some(v);
+        self
     }
     /// <p>Information about the flows.</p>
-    pub fn set_reference_summary_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReferenceSummary>>) -> Self {
-        self.reference_summary_list = input; self
+    pub fn set_reference_summary_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReferenceSummary>>,
+    ) -> Self {
+        self.reference_summary_list = input;
+        self
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p> <important> 
-    /// <p>This is always returned as null in the response.</p> 
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
+    /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>If there are additional results, this is the token for the next set of results.</p> <important> 
-    /// <p>This is always returned as null in the response.</p> 
+    /// <p>If there are additional results, this is the token for the next set of results.</p> <important>
+    /// <p>This is always returned as null in the response.</p>
     /// </important>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListContactReferencesOutput`](crate::operation::list_contact_references::ListContactReferencesOutput).
     pub fn build(self) -> crate::operation::list_contact_references::ListContactReferencesOutput {
         crate::operation::list_contact_references::ListContactReferencesOutput {
-            reference_summary_list: self.reference_summary_list
-            ,
-            next_token: self.next_token
-            ,
+            reference_summary_list: self.reference_summary_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

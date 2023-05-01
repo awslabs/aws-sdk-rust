@@ -4,50 +4,71 @@ pub use crate::operation::remove_profile_permission::_remove_profile_permission_
 pub use crate::operation::remove_profile_permission::_remove_profile_permission_input::RemoveProfilePermissionInputBuilder;
 
 /// Fluent builder constructing a request to `RemoveProfilePermission`.
-/// 
+///
 /// <p>Removes cross-account permissions from a signing profile.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct RemoveProfilePermissionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder,
+    inner:
+        crate::operation::remove_profile_permission::builders::RemoveProfilePermissionInputBuilder,
 }
-impl RemoveProfilePermissionFluentBuilder  {
+impl RemoveProfilePermissionFluentBuilder {
     /// Creates a new `RemoveProfilePermission`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::remove_profile_permission::RemoveProfilePermission, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::remove_profile_permission::RemoveProfilePermissionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::remove_profile_permission::RemoveProfilePermissionOutput, aws_smithy_http::result::SdkError<crate::operation::remove_profile_permission::RemoveProfilePermissionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::remove_profile_permission::RemoveProfilePermission,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_profile_permission::RemoveProfilePermissionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::remove_profile_permission::RemoveProfilePermissionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::remove_profile_permission::RemoveProfilePermissionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A human-readable name for the signing profile with permissions to be removed.</p>
     pub fn profile_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.profile_name(input.into());
@@ -79,4 +100,3 @@ impl RemoveProfilePermissionFluentBuilder  {
         self
     }
 }
-

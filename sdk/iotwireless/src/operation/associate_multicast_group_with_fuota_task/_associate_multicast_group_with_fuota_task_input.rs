@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateMulticastGroupWithFuotaTaskInput  {
+pub struct AssociateMulticastGroupWithFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct AssociateMulticastGroupWithFuotaTaskInput  {
 }
 impl AssociateMulticastGroupWithFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn multicast_group_id(&self) -> std::option::Option<& str> {
+    pub fn multicast_group_id(&self) -> std::option::Option<&str> {
         self.multicast_group_id.as_deref()
     }
 }
 impl AssociateMulticastGroupWithFuotaTaskInput {
     /// Creates a new builder-style object to manufacture [`AssociateMulticastGroupWithFuotaTaskInput`](crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskInput).
-    pub fn builder() -> crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskInputBuilder {
+    pub fn builder() -> crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskInputBuilder{
         crate::operation::associate_multicast_group_with_fuota_task::builders::AssociateMulticastGroupWithFuotaTaskInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl AssociateMulticastGroupWithFuotaTaskInputBuilder {
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The ID of the multicast group.</p>
     pub fn multicast_group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,11 +51,15 @@ impl AssociateMulticastGroupWithFuotaTaskInputBuilder {
         self
     }
     /// <p>The ID of the multicast group.</p>
-    pub fn set_multicast_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.multicast_group_id = input; self
+    pub fn set_multicast_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.multicast_group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateMulticastGroupWithFuotaTaskInput`](crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskInput).
-    pub fn build(self) -> Result<crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskInput {
                 id: self.id
@@ -65,4 +70,3 @@ impl AssociateMulticastGroupWithFuotaTaskInputBuilder {
         )
     }
 }
-

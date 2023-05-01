@@ -3,44 +3,44 @@
 /// <p>Information about the patches to use to update the managed nodes, including target operating systems and source repository. Applies to Linux managed nodes only.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PatchSource  {
+pub struct PatchSource {
     /// <p>The name specified to identify the patch source.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
     #[doc(hidden)]
     pub products: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The value of the yum repo configuration. For example:</p> 
-    /// <p> <code>[main]</code> </p> 
-    /// <p> <code>name=MyCustomRepository</code> </p> 
-    /// <p> <code>baseurl=https://my-custom-repository</code> </p> 
-    /// <p> <code>enabled=1</code> </p> <note> 
-    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p> 
+    /// <p>The value of the yum repo configuration. For example:</p>
+    /// <p> <code>[main]</code> </p>
+    /// <p> <code>name=MyCustomRepository</code> </p>
+    /// <p> <code>baseurl=https://my-custom-repository</code> </p>
+    /// <p> <code>enabled=1</code> </p> <note>
+    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
     #[doc(hidden)]
     pub configuration: std::option::Option<std::string::String>,
 }
 impl PatchSource {
     /// <p>The name specified to identify the patch source.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
-    pub fn products(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn products(&self) -> std::option::Option<&[std::string::String]> {
         self.products.as_deref()
     }
-    /// <p>The value of the yum repo configuration. For example:</p> 
-    /// <p> <code>[main]</code> </p> 
-    /// <p> <code>name=MyCustomRepository</code> </p> 
-    /// <p> <code>baseurl=https://my-custom-repository</code> </p> 
-    /// <p> <code>enabled=1</code> </p> <note> 
-    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p> 
+    /// <p>The value of the yum repo configuration. For example:</p>
+    /// <p> <code>[main]</code> </p>
+    /// <p> <code>name=MyCustomRepository</code> </p>
+    /// <p> <code>baseurl=https://my-custom-repository</code> </p>
+    /// <p> <code>enabled=1</code> </p> <note>
+    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
-    pub fn configuration(&self) -> std::option::Option<& str> {
+    pub fn configuration(&self) -> std::option::Option<&str> {
         self.configuration.as_deref()
     }
 }
-impl  std::fmt::Debug for PatchSource  {
+impl std::fmt::Debug for PatchSource {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PatchSource");
         formatter.field("name", &self.name);
@@ -72,7 +72,8 @@ impl PatchSourceBuilder {
     }
     /// <p>The name specified to identify the patch source.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `products`.
     ///
@@ -81,44 +82,46 @@ impl PatchSourceBuilder {
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
     pub fn products(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.products.unwrap_or_default();
-                        v.push(input.into());
-                        self.products = Some(v);
-                        self
+        v.push(input.into());
+        self.products = Some(v);
+        self
     }
     /// <p>The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see <code>PatchFilter</code>.</p>
-    pub fn set_products(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.products = input; self
+    pub fn set_products(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.products = input;
+        self
     }
-    /// <p>The value of the yum repo configuration. For example:</p> 
-    /// <p> <code>[main]</code> </p> 
-    /// <p> <code>name=MyCustomRepository</code> </p> 
-    /// <p> <code>baseurl=https://my-custom-repository</code> </p> 
-    /// <p> <code>enabled=1</code> </p> <note> 
-    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p> 
+    /// <p>The value of the yum repo configuration. For example:</p>
+    /// <p> <code>[main]</code> </p>
+    /// <p> <code>name=MyCustomRepository</code> </p>
+    /// <p> <code>baseurl=https://my-custom-repository</code> </p>
+    /// <p> <code>enabled=1</code> </p> <note>
+    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
     pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
         self.configuration = Some(input.into());
         self
     }
-    /// <p>The value of the yum repo configuration. For example:</p> 
-    /// <p> <code>[main]</code> </p> 
-    /// <p> <code>name=MyCustomRepository</code> </p> 
-    /// <p> <code>baseurl=https://my-custom-repository</code> </p> 
-    /// <p> <code>enabled=1</code> </p> <note> 
-    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p> 
+    /// <p>The value of the yum repo configuration. For example:</p>
+    /// <p> <code>[main]</code> </p>
+    /// <p> <code>name=MyCustomRepository</code> </p>
+    /// <p> <code>baseurl=https://my-custom-repository</code> </p>
+    /// <p> <code>enabled=1</code> </p> <note>
+    /// <p>For information about other options available for your yum repository configuration, see <a href="https://man7.org/linux/man-pages/man5/dnf.conf.5.html">dnf.conf(5)</a>.</p>
     /// </note>
     pub fn set_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration = input; self
+        self.configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`PatchSource`](crate::types::PatchSource).
     pub fn build(self) -> crate::types::PatchSource {
         crate::types::PatchSource {
-            name: self.name
-            ,
-            products: self.products
-            ,
-            configuration: self.configuration
-            ,
+            name: self.name,
+            products: self.products,
+            configuration: self.configuration,
         }
     }
 }
@@ -131,4 +134,3 @@ impl std::fmt::Debug for PatchSourceBuilder {
         formatter.finish()
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyImageInput  {
+pub struct CopyImageInput {
     /// <p>The name of the image to copy.</p>
     #[doc(hidden)]
     pub source_image_name: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct CopyImageInput  {
 }
 impl CopyImageInput {
     /// <p>The name of the image to copy.</p>
-    pub fn source_image_name(&self) -> std::option::Option<& str> {
+    pub fn source_image_name(&self) -> std::option::Option<&str> {
         self.source_image_name.as_deref()
     }
     /// <p>The name that the image will have when it is copied to the destination.</p>
-    pub fn destination_image_name(&self) -> std::option::Option<& str> {
+    pub fn destination_image_name(&self) -> std::option::Option<&str> {
         self.destination_image_name.as_deref()
     }
     /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
-    pub fn destination_region(&self) -> std::option::Option<& str> {
+    pub fn destination_region(&self) -> std::option::Option<&str> {
         self.destination_region.as_deref()
     }
     /// <p>The description that the image will have when it is copied to the destination.</p>
-    pub fn destination_image_description(&self) -> std::option::Option<& str> {
+    pub fn destination_image_description(&self) -> std::option::Option<&str> {
         self.destination_image_description.as_deref()
     }
 }
@@ -57,8 +57,12 @@ impl CopyImageInputBuilder {
         self
     }
     /// <p>The name of the image to copy.</p>
-    pub fn set_source_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_image_name = input; self
+    pub fn set_source_image_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_image_name = input;
+        self
     }
     /// <p>The name that the image will have when it is copied to the destination.</p>
     pub fn destination_image_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +70,12 @@ impl CopyImageInputBuilder {
         self
     }
     /// <p>The name that the image will have when it is copied to the destination.</p>
-    pub fn set_destination_image_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_image_name = input; self
+    pub fn set_destination_image_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_image_name = input;
+        self
     }
     /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
     pub fn destination_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +83,12 @@ impl CopyImageInputBuilder {
         self
     }
     /// <p>The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.</p>
-    pub fn set_destination_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_region = input; self
+    pub fn set_destination_region(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_region = input;
+        self
     }
     /// <p>The description that the image will have when it is copied to the destination.</p>
     pub fn destination_image_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,23 +96,25 @@ impl CopyImageInputBuilder {
         self
     }
     /// <p>The description that the image will have when it is copied to the destination.</p>
-    pub fn set_destination_image_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination_image_description = input; self
+    pub fn set_destination_image_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.destination_image_description = input;
+        self
     }
     /// Consumes the builder and constructs a [`CopyImageInput`](crate::operation::copy_image::CopyImageInput).
-    pub fn build(self) -> Result<crate::operation::copy_image::CopyImageInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::copy_image::CopyImageInput {
-                source_image_name: self.source_image_name
-                ,
-                destination_image_name: self.destination_image_name
-                ,
-                destination_region: self.destination_region
-                ,
-                destination_image_description: self.destination_image_description
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::copy_image::CopyImageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::copy_image::CopyImageInput {
+            source_image_name: self.source_image_name,
+            destination_image_name: self.destination_image_name,
+            destination_region: self.destination_region,
+            destination_image_description: self.destination_image_description,
+        })
     }
 }
-

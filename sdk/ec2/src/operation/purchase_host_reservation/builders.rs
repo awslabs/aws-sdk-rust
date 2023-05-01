@@ -4,50 +4,71 @@ pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_
 pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_input::PurchaseHostReservationInputBuilder;
 
 /// Fluent builder constructing a request to `PurchaseHostReservation`.
-/// 
+///
 /// <p>Purchase a reservation with configurations that match those of your Dedicated Host. You must have active Dedicated Hosts in your account before you purchase a reservation. This action results in the specified reservation being purchased and charged to your account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PurchaseHostReservationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder,
+    inner:
+        crate::operation::purchase_host_reservation::builders::PurchaseHostReservationInputBuilder,
 }
-impl PurchaseHostReservationFluentBuilder  {
+impl PurchaseHostReservationFluentBuilder {
     /// Creates a new `PurchaseHostReservation`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::purchase_host_reservation::PurchaseHostReservation, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::purchase_host_reservation::PurchaseHostReservationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::purchase_host_reservation::PurchaseHostReservationOutput, aws_smithy_http::result::SdkError<crate::operation::purchase_host_reservation::PurchaseHostReservationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::purchase_host_reservation::PurchaseHostReservation,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -64,7 +85,10 @@ impl PurchaseHostReservationFluentBuilder  {
         self
     }
     /// <p>The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported currency is <code>USD</code>.</p>
-    pub fn set_currency_code(mut self, input: std::option::Option<crate::types::CurrencyCodeValues>) -> Self {
+    pub fn set_currency_code(
+        mut self,
+        input: std::option::Option<crate::types::CurrencyCodeValues>,
+    ) -> Self {
         self.inner = self.inner.set_currency_code(input);
         self
     }
@@ -78,7 +102,10 @@ impl PurchaseHostReservationFluentBuilder  {
         self
     }
     /// <p>The IDs of the Dedicated Hosts with which the reservation will be associated.</p>
-    pub fn set_host_id_set(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_host_id_set(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_host_id_set(input);
         self
     }
@@ -112,9 +139,11 @@ impl PurchaseHostReservationFluentBuilder  {
         self
     }
     /// <p>The tags to apply to the Dedicated Host Reservation during purchase.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
         self.inner = self.inner.set_tag_specifications(input);
         self
     }
 }
-

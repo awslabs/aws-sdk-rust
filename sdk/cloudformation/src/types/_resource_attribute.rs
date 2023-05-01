@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let resourceattribute = unimplemented!();
 /// match resourceattribute {
@@ -34,14 +34,22 @@
 /// Specifically, when `resourceattribute` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ResourceAttribute::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ResourceAttribute {
     #[allow(missing_docs)] // documentation missing in model
     CreationPolicy,
@@ -56,49 +64,57 @@ pub enum ResourceAttribute {
     #[allow(missing_docs)] // documentation missing in model
     UpdatePolicy,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ResourceAttribute {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CreationPolicy" => ResourceAttribute::CreationPolicy,
-"DeletionPolicy" => ResourceAttribute::DeletionPolicy,
-"Metadata" => ResourceAttribute::Metadata,
-"Properties" => ResourceAttribute::Properties,
-"Tags" => ResourceAttribute::Tags,
-"UpdatePolicy" => ResourceAttribute::UpdatePolicy,
-other => ResourceAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "CreationPolicy" => ResourceAttribute::CreationPolicy,
+            "DeletionPolicy" => ResourceAttribute::DeletionPolicy,
+            "Metadata" => ResourceAttribute::Metadata,
+            "Properties" => ResourceAttribute::Properties,
+            "Tags" => ResourceAttribute::Tags,
+            "UpdatePolicy" => ResourceAttribute::UpdatePolicy,
+            other => {
+                ResourceAttribute::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ResourceAttribute {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ResourceAttribute::from(s))
-                }
-            }
-impl ResourceAttribute {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ResourceAttribute::CreationPolicy => "CreationPolicy",
-    ResourceAttribute::DeletionPolicy => "DeletionPolicy",
-    ResourceAttribute::Metadata => "Metadata",
-    ResourceAttribute::Properties => "Properties",
-    ResourceAttribute::Tags => "Tags",
-    ResourceAttribute::UpdatePolicy => "UpdatePolicy",
-    ResourceAttribute::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CreationPolicy", "DeletionPolicy", "Metadata", "Properties", "Tags", "UpdatePolicy"]
-                }
-            }
-impl AsRef<str> for ResourceAttribute {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ResourceAttribute {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ResourceAttribute::from(s))
+    }
+}
+impl ResourceAttribute {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ResourceAttribute::CreationPolicy => "CreationPolicy",
+            ResourceAttribute::DeletionPolicy => "DeletionPolicy",
+            ResourceAttribute::Metadata => "Metadata",
+            ResourceAttribute::Properties => "Properties",
+            ResourceAttribute::Tags => "Tags",
+            ResourceAttribute::UpdatePolicy => "UpdatePolicy",
+            ResourceAttribute::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CreationPolicy",
+            "DeletionPolicy",
+            "Metadata",
+            "Properties",
+            "Tags",
+            "UpdatePolicy",
+        ]
+    }
+}
+impl AsRef<str> for ResourceAttribute {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

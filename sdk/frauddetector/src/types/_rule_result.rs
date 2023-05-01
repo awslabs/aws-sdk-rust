@@ -3,7 +3,7 @@
 /// <p>The rule results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuleResult  {
+pub struct RuleResult {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
     #[doc(hidden)]
     pub rule_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RuleResult  {
 }
 impl RuleResult {
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
-    pub fn rule_id(&self) -> std::option::Option<& str> {
+    pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
-    pub fn outcomes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn outcomes(&self) -> std::option::Option<&[std::string::String]> {
         self.outcomes.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl RuleResultBuilder {
     }
     /// <p>The rule ID that was matched, based on the rule execution mode.</p>
     pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_id = input; self
+        self.rule_id = input;
+        self
     }
     /// Appends an item to `outcomes`.
     ///
@@ -52,22 +53,23 @@ impl RuleResultBuilder {
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
     pub fn outcomes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.outcomes.unwrap_or_default();
-                        v.push(input.into());
-                        self.outcomes = Some(v);
-                        self
+        v.push(input.into());
+        self.outcomes = Some(v);
+        self
     }
     /// <p>The outcomes of the matched rule, based on the rule execution mode.</p>
-    pub fn set_outcomes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.outcomes = input; self
+    pub fn set_outcomes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.outcomes = input;
+        self
     }
     /// Consumes the builder and constructs a [`RuleResult`](crate::types::RuleResult).
     pub fn build(self) -> crate::types::RuleResult {
         crate::types::RuleResult {
-            rule_id: self.rule_id
-            ,
-            outcomes: self.outcomes
-            ,
+            rule_id: self.rule_id,
+            outcomes: self.outcomes,
         }
     }
 }
-

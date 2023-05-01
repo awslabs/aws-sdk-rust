@@ -3,7 +3,7 @@
 /// <p>A collection of fields identifying the services in a trace summary error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ErrorRootCauseService  {
+pub struct ErrorRootCauseService {
     /// <p>The service name.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,23 +25,23 @@ pub struct ErrorRootCauseService  {
 }
 impl ErrorRootCauseService {
     /// <p>The service name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A collection of associated service names.</p>
-    pub fn names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn names(&self) -> std::option::Option<&[std::string::String]> {
         self.names.as_deref()
     }
     /// <p>The type associated to the service.</p>
-    pub fn r#type(&self) -> std::option::Option<& str> {
+    pub fn r#type(&self) -> std::option::Option<&str> {
         self.r#type.as_deref()
     }
     /// <p>The account ID associated to the service.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn entity_path(&self) -> std::option::Option<& [crate::types::ErrorRootCauseEntity]> {
+    pub fn entity_path(&self) -> std::option::Option<&[crate::types::ErrorRootCauseEntity]> {
         self.entity_path.as_deref()
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
@@ -75,7 +75,8 @@ impl ErrorRootCauseServiceBuilder {
     }
     /// <p>The service name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `names`.
     ///
@@ -84,13 +85,17 @@ impl ErrorRootCauseServiceBuilder {
     /// <p>A collection of associated service names.</p>
     pub fn names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.names.unwrap_or_default();
-                        v.push(input.into());
-                        self.names = Some(v);
-                        self
+        v.push(input.into());
+        self.names = Some(v);
+        self
     }
     /// <p>A collection of associated service names.</p>
-    pub fn set_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.names = input; self
+    pub fn set_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.names = input;
+        self
     }
     /// <p>The type associated to the service.</p>
     pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +104,8 @@ impl ErrorRootCauseServiceBuilder {
     }
     /// <p>The type associated to the service.</p>
     pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The account ID associated to the service.</p>
     pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +114,8 @@ impl ErrorRootCauseServiceBuilder {
     }
     /// <p>The account ID associated to the service.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// Appends an item to `entity_path`.
     ///
@@ -117,13 +124,17 @@ impl ErrorRootCauseServiceBuilder {
     /// <p>The path of root cause entities found on the service. </p>
     pub fn entity_path(mut self, input: crate::types::ErrorRootCauseEntity) -> Self {
         let mut v = self.entity_path.unwrap_or_default();
-                        v.push(input);
-                        self.entity_path = Some(v);
-                        self
+        v.push(input);
+        self.entity_path = Some(v);
+        self
     }
     /// <p>The path of root cause entities found on the service. </p>
-    pub fn set_entity_path(mut self, input: std::option::Option<std::vec::Vec<crate::types::ErrorRootCauseEntity>>) -> Self {
-        self.entity_path = input; self
+    pub fn set_entity_path(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ErrorRootCauseEntity>>,
+    ) -> Self {
+        self.entity_path = input;
+        self
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub fn inferred(mut self, input: bool) -> Self {
@@ -132,24 +143,18 @@ impl ErrorRootCauseServiceBuilder {
     }
     /// <p>A Boolean value indicating if the service is inferred from the trace.</p>
     pub fn set_inferred(mut self, input: std::option::Option<bool>) -> Self {
-        self.inferred = input; self
+        self.inferred = input;
+        self
     }
     /// Consumes the builder and constructs a [`ErrorRootCauseService`](crate::types::ErrorRootCauseService).
     pub fn build(self) -> crate::types::ErrorRootCauseService {
         crate::types::ErrorRootCauseService {
-            name: self.name
-            ,
-            names: self.names
-            ,
-            r#type: self.r#type
-            ,
-            account_id: self.account_id
-            ,
-            entity_path: self.entity_path
-            ,
-            inferred: self.inferred
-            ,
+            name: self.name,
+            names: self.names,
+            r#type: self.r#type,
+            account_id: self.account_id,
+            entity_path: self.entity_path,
+            inferred: self.inferred,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Provides the Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role used to define an Amazon DynamoDB target endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DynamoDbSettings  {
+pub struct DynamoDbSettings {
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
     #[doc(hidden)]
     pub service_access_role_arn: std::option::Option<std::string::String>,
 }
 impl DynamoDbSettings {
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn service_access_role_arn(&self) -> std::option::Option<& str> {
+    pub fn service_access_role_arn(&self) -> std::option::Option<&str> {
         self.service_access_role_arn.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl DynamoDbSettingsBuilder {
         self
     }
     /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role. The role must allow the <code>iam:PassRole</code> action.</p>
-    pub fn set_service_access_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_access_role_arn = input; self
+    pub fn set_service_access_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_access_role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DynamoDbSettings`](crate::types::DynamoDbSettings).
     pub fn build(self) -> crate::types::DynamoDbSettings {
         crate::types::DynamoDbSettings {
-            service_access_role_arn: self.service_access_role_arn
-            ,
+            service_access_role_arn: self.service_access_role_arn,
         }
     }
 }
-

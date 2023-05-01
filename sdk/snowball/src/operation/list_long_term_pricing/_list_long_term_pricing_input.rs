@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLongTermPricingInput  {
+pub struct ListLongTermPricingInput {
     /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,14 +16,16 @@ impl ListLongTermPricingInput {
         self.max_results
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListLongTermPricingInput {
     /// Creates a new builder-style object to manufacture [`ListLongTermPricingInput`](crate::operation::list_long_term_pricing::ListLongTermPricingInput).
-    pub fn builder() -> crate::operation::list_long_term_pricing::builders::ListLongTermPricingInputBuilder {
-        crate::operation::list_long_term_pricing::builders::ListLongTermPricingInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_long_term_pricing::builders::ListLongTermPricingInputBuilder {
+        crate::operation::list_long_term_pricing::builders::ListLongTermPricingInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl ListLongTermPricingInputBuilder {
     }
     /// <p>The maximum number of <code>ListLongTermPricing</code> objects to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl ListLongTermPricingInputBuilder {
     }
     /// <p>Because HTTP requests are stateless, this is the starting point for your next list of <code>ListLongTermPricing</code> to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListLongTermPricingInput`](crate::operation::list_long_term_pricing::ListLongTermPricingInput).
-    pub fn build(self) -> Result<crate::operation::list_long_term_pricing::ListLongTermPricingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_long_term_pricing::ListLongTermPricingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_long_term_pricing::ListLongTermPricingInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

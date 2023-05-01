@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLogSubscriptionInput  {
+pub struct CreateLogSubscriptionInput {
     /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct CreateLogSubscriptionInput  {
 }
 impl CreateLogSubscriptionInput {
     /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
-    pub fn log_group_name(&self) -> std::option::Option<& str> {
+    pub fn log_group_name(&self) -> std::option::Option<&str> {
         self.log_group_name.as_deref()
     }
 }
 impl CreateLogSubscriptionInput {
     /// Creates a new builder-style object to manufacture [`CreateLogSubscriptionInput`](crate::operation::create_log_subscription::CreateLogSubscriptionInput).
-    pub fn builder() -> crate::operation::create_log_subscription::builders::CreateLogSubscriptionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_log_subscription::builders::CreateLogSubscriptionInputBuilder
+    {
         crate::operation::create_log_subscription::builders::CreateLogSubscriptionInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl CreateLogSubscriptionInputBuilder {
     }
     /// <p>Identifier of the directory to which you want to subscribe and receive real-time logs to your specified CloudWatch log group.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
     pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl CreateLogSubscriptionInputBuilder {
     }
     /// <p>The name of the CloudWatch log group where the real-time domain controller logs are forwarded.</p>
     pub fn set_log_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group_name = input; self
+        self.log_group_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateLogSubscriptionInput`](crate::operation::create_log_subscription::CreateLogSubscriptionInput).
-    pub fn build(self) -> Result<crate::operation::create_log_subscription::CreateLogSubscriptionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_log_subscription::CreateLogSubscriptionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_log_subscription::CreateLogSubscriptionInput {
-                directory_id: self.directory_id
-                ,
-                log_group_name: self.log_group_name
-                ,
-            }
+                directory_id: self.directory_id,
+                log_group_name: self.log_group_name,
+            },
         )
     }
 }
-

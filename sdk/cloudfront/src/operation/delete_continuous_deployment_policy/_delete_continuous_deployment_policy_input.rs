@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteContinuousDeploymentPolicyInput  {
+pub struct DeleteContinuousDeploymentPolicyInput {
     /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteContinuousDeploymentPolicyInput  {
 }
 impl DeleteContinuousDeploymentPolicyInput {
     /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
-    pub fn if_match(&self) -> std::option::Option<& str> {
+    pub fn if_match(&self) -> std::option::Option<&str> {
         self.if_match.as_deref()
     }
 }
 impl DeleteContinuousDeploymentPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteContinuousDeploymentPolicyInput`](crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput).
-    pub fn builder() -> crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyInputBuilder {
+    pub fn builder() -> crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyInputBuilder{
         crate::operation::delete_continuous_deployment_policy::builders::DeleteContinuousDeploymentPolicyInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteContinuousDeploymentPolicyInputBuilder {
     }
     /// <p>The identifier of the continuous deployment policy that you are deleting.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
     pub fn if_match(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,11 @@ impl DeleteContinuousDeploymentPolicyInputBuilder {
     }
     /// <p>The current version (<code>ETag</code> value) of the continuous deployment policy that you are deleting.</p>
     pub fn set_if_match(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.if_match = input; self
+        self.if_match = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteContinuousDeploymentPolicyInput`](crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::delete_continuous_deployment_policy::DeleteContinuousDeploymentPolicyInput {
                 id: self.id
@@ -65,4 +67,3 @@ impl DeleteContinuousDeploymentPolicyInputBuilder {
         )
     }
 }
-

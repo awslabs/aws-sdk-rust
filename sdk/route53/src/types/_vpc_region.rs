@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let vpcregion = unimplemented!();
 /// match vpcregion {
@@ -61,14 +61,22 @@
 /// Specifically, when `vpcregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VpcRegion::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     AfSouth1,
@@ -137,103 +145,136 @@ pub enum VpcRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VpcRegion {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "af-south-1" => VpcRegion::AfSouth1,
-"ap-east-1" => VpcRegion::ApEast1,
-"ap-northeast-1" => VpcRegion::ApNortheast1,
-"ap-northeast-2" => VpcRegion::ApNortheast2,
-"ap-northeast-3" => VpcRegion::ApNortheast3,
-"ap-south-1" => VpcRegion::ApSouth1,
-"ap-south-2" => VpcRegion::ApSouth2,
-"ap-southeast-1" => VpcRegion::ApSoutheast1,
-"ap-southeast-2" => VpcRegion::ApSoutheast2,
-"ap-southeast-3" => VpcRegion::ApSoutheast3,
-"ap-southeast-4" => VpcRegion::ApSoutheast4,
-"ca-central-1" => VpcRegion::CaCentral1,
-"cn-north-1" => VpcRegion::CnNorth1,
-"eu-central-1" => VpcRegion::EuCentral1,
-"eu-central-2" => VpcRegion::EuCentral2,
-"eu-north-1" => VpcRegion::EuNorth1,
-"eu-south-1" => VpcRegion::EuSouth1,
-"eu-south-2" => VpcRegion::EuSouth2,
-"eu-west-1" => VpcRegion::EuWest1,
-"eu-west-2" => VpcRegion::EuWest2,
-"eu-west-3" => VpcRegion::EuWest3,
-"me-central-1" => VpcRegion::MeCentral1,
-"me-south-1" => VpcRegion::MeSouth1,
-"sa-east-1" => VpcRegion::SaEast1,
-"us-east-1" => VpcRegion::UsEast1,
-"us-east-2" => VpcRegion::UsEast2,
-"us-gov-east-1" => VpcRegion::UsGovEast1,
-"us-gov-west-1" => VpcRegion::UsGovWest1,
-"us-iso-east-1" => VpcRegion::UsIsoEast1,
-"us-iso-west-1" => VpcRegion::UsIsoWest1,
-"us-isob-east-1" => VpcRegion::UsIsobEast1,
-"us-west-1" => VpcRegion::UsWest1,
-"us-west-2" => VpcRegion::UsWest2,
-other => VpcRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for VpcRegion {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(VpcRegion::from(s))
-                }
-            }
-impl VpcRegion {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    VpcRegion::AfSouth1 => "af-south-1",
-    VpcRegion::ApEast1 => "ap-east-1",
-    VpcRegion::ApNortheast1 => "ap-northeast-1",
-    VpcRegion::ApNortheast2 => "ap-northeast-2",
-    VpcRegion::ApNortheast3 => "ap-northeast-3",
-    VpcRegion::ApSouth1 => "ap-south-1",
-    VpcRegion::ApSouth2 => "ap-south-2",
-    VpcRegion::ApSoutheast1 => "ap-southeast-1",
-    VpcRegion::ApSoutheast2 => "ap-southeast-2",
-    VpcRegion::ApSoutheast3 => "ap-southeast-3",
-    VpcRegion::ApSoutheast4 => "ap-southeast-4",
-    VpcRegion::CaCentral1 => "ca-central-1",
-    VpcRegion::CnNorth1 => "cn-north-1",
-    VpcRegion::EuCentral1 => "eu-central-1",
-    VpcRegion::EuCentral2 => "eu-central-2",
-    VpcRegion::EuNorth1 => "eu-north-1",
-    VpcRegion::EuSouth1 => "eu-south-1",
-    VpcRegion::EuSouth2 => "eu-south-2",
-    VpcRegion::EuWest1 => "eu-west-1",
-    VpcRegion::EuWest2 => "eu-west-2",
-    VpcRegion::EuWest3 => "eu-west-3",
-    VpcRegion::MeCentral1 => "me-central-1",
-    VpcRegion::MeSouth1 => "me-south-1",
-    VpcRegion::SaEast1 => "sa-east-1",
-    VpcRegion::UsEast1 => "us-east-1",
-    VpcRegion::UsEast2 => "us-east-2",
-    VpcRegion::UsGovEast1 => "us-gov-east-1",
-    VpcRegion::UsGovWest1 => "us-gov-west-1",
-    VpcRegion::UsIsoEast1 => "us-iso-east-1",
-    VpcRegion::UsIsoWest1 => "us-iso-west-1",
-    VpcRegion::UsIsobEast1 => "us-isob-east-1",
-    VpcRegion::UsWest1 => "us-west-1",
-    VpcRegion::UsWest2 => "us-west-2",
-    VpcRegion::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "af-south-1" => VpcRegion::AfSouth1,
+            "ap-east-1" => VpcRegion::ApEast1,
+            "ap-northeast-1" => VpcRegion::ApNortheast1,
+            "ap-northeast-2" => VpcRegion::ApNortheast2,
+            "ap-northeast-3" => VpcRegion::ApNortheast3,
+            "ap-south-1" => VpcRegion::ApSouth1,
+            "ap-south-2" => VpcRegion::ApSouth2,
+            "ap-southeast-1" => VpcRegion::ApSoutheast1,
+            "ap-southeast-2" => VpcRegion::ApSoutheast2,
+            "ap-southeast-3" => VpcRegion::ApSoutheast3,
+            "ap-southeast-4" => VpcRegion::ApSoutheast4,
+            "ca-central-1" => VpcRegion::CaCentral1,
+            "cn-north-1" => VpcRegion::CnNorth1,
+            "eu-central-1" => VpcRegion::EuCentral1,
+            "eu-central-2" => VpcRegion::EuCentral2,
+            "eu-north-1" => VpcRegion::EuNorth1,
+            "eu-south-1" => VpcRegion::EuSouth1,
+            "eu-south-2" => VpcRegion::EuSouth2,
+            "eu-west-1" => VpcRegion::EuWest1,
+            "eu-west-2" => VpcRegion::EuWest2,
+            "eu-west-3" => VpcRegion::EuWest3,
+            "me-central-1" => VpcRegion::MeCentral1,
+            "me-south-1" => VpcRegion::MeSouth1,
+            "sa-east-1" => VpcRegion::SaEast1,
+            "us-east-1" => VpcRegion::UsEast1,
+            "us-east-2" => VpcRegion::UsEast2,
+            "us-gov-east-1" => VpcRegion::UsGovEast1,
+            "us-gov-west-1" => VpcRegion::UsGovWest1,
+            "us-iso-east-1" => VpcRegion::UsIsoEast1,
+            "us-iso-west-1" => VpcRegion::UsIsoWest1,
+            "us-isob-east-1" => VpcRegion::UsIsobEast1,
+            "us-west-1" => VpcRegion::UsWest1,
+            "us-west-2" => VpcRegion::UsWest2,
+            other => VpcRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-gov-east-1", "us-gov-west-1", "us-iso-east-1", "us-iso-west-1", "us-isob-east-1", "us-west-1", "us-west-2"]
-                }
-            }
-impl AsRef<str> for VpcRegion {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for VpcRegion {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VpcRegion::from(s))
+    }
+}
+impl VpcRegion {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VpcRegion::AfSouth1 => "af-south-1",
+            VpcRegion::ApEast1 => "ap-east-1",
+            VpcRegion::ApNortheast1 => "ap-northeast-1",
+            VpcRegion::ApNortheast2 => "ap-northeast-2",
+            VpcRegion::ApNortheast3 => "ap-northeast-3",
+            VpcRegion::ApSouth1 => "ap-south-1",
+            VpcRegion::ApSouth2 => "ap-south-2",
+            VpcRegion::ApSoutheast1 => "ap-southeast-1",
+            VpcRegion::ApSoutheast2 => "ap-southeast-2",
+            VpcRegion::ApSoutheast3 => "ap-southeast-3",
+            VpcRegion::ApSoutheast4 => "ap-southeast-4",
+            VpcRegion::CaCentral1 => "ca-central-1",
+            VpcRegion::CnNorth1 => "cn-north-1",
+            VpcRegion::EuCentral1 => "eu-central-1",
+            VpcRegion::EuCentral2 => "eu-central-2",
+            VpcRegion::EuNorth1 => "eu-north-1",
+            VpcRegion::EuSouth1 => "eu-south-1",
+            VpcRegion::EuSouth2 => "eu-south-2",
+            VpcRegion::EuWest1 => "eu-west-1",
+            VpcRegion::EuWest2 => "eu-west-2",
+            VpcRegion::EuWest3 => "eu-west-3",
+            VpcRegion::MeCentral1 => "me-central-1",
+            VpcRegion::MeSouth1 => "me-south-1",
+            VpcRegion::SaEast1 => "sa-east-1",
+            VpcRegion::UsEast1 => "us-east-1",
+            VpcRegion::UsEast2 => "us-east-2",
+            VpcRegion::UsGovEast1 => "us-gov-east-1",
+            VpcRegion::UsGovWest1 => "us-gov-west-1",
+            VpcRegion::UsIsoEast1 => "us-iso-east-1",
+            VpcRegion::UsIsoWest1 => "us-iso-west-1",
+            VpcRegion::UsIsobEast1 => "us-isob-east-1",
+            VpcRegion::UsWest1 => "us-west-1",
+            VpcRegion::UsWest2 => "us-west-2",
+            VpcRegion::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "af-south-1",
+            "ap-east-1",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ca-central-1",
+            "cn-north-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "me-central-1",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-iso-east-1",
+            "us-iso-west-1",
+            "us-isob-east-1",
+            "us-west-1",
+            "us-west-2",
+        ]
+    }
+}
+impl AsRef<str> for VpcRegion {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

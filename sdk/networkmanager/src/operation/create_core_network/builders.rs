@@ -4,57 +4,80 @@ pub use crate::operation::create_core_network::_create_core_network_output::Crea
 pub use crate::operation::create_core_network::_create_core_network_input::CreateCoreNetworkInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCoreNetwork`.
-/// 
+///
 /// <p>Creates a core network as part of your global network, and optionally, with a core network policy.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCoreNetworkFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_core_network::builders::CreateCoreNetworkInputBuilder,
+    inner: crate::operation::create_core_network::builders::CreateCoreNetworkInputBuilder,
 }
-impl CreateCoreNetworkFluentBuilder  {
+impl CreateCoreNetworkFluentBuilder {
     /// Creates a new `CreateCoreNetwork`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_core_network::CreateCoreNetwork, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_core_network::CreateCoreNetworkError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_core_network::CreateCoreNetworkOutput, aws_smithy_http::result::SdkError<crate::operation::create_core_network::CreateCoreNetworkError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_core_network::CreateCoreNetwork,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_core_network::CreateCoreNetworkError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_core_network::CreateCoreNetworkOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_core_network::CreateCoreNetworkError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the global network that a core network will be a part of. </p>
     pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network that a core network will be a part of. </p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -78,7 +101,10 @@ impl CreateCoreNetworkFluentBuilder  {
         self
     }
     /// <p>Key-value tags associated with a core network request.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -103,4 +129,3 @@ impl CreateCoreNetworkFluentBuilder  {
         self
     }
 }
-

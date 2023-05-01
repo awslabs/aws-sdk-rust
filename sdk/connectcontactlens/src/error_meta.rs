@@ -14,7 +14,7 @@ pub enum Error {
     /// <p>The throttling limit has been exceeded.</p>
     ThrottlingException(crate::types::error::ThrottlingException),
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    Unhandled(aws_smithy_types::error::Unhandled)
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -24,7 +24,7 @@ impl std::fmt::Display for Error {
             Error::InvalidRequestException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ThrottlingException(inner) => inner.fmt(f),
-            Error::Unhandled(inner) => inner.fmt(f)
+            Error::Unhandled(inner) => inner.fmt(f),
         }
     }
 }
@@ -61,7 +61,7 @@ impl std::error::Error for Error {
             Error::InvalidRequestException(inner) => inner.source(),
             Error::ResourceNotFoundException(inner) => inner.source(),
             Error::ThrottlingException(inner) => inner.source(),
-            Error::Unhandled(inner) => inner.source()
+            Error::Unhandled(inner) => inner.source(),
         }
     }
 }
@@ -77,4 +77,3 @@ impl aws_http::request_id::RequestId for Error {
         }
     }
 }
-

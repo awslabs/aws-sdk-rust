@@ -24,7 +24,11 @@ impl Condition {
     /// Tries to convert the enum instance into [`After`](crate::types::Condition::After), extracting the inner [`DateTime`](aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_after(&self) -> std::result::Result<&aws_smithy_types::DateTime, &Self> {
-        if let Condition::After(val) = &self { Ok(val) } else { Err(self) }
+        if let Condition::After(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`After`](crate::types::Condition::After).
     pub fn is_after(&self) -> bool {
@@ -33,7 +37,11 @@ impl Condition {
     /// Tries to convert the enum instance into [`Before`](crate::types::Condition::Before), extracting the inner [`DateTime`](aws_smithy_types::DateTime).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_before(&self) -> std::result::Result<&aws_smithy_types::DateTime, &Self> {
-        if let Condition::Before(val) = &self { Ok(val) } else { Err(self) }
+        if let Condition::Before(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Before`](crate::types::Condition::Before).
     pub fn is_before(&self) -> bool {
@@ -42,7 +50,11 @@ impl Condition {
     /// Tries to convert the enum instance into [`Equals`](crate::types::Condition::Equals), extracting the inner [`AttributeValueList`](crate::types::AttributeValueList).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_equals(&self) -> std::result::Result<&crate::types::AttributeValueList, &Self> {
-        if let Condition::Equals(val) = &self { Ok(val) } else { Err(self) }
+        if let Condition::Equals(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Equals`](crate::types::Condition::Equals).
     pub fn is_equals(&self) -> bool {
@@ -53,4 +65,3 @@ impl Condition {
         matches!(self, Self::Unknown)
     }
 }
-

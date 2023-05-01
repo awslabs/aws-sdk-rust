@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>PutActionRevision</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutActionRevisionOutput  {
+pub struct PutActionRevisionOutput {
     /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
     #[doc(hidden)]
     pub new_revision: bool,
@@ -18,18 +18,19 @@ impl PutActionRevisionOutput {
         self.new_revision
     }
     /// <p>The ID of the current workflow state of the pipeline.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for PutActionRevisionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutActionRevisionOutput {
     /// Creates a new builder-style object to manufacture [`PutActionRevisionOutput`](crate::operation::put_action_revision::PutActionRevisionOutput).
-    pub fn builder() -> crate::operation::put_action_revision::builders::PutActionRevisionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_action_revision::builders::PutActionRevisionOutputBuilder {
         crate::operation::put_action_revision::builders::PutActionRevisionOutputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl PutActionRevisionOutputBuilder {
     }
     /// <p>Indicates whether the artifact revision was previously used in an execution of the specified pipeline.</p>
     pub fn set_new_revision(mut self, input: std::option::Option<bool>) -> Self {
-        self.new_revision = input; self
+        self.new_revision = input;
+        self
     }
     /// <p>The ID of the current workflow state of the pipeline.</p>
     pub fn pipeline_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,28 +60,28 @@ impl PutActionRevisionOutputBuilder {
         self
     }
     /// <p>The ID of the current workflow state of the pipeline.</p>
-    pub fn set_pipeline_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_execution_id = input; self
+    pub fn set_pipeline_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.pipeline_execution_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutActionRevisionOutput`](crate::operation::put_action_revision::PutActionRevisionOutput).
     pub fn build(self) -> crate::operation::put_action_revision::PutActionRevisionOutput {
         crate::operation::put_action_revision::PutActionRevisionOutput {
-            new_revision: self.new_revision
-                .unwrap_or_default()
-            ,
-            pipeline_execution_id: self.pipeline_execution_id
-            ,
+            new_revision: self.new_revision.unwrap_or_default(),
+            pipeline_execution_id: self.pipeline_execution_id,
             _request_id: self._request_id,
         }
     }
 }
-

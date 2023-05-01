@@ -4,89 +4,120 @@ pub use crate::operation::list_shared_projects::_list_shared_projects_output::Li
 pub use crate::operation::list_shared_projects::_list_shared_projects_input::ListSharedProjectsInputBuilder;
 
 /// Fluent builder constructing a request to `ListSharedProjects`.
-/// 
+///
 /// <p> Gets a list of projects that are shared with other Amazon Web Services accounts or users. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSharedProjectsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_shared_projects::builders::ListSharedProjectsInputBuilder,
+    inner: crate::operation::list_shared_projects::builders::ListSharedProjectsInputBuilder,
 }
-impl ListSharedProjectsFluentBuilder  {
+impl ListSharedProjectsFluentBuilder {
     /// Creates a new `ListSharedProjects`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_shared_projects::ListSharedProjects, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_shared_projects::ListSharedProjectsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_shared_projects::ListSharedProjectsOutput, aws_smithy_http::result::SdkError<crate::operation::list_shared_projects::ListSharedProjectsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_shared_projects::ListSharedProjects,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_shared_projects::ListSharedProjectsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_shared_projects::ListSharedProjectsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_shared_projects::ListSharedProjectsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator {
-                                crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator::new(self.handle, self.inner)
-                            }
-    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p> 
-    /// <ul> 
-    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li> 
-    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator {
+        crate::operation::list_shared_projects::paginator::ListSharedProjectsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
+    /// <ul>
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
     pub fn sort_by(mut self, input: crate::types::SharedResourceSortByType) -> Self {
         self.inner = self.inner.sort_by(input);
         self
     }
-    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p> 
-    /// <ul> 
-    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li> 
-    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li> 
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account or user. Valid values include: </p>
+    /// <ul>
+    /// <li> <p> <code>ARN</code>: List based on the ARN. </p> </li>
+    /// <li> <p> <code>MODIFIED_TIME</code>: List based on when information about the shared project was last changed. </p> </li>
     /// </ul>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::SharedResourceSortByType>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::SharedResourceSortByType>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
-    /// <p>The order in which to list shared build projects. Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+    /// <p>The order in which to list shared build projects. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
     pub fn sort_order(mut self, input: crate::types::SortOrderType) -> Self {
         self.inner = self.inner.sort_order(input);
         self
     }
-    /// <p>The order in which to list shared build projects. Valid values include:</p> 
-    /// <ul> 
-    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> 
-    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li> 
+    /// <p>The order in which to list shared build projects. Valid values include:</p>
+    /// <ul>
+    /// <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li>
+    /// <li> <p> <code>DESCENDING</code>: List in descending order.</p> </li>
     /// </ul>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrderType>) -> Self {
+    pub fn set_sort_order(
+        mut self,
+        input: std::option::Option<crate::types::SortOrderType>,
+    ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -111,4 +142,3 @@ impl ListSharedProjectsFluentBuilder  {
         self
     }
 }
-

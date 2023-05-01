@@ -3,7 +3,7 @@
 /// <p>Describes an OpenSearch data source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OpenSearchServiceDataSourceConfig  {
+pub struct OpenSearchServiceDataSourceConfig {
     /// <p>The endpoint.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct OpenSearchServiceDataSourceConfig  {
 }
 impl OpenSearchServiceDataSourceConfig {
     /// <p>The endpoint.</p>
-    pub fn endpoint(&self) -> std::option::Option<& str> {
+    pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
     /// <p>The Amazon Web Services Region.</p>
-    pub fn aws_region(&self) -> std::option::Option<& str> {
+    pub fn aws_region(&self) -> std::option::Option<&str> {
         self.aws_region.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl OpenSearchServiceDataSourceConfigBuilder {
     }
     /// <p>The endpoint.</p>
     pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint = input; self
+        self.endpoint = input;
+        self
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl OpenSearchServiceDataSourceConfigBuilder {
     }
     /// <p>The Amazon Web Services Region.</p>
     pub fn set_aws_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_region = input; self
+        self.aws_region = input;
+        self
     }
     /// Consumes the builder and constructs a [`OpenSearchServiceDataSourceConfig`](crate::types::OpenSearchServiceDataSourceConfig).
     pub fn build(self) -> crate::types::OpenSearchServiceDataSourceConfig {
         crate::types::OpenSearchServiceDataSourceConfig {
-            endpoint: self.endpoint
-            ,
-            aws_region: self.aws_region
-            ,
+            endpoint: self.endpoint,
+            aws_region: self.aws_region,
         }
     }
 }
-

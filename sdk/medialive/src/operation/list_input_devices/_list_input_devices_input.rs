@@ -3,7 +3,7 @@
 /// Placeholder documentation for ListInputDevicesRequest
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListInputDevicesInput  {
+pub struct ListInputDevicesInput {
     /// Placeholder documentation for MaxResults
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -17,13 +17,14 @@ impl ListInputDevicesInput {
         self.max_results
     }
     /// Placeholder documentation for __string
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListInputDevicesInput {
     /// Creates a new builder-style object to manufacture [`ListInputDevicesInput`](crate::operation::list_input_devices::ListInputDevicesInput).
-    pub fn builder() -> crate::operation::list_input_devices::builders::ListInputDevicesInputBuilder {
+    pub fn builder() -> crate::operation::list_input_devices::builders::ListInputDevicesInputBuilder
+    {
         crate::operation::list_input_devices::builders::ListInputDevicesInputBuilder::default()
     }
 }
@@ -43,7 +44,8 @@ impl ListInputDevicesInputBuilder {
     }
     /// Placeholder documentation for MaxResults
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Placeholder documentation for __string
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +54,21 @@ impl ListInputDevicesInputBuilder {
     }
     /// Placeholder documentation for __string
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListInputDevicesInput`](crate::operation::list_input_devices::ListInputDevicesInput).
-    pub fn build(self) -> Result<crate::operation::list_input_devices::ListInputDevicesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_input_devices::ListInputDevicesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_input_devices::ListInputDevicesInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

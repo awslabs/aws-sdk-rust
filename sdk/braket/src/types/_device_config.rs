@@ -3,14 +3,14 @@
 /// <p>Configures the quantum processing units (QPUs) or simulator used to create and run an Amazon Braket job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeviceConfig  {
+pub struct DeviceConfig {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
     #[doc(hidden)]
     pub device: std::option::Option<std::string::String>,
 }
 impl DeviceConfig {
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
-    pub fn device(&self) -> std::option::Option<& str> {
+    pub fn device(&self) -> std::option::Option<&str> {
         self.device.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl DeviceConfigBuilder {
     }
     /// <p>The primary quantum processing unit (QPU) or simulator used to create and run an Amazon Braket job.</p>
     pub fn set_device(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device = input; self
+        self.device = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeviceConfig`](crate::types::DeviceConfig).
     pub fn build(self) -> crate::types::DeviceConfig {
         crate::types::DeviceConfig {
-            device: self.device
-            ,
+            device: self.device,
         }
     }
 }
-

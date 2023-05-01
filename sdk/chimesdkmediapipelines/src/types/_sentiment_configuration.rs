@@ -3,7 +3,7 @@
 /// <p>A structure that contains the configuration settings for a sentiment analysis task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SentimentConfiguration  {
+pub struct SentimentConfiguration {
     /// <p>The name of the rule in the sentiment configuration.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct SentimentConfiguration  {
 }
 impl SentimentConfiguration {
     /// <p>The name of the rule in the sentiment configuration.</p>
-    pub fn rule_name(&self) -> std::option::Option<& str> {
+    pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.</p>
-    pub fn sentiment_type(&self) -> std::option::Option<& crate::types::SentimentType> {
+    pub fn sentiment_type(&self) -> std::option::Option<&crate::types::SentimentType> {
         self.sentiment_type.as_ref()
     }
     /// <p>Specifies the analysis interval.</p>
@@ -51,7 +51,8 @@ impl SentimentConfigurationBuilder {
     }
     /// <p>The name of the rule in the sentiment configuration.</p>
     pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_name = input; self
+        self.rule_name = input;
+        self
     }
     /// <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.</p>
     pub fn sentiment_type(mut self, input: crate::types::SentimentType) -> Self {
@@ -59,8 +60,12 @@ impl SentimentConfigurationBuilder {
         self
     }
     /// <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.</p>
-    pub fn set_sentiment_type(mut self, input: std::option::Option<crate::types::SentimentType>) -> Self {
-        self.sentiment_type = input; self
+    pub fn set_sentiment_type(
+        mut self,
+        input: std::option::Option<crate::types::SentimentType>,
+    ) -> Self {
+        self.sentiment_type = input;
+        self
     }
     /// <p>Specifies the analysis interval.</p>
     pub fn time_period(mut self, input: i32) -> Self {
@@ -69,19 +74,15 @@ impl SentimentConfigurationBuilder {
     }
     /// <p>Specifies the analysis interval.</p>
     pub fn set_time_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.time_period = input; self
+        self.time_period = input;
+        self
     }
     /// Consumes the builder and constructs a [`SentimentConfiguration`](crate::types::SentimentConfiguration).
     pub fn build(self) -> crate::types::SentimentConfiguration {
         crate::types::SentimentConfiguration {
-            rule_name: self.rule_name
-            ,
-            sentiment_type: self.sentiment_type
-            ,
-            time_period: self.time_period
-                .unwrap_or_default()
-            ,
+            rule_name: self.rule_name,
+            sentiment_type: self.sentiment_type,
+            time_period: self.time_period.unwrap_or_default(),
         }
     }
 }
-

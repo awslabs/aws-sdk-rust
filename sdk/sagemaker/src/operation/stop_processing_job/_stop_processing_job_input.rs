@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopProcessingJobInput  {
+pub struct StopProcessingJobInput {
     /// <p>The name of the processing job to stop.</p>
     #[doc(hidden)]
     pub processing_job_name: std::option::Option<std::string::String>,
 }
 impl StopProcessingJobInput {
     /// <p>The name of the processing job to stop.</p>
-    pub fn processing_job_name(&self) -> std::option::Option<& str> {
+    pub fn processing_job_name(&self) -> std::option::Option<&str> {
         self.processing_job_name.as_deref()
     }
 }
 impl StopProcessingJobInput {
     /// Creates a new builder-style object to manufacture [`StopProcessingJobInput`](crate::operation::stop_processing_job::StopProcessingJobInput).
-    pub fn builder() -> crate::operation::stop_processing_job::builders::StopProcessingJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::stop_processing_job::builders::StopProcessingJobInputBuilder {
         crate::operation::stop_processing_job::builders::StopProcessingJobInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl StopProcessingJobInputBuilder {
         self
     }
     /// <p>The name of the processing job to stop.</p>
-    pub fn set_processing_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.processing_job_name = input; self
+    pub fn set_processing_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.processing_job_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopProcessingJobInput`](crate::operation::stop_processing_job::StopProcessingJobInput).
-    pub fn build(self) -> Result<crate::operation::stop_processing_job::StopProcessingJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_processing_job::StopProcessingJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_processing_job::StopProcessingJobInput {
-                processing_job_name: self.processing_job_name
-                ,
-            }
+                processing_job_name: self.processing_job_name,
+            },
         )
     }
 }
-

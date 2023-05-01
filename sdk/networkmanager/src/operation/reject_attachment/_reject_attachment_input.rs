@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectAttachmentInput  {
+pub struct RejectAttachmentInput {
     /// <p>The ID of the attachment.</p>
     #[doc(hidden)]
     pub attachment_id: std::option::Option<std::string::String>,
 }
 impl RejectAttachmentInput {
     /// <p>The ID of the attachment.</p>
-    pub fn attachment_id(&self) -> std::option::Option<& str> {
+    pub fn attachment_id(&self) -> std::option::Option<&str> {
         self.attachment_id.as_deref()
     }
 }
 impl RejectAttachmentInput {
     /// Creates a new builder-style object to manufacture [`RejectAttachmentInput`](crate::operation::reject_attachment::RejectAttachmentInput).
-    pub fn builder() -> crate::operation::reject_attachment::builders::RejectAttachmentInputBuilder {
+    pub fn builder() -> crate::operation::reject_attachment::builders::RejectAttachmentInputBuilder
+    {
         crate::operation::reject_attachment::builders::RejectAttachmentInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl RejectAttachmentInputBuilder {
     }
     /// <p>The ID of the attachment.</p>
     pub fn set_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attachment_id = input; self
+        self.attachment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`RejectAttachmentInput`](crate::operation::reject_attachment::RejectAttachmentInput).
-    pub fn build(self) -> Result<crate::operation::reject_attachment::RejectAttachmentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::reject_attachment::RejectAttachmentInput {
-                attachment_id: self.attachment_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reject_attachment::RejectAttachmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::reject_attachment::RejectAttachmentInput {
+            attachment_id: self.attachment_id,
+        })
     }
 }
-

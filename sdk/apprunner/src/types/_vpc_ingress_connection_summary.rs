@@ -3,7 +3,7 @@
 /// <p>Provides summary information about an VPC Ingress Connection, which includes its VPC Ingress Connection ARN and its associated Service ARN.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcIngressConnectionSummary  {
+pub struct VpcIngressConnectionSummary {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
     #[doc(hidden)]
     pub vpc_ingress_connection_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct VpcIngressConnectionSummary  {
 }
 impl VpcIngressConnectionSummary {
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
-    pub fn vpc_ingress_connection_arn(&self) -> std::option::Option<& str> {
+    pub fn vpc_ingress_connection_arn(&self) -> std::option::Option<&str> {
         self.vpc_ingress_connection_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
-    pub fn service_arn(&self) -> std::option::Option<& str> {
+    pub fn service_arn(&self) -> std::option::Option<&str> {
         self.service_arn.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl VpcIngressConnectionSummaryBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
-    pub fn set_vpc_ingress_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_ingress_connection_arn = input; self
+    pub fn set_vpc_ingress_connection_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpc_ingress_connection_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
     pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl VpcIngressConnectionSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress Connection. </p>
     pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_arn = input; self
+        self.service_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcIngressConnectionSummary`](crate::types::VpcIngressConnectionSummary).
     pub fn build(self) -> crate::types::VpcIngressConnectionSummary {
         crate::types::VpcIngressConnectionSummary {
-            vpc_ingress_connection_arn: self.vpc_ingress_connection_arn
-            ,
-            service_arn: self.service_arn
-            ,
+            vpc_ingress_connection_arn: self.vpc_ingress_connection_arn,
+            service_arn: self.service_arn,
         }
     }
 }
-

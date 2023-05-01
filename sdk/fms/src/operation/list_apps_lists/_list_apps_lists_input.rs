@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppsListsInput  {
+pub struct ListAppsListsInput {
     /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
     #[doc(hidden)]
     pub default_lists: std::option::Option<bool>,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p> 
+    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -20,10 +20,10 @@ impl ListAppsListsInput {
         self.default_lists
     }
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
-    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p> 
+    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
     pub fn max_results(&self) -> std::option::Option<i32> {
         self.max_results
@@ -52,7 +52,8 @@ impl ListAppsListsInputBuilder {
     }
     /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
     pub fn set_default_lists(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_lists = input; self
+        self.default_lists = input;
+        self
     }
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -61,31 +62,32 @@ impl ListAppsListsInputBuilder {
     }
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum, Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request in the request parameters, to retrieve the next batch of objects.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
-    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p> 
+    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
     pub fn max_results(mut self, input: i32) -> Self {
         self.max_results = Some(input);
         self
     }
-    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p> 
+    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
     /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAppsListsInput`](crate::operation::list_apps_lists::ListAppsListsInput).
-    pub fn build(self) -> Result<crate::operation::list_apps_lists::ListAppsListsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_apps_lists::ListAppsListsInput {
-                default_lists: self.default_lists
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_apps_lists::ListAppsListsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_apps_lists::ListAppsListsInput {
+            default_lists: self.default_lists,
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

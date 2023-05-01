@@ -3,7 +3,7 @@
 /// <p>Contains information about the condition.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterCondition  {
+pub struct FilterCondition {
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
     #[doc(hidden)]
     pub equals_value: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct FilterCondition  {
 }
 impl FilterCondition {
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
-    pub fn equals_value(&self) -> std::option::Option<& str> {
+    pub fn equals_value(&self) -> std::option::Option<&str> {
         self.equals_value.as_deref()
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
@@ -51,7 +51,8 @@ impl FilterConditionBuilder {
     }
     /// <p>Represents an <i>equal</i> <b></b> condition to be applied to a single field when querying for scan entries.</p>
     pub fn set_equals_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.equals_value = input; self
+        self.equals_value = input;
+        self
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
     pub fn greater_than(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl FilterConditionBuilder {
     }
     /// <p>Represents a <i>greater than</i> condition to be applied to a single field when querying for scan entries.</p>
     pub fn set_greater_than(mut self, input: std::option::Option<i64>) -> Self {
-        self.greater_than = input; self
+        self.greater_than = input;
+        self
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
     pub fn less_than(mut self, input: i64) -> Self {
@@ -69,20 +71,15 @@ impl FilterConditionBuilder {
     }
     /// <p>Represents a <i>less than</i> condition to be applied to a single field when querying for scan entries.</p>
     pub fn set_less_than(mut self, input: std::option::Option<i64>) -> Self {
-        self.less_than = input; self
+        self.less_than = input;
+        self
     }
     /// Consumes the builder and constructs a [`FilterCondition`](crate::types::FilterCondition).
     pub fn build(self) -> crate::types::FilterCondition {
         crate::types::FilterCondition {
-            equals_value: self.equals_value
-            ,
-            greater_than: self.greater_than
-                .unwrap_or_default()
-            ,
-            less_than: self.less_than
-                .unwrap_or_default()
-            ,
+            equals_value: self.equals_value,
+            greater_than: self.greater_than.unwrap_or_default(),
+            less_than: self.less_than.unwrap_or_default(),
         }
     }
 }
-

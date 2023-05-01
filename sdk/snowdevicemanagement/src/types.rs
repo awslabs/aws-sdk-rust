@@ -100,4 +100,3 @@ pub mod builders;
 
 /// Error types that AWS Snow Device Management can respond with.
 pub mod error;
-

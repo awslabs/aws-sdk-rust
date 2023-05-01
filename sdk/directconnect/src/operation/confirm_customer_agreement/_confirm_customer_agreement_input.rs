@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConfirmCustomerAgreementInput  {
+pub struct ConfirmCustomerAgreementInput {
     /// <p> The name of the customer agreement. </p>
     #[doc(hidden)]
     pub agreement_name: std::option::Option<std::string::String>,
 }
 impl ConfirmCustomerAgreementInput {
     /// <p> The name of the customer agreement. </p>
-    pub fn agreement_name(&self) -> std::option::Option<& str> {
+    pub fn agreement_name(&self) -> std::option::Option<&str> {
         self.agreement_name.as_deref()
     }
 }
 impl ConfirmCustomerAgreementInput {
     /// Creates a new builder-style object to manufacture [`ConfirmCustomerAgreementInput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput).
-    pub fn builder() -> crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder
+    {
         crate::operation::confirm_customer_agreement::builders::ConfirmCustomerAgreementInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl ConfirmCustomerAgreementInputBuilder {
     }
     /// <p> The name of the customer agreement. </p>
     pub fn set_agreement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.agreement_name = input; self
+        self.agreement_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConfirmCustomerAgreementInput`](crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput).
-    pub fn build(self) -> Result<crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementInput {
-                agreement_name: self.agreement_name
-                ,
-            }
+                agreement_name: self.agreement_name,
+            },
         )
     }
 }
-

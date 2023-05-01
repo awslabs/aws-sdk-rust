@@ -3,7 +3,7 @@
 /// <p>The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a> configuration object that specifies the VPC that you want the compilation jobs to connect to. For more information on controlling access to your Amazon S3 buckets used for compilation job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Give Amazon SageMaker Compilation Jobs Access to Resources in Your Amazon VPC</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NeoVpcConfig  {
+pub struct NeoVpcConfig {
     /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
     #[doc(hidden)]
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,11 +13,11 @@ pub struct NeoVpcConfig  {
 }
 impl NeoVpcConfig {
     /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
-    pub fn security_group_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_ids.as_deref()
     }
     /// <p>The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model in Amazon S3.</p>
-    pub fn subnets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.subnets.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl NeoVpcConfigBuilder {
     /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
     pub fn security_group_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_ids = Some(v);
+        self
     }
     /// <p>The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify the security groups for the VPC that is specified in the <code>Subnets</code> field.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_ids = input; self
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_ids = input;
+        self
     }
     /// Appends an item to `subnets`.
     ///
@@ -58,22 +62,23 @@ impl NeoVpcConfigBuilder {
     /// <p>The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model in Amazon S3.</p>
     pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.subnets.unwrap_or_default();
-                        v.push(input.into());
-                        self.subnets = Some(v);
-                        self
+        v.push(input.into());
+        self.subnets = Some(v);
+        self
     }
     /// <p>The ID of the subnets in the VPC that you want to connect the compilation job to for accessing the model in Amazon S3.</p>
-    pub fn set_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.subnets = input; self
+    pub fn set_subnets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.subnets = input;
+        self
     }
     /// Consumes the builder and constructs a [`NeoVpcConfig`](crate::types::NeoVpcConfig).
     pub fn build(self) -> crate::types::NeoVpcConfig {
         crate::types::NeoVpcConfig {
-            security_group_ids: self.security_group_ids
-            ,
-            subnets: self.subnets
-            ,
+            security_group_ids: self.security_group_ids,
+            subnets: self.subnets,
         }
     }
 }
-

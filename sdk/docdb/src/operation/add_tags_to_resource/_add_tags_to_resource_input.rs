@@ -3,7 +3,7 @@
 /// <p>Represents the input to <code>AddTagsToResource</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddTagsToResourceInput  {
+pub struct AddTagsToResourceInput {
     /// <p>The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
@@ -13,17 +13,18 @@ pub struct AddTagsToResourceInput  {
 }
 impl AddTagsToResourceInput {
     /// <p>The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .</p>
-    pub fn resource_name(&self) -> std::option::Option<& str> {
+    pub fn resource_name(&self) -> std::option::Option<&str> {
         self.resource_name.as_deref()
     }
     /// <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl AddTagsToResourceInput {
     /// Creates a new builder-style object to manufacture [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
-    pub fn builder() -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder {
         crate::operation::add_tags_to_resource::builders::AddTagsToResourceInputBuilder::default()
     }
 }
@@ -43,7 +44,8 @@ impl AddTagsToResourceInputBuilder {
     }
     /// <p>The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .</p>
     pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_name = input; self
+        self.resource_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -52,24 +54,30 @@ impl AddTagsToResourceInputBuilder {
     /// <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags to be assigned to the Amazon DocumentDB resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddTagsToResourceInput`](crate::operation::add_tags_to_resource::AddTagsToResourceInput).
-    pub fn build(self) -> Result<crate::operation::add_tags_to_resource::AddTagsToResourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_tags_to_resource::AddTagsToResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::add_tags_to_resource::AddTagsToResourceInput {
-                resource_name: self.resource_name
-                ,
-                tags: self.tags
-                ,
-            }
+                resource_name: self.resource_name,
+                tags: self.tags,
+            },
         )
     }
 }
-

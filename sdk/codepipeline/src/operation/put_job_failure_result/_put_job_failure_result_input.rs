@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>PutJobFailureResult</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutJobFailureResultInput  {
+pub struct PutJobFailureResultInput {
     /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -13,18 +13,20 @@ pub struct PutJobFailureResultInput  {
 }
 impl PutJobFailureResultInput {
     /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The details about the failure of a job.</p>
-    pub fn failure_details(&self) -> std::option::Option<& crate::types::FailureDetails> {
+    pub fn failure_details(&self) -> std::option::Option<&crate::types::FailureDetails> {
         self.failure_details.as_ref()
     }
 }
 impl PutJobFailureResultInput {
     /// Creates a new builder-style object to manufacture [`PutJobFailureResultInput`](crate::operation::put_job_failure_result::PutJobFailureResultInput).
-    pub fn builder() -> crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder {
-        crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder {
+        crate::operation::put_job_failure_result::builders::PutJobFailureResultInputBuilder::default(
+        )
     }
 }
 
@@ -43,7 +45,8 @@ impl PutJobFailureResultInputBuilder {
     }
     /// <p>The unique system-generated ID of the job that failed. This is the same ID returned from <code>PollForJobs</code>.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>The details about the failure of a job.</p>
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
@@ -51,19 +54,25 @@ impl PutJobFailureResultInputBuilder {
         self
     }
     /// <p>The details about the failure of a job.</p>
-    pub fn set_failure_details(mut self, input: std::option::Option<crate::types::FailureDetails>) -> Self {
-        self.failure_details = input; self
+    pub fn set_failure_details(
+        mut self,
+        input: std::option::Option<crate::types::FailureDetails>,
+    ) -> Self {
+        self.failure_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutJobFailureResultInput`](crate::operation::put_job_failure_result::PutJobFailureResultInput).
-    pub fn build(self) -> Result<crate::operation::put_job_failure_result::PutJobFailureResultInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_job_failure_result::PutJobFailureResultInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_job_failure_result::PutJobFailureResultInput {
-                job_id: self.job_id
-                ,
-                failure_details: self.failure_details
-                ,
-            }
+                job_id: self.job_id,
+                failure_details: self.failure_details,
+            },
         )
     }
 }
-

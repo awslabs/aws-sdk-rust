@@ -4,57 +4,77 @@ pub use crate::operation::create_experiment_template::_create_experiment_templat
 pub use crate::operation::create_experiment_template::_create_experiment_template_input::CreateExperimentTemplateInputBuilder;
 
 /// Fluent builder constructing a request to `CreateExperimentTemplate`.
-/// 
-/// <p>Creates an experiment template. </p> 
-/// <p>An experiment template includes the following components:</p> 
-/// <ul> 
-/// <li> <p> <b>Targets</b>: A target can be a specific resource in your Amazon Web Services environment, or one or more resources that match criteria that you specify, for example, resources that have specific tags.</p> </li> 
-/// <li> <p> <b>Actions</b>: The actions to carry out on the target. You can specify multiple actions, the duration of each action, and when to start each action during an experiment.</p> </li> 
-/// <li> <p> <b>Stop conditions</b>: If a stop condition is triggered while an experiment is running, the experiment is automatically stopped. You can define a stop condition as a CloudWatch alarm.</p> </li> 
-/// </ul> 
+///
+/// <p>Creates an experiment template. </p>
+/// <p>An experiment template includes the following components:</p>
+/// <ul>
+/// <li> <p> <b>Targets</b>: A target can be a specific resource in your Amazon Web Services environment, or one or more resources that match criteria that you specify, for example, resources that have specific tags.</p> </li>
+/// <li> <p> <b>Actions</b>: The actions to carry out on the target. You can specify multiple actions, the duration of each action, and when to start each action during an experiment.</p> </li>
+/// <li> <p> <b>Stop conditions</b>: If a stop condition is triggered while an experiment is running, the experiment is automatically stopped. You can define a stop condition as a CloudWatch alarm.</p> </li>
+/// </ul>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">Experiment templates</a> in the <i>Fault Injection Simulator User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateExperimentTemplateFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::create_experiment_template::builders::CreateExperimentTemplateInputBuilder,
 }
-impl CreateExperimentTemplateFluentBuilder  {
+impl CreateExperimentTemplateFluentBuilder {
     /// Creates a new `CreateExperimentTemplate`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_experiment_template::CreateExperimentTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_experiment_template::CreateExperimentTemplateError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_experiment_template::CreateExperimentTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::create_experiment_template::CreateExperimentTemplateError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_experiment_template::CreateExperimentTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_experiment_template::CreateExperimentTemplateError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_experiment_template::CreateExperimentTemplateOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_experiment_template::CreateExperimentTemplateError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -80,12 +100,20 @@ impl CreateExperimentTemplateFluentBuilder  {
     /// To override the contents of this collection use [`set_stop_conditions`](Self::set_stop_conditions).
     ///
     /// <p>The stop conditions.</p>
-    pub fn stop_conditions(mut self, input: crate::types::CreateExperimentTemplateStopConditionInput) -> Self {
+    pub fn stop_conditions(
+        mut self,
+        input: crate::types::CreateExperimentTemplateStopConditionInput,
+    ) -> Self {
         self.inner = self.inner.stop_conditions(input);
         self
     }
     /// <p>The stop conditions.</p>
-    pub fn set_stop_conditions(mut self, input: std::option::Option<std::vec::Vec<crate::types::CreateExperimentTemplateStopConditionInput>>) -> Self {
+    pub fn set_stop_conditions(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::CreateExperimentTemplateStopConditionInput>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_stop_conditions(input);
         self
     }
@@ -94,12 +122,24 @@ impl CreateExperimentTemplateFluentBuilder  {
     /// To override the contents of this collection use [`set_targets`](Self::set_targets).
     ///
     /// <p>The targets for the experiment.</p>
-    pub fn targets(mut self, k: impl Into<std::string::String>, v: crate::types::CreateExperimentTemplateTargetInput) -> Self {
+    pub fn targets(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::CreateExperimentTemplateTargetInput,
+    ) -> Self {
         self.inner = self.inner.targets(k.into(), v);
         self
     }
     /// <p>The targets for the experiment.</p>
-    pub fn set_targets(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::CreateExperimentTemplateTargetInput>>) -> Self {
+    pub fn set_targets(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::types::CreateExperimentTemplateTargetInput,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_targets(input);
         self
     }
@@ -108,12 +148,24 @@ impl CreateExperimentTemplateFluentBuilder  {
     /// To override the contents of this collection use [`set_actions`](Self::set_actions).
     ///
     /// <p>The actions for the experiment.</p>
-    pub fn actions(mut self, k: impl Into<std::string::String>, v: crate::types::CreateExperimentTemplateActionInput) -> Self {
+    pub fn actions(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::CreateExperimentTemplateActionInput,
+    ) -> Self {
         self.inner = self.inner.actions(k.into(), v);
         self
     }
     /// <p>The actions for the experiment.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::CreateExperimentTemplateActionInput>>) -> Self {
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<
+                std::string::String,
+                crate::types::CreateExperimentTemplateActionInput,
+            >,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_actions(input);
         self
     }
@@ -132,24 +184,38 @@ impl CreateExperimentTemplateFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to apply to the experiment template.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to apply to the experiment template.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
     /// <p>The configuration for experiment logging.</p>
-    pub fn log_configuration(mut self, input: crate::types::CreateExperimentTemplateLogConfigurationInput) -> Self {
+    pub fn log_configuration(
+        mut self,
+        input: crate::types::CreateExperimentTemplateLogConfigurationInput,
+    ) -> Self {
         self.inner = self.inner.log_configuration(input);
         self
     }
     /// <p>The configuration for experiment logging.</p>
-    pub fn set_log_configuration(mut self, input: std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput>) -> Self {
+    pub fn set_log_configuration(
+        mut self,
+        input: std::option::Option<crate::types::CreateExperimentTemplateLogConfigurationInput>,
+    ) -> Self {
         self.inner = self.inner.set_log_configuration(input);
         self
     }
 }
-

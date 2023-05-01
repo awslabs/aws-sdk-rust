@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStudioLifecycleConfigInput  {
+pub struct DescribeStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
     #[doc(hidden)]
     pub studio_lifecycle_config_name: std::option::Option<std::string::String>,
 }
 impl DescribeStudioLifecycleConfigInput {
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
-    pub fn studio_lifecycle_config_name(&self) -> std::option::Option<& str> {
+    pub fn studio_lifecycle_config_name(&self) -> std::option::Option<&str> {
         self.studio_lifecycle_config_name.as_deref()
     }
 }
 impl DescribeStudioLifecycleConfigInput {
     /// Creates a new builder-style object to manufacture [`DescribeStudioLifecycleConfigInput`](crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput).
-    pub fn builder() -> crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigInputBuilder {
+    pub fn builder() -> crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigInputBuilder{
         crate::operation::describe_studio_lifecycle_config::builders::DescribeStudioLifecycleConfigInputBuilder::default()
     }
 }
@@ -33,11 +33,20 @@ impl DescribeStudioLifecycleConfigInputBuilder {
         self
     }
     /// <p>The name of the Studio Lifecycle Configuration to describe.</p>
-    pub fn set_studio_lifecycle_config_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_lifecycle_config_name = input; self
+    pub fn set_studio_lifecycle_config_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.studio_lifecycle_config_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeStudioLifecycleConfigInput`](crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput).
-    pub fn build(self) -> Result<crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_studio_lifecycle_config::DescribeStudioLifecycleConfigInput {
                 studio_lifecycle_config_name: self.studio_lifecycle_config_name
@@ -46,4 +55,3 @@ impl DescribeStudioLifecycleConfigInputBuilder {
         )
     }
 }
-

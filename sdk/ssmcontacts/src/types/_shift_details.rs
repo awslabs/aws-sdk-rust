@@ -3,14 +3,14 @@
 /// <p>Information about overrides to an on-call rotation shift.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ShiftDetails  {
+pub struct ShiftDetails {
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
     #[doc(hidden)]
     pub overridden_contact_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ShiftDetails {
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub fn overridden_contact_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn overridden_contact_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.overridden_contact_ids.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl ShiftDetailsBuilder {
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
     pub fn overridden_contact_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.overridden_contact_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.overridden_contact_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.overridden_contact_ids = Some(v);
+        self
     }
     /// <p>The Amazon Resources Names (ARNs) of the contacts who were replaced in a shift when an override was created. If the override is deleted, these contacts are restored to the shift.</p>
-    pub fn set_overridden_contact_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.overridden_contact_ids = input; self
+    pub fn set_overridden_contact_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.overridden_contact_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`ShiftDetails`](crate::types::ShiftDetails).
     pub fn build(self) -> crate::types::ShiftDetails {
         crate::types::ShiftDetails {
-            overridden_contact_ids: self.overridden_contact_ids
-            ,
+            overridden_contact_ids: self.overridden_contact_ids,
         }
     }
 }
-

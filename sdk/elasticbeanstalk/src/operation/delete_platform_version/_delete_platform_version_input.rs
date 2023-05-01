@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlatformVersionInput  {
+pub struct DeletePlatformVersionInput {
     /// <p>The ARN of the version of the custom platform.</p>
     #[doc(hidden)]
     pub platform_arn: std::option::Option<std::string::String>,
 }
 impl DeletePlatformVersionInput {
     /// <p>The ARN of the version of the custom platform.</p>
-    pub fn platform_arn(&self) -> std::option::Option<& str> {
+    pub fn platform_arn(&self) -> std::option::Option<&str> {
         self.platform_arn.as_deref()
     }
 }
 impl DeletePlatformVersionInput {
     /// Creates a new builder-style object to manufacture [`DeletePlatformVersionInput`](crate::operation::delete_platform_version::DeletePlatformVersionInput).
-    pub fn builder() -> crate::operation::delete_platform_version::builders::DeletePlatformVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_platform_version::builders::DeletePlatformVersionInputBuilder
+    {
         crate::operation::delete_platform_version::builders::DeletePlatformVersionInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeletePlatformVersionInputBuilder {
     }
     /// <p>The ARN of the version of the custom platform.</p>
     pub fn set_platform_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_arn = input; self
+        self.platform_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePlatformVersionInput`](crate::operation::delete_platform_version::DeletePlatformVersionInput).
-    pub fn build(self) -> Result<crate::operation::delete_platform_version::DeletePlatformVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_platform_version::DeletePlatformVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_platform_version::DeletePlatformVersionInput {
-                platform_arn: self.platform_arn
-                ,
-            }
+                platform_arn: self.platform_arn,
+            },
         )
     }
 }
-

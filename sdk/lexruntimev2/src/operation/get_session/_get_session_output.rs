@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSessionOutput  {
+pub struct GetSessionOutput {
     /// <p>The identifier of the returned session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
     #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::types::Message>>,
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p> 
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     #[doc(hidden)]
     pub interpretations: std::option::Option<std::vec::Vec<crate::types::Interpretation>>,
-    /// <p>Represents the current state of the dialog between the user and the bot.</p> 
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
     #[doc(hidden)]
     pub session_state: std::option::Option<crate::types::SessionState>,
@@ -21,29 +21,29 @@ pub struct GetSessionOutput  {
 }
 impl GetSessionOutput {
     /// <p>The identifier of the returned session.</p>
-    pub fn session_id(&self) -> std::option::Option<& str> {
+    pub fn session_id(&self) -> std::option::Option<&str> {
         self.session_id.as_deref()
     }
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
-    pub fn messages(&self) -> std::option::Option<& [crate::types::Message]> {
+    pub fn messages(&self) -> std::option::Option<&[crate::types::Message]> {
         self.messages.as_deref()
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p> 
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub fn interpretations(&self) -> std::option::Option<& [crate::types::Interpretation]> {
+    pub fn interpretations(&self) -> std::option::Option<&[crate::types::Interpretation]> {
         self.interpretations.as_deref()
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p> 
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
-    pub fn session_state(&self) -> std::option::Option<& crate::types::SessionState> {
+    pub fn session_state(&self) -> std::option::Option<&crate::types::SessionState> {
         self.session_state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetSessionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetSessionOutput {
     /// Creates a new builder-style object to manufacture [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput).
     pub fn builder() -> crate::operation::get_session::builders::GetSessionOutputBuilder {
@@ -69,7 +69,8 @@ impl GetSessionOutputBuilder {
     }
     /// <p>The identifier of the returned session.</p>
     pub fn set_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_id = input; self
+        self.session_id = input;
+        self
     }
     /// Appends an item to `messages`.
     ///
@@ -78,64 +79,71 @@ impl GetSessionOutputBuilder {
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
     pub fn messages(mut self, input: crate::types::Message) -> Self {
         let mut v = self.messages.unwrap_or_default();
-                        v.push(input);
-                        self.messages = Some(v);
-                        self
+        v.push(input);
+        self.messages = Some(v);
+        self
     }
     /// <p>A list of messages that were last sent to the user. The messages are ordered based on the order that your returned the messages from your Lambda function or the order that messages are defined in the bot. </p>
-    pub fn set_messages(mut self, input: std::option::Option<std::vec::Vec<crate::types::Message>>) -> Self {
-        self.messages = input; self
+    pub fn set_messages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Message>>,
+    ) -> Self {
+        self.messages = input;
+        self
     }
     /// Appends an item to `interpretations`.
     ///
     /// To override the contents of this collection use [`set_interpretations`](Self::set_interpretations).
     ///
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p> 
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
     pub fn interpretations(mut self, input: crate::types::Interpretation) -> Self {
         let mut v = self.interpretations.unwrap_or_default();
-                        v.push(input);
-                        self.interpretations = Some(v);
-                        self
+        v.push(input);
+        self.interpretations = Some(v);
+        self
     }
-    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p> 
+    /// <p>A list of intents that Amazon Lex V2 determined might satisfy the user's utterance. </p>
     /// <p>Each interpretation includes the intent, a score that indicates how confident Amazon Lex V2 is that the interpretation is the correct one, and an optional sentiment response that indicates the sentiment expressed in the utterance.</p>
-    pub fn set_interpretations(mut self, input: std::option::Option<std::vec::Vec<crate::types::Interpretation>>) -> Self {
-        self.interpretations = input; self
+    pub fn set_interpretations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Interpretation>>,
+    ) -> Self {
+        self.interpretations = input;
+        self
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p> 
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
     pub fn session_state(mut self, input: crate::types::SessionState) -> Self {
         self.session_state = Some(input);
         self
     }
-    /// <p>Represents the current state of the dialog between the user and the bot.</p> 
+    /// <p>Represents the current state of the dialog between the user and the bot.</p>
     /// <p>You can use this to determine the progress of the conversation and what the next action might be.</p>
-    pub fn set_session_state(mut self, input: std::option::Option<crate::types::SessionState>) -> Self {
-        self.session_state = input; self
+    pub fn set_session_state(
+        mut self,
+        input: std::option::Option<crate::types::SessionState>,
+    ) -> Self {
+        self.session_state = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetSessionOutput`](crate::operation::get_session::GetSessionOutput).
     pub fn build(self) -> crate::operation::get_session::GetSessionOutput {
         crate::operation::get_session::GetSessionOutput {
-            session_id: self.session_id
-            ,
-            messages: self.messages
-            ,
-            interpretations: self.interpretations
-            ,
-            session_state: self.session_state
-            ,
+            session_id: self.session_id,
+            messages: self.messages,
+            interpretations: self.interpretations,
+            session_state: self.session_state,
             _request_id: self._request_id,
         }
     }
 }
-

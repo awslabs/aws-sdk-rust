@@ -3,7 +3,7 @@
 /// <p>Earliest and latest time an instance can be restored to:</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RestoreWindow  {
+pub struct RestoreWindow {
     /// <p>The earliest time you can restore an instance to.</p>
     #[doc(hidden)]
     pub earliest_time: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct RestoreWindow  {
 }
 impl RestoreWindow {
     /// <p>The earliest time you can restore an instance to.</p>
-    pub fn earliest_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn earliest_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.earliest_time.as_ref()
     }
     /// <p>The latest time you can restore an instance to.</p>
-    pub fn latest_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn latest_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.latest_time.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl RestoreWindowBuilder {
         self
     }
     /// <p>The earliest time you can restore an instance to.</p>
-    pub fn set_earliest_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.earliest_time = input; self
+    pub fn set_earliest_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.earliest_time = input;
+        self
     }
     /// <p>The latest time you can restore an instance to.</p>
     pub fn latest_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -51,17 +55,18 @@ impl RestoreWindowBuilder {
         self
     }
     /// <p>The latest time you can restore an instance to.</p>
-    pub fn set_latest_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.latest_time = input; self
+    pub fn set_latest_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.latest_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`RestoreWindow`](crate::types::RestoreWindow).
     pub fn build(self) -> crate::types::RestoreWindow {
         crate::types::RestoreWindow {
-            earliest_time: self.earliest_time
-            ,
-            latest_time: self.latest_time
-            ,
+            earliest_time: self.earliest_time,
+            latest_time: self.latest_time,
         }
     }
 }
-

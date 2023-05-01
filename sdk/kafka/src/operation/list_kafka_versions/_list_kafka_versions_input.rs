@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListKafkaVersionsInput  {
+pub struct ListKafkaVersionsInput {
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,13 +16,14 @@ impl ListKafkaVersionsInput {
         self.max_results
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListKafkaVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListKafkaVersionsInput`](crate::operation::list_kafka_versions::ListKafkaVersionsInput).
-    pub fn builder() -> crate::operation::list_kafka_versions::builders::ListKafkaVersionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_kafka_versions::builders::ListKafkaVersionsInputBuilder {
         crate::operation::list_kafka_versions::builders::ListKafkaVersionsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListKafkaVersionsInputBuilder {
     }
     /// <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl ListKafkaVersionsInputBuilder {
     }
     /// <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListKafkaVersionsInput`](crate::operation::list_kafka_versions::ListKafkaVersionsInput).
-    pub fn build(self) -> Result<crate::operation::list_kafka_versions::ListKafkaVersionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_kafka_versions::ListKafkaVersionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_kafka_versions::ListKafkaVersionsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

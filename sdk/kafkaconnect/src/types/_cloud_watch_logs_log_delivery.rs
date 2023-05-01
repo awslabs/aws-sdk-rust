@@ -3,7 +3,7 @@
 /// <p>The settings for delivering connector logs to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloudWatchLogsLogDelivery  {
+pub struct CloudWatchLogsLogDelivery {
     /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -17,7 +17,7 @@ impl CloudWatchLogsLogDelivery {
         self.enabled
     }
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
-    pub fn log_group(&self) -> std::option::Option<& str> {
+    pub fn log_group(&self) -> std::option::Option<&str> {
         self.log_group.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl CloudWatchLogsLogDeliveryBuilder {
     }
     /// <p>Whether log delivery to Amazon CloudWatch Logs is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
     pub fn log_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,17 +53,14 @@ impl CloudWatchLogsLogDeliveryBuilder {
     }
     /// <p>The name of the CloudWatch log group that is the destination for log delivery.</p>
     pub fn set_log_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.log_group = input; self
+        self.log_group = input;
+        self
     }
     /// Consumes the builder and constructs a [`CloudWatchLogsLogDelivery`](crate::types::CloudWatchLogsLogDelivery).
     pub fn build(self) -> crate::types::CloudWatchLogsLogDelivery {
         crate::types::CloudWatchLogsLogDelivery {
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
-            log_group: self.log_group
-            ,
+            enabled: self.enabled.unwrap_or_default(),
+            log_group: self.log_group,
         }
     }
 }
-

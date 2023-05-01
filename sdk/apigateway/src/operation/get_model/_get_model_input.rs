@@ -3,7 +3,7 @@
 /// <p>Request to list information about a model in an existing RestApi resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetModelInput  {
+pub struct GetModelInput {
     /// <p>The RestApi identifier under which the Model exists.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct GetModelInput  {
 }
 impl GetModelInput {
     /// <p>The RestApi identifier under which the Model exists.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<& str> {
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The name of the model as an identifier.</p>
-    pub fn model_name(&self) -> std::option::Option<& str> {
+    pub fn model_name(&self) -> std::option::Option<&str> {
         self.model_name.as_deref()
     }
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
@@ -51,7 +51,8 @@ impl GetModelInputBuilder {
     }
     /// <p>The RestApi identifier under which the Model exists.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input; self
+        self.rest_api_id = input;
+        self
     }
     /// <p>The name of the model as an identifier.</p>
     pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl GetModelInputBuilder {
     }
     /// <p>The name of the model as an identifier.</p>
     pub fn set_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.model_name = input; self
+        self.model_name = input;
+        self
     }
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
     pub fn flatten(mut self, input: bool) -> Self {
@@ -69,21 +71,20 @@ impl GetModelInputBuilder {
     }
     /// <p>A query parameter of a Boolean value to resolve (<code>true</code>) all external model references and returns a flattened model schema or not (<code>false</code>) The default is <code>false</code>.</p>
     pub fn set_flatten(mut self, input: std::option::Option<bool>) -> Self {
-        self.flatten = input; self
+        self.flatten = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetModelInput`](crate::operation::get_model::GetModelInput).
-    pub fn build(self) -> Result<crate::operation::get_model::GetModelInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_model::GetModelInput {
-                rest_api_id: self.rest_api_id
-                ,
-                model_name: self.model_name
-                ,
-                flatten: self.flatten
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_model::GetModelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_model::GetModelInput {
+            rest_api_id: self.rest_api_id,
+            model_name: self.model_name,
+            flatten: self.flatten.unwrap_or_default(),
+        })
     }
 }
-

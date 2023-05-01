@@ -3,7 +3,7 @@
 /// <p>The <code>CreatePresetResponse</code> structure.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePresetOutput  {
+pub struct CreatePresetOutput {
     /// <p>A section of the response body that provides information about the preset that is created.</p>
     #[doc(hidden)]
     pub preset: std::option::Option<crate::types::Preset>,
@@ -14,19 +14,19 @@ pub struct CreatePresetOutput  {
 }
 impl CreatePresetOutput {
     /// <p>A section of the response body that provides information about the preset that is created.</p>
-    pub fn preset(&self) -> std::option::Option<& crate::types::Preset> {
+    pub fn preset(&self) -> std::option::Option<&crate::types::Preset> {
         self.preset.as_ref()
     }
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
-    pub fn warning(&self) -> std::option::Option<& str> {
+    pub fn warning(&self) -> std::option::Option<&str> {
         self.warning.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreatePresetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreatePresetOutput {
     /// Creates a new builder-style object to manufacture [`CreatePresetOutput`](crate::operation::create_preset::CreatePresetOutput).
     pub fn builder() -> crate::operation::create_preset::builders::CreatePresetOutputBuilder {
@@ -50,7 +50,8 @@ impl CreatePresetOutputBuilder {
     }
     /// <p>A section of the response body that provides information about the preset that is created.</p>
     pub fn set_preset(mut self, input: std::option::Option<crate::types::Preset>) -> Self {
-        self.preset = input; self
+        self.preset = input;
+        self
     }
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
     pub fn warning(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,26 +60,24 @@ impl CreatePresetOutputBuilder {
     }
     /// <p>If the preset settings don't comply with the standards for the video codec but Elastic Transcoder created the preset, this message explains the reason the preset settings don't meet the standard. Elastic Transcoder created the preset because the settings might produce acceptable output.</p>
     pub fn set_warning(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.warning = input; self
+        self.warning = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreatePresetOutput`](crate::operation::create_preset::CreatePresetOutput).
     pub fn build(self) -> crate::operation::create_preset::CreatePresetOutput {
         crate::operation::create_preset::CreatePresetOutput {
-            preset: self.preset
-            ,
-            warning: self.warning
-            ,
+            preset: self.preset,
+            warning: self.warning,
             _request_id: self._request_id,
         }
     }
 }
-

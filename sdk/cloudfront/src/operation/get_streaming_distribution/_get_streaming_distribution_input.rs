@@ -3,20 +3,22 @@
 /// <p>The request to get a streaming distribution's information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStreamingDistributionInput  {
+pub struct GetStreamingDistributionInput {
     /// <p>The streaming distribution's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl GetStreamingDistributionInput {
     /// <p>The streaming distribution's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl GetStreamingDistributionInput {
     /// Creates a new builder-style object to manufacture [`GetStreamingDistributionInput`](crate::operation::get_streaming_distribution::GetStreamingDistributionInput).
-    pub fn builder() -> crate::operation::get_streaming_distribution::builders::GetStreamingDistributionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_streaming_distribution::builders::GetStreamingDistributionInputBuilder
+    {
         crate::operation::get_streaming_distribution::builders::GetStreamingDistributionInputBuilder::default()
     }
 }
@@ -35,16 +37,20 @@ impl GetStreamingDistributionInputBuilder {
     }
     /// <p>The streaming distribution's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetStreamingDistributionInput`](crate::operation::get_streaming_distribution::GetStreamingDistributionInput).
-    pub fn build(self) -> Result<crate::operation::get_streaming_distribution::GetStreamingDistributionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_streaming_distribution::GetStreamingDistributionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_streaming_distribution::GetStreamingDistributionInput {
-                id: self.id
-                ,
-            }
+                id: self.id,
+            },
         )
     }
 }
-

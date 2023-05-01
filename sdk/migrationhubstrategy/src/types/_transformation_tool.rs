@@ -3,7 +3,7 @@
 /// <p> Information of the transformation tool that can be used to migrate and modernize the application. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TransformationTool  {
+pub struct TransformationTool {
     /// <p> Name of the tool. </p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::TransformationToolName>,
@@ -16,15 +16,15 @@ pub struct TransformationTool  {
 }
 impl TransformationTool {
     /// <p> Name of the tool. </p>
-    pub fn name(&self) -> std::option::Option<& crate::types::TransformationToolName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::TransformationToolName> {
         self.name.as_ref()
     }
     /// <p> Description of the tool. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> URL for installing the tool. </p>
-    pub fn tranformation_tool_installation_link(&self) -> std::option::Option<& str> {
+    pub fn tranformation_tool_installation_link(&self) -> std::option::Option<&str> {
         self.tranformation_tool_installation_link.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl TransformationToolBuilder {
         self
     }
     /// <p> Name of the tool. </p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::TransformationToolName>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::TransformationToolName>,
+    ) -> Self {
+        self.name = input;
+        self
     }
     /// <p> Description of the tool. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,27 +64,31 @@ impl TransformationToolBuilder {
     }
     /// <p> Description of the tool. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p> URL for installing the tool. </p>
-    pub fn tranformation_tool_installation_link(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn tranformation_tool_installation_link(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.tranformation_tool_installation_link = Some(input.into());
         self
     }
     /// <p> URL for installing the tool. </p>
-    pub fn set_tranformation_tool_installation_link(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tranformation_tool_installation_link = input; self
+    pub fn set_tranformation_tool_installation_link(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.tranformation_tool_installation_link = input;
+        self
     }
     /// Consumes the builder and constructs a [`TransformationTool`](crate::types::TransformationTool).
     pub fn build(self) -> crate::types::TransformationTool {
         crate::types::TransformationTool {
-            name: self.name
-            ,
-            description: self.description
-            ,
-            tranformation_tool_installation_link: self.tranformation_tool_installation_link
-            ,
+            name: self.name,
+            description: self.description,
+            tranformation_tool_installation_link: self.tranformation_tool_installation_link,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMembershipInput  {
+pub struct CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
     #[doc(hidden)]
     pub collaboration_identifier: std::option::Option<std::string::String>,
@@ -11,25 +11,30 @@ pub struct CreateMembershipInput  {
     pub query_log_status: std::option::Option<crate::types::MembershipQueryLogStatus>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn collaboration_identifier(&self) -> std::option::Option<& str> {
+    pub fn collaboration_identifier(&self) -> std::option::Option<&str> {
         self.collaboration_identifier.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(&self) -> std::option::Option<& crate::types::MembershipQueryLogStatus> {
+    pub fn query_log_status(&self) -> std::option::Option<&crate::types::MembershipQueryLogStatus> {
         self.query_log_status.as_ref()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl CreateMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
-    pub fn builder() -> crate::operation::create_membership::builders::CreateMembershipInputBuilder {
+    pub fn builder() -> crate::operation::create_membership::builders::CreateMembershipInputBuilder
+    {
         crate::operation::create_membership::builders::CreateMembershipInputBuilder::default()
     }
 }
@@ -40,7 +45,8 @@ impl CreateMembershipInput {
 pub struct CreateMembershipInputBuilder {
     pub(crate) collaboration_identifier: std::option::Option<std::string::String>,
     pub(crate) query_log_status: std::option::Option<crate::types::MembershipQueryLogStatus>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateMembershipInputBuilder {
     /// <p>The unique ID for the associated collaboration.</p>
@@ -49,8 +55,12 @@ impl CreateMembershipInputBuilder {
         self
     }
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn set_collaboration_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collaboration_identifier = input; self
+    pub fn set_collaboration_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.collaboration_identifier = input;
+        self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     pub fn query_log_status(mut self, input: crate::types::MembershipQueryLogStatus) -> Self {
@@ -58,36 +68,49 @@ impl CreateMembershipInputBuilder {
         self
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn set_query_log_status(mut self, input: std::option::Option<crate::types::MembershipQueryLogStatus>) -> Self {
-        self.query_log_status = input; self
+    pub fn set_query_log_status(
+        mut self,
+        input: std::option::Option<crate::types::MembershipQueryLogStatus>,
+    ) -> Self {
+        self.query_log_status = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
-    pub fn build(self) -> Result<crate::operation::create_membership::CreateMembershipInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_membership::CreateMembershipInput {
-                collaboration_identifier: self.collaboration_identifier
-                ,
-                query_log_status: self.query_log_status
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_membership::CreateMembershipInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_membership::CreateMembershipInput {
+            collaboration_identifier: self.collaboration_identifier,
+            query_log_status: self.query_log_status,
+            tags: self.tags,
+        })
     }
 }
-

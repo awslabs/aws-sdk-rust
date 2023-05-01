@@ -34,4 +34,3 @@ pub use crate::types::_bonus_payment::BonusPaymentBuilder;
 pub use crate::types::_assignment::AssignmentBuilder;
 
 pub use crate::types::_hit_layout_parameter::HitLayoutParameterBuilder;
-

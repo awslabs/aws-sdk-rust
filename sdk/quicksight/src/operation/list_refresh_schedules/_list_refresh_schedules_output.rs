@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRefreshSchedulesOutput  {
+pub struct ListRefreshSchedulesOutput {
     /// <p>The list of refresh schedules for the dataset.</p>
     #[doc(hidden)]
     pub refresh_schedules: std::option::Option<std::vec::Vec<crate::types::RefreshSchedule>>,
@@ -16,7 +16,7 @@ pub struct ListRefreshSchedulesOutput  {
 }
 impl ListRefreshSchedulesOutput {
     /// <p>The list of refresh schedules for the dataset.</p>
-    pub fn refresh_schedules(&self) -> std::option::Option<& [crate::types::RefreshSchedule]> {
+    pub fn refresh_schedules(&self) -> std::option::Option<&[crate::types::RefreshSchedule]> {
         self.refresh_schedules.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -24,18 +24,19 @@ impl ListRefreshSchedulesOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRefreshSchedulesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListRefreshSchedulesOutput {
     /// Creates a new builder-style object to manufacture [`ListRefreshSchedulesOutput`](crate::operation::list_refresh_schedules::ListRefreshSchedulesOutput).
-    pub fn builder() -> crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesOutputBuilder {
         crate::operation::list_refresh_schedules::builders::ListRefreshSchedulesOutputBuilder::default()
     }
 }
@@ -57,13 +58,17 @@ impl ListRefreshSchedulesOutputBuilder {
     /// <p>The list of refresh schedules for the dataset.</p>
     pub fn refresh_schedules(mut self, input: crate::types::RefreshSchedule) -> Self {
         let mut v = self.refresh_schedules.unwrap_or_default();
-                        v.push(input);
-                        self.refresh_schedules = Some(v);
-                        self
+        v.push(input);
+        self.refresh_schedules = Some(v);
+        self
     }
     /// <p>The list of refresh schedules for the dataset.</p>
-    pub fn set_refresh_schedules(mut self, input: std::option::Option<std::vec::Vec<crate::types::RefreshSchedule>>) -> Self {
-        self.refresh_schedules = input; self
+    pub fn set_refresh_schedules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RefreshSchedule>>,
+    ) -> Self {
+        self.refresh_schedules = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -72,7 +77,8 @@ impl ListRefreshSchedulesOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -81,29 +87,25 @@ impl ListRefreshSchedulesOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListRefreshSchedulesOutput`](crate::operation::list_refresh_schedules::ListRefreshSchedulesOutput).
     pub fn build(self) -> crate::operation::list_refresh_schedules::ListRefreshSchedulesOutput {
         crate::operation::list_refresh_schedules::ListRefreshSchedulesOutput {
-            refresh_schedules: self.refresh_schedules
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
+            refresh_schedules: self.refresh_schedules,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }
 }
-

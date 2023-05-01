@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcPeeringConnectionsInput  {
+pub struct DescribeVpcPeeringConnectionsInput {
     /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
 }
 impl DescribeVpcPeeringConnectionsInput {
     /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
 }
 impl DescribeVpcPeeringConnectionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcPeeringConnectionsInput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput).
-    pub fn builder() -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder{
         crate::operation::describe_vpc_peering_connections::builders::DescribeVpcPeeringConnectionsInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
     }
     /// <p>A unique identifier for the fleet. You can use either the fleet ID or ARN value.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeVpcPeeringConnectionsInput`](crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_vpc_peering_connections::DescribeVpcPeeringConnectionsInput {
                 fleet_id: self.fleet_id
@@ -46,4 +52,3 @@ impl DescribeVpcPeeringConnectionsInputBuilder {
         )
     }
 }
-

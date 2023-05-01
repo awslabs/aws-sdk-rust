@@ -3,7 +3,7 @@
 /// <p>The name of the data and how often it should be pulled from the source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScheduleConfiguration  {
+pub struct ScheduleConfiguration {
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
     #[doc(hidden)]
     pub first_execution_from: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ScheduleConfiguration  {
 }
 impl ScheduleConfiguration {
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
-    pub fn first_execution_from(&self) -> std::option::Option<& str> {
+    pub fn first_execution_from(&self) -> std::option::Option<&str> {
         self.first_execution_from.as_deref()
     }
     /// <p>The name of the object to pull from the data source.</p>
-    pub fn object(&self) -> std::option::Option<& str> {
+    pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
     /// <p>How often the data should be pulled from data source.</p>
-    pub fn schedule_expression(&self) -> std::option::Option<& str> {
+    pub fn schedule_expression(&self) -> std::option::Option<&str> {
         self.schedule_expression.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl ScheduleConfigurationBuilder {
         self
     }
     /// <p>The start date for objects to import in the first flow run as an Unix/epoch timestamp in milliseconds or in ISO-8601 format.</p>
-    pub fn set_first_execution_from(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.first_execution_from = input; self
+    pub fn set_first_execution_from(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.first_execution_from = input;
+        self
     }
     /// <p>The name of the object to pull from the data source.</p>
     pub fn object(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl ScheduleConfigurationBuilder {
     }
     /// <p>The name of the object to pull from the data source.</p>
     pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object = input; self
+        self.object = input;
+        self
     }
     /// <p>How often the data should be pulled from data source.</p>
     pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +73,19 @@ impl ScheduleConfigurationBuilder {
         self
     }
     /// <p>How often the data should be pulled from data source.</p>
-    pub fn set_schedule_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schedule_expression = input; self
+    pub fn set_schedule_expression(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.schedule_expression = input;
+        self
     }
     /// Consumes the builder and constructs a [`ScheduleConfiguration`](crate::types::ScheduleConfiguration).
     pub fn build(self) -> crate::types::ScheduleConfiguration {
         crate::types::ScheduleConfiguration {
-            first_execution_from: self.first_execution_from
-            ,
-            object: self.object
-            ,
-            schedule_expression: self.schedule_expression
-            ,
+            first_execution_from: self.first_execution_from,
+            object: self.object,
+            schedule_expression: self.schedule_expression,
         }
     }
 }
-

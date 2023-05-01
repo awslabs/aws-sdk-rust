@@ -3,29 +3,29 @@
 /// <p>Custom libraries to be loaded into a development endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DevEndpointCustomLibraries  {
-    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note> 
-    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p> 
+pub struct DevEndpointCustomLibraries {
+    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
     #[doc(hidden)]
     pub extra_python_libs_s3_path: std::option::Option<std::string::String>,
-    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note> 
-    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p> 
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
+    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
     #[doc(hidden)]
     pub extra_jars_s3_path: std::option::Option<std::string::String>,
 }
 impl DevEndpointCustomLibraries {
-    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note> 
-    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p> 
+    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
-    pub fn extra_python_libs_s3_path(&self) -> std::option::Option<& str> {
+    pub fn extra_python_libs_s3_path(&self) -> std::option::Option<&str> {
         self.extra_python_libs_s3_path.as_deref()
     }
-    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note> 
-    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p> 
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
+    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
-    pub fn extra_jars_s3_path(&self) -> std::option::Option<& str> {
+    pub fn extra_jars_s3_path(&self) -> std::option::Option<&str> {
         self.extra_jars_s3_path.as_deref()
     }
 }
@@ -44,40 +44,45 @@ pub struct DevEndpointCustomLibrariesBuilder {
     pub(crate) extra_jars_s3_path: std::option::Option<std::string::String>,
 }
 impl DevEndpointCustomLibrariesBuilder {
-    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note> 
-    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p> 
+    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
     pub fn extra_python_libs_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.extra_python_libs_s3_path = Some(input.into());
         self
     }
-    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note> 
-    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p> 
+    /// <p>The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values must be complete paths separated by a comma.</p> <note>
+    /// <p>You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are not currently supported.</p>
     /// </note>
-    pub fn set_extra_python_libs_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.extra_python_libs_s3_path = input; self
+    pub fn set_extra_python_libs_s3_path(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.extra_python_libs_s3_path = input;
+        self
     }
-    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note> 
-    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p> 
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
+    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
     pub fn extra_jars_s3_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.extra_jars_s3_path = Some(input.into());
         self
     }
-    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note> 
-    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p> 
+    /// <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that should be loaded in your <code>DevEndpoint</code>.</p> <note>
+    /// <p>You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.</p>
     /// </note>
-    pub fn set_extra_jars_s3_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.extra_jars_s3_path = input; self
+    pub fn set_extra_jars_s3_path(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.extra_jars_s3_path = input;
+        self
     }
     /// Consumes the builder and constructs a [`DevEndpointCustomLibraries`](crate::types::DevEndpointCustomLibraries).
     pub fn build(self) -> crate::types::DevEndpointCustomLibraries {
         crate::types::DevEndpointCustomLibraries {
-            extra_python_libs_s3_path: self.extra_python_libs_s3_path
-            ,
-            extra_jars_s3_path: self.extra_jars_s3_path
-            ,
+            extra_python_libs_s3_path: self.extra_python_libs_s3_path,
+            extra_jars_s3_path: self.extra_jars_s3_path,
         }
     }
 }
-

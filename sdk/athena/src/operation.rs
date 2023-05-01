@@ -180,4 +180,3 @@ pub mod update_prepared_statement;
 
 /// Types for the `UpdateWorkGroup` operation.
 pub mod update_work_group;
-

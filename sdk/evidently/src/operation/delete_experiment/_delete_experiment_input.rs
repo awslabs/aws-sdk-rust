@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExperimentInput  {
+pub struct DeleteExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to delete.</p>
     #[doc(hidden)]
     pub project: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteExperimentInput  {
 }
 impl DeleteExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to delete.</p>
-    pub fn project(&self) -> std::option::Option<& str> {
+    pub fn project(&self) -> std::option::Option<&str> {
         self.project.as_deref()
     }
     /// <p>The name of the experiment to delete.</p>
-    pub fn experiment(&self) -> std::option::Option<& str> {
+    pub fn experiment(&self) -> std::option::Option<&str> {
         self.experiment.as_deref()
     }
 }
 impl DeleteExperimentInput {
     /// Creates a new builder-style object to manufacture [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
-    pub fn builder() -> crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder {
+    pub fn builder() -> crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder
+    {
         crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteExperimentInputBuilder {
     }
     /// <p>The name or ARN of the project that contains the experiment to delete.</p>
     pub fn set_project(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project = input; self
+        self.project = input;
+        self
     }
     /// <p>The name of the experiment to delete.</p>
     pub fn experiment(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,19 @@ impl DeleteExperimentInputBuilder {
     }
     /// <p>The name of the experiment to delete.</p>
     pub fn set_experiment(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.experiment = input; self
+        self.experiment = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
-    pub fn build(self) -> Result<crate::operation::delete_experiment::DeleteExperimentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_experiment::DeleteExperimentInput {
-                project: self.project
-                ,
-                experiment: self.experiment
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_experiment::DeleteExperimentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_experiment::DeleteExperimentInput {
+            project: self.project,
+            experiment: self.experiment,
+        })
     }
 }
-

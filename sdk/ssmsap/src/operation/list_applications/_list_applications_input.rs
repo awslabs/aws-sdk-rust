@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationsInput  {
+pub struct ListApplicationsInput {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListApplicationsInput  {
 }
 impl ListApplicationsInput {
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
@@ -22,7 +22,8 @@ impl ListApplicationsInput {
 }
 impl ListApplicationsInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder {
+    pub fn builder() -> crate::operation::list_applications::builders::ListApplicationsInputBuilder
+    {
         crate::operation::list_applications::builders::ListApplicationsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -51,18 +53,19 @@ impl ListApplicationsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    pub fn build(self) -> Result<crate::operation::list_applications::ListApplicationsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_applications::ListApplicationsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_applications::ListApplicationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_applications::ListApplicationsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

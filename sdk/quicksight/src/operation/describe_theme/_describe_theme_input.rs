@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeThemeInput  {
+pub struct DescribeThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct DescribeThemeInput  {
 }
 impl DescribeThemeInput {
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the theme.</p>
-    pub fn theme_id(&self) -> std::option::Option<& str> {
+    pub fn theme_id(&self) -> std::option::Option<&str> {
         self.theme_id.as_deref()
     }
     /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
@@ -30,7 +30,7 @@ impl DescribeThemeInput {
         self.version_number
     }
     /// <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
-    pub fn alias_name(&self) -> std::option::Option<& str> {
+    pub fn alias_name(&self) -> std::option::Option<&str> {
         self.alias_name.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl DescribeThemeInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the theme that you're describing.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The ID for the theme.</p>
     pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl DescribeThemeInputBuilder {
     }
     /// <p>The ID for the theme.</p>
     pub fn set_theme_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.theme_id = input; self
+        self.theme_id = input;
+        self
     }
     /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
     pub fn version_number(mut self, input: i64) -> Self {
@@ -76,7 +78,8 @@ impl DescribeThemeInputBuilder {
     }
     /// <p>The version number for the version to describe. If a <code>VersionNumber</code> parameter value isn't provided, the latest version of the theme is described.</p>
     pub fn set_version_number(mut self, input: std::option::Option<i64>) -> Self {
-        self.version_number = input; self
+        self.version_number = input;
+        self
     }
     /// <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
     pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +88,21 @@ impl DescribeThemeInputBuilder {
     }
     /// <p>The alias of the theme that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the theme by providing the keyword <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code> doesn't apply to themes.</p>
     pub fn set_alias_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alias_name = input; self
+        self.alias_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeThemeInput`](crate::operation::describe_theme::DescribeThemeInput).
-    pub fn build(self) -> Result<crate::operation::describe_theme::DescribeThemeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_theme::DescribeThemeInput {
-                aws_account_id: self.aws_account_id
-                ,
-                theme_id: self.theme_id
-                ,
-                version_number: self.version_number
-                ,
-                alias_name: self.alias_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_theme::DescribeThemeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_theme::DescribeThemeInput {
+            aws_account_id: self.aws_account_id,
+            theme_id: self.theme_id,
+            version_number: self.version_number,
+            alias_name: self.alias_name,
+        })
     }
 }
-

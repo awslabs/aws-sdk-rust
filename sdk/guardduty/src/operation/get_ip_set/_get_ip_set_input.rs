@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIpSetInput  {
+pub struct GetIpSetInput {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetIpSetInput  {
 }
 impl GetIpSetInput {
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The unique ID of the IPSet to retrieve.</p>
-    pub fn ip_set_id(&self) -> std::option::Option<& str> {
+    pub fn ip_set_id(&self) -> std::option::Option<&str> {
         self.ip_set_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetIpSetInputBuilder {
     }
     /// <p>The unique ID of the detector that the IPSet is associated with.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The unique ID of the IPSet to retrieve.</p>
     pub fn ip_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl GetIpSetInputBuilder {
     }
     /// <p>The unique ID of the IPSet to retrieve.</p>
     pub fn set_ip_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_set_id = input; self
+        self.ip_set_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetIpSetInput`](crate::operation::get_ip_set::GetIpSetInput).
-    pub fn build(self) -> Result<crate::operation::get_ip_set::GetIpSetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_ip_set::GetIpSetInput {
-                detector_id: self.detector_id
-                ,
-                ip_set_id: self.ip_set_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_ip_set::GetIpSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_ip_set::GetIpSetInput {
+            detector_id: self.detector_id,
+            ip_set_id: self.ip_set_id,
+        })
     }
 }
-

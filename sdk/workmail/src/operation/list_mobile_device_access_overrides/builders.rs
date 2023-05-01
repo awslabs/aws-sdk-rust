@@ -4,56 +4,63 @@ pub use crate::operation::list_mobile_device_access_overrides::_list_mobile_devi
 pub use crate::operation::list_mobile_device_access_overrides::_list_mobile_device_access_overrides_input::ListMobileDeviceAccessOverridesInputBuilder;
 
 /// Fluent builder constructing a request to `ListMobileDeviceAccessOverrides`.
-/// 
+///
 /// <p>Lists all the mobile device access overrides for any given combination of WorkMail organization, user, or device.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMobileDeviceAccessOverridesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_mobile_device_access_overrides::builders::ListMobileDeviceAccessOverridesInputBuilder,
 }
-impl ListMobileDeviceAccessOverridesFluentBuilder  {
+impl ListMobileDeviceAccessOverridesFluentBuilder {
     /// Creates a new `ListMobileDeviceAccessOverrides`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverrides, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesOutput, aws_smithy_http::result::SdkError<crate::operation::list_mobile_device_access_overrides::ListMobileDeviceAccessOverridesError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_mobile_device_access_overrides::paginator::ListMobileDeviceAccessOverridesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_mobile_device_access_overrides::paginator::ListMobileDeviceAccessOverridesPaginator {
-                                crate::operation::list_mobile_device_access_overrides::paginator::ListMobileDeviceAccessOverridesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_mobile_device_access_overrides::paginator::ListMobileDeviceAccessOverridesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_mobile_device_access_overrides::paginator::ListMobileDeviceAccessOverridesPaginator{
+        crate::operation::list_mobile_device_access_overrides::paginator::ListMobileDeviceAccessOverridesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The WorkMail organization under which to list mobile device access overrides.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
@@ -64,21 +71,21 @@ impl ListMobileDeviceAccessOverridesFluentBuilder  {
         self.inner = self.inner.set_organization_id(input);
         self
     }
-    /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.user_id(input.into());
         self
     }
-    /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p> 
-    /// <ul> 
-    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li> 
-    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li> 
-    /// <li> <p>User name: <code>user</code> </p> </li> 
+    /// <p>The WorkMail user under which you list the mobile device access overrides. Accepts the following types of user identities:</p>
+    /// <ul>
+    /// <li> <p>User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code> </p> </li>
+    /// <li> <p>Email address: <code>user@domain.tld</code> </p> </li>
+    /// <li> <p>User name: <code>user</code> </p> </li>
     /// </ul>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_user_id(input);
@@ -115,4 +122,3 @@ impl ListMobileDeviceAccessOverridesFluentBuilder  {
         self
     }
 }
-

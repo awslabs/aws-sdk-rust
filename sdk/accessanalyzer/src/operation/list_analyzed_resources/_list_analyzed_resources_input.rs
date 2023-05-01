@@ -3,7 +3,7 @@
 /// <p>Retrieves a list of resources that have been analyzed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAnalyzedResourcesInput  {
+pub struct ListAnalyzedResourcesInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
     #[doc(hidden)]
     pub analyzer_arn: std::option::Option<std::string::String>,
@@ -19,15 +19,15 @@ pub struct ListAnalyzedResourcesInput  {
 }
 impl ListAnalyzedResourcesInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
-    pub fn analyzer_arn(&self) -> std::option::Option<& str> {
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>The type of resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>A token used for pagination of results returned.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return in the response.</p>
@@ -37,7 +37,9 @@ impl ListAnalyzedResourcesInput {
 }
 impl ListAnalyzedResourcesInput {
     /// Creates a new builder-style object to manufacture [`ListAnalyzedResourcesInput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput).
-    pub fn builder() -> crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder
+    {
         crate::operation::list_analyzed_resources::builders::ListAnalyzedResourcesInputBuilder::default()
     }
 }
@@ -59,7 +61,8 @@ impl ListAnalyzedResourcesInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve a list of analyzed resources from.</p>
     pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analyzer_arn = input; self
+        self.analyzer_arn = input;
+        self
     }
     /// <p>The type of resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -67,8 +70,12 @@ impl ListAnalyzedResourcesInputBuilder {
         self
     }
     /// <p>The type of resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +84,8 @@ impl ListAnalyzedResourcesInputBuilder {
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -86,22 +94,23 @@ impl ListAnalyzedResourcesInputBuilder {
     }
     /// <p>The maximum number of results to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAnalyzedResourcesInput`](crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput).
-    pub fn build(self) -> Result<crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_analyzed_resources::ListAnalyzedResourcesInput {
-                analyzer_arn: self.analyzer_arn
-                ,
-                resource_type: self.resource_type
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                analyzer_arn: self.analyzer_arn,
+                resource_type: self.resource_type,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

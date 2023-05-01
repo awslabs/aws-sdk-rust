@@ -3,7 +3,7 @@
 /// <p>The duration of a maintenance schedule. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Duration  {
+pub struct Duration {
     /// <p>Integer to specify the value of a maintenance schedule duration.</p>
     #[doc(hidden)]
     pub value: i64,
@@ -17,7 +17,7 @@ impl Duration {
         self.value
     }
     /// <p>The unit of measurement for the duration of a maintenance schedule.</p>
-    pub fn unit(&self) -> std::option::Option<& crate::types::TimeUnit> {
+    pub fn unit(&self) -> std::option::Option<&crate::types::TimeUnit> {
         self.unit.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl DurationBuilder {
     }
     /// <p>Integer to specify the value of a maintenance schedule duration.</p>
     pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// <p>The unit of measurement for the duration of a maintenance schedule.</p>
     pub fn unit(mut self, input: crate::types::TimeUnit) -> Self {
@@ -52,17 +53,14 @@ impl DurationBuilder {
     }
     /// <p>The unit of measurement for the duration of a maintenance schedule.</p>
     pub fn set_unit(mut self, input: std::option::Option<crate::types::TimeUnit>) -> Self {
-        self.unit = input; self
+        self.unit = input;
+        self
     }
     /// Consumes the builder and constructs a [`Duration`](crate::types::Duration).
     pub fn build(self) -> crate::types::Duration {
         crate::types::Duration {
-            value: self.value
-                .unwrap_or_default()
-            ,
-            unit: self.unit
-            ,
+            value: self.value.unwrap_or_default(),
+            unit: self.unit,
         }
     }
 }
-

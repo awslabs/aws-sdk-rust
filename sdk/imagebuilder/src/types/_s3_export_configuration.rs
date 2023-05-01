@@ -3,15 +3,15 @@
 /// <p>Properties that configure export from your build instance to a compatible file format for your VM.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3ExportConfiguration  {
+pub struct S3ExportConfiguration {
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
     #[doc(hidden)]
     pub role_name: std::option::Option<std::string::String>,
-    /// <p>Export the updated image to one of the following supported disk image formats:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li> 
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li> 
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li> 
+    /// <p>Export the updated image to one of the following supported disk image formats:</p>
+    /// <ul>
+    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
+    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
+    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub disk_image_format: std::option::Option<crate::types::DiskImageFormat>,
@@ -24,24 +24,24 @@ pub struct S3ExportConfiguration  {
 }
 impl S3ExportConfiguration {
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
-    pub fn role_name(&self) -> std::option::Option<& str> {
+    pub fn role_name(&self) -> std::option::Option<&str> {
         self.role_name.as_deref()
     }
-    /// <p>Export the updated image to one of the following supported disk image formats:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li> 
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li> 
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li> 
+    /// <p>Export the updated image to one of the following supported disk image formats:</p>
+    /// <ul>
+    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
+    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
+    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
     /// </ul>
-    pub fn disk_image_format(&self) -> std::option::Option<& crate::types::DiskImageFormat> {
+    pub fn disk_image_format(&self) -> std::option::Option<&crate::types::DiskImageFormat> {
         self.disk_image_format.as_ref()
     }
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
-    pub fn s3_prefix(&self) -> std::option::Option<& str> {
+    pub fn s3_prefix(&self) -> std::option::Option<&str> {
         self.s3_prefix.as_deref()
     }
 }
@@ -69,26 +69,31 @@ impl S3ExportConfigurationBuilder {
     }
     /// <p>The name of the role that grants VM Import/Export permission to export images to your S3 bucket.</p>
     pub fn set_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_name = input; self
+        self.role_name = input;
+        self
     }
-    /// <p>Export the updated image to one of the following supported disk image formats:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li> 
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li> 
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li> 
+    /// <p>Export the updated image to one of the following supported disk image formats:</p>
+    /// <ul>
+    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
+    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
+    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
     /// </ul>
     pub fn disk_image_format(mut self, input: crate::types::DiskImageFormat) -> Self {
         self.disk_image_format = Some(input);
         self
     }
-    /// <p>Export the updated image to one of the following supported disk image formats:</p> 
-    /// <ul> 
-    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li> 
-    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li> 
-    /// <li> <p> <b>Raw</b> – Raw format.</p> </li> 
+    /// <p>Export the updated image to one of the following supported disk image formats:</p>
+    /// <ul>
+    /// <li> <p> <b>Virtual Hard Disk (VHD)</b> – Compatible with Citrix Xen and Microsoft Hyper-V virtualization products.</p> </li>
+    /// <li> <p> <b>Stream-optimized ESX Virtual Machine Disk (VMDK)</b> – Compatible with VMware ESX and VMware vSphere versions 4, 5, and 6.</p> </li>
+    /// <li> <p> <b>Raw</b> – Raw format.</p> </li>
     /// </ul>
-    pub fn set_disk_image_format(mut self, input: std::option::Option<crate::types::DiskImageFormat>) -> Self {
-        self.disk_image_format = input; self
+    pub fn set_disk_image_format(
+        mut self,
+        input: std::option::Option<crate::types::DiskImageFormat>,
+    ) -> Self {
+        self.disk_image_format = input;
+        self
     }
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
     pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -97,7 +102,8 @@ impl S3ExportConfigurationBuilder {
     }
     /// <p>The S3 bucket in which to store the output disk images for your VM.</p>
     pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket = input; self
+        self.s3_bucket = input;
+        self
     }
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
     pub fn s3_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,20 +112,16 @@ impl S3ExportConfigurationBuilder {
     }
     /// <p>The Amazon S3 path for the bucket where the output disk images for your VM are stored.</p>
     pub fn set_s3_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_prefix = input; self
+        self.s3_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3ExportConfiguration`](crate::types::S3ExportConfiguration).
     pub fn build(self) -> crate::types::S3ExportConfiguration {
         crate::types::S3ExportConfiguration {
-            role_name: self.role_name
-            ,
-            disk_image_format: self.disk_image_format
-            ,
-            s3_bucket: self.s3_bucket
-            ,
-            s3_prefix: self.s3_prefix
-            ,
+            role_name: self.role_name,
+            disk_image_format: self.disk_image_format,
+            s3_bucket: self.s3_bucket,
+            s3_prefix: self.s3_prefix,
         }
     }
 }
-

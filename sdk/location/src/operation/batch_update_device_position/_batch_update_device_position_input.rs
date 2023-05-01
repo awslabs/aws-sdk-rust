@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchUpdateDevicePositionInput  {
+pub struct BatchUpdateDevicePositionInput {
     /// <p>The name of the tracker resource to update.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct BatchUpdateDevicePositionInput  {
 }
 impl BatchUpdateDevicePositionInput {
     /// <p>The name of the tracker resource to update.</p>
-    pub fn tracker_name(&self) -> std::option::Option<& str> {
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
     /// <p>Contains the position update details for each device.</p>
-    pub fn updates(&self) -> std::option::Option<& [crate::types::DevicePositionUpdate]> {
+    pub fn updates(&self) -> std::option::Option<&[crate::types::DevicePositionUpdate]> {
         self.updates.as_deref()
     }
 }
 impl BatchUpdateDevicePositionInput {
     /// Creates a new builder-style object to manufacture [`BatchUpdateDevicePositionInput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput).
-    pub fn builder() -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder {
+    pub fn builder() -> crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder{
         crate::operation::batch_update_device_position::builders::BatchUpdateDevicePositionInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl BatchUpdateDevicePositionInputBuilder {
     }
     /// <p>The name of the tracker resource to update.</p>
     pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracker_name = input; self
+        self.tracker_name = input;
+        self
     }
     /// Appends an item to `updates`.
     ///
@@ -51,24 +52,30 @@ impl BatchUpdateDevicePositionInputBuilder {
     /// <p>Contains the position update details for each device.</p>
     pub fn updates(mut self, input: crate::types::DevicePositionUpdate) -> Self {
         let mut v = self.updates.unwrap_or_default();
-                        v.push(input);
-                        self.updates = Some(v);
-                        self
+        v.push(input);
+        self.updates = Some(v);
+        self
     }
     /// <p>Contains the position update details for each device.</p>
-    pub fn set_updates(mut self, input: std::option::Option<std::vec::Vec<crate::types::DevicePositionUpdate>>) -> Self {
-        self.updates = input; self
+    pub fn set_updates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DevicePositionUpdate>>,
+    ) -> Self {
+        self.updates = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchUpdateDevicePositionInput`](crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput).
-    pub fn build(self) -> Result<crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_update_device_position::BatchUpdateDevicePositionInput {
-                tracker_name: self.tracker_name
-                ,
-                updates: self.updates
-                ,
-            }
+                tracker_name: self.tracker_name,
+                updates: self.updates,
+            },
         )
     }
 }
-

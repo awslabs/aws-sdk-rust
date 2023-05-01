@@ -3,7 +3,7 @@
 /// The settings that you want to use to define the media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FmtpRequest  {
+pub struct FmtpRequest {
     /// The format of the audio channel.
     #[doc(hidden)]
     pub channel_order: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct FmtpRequest  {
 }
 impl FmtpRequest {
     /// The format of the audio channel.
-    pub fn channel_order(&self) -> std::option::Option<& str> {
+    pub fn channel_order(&self) -> std::option::Option<&str> {
         self.channel_order.as_deref()
     }
     /// The format that is used for the representation of color.
-    pub fn colorimetry(&self) -> std::option::Option<& crate::types::Colorimetry> {
+    pub fn colorimetry(&self) -> std::option::Option<&crate::types::Colorimetry> {
         self.colorimetry.as_ref()
     }
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
-    pub fn exact_framerate(&self) -> std::option::Option<& str> {
+    pub fn exact_framerate(&self) -> std::option::Option<&str> {
         self.exact_framerate.as_deref()
     }
     /// The pixel aspect ratio (PAR) of the video.
-    pub fn par(&self) -> std::option::Option<& str> {
+    pub fn par(&self) -> std::option::Option<&str> {
         self.par.as_deref()
     }
     /// The encoding range of the video.
-    pub fn range(&self) -> std::option::Option<& crate::types::Range> {
+    pub fn range(&self) -> std::option::Option<&crate::types::Range> {
         self.range.as_ref()
     }
     /// The type of compression that was used to smooth the video’s appearance.
-    pub fn scan_mode(&self) -> std::option::Option<& crate::types::ScanMode> {
+    pub fn scan_mode(&self) -> std::option::Option<&crate::types::ScanMode> {
         self.scan_mode.as_ref()
     }
     /// The transfer characteristic system (TCS) that is used in the video.
-    pub fn tcs(&self) -> std::option::Option<& crate::types::Tcs> {
+    pub fn tcs(&self) -> std::option::Option<&crate::types::Tcs> {
         self.tcs.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl FmtpRequestBuilder {
     }
     /// The format of the audio channel.
     pub fn set_channel_order(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_order = input; self
+        self.channel_order = input;
+        self
     }
     /// The format that is used for the representation of color.
     pub fn colorimetry(mut self, input: crate::types::Colorimetry) -> Self {
@@ -91,8 +92,12 @@ impl FmtpRequestBuilder {
         self
     }
     /// The format that is used for the representation of color.
-    pub fn set_colorimetry(mut self, input: std::option::Option<crate::types::Colorimetry>) -> Self {
-        self.colorimetry = input; self
+    pub fn set_colorimetry(
+        mut self,
+        input: std::option::Option<crate::types::Colorimetry>,
+    ) -> Self {
+        self.colorimetry = input;
+        self
     }
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
     pub fn exact_framerate(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +106,8 @@ impl FmtpRequestBuilder {
     }
     /// The frame rate for the video stream, in frames/second. For example: 60000/1001. If you specify a whole number, MediaConnect uses a ratio of N/1. For example, if you specify 60, MediaConnect uses 60/1 as the exactFramerate.
     pub fn set_exact_framerate(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.exact_framerate = input; self
+        self.exact_framerate = input;
+        self
     }
     /// The pixel aspect ratio (PAR) of the video.
     pub fn par(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +116,8 @@ impl FmtpRequestBuilder {
     }
     /// The pixel aspect ratio (PAR) of the video.
     pub fn set_par(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.par = input; self
+        self.par = input;
+        self
     }
     /// The encoding range of the video.
     pub fn range(mut self, input: crate::types::Range) -> Self {
@@ -119,7 +126,8 @@ impl FmtpRequestBuilder {
     }
     /// The encoding range of the video.
     pub fn set_range(mut self, input: std::option::Option<crate::types::Range>) -> Self {
-        self.range = input; self
+        self.range = input;
+        self
     }
     /// The type of compression that was used to smooth the video’s appearance.
     pub fn scan_mode(mut self, input: crate::types::ScanMode) -> Self {
@@ -128,7 +136,8 @@ impl FmtpRequestBuilder {
     }
     /// The type of compression that was used to smooth the video’s appearance.
     pub fn set_scan_mode(mut self, input: std::option::Option<crate::types::ScanMode>) -> Self {
-        self.scan_mode = input; self
+        self.scan_mode = input;
+        self
     }
     /// The transfer characteristic system (TCS) that is used in the video.
     pub fn tcs(mut self, input: crate::types::Tcs) -> Self {
@@ -137,26 +146,19 @@ impl FmtpRequestBuilder {
     }
     /// The transfer characteristic system (TCS) that is used in the video.
     pub fn set_tcs(mut self, input: std::option::Option<crate::types::Tcs>) -> Self {
-        self.tcs = input; self
+        self.tcs = input;
+        self
     }
     /// Consumes the builder and constructs a [`FmtpRequest`](crate::types::FmtpRequest).
     pub fn build(self) -> crate::types::FmtpRequest {
         crate::types::FmtpRequest {
-            channel_order: self.channel_order
-            ,
-            colorimetry: self.colorimetry
-            ,
-            exact_framerate: self.exact_framerate
-            ,
-            par: self.par
-            ,
-            range: self.range
-            ,
-            scan_mode: self.scan_mode
-            ,
-            tcs: self.tcs
-            ,
+            channel_order: self.channel_order,
+            colorimetry: self.colorimetry,
+            exact_framerate: self.exact_framerate,
+            par: self.par,
+            range: self.range,
+            scan_mode: self.scan_mode,
+            tcs: self.tcs,
         }
     }
 }
-

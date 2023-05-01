@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetControlInput  {
+pub struct GetControlInput {
     /// <p> The identifier for the control. </p>
     #[doc(hidden)]
     pub control_id: std::option::Option<std::string::String>,
 }
 impl GetControlInput {
     /// <p> The identifier for the control. </p>
-    pub fn control_id(&self) -> std::option::Option<& str> {
+    pub fn control_id(&self) -> std::option::Option<&str> {
         self.control_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetControlInputBuilder {
     }
     /// <p> The identifier for the control. </p>
     pub fn set_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.control_id = input; self
+        self.control_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetControlInput`](crate::operation::get_control::GetControlInput).
-    pub fn build(self) -> Result<crate::operation::get_control::GetControlInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_control::GetControlInput {
-                control_id: self.control_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_control::GetControlInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_control::GetControlInput {
+            control_id: self.control_id,
+        })
     }
 }
-

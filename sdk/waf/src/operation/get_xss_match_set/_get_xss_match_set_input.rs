@@ -3,14 +3,14 @@
 /// <p>A request to get an <code>XssMatchSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetXssMatchSetInput  {
+pub struct GetXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     #[doc(hidden)]
     pub xss_match_set_id: std::option::Option<std::string::String>,
 }
 impl GetXssMatchSetInput {
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
-    pub fn xss_match_set_id(&self) -> std::option::Option<& str> {
+    pub fn xss_match_set_id(&self) -> std::option::Option<&str> {
         self.xss_match_set_id.as_deref()
     }
 }
@@ -35,16 +35,18 @@ impl GetXssMatchSetInputBuilder {
     }
     /// <p>The <code>XssMatchSetId</code> of the <code>XssMatchSet</code> that you want to get. <code>XssMatchSetId</code> is returned by <code>CreateXssMatchSet</code> and by <code>ListXssMatchSets</code>.</p>
     pub fn set_xss_match_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.xss_match_set_id = input; self
+        self.xss_match_set_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetXssMatchSetInput`](crate::operation::get_xss_match_set::GetXssMatchSetInput).
-    pub fn build(self) -> Result<crate::operation::get_xss_match_set::GetXssMatchSetInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_xss_match_set::GetXssMatchSetInput {
-                xss_match_set_id: self.xss_match_set_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_xss_match_set::GetXssMatchSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_xss_match_set::GetXssMatchSetInput {
+            xss_match_set_id: self.xss_match_set_id,
+        })
     }
 }
-

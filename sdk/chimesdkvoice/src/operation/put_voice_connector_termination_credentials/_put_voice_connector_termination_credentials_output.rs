@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutVoiceConnectorTerminationCredentialsOutput  {
+pub struct PutVoiceConnectorTerminationCredentialsOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutVoiceConnectorTerminationCredentialsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutVoiceConnectorTerminationCredentialsOutput {
     /// Creates a new builder-style object to manufacture [`PutVoiceConnectorTerminationCredentialsOutput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput).
-    pub fn builder() -> crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsOutputBuilder {
+    pub fn builder() -> crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsOutputBuilder{
         crate::operation::put_voice_connector_termination_credentials::builders::PutVoiceConnectorTerminationCredentialsOutputBuilder::default()
     }
 }
@@ -25,19 +25,18 @@ pub struct PutVoiceConnectorTerminationCredentialsOutputBuilder {
 }
 impl PutVoiceConnectorTerminationCredentialsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutVoiceConnectorTerminationCredentialsOutput`](crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput).
-    pub fn build(self) -> crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput {
+    pub fn build(self) -> crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput{
         crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput {
             _request_id: self._request_id,
         }
     }
 }
-

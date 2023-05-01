@@ -54,4 +54,3 @@ pub use crate::types::_share_result::ShareResultBuilder;
 pub use crate::types::_notification_options::NotificationOptionsBuilder;
 
 pub use crate::types::_share_principal::SharePrincipalBuilder;
-

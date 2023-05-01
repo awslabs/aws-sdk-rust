@@ -3,7 +3,7 @@
 /// <p>Information about the expected route in the route table.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpectedRoute  {
+pub struct ExpectedRoute {
     /// <p>Information about the IPv4 CIDR block.</p>
     #[doc(hidden)]
     pub ip_v4_cidr: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct ExpectedRoute  {
 }
 impl ExpectedRoute {
     /// <p>Information about the IPv4 CIDR block.</p>
-    pub fn ip_v4_cidr(&self) -> std::option::Option<& str> {
+    pub fn ip_v4_cidr(&self) -> std::option::Option<&str> {
         self.ip_v4_cidr.as_deref()
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
-    pub fn prefix_list_id(&self) -> std::option::Option<& str> {
+    pub fn prefix_list_id(&self) -> std::option::Option<&str> {
         self.prefix_list_id.as_deref()
     }
     /// <p>Information about the IPv6 CIDR block.</p>
-    pub fn ip_v6_cidr(&self) -> std::option::Option<& str> {
+    pub fn ip_v6_cidr(&self) -> std::option::Option<&str> {
         self.ip_v6_cidr.as_deref()
     }
     /// <p>Information about the contributing subnets.</p>
-    pub fn contributing_subnets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn contributing_subnets(&self) -> std::option::Option<&[std::string::String]> {
         self.contributing_subnets.as_deref()
     }
     /// <p>Information about the allowed targets.</p>
-    pub fn allowed_targets(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn allowed_targets(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_targets.as_deref()
     }
     /// <p>Information about the route table ID.</p>
-    pub fn route_table_id(&self) -> std::option::Option<& str> {
+    pub fn route_table_id(&self) -> std::option::Option<&str> {
         self.route_table_id.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl ExpectedRouteBuilder {
     }
     /// <p>Information about the IPv4 CIDR block.</p>
     pub fn set_ip_v4_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_v4_cidr = input; self
+        self.ip_v4_cidr = input;
+        self
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
     pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl ExpectedRouteBuilder {
     }
     /// <p>Information about the ID of the prefix list for the route.</p>
     pub fn set_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix_list_id = input; self
+        self.prefix_list_id = input;
+        self
     }
     /// <p>Information about the IPv6 CIDR block.</p>
     pub fn ip_v6_cidr(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl ExpectedRouteBuilder {
     }
     /// <p>Information about the IPv6 CIDR block.</p>
     pub fn set_ip_v6_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ip_v6_cidr = input; self
+        self.ip_v6_cidr = input;
+        self
     }
     /// Appends an item to `contributing_subnets`.
     ///
@@ -102,13 +105,17 @@ impl ExpectedRouteBuilder {
     /// <p>Information about the contributing subnets.</p>
     pub fn contributing_subnets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.contributing_subnets.unwrap_or_default();
-                        v.push(input.into());
-                        self.contributing_subnets = Some(v);
-                        self
+        v.push(input.into());
+        self.contributing_subnets = Some(v);
+        self
     }
     /// <p>Information about the contributing subnets.</p>
-    pub fn set_contributing_subnets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.contributing_subnets = input; self
+    pub fn set_contributing_subnets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.contributing_subnets = input;
+        self
     }
     /// Appends an item to `allowed_targets`.
     ///
@@ -117,13 +124,17 @@ impl ExpectedRouteBuilder {
     /// <p>Information about the allowed targets.</p>
     pub fn allowed_targets(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allowed_targets.unwrap_or_default();
-                        v.push(input.into());
-                        self.allowed_targets = Some(v);
-                        self
+        v.push(input.into());
+        self.allowed_targets = Some(v);
+        self
     }
     /// <p>Information about the allowed targets.</p>
-    pub fn set_allowed_targets(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.allowed_targets = input; self
+    pub fn set_allowed_targets(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.allowed_targets = input;
+        self
     }
     /// <p>Information about the route table ID.</p>
     pub fn route_table_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,24 +143,18 @@ impl ExpectedRouteBuilder {
     }
     /// <p>Information about the route table ID.</p>
     pub fn set_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.route_table_id = input; self
+        self.route_table_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExpectedRoute`](crate::types::ExpectedRoute).
     pub fn build(self) -> crate::types::ExpectedRoute {
         crate::types::ExpectedRoute {
-            ip_v4_cidr: self.ip_v4_cidr
-            ,
-            prefix_list_id: self.prefix_list_id
-            ,
-            ip_v6_cidr: self.ip_v6_cidr
-            ,
-            contributing_subnets: self.contributing_subnets
-            ,
-            allowed_targets: self.allowed_targets
-            ,
-            route_table_id: self.route_table_id
-            ,
+            ip_v4_cidr: self.ip_v4_cidr,
+            prefix_list_id: self.prefix_list_id,
+            ip_v6_cidr: self.ip_v6_cidr,
+            contributing_subnets: self.contributing_subnets,
+            allowed_targets: self.allowed_targets,
+            route_table_id: self.route_table_id,
         }
     }
 }
-

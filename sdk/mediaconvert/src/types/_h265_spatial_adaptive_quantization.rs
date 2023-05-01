@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let h265spatialadaptivequantization = unimplemented!();
 /// match h265spatialadaptivequantization {
@@ -30,55 +30,64 @@
 /// Specifically, when `h265spatialadaptivequantization` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H265SpatialAdaptiveQuantization::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum H265SpatialAdaptiveQuantization {
     #[allow(missing_docs)] // documentation missing in model
     Disabled,
     #[allow(missing_docs)] // documentation missing in model
     Enabled,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for H265SpatialAdaptiveQuantization {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DISABLED" => H265SpatialAdaptiveQuantization::Disabled,
-"ENABLED" => H265SpatialAdaptiveQuantization::Enabled,
-other => H265SpatialAdaptiveQuantization::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for H265SpatialAdaptiveQuantization {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(H265SpatialAdaptiveQuantization::from(s))
-                }
-            }
-impl H265SpatialAdaptiveQuantization {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    H265SpatialAdaptiveQuantization::Disabled => "DISABLED",
-    H265SpatialAdaptiveQuantization::Enabled => "ENABLED",
-    H265SpatialAdaptiveQuantization::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => H265SpatialAdaptiveQuantization::Disabled,
+            "ENABLED" => H265SpatialAdaptiveQuantization::Enabled,
+            other => H265SpatialAdaptiveQuantization::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DISABLED", "ENABLED"]
-                }
-            }
-impl AsRef<str> for H265SpatialAdaptiveQuantization {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for H265SpatialAdaptiveQuantization {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(H265SpatialAdaptiveQuantization::from(s))
+    }
+}
+impl H265SpatialAdaptiveQuantization {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            H265SpatialAdaptiveQuantization::Disabled => "DISABLED",
+            H265SpatialAdaptiveQuantization::Enabled => "ENABLED",
+            H265SpatialAdaptiveQuantization::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for H265SpatialAdaptiveQuantization {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

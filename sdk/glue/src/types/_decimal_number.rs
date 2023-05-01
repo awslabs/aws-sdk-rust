@@ -3,7 +3,7 @@
 /// <p>Contains a numeric value in decimal format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DecimalNumber  {
+pub struct DecimalNumber {
     /// <p>The unscaled numeric value.</p>
     #[doc(hidden)]
     pub unscaled_value: std::option::Option<aws_smithy_types::Blob>,
@@ -13,7 +13,7 @@ pub struct DecimalNumber  {
 }
 impl DecimalNumber {
     /// <p>The unscaled numeric value.</p>
-    pub fn unscaled_value(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn unscaled_value(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.unscaled_value.as_ref()
     }
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
@@ -42,8 +42,12 @@ impl DecimalNumberBuilder {
         self
     }
     /// <p>The unscaled numeric value.</p>
-    pub fn set_unscaled_value(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.unscaled_value = input; self
+    pub fn set_unscaled_value(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
+        self.unscaled_value = input;
+        self
     }
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     pub fn scale(mut self, input: i32) -> Self {
@@ -52,17 +56,14 @@ impl DecimalNumberBuilder {
     }
     /// <p>The scale that determines where the decimal point falls in the unscaled value.</p>
     pub fn set_scale(mut self, input: std::option::Option<i32>) -> Self {
-        self.scale = input; self
+        self.scale = input;
+        self
     }
     /// Consumes the builder and constructs a [`DecimalNumber`](crate::types::DecimalNumber).
     pub fn build(self) -> crate::types::DecimalNumber {
         crate::types::DecimalNumber {
-            unscaled_value: self.unscaled_value
-            ,
-            scale: self.scale
-                .unwrap_or_default()
-            ,
+            unscaled_value: self.unscaled_value,
+            scale: self.scale.unwrap_or_default(),
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Details about the revision of a custom plugin.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomPluginRevisionSummary  {
+pub struct CustomPluginRevisionSummary {
     /// <p>The format of the plugin file.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<crate::types::CustomPluginContentType>,
@@ -25,23 +25,25 @@ pub struct CustomPluginRevisionSummary  {
 }
 impl CustomPluginRevisionSummary {
     /// <p>The format of the plugin file.</p>
-    pub fn content_type(&self) -> std::option::Option<& crate::types::CustomPluginContentType> {
+    pub fn content_type(&self) -> std::option::Option<&crate::types::CustomPluginContentType> {
         self.content_type.as_ref()
     }
     /// <p>The time that the custom plugin was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>The description of the custom plugin.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Details about the custom plugin file.</p>
-    pub fn file_description(&self) -> std::option::Option<& crate::types::CustomPluginFileDescription> {
+    pub fn file_description(
+        &self,
+    ) -> std::option::Option<&crate::types::CustomPluginFileDescription> {
         self.file_description.as_ref()
     }
     /// <p>Information about the location of the custom plugin.</p>
-    pub fn location(&self) -> std::option::Option<& crate::types::CustomPluginLocationDescription> {
+    pub fn location(&self) -> std::option::Option<&crate::types::CustomPluginLocationDescription> {
         self.location.as_ref()
     }
     /// <p>The revision of the custom plugin.</p>
@@ -74,8 +76,12 @@ impl CustomPluginRevisionSummaryBuilder {
         self
     }
     /// <p>The format of the plugin file.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<crate::types::CustomPluginContentType>) -> Self {
-        self.content_type = input; self
+    pub fn set_content_type(
+        mut self,
+        input: std::option::Option<crate::types::CustomPluginContentType>,
+    ) -> Self {
+        self.content_type = input;
+        self
     }
     /// <p>The time that the custom plugin was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -83,8 +89,12 @@ impl CustomPluginRevisionSummaryBuilder {
         self
     }
     /// <p>The time that the custom plugin was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>The description of the custom plugin.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +103,8 @@ impl CustomPluginRevisionSummaryBuilder {
     }
     /// <p>The description of the custom plugin.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Details about the custom plugin file.</p>
     pub fn file_description(mut self, input: crate::types::CustomPluginFileDescription) -> Self {
@@ -101,8 +112,12 @@ impl CustomPluginRevisionSummaryBuilder {
         self
     }
     /// <p>Details about the custom plugin file.</p>
-    pub fn set_file_description(mut self, input: std::option::Option<crate::types::CustomPluginFileDescription>) -> Self {
-        self.file_description = input; self
+    pub fn set_file_description(
+        mut self,
+        input: std::option::Option<crate::types::CustomPluginFileDescription>,
+    ) -> Self {
+        self.file_description = input;
+        self
     }
     /// <p>Information about the location of the custom plugin.</p>
     pub fn location(mut self, input: crate::types::CustomPluginLocationDescription) -> Self {
@@ -110,8 +125,12 @@ impl CustomPluginRevisionSummaryBuilder {
         self
     }
     /// <p>Information about the location of the custom plugin.</p>
-    pub fn set_location(mut self, input: std::option::Option<crate::types::CustomPluginLocationDescription>) -> Self {
-        self.location = input; self
+    pub fn set_location(
+        mut self,
+        input: std::option::Option<crate::types::CustomPluginLocationDescription>,
+    ) -> Self {
+        self.location = input;
+        self
     }
     /// <p>The revision of the custom plugin.</p>
     pub fn revision(mut self, input: i64) -> Self {
@@ -120,25 +139,18 @@ impl CustomPluginRevisionSummaryBuilder {
     }
     /// <p>The revision of the custom plugin.</p>
     pub fn set_revision(mut self, input: std::option::Option<i64>) -> Self {
-        self.revision = input; self
+        self.revision = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomPluginRevisionSummary`](crate::types::CustomPluginRevisionSummary).
     pub fn build(self) -> crate::types::CustomPluginRevisionSummary {
         crate::types::CustomPluginRevisionSummary {
-            content_type: self.content_type
-            ,
-            creation_time: self.creation_time
-            ,
-            description: self.description
-            ,
-            file_description: self.file_description
-            ,
-            location: self.location
-            ,
-            revision: self.revision
-                .unwrap_or_default()
-            ,
+            content_type: self.content_type,
+            creation_time: self.creation_time,
+            description: self.description,
+            file_description: self.file_description,
+            location: self.location,
+            revision: self.revision.unwrap_or_default(),
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p> The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetryOptions  {
+pub struct RetryOptions {
     /// <p>The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.</p>
     #[doc(hidden)]
     pub duration_in_seconds: std::option::Option<i32>,
@@ -35,14 +35,13 @@ impl RetryOptionsBuilder {
     }
     /// <p>The period of time during which Kinesis Data Firehose retries to deliver data to the specified Amazon S3 prefix.</p>
     pub fn set_duration_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.duration_in_seconds = input; self
+        self.duration_in_seconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`RetryOptions`](crate::types::RetryOptions).
     pub fn build(self) -> crate::types::RetryOptions {
         crate::types::RetryOptions {
-            duration_in_seconds: self.duration_in_seconds
-            ,
+            duration_in_seconds: self.duration_in_seconds,
         }
     }
 }
-

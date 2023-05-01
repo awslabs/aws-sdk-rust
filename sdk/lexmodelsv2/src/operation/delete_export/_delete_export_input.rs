@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteExportInput  {
+pub struct DeleteExportInput {
     /// <p>The unique identifier of the export to delete.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
 }
 impl DeleteExportInput {
     /// <p>The unique identifier of the export to delete.</p>
-    pub fn export_id(&self) -> std::option::Option<& str> {
+    pub fn export_id(&self) -> std::option::Option<&str> {
         self.export_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteExportInputBuilder {
     }
     /// <p>The unique identifier of the export to delete.</p>
     pub fn set_export_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.export_id = input; self
+        self.export_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteExportInput`](crate::operation::delete_export::DeleteExportInput).
-    pub fn build(self) -> Result<crate::operation::delete_export::DeleteExportInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_export::DeleteExportInput {
-                export_id: self.export_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_export::DeleteExportInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_export::DeleteExportInput {
+            export_id: self.export_id,
+        })
     }
 }
-

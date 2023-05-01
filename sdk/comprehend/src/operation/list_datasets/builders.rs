@@ -4,56 +4,77 @@ pub use crate::operation::list_datasets::_list_datasets_output::ListDatasetsOutp
 pub use crate::operation::list_datasets::_list_datasets_input::ListDatasetsInputBuilder;
 
 /// Fluent builder constructing a request to `ListDatasets`.
-/// 
+///
 /// <p>List the datasets that you have configured in this Region. For more information about datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListDatasetsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_datasets::builders::ListDatasetsInputBuilder,
+    inner: crate::operation::list_datasets::builders::ListDatasetsInputBuilder,
 }
-impl ListDatasetsFluentBuilder  {
+impl ListDatasetsFluentBuilder {
     /// Creates a new `ListDatasets`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_datasets::ListDatasets, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_datasets::ListDatasetsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_datasets::ListDatasetsOutput, aws_smithy_http::result::SdkError<crate::operation::list_datasets::ListDatasetsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_datasets::ListDatasets,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_datasets::ListDatasetsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_datasets::ListDatasetsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_datasets::ListDatasetsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_datasets::paginator::ListDatasetsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_datasets::paginator::ListDatasetsPaginator {
-                                crate::operation::list_datasets::paginator::ListDatasetsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_datasets::paginator::ListDatasetsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_datasets::paginator::ListDatasetsPaginator {
+        crate::operation::list_datasets::paginator::ListDatasetsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The Amazon Resource Number (ARN) of the flywheel.</p>
     pub fn flywheel_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.flywheel_arn(input.into());
@@ -95,4 +116,3 @@ impl ListDatasetsFluentBuilder  {
         self
     }
 }
-

@@ -4,52 +4,68 @@ pub use crate::operation::create_route::_create_route_output::CreateRouteOutputB
 pub use crate::operation::create_route::_create_route_input::CreateRouteInputBuilder;
 
 /// Fluent builder constructing a request to `CreateRoute`.
-/// 
-/// <p>Creates a route that is associated with a virtual router.</p> 
-/// <p> You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or more virtual nodes.</p> 
+///
+/// <p>Creates a route that is associated with a virtual router.</p>
+/// <p> You can route several different protocols and define a retry policy for a route. Traffic can be routed to one or more virtual nodes.</p>
 /// <p>For more information about routes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/routes.html">Routes</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRouteFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_route::builders::CreateRouteInputBuilder,
+    inner: crate::operation::create_route::builders::CreateRouteInputBuilder,
 }
-impl CreateRouteFluentBuilder  {
+impl CreateRouteFluentBuilder {
     /// Creates a new `CreateRoute`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_route::CreateRoute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_route::CreateRouteOutput, aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_route::CreateRoute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_route::CreateRouteOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_route::CreateRouteError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name to use for the route.</p>
     pub fn route_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.route_name(input.into());
@@ -76,7 +92,10 @@ impl CreateRouteFluentBuilder  {
         self
     }
     /// <p>The name of the virtual router in which to create the route. If the virtual router is in a shared mesh, then you must be the owner of the virtual router resource.</p>
-    pub fn set_virtual_router_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_virtual_router_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_virtual_router_name(input);
         self
     }
@@ -100,7 +119,10 @@ impl CreateRouteFluentBuilder  {
         self
     }
     /// <p>Optional metadata that you can apply to the route to assist with categorization and organization. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagRef>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagRef>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -125,4 +147,3 @@ impl CreateRouteFluentBuilder  {
         self
     }
 }
-

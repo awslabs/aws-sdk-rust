@@ -3,14 +3,16 @@
 /// <p>Configures the deployment model for the third-party firewall.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThirdPartyFirewallPolicy  {
+pub struct ThirdPartyFirewallPolicy {
     /// <p>Defines the deployment model to use for the third-party firewall policy.</p>
     #[doc(hidden)]
     pub firewall_deployment_model: std::option::Option<crate::types::FirewallDeploymentModel>,
 }
 impl ThirdPartyFirewallPolicy {
     /// <p>Defines the deployment model to use for the third-party firewall policy.</p>
-    pub fn firewall_deployment_model(&self) -> std::option::Option<& crate::types::FirewallDeploymentModel> {
+    pub fn firewall_deployment_model(
+        &self,
+    ) -> std::option::Option<&crate::types::FirewallDeploymentModel> {
         self.firewall_deployment_model.as_ref()
     }
 }
@@ -25,24 +27,30 @@ impl ThirdPartyFirewallPolicy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ThirdPartyFirewallPolicyBuilder {
-    pub(crate) firewall_deployment_model: std::option::Option<crate::types::FirewallDeploymentModel>,
+    pub(crate) firewall_deployment_model:
+        std::option::Option<crate::types::FirewallDeploymentModel>,
 }
 impl ThirdPartyFirewallPolicyBuilder {
     /// <p>Defines the deployment model to use for the third-party firewall policy.</p>
-    pub fn firewall_deployment_model(mut self, input: crate::types::FirewallDeploymentModel) -> Self {
+    pub fn firewall_deployment_model(
+        mut self,
+        input: crate::types::FirewallDeploymentModel,
+    ) -> Self {
         self.firewall_deployment_model = Some(input);
         self
     }
     /// <p>Defines the deployment model to use for the third-party firewall policy.</p>
-    pub fn set_firewall_deployment_model(mut self, input: std::option::Option<crate::types::FirewallDeploymentModel>) -> Self {
-        self.firewall_deployment_model = input; self
+    pub fn set_firewall_deployment_model(
+        mut self,
+        input: std::option::Option<crate::types::FirewallDeploymentModel>,
+    ) -> Self {
+        self.firewall_deployment_model = input;
+        self
     }
     /// Consumes the builder and constructs a [`ThirdPartyFirewallPolicy`](crate::types::ThirdPartyFirewallPolicy).
     pub fn build(self) -> crate::types::ThirdPartyFirewallPolicy {
         crate::types::ThirdPartyFirewallPolicy {
-            firewall_deployment_model: self.firewall_deployment_model
-            ,
+            firewall_deployment_model: self.firewall_deployment_model,
         }
     }
 }
-

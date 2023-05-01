@@ -3,7 +3,7 @@
 /// <p> The properties that are applied when Snowflake is being used as a destination. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnowflakeDestinationProperties  {
+pub struct SnowflakeDestinationProperties {
     /// <p> The object specified in the Snowflake flow destination. </p>
     #[doc(hidden)]
     pub object: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SnowflakeDestinationProperties  {
 }
 impl SnowflakeDestinationProperties {
     /// <p> The object specified in the Snowflake flow destination. </p>
-    pub fn object(&self) -> std::option::Option<& str> {
+    pub fn object(&self) -> std::option::Option<&str> {
         self.object.as_deref()
     }
     /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Snowflake. </p>
-    pub fn intermediate_bucket_name(&self) -> std::option::Option<& str> {
+    pub fn intermediate_bucket_name(&self) -> std::option::Option<&str> {
         self.intermediate_bucket_name.as_deref()
     }
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
-    pub fn bucket_prefix(&self) -> std::option::Option<& str> {
+    pub fn bucket_prefix(&self) -> std::option::Option<&str> {
         self.bucket_prefix.as_deref()
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    pub fn error_handling_config(&self) -> std::option::Option<& crate::types::ErrorHandlingConfig> {
+    pub fn error_handling_config(&self) -> std::option::Option<&crate::types::ErrorHandlingConfig> {
         self.error_handling_config.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl SnowflakeDestinationPropertiesBuilder {
     }
     /// <p> The object specified in the Snowflake flow destination. </p>
     pub fn set_object(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object = input; self
+        self.object = input;
+        self
     }
     /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Snowflake. </p>
     pub fn intermediate_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +68,12 @@ impl SnowflakeDestinationPropertiesBuilder {
         self
     }
     /// <p> The intermediate bucket that Amazon AppFlow uses when moving data into Snowflake. </p>
-    pub fn set_intermediate_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.intermediate_bucket_name = input; self
+    pub fn set_intermediate_bucket_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.intermediate_bucket_name = input;
+        self
     }
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub fn bucket_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +82,8 @@ impl SnowflakeDestinationPropertiesBuilder {
     }
     /// <p> The object key for the destination bucket in which Amazon AppFlow places the files. </p>
     pub fn set_bucket_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_prefix = input; self
+        self.bucket_prefix = input;
+        self
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
     pub fn error_handling_config(mut self, input: crate::types::ErrorHandlingConfig) -> Self {
@@ -85,21 +91,20 @@ impl SnowflakeDestinationPropertiesBuilder {
         self
     }
     /// <p> The settings that determine how Amazon AppFlow handles an error when placing data in the Snowflake destination. For example, this setting would determine if the flow should fail after one insertion error, or continue and attempt to insert every record regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the destination connector details. </p>
-    pub fn set_error_handling_config(mut self, input: std::option::Option<crate::types::ErrorHandlingConfig>) -> Self {
-        self.error_handling_config = input; self
+    pub fn set_error_handling_config(
+        mut self,
+        input: std::option::Option<crate::types::ErrorHandlingConfig>,
+    ) -> Self {
+        self.error_handling_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`SnowflakeDestinationProperties`](crate::types::SnowflakeDestinationProperties).
     pub fn build(self) -> crate::types::SnowflakeDestinationProperties {
         crate::types::SnowflakeDestinationProperties {
-            object: self.object
-            ,
-            intermediate_bucket_name: self.intermediate_bucket_name
-            ,
-            bucket_prefix: self.bucket_prefix
-            ,
-            error_handling_config: self.error_handling_config
-            ,
+            object: self.object,
+            intermediate_bucket_name: self.intermediate_bucket_name,
+            bucket_prefix: self.bucket_prefix,
+            error_handling_config: self.error_handling_config,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The input for the AttachThingPrincipal operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachThingPrincipalInput  {
+pub struct AttachThingPrincipalInput {
     /// <p>The name of the thing.</p>
     #[doc(hidden)]
     pub thing_name: std::option::Option<std::string::String>,
@@ -13,17 +13,18 @@ pub struct AttachThingPrincipalInput  {
 }
 impl AttachThingPrincipalInput {
     /// <p>The name of the thing.</p>
-    pub fn thing_name(&self) -> std::option::Option<& str> {
+    pub fn thing_name(&self) -> std::option::Option<&str> {
         self.thing_name.as_deref()
     }
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
-    pub fn principal(&self) -> std::option::Option<& str> {
+    pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
 }
 impl AttachThingPrincipalInput {
     /// Creates a new builder-style object to manufacture [`AttachThingPrincipalInput`](crate::operation::attach_thing_principal::AttachThingPrincipalInput).
-    pub fn builder() -> crate::operation::attach_thing_principal::builders::AttachThingPrincipalInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::attach_thing_principal::builders::AttachThingPrincipalInputBuilder {
         crate::operation::attach_thing_principal::builders::AttachThingPrincipalInputBuilder::default()
     }
 }
@@ -43,7 +44,8 @@ impl AttachThingPrincipalInputBuilder {
     }
     /// <p>The name of the thing.</p>
     pub fn set_thing_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.thing_name = input; self
+        self.thing_name = input;
+        self
     }
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +54,21 @@ impl AttachThingPrincipalInputBuilder {
     }
     /// <p>The principal, which can be a certificate ARN (as returned from the CreateCertificate operation) or an Amazon Cognito ID.</p>
     pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal = input; self
+        self.principal = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttachThingPrincipalInput`](crate::operation::attach_thing_principal::AttachThingPrincipalInput).
-    pub fn build(self) -> Result<crate::operation::attach_thing_principal::AttachThingPrincipalInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::attach_thing_principal::AttachThingPrincipalInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::attach_thing_principal::AttachThingPrincipalInput {
-                thing_name: self.thing_name
-                ,
-                principal: self.principal
-                ,
-            }
+                thing_name: self.thing_name,
+                principal: self.principal,
+            },
         )
     }
 }
-

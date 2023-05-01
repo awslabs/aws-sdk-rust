@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdatePhoneNumberSettingsInput  {
+pub struct UpdatePhoneNumberSettingsInput {
     /// <p>The default outbound calling name for the account.</p>
     #[doc(hidden)]
     pub calling_name: std::option::Option<std::string::String>,
 }
 impl UpdatePhoneNumberSettingsInput {
     /// <p>The default outbound calling name for the account.</p>
-    pub fn calling_name(&self) -> std::option::Option<& str> {
+    pub fn calling_name(&self) -> std::option::Option<&str> {
         self.calling_name.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdatePhoneNumberSettingsInput  {
+impl std::fmt::Debug for UpdatePhoneNumberSettingsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdatePhoneNumberSettingsInput");
         formatter.field("calling_name", &"*** Sensitive Data Redacted ***");
@@ -22,7 +22,7 @@ impl  std::fmt::Debug for UpdatePhoneNumberSettingsInput  {
 }
 impl UpdatePhoneNumberSettingsInput {
     /// Creates a new builder-style object to manufacture [`UpdatePhoneNumberSettingsInput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput).
-    pub fn builder() -> crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder {
+    pub fn builder() -> crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder{
         crate::operation::update_phone_number_settings::builders::UpdatePhoneNumberSettingsInputBuilder::default()
     }
 }
@@ -41,15 +41,20 @@ impl UpdatePhoneNumberSettingsInputBuilder {
     }
     /// <p>The default outbound calling name for the account.</p>
     pub fn set_calling_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.calling_name = input; self
+        self.calling_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberSettingsInput`](crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput).
-    pub fn build(self) -> Result<crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsInput {
-                calling_name: self.calling_name
-                ,
-            }
+                calling_name: self.calling_name,
+            },
         )
     }
 }
@@ -60,4 +65,3 @@ impl std::fmt::Debug for UpdatePhoneNumberSettingsInputBuilder {
         formatter.finish()
     }
 }
-

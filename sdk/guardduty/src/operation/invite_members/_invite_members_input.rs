@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InviteMembersInput  {
+pub struct InviteMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct InviteMembersInput  {
 }
 impl InviteMembersInput {
     /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
-    pub fn account_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn account_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.account_ids.as_deref()
     }
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
@@ -30,7 +30,7 @@ impl InviteMembersInput {
         self.disable_email_notification
     }
     /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl InviteMembersInputBuilder {
     }
     /// <p>The unique ID of the detector of the GuardDuty account that you want to invite members with.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// Appends an item to `account_ids`.
     ///
@@ -67,13 +68,17 @@ impl InviteMembersInputBuilder {
     /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
     pub fn account_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.account_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.account_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.account_ids = Some(v);
+        self
     }
     /// <p>A list of account IDs of the accounts that you want to invite to GuardDuty as members.</p>
-    pub fn set_account_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.account_ids = input; self
+    pub fn set_account_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.account_ids = input;
+        self
     }
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
     pub fn disable_email_notification(mut self, input: bool) -> Self {
@@ -82,7 +87,8 @@ impl InviteMembersInputBuilder {
     }
     /// <p>A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.</p>
     pub fn set_disable_email_notification(mut self, input: std::option::Option<bool>) -> Self {
-        self.disable_email_notification = input; self
+        self.disable_email_notification = input;
+        self
     }
     /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,22 +97,21 @@ impl InviteMembersInputBuilder {
     }
     /// <p>The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`InviteMembersInput`](crate::operation::invite_members::InviteMembersInput).
-    pub fn build(self) -> Result<crate::operation::invite_members::InviteMembersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::invite_members::InviteMembersInput {
-                detector_id: self.detector_id
-                ,
-                account_ids: self.account_ids
-                ,
-                disable_email_notification: self.disable_email_notification
-                ,
-                message: self.message
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::invite_members::InviteMembersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::invite_members::InviteMembersInput {
+            detector_id: self.detector_id,
+            account_ids: self.account_ids,
+            disable_email_notification: self.disable_email_notification,
+            message: self.message,
+        })
     }
 }
-

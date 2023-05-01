@@ -2,33 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNotebookInstanceLifecycleConfigsOutput  {
+pub struct ListNotebookInstanceLifecycleConfigsOutput {
     /// <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
     #[doc(hidden)]
-    pub notebook_instance_lifecycle_configs: std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>,
+    pub notebook_instance_lifecycle_configs:
+        std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>,
     _request_id: Option<String>,
 }
 impl ListNotebookInstanceLifecycleConfigsOutput {
     /// <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_configs(&self) -> std::option::Option<& [crate::types::NotebookInstanceLifecycleConfigSummary]> {
+    pub fn notebook_instance_lifecycle_configs(
+        &self,
+    ) -> std::option::Option<&[crate::types::NotebookInstanceLifecycleConfigSummary]> {
         self.notebook_instance_lifecycle_configs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListNotebookInstanceLifecycleConfigsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListNotebookInstanceLifecycleConfigsOutput {
     /// Creates a new builder-style object to manufacture [`ListNotebookInstanceLifecycleConfigsOutput`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput).
-    pub fn builder() -> crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsOutputBuilder {
+    pub fn builder() -> crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsOutputBuilder{
         crate::operation::list_notebook_instance_lifecycle_configs::builders::ListNotebookInstanceLifecycleConfigsOutputBuilder::default()
     }
 }
@@ -38,7 +41,8 @@ impl ListNotebookInstanceLifecycleConfigsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListNotebookInstanceLifecycleConfigsOutputBuilder {
     pub(crate) next_token: std::option::Option<std::string::String>,
-    pub(crate) notebook_instance_lifecycle_configs: std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>,
+    pub(crate) notebook_instance_lifecycle_configs:
+        std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>,
     _request_id: Option<String>,
 }
 impl ListNotebookInstanceLifecycleConfigsOutputBuilder {
@@ -49,34 +53,44 @@ impl ListNotebookInstanceLifecycleConfigsOutputBuilder {
     }
     /// <p>If the response is truncated, SageMaker returns this token. To get the next set of lifecycle configurations, use it in the next request. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `notebook_instance_lifecycle_configs`.
     ///
     /// To override the contents of this collection use [`set_notebook_instance_lifecycle_configs`](Self::set_notebook_instance_lifecycle_configs).
     ///
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
-    pub fn notebook_instance_lifecycle_configs(mut self, input: crate::types::NotebookInstanceLifecycleConfigSummary) -> Self {
+    pub fn notebook_instance_lifecycle_configs(
+        mut self,
+        input: crate::types::NotebookInstanceLifecycleConfigSummary,
+    ) -> Self {
         let mut v = self.notebook_instance_lifecycle_configs.unwrap_or_default();
-                        v.push(input);
-                        self.notebook_instance_lifecycle_configs = Some(v);
-                        self
+        v.push(input);
+        self.notebook_instance_lifecycle_configs = Some(v);
+        self
     }
     /// <p>An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing a lifecycle configuration.</p>
-    pub fn set_notebook_instance_lifecycle_configs(mut self, input: std::option::Option<std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>>) -> Self {
-        self.notebook_instance_lifecycle_configs = input; self
+    pub fn set_notebook_instance_lifecycle_configs(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::NotebookInstanceLifecycleConfigSummary>,
+        >,
+    ) -> Self {
+        self.notebook_instance_lifecycle_configs = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListNotebookInstanceLifecycleConfigsOutput`](crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput).
-    pub fn build(self) -> crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput {
+    pub fn build(self) -> crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput{
         crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput {
             next_token: self.next_token
             ,
@@ -86,4 +100,3 @@ impl ListNotebookInstanceLifecycleConfigsOutputBuilder {
         }
     }
 }
-

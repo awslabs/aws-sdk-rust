@@ -3,7 +3,7 @@
 /// <p>Contains information about the threshold for service level metrics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThresholdV2  {
+pub struct ThresholdV2 {
     /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
     #[doc(hidden)]
     pub comparison: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct ThresholdV2  {
 }
 impl ThresholdV2 {
     /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
-    pub fn comparison(&self) -> std::option::Option<& str> {
+    pub fn comparison(&self) -> std::option::Option<&str> {
         self.comparison.as_deref()
     }
     /// <p>The threshold value to compare.</p>
@@ -43,7 +43,8 @@ impl ThresholdV2Builder {
     }
     /// <p>The type of comparison. Only "less than" (LT) comparisons are supported.</p>
     pub fn set_comparison(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.comparison = input; self
+        self.comparison = input;
+        self
     }
     /// <p>The threshold value to compare.</p>
     pub fn threshold_value(mut self, input: f64) -> Self {
@@ -52,16 +53,14 @@ impl ThresholdV2Builder {
     }
     /// <p>The threshold value to compare.</p>
     pub fn set_threshold_value(mut self, input: std::option::Option<f64>) -> Self {
-        self.threshold_value = input; self
+        self.threshold_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ThresholdV2`](crate::types::ThresholdV2).
     pub fn build(self) -> crate::types::ThresholdV2 {
         crate::types::ThresholdV2 {
-            comparison: self.comparison
-            ,
-            threshold_value: self.threshold_value
-            ,
+            comparison: self.comparison,
+            threshold_value: self.threshold_value,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Represents a request to return a list of all identities (email addresses and domains) that you have attempted to verify under your AWS account, regardless of verification status.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListIdentitiesInput  {
+pub struct ListIdentitiesInput {
     /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
     #[doc(hidden)]
     pub identity_type: std::option::Option<crate::types::IdentityType>,
@@ -16,11 +16,11 @@ pub struct ListIdentitiesInput  {
 }
 impl ListIdentitiesInput {
     /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
-    pub fn identity_type(&self) -> std::option::Option<& crate::types::IdentityType> {
+    pub fn identity_type(&self) -> std::option::Option<&crate::types::IdentityType> {
         self.identity_type.as_ref()
     }
     /// <p>The token to use for pagination.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
@@ -50,8 +50,12 @@ impl ListIdentitiesInputBuilder {
         self
     }
     /// <p>The type of the identities to list. Possible values are "EmailAddress" and "Domain". If this parameter is omitted, then all identities will be listed.</p>
-    pub fn set_identity_type(mut self, input: std::option::Option<crate::types::IdentityType>) -> Self {
-        self.identity_type = input; self
+    pub fn set_identity_type(
+        mut self,
+        input: std::option::Option<crate::types::IdentityType>,
+    ) -> Self {
+        self.identity_type = input;
+        self
     }
     /// <p>The token to use for pagination.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl ListIdentitiesInputBuilder {
     }
     /// <p>The token to use for pagination.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -69,20 +74,20 @@ impl ListIdentitiesInputBuilder {
     }
     /// <p>The maximum number of identities per page. Possible values are 1-1000 inclusive.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input; self
+        self.max_items = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListIdentitiesInput`](crate::operation::list_identities::ListIdentitiesInput).
-    pub fn build(self) -> Result<crate::operation::list_identities::ListIdentitiesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_identities::ListIdentitiesInput {
-                identity_type: self.identity_type
-                ,
-                next_token: self.next_token
-                ,
-                max_items: self.max_items
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_identities::ListIdentitiesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_identities::ListIdentitiesInput {
+            identity_type: self.identity_type,
+            next_token: self.next_token,
+            max_items: self.max_items,
+        })
     }
 }
-

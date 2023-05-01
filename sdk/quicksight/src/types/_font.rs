@@ -3,14 +3,14 @@
 /// <p>Determines the font settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Font  {
+pub struct Font {
     /// <p>Determines the font family settings.</p>
     #[doc(hidden)]
     pub font_family: std::option::Option<std::string::String>,
 }
 impl Font {
     /// <p>Determines the font family settings.</p>
-    pub fn font_family(&self) -> std::option::Option<& str> {
+    pub fn font_family(&self) -> std::option::Option<&str> {
         self.font_family.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl FontBuilder {
     }
     /// <p>Determines the font family settings.</p>
     pub fn set_font_family(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.font_family = input; self
+        self.font_family = input;
+        self
     }
     /// Consumes the builder and constructs a [`Font`](crate::types::Font).
     pub fn build(self) -> crate::types::Font {
         crate::types::Font {
-            font_family: self.font_family
-            ,
+            font_family: self.font_family,
         }
     }
 }
-

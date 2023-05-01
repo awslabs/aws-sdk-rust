@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartStudioSsoConfigurationRepairInput  {
+pub struct StartStudioSsoConfigurationRepairInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct StartStudioSsoConfigurationRepairInput  {
 }
 impl StartStudioSsoConfigurationRepairInput {
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The studio ID. </p>
-    pub fn studio_id(&self) -> std::option::Option<& str> {
+    pub fn studio_id(&self) -> std::option::Option<&str> {
         self.studio_id.as_deref()
     }
 }
 impl StartStudioSsoConfigurationRepairInput {
     /// Creates a new builder-style object to manufacture [`StartStudioSsoConfigurationRepairInput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput).
-    pub fn builder() -> crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder {
+    pub fn builder() -> crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder{
         crate::operation::start_studio_sso_configuration_repair::builders::StartStudioSsoConfigurationRepairInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl StartStudioSsoConfigurationRepairInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>The studio ID. </p>
     pub fn studio_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,11 @@ impl StartStudioSsoConfigurationRepairInputBuilder {
     }
     /// <p>The studio ID. </p>
     pub fn set_studio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.studio_id = input; self
+        self.studio_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartStudioSsoConfigurationRepairInput`](crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput).
-    pub fn build(self) -> Result<crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairInput {
                 client_token: self.client_token
@@ -65,4 +67,3 @@ impl StartStudioSsoConfigurationRepairInputBuilder {
         )
     }
 }
-

@@ -4,4 +4,3 @@ pub use crate::types::_job_execution_state::JobExecutionStateBuilder;
 pub use crate::types::_job_execution::JobExecutionBuilder;
 
 pub use crate::types::_job_execution_summary::JobExecutionSummaryBuilder;
-

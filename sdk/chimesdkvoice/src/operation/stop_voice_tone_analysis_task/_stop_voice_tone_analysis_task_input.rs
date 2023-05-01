@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopVoiceToneAnalysisTaskInput  {
+pub struct StopVoiceToneAnalysisTaskInput {
     /// <p>The Voice Connector ID.</p>
     #[doc(hidden)]
     pub voice_connector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct StopVoiceToneAnalysisTaskInput  {
 }
 impl StopVoiceToneAnalysisTaskInput {
     /// <p>The Voice Connector ID.</p>
-    pub fn voice_connector_id(&self) -> std::option::Option<& str> {
+    pub fn voice_connector_id(&self) -> std::option::Option<&str> {
         self.voice_connector_id.as_deref()
     }
     /// <p>The ID of the voice tone analysis task.</p>
-    pub fn voice_tone_analysis_task_id(&self) -> std::option::Option<& str> {
+    pub fn voice_tone_analysis_task_id(&self) -> std::option::Option<&str> {
         self.voice_tone_analysis_task_id.as_deref()
     }
 }
 impl StopVoiceToneAnalysisTaskInput {
     /// Creates a new builder-style object to manufacture [`StopVoiceToneAnalysisTaskInput`](crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput).
-    pub fn builder() -> crate::operation::stop_voice_tone_analysis_task::builders::StopVoiceToneAnalysisTaskInputBuilder {
+    pub fn builder() -> crate::operation::stop_voice_tone_analysis_task::builders::StopVoiceToneAnalysisTaskInputBuilder{
         crate::operation::stop_voice_tone_analysis_task::builders::StopVoiceToneAnalysisTaskInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl StopVoiceToneAnalysisTaskInputBuilder {
         self
     }
     /// <p>The Voice Connector ID.</p>
-    pub fn set_voice_connector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_connector_id = input; self
+    pub fn set_voice_connector_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_connector_id = input;
+        self
     }
     /// <p>The ID of the voice tone analysis task.</p>
     pub fn voice_tone_analysis_task_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +54,25 @@ impl StopVoiceToneAnalysisTaskInputBuilder {
         self
     }
     /// <p>The ID of the voice tone analysis task.</p>
-    pub fn set_voice_tone_analysis_task_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_tone_analysis_task_id = input; self
+    pub fn set_voice_tone_analysis_task_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_tone_analysis_task_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopVoiceToneAnalysisTaskInput`](crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput).
-    pub fn build(self) -> Result<crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskInput {
-                voice_connector_id: self.voice_connector_id
-                ,
-                voice_tone_analysis_task_id: self.voice_tone_analysis_task_id
-                ,
-            }
+                voice_connector_id: self.voice_connector_id,
+                voice_tone_analysis_task_id: self.voice_tone_analysis_task_id,
+            },
         )
     }
 }
-

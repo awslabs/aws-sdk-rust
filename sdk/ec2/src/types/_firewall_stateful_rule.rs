@@ -3,7 +3,7 @@
 /// <p>Describes a stateful rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FirewallStatefulRule  {
+pub struct FirewallStatefulRule {
     /// <p>The ARN of the stateful rule group.</p>
     #[doc(hidden)]
     pub rule_group_arn: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct FirewallStatefulRule  {
 }
 impl FirewallStatefulRule {
     /// <p>The ARN of the stateful rule group.</p>
-    pub fn rule_group_arn(&self) -> std::option::Option<& str> {
+    pub fn rule_group_arn(&self) -> std::option::Option<&str> {
         self.rule_group_arn.as_deref()
     }
     /// <p>The source IP addresses, in CIDR notation.</p>
-    pub fn sources(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn sources(&self) -> std::option::Option<&[std::string::String]> {
         self.sources.as_deref()
     }
     /// <p>The destination IP addresses, in CIDR notation.</p>
-    pub fn destinations(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn destinations(&self) -> std::option::Option<&[std::string::String]> {
         self.destinations.as_deref()
     }
     /// <p>The source ports.</p>
-    pub fn source_ports(&self) -> std::option::Option<& [crate::types::PortRange]> {
+    pub fn source_ports(&self) -> std::option::Option<&[crate::types::PortRange]> {
         self.source_ports.as_deref()
     }
     /// <p>The destination ports.</p>
-    pub fn destination_ports(&self) -> std::option::Option<& [crate::types::PortRange]> {
+    pub fn destination_ports(&self) -> std::option::Option<&[crate::types::PortRange]> {
         self.destination_ports.as_deref()
     }
     /// <p>The protocol.</p>
-    pub fn protocol(&self) -> std::option::Option<& str> {
+    pub fn protocol(&self) -> std::option::Option<&str> {
         self.protocol.as_deref()
     }
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>alert</code>.</p>
-    pub fn rule_action(&self) -> std::option::Option<& str> {
+    pub fn rule_action(&self) -> std::option::Option<&str> {
         self.rule_action.as_deref()
     }
     /// <p>The direction. The possible values are <code>FORWARD</code> and <code>ANY</code>.</p>
-    pub fn direction(&self) -> std::option::Option<& str> {
+    pub fn direction(&self) -> std::option::Option<&str> {
         self.direction.as_deref()
     }
 }
@@ -91,7 +91,8 @@ impl FirewallStatefulRuleBuilder {
     }
     /// <p>The ARN of the stateful rule group.</p>
     pub fn set_rule_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_group_arn = input; self
+        self.rule_group_arn = input;
+        self
     }
     /// Appends an item to `sources`.
     ///
@@ -100,13 +101,17 @@ impl FirewallStatefulRuleBuilder {
     /// <p>The source IP addresses, in CIDR notation.</p>
     pub fn sources(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.sources.unwrap_or_default();
-                        v.push(input.into());
-                        self.sources = Some(v);
-                        self
+        v.push(input.into());
+        self.sources = Some(v);
+        self
     }
     /// <p>The source IP addresses, in CIDR notation.</p>
-    pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.sources = input; self
+    pub fn set_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.sources = input;
+        self
     }
     /// Appends an item to `destinations`.
     ///
@@ -115,13 +120,17 @@ impl FirewallStatefulRuleBuilder {
     /// <p>The destination IP addresses, in CIDR notation.</p>
     pub fn destinations(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.destinations.unwrap_or_default();
-                        v.push(input.into());
-                        self.destinations = Some(v);
-                        self
+        v.push(input.into());
+        self.destinations = Some(v);
+        self
     }
     /// <p>The destination IP addresses, in CIDR notation.</p>
-    pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.destinations = input; self
+    pub fn set_destinations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.destinations = input;
+        self
     }
     /// Appends an item to `source_ports`.
     ///
@@ -130,13 +139,17 @@ impl FirewallStatefulRuleBuilder {
     /// <p>The source ports.</p>
     pub fn source_ports(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.source_ports.unwrap_or_default();
-                        v.push(input);
-                        self.source_ports = Some(v);
-                        self
+        v.push(input);
+        self.source_ports = Some(v);
+        self
     }
     /// <p>The source ports.</p>
-    pub fn set_source_ports(mut self, input: std::option::Option<std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.source_ports = input; self
+    pub fn set_source_ports(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PortRange>>,
+    ) -> Self {
+        self.source_ports = input;
+        self
     }
     /// Appends an item to `destination_ports`.
     ///
@@ -145,13 +158,17 @@ impl FirewallStatefulRuleBuilder {
     /// <p>The destination ports.</p>
     pub fn destination_ports(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.destination_ports.unwrap_or_default();
-                        v.push(input);
-                        self.destination_ports = Some(v);
-                        self
+        v.push(input);
+        self.destination_ports = Some(v);
+        self
     }
     /// <p>The destination ports.</p>
-    pub fn set_destination_ports(mut self, input: std::option::Option<std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.destination_ports = input; self
+    pub fn set_destination_ports(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PortRange>>,
+    ) -> Self {
+        self.destination_ports = input;
+        self
     }
     /// <p>The protocol.</p>
     pub fn protocol(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,7 +177,8 @@ impl FirewallStatefulRuleBuilder {
     }
     /// <p>The protocol.</p>
     pub fn set_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>alert</code>.</p>
     pub fn rule_action(mut self, input: impl Into<std::string::String>) -> Self {
@@ -169,7 +187,8 @@ impl FirewallStatefulRuleBuilder {
     }
     /// <p>The rule action. The possible values are <code>pass</code>, <code>drop</code>, and <code>alert</code>.</p>
     pub fn set_rule_action(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_action = input; self
+        self.rule_action = input;
+        self
     }
     /// <p>The direction. The possible values are <code>FORWARD</code> and <code>ANY</code>.</p>
     pub fn direction(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,28 +197,20 @@ impl FirewallStatefulRuleBuilder {
     }
     /// <p>The direction. The possible values are <code>FORWARD</code> and <code>ANY</code>.</p>
     pub fn set_direction(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.direction = input; self
+        self.direction = input;
+        self
     }
     /// Consumes the builder and constructs a [`FirewallStatefulRule`](crate::types::FirewallStatefulRule).
     pub fn build(self) -> crate::types::FirewallStatefulRule {
         crate::types::FirewallStatefulRule {
-            rule_group_arn: self.rule_group_arn
-            ,
-            sources: self.sources
-            ,
-            destinations: self.destinations
-            ,
-            source_ports: self.source_ports
-            ,
-            destination_ports: self.destination_ports
-            ,
-            protocol: self.protocol
-            ,
-            rule_action: self.rule_action
-            ,
-            direction: self.direction
-            ,
+            rule_group_arn: self.rule_group_arn,
+            sources: self.sources,
+            destinations: self.destinations,
+            source_ports: self.source_ports,
+            destination_ports: self.destination_ports,
+            protocol: self.protocol,
+            rule_action: self.rule_action,
+            direction: self.direction,
         }
     }
 }
-

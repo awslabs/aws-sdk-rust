@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetLicenseManagerReportGeneratorInput  {
+pub struct GetLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
     #[doc(hidden)]
     pub license_manager_report_generator_arn: std::option::Option<std::string::String>,
 }
 impl GetLicenseManagerReportGeneratorInput {
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<& str> {
+    pub fn license_manager_report_generator_arn(&self) -> std::option::Option<&str> {
         self.license_manager_report_generator_arn.as_deref()
     }
 }
 impl GetLicenseManagerReportGeneratorInput {
     /// Creates a new builder-style object to manufacture [`GetLicenseManagerReportGeneratorInput`](crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorInput).
-    pub fn builder() -> crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorInputBuilder {
+    pub fn builder() -> crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorInputBuilder{
         crate::operation::get_license_manager_report_generator::builders::GetLicenseManagerReportGeneratorInputBuilder::default()
     }
 }
@@ -28,16 +28,23 @@ pub struct GetLicenseManagerReportGeneratorInputBuilder {
 }
 impl GetLicenseManagerReportGeneratorInputBuilder {
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-    pub fn license_manager_report_generator_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn license_manager_report_generator_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.license_manager_report_generator_arn = Some(input.into());
         self
     }
     /// <p>Amazon Resource Name (ARN) of the report generator.</p>
-    pub fn set_license_manager_report_generator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.license_manager_report_generator_arn = input; self
+    pub fn set_license_manager_report_generator_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.license_manager_report_generator_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetLicenseManagerReportGeneratorInput`](crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorInput).
-    pub fn build(self) -> Result<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_license_manager_report_generator::GetLicenseManagerReportGeneratorInput {
                 license_manager_report_generator_arn: self.license_manager_report_generator_arn
@@ -46,4 +53,3 @@ impl GetLicenseManagerReportGeneratorInputBuilder {
         )
     }
 }
-

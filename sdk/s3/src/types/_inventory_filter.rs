@@ -3,14 +3,14 @@
 /// <p>Specifies an inventory filter. The inventory only includes objects that meet the filter's criteria.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryFilter  {
+pub struct InventoryFilter {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
     #[doc(hidden)]
     pub prefix: std::option::Option<std::string::String>,
 }
 impl InventoryFilter {
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
-    pub fn prefix(&self) -> std::option::Option<& str> {
+    pub fn prefix(&self) -> std::option::Option<&str> {
         self.prefix.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl InventoryFilterBuilder {
     }
     /// <p>The prefix that an object must have to be included in the inventory results.</p>
     pub fn set_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.prefix = input; self
+        self.prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`InventoryFilter`](crate::types::InventoryFilter).
     pub fn build(self) -> crate::types::InventoryFilter {
         crate::types::InventoryFilter {
-            prefix: self.prefix
-            ,
+            prefix: self.prefix,
         }
     }
 }
-

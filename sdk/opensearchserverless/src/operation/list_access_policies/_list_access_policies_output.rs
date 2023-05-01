@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessPoliciesOutput  {
+pub struct ListAccessPoliciesOutput {
     /// <p>Details about the requested access policies.</p>
     #[doc(hidden)]
-    pub access_policy_summaries: std::option::Option<std::vec::Vec<crate::types::AccessPolicySummary>>,
+    pub access_policy_summaries:
+        std::option::Option<std::vec::Vec<crate::types::AccessPolicySummary>>,
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,25 @@ pub struct ListAccessPoliciesOutput  {
 }
 impl ListAccessPoliciesOutput {
     /// <p>Details about the requested access policies.</p>
-    pub fn access_policy_summaries(&self) -> std::option::Option<& [crate::types::AccessPolicySummary]> {
+    pub fn access_policy_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::AccessPolicySummary]> {
         self.access_policy_summaries.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAccessPoliciesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAccessPoliciesOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessPoliciesOutput`](crate::operation::list_access_policies::ListAccessPoliciesOutput).
-    pub fn builder() -> crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder {
         crate::operation::list_access_policies::builders::ListAccessPoliciesOutputBuilder::default()
     }
 }
@@ -37,7 +41,8 @@ impl ListAccessPoliciesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAccessPoliciesOutputBuilder {
-    pub(crate) access_policy_summaries: std::option::Option<std::vec::Vec<crate::types::AccessPolicySummary>>,
+    pub(crate) access_policy_summaries:
+        std::option::Option<std::vec::Vec<crate::types::AccessPolicySummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +54,17 @@ impl ListAccessPoliciesOutputBuilder {
     /// <p>Details about the requested access policies.</p>
     pub fn access_policy_summaries(mut self, input: crate::types::AccessPolicySummary) -> Self {
         let mut v = self.access_policy_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.access_policy_summaries = Some(v);
-                        self
+        v.push(input);
+        self.access_policy_summaries = Some(v);
+        self
     }
     /// <p>Details about the requested access policies.</p>
-    pub fn set_access_policy_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccessPolicySummary>>) -> Self {
-        self.access_policy_summaries = input; self
+    pub fn set_access_policy_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AccessPolicySummary>>,
+    ) -> Self {
+        self.access_policy_summaries = input;
+        self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +73,24 @@ impl ListAccessPoliciesOutputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAccessPoliciesOutput`](crate::operation::list_access_policies::ListAccessPoliciesOutput).
     pub fn build(self) -> crate::operation::list_access_policies::ListAccessPoliciesOutput {
         crate::operation::list_access_policies::ListAccessPoliciesOutput {
-            access_policy_summaries: self.access_policy_summaries
-            ,
-            next_token: self.next_token
-            ,
+            access_policy_summaries: self.access_policy_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

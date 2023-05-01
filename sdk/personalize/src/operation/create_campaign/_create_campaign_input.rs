@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCampaignInput  {
+pub struct CreateCampaignInput {
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -21,11 +21,11 @@ pub struct CreateCampaignInput  {
 }
 impl CreateCampaignInput {
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
-    pub fn solution_version_arn(&self) -> std::option::Option<& str> {
+    pub fn solution_version_arn(&self) -> std::option::Option<&str> {
         self.solution_version_arn.as_deref()
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
@@ -33,11 +33,11 @@ impl CreateCampaignInput {
         self.min_provisioned_tps
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn campaign_config(&self) -> std::option::Option<& crate::types::CampaignConfig> {
+    pub fn campaign_config(&self) -> std::option::Option<&crate::types::CampaignConfig> {
         self.campaign_config.as_ref()
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the campaign.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -66,7 +66,8 @@ impl CreateCampaignInputBuilder {
     }
     /// <p>A name for the new campaign. The campaign name must be unique within your account.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
     pub fn solution_version_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,8 +75,12 @@ impl CreateCampaignInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the solution version to deploy.</p>
-    pub fn set_solution_version_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.solution_version_arn = input; self
+    pub fn set_solution_version_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.solution_version_arn = input;
+        self
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub fn min_provisioned_tps(mut self, input: i32) -> Self {
@@ -84,7 +89,8 @@ impl CreateCampaignInputBuilder {
     }
     /// <p>Specifies the requested minimum provisioned transactions (recommendations) per second that Amazon Personalize will support.</p>
     pub fn set_min_provisioned_tps(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_provisioned_tps = input; self
+        self.min_provisioned_tps = input;
+        self
     }
     /// <p>The configuration details of a campaign.</p>
     pub fn campaign_config(mut self, input: crate::types::CampaignConfig) -> Self {
@@ -92,8 +98,12 @@ impl CreateCampaignInputBuilder {
         self
     }
     /// <p>The configuration details of a campaign.</p>
-    pub fn set_campaign_config(mut self, input: std::option::Option<crate::types::CampaignConfig>) -> Self {
-        self.campaign_config = input; self
+    pub fn set_campaign_config(
+        mut self,
+        input: std::option::Option<crate::types::CampaignConfig>,
+    ) -> Self {
+        self.campaign_config = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -102,30 +112,31 @@ impl CreateCampaignInputBuilder {
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the campaign.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a> to apply to the campaign.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
-    pub fn build(self) -> Result<crate::operation::create_campaign::CreateCampaignInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_campaign::CreateCampaignInput {
-                name: self.name
-                ,
-                solution_version_arn: self.solution_version_arn
-                ,
-                min_provisioned_tps: self.min_provisioned_tps
-                ,
-                campaign_config: self.campaign_config
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_campaign::CreateCampaignInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_campaign::CreateCampaignInput {
+            name: self.name,
+            solution_version_arn: self.solution_version_arn,
+            min_provisioned_tps: self.min_provisioned_tps,
+            campaign_config: self.campaign_config,
+            tags: self.tags,
+        })
     }
 }
-

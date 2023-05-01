@@ -3,14 +3,14 @@
 /// <p>Details for the modification recommendation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyRecommendationDetail  {
+pub struct ModifyRecommendationDetail {
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
     #[doc(hidden)]
     pub target_instances: std::option::Option<std::vec::Vec<crate::types::TargetInstance>>,
 }
 impl ModifyRecommendationDetail {
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
-    pub fn target_instances(&self) -> std::option::Option<& [crate::types::TargetInstance]> {
+    pub fn target_instances(&self) -> std::option::Option<&[crate::types::TargetInstance]> {
         self.target_instances.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl ModifyRecommendationDetailBuilder {
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
     pub fn target_instances(mut self, input: crate::types::TargetInstance) -> Self {
         let mut v = self.target_instances.unwrap_or_default();
-                        v.push(input);
-                        self.target_instances = Some(v);
-                        self
+        v.push(input);
+        self.target_instances = Some(v);
+        self
     }
     /// <p>Determines whether this instance type is the Amazon Web Services default recommendation.</p>
-    pub fn set_target_instances(mut self, input: std::option::Option<std::vec::Vec<crate::types::TargetInstance>>) -> Self {
-        self.target_instances = input; self
+    pub fn set_target_instances(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TargetInstance>>,
+    ) -> Self {
+        self.target_instances = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyRecommendationDetail`](crate::types::ModifyRecommendationDetail).
     pub fn build(self) -> crate::types::ModifyRecommendationDetail {
         crate::types::ModifyRecommendationDetail {
-            target_instances: self.target_instances
-            ,
+            target_instances: self.target_instances,
         }
     }
 }
-

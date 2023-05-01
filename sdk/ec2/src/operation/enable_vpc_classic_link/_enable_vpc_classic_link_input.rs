@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableVpcClassicLinkInput  {
+pub struct EnableVpcClassicLinkInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,13 +16,14 @@ impl EnableVpcClassicLinkInput {
         self.dry_run
     }
     /// <p>The ID of the VPC.</p>
-    pub fn vpc_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_id(&self) -> std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
 }
 impl EnableVpcClassicLinkInput {
     /// Creates a new builder-style object to manufacture [`EnableVpcClassicLinkInput`](crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput).
-    pub fn builder() -> crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkInputBuilder {
         crate::operation::enable_vpc_classic_link::builders::EnableVpcClassicLinkInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl EnableVpcClassicLinkInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl EnableVpcClassicLinkInputBuilder {
     }
     /// <p>The ID of the VPC.</p>
     pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_id = input; self
+        self.vpc_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnableVpcClassicLinkInput`](crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput).
-    pub fn build(self) -> Result<crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkInput {
-                dry_run: self.dry_run
-                ,
-                vpc_id: self.vpc_id
-                ,
-            }
+                dry_run: self.dry_run,
+                vpc_id: self.vpc_id,
+            },
         )
     }
 }
-

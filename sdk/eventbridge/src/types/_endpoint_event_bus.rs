@@ -3,14 +3,14 @@
 /// <p>The event buses the endpoint is associated with.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EndpointEventBus  {
+pub struct EndpointEventBus {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
     #[doc(hidden)]
     pub event_bus_arn: std::option::Option<std::string::String>,
 }
 impl EndpointEventBus {
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
-    pub fn event_bus_arn(&self) -> std::option::Option<& str> {
+    pub fn event_bus_arn(&self) -> std::option::Option<&str> {
         self.event_bus_arn.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl EndpointEventBusBuilder {
     }
     /// <p>The ARN of the event bus the endpoint is associated with.</p>
     pub fn set_event_bus_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_bus_arn = input; self
+        self.event_bus_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`EndpointEventBus`](crate::types::EndpointEventBus).
     pub fn build(self) -> crate::types::EndpointEventBus {
         crate::types::EndpointEventBus {
-            event_bus_arn: self.event_bus_arn
-            ,
+            event_bus_arn: self.event_bus_arn,
         }
     }
 }
-

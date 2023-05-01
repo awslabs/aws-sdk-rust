@@ -3,7 +3,7 @@
 /// <p>Provides information about an account that's associated with an Amazon Macie administrator account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Member  {
+pub struct Member {
     /// <p>The Amazon Web Services account ID for the account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -27,46 +27,50 @@ pub struct Member  {
     pub relationship_status: std::option::Option<crate::types::RelationshipStatus>,
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl Member {
     /// <p>The Amazon Web Services account ID for the account.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID for the administrator account.</p>
-    pub fn administrator_account_id(&self) -> std::option::Option<& str> {
+    pub fn administrator_account_id(&self) -> std::option::Option<&str> {
         self.administrator_account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The email address for the account. This value is null if the account is associated with the administrator account through Organizations.</p>
-    pub fn email(&self) -> std::option::Option<& str> {
+    pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie membership invitation hasn't been sent to the account.</p>
-    pub fn invited_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn invited_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.invited_at.as_ref()
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    pub fn master_account_id(&self) -> std::option::Option<& str> {
+    pub fn master_account_id(&self) -> std::option::Option<&str> {
         self.master_account_id.as_deref()
     }
     /// <p>The current status of the relationship between the account and the administrator account.</p>
-    pub fn relationship_status(&self) -> std::option::Option<& crate::types::RelationshipStatus> {
+    pub fn relationship_status(&self) -> std::option::Option<&crate::types::RelationshipStatus> {
         self.relationship_status.as_ref()
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
 }
@@ -88,7 +92,8 @@ pub struct MemberBuilder {
     pub(crate) invited_at: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) master_account_id: std::option::Option<std::string::String>,
     pub(crate) relationship_status: std::option::Option<crate::types::RelationshipStatus>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
 }
 impl MemberBuilder {
@@ -99,7 +104,8 @@ impl MemberBuilder {
     }
     /// <p>The Amazon Web Services account ID for the account.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The Amazon Web Services account ID for the administrator account.</p>
     pub fn administrator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +113,12 @@ impl MemberBuilder {
         self
     }
     /// <p>The Amazon Web Services account ID for the administrator account.</p>
-    pub fn set_administrator_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.administrator_account_id = input; self
+    pub fn set_administrator_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.administrator_account_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +127,8 @@ impl MemberBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The email address for the account. This value is null if the account is associated with the administrator account through Organizations.</p>
     pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +137,8 @@ impl MemberBuilder {
     }
     /// <p>The email address for the account. This value is null if the account is associated with the administrator account through Organizations.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email = input; self
+        self.email = input;
+        self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie membership invitation hasn't been sent to the account.</p>
     pub fn invited_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -134,8 +146,12 @@ impl MemberBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie membership invitation hasn't been sent to the account.</p>
-    pub fn set_invited_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.invited_at = input; self
+    pub fn set_invited_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.invited_at = input;
+        self
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub fn master_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,8 +159,12 @@ impl MemberBuilder {
         self
     }
     /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
-    pub fn set_master_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.master_account_id = input; self
+    pub fn set_master_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.master_account_id = input;
+        self
     }
     /// <p>The current status of the relationship between the account and the administrator account.</p>
     pub fn relationship_status(mut self, input: crate::types::RelationshipStatus) -> Self {
@@ -152,23 +172,37 @@ impl MemberBuilder {
         self
     }
     /// <p>The current status of the relationship between the account and the administrator account.</p>
-    pub fn set_relationship_status(mut self, input: std::option::Option<crate::types::RelationshipStatus>) -> Self {
-        self.relationship_status = input; self
+    pub fn set_relationship_status(
+        mut self,
+        input: std::option::Option<crate::types::RelationshipStatus>,
+    ) -> Self {
+        self.relationship_status = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A map of key-value pairs that specifies which tags (keys and values) are associated with the account in Amazon Macie.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -176,31 +210,25 @@ impl MemberBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, of the most recent change to the status of the relationship between the account and the administrator account.</p>
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// Consumes the builder and constructs a [`Member`](crate::types::Member).
     pub fn build(self) -> crate::types::Member {
         crate::types::Member {
-            account_id: self.account_id
-            ,
-            administrator_account_id: self.administrator_account_id
-            ,
-            arn: self.arn
-            ,
-            email: self.email
-            ,
-            invited_at: self.invited_at
-            ,
-            master_account_id: self.master_account_id
-            ,
-            relationship_status: self.relationship_status
-            ,
-            tags: self.tags
-            ,
-            updated_at: self.updated_at
-            ,
+            account_id: self.account_id,
+            administrator_account_id: self.administrator_account_id,
+            arn: self.arn,
+            email: self.email,
+            invited_at: self.invited_at,
+            master_account_id: self.master_account_id,
+            relationship_status: self.relationship_status,
+            tags: self.tags,
+            updated_at: self.updated_at,
         }
     }
 }
-

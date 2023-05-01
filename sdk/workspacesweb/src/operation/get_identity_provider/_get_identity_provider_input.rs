@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetIdentityProviderInput  {
+pub struct GetIdentityProviderInput {
     /// <p>The ARN of the identity provider.</p>
     #[doc(hidden)]
     pub identity_provider_arn: std::option::Option<std::string::String>,
 }
 impl GetIdentityProviderInput {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(&self) -> std::option::Option<& str> {
+    pub fn identity_provider_arn(&self) -> std::option::Option<&str> {
         self.identity_provider_arn.as_deref()
     }
 }
 impl GetIdentityProviderInput {
     /// Creates a new builder-style object to manufacture [`GetIdentityProviderInput`](crate::operation::get_identity_provider::GetIdentityProviderInput).
-    pub fn builder() -> crate::operation::get_identity_provider::builders::GetIdentityProviderInputBuilder {
-        crate::operation::get_identity_provider::builders::GetIdentityProviderInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_identity_provider::builders::GetIdentityProviderInputBuilder {
+        crate::operation::get_identity_provider::builders::GetIdentityProviderInputBuilder::default(
+        )
     }
 }
 
@@ -33,17 +35,24 @@ impl GetIdentityProviderInputBuilder {
         self
     }
     /// <p>The ARN of the identity provider.</p>
-    pub fn set_identity_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_provider_arn = input; self
+    pub fn set_identity_provider_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_provider_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetIdentityProviderInput`](crate::operation::get_identity_provider::GetIdentityProviderInput).
-    pub fn build(self) -> Result<crate::operation::get_identity_provider::GetIdentityProviderInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_identity_provider::GetIdentityProviderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_identity_provider::GetIdentityProviderInput {
-                identity_provider_arn: self.identity_provider_arn
-                ,
-            }
+                identity_provider_arn: self.identity_provider_arn,
+            },
         )
     }
 }
-

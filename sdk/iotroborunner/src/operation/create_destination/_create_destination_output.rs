@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDestinationOutput  {
+pub struct CreateDestinationOutput {
     /// Destination ARN.
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -22,34 +22,35 @@ pub struct CreateDestinationOutput  {
 }
 impl CreateDestinationOutput {
     /// Destination ARN.
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// Filters access by the destination's identifier
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// Timestamp at which the resource was created.
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// Timestamp at which the resource was last updated.
-    pub fn updated_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_at.as_ref()
     }
     /// State of the destination.
-    pub fn state(&self) -> std::option::Option<& crate::types::DestinationState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::DestinationState> {
         self.state.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateDestinationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateDestinationOutput {
     /// Creates a new builder-style object to manufacture [`CreateDestinationOutput`](crate::operation::create_destination::CreateDestinationOutput).
-    pub fn builder() -> crate::operation::create_destination::builders::CreateDestinationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_destination::builders::CreateDestinationOutputBuilder {
         crate::operation::create_destination::builders::CreateDestinationOutputBuilder::default()
     }
 }
@@ -73,7 +74,8 @@ impl CreateDestinationOutputBuilder {
     }
     /// Destination ARN.
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Filters access by the destination's identifier
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -82,7 +84,8 @@ impl CreateDestinationOutputBuilder {
     }
     /// Filters access by the destination's identifier
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Timestamp at which the resource was created.
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -90,8 +93,12 @@ impl CreateDestinationOutputBuilder {
         self
     }
     /// Timestamp at which the resource was created.
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// Timestamp at which the resource was last updated.
     pub fn updated_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -99,8 +106,12 @@ impl CreateDestinationOutputBuilder {
         self
     }
     /// Timestamp at which the resource was last updated.
-    pub fn set_updated_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_at = input; self
+    pub fn set_updated_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_at = input;
+        self
     }
     /// State of the destination.
     pub fn state(mut self, input: crate::types::DestinationState) -> Self {
@@ -109,32 +120,27 @@ impl CreateDestinationOutputBuilder {
     }
     /// State of the destination.
     pub fn set_state(mut self, input: std::option::Option<crate::types::DestinationState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateDestinationOutput`](crate::operation::create_destination::CreateDestinationOutput).
     pub fn build(self) -> crate::operation::create_destination::CreateDestinationOutput {
         crate::operation::create_destination::CreateDestinationOutput {
-            arn: self.arn
-            ,
-            id: self.id
-            ,
-            created_at: self.created_at
-            ,
-            updated_at: self.updated_at
-            ,
-            state: self.state
-            ,
+            arn: self.arn,
+            id: self.id,
+            created_at: self.created_at,
+            updated_at: self.updated_at,
+            state: self.state,
             _request_id: self._request_id,
         }
     }
 }
-

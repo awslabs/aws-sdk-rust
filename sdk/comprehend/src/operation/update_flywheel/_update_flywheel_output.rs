@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFlywheelOutput  {
+pub struct UpdateFlywheelOutput {
     /// <p>The flywheel properties.</p>
     #[doc(hidden)]
     pub flywheel_properties: std::option::Option<crate::types::FlywheelProperties>,
@@ -10,15 +10,15 @@ pub struct UpdateFlywheelOutput  {
 }
 impl UpdateFlywheelOutput {
     /// <p>The flywheel properties.</p>
-    pub fn flywheel_properties(&self) -> std::option::Option<& crate::types::FlywheelProperties> {
+    pub fn flywheel_properties(&self) -> std::option::Option<&crate::types::FlywheelProperties> {
         self.flywheel_properties.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateFlywheelOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateFlywheelOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFlywheelOutput`](crate::operation::update_flywheel::UpdateFlywheelOutput).
     pub fn builder() -> crate::operation::update_flywheel::builders::UpdateFlywheelOutputBuilder {
@@ -40,25 +40,27 @@ impl UpdateFlywheelOutputBuilder {
         self
     }
     /// <p>The flywheel properties.</p>
-    pub fn set_flywheel_properties(mut self, input: std::option::Option<crate::types::FlywheelProperties>) -> Self {
-        self.flywheel_properties = input; self
+    pub fn set_flywheel_properties(
+        mut self,
+        input: std::option::Option<crate::types::FlywheelProperties>,
+    ) -> Self {
+        self.flywheel_properties = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateFlywheelOutput`](crate::operation::update_flywheel::UpdateFlywheelOutput).
     pub fn build(self) -> crate::operation::update_flywheel::UpdateFlywheelOutput {
         crate::operation::update_flywheel::UpdateFlywheelOutput {
-            flywheel_properties: self.flywheel_properties
-            ,
+            flywheel_properties: self.flywheel_properties,
             _request_id: self._request_id,
         }
     }
 }
-

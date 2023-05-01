@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RetryDataReplicationOutput  {
+pub struct RetryDataReplicationOutput {
     /// <p>Source server ID.</p>
     #[doc(hidden)]
     pub source_server_id: std::option::Option<std::string::String>,
@@ -14,7 +14,8 @@ pub struct RetryDataReplicationOutput  {
     pub is_archived: std::option::Option<bool>,
     /// <p>Source server Tags.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Source server launched instance.</p>
     #[doc(hidden)]
     pub launched_instance: std::option::Option<crate::types::LaunchedInstance>,
@@ -46,11 +47,11 @@ pub struct RetryDataReplicationOutput  {
 }
 impl RetryDataReplicationOutput {
     /// <p>Source server ID.</p>
-    pub fn source_server_id(&self) -> std::option::Option<& str> {
+    pub fn source_server_id(&self) -> std::option::Option<&str> {
         self.source_server_id.as_deref()
     }
     /// <p>Source server ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Source server archived status.</p>
@@ -58,47 +59,50 @@ impl RetryDataReplicationOutput {
         self.is_archived
     }
     /// <p>Source server Tags.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>Source server launched instance.</p>
-    pub fn launched_instance(&self) -> std::option::Option<& crate::types::LaunchedInstance> {
+    pub fn launched_instance(&self) -> std::option::Option<&crate::types::LaunchedInstance> {
         self.launched_instance.as_ref()
     }
     /// <p>Source server data replication info.</p>
-    pub fn data_replication_info(&self) -> std::option::Option<& crate::types::DataReplicationInfo> {
+    pub fn data_replication_info(&self) -> std::option::Option<&crate::types::DataReplicationInfo> {
         self.data_replication_info.as_ref()
     }
     /// <p>Source server lifecycle state.</p>
-    pub fn life_cycle(&self) -> std::option::Option<& crate::types::LifeCycle> {
+    pub fn life_cycle(&self) -> std::option::Option<&crate::types::LifeCycle> {
         self.life_cycle.as_ref()
     }
     /// <p>Source server properties.</p>
-    pub fn source_properties(&self) -> std::option::Option<& crate::types::SourceProperties> {
+    pub fn source_properties(&self) -> std::option::Option<&crate::types::SourceProperties> {
         self.source_properties.as_ref()
     }
     /// <p>Source server replication type.</p>
-    pub fn replication_type(&self) -> std::option::Option<& crate::types::ReplicationType> {
+    pub fn replication_type(&self) -> std::option::Option<&crate::types::ReplicationType> {
         self.replication_type.as_ref()
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn vcenter_client_id(&self) -> std::option::Option<& str> {
+    pub fn vcenter_client_id(&self) -> std::option::Option<&str> {
         self.vcenter_client_id.as_deref()
     }
     /// <p>Source server application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>Source server user provided ID.</p>
-    pub fn user_provided_id(&self) -> std::option::Option<& str> {
+    pub fn user_provided_id(&self) -> std::option::Option<&str> {
         self.user_provided_id.as_deref()
     }
     /// <p>Source server fqdn for action framework.</p>
-    pub fn fqdn_for_action_framework(&self) -> std::option::Option<& str> {
+    pub fn fqdn_for_action_framework(&self) -> std::option::Option<&str> {
         self.fqdn_for_action_framework.as_deref()
     }
 }
-impl  std::fmt::Debug for RetryDataReplicationOutput  {
+impl std::fmt::Debug for RetryDataReplicationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetryDataReplicationOutput");
         formatter.field("source_server_id", &self.source_server_id);
@@ -119,13 +123,14 @@ impl  std::fmt::Debug for RetryDataReplicationOutput  {
     }
 }
 impl aws_http::request_id::RequestId for RetryDataReplicationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RetryDataReplicationOutput {
     /// Creates a new builder-style object to manufacture [`RetryDataReplicationOutput`](crate::operation::retry_data_replication::RetryDataReplicationOutput).
-    pub fn builder() -> crate::operation::retry_data_replication::builders::RetryDataReplicationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::retry_data_replication::builders::RetryDataReplicationOutputBuilder {
         crate::operation::retry_data_replication::builders::RetryDataReplicationOutputBuilder::default()
     }
 }
@@ -137,7 +142,8 @@ pub struct RetryDataReplicationOutputBuilder {
     pub(crate) source_server_id: std::option::Option<std::string::String>,
     pub(crate) arn: std::option::Option<std::string::String>,
     pub(crate) is_archived: std::option::Option<bool>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) launched_instance: std::option::Option<crate::types::LaunchedInstance>,
     pub(crate) data_replication_info: std::option::Option<crate::types::DataReplicationInfo>,
     pub(crate) life_cycle: std::option::Option<crate::types::LifeCycle>,
@@ -157,7 +163,8 @@ impl RetryDataReplicationOutputBuilder {
     }
     /// <p>Source server ID.</p>
     pub fn set_source_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_server_id = input; self
+        self.source_server_id = input;
+        self
     }
     /// <p>Source server ARN.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -166,7 +173,8 @@ impl RetryDataReplicationOutputBuilder {
     }
     /// <p>Source server ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>Source server archived status.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
@@ -175,22 +183,33 @@ impl RetryDataReplicationOutputBuilder {
     }
     /// <p>Source server archived status.</p>
     pub fn set_is_archived(mut self, input: std::option::Option<bool>) -> Self {
-        self.is_archived = input; self
+        self.is_archived = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Source server Tags.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Source server Tags.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Source server launched instance.</p>
     pub fn launched_instance(mut self, input: crate::types::LaunchedInstance) -> Self {
@@ -198,8 +217,12 @@ impl RetryDataReplicationOutputBuilder {
         self
     }
     /// <p>Source server launched instance.</p>
-    pub fn set_launched_instance(mut self, input: std::option::Option<crate::types::LaunchedInstance>) -> Self {
-        self.launched_instance = input; self
+    pub fn set_launched_instance(
+        mut self,
+        input: std::option::Option<crate::types::LaunchedInstance>,
+    ) -> Self {
+        self.launched_instance = input;
+        self
     }
     /// <p>Source server data replication info.</p>
     pub fn data_replication_info(mut self, input: crate::types::DataReplicationInfo) -> Self {
@@ -207,8 +230,12 @@ impl RetryDataReplicationOutputBuilder {
         self
     }
     /// <p>Source server data replication info.</p>
-    pub fn set_data_replication_info(mut self, input: std::option::Option<crate::types::DataReplicationInfo>) -> Self {
-        self.data_replication_info = input; self
+    pub fn set_data_replication_info(
+        mut self,
+        input: std::option::Option<crate::types::DataReplicationInfo>,
+    ) -> Self {
+        self.data_replication_info = input;
+        self
     }
     /// <p>Source server lifecycle state.</p>
     pub fn life_cycle(mut self, input: crate::types::LifeCycle) -> Self {
@@ -217,7 +244,8 @@ impl RetryDataReplicationOutputBuilder {
     }
     /// <p>Source server lifecycle state.</p>
     pub fn set_life_cycle(mut self, input: std::option::Option<crate::types::LifeCycle>) -> Self {
-        self.life_cycle = input; self
+        self.life_cycle = input;
+        self
     }
     /// <p>Source server properties.</p>
     pub fn source_properties(mut self, input: crate::types::SourceProperties) -> Self {
@@ -225,8 +253,12 @@ impl RetryDataReplicationOutputBuilder {
         self
     }
     /// <p>Source server properties.</p>
-    pub fn set_source_properties(mut self, input: std::option::Option<crate::types::SourceProperties>) -> Self {
-        self.source_properties = input; self
+    pub fn set_source_properties(
+        mut self,
+        input: std::option::Option<crate::types::SourceProperties>,
+    ) -> Self {
+        self.source_properties = input;
+        self
     }
     /// <p>Source server replication type.</p>
     pub fn replication_type(mut self, input: crate::types::ReplicationType) -> Self {
@@ -234,8 +266,12 @@ impl RetryDataReplicationOutputBuilder {
         self
     }
     /// <p>Source server replication type.</p>
-    pub fn set_replication_type(mut self, input: std::option::Option<crate::types::ReplicationType>) -> Self {
-        self.replication_type = input; self
+    pub fn set_replication_type(
+        mut self,
+        input: std::option::Option<crate::types::ReplicationType>,
+    ) -> Self {
+        self.replication_type = input;
+        self
     }
     /// <p>Source server vCenter client id.</p>
     pub fn vcenter_client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -243,8 +279,12 @@ impl RetryDataReplicationOutputBuilder {
         self
     }
     /// <p>Source server vCenter client id.</p>
-    pub fn set_vcenter_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vcenter_client_id = input; self
+    pub fn set_vcenter_client_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vcenter_client_id = input;
+        self
     }
     /// <p>Source server application ID.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -253,7 +293,8 @@ impl RetryDataReplicationOutputBuilder {
     }
     /// <p>Source server application ID.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>Source server user provided ID.</p>
     pub fn user_provided_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -262,7 +303,8 @@ impl RetryDataReplicationOutputBuilder {
     }
     /// <p>Source server user provided ID.</p>
     pub fn set_user_provided_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_provided_id = input; self
+        self.user_provided_id = input;
+        self
     }
     /// <p>Source server fqdn for action framework.</p>
     pub fn fqdn_for_action_framework(mut self, input: impl Into<std::string::String>) -> Self {
@@ -270,47 +312,38 @@ impl RetryDataReplicationOutputBuilder {
         self
     }
     /// <p>Source server fqdn for action framework.</p>
-    pub fn set_fqdn_for_action_framework(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fqdn_for_action_framework = input; self
+    pub fn set_fqdn_for_action_framework(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.fqdn_for_action_framework = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RetryDataReplicationOutput`](crate::operation::retry_data_replication::RetryDataReplicationOutput).
     pub fn build(self) -> crate::operation::retry_data_replication::RetryDataReplicationOutput {
         crate::operation::retry_data_replication::RetryDataReplicationOutput {
-            source_server_id: self.source_server_id
-            ,
-            arn: self.arn
-            ,
-            is_archived: self.is_archived
-            ,
-            tags: self.tags
-            ,
-            launched_instance: self.launched_instance
-            ,
-            data_replication_info: self.data_replication_info
-            ,
-            life_cycle: self.life_cycle
-            ,
-            source_properties: self.source_properties
-            ,
-            replication_type: self.replication_type
-            ,
-            vcenter_client_id: self.vcenter_client_id
-            ,
-            application_id: self.application_id
-            ,
-            user_provided_id: self.user_provided_id
-            ,
-            fqdn_for_action_framework: self.fqdn_for_action_framework
-            ,
+            source_server_id: self.source_server_id,
+            arn: self.arn,
+            is_archived: self.is_archived,
+            tags: self.tags,
+            launched_instance: self.launched_instance,
+            data_replication_info: self.data_replication_info,
+            life_cycle: self.life_cycle,
+            source_properties: self.source_properties,
+            replication_type: self.replication_type,
+            vcenter_client_id: self.vcenter_client_id,
+            application_id: self.application_id,
+            user_provided_id: self.user_provided_id,
+            fqdn_for_action_framework: self.fqdn_for_action_framework,
             _request_id: self._request_id,
         }
     }
@@ -335,4 +368,3 @@ impl std::fmt::Debug for RetryDataReplicationOutputBuilder {
         formatter.finish()
     }
 }
-

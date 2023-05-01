@@ -4,56 +4,81 @@ pub use crate::operation::get_insight_summaries::_get_insight_summaries_output::
 pub use crate::operation::get_insight_summaries::_get_insight_summaries_input::GetInsightSummariesInputBuilder;
 
 /// Fluent builder constructing a request to `GetInsightSummaries`.
-/// 
+///
 /// <p>Retrieves the summaries of all insights in the specified group matching the provided filter values.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetInsightSummariesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder,
+    inner: crate::operation::get_insight_summaries::builders::GetInsightSummariesInputBuilder,
 }
-impl GetInsightSummariesFluentBuilder  {
+impl GetInsightSummariesFluentBuilder {
     /// Creates a new `GetInsightSummaries`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_insight_summaries::GetInsightSummaries, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_insight_summaries::GetInsightSummariesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_insight_summaries::GetInsightSummariesOutput, aws_smithy_http::result::SdkError<crate::operation::get_insight_summaries::GetInsightSummariesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_insight_summaries::GetInsightSummaries,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_insight_summaries::GetInsightSummariesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_insight_summaries::GetInsightSummariesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_insight_summaries::GetInsightSummariesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator {
-                                crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator {
+        crate::operation::get_insight_summaries::paginator::GetInsightSummariesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// Appends an item to `States`.
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
@@ -64,7 +89,10 @@ impl GetInsightSummariesFluentBuilder  {
         self
     }
     /// <p>The list of insight states. </p>
-    pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::InsightState>>) -> Self {
+    pub fn set_states(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InsightState>>,
+    ) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
@@ -94,7 +122,10 @@ impl GetInsightSummariesFluentBuilder  {
         self
     }
     /// <p>The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -129,4 +160,3 @@ impl GetInsightSummariesFluentBuilder  {
         self
     }
 }
-

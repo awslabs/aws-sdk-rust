@@ -222,4 +222,3 @@ pub mod update_user_profile;
 
 /// Types for the `UpdateVolume` operation.
 pub mod update_volume;
-

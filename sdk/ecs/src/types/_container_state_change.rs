@@ -3,7 +3,7 @@
 /// <p>An object that represents a change in state for a container.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContainerStateChange  {
+pub struct ContainerStateChange {
     /// <p>The name of the container.</p>
     #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
@@ -28,15 +28,15 @@ pub struct ContainerStateChange  {
 }
 impl ContainerStateChange {
     /// <p>The name of the container.</p>
-    pub fn container_name(&self) -> std::option::Option<& str> {
+    pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
     /// <p>The container image SHA 256 digest.</p>
-    pub fn image_digest(&self) -> std::option::Option<& str> {
+    pub fn image_digest(&self) -> std::option::Option<&str> {
         self.image_digest.as_deref()
     }
     /// <p>The ID of the Docker container.</p>
-    pub fn runtime_id(&self) -> std::option::Option<& str> {
+    pub fn runtime_id(&self) -> std::option::Option<&str> {
         self.runtime_id.as_deref()
     }
     /// <p>The exit code for the container, if the state change is a result of the container exiting.</p>
@@ -44,15 +44,15 @@ impl ContainerStateChange {
         self.exit_code
     }
     /// <p>Any network bindings that are associated with the container.</p>
-    pub fn network_bindings(&self) -> std::option::Option<& [crate::types::NetworkBinding]> {
+    pub fn network_bindings(&self) -> std::option::Option<&[crate::types::NetworkBinding]> {
         self.network_bindings.as_deref()
     }
     /// <p>The reason for the state change.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
     /// <p>The status of the container.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
 }
@@ -83,7 +83,8 @@ impl ContainerStateChangeBuilder {
     }
     /// <p>The name of the container.</p>
     pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_name = input; self
+        self.container_name = input;
+        self
     }
     /// <p>The container image SHA 256 digest.</p>
     pub fn image_digest(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +93,8 @@ impl ContainerStateChangeBuilder {
     }
     /// <p>The container image SHA 256 digest.</p>
     pub fn set_image_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_digest = input; self
+        self.image_digest = input;
+        self
     }
     /// <p>The ID of the Docker container.</p>
     pub fn runtime_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +103,8 @@ impl ContainerStateChangeBuilder {
     }
     /// <p>The ID of the Docker container.</p>
     pub fn set_runtime_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.runtime_id = input; self
+        self.runtime_id = input;
+        self
     }
     /// <p>The exit code for the container, if the state change is a result of the container exiting.</p>
     pub fn exit_code(mut self, input: i32) -> Self {
@@ -110,7 +113,8 @@ impl ContainerStateChangeBuilder {
     }
     /// <p>The exit code for the container, if the state change is a result of the container exiting.</p>
     pub fn set_exit_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.exit_code = input; self
+        self.exit_code = input;
+        self
     }
     /// Appends an item to `network_bindings`.
     ///
@@ -119,13 +123,17 @@ impl ContainerStateChangeBuilder {
     /// <p>Any network bindings that are associated with the container.</p>
     pub fn network_bindings(mut self, input: crate::types::NetworkBinding) -> Self {
         let mut v = self.network_bindings.unwrap_or_default();
-                        v.push(input);
-                        self.network_bindings = Some(v);
-                        self
+        v.push(input);
+        self.network_bindings = Some(v);
+        self
     }
     /// <p>Any network bindings that are associated with the container.</p>
-    pub fn set_network_bindings(mut self, input: std::option::Option<std::vec::Vec<crate::types::NetworkBinding>>) -> Self {
-        self.network_bindings = input; self
+    pub fn set_network_bindings(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NetworkBinding>>,
+    ) -> Self {
+        self.network_bindings = input;
+        self
     }
     /// <p>The reason for the state change.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,7 +142,8 @@ impl ContainerStateChangeBuilder {
     }
     /// <p>The reason for the state change.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// <p>The status of the container.</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,26 +152,19 @@ impl ContainerStateChangeBuilder {
     }
     /// <p>The status of the container.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ContainerStateChange`](crate::types::ContainerStateChange).
     pub fn build(self) -> crate::types::ContainerStateChange {
         crate::types::ContainerStateChange {
-            container_name: self.container_name
-            ,
-            image_digest: self.image_digest
-            ,
-            runtime_id: self.runtime_id
-            ,
-            exit_code: self.exit_code
-            ,
-            network_bindings: self.network_bindings
-            ,
-            reason: self.reason
-            ,
-            status: self.status
-            ,
+            container_name: self.container_name,
+            image_digest: self.image_digest,
+            runtime_id: self.runtime_id,
+            exit_code: self.exit_code,
+            network_bindings: self.network_bindings,
+            reason: self.reason,
+            status: self.status,
         }
     }
 }
-

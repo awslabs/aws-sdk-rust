@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSkillGroupInput  {
+pub struct CreateSkillGroupInput {
     /// <p>The name for the skill group.</p>
     #[doc(hidden)]
     pub skill_group_name: std::option::Option<std::string::String>,
@@ -18,25 +18,26 @@ pub struct CreateSkillGroupInput  {
 }
 impl CreateSkillGroupInput {
     /// <p>The name for the skill group.</p>
-    pub fn skill_group_name(&self) -> std::option::Option<& str> {
+    pub fn skill_group_name(&self) -> std::option::Option<&str> {
         self.skill_group_name.as_deref()
     }
     /// <p>The description for the skill group.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn client_request_token(&self) -> std::option::Option<& str> {
+    pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
     }
     /// <p>The tags for the skill group.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl CreateSkillGroupInput {
     /// Creates a new builder-style object to manufacture [`CreateSkillGroupInput`](crate::operation::create_skill_group::CreateSkillGroupInput).
-    pub fn builder() -> crate::operation::create_skill_group::builders::CreateSkillGroupInputBuilder {
+    pub fn builder() -> crate::operation::create_skill_group::builders::CreateSkillGroupInputBuilder
+    {
         crate::operation::create_skill_group::builders::CreateSkillGroupInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl CreateSkillGroupInputBuilder {
     }
     /// <p>The name for the skill group.</p>
     pub fn set_skill_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.skill_group_name = input; self
+        self.skill_group_name = input;
+        self
     }
     /// <p>The description for the skill group.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl CreateSkillGroupInputBuilder {
     }
     /// <p>The description for the skill group.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +78,12 @@ impl CreateSkillGroupInputBuilder {
         self
     }
     /// <p>A unique, user-specified identifier for this request that ensures idempotency. </p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_request_token = input; self
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.client_request_token = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -85,28 +92,32 @@ impl CreateSkillGroupInputBuilder {
     /// <p>The tags for the skill group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags for the skill group.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateSkillGroupInput`](crate::operation::create_skill_group::CreateSkillGroupInput).
-    pub fn build(self) -> Result<crate::operation::create_skill_group::CreateSkillGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_skill_group::CreateSkillGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_skill_group::CreateSkillGroupInput {
-                skill_group_name: self.skill_group_name
-                ,
-                description: self.description
-                ,
-                client_request_token: self.client_request_token
-                ,
-                tags: self.tags
-                ,
-            }
+                skill_group_name: self.skill_group_name,
+                description: self.description,
+                client_request_token: self.client_request_token,
+                tags: self.tags,
+            },
         )
     }
 }
-

@@ -2,33 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTrackerConsumerInput  {
+pub struct AssociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
     #[doc(hidden)]
     pub tracker_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub consumer_arn: std::option::Option<std::string::String>,
 }
 impl AssociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
-    pub fn tracker_name(&self) -> std::option::Option<& str> {
+    pub fn tracker_name(&self) -> std::option::Option<&str> {
         self.tracker_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
-    pub fn consumer_arn(&self) -> std::option::Option<& str> {
+    pub fn consumer_arn(&self) -> std::option::Option<&str> {
         self.consumer_arn.as_deref()
     }
 }
 impl AssociateTrackerConsumerInput {
     /// Creates a new builder-style object to manufacture [`AssociateTrackerConsumerInput`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput).
-    pub fn builder() -> crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder
+    {
         crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder::default()
     }
 }
@@ -48,33 +50,37 @@ impl AssociateTrackerConsumerInputBuilder {
     }
     /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
     pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tracker_name = input; self
+        self.tracker_name = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
     pub fn consumer_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.consumer_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
     pub fn set_consumer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.consumer_arn = input; self
+        self.consumer_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateTrackerConsumerInput`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput).
-    pub fn build(self) -> Result<crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput {
-                tracker_name: self.tracker_name
-                ,
-                consumer_arn: self.consumer_arn
-                ,
-            }
+                tracker_name: self.tracker_name,
+                consumer_arn: self.consumer_arn,
+            },
         )
     }
 }
-

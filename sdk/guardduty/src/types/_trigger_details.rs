@@ -3,7 +3,7 @@
 /// <p>Represents the reason the scan was triggered.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TriggerDetails  {
+pub struct TriggerDetails {
     /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
     #[doc(hidden)]
     pub guard_duty_finding_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct TriggerDetails  {
 }
 impl TriggerDetails {
     /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
-    pub fn guard_duty_finding_id(&self) -> std::option::Option<& str> {
+    pub fn guard_duty_finding_id(&self) -> std::option::Option<&str> {
         self.guard_duty_finding_id.as_deref()
     }
     /// <p>The description of the scan trigger.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl TriggerDetailsBuilder {
         self
     }
     /// <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
-    pub fn set_guard_duty_finding_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.guard_duty_finding_id = input; self
+    pub fn set_guard_duty_finding_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.guard_duty_finding_id = input;
+        self
     }
     /// <p>The description of the scan trigger.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl TriggerDetailsBuilder {
     }
     /// <p>The description of the scan trigger.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`TriggerDetails`](crate::types::TriggerDetails).
     pub fn build(self) -> crate::types::TriggerDetails {
         crate::types::TriggerDetails {
-            guard_duty_finding_id: self.guard_duty_finding_id
-            ,
-            description: self.description
-            ,
+            guard_duty_finding_id: self.guard_duty_finding_id,
+            description: self.description,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Provides the latitude and longitude coordinates of a location.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeoLocation  {
+pub struct GeoLocation {
     /// <p>The longitude of the location.</p>
     #[doc(hidden)]
     pub lon: f64,
@@ -43,7 +43,8 @@ impl GeoLocationBuilder {
     }
     /// <p>The longitude of the location.</p>
     pub fn set_lon(mut self, input: std::option::Option<f64>) -> Self {
-        self.lon = input; self
+        self.lon = input;
+        self
     }
     /// <p>The latitude of the location.</p>
     pub fn lat(mut self, input: f64) -> Self {
@@ -52,18 +53,14 @@ impl GeoLocationBuilder {
     }
     /// <p>The latitude of the location.</p>
     pub fn set_lat(mut self, input: std::option::Option<f64>) -> Self {
-        self.lat = input; self
+        self.lat = input;
+        self
     }
     /// Consumes the builder and constructs a [`GeoLocation`](crate::types::GeoLocation).
     pub fn build(self) -> crate::types::GeoLocation {
         crate::types::GeoLocation {
-            lon: self.lon
-                .unwrap_or_default()
-            ,
-            lat: self.lat
-                .unwrap_or_default()
-            ,
+            lon: self.lon.unwrap_or_default(),
+            lat: self.lat.unwrap_or_default(),
         }
     }
 }
-

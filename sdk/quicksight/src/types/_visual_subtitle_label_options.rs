@@ -3,7 +3,7 @@
 /// <p>The subtitle label options for a visual.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VisualSubtitleLabelOptions  {
+pub struct VisualSubtitleLabelOptions {
     /// <p>The visibility of the subtitle label.</p>
     #[doc(hidden)]
     pub visibility: std::option::Option<crate::types::Visibility>,
@@ -13,11 +13,11 @@ pub struct VisualSubtitleLabelOptions  {
 }
 impl VisualSubtitleLabelOptions {
     /// <p>The visibility of the subtitle label.</p>
-    pub fn visibility(&self) -> std::option::Option<& crate::types::Visibility> {
+    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
     /// <p>The long text format of the subtitle label, such as plain text or rich text.</p>
-    pub fn format_text(&self) -> std::option::Option<& crate::types::LongFormatText> {
+    pub fn format_text(&self) -> std::option::Option<&crate::types::LongFormatText> {
         self.format_text.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl VisualSubtitleLabelOptionsBuilder {
     }
     /// <p>The visibility of the subtitle label.</p>
     pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input; self
+        self.visibility = input;
+        self
     }
     /// <p>The long text format of the subtitle label, such as plain text or rich text.</p>
     pub fn format_text(mut self, input: crate::types::LongFormatText) -> Self {
@@ -51,17 +52,18 @@ impl VisualSubtitleLabelOptionsBuilder {
         self
     }
     /// <p>The long text format of the subtitle label, such as plain text or rich text.</p>
-    pub fn set_format_text(mut self, input: std::option::Option<crate::types::LongFormatText>) -> Self {
-        self.format_text = input; self
+    pub fn set_format_text(
+        mut self,
+        input: std::option::Option<crate::types::LongFormatText>,
+    ) -> Self {
+        self.format_text = input;
+        self
     }
     /// Consumes the builder and constructs a [`VisualSubtitleLabelOptions`](crate::types::VisualSubtitleLabelOptions).
     pub fn build(self) -> crate::types::VisualSubtitleLabelOptions {
         crate::types::VisualSubtitleLabelOptions {
-            visibility: self.visibility
-            ,
-            format_text: self.format_text
-            ,
+            visibility: self.visibility,
+            format_text: self.format_text,
         }
     }
 }
-

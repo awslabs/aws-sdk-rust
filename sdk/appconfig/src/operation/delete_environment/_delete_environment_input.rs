@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEnvironmentInput  {
+pub struct DeleteEnvironmentInput {
     /// <p>The application ID that includes the environment that you want to delete.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteEnvironmentInput  {
 }
 impl DeleteEnvironmentInput {
     /// <p>The application ID that includes the environment that you want to delete.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the environment that you want to delete.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
 }
 impl DeleteEnvironmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder {
+    pub fn builder() -> crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder
+    {
         crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteEnvironmentInputBuilder {
     }
     /// <p>The application ID that includes the environment that you want to delete.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The ID of the environment that you want to delete.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeleteEnvironmentInputBuilder {
     }
     /// <p>The ID of the environment that you want to delete.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    pub fn build(self) -> Result<crate::operation::delete_environment::DeleteEnvironmentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_environment::DeleteEnvironmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_environment::DeleteEnvironmentInput {
-                application_id: self.application_id
-                ,
-                environment_id: self.environment_id
-                ,
-            }
+                application_id: self.application_id,
+                environment_id: self.environment_id,
+            },
         )
     }
 }
-

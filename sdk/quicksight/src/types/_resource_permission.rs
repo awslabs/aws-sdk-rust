@@ -3,12 +3,12 @@
 /// <p>Permission for the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourcePermission  {
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li> 
-    /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li> 
-    /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li> 
+pub struct ResourcePermission {
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub principal: std::option::Option<std::string::String>,
@@ -17,17 +17,17 @@ pub struct ResourcePermission  {
     pub actions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResourcePermission {
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li> 
-    /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li> 
-    /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
     /// </ul>
-    pub fn principal(&self) -> std::option::Option<& str> {
+    pub fn principal(&self) -> std::option::Option<&str> {
         self.principal.as_deref()
     }
     /// <p>The IAM action to grant or revoke permissions on.</p>
-    pub fn actions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn actions(&self) -> std::option::Option<&[std::string::String]> {
         self.actions.as_deref()
     }
 }
@@ -46,24 +46,25 @@ pub struct ResourcePermissionBuilder {
     pub(crate) actions: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl ResourcePermissionBuilder {
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li> 
-    /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li> 
-    /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
     /// </ul>
     pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
         self.principal = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li> 
-    /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li> 
-    /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
+    /// <ul>
+    /// <li> <p>The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or theme. (This is common.)</p> </li>
+    /// <li> <p>The ARN of an Amazon Web Services account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share resources (templates) across Amazon Web Services accounts. (This is less common.) </p> </li>
     /// </ul>
     pub fn set_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal = input; self
+        self.principal = input;
+        self
     }
     /// Appends an item to `actions`.
     ///
@@ -72,22 +73,23 @@ impl ResourcePermissionBuilder {
     /// <p>The IAM action to grant or revoke permissions on.</p>
     pub fn actions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.actions.unwrap_or_default();
-                        v.push(input.into());
-                        self.actions = Some(v);
-                        self
+        v.push(input.into());
+        self.actions = Some(v);
+        self
     }
     /// <p>The IAM action to grant or revoke permissions on.</p>
-    pub fn set_actions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.actions = input; self
+    pub fn set_actions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.actions = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourcePermission`](crate::types::ResourcePermission).
     pub fn build(self) -> crate::types::ResourcePermission {
         crate::types::ResourcePermission {
-            principal: self.principal
-            ,
-            actions: self.actions
-            ,
+            principal: self.principal,
+            actions: self.actions,
         }
     }
 }
-

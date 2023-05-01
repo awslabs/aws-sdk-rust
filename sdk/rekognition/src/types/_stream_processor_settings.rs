@@ -3,7 +3,7 @@
 /// <p>Input parameters used in a streaming video analyzed by a Amazon Rekognition stream processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use <code>ConnectedHome</code> to detect labels. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamProcessorSettings  {
+pub struct StreamProcessorSettings {
     /// <p>Face search settings to use on a streaming video. </p>
     #[doc(hidden)]
     pub face_search: std::option::Option<crate::types::FaceSearchSettings>,
@@ -13,11 +13,11 @@ pub struct StreamProcessorSettings  {
 }
 impl StreamProcessorSettings {
     /// <p>Face search settings to use on a streaming video. </p>
-    pub fn face_search(&self) -> std::option::Option<& crate::types::FaceSearchSettings> {
+    pub fn face_search(&self) -> std::option::Option<&crate::types::FaceSearchSettings> {
         self.face_search.as_ref()
     }
     /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
-    pub fn connected_home(&self) -> std::option::Option<& crate::types::ConnectedHomeSettings> {
+    pub fn connected_home(&self) -> std::option::Option<&crate::types::ConnectedHomeSettings> {
         self.connected_home.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl StreamProcessorSettingsBuilder {
         self
     }
     /// <p>Face search settings to use on a streaming video. </p>
-    pub fn set_face_search(mut self, input: std::option::Option<crate::types::FaceSearchSettings>) -> Self {
-        self.face_search = input; self
+    pub fn set_face_search(
+        mut self,
+        input: std::option::Option<crate::types::FaceSearchSettings>,
+    ) -> Self {
+        self.face_search = input;
+        self
     }
     /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
     pub fn connected_home(mut self, input: crate::types::ConnectedHomeSettings) -> Self {
@@ -51,17 +55,18 @@ impl StreamProcessorSettingsBuilder {
         self
     }
     /// <p> Label detection settings to use on a streaming video. Defining the settings is required in the request parameter for <code>CreateStreamProcessor</code>. Including this setting in the <code>CreateStreamProcessor</code> request enables you to use the stream processor for label detection. You can then select what you want the stream processor to detect, such as people or pets. When the stream processor has started, one notification is sent for each object class specified. For example, if packages and pets are selected, one SNS notification is published the first time a package is detected and one SNS notification is published the first time a pet is detected, as well as an end-of-session summary. </p>
-    pub fn set_connected_home(mut self, input: std::option::Option<crate::types::ConnectedHomeSettings>) -> Self {
-        self.connected_home = input; self
+    pub fn set_connected_home(
+        mut self,
+        input: std::option::Option<crate::types::ConnectedHomeSettings>,
+    ) -> Self {
+        self.connected_home = input;
+        self
     }
     /// Consumes the builder and constructs a [`StreamProcessorSettings`](crate::types::StreamProcessorSettings).
     pub fn build(self) -> crate::types::StreamProcessorSettings {
         crate::types::StreamProcessorSettings {
-            face_search: self.face_search
-            ,
-            connected_home: self.connected_home
-            ,
+            face_search: self.face_search,
+            connected_home: self.connected_home,
         }
     }
 }
-

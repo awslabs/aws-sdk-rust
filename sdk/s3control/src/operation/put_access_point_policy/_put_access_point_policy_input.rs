@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccessPointPolicyInput  {
+pub struct PutAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The name of the access point that you want to associate with the specified policy.</p> 
-    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> 
+    /// <p>The name of the access point that you want to associate with the specified policy.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
     /// :
@@ -27,11 +27,11 @@ pub struct PutAccessPointPolicyInput  {
 }
 impl PutAccessPointPolicyInput {
     /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
-    /// <p>The name of the access point that you want to associate with the specified policy.</p> 
-    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> 
+    /// <p>The name of the access point that you want to associate with the specified policy.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
     /// :
@@ -43,17 +43,18 @@ impl PutAccessPointPolicyInput {
     /// </outpost-id>
     /// </account-id>
     /// </region></code>. For example, to access the access point <code>reports-ap</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    pub fn policy(&self) -> std::option::Option<& str> {
+    pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
 }
 impl PutAccessPointPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutAccessPointPolicyInput`](crate::operation::put_access_point_policy::PutAccessPointPolicyInput).
-    pub fn builder() -> crate::operation::put_access_point_policy::builders::PutAccessPointPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::put_access_point_policy::builders::PutAccessPointPolicyInputBuilder {
         crate::operation::put_access_point_policy::builders::PutAccessPointPolicyInputBuilder::default()
     }
 }
@@ -74,10 +75,11 @@ impl PutAccessPointPolicyInputBuilder {
     }
     /// <p>The Amazon Web Services account ID for owner of the bucket associated with the specified access point.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
-    /// <p>The name of the access point that you want to associate with the specified policy.</p> 
-    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> 
+    /// <p>The name of the access point that you want to associate with the specified policy.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
     /// :
@@ -93,8 +95,8 @@ impl PutAccessPointPolicyInputBuilder {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the access point that you want to associate with the specified policy.</p> 
-    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p> 
+    /// <p>The name of the access point that you want to associate with the specified policy.</p>
+    /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
     /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:
     /// <region>
     /// :
@@ -107,7 +109,8 @@ impl PutAccessPointPolicyInputBuilder {
     /// </account-id>
     /// </region></code>. For example, to access the access point <code>reports-ap</code> through Outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must be URL encoded. </p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,20 +119,22 @@ impl PutAccessPointPolicyInputBuilder {
     }
     /// <p>The policy that you want to apply to the specified access point. For more information about access point policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing data access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutAccessPointPolicyInput`](crate::operation::put_access_point_policy::PutAccessPointPolicyInput).
-    pub fn build(self) -> Result<crate::operation::put_access_point_policy::PutAccessPointPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_access_point_policy::PutAccessPointPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_access_point_policy::PutAccessPointPolicyInput {
-                account_id: self.account_id
-                ,
-                name: self.name
-                ,
-                policy: self.policy
-                ,
-            }
+                account_id: self.account_id,
+                name: self.name,
+                policy: self.policy,
+            },
         )
     }
 }
-

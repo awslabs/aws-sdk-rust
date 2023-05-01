@@ -3,7 +3,7 @@
 /// <p>Request sampling results for a single rule from a service. Results are for the last 10 seconds unless the service has been assigned a longer reporting interval after a previous call to <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SamplingStatisticsDocument  {
+pub struct SamplingStatisticsDocument {
     /// <p>The name of the sampling rule.</p>
     #[doc(hidden)]
     pub rule_name: std::option::Option<std::string::String>,
@@ -25,15 +25,15 @@ pub struct SamplingStatisticsDocument  {
 }
 impl SamplingStatisticsDocument {
     /// <p>The name of the sampling rule.</p>
-    pub fn rule_name(&self) -> std::option::Option<& str> {
+    pub fn rule_name(&self) -> std::option::Option<&str> {
         self.rule_name.as_deref()
     }
     /// <p>A unique identifier for the service in hexadecimal.</p>
-    pub fn client_id(&self) -> std::option::Option<& str> {
+    pub fn client_id(&self) -> std::option::Option<&str> {
         self.client_id.as_deref()
     }
     /// <p>The current time.</p>
-    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The number of requests that matched the rule.</p>
@@ -75,7 +75,8 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>The name of the sampling rule.</p>
     pub fn set_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_name = input; self
+        self.rule_name = input;
+        self
     }
     /// <p>A unique identifier for the service in hexadecimal.</p>
     pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>A unique identifier for the service in hexadecimal.</p>
     pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_id = input; self
+        self.client_id = input;
+        self
     }
     /// <p>The current time.</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,7 +95,8 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>The current time.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
     /// <p>The number of requests that matched the rule.</p>
     pub fn request_count(mut self, input: i32) -> Self {
@@ -102,7 +105,8 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>The number of requests that matched the rule.</p>
     pub fn set_request_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.request_count = input; self
+        self.request_count = input;
+        self
     }
     /// <p>The number of requests recorded.</p>
     pub fn sampled_count(mut self, input: i32) -> Self {
@@ -111,7 +115,8 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>The number of requests recorded.</p>
     pub fn set_sampled_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.sampled_count = input; self
+        self.sampled_count = input;
+        self
     }
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub fn borrow_count(mut self, input: i32) -> Self {
@@ -120,27 +125,18 @@ impl SamplingStatisticsDocumentBuilder {
     }
     /// <p>The number of requests recorded with borrowed reservoir quota.</p>
     pub fn set_borrow_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.borrow_count = input; self
+        self.borrow_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`SamplingStatisticsDocument`](crate::types::SamplingStatisticsDocument).
     pub fn build(self) -> crate::types::SamplingStatisticsDocument {
         crate::types::SamplingStatisticsDocument {
-            rule_name: self.rule_name
-            ,
-            client_id: self.client_id
-            ,
-            timestamp: self.timestamp
-            ,
-            request_count: self.request_count
-                .unwrap_or_default()
-            ,
-            sampled_count: self.sampled_count
-                .unwrap_or_default()
-            ,
-            borrow_count: self.borrow_count
-                .unwrap_or_default()
-            ,
+            rule_name: self.rule_name,
+            client_id: self.client_id,
+            timestamp: self.timestamp,
+            request_count: self.request_count.unwrap_or_default(),
+            sampled_count: self.sampled_count.unwrap_or_default(),
+            borrow_count: self.borrow_count.unwrap_or_default(),
         }
     }
 }
-

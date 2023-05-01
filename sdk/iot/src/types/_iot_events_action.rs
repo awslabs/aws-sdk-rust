@@ -3,17 +3,17 @@
 /// <p>Sends an input to an IoT Events detector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IotEventsAction  {
+pub struct IotEventsAction {
     /// <p>The name of the IoT Events input.</p>
     #[doc(hidden)]
     pub input_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p> 
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p> 
+    /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
     /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
-    /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p> 
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p> 
+    /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is treated as a separate message when it's sent to IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html"> <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.</p>
     #[doc(hidden)]
     pub batch_mode: std::option::Option<bool>,
@@ -23,23 +23,23 @@ pub struct IotEventsAction  {
 }
 impl IotEventsAction {
     /// <p>The name of the IoT Events input.</p>
-    pub fn input_name(&self) -> std::option::Option<& str> {
+    pub fn input_name(&self) -> std::option::Option<&str> {
         self.input_name.as_deref()
     }
-    /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p> 
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p> 
+    /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
     /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
-    pub fn message_id(&self) -> std::option::Option<& str> {
+    pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
     }
-    /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p> 
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p> 
+    /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is treated as a separate message when it's sent to IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html"> <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.</p>
     pub fn batch_mode(&self) -> std::option::Option<bool> {
         self.batch_mode
     }
     /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
 }
@@ -67,33 +67,36 @@ impl IotEventsActionBuilder {
     }
     /// <p>The name of the IoT Events input.</p>
     pub fn set_input_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_name = input; self
+        self.input_name = input;
+        self
     }
-    /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p> 
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p> 
+    /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
     /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
     pub fn message_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.message_id = Some(input.into());
         self
     }
-    /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p> 
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p> 
+    /// <p>The ID of the message. The default <code>messageId</code> is a new UUID value.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>--a new UUID value will be assigned.</p>
     /// <p>Assign a value to this property to ensure that only one input (message) with a given <code>messageId</code> will be processed by an IoT Events detector.</p>
     pub fn set_message_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message_id = input; self
+        self.message_id = input;
+        self
     }
-    /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p> 
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p> 
+    /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is treated as a separate message when it's sent to IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html"> <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.</p>
     pub fn batch_mode(mut self, input: bool) -> Self {
         self.batch_mode = Some(input);
         self
     }
-    /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p> 
-    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p> 
+    /// <p>Whether to process the event actions as a batch. The default value is <code>false</code>.</p>
+    /// <p>When <code>batchMode</code> is <code>true</code>, you can't specify a <code>messageId</code>. </p>
     /// <p>When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array element is treated as a separate message when it's sent to IoT Events by calling <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchPutMessage.html"> <code>BatchPutMessage</code> </a>. The resulting array can't have more than 10 messages.</p>
     pub fn set_batch_mode(mut self, input: std::option::Option<bool>) -> Self {
-        self.batch_mode = input; self
+        self.batch_mode = input;
+        self
     }
     /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
     pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,20 +105,16 @@ impl IotEventsActionBuilder {
     }
     /// <p>The ARN of the role that grants IoT permission to send an input to an IoT Events detector. ("Action":"iotevents:BatchPutMessage").</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`IotEventsAction`](crate::types::IotEventsAction).
     pub fn build(self) -> crate::types::IotEventsAction {
         crate::types::IotEventsAction {
-            input_name: self.input_name
-            ,
-            message_id: self.message_id
-            ,
-            batch_mode: self.batch_mode
-            ,
-            role_arn: self.role_arn
-            ,
+            input_name: self.input_name,
+            message_id: self.message_id,
+            batch_mode: self.batch_mode,
+            role_arn: self.role_arn,
         }
     }
 }
-

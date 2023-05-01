@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAppVersionsOutput  {
+pub struct ListAppVersionsOutput {
     /// <p>The version of the application.</p>
     #[doc(hidden)]
     pub app_versions: std::option::Option<std::vec::Vec<crate::types::AppVersionSummary>>,
@@ -13,22 +13,23 @@ pub struct ListAppVersionsOutput  {
 }
 impl ListAppVersionsOutput {
     /// <p>The version of the application.</p>
-    pub fn app_versions(&self) -> std::option::Option<& [crate::types::AppVersionSummary]> {
+    pub fn app_versions(&self) -> std::option::Option<&[crate::types::AppVersionSummary]> {
         self.app_versions.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAppVersionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAppVersionsOutput {
     /// Creates a new builder-style object to manufacture [`ListAppVersionsOutput`](crate::operation::list_app_versions::ListAppVersionsOutput).
-    pub fn builder() -> crate::operation::list_app_versions::builders::ListAppVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::list_app_versions::builders::ListAppVersionsOutputBuilder
+    {
         crate::operation::list_app_versions::builders::ListAppVersionsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListAppVersionsOutputBuilder {
     /// <p>The version of the application.</p>
     pub fn app_versions(mut self, input: crate::types::AppVersionSummary) -> Self {
         let mut v = self.app_versions.unwrap_or_default();
-                        v.push(input);
-                        self.app_versions = Some(v);
-                        self
+        v.push(input);
+        self.app_versions = Some(v);
+        self
     }
     /// <p>The version of the application.</p>
-    pub fn set_app_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::AppVersionSummary>>) -> Self {
-        self.app_versions = input; self
+    pub fn set_app_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AppVersionSummary>>,
+    ) -> Self {
+        self.app_versions = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListAppVersionsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAppVersionsOutput`](crate::operation::list_app_versions::ListAppVersionsOutput).
     pub fn build(self) -> crate::operation::list_app_versions::ListAppVersionsOutput {
         crate::operation::list_app_versions::ListAppVersionsOutput {
-            app_versions: self.app_versions
-            ,
-            next_token: self.next_token
-            ,
+            app_versions: self.app_versions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

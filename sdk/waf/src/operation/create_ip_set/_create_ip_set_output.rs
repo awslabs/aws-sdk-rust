@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIpSetOutput  {
+pub struct CreateIpSetOutput {
     /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
     #[doc(hidden)]
     pub ip_set: std::option::Option<crate::types::IpSet>,
@@ -13,19 +13,19 @@ pub struct CreateIpSetOutput  {
 }
 impl CreateIpSetOutput {
     /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
-    pub fn ip_set(&self) -> std::option::Option<& crate::types::IpSet> {
+    pub fn ip_set(&self) -> std::option::Option<&crate::types::IpSet> {
         self.ip_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<& str> {
+    pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateIpSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateIpSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateIpSetOutput`](crate::operation::create_ip_set::CreateIpSetOutput).
     pub fn builder() -> crate::operation::create_ip_set::builders::CreateIpSetOutputBuilder {
@@ -49,7 +49,8 @@ impl CreateIpSetOutputBuilder {
     }
     /// <p>The <code>IPSet</code> returned in the <code>CreateIPSet</code> response.</p>
     pub fn set_ip_set(mut self, input: std::option::Option<crate::types::IpSet>) -> Self {
-        self.ip_set = input; self
+        self.ip_set = input;
+        self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +59,24 @@ impl CreateIpSetOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateIPSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input; self
+        self.change_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateIpSetOutput`](crate::operation::create_ip_set::CreateIpSetOutput).
     pub fn build(self) -> crate::operation::create_ip_set::CreateIpSetOutput {
         crate::operation::create_ip_set::CreateIpSetOutput {
-            ip_set: self.ip_set
-            ,
-            change_token: self.change_token
-            ,
+            ip_set: self.ip_set,
+            change_token: self.change_token,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,69 +3,69 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CopyClusterSnapshotInput  {
-    /// <p>The identifier for the source snapshot.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> 
+pub struct CopyClusterSnapshotInput {
+    /// <p>The identifier for the source snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub source_snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the identifier for a valid cluster.</p> </li> 
+    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub source_snapshot_cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The identifier given to the new manual snapshot.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Cannot be null, empty, or blank.</p> </li> 
-    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter.</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
-    /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> 
+    /// <p>The identifier given to the new manual snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot be null, empty, or blank.</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub target_snapshot_identifier: std::option::Option<std::string::String>,
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
-    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p> 
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     #[doc(hidden)]
     pub manual_snapshot_retention_period: std::option::Option<i32>,
 }
 impl CopyClusterSnapshotInput {
-    /// <p>The identifier for the source snapshot.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> 
+    /// <p>The identifier for the source snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>
     /// </ul>
-    pub fn source_snapshot_identifier(&self) -> std::option::Option<& str> {
+    pub fn source_snapshot_identifier(&self) -> std::option::Option<&str> {
         self.source_snapshot_identifier.as_deref()
     }
-    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the identifier for a valid cluster.</p> </li> 
+    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
     /// </ul>
-    pub fn source_snapshot_cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn source_snapshot_cluster_identifier(&self) -> std::option::Option<&str> {
         self.source_snapshot_cluster_identifier.as_deref()
     }
-    /// <p>The identifier given to the new manual snapshot.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Cannot be null, empty, or blank.</p> </li> 
-    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter.</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
-    /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> 
+    /// <p>The identifier given to the new manual snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot be null, empty, or blank.</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>
     /// </ul>
-    pub fn target_snapshot_identifier(&self) -> std::option::Option<& str> {
+    pub fn target_snapshot_identifier(&self) -> std::option::Option<&str> {
         self.target_snapshot_identifier.as_deref()
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
-    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p> 
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     pub fn manual_snapshot_retention_period(&self) -> std::option::Option<i32> {
         self.manual_snapshot_retention_period
@@ -73,8 +73,10 @@ impl CopyClusterSnapshotInput {
 }
 impl CopyClusterSnapshotInput {
     /// Creates a new builder-style object to manufacture [`CopyClusterSnapshotInput`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput).
-    pub fn builder() -> crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotInputBuilder {
-        crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotInputBuilder {
+        crate::operation::copy_cluster_snapshot::builders::CopyClusterSnapshotInputBuilder::default(
+        )
     }
 }
 
@@ -88,92 +90,108 @@ pub struct CopyClusterSnapshotInputBuilder {
     pub(crate) manual_snapshot_retention_period: std::option::Option<i32>,
 }
 impl CopyClusterSnapshotInputBuilder {
-    /// <p>The identifier for the source snapshot.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> 
+    /// <p>The identifier for the source snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>
     /// </ul>
     pub fn source_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.source_snapshot_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier for the source snapshot.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li> 
+    /// <p>The identifier for the source snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier for a valid automated snapshot whose state is <code>available</code>.</p> </li>
     /// </ul>
-    pub fn set_source_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_snapshot_identifier = input; self
+    pub fn set_source_snapshot_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_snapshot_identifier = input;
+        self
     }
-    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the identifier for a valid cluster.</p> </li> 
+    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
     /// </ul>
-    pub fn source_snapshot_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn source_snapshot_cluster_identifier(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.source_snapshot_cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be the identifier for a valid cluster.</p> </li> 
+    /// <p>The identifier of the cluster the source snapshot was created from. This parameter is required if your IAM user or role has a policy containing a snapshot resource element that specifies anything other than * for the cluster name.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be the identifier for a valid cluster.</p> </li>
     /// </ul>
-    pub fn set_source_snapshot_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_snapshot_cluster_identifier = input; self
+    pub fn set_source_snapshot_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_snapshot_cluster_identifier = input;
+        self
     }
-    /// <p>The identifier given to the new manual snapshot.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Cannot be null, empty, or blank.</p> </li> 
-    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter.</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
-    /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> 
+    /// <p>The identifier given to the new manual snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot be null, empty, or blank.</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>
     /// </ul>
     pub fn target_snapshot_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.target_snapshot_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier given to the new manual snapshot.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Cannot be null, empty, or blank.</p> </li> 
-    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li> 
-    /// <li> <p>First character must be a letter.</p> </li> 
-    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li> 
-    /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li> 
+    /// <p>The identifier given to the new manual snapshot.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot be null, empty, or blank.</p> </li>
+    /// <li> <p>Must contain from 1 to 255 alphanumeric characters or hyphens.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
+    /// <li> <p>Must be unique for the Amazon Web Services account that is making the request.</p> </li>
     /// </ul>
-    pub fn set_target_snapshot_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_snapshot_identifier = input; self
+    pub fn set_target_snapshot_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_snapshot_identifier = input;
+        self
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
-    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p> 
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     pub fn manual_snapshot_retention_period(mut self, input: i32) -> Self {
         self.manual_snapshot_retention_period = Some(input);
         self
     }
-    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p> 
-    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p> 
+    /// <p>The number of days that a manual snapshot is retained. If the value is -1, the manual snapshot is retained indefinitely. </p>
+    /// <p>The value must be either -1 or an integer between 1 and 3,653.</p>
     /// <p>The default value is -1.</p>
     pub fn set_manual_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.manual_snapshot_retention_period = input; self
+        self.manual_snapshot_retention_period = input;
+        self
     }
     /// Consumes the builder and constructs a [`CopyClusterSnapshotInput`](crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput).
-    pub fn build(self) -> Result<crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::copy_cluster_snapshot::CopyClusterSnapshotInput {
-                source_snapshot_identifier: self.source_snapshot_identifier
-                ,
-                source_snapshot_cluster_identifier: self.source_snapshot_cluster_identifier
-                ,
-                target_snapshot_identifier: self.target_snapshot_identifier
-                ,
-                manual_snapshot_retention_period: self.manual_snapshot_retention_period
-                ,
-            }
+                source_snapshot_identifier: self.source_snapshot_identifier,
+                source_snapshot_cluster_identifier: self.source_snapshot_cluster_identifier,
+                target_snapshot_identifier: self.target_snapshot_identifier,
+                manual_snapshot_retention_period: self.manual_snapshot_retention_period,
+            },
         )
     }
 }
-

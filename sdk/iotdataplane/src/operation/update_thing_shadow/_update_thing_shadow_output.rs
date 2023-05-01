@@ -3,7 +3,7 @@
 /// <p>The output from the UpdateThingShadow operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThingShadowOutput  {
+pub struct UpdateThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
@@ -11,18 +11,19 @@ pub struct UpdateThingShadowOutput  {
 }
 impl UpdateThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
-    pub fn payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateThingShadowOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateThingShadowOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThingShadowOutput`](crate::operation::update_thing_shadow::UpdateThingShadowOutput).
-    pub fn builder() -> crate::operation::update_thing_shadow::builders::UpdateThingShadowOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_thing_shadow::builders::UpdateThingShadowOutputBuilder {
         crate::operation::update_thing_shadow::builders::UpdateThingShadowOutputBuilder::default()
     }
 }
@@ -42,24 +43,23 @@ impl UpdateThingShadowOutputBuilder {
     }
     /// <p>The state information, in JSON format.</p>
     pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.payload = input; self
+        self.payload = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateThingShadowOutput`](crate::operation::update_thing_shadow::UpdateThingShadowOutput).
     pub fn build(self) -> crate::operation::update_thing_shadow::UpdateThingShadowOutput {
         crate::operation::update_thing_shadow::UpdateThingShadowOutput {
-            payload: self.payload
-            ,
+            payload: self.payload,
             _request_id: self._request_id,
         }
     }
 }
-

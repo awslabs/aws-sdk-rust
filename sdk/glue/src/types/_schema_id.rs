@@ -3,7 +3,7 @@
 /// <p>The unique ID of the schema in the Glue schema registry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SchemaId  {
+pub struct SchemaId {
     /// <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
     #[doc(hidden)]
     pub schema_arn: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct SchemaId  {
 }
 impl SchemaId {
     /// <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    pub fn schema_arn(&self) -> std::option::Option<& str> {
+    pub fn schema_arn(&self) -> std::option::Option<&str> {
         self.schema_arn.as_deref()
     }
     /// <p>The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
-    pub fn schema_name(&self) -> std::option::Option<& str> {
+    pub fn schema_name(&self) -> std::option::Option<&str> {
         self.schema_name.as_deref()
     }
     /// <p>The name of the schema registry that contains the schema.</p>
-    pub fn registry_name(&self) -> std::option::Option<& str> {
+    pub fn registry_name(&self) -> std::option::Option<&str> {
         self.registry_name.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl SchemaIdBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
     pub fn set_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_arn = input; self
+        self.schema_arn = input;
+        self
     }
     /// <p>The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
     pub fn schema_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl SchemaIdBuilder {
     }
     /// <p>The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>
     pub fn set_schema_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_name = input; self
+        self.schema_name = input;
+        self
     }
     /// <p>The name of the schema registry that contains the schema.</p>
     pub fn registry_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl SchemaIdBuilder {
     }
     /// <p>The name of the schema registry that contains the schema.</p>
     pub fn set_registry_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_name = input; self
+        self.registry_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`SchemaId`](crate::types::SchemaId).
     pub fn build(self) -> crate::types::SchemaId {
         crate::types::SchemaId {
-            schema_arn: self.schema_arn
-            ,
-            schema_name: self.schema_name
-            ,
-            registry_name: self.registry_name
-            ,
+            schema_arn: self.schema_arn,
+            schema_name: self.schema_name,
+            registry_name: self.registry_name,
         }
     }
 }
-

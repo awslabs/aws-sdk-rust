@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendCommandOutput  {
+pub struct SendCommandOutput {
     /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
     #[doc(hidden)]
     pub start_session: std::option::Option<crate::types::StartSessionResult>,
@@ -28,39 +28,41 @@ pub struct SendCommandOutput  {
 }
 impl SendCommandOutput {
     /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    pub fn start_session(&self) -> std::option::Option<& crate::types::StartSessionResult> {
+    pub fn start_session(&self) -> std::option::Option<&crate::types::StartSessionResult> {
         self.start_session.as_ref()
     }
     /// <p>Contains the details of the started transaction.</p>
-    pub fn start_transaction(&self) -> std::option::Option<& crate::types::StartTransactionResult> {
+    pub fn start_transaction(&self) -> std::option::Option<&crate::types::StartTransactionResult> {
         self.start_transaction.as_ref()
     }
     /// <p>Contains the details of the ended session.</p>
-    pub fn end_session(&self) -> std::option::Option<& crate::types::EndSessionResult> {
+    pub fn end_session(&self) -> std::option::Option<&crate::types::EndSessionResult> {
         self.end_session.as_ref()
     }
     /// <p>Contains the details of the committed transaction.</p>
-    pub fn commit_transaction(&self) -> std::option::Option<& crate::types::CommitTransactionResult> {
+    pub fn commit_transaction(
+        &self,
+    ) -> std::option::Option<&crate::types::CommitTransactionResult> {
         self.commit_transaction.as_ref()
     }
     /// <p>Contains the details of the aborted transaction.</p>
-    pub fn abort_transaction(&self) -> std::option::Option<& crate::types::AbortTransactionResult> {
+    pub fn abort_transaction(&self) -> std::option::Option<&crate::types::AbortTransactionResult> {
         self.abort_transaction.as_ref()
     }
     /// <p>Contains the details of the executed statement.</p>
-    pub fn execute_statement(&self) -> std::option::Option<& crate::types::ExecuteStatementResult> {
+    pub fn execute_statement(&self) -> std::option::Option<&crate::types::ExecuteStatementResult> {
         self.execute_statement.as_ref()
     }
     /// <p>Contains the details of the fetched page.</p>
-    pub fn fetch_page(&self) -> std::option::Option<& crate::types::FetchPageResult> {
+    pub fn fetch_page(&self) -> std::option::Option<&crate::types::FetchPageResult> {
         self.fetch_page.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for SendCommandOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SendCommandOutput {
     /// Creates a new builder-style object to manufacture [`SendCommandOutput`](crate::operation::send_command::SendCommandOutput).
     pub fn builder() -> crate::operation::send_command::builders::SendCommandOutputBuilder {
@@ -88,8 +90,12 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the started session that includes a session token. This <code>SessionToken</code> is required for every subsequent command that is issued during the current session.</p>
-    pub fn set_start_session(mut self, input: std::option::Option<crate::types::StartSessionResult>) -> Self {
-        self.start_session = input; self
+    pub fn set_start_session(
+        mut self,
+        input: std::option::Option<crate::types::StartSessionResult>,
+    ) -> Self {
+        self.start_session = input;
+        self
     }
     /// <p>Contains the details of the started transaction.</p>
     pub fn start_transaction(mut self, input: crate::types::StartTransactionResult) -> Self {
@@ -97,8 +103,12 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the started transaction.</p>
-    pub fn set_start_transaction(mut self, input: std::option::Option<crate::types::StartTransactionResult>) -> Self {
-        self.start_transaction = input; self
+    pub fn set_start_transaction(
+        mut self,
+        input: std::option::Option<crate::types::StartTransactionResult>,
+    ) -> Self {
+        self.start_transaction = input;
+        self
     }
     /// <p>Contains the details of the ended session.</p>
     pub fn end_session(mut self, input: crate::types::EndSessionResult) -> Self {
@@ -106,8 +116,12 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the ended session.</p>
-    pub fn set_end_session(mut self, input: std::option::Option<crate::types::EndSessionResult>) -> Self {
-        self.end_session = input; self
+    pub fn set_end_session(
+        mut self,
+        input: std::option::Option<crate::types::EndSessionResult>,
+    ) -> Self {
+        self.end_session = input;
+        self
     }
     /// <p>Contains the details of the committed transaction.</p>
     pub fn commit_transaction(mut self, input: crate::types::CommitTransactionResult) -> Self {
@@ -115,8 +129,12 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the committed transaction.</p>
-    pub fn set_commit_transaction(mut self, input: std::option::Option<crate::types::CommitTransactionResult>) -> Self {
-        self.commit_transaction = input; self
+    pub fn set_commit_transaction(
+        mut self,
+        input: std::option::Option<crate::types::CommitTransactionResult>,
+    ) -> Self {
+        self.commit_transaction = input;
+        self
     }
     /// <p>Contains the details of the aborted transaction.</p>
     pub fn abort_transaction(mut self, input: crate::types::AbortTransactionResult) -> Self {
@@ -124,8 +142,12 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the aborted transaction.</p>
-    pub fn set_abort_transaction(mut self, input: std::option::Option<crate::types::AbortTransactionResult>) -> Self {
-        self.abort_transaction = input; self
+    pub fn set_abort_transaction(
+        mut self,
+        input: std::option::Option<crate::types::AbortTransactionResult>,
+    ) -> Self {
+        self.abort_transaction = input;
+        self
     }
     /// <p>Contains the details of the executed statement.</p>
     pub fn execute_statement(mut self, input: crate::types::ExecuteStatementResult) -> Self {
@@ -133,8 +155,12 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the executed statement.</p>
-    pub fn set_execute_statement(mut self, input: std::option::Option<crate::types::ExecuteStatementResult>) -> Self {
-        self.execute_statement = input; self
+    pub fn set_execute_statement(
+        mut self,
+        input: std::option::Option<crate::types::ExecuteStatementResult>,
+    ) -> Self {
+        self.execute_statement = input;
+        self
     }
     /// <p>Contains the details of the fetched page.</p>
     pub fn fetch_page(mut self, input: crate::types::FetchPageResult) -> Self {
@@ -142,37 +168,33 @@ impl SendCommandOutputBuilder {
         self
     }
     /// <p>Contains the details of the fetched page.</p>
-    pub fn set_fetch_page(mut self, input: std::option::Option<crate::types::FetchPageResult>) -> Self {
-        self.fetch_page = input; self
+    pub fn set_fetch_page(
+        mut self,
+        input: std::option::Option<crate::types::FetchPageResult>,
+    ) -> Self {
+        self.fetch_page = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SendCommandOutput`](crate::operation::send_command::SendCommandOutput).
     pub fn build(self) -> crate::operation::send_command::SendCommandOutput {
         crate::operation::send_command::SendCommandOutput {
-            start_session: self.start_session
-            ,
-            start_transaction: self.start_transaction
-            ,
-            end_session: self.end_session
-            ,
-            commit_transaction: self.commit_transaction
-            ,
-            abort_transaction: self.abort_transaction
-            ,
-            execute_statement: self.execute_statement
-            ,
-            fetch_page: self.fetch_page
-            ,
+            start_session: self.start_session,
+            start_transaction: self.start_transaction,
+            end_session: self.end_session,
+            commit_transaction: self.commit_transaction,
+            abort_transaction: self.abort_transaction,
+            execute_statement: self.execute_statement,
+            fetch_page: self.fetch_page,
             _request_id: self._request_id,
         }
     }
 }
-

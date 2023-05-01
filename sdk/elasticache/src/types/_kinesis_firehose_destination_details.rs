@@ -3,14 +3,14 @@
 /// <p>The configuration details of the Kinesis Data Firehose destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct KinesisFirehoseDestinationDetails  {
+pub struct KinesisFirehoseDestinationDetails {
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
     pub delivery_stream: std::option::Option<std::string::String>,
 }
 impl KinesisFirehoseDestinationDetails {
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
-    pub fn delivery_stream(&self) -> std::option::Option<& str> {
+    pub fn delivery_stream(&self) -> std::option::Option<&str> {
         self.delivery_stream.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl KinesisFirehoseDestinationDetailsBuilder {
     }
     /// <p>The name of the Kinesis Data Firehose delivery stream.</p>
     pub fn set_delivery_stream(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.delivery_stream = input; self
+        self.delivery_stream = input;
+        self
     }
     /// Consumes the builder and constructs a [`KinesisFirehoseDestinationDetails`](crate::types::KinesisFirehoseDestinationDetails).
     pub fn build(self) -> crate::types::KinesisFirehoseDestinationDetails {
         crate::types::KinesisFirehoseDestinationDetails {
-            delivery_stream: self.delivery_stream
-            ,
+            delivery_stream: self.delivery_stream,
         }
     }
 }
-

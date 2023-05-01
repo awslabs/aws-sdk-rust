@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let executionstatus = unimplemented!();
 /// match executionstatus {
@@ -37,14 +37,22 @@
 /// Specifically, when `executionstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ExecutionStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Completed,
@@ -65,55 +73,66 @@ pub enum ExecutionStatus {
     #[allow(missing_docs)] // documentation missing in model
     Stopping,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ExecutionStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "COMPLETED" => ExecutionStatus::Completed,
-"PENDING" => ExecutionStatus::Pending,
-"PENDING_CONCURRENCY" => ExecutionStatus::PendingConcurrnecy,
-"PENDING_DEVICE" => ExecutionStatus::PendingDevice,
-"PREPARING" => ExecutionStatus::Preparing,
-"PROCESSING" => ExecutionStatus::Processing,
-"RUNNING" => ExecutionStatus::Running,
-"SCHEDULING" => ExecutionStatus::Scheduling,
-"STOPPING" => ExecutionStatus::Stopping,
-other => ExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => ExecutionStatus::Completed,
+            "PENDING" => ExecutionStatus::Pending,
+            "PENDING_CONCURRENCY" => ExecutionStatus::PendingConcurrnecy,
+            "PENDING_DEVICE" => ExecutionStatus::PendingDevice,
+            "PREPARING" => ExecutionStatus::Preparing,
+            "PROCESSING" => ExecutionStatus::Processing,
+            "RUNNING" => ExecutionStatus::Running,
+            "SCHEDULING" => ExecutionStatus::Scheduling,
+            "STOPPING" => ExecutionStatus::Stopping,
+            other => {
+                ExecutionStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ExecutionStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ExecutionStatus::from(s))
-                }
-            }
-impl ExecutionStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ExecutionStatus::Completed => "COMPLETED",
-    ExecutionStatus::Pending => "PENDING",
-    ExecutionStatus::PendingConcurrnecy => "PENDING_CONCURRENCY",
-    ExecutionStatus::PendingDevice => "PENDING_DEVICE",
-    ExecutionStatus::Preparing => "PREPARING",
-    ExecutionStatus::Processing => "PROCESSING",
-    ExecutionStatus::Running => "RUNNING",
-    ExecutionStatus::Scheduling => "SCHEDULING",
-    ExecutionStatus::Stopping => "STOPPING",
-    ExecutionStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["COMPLETED", "PENDING", "PENDING_CONCURRENCY", "PENDING_DEVICE", "PREPARING", "PROCESSING", "RUNNING", "SCHEDULING", "STOPPING"]
-                }
-            }
-impl AsRef<str> for ExecutionStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ExecutionStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExecutionStatus::from(s))
+    }
+}
+impl ExecutionStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExecutionStatus::Completed => "COMPLETED",
+            ExecutionStatus::Pending => "PENDING",
+            ExecutionStatus::PendingConcurrnecy => "PENDING_CONCURRENCY",
+            ExecutionStatus::PendingDevice => "PENDING_DEVICE",
+            ExecutionStatus::Preparing => "PREPARING",
+            ExecutionStatus::Processing => "PROCESSING",
+            ExecutionStatus::Running => "RUNNING",
+            ExecutionStatus::Scheduling => "SCHEDULING",
+            ExecutionStatus::Stopping => "STOPPING",
+            ExecutionStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "COMPLETED",
+            "PENDING",
+            "PENDING_CONCURRENCY",
+            "PENDING_DEVICE",
+            "PREPARING",
+            "PROCESSING",
+            "RUNNING",
+            "SCHEDULING",
+            "STOPPING",
+        ]
+    }
+}
+impl AsRef<str> for ExecutionStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

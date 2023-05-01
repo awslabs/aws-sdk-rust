@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutChannelPolicyOutput  {
+pub struct PutChannelPolicyOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutChannelPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutChannelPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutChannelPolicyOutput`](crate::operation::put_channel_policy::PutChannelPolicyOutput).
-    pub fn builder() -> crate::operation::put_channel_policy::builders::PutChannelPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_channel_policy::builders::PutChannelPolicyOutputBuilder
+    {
         crate::operation::put_channel_policy::builders::PutChannelPolicyOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct PutChannelPolicyOutputBuilder {
 }
 impl PutChannelPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutChannelPolicyOutput`](crate::operation::put_channel_policy::PutChannelPolicyOutput).
     pub fn build(self) -> crate::operation::put_channel_policy::PutChannelPolicyOutput {
         crate::operation::put_channel_policy::PutChannelPolicyOutput {
@@ -40,4 +41,3 @@ impl PutChannelPolicyOutputBuilder {
         }
     }
 }
-

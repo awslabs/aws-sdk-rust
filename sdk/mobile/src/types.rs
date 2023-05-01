@@ -28,4 +28,3 @@ pub mod builders;
 
 /// Error types that AWS Mobile can respond with.
 pub mod error;
-

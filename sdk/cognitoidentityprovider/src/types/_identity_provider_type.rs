@@ -3,7 +3,7 @@
 /// <p>A container for information about an IdP.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityProviderType  {
+pub struct IdentityProviderType {
     /// <p>The user pool ID.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -13,59 +13,61 @@ pub struct IdentityProviderType  {
     /// <p>The IdP type.</p>
     #[doc(hidden)]
     pub provider_type: std::option::Option<crate::types::IdentityProviderTypeType>,
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p> 
-    /// <ul> 
-    /// <li> <p>For Google and Login with Amazon:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For Facebook:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// <li> <p>api_version</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For Sign in with Apple:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>team_id</p> </li> 
-    /// <li> <p>key_id</p> </li> 
-    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For OIDC providers:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>attributes_request_method</p> </li> 
-    /// <li> <p>oidc_issuer</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p> 
-    /// <ul> 
-    /// <li> <p>authorize_url </p> </li> 
-    /// <li> <p>token_url </p> </li> 
-    /// <li> <p>attributes_url </p> </li> 
-    /// <li> <p>jwks_uri </p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p> 
-    /// <ul> 
-    /// <li> <p>attributes_url_add_attributes </p> </li> 
-    /// </ul> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For SAML providers:</p> 
-    /// <ul> 
-    /// <li> <p>MetadataFile or MetadataURL</p> </li> 
-    /// <li> <p>IDPSignout <i>optional</i> </p> </li> 
-    /// </ul> </li> 
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
+    /// <ul>
+    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>api_version</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>team_id</p> </li>
+    /// <li> <p>key_id</p> </li>
+    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>attributes_request_method</p> </li>
+    /// <li> <p>oidc_issuer</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <ul>
+    /// <li> <p>authorize_url </p> </li>
+    /// <li> <p>token_url </p> </li>
+    /// <li> <p>attributes_url </p> </li>
+    /// <li> <p>jwks_uri </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <ul>
+    /// <li> <p>attributes_url_add_attributes </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
+    /// <ul>
+    /// <li> <p>MetadataFile or MetadataURL</p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
+    /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
-    pub provider_details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub provider_details:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
     #[doc(hidden)]
-    pub attribute_mapping: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub attribute_mapping:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of IdP identifiers.</p>
     #[doc(hidden)]
     pub idp_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -78,82 +80,88 @@ pub struct IdentityProviderType  {
 }
 impl IdentityProviderType {
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<& str> {
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The IdP name.</p>
-    pub fn provider_name(&self) -> std::option::Option<& str> {
+    pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
     /// <p>The IdP type.</p>
-    pub fn provider_type(&self) -> std::option::Option<& crate::types::IdentityProviderTypeType> {
+    pub fn provider_type(&self) -> std::option::Option<&crate::types::IdentityProviderTypeType> {
         self.provider_type.as_ref()
     }
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p> 
-    /// <ul> 
-    /// <li> <p>For Google and Login with Amazon:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For Facebook:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// <li> <p>api_version</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For Sign in with Apple:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>team_id</p> </li> 
-    /// <li> <p>key_id</p> </li> 
-    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For OIDC providers:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>attributes_request_method</p> </li> 
-    /// <li> <p>oidc_issuer</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p> 
-    /// <ul> 
-    /// <li> <p>authorize_url </p> </li> 
-    /// <li> <p>token_url </p> </li> 
-    /// <li> <p>attributes_url </p> </li> 
-    /// <li> <p>jwks_uri </p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p> 
-    /// <ul> 
-    /// <li> <p>attributes_url_add_attributes </p> </li> 
-    /// </ul> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For SAML providers:</p> 
-    /// <ul> 
-    /// <li> <p>MetadataFile or MetadataURL</p> </li> 
-    /// <li> <p>IDPSignout <i>optional</i> </p> </li> 
-    /// </ul> </li> 
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
+    /// <ul>
+    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>api_version</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>team_id</p> </li>
+    /// <li> <p>key_id</p> </li>
+    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>attributes_request_method</p> </li>
+    /// <li> <p>oidc_issuer</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <ul>
+    /// <li> <p>authorize_url </p> </li>
+    /// <li> <p>token_url </p> </li>
+    /// <li> <p>attributes_url </p> </li>
+    /// <li> <p>jwks_uri </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <ul>
+    /// <li> <p>attributes_url_add_attributes </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
+    /// <ul>
+    /// <li> <p>MetadataFile or MetadataURL</p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
+    /// </ul> </li>
     /// </ul>
-    pub fn provider_details(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn provider_details(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.provider_details.as_ref()
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn attribute_mapping(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn attribute_mapping(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.attribute_mapping.as_ref()
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn idp_identifiers(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn idp_identifiers(&self) -> std::option::Option<&[std::string::String]> {
         self.idp_identifiers.as_deref()
     }
     /// <p>The date the IdP was last modified.</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_date.as_ref()
     }
     /// <p>The date the IdP was created.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
 }
@@ -171,8 +179,10 @@ pub struct IdentityProviderTypeBuilder {
     pub(crate) user_pool_id: std::option::Option<std::string::String>,
     pub(crate) provider_name: std::option::Option<std::string::String>,
     pub(crate) provider_type: std::option::Option<crate::types::IdentityProviderTypeType>,
-    pub(crate) provider_details: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) attribute_mapping: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) provider_details:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) attribute_mapping:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) idp_identifiers: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
@@ -185,7 +195,8 @@ impl IdentityProviderTypeBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input; self
+        self.user_pool_id = input;
+        self
     }
     /// <p>The IdP name.</p>
     pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -194,7 +205,8 @@ impl IdentityProviderTypeBuilder {
     }
     /// <p>The IdP name.</p>
     pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider_name = input; self
+        self.provider_name = input;
+        self
     }
     /// <p>The IdP type.</p>
     pub fn provider_type(mut self, input: crate::types::IdentityProviderTypeType) -> Self {
@@ -202,132 +214,156 @@ impl IdentityProviderTypeBuilder {
         self
     }
     /// <p>The IdP type.</p>
-    pub fn set_provider_type(mut self, input: std::option::Option<crate::types::IdentityProviderTypeType>) -> Self {
-        self.provider_type = input; self
+    pub fn set_provider_type(
+        mut self,
+        input: std::option::Option<crate::types::IdentityProviderTypeType>,
+    ) -> Self {
+        self.provider_type = input;
+        self
     }
     /// Adds a key-value pair to `provider_details`.
     ///
     /// To override the contents of this collection use [`set_provider_details`](Self::set_provider_details).
     ///
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p> 
-    /// <ul> 
-    /// <li> <p>For Google and Login with Amazon:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For Facebook:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// <li> <p>api_version</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For Sign in with Apple:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>team_id</p> </li> 
-    /// <li> <p>key_id</p> </li> 
-    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For OIDC providers:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>attributes_request_method</p> </li> 
-    /// <li> <p>oidc_issuer</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p> 
-    /// <ul> 
-    /// <li> <p>authorize_url </p> </li> 
-    /// <li> <p>token_url </p> </li> 
-    /// <li> <p>attributes_url </p> </li> 
-    /// <li> <p>jwks_uri </p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p> 
-    /// <ul> 
-    /// <li> <p>attributes_url_add_attributes </p> </li> 
-    /// </ul> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For SAML providers:</p> 
-    /// <ul> 
-    /// <li> <p>MetadataFile or MetadataURL</p> </li> 
-    /// <li> <p>IDPSignout <i>optional</i> </p> </li> 
-    /// </ul> </li> 
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
+    /// <ul>
+    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>api_version</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>team_id</p> </li>
+    /// <li> <p>key_id</p> </li>
+    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>attributes_request_method</p> </li>
+    /// <li> <p>oidc_issuer</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <ul>
+    /// <li> <p>authorize_url </p> </li>
+    /// <li> <p>token_url </p> </li>
+    /// <li> <p>attributes_url </p> </li>
+    /// <li> <p>jwks_uri </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <ul>
+    /// <li> <p>attributes_url_add_attributes </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
+    /// <ul>
+    /// <li> <p>MetadataFile or MetadataURL</p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
+    /// </ul> </li>
     /// </ul>
-    pub fn provider_details(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn provider_details(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.provider_details.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.provider_details = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.provider_details = Some(hash_map);
+        self
     }
-    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p> 
-    /// <ul> 
-    /// <li> <p>For Google and Login with Amazon:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For Facebook:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// <li> <p>api_version</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For Sign in with Apple:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>team_id</p> </li> 
-    /// <li> <p>key_id</p> </li> 
-    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For OIDC providers:</p> 
-    /// <ul> 
-    /// <li> <p>client_id</p> </li> 
-    /// <li> <p>client_secret</p> </li> 
-    /// <li> <p>attributes_request_method</p> </li> 
-    /// <li> <p>oidc_issuer</p> </li> 
-    /// <li> <p>authorize_scopes</p> </li> 
-    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p> 
-    /// <ul> 
-    /// <li> <p>authorize_url </p> </li> 
-    /// <li> <p>token_url </p> </li> 
-    /// <li> <p>attributes_url </p> </li> 
-    /// <li> <p>jwks_uri </p> </li> 
-    /// </ul> </li> 
-    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p> 
-    /// <ul> 
-    /// <li> <p>attributes_url_add_attributes </p> </li> 
-    /// </ul> </li> 
-    /// </ul> </li> 
-    /// <li> <p>For SAML providers:</p> 
-    /// <ul> 
-    /// <li> <p>MetadataFile or MetadataURL</p> </li> 
-    /// <li> <p>IDPSignout <i>optional</i> </p> </li> 
-    /// </ul> </li> 
+    /// <p>The IdP details. The following list describes the provider detail keys for each IdP type.</p>
+    /// <ul>
+    /// <li> <p>For Google and Login with Amazon:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Facebook:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>api_version</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For Sign in with Apple:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>team_id</p> </li>
+    /// <li> <p>key_id</p> </li>
+    /// <li> <p>private_key</p> <p> <i>You can submit a private_key when you add or update an IdP. Describe operations don't return the private key.</i> </p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// </ul> </li>
+    /// <li> <p>For OIDC providers:</p>
+    /// <ul>
+    /// <li> <p>client_id</p> </li>
+    /// <li> <p>client_secret</p> </li>
+    /// <li> <p>attributes_request_method</p> </li>
+    /// <li> <p>oidc_issuer</p> </li>
+    /// <li> <p>authorize_scopes</p> </li>
+    /// <li> <p>The following keys are only present if Amazon Cognito didn't discover them at the <code>oidc_issuer</code> URL.</p>
+    /// <ul>
+    /// <li> <p>authorize_url </p> </li>
+    /// <li> <p>token_url </p> </li>
+    /// <li> <p>attributes_url </p> </li>
+    /// <li> <p>jwks_uri </p> </li>
+    /// </ul> </li>
+    /// <li> <p>Amazon Cognito sets the value of the following keys automatically. They are read-only.</p>
+    /// <ul>
+    /// <li> <p>attributes_url_add_attributes </p> </li>
+    /// </ul> </li>
+    /// </ul> </li>
+    /// <li> <p>For SAML providers:</p>
+    /// <ul>
+    /// <li> <p>MetadataFile or MetadataURL</p> </li>
+    /// <li> <p>IDPSignout <i>optional</i> </p> </li>
+    /// </ul> </li>
     /// </ul>
-    pub fn set_provider_details(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.provider_details = input; self
+    pub fn set_provider_details(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.provider_details = input;
+        self
     }
     /// Adds a key-value pair to `attribute_mapping`.
     ///
     /// To override the contents of this collection use [`set_attribute_mapping`](Self::set_attribute_mapping).
     ///
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn attribute_mapping(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn attribute_mapping(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.attribute_mapping.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.attribute_mapping = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.attribute_mapping = Some(hash_map);
+        self
     }
     /// <p>A mapping of IdP attributes to standard and custom user pool attributes.</p>
-    pub fn set_attribute_mapping(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.attribute_mapping = input; self
+    pub fn set_attribute_mapping(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.attribute_mapping = input;
+        self
     }
     /// Appends an item to `idp_identifiers`.
     ///
@@ -336,13 +372,17 @@ impl IdentityProviderTypeBuilder {
     /// <p>A list of IdP identifiers.</p>
     pub fn idp_identifiers(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.idp_identifiers.unwrap_or_default();
-                        v.push(input.into());
-                        self.idp_identifiers = Some(v);
-                        self
+        v.push(input.into());
+        self.idp_identifiers = Some(v);
+        self
     }
     /// <p>A list of IdP identifiers.</p>
-    pub fn set_idp_identifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.idp_identifiers = input; self
+    pub fn set_idp_identifiers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.idp_identifiers = input;
+        self
     }
     /// <p>The date the IdP was last modified.</p>
     pub fn last_modified_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -350,8 +390,12 @@ impl IdentityProviderTypeBuilder {
         self
     }
     /// <p>The date the IdP was last modified.</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     /// <p>The date the IdP was created.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -359,29 +403,24 @@ impl IdentityProviderTypeBuilder {
         self
     }
     /// <p>The date the IdP was created.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`IdentityProviderType`](crate::types::IdentityProviderType).
     pub fn build(self) -> crate::types::IdentityProviderType {
         crate::types::IdentityProviderType {
-            user_pool_id: self.user_pool_id
-            ,
-            provider_name: self.provider_name
-            ,
-            provider_type: self.provider_type
-            ,
-            provider_details: self.provider_details
-            ,
-            attribute_mapping: self.attribute_mapping
-            ,
-            idp_identifiers: self.idp_identifiers
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            creation_date: self.creation_date
-            ,
+            user_pool_id: self.user_pool_id,
+            provider_name: self.provider_name,
+            provider_type: self.provider_type,
+            provider_details: self.provider_details,
+            attribute_mapping: self.attribute_mapping,
+            idp_identifiers: self.idp_identifiers,
+            last_modified_date: self.last_modified_date,
+            creation_date: self.creation_date,
         }
     }
 }
-

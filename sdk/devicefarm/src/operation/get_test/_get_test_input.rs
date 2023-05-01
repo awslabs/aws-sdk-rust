@@ -3,14 +3,14 @@
 /// <p>Represents a request to the get test operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTestInput  {
+pub struct GetTestInput {
     /// <p>The test's ARN.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetTestInput {
     /// <p>The test's ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -35,16 +35,16 @@ impl GetTestInputBuilder {
     }
     /// <p>The test's ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTestInput`](crate::operation::get_test::GetTestInput).
-    pub fn build(self) -> Result<crate::operation::get_test::GetTestInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_test::GetTestInput {
-                arn: self.arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_test::GetTestInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_test::GetTestInput { arn: self.arn })
     }
 }
-

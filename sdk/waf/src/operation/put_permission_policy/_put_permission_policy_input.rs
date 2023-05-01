@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPermissionPolicyInput  {
+pub struct PutPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -12,18 +12,20 @@ pub struct PutPermissionPolicyInput  {
 }
 impl PutPermissionPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The policy to attach to the specified RuleGroup.</p>
-    pub fn policy(&self) -> std::option::Option<& str> {
+    pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
     }
 }
 impl PutPermissionPolicyInput {
     /// Creates a new builder-style object to manufacture [`PutPermissionPolicyInput`](crate::operation::put_permission_policy::PutPermissionPolicyInput).
-    pub fn builder() -> crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder {
-        crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder {
+        crate::operation::put_permission_policy::builders::PutPermissionPolicyInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl PutPermissionPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>The policy to attach to the specified RuleGroup.</p>
     pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl PutPermissionPolicyInputBuilder {
     }
     /// <p>The policy to attach to the specified RuleGroup.</p>
     pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutPermissionPolicyInput`](crate::operation::put_permission_policy::PutPermissionPolicyInput).
-    pub fn build(self) -> Result<crate::operation::put_permission_policy::PutPermissionPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_permission_policy::PutPermissionPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_permission_policy::PutPermissionPolicyInput {
-                resource_arn: self.resource_arn
-                ,
-                policy: self.policy
-                ,
-            }
+                resource_arn: self.resource_arn,
+                policy: self.policy,
+            },
         )
     }
 }
-

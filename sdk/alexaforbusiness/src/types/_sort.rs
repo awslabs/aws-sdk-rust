@@ -3,7 +3,7 @@
 /// <p>An object representing a sort criteria. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Sort  {
+pub struct Sort {
     /// <p>The sort key of a sort object.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Sort  {
 }
 impl Sort {
     /// <p>The sort key of a sort object.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The sort value of a sort object.</p>
-    pub fn value(&self) -> std::option::Option<& crate::types::SortValue> {
+    pub fn value(&self) -> std::option::Option<&crate::types::SortValue> {
         self.value.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl SortBuilder {
     }
     /// <p>The sort key of a sort object.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>The sort value of a sort object.</p>
     pub fn value(mut self, input: crate::types::SortValue) -> Self {
@@ -52,16 +53,14 @@ impl SortBuilder {
     }
     /// <p>The sort value of a sort object.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::SortValue>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`Sort`](crate::types::Sort).
     pub fn build(self) -> crate::types::Sort {
         crate::types::Sort {
-            key: self.key
-            ,
-            value: self.value
-            ,
+            key: self.key,
+            value: self.value,
         }
     }
 }
-

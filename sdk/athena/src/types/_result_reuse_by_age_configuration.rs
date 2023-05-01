@@ -3,7 +3,7 @@
 /// <p>Specifies whether previous query results are reused, and if so, their maximum age.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResultReuseByAgeConfiguration  {
+pub struct ResultReuseByAgeConfiguration {
     /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -43,7 +43,8 @@ impl ResultReuseByAgeConfigurationBuilder {
     }
     /// <p>True if previous query results can be reused when the query is run; otherwise, false. The default is false.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
     pub fn max_age_in_minutes(mut self, input: i32) -> Self {
@@ -52,17 +53,14 @@ impl ResultReuseByAgeConfigurationBuilder {
     }
     /// <p>Specifies, in minutes, the maximum age of a previous query result that Athena should consider for reuse. The default is 60.</p>
     pub fn set_max_age_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_age_in_minutes = input; self
+        self.max_age_in_minutes = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResultReuseByAgeConfiguration`](crate::types::ResultReuseByAgeConfiguration).
     pub fn build(self) -> crate::types::ResultReuseByAgeConfiguration {
         crate::types::ResultReuseByAgeConfiguration {
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
-            max_age_in_minutes: self.max_age_in_minutes
-            ,
+            enabled: self.enabled.unwrap_or_default(),
+            max_age_in_minutes: self.max_age_in_minutes,
         }
     }
 }
-

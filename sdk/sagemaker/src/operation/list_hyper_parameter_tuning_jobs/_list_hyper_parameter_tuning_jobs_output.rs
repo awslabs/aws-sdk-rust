@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListHyperParameterTuningJobsOutput  {
+pub struct ListHyperParameterTuningJobsOutput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
     #[doc(hidden)]
-    pub hyper_parameter_tuning_job_summaries: std::option::Option<std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>,
+    pub hyper_parameter_tuning_job_summaries:
+        std::option::Option<std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>,
     /// <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct ListHyperParameterTuningJobsOutput  {
 }
 impl ListHyperParameterTuningJobsOutput {
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
-    pub fn hyper_parameter_tuning_job_summaries(&self) -> std::option::Option<& [crate::types::HyperParameterTuningJobSummary]> {
+    pub fn hyper_parameter_tuning_job_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::HyperParameterTuningJobSummary]> {
         self.hyper_parameter_tuning_job_summaries.as_deref()
     }
     /// <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListHyperParameterTuningJobsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListHyperParameterTuningJobsOutput {
     /// Creates a new builder-style object to manufacture [`ListHyperParameterTuningJobsOutput`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput).
-    pub fn builder() -> crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsOutputBuilder {
+    pub fn builder() -> crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsOutputBuilder{
         crate::operation::list_hyper_parameter_tuning_jobs::builders::ListHyperParameterTuningJobsOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl ListHyperParameterTuningJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListHyperParameterTuningJobsOutputBuilder {
-    pub(crate) hyper_parameter_tuning_job_summaries: std::option::Option<std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>,
+    pub(crate) hyper_parameter_tuning_job_summaries:
+        std::option::Option<std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +51,24 @@ impl ListHyperParameterTuningJobsOutputBuilder {
     /// To override the contents of this collection use [`set_hyper_parameter_tuning_job_summaries`](Self::set_hyper_parameter_tuning_job_summaries).
     ///
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
-    pub fn hyper_parameter_tuning_job_summaries(mut self, input: crate::types::HyperParameterTuningJobSummary) -> Self {
-        let mut v = self.hyper_parameter_tuning_job_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.hyper_parameter_tuning_job_summaries = Some(v);
-                        self
+    pub fn hyper_parameter_tuning_job_summaries(
+        mut self,
+        input: crate::types::HyperParameterTuningJobSummary,
+    ) -> Self {
+        let mut v = self
+            .hyper_parameter_tuning_job_summaries
+            .unwrap_or_default();
+        v.push(input);
+        self.hyper_parameter_tuning_job_summaries = Some(v);
+        self
     }
     /// <p>A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code> request returned.</p>
-    pub fn set_hyper_parameter_tuning_job_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>) -> Self {
-        self.hyper_parameter_tuning_job_summaries = input; self
+    pub fn set_hyper_parameter_tuning_job_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::HyperParameterTuningJobSummary>>,
+    ) -> Self {
+        self.hyper_parameter_tuning_job_summaries = input;
+        self
     }
     /// <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +77,27 @@ impl ListHyperParameterTuningJobsOutputBuilder {
     }
     /// <p>If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of tuning jobs, use the token in the next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListHyperParameterTuningJobsOutput`](crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput).
-    pub fn build(self) -> crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput
+    {
         crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput {
-            hyper_parameter_tuning_job_summaries: self.hyper_parameter_tuning_job_summaries
-            ,
-            next_token: self.next_token
-            ,
+            hyper_parameter_tuning_job_summaries: self.hyper_parameter_tuning_job_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

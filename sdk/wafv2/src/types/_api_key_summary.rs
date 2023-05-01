@@ -3,11 +3,11 @@
 /// <p>Information for a single API key. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApiKeySummary  {
+pub struct ApiKeySummary {
     /// <p>The token domains that are defined in this API key. </p>
     #[doc(hidden)]
     pub token_domains: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p> 
+    /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
     /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     #[doc(hidden)]
     pub api_key: std::option::Option<std::string::String>,
@@ -20,16 +20,16 @@ pub struct ApiKeySummary  {
 }
 impl ApiKeySummary {
     /// <p>The token domains that are defined in this API key. </p>
-    pub fn token_domains(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn token_domains(&self) -> std::option::Option<&[std::string::String]> {
         self.token_domains.as_deref()
     }
-    /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p> 
+    /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
     /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
-    pub fn api_key(&self) -> std::option::Option<& str> {
+    pub fn api_key(&self) -> std::option::Option<&str> {
         self.api_key.as_deref()
     }
     /// <p>The date and time that the key was created. </p>
-    pub fn creation_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_timestamp.as_ref()
     }
     /// <p>Internal value used by WAF to manage the key. </p>
@@ -61,24 +61,29 @@ impl ApiKeySummaryBuilder {
     /// <p>The token domains that are defined in this API key. </p>
     pub fn token_domains(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.token_domains.unwrap_or_default();
-                        v.push(input.into());
-                        self.token_domains = Some(v);
-                        self
+        v.push(input.into());
+        self.token_domains = Some(v);
+        self
     }
     /// <p>The token domains that are defined in this API key. </p>
-    pub fn set_token_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.token_domains = input; self
+    pub fn set_token_domains(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.token_domains = input;
+        self
     }
-    /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p> 
+    /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
     /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn api_key(mut self, input: impl Into<std::string::String>) -> Self {
         self.api_key = Some(input.into());
         self
     }
-    /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p> 
+    /// <p>The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA integration. </p>
     /// <p>For information about how to use this in your CAPTCHA JavaScript integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client application integration</a> in the <i>WAF Developer Guide</i>.</p>
     pub fn set_api_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_key = input; self
+        self.api_key = input;
+        self
     }
     /// <p>The date and time that the key was created. </p>
     pub fn creation_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -86,8 +91,12 @@ impl ApiKeySummaryBuilder {
         self
     }
     /// <p>The date and time that the key was created. </p>
-    pub fn set_creation_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_timestamp = input; self
+    pub fn set_creation_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_timestamp = input;
+        self
     }
     /// <p>Internal value used by WAF to manage the key. </p>
     pub fn version(mut self, input: i32) -> Self {
@@ -96,21 +105,16 @@ impl ApiKeySummaryBuilder {
     }
     /// <p>Internal value used by WAF to manage the key. </p>
     pub fn set_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApiKeySummary`](crate::types::ApiKeySummary).
     pub fn build(self) -> crate::types::ApiKeySummary {
         crate::types::ApiKeySummary {
-            token_domains: self.token_domains
-            ,
-            api_key: self.api_key
-            ,
-            creation_timestamp: self.creation_timestamp
-            ,
-            version: self.version
-                .unwrap_or_default()
-            ,
+            token_domains: self.token_domains,
+            api_key: self.api_key,
+            creation_timestamp: self.creation_timestamp,
+            version: self.version.unwrap_or_default(),
         }
     }
 }
-

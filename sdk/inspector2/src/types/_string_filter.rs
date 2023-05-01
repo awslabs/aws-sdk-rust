@@ -3,7 +3,7 @@
 /// <p>An object that describes the details of a string filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StringFilter  {
+pub struct StringFilter {
     /// <p>The operator to use when comparing values in the filter.</p>
     #[doc(hidden)]
     pub comparison: std::option::Option<crate::types::StringComparison>,
@@ -13,11 +13,11 @@ pub struct StringFilter  {
 }
 impl StringFilter {
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub fn comparison(&self) -> std::option::Option<& crate::types::StringComparison> {
+    pub fn comparison(&self) -> std::option::Option<&crate::types::StringComparison> {
         self.comparison.as_ref()
     }
     /// <p>The value to filter on.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl StringFilterBuilder {
         self
     }
     /// <p>The operator to use when comparing values in the filter.</p>
-    pub fn set_comparison(mut self, input: std::option::Option<crate::types::StringComparison>) -> Self {
-        self.comparison = input; self
+    pub fn set_comparison(
+        mut self,
+        input: std::option::Option<crate::types::StringComparison>,
+    ) -> Self {
+        self.comparison = input;
+        self
     }
     /// <p>The value to filter on.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl StringFilterBuilder {
     }
     /// <p>The value to filter on.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`StringFilter`](crate::types::StringFilter).
     pub fn build(self) -> crate::types::StringFilter {
         crate::types::StringFilter {
-            comparison: self.comparison
-            ,
-            value: self.value
-            ,
+            comparison: self.comparison,
+            value: self.value,
         }
     }
 }
-

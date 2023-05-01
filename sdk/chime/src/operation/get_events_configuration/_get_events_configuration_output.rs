@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetEventsConfigurationOutput  {
+pub struct GetEventsConfigurationOutput {
     /// <p>The events configuration details.</p>
     #[doc(hidden)]
     pub events_configuration: std::option::Option<crate::types::EventsConfiguration>,
@@ -10,18 +10,20 @@ pub struct GetEventsConfigurationOutput  {
 }
 impl GetEventsConfigurationOutput {
     /// <p>The events configuration details.</p>
-    pub fn events_configuration(&self) -> std::option::Option<& crate::types::EventsConfiguration> {
+    pub fn events_configuration(&self) -> std::option::Option<&crate::types::EventsConfiguration> {
         self.events_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetEventsConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetEventsConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetEventsConfigurationOutput`](crate::operation::get_events_configuration::GetEventsConfigurationOutput).
-    pub fn builder() -> crate::operation::get_events_configuration::builders::GetEventsConfigurationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_events_configuration::builders::GetEventsConfigurationOutputBuilder
+    {
         crate::operation::get_events_configuration::builders::GetEventsConfigurationOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl GetEventsConfigurationOutputBuilder {
         self
     }
     /// <p>The events configuration details.</p>
-    pub fn set_events_configuration(mut self, input: std::option::Option<crate::types::EventsConfiguration>) -> Self {
-        self.events_configuration = input; self
+    pub fn set_events_configuration(
+        mut self,
+        input: std::option::Option<crate::types::EventsConfiguration>,
+    ) -> Self {
+        self.events_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetEventsConfigurationOutput`](crate::operation::get_events_configuration::GetEventsConfigurationOutput).
     pub fn build(self) -> crate::operation::get_events_configuration::GetEventsConfigurationOutput {
         crate::operation::get_events_configuration::GetEventsConfigurationOutput {
-            events_configuration: self.events_configuration
-            ,
+            events_configuration: self.events_configuration,
             _request_id: self._request_id,
         }
     }
 }
-

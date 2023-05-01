@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSecurityPoliciesInput  {
+pub struct ListSecurityPoliciesInput {
     /// <p>Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code> query.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,13 +16,14 @@ impl ListSecurityPoliciesInput {
         self.max_results
     }
     /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional security policies.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListSecurityPoliciesInput {
     /// Creates a new builder-style object to manufacture [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
-    pub fn builder() -> crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder {
         crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListSecurityPoliciesInputBuilder {
     }
     /// <p>Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code> query.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional security policies.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl ListSecurityPoliciesInputBuilder {
     }
     /// <p>When additional results are obtained from the <code>ListSecurityPolicies</code> command, a <code>NextToken</code> parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing additional security policies.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
-    pub fn build(self) -> Result<crate::operation::list_security_policies::ListSecurityPoliciesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_security_policies::ListSecurityPoliciesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_security_policies::ListSecurityPoliciesInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

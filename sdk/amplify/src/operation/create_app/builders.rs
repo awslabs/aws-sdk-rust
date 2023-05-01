@@ -4,50 +4,66 @@ pub use crate::operation::create_app::_create_app_output::CreateAppOutputBuilder
 pub use crate::operation::create_app::_create_app_input::CreateAppInputBuilder;
 
 /// Fluent builder constructing a request to `CreateApp`.
-/// 
+///
 /// <p> Creates a new Amplify app. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAppFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_app::builders::CreateAppInputBuilder,
+    inner: crate::operation::create_app::builders::CreateAppInputBuilder,
 }
-impl CreateAppFluentBuilder  {
+impl CreateAppFluentBuilder {
     /// Creates a new `CreateApp`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_app::CreateApp, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_app::CreateAppOutput, aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_app::CreateApp,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_app::CreateAppOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_app::CreateAppError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p> The name for an Amplify app. </p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -94,37 +110,40 @@ impl CreateAppFluentBuilder  {
         self
     }
     /// <p> The AWS Identity and Access Management (IAM) service role for an Amplify app. </p>
-    pub fn set_iam_service_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_iam_service_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_iam_service_role_arn(input);
         self
     }
-    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p> 
-    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p> 
-    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p> 
+    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
+    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
+    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     pub fn oauth_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.oauth_token(input.into());
         self
     }
-    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p> 
-    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p> 
-    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p> 
+    /// <p>The OAuth token for a third-party source control system for an Amplify app. The OAuth token is used to create a webhook and a read-only deploy key using SSH cloning. The OAuth token is not stored.</p>
+    /// <p>Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket or CodeCommit. To authorize access to GitHub as your repository provider, use <code>accessToken</code>.</p>
+    /// <p>You must specify either <code>oauthToken</code> or <code>accessToken</code> when you create a new app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     pub fn set_oauth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_oauth_token(input);
         self
     }
-    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> 
-    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> 
-    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p> 
+    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
+    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
+    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     pub fn access_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.access_token(input.into());
         self
     }
-    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> 
-    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> 
-    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p> 
+    /// <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p>
+    /// <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p>
+    /// <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p>
     /// <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
     pub fn set_access_token(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_access_token(input);
@@ -135,12 +154,21 @@ impl CreateAppFluentBuilder  {
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
     /// <p> The environment variables map for an Amplify app. </p>
-    pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn environment_variables(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.environment_variables(k.into(), v.into());
         self
     }
     /// <p> The environment variables map for an Amplify app. </p>
-    pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_environment_variables(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_environment_variables(input);
         self
     }
@@ -180,7 +208,10 @@ impl CreateAppFluentBuilder  {
         self
     }
     /// <p> The credentials for basic authorization for an Amplify app. You must base64-encode the authorization credentials and provide them in the format <code>user:password</code>.</p>
-    pub fn set_basic_auth_credentials(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_basic_auth_credentials(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_basic_auth_credentials(input);
         self
     }
@@ -194,7 +225,10 @@ impl CreateAppFluentBuilder  {
         self
     }
     /// <p> The custom rewrite and redirect rules for an Amplify app. </p>
-    pub fn set_custom_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomRule>>) -> Self {
+    pub fn set_custom_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CustomRule>>,
+    ) -> Self {
         self.inner = self.inner.set_custom_rules(input);
         self
     }
@@ -203,12 +237,21 @@ impl CreateAppFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p> The tag for an Amplify app. </p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p> The tag for an Amplify app. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -252,19 +295,27 @@ impl CreateAppFluentBuilder  {
         self
     }
     /// <p> The automated branch creation glob patterns for an Amplify app. </p>
-    pub fn set_auto_branch_creation_patterns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_auto_branch_creation_patterns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_auto_branch_creation_patterns(input);
         self
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn auto_branch_creation_config(mut self, input: crate::types::AutoBranchCreationConfig) -> Self {
+    pub fn auto_branch_creation_config(
+        mut self,
+        input: crate::types::AutoBranchCreationConfig,
+    ) -> Self {
         self.inner = self.inner.auto_branch_creation_config(input);
         self
     }
     /// <p> The automated branch creation configuration for an Amplify app. </p>
-    pub fn set_auto_branch_creation_config(mut self, input: std::option::Option<crate::types::AutoBranchCreationConfig>) -> Self {
+    pub fn set_auto_branch_creation_config(
+        mut self,
+        input: std::option::Option<crate::types::AutoBranchCreationConfig>,
+    ) -> Self {
         self.inner = self.inner.set_auto_branch_creation_config(input);
         self
     }
 }
-

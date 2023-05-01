@@ -3,14 +3,17 @@
 /// <p> The object containing details about database migration preferences, when you have no particular preference. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NoDatabaseMigrationPreference  {
+pub struct NoDatabaseMigrationPreference {
     /// <p> The target database engine for database migration preference that you specify. </p>
     #[doc(hidden)]
-    pub target_database_engine: std::option::Option<std::vec::Vec<crate::types::TargetDatabaseEngine>>,
+    pub target_database_engine:
+        std::option::Option<std::vec::Vec<crate::types::TargetDatabaseEngine>>,
 }
 impl NoDatabaseMigrationPreference {
     /// <p> The target database engine for database migration preference that you specify. </p>
-    pub fn target_database_engine(&self) -> std::option::Option<& [crate::types::TargetDatabaseEngine]> {
+    pub fn target_database_engine(
+        &self,
+    ) -> std::option::Option<&[crate::types::TargetDatabaseEngine]> {
         self.target_database_engine.as_deref()
     }
 }
@@ -25,7 +28,8 @@ impl NoDatabaseMigrationPreference {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct NoDatabaseMigrationPreferenceBuilder {
-    pub(crate) target_database_engine: std::option::Option<std::vec::Vec<crate::types::TargetDatabaseEngine>>,
+    pub(crate) target_database_engine:
+        std::option::Option<std::vec::Vec<crate::types::TargetDatabaseEngine>>,
 }
 impl NoDatabaseMigrationPreferenceBuilder {
     /// Appends an item to `target_database_engine`.
@@ -35,20 +39,22 @@ impl NoDatabaseMigrationPreferenceBuilder {
     /// <p> The target database engine for database migration preference that you specify. </p>
     pub fn target_database_engine(mut self, input: crate::types::TargetDatabaseEngine) -> Self {
         let mut v = self.target_database_engine.unwrap_or_default();
-                        v.push(input);
-                        self.target_database_engine = Some(v);
-                        self
+        v.push(input);
+        self.target_database_engine = Some(v);
+        self
     }
     /// <p> The target database engine for database migration preference that you specify. </p>
-    pub fn set_target_database_engine(mut self, input: std::option::Option<std::vec::Vec<crate::types::TargetDatabaseEngine>>) -> Self {
-        self.target_database_engine = input; self
+    pub fn set_target_database_engine(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TargetDatabaseEngine>>,
+    ) -> Self {
+        self.target_database_engine = input;
+        self
     }
     /// Consumes the builder and constructs a [`NoDatabaseMigrationPreference`](crate::types::NoDatabaseMigrationPreference).
     pub fn build(self) -> crate::types::NoDatabaseMigrationPreference {
         crate::types::NoDatabaseMigrationPreference {
-            target_database_engine: self.target_database_engine
-            ,
+            target_database_engine: self.target_database_engine,
         }
     }
 }
-

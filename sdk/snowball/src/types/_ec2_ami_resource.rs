@@ -3,7 +3,7 @@
 /// <p>A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Ec2AmiResource  {
+pub struct Ec2AmiResource {
     /// <p>The ID of the AMI in Amazon EC2.</p>
     #[doc(hidden)]
     pub ami_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Ec2AmiResource  {
 }
 impl Ec2AmiResource {
     /// <p>The ID of the AMI in Amazon EC2.</p>
-    pub fn ami_id(&self) -> std::option::Option<& str> {
+    pub fn ami_id(&self) -> std::option::Option<&str> {
         self.ami_id.as_deref()
     }
     /// <p>The ID of the AMI on the Snow device.</p>
-    pub fn snowball_ami_id(&self) -> std::option::Option<& str> {
+    pub fn snowball_ami_id(&self) -> std::option::Option<&str> {
         self.snowball_ami_id.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl Ec2AmiResourceBuilder {
     }
     /// <p>The ID of the AMI in Amazon EC2.</p>
     pub fn set_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ami_id = input; self
+        self.ami_id = input;
+        self
     }
     /// <p>The ID of the AMI on the Snow device.</p>
     pub fn snowball_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl Ec2AmiResourceBuilder {
     }
     /// <p>The ID of the AMI on the Snow device.</p>
     pub fn set_snowball_ami_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snowball_ami_id = input; self
+        self.snowball_ami_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`Ec2AmiResource`](crate::types::Ec2AmiResource).
     pub fn build(self) -> crate::types::Ec2AmiResource {
         crate::types::Ec2AmiResource {
-            ami_id: self.ami_id
-            ,
-            snowball_ami_id: self.snowball_ami_id
-            ,
+            ami_id: self.ami_id,
+            snowball_ami_id: self.snowball_ami_id,
         }
     }
 }
-

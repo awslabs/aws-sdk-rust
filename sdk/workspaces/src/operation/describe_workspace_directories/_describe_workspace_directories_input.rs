@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeWorkspaceDirectoriesInput  {
+pub struct DescribeWorkspaceDirectoriesInput {
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
     #[doc(hidden)]
     pub directory_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,7 +15,7 @@ pub struct DescribeWorkspaceDirectoriesInput  {
 }
 impl DescribeWorkspaceDirectoriesInput {
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
-    pub fn directory_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn directory_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.directory_ids.as_deref()
     }
     /// <p>The maximum number of directories to return.</p>
@@ -23,13 +23,13 @@ impl DescribeWorkspaceDirectoriesInput {
         self.limit
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeWorkspaceDirectoriesInput {
     /// Creates a new builder-style object to manufacture [`DescribeWorkspaceDirectoriesInput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput).
-    pub fn builder() -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesInputBuilder {
+    pub fn builder() -> crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesInputBuilder{
         crate::operation::describe_workspace_directories::builders::DescribeWorkspaceDirectoriesInputBuilder::default()
     }
 }
@@ -50,13 +50,17 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
     pub fn directory_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.directory_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.directory_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.directory_ids = Some(v);
+        self
     }
     /// <p>The identifiers of the directories. If the value is null, all directories are retrieved.</p>
-    pub fn set_directory_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.directory_ids = input; self
+    pub fn set_directory_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.directory_ids = input;
+        self
     }
     /// <p>The maximum number of directories to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -65,7 +69,8 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
     }
     /// <p>The maximum number of directories to return.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,20 +79,22 @@ impl DescribeWorkspaceDirectoriesInputBuilder {
     }
     /// <p>If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceDirectoriesInput`](crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput).
-    pub fn build(self) -> Result<crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesInput {
-                directory_ids: self.directory_ids
-                ,
-                limit: self.limit
-                ,
-                next_token: self.next_token
-                ,
-            }
+                directory_ids: self.directory_ids,
+                limit: self.limit,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

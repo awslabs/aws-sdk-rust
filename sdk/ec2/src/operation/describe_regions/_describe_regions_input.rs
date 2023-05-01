@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRegionsInput  {
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> 
-    /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li> 
-    /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li> 
+pub struct DescribeRegionsInput {
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+    /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li>
+    /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub filters: std::option::Option<std::vec::Vec<crate::types::Filter>>,
@@ -22,17 +22,17 @@ pub struct DescribeRegionsInput  {
     pub all_regions: std::option::Option<bool>,
 }
 impl DescribeRegionsInput {
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> 
-    /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li> 
-    /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+    /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li>
+    /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li>
     /// </ul>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::Filter]> {
+    pub fn filters(&self) -> std::option::Option<&[crate::types::Filter]> {
         self.filters.as_deref()
     }
     /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn region_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn region_names(&self) -> std::option::Option<&[std::string::String]> {
         self.region_names.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -65,26 +65,30 @@ impl DescribeRegionsInputBuilder {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> 
-    /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li> 
-    /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+    /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li>
+    /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
-    /// <p>The filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li> 
-    /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li> 
-    /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li> 
+    /// <p>The filters.</p>
+    /// <ul>
+    /// <li> <p> <code>endpoint</code> - The endpoint of the Region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+    /// <li> <p> <code>opt-in-status</code> - The opt-in status of the Region (<code>opt-in-not-required</code> | <code>opted-in</code> | <code>not-opted-in</code>).</p> </li>
+    /// <li> <p> <code>region-name</code> - The name of the Region (for example, <code>us-east-1</code>).</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Appends an item to `region_names`.
     ///
@@ -93,13 +97,17 @@ impl DescribeRegionsInputBuilder {
     /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
     pub fn region_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.region_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.region_names = Some(v);
-                        self
+        v.push(input.into());
+        self.region_names = Some(v);
+        self
     }
     /// <p>The names of the Regions. You can specify any Regions, whether they are enabled and disabled for your account.</p>
-    pub fn set_region_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.region_names = input; self
+    pub fn set_region_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.region_names = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -108,7 +116,8 @@ impl DescribeRegionsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
     pub fn all_regions(mut self, input: bool) -> Self {
@@ -117,22 +126,21 @@ impl DescribeRegionsInputBuilder {
     }
     /// <p>Indicates whether to display all Regions, including Regions that are disabled for your account.</p>
     pub fn set_all_regions(mut self, input: std::option::Option<bool>) -> Self {
-        self.all_regions = input; self
+        self.all_regions = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeRegionsInput`](crate::operation::describe_regions::DescribeRegionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_regions::DescribeRegionsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_regions::DescribeRegionsInput {
-                filters: self.filters
-                ,
-                region_names: self.region_names
-                ,
-                dry_run: self.dry_run
-                ,
-                all_regions: self.all_regions
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_regions::DescribeRegionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_regions::DescribeRegionsInput {
+            filters: self.filters,
+            region_names: self.region_names,
+            dry_run: self.dry_run,
+            all_regions: self.all_regions,
+        })
     }
 }
-

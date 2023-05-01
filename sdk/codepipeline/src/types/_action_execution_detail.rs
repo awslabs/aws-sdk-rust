@@ -3,7 +3,7 @@
 /// <p>Returns information about an execution of an action, including the action execution ID, and the name, version, and timing of the action. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActionExecutionDetail  {
+pub struct ActionExecutionDetail {
     /// <p>The pipeline execution ID for the action execution.</p>
     #[doc(hidden)]
     pub pipeline_execution_id: std::option::Option<std::string::String>,
@@ -37,11 +37,11 @@ pub struct ActionExecutionDetail  {
 }
 impl ActionExecutionDetail {
     /// <p>The pipeline execution ID for the action execution.</p>
-    pub fn pipeline_execution_id(&self) -> std::option::Option<& str> {
+    pub fn pipeline_execution_id(&self) -> std::option::Option<&str> {
         self.pipeline_execution_id.as_deref()
     }
     /// <p>The action execution ID.</p>
-    pub fn action_execution_id(&self) -> std::option::Option<& str> {
+    pub fn action_execution_id(&self) -> std::option::Option<&str> {
         self.action_execution_id.as_deref()
     }
     /// <p>The version of the pipeline where the action was run.</p>
@@ -49,31 +49,31 @@ impl ActionExecutionDetail {
         self.pipeline_version
     }
     /// <p>The name of the stage that contains the action.</p>
-    pub fn stage_name(&self) -> std::option::Option<& str> {
+    pub fn stage_name(&self) -> std::option::Option<&str> {
         self.stage_name.as_deref()
     }
     /// <p>The name of the action.</p>
-    pub fn action_name(&self) -> std::option::Option<& str> {
+    pub fn action_name(&self) -> std::option::Option<&str> {
         self.action_name.as_deref()
     }
     /// <p>The start time of the action execution.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The last update time of the action execution.</p>
-    pub fn last_update_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_time.as_ref()
     }
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ActionExecutionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ActionExecutionStatus> {
         self.status.as_ref()
     }
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
-    pub fn input(&self) -> std::option::Option<& crate::types::ActionExecutionInput> {
+    pub fn input(&self) -> std::option::Option<&crate::types::ActionExecutionInput> {
         self.input.as_ref()
     }
     /// <p>Output details for the action execution, such as the action execution result.</p>
-    pub fn output(&self) -> std::option::Option<& crate::types::ActionExecutionOutput> {
+    pub fn output(&self) -> std::option::Option<&crate::types::ActionExecutionOutput> {
         self.output.as_ref()
     }
 }
@@ -106,8 +106,12 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p>The pipeline execution ID for the action execution.</p>
-    pub fn set_pipeline_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pipeline_execution_id = input; self
+    pub fn set_pipeline_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.pipeline_execution_id = input;
+        self
     }
     /// <p>The action execution ID.</p>
     pub fn action_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,8 +119,12 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p>The action execution ID.</p>
-    pub fn set_action_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_execution_id = input; self
+    pub fn set_action_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.action_execution_id = input;
+        self
     }
     /// <p>The version of the pipeline where the action was run.</p>
     pub fn pipeline_version(mut self, input: i32) -> Self {
@@ -125,7 +133,8 @@ impl ActionExecutionDetailBuilder {
     }
     /// <p>The version of the pipeline where the action was run.</p>
     pub fn set_pipeline_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.pipeline_version = input; self
+        self.pipeline_version = input;
+        self
     }
     /// <p>The name of the stage that contains the action.</p>
     pub fn stage_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,7 +143,8 @@ impl ActionExecutionDetailBuilder {
     }
     /// <p>The name of the stage that contains the action.</p>
     pub fn set_stage_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stage_name = input; self
+        self.stage_name = input;
+        self
     }
     /// <p>The name of the action.</p>
     pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,7 +153,8 @@ impl ActionExecutionDetailBuilder {
     }
     /// <p>The name of the action.</p>
     pub fn set_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.action_name = input; self
+        self.action_name = input;
+        self
     }
     /// <p>The start time of the action execution.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -151,8 +162,12 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p>The start time of the action execution.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The last update time of the action execution.</p>
     pub fn last_update_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -160,8 +175,12 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p>The last update time of the action execution.</p>
-    pub fn set_last_update_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_time = input; self
+    pub fn set_last_update_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_time = input;
+        self
     }
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
     pub fn status(mut self, input: crate::types::ActionExecutionStatus) -> Self {
@@ -169,8 +188,12 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p> The status of the action execution. Status categories are <code>InProgress</code>, <code>Succeeded</code>, and <code>Failed</code>.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ActionExecutionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ActionExecutionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
     pub fn input(mut self, input: crate::types::ActionExecutionInput) -> Self {
@@ -178,8 +201,12 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p>Input details for the action execution, such as role ARN, Region, and input artifacts.</p>
-    pub fn set_input(mut self, input: std::option::Option<crate::types::ActionExecutionInput>) -> Self {
-        self.input = input; self
+    pub fn set_input(
+        mut self,
+        input: std::option::Option<crate::types::ActionExecutionInput>,
+    ) -> Self {
+        self.input = input;
+        self
     }
     /// <p>Output details for the action execution, such as the action execution result.</p>
     pub fn output(mut self, input: crate::types::ActionExecutionOutput) -> Self {
@@ -187,33 +214,26 @@ impl ActionExecutionDetailBuilder {
         self
     }
     /// <p>Output details for the action execution, such as the action execution result.</p>
-    pub fn set_output(mut self, input: std::option::Option<crate::types::ActionExecutionOutput>) -> Self {
-        self.output = input; self
+    pub fn set_output(
+        mut self,
+        input: std::option::Option<crate::types::ActionExecutionOutput>,
+    ) -> Self {
+        self.output = input;
+        self
     }
     /// Consumes the builder and constructs a [`ActionExecutionDetail`](crate::types::ActionExecutionDetail).
     pub fn build(self) -> crate::types::ActionExecutionDetail {
         crate::types::ActionExecutionDetail {
-            pipeline_execution_id: self.pipeline_execution_id
-            ,
-            action_execution_id: self.action_execution_id
-            ,
-            pipeline_version: self.pipeline_version
-            ,
-            stage_name: self.stage_name
-            ,
-            action_name: self.action_name
-            ,
-            start_time: self.start_time
-            ,
-            last_update_time: self.last_update_time
-            ,
-            status: self.status
-            ,
-            input: self.input
-            ,
-            output: self.output
-            ,
+            pipeline_execution_id: self.pipeline_execution_id,
+            action_execution_id: self.action_execution_id,
+            pipeline_version: self.pipeline_version,
+            stage_name: self.stage_name,
+            action_name: self.action_name,
+            start_time: self.start_time,
+            last_update_time: self.last_update_time,
+            status: self.status,
+            input: self.input,
+            output: self.output,
         }
     }
 }
-

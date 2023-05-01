@@ -3,7 +3,7 @@
 /// <p>The execution state of a step.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StepExecutionStatusDetail  {
+pub struct StepExecutionStatusDetail {
     /// <p>The state of the step.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::StepExecutionState>,
@@ -22,23 +22,23 @@ pub struct StepExecutionStatusDetail  {
 }
 impl StepExecutionStatusDetail {
     /// <p>The state of the step.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::StepExecutionState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::StepExecutionState> {
         self.state.as_ref()
     }
     /// <p>The creation date and time of the step.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The start date and time of the step.</p>
-    pub fn start_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_date_time.as_ref()
     }
     /// <p>The completion date and time of the step.</p>
-    pub fn end_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_date_time.as_ref()
     }
     /// <p>A description of the step's current state.</p>
-    pub fn last_state_change_reason(&self) -> std::option::Option<& str> {
+    pub fn last_state_change_reason(&self) -> std::option::Option<&str> {
         self.last_state_change_reason.as_deref()
     }
 }
@@ -66,8 +66,12 @@ impl StepExecutionStatusDetailBuilder {
         self
     }
     /// <p>The state of the step.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::StepExecutionState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::StepExecutionState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>The creation date and time of the step.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -75,8 +79,12 @@ impl StepExecutionStatusDetailBuilder {
         self
     }
     /// <p>The creation date and time of the step.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The start date and time of the step.</p>
     pub fn start_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -84,8 +92,12 @@ impl StepExecutionStatusDetailBuilder {
         self
     }
     /// <p>The start date and time of the step.</p>
-    pub fn set_start_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_date_time = input; self
+    pub fn set_start_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_date_time = input;
+        self
     }
     /// <p>The completion date and time of the step.</p>
     pub fn end_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,8 +105,12 @@ impl StepExecutionStatusDetailBuilder {
         self
     }
     /// <p>The completion date and time of the step.</p>
-    pub fn set_end_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_date_time = input; self
+    pub fn set_end_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.end_date_time = input;
+        self
     }
     /// <p>A description of the step's current state.</p>
     pub fn last_state_change_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,23 +118,21 @@ impl StepExecutionStatusDetailBuilder {
         self
     }
     /// <p>A description of the step's current state.</p>
-    pub fn set_last_state_change_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_state_change_reason = input; self
+    pub fn set_last_state_change_reason(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_state_change_reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`StepExecutionStatusDetail`](crate::types::StepExecutionStatusDetail).
     pub fn build(self) -> crate::types::StepExecutionStatusDetail {
         crate::types::StepExecutionStatusDetail {
-            state: self.state
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            start_date_time: self.start_date_time
-            ,
-            end_date_time: self.end_date_time
-            ,
-            last_state_change_reason: self.last_state_change_reason
-            ,
+            state: self.state,
+            creation_date_time: self.creation_date_time,
+            start_date_time: self.start_date_time,
+            end_date_time: self.end_date_time,
+            last_state_change_reason: self.last_state_change_reason,
         }
     }
 }
-

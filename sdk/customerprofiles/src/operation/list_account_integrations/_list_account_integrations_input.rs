@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccountIntegrationsInput  {
+pub struct ListAccountIntegrationsInput {
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListAccountIntegrationsInput  {
 }
 impl ListAccountIntegrationsInput {
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
-    pub fn uri(&self) -> std::option::Option<& str> {
+    pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of objects returned per page.</p>
@@ -36,7 +36,9 @@ impl ListAccountIntegrationsInput {
 }
 impl ListAccountIntegrationsInput {
     /// Creates a new builder-style object to manufacture [`ListAccountIntegrationsInput`](crate::operation::list_account_integrations::ListAccountIntegrationsInput).
-    pub fn builder() -> crate::operation::list_account_integrations::builders::ListAccountIntegrationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_account_integrations::builders::ListAccountIntegrationsInputBuilder
+    {
         crate::operation::list_account_integrations::builders::ListAccountIntegrationsInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl ListAccountIntegrationsInputBuilder {
     }
     /// <p>The URI of the S3 bucket or any other type of data source.</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input; self
+        self.uri = input;
+        self
     }
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl ListAccountIntegrationsInputBuilder {
     }
     /// <p>The pagination token from the previous ListAccountIntegrations API call.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,7 +80,8 @@ impl ListAccountIntegrationsInputBuilder {
     }
     /// <p>The maximum number of objects returned per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
     pub fn include_hidden(mut self, input: bool) -> Self {
@@ -85,22 +90,23 @@ impl ListAccountIntegrationsInputBuilder {
     }
     /// <p>Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.</p>
     pub fn set_include_hidden(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_hidden = input; self
+        self.include_hidden = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListAccountIntegrationsInput`](crate::operation::list_account_integrations::ListAccountIntegrationsInput).
-    pub fn build(self) -> Result<crate::operation::list_account_integrations::ListAccountIntegrationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_account_integrations::ListAccountIntegrationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_account_integrations::ListAccountIntegrationsInput {
-                uri: self.uri
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                include_hidden: self.include_hidden
-                ,
-            }
+                uri: self.uri,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                include_hidden: self.include_hidden,
+            },
         )
     }
 }
-

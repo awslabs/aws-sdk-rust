@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateStreamProcessorOutput  {
+pub struct CreateStreamProcessorOutput {
     /// <p>Amazon Resource Number for the newly created stream processor.</p>
     #[doc(hidden)]
     pub stream_processor_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct CreateStreamProcessorOutput  {
 }
 impl CreateStreamProcessorOutput {
     /// <p>Amazon Resource Number for the newly created stream processor.</p>
-    pub fn stream_processor_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_processor_arn(&self) -> std::option::Option<&str> {
         self.stream_processor_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateStreamProcessorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateStreamProcessorOutput {
     /// Creates a new builder-style object to manufacture [`CreateStreamProcessorOutput`](crate::operation::create_stream_processor::CreateStreamProcessorOutput).
-    pub fn builder() -> crate::operation::create_stream_processor::builders::CreateStreamProcessorOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_stream_processor::builders::CreateStreamProcessorOutputBuilder
+    {
         crate::operation::create_stream_processor::builders::CreateStreamProcessorOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CreateStreamProcessorOutputBuilder {
         self
     }
     /// <p>Amazon Resource Number for the newly created stream processor.</p>
-    pub fn set_stream_processor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_processor_arn = input; self
+    pub fn set_stream_processor_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.stream_processor_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateStreamProcessorOutput`](crate::operation::create_stream_processor::CreateStreamProcessorOutput).
     pub fn build(self) -> crate::operation::create_stream_processor::CreateStreamProcessorOutput {
         crate::operation::create_stream_processor::CreateStreamProcessorOutput {
-            stream_processor_arn: self.stream_processor_arn
-            ,
+            stream_processor_arn: self.stream_processor_arn,
             _request_id: self._request_id,
         }
     }
 }
-

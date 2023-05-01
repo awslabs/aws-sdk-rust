@@ -3,7 +3,7 @@
 /// <p>A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Field  {
+pub struct Field {
     /// <p>The field identifier.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Field  {
 }
 impl Field {
     /// <p>The field identifier.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The field value, expressed as a String.</p>
-    pub fn string_value(&self) -> std::option::Option<& str> {
+    pub fn string_value(&self) -> std::option::Option<&str> {
         self.string_value.as_deref()
     }
     /// <p>The field value, expressed as the identifier of another object.</p>
-    pub fn ref_value(&self) -> std::option::Option<& str> {
+    pub fn ref_value(&self) -> std::option::Option<&str> {
         self.ref_value.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl FieldBuilder {
     }
     /// <p>The field identifier.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn string_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl FieldBuilder {
     }
     /// <p>The field value, expressed as a String.</p>
     pub fn set_string_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.string_value = input; self
+        self.string_value = input;
+        self
     }
     /// <p>The field value, expressed as the identifier of another object.</p>
     pub fn ref_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl FieldBuilder {
     }
     /// <p>The field value, expressed as the identifier of another object.</p>
     pub fn set_ref_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ref_value = input; self
+        self.ref_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`Field`](crate::types::Field).
     pub fn build(self) -> crate::types::Field {
         crate::types::Field {
-            key: self.key
-            ,
-            string_value: self.string_value
-            ,
-            ref_value: self.ref_value
-            ,
+            key: self.key,
+            string_value: self.string_value,
+            ref_value: self.ref_value,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Container for the objects to delete.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Delete  {
+pub struct Delete {
     /// <p>The objects to delete.</p>
     #[doc(hidden)]
     pub objects: std::option::Option<std::vec::Vec<crate::types::ObjectIdentifier>>,
@@ -13,7 +13,7 @@ pub struct Delete  {
 }
 impl Delete {
     /// <p>The objects to delete.</p>
-    pub fn objects(&self) -> std::option::Option<& [crate::types::ObjectIdentifier]> {
+    pub fn objects(&self) -> std::option::Option<&[crate::types::ObjectIdentifier]> {
         self.objects.as_deref()
     }
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
@@ -43,13 +43,17 @@ impl DeleteBuilder {
     /// <p>The objects to delete.</p>
     pub fn objects(mut self, input: crate::types::ObjectIdentifier) -> Self {
         let mut v = self.objects.unwrap_or_default();
-                        v.push(input);
-                        self.objects = Some(v);
-                        self
+        v.push(input);
+        self.objects = Some(v);
+        self
     }
     /// <p>The objects to delete.</p>
-    pub fn set_objects(mut self, input: std::option::Option<std::vec::Vec<crate::types::ObjectIdentifier>>) -> Self {
-        self.objects = input; self
+    pub fn set_objects(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ObjectIdentifier>>,
+    ) -> Self {
+        self.objects = input;
+        self
     }
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
     pub fn quiet(mut self, input: bool) -> Self {
@@ -58,17 +62,14 @@ impl DeleteBuilder {
     }
     /// <p>Element to enable quiet mode for the request. When you add this element, you must set its value to true.</p>
     pub fn set_quiet(mut self, input: std::option::Option<bool>) -> Self {
-        self.quiet = input; self
+        self.quiet = input;
+        self
     }
     /// Consumes the builder and constructs a [`Delete`](crate::types::Delete).
     pub fn build(self) -> crate::types::Delete {
         crate::types::Delete {
-            objects: self.objects
-            ,
-            quiet: self.quiet
-                .unwrap_or_default()
-            ,
+            objects: self.objects,
+            quiet: self.quiet.unwrap_or_default(),
         }
     }
 }
-

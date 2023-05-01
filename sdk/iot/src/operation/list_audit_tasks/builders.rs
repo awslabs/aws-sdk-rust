@@ -4,64 +4,88 @@ pub use crate::operation::list_audit_tasks::_list_audit_tasks_output::ListAuditT
 pub use crate::operation::list_audit_tasks::_list_audit_tasks_input::ListAuditTasksInputBuilder;
 
 /// Fluent builder constructing a request to `ListAuditTasks`.
-/// 
-/// <p>Lists the Device Defender audits that have been performed during a given time period.</p> 
+///
+/// <p>Lists the Device Defender audits that have been performed during a given time period.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditTasks</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAuditTasksFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_audit_tasks::builders::ListAuditTasksInputBuilder,
+    inner: crate::operation::list_audit_tasks::builders::ListAuditTasksInputBuilder,
 }
-impl ListAuditTasksFluentBuilder  {
+impl ListAuditTasksFluentBuilder {
     /// Creates a new `ListAuditTasks`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_audit_tasks::ListAuditTasks, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_audit_tasks::ListAuditTasksError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_audit_tasks::ListAuditTasksOutput, aws_smithy_http::result::SdkError<crate::operation::list_audit_tasks::ListAuditTasksError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_audit_tasks::ListAuditTasks,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_audit_tasks::ListAuditTasksError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_audit_tasks::ListAuditTasksOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_audit_tasks::ListAuditTasksError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator {
-                                crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator {
+        crate::operation::list_audit_tasks::paginator::ListAuditTasksPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.start_time(input);
         self
     }
     /// <p>The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start time prior to what is retained results in an "InvalidRequestException".</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -81,7 +105,10 @@ impl ListAuditTasksFluentBuilder  {
         self
     }
     /// <p>A filter to limit the output to the specified type of audit: can be one of "ON_DEMAND_AUDIT_TASK" or "SCHEDULED__AUDIT_TASK".</p>
-    pub fn set_task_type(mut self, input: std::option::Option<crate::types::AuditTaskType>) -> Self {
+    pub fn set_task_type(
+        mut self,
+        input: std::option::Option<crate::types::AuditTaskType>,
+    ) -> Self {
         self.inner = self.inner.set_task_type(input);
         self
     }
@@ -91,7 +118,10 @@ impl ListAuditTasksFluentBuilder  {
         self
     }
     /// <p>A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".</p>
-    pub fn set_task_status(mut self, input: std::option::Option<crate::types::AuditTaskStatus>) -> Self {
+    pub fn set_task_status(
+        mut self,
+        input: std::option::Option<crate::types::AuditTaskStatus>,
+    ) -> Self {
         self.inner = self.inner.set_task_status(input);
         self
     }
@@ -116,4 +146,3 @@ impl ListAuditTasksFluentBuilder  {
         self
     }
 }
-

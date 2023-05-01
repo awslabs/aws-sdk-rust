@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeResourcePermissionsInput  {
+pub struct DescribeResourcePermissionsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -21,15 +21,15 @@ pub struct DescribeResourcePermissionsInput  {
 }
 impl DescribeResourcePermissionsInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The ID of the principal to filter permissions by.</p>
-    pub fn principal_id(&self) -> std::option::Option<& str> {
+    pub fn principal_id(&self) -> std::option::Option<&str> {
         self.principal_id.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -37,11 +37,11 @@ impl DescribeResourcePermissionsInput {
         self.limit
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeResourcePermissionsInput  {
+impl std::fmt::Debug for DescribeResourcePermissionsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeResourcePermissionsInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -54,7 +54,7 @@ impl  std::fmt::Debug for DescribeResourcePermissionsInput  {
 }
 impl DescribeResourcePermissionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeResourcePermissionsInput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput).
-    pub fn builder() -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder{
         crate::operation::describe_resource_permissions::builders::DescribeResourcePermissionsInputBuilder::default()
     }
 }
@@ -76,8 +76,12 @@ impl DescribeResourcePermissionsInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +90,8 @@ impl DescribeResourcePermissionsInputBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The ID of the principal to filter permissions by.</p>
     pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +100,8 @@ impl DescribeResourcePermissionsInputBuilder {
     }
     /// <p>The ID of the principal to filter permissions by.</p>
     pub fn set_principal_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.principal_id = input; self
+        self.principal_id = input;
+        self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -104,7 +110,8 @@ impl DescribeResourcePermissionsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -113,23 +120,24 @@ impl DescribeResourcePermissionsInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call)</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeResourcePermissionsInput`](crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_resource_permissions::DescribeResourcePermissionsInput {
-                authentication_token: self.authentication_token
-                ,
-                resource_id: self.resource_id
-                ,
-                principal_id: self.principal_id
-                ,
-                limit: self.limit
-                ,
-                marker: self.marker
-                ,
-            }
+                authentication_token: self.authentication_token,
+                resource_id: self.resource_id,
+                principal_id: self.principal_id,
+                limit: self.limit,
+                marker: self.marker,
+            },
         )
     }
 }
@@ -144,4 +152,3 @@ impl std::fmt::Debug for DescribeResourcePermissionsInputBuilder {
         formatter.finish()
     }
 }
-

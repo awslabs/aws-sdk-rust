@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLoggerDefinitionVersionsInput  {
+pub struct ListLoggerDefinitionVersionsInput {
     /// The ID of the logger definition.
     #[doc(hidden)]
     pub logger_definition_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct ListLoggerDefinitionVersionsInput  {
 }
 impl ListLoggerDefinitionVersionsInput {
     /// The ID of the logger definition.
-    pub fn logger_definition_id(&self) -> std::option::Option<& str> {
+    pub fn logger_definition_id(&self) -> std::option::Option<&str> {
         self.logger_definition_id.as_deref()
     }
     /// The maximum number of results to be returned per request.
-    pub fn max_results(&self) -> std::option::Option<& str> {
+    pub fn max_results(&self) -> std::option::Option<&str> {
         self.max_results.as_deref()
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListLoggerDefinitionVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListLoggerDefinitionVersionsInput`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsInput).
-    pub fn builder() -> crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsInputBuilder {
+    pub fn builder() -> crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsInputBuilder{
         crate::operation::list_logger_definition_versions::builders::ListLoggerDefinitionVersionsInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl ListLoggerDefinitionVersionsInputBuilder {
         self
     }
     /// The ID of the logger definition.
-    pub fn set_logger_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.logger_definition_id = input; self
+    pub fn set_logger_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.logger_definition_id = input;
+        self
     }
     /// The maximum number of results to be returned per request.
     pub fn max_results(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +63,8 @@ impl ListLoggerDefinitionVersionsInputBuilder {
     }
     /// The maximum number of results to be returned per request.
     pub fn set_max_results(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +73,22 @@ impl ListLoggerDefinitionVersionsInputBuilder {
     }
     /// The token for the next set of results, or ''null'' if there are no additional results.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListLoggerDefinitionVersionsInput`](crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsInput).
-    pub fn build(self) -> Result<crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsInput {
-                logger_definition_id: self.logger_definition_id
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                logger_definition_id: self.logger_definition_id,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

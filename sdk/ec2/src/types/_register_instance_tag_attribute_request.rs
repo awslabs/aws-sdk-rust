@@ -3,7 +3,7 @@
 /// <p>Information about the tag keys to register for the current Region. You can either specify individual tag keys or register all tag keys in the current Region. You must specify either <code>IncludeAllTagsOfInstance</code> or <code>InstanceTagKeys</code> in the request</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterInstanceTagAttributeRequest  {
+pub struct RegisterInstanceTagAttributeRequest {
     /// <p>Indicates whether to register all tag keys in the current Region. Specify <code>true</code> to register all tag keys.</p>
     #[doc(hidden)]
     pub include_all_tags_of_instance: std::option::Option<bool>,
@@ -17,7 +17,7 @@ impl RegisterInstanceTagAttributeRequest {
         self.include_all_tags_of_instance
     }
     /// <p>The tag keys to register.</p>
-    pub fn instance_tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn instance_tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_tag_keys.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl RegisterInstanceTagAttributeRequestBuilder {
     }
     /// <p>Indicates whether to register all tag keys in the current Region. Specify <code>true</code> to register all tag keys.</p>
     pub fn set_include_all_tags_of_instance(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_all_tags_of_instance = input; self
+        self.include_all_tags_of_instance = input;
+        self
     }
     /// Appends an item to `instance_tag_keys`.
     ///
@@ -52,22 +53,23 @@ impl RegisterInstanceTagAttributeRequestBuilder {
     /// <p>The tag keys to register.</p>
     pub fn instance_tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.instance_tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.instance_tag_keys = Some(v);
+        self
     }
     /// <p>The tag keys to register.</p>
-    pub fn set_instance_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.instance_tag_keys = input; self
+    pub fn set_instance_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.instance_tag_keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegisterInstanceTagAttributeRequest`](crate::types::RegisterInstanceTagAttributeRequest).
     pub fn build(self) -> crate::types::RegisterInstanceTagAttributeRequest {
         crate::types::RegisterInstanceTagAttributeRequest {
-            include_all_tags_of_instance: self.include_all_tags_of_instance
-            ,
-            instance_tag_keys: self.instance_tag_keys
-            ,
+            include_all_tags_of_instance: self.include_all_tags_of_instance,
+            instance_tag_keys: self.instance_tag_keys,
         }
     }
 }
-

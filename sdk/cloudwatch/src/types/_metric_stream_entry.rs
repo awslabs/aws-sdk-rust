@@ -3,7 +3,7 @@
 /// <p>This structure contains the configuration information about one metric stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricStreamEntry  {
+pub struct MetricStreamEntry {
     /// <p>The ARN of the metric stream.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct MetricStreamEntry  {
 }
 impl MetricStreamEntry {
     /// <p>The ARN of the metric stream.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The date that the metric stream was originally created.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date that the configuration of this metric stream was most recently updated.</p>
-    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The name of the metric stream.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
-    pub fn firehose_arn(&self) -> std::option::Option<& str> {
+    pub fn firehose_arn(&self) -> std::option::Option<&str> {
         self.firehose_arn.as_deref()
     }
     /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
-    pub fn output_format(&self) -> std::option::Option<& crate::types::MetricStreamOutputFormat> {
+    pub fn output_format(&self) -> std::option::Option<&crate::types::MetricStreamOutputFormat> {
         self.output_format.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl MetricStreamEntryBuilder {
     }
     /// <p>The ARN of the metric stream.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The date that the metric stream was originally created.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,8 +92,12 @@ impl MetricStreamEntryBuilder {
         self
     }
     /// <p>The date that the metric stream was originally created.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>The date that the configuration of this metric stream was most recently updated.</p>
     pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -100,8 +105,12 @@ impl MetricStreamEntryBuilder {
         self
     }
     /// <p>The date that the configuration of this metric stream was most recently updated.</p>
-    pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_date = input; self
+    pub fn set_last_update_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_date = input;
+        self
     }
     /// <p>The name of the metric stream.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +119,8 @@ impl MetricStreamEntryBuilder {
     }
     /// <p>The name of the metric stream.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
     pub fn firehose_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +129,8 @@ impl MetricStreamEntryBuilder {
     }
     /// <p>The ARN of the Kinesis Firehose devlivery stream that is used for this metric stream.</p>
     pub fn set_firehose_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.firehose_arn = input; self
+        self.firehose_arn = input;
+        self
     }
     /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -128,7 +139,8 @@ impl MetricStreamEntryBuilder {
     }
     /// <p>The current state of this stream. Valid values are <code>running</code> and <code>stopped</code>.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
     pub fn output_format(mut self, input: crate::types::MetricStreamOutputFormat) -> Self {
@@ -136,27 +148,23 @@ impl MetricStreamEntryBuilder {
         self
     }
     /// <p>The output format of this metric stream. Valid values are <code>json</code> and <code>opentelemetry0.7</code>.</p>
-    pub fn set_output_format(mut self, input: std::option::Option<crate::types::MetricStreamOutputFormat>) -> Self {
-        self.output_format = input; self
+    pub fn set_output_format(
+        mut self,
+        input: std::option::Option<crate::types::MetricStreamOutputFormat>,
+    ) -> Self {
+        self.output_format = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricStreamEntry`](crate::types::MetricStreamEntry).
     pub fn build(self) -> crate::types::MetricStreamEntry {
         crate::types::MetricStreamEntry {
-            arn: self.arn
-            ,
-            creation_date: self.creation_date
-            ,
-            last_update_date: self.last_update_date
-            ,
-            name: self.name
-            ,
-            firehose_arn: self.firehose_arn
-            ,
-            state: self.state
-            ,
-            output_format: self.output_format
-            ,
+            arn: self.arn,
+            creation_date: self.creation_date,
+            last_update_date: self.last_update_date,
+            name: self.name,
+            firehose_arn: self.firehose_arn,
+            state: self.state,
+            output_format: self.output_format,
         }
     }
 }
-

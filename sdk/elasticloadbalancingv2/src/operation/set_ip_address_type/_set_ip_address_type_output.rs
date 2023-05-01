@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetIpAddressTypeOutput  {
+pub struct SetIpAddressTypeOutput {
     /// <p>The IP address type.</p>
     #[doc(hidden)]
     pub ip_address_type: std::option::Option<crate::types::IpAddressType>,
@@ -10,18 +10,19 @@ pub struct SetIpAddressTypeOutput  {
 }
 impl SetIpAddressTypeOutput {
     /// <p>The IP address type.</p>
-    pub fn ip_address_type(&self) -> std::option::Option<& crate::types::IpAddressType> {
+    pub fn ip_address_type(&self) -> std::option::Option<&crate::types::IpAddressType> {
         self.ip_address_type.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for SetIpAddressTypeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SetIpAddressTypeOutput {
     /// Creates a new builder-style object to manufacture [`SetIpAddressTypeOutput`](crate::operation::set_ip_address_type::SetIpAddressTypeOutput).
-    pub fn builder() -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder {
         crate::operation::set_ip_address_type::builders::SetIpAddressTypeOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl SetIpAddressTypeOutputBuilder {
         self
     }
     /// <p>The IP address type.</p>
-    pub fn set_ip_address_type(mut self, input: std::option::Option<crate::types::IpAddressType>) -> Self {
-        self.ip_address_type = input; self
+    pub fn set_ip_address_type(
+        mut self,
+        input: std::option::Option<crate::types::IpAddressType>,
+    ) -> Self {
+        self.ip_address_type = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SetIpAddressTypeOutput`](crate::operation::set_ip_address_type::SetIpAddressTypeOutput).
     pub fn build(self) -> crate::operation::set_ip_address_type::SetIpAddressTypeOutput {
         crate::operation::set_ip_address_type::SetIpAddressTypeOutput {
-            ip_address_type: self.ip_address_type
-            ,
+            ip_address_type: self.ip_address_type,
             _request_id: self._request_id,
         }
     }
 }
-

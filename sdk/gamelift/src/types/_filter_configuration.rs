@@ -3,14 +3,14 @@
 /// <p>A list of fleet locations where a game session queue can place new game sessions. You can use a filter to temporarily turn off placements for specific locations. For queues that have multi-location fleets, you can use a filter configuration allow placement with some, but not all of these locations.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FilterConfiguration  {
+pub struct FilterConfiguration {
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
     #[doc(hidden)]
     pub allowed_locations: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl FilterConfiguration {
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-    pub fn allowed_locations(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn allowed_locations(&self) -> std::option::Option<&[std::string::String]> {
         self.allowed_locations.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl FilterConfigurationBuilder {
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
     pub fn allowed_locations(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.allowed_locations.unwrap_or_default();
-                        v.push(input.into());
-                        self.allowed_locations = Some(v);
-                        self
+        v.push(input.into());
+        self.allowed_locations = Some(v);
+        self
     }
     /// <p> A list of locations to allow game session placement in, in the form of Amazon Web Services Region codes such as <code>us-west-2</code>. </p>
-    pub fn set_allowed_locations(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.allowed_locations = input; self
+    pub fn set_allowed_locations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.allowed_locations = input;
+        self
     }
     /// Consumes the builder and constructs a [`FilterConfiguration`](crate::types::FilterConfiguration).
     pub fn build(self) -> crate::types::FilterConfiguration {
         crate::types::FilterConfiguration {
-            allowed_locations: self.allowed_locations
-            ,
+            allowed_locations: self.allowed_locations,
         }
     }
 }
-

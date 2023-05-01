@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePresignedNotebookUrlOutput  {
+pub struct CreatePresignedNotebookUrlOutput {
     /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
     #[doc(hidden)]
     pub notebook_url: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct CreatePresignedNotebookUrlOutput  {
 }
 impl CreatePresignedNotebookUrlOutput {
     /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
-    pub fn notebook_url(&self) -> std::option::Option<& str> {
+    pub fn notebook_url(&self) -> std::option::Option<&str> {
         self.notebook_url.as_deref()
     }
     /// <p>The authentication token for the notebook.</p>
-    pub fn auth_token(&self) -> std::option::Option<& str> {
+    pub fn auth_token(&self) -> std::option::Option<&str> {
         self.auth_token.as_deref()
     }
     /// <p>The UTC epoch time when the authentication token expires.</p>
@@ -29,13 +29,13 @@ impl CreatePresignedNotebookUrlOutput {
     }
 }
 impl aws_http::request_id::RequestId for CreatePresignedNotebookUrlOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreatePresignedNotebookUrlOutput {
     /// Creates a new builder-style object to manufacture [`CreatePresignedNotebookUrlOutput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput).
-    pub fn builder() -> crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlOutputBuilder {
+    pub fn builder() -> crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlOutputBuilder{
         crate::operation::create_presigned_notebook_url::builders::CreatePresignedNotebookUrlOutputBuilder::default()
     }
 }
@@ -57,7 +57,8 @@ impl CreatePresignedNotebookUrlOutputBuilder {
     }
     /// <p>The URL of the notebook. The URL includes the authentication token and notebook file name and points directly to the opened notebook.</p>
     pub fn set_notebook_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_url = input; self
+        self.notebook_url = input;
+        self
     }
     /// <p>The authentication token for the notebook.</p>
     pub fn auth_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +67,8 @@ impl CreatePresignedNotebookUrlOutputBuilder {
     }
     /// <p>The authentication token for the notebook.</p>
     pub fn set_auth_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.auth_token = input; self
+        self.auth_token = input;
+        self
     }
     /// <p>The UTC epoch time when the authentication token expires.</p>
     pub fn auth_token_expiration_time(mut self, input: i64) -> Self {
@@ -75,28 +77,27 @@ impl CreatePresignedNotebookUrlOutputBuilder {
     }
     /// <p>The UTC epoch time when the authentication token expires.</p>
     pub fn set_auth_token_expiration_time(mut self, input: std::option::Option<i64>) -> Self {
-        self.auth_token_expiration_time = input; self
+        self.auth_token_expiration_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreatePresignedNotebookUrlOutput`](crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput).
-    pub fn build(self) -> crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput {
         crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput {
-            notebook_url: self.notebook_url
-            ,
-            auth_token: self.auth_token
-            ,
-            auth_token_expiration_time: self.auth_token_expiration_time
-            ,
+            notebook_url: self.notebook_url,
+            auth_token: self.auth_token,
+            auth_token_expiration_time: self.auth_token_expiration_time,
             _request_id: self._request_id,
         }
     }
 }
-

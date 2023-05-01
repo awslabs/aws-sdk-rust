@@ -3,7 +3,7 @@
 /// <p>Retrieves attributes that are associated with a typed link inside a <code>BatchRead</code> operation. For more information, see <code>GetLinkAttributes</code> and <code>BatchReadRequest$Operations</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetLinkAttributes  {
+pub struct BatchGetLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
     #[doc(hidden)]
     pub typed_link_specifier: std::option::Option<crate::types::TypedLinkSpecifier>,
@@ -13,11 +13,11 @@ pub struct BatchGetLinkAttributes  {
 }
 impl BatchGetLinkAttributes {
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn typed_link_specifier(&self) -> std::option::Option<& crate::types::TypedLinkSpecifier> {
+    pub fn typed_link_specifier(&self) -> std::option::Option<&crate::types::TypedLinkSpecifier> {
         self.typed_link_specifier.as_ref()
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn attribute_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
         self.attribute_names.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl BatchGetLinkAttributesBuilder {
         self
     }
     /// <p>Allows a typed link specifier to be accepted as input.</p>
-    pub fn set_typed_link_specifier(mut self, input: std::option::Option<crate::types::TypedLinkSpecifier>) -> Self {
-        self.typed_link_specifier = input; self
+    pub fn set_typed_link_specifier(
+        mut self,
+        input: std::option::Option<crate::types::TypedLinkSpecifier>,
+    ) -> Self {
+        self.typed_link_specifier = input;
+        self
     }
     /// Appends an item to `attribute_names`.
     ///
@@ -52,22 +56,23 @@ impl BatchGetLinkAttributesBuilder {
     /// <p>A list of attribute names whose values will be retrieved.</p>
     pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.attribute_names = Some(v);
-                        self
+        v.push(input.into());
+        self.attribute_names = Some(v);
+        self
     }
     /// <p>A list of attribute names whose values will be retrieved.</p>
-    pub fn set_attribute_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.attribute_names = input; self
+    pub fn set_attribute_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.attribute_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetLinkAttributes`](crate::types::BatchGetLinkAttributes).
     pub fn build(self) -> crate::types::BatchGetLinkAttributes {
         crate::types::BatchGetLinkAttributes {
-            typed_link_specifier: self.typed_link_specifier
-            ,
-            attribute_names: self.attribute_names
-            ,
+            typed_link_specifier: self.typed_link_specifier,
+            attribute_names: self.attribute_names,
         }
     }
 }
-

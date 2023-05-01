@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFileSystemAssociationsInput  {
+pub struct ListFileSystemAssociationsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListFileSystemAssociationsInput  {
 }
 impl ListFileSystemAssociationsInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The maximum number of file system associations to return in the response. If present, <code>Limit</code> must be an integer with a value greater than zero. Optional.</p>
@@ -23,13 +23,13 @@ impl ListFileSystemAssociationsInput {
         self.limit
     }
     /// <p>Opaque pagination token returned from a previous <code>ListFileSystemAssociations</code> operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to <code>ListFileSystemAssociations</code>. Optional.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl ListFileSystemAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListFileSystemAssociationsInput`](crate::operation::list_file_system_associations::ListFileSystemAssociationsInput).
-    pub fn builder() -> crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder {
+    pub fn builder() -> crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder{
         crate::operation::list_file_system_associations::builders::ListFileSystemAssociationsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl ListFileSystemAssociationsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// <p>The maximum number of file system associations to return in the response. If present, <code>Limit</code> must be an integer with a value greater than zero. Optional.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl ListFileSystemAssociationsInputBuilder {
     }
     /// <p>The maximum number of file system associations to return in the response. If present, <code>Limit</code> must be an integer with a value greater than zero. Optional.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>Opaque pagination token returned from a previous <code>ListFileSystemAssociations</code> operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to <code>ListFileSystemAssociations</code>. Optional.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,22 @@ impl ListFileSystemAssociationsInputBuilder {
     }
     /// <p>Opaque pagination token returned from a previous <code>ListFileSystemAssociations</code> operation. If present, <code>Marker</code> specifies where to continue the list from after a previous call to <code>ListFileSystemAssociations</code>. Optional.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListFileSystemAssociationsInput`](crate::operation::list_file_system_associations::ListFileSystemAssociationsInput).
-    pub fn build(self) -> Result<crate::operation::list_file_system_associations::ListFileSystemAssociationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_file_system_associations::ListFileSystemAssociationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_file_system_associations::ListFileSystemAssociationsInput {
-                gateway_arn: self.gateway_arn
-                ,
-                limit: self.limit
-                ,
-                marker: self.marker
-                ,
-            }
+                gateway_arn: self.gateway_arn,
+                limit: self.limit,
+                marker: self.marker,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBuiltinSlotTypesInput  {
+pub struct GetBuiltinSlotTypesInput {
     /// <p>A list of locales that the slot type supports.</p>
     #[doc(hidden)]
     pub locale: std::option::Option<crate::types::Locale>,
@@ -18,15 +18,15 @@ pub struct GetBuiltinSlotTypesInput  {
 }
 impl GetBuiltinSlotTypesInput {
     /// <p>A list of locales that the slot type supports.</p>
-    pub fn locale(&self) -> std::option::Option<& crate::types::Locale> {
+    pub fn locale(&self) -> std::option::Option<&crate::types::Locale> {
         self.locale.as_ref()
     }
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn signature_contains(&self) -> std::option::Option<& str> {
+    pub fn signature_contains(&self) -> std::option::Option<&str> {
         self.signature_contains.as_deref()
     }
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
@@ -36,8 +36,10 @@ impl GetBuiltinSlotTypesInput {
 }
 impl GetBuiltinSlotTypesInput {
     /// Creates a new builder-style object to manufacture [`GetBuiltinSlotTypesInput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput).
-    pub fn builder() -> crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder {
-        crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder {
+        crate::operation::get_builtin_slot_types::builders::GetBuiltinSlotTypesInputBuilder::default(
+        )
     }
 }
 
@@ -58,7 +60,8 @@ impl GetBuiltinSlotTypesInputBuilder {
     }
     /// <p>A list of locales that the slot type supports.</p>
     pub fn set_locale(mut self, input: std::option::Option<crate::types::Locale>) -> Self {
-        self.locale = input; self
+        self.locale = input;
+        self
     }
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
     pub fn signature_contains(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +69,12 @@ impl GetBuiltinSlotTypesInputBuilder {
         self
     }
     /// <p>Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."</p>
-    pub fn set_signature_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.signature_contains = input; self
+    pub fn set_signature_contains(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.signature_contains = input;
+        self
     }
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +83,8 @@ impl GetBuiltinSlotTypesInputBuilder {
     }
     /// <p>A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +93,23 @@ impl GetBuiltinSlotTypesInputBuilder {
     }
     /// <p>The maximum number of slot types to return in the response. The default is 10.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetBuiltinSlotTypesInput`](crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput).
-    pub fn build(self) -> Result<crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_builtin_slot_types::GetBuiltinSlotTypesInput {
-                locale: self.locale
-                ,
-                signature_contains: self.signature_contains
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                locale: self.locale,
+                signature_contains: self.signature_contains,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

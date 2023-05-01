@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventTrackerInput  {
+pub struct DeleteEventTrackerInput {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
     #[doc(hidden)]
     pub event_tracker_arn: std::option::Option<std::string::String>,
 }
 impl DeleteEventTrackerInput {
     /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-    pub fn event_tracker_arn(&self) -> std::option::Option<& str> {
+    pub fn event_tracker_arn(&self) -> std::option::Option<&str> {
         self.event_tracker_arn.as_deref()
     }
 }
 impl DeleteEventTrackerInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventTrackerInput`](crate::operation::delete_event_tracker::DeleteEventTrackerInput).
-    pub fn builder() -> crate::operation::delete_event_tracker::builders::DeleteEventTrackerInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_event_tracker::builders::DeleteEventTrackerInputBuilder {
         crate::operation::delete_event_tracker::builders::DeleteEventTrackerInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl DeleteEventTrackerInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the event tracker to delete.</p>
-    pub fn set_event_tracker_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_tracker_arn = input; self
+    pub fn set_event_tracker_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.event_tracker_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteEventTrackerInput`](crate::operation::delete_event_tracker::DeleteEventTrackerInput).
-    pub fn build(self) -> Result<crate::operation::delete_event_tracker::DeleteEventTrackerInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_event_tracker::DeleteEventTrackerInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_event_tracker::DeleteEventTrackerInput {
-                event_tracker_arn: self.event_tracker_arn
-                ,
-            }
+                event_tracker_arn: self.event_tracker_arn,
+            },
         )
     }
 }
-

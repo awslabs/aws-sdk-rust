@@ -4,57 +4,73 @@ pub use crate::operation::list_graphs::_list_graphs_output::ListGraphsOutputBuil
 pub use crate::operation::list_graphs::_list_graphs_input::ListGraphsInputBuilder;
 
 /// Fluent builder constructing a request to `ListGraphs`.
-/// 
-/// <p>Returns the list of behavior graphs that the calling account is an administrator account of. This operation can only be called by an administrator account.</p> 
+///
+/// <p>Returns the list of behavior graphs that the calling account is an administrator account of. This operation can only be called by an administrator account.</p>
 /// <p>Because an account can currently only be the administrator of one behavior graph within a Region, the results always contain a single behavior graph.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListGraphsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_graphs::builders::ListGraphsInputBuilder,
+    inner: crate::operation::list_graphs::builders::ListGraphsInputBuilder,
 }
-impl ListGraphsFluentBuilder  {
+impl ListGraphsFluentBuilder {
     /// Creates a new `ListGraphs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_graphs::ListGraphs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_graphs::ListGraphsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_graphs::ListGraphsOutput, aws_smithy_http::result::SdkError<crate::operation::list_graphs::ListGraphsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_graphs::ListGraphs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_graphs::ListGraphsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_graphs::ListGraphsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_graphs::ListGraphsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_graphs::paginator::ListGraphsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_graphs::paginator::ListGraphsPaginator {
-                                crate::operation::list_graphs::paginator::ListGraphsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_graphs::paginator::ListGraphsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_graphs::paginator::ListGraphsPaginator {
+        crate::operation::list_graphs::paginator::ListGraphsPaginator::new(self.handle, self.inner)
+    }
     /// <p>For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -76,4 +92,3 @@ impl ListGraphsFluentBuilder  {
         self
     }
 }
-

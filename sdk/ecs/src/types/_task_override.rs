@@ -3,7 +3,7 @@
 /// <p>The overrides that are associated with a task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TaskOverride  {
+pub struct TaskOverride {
     /// <p>One or more container overrides that are sent to a task.</p>
     #[doc(hidden)]
     pub container_overrides: std::option::Option<std::vec::Vec<crate::types::ContainerOverride>>,
@@ -12,7 +12,8 @@ pub struct TaskOverride  {
     pub cpu: std::option::Option<std::string::String>,
     /// <p>The Elastic Inference accelerator override for the task.</p>
     #[doc(hidden)]
-    pub inference_accelerator_overrides: std::option::Option<std::vec::Vec<crate::types::InferenceAcceleratorOverride>>,
+    pub inference_accelerator_overrides:
+        std::option::Option<std::vec::Vec<crate::types::InferenceAcceleratorOverride>>,
     /// <p>The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub execution_role_arn: std::option::Option<std::string::String>,
@@ -22,49 +23,51 @@ pub struct TaskOverride  {
     /// <p>The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     #[doc(hidden)]
     pub task_role_arn: std::option::Option<std::string::String>,
-    /// <p>The ephemeral storage setting override for the task.</p> <note> 
-    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p> 
-    /// <ul> 
-    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> 
-    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> 
-    /// </ul> 
+    /// <p>The ephemeral storage setting override for the task.</p> <note>
+    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
+    /// <ul>
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
+    /// </ul>
     /// </note>
     #[doc(hidden)]
     pub ephemeral_storage: std::option::Option<crate::types::EphemeralStorage>,
 }
 impl TaskOverride {
     /// <p>One or more container overrides that are sent to a task.</p>
-    pub fn container_overrides(&self) -> std::option::Option<& [crate::types::ContainerOverride]> {
+    pub fn container_overrides(&self) -> std::option::Option<&[crate::types::ContainerOverride]> {
         self.container_overrides.as_deref()
     }
     /// <p>The CPU override for the task.</p>
-    pub fn cpu(&self) -> std::option::Option<& str> {
+    pub fn cpu(&self) -> std::option::Option<&str> {
         self.cpu.as_deref()
     }
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    pub fn inference_accelerator_overrides(&self) -> std::option::Option<& [crate::types::InferenceAcceleratorOverride]> {
+    pub fn inference_accelerator_overrides(
+        &self,
+    ) -> std::option::Option<&[crate::types::InferenceAcceleratorOverride]> {
         self.inference_accelerator_overrides.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn execution_role_arn(&self) -> std::option::Option<& str> {
+    pub fn execution_role_arn(&self) -> std::option::Option<&str> {
         self.execution_role_arn.as_deref()
     }
     /// <p>The memory override for the task.</p>
-    pub fn memory(&self) -> std::option::Option<& str> {
+    pub fn memory(&self) -> std::option::Option<&str> {
         self.memory.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn task_role_arn(&self) -> std::option::Option<& str> {
+    pub fn task_role_arn(&self) -> std::option::Option<&str> {
         self.task_role_arn.as_deref()
     }
-    /// <p>The ephemeral storage setting override for the task.</p> <note> 
-    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p> 
-    /// <ul> 
-    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> 
-    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> 
-    /// </ul> 
+    /// <p>The ephemeral storage setting override for the task.</p> <note>
+    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
+    /// <ul>
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
+    /// </ul>
     /// </note>
-    pub fn ephemeral_storage(&self) -> std::option::Option<& crate::types::EphemeralStorage> {
+    pub fn ephemeral_storage(&self) -> std::option::Option<&crate::types::EphemeralStorage> {
         self.ephemeral_storage.as_ref()
     }
 }
@@ -79,9 +82,11 @@ impl TaskOverride {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct TaskOverrideBuilder {
-    pub(crate) container_overrides: std::option::Option<std::vec::Vec<crate::types::ContainerOverride>>,
+    pub(crate) container_overrides:
+        std::option::Option<std::vec::Vec<crate::types::ContainerOverride>>,
     pub(crate) cpu: std::option::Option<std::string::String>,
-    pub(crate) inference_accelerator_overrides: std::option::Option<std::vec::Vec<crate::types::InferenceAcceleratorOverride>>,
+    pub(crate) inference_accelerator_overrides:
+        std::option::Option<std::vec::Vec<crate::types::InferenceAcceleratorOverride>>,
     pub(crate) execution_role_arn: std::option::Option<std::string::String>,
     pub(crate) memory: std::option::Option<std::string::String>,
     pub(crate) task_role_arn: std::option::Option<std::string::String>,
@@ -95,13 +100,17 @@ impl TaskOverrideBuilder {
     /// <p>One or more container overrides that are sent to a task.</p>
     pub fn container_overrides(mut self, input: crate::types::ContainerOverride) -> Self {
         let mut v = self.container_overrides.unwrap_or_default();
-                        v.push(input);
-                        self.container_overrides = Some(v);
-                        self
+        v.push(input);
+        self.container_overrides = Some(v);
+        self
     }
     /// <p>One or more container overrides that are sent to a task.</p>
-    pub fn set_container_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::types::ContainerOverride>>) -> Self {
-        self.container_overrides = input; self
+    pub fn set_container_overrides(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ContainerOverride>>,
+    ) -> Self {
+        self.container_overrides = input;
+        self
     }
     /// <p>The CPU override for the task.</p>
     pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,22 +119,30 @@ impl TaskOverrideBuilder {
     }
     /// <p>The CPU override for the task.</p>
     pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cpu = input; self
+        self.cpu = input;
+        self
     }
     /// Appends an item to `inference_accelerator_overrides`.
     ///
     /// To override the contents of this collection use [`set_inference_accelerator_overrides`](Self::set_inference_accelerator_overrides).
     ///
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    pub fn inference_accelerator_overrides(mut self, input: crate::types::InferenceAcceleratorOverride) -> Self {
+    pub fn inference_accelerator_overrides(
+        mut self,
+        input: crate::types::InferenceAcceleratorOverride,
+    ) -> Self {
         let mut v = self.inference_accelerator_overrides.unwrap_or_default();
-                        v.push(input);
-                        self.inference_accelerator_overrides = Some(v);
-                        self
+        v.push(input);
+        self.inference_accelerator_overrides = Some(v);
+        self
     }
     /// <p>The Elastic Inference accelerator override for the task.</p>
-    pub fn set_inference_accelerator_overrides(mut self, input: std::option::Option<std::vec::Vec<crate::types::InferenceAcceleratorOverride>>) -> Self {
-        self.inference_accelerator_overrides = input; self
+    pub fn set_inference_accelerator_overrides(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InferenceAcceleratorOverride>>,
+    ) -> Self {
+        self.inference_accelerator_overrides = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,8 +150,12 @@ impl TaskOverrideBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the task execution role override for the task. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
-    pub fn set_execution_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_role_arn = input; self
+    pub fn set_execution_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.execution_role_arn = input;
+        self
     }
     /// <p>The memory override for the task.</p>
     pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,7 +164,8 @@ impl TaskOverrideBuilder {
     }
     /// <p>The memory override for the task.</p>
     pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.memory = input; self
+        self.memory = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn task_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,47 +174,44 @@ impl TaskOverrideBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the role that containers in this task can assume. All containers in this task are granted the permissions that are specified in this role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub fn set_task_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_role_arn = input; self
+        self.task_role_arn = input;
+        self
     }
-    /// <p>The ephemeral storage setting override for the task.</p> <note> 
-    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p> 
-    /// <ul> 
-    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> 
-    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> 
-    /// </ul> 
+    /// <p>The ephemeral storage setting override for the task.</p> <note>
+    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
+    /// <ul>
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
+    /// </ul>
     /// </note>
     pub fn ephemeral_storage(mut self, input: crate::types::EphemeralStorage) -> Self {
         self.ephemeral_storage = Some(input);
         self
     }
-    /// <p>The ephemeral storage setting override for the task.</p> <note> 
-    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p> 
-    /// <ul> 
-    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li> 
-    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li> 
-    /// </ul> 
+    /// <p>The ephemeral storage setting override for the task.</p> <note>
+    /// <p>This parameter is only supported for tasks hosted on Fargate that use the following platform versions:</p>
+    /// <ul>
+    /// <li> <p>Linux platform version <code>1.4.0</code> or later.</p> </li>
+    /// <li> <p>Windows platform version <code>1.0.0</code> or later.</p> </li>
+    /// </ul>
     /// </note>
-    pub fn set_ephemeral_storage(mut self, input: std::option::Option<crate::types::EphemeralStorage>) -> Self {
-        self.ephemeral_storage = input; self
+    pub fn set_ephemeral_storage(
+        mut self,
+        input: std::option::Option<crate::types::EphemeralStorage>,
+    ) -> Self {
+        self.ephemeral_storage = input;
+        self
     }
     /// Consumes the builder and constructs a [`TaskOverride`](crate::types::TaskOverride).
     pub fn build(self) -> crate::types::TaskOverride {
         crate::types::TaskOverride {
-            container_overrides: self.container_overrides
-            ,
-            cpu: self.cpu
-            ,
-            inference_accelerator_overrides: self.inference_accelerator_overrides
-            ,
-            execution_role_arn: self.execution_role_arn
-            ,
-            memory: self.memory
-            ,
-            task_role_arn: self.task_role_arn
-            ,
-            ephemeral_storage: self.ephemeral_storage
-            ,
+            container_overrides: self.container_overrides,
+            cpu: self.cpu,
+            inference_accelerator_overrides: self.inference_accelerator_overrides,
+            execution_role_arn: self.execution_role_arn,
+            memory: self.memory,
+            task_role_arn: self.task_role_arn,
+            ephemeral_storage: self.ephemeral_storage,
         }
     }
 }
-

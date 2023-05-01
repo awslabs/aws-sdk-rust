@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvokeInput  {
-    /// <p>The name of the Lambda function, version, or alias.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> 
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+pub struct InvokeInput {
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     #[doc(hidden)]
     pub function_name: std::option::Option<std::string::String>,
-    /// <p>Choose from the following options.</p> 
-    /// <ul> 
-    /// <li> <p> <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
-    /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li> 
-    /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub invocation_type: std::option::Option<crate::types::InvocationType>,
@@ -27,7 +27,7 @@ pub struct InvokeInput  {
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
     #[doc(hidden)]
     pub client_context: std::option::Option<std::string::String>,
-    /// <p>The JSON that you want to provide to your Lambda function as input.</p> 
+    /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
@@ -36,45 +36,45 @@ pub struct InvokeInput  {
     pub qualifier: std::option::Option<std::string::String>,
 }
 impl InvokeInput {
-    /// <p>The name of the Lambda function, version, or alias.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> 
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
-    pub fn function_name(&self) -> std::option::Option<& str> {
+    pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
-    /// <p>Choose from the following options.</p> 
-    /// <ul> 
-    /// <li> <p> <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
-    /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li> 
-    /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    pub fn invocation_type(&self) -> std::option::Option<& crate::types::InvocationType> {
+    pub fn invocation_type(&self) -> std::option::Option<&crate::types::InvocationType> {
         self.invocation_type.as_ref()
     }
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
-    pub fn log_type(&self) -> std::option::Option<& crate::types::LogType> {
+    pub fn log_type(&self) -> std::option::Option<&crate::types::LogType> {
         self.log_type.as_ref()
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
-    pub fn client_context(&self) -> std::option::Option<& str> {
+    pub fn client_context(&self) -> std::option::Option<&str> {
         self.client_context.as_deref()
     }
-    /// <p>The JSON that you want to provide to your Lambda function as input.</p> 
+    /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
-    pub fn payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
     }
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
-    pub fn qualifier(&self) -> std::option::Option<& str> {
+    pub fn qualifier(&self) -> std::option::Option<&str> {
         self.qualifier.as_deref()
     }
 }
-impl  std::fmt::Debug for InvokeInput  {
+impl std::fmt::Debug for InvokeInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InvokeInput");
         formatter.field("function_name", &self.function_name);
@@ -105,47 +105,52 @@ pub struct InvokeInputBuilder {
     pub(crate) qualifier: std::option::Option<std::string::String>,
 }
 impl InvokeInputBuilder {
-    /// <p>The name of the Lambda function, version, or alias.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> 
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.function_name = Some(input.into());
         self
     }
-    /// <p>The name of the Lambda function, version, or alias.</p> 
-    /// <p class="title"> <b>Name formats</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> 
-    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> 
-    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> 
-    /// </ul> 
+    /// <p>The name of the Lambda function, version, or alias.</p>
+    /// <p class="title"> <b>Name formats</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li>
+    /// <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li>
+    /// <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li>
+    /// </ul>
     /// <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_name = input; self
+        self.function_name = input;
+        self
     }
-    /// <p>Choose from the following options.</p> 
-    /// <ul> 
-    /// <li> <p> <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
-    /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li> 
-    /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
     pub fn invocation_type(mut self, input: crate::types::InvocationType) -> Self {
         self.invocation_type = Some(input);
         self
     }
-    /// <p>Choose from the following options.</p> 
-    /// <ul> 
-    /// <li> <p> <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li> 
-    /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li> 
-    /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li> 
+    /// <p>Choose from the following options.</p>
+    /// <ul>
+    /// <li> <p> <code>RequestResponse</code> (default) – Invoke the function synchronously. Keep the connection open until the function returns a response or times out. The API response includes the function response and additional data.</p> </li>
+    /// <li> <p> <code>Event</code> – Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if one is configured). The API response only includes a status code.</p> </li>
+    /// <li> <p> <code>DryRun</code> – Validate parameter values and verify that the user or role has permission to invoke the function.</p> </li>
     /// </ul>
-    pub fn set_invocation_type(mut self, input: std::option::Option<crate::types::InvocationType>) -> Self {
-        self.invocation_type = input; self
+    pub fn set_invocation_type(
+        mut self,
+        input: std::option::Option<crate::types::InvocationType>,
+    ) -> Self {
+        self.invocation_type = input;
+        self
     }
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
     pub fn log_type(mut self, input: crate::types::LogType) -> Self {
@@ -154,7 +159,8 @@ impl InvokeInputBuilder {
     }
     /// <p>Set to <code>Tail</code> to include the execution log in the response. Applies to synchronously invoked functions only.</p>
     pub fn set_log_type(mut self, input: std::option::Option<crate::types::LogType>) -> Self {
-        self.log_type = input; self
+        self.log_type = input;
+        self
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
     pub fn client_context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -163,18 +169,20 @@ impl InvokeInputBuilder {
     }
     /// <p>Up to 3,583 bytes of base64-encoded data about the invoking client to pass to the function in the context object.</p>
     pub fn set_client_context(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_context = input; self
+        self.client_context = input;
+        self
     }
-    /// <p>The JSON that you want to provide to your Lambda function as input.</p> 
+    /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub fn payload(mut self, input: aws_smithy_types::Blob) -> Self {
         self.payload = Some(input);
         self
     }
-    /// <p>The JSON that you want to provide to your Lambda function as input.</p> 
+    /// <p>The JSON that you want to provide to your Lambda function as input.</p>
     /// <p>You can enter the JSON directly. For example, <code>--payload '{ "key": "value" }'</code>. You can also specify a file path. For example, <code>--payload file://payload.json</code>.</p>
     pub fn set_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.payload = input; self
+        self.payload = input;
+        self
     }
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
     pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,26 +191,22 @@ impl InvokeInputBuilder {
     }
     /// <p>Specify a version or alias to invoke a published version of the function.</p>
     pub fn set_qualifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.qualifier = input; self
+        self.qualifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`InvokeInput`](crate::operation::invoke::InvokeInput).
-    pub fn build(self) -> Result<crate::operation::invoke::InvokeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::invoke::InvokeInput {
-                function_name: self.function_name
-                ,
-                invocation_type: self.invocation_type
-                ,
-                log_type: self.log_type
-                ,
-                client_context: self.client_context
-                ,
-                payload: self.payload
-                ,
-                qualifier: self.qualifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<crate::operation::invoke::InvokeInput, aws_smithy_http::operation::error::BuildError>
+    {
+        Ok(crate::operation::invoke::InvokeInput {
+            function_name: self.function_name,
+            invocation_type: self.invocation_type,
+            log_type: self.log_type,
+            client_context: self.client_context,
+            payload: self.payload,
+            qualifier: self.qualifier,
+        })
     }
 }
 impl std::fmt::Debug for InvokeInputBuilder {
@@ -217,4 +221,3 @@ impl std::fmt::Debug for InvokeInputBuilder {
         formatter.finish()
     }
 }
-

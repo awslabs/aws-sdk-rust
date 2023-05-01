@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceOutput  {
+pub struct UpdateServiceOutput {
     /// <p>The ID of the service.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -25,35 +25,35 @@ pub struct UpdateServiceOutput  {
 }
 impl UpdateServiceOutput {
     /// <p>The ID of the service.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The custom domain name of the service.</p>
-    pub fn custom_domain_name(&self) -> std::option::Option<& str> {
+    pub fn custom_domain_name(&self) -> std::option::Option<&str> {
         self.custom_domain_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
-    pub fn certificate_arn(&self) -> std::option::Option<& str> {
+    pub fn certificate_arn(&self) -> std::option::Option<&str> {
         self.certificate_arn.as_deref()
     }
     /// <p>The type of IAM policy.</p>
-    pub fn auth_type(&self) -> std::option::Option<& crate::types::AuthType> {
+    pub fn auth_type(&self) -> std::option::Option<&crate::types::AuthType> {
         self.auth_type.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateServiceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateServiceOutput {
     /// Creates a new builder-style object to manufacture [`UpdateServiceOutput`](crate::operation::update_service::UpdateServiceOutput).
     pub fn builder() -> crate::operation::update_service::builders::UpdateServiceOutputBuilder {
@@ -81,7 +81,8 @@ impl UpdateServiceOutputBuilder {
     }
     /// <p>The ID of the service.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,7 +91,8 @@ impl UpdateServiceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the service.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the service.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +101,8 @@ impl UpdateServiceOutputBuilder {
     }
     /// <p>The name of the service.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The custom domain name of the service.</p>
     pub fn custom_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,8 +110,12 @@ impl UpdateServiceOutputBuilder {
         self
     }
     /// <p>The custom domain name of the service.</p>
-    pub fn set_custom_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.custom_domain_name = input; self
+    pub fn set_custom_domain_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.custom_domain_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub fn certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +124,8 @@ impl UpdateServiceOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the certificate. </p>
     pub fn set_certificate_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_arn = input; self
+        self.certificate_arn = input;
+        self
     }
     /// <p>The type of IAM policy.</p>
     pub fn auth_type(mut self, input: crate::types::AuthType) -> Self {
@@ -126,34 +134,28 @@ impl UpdateServiceOutputBuilder {
     }
     /// <p>The type of IAM policy.</p>
     pub fn set_auth_type(mut self, input: std::option::Option<crate::types::AuthType>) -> Self {
-        self.auth_type = input; self
+        self.auth_type = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateServiceOutput`](crate::operation::update_service::UpdateServiceOutput).
     pub fn build(self) -> crate::operation::update_service::UpdateServiceOutput {
         crate::operation::update_service::UpdateServiceOutput {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            custom_domain_name: self.custom_domain_name
-            ,
-            certificate_arn: self.certificate_arn
-            ,
-            auth_type: self.auth_type
-            ,
+            id: self.id,
+            arn: self.arn,
+            name: self.name,
+            custom_domain_name: self.custom_domain_name,
+            certificate_arn: self.certificate_arn,
+            auth_type: self.auth_type,
             _request_id: self._request_id,
         }
     }
 }
-

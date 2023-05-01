@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEventDetailsOutput  {
+pub struct DescribeEventDetailsOutput {
     /// <p>Information about the events that could be retrieved.</p>
     #[doc(hidden)]
     pub successful_set: std::option::Option<std::vec::Vec<crate::types::EventDetails>>,
@@ -13,22 +13,23 @@ pub struct DescribeEventDetailsOutput  {
 }
 impl DescribeEventDetailsOutput {
     /// <p>Information about the events that could be retrieved.</p>
-    pub fn successful_set(&self) -> std::option::Option<& [crate::types::EventDetails]> {
+    pub fn successful_set(&self) -> std::option::Option<&[crate::types::EventDetails]> {
         self.successful_set.as_deref()
     }
     /// <p>Error messages for any events that could not be retrieved.</p>
-    pub fn failed_set(&self) -> std::option::Option<& [crate::types::EventDetailsErrorItem]> {
+    pub fn failed_set(&self) -> std::option::Option<&[crate::types::EventDetailsErrorItem]> {
         self.failed_set.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEventDetailsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEventDetailsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEventDetailsOutput`](crate::operation::describe_event_details::DescribeEventDetailsOutput).
-    pub fn builder() -> crate::operation::describe_event_details::builders::DescribeEventDetailsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_event_details::builders::DescribeEventDetailsOutputBuilder {
         crate::operation::describe_event_details::builders::DescribeEventDetailsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl DescribeEventDetailsOutputBuilder {
     /// <p>Information about the events that could be retrieved.</p>
     pub fn successful_set(mut self, input: crate::types::EventDetails) -> Self {
         let mut v = self.successful_set.unwrap_or_default();
-                        v.push(input);
-                        self.successful_set = Some(v);
-                        self
+        v.push(input);
+        self.successful_set = Some(v);
+        self
     }
     /// <p>Information about the events that could be retrieved.</p>
-    pub fn set_successful_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventDetails>>) -> Self {
-        self.successful_set = input; self
+    pub fn set_successful_set(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventDetails>>,
+    ) -> Self {
+        self.successful_set = input;
+        self
     }
     /// Appends an item to `failed_set`.
     ///
@@ -64,32 +69,33 @@ impl DescribeEventDetailsOutputBuilder {
     /// <p>Error messages for any events that could not be retrieved.</p>
     pub fn failed_set(mut self, input: crate::types::EventDetailsErrorItem) -> Self {
         let mut v = self.failed_set.unwrap_or_default();
-                        v.push(input);
-                        self.failed_set = Some(v);
-                        self
+        v.push(input);
+        self.failed_set = Some(v);
+        self
     }
     /// <p>Error messages for any events that could not be retrieved.</p>
-    pub fn set_failed_set(mut self, input: std::option::Option<std::vec::Vec<crate::types::EventDetailsErrorItem>>) -> Self {
-        self.failed_set = input; self
+    pub fn set_failed_set(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EventDetailsErrorItem>>,
+    ) -> Self {
+        self.failed_set = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEventDetailsOutput`](crate::operation::describe_event_details::DescribeEventDetailsOutput).
     pub fn build(self) -> crate::operation::describe_event_details::DescribeEventDetailsOutput {
         crate::operation::describe_event_details::DescribeEventDetailsOutput {
-            successful_set: self.successful_set
-            ,
-            failed_set: self.failed_set
-            ,
+            successful_set: self.successful_set,
+            failed_set: self.failed_set,
             _request_id: self._request_id,
         }
     }
 }
-

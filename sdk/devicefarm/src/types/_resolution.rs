@@ -3,7 +3,7 @@
 /// <p>Represents the screen resolution of a device in height and width, expressed in pixels.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Resolution  {
+pub struct Resolution {
     /// <p>The screen resolution's width, expressed in pixels.</p>
     #[doc(hidden)]
     pub width: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl ResolutionBuilder {
     }
     /// <p>The screen resolution's width, expressed in pixels.</p>
     pub fn set_width(mut self, input: std::option::Option<i32>) -> Self {
-        self.width = input; self
+        self.width = input;
+        self
     }
     /// <p>The screen resolution's height, expressed in pixels.</p>
     pub fn height(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl ResolutionBuilder {
     }
     /// <p>The screen resolution's height, expressed in pixels.</p>
     pub fn set_height(mut self, input: std::option::Option<i32>) -> Self {
-        self.height = input; self
+        self.height = input;
+        self
     }
     /// Consumes the builder and constructs a [`Resolution`](crate::types::Resolution).
     pub fn build(self) -> crate::types::Resolution {
         crate::types::Resolution {
-            width: self.width
-            ,
-            height: self.height
-            ,
+            width: self.width,
+            height: self.height,
         }
     }
 }
-

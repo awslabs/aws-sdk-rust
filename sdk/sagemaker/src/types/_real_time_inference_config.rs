@@ -3,7 +3,7 @@
 /// <p>The infrastructure configuration for deploying the model to a real-time inference endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RealTimeInferenceConfig  {
+pub struct RealTimeInferenceConfig {
     /// <p>The instance type the model is deployed to.</p>
     #[doc(hidden)]
     pub instance_type: std::option::Option<crate::types::InstanceType>,
@@ -13,7 +13,7 @@ pub struct RealTimeInferenceConfig  {
 }
 impl RealTimeInferenceConfig {
     /// <p>The instance type the model is deployed to.</p>
-    pub fn instance_type(&self) -> std::option::Option<& crate::types::InstanceType> {
+    pub fn instance_type(&self) -> std::option::Option<&crate::types::InstanceType> {
         self.instance_type.as_ref()
     }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>.</p>
@@ -42,8 +42,12 @@ impl RealTimeInferenceConfigBuilder {
         self
     }
     /// <p>The instance type the model is deployed to.</p>
-    pub fn set_instance_type(mut self, input: std::option::Option<crate::types::InstanceType>) -> Self {
-        self.instance_type = input; self
+    pub fn set_instance_type(
+        mut self,
+        input: std::option::Option<crate::types::InstanceType>,
+    ) -> Self {
+        self.instance_type = input;
+        self
     }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>.</p>
     pub fn instance_count(mut self, input: i32) -> Self {
@@ -52,16 +56,14 @@ impl RealTimeInferenceConfigBuilder {
     }
     /// <p>The number of instances of the type specified by <code>InstanceType</code>.</p>
     pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.instance_count = input; self
+        self.instance_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`RealTimeInferenceConfig`](crate::types::RealTimeInferenceConfig).
     pub fn build(self) -> crate::types::RealTimeInferenceConfig {
         crate::types::RealTimeInferenceConfig {
-            instance_type: self.instance_type
-            ,
-            instance_count: self.instance_count
-            ,
+            instance_type: self.instance_type,
+            instance_count: self.instance_count,
         }
     }
 }
-

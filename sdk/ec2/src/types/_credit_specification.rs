@@ -3,16 +3,16 @@
 /// <p>Describes the credit option for CPU usage of a T instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreditSpecification  {
-    /// <p>The credit option for CPU usage of a T instance.</p> 
+pub struct CreditSpecification {
+    /// <p>The credit option for CPU usage of a T instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code> </p>
     #[doc(hidden)]
     pub cpu_credits: std::option::Option<std::string::String>,
 }
 impl CreditSpecification {
-    /// <p>The credit option for CPU usage of a T instance.</p> 
+    /// <p>The credit option for CPU usage of a T instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code> </p>
-    pub fn cpu_credits(&self) -> std::option::Option<& str> {
+    pub fn cpu_credits(&self) -> std::option::Option<&str> {
         self.cpu_credits.as_deref()
     }
 }
@@ -30,23 +30,22 @@ pub struct CreditSpecificationBuilder {
     pub(crate) cpu_credits: std::option::Option<std::string::String>,
 }
 impl CreditSpecificationBuilder {
-    /// <p>The credit option for CPU usage of a T instance.</p> 
+    /// <p>The credit option for CPU usage of a T instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code> </p>
     pub fn cpu_credits(mut self, input: impl Into<std::string::String>) -> Self {
         self.cpu_credits = Some(input.into());
         self
     }
-    /// <p>The credit option for CPU usage of a T instance.</p> 
+    /// <p>The credit option for CPU usage of a T instance.</p>
     /// <p>Valid values: <code>standard</code> | <code>unlimited</code> </p>
     pub fn set_cpu_credits(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cpu_credits = input; self
+        self.cpu_credits = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreditSpecification`](crate::types::CreditSpecification).
     pub fn build(self) -> crate::types::CreditSpecification {
         crate::types::CreditSpecification {
-            cpu_credits: self.cpu_credits
-            ,
+            cpu_credits: self.cpu_credits,
         }
     }
 }
-

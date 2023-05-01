@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateKeySigningKeyOutput  {
+pub struct ActivateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     #[doc(hidden)]
     pub change_info: std::option::Option<crate::types::ChangeInfo>,
@@ -10,18 +10,20 @@ pub struct ActivateKeySigningKeyOutput  {
 }
 impl ActivateKeySigningKeyOutput {
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
-    pub fn change_info(&self) -> std::option::Option<& crate::types::ChangeInfo> {
+    pub fn change_info(&self) -> std::option::Option<&crate::types::ChangeInfo> {
         self.change_info.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ActivateKeySigningKeyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ActivateKeySigningKeyOutput {
     /// Creates a new builder-style object to manufacture [`ActivateKeySigningKeyOutput`](crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput).
-    pub fn builder() -> crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyOutputBuilder
+    {
         crate::operation::activate_key_signing_key::builders::ActivateKeySigningKeyOutputBuilder::default()
     }
 }
@@ -41,24 +43,23 @@ impl ActivateKeySigningKeyOutputBuilder {
     }
     /// <p>A complex type that describes change information about changes made to your hosted zone.</p>
     pub fn set_change_info(mut self, input: std::option::Option<crate::types::ChangeInfo>) -> Self {
-        self.change_info = input; self
+        self.change_info = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ActivateKeySigningKeyOutput`](crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput).
     pub fn build(self) -> crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput {
         crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput {
-            change_info: self.change_info
-            ,
+            change_info: self.change_info,
             _request_id: self._request_id,
         }
     }
 }
-

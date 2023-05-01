@@ -3,14 +3,14 @@
 /// <p>Details for the resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceDetails  {
+pub struct ResourceDetails {
     /// <p>Details for the Amazon EC2 resource.</p>
     #[doc(hidden)]
     pub ec2_resource_details: std::option::Option<crate::types::Ec2ResourceDetails>,
 }
 impl ResourceDetails {
     /// <p>Details for the Amazon EC2 resource.</p>
-    pub fn ec2_resource_details(&self) -> std::option::Option<& crate::types::Ec2ResourceDetails> {
+    pub fn ec2_resource_details(&self) -> std::option::Option<&crate::types::Ec2ResourceDetails> {
         self.ec2_resource_details.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ResourceDetailsBuilder {
         self
     }
     /// <p>Details for the Amazon EC2 resource.</p>
-    pub fn set_ec2_resource_details(mut self, input: std::option::Option<crate::types::Ec2ResourceDetails>) -> Self {
-        self.ec2_resource_details = input; self
+    pub fn set_ec2_resource_details(
+        mut self,
+        input: std::option::Option<crate::types::Ec2ResourceDetails>,
+    ) -> Self {
+        self.ec2_resource_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceDetails`](crate::types::ResourceDetails).
     pub fn build(self) -> crate::types::ResourceDetails {
         crate::types::ResourceDetails {
-            ec2_resource_details: self.ec2_resource_details
-            ,
+            ec2_resource_details: self.ec2_resource_details,
         }
     }
 }
-

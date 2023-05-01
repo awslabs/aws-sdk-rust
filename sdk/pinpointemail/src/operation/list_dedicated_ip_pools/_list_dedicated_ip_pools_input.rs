@@ -3,7 +3,7 @@
 /// <p>A request to obtain a list of dedicated IP pools.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDedicatedIpPoolsInput  {
+pub struct ListDedicatedIpPoolsInput {
     /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct ListDedicatedIpPoolsInput  {
 }
 impl ListDedicatedIpPoolsInput {
     /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -23,7 +23,8 @@ impl ListDedicatedIpPoolsInput {
 }
 impl ListDedicatedIpPoolsInput {
     /// Creates a new builder-style object to manufacture [`ListDedicatedIpPoolsInput`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsInput).
-    pub fn builder() -> crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsInputBuilder {
         crate::operation::list_dedicated_ip_pools::builders::ListDedicatedIpPoolsInputBuilder::default()
     }
 }
@@ -43,7 +44,8 @@ impl ListDedicatedIpPoolsInputBuilder {
     }
     /// <p>A token returned from a previous call to <code>ListDedicatedIpPools</code> to indicate the position in the list of dedicated IP pools.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -52,18 +54,21 @@ impl ListDedicatedIpPoolsInputBuilder {
     }
     /// <p>The number of results to show in a single call to <code>ListDedicatedIpPools</code>. If the number of results is larger than the number you specified in this parameter, then the response includes a <code>NextToken</code> element, which you can use to obtain additional results.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDedicatedIpPoolsInput`](crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsInput).
-    pub fn build(self) -> Result<crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsInput {
-                next_token: self.next_token
-                ,
-                page_size: self.page_size
-                ,
-            }
+                next_token: self.next_token,
+                page_size: self.page_size,
+            },
         )
     }
 }
-

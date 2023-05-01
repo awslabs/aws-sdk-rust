@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let searchquantumtasksfilteroperator = unimplemented!();
 /// match searchquantumtasksfilteroperator {
@@ -34,14 +34,22 @@
 /// Specifically, when `searchquantumtasksfilteroperator` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SearchQuantumTasksFilterOperator::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SearchQuantumTasksFilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Between,
@@ -56,49 +64,50 @@ pub enum SearchQuantumTasksFilterOperator {
     #[allow(missing_docs)] // documentation missing in model
     Lte,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SearchQuantumTasksFilterOperator {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BETWEEN" => SearchQuantumTasksFilterOperator::Between,
-"EQUAL" => SearchQuantumTasksFilterOperator::Equal,
-"GT" => SearchQuantumTasksFilterOperator::Gt,
-"GTE" => SearchQuantumTasksFilterOperator::Gte,
-"LT" => SearchQuantumTasksFilterOperator::Lt,
-"LTE" => SearchQuantumTasksFilterOperator::Lte,
-other => SearchQuantumTasksFilterOperator::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for SearchQuantumTasksFilterOperator {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(SearchQuantumTasksFilterOperator::from(s))
-                }
-            }
-impl SearchQuantumTasksFilterOperator {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    SearchQuantumTasksFilterOperator::Between => "BETWEEN",
-    SearchQuantumTasksFilterOperator::Equal => "EQUAL",
-    SearchQuantumTasksFilterOperator::Gt => "GT",
-    SearchQuantumTasksFilterOperator::Gte => "GTE",
-    SearchQuantumTasksFilterOperator::Lt => "LT",
-    SearchQuantumTasksFilterOperator::Lte => "LTE",
-    SearchQuantumTasksFilterOperator::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "BETWEEN" => SearchQuantumTasksFilterOperator::Between,
+            "EQUAL" => SearchQuantumTasksFilterOperator::Equal,
+            "GT" => SearchQuantumTasksFilterOperator::Gt,
+            "GTE" => SearchQuantumTasksFilterOperator::Gte,
+            "LT" => SearchQuantumTasksFilterOperator::Lt,
+            "LTE" => SearchQuantumTasksFilterOperator::Lte,
+            other => SearchQuantumTasksFilterOperator::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BETWEEN", "EQUAL", "GT", "GTE", "LT", "LTE"]
-                }
-            }
-impl AsRef<str> for SearchQuantumTasksFilterOperator {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for SearchQuantumTasksFilterOperator {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SearchQuantumTasksFilterOperator::from(s))
+    }
+}
+impl SearchQuantumTasksFilterOperator {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SearchQuantumTasksFilterOperator::Between => "BETWEEN",
+            SearchQuantumTasksFilterOperator::Equal => "EQUAL",
+            SearchQuantumTasksFilterOperator::Gt => "GT",
+            SearchQuantumTasksFilterOperator::Gte => "GTE",
+            SearchQuantumTasksFilterOperator::Lt => "LT",
+            SearchQuantumTasksFilterOperator::Lte => "LTE",
+            SearchQuantumTasksFilterOperator::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["BETWEEN", "EQUAL", "GT", "GTE", "LT", "LTE"]
+    }
+}
+impl AsRef<str> for SearchQuantumTasksFilterOperator {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

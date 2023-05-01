@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobTemplateOutput  {
+pub struct CreateJobTemplateOutput {
     /// <p>The ARN of the job template.</p>
     #[doc(hidden)]
     pub job_template_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct CreateJobTemplateOutput  {
 }
 impl CreateJobTemplateOutput {
     /// <p>The ARN of the job template.</p>
-    pub fn job_template_arn(&self) -> std::option::Option<& str> {
+    pub fn job_template_arn(&self) -> std::option::Option<&str> {
         self.job_template_arn.as_deref()
     }
     /// <p>The unique identifier of the job template.</p>
-    pub fn job_template_id(&self) -> std::option::Option<& str> {
+    pub fn job_template_id(&self) -> std::option::Option<&str> {
         self.job_template_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateJobTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateJobTemplateOutput {
     /// Creates a new builder-style object to manufacture [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
-    pub fn builder() -> crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder {
         crate::operation::create_job_template::builders::CreateJobTemplateOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl CreateJobTemplateOutputBuilder {
     }
     /// <p>The ARN of the job template.</p>
     pub fn set_job_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_template_arn = input; self
+        self.job_template_arn = input;
+        self
     }
     /// <p>The unique identifier of the job template.</p>
     pub fn job_template_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +60,24 @@ impl CreateJobTemplateOutputBuilder {
     }
     /// <p>The unique identifier of the job template.</p>
     pub fn set_job_template_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_template_id = input; self
+        self.job_template_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateJobTemplateOutput`](crate::operation::create_job_template::CreateJobTemplateOutput).
     pub fn build(self) -> crate::operation::create_job_template::CreateJobTemplateOutput {
         crate::operation::create_job_template::CreateJobTemplateOutput {
-            job_template_arn: self.job_template_arn
-            ,
-            job_template_id: self.job_template_id
-            ,
+            job_template_arn: self.job_template_arn,
+            job_template_id: self.job_template_id,
             _request_id: self._request_id,
         }
     }
 }
-

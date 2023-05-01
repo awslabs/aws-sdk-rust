@@ -87,4 +87,3 @@ pub mod update_response_plan;
 
 /// Types for the `UpdateTimelineEvent` operation.
 pub mod update_timeline_event;
-

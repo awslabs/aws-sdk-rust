@@ -40,4 +40,3 @@ pub mod builders;
 
 /// Error types that AWS Resource Groups Tagging API can respond with.
 pub mod error;
-

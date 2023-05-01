@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPortalOutput  {
+pub struct GetPortalOutput {
     /// <p>The web portal.</p>
     #[doc(hidden)]
     pub portal: std::option::Option<crate::types::Portal>,
@@ -10,15 +10,15 @@ pub struct GetPortalOutput  {
 }
 impl GetPortalOutput {
     /// <p>The web portal.</p>
-    pub fn portal(&self) -> std::option::Option<& crate::types::Portal> {
+    pub fn portal(&self) -> std::option::Option<&crate::types::Portal> {
         self.portal.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetPortalOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetPortalOutput {
     /// Creates a new builder-style object to manufacture [`GetPortalOutput`](crate::operation::get_portal::GetPortalOutput).
     pub fn builder() -> crate::operation::get_portal::builders::GetPortalOutputBuilder {
@@ -41,24 +41,23 @@ impl GetPortalOutputBuilder {
     }
     /// <p>The web portal.</p>
     pub fn set_portal(mut self, input: std::option::Option<crate::types::Portal>) -> Self {
-        self.portal = input; self
+        self.portal = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetPortalOutput`](crate::operation::get_portal::GetPortalOutput).
     pub fn build(self) -> crate::operation::get_portal::GetPortalOutput {
         crate::operation::get_portal::GetPortalOutput {
-            portal: self.portal
-            ,
+            portal: self.portal,
             _request_id: self._request_id,
         }
     }
 }
-

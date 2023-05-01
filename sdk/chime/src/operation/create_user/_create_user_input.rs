@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateUserInput  {
+pub struct CreateUserInput {
     /// <p>The Amazon Chime account ID.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -18,23 +18,23 @@ pub struct CreateUserInput  {
 }
 impl CreateUserInput {
     /// <p>The Amazon Chime account ID.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The user name.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
     /// <p>The user's email address.</p>
-    pub fn email(&self) -> std::option::Option<& str> {
+    pub fn email(&self) -> std::option::Option<&str> {
         self.email.as_deref()
     }
     /// <p>The user type.</p>
-    pub fn user_type(&self) -> std::option::Option<& crate::types::UserType> {
+    pub fn user_type(&self) -> std::option::Option<&crate::types::UserType> {
         self.user_type.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateUserInput  {
+impl std::fmt::Debug for CreateUserInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateUserInput");
         formatter.field("account_id", &self.account_id);
@@ -68,7 +68,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The Amazon Chime account ID.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +78,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The user name.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// <p>The user's email address.</p>
     pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +88,8 @@ impl CreateUserInputBuilder {
     }
     /// <p>The user's email address.</p>
     pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.email = input; self
+        self.email = input;
+        self
     }
     /// <p>The user type.</p>
     pub fn user_type(mut self, input: crate::types::UserType) -> Self {
@@ -95,22 +98,22 @@ impl CreateUserInputBuilder {
     }
     /// <p>The user type.</p>
     pub fn set_user_type(mut self, input: std::option::Option<crate::types::UserType>) -> Self {
-        self.user_type = input; self
+        self.user_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateUserInput`](crate::operation::create_user::CreateUserInput).
-    pub fn build(self) -> Result<crate::operation::create_user::CreateUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_user::CreateUserInput {
-                account_id: self.account_id
-                ,
-                username: self.username
-                ,
-                email: self.email
-                ,
-                user_type: self.user_type
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_user::CreateUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_user::CreateUserInput {
+            account_id: self.account_id,
+            username: self.username,
+            email: self.email,
+            user_type: self.user_type,
+        })
     }
 }
 impl std::fmt::Debug for CreateUserInputBuilder {
@@ -123,4 +126,3 @@ impl std::fmt::Debug for CreateUserInputBuilder {
         formatter.finish()
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointInput  {
+pub struct DescribeEndpointInput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
     #[doc(hidden)]
     pub endpoint_arn: std::option::Option<std::string::String>,
 }
 impl DescribeEndpointInput {
     /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
-    pub fn endpoint_arn(&self) -> std::option::Option<& str> {
+    pub fn endpoint_arn(&self) -> std::option::Option<&str> {
         self.endpoint_arn.as_deref()
     }
 }
 impl DescribeEndpointInput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
-    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder {
+    pub fn builder() -> crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder
+    {
         crate::operation::describe_endpoint::builders::DescribeEndpointInputBuilder::default()
     }
 }
@@ -34,16 +35,18 @@ impl DescribeEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Number (ARN) of the endpoint being described.</p>
     pub fn set_endpoint_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint_arn = input; self
+        self.endpoint_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeEndpointInput`](crate::operation::describe_endpoint::DescribeEndpointInput).
-    pub fn build(self) -> Result<crate::operation::describe_endpoint::DescribeEndpointInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_endpoint::DescribeEndpointInput {
-                endpoint_arn: self.endpoint_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_endpoint::DescribeEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_endpoint::DescribeEndpointInput {
+            endpoint_arn: self.endpoint_arn,
+        })
     }
 }
-

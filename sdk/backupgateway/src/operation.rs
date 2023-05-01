@@ -75,4 +75,3 @@ pub mod update_gateway_software_now;
 
 /// Types for the `UpdateHypervisor` operation.
 pub mod update_hypervisor;
-

@@ -7,7 +7,6 @@ use aws_sdk_dynamodb::config::{self, Credentials, Region};
 use aws_types::SdkConfig;
 use http::Uri;
 
-#[track_caller]
 async fn expect_uri(
     conf: SdkConfig,
     uri: &'static str,

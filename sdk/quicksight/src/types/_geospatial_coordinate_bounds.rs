@@ -3,7 +3,7 @@
 /// <p>The bound options (north, south, west, east) of the geospatial window options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GeospatialCoordinateBounds  {
+pub struct GeospatialCoordinateBounds {
     /// <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
     #[doc(hidden)]
     pub north: std::option::Option<f64>,
@@ -59,7 +59,8 @@ impl GeospatialCoordinateBoundsBuilder {
     }
     /// <p>The latitude of the north bound of the geospatial coordinate bounds.</p>
     pub fn set_north(mut self, input: std::option::Option<f64>) -> Self {
-        self.north = input; self
+        self.north = input;
+        self
     }
     /// <p>The latitude of the south bound of the geospatial coordinate bounds.</p>
     pub fn south(mut self, input: f64) -> Self {
@@ -68,7 +69,8 @@ impl GeospatialCoordinateBoundsBuilder {
     }
     /// <p>The latitude of the south bound of the geospatial coordinate bounds.</p>
     pub fn set_south(mut self, input: std::option::Option<f64>) -> Self {
-        self.south = input; self
+        self.south = input;
+        self
     }
     /// <p>The longitude of the west bound of the geospatial coordinate bounds.</p>
     pub fn west(mut self, input: f64) -> Self {
@@ -77,7 +79,8 @@ impl GeospatialCoordinateBoundsBuilder {
     }
     /// <p>The longitude of the west bound of the geospatial coordinate bounds.</p>
     pub fn set_west(mut self, input: std::option::Option<f64>) -> Self {
-        self.west = input; self
+        self.west = input;
+        self
     }
     /// <p>The longitude of the east bound of the geospatial coordinate bounds.</p>
     pub fn east(mut self, input: f64) -> Self {
@@ -86,20 +89,16 @@ impl GeospatialCoordinateBoundsBuilder {
     }
     /// <p>The longitude of the east bound of the geospatial coordinate bounds.</p>
     pub fn set_east(mut self, input: std::option::Option<f64>) -> Self {
-        self.east = input; self
+        self.east = input;
+        self
     }
     /// Consumes the builder and constructs a [`GeospatialCoordinateBounds`](crate::types::GeospatialCoordinateBounds).
     pub fn build(self) -> crate::types::GeospatialCoordinateBounds {
         crate::types::GeospatialCoordinateBounds {
-            north: self.north
-            ,
-            south: self.south
-            ,
-            west: self.west
-            ,
-            east: self.east
-            ,
+            north: self.north,
+            south: self.south,
+            west: self.west,
+            east: self.east,
         }
     }
 }
-

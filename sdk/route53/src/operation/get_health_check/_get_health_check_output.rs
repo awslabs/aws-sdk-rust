@@ -3,7 +3,7 @@
 /// <p>A complex type that contains the response to a <code>GetHealthCheck</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHealthCheckOutput  {
+pub struct GetHealthCheckOutput {
     /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
     #[doc(hidden)]
     pub health_check: std::option::Option<crate::types::HealthCheck>,
@@ -11,15 +11,15 @@ pub struct GetHealthCheckOutput  {
 }
 impl GetHealthCheckOutput {
     /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
-    pub fn health_check(&self) -> std::option::Option<& crate::types::HealthCheck> {
+    pub fn health_check(&self) -> std::option::Option<&crate::types::HealthCheck> {
         self.health_check.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetHealthCheckOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetHealthCheckOutput {
     /// Creates a new builder-style object to manufacture [`GetHealthCheckOutput`](crate::operation::get_health_check::GetHealthCheckOutput).
     pub fn builder() -> crate::operation::get_health_check::builders::GetHealthCheckOutputBuilder {
@@ -41,25 +41,27 @@ impl GetHealthCheckOutputBuilder {
         self
     }
     /// <p>A complex type that contains information about one health check that is associated with the current Amazon Web Services account.</p>
-    pub fn set_health_check(mut self, input: std::option::Option<crate::types::HealthCheck>) -> Self {
-        self.health_check = input; self
+    pub fn set_health_check(
+        mut self,
+        input: std::option::Option<crate::types::HealthCheck>,
+    ) -> Self {
+        self.health_check = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetHealthCheckOutput`](crate::operation::get_health_check::GetHealthCheckOutput).
     pub fn build(self) -> crate::operation::get_health_check::GetHealthCheckOutput {
         crate::operation::get_health_check::GetHealthCheckOutput {
-            health_check: self.health_check
-            ,
+            health_check: self.health_check,
             _request_id: self._request_id,
         }
     }
 }
-

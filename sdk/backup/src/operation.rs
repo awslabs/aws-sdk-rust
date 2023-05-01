@@ -216,4 +216,3 @@ pub mod update_region_settings;
 
 /// Types for the `UpdateReportPlan` operation.
 pub mod update_report_plan;
-

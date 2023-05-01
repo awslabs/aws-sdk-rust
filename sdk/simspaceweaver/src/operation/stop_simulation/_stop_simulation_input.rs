@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopSimulationInput  {
+pub struct StopSimulationInput {
     /// <p>The name of the simulation.</p>
     #[doc(hidden)]
     pub simulation: std::option::Option<std::string::String>,
 }
 impl StopSimulationInput {
     /// <p>The name of the simulation.</p>
-    pub fn simulation(&self) -> std::option::Option<& str> {
+    pub fn simulation(&self) -> std::option::Option<&str> {
         self.simulation.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl StopSimulationInputBuilder {
     }
     /// <p>The name of the simulation.</p>
     pub fn set_simulation(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.simulation = input; self
+        self.simulation = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopSimulationInput`](crate::operation::stop_simulation::StopSimulationInput).
-    pub fn build(self) -> Result<crate::operation::stop_simulation::StopSimulationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_simulation::StopSimulationInput {
-                simulation: self.simulation
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_simulation::StopSimulationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_simulation::StopSimulationInput {
+            simulation: self.simulation,
+        })
     }
 }
-

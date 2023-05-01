@@ -2,22 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
-pub struct GetReferenceOutput  {
+pub struct GetReferenceOutput {
     /// <p>The reference file payload.</p>
     pub payload: aws_smithy_http::byte_stream::ByteStream,
     _request_id: Option<String>,
 }
 impl GetReferenceOutput {
     /// <p>The reference file payload.</p>
-    pub fn payload(&self) -> & aws_smithy_http::byte_stream::ByteStream {
+    pub fn payload(&self) -> &aws_smithy_http::byte_stream::ByteStream {
         &self.payload
     }
 }
 impl aws_http::request_id::RequestId for GetReferenceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetReferenceOutput {
     /// Creates a new builder-style object to manufacture [`GetReferenceOutput`](crate::operation::get_reference::GetReferenceOutput).
     pub fn builder() -> crate::operation::get_reference::builders::GetReferenceOutputBuilder {
@@ -39,26 +39,27 @@ impl GetReferenceOutputBuilder {
         self
     }
     /// <p>The reference file payload.</p>
-    pub fn set_payload(mut self, input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>) -> Self {
-        self.payload = input; self
+    pub fn set_payload(
+        mut self,
+        input: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+    ) -> Self {
+        self.payload = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetReferenceOutput`](crate::operation::get_reference::GetReferenceOutput).
     pub fn build(self) -> crate::operation::get_reference::GetReferenceOutput {
         crate::operation::get_reference::GetReferenceOutput {
-            payload: self.payload
-                .unwrap_or_default()
-            ,
+            payload: self.payload.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

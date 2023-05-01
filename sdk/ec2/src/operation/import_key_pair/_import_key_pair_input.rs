@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportKeyPairInput  {
+pub struct ImportKeyPairInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -22,15 +22,15 @@ impl ImportKeyPairInput {
         self.dry_run
     }
     /// <p>A unique name for the key pair.</p>
-    pub fn key_name(&self) -> std::option::Option<& str> {
+    pub fn key_name(&self) -> std::option::Option<&str> {
         self.key_name.as_deref()
     }
     /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
-    pub fn public_key_material(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn public_key_material(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.public_key_material.as_ref()
     }
     /// <p>The tags to apply to the imported key pair.</p>
-    pub fn tag_specifications(&self) -> std::option::Option<& [crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> std::option::Option<&[crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
 }
@@ -48,7 +48,8 @@ pub struct ImportKeyPairInputBuilder {
     pub(crate) dry_run: std::option::Option<bool>,
     pub(crate) key_name: std::option::Option<std::string::String>,
     pub(crate) public_key_material: std::option::Option<aws_smithy_types::Blob>,
-    pub(crate) tag_specifications: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) tag_specifications:
+        std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
 }
 impl ImportKeyPairInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -58,7 +59,8 @@ impl ImportKeyPairInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>A unique name for the key pair.</p>
     pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl ImportKeyPairInputBuilder {
     }
     /// <p>A unique name for the key pair.</p>
     pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_name = input; self
+        self.key_name = input;
+        self
     }
     /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
     pub fn public_key_material(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -75,8 +78,12 @@ impl ImportKeyPairInputBuilder {
         self
     }
     /// <p>The public key. For API calls, the text must be base64-encoded. For command line tools, base64 encoding is performed for you.</p>
-    pub fn set_public_key_material(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.public_key_material = input; self
+    pub fn set_public_key_material(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
+        self.public_key_material = input;
+        self
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -85,28 +92,30 @@ impl ImportKeyPairInputBuilder {
     /// <p>The tags to apply to the imported key pair.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-                        v.push(input);
-                        self.tag_specifications = Some(v);
-                        self
+        v.push(input);
+        self.tag_specifications = Some(v);
+        self
     }
     /// <p>The tags to apply to the imported key pair.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input; self
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
+        self.tag_specifications = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportKeyPairInput`](crate::operation::import_key_pair::ImportKeyPairInput).
-    pub fn build(self) -> Result<crate::operation::import_key_pair::ImportKeyPairInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::import_key_pair::ImportKeyPairInput {
-                dry_run: self.dry_run
-                ,
-                key_name: self.key_name
-                ,
-                public_key_material: self.public_key_material
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::import_key_pair::ImportKeyPairInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::import_key_pair::ImportKeyPairInput {
+            dry_run: self.dry_run,
+            key_name: self.key_name,
+            public_key_material: self.public_key_material,
+            tag_specifications: self.tag_specifications,
+        })
     }
 }
-

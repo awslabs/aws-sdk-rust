@@ -3,7 +3,7 @@
 /// <p>Statistics related to the processing of a query statement.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlanningStatistics  {
+pub struct PlanningStatistics {
     /// <p>An estimate of the data that was scanned in bytes.</p>
     #[doc(hidden)]
     pub estimated_data_to_scan_bytes: i64,
@@ -59,7 +59,8 @@ impl PlanningStatisticsBuilder {
     }
     /// <p>An estimate of the data that was scanned in bytes.</p>
     pub fn set_estimated_data_to_scan_bytes(mut self, input: std::option::Option<i64>) -> Self {
-        self.estimated_data_to_scan_bytes = input; self
+        self.estimated_data_to_scan_bytes = input;
+        self
     }
     /// <p>The time that it took to process the request.</p>
     pub fn planning_time_millis(mut self, input: i64) -> Self {
@@ -68,7 +69,8 @@ impl PlanningStatisticsBuilder {
     }
     /// <p>The time that it took to process the request.</p>
     pub fn set_planning_time_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.planning_time_millis = input; self
+        self.planning_time_millis = input;
+        self
     }
     /// <p>The time the request was in queue to be processed.</p>
     pub fn queue_time_millis(mut self, input: i64) -> Self {
@@ -77,7 +79,8 @@ impl PlanningStatisticsBuilder {
     }
     /// <p>The time the request was in queue to be processed.</p>
     pub fn set_queue_time_millis(mut self, input: std::option::Option<i64>) -> Self {
-        self.queue_time_millis = input; self
+        self.queue_time_millis = input;
+        self
     }
     /// <p>The number of work units generated.</p>
     pub fn work_units_generated_count(mut self, input: i64) -> Self {
@@ -86,24 +89,16 @@ impl PlanningStatisticsBuilder {
     }
     /// <p>The number of work units generated.</p>
     pub fn set_work_units_generated_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.work_units_generated_count = input; self
+        self.work_units_generated_count = input;
+        self
     }
     /// Consumes the builder and constructs a [`PlanningStatistics`](crate::types::PlanningStatistics).
     pub fn build(self) -> crate::types::PlanningStatistics {
         crate::types::PlanningStatistics {
-            estimated_data_to_scan_bytes: self.estimated_data_to_scan_bytes
-                .unwrap_or_default()
-            ,
-            planning_time_millis: self.planning_time_millis
-                .unwrap_or_default()
-            ,
-            queue_time_millis: self.queue_time_millis
-                .unwrap_or_default()
-            ,
-            work_units_generated_count: self.work_units_generated_count
-                .unwrap_or_default()
-            ,
+            estimated_data_to_scan_bytes: self.estimated_data_to_scan_bytes.unwrap_or_default(),
+            planning_time_millis: self.planning_time_millis.unwrap_or_default(),
+            queue_time_millis: self.queue_time_millis.unwrap_or_default(),
+            work_units_generated_count: self.work_units_generated_count.unwrap_or_default(),
         }
     }
 }
-

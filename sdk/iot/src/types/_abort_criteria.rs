@@ -3,14 +3,14 @@
 /// <p>The criteria that determine when and how a job abort takes place.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AbortCriteria  {
+pub struct AbortCriteria {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
     #[doc(hidden)]
     pub failure_type: std::option::Option<crate::types::JobExecutionFailureType>,
     /// <p>The type of job action to take to initiate the job abort.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::AbortAction>,
-    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p> 
+    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
     #[doc(hidden)]
     pub threshold_percentage: std::option::Option<f64>,
@@ -20,14 +20,14 @@ pub struct AbortCriteria  {
 }
 impl AbortCriteria {
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    pub fn failure_type(&self) -> std::option::Option<& crate::types::JobExecutionFailureType> {
+    pub fn failure_type(&self) -> std::option::Option<&crate::types::JobExecutionFailureType> {
         self.failure_type.as_ref()
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
-    pub fn action(&self) -> std::option::Option<& crate::types::AbortAction> {
+    pub fn action(&self) -> std::option::Option<&crate::types::AbortAction> {
         self.action.as_ref()
     }
-    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p> 
+    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
     pub fn threshold_percentage(&self) -> std::option::Option<f64> {
         self.threshold_percentage
@@ -60,8 +60,12 @@ impl AbortCriteriaBuilder {
         self
     }
     /// <p>The type of job execution failures that can initiate a job abort.</p>
-    pub fn set_failure_type(mut self, input: std::option::Option<crate::types::JobExecutionFailureType>) -> Self {
-        self.failure_type = input; self
+    pub fn set_failure_type(
+        mut self,
+        input: std::option::Option<crate::types::JobExecutionFailureType>,
+    ) -> Self {
+        self.failure_type = input;
+        self
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
     pub fn action(mut self, input: crate::types::AbortAction) -> Self {
@@ -70,18 +74,20 @@ impl AbortCriteriaBuilder {
     }
     /// <p>The type of job action to take to initiate the job abort.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::AbortAction>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
-    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p> 
+    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
     pub fn threshold_percentage(mut self, input: f64) -> Self {
         self.threshold_percentage = Some(input);
         self
     }
-    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p> 
+    /// <p>The minimum percentage of job execution failures that must occur to initiate the job abort.</p>
     /// <p>Amazon Web Services IoT Core supports up to two digits after the decimal (for example, 10.9 and 10.99, but not 10.999).</p>
     pub fn set_threshold_percentage(mut self, input: std::option::Option<f64>) -> Self {
-        self.threshold_percentage = input; self
+        self.threshold_percentage = input;
+        self
     }
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub fn min_number_of_executed_things(mut self, input: i32) -> Self {
@@ -90,20 +96,16 @@ impl AbortCriteriaBuilder {
     }
     /// <p>The minimum number of things which must receive job execution notifications before the job can be aborted.</p>
     pub fn set_min_number_of_executed_things(mut self, input: std::option::Option<i32>) -> Self {
-        self.min_number_of_executed_things = input; self
+        self.min_number_of_executed_things = input;
+        self
     }
     /// Consumes the builder and constructs a [`AbortCriteria`](crate::types::AbortCriteria).
     pub fn build(self) -> crate::types::AbortCriteria {
         crate::types::AbortCriteria {
-            failure_type: self.failure_type
-            ,
-            action: self.action
-            ,
-            threshold_percentage: self.threshold_percentage
-            ,
-            min_number_of_executed_things: self.min_number_of_executed_things
-            ,
+            failure_type: self.failure_type,
+            action: self.action,
+            threshold_percentage: self.threshold_percentage,
+            min_number_of_executed_things: self.min_number_of_executed_things,
         }
     }
 }
-

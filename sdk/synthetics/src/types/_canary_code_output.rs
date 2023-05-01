@@ -3,7 +3,7 @@
 /// <p>This structure contains information about the canary's Lambda handler and where its code is stored by CloudWatch Synthetics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryCodeOutput  {
+pub struct CanaryCodeOutput {
     /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
     #[doc(hidden)]
     pub source_location_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CanaryCodeOutput  {
 }
 impl CanaryCodeOutput {
     /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
-    pub fn source_location_arn(&self) -> std::option::Option<& str> {
+    pub fn source_location_arn(&self) -> std::option::Option<&str> {
         self.source_location_arn.as_deref()
     }
     /// <p>The entry point to use for the source code when running the canary.</p>
-    pub fn handler(&self) -> std::option::Option<& str> {
+    pub fn handler(&self) -> std::option::Option<&str> {
         self.handler.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl CanaryCodeOutputBuilder {
         self
     }
     /// <p>The ARN of the Lambda layer where Synthetics stores the canary script code.</p>
-    pub fn set_source_location_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_location_arn = input; self
+    pub fn set_source_location_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_location_arn = input;
+        self
     }
     /// <p>The entry point to use for the source code when running the canary.</p>
     pub fn handler(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl CanaryCodeOutputBuilder {
     }
     /// <p>The entry point to use for the source code when running the canary.</p>
     pub fn set_handler(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.handler = input; self
+        self.handler = input;
+        self
     }
     /// Consumes the builder and constructs a [`CanaryCodeOutput`](crate::types::CanaryCodeOutput).
     pub fn build(self) -> crate::types::CanaryCodeOutput {
         crate::types::CanaryCodeOutput {
-            source_location_arn: self.source_location_arn
-            ,
-            handler: self.handler
-            ,
+            source_location_arn: self.source_location_arn,
+            handler: self.handler,
         }
     }
 }
-

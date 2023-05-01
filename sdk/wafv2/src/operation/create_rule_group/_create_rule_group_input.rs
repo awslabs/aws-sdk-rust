@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRuleGroupInput  {
+pub struct CreateRuleGroupInput {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub scope: std::option::Option<crate::types::Scope>,
-    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p> 
-    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p> 
+    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
+    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
     #[doc(hidden)]
     pub capacity: std::option::Option<i64>,
@@ -31,52 +31,58 @@ pub struct CreateRuleGroupInput  {
     /// <p>An array of key:value pairs to associate with the resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p> 
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p> 
+    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
     #[doc(hidden)]
-    pub custom_response_bodies: std::option::Option<std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>>,
+    pub custom_response_bodies: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>,
+    >,
 }
 impl CreateRuleGroupInput {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
-    pub fn scope(&self) -> std::option::Option<& crate::types::Scope> {
+    pub fn scope(&self) -> std::option::Option<&crate::types::Scope> {
         self.scope.as_ref()
     }
-    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p> 
-    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p> 
+    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
+    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn capacity(&self) -> std::option::Option<i64> {
         self.capacity
     }
     /// <p>A description of the rule group that helps with identification. </p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn rules(&self) -> std::option::Option<& [crate::types::Rule]> {
+    pub fn rules(&self) -> std::option::Option<&[crate::types::Rule]> {
         self.rules.as_deref()
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn visibility_config(&self) -> std::option::Option<& crate::types::VisibilityConfig> {
+    pub fn visibility_config(&self) -> std::option::Option<&crate::types::VisibilityConfig> {
         self.visibility_config.as_ref()
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
-    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p> 
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p> 
+    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn custom_response_bodies(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>> {
+    pub fn custom_response_bodies(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>,
+    > {
         self.custom_response_bodies.as_ref()
     }
 }
@@ -98,7 +104,9 @@ pub struct CreateRuleGroupInputBuilder {
     pub(crate) rules: std::option::Option<std::vec::Vec<crate::types::Rule>>,
     pub(crate) visibility_config: std::option::Option<crate::types::VisibilityConfig>,
     pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) custom_response_bodies: std::option::Option<std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>>,
+    pub(crate) custom_response_bodies: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>,
+    >,
 }
 impl CreateRuleGroupInputBuilder {
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
@@ -108,39 +116,42 @@ impl CreateRuleGroupInputBuilder {
     }
     /// <p>The name of the rule group. You cannot change the name of a rule group after you create it.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.scope = Some(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
-        self.scope = input; self
+        self.scope = input;
+        self
     }
-    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p> 
-    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p> 
+    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
+    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn capacity(mut self, input: i64) -> Self {
         self.capacity = Some(input);
         self
     }
-    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p> 
-    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p> 
+    /// <p>The web ACL capacity units (WCUs) required for this rule group.</p>
+    /// <p>When you create your own rule group, you define this, and you cannot change it after creation. When you add or modify the rules in a rule group, WAF enforces this limit. You can check the capacity for a set of rules using <code>CheckCapacity</code>.</p>
     /// <p>WAF uses WCUs to calculate and control the operating resources that are used to run your rules, rule groups, and web ACLs. WAF calculates capacity differently for each rule type, to reflect the relative cost of each rule. Simple rules that cost little to run use fewer WCUs than more complex rules that use more processing power. Rule group capacity is fixed at creation, which helps users plan their web ACL WCU usage when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. </p>
     pub fn set_capacity(mut self, input: std::option::Option<i64>) -> Self {
-        self.capacity = input; self
+        self.capacity = input;
+        self
     }
     /// <p>A description of the rule group that helps with identification. </p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,7 +160,8 @@ impl CreateRuleGroupInputBuilder {
     }
     /// <p>A description of the rule group that helps with identification. </p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `rules`.
     ///
@@ -158,13 +170,17 @@ impl CreateRuleGroupInputBuilder {
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
     pub fn rules(mut self, input: crate::types::Rule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-                        v.push(input);
-                        self.rules = Some(v);
-                        self
+        v.push(input);
+        self.rules = Some(v);
+        self
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::Rule>>) -> Self {
-        self.rules = input; self
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+    ) -> Self {
+        self.rules = input;
+        self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
     pub fn visibility_config(mut self, input: crate::types::VisibilityConfig) -> Self {
@@ -172,8 +188,12 @@ impl CreateRuleGroupInputBuilder {
         self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn set_visibility_config(mut self, input: std::option::Option<crate::types::VisibilityConfig>) -> Self {
-        self.visibility_config = input; self
+    pub fn set_visibility_config(
+        mut self,
+        input: std::option::Option<crate::types::VisibilityConfig>,
+    ) -> Self {
+        self.visibility_config = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -182,55 +202,63 @@ impl CreateRuleGroupInputBuilder {
     /// <p>An array of key:value pairs to associate with the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Adds a key-value pair to `custom_response_bodies`.
     ///
     /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
     ///
-    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p> 
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p> 
+    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn custom_response_bodies(mut self, k: impl Into<std::string::String>, v: crate::types::CustomResponseBody) -> Self {
+    pub fn custom_response_bodies(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::CustomResponseBody,
+    ) -> Self {
         let mut hash_map = self.custom_response_bodies.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.custom_response_bodies = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.custom_response_bodies = Some(hash_map);
+        self
     }
-    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p> 
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p> 
+    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn set_custom_response_bodies(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>>) -> Self {
-        self.custom_response_bodies = input; self
+    pub fn set_custom_response_bodies(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>,
+        >,
+    ) -> Self {
+        self.custom_response_bodies = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRuleGroupInput`](crate::operation::create_rule_group::CreateRuleGroupInput).
-    pub fn build(self) -> Result<crate::operation::create_rule_group::CreateRuleGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_rule_group::CreateRuleGroupInput {
-                name: self.name
-                ,
-                scope: self.scope
-                ,
-                capacity: self.capacity
-                ,
-                description: self.description
-                ,
-                rules: self.rules
-                ,
-                visibility_config: self.visibility_config
-                ,
-                tags: self.tags
-                ,
-                custom_response_bodies: self.custom_response_bodies
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_rule_group::CreateRuleGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_rule_group::CreateRuleGroupInput {
+            name: self.name,
+            scope: self.scope,
+            capacity: self.capacity,
+            description: self.description,
+            rules: self.rules,
+            visibility_config: self.visibility_config,
+            tags: self.tags,
+            custom_response_bodies: self.custom_response_bodies,
+        })
     }
 }
-

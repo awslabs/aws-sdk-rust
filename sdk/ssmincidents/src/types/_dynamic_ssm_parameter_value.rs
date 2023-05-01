@@ -21,7 +21,11 @@ impl DynamicSsmParameterValue {
     /// Tries to convert the enum instance into [`Variable`](crate::types::DynamicSsmParameterValue::Variable), extracting the inner [`VariableType`](crate::types::VariableType).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_variable(&self) -> std::result::Result<&crate::types::VariableType, &Self> {
-        if let DynamicSsmParameterValue::Variable(val) = &self { Ok(val) } else { Err(self) }
+        if let DynamicSsmParameterValue::Variable(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Variable`](crate::types::DynamicSsmParameterValue::Variable).
     pub fn is_variable(&self) -> bool {
@@ -32,4 +36,3 @@ impl DynamicSsmParameterValue {
         matches!(self, Self::Unknown)
     }
 }
-

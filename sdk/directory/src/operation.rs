@@ -201,4 +201,3 @@ pub mod update_trust;
 
 /// Types for the `VerifyTrust` operation.
 pub mod verify_trust;
-

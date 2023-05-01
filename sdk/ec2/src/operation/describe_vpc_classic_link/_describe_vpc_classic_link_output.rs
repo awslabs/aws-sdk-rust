@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVpcClassicLinkOutput  {
+pub struct DescribeVpcClassicLinkOutput {
     /// <p>The ClassicLink status of one or more VPCs.</p>
     #[doc(hidden)]
     pub vpcs: std::option::Option<std::vec::Vec<crate::types::VpcClassicLink>>,
@@ -10,18 +10,20 @@ pub struct DescribeVpcClassicLinkOutput  {
 }
 impl DescribeVpcClassicLinkOutput {
     /// <p>The ClassicLink status of one or more VPCs.</p>
-    pub fn vpcs(&self) -> std::option::Option<& [crate::types::VpcClassicLink]> {
+    pub fn vpcs(&self) -> std::option::Option<&[crate::types::VpcClassicLink]> {
         self.vpcs.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeVpcClassicLinkOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeVpcClassicLinkOutput {
     /// Creates a new builder-style object to manufacture [`DescribeVpcClassicLinkOutput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput).
-    pub fn builder() -> crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkOutputBuilder
+    {
         crate::operation::describe_vpc_classic_link::builders::DescribeVpcClassicLinkOutputBuilder::default()
     }
 }
@@ -41,30 +43,34 @@ impl DescribeVpcClassicLinkOutputBuilder {
     /// <p>The ClassicLink status of one or more VPCs.</p>
     pub fn vpcs(mut self, input: crate::types::VpcClassicLink) -> Self {
         let mut v = self.vpcs.unwrap_or_default();
-                        v.push(input);
-                        self.vpcs = Some(v);
-                        self
+        v.push(input);
+        self.vpcs = Some(v);
+        self
     }
     /// <p>The ClassicLink status of one or more VPCs.</p>
-    pub fn set_vpcs(mut self, input: std::option::Option<std::vec::Vec<crate::types::VpcClassicLink>>) -> Self {
-        self.vpcs = input; self
+    pub fn set_vpcs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VpcClassicLink>>,
+    ) -> Self {
+        self.vpcs = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeVpcClassicLinkOutput`](crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput).
-    pub fn build(self) -> crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput {
         crate::operation::describe_vpc_classic_link::DescribeVpcClassicLinkOutput {
-            vpcs: self.vpcs
-            ,
+            vpcs: self.vpcs,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVpcIngressConnectionInput  {
+pub struct DeleteVpcIngressConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
     #[doc(hidden)]
     pub vpc_ingress_connection_arn: std::option::Option<std::string::String>,
 }
 impl DeleteVpcIngressConnectionInput {
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
-    pub fn vpc_ingress_connection_arn(&self) -> std::option::Option<& str> {
+    pub fn vpc_ingress_connection_arn(&self) -> std::option::Option<&str> {
         self.vpc_ingress_connection_arn.as_deref()
     }
 }
 impl DeleteVpcIngressConnectionInput {
     /// Creates a new builder-style object to manufacture [`DeleteVpcIngressConnectionInput`](crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput).
-    pub fn builder() -> crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionInputBuilder {
+    pub fn builder() -> crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionInputBuilder{
         crate::operation::delete_vpc_ingress_connection::builders::DeleteVpcIngressConnectionInputBuilder::default()
     }
 }
@@ -33,17 +33,24 @@ impl DeleteVpcIngressConnectionInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the App Runner VPC Ingress Connection that you want to delete.</p>
-    pub fn set_vpc_ingress_connection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_ingress_connection_arn = input; self
+    pub fn set_vpc_ingress_connection_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpc_ingress_connection_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteVpcIngressConnectionInput`](crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput).
-    pub fn build(self) -> Result<crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionInput {
-                vpc_ingress_connection_arn: self.vpc_ingress_connection_arn
-                ,
-            }
+                vpc_ingress_connection_arn: self.vpc_ingress_connection_arn,
+            },
         )
     }
 }
-

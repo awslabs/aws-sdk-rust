@@ -3,7 +3,7 @@
 /// <p>The performance data that DataSync Discovery collects about an on-premises storage system resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MaxP95Performance  {
+pub struct MaxP95Performance {
     /// <p>Peak IOPS related to read operations.</p>
     #[doc(hidden)]
     pub iops_read: std::option::Option<f64>,
@@ -115,7 +115,8 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak IOPS related to read operations.</p>
     pub fn set_iops_read(mut self, input: std::option::Option<f64>) -> Self {
-        self.iops_read = input; self
+        self.iops_read = input;
+        self
     }
     /// <p>Peak IOPS related to write operations.</p>
     pub fn iops_write(mut self, input: f64) -> Self {
@@ -124,7 +125,8 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak IOPS related to write operations.</p>
     pub fn set_iops_write(mut self, input: std::option::Option<f64>) -> Self {
-        self.iops_write = input; self
+        self.iops_write = input;
+        self
     }
     /// <p>Peak IOPS unrelated to read and write operations.</p>
     pub fn iops_other(mut self, input: f64) -> Self {
@@ -133,7 +135,8 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak IOPS unrelated to read and write operations.</p>
     pub fn set_iops_other(mut self, input: std::option::Option<f64>) -> Self {
-        self.iops_other = input; self
+        self.iops_other = input;
+        self
     }
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
     pub fn iops_total(mut self, input: f64) -> Self {
@@ -142,7 +145,8 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak total IOPS on your on-premises storage system resource.</p>
     pub fn set_iops_total(mut self, input: std::option::Option<f64>) -> Self {
-        self.iops_total = input; self
+        self.iops_total = input;
+        self
     }
     /// <p>Peak throughput related to read operations.</p>
     pub fn throughput_read(mut self, input: f64) -> Self {
@@ -151,7 +155,8 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak throughput related to read operations.</p>
     pub fn set_throughput_read(mut self, input: std::option::Option<f64>) -> Self {
-        self.throughput_read = input; self
+        self.throughput_read = input;
+        self
     }
     /// <p>Peak throughput related to write operations.</p>
     pub fn throughput_write(mut self, input: f64) -> Self {
@@ -160,7 +165,8 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak throughput related to write operations.</p>
     pub fn set_throughput_write(mut self, input: std::option::Option<f64>) -> Self {
-        self.throughput_write = input; self
+        self.throughput_write = input;
+        self
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
     pub fn throughput_other(mut self, input: f64) -> Self {
@@ -169,7 +175,8 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak throughput unrelated to read and write operations.</p>
     pub fn set_throughput_other(mut self, input: std::option::Option<f64>) -> Self {
-        self.throughput_other = input; self
+        self.throughput_other = input;
+        self
     }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
     pub fn throughput_total(mut self, input: f64) -> Self {
@@ -178,7 +185,8 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak total throughput on your on-premises storage system resource.</p>
     pub fn set_throughput_total(mut self, input: std::option::Option<f64>) -> Self {
-        self.throughput_total = input; self
+        self.throughput_total = input;
+        self
     }
     /// <p>Peak latency for read operations.</p>
     pub fn latency_read(mut self, input: f64) -> Self {
@@ -187,7 +195,8 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak latency for read operations.</p>
     pub fn set_latency_read(mut self, input: std::option::Option<f64>) -> Self {
-        self.latency_read = input; self
+        self.latency_read = input;
+        self
     }
     /// <p>Peak latency for write operations.</p>
     pub fn latency_write(mut self, input: f64) -> Self {
@@ -196,7 +205,8 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak latency for write operations.</p>
     pub fn set_latency_write(mut self, input: std::option::Option<f64>) -> Self {
-        self.latency_write = input; self
+        self.latency_write = input;
+        self
     }
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
     pub fn latency_other(mut self, input: f64) -> Self {
@@ -205,34 +215,23 @@ impl MaxP95PerformanceBuilder {
     }
     /// <p>Peak latency for operations unrelated to read and write operations.</p>
     pub fn set_latency_other(mut self, input: std::option::Option<f64>) -> Self {
-        self.latency_other = input; self
+        self.latency_other = input;
+        self
     }
     /// Consumes the builder and constructs a [`MaxP95Performance`](crate::types::MaxP95Performance).
     pub fn build(self) -> crate::types::MaxP95Performance {
         crate::types::MaxP95Performance {
-            iops_read: self.iops_read
-            ,
-            iops_write: self.iops_write
-            ,
-            iops_other: self.iops_other
-            ,
-            iops_total: self.iops_total
-            ,
-            throughput_read: self.throughput_read
-            ,
-            throughput_write: self.throughput_write
-            ,
-            throughput_other: self.throughput_other
-            ,
-            throughput_total: self.throughput_total
-            ,
-            latency_read: self.latency_read
-            ,
-            latency_write: self.latency_write
-            ,
-            latency_other: self.latency_other
-            ,
+            iops_read: self.iops_read,
+            iops_write: self.iops_write,
+            iops_other: self.iops_other,
+            iops_total: self.iops_total,
+            throughput_read: self.throughput_read,
+            throughput_write: self.throughput_write,
+            throughput_other: self.throughput_other,
+            throughput_total: self.throughput_total,
+            latency_read: self.latency_read,
+            latency_write: self.latency_write,
+            latency_other: self.latency_other,
         }
     }
 }
-

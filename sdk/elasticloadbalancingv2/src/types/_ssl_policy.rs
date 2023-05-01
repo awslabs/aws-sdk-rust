@@ -3,7 +3,7 @@
 /// <p>Information about a policy used for SSL negotiation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SslPolicy  {
+pub struct SslPolicy {
     /// <p>The protocols.</p>
     #[doc(hidden)]
     pub ssl_protocols: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -19,19 +19,19 @@ pub struct SslPolicy  {
 }
 impl SslPolicy {
     /// <p>The protocols.</p>
-    pub fn ssl_protocols(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn ssl_protocols(&self) -> std::option::Option<&[std::string::String]> {
         self.ssl_protocols.as_deref()
     }
     /// <p>The ciphers.</p>
-    pub fn ciphers(&self) -> std::option::Option<& [crate::types::Cipher]> {
+    pub fn ciphers(&self) -> std::option::Option<&[crate::types::Cipher]> {
         self.ciphers.as_deref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p> The supported load balancers. </p>
-    pub fn supported_load_balancer_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn supported_load_balancer_types(&self) -> std::option::Option<&[std::string::String]> {
         self.supported_load_balancer_types.as_deref()
     }
 }
@@ -49,7 +49,8 @@ pub struct SslPolicyBuilder {
     pub(crate) ssl_protocols: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) ciphers: std::option::Option<std::vec::Vec<crate::types::Cipher>>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) supported_load_balancer_types: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) supported_load_balancer_types:
+        std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SslPolicyBuilder {
     /// Appends an item to `ssl_protocols`.
@@ -59,13 +60,17 @@ impl SslPolicyBuilder {
     /// <p>The protocols.</p>
     pub fn ssl_protocols(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.ssl_protocols.unwrap_or_default();
-                        v.push(input.into());
-                        self.ssl_protocols = Some(v);
-                        self
+        v.push(input.into());
+        self.ssl_protocols = Some(v);
+        self
     }
     /// <p>The protocols.</p>
-    pub fn set_ssl_protocols(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.ssl_protocols = input; self
+    pub fn set_ssl_protocols(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.ssl_protocols = input;
+        self
     }
     /// Appends an item to `ciphers`.
     ///
@@ -74,13 +79,17 @@ impl SslPolicyBuilder {
     /// <p>The ciphers.</p>
     pub fn ciphers(mut self, input: crate::types::Cipher) -> Self {
         let mut v = self.ciphers.unwrap_or_default();
-                        v.push(input);
-                        self.ciphers = Some(v);
-                        self
+        v.push(input);
+        self.ciphers = Some(v);
+        self
     }
     /// <p>The ciphers.</p>
-    pub fn set_ciphers(mut self, input: std::option::Option<std::vec::Vec<crate::types::Cipher>>) -> Self {
-        self.ciphers = input; self
+    pub fn set_ciphers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Cipher>>,
+    ) -> Self {
+        self.ciphers = input;
+        self
     }
     /// <p>The name of the policy.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -89,7 +98,8 @@ impl SslPolicyBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `supported_load_balancer_types`.
     ///
@@ -98,26 +108,25 @@ impl SslPolicyBuilder {
     /// <p> The supported load balancers. </p>
     pub fn supported_load_balancer_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.supported_load_balancer_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.supported_load_balancer_types = Some(v);
-                        self
+        v.push(input.into());
+        self.supported_load_balancer_types = Some(v);
+        self
     }
     /// <p> The supported load balancers. </p>
-    pub fn set_supported_load_balancer_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.supported_load_balancer_types = input; self
+    pub fn set_supported_load_balancer_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.supported_load_balancer_types = input;
+        self
     }
     /// Consumes the builder and constructs a [`SslPolicy`](crate::types::SslPolicy).
     pub fn build(self) -> crate::types::SslPolicy {
         crate::types::SslPolicy {
-            ssl_protocols: self.ssl_protocols
-            ,
-            ciphers: self.ciphers
-            ,
-            name: self.name
-            ,
-            supported_load_balancer_types: self.supported_load_balancer_types
-            ,
+            ssl_protocols: self.ssl_protocols,
+            ciphers: self.ciphers,
+            name: self.name,
+            supported_load_balancer_types: self.supported_load_balancer_types,
         }
     }
 }
-

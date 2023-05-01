@@ -2,12 +2,12 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetBucketsInput  {
-    /// <p>The name of the bucket for which to return information.</p> 
+pub struct GetBucketsInput {
+    /// <p>The name of the bucket for which to return information.</p>
     /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     #[doc(hidden)]
     pub page_token: std::option::Option<std::string::String>,
@@ -16,14 +16,14 @@ pub struct GetBucketsInput  {
     pub include_connected_resources: std::option::Option<bool>,
 }
 impl GetBucketsInput {
-    /// <p>The name of the bucket for which to return information.</p> 
+    /// <p>The name of the bucket for which to return information.</p>
     /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
-    pub fn bucket_name(&self) -> std::option::Option<& str> {
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
     /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
@@ -47,27 +47,29 @@ pub struct GetBucketsInputBuilder {
     pub(crate) include_connected_resources: std::option::Option<bool>,
 }
 impl GetBucketsInputBuilder {
-    /// <p>The name of the bucket for which to return information.</p> 
+    /// <p>The name of the bucket for which to return information.</p>
     /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
     pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.bucket_name = Some(input.into());
         self
     }
-    /// <p>The name of the bucket for which to return information.</p> 
+    /// <p>The name of the bucket for which to return information.</p>
     /// <p>When omitted, the response includes all of your buckets in the Amazon Web Services Region where the request is made.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input; self
+        self.bucket_name = input;
+        self
     }
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.page_token = Some(input.into());
         self
     }
-    /// <p>The token to advance to the next page of results from your request.</p> 
+    /// <p>The token to advance to the next page of results from your request.</p>
     /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results are paginated, the response will return a next page token that you can specify as the page token in a subsequent request.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
     /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
     pub fn include_connected_resources(mut self, input: bool) -> Self {
@@ -76,20 +78,20 @@ impl GetBucketsInputBuilder {
     }
     /// <p>A Boolean value that indicates whether to include Lightsail instances that were given access to the bucket using the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action.</p>
     pub fn set_include_connected_resources(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_connected_resources = input; self
+        self.include_connected_resources = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetBucketsInput`](crate::operation::get_buckets::GetBucketsInput).
-    pub fn build(self) -> Result<crate::operation::get_buckets::GetBucketsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_buckets::GetBucketsInput {
-                bucket_name: self.bucket_name
-                ,
-                page_token: self.page_token
-                ,
-                include_connected_resources: self.include_connected_resources
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_buckets::GetBucketsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_buckets::GetBucketsInput {
+            bucket_name: self.bucket_name,
+            page_token: self.page_token,
+            include_connected_resources: self.include_connected_resources,
+        })
     }
 }
-

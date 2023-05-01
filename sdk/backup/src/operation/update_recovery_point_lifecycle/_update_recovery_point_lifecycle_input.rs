@@ -2,36 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRecoveryPointLifecycleInput  {
+pub struct UpdateRecoveryPointLifecycleInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
     #[doc(hidden)]
     pub backup_vault_name: std::option::Option<std::string::String>,
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     #[doc(hidden)]
     pub recovery_point_arn: std::option::Option<std::string::String>,
-    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p> 
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::types::Lifecycle>,
 }
 impl UpdateRecoveryPointLifecycleInput {
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn backup_vault_name(&self) -> std::option::Option<& str> {
+    pub fn backup_vault_name(&self) -> std::option::Option<&str> {
         self.backup_vault_name.as_deref()
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn recovery_point_arn(&self) -> std::option::Option<& str> {
+    pub fn recovery_point_arn(&self) -> std::option::Option<&str> {
         self.recovery_point_arn.as_deref()
     }
-    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p> 
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
-    pub fn lifecycle(&self) -> std::option::Option<& crate::types::Lifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<&crate::types::Lifecycle> {
         self.lifecycle.as_ref()
     }
 }
 impl UpdateRecoveryPointLifecycleInput {
     /// Creates a new builder-style object to manufacture [`UpdateRecoveryPointLifecycleInput`](crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput).
-    pub fn builder() -> crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleInputBuilder {
+    pub fn builder() -> crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleInputBuilder{
         crate::operation::update_recovery_point_lifecycle::builders::UpdateRecoveryPointLifecycleInputBuilder::default()
     }
 }
@@ -51,8 +51,12 @@ impl UpdateRecoveryPointLifecycleInputBuilder {
         self
     }
     /// <p>The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created. They consist of lowercase letters, numbers, and hyphens.</p>
-    pub fn set_backup_vault_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.backup_vault_name = input; self
+    pub fn set_backup_vault_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.backup_vault_name = input;
+        self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
     pub fn recovery_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,32 +64,38 @@ impl UpdateRecoveryPointLifecycleInputBuilder {
         self
     }
     /// <p>An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-    pub fn set_recovery_point_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.recovery_point_arn = input; self
+    pub fn set_recovery_point_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.recovery_point_arn = input;
+        self
     }
-    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p> 
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     pub fn lifecycle(mut self, input: crate::types::Lifecycle) -> Self {
         self.lifecycle = Some(input);
         self
     }
-    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p> 
+    /// <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
     /// <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “retention” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. </p>
     pub fn set_lifecycle(mut self, input: std::option::Option<crate::types::Lifecycle>) -> Self {
-        self.lifecycle = input; self
+        self.lifecycle = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRecoveryPointLifecycleInput`](crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput).
-    pub fn build(self) -> Result<crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleInput {
-                backup_vault_name: self.backup_vault_name
-                ,
-                recovery_point_arn: self.recovery_point_arn
-                ,
-                lifecycle: self.lifecycle
-                ,
-            }
+                backup_vault_name: self.backup_vault_name,
+                recovery_point_arn: self.recovery_point_arn,
+                lifecycle: self.lifecycle,
+            },
         )
     }
 }
-

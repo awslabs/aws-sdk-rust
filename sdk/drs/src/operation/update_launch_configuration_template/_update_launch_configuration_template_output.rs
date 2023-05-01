@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLaunchConfigurationTemplateOutput  {
+pub struct UpdateLaunchConfigurationTemplateOutput {
     /// <p>Updated Launch Configuration Template.</p>
     #[doc(hidden)]
-    pub launch_configuration_template: std::option::Option<crate::types::LaunchConfigurationTemplate>,
+    pub launch_configuration_template:
+        std::option::Option<crate::types::LaunchConfigurationTemplate>,
     _request_id: Option<String>,
 }
 impl UpdateLaunchConfigurationTemplateOutput {
     /// <p>Updated Launch Configuration Template.</p>
-    pub fn launch_configuration_template(&self) -> std::option::Option<& crate::types::LaunchConfigurationTemplate> {
+    pub fn launch_configuration_template(
+        &self,
+    ) -> std::option::Option<&crate::types::LaunchConfigurationTemplate> {
         self.launch_configuration_template.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateLaunchConfigurationTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateLaunchConfigurationTemplateOutput {
     /// Creates a new builder-style object to manufacture [`UpdateLaunchConfigurationTemplateOutput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput).
-    pub fn builder() -> crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateOutputBuilder{
         crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateOutputBuilder::default()
     }
 }
@@ -30,30 +33,38 @@ impl UpdateLaunchConfigurationTemplateOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationTemplateOutputBuilder {
-    pub(crate) launch_configuration_template: std::option::Option<crate::types::LaunchConfigurationTemplate>,
+    pub(crate) launch_configuration_template:
+        std::option::Option<crate::types::LaunchConfigurationTemplate>,
     _request_id: Option<String>,
 }
 impl UpdateLaunchConfigurationTemplateOutputBuilder {
     /// <p>Updated Launch Configuration Template.</p>
-    pub fn launch_configuration_template(mut self, input: crate::types::LaunchConfigurationTemplate) -> Self {
+    pub fn launch_configuration_template(
+        mut self,
+        input: crate::types::LaunchConfigurationTemplate,
+    ) -> Self {
         self.launch_configuration_template = Some(input);
         self
     }
     /// <p>Updated Launch Configuration Template.</p>
-    pub fn set_launch_configuration_template(mut self, input: std::option::Option<crate::types::LaunchConfigurationTemplate>) -> Self {
-        self.launch_configuration_template = input; self
+    pub fn set_launch_configuration_template(
+        mut self,
+        input: std::option::Option<crate::types::LaunchConfigurationTemplate>,
+    ) -> Self {
+        self.launch_configuration_template = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationTemplateOutput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput).
-    pub fn build(self) -> crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput {
+    pub fn build(self) -> crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput{
         crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateOutput {
             launch_configuration_template: self.launch_configuration_template
             ,
@@ -61,4 +72,3 @@ impl UpdateLaunchConfigurationTemplateOutputBuilder {
         }
     }
 }
-

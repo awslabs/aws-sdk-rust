@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendInvitationInput  {
+pub struct SendInvitationInput {
     /// <p>The ARN of the user to whom to send an invitation. Required.</p>
     #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
 }
 impl SendInvitationInput {
     /// <p>The ARN of the user to whom to send an invitation. Required.</p>
-    pub fn user_arn(&self) -> std::option::Option<& str> {
+    pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl SendInvitationInputBuilder {
     }
     /// <p>The ARN of the user to whom to send an invitation. Required.</p>
     pub fn set_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_arn = input; self
+        self.user_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`SendInvitationInput`](crate::operation::send_invitation::SendInvitationInput).
-    pub fn build(self) -> Result<crate::operation::send_invitation::SendInvitationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::send_invitation::SendInvitationInput {
-                user_arn: self.user_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::send_invitation::SendInvitationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::send_invitation::SendInvitationInput {
+            user_arn: self.user_arn,
+        })
     }
 }
-

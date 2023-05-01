@@ -213,4 +213,3 @@ pub mod verify_email_address;
 
 /// Types for the `VerifyEmailIdentity` operation.
 pub mod verify_email_identity;
-

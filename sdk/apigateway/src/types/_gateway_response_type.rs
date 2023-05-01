@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let gatewayresponsetype = unimplemented!();
 /// match gatewayresponsetype {
@@ -49,14 +49,22 @@
 /// Specifically, when `gatewayresponsetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `GatewayResponseType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum GatewayResponseType {
     #[allow(missing_docs)] // documentation missing in model
     AccessDenied,
@@ -101,79 +109,102 @@ pub enum GatewayResponseType {
     #[allow(missing_docs)] // documentation missing in model
     WafFiltered,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for GatewayResponseType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACCESS_DENIED" => GatewayResponseType::AccessDenied,
-"API_CONFIGURATION_ERROR" => GatewayResponseType::ApiConfigurationError,
-"AUTHORIZER_CONFIGURATION_ERROR" => GatewayResponseType::AuthorizerConfigurationError,
-"AUTHORIZER_FAILURE" => GatewayResponseType::AuthorizerFailure,
-"BAD_REQUEST_BODY" => GatewayResponseType::BadRequestBody,
-"BAD_REQUEST_PARAMETERS" => GatewayResponseType::BadRequestParameters,
-"DEFAULT_4XX" => GatewayResponseType::Default4Xx,
-"DEFAULT_5XX" => GatewayResponseType::Default5Xx,
-"EXPIRED_TOKEN" => GatewayResponseType::ExpiredToken,
-"INTEGRATION_FAILURE" => GatewayResponseType::IntegrationFailure,
-"INTEGRATION_TIMEOUT" => GatewayResponseType::IntegrationTimeout,
-"INVALID_API_KEY" => GatewayResponseType::InvalidApiKey,
-"INVALID_SIGNATURE" => GatewayResponseType::InvalidSignature,
-"MISSING_AUTHENTICATION_TOKEN" => GatewayResponseType::MissingAuthenticationToken,
-"QUOTA_EXCEEDED" => GatewayResponseType::QuotaExceeded,
-"REQUEST_TOO_LARGE" => GatewayResponseType::RequestTooLarge,
-"RESOURCE_NOT_FOUND" => GatewayResponseType::ResourceNotFound,
-"THROTTLED" => GatewayResponseType::Throttled,
-"UNAUTHORIZED" => GatewayResponseType::Unauthorized,
-"UNSUPPORTED_MEDIA_TYPE" => GatewayResponseType::UnsupportedMediaType,
-"WAF_FILTERED" => GatewayResponseType::WafFiltered,
-other => GatewayResponseType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for GatewayResponseType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(GatewayResponseType::from(s))
-                }
-            }
-impl GatewayResponseType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    GatewayResponseType::AccessDenied => "ACCESS_DENIED",
-    GatewayResponseType::ApiConfigurationError => "API_CONFIGURATION_ERROR",
-    GatewayResponseType::AuthorizerConfigurationError => "AUTHORIZER_CONFIGURATION_ERROR",
-    GatewayResponseType::AuthorizerFailure => "AUTHORIZER_FAILURE",
-    GatewayResponseType::BadRequestBody => "BAD_REQUEST_BODY",
-    GatewayResponseType::BadRequestParameters => "BAD_REQUEST_PARAMETERS",
-    GatewayResponseType::Default4Xx => "DEFAULT_4XX",
-    GatewayResponseType::Default5Xx => "DEFAULT_5XX",
-    GatewayResponseType::ExpiredToken => "EXPIRED_TOKEN",
-    GatewayResponseType::IntegrationFailure => "INTEGRATION_FAILURE",
-    GatewayResponseType::IntegrationTimeout => "INTEGRATION_TIMEOUT",
-    GatewayResponseType::InvalidApiKey => "INVALID_API_KEY",
-    GatewayResponseType::InvalidSignature => "INVALID_SIGNATURE",
-    GatewayResponseType::MissingAuthenticationToken => "MISSING_AUTHENTICATION_TOKEN",
-    GatewayResponseType::QuotaExceeded => "QUOTA_EXCEEDED",
-    GatewayResponseType::RequestTooLarge => "REQUEST_TOO_LARGE",
-    GatewayResponseType::ResourceNotFound => "RESOURCE_NOT_FOUND",
-    GatewayResponseType::Throttled => "THROTTLED",
-    GatewayResponseType::Unauthorized => "UNAUTHORIZED",
-    GatewayResponseType::UnsupportedMediaType => "UNSUPPORTED_MEDIA_TYPE",
-    GatewayResponseType::WafFiltered => "WAF_FILTERED",
-    GatewayResponseType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCESS_DENIED" => GatewayResponseType::AccessDenied,
+            "API_CONFIGURATION_ERROR" => GatewayResponseType::ApiConfigurationError,
+            "AUTHORIZER_CONFIGURATION_ERROR" => GatewayResponseType::AuthorizerConfigurationError,
+            "AUTHORIZER_FAILURE" => GatewayResponseType::AuthorizerFailure,
+            "BAD_REQUEST_BODY" => GatewayResponseType::BadRequestBody,
+            "BAD_REQUEST_PARAMETERS" => GatewayResponseType::BadRequestParameters,
+            "DEFAULT_4XX" => GatewayResponseType::Default4Xx,
+            "DEFAULT_5XX" => GatewayResponseType::Default5Xx,
+            "EXPIRED_TOKEN" => GatewayResponseType::ExpiredToken,
+            "INTEGRATION_FAILURE" => GatewayResponseType::IntegrationFailure,
+            "INTEGRATION_TIMEOUT" => GatewayResponseType::IntegrationTimeout,
+            "INVALID_API_KEY" => GatewayResponseType::InvalidApiKey,
+            "INVALID_SIGNATURE" => GatewayResponseType::InvalidSignature,
+            "MISSING_AUTHENTICATION_TOKEN" => GatewayResponseType::MissingAuthenticationToken,
+            "QUOTA_EXCEEDED" => GatewayResponseType::QuotaExceeded,
+            "REQUEST_TOO_LARGE" => GatewayResponseType::RequestTooLarge,
+            "RESOURCE_NOT_FOUND" => GatewayResponseType::ResourceNotFound,
+            "THROTTLED" => GatewayResponseType::Throttled,
+            "UNAUTHORIZED" => GatewayResponseType::Unauthorized,
+            "UNSUPPORTED_MEDIA_TYPE" => GatewayResponseType::UnsupportedMediaType,
+            "WAF_FILTERED" => GatewayResponseType::WafFiltered,
+            other => GatewayResponseType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACCESS_DENIED", "API_CONFIGURATION_ERROR", "AUTHORIZER_CONFIGURATION_ERROR", "AUTHORIZER_FAILURE", "BAD_REQUEST_BODY", "BAD_REQUEST_PARAMETERS", "DEFAULT_4XX", "DEFAULT_5XX", "EXPIRED_TOKEN", "INTEGRATION_FAILURE", "INTEGRATION_TIMEOUT", "INVALID_API_KEY", "INVALID_SIGNATURE", "MISSING_AUTHENTICATION_TOKEN", "QUOTA_EXCEEDED", "REQUEST_TOO_LARGE", "RESOURCE_NOT_FOUND", "THROTTLED", "UNAUTHORIZED", "UNSUPPORTED_MEDIA_TYPE", "WAF_FILTERED"]
-                }
-            }
-impl AsRef<str> for GatewayResponseType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for GatewayResponseType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(GatewayResponseType::from(s))
+    }
+}
+impl GatewayResponseType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            GatewayResponseType::AccessDenied => "ACCESS_DENIED",
+            GatewayResponseType::ApiConfigurationError => "API_CONFIGURATION_ERROR",
+            GatewayResponseType::AuthorizerConfigurationError => "AUTHORIZER_CONFIGURATION_ERROR",
+            GatewayResponseType::AuthorizerFailure => "AUTHORIZER_FAILURE",
+            GatewayResponseType::BadRequestBody => "BAD_REQUEST_BODY",
+            GatewayResponseType::BadRequestParameters => "BAD_REQUEST_PARAMETERS",
+            GatewayResponseType::Default4Xx => "DEFAULT_4XX",
+            GatewayResponseType::Default5Xx => "DEFAULT_5XX",
+            GatewayResponseType::ExpiredToken => "EXPIRED_TOKEN",
+            GatewayResponseType::IntegrationFailure => "INTEGRATION_FAILURE",
+            GatewayResponseType::IntegrationTimeout => "INTEGRATION_TIMEOUT",
+            GatewayResponseType::InvalidApiKey => "INVALID_API_KEY",
+            GatewayResponseType::InvalidSignature => "INVALID_SIGNATURE",
+            GatewayResponseType::MissingAuthenticationToken => "MISSING_AUTHENTICATION_TOKEN",
+            GatewayResponseType::QuotaExceeded => "QUOTA_EXCEEDED",
+            GatewayResponseType::RequestTooLarge => "REQUEST_TOO_LARGE",
+            GatewayResponseType::ResourceNotFound => "RESOURCE_NOT_FOUND",
+            GatewayResponseType::Throttled => "THROTTLED",
+            GatewayResponseType::Unauthorized => "UNAUTHORIZED",
+            GatewayResponseType::UnsupportedMediaType => "UNSUPPORTED_MEDIA_TYPE",
+            GatewayResponseType::WafFiltered => "WAF_FILTERED",
+            GatewayResponseType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCESS_DENIED",
+            "API_CONFIGURATION_ERROR",
+            "AUTHORIZER_CONFIGURATION_ERROR",
+            "AUTHORIZER_FAILURE",
+            "BAD_REQUEST_BODY",
+            "BAD_REQUEST_PARAMETERS",
+            "DEFAULT_4XX",
+            "DEFAULT_5XX",
+            "EXPIRED_TOKEN",
+            "INTEGRATION_FAILURE",
+            "INTEGRATION_TIMEOUT",
+            "INVALID_API_KEY",
+            "INVALID_SIGNATURE",
+            "MISSING_AUTHENTICATION_TOKEN",
+            "QUOTA_EXCEEDED",
+            "REQUEST_TOO_LARGE",
+            "RESOURCE_NOT_FOUND",
+            "THROTTLED",
+            "UNAUTHORIZED",
+            "UNSUPPORTED_MEDIA_TYPE",
+            "WAF_FILTERED",
+        ]
+    }
+}
+impl AsRef<str> for GatewayResponseType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

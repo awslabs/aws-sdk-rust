@@ -2,54 +2,58 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectStackSetDriftInput  {
+pub struct DetectStackSetDriftInput {
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
     #[doc(hidden)]
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p> 
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
     #[doc(hidden)]
     pub operation_preferences: std::option::Option<crate::types::StackSetOperationPreferences>,
     /// <p> <i>The ID of the stack set operation.</i> </p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p> 
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p> 
-    /// <ul> 
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li> 
-    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li> 
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <ul>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub call_as: std::option::Option<crate::types::CallAs>,
 }
 impl DetectStackSetDriftInput {
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
-    pub fn stack_set_name(&self) -> std::option::Option<& str> {
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
-    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p> 
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn operation_preferences(&self) -> std::option::Option<& crate::types::StackSetOperationPreferences> {
+    pub fn operation_preferences(
+        &self,
+    ) -> std::option::Option<&crate::types::StackSetOperationPreferences> {
         self.operation_preferences.as_ref()
     }
     /// <p> <i>The ID of the stack set operation.</i> </p>
-    pub fn operation_id(&self) -> std::option::Option<& str> {
+    pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p> 
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p> 
-    /// <ul> 
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li> 
-    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li> 
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <ul>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
-    pub fn call_as(&self) -> std::option::Option<& crate::types::CallAs> {
+    pub fn call_as(&self) -> std::option::Option<&crate::types::CallAs> {
         self.call_as.as_ref()
     }
 }
 impl DetectStackSetDriftInput {
     /// Creates a new builder-style object to manufacture [`DetectStackSetDriftInput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftInput).
-    pub fn builder() -> crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder {
-        crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder {
+        crate::operation::detect_stack_set_drift::builders::DetectStackSetDriftInputBuilder::default(
+        )
     }
 }
 
@@ -58,7 +62,8 @@ impl DetectStackSetDriftInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DetectStackSetDriftInputBuilder {
     pub(crate) stack_set_name: std::option::Option<std::string::String>,
-    pub(crate) operation_preferences: std::option::Option<crate::types::StackSetOperationPreferences>,
+    pub(crate) operation_preferences:
+        std::option::Option<crate::types::StackSetOperationPreferences>,
     pub(crate) operation_id: std::option::Option<std::string::String>,
     pub(crate) call_as: std::option::Option<crate::types::CallAs>,
 }
@@ -70,18 +75,26 @@ impl DetectStackSetDriftInputBuilder {
     }
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
     pub fn set_stack_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_set_name = input; self
+        self.stack_set_name = input;
+        self
     }
-    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p> 
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn operation_preferences(mut self, input: crate::types::StackSetOperationPreferences) -> Self {
+    pub fn operation_preferences(
+        mut self,
+        input: crate::types::StackSetOperationPreferences,
+    ) -> Self {
         self.operation_preferences = Some(input);
         self
     }
-    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p> 
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set operation.</p>
     /// <p>For more information about maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
-    pub fn set_operation_preferences(mut self, input: std::option::Option<crate::types::StackSetOperationPreferences>) -> Self {
-        self.operation_preferences = input; self
+    pub fn set_operation_preferences(
+        mut self,
+        input: std::option::Option<crate::types::StackSetOperationPreferences>,
+    ) -> Self {
+        self.operation_preferences = input;
+        self
     }
     /// <p> <i>The ID of the stack set operation.</i> </p>
     pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,41 +103,43 @@ impl DetectStackSetDriftInputBuilder {
     }
     /// <p> <i>The ID of the stack set operation.</i> </p>
     pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.operation_id = input; self
+        self.operation_id = input;
+        self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p> 
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p> 
-    /// <ul> 
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li> 
-    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li> 
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <ul>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
     pub fn call_as(mut self, input: crate::types::CallAs) -> Self {
         self.call_as = Some(input);
         self
     }
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p> 
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p> 
-    /// <ul> 
-    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li> 
-    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li> 
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <ul>
+    /// <li> <p>If you are signed in to the management account, specify <code>SELF</code>.</p> </li>
+    /// <li> <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p> <p>Your Amazon Web Services account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
     /// </ul>
     pub fn set_call_as(mut self, input: std::option::Option<crate::types::CallAs>) -> Self {
-        self.call_as = input; self
+        self.call_as = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetectStackSetDriftInput`](crate::operation::detect_stack_set_drift::DetectStackSetDriftInput).
-    pub fn build(self) -> Result<crate::operation::detect_stack_set_drift::DetectStackSetDriftInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::detect_stack_set_drift::DetectStackSetDriftInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::detect_stack_set_drift::DetectStackSetDriftInput {
-                stack_set_name: self.stack_set_name
-                ,
-                operation_preferences: self.operation_preferences
-                ,
-                operation_id: self.operation_id
-                ,
-                call_as: self.call_as
-                ,
-            }
+                stack_set_name: self.stack_set_name,
+                operation_preferences: self.operation_preferences,
+                operation_id: self.operation_id,
+                call_as: self.call_as,
+            },
         )
     }
 }
-

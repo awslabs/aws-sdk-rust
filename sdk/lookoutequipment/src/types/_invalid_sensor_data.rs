@@ -3,7 +3,7 @@
 /// <p> Entity that comprises aggregated information on sensors having insufficient data. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidSensorData  {
+pub struct InvalidSensorData {
     /// <p> Indicates the number of sensors that have at least some invalid values. </p>
     #[doc(hidden)]
     pub affected_sensor_count: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl InvalidSensorDataBuilder {
     }
     /// <p> Indicates the number of sensors that have at least some invalid values. </p>
     pub fn set_affected_sensor_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.affected_sensor_count = input; self
+        self.affected_sensor_count = input;
+        self
     }
     /// <p> Indicates the total number of invalid values across all the sensors. </p>
     pub fn total_number_of_invalid_values(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl InvalidSensorDataBuilder {
     }
     /// <p> Indicates the total number of invalid values across all the sensors. </p>
     pub fn set_total_number_of_invalid_values(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_number_of_invalid_values = input; self
+        self.total_number_of_invalid_values = input;
+        self
     }
     /// Consumes the builder and constructs a [`InvalidSensorData`](crate::types::InvalidSensorData).
     pub fn build(self) -> crate::types::InvalidSensorData {
         crate::types::InvalidSensorData {
-            affected_sensor_count: self.affected_sensor_count
-            ,
-            total_number_of_invalid_values: self.total_number_of_invalid_values
-            ,
+            affected_sensor_count: self.affected_sensor_count,
+            total_number_of_invalid_values: self.total_number_of_invalid_values,
         }
     }
 }
-

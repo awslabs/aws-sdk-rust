@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let httpversion = unimplemented!();
 /// match httpversion {
@@ -32,14 +32,22 @@
 /// Specifically, when `httpversion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `HttpVersion::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum HttpVersion {
     #[allow(missing_docs)] // documentation missing in model
     Http11,
@@ -50,45 +58,44 @@ pub enum HttpVersion {
     #[allow(missing_docs)] // documentation missing in model
     Http3,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for HttpVersion {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "http1.1" => HttpVersion::Http11,
-"http2" => HttpVersion::Http2,
-"http2and3" => HttpVersion::Http2and3,
-"http3" => HttpVersion::Http3,
-other => HttpVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for HttpVersion {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(HttpVersion::from(s))
-                }
-            }
-impl HttpVersion {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    HttpVersion::Http11 => "http1.1",
-    HttpVersion::Http2 => "http2",
-    HttpVersion::Http2and3 => "http2and3",
-    HttpVersion::Http3 => "http3",
-    HttpVersion::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "http1.1" => HttpVersion::Http11,
+            "http2" => HttpVersion::Http2,
+            "http2and3" => HttpVersion::Http2and3,
+            "http3" => HttpVersion::Http3,
+            other => HttpVersion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["http1.1", "http2", "http2and3", "http3"]
-                }
-            }
-impl AsRef<str> for HttpVersion {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for HttpVersion {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HttpVersion::from(s))
+    }
+}
+impl HttpVersion {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            HttpVersion::Http11 => "http1.1",
+            HttpVersion::Http2 => "http2",
+            HttpVersion::Http2and3 => "http2and3",
+            HttpVersion::Http3 => "http3",
+            HttpVersion::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["http1.1", "http2", "http2and3", "http3"]
+    }
+}
+impl AsRef<str> for HttpVersion {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

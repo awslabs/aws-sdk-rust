@@ -3,14 +3,14 @@
 /// <p>Provides information about the type and the names of attributes that were removed from all the endpoints that are associated with an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttributesResource  {
+pub struct AttributesResource {
     /// <p>The unique identifier for the application.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
-    /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p> 
+    /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
-    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li> 
-    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li> 
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
     #[doc(hidden)]
@@ -21,20 +21,20 @@ pub struct AttributesResource  {
 }
 impl AttributesResource {
     /// <p>The unique identifier for the application.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
-    /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p> 
+    /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
-    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li> 
-    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li> 
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
-    pub fn attribute_type(&self) -> std::option::Option<& str> {
+    pub fn attribute_type(&self) -> std::option::Option<&str> {
         self.attribute_type.as_deref()
     }
     /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
-    pub fn attributes(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn attributes(&self) -> std::option::Option<&[std::string::String]> {
         self.attributes.as_deref()
     }
 }
@@ -61,26 +61,28 @@ impl AttributesResourceBuilder {
     }
     /// <p>The unique identifier for the application.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
-    /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p> 
+    /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
-    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li> 
-    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li> 
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
     pub fn attribute_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.attribute_type = Some(input.into());
         self
     }
-    /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p> 
+    /// <p>The type of attribute or attributes that were removed from the endpoints. Valid values are:</p>
     /// <ul>
-    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li> 
-    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li> 
+    /// <li><p>endpoint-custom-attributes - Custom attributes that describe endpoints.</p></li>
+    /// <li><p>endpoint-metric-attributes - Custom metrics that your app reports to Amazon Pinpoint for endpoints.</p></li>
     /// <li><p>endpoint-user-attributes - Custom attributes that describe users.</p></li>
     /// </ul>
     pub fn set_attribute_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_type = input; self
+        self.attribute_type = input;
+        self
     }
     /// Appends an item to `attributes`.
     ///
@@ -89,24 +91,24 @@ impl AttributesResourceBuilder {
     /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
     pub fn attributes(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-                        v.push(input.into());
-                        self.attributes = Some(v);
-                        self
+        v.push(input.into());
+        self.attributes = Some(v);
+        self
     }
     /// <p>An array that specifies the names of the attributes that were removed from the endpoints.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttributesResource`](crate::types::AttributesResource).
     pub fn build(self) -> crate::types::AttributesResource {
         crate::types::AttributesResource {
-            application_id: self.application_id
-            ,
-            attribute_type: self.attribute_type
-            ,
-            attributes: self.attributes
-            ,
+            application_id: self.application_id,
+            attribute_type: self.attribute_type,
+            attributes: self.attributes,
         }
     }
 }
-

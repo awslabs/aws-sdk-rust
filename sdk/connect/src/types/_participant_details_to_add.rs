@@ -3,7 +3,7 @@
 /// <p>The details to add for the participant.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParticipantDetailsToAdd  {
+pub struct ParticipantDetailsToAdd {
     /// <p>The role of the participant being added.</p>
     #[doc(hidden)]
     pub participant_role: std::option::Option<crate::types::ParticipantRole>,
@@ -13,11 +13,11 @@ pub struct ParticipantDetailsToAdd  {
 }
 impl ParticipantDetailsToAdd {
     /// <p>The role of the participant being added.</p>
-    pub fn participant_role(&self) -> std::option::Option<& crate::types::ParticipantRole> {
+    pub fn participant_role(&self) -> std::option::Option<&crate::types::ParticipantRole> {
         self.participant_role.as_ref()
     }
     /// <p>The display name of the participant.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ParticipantDetailsToAddBuilder {
         self
     }
     /// <p>The role of the participant being added.</p>
-    pub fn set_participant_role(mut self, input: std::option::Option<crate::types::ParticipantRole>) -> Self {
-        self.participant_role = input; self
+    pub fn set_participant_role(
+        mut self,
+        input: std::option::Option<crate::types::ParticipantRole>,
+    ) -> Self {
+        self.participant_role = input;
+        self
     }
     /// <p>The display name of the participant.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl ParticipantDetailsToAddBuilder {
     }
     /// <p>The display name of the participant.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParticipantDetailsToAdd`](crate::types::ParticipantDetailsToAdd).
     pub fn build(self) -> crate::types::ParticipantDetailsToAdd {
         crate::types::ParticipantDetailsToAdd {
-            participant_role: self.participant_role
-            ,
-            display_name: self.display_name
-            ,
+            participant_role: self.participant_role,
+            display_name: self.display_name,
         }
     }
 }
-

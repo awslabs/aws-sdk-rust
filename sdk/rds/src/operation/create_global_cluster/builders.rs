@@ -4,60 +4,83 @@ pub use crate::operation::create_global_cluster::_create_global_cluster_output::
 pub use crate::operation::create_global_cluster::_create_global_cluster_input::CreateGlobalClusterInputBuilder;
 
 /// Fluent builder constructing a request to `CreateGlobalCluster`.
-/// 
-/// <p>Creates an Aurora global database spread across multiple Amazon Web Services Regions. The global database contains a single primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.</p> 
-/// <p>You can create a global database that is initially empty, and then add a primary cluster and a secondary cluster to it. Or you can specify an existing Aurora cluster during the create operation, and this cluster becomes the primary cluster of the global database.</p> <note> 
-/// <p>This action applies only to Aurora DB clusters.</p> 
+///
+/// <p>Creates an Aurora global database spread across multiple Amazon Web Services Regions. The global database contains a single primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.</p>
+/// <p>You can create a global database that is initially empty, and then add a primary cluster and a secondary cluster to it. Or you can specify an existing Aurora cluster during the create operation, and this cluster becomes the primary cluster of the global database.</p> <note>
+/// <p>This action applies only to Aurora DB clusters.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateGlobalClusterFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder,
+    inner: crate::operation::create_global_cluster::builders::CreateGlobalClusterInputBuilder,
 }
-impl CreateGlobalClusterFluentBuilder  {
+impl CreateGlobalClusterFluentBuilder {
     /// Creates a new `CreateGlobalCluster`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_global_cluster::CreateGlobalCluster, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_global_cluster::CreateGlobalClusterError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_global_cluster::CreateGlobalClusterOutput, aws_smithy_http::result::SdkError<crate::operation::create_global_cluster::CreateGlobalClusterError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_global_cluster::CreateGlobalCluster,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_global_cluster::CreateGlobalClusterError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_global_cluster::CreateGlobalClusterOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_global_cluster::CreateGlobalClusterError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.</p>
     pub fn global_cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_cluster_identifier(input.into());
         self
     }
     /// <p>The cluster identifier of the new global database cluster. This parameter is stored as a lowercase string.</p>
-    pub fn set_global_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_global_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_global_cluster_identifier(input);
         self
     }
@@ -67,7 +90,10 @@ impl CreateGlobalClusterFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) to use as the primary cluster of the global database. This parameter is optional.</p>
-    pub fn set_source_db_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_db_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_db_cluster_identifier(input);
         self
     }
@@ -122,4 +148,3 @@ impl CreateGlobalClusterFluentBuilder  {
         self
     }
 }
-

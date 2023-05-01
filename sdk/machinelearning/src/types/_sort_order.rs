@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let sortorder = unimplemented!();
 /// match sortorder {
@@ -30,7 +30,7 @@
 /// Specifically, when `sortorder` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SortOrder::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
@@ -47,48 +47,55 @@
 /// </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SortOrder {
     #[allow(missing_docs)] // documentation missing in model
     Asc,
     #[allow(missing_docs)] // documentation missing in model
     Dsc,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SortOrder {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "asc" => SortOrder::Asc,
-"dsc" => SortOrder::Dsc,
-other => SortOrder::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for SortOrder {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(SortOrder::from(s))
-                }
-            }
-impl SortOrder {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    SortOrder::Asc => "asc",
-    SortOrder::Dsc => "dsc",
-    SortOrder::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "asc" => SortOrder::Asc,
+            "dsc" => SortOrder::Dsc,
+            other => SortOrder::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["asc", "dsc"]
-                }
-            }
-impl AsRef<str> for SortOrder {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for SortOrder {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SortOrder::from(s))
+    }
+}
+impl SortOrder {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SortOrder::Asc => "asc",
+            SortOrder::Dsc => "dsc",
+            SortOrder::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["asc", "dsc"]
+    }
+}
+impl AsRef<str> for SortOrder {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLensVersionOutput  {
+pub struct CreateLensVersionOutput {
     /// <p>The ARN for the lens.</p>
     #[doc(hidden)]
     pub lens_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct CreateLensVersionOutput  {
 }
 impl CreateLensVersionOutput {
     /// <p>The ARN for the lens.</p>
-    pub fn lens_arn(&self) -> std::option::Option<& str> {
+    pub fn lens_arn(&self) -> std::option::Option<&str> {
         self.lens_arn.as_deref()
     }
     /// <p>The version of the lens.</p>
-    pub fn lens_version(&self) -> std::option::Option<& str> {
+    pub fn lens_version(&self) -> std::option::Option<&str> {
         self.lens_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLensVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateLensVersionOutput {
     /// Creates a new builder-style object to manufacture [`CreateLensVersionOutput`](crate::operation::create_lens_version::CreateLensVersionOutput).
-    pub fn builder() -> crate::operation::create_lens_version::builders::CreateLensVersionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_lens_version::builders::CreateLensVersionOutputBuilder {
         crate::operation::create_lens_version::builders::CreateLensVersionOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl CreateLensVersionOutputBuilder {
     }
     /// <p>The ARN for the lens.</p>
     pub fn set_lens_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_arn = input; self
+        self.lens_arn = input;
+        self
     }
     /// <p>The version of the lens.</p>
     pub fn lens_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +60,24 @@ impl CreateLensVersionOutputBuilder {
     }
     /// <p>The version of the lens.</p>
     pub fn set_lens_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.lens_version = input; self
+        self.lens_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateLensVersionOutput`](crate::operation::create_lens_version::CreateLensVersionOutput).
     pub fn build(self) -> crate::operation::create_lens_version::CreateLensVersionOutput {
         crate::operation::create_lens_version::CreateLensVersionOutput {
-            lens_arn: self.lens_arn
-            ,
-            lens_version: self.lens_version
-            ,
+            lens_arn: self.lens_arn,
+            lens_version: self.lens_version,
             _request_id: self._request_id,
         }
     }
 }
-

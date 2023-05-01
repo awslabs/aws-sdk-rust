@@ -3,45 +3,45 @@
 /// <p> Describes a custom rewrite or redirect rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomRule  {
+pub struct CustomRule {
     /// <p> The source pattern for a URL rewrite or redirect rule. </p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
     #[doc(hidden)]
     pub target: std::option::Option<std::string::String>,
-    /// <p> The status code for a URL rewrite or redirect rule. </p> 
-    /// <dl> 
+    /// <p> The status code for a URL rewrite or redirect rule. </p>
+    /// <dl>
     /// <dt>
     /// 200
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 200 rewrite rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 200 rewrite rule.</p>
+    /// </dd>
     /// <dt>
     /// 301
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p>
+    /// </dd>
     /// <dt>
     /// 302
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 302 temporary redirect rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 302 temporary redirect rule.</p>
+    /// </dd>
     /// <dt>
     /// 404
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 404 redirect rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 404 redirect rule.</p>
+    /// </dd>
     /// <dt>
     /// 404-200
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 404 rewrite rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 404 rewrite rule.</p>
+    /// </dd>
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -51,51 +51,51 @@ pub struct CustomRule  {
 }
 impl CustomRule {
     /// <p> The source pattern for a URL rewrite or redirect rule. </p>
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
-    pub fn target(&self) -> std::option::Option<& str> {
+    pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
-    /// <p> The status code for a URL rewrite or redirect rule. </p> 
-    /// <dl> 
+    /// <p> The status code for a URL rewrite or redirect rule. </p>
+    /// <dl>
     /// <dt>
     /// 200
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 200 rewrite rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 200 rewrite rule.</p>
+    /// </dd>
     /// <dt>
     /// 301
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p>
+    /// </dd>
     /// <dt>
     /// 302
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 302 temporary redirect rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 302 temporary redirect rule.</p>
+    /// </dd>
     /// <dt>
     /// 404
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 404 redirect rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 404 redirect rule.</p>
+    /// </dd>
     /// <dt>
     /// 404-200
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 404 rewrite rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 404 rewrite rule.</p>
+    /// </dd>
     /// </dl>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p> The condition for a URL rewrite or redirect rule, such as a country code. </p>
-    pub fn condition(&self) -> std::option::Option<& str> {
+    pub fn condition(&self) -> std::option::Option<&str> {
         self.condition.as_deref()
     }
 }
@@ -123,7 +123,8 @@ impl CustomRuleBuilder {
     }
     /// <p> The source pattern for a URL rewrite or redirect rule. </p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
     pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,80 +133,82 @@ impl CustomRuleBuilder {
     }
     /// <p> The target pattern for a URL rewrite or redirect rule. </p>
     pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target = input; self
+        self.target = input;
+        self
     }
-    /// <p> The status code for a URL rewrite or redirect rule. </p> 
-    /// <dl> 
+    /// <p> The status code for a URL rewrite or redirect rule. </p>
+    /// <dl>
     /// <dt>
     /// 200
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 200 rewrite rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 200 rewrite rule.</p>
+    /// </dd>
     /// <dt>
     /// 301
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p>
+    /// </dd>
     /// <dt>
     /// 302
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 302 temporary redirect rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 302 temporary redirect rule.</p>
+    /// </dd>
     /// <dt>
     /// 404
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 404 redirect rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 404 redirect rule.</p>
+    /// </dd>
     /// <dt>
     /// 404-200
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 404 rewrite rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 404 rewrite rule.</p>
+    /// </dd>
     /// </dl>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
         self.status = Some(input.into());
         self
     }
-    /// <p> The status code for a URL rewrite or redirect rule. </p> 
-    /// <dl> 
+    /// <p> The status code for a URL rewrite or redirect rule. </p>
+    /// <dl>
     /// <dt>
     /// 200
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 200 rewrite rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 200 rewrite rule.</p>
+    /// </dd>
     /// <dt>
     /// 301
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target URL. </p>
+    /// </dd>
     /// <dt>
     /// 302
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 302 temporary redirect rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 302 temporary redirect rule.</p>
+    /// </dd>
     /// <dt>
     /// 404
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 404 redirect rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 404 redirect rule.</p>
+    /// </dd>
     /// <dt>
     /// 404-200
-    /// </dt> 
-    /// <dd> 
-    /// <p>Represents a 404 rewrite rule.</p> 
-    /// </dd> 
+    /// </dt>
+    /// <dd>
+    /// <p>Represents a 404 rewrite rule.</p>
+    /// </dd>
     /// </dl>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p> The condition for a URL rewrite or redirect rule, such as a country code. </p>
     pub fn condition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -214,20 +217,16 @@ impl CustomRuleBuilder {
     }
     /// <p> The condition for a URL rewrite or redirect rule, such as a country code. </p>
     pub fn set_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.condition = input; self
+        self.condition = input;
+        self
     }
     /// Consumes the builder and constructs a [`CustomRule`](crate::types::CustomRule).
     pub fn build(self) -> crate::types::CustomRule {
         crate::types::CustomRule {
-            source: self.source
-            ,
-            target: self.target
-            ,
-            status: self.status
-            ,
-            condition: self.condition
-            ,
+            source: self.source,
+            target: self.target,
+            status: self.status,
+            condition: self.condition,
         }
     }
 }
-

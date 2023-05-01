@@ -636,4 +636,3 @@ pub mod builders;
 
 /// Error types that AWS IoT Wireless can respond with.
 pub mod error;
-

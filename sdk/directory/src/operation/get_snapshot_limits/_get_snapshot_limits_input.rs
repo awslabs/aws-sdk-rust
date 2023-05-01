@@ -3,20 +3,21 @@
 /// <p>Contains the inputs for the <code>GetSnapshotLimits</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSnapshotLimitsInput  {
+pub struct GetSnapshotLimitsInput {
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
 }
 impl GetSnapshotLimitsInput {
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
 }
 impl GetSnapshotLimitsInput {
     /// Creates a new builder-style object to manufacture [`GetSnapshotLimitsInput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsInput).
-    pub fn builder() -> crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsInputBuilder {
         crate::operation::get_snapshot_limits::builders::GetSnapshotLimitsInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl GetSnapshotLimitsInputBuilder {
     }
     /// <p>Contains the identifier of the directory to obtain the limits for.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSnapshotLimitsInput`](crate::operation::get_snapshot_limits::GetSnapshotLimitsInput).
-    pub fn build(self) -> Result<crate::operation::get_snapshot_limits::GetSnapshotLimitsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_snapshot_limits::GetSnapshotLimitsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_snapshot_limits::GetSnapshotLimitsInput {
-                directory_id: self.directory_id
-                ,
-            }
+                directory_id: self.directory_id,
+            },
         )
     }
 }
-

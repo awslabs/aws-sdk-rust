@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportCrlOutput  {
+pub struct ImportCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     #[doc(hidden)]
     pub crl: std::option::Option<crate::types::CrlDetail>,
@@ -10,15 +10,15 @@ pub struct ImportCrlOutput  {
 }
 impl ImportCrlOutput {
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
-    pub fn crl(&self) -> std::option::Option<& crate::types::CrlDetail> {
+    pub fn crl(&self) -> std::option::Option<&crate::types::CrlDetail> {
         self.crl.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ImportCrlOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ImportCrlOutput {
     /// Creates a new builder-style object to manufacture [`ImportCrlOutput`](crate::operation::import_crl::ImportCrlOutput).
     pub fn builder() -> crate::operation::import_crl::builders::ImportCrlOutputBuilder {
@@ -41,24 +41,23 @@ impl ImportCrlOutputBuilder {
     }
     /// <p>The state of the certificate revocation list (CRL) after a read or write operation.</p>
     pub fn set_crl(mut self, input: std::option::Option<crate::types::CrlDetail>) -> Self {
-        self.crl = input; self
+        self.crl = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ImportCrlOutput`](crate::operation::import_crl::ImportCrlOutput).
     pub fn build(self) -> crate::operation::import_crl::ImportCrlOutput {
         crate::operation::import_crl::ImportCrlOutput {
-            crl: self.crl
-            ,
+            crl: self.crl,
             _request_id: self._request_id,
         }
     }
 }
-

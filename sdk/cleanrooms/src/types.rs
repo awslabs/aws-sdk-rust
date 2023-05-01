@@ -248,4 +248,3 @@ pub mod builders;
 
 /// Error types that AWS Clean Rooms Service can respond with.
 pub mod error;
-

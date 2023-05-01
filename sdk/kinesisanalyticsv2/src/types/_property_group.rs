@@ -3,21 +3,25 @@
 /// <p>Property key-value pairs passed into an application.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PropertyGroup  {
+pub struct PropertyGroup {
     /// <p>Describes the key of an application execution property key-value pair.</p>
     #[doc(hidden)]
     pub property_group_id: std::option::Option<std::string::String>,
     /// <p>Describes the value of an application execution property key-value pair.</p>
     #[doc(hidden)]
-    pub property_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub property_map:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PropertyGroup {
     /// <p>Describes the key of an application execution property key-value pair.</p>
-    pub fn property_group_id(&self) -> std::option::Option<& str> {
+    pub fn property_group_id(&self) -> std::option::Option<&str> {
         self.property_group_id.as_deref()
     }
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    pub fn property_map(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn property_map(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.property_map.as_ref()
     }
 }
@@ -33,7 +37,8 @@ impl PropertyGroup {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct PropertyGroupBuilder {
     pub(crate) property_group_id: std::option::Option<std::string::String>,
-    pub(crate) property_map: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) property_map:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl PropertyGroupBuilder {
     /// <p>Describes the key of an application execution property key-value pair.</p>
@@ -42,32 +47,43 @@ impl PropertyGroupBuilder {
         self
     }
     /// <p>Describes the key of an application execution property key-value pair.</p>
-    pub fn set_property_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.property_group_id = input; self
+    pub fn set_property_group_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.property_group_id = input;
+        self
     }
     /// Adds a key-value pair to `property_map`.
     ///
     /// To override the contents of this collection use [`set_property_map`](Self::set_property_map).
     ///
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    pub fn property_map(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn property_map(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.property_map.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.property_map = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.property_map = Some(hash_map);
+        self
     }
     /// <p>Describes the value of an application execution property key-value pair.</p>
-    pub fn set_property_map(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.property_map = input; self
+    pub fn set_property_map(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.property_map = input;
+        self
     }
     /// Consumes the builder and constructs a [`PropertyGroup`](crate::types::PropertyGroup).
     pub fn build(self) -> crate::types::PropertyGroup {
         crate::types::PropertyGroup {
-            property_group_id: self.property_group_id
-            ,
-            property_map: self.property_map
-            ,
+            property_group_id: self.property_group_id,
+            property_map: self.property_map,
         }
     }
 }
-

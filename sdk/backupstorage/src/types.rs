@@ -20,4 +20,3 @@ pub mod builders;
 
 /// Error types that AWS Backup Storage can respond with.
 pub mod error;
-

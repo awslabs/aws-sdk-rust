@@ -4,56 +4,81 @@ pub use crate::operation::list_signing_platforms::_list_signing_platforms_output
 pub use crate::operation::list_signing_platforms::_list_signing_platforms_input::ListSigningPlatformsInputBuilder;
 
 /// Fluent builder constructing a request to `ListSigningPlatforms`.
-/// 
+///
 /// <p>Lists all signing platforms available in code signing that match the request parameters. If additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListSigningPlatformsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_signing_platforms::builders::ListSigningPlatformsInputBuilder,
+    inner: crate::operation::list_signing_platforms::builders::ListSigningPlatformsInputBuilder,
 }
-impl ListSigningPlatformsFluentBuilder  {
+impl ListSigningPlatformsFluentBuilder {
     /// Creates a new `ListSigningPlatforms`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_signing_platforms::ListSigningPlatforms, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_signing_platforms::ListSigningPlatformsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_signing_platforms::ListSigningPlatformsOutput, aws_smithy_http::result::SdkError<crate::operation::list_signing_platforms::ListSigningPlatformsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_signing_platforms::ListSigningPlatforms,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_signing_platforms::ListSigningPlatformsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_signing_platforms::ListSigningPlatformsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_signing_platforms::ListSigningPlatformsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator {
-                                crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator {
+        crate::operation::list_signing_platforms::paginator::ListSigningPlatformsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The category type of a signing platform.</p>
     pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.category(input.into());
@@ -105,4 +130,3 @@ impl ListSigningPlatformsFluentBuilder  {
         self
     }
 }
-

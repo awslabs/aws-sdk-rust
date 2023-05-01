@@ -3,7 +3,7 @@
 /// <p>Contains a cluster's state, a cluster's ID, and other important information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ClusterListEntry  {
+pub struct ClusterListEntry {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct ClusterListEntry  {
 }
 impl ClusterListEntry {
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-    pub fn cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
     /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
-    pub fn cluster_state(&self) -> std::option::Option<& crate::types::ClusterState> {
+    pub fn cluster_state(&self) -> std::option::Option<&crate::types::ClusterState> {
         self.cluster_state.as_ref()
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl ClusterListEntryBuilder {
     }
     /// <p>The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input; self
+        self.cluster_id = input;
+        self
     }
     /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
     pub fn cluster_state(mut self, input: crate::types::ClusterState) -> Self {
@@ -67,8 +68,12 @@ impl ClusterListEntryBuilder {
         self
     }
     /// <p>The current state of this cluster. For information about the state of a specific node, see <code>JobListEntry$JobState</code>.</p>
-    pub fn set_cluster_state(mut self, input: std::option::Option<crate::types::ClusterState>) -> Self {
-        self.cluster_state = input; self
+    pub fn set_cluster_state(
+        mut self,
+        input: std::option::Option<crate::types::ClusterState>,
+    ) -> Self {
+        self.cluster_state = input;
+        self
     }
     /// <p>The creation date for this cluster.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,8 +81,12 @@ impl ClusterListEntryBuilder {
         self
     }
     /// <p>The creation date for this cluster.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +95,16 @@ impl ClusterListEntryBuilder {
     }
     /// <p>Defines an optional description of the cluster, for example <code>Environmental Data Cluster-01</code>.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`ClusterListEntry`](crate::types::ClusterListEntry).
     pub fn build(self) -> crate::types::ClusterListEntry {
         crate::types::ClusterListEntry {
-            cluster_id: self.cluster_id
-            ,
-            cluster_state: self.cluster_state
-            ,
-            creation_date: self.creation_date
-            ,
-            description: self.description
-            ,
+            cluster_id: self.cluster_id,
+            cluster_state: self.cluster_state,
+            creation_date: self.creation_date,
+            description: self.description,
         }
     }
 }
-

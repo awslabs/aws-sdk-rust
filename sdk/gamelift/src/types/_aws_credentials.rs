@@ -3,7 +3,7 @@
 /// <p>Temporary access credentials used for uploading game build files to Amazon GameLift. They are valid for a limited time. If they expire before you upload your game build, get a new set by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_RequestUploadCredentials.html">RequestUploadCredentials</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AwsCredentials  {
+pub struct AwsCredentials {
     /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct AwsCredentials  {
 }
 impl AwsCredentials {
     /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
-    pub fn access_key_id(&self) -> std::option::Option<& str> {
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
     /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
-    pub fn secret_access_key(&self) -> std::option::Option<& str> {
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
         self.secret_access_key.as_deref()
     }
     /// <p>Token used to associate a specific build ID with the files uploaded using these credentials.</p>
-    pub fn session_token(&self) -> std::option::Option<& str> {
+    pub fn session_token(&self) -> std::option::Option<&str> {
         self.session_token.as_deref()
     }
 }
-impl  std::fmt::Debug for AwsCredentials  {
+impl std::fmt::Debug for AwsCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsCredentials");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
@@ -60,7 +60,8 @@ impl AwsCredentialsBuilder {
     }
     /// <p>Temporary key allowing access to the Amazon GameLift S3 account.</p>
     pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_key_id = input; self
+        self.access_key_id = input;
+        self
     }
     /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
     pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,8 +69,12 @@ impl AwsCredentialsBuilder {
         self
     }
     /// <p>Temporary secret key allowing access to the Amazon GameLift S3 account.</p>
-    pub fn set_secret_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_access_key = input; self
+    pub fn set_secret_access_key(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.secret_access_key = input;
+        self
     }
     /// <p>Token used to associate a specific build ID with the files uploaded using these credentials.</p>
     pub fn session_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,17 +83,15 @@ impl AwsCredentialsBuilder {
     }
     /// <p>Token used to associate a specific build ID with the files uploaded using these credentials.</p>
     pub fn set_session_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.session_token = input; self
+        self.session_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsCredentials`](crate::types::AwsCredentials).
     pub fn build(self) -> crate::types::AwsCredentials {
         crate::types::AwsCredentials {
-            access_key_id: self.access_key_id
-            ,
-            secret_access_key: self.secret_access_key
-            ,
-            session_token: self.session_token
-            ,
+            access_key_id: self.access_key_id,
+            secret_access_key: self.secret_access_key,
+            session_token: self.session_token,
         }
     }
 }
@@ -101,4 +104,3 @@ impl std::fmt::Debug for AwsCredentialsBuilder {
         formatter.finish()
     }
 }
-

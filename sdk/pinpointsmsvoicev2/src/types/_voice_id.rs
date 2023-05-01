@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let voiceid = unimplemented!();
 /// match voiceid {
@@ -87,14 +87,22 @@
 /// Specifically, when `voiceid` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `VoiceId::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Amy,
@@ -215,155 +223,214 @@ pub enum VoiceId {
     #[allow(missing_docs)] // documentation missing in model
     Zhiyu,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for VoiceId {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AMY" => VoiceId::Amy,
-"ASTRID" => VoiceId::Astrid,
-"BIANCA" => VoiceId::Bianca,
-"BRIAN" => VoiceId::Brian,
-"CAMILA" => VoiceId::Camila,
-"CARLA" => VoiceId::Carla,
-"CARMEN" => VoiceId::Carmen,
-"CELINE" => VoiceId::Celine,
-"CHANTAL" => VoiceId::Chantal,
-"CONCHITA" => VoiceId::Conchita,
-"CRISTIANO" => VoiceId::Cristiano,
-"DORA" => VoiceId::Dora,
-"EMMA" => VoiceId::Emma,
-"ENRIQUE" => VoiceId::Enrique,
-"EWA" => VoiceId::Ewa,
-"FILIZ" => VoiceId::Filiz,
-"GERAINT" => VoiceId::Geraint,
-"GIORGIO" => VoiceId::Giorgio,
-"GWYNETH" => VoiceId::Gwyneth,
-"HANS" => VoiceId::Hans,
-"INES" => VoiceId::Ines,
-"IVY" => VoiceId::Ivy,
-"JACEK" => VoiceId::Jacek,
-"JAN" => VoiceId::Jan,
-"JOANNA" => VoiceId::Joanna,
-"JOEY" => VoiceId::Joey,
-"JUSTIN" => VoiceId::Justin,
-"KARL" => VoiceId::Karl,
-"KENDRA" => VoiceId::Kendra,
-"KIMBERLY" => VoiceId::Kimberly,
-"LEA" => VoiceId::Lea,
-"LIV" => VoiceId::Liv,
-"LOTTE" => VoiceId::Lotte,
-"LUCIA" => VoiceId::Lucia,
-"LUPE" => VoiceId::Lupe,
-"MADS" => VoiceId::Mads,
-"MAJA" => VoiceId::Maja,
-"MARLENE" => VoiceId::Marlene,
-"MATHIEU" => VoiceId::Mathieu,
-"MATTHEW" => VoiceId::Matthew,
-"MAXIM" => VoiceId::Maxim,
-"MIA" => VoiceId::Mia,
-"MIGUEL" => VoiceId::Miguel,
-"MIZUKI" => VoiceId::Mizuki,
-"NAJA" => VoiceId::Naja,
-"NICOLE" => VoiceId::Nicole,
-"PENELOPE" => VoiceId::Penelope,
-"RAVEENA" => VoiceId::Raveena,
-"RICARDO" => VoiceId::Ricardo,
-"RUBEN" => VoiceId::Ruben,
-"RUSSELL" => VoiceId::Russell,
-"SALLI" => VoiceId::Salli,
-"SEOYEON" => VoiceId::Seoyeon,
-"TAKUMI" => VoiceId::Takumi,
-"TATYANA" => VoiceId::Tatyana,
-"VICKI" => VoiceId::Vicki,
-"VITORIA" => VoiceId::Vitoria,
-"ZEINA" => VoiceId::Zeina,
-"ZHIYU" => VoiceId::Zhiyu,
-other => VoiceId::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for VoiceId {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(VoiceId::from(s))
-                }
-            }
-impl VoiceId {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    VoiceId::Amy => "AMY",
-    VoiceId::Astrid => "ASTRID",
-    VoiceId::Bianca => "BIANCA",
-    VoiceId::Brian => "BRIAN",
-    VoiceId::Camila => "CAMILA",
-    VoiceId::Carla => "CARLA",
-    VoiceId::Carmen => "CARMEN",
-    VoiceId::Celine => "CELINE",
-    VoiceId::Chantal => "CHANTAL",
-    VoiceId::Conchita => "CONCHITA",
-    VoiceId::Cristiano => "CRISTIANO",
-    VoiceId::Dora => "DORA",
-    VoiceId::Emma => "EMMA",
-    VoiceId::Enrique => "ENRIQUE",
-    VoiceId::Ewa => "EWA",
-    VoiceId::Filiz => "FILIZ",
-    VoiceId::Geraint => "GERAINT",
-    VoiceId::Giorgio => "GIORGIO",
-    VoiceId::Gwyneth => "GWYNETH",
-    VoiceId::Hans => "HANS",
-    VoiceId::Ines => "INES",
-    VoiceId::Ivy => "IVY",
-    VoiceId::Jacek => "JACEK",
-    VoiceId::Jan => "JAN",
-    VoiceId::Joanna => "JOANNA",
-    VoiceId::Joey => "JOEY",
-    VoiceId::Justin => "JUSTIN",
-    VoiceId::Karl => "KARL",
-    VoiceId::Kendra => "KENDRA",
-    VoiceId::Kimberly => "KIMBERLY",
-    VoiceId::Lea => "LEA",
-    VoiceId::Liv => "LIV",
-    VoiceId::Lotte => "LOTTE",
-    VoiceId::Lucia => "LUCIA",
-    VoiceId::Lupe => "LUPE",
-    VoiceId::Mads => "MADS",
-    VoiceId::Maja => "MAJA",
-    VoiceId::Marlene => "MARLENE",
-    VoiceId::Mathieu => "MATHIEU",
-    VoiceId::Matthew => "MATTHEW",
-    VoiceId::Maxim => "MAXIM",
-    VoiceId::Mia => "MIA",
-    VoiceId::Miguel => "MIGUEL",
-    VoiceId::Mizuki => "MIZUKI",
-    VoiceId::Naja => "NAJA",
-    VoiceId::Nicole => "NICOLE",
-    VoiceId::Penelope => "PENELOPE",
-    VoiceId::Raveena => "RAVEENA",
-    VoiceId::Ricardo => "RICARDO",
-    VoiceId::Ruben => "RUBEN",
-    VoiceId::Russell => "RUSSELL",
-    VoiceId::Salli => "SALLI",
-    VoiceId::Seoyeon => "SEOYEON",
-    VoiceId::Takumi => "TAKUMI",
-    VoiceId::Tatyana => "TATYANA",
-    VoiceId::Vicki => "VICKI",
-    VoiceId::Vitoria => "VITORIA",
-    VoiceId::Zeina => "ZEINA",
-    VoiceId::Zhiyu => "ZHIYU",
-    VoiceId::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AMY" => VoiceId::Amy,
+            "ASTRID" => VoiceId::Astrid,
+            "BIANCA" => VoiceId::Bianca,
+            "BRIAN" => VoiceId::Brian,
+            "CAMILA" => VoiceId::Camila,
+            "CARLA" => VoiceId::Carla,
+            "CARMEN" => VoiceId::Carmen,
+            "CELINE" => VoiceId::Celine,
+            "CHANTAL" => VoiceId::Chantal,
+            "CONCHITA" => VoiceId::Conchita,
+            "CRISTIANO" => VoiceId::Cristiano,
+            "DORA" => VoiceId::Dora,
+            "EMMA" => VoiceId::Emma,
+            "ENRIQUE" => VoiceId::Enrique,
+            "EWA" => VoiceId::Ewa,
+            "FILIZ" => VoiceId::Filiz,
+            "GERAINT" => VoiceId::Geraint,
+            "GIORGIO" => VoiceId::Giorgio,
+            "GWYNETH" => VoiceId::Gwyneth,
+            "HANS" => VoiceId::Hans,
+            "INES" => VoiceId::Ines,
+            "IVY" => VoiceId::Ivy,
+            "JACEK" => VoiceId::Jacek,
+            "JAN" => VoiceId::Jan,
+            "JOANNA" => VoiceId::Joanna,
+            "JOEY" => VoiceId::Joey,
+            "JUSTIN" => VoiceId::Justin,
+            "KARL" => VoiceId::Karl,
+            "KENDRA" => VoiceId::Kendra,
+            "KIMBERLY" => VoiceId::Kimberly,
+            "LEA" => VoiceId::Lea,
+            "LIV" => VoiceId::Liv,
+            "LOTTE" => VoiceId::Lotte,
+            "LUCIA" => VoiceId::Lucia,
+            "LUPE" => VoiceId::Lupe,
+            "MADS" => VoiceId::Mads,
+            "MAJA" => VoiceId::Maja,
+            "MARLENE" => VoiceId::Marlene,
+            "MATHIEU" => VoiceId::Mathieu,
+            "MATTHEW" => VoiceId::Matthew,
+            "MAXIM" => VoiceId::Maxim,
+            "MIA" => VoiceId::Mia,
+            "MIGUEL" => VoiceId::Miguel,
+            "MIZUKI" => VoiceId::Mizuki,
+            "NAJA" => VoiceId::Naja,
+            "NICOLE" => VoiceId::Nicole,
+            "PENELOPE" => VoiceId::Penelope,
+            "RAVEENA" => VoiceId::Raveena,
+            "RICARDO" => VoiceId::Ricardo,
+            "RUBEN" => VoiceId::Ruben,
+            "RUSSELL" => VoiceId::Russell,
+            "SALLI" => VoiceId::Salli,
+            "SEOYEON" => VoiceId::Seoyeon,
+            "TAKUMI" => VoiceId::Takumi,
+            "TATYANA" => VoiceId::Tatyana,
+            "VICKI" => VoiceId::Vicki,
+            "VITORIA" => VoiceId::Vitoria,
+            "ZEINA" => VoiceId::Zeina,
+            "ZHIYU" => VoiceId::Zhiyu,
+            other => VoiceId::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AMY", "ASTRID", "BIANCA", "BRIAN", "CAMILA", "CARLA", "CARMEN", "CELINE", "CHANTAL", "CONCHITA", "CRISTIANO", "DORA", "EMMA", "ENRIQUE", "EWA", "FILIZ", "GERAINT", "GIORGIO", "GWYNETH", "HANS", "INES", "IVY", "JACEK", "JAN", "JOANNA", "JOEY", "JUSTIN", "KARL", "KENDRA", "KIMBERLY", "LEA", "LIV", "LOTTE", "LUCIA", "LUPE", "MADS", "MAJA", "MARLENE", "MATHIEU", "MATTHEW", "MAXIM", "MIA", "MIGUEL", "MIZUKI", "NAJA", "NICOLE", "PENELOPE", "RAVEENA", "RICARDO", "RUBEN", "RUSSELL", "SALLI", "SEOYEON", "TAKUMI", "TATYANA", "VICKI", "VITORIA", "ZEINA", "ZHIYU"]
-                }
-            }
-impl AsRef<str> for VoiceId {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for VoiceId {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VoiceId::from(s))
+    }
+}
+impl VoiceId {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            VoiceId::Amy => "AMY",
+            VoiceId::Astrid => "ASTRID",
+            VoiceId::Bianca => "BIANCA",
+            VoiceId::Brian => "BRIAN",
+            VoiceId::Camila => "CAMILA",
+            VoiceId::Carla => "CARLA",
+            VoiceId::Carmen => "CARMEN",
+            VoiceId::Celine => "CELINE",
+            VoiceId::Chantal => "CHANTAL",
+            VoiceId::Conchita => "CONCHITA",
+            VoiceId::Cristiano => "CRISTIANO",
+            VoiceId::Dora => "DORA",
+            VoiceId::Emma => "EMMA",
+            VoiceId::Enrique => "ENRIQUE",
+            VoiceId::Ewa => "EWA",
+            VoiceId::Filiz => "FILIZ",
+            VoiceId::Geraint => "GERAINT",
+            VoiceId::Giorgio => "GIORGIO",
+            VoiceId::Gwyneth => "GWYNETH",
+            VoiceId::Hans => "HANS",
+            VoiceId::Ines => "INES",
+            VoiceId::Ivy => "IVY",
+            VoiceId::Jacek => "JACEK",
+            VoiceId::Jan => "JAN",
+            VoiceId::Joanna => "JOANNA",
+            VoiceId::Joey => "JOEY",
+            VoiceId::Justin => "JUSTIN",
+            VoiceId::Karl => "KARL",
+            VoiceId::Kendra => "KENDRA",
+            VoiceId::Kimberly => "KIMBERLY",
+            VoiceId::Lea => "LEA",
+            VoiceId::Liv => "LIV",
+            VoiceId::Lotte => "LOTTE",
+            VoiceId::Lucia => "LUCIA",
+            VoiceId::Lupe => "LUPE",
+            VoiceId::Mads => "MADS",
+            VoiceId::Maja => "MAJA",
+            VoiceId::Marlene => "MARLENE",
+            VoiceId::Mathieu => "MATHIEU",
+            VoiceId::Matthew => "MATTHEW",
+            VoiceId::Maxim => "MAXIM",
+            VoiceId::Mia => "MIA",
+            VoiceId::Miguel => "MIGUEL",
+            VoiceId::Mizuki => "MIZUKI",
+            VoiceId::Naja => "NAJA",
+            VoiceId::Nicole => "NICOLE",
+            VoiceId::Penelope => "PENELOPE",
+            VoiceId::Raveena => "RAVEENA",
+            VoiceId::Ricardo => "RICARDO",
+            VoiceId::Ruben => "RUBEN",
+            VoiceId::Russell => "RUSSELL",
+            VoiceId::Salli => "SALLI",
+            VoiceId::Seoyeon => "SEOYEON",
+            VoiceId::Takumi => "TAKUMI",
+            VoiceId::Tatyana => "TATYANA",
+            VoiceId::Vicki => "VICKI",
+            VoiceId::Vitoria => "VITORIA",
+            VoiceId::Zeina => "ZEINA",
+            VoiceId::Zhiyu => "ZHIYU",
+            VoiceId::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AMY",
+            "ASTRID",
+            "BIANCA",
+            "BRIAN",
+            "CAMILA",
+            "CARLA",
+            "CARMEN",
+            "CELINE",
+            "CHANTAL",
+            "CONCHITA",
+            "CRISTIANO",
+            "DORA",
+            "EMMA",
+            "ENRIQUE",
+            "EWA",
+            "FILIZ",
+            "GERAINT",
+            "GIORGIO",
+            "GWYNETH",
+            "HANS",
+            "INES",
+            "IVY",
+            "JACEK",
+            "JAN",
+            "JOANNA",
+            "JOEY",
+            "JUSTIN",
+            "KARL",
+            "KENDRA",
+            "KIMBERLY",
+            "LEA",
+            "LIV",
+            "LOTTE",
+            "LUCIA",
+            "LUPE",
+            "MADS",
+            "MAJA",
+            "MARLENE",
+            "MATHIEU",
+            "MATTHEW",
+            "MAXIM",
+            "MIA",
+            "MIGUEL",
+            "MIZUKI",
+            "NAJA",
+            "NICOLE",
+            "PENELOPE",
+            "RAVEENA",
+            "RICARDO",
+            "RUBEN",
+            "RUSSELL",
+            "SALLI",
+            "SEOYEON",
+            "TAKUMI",
+            "TATYANA",
+            "VICKI",
+            "VITORIA",
+            "ZEINA",
+            "ZHIYU",
+        ]
+    }
+}
+impl AsRef<str> for VoiceId {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

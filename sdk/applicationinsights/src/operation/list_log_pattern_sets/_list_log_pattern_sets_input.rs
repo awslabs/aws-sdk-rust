@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLogPatternSetsInput  {
+pub struct ListLogPatternSetsInput {
     /// <p>The name of the resource group.</p>
     #[doc(hidden)]
     pub resource_group_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListLogPatternSetsInput  {
 }
 impl ListLogPatternSetsInput {
     /// <p>The name of the resource group.</p>
-    pub fn resource_group_name(&self) -> std::option::Option<& str> {
+    pub fn resource_group_name(&self) -> std::option::Option<&str> {
         self.resource_group_name.as_deref()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
@@ -23,13 +23,14 @@ impl ListLogPatternSetsInput {
         self.max_results
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListLogPatternSetsInput {
     /// Creates a new builder-style object to manufacture [`ListLogPatternSetsInput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsInput).
-    pub fn builder() -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsInputBuilder {
         crate::operation::list_log_pattern_sets::builders::ListLogPatternSetsInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl ListLogPatternSetsInputBuilder {
         self
     }
     /// <p>The name of the resource group.</p>
-    pub fn set_resource_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_group_name = input; self
+    pub fn set_resource_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_group_name = input;
+        self
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +64,8 @@ impl ListLogPatternSetsInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +74,22 @@ impl ListLogPatternSetsInputBuilder {
     }
     /// <p>The token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListLogPatternSetsInput`](crate::operation::list_log_pattern_sets::ListLogPatternSetsInput).
-    pub fn build(self) -> Result<crate::operation::list_log_pattern_sets::ListLogPatternSetsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_log_pattern_sets::ListLogPatternSetsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_log_pattern_sets::ListLogPatternSetsInput {
-                resource_group_name: self.resource_group_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                resource_group_name: self.resource_group_name,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

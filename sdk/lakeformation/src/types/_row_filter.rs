@@ -3,7 +3,7 @@
 /// <p>A PartiQL predicate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RowFilter  {
+pub struct RowFilter {
     /// <p>A filter expression.</p>
     #[doc(hidden)]
     pub filter_expression: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RowFilter  {
 }
 impl RowFilter {
     /// <p>A filter expression.</p>
-    pub fn filter_expression(&self) -> std::option::Option<& str> {
+    pub fn filter_expression(&self) -> std::option::Option<&str> {
         self.filter_expression.as_deref()
     }
     /// <p>A wildcard for all rows.</p>
-    pub fn all_rows_wildcard(&self) -> std::option::Option<& crate::types::AllRowsWildcard> {
+    pub fn all_rows_wildcard(&self) -> std::option::Option<&crate::types::AllRowsWildcard> {
         self.all_rows_wildcard.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl RowFilterBuilder {
         self
     }
     /// <p>A filter expression.</p>
-    pub fn set_filter_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_expression = input; self
+    pub fn set_filter_expression(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.filter_expression = input;
+        self
     }
     /// <p>A wildcard for all rows.</p>
     pub fn all_rows_wildcard(mut self, input: crate::types::AllRowsWildcard) -> Self {
@@ -51,17 +55,18 @@ impl RowFilterBuilder {
         self
     }
     /// <p>A wildcard for all rows.</p>
-    pub fn set_all_rows_wildcard(mut self, input: std::option::Option<crate::types::AllRowsWildcard>) -> Self {
-        self.all_rows_wildcard = input; self
+    pub fn set_all_rows_wildcard(
+        mut self,
+        input: std::option::Option<crate::types::AllRowsWildcard>,
+    ) -> Self {
+        self.all_rows_wildcard = input;
+        self
     }
     /// Consumes the builder and constructs a [`RowFilter`](crate::types::RowFilter).
     pub fn build(self) -> crate::types::RowFilter {
         crate::types::RowFilter {
-            filter_expression: self.filter_expression
-            ,
-            all_rows_wildcard: self.all_rows_wildcard
-            ,
+            filter_expression: self.filter_expression,
+            all_rows_wildcard: self.all_rows_wildcard,
         }
     }
 }
-

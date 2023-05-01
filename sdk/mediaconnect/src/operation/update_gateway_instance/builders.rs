@@ -4,57 +4,80 @@ pub use crate::operation::update_gateway_instance::_update_gateway_instance_outp
 pub use crate::operation::update_gateway_instance::_update_gateway_instance_input::UpdateGatewayInstanceInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateGatewayInstance`.
-/// 
+///
 /// Updates the configuration of an existing Gateway Instance.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateGatewayInstanceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceInputBuilder,
+    inner: crate::operation::update_gateway_instance::builders::UpdateGatewayInstanceInputBuilder,
 }
-impl UpdateGatewayInstanceFluentBuilder  {
+impl UpdateGatewayInstanceFluentBuilder {
     /// Creates a new `UpdateGatewayInstance`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_gateway_instance::UpdateGatewayInstance, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_gateway_instance::UpdateGatewayInstanceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_gateway_instance::UpdateGatewayInstanceOutput, aws_smithy_http::result::SdkError<crate::operation::update_gateway_instance::UpdateGatewayInstanceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_gateway_instance::UpdateGatewayInstance,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_gateway_instance::UpdateGatewayInstanceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_gateway_instance::UpdateGatewayInstanceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_gateway_instance::UpdateGatewayInstanceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
     pub fn bridge_placement(mut self, input: crate::types::BridgePlacement) -> Self {
         self.inner = self.inner.bridge_placement(input);
         self
     }
     /// The availability of the instance to host new bridges. The bridgePlacement property can be LOCKED or AVAILABLE. If it is LOCKED, no new bridges can be deployed to this instance. If it is AVAILABLE, new bridges can be added to this instance.
-    pub fn set_bridge_placement(mut self, input: std::option::Option<crate::types::BridgePlacement>) -> Self {
+    pub fn set_bridge_placement(
+        mut self,
+        input: std::option::Option<crate::types::BridgePlacement>,
+    ) -> Self {
         self.inner = self.inner.set_bridge_placement(input);
         self
     }
@@ -64,9 +87,11 @@ impl UpdateGatewayInstanceFluentBuilder  {
         self
     }
     /// The Amazon Resource Name (ARN) of the instance that you want to update.
-    pub fn set_gateway_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_gateway_instance_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_gateway_instance_arn(input);
         self
     }
 }
-

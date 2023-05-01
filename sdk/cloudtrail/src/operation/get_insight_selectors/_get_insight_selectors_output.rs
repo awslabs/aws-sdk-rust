@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetInsightSelectorsOutput  {
+pub struct GetInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
     #[doc(hidden)]
     pub trail_arn: std::option::Option<std::string::String>,
@@ -13,23 +13,25 @@ pub struct GetInsightSelectorsOutput  {
 }
 impl GetInsightSelectorsOutput {
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
-    pub fn trail_arn(&self) -> std::option::Option<& str> {
+    pub fn trail_arn(&self) -> std::option::Option<&str> {
         self.trail_arn.as_deref()
     }
     /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
-    pub fn insight_selectors(&self) -> std::option::Option<& [crate::types::InsightSelector]> {
+    pub fn insight_selectors(&self) -> std::option::Option<&[crate::types::InsightSelector]> {
         self.insight_selectors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetInsightSelectorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetInsightSelectorsOutput {
     /// Creates a new builder-style object to manufacture [`GetInsightSelectorsOutput`](crate::operation::get_insight_selectors::GetInsightSelectorsOutput).
-    pub fn builder() -> crate::operation::get_insight_selectors::builders::GetInsightSelectorsOutputBuilder {
-        crate::operation::get_insight_selectors::builders::GetInsightSelectorsOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_insight_selectors::builders::GetInsightSelectorsOutputBuilder {
+        crate::operation::get_insight_selectors::builders::GetInsightSelectorsOutputBuilder::default(
+        )
     }
 }
 
@@ -49,7 +51,8 @@ impl GetInsightSelectorsOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of a trail for which you want to get Insights selectors.</p>
     pub fn set_trail_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trail_arn = input; self
+        self.trail_arn = input;
+        self
     }
     /// Appends an item to `insight_selectors`.
     ///
@@ -58,32 +61,33 @@ impl GetInsightSelectorsOutputBuilder {
     /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
     pub fn insight_selectors(mut self, input: crate::types::InsightSelector) -> Self {
         let mut v = self.insight_selectors.unwrap_or_default();
-                        v.push(input);
-                        self.insight_selectors = Some(v);
-                        self
+        v.push(input);
+        self.insight_selectors = Some(v);
+        self
     }
     /// <p>A JSON string that contains the insight types you want to log on a trail. In this release, <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code> are supported as insight types.</p>
-    pub fn set_insight_selectors(mut self, input: std::option::Option<std::vec::Vec<crate::types::InsightSelector>>) -> Self {
-        self.insight_selectors = input; self
+    pub fn set_insight_selectors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InsightSelector>>,
+    ) -> Self {
+        self.insight_selectors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetInsightSelectorsOutput`](crate::operation::get_insight_selectors::GetInsightSelectorsOutput).
     pub fn build(self) -> crate::operation::get_insight_selectors::GetInsightSelectorsOutput {
         crate::operation::get_insight_selectors::GetInsightSelectorsOutput {
-            trail_arn: self.trail_arn
-            ,
-            insight_selectors: self.insight_selectors
-            ,
+            trail_arn: self.trail_arn,
+            insight_selectors: self.insight_selectors,
             _request_id: self._request_id,
         }
     }
 }
-

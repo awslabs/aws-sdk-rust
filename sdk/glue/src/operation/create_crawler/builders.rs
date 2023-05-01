@@ -4,50 +4,66 @@ pub use crate::operation::create_crawler::_create_crawler_output::CreateCrawlerO
 pub use crate::operation::create_crawler::_create_crawler_input::CreateCrawlerInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCrawler`.
-/// 
+///
 /// <p>Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in the <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCrawlerFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_crawler::builders::CreateCrawlerInputBuilder,
+    inner: crate::operation::create_crawler::builders::CreateCrawlerInputBuilder,
 }
-impl CreateCrawlerFluentBuilder  {
+impl CreateCrawlerFluentBuilder {
     /// Creates a new `CreateCrawler`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_crawler::CreateCrawler, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_crawler::CreateCrawlerError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_crawler::CreateCrawlerOutput, aws_smithy_http::result::SdkError<crate::operation::create_crawler::CreateCrawlerError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_crawler::CreateCrawler,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_crawler::CreateCrawlerError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_crawler::CreateCrawlerOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_crawler::CreateCrawlerError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Name of the new crawler.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -118,7 +134,10 @@ impl CreateCrawlerFluentBuilder  {
         self
     }
     /// <p>A list of custom classifiers that the user has registered. By default, all built-in classifiers are included in a crawl, but these custom classifiers always override the default classifiers for a given classification.</p>
-    pub fn set_classifiers(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_classifiers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_classifiers(input);
         self
     }
@@ -138,7 +157,10 @@ impl CreateCrawlerFluentBuilder  {
         self
     }
     /// <p>The policy for the crawler's update and deletion behavior.</p>
-    pub fn set_schema_change_policy(mut self, input: std::option::Option<crate::types::SchemaChangePolicy>) -> Self {
+    pub fn set_schema_change_policy(
+        mut self,
+        input: std::option::Option<crate::types::SchemaChangePolicy>,
+    ) -> Self {
         self.inner = self.inner.set_schema_change_policy(input);
         self
     }
@@ -148,7 +170,10 @@ impl CreateCrawlerFluentBuilder  {
         self
     }
     /// <p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>
-    pub fn set_recrawl_policy(mut self, input: std::option::Option<crate::types::RecrawlPolicy>) -> Self {
+    pub fn set_recrawl_policy(
+        mut self,
+        input: std::option::Option<crate::types::RecrawlPolicy>,
+    ) -> Self {
         self.inner = self.inner.set_recrawl_policy(input);
         self
     }
@@ -158,17 +183,26 @@ impl CreateCrawlerFluentBuilder  {
         self
     }
     /// <p>Specifies data lineage configuration settings for the crawler.</p>
-    pub fn set_lineage_configuration(mut self, input: std::option::Option<crate::types::LineageConfiguration>) -> Self {
+    pub fn set_lineage_configuration(
+        mut self,
+        input: std::option::Option<crate::types::LineageConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_lineage_configuration(input);
         self
     }
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
-    pub fn lake_formation_configuration(mut self, input: crate::types::LakeFormationConfiguration) -> Self {
+    pub fn lake_formation_configuration(
+        mut self,
+        input: crate::types::LakeFormationConfiguration,
+    ) -> Self {
         self.inner = self.inner.lake_formation_configuration(input);
         self
     }
     /// <p>Specifies Lake Formation configuration settings for the crawler.</p>
-    pub fn set_lake_formation_configuration(mut self, input: std::option::Option<crate::types::LakeFormationConfiguration>) -> Self {
+    pub fn set_lake_formation_configuration(
+        mut self,
+        input: std::option::Option<crate::types::LakeFormationConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_lake_formation_configuration(input);
         self
     }
@@ -188,7 +222,10 @@ impl CreateCrawlerFluentBuilder  {
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.</p>
-    pub fn set_crawler_security_configuration(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_crawler_security_configuration(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_crawler_security_configuration(input);
         self
     }
@@ -197,14 +234,22 @@ impl CreateCrawlerFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in Glue, see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web Services Tags in Glue</a> in the developer guide.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

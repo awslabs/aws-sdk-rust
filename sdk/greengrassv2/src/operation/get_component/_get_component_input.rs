@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetComponentInput  {
+pub struct GetComponentInput {
     /// <p>The format of the recipe.</p>
     #[doc(hidden)]
     pub recipe_output_format: std::option::Option<crate::types::RecipeOutputFormat>,
@@ -12,11 +12,11 @@ pub struct GetComponentInput  {
 }
 impl GetComponentInput {
     /// <p>The format of the recipe.</p>
-    pub fn recipe_output_format(&self) -> std::option::Option<& crate::types::RecipeOutputFormat> {
+    pub fn recipe_output_format(&self) -> std::option::Option<&crate::types::RecipeOutputFormat> {
         self.recipe_output_format.as_ref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -41,8 +41,12 @@ impl GetComponentInputBuilder {
         self
     }
     /// <p>The format of the recipe.</p>
-    pub fn set_recipe_output_format(mut self, input: std::option::Option<crate::types::RecipeOutputFormat>) -> Self {
-        self.recipe_output_format = input; self
+    pub fn set_recipe_output_format(
+        mut self,
+        input: std::option::Option<crate::types::RecipeOutputFormat>,
+    ) -> Self {
+        self.recipe_output_format = input;
+        self
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +55,19 @@ impl GetComponentInputBuilder {
     }
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the component version.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
-    pub fn build(self) -> Result<crate::operation::get_component::GetComponentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_component::GetComponentInput {
-                recipe_output_format: self.recipe_output_format
-                ,
-                arn: self.arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_component::GetComponentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_component::GetComponentInput {
+            recipe_output_format: self.recipe_output_format,
+            arn: self.arn,
+        })
     }
 }
-

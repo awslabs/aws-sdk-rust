@@ -4,67 +4,96 @@ pub use crate::operation::create_source_location::_create_source_location_output
 pub use crate::operation::create_source_location::_create_source_location_input::CreateSourceLocationInputBuilder;
 
 /// Fluent builder constructing a request to `CreateSourceLocation`.
-/// 
+///
 /// <p>Creates a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSourceLocationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_source_location::builders::CreateSourceLocationInputBuilder,
+    inner: crate::operation::create_source_location::builders::CreateSourceLocationInputBuilder,
 }
-impl CreateSourceLocationFluentBuilder  {
+impl CreateSourceLocationFluentBuilder {
     /// Creates a new `CreateSourceLocation`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_source_location::CreateSourceLocation, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_source_location::CreateSourceLocationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_source_location::CreateSourceLocationOutput, aws_smithy_http::result::SdkError<crate::operation::create_source_location::CreateSourceLocationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_source_location::CreateSourceLocation,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_source_location::CreateSourceLocationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_source_location::CreateSourceLocationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_source_location::CreateSourceLocationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
     pub fn access_configuration(mut self, input: crate::types::AccessConfiguration) -> Self {
         self.inner = self.inner.access_configuration(input);
         self
     }
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
-    pub fn set_access_configuration(mut self, input: std::option::Option<crate::types::AccessConfiguration>) -> Self {
+    pub fn set_access_configuration(
+        mut self,
+        input: std::option::Option<crate::types::AccessConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_access_configuration(input);
         self
     }
     /// <p>The optional configuration for the server that serves segments.</p>
-    pub fn default_segment_delivery_configuration(mut self, input: crate::types::DefaultSegmentDeliveryConfiguration) -> Self {
+    pub fn default_segment_delivery_configuration(
+        mut self,
+        input: crate::types::DefaultSegmentDeliveryConfiguration,
+    ) -> Self {
         self.inner = self.inner.default_segment_delivery_configuration(input);
         self
     }
     /// <p>The optional configuration for the server that serves segments.</p>
-    pub fn set_default_segment_delivery_configuration(mut self, input: std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>) -> Self {
+    pub fn set_default_segment_delivery_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DefaultSegmentDeliveryConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_default_segment_delivery_configuration(input);
         self
     }
@@ -74,7 +103,10 @@ impl CreateSourceLocationFluentBuilder  {
         self
     }
     /// <p>The source's HTTP package configurations.</p>
-    pub fn set_http_configuration(mut self, input: std::option::Option<crate::types::HttpConfiguration>) -> Self {
+    pub fn set_http_configuration(
+        mut self,
+        input: std::option::Option<crate::types::HttpConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_http_configuration(input);
         self
     }
@@ -83,12 +115,18 @@ impl CreateSourceLocationFluentBuilder  {
     /// To override the contents of this collection use [`set_segment_delivery_configurations`](Self::set_segment_delivery_configurations).
     ///
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn segment_delivery_configurations(mut self, input: crate::types::SegmentDeliveryConfiguration) -> Self {
+    pub fn segment_delivery_configurations(
+        mut self,
+        input: crate::types::SegmentDeliveryConfiguration,
+    ) -> Self {
         self.inner = self.inner.segment_delivery_configurations(input);
         self
     }
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
-    pub fn set_segment_delivery_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>) -> Self {
+    pub fn set_segment_delivery_configurations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
+    ) -> Self {
         self.inner = self.inner.set_segment_delivery_configurations(input);
         self
     }
@@ -98,7 +136,10 @@ impl CreateSourceLocationFluentBuilder  {
         self
     }
     /// <p>The name associated with the source location.</p>
-    pub fn set_source_location_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_location_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_location_name(input);
         self
     }
@@ -107,14 +148,22 @@ impl CreateSourceLocationFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

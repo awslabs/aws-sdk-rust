@@ -2,18 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct BatchDetectDominantLanguageInput  {
+pub struct BatchDetectDominantLanguageInput {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
     #[doc(hidden)]
     pub text_list: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl BatchDetectDominantLanguageInput {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
-    pub fn text_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn text_list(&self) -> std::option::Option<&[std::string::String]> {
         self.text_list.as_deref()
     }
 }
-impl  std::fmt::Debug for BatchDetectDominantLanguageInput  {
+impl std::fmt::Debug for BatchDetectDominantLanguageInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("BatchDetectDominantLanguageInput");
         formatter.field("text_list", &"*** Sensitive Data Redacted ***");
@@ -22,7 +22,7 @@ impl  std::fmt::Debug for BatchDetectDominantLanguageInput  {
 }
 impl BatchDetectDominantLanguageInput {
     /// Creates a new builder-style object to manufacture [`BatchDetectDominantLanguageInput`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput).
-    pub fn builder() -> crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder {
+    pub fn builder() -> crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder{
         crate::operation::batch_detect_dominant_language::builders::BatchDetectDominantLanguageInputBuilder::default()
     }
 }
@@ -41,21 +41,29 @@ impl BatchDetectDominantLanguageInputBuilder {
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
     pub fn text_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.text_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.text_list = Some(v);
-                        self
+        v.push(input.into());
+        self.text_list = Some(v);
+        self
     }
     /// <p>A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. Each document should contain at least 20 characters. The maximum size of each document is 5 KB.</p>
-    pub fn set_text_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.text_list = input; self
+    pub fn set_text_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.text_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchDetectDominantLanguageInput`](crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput).
-    pub fn build(self) -> Result<crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_detect_dominant_language::BatchDetectDominantLanguageInput {
-                text_list: self.text_list
-                ,
-            }
+                text_list: self.text_list,
+            },
         )
     }
 }
@@ -66,4 +74,3 @@ impl std::fmt::Debug for BatchDetectDominantLanguageInputBuilder {
         formatter.finish()
     }
 }
-

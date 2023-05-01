@@ -2,17 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NotifyTerminateProvisionedProductEngineWorkflowResultOutput  {
+pub struct NotifyTerminateProvisionedProductEngineWorkflowResultOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for NotifyTerminateProvisionedProductEngineWorkflowResultOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+impl aws_http::request_id::RequestId
+    for NotifyTerminateProvisionedProductEngineWorkflowResultOutput
+{
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl NotifyTerminateProvisionedProductEngineWorkflowResultOutput {
     /// Creates a new builder-style object to manufacture [`NotifyTerminateProvisionedProductEngineWorkflowResultOutput`](crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput).
-    pub fn builder() -> crate::operation::notify_terminate_provisioned_product_engine_workflow_result::builders::NotifyTerminateProvisionedProductEngineWorkflowResultOutputBuilder {
+    pub fn builder() -> crate::operation::notify_terminate_provisioned_product_engine_workflow_result::builders::NotifyTerminateProvisionedProductEngineWorkflowResultOutputBuilder{
         crate::operation::notify_terminate_provisioned_product_engine_workflow_result::builders::NotifyTerminateProvisionedProductEngineWorkflowResultOutputBuilder::default()
     }
 }
@@ -25,19 +27,18 @@ pub struct NotifyTerminateProvisionedProductEngineWorkflowResultOutputBuilder {
 }
 impl NotifyTerminateProvisionedProductEngineWorkflowResultOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`NotifyTerminateProvisionedProductEngineWorkflowResultOutput`](crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput).
-    pub fn build(self) -> crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput {
+    pub fn build(self) -> crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput{
         crate::operation::notify_terminate_provisioned_product_engine_workflow_result::NotifyTerminateProvisionedProductEngineWorkflowResultOutput {
             _request_id: self._request_id,
         }
     }
 }
-

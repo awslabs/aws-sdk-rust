@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetGroupInput  {
+pub struct GetGroupInput {
     /// The ID of the Greengrass group.
     #[doc(hidden)]
     pub group_id: std::option::Option<std::string::String>,
 }
 impl GetGroupInput {
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetGroupInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetGroupInput`](crate::operation::get_group::GetGroupInput).
-    pub fn build(self) -> Result<crate::operation::get_group::GetGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_group::GetGroupInput {
-                group_id: self.group_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_group::GetGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_group::GetGroupInput {
+            group_id: self.group_id,
+        })
     }
 }
-

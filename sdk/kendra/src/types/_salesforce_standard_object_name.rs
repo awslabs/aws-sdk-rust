@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let salesforcestandardobjectname = unimplemented!();
 /// match salesforcestandardobjectname {
@@ -45,14 +45,22 @@
 /// Specifically, when `salesforcestandardobjectname` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SalesforceStandardObjectName::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SalesforceStandardObjectName {
     #[allow(missing_docs)] // documentation missing in model
     Account,
@@ -89,71 +97,90 @@ pub enum SalesforceStandardObjectName {
     #[allow(missing_docs)] // documentation missing in model
     User,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SalesforceStandardObjectName {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACCOUNT" => SalesforceStandardObjectName::Account,
-"CAMPAIGN" => SalesforceStandardObjectName::Campaign,
-"CASE" => SalesforceStandardObjectName::Case,
-"CONTACT" => SalesforceStandardObjectName::Contact,
-"CONTRACT" => SalesforceStandardObjectName::Contract,
-"DOCUMENT" => SalesforceStandardObjectName::Document,
-"GROUP" => SalesforceStandardObjectName::Group,
-"IDEA" => SalesforceStandardObjectName::Idea,
-"LEAD" => SalesforceStandardObjectName::Lead,
-"OPPORTUNITY" => SalesforceStandardObjectName::Opportunity,
-"PARTNER" => SalesforceStandardObjectName::Partner,
-"PRICEBOOK" => SalesforceStandardObjectName::Pricebook,
-"PRODUCT" => SalesforceStandardObjectName::Product,
-"PROFILE" => SalesforceStandardObjectName::Profile,
-"SOLUTION" => SalesforceStandardObjectName::Solution,
-"TASK" => SalesforceStandardObjectName::Task,
-"USER" => SalesforceStandardObjectName::User,
-other => SalesforceStandardObjectName::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for SalesforceStandardObjectName {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(SalesforceStandardObjectName::from(s))
-                }
-            }
-impl SalesforceStandardObjectName {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    SalesforceStandardObjectName::Account => "ACCOUNT",
-    SalesforceStandardObjectName::Campaign => "CAMPAIGN",
-    SalesforceStandardObjectName::Case => "CASE",
-    SalesforceStandardObjectName::Contact => "CONTACT",
-    SalesforceStandardObjectName::Contract => "CONTRACT",
-    SalesforceStandardObjectName::Document => "DOCUMENT",
-    SalesforceStandardObjectName::Group => "GROUP",
-    SalesforceStandardObjectName::Idea => "IDEA",
-    SalesforceStandardObjectName::Lead => "LEAD",
-    SalesforceStandardObjectName::Opportunity => "OPPORTUNITY",
-    SalesforceStandardObjectName::Partner => "PARTNER",
-    SalesforceStandardObjectName::Pricebook => "PRICEBOOK",
-    SalesforceStandardObjectName::Product => "PRODUCT",
-    SalesforceStandardObjectName::Profile => "PROFILE",
-    SalesforceStandardObjectName::Solution => "SOLUTION",
-    SalesforceStandardObjectName::Task => "TASK",
-    SalesforceStandardObjectName::User => "USER",
-    SalesforceStandardObjectName::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACCOUNT" => SalesforceStandardObjectName::Account,
+            "CAMPAIGN" => SalesforceStandardObjectName::Campaign,
+            "CASE" => SalesforceStandardObjectName::Case,
+            "CONTACT" => SalesforceStandardObjectName::Contact,
+            "CONTRACT" => SalesforceStandardObjectName::Contract,
+            "DOCUMENT" => SalesforceStandardObjectName::Document,
+            "GROUP" => SalesforceStandardObjectName::Group,
+            "IDEA" => SalesforceStandardObjectName::Idea,
+            "LEAD" => SalesforceStandardObjectName::Lead,
+            "OPPORTUNITY" => SalesforceStandardObjectName::Opportunity,
+            "PARTNER" => SalesforceStandardObjectName::Partner,
+            "PRICEBOOK" => SalesforceStandardObjectName::Pricebook,
+            "PRODUCT" => SalesforceStandardObjectName::Product,
+            "PROFILE" => SalesforceStandardObjectName::Profile,
+            "SOLUTION" => SalesforceStandardObjectName::Solution,
+            "TASK" => SalesforceStandardObjectName::Task,
+            "USER" => SalesforceStandardObjectName::User,
+            other => SalesforceStandardObjectName::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACCOUNT", "CAMPAIGN", "CASE", "CONTACT", "CONTRACT", "DOCUMENT", "GROUP", "IDEA", "LEAD", "OPPORTUNITY", "PARTNER", "PRICEBOOK", "PRODUCT", "PROFILE", "SOLUTION", "TASK", "USER"]
-                }
-            }
-impl AsRef<str> for SalesforceStandardObjectName {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for SalesforceStandardObjectName {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SalesforceStandardObjectName::from(s))
+    }
+}
+impl SalesforceStandardObjectName {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SalesforceStandardObjectName::Account => "ACCOUNT",
+            SalesforceStandardObjectName::Campaign => "CAMPAIGN",
+            SalesforceStandardObjectName::Case => "CASE",
+            SalesforceStandardObjectName::Contact => "CONTACT",
+            SalesforceStandardObjectName::Contract => "CONTRACT",
+            SalesforceStandardObjectName::Document => "DOCUMENT",
+            SalesforceStandardObjectName::Group => "GROUP",
+            SalesforceStandardObjectName::Idea => "IDEA",
+            SalesforceStandardObjectName::Lead => "LEAD",
+            SalesforceStandardObjectName::Opportunity => "OPPORTUNITY",
+            SalesforceStandardObjectName::Partner => "PARTNER",
+            SalesforceStandardObjectName::Pricebook => "PRICEBOOK",
+            SalesforceStandardObjectName::Product => "PRODUCT",
+            SalesforceStandardObjectName::Profile => "PROFILE",
+            SalesforceStandardObjectName::Solution => "SOLUTION",
+            SalesforceStandardObjectName::Task => "TASK",
+            SalesforceStandardObjectName::User => "USER",
+            SalesforceStandardObjectName::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACCOUNT",
+            "CAMPAIGN",
+            "CASE",
+            "CONTACT",
+            "CONTRACT",
+            "DOCUMENT",
+            "GROUP",
+            "IDEA",
+            "LEAD",
+            "OPPORTUNITY",
+            "PARTNER",
+            "PRICEBOOK",
+            "PRODUCT",
+            "PROFILE",
+            "SOLUTION",
+            "TASK",
+            "USER",
+        ]
+    }
+}
+impl AsRef<str> for SalesforceStandardObjectName {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

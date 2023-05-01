@@ -3,7 +3,7 @@
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadMultipartPartOutput  {
+pub struct UploadMultipartPartOutput {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
     #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
@@ -11,19 +11,21 @@ pub struct UploadMultipartPartOutput  {
 }
 impl UploadMultipartPartOutput {
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
-    pub fn checksum(&self) -> std::option::Option<& str> {
+    pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UploadMultipartPartOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UploadMultipartPartOutput {
     /// Creates a new builder-style object to manufacture [`UploadMultipartPartOutput`](crate::operation::upload_multipart_part::UploadMultipartPartOutput).
-    pub fn builder() -> crate::operation::upload_multipart_part::builders::UploadMultipartPartOutputBuilder {
-        crate::operation::upload_multipart_part::builders::UploadMultipartPartOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::upload_multipart_part::builders::UploadMultipartPartOutputBuilder {
+        crate::operation::upload_multipart_part::builders::UploadMultipartPartOutputBuilder::default(
+        )
     }
 }
 
@@ -42,24 +44,23 @@ impl UploadMultipartPartOutputBuilder {
     }
     /// <p>The SHA256 tree hash that Amazon S3 Glacier computed for the uploaded part.</p>
     pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.checksum = input; self
+        self.checksum = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UploadMultipartPartOutput`](crate::operation::upload_multipart_part::UploadMultipartPartOutput).
     pub fn build(self) -> crate::operation::upload_multipart_part::UploadMultipartPartOutput {
         crate::operation::upload_multipart_part::UploadMultipartPartOutput {
-            checksum: self.checksum
-            ,
+            checksum: self.checksum,
             _request_id: self._request_id,
         }
     }
 }
-

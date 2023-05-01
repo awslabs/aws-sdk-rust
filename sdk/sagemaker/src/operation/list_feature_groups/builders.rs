@@ -4,50 +4,70 @@ pub use crate::operation::list_feature_groups::_list_feature_groups_output::List
 pub use crate::operation::list_feature_groups::_list_feature_groups_input::ListFeatureGroupsInputBuilder;
 
 /// Fluent builder constructing a request to `ListFeatureGroups`.
-/// 
+///
 /// <p>List <code>FeatureGroup</code>s based on given filter and order.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListFeatureGroupsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_feature_groups::builders::ListFeatureGroupsInputBuilder,
+    inner: crate::operation::list_feature_groups::builders::ListFeatureGroupsInputBuilder,
 }
-impl ListFeatureGroupsFluentBuilder  {
+impl ListFeatureGroupsFluentBuilder {
     /// Creates a new `ListFeatureGroups`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_feature_groups::ListFeatureGroups, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_feature_groups::ListFeatureGroupsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_feature_groups::ListFeatureGroupsOutput, aws_smithy_http::result::SdkError<crate::operation::list_feature_groups::ListFeatureGroupsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_feature_groups::ListFeatureGroups,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_feature_groups::ListFeatureGroupsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_feature_groups::ListFeatureGroupsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_feature_groups::ListFeatureGroupsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A string that partially matches one or more <code>FeatureGroup</code>s names. Filters <code>FeatureGroup</code>s by name. </p>
     pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name_contains(input.into());
@@ -64,17 +84,26 @@ impl ListFeatureGroupsFluentBuilder  {
         self
     }
     /// <p>A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. </p>
-    pub fn set_feature_group_status_equals(mut self, input: std::option::Option<crate::types::FeatureGroupStatus>) -> Self {
+    pub fn set_feature_group_status_equals(
+        mut self,
+        input: std::option::Option<crate::types::FeatureGroupStatus>,
+    ) -> Self {
         self.inner = self.inner.set_feature_group_status_equals(input);
         self
     }
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
-    pub fn offline_store_status_equals(mut self, input: crate::types::OfflineStoreStatusValue) -> Self {
+    pub fn offline_store_status_equals(
+        mut self,
+        input: crate::types::OfflineStoreStatusValue,
+    ) -> Self {
         self.inner = self.inner.offline_store_status_equals(input);
         self
     }
     /// <p>An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status. </p>
-    pub fn set_offline_store_status_equals(mut self, input: std::option::Option<crate::types::OfflineStoreStatusValue>) -> Self {
+    pub fn set_offline_store_status_equals(
+        mut self,
+        input: std::option::Option<crate::types::OfflineStoreStatusValue>,
+    ) -> Self {
         self.inner = self.inner.set_offline_store_status_equals(input);
         self
     }
@@ -84,7 +113,10 @@ impl ListFeatureGroupsFluentBuilder  {
         self
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created after a specific date and time.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -94,7 +126,10 @@ impl ListFeatureGroupsFluentBuilder  {
         self
     }
     /// <p>Use this parameter to search for <code>FeatureGroups</code>s created before a specific date and time.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -104,7 +139,10 @@ impl ListFeatureGroupsFluentBuilder  {
         self
     }
     /// <p>The order in which feature groups are listed.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::FeatureGroupSortOrder>) -> Self {
+    pub fn set_sort_order(
+        mut self,
+        input: std::option::Option<crate::types::FeatureGroupSortOrder>,
+    ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
@@ -114,7 +152,10 @@ impl ListFeatureGroupsFluentBuilder  {
         self
     }
     /// <p>The value on which the feature group list is sorted.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::FeatureGroupSortBy>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::FeatureGroupSortBy>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -139,4 +180,3 @@ impl ListFeatureGroupsFluentBuilder  {
         self
     }
 }
-

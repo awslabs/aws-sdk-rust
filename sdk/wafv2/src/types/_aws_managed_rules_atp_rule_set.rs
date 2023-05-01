@@ -3,36 +3,36 @@
 /// <p>Details for your use of the account takeover prevention managed rule group, <code>AWSManagedRulesATPRuleSet</code>. This configuration is used in <code>ManagedRuleGroupConfig</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsManagedRulesAtpRuleSet  {
-    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p> 
+pub struct AwsManagedRulesAtpRuleSet {
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
     #[doc(hidden)]
     pub login_path: std::option::Option<std::string::String>,
     /// <p>The criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. </p>
     #[doc(hidden)]
     pub request_inspection: std::option::Option<crate::types::RequestInspection>,
-    /// <p>The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. </p> 
-    /// <p>The ATP rule group evaluates the responses that your protected resources send back to client login attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that submit too many failed login attempts in a short amount of time. </p> <note> 
-    /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p> 
+    /// <p>The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. </p>
+    /// <p>The ATP rule group evaluates the responses that your protected resources send back to client login attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that submit too many failed login attempts in a short amount of time. </p> <note>
+    /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
     #[doc(hidden)]
     pub response_inspection: std::option::Option<crate::types::ResponseInspection>,
 }
 impl AwsManagedRulesAtpRuleSet {
-    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p> 
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
-    pub fn login_path(&self) -> std::option::Option<& str> {
+    pub fn login_path(&self) -> std::option::Option<&str> {
         self.login_path.as_deref()
     }
     /// <p>The criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. </p>
-    pub fn request_inspection(&self) -> std::option::Option<& crate::types::RequestInspection> {
+    pub fn request_inspection(&self) -> std::option::Option<&crate::types::RequestInspection> {
         self.request_inspection.as_ref()
     }
-    /// <p>The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. </p> 
-    /// <p>The ATP rule group evaluates the responses that your protected resources send back to client login attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that submit too many failed login attempts in a short amount of time. </p> <note> 
-    /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p> 
+    /// <p>The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. </p>
+    /// <p>The ATP rule group evaluates the responses that your protected resources send back to client login attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that submit too many failed login attempts in a short amount of time. </p> <note>
+    /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
-    pub fn response_inspection(&self) -> std::option::Option<& crate::types::ResponseInspection> {
+    pub fn response_inspection(&self) -> std::option::Option<&crate::types::ResponseInspection> {
         self.response_inspection.as_ref()
     }
 }
@@ -52,16 +52,17 @@ pub struct AwsManagedRulesAtpRuleSetBuilder {
     pub(crate) response_inspection: std::option::Option<crate::types::ResponseInspection>,
 }
 impl AwsManagedRulesAtpRuleSetBuilder {
-    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p> 
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
     pub fn login_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.login_path = Some(input.into());
         self
     }
-    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p> 
+    /// <p>The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>, you would provide the path <code>/web/login</code>.</p>
     /// <p>The rule group inspects only HTTP <code>POST</code> requests to your specified login endpoint.</p>
     pub fn set_login_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.login_path = input; self
+        self.login_path = input;
+        self
     }
     /// <p>The criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. </p>
     pub fn request_inspection(mut self, input: crate::types::RequestInspection) -> Self {
@@ -69,34 +70,38 @@ impl AwsManagedRulesAtpRuleSetBuilder {
         self
     }
     /// <p>The criteria for inspecting login requests, used by the ATP rule group to validate credentials usage. </p>
-    pub fn set_request_inspection(mut self, input: std::option::Option<crate::types::RequestInspection>) -> Self {
-        self.request_inspection = input; self
+    pub fn set_request_inspection(
+        mut self,
+        input: std::option::Option<crate::types::RequestInspection>,
+    ) -> Self {
+        self.request_inspection = input;
+        self
     }
-    /// <p>The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. </p> 
-    /// <p>The ATP rule group evaluates the responses that your protected resources send back to client login attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that submit too many failed login attempts in a short amount of time. </p> <note> 
-    /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p> 
+    /// <p>The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. </p>
+    /// <p>The ATP rule group evaluates the responses that your protected resources send back to client login attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that submit too many failed login attempts in a short amount of time. </p> <note>
+    /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
     pub fn response_inspection(mut self, input: crate::types::ResponseInspection) -> Self {
         self.response_inspection = Some(input);
         self
     }
-    /// <p>The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. </p> 
-    /// <p>The ATP rule group evaluates the responses that your protected resources send back to client login attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that submit too many failed login attempts in a short amount of time. </p> <note> 
-    /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p> 
+    /// <p>The criteria for inspecting responses to login requests, used by the ATP rule group to track login failure rates. </p>
+    /// <p>The ATP rule group evaluates the responses that your protected resources send back to client login attempts, keeping count of successful and failed attempts from each IP address and client session. Using this information, the rule group labels and mitigates requests from client sessions and IP addresses that submit too many failed login attempts in a short amount of time. </p> <note>
+    /// <p>Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.</p>
     /// </note>
-    pub fn set_response_inspection(mut self, input: std::option::Option<crate::types::ResponseInspection>) -> Self {
-        self.response_inspection = input; self
+    pub fn set_response_inspection(
+        mut self,
+        input: std::option::Option<crate::types::ResponseInspection>,
+    ) -> Self {
+        self.response_inspection = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsManagedRulesAtpRuleSet`](crate::types::AwsManagedRulesAtpRuleSet).
     pub fn build(self) -> crate::types::AwsManagedRulesAtpRuleSet {
         crate::types::AwsManagedRulesAtpRuleSet {
-            login_path: self.login_path
-            ,
-            request_inspection: self.request_inspection
-            ,
-            response_inspection: self.response_inspection
-            ,
+            login_path: self.login_path,
+            request_inspection: self.request_inspection,
+            response_inspection: self.response_inspection,
         }
     }
 }
-

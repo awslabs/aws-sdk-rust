@@ -4,50 +4,66 @@ pub use crate::operation::create_cluster::_create_cluster_output::CreateClusterO
 pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCluster`.
-/// 
+///
 /// <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant engine software.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
+    inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
 }
-impl CreateClusterFluentBuilder  {
+impl CreateClusterFluentBuilder {
     /// Creates a new `CreateCluster`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_cluster::CreateCluster, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_cluster::CreateClusterOutput, aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_cluster::CreateCluster,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_cluster::CreateClusterOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the cluster. This value must be unique as it also serves as the cluster identifier.</p>
     pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.cluster_name(input.into());
@@ -74,7 +90,10 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>The name of the parameter group associated with the cluster.</p>
-    pub fn set_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
@@ -114,7 +133,10 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>The name of the subnet group to be used for the cluster.</p>
-    pub fn set_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_subnet_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_subnet_group_name(input);
         self
     }
@@ -128,39 +150,45 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>A list of security group names to associate with this cluster.</p>
-    pub fn set_security_group_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_security_group_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_security_group_ids(input);
         self
     }
-    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p> 
-    /// <p>Valid values for <code>ddd</code> are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>sun</code> </p> </li> 
-    /// <li> <p> <code>mon</code> </p> </li> 
-    /// <li> <p> <code>tue</code> </p> </li> 
-    /// <li> <p> <code>wed</code> </p> </li> 
-    /// <li> <p> <code>thu</code> </p> </li> 
-    /// <li> <p> <code>fri</code> </p> </li> 
-    /// <li> <p> <code>sat</code> </p> </li> 
-    /// </ul> 
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    /// <p>Valid values for <code>ddd</code> are:</p>
+    /// <ul>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
+    /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
     pub fn maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.maintenance_window(input.into());
         self
     }
-    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p> 
-    /// <p>Valid values for <code>ddd</code> are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>sun</code> </p> </li> 
-    /// <li> <p> <code>mon</code> </p> </li> 
-    /// <li> <p> <code>tue</code> </p> </li> 
-    /// <li> <p> <code>wed</code> </p> </li> 
-    /// <li> <p> <code>thu</code> </p> </li> 
-    /// <li> <p> <code>fri</code> </p> </li> 
-    /// <li> <p> <code>sat</code> </p> </li> 
-    /// </ul> 
+    /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.</p>
+    /// <p>Valid values for <code>ddd</code> are:</p>
+    /// <ul>
+    /// <li> <p> <code>sun</code> </p> </li>
+    /// <li> <p> <code>mon</code> </p> </li>
+    /// <li> <p> <code>tue</code> </p> </li>
+    /// <li> <p> <code>wed</code> </p> </li>
+    /// <li> <p> <code>thu</code> </p> </li>
+    /// <li> <p> <code>fri</code> </p> </li>
+    /// <li> <p> <code>sat</code> </p> </li>
+    /// </ul>
     /// <p>Example: <code>sun:23:00-mon:01:30</code> </p>
-    pub fn set_maintenance_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_maintenance_window(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_maintenance_window(input);
         self
     }
@@ -214,7 +242,10 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.</p>
-    pub fn set_snapshot_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_snapshot_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_snapshot_arns(input);
         self
     }
@@ -248,19 +279,22 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p> 
-    /// <p> Example: 05:00-09:00</p> 
+    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
+    /// <p> Example: 05:00-09:00</p>
     /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.snapshot_window(input.into());
         self
     }
-    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p> 
-    /// <p> Example: 05:00-09:00</p> 
+    /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.</p>
+    /// <p> Example: 05:00-09:00</p>
     /// <p> If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     pub fn set_snapshot_window(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_snapshot_window(input);
@@ -307,4 +341,3 @@ impl CreateClusterFluentBuilder  {
         self
     }
 }
-

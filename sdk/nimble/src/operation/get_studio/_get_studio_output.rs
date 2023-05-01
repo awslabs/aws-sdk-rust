@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStudioOutput  {
+pub struct GetStudioOutput {
     /// <p>Information about a studio.</p>
     #[doc(hidden)]
     pub studio: std::option::Option<crate::types::Studio>,
@@ -10,15 +10,15 @@ pub struct GetStudioOutput  {
 }
 impl GetStudioOutput {
     /// <p>Information about a studio.</p>
-    pub fn studio(&self) -> std::option::Option<& crate::types::Studio> {
+    pub fn studio(&self) -> std::option::Option<&crate::types::Studio> {
         self.studio.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetStudioOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetStudioOutput {
     /// Creates a new builder-style object to manufacture [`GetStudioOutput`](crate::operation::get_studio::GetStudioOutput).
     pub fn builder() -> crate::operation::get_studio::builders::GetStudioOutputBuilder {
@@ -41,24 +41,23 @@ impl GetStudioOutputBuilder {
     }
     /// <p>Information about a studio.</p>
     pub fn set_studio(mut self, input: std::option::Option<crate::types::Studio>) -> Self {
-        self.studio = input; self
+        self.studio = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetStudioOutput`](crate::operation::get_studio::GetStudioOutput).
     pub fn build(self) -> crate::operation::get_studio::GetStudioOutput {
         crate::operation::get_studio::GetStudioOutput {
-            studio: self.studio
-            ,
+            studio: self.studio,
             _request_id: self._request_id,
         }
     }
 }
-

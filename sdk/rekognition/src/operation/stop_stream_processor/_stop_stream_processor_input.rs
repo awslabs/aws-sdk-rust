@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopStreamProcessorInput  {
+pub struct StopStreamProcessorInput {
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl StopStreamProcessorInput {
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
 impl StopStreamProcessorInput {
     /// Creates a new builder-style object to manufacture [`StopStreamProcessorInput`](crate::operation::stop_stream_processor::StopStreamProcessorInput).
-    pub fn builder() -> crate::operation::stop_stream_processor::builders::StopStreamProcessorInputBuilder {
-        crate::operation::stop_stream_processor::builders::StopStreamProcessorInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::stop_stream_processor::builders::StopStreamProcessorInputBuilder {
+        crate::operation::stop_stream_processor::builders::StopStreamProcessorInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,16 @@ impl StopStreamProcessorInputBuilder {
     }
     /// <p>The name of a stream processor created by <code>CreateStreamProcessor</code>.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopStreamProcessorInput`](crate::operation::stop_stream_processor::StopStreamProcessorInput).
-    pub fn build(self) -> Result<crate::operation::stop_stream_processor::StopStreamProcessorInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::stop_stream_processor::StopStreamProcessorInput {
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_stream_processor::StopStreamProcessorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::stop_stream_processor::StopStreamProcessorInput { name: self.name })
     }
 }
-

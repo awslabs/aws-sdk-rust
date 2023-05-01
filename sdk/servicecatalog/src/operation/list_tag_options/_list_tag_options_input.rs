@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTagOptionsInput  {
+pub struct ListTagOptionsInput {
     /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
     #[doc(hidden)]
     pub filters: std::option::Option<crate::types::ListTagOptionsFilters>,
@@ -15,7 +15,7 @@ pub struct ListTagOptionsInput  {
 }
 impl ListTagOptionsInput {
     /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
-    pub fn filters(&self) -> std::option::Option<& crate::types::ListTagOptionsFilters> {
+    pub fn filters(&self) -> std::option::Option<&crate::types::ListTagOptionsFilters> {
         self.filters.as_ref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -23,7 +23,7 @@ impl ListTagOptionsInput {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
 }
@@ -49,8 +49,12 @@ impl ListTagOptionsInputBuilder {
         self
     }
     /// <p>The search filters. If no search filters are specified, the output includes all TagOptions.</p>
-    pub fn set_filters(mut self, input: std::option::Option<crate::types::ListTagOptionsFilters>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<crate::types::ListTagOptionsFilters>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -59,7 +63,8 @@ impl ListTagOptionsInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +73,20 @@ impl ListTagOptionsInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTagOptionsInput`](crate::operation::list_tag_options::ListTagOptionsInput).
-    pub fn build(self) -> Result<crate::operation::list_tag_options::ListTagOptionsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_tag_options::ListTagOptionsInput {
-                filters: self.filters
-                ,
-                page_size: self.page_size
-                ,
-                page_token: self.page_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_tag_options::ListTagOptionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_tag_options::ListTagOptionsInput {
+            filters: self.filters,
+            page_size: self.page_size,
+            page_token: self.page_token,
+        })
     }
 }
-

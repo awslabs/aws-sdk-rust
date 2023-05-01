@@ -3,7 +3,7 @@
 /// <p>The configuration for a call analytics task.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MediaInsightsConfiguration  {
+pub struct MediaInsightsConfiguration {
     /// <p>Denotes the configration as enabled or disabled.</p>
     #[doc(hidden)]
     pub disabled: std::option::Option<bool>,
@@ -17,11 +17,11 @@ impl MediaInsightsConfiguration {
         self.disabled
     }
     /// <p>The configuration's ARN.</p>
-    pub fn configuration_arn(&self) -> std::option::Option<& str> {
+    pub fn configuration_arn(&self) -> std::option::Option<&str> {
         self.configuration_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for MediaInsightsConfiguration  {
+impl std::fmt::Debug for MediaInsightsConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MediaInsightsConfiguration");
         formatter.field("disabled", &self.disabled);
@@ -51,7 +51,8 @@ impl MediaInsightsConfigurationBuilder {
     }
     /// <p>Denotes the configration as enabled or disabled.</p>
     pub fn set_disabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.disabled = input; self
+        self.disabled = input;
+        self
     }
     /// <p>The configuration's ARN.</p>
     pub fn configuration_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,16 +60,18 @@ impl MediaInsightsConfigurationBuilder {
         self
     }
     /// <p>The configuration's ARN.</p>
-    pub fn set_configuration_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_arn = input; self
+    pub fn set_configuration_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`MediaInsightsConfiguration`](crate::types::MediaInsightsConfiguration).
     pub fn build(self) -> crate::types::MediaInsightsConfiguration {
         crate::types::MediaInsightsConfiguration {
-            disabled: self.disabled
-            ,
-            configuration_arn: self.configuration_arn
-            ,
+            disabled: self.disabled,
+            configuration_arn: self.configuration_arn,
         }
     }
 }
@@ -80,4 +83,3 @@ impl std::fmt::Debug for MediaInsightsConfigurationBuilder {
         formatter.finish()
     }
 }
-

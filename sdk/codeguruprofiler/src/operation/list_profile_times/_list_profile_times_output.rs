@@ -3,7 +3,7 @@
 /// <p>The structure representing the listProfileTimesResponse.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfileTimesOutput  {
+pub struct ListProfileTimesOutput {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     #[doc(hidden)]
     pub profile_times: std::option::Option<std::vec::Vec<crate::types::ProfileTime>>,
@@ -14,22 +14,23 @@ pub struct ListProfileTimesOutput  {
 }
 impl ListProfileTimesOutput {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
-    pub fn profile_times(&self) -> std::option::Option<& [crate::types::ProfileTime]> {
+    pub fn profile_times(&self) -> std::option::Option<&[crate::types::ProfileTime]> {
         self.profile_times.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListProfileTimesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListProfileTimesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileTimesOutput`](crate::operation::list_profile_times::ListProfileTimesOutput).
-    pub fn builder() -> crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder {
+    pub fn builder() -> crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder
+    {
         crate::operation::list_profile_times::builders::ListProfileTimesOutputBuilder::default()
     }
 }
@@ -50,13 +51,17 @@ impl ListProfileTimesOutputBuilder {
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
     pub fn profile_times(mut self, input: crate::types::ProfileTime) -> Self {
         let mut v = self.profile_times.unwrap_or_default();
-                        v.push(input);
-                        self.profile_times = Some(v);
-                        self
+        v.push(input);
+        self.profile_times = Some(v);
+        self
     }
     /// <p>The list of start times of the available profiles for the aggregation period in the specified time range. </p>
-    pub fn set_profile_times(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProfileTime>>) -> Self {
-        self.profile_times = input; self
+    pub fn set_profile_times(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ProfileTime>>,
+    ) -> Self {
+        self.profile_times = input;
+        self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +70,24 @@ impl ListProfileTimesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code> request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListProfileTimesOutput`](crate::operation::list_profile_times::ListProfileTimesOutput).
     pub fn build(self) -> crate::operation::list_profile_times::ListProfileTimesOutput {
         crate::operation::list_profile_times::ListProfileTimesOutput {
-            profile_times: self.profile_times
-            ,
-            next_token: self.next_token
-            ,
+            profile_times: self.profile_times,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

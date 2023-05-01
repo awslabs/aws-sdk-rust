@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFleetPortSettingsOutput  {
+pub struct DescribeFleetPortSettingsOutput {
     /// <p>A unique identifier for the fleet that was requested. </p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -25,37 +25,37 @@ pub struct DescribeFleetPortSettingsOutput  {
 }
 impl DescribeFleetPortSettingsOutput {
     /// <p>A unique identifier for the fleet that was requested. </p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<& str> {
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
     /// <p>The port settings for the requested fleet ID.</p>
-    pub fn inbound_permissions(&self) -> std::option::Option<& [crate::types::IpPermission]> {
+    pub fn inbound_permissions(&self) -> std::option::Option<&[crate::types::IpPermission]> {
         self.inbound_permissions.as_deref()
     }
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-    pub fn update_status(&self) -> std::option::Option<& crate::types::LocationUpdateStatus> {
+    pub fn update_status(&self) -> std::option::Option<&crate::types::LocationUpdateStatus> {
         self.update_status.as_ref()
     }
     /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
-    pub fn location(&self) -> std::option::Option<& str> {
+    pub fn location(&self) -> std::option::Option<&str> {
         self.location.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFleetPortSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeFleetPortSettingsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFleetPortSettingsOutput`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput).
-    pub fn builder() -> crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsOutputBuilder{
         crate::operation::describe_fleet_port_settings::builders::DescribeFleetPortSettingsOutputBuilder::default()
     }
 }
@@ -79,7 +79,8 @@ impl DescribeFleetPortSettingsOutputBuilder {
     }
     /// <p>A unique identifier for the fleet that was requested. </p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
@@ -94,7 +95,8 @@ impl DescribeFleetPortSettingsOutputBuilder {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input; self
+        self.fleet_arn = input;
+        self
     }
     /// Appends an item to `inbound_permissions`.
     ///
@@ -103,13 +105,17 @@ impl DescribeFleetPortSettingsOutputBuilder {
     /// <p>The port settings for the requested fleet ID.</p>
     pub fn inbound_permissions(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.inbound_permissions.unwrap_or_default();
-                        v.push(input);
-                        self.inbound_permissions = Some(v);
-                        self
+        v.push(input);
+        self.inbound_permissions = Some(v);
+        self
     }
     /// <p>The port settings for the requested fleet ID.</p>
-    pub fn set_inbound_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>) -> Self {
-        self.inbound_permissions = input; self
+    pub fn set_inbound_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+    ) -> Self {
+        self.inbound_permissions = input;
+        self
     }
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
     pub fn update_status(mut self, input: crate::types::LocationUpdateStatus) -> Self {
@@ -117,8 +123,12 @@ impl DescribeFleetPortSettingsOutputBuilder {
         self
     }
     /// <p>The current status of updates to the fleet's port settings in the requested fleet location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested for the fleet but has not yet been completed for the location.</p>
-    pub fn set_update_status(mut self, input: std::option::Option<crate::types::LocationUpdateStatus>) -> Self {
-        self.update_status = input; self
+    pub fn set_update_status(
+        mut self,
+        input: std::option::Option<crate::types::LocationUpdateStatus>,
+    ) -> Self {
+        self.update_status = input;
+        self
     }
     /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,32 +137,29 @@ impl DescribeFleetPortSettingsOutputBuilder {
     }
     /// <p>The requested fleet location, expressed as an Amazon Web Services Region code, such as <code>us-west-2</code>. </p>
     pub fn set_location(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.location = input; self
+        self.location = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeFleetPortSettingsOutput`](crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput).
-    pub fn build(self) -> crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput {
         crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput {
-            fleet_id: self.fleet_id
-            ,
-            fleet_arn: self.fleet_arn
-            ,
-            inbound_permissions: self.inbound_permissions
-            ,
-            update_status: self.update_status
-            ,
-            location: self.location
-            ,
+            fleet_id: self.fleet_id,
+            fleet_arn: self.fleet_arn,
+            inbound_permissions: self.inbound_permissions,
+            update_status: self.update_status,
+            location: self.location,
             _request_id: self._request_id,
         }
     }
 }
-

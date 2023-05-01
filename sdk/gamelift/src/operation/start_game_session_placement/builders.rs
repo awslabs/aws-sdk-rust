@@ -4,62 +4,82 @@ pub use crate::operation::start_game_session_placement::_start_game_session_plac
 pub use crate::operation::start_game_session_placement::_start_game_session_placement_input::StartGameSessionPlacementInputBuilder;
 
 /// Fluent builder constructing a request to `StartGameSessionPlacement`.
-/// 
-/// <p>Places a request for a new game session in a queue. When processing a placement request, Amazon GameLift searches for available resources on the queue's destinations, scanning each until it finds resources or the placement request times out.</p> 
-/// <p>A game session placement request can also request player sessions. When a new game session is successfully created, Amazon GameLift creates a player session for each player included in the request.</p> 
-/// <p>When placing a game session, by default Amazon GameLift tries each fleet in the order they are listed in the queue configuration. Ideally, a queue's destinations are listed in preference order.</p> 
-/// <p>Alternatively, when requesting a game session with players, you can also provide latency data for each player in relevant Regions. Latency data indicates the performance lag a player experiences when connected to a fleet in the Region. Amazon GameLift uses latency data to reorder the list of destinations to place the game session in a Region with minimal lag. If latency data is provided for multiple players, Amazon GameLift calculates each Region's average lag for all players and reorders to get the best game play across all players. </p> 
-/// <p>To place a new game session request, specify the following:</p> 
-/// <ul> 
-/// <li> <p>The queue name and a set of game session properties and settings</p> </li> 
-/// <li> <p>A unique ID (such as a UUID) for the placement. You use this ID to track the status of the placement request</p> </li> 
-/// <li> <p>(Optional) A set of player data and a unique player ID for each player that you are joining to the new game session (player data is optional, but if you include it, you must also provide a unique ID for each player)</p> </li> 
-/// <li> <p>Latency data for all players (if you want to optimize game play for the players)</p> </li> 
-/// </ul> 
-/// <p>If successful, a new game session placement is created.</p> 
+///
+/// <p>Places a request for a new game session in a queue. When processing a placement request, Amazon GameLift searches for available resources on the queue's destinations, scanning each until it finds resources or the placement request times out.</p>
+/// <p>A game session placement request can also request player sessions. When a new game session is successfully created, Amazon GameLift creates a player session for each player included in the request.</p>
+/// <p>When placing a game session, by default Amazon GameLift tries each fleet in the order they are listed in the queue configuration. Ideally, a queue's destinations are listed in preference order.</p>
+/// <p>Alternatively, when requesting a game session with players, you can also provide latency data for each player in relevant Regions. Latency data indicates the performance lag a player experiences when connected to a fleet in the Region. Amazon GameLift uses latency data to reorder the list of destinations to place the game session in a Region with minimal lag. If latency data is provided for multiple players, Amazon GameLift calculates each Region's average lag for all players and reorders to get the best game play across all players. </p>
+/// <p>To place a new game session request, specify the following:</p>
+/// <ul>
+/// <li> <p>The queue name and a set of game session properties and settings</p> </li>
+/// <li> <p>A unique ID (such as a UUID) for the placement. You use this ID to track the status of the placement request</p> </li>
+/// <li> <p>(Optional) A set of player data and a unique player ID for each player that you are joining to the new game session (player data is optional, but if you include it, you must also provide a unique ID for each player)</p> </li>
+/// <li> <p>Latency data for all players (if you want to optimize game play for the players)</p> </li>
+/// </ul>
+/// <p>If successful, a new game session placement is created.</p>
 /// <p>To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a> and check the request's status. If the status is <code>FULFILLED</code>, a new game session has been created and a game session ARN and Region are referenced. If the placement request times out, you can resubmit the request or retry it with a different queue. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartGameSessionPlacementFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::start_game_session_placement::builders::StartGameSessionPlacementInputBuilder,
 }
-impl StartGameSessionPlacementFluentBuilder  {
+impl StartGameSessionPlacementFluentBuilder {
     /// Creates a new `StartGameSessionPlacement`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_game_session_placement::StartGameSessionPlacement, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_game_session_placement::StartGameSessionPlacementError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_game_session_placement::StartGameSessionPlacementOutput, aws_smithy_http::result::SdkError<crate::operation::start_game_session_placement::StartGameSessionPlacementError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_game_session_placement::StartGameSessionPlacement,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all Regions and cannot be reused.</p>
     pub fn placement_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.placement_id(input.into());
@@ -76,7 +96,10 @@ impl StartGameSessionPlacementFluentBuilder  {
         self
     }
     /// <p>Name of the queue to use to place the new game session. You can use either the queue name or ARN value. </p>
-    pub fn set_game_session_queue_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_session_queue_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_game_session_queue_name(input);
         self
     }
@@ -90,7 +113,10 @@ impl StartGameSessionPlacementFluentBuilder  {
         self
     }
     /// <p>A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn set_game_properties(mut self, input: std::option::Option<std::vec::Vec<crate::types::GameProperty>>) -> Self {
+    pub fn set_game_properties(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GameProperty>>,
+    ) -> Self {
         self.inner = self.inner.set_game_properties(input);
         self
     }
@@ -110,7 +136,10 @@ impl StartGameSessionPlacementFluentBuilder  {
         self
     }
     /// <p>A descriptive label that is associated with a game session. Session names do not need to be unique.</p>
-    pub fn set_game_session_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_session_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_game_session_name(input);
         self
     }
@@ -124,7 +153,10 @@ impl StartGameSessionPlacementFluentBuilder  {
         self
     }
     /// <p>A set of values, expressed in milliseconds, that indicates the amount of latency that a player experiences when connected to Amazon Web Services Regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players. </p>
-    pub fn set_player_latencies(mut self, input: std::option::Option<std::vec::Vec<crate::types::PlayerLatency>>) -> Self {
+    pub fn set_player_latencies(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PlayerLatency>>,
+    ) -> Self {
         self.inner = self.inner.set_player_latencies(input);
         self
     }
@@ -138,7 +170,10 @@ impl StartGameSessionPlacementFluentBuilder  {
         self
     }
     /// <p>Set of information on each player to create a player session for.</p>
-    pub fn set_desired_player_sessions(mut self, input: std::option::Option<std::vec::Vec<crate::types::DesiredPlayerSession>>) -> Self {
+    pub fn set_desired_player_sessions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DesiredPlayerSession>>,
+    ) -> Self {
         self.inner = self.inner.set_desired_player_sessions(input);
         self
     }
@@ -148,9 +183,11 @@ impl StartGameSessionPlacementFluentBuilder  {
         self
     }
     /// <p>A set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the <code>GameSession</code> object with a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a>).</p>
-    pub fn set_game_session_data(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_game_session_data(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_game_session_data(input);
         self
     }
 }
-

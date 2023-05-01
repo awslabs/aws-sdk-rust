@@ -4,56 +4,76 @@ pub use crate::operation::list_recommendation_templates::_list_recommendation_te
 pub use crate::operation::list_recommendation_templates::_list_recommendation_templates_input::ListRecommendationTemplatesInputBuilder;
 
 /// Fluent builder constructing a request to `ListRecommendationTemplates`.
-/// 
+///
 /// <p>Lists the recommendation templates for the Resilience Hub applications.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListRecommendationTemplatesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesInputBuilder,
 }
-impl ListRecommendationTemplatesFluentBuilder  {
+impl ListRecommendationTemplatesFluentBuilder {
     /// Creates a new `ListRecommendationTemplates`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_recommendation_templates::ListRecommendationTemplates, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_recommendation_templates::ListRecommendationTemplatesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput, aws_smithy_http::result::SdkError<crate::operation::list_recommendation_templates::ListRecommendationTemplatesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_recommendation_templates::ListRecommendationTemplates,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_recommendation_templates::ListRecommendationTemplatesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_recommendation_templates::ListRecommendationTemplatesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_recommendation_templates::paginator::ListRecommendationTemplatesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_recommendation_templates::paginator::ListRecommendationTemplatesPaginator {
-                                crate::operation::list_recommendation_templates::paginator::ListRecommendationTemplatesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_recommendation_templates::paginator::ListRecommendationTemplatesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_recommendation_templates::paginator::ListRecommendationTemplatesPaginator{
+        crate::operation::list_recommendation_templates::paginator::ListRecommendationTemplatesPaginator::new(self.handle, self.inner)
+    }
     /// <p>The Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</p>
     pub fn assessment_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.assessment_arn(input.into());
@@ -84,7 +104,10 @@ impl ListRecommendationTemplatesFluentBuilder  {
         self
     }
     /// <p>The status of the action.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::vec::Vec<crate::types::RecommendationTemplateStatus>>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RecommendationTemplateStatus>>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -94,7 +117,10 @@ impl ListRecommendationTemplatesFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
-    pub fn set_recommendation_template_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_recommendation_template_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_recommendation_template_arn(input);
         self
     }
@@ -129,4 +155,3 @@ impl ListRecommendationTemplatesFluentBuilder  {
         self
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListThemesOutput  {
+pub struct ListThemesOutput {
     /// <p>The list of themes for the Amplify app.</p>
     #[doc(hidden)]
     pub entities: std::option::Option<std::vec::Vec<crate::types::ThemeSummary>>,
@@ -13,19 +13,19 @@ pub struct ListThemesOutput  {
 }
 impl ListThemesOutput {
     /// <p>The list of themes for the Amplify app.</p>
-    pub fn entities(&self) -> std::option::Option<& [crate::types::ThemeSummary]> {
+    pub fn entities(&self) -> std::option::Option<&[crate::types::ThemeSummary]> {
         self.entities.as_deref()
     }
     /// <p>The pagination token that's returned if more results are available.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListThemesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListThemesOutput {
     /// Creates a new builder-style object to manufacture [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput).
     pub fn builder() -> crate::operation::list_themes::builders::ListThemesOutputBuilder {
@@ -49,13 +49,17 @@ impl ListThemesOutputBuilder {
     /// <p>The list of themes for the Amplify app.</p>
     pub fn entities(mut self, input: crate::types::ThemeSummary) -> Self {
         let mut v = self.entities.unwrap_or_default();
-                        v.push(input);
-                        self.entities = Some(v);
-                        self
+        v.push(input);
+        self.entities = Some(v);
+        self
     }
     /// <p>The list of themes for the Amplify app.</p>
-    pub fn set_entities(mut self, input: std::option::Option<std::vec::Vec<crate::types::ThemeSummary>>) -> Self {
-        self.entities = input; self
+    pub fn set_entities(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ThemeSummary>>,
+    ) -> Self {
+        self.entities = input;
+        self
     }
     /// <p>The pagination token that's returned if more results are available.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListThemesOutputBuilder {
     }
     /// <p>The pagination token that's returned if more results are available.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListThemesOutput`](crate::operation::list_themes::ListThemesOutput).
     pub fn build(self) -> crate::operation::list_themes::ListThemesOutput {
         crate::operation::list_themes::ListThemesOutput {
-            entities: self.entities
-            ,
-            next_token: self.next_token
-            ,
+            entities: self.entities,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

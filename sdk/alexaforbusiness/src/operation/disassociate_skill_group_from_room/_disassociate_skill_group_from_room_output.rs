@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateSkillGroupFromRoomOutput  {
+pub struct DisassociateSkillGroupFromRoomOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisassociateSkillGroupFromRoomOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateSkillGroupFromRoomOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateSkillGroupFromRoomOutput`](crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput).
-    pub fn builder() -> crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomOutputBuilder{
         crate::operation::disassociate_skill_group_from_room::builders::DisassociateSkillGroupFromRoomOutputBuilder::default()
     }
 }
@@ -25,19 +25,21 @@ pub struct DisassociateSkillGroupFromRoomOutputBuilder {
 }
 impl DisassociateSkillGroupFromRoomOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateSkillGroupFromRoomOutput`](crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput).
-    pub fn build(self) -> crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput
+    {
         crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput {
             _request_id: self._request_id,
         }
     }
 }
-

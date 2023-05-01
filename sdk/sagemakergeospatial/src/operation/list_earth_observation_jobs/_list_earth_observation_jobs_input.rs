@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ListEarthObservationJobsInput  {
+pub struct ListEarthObservationJobsInput {
     /// <p>A filter that retrieves only jobs with a specific status.</p>
     #[doc(hidden)]
     pub status_equals: std::option::Option<crate::types::EarthObservationJobStatus>,
@@ -21,19 +21,19 @@ pub struct ListEarthObservationJobsInput  {
 }
 impl ListEarthObservationJobsInput {
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn status_equals(&self) -> std::option::Option<& crate::types::EarthObservationJobStatus> {
+    pub fn status_equals(&self) -> std::option::Option<&crate::types::EarthObservationJobStatus> {
         self.status_equals.as_ref()
     }
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
-    pub fn sort_order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn sort_order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.sort_order.as_ref()
     }
     /// <p>The parameter by which to sort the results.</p>
-    pub fn sort_by(&self) -> std::option::Option<& str> {
+    pub fn sort_by(&self) -> std::option::Option<&str> {
         self.sort_by.as_deref()
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of items to return.</p>
@@ -41,7 +41,7 @@ impl ListEarthObservationJobsInput {
         self.max_results
     }
 }
-impl  std::fmt::Debug for ListEarthObservationJobsInput  {
+impl std::fmt::Debug for ListEarthObservationJobsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListEarthObservationJobsInput");
         formatter.field("status_equals", &self.status_equals);
@@ -54,7 +54,9 @@ impl  std::fmt::Debug for ListEarthObservationJobsInput  {
 }
 impl ListEarthObservationJobsInput {
     /// Creates a new builder-style object to manufacture [`ListEarthObservationJobsInput`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput).
-    pub fn builder() -> crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsInputBuilder
+    {
         crate::operation::list_earth_observation_jobs::builders::ListEarthObservationJobsInputBuilder::default()
     }
 }
@@ -76,8 +78,12 @@ impl ListEarthObservationJobsInputBuilder {
         self
     }
     /// <p>A filter that retrieves only jobs with a specific status.</p>
-    pub fn set_status_equals(mut self, input: std::option::Option<crate::types::EarthObservationJobStatus>) -> Self {
-        self.status_equals = input; self
+    pub fn set_status_equals(
+        mut self,
+        input: std::option::Option<crate::types::EarthObservationJobStatus>,
+    ) -> Self {
+        self.status_equals = input;
+        self
     }
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
     pub fn sort_order(mut self, input: crate::types::SortOrder) -> Self {
@@ -86,7 +92,8 @@ impl ListEarthObservationJobsInputBuilder {
     }
     /// <p>An optional value that specifies whether you want the results sorted in <code>Ascending</code> or <code>Descending</code> order.</p>
     pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.sort_order = input; self
+        self.sort_order = input;
+        self
     }
     /// <p>The parameter by which to sort the results.</p>
     pub fn sort_by(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +102,8 @@ impl ListEarthObservationJobsInputBuilder {
     }
     /// <p>The parameter by which to sort the results.</p>
     pub fn set_sort_by(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sort_by = input; self
+        self.sort_by = input;
+        self
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +112,8 @@ impl ListEarthObservationJobsInputBuilder {
     }
     /// <p>If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The total number of items to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -113,23 +122,24 @@ impl ListEarthObservationJobsInputBuilder {
     }
     /// <p>The total number of items to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListEarthObservationJobsInput`](crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_earth_observation_jobs::ListEarthObservationJobsInput {
-                status_equals: self.status_equals
-                ,
-                sort_order: self.sort_order
-                ,
-                sort_by: self.sort_by
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                status_equals: self.status_equals,
+                sort_order: self.sort_order,
+                sort_by: self.sort_by,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
@@ -144,4 +154,3 @@ impl std::fmt::Debug for ListEarthObservationJobsInputBuilder {
         formatter.finish()
     }
 }
-

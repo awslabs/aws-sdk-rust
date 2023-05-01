@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetTagsForResourceInput  {
+pub struct SetTagsForResourceInput {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct SetTagsForResourceInput  {
 }
 impl SetTagsForResourceInput {
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
 impl SetTagsForResourceInput {
     /// Creates a new builder-style object to manufacture [`SetTagsForResourceInput`](crate::operation::set_tags_for_resource::SetTagsForResourceInput).
-    pub fn builder() -> crate::operation::set_tags_for_resource::builders::SetTagsForResourceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::set_tags_for_resource::builders::SetTagsForResourceInputBuilder {
         crate::operation::set_tags_for_resource::builders::SetTagsForResourceInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl SetTagsForResourceInputBuilder {
     }
     /// <p>The ARN of the assessment template that you want to set tags to.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -51,24 +53,30 @@ impl SetTagsForResourceInputBuilder {
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>A collection of key and value pairs that you want to set to the assessment template.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`SetTagsForResourceInput`](crate::operation::set_tags_for_resource::SetTagsForResourceInput).
-    pub fn build(self) -> Result<crate::operation::set_tags_for_resource::SetTagsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::set_tags_for_resource::SetTagsForResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::set_tags_for_resource::SetTagsForResourceInput {
-                resource_arn: self.resource_arn
-                ,
-                tags: self.tags
-                ,
-            }
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            },
         )
     }
 }
-

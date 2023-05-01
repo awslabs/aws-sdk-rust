@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let targetgroupstatus = unimplemented!();
 /// match targetgroupstatus {
@@ -33,14 +33,22 @@
 /// Specifically, when `targetgroupstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TargetGroupStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TargetGroupStatus {
     /// TargetGroup is active
     Active,
@@ -53,47 +61,54 @@ pub enum TargetGroupStatus {
     /// TargetGroup deletion in progress
     DeleteInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TargetGroupStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVE" => TargetGroupStatus::Active,
-"CREATE_FAILED" => TargetGroupStatus::CreateFailed,
-"CREATE_IN_PROGRESS" => TargetGroupStatus::CreateInProgress,
-"DELETE_FAILED" => TargetGroupStatus::DeleteFailed,
-"DELETE_IN_PROGRESS" => TargetGroupStatus::DeleteInProgress,
-other => TargetGroupStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => TargetGroupStatus::Active,
+            "CREATE_FAILED" => TargetGroupStatus::CreateFailed,
+            "CREATE_IN_PROGRESS" => TargetGroupStatus::CreateInProgress,
+            "DELETE_FAILED" => TargetGroupStatus::DeleteFailed,
+            "DELETE_IN_PROGRESS" => TargetGroupStatus::DeleteInProgress,
+            other => {
+                TargetGroupStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for TargetGroupStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TargetGroupStatus::from(s))
-                }
-            }
-impl TargetGroupStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TargetGroupStatus::Active => "ACTIVE",
-    TargetGroupStatus::CreateFailed => "CREATE_FAILED",
-    TargetGroupStatus::CreateInProgress => "CREATE_IN_PROGRESS",
-    TargetGroupStatus::DeleteFailed => "DELETE_FAILED",
-    TargetGroupStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
-    TargetGroupStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVE", "CREATE_FAILED", "CREATE_IN_PROGRESS", "DELETE_FAILED", "DELETE_IN_PROGRESS"]
-                }
-            }
-impl AsRef<str> for TargetGroupStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TargetGroupStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TargetGroupStatus::from(s))
+    }
+}
+impl TargetGroupStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TargetGroupStatus::Active => "ACTIVE",
+            TargetGroupStatus::CreateFailed => "CREATE_FAILED",
+            TargetGroupStatus::CreateInProgress => "CREATE_IN_PROGRESS",
+            TargetGroupStatus::DeleteFailed => "DELETE_FAILED",
+            TargetGroupStatus::DeleteInProgress => "DELETE_IN_PROGRESS",
+            TargetGroupStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATE_FAILED",
+            "CREATE_IN_PROGRESS",
+            "DELETE_FAILED",
+            "DELETE_IN_PROGRESS",
+        ]
+    }
+}
+impl AsRef<str> for TargetGroupStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

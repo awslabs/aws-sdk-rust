@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchDeleteReadSetOutput  {
+pub struct BatchDeleteReadSetOutput {
     /// <p>Errors returned by individual delete operations.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::types::ReadSetBatchError>>,
@@ -10,19 +10,21 @@ pub struct BatchDeleteReadSetOutput  {
 }
 impl BatchDeleteReadSetOutput {
     /// <p>Errors returned by individual delete operations.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::ReadSetBatchError]> {
+    pub fn errors(&self) -> std::option::Option<&[crate::types::ReadSetBatchError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchDeleteReadSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchDeleteReadSetOutput {
     /// Creates a new builder-style object to manufacture [`BatchDeleteReadSetOutput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput).
-    pub fn builder() -> crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetOutputBuilder {
-        crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetOutputBuilder {
+        crate::operation::batch_delete_read_set::builders::BatchDeleteReadSetOutputBuilder::default(
+        )
     }
 }
 
@@ -41,30 +43,32 @@ impl BatchDeleteReadSetOutputBuilder {
     /// <p>Errors returned by individual delete operations.</p>
     pub fn errors(mut self, input: crate::types::ReadSetBatchError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>Errors returned by individual delete operations.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReadSetBatchError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReadSetBatchError>>,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchDeleteReadSetOutput`](crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput).
     pub fn build(self) -> crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput {
         crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput {
-            errors: self.errors
-            ,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }
 }
-

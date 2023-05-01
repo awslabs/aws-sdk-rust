@@ -4,71 +4,94 @@ pub use crate::operation::create_db_subnet_group::_create_db_subnet_group_output
 pub use crate::operation::create_db_subnet_group::_create_db_subnet_group_input::CreateDbSubnetGroupInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDBSubnetGroup`.
-/// 
+///
 /// <p>Creates a new DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the Amazon Web Services Region.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDBSubnetGroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupInputBuilder,
+    inner: crate::operation::create_db_subnet_group::builders::CreateDbSubnetGroupInputBuilder,
 }
-impl CreateDBSubnetGroupFluentBuilder  {
+impl CreateDBSubnetGroupFluentBuilder {
     /// Creates a new `CreateDBSubnetGroup`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_db_subnet_group::CreateDBSubnetGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_db_subnet_group::CreateDBSubnetGroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_db_subnet_group::CreateDbSubnetGroupOutput, aws_smithy_http::result::SdkError<crate::operation::create_db_subnet_group::CreateDBSubnetGroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p> </li> 
-    /// <li> <p>Must not be default.</p> </li> 
-    /// <li> <p>First character must be a letter.</p> </li> 
-    /// </ul> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_db_subnet_group::CreateDBSubnetGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_db_subnet_group::CreateDBSubnetGroupError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_db_subnet_group::CreateDbSubnetGroupOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_db_subnet_group::CreateDBSubnetGroupError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p> </li>
+    /// <li> <p>Must not be default.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
     pub fn db_subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.db_subnet_group_name(input.into());
         self
     }
-    /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p> </li> 
-    /// <li> <p>Must not be default.</p> </li> 
-    /// <li> <p>First character must be a letter.</p> </li> 
-    /// </ul> 
+    /// <p>The name for the DB subnet group. This value is stored as a lowercase string.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens.</p> </li>
+    /// <li> <p>Must not be default.</p> </li>
+    /// <li> <p>First character must be a letter.</p> </li>
+    /// </ul>
     /// <p>Example: <code>mydbsubnetgroup</code> </p>
-    pub fn set_db_subnet_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_subnet_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_db_subnet_group_name(input);
         self
     }
@@ -78,7 +101,10 @@ impl CreateDBSubnetGroupFluentBuilder  {
         self
     }
     /// <p>The description for the DB subnet group.</p>
-    pub fn set_db_subnet_group_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_db_subnet_group_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_db_subnet_group_description(input);
         self
     }
@@ -92,7 +118,10 @@ impl CreateDBSubnetGroupFluentBuilder  {
         self
     }
     /// <p>The EC2 Subnet IDs for the DB subnet group.</p>
-    pub fn set_subnet_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_subnet_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_subnet_ids(input);
         self
     }
@@ -106,9 +135,11 @@ impl CreateDBSubnetGroupFluentBuilder  {
         self
     }
     /// <p>Tags to assign to the DB subnet group.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

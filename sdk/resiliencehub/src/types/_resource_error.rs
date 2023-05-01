@@ -3,7 +3,7 @@
 /// <p> Defines application resource errors. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceError  {
+pub struct ResourceError {
     /// <p> This is the identifier of the resource. </p>
     #[doc(hidden)]
     pub logical_resource_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ResourceError  {
 }
 impl ResourceError {
     /// <p> This is the identifier of the resource. </p>
-    pub fn logical_resource_id(&self) -> std::option::Option<& str> {
+    pub fn logical_resource_id(&self) -> std::option::Option<&str> {
         self.logical_resource_id.as_deref()
     }
     /// <p> This is the identifier of the physical resource. </p>
-    pub fn physical_resource_id(&self) -> std::option::Option<& str> {
+    pub fn physical_resource_id(&self) -> std::option::Option<&str> {
         self.physical_resource_id.as_deref()
     }
     /// <p> This is the error message. </p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -50,8 +50,12 @@ impl ResourceErrorBuilder {
         self
     }
     /// <p> This is the identifier of the resource. </p>
-    pub fn set_logical_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.logical_resource_id = input; self
+    pub fn set_logical_resource_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.logical_resource_id = input;
+        self
     }
     /// <p> This is the identifier of the physical resource. </p>
     pub fn physical_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +63,12 @@ impl ResourceErrorBuilder {
         self
     }
     /// <p> This is the identifier of the physical resource. </p>
-    pub fn set_physical_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.physical_resource_id = input; self
+    pub fn set_physical_resource_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.physical_resource_id = input;
+        self
     }
     /// <p> This is the error message. </p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +77,15 @@ impl ResourceErrorBuilder {
     }
     /// <p> This is the error message. </p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceError`](crate::types::ResourceError).
     pub fn build(self) -> crate::types::ResourceError {
         crate::types::ResourceError {
-            logical_resource_id: self.logical_resource_id
-            ,
-            physical_resource_id: self.physical_resource_id
-            ,
-            reason: self.reason
-            ,
+            logical_resource_id: self.logical_resource_id,
+            physical_resource_id: self.physical_resource_id,
+            reason: self.reason,
         }
     }
 }
-

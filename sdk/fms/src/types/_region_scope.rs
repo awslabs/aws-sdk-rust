@@ -3,7 +3,7 @@
 /// <p>Defines the Amazon Web Services Regions that the specified Firewall Manager administrator can manage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegionScope  {
+pub struct RegionScope {
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
     #[doc(hidden)]
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,7 +13,7 @@ pub struct RegionScope  {
 }
 impl RegionScope {
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
-    pub fn regions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn regions(&self) -> std::option::Option<&[std::string::String]> {
         self.regions.as_deref()
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Amazon Web Services Regions.</p>
@@ -43,13 +43,17 @@ impl RegionScopeBuilder {
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
     pub fn regions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.regions.unwrap_or_default();
-                        v.push(input.into());
-                        self.regions = Some(v);
-                        self
+        v.push(input.into());
+        self.regions = Some(v);
+        self
     }
     /// <p>The Amazon Web Services Regions that the specified Firewall Manager administrator can perform actions in.</p>
-    pub fn set_regions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.regions = input; self
+    pub fn set_regions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.regions = input;
+        self
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Amazon Web Services Regions.</p>
     pub fn all_regions_enabled(mut self, input: bool) -> Self {
@@ -58,17 +62,14 @@ impl RegionScopeBuilder {
     }
     /// <p>Allows the specified Firewall Manager administrator to manage all Amazon Web Services Regions.</p>
     pub fn set_all_regions_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.all_regions_enabled = input; self
+        self.all_regions_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`RegionScope`](crate::types::RegionScope).
     pub fn build(self) -> crate::types::RegionScope {
         crate::types::RegionScope {
-            regions: self.regions
-            ,
-            all_regions_enabled: self.all_regions_enabled
-                .unwrap_or_default()
-            ,
+            regions: self.regions,
+            all_regions_enabled: self.all_regions_enabled.unwrap_or_default(),
         }
     }
 }
-

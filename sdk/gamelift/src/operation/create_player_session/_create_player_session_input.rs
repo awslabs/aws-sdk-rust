@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePlayerSessionInput  {
+pub struct CreatePlayerSessionInput {
     /// <p>A unique identifier for the game session to add a player to.</p>
     #[doc(hidden)]
     pub game_session_id: std::option::Option<std::string::String>,
@@ -15,22 +15,24 @@ pub struct CreatePlayerSessionInput  {
 }
 impl CreatePlayerSessionInput {
     /// <p>A unique identifier for the game session to add a player to.</p>
-    pub fn game_session_id(&self) -> std::option::Option<& str> {
+    pub fn game_session_id(&self) -> std::option::Option<&str> {
         self.game_session_id.as_deref()
     }
     /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
-    pub fn player_id(&self) -> std::option::Option<& str> {
+    pub fn player_id(&self) -> std::option::Option<&str> {
         self.player_id.as_deref()
     }
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
-    pub fn player_data(&self) -> std::option::Option<& str> {
+    pub fn player_data(&self) -> std::option::Option<&str> {
         self.player_data.as_deref()
     }
 }
 impl CreatePlayerSessionInput {
     /// Creates a new builder-style object to manufacture [`CreatePlayerSessionInput`](crate::operation::create_player_session::CreatePlayerSessionInput).
-    pub fn builder() -> crate::operation::create_player_session::builders::CreatePlayerSessionInputBuilder {
-        crate::operation::create_player_session::builders::CreatePlayerSessionInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_player_session::builders::CreatePlayerSessionInputBuilder {
+        crate::operation::create_player_session::builders::CreatePlayerSessionInputBuilder::default(
+        )
     }
 }
 
@@ -50,7 +52,8 @@ impl CreatePlayerSessionInputBuilder {
     }
     /// <p>A unique identifier for the game session to add a player to.</p>
     pub fn set_game_session_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.game_session_id = input; self
+        self.game_session_id = input;
+        self
     }
     /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
     pub fn player_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl CreatePlayerSessionInputBuilder {
     }
     /// <p>A unique identifier for a player. Player IDs are developer-defined.</p>
     pub fn set_player_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.player_id = input; self
+        self.player_id = input;
+        self
     }
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn player_data(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl CreatePlayerSessionInputBuilder {
     }
     /// <p>Developer-defined information related to a player. Amazon GameLift does not use this data, so it can be formatted as needed for use in the game.</p>
     pub fn set_player_data(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.player_data = input; self
+        self.player_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePlayerSessionInput`](crate::operation::create_player_session::CreatePlayerSessionInput).
-    pub fn build(self) -> Result<crate::operation::create_player_session::CreatePlayerSessionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_player_session::CreatePlayerSessionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_player_session::CreatePlayerSessionInput {
-                game_session_id: self.game_session_id
-                ,
-                player_id: self.player_id
-                ,
-                player_data: self.player_data
-                ,
-            }
+                game_session_id: self.game_session_id,
+                player_id: self.player_id,
+                player_data: self.player_data,
+            },
         )
     }
 }
-

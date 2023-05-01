@@ -28,4 +28,3 @@ pub mod builders;
 
 /// Error types that AWS CodeStar connections can respond with.
 pub mod error;
-

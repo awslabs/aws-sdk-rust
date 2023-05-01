@@ -3,8 +3,7 @@
 /// <p> The connector metadata specific to Amazon Connect Customer Profiles. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CustomerProfilesMetadata  {
-}
+pub struct CustomerProfilesMetadata {}
 impl CustomerProfilesMetadata {
     /// Creates a new builder-style object to manufacture [`CustomerProfilesMetadata`](crate::types::CustomerProfilesMetadata).
     pub fn builder() -> crate::types::builders::CustomerProfilesMetadataBuilder {
@@ -15,13 +14,10 @@ impl CustomerProfilesMetadata {
 /// A builder for [`CustomerProfilesMetadata`](crate::types::CustomerProfilesMetadata).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct CustomerProfilesMetadataBuilder {
-}
+pub struct CustomerProfilesMetadataBuilder {}
 impl CustomerProfilesMetadataBuilder {
     /// Consumes the builder and constructs a [`CustomerProfilesMetadata`](crate::types::CustomerProfilesMetadata).
     pub fn build(self) -> crate::types::CustomerProfilesMetadata {
-        crate::types::CustomerProfilesMetadata {
-        }
+        crate::types::CustomerProfilesMetadata {}
     }
 }
-

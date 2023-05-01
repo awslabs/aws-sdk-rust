@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationInstancesInput  {
+pub struct ListApplicationInstancesInput {
     /// <p>The application instances' device ID.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListApplicationInstancesInput  {
 }
 impl ListApplicationInstancesInput {
     /// <p>The application instances' device ID.</p>
-    pub fn device_id(&self) -> std::option::Option<& str> {
+    pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
     }
     /// <p>Only include instances with a specific status.</p>
-    pub fn status_filter(&self) -> std::option::Option<& crate::types::StatusFilter> {
+    pub fn status_filter(&self) -> std::option::Option<&crate::types::StatusFilter> {
         self.status_filter.as_ref()
     }
     /// <p>The maximum number of application instances to return in one page of results.</p>
@@ -30,13 +30,15 @@ impl ListApplicationInstancesInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListApplicationInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListApplicationInstancesInput`](crate::operation::list_application_instances::ListApplicationInstancesInput).
-    pub fn builder() -> crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder
+    {
         crate::operation::list_application_instances::builders::ListApplicationInstancesInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl ListApplicationInstancesInputBuilder {
     }
     /// <p>The application instances' device ID.</p>
     pub fn set_device_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_id = input; self
+        self.device_id = input;
+        self
     }
     /// <p>Only include instances with a specific status.</p>
     pub fn status_filter(mut self, input: crate::types::StatusFilter) -> Self {
@@ -66,8 +69,12 @@ impl ListApplicationInstancesInputBuilder {
         self
     }
     /// <p>Only include instances with a specific status.</p>
-    pub fn set_status_filter(mut self, input: std::option::Option<crate::types::StatusFilter>) -> Self {
-        self.status_filter = input; self
+    pub fn set_status_filter(
+        mut self,
+        input: std::option::Option<crate::types::StatusFilter>,
+    ) -> Self {
+        self.status_filter = input;
+        self
     }
     /// <p>The maximum number of application instances to return in one page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,7 +83,8 @@ impl ListApplicationInstancesInputBuilder {
     }
     /// <p>The maximum number of application instances to return in one page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,23 +93,23 @@ impl ListApplicationInstancesInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListApplicationInstancesInput`](crate::operation::list_application_instances::ListApplicationInstancesInput).
-    pub fn build(self) -> Result<crate::operation::list_application_instances::ListApplicationInstancesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_application_instances::ListApplicationInstancesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_application_instances::ListApplicationInstancesInput {
-                device_id: self.device_id
-                ,
-                status_filter: self.status_filter
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                device_id: self.device_id,
+                status_filter: self.status_filter,
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

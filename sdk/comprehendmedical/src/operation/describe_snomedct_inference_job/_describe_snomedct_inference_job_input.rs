@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSnomedctInferenceJobInput  {
+pub struct DescribeSnomedctInferenceJobInput {
     /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
 }
 impl DescribeSnomedctInferenceJobInput {
     /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl DescribeSnomedctInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeSnomedctInferenceJobInput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput).
-    pub fn builder() -> crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder {
+    pub fn builder() -> crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder{
         crate::operation::describe_snomedct_inference_job::builders::DescribeSnomedctInferenceJobInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DescribeSnomedctInferenceJobInputBuilder {
     }
     /// <p> The identifier that Amazon Comprehend Medical generated for the job. The StartSNOMEDCTInferenceJob operation returns this identifier in its response. </p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSnomedctInferenceJobInput`](crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_snomedct_inference_job::DescribeSnomedctInferenceJobInput {
-                job_id: self.job_id
-                ,
-            }
+                job_id: self.job_id,
+            },
         )
     }
 }
-

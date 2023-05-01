@@ -4,50 +4,70 @@ pub use crate::operation::update_detector_version::_update_detector_version_outp
 pub use crate::operation::update_detector_version::_update_detector_version_input::UpdateDetectorVersionInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateDetectorVersion`.
-/// 
+///
 /// <p> Updates a detector version. The detector version attributes that you can update include models, external model endpoints, rules, rule execution mode, and description. You can only update a <code>DRAFT</code> detector version.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDetectorVersionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_detector_version::builders::UpdateDetectorVersionInputBuilder,
+    inner: crate::operation::update_detector_version::builders::UpdateDetectorVersionInputBuilder,
 }
-impl UpdateDetectorVersionFluentBuilder  {
+impl UpdateDetectorVersionFluentBuilder {
     /// Creates a new `UpdateDetectorVersion`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_detector_version::UpdateDetectorVersion, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_detector_version::UpdateDetectorVersionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_detector_version::UpdateDetectorVersionOutput, aws_smithy_http::result::SdkError<crate::operation::update_detector_version::UpdateDetectorVersionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_detector_version::UpdateDetectorVersion,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_detector_version::UpdateDetectorVersionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_detector_version::UpdateDetectorVersionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_detector_version::UpdateDetectorVersionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The parent detector ID for the detector version you want to update.</p>
     pub fn detector_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.detector_id(input.into());
@@ -64,7 +84,10 @@ impl UpdateDetectorVersionFluentBuilder  {
         self
     }
     /// <p>The detector version ID. </p>
-    pub fn set_detector_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_detector_version_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_detector_version_id(input);
         self
     }
@@ -78,7 +101,10 @@ impl UpdateDetectorVersionFluentBuilder  {
         self
     }
     /// <p>The Amazon SageMaker model endpoints to include in the detector version.</p>
-    pub fn set_external_model_endpoints(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_external_model_endpoints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_external_model_endpoints(input);
         self
     }
@@ -92,7 +118,10 @@ impl UpdateDetectorVersionFluentBuilder  {
         self
     }
     /// <p>The rules to include in the detector version.</p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::Rule>>) -> Self {
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+    ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
@@ -116,25 +145,30 @@ impl UpdateDetectorVersionFluentBuilder  {
         self
     }
     /// <p>The model versions to include in the detector version.</p>
-    pub fn set_model_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::ModelVersion>>) -> Self {
+    pub fn set_model_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ModelVersion>>,
+    ) -> Self {
         self.inner = self.inner.set_model_versions(input);
         self
     }
-    /// <p>The rule execution mode to add to the detector.</p> 
-    /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p> 
-    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p> 
+    /// <p>The rule execution mode to add to the detector.</p>
+    /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
     pub fn rule_execution_mode(mut self, input: crate::types::RuleExecutionMode) -> Self {
         self.inner = self.inner.rule_execution_mode(input);
         self
     }
-    /// <p>The rule execution mode to add to the detector.</p> 
-    /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p> 
-    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p> 
+    /// <p>The rule execution mode to add to the detector.</p>
+    /// <p>If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially, first to last, stopping at the first matched rule. Amazon Fraud dectector then provides the outcomes for that single rule.</p>
+    /// <p>If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules and returns the outcomes for all matched rules. You can define and edit the rule mode at the detector version level, when it is in draft status.</p>
     /// <p>The default behavior is <code>FIRST_MATCHED</code>.</p>
-    pub fn set_rule_execution_mode(mut self, input: std::option::Option<crate::types::RuleExecutionMode>) -> Self {
+    pub fn set_rule_execution_mode(
+        mut self,
+        input: std::option::Option<crate::types::RuleExecutionMode>,
+    ) -> Self {
         self.inner = self.inner.set_rule_execution_mode(input);
         self
     }
 }
-

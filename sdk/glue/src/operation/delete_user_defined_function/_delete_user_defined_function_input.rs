@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserDefinedFunctionInput  {
+pub struct DeleteUserDefinedFunctionInput {
     /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DeleteUserDefinedFunctionInput  {
 }
 impl DeleteUserDefinedFunctionInput {
     /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>The name of the catalog database where the function is located.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the function definition to be deleted.</p>
-    pub fn function_name(&self) -> std::option::Option<& str> {
+    pub fn function_name(&self) -> std::option::Option<&str> {
         self.function_name.as_deref()
     }
 }
 impl DeleteUserDefinedFunctionInput {
     /// Creates a new builder-style object to manufacture [`DeleteUserDefinedFunctionInput`](crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput).
-    pub fn builder() -> crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionInputBuilder {
+    pub fn builder() -> crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionInputBuilder{
         crate::operation::delete_user_defined_function::builders::DeleteUserDefinedFunctionInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DeleteUserDefinedFunctionInputBuilder {
     }
     /// <p>The ID of the Data Catalog where the function to be deleted is located. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>The name of the catalog database where the function is located.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DeleteUserDefinedFunctionInputBuilder {
     }
     /// <p>The name of the catalog database where the function is located.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>The name of the function definition to be deleted.</p>
     pub fn function_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,22 @@ impl DeleteUserDefinedFunctionInputBuilder {
     }
     /// <p>The name of the function definition to be deleted.</p>
     pub fn set_function_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_name = input; self
+        self.function_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteUserDefinedFunctionInput`](crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput).
-    pub fn build(self) -> Result<crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_user_defined_function::DeleteUserDefinedFunctionInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                function_name: self.function_name
-                ,
-            }
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                function_name: self.function_name,
+            },
         )
     }
 }
-

@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateMyUserProfileInput  {
+pub struct UpdateMyUserProfileInput {
     /// <p>The user's SSH public key.</p>
     #[doc(hidden)]
     pub ssh_public_key: std::option::Option<std::string::String>,
 }
 impl UpdateMyUserProfileInput {
     /// <p>The user's SSH public key.</p>
-    pub fn ssh_public_key(&self) -> std::option::Option<& str> {
+    pub fn ssh_public_key(&self) -> std::option::Option<&str> {
         self.ssh_public_key.as_deref()
     }
 }
 impl UpdateMyUserProfileInput {
     /// Creates a new builder-style object to manufacture [`UpdateMyUserProfileInput`](crate::operation::update_my_user_profile::UpdateMyUserProfileInput).
-    pub fn builder() -> crate::operation::update_my_user_profile::builders::UpdateMyUserProfileInputBuilder {
-        crate::operation::update_my_user_profile::builders::UpdateMyUserProfileInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::update_my_user_profile::builders::UpdateMyUserProfileInputBuilder {
+        crate::operation::update_my_user_profile::builders::UpdateMyUserProfileInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,20 @@ impl UpdateMyUserProfileInputBuilder {
     }
     /// <p>The user's SSH public key.</p>
     pub fn set_ssh_public_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ssh_public_key = input; self
+        self.ssh_public_key = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateMyUserProfileInput`](crate::operation::update_my_user_profile::UpdateMyUserProfileInput).
-    pub fn build(self) -> Result<crate::operation::update_my_user_profile::UpdateMyUserProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_my_user_profile::UpdateMyUserProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_my_user_profile::UpdateMyUserProfileInput {
-                ssh_public_key: self.ssh_public_key
-                ,
-            }
+                ssh_public_key: self.ssh_public_key,
+            },
         )
     }
 }
-

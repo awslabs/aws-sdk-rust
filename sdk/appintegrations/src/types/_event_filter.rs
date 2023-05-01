@@ -3,14 +3,14 @@
 /// <p>The event filter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventFilter  {
+pub struct EventFilter {
     /// <p>The source of the events.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
 }
 impl EventFilter {
     /// <p>The source of the events.</p>
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl EventFilterBuilder {
     }
     /// <p>The source of the events.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventFilter`](crate::types::EventFilter).
     pub fn build(self) -> crate::types::EventFilter {
         crate::types::EventFilter {
-            source: self.source
-            ,
+            source: self.source,
         }
     }
 }
-

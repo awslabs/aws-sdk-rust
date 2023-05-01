@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVpceConfigurationInput  {
+pub struct GetVpceConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
 }
 impl GetVpceConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
 impl GetVpceConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetVpceConfigurationInput`](crate::operation::get_vpce_configuration::GetVpceConfigurationInput).
-    pub fn builder() -> crate::operation::get_vpce_configuration::builders::GetVpceConfigurationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_vpce_configuration::builders::GetVpceConfigurationInputBuilder {
         crate::operation::get_vpce_configuration::builders::GetVpceConfigurationInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl GetVpceConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to describe.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetVpceConfigurationInput`](crate::operation::get_vpce_configuration::GetVpceConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_vpce_configuration::GetVpceConfigurationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_vpce_configuration::GetVpceConfigurationInput {
-                arn: self.arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_vpce_configuration::GetVpceConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_vpce_configuration::GetVpceConfigurationInput { arn: self.arn })
     }
 }
-

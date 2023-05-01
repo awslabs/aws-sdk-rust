@@ -3,19 +3,19 @@
 /// <p>The description of the current state of an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceState  {
-    /// <p>The state of the instance as a 16-bit unsigned integer. </p> 
-    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p> 
-    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p> 
-    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p> 
-    /// <ul> 
-    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li> 
-    /// <li> <p> <code>16</code> : <code>running</code> </p> </li> 
-    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li> 
-    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li> 
-    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li> 
-    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li> 
-    /// </ul> 
+pub struct InstanceState {
+    /// <p>The state of the instance as a 16-bit unsigned integer. </p>
+    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
+    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
+    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
+    /// <ul>
+    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
+    /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
+    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
+    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
+    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
+    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
+    /// </ul>
     /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
     #[doc(hidden)]
     pub code: std::option::Option<i32>,
@@ -24,24 +24,24 @@ pub struct InstanceState  {
     pub name: std::option::Option<crate::types::InstanceStateName>,
 }
 impl InstanceState {
-    /// <p>The state of the instance as a 16-bit unsigned integer. </p> 
-    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p> 
-    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p> 
-    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p> 
-    /// <ul> 
-    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li> 
-    /// <li> <p> <code>16</code> : <code>running</code> </p> </li> 
-    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li> 
-    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li> 
-    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li> 
-    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li> 
-    /// </ul> 
+    /// <p>The state of the instance as a 16-bit unsigned integer. </p>
+    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
+    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
+    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
+    /// <ul>
+    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
+    /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
+    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
+    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
+    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
+    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
+    /// </ul>
     /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
     pub fn code(&self) -> std::option::Option<i32> {
         self.code
     }
     /// <p>The current state of the instance.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::InstanceStateName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::InstanceStateName> {
         self.name.as_ref()
     }
 }
@@ -60,38 +60,39 @@ pub struct InstanceStateBuilder {
     pub(crate) name: std::option::Option<crate::types::InstanceStateName>,
 }
 impl InstanceStateBuilder {
-    /// <p>The state of the instance as a 16-bit unsigned integer. </p> 
-    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p> 
-    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p> 
-    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p> 
-    /// <ul> 
-    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li> 
-    /// <li> <p> <code>16</code> : <code>running</code> </p> </li> 
-    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li> 
-    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li> 
-    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li> 
-    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li> 
-    /// </ul> 
+    /// <p>The state of the instance as a 16-bit unsigned integer. </p>
+    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
+    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
+    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
+    /// <ul>
+    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
+    /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
+    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
+    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
+    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
+    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
+    /// </ul>
     /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
     pub fn code(mut self, input: i32) -> Self {
         self.code = Some(input);
         self
     }
-    /// <p>The state of the instance as a 16-bit unsigned integer. </p> 
-    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p> 
-    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p> 
-    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p> 
-    /// <ul> 
-    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li> 
-    /// <li> <p> <code>16</code> : <code>running</code> </p> </li> 
-    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li> 
-    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li> 
-    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li> 
-    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li> 
-    /// </ul> 
+    /// <p>The state of the instance as a 16-bit unsigned integer. </p>
+    /// <p>The high byte is all of the bits between 2^8 and (2^16)-1, which equals decimal values between 256 and 65,535. These numerical values are used for internal purposes and should be ignored. </p>
+    /// <p>The low byte is all of the bits between 2^0 and (2^8)-1, which equals decimal values between 0 and 255. </p>
+    /// <p>The valid values for the instance state code are all in the range of the low byte. These values are: </p>
+    /// <ul>
+    /// <li> <p> <code>0</code> : <code>pending</code> </p> </li>
+    /// <li> <p> <code>16</code> : <code>running</code> </p> </li>
+    /// <li> <p> <code>32</code> : <code>shutting-down</code> </p> </li>
+    /// <li> <p> <code>48</code> : <code>terminated</code> </p> </li>
+    /// <li> <p> <code>64</code> : <code>stopping</code> </p> </li>
+    /// <li> <p> <code>80</code> : <code>stopped</code> </p> </li>
+    /// </ul>
     /// <p>You can ignore the high byte value by zeroing out all of the bits above 2^8 or 256 in decimal. </p>
     pub fn set_code(mut self, input: std::option::Option<i32>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The current state of the instance.</p>
     pub fn name(mut self, input: crate::types::InstanceStateName) -> Self {
@@ -100,16 +101,14 @@ impl InstanceStateBuilder {
     }
     /// <p>The current state of the instance.</p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::InstanceStateName>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceState`](crate::types::InstanceState).
     pub fn build(self) -> crate::types::InstanceState {
         crate::types::InstanceState {
-            code: self.code
-            ,
-            name: self.name
-            ,
+            code: self.code,
+            name: self.name,
         }
     }
 }
-

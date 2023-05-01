@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableAlarmActionsInput  {
+pub struct EnableAlarmActionsInput {
     /// <p>The names of the alarms.</p>
     #[doc(hidden)]
     pub alarm_names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableAlarmActionsInput {
     /// <p>The names of the alarms.</p>
-    pub fn alarm_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn alarm_names(&self) -> std::option::Option<&[std::string::String]> {
         self.alarm_names.as_deref()
     }
 }
 impl EnableAlarmActionsInput {
     /// Creates a new builder-style object to manufacture [`EnableAlarmActionsInput`](crate::operation::enable_alarm_actions::EnableAlarmActionsInput).
-    pub fn builder() -> crate::operation::enable_alarm_actions::builders::EnableAlarmActionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::enable_alarm_actions::builders::EnableAlarmActionsInputBuilder {
         crate::operation::enable_alarm_actions::builders::EnableAlarmActionsInputBuilder::default()
     }
 }
@@ -34,22 +35,29 @@ impl EnableAlarmActionsInputBuilder {
     /// <p>The names of the alarms.</p>
     pub fn alarm_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.alarm_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.alarm_names = Some(v);
-                        self
+        v.push(input.into());
+        self.alarm_names = Some(v);
+        self
     }
     /// <p>The names of the alarms.</p>
-    pub fn set_alarm_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.alarm_names = input; self
+    pub fn set_alarm_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.alarm_names = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnableAlarmActionsInput`](crate::operation::enable_alarm_actions::EnableAlarmActionsInput).
-    pub fn build(self) -> Result<crate::operation::enable_alarm_actions::EnableAlarmActionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::enable_alarm_actions::EnableAlarmActionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::enable_alarm_actions::EnableAlarmActionsInput {
-                alarm_names: self.alarm_names
-                ,
-            }
+                alarm_names: self.alarm_names,
+            },
         )
     }
 }
-

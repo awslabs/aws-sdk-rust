@@ -3,14 +3,14 @@
 /// <p>Information about the AWS CodeCommit repository to be created in AWS CodeStar. This is where the source code files provided with the project request will be uploaded after project creation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CodeCommitCodeDestination  {
+pub struct CodeCommitCodeDestination {
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl CodeCommitCodeDestination {
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl CodeCommitCodeDestinationBuilder {
     }
     /// <p>The name of the AWS CodeCommit repository to be created in AWS CodeStar.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CodeCommitCodeDestination`](crate::types::CodeCommitCodeDestination).
     pub fn build(self) -> crate::types::CodeCommitCodeDestination {
-        crate::types::CodeCommitCodeDestination {
-            name: self.name
-            ,
-        }
+        crate::types::CodeCommitCodeDestination { name: self.name }
     }
 }
-

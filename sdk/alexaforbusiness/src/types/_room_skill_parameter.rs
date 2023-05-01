@@ -3,7 +3,7 @@
 /// <p>A skill parameter associated with a room.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RoomSkillParameter  {
+pub struct RoomSkillParameter {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
     #[doc(hidden)]
     pub parameter_key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RoomSkillParameter  {
 }
 impl RoomSkillParameter {
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
-    pub fn parameter_key(&self) -> std::option::Option<& str> {
+    pub fn parameter_key(&self) -> std::option::Option<&str> {
         self.parameter_key.as_deref()
     }
     /// <p>The parameter value of a room skill parameter.</p>
-    pub fn parameter_value(&self) -> std::option::Option<& str> {
+    pub fn parameter_value(&self) -> std::option::Option<&str> {
         self.parameter_value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl RoomSkillParameterBuilder {
     }
     /// <p>The parameter key of a room skill parameter. ParameterKey is an enumerated type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
     pub fn set_parameter_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_key = input; self
+        self.parameter_key = input;
+        self
     }
     /// <p>The parameter value of a room skill parameter.</p>
     pub fn parameter_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl RoomSkillParameterBuilder {
     }
     /// <p>The parameter value of a room skill parameter.</p>
     pub fn set_parameter_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parameter_value = input; self
+        self.parameter_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`RoomSkillParameter`](crate::types::RoomSkillParameter).
     pub fn build(self) -> crate::types::RoomSkillParameter {
         crate::types::RoomSkillParameter {
-            parameter_key: self.parameter_key
-            ,
-            parameter_value: self.parameter_value
-            ,
+            parameter_key: self.parameter_key,
+            parameter_value: self.parameter_value,
         }
     }
 }
-

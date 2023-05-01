@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let languagecodetype = unimplemented!();
 /// match languagecodetype {
@@ -59,14 +59,22 @@
 /// Specifically, when `languagecodetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `LanguageCodeType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum LanguageCodeType {
     #[allow(missing_docs)] // documentation missing in model
     Ar,
@@ -131,99 +139,104 @@ pub enum LanguageCodeType {
     #[allow(missing_docs)] // documentation missing in model
     Zh,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for LanguageCodeType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AR" => LanguageCodeType::Ar,
-"BG" => LanguageCodeType::Bg,
-"BN" => LanguageCodeType::Bn,
-"CS" => LanguageCodeType::Cs,
-"DA" => LanguageCodeType::Da,
-"DE" => LanguageCodeType::De,
-"DEFAULT" => LanguageCodeType::Default,
-"EL" => LanguageCodeType::El,
-"EN" => LanguageCodeType::En,
-"ES" => LanguageCodeType::Es,
-"FA" => LanguageCodeType::Fa,
-"FI" => LanguageCodeType::Fi,
-"FR" => LanguageCodeType::Fr,
-"HI" => LanguageCodeType::Hi,
-"HU" => LanguageCodeType::Hu,
-"ID" => LanguageCodeType::Id,
-"IT" => LanguageCodeType::It,
-"JA" => LanguageCodeType::Ja,
-"KO" => LanguageCodeType::Ko,
-"LT" => LanguageCodeType::Lt,
-"LV" => LanguageCodeType::Lv,
-"NL" => LanguageCodeType::Nl,
-"NO" => LanguageCodeType::No,
-"PT" => LanguageCodeType::Pt,
-"RO" => LanguageCodeType::Ro,
-"RU" => LanguageCodeType::Ru,
-"SV" => LanguageCodeType::Sv,
-"SW" => LanguageCodeType::Sw,
-"TH" => LanguageCodeType::Th,
-"TR" => LanguageCodeType::Tr,
-"ZH" => LanguageCodeType::Zh,
-other => LanguageCodeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "AR" => LanguageCodeType::Ar,
+            "BG" => LanguageCodeType::Bg,
+            "BN" => LanguageCodeType::Bn,
+            "CS" => LanguageCodeType::Cs,
+            "DA" => LanguageCodeType::Da,
+            "DE" => LanguageCodeType::De,
+            "DEFAULT" => LanguageCodeType::Default,
+            "EL" => LanguageCodeType::El,
+            "EN" => LanguageCodeType::En,
+            "ES" => LanguageCodeType::Es,
+            "FA" => LanguageCodeType::Fa,
+            "FI" => LanguageCodeType::Fi,
+            "FR" => LanguageCodeType::Fr,
+            "HI" => LanguageCodeType::Hi,
+            "HU" => LanguageCodeType::Hu,
+            "ID" => LanguageCodeType::Id,
+            "IT" => LanguageCodeType::It,
+            "JA" => LanguageCodeType::Ja,
+            "KO" => LanguageCodeType::Ko,
+            "LT" => LanguageCodeType::Lt,
+            "LV" => LanguageCodeType::Lv,
+            "NL" => LanguageCodeType::Nl,
+            "NO" => LanguageCodeType::No,
+            "PT" => LanguageCodeType::Pt,
+            "RO" => LanguageCodeType::Ro,
+            "RU" => LanguageCodeType::Ru,
+            "SV" => LanguageCodeType::Sv,
+            "SW" => LanguageCodeType::Sw,
+            "TH" => LanguageCodeType::Th,
+            "TR" => LanguageCodeType::Tr,
+            "ZH" => LanguageCodeType::Zh,
+            other => {
+                LanguageCodeType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for LanguageCodeType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(LanguageCodeType::from(s))
-                }
-            }
-impl LanguageCodeType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    LanguageCodeType::Ar => "AR",
-    LanguageCodeType::Bg => "BG",
-    LanguageCodeType::Bn => "BN",
-    LanguageCodeType::Cs => "CS",
-    LanguageCodeType::Da => "DA",
-    LanguageCodeType::De => "DE",
-    LanguageCodeType::Default => "DEFAULT",
-    LanguageCodeType::El => "EL",
-    LanguageCodeType::En => "EN",
-    LanguageCodeType::Es => "ES",
-    LanguageCodeType::Fa => "FA",
-    LanguageCodeType::Fi => "FI",
-    LanguageCodeType::Fr => "FR",
-    LanguageCodeType::Hi => "HI",
-    LanguageCodeType::Hu => "HU",
-    LanguageCodeType::Id => "ID",
-    LanguageCodeType::It => "IT",
-    LanguageCodeType::Ja => "JA",
-    LanguageCodeType::Ko => "KO",
-    LanguageCodeType::Lt => "LT",
-    LanguageCodeType::Lv => "LV",
-    LanguageCodeType::Nl => "NL",
-    LanguageCodeType::No => "NO",
-    LanguageCodeType::Pt => "PT",
-    LanguageCodeType::Ro => "RO",
-    LanguageCodeType::Ru => "RU",
-    LanguageCodeType::Sv => "SV",
-    LanguageCodeType::Sw => "SW",
-    LanguageCodeType::Th => "TH",
-    LanguageCodeType::Tr => "TR",
-    LanguageCodeType::Zh => "ZH",
-    LanguageCodeType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AR", "BG", "BN", "CS", "DA", "DE", "DEFAULT", "EL", "EN", "ES", "FA", "FI", "FR", "HI", "HU", "ID", "IT", "JA", "KO", "LT", "LV", "NL", "NO", "PT", "RO", "RU", "SV", "SW", "TH", "TR", "ZH"]
-                }
-            }
-impl AsRef<str> for LanguageCodeType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for LanguageCodeType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(LanguageCodeType::from(s))
+    }
+}
+impl LanguageCodeType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            LanguageCodeType::Ar => "AR",
+            LanguageCodeType::Bg => "BG",
+            LanguageCodeType::Bn => "BN",
+            LanguageCodeType::Cs => "CS",
+            LanguageCodeType::Da => "DA",
+            LanguageCodeType::De => "DE",
+            LanguageCodeType::Default => "DEFAULT",
+            LanguageCodeType::El => "EL",
+            LanguageCodeType::En => "EN",
+            LanguageCodeType::Es => "ES",
+            LanguageCodeType::Fa => "FA",
+            LanguageCodeType::Fi => "FI",
+            LanguageCodeType::Fr => "FR",
+            LanguageCodeType::Hi => "HI",
+            LanguageCodeType::Hu => "HU",
+            LanguageCodeType::Id => "ID",
+            LanguageCodeType::It => "IT",
+            LanguageCodeType::Ja => "JA",
+            LanguageCodeType::Ko => "KO",
+            LanguageCodeType::Lt => "LT",
+            LanguageCodeType::Lv => "LV",
+            LanguageCodeType::Nl => "NL",
+            LanguageCodeType::No => "NO",
+            LanguageCodeType::Pt => "PT",
+            LanguageCodeType::Ro => "RO",
+            LanguageCodeType::Ru => "RU",
+            LanguageCodeType::Sv => "SV",
+            LanguageCodeType::Sw => "SW",
+            LanguageCodeType::Th => "TH",
+            LanguageCodeType::Tr => "TR",
+            LanguageCodeType::Zh => "ZH",
+            LanguageCodeType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AR", "BG", "BN", "CS", "DA", "DE", "DEFAULT", "EL", "EN", "ES", "FA", "FI", "FR",
+            "HI", "HU", "ID", "IT", "JA", "KO", "LT", "LV", "NL", "NO", "PT", "RO", "RU", "SV",
+            "SW", "TH", "TR", "ZH",
+        ]
+    }
+}
+impl AsRef<str> for LanguageCodeType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

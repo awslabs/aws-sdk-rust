@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAssessmentFrameworkShareOutput  {
+pub struct UpdateAssessmentFrameworkShareOutput {
     /// <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
     #[doc(hidden)]
-    pub assessment_framework_share_request: std::option::Option<crate::types::AssessmentFrameworkShareRequest>,
+    pub assessment_framework_share_request:
+        std::option::Option<crate::types::AssessmentFrameworkShareRequest>,
     _request_id: Option<String>,
 }
 impl UpdateAssessmentFrameworkShareOutput {
     /// <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
-    pub fn assessment_framework_share_request(&self) -> std::option::Option<& crate::types::AssessmentFrameworkShareRequest> {
+    pub fn assessment_framework_share_request(
+        &self,
+    ) -> std::option::Option<&crate::types::AssessmentFrameworkShareRequest> {
         self.assessment_framework_share_request.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAssessmentFrameworkShareOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateAssessmentFrameworkShareOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAssessmentFrameworkShareOutput`](crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareOutput).
-    pub fn builder() -> crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareOutputBuilder {
+    pub fn builder() -> crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareOutputBuilder{
         crate::operation::update_assessment_framework_share::builders::UpdateAssessmentFrameworkShareOutputBuilder::default()
     }
 }
@@ -30,35 +33,44 @@ impl UpdateAssessmentFrameworkShareOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateAssessmentFrameworkShareOutputBuilder {
-    pub(crate) assessment_framework_share_request: std::option::Option<crate::types::AssessmentFrameworkShareRequest>,
+    pub(crate) assessment_framework_share_request:
+        std::option::Option<crate::types::AssessmentFrameworkShareRequest>,
     _request_id: Option<String>,
 }
 impl UpdateAssessmentFrameworkShareOutputBuilder {
     /// <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
-    pub fn assessment_framework_share_request(mut self, input: crate::types::AssessmentFrameworkShareRequest) -> Self {
+    pub fn assessment_framework_share_request(
+        mut self,
+        input: crate::types::AssessmentFrameworkShareRequest,
+    ) -> Self {
         self.assessment_framework_share_request = Some(input);
         self
     }
     /// <p> The updated share request that's returned by the <code>UpdateAssessmentFrameworkShare</code> operation. </p>
-    pub fn set_assessment_framework_share_request(mut self, input: std::option::Option<crate::types::AssessmentFrameworkShareRequest>) -> Self {
-        self.assessment_framework_share_request = input; self
+    pub fn set_assessment_framework_share_request(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentFrameworkShareRequest>,
+    ) -> Self {
+        self.assessment_framework_share_request = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateAssessmentFrameworkShareOutput`](crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareOutput).
-    pub fn build(self) -> crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareOutput
+    {
         crate::operation::update_assessment_framework_share::UpdateAssessmentFrameworkShareOutput {
-            assessment_framework_share_request: self.assessment_framework_share_request
-            ,
+            assessment_framework_share_request: self.assessment_framework_share_request,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The resource configuration for creating backend storage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendStorageResourceConfig  {
+pub struct CreateBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CreateBackendStorageResourceConfig  {
 }
 impl CreateBackendStorageResourceConfig {
     /// <p>The name of the S3 bucket.</p>
-    pub fn bucket_name(&self) -> std::option::Option<& str> {
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
-    pub fn permissions(&self) -> std::option::Option<& crate::types::BackendStoragePermissions> {
+    pub fn permissions(&self) -> std::option::Option<&crate::types::BackendStoragePermissions> {
         self.permissions.as_ref()
     }
     /// <p>The name of the storage service.</p>
-    pub fn service_name(&self) -> std::option::Option<& crate::types::ServiceName> {
+    pub fn service_name(&self) -> std::option::Option<&crate::types::ServiceName> {
         self.service_name.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl CreateBackendStorageResourceConfigBuilder {
     }
     /// <p>The name of the S3 bucket.</p>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input; self
+        self.bucket_name = input;
+        self
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
     pub fn permissions(mut self, input: crate::types::BackendStoragePermissions) -> Self {
@@ -59,8 +60,12 @@ impl CreateBackendStorageResourceConfigBuilder {
         self
     }
     /// <p>The authorization configuration for the storage S3 bucket.</p>
-    pub fn set_permissions(mut self, input: std::option::Option<crate::types::BackendStoragePermissions>) -> Self {
-        self.permissions = input; self
+    pub fn set_permissions(
+        mut self,
+        input: std::option::Option<crate::types::BackendStoragePermissions>,
+    ) -> Self {
+        self.permissions = input;
+        self
     }
     /// <p>The name of the storage service.</p>
     pub fn service_name(mut self, input: crate::types::ServiceName) -> Self {
@@ -68,19 +73,19 @@ impl CreateBackendStorageResourceConfigBuilder {
         self
     }
     /// <p>The name of the storage service.</p>
-    pub fn set_service_name(mut self, input: std::option::Option<crate::types::ServiceName>) -> Self {
-        self.service_name = input; self
+    pub fn set_service_name(
+        mut self,
+        input: std::option::Option<crate::types::ServiceName>,
+    ) -> Self {
+        self.service_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBackendStorageResourceConfig`](crate::types::CreateBackendStorageResourceConfig).
     pub fn build(self) -> crate::types::CreateBackendStorageResourceConfig {
         crate::types::CreateBackendStorageResourceConfig {
-            bucket_name: self.bucket_name
-            ,
-            permissions: self.permissions
-            ,
-            service_name: self.service_name
-            ,
+            bucket_name: self.bucket_name,
+            permissions: self.permissions,
+            service_name: self.service_name,
         }
     }
 }
-

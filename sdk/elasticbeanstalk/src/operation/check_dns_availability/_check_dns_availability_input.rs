@@ -3,20 +3,21 @@
 /// <p>Results message indicating whether a CNAME is available.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CheckDnsAvailabilityInput  {
+pub struct CheckDnsAvailabilityInput {
     /// <p>The prefix used when this CNAME is reserved.</p>
     #[doc(hidden)]
     pub cname_prefix: std::option::Option<std::string::String>,
 }
 impl CheckDnsAvailabilityInput {
     /// <p>The prefix used when this CNAME is reserved.</p>
-    pub fn cname_prefix(&self) -> std::option::Option<& str> {
+    pub fn cname_prefix(&self) -> std::option::Option<&str> {
         self.cname_prefix.as_deref()
     }
 }
 impl CheckDnsAvailabilityInput {
     /// Creates a new builder-style object to manufacture [`CheckDnsAvailabilityInput`](crate::operation::check_dns_availability::CheckDnsAvailabilityInput).
-    pub fn builder() -> crate::operation::check_dns_availability::builders::CheckDnsAvailabilityInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::check_dns_availability::builders::CheckDnsAvailabilityInputBuilder {
         crate::operation::check_dns_availability::builders::CheckDnsAvailabilityInputBuilder::default()
     }
 }
@@ -35,16 +36,20 @@ impl CheckDnsAvailabilityInputBuilder {
     }
     /// <p>The prefix used when this CNAME is reserved.</p>
     pub fn set_cname_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cname_prefix = input; self
+        self.cname_prefix = input;
+        self
     }
     /// Consumes the builder and constructs a [`CheckDnsAvailabilityInput`](crate::operation::check_dns_availability::CheckDnsAvailabilityInput).
-    pub fn build(self) -> Result<crate::operation::check_dns_availability::CheckDnsAvailabilityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::check_dns_availability::CheckDnsAvailabilityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::check_dns_availability::CheckDnsAvailabilityInput {
-                cname_prefix: self.cname_prefix
-                ,
-            }
+                cname_prefix: self.cname_prefix,
+            },
         )
     }
 }
-

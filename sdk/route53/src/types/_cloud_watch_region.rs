@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let cloudwatchregion = unimplemented!();
 /// match cloudwatchregion {
@@ -62,14 +62,22 @@
 /// Specifically, when `cloudwatchregion` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `CloudWatchRegion::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     AfSouth1,
@@ -140,105 +148,141 @@ pub enum CloudWatchRegion {
     #[allow(missing_docs)] // documentation missing in model
     UsWest2,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for CloudWatchRegion {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "af-south-1" => CloudWatchRegion::AfSouth1,
-"ap-east-1" => CloudWatchRegion::ApEast1,
-"ap-northeast-1" => CloudWatchRegion::ApNortheast1,
-"ap-northeast-2" => CloudWatchRegion::ApNortheast2,
-"ap-northeast-3" => CloudWatchRegion::ApNortheast3,
-"ap-south-1" => CloudWatchRegion::ApSouth1,
-"ap-south-2" => CloudWatchRegion::ApSouth2,
-"ap-southeast-1" => CloudWatchRegion::ApSoutheast1,
-"ap-southeast-2" => CloudWatchRegion::ApSoutheast2,
-"ap-southeast-3" => CloudWatchRegion::ApSoutheast3,
-"ap-southeast-4" => CloudWatchRegion::ApSoutheast4,
-"ca-central-1" => CloudWatchRegion::CaCentral1,
-"cn-north-1" => CloudWatchRegion::CnNorth1,
-"cn-northwest-1" => CloudWatchRegion::CnNorthwest1,
-"eu-central-1" => CloudWatchRegion::EuCentral1,
-"eu-central-2" => CloudWatchRegion::EuCentral2,
-"eu-north-1" => CloudWatchRegion::EuNorth1,
-"eu-south-1" => CloudWatchRegion::EuSouth1,
-"eu-south-2" => CloudWatchRegion::EuSouth2,
-"eu-west-1" => CloudWatchRegion::EuWest1,
-"eu-west-2" => CloudWatchRegion::EuWest2,
-"eu-west-3" => CloudWatchRegion::EuWest3,
-"me-central-1" => CloudWatchRegion::MeCentral1,
-"me-south-1" => CloudWatchRegion::MeSouth1,
-"sa-east-1" => CloudWatchRegion::SaEast1,
-"us-east-1" => CloudWatchRegion::UsEast1,
-"us-east-2" => CloudWatchRegion::UsEast2,
-"us-gov-east-1" => CloudWatchRegion::UsGovEast1,
-"us-gov-west-1" => CloudWatchRegion::UsGovWest1,
-"us-iso-east-1" => CloudWatchRegion::UsIsoEast1,
-"us-iso-west-1" => CloudWatchRegion::UsIsoWest1,
-"us-isob-east-1" => CloudWatchRegion::UsIsobEast1,
-"us-west-1" => CloudWatchRegion::UsWest1,
-"us-west-2" => CloudWatchRegion::UsWest2,
-other => CloudWatchRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "af-south-1" => CloudWatchRegion::AfSouth1,
+            "ap-east-1" => CloudWatchRegion::ApEast1,
+            "ap-northeast-1" => CloudWatchRegion::ApNortheast1,
+            "ap-northeast-2" => CloudWatchRegion::ApNortheast2,
+            "ap-northeast-3" => CloudWatchRegion::ApNortheast3,
+            "ap-south-1" => CloudWatchRegion::ApSouth1,
+            "ap-south-2" => CloudWatchRegion::ApSouth2,
+            "ap-southeast-1" => CloudWatchRegion::ApSoutheast1,
+            "ap-southeast-2" => CloudWatchRegion::ApSoutheast2,
+            "ap-southeast-3" => CloudWatchRegion::ApSoutheast3,
+            "ap-southeast-4" => CloudWatchRegion::ApSoutheast4,
+            "ca-central-1" => CloudWatchRegion::CaCentral1,
+            "cn-north-1" => CloudWatchRegion::CnNorth1,
+            "cn-northwest-1" => CloudWatchRegion::CnNorthwest1,
+            "eu-central-1" => CloudWatchRegion::EuCentral1,
+            "eu-central-2" => CloudWatchRegion::EuCentral2,
+            "eu-north-1" => CloudWatchRegion::EuNorth1,
+            "eu-south-1" => CloudWatchRegion::EuSouth1,
+            "eu-south-2" => CloudWatchRegion::EuSouth2,
+            "eu-west-1" => CloudWatchRegion::EuWest1,
+            "eu-west-2" => CloudWatchRegion::EuWest2,
+            "eu-west-3" => CloudWatchRegion::EuWest3,
+            "me-central-1" => CloudWatchRegion::MeCentral1,
+            "me-south-1" => CloudWatchRegion::MeSouth1,
+            "sa-east-1" => CloudWatchRegion::SaEast1,
+            "us-east-1" => CloudWatchRegion::UsEast1,
+            "us-east-2" => CloudWatchRegion::UsEast2,
+            "us-gov-east-1" => CloudWatchRegion::UsGovEast1,
+            "us-gov-west-1" => CloudWatchRegion::UsGovWest1,
+            "us-iso-east-1" => CloudWatchRegion::UsIsoEast1,
+            "us-iso-west-1" => CloudWatchRegion::UsIsoWest1,
+            "us-isob-east-1" => CloudWatchRegion::UsIsobEast1,
+            "us-west-1" => CloudWatchRegion::UsWest1,
+            "us-west-2" => CloudWatchRegion::UsWest2,
+            other => {
+                CloudWatchRegion::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for CloudWatchRegion {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(CloudWatchRegion::from(s))
-                }
-            }
-impl CloudWatchRegion {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    CloudWatchRegion::AfSouth1 => "af-south-1",
-    CloudWatchRegion::ApEast1 => "ap-east-1",
-    CloudWatchRegion::ApNortheast1 => "ap-northeast-1",
-    CloudWatchRegion::ApNortheast2 => "ap-northeast-2",
-    CloudWatchRegion::ApNortheast3 => "ap-northeast-3",
-    CloudWatchRegion::ApSouth1 => "ap-south-1",
-    CloudWatchRegion::ApSouth2 => "ap-south-2",
-    CloudWatchRegion::ApSoutheast1 => "ap-southeast-1",
-    CloudWatchRegion::ApSoutheast2 => "ap-southeast-2",
-    CloudWatchRegion::ApSoutheast3 => "ap-southeast-3",
-    CloudWatchRegion::ApSoutheast4 => "ap-southeast-4",
-    CloudWatchRegion::CaCentral1 => "ca-central-1",
-    CloudWatchRegion::CnNorth1 => "cn-north-1",
-    CloudWatchRegion::CnNorthwest1 => "cn-northwest-1",
-    CloudWatchRegion::EuCentral1 => "eu-central-1",
-    CloudWatchRegion::EuCentral2 => "eu-central-2",
-    CloudWatchRegion::EuNorth1 => "eu-north-1",
-    CloudWatchRegion::EuSouth1 => "eu-south-1",
-    CloudWatchRegion::EuSouth2 => "eu-south-2",
-    CloudWatchRegion::EuWest1 => "eu-west-1",
-    CloudWatchRegion::EuWest2 => "eu-west-2",
-    CloudWatchRegion::EuWest3 => "eu-west-3",
-    CloudWatchRegion::MeCentral1 => "me-central-1",
-    CloudWatchRegion::MeSouth1 => "me-south-1",
-    CloudWatchRegion::SaEast1 => "sa-east-1",
-    CloudWatchRegion::UsEast1 => "us-east-1",
-    CloudWatchRegion::UsEast2 => "us-east-2",
-    CloudWatchRegion::UsGovEast1 => "us-gov-east-1",
-    CloudWatchRegion::UsGovWest1 => "us-gov-west-1",
-    CloudWatchRegion::UsIsoEast1 => "us-iso-east-1",
-    CloudWatchRegion::UsIsoWest1 => "us-iso-west-1",
-    CloudWatchRegion::UsIsobEast1 => "us-isob-east-1",
-    CloudWatchRegion::UsWest1 => "us-west-1",
-    CloudWatchRegion::UsWest2 => "us-west-2",
-    CloudWatchRegion::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["af-south-1", "ap-east-1", "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-south-1", "ap-south-2", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-central-2", "eu-north-1", "eu-south-1", "eu-south-2", "eu-west-1", "eu-west-2", "eu-west-3", "me-central-1", "me-south-1", "sa-east-1", "us-east-1", "us-east-2", "us-gov-east-1", "us-gov-west-1", "us-iso-east-1", "us-iso-west-1", "us-isob-east-1", "us-west-1", "us-west-2"]
-                }
-            }
-impl AsRef<str> for CloudWatchRegion {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for CloudWatchRegion {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CloudWatchRegion::from(s))
+    }
+}
+impl CloudWatchRegion {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            CloudWatchRegion::AfSouth1 => "af-south-1",
+            CloudWatchRegion::ApEast1 => "ap-east-1",
+            CloudWatchRegion::ApNortheast1 => "ap-northeast-1",
+            CloudWatchRegion::ApNortheast2 => "ap-northeast-2",
+            CloudWatchRegion::ApNortheast3 => "ap-northeast-3",
+            CloudWatchRegion::ApSouth1 => "ap-south-1",
+            CloudWatchRegion::ApSouth2 => "ap-south-2",
+            CloudWatchRegion::ApSoutheast1 => "ap-southeast-1",
+            CloudWatchRegion::ApSoutheast2 => "ap-southeast-2",
+            CloudWatchRegion::ApSoutheast3 => "ap-southeast-3",
+            CloudWatchRegion::ApSoutheast4 => "ap-southeast-4",
+            CloudWatchRegion::CaCentral1 => "ca-central-1",
+            CloudWatchRegion::CnNorth1 => "cn-north-1",
+            CloudWatchRegion::CnNorthwest1 => "cn-northwest-1",
+            CloudWatchRegion::EuCentral1 => "eu-central-1",
+            CloudWatchRegion::EuCentral2 => "eu-central-2",
+            CloudWatchRegion::EuNorth1 => "eu-north-1",
+            CloudWatchRegion::EuSouth1 => "eu-south-1",
+            CloudWatchRegion::EuSouth2 => "eu-south-2",
+            CloudWatchRegion::EuWest1 => "eu-west-1",
+            CloudWatchRegion::EuWest2 => "eu-west-2",
+            CloudWatchRegion::EuWest3 => "eu-west-3",
+            CloudWatchRegion::MeCentral1 => "me-central-1",
+            CloudWatchRegion::MeSouth1 => "me-south-1",
+            CloudWatchRegion::SaEast1 => "sa-east-1",
+            CloudWatchRegion::UsEast1 => "us-east-1",
+            CloudWatchRegion::UsEast2 => "us-east-2",
+            CloudWatchRegion::UsGovEast1 => "us-gov-east-1",
+            CloudWatchRegion::UsGovWest1 => "us-gov-west-1",
+            CloudWatchRegion::UsIsoEast1 => "us-iso-east-1",
+            CloudWatchRegion::UsIsoWest1 => "us-iso-west-1",
+            CloudWatchRegion::UsIsobEast1 => "us-isob-east-1",
+            CloudWatchRegion::UsWest1 => "us-west-1",
+            CloudWatchRegion::UsWest2 => "us-west-2",
+            CloudWatchRegion::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "af-south-1",
+            "ap-east-1",
+            "ap-northeast-1",
+            "ap-northeast-2",
+            "ap-northeast-3",
+            "ap-south-1",
+            "ap-south-2",
+            "ap-southeast-1",
+            "ap-southeast-2",
+            "ap-southeast-3",
+            "ap-southeast-4",
+            "ca-central-1",
+            "cn-north-1",
+            "cn-northwest-1",
+            "eu-central-1",
+            "eu-central-2",
+            "eu-north-1",
+            "eu-south-1",
+            "eu-south-2",
+            "eu-west-1",
+            "eu-west-2",
+            "eu-west-3",
+            "me-central-1",
+            "me-south-1",
+            "sa-east-1",
+            "us-east-1",
+            "us-east-2",
+            "us-gov-east-1",
+            "us-gov-west-1",
+            "us-iso-east-1",
+            "us-iso-west-1",
+            "us-isob-east-1",
+            "us-west-1",
+            "us-west-2",
+        ]
+    }
+}
+impl AsRef<str> for CloudWatchRegion {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

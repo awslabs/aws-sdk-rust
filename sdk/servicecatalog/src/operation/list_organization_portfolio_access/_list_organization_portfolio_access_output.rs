@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOrganizationPortfolioAccessOutput  {
+pub struct ListOrganizationPortfolioAccessOutput {
     /// <p>Displays information about the organization nodes.</p>
     #[doc(hidden)]
     pub organization_nodes: std::option::Option<std::vec::Vec<crate::types::OrganizationNode>>,
@@ -13,22 +13,22 @@ pub struct ListOrganizationPortfolioAccessOutput  {
 }
 impl ListOrganizationPortfolioAccessOutput {
     /// <p>Displays information about the organization nodes.</p>
-    pub fn organization_nodes(&self) -> std::option::Option<& [crate::types::OrganizationNode]> {
+    pub fn organization_nodes(&self) -> std::option::Option<&[crate::types::OrganizationNode]> {
         self.organization_nodes.as_deref()
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
-    pub fn next_page_token(&self) -> std::option::Option<& str> {
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListOrganizationPortfolioAccessOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListOrganizationPortfolioAccessOutput {
     /// Creates a new builder-style object to manufacture [`ListOrganizationPortfolioAccessOutput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput).
-    pub fn builder() -> crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessOutputBuilder {
+    pub fn builder() -> crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessOutputBuilder{
         crate::operation::list_organization_portfolio_access::builders::ListOrganizationPortfolioAccessOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl ListOrganizationPortfolioAccessOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListOrganizationPortfolioAccessOutputBuilder {
-    pub(crate) organization_nodes: std::option::Option<std::vec::Vec<crate::types::OrganizationNode>>,
+    pub(crate) organization_nodes:
+        std::option::Option<std::vec::Vec<crate::types::OrganizationNode>>,
     pub(crate) next_page_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl ListOrganizationPortfolioAccessOutputBuilder {
     /// <p>Displays information about the organization nodes.</p>
     pub fn organization_nodes(mut self, input: crate::types::OrganizationNode) -> Self {
         let mut v = self.organization_nodes.unwrap_or_default();
-                        v.push(input);
-                        self.organization_nodes = Some(v);
-                        self
+        v.push(input);
+        self.organization_nodes = Some(v);
+        self
     }
     /// <p>Displays information about the organization nodes.</p>
-    pub fn set_organization_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::types::OrganizationNode>>) -> Self {
-        self.organization_nodes = input; self
+    pub fn set_organization_nodes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OrganizationNode>>,
+    ) -> Self {
+        self.organization_nodes = input;
+        self
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +69,23 @@ impl ListOrganizationPortfolioAccessOutputBuilder {
     }
     /// <p>The page token to use to retrieve the next set of results. If there are no additional results, this value is null.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input; self
+        self.next_page_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListOrganizationPortfolioAccessOutput`](crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput).
-    pub fn build(self) -> crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput
+    {
         crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput {
             organization_nodes: self.organization_nodes
             ,
@@ -86,4 +95,3 @@ impl ListOrganizationPortfolioAccessOutputBuilder {
         }
     }
 }
-

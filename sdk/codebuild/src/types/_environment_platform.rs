@@ -3,7 +3,7 @@
 /// <p>A set of Docker images that are related by platform and are managed by CodeBuild.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnvironmentPlatform  {
+pub struct EnvironmentPlatform {
     /// <p>The platform's name.</p>
     #[doc(hidden)]
     pub platform: std::option::Option<crate::types::PlatformType>,
@@ -13,11 +13,11 @@ pub struct EnvironmentPlatform  {
 }
 impl EnvironmentPlatform {
     /// <p>The platform's name.</p>
-    pub fn platform(&self) -> std::option::Option<& crate::types::PlatformType> {
+    pub fn platform(&self) -> std::option::Option<&crate::types::PlatformType> {
         self.platform.as_ref()
     }
     /// <p>The list of programming languages that are available for the specified platform.</p>
-    pub fn languages(&self) -> std::option::Option<& [crate::types::EnvironmentLanguage]> {
+    pub fn languages(&self) -> std::option::Option<&[crate::types::EnvironmentLanguage]> {
         self.languages.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl EnvironmentPlatformBuilder {
     }
     /// <p>The platform's name.</p>
     pub fn set_platform(mut self, input: std::option::Option<crate::types::PlatformType>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// Appends an item to `languages`.
     ///
@@ -52,22 +53,23 @@ impl EnvironmentPlatformBuilder {
     /// <p>The list of programming languages that are available for the specified platform.</p>
     pub fn languages(mut self, input: crate::types::EnvironmentLanguage) -> Self {
         let mut v = self.languages.unwrap_or_default();
-                        v.push(input);
-                        self.languages = Some(v);
-                        self
+        v.push(input);
+        self.languages = Some(v);
+        self
     }
     /// <p>The list of programming languages that are available for the specified platform.</p>
-    pub fn set_languages(mut self, input: std::option::Option<std::vec::Vec<crate::types::EnvironmentLanguage>>) -> Self {
-        self.languages = input; self
+    pub fn set_languages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentLanguage>>,
+    ) -> Self {
+        self.languages = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnvironmentPlatform`](crate::types::EnvironmentPlatform).
     pub fn build(self) -> crate::types::EnvironmentPlatform {
         crate::types::EnvironmentPlatform {
-            platform: self.platform
-            ,
-            languages: self.languages
-            ,
+            platform: self.platform,
+            languages: self.languages,
         }
     }
 }
-

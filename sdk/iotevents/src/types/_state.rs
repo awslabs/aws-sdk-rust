@@ -3,7 +3,7 @@
 /// <p>Information that defines a state of a detector.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct State  {
+pub struct State {
     /// <p>The name of the state.</p>
     #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct State  {
 }
 impl State {
     /// <p>The name of the state.</p>
-    pub fn state_name(&self) -> std::option::Option<& str> {
+    pub fn state_name(&self) -> std::option::Option<&str> {
         self.state_name.as_deref()
     }
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
-    pub fn on_input(&self) -> std::option::Option<& crate::types::OnInputLifecycle> {
+    pub fn on_input(&self) -> std::option::Option<&crate::types::OnInputLifecycle> {
         self.on_input.as_ref()
     }
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
-    pub fn on_enter(&self) -> std::option::Option<& crate::types::OnEnterLifecycle> {
+    pub fn on_enter(&self) -> std::option::Option<&crate::types::OnEnterLifecycle> {
         self.on_enter.as_ref()
     }
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn on_exit(&self) -> std::option::Option<& crate::types::OnExitLifecycle> {
+    pub fn on_exit(&self) -> std::option::Option<&crate::types::OnExitLifecycle> {
         self.on_exit.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl StateBuilder {
     }
     /// <p>The name of the state.</p>
     pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_name = input; self
+        self.state_name = input;
+        self
     }
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
     pub fn on_input(mut self, input: crate::types::OnInputLifecycle) -> Self {
@@ -67,8 +68,12 @@ impl StateBuilder {
         self
     }
     /// <p>When an input is received and the <code>condition</code> is TRUE, perform the specified <code>actions</code>.</p>
-    pub fn set_on_input(mut self, input: std::option::Option<crate::types::OnInputLifecycle>) -> Self {
-        self.on_input = input; self
+    pub fn set_on_input(
+        mut self,
+        input: std::option::Option<crate::types::OnInputLifecycle>,
+    ) -> Self {
+        self.on_input = input;
+        self
     }
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
     pub fn on_enter(mut self, input: crate::types::OnEnterLifecycle) -> Self {
@@ -76,8 +81,12 @@ impl StateBuilder {
         self
     }
     /// <p>When entering this state, perform these <code>actions</code> if the <code>condition</code> is TRUE.</p>
-    pub fn set_on_enter(mut self, input: std::option::Option<crate::types::OnEnterLifecycle>) -> Self {
-        self.on_enter = input; self
+    pub fn set_on_enter(
+        mut self,
+        input: std::option::Option<crate::types::OnEnterLifecycle>,
+    ) -> Self {
+        self.on_enter = input;
+        self
     }
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
     pub fn on_exit(mut self, input: crate::types::OnExitLifecycle) -> Self {
@@ -85,21 +94,20 @@ impl StateBuilder {
         self
     }
     /// <p>When exiting this state, perform these <code>actions</code> if the specified <code>condition</code> is <code>TRUE</code>.</p>
-    pub fn set_on_exit(mut self, input: std::option::Option<crate::types::OnExitLifecycle>) -> Self {
-        self.on_exit = input; self
+    pub fn set_on_exit(
+        mut self,
+        input: std::option::Option<crate::types::OnExitLifecycle>,
+    ) -> Self {
+        self.on_exit = input;
+        self
     }
     /// Consumes the builder and constructs a [`State`](crate::types::State).
     pub fn build(self) -> crate::types::State {
         crate::types::State {
-            state_name: self.state_name
-            ,
-            on_input: self.on_input
-            ,
-            on_enter: self.on_enter
-            ,
-            on_exit: self.on_exit
-            ,
+            state_name: self.state_name,
+            on_input: self.on_input,
+            on_enter: self.on_enter,
+            on_exit: self.on_exit,
         }
     }
 }
-

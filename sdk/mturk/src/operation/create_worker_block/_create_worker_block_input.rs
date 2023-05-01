@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkerBlockInput  {
+pub struct CreateWorkerBlockInput {
     /// <p>The ID of the Worker to block.</p>
     #[doc(hidden)]
     pub worker_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct CreateWorkerBlockInput  {
 }
 impl CreateWorkerBlockInput {
     /// <p>The ID of the Worker to block.</p>
-    pub fn worker_id(&self) -> std::option::Option<& str> {
+    pub fn worker_id(&self) -> std::option::Option<&str> {
         self.worker_id.as_deref()
     }
     /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
 impl CreateWorkerBlockInput {
     /// Creates a new builder-style object to manufacture [`CreateWorkerBlockInput`](crate::operation::create_worker_block::CreateWorkerBlockInput).
-    pub fn builder() -> crate::operation::create_worker_block::builders::CreateWorkerBlockInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_worker_block::builders::CreateWorkerBlockInputBuilder {
         crate::operation::create_worker_block::builders::CreateWorkerBlockInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl CreateWorkerBlockInputBuilder {
     }
     /// <p>The ID of the Worker to block.</p>
     pub fn set_worker_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.worker_id = input; self
+        self.worker_id = input;
+        self
     }
     /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl CreateWorkerBlockInputBuilder {
     }
     /// <p>A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateWorkerBlockInput`](crate::operation::create_worker_block::CreateWorkerBlockInput).
-    pub fn build(self) -> Result<crate::operation::create_worker_block::CreateWorkerBlockInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_worker_block::CreateWorkerBlockInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_worker_block::CreateWorkerBlockInput {
-                worker_id: self.worker_id
-                ,
-                reason: self.reason
-                ,
-            }
+                worker_id: self.worker_id,
+                reason: self.reason,
+            },
         )
     }
 }
-

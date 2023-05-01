@@ -2,27 +2,32 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCapacityProviderInput  {
+pub struct UpdateCapacityProviderInput {
     /// <p>The name of the capacity provider to update.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
     #[doc(hidden)]
-    pub auto_scaling_group_provider: std::option::Option<crate::types::AutoScalingGroupProviderUpdate>,
+    pub auto_scaling_group_provider:
+        std::option::Option<crate::types::AutoScalingGroupProviderUpdate>,
 }
 impl UpdateCapacityProviderInput {
     /// <p>The name of the capacity provider to update.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
-    pub fn auto_scaling_group_provider(&self) -> std::option::Option<& crate::types::AutoScalingGroupProviderUpdate> {
+    pub fn auto_scaling_group_provider(
+        &self,
+    ) -> std::option::Option<&crate::types::AutoScalingGroupProviderUpdate> {
         self.auto_scaling_group_provider.as_ref()
     }
 }
 impl UpdateCapacityProviderInput {
     /// Creates a new builder-style object to manufacture [`UpdateCapacityProviderInput`](crate::operation::update_capacity_provider::UpdateCapacityProviderInput).
-    pub fn builder() -> crate::operation::update_capacity_provider::builders::UpdateCapacityProviderInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_capacity_provider::builders::UpdateCapacityProviderInputBuilder
+    {
         crate::operation::update_capacity_provider::builders::UpdateCapacityProviderInputBuilder::default()
     }
 }
@@ -32,7 +37,8 @@ impl UpdateCapacityProviderInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateCapacityProviderInputBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) auto_scaling_group_provider: std::option::Option<crate::types::AutoScalingGroupProviderUpdate>,
+    pub(crate) auto_scaling_group_provider:
+        std::option::Option<crate::types::AutoScalingGroupProviderUpdate>,
 }
 impl UpdateCapacityProviderInputBuilder {
     /// <p>The name of the capacity provider to update.</p>
@@ -42,27 +48,37 @@ impl UpdateCapacityProviderInputBuilder {
     }
     /// <p>The name of the capacity provider to update.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
-    pub fn auto_scaling_group_provider(mut self, input: crate::types::AutoScalingGroupProviderUpdate) -> Self {
+    pub fn auto_scaling_group_provider(
+        mut self,
+        input: crate::types::AutoScalingGroupProviderUpdate,
+    ) -> Self {
         self.auto_scaling_group_provider = Some(input);
         self
     }
     /// <p>An object that represent the parameters to update for the Auto Scaling group capacity provider.</p>
-    pub fn set_auto_scaling_group_provider(mut self, input: std::option::Option<crate::types::AutoScalingGroupProviderUpdate>) -> Self {
-        self.auto_scaling_group_provider = input; self
+    pub fn set_auto_scaling_group_provider(
+        mut self,
+        input: std::option::Option<crate::types::AutoScalingGroupProviderUpdate>,
+    ) -> Self {
+        self.auto_scaling_group_provider = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateCapacityProviderInput`](crate::operation::update_capacity_provider::UpdateCapacityProviderInput).
-    pub fn build(self) -> Result<crate::operation::update_capacity_provider::UpdateCapacityProviderInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_capacity_provider::UpdateCapacityProviderInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_capacity_provider::UpdateCapacityProviderInput {
-                name: self.name
-                ,
-                auto_scaling_group_provider: self.auto_scaling_group_provider
-                ,
-            }
+                name: self.name,
+                auto_scaling_group_provider: self.auto_scaling_group_provider,
+            },
         )
     }
 }
-

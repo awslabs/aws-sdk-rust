@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPackageVersionsInput  {
+pub struct ListPackageVersionsInput {
     /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
     #[doc(hidden)]
     pub domain: std::option::Option<std::string::String>,
@@ -15,12 +15,12 @@ pub struct ListPackageVersionsInput  {
     /// <p> The format of the package versions you want to list. </p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::PackageFormat>,
-    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub namespace: std::option::Option<std::string::String>,
@@ -45,41 +45,41 @@ pub struct ListPackageVersionsInput  {
 }
 impl ListPackageVersionsInput {
     /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
-    pub fn domain(&self) -> std::option::Option<& str> {
+    pub fn domain(&self) -> std::option::Option<&str> {
         self.domain.as_deref()
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
-    pub fn domain_owner(&self) -> std::option::Option<& str> {
+    pub fn domain_owner(&self) -> std::option::Option<&str> {
         self.domain_owner.as_deref()
     }
     /// <p> The name of the repository that contains the requested package versions. </p>
-    pub fn repository(&self) -> std::option::Option<& str> {
+    pub fn repository(&self) -> std::option::Option<&str> {
         self.repository.as_deref()
     }
     /// <p> The format of the package versions you want to list. </p>
-    pub fn format(&self) -> std::option::Option<& crate::types::PackageFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::PackageFormat> {
         self.format.as_ref()
     }
-    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
     /// <p> The name of the package for which you want to request package versions. </p>
-    pub fn package(&self) -> std::option::Option<& str> {
+    pub fn package(&self) -> std::option::Option<&str> {
         self.package.as_deref()
     }
     /// <p> A string that filters the requested package versions by status. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::PackageVersionStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::PackageVersionStatus> {
         self.status.as_ref()
     }
     /// <p> How to sort the requested list of package versions. </p>
-    pub fn sort_by(&self) -> std::option::Option<& crate::types::PackageVersionSortType> {
+    pub fn sort_by(&self) -> std::option::Option<&crate::types::PackageVersionSortType> {
         self.sort_by.as_ref()
     }
     /// <p> The maximum number of results to return per page. </p>
@@ -87,18 +87,20 @@ impl ListPackageVersionsInput {
         self.max_results
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
-    pub fn origin_type(&self) -> std::option::Option<& crate::types::PackageVersionOriginType> {
+    pub fn origin_type(&self) -> std::option::Option<&crate::types::PackageVersionOriginType> {
         self.origin_type.as_ref()
     }
 }
 impl ListPackageVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListPackageVersionsInput`](crate::operation::list_package_versions::ListPackageVersionsInput).
-    pub fn builder() -> crate::operation::list_package_versions::builders::ListPackageVersionsInputBuilder {
-        crate::operation::list_package_versions::builders::ListPackageVersionsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_package_versions::builders::ListPackageVersionsInputBuilder {
+        crate::operation::list_package_versions::builders::ListPackageVersionsInputBuilder::default(
+        )
     }
 }
 
@@ -126,7 +128,8 @@ impl ListPackageVersionsInputBuilder {
     }
     /// <p> The name of the domain that contains the repository that contains the requested package versions. </p>
     pub fn set_domain(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain = input; self
+        self.domain = input;
+        self
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn domain_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +138,8 @@ impl ListPackageVersionsInputBuilder {
     }
     /// <p> The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces. </p>
     pub fn set_domain_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_owner = input; self
+        self.domain_owner = input;
+        self
     }
     /// <p> The name of the repository that contains the requested package versions. </p>
     pub fn repository(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +148,8 @@ impl ListPackageVersionsInputBuilder {
     }
     /// <p> The name of the repository that contains the requested package versions. </p>
     pub fn set_repository(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository = input; self
+        self.repository = input;
+        self
     }
     /// <p> The format of the package versions you want to list. </p>
     pub fn format(mut self, input: crate::types::PackageFormat) -> Self {
@@ -153,28 +158,30 @@ impl ListPackageVersionsInputBuilder {
     }
     /// <p> The format of the package versions you want to list. </p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::PackageFormat>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
-    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
         self.namespace = Some(input.into());
         self
     }
-    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p> 
-    /// <ul> 
-    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li> 
-    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li> 
-    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li> 
-    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li> 
+    /// <p>The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:</p>
+    /// <ul>
+    /// <li> <p> The namespace of a Maven package is its <code>groupId</code>. </p> </li>
+    /// <li> <p> The namespace of an npm package is its <code>scope</code>. </p> </li>
+    /// <li> <p> Python and NuGet packages do not contain a corresponding component, packages of those formats do not have a namespace. </p> </li>
+    /// <li> <p> The namespace of a generic package is its <code>namespace</code>. </p> </li>
     /// </ul>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// <p> The name of the package for which you want to request package versions. </p>
     pub fn package(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,7 +190,8 @@ impl ListPackageVersionsInputBuilder {
     }
     /// <p> The name of the package for which you want to request package versions. </p>
     pub fn set_package(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.package = input; self
+        self.package = input;
+        self
     }
     /// <p> A string that filters the requested package versions by status. </p>
     pub fn status(mut self, input: crate::types::PackageVersionStatus) -> Self {
@@ -191,8 +199,12 @@ impl ListPackageVersionsInputBuilder {
         self
     }
     /// <p> A string that filters the requested package versions by status. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::PackageVersionStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::PackageVersionStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p> How to sort the requested list of package versions. </p>
     pub fn sort_by(mut self, input: crate::types::PackageVersionSortType) -> Self {
@@ -200,8 +212,12 @@ impl ListPackageVersionsInputBuilder {
         self
     }
     /// <p> How to sort the requested list of package versions. </p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::PackageVersionSortType>) -> Self {
-        self.sort_by = input; self
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::PackageVersionSortType>,
+    ) -> Self {
+        self.sort_by = input;
+        self
     }
     /// <p> The maximum number of results to return per page. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -210,7 +226,8 @@ impl ListPackageVersionsInputBuilder {
     }
     /// <p> The maximum number of results to return per page. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -219,7 +236,8 @@ impl ListPackageVersionsInputBuilder {
     }
     /// <p> The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
     pub fn origin_type(mut self, input: crate::types::PackageVersionOriginType) -> Self {
@@ -227,37 +245,34 @@ impl ListPackageVersionsInputBuilder {
         self
     }
     /// <p>The <code>originType</code> used to filter package versions. Only package versions with the provided <code>originType</code> will be returned.</p>
-    pub fn set_origin_type(mut self, input: std::option::Option<crate::types::PackageVersionOriginType>) -> Self {
-        self.origin_type = input; self
+    pub fn set_origin_type(
+        mut self,
+        input: std::option::Option<crate::types::PackageVersionOriginType>,
+    ) -> Self {
+        self.origin_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPackageVersionsInput`](crate::operation::list_package_versions::ListPackageVersionsInput).
-    pub fn build(self) -> Result<crate::operation::list_package_versions::ListPackageVersionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_package_versions::ListPackageVersionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_package_versions::ListPackageVersionsInput {
-                domain: self.domain
-                ,
-                domain_owner: self.domain_owner
-                ,
-                repository: self.repository
-                ,
-                format: self.format
-                ,
-                namespace: self.namespace
-                ,
-                package: self.package
-                ,
-                status: self.status
-                ,
-                sort_by: self.sort_by
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                origin_type: self.origin_type
-                ,
-            }
+                domain: self.domain,
+                domain_owner: self.domain_owner,
+                repository: self.repository,
+                format: self.format,
+                namespace: self.namespace,
+                package: self.package,
+                status: self.status,
+                sort_by: self.sort_by,
+                max_results: self.max_results,
+                next_token: self.next_token,
+                origin_type: self.origin_type,
+            },
         )
     }
 }
-

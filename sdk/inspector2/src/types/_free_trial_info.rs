@@ -3,7 +3,7 @@
 /// <p>An object that contains information about the Amazon Inspector free trial for an account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FreeTrialInfo  {
+pub struct FreeTrialInfo {
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::FreeTrialType>,
@@ -19,19 +19,19 @@ pub struct FreeTrialInfo  {
 }
 impl FreeTrialInfo {
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::FreeTrialType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::FreeTrialType> {
         self.r#type.as_ref()
     }
     /// <p>The date and time that the Amazon Inspector free trail started for a given account.</p>
-    pub fn start(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start.as_ref()
     }
     /// <p>The date and time that the Amazon Inspector free trail ends for a given account.</p>
-    pub fn end(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end.as_ref()
     }
     /// <p>The order to sort results by.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::FreeTrialStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::FreeTrialStatus> {
         self.status.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl FreeTrialInfoBuilder {
     }
     /// <p>The type of scan covered by the Amazon Inspector free trail.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::FreeTrialType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The date and time that the Amazon Inspector free trail started for a given account.</p>
     pub fn start(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -68,7 +69,8 @@ impl FreeTrialInfoBuilder {
     }
     /// <p>The date and time that the Amazon Inspector free trail started for a given account.</p>
     pub fn set_start(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start = input; self
+        self.start = input;
+        self
     }
     /// <p>The date and time that the Amazon Inspector free trail ends for a given account.</p>
     pub fn end(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -77,7 +79,8 @@ impl FreeTrialInfoBuilder {
     }
     /// <p>The date and time that the Amazon Inspector free trail ends for a given account.</p>
     pub fn set_end(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end = input; self
+        self.end = input;
+        self
     }
     /// <p>The order to sort results by.</p>
     pub fn status(mut self, input: crate::types::FreeTrialStatus) -> Self {
@@ -86,20 +89,16 @@ impl FreeTrialInfoBuilder {
     }
     /// <p>The order to sort results by.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::FreeTrialStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`FreeTrialInfo`](crate::types::FreeTrialInfo).
     pub fn build(self) -> crate::types::FreeTrialInfo {
         crate::types::FreeTrialInfo {
-            r#type: self.r#type
-            ,
-            start: self.start
-            ,
-            end: self.end
-            ,
-            status: self.status
-            ,
+            r#type: self.r#type,
+            start: self.start,
+            end: self.end,
+            status: self.status,
         }
     }
 }
-

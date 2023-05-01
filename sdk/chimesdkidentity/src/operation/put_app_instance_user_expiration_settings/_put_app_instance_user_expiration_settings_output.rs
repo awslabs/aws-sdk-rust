@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAppInstanceUserExpirationSettingsOutput  {
+pub struct PutAppInstanceUserExpirationSettingsOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,22 @@ pub struct PutAppInstanceUserExpirationSettingsOutput  {
 }
 impl PutAppInstanceUserExpirationSettingsOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn app_instance_user_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
     }
     /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn expiration_settings(&self) -> std::option::Option<& crate::types::ExpirationSettings> {
+    pub fn expiration_settings(&self) -> std::option::Option<&crate::types::ExpirationSettings> {
         self.expiration_settings.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutAppInstanceUserExpirationSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutAppInstanceUserExpirationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`PutAppInstanceUserExpirationSettingsOutput`](crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput).
-    pub fn builder() -> crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsOutputBuilder{
         crate::operation::put_app_instance_user_expiration_settings::builders::PutAppInstanceUserExpirationSettingsOutputBuilder::default()
     }
 }
@@ -48,8 +48,12 @@ impl PutAppInstanceUserExpirationSettingsOutputBuilder {
         self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
-    pub fn set_app_instance_user_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_user_arn = input; self
+    pub fn set_app_instance_user_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_instance_user_arn = input;
+        self
     }
     /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
@@ -57,20 +61,24 @@ impl PutAppInstanceUserExpirationSettingsOutputBuilder {
         self
     }
     /// <p>Settings that control the interval after which an <code>AppInstanceUser</code> is automatically deleted.</p>
-    pub fn set_expiration_settings(mut self, input: std::option::Option<crate::types::ExpirationSettings>) -> Self {
-        self.expiration_settings = input; self
+    pub fn set_expiration_settings(
+        mut self,
+        input: std::option::Option<crate::types::ExpirationSettings>,
+    ) -> Self {
+        self.expiration_settings = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutAppInstanceUserExpirationSettingsOutput`](crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput).
-    pub fn build(self) -> crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput {
+    pub fn build(self) -> crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput{
         crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput {
             app_instance_user_arn: self.app_instance_user_arn
             ,
@@ -80,4 +88,3 @@ impl PutAppInstanceUserExpirationSettingsOutputBuilder {
         }
     }
 }
-

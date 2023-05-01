@@ -3,7 +3,7 @@
 /// <p>Information about a dedicated IP address.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDedicatedIpOutput  {
+pub struct GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
     #[doc(hidden)]
     pub dedicated_ip: std::option::Option<crate::types::DedicatedIp>,
@@ -11,15 +11,15 @@ pub struct GetDedicatedIpOutput  {
 }
 impl GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
-    pub fn dedicated_ip(&self) -> std::option::Option<& crate::types::DedicatedIp> {
+    pub fn dedicated_ip(&self) -> std::option::Option<&crate::types::DedicatedIp> {
         self.dedicated_ip.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDedicatedIpOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDedicatedIpOutput {
     /// Creates a new builder-style object to manufacture [`GetDedicatedIpOutput`](crate::operation::get_dedicated_ip::GetDedicatedIpOutput).
     pub fn builder() -> crate::operation::get_dedicated_ip::builders::GetDedicatedIpOutputBuilder {
@@ -41,25 +41,27 @@ impl GetDedicatedIpOutputBuilder {
         self
     }
     /// <p>An object that contains information about a dedicated IP address.</p>
-    pub fn set_dedicated_ip(mut self, input: std::option::Option<crate::types::DedicatedIp>) -> Self {
-        self.dedicated_ip = input; self
+    pub fn set_dedicated_ip(
+        mut self,
+        input: std::option::Option<crate::types::DedicatedIp>,
+    ) -> Self {
+        self.dedicated_ip = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDedicatedIpOutput`](crate::operation::get_dedicated_ip::GetDedicatedIpOutput).
     pub fn build(self) -> crate::operation::get_dedicated_ip::GetDedicatedIpOutput {
         crate::operation::get_dedicated_ip::GetDedicatedIpOutput {
-            dedicated_ip: self.dedicated_ip
-            ,
+            dedicated_ip: self.dedicated_ip,
             _request_id: self._request_id,
         }
     }
 }
-

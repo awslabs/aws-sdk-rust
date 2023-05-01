@@ -3,7 +3,7 @@
 /// <p>A rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Rule  {
+pub struct Rule {
     /// <p>The detector for which the rule is associated.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct Rule  {
 }
 impl Rule {
     /// <p>The detector for which the rule is associated.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The rule ID.</p>
-    pub fn rule_id(&self) -> std::option::Option<& str> {
+    pub fn rule_id(&self) -> std::option::Option<&str> {
         self.rule_id.as_deref()
     }
     /// <p>The rule version.</p>
-    pub fn rule_version(&self) -> std::option::Option<& str> {
+    pub fn rule_version(&self) -> std::option::Option<&str> {
         self.rule_version.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl RuleBuilder {
     }
     /// <p>The detector for which the rule is associated.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The rule ID.</p>
     pub fn rule_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl RuleBuilder {
     }
     /// <p>The rule ID.</p>
     pub fn set_rule_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_id = input; self
+        self.rule_id = input;
+        self
     }
     /// <p>The rule version.</p>
     pub fn rule_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl RuleBuilder {
     }
     /// <p>The rule version.</p>
     pub fn set_rule_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rule_version = input; self
+        self.rule_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`Rule`](crate::types::Rule).
     pub fn build(self) -> crate::types::Rule {
         crate::types::Rule {
-            detector_id: self.detector_id
-            ,
-            rule_id: self.rule_id
-            ,
-            rule_version: self.rule_version
-            ,
+            detector_id: self.detector_id,
+            rule_id: self.rule_id,
+            rule_version: self.rule_version,
         }
     }
 }
-

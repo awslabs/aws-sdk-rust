@@ -2,30 +2,34 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetApplicationOutput  {
+pub struct GetApplicationOutput {
     /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
     #[doc(hidden)]
     pub application: std::option::Option<crate::types::Application>,
     /// <p>The tags of a registered application.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutput {
     /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
-    pub fn application(&self) -> std::option::Option<& crate::types::Application> {
+    pub fn application(&self) -> std::option::Option<&crate::types::Application> {
         self.application.as_ref()
     }
     /// <p>The tags of a registered application.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetApplicationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetApplicationOutput {
     /// Creates a new builder-style object to manufacture [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
     pub fn builder() -> crate::operation::get_application::builders::GetApplicationOutputBuilder {
@@ -38,7 +42,8 @@ impl GetApplicationOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetApplicationOutputBuilder {
     pub(crate) application: std::option::Option<crate::types::Application>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl GetApplicationOutputBuilder {
@@ -48,42 +53,53 @@ impl GetApplicationOutputBuilder {
         self
     }
     /// <p>Returns all of the metadata of an application registered with AWS Systems Manager for SAP.</p>
-    pub fn set_application(mut self, input: std::option::Option<crate::types::Application>) -> Self {
-        self.application = input; self
+    pub fn set_application(
+        mut self,
+        input: std::option::Option<crate::types::Application>,
+    ) -> Self {
+        self.application = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags of a registered application.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags of a registered application.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::operation::get_application::GetApplicationOutput).
     pub fn build(self) -> crate::operation::get_application::GetApplicationOutput {
         crate::operation::get_application::GetApplicationOutput {
-            application: self.application
-            ,
-            tags: self.tags
-            ,
+            application: self.application,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
 }
-

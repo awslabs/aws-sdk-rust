@@ -4,53 +4,73 @@ pub use crate::operation::create_connection::_create_connection_output::CreateCo
 pub use crate::operation::create_connection::_create_connection_input::CreateConnectionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateConnection`.
-/// 
-/// <p>Creates a connection between a customer network and a specific Direct Connect location.</p> 
-/// <p>A connection links your internal network to an Direct Connect location over a standard Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an Direct Connect router.</p> 
-/// <p>To find the locations for your Region, use <code>DescribeLocations</code>.</p> 
+///
+/// <p>Creates a connection between a customer network and a specific Direct Connect location.</p>
+/// <p>A connection links your internal network to an Direct Connect location over a standard Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an Direct Connect router.</p>
+/// <p>To find the locations for your Region, use <code>DescribeLocations</code>.</p>
 /// <p>You can automatically add the new connection to a link aggregation group (LAG) by specifying a LAG ID in the request. This ensures that the new connection is allocated on the same Direct Connect endpoint that hosts the specified LAG. If there are no available ports on the endpoint, the request fails and no connection is created.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateConnectionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_connection::builders::CreateConnectionInputBuilder,
+    inner: crate::operation::create_connection::builders::CreateConnectionInputBuilder,
 }
-impl CreateConnectionFluentBuilder  {
+impl CreateConnectionFluentBuilder {
     /// Creates a new `CreateConnection`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_connection::CreateConnection, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_connection::CreateConnectionOutput, aws_smithy_http::result::SdkError<crate::operation::create_connection::CreateConnectionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_connection::CreateConnection,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_connection::CreateConnectionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_connection::CreateConnectionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_connection::CreateConnectionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The location of the connection.</p>
     pub fn location(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.location(input.into());
@@ -101,7 +121,10 @@ impl CreateConnectionFluentBuilder  {
         self
     }
     /// <p>The tags to associate with the lag.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -115,17 +138,16 @@ impl CreateConnectionFluentBuilder  {
         self.inner = self.inner.set_provider_name(input);
         self
     }
-    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p> 
+    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
     /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     pub fn request_mac_sec(mut self, input: bool) -> Self {
         self.inner = self.inner.request_mac_sec(input);
         self
     }
-    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p> 
+    /// <p>Indicates whether you want the connection to support MAC Security (MACsec).</p>
     /// <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites">MACsec prerequisties</a> in the <i>Direct Connect User Guide</i>.</p>
     pub fn set_request_mac_sec(mut self, input: std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_request_mac_sec(input);
         self
     }
 }
-

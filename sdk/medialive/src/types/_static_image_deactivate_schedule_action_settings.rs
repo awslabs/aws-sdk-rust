@@ -3,7 +3,7 @@
 /// Settings for the action to deactivate the image in a specific layer.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StaticImageDeactivateScheduleActionSettings  {
+pub struct StaticImageDeactivateScheduleActionSettings {
     /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
     #[doc(hidden)]
     pub fade_out: i32,
@@ -43,7 +43,8 @@ impl StaticImageDeactivateScheduleActionSettingsBuilder {
     }
     /// The time in milliseconds for the image to fade out. Default is 0 (no fade-out).
     pub fn set_fade_out(mut self, input: std::option::Option<i32>) -> Self {
-        self.fade_out = input; self
+        self.fade_out = input;
+        self
     }
     /// The image overlay layer to deactivate, 0 to 7. Default is 0.
     pub fn layer(mut self, input: i32) -> Self {
@@ -52,18 +53,14 @@ impl StaticImageDeactivateScheduleActionSettingsBuilder {
     }
     /// The image overlay layer to deactivate, 0 to 7. Default is 0.
     pub fn set_layer(mut self, input: std::option::Option<i32>) -> Self {
-        self.layer = input; self
+        self.layer = input;
+        self
     }
     /// Consumes the builder and constructs a [`StaticImageDeactivateScheduleActionSettings`](crate::types::StaticImageDeactivateScheduleActionSettings).
     pub fn build(self) -> crate::types::StaticImageDeactivateScheduleActionSettings {
         crate::types::StaticImageDeactivateScheduleActionSettings {
-            fade_out: self.fade_out
-                .unwrap_or_default()
-            ,
-            layer: self.layer
-                .unwrap_or_default()
-            ,
+            fade_out: self.fade_out.unwrap_or_default(),
+            layer: self.layer.unwrap_or_default(),
         }
     }
 }
-

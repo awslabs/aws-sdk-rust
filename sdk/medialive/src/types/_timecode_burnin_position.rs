@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let timecodeburninposition = unimplemented!();
 /// match timecodeburninposition {
@@ -37,14 +37,22 @@
 /// Specifically, when `timecodeburninposition` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `TimecodeBurninPosition::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Timecode Burnin Position
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum TimecodeBurninPosition {
     #[allow(missing_docs)] // documentation missing in model
     BottomCenter,
@@ -65,55 +73,66 @@ pub enum TimecodeBurninPosition {
     #[allow(missing_docs)] // documentation missing in model
     TopRight,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for TimecodeBurninPosition {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BOTTOM_CENTER" => TimecodeBurninPosition::BottomCenter,
-"BOTTOM_LEFT" => TimecodeBurninPosition::BottomLeft,
-"BOTTOM_RIGHT" => TimecodeBurninPosition::BottomRight,
-"MIDDLE_CENTER" => TimecodeBurninPosition::MiddleCenter,
-"MIDDLE_LEFT" => TimecodeBurninPosition::MiddleLeft,
-"MIDDLE_RIGHT" => TimecodeBurninPosition::MiddleRight,
-"TOP_CENTER" => TimecodeBurninPosition::TopCenter,
-"TOP_LEFT" => TimecodeBurninPosition::TopLeft,
-"TOP_RIGHT" => TimecodeBurninPosition::TopRight,
-other => TimecodeBurninPosition::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for TimecodeBurninPosition {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(TimecodeBurninPosition::from(s))
-                }
-            }
-impl TimecodeBurninPosition {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    TimecodeBurninPosition::BottomCenter => "BOTTOM_CENTER",
-    TimecodeBurninPosition::BottomLeft => "BOTTOM_LEFT",
-    TimecodeBurninPosition::BottomRight => "BOTTOM_RIGHT",
-    TimecodeBurninPosition::MiddleCenter => "MIDDLE_CENTER",
-    TimecodeBurninPosition::MiddleLeft => "MIDDLE_LEFT",
-    TimecodeBurninPosition::MiddleRight => "MIDDLE_RIGHT",
-    TimecodeBurninPosition::TopCenter => "TOP_CENTER",
-    TimecodeBurninPosition::TopLeft => "TOP_LEFT",
-    TimecodeBurninPosition::TopRight => "TOP_RIGHT",
-    TimecodeBurninPosition::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "BOTTOM_CENTER" => TimecodeBurninPosition::BottomCenter,
+            "BOTTOM_LEFT" => TimecodeBurninPosition::BottomLeft,
+            "BOTTOM_RIGHT" => TimecodeBurninPosition::BottomRight,
+            "MIDDLE_CENTER" => TimecodeBurninPosition::MiddleCenter,
+            "MIDDLE_LEFT" => TimecodeBurninPosition::MiddleLeft,
+            "MIDDLE_RIGHT" => TimecodeBurninPosition::MiddleRight,
+            "TOP_CENTER" => TimecodeBurninPosition::TopCenter,
+            "TOP_LEFT" => TimecodeBurninPosition::TopLeft,
+            "TOP_RIGHT" => TimecodeBurninPosition::TopRight,
+            other => TimecodeBurninPosition::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BOTTOM_CENTER", "BOTTOM_LEFT", "BOTTOM_RIGHT", "MIDDLE_CENTER", "MIDDLE_LEFT", "MIDDLE_RIGHT", "TOP_CENTER", "TOP_LEFT", "TOP_RIGHT"]
-                }
-            }
-impl AsRef<str> for TimecodeBurninPosition {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for TimecodeBurninPosition {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TimecodeBurninPosition::from(s))
+    }
+}
+impl TimecodeBurninPosition {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            TimecodeBurninPosition::BottomCenter => "BOTTOM_CENTER",
+            TimecodeBurninPosition::BottomLeft => "BOTTOM_LEFT",
+            TimecodeBurninPosition::BottomRight => "BOTTOM_RIGHT",
+            TimecodeBurninPosition::MiddleCenter => "MIDDLE_CENTER",
+            TimecodeBurninPosition::MiddleLeft => "MIDDLE_LEFT",
+            TimecodeBurninPosition::MiddleRight => "MIDDLE_RIGHT",
+            TimecodeBurninPosition::TopCenter => "TOP_CENTER",
+            TimecodeBurninPosition::TopLeft => "TOP_LEFT",
+            TimecodeBurninPosition::TopRight => "TOP_RIGHT",
+            TimecodeBurninPosition::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BOTTOM_CENTER",
+            "BOTTOM_LEFT",
+            "BOTTOM_RIGHT",
+            "MIDDLE_CENTER",
+            "MIDDLE_LEFT",
+            "MIDDLE_RIGHT",
+            "TOP_CENTER",
+            "TOP_LEFT",
+            "TOP_RIGHT",
+        ]
+    }
+}
+impl AsRef<str> for TimecodeBurninPosition {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

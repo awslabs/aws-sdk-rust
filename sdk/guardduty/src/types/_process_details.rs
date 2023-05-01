@@ -3,7 +3,7 @@
 /// <p>Information about the observed process.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProcessDetails  {
+pub struct ProcessDetails {
     /// <p>The name of the process.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -46,15 +46,15 @@ pub struct ProcessDetails  {
 }
 impl ProcessDetails {
     /// <p>The name of the process.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The absolute path of the process executable file.</p>
-    pub fn executable_path(&self) -> std::option::Option<& str> {
+    pub fn executable_path(&self) -> std::option::Option<&str> {
         self.executable_path.as_deref()
     }
     /// <p>The <code>SHA256</code> hash of the process executable.</p>
-    pub fn executable_sha256(&self) -> std::option::Option<& str> {
+    pub fn executable_sha256(&self) -> std::option::Option<&str> {
         self.executable_sha256.as_deref()
     }
     /// <p>The ID of the child process.</p>
@@ -62,7 +62,7 @@ impl ProcessDetails {
         self.namespace_pid
     }
     /// <p>The present working directory of the process.</p>
-    pub fn pwd(&self) -> std::option::Option<& str> {
+    pub fn pwd(&self) -> std::option::Option<&str> {
         self.pwd.as_deref()
     }
     /// <p>The ID of the process.</p>
@@ -70,19 +70,19 @@ impl ProcessDetails {
         self.pid
     }
     /// <p>The time when the process started. This is in UTC format.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
-    pub fn uuid(&self) -> std::option::Option<& str> {
+    pub fn uuid(&self) -> std::option::Option<&str> {
         self.uuid.as_deref()
     }
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
-    pub fn parent_uuid(&self) -> std::option::Option<& str> {
+    pub fn parent_uuid(&self) -> std::option::Option<&str> {
         self.parent_uuid.as_deref()
     }
     /// <p>The user that executed the process.</p>
-    pub fn user(&self) -> std::option::Option<& str> {
+    pub fn user(&self) -> std::option::Option<&str> {
         self.user.as_deref()
     }
     /// <p>The unique ID of the user that executed the process.</p>
@@ -94,7 +94,7 @@ impl ProcessDetails {
         self.euid
     }
     /// <p>Information about the process's lineage.</p>
-    pub fn lineage(&self) -> std::option::Option<& [crate::types::LineageObject]> {
+    pub fn lineage(&self) -> std::option::Option<&[crate::types::LineageObject]> {
         self.lineage.as_deref()
     }
 }
@@ -131,7 +131,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The name of the process.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The absolute path of the process executable file.</p>
     pub fn executable_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,7 +141,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The absolute path of the process executable file.</p>
     pub fn set_executable_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.executable_path = input; self
+        self.executable_path = input;
+        self
     }
     /// <p>The <code>SHA256</code> hash of the process executable.</p>
     pub fn executable_sha256(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,8 +150,12 @@ impl ProcessDetailsBuilder {
         self
     }
     /// <p>The <code>SHA256</code> hash of the process executable.</p>
-    pub fn set_executable_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.executable_sha256 = input; self
+    pub fn set_executable_sha256(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.executable_sha256 = input;
+        self
     }
     /// <p>The ID of the child process.</p>
     pub fn namespace_pid(mut self, input: i32) -> Self {
@@ -158,7 +164,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The ID of the child process.</p>
     pub fn set_namespace_pid(mut self, input: std::option::Option<i32>) -> Self {
-        self.namespace_pid = input; self
+        self.namespace_pid = input;
+        self
     }
     /// <p>The present working directory of the process.</p>
     pub fn pwd(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,7 +174,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The present working directory of the process.</p>
     pub fn set_pwd(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pwd = input; self
+        self.pwd = input;
+        self
     }
     /// <p>The ID of the process.</p>
     pub fn pid(mut self, input: i32) -> Self {
@@ -176,7 +184,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The ID of the process.</p>
     pub fn set_pid(mut self, input: std::option::Option<i32>) -> Self {
-        self.pid = input; self
+        self.pid = input;
+        self
     }
     /// <p>The time when the process started. This is in UTC format.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -184,8 +193,12 @@ impl ProcessDetailsBuilder {
         self
     }
     /// <p>The time when the process started. This is in UTC format.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
     pub fn uuid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -194,7 +207,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The unique ID assigned to the process by GuardDuty.</p>
     pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uuid = input; self
+        self.uuid = input;
+        self
     }
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
     pub fn parent_uuid(mut self, input: impl Into<std::string::String>) -> Self {
@@ -203,7 +217,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The unique ID of the parent process. This ID is assigned to the parent process by GuardDuty.</p>
     pub fn set_parent_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_uuid = input; self
+        self.parent_uuid = input;
+        self
     }
     /// <p>The user that executed the process.</p>
     pub fn user(mut self, input: impl Into<std::string::String>) -> Self {
@@ -212,7 +227,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The user that executed the process.</p>
     pub fn set_user(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user = input; self
+        self.user = input;
+        self
     }
     /// <p>The unique ID of the user that executed the process.</p>
     pub fn user_id(mut self, input: i32) -> Self {
@@ -221,7 +237,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The unique ID of the user that executed the process.</p>
     pub fn set_user_id(mut self, input: std::option::Option<i32>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>The effective user ID of the user that executed the process.</p>
     pub fn euid(mut self, input: i32) -> Self {
@@ -230,7 +247,8 @@ impl ProcessDetailsBuilder {
     }
     /// <p>The effective user ID of the user that executed the process.</p>
     pub fn set_euid(mut self, input: std::option::Option<i32>) -> Self {
-        self.euid = input; self
+        self.euid = input;
+        self
     }
     /// Appends an item to `lineage`.
     ///
@@ -239,48 +257,34 @@ impl ProcessDetailsBuilder {
     /// <p>Information about the process's lineage.</p>
     pub fn lineage(mut self, input: crate::types::LineageObject) -> Self {
         let mut v = self.lineage.unwrap_or_default();
-                        v.push(input);
-                        self.lineage = Some(v);
-                        self
+        v.push(input);
+        self.lineage = Some(v);
+        self
     }
     /// <p>Information about the process's lineage.</p>
-    pub fn set_lineage(mut self, input: std::option::Option<std::vec::Vec<crate::types::LineageObject>>) -> Self {
-        self.lineage = input; self
+    pub fn set_lineage(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LineageObject>>,
+    ) -> Self {
+        self.lineage = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProcessDetails`](crate::types::ProcessDetails).
     pub fn build(self) -> crate::types::ProcessDetails {
         crate::types::ProcessDetails {
-            name: self.name
-            ,
-            executable_path: self.executable_path
-            ,
-            executable_sha256: self.executable_sha256
-            ,
-            namespace_pid: self.namespace_pid
-                .unwrap_or_default()
-            ,
-            pwd: self.pwd
-            ,
-            pid: self.pid
-                .unwrap_or_default()
-            ,
-            start_time: self.start_time
-            ,
-            uuid: self.uuid
-            ,
-            parent_uuid: self.parent_uuid
-            ,
-            user: self.user
-            ,
-            user_id: self.user_id
-                .unwrap_or_default()
-            ,
-            euid: self.euid
-                .unwrap_or_default()
-            ,
-            lineage: self.lineage
-            ,
+            name: self.name,
+            executable_path: self.executable_path,
+            executable_sha256: self.executable_sha256,
+            namespace_pid: self.namespace_pid.unwrap_or_default(),
+            pwd: self.pwd,
+            pid: self.pid.unwrap_or_default(),
+            start_time: self.start_time,
+            uuid: self.uuid,
+            parent_uuid: self.parent_uuid,
+            user: self.user,
+            user_id: self.user_id.unwrap_or_default(),
+            euid: self.euid.unwrap_or_default(),
+            lineage: self.lineage,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A configuration used when creating an Object Lambda Access Point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectLambdaConfiguration  {
+pub struct ObjectLambdaConfiguration {
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
     #[doc(hidden)]
     pub supporting_access_point: std::option::Option<std::string::String>,
@@ -12,14 +12,16 @@ pub struct ObjectLambdaConfiguration  {
     pub cloud_watch_metrics_enabled: bool,
     /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
     #[doc(hidden)]
-    pub allowed_features: std::option::Option<std::vec::Vec<crate::types::ObjectLambdaAllowedFeature>>,
+    pub allowed_features:
+        std::option::Option<std::vec::Vec<crate::types::ObjectLambdaAllowedFeature>>,
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
     #[doc(hidden)]
-    pub transformation_configurations: std::option::Option<std::vec::Vec<crate::types::ObjectLambdaTransformationConfiguration>>,
+    pub transformation_configurations:
+        std::option::Option<std::vec::Vec<crate::types::ObjectLambdaTransformationConfiguration>>,
 }
 impl ObjectLambdaConfiguration {
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
-    pub fn supporting_access_point(&self) -> std::option::Option<& str> {
+    pub fn supporting_access_point(&self) -> std::option::Option<&str> {
         self.supporting_access_point.as_deref()
     }
     /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
@@ -27,11 +29,15 @@ impl ObjectLambdaConfiguration {
         self.cloud_watch_metrics_enabled
     }
     /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
-    pub fn allowed_features(&self) -> std::option::Option<& [crate::types::ObjectLambdaAllowedFeature]> {
+    pub fn allowed_features(
+        &self,
+    ) -> std::option::Option<&[crate::types::ObjectLambdaAllowedFeature]> {
         self.allowed_features.as_deref()
     }
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
-    pub fn transformation_configurations(&self) -> std::option::Option<& [crate::types::ObjectLambdaTransformationConfiguration]> {
+    pub fn transformation_configurations(
+        &self,
+    ) -> std::option::Option<&[crate::types::ObjectLambdaTransformationConfiguration]> {
         self.transformation_configurations.as_deref()
     }
 }
@@ -48,8 +54,10 @@ impl ObjectLambdaConfiguration {
 pub struct ObjectLambdaConfigurationBuilder {
     pub(crate) supporting_access_point: std::option::Option<std::string::String>,
     pub(crate) cloud_watch_metrics_enabled: std::option::Option<bool>,
-    pub(crate) allowed_features: std::option::Option<std::vec::Vec<crate::types::ObjectLambdaAllowedFeature>>,
-    pub(crate) transformation_configurations: std::option::Option<std::vec::Vec<crate::types::ObjectLambdaTransformationConfiguration>>,
+    pub(crate) allowed_features:
+        std::option::Option<std::vec::Vec<crate::types::ObjectLambdaAllowedFeature>>,
+    pub(crate) transformation_configurations:
+        std::option::Option<std::vec::Vec<crate::types::ObjectLambdaTransformationConfiguration>>,
 }
 impl ObjectLambdaConfigurationBuilder {
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
@@ -58,8 +66,12 @@ impl ObjectLambdaConfigurationBuilder {
         self
     }
     /// <p>Standard access point associated with the Object Lambda Access Point.</p>
-    pub fn set_supporting_access_point(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.supporting_access_point = input; self
+    pub fn set_supporting_access_point(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.supporting_access_point = input;
+        self
     }
     /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
     pub fn cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
@@ -68,7 +80,8 @@ impl ObjectLambdaConfigurationBuilder {
     }
     /// <p>A container for whether the CloudWatch metrics configuration is enabled.</p>
     pub fn set_cloud_watch_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.cloud_watch_metrics_enabled = input; self
+        self.cloud_watch_metrics_enabled = input;
+        self
     }
     /// Appends an item to `allowed_features`.
     ///
@@ -77,42 +90,49 @@ impl ObjectLambdaConfigurationBuilder {
     /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
     pub fn allowed_features(mut self, input: crate::types::ObjectLambdaAllowedFeature) -> Self {
         let mut v = self.allowed_features.unwrap_or_default();
-                        v.push(input);
-                        self.allowed_features = Some(v);
-                        self
+        v.push(input);
+        self.allowed_features = Some(v);
+        self
     }
     /// <p>A container for allowed features. Valid inputs are <code>GetObject-Range</code>, <code>GetObject-PartNumber</code>, <code>HeadObject-Range</code>, and <code>HeadObject-PartNumber</code>.</p>
-    pub fn set_allowed_features(mut self, input: std::option::Option<std::vec::Vec<crate::types::ObjectLambdaAllowedFeature>>) -> Self {
-        self.allowed_features = input; self
+    pub fn set_allowed_features(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ObjectLambdaAllowedFeature>>,
+    ) -> Self {
+        self.allowed_features = input;
+        self
     }
     /// Appends an item to `transformation_configurations`.
     ///
     /// To override the contents of this collection use [`set_transformation_configurations`](Self::set_transformation_configurations).
     ///
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
-    pub fn transformation_configurations(mut self, input: crate::types::ObjectLambdaTransformationConfiguration) -> Self {
+    pub fn transformation_configurations(
+        mut self,
+        input: crate::types::ObjectLambdaTransformationConfiguration,
+    ) -> Self {
         let mut v = self.transformation_configurations.unwrap_or_default();
-                        v.push(input);
-                        self.transformation_configurations = Some(v);
-                        self
+        v.push(input);
+        self.transformation_configurations = Some(v);
+        self
     }
     /// <p>A container for transformation configurations for an Object Lambda Access Point.</p>
-    pub fn set_transformation_configurations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ObjectLambdaTransformationConfiguration>>) -> Self {
-        self.transformation_configurations = input; self
+    pub fn set_transformation_configurations(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::ObjectLambdaTransformationConfiguration>,
+        >,
+    ) -> Self {
+        self.transformation_configurations = input;
+        self
     }
     /// Consumes the builder and constructs a [`ObjectLambdaConfiguration`](crate::types::ObjectLambdaConfiguration).
     pub fn build(self) -> crate::types::ObjectLambdaConfiguration {
         crate::types::ObjectLambdaConfiguration {
-            supporting_access_point: self.supporting_access_point
-            ,
-            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled
-                .unwrap_or_default()
-            ,
-            allowed_features: self.allowed_features
-            ,
-            transformation_configurations: self.transformation_configurations
-            ,
+            supporting_access_point: self.supporting_access_point,
+            cloud_watch_metrics_enabled: self.cloud_watch_metrics_enabled.unwrap_or_default(),
+            allowed_features: self.allowed_features,
+            transformation_configurations: self.transformation_configurations,
         }
     }
 }
-

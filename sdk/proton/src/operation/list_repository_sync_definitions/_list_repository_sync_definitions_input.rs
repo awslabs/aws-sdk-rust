@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRepositorySyncDefinitionsInput  {
+pub struct ListRepositorySyncDefinitionsInput {
     /// <p>The repository name.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -18,25 +18,25 @@ pub struct ListRepositorySyncDefinitionsInput  {
 }
 impl ListRepositorySyncDefinitionsInput {
     /// <p>The repository name.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> std::option::Option<& crate::types::RepositoryProvider> {
+    pub fn repository_provider(&self) -> std::option::Option<&crate::types::RepositoryProvider> {
         self.repository_provider.as_ref()
     }
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
-    pub fn sync_type(&self) -> std::option::Option<& crate::types::SyncType> {
+    pub fn sync_type(&self) -> std::option::Option<&crate::types::SyncType> {
         self.sync_type.as_ref()
     }
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListRepositorySyncDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`ListRepositorySyncDefinitionsInput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput).
-    pub fn builder() -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder {
+    pub fn builder() -> crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder{
         crate::operation::list_repository_sync_definitions::builders::ListRepositorySyncDefinitionsInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl ListRepositorySyncDefinitionsInputBuilder {
     }
     /// <p>The repository name.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The repository provider.</p>
     pub fn repository_provider(mut self, input: crate::types::RepositoryProvider) -> Self {
@@ -66,8 +67,12 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         self
     }
     /// <p>The repository provider.</p>
-    pub fn set_repository_provider(mut self, input: std::option::Option<crate::types::RepositoryProvider>) -> Self {
-        self.repository_provider = input; self
+    pub fn set_repository_provider(
+        mut self,
+        input: std::option::Option<crate::types::RepositoryProvider>,
+    ) -> Self {
+        self.repository_provider = input;
+        self
     }
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
     pub fn sync_type(mut self, input: crate::types::SyncType) -> Self {
@@ -76,7 +81,8 @@ impl ListRepositorySyncDefinitionsInputBuilder {
     }
     /// <p>The sync type. The only supported value is <code>TEMPLATE_SYNC</code>.</p>
     pub fn set_sync_type(mut self, input: std::option::Option<crate::types::SyncType>) -> Self {
-        self.sync_type = input; self
+        self.sync_type = input;
+        self
     }
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,10 +91,16 @@ impl ListRepositorySyncDefinitionsInputBuilder {
     }
     /// <p>A token that indicates the location of the next repository sync definition in the array of repository sync definitions, after the list of repository sync definitions previously requested.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListRepositorySyncDefinitionsInput`](crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput).
-    pub fn build(self) -> Result<crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsInput {
                 repository_name: self.repository_name
@@ -103,4 +115,3 @@ impl ListRepositorySyncDefinitionsInputBuilder {
         )
     }
 }
-

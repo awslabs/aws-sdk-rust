@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNodeInput  {
-    /// <p>The unique identifier of the network that the node is on.</p> 
-    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> 
-    /// <ul> 
-    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li> 
-    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li> 
-    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> 
+pub struct DeleteNodeInput {
+    /// <p>The unique identifier of the network that the node is on.</p>
+    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
+    /// <ul>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub network_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the member that owns this node.</p> 
+    /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
     #[doc(hidden)]
     pub member_id: std::option::Option<std::string::String>,
@@ -21,23 +21,23 @@ pub struct DeleteNodeInput  {
     pub node_id: std::option::Option<std::string::String>,
 }
 impl DeleteNodeInput {
-    /// <p>The unique identifier of the network that the node is on.</p> 
-    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> 
-    /// <ul> 
-    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li> 
-    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li> 
-    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> 
+    /// <p>The unique identifier of the network that the node is on.</p>
+    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
+    /// <ul>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// </ul>
-    pub fn network_id(&self) -> std::option::Option<& str> {
+    pub fn network_id(&self) -> std::option::Option<&str> {
         self.network_id.as_deref()
     }
-    /// <p>The unique identifier of the member that owns this node.</p> 
+    /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
-    pub fn member_id(&self) -> std::option::Option<& str> {
+    pub fn member_id(&self) -> std::option::Option<&str> {
         self.member_id.as_deref()
     }
     /// <p>The unique identifier of the node.</p>
-    pub fn node_id(&self) -> std::option::Option<& str> {
+    pub fn node_id(&self) -> std::option::Option<&str> {
         self.node_id.as_deref()
     }
 }
@@ -57,37 +57,39 @@ pub struct DeleteNodeInputBuilder {
     pub(crate) node_id: std::option::Option<std::string::String>,
 }
 impl DeleteNodeInputBuilder {
-    /// <p>The unique identifier of the network that the node is on.</p> 
-    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> 
-    /// <ul> 
-    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li> 
-    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li> 
-    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> 
+    /// <p>The unique identifier of the network that the node is on.</p>
+    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
+    /// <ul>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// </ul>
     pub fn network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.network_id = Some(input.into());
         self
     }
-    /// <p>The unique identifier of the network that the node is on.</p> 
-    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> 
-    /// <ul> 
-    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li> 
-    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li> 
-    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> 
+    /// <p>The unique identifier of the network that the node is on.</p>
+    /// <p>Ethereum public networks have the following <code>NetworkId</code>s:</p>
+    /// <ul>
+    /// <li> <p> <code>n-ethereum-mainnet</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-goerli</code> </p> </li>
+    /// <li> <p> <code>n-ethereum-rinkeby</code> </p> </li>
     /// </ul>
     pub fn set_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_id = input; self
+        self.network_id = input;
+        self
     }
-    /// <p>The unique identifier of the member that owns this node.</p> 
+    /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
     pub fn member_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.member_id = Some(input.into());
         self
     }
-    /// <p>The unique identifier of the member that owns this node.</p> 
+    /// <p>The unique identifier of the member that owns this node.</p>
     /// <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
     pub fn set_member_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_id = input; self
+        self.member_id = input;
+        self
     }
     /// <p>The unique identifier of the node.</p>
     pub fn node_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,20 +98,20 @@ impl DeleteNodeInputBuilder {
     }
     /// <p>The unique identifier of the node.</p>
     pub fn set_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_id = input; self
+        self.node_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteNodeInput`](crate::operation::delete_node::DeleteNodeInput).
-    pub fn build(self) -> Result<crate::operation::delete_node::DeleteNodeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_node::DeleteNodeInput {
-                network_id: self.network_id
-                ,
-                member_id: self.member_id
-                ,
-                node_id: self.node_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_node::DeleteNodeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_node::DeleteNodeInput {
+            network_id: self.network_id,
+            member_id: self.member_id,
+            node_id: self.node_id,
+        })
     }
 }
-

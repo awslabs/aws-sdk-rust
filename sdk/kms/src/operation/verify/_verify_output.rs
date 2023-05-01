@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VerifyOutput  {
+pub struct VerifyOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
     #[doc(hidden)]
     pub key_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct VerifyOutput  {
 }
 impl VerifyOutput {
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
-    pub fn key_id(&self) -> std::option::Option<& str> {
+    pub fn key_id(&self) -> std::option::Option<&str> {
         self.key_id.as_deref()
     }
     /// <p>A Boolean value that indicates whether the signature was verified. A value of <code>True</code> indicates that the <code>Signature</code> was produced by signing the <code>Message</code> with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
@@ -24,15 +24,15 @@ impl VerifyOutput {
         self.signature_valid
     }
     /// <p>The signing algorithm that was used to verify the signature.</p>
-    pub fn signing_algorithm(&self) -> std::option::Option<& crate::types::SigningAlgorithmSpec> {
+    pub fn signing_algorithm(&self) -> std::option::Option<&crate::types::SigningAlgorithmSpec> {
         self.signing_algorithm.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for VerifyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl VerifyOutput {
     /// Creates a new builder-style object to manufacture [`VerifyOutput`](crate::operation::verify::VerifyOutput).
     pub fn builder() -> crate::operation::verify::builders::VerifyOutputBuilder {
@@ -57,7 +57,8 @@ impl VerifyOutputBuilder {
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the asymmetric KMS key that was used to verify the signature.</p>
     pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_id = input; self
+        self.key_id = input;
+        self
     }
     /// <p>A Boolean value that indicates whether the signature was verified. A value of <code>True</code> indicates that the <code>Signature</code> was produced by signing the <code>Message</code> with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
     pub fn signature_valid(mut self, input: bool) -> Self {
@@ -66,7 +67,8 @@ impl VerifyOutputBuilder {
     }
     /// <p>A Boolean value that indicates whether the signature was verified. A value of <code>True</code> indicates that the <code>Signature</code> was produced by signing the <code>Message</code> with the specified <code>KeyID</code> and <code>SigningAlgorithm.</code> If the signature is not verified, the <code>Verify</code> operation fails with a <code>KMSInvalidSignatureException</code> exception. </p>
     pub fn set_signature_valid(mut self, input: std::option::Option<bool>) -> Self {
-        self.signature_valid = input; self
+        self.signature_valid = input;
+        self
     }
     /// <p>The signing algorithm that was used to verify the signature.</p>
     pub fn signing_algorithm(mut self, input: crate::types::SigningAlgorithmSpec) -> Self {
@@ -74,30 +76,29 @@ impl VerifyOutputBuilder {
         self
     }
     /// <p>The signing algorithm that was used to verify the signature.</p>
-    pub fn set_signing_algorithm(mut self, input: std::option::Option<crate::types::SigningAlgorithmSpec>) -> Self {
-        self.signing_algorithm = input; self
+    pub fn set_signing_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::SigningAlgorithmSpec>,
+    ) -> Self {
+        self.signing_algorithm = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`VerifyOutput`](crate::operation::verify::VerifyOutput).
     pub fn build(self) -> crate::operation::verify::VerifyOutput {
         crate::operation::verify::VerifyOutput {
-            key_id: self.key_id
-            ,
-            signature_valid: self.signature_valid
-                .unwrap_or_default()
-            ,
-            signing_algorithm: self.signing_algorithm
-            ,
+            key_id: self.key_id,
+            signature_valid: self.signature_valid.unwrap_or_default(),
+            signing_algorithm: self.signing_algorithm,
             _request_id: self._request_id,
         }
     }
 }
-

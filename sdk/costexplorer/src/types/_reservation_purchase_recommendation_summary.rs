@@ -3,7 +3,7 @@
 /// <p>A summary about this recommendation, such as the currency code, the amount that Amazon Web Services estimates that you could save, and the total amount of reservation to purchase.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReservationPurchaseRecommendationSummary  {
+pub struct ReservationPurchaseRecommendationSummary {
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
     #[doc(hidden)]
     pub total_estimated_monthly_savings_amount: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ReservationPurchaseRecommendationSummary  {
 }
 impl ReservationPurchaseRecommendationSummary {
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
-    pub fn total_estimated_monthly_savings_amount(&self) -> std::option::Option<& str> {
+    pub fn total_estimated_monthly_savings_amount(&self) -> std::option::Option<&str> {
         self.total_estimated_monthly_savings_amount.as_deref()
     }
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month, as a percentage of your costs.</p>
-    pub fn total_estimated_monthly_savings_percentage(&self) -> std::option::Option<& str> {
+    pub fn total_estimated_monthly_savings_percentage(&self) -> std::option::Option<&str> {
         self.total_estimated_monthly_savings_percentage.as_deref()
     }
     /// <p>The currency code used for this recommendation.</p>
-    pub fn currency_code(&self) -> std::option::Option<& str> {
+    pub fn currency_code(&self) -> std::option::Option<&str> {
         self.currency_code.as_deref()
     }
 }
@@ -45,22 +45,36 @@ pub struct ReservationPurchaseRecommendationSummaryBuilder {
 }
 impl ReservationPurchaseRecommendationSummaryBuilder {
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
-    pub fn total_estimated_monthly_savings_amount(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn total_estimated_monthly_savings_amount(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.total_estimated_monthly_savings_amount = Some(input.into());
         self
     }
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month.</p>
-    pub fn set_total_estimated_monthly_savings_amount(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.total_estimated_monthly_savings_amount = input; self
+    pub fn set_total_estimated_monthly_savings_amount(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.total_estimated_monthly_savings_amount = input;
+        self
     }
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month, as a percentage of your costs.</p>
-    pub fn total_estimated_monthly_savings_percentage(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn total_estimated_monthly_savings_percentage(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.total_estimated_monthly_savings_percentage = Some(input.into());
         self
     }
     /// <p>The total amount that Amazon Web Services estimates that this recommendation could save you in a month, as a percentage of your costs.</p>
-    pub fn set_total_estimated_monthly_savings_percentage(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.total_estimated_monthly_savings_percentage = input; self
+    pub fn set_total_estimated_monthly_savings_percentage(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.total_estimated_monthly_savings_percentage = input;
+        self
     }
     /// <p>The currency code used for this recommendation.</p>
     pub fn currency_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +83,16 @@ impl ReservationPurchaseRecommendationSummaryBuilder {
     }
     /// <p>The currency code used for this recommendation.</p>
     pub fn set_currency_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.currency_code = input; self
+        self.currency_code = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReservationPurchaseRecommendationSummary`](crate::types::ReservationPurchaseRecommendationSummary).
     pub fn build(self) -> crate::types::ReservationPurchaseRecommendationSummary {
         crate::types::ReservationPurchaseRecommendationSummary {
-            total_estimated_monthly_savings_amount: self.total_estimated_monthly_savings_amount
-            ,
-            total_estimated_monthly_savings_percentage: self.total_estimated_monthly_savings_percentage
-            ,
-            currency_code: self.currency_code
-            ,
+            total_estimated_monthly_savings_amount: self.total_estimated_monthly_savings_amount,
+            total_estimated_monthly_savings_percentage: self
+                .total_estimated_monthly_savings_percentage,
+            currency_code: self.currency_code,
         }
     }
 }
-

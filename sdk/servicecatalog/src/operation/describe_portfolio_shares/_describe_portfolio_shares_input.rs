@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePortfolioSharesInput  {
+pub struct DescribePortfolioSharesInput {
     /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
     #[doc(hidden)]
     pub portfolio_id: std::option::Option<std::string::String>,
-    /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p> 
-    /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p> 
-    /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p> 
-    /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p> 
+    /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
+    /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p>
+    /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
+    /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
     /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::DescribePortfolioShareType>,
@@ -22,19 +22,19 @@ pub struct DescribePortfolioSharesInput  {
 }
 impl DescribePortfolioSharesInput {
     /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
-    pub fn portfolio_id(&self) -> std::option::Option<& str> {
+    pub fn portfolio_id(&self) -> std::option::Option<&str> {
         self.portfolio_id.as_deref()
     }
-    /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p> 
-    /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p> 
-    /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p> 
-    /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p> 
+    /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
+    /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p>
+    /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
+    /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
     /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::DescribePortfolioShareType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::DescribePortfolioShareType> {
         self.r#type.as_ref()
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -44,7 +44,9 @@ impl DescribePortfolioSharesInput {
 }
 impl DescribePortfolioSharesInput {
     /// Creates a new builder-style object to manufacture [`DescribePortfolioSharesInput`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput).
-    pub fn builder() -> crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder
+    {
         crate::operation::describe_portfolio_shares::builders::DescribePortfolioSharesInputBuilder::default()
     }
 }
@@ -66,24 +68,29 @@ impl DescribePortfolioSharesInputBuilder {
     }
     /// <p>The unique identifier of the portfolio for which shares will be retrieved.</p>
     pub fn set_portfolio_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.portfolio_id = input; self
+        self.portfolio_id = input;
+        self
     }
-    /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p> 
-    /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p> 
-    /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p> 
-    /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p> 
+    /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
+    /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p>
+    /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
+    /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
     /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
     pub fn r#type(mut self, input: crate::types::DescribePortfolioShareType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p> 
-    /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p> 
-    /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p> 
-    /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p> 
+    /// <p>The type of portfolio share to summarize. This field acts as a filter on the type of portfolio share, which can be one of the following:</p>
+    /// <p>1. <code>ACCOUNT</code> - Represents an external account to account share.</p>
+    /// <p>2. <code>ORGANIZATION</code> - Represents a share to an organization. This share is available to every account in the organization.</p>
+    /// <p>3. <code>ORGANIZATIONAL_UNIT</code> - Represents a share to an organizational unit.</p>
     /// <p>4. <code>ORGANIZATION_MEMBER_ACCOUNT</code> - Represents a share to an account in the organization.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DescribePortfolioShareType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::DescribePortfolioShareType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +99,8 @@ impl DescribePortfolioSharesInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -101,22 +109,23 @@ impl DescribePortfolioSharesInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribePortfolioSharesInput`](crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput).
-    pub fn build(self) -> Result<crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_portfolio_shares::DescribePortfolioSharesInput {
-                portfolio_id: self.portfolio_id
-                ,
-                r#type: self.r#type
-                ,
-                page_token: self.page_token
-                ,
-                page_size: self.page_size
-                ,
-            }
+                portfolio_id: self.portfolio_id,
+                r#type: self.r#type,
+                page_token: self.page_token,
+                page_size: self.page_size,
+            },
         )
     }
 }
-

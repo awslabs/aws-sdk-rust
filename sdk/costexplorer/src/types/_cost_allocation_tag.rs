@@ -3,7 +3,7 @@
 /// <p>The cost allocation tag structure. This includes detailed metadata for the <code>CostAllocationTag</code> object. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CostAllocationTag  {
+pub struct CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
     #[doc(hidden)]
     pub tag_key: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct CostAllocationTag  {
 }
 impl CostAllocationTag {
     /// <p>The key for the cost allocation tag. </p>
-    pub fn tag_key(&self) -> std::option::Option<& str> {
+    pub fn tag_key(&self) -> std::option::Option<&str> {
         self.tag_key.as_deref()
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::CostAllocationTagType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::CostAllocationTagType> {
         self.r#type.as_ref()
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn status(&self) -> std::option::Option<& crate::types::CostAllocationTagStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::CostAllocationTagStatus> {
         self.status.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl CostAllocationTagBuilder {
     }
     /// <p>The key for the cost allocation tag. </p>
     pub fn set_tag_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tag_key = input; self
+        self.tag_key = input;
+        self
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
     pub fn r#type(mut self, input: crate::types::CostAllocationTagType) -> Self {
@@ -59,8 +60,12 @@ impl CostAllocationTagBuilder {
         self
     }
     /// <p>The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code> type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines and applies to support Amazon Web Services resources for cost allocation purposes. <code>UserDefined</code> type tags are tags that you define, create, and apply to resources. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::CostAllocationTagType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::CostAllocationTagType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The status of a cost allocation tag. </p>
     pub fn status(mut self, input: crate::types::CostAllocationTagStatus) -> Self {
@@ -68,19 +73,19 @@ impl CostAllocationTagBuilder {
         self
     }
     /// <p>The status of a cost allocation tag. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::CostAllocationTagStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::CostAllocationTagStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`CostAllocationTag`](crate::types::CostAllocationTag).
     pub fn build(self) -> crate::types::CostAllocationTag {
         crate::types::CostAllocationTag {
-            tag_key: self.tag_key
-            ,
-            r#type: self.r#type
-            ,
-            status: self.status
-            ,
+            tag_key: self.tag_key,
+            r#type: self.r#type,
+            status: self.status,
         }
     }
 }
-

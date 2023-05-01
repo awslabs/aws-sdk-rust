@@ -40,4 +40,3 @@ pub mod builders;
 
 /// Error types that Amazon Macie can respond with.
 pub mod error;
-

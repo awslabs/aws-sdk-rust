@@ -3,7 +3,7 @@
 /// <p>Represents the request to add custom attributes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddCustomAttributesInput  {
+pub struct AddCustomAttributesInput {
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
     #[doc(hidden)]
     pub user_pool_id: std::option::Option<std::string::String>,
@@ -13,18 +13,20 @@ pub struct AddCustomAttributesInput  {
 }
 impl AddCustomAttributesInput {
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<& str> {
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
-    pub fn custom_attributes(&self) -> std::option::Option<& [crate::types::SchemaAttributeType]> {
+    pub fn custom_attributes(&self) -> std::option::Option<&[crate::types::SchemaAttributeType]> {
         self.custom_attributes.as_deref()
     }
 }
 impl AddCustomAttributesInput {
     /// Creates a new builder-style object to manufacture [`AddCustomAttributesInput`](crate::operation::add_custom_attributes::AddCustomAttributesInput).
-    pub fn builder() -> crate::operation::add_custom_attributes::builders::AddCustomAttributesInputBuilder {
-        crate::operation::add_custom_attributes::builders::AddCustomAttributesInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::add_custom_attributes::builders::AddCustomAttributesInputBuilder {
+        crate::operation::add_custom_attributes::builders::AddCustomAttributesInputBuilder::default(
+        )
     }
 }
 
@@ -33,7 +35,8 @@ impl AddCustomAttributesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AddCustomAttributesInputBuilder {
     pub(crate) user_pool_id: std::option::Option<std::string::String>,
-    pub(crate) custom_attributes: std::option::Option<std::vec::Vec<crate::types::SchemaAttributeType>>,
+    pub(crate) custom_attributes:
+        std::option::Option<std::vec::Vec<crate::types::SchemaAttributeType>>,
 }
 impl AddCustomAttributesInputBuilder {
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
@@ -43,7 +46,8 @@ impl AddCustomAttributesInputBuilder {
     }
     /// <p>The user pool ID for the user pool where you want to add custom attributes.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input; self
+        self.user_pool_id = input;
+        self
     }
     /// Appends an item to `custom_attributes`.
     ///
@@ -52,24 +56,30 @@ impl AddCustomAttributesInputBuilder {
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
     pub fn custom_attributes(mut self, input: crate::types::SchemaAttributeType) -> Self {
         let mut v = self.custom_attributes.unwrap_or_default();
-                        v.push(input);
-                        self.custom_attributes = Some(v);
-                        self
+        v.push(input);
+        self.custom_attributes = Some(v);
+        self
     }
     /// <p>An array of custom attributes, such as Mutable and Name.</p>
-    pub fn set_custom_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::SchemaAttributeType>>) -> Self {
-        self.custom_attributes = input; self
+    pub fn set_custom_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SchemaAttributeType>>,
+    ) -> Self {
+        self.custom_attributes = input;
+        self
     }
     /// Consumes the builder and constructs a [`AddCustomAttributesInput`](crate::operation::add_custom_attributes::AddCustomAttributesInput).
-    pub fn build(self) -> Result<crate::operation::add_custom_attributes::AddCustomAttributesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::add_custom_attributes::AddCustomAttributesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::add_custom_attributes::AddCustomAttributesInput {
-                user_pool_id: self.user_pool_id
-                ,
-                custom_attributes: self.custom_attributes
-                ,
-            }
+                user_pool_id: self.user_pool_id,
+                custom_attributes: self.custom_attributes,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>A list of additional configurations which will be configured for the organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OrganizationAdditionalConfiguration  {
+pub struct OrganizationAdditionalConfiguration {
     /// <p>The name of the additional configuration that will be configured for the organization.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
@@ -13,11 +13,11 @@ pub struct OrganizationAdditionalConfiguration  {
 }
 impl OrganizationAdditionalConfiguration {
     /// <p>The name of the additional configuration that will be configured for the organization.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::OrgFeatureAdditionalConfiguration> {
+    pub fn name(&self) -> std::option::Option<&crate::types::OrgFeatureAdditionalConfiguration> {
         self.name.as_ref()
     }
     /// <p>The status of the additional configuration that will be configured for the organization.</p>
-    pub fn auto_enable(&self) -> std::option::Option<& crate::types::OrgFeatureStatus> {
+    pub fn auto_enable(&self) -> std::option::Option<&crate::types::OrgFeatureStatus> {
         self.auto_enable.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl OrganizationAdditionalConfigurationBuilder {
         self
     }
     /// <p>The name of the additional configuration that will be configured for the organization.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::OrgFeatureAdditionalConfiguration>,
+    ) -> Self {
+        self.name = input;
+        self
     }
     /// <p>The status of the additional configuration that will be configured for the organization.</p>
     pub fn auto_enable(mut self, input: crate::types::OrgFeatureStatus) -> Self {
@@ -51,17 +55,18 @@ impl OrganizationAdditionalConfigurationBuilder {
         self
     }
     /// <p>The status of the additional configuration that will be configured for the organization.</p>
-    pub fn set_auto_enable(mut self, input: std::option::Option<crate::types::OrgFeatureStatus>) -> Self {
-        self.auto_enable = input; self
+    pub fn set_auto_enable(
+        mut self,
+        input: std::option::Option<crate::types::OrgFeatureStatus>,
+    ) -> Self {
+        self.auto_enable = input;
+        self
     }
     /// Consumes the builder and constructs a [`OrganizationAdditionalConfiguration`](crate::types::OrganizationAdditionalConfiguration).
     pub fn build(self) -> crate::types::OrganizationAdditionalConfiguration {
         crate::types::OrganizationAdditionalConfiguration {
-            name: self.name
-            ,
-            auto_enable: self.auto_enable
-            ,
+            name: self.name,
+            auto_enable: self.auto_enable,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>AWS account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Account  {
+pub struct Account {
     /// <p>Account ID of AWS account.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl Account {
     /// <p>Account ID of AWS account.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl AccountBuilder {
     }
     /// <p>Account ID of AWS account.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`Account`](crate::types::Account).
     pub fn build(self) -> crate::types::Account {
         crate::types::Account {
-            account_id: self.account_id
-            ,
+            account_id: self.account_id,
         }
     }
 }
-

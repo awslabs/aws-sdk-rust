@@ -4,51 +4,71 @@ pub use crate::operation::deprecate_thing_type::_deprecate_thing_type_output::De
 pub use crate::operation::deprecate_thing_type::_deprecate_thing_type_input::DeprecateThingTypeInputBuilder;
 
 /// Fluent builder constructing a request to `DeprecateThingType`.
-/// 
-/// <p>Deprecates a thing type. You can not associate new things with deprecated thing type.</p> 
+///
+/// <p>Deprecates a thing type. You can not associate new things with deprecated thing type.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeprecateThingType</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeprecateThingTypeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::deprecate_thing_type::builders::DeprecateThingTypeInputBuilder,
+    inner: crate::operation::deprecate_thing_type::builders::DeprecateThingTypeInputBuilder,
 }
-impl DeprecateThingTypeFluentBuilder  {
+impl DeprecateThingTypeFluentBuilder {
     /// Creates a new `DeprecateThingType`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::deprecate_thing_type::DeprecateThingType, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::deprecate_thing_type::DeprecateThingTypeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::deprecate_thing_type::DeprecateThingTypeOutput, aws_smithy_http::result::SdkError<crate::operation::deprecate_thing_type::DeprecateThingTypeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::deprecate_thing_type::DeprecateThingType,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::deprecate_thing_type::DeprecateThingTypeError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::deprecate_thing_type::DeprecateThingTypeOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::deprecate_thing_type::DeprecateThingTypeError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the thing type to deprecate.</p>
     pub fn thing_type_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.thing_type_name(input.into());
@@ -70,4 +90,3 @@ impl DeprecateThingTypeFluentBuilder  {
         self
     }
 }
-

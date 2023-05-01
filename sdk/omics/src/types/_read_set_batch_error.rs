@@ -3,7 +3,7 @@
 /// <p>An error from a batch read set operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReadSetBatchError  {
+pub struct ReadSetBatchError {
     /// <p>The error's ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ReadSetBatchError  {
 }
 impl ReadSetBatchError {
     /// <p>The error's ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The error's code.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>The error's message.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ReadSetBatchErrorBuilder {
     }
     /// <p>The error's ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The error's code.</p>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ReadSetBatchErrorBuilder {
     }
     /// <p>The error's code.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>The error's message.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl ReadSetBatchErrorBuilder {
     }
     /// <p>The error's message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReadSetBatchError`](crate::types::ReadSetBatchError).
     pub fn build(self) -> crate::types::ReadSetBatchError {
         crate::types::ReadSetBatchError {
-            id: self.id
-            ,
-            code: self.code
-            ,
-            message: self.message
-            ,
+            id: self.id,
+            code: self.code,
+            message: self.message,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteUserInput  {
+pub struct DeleteUserInput {
     /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
     #[doc(hidden)]
     pub server_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeleteUserInput  {
 }
 impl DeleteUserInput {
     /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
-    pub fn server_id(&self) -> std::option::Option<& str> {
+    pub fn server_id(&self) -> std::option::Option<&str> {
         self.server_id.as_deref()
     }
     /// <p>A unique string that identifies a user that is being deleted from a server.</p>
-    pub fn user_name(&self) -> std::option::Option<& str> {
+    pub fn user_name(&self) -> std::option::Option<&str> {
         self.user_name.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteUserInputBuilder {
     }
     /// <p>A system-assigned unique identifier for a server instance that has the user assigned to it.</p>
     pub fn set_server_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.server_id = input; self
+        self.server_id = input;
+        self
     }
     /// <p>A unique string that identifies a user that is being deleted from a server.</p>
     pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DeleteUserInputBuilder {
     }
     /// <p>A unique string that identifies a user that is being deleted from a server.</p>
     pub fn set_user_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_name = input; self
+        self.user_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteUserInput`](crate::operation::delete_user::DeleteUserInput).
-    pub fn build(self) -> Result<crate::operation::delete_user::DeleteUserInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_user::DeleteUserInput {
-                server_id: self.server_id
-                ,
-                user_name: self.user_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_user::DeleteUserInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_user::DeleteUserInput {
+            server_id: self.server_id,
+            user_name: self.user_name,
+        })
     }
 }
-

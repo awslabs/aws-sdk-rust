@@ -4,50 +4,70 @@ pub use crate::operation::update_alarm_model::_update_alarm_model_output::Update
 pub use crate::operation::update_alarm_model::_update_alarm_model_input::UpdateAlarmModelInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateAlarmModel`.
-/// 
+///
 /// <p>Updates an alarm model. Any alarms that were created based on the previous version are deleted and then created again as new data arrives.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAlarmModelFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder,
+    inner: crate::operation::update_alarm_model::builders::UpdateAlarmModelInputBuilder,
 }
-impl UpdateAlarmModelFluentBuilder  {
+impl UpdateAlarmModelFluentBuilder {
     /// Creates a new `UpdateAlarmModel`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_alarm_model::UpdateAlarmModel, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_alarm_model::UpdateAlarmModelError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_alarm_model::UpdateAlarmModelOutput, aws_smithy_http::result::SdkError<crate::operation::update_alarm_model::UpdateAlarmModelError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_alarm_model::UpdateAlarmModel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_alarm_model::UpdateAlarmModelError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_alarm_model::UpdateAlarmModelOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_alarm_model::UpdateAlarmModelError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the alarm model.</p>
     pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.alarm_model_name(input.into());
@@ -64,7 +84,10 @@ impl UpdateAlarmModelFluentBuilder  {
         self
     }
     /// <p>The description of the alarm model.</p>
-    pub fn set_alarm_model_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alarm_model_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_alarm_model_description(input);
         self
     }
@@ -104,7 +127,10 @@ impl UpdateAlarmModelFluentBuilder  {
         self
     }
     /// <p>Contains information about one or more notification actions.</p>
-    pub fn set_alarm_notification(mut self, input: std::option::Option<crate::types::AlarmNotification>) -> Self {
+    pub fn set_alarm_notification(
+        mut self,
+        input: std::option::Option<crate::types::AlarmNotification>,
+    ) -> Self {
         self.inner = self.inner.set_alarm_notification(input);
         self
     }
@@ -114,7 +140,10 @@ impl UpdateAlarmModelFluentBuilder  {
         self
     }
     /// <p>Contains information about one or more alarm actions.</p>
-    pub fn set_alarm_event_actions(mut self, input: std::option::Option<crate::types::AlarmEventActions>) -> Self {
+    pub fn set_alarm_event_actions(
+        mut self,
+        input: std::option::Option<crate::types::AlarmEventActions>,
+    ) -> Self {
         self.inner = self.inner.set_alarm_event_actions(input);
         self
     }
@@ -124,9 +153,11 @@ impl UpdateAlarmModelFluentBuilder  {
         self
     }
     /// <p>Contains the configuration information of alarm state changes.</p>
-    pub fn set_alarm_capabilities(mut self, input: std::option::Option<crate::types::AlarmCapabilities>) -> Self {
+    pub fn set_alarm_capabilities(
+        mut self,
+        input: std::option::Option<crate::types::AlarmCapabilities>,
+    ) -> Self {
         self.inner = self.inner.set_alarm_capabilities(input);
         self
     }
 }
-

@@ -4,50 +4,66 @@ pub use crate::operation::update_job::_update_job_output::UpdateJobOutputBuilder
 pub use crate::operation::update_job::_update_job_input::UpdateJobInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateJob`.
-/// 
+///
 /// <p>While a job's <code>JobState</code> value is <code>New</code>, you can update some of the information associated with a job. Once the job changes to a different job state, usually within 60 minutes of the job being created, this action is no longer available.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_job::builders::UpdateJobInputBuilder,
+    inner: crate::operation::update_job::builders::UpdateJobInputBuilder,
 }
-impl UpdateJobFluentBuilder  {
+impl UpdateJobFluentBuilder {
     /// Creates a new `UpdateJob`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_job::UpdateJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_job::UpdateJobOutput, aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_job::UpdateJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_job::UpdateJobOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_job::UpdateJobError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
     pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.job_id(input.into());
@@ -74,7 +90,10 @@ impl UpdateJobFluentBuilder  {
         self
     }
     /// <p>The new or updated <code>Notification</code> object.</p>
-    pub fn set_notification(mut self, input: std::option::Option<crate::types::Notification>) -> Self {
+    pub fn set_notification(
+        mut self,
+        input: std::option::Option<crate::types::Notification>,
+    ) -> Self {
         self.inner = self.inner.set_notification(input);
         self
     }
@@ -89,12 +108,18 @@ impl UpdateJobFluentBuilder  {
         self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-    pub fn on_device_service_configuration(mut self, input: crate::types::OnDeviceServiceConfiguration) -> Self {
+    pub fn on_device_service_configuration(
+        mut self,
+        input: crate::types::OnDeviceServiceConfiguration,
+    ) -> Self {
         self.inner = self.inner.on_device_service_configuration(input);
         self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System) and the Amazon Web Services Storage Gateway service Tape Gateway type.</p>
-    pub fn set_on_device_service_configuration(mut self, input: std::option::Option<crate::types::OnDeviceServiceConfiguration>) -> Self {
+    pub fn set_on_device_service_configuration(
+        mut self,
+        input: std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_on_device_service_configuration(input);
         self
     }
@@ -114,7 +139,10 @@ impl UpdateJobFluentBuilder  {
         self
     }
     /// <p>The updated shipping option value of this job's <code>ShippingDetails</code> object.</p>
-    pub fn set_shipping_option(mut self, input: std::option::Option<crate::types::ShippingOption>) -> Self {
+    pub fn set_shipping_option(
+        mut self,
+        input: std::option::Option<crate::types::ShippingOption>,
+    ) -> Self {
         self.inner = self.inner.set_shipping_option(input);
         self
     }
@@ -128,15 +156,18 @@ impl UpdateJobFluentBuilder  {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p> 
+    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn snowball_capacity_preference(mut self, input: crate::types::SnowballCapacity) -> Self {
         self.inner = self.inner.snowball_capacity_preference(input);
         self
     }
-    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p> 
+    /// <p>The updated <code>SnowballCapacityPreference</code> of this job's <code>JobMetadata</code> object. The 50 TB Snowballs are only available in the US regions.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn set_snowball_capacity_preference(mut self, input: std::option::Option<crate::types::SnowballCapacity>) -> Self {
+    pub fn set_snowball_capacity_preference(
+        mut self,
+        input: std::option::Option<crate::types::SnowballCapacity>,
+    ) -> Self {
         self.inner = self.inner.set_snowball_capacity_preference(input);
         self
     }
@@ -146,9 +177,11 @@ impl UpdateJobFluentBuilder  {
         self
     }
     /// <p>The updated ID for the forwarding address for a job. This field is not supported in most regions.</p>
-    pub fn set_forwarding_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_forwarding_address_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_forwarding_address_id(input);
         self
     }
 }
-

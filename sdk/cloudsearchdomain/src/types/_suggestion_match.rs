@@ -3,7 +3,7 @@
 /// <p>An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SuggestionMatch  {
+pub struct SuggestionMatch {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
     #[doc(hidden)]
     pub suggestion: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct SuggestionMatch  {
 }
 impl SuggestionMatch {
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
-    pub fn suggestion(&self) -> std::option::Option<& str> {
+    pub fn suggestion(&self) -> std::option::Option<&str> {
         self.suggestion.as_deref()
     }
     /// <p>The relevance score of a suggested match.</p>
@@ -24,7 +24,7 @@ impl SuggestionMatch {
         self.score
     }
     /// <p>The document ID of the suggested document.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl SuggestionMatchBuilder {
     }
     /// <p>The string that matches the query string specified in the <code>SuggestRequest</code>. </p>
     pub fn set_suggestion(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suggestion = input; self
+        self.suggestion = input;
+        self
     }
     /// <p>The relevance score of a suggested match.</p>
     pub fn score(mut self, input: i64) -> Self {
@@ -60,7 +61,8 @@ impl SuggestionMatchBuilder {
     }
     /// <p>The relevance score of a suggested match.</p>
     pub fn set_score(mut self, input: std::option::Option<i64>) -> Self {
-        self.score = input; self
+        self.score = input;
+        self
     }
     /// <p>The document ID of the suggested document.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,19 +71,15 @@ impl SuggestionMatchBuilder {
     }
     /// <p>The document ID of the suggested document.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`SuggestionMatch`](crate::types::SuggestionMatch).
     pub fn build(self) -> crate::types::SuggestionMatch {
         crate::types::SuggestionMatch {
-            suggestion: self.suggestion
-            ,
-            score: self.score
-                .unwrap_or_default()
-            ,
-            id: self.id
-            ,
+            suggestion: self.suggestion,
+            score: self.score.unwrap_or_default(),
+            id: self.id,
         }
     }
 }
-

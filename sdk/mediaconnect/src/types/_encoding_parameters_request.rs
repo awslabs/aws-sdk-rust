@@ -3,7 +3,7 @@
 /// A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EncodingParametersRequest  {
+pub struct EncodingParametersRequest {
     /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
     #[doc(hidden)]
     pub compression_factor: f64,
@@ -17,7 +17,7 @@ impl EncodingParametersRequest {
         self.compression_factor
     }
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
-    pub fn encoder_profile(&self) -> std::option::Option<& crate::types::EncoderProfile> {
+    pub fn encoder_profile(&self) -> std::option::Option<&crate::types::EncoderProfile> {
         self.encoder_profile.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl EncodingParametersRequestBuilder {
     }
     /// A value that is used to calculate compression for an output. The bitrate of the output is calculated as follows: Output bitrate = (1 / compressionFactor) * (source bitrate) This property only applies to outputs that use the ST 2110 JPEG XS protocol, with a flow source that uses the CDI protocol. Valid values are floating point numbers in the range of 3.0 to 10.0, inclusive.
     pub fn set_compression_factor(mut self, input: std::option::Option<f64>) -> Self {
-        self.compression_factor = input; self
+        self.compression_factor = input;
+        self
     }
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
     pub fn encoder_profile(mut self, input: crate::types::EncoderProfile) -> Self {
@@ -51,18 +52,18 @@ impl EncodingParametersRequestBuilder {
         self
     }
     /// A setting on the encoder that drives compression settings. This property only applies to video media streams associated with outputs that use the ST 2110 JPEG XS protocol, if at least one source on the flow uses the CDI protocol.
-    pub fn set_encoder_profile(mut self, input: std::option::Option<crate::types::EncoderProfile>) -> Self {
-        self.encoder_profile = input; self
+    pub fn set_encoder_profile(
+        mut self,
+        input: std::option::Option<crate::types::EncoderProfile>,
+    ) -> Self {
+        self.encoder_profile = input;
+        self
     }
     /// Consumes the builder and constructs a [`EncodingParametersRequest`](crate::types::EncodingParametersRequest).
     pub fn build(self) -> crate::types::EncodingParametersRequest {
         crate::types::EncodingParametersRequest {
-            compression_factor: self.compression_factor
-                .unwrap_or_default()
-            ,
-            encoder_profile: self.encoder_profile
-            ,
+            compression_factor: self.compression_factor.unwrap_or_default(),
+            encoder_profile: self.encoder_profile,
         }
     }
 }
-

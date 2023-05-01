@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let algorithmnamegeomosaic = unimplemented!();
 /// match algorithmnamegeomosaic {
@@ -42,14 +42,22 @@
 /// Specifically, when `algorithmnamegeomosaic` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AlgorithmNameGeoMosaic::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AlgorithmNameGeoMosaic {
     /// AVERAGE
     Average,
@@ -80,65 +88,81 @@ pub enum AlgorithmNameGeoMosaic {
     /// SUM
     Sum,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AlgorithmNameGeoMosaic {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AVERAGE" => AlgorithmNameGeoMosaic::Average,
-"BILINEAR" => AlgorithmNameGeoMosaic::Bilinear,
-"CUBIC" => AlgorithmNameGeoMosaic::Cubic,
-"CUBICSPLINE" => AlgorithmNameGeoMosaic::Cubicspline,
-"LANCZOS" => AlgorithmNameGeoMosaic::Lanczos,
-"MAX" => AlgorithmNameGeoMosaic::Max,
-"MED" => AlgorithmNameGeoMosaic::Med,
-"MIN" => AlgorithmNameGeoMosaic::Min,
-"MODE" => AlgorithmNameGeoMosaic::Mode,
-"NEAR" => AlgorithmNameGeoMosaic::Near,
-"Q1" => AlgorithmNameGeoMosaic::Q1,
-"Q3" => AlgorithmNameGeoMosaic::Q3,
-"RMS" => AlgorithmNameGeoMosaic::Rms,
-"SUM" => AlgorithmNameGeoMosaic::Sum,
-other => AlgorithmNameGeoMosaic::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for AlgorithmNameGeoMosaic {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AlgorithmNameGeoMosaic::from(s))
-                }
-            }
-impl AlgorithmNameGeoMosaic {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AlgorithmNameGeoMosaic::Average => "AVERAGE",
-    AlgorithmNameGeoMosaic::Bilinear => "BILINEAR",
-    AlgorithmNameGeoMosaic::Cubic => "CUBIC",
-    AlgorithmNameGeoMosaic::Cubicspline => "CUBICSPLINE",
-    AlgorithmNameGeoMosaic::Lanczos => "LANCZOS",
-    AlgorithmNameGeoMosaic::Max => "MAX",
-    AlgorithmNameGeoMosaic::Med => "MED",
-    AlgorithmNameGeoMosaic::Min => "MIN",
-    AlgorithmNameGeoMosaic::Mode => "MODE",
-    AlgorithmNameGeoMosaic::Near => "NEAR",
-    AlgorithmNameGeoMosaic::Q1 => "Q1",
-    AlgorithmNameGeoMosaic::Q3 => "Q3",
-    AlgorithmNameGeoMosaic::Rms => "RMS",
-    AlgorithmNameGeoMosaic::Sum => "SUM",
-    AlgorithmNameGeoMosaic::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AVERAGE" => AlgorithmNameGeoMosaic::Average,
+            "BILINEAR" => AlgorithmNameGeoMosaic::Bilinear,
+            "CUBIC" => AlgorithmNameGeoMosaic::Cubic,
+            "CUBICSPLINE" => AlgorithmNameGeoMosaic::Cubicspline,
+            "LANCZOS" => AlgorithmNameGeoMosaic::Lanczos,
+            "MAX" => AlgorithmNameGeoMosaic::Max,
+            "MED" => AlgorithmNameGeoMosaic::Med,
+            "MIN" => AlgorithmNameGeoMosaic::Min,
+            "MODE" => AlgorithmNameGeoMosaic::Mode,
+            "NEAR" => AlgorithmNameGeoMosaic::Near,
+            "Q1" => AlgorithmNameGeoMosaic::Q1,
+            "Q3" => AlgorithmNameGeoMosaic::Q3,
+            "RMS" => AlgorithmNameGeoMosaic::Rms,
+            "SUM" => AlgorithmNameGeoMosaic::Sum,
+            other => AlgorithmNameGeoMosaic::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AVERAGE", "BILINEAR", "CUBIC", "CUBICSPLINE", "LANCZOS", "MAX", "MED", "MIN", "MODE", "NEAR", "Q1", "Q3", "RMS", "SUM"]
-                }
-            }
-impl AsRef<str> for AlgorithmNameGeoMosaic {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AlgorithmNameGeoMosaic {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AlgorithmNameGeoMosaic::from(s))
+    }
+}
+impl AlgorithmNameGeoMosaic {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AlgorithmNameGeoMosaic::Average => "AVERAGE",
+            AlgorithmNameGeoMosaic::Bilinear => "BILINEAR",
+            AlgorithmNameGeoMosaic::Cubic => "CUBIC",
+            AlgorithmNameGeoMosaic::Cubicspline => "CUBICSPLINE",
+            AlgorithmNameGeoMosaic::Lanczos => "LANCZOS",
+            AlgorithmNameGeoMosaic::Max => "MAX",
+            AlgorithmNameGeoMosaic::Med => "MED",
+            AlgorithmNameGeoMosaic::Min => "MIN",
+            AlgorithmNameGeoMosaic::Mode => "MODE",
+            AlgorithmNameGeoMosaic::Near => "NEAR",
+            AlgorithmNameGeoMosaic::Q1 => "Q1",
+            AlgorithmNameGeoMosaic::Q3 => "Q3",
+            AlgorithmNameGeoMosaic::Rms => "RMS",
+            AlgorithmNameGeoMosaic::Sum => "SUM",
+            AlgorithmNameGeoMosaic::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "AVERAGE",
+            "BILINEAR",
+            "CUBIC",
+            "CUBICSPLINE",
+            "LANCZOS",
+            "MAX",
+            "MED",
+            "MIN",
+            "MODE",
+            "NEAR",
+            "Q1",
+            "Q3",
+            "RMS",
+            "SUM",
+        ]
+    }
+}
+impl AsRef<str> for AlgorithmNameGeoMosaic {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResolveRoomInput  {
+pub struct ResolveRoomInput {
     /// <p>The ARN of the user. Required.</p>
     #[doc(hidden)]
     pub user_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct ResolveRoomInput  {
 }
 impl ResolveRoomInput {
     /// <p>The ARN of the user. Required.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>The ARN of the skill that was requested. Required.</p>
-    pub fn skill_id(&self) -> std::option::Option<& str> {
+    pub fn skill_id(&self) -> std::option::Option<&str> {
         self.skill_id.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl ResolveRoomInputBuilder {
     }
     /// <p>The ARN of the user. Required.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>The ARN of the skill that was requested. Required.</p>
     pub fn skill_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl ResolveRoomInputBuilder {
     }
     /// <p>The ARN of the skill that was requested. Required.</p>
     pub fn set_skill_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.skill_id = input; self
+        self.skill_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResolveRoomInput`](crate::operation::resolve_room::ResolveRoomInput).
-    pub fn build(self) -> Result<crate::operation::resolve_room::ResolveRoomInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::resolve_room::ResolveRoomInput {
-                user_id: self.user_id
-                ,
-                skill_id: self.skill_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::resolve_room::ResolveRoomInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::resolve_room::ResolveRoomInput {
+            user_id: self.user_id,
+            skill_id: self.skill_id,
+        })
     }
 }
-

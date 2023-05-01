@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProjectAssetsOutput  {
+pub struct ListProjectAssetsOutput {
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
     #[doc(hidden)]
     pub asset_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,23 @@ pub struct ListProjectAssetsOutput  {
 }
 impl ListProjectAssetsOutput {
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
-    pub fn asset_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn asset_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.asset_ids.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListProjectAssetsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListProjectAssetsOutput {
     /// Creates a new builder-style object to manufacture [`ListProjectAssetsOutput`](crate::operation::list_project_assets::ListProjectAssetsOutput).
-    pub fn builder() -> crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder {
         crate::operation::list_project_assets::builders::ListProjectAssetsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListProjectAssetsOutputBuilder {
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
     pub fn asset_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.asset_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.asset_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.asset_ids = Some(v);
+        self
     }
     /// <p>A list that contains the IDs of each asset associated with the project.</p>
-    pub fn set_asset_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.asset_ids = input; self
+    pub fn set_asset_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.asset_ids = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListProjectAssetsOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListProjectAssetsOutput`](crate::operation::list_project_assets::ListProjectAssetsOutput).
     pub fn build(self) -> crate::operation::list_project_assets::ListProjectAssetsOutput {
         crate::operation::list_project_assets::ListProjectAssetsOutput {
-            asset_ids: self.asset_ids
-            ,
-            next_token: self.next_token
-            ,
+            asset_ids: self.asset_ids,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

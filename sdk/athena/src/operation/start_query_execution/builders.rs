@@ -4,50 +4,70 @@ pub use crate::operation::start_query_execution::_start_query_execution_output::
 pub use crate::operation::start_query_execution::_start_query_execution_input::StartQueryExecutionInputBuilder;
 
 /// Fluent builder constructing a request to `StartQueryExecution`.
-/// 
+///
 /// <p>Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup in which the query ran. Running queries against an external catalog requires <code>GetDataCatalog</code> permission to the catalog. For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartQueryExecutionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_query_execution::builders::StartQueryExecutionInputBuilder,
+    inner: crate::operation::start_query_execution::builders::StartQueryExecutionInputBuilder,
 }
-impl StartQueryExecutionFluentBuilder  {
+impl StartQueryExecutionFluentBuilder {
     /// Creates a new `StartQueryExecution`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_query_execution::StartQueryExecution, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_query_execution::StartQueryExecutionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_query_execution::StartQueryExecutionOutput, aws_smithy_http::result::SdkError<crate::operation::start_query_execution::StartQueryExecutionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_query_execution::StartQueryExecution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_query_execution::StartQueryExecutionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_query_execution::StartQueryExecutionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_query_execution::StartQueryExecutionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The SQL query statements to be executed.</p>
     pub fn query_string(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.query_string(input.into());
@@ -58,17 +78,20 @@ impl StartQueryExecutionFluentBuilder  {
         self.inner = self.inner.set_query_string(input);
         self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important> 
-    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p> 
+    /// <p>A unique case-sensitive string used to ensure the request to create the query is idempotent (executes only once). If another <code>StartQueryExecution</code> request is received, the same response is returned and another query is not created. If a parameter has changed, for example, the <code>QueryString</code>, an error is returned.</p> <important>
+    /// <p>This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.</p>
     /// </important>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -78,7 +101,10 @@ impl StartQueryExecutionFluentBuilder  {
         self
     }
     /// <p>The database within which the query executes.</p>
-    pub fn set_query_execution_context(mut self, input: std::option::Option<crate::types::QueryExecutionContext>) -> Self {
+    pub fn set_query_execution_context(
+        mut self,
+        input: std::option::Option<crate::types::QueryExecutionContext>,
+    ) -> Self {
         self.inner = self.inner.set_query_execution_context(input);
         self
     }
@@ -88,7 +114,10 @@ impl StartQueryExecutionFluentBuilder  {
         self
     }
     /// <p>Specifies information about where and how to save the results of the query execution. If the query runs in a workgroup, then workgroup's settings may override query settings. This affects the query results location. The workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <code>WorkGroupConfiguration$EnforceWorkGroupConfiguration</code>.</p>
-    pub fn set_result_configuration(mut self, input: std::option::Option<crate::types::ResultConfiguration>) -> Self {
+    pub fn set_result_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ResultConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_result_configuration(input);
         self
     }
@@ -112,19 +141,27 @@ impl StartQueryExecutionFluentBuilder  {
         self
     }
     /// <p>A list of values for the parameters in a query. The values are applied sequentially to the parameters in the query in the order in which the parameters occur.</p>
-    pub fn set_execution_parameters(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_execution_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_execution_parameters(input);
         self
     }
     /// <p>Specifies the query result reuse behavior for the query.</p>
-    pub fn result_reuse_configuration(mut self, input: crate::types::ResultReuseConfiguration) -> Self {
+    pub fn result_reuse_configuration(
+        mut self,
+        input: crate::types::ResultReuseConfiguration,
+    ) -> Self {
         self.inner = self.inner.result_reuse_configuration(input);
         self
     }
     /// <p>Specifies the query result reuse behavior for the query.</p>
-    pub fn set_result_reuse_configuration(mut self, input: std::option::Option<crate::types::ResultReuseConfiguration>) -> Self {
+    pub fn set_result_reuse_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ResultReuseConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_result_reuse_configuration(input);
         self
     }
 }
-

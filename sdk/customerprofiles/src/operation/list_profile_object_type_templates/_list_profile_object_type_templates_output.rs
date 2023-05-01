@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListProfileObjectTypeTemplatesOutput  {
+pub struct ListProfileObjectTypeTemplatesOutput {
     /// <p>The list of ListProfileObjectType template instances.</p>
     #[doc(hidden)]
     pub items: std::option::Option<std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>,
@@ -13,22 +13,22 @@ pub struct ListProfileObjectTypeTemplatesOutput  {
 }
 impl ListProfileObjectTypeTemplatesOutput {
     /// <p>The list of ListProfileObjectType template instances.</p>
-    pub fn items(&self) -> std::option::Option<& [crate::types::ListProfileObjectTypeTemplateItem]> {
+    pub fn items(&self) -> std::option::Option<&[crate::types::ListProfileObjectTypeTemplateItem]> {
         self.items.as_deref()
     }
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListProfileObjectTypeTemplatesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListProfileObjectTypeTemplatesOutput {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectTypeTemplatesOutput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput).
-    pub fn builder() -> crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesOutputBuilder {
+    pub fn builder() -> crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesOutputBuilder{
         crate::operation::list_profile_object_type_templates::builders::ListProfileObjectTypeTemplatesOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl ListProfileObjectTypeTemplatesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListProfileObjectTypeTemplatesOutputBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>,
+    pub(crate) items:
+        std::option::Option<std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl ListProfileObjectTypeTemplatesOutputBuilder {
     /// <p>The list of ListProfileObjectType template instances.</p>
     pub fn items(mut self, input: crate::types::ListProfileObjectTypeTemplateItem) -> Self {
         let mut v = self.items.unwrap_or_default();
-                        v.push(input);
-                        self.items = Some(v);
-                        self
+        v.push(input);
+        self.items = Some(v);
+        self
     }
     /// <p>The list of ListProfileObjectType template instances.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>) -> Self {
-        self.items = input; self
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ListProfileObjectTypeTemplateItem>>,
+    ) -> Self {
+        self.items = input;
+        self
     }
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,27 @@ impl ListProfileObjectTypeTemplatesOutputBuilder {
     }
     /// <p>The pagination token from the previous ListObjectTypeTemplates API call. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListProfileObjectTypeTemplatesOutput`](crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput).
-    pub fn build(self) -> crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput
+    {
         crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput {
-            items: self.items
-            ,
-            next_token: self.next_token
-            ,
+            items: self.items,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

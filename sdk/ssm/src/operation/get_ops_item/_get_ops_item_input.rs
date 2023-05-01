@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetOpsItemInput  {
+pub struct GetOpsItemInput {
     /// <p>The ID of the OpsItem that you want to get.</p>
     #[doc(hidden)]
     pub ops_item_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct GetOpsItemInput  {
 }
 impl GetOpsItemInput {
     /// <p>The ID of the OpsItem that you want to get.</p>
-    pub fn ops_item_id(&self) -> std::option::Option<& str> {
+    pub fn ops_item_id(&self) -> std::option::Option<&str> {
         self.ops_item_id.as_deref()
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
-    pub fn ops_item_arn(&self) -> std::option::Option<& str> {
+    pub fn ops_item_arn(&self) -> std::option::Option<&str> {
         self.ops_item_arn.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl GetOpsItemInputBuilder {
     }
     /// <p>The ID of the OpsItem that you want to get.</p>
     pub fn set_ops_item_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ops_item_id = input; self
+        self.ops_item_id = input;
+        self
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     pub fn ops_item_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl GetOpsItemInputBuilder {
     }
     /// <p>The OpsItem Amazon Resource Name (ARN).</p>
     pub fn set_ops_item_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ops_item_arn = input; self
+        self.ops_item_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetOpsItemInput`](crate::operation::get_ops_item::GetOpsItemInput).
-    pub fn build(self) -> Result<crate::operation::get_ops_item::GetOpsItemInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_ops_item::GetOpsItemInput {
-                ops_item_id: self.ops_item_id
-                ,
-                ops_item_arn: self.ops_item_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_ops_item::GetOpsItemInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_ops_item::GetOpsItemInput {
+            ops_item_id: self.ops_item_id,
+            ops_item_arn: self.ops_item_arn,
+        })
     }
 }
-

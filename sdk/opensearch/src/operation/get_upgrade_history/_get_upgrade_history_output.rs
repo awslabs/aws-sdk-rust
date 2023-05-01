@@ -3,7 +3,7 @@
 /// <p>Container for the response returned by the <code>GetUpgradeHistory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUpgradeHistoryOutput  {
+pub struct GetUpgradeHistoryOutput {
     /// <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
     #[doc(hidden)]
     pub upgrade_histories: std::option::Option<std::vec::Vec<crate::types::UpgradeHistory>>,
@@ -14,22 +14,23 @@ pub struct GetUpgradeHistoryOutput  {
 }
 impl GetUpgradeHistoryOutput {
     /// <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
-    pub fn upgrade_histories(&self) -> std::option::Option<& [crate::types::UpgradeHistory]> {
+    pub fn upgrade_histories(&self) -> std::option::Option<&[crate::types::UpgradeHistory]> {
         self.upgrade_histories.as_deref()
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetUpgradeHistoryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetUpgradeHistoryOutput {
     /// Creates a new builder-style object to manufacture [`GetUpgradeHistoryOutput`](crate::operation::get_upgrade_history::GetUpgradeHistoryOutput).
-    pub fn builder() -> crate::operation::get_upgrade_history::builders::GetUpgradeHistoryOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_upgrade_history::builders::GetUpgradeHistoryOutputBuilder {
         crate::operation::get_upgrade_history::builders::GetUpgradeHistoryOutputBuilder::default()
     }
 }
@@ -50,13 +51,17 @@ impl GetUpgradeHistoryOutputBuilder {
     /// <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
     pub fn upgrade_histories(mut self, input: crate::types::UpgradeHistory) -> Self {
         let mut v = self.upgrade_histories.unwrap_or_default();
-                        v.push(input);
-                        self.upgrade_histories = Some(v);
-                        self
+        v.push(input);
+        self.upgrade_histories = Some(v);
+        self
     }
     /// <p>A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.</p>
-    pub fn set_upgrade_histories(mut self, input: std::option::Option<std::vec::Vec<crate::types::UpgradeHistory>>) -> Self {
-        self.upgrade_histories = input; self
+    pub fn set_upgrade_histories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::UpgradeHistory>>,
+    ) -> Self {
+        self.upgrade_histories = input;
+        self
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +70,24 @@ impl GetUpgradeHistoryOutputBuilder {
     }
     /// <p>When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetUpgradeHistoryOutput`](crate::operation::get_upgrade_history::GetUpgradeHistoryOutput).
     pub fn build(self) -> crate::operation::get_upgrade_history::GetUpgradeHistoryOutput {
         crate::operation::get_upgrade_history::GetUpgradeHistoryOutput {
-            upgrade_histories: self.upgrade_histories
-            ,
-            next_token: self.next_token
-            ,
+            upgrade_histories: self.upgrade_histories,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

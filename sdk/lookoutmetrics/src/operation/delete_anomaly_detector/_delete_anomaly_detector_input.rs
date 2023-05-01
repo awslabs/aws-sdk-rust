@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnomalyDetectorInput  {
+pub struct DeleteAnomalyDetectorInput {
     /// <p>The ARN of the detector to delete.</p>
     #[doc(hidden)]
     pub anomaly_detector_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAnomalyDetectorInput {
     /// <p>The ARN of the detector to delete.</p>
-    pub fn anomaly_detector_arn(&self) -> std::option::Option<& str> {
+    pub fn anomaly_detector_arn(&self) -> std::option::Option<&str> {
         self.anomaly_detector_arn.as_deref()
     }
 }
 impl DeleteAnomalyDetectorInput {
     /// Creates a new builder-style object to manufacture [`DeleteAnomalyDetectorInput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput).
-    pub fn builder() -> crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder
+    {
         crate::operation::delete_anomaly_detector::builders::DeleteAnomalyDetectorInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteAnomalyDetectorInputBuilder {
         self
     }
     /// <p>The ARN of the detector to delete.</p>
-    pub fn set_anomaly_detector_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.anomaly_detector_arn = input; self
+    pub fn set_anomaly_detector_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.anomaly_detector_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAnomalyDetectorInput`](crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput).
-    pub fn build(self) -> Result<crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorInput {
-                anomaly_detector_arn: self.anomaly_detector_arn
-                ,
-            }
+                anomaly_detector_arn: self.anomaly_detector_arn,
+            },
         )
     }
 }
-

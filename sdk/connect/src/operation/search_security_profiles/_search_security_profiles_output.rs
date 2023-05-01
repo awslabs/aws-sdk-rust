@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SearchSecurityProfilesOutput  {
+pub struct SearchSecurityProfilesOutput {
     /// <p>Information about the security profiles.</p>
     #[doc(hidden)]
-    pub security_profiles: std::option::Option<std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
+    pub security_profiles:
+        std::option::Option<std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,11 +17,13 @@ pub struct SearchSecurityProfilesOutput  {
 }
 impl SearchSecurityProfilesOutput {
     /// <p>Information about the security profiles.</p>
-    pub fn security_profiles(&self) -> std::option::Option<& [crate::types::SecurityProfileSearchSummary]> {
+    pub fn security_profiles(
+        &self,
+    ) -> std::option::Option<&[crate::types::SecurityProfileSearchSummary]> {
         self.security_profiles.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The total number of security profiles which matched your search query.</p>
@@ -29,13 +32,15 @@ impl SearchSecurityProfilesOutput {
     }
 }
 impl aws_http::request_id::RequestId for SearchSecurityProfilesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SearchSecurityProfilesOutput {
     /// Creates a new builder-style object to manufacture [`SearchSecurityProfilesOutput`](crate::operation::search_security_profiles::SearchSecurityProfilesOutput).
-    pub fn builder() -> crate::operation::search_security_profiles::builders::SearchSecurityProfilesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::search_security_profiles::builders::SearchSecurityProfilesOutputBuilder
+    {
         crate::operation::search_security_profiles::builders::SearchSecurityProfilesOutputBuilder::default()
     }
 }
@@ -44,7 +49,8 @@ impl SearchSecurityProfilesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SearchSecurityProfilesOutputBuilder {
-    pub(crate) security_profiles: std::option::Option<std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
+    pub(crate) security_profiles:
+        std::option::Option<std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) approximate_total_count: std::option::Option<i64>,
     _request_id: Option<String>,
@@ -57,13 +63,17 @@ impl SearchSecurityProfilesOutputBuilder {
     /// <p>Information about the security profiles.</p>
     pub fn security_profiles(mut self, input: crate::types::SecurityProfileSearchSummary) -> Self {
         let mut v = self.security_profiles.unwrap_or_default();
-                        v.push(input);
-                        self.security_profiles = Some(v);
-                        self
+        v.push(input);
+        self.security_profiles = Some(v);
+        self
     }
     /// <p>Information about the security profiles.</p>
-    pub fn set_security_profiles(mut self, input: std::option::Option<std::vec::Vec<crate::types::SecurityProfileSearchSummary>>) -> Self {
-        self.security_profiles = input; self
+    pub fn set_security_profiles(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SecurityProfileSearchSummary>>,
+    ) -> Self {
+        self.security_profiles = input;
+        self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,7 +82,8 @@ impl SearchSecurityProfilesOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The total number of security profiles which matched your search query.</p>
     pub fn approximate_total_count(mut self, input: i64) -> Self {
@@ -81,28 +92,25 @@ impl SearchSecurityProfilesOutputBuilder {
     }
     /// <p>The total number of security profiles which matched your search query.</p>
     pub fn set_approximate_total_count(mut self, input: std::option::Option<i64>) -> Self {
-        self.approximate_total_count = input; self
+        self.approximate_total_count = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SearchSecurityProfilesOutput`](crate::operation::search_security_profiles::SearchSecurityProfilesOutput).
     pub fn build(self) -> crate::operation::search_security_profiles::SearchSecurityProfilesOutput {
         crate::operation::search_security_profiles::SearchSecurityProfilesOutput {
-            security_profiles: self.security_profiles
-            ,
-            next_token: self.next_token
-            ,
-            approximate_total_count: self.approximate_total_count
-            ,
+            security_profiles: self.security_profiles,
+            next_token: self.next_token,
+            approximate_total_count: self.approximate_total_count,
             _request_id: self._request_id,
         }
     }
 }
-

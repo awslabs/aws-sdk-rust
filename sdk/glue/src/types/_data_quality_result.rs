@@ -3,7 +3,7 @@
 /// <p>Describes a data quality result.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataQualityResult  {
+pub struct DataQualityResult {
     /// <p>A unique result ID for the data quality result.</p>
     #[doc(hidden)]
     pub result_id: std::option::Option<std::string::String>,
@@ -40,7 +40,7 @@ pub struct DataQualityResult  {
 }
 impl DataQualityResult {
     /// <p>A unique result ID for the data quality result.</p>
-    pub fn result_id(&self) -> std::option::Option<& str> {
+    pub fn result_id(&self) -> std::option::Option<&str> {
         self.result_id.as_deref()
     }
     /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
@@ -48,39 +48,39 @@ impl DataQualityResult {
         self.score
     }
     /// <p>The table associated with the data quality result, if any.</p>
-    pub fn data_source(&self) -> std::option::Option<& crate::types::DataSource> {
+    pub fn data_source(&self) -> std::option::Option<&crate::types::DataSource> {
         self.data_source.as_ref()
     }
     /// <p>The name of the ruleset associated with the data quality result.</p>
-    pub fn ruleset_name(&self) -> std::option::Option<& str> {
+    pub fn ruleset_name(&self) -> std::option::Option<&str> {
         self.ruleset_name.as_deref()
     }
     /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
-    pub fn evaluation_context(&self) -> std::option::Option<& str> {
+    pub fn evaluation_context(&self) -> std::option::Option<&str> {
         self.evaluation_context.as_deref()
     }
     /// <p>The date and time when this data quality run started.</p>
-    pub fn started_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn started_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.started_on.as_ref()
     }
     /// <p>The date and time when this data quality run completed.</p>
-    pub fn completed_on(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn completed_on(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.completed_on.as_ref()
     }
     /// <p>The job name associated with the data quality result, if any.</p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The job run ID associated with the data quality result, if any.</p>
-    pub fn job_run_id(&self) -> std::option::Option<& str> {
+    pub fn job_run_id(&self) -> std::option::Option<&str> {
         self.job_run_id.as_deref()
     }
     /// <p>The unique run ID for the ruleset evaluation for this data quality result.</p>
-    pub fn ruleset_evaluation_run_id(&self) -> std::option::Option<& str> {
+    pub fn ruleset_evaluation_run_id(&self) -> std::option::Option<&str> {
         self.ruleset_evaluation_run_id.as_deref()
     }
     /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
-    pub fn rule_results(&self) -> std::option::Option<& [crate::types::DataQualityRuleResult]> {
+    pub fn rule_results(&self) -> std::option::Option<&[crate::types::DataQualityRuleResult]> {
         self.rule_results.as_deref()
     }
 }
@@ -105,7 +105,8 @@ pub struct DataQualityResultBuilder {
     pub(crate) job_name: std::option::Option<std::string::String>,
     pub(crate) job_run_id: std::option::Option<std::string::String>,
     pub(crate) ruleset_evaluation_run_id: std::option::Option<std::string::String>,
-    pub(crate) rule_results: std::option::Option<std::vec::Vec<crate::types::DataQualityRuleResult>>,
+    pub(crate) rule_results:
+        std::option::Option<std::vec::Vec<crate::types::DataQualityRuleResult>>,
 }
 impl DataQualityResultBuilder {
     /// <p>A unique result ID for the data quality result.</p>
@@ -115,7 +116,8 @@ impl DataQualityResultBuilder {
     }
     /// <p>A unique result ID for the data quality result.</p>
     pub fn set_result_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.result_id = input; self
+        self.result_id = input;
+        self
     }
     /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
     pub fn score(mut self, input: f64) -> Self {
@@ -124,7 +126,8 @@ impl DataQualityResultBuilder {
     }
     /// <p>An aggregate data quality score. Represents the ratio of rules that passed to the total number of rules.</p>
     pub fn set_score(mut self, input: std::option::Option<f64>) -> Self {
-        self.score = input; self
+        self.score = input;
+        self
     }
     /// <p>The table associated with the data quality result, if any.</p>
     pub fn data_source(mut self, input: crate::types::DataSource) -> Self {
@@ -133,7 +136,8 @@ impl DataQualityResultBuilder {
     }
     /// <p>The table associated with the data quality result, if any.</p>
     pub fn set_data_source(mut self, input: std::option::Option<crate::types::DataSource>) -> Self {
-        self.data_source = input; self
+        self.data_source = input;
+        self
     }
     /// <p>The name of the ruleset associated with the data quality result.</p>
     pub fn ruleset_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,7 +146,8 @@ impl DataQualityResultBuilder {
     }
     /// <p>The name of the ruleset associated with the data quality result.</p>
     pub fn set_ruleset_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ruleset_name = input; self
+        self.ruleset_name = input;
+        self
     }
     /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
     pub fn evaluation_context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,8 +155,12 @@ impl DataQualityResultBuilder {
         self
     }
     /// <p>In the context of a job in Glue Studio, each node in the canvas is typically assigned some sort of name and data quality nodes will have names. In the case of multiple nodes, the <code>evaluationContext</code> can differentiate the nodes.</p>
-    pub fn set_evaluation_context(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_context = input; self
+    pub fn set_evaluation_context(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evaluation_context = input;
+        self
     }
     /// <p>The date and time when this data quality run started.</p>
     pub fn started_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -159,8 +168,12 @@ impl DataQualityResultBuilder {
         self
     }
     /// <p>The date and time when this data quality run started.</p>
-    pub fn set_started_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.started_on = input; self
+    pub fn set_started_on(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.started_on = input;
+        self
     }
     /// <p>The date and time when this data quality run completed.</p>
     pub fn completed_on(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -168,8 +181,12 @@ impl DataQualityResultBuilder {
         self
     }
     /// <p>The date and time when this data quality run completed.</p>
-    pub fn set_completed_on(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.completed_on = input; self
+    pub fn set_completed_on(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.completed_on = input;
+        self
     }
     /// <p>The job name associated with the data quality result, if any.</p>
     pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -178,7 +195,8 @@ impl DataQualityResultBuilder {
     }
     /// <p>The job name associated with the data quality result, if any.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     /// <p>The job run ID associated with the data quality result, if any.</p>
     pub fn job_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -187,7 +205,8 @@ impl DataQualityResultBuilder {
     }
     /// <p>The job run ID associated with the data quality result, if any.</p>
     pub fn set_job_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_run_id = input; self
+        self.job_run_id = input;
+        self
     }
     /// <p>The unique run ID for the ruleset evaluation for this data quality result.</p>
     pub fn ruleset_evaluation_run_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,8 +214,12 @@ impl DataQualityResultBuilder {
         self
     }
     /// <p>The unique run ID for the ruleset evaluation for this data quality result.</p>
-    pub fn set_ruleset_evaluation_run_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ruleset_evaluation_run_id = input; self
+    pub fn set_ruleset_evaluation_run_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ruleset_evaluation_run_id = input;
+        self
     }
     /// Appends an item to `rule_results`.
     ///
@@ -205,40 +228,32 @@ impl DataQualityResultBuilder {
     /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
     pub fn rule_results(mut self, input: crate::types::DataQualityRuleResult) -> Self {
         let mut v = self.rule_results.unwrap_or_default();
-                        v.push(input);
-                        self.rule_results = Some(v);
-                        self
+        v.push(input);
+        self.rule_results = Some(v);
+        self
     }
     /// <p>A list of <code>DataQualityRuleResult</code> objects representing the results for each rule. </p>
-    pub fn set_rule_results(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataQualityRuleResult>>) -> Self {
-        self.rule_results = input; self
+    pub fn set_rule_results(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DataQualityRuleResult>>,
+    ) -> Self {
+        self.rule_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataQualityResult`](crate::types::DataQualityResult).
     pub fn build(self) -> crate::types::DataQualityResult {
         crate::types::DataQualityResult {
-            result_id: self.result_id
-            ,
-            score: self.score
-            ,
-            data_source: self.data_source
-            ,
-            ruleset_name: self.ruleset_name
-            ,
-            evaluation_context: self.evaluation_context
-            ,
-            started_on: self.started_on
-            ,
-            completed_on: self.completed_on
-            ,
-            job_name: self.job_name
-            ,
-            job_run_id: self.job_run_id
-            ,
-            ruleset_evaluation_run_id: self.ruleset_evaluation_run_id
-            ,
-            rule_results: self.rule_results
-            ,
+            result_id: self.result_id,
+            score: self.score,
+            data_source: self.data_source,
+            ruleset_name: self.ruleset_name,
+            evaluation_context: self.evaluation_context,
+            started_on: self.started_on,
+            completed_on: self.completed_on,
+            job_name: self.job_name,
+            job_run_id: self.job_run_id,
+            ruleset_evaluation_run_id: self.ruleset_evaluation_run_id,
+            rule_results: self.rule_results,
         }
     }
 }
-

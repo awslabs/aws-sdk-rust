@@ -3,21 +3,24 @@
 /// <p>The data source configuration object of a streaming media pipeline.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LiveConnectorSourceConfiguration  {
+pub struct LiveConnectorSourceConfiguration {
     /// <p>The source configuration's media source type.</p>
     #[doc(hidden)]
     pub source_type: std::option::Option<crate::types::LiveConnectorSourceType>,
     /// <p>The configuration settings of the connector pipeline.</p>
     #[doc(hidden)]
-    pub chime_sdk_meeting_live_connector_configuration: std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
+    pub chime_sdk_meeting_live_connector_configuration:
+        std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
 }
 impl LiveConnectorSourceConfiguration {
     /// <p>The source configuration's media source type.</p>
-    pub fn source_type(&self) -> std::option::Option<& crate::types::LiveConnectorSourceType> {
+    pub fn source_type(&self) -> std::option::Option<&crate::types::LiveConnectorSourceType> {
         self.source_type.as_ref()
     }
     /// <p>The configuration settings of the connector pipeline.</p>
-    pub fn chime_sdk_meeting_live_connector_configuration(&self) -> std::option::Option<& crate::types::ChimeSdkMeetingLiveConnectorConfiguration> {
+    pub fn chime_sdk_meeting_live_connector_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ChimeSdkMeetingLiveConnectorConfiguration> {
         self.chime_sdk_meeting_live_connector_configuration.as_ref()
     }
 }
@@ -33,7 +36,8 @@ impl LiveConnectorSourceConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct LiveConnectorSourceConfigurationBuilder {
     pub(crate) source_type: std::option::Option<crate::types::LiveConnectorSourceType>,
-    pub(crate) chime_sdk_meeting_live_connector_configuration: std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
+    pub(crate) chime_sdk_meeting_live_connector_configuration:
+        std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
 }
 impl LiveConnectorSourceConfigurationBuilder {
     /// <p>The source configuration's media source type.</p>
@@ -42,26 +46,35 @@ impl LiveConnectorSourceConfigurationBuilder {
         self
     }
     /// <p>The source configuration's media source type.</p>
-    pub fn set_source_type(mut self, input: std::option::Option<crate::types::LiveConnectorSourceType>) -> Self {
-        self.source_type = input; self
+    pub fn set_source_type(
+        mut self,
+        input: std::option::Option<crate::types::LiveConnectorSourceType>,
+    ) -> Self {
+        self.source_type = input;
+        self
     }
     /// <p>The configuration settings of the connector pipeline.</p>
-    pub fn chime_sdk_meeting_live_connector_configuration(mut self, input: crate::types::ChimeSdkMeetingLiveConnectorConfiguration) -> Self {
+    pub fn chime_sdk_meeting_live_connector_configuration(
+        mut self,
+        input: crate::types::ChimeSdkMeetingLiveConnectorConfiguration,
+    ) -> Self {
         self.chime_sdk_meeting_live_connector_configuration = Some(input);
         self
     }
     /// <p>The configuration settings of the connector pipeline.</p>
-    pub fn set_chime_sdk_meeting_live_connector_configuration(mut self, input: std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>) -> Self {
-        self.chime_sdk_meeting_live_connector_configuration = input; self
+    pub fn set_chime_sdk_meeting_live_connector_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ChimeSdkMeetingLiveConnectorConfiguration>,
+    ) -> Self {
+        self.chime_sdk_meeting_live_connector_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`LiveConnectorSourceConfiguration`](crate::types::LiveConnectorSourceConfiguration).
     pub fn build(self) -> crate::types::LiveConnectorSourceConfiguration {
         crate::types::LiveConnectorSourceConfiguration {
-            source_type: self.source_type
-            ,
-            chime_sdk_meeting_live_connector_configuration: self.chime_sdk_meeting_live_connector_configuration
-            ,
+            source_type: self.source_type,
+            chime_sdk_meeting_live_connector_configuration: self
+                .chime_sdk_meeting_live_connector_configuration,
         }
     }
 }
-

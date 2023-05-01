@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAccessorsOutput  {
+pub struct ListAccessorsOutput {
     /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
     #[doc(hidden)]
     pub accessors: std::option::Option<std::vec::Vec<crate::types::AccessorSummary>>,
@@ -13,19 +13,19 @@ pub struct ListAccessorsOutput  {
 }
 impl ListAccessorsOutput {
     /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
-    pub fn accessors(&self) -> std::option::Option<& [crate::types::AccessorSummary]> {
+    pub fn accessors(&self) -> std::option::Option<&[crate::types::AccessorSummary]> {
         self.accessors.as_deref()
     }
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAccessorsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAccessorsOutput {
     /// Creates a new builder-style object to manufacture [`ListAccessorsOutput`](crate::operation::list_accessors::ListAccessorsOutput).
     pub fn builder() -> crate::operation::list_accessors::builders::ListAccessorsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListAccessorsOutputBuilder {
     /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
     pub fn accessors(mut self, input: crate::types::AccessorSummary) -> Self {
         let mut v = self.accessors.unwrap_or_default();
-                        v.push(input);
-                        self.accessors = Some(v);
-                        self
+        v.push(input);
+        self.accessors = Some(v);
+        self
     }
     /// <p>An array of AccessorSummary objects that contain configuration properties for each accessor.</p>
-    pub fn set_accessors(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccessorSummary>>) -> Self {
-        self.accessors = input; self
+    pub fn set_accessors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AccessorSummary>>,
+    ) -> Self {
+        self.accessors = input;
+        self
     }
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListAccessorsOutputBuilder {
     }
     /// <p> The pagination token that indicates the next set of results to retrieve. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAccessorsOutput`](crate::operation::list_accessors::ListAccessorsOutput).
     pub fn build(self) -> crate::operation::list_accessors::ListAccessorsOutput {
         crate::operation::list_accessors::ListAccessorsOutput {
-            accessors: self.accessors
-            ,
-            next_token: self.next_token
-            ,
+            accessors: self.accessors,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

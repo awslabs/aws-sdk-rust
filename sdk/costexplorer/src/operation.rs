@@ -111,4 +111,3 @@ pub mod update_cost_allocation_tags_status;
 
 /// Types for the `UpdateCostCategoryDefinition` operation.
 pub mod update_cost_category_definition;
-

@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProductsInput  {
-    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p> 
+pub struct DescribeProductsInput {
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,9 +15,9 @@ pub struct DescribeProductsInput  {
     pub product_arn: std::option::Option<std::string::String>,
 }
 impl DescribeProductsInput {
-    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p> 
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
@@ -25,13 +25,14 @@ impl DescribeProductsInput {
         self.max_results
     }
     /// <p>The ARN of the integration to return.</p>
-    pub fn product_arn(&self) -> std::option::Option<& str> {
+    pub fn product_arn(&self) -> std::option::Option<&str> {
         self.product_arn.as_deref()
     }
 }
 impl DescribeProductsInput {
     /// Creates a new builder-style object to manufacture [`DescribeProductsInput`](crate::operation::describe_products::DescribeProductsInput).
-    pub fn builder() -> crate::operation::describe_products::builders::DescribeProductsInputBuilder {
+    pub fn builder() -> crate::operation::describe_products::builders::DescribeProductsInputBuilder
+    {
         crate::operation::describe_products::builders::DescribeProductsInputBuilder::default()
     }
 }
@@ -45,16 +46,17 @@ pub struct DescribeProductsInputBuilder {
     pub(crate) product_arn: std::option::Option<std::string::String>,
 }
 impl DescribeProductsInputBuilder {
-    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p> 
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p> 
+    /// <p>The token that is required for pagination. On your first call to the <code>DescribeProducts</code> operation, set the value of this parameter to <code>NULL</code>.</p>
     /// <p>For subsequent calls to the operation, to continue listing data, set the value of this parameter to the value returned from the previous response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -63,7 +65,8 @@ impl DescribeProductsInputBuilder {
     }
     /// <p>The maximum number of results to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The ARN of the integration to return.</p>
     pub fn product_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -72,20 +75,20 @@ impl DescribeProductsInputBuilder {
     }
     /// <p>The ARN of the integration to return.</p>
     pub fn set_product_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.product_arn = input; self
+        self.product_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeProductsInput`](crate::operation::describe_products::DescribeProductsInput).
-    pub fn build(self) -> Result<crate::operation::describe_products::DescribeProductsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_products::DescribeProductsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                product_arn: self.product_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_products::DescribeProductsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_products::DescribeProductsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+            product_arn: self.product_arn,
+        })
     }
 }
-

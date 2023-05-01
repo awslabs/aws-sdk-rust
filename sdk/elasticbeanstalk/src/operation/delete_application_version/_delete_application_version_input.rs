@@ -3,7 +3,7 @@
 /// <p>Request to delete an application version.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteApplicationVersionInput  {
+pub struct DeleteApplicationVersionInput {
     /// <p>The name of the application to which the version belongs.</p>
     #[doc(hidden)]
     pub application_name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct DeleteApplicationVersionInput  {
 }
 impl DeleteApplicationVersionInput {
     /// <p>The name of the application to which the version belongs.</p>
-    pub fn application_name(&self) -> std::option::Option<& str> {
+    pub fn application_name(&self) -> std::option::Option<&str> {
         self.application_name.as_deref()
     }
     /// <p>The label of the version to delete.</p>
-    pub fn version_label(&self) -> std::option::Option<& str> {
+    pub fn version_label(&self) -> std::option::Option<&str> {
         self.version_label.as_deref()
     }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
@@ -30,7 +30,9 @@ impl DeleteApplicationVersionInput {
 }
 impl DeleteApplicationVersionInput {
     /// Creates a new builder-style object to manufacture [`DeleteApplicationVersionInput`](crate::operation::delete_application_version::DeleteApplicationVersionInput).
-    pub fn builder() -> crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder
+    {
         crate::operation::delete_application_version::builders::DeleteApplicationVersionInputBuilder::default()
     }
 }
@@ -51,7 +53,8 @@ impl DeleteApplicationVersionInputBuilder {
     }
     /// <p>The name of the application to which the version belongs.</p>
     pub fn set_application_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_name = input; self
+        self.application_name = input;
+        self
     }
     /// <p>The label of the version to delete.</p>
     pub fn version_label(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +63,8 @@ impl DeleteApplicationVersionInputBuilder {
     }
     /// <p>The label of the version to delete.</p>
     pub fn set_version_label(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_label = input; self
+        self.version_label = input;
+        self
     }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
     pub fn delete_source_bundle(mut self, input: bool) -> Self {
@@ -69,20 +73,22 @@ impl DeleteApplicationVersionInputBuilder {
     }
     /// <p>Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.</p>
     pub fn set_delete_source_bundle(mut self, input: std::option::Option<bool>) -> Self {
-        self.delete_source_bundle = input; self
+        self.delete_source_bundle = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteApplicationVersionInput`](crate::operation::delete_application_version::DeleteApplicationVersionInput).
-    pub fn build(self) -> Result<crate::operation::delete_application_version::DeleteApplicationVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_application_version::DeleteApplicationVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_application_version::DeleteApplicationVersionInput {
-                application_name: self.application_name
-                ,
-                version_label: self.version_label
-                ,
-                delete_source_bundle: self.delete_source_bundle
-                ,
-            }
+                application_name: self.application_name,
+                version_label: self.version_label,
+                delete_source_bundle: self.delete_source_bundle,
+            },
         )
     }
 }
-

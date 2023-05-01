@@ -3,7 +3,7 @@
 /// <p>Details about the configuration for encryption at rest for the OpenSearch domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails  {
+pub struct AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
     /// <p>Whether encryption at rest is enabled.</p>
     #[doc(hidden)]
     pub enabled: bool,
@@ -17,13 +17,15 @@ impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
         self.enabled
     }
     /// <p>The KMS key ID.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
 }
 impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
     /// Creates a new builder-style object to manufacture [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
-    pub fn builder() -> crate::types::builders::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder {
+    pub fn builder(
+    ) -> crate::types::builders::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder
+    {
         crate::types::builders::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder::default()
     }
 }
@@ -43,7 +45,8 @@ impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder {
     }
     /// <p>Whether encryption at rest is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>The KMS key ID.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,17 +55,14 @@ impl AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetailsBuilder {
     }
     /// <p>The KMS key ID.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails`](crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails).
     pub fn build(self) -> crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
         crate::types::AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails {
-            enabled: self.enabled
-                .unwrap_or_default()
-            ,
-            kms_key_id: self.kms_key_id
-            ,
+            enabled: self.enabled.unwrap_or_default(),
+            kms_key_id: self.kms_key_id,
         }
     }
 }
-

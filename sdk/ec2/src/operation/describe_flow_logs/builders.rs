@@ -4,57 +4,82 @@ pub use crate::operation::describe_flow_logs::_describe_flow_logs_output::Descri
 pub use crate::operation::describe_flow_logs::_describe_flow_logs_input::DescribeFlowLogsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeFlowLogs`.
-/// 
-/// <p>Describes one or more flow logs.</p> 
+///
+/// <p>Describes one or more flow logs.</p>
 /// <p>To view the published flow log records, you must view the log destination. For example, the CloudWatch Logs log group, the Amazon S3 bucket, or the Kinesis Data Firehose delivery stream.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFlowLogsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_flow_logs::builders::DescribeFlowLogsInputBuilder,
+    inner: crate::operation::describe_flow_logs::builders::DescribeFlowLogsInputBuilder,
 }
-impl DescribeFlowLogsFluentBuilder  {
+impl DescribeFlowLogsFluentBuilder {
     /// Creates a new `DescribeFlowLogs`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_flow_logs::DescribeFlowLogs, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_flow_logs::DescribeFlowLogsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_flow_logs::DescribeFlowLogsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_flow_logs::DescribeFlowLogsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_flow_logs::DescribeFlowLogs,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_flow_logs::DescribeFlowLogsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_flow_logs::DescribeFlowLogsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_flow_logs::DescribeFlowLogsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_flow_logs::paginator::DescribeFlowLogsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_flow_logs::paginator::DescribeFlowLogsPaginator {
-                                crate::operation::describe_flow_logs::paginator::DescribeFlowLogsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_flow_logs::paginator::DescribeFlowLogsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_flow_logs::paginator::DescribeFlowLogsPaginator {
+        crate::operation::describe_flow_logs::paginator::DescribeFlowLogsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -69,45 +94,48 @@ impl DescribeFlowLogsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filter`](Self::set_filter).
     ///
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p> </li> 
-    /// <li> <p> <code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).</p> </li> 
-    /// <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li> 
-    /// <li> <p> <code>log-group-name</code> - The name of the log group.</p> </li> 
-    /// <li> <p> <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p> </li> 
-    /// <li> <p> <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p> </li>
+    /// <li> <p> <code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).</p> </li>
+    /// <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li>
+    /// <li> <p> <code>log-group-name</code> - The name of the log group.</p> </li>
+    /// <li> <p> <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p> </li>
+    /// <li> <p> <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
     pub fn filter(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filter(input);
         self
     }
-    /// <p>One or more filters.</p> 
-    /// <ul> 
-    /// <li> <p> <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p> </li> 
-    /// <li> <p> <code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).</p> </li> 
-    /// <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li> 
-    /// <li> <p> <code>log-group-name</code> - The name of the log group.</p> </li> 
-    /// <li> <p> <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p> </li> 
-    /// <li> <p> <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li> 
+    /// <p>One or more filters.</p>
+    /// <ul>
+    /// <li> <p> <code>deliver-log-status</code> - The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).</p> </li>
+    /// <li> <p> <code>log-destination-type</code> - The type of destination for the flow log data (<code>cloud-watch-logs</code> | <code>s3</code> | <code>kinesis-data-firehose</code>).</p> </li>
+    /// <li> <p> <code>flow-log-id</code> - The ID of the flow log.</p> </li>
+    /// <li> <p> <code>log-group-name</code> - The name of the log group.</p> </li>
+    /// <li> <p> <code>resource-id</code> - The ID of the VPC, subnet, or network interface.</p> </li>
+    /// <li> <p> <code>traffic-type</code> - The type of traffic (<code>ACCEPT</code> | <code>REJECT</code> | <code>ALL</code>).</p> </li>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filter(input);
         self
     }
@@ -115,15 +143,18 @@ impl DescribeFlowLogsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_flow_log_ids`](Self::set_flow_log_ids).
     ///
-    /// <p>One or more flow log IDs.</p> 
+    /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
     pub fn flow_log_ids(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.flow_log_ids(input.into());
         self
     }
-    /// <p>One or more flow log IDs.</p> 
+    /// <p>One or more flow log IDs.</p>
     /// <p>Constraint: Maximum of 1000 flow log IDs.</p>
-    pub fn set_flow_log_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_flow_log_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_flow_log_ids(input);
         self
     }
@@ -148,4 +179,3 @@ impl DescribeFlowLogsFluentBuilder  {
         self
     }
 }
-

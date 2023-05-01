@@ -3,7 +3,7 @@
 /// <p> The connector-specific profile credentials required by Infor Nexus. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InforNexusConnectorProfileCredentials  {
+pub struct InforNexusConnectorProfileCredentials {
     /// <p> The Access Key portion of the credentials. </p>
     #[doc(hidden)]
     pub access_key_id: std::option::Option<std::string::String>,
@@ -19,23 +19,23 @@ pub struct InforNexusConnectorProfileCredentials  {
 }
 impl InforNexusConnectorProfileCredentials {
     /// <p> The Access Key portion of the credentials. </p>
-    pub fn access_key_id(&self) -> std::option::Option<& str> {
+    pub fn access_key_id(&self) -> std::option::Option<&str> {
         self.access_key_id.as_deref()
     }
     /// <p> The identifier for the user. </p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p> The secret key used to sign requests. </p>
-    pub fn secret_access_key(&self) -> std::option::Option<& str> {
+    pub fn secret_access_key(&self) -> std::option::Option<&str> {
         self.secret_access_key.as_deref()
     }
     /// <p> The encryption keys used to encrypt data. </p>
-    pub fn datakey(&self) -> std::option::Option<& str> {
+    pub fn datakey(&self) -> std::option::Option<&str> {
         self.datakey.as_deref()
     }
 }
-impl  std::fmt::Debug for InforNexusConnectorProfileCredentials  {
+impl std::fmt::Debug for InforNexusConnectorProfileCredentials {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("InforNexusConnectorProfileCredentials");
         formatter.field("access_key_id", &"*** Sensitive Data Redacted ***");
@@ -69,7 +69,8 @@ impl InforNexusConnectorProfileCredentialsBuilder {
     }
     /// <p> The Access Key portion of the credentials. </p>
     pub fn set_access_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.access_key_id = input; self
+        self.access_key_id = input;
+        self
     }
     /// <p> The identifier for the user. </p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,7 +79,8 @@ impl InforNexusConnectorProfileCredentialsBuilder {
     }
     /// <p> The identifier for the user. </p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p> The secret key used to sign requests. </p>
     pub fn secret_access_key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,8 +88,12 @@ impl InforNexusConnectorProfileCredentialsBuilder {
         self
     }
     /// <p> The secret key used to sign requests. </p>
-    pub fn set_secret_access_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.secret_access_key = input; self
+    pub fn set_secret_access_key(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.secret_access_key = input;
+        self
     }
     /// <p> The encryption keys used to encrypt data. </p>
     pub fn datakey(mut self, input: impl Into<std::string::String>) -> Self {
@@ -96,19 +102,16 @@ impl InforNexusConnectorProfileCredentialsBuilder {
     }
     /// <p> The encryption keys used to encrypt data. </p>
     pub fn set_datakey(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.datakey = input; self
+        self.datakey = input;
+        self
     }
     /// Consumes the builder and constructs a [`InforNexusConnectorProfileCredentials`](crate::types::InforNexusConnectorProfileCredentials).
     pub fn build(self) -> crate::types::InforNexusConnectorProfileCredentials {
         crate::types::InforNexusConnectorProfileCredentials {
-            access_key_id: self.access_key_id
-            ,
-            user_id: self.user_id
-            ,
-            secret_access_key: self.secret_access_key
-            ,
-            datakey: self.datakey
-            ,
+            access_key_id: self.access_key_id,
+            user_id: self.user_id,
+            secret_access_key: self.secret_access_key,
+            datakey: self.datakey,
         }
     }
 }
@@ -122,4 +125,3 @@ impl std::fmt::Debug for InforNexusConnectorProfileCredentialsBuilder {
         formatter.finish()
     }
 }
-

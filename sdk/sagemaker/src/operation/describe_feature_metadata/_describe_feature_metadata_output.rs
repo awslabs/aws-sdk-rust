@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFeatureMetadataOutput  {
+pub struct DescribeFeatureMetadataOutput {
     /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
     #[doc(hidden)]
     pub feature_group_arn: std::option::Option<std::string::String>,
@@ -31,46 +31,48 @@ pub struct DescribeFeatureMetadataOutput  {
 }
 impl DescribeFeatureMetadataOutput {
     /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
-    pub fn feature_group_arn(&self) -> std::option::Option<& str> {
+    pub fn feature_group_arn(&self) -> std::option::Option<&str> {
         self.feature_group_arn.as_deref()
     }
     /// <p>The name of the feature group that you've specified.</p>
-    pub fn feature_group_name(&self) -> std::option::Option<& str> {
+    pub fn feature_group_name(&self) -> std::option::Option<&str> {
         self.feature_group_name.as_deref()
     }
     /// <p>The name of the feature that you've specified.</p>
-    pub fn feature_name(&self) -> std::option::Option<& str> {
+    pub fn feature_name(&self) -> std::option::Option<&str> {
         self.feature_name.as_deref()
     }
     /// <p>The data type of the feature.</p>
-    pub fn feature_type(&self) -> std::option::Option<& crate::types::FeatureType> {
+    pub fn feature_type(&self) -> std::option::Option<&crate::types::FeatureType> {
         self.feature_type.as_ref()
     }
     /// <p>A timestamp indicating when the feature was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
     /// <p>The description you added to describe the feature.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The key-value pairs that you added to describe the feature.</p>
-    pub fn parameters(&self) -> std::option::Option<& [crate::types::FeatureParameter]> {
+    pub fn parameters(&self) -> std::option::Option<&[crate::types::FeatureParameter]> {
         self.parameters.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeFeatureMetadataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeFeatureMetadataOutput {
     /// Creates a new builder-style object to manufacture [`DescribeFeatureMetadataOutput`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput).
-    pub fn builder() -> crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataOutputBuilder
+    {
         crate::operation::describe_feature_metadata::builders::DescribeFeatureMetadataOutputBuilder::default()
     }
 }
@@ -96,8 +98,12 @@ impl DescribeFeatureMetadataOutputBuilder {
         self
     }
     /// <p>The Amazon Resource Number (ARN) of the feature group that contains the feature.</p>
-    pub fn set_feature_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_group_arn = input; self
+    pub fn set_feature_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.feature_group_arn = input;
+        self
     }
     /// <p>The name of the feature group that you've specified.</p>
     pub fn feature_group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -105,8 +111,12 @@ impl DescribeFeatureMetadataOutputBuilder {
         self
     }
     /// <p>The name of the feature group that you've specified.</p>
-    pub fn set_feature_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_group_name = input; self
+    pub fn set_feature_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.feature_group_name = input;
+        self
     }
     /// <p>The name of the feature that you've specified.</p>
     pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +125,8 @@ impl DescribeFeatureMetadataOutputBuilder {
     }
     /// <p>The name of the feature that you've specified.</p>
     pub fn set_feature_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.feature_name = input; self
+        self.feature_name = input;
+        self
     }
     /// <p>The data type of the feature.</p>
     pub fn feature_type(mut self, input: crate::types::FeatureType) -> Self {
@@ -123,8 +134,12 @@ impl DescribeFeatureMetadataOutputBuilder {
         self
     }
     /// <p>The data type of the feature.</p>
-    pub fn set_feature_type(mut self, input: std::option::Option<crate::types::FeatureType>) -> Self {
-        self.feature_type = input; self
+    pub fn set_feature_type(
+        mut self,
+        input: std::option::Option<crate::types::FeatureType>,
+    ) -> Self {
+        self.feature_type = input;
+        self
     }
     /// <p>A timestamp indicating when the feature was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -132,8 +147,12 @@ impl DescribeFeatureMetadataOutputBuilder {
         self
     }
     /// <p>A timestamp indicating when the feature was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -141,8 +160,12 @@ impl DescribeFeatureMetadataOutputBuilder {
         self
     }
     /// <p>A timestamp indicating when the metadata for the feature group was modified. For example, if you add a parameter describing the feature, the timestamp changes to reflect the last time you </p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// <p>The description you added to describe the feature.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,7 +174,8 @@ impl DescribeFeatureMetadataOutputBuilder {
     }
     /// <p>The description you added to describe the feature.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Appends an item to `parameters`.
     ///
@@ -160,44 +184,41 @@ impl DescribeFeatureMetadataOutputBuilder {
     /// <p>The key-value pairs that you added to describe the feature.</p>
     pub fn parameters(mut self, input: crate::types::FeatureParameter) -> Self {
         let mut v = self.parameters.unwrap_or_default();
-                        v.push(input);
-                        self.parameters = Some(v);
-                        self
+        v.push(input);
+        self.parameters = Some(v);
+        self
     }
     /// <p>The key-value pairs that you added to describe the feature.</p>
-    pub fn set_parameters(mut self, input: std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>) -> Self {
-        self.parameters = input; self
+    pub fn set_parameters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FeatureParameter>>,
+    ) -> Self {
+        self.parameters = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeFeatureMetadataOutput`](crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput).
-    pub fn build(self) -> crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput {
         crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput {
-            feature_group_arn: self.feature_group_arn
-            ,
-            feature_group_name: self.feature_group_name
-            ,
-            feature_name: self.feature_name
-            ,
-            feature_type: self.feature_type
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
-            description: self.description
-            ,
-            parameters: self.parameters
-            ,
+            feature_group_arn: self.feature_group_arn,
+            feature_group_name: self.feature_group_name,
+            feature_name: self.feature_name,
+            feature_type: self.feature_type,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
+            description: self.description,
+            parameters: self.parameters,
             _request_id: self._request_id,
         }
     }
 }
-

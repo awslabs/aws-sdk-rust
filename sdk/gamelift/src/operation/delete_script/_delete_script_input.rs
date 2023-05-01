@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScriptInput  {
+pub struct DeleteScriptInput {
     /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
     #[doc(hidden)]
     pub script_id: std::option::Option<std::string::String>,
 }
 impl DeleteScriptInput {
     /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
-    pub fn script_id(&self) -> std::option::Option<& str> {
+    pub fn script_id(&self) -> std::option::Option<&str> {
         self.script_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteScriptInputBuilder {
     }
     /// <p>A unique identifier for the Realtime script to delete. You can use either the script ID or ARN value.</p>
     pub fn set_script_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.script_id = input; self
+        self.script_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteScriptInput`](crate::operation::delete_script::DeleteScriptInput).
-    pub fn build(self) -> Result<crate::operation::delete_script::DeleteScriptInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_script::DeleteScriptInput {
-                script_id: self.script_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_script::DeleteScriptInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_script::DeleteScriptInput {
+            script_id: self.script_id,
+        })
     }
 }
-

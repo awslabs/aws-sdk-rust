@@ -3,7 +3,7 @@
 /// <p>Information about an Amazon OpenSearch Service domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsDomainInformation  {
+pub struct AwsDomainInformation {
     /// <p>The Amazon Web Services account ID of the domain owner.</p>
     #[doc(hidden)]
     pub owner_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct AwsDomainInformation  {
 }
 impl AwsDomainInformation {
     /// <p>The Amazon Web Services account ID of the domain owner.</p>
-    pub fn owner_id(&self) -> std::option::Option<& str> {
+    pub fn owner_id(&self) -> std::option::Option<&str> {
         self.owner_id.as_deref()
     }
     /// <p>Name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>The Amazon Web Services Region in which the domain is located.</p>
-    pub fn region(&self) -> std::option::Option<& str> {
+    pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl AwsDomainInformationBuilder {
     }
     /// <p>The Amazon Web Services account ID of the domain owner.</p>
     pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_id = input; self
+        self.owner_id = input;
+        self
     }
     /// <p>Name of the domain.</p>
     pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl AwsDomainInformationBuilder {
     }
     /// <p>Name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>The Amazon Web Services Region in which the domain is located.</p>
     pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl AwsDomainInformationBuilder {
     }
     /// <p>The Amazon Web Services Region in which the domain is located.</p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsDomainInformation`](crate::types::AwsDomainInformation).
     pub fn build(self) -> crate::types::AwsDomainInformation {
         crate::types::AwsDomainInformation {
-            owner_id: self.owner_id
-            ,
-            domain_name: self.domain_name
-            ,
-            region: self.region
-            ,
+            owner_id: self.owner_id,
+            domain_name: self.domain_name,
+            region: self.region,
         }
     }
 }
-

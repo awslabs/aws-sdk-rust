@@ -3,7 +3,7 @@
 /// <p>The response object for this operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupOutput  {
+pub struct CreateGroupOutput {
     /// <p>The name of the group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::types::Group>,
@@ -17,11 +17,11 @@ pub struct CreateGroupOutput  {
 }
 impl CreateGroupOutput {
     /// <p>The name of the group.</p>
-    pub fn group(&self) -> std::option::Option<& crate::types::Group> {
+    pub fn group(&self) -> std::option::Option<&crate::types::Group> {
         self.group.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -30,10 +30,10 @@ impl CreateGroupOutput {
     }
 }
 impl aws_http::request_id::RequestId for CreateGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateGroupOutput`](crate::operation::create_group::CreateGroupOutput).
     pub fn builder() -> crate::operation::create_group::builders::CreateGroupOutputBuilder {
@@ -58,7 +58,8 @@ impl CreateGroupOutputBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_group(mut self, input: std::option::Option<crate::types::Group>) -> Self {
-        self.group = input; self
+        self.group = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl CreateGroupOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -76,29 +78,25 @@ impl CreateGroupOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::operation::create_group::CreateGroupOutput).
     pub fn build(self) -> crate::operation::create_group::CreateGroupOutput {
         crate::operation::create_group::CreateGroupOutput {
-            group: self.group
-            ,
-            request_id: self.request_id
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
+            group: self.group,
+            request_id: self.request_id,
+            status: self.status.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

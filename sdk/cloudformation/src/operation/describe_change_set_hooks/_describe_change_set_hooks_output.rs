@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeChangeSetHooksOutput  {
+pub struct DescribeChangeSetHooksOutput {
     /// <p>The change set identifier (stack ID).</p>
     #[doc(hidden)]
     pub change_set_id: std::option::Option<std::string::String>,
@@ -28,42 +28,44 @@ pub struct DescribeChangeSetHooksOutput  {
 }
 impl DescribeChangeSetHooksOutput {
     /// <p>The change set identifier (stack ID).</p>
-    pub fn change_set_id(&self) -> std::option::Option<& str> {
+    pub fn change_set_id(&self) -> std::option::Option<&str> {
         self.change_set_id.as_deref()
     }
     /// <p>The change set name.</p>
-    pub fn change_set_name(&self) -> std::option::Option<& str> {
+    pub fn change_set_name(&self) -> std::option::Option<&str> {
         self.change_set_name.as_deref()
     }
     /// <p>List of hook objects.</p>
-    pub fn hooks(&self) -> std::option::Option<& [crate::types::ChangeSetHook]> {
+    pub fn hooks(&self) -> std::option::Option<&[crate::types::ChangeSetHook]> {
         self.hooks.as_deref()
     }
     /// <p>Provides the status of the change set hook.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ChangeSetHooksStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ChangeSetHooksStatus> {
         self.status.as_ref()
     }
     /// <p>Pagination token, <code>null</code> or empty if no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The stack identifier (stack ID).</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
     /// <p>The stack name.</p>
-    pub fn stack_name(&self) -> std::option::Option<& str> {
+    pub fn stack_name(&self) -> std::option::Option<&str> {
         self.stack_name.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeChangeSetHooksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeChangeSetHooksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeChangeSetHooksOutput`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput).
-    pub fn builder() -> crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksOutputBuilder
+    {
         crate::operation::describe_change_set_hooks::builders::DescribeChangeSetHooksOutputBuilder::default()
     }
 }
@@ -89,7 +91,8 @@ impl DescribeChangeSetHooksOutputBuilder {
     }
     /// <p>The change set identifier (stack ID).</p>
     pub fn set_change_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_id = input; self
+        self.change_set_id = input;
+        self
     }
     /// <p>The change set name.</p>
     pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,7 +101,8 @@ impl DescribeChangeSetHooksOutputBuilder {
     }
     /// <p>The change set name.</p>
     pub fn set_change_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_set_name = input; self
+        self.change_set_name = input;
+        self
     }
     /// Appends an item to `hooks`.
     ///
@@ -107,13 +111,17 @@ impl DescribeChangeSetHooksOutputBuilder {
     /// <p>List of hook objects.</p>
     pub fn hooks(mut self, input: crate::types::ChangeSetHook) -> Self {
         let mut v = self.hooks.unwrap_or_default();
-                        v.push(input);
-                        self.hooks = Some(v);
-                        self
+        v.push(input);
+        self.hooks = Some(v);
+        self
     }
     /// <p>List of hook objects.</p>
-    pub fn set_hooks(mut self, input: std::option::Option<std::vec::Vec<crate::types::ChangeSetHook>>) -> Self {
-        self.hooks = input; self
+    pub fn set_hooks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ChangeSetHook>>,
+    ) -> Self {
+        self.hooks = input;
+        self
     }
     /// <p>Provides the status of the change set hook.</p>
     pub fn status(mut self, input: crate::types::ChangeSetHooksStatus) -> Self {
@@ -121,8 +129,12 @@ impl DescribeChangeSetHooksOutputBuilder {
         self
     }
     /// <p>Provides the status of the change set hook.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::ChangeSetHooksStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::ChangeSetHooksStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Pagination token, <code>null</code> or empty if no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,7 +143,8 @@ impl DescribeChangeSetHooksOutputBuilder {
     }
     /// <p>Pagination token, <code>null</code> or empty if no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The stack identifier (stack ID).</p>
     pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,7 +153,8 @@ impl DescribeChangeSetHooksOutputBuilder {
     }
     /// <p>The stack identifier (stack ID).</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// <p>The stack name.</p>
     pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,36 +163,31 @@ impl DescribeChangeSetHooksOutputBuilder {
     }
     /// <p>The stack name.</p>
     pub fn set_stack_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_name = input; self
+        self.stack_name = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeChangeSetHooksOutput`](crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput).
-    pub fn build(self) -> crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput {
         crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput {
-            change_set_id: self.change_set_id
-            ,
-            change_set_name: self.change_set_name
-            ,
-            hooks: self.hooks
-            ,
-            status: self.status
-            ,
-            next_token: self.next_token
-            ,
-            stack_id: self.stack_id
-            ,
-            stack_name: self.stack_name
-            ,
+            change_set_id: self.change_set_id,
+            change_set_name: self.change_set_name,
+            hooks: self.hooks,
+            status: self.status,
+            next_token: self.next_token,
+            stack_id: self.stack_id,
+            stack_name: self.stack_name,
             _request_id: self._request_id,
         }
     }
 }
-

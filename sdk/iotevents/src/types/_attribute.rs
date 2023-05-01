@@ -3,8 +3,8 @@
 /// <p>The attributes from the JSON payload that are made available by the input. Inputs are derived from messages sent to the AWS IoT Events system using <code>BatchPutMessage</code>. Each such message contains a JSON payload. Those attributes (and their paired values) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Attribute  {
-    /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p> 
+pub struct Attribute {
+    /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
     /// <p>Syntax: <code>
     /// <field-name>
     /// .
@@ -16,7 +16,7 @@ pub struct Attribute  {
     pub json_path: std::option::Option<std::string::String>,
 }
 impl Attribute {
-    /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p> 
+    /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
     /// <p>Syntax: <code>
     /// <field-name>
     /// .
@@ -24,7 +24,7 @@ impl Attribute {
     /// ...
     /// </field-name>
     /// </field-name></code> </p>
-    pub fn json_path(&self) -> std::option::Option<& str> {
+    pub fn json_path(&self) -> std::option::Option<&str> {
         self.json_path.as_deref()
     }
 }
@@ -42,7 +42,7 @@ pub struct AttributeBuilder {
     pub(crate) json_path: std::option::Option<std::string::String>,
 }
 impl AttributeBuilder {
-    /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p> 
+    /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
     /// <p>Syntax: <code>
     /// <field-name>
     /// .
@@ -54,7 +54,7 @@ impl AttributeBuilder {
         self.json_path = Some(input.into());
         self
     }
-    /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p> 
+    /// <p>An expression that specifies an attribute-value pair in a JSON structure. Use this to specify an attribute from the JSON payload that is made available by the input. Inputs are derived from messages sent to AWS IoT Events (<code>BatchPutMessage</code>). Each such message contains a JSON payload. The attribute (and its paired value) specified here are available for use in the <code>condition</code> expressions used by detectors. </p>
     /// <p>Syntax: <code>
     /// <field-name>
     /// .
@@ -63,14 +63,13 @@ impl AttributeBuilder {
     /// </field-name>
     /// </field-name></code> </p>
     pub fn set_json_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.json_path = input; self
+        self.json_path = input;
+        self
     }
     /// Consumes the builder and constructs a [`Attribute`](crate::types::Attribute).
     pub fn build(self) -> crate::types::Attribute {
         crate::types::Attribute {
-            json_path: self.json_path
-            ,
+            json_path: self.json_path,
         }
     }
 }
-

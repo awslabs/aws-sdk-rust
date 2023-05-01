@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeMeshOutput  {
+pub struct DescribeMeshOutput {
     /// <p>The full description of your service mesh.</p>
     #[doc(hidden)]
     pub mesh: std::option::Option<crate::types::MeshData>,
@@ -10,15 +10,15 @@ pub struct DescribeMeshOutput  {
 }
 impl DescribeMeshOutput {
     /// <p>The full description of your service mesh.</p>
-    pub fn mesh(&self) -> std::option::Option<& crate::types::MeshData> {
+    pub fn mesh(&self) -> std::option::Option<&crate::types::MeshData> {
         self.mesh.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeMeshOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeMeshOutput {
     /// Creates a new builder-style object to manufacture [`DescribeMeshOutput`](crate::operation::describe_mesh::DescribeMeshOutput).
     pub fn builder() -> crate::operation::describe_mesh::builders::DescribeMeshOutputBuilder {
@@ -41,24 +41,23 @@ impl DescribeMeshOutputBuilder {
     }
     /// <p>The full description of your service mesh.</p>
     pub fn set_mesh(mut self, input: std::option::Option<crate::types::MeshData>) -> Self {
-        self.mesh = input; self
+        self.mesh = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeMeshOutput`](crate::operation::describe_mesh::DescribeMeshOutput).
     pub fn build(self) -> crate::operation::describe_mesh::DescribeMeshOutput {
         crate::operation::describe_mesh::DescribeMeshOutput {
-            mesh: self.mesh
-            ,
+            mesh: self.mesh,
             _request_id: self._request_id,
         }
     }
 }
-

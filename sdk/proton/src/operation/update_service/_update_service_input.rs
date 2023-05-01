@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct UpdateServiceInput  {
+pub struct UpdateServiceInput {
     /// <p>The name of the service to edit.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,19 +15,19 @@ pub struct UpdateServiceInput  {
 }
 impl UpdateServiceInput {
     /// <p>The name of the service to edit.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The edited service description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
-    pub fn spec(&self) -> std::option::Option<& str> {
+    pub fn spec(&self) -> std::option::Option<&str> {
         self.spec.as_deref()
     }
 }
-impl  std::fmt::Debug for UpdateServiceInput  {
+impl std::fmt::Debug for UpdateServiceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UpdateServiceInput");
         formatter.field("name", &self.name);
@@ -59,7 +59,8 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>The name of the service to edit.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The edited service description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>The edited service description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
     pub fn spec(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,20 +79,21 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>Lists the service instances to add and the existing service instances to remain. Omit the existing service instances to delete from the list. <i>Don't</i> include edits to the existing service instances or pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-update.html">Edit a service</a> in the <i>Proton User Guide</i>.</p>
     pub fn set_spec(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.spec = input; self
+        self.spec = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
-    pub fn build(self) -> Result<crate::operation::update_service::UpdateServiceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_service::UpdateServiceInput {
-                name: self.name
-                ,
-                description: self.description
-                ,
-                spec: self.spec
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_service::UpdateServiceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_service::UpdateServiceInput {
+            name: self.name,
+            description: self.description,
+            spec: self.spec,
+        })
     }
 }
 impl std::fmt::Debug for UpdateServiceInputBuilder {
@@ -102,4 +105,3 @@ impl std::fmt::Debug for UpdateServiceInputBuilder {
         formatter.finish()
     }
 }
-

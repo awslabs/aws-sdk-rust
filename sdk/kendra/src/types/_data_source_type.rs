@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let datasourcetype = unimplemented!();
 /// match datasourcetype {
@@ -47,14 +47,22 @@
 /// Specifically, when `datasourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DataSourceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Alfresco,
@@ -95,75 +103,96 @@ pub enum DataSourceType {
     #[allow(missing_docs)] // documentation missing in model
     Workdocs,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DataSourceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ALFRESCO" => DataSourceType::Alfresco,
-"BOX" => DataSourceType::Box,
-"CONFLUENCE" => DataSourceType::Confluence,
-"CUSTOM" => DataSourceType::Custom,
-"DATABASE" => DataSourceType::Database,
-"FSX" => DataSourceType::Fsx,
-"GITHUB" => DataSourceType::Github,
-"GOOGLEDRIVE" => DataSourceType::Googledrive,
-"JIRA" => DataSourceType::Jira,
-"ONEDRIVE" => DataSourceType::Onedrive,
-"QUIP" => DataSourceType::Quip,
-"S3" => DataSourceType::S3,
-"SALESFORCE" => DataSourceType::Salesforce,
-"SERVICENOW" => DataSourceType::Servicenow,
-"SHAREPOINT" => DataSourceType::Sharepoint,
-"SLACK" => DataSourceType::Slack,
-"TEMPLATE" => DataSourceType::Template,
-"WEBCRAWLER" => DataSourceType::Webcrawler,
-"WORKDOCS" => DataSourceType::Workdocs,
-other => DataSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ALFRESCO" => DataSourceType::Alfresco,
+            "BOX" => DataSourceType::Box,
+            "CONFLUENCE" => DataSourceType::Confluence,
+            "CUSTOM" => DataSourceType::Custom,
+            "DATABASE" => DataSourceType::Database,
+            "FSX" => DataSourceType::Fsx,
+            "GITHUB" => DataSourceType::Github,
+            "GOOGLEDRIVE" => DataSourceType::Googledrive,
+            "JIRA" => DataSourceType::Jira,
+            "ONEDRIVE" => DataSourceType::Onedrive,
+            "QUIP" => DataSourceType::Quip,
+            "S3" => DataSourceType::S3,
+            "SALESFORCE" => DataSourceType::Salesforce,
+            "SERVICENOW" => DataSourceType::Servicenow,
+            "SHAREPOINT" => DataSourceType::Sharepoint,
+            "SLACK" => DataSourceType::Slack,
+            "TEMPLATE" => DataSourceType::Template,
+            "WEBCRAWLER" => DataSourceType::Webcrawler,
+            "WORKDOCS" => DataSourceType::Workdocs,
+            other => {
+                DataSourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for DataSourceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DataSourceType::from(s))
-                }
-            }
-impl DataSourceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DataSourceType::Alfresco => "ALFRESCO",
-    DataSourceType::Box => "BOX",
-    DataSourceType::Confluence => "CONFLUENCE",
-    DataSourceType::Custom => "CUSTOM",
-    DataSourceType::Database => "DATABASE",
-    DataSourceType::Fsx => "FSX",
-    DataSourceType::Github => "GITHUB",
-    DataSourceType::Googledrive => "GOOGLEDRIVE",
-    DataSourceType::Jira => "JIRA",
-    DataSourceType::Onedrive => "ONEDRIVE",
-    DataSourceType::Quip => "QUIP",
-    DataSourceType::S3 => "S3",
-    DataSourceType::Salesforce => "SALESFORCE",
-    DataSourceType::Servicenow => "SERVICENOW",
-    DataSourceType::Sharepoint => "SHAREPOINT",
-    DataSourceType::Slack => "SLACK",
-    DataSourceType::Template => "TEMPLATE",
-    DataSourceType::Webcrawler => "WEBCRAWLER",
-    DataSourceType::Workdocs => "WORKDOCS",
-    DataSourceType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ALFRESCO", "BOX", "CONFLUENCE", "CUSTOM", "DATABASE", "FSX", "GITHUB", "GOOGLEDRIVE", "JIRA", "ONEDRIVE", "QUIP", "S3", "SALESFORCE", "SERVICENOW", "SHAREPOINT", "SLACK", "TEMPLATE", "WEBCRAWLER", "WORKDOCS"]
-                }
-            }
-impl AsRef<str> for DataSourceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DataSourceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataSourceType::from(s))
+    }
+}
+impl DataSourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataSourceType::Alfresco => "ALFRESCO",
+            DataSourceType::Box => "BOX",
+            DataSourceType::Confluence => "CONFLUENCE",
+            DataSourceType::Custom => "CUSTOM",
+            DataSourceType::Database => "DATABASE",
+            DataSourceType::Fsx => "FSX",
+            DataSourceType::Github => "GITHUB",
+            DataSourceType::Googledrive => "GOOGLEDRIVE",
+            DataSourceType::Jira => "JIRA",
+            DataSourceType::Onedrive => "ONEDRIVE",
+            DataSourceType::Quip => "QUIP",
+            DataSourceType::S3 => "S3",
+            DataSourceType::Salesforce => "SALESFORCE",
+            DataSourceType::Servicenow => "SERVICENOW",
+            DataSourceType::Sharepoint => "SHAREPOINT",
+            DataSourceType::Slack => "SLACK",
+            DataSourceType::Template => "TEMPLATE",
+            DataSourceType::Webcrawler => "WEBCRAWLER",
+            DataSourceType::Workdocs => "WORKDOCS",
+            DataSourceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ALFRESCO",
+            "BOX",
+            "CONFLUENCE",
+            "CUSTOM",
+            "DATABASE",
+            "FSX",
+            "GITHUB",
+            "GOOGLEDRIVE",
+            "JIRA",
+            "ONEDRIVE",
+            "QUIP",
+            "S3",
+            "SALESFORCE",
+            "SERVICENOW",
+            "SHAREPOINT",
+            "SLACK",
+            "TEMPLATE",
+            "WEBCRAWLER",
+            "WORKDOCS",
+        ]
+    }
+}
+impl AsRef<str> for DataSourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

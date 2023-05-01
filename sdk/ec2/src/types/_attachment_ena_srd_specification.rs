@@ -3,13 +3,14 @@
 /// <p>Describes the ENA Express configuration for the network interface that's attached to the instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachmentEnaSrdSpecification  {
+pub struct AttachmentEnaSrdSpecification {
     /// <p>Indicates whether ENA Express is enabled for the network interface that's attached to the instance.</p>
     #[doc(hidden)]
     pub ena_srd_enabled: std::option::Option<bool>,
     /// <p>ENA Express configuration for UDP network traffic.</p>
     #[doc(hidden)]
-    pub ena_srd_udp_specification: std::option::Option<crate::types::AttachmentEnaSrdUdpSpecification>,
+    pub ena_srd_udp_specification:
+        std::option::Option<crate::types::AttachmentEnaSrdUdpSpecification>,
 }
 impl AttachmentEnaSrdSpecification {
     /// <p>Indicates whether ENA Express is enabled for the network interface that's attached to the instance.</p>
@@ -17,7 +18,9 @@ impl AttachmentEnaSrdSpecification {
         self.ena_srd_enabled
     }
     /// <p>ENA Express configuration for UDP network traffic.</p>
-    pub fn ena_srd_udp_specification(&self) -> std::option::Option<& crate::types::AttachmentEnaSrdUdpSpecification> {
+    pub fn ena_srd_udp_specification(
+        &self,
+    ) -> std::option::Option<&crate::types::AttachmentEnaSrdUdpSpecification> {
         self.ena_srd_udp_specification.as_ref()
     }
 }
@@ -33,7 +36,8 @@ impl AttachmentEnaSrdSpecification {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct AttachmentEnaSrdSpecificationBuilder {
     pub(crate) ena_srd_enabled: std::option::Option<bool>,
-    pub(crate) ena_srd_udp_specification: std::option::Option<crate::types::AttachmentEnaSrdUdpSpecification>,
+    pub(crate) ena_srd_udp_specification:
+        std::option::Option<crate::types::AttachmentEnaSrdUdpSpecification>,
 }
 impl AttachmentEnaSrdSpecificationBuilder {
     /// <p>Indicates whether ENA Express is enabled for the network interface that's attached to the instance.</p>
@@ -43,25 +47,30 @@ impl AttachmentEnaSrdSpecificationBuilder {
     }
     /// <p>Indicates whether ENA Express is enabled for the network interface that's attached to the instance.</p>
     pub fn set_ena_srd_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.ena_srd_enabled = input; self
+        self.ena_srd_enabled = input;
+        self
     }
     /// <p>ENA Express configuration for UDP network traffic.</p>
-    pub fn ena_srd_udp_specification(mut self, input: crate::types::AttachmentEnaSrdUdpSpecification) -> Self {
+    pub fn ena_srd_udp_specification(
+        mut self,
+        input: crate::types::AttachmentEnaSrdUdpSpecification,
+    ) -> Self {
         self.ena_srd_udp_specification = Some(input);
         self
     }
     /// <p>ENA Express configuration for UDP network traffic.</p>
-    pub fn set_ena_srd_udp_specification(mut self, input: std::option::Option<crate::types::AttachmentEnaSrdUdpSpecification>) -> Self {
-        self.ena_srd_udp_specification = input; self
+    pub fn set_ena_srd_udp_specification(
+        mut self,
+        input: std::option::Option<crate::types::AttachmentEnaSrdUdpSpecification>,
+    ) -> Self {
+        self.ena_srd_udp_specification = input;
+        self
     }
     /// Consumes the builder and constructs a [`AttachmentEnaSrdSpecification`](crate::types::AttachmentEnaSrdSpecification).
     pub fn build(self) -> crate::types::AttachmentEnaSrdSpecification {
         crate::types::AttachmentEnaSrdSpecification {
-            ena_srd_enabled: self.ena_srd_enabled
-            ,
-            ena_srd_udp_specification: self.ena_srd_udp_specification
-            ,
+            ena_srd_enabled: self.ena_srd_enabled,
+            ena_srd_udp_specification: self.ena_srd_udp_specification,
         }
     }
 }
-

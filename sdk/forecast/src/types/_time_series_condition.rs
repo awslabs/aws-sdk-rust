@@ -3,7 +3,7 @@
 /// <p>Creates a subset of items within an attribute that are modified. For example, you can use this operation to create a subset of items that cost $5 or less. To do this, you specify <code>"AttributeName": "price"</code>, <code>"AttributeValue": "5"</code>, and <code>"Condition": "LESS_THAN"</code>. Pair this operation with the <code>Action</code> operation within the <code>CreateWhatIfForecastRequest$TimeSeriesTransformations</code> operation to define how the attribute is modified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeSeriesCondition  {
+pub struct TimeSeriesCondition {
     /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
     #[doc(hidden)]
     pub attribute_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct TimeSeriesCondition  {
 }
 impl TimeSeriesCondition {
     /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
-    pub fn attribute_name(&self) -> std::option::Option<& str> {
+    pub fn attribute_name(&self) -> std::option::Option<&str> {
         self.attribute_name.as_deref()
     }
     /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
-    pub fn attribute_value(&self) -> std::option::Option<& str> {
+    pub fn attribute_value(&self) -> std::option::Option<&str> {
         self.attribute_value.as_deref()
     }
     /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
-    pub fn condition(&self) -> std::option::Option<& crate::types::Condition> {
+    pub fn condition(&self) -> std::option::Option<&crate::types::Condition> {
         self.condition.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl TimeSeriesConditionBuilder {
     }
     /// <p>The item_id, dimension name, IM name, or timestamp that you are modifying.</p>
     pub fn set_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_name = input; self
+        self.attribute_name = input;
+        self
     }
     /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
     pub fn attribute_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl TimeSeriesConditionBuilder {
     }
     /// <p>The value that is applied for the chosen <code>Condition</code>.</p>
     pub fn set_attribute_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_value = input; self
+        self.attribute_value = input;
+        self
     }
     /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
     pub fn condition(mut self, input: crate::types::Condition) -> Self {
@@ -69,18 +71,15 @@ impl TimeSeriesConditionBuilder {
     }
     /// <p>The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>, <code>LESS_THAN</code> and <code>GREATER_THAN</code>.</p>
     pub fn set_condition(mut self, input: std::option::Option<crate::types::Condition>) -> Self {
-        self.condition = input; self
+        self.condition = input;
+        self
     }
     /// Consumes the builder and constructs a [`TimeSeriesCondition`](crate::types::TimeSeriesCondition).
     pub fn build(self) -> crate::types::TimeSeriesCondition {
         crate::types::TimeSeriesCondition {
-            attribute_name: self.attribute_name
-            ,
-            attribute_value: self.attribute_value
-            ,
-            condition: self.condition
-            ,
+            attribute_name: self.attribute_name,
+            attribute_value: self.attribute_value,
+            condition: self.condition,
         }
     }
 }
-

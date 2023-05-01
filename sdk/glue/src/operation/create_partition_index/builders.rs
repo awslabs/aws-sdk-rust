@@ -4,50 +4,70 @@ pub use crate::operation::create_partition_index::_create_partition_index_output
 pub use crate::operation::create_partition_index::_create_partition_index_input::CreatePartitionIndexInputBuilder;
 
 /// Fluent builder constructing a request to `CreatePartitionIndex`.
-/// 
+///
 /// <p>Creates a specified partition index in an existing table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePartitionIndexFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_partition_index::builders::CreatePartitionIndexInputBuilder,
+    inner: crate::operation::create_partition_index::builders::CreatePartitionIndexInputBuilder,
 }
-impl CreatePartitionIndexFluentBuilder  {
+impl CreatePartitionIndexFluentBuilder {
     /// Creates a new `CreatePartitionIndex`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_partition_index::CreatePartitionIndex, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_partition_index::CreatePartitionIndexError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_partition_index::CreatePartitionIndexOutput, aws_smithy_http::result::SdkError<crate::operation::create_partition_index::CreatePartitionIndexError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_partition_index::CreatePartitionIndex,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_partition_index::CreatePartitionIndexError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_partition_index::CreatePartitionIndexOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_partition_index::CreatePartitionIndexError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The catalog ID where the table resides.</p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -84,9 +104,11 @@ impl CreatePartitionIndexFluentBuilder  {
         self
     }
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
-    pub fn set_partition_index(mut self, input: std::option::Option<crate::types::PartitionIndex>) -> Self {
+    pub fn set_partition_index(
+        mut self,
+        input: std::option::Option<crate::types::PartitionIndex>,
+    ) -> Self {
         self.inner = self.inner.set_partition_index(input);
         self
     }
 }
-

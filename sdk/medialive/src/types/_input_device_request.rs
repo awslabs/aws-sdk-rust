@@ -3,14 +3,14 @@
 /// Settings for an input device.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputDeviceRequest  {
+pub struct InputDeviceRequest {
     /// The unique ID for the device.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl InputDeviceRequest {
     /// The unique ID for the device.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl InputDeviceRequestBuilder {
     }
     /// The unique ID for the device.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`InputDeviceRequest`](crate::types::InputDeviceRequest).
     pub fn build(self) -> crate::types::InputDeviceRequest {
-        crate::types::InputDeviceRequest {
-            id: self.id
-            ,
-        }
+        crate::types::InputDeviceRequest { id: self.id }
     }
 }
-

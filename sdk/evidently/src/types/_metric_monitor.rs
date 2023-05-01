@@ -3,14 +3,14 @@
 /// <p>A structure that defines a metric to be used to monitor performance of the variations during a launch.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricMonitor  {
+pub struct MetricMonitor {
     /// <p>A structure that defines the metric.</p>
     #[doc(hidden)]
     pub metric_definition: std::option::Option<crate::types::MetricDefinition>,
 }
 impl MetricMonitor {
     /// <p>A structure that defines the metric.</p>
-    pub fn metric_definition(&self) -> std::option::Option<& crate::types::MetricDefinition> {
+    pub fn metric_definition(&self) -> std::option::Option<&crate::types::MetricDefinition> {
         self.metric_definition.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl MetricMonitorBuilder {
         self
     }
     /// <p>A structure that defines the metric.</p>
-    pub fn set_metric_definition(mut self, input: std::option::Option<crate::types::MetricDefinition>) -> Self {
-        self.metric_definition = input; self
+    pub fn set_metric_definition(
+        mut self,
+        input: std::option::Option<crate::types::MetricDefinition>,
+    ) -> Self {
+        self.metric_definition = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricMonitor`](crate::types::MetricMonitor).
     pub fn build(self) -> crate::types::MetricMonitor {
         crate::types::MetricMonitor {
-            metric_definition: self.metric_definition
-            ,
+            metric_definition: self.metric_definition,
         }
     }
 }
-

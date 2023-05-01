@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateServiceInput  {
+pub struct UpdateServiceInput {
     /// <p>The ID of the service that you want to update.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateServiceInput  {
 }
 impl UpdateServiceInput {
     /// <p>The ID of the service that you want to update.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>A complex type that contains the new settings for the service.</p>
-    pub fn service(&self) -> std::option::Option<& crate::types::ServiceChange> {
+    pub fn service(&self) -> std::option::Option<&crate::types::ServiceChange> {
         self.service.as_ref()
     }
 }
@@ -42,7 +42,8 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>The ID of the service that you want to update.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>A complex type that contains the new settings for the service.</p>
     pub fn service(mut self, input: crate::types::ServiceChange) -> Self {
@@ -51,18 +52,19 @@ impl UpdateServiceInputBuilder {
     }
     /// <p>A complex type that contains the new settings for the service.</p>
     pub fn set_service(mut self, input: std::option::Option<crate::types::ServiceChange>) -> Self {
-        self.service = input; self
+        self.service = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateServiceInput`](crate::operation::update_service::UpdateServiceInput).
-    pub fn build(self) -> Result<crate::operation::update_service::UpdateServiceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_service::UpdateServiceInput {
-                id: self.id
-                ,
-                service: self.service
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_service::UpdateServiceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_service::UpdateServiceInput {
+            id: self.id,
+            service: self.service,
+        })
     }
 }
-

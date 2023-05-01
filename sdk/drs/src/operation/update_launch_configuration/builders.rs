@@ -4,50 +4,70 @@ pub use crate::operation::update_launch_configuration::_update_launch_configurat
 pub use crate::operation::update_launch_configuration::_update_launch_configuration_input::UpdateLaunchConfigurationInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateLaunchConfiguration`.
-/// 
+///
 /// <p>Updates a LaunchConfiguration by Source Server ID.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_launch_configuration::builders::UpdateLaunchConfigurationInputBuilder,
 }
-impl UpdateLaunchConfigurationFluentBuilder  {
+impl UpdateLaunchConfigurationFluentBuilder {
     /// Creates a new `UpdateLaunchConfiguration`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_launch_configuration::UpdateLaunchConfiguration, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration::UpdateLaunchConfigurationError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput, aws_smithy_http::result::SdkError<crate::operation::update_launch_configuration::UpdateLaunchConfigurationError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_launch_configuration::UpdateLaunchConfiguration,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_launch_configuration::UpdateLaunchConfigurationError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_launch_configuration::UpdateLaunchConfigurationOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_launch_configuration::UpdateLaunchConfigurationError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
     pub fn source_server_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source_server_id(input.into());
@@ -74,18 +94,29 @@ impl UpdateLaunchConfigurationFluentBuilder  {
         self
     }
     /// <p>The state of the Recovery Instance in EC2 after the recovery operation.</p>
-    pub fn set_launch_disposition(mut self, input: std::option::Option<crate::types::LaunchDisposition>) -> Self {
+    pub fn set_launch_disposition(
+        mut self,
+        input: std::option::Option<crate::types::LaunchDisposition>,
+    ) -> Self {
         self.inner = self.inner.set_launch_disposition(input);
         self
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-    pub fn target_instance_type_right_sizing_method(mut self, input: crate::types::TargetInstanceTypeRightSizingMethod) -> Self {
+    pub fn target_instance_type_right_sizing_method(
+        mut self,
+        input: crate::types::TargetInstanceTypeRightSizingMethod,
+    ) -> Self {
         self.inner = self.inner.target_instance_type_right_sizing_method(input);
         self
     }
     /// <p>Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.</p>
-    pub fn set_target_instance_type_right_sizing_method(mut self, input: std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>) -> Self {
-        self.inner = self.inner.set_target_instance_type_right_sizing_method(input);
+    pub fn set_target_instance_type_right_sizing_method(
+        mut self,
+        input: std::option::Option<crate::types::TargetInstanceTypeRightSizingMethod>,
+    ) -> Self {
+        self.inner = self
+            .inner
+            .set_target_instance_type_right_sizing_method(input);
         self
     }
     /// <p>Whether we should copy the Private IP of the Source Server to the Recovery Instance.</p>
@@ -119,4 +150,3 @@ impl UpdateLaunchConfigurationFluentBuilder  {
         self
     }
 }
-

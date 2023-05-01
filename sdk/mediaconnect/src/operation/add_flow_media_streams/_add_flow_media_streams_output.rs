@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddFlowMediaStreamsOutput  {
+pub struct AddFlowMediaStreamsOutput {
     /// The ARN of the flow that you added media streams to.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct AddFlowMediaStreamsOutput  {
 }
 impl AddFlowMediaStreamsOutput {
     /// The ARN of the flow that you added media streams to.
-    pub fn flow_arn(&self) -> std::option::Option<& str> {
+    pub fn flow_arn(&self) -> std::option::Option<&str> {
         self.flow_arn.as_deref()
     }
     /// The media streams that you added to the flow.
-    pub fn media_streams(&self) -> std::option::Option<& [crate::types::MediaStream]> {
+    pub fn media_streams(&self) -> std::option::Option<&[crate::types::MediaStream]> {
         self.media_streams.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AddFlowMediaStreamsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AddFlowMediaStreamsOutput {
     /// Creates a new builder-style object to manufacture [`AddFlowMediaStreamsOutput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput).
-    pub fn builder() -> crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsOutputBuilder {
         crate::operation::add_flow_media_streams::builders::AddFlowMediaStreamsOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl AddFlowMediaStreamsOutputBuilder {
     }
     /// The ARN of the flow that you added media streams to.
     pub fn set_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.flow_arn = input; self
+        self.flow_arn = input;
+        self
     }
     /// Appends an item to `media_streams`.
     ///
@@ -58,32 +60,33 @@ impl AddFlowMediaStreamsOutputBuilder {
     /// The media streams that you added to the flow.
     pub fn media_streams(mut self, input: crate::types::MediaStream) -> Self {
         let mut v = self.media_streams.unwrap_or_default();
-                        v.push(input);
-                        self.media_streams = Some(v);
-                        self
+        v.push(input);
+        self.media_streams = Some(v);
+        self
     }
     /// The media streams that you added to the flow.
-    pub fn set_media_streams(mut self, input: std::option::Option<std::vec::Vec<crate::types::MediaStream>>) -> Self {
-        self.media_streams = input; self
+    pub fn set_media_streams(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MediaStream>>,
+    ) -> Self {
+        self.media_streams = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AddFlowMediaStreamsOutput`](crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput).
     pub fn build(self) -> crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput {
         crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput {
-            flow_arn: self.flow_arn
-            ,
-            media_streams: self.media_streams
-            ,
+            flow_arn: self.flow_arn,
+            media_streams: self.media_streams,
             _request_id: self._request_id,
         }
     }
 }
-

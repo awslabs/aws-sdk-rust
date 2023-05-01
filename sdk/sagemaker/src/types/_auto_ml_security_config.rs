@@ -3,7 +3,7 @@
 /// <p>Security options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoMlSecurityConfig  {
+pub struct AutoMlSecurityConfig {
     /// <p>The key used to encrypt stored data.</p>
     #[doc(hidden)]
     pub volume_kms_key_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct AutoMlSecurityConfig  {
 }
 impl AutoMlSecurityConfig {
     /// <p>The key used to encrypt stored data.</p>
-    pub fn volume_kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn volume_kms_key_id(&self) -> std::option::Option<&str> {
         self.volume_kms_key_id.as_deref()
     }
     /// <p>Whether to use traffic encryption between the container layers.</p>
@@ -24,7 +24,7 @@ impl AutoMlSecurityConfig {
         self.enable_inter_container_traffic_encryption
     }
     /// <p>The VPC configuration.</p>
-    pub fn vpc_config(&self) -> std::option::Option<& crate::types::VpcConfig> {
+    pub fn vpc_config(&self) -> std::option::Option<&crate::types::VpcConfig> {
         self.vpc_config.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl AutoMlSecurityConfigBuilder {
         self
     }
     /// <p>The key used to encrypt stored data.</p>
-    pub fn set_volume_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.volume_kms_key_id = input; self
+    pub fn set_volume_kms_key_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.volume_kms_key_id = input;
+        self
     }
     /// <p>Whether to use traffic encryption between the container layers.</p>
     pub fn enable_inter_container_traffic_encryption(mut self, input: bool) -> Self {
@@ -59,8 +63,12 @@ impl AutoMlSecurityConfigBuilder {
         self
     }
     /// <p>Whether to use traffic encryption between the container layers.</p>
-    pub fn set_enable_inter_container_traffic_encryption(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_inter_container_traffic_encryption = input; self
+    pub fn set_enable_inter_container_traffic_encryption(
+        mut self,
+        input: std::option::Option<bool>,
+    ) -> Self {
+        self.enable_inter_container_traffic_encryption = input;
+        self
     }
     /// <p>The VPC configuration.</p>
     pub fn vpc_config(mut self, input: crate::types::VpcConfig) -> Self {
@@ -69,19 +77,17 @@ impl AutoMlSecurityConfigBuilder {
     }
     /// <p>The VPC configuration.</p>
     pub fn set_vpc_config(mut self, input: std::option::Option<crate::types::VpcConfig>) -> Self {
-        self.vpc_config = input; self
+        self.vpc_config = input;
+        self
     }
     /// Consumes the builder and constructs a [`AutoMlSecurityConfig`](crate::types::AutoMlSecurityConfig).
     pub fn build(self) -> crate::types::AutoMlSecurityConfig {
         crate::types::AutoMlSecurityConfig {
-            volume_kms_key_id: self.volume_kms_key_id
-            ,
-            enable_inter_container_traffic_encryption: self.enable_inter_container_traffic_encryption
-                .unwrap_or_default()
-            ,
-            vpc_config: self.vpc_config
-            ,
+            volume_kms_key_id: self.volume_kms_key_id,
+            enable_inter_container_traffic_encryption: self
+                .enable_inter_container_traffic_encryption
+                .unwrap_or_default(),
+            vpc_config: self.vpc_config,
         }
     }
 }
-

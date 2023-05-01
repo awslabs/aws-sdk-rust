@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWaveInput  {
+pub struct DeleteWaveInput {
     /// <p>Wave ID.</p>
     #[doc(hidden)]
     pub wave_id: std::option::Option<std::string::String>,
 }
 impl DeleteWaveInput {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> std::option::Option<& str> {
+    pub fn wave_id(&self) -> std::option::Option<&str> {
         self.wave_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteWaveInputBuilder {
     }
     /// <p>Wave ID.</p>
     pub fn set_wave_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.wave_id = input; self
+        self.wave_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteWaveInput`](crate::operation::delete_wave::DeleteWaveInput).
-    pub fn build(self) -> Result<crate::operation::delete_wave::DeleteWaveInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_wave::DeleteWaveInput {
-                wave_id: self.wave_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_wave::DeleteWaveInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_wave::DeleteWaveInput {
+            wave_id: self.wave_id,
+        })
     }
 }
-

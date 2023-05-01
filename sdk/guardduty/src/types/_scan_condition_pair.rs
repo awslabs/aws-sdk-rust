@@ -3,7 +3,7 @@
 /// <p>Represents key, value pair to be matched against given resource property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScanConditionPair  {
+pub struct ScanConditionPair {
     /// <p>Represents <i>key</i> <b></b> in the map condition.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ScanConditionPair  {
 }
 impl ScanConditionPair {
     /// <p>Represents <i>key</i> <b></b> in the map condition.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ScanConditionPairBuilder {
     }
     /// <p>Represents <i>key</i> <b></b> in the map condition.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl ScanConditionPairBuilder {
     }
     /// <p>Represents optional <i>value</i> <b></b> in the map condition. If not specified, only <i>key</i> <b></b> will be matched.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ScanConditionPair`](crate::types::ScanConditionPair).
     pub fn build(self) -> crate::types::ScanConditionPair {
         crate::types::ScanConditionPair {
-            key: self.key
-            ,
-            value: self.value
-            ,
+            key: self.key,
+            value: self.value,
         }
     }
 }
-

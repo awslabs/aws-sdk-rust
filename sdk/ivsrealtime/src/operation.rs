@@ -30,4 +30,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateStage` operation.
 pub mod update_stage;
-

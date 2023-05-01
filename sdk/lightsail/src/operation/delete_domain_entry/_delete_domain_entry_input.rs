@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDomainEntryInput  {
+pub struct DeleteDomainEntryInput {
     /// <p>The name of the domain entry to delete.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteDomainEntryInput  {
 }
 impl DeleteDomainEntryInput {
     /// <p>The name of the domain entry to delete.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>An array of key-value pairs containing information about your domain entries.</p>
-    pub fn domain_entry(&self) -> std::option::Option<& crate::types::DomainEntry> {
+    pub fn domain_entry(&self) -> std::option::Option<&crate::types::DomainEntry> {
         self.domain_entry.as_ref()
     }
 }
 impl DeleteDomainEntryInput {
     /// Creates a new builder-style object to manufacture [`DeleteDomainEntryInput`](crate::operation::delete_domain_entry::DeleteDomainEntryInput).
-    pub fn builder() -> crate::operation::delete_domain_entry::builders::DeleteDomainEntryInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_domain_entry::builders::DeleteDomainEntryInputBuilder {
         crate::operation::delete_domain_entry::builders::DeleteDomainEntryInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteDomainEntryInputBuilder {
     }
     /// <p>The name of the domain entry to delete.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>An array of key-value pairs containing information about your domain entries.</p>
     pub fn domain_entry(mut self, input: crate::types::DomainEntry) -> Self {
@@ -50,19 +52,25 @@ impl DeleteDomainEntryInputBuilder {
         self
     }
     /// <p>An array of key-value pairs containing information about your domain entries.</p>
-    pub fn set_domain_entry(mut self, input: std::option::Option<crate::types::DomainEntry>) -> Self {
-        self.domain_entry = input; self
+    pub fn set_domain_entry(
+        mut self,
+        input: std::option::Option<crate::types::DomainEntry>,
+    ) -> Self {
+        self.domain_entry = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDomainEntryInput`](crate::operation::delete_domain_entry::DeleteDomainEntryInput).
-    pub fn build(self) -> Result<crate::operation::delete_domain_entry::DeleteDomainEntryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_domain_entry::DeleteDomainEntryInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_domain_entry::DeleteDomainEntryInput {
-                domain_name: self.domain_name
-                ,
-                domain_entry: self.domain_entry
-                ,
-            }
+                domain_name: self.domain_name,
+                domain_entry: self.domain_entry,
+            },
         )
     }
 }
-

@@ -4,51 +4,58 @@ pub use crate::operation::update_column_statistics_for_partition::_update_column
 pub use crate::operation::update_column_statistics_for_partition::_update_column_statistics_for_partition_input::UpdateColumnStatisticsForPartitionInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateColumnStatisticsForPartition`.
-/// 
-/// <p>Creates or updates partition statistics of columns.</p> 
+///
+/// <p>Creates or updates partition statistics of columns.</p>
 /// <p>The Identity and Access Management (IAM) permission required for this operation is <code>UpdatePartition</code>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateColumnStatisticsForPartitionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_column_statistics_for_partition::builders::UpdateColumnStatisticsForPartitionInputBuilder,
 }
-impl UpdateColumnStatisticsForPartitionFluentBuilder  {
+impl UpdateColumnStatisticsForPartitionFluentBuilder {
     /// Creates a new `UpdateColumnStatisticsForPartition`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartition, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput, aws_smithy_http::result::SdkError<crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the Amazon Web Services account ID is used by default.</p>
     pub fn catalog_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.catalog_id(input.into());
@@ -89,7 +96,10 @@ impl UpdateColumnStatisticsForPartitionFluentBuilder  {
         self
     }
     /// <p>A list of partition values identifying the partition.</p>
-    pub fn set_partition_values(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_partition_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_partition_values(input);
         self
     }
@@ -103,9 +113,11 @@ impl UpdateColumnStatisticsForPartitionFluentBuilder  {
         self
     }
     /// <p>A list of the column statistics.</p>
-    pub fn set_column_statistics_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnStatistics>>) -> Self {
+    pub fn set_column_statistics_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ColumnStatistics>>,
+    ) -> Self {
         self.inner = self.inner.set_column_statistics_list(input);
         self
     }
 }
-

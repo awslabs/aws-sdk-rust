@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListGatewayInstancesInput  {
+pub struct ListGatewayInstancesInput {
     /// Filter the list results to display only the instances associated with the selected Gateway Amazon Resource Name (ARN).
     #[doc(hidden)]
     pub filter_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListGatewayInstancesInput  {
 }
 impl ListGatewayInstancesInput {
     /// Filter the list results to display only the instances associated with the selected Gateway Amazon Resource Name (ARN).
-    pub fn filter_arn(&self) -> std::option::Option<& str> {
+    pub fn filter_arn(&self) -> std::option::Option<&str> {
         self.filter_arn.as_deref()
     }
     /// The maximum number of results to return per API request. For example, you submit a ListInstances request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
@@ -23,13 +23,14 @@ impl ListGatewayInstancesInput {
         self.max_results
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListGatewayInstancesInput {
     /// Creates a new builder-style object to manufacture [`ListGatewayInstancesInput`](crate::operation::list_gateway_instances::ListGatewayInstancesInput).
-    pub fn builder() -> crate::operation::list_gateway_instances::builders::ListGatewayInstancesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_gateway_instances::builders::ListGatewayInstancesInputBuilder {
         crate::operation::list_gateway_instances::builders::ListGatewayInstancesInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl ListGatewayInstancesInputBuilder {
     }
     /// Filter the list results to display only the instances associated with the selected Gateway Amazon Resource Name (ARN).
     pub fn set_filter_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.filter_arn = input; self
+        self.filter_arn = input;
+        self
     }
     /// The maximum number of results to return per API request. For example, you submit a ListInstances request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +61,8 @@ impl ListGatewayInstancesInputBuilder {
     }
     /// The maximum number of results to return per API request. For example, you submit a ListInstances request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl ListGatewayInstancesInputBuilder {
     }
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListGatewayInstancesInput`](crate::operation::list_gateway_instances::ListGatewayInstancesInput).
-    pub fn build(self) -> Result<crate::operation::list_gateway_instances::ListGatewayInstancesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_gateway_instances::ListGatewayInstancesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_gateway_instances::ListGatewayInstancesInput {
-                filter_arn: self.filter_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                filter_arn: self.filter_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

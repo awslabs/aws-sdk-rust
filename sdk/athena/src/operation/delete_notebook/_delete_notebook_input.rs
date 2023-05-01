@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNotebookInput  {
+pub struct DeleteNotebookInput {
     /// <p>The ID of the notebook to delete.</p>
     #[doc(hidden)]
     pub notebook_id: std::option::Option<std::string::String>,
 }
 impl DeleteNotebookInput {
     /// <p>The ID of the notebook to delete.</p>
-    pub fn notebook_id(&self) -> std::option::Option<& str> {
+    pub fn notebook_id(&self) -> std::option::Option<&str> {
         self.notebook_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteNotebookInputBuilder {
     }
     /// <p>The ID of the notebook to delete.</p>
     pub fn set_notebook_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.notebook_id = input; self
+        self.notebook_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteNotebookInput`](crate::operation::delete_notebook::DeleteNotebookInput).
-    pub fn build(self) -> Result<crate::operation::delete_notebook::DeleteNotebookInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_notebook::DeleteNotebookInput {
-                notebook_id: self.notebook_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_notebook::DeleteNotebookInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_notebook::DeleteNotebookInput {
+            notebook_id: self.notebook_id,
+        })
     }
 }
-

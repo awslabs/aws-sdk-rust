@@ -4,50 +4,70 @@ pub use crate::operation::modify_target_group::_modify_target_group_output::Modi
 pub use crate::operation::modify_target_group::_modify_target_group_input::ModifyTargetGroupInputBuilder;
 
 /// Fluent builder constructing a request to `ModifyTargetGroup`.
-/// 
+///
 /// <p>Modifies the health checks used when evaluating the health state of the targets in the specified target group.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyTargetGroupFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder,
+    inner: crate::operation::modify_target_group::builders::ModifyTargetGroupInputBuilder,
 }
-impl ModifyTargetGroupFluentBuilder  {
+impl ModifyTargetGroupFluentBuilder {
     /// Creates a new `ModifyTargetGroup`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::modify_target_group::ModifyTargetGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::modify_target_group::ModifyTargetGroupError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::modify_target_group::ModifyTargetGroupOutput, aws_smithy_http::result::SdkError<crate::operation::modify_target_group::ModifyTargetGroupError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::modify_target_group::ModifyTargetGroup,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_target_group::ModifyTargetGroupError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::modify_target_group::ModifyTargetGroupOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::modify_target_group::ModifyTargetGroupError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.target_group_arn(input.into());
@@ -64,7 +84,10 @@ impl ModifyTargetGroupFluentBuilder  {
         self
     }
     /// <p>The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health checks.</p>
-    pub fn set_health_check_protocol(mut self, input: std::option::Option<crate::types::ProtocolEnum>) -> Self {
+    pub fn set_health_check_protocol(
+        mut self,
+        input: std::option::Option<crate::types::ProtocolEnum>,
+    ) -> Self {
         self.inner = self.inner.set_health_check_protocol(input);
         self
     }
@@ -74,21 +97,27 @@ impl ModifyTargetGroupFluentBuilder  {
         self
     }
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
-    pub fn set_health_check_port(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_health_check_port(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_health_check_port(input);
         self
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.health_check_path(input.into());
         self
     }
-    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p> 
-    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p> 
+    /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
+    /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
-    pub fn set_health_check_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_health_check_path(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_health_check_path(input);
         self
     }
@@ -153,4 +182,3 @@ impl ModifyTargetGroupFluentBuilder  {
         self
     }
 }
-

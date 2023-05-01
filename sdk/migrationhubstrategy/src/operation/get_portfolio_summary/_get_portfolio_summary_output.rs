@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetPortfolioSummaryOutput  {
+pub struct GetPortfolioSummaryOutput {
     /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
     #[doc(hidden)]
     pub assessment_summary: std::option::Option<crate::types::AssessmentSummary>,
@@ -10,19 +10,21 @@ pub struct GetPortfolioSummaryOutput  {
 }
 impl GetPortfolioSummaryOutput {
     /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
-    pub fn assessment_summary(&self) -> std::option::Option<& crate::types::AssessmentSummary> {
+    pub fn assessment_summary(&self) -> std::option::Option<&crate::types::AssessmentSummary> {
         self.assessment_summary.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetPortfolioSummaryOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetPortfolioSummaryOutput {
     /// Creates a new builder-style object to manufacture [`GetPortfolioSummaryOutput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput).
-    pub fn builder() -> crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryOutputBuilder {
-        crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryOutputBuilder {
+        crate::operation::get_portfolio_summary::builders::GetPortfolioSummaryOutputBuilder::default(
+        )
     }
 }
 
@@ -40,25 +42,27 @@ impl GetPortfolioSummaryOutputBuilder {
         self
     }
     /// <p> An assessment summary for the portfolio including the number of servers to rehost and the overall number of anti-patterns. </p>
-    pub fn set_assessment_summary(mut self, input: std::option::Option<crate::types::AssessmentSummary>) -> Self {
-        self.assessment_summary = input; self
+    pub fn set_assessment_summary(
+        mut self,
+        input: std::option::Option<crate::types::AssessmentSummary>,
+    ) -> Self {
+        self.assessment_summary = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetPortfolioSummaryOutput`](crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput).
     pub fn build(self) -> crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput {
         crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput {
-            assessment_summary: self.assessment_summary
-            ,
+            assessment_summary: self.assessment_summary,
             _request_id: self._request_id,
         }
     }
 }
-

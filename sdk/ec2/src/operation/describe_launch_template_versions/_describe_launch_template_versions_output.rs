@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeLaunchTemplateVersionsOutput  {
+pub struct DescribeLaunchTemplateVersionsOutput {
     /// <p>Information about the launch template versions.</p>
     #[doc(hidden)]
-    pub launch_template_versions: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateVersion>>,
+    pub launch_template_versions:
+        std::option::Option<std::vec::Vec<crate::types::LaunchTemplateVersion>>,
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DescribeLaunchTemplateVersionsOutput  {
 }
 impl DescribeLaunchTemplateVersionsOutput {
     /// <p>Information about the launch template versions.</p>
-    pub fn launch_template_versions(&self) -> std::option::Option<& [crate::types::LaunchTemplateVersion]> {
+    pub fn launch_template_versions(
+        &self,
+    ) -> std::option::Option<&[crate::types::LaunchTemplateVersion]> {
         self.launch_template_versions.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeLaunchTemplateVersionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeLaunchTemplateVersionsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeLaunchTemplateVersionsOutput`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput).
-    pub fn builder() -> crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsOutputBuilder{
         crate::operation::describe_launch_template_versions::builders::DescribeLaunchTemplateVersionsOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DescribeLaunchTemplateVersionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeLaunchTemplateVersionsOutputBuilder {
-    pub(crate) launch_template_versions: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateVersion>>,
+    pub(crate) launch_template_versions:
+        std::option::Option<std::vec::Vec<crate::types::LaunchTemplateVersion>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +53,17 @@ impl DescribeLaunchTemplateVersionsOutputBuilder {
     /// <p>Information about the launch template versions.</p>
     pub fn launch_template_versions(mut self, input: crate::types::LaunchTemplateVersion) -> Self {
         let mut v = self.launch_template_versions.unwrap_or_default();
-                        v.push(input);
-                        self.launch_template_versions = Some(v);
-                        self
+        v.push(input);
+        self.launch_template_versions = Some(v);
+        self
     }
     /// <p>Information about the launch template versions.</p>
-    pub fn set_launch_template_versions(mut self, input: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateVersion>>) -> Self {
-        self.launch_template_versions = input; self
+    pub fn set_launch_template_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LaunchTemplateVersion>>,
+    ) -> Self {
+        self.launch_template_versions = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +72,27 @@ impl DescribeLaunchTemplateVersionsOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeLaunchTemplateVersionsOutput`](crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput).
-    pub fn build(self) -> crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput
+    {
         crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput {
-            launch_template_versions: self.launch_template_versions
-            ,
-            next_token: self.next_token
-            ,
+            launch_template_versions: self.launch_template_versions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

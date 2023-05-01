@@ -3,11 +3,11 @@
 /// <p>Name of a resource set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceSetInput  {
+pub struct UpdateResourceSetInput {
     /// <p>Name of a resource set.</p>
     #[doc(hidden)]
     pub resource_set_name: std::option::Option<std::string::String>,
-    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     #[doc(hidden)]
     pub resource_set_type: std::option::Option<std::string::String>,
@@ -17,22 +17,23 @@ pub struct UpdateResourceSetInput  {
 }
 impl UpdateResourceSetInput {
     /// <p>Name of a resource set.</p>
-    pub fn resource_set_name(&self) -> std::option::Option<& str> {
+    pub fn resource_set_name(&self) -> std::option::Option<&str> {
         self.resource_set_name.as_deref()
     }
-    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn resource_set_type(&self) -> std::option::Option<& str> {
+    pub fn resource_set_type(&self) -> std::option::Option<&str> {
         self.resource_set_type.as_deref()
     }
     /// <p>A list of resource objects.</p>
-    pub fn resources(&self) -> std::option::Option<& [crate::types::Resource]> {
+    pub fn resources(&self) -> std::option::Option<&[crate::types::Resource]> {
         self.resources.as_deref()
     }
 }
 impl UpdateResourceSetInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourceSetInput`](crate::operation::update_resource_set::UpdateResourceSetInput).
-    pub fn builder() -> crate::operation::update_resource_set::builders::UpdateResourceSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_resource_set::builders::UpdateResourceSetInputBuilder {
         crate::operation::update_resource_set::builders::UpdateResourceSetInputBuilder::default()
     }
 }
@@ -52,19 +53,27 @@ impl UpdateResourceSetInputBuilder {
         self
     }
     /// <p>Name of a resource set.</p>
-    pub fn set_resource_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_set_name = input; self
+    pub fn set_resource_set_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_set_name = input;
+        self
     }
-    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
     pub fn resource_set_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.resource_set_type = Some(input.into());
         self
     }
-    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p> 
+    /// <p>The resource type of the resources in the resource set. Enter one of the following values for resource type:</p>
     /// <p>AWS::ApiGateway::Stage, AWS::ApiGatewayV2::Stage, AWS::AutoScaling::AutoScalingGroup, AWS::CloudWatch::Alarm, AWS::EC2::CustomerGateway, AWS::DynamoDB::Table, AWS::EC2::Volume, AWS::ElasticLoadBalancing::LoadBalancer, AWS::ElasticLoadBalancingV2::LoadBalancer, AWS::Lambda::Function, AWS::MSK::Cluster, AWS::RDS::DBCluster, AWS::Route53::HealthCheck, AWS::SQS::Queue, AWS::SNS::Topic, AWS::SNS::Subscription, AWS::EC2::VPC, AWS::EC2::VPNConnection, AWS::EC2::VPNGateway, AWS::Route53RecoveryReadiness::DNSTargetResource</p>
-    pub fn set_resource_set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_set_type = input; self
+    pub fn set_resource_set_type(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_set_type = input;
+        self
     }
     /// Appends an item to `resources`.
     ///
@@ -73,26 +82,31 @@ impl UpdateResourceSetInputBuilder {
     /// <p>A list of resource objects.</p>
     pub fn resources(mut self, input: crate::types::Resource) -> Self {
         let mut v = self.resources.unwrap_or_default();
-                        v.push(input);
-                        self.resources = Some(v);
-                        self
+        v.push(input);
+        self.resources = Some(v);
+        self
     }
     /// <p>A list of resource objects.</p>
-    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<crate::types::Resource>>) -> Self {
-        self.resources = input; self
+    pub fn set_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Resource>>,
+    ) -> Self {
+        self.resources = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateResourceSetInput`](crate::operation::update_resource_set::UpdateResourceSetInput).
-    pub fn build(self) -> Result<crate::operation::update_resource_set::UpdateResourceSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_resource_set::UpdateResourceSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_resource_set::UpdateResourceSetInput {
-                resource_set_name: self.resource_set_name
-                ,
-                resource_set_type: self.resource_set_type
-                ,
-                resources: self.resources
-                ,
-            }
+                resource_set_name: self.resource_set_name,
+                resource_set_type: self.resource_set_type,
+                resources: self.resources,
+            },
         )
     }
 }
-

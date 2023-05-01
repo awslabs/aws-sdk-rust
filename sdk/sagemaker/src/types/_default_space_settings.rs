@@ -3,7 +3,7 @@
 /// <p>A collection of settings that apply to spaces created in the Domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefaultSpaceSettings  {
+pub struct DefaultSpaceSettings {
     /// <p>The ARN of the execution role for the space.</p>
     #[doc(hidden)]
     pub execution_role: std::option::Option<std::string::String>,
@@ -19,19 +19,23 @@ pub struct DefaultSpaceSettings  {
 }
 impl DefaultSpaceSettings {
     /// <p>The ARN of the execution role for the space.</p>
-    pub fn execution_role(&self) -> std::option::Option<& str> {
+    pub fn execution_role(&self) -> std::option::Option<&str> {
         self.execution_role.as_deref()
     }
     /// <p>The security group IDs for the Amazon Virtual Private Cloud that the space uses for communication.</p>
-    pub fn security_groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.security_groups.as_deref()
     }
     /// <p>The JupyterServer app settings.</p>
-    pub fn jupyter_server_app_settings(&self) -> std::option::Option<& crate::types::JupyterServerAppSettings> {
+    pub fn jupyter_server_app_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::JupyterServerAppSettings> {
         self.jupyter_server_app_settings.as_ref()
     }
     /// <p>The KernelGateway app settings.</p>
-    pub fn kernel_gateway_app_settings(&self) -> std::option::Option<& crate::types::KernelGatewayAppSettings> {
+    pub fn kernel_gateway_app_settings(
+        &self,
+    ) -> std::option::Option<&crate::types::KernelGatewayAppSettings> {
         self.kernel_gateway_app_settings.as_ref()
     }
 }
@@ -48,8 +52,10 @@ impl DefaultSpaceSettings {
 pub struct DefaultSpaceSettingsBuilder {
     pub(crate) execution_role: std::option::Option<std::string::String>,
     pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) jupyter_server_app_settings: std::option::Option<crate::types::JupyterServerAppSettings>,
-    pub(crate) kernel_gateway_app_settings: std::option::Option<crate::types::KernelGatewayAppSettings>,
+    pub(crate) jupyter_server_app_settings:
+        std::option::Option<crate::types::JupyterServerAppSettings>,
+    pub(crate) kernel_gateway_app_settings:
+        std::option::Option<crate::types::KernelGatewayAppSettings>,
 }
 impl DefaultSpaceSettingsBuilder {
     /// <p>The ARN of the execution role for the space.</p>
@@ -59,7 +65,8 @@ impl DefaultSpaceSettingsBuilder {
     }
     /// <p>The ARN of the execution role for the space.</p>
     pub fn set_execution_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_role = input; self
+        self.execution_role = input;
+        self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -68,44 +75,57 @@ impl DefaultSpaceSettingsBuilder {
     /// <p>The security group IDs for the Amazon Virtual Private Cloud that the space uses for communication.</p>
     pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_groups = Some(v);
-                        self
+        v.push(input.into());
+        self.security_groups = Some(v);
+        self
     }
     /// <p>The security group IDs for the Amazon Virtual Private Cloud that the space uses for communication.</p>
-    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_groups = input; self
+    pub fn set_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_groups = input;
+        self
     }
     /// <p>The JupyterServer app settings.</p>
-    pub fn jupyter_server_app_settings(mut self, input: crate::types::JupyterServerAppSettings) -> Self {
+    pub fn jupyter_server_app_settings(
+        mut self,
+        input: crate::types::JupyterServerAppSettings,
+    ) -> Self {
         self.jupyter_server_app_settings = Some(input);
         self
     }
     /// <p>The JupyterServer app settings.</p>
-    pub fn set_jupyter_server_app_settings(mut self, input: std::option::Option<crate::types::JupyterServerAppSettings>) -> Self {
-        self.jupyter_server_app_settings = input; self
+    pub fn set_jupyter_server_app_settings(
+        mut self,
+        input: std::option::Option<crate::types::JupyterServerAppSettings>,
+    ) -> Self {
+        self.jupyter_server_app_settings = input;
+        self
     }
     /// <p>The KernelGateway app settings.</p>
-    pub fn kernel_gateway_app_settings(mut self, input: crate::types::KernelGatewayAppSettings) -> Self {
+    pub fn kernel_gateway_app_settings(
+        mut self,
+        input: crate::types::KernelGatewayAppSettings,
+    ) -> Self {
         self.kernel_gateway_app_settings = Some(input);
         self
     }
     /// <p>The KernelGateway app settings.</p>
-    pub fn set_kernel_gateway_app_settings(mut self, input: std::option::Option<crate::types::KernelGatewayAppSettings>) -> Self {
-        self.kernel_gateway_app_settings = input; self
+    pub fn set_kernel_gateway_app_settings(
+        mut self,
+        input: std::option::Option<crate::types::KernelGatewayAppSettings>,
+    ) -> Self {
+        self.kernel_gateway_app_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`DefaultSpaceSettings`](crate::types::DefaultSpaceSettings).
     pub fn build(self) -> crate::types::DefaultSpaceSettings {
         crate::types::DefaultSpaceSettings {
-            execution_role: self.execution_role
-            ,
-            security_groups: self.security_groups
-            ,
-            jupyter_server_app_settings: self.jupyter_server_app_settings
-            ,
-            kernel_gateway_app_settings: self.kernel_gateway_app_settings
-            ,
+            execution_role: self.execution_role,
+            security_groups: self.security_groups,
+            jupyter_server_app_settings: self.jupyter_server_app_settings,
+            kernel_gateway_app_settings: self.kernel_gateway_app_settings,
         }
     }
 }
-

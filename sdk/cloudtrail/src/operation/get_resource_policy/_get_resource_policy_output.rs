@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcePolicyOutput  {
+pub struct GetResourcePolicyOutput {
     /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to resource-based policy. </p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct GetResourcePolicyOutput  {
 }
 impl GetResourcePolicyOutput {
     /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to resource-based policy. </p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p> A JSON-formatted string that contains the resource-based policy attached to the CloudTrail channel. </p>
-    pub fn resource_policy(&self) -> std::option::Option<& str> {
+    pub fn resource_policy(&self) -> std::option::Option<&str> {
         self.resource_policy.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetResourcePolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetResourcePolicyOutput {
     /// Creates a new builder-style object to manufacture [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput).
-    pub fn builder() -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder {
         crate::operation::get_resource_policy::builders::GetResourcePolicyOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl GetResourcePolicyOutputBuilder {
     }
     /// <p> The Amazon Resource Name (ARN) of the CloudTrail channel attached to resource-based policy. </p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p> A JSON-formatted string that contains the resource-based policy attached to the CloudTrail channel. </p>
     pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +60,24 @@ impl GetResourcePolicyOutputBuilder {
     }
     /// <p> A JSON-formatted string that contains the resource-based policy attached to the CloudTrail channel. </p>
     pub fn set_resource_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_policy = input; self
+        self.resource_policy = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetResourcePolicyOutput`](crate::operation::get_resource_policy::GetResourcePolicyOutput).
     pub fn build(self) -> crate::operation::get_resource_policy::GetResourcePolicyOutput {
         crate::operation::get_resource_policy::GetResourcePolicyOutput {
-            resource_arn: self.resource_arn
-            ,
-            resource_policy: self.resource_policy
-            ,
+            resource_arn: self.resource_arn,
+            resource_policy: self.resource_policy,
             _request_id: self._request_id,
         }
     }
 }
-

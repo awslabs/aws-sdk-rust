@@ -3,7 +3,7 @@
 /// <p>Details about an OpenSearch Serverless security policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SecurityPolicyDetail  {
+pub struct SecurityPolicyDetail {
     /// <p>The type of security policy.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::SecurityPolicyType>,
@@ -28,23 +28,23 @@ pub struct SecurityPolicyDetail  {
 }
 impl SecurityPolicyDetail {
     /// <p>The type of security policy.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::SecurityPolicyType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::SecurityPolicyType> {
         self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The version of the policy.</p>
-    pub fn policy_version(&self) -> std::option::Option<& str> {
+    pub fn policy_version(&self) -> std::option::Option<&str> {
         self.policy_version.as_deref()
     }
     /// <p>The description of the security policy.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The JSON policy document without any whitespaces.</p>
-    pub fn policy(&self) -> std::option::Option<& aws_smithy_types::Document> {
+    pub fn policy(&self) -> std::option::Option<&aws_smithy_types::Document> {
         self.policy.as_ref()
     }
     /// <p>The date the policy was created.</p>
@@ -82,8 +82,12 @@ impl SecurityPolicyDetailBuilder {
         self
     }
     /// <p>The type of security policy.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::SecurityPolicyType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::SecurityPolicyType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The name of the policy.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +96,8 @@ impl SecurityPolicyDetailBuilder {
     }
     /// <p>The name of the policy.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The version of the policy.</p>
     pub fn policy_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +106,8 @@ impl SecurityPolicyDetailBuilder {
     }
     /// <p>The version of the policy.</p>
     pub fn set_policy_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_version = input; self
+        self.policy_version = input;
+        self
     }
     /// <p>The description of the security policy.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +116,8 @@ impl SecurityPolicyDetailBuilder {
     }
     /// <p>The description of the security policy.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The JSON policy document without any whitespaces.</p>
     pub fn policy(mut self, input: aws_smithy_types::Document) -> Self {
@@ -119,7 +126,8 @@ impl SecurityPolicyDetailBuilder {
     }
     /// <p>The JSON policy document without any whitespaces.</p>
     pub fn set_policy(mut self, input: std::option::Option<aws_smithy_types::Document>) -> Self {
-        self.policy = input; self
+        self.policy = input;
+        self
     }
     /// <p>The date the policy was created.</p>
     pub fn created_date(mut self, input: i64) -> Self {
@@ -128,7 +136,8 @@ impl SecurityPolicyDetailBuilder {
     }
     /// <p>The date the policy was created.</p>
     pub fn set_created_date(mut self, input: std::option::Option<i64>) -> Self {
-        self.created_date = input; self
+        self.created_date = input;
+        self
     }
     /// <p>The timestamp of when the policy was last modified.</p>
     pub fn last_modified_date(mut self, input: i64) -> Self {
@@ -137,26 +146,19 @@ impl SecurityPolicyDetailBuilder {
     }
     /// <p>The timestamp of when the policy was last modified.</p>
     pub fn set_last_modified_date(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_modified_date = input; self
+        self.last_modified_date = input;
+        self
     }
     /// Consumes the builder and constructs a [`SecurityPolicyDetail`](crate::types::SecurityPolicyDetail).
     pub fn build(self) -> crate::types::SecurityPolicyDetail {
         crate::types::SecurityPolicyDetail {
-            r#type: self.r#type
-            ,
-            name: self.name
-            ,
-            policy_version: self.policy_version
-            ,
-            description: self.description
-            ,
-            policy: self.policy
-            ,
-            created_date: self.created_date
-            ,
-            last_modified_date: self.last_modified_date
-            ,
+            r#type: self.r#type,
+            name: self.name,
+            policy_version: self.policy_version,
+            description: self.description,
+            policy: self.policy,
+            created_date: self.created_date,
+            last_modified_date: self.last_modified_date,
         }
     }
 }
-

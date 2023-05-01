@@ -3,7 +3,7 @@
 /// <p>Stores metadata about a Lambda processor.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaConfiguration  {
+pub struct LambdaConfiguration {
     /// <p>The ARN of the Lambda message processing function.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct LambdaConfiguration  {
 }
 impl LambdaConfiguration {
     /// <p>The ARN of the Lambda message processing function.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Controls how the Lambda function is invoked.</p>
-    pub fn invocation_type(&self) -> std::option::Option<& crate::types::InvocationType> {
+    pub fn invocation_type(&self) -> std::option::Option<&crate::types::InvocationType> {
         self.invocation_type.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl LambdaConfigurationBuilder {
     }
     /// <p>The ARN of the Lambda message processing function.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>Controls how the Lambda function is invoked.</p>
     pub fn invocation_type(mut self, input: crate::types::InvocationType) -> Self {
@@ -51,17 +52,18 @@ impl LambdaConfigurationBuilder {
         self
     }
     /// <p>Controls how the Lambda function is invoked.</p>
-    pub fn set_invocation_type(mut self, input: std::option::Option<crate::types::InvocationType>) -> Self {
-        self.invocation_type = input; self
+    pub fn set_invocation_type(
+        mut self,
+        input: std::option::Option<crate::types::InvocationType>,
+    ) -> Self {
+        self.invocation_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`LambdaConfiguration`](crate::types::LambdaConfiguration).
     pub fn build(self) -> crate::types::LambdaConfiguration {
         crate::types::LambdaConfiguration {
-            resource_arn: self.resource_arn
-            ,
-            invocation_type: self.invocation_type
-            ,
+            resource_arn: self.resource_arn,
+            invocation_type: self.invocation_type,
         }
     }
 }
-

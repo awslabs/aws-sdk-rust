@@ -3,7 +3,7 @@
 /// <p>Contains the configuration information of a snooze action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnoozeActionConfiguration  {
+pub struct SnoozeActionConfiguration {
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     #[doc(hidden)]
     pub snooze_duration: std::option::Option<i32>,
@@ -17,7 +17,7 @@ impl SnoozeActionConfiguration {
         self.snooze_duration
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
-    pub fn note(&self) -> std::option::Option<& str> {
+    pub fn note(&self) -> std::option::Option<&str> {
         self.note.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl SnoozeActionConfigurationBuilder {
     }
     /// <p>The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code> state after this duration.</p>
     pub fn set_snooze_duration(mut self, input: std::option::Option<i32>) -> Self {
-        self.snooze_duration = input; self
+        self.snooze_duration = input;
+        self
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
     pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl SnoozeActionConfigurationBuilder {
     }
     /// <p>The note that you can leave when you snooze the alarm.</p>
     pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.note = input; self
+        self.note = input;
+        self
     }
     /// Consumes the builder and constructs a [`SnoozeActionConfiguration`](crate::types::SnoozeActionConfiguration).
     pub fn build(self) -> crate::types::SnoozeActionConfiguration {
         crate::types::SnoozeActionConfiguration {
-            snooze_duration: self.snooze_duration
-            ,
-            note: self.note
-            ,
+            snooze_duration: self.snooze_duration,
+            note: self.note,
         }
     }
 }
-

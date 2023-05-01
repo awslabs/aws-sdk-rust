@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDeviceDefinitionVersionInput  {
+pub struct CreateDeviceDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct CreateDeviceDefinitionVersionInput  {
 }
 impl CreateDeviceDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> std::option::Option<& str> {
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the device definition.
-    pub fn device_definition_id(&self) -> std::option::Option<& str> {
+    pub fn device_definition_id(&self) -> std::option::Option<&str> {
         self.device_definition_id.as_deref()
     }
     /// A list of devices in the definition version.
-    pub fn devices(&self) -> std::option::Option<& [crate::types::Device]> {
+    pub fn devices(&self) -> std::option::Option<&[crate::types::Device]> {
         self.devices.as_deref()
     }
 }
 impl CreateDeviceDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateDeviceDefinitionVersionInput`](crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionInput).
-    pub fn builder() -> crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionInputBuilder {
+    pub fn builder() -> crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionInputBuilder{
         crate::operation::create_device_definition_version::builders::CreateDeviceDefinitionVersionInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl CreateDeviceDefinitionVersionInputBuilder {
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amzn_client_token = input; self
+    pub fn set_amzn_client_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.amzn_client_token = input;
+        self
     }
     /// The ID of the device definition.
     pub fn device_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +62,12 @@ impl CreateDeviceDefinitionVersionInputBuilder {
         self
     }
     /// The ID of the device definition.
-    pub fn set_device_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_definition_id = input; self
+    pub fn set_device_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.device_definition_id = input;
+        self
     }
     /// Appends an item to `devices`.
     ///
@@ -68,16 +76,25 @@ impl CreateDeviceDefinitionVersionInputBuilder {
     /// A list of devices in the definition version.
     pub fn devices(mut self, input: crate::types::Device) -> Self {
         let mut v = self.devices.unwrap_or_default();
-                        v.push(input);
-                        self.devices = Some(v);
-                        self
+        v.push(input);
+        self.devices = Some(v);
+        self
     }
     /// A list of devices in the definition version.
-    pub fn set_devices(mut self, input: std::option::Option<std::vec::Vec<crate::types::Device>>) -> Self {
-        self.devices = input; self
+    pub fn set_devices(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Device>>,
+    ) -> Self {
+        self.devices = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateDeviceDefinitionVersionInput`](crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionInput).
-    pub fn build(self) -> Result<crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionInput {
                 amzn_client_token: self.amzn_client_token
@@ -90,4 +107,3 @@ impl CreateDeviceDefinitionVersionInputBuilder {
         )
     }
 }
-

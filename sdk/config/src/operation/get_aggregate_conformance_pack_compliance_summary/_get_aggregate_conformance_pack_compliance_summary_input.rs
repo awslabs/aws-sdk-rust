@@ -2,16 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAggregateConformancePackComplianceSummaryInput  {
+pub struct GetAggregateConformancePackComplianceSummaryInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>,
+    pub filters:
+        std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>,
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
     #[doc(hidden)]
-    pub group_by_key: std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>,
+    pub group_by_key:
+        std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>,
     /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     #[doc(hidden)]
     pub limit: std::option::Option<i32>,
@@ -21,15 +23,19 @@ pub struct GetAggregateConformancePackComplianceSummaryInput  {
 }
 impl GetAggregateConformancePackComplianceSummaryInput {
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
-    pub fn filters(&self) -> std::option::Option<& crate::types::AggregateConformancePackComplianceSummaryFilters> {
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&crate::types::AggregateConformancePackComplianceSummaryFilters> {
         self.filters.as_ref()
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn group_by_key(&self) -> std::option::Option<& crate::types::AggregateConformancePackComplianceSummaryGroupKey> {
+    pub fn group_by_key(
+        &self,
+    ) -> std::option::Option<&crate::types::AggregateConformancePackComplianceSummaryGroupKey> {
         self.group_by_key.as_ref()
     }
     /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
@@ -37,13 +43,13 @@ impl GetAggregateConformancePackComplianceSummaryInput {
         self.limit
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl GetAggregateConformancePackComplianceSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetAggregateConformancePackComplianceSummaryInput`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput).
-    pub fn builder() -> crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryInputBuilder {
+    pub fn builder() -> crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryInputBuilder{
         crate::operation::get_aggregate_conformance_pack_compliance_summary::builders::GetAggregateConformancePackComplianceSummaryInputBuilder::default()
     }
 }
@@ -53,8 +59,10 @@ impl GetAggregateConformancePackComplianceSummaryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetAggregateConformancePackComplianceSummaryInputBuilder {
     pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
-    pub(crate) filters: std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>,
-    pub(crate) group_by_key: std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>,
+    pub(crate) filters:
+        std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>,
+    pub(crate) group_by_key:
+        std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>,
     pub(crate) limit: std::option::Option<i32>,
     pub(crate) next_token: std::option::Option<std::string::String>,
 }
@@ -65,26 +73,44 @@ impl GetAggregateConformancePackComplianceSummaryInputBuilder {
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_aggregator_name = input; self
+    pub fn set_configuration_aggregator_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_aggregator_name = input;
+        self
     }
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
-    pub fn filters(mut self, input: crate::types::AggregateConformancePackComplianceSummaryFilters) -> Self {
+    pub fn filters(
+        mut self,
+        input: crate::types::AggregateConformancePackComplianceSummaryFilters,
+    ) -> Self {
         self.filters = Some(input);
         self
     }
     /// <p>Filters the results based on the <code>AggregateConformancePackComplianceSummaryFilters</code> object.</p>
-    pub fn set_filters(mut self, input: std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<crate::types::AggregateConformancePackComplianceSummaryFilters>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn group_by_key(mut self, input: crate::types::AggregateConformancePackComplianceSummaryGroupKey) -> Self {
+    pub fn group_by_key(
+        mut self,
+        input: crate::types::AggregateConformancePackComplianceSummaryGroupKey,
+    ) -> Self {
         self.group_by_key = Some(input);
         self
     }
     /// <p>Groups the result based on Amazon Web Services account ID or Amazon Web Services Region.</p>
-    pub fn set_group_by_key(mut self, input: std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>) -> Self {
-        self.group_by_key = input; self
+    pub fn set_group_by_key(
+        mut self,
+        input: std::option::Option<crate::types::AggregateConformancePackComplianceSummaryGroupKey>,
+    ) -> Self {
+        self.group_by_key = input;
+        self
     }
     /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -93,7 +119,8 @@ impl GetAggregateConformancePackComplianceSummaryInputBuilder {
     }
     /// <p>The maximum number of results returned on each page. The default is maximum. If you specify 0, Config uses the default.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,10 +129,11 @@ impl GetAggregateConformancePackComplianceSummaryInputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAggregateConformancePackComplianceSummaryInput`](crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput).
-    pub fn build(self) -> Result<crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryInput {
                 configuration_aggregator_name: self.configuration_aggregator_name
@@ -122,4 +150,3 @@ impl GetAggregateConformancePackComplianceSummaryInputBuilder {
         )
     }
 }
-

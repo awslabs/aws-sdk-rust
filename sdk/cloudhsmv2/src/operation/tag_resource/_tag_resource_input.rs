@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceInput  {
+pub struct TagResourceInput {
     /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct TagResourceInput  {
 }
 impl TagResourceInput {
     /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>A list of one or more tags.</p>
-    pub fn tag_list(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tag_list(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tag_list.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl TagResourceInputBuilder {
     }
     /// <p>The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use <code>DescribeClusters</code>.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// Appends an item to `tag_list`.
     ///
@@ -51,24 +52,28 @@ impl TagResourceInputBuilder {
     /// <p>A list of one or more tags.</p>
     pub fn tag_list(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tag_list.unwrap_or_default();
-                        v.push(input);
-                        self.tag_list = Some(v);
-                        self
+        v.push(input);
+        self.tag_list = Some(v);
+        self
     }
     /// <p>A list of one or more tags.</p>
-    pub fn set_tag_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tag_list = input; self
+    pub fn set_tag_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tag_list = input;
+        self
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
-    pub fn build(self) -> Result<crate::operation::tag_resource::TagResourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::tag_resource::TagResourceInput {
-                resource_id: self.resource_id
-                ,
-                tag_list: self.tag_list
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::tag_resource::TagResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::tag_resource::TagResourceInput {
+            resource_id: self.resource_id,
+            tag_list: self.tag_list,
+        })
     }
 }
-

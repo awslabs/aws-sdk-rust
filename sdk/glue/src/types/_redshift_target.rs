@@ -3,7 +3,7 @@
 /// <p>Specifies a target that uses Amazon Redshift.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RedshiftTarget  {
+pub struct RedshiftTarget {
     /// <p>The name of the data target.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -28,31 +28,33 @@ pub struct RedshiftTarget  {
 }
 impl RedshiftTarget {
     /// <p>The name of the data target.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn inputs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
         self.inputs.as_deref()
     }
     /// <p>The name of the database to write to.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
     /// <p>The name of the table in the database to write to.</p>
-    pub fn table(&self) -> std::option::Option<& str> {
+    pub fn table(&self) -> std::option::Option<&str> {
         self.table.as_deref()
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
-    pub fn redshift_tmp_dir(&self) -> std::option::Option<& str> {
+    pub fn redshift_tmp_dir(&self) -> std::option::Option<&str> {
         self.redshift_tmp_dir.as_deref()
     }
     /// <p>The IAM role with permissions.</p>
-    pub fn tmp_dir_iam_role(&self) -> std::option::Option<& str> {
+    pub fn tmp_dir_iam_role(&self) -> std::option::Option<&str> {
         self.tmp_dir_iam_role.as_deref()
     }
     /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
-    pub fn upsert_redshift_options(&self) -> std::option::Option<& crate::types::UpsertRedshiftTargetOptions> {
+    pub fn upsert_redshift_options(
+        &self,
+    ) -> std::option::Option<&crate::types::UpsertRedshiftTargetOptions> {
         self.upsert_redshift_options.as_ref()
     }
 }
@@ -73,7 +75,8 @@ pub struct RedshiftTargetBuilder {
     pub(crate) table: std::option::Option<std::string::String>,
     pub(crate) redshift_tmp_dir: std::option::Option<std::string::String>,
     pub(crate) tmp_dir_iam_role: std::option::Option<std::string::String>,
-    pub(crate) upsert_redshift_options: std::option::Option<crate::types::UpsertRedshiftTargetOptions>,
+    pub(crate) upsert_redshift_options:
+        std::option::Option<crate::types::UpsertRedshiftTargetOptions>,
 }
 impl RedshiftTargetBuilder {
     /// <p>The name of the data target.</p>
@@ -83,7 +86,8 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The name of the data target.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Appends an item to `inputs`.
     ///
@@ -92,13 +96,17 @@ impl RedshiftTargetBuilder {
     /// <p>The nodes that are inputs to the data target.</p>
     pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-                        v.push(input.into());
-                        self.inputs = Some(v);
-                        self
+        v.push(input.into());
+        self.inputs = Some(v);
+        self
     }
     /// <p>The nodes that are inputs to the data target.</p>
-    pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.inputs = input; self
+    pub fn set_inputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.inputs = input;
+        self
     }
     /// <p>The name of the database to write to.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +115,8 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The name of the database to write to.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input; self
+        self.database = input;
+        self
     }
     /// <p>The name of the table in the database to write to.</p>
     pub fn table(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +125,8 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The name of the table in the database to write to.</p>
     pub fn set_table(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table = input; self
+        self.table = input;
+        self
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
     pub fn redshift_tmp_dir(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +135,8 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The Amazon S3 path where temporary data can be staged when copying out of the database.</p>
     pub fn set_redshift_tmp_dir(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.redshift_tmp_dir = input; self
+        self.redshift_tmp_dir = input;
+        self
     }
     /// <p>The IAM role with permissions.</p>
     pub fn tmp_dir_iam_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,35 +145,35 @@ impl RedshiftTargetBuilder {
     }
     /// <p>The IAM role with permissions.</p>
     pub fn set_tmp_dir_iam_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tmp_dir_iam_role = input; self
+        self.tmp_dir_iam_role = input;
+        self
     }
     /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
-    pub fn upsert_redshift_options(mut self, input: crate::types::UpsertRedshiftTargetOptions) -> Self {
+    pub fn upsert_redshift_options(
+        mut self,
+        input: crate::types::UpsertRedshiftTargetOptions,
+    ) -> Self {
         self.upsert_redshift_options = Some(input);
         self
     }
     /// <p>The set of options to configure an upsert operation when writing to a Redshift target.</p>
-    pub fn set_upsert_redshift_options(mut self, input: std::option::Option<crate::types::UpsertRedshiftTargetOptions>) -> Self {
-        self.upsert_redshift_options = input; self
+    pub fn set_upsert_redshift_options(
+        mut self,
+        input: std::option::Option<crate::types::UpsertRedshiftTargetOptions>,
+    ) -> Self {
+        self.upsert_redshift_options = input;
+        self
     }
     /// Consumes the builder and constructs a [`RedshiftTarget`](crate::types::RedshiftTarget).
     pub fn build(self) -> crate::types::RedshiftTarget {
         crate::types::RedshiftTarget {
-            name: self.name
-            ,
-            inputs: self.inputs
-            ,
-            database: self.database
-            ,
-            table: self.table
-            ,
-            redshift_tmp_dir: self.redshift_tmp_dir
-            ,
-            tmp_dir_iam_role: self.tmp_dir_iam_role
-            ,
-            upsert_redshift_options: self.upsert_redshift_options
-            ,
+            name: self.name,
+            inputs: self.inputs,
+            database: self.database,
+            table: self.table,
+            redshift_tmp_dir: self.redshift_tmp_dir,
+            tmp_dir_iam_role: self.tmp_dir_iam_role,
+            upsert_redshift_options: self.upsert_redshift_options,
         }
     }
 }
-

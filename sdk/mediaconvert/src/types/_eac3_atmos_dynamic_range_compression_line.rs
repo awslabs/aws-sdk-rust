@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let eac3atmosdynamicrangecompressionline = unimplemented!();
 /// match eac3atmosdynamicrangecompressionline {
@@ -34,14 +34,22 @@
 /// Specifically, when `eac3atmosdynamicrangecompressionline` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `Eac3AtmosDynamicRangeCompressionLine::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression line (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum Eac3AtmosDynamicRangeCompressionLine {
     #[allow(missing_docs)] // documentation missing in model
     FilmLight,
@@ -56,49 +64,57 @@ pub enum Eac3AtmosDynamicRangeCompressionLine {
     #[allow(missing_docs)] // documentation missing in model
     Speech,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for Eac3AtmosDynamicRangeCompressionLine {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FILM_LIGHT" => Eac3AtmosDynamicRangeCompressionLine::FilmLight,
-"FILM_STANDARD" => Eac3AtmosDynamicRangeCompressionLine::FilmStandard,
-"MUSIC_LIGHT" => Eac3AtmosDynamicRangeCompressionLine::MusicLight,
-"MUSIC_STANDARD" => Eac3AtmosDynamicRangeCompressionLine::MusicStandard,
-"NONE" => Eac3AtmosDynamicRangeCompressionLine::None,
-"SPEECH" => Eac3AtmosDynamicRangeCompressionLine::Speech,
-other => Eac3AtmosDynamicRangeCompressionLine::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for Eac3AtmosDynamicRangeCompressionLine {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(Eac3AtmosDynamicRangeCompressionLine::from(s))
-                }
-            }
-impl Eac3AtmosDynamicRangeCompressionLine {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    Eac3AtmosDynamicRangeCompressionLine::FilmLight => "FILM_LIGHT",
-    Eac3AtmosDynamicRangeCompressionLine::FilmStandard => "FILM_STANDARD",
-    Eac3AtmosDynamicRangeCompressionLine::MusicLight => "MUSIC_LIGHT",
-    Eac3AtmosDynamicRangeCompressionLine::MusicStandard => "MUSIC_STANDARD",
-    Eac3AtmosDynamicRangeCompressionLine::None => "NONE",
-    Eac3AtmosDynamicRangeCompressionLine::Speech => "SPEECH",
-    Eac3AtmosDynamicRangeCompressionLine::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "FILM_LIGHT" => Eac3AtmosDynamicRangeCompressionLine::FilmLight,
+            "FILM_STANDARD" => Eac3AtmosDynamicRangeCompressionLine::FilmStandard,
+            "MUSIC_LIGHT" => Eac3AtmosDynamicRangeCompressionLine::MusicLight,
+            "MUSIC_STANDARD" => Eac3AtmosDynamicRangeCompressionLine::MusicStandard,
+            "NONE" => Eac3AtmosDynamicRangeCompressionLine::None,
+            "SPEECH" => Eac3AtmosDynamicRangeCompressionLine::Speech,
+            other => Eac3AtmosDynamicRangeCompressionLine::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FILM_LIGHT", "FILM_STANDARD", "MUSIC_LIGHT", "MUSIC_STANDARD", "NONE", "SPEECH"]
-                }
-            }
-impl AsRef<str> for Eac3AtmosDynamicRangeCompressionLine {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for Eac3AtmosDynamicRangeCompressionLine {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(Eac3AtmosDynamicRangeCompressionLine::from(s))
+    }
+}
+impl Eac3AtmosDynamicRangeCompressionLine {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            Eac3AtmosDynamicRangeCompressionLine::FilmLight => "FILM_LIGHT",
+            Eac3AtmosDynamicRangeCompressionLine::FilmStandard => "FILM_STANDARD",
+            Eac3AtmosDynamicRangeCompressionLine::MusicLight => "MUSIC_LIGHT",
+            Eac3AtmosDynamicRangeCompressionLine::MusicStandard => "MUSIC_STANDARD",
+            Eac3AtmosDynamicRangeCompressionLine::None => "NONE",
+            Eac3AtmosDynamicRangeCompressionLine::Speech => "SPEECH",
+            Eac3AtmosDynamicRangeCompressionLine::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "FILM_LIGHT",
+            "FILM_STANDARD",
+            "MUSIC_LIGHT",
+            "MUSIC_STANDARD",
+            "NONE",
+            "SPEECH",
+        ]
+    }
+}
+impl AsRef<str> for Eac3AtmosDynamicRangeCompressionLine {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

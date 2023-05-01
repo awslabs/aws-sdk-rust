@@ -2,33 +2,35 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourcesForWebAclInput  {
+pub struct ListResourcesForWebAclInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     #[doc(hidden)]
     pub web_acl_arn: std::option::Option<std::string::String>,
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> <note> 
-    /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p> 
-    /// </note> 
+    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> <note>
+    /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p>
+    /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code> </p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ResourceType>,
 }
 impl ListResourcesForWebAclInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
-    pub fn web_acl_arn(&self) -> std::option::Option<& str> {
+    pub fn web_acl_arn(&self) -> std::option::Option<&str> {
         self.web_acl_arn.as_deref()
     }
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> <note> 
-    /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p> 
-    /// </note> 
+    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> <note>
+    /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p>
+    /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code> </p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
 }
 impl ListResourcesForWebAclInput {
     /// Creates a new builder-style object to manufacture [`ListResourcesForWebAclInput`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput).
-    pub fn builder() -> crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder
+    {
         crate::operation::list_resources_for_web_acl::builders::ListResourcesForWebAclInputBuilder::default()
     }
 }
@@ -48,33 +50,40 @@ impl ListResourcesForWebAclInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     pub fn set_web_acl_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.web_acl_arn = input; self
+        self.web_acl_arn = input;
+        self
     }
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> <note> 
-    /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p> 
-    /// </note> 
+    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> <note>
+    /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p>
+    /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code> </p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
         self.resource_type = Some(input);
         self
     }
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> <note> 
-    /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p> 
-    /// </note> 
+    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> <note>
+    /// <p>If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>. </p>
+    /// </note>
     /// <p>Default: <code>APPLICATION_LOAD_BALANCER</code> </p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListResourcesForWebAclInput`](crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput).
-    pub fn build(self) -> Result<crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_resources_for_web_acl::ListResourcesForWebAclInput {
-                web_acl_arn: self.web_acl_arn
-                ,
-                resource_type: self.resource_type
-                ,
-            }
+                web_acl_arn: self.web_acl_arn,
+                resource_type: self.resource_type,
+            },
         )
     }
 }
-

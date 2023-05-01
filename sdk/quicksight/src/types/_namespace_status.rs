@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let namespacestatus = unimplemented!();
 /// match namespacestatus {
@@ -33,14 +33,22 @@
 /// Specifically, when `namespacestatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `NamespaceStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum NamespaceStatus {
     #[allow(missing_docs)] // documentation missing in model
     Created,
@@ -53,47 +61,54 @@ pub enum NamespaceStatus {
     #[allow(missing_docs)] // documentation missing in model
     RetryableFailure,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for NamespaceStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CREATED" => NamespaceStatus::Created,
-"CREATING" => NamespaceStatus::Creating,
-"DELETING" => NamespaceStatus::Deleting,
-"NON_RETRYABLE_FAILURE" => NamespaceStatus::NonRetryableFailure,
-"RETRYABLE_FAILURE" => NamespaceStatus::RetryableFailure,
-other => NamespaceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "CREATED" => NamespaceStatus::Created,
+            "CREATING" => NamespaceStatus::Creating,
+            "DELETING" => NamespaceStatus::Deleting,
+            "NON_RETRYABLE_FAILURE" => NamespaceStatus::NonRetryableFailure,
+            "RETRYABLE_FAILURE" => NamespaceStatus::RetryableFailure,
+            other => {
+                NamespaceStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for NamespaceStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(NamespaceStatus::from(s))
-                }
-            }
-impl NamespaceStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    NamespaceStatus::Created => "CREATED",
-    NamespaceStatus::Creating => "CREATING",
-    NamespaceStatus::Deleting => "DELETING",
-    NamespaceStatus::NonRetryableFailure => "NON_RETRYABLE_FAILURE",
-    NamespaceStatus::RetryableFailure => "RETRYABLE_FAILURE",
-    NamespaceStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CREATED", "CREATING", "DELETING", "NON_RETRYABLE_FAILURE", "RETRYABLE_FAILURE"]
-                }
-            }
-impl AsRef<str> for NamespaceStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for NamespaceStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(NamespaceStatus::from(s))
+    }
+}
+impl NamespaceStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            NamespaceStatus::Created => "CREATED",
+            NamespaceStatus::Creating => "CREATING",
+            NamespaceStatus::Deleting => "DELETING",
+            NamespaceStatus::NonRetryableFailure => "NON_RETRYABLE_FAILURE",
+            NamespaceStatus::RetryableFailure => "RETRYABLE_FAILURE",
+            NamespaceStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CREATED",
+            "CREATING",
+            "DELETING",
+            "NON_RETRYABLE_FAILURE",
+            "RETRYABLE_FAILURE",
+        ]
+    }
+}
+impl AsRef<str> for NamespaceStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

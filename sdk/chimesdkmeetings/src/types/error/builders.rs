@@ -22,4 +22,3 @@ pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 pub use crate::types::error::_service_failure_exception::ServiceFailureExceptionBuilder;
 
 pub use crate::types::error::_limit_exceeded_exception::LimitExceededExceptionBuilder;
-

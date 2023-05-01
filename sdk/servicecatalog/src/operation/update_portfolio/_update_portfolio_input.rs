@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePortfolioInput  {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+pub struct UpdatePortfolioInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -30,36 +30,36 @@ pub struct UpdatePortfolioInput  {
     pub remove_tags: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdatePortfolioInput {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<& str> {
+    pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
     /// <p>The portfolio identifier.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name to use for display purposes.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The updated description of the portfolio.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The updated name of the portfolio provider.</p>
-    pub fn provider_name(&self) -> std::option::Option<& str> {
+    pub fn provider_name(&self) -> std::option::Option<&str> {
         self.provider_name.as_deref()
     }
     /// <p>The tags to add.</p>
-    pub fn add_tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn add_tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.add_tags.as_deref()
     }
     /// <p>The tags to remove.</p>
-    pub fn remove_tags(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn remove_tags(&self) -> std::option::Option<&[std::string::String]> {
         self.remove_tags.as_deref()
     }
 }
@@ -83,22 +83,23 @@ pub struct UpdatePortfolioInputBuilder {
     pub(crate) remove_tags: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl UpdatePortfolioInputBuilder {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input; self
+        self.accept_language = input;
+        self
     }
     /// <p>The portfolio identifier.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -107,7 +108,8 @@ impl UpdatePortfolioInputBuilder {
     }
     /// <p>The portfolio identifier.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name to use for display purposes.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,7 +118,8 @@ impl UpdatePortfolioInputBuilder {
     }
     /// <p>The name to use for display purposes.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The updated description of the portfolio.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,7 +128,8 @@ impl UpdatePortfolioInputBuilder {
     }
     /// <p>The updated description of the portfolio.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The updated name of the portfolio provider.</p>
     pub fn provider_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -134,7 +138,8 @@ impl UpdatePortfolioInputBuilder {
     }
     /// <p>The updated name of the portfolio provider.</p>
     pub fn set_provider_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.provider_name = input; self
+        self.provider_name = input;
+        self
     }
     /// Appends an item to `add_tags`.
     ///
@@ -143,13 +148,17 @@ impl UpdatePortfolioInputBuilder {
     /// <p>The tags to add.</p>
     pub fn add_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.add_tags.unwrap_or_default();
-                        v.push(input);
-                        self.add_tags = Some(v);
-                        self
+        v.push(input);
+        self.add_tags = Some(v);
+        self
     }
     /// <p>The tags to add.</p>
-    pub fn set_add_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.add_tags = input; self
+    pub fn set_add_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.add_tags = input;
+        self
     }
     /// Appends an item to `remove_tags`.
     ///
@@ -158,34 +167,33 @@ impl UpdatePortfolioInputBuilder {
     /// <p>The tags to remove.</p>
     pub fn remove_tags(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.remove_tags.unwrap_or_default();
-                        v.push(input.into());
-                        self.remove_tags = Some(v);
-                        self
+        v.push(input.into());
+        self.remove_tags = Some(v);
+        self
     }
     /// <p>The tags to remove.</p>
-    pub fn set_remove_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.remove_tags = input; self
+    pub fn set_remove_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.remove_tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePortfolioInput`](crate::operation::update_portfolio::UpdatePortfolioInput).
-    pub fn build(self) -> Result<crate::operation::update_portfolio::UpdatePortfolioInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_portfolio::UpdatePortfolioInput {
-                accept_language: self.accept_language
-                ,
-                id: self.id
-                ,
-                display_name: self.display_name
-                ,
-                description: self.description
-                ,
-                provider_name: self.provider_name
-                ,
-                add_tags: self.add_tags
-                ,
-                remove_tags: self.remove_tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_portfolio::UpdatePortfolioInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_portfolio::UpdatePortfolioInput {
+            accept_language: self.accept_language,
+            id: self.id,
+            display_name: self.display_name,
+            description: self.description,
+            provider_name: self.provider_name,
+            add_tags: self.add_tags,
+            remove_tags: self.remove_tags,
+        })
     }
 }
-

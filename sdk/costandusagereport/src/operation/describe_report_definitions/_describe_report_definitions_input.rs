@@ -3,7 +3,7 @@
 /// <p>Requests a list of AWS Cost and Usage reports owned by the account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReportDefinitionsInput  {
+pub struct DescribeReportDefinitionsInput {
     /// <p>The maximum number of results that AWS returns for the operation.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -17,13 +17,13 @@ impl DescribeReportDefinitionsInput {
         self.max_results
     }
     /// <p>A generic string.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribeReportDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`DescribeReportDefinitionsInput`](crate::operation::describe_report_definitions::DescribeReportDefinitionsInput).
-    pub fn builder() -> crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsInputBuilder {
+    pub fn builder() -> crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsInputBuilder{
         crate::operation::describe_report_definitions::builders::DescribeReportDefinitionsInputBuilder::default()
     }
 }
@@ -43,7 +43,8 @@ impl DescribeReportDefinitionsInputBuilder {
     }
     /// <p>The maximum number of results that AWS returns for the operation.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A generic string.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,18 +53,21 @@ impl DescribeReportDefinitionsInputBuilder {
     }
     /// <p>A generic string.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeReportDefinitionsInput`](crate::operation::describe_report_definitions::DescribeReportDefinitionsInput).
-    pub fn build(self) -> Result<crate::operation::describe_report_definitions::DescribeReportDefinitionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_report_definitions::DescribeReportDefinitionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_report_definitions::DescribeReportDefinitionsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

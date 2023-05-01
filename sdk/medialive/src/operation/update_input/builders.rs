@@ -4,50 +4,66 @@ pub use crate::operation::update_input::_update_input_output::UpdateInputOutputB
 pub use crate::operation::update_input::_update_input_input::UpdateInputInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateInput`.
-/// 
+///
 /// Updates an input.
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateInputFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_input::builders::UpdateInputInputBuilder,
+    inner: crate::operation::update_input::builders::UpdateInputInputBuilder,
 }
-impl UpdateInputFluentBuilder  {
+impl UpdateInputFluentBuilder {
     /// Creates a new `UpdateInput`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_input::UpdateInput, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_input::UpdateInputOutput, aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_input::UpdateInput,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_input::UpdateInputOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_input::UpdateInputError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `Destinations`.
     ///
     /// To override the contents of this collection use [`set_destinations`](Self::set_destinations).
@@ -58,7 +74,10 @@ impl UpdateInputFluentBuilder  {
         self
     }
     /// Destination settings for PUSH type inputs.
-    pub fn set_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputDestinationRequest>>) -> Self {
+    pub fn set_destinations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InputDestinationRequest>>,
+    ) -> Self {
         self.inner = self.inner.set_destinations(input);
         self
     }
@@ -72,7 +91,10 @@ impl UpdateInputFluentBuilder  {
         self
     }
     /// Settings for the devices.
-    pub fn set_input_devices(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputDeviceRequest>>) -> Self {
+    pub fn set_input_devices(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InputDeviceRequest>>,
+    ) -> Self {
         self.inner = self.inner.set_input_devices(input);
         self
     }
@@ -96,7 +118,10 @@ impl UpdateInputFluentBuilder  {
         self
     }
     /// A list of security groups referenced by IDs to attach to the input.
-    pub fn set_input_security_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_input_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_input_security_groups(input);
         self
     }
@@ -110,7 +135,10 @@ impl UpdateInputFluentBuilder  {
         self
     }
     /// A list of the MediaConnect Flow ARNs that you want to use as the source of the input. You can specify as few as one Flow and presently, as many as two. The only requirement is when you have more than one is that each Flow is in a separate Availability Zone as this ensures your EML input is redundant to AZ issues.
-    pub fn set_media_connect_flows(mut self, input: std::option::Option<std::vec::Vec<crate::types::MediaConnectFlowRequest>>) -> Self {
+    pub fn set_media_connect_flows(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MediaConnectFlowRequest>>,
+    ) -> Self {
         self.inner = self.inner.set_media_connect_flows(input);
         self
     }
@@ -144,9 +172,11 @@ impl UpdateInputFluentBuilder  {
         self
     }
     /// The source URLs for a PULL-type input. Every PULL type input needs exactly two source URLs for redundancy. Only specify sources for PULL type Inputs. Leave Destinations empty.
-    pub fn set_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputSourceRequest>>) -> Self {
+    pub fn set_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InputSourceRequest>>,
+    ) -> Self {
         self.inner = self.inner.set_sources(input);
         self
     }
 }
-

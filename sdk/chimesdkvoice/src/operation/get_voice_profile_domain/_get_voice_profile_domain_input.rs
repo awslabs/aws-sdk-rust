@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetVoiceProfileDomainInput  {
+pub struct GetVoiceProfileDomainInput {
     /// <p>The voice profile domain ID.</p>
     #[doc(hidden)]
     pub voice_profile_domain_id: std::option::Option<std::string::String>,
 }
 impl GetVoiceProfileDomainInput {
     /// <p>The voice profile domain ID.</p>
-    pub fn voice_profile_domain_id(&self) -> std::option::Option<& str> {
+    pub fn voice_profile_domain_id(&self) -> std::option::Option<&str> {
         self.voice_profile_domain_id.as_deref()
     }
 }
 impl GetVoiceProfileDomainInput {
     /// Creates a new builder-style object to manufacture [`GetVoiceProfileDomainInput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput).
-    pub fn builder() -> crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainInputBuilder
+    {
         crate::operation::get_voice_profile_domain::builders::GetVoiceProfileDomainInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl GetVoiceProfileDomainInputBuilder {
         self
     }
     /// <p>The voice profile domain ID.</p>
-    pub fn set_voice_profile_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.voice_profile_domain_id = input; self
+    pub fn set_voice_profile_domain_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.voice_profile_domain_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetVoiceProfileDomainInput`](crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput).
-    pub fn build(self) -> Result<crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_voice_profile_domain::GetVoiceProfileDomainInput {
-                voice_profile_domain_id: self.voice_profile_domain_id
-                ,
-            }
+                voice_profile_domain_id: self.voice_profile_domain_id,
+            },
         )
     }
 }
-

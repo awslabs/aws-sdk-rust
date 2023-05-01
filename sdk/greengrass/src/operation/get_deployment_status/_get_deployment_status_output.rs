@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDeploymentStatusOutput  {
+pub struct GetDeploymentStatusOutput {
     /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
     #[doc(hidden)]
     pub deployment_status: std::option::Option<std::string::String>,
@@ -22,35 +22,37 @@ pub struct GetDeploymentStatusOutput  {
 }
 impl GetDeploymentStatusOutput {
     /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-    pub fn deployment_status(&self) -> std::option::Option<& str> {
+    pub fn deployment_status(&self) -> std::option::Option<&str> {
         self.deployment_status.as_deref()
     }
     /// The type of the deployment.
-    pub fn deployment_type(&self) -> std::option::Option<& crate::types::DeploymentType> {
+    pub fn deployment_type(&self) -> std::option::Option<&crate::types::DeploymentType> {
         self.deployment_type.as_ref()
     }
     /// Error details
-    pub fn error_details(&self) -> std::option::Option<& [crate::types::ErrorDetail]> {
+    pub fn error_details(&self) -> std::option::Option<&[crate::types::ErrorDetail]> {
         self.error_details.as_deref()
     }
     /// Error message
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
     /// The time, in milliseconds since the epoch, when the deployment status was updated.
-    pub fn updated_at(&self) -> std::option::Option<& str> {
+    pub fn updated_at(&self) -> std::option::Option<&str> {
         self.updated_at.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDeploymentStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDeploymentStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetDeploymentStatusOutput`](crate::operation::get_deployment_status::GetDeploymentStatusOutput).
-    pub fn builder() -> crate::operation::get_deployment_status::builders::GetDeploymentStatusOutputBuilder {
-        crate::operation::get_deployment_status::builders::GetDeploymentStatusOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::get_deployment_status::builders::GetDeploymentStatusOutputBuilder {
+        crate::operation::get_deployment_status::builders::GetDeploymentStatusOutputBuilder::default(
+        )
     }
 }
 
@@ -72,8 +74,12 @@ impl GetDeploymentStatusOutputBuilder {
         self
     }
     /// The status of the deployment: ''InProgress'', ''Building'', ''Success'', or ''Failure''.
-    pub fn set_deployment_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_status = input; self
+    pub fn set_deployment_status(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.deployment_status = input;
+        self
     }
     /// The type of the deployment.
     pub fn deployment_type(mut self, input: crate::types::DeploymentType) -> Self {
@@ -81,8 +87,12 @@ impl GetDeploymentStatusOutputBuilder {
         self
     }
     /// The type of the deployment.
-    pub fn set_deployment_type(mut self, input: std::option::Option<crate::types::DeploymentType>) -> Self {
-        self.deployment_type = input; self
+    pub fn set_deployment_type(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentType>,
+    ) -> Self {
+        self.deployment_type = input;
+        self
     }
     /// Appends an item to `error_details`.
     ///
@@ -91,13 +101,17 @@ impl GetDeploymentStatusOutputBuilder {
     /// Error details
     pub fn error_details(mut self, input: crate::types::ErrorDetail) -> Self {
         let mut v = self.error_details.unwrap_or_default();
-                        v.push(input);
-                        self.error_details = Some(v);
-                        self
+        v.push(input);
+        self.error_details = Some(v);
+        self
     }
     /// Error details
-    pub fn set_error_details(mut self, input: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>) -> Self {
-        self.error_details = input; self
+    pub fn set_error_details(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ErrorDetail>>,
+    ) -> Self {
+        self.error_details = input;
+        self
     }
     /// Error message
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +120,8 @@ impl GetDeploymentStatusOutputBuilder {
     }
     /// Error message
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// The time, in milliseconds since the epoch, when the deployment status was updated.
     pub fn updated_at(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,32 +130,27 @@ impl GetDeploymentStatusOutputBuilder {
     }
     /// The time, in milliseconds since the epoch, when the deployment status was updated.
     pub fn set_updated_at(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.updated_at = input; self
+        self.updated_at = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDeploymentStatusOutput`](crate::operation::get_deployment_status::GetDeploymentStatusOutput).
     pub fn build(self) -> crate::operation::get_deployment_status::GetDeploymentStatusOutput {
         crate::operation::get_deployment_status::GetDeploymentStatusOutput {
-            deployment_status: self.deployment_status
-            ,
-            deployment_type: self.deployment_type
-            ,
-            error_details: self.error_details
-            ,
-            error_message: self.error_message
-            ,
-            updated_at: self.updated_at
-            ,
+            deployment_status: self.deployment_status,
+            deployment_type: self.deployment_type,
+            error_details: self.error_details,
+            error_message: self.error_message,
+            updated_at: self.updated_at,
             _request_id: self._request_id,
         }
     }
 }
-

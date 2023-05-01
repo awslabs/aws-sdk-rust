@@ -2,36 +2,36 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetCertificatesInput  {
-    /// <p>The status of the certificates for which to return information.</p> 
-    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p> 
+pub struct GetCertificatesInput {
+    /// <p>The status of the certificates for which to return information.</p>
+    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
     #[doc(hidden)]
     pub certificate_statuses: std::option::Option<std::vec::Vec<crate::types::CertificateStatus>>,
-    /// <p>Indicates whether to include detailed information about the certificates in the response.</p> 
+    /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
     #[doc(hidden)]
     pub include_certificate_details: std::option::Option<bool>,
-    /// <p>The name for the certificate for which to return information.</p> 
+    /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
     #[doc(hidden)]
     pub certificate_name: std::option::Option<std::string::String>,
 }
 impl GetCertificatesInput {
-    /// <p>The status of the certificates for which to return information.</p> 
-    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p> 
+    /// <p>The status of the certificates for which to return information.</p>
+    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
-    pub fn certificate_statuses(&self) -> std::option::Option<& [crate::types::CertificateStatus]> {
+    pub fn certificate_statuses(&self) -> std::option::Option<&[crate::types::CertificateStatus]> {
         self.certificate_statuses.as_deref()
     }
-    /// <p>Indicates whether to include detailed information about the certificates in the response.</p> 
+    /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
     pub fn include_certificate_details(&self) -> std::option::Option<bool> {
         self.include_certificate_details
     }
-    /// <p>The name for the certificate for which to return information.</p> 
+    /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
-    pub fn certificate_name(&self) -> std::option::Option<& str> {
+    pub fn certificate_name(&self) -> std::option::Option<&str> {
         self.certificate_name.as_deref()
     }
 }
@@ -46,7 +46,8 @@ impl GetCertificatesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct GetCertificatesInputBuilder {
-    pub(crate) certificate_statuses: std::option::Option<std::vec::Vec<crate::types::CertificateStatus>>,
+    pub(crate) certificate_statuses:
+        std::option::Option<std::vec::Vec<crate::types::CertificateStatus>>,
     pub(crate) include_certificate_details: std::option::Option<bool>,
     pub(crate) certificate_name: std::option::Option<std::string::String>,
 }
@@ -55,55 +56,60 @@ impl GetCertificatesInputBuilder {
     ///
     /// To override the contents of this collection use [`set_certificate_statuses`](Self::set_certificate_statuses).
     ///
-    /// <p>The status of the certificates for which to return information.</p> 
-    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p> 
+    /// <p>The status of the certificates for which to return information.</p>
+    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
     pub fn certificate_statuses(mut self, input: crate::types::CertificateStatus) -> Self {
         let mut v = self.certificate_statuses.unwrap_or_default();
-                        v.push(input);
-                        self.certificate_statuses = Some(v);
-                        self
+        v.push(input);
+        self.certificate_statuses = Some(v);
+        self
     }
-    /// <p>The status of the certificates for which to return information.</p> 
-    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p> 
+    /// <p>The status of the certificates for which to return information.</p>
+    /// <p>For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code> status.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made, regardless of their current status.</p>
-    pub fn set_certificate_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::types::CertificateStatus>>) -> Self {
-        self.certificate_statuses = input; self
+    pub fn set_certificate_statuses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CertificateStatus>>,
+    ) -> Self {
+        self.certificate_statuses = input;
+        self
     }
-    /// <p>Indicates whether to include detailed information about the certificates in the response.</p> 
+    /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
     pub fn include_certificate_details(mut self, input: bool) -> Self {
         self.include_certificate_details = Some(input);
         self
     }
-    /// <p>Indicates whether to include detailed information about the certificates in the response.</p> 
+    /// <p>Indicates whether to include detailed information about the certificates in the response.</p>
     /// <p>When omitted, the response includes only the certificate names, Amazon Resource Names (ARNs), domain names, and tags.</p>
     pub fn set_include_certificate_details(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_certificate_details = input; self
+        self.include_certificate_details = input;
+        self
     }
-    /// <p>The name for the certificate for which to return information.</p> 
+    /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
     pub fn certificate_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.certificate_name = Some(input.into());
         self
     }
-    /// <p>The name for the certificate for which to return information.</p> 
+    /// <p>The name for the certificate for which to return information.</p>
     /// <p>When omitted, the response includes all of your certificates in the Amazon Web Services Region where the request is made.</p>
     pub fn set_certificate_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_name = input; self
+        self.certificate_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetCertificatesInput`](crate::operation::get_certificates::GetCertificatesInput).
-    pub fn build(self) -> Result<crate::operation::get_certificates::GetCertificatesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_certificates::GetCertificatesInput {
-                certificate_statuses: self.certificate_statuses
-                ,
-                include_certificate_details: self.include_certificate_details
-                ,
-                certificate_name: self.certificate_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_certificates::GetCertificatesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_certificates::GetCertificatesInput {
+            certificate_statuses: self.certificate_statuses,
+            include_certificate_details: self.include_certificate_details,
+            certificate_name: self.certificate_name,
+        })
     }
 }
-

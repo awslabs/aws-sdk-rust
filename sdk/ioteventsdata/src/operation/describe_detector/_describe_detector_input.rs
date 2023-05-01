@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDetectorInput  {
+pub struct DescribeDetectorInput {
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
     #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DescribeDetectorInput  {
 }
 impl DescribeDetectorInput {
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
-    pub fn detector_model_name(&self) -> std::option::Option<& str> {
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
         self.detector_model_name.as_deref()
     }
     /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
-    pub fn key_value(&self) -> std::option::Option<& str> {
+    pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
 }
 impl DescribeDetectorInput {
     /// Creates a new builder-style object to manufacture [`DescribeDetectorInput`](crate::operation::describe_detector::DescribeDetectorInput).
-    pub fn builder() -> crate::operation::describe_detector::builders::DescribeDetectorInputBuilder {
+    pub fn builder() -> crate::operation::describe_detector::builders::DescribeDetectorInputBuilder
+    {
         crate::operation::describe_detector::builders::DescribeDetectorInputBuilder::default()
     }
 }
@@ -41,8 +42,12 @@ impl DescribeDetectorInputBuilder {
         self
     }
     /// <p>The name of the detector model whose detectors (instances) you want information about.</p>
-    pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_model_name = input; self
+    pub fn set_detector_model_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.detector_model_name = input;
+        self
     }
     /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
     pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +56,19 @@ impl DescribeDetectorInputBuilder {
     }
     /// <p>A filter used to limit results to detectors (instances) created because of the given key ID.</p>
     pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_value = input; self
+        self.key_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDetectorInput`](crate::operation::describe_detector::DescribeDetectorInput).
-    pub fn build(self) -> Result<crate::operation::describe_detector::DescribeDetectorInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_detector::DescribeDetectorInput {
-                detector_model_name: self.detector_model_name
-                ,
-                key_value: self.key_value
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_detector::DescribeDetectorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_detector::DescribeDetectorInput {
+            detector_model_name: self.detector_model_name,
+            key_value: self.key_value,
+        })
     }
 }
-

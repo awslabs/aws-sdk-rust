@@ -4,77 +4,103 @@ pub use crate::operation::update_firewall_domains::_update_firewall_domains_outp
 pub use crate::operation::update_firewall_domains::_update_firewall_domains_input::UpdateFirewallDomainsInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateFirewallDomains`.
-/// 
+///
 /// <p>Updates the firewall domain list from an array of domain specifications. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateFirewallDomainsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder,
+    inner: crate::operation::update_firewall_domains::builders::UpdateFirewallDomainsInputBuilder,
 }
-impl UpdateFirewallDomainsFluentBuilder  {
+impl UpdateFirewallDomainsFluentBuilder {
     /// Creates a new `UpdateFirewallDomains`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_firewall_domains::UpdateFirewallDomains, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_firewall_domains::UpdateFirewallDomainsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_firewall_domains::UpdateFirewallDomainsOutput, aws_smithy_http::result::SdkError<crate::operation::update_firewall_domains::UpdateFirewallDomainsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_firewall_domains::UpdateFirewallDomains,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_firewall_domains::UpdateFirewallDomainsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_firewall_domains::UpdateFirewallDomainsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ID of the domain list whose domains you want to update. </p>
     pub fn firewall_domain_list_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.firewall_domain_list_id(input.into());
         self
     }
     /// <p>The ID of the domain list whose domains you want to update. </p>
-    pub fn set_firewall_domain_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_firewall_domain_list_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_firewall_domain_list_id(input);
         self
     }
-    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p> 
-    /// <ul> 
-    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li> 
-    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li> 
-    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li> 
+    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
+    /// <ul>
+    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li>
+    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
+    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
     /// </ul>
     pub fn operation(mut self, input: crate::types::FirewallDomainUpdateOperation) -> Self {
         self.inner = self.inner.operation(input);
         self
     }
-    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p> 
-    /// <ul> 
-    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li> 
-    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li> 
-    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li> 
+    /// <p>What you want DNS Firewall to do with the domains that you are providing: </p>
+    /// <ul>
+    /// <li> <p> <code>ADD</code> - Add the domains to the ones that are already in the domain list. </p> </li>
+    /// <li> <p> <code>REMOVE</code> - Search the domain list for the domains and remove them from the list.</p> </li>
+    /// <li> <p> <code>REPLACE</code> - Update the domain list to exactly match the list that you are providing. </p> </li>
     /// </ul>
-    pub fn set_operation(mut self, input: std::option::Option<crate::types::FirewallDomainUpdateOperation>) -> Self {
+    pub fn set_operation(
+        mut self,
+        input: std::option::Option<crate::types::FirewallDomainUpdateOperation>,
+    ) -> Self {
         self.inner = self.inner.set_operation(input);
         self
     }
@@ -82,31 +108,33 @@ impl UpdateFirewallDomainsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_domains`](Self::set_domains).
     ///
-    /// <p>A list of domains to use in the update operation.</p> <important> 
-    /// <p>There is a limit of 1000 domains per request.</p> 
-    /// </important> 
-    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p> 
-    /// <ul> 
-    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li> 
-    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li> 
-    /// <li> <p>It must be from 1-255 characters in length. </p> </li> 
+    /// <p>A list of domains to use in the update operation.</p> <important>
+    /// <p>There is a limit of 1000 domains per request.</p>
+    /// </important>
+    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
+    /// <ul>
+    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
+    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
+    /// <li> <p>It must be from 1-255 characters in length. </p> </li>
     /// </ul>
     pub fn domains(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.domains(input.into());
         self
     }
-    /// <p>A list of domains to use in the update operation.</p> <important> 
-    /// <p>There is a limit of 1000 domains per request.</p> 
-    /// </important> 
-    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p> 
-    /// <ul> 
-    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li> 
-    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li> 
-    /// <li> <p>It must be from 1-255 characters in length. </p> </li> 
+    /// <p>A list of domains to use in the update operation.</p> <important>
+    /// <p>There is a limit of 1000 domains per request.</p>
+    /// </important>
+    /// <p>Each domain specification in your domain list must satisfy the following requirements: </p>
+    /// <ul>
+    /// <li> <p>It can optionally start with <code>*</code> (asterisk).</p> </li>
+    /// <li> <p>With the exception of the optional starting asterisk, it must only contain the following characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).</p> </li>
+    /// <li> <p>It must be from 1-255 characters in length. </p> </li>
     /// </ul>
-    pub fn set_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_domains(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_domains(input);
         self
     }
 }
-

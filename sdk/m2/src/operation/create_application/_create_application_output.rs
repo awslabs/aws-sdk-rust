@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateApplicationOutput  {
+pub struct CreateApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     #[doc(hidden)]
     pub application_arn: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct CreateApplicationOutput  {
 }
 impl CreateApplicationOutput {
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
-    pub fn application_arn(&self) -> std::option::Option<& str> {
+    pub fn application_arn(&self) -> std::option::Option<&str> {
         self.application_arn.as_deref()
     }
     /// <p>The unique application identifier.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The version number of the application.</p>
@@ -29,13 +29,14 @@ impl CreateApplicationOutput {
     }
 }
 impl aws_http::request_id::RequestId for CreateApplicationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateApplicationOutput {
     /// Creates a new builder-style object to manufacture [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput).
-    pub fn builder() -> crate::operation::create_application::builders::CreateApplicationOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_application::builders::CreateApplicationOutputBuilder {
         crate::operation::create_application::builders::CreateApplicationOutputBuilder::default()
     }
 }
@@ -57,7 +58,8 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the application.</p>
     pub fn set_application_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_arn = input; self
+        self.application_arn = input;
+        self
     }
     /// <p>The unique application identifier.</p>
     pub fn application_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +68,8 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>The unique application identifier.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The version number of the application.</p>
     pub fn application_version(mut self, input: i32) -> Self {
@@ -75,28 +78,25 @@ impl CreateApplicationOutputBuilder {
     }
     /// <p>The version number of the application.</p>
     pub fn set_application_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.application_version = input; self
+        self.application_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::operation::create_application::CreateApplicationOutput).
     pub fn build(self) -> crate::operation::create_application::CreateApplicationOutput {
         crate::operation::create_application::CreateApplicationOutput {
-            application_arn: self.application_arn
-            ,
-            application_id: self.application_id
-            ,
-            application_version: self.application_version
-            ,
+            application_arn: self.application_arn,
+            application_id: self.application_id,
+            application_version: self.application_version,
             _request_id: self._request_id,
         }
     }
 }
-

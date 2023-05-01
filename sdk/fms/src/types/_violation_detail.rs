@@ -3,7 +3,7 @@
 /// <p>Violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ViolationDetail  {
+pub struct ViolationDetail {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
     #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct ViolationDetail  {
 }
 impl ViolationDetail {
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
-    pub fn policy_id(&self) -> std::option::Option<& str> {
+    pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
     }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
-    pub fn member_account(&self) -> std::option::Option<& str> {
+    pub fn member_account(&self) -> std::option::Option<&str> {
         self.member_account.as_deref()
     }
     /// <p>The resource ID that the violation details were requested for.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource type that the violation details were requested for.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>List of violations for the requested resource.</p>
-    pub fn resource_violations(&self) -> std::option::Option<& [crate::types::ResourceViolation]> {
+    pub fn resource_violations(&self) -> std::option::Option<&[crate::types::ResourceViolation]> {
         self.resource_violations.as_deref()
     }
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    pub fn resource_tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn resource_tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.resource_tags.as_deref()
     }
     /// <p>Brief description for the requested resource.</p>
-    pub fn resource_description(&self) -> std::option::Option<& str> {
+    pub fn resource_description(&self) -> std::option::Option<&str> {
         self.resource_description.as_deref()
     }
 }
@@ -71,7 +71,8 @@ pub struct ViolationDetailBuilder {
     pub(crate) member_account: std::option::Option<std::string::String>,
     pub(crate) resource_id: std::option::Option<std::string::String>,
     pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) resource_violations: std::option::Option<std::vec::Vec<crate::types::ResourceViolation>>,
+    pub(crate) resource_violations:
+        std::option::Option<std::vec::Vec<crate::types::ResourceViolation>>,
     pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
     pub(crate) resource_description: std::option::Option<std::string::String>,
 }
@@ -83,7 +84,8 @@ impl ViolationDetailBuilder {
     }
     /// <p>The ID of the Firewall Manager policy that the violation details were requested for.</p>
     pub fn set_policy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_id = input; self
+        self.policy_id = input;
+        self
     }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
     pub fn member_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +94,8 @@ impl ViolationDetailBuilder {
     }
     /// <p>The Amazon Web Services account that the violation details were requested for.</p>
     pub fn set_member_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_account = input; self
+        self.member_account = input;
+        self
     }
     /// <p>The resource ID that the violation details were requested for.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +104,8 @@ impl ViolationDetailBuilder {
     }
     /// <p>The resource ID that the violation details were requested for.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The resource type that the violation details were requested for.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +114,8 @@ impl ViolationDetailBuilder {
     }
     /// <p>The resource type that the violation details were requested for.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// Appends an item to `resource_violations`.
     ///
@@ -119,13 +124,17 @@ impl ViolationDetailBuilder {
     /// <p>List of violations for the requested resource.</p>
     pub fn resource_violations(mut self, input: crate::types::ResourceViolation) -> Self {
         let mut v = self.resource_violations.unwrap_or_default();
-                        v.push(input);
-                        self.resource_violations = Some(v);
-                        self
+        v.push(input);
+        self.resource_violations = Some(v);
+        self
     }
     /// <p>List of violations for the requested resource.</p>
-    pub fn set_resource_violations(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceViolation>>) -> Self {
-        self.resource_violations = input; self
+    pub fn set_resource_violations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceViolation>>,
+    ) -> Self {
+        self.resource_violations = input;
+        self
     }
     /// Appends an item to `resource_tags`.
     ///
@@ -134,13 +143,17 @@ impl ViolationDetailBuilder {
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
     pub fn resource_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.resource_tags.unwrap_or_default();
-                        v.push(input);
-                        self.resource_tags = Some(v);
-                        self
+        v.push(input);
+        self.resource_tags = Some(v);
+        self
     }
     /// <p>The <code>ResourceTag</code> objects associated with the resource.</p>
-    pub fn set_resource_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.resource_tags = input; self
+    pub fn set_resource_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.resource_tags = input;
+        self
     }
     /// <p>Brief description for the requested resource.</p>
     pub fn resource_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,27 +161,23 @@ impl ViolationDetailBuilder {
         self
     }
     /// <p>Brief description for the requested resource.</p>
-    pub fn set_resource_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_description = input; self
+    pub fn set_resource_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_description = input;
+        self
     }
     /// Consumes the builder and constructs a [`ViolationDetail`](crate::types::ViolationDetail).
     pub fn build(self) -> crate::types::ViolationDetail {
         crate::types::ViolationDetail {
-            policy_id: self.policy_id
-            ,
-            member_account: self.member_account
-            ,
-            resource_id: self.resource_id
-            ,
-            resource_type: self.resource_type
-            ,
-            resource_violations: self.resource_violations
-            ,
-            resource_tags: self.resource_tags
-            ,
-            resource_description: self.resource_description
-            ,
+            policy_id: self.policy_id,
+            member_account: self.member_account,
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
+            resource_violations: self.resource_violations,
+            resource_tags: self.resource_tags,
+            resource_description: self.resource_description,
         }
     }
 }
-

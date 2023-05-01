@@ -2,13 +2,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGeofenceCollectionOutput  {
+pub struct CreateGeofenceCollectionOutput {
     /// <p>The name for the geofence collection.</p>
     #[doc(hidden)]
     pub collection_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services. </p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services. </p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub collection_arn: std::option::Option<std::string::String>,
@@ -19,29 +19,31 @@ pub struct CreateGeofenceCollectionOutput  {
 }
 impl CreateGeofenceCollectionOutput {
     /// <p>The name for the geofence collection.</p>
-    pub fn collection_name(&self) -> std::option::Option<& str> {
+    pub fn collection_name(&self) -> std::option::Option<&str> {
         self.collection_name.as_deref()
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services. </p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services. </p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
-    pub fn collection_arn(&self) -> std::option::Option<& str> {
+    pub fn collection_arn(&self) -> std::option::Option<&str> {
         self.collection_arn.as_deref()
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateGeofenceCollectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateGeofenceCollectionOutput {
     /// Creates a new builder-style object to manufacture [`CreateGeofenceCollectionOutput`](crate::operation::create_geofence_collection::CreateGeofenceCollectionOutput).
-    pub fn builder() -> crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionOutputBuilder
+    {
         crate::operation::create_geofence_collection::builders::CreateGeofenceCollectionOutputBuilder::default()
     }
 }
@@ -63,22 +65,24 @@ impl CreateGeofenceCollectionOutputBuilder {
     }
     /// <p>The name for the geofence collection.</p>
     pub fn set_collection_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_name = input; self
+        self.collection_name = input;
+        self
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services. </p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services. </p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
     pub fn collection_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.collection_arn = Some(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services. </p> 
-    /// <ul> 
-    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li> 
+    /// <p>The Amazon Resource Name (ARN) for the geofence collection resource. Used when you need to specify a resource across all Amazon Web Services. </p>
+    /// <ul>
+    /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollection</code> </p> </li>
     /// </ul>
     pub fn set_collection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_arn = input; self
+        self.collection_arn = input;
+        self
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -86,29 +90,31 @@ impl CreateGeofenceCollectionOutputBuilder {
         self
     }
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateGeofenceCollectionOutput`](crate::operation::create_geofence_collection::CreateGeofenceCollectionOutput).
-    pub fn build(self) -> crate::operation::create_geofence_collection::CreateGeofenceCollectionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_geofence_collection::CreateGeofenceCollectionOutput {
         crate::operation::create_geofence_collection::CreateGeofenceCollectionOutput {
-            collection_name: self.collection_name
-            ,
-            collection_arn: self.collection_arn
-            ,
-            create_time: self.create_time
-            ,
+            collection_name: self.collection_name,
+            collection_arn: self.collection_arn,
+            create_time: self.create_time,
             _request_id: self._request_id,
         }
     }
 }
-

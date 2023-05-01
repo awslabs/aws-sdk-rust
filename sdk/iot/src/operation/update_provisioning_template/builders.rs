@@ -4,51 +4,71 @@ pub use crate::operation::update_provisioning_template::_update_provisioning_tem
 pub use crate::operation::update_provisioning_template::_update_provisioning_template_input::UpdateProvisioningTemplateInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateProvisioningTemplate`.
-/// 
-/// <p>Updates a provisioning template.</p> 
+///
+/// <p>Updates a provisioning template.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateProvisioningTemplate</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateProvisioningTemplateFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_provisioning_template::builders::UpdateProvisioningTemplateInputBuilder,
 }
-impl UpdateProvisioningTemplateFluentBuilder  {
+impl UpdateProvisioningTemplateFluentBuilder {
     /// Creates a new `UpdateProvisioningTemplate`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_provisioning_template::UpdateProvisioningTemplate, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_provisioning_template::UpdateProvisioningTemplateError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput, aws_smithy_http::result::SdkError<crate::operation::update_provisioning_template::UpdateProvisioningTemplateError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_provisioning_template::UpdateProvisioningTemplate,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_provisioning_template::UpdateProvisioningTemplateError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_provisioning_template::UpdateProvisioningTemplateOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_provisioning_template::UpdateProvisioningTemplateError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the provisioning template.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
@@ -95,7 +115,10 @@ impl UpdateProvisioningTemplateFluentBuilder  {
         self
     }
     /// <p>The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.</p>
-    pub fn set_provisioning_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_provisioning_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_provisioning_role_arn(input);
         self
     }
@@ -105,7 +128,10 @@ impl UpdateProvisioningTemplateFluentBuilder  {
         self
     }
     /// <p>Updates the pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For more information about provisioning template types, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type">type</a>.</p>
-    pub fn set_pre_provisioning_hook(mut self, input: std::option::Option<crate::types::ProvisioningHook>) -> Self {
+    pub fn set_pre_provisioning_hook(
+        mut self,
+        input: std::option::Option<crate::types::ProvisioningHook>,
+    ) -> Self {
         self.inner = self.inner.set_pre_provisioning_hook(input);
         self
     }
@@ -120,4 +146,3 @@ impl UpdateProvisioningTemplateFluentBuilder  {
         self
     }
 }
-

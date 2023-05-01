@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTextDetectionOutput  {
+pub struct GetTextDetectionOutput {
     /// <p>Current status of the text detection job.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::types::VideoJobStatus>,
@@ -25,38 +25,39 @@ pub struct GetTextDetectionOutput  {
 }
 impl GetTextDetectionOutput {
     /// <p>Current status of the text detection job.</p>
-    pub fn job_status(&self) -> std::option::Option<& crate::types::VideoJobStatus> {
+    pub fn job_status(&self) -> std::option::Option<&crate::types::VideoJobStatus> {
         self.job_status.as_ref()
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
-    pub fn video_metadata(&self) -> std::option::Option<& crate::types::VideoMetadata> {
+    pub fn video_metadata(&self) -> std::option::Option<&crate::types::VideoMetadata> {
         self.video_metadata.as_ref()
     }
     /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
-    pub fn text_detections(&self) -> std::option::Option<& [crate::types::TextDetectionResult]> {
+    pub fn text_detections(&self) -> std::option::Option<&[crate::types::TextDetectionResult]> {
         self.text_detections.as_deref()
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Version number of the text detection model that was used to detect text.</p>
-    pub fn text_model_version(&self) -> std::option::Option<& str> {
+    pub fn text_model_version(&self) -> std::option::Option<&str> {
         self.text_model_version.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetTextDetectionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetTextDetectionOutput {
     /// Creates a new builder-style object to manufacture [`GetTextDetectionOutput`](crate::operation::get_text_detection::GetTextDetectionOutput).
-    pub fn builder() -> crate::operation::get_text_detection::builders::GetTextDetectionOutputBuilder {
+    pub fn builder() -> crate::operation::get_text_detection::builders::GetTextDetectionOutputBuilder
+    {
         crate::operation::get_text_detection::builders::GetTextDetectionOutputBuilder::default()
     }
 }
@@ -68,7 +69,8 @@ pub struct GetTextDetectionOutputBuilder {
     pub(crate) job_status: std::option::Option<crate::types::VideoJobStatus>,
     pub(crate) status_message: std::option::Option<std::string::String>,
     pub(crate) video_metadata: std::option::Option<crate::types::VideoMetadata>,
-    pub(crate) text_detections: std::option::Option<std::vec::Vec<crate::types::TextDetectionResult>>,
+    pub(crate) text_detections:
+        std::option::Option<std::vec::Vec<crate::types::TextDetectionResult>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) text_model_version: std::option::Option<std::string::String>,
     _request_id: Option<String>,
@@ -80,8 +82,12 @@ impl GetTextDetectionOutputBuilder {
         self
     }
     /// <p>Current status of the text detection job.</p>
-    pub fn set_job_status(mut self, input: std::option::Option<crate::types::VideoJobStatus>) -> Self {
-        self.job_status = input; self
+    pub fn set_job_status(
+        mut self,
+        input: std::option::Option<crate::types::VideoJobStatus>,
+    ) -> Self {
+        self.job_status = input;
+        self
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -90,7 +96,8 @@ impl GetTextDetectionOutputBuilder {
     }
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
     pub fn video_metadata(mut self, input: crate::types::VideoMetadata) -> Self {
@@ -98,8 +105,12 @@ impl GetTextDetectionOutputBuilder {
         self
     }
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.</p>
-    pub fn set_video_metadata(mut self, input: std::option::Option<crate::types::VideoMetadata>) -> Self {
-        self.video_metadata = input; self
+    pub fn set_video_metadata(
+        mut self,
+        input: std::option::Option<crate::types::VideoMetadata>,
+    ) -> Self {
+        self.video_metadata = input;
+        self
     }
     /// Appends an item to `text_detections`.
     ///
@@ -108,13 +119,17 @@ impl GetTextDetectionOutputBuilder {
     /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
     pub fn text_detections(mut self, input: crate::types::TextDetectionResult) -> Self {
         let mut v = self.text_detections.unwrap_or_default();
-                        v.push(input);
-                        self.text_detections = Some(v);
-                        self
+        v.push(input);
+        self.text_detections = Some(v);
+        self
     }
     /// <p>An array of text detected in the video. Each element contains the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen.</p>
-    pub fn set_text_detections(mut self, input: std::option::Option<std::vec::Vec<crate::types::TextDetectionResult>>) -> Self {
-        self.text_detections = input; self
+    pub fn set_text_detections(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TextDetectionResult>>,
+    ) -> Self {
+        self.text_detections = input;
+        self
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -123,7 +138,8 @@ impl GetTextDetectionOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Version number of the text detection model that was used to detect text.</p>
     pub fn text_model_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,35 +147,32 @@ impl GetTextDetectionOutputBuilder {
         self
     }
     /// <p>Version number of the text detection model that was used to detect text.</p>
-    pub fn set_text_model_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text_model_version = input; self
+    pub fn set_text_model_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.text_model_version = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetTextDetectionOutput`](crate::operation::get_text_detection::GetTextDetectionOutput).
     pub fn build(self) -> crate::operation::get_text_detection::GetTextDetectionOutput {
         crate::operation::get_text_detection::GetTextDetectionOutput {
-            job_status: self.job_status
-            ,
-            status_message: self.status_message
-            ,
-            video_metadata: self.video_metadata
-            ,
-            text_detections: self.text_detections
-            ,
-            next_token: self.next_token
-            ,
-            text_model_version: self.text_model_version
-            ,
+            job_status: self.job_status,
+            status_message: self.status_message,
+            video_metadata: self.video_metadata,
+            text_detections: self.text_detections,
+            next_token: self.next_token,
+            text_model_version: self.text_model_version,
             _request_id: self._request_id,
         }
     }
 }
-

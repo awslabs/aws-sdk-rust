@@ -4,50 +4,70 @@ pub use crate::operation::update_business_report_schedule::_update_business_repo
 pub use crate::operation::update_business_report_schedule::_update_business_report_schedule_input::UpdateBusinessReportScheduleInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateBusinessReportSchedule`.
-/// 
+///
 /// <p>Updates the configuration of the report delivery schedule with the specified schedule ARN.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateBusinessReportScheduleFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_business_report_schedule::builders::UpdateBusinessReportScheduleInputBuilder,
 }
-impl UpdateBusinessReportScheduleFluentBuilder  {
+impl UpdateBusinessReportScheduleFluentBuilder {
     /// Creates a new `UpdateBusinessReportSchedule`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_business_report_schedule::UpdateBusinessReportSchedule, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput, aws_smithy_http::result::SdkError<crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_business_report_schedule::UpdateBusinessReportSchedule,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The ARN of the business report schedule.</p>
     pub fn schedule_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.schedule_arn(input.into());
@@ -84,7 +104,10 @@ impl UpdateBusinessReportScheduleFluentBuilder  {
         self
     }
     /// <p>The format of the generated report (individual CSV files or zipped files of individual files).</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::BusinessReportFormat>) -> Self {
+    pub fn set_format(
+        mut self,
+        input: std::option::Option<crate::types::BusinessReportFormat>,
+    ) -> Self {
         self.inner = self.inner.set_format(input);
         self
     }
@@ -104,9 +127,11 @@ impl UpdateBusinessReportScheduleFluentBuilder  {
         self
     }
     /// <p>The recurrence of the reports.</p>
-    pub fn set_recurrence(mut self, input: std::option::Option<crate::types::BusinessReportRecurrence>) -> Self {
+    pub fn set_recurrence(
+        mut self,
+        input: std::option::Option<crate::types::BusinessReportRecurrence>,
+    ) -> Self {
         self.inner = self.inner.set_recurrence(input);
         self
     }
 }
-

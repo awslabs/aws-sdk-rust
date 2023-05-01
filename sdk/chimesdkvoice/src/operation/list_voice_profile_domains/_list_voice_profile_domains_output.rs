@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListVoiceProfileDomainsOutput  {
+pub struct ListVoiceProfileDomainsOutput {
     /// <p>The list of voice profile domains.</p>
     #[doc(hidden)]
-    pub voice_profile_domains: std::option::Option<std::vec::Vec<crate::types::VoiceProfileDomainSummary>>,
+    pub voice_profile_domains:
+        std::option::Option<std::vec::Vec<crate::types::VoiceProfileDomainSummary>>,
     /// <p>The token used to return the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,26 @@ pub struct ListVoiceProfileDomainsOutput  {
 }
 impl ListVoiceProfileDomainsOutput {
     /// <p>The list of voice profile domains.</p>
-    pub fn voice_profile_domains(&self) -> std::option::Option<& [crate::types::VoiceProfileDomainSummary]> {
+    pub fn voice_profile_domains(
+        &self,
+    ) -> std::option::Option<&[crate::types::VoiceProfileDomainSummary]> {
         self.voice_profile_domains.as_deref()
     }
     /// <p>The token used to return the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListVoiceProfileDomainsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListVoiceProfileDomainsOutput {
     /// Creates a new builder-style object to manufacture [`ListVoiceProfileDomainsOutput`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput).
-    pub fn builder() -> crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsOutputBuilder
+    {
         crate::operation::list_voice_profile_domains::builders::ListVoiceProfileDomainsOutputBuilder::default()
     }
 }
@@ -37,7 +42,8 @@ impl ListVoiceProfileDomainsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListVoiceProfileDomainsOutputBuilder {
-    pub(crate) voice_profile_domains: std::option::Option<std::vec::Vec<crate::types::VoiceProfileDomainSummary>>,
+    pub(crate) voice_profile_domains:
+        std::option::Option<std::vec::Vec<crate::types::VoiceProfileDomainSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +55,17 @@ impl ListVoiceProfileDomainsOutputBuilder {
     /// <p>The list of voice profile domains.</p>
     pub fn voice_profile_domains(mut self, input: crate::types::VoiceProfileDomainSummary) -> Self {
         let mut v = self.voice_profile_domains.unwrap_or_default();
-                        v.push(input);
-                        self.voice_profile_domains = Some(v);
-                        self
+        v.push(input);
+        self.voice_profile_domains = Some(v);
+        self
     }
     /// <p>The list of voice profile domains.</p>
-    pub fn set_voice_profile_domains(mut self, input: std::option::Option<std::vec::Vec<crate::types::VoiceProfileDomainSummary>>) -> Self {
-        self.voice_profile_domains = input; self
+    pub fn set_voice_profile_domains(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VoiceProfileDomainSummary>>,
+    ) -> Self {
+        self.voice_profile_domains = input;
+        self
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +74,26 @@ impl ListVoiceProfileDomainsOutputBuilder {
     }
     /// <p>The token used to return the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListVoiceProfileDomainsOutput`](crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput).
-    pub fn build(self) -> crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput {
         crate::operation::list_voice_profile_domains::ListVoiceProfileDomainsOutput {
-            voice_profile_domains: self.voice_profile_domains
-            ,
-            next_token: self.next_token
-            ,
+            voice_profile_domains: self.voice_profile_domains,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

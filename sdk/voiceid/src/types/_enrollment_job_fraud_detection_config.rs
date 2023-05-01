@@ -3,7 +3,7 @@
 /// <p>The fraud detection configuration to be used during the batch speaker enrollment job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnrollmentJobFraudDetectionConfig  {
+pub struct EnrollmentJobFraudDetectionConfig {
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
     #[doc(hidden)]
     pub fraud_detection_action: std::option::Option<crate::types::FraudDetectionAction>,
@@ -16,7 +16,9 @@ pub struct EnrollmentJobFraudDetectionConfig  {
 }
 impl EnrollmentJobFraudDetectionConfig {
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
-    pub fn fraud_detection_action(&self) -> std::option::Option<& crate::types::FraudDetectionAction> {
+    pub fn fraud_detection_action(
+        &self,
+    ) -> std::option::Option<&crate::types::FraudDetectionAction> {
         self.fraud_detection_action.as_ref()
     }
     /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
@@ -24,7 +26,7 @@ impl EnrollmentJobFraudDetectionConfig {
         self.risk_threshold
     }
     /// <p>The identifier of watchlists against which fraud detection is performed. </p>
-    pub fn watchlist_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn watchlist_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.watchlist_ids.as_deref()
     }
 }
@@ -50,8 +52,12 @@ impl EnrollmentJobFraudDetectionConfigBuilder {
         self
     }
     /// <p>The action to take when the given speaker is flagged by the fraud detection system. The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing this value to <code>IGNORE</code> results in the speaker being enrolled even if they are flagged by the fraud detection system.</p>
-    pub fn set_fraud_detection_action(mut self, input: std::option::Option<crate::types::FraudDetectionAction>) -> Self {
-        self.fraud_detection_action = input; self
+    pub fn set_fraud_detection_action(
+        mut self,
+        input: std::option::Option<crate::types::FraudDetectionAction>,
+    ) -> Self {
+        self.fraud_detection_action = input;
+        self
     }
     /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
     pub fn risk_threshold(mut self, input: i32) -> Self {
@@ -60,7 +66,8 @@ impl EnrollmentJobFraudDetectionConfigBuilder {
     }
     /// <p>Threshold value for determining whether the speaker is a high risk to be fraudulent. If the detected risk score calculated by Voice ID is greater than or equal to the threshold, the speaker is considered a fraudster.</p>
     pub fn set_risk_threshold(mut self, input: std::option::Option<i32>) -> Self {
-        self.risk_threshold = input; self
+        self.risk_threshold = input;
+        self
     }
     /// Appends an item to `watchlist_ids`.
     ///
@@ -69,24 +76,24 @@ impl EnrollmentJobFraudDetectionConfigBuilder {
     /// <p>The identifier of watchlists against which fraud detection is performed. </p>
     pub fn watchlist_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.watchlist_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.watchlist_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.watchlist_ids = Some(v);
+        self
     }
     /// <p>The identifier of watchlists against which fraud detection is performed. </p>
-    pub fn set_watchlist_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.watchlist_ids = input; self
+    pub fn set_watchlist_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.watchlist_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnrollmentJobFraudDetectionConfig`](crate::types::EnrollmentJobFraudDetectionConfig).
     pub fn build(self) -> crate::types::EnrollmentJobFraudDetectionConfig {
         crate::types::EnrollmentJobFraudDetectionConfig {
-            fraud_detection_action: self.fraud_detection_action
-            ,
-            risk_threshold: self.risk_threshold
-            ,
-            watchlist_ids: self.watchlist_ids
-            ,
+            fraud_detection_action: self.fraud_detection_action,
+            risk_threshold: self.risk_threshold,
+            watchlist_ids: self.watchlist_ids,
         }
     }
 }
-

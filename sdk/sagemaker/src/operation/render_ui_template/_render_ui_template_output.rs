@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RenderUiTemplateOutput  {
+pub struct RenderUiTemplateOutput {
     /// <p>A Liquid template that renders the HTML for the worker UI.</p>
     #[doc(hidden)]
     pub rendered_content: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct RenderUiTemplateOutput  {
 }
 impl RenderUiTemplateOutput {
     /// <p>A Liquid template that renders the HTML for the worker UI.</p>
-    pub fn rendered_content(&self) -> std::option::Option<& str> {
+    pub fn rendered_content(&self) -> std::option::Option<&str> {
         self.rendered_content.as_deref()
     }
     /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered while rendering the template. If there were no errors, the list is empty.</p>
-    pub fn errors(&self) -> std::option::Option<& [crate::types::RenderingError]> {
+    pub fn errors(&self) -> std::option::Option<&[crate::types::RenderingError]> {
         self.errors.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RenderUiTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RenderUiTemplateOutput {
     /// Creates a new builder-style object to manufacture [`RenderUiTemplateOutput`](crate::operation::render_ui_template::RenderUiTemplateOutput).
-    pub fn builder() -> crate::operation::render_ui_template::builders::RenderUiTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::render_ui_template::builders::RenderUiTemplateOutputBuilder
+    {
         crate::operation::render_ui_template::builders::RenderUiTemplateOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl RenderUiTemplateOutputBuilder {
     }
     /// <p>A Liquid template that renders the HTML for the worker UI.</p>
     pub fn set_rendered_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rendered_content = input; self
+        self.rendered_content = input;
+        self
     }
     /// Appends an item to `errors`.
     ///
@@ -58,32 +60,33 @@ impl RenderUiTemplateOutputBuilder {
     /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered while rendering the template. If there were no errors, the list is empty.</p>
     pub fn errors(mut self, input: crate::types::RenderingError) -> Self {
         let mut v = self.errors.unwrap_or_default();
-                        v.push(input);
-                        self.errors = Some(v);
-                        self
+        v.push(input);
+        self.errors = Some(v);
+        self
     }
     /// <p>A list of one or more <code>RenderingError</code> objects if any were encountered while rendering the template. If there were no errors, the list is empty.</p>
-    pub fn set_errors(mut self, input: std::option::Option<std::vec::Vec<crate::types::RenderingError>>) -> Self {
-        self.errors = input; self
+    pub fn set_errors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RenderingError>>,
+    ) -> Self {
+        self.errors = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RenderUiTemplateOutput`](crate::operation::render_ui_template::RenderUiTemplateOutput).
     pub fn build(self) -> crate::operation::render_ui_template::RenderUiTemplateOutput {
         crate::operation::render_ui_template::RenderUiTemplateOutput {
-            rendered_content: self.rendered_content
-            ,
-            errors: self.errors
-            ,
+            rendered_content: self.rendered_content,
+            errors: self.errors,
             _request_id: self._request_id,
         }
     }
 }
-

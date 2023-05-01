@@ -3,7 +3,7 @@
 /// <p>The input structure for Map Matching operation type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MapMatchingConfig  {
+pub struct MapMatchingConfig {
     /// <p>The field name for the data that describes the identifier representing a collection of GPS points belonging to an individual trace.</p>
     #[doc(hidden)]
     pub id_attribute_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct MapMatchingConfig  {
 }
 impl MapMatchingConfig {
     /// <p>The field name for the data that describes the identifier representing a collection of GPS points belonging to an individual trace.</p>
-    pub fn id_attribute_name(&self) -> std::option::Option<& str> {
+    pub fn id_attribute_name(&self) -> std::option::Option<&str> {
         self.id_attribute_name.as_deref()
     }
     /// <p>The name of the Y-attribute</p>
-    pub fn y_attribute_name(&self) -> std::option::Option<& str> {
+    pub fn y_attribute_name(&self) -> std::option::Option<&str> {
         self.y_attribute_name.as_deref()
     }
     /// <p>The name of the X-attribute</p>
-    pub fn x_attribute_name(&self) -> std::option::Option<& str> {
+    pub fn x_attribute_name(&self) -> std::option::Option<&str> {
         self.x_attribute_name.as_deref()
     }
     /// <p>The name of the timestamp attribute.</p>
-    pub fn timestamp_attribute_name(&self) -> std::option::Option<& str> {
+    pub fn timestamp_attribute_name(&self) -> std::option::Option<&str> {
         self.timestamp_attribute_name.as_deref()
     }
 }
@@ -58,8 +58,12 @@ impl MapMatchingConfigBuilder {
         self
     }
     /// <p>The field name for the data that describes the identifier representing a collection of GPS points belonging to an individual trace.</p>
-    pub fn set_id_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id_attribute_name = input; self
+    pub fn set_id_attribute_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.id_attribute_name = input;
+        self
     }
     /// <p>The name of the Y-attribute</p>
     pub fn y_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +72,8 @@ impl MapMatchingConfigBuilder {
     }
     /// <p>The name of the Y-attribute</p>
     pub fn set_y_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.y_attribute_name = input; self
+        self.y_attribute_name = input;
+        self
     }
     /// <p>The name of the X-attribute</p>
     pub fn x_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +82,8 @@ impl MapMatchingConfigBuilder {
     }
     /// <p>The name of the X-attribute</p>
     pub fn set_x_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.x_attribute_name = input; self
+        self.x_attribute_name = input;
+        self
     }
     /// <p>The name of the timestamp attribute.</p>
     pub fn timestamp_attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,21 +91,20 @@ impl MapMatchingConfigBuilder {
         self
     }
     /// <p>The name of the timestamp attribute.</p>
-    pub fn set_timestamp_attribute_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.timestamp_attribute_name = input; self
+    pub fn set_timestamp_attribute_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.timestamp_attribute_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`MapMatchingConfig`](crate::types::MapMatchingConfig).
     pub fn build(self) -> crate::types::MapMatchingConfig {
         crate::types::MapMatchingConfig {
-            id_attribute_name: self.id_attribute_name
-            ,
-            y_attribute_name: self.y_attribute_name
-            ,
-            x_attribute_name: self.x_attribute_name
-            ,
-            timestamp_attribute_name: self.timestamp_attribute_name
-            ,
+            id_attribute_name: self.id_attribute_name,
+            y_attribute_name: self.y_attribute_name,
+            x_attribute_name: self.x_attribute_name,
+            timestamp_attribute_name: self.timestamp_attribute_name,
         }
     }
 }
-

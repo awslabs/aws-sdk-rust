@@ -3,7 +3,7 @@
 /// <p>The URIs for function resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceUri  {
+pub struct ResourceUri {
     /// <p>The type of the resource.</p>
     #[doc(hidden)]
     pub resource_type: std::option::Option<crate::types::ResourceType>,
@@ -13,11 +13,11 @@ pub struct ResourceUri  {
 }
 impl ResourceUri {
     /// <p>The type of the resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The URI for accessing the resource.</p>
-    pub fn uri(&self) -> std::option::Option<& str> {
+    pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ResourceUriBuilder {
         self
     }
     /// <p>The type of the resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The URI for accessing the resource.</p>
     pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl ResourceUriBuilder {
     }
     /// <p>The URI for accessing the resource.</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input; self
+        self.uri = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceUri`](crate::types::ResourceUri).
     pub fn build(self) -> crate::types::ResourceUri {
         crate::types::ResourceUri {
-            resource_type: self.resource_type
-            ,
-            uri: self.uri
-            ,
+            resource_type: self.resource_type,
+            uri: self.uri,
         }
     }
 }
-

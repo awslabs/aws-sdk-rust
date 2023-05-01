@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InitializeServiceInput  {
-}
+pub struct InitializeServiceInput {}
 impl InitializeServiceInput {
     /// Creates a new builder-style object to manufacture [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
-    pub fn builder() -> crate::operation::initialize_service::builders::InitializeServiceInputBuilder {
+    pub fn builder() -> crate::operation::initialize_service::builders::InitializeServiceInputBuilder
+    {
         crate::operation::initialize_service::builders::InitializeServiceInputBuilder::default()
     }
 }
@@ -14,15 +14,15 @@ impl InitializeServiceInput {
 /// A builder for [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct InitializeServiceInputBuilder {
-}
+pub struct InitializeServiceInputBuilder {}
 impl InitializeServiceInputBuilder {
     /// Consumes the builder and constructs a [`InitializeServiceInput`](crate::operation::initialize_service::InitializeServiceInput).
-    pub fn build(self) -> Result<crate::operation::initialize_service::InitializeServiceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::initialize_service::InitializeServiceInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::initialize_service::InitializeServiceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::initialize_service::InitializeServiceInput {})
     }
 }
-

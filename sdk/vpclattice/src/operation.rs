@@ -156,4 +156,3 @@ pub mod update_service_network_vpc_association;
 
 /// Types for the `UpdateTargetGroup` operation.
 pub mod update_target_group;
-

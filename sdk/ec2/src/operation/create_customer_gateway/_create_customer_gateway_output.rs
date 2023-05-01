@@ -3,7 +3,7 @@
 /// <p>Contains the output of CreateCustomerGateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCustomerGatewayOutput  {
+pub struct CreateCustomerGatewayOutput {
     /// <p>Information about the customer gateway.</p>
     #[doc(hidden)]
     pub customer_gateway: std::option::Option<crate::types::CustomerGateway>,
@@ -11,18 +11,20 @@ pub struct CreateCustomerGatewayOutput  {
 }
 impl CreateCustomerGatewayOutput {
     /// <p>Information about the customer gateway.</p>
-    pub fn customer_gateway(&self) -> std::option::Option<& crate::types::CustomerGateway> {
+    pub fn customer_gateway(&self) -> std::option::Option<&crate::types::CustomerGateway> {
         self.customer_gateway.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateCustomerGatewayOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateCustomerGatewayOutput {
     /// Creates a new builder-style object to manufacture [`CreateCustomerGatewayOutput`](crate::operation::create_customer_gateway::CreateCustomerGatewayOutput).
-    pub fn builder() -> crate::operation::create_customer_gateway::builders::CreateCustomerGatewayOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_customer_gateway::builders::CreateCustomerGatewayOutputBuilder
+    {
         crate::operation::create_customer_gateway::builders::CreateCustomerGatewayOutputBuilder::default()
     }
 }
@@ -41,25 +43,27 @@ impl CreateCustomerGatewayOutputBuilder {
         self
     }
     /// <p>Information about the customer gateway.</p>
-    pub fn set_customer_gateway(mut self, input: std::option::Option<crate::types::CustomerGateway>) -> Self {
-        self.customer_gateway = input; self
+    pub fn set_customer_gateway(
+        mut self,
+        input: std::option::Option<crate::types::CustomerGateway>,
+    ) -> Self {
+        self.customer_gateway = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateCustomerGatewayOutput`](crate::operation::create_customer_gateway::CreateCustomerGatewayOutput).
     pub fn build(self) -> crate::operation::create_customer_gateway::CreateCustomerGatewayOutput {
         crate::operation::create_customer_gateway::CreateCustomerGatewayOutput {
-            customer_gateway: self.customer_gateway
-            ,
+            customer_gateway: self.customer_gateway,
             _request_id: self._request_id,
         }
     }
 }
-

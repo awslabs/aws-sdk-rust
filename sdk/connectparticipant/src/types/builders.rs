@@ -14,4 +14,3 @@ pub use crate::types::_start_position::StartPositionBuilder;
 pub use crate::types::_connection_credentials::ConnectionCredentialsBuilder;
 
 pub use crate::types::_websocket::WebsocketBuilder;
-

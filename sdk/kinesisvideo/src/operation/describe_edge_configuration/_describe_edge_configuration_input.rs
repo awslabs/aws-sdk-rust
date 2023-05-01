@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEdgeConfigurationInput  {
+pub struct DescribeEdgeConfigurationInput {
     /// <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeEdgeConfigurationInput  {
 }
 impl DescribeEdgeConfigurationInput {
     /// <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
-    pub fn stream_name(&self) -> std::option::Option<& str> {
+    pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or the <code>StreamARN</code>.</p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
 }
 impl DescribeEdgeConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DescribeEdgeConfigurationInput`](crate::operation::describe_edge_configuration::DescribeEdgeConfigurationInput).
-    pub fn builder() -> crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationInputBuilder{
         crate::operation::describe_edge_configuration::builders::DescribeEdgeConfigurationInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeEdgeConfigurationInputBuilder {
     }
     /// <p>The name of the stream whose edge configuration you want to update. Specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input; self
+        self.stream_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or the <code>StreamARN</code>.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,21 @@ impl DescribeEdgeConfigurationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or the <code>StreamARN</code>.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeEdgeConfigurationInput`](crate::operation::describe_edge_configuration::DescribeEdgeConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::describe_edge_configuration::DescribeEdgeConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_edge_configuration::DescribeEdgeConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_edge_configuration::DescribeEdgeConfigurationInput {
-                stream_name: self.stream_name
-                ,
-                stream_arn: self.stream_arn
-                ,
-            }
+                stream_name: self.stream_name,
+                stream_arn: self.stream_arn,
+            },
         )
     }
 }
-

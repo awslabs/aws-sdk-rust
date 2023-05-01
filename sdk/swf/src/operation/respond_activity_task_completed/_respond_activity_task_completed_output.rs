@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RespondActivityTaskCompletedOutput  {
+pub struct RespondActivityTaskCompletedOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for RespondActivityTaskCompletedOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RespondActivityTaskCompletedOutput {
     /// Creates a new builder-style object to manufacture [`RespondActivityTaskCompletedOutput`](crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput).
-    pub fn builder() -> crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedOutputBuilder {
+    pub fn builder() -> crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedOutputBuilder{
         crate::operation::respond_activity_task_completed::builders::RespondActivityTaskCompletedOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct RespondActivityTaskCompletedOutputBuilder {
 }
 impl RespondActivityTaskCompletedOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RespondActivityTaskCompletedOutput`](crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput).
-    pub fn build(self) -> crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput {
         crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput {
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Represents the details of the specified receipt rule set.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeReceiptRuleSetOutput  {
+pub struct DescribeReceiptRuleSetOutput {
     /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
     #[doc(hidden)]
     pub metadata: std::option::Option<crate::types::ReceiptRuleSetMetadata>,
@@ -14,22 +14,24 @@ pub struct DescribeReceiptRuleSetOutput  {
 }
 impl DescribeReceiptRuleSetOutput {
     /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
-    pub fn metadata(&self) -> std::option::Option<& crate::types::ReceiptRuleSetMetadata> {
+    pub fn metadata(&self) -> std::option::Option<&crate::types::ReceiptRuleSetMetadata> {
         self.metadata.as_ref()
     }
     /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
-    pub fn rules(&self) -> std::option::Option<& [crate::types::ReceiptRule]> {
+    pub fn rules(&self) -> std::option::Option<&[crate::types::ReceiptRule]> {
         self.rules.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeReceiptRuleSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeReceiptRuleSetOutput {
     /// Creates a new builder-style object to manufacture [`DescribeReceiptRuleSetOutput`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput).
-    pub fn builder() -> crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetOutputBuilder
+    {
         crate::operation::describe_receipt_rule_set::builders::DescribeReceiptRuleSetOutputBuilder::default()
     }
 }
@@ -49,8 +51,12 @@ impl DescribeReceiptRuleSetOutputBuilder {
         self
     }
     /// <p>The metadata for the receipt rule set, which consists of the rule set name and the timestamp of when the rule set was created.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<crate::types::ReceiptRuleSetMetadata>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<crate::types::ReceiptRuleSetMetadata>,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     /// Appends an item to `rules`.
     ///
@@ -59,32 +65,35 @@ impl DescribeReceiptRuleSetOutputBuilder {
     /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
     pub fn rules(mut self, input: crate::types::ReceiptRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-                        v.push(input);
-                        self.rules = Some(v);
-                        self
+        v.push(input);
+        self.rules = Some(v);
+        self
     }
     /// <p>A list of the receipt rules that belong to the specified receipt rule set.</p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReceiptRule>>) -> Self {
-        self.rules = input; self
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReceiptRule>>,
+    ) -> Self {
+        self.rules = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeReceiptRuleSetOutput`](crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput).
-    pub fn build(self) -> crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput {
         crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput {
-            metadata: self.metadata
-            ,
-            rules: self.rules
-            ,
+            metadata: self.metadata,
+            rules: self.rules,
             _request_id: self._request_id,
         }
     }
 }
-

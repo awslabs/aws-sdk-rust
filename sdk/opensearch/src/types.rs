@@ -508,4 +508,3 @@ pub mod builders;
 
 /// Error types that Amazon OpenSearch Service can respond with.
 pub mod error;
-

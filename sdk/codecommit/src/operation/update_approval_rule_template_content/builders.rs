@@ -4,57 +4,67 @@ pub use crate::operation::update_approval_rule_template_content::_update_approva
 pub use crate::operation::update_approval_rule_template_content::_update_approval_rule_template_content_input::UpdateApprovalRuleTemplateContentInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateApprovalRuleTemplateContent`.
-/// 
+///
 /// <p>Updates the content of an approval rule template. You can change the number of required approvals, the membership of the approval rule, and whether an approval pool is defined.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateApprovalRuleTemplateContentFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_approval_rule_template_content::builders::UpdateApprovalRuleTemplateContentInputBuilder,
 }
-impl UpdateApprovalRuleTemplateContentFluentBuilder  {
+impl UpdateApprovalRuleTemplateContentFluentBuilder {
     /// Creates a new `UpdateApprovalRuleTemplateContent`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContent, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput, aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
     pub fn approval_rule_template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.approval_rule_template_name(input.into());
         self
     }
     /// <p>The name of the approval rule template where you want to update the content of the rule. </p>
-    pub fn set_approval_rule_template_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_approval_rule_template_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_approval_rule_template_name(input);
         self
     }
@@ -74,9 +84,11 @@ impl UpdateApprovalRuleTemplateContentFluentBuilder  {
         self
     }
     /// <p>The SHA-256 hash signature for the content of the approval rule. You can retrieve this information by using <code>GetPullRequest</code>.</p>
-    pub fn set_existing_rule_content_sha256(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_existing_rule_content_sha256(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_existing_rule_content_sha256(input);
         self
     }
 }
-

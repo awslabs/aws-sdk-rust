@@ -3,7 +3,7 @@
 /// <p>Describes a placement group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PlacementGroup  {
+pub struct PlacementGroup {
     /// <p>The name of the placement group.</p>
     #[doc(hidden)]
     pub group_name: std::option::Option<std::string::String>,
@@ -31,15 +31,15 @@ pub struct PlacementGroup  {
 }
 impl PlacementGroup {
     /// <p>The name of the placement group.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The state of the placement group.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::PlacementGroupState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::PlacementGroupState> {
         self.state.as_ref()
     }
     /// <p>The placement strategy.</p>
-    pub fn strategy(&self) -> std::option::Option<& crate::types::PlacementStrategy> {
+    pub fn strategy(&self) -> std::option::Option<&crate::types::PlacementStrategy> {
         self.strategy.as_ref()
     }
     /// <p>The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.</p>
@@ -47,19 +47,19 @@ impl PlacementGroup {
         self.partition_count
     }
     /// <p>The ID of the placement group.</p>
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>Any tags applied to the placement group.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the placement group.</p>
-    pub fn group_arn(&self) -> std::option::Option<& str> {
+    pub fn group_arn(&self) -> std::option::Option<&str> {
         self.group_arn.as_deref()
     }
     /// <p>The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.</p>
-    pub fn spread_level(&self) -> std::option::Option<& crate::types::SpreadLevel> {
+    pub fn spread_level(&self) -> std::option::Option<&crate::types::SpreadLevel> {
         self.spread_level.as_ref()
     }
 }
@@ -91,7 +91,8 @@ impl PlacementGroupBuilder {
     }
     /// <p>The name of the placement group.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// <p>The state of the placement group.</p>
     pub fn state(mut self, input: crate::types::PlacementGroupState) -> Self {
@@ -99,8 +100,12 @@ impl PlacementGroupBuilder {
         self
     }
     /// <p>The state of the placement group.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::PlacementGroupState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::PlacementGroupState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>The placement strategy.</p>
     pub fn strategy(mut self, input: crate::types::PlacementStrategy) -> Self {
@@ -108,8 +113,12 @@ impl PlacementGroupBuilder {
         self
     }
     /// <p>The placement strategy.</p>
-    pub fn set_strategy(mut self, input: std::option::Option<crate::types::PlacementStrategy>) -> Self {
-        self.strategy = input; self
+    pub fn set_strategy(
+        mut self,
+        input: std::option::Option<crate::types::PlacementStrategy>,
+    ) -> Self {
+        self.strategy = input;
+        self
     }
     /// <p>The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.</p>
     pub fn partition_count(mut self, input: i32) -> Self {
@@ -118,7 +127,8 @@ impl PlacementGroupBuilder {
     }
     /// <p>The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.</p>
     pub fn set_partition_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.partition_count = input; self
+        self.partition_count = input;
+        self
     }
     /// <p>The ID of the placement group.</p>
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,7 +137,8 @@ impl PlacementGroupBuilder {
     }
     /// <p>The ID of the placement group.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -136,13 +147,17 @@ impl PlacementGroupBuilder {
     /// <p>Any tags applied to the placement group.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Any tags applied to the placement group.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the placement group.</p>
     pub fn group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,7 +166,8 @@ impl PlacementGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the placement group.</p>
     pub fn set_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_arn = input; self
+        self.group_arn = input;
+        self
     }
     /// <p>The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.</p>
     pub fn spread_level(mut self, input: crate::types::SpreadLevel) -> Self {
@@ -159,29 +175,24 @@ impl PlacementGroupBuilder {
         self
     }
     /// <p>The spread level for the placement group. <i>Only</i> Outpost placement groups can be spread across hosts.</p>
-    pub fn set_spread_level(mut self, input: std::option::Option<crate::types::SpreadLevel>) -> Self {
-        self.spread_level = input; self
+    pub fn set_spread_level(
+        mut self,
+        input: std::option::Option<crate::types::SpreadLevel>,
+    ) -> Self {
+        self.spread_level = input;
+        self
     }
     /// Consumes the builder and constructs a [`PlacementGroup`](crate::types::PlacementGroup).
     pub fn build(self) -> crate::types::PlacementGroup {
         crate::types::PlacementGroup {
-            group_name: self.group_name
-            ,
-            state: self.state
-            ,
-            strategy: self.strategy
-            ,
-            partition_count: self.partition_count
-            ,
-            group_id: self.group_id
-            ,
-            tags: self.tags
-            ,
-            group_arn: self.group_arn
-            ,
-            spread_level: self.spread_level
-            ,
+            group_name: self.group_name,
+            state: self.state,
+            strategy: self.strategy,
+            partition_count: self.partition_count,
+            group_id: self.group_id,
+            tags: self.tags,
+            group_arn: self.group_arn,
+            spread_level: self.spread_level,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDeviceInput  {
+pub struct DescribeDeviceInput {
     /// <p>Next token of device description.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct DescribeDeviceInput  {
 }
 impl DescribeDeviceInput {
     /// <p>Next token of device description.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The unique ID of the device.</p>
-    pub fn device_name(&self) -> std::option::Option<& str> {
+    pub fn device_name(&self) -> std::option::Option<&str> {
         self.device_name.as_deref()
     }
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn device_fleet_name(&self) -> std::option::Option<& str> {
+    pub fn device_fleet_name(&self) -> std::option::Option<&str> {
         self.device_fleet_name.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl DescribeDeviceInputBuilder {
     }
     /// <p>Next token of device description.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The unique ID of the device.</p>
     pub fn device_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DescribeDeviceInputBuilder {
     }
     /// <p>The unique ID of the device.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_name = input; self
+        self.device_name = input;
+        self
     }
     /// <p>The name of the fleet the devices belong to.</p>
     pub fn device_fleet_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,21 +69,24 @@ impl DescribeDeviceInputBuilder {
         self
     }
     /// <p>The name of the fleet the devices belong to.</p>
-    pub fn set_device_fleet_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_fleet_name = input; self
+    pub fn set_device_fleet_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.device_fleet_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
-    pub fn build(self) -> Result<crate::operation::describe_device::DescribeDeviceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_device::DescribeDeviceInput {
-                next_token: self.next_token
-                ,
-                device_name: self.device_name
-                ,
-                device_fleet_name: self.device_fleet_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_device::DescribeDeviceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_device::DescribeDeviceInput {
+            next_token: self.next_token,
+            device_name: self.device_name,
+            device_fleet_name: self.device_fleet_name,
+        })
     }
 }
-

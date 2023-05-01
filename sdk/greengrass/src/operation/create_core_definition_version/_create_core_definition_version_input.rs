@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateCoreDefinitionVersionInput  {
+pub struct CreateCoreDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct CreateCoreDefinitionVersionInput  {
 }
 impl CreateCoreDefinitionVersionInput {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> std::option::Option<& str> {
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the core definition.
-    pub fn core_definition_id(&self) -> std::option::Option<& str> {
+    pub fn core_definition_id(&self) -> std::option::Option<&str> {
         self.core_definition_id.as_deref()
     }
     /// A list of cores in the core definition version.
-    pub fn cores(&self) -> std::option::Option<& [crate::types::Core]> {
+    pub fn cores(&self) -> std::option::Option<&[crate::types::Core]> {
         self.cores.as_deref()
     }
 }
 impl CreateCoreDefinitionVersionInput {
     /// Creates a new builder-style object to manufacture [`CreateCoreDefinitionVersionInput`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput).
-    pub fn builder() -> crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder {
+    pub fn builder() -> crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder{
         crate::operation::create_core_definition_version::builders::CreateCoreDefinitionVersionInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl CreateCoreDefinitionVersionInputBuilder {
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amzn_client_token = input; self
+    pub fn set_amzn_client_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.amzn_client_token = input;
+        self
     }
     /// The ID of the core definition.
     pub fn core_definition_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,8 +62,12 @@ impl CreateCoreDefinitionVersionInputBuilder {
         self
     }
     /// The ID of the core definition.
-    pub fn set_core_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.core_definition_id = input; self
+    pub fn set_core_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.core_definition_id = input;
+        self
     }
     /// Appends an item to `cores`.
     ///
@@ -68,26 +76,31 @@ impl CreateCoreDefinitionVersionInputBuilder {
     /// A list of cores in the core definition version.
     pub fn cores(mut self, input: crate::types::Core) -> Self {
         let mut v = self.cores.unwrap_or_default();
-                        v.push(input);
-                        self.cores = Some(v);
-                        self
+        v.push(input);
+        self.cores = Some(v);
+        self
     }
     /// A list of cores in the core definition version.
-    pub fn set_cores(mut self, input: std::option::Option<std::vec::Vec<crate::types::Core>>) -> Self {
-        self.cores = input; self
+    pub fn set_cores(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Core>>,
+    ) -> Self {
+        self.cores = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateCoreDefinitionVersionInput`](crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput).
-    pub fn build(self) -> Result<crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_core_definition_version::CreateCoreDefinitionVersionInput {
-                amzn_client_token: self.amzn_client_token
-                ,
-                core_definition_id: self.core_definition_id
-                ,
-                cores: self.cores
-                ,
-            }
+                amzn_client_token: self.amzn_client_token,
+                core_definition_id: self.core_definition_id,
+                cores: self.cores,
+            },
         )
     }
 }
-

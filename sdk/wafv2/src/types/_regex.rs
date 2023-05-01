@@ -3,14 +3,14 @@
 /// <p>A single regular expression. This is used in a <code>RegexPatternSet</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Regex  {
+pub struct Regex {
     /// <p>The string representing the regular expression.</p>
     #[doc(hidden)]
     pub regex_string: std::option::Option<std::string::String>,
 }
 impl Regex {
     /// <p>The string representing the regular expression.</p>
-    pub fn regex_string(&self) -> std::option::Option<& str> {
+    pub fn regex_string(&self) -> std::option::Option<&str> {
         self.regex_string.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl RegexBuilder {
     }
     /// <p>The string representing the regular expression.</p>
     pub fn set_regex_string(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.regex_string = input; self
+        self.regex_string = input;
+        self
     }
     /// Consumes the builder and constructs a [`Regex`](crate::types::Regex).
     pub fn build(self) -> crate::types::Regex {
         crate::types::Regex {
-            regex_string: self.regex_string
-            ,
+            regex_string: self.regex_string,
         }
     }
 }
-

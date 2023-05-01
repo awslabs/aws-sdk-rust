@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetImageRecipePolicyInput  {
+pub struct GetImageRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
     #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
 }
 impl GetImageRecipePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
-    pub fn image_recipe_arn(&self) -> std::option::Option<& str> {
+    pub fn image_recipe_arn(&self) -> std::option::Option<&str> {
         self.image_recipe_arn.as_deref()
     }
 }
 impl GetImageRecipePolicyInput {
     /// Creates a new builder-style object to manufacture [`GetImageRecipePolicyInput`](crate::operation::get_image_recipe_policy::GetImageRecipePolicyInput).
-    pub fn builder() -> crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyInputBuilder {
         crate::operation::get_image_recipe_policy::builders::GetImageRecipePolicyInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetImageRecipePolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the image recipe whose policy you want to retrieve.</p>
     pub fn set_image_recipe_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_recipe_arn = input; self
+        self.image_recipe_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetImageRecipePolicyInput`](crate::operation::get_image_recipe_policy::GetImageRecipePolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_image_recipe_policy::GetImageRecipePolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_image_recipe_policy::GetImageRecipePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_image_recipe_policy::GetImageRecipePolicyInput {
-                image_recipe_arn: self.image_recipe_arn
-                ,
-            }
+                image_recipe_arn: self.image_recipe_arn,
+            },
         )
     }
 }
-

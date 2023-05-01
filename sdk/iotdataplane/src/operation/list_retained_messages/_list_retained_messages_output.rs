@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRetainedMessagesOutput  {
+pub struct ListRetainedMessagesOutput {
     /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
     #[doc(hidden)]
     pub retained_topics: std::option::Option<std::vec::Vec<crate::types::RetainedMessageSummary>>,
@@ -13,22 +13,23 @@ pub struct ListRetainedMessagesOutput  {
 }
 impl ListRetainedMessagesOutput {
     /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
-    pub fn retained_topics(&self) -> std::option::Option<& [crate::types::RetainedMessageSummary]> {
+    pub fn retained_topics(&self) -> std::option::Option<&[crate::types::RetainedMessageSummary]> {
         self.retained_topics.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRetainedMessagesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListRetainedMessagesOutput {
     /// Creates a new builder-style object to manufacture [`ListRetainedMessagesOutput`](crate::operation::list_retained_messages::ListRetainedMessagesOutput).
-    pub fn builder() -> crate::operation::list_retained_messages::builders::ListRetainedMessagesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_retained_messages::builders::ListRetainedMessagesOutputBuilder {
         crate::operation::list_retained_messages::builders::ListRetainedMessagesOutputBuilder::default()
     }
 }
@@ -37,7 +38,8 @@ impl ListRetainedMessagesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListRetainedMessagesOutputBuilder {
-    pub(crate) retained_topics: std::option::Option<std::vec::Vec<crate::types::RetainedMessageSummary>>,
+    pub(crate) retained_topics:
+        std::option::Option<std::vec::Vec<crate::types::RetainedMessageSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +51,17 @@ impl ListRetainedMessagesOutputBuilder {
     /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
     pub fn retained_topics(mut self, input: crate::types::RetainedMessageSummary) -> Self {
         let mut v = self.retained_topics.unwrap_or_default();
-                        v.push(input);
-                        self.retained_topics = Some(v);
-                        self
+        v.push(input);
+        self.retained_topics = Some(v);
+        self
     }
     /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
-    pub fn set_retained_topics(mut self, input: std::option::Option<std::vec::Vec<crate::types::RetainedMessageSummary>>) -> Self {
-        self.retained_topics = input; self
+    pub fn set_retained_topics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RetainedMessageSummary>>,
+    ) -> Self {
+        self.retained_topics = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListRetainedMessagesOutputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListRetainedMessagesOutput`](crate::operation::list_retained_messages::ListRetainedMessagesOutput).
     pub fn build(self) -> crate::operation::list_retained_messages::ListRetainedMessagesOutput {
         crate::operation::list_retained_messages::ListRetainedMessagesOutput {
-            retained_topics: self.retained_topics
-            ,
-            next_token: self.next_token
-            ,
+            retained_topics: self.retained_topics,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

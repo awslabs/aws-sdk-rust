@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutSnapshotBlockOutput  {
+pub struct PutSnapshotBlockOutput {
     /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
     #[doc(hidden)]
     pub checksum: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct PutSnapshotBlockOutput  {
 }
 impl PutSnapshotBlockOutput {
     /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
-    pub fn checksum(&self) -> std::option::Option<& str> {
+    pub fn checksum(&self) -> std::option::Option<&str> {
         self.checksum.as_deref()
     }
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-    pub fn checksum_algorithm(&self) -> std::option::Option<& crate::types::ChecksumAlgorithm> {
+    pub fn checksum_algorithm(&self) -> std::option::Option<&crate::types::ChecksumAlgorithm> {
         self.checksum_algorithm.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutSnapshotBlockOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutSnapshotBlockOutput {
     /// Creates a new builder-style object to manufacture [`PutSnapshotBlockOutput`](crate::operation::put_snapshot_block::PutSnapshotBlockOutput).
-    pub fn builder() -> crate::operation::put_snapshot_block::builders::PutSnapshotBlockOutputBuilder {
+    pub fn builder() -> crate::operation::put_snapshot_block::builders::PutSnapshotBlockOutputBuilder
+    {
         crate::operation::put_snapshot_block::builders::PutSnapshotBlockOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl PutSnapshotBlockOutputBuilder {
     }
     /// <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
     pub fn set_checksum(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.checksum = input; self
+        self.checksum = input;
+        self
     }
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
     pub fn checksum_algorithm(mut self, input: crate::types::ChecksumAlgorithm) -> Self {
@@ -57,27 +59,28 @@ impl PutSnapshotBlockOutputBuilder {
         self
     }
     /// <p>The algorithm used by Amazon EBS to generate the checksum.</p>
-    pub fn set_checksum_algorithm(mut self, input: std::option::Option<crate::types::ChecksumAlgorithm>) -> Self {
-        self.checksum_algorithm = input; self
+    pub fn set_checksum_algorithm(
+        mut self,
+        input: std::option::Option<crate::types::ChecksumAlgorithm>,
+    ) -> Self {
+        self.checksum_algorithm = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutSnapshotBlockOutput`](crate::operation::put_snapshot_block::PutSnapshotBlockOutput).
     pub fn build(self) -> crate::operation::put_snapshot_block::PutSnapshotBlockOutput {
         crate::operation::put_snapshot_block::PutSnapshotBlockOutput {
-            checksum: self.checksum
-            ,
-            checksum_algorithm: self.checksum_algorithm
-            ,
+            checksum: self.checksum,
+            checksum_algorithm: self.checksum_algorithm,
             _request_id: self._request_id,
         }
     }
 }
-

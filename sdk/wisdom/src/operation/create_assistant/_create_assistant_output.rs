@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAssistantOutput  {
+pub struct CreateAssistantOutput {
     /// <p>Information about the assistant.</p>
     #[doc(hidden)]
     pub assistant: std::option::Option<crate::types::AssistantData>,
@@ -10,15 +10,15 @@ pub struct CreateAssistantOutput  {
 }
 impl CreateAssistantOutput {
     /// <p>Information about the assistant.</p>
-    pub fn assistant(&self) -> std::option::Option<& crate::types::AssistantData> {
+    pub fn assistant(&self) -> std::option::Option<&crate::types::AssistantData> {
         self.assistant.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAssistantOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAssistantOutput {
     /// Creates a new builder-style object to manufacture [`CreateAssistantOutput`](crate::operation::create_assistant::CreateAssistantOutput).
     pub fn builder() -> crate::operation::create_assistant::builders::CreateAssistantOutputBuilder {
@@ -40,25 +40,27 @@ impl CreateAssistantOutputBuilder {
         self
     }
     /// <p>Information about the assistant.</p>
-    pub fn set_assistant(mut self, input: std::option::Option<crate::types::AssistantData>) -> Self {
-        self.assistant = input; self
+    pub fn set_assistant(
+        mut self,
+        input: std::option::Option<crate::types::AssistantData>,
+    ) -> Self {
+        self.assistant = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAssistantOutput`](crate::operation::create_assistant::CreateAssistantOutput).
     pub fn build(self) -> crate::operation::create_assistant::CreateAssistantOutput {
         crate::operation::create_assistant::CreateAssistantOutput {
-            assistant: self.assistant
-            ,
+            assistant: self.assistant,
             _request_id: self._request_id,
         }
     }
 }
-

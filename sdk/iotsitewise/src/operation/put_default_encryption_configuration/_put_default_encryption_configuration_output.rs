@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDefaultEncryptionConfigurationOutput  {
+pub struct PutDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     #[doc(hidden)]
     pub encryption_type: std::option::Option<crate::types::EncryptionType>,
@@ -16,26 +16,26 @@ pub struct PutDefaultEncryptionConfigurationOutput  {
 }
 impl PutDefaultEncryptionConfigurationOutput {
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn encryption_type(&self) -> std::option::Option<& crate::types::EncryptionType> {
+    pub fn encryption_type(&self) -> std::option::Option<&crate::types::EncryptionType> {
         self.encryption_type.as_ref()
     }
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
-    pub fn kms_key_arn(&self) -> std::option::Option<& str> {
+    pub fn kms_key_arn(&self) -> std::option::Option<&str> {
         self.kms_key_arn.as_deref()
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
-    pub fn configuration_status(&self) -> std::option::Option<& crate::types::ConfigurationStatus> {
+    pub fn configuration_status(&self) -> std::option::Option<&crate::types::ConfigurationStatus> {
         self.configuration_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for PutDefaultEncryptionConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutDefaultEncryptionConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutDefaultEncryptionConfigurationOutput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput).
-    pub fn builder() -> crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationOutputBuilder{
         crate::operation::put_default_encryption_configuration::builders::PutDefaultEncryptionConfigurationOutputBuilder::default()
     }
 }
@@ -56,8 +56,12 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
         self
     }
     /// <p>The type of encryption used for the encryption configuration.</p>
-    pub fn set_encryption_type(mut self, input: std::option::Option<crate::types::EncryptionType>) -> Self {
-        self.encryption_type = input; self
+    pub fn set_encryption_type(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionType>,
+    ) -> Self {
+        self.encryption_type = input;
+        self
     }
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +70,8 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
     }
     /// <p>The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub fn set_kms_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_arn = input; self
+        self.kms_key_arn = input;
+        self
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
     pub fn configuration_status(mut self, input: crate::types::ConfigurationStatus) -> Self {
@@ -74,20 +79,24 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
         self
     }
     /// <p>The status of the account configuration. This contains the <code>ConfigurationState</code>. If there is an error, it also contains the <code>ErrorDetails</code>.</p>
-    pub fn set_configuration_status(mut self, input: std::option::Option<crate::types::ConfigurationStatus>) -> Self {
-        self.configuration_status = input; self
+    pub fn set_configuration_status(
+        mut self,
+        input: std::option::Option<crate::types::ConfigurationStatus>,
+    ) -> Self {
+        self.configuration_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutDefaultEncryptionConfigurationOutput`](crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput).
-    pub fn build(self) -> crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput {
+    pub fn build(self) -> crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput{
         crate::operation::put_default_encryption_configuration::PutDefaultEncryptionConfigurationOutput {
             encryption_type: self.encryption_type
             ,
@@ -99,4 +108,3 @@ impl PutDefaultEncryptionConfigurationOutputBuilder {
         }
     }
 }
-

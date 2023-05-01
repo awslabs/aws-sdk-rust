@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AddStorageSystemOutput  {
+pub struct AddStorageSystemOutput {
     /// <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
     #[doc(hidden)]
     pub storage_system_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,19 @@ pub struct AddStorageSystemOutput  {
 }
 impl AddStorageSystemOutput {
     /// <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
-    pub fn storage_system_arn(&self) -> std::option::Option<& str> {
+    pub fn storage_system_arn(&self) -> std::option::Option<&str> {
         self.storage_system_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AddStorageSystemOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AddStorageSystemOutput {
     /// Creates a new builder-style object to manufacture [`AddStorageSystemOutput`](crate::operation::add_storage_system::AddStorageSystemOutput).
-    pub fn builder() -> crate::operation::add_storage_system::builders::AddStorageSystemOutputBuilder {
+    pub fn builder() -> crate::operation::add_storage_system::builders::AddStorageSystemOutputBuilder
+    {
         crate::operation::add_storage_system::builders::AddStorageSystemOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl AddStorageSystemOutputBuilder {
         self
     }
     /// <p>The ARN of the on-premises storage system that you can use with DataSync Discovery.</p>
-    pub fn set_storage_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.storage_system_arn = input; self
+    pub fn set_storage_system_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.storage_system_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AddStorageSystemOutput`](crate::operation::add_storage_system::AddStorageSystemOutput).
     pub fn build(self) -> crate::operation::add_storage_system::AddStorageSystemOutput {
         crate::operation::add_storage_system::AddStorageSystemOutput {
-            storage_system_arn: self.storage_system_arn
-            ,
+            storage_system_arn: self.storage_system_arn,
             _request_id: self._request_id,
         }
     }
 }
-

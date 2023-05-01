@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateApplicationInput  {
+pub struct UpdateApplicationInput {
     /// <p>Application ID.</p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct UpdateApplicationInput  {
 }
 impl UpdateApplicationInput {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>Application name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Application description.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
 impl UpdateApplicationInput {
     /// Creates a new builder-style object to manufacture [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder {
+    pub fn builder() -> crate::operation::update_application::builders::UpdateApplicationInputBuilder
+    {
         crate::operation::update_application::builders::UpdateApplicationInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Application ID.</p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>Application name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Application name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Application description.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl UpdateApplicationInputBuilder {
     }
     /// <p>Application description.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    pub fn build(self) -> Result<crate::operation::update_application::UpdateApplicationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_application::UpdateApplicationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_application::UpdateApplicationInput {
-                application_id: self.application_id
-                ,
-                name: self.name
-                ,
-                description: self.description
-                ,
-            }
+                application_id: self.application_id,
+                name: self.name,
+                description: self.description,
+            },
         )
     }
 }
-

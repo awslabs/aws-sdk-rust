@@ -3,7 +3,7 @@
 /// <p>Represents a field in a ProfileObjectType.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ObjectTypeField  {
+pub struct ObjectTypeField {
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
     #[doc(hidden)]
     pub source: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ObjectTypeField  {
 }
 impl ObjectTypeField {
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
-    pub fn source(&self) -> std::option::Option<& str> {
+    pub fn source(&self) -> std::option::Option<&str> {
         self.source.as_deref()
     }
     /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
-    pub fn target(&self) -> std::option::Option<& str> {
+    pub fn target(&self) -> std::option::Option<&str> {
         self.target.as_deref()
     }
     /// <p>The content type of the field. Used for determining equality when searching.</p>
-    pub fn content_type(&self) -> std::option::Option<& crate::types::FieldContentType> {
+    pub fn content_type(&self) -> std::option::Option<&crate::types::FieldContentType> {
         self.content_type.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl ObjectTypeFieldBuilder {
     }
     /// <p>A field of a ProfileObject. For example: _source.FirstName, where “_source” is a ProfileObjectType of a Zendesk user and “FirstName” is a field in that ObjectType.</p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source = input; self
+        self.source = input;
+        self
     }
     /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
     pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ObjectTypeFieldBuilder {
     }
     /// <p>The location of the data in the standard ProfileObject model. For example: _profile.Address.PostalCode.</p>
     pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target = input; self
+        self.target = input;
+        self
     }
     /// <p>The content type of the field. Used for determining equality when searching.</p>
     pub fn content_type(mut self, input: crate::types::FieldContentType) -> Self {
@@ -68,19 +70,19 @@ impl ObjectTypeFieldBuilder {
         self
     }
     /// <p>The content type of the field. Used for determining equality when searching.</p>
-    pub fn set_content_type(mut self, input: std::option::Option<crate::types::FieldContentType>) -> Self {
-        self.content_type = input; self
+    pub fn set_content_type(
+        mut self,
+        input: std::option::Option<crate::types::FieldContentType>,
+    ) -> Self {
+        self.content_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ObjectTypeField`](crate::types::ObjectTypeField).
     pub fn build(self) -> crate::types::ObjectTypeField {
         crate::types::ObjectTypeField {
-            source: self.source
-            ,
-            target: self.target
-            ,
-            content_type: self.content_type
-            ,
+            source: self.source,
+            target: self.target,
+            content_type: self.content_type,
         }
     }
 }
-

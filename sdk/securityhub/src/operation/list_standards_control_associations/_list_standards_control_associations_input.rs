@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStandardsControlAssociationsInput  {
+pub struct ListStandardsControlAssociationsInput {
     /// <p> The identifier of the control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) that you want to determine the enablement status of in each enabled standard. </p>
     #[doc(hidden)]
     pub security_control_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListStandardsControlAssociationsInput  {
 }
 impl ListStandardsControlAssociationsInput {
     /// <p> The identifier of the control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) that you want to determine the enablement status of in each enabled standard. </p>
-    pub fn security_control_id(&self) -> std::option::Option<& str> {
+    pub fn security_control_id(&self) -> std::option::Option<&str> {
         self.security_control_id.as_deref()
     }
     /// <p> Optional pagination parameter. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p> An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 standard and control associations. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 associations. This repeats until all associations for the specified control are returned. The number of results is limited by the number of supported Security Hub standards that you've enabled in the calling account. </p>
@@ -29,7 +29,7 @@ impl ListStandardsControlAssociationsInput {
 }
 impl ListStandardsControlAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListStandardsControlAssociationsInput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput).
-    pub fn builder() -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsInputBuilder {
+    pub fn builder() -> crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsInputBuilder{
         crate::operation::list_standards_control_associations::builders::ListStandardsControlAssociationsInputBuilder::default()
     }
 }
@@ -49,8 +49,12 @@ impl ListStandardsControlAssociationsInputBuilder {
         self
     }
     /// <p> The identifier of the control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both parameters) that you want to determine the enablement status of in each enabled standard. </p>
-    pub fn set_security_control_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_control_id = input; self
+    pub fn set_security_control_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_control_id = input;
+        self
     }
     /// <p> Optional pagination parameter. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +63,8 @@ impl ListStandardsControlAssociationsInputBuilder {
     }
     /// <p> Optional pagination parameter. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p> An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 standard and control associations. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 associations. This repeats until all associations for the specified control are returned. The number of results is limited by the number of supported Security Hub standards that you've enabled in the calling account. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,10 +73,11 @@ impl ListStandardsControlAssociationsInputBuilder {
     }
     /// <p> An optional parameter that limits the total results of the API response to the specified number. If this parameter isn't provided in the request, the results include the first 25 standard and control associations. The results also include a <code>NextToken</code> parameter that you can use in a subsequent API call to get the next 25 associations. This repeats until all associations for the specified control are returned. The number of results is limited by the number of supported Security Hub standards that you've enabled in the calling account. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListStandardsControlAssociationsInput`](crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput).
-    pub fn build(self) -> Result<crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::list_standards_control_associations::ListStandardsControlAssociationsInput {
                 security_control_id: self.security_control_id
@@ -84,4 +90,3 @@ impl ListStandardsControlAssociationsInputBuilder {
         )
     }
 }
-

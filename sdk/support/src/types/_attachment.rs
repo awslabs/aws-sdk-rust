@@ -3,7 +3,7 @@
 /// <p>An attachment to a case communication. The attachment consists of the file name and the content of the file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Attachment  {
+pub struct Attachment {
     /// <p>The name of the attachment file.</p>
     #[doc(hidden)]
     pub file_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct Attachment  {
 }
 impl Attachment {
     /// <p>The name of the attachment file.</p>
-    pub fn file_name(&self) -> std::option::Option<& str> {
+    pub fn file_name(&self) -> std::option::Option<&str> {
         self.file_name.as_deref()
     }
     /// <p>The content of the attachment file.</p>
-    pub fn data(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn data(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.data.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl AttachmentBuilder {
     }
     /// <p>The name of the attachment file.</p>
     pub fn set_file_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_name = input; self
+        self.file_name = input;
+        self
     }
     /// <p>The content of the attachment file.</p>
     pub fn data(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -52,16 +53,14 @@ impl AttachmentBuilder {
     }
     /// <p>The content of the attachment file.</p>
     pub fn set_data(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.data = input; self
+        self.data = input;
+        self
     }
     /// Consumes the builder and constructs a [`Attachment`](crate::types::Attachment).
     pub fn build(self) -> crate::types::Attachment {
         crate::types::Attachment {
-            file_name: self.file_name
-            ,
-            data: self.data
-            ,
+            file_name: self.file_name,
+            data: self.data,
         }
     }
 }
-

@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopTransformJobInput  {
+pub struct StopTransformJobInput {
     /// <p>The name of the batch transform job to stop.</p>
     #[doc(hidden)]
     pub transform_job_name: std::option::Option<std::string::String>,
 }
 impl StopTransformJobInput {
     /// <p>The name of the batch transform job to stop.</p>
-    pub fn transform_job_name(&self) -> std::option::Option<& str> {
+    pub fn transform_job_name(&self) -> std::option::Option<&str> {
         self.transform_job_name.as_deref()
     }
 }
 impl StopTransformJobInput {
     /// Creates a new builder-style object to manufacture [`StopTransformJobInput`](crate::operation::stop_transform_job::StopTransformJobInput).
-    pub fn builder() -> crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder {
+    pub fn builder() -> crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder
+    {
         crate::operation::stop_transform_job::builders::StopTransformJobInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl StopTransformJobInputBuilder {
         self
     }
     /// <p>The name of the batch transform job to stop.</p>
-    pub fn set_transform_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transform_job_name = input; self
+    pub fn set_transform_job_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transform_job_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopTransformJobInput`](crate::operation::stop_transform_job::StopTransformJobInput).
-    pub fn build(self) -> Result<crate::operation::stop_transform_job::StopTransformJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_transform_job::StopTransformJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_transform_job::StopTransformJobInput {
-                transform_job_name: self.transform_job_name
-                ,
-            }
+                transform_job_name: self.transform_job_name,
+            },
         )
     }
 }
-

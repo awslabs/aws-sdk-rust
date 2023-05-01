@@ -3,7 +3,7 @@
 /// <p> The resource target configurations for receiving Amazon Chime SDK meeting and attendee event notifications. The Amazon Chime SDK supports resource targets located in the US East (N. Virginia) AWS Region (<code>us-east-1</code>). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct MeetingNotificationConfiguration  {
+pub struct MeetingNotificationConfiguration {
     /// <p>The SNS topic ARN.</p>
     #[doc(hidden)]
     pub sns_topic_arn: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct MeetingNotificationConfiguration  {
 }
 impl MeetingNotificationConfiguration {
     /// <p>The SNS topic ARN.</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<& str> {
+    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The SQS queue ARN.</p>
-    pub fn sqs_queue_arn(&self) -> std::option::Option<& str> {
+    pub fn sqs_queue_arn(&self) -> std::option::Option<&str> {
         self.sqs_queue_arn.as_deref()
     }
 }
-impl  std::fmt::Debug for MeetingNotificationConfiguration  {
+impl std::fmt::Debug for MeetingNotificationConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("MeetingNotificationConfiguration");
         formatter.field("sns_topic_arn", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl MeetingNotificationConfigurationBuilder {
     }
     /// <p>The SNS topic ARN.</p>
     pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sns_topic_arn = input; self
+        self.sns_topic_arn = input;
+        self
     }
     /// <p>The SQS queue ARN.</p>
     pub fn sqs_queue_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,15 +61,14 @@ impl MeetingNotificationConfigurationBuilder {
     }
     /// <p>The SQS queue ARN.</p>
     pub fn set_sqs_queue_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sqs_queue_arn = input; self
+        self.sqs_queue_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`MeetingNotificationConfiguration`](crate::types::MeetingNotificationConfiguration).
     pub fn build(self) -> crate::types::MeetingNotificationConfiguration {
         crate::types::MeetingNotificationConfiguration {
-            sns_topic_arn: self.sns_topic_arn
-            ,
-            sqs_queue_arn: self.sqs_queue_arn
-            ,
+            sns_topic_arn: self.sns_topic_arn,
+            sqs_queue_arn: self.sqs_queue_arn,
         }
     }
 }
@@ -80,4 +80,3 @@ impl std::fmt::Debug for MeetingNotificationConfigurationBuilder {
         formatter.finish()
     }
 }
-

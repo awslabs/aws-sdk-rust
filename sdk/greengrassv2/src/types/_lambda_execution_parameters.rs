@@ -3,7 +3,7 @@
 /// <p>Contains parameters for a Lambda function that runs on IoT Greengrass.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaExecutionParameters  {
+pub struct LambdaExecutionParameters {
     /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
     #[doc(hidden)]
     pub event_sources: std::option::Option<std::vec::Vec<crate::types::LambdaEventSource>>,
@@ -22,31 +22,33 @@ pub struct LambdaExecutionParameters  {
     /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function component sends status updates to the Lambda manager component.</p>
     #[doc(hidden)]
     pub status_timeout_in_seconds: std::option::Option<i32>,
-    /// <p>Whether or not the Lambda function is pinned, or long-lived.</p> 
-    /// <ul> 
-    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li> 
-    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li> 
-    /// </ul> 
+    /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
+    /// <ul>
+    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
+    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
+    /// </ul>
     /// <p>Default: <code>true</code> </p>
     #[doc(hidden)]
     pub pinned: std::option::Option<bool>,
-    /// <p>The encoding type that the Lambda function supports.</p> 
+    /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
     #[doc(hidden)]
-    pub input_payload_encoding_type: std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
+    pub input_payload_encoding_type:
+        std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
     #[doc(hidden)]
     pub exec_args: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
     #[doc(hidden)]
-    pub environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub environment_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
     #[doc(hidden)]
     pub linux_process_params: std::option::Option<crate::types::LambdaLinuxProcessParams>,
 }
 impl LambdaExecutionParameters {
     /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
-    pub fn event_sources(&self) -> std::option::Option<& [crate::types::LambdaEventSource]> {
+    pub fn event_sources(&self) -> std::option::Option<&[crate::types::LambdaEventSource]> {
         self.event_sources.as_deref()
     }
     /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
@@ -69,30 +71,37 @@ impl LambdaExecutionParameters {
     pub fn status_timeout_in_seconds(&self) -> std::option::Option<i32> {
         self.status_timeout_in_seconds
     }
-    /// <p>Whether or not the Lambda function is pinned, or long-lived.</p> 
-    /// <ul> 
-    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li> 
-    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li> 
-    /// </ul> 
+    /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
+    /// <ul>
+    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
+    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
+    /// </ul>
     /// <p>Default: <code>true</code> </p>
     pub fn pinned(&self) -> std::option::Option<bool> {
         self.pinned
     }
-    /// <p>The encoding type that the Lambda function supports.</p> 
+    /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
-    pub fn input_payload_encoding_type(&self) -> std::option::Option<& crate::types::LambdaInputPayloadEncodingType> {
+    pub fn input_payload_encoding_type(
+        &self,
+    ) -> std::option::Option<&crate::types::LambdaInputPayloadEncodingType> {
         self.input_payload_encoding_type.as_ref()
     }
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
-    pub fn exec_args(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn exec_args(&self) -> std::option::Option<&[std::string::String]> {
         self.exec_args.as_deref()
     }
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
-    pub fn environment_variables(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn environment_variables(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.environment_variables.as_ref()
     }
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
-    pub fn linux_process_params(&self) -> std::option::Option<& crate::types::LambdaLinuxProcessParams> {
+    pub fn linux_process_params(
+        &self,
+    ) -> std::option::Option<&crate::types::LambdaLinuxProcessParams> {
         self.linux_process_params.as_ref()
     }
 }
@@ -114,9 +123,11 @@ pub struct LambdaExecutionParametersBuilder {
     pub(crate) timeout_in_seconds: std::option::Option<i32>,
     pub(crate) status_timeout_in_seconds: std::option::Option<i32>,
     pub(crate) pinned: std::option::Option<bool>,
-    pub(crate) input_payload_encoding_type: std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
+    pub(crate) input_payload_encoding_type:
+        std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
     pub(crate) exec_args: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) environment_variables: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) environment_variables:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) linux_process_params: std::option::Option<crate::types::LambdaLinuxProcessParams>,
 }
 impl LambdaExecutionParametersBuilder {
@@ -127,13 +138,17 @@ impl LambdaExecutionParametersBuilder {
     /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
     pub fn event_sources(mut self, input: crate::types::LambdaEventSource) -> Self {
         let mut v = self.event_sources.unwrap_or_default();
-                        v.push(input);
-                        self.event_sources = Some(v);
-                        self
+        v.push(input);
+        self.event_sources = Some(v);
+        self
     }
     /// <p>The list of event sources to which to subscribe to receive work messages. The Lambda function runs when it receives a message from an event source. You can subscribe this function to local publish/subscribe messages and Amazon Web Services IoT Core MQTT messages.</p>
-    pub fn set_event_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::LambdaEventSource>>) -> Self {
-        self.event_sources = input; self
+    pub fn set_event_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LambdaEventSource>>,
+    ) -> Self {
+        self.event_sources = input;
+        self
     }
     /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
     pub fn max_queue_size(mut self, input: i32) -> Self {
@@ -142,7 +157,8 @@ impl LambdaExecutionParametersBuilder {
     }
     /// <p>The maximum size of the message queue for the Lambda function component. The IoT Greengrass core stores messages in a FIFO (first-in-first-out) queue until it can run the Lambda function to consume each message.</p>
     pub fn set_max_queue_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_queue_size = input; self
+        self.max_queue_size = input;
+        self
     }
     /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same time.</p>
     pub fn max_instances_count(mut self, input: i32) -> Self {
@@ -151,7 +167,8 @@ impl LambdaExecutionParametersBuilder {
     }
     /// <p>The maximum number of instances that a non-pinned Lambda function can run at the same time.</p>
     pub fn set_max_instances_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_instances_count = input; self
+        self.max_instances_count = input;
+        self
     }
     /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the IoT Greengrass Core software stops its process.</p>
     pub fn max_idle_time_in_seconds(mut self, input: i32) -> Self {
@@ -160,7 +177,8 @@ impl LambdaExecutionParametersBuilder {
     }
     /// <p>The maximum amount of time in seconds that a non-pinned Lambda function can idle before the IoT Greengrass Core software stops its process.</p>
     pub fn set_max_idle_time_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_idle_time_in_seconds = input; self
+        self.max_idle_time_in_seconds = input;
+        self
     }
     /// <p>The maximum amount of time in seconds that the Lambda function can process a work item.</p>
     pub fn timeout_in_seconds(mut self, input: i32) -> Self {
@@ -169,7 +187,8 @@ impl LambdaExecutionParametersBuilder {
     }
     /// <p>The maximum amount of time in seconds that the Lambda function can process a work item.</p>
     pub fn set_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.timeout_in_seconds = input; self
+        self.timeout_in_seconds = input;
+        self
     }
     /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function component sends status updates to the Lambda manager component.</p>
     pub fn status_timeout_in_seconds(mut self, input: i32) -> Self {
@@ -178,37 +197,46 @@ impl LambdaExecutionParametersBuilder {
     }
     /// <p>The interval in seconds at which a pinned (also known as long-lived) Lambda function component sends status updates to the Lambda manager component.</p>
     pub fn set_status_timeout_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.status_timeout_in_seconds = input; self
+        self.status_timeout_in_seconds = input;
+        self
     }
-    /// <p>Whether or not the Lambda function is pinned, or long-lived.</p> 
-    /// <ul> 
-    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li> 
-    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li> 
-    /// </ul> 
+    /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
+    /// <ul>
+    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
+    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
+    /// </ul>
     /// <p>Default: <code>true</code> </p>
     pub fn pinned(mut self, input: bool) -> Self {
         self.pinned = Some(input);
         self
     }
-    /// <p>Whether or not the Lambda function is pinned, or long-lived.</p> 
-    /// <ul> 
-    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li> 
-    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li> 
-    /// </ul> 
+    /// <p>Whether or not the Lambda function is pinned, or long-lived.</p>
+    /// <ul>
+    /// <li> <p>A pinned Lambda function starts when IoT Greengrass starts and keeps running in its own container.</p> </li>
+    /// <li> <p>A non-pinned Lambda function starts only when it receives a work item and exists after it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work items, the IoT Greengrass Core software creates multiple instances of the function.</p> </li>
+    /// </ul>
     /// <p>Default: <code>true</code> </p>
     pub fn set_pinned(mut self, input: std::option::Option<bool>) -> Self {
-        self.pinned = input; self
+        self.pinned = input;
+        self
     }
-    /// <p>The encoding type that the Lambda function supports.</p> 
+    /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
-    pub fn input_payload_encoding_type(mut self, input: crate::types::LambdaInputPayloadEncodingType) -> Self {
+    pub fn input_payload_encoding_type(
+        mut self,
+        input: crate::types::LambdaInputPayloadEncodingType,
+    ) -> Self {
         self.input_payload_encoding_type = Some(input);
         self
     }
-    /// <p>The encoding type that the Lambda function supports.</p> 
+    /// <p>The encoding type that the Lambda function supports.</p>
     /// <p>Default: <code>json</code> </p>
-    pub fn set_input_payload_encoding_type(mut self, input: std::option::Option<crate::types::LambdaInputPayloadEncodingType>) -> Self {
-        self.input_payload_encoding_type = input; self
+    pub fn set_input_payload_encoding_type(
+        mut self,
+        input: std::option::Option<crate::types::LambdaInputPayloadEncodingType>,
+    ) -> Self {
+        self.input_payload_encoding_type = input;
+        self
     }
     /// Appends an item to `exec_args`.
     ///
@@ -217,28 +245,42 @@ impl LambdaExecutionParametersBuilder {
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
     pub fn exec_args(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.exec_args.unwrap_or_default();
-                        v.push(input.into());
-                        self.exec_args = Some(v);
-                        self
+        v.push(input.into());
+        self.exec_args = Some(v);
+        self
     }
     /// <p>The list of arguments to pass to the Lambda function when it runs.</p>
-    pub fn set_exec_args(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.exec_args = input; self
+    pub fn set_exec_args(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.exec_args = input;
+        self
     }
     /// Adds a key-value pair to `environment_variables`.
     ///
     /// To override the contents of this collection use [`set_environment_variables`](Self::set_environment_variables).
     ///
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
-    pub fn environment_variables(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn environment_variables(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.environment_variables.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.environment_variables = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.environment_variables = Some(hash_map);
+        self
     }
     /// <p>The map of environment variables that are available to the Lambda function when it runs.</p>
-    pub fn set_environment_variables(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.environment_variables = input; self
+    pub fn set_environment_variables(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.environment_variables = input;
+        self
     }
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
     pub fn linux_process_params(mut self, input: crate::types::LambdaLinuxProcessParams) -> Self {
@@ -246,35 +288,27 @@ impl LambdaExecutionParametersBuilder {
         self
     }
     /// <p>The parameters for the Linux process that contains the Lambda function.</p>
-    pub fn set_linux_process_params(mut self, input: std::option::Option<crate::types::LambdaLinuxProcessParams>) -> Self {
-        self.linux_process_params = input; self
+    pub fn set_linux_process_params(
+        mut self,
+        input: std::option::Option<crate::types::LambdaLinuxProcessParams>,
+    ) -> Self {
+        self.linux_process_params = input;
+        self
     }
     /// Consumes the builder and constructs a [`LambdaExecutionParameters`](crate::types::LambdaExecutionParameters).
     pub fn build(self) -> crate::types::LambdaExecutionParameters {
         crate::types::LambdaExecutionParameters {
-            event_sources: self.event_sources
-            ,
-            max_queue_size: self.max_queue_size
-            ,
-            max_instances_count: self.max_instances_count
-            ,
-            max_idle_time_in_seconds: self.max_idle_time_in_seconds
-            ,
-            timeout_in_seconds: self.timeout_in_seconds
-            ,
-            status_timeout_in_seconds: self.status_timeout_in_seconds
-            ,
-            pinned: self.pinned
-            ,
-            input_payload_encoding_type: self.input_payload_encoding_type
-            ,
-            exec_args: self.exec_args
-            ,
-            environment_variables: self.environment_variables
-            ,
-            linux_process_params: self.linux_process_params
-            ,
+            event_sources: self.event_sources,
+            max_queue_size: self.max_queue_size,
+            max_instances_count: self.max_instances_count,
+            max_idle_time_in_seconds: self.max_idle_time_in_seconds,
+            timeout_in_seconds: self.timeout_in_seconds,
+            status_timeout_in_seconds: self.status_timeout_in_seconds,
+            pinned: self.pinned,
+            input_payload_encoding_type: self.input_payload_encoding_type,
+            exec_args: self.exec_args,
+            environment_variables: self.environment_variables,
+            linux_process_params: self.linux_process_params,
         }
     }
 }
-

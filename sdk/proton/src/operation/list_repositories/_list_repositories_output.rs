@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListRepositoriesOutput  {
+pub struct ListRepositoriesOutput {
     /// <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct ListRepositoriesOutput  {
 }
 impl ListRepositoriesOutput {
     /// <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>An array of repository links.</p>
-    pub fn repositories(&self) -> std::option::Option<& [crate::types::RepositorySummary]> {
+    pub fn repositories(&self) -> std::option::Option<&[crate::types::RepositorySummary]> {
         self.repositories.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListRepositoriesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListRepositoriesOutput {
     /// Creates a new builder-style object to manufacture [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput).
-    pub fn builder() -> crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder {
+    pub fn builder() -> crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder
+    {
         crate::operation::list_repositories::builders::ListRepositoriesOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl ListRepositoriesOutputBuilder {
     }
     /// <p>A token that indicates the location of the next repository in the array of repositories, after the current requested list of repositories. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `repositories`.
     ///
@@ -58,32 +60,33 @@ impl ListRepositoriesOutputBuilder {
     /// <p>An array of repository links.</p>
     pub fn repositories(mut self, input: crate::types::RepositorySummary) -> Self {
         let mut v = self.repositories.unwrap_or_default();
-                        v.push(input);
-                        self.repositories = Some(v);
-                        self
+        v.push(input);
+        self.repositories = Some(v);
+        self
     }
     /// <p>An array of repository links.</p>
-    pub fn set_repositories(mut self, input: std::option::Option<std::vec::Vec<crate::types::RepositorySummary>>) -> Self {
-        self.repositories = input; self
+    pub fn set_repositories(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RepositorySummary>>,
+    ) -> Self {
+        self.repositories = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListRepositoriesOutput`](crate::operation::list_repositories::ListRepositoriesOutput).
     pub fn build(self) -> crate::operation::list_repositories::ListRepositoriesOutput {
         crate::operation::list_repositories::ListRepositoriesOutput {
-            next_token: self.next_token
-            ,
-            repositories: self.repositories
-            ,
+            next_token: self.next_token,
+            repositories: self.repositories,
             _request_id: self._request_id,
         }
     }
 }
-

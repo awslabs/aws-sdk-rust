@@ -4,50 +4,70 @@ pub use crate::operation::update_data_source::_update_data_source_output::Update
 pub use crate::operation::update_data_source::_update_data_source_input::UpdateDataSourceInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateDataSource`.
-/// 
+///
 /// <p>Updates an existing Amazon Kendra data source connector.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDataSourceFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder,
+    inner: crate::operation::update_data_source::builders::UpdateDataSourceInputBuilder,
 }
-impl UpdateDataSourceFluentBuilder  {
+impl UpdateDataSourceFluentBuilder {
     /// Creates a new `UpdateDataSource`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_data_source::UpdateDataSource, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_data_source::UpdateDataSourceOutput, aws_smithy_http::result::SdkError<crate::operation::update_data_source::UpdateDataSourceError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_data_source::UpdateDataSource,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_data_source::UpdateDataSourceError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_data_source::UpdateDataSourceOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_data_source::UpdateDataSourceError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the data source connector you want to update.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.id(input.into());
@@ -84,7 +104,10 @@ impl UpdateDataSourceFluentBuilder  {
         self
     }
     /// <p>Configuration information you want to update for the data source connector.</p>
-    pub fn set_configuration(mut self, input: std::option::Option<crate::types::DataSourceConfiguration>) -> Self {
+    pub fn set_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DataSourceConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_configuration(input);
         self
     }
@@ -94,7 +117,10 @@ impl UpdateDataSourceFluentBuilder  {
         self
     }
     /// <p>Configuration information for an Amazon Virtual Private Cloud to connect to your data source. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/vpc-configuration.html">Configuring a VPC</a>.</p>
-    pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::types::DataSourceVpcConfiguration>) -> Self {
+    pub fn set_vpc_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DataSourceVpcConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_vpc_configuration(input);
         self
     }
@@ -138,17 +164,24 @@ impl UpdateDataSourceFluentBuilder  {
         self.inner = self.inner.set_language_code(input);
         self
     }
-    /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p> 
+    /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn custom_document_enrichment_configuration(mut self, input: crate::types::CustomDocumentEnrichmentConfiguration) -> Self {
+    pub fn custom_document_enrichment_configuration(
+        mut self,
+        input: crate::types::CustomDocumentEnrichmentConfiguration,
+    ) -> Self {
         self.inner = self.inner.custom_document_enrichment_configuration(input);
         self
     }
-    /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p> 
+    /// <p>Configuration information you want to update for altering document metadata and content during the document ingestion process.</p>
     /// <p>For more information on how to create, modify and delete document metadata, or make other content alterations when you ingest documents into Amazon Kendra, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html">Customizing document metadata during the ingestion process</a>.</p>
-    pub fn set_custom_document_enrichment_configuration(mut self, input: std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>) -> Self {
-        self.inner = self.inner.set_custom_document_enrichment_configuration(input);
+    pub fn set_custom_document_enrichment_configuration(
+        mut self,
+        input: std::option::Option<crate::types::CustomDocumentEnrichmentConfiguration>,
+    ) -> Self {
+        self.inner = self
+            .inner
+            .set_custom_document_enrichment_configuration(input);
         self
     }
 }
-

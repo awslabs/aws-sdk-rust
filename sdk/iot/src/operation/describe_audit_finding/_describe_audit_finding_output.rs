@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAuditFindingOutput  {
+pub struct DescribeAuditFindingOutput {
     /// <p>The findings (results) of the audit.</p>
     #[doc(hidden)]
     pub finding: std::option::Option<crate::types::AuditFinding>,
@@ -10,18 +10,19 @@ pub struct DescribeAuditFindingOutput  {
 }
 impl DescribeAuditFindingOutput {
     /// <p>The findings (results) of the audit.</p>
-    pub fn finding(&self) -> std::option::Option<& crate::types::AuditFinding> {
+    pub fn finding(&self) -> std::option::Option<&crate::types::AuditFinding> {
         self.finding.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAuditFindingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAuditFindingOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAuditFindingOutput`](crate::operation::describe_audit_finding::DescribeAuditFindingOutput).
-    pub fn builder() -> crate::operation::describe_audit_finding::builders::DescribeAuditFindingOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_audit_finding::builders::DescribeAuditFindingOutputBuilder {
         crate::operation::describe_audit_finding::builders::DescribeAuditFindingOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl DescribeAuditFindingOutputBuilder {
     }
     /// <p>The findings (results) of the audit.</p>
     pub fn set_finding(mut self, input: std::option::Option<crate::types::AuditFinding>) -> Self {
-        self.finding = input; self
+        self.finding = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAuditFindingOutput`](crate::operation::describe_audit_finding::DescribeAuditFindingOutput).
     pub fn build(self) -> crate::operation::describe_audit_finding::DescribeAuditFindingOutput {
         crate::operation::describe_audit_finding::DescribeAuditFindingOutput {
-            finding: self.finding
-            ,
+            finding: self.finding,
             _request_id: self._request_id,
         }
     }
 }
-

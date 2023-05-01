@@ -3,7 +3,7 @@
 /// <p>A summary of the properties of a trial. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrial.html">DescribeTrial</a> API and provide the <code>TrialName</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrialSummary  {
+pub struct TrialSummary {
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     #[doc(hidden)]
     pub trial_arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct TrialSummary  {
 }
 impl TrialSummary {
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
-    pub fn trial_arn(&self) -> std::option::Option<& str> {
+    pub fn trial_arn(&self) -> std::option::Option<&str> {
         self.trial_arn.as_deref()
     }
     /// <p>The name of the trial.</p>
-    pub fn trial_name(&self) -> std::option::Option<& str> {
+    pub fn trial_name(&self) -> std::option::Option<&str> {
         self.trial_name.as_deref()
     }
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The source of the trial.</p>
-    pub fn trial_source(&self) -> std::option::Option<& crate::types::TrialSource> {
+    pub fn trial_source(&self) -> std::option::Option<&crate::types::TrialSource> {
         self.trial_source.as_ref()
     }
     /// <p>When the trial was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the trial was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl TrialSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the trial.</p>
     pub fn set_trial_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trial_arn = input; self
+        self.trial_arn = input;
+        self
     }
     /// <p>The name of the trial.</p>
     pub fn trial_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl TrialSummaryBuilder {
     }
     /// <p>The name of the trial.</p>
     pub fn set_trial_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trial_name = input; self
+        self.trial_name = input;
+        self
     }
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl TrialSummaryBuilder {
     }
     /// <p>The name of the trial as displayed. If <code>DisplayName</code> isn't specified, <code>TrialName</code> is displayed.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The source of the trial.</p>
     pub fn trial_source(mut self, input: crate::types::TrialSource) -> Self {
@@ -101,8 +104,12 @@ impl TrialSummaryBuilder {
         self
     }
     /// <p>The source of the trial.</p>
-    pub fn set_trial_source(mut self, input: std::option::Option<crate::types::TrialSource>) -> Self {
-        self.trial_source = input; self
+    pub fn set_trial_source(
+        mut self,
+        input: std::option::Option<crate::types::TrialSource>,
+    ) -> Self {
+        self.trial_source = input;
+        self
     }
     /// <p>When the trial was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,8 +117,12 @@ impl TrialSummaryBuilder {
         self
     }
     /// <p>When the trial was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>When the trial was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,25 +130,22 @@ impl TrialSummaryBuilder {
         self
     }
     /// <p>When the trial was last modified.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrialSummary`](crate::types::TrialSummary).
     pub fn build(self) -> crate::types::TrialSummary {
         crate::types::TrialSummary {
-            trial_arn: self.trial_arn
-            ,
-            trial_name: self.trial_name
-            ,
-            display_name: self.display_name
-            ,
-            trial_source: self.trial_source
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
+            trial_arn: self.trial_arn,
+            trial_name: self.trial_name,
+            display_name: self.display_name,
+            trial_source: self.trial_source,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
         }
     }
 }
-

@@ -168,4 +168,3 @@ pub mod update_task_protection;
 
 /// Types for the `UpdateTaskSet` operation.
 pub mod update_task_set;
-

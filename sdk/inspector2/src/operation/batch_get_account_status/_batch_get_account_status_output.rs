@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAccountStatusOutput  {
+pub struct BatchGetAccountStatusOutput {
     /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
     #[doc(hidden)]
     pub accounts: std::option::Option<std::vec::Vec<crate::types::AccountState>>,
@@ -13,22 +13,24 @@ pub struct BatchGetAccountStatusOutput  {
 }
 impl BatchGetAccountStatusOutput {
     /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
-    pub fn accounts(&self) -> std::option::Option<& [crate::types::AccountState]> {
+    pub fn accounts(&self) -> std::option::Option<&[crate::types::AccountState]> {
         self.accounts.as_deref()
     }
     /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
-    pub fn failed_accounts(&self) -> std::option::Option<& [crate::types::FailedAccount]> {
+    pub fn failed_accounts(&self) -> std::option::Option<&[crate::types::FailedAccount]> {
         self.failed_accounts.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetAccountStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchGetAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetAccountStatusOutput`](crate::operation::batch_get_account_status::BatchGetAccountStatusOutput).
-    pub fn builder() -> crate::operation::batch_get_account_status::builders::BatchGetAccountStatusOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::batch_get_account_status::builders::BatchGetAccountStatusOutputBuilder
+    {
         crate::operation::batch_get_account_status::builders::BatchGetAccountStatusOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl BatchGetAccountStatusOutputBuilder {
     /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
     pub fn accounts(mut self, input: crate::types::AccountState) -> Self {
         let mut v = self.accounts.unwrap_or_default();
-                        v.push(input);
-                        self.accounts = Some(v);
-                        self
+        v.push(input);
+        self.accounts = Some(v);
+        self
     }
     /// <p>An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.</p>
-    pub fn set_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::AccountState>>) -> Self {
-        self.accounts = input; self
+    pub fn set_accounts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AccountState>>,
+    ) -> Self {
+        self.accounts = input;
+        self
     }
     /// Appends an item to `failed_accounts`.
     ///
@@ -64,32 +70,33 @@ impl BatchGetAccountStatusOutputBuilder {
     /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
     pub fn failed_accounts(mut self, input: crate::types::FailedAccount) -> Self {
         let mut v = self.failed_accounts.unwrap_or_default();
-                        v.push(input);
-                        self.failed_accounts = Some(v);
-                        self
+        v.push(input);
+        self.failed_accounts = Some(v);
+        self
     }
     /// <p>An array of objects detailing any accounts that failed to enable Amazon Inspector and why.</p>
-    pub fn set_failed_accounts(mut self, input: std::option::Option<std::vec::Vec<crate::types::FailedAccount>>) -> Self {
-        self.failed_accounts = input; self
+    pub fn set_failed_accounts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FailedAccount>>,
+    ) -> Self {
+        self.failed_accounts = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchGetAccountStatusOutput`](crate::operation::batch_get_account_status::BatchGetAccountStatusOutput).
     pub fn build(self) -> crate::operation::batch_get_account_status::BatchGetAccountStatusOutput {
         crate::operation::batch_get_account_status::BatchGetAccountStatusOutput {
-            accounts: self.accounts
-            ,
-            failed_accounts: self.failed_accounts
-            ,
+            accounts: self.accounts,
+            failed_accounts: self.failed_accounts,
             _request_id: self._request_id,
         }
     }
 }
-

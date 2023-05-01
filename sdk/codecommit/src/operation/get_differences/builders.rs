@@ -4,56 +4,77 @@ pub use crate::operation::get_differences::_get_differences_output::GetDifferenc
 pub use crate::operation::get_differences::_get_differences_input::GetDifferencesInputBuilder;
 
 /// Fluent builder constructing a request to `GetDifferences`.
-/// 
+///
 /// <p>Returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified reference). Results can be limited to a specified path.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDifferencesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_differences::builders::GetDifferencesInputBuilder,
+    inner: crate::operation::get_differences::builders::GetDifferencesInputBuilder,
 }
-impl GetDifferencesFluentBuilder  {
+impl GetDifferencesFluentBuilder {
     /// Creates a new `GetDifferences`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_differences::GetDifferences, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_differences::GetDifferencesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_differences::GetDifferencesOutput, aws_smithy_http::result::SdkError<crate::operation::get_differences::GetDifferencesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_differences::GetDifferences,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::get_differences::GetDifferencesError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_differences::GetDifferencesOutput,
+        aws_smithy_http::result::SdkError<crate::operation::get_differences::GetDifferencesError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_differences::paginator::GetDifferencesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_differences::paginator::GetDifferencesPaginator {
-                                crate::operation::get_differences::paginator::GetDifferencesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_differences::paginator::GetDifferencesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_differences::paginator::GetDifferencesPaginator {
+        crate::operation::get_differences::paginator::GetDifferencesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The name of the repository where you want to get differences.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
@@ -70,7 +91,10 @@ impl GetDifferencesFluentBuilder  {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, the full commit ID). Optional. If not specified, all changes before the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code> in your request, consider limiting the results with <code>maxResults</code>.</p>
-    pub fn set_before_commit_specifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_before_commit_specifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_before_commit_specifier(input);
         self
     }
@@ -80,7 +104,10 @@ impl GetDifferencesFluentBuilder  {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit.</p>
-    pub fn set_after_commit_specifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_after_commit_specifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_after_commit_specifier(input);
         self
     }
@@ -125,4 +152,3 @@ impl GetDifferencesFluentBuilder  {
         self
     }
 }
-

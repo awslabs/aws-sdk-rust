@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResetDistributionCacheOutput  {
+pub struct ResetDistributionCacheOutput {
     /// <p>The status of the reset cache request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
@@ -16,26 +16,28 @@ pub struct ResetDistributionCacheOutput  {
 }
 impl ResetDistributionCacheOutput {
     /// <p>The status of the reset cache request.</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
-    pub fn operation(&self) -> std::option::Option<& crate::types::Operation> {
+    pub fn operation(&self) -> std::option::Option<&crate::types::Operation> {
         self.operation.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ResetDistributionCacheOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ResetDistributionCacheOutput {
     /// Creates a new builder-style object to manufacture [`ResetDistributionCacheOutput`](crate::operation::reset_distribution_cache::ResetDistributionCacheOutput).
-    pub fn builder() -> crate::operation::reset_distribution_cache::builders::ResetDistributionCacheOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::reset_distribution_cache::builders::ResetDistributionCacheOutputBuilder
+    {
         crate::operation::reset_distribution_cache::builders::ResetDistributionCacheOutputBuilder::default()
     }
 }
@@ -57,7 +59,8 @@ impl ResetDistributionCacheOutputBuilder {
     }
     /// <p>The status of the reset cache request.</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -65,8 +68,12 @@ impl ResetDistributionCacheOutputBuilder {
         self
     }
     /// <p>The timestamp of the reset cache request (e.g., <code>1479734909.17</code>) in Unix time format.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn operation(mut self, input: crate::types::Operation) -> Self {
@@ -75,28 +82,25 @@ impl ResetDistributionCacheOutputBuilder {
     }
     /// <p>An array of objects that describe the result of the action, such as the status of the request, the timestamp of the request, and the resources affected by the request.</p>
     pub fn set_operation(mut self, input: std::option::Option<crate::types::Operation>) -> Self {
-        self.operation = input; self
+        self.operation = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ResetDistributionCacheOutput`](crate::operation::reset_distribution_cache::ResetDistributionCacheOutput).
     pub fn build(self) -> crate::operation::reset_distribution_cache::ResetDistributionCacheOutput {
         crate::operation::reset_distribution_cache::ResetDistributionCacheOutput {
-            status: self.status
-            ,
-            create_time: self.create_time
-            ,
-            operation: self.operation
-            ,
+            status: self.status,
+            create_time: self.create_time,
+            operation: self.operation,
             _request_id: self._request_id,
         }
     }
 }
-

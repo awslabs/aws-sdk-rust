@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let bridgestate = unimplemented!();
 /// match bridgestate {
@@ -40,14 +40,22 @@
 /// Specifically, when `bridgestate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `BridgeState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum BridgeState {
     #[allow(missing_docs)] // documentation missing in model
     Active,
@@ -74,61 +82,73 @@ pub enum BridgeState {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for BridgeState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ACTIVE" => BridgeState::Active,
-"CREATING" => BridgeState::Creating,
-"DELETED" => BridgeState::Deleted,
-"DELETING" => BridgeState::Deleting,
-"DEPLOYING" => BridgeState::Deploying,
-"STANDBY" => BridgeState::Standby,
-"STARTING" => BridgeState::Starting,
-"START_FAILED" => BridgeState::StartFailed,
-"START_PENDING" => BridgeState::StartPending,
-"STOPPING" => BridgeState::Stopping,
-"STOP_FAILED" => BridgeState::StopFailed,
-"UPDATING" => BridgeState::Updating,
-other => BridgeState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for BridgeState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(BridgeState::from(s))
-                }
-            }
-impl BridgeState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    BridgeState::Active => "ACTIVE",
-    BridgeState::Creating => "CREATING",
-    BridgeState::Deleted => "DELETED",
-    BridgeState::Deleting => "DELETING",
-    BridgeState::Deploying => "DEPLOYING",
-    BridgeState::Standby => "STANDBY",
-    BridgeState::Starting => "STARTING",
-    BridgeState::StartFailed => "START_FAILED",
-    BridgeState::StartPending => "START_PENDING",
-    BridgeState::Stopping => "STOPPING",
-    BridgeState::StopFailed => "STOP_FAILED",
-    BridgeState::Updating => "UPDATING",
-    BridgeState::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => BridgeState::Active,
+            "CREATING" => BridgeState::Creating,
+            "DELETED" => BridgeState::Deleted,
+            "DELETING" => BridgeState::Deleting,
+            "DEPLOYING" => BridgeState::Deploying,
+            "STANDBY" => BridgeState::Standby,
+            "STARTING" => BridgeState::Starting,
+            "START_FAILED" => BridgeState::StartFailed,
+            "START_PENDING" => BridgeState::StartPending,
+            "STOPPING" => BridgeState::Stopping,
+            "STOP_FAILED" => BridgeState::StopFailed,
+            "UPDATING" => BridgeState::Updating,
+            other => BridgeState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ACTIVE", "CREATING", "DELETED", "DELETING", "DEPLOYING", "STANDBY", "STARTING", "START_FAILED", "START_PENDING", "STOPPING", "STOP_FAILED", "UPDATING"]
-                }
-            }
-impl AsRef<str> for BridgeState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for BridgeState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(BridgeState::from(s))
+    }
+}
+impl BridgeState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            BridgeState::Active => "ACTIVE",
+            BridgeState::Creating => "CREATING",
+            BridgeState::Deleted => "DELETED",
+            BridgeState::Deleting => "DELETING",
+            BridgeState::Deploying => "DEPLOYING",
+            BridgeState::Standby => "STANDBY",
+            BridgeState::Starting => "STARTING",
+            BridgeState::StartFailed => "START_FAILED",
+            BridgeState::StartPending => "START_PENDING",
+            BridgeState::Stopping => "STOPPING",
+            BridgeState::StopFailed => "STOP_FAILED",
+            BridgeState::Updating => "UPDATING",
+            BridgeState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "CREATING",
+            "DELETED",
+            "DELETING",
+            "DEPLOYING",
+            "STANDBY",
+            "STARTING",
+            "START_FAILED",
+            "START_PENDING",
+            "STOPPING",
+            "STOP_FAILED",
+            "UPDATING",
+        ]
+    }
+}
+impl AsRef<str> for BridgeState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

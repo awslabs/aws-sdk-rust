@@ -3,7 +3,7 @@
 /// <p>Information about the metadata for a conflict in a merge operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConflictMetadata  {
+pub struct ConflictMetadata {
     /// <p>The path of the file that contains conflicts.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
@@ -37,19 +37,19 @@ pub struct ConflictMetadata  {
 }
 impl ConflictMetadata {
     /// <p>The path of the file that contains conflicts.</p>
-    pub fn file_path(&self) -> std::option::Option<& str> {
+    pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
     /// <p>The file sizes of the file in the source, destination, and base of the merge.</p>
-    pub fn file_sizes(&self) -> std::option::Option<& crate::types::FileSizes> {
+    pub fn file_sizes(&self) -> std::option::Option<&crate::types::FileSizes> {
         self.file_sizes.as_ref()
     }
     /// <p>The file modes of the file in the source, destination, and base of the merge.</p>
-    pub fn file_modes(&self) -> std::option::Option<& crate::types::FileModes> {
+    pub fn file_modes(&self) -> std::option::Option<&crate::types::FileModes> {
         self.file_modes.as_ref()
     }
     /// <p>Information about any object type conflicts in a merge operation.</p>
-    pub fn object_types(&self) -> std::option::Option<& crate::types::ObjectTypes> {
+    pub fn object_types(&self) -> std::option::Option<&crate::types::ObjectTypes> {
         self.object_types.as_ref()
     }
     /// <p>The number of conflicts, including both hunk conflicts and metadata conflicts.</p>
@@ -57,7 +57,7 @@ impl ConflictMetadata {
         self.number_of_conflicts
     }
     /// <p>A boolean value (true or false) indicating whether the file is binary or textual in the source, destination, and base of the merge.</p>
-    pub fn is_binary_file(&self) -> std::option::Option<& crate::types::IsBinaryFile> {
+    pub fn is_binary_file(&self) -> std::option::Option<&crate::types::IsBinaryFile> {
         self.is_binary_file.as_ref()
     }
     /// <p>A boolean value indicating whether there are conflicts in the content of a file.</p>
@@ -73,7 +73,7 @@ impl ConflictMetadata {
         self.object_type_conflict
     }
     /// <p>Whether an add, modify, or delete operation caused the conflict between the source and destination of the merge.</p>
-    pub fn merge_operations(&self) -> std::option::Option<& crate::types::MergeOperations> {
+    pub fn merge_operations(&self) -> std::option::Option<&crate::types::MergeOperations> {
         self.merge_operations.as_ref()
     }
 }
@@ -107,7 +107,8 @@ impl ConflictMetadataBuilder {
     }
     /// <p>The path of the file that contains conflicts.</p>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_path = input; self
+        self.file_path = input;
+        self
     }
     /// <p>The file sizes of the file in the source, destination, and base of the merge.</p>
     pub fn file_sizes(mut self, input: crate::types::FileSizes) -> Self {
@@ -116,7 +117,8 @@ impl ConflictMetadataBuilder {
     }
     /// <p>The file sizes of the file in the source, destination, and base of the merge.</p>
     pub fn set_file_sizes(mut self, input: std::option::Option<crate::types::FileSizes>) -> Self {
-        self.file_sizes = input; self
+        self.file_sizes = input;
+        self
     }
     /// <p>The file modes of the file in the source, destination, and base of the merge.</p>
     pub fn file_modes(mut self, input: crate::types::FileModes) -> Self {
@@ -125,7 +127,8 @@ impl ConflictMetadataBuilder {
     }
     /// <p>The file modes of the file in the source, destination, and base of the merge.</p>
     pub fn set_file_modes(mut self, input: std::option::Option<crate::types::FileModes>) -> Self {
-        self.file_modes = input; self
+        self.file_modes = input;
+        self
     }
     /// <p>Information about any object type conflicts in a merge operation.</p>
     pub fn object_types(mut self, input: crate::types::ObjectTypes) -> Self {
@@ -133,8 +136,12 @@ impl ConflictMetadataBuilder {
         self
     }
     /// <p>Information about any object type conflicts in a merge operation.</p>
-    pub fn set_object_types(mut self, input: std::option::Option<crate::types::ObjectTypes>) -> Self {
-        self.object_types = input; self
+    pub fn set_object_types(
+        mut self,
+        input: std::option::Option<crate::types::ObjectTypes>,
+    ) -> Self {
+        self.object_types = input;
+        self
     }
     /// <p>The number of conflicts, including both hunk conflicts and metadata conflicts.</p>
     pub fn number_of_conflicts(mut self, input: i32) -> Self {
@@ -143,7 +150,8 @@ impl ConflictMetadataBuilder {
     }
     /// <p>The number of conflicts, including both hunk conflicts and metadata conflicts.</p>
     pub fn set_number_of_conflicts(mut self, input: std::option::Option<i32>) -> Self {
-        self.number_of_conflicts = input; self
+        self.number_of_conflicts = input;
+        self
     }
     /// <p>A boolean value (true or false) indicating whether the file is binary or textual in the source, destination, and base of the merge.</p>
     pub fn is_binary_file(mut self, input: crate::types::IsBinaryFile) -> Self {
@@ -151,8 +159,12 @@ impl ConflictMetadataBuilder {
         self
     }
     /// <p>A boolean value (true or false) indicating whether the file is binary or textual in the source, destination, and base of the merge.</p>
-    pub fn set_is_binary_file(mut self, input: std::option::Option<crate::types::IsBinaryFile>) -> Self {
-        self.is_binary_file = input; self
+    pub fn set_is_binary_file(
+        mut self,
+        input: std::option::Option<crate::types::IsBinaryFile>,
+    ) -> Self {
+        self.is_binary_file = input;
+        self
     }
     /// <p>A boolean value indicating whether there are conflicts in the content of a file.</p>
     pub fn content_conflict(mut self, input: bool) -> Self {
@@ -161,7 +173,8 @@ impl ConflictMetadataBuilder {
     }
     /// <p>A boolean value indicating whether there are conflicts in the content of a file.</p>
     pub fn set_content_conflict(mut self, input: std::option::Option<bool>) -> Self {
-        self.content_conflict = input; self
+        self.content_conflict = input;
+        self
     }
     /// <p>A boolean value indicating whether there are conflicts in the file mode of a file.</p>
     pub fn file_mode_conflict(mut self, input: bool) -> Self {
@@ -170,7 +183,8 @@ impl ConflictMetadataBuilder {
     }
     /// <p>A boolean value indicating whether there are conflicts in the file mode of a file.</p>
     pub fn set_file_mode_conflict(mut self, input: std::option::Option<bool>) -> Self {
-        self.file_mode_conflict = input; self
+        self.file_mode_conflict = input;
+        self
     }
     /// <p>A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of a file, folder, or submodule.</p>
     pub fn object_type_conflict(mut self, input: bool) -> Self {
@@ -179,7 +193,8 @@ impl ConflictMetadataBuilder {
     }
     /// <p>A boolean value (true or false) indicating whether there are conflicts between the branches in the object type of a file, folder, or submodule.</p>
     pub fn set_object_type_conflict(mut self, input: std::option::Option<bool>) -> Self {
-        self.object_type_conflict = input; self
+        self.object_type_conflict = input;
+        self
     }
     /// <p>Whether an add, modify, or delete operation caused the conflict between the source and destination of the merge.</p>
     pub fn merge_operations(mut self, input: crate::types::MergeOperations) -> Self {
@@ -187,37 +202,26 @@ impl ConflictMetadataBuilder {
         self
     }
     /// <p>Whether an add, modify, or delete operation caused the conflict between the source and destination of the merge.</p>
-    pub fn set_merge_operations(mut self, input: std::option::Option<crate::types::MergeOperations>) -> Self {
-        self.merge_operations = input; self
+    pub fn set_merge_operations(
+        mut self,
+        input: std::option::Option<crate::types::MergeOperations>,
+    ) -> Self {
+        self.merge_operations = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConflictMetadata`](crate::types::ConflictMetadata).
     pub fn build(self) -> crate::types::ConflictMetadata {
         crate::types::ConflictMetadata {
-            file_path: self.file_path
-            ,
-            file_sizes: self.file_sizes
-            ,
-            file_modes: self.file_modes
-            ,
-            object_types: self.object_types
-            ,
-            number_of_conflicts: self.number_of_conflicts
-                .unwrap_or_default()
-            ,
-            is_binary_file: self.is_binary_file
-            ,
-            content_conflict: self.content_conflict
-                .unwrap_or_default()
-            ,
-            file_mode_conflict: self.file_mode_conflict
-                .unwrap_or_default()
-            ,
-            object_type_conflict: self.object_type_conflict
-                .unwrap_or_default()
-            ,
-            merge_operations: self.merge_operations
-            ,
+            file_path: self.file_path,
+            file_sizes: self.file_sizes,
+            file_modes: self.file_modes,
+            object_types: self.object_types,
+            number_of_conflicts: self.number_of_conflicts.unwrap_or_default(),
+            is_binary_file: self.is_binary_file,
+            content_conflict: self.content_conflict.unwrap_or_default(),
+            file_mode_conflict: self.file_mode_conflict.unwrap_or_default(),
+            object_type_conflict: self.object_type_conflict.unwrap_or_default(),
+            merge_operations: self.merge_operations,
         }
     }
 }
-

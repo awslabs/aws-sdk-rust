@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetNetworkAnalyzerConfigurationInput  {
+pub struct GetNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
     #[doc(hidden)]
     pub configuration_name: std::option::Option<std::string::String>,
 }
 impl GetNetworkAnalyzerConfigurationInput {
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn configuration_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_name(&self) -> std::option::Option<&str> {
         self.configuration_name.as_deref()
     }
 }
 impl GetNetworkAnalyzerConfigurationInput {
     /// Creates a new builder-style object to manufacture [`GetNetworkAnalyzerConfigurationInput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput).
-    pub fn builder() -> crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationInputBuilder{
         crate::operation::get_network_analyzer_configuration::builders::GetNetworkAnalyzerConfigurationInputBuilder::default()
     }
 }
@@ -33,11 +33,20 @@ impl GetNetworkAnalyzerConfigurationInputBuilder {
         self
     }
     /// <p>Name of the network analyzer configuration.</p>
-    pub fn set_configuration_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_name = input; self
+    pub fn set_configuration_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetNetworkAnalyzerConfigurationInput`](crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_network_analyzer_configuration::GetNetworkAnalyzerConfigurationInput {
                 configuration_name: self.configuration_name
@@ -46,4 +55,3 @@ impl GetNetworkAnalyzerConfigurationInputBuilder {
         )
     }
 }
-

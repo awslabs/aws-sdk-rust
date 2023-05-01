@@ -69,4 +69,3 @@ pub mod untag_resource;
 
 /// Types for the `UpdateIdentityPool` operation.
 pub mod update_identity_pool;
-

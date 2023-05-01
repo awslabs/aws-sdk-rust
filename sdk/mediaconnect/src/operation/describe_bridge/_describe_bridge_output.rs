@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBridgeOutput  {
+pub struct DescribeBridgeOutput {
     /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
     #[doc(hidden)]
     pub bridge: std::option::Option<crate::types::Bridge>,
@@ -10,15 +10,15 @@ pub struct DescribeBridgeOutput  {
 }
 impl DescribeBridgeOutput {
     /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
-    pub fn bridge(&self) -> std::option::Option<& crate::types::Bridge> {
+    pub fn bridge(&self) -> std::option::Option<&crate::types::Bridge> {
         self.bridge.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeBridgeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeBridgeOutput {
     /// Creates a new builder-style object to manufacture [`DescribeBridgeOutput`](crate::operation::describe_bridge::DescribeBridgeOutput).
     pub fn builder() -> crate::operation::describe_bridge::builders::DescribeBridgeOutputBuilder {
@@ -41,24 +41,23 @@ impl DescribeBridgeOutputBuilder {
     }
     /// A Bridge is the connection between your datacenter's Instances and the AWS cloud. A bridge can be used to send video from the AWS cloud to your datacenter or from your datacenter to the AWS cloud.
     pub fn set_bridge(mut self, input: std::option::Option<crate::types::Bridge>) -> Self {
-        self.bridge = input; self
+        self.bridge = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeBridgeOutput`](crate::operation::describe_bridge::DescribeBridgeOutput).
     pub fn build(self) -> crate::operation::describe_bridge::DescribeBridgeOutput {
         crate::operation::describe_bridge::DescribeBridgeOutput {
-            bridge: self.bridge
-            ,
+            bridge: self.bridge,
             _request_id: self._request_id,
         }
     }
 }
-

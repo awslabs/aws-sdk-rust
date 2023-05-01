@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTransitVirtualInterfaceOutput  {
+pub struct CreateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: std::option::Option<crate::types::VirtualInterface>,
@@ -10,18 +10,18 @@ pub struct CreateTransitVirtualInterfaceOutput  {
 }
 impl CreateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
-    pub fn virtual_interface(&self) -> std::option::Option<& crate::types::VirtualInterface> {
+    pub fn virtual_interface(&self) -> std::option::Option<&crate::types::VirtualInterface> {
         self.virtual_interface.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateTransitVirtualInterfaceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateTransitVirtualInterfaceOutput {
     /// Creates a new builder-style object to manufacture [`CreateTransitVirtualInterfaceOutput`](crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput).
-    pub fn builder() -> crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceOutputBuilder {
+    pub fn builder() -> crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceOutputBuilder{
         crate::operation::create_transit_virtual_interface::builders::CreateTransitVirtualInterfaceOutputBuilder::default()
     }
 }
@@ -40,25 +40,30 @@ impl CreateTransitVirtualInterfaceOutputBuilder {
         self
     }
     /// <p>Information about a virtual interface.</p>
-    pub fn set_virtual_interface(mut self, input: std::option::Option<crate::types::VirtualInterface>) -> Self {
-        self.virtual_interface = input; self
+    pub fn set_virtual_interface(
+        mut self,
+        input: std::option::Option<crate::types::VirtualInterface>,
+    ) -> Self {
+        self.virtual_interface = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateTransitVirtualInterfaceOutput`](crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput).
-    pub fn build(self) -> crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput
+    {
         crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput {
-            virtual_interface: self.virtual_interface
-            ,
+            virtual_interface: self.virtual_interface,
             _request_id: self._request_id,
         }
     }
 }
-

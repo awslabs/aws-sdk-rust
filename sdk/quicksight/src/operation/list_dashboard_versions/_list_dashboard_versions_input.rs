@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDashboardVersionsInput  {
+pub struct ListDashboardVersionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListDashboardVersionsInput  {
 }
 impl ListDashboardVersionsInput {
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID for the dashboard.</p>
-    pub fn dashboard_id(&self) -> std::option::Option<& str> {
+    pub fn dashboard_id(&self) -> std::option::Option<&str> {
         self.dashboard_id.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -36,7 +36,9 @@ impl ListDashboardVersionsInput {
 }
 impl ListDashboardVersionsInput {
     /// Creates a new builder-style object to manufacture [`ListDashboardVersionsInput`](crate::operation::list_dashboard_versions::ListDashboardVersionsInput).
-    pub fn builder() -> crate::operation::list_dashboard_versions::builders::ListDashboardVersionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_dashboard_versions::builders::ListDashboardVersionsInputBuilder
+    {
         crate::operation::list_dashboard_versions::builders::ListDashboardVersionsInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl ListDashboardVersionsInputBuilder {
     }
     /// <p>The ID of the Amazon Web Services account that contains the dashboard that you're listing versions for.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The ID for the dashboard.</p>
     pub fn dashboard_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl ListDashboardVersionsInputBuilder {
     }
     /// <p>The ID for the dashboard.</p>
     pub fn set_dashboard_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dashboard_id = input; self
+        self.dashboard_id = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +80,8 @@ impl ListDashboardVersionsInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +90,23 @@ impl ListDashboardVersionsInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDashboardVersionsInput`](crate::operation::list_dashboard_versions::ListDashboardVersionsInput).
-    pub fn build(self) -> Result<crate::operation::list_dashboard_versions::ListDashboardVersionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_dashboard_versions::ListDashboardVersionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_dashboard_versions::ListDashboardVersionsInput {
-                aws_account_id: self.aws_account_id
-                ,
-                dashboard_id: self.dashboard_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                aws_account_id: self.aws_account_id,
+                dashboard_id: self.dashboard_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

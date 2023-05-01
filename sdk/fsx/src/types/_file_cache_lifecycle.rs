@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let filecachelifecycle = unimplemented!();
 /// match filecachelifecycle {
@@ -33,14 +33,22 @@
 /// Specifically, when `filecachelifecycle` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `FileCacheLifecycle::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum FileCacheLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Available,
@@ -53,47 +61,48 @@ pub enum FileCacheLifecycle {
     #[allow(missing_docs)] // documentation missing in model
     Updating,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for FileCacheLifecycle {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "AVAILABLE" => FileCacheLifecycle::Available,
-"CREATING" => FileCacheLifecycle::Creating,
-"DELETING" => FileCacheLifecycle::Deleting,
-"FAILED" => FileCacheLifecycle::Failed,
-"UPDATING" => FileCacheLifecycle::Updating,
-other => FileCacheLifecycle::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for FileCacheLifecycle {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(FileCacheLifecycle::from(s))
-                }
-            }
-impl FileCacheLifecycle {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    FileCacheLifecycle::Available => "AVAILABLE",
-    FileCacheLifecycle::Creating => "CREATING",
-    FileCacheLifecycle::Deleting => "DELETING",
-    FileCacheLifecycle::Failed => "FAILED",
-    FileCacheLifecycle::Updating => "UPDATING",
-    FileCacheLifecycle::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "AVAILABLE" => FileCacheLifecycle::Available,
+            "CREATING" => FileCacheLifecycle::Creating,
+            "DELETING" => FileCacheLifecycle::Deleting,
+            "FAILED" => FileCacheLifecycle::Failed,
+            "UPDATING" => FileCacheLifecycle::Updating,
+            other => FileCacheLifecycle::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["AVAILABLE", "CREATING", "DELETING", "FAILED", "UPDATING"]
-                }
-            }
-impl AsRef<str> for FileCacheLifecycle {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for FileCacheLifecycle {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FileCacheLifecycle::from(s))
+    }
+}
+impl FileCacheLifecycle {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            FileCacheLifecycle::Available => "AVAILABLE",
+            FileCacheLifecycle::Creating => "CREATING",
+            FileCacheLifecycle::Deleting => "DELETING",
+            FileCacheLifecycle::Failed => "FAILED",
+            FileCacheLifecycle::Updating => "UPDATING",
+            FileCacheLifecycle::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["AVAILABLE", "CREATING", "DELETING", "FAILED", "UPDATING"]
+    }
+}
+impl AsRef<str> for FileCacheLifecycle {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

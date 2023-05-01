@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLunaClientsOutput  {
+pub struct ListLunaClientsOutput {
     /// <p>The list of clients.</p>
     #[doc(hidden)]
     pub client_list: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,23 @@ pub struct ListLunaClientsOutput  {
 }
 impl ListLunaClientsOutput {
     /// <p>The list of clients.</p>
-    pub fn client_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn client_list(&self) -> std::option::Option<&[std::string::String]> {
         self.client_list.as_deref()
     }
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLunaClientsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListLunaClientsOutput {
     /// Creates a new builder-style object to manufacture [`ListLunaClientsOutput`](crate::operation::list_luna_clients::ListLunaClientsOutput).
-    pub fn builder() -> crate::operation::list_luna_clients::builders::ListLunaClientsOutputBuilder {
+    pub fn builder() -> crate::operation::list_luna_clients::builders::ListLunaClientsOutputBuilder
+    {
         crate::operation::list_luna_clients::builders::ListLunaClientsOutputBuilder::default()
     }
 }
@@ -49,13 +50,17 @@ impl ListLunaClientsOutputBuilder {
     /// <p>The list of clients.</p>
     pub fn client_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.client_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.client_list = Some(v);
-                        self
+        v.push(input.into());
+        self.client_list = Some(v);
+        self
     }
     /// <p>The list of clients.</p>
-    pub fn set_client_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.client_list = input; self
+    pub fn set_client_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.client_list = input;
+        self
     }
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,24 @@ impl ListLunaClientsOutputBuilder {
     }
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListLunaClientsOutput`](crate::operation::list_luna_clients::ListLunaClientsOutput).
     pub fn build(self) -> crate::operation::list_luna_clients::ListLunaClientsOutput {
         crate::operation::list_luna_clients::ListLunaClientsOutput {
-            client_list: self.client_list
-            ,
-            next_token: self.next_token
-            ,
+            client_list: self.client_list,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

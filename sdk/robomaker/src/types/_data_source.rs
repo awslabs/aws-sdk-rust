@@ -3,7 +3,7 @@
 /// <p>Information about a data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DataSource  {
+pub struct DataSource {
     /// <p>The name of the data source.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,40 +13,40 @@ pub struct DataSource  {
     /// <p>The list of S3 keys identifying the data source files.</p>
     #[doc(hidden)]
     pub s3_keys: std::option::Option<std::vec::Vec<crate::types::S3KeyOutput>>,
-    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     #[doc(hidden)]
     pub r#type: std::option::Option<crate::types::DataSourceType>,
-    /// <p>The location where your files are mounted in the container image.</p> 
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
+    /// <p>The location where your files are mounted in the container image.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     #[doc(hidden)]
     pub destination: std::option::Option<std::string::String>,
 }
 impl DataSource {
     /// <p>The name of the data source.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The S3 bucket where the data files are located.</p>
-    pub fn s3_bucket(&self) -> std::option::Option<& str> {
+    pub fn s3_bucket(&self) -> std::option::Option<&str> {
         self.s3_bucket.as_deref()
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn s3_keys(&self) -> std::option::Option<& [crate::types::S3KeyOutput]> {
+    pub fn s3_keys(&self) -> std::option::Option<&[crate::types::S3KeyOutput]> {
         self.s3_keys.as_deref()
     }
-    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::DataSourceType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::DataSourceType> {
         self.r#type.as_ref()
     }
-    /// <p>The location where your files are mounted in the container image.</p> 
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
+    /// <p>The location where your files are mounted in the container image.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
-    pub fn destination(&self) -> std::option::Option<& str> {
+    pub fn destination(&self) -> std::option::Option<&str> {
         self.destination.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl DataSourceBuilder {
     }
     /// <p>The name of the data source.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The S3 bucket where the data files are located.</p>
     pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl DataSourceBuilder {
     }
     /// <p>The S3 bucket where the data files are located.</p>
     pub fn set_s3_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_bucket = input; self
+        self.s3_bucket = input;
+        self
     }
     /// Appends an item to `s3_keys`.
     ///
@@ -93,54 +95,54 @@ impl DataSourceBuilder {
     /// <p>The list of S3 keys identifying the data source files.</p>
     pub fn s3_keys(mut self, input: crate::types::S3KeyOutput) -> Self {
         let mut v = self.s3_keys.unwrap_or_default();
-                        v.push(input);
-                        self.s3_keys = Some(v);
-                        self
+        v.push(input);
+        self.s3_keys = Some(v);
+        self
     }
     /// <p>The list of S3 keys identifying the data source files.</p>
-    pub fn set_s3_keys(mut self, input: std::option::Option<std::vec::Vec<crate::types::S3KeyOutput>>) -> Self {
-        self.s3_keys = input; self
+    pub fn set_s3_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::S3KeyOutput>>,
+    ) -> Self {
+        self.s3_keys = input;
+        self
     }
-    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     pub fn r#type(mut self, input: crate::types::DataSourceType) -> Self {
         self.r#type = Some(input);
         self
     }
-    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p> 
+    /// <p>The data type for the data source that you're using for your container image or simulation job. You can use this field to specify whether your data source is an Archive, an Amazon S3 prefix, or a file.</p>
     /// <p>If you don't specify a field, the default value is <code>File</code>.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::DataSourceType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
-    /// <p>The location where your files are mounted in the container image.</p> 
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
+    /// <p>The location where your files are mounted in the container image.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
         self.destination = Some(input.into());
         self
     }
-    /// <p>The location where your files are mounted in the container image.</p> 
-    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p> 
-    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p> 
+    /// <p>The location where your files are mounted in the container image.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as an <code>Archive</code>, you must provide an Amazon S3 object key to your archive. The object key must point to either a <code>.zip</code> or <code>.tar.gz</code> file.</p>
+    /// <p>If you've specified the <code>type</code> of the data source as a <code>Prefix</code>, you provide the Amazon S3 prefix that points to the files that you are using for your data source.</p>
     /// <p>If you've specified the <code>type</code> of the data source as a <code>File</code>, you provide the Amazon S3 path to the file that you're using as your data source.</p>
     pub fn set_destination(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.destination = input; self
+        self.destination = input;
+        self
     }
     /// Consumes the builder and constructs a [`DataSource`](crate::types::DataSource).
     pub fn build(self) -> crate::types::DataSource {
         crate::types::DataSource {
-            name: self.name
-            ,
-            s3_bucket: self.s3_bucket
-            ,
-            s3_keys: self.s3_keys
-            ,
-            r#type: self.r#type
-            ,
-            destination: self.destination
-            ,
+            name: self.name,
+            s3_bucket: self.s3_bucket,
+            s3_keys: self.s3_keys,
+            r#type: self.r#type,
+            destination: self.destination,
         }
     }
 }
-

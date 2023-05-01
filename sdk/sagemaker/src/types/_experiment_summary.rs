@@ -3,7 +3,7 @@
 /// <p>A summary of the properties of an experiment. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeExperiment.html">DescribeExperiment</a> API and provide the <code>ExperimentName</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExperimentSummary  {
+pub struct ExperimentSummary {
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
     #[doc(hidden)]
     pub experiment_arn: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct ExperimentSummary  {
 }
 impl ExperimentSummary {
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
-    pub fn experiment_arn(&self) -> std::option::Option<& str> {
+    pub fn experiment_arn(&self) -> std::option::Option<&str> {
         self.experiment_arn.as_deref()
     }
     /// <p>The name of the experiment.</p>
-    pub fn experiment_name(&self) -> std::option::Option<& str> {
+    pub fn experiment_name(&self) -> std::option::Option<&str> {
         self.experiment_name.as_deref()
     }
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
-    pub fn display_name(&self) -> std::option::Option<& str> {
+    pub fn display_name(&self) -> std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The source of the experiment.</p>
-    pub fn experiment_source(&self) -> std::option::Option<& crate::types::ExperimentSource> {
+    pub fn experiment_source(&self) -> std::option::Option<&crate::types::ExperimentSource> {
         self.experiment_source.as_ref()
     }
     /// <p>When the experiment was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>When the experiment was last modified.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -75,7 +75,8 @@ impl ExperimentSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the experiment.</p>
     pub fn set_experiment_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.experiment_arn = input; self
+        self.experiment_arn = input;
+        self
     }
     /// <p>The name of the experiment.</p>
     pub fn experiment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl ExperimentSummaryBuilder {
     }
     /// <p>The name of the experiment.</p>
     pub fn set_experiment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.experiment_name = input; self
+        self.experiment_name = input;
+        self
     }
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
     pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl ExperimentSummaryBuilder {
     }
     /// <p>The name of the experiment as displayed. If <code>DisplayName</code> isn't specified, <code>ExperimentName</code> is displayed.</p>
     pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.display_name = input; self
+        self.display_name = input;
+        self
     }
     /// <p>The source of the experiment.</p>
     pub fn experiment_source(mut self, input: crate::types::ExperimentSource) -> Self {
@@ -101,8 +104,12 @@ impl ExperimentSummaryBuilder {
         self
     }
     /// <p>The source of the experiment.</p>
-    pub fn set_experiment_source(mut self, input: std::option::Option<crate::types::ExperimentSource>) -> Self {
-        self.experiment_source = input; self
+    pub fn set_experiment_source(
+        mut self,
+        input: std::option::Option<crate::types::ExperimentSource>,
+    ) -> Self {
+        self.experiment_source = input;
+        self
     }
     /// <p>When the experiment was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,8 +117,12 @@ impl ExperimentSummaryBuilder {
         self
     }
     /// <p>When the experiment was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>When the experiment was last modified.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,25 +130,22 @@ impl ExperimentSummaryBuilder {
         self
     }
     /// <p>When the experiment was last modified.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExperimentSummary`](crate::types::ExperimentSummary).
     pub fn build(self) -> crate::types::ExperimentSummary {
         crate::types::ExperimentSummary {
-            experiment_arn: self.experiment_arn
-            ,
-            experiment_name: self.experiment_name
-            ,
-            display_name: self.display_name
-            ,
-            experiment_source: self.experiment_source
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
+            experiment_arn: self.experiment_arn,
+            experiment_name: self.experiment_name,
+            display_name: self.display_name,
+            experiment_source: self.experiment_source,
+            creation_time: self.creation_time,
+            last_modified_time: self.last_modified_time,
         }
     }
 }
-

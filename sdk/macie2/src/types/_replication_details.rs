@@ -3,7 +3,7 @@
 /// <p>Provides information about settings that define whether one or more objects in an S3 bucket are replicated to S3 buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ReplicationDetails  {
+pub struct ReplicationDetails {
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
     #[doc(hidden)]
     pub replicated: bool,
@@ -24,7 +24,7 @@ impl ReplicationDetails {
         self.replicated_externally
     }
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
-    pub fn replication_accounts(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn replication_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.replication_accounts.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ReplicationDetailsBuilder {
     }
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
     pub fn set_replicated(mut self, input: std::option::Option<bool>) -> Self {
-        self.replicated = input; self
+        self.replicated = input;
+        self
     }
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
     pub fn replicated_externally(mut self, input: bool) -> Self {
@@ -60,7 +61,8 @@ impl ReplicationDetailsBuilder {
     }
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to a bucket for an Amazon Web Services account that isn't part of your Amazon Macie organization. An <i>Amazon Macie organization</i> is a set of Macie accounts that are centrally managed as a group of related accounts through Organizations or by Macie invitation.</p>
     pub fn set_replicated_externally(mut self, input: std::option::Option<bool>) -> Self {
-        self.replicated_externally = input; self
+        self.replicated_externally = input;
+        self
     }
     /// Appends an item to `replication_accounts`.
     ///
@@ -69,26 +71,24 @@ impl ReplicationDetailsBuilder {
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
     pub fn replication_accounts(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.replication_accounts.unwrap_or_default();
-                        v.push(input.into());
-                        self.replication_accounts = Some(v);
-                        self
+        v.push(input.into());
+        self.replication_accounts = Some(v);
+        self
     }
     /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that owns a bucket that the bucket is configured to replicate one or more objects to.</p>
-    pub fn set_replication_accounts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.replication_accounts = input; self
+    pub fn set_replication_accounts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.replication_accounts = input;
+        self
     }
     /// Consumes the builder and constructs a [`ReplicationDetails`](crate::types::ReplicationDetails).
     pub fn build(self) -> crate::types::ReplicationDetails {
         crate::types::ReplicationDetails {
-            replicated: self.replicated
-                .unwrap_or_default()
-            ,
-            replicated_externally: self.replicated_externally
-                .unwrap_or_default()
-            ,
-            replication_accounts: self.replication_accounts
-            ,
+            replicated: self.replicated.unwrap_or_default(),
+            replicated_externally: self.replicated_externally.unwrap_or_default(),
+            replication_accounts: self.replication_accounts,
         }
     }
 }
-

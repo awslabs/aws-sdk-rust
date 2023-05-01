@@ -3,7 +3,7 @@
 /// <p>This object is a container for common summary information about the entity. The summary doesn't contain the whole entity structure, but it does contain information common across all entities.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EntitySummary  {
+pub struct EntitySummary {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct EntitySummary  {
 }
 impl EntitySummary {
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of the entity.</p>
-    pub fn entity_type(&self) -> std::option::Option<& str> {
+    pub fn entity_type(&self) -> std::option::Option<&str> {
         self.entity_type.as_deref()
     }
     /// <p>The unique identifier for the entity.</p>
-    pub fn entity_id(&self) -> std::option::Option<& str> {
+    pub fn entity_id(&self) -> std::option::Option<&str> {
         self.entity_id.as_deref()
     }
     /// <p>The ARN associated with the unique identifier for the entity.</p>
-    pub fn entity_arn(&self) -> std::option::Option<& str> {
+    pub fn entity_arn(&self) -> std::option::Option<&str> {
         self.entity_arn.as_deref()
     }
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    pub fn last_modified_date(&self) -> std::option::Option<& str> {
+    pub fn last_modified_date(&self) -> std::option::Option<&str> {
         self.last_modified_date.as_deref()
     }
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
-    pub fn visibility(&self) -> std::option::Option<& str> {
+    pub fn visibility(&self) -> std::option::Option<&str> {
         self.visibility.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl EntitySummaryBuilder {
     }
     /// <p>The name for the entity. This value is not unique. It is defined by the seller.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of the entity.</p>
     pub fn entity_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl EntitySummaryBuilder {
     }
     /// <p>The type of the entity.</p>
     pub fn set_entity_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_type = input; self
+        self.entity_type = input;
+        self
     }
     /// <p>The unique identifier for the entity.</p>
     pub fn entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl EntitySummaryBuilder {
     }
     /// <p>The unique identifier for the entity.</p>
     pub fn set_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_id = input; self
+        self.entity_id = input;
+        self
     }
     /// <p>The ARN associated with the unique identifier for the entity.</p>
     pub fn entity_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +105,8 @@ impl EntitySummaryBuilder {
     }
     /// <p>The ARN associated with the unique identifier for the entity.</p>
     pub fn set_entity_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entity_arn = input; self
+        self.entity_arn = input;
+        self
     }
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
     pub fn last_modified_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +114,12 @@ impl EntitySummaryBuilder {
         self
     }
     /// <p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>
-    pub fn set_last_modified_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.last_modified_date = input; self
+    pub fn set_last_modified_date(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.last_modified_date = input;
+        self
     }
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
     pub fn visibility(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,24 +128,18 @@ impl EntitySummaryBuilder {
     }
     /// <p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>
     pub fn set_visibility(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.visibility = input; self
+        self.visibility = input;
+        self
     }
     /// Consumes the builder and constructs a [`EntitySummary`](crate::types::EntitySummary).
     pub fn build(self) -> crate::types::EntitySummary {
         crate::types::EntitySummary {
-            name: self.name
-            ,
-            entity_type: self.entity_type
-            ,
-            entity_id: self.entity_id
-            ,
-            entity_arn: self.entity_arn
-            ,
-            last_modified_date: self.last_modified_date
-            ,
-            visibility: self.visibility
-            ,
+            name: self.name,
+            entity_type: self.entity_type,
+            entity_id: self.entity_id,
+            entity_arn: self.entity_arn,
+            last_modified_date: self.last_modified_date,
+            visibility: self.visibility,
         }
     }
 }
-

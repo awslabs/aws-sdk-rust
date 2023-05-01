@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkerFleetInput  {
+pub struct UpdateWorkerFleetInput {
     /// Full ARN of the worker fleet.
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct UpdateWorkerFleetInput  {
 }
 impl UpdateWorkerFleetInput {
     /// Full ARN of the worker fleet.
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// Human friendly name of the resource.
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    pub fn additional_fixed_properties(&self) -> std::option::Option<& str> {
+    pub fn additional_fixed_properties(&self) -> std::option::Option<&str> {
         self.additional_fixed_properties.as_deref()
     }
 }
 impl UpdateWorkerFleetInput {
     /// Creates a new builder-style object to manufacture [`UpdateWorkerFleetInput`](crate::operation::update_worker_fleet::UpdateWorkerFleetInput).
-    pub fn builder() -> crate::operation::update_worker_fleet::builders::UpdateWorkerFleetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_worker_fleet::builders::UpdateWorkerFleetInputBuilder {
         crate::operation::update_worker_fleet::builders::UpdateWorkerFleetInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl UpdateWorkerFleetInputBuilder {
     }
     /// Full ARN of the worker fleet.
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Human friendly name of the resource.
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +61,8 @@ impl UpdateWorkerFleetInputBuilder {
     }
     /// Human friendly name of the resource.
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
     pub fn additional_fixed_properties(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,21 +70,26 @@ impl UpdateWorkerFleetInputBuilder {
         self
     }
     /// JSON blob containing additional fixed properties regarding the worker fleet
-    pub fn set_additional_fixed_properties(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.additional_fixed_properties = input; self
+    pub fn set_additional_fixed_properties(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.additional_fixed_properties = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateWorkerFleetInput`](crate::operation::update_worker_fleet::UpdateWorkerFleetInput).
-    pub fn build(self) -> Result<crate::operation::update_worker_fleet::UpdateWorkerFleetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_worker_fleet::UpdateWorkerFleetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_worker_fleet::UpdateWorkerFleetInput {
-                id: self.id
-                ,
-                name: self.name
-                ,
-                additional_fixed_properties: self.additional_fixed_properties
-                ,
-            }
+                id: self.id,
+                name: self.name,
+                additional_fixed_properties: self.additional_fixed_properties,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The request was denied because of request throttling. Retry the request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ThrottlingException  {
+pub struct ThrottlingException {
     /// <p>A description of the error.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -20,11 +20,11 @@ pub struct ThrottlingException  {
 }
 impl ThrottlingException {
     /// <p>The ID of the service that is associated with the error.</p>
-    pub fn service_code(&self) -> std::option::Option<& str> {
+    pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
     /// <p>The ID of the service quota that was exceeded.</p>
-    pub fn quota_code(&self) -> std::option::Option<& str> {
+    pub fn quota_code(&self) -> std::option::Option<&str> {
         self.quota_code.as_deref()
     }
     /// <p>The value of a parameter in the request caused an error.</p>
@@ -38,13 +38,15 @@ impl ThrottlingException {
         aws_smithy_types::retry::ErrorKind::ClientError
     }
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for ThrottlingException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ThrottlingException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -59,7 +61,9 @@ impl aws_http::request_id::RequestId for crate::types::error::ThrottlingExceptio
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ThrottlingException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl ThrottlingException {
     /// Creates a new builder-style object to manufacture [`ThrottlingException`](crate::types::error::ThrottlingException).
@@ -86,7 +90,8 @@ impl ThrottlingExceptionBuilder {
     }
     /// <p>A description of the error.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The ID of the service that is associated with the error.</p>
     pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -95,7 +100,8 @@ impl ThrottlingExceptionBuilder {
     }
     /// <p>The ID of the service that is associated with the error.</p>
     pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_code = input; self
+        self.service_code = input;
+        self
     }
     /// <p>The ID of the service quota that was exceeded.</p>
     pub fn quota_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,7 +110,8 @@ impl ThrottlingExceptionBuilder {
     }
     /// <p>The ID of the service quota that was exceeded.</p>
     pub fn set_quota_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.quota_code = input; self
+        self.quota_code = input;
+        self
     }
     /// <p>The value of a parameter in the request caused an error.</p>
     pub fn retry_after_seconds(mut self, input: i32) -> Self {
@@ -113,32 +120,31 @@ impl ThrottlingExceptionBuilder {
     }
     /// <p>The value of a parameter in the request caused an error.</p>
     pub fn set_retry_after_seconds(mut self, input: std::option::Option<i32>) -> Self {
-        self.retry_after_seconds = input; self
+        self.retry_after_seconds = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`ThrottlingException`](crate::types::error::ThrottlingException).
     pub fn build(self) -> crate::types::error::ThrottlingException {
         crate::types::error::ThrottlingException {
-            message: self.message
-            ,
-            service_code: self.service_code
-            ,
-            quota_code: self.quota_code
-            ,
-            retry_after_seconds: self.retry_after_seconds
-            ,
+            message: self.message,
+            service_code: self.service_code,
+            quota_code: self.quota_code,
+            retry_after_seconds: self.retry_after_seconds,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

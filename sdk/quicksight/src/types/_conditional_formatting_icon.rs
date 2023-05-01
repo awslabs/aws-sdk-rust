@@ -3,21 +3,24 @@
 /// <p>The formatting configuration for the icon.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ConditionalFormattingIcon  {
+pub struct ConditionalFormattingIcon {
     /// <p>Formatting configuration for icon set.</p>
     #[doc(hidden)]
     pub icon_set: std::option::Option<crate::types::ConditionalFormattingIconSet>,
     /// <p>Determines the custom condition for an icon set.</p>
     #[doc(hidden)]
-    pub custom_condition: std::option::Option<crate::types::ConditionalFormattingCustomIconCondition>,
+    pub custom_condition:
+        std::option::Option<crate::types::ConditionalFormattingCustomIconCondition>,
 }
 impl ConditionalFormattingIcon {
     /// <p>Formatting configuration for icon set.</p>
-    pub fn icon_set(&self) -> std::option::Option<& crate::types::ConditionalFormattingIconSet> {
+    pub fn icon_set(&self) -> std::option::Option<&crate::types::ConditionalFormattingIconSet> {
         self.icon_set.as_ref()
     }
     /// <p>Determines the custom condition for an icon set.</p>
-    pub fn custom_condition(&self) -> std::option::Option<& crate::types::ConditionalFormattingCustomIconCondition> {
+    pub fn custom_condition(
+        &self,
+    ) -> std::option::Option<&crate::types::ConditionalFormattingCustomIconCondition> {
         self.custom_condition.as_ref()
     }
 }
@@ -33,7 +36,8 @@ impl ConditionalFormattingIcon {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ConditionalFormattingIconBuilder {
     pub(crate) icon_set: std::option::Option<crate::types::ConditionalFormattingIconSet>,
-    pub(crate) custom_condition: std::option::Option<crate::types::ConditionalFormattingCustomIconCondition>,
+    pub(crate) custom_condition:
+        std::option::Option<crate::types::ConditionalFormattingCustomIconCondition>,
 }
 impl ConditionalFormattingIconBuilder {
     /// <p>Formatting configuration for icon set.</p>
@@ -42,26 +46,34 @@ impl ConditionalFormattingIconBuilder {
         self
     }
     /// <p>Formatting configuration for icon set.</p>
-    pub fn set_icon_set(mut self, input: std::option::Option<crate::types::ConditionalFormattingIconSet>) -> Self {
-        self.icon_set = input; self
+    pub fn set_icon_set(
+        mut self,
+        input: std::option::Option<crate::types::ConditionalFormattingIconSet>,
+    ) -> Self {
+        self.icon_set = input;
+        self
     }
     /// <p>Determines the custom condition for an icon set.</p>
-    pub fn custom_condition(mut self, input: crate::types::ConditionalFormattingCustomIconCondition) -> Self {
+    pub fn custom_condition(
+        mut self,
+        input: crate::types::ConditionalFormattingCustomIconCondition,
+    ) -> Self {
         self.custom_condition = Some(input);
         self
     }
     /// <p>Determines the custom condition for an icon set.</p>
-    pub fn set_custom_condition(mut self, input: std::option::Option<crate::types::ConditionalFormattingCustomIconCondition>) -> Self {
-        self.custom_condition = input; self
+    pub fn set_custom_condition(
+        mut self,
+        input: std::option::Option<crate::types::ConditionalFormattingCustomIconCondition>,
+    ) -> Self {
+        self.custom_condition = input;
+        self
     }
     /// Consumes the builder and constructs a [`ConditionalFormattingIcon`](crate::types::ConditionalFormattingIcon).
     pub fn build(self) -> crate::types::ConditionalFormattingIcon {
         crate::types::ConditionalFormattingIcon {
-            icon_set: self.icon_set
-            ,
-            custom_condition: self.custom_condition
-            ,
+            icon_set: self.icon_set,
+            custom_condition: self.custom_condition,
         }
     }
 }
-

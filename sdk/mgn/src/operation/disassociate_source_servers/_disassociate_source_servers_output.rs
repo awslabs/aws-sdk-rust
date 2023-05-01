@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateSourceServersOutput  {
+pub struct DisassociateSourceServersOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for DisassociateSourceServersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DisassociateSourceServersOutput {
     /// Creates a new builder-style object to manufacture [`DisassociateSourceServersOutput`](crate::operation::disassociate_source_servers::DisassociateSourceServersOutput).
-    pub fn builder() -> crate::operation::disassociate_source_servers::builders::DisassociateSourceServersOutputBuilder {
+    pub fn builder() -> crate::operation::disassociate_source_servers::builders::DisassociateSourceServersOutputBuilder{
         crate::operation::disassociate_source_servers::builders::DisassociateSourceServersOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct DisassociateSourceServersOutputBuilder {
 }
 impl DisassociateSourceServersOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DisassociateSourceServersOutput`](crate::operation::disassociate_source_servers::DisassociateSourceServersOutput).
-    pub fn build(self) -> crate::operation::disassociate_source_servers::DisassociateSourceServersOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::disassociate_source_servers::DisassociateSourceServersOutput {
         crate::operation::disassociate_source_servers::DisassociateSourceServersOutput {
             _request_id: self._request_id,
         }
     }
 }
-

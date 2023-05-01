@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListWorkerConfigurationsInput  {
+pub struct ListWorkerConfigurationsInput {
     /// <p>The maximum number of worker configurations to list in one response.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,13 +16,15 @@ impl ListWorkerConfigurationsInput {
         self.max_results
     }
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListWorkerConfigurationsInput {
     /// Creates a new builder-style object to manufacture [`ListWorkerConfigurationsInput`](crate::operation::list_worker_configurations::ListWorkerConfigurationsInput).
-    pub fn builder() -> crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsInputBuilder
+    {
         crate::operation::list_worker_configurations::builders::ListWorkerConfigurationsInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl ListWorkerConfigurationsInputBuilder {
     }
     /// <p>The maximum number of worker configurations to list in one response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +54,21 @@ impl ListWorkerConfigurationsInputBuilder {
     }
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListWorkerConfigurationsInput`](crate::operation::list_worker_configurations::ListWorkerConfigurationsInput).
-    pub fn build(self) -> Result<crate::operation::list_worker_configurations::ListWorkerConfigurationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_worker_configurations::ListWorkerConfigurationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_worker_configurations::ListWorkerConfigurationsInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

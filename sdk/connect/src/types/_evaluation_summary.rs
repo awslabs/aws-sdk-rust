@@ -3,7 +3,7 @@
 /// <p>Summary information about a contact evaluation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EvaluationSummary  {
+pub struct EvaluationSummary {
     /// <p>A unique identifier for the contact evaluation.</p>
     #[doc(hidden)]
     pub evaluation_id: std::option::Option<std::string::String>,
@@ -34,39 +34,39 @@ pub struct EvaluationSummary  {
 }
 impl EvaluationSummary {
     /// <p>A unique identifier for the contact evaluation.</p>
-    pub fn evaluation_id(&self) -> std::option::Option<& str> {
+    pub fn evaluation_id(&self) -> std::option::Option<&str> {
         self.evaluation_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
-    pub fn evaluation_arn(&self) -> std::option::Option<& str> {
+    pub fn evaluation_arn(&self) -> std::option::Option<&str> {
         self.evaluation_arn.as_deref()
     }
     /// <p>A unique title of the evaluation form.</p>
-    pub fn evaluation_form_title(&self) -> std::option::Option<& str> {
+    pub fn evaluation_form_title(&self) -> std::option::Option<&str> {
         self.evaluation_form_title.as_deref()
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn evaluation_form_id(&self) -> std::option::Option<& str> {
+    pub fn evaluation_form_id(&self) -> std::option::Option<&str> {
         self.evaluation_form_id.as_deref()
     }
     /// <p>The status of the contact evaluation.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::EvaluationStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::EvaluationStatus> {
         self.status.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
-    pub fn evaluator_arn(&self) -> std::option::Option<& str> {
+    pub fn evaluator_arn(&self) -> std::option::Option<&str> {
         self.evaluator_arn.as_deref()
     }
     /// <p>The overall score of the contact evaluation.</p>
-    pub fn score(&self) -> std::option::Option<& crate::types::EvaluationScore> {
+    pub fn score(&self) -> std::option::Option<&crate::types::EvaluationScore> {
         self.score.as_ref()
     }
     /// <p>The timestamp for when the evaluation was created.</p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
-    pub fn last_modified_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified_time.as_ref()
     }
 }
@@ -99,7 +99,8 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>A unique identifier for the contact evaluation.</p>
     pub fn set_evaluation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_id = input; self
+        self.evaluation_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn evaluation_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
     pub fn set_evaluation_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_arn = input; self
+        self.evaluation_arn = input;
+        self
     }
     /// <p>A unique title of the evaluation form.</p>
     pub fn evaluation_form_title(mut self, input: impl Into<std::string::String>) -> Self {
@@ -116,8 +118,12 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>A unique title of the evaluation form.</p>
-    pub fn set_evaluation_form_title(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_form_title = input; self
+    pub fn set_evaluation_form_title(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evaluation_form_title = input;
+        self
     }
     /// <p>The unique identifier for the evaluation form.</p>
     pub fn evaluation_form_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,8 +131,12 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluation_form_id = input; self
+    pub fn set_evaluation_form_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.evaluation_form_id = input;
+        self
     }
     /// <p>The status of the contact evaluation.</p>
     pub fn status(mut self, input: crate::types::EvaluationStatus) -> Self {
@@ -134,8 +144,12 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>The status of the contact evaluation.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::EvaluationStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::EvaluationStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     pub fn evaluator_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +158,8 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user who last updated the evaluation.</p>
     pub fn set_evaluator_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.evaluator_arn = input; self
+        self.evaluator_arn = input;
+        self
     }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn score(mut self, input: crate::types::EvaluationScore) -> Self {
@@ -153,7 +168,8 @@ impl EvaluationSummaryBuilder {
     }
     /// <p>The overall score of the contact evaluation.</p>
     pub fn set_score(mut self, input: std::option::Option<crate::types::EvaluationScore>) -> Self {
-        self.score = input; self
+        self.score = input;
+        self
     }
     /// <p>The timestamp for when the evaluation was created.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -161,8 +177,12 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>The timestamp for when the evaluation was created.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
     pub fn last_modified_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -170,31 +190,25 @@ impl EvaluationSummaryBuilder {
         self
     }
     /// <p>The timestamp for when the evaluation was last updated.</p>
-    pub fn set_last_modified_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified_time = input; self
+    pub fn set_last_modified_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`EvaluationSummary`](crate::types::EvaluationSummary).
     pub fn build(self) -> crate::types::EvaluationSummary {
         crate::types::EvaluationSummary {
-            evaluation_id: self.evaluation_id
-            ,
-            evaluation_arn: self.evaluation_arn
-            ,
-            evaluation_form_title: self.evaluation_form_title
-            ,
-            evaluation_form_id: self.evaluation_form_id
-            ,
-            status: self.status
-            ,
-            evaluator_arn: self.evaluator_arn
-            ,
-            score: self.score
-            ,
-            created_time: self.created_time
-            ,
-            last_modified_time: self.last_modified_time
-            ,
+            evaluation_id: self.evaluation_id,
+            evaluation_arn: self.evaluation_arn,
+            evaluation_form_title: self.evaluation_form_title,
+            evaluation_form_id: self.evaluation_form_id,
+            status: self.status,
+            evaluator_arn: self.evaluator_arn,
+            score: self.score,
+            created_time: self.created_time,
+            last_modified_time: self.last_modified_time,
         }
     }
 }
-

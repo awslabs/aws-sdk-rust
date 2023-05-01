@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloseAccountInput  {
+pub struct CloseAccountInput {
     /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
 }
 impl CloseAccountInput {
     /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl CloseAccountInputBuilder {
     }
     /// <p>Retrieves the Amazon Web Services account Id for the current <code>CloseAccount</code> API request. </p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CloseAccountInput`](crate::operation::close_account::CloseAccountInput).
-    pub fn build(self) -> Result<crate::operation::close_account::CloseAccountInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::close_account::CloseAccountInput {
-                account_id: self.account_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::close_account::CloseAccountInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::close_account::CloseAccountInput {
+            account_id: self.account_id,
+        })
     }
 }
-

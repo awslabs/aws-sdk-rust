@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartRecommendationReportGenerationInput  {
+pub struct StartRecommendationReportGenerationInput {
     /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
     #[doc(hidden)]
     pub output_format: std::option::Option<crate::types::OutputFormat>,
@@ -12,17 +12,17 @@ pub struct StartRecommendationReportGenerationInput  {
 }
 impl StartRecommendationReportGenerationInput {
     /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
-    pub fn output_format(&self) -> std::option::Option<& crate::types::OutputFormat> {
+    pub fn output_format(&self) -> std::option::Option<&crate::types::OutputFormat> {
         self.output_format.as_ref()
     }
     /// <p> Groups the resources in the recommendation report with a unique name. </p>
-    pub fn group_id_filter(&self) -> std::option::Option<& [crate::types::Group]> {
+    pub fn group_id_filter(&self) -> std::option::Option<&[crate::types::Group]> {
         self.group_id_filter.as_deref()
     }
 }
 impl StartRecommendationReportGenerationInput {
     /// Creates a new builder-style object to manufacture [`StartRecommendationReportGenerationInput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput).
-    pub fn builder() -> crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationInputBuilder {
+    pub fn builder() -> crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationInputBuilder{
         crate::operation::start_recommendation_report_generation::builders::StartRecommendationReportGenerationInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl StartRecommendationReportGenerationInputBuilder {
         self
     }
     /// <p> The output format for the recommendation report file. The default format is Microsoft Excel. </p>
-    pub fn set_output_format(mut self, input: std::option::Option<crate::types::OutputFormat>) -> Self {
-        self.output_format = input; self
+    pub fn set_output_format(
+        mut self,
+        input: std::option::Option<crate::types::OutputFormat>,
+    ) -> Self {
+        self.output_format = input;
+        self
     }
     /// Appends an item to `group_id_filter`.
     ///
@@ -51,16 +55,20 @@ impl StartRecommendationReportGenerationInputBuilder {
     /// <p> Groups the resources in the recommendation report with a unique name. </p>
     pub fn group_id_filter(mut self, input: crate::types::Group) -> Self {
         let mut v = self.group_id_filter.unwrap_or_default();
-                        v.push(input);
-                        self.group_id_filter = Some(v);
-                        self
+        v.push(input);
+        self.group_id_filter = Some(v);
+        self
     }
     /// <p> Groups the resources in the recommendation report with a unique name. </p>
-    pub fn set_group_id_filter(mut self, input: std::option::Option<std::vec::Vec<crate::types::Group>>) -> Self {
-        self.group_id_filter = input; self
+    pub fn set_group_id_filter(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Group>>,
+    ) -> Self {
+        self.group_id_filter = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartRecommendationReportGenerationInput`](crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput).
-    pub fn build(self) -> Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationInput {
                 output_format: self.output_format
@@ -71,4 +79,3 @@ impl StartRecommendationReportGenerationInputBuilder {
         )
     }
 }
-

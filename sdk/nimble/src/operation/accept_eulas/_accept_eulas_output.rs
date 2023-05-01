@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptEulasOutput  {
+pub struct AcceptEulasOutput {
     /// <p>A collection of EULA acceptances.</p>
     #[doc(hidden)]
     pub eula_acceptances: std::option::Option<std::vec::Vec<crate::types::EulaAcceptance>>,
@@ -10,15 +10,15 @@ pub struct AcceptEulasOutput  {
 }
 impl AcceptEulasOutput {
     /// <p>A collection of EULA acceptances.</p>
-    pub fn eula_acceptances(&self) -> std::option::Option<& [crate::types::EulaAcceptance]> {
+    pub fn eula_acceptances(&self) -> std::option::Option<&[crate::types::EulaAcceptance]> {
         self.eula_acceptances.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for AcceptEulasOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl AcceptEulasOutput {
     /// Creates a new builder-style object to manufacture [`AcceptEulasOutput`](crate::operation::accept_eulas::AcceptEulasOutput).
     pub fn builder() -> crate::operation::accept_eulas::builders::AcceptEulasOutputBuilder {
@@ -41,30 +41,32 @@ impl AcceptEulasOutputBuilder {
     /// <p>A collection of EULA acceptances.</p>
     pub fn eula_acceptances(mut self, input: crate::types::EulaAcceptance) -> Self {
         let mut v = self.eula_acceptances.unwrap_or_default();
-                        v.push(input);
-                        self.eula_acceptances = Some(v);
-                        self
+        v.push(input);
+        self.eula_acceptances = Some(v);
+        self
     }
     /// <p>A collection of EULA acceptances.</p>
-    pub fn set_eula_acceptances(mut self, input: std::option::Option<std::vec::Vec<crate::types::EulaAcceptance>>) -> Self {
-        self.eula_acceptances = input; self
+    pub fn set_eula_acceptances(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EulaAcceptance>>,
+    ) -> Self {
+        self.eula_acceptances = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`AcceptEulasOutput`](crate::operation::accept_eulas::AcceptEulasOutput).
     pub fn build(self) -> crate::operation::accept_eulas::AcceptEulasOutput {
         crate::operation::accept_eulas::AcceptEulasOutput {
-            eula_acceptances: self.eula_acceptances
-            ,
+            eula_acceptances: self.eula_acceptances,
             _request_id: self._request_id,
         }
     }
 }
-

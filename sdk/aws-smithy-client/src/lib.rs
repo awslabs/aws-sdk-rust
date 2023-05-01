@@ -259,7 +259,7 @@ where
             > + Clone,
     {
         let _ = |o: static_tests::ValidTestOperation| {
-            let _ = self.call_raw(o);
+            drop(self.call_raw(o));
         };
     }
 }

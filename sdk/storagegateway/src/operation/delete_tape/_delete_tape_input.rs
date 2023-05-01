@@ -3,7 +3,7 @@
 /// <p>DeleteTapeInput</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTapeInput  {
+pub struct DeleteTapeInput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct DeleteTapeInput  {
 }
 impl DeleteTapeInput {
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
-    pub fn tape_arn(&self) -> std::option::Option<& str> {
+    pub fn tape_arn(&self) -> std::option::Option<&str> {
         self.tape_arn.as_deref()
     }
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
@@ -51,7 +51,8 @@ impl DeleteTapeInputBuilder {
     }
     /// <p>The unique Amazon Resource Name (ARN) of the gateway that the virtual tape to delete is associated with. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
     pub fn tape_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DeleteTapeInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the virtual tape to delete.</p>
     pub fn set_tape_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.tape_arn = input; self
+        self.tape_arn = input;
+        self
     }
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
     pub fn bypass_governance_retention(mut self, input: bool) -> Self {
@@ -69,21 +71,20 @@ impl DeleteTapeInputBuilder {
     }
     /// <p>Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.</p>
     pub fn set_bypass_governance_retention(mut self, input: std::option::Option<bool>) -> Self {
-        self.bypass_governance_retention = input; self
+        self.bypass_governance_retention = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTapeInput`](crate::operation::delete_tape::DeleteTapeInput).
-    pub fn build(self) -> Result<crate::operation::delete_tape::DeleteTapeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_tape::DeleteTapeInput {
-                gateway_arn: self.gateway_arn
-                ,
-                tape_arn: self.tape_arn
-                ,
-                bypass_governance_retention: self.bypass_governance_retention
-                    .unwrap_or_default()
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_tape::DeleteTapeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_tape::DeleteTapeInput {
+            gateway_arn: self.gateway_arn,
+            tape_arn: self.tape_arn,
+            bypass_governance_retention: self.bypass_governance_retention.unwrap_or_default(),
+        })
     }
 }
-

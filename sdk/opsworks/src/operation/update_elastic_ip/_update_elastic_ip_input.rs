@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateElasticIpInput  {
+pub struct UpdateElasticIpInput {
     /// <p>The IP address for which you want to update the name.</p>
     #[doc(hidden)]
     pub elastic_ip: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct UpdateElasticIpInput  {
 }
 impl UpdateElasticIpInput {
     /// <p>The IP address for which you want to update the name.</p>
-    pub fn elastic_ip(&self) -> std::option::Option<& str> {
+    pub fn elastic_ip(&self) -> std::option::Option<&str> {
         self.elastic_ip.as_deref()
     }
     /// <p>The new name.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl UpdateElasticIpInputBuilder {
     }
     /// <p>The IP address for which you want to update the name.</p>
     pub fn set_elastic_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.elastic_ip = input; self
+        self.elastic_ip = input;
+        self
     }
     /// <p>The new name.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl UpdateElasticIpInputBuilder {
     }
     /// <p>The new name.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateElasticIpInput`](crate::operation::update_elastic_ip::UpdateElasticIpInput).
-    pub fn build(self) -> Result<crate::operation::update_elastic_ip::UpdateElasticIpInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_elastic_ip::UpdateElasticIpInput {
-                elastic_ip: self.elastic_ip
-                ,
-                name: self.name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_elastic_ip::UpdateElasticIpInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_elastic_ip::UpdateElasticIpInput {
+            elastic_ip: self.elastic_ip,
+            name: self.name,
+        })
     }
 }
-

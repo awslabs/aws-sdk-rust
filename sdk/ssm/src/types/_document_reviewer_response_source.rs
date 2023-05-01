@@ -3,15 +3,15 @@
 /// <p>Information about a reviewer's response to a document review request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DocumentReviewerResponseSource  {
+pub struct DocumentReviewerResponseSource {
     /// <p>The date and time that a reviewer entered a response to a document review request.</p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The date and time that a reviewer last updated a response to a document review request.</p>
     #[doc(hidden)]
     pub updated_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p> 
-    /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
+    /// <p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of a document can be in review, or PENDING, at a time.</p>
     #[doc(hidden)]
     pub review_status: std::option::Option<crate::types::ReviewStatus>,
@@ -24,25 +24,25 @@ pub struct DocumentReviewerResponseSource  {
 }
 impl DocumentReviewerResponseSource {
     /// <p>The date and time that a reviewer entered a response to a document review request.</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The date and time that a reviewer last updated a response to a document review request.</p>
-    pub fn updated_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn updated_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.updated_time.as_ref()
     }
-    /// <p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p> 
-    /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
+    /// <p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of a document can be in review, or PENDING, at a time.</p>
-    pub fn review_status(&self) -> std::option::Option<& crate::types::ReviewStatus> {
+    pub fn review_status(&self) -> std::option::Option<&crate::types::ReviewStatus> {
         self.review_status.as_ref()
     }
     /// <p>The comment entered by a reviewer as part of their document review response.</p>
-    pub fn comment(&self) -> std::option::Option<& [crate::types::DocumentReviewCommentSource]> {
+    pub fn comment(&self) -> std::option::Option<&[crate::types::DocumentReviewCommentSource]> {
         self.comment.as_deref()
     }
     /// <p>The user in your organization assigned to review a document request.</p>
-    pub fn reviewer(&self) -> std::option::Option<& str> {
+    pub fn reviewer(&self) -> std::option::Option<&str> {
         self.reviewer.as_deref()
     }
 }
@@ -60,7 +60,8 @@ pub struct DocumentReviewerResponseSourceBuilder {
     pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) updated_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) review_status: std::option::Option<crate::types::ReviewStatus>,
-    pub(crate) comment: std::option::Option<std::vec::Vec<crate::types::DocumentReviewCommentSource>>,
+    pub(crate) comment:
+        std::option::Option<std::vec::Vec<crate::types::DocumentReviewCommentSource>>,
     pub(crate) reviewer: std::option::Option<std::string::String>,
 }
 impl DocumentReviewerResponseSourceBuilder {
@@ -70,8 +71,12 @@ impl DocumentReviewerResponseSourceBuilder {
         self
     }
     /// <p>The date and time that a reviewer entered a response to a document review request.</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>The date and time that a reviewer last updated a response to a document review request.</p>
     pub fn updated_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -79,21 +84,29 @@ impl DocumentReviewerResponseSourceBuilder {
         self
     }
     /// <p>The date and time that a reviewer last updated a response to a document review request.</p>
-    pub fn set_updated_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.updated_time = input; self
+    pub fn set_updated_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.updated_time = input;
+        self
     }
-    /// <p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p> 
-    /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
+    /// <p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of a document can be in review, or PENDING, at a time.</p>
     pub fn review_status(mut self, input: crate::types::ReviewStatus) -> Self {
         self.review_status = Some(input);
         self
     }
-    /// <p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p> 
-    /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p> 
+    /// <p>The current review status of a new custom SSM document created by a member of your organization, or of the latest version of an existing SSM document.</p>
+    /// <p>Only one version of a document can be in the APPROVED state at a time. When a new version is approved, the status of the previous version changes to REJECTED.</p>
     /// <p>Only one version of a document can be in review, or PENDING, at a time.</p>
-    pub fn set_review_status(mut self, input: std::option::Option<crate::types::ReviewStatus>) -> Self {
-        self.review_status = input; self
+    pub fn set_review_status(
+        mut self,
+        input: std::option::Option<crate::types::ReviewStatus>,
+    ) -> Self {
+        self.review_status = input;
+        self
     }
     /// Appends an item to `comment`.
     ///
@@ -102,13 +115,17 @@ impl DocumentReviewerResponseSourceBuilder {
     /// <p>The comment entered by a reviewer as part of their document review response.</p>
     pub fn comment(mut self, input: crate::types::DocumentReviewCommentSource) -> Self {
         let mut v = self.comment.unwrap_or_default();
-                        v.push(input);
-                        self.comment = Some(v);
-                        self
+        v.push(input);
+        self.comment = Some(v);
+        self
     }
     /// <p>The comment entered by a reviewer as part of their document review response.</p>
-    pub fn set_comment(mut self, input: std::option::Option<std::vec::Vec<crate::types::DocumentReviewCommentSource>>) -> Self {
-        self.comment = input; self
+    pub fn set_comment(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DocumentReviewCommentSource>>,
+    ) -> Self {
+        self.comment = input;
+        self
     }
     /// <p>The user in your organization assigned to review a document request.</p>
     pub fn reviewer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,22 +134,17 @@ impl DocumentReviewerResponseSourceBuilder {
     }
     /// <p>The user in your organization assigned to review a document request.</p>
     pub fn set_reviewer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reviewer = input; self
+        self.reviewer = input;
+        self
     }
     /// Consumes the builder and constructs a [`DocumentReviewerResponseSource`](crate::types::DocumentReviewerResponseSource).
     pub fn build(self) -> crate::types::DocumentReviewerResponseSource {
         crate::types::DocumentReviewerResponseSource {
-            create_time: self.create_time
-            ,
-            updated_time: self.updated_time
-            ,
-            review_status: self.review_status
-            ,
-            comment: self.comment
-            ,
-            reviewer: self.reviewer
-            ,
+            create_time: self.create_time,
+            updated_time: self.updated_time,
+            review_status: self.review_status,
+            comment: self.comment,
+            reviewer: self.reviewer,
         }
     }
 }
-

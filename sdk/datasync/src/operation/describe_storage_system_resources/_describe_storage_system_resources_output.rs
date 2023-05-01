@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStorageSystemResourcesOutput  {
-    /// <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p> 
+pub struct DescribeStorageSystemResourcesOutput {
+    /// <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-findings.html">storage resource information</a> collected by and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">recommendations</a> provided by DataSync Discovery.</p>
     #[doc(hidden)]
     pub resource_details: std::option::Option<crate::types::ResourceDetails>,
@@ -13,24 +13,24 @@ pub struct DescribeStorageSystemResourcesOutput  {
     _request_id: Option<String>,
 }
 impl DescribeStorageSystemResourcesOutput {
-    /// <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p> 
+    /// <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-findings.html">storage resource information</a> collected by and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">recommendations</a> provided by DataSync Discovery.</p>
-    pub fn resource_details(&self) -> std::option::Option<& crate::types::ResourceDetails> {
+    pub fn resource_details(&self) -> std::option::Option<&crate::types::ResourceDetails> {
         self.resource_details.as_ref()
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeStorageSystemResourcesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeStorageSystemResourcesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageSystemResourcesOutput`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput).
-    pub fn builder() -> crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesOutputBuilder{
         crate::operation::describe_storage_system_resources::builders::DescribeStorageSystemResourcesOutputBuilder::default()
     }
 }
@@ -44,16 +44,20 @@ pub struct DescribeStorageSystemResourcesOutputBuilder {
     _request_id: Option<String>,
 }
 impl DescribeStorageSystemResourcesOutputBuilder {
-    /// <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p> 
+    /// <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-findings.html">storage resource information</a> collected by and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">recommendations</a> provided by DataSync Discovery.</p>
     pub fn resource_details(mut self, input: crate::types::ResourceDetails) -> Self {
         self.resource_details = Some(input);
         self
     }
-    /// <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p> 
+    /// <p>The information collected about your storage system's resources. A response can also include Amazon Web Services storage service recommendations.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-findings.html">storage resource information</a> collected by and <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">recommendations</a> provided by DataSync Discovery.</p>
-    pub fn set_resource_details(mut self, input: std::option::Option<crate::types::ResourceDetails>) -> Self {
-        self.resource_details = input; self
+    pub fn set_resource_details(
+        mut self,
+        input: std::option::Option<crate::types::ResourceDetails>,
+    ) -> Self {
+        self.resource_details = input;
+        self
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -62,26 +66,27 @@ impl DescribeStorageSystemResourcesOutputBuilder {
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeStorageSystemResourcesOutput`](crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput).
-    pub fn build(self) -> crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput
+    {
         crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput {
-            resource_details: self.resource_details
-            ,
-            next_token: self.next_token
-            ,
+            resource_details: self.resource_details,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

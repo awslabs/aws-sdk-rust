@@ -4,63 +4,87 @@ pub use crate::operation::list_model_cards::_list_model_cards_output::ListModelC
 pub use crate::operation::list_model_cards::_list_model_cards_input::ListModelCardsInputBuilder;
 
 /// Fluent builder constructing a request to `ListModelCards`.
-/// 
+///
 /// <p>List existing model cards.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListModelCardsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_model_cards::builders::ListModelCardsInputBuilder,
+    inner: crate::operation::list_model_cards::builders::ListModelCardsInputBuilder,
 }
-impl ListModelCardsFluentBuilder  {
+impl ListModelCardsFluentBuilder {
     /// Creates a new `ListModelCards`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_model_cards::ListModelCards, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_model_cards::ListModelCardsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_model_cards::ListModelCardsOutput, aws_smithy_http::result::SdkError<crate::operation::list_model_cards::ListModelCardsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_model_cards::ListModelCards,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::list_model_cards::ListModelCardsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_model_cards::ListModelCardsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::list_model_cards::ListModelCardsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_model_cards::paginator::ListModelCardsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_model_cards::paginator::ListModelCardsPaginator {
-                                crate::operation::list_model_cards::paginator::ListModelCardsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_model_cards::paginator::ListModelCardsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_model_cards::paginator::ListModelCardsPaginator {
+        crate::operation::list_model_cards::paginator::ListModelCardsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>Only list model cards that were created after the time specified.</p>
     pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>Only list model cards that were created after the time specified.</p>
-    pub fn set_creation_time_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
@@ -70,7 +94,10 @@ impl ListModelCardsFluentBuilder  {
         self
     }
     /// <p>Only list model cards that were created before the time specified.</p>
-    pub fn set_creation_time_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_creation_time_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
     }
@@ -100,7 +127,10 @@ impl ListModelCardsFluentBuilder  {
         self
     }
     /// <p>Only list model cards with the specified approval status.</p>
-    pub fn set_model_card_status(mut self, input: std::option::Option<crate::types::ModelCardStatus>) -> Self {
+    pub fn set_model_card_status(
+        mut self,
+        input: std::option::Option<crate::types::ModelCardStatus>,
+    ) -> Self {
         self.inner = self.inner.set_model_card_status(input);
         self
     }
@@ -120,7 +150,10 @@ impl ListModelCardsFluentBuilder  {
         self
     }
     /// <p>Sort model cards by either name or creation time. Sorts by creation time by default.</p>
-    pub fn set_sort_by(mut self, input: std::option::Option<crate::types::ModelCardSortBy>) -> Self {
+    pub fn set_sort_by(
+        mut self,
+        input: std::option::Option<crate::types::ModelCardSortBy>,
+    ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
     }
@@ -130,9 +163,11 @@ impl ListModelCardsFluentBuilder  {
         self
     }
     /// <p>Sort model cards by ascending or descending order.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::ModelCardSortOrder>) -> Self {
+    pub fn set_sort_order(
+        mut self,
+        input: std::option::Option<crate::types::ModelCardSortOrder>,
+    ) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }
 }
-

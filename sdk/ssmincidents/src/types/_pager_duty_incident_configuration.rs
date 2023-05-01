@@ -3,14 +3,14 @@
 /// <p>Details about the PagerDuty service where the response plan creates an incident.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PagerDutyIncidentConfiguration  {
+pub struct PagerDutyIncidentConfiguration {
     /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
     #[doc(hidden)]
     pub service_id: std::option::Option<std::string::String>,
 }
 impl PagerDutyIncidentConfiguration {
     /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
-    pub fn service_id(&self) -> std::option::Option<& str> {
+    pub fn service_id(&self) -> std::option::Option<&str> {
         self.service_id.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl PagerDutyIncidentConfigurationBuilder {
     }
     /// <p>The ID of the PagerDuty service that the response plan associates with an incident when it launches.</p>
     pub fn set_service_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_id = input; self
+        self.service_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`PagerDutyIncidentConfiguration`](crate::types::PagerDutyIncidentConfiguration).
     pub fn build(self) -> crate::types::PagerDutyIncidentConfiguration {
         crate::types::PagerDutyIncidentConfiguration {
-            service_id: self.service_id
-            ,
+            service_id: self.service_id,
         }
     }
 }
-

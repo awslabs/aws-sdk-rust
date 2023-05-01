@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListUsersOutput  {
+pub struct ListUsersOutput {
     /// <p>A list of all the user accounts.</p>
     #[doc(hidden)]
     pub users: std::option::Option<std::vec::Vec<crate::types::User>>,
@@ -13,19 +13,19 @@ pub struct ListUsersOutput  {
 }
 impl ListUsersOutput {
     /// <p>A list of all the user accounts.</p>
-    pub fn users(&self) -> std::option::Option<& [crate::types::User]> {
+    pub fn users(&self) -> std::option::Option<&[crate::types::User]> {
         self.users.as_deref()
     }
     /// <p>A token that indicates where a results page should begin.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListUsersOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListUsersOutput {
     /// Creates a new builder-style object to manufacture [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
     pub fn builder() -> crate::operation::list_users::builders::ListUsersOutputBuilder {
@@ -49,13 +49,17 @@ impl ListUsersOutputBuilder {
     /// <p>A list of all the user accounts.</p>
     pub fn users(mut self, input: crate::types::User) -> Self {
         let mut v = self.users.unwrap_or_default();
-                        v.push(input);
-                        self.users = Some(v);
-                        self
+        v.push(input);
+        self.users = Some(v);
+        self
     }
     /// <p>A list of all the user accounts.</p>
-    pub fn set_users(mut self, input: std::option::Option<std::vec::Vec<crate::types::User>>) -> Self {
-        self.users = input; self
+    pub fn set_users(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::User>>,
+    ) -> Self {
+        self.users = input;
+        self
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListUsersOutputBuilder {
     }
     /// <p>A token that indicates where a results page should begin.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListUsersOutput`](crate::operation::list_users::ListUsersOutput).
     pub fn build(self) -> crate::operation::list_users::ListUsersOutput {
         crate::operation::list_users::ListUsersOutput {
-            users: self.users
-            ,
-            next_token: self.next_token
-            ,
+            users: self.users,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

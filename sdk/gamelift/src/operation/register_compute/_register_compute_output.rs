@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RegisterComputeOutput  {
+pub struct RegisterComputeOutput {
     /// <p>The details of the compute resource you registered to the specified fleet.</p>
     #[doc(hidden)]
     pub compute: std::option::Option<crate::types::Compute>,
@@ -10,15 +10,15 @@ pub struct RegisterComputeOutput  {
 }
 impl RegisterComputeOutput {
     /// <p>The details of the compute resource you registered to the specified fleet.</p>
-    pub fn compute(&self) -> std::option::Option<& crate::types::Compute> {
+    pub fn compute(&self) -> std::option::Option<&crate::types::Compute> {
         self.compute.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for RegisterComputeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RegisterComputeOutput {
     /// Creates a new builder-style object to manufacture [`RegisterComputeOutput`](crate::operation::register_compute::RegisterComputeOutput).
     pub fn builder() -> crate::operation::register_compute::builders::RegisterComputeOutputBuilder {
@@ -41,24 +41,23 @@ impl RegisterComputeOutputBuilder {
     }
     /// <p>The details of the compute resource you registered to the specified fleet.</p>
     pub fn set_compute(mut self, input: std::option::Option<crate::types::Compute>) -> Self {
-        self.compute = input; self
+        self.compute = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RegisterComputeOutput`](crate::operation::register_compute::RegisterComputeOutput).
     pub fn build(self) -> crate::operation::register_compute::RegisterComputeOutput {
         crate::operation::register_compute::RegisterComputeOutput {
-            compute: self.compute
-            ,
+            compute: self.compute,
             _request_id: self._request_id,
         }
     }
 }
-

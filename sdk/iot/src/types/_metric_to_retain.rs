@@ -3,7 +3,7 @@
 /// <p>The metric you want to retain. Dimensions are optional.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricToRetain  {
+pub struct MetricToRetain {
     /// <p>What is measured by the behavior.</p>
     #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MetricToRetain  {
 }
 impl MetricToRetain {
     /// <p>What is measured by the behavior.</p>
-    pub fn metric(&self) -> std::option::Option<& str> {
+    pub fn metric(&self) -> std::option::Option<&str> {
         self.metric.as_deref()
     }
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
-    pub fn metric_dimension(&self) -> std::option::Option<& crate::types::MetricDimension> {
+    pub fn metric_dimension(&self) -> std::option::Option<&crate::types::MetricDimension> {
         self.metric_dimension.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl MetricToRetainBuilder {
     }
     /// <p>What is measured by the behavior.</p>
     pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric = input; self
+        self.metric = input;
+        self
     }
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
     pub fn metric_dimension(mut self, input: crate::types::MetricDimension) -> Self {
@@ -51,17 +52,18 @@ impl MetricToRetainBuilder {
         self
     }
     /// <p>The dimension of a metric. This can't be used with custom metrics.</p>
-    pub fn set_metric_dimension(mut self, input: std::option::Option<crate::types::MetricDimension>) -> Self {
-        self.metric_dimension = input; self
+    pub fn set_metric_dimension(
+        mut self,
+        input: std::option::Option<crate::types::MetricDimension>,
+    ) -> Self {
+        self.metric_dimension = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricToRetain`](crate::types::MetricToRetain).
     pub fn build(self) -> crate::types::MetricToRetain {
         crate::types::MetricToRetain {
-            metric: self.metric
-            ,
-            metric_dimension: self.metric_dimension
-            ,
+            metric: self.metric,
+            metric_dimension: self.metric_dimension,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateOptOutListInput  {
+pub struct CreateOptOutListInput {
     /// <p>The name of the new OptOutList.</p>
     #[doc(hidden)]
     pub opt_out_list_name: std::option::Option<std::string::String>,
@@ -15,21 +15,22 @@ pub struct CreateOptOutListInput  {
 }
 impl CreateOptOutListInput {
     /// <p>The name of the new OptOutList.</p>
-    pub fn opt_out_list_name(&self) -> std::option::Option<& str> {
+    pub fn opt_out_list_name(&self) -> std::option::Option<&str> {
         self.opt_out_list_name.as_deref()
     }
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl CreateOptOutListInput {
     /// Creates a new builder-style object to manufacture [`CreateOptOutListInput`](crate::operation::create_opt_out_list::CreateOptOutListInput).
-    pub fn builder() -> crate::operation::create_opt_out_list::builders::CreateOptOutListInputBuilder {
+    pub fn builder() -> crate::operation::create_opt_out_list::builders::CreateOptOutListInputBuilder
+    {
         crate::operation::create_opt_out_list::builders::CreateOptOutListInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl CreateOptOutListInputBuilder {
         self
     }
     /// <p>The name of the new OptOutList.</p>
-    pub fn set_opt_out_list_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.opt_out_list_name = input; self
+    pub fn set_opt_out_list_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.opt_out_list_name = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -59,13 +64,17 @@ impl CreateOptOutListInputBuilder {
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>An array of tags (key and value pairs) to associate with the new OptOutList.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,20 +83,22 @@ impl CreateOptOutListInputBuilder {
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateOptOutListInput`](crate::operation::create_opt_out_list::CreateOptOutListInput).
-    pub fn build(self) -> Result<crate::operation::create_opt_out_list::CreateOptOutListInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_opt_out_list::CreateOptOutListInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_opt_out_list::CreateOptOutListInput {
-                opt_out_list_name: self.opt_out_list_name
-                ,
-                tags: self.tags
-                ,
-                client_token: self.client_token
-                ,
-            }
+                opt_out_list_name: self.opt_out_list_name,
+                tags: self.tags,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

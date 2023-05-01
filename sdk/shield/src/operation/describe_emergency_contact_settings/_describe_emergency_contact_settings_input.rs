@@ -2,11 +2,10 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEmergencyContactSettingsInput  {
-}
+pub struct DescribeEmergencyContactSettingsInput {}
 impl DescribeEmergencyContactSettingsInput {
     /// Creates a new builder-style object to manufacture [`DescribeEmergencyContactSettingsInput`](crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsInput).
-    pub fn builder() -> crate::operation::describe_emergency_contact_settings::builders::DescribeEmergencyContactSettingsInputBuilder {
+    pub fn builder() -> crate::operation::describe_emergency_contact_settings::builders::DescribeEmergencyContactSettingsInputBuilder{
         crate::operation::describe_emergency_contact_settings::builders::DescribeEmergencyContactSettingsInputBuilder::default()
     }
 }
@@ -14,15 +13,13 @@ impl DescribeEmergencyContactSettingsInput {
 /// A builder for [`DescribeEmergencyContactSettingsInput`](crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DescribeEmergencyContactSettingsInputBuilder {
-}
+pub struct DescribeEmergencyContactSettingsInputBuilder {}
 impl DescribeEmergencyContactSettingsInputBuilder {
     /// Consumes the builder and constructs a [`DescribeEmergencyContactSettingsInput`](crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsInput).
-    pub fn build(self) -> Result<crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsInput {
             }
         )
     }
 }
-

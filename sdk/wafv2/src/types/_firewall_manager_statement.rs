@@ -3,21 +3,26 @@
 /// <p>The processing guidance for an Firewall Manager rule. This is like a regular rule <code>Statement</code>, but it can only contain a single rule group reference.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FirewallManagerStatement  {
+pub struct FirewallManagerStatement {
     /// <p>A statement used by Firewall Manager to run the rules that are defined in a managed rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.</p>
     #[doc(hidden)]
     pub managed_rule_group_statement: std::option::Option<crate::types::ManagedRuleGroupStatement>,
     /// <p>A statement used by Firewall Manager to run the rules that are defined in a rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.</p>
     #[doc(hidden)]
-    pub rule_group_reference_statement: std::option::Option<crate::types::RuleGroupReferenceStatement>,
+    pub rule_group_reference_statement:
+        std::option::Option<crate::types::RuleGroupReferenceStatement>,
 }
 impl FirewallManagerStatement {
     /// <p>A statement used by Firewall Manager to run the rules that are defined in a managed rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.</p>
-    pub fn managed_rule_group_statement(&self) -> std::option::Option<& crate::types::ManagedRuleGroupStatement> {
+    pub fn managed_rule_group_statement(
+        &self,
+    ) -> std::option::Option<&crate::types::ManagedRuleGroupStatement> {
         self.managed_rule_group_statement.as_ref()
     }
     /// <p>A statement used by Firewall Manager to run the rules that are defined in a rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.</p>
-    pub fn rule_group_reference_statement(&self) -> std::option::Option<& crate::types::RuleGroupReferenceStatement> {
+    pub fn rule_group_reference_statement(
+        &self,
+    ) -> std::option::Option<&crate::types::RuleGroupReferenceStatement> {
         self.rule_group_reference_statement.as_ref()
     }
 }
@@ -32,36 +37,49 @@ impl FirewallManagerStatement {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct FirewallManagerStatementBuilder {
-    pub(crate) managed_rule_group_statement: std::option::Option<crate::types::ManagedRuleGroupStatement>,
-    pub(crate) rule_group_reference_statement: std::option::Option<crate::types::RuleGroupReferenceStatement>,
+    pub(crate) managed_rule_group_statement:
+        std::option::Option<crate::types::ManagedRuleGroupStatement>,
+    pub(crate) rule_group_reference_statement:
+        std::option::Option<crate::types::RuleGroupReferenceStatement>,
 }
 impl FirewallManagerStatementBuilder {
     /// <p>A statement used by Firewall Manager to run the rules that are defined in a managed rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.</p>
-    pub fn managed_rule_group_statement(mut self, input: crate::types::ManagedRuleGroupStatement) -> Self {
+    pub fn managed_rule_group_statement(
+        mut self,
+        input: crate::types::ManagedRuleGroupStatement,
+    ) -> Self {
         self.managed_rule_group_statement = Some(input);
         self
     }
     /// <p>A statement used by Firewall Manager to run the rules that are defined in a managed rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.</p>
-    pub fn set_managed_rule_group_statement(mut self, input: std::option::Option<crate::types::ManagedRuleGroupStatement>) -> Self {
-        self.managed_rule_group_statement = input; self
+    pub fn set_managed_rule_group_statement(
+        mut self,
+        input: std::option::Option<crate::types::ManagedRuleGroupStatement>,
+    ) -> Self {
+        self.managed_rule_group_statement = input;
+        self
     }
     /// <p>A statement used by Firewall Manager to run the rules that are defined in a rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.</p>
-    pub fn rule_group_reference_statement(mut self, input: crate::types::RuleGroupReferenceStatement) -> Self {
+    pub fn rule_group_reference_statement(
+        mut self,
+        input: crate::types::RuleGroupReferenceStatement,
+    ) -> Self {
         self.rule_group_reference_statement = Some(input);
         self
     }
     /// <p>A statement used by Firewall Manager to run the rules that are defined in a rule group. This is managed by Firewall Manager for an Firewall Manager WAF policy.</p>
-    pub fn set_rule_group_reference_statement(mut self, input: std::option::Option<crate::types::RuleGroupReferenceStatement>) -> Self {
-        self.rule_group_reference_statement = input; self
+    pub fn set_rule_group_reference_statement(
+        mut self,
+        input: std::option::Option<crate::types::RuleGroupReferenceStatement>,
+    ) -> Self {
+        self.rule_group_reference_statement = input;
+        self
     }
     /// Consumes the builder and constructs a [`FirewallManagerStatement`](crate::types::FirewallManagerStatement).
     pub fn build(self) -> crate::types::FirewallManagerStatement {
         crate::types::FirewallManagerStatement {
-            managed_rule_group_statement: self.managed_rule_group_statement
-            ,
-            rule_group_reference_statement: self.rule_group_reference_statement
-            ,
+            managed_rule_group_statement: self.managed_rule_group_statement,
+            rule_group_reference_statement: self.rule_group_reference_statement,
         }
     }
 }
-

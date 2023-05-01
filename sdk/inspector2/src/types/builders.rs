@@ -166,4 +166,3 @@ pub use crate::types::_account_state::AccountStateBuilder;
 pub use crate::types::_resource_state::ResourceStateBuilder;
 
 pub use crate::types::_state::StateBuilder;
-

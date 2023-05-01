@@ -3,7 +3,7 @@
 /// <p>Contains expression variable information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpressionVariable  {
+pub struct ExpressionVariable {
     /// <p>The friendly name of the variable to be used in the expression.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ExpressionVariable  {
 }
 impl ExpressionVariable {
     /// <p>The friendly name of the variable to be used in the expression.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The variable that identifies an asset property from which to use values.</p>
-    pub fn value(&self) -> std::option::Option<& crate::types::VariableValue> {
+    pub fn value(&self) -> std::option::Option<&crate::types::VariableValue> {
         self.value.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl ExpressionVariableBuilder {
     }
     /// <p>The friendly name of the variable to be used in the expression.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The variable that identifies an asset property from which to use values.</p>
     pub fn value(mut self, input: crate::types::VariableValue) -> Self {
@@ -52,16 +53,14 @@ impl ExpressionVariableBuilder {
     }
     /// <p>The variable that identifies an asset property from which to use values.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::VariableValue>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExpressionVariable`](crate::types::ExpressionVariable).
     pub fn build(self) -> crate::types::ExpressionVariable {
         crate::types::ExpressionVariable {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

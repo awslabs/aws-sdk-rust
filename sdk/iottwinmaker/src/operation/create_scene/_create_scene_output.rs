@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSceneOutput  {
+pub struct CreateSceneOutput {
     /// <p>The ARN of the scene.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct CreateSceneOutput  {
 }
 impl CreateSceneOutput {
     /// <p>The ARN of the scene.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The date and time when the scene was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSceneOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateSceneOutput {
     /// Creates a new builder-style object to manufacture [`CreateSceneOutput`](crate::operation::create_scene::CreateSceneOutput).
     pub fn builder() -> crate::operation::create_scene::builders::CreateSceneOutputBuilder {
@@ -49,7 +49,8 @@ impl CreateSceneOutputBuilder {
     }
     /// <p>The ARN of the scene.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The date and time when the scene was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -57,27 +58,28 @@ impl CreateSceneOutputBuilder {
         self
     }
     /// <p>The date and time when the scene was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateSceneOutput`](crate::operation::create_scene::CreateSceneOutput).
     pub fn build(self) -> crate::operation::create_scene::CreateSceneOutput {
         crate::operation::create_scene::CreateSceneOutput {
-            arn: self.arn
-            ,
-            creation_date_time: self.creation_date_time
-            ,
+            arn: self.arn,
+            creation_date_time: self.creation_date_time,
             _request_id: self._request_id,
         }
     }
 }
-

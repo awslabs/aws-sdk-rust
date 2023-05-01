@@ -3,7 +3,7 @@
 /// <p>Contains the output of DescribeRouteTables.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeRouteTablesOutput  {
+pub struct DescribeRouteTablesOutput {
     /// <p>Information about one or more route tables.</p>
     #[doc(hidden)]
     pub route_tables: std::option::Option<std::vec::Vec<crate::types::RouteTable>>,
@@ -14,23 +14,25 @@ pub struct DescribeRouteTablesOutput  {
 }
 impl DescribeRouteTablesOutput {
     /// <p>Information about one or more route tables.</p>
-    pub fn route_tables(&self) -> std::option::Option<& [crate::types::RouteTable]> {
+    pub fn route_tables(&self) -> std::option::Option<&[crate::types::RouteTable]> {
         self.route_tables.as_deref()
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeRouteTablesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeRouteTablesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeRouteTablesOutput`](crate::operation::describe_route_tables::DescribeRouteTablesOutput).
-    pub fn builder() -> crate::operation::describe_route_tables::builders::DescribeRouteTablesOutputBuilder {
-        crate::operation::describe_route_tables::builders::DescribeRouteTablesOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_route_tables::builders::DescribeRouteTablesOutputBuilder {
+        crate::operation::describe_route_tables::builders::DescribeRouteTablesOutputBuilder::default(
+        )
     }
 }
 
@@ -50,13 +52,17 @@ impl DescribeRouteTablesOutputBuilder {
     /// <p>Information about one or more route tables.</p>
     pub fn route_tables(mut self, input: crate::types::RouteTable) -> Self {
         let mut v = self.route_tables.unwrap_or_default();
-                        v.push(input);
-                        self.route_tables = Some(v);
-                        self
+        v.push(input);
+        self.route_tables = Some(v);
+        self
     }
     /// <p>Information about one or more route tables.</p>
-    pub fn set_route_tables(mut self, input: std::option::Option<std::vec::Vec<crate::types::RouteTable>>) -> Self {
-        self.route_tables = input; self
+    pub fn set_route_tables(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RouteTable>>,
+    ) -> Self {
+        self.route_tables = input;
+        self
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +71,24 @@ impl DescribeRouteTablesOutputBuilder {
     }
     /// <p>The token to include in another request to get the next page of items. This value is <code>null</code> when there are no more items to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeRouteTablesOutput`](crate::operation::describe_route_tables::DescribeRouteTablesOutput).
     pub fn build(self) -> crate::operation::describe_route_tables::DescribeRouteTablesOutput {
         crate::operation::describe_route_tables::DescribeRouteTablesOutput {
-            route_tables: self.route_tables
-            ,
-            next_token: self.next_token
-            ,
+            route_tables: self.route_tables,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

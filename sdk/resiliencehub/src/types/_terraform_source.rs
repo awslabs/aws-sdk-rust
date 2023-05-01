@@ -3,14 +3,14 @@
 /// <p> The Terraform s3 state file you need to import. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TerraformSource  {
+pub struct TerraformSource {
     /// <p> The URL of the Terraform s3 state file you need to import. </p>
     #[doc(hidden)]
     pub s3_state_file_url: std::option::Option<std::string::String>,
 }
 impl TerraformSource {
     /// <p> The URL of the Terraform s3 state file you need to import. </p>
-    pub fn s3_state_file_url(&self) -> std::option::Option<& str> {
+    pub fn s3_state_file_url(&self) -> std::option::Option<&str> {
         self.s3_state_file_url.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl TerraformSourceBuilder {
         self
     }
     /// <p> The URL of the Terraform s3 state file you need to import. </p>
-    pub fn set_s3_state_file_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_state_file_url = input; self
+    pub fn set_s3_state_file_url(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.s3_state_file_url = input;
+        self
     }
     /// Consumes the builder and constructs a [`TerraformSource`](crate::types::TerraformSource).
     pub fn build(self) -> crate::types::TerraformSource {
         crate::types::TerraformSource {
-            s3_state_file_url: self.s3_state_file_url
-            ,
+            s3_state_file_url: self.s3_state_file_url,
         }
     }
 }
-

@@ -4,82 +4,98 @@ pub use crate::operation::send_event::_send_event_output::SendEventOutputBuilder
 pub use crate::operation::send_event::_send_event_input::SendEventInputBuilder;
 
 /// Fluent builder constructing a request to `SendEvent`.
-/// 
-/// <p>Sends an event. </p> <note> 
-/// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p> 
-/// </note> 
+///
+/// <p>Sends an event. </p> <note>
+/// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+/// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct SendEventFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::send_event::builders::SendEventInputBuilder,
+    inner: crate::operation::send_event::builders::SendEventInputBuilder,
 }
-impl SendEventFluentBuilder  {
+impl SendEventFluentBuilder {
     /// Creates a new `SendEvent`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::send_event::SendEvent, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::send_event::SendEventError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::send_event::SendEventOutput, aws_smithy_http::result::SdkError<crate::operation::send_event::SendEventError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The content type of the request. Supported types are:</p> 
-    /// <ul> 
-    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li> 
-    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li> 
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li> 
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::send_event::SendEvent,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::send_event::SendEventError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::send_event::SendEventOutput,
+        aws_smithy_http::result::SdkError<crate::operation::send_event::SendEventError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The content type of the request. Supported types are:</p>
+    /// <ul>
+    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
     /// </ul>
     pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.content_type(input.into());
         self
     }
-    /// <p>The content type of the request. Supported types are:</p> 
-    /// <ul> 
-    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li> 
-    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li> 
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li> 
-    /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li> 
+    /// <p>The content type of the request. Supported types are:</p>
+    /// <ul>
+    /// <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li>
+    /// <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li>
     /// </ul>
     pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_content_type(input);
         self
     }
-    /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p> 
+    /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>
     /// <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.content(input.into());
         self
     }
-    /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p> 
+    /// <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p>
     /// <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_content(input);
@@ -106,4 +122,3 @@ impl SendEventFluentBuilder  {
         self
     }
 }
-

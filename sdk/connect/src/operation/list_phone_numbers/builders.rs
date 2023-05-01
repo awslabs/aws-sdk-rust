@@ -4,59 +4,84 @@ pub use crate::operation::list_phone_numbers::_list_phone_numbers_output::ListPh
 pub use crate::operation::list_phone_numbers::_list_phone_numbers_input::ListPhoneNumbersInputBuilder;
 
 /// Fluent builder constructing a request to `ListPhoneNumbers`.
-/// 
-/// <p>Provides information about the phone numbers for the specified Amazon Connect instance. </p> 
-/// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <important> 
-/// <p>The phone number <code>Arn</code> value that is returned from each of the items in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a> cannot be used to tag phone number resources. It will fail with a <code>ResourceNotFoundException</code>. Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> API. It returns the new phone number ARN that can be used to tag phone number resources.</p> 
+///
+/// <p>Provides information about the phone numbers for the specified Amazon Connect instance. </p>
+/// <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <important>
+/// <p>The phone number <code>Arn</code> value that is returned from each of the items in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a> cannot be used to tag phone number resources. It will fail with a <code>ResourceNotFoundException</code>. Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> API. It returns the new phone number ARN that can be used to tag phone number resources.</p>
 /// </important>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPhoneNumbersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder,
+    inner: crate::operation::list_phone_numbers::builders::ListPhoneNumbersInputBuilder,
 }
-impl ListPhoneNumbersFluentBuilder  {
+impl ListPhoneNumbersFluentBuilder {
     /// Creates a new `ListPhoneNumbers`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_phone_numbers::ListPhoneNumbers, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_phone_numbers::ListPhoneNumbersError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_phone_numbers::ListPhoneNumbersOutput, aws_smithy_http::result::SdkError<crate::operation::list_phone_numbers::ListPhoneNumbersError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_phone_numbers::ListPhoneNumbers,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_phone_numbers::ListPhoneNumbersError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_phone_numbers::ListPhoneNumbersError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator {
-                                crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator {
+        crate::operation::list_phone_numbers::paginator::ListPhoneNumbersPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -77,7 +102,10 @@ impl ListPhoneNumbersFluentBuilder  {
         self
     }
     /// <p>The type of phone number.</p>
-    pub fn set_phone_number_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>) -> Self {
+    pub fn set_phone_number_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberType>>,
+    ) -> Self {
         self.inner = self.inner.set_phone_number_types(input);
         self
     }
@@ -86,12 +114,18 @@ impl ListPhoneNumbersFluentBuilder  {
     /// To override the contents of this collection use [`set_phone_number_country_codes`](Self::set_phone_number_country_codes).
     ///
     /// <p>The ISO country code.</p>
-    pub fn phone_number_country_codes(mut self, input: crate::types::PhoneNumberCountryCode) -> Self {
+    pub fn phone_number_country_codes(
+        mut self,
+        input: crate::types::PhoneNumberCountryCode,
+    ) -> Self {
         self.inner = self.inner.phone_number_country_codes(input);
         self
     }
     /// <p>The ISO country code.</p>
-    pub fn set_phone_number_country_codes(mut self, input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberCountryCode>>) -> Self {
+    pub fn set_phone_number_country_codes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PhoneNumberCountryCode>>,
+    ) -> Self {
         self.inner = self.inner.set_phone_number_country_codes(input);
         self
     }
@@ -116,4 +150,3 @@ impl ListPhoneNumbersFluentBuilder  {
         self
     }
 }
-

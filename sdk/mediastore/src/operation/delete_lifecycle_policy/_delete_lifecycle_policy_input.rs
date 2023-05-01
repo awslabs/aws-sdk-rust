@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLifecyclePolicyInput  {
+pub struct DeleteLifecyclePolicyInput {
     /// <p>The name of the container that holds the object lifecycle policy.</p>
     #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl DeleteLifecyclePolicyInput {
     /// <p>The name of the container that holds the object lifecycle policy.</p>
-    pub fn container_name(&self) -> std::option::Option<& str> {
+    pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
 }
 impl DeleteLifecyclePolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
-    pub fn builder() -> crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyInputBuilder
+    {
         crate::operation::delete_lifecycle_policy::builders::DeleteLifecyclePolicyInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteLifecyclePolicyInputBuilder {
     }
     /// <p>The name of the container that holds the object lifecycle policy.</p>
     pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_name = input; self
+        self.container_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteLifecyclePolicyInput`](crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyInput {
-                container_name: self.container_name
-                ,
-            }
+                container_name: self.container_name,
+            },
         )
     }
 }
-

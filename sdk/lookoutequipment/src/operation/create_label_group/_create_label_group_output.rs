@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLabelGroupOutput  {
+pub struct CreateLabelGroupOutput {
     /// <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     #[doc(hidden)]
     pub label_group_name: std::option::Option<std::string::String>,
@@ -13,22 +13,23 @@ pub struct CreateLabelGroupOutput  {
 }
 impl CreateLabelGroupOutput {
     /// <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
-    pub fn label_group_name(&self) -> std::option::Option<& str> {
+    pub fn label_group_name(&self) -> std::option::Option<&str> {
         self.label_group_name.as_deref()
     }
     /// <p> The ARN of the label group that you have created. </p>
-    pub fn label_group_arn(&self) -> std::option::Option<& str> {
+    pub fn label_group_arn(&self) -> std::option::Option<&str> {
         self.label_group_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateLabelGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateLabelGroupOutput {
     /// Creates a new builder-style object to manufacture [`CreateLabelGroupOutput`](crate::operation::create_label_group::CreateLabelGroupOutput).
-    pub fn builder() -> crate::operation::create_label_group::builders::CreateLabelGroupOutputBuilder {
+    pub fn builder() -> crate::operation::create_label_group::builders::CreateLabelGroupOutputBuilder
+    {
         crate::operation::create_label_group::builders::CreateLabelGroupOutputBuilder::default()
     }
 }
@@ -49,7 +50,8 @@ impl CreateLabelGroupOutputBuilder {
     }
     /// <p> The name of the label group that you have created. Data in this field will be retained for service usage. Follow best practices for the security of your data. </p>
     pub fn set_label_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_group_name = input; self
+        self.label_group_name = input;
+        self
     }
     /// <p> The ARN of the label group that you have created. </p>
     pub fn label_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -58,26 +60,24 @@ impl CreateLabelGroupOutputBuilder {
     }
     /// <p> The ARN of the label group that you have created. </p>
     pub fn set_label_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.label_group_arn = input; self
+        self.label_group_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateLabelGroupOutput`](crate::operation::create_label_group::CreateLabelGroupOutput).
     pub fn build(self) -> crate::operation::create_label_group::CreateLabelGroupOutput {
         crate::operation::create_label_group::CreateLabelGroupOutput {
-            label_group_name: self.label_group_name
-            ,
-            label_group_arn: self.label_group_arn
-            ,
+            label_group_name: self.label_group_name,
+            label_group_arn: self.label_group_arn,
             _request_id: self._request_id,
         }
     }
 }
-

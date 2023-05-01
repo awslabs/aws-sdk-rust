@@ -3,7 +3,7 @@
 /// <p>Specifies the physical requirements for a connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhysicalConnectionRequirements  {
+pub struct PhysicalConnectionRequirements {
     /// <p>The subnet ID used by the connection.</p>
     #[doc(hidden)]
     pub subnet_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct PhysicalConnectionRequirements  {
 }
 impl PhysicalConnectionRequirements {
     /// <p>The subnet ID used by the connection.</p>
-    pub fn subnet_id(&self) -> std::option::Option<& str> {
+    pub fn subnet_id(&self) -> std::option::Option<&str> {
         self.subnet_id.as_deref()
     }
     /// <p>The security group ID list used by the connection.</p>
-    pub fn security_group_id_list(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn security_group_id_list(&self) -> std::option::Option<&[std::string::String]> {
         self.security_group_id_list.as_deref()
     }
     /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
-    pub fn availability_zone(&self) -> std::option::Option<& str> {
+    pub fn availability_zone(&self) -> std::option::Option<&str> {
         self.availability_zone.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl PhysicalConnectionRequirementsBuilder {
     }
     /// <p>The subnet ID used by the connection.</p>
     pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subnet_id = input; self
+        self.subnet_id = input;
+        self
     }
     /// Appends an item to `security_group_id_list`.
     ///
@@ -60,13 +61,17 @@ impl PhysicalConnectionRequirementsBuilder {
     /// <p>The security group ID list used by the connection.</p>
     pub fn security_group_id_list(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.security_group_id_list.unwrap_or_default();
-                        v.push(input.into());
-                        self.security_group_id_list = Some(v);
-                        self
+        v.push(input.into());
+        self.security_group_id_list = Some(v);
+        self
     }
     /// <p>The security group ID list used by the connection.</p>
-    pub fn set_security_group_id_list(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.security_group_id_list = input; self
+    pub fn set_security_group_id_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.security_group_id_list = input;
+        self
     }
     /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
     pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -74,19 +79,19 @@ impl PhysicalConnectionRequirementsBuilder {
         self
     }
     /// <p>The connection's Availability Zone. This field is redundant because the specified subnet implies the Availability Zone to be used. Currently the field must be populated, but it will be deprecated in the future.</p>
-    pub fn set_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.availability_zone = input; self
+    pub fn set_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.availability_zone = input;
+        self
     }
     /// Consumes the builder and constructs a [`PhysicalConnectionRequirements`](crate::types::PhysicalConnectionRequirements).
     pub fn build(self) -> crate::types::PhysicalConnectionRequirements {
         crate::types::PhysicalConnectionRequirements {
-            subnet_id: self.subnet_id
-            ,
-            security_group_id_list: self.security_group_id_list
-            ,
-            availability_zone: self.availability_zone
-            ,
+            subnet_id: self.subnet_id,
+            security_group_id_list: self.security_group_id_list,
+            availability_zone: self.availability_zone,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>An update to the connector's scale-out policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ScaleOutPolicyUpdate  {
+pub struct ScaleOutPolicyUpdate {
     /// <p>The target CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
     #[doc(hidden)]
     pub cpu_utilization_percentage: i32,
@@ -35,15 +35,13 @@ impl ScaleOutPolicyUpdateBuilder {
     }
     /// <p>The target CPU utilization percentage threshold at which you want connector scale out to be triggered.</p>
     pub fn set_cpu_utilization_percentage(mut self, input: std::option::Option<i32>) -> Self {
-        self.cpu_utilization_percentage = input; self
+        self.cpu_utilization_percentage = input;
+        self
     }
     /// Consumes the builder and constructs a [`ScaleOutPolicyUpdate`](crate::types::ScaleOutPolicyUpdate).
     pub fn build(self) -> crate::types::ScaleOutPolicyUpdate {
         crate::types::ScaleOutPolicyUpdate {
-            cpu_utilization_percentage: self.cpu_utilization_percentage
-                .unwrap_or_default()
-            ,
+            cpu_utilization_percentage: self.cpu_utilization_percentage.unwrap_or_default(),
         }
     }
 }
-

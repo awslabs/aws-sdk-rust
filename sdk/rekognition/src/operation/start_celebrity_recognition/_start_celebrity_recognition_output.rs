@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartCelebrityRecognitionOutput  {
+pub struct StartCelebrityRecognitionOutput {
     /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct StartCelebrityRecognitionOutput  {
 }
 impl StartCelebrityRecognitionOutput {
     /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartCelebrityRecognitionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartCelebrityRecognitionOutput {
     /// Creates a new builder-style object to manufacture [`StartCelebrityRecognitionOutput`](crate::operation::start_celebrity_recognition::StartCelebrityRecognitionOutput).
-    pub fn builder() -> crate::operation::start_celebrity_recognition::builders::StartCelebrityRecognitionOutputBuilder {
+    pub fn builder() -> crate::operation::start_celebrity_recognition::builders::StartCelebrityRecognitionOutputBuilder{
         crate::operation::start_celebrity_recognition::builders::StartCelebrityRecognitionOutputBuilder::default()
     }
 }
@@ -41,24 +41,25 @@ impl StartCelebrityRecognitionOutputBuilder {
     }
     /// <p>The identifier for the celebrity recognition analysis job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartCelebrityRecognitionOutput`](crate::operation::start_celebrity_recognition::StartCelebrityRecognitionOutput).
-    pub fn build(self) -> crate::operation::start_celebrity_recognition::StartCelebrityRecognitionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::start_celebrity_recognition::StartCelebrityRecognitionOutput {
         crate::operation::start_celebrity_recognition::StartCelebrityRecognitionOutput {
-            job_id: self.job_id
-            ,
+            job_id: self.job_id,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The new state, variable values, and timer settings of the detector (instance).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorStateDefinition  {
+pub struct DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
     #[doc(hidden)]
     pub state_name: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DetectorStateDefinition  {
 }
 impl DetectorStateDefinition {
     /// <p>The name of the new state of the detector (instance).</p>
-    pub fn state_name(&self) -> std::option::Option<& str> {
+    pub fn state_name(&self) -> std::option::Option<&str> {
         self.state_name.as_deref()
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub fn variables(&self) -> std::option::Option<& [crate::types::VariableDefinition]> {
+    pub fn variables(&self) -> std::option::Option<&[crate::types::VariableDefinition]> {
         self.variables.as_deref()
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub fn timers(&self) -> std::option::Option<& [crate::types::TimerDefinition]> {
+    pub fn timers(&self) -> std::option::Option<&[crate::types::TimerDefinition]> {
         self.timers.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DetectorStateDefinitionBuilder {
     }
     /// <p>The name of the new state of the detector (instance).</p>
     pub fn set_state_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_name = input; self
+        self.state_name = input;
+        self
     }
     /// Appends an item to `variables`.
     ///
@@ -60,13 +61,17 @@ impl DetectorStateDefinitionBuilder {
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
     pub fn variables(mut self, input: crate::types::VariableDefinition) -> Self {
         let mut v = self.variables.unwrap_or_default();
-                        v.push(input);
-                        self.variables = Some(v);
-                        self
+        v.push(input);
+        self.variables = Some(v);
+        self
     }
     /// <p>The new values of the detector's variables. Any variable whose value isn't specified is cleared.</p>
-    pub fn set_variables(mut self, input: std::option::Option<std::vec::Vec<crate::types::VariableDefinition>>) -> Self {
-        self.variables = input; self
+    pub fn set_variables(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::VariableDefinition>>,
+    ) -> Self {
+        self.variables = input;
+        self
     }
     /// Appends an item to `timers`.
     ///
@@ -75,24 +80,24 @@ impl DetectorStateDefinitionBuilder {
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
     pub fn timers(mut self, input: crate::types::TimerDefinition) -> Self {
         let mut v = self.timers.unwrap_or_default();
-                        v.push(input);
-                        self.timers = Some(v);
-                        self
+        v.push(input);
+        self.timers = Some(v);
+        self
     }
     /// <p>The new values of the detector's timers. Any timer whose value isn't specified is cleared, and its timeout event won't occur.</p>
-    pub fn set_timers(mut self, input: std::option::Option<std::vec::Vec<crate::types::TimerDefinition>>) -> Self {
-        self.timers = input; self
+    pub fn set_timers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TimerDefinition>>,
+    ) -> Self {
+        self.timers = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetectorStateDefinition`](crate::types::DetectorStateDefinition).
     pub fn build(self) -> crate::types::DetectorStateDefinition {
         crate::types::DetectorStateDefinition {
-            state_name: self.state_name
-            ,
-            variables: self.variables
-            ,
-            timers: self.timers
-            ,
+            state_name: self.state_name,
+            variables: self.variables,
+            timers: self.timers,
         }
     }
 }
-

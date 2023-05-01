@@ -3,7 +3,8 @@
 /// <p>Details about the launch template to use for a mixed instances policy.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification  {
+pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification
+{
     /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
     #[doc(hidden)]
     pub launch_template_id: std::option::Option<std::string::String>,
@@ -16,21 +17,21 @@ pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunc
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification {
     /// <p>The identifier of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
-    pub fn launch_template_id(&self) -> std::option::Option<& str> {
+    pub fn launch_template_id(&self) -> std::option::Option<&str> {
         self.launch_template_id.as_deref()
     }
     /// <p>The name of the launch template. You must specify either <code>LaunchTemplateId</code> or <code>LaunchTemplateName</code>.</p>
-    pub fn launch_template_name(&self) -> std::option::Option<& str> {
+    pub fn launch_template_name(&self) -> std::option::Option<&str> {
         self.launch_template_name.as_deref()
     }
     /// <p>Identifies the version of the launch template. You can specify a version identifier, or use the values <code>$Latest</code> or <code>$Default</code>.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
 }
 impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification {
     /// Creates a new builder-style object to manufacture [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification).
-    pub fn builder() -> crate::types::builders::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationBuilder {
+    pub fn builder() -> crate::types::builders::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationBuilder{
         crate::types::builders::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationBuilder::default()
     }
 }
@@ -38,7 +39,8 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
 /// A builder for [`AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification`](crate::types::AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecification).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationBuilder {
+pub struct AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTemplateSpecificationBuilder
+{
     pub(crate) launch_template_id: std::option::Option<std::string::String>,
     pub(crate) launch_template_name: std::option::Option<std::string::String>,
     pub(crate) version: std::option::Option<std::string::String>,
@@ -83,4 +85,3 @@ impl AwsAutoScalingAutoScalingGroupMixedInstancesPolicyLaunchTemplateLaunchTempl
         }
     }
 }
-

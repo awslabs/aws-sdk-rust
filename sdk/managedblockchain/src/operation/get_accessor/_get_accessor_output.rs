@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccessorOutput  {
+pub struct GetAccessorOutput {
     /// <p>The properties of the accessor.</p>
     #[doc(hidden)]
     pub accessor: std::option::Option<crate::types::Accessor>,
@@ -10,15 +10,15 @@ pub struct GetAccessorOutput  {
 }
 impl GetAccessorOutput {
     /// <p>The properties of the accessor.</p>
-    pub fn accessor(&self) -> std::option::Option<& crate::types::Accessor> {
+    pub fn accessor(&self) -> std::option::Option<&crate::types::Accessor> {
         self.accessor.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetAccessorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetAccessorOutput {
     /// Creates a new builder-style object to manufacture [`GetAccessorOutput`](crate::operation::get_accessor::GetAccessorOutput).
     pub fn builder() -> crate::operation::get_accessor::builders::GetAccessorOutputBuilder {
@@ -41,24 +41,23 @@ impl GetAccessorOutputBuilder {
     }
     /// <p>The properties of the accessor.</p>
     pub fn set_accessor(mut self, input: std::option::Option<crate::types::Accessor>) -> Self {
-        self.accessor = input; self
+        self.accessor = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetAccessorOutput`](crate::operation::get_accessor::GetAccessorOutput).
     pub fn build(self) -> crate::operation::get_accessor::GetAccessorOutput {
         crate::operation::get_accessor::GetAccessorOutput {
-            accessor: self.accessor
-            ,
+            accessor: self.accessor,
             _request_id: self._request_id,
         }
     }
 }
-

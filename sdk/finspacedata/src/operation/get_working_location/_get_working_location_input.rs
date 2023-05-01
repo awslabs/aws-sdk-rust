@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkingLocationInput  {
-    /// <p>Specify the type of the working location.</p> 
-    /// <ul> 
-    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li> 
-    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li> 
+pub struct GetWorkingLocationInput {
+    /// <p>Specify the type of the working location.</p>
+    /// <ul>
+    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub location_type: std::option::Option<crate::types::LocationType>,
 }
 impl GetWorkingLocationInput {
-    /// <p>Specify the type of the working location.</p> 
-    /// <ul> 
-    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li> 
-    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li> 
+    /// <p>Specify the type of the working location.</p>
+    /// <ul>
+    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
-    pub fn location_type(&self) -> std::option::Option<& crate::types::LocationType> {
+    pub fn location_type(&self) -> std::option::Option<&crate::types::LocationType> {
         self.location_type.as_ref()
     }
 }
 impl GetWorkingLocationInput {
     /// Creates a new builder-style object to manufacture [`GetWorkingLocationInput`](crate::operation::get_working_location::GetWorkingLocationInput).
-    pub fn builder() -> crate::operation::get_working_location::builders::GetWorkingLocationInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_working_location::builders::GetWorkingLocationInputBuilder {
         crate::operation::get_working_location::builders::GetWorkingLocationInputBuilder::default()
     }
 }
@@ -35,31 +36,38 @@ pub struct GetWorkingLocationInputBuilder {
     pub(crate) location_type: std::option::Option<crate::types::LocationType>,
 }
 impl GetWorkingLocationInputBuilder {
-    /// <p>Specify the type of the working location.</p> 
-    /// <ul> 
-    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li> 
-    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li> 
+    /// <p>Specify the type of the working location.</p>
+    /// <ul>
+    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
     pub fn location_type(mut self, input: crate::types::LocationType) -> Self {
         self.location_type = Some(input);
         self
     }
-    /// <p>Specify the type of the working location.</p> 
-    /// <ul> 
-    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li> 
-    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li> 
+    /// <p>Specify the type of the working location.</p>
+    /// <ul>
+    /// <li> <p> <code>SAGEMAKER</code> – Use the Amazon S3 location as a temporary location to store data content when working with FinSpace Notebooks that run on SageMaker studio.</p> </li>
+    /// <li> <p> <code>INGESTION</code> – Use the Amazon S3 location as a staging location to copy your data content and then use the location with the Changeset creation operation.</p> </li>
     /// </ul>
-    pub fn set_location_type(mut self, input: std::option::Option<crate::types::LocationType>) -> Self {
-        self.location_type = input; self
+    pub fn set_location_type(
+        mut self,
+        input: std::option::Option<crate::types::LocationType>,
+    ) -> Self {
+        self.location_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetWorkingLocationInput`](crate::operation::get_working_location::GetWorkingLocationInput).
-    pub fn build(self) -> Result<crate::operation::get_working_location::GetWorkingLocationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_working_location::GetWorkingLocationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_working_location::GetWorkingLocationInput {
-                location_type: self.location_type
-                ,
-            }
+                location_type: self.location_type,
+            },
         )
     }
 }
-

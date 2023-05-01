@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFolderMembersInput  {
+pub struct ListFolderMembersInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -18,15 +18,15 @@ pub struct ListFolderMembersInput  {
 }
 impl ListFolderMembersInput {
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The ID of the folder.</p>
-    pub fn folder_id(&self) -> std::option::Option<& str> {
+    pub fn folder_id(&self) -> std::option::Option<&str> {
         self.folder_id.as_deref()
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be returned per request.</p>
@@ -36,7 +36,8 @@ impl ListFolderMembersInput {
 }
 impl ListFolderMembersInput {
     /// Creates a new builder-style object to manufacture [`ListFolderMembersInput`](crate::operation::list_folder_members::ListFolderMembersInput).
-    pub fn builder() -> crate::operation::list_folder_members::builders::ListFolderMembersInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_folder_members::builders::ListFolderMembersInputBuilder {
         crate::operation::list_folder_members::builders::ListFolderMembersInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl ListFolderMembersInputBuilder {
     }
     /// <p>The ID for the Amazon Web Services account that contains the folder.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The ID of the folder.</p>
     pub fn folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl ListFolderMembersInputBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.folder_id = input; self
+        self.folder_id = input;
+        self
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +79,8 @@ impl ListFolderMembersInputBuilder {
     }
     /// <p>The token for the next set of results, or null if there are no more results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -85,22 +89,23 @@ impl ListFolderMembersInputBuilder {
     }
     /// <p>The maximum number of results to be returned per request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListFolderMembersInput`](crate::operation::list_folder_members::ListFolderMembersInput).
-    pub fn build(self) -> Result<crate::operation::list_folder_members::ListFolderMembersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_folder_members::ListFolderMembersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_folder_members::ListFolderMembersInput {
-                aws_account_id: self.aws_account_id
-                ,
-                folder_id: self.folder_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                aws_account_id: self.aws_account_id,
+                folder_id: self.folder_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

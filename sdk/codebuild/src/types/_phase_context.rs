@@ -3,7 +3,7 @@
 /// <p>Additional information about a build phase that has an error. You can use this information for troubleshooting.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PhaseContext  {
+pub struct PhaseContext {
     /// <p>The status code for the context of the build phase.</p>
     #[doc(hidden)]
     pub status_code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct PhaseContext  {
 }
 impl PhaseContext {
     /// <p>The status code for the context of the build phase.</p>
-    pub fn status_code(&self) -> std::option::Option<& str> {
+    pub fn status_code(&self) -> std::option::Option<&str> {
         self.status_code.as_deref()
     }
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl PhaseContextBuilder {
     }
     /// <p>The status code for the context of the build phase.</p>
     pub fn set_status_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_code = input; self
+        self.status_code = input;
+        self
     }
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl PhaseContextBuilder {
     }
     /// <p>An explanation of the build phase's context. This might include a command ID and an exit code.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`PhaseContext`](crate::types::PhaseContext).
     pub fn build(self) -> crate::types::PhaseContext {
         crate::types::PhaseContext {
-            status_code: self.status_code
-            ,
-            message: self.message
-            ,
+            status_code: self.status_code,
+            message: self.message,
         }
     }
 }
-

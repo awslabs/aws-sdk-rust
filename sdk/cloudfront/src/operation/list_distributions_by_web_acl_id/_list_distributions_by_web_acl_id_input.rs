@@ -3,7 +3,7 @@
 /// <p>The request to list distributions that are associated with a specified WAF web ACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDistributionsByWebAclIdInput  {
+pub struct ListDistributionsByWebAclIdInput {
     /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
     #[doc(hidden)]
     pub marker: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct ListDistributionsByWebAclIdInput  {
 }
 impl ListDistributionsByWebAclIdInput {
     /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
@@ -24,13 +24,13 @@ impl ListDistributionsByWebAclIdInput {
         self.max_items
     }
     /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
-    pub fn web_acl_id(&self) -> std::option::Option<& str> {
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
 }
 impl ListDistributionsByWebAclIdInput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsByWebAclIdInput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdInput).
-    pub fn builder() -> crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdInputBuilder {
+    pub fn builder() -> crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdInputBuilder{
         crate::operation::list_distributions_by_web_acl_id::builders::ListDistributionsByWebAclIdInputBuilder::default()
     }
 }
@@ -51,7 +51,8 @@ impl ListDistributionsByWebAclIdInputBuilder {
     }
     /// <p>Use <code>Marker</code> and <code>MaxItems</code> to control pagination of results. If you have more than <code>MaxItems</code> distributions that satisfy the request, the response includes a <code>NextMarker</code> element. To get the next page of results, submit another request. For the value of <code>Marker</code>, specify the value of <code>NextMarker</code> from the last response. (For the first request, omit <code>Marker</code>.)</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
     pub fn max_items(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl ListDistributionsByWebAclIdInputBuilder {
     }
     /// <p>The maximum number of distributions that you want CloudFront to return in the response body. The maximum and default values are both 100.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_items = input; self
+        self.max_items = input;
+        self
     }
     /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
     pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,20 +71,22 @@ impl ListDistributionsByWebAclIdInputBuilder {
     }
     /// <p>The ID of the WAF web ACL that you want to list the associated distributions. If you specify "null" for the ID, the request returns a list of the distributions that aren't associated with a web ACL.</p>
     pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.web_acl_id = input; self
+        self.web_acl_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDistributionsByWebAclIdInput`](crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdInput).
-    pub fn build(self) -> Result<crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdInput {
-                marker: self.marker
-                ,
-                max_items: self.max_items
-                ,
-                web_acl_id: self.web_acl_id
-                ,
-            }
+                marker: self.marker,
+                max_items: self.max_items,
+                web_acl_id: self.web_acl_id,
+            },
         )
     }
 }
-

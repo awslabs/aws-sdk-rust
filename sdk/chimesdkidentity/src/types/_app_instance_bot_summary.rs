@@ -3,7 +3,7 @@
 /// <p>High-level information about an AppInstanceBot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AppInstanceBotSummary  {
+pub struct AppInstanceBotSummary {
     /// <p>The ARN of the AppInstanceBot.</p>
     #[doc(hidden)]
     pub app_instance_bot_arn: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct AppInstanceBotSummary  {
 }
 impl AppInstanceBotSummary {
     /// <p>The ARN of the AppInstanceBot.</p>
-    pub fn app_instance_bot_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_bot_arn(&self) -> std::option::Option<&str> {
         self.app_instance_bot_arn.as_deref()
     }
     /// <p>The name of the AppInstanceBox.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The metadata of the AppInstanceBot.</p>
-    pub fn metadata(&self) -> std::option::Option<& str> {
+    pub fn metadata(&self) -> std::option::Option<&str> {
         self.metadata.as_deref()
     }
 }
-impl  std::fmt::Debug for AppInstanceBotSummary  {
+impl std::fmt::Debug for AppInstanceBotSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AppInstanceBotSummary");
         formatter.field("app_instance_bot_arn", &self.app_instance_bot_arn);
@@ -59,8 +59,12 @@ impl AppInstanceBotSummaryBuilder {
         self
     }
     /// <p>The ARN of the AppInstanceBot.</p>
-    pub fn set_app_instance_bot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_bot_arn = input; self
+    pub fn set_app_instance_bot_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_instance_bot_arn = input;
+        self
     }
     /// <p>The name of the AppInstanceBox.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,7 +73,8 @@ impl AppInstanceBotSummaryBuilder {
     }
     /// <p>The name of the AppInstanceBox.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The metadata of the AppInstanceBot.</p>
     pub fn metadata(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,17 +83,15 @@ impl AppInstanceBotSummaryBuilder {
     }
     /// <p>The metadata of the AppInstanceBot.</p>
     pub fn set_metadata(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metadata = input; self
+        self.metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`AppInstanceBotSummary`](crate::types::AppInstanceBotSummary).
     pub fn build(self) -> crate::types::AppInstanceBotSummary {
         crate::types::AppInstanceBotSummary {
-            app_instance_bot_arn: self.app_instance_bot_arn
-            ,
-            name: self.name
-            ,
-            metadata: self.metadata
-            ,
+            app_instance_bot_arn: self.app_instance_bot_arn,
+            name: self.name,
+            metadata: self.metadata,
         }
     }
 }
@@ -101,4 +104,3 @@ impl std::fmt::Debug for AppInstanceBotSummaryBuilder {
         formatter.finish()
     }
 }
-

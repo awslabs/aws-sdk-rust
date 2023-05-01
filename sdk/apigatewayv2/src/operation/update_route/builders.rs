@@ -4,50 +4,66 @@ pub use crate::operation::update_route::_update_route_output::UpdateRouteOutputB
 pub use crate::operation::update_route::_update_route_input::UpdateRouteInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateRoute`.
-/// 
+///
 /// <p>Updates a Route.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRouteFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_route::builders::UpdateRouteInputBuilder,
+    inner: crate::operation::update_route::builders::UpdateRouteInputBuilder,
 }
-impl UpdateRouteFluentBuilder  {
+impl UpdateRouteFluentBuilder {
     /// Creates a new `UpdateRoute`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_route::UpdateRoute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_route::UpdateRouteOutput, aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_route::UpdateRoute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_route::UpdateRouteOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_route::UpdateRouteError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The API identifier.</p>
     pub fn api_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.api_id(input.into());
@@ -78,7 +94,10 @@ impl UpdateRouteFluentBuilder  {
         self
     }
     /// <p>The authorization scopes supported by this route.</p>
-    pub fn set_authorization_scopes(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_authorization_scopes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_authorization_scopes(input);
         self
     }
@@ -88,7 +107,10 @@ impl UpdateRouteFluentBuilder  {
         self
     }
     /// <p>The authorization type for the route. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.</p>
-    pub fn set_authorization_type(mut self, input: std::option::Option<crate::types::AuthorizationType>) -> Self {
+    pub fn set_authorization_type(
+        mut self,
+        input: std::option::Option<crate::types::AuthorizationType>,
+    ) -> Self {
         self.inner = self.inner.set_authorization_type(input);
         self
     }
@@ -108,7 +130,10 @@ impl UpdateRouteFluentBuilder  {
         self
     }
     /// <p>The model selection expression for the route. Supported only for WebSocket APIs.</p>
-    pub fn set_model_selection_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_model_selection_expression(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_model_selection_expression(input);
         self
     }
@@ -127,12 +152,21 @@ impl UpdateRouteFluentBuilder  {
     /// To override the contents of this collection use [`set_request_models`](Self::set_request_models).
     ///
     /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
-    pub fn request_models(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn request_models(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.request_models(k.into(), v.into());
         self
     }
     /// <p>The request models for the route. Supported only for WebSocket APIs.</p>
-    pub fn set_request_models(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_request_models(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_request_models(input);
         self
     }
@@ -141,12 +175,21 @@ impl UpdateRouteFluentBuilder  {
     /// To override the contents of this collection use [`set_request_parameters`](Self::set_request_parameters).
     ///
     /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
-    pub fn request_parameters(mut self, k: impl Into<std::string::String>, v: crate::types::ParameterConstraints) -> Self {
+    pub fn request_parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::ParameterConstraints,
+    ) -> Self {
         self.inner = self.inner.request_parameters(k.into(), v);
         self
     }
     /// <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
-    pub fn set_request_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::ParameterConstraints>>) -> Self {
+    pub fn set_request_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::ParameterConstraints>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_request_parameters(input);
         self
     }
@@ -171,12 +214,18 @@ impl UpdateRouteFluentBuilder  {
         self
     }
     /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
-    pub fn route_response_selection_expression(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn route_response_selection_expression(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.route_response_selection_expression(input.into());
         self
     }
     /// <p>The route response selection expression for the route. Supported only for WebSocket APIs.</p>
-    pub fn set_route_response_selection_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_route_response_selection_expression(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_route_response_selection_expression(input);
         self
     }
@@ -191,4 +240,3 @@ impl UpdateRouteFluentBuilder  {
         self
     }
 }
-

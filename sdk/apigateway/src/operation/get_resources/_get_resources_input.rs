@@ -3,7 +3,7 @@
 /// <p>Request to list information about a collection of resources.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResourcesInput  {
+pub struct GetResourcesInput {
     /// <p>The string identifier of the associated RestApi.</p>
     #[doc(hidden)]
     pub rest_api_id: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct GetResourcesInput  {
 }
 impl GetResourcesInput {
     /// <p>The string identifier of the associated RestApi.</p>
-    pub fn rest_api_id(&self) -> std::option::Option<& str> {
+    pub fn rest_api_id(&self) -> std::option::Option<&str> {
         self.rest_api_id.as_deref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> std::option::Option<& str> {
+    pub fn position(&self) -> std::option::Option<&str> {
         self.position.as_deref()
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
@@ -31,7 +31,7 @@ impl GetResourcesInput {
         self.limit
     }
     /// <p>A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
-    pub fn embed(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn embed(&self) -> std::option::Option<&[std::string::String]> {
         self.embed.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl GetResourcesInputBuilder {
     }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn set_rest_api_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rest_api_id = input; self
+        self.rest_api_id = input;
+        self
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl GetResourcesInputBuilder {
     }
     /// <p>The current pagination position in the paged result set.</p>
     pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.position = input; self
+        self.position = input;
+        self
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -77,7 +79,8 @@ impl GetResourcesInputBuilder {
     }
     /// <p>The maximum number of returned results per page. The default value is 25 and the maximum value is 500.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// Appends an item to `embed`.
     ///
@@ -86,28 +89,30 @@ impl GetResourcesInputBuilder {
     /// <p>A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
     pub fn embed(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.embed.unwrap_or_default();
-                        v.push(input.into());
-                        self.embed = Some(v);
-                        self
+        v.push(input.into());
+        self.embed = Some(v);
+        self
     }
     /// <p>A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.</p>
-    pub fn set_embed(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.embed = input; self
+    pub fn set_embed(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.embed = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetResourcesInput`](crate::operation::get_resources::GetResourcesInput).
-    pub fn build(self) -> Result<crate::operation::get_resources::GetResourcesInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_resources::GetResourcesInput {
-                rest_api_id: self.rest_api_id
-                ,
-                position: self.position
-                ,
-                limit: self.limit
-                ,
-                embed: self.embed
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_resources::GetResourcesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_resources::GetResourcesInput {
+            rest_api_id: self.rest_api_id,
+            position: self.position,
+            limit: self.limit,
+            embed: self.embed,
+        })
     }
 }
-

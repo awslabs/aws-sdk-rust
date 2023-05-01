@@ -3,7 +3,7 @@
 /// The transport parameters that are associated with an incoming media stream.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputConfiguration  {
+pub struct InputConfiguration {
     /// The IP address that the flow listens on for incoming content for a media stream.
     #[doc(hidden)]
     pub input_ip: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct InputConfiguration  {
 }
 impl InputConfiguration {
     /// The IP address that the flow listens on for incoming content for a media stream.
-    pub fn input_ip(&self) -> std::option::Option<& str> {
+    pub fn input_ip(&self) -> std::option::Option<&str> {
         self.input_ip.as_deref()
     }
     /// The port that the flow listens on for an incoming media stream.
@@ -24,7 +24,7 @@ impl InputConfiguration {
         self.input_port
     }
     /// The VPC interface where the media stream comes in from.
-    pub fn interface(&self) -> std::option::Option<& crate::types::Interface> {
+    pub fn interface(&self) -> std::option::Option<&crate::types::Interface> {
         self.interface.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl InputConfigurationBuilder {
     }
     /// The IP address that the flow listens on for incoming content for a media stream.
     pub fn set_input_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_ip = input; self
+        self.input_ip = input;
+        self
     }
     /// The port that the flow listens on for an incoming media stream.
     pub fn input_port(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl InputConfigurationBuilder {
     }
     /// The port that the flow listens on for an incoming media stream.
     pub fn set_input_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.input_port = input; self
+        self.input_port = input;
+        self
     }
     /// The VPC interface where the media stream comes in from.
     pub fn interface(mut self, input: crate::types::Interface) -> Self {
@@ -69,19 +71,15 @@ impl InputConfigurationBuilder {
     }
     /// The VPC interface where the media stream comes in from.
     pub fn set_interface(mut self, input: std::option::Option<crate::types::Interface>) -> Self {
-        self.interface = input; self
+        self.interface = input;
+        self
     }
     /// Consumes the builder and constructs a [`InputConfiguration`](crate::types::InputConfiguration).
     pub fn build(self) -> crate::types::InputConfiguration {
         crate::types::InputConfiguration {
-            input_ip: self.input_ip
-            ,
-            input_port: self.input_port
-                .unwrap_or_default()
-            ,
-            interface: self.interface
-            ,
+            input_ip: self.input_ip,
+            input_port: self.input_port.unwrap_or_default(),
+            interface: self.interface,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>Specifies the following details for the step: error (if any), outputs (if any), and the step type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExecutionStepResult  {
-    /// <p>One of the available step types.</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+pub struct ExecutionStepResult {
+    /// <p>One of the available step types.</p>
+    /// <ul>
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub step_type: std::option::Option<crate::types::WorkflowStepType>,
@@ -22,23 +22,23 @@ pub struct ExecutionStepResult  {
     pub error: std::option::Option<crate::types::ExecutionError>,
 }
 impl ExecutionStepResult {
-    /// <p>One of the available step types.</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+    /// <p>One of the available step types.</p>
+    /// <ul>
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
-    pub fn step_type(&self) -> std::option::Option<& crate::types::WorkflowStepType> {
+    pub fn step_type(&self) -> std::option::Option<&crate::types::WorkflowStepType> {
         self.step_type.as_ref()
     }
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
-    pub fn outputs(&self) -> std::option::Option<& str> {
+    pub fn outputs(&self) -> std::option::Option<&str> {
         self.outputs.as_deref()
     }
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
-    pub fn error(&self) -> std::option::Option<& crate::types::ExecutionError> {
+    pub fn error(&self) -> std::option::Option<&crate::types::ExecutionError> {
         self.error.as_ref()
     }
 }
@@ -58,28 +58,32 @@ pub struct ExecutionStepResultBuilder {
     pub(crate) error: std::option::Option<crate::types::ExecutionError>,
 }
 impl ExecutionStepResultBuilder {
-    /// <p>One of the available step types.</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+    /// <p>One of the available step types.</p>
+    /// <ul>
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
     pub fn step_type(mut self, input: crate::types::WorkflowStepType) -> Self {
         self.step_type = Some(input);
         self
     }
-    /// <p>One of the available step types.</p> 
-    /// <ul> 
-    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li> 
-    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li> 
-    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li> 
-    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li> 
-    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li> 
+    /// <p>One of the available step types.</p>
+    /// <ul>
+    /// <li> <p> <b> <code>COPY</code> </b> - Copy the file to another location.</p> </li>
+    /// <li> <p> <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.</p> </li>
+    /// <li> <p> <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.</p> </li>
+    /// <li> <p> <b> <code>DELETE</code> </b> - Delete the file.</p> </li>
+    /// <li> <p> <b> <code>TAG</code> </b> - Add a tag to the file.</p> </li>
     /// </ul>
-    pub fn set_step_type(mut self, input: std::option::Option<crate::types::WorkflowStepType>) -> Self {
-        self.step_type = input; self
+    pub fn set_step_type(
+        mut self,
+        input: std::option::Option<crate::types::WorkflowStepType>,
+    ) -> Self {
+        self.step_type = input;
+        self
     }
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
     pub fn outputs(mut self, input: impl Into<std::string::String>) -> Self {
@@ -88,7 +92,8 @@ impl ExecutionStepResultBuilder {
     }
     /// <p>The values for the key/value pair applied as a tag to the file. Only applicable if the step type is <code>TAG</code>.</p>
     pub fn set_outputs(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.outputs = input; self
+        self.outputs = input;
+        self
     }
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
     pub fn error(mut self, input: crate::types::ExecutionError) -> Self {
@@ -97,18 +102,15 @@ impl ExecutionStepResultBuilder {
     }
     /// <p>Specifies the details for an error, if it occurred during execution of the specified workflow step.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::ExecutionError>) -> Self {
-        self.error = input; self
+        self.error = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExecutionStepResult`](crate::types::ExecutionStepResult).
     pub fn build(self) -> crate::types::ExecutionStepResult {
         crate::types::ExecutionStepResult {
-            step_type: self.step_type
-            ,
-            outputs: self.outputs
-            ,
-            error: self.error
-            ,
+            step_type: self.step_type,
+            outputs: self.outputs,
+            error: self.error,
         }
     }
 }
-

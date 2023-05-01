@@ -3,7 +3,7 @@
 /// <p>Contains a summary of information about an access preview.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AccessPreviewSummary  {
+pub struct AccessPreviewSummary {
     /// <p>The unique ID for the access preview.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct AccessPreviewSummary  {
     /// <p>The time at which the access preview was created.</p>
     #[doc(hidden)]
     pub created_at: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The status of the access preview.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
-    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li> 
-    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
+    /// <p>The status of the access preview.</p>
+    /// <ul>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::AccessPreviewStatus>,
@@ -27,28 +27,28 @@ pub struct AccessPreviewSummary  {
 }
 impl AccessPreviewSummary {
     /// <p>The unique ID for the access preview.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
-    pub fn analyzer_arn(&self) -> std::option::Option<& str> {
+    pub fn analyzer_arn(&self) -> std::option::Option<&str> {
         self.analyzer_arn.as_deref()
     }
     /// <p>The time at which the access preview was created.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
-    /// <p>The status of the access preview.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
-    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li> 
-    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
+    /// <p>The status of the access preview.</p>
+    /// <ul>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::AccessPreviewStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AccessPreviewStatus> {
         self.status.as_ref()
     }
     /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
-    pub fn status_reason(&self) -> std::option::Option<& crate::types::AccessPreviewStatusReason> {
+    pub fn status_reason(&self) -> std::option::Option<&crate::types::AccessPreviewStatusReason> {
         self.status_reason.as_ref()
     }
 }
@@ -77,7 +77,8 @@ impl AccessPreviewSummaryBuilder {
     }
     /// <p>The unique ID for the access preview.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
     pub fn analyzer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,7 +87,8 @@ impl AccessPreviewSummaryBuilder {
     }
     /// <p>The ARN of the analyzer used to generate the access preview.</p>
     pub fn set_analyzer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.analyzer_arn = input; self
+        self.analyzer_arn = input;
+        self
     }
     /// <p>The time at which the access preview was created.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -94,27 +96,35 @@ impl AccessPreviewSummaryBuilder {
         self
     }
     /// <p>The time at which the access preview was created.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
-    /// <p>The status of the access preview.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
-    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li> 
-    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
+    /// <p>The status of the access preview.</p>
+    /// <ul>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::AccessPreviewStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the access preview.</p> 
-    /// <ul> 
-    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li> 
-    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li> 
-    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li> 
+    /// <p>The status of the access preview.</p>
+    /// <ul>
+    /// <li> <p> <code>Creating</code> - The access preview creation is in progress.</p> </li>
+    /// <li> <p> <code>Completed</code> - The access preview is complete and previews the findings for external access to the resource.</p> </li>
+    /// <li> <p> <code>Failed</code> - The access preview creation has failed.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::AccessPreviewStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::AccessPreviewStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
     pub fn status_reason(mut self, input: crate::types::AccessPreviewStatusReason) -> Self {
@@ -122,23 +132,21 @@ impl AccessPreviewSummaryBuilder {
         self
     }
     /// <p>Provides more details about the current status of the access preview. For example, if the creation of the access preview fails, a <code>Failed</code> status is returned. This failure can be due to an internal issue with the analysis or due to an invalid proposed resource configuration.</p>
-    pub fn set_status_reason(mut self, input: std::option::Option<crate::types::AccessPreviewStatusReason>) -> Self {
-        self.status_reason = input; self
+    pub fn set_status_reason(
+        mut self,
+        input: std::option::Option<crate::types::AccessPreviewStatusReason>,
+    ) -> Self {
+        self.status_reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccessPreviewSummary`](crate::types::AccessPreviewSummary).
     pub fn build(self) -> crate::types::AccessPreviewSummary {
         crate::types::AccessPreviewSummary {
-            id: self.id
-            ,
-            analyzer_arn: self.analyzer_arn
-            ,
-            created_at: self.created_at
-            ,
-            status: self.status
-            ,
-            status_reason: self.status_reason
-            ,
+            id: self.id,
+            analyzer_arn: self.analyzer_arn,
+            created_at: self.created_at,
+            status: self.status,
+            status_reason: self.status_reason,
         }
     }
 }
-

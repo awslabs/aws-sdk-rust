@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListReadSetImportJobsInput  {
+pub struct ListReadSetImportJobsInput {
     /// <p>The maximum number of jobs to return in one page of results.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -22,21 +22,23 @@ impl ListReadSetImportJobsInput {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The jobs' sequence store ID.</p>
-    pub fn sequence_store_id(&self) -> std::option::Option<& str> {
+    pub fn sequence_store_id(&self) -> std::option::Option<&str> {
         self.sequence_store_id.as_deref()
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::types::ImportReadSetFilter> {
+    pub fn filter(&self) -> std::option::Option<&crate::types::ImportReadSetFilter> {
         self.filter.as_ref()
     }
 }
 impl ListReadSetImportJobsInput {
     /// Creates a new builder-style object to manufacture [`ListReadSetImportJobsInput`](crate::operation::list_read_set_import_jobs::ListReadSetImportJobsInput).
-    pub fn builder() -> crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsInputBuilder
+    {
         crate::operation::list_read_set_import_jobs::builders::ListReadSetImportJobsInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl ListReadSetImportJobsInputBuilder {
     }
     /// <p>The maximum number of jobs to return in one page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl ListReadSetImportJobsInputBuilder {
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The jobs' sequence store ID.</p>
     pub fn sequence_store_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +79,12 @@ impl ListReadSetImportJobsInputBuilder {
         self
     }
     /// <p>The jobs' sequence store ID.</p>
-    pub fn set_sequence_store_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sequence_store_id = input; self
+    pub fn set_sequence_store_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.sequence_store_id = input;
+        self
     }
     /// <p>A filter to apply to the list.</p>
     pub fn filter(mut self, input: crate::types::ImportReadSetFilter) -> Self {
@@ -84,23 +92,27 @@ impl ListReadSetImportJobsInputBuilder {
         self
     }
     /// <p>A filter to apply to the list.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::ImportReadSetFilter>) -> Self {
-        self.filter = input; self
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::ImportReadSetFilter>,
+    ) -> Self {
+        self.filter = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListReadSetImportJobsInput`](crate::operation::list_read_set_import_jobs::ListReadSetImportJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_read_set_import_jobs::ListReadSetImportJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_read_set_import_jobs::ListReadSetImportJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_read_set_import_jobs::ListReadSetImportJobsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-                sequence_store_id: self.sequence_store_id
-                ,
-                filter: self.filter
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+                sequence_store_id: self.sequence_store_id,
+                filter: self.filter,
+            },
         )
     }
 }
-

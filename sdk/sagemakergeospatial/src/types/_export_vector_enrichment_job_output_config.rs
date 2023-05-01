@@ -3,14 +3,14 @@
 /// <p>An object containing information about the output file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportVectorEnrichmentJobOutputConfig  {
+pub struct ExportVectorEnrichmentJobOutputConfig {
     /// <p>The input structure for Amazon S3 data; representing the Amazon S3 location of the input data objects.</p>
     #[doc(hidden)]
     pub s3_data: std::option::Option<crate::types::VectorEnrichmentJobS3Data>,
 }
 impl ExportVectorEnrichmentJobOutputConfig {
     /// <p>The input structure for Amazon S3 data; representing the Amazon S3 location of the input data objects.</p>
-    pub fn s3_data(&self) -> std::option::Option<& crate::types::VectorEnrichmentJobS3Data> {
+    pub fn s3_data(&self) -> std::option::Option<&crate::types::VectorEnrichmentJobS3Data> {
         self.s3_data.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ExportVectorEnrichmentJobOutputConfigBuilder {
         self
     }
     /// <p>The input structure for Amazon S3 data; representing the Amazon S3 location of the input data objects.</p>
-    pub fn set_s3_data(mut self, input: std::option::Option<crate::types::VectorEnrichmentJobS3Data>) -> Self {
-        self.s3_data = input; self
+    pub fn set_s3_data(
+        mut self,
+        input: std::option::Option<crate::types::VectorEnrichmentJobS3Data>,
+    ) -> Self {
+        self.s3_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExportVectorEnrichmentJobOutputConfig`](crate::types::ExportVectorEnrichmentJobOutputConfig).
     pub fn build(self) -> crate::types::ExportVectorEnrichmentJobOutputConfig {
         crate::types::ExportVectorEnrichmentJobOutputConfig {
-            s3_data: self.s3_data
-            ,
+            s3_data: self.s3_data,
         }
     }
 }
-

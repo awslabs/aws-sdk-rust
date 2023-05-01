@@ -3,7 +3,7 @@
 /// <p>A summary of resources that aren't compliant. The summary is organized according to resource type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NonCompliantSummary  {
+pub struct NonCompliantSummary {
     /// <p>The total number of compliance items that aren't compliant.</p>
     #[doc(hidden)]
     pub non_compliant_count: i32,
@@ -17,7 +17,7 @@ impl NonCompliantSummary {
         self.non_compliant_count
     }
     /// <p>A summary of the non-compliance severity by compliance type</p>
-    pub fn severity_summary(&self) -> std::option::Option<& crate::types::SeveritySummary> {
+    pub fn severity_summary(&self) -> std::option::Option<&crate::types::SeveritySummary> {
         self.severity_summary.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl NonCompliantSummaryBuilder {
     }
     /// <p>The total number of compliance items that aren't compliant.</p>
     pub fn set_non_compliant_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.non_compliant_count = input; self
+        self.non_compliant_count = input;
+        self
     }
     /// <p>A summary of the non-compliance severity by compliance type</p>
     pub fn severity_summary(mut self, input: crate::types::SeveritySummary) -> Self {
@@ -51,18 +52,18 @@ impl NonCompliantSummaryBuilder {
         self
     }
     /// <p>A summary of the non-compliance severity by compliance type</p>
-    pub fn set_severity_summary(mut self, input: std::option::Option<crate::types::SeveritySummary>) -> Self {
-        self.severity_summary = input; self
+    pub fn set_severity_summary(
+        mut self,
+        input: std::option::Option<crate::types::SeveritySummary>,
+    ) -> Self {
+        self.severity_summary = input;
+        self
     }
     /// Consumes the builder and constructs a [`NonCompliantSummary`](crate::types::NonCompliantSummary).
     pub fn build(self) -> crate::types::NonCompliantSummary {
         crate::types::NonCompliantSummary {
-            non_compliant_count: self.non_compliant_count
-                .unwrap_or_default()
-            ,
-            severity_summary: self.severity_summary
-            ,
+            non_compliant_count: self.non_compliant_count.unwrap_or_default(),
+            severity_summary: self.severity_summary,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Any overrides that are applied to the signing configuration of a code signing platform.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SigningPlatformOverrides  {
+pub struct SigningPlatformOverrides {
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
     #[doc(hidden)]
     pub signing_configuration: std::option::Option<crate::types::SigningConfigurationOverrides>,
@@ -13,11 +13,13 @@ pub struct SigningPlatformOverrides  {
 }
 impl SigningPlatformOverrides {
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
-    pub fn signing_configuration(&self) -> std::option::Option<& crate::types::SigningConfigurationOverrides> {
+    pub fn signing_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::SigningConfigurationOverrides> {
         self.signing_configuration.as_ref()
     }
     /// <p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>
-    pub fn signing_image_format(&self) -> std::option::Option<& crate::types::ImageFormat> {
+    pub fn signing_image_format(&self) -> std::option::Option<&crate::types::ImageFormat> {
         self.signing_image_format.as_ref()
     }
 }
@@ -32,18 +34,26 @@ impl SigningPlatformOverrides {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct SigningPlatformOverridesBuilder {
-    pub(crate) signing_configuration: std::option::Option<crate::types::SigningConfigurationOverrides>,
+    pub(crate) signing_configuration:
+        std::option::Option<crate::types::SigningConfigurationOverrides>,
     pub(crate) signing_image_format: std::option::Option<crate::types::ImageFormat>,
 }
 impl SigningPlatformOverridesBuilder {
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
-    pub fn signing_configuration(mut self, input: crate::types::SigningConfigurationOverrides) -> Self {
+    pub fn signing_configuration(
+        mut self,
+        input: crate::types::SigningConfigurationOverrides,
+    ) -> Self {
         self.signing_configuration = Some(input);
         self
     }
     /// <p>A signing configuration that overrides the default encryption or hash algorithm of a signing job.</p>
-    pub fn set_signing_configuration(mut self, input: std::option::Option<crate::types::SigningConfigurationOverrides>) -> Self {
-        self.signing_configuration = input; self
+    pub fn set_signing_configuration(
+        mut self,
+        input: std::option::Option<crate::types::SigningConfigurationOverrides>,
+    ) -> Self {
+        self.signing_configuration = input;
+        self
     }
     /// <p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>
     pub fn signing_image_format(mut self, input: crate::types::ImageFormat) -> Self {
@@ -51,17 +61,18 @@ impl SigningPlatformOverridesBuilder {
         self
     }
     /// <p>A signed image is a JSON object. When overriding the default signing platform configuration, a customer can select either of two signing formats, <code>JSONEmbedded</code> or <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing image.</p>
-    pub fn set_signing_image_format(mut self, input: std::option::Option<crate::types::ImageFormat>) -> Self {
-        self.signing_image_format = input; self
+    pub fn set_signing_image_format(
+        mut self,
+        input: std::option::Option<crate::types::ImageFormat>,
+    ) -> Self {
+        self.signing_image_format = input;
+        self
     }
     /// Consumes the builder and constructs a [`SigningPlatformOverrides`](crate::types::SigningPlatformOverrides).
     pub fn build(self) -> crate::types::SigningPlatformOverrides {
         crate::types::SigningPlatformOverrides {
-            signing_configuration: self.signing_configuration
-            ,
-            signing_image_format: self.signing_image_format
-            ,
+            signing_configuration: self.signing_configuration,
+            signing_image_format: self.signing_image_format,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePageOutput  {
+pub struct DescribePageOutput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
     #[doc(hidden)]
     pub page_arn: std::option::Option<std::string::String>,
@@ -43,59 +43,59 @@ pub struct DescribePageOutput  {
 }
 impl DescribePageOutput {
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
-    pub fn page_arn(&self) -> std::option::Option<& str> {
+    pub fn page_arn(&self) -> std::option::Option<&str> {
         self.page_arn.as_deref()
     }
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
-    pub fn engagement_arn(&self) -> std::option::Option<& str> {
+    pub fn engagement_arn(&self) -> std::option::Option<&str> {
         self.engagement_arn.as_deref()
     }
     /// <p>The ARN of the contact that was engaged.</p>
-    pub fn contact_arn(&self) -> std::option::Option<& str> {
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
         self.contact_arn.as_deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> std::option::Option<& str> {
+    pub fn sender(&self) -> std::option::Option<&str> {
         self.sender.as_deref()
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn subject(&self) -> std::option::Option<& str> {
+    pub fn subject(&self) -> std::option::Option<&str> {
         self.subject.as_deref()
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn content(&self) -> std::option::Option<& str> {
+    pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_subject(&self) -> std::option::Option<& str> {
+    pub fn public_subject(&self) -> std::option::Option<&str> {
         self.public_subject.as_deref()
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_content(&self) -> std::option::Option<& str> {
+    pub fn public_content(&self) -> std::option::Option<&str> {
         self.public_content.as_deref()
     }
     /// <p>The ARN of the incident that engaged the contact channel.</p>
-    pub fn incident_id(&self) -> std::option::Option<& str> {
+    pub fn incident_id(&self) -> std::option::Option<&str> {
         self.incident_id.as_deref()
     }
     /// <p>The time the engagement was sent to the contact channel.</p>
-    pub fn sent_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn sent_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.sent_time.as_ref()
     }
     /// <p>The time that the contact channel acknowledged the engagement.</p>
-    pub fn read_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn read_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.read_time.as_ref()
     }
     /// <p>The time that the contact channel received the engagement.</p>
-    pub fn delivery_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn delivery_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.delivery_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribePageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribePageOutput {
     /// Creates a new builder-style object to manufacture [`DescribePageOutput`](crate::operation::describe_page::DescribePageOutput).
     pub fn builder() -> crate::operation::describe_page::builders::DescribePageOutputBuilder {
@@ -129,7 +129,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the engagement to a contact channel.</p>
     pub fn set_page_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_arn = input; self
+        self.page_arn = input;
+        self
     }
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
     pub fn engagement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -138,7 +139,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The ARN of the engagement that engaged the contact channel.</p>
     pub fn set_engagement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engagement_arn = input; self
+        self.engagement_arn = input;
+        self
     }
     /// <p>The ARN of the contact that was engaged.</p>
     pub fn contact_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,7 +149,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The ARN of the contact that was engaged.</p>
     pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_arn = input; self
+        self.contact_arn = input;
+        self
     }
     /// <p>The user that started the engagement.</p>
     pub fn sender(mut self, input: impl Into<std::string::String>) -> Self {
@@ -156,7 +159,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The user that started the engagement.</p>
     pub fn set_sender(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sender = input; self
+        self.sender = input;
+        self
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,7 +169,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subject = input; self
+        self.subject = input;
+        self
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -174,7 +179,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -183,7 +189,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn set_public_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_subject = input; self
+        self.public_subject = input;
+        self
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -192,7 +199,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn set_public_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_content = input; self
+        self.public_content = input;
+        self
     }
     /// <p>The ARN of the incident that engaged the contact channel.</p>
     pub fn incident_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -201,7 +209,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The ARN of the incident that engaged the contact channel.</p>
     pub fn set_incident_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.incident_id = input; self
+        self.incident_id = input;
+        self
     }
     /// <p>The time the engagement was sent to the contact channel.</p>
     pub fn sent_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -210,7 +219,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The time the engagement was sent to the contact channel.</p>
     pub fn set_sent_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.sent_time = input; self
+        self.sent_time = input;
+        self
     }
     /// <p>The time that the contact channel acknowledged the engagement.</p>
     pub fn read_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -219,7 +229,8 @@ impl DescribePageOutputBuilder {
     }
     /// <p>The time that the contact channel acknowledged the engagement.</p>
     pub fn set_read_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.read_time = input; self
+        self.read_time = input;
+        self
     }
     /// <p>The time that the contact channel received the engagement.</p>
     pub fn delivery_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -227,47 +238,38 @@ impl DescribePageOutputBuilder {
         self
     }
     /// <p>The time that the contact channel received the engagement.</p>
-    pub fn set_delivery_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.delivery_time = input; self
+    pub fn set_delivery_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.delivery_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribePageOutput`](crate::operation::describe_page::DescribePageOutput).
     pub fn build(self) -> crate::operation::describe_page::DescribePageOutput {
         crate::operation::describe_page::DescribePageOutput {
-            page_arn: self.page_arn
-            ,
-            engagement_arn: self.engagement_arn
-            ,
-            contact_arn: self.contact_arn
-            ,
-            sender: self.sender
-            ,
-            subject: self.subject
-            ,
-            content: self.content
-            ,
-            public_subject: self.public_subject
-            ,
-            public_content: self.public_content
-            ,
-            incident_id: self.incident_id
-            ,
-            sent_time: self.sent_time
-            ,
-            read_time: self.read_time
-            ,
-            delivery_time: self.delivery_time
-            ,
+            page_arn: self.page_arn,
+            engagement_arn: self.engagement_arn,
+            contact_arn: self.contact_arn,
+            sender: self.sender,
+            subject: self.subject,
+            content: self.content,
+            public_subject: self.public_subject,
+            public_content: self.public_content,
+            incident_id: self.incident_id,
+            sent_time: self.sent_time,
+            read_time: self.read_time,
+            delivery_time: self.delivery_time,
             _request_id: self._request_id,
         }
     }
 }
-

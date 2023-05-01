@@ -3,7 +3,7 @@
 /// <p>Provides a list of validation messages.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ValidateConfigurationSettingsOutput  {
+pub struct ValidateConfigurationSettingsOutput {
     /// <p> A list of <code>ValidationMessage</code>. </p>
     #[doc(hidden)]
     pub messages: std::option::Option<std::vec::Vec<crate::types::ValidationMessage>>,
@@ -11,18 +11,18 @@ pub struct ValidateConfigurationSettingsOutput  {
 }
 impl ValidateConfigurationSettingsOutput {
     /// <p> A list of <code>ValidationMessage</code>. </p>
-    pub fn messages(&self) -> std::option::Option<& [crate::types::ValidationMessage]> {
+    pub fn messages(&self) -> std::option::Option<&[crate::types::ValidationMessage]> {
         self.messages.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ValidateConfigurationSettingsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ValidateConfigurationSettingsOutput {
     /// Creates a new builder-style object to manufacture [`ValidateConfigurationSettingsOutput`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput).
-    pub fn builder() -> crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsOutputBuilder {
+    pub fn builder() -> crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsOutputBuilder{
         crate::operation::validate_configuration_settings::builders::ValidateConfigurationSettingsOutputBuilder::default()
     }
 }
@@ -42,30 +42,35 @@ impl ValidateConfigurationSettingsOutputBuilder {
     /// <p> A list of <code>ValidationMessage</code>. </p>
     pub fn messages(mut self, input: crate::types::ValidationMessage) -> Self {
         let mut v = self.messages.unwrap_or_default();
-                        v.push(input);
-                        self.messages = Some(v);
-                        self
+        v.push(input);
+        self.messages = Some(v);
+        self
     }
     /// <p> A list of <code>ValidationMessage</code>. </p>
-    pub fn set_messages(mut self, input: std::option::Option<std::vec::Vec<crate::types::ValidationMessage>>) -> Self {
-        self.messages = input; self
+    pub fn set_messages(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ValidationMessage>>,
+    ) -> Self {
+        self.messages = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ValidateConfigurationSettingsOutput`](crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput).
-    pub fn build(self) -> crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput
+    {
         crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput {
-            messages: self.messages
-            ,
+            messages: self.messages,
             _request_id: self._request_id,
         }
     }
 }
-

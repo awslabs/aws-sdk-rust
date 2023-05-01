@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let h264fieldencoding = unimplemented!();
 /// match h264fieldencoding {
@@ -31,14 +31,22 @@
 /// Specifically, when `h264fieldencoding` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `H264FieldEncoding::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum H264FieldEncoding {
     #[allow(missing_docs)] // documentation missing in model
     ForceField,
@@ -47,43 +55,44 @@ pub enum H264FieldEncoding {
     #[allow(missing_docs)] // documentation missing in model
     Paff,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for H264FieldEncoding {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "FORCE_FIELD" => H264FieldEncoding::ForceField,
-"MBAFF" => H264FieldEncoding::Mbaff,
-"PAFF" => H264FieldEncoding::Paff,
-other => H264FieldEncoding::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "FORCE_FIELD" => H264FieldEncoding::ForceField,
+            "MBAFF" => H264FieldEncoding::Mbaff,
+            "PAFF" => H264FieldEncoding::Paff,
+            other => {
+                H264FieldEncoding::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for H264FieldEncoding {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(H264FieldEncoding::from(s))
-                }
-            }
-impl H264FieldEncoding {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    H264FieldEncoding::ForceField => "FORCE_FIELD",
-    H264FieldEncoding::Mbaff => "MBAFF",
-    H264FieldEncoding::Paff => "PAFF",
-    H264FieldEncoding::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["FORCE_FIELD", "MBAFF", "PAFF"]
-                }
-            }
-impl AsRef<str> for H264FieldEncoding {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for H264FieldEncoding {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(H264FieldEncoding::from(s))
+    }
+}
+impl H264FieldEncoding {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            H264FieldEncoding::ForceField => "FORCE_FIELD",
+            H264FieldEncoding::Mbaff => "MBAFF",
+            H264FieldEncoding::Paff => "PAFF",
+            H264FieldEncoding::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["FORCE_FIELD", "MBAFF", "PAFF"]
+    }
+}
+impl AsRef<str> for H264FieldEncoding {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

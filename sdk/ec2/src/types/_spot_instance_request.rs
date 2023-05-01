@@ -3,7 +3,7 @@
 /// <p>Describes a Spot Instance request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SpotInstanceRequest  {
+pub struct SpotInstanceRequest {
     /// <p>Deprecated.</p>
     #[doc(hidden)]
     pub actual_block_hourly_price: std::option::Option<std::string::String>,
@@ -37,8 +37,8 @@ pub struct SpotInstanceRequest  {
     /// <p>The ID of the Spot Instance request.</p>
     #[doc(hidden)]
     pub spot_instance_request_id: std::option::Option<std::string::String>,
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important> 
-    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p> 
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
+    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     #[doc(hidden)]
     pub spot_price: std::option::Option<std::string::String>,
@@ -57,24 +57,25 @@ pub struct SpotInstanceRequest  {
     /// <p>The start date of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request becomes active at this date and time.</p>
     #[doc(hidden)]
     pub valid_from: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> 
-    /// <ul> 
-    /// <li> <p>For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li> 
-    /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li> 
+    /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <ul>
+    /// <li> <p>For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li>
+    /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub valid_until: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The behavior when a Spot Instance is interrupted.</p>
     #[doc(hidden)]
-    pub instance_interruption_behavior: std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    pub instance_interruption_behavior:
+        std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl SpotInstanceRequest {
     /// <p>Deprecated.</p>
-    pub fn actual_block_hourly_price(&self) -> std::option::Option<& str> {
+    pub fn actual_block_hourly_price(&self) -> std::option::Option<&str> {
         self.actual_block_hourly_price.as_deref()
     }
     /// <p>The Availability Zone group. If you specify the same Availability Zone group for all Spot Instance requests, all Spot Instances are launched in the same Availability Zone.</p>
-    pub fn availability_zone_group(&self) -> std::option::Option<& str> {
+    pub fn availability_zone_group(&self) -> std::option::Option<&str> {
         self.availability_zone_group.as_deref()
     }
     /// <p>Deprecated.</p>
@@ -82,73 +83,75 @@ impl SpotInstanceRequest {
         self.block_duration_minutes
     }
     /// <p>The date and time when the Spot Instance request was created, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.create_time.as_ref()
     }
     /// <p>The fault codes for the Spot Instance request, if any.</p>
-    pub fn fault(&self) -> std::option::Option<& crate::types::SpotInstanceStateFault> {
+    pub fn fault(&self) -> std::option::Option<&crate::types::SpotInstanceStateFault> {
         self.fault.as_ref()
     }
     /// <p>The instance ID, if an instance has been launched to fulfill the Spot Instance request.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
-    pub fn launch_group(&self) -> std::option::Option<& str> {
+    pub fn launch_group(&self) -> std::option::Option<&str> {
         self.launch_group.as_deref()
     }
     /// <p>Additional information for launching instances.</p>
-    pub fn launch_specification(&self) -> std::option::Option<& crate::types::LaunchSpecification> {
+    pub fn launch_specification(&self) -> std::option::Option<&crate::types::LaunchSpecification> {
         self.launch_specification.as_ref()
     }
     /// <p>The Availability Zone in which the request is launched.</p>
-    pub fn launched_availability_zone(&self) -> std::option::Option<& str> {
+    pub fn launched_availability_zone(&self) -> std::option::Option<&str> {
         self.launched_availability_zone.as_deref()
     }
     /// <p>The product description associated with the Spot Instance.</p>
-    pub fn product_description(&self) -> std::option::Option<& crate::types::RiProductDescription> {
+    pub fn product_description(&self) -> std::option::Option<&crate::types::RiProductDescription> {
         self.product_description.as_ref()
     }
     /// <p>The ID of the Spot Instance request.</p>
-    pub fn spot_instance_request_id(&self) -> std::option::Option<& str> {
+    pub fn spot_instance_request_id(&self) -> std::option::Option<&str> {
         self.spot_instance_request_id.as_deref()
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important> 
-    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p> 
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
+    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
-    pub fn spot_price(&self) -> std::option::Option<& str> {
+    pub fn spot_price(&self) -> std::option::Option<&str> {
         self.spot_price.as_deref()
     }
     /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::SpotInstanceState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::SpotInstanceState> {
         self.state.as_ref()
     }
     /// <p>The status code and status message describing the Spot Instance request.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::SpotInstanceStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::SpotInstanceStatus> {
         self.status.as_ref()
     }
     /// <p>Any tags assigned to the resource.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>The Spot Instance request type.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::SpotInstanceType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::SpotInstanceType> {
         self.r#type.as_ref()
     }
     /// <p>The start date of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request becomes active at this date and time.</p>
-    pub fn valid_from(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn valid_from(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_from.as_ref()
     }
-    /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> 
-    /// <ul> 
-    /// <li> <p>For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li> 
-    /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li> 
+    /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <ul>
+    /// <li> <p>For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li>
+    /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li>
     /// </ul>
-    pub fn valid_until(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn valid_until(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.valid_until.as_ref()
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    pub fn instance_interruption_behavior(&self) -> std::option::Option<& crate::types::InstanceInterruptionBehavior> {
+    pub fn instance_interruption_behavior(
+        &self,
+    ) -> std::option::Option<&crate::types::InstanceInterruptionBehavior> {
         self.instance_interruption_behavior.as_ref()
     }
 }
@@ -181,7 +184,8 @@ pub struct SpotInstanceRequestBuilder {
     pub(crate) r#type: std::option::Option<crate::types::SpotInstanceType>,
     pub(crate) valid_from: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) valid_until: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) instance_interruption_behavior: std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    pub(crate) instance_interruption_behavior:
+        std::option::Option<crate::types::InstanceInterruptionBehavior>,
 }
 impl SpotInstanceRequestBuilder {
     /// <p>Deprecated.</p>
@@ -190,8 +194,12 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>Deprecated.</p>
-    pub fn set_actual_block_hourly_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.actual_block_hourly_price = input; self
+    pub fn set_actual_block_hourly_price(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.actual_block_hourly_price = input;
+        self
     }
     /// <p>The Availability Zone group. If you specify the same Availability Zone group for all Spot Instance requests, all Spot Instances are launched in the same Availability Zone.</p>
     pub fn availability_zone_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -199,8 +207,12 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>The Availability Zone group. If you specify the same Availability Zone group for all Spot Instance requests, all Spot Instances are launched in the same Availability Zone.</p>
-    pub fn set_availability_zone_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.availability_zone_group = input; self
+    pub fn set_availability_zone_group(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.availability_zone_group = input;
+        self
     }
     /// <p>Deprecated.</p>
     pub fn block_duration_minutes(mut self, input: i32) -> Self {
@@ -209,7 +221,8 @@ impl SpotInstanceRequestBuilder {
     }
     /// <p>Deprecated.</p>
     pub fn set_block_duration_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.block_duration_minutes = input; self
+        self.block_duration_minutes = input;
+        self
     }
     /// <p>The date and time when the Spot Instance request was created, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
     pub fn create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -217,8 +230,12 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>The date and time when the Spot Instance request was created, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
-    pub fn set_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.create_time = input; self
+    pub fn set_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.create_time = input;
+        self
     }
     /// <p>The fault codes for the Spot Instance request, if any.</p>
     pub fn fault(mut self, input: crate::types::SpotInstanceStateFault) -> Self {
@@ -226,8 +243,12 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>The fault codes for the Spot Instance request, if any.</p>
-    pub fn set_fault(mut self, input: std::option::Option<crate::types::SpotInstanceStateFault>) -> Self {
-        self.fault = input; self
+    pub fn set_fault(
+        mut self,
+        input: std::option::Option<crate::types::SpotInstanceStateFault>,
+    ) -> Self {
+        self.fault = input;
+        self
     }
     /// <p>The instance ID, if an instance has been launched to fulfill the Spot Instance request.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -236,7 +257,8 @@ impl SpotInstanceRequestBuilder {
     }
     /// <p>The instance ID, if an instance has been launched to fulfill the Spot Instance request.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
     pub fn launch_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -245,7 +267,8 @@ impl SpotInstanceRequestBuilder {
     }
     /// <p>The instance launch group. Launch groups are Spot Instances that launch together and terminate together.</p>
     pub fn set_launch_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launch_group = input; self
+        self.launch_group = input;
+        self
     }
     /// <p>Additional information for launching instances.</p>
     pub fn launch_specification(mut self, input: crate::types::LaunchSpecification) -> Self {
@@ -253,8 +276,12 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>Additional information for launching instances.</p>
-    pub fn set_launch_specification(mut self, input: std::option::Option<crate::types::LaunchSpecification>) -> Self {
-        self.launch_specification = input; self
+    pub fn set_launch_specification(
+        mut self,
+        input: std::option::Option<crate::types::LaunchSpecification>,
+    ) -> Self {
+        self.launch_specification = input;
+        self
     }
     /// <p>The Availability Zone in which the request is launched.</p>
     pub fn launched_availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -262,8 +289,12 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>The Availability Zone in which the request is launched.</p>
-    pub fn set_launched_availability_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.launched_availability_zone = input; self
+    pub fn set_launched_availability_zone(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.launched_availability_zone = input;
+        self
     }
     /// <p>The product description associated with the Spot Instance.</p>
     pub fn product_description(mut self, input: crate::types::RiProductDescription) -> Self {
@@ -271,8 +302,12 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>The product description associated with the Spot Instance.</p>
-    pub fn set_product_description(mut self, input: std::option::Option<crate::types::RiProductDescription>) -> Self {
-        self.product_description = input; self
+    pub fn set_product_description(
+        mut self,
+        input: std::option::Option<crate::types::RiProductDescription>,
+    ) -> Self {
+        self.product_description = input;
+        self
     }
     /// <p>The ID of the Spot Instance request.</p>
     pub fn spot_instance_request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -280,21 +315,26 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>The ID of the Spot Instance request.</p>
-    pub fn set_spot_instance_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.spot_instance_request_id = input; self
+    pub fn set_spot_instance_request_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.spot_instance_request_id = input;
+        self
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important> 
-    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p> 
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
+    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn spot_price(mut self, input: impl Into<std::string::String>) -> Self {
         self.spot_price = Some(input.into());
         self
     }
-    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important> 
-    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p> 
+    /// <p>The maximum price per unit hour that you are willing to pay for a Spot Instance. We do not recommend using this parameter because it can lead to increased interruptions. If you do not specify this parameter, you will pay the current Spot price.</p> <important>
+    /// <p>If you specify a maximum price, your instances will be interrupted more frequently than if you do not specify this parameter.</p>
     /// </important>
     pub fn set_spot_price(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.spot_price = input; self
+        self.spot_price = input;
+        self
     }
     /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
     pub fn state(mut self, input: crate::types::SpotInstanceState) -> Self {
@@ -302,8 +342,12 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>The state of the Spot Instance request. Spot request status information helps track your Spot Instance requests. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-request-status.html">Spot request status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::SpotInstanceState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::SpotInstanceState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>The status code and status message describing the Spot Instance request.</p>
     pub fn status(mut self, input: crate::types::SpotInstanceStatus) -> Self {
@@ -311,8 +355,12 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>The status code and status message describing the Spot Instance request.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::SpotInstanceStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::SpotInstanceStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -321,13 +369,17 @@ impl SpotInstanceRequestBuilder {
     /// <p>Any tags assigned to the resource.</p>
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>Any tags assigned to the resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The Spot Instance request type.</p>
     pub fn r#type(mut self, input: crate::types::SpotInstanceType) -> Self {
@@ -336,7 +388,8 @@ impl SpotInstanceRequestBuilder {
     }
     /// <p>The Spot Instance request type.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::SpotInstanceType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// <p>The start date of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request becomes active at this date and time.</p>
     pub fn valid_from(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -344,77 +397,72 @@ impl SpotInstanceRequestBuilder {
         self
     }
     /// <p>The start date of the request, in UTC format (for example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). The request becomes active at this date and time.</p>
-    pub fn set_valid_from(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.valid_from = input; self
+    pub fn set_valid_from(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.valid_from = input;
+        self
     }
-    /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> 
-    /// <ul> 
-    /// <li> <p>For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li> 
-    /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li> 
+    /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <ul>
+    /// <li> <p>For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li>
+    /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li>
     /// </ul>
     pub fn valid_until(mut self, input: aws_smithy_types::DateTime) -> Self {
         self.valid_until = Some(input);
         self
     }
-    /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p> 
-    /// <ul> 
-    /// <li> <p>For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li> 
-    /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li> 
+    /// <p>The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+    /// <ul>
+    /// <li> <p>For a persistent request, the request remains active until the <code>validUntil</code> date and time is reached. Otherwise, the request remains active until you cancel it. </p> </li>
+    /// <li> <p>For a one-time request, the request remains active until all instances launch, the request is canceled, or the <code>validUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the request was created.</p> </li>
     /// </ul>
-    pub fn set_valid_until(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.valid_until = input; self
+    pub fn set_valid_until(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.valid_until = input;
+        self
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    pub fn instance_interruption_behavior(mut self, input: crate::types::InstanceInterruptionBehavior) -> Self {
+    pub fn instance_interruption_behavior(
+        mut self,
+        input: crate::types::InstanceInterruptionBehavior,
+    ) -> Self {
         self.instance_interruption_behavior = Some(input);
         self
     }
     /// <p>The behavior when a Spot Instance is interrupted.</p>
-    pub fn set_instance_interruption_behavior(mut self, input: std::option::Option<crate::types::InstanceInterruptionBehavior>) -> Self {
-        self.instance_interruption_behavior = input; self
+    pub fn set_instance_interruption_behavior(
+        mut self,
+        input: std::option::Option<crate::types::InstanceInterruptionBehavior>,
+    ) -> Self {
+        self.instance_interruption_behavior = input;
+        self
     }
     /// Consumes the builder and constructs a [`SpotInstanceRequest`](crate::types::SpotInstanceRequest).
     pub fn build(self) -> crate::types::SpotInstanceRequest {
         crate::types::SpotInstanceRequest {
-            actual_block_hourly_price: self.actual_block_hourly_price
-            ,
-            availability_zone_group: self.availability_zone_group
-            ,
-            block_duration_minutes: self.block_duration_minutes
-            ,
-            create_time: self.create_time
-            ,
-            fault: self.fault
-            ,
-            instance_id: self.instance_id
-            ,
-            launch_group: self.launch_group
-            ,
-            launch_specification: self.launch_specification
-            ,
-            launched_availability_zone: self.launched_availability_zone
-            ,
-            product_description: self.product_description
-            ,
-            spot_instance_request_id: self.spot_instance_request_id
-            ,
-            spot_price: self.spot_price
-            ,
-            state: self.state
-            ,
-            status: self.status
-            ,
-            tags: self.tags
-            ,
-            r#type: self.r#type
-            ,
-            valid_from: self.valid_from
-            ,
-            valid_until: self.valid_until
-            ,
-            instance_interruption_behavior: self.instance_interruption_behavior
-            ,
+            actual_block_hourly_price: self.actual_block_hourly_price,
+            availability_zone_group: self.availability_zone_group,
+            block_duration_minutes: self.block_duration_minutes,
+            create_time: self.create_time,
+            fault: self.fault,
+            instance_id: self.instance_id,
+            launch_group: self.launch_group,
+            launch_specification: self.launch_specification,
+            launched_availability_zone: self.launched_availability_zone,
+            product_description: self.product_description,
+            spot_instance_request_id: self.spot_instance_request_id,
+            spot_price: self.spot_price,
+            state: self.state,
+            status: self.status,
+            tags: self.tags,
+            r#type: self.r#type,
+            valid_from: self.valid_from,
+            valid_until: self.valid_until,
+            instance_interruption_behavior: self.instance_interruption_behavior,
         }
     }
 }
-

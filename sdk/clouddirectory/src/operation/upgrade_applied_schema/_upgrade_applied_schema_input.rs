@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpgradeAppliedSchemaInput  {
+pub struct UpgradeAppliedSchemaInput {
     /// <p>The revision of the published schema to upgrade the directory to.</p>
     #[doc(hidden)]
     pub published_schema_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct UpgradeAppliedSchemaInput  {
 }
 impl UpgradeAppliedSchemaInput {
     /// <p>The revision of the published schema to upgrade the directory to.</p>
-    pub fn published_schema_arn(&self) -> std::option::Option<& str> {
+    pub fn published_schema_arn(&self) -> std::option::Option<&str> {
         self.published_schema_arn.as_deref()
     }
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
-    pub fn directory_arn(&self) -> std::option::Option<& str> {
+    pub fn directory_arn(&self) -> std::option::Option<&str> {
         self.directory_arn.as_deref()
     }
     /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
@@ -29,7 +29,8 @@ impl UpgradeAppliedSchemaInput {
 }
 impl UpgradeAppliedSchemaInput {
     /// Creates a new builder-style object to manufacture [`UpgradeAppliedSchemaInput`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput).
-    pub fn builder() -> crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder {
         crate::operation::upgrade_applied_schema::builders::UpgradeAppliedSchemaInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl UpgradeAppliedSchemaInputBuilder {
         self
     }
     /// <p>The revision of the published schema to upgrade the directory to.</p>
-    pub fn set_published_schema_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.published_schema_arn = input; self
+    pub fn set_published_schema_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.published_schema_arn = input;
+        self
     }
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
     pub fn directory_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +64,8 @@ impl UpgradeAppliedSchemaInputBuilder {
     }
     /// <p>The ARN for the directory to which the upgraded schema will be applied.</p>
     pub fn set_directory_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_arn = input; self
+        self.directory_arn = input;
+        self
     }
     /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -68,20 +74,22 @@ impl UpgradeAppliedSchemaInputBuilder {
     }
     /// <p>Used for testing whether the major version schemas are backward compatible or not. If schema compatibility fails, an exception would be thrown else the call would succeed but no changes will be saved. This parameter is optional.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpgradeAppliedSchemaInput`](crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput).
-    pub fn build(self) -> Result<crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaInput {
-                published_schema_arn: self.published_schema_arn
-                ,
-                directory_arn: self.directory_arn
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                published_schema_arn: self.published_schema_arn,
+                directory_arn: self.directory_arn,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Information about an order.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Order  {
+pub struct Order {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     #[doc(hidden)]
     pub order_arn: std::option::Option<std::string::String>,
@@ -28,31 +28,35 @@ pub struct Order  {
 }
 impl Order {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
-    pub fn order_arn(&self) -> std::option::Option<& str> {
+    pub fn order_arn(&self) -> std::option::Option<&str> {
         self.order_arn.as_deref()
     }
     /// <p>The shipping address of the order.</p>
-    pub fn shipping_address(&self) -> std::option::Option<& crate::types::Address> {
+    pub fn shipping_address(&self) -> std::option::Option<&crate::types::Address> {
         self.shipping_address.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
-    pub fn network_arn(&self) -> std::option::Option<& str> {
+    pub fn network_arn(&self) -> std::option::Option<&str> {
         self.network_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>
-    pub fn network_site_arn(&self) -> std::option::Option<& str> {
+    pub fn network_site_arn(&self) -> std::option::Option<&str> {
         self.network_site_arn.as_deref()
     }
     /// <p>The tracking information of the order.</p>
-    pub fn tracking_information(&self) -> std::option::Option<& [crate::types::TrackingInformation]> {
+    pub fn tracking_information(
+        &self,
+    ) -> std::option::Option<&[crate::types::TrackingInformation]> {
         self.tracking_information.as_deref()
     }
     /// <p>The acknowledgement status of the order.</p>
-    pub fn acknowledgment_status(&self) -> std::option::Option<& crate::types::AcknowledgmentStatus> {
+    pub fn acknowledgment_status(
+        &self,
+    ) -> std::option::Option<&crate::types::AcknowledgmentStatus> {
         self.acknowledgment_status.as_ref()
     }
     /// <p>The creation time of the order.</p>
-    pub fn created_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
 }
@@ -71,7 +75,8 @@ pub struct OrderBuilder {
     pub(crate) shipping_address: std::option::Option<crate::types::Address>,
     pub(crate) network_arn: std::option::Option<std::string::String>,
     pub(crate) network_site_arn: std::option::Option<std::string::String>,
-    pub(crate) tracking_information: std::option::Option<std::vec::Vec<crate::types::TrackingInformation>>,
+    pub(crate) tracking_information:
+        std::option::Option<std::vec::Vec<crate::types::TrackingInformation>>,
     pub(crate) acknowledgment_status: std::option::Option<crate::types::AcknowledgmentStatus>,
     pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
 }
@@ -83,7 +88,8 @@ impl OrderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
     pub fn set_order_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.order_arn = input; self
+        self.order_arn = input;
+        self
     }
     /// <p>The shipping address of the order.</p>
     pub fn shipping_address(mut self, input: crate::types::Address) -> Self {
@@ -91,8 +97,12 @@ impl OrderBuilder {
         self
     }
     /// <p>The shipping address of the order.</p>
-    pub fn set_shipping_address(mut self, input: std::option::Option<crate::types::Address>) -> Self {
-        self.shipping_address = input; self
+    pub fn set_shipping_address(
+        mut self,
+        input: std::option::Option<crate::types::Address>,
+    ) -> Self {
+        self.shipping_address = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
     pub fn network_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,7 +111,8 @@ impl OrderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network associated with this order.</p>
     pub fn set_network_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_arn = input; self
+        self.network_arn = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>
     pub fn network_site_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +121,8 @@ impl OrderBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the network site associated with this order.</p>
     pub fn set_network_site_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_site_arn = input; self
+        self.network_site_arn = input;
+        self
     }
     /// Appends an item to `tracking_information`.
     ///
@@ -119,13 +131,17 @@ impl OrderBuilder {
     /// <p>The tracking information of the order.</p>
     pub fn tracking_information(mut self, input: crate::types::TrackingInformation) -> Self {
         let mut v = self.tracking_information.unwrap_or_default();
-                        v.push(input);
-                        self.tracking_information = Some(v);
-                        self
+        v.push(input);
+        self.tracking_information = Some(v);
+        self
     }
     /// <p>The tracking information of the order.</p>
-    pub fn set_tracking_information(mut self, input: std::option::Option<std::vec::Vec<crate::types::TrackingInformation>>) -> Self {
-        self.tracking_information = input; self
+    pub fn set_tracking_information(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TrackingInformation>>,
+    ) -> Self {
+        self.tracking_information = input;
+        self
     }
     /// <p>The acknowledgement status of the order.</p>
     pub fn acknowledgment_status(mut self, input: crate::types::AcknowledgmentStatus) -> Self {
@@ -133,8 +149,12 @@ impl OrderBuilder {
         self
     }
     /// <p>The acknowledgement status of the order.</p>
-    pub fn set_acknowledgment_status(mut self, input: std::option::Option<crate::types::AcknowledgmentStatus>) -> Self {
-        self.acknowledgment_status = input; self
+    pub fn set_acknowledgment_status(
+        mut self,
+        input: std::option::Option<crate::types::AcknowledgmentStatus>,
+    ) -> Self {
+        self.acknowledgment_status = input;
+        self
     }
     /// <p>The creation time of the order.</p>
     pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -142,27 +162,23 @@ impl OrderBuilder {
         self
     }
     /// <p>The creation time of the order.</p>
-    pub fn set_created_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_at = input; self
+    pub fn set_created_at(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_at = input;
+        self
     }
     /// Consumes the builder and constructs a [`Order`](crate::types::Order).
     pub fn build(self) -> crate::types::Order {
         crate::types::Order {
-            order_arn: self.order_arn
-            ,
-            shipping_address: self.shipping_address
-            ,
-            network_arn: self.network_arn
-            ,
-            network_site_arn: self.network_site_arn
-            ,
-            tracking_information: self.tracking_information
-            ,
-            acknowledgment_status: self.acknowledgment_status
-            ,
-            created_at: self.created_at
-            ,
+            order_arn: self.order_arn,
+            shipping_address: self.shipping_address,
+            network_arn: self.network_arn,
+            network_site_arn: self.network_site_arn,
+            tracking_information: self.tracking_information,
+            acknowledgment_status: self.acknowledgment_status,
+            created_at: self.created_at,
         }
     }
 }
-

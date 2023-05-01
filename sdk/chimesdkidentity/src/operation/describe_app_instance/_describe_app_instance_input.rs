@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAppInstanceInput  {
+pub struct DescribeAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl DescribeAppInstanceInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
-    pub fn app_instance_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
     }
 }
 impl DescribeAppInstanceInput {
     /// Creates a new builder-style object to manufacture [`DescribeAppInstanceInput`](crate::operation::describe_app_instance::DescribeAppInstanceInput).
-    pub fn builder() -> crate::operation::describe_app_instance::builders::DescribeAppInstanceInputBuilder {
-        crate::operation::describe_app_instance::builders::DescribeAppInstanceInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_app_instance::builders::DescribeAppInstanceInputBuilder {
+        crate::operation::describe_app_instance::builders::DescribeAppInstanceInputBuilder::default(
+        )
     }
 }
 
@@ -34,16 +36,20 @@ impl DescribeAppInstanceInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn set_app_instance_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_arn = input; self
+        self.app_instance_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeAppInstanceInput`](crate::operation::describe_app_instance::DescribeAppInstanceInput).
-    pub fn build(self) -> Result<crate::operation::describe_app_instance::DescribeAppInstanceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_app_instance::DescribeAppInstanceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_app_instance::DescribeAppInstanceInput {
-                app_instance_arn: self.app_instance_arn
-                ,
-            }
+                app_instance_arn: self.app_instance_arn,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeNamespaceOutput  {
+pub struct DescribeNamespaceOutput {
     /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
     #[doc(hidden)]
     pub namespace: std::option::Option<crate::types::NamespaceInfoV2>,
@@ -16,11 +16,11 @@ pub struct DescribeNamespaceOutput  {
 }
 impl DescribeNamespaceOutput {
     /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
-    pub fn namespace(&self) -> std::option::Option<& crate::types::NamespaceInfoV2> {
+    pub fn namespace(&self) -> std::option::Option<&crate::types::NamespaceInfoV2> {
         self.namespace.as_ref()
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -29,13 +29,14 @@ impl DescribeNamespaceOutput {
     }
 }
 impl aws_http::request_id::RequestId for DescribeNamespaceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeNamespaceOutput {
     /// Creates a new builder-style object to manufacture [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput).
-    pub fn builder() -> crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder {
         crate::operation::describe_namespace::builders::DescribeNamespaceOutputBuilder::default()
     }
 }
@@ -56,8 +57,12 @@ impl DescribeNamespaceOutputBuilder {
         self
     }
     /// <p>The information about the namespace that you're describing. The response includes the namespace ARN, name, Amazon Web Services Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in the process of being created. For incomplete namespaces, this API operation lists the namespace error types and messages associated with the creation process.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<crate::types::NamespaceInfoV2>) -> Self {
-        self.namespace = input; self
+    pub fn set_namespace(
+        mut self,
+        input: std::option::Option<crate::types::NamespaceInfoV2>,
+    ) -> Self {
+        self.namespace = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +71,8 @@ impl DescribeNamespaceOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -75,29 +81,25 @@ impl DescribeNamespaceOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeNamespaceOutput`](crate::operation::describe_namespace::DescribeNamespaceOutput).
     pub fn build(self) -> crate::operation::describe_namespace::DescribeNamespaceOutput {
         crate::operation::describe_namespace::DescribeNamespaceOutput {
-            namespace: self.namespace
-            ,
-            request_id: self.request_id
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
+            namespace: self.namespace,
+            request_id: self.request_id,
+            status: self.status.unwrap_or_default(),
             _request_id: self._request_id,
         }
     }
 }
-

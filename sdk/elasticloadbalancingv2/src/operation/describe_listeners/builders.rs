@@ -4,63 +4,91 @@ pub use crate::operation::describe_listeners::_describe_listeners_output::Descri
 pub use crate::operation::describe_listeners::_describe_listeners_input::DescribeListenersInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeListeners`.
-/// 
+///
 /// <p>Describes the specified listeners or the listeners for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either a load balancer or one or more listeners.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeListenersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_listeners::builders::DescribeListenersInputBuilder,
+    inner: crate::operation::describe_listeners::builders::DescribeListenersInputBuilder,
 }
-impl DescribeListenersFluentBuilder  {
+impl DescribeListenersFluentBuilder {
     /// Creates a new `DescribeListeners`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_listeners::DescribeListeners, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_listeners::DescribeListenersError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_listeners::DescribeListenersOutput, aws_smithy_http::result::SdkError<crate::operation::describe_listeners::DescribeListenersError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_listeners::DescribeListeners,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_listeners::DescribeListenersError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_listeners::DescribeListenersOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_listeners::DescribeListenersError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_listeners::paginator::DescribeListenersPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_listeners::paginator::DescribeListenersPaginator {
-                                crate::operation::describe_listeners::paginator::DescribeListenersPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_listeners::paginator::DescribeListenersPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_listeners::paginator::DescribeListenersPaginator {
+        crate::operation::describe_listeners::paginator::DescribeListenersPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.load_balancer_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_load_balancer_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_load_balancer_arn(input);
         self
     }
@@ -74,7 +102,10 @@ impl DescribeListenersFluentBuilder  {
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the listeners.</p>
-    pub fn set_listener_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_listener_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_listener_arns(input);
         self
     }
@@ -99,4 +130,3 @@ impl DescribeListenersFluentBuilder  {
         self
     }
 }
-

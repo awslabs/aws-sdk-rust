@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriberOutput  {
+pub struct UpdateSubscriberOutput {
     /// <p>The account of the subscriber.</p>
     #[doc(hidden)]
     pub subscriber: std::option::Option<crate::types::SubscriberResource>,
@@ -10,18 +10,19 @@ pub struct UpdateSubscriberOutput  {
 }
 impl UpdateSubscriberOutput {
     /// <p>The account of the subscriber.</p>
-    pub fn subscriber(&self) -> std::option::Option<& crate::types::SubscriberResource> {
+    pub fn subscriber(&self) -> std::option::Option<&crate::types::SubscriberResource> {
         self.subscriber.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateSubscriberOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateSubscriberOutput {
     /// Creates a new builder-style object to manufacture [`UpdateSubscriberOutput`](crate::operation::update_subscriber::UpdateSubscriberOutput).
-    pub fn builder() -> crate::operation::update_subscriber::builders::UpdateSubscriberOutputBuilder {
+    pub fn builder() -> crate::operation::update_subscriber::builders::UpdateSubscriberOutputBuilder
+    {
         crate::operation::update_subscriber::builders::UpdateSubscriberOutputBuilder::default()
     }
 }
@@ -40,25 +41,27 @@ impl UpdateSubscriberOutputBuilder {
         self
     }
     /// <p>The account of the subscriber.</p>
-    pub fn set_subscriber(mut self, input: std::option::Option<crate::types::SubscriberResource>) -> Self {
-        self.subscriber = input; self
+    pub fn set_subscriber(
+        mut self,
+        input: std::option::Option<crate::types::SubscriberResource>,
+    ) -> Self {
+        self.subscriber = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateSubscriberOutput`](crate::operation::update_subscriber::UpdateSubscriberOutput).
     pub fn build(self) -> crate::operation::update_subscriber::UpdateSubscriberOutput {
         crate::operation::update_subscriber::UpdateSubscriberOutput {
-            subscriber: self.subscriber
-            ,
+            subscriber: self.subscriber,
             _request_id: self._request_id,
         }
     }
 }
-

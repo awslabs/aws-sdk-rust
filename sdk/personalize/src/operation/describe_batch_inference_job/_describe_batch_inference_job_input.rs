@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBatchInferenceJobInput  {
+pub struct DescribeBatchInferenceJobInput {
     /// <p>The ARN of the batch inference job to describe.</p>
     #[doc(hidden)]
     pub batch_inference_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeBatchInferenceJobInput {
     /// <p>The ARN of the batch inference job to describe.</p>
-    pub fn batch_inference_job_arn(&self) -> std::option::Option<& str> {
+    pub fn batch_inference_job_arn(&self) -> std::option::Option<&str> {
         self.batch_inference_job_arn.as_deref()
     }
 }
 impl DescribeBatchInferenceJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeBatchInferenceJobInput`](crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobInput).
-    pub fn builder() -> crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobInputBuilder {
+    pub fn builder() -> crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobInputBuilder{
         crate::operation::describe_batch_inference_job::builders::DescribeBatchInferenceJobInputBuilder::default()
     }
 }
@@ -33,17 +33,24 @@ impl DescribeBatchInferenceJobInputBuilder {
         self
     }
     /// <p>The ARN of the batch inference job to describe.</p>
-    pub fn set_batch_inference_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.batch_inference_job_arn = input; self
+    pub fn set_batch_inference_job_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.batch_inference_job_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeBatchInferenceJobInput`](crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobInput {
-                batch_inference_job_arn: self.batch_inference_job_arn
-                ,
-            }
+                batch_inference_job_arn: self.batch_inference_job_arn,
+            },
         )
     }
 }
-

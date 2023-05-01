@@ -4,59 +4,79 @@ pub use crate::operation::put_subscription_filter::_put_subscription_filter_outp
 pub use crate::operation::put_subscription_filter::_put_subscription_filter_input::PutSubscriptionFilterInputBuilder;
 
 /// Fluent builder constructing a request to `PutSubscriptionFilter`.
-/// 
-/// <p>Creates or updates a subscription filter and associates it with the specified log group. With subscription filters, you can subscribe to a real-time stream of log events ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a> and have them delivered to a specific destination. When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format.</p> 
-/// <p>The following destinations are supported for subscription filters:</p> 
-/// <ul> 
-/// <li> <p>An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li> 
-/// <li> <p>A logical destination that belongs to a different account, for cross-account delivery.</p> </li> 
-/// <li> <p>An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.</p> </li> 
-/// <li> <p>An Lambda function that belongs to the same account as the subscription filter, for same-account delivery.</p> </li> 
-/// </ul> 
-/// <p>Each log group can have up to two subscription filters associated with it. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. </p> 
+///
+/// <p>Creates or updates a subscription filter and associates it with the specified log group. With subscription filters, you can subscribe to a real-time stream of log events ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a> and have them delivered to a specific destination. When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format.</p>
+/// <p>The following destinations are supported for subscription filters:</p>
+/// <ul>
+/// <li> <p>An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+/// <li> <p>A logical destination that belongs to a different account, for cross-account delivery.</p> </li>
+/// <li> <p>An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.</p> </li>
+/// <li> <p>An Lambda function that belongs to the same account as the subscription filter, for same-account delivery.</p> </li>
+/// </ul>
+/// <p>Each log group can have up to two subscription filters associated with it. If you are updating an existing filter, you must specify the correct name in <code>filterName</code>. </p>
 /// <p>To perform a <code>PutSubscriptionFilter</code> operation, you must also have the <code>iam:PassRole</code> permission.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutSubscriptionFilterFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_subscription_filter::builders::PutSubscriptionFilterInputBuilder,
+    inner: crate::operation::put_subscription_filter::builders::PutSubscriptionFilterInputBuilder,
 }
-impl PutSubscriptionFilterFluentBuilder  {
+impl PutSubscriptionFilterFluentBuilder {
     /// Creates a new `PutSubscriptionFilter`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_subscription_filter::PutSubscriptionFilter, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_subscription_filter::PutSubscriptionFilterError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_subscription_filter::PutSubscriptionFilterOutput, aws_smithy_http::result::SdkError<crate::operation::put_subscription_filter::PutSubscriptionFilterError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_subscription_filter::PutSubscriptionFilter,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_subscription_filter::PutSubscriptionFilterError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_subscription_filter::PutSubscriptionFilterOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_subscription_filter::PutSubscriptionFilterError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the log group.</p>
     pub fn log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.log_group_name(input.into());
@@ -87,23 +107,23 @@ impl PutSubscriptionFilterFluentBuilder  {
         self.inner = self.inner.set_filter_pattern(input);
         self
     }
-    /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p> 
-    /// <ul> 
-    /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li> 
-    /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li> 
-    /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li> 
-    /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li> 
+    /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+    /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>
+    /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+    /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
     pub fn destination_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.destination_arn(input.into());
         self
     }
-    /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p> 
-    /// <ul> 
-    /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li> 
-    /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li> 
-    /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li> 
-    /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li> 
+    /// <p>The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:</p>
+    /// <ul>
+    /// <li> <p>An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+    /// <li> <p>A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.</p> <p>If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>.</p> </li>
+    /// <li> <p>A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
+    /// <li> <p>A Lambda function belonging to the same account as the subscription filter, for same-account delivery.</p> </li>
     /// </ul>
     pub fn set_destination_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_destination_arn(input);
@@ -125,9 +145,11 @@ impl PutSubscriptionFilterFluentBuilder  {
         self
     }
     /// <p>The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream. </p>
-    pub fn set_distribution(mut self, input: std::option::Option<crate::types::Distribution>) -> Self {
+    pub fn set_distribution(
+        mut self,
+        input: std::option::Option<crate::types::Distribution>,
+    ) -> Self {
         self.inner = self.inner.set_distribution(input);
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Contains information about a REST API in version 1 of Amazon API Gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsApiGatewayRestApiDetails  {
+pub struct AwsApiGatewayRestApiDetails {
     /// <p>The identifier of the REST API.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct AwsApiGatewayRestApiDetails  {
     /// <p>A description of the REST API.</p>
     #[doc(hidden)]
     pub description: std::option::Option<std::string::String>,
-    /// <p>Indicates when the API was created.</p> 
+    /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
     pub created_date: std::option::Option<std::string::String>,
@@ -23,60 +23,63 @@ pub struct AwsApiGatewayRestApiDetails  {
     /// <p>The list of binary media types supported by the REST API.</p>
     #[doc(hidden)]
     pub binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The minimum size in bytes of a payload before compression is enabled.</p> 
-    /// <p>If <code>null</code>, then compression is disabled.</p> 
+    /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
+    /// <p>If <code>null</code>, then compression is disabled.</p>
     /// <p>If 0, then all payloads are compressed.</p>
     #[doc(hidden)]
     pub minimum_compression_size: i32,
-    /// <p>The source of the API key for metering requests according to a usage plan.</p> 
-    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p> 
+    /// <p>The source of the API key for metering requests according to a usage plan.</p>
+    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
     /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     #[doc(hidden)]
     pub api_key_source: std::option::Option<std::string::String>,
     /// <p>The endpoint configuration of the REST API.</p>
     #[doc(hidden)]
-    pub endpoint_configuration: std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
+    pub endpoint_configuration:
+        std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
 }
 impl AwsApiGatewayRestApiDetails {
     /// <p>The identifier of the REST API.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the REST API.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the REST API.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
-    /// <p>Indicates when the API was created.</p> 
+    /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn created_date(&self) -> std::option::Option<& str> {
+    pub fn created_date(&self) -> std::option::Option<&str> {
         self.created_date.as_deref()
     }
     /// <p>The version identifier for the REST API.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The list of binary media types supported by the REST API.</p>
-    pub fn binary_media_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn binary_media_types(&self) -> std::option::Option<&[std::string::String]> {
         self.binary_media_types.as_deref()
     }
-    /// <p>The minimum size in bytes of a payload before compression is enabled.</p> 
-    /// <p>If <code>null</code>, then compression is disabled.</p> 
+    /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
+    /// <p>If <code>null</code>, then compression is disabled.</p>
     /// <p>If 0, then all payloads are compressed.</p>
     pub fn minimum_compression_size(&self) -> i32 {
         self.minimum_compression_size
     }
-    /// <p>The source of the API key for metering requests according to a usage plan.</p> 
-    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p> 
+    /// <p>The source of the API key for metering requests according to a usage plan.</p>
+    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
     /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
-    pub fn api_key_source(&self) -> std::option::Option<& str> {
+    pub fn api_key_source(&self) -> std::option::Option<&str> {
         self.api_key_source.as_deref()
     }
     /// <p>The endpoint configuration of the REST API.</p>
-    pub fn endpoint_configuration(&self) -> std::option::Option<& crate::types::AwsApiGatewayEndpointConfiguration> {
+    pub fn endpoint_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::AwsApiGatewayEndpointConfiguration> {
         self.endpoint_configuration.as_ref()
     }
 }
@@ -99,7 +102,8 @@ pub struct AwsApiGatewayRestApiDetailsBuilder {
     pub(crate) binary_media_types: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) minimum_compression_size: std::option::Option<i32>,
     pub(crate) api_key_source: std::option::Option<std::string::String>,
-    pub(crate) endpoint_configuration: std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
+    pub(crate) endpoint_configuration:
+        std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
 }
 impl AwsApiGatewayRestApiDetailsBuilder {
     /// <p>The identifier of the REST API.</p>
@@ -109,7 +113,8 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     }
     /// <p>The identifier of the REST API.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the REST API.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -118,7 +123,8 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     }
     /// <p>The name of the REST API.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>A description of the REST API.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -127,18 +133,20 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     }
     /// <p>A description of the REST API.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
-    /// <p>Indicates when the API was created.</p> 
+    /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn created_date(mut self, input: impl Into<std::string::String>) -> Self {
         self.created_date = Some(input.into());
         self
     }
-    /// <p>Indicates when the API was created.</p> 
+    /// <p>Indicates when the API was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_created_date(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.created_date = input; self
+        self.created_date = input;
+        self
     }
     /// <p>The version identifier for the REST API.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -147,7 +155,8 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     }
     /// <p>The version identifier for the REST API.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// Appends an item to `binary_media_types`.
     ///
@@ -156,72 +165,74 @@ impl AwsApiGatewayRestApiDetailsBuilder {
     /// <p>The list of binary media types supported by the REST API.</p>
     pub fn binary_media_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.binary_media_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.binary_media_types = Some(v);
-                        self
+        v.push(input.into());
+        self.binary_media_types = Some(v);
+        self
     }
     /// <p>The list of binary media types supported by the REST API.</p>
-    pub fn set_binary_media_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.binary_media_types = input; self
+    pub fn set_binary_media_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.binary_media_types = input;
+        self
     }
-    /// <p>The minimum size in bytes of a payload before compression is enabled.</p> 
-    /// <p>If <code>null</code>, then compression is disabled.</p> 
+    /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
+    /// <p>If <code>null</code>, then compression is disabled.</p>
     /// <p>If 0, then all payloads are compressed.</p>
     pub fn minimum_compression_size(mut self, input: i32) -> Self {
         self.minimum_compression_size = Some(input);
         self
     }
-    /// <p>The minimum size in bytes of a payload before compression is enabled.</p> 
-    /// <p>If <code>null</code>, then compression is disabled.</p> 
+    /// <p>The minimum size in bytes of a payload before compression is enabled.</p>
+    /// <p>If <code>null</code>, then compression is disabled.</p>
     /// <p>If 0, then all payloads are compressed.</p>
     pub fn set_minimum_compression_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.minimum_compression_size = input; self
+        self.minimum_compression_size = input;
+        self
     }
-    /// <p>The source of the API key for metering requests according to a usage plan.</p> 
-    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p> 
+    /// <p>The source of the API key for metering requests according to a usage plan.</p>
+    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
     /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn api_key_source(mut self, input: impl Into<std::string::String>) -> Self {
         self.api_key_source = Some(input.into());
         self
     }
-    /// <p>The source of the API key for metering requests according to a usage plan.</p> 
-    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p> 
+    /// <p>The source of the API key for metering requests according to a usage plan.</p>
+    /// <p> <code>HEADER</code> indicates whether to read the API key from the X-API-Key header of a request.</p>
     /// <p> <code>AUTHORIZER</code> indicates whether to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer.</p>
     pub fn set_api_key_source(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_key_source = input; self
+        self.api_key_source = input;
+        self
     }
     /// <p>The endpoint configuration of the REST API.</p>
-    pub fn endpoint_configuration(mut self, input: crate::types::AwsApiGatewayEndpointConfiguration) -> Self {
+    pub fn endpoint_configuration(
+        mut self,
+        input: crate::types::AwsApiGatewayEndpointConfiguration,
+    ) -> Self {
         self.endpoint_configuration = Some(input);
         self
     }
     /// <p>The endpoint configuration of the REST API.</p>
-    pub fn set_endpoint_configuration(mut self, input: std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>) -> Self {
-        self.endpoint_configuration = input; self
+    pub fn set_endpoint_configuration(
+        mut self,
+        input: std::option::Option<crate::types::AwsApiGatewayEndpointConfiguration>,
+    ) -> Self {
+        self.endpoint_configuration = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsApiGatewayRestApiDetails`](crate::types::AwsApiGatewayRestApiDetails).
     pub fn build(self) -> crate::types::AwsApiGatewayRestApiDetails {
         crate::types::AwsApiGatewayRestApiDetails {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            created_date: self.created_date
-            ,
-            version: self.version
-            ,
-            binary_media_types: self.binary_media_types
-            ,
-            minimum_compression_size: self.minimum_compression_size
-                .unwrap_or_default()
-            ,
-            api_key_source: self.api_key_source
-            ,
-            endpoint_configuration: self.endpoint_configuration
-            ,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            created_date: self.created_date,
+            version: self.version,
+            binary_media_types: self.binary_media_types,
+            minimum_compression_size: self.minimum_compression_size.unwrap_or_default(),
+            api_key_source: self.api_key_source,
+            endpoint_configuration: self.endpoint_configuration,
         }
     }
 }
-

@@ -3,44 +3,44 @@
 /// <p>Contains a job summary information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobSummary  {
+pub struct JobSummary {
     /// <p>The ID of the job.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
     /// <p>The unique name that helps identify the job request.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
-    /// <p>The status of the bulk import job can be one of following values.</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
-    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
-    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
-    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
-    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::JobStatus>,
 }
 impl JobSummary {
     /// <p>The ID of the job.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The unique name that helps identify the job request.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
-    /// <p>The status of the bulk import job can be one of following values.</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
-    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
-    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
-    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
-    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.status.as_ref()
     }
 }
@@ -67,7 +67,8 @@ impl JobSummaryBuilder {
     }
     /// <p>The ID of the job.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,43 +77,41 @@ impl JobSummaryBuilder {
     }
     /// <p>The unique name that helps identify the job request.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
-    /// <p>The status of the bulk import job can be one of following values.</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
-    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
-    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
-    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
-    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::JobStatus) -> Self {
         self.status = Some(input);
         self
     }
-    /// <p>The status of the bulk import job can be one of following values.</p> 
-    /// <ul> 
-    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li> 
-    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li> 
-    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li> 
-    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li> 
-    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
-    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li> 
+    /// <p>The status of the bulk import job can be one of following values.</p>
+    /// <ul>
+    /// <li> <p> <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to finish.</p> </li>
+    /// <li> <p> <code>CANCELLED</code> – The bulk import job has been canceled.</p> </li>
+    /// <li> <p> <code>RUNNING</code> – IoT SiteWise is processing your request to import your data from Amazon S3.</p> </li>
+    /// <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import data from Amazon S3.</p> </li>
+    /// <li> <p> <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from Amazon S3. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
+    /// <li> <p> <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import data from Amazon S3 with errors. You can use logs saved in the specified error report location in Amazon S3 to troubleshoot issues.</p> </li>
     /// </ul>
     pub fn set_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`JobSummary`](crate::types::JobSummary).
     pub fn build(self) -> crate::types::JobSummary {
         crate::types::JobSummary {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            status: self.status
-            ,
+            id: self.id,
+            name: self.name,
+            status: self.status,
         }
     }
 }
-

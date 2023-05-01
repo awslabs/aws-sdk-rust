@@ -4,56 +4,83 @@ pub use crate::operation::list_batch_job_executions::_list_batch_job_executions_
 pub use crate::operation::list_batch_job_executions::_list_batch_job_executions_input::ListBatchJobExecutionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListBatchJobExecutions`.
-/// 
+///
 /// <p>Lists historical, current, and scheduled batch job executions for a specific application.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListBatchJobExecutionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder,
+    inner:
+        crate::operation::list_batch_job_executions::builders::ListBatchJobExecutionsInputBuilder,
 }
-impl ListBatchJobExecutionsFluentBuilder  {
+impl ListBatchJobExecutionsFluentBuilder {
     /// Creates a new `ListBatchJobExecutions`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_batch_job_executions::ListBatchJobExecutions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_batch_job_executions::ListBatchJobExecutionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_batch_job_executions::ListBatchJobExecutionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_batch_job_executions::ListBatchJobExecutions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator {
-                                crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator
+    {
+        crate::operation::list_batch_job_executions::paginator::ListBatchJobExecutionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>A pagination token to control the number of batch job executions displayed in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
@@ -94,7 +121,10 @@ impl ListBatchJobExecutionsFluentBuilder  {
         self
     }
     /// <p>The unique identifier of each batch job execution.</p>
-    pub fn set_execution_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_execution_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_execution_ids(input);
         self
     }
@@ -114,7 +144,10 @@ impl ListBatchJobExecutionsFluentBuilder  {
         self
     }
     /// <p>The status of the batch job executions.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::BatchJobExecutionStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::BatchJobExecutionStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -124,7 +157,10 @@ impl ListBatchJobExecutionsFluentBuilder  {
         self
     }
     /// <p>The time after which the batch job executions started.</p>
-    pub fn set_started_after(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_started_after(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_started_after(input);
         self
     }
@@ -134,9 +170,11 @@ impl ListBatchJobExecutionsFluentBuilder  {
         self
     }
     /// <p>The time before the batch job executions started.</p>
-    pub fn set_started_before(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_started_before(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_started_before(input);
         self
     }
 }
-

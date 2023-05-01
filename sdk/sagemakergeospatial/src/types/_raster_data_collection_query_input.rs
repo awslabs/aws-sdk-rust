@@ -3,7 +3,7 @@
 /// <p>The input structure for Raster Data Collection Query containing the Area of Interest, TimeRange Filters, and Property Filters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct RasterDataCollectionQueryInput  {
+pub struct RasterDataCollectionQueryInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
     #[doc(hidden)]
     pub raster_data_collection_arn: std::option::Option<std::string::String>,
@@ -19,26 +19,29 @@ pub struct RasterDataCollectionQueryInput  {
 }
 impl RasterDataCollectionQueryInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn raster_data_collection_arn(&self) -> std::option::Option<& str> {
+    pub fn raster_data_collection_arn(&self) -> std::option::Option<&str> {
         self.raster_data_collection_arn.as_deref()
     }
     /// <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
-    pub fn time_range_filter(&self) -> std::option::Option<& crate::types::TimeRangeFilterInput> {
+    pub fn time_range_filter(&self) -> std::option::Option<&crate::types::TimeRangeFilterInput> {
         self.time_range_filter.as_ref()
     }
     /// <p>The area of interest being queried for the raster data collection.</p>
-    pub fn area_of_interest(&self) -> std::option::Option<& crate::types::AreaOfInterest> {
+    pub fn area_of_interest(&self) -> std::option::Option<&crate::types::AreaOfInterest> {
         self.area_of_interest.as_ref()
     }
     /// <p>The list of Property filters used in the Raster Data Collection Query.</p>
-    pub fn property_filters(&self) -> std::option::Option<& crate::types::PropertyFilters> {
+    pub fn property_filters(&self) -> std::option::Option<&crate::types::PropertyFilters> {
         self.property_filters.as_ref()
     }
 }
-impl  std::fmt::Debug for RasterDataCollectionQueryInput  {
+impl std::fmt::Debug for RasterDataCollectionQueryInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RasterDataCollectionQueryInput");
-        formatter.field("raster_data_collection_arn", &self.raster_data_collection_arn);
+        formatter.field(
+            "raster_data_collection_arn",
+            &self.raster_data_collection_arn,
+        );
         formatter.field("time_range_filter", &"*** Sensitive Data Redacted ***");
         formatter.field("area_of_interest", &self.area_of_interest);
         formatter.field("property_filters", &self.property_filters);
@@ -68,8 +71,12 @@ impl RasterDataCollectionQueryInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn set_raster_data_collection_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.raster_data_collection_arn = input; self
+    pub fn set_raster_data_collection_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.raster_data_collection_arn = input;
+        self
     }
     /// <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
     pub fn time_range_filter(mut self, input: crate::types::TimeRangeFilterInput) -> Self {
@@ -77,8 +84,12 @@ impl RasterDataCollectionQueryInputBuilder {
         self
     }
     /// <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
-    pub fn set_time_range_filter(mut self, input: std::option::Option<crate::types::TimeRangeFilterInput>) -> Self {
-        self.time_range_filter = input; self
+    pub fn set_time_range_filter(
+        mut self,
+        input: std::option::Option<crate::types::TimeRangeFilterInput>,
+    ) -> Self {
+        self.time_range_filter = input;
+        self
     }
     /// <p>The area of interest being queried for the raster data collection.</p>
     pub fn area_of_interest(mut self, input: crate::types::AreaOfInterest) -> Self {
@@ -86,8 +97,12 @@ impl RasterDataCollectionQueryInputBuilder {
         self
     }
     /// <p>The area of interest being queried for the raster data collection.</p>
-    pub fn set_area_of_interest(mut self, input: std::option::Option<crate::types::AreaOfInterest>) -> Self {
-        self.area_of_interest = input; self
+    pub fn set_area_of_interest(
+        mut self,
+        input: std::option::Option<crate::types::AreaOfInterest>,
+    ) -> Self {
+        self.area_of_interest = input;
+        self
     }
     /// <p>The list of Property filters used in the Raster Data Collection Query.</p>
     pub fn property_filters(mut self, input: crate::types::PropertyFilters) -> Self {
@@ -95,31 +110,33 @@ impl RasterDataCollectionQueryInputBuilder {
         self
     }
     /// <p>The list of Property filters used in the Raster Data Collection Query.</p>
-    pub fn set_property_filters(mut self, input: std::option::Option<crate::types::PropertyFilters>) -> Self {
-        self.property_filters = input; self
+    pub fn set_property_filters(
+        mut self,
+        input: std::option::Option<crate::types::PropertyFilters>,
+    ) -> Self {
+        self.property_filters = input;
+        self
     }
     /// Consumes the builder and constructs a [`RasterDataCollectionQueryInput`](crate::types::RasterDataCollectionQueryInput).
     pub fn build(self) -> crate::types::RasterDataCollectionQueryInput {
         crate::types::RasterDataCollectionQueryInput {
-            raster_data_collection_arn: self.raster_data_collection_arn
-            ,
-            time_range_filter: self.time_range_filter
-            ,
-            area_of_interest: self.area_of_interest
-            ,
-            property_filters: self.property_filters
-            ,
+            raster_data_collection_arn: self.raster_data_collection_arn,
+            time_range_filter: self.time_range_filter,
+            area_of_interest: self.area_of_interest,
+            property_filters: self.property_filters,
         }
     }
 }
 impl std::fmt::Debug for RasterDataCollectionQueryInputBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RasterDataCollectionQueryInputBuilder");
-        formatter.field("raster_data_collection_arn", &self.raster_data_collection_arn);
+        formatter.field(
+            "raster_data_collection_arn",
+            &self.raster_data_collection_arn,
+        );
         formatter.field("time_range_filter", &"*** Sensitive Data Redacted ***");
         formatter.field("area_of_interest", &self.area_of_interest);
         formatter.field("property_filters", &self.property_filters);
         formatter.finish()
     }
 }
-

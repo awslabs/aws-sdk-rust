@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeActivitiesInput  {
+pub struct DescribeActivitiesInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -36,31 +36,31 @@ pub struct DescribeActivitiesInput  {
 }
 impl DescribeActivitiesInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
-    pub fn end_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn end_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.end_time.as_ref()
     }
     /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
-    pub fn activity_types(&self) -> std::option::Option<& str> {
+    pub fn activity_types(&self) -> std::option::Option<&str> {
         self.activity_types.as_deref()
     }
     /// <p>The document or folder ID for which to describe activity types.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
-    pub fn user_id(&self) -> std::option::Option<& str> {
+    pub fn user_id(&self) -> std::option::Option<&str> {
         self.user_id.as_deref()
     }
     /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
@@ -72,11 +72,11 @@ impl DescribeActivitiesInput {
         self.limit
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeActivitiesInput  {
+impl std::fmt::Debug for DescribeActivitiesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeActivitiesInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -86,7 +86,10 @@ impl  std::fmt::Debug for DescribeActivitiesInput  {
         formatter.field("activity_types", &self.activity_types);
         formatter.field("resource_id", &self.resource_id);
         formatter.field("user_id", &self.user_id);
-        formatter.field("include_indirect_activities", &self.include_indirect_activities);
+        formatter.field(
+            "include_indirect_activities",
+            &self.include_indirect_activities,
+        );
         formatter.field("limit", &self.limit);
         formatter.field("marker", &self.marker);
         formatter.finish()
@@ -94,7 +97,8 @@ impl  std::fmt::Debug for DescribeActivitiesInput  {
 }
 impl DescribeActivitiesInput {
     /// Creates a new builder-style object to manufacture [`DescribeActivitiesInput`](crate::operation::describe_activities::DescribeActivitiesInput).
-    pub fn builder() -> crate::operation::describe_activities::builders::DescribeActivitiesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_activities::builders::DescribeActivitiesInputBuilder {
         crate::operation::describe_activities::builders::DescribeActivitiesInputBuilder::default()
     }
 }
@@ -121,8 +125,12 @@ impl DescribeActivitiesInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -130,8 +138,12 @@ impl DescribeActivitiesInputBuilder {
         self
     }
     /// <p>The timestamp that determines the starting time of the activities. The response includes the activities performed after the specified timestamp.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
     pub fn end_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -140,7 +152,8 @@ impl DescribeActivitiesInputBuilder {
     }
     /// <p>The timestamp that determines the end time of the activities. The response includes the activities performed before the specified timestamp.</p>
     pub fn set_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.end_time = input; self
+        self.end_time = input;
+        self
     }
     /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,7 +162,8 @@ impl DescribeActivitiesInputBuilder {
     }
     /// <p>The ID of the organization. This is a mandatory parameter when using administrative API (SigV4) requests.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
     pub fn activity_types(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,7 +172,8 @@ impl DescribeActivitiesInputBuilder {
     }
     /// <p>Specifies which activity types to include in the response. If this field is left empty, all activity types are returned.</p>
     pub fn set_activity_types(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.activity_types = input; self
+        self.activity_types = input;
+        self
     }
     /// <p>The document or folder ID for which to describe activity types.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,7 +182,8 @@ impl DescribeActivitiesInputBuilder {
     }
     /// <p>The document or folder ID for which to describe activity types.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
     pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,7 +192,8 @@ impl DescribeActivitiesInputBuilder {
     }
     /// <p>The ID of the user who performed the action. The response includes activities pertaining to this user. This is an optional parameter and is only applicable for administrative API (SigV4) requests.</p>
     pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_id = input; self
+        self.user_id = input;
+        self
     }
     /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub fn include_indirect_activities(mut self, input: bool) -> Self {
@@ -185,7 +202,8 @@ impl DescribeActivitiesInputBuilder {
     }
     /// <p>Includes indirect activities. An indirect activity results from a direct activity performed on a parent resource. For example, sharing a parent folder (the direct activity) shares all of the subfolders and documents within the parent folder (the indirect activity).</p>
     pub fn set_include_indirect_activities(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_indirect_activities = input; self
+        self.include_indirect_activities = input;
+        self
     }
     /// <p>The maximum number of items to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -194,7 +212,8 @@ impl DescribeActivitiesInputBuilder {
     }
     /// <p>The maximum number of items to return.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -203,33 +222,29 @@ impl DescribeActivitiesInputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeActivitiesInput`](crate::operation::describe_activities::DescribeActivitiesInput).
-    pub fn build(self) -> Result<crate::operation::describe_activities::DescribeActivitiesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_activities::DescribeActivitiesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_activities::DescribeActivitiesInput {
-                authentication_token: self.authentication_token
-                ,
-                start_time: self.start_time
-                ,
-                end_time: self.end_time
-                ,
-                organization_id: self.organization_id
-                ,
-                activity_types: self.activity_types
-                ,
-                resource_id: self.resource_id
-                ,
-                user_id: self.user_id
-                ,
-                include_indirect_activities: self.include_indirect_activities
-                ,
-                limit: self.limit
-                ,
-                marker: self.marker
-                ,
-            }
+                authentication_token: self.authentication_token,
+                start_time: self.start_time,
+                end_time: self.end_time,
+                organization_id: self.organization_id,
+                activity_types: self.activity_types,
+                resource_id: self.resource_id,
+                user_id: self.user_id,
+                include_indirect_activities: self.include_indirect_activities,
+                limit: self.limit,
+                marker: self.marker,
+            },
         )
     }
 }
@@ -243,10 +258,12 @@ impl std::fmt::Debug for DescribeActivitiesInputBuilder {
         formatter.field("activity_types", &self.activity_types);
         formatter.field("resource_id", &self.resource_id);
         formatter.field("user_id", &self.user_id);
-        formatter.field("include_indirect_activities", &self.include_indirect_activities);
+        formatter.field(
+            "include_indirect_activities",
+            &self.include_indirect_activities,
+        );
         formatter.field("limit", &self.limit);
         formatter.field("marker", &self.marker);
         formatter.finish()
     }
 }
-

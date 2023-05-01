@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateGroupCertificateAuthorityInput  {
+pub struct CreateGroupCertificateAuthorityInput {
     /// A client token used to correlate requests and responses.
     #[doc(hidden)]
     pub amzn_client_token: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct CreateGroupCertificateAuthorityInput  {
 }
 impl CreateGroupCertificateAuthorityInput {
     /// A client token used to correlate requests and responses.
-    pub fn amzn_client_token(&self) -> std::option::Option<& str> {
+    pub fn amzn_client_token(&self) -> std::option::Option<&str> {
         self.amzn_client_token.as_deref()
     }
     /// The ID of the Greengrass group.
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
 }
 impl CreateGroupCertificateAuthorityInput {
     /// Creates a new builder-style object to manufacture [`CreateGroupCertificateAuthorityInput`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityInput).
-    pub fn builder() -> crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityInputBuilder {
+    pub fn builder() -> crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityInputBuilder{
         crate::operation::create_group_certificate_authority::builders::CreateGroupCertificateAuthorityInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl CreateGroupCertificateAuthorityInputBuilder {
         self
     }
     /// A client token used to correlate requests and responses.
-    pub fn set_amzn_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.amzn_client_token = input; self
+    pub fn set_amzn_client_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.amzn_client_token = input;
+        self
     }
     /// The ID of the Greengrass group.
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +55,16 @@ impl CreateGroupCertificateAuthorityInputBuilder {
     }
     /// The ID of the Greengrass group.
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateGroupCertificateAuthorityInput`](crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityInput).
-    pub fn build(self) -> Result<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityInput {
                 amzn_client_token: self.amzn_client_token
@@ -65,4 +75,3 @@ impl CreateGroupCertificateAuthorityInputBuilder {
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>An object that represents an Batch job dependency.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct JobDependency  {
+pub struct JobDependency {
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct JobDependency  {
 }
 impl JobDependency {
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The type of the job dependency.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ArrayJobDependency> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ArrayJobDependency> {
         self.r#type.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl JobDependencyBuilder {
     }
     /// <p>The job ID of the Batch job that's associated with this dependency.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>The type of the job dependency.</p>
     pub fn r#type(mut self, input: crate::types::ArrayJobDependency) -> Self {
@@ -51,17 +52,18 @@ impl JobDependencyBuilder {
         self
     }
     /// <p>The type of the job dependency.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ArrayJobDependency>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::ArrayJobDependency>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`JobDependency`](crate::types::JobDependency).
     pub fn build(self) -> crate::types::JobDependency {
         crate::types::JobDependency {
-            job_id: self.job_id
-            ,
-            r#type: self.r#type
-            ,
+            job_id: self.job_id,
+            r#type: self.r#type,
         }
     }
 }
-

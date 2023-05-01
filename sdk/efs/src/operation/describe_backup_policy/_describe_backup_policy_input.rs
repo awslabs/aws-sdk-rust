@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeBackupPolicyInput  {
+pub struct DescribeBackupPolicyInput {
     /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
     #[doc(hidden)]
     pub file_system_id: std::option::Option<std::string::String>,
 }
 impl DescribeBackupPolicyInput {
     /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
-    pub fn file_system_id(&self) -> std::option::Option<& str> {
+    pub fn file_system_id(&self) -> std::option::Option<&str> {
         self.file_system_id.as_deref()
     }
 }
 impl DescribeBackupPolicyInput {
     /// Creates a new builder-style object to manufacture [`DescribeBackupPolicyInput`](crate::operation::describe_backup_policy::DescribeBackupPolicyInput).
-    pub fn builder() -> crate::operation::describe_backup_policy::builders::DescribeBackupPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_backup_policy::builders::DescribeBackupPolicyInputBuilder {
         crate::operation::describe_backup_policy::builders::DescribeBackupPolicyInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DescribeBackupPolicyInputBuilder {
     }
     /// <p>Specifies which EFS file system to retrieve the <code>BackupPolicy</code> for.</p>
     pub fn set_file_system_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_system_id = input; self
+        self.file_system_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeBackupPolicyInput`](crate::operation::describe_backup_policy::DescribeBackupPolicyInput).
-    pub fn build(self) -> Result<crate::operation::describe_backup_policy::DescribeBackupPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_backup_policy::DescribeBackupPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_backup_policy::DescribeBackupPolicyInput {
-                file_system_id: self.file_system_id
-                ,
-            }
+                file_system_id: self.file_system_id,
+            },
         )
     }
 }
-

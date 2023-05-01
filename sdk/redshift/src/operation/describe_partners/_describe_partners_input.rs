@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePartnersInput  {
+pub struct DescribePartnersInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     #[doc(hidden)]
     pub account_id: std::option::Option<std::string::String>,
@@ -18,25 +18,26 @@ pub struct DescribePartnersInput  {
 }
 impl DescribePartnersInput {
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
-    pub fn account_id(&self) -> std::option::Option<& str> {
+    pub fn account_id(&self) -> std::option::Option<&str> {
         self.account_id.as_deref()
     }
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
-    pub fn partner_name(&self) -> std::option::Option<& str> {
+    pub fn partner_name(&self) -> std::option::Option<&str> {
         self.partner_name.as_deref()
     }
 }
 impl DescribePartnersInput {
     /// Creates a new builder-style object to manufacture [`DescribePartnersInput`](crate::operation::describe_partners::DescribePartnersInput).
-    pub fn builder() -> crate::operation::describe_partners::builders::DescribePartnersInputBuilder {
+    pub fn builder() -> crate::operation::describe_partners::builders::DescribePartnersInputBuilder
+    {
         crate::operation::describe_partners::builders::DescribePartnersInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl DescribePartnersInputBuilder {
     }
     /// <p>The Amazon Web Services account ID that owns the cluster.</p>
     pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.account_id = input; self
+        self.account_id = input;
+        self
     }
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +68,12 @@ impl DescribePartnersInputBuilder {
         self
     }
     /// <p>The cluster identifier of the cluster whose partner integration is being described.</p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
     /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +82,8 @@ impl DescribePartnersInputBuilder {
     }
     /// <p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
     pub fn partner_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +92,21 @@ impl DescribePartnersInputBuilder {
     }
     /// <p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>
     pub fn set_partner_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.partner_name = input; self
+        self.partner_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribePartnersInput`](crate::operation::describe_partners::DescribePartnersInput).
-    pub fn build(self) -> Result<crate::operation::describe_partners::DescribePartnersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_partners::DescribePartnersInput {
-                account_id: self.account_id
-                ,
-                cluster_identifier: self.cluster_identifier
-                ,
-                database_name: self.database_name
-                ,
-                partner_name: self.partner_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_partners::DescribePartnersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_partners::DescribePartnersInput {
+            account_id: self.account_id,
+            cluster_identifier: self.cluster_identifier,
+            database_name: self.database_name,
+            partner_name: self.partner_name,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DescribeUsersInput  {
+pub struct DescribeUsersInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
     #[doc(hidden)]
     pub authentication_token: std::option::Option<std::string::String>,
@@ -12,12 +12,12 @@ pub struct DescribeUsersInput  {
     /// <p>The IDs of the users.</p>
     #[doc(hidden)]
     pub user_ids: std::option::Option<std::string::String>,
-    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> 
-    /// <ul> 
-    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> 
-    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> 
-    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> 
-    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> 
+    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+    /// <ul>
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub query: std::option::Option<std::string::String>,
@@ -42,41 +42,41 @@ pub struct DescribeUsersInput  {
 }
 impl DescribeUsersInput {
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn authentication_token(&self) -> std::option::Option<& str> {
+    pub fn authentication_token(&self) -> std::option::Option<&str> {
         self.authentication_token.as_deref()
     }
     /// <p>The ID of the organization.</p>
-    pub fn organization_id(&self) -> std::option::Option<& str> {
+    pub fn organization_id(&self) -> std::option::Option<&str> {
         self.organization_id.as_deref()
     }
     /// <p>The IDs of the users.</p>
-    pub fn user_ids(&self) -> std::option::Option<& str> {
+    pub fn user_ids(&self) -> std::option::Option<&str> {
         self.user_ids.as_deref()
     }
-    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> 
-    /// <ul> 
-    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> 
-    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> 
-    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> 
-    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> 
+    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+    /// <ul>
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
     /// </ul>
-    pub fn query(&self) -> std::option::Option<& str> {
+    pub fn query(&self) -> std::option::Option<&str> {
         self.query.as_deref()
     }
     /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
-    pub fn include(&self) -> std::option::Option<& crate::types::UserFilterType> {
+    pub fn include(&self) -> std::option::Option<&crate::types::UserFilterType> {
         self.include.as_ref()
     }
     /// <p>The order for the results.</p>
-    pub fn order(&self) -> std::option::Option<& crate::types::OrderType> {
+    pub fn order(&self) -> std::option::Option<&crate::types::OrderType> {
         self.order.as_ref()
     }
     /// <p>The sorting criteria.</p>
-    pub fn sort(&self) -> std::option::Option<& crate::types::UserSortType> {
+    pub fn sort(&self) -> std::option::Option<&crate::types::UserSortType> {
         self.sort.as_ref()
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>The maximum number of items to return.</p>
@@ -84,11 +84,11 @@ impl DescribeUsersInput {
         self.limit
     }
     /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
-    pub fn fields(&self) -> std::option::Option<& str> {
+    pub fn fields(&self) -> std::option::Option<&str> {
         self.fields.as_deref()
     }
 }
-impl  std::fmt::Debug for DescribeUsersInput  {
+impl std::fmt::Debug for DescribeUsersInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DescribeUsersInput");
         formatter.field("authentication_token", &"*** Sensitive Data Redacted ***");
@@ -133,8 +133,12 @@ impl DescribeUsersInputBuilder {
         self
     }
     /// <p>Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.</p>
-    pub fn set_authentication_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.authentication_token = input; self
+    pub fn set_authentication_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.authentication_token = input;
+        self
     }
     /// <p>The ID of the organization.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -143,7 +147,8 @@ impl DescribeUsersInputBuilder {
     }
     /// <p>The ID of the organization.</p>
     pub fn set_organization_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_id = input; self
+        self.organization_id = input;
+        self
     }
     /// <p>The IDs of the users.</p>
     pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
@@ -152,28 +157,30 @@ impl DescribeUsersInputBuilder {
     }
     /// <p>The IDs of the users.</p>
     pub fn set_user_ids(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_ids = input; self
+        self.user_ids = input;
+        self
     }
-    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> 
-    /// <ul> 
-    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> 
-    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> 
-    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> 
-    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> 
+    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+    /// <ul>
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
     /// </ul>
     pub fn query(mut self, input: impl Into<std::string::String>) -> Self {
         self.query = Some(input.into());
         self
     }
-    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> 
-    /// <ul> 
-    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> 
-    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> 
-    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> 
-    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> 
+    /// <p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p>
+    /// <ul>
+    /// <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li>
+    /// <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li>
+    /// <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li>
+    /// <li> <p>The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>
     /// </ul>
     pub fn set_query(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.query = input; self
+        self.query = input;
+        self
     }
     /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
     pub fn include(mut self, input: crate::types::UserFilterType) -> Self {
@@ -182,7 +189,8 @@ impl DescribeUsersInputBuilder {
     }
     /// <p>The state of the users. Specify "ALL" to include inactive users.</p>
     pub fn set_include(mut self, input: std::option::Option<crate::types::UserFilterType>) -> Self {
-        self.include = input; self
+        self.include = input;
+        self
     }
     /// <p>The order for the results.</p>
     pub fn order(mut self, input: crate::types::OrderType) -> Self {
@@ -191,7 +199,8 @@ impl DescribeUsersInputBuilder {
     }
     /// <p>The order for the results.</p>
     pub fn set_order(mut self, input: std::option::Option<crate::types::OrderType>) -> Self {
-        self.order = input; self
+        self.order = input;
+        self
     }
     /// <p>The sorting criteria.</p>
     pub fn sort(mut self, input: crate::types::UserSortType) -> Self {
@@ -200,7 +209,8 @@ impl DescribeUsersInputBuilder {
     }
     /// <p>The sorting criteria.</p>
     pub fn set_sort(mut self, input: std::option::Option<crate::types::UserSortType>) -> Self {
-        self.sort = input; self
+        self.sort = input;
+        self
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -209,7 +219,8 @@ impl DescribeUsersInputBuilder {
     }
     /// <p>The marker for the next set of results. (You received this marker from a previous call.)</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// <p>The maximum number of items to return.</p>
     pub fn limit(mut self, input: i32) -> Self {
@@ -218,7 +229,8 @@ impl DescribeUsersInputBuilder {
     }
     /// <p>The maximum number of items to return.</p>
     pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
-        self.limit = input; self
+        self.limit = input;
+        self
     }
     /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
     pub fn fields(mut self, input: impl Into<std::string::String>) -> Self {
@@ -227,34 +239,28 @@ impl DescribeUsersInputBuilder {
     }
     /// <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the user storage quota and utilization information.</p>
     pub fn set_fields(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fields = input; self
+        self.fields = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeUsersInput`](crate::operation::describe_users::DescribeUsersInput).
-    pub fn build(self) -> Result<crate::operation::describe_users::DescribeUsersInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_users::DescribeUsersInput {
-                authentication_token: self.authentication_token
-                ,
-                organization_id: self.organization_id
-                ,
-                user_ids: self.user_ids
-                ,
-                query: self.query
-                ,
-                include: self.include
-                ,
-                order: self.order
-                ,
-                sort: self.sort
-                ,
-                marker: self.marker
-                ,
-                limit: self.limit
-                ,
-                fields: self.fields
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_users::DescribeUsersInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_users::DescribeUsersInput {
+            authentication_token: self.authentication_token,
+            organization_id: self.organization_id,
+            user_ids: self.user_ids,
+            query: self.query,
+            include: self.include,
+            order: self.order,
+            sort: self.sort,
+            marker: self.marker,
+            limit: self.limit,
+            fields: self.fields,
+        })
     }
 }
 impl std::fmt::Debug for DescribeUsersInputBuilder {
@@ -273,4 +279,3 @@ impl std::fmt::Debug for DescribeUsersInputBuilder {
         formatter.finish()
     }
 }
-

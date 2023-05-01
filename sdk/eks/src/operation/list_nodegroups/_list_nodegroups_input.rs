@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListNodegroupsInput  {
+pub struct ListNodegroupsInput {
     /// <p>The name of the Amazon EKS cluster that you would like to list node groups in.</p>
     #[doc(hidden)]
     pub cluster_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListNodegroupsInput  {
 }
 impl ListNodegroupsInput {
     /// <p>The name of the Amazon EKS cluster that you would like to list node groups in.</p>
-    pub fn cluster_name(&self) -> std::option::Option<& str> {
+    pub fn cluster_name(&self) -> std::option::Option<&str> {
         self.cluster_name.as_deref()
     }
     /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in paginated output. When you use this parameter, <code>ListNodegroups</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListNodegroups</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListNodegroups</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -23,7 +23,7 @@ impl ListNodegroupsInput {
         self.max_results
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl ListNodegroupsInputBuilder {
     }
     /// <p>The name of the Amazon EKS cluster that you would like to list node groups in.</p>
     pub fn set_cluster_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_name = input; self
+        self.cluster_name = input;
+        self
     }
     /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in paginated output. When you use this parameter, <code>ListNodegroups</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListNodegroups</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListNodegroups</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +60,8 @@ impl ListNodegroupsInputBuilder {
     }
     /// <p>The maximum number of node group results returned by <code>ListNodegroups</code> in paginated output. When you use this parameter, <code>ListNodegroups</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListNodegroups</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListNodegroups</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl ListNodegroupsInputBuilder {
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListNodegroupsInput`](crate::operation::list_nodegroups::ListNodegroupsInput).
-    pub fn build(self) -> Result<crate::operation::list_nodegroups::ListNodegroupsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_nodegroups::ListNodegroupsInput {
-                cluster_name: self.cluster_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_nodegroups::ListNodegroupsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_nodegroups::ListNodegroupsInput {
+            cluster_name: self.cluster_name,
+            max_results: self.max_results,
+            next_token: self.next_token,
+        })
     }
 }
-

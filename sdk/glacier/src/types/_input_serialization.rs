@@ -3,14 +3,14 @@
 /// <p>Describes how the archive is serialized.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InputSerialization  {
+pub struct InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     #[doc(hidden)]
     pub csv: std::option::Option<crate::types::CsvInput>,
 }
 impl InputSerialization {
     /// <p>Describes the serialization of a CSV-encoded object.</p>
-    pub fn csv(&self) -> std::option::Option<& crate::types::CsvInput> {
+    pub fn csv(&self) -> std::option::Option<&crate::types::CsvInput> {
         self.csv.as_ref()
     }
 }
@@ -35,14 +35,11 @@ impl InputSerializationBuilder {
     }
     /// <p>Describes the serialization of a CSV-encoded object.</p>
     pub fn set_csv(mut self, input: std::option::Option<crate::types::CsvInput>) -> Self {
-        self.csv = input; self
+        self.csv = input;
+        self
     }
     /// Consumes the builder and constructs a [`InputSerialization`](crate::types::InputSerialization).
     pub fn build(self) -> crate::types::InputSerialization {
-        crate::types::InputSerialization {
-            csv: self.csv
-            ,
-        }
+        crate::types::InputSerialization { csv: self.csv }
     }
 }
-

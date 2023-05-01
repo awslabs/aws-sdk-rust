@@ -3,7 +3,7 @@
 /// <p>Describes the metadata of a user group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GroupMetadata  {
+pub struct GroupMetadata {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct GroupMetadata  {
 }
 impl GroupMetadata {
     /// <p>The ID of the user group.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the group.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl GroupMetadataBuilder {
     }
     /// <p>The ID of the user group.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the group.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl GroupMetadataBuilder {
     }
     /// <p>The name of the group.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GroupMetadata`](crate::types::GroupMetadata).
     pub fn build(self) -> crate::types::GroupMetadata {
         crate::types::GroupMetadata {
-            id: self.id
-            ,
-            name: self.name
-            ,
+            id: self.id,
+            name: self.name,
         }
     }
 }
-

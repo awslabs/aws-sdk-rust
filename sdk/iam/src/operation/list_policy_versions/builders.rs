@@ -4,64 +4,89 @@ pub use crate::operation::list_policy_versions::_list_policy_versions_output::Li
 pub use crate::operation::list_policy_versions::_list_policy_versions_input::ListPolicyVersionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListPolicyVersions`.
-/// 
-/// <p>Lists information about the versions of the specified managed policy, including the version that is currently set as the policy's default version.</p> 
+///
+/// <p>Lists information about the versions of the specified managed policy, including the version that is currently set as the policy's default version.</p>
 /// <p>For more information about managed policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline policies</a> in the <i>IAM User Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPolicyVersionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder,
+    inner: crate::operation::list_policy_versions::builders::ListPolicyVersionsInputBuilder,
 }
-impl ListPolicyVersionsFluentBuilder  {
+impl ListPolicyVersionsFluentBuilder {
     /// Creates a new `ListPolicyVersions`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_policy_versions::ListPolicyVersions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_policy_versions::ListPolicyVersionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_policy_versions::ListPolicyVersionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_policy_versions::ListPolicyVersionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_policy_versions::ListPolicyVersions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_policy_versions::ListPolicyVersionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_policy_versions::ListPolicyVersionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_policy_versions::ListPolicyVersionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator {
-                                crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator::new(self.handle, self.inner)
-                            }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p> 
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator {
+        crate::operation::list_policy_versions::paginator::ListPolicyVersionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.policy_arn(input.into());
         self
     }
-    /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p> 
+    /// <p>The Amazon Resource Name (ARN) of the IAM policy for which you want the versions.</p>
     /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub fn set_policy_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_policy_arn(input);
@@ -77,17 +102,16 @@ impl ListPolicyVersionsFluentBuilder  {
         self.inner = self.inner.set_marker(input);
         self
     }
-    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> 
+    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
     /// <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
     pub fn max_items(mut self, input: i32) -> Self {
         self.inner = self.inner.max_items(input);
         self
     }
-    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p> 
+    /// <p>Use this only when paginating results to indicate the maximum number of items you want in the response. If additional items exist beyond the maximum you specify, the <code>IsTruncated</code> response element is <code>true</code>.</p>
     /// <p>If you do not include this parameter, the number of items defaults to 100. Note that IAM might return fewer results, even when there are more results available. In that case, the <code>IsTruncated</code> response element returns <code>true</code>, and <code>Marker</code> contains a value to include in the subsequent call that tells the service where to continue from.</p>
     pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_items(input);
         self
     }
 }
-

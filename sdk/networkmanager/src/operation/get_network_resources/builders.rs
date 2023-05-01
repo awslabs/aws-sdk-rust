@@ -4,64 +4,92 @@ pub use crate::operation::get_network_resources::_get_network_resources_output::
 pub use crate::operation::get_network_resources::_get_network_resources_input::GetNetworkResourcesInputBuilder;
 
 /// Fluent builder constructing a request to `GetNetworkResources`.
-/// 
-/// <p>Describes the network resources for the specified global network.</p> 
+///
+/// <p>Describes the network resources for the specified global network.</p>
 /// <p>The results include information from the corresponding Describe call for the resource, minus any sensitive information such as pre-shared keys.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetNetworkResourcesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_network_resources::builders::GetNetworkResourcesInputBuilder,
+    inner: crate::operation::get_network_resources::builders::GetNetworkResourcesInputBuilder,
 }
-impl GetNetworkResourcesFluentBuilder  {
+impl GetNetworkResourcesFluentBuilder {
     /// Creates a new `GetNetworkResources`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_network_resources::GetNetworkResources, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_network_resources::GetNetworkResourcesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_network_resources::GetNetworkResourcesOutput, aws_smithy_http::result::SdkError<crate::operation::get_network_resources::GetNetworkResourcesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_network_resources::GetNetworkResources,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_network_resources::GetNetworkResourcesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_network_resources::GetNetworkResourcesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_network_resources::GetNetworkResourcesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator {
-                                crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator {
+        crate::operation::get_network_resources::paginator::GetNetworkResourcesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The ID of the global network.</p>
     pub fn global_network_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.global_network_id(input.into());
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_global_network_id(input);
         self
     }
@@ -81,7 +109,10 @@ impl GetNetworkResourcesFluentBuilder  {
         self
     }
     /// <p>The ARN of the gateway.</p>
-    pub fn set_registered_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_registered_gateway_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_registered_gateway_arn(input);
         self
     }
@@ -105,55 +136,55 @@ impl GetNetworkResourcesFluentBuilder  {
         self.inner = self.inner.set_account_id(input);
         self
     }
-    /// <p>The resource type.</p> 
-    /// <p>The following are the supported resource types for Direct Connect:</p> 
-    /// <ul> 
-    /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li> 
-    /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li> 
-    /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li> 
-    /// </ul> 
-    /// <p>The following are the supported resource types for Network Manager:</p> 
-    /// <ul> 
-    /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li> 
-    /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li> 
-    /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li> 
-    /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li> 
-    /// </ul> 
-    /// <p>The following are the supported resource types for Amazon VPC:</p> 
-    /// <ul> 
-    /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li> 
-    /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li> 
-    /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li> 
-    /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li> 
-    /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li> 
-    /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li> 
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+    /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>
+    /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>
+    /// </ul>
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+    /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>
+    /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>
+    /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>
+    /// </ul>
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
+    /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
     /// </ul>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.resource_type(input.into());
         self
     }
-    /// <p>The resource type.</p> 
-    /// <p>The following are the supported resource types for Direct Connect:</p> 
-    /// <ul> 
-    /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li> 
-    /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li> 
-    /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li> 
-    /// </ul> 
-    /// <p>The following are the supported resource types for Network Manager:</p> 
-    /// <ul> 
-    /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li> 
-    /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li> 
-    /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li> 
-    /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li> 
-    /// </ul> 
-    /// <p>The following are the supported resource types for Amazon VPC:</p> 
-    /// <ul> 
-    /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li> 
-    /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li> 
-    /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li> 
-    /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li> 
-    /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li> 
-    /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li> 
+    /// <p>The resource type.</p>
+    /// <p>The following are the supported resource types for Direct Connect:</p>
+    /// <ul>
+    /// <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+    /// <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li>
+    /// <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li>
+    /// </ul>
+    /// <p>The following are the supported resource types for Network Manager:</p>
+    /// <ul>
+    /// <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li>
+    /// <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li>
+    /// <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li>
+    /// <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li>
+    /// </ul>
+    /// <p>The following are the supported resource types for Amazon VPC:</p>
+    /// <ul>
+    /// <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li>
+    /// <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li>
+    /// <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li>
     /// </ul>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_resource_type(input);
@@ -190,4 +221,3 @@ impl GetNetworkResourcesFluentBuilder  {
         self
     }
 }
-

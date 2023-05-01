@@ -3,26 +3,31 @@
 /// <p>Result message containing a description of the requested environment info.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RetrieveEnvironmentInfoOutput  {
+pub struct RetrieveEnvironmentInfoOutput {
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
     #[doc(hidden)]
-    pub environment_info: std::option::Option<std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
+    pub environment_info:
+        std::option::Option<std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
     _request_id: Option<String>,
 }
 impl RetrieveEnvironmentInfoOutput {
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
-    pub fn environment_info(&self) -> std::option::Option<& [crate::types::EnvironmentInfoDescription]> {
+    pub fn environment_info(
+        &self,
+    ) -> std::option::Option<&[crate::types::EnvironmentInfoDescription]> {
         self.environment_info.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for RetrieveEnvironmentInfoOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl RetrieveEnvironmentInfoOutput {
     /// Creates a new builder-style object to manufacture [`RetrieveEnvironmentInfoOutput`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput).
-    pub fn builder() -> crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoOutputBuilder
+    {
         crate::operation::retrieve_environment_info::builders::RetrieveEnvironmentInfoOutputBuilder::default()
     }
 }
@@ -31,7 +36,8 @@ impl RetrieveEnvironmentInfoOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct RetrieveEnvironmentInfoOutputBuilder {
-    pub(crate) environment_info: std::option::Option<std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
+    pub(crate) environment_info:
+        std::option::Option<std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
     _request_id: Option<String>,
 }
 impl RetrieveEnvironmentInfoOutputBuilder {
@@ -42,30 +48,34 @@ impl RetrieveEnvironmentInfoOutputBuilder {
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
     pub fn environment_info(mut self, input: crate::types::EnvironmentInfoDescription) -> Self {
         let mut v = self.environment_info.unwrap_or_default();
-                        v.push(input);
-                        self.environment_info = Some(v);
-                        self
+        v.push(input);
+        self.environment_info = Some(v);
+        self
     }
     /// <p> The <code>EnvironmentInfoDescription</code> of the environment. </p>
-    pub fn set_environment_info(mut self, input: std::option::Option<std::vec::Vec<crate::types::EnvironmentInfoDescription>>) -> Self {
-        self.environment_info = input; self
+    pub fn set_environment_info(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EnvironmentInfoDescription>>,
+    ) -> Self {
+        self.environment_info = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`RetrieveEnvironmentInfoOutput`](crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput).
-    pub fn build(self) -> crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput {
         crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput {
-            environment_info: self.environment_info
-            ,
+            environment_info: self.environment_info,
             _request_id: self._request_id,
         }
     }
 }
-

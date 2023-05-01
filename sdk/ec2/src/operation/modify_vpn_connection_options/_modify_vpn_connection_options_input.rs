@@ -2,23 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyVpnConnectionOptionsInput  {
+pub struct ModifyVpnConnectionOptionsInput {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
     #[doc(hidden)]
     pub vpn_connection_id: std::option::Option<std::string::String>,
-    /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p> 
+    /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
     #[doc(hidden)]
     pub local_ipv4_network_cidr: std::option::Option<std::string::String>,
-    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p> 
+    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
     #[doc(hidden)]
     pub remote_ipv4_network_cidr: std::option::Option<std::string::String>,
-    /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p> 
+    /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
     #[doc(hidden)]
     pub local_ipv6_network_cidr: std::option::Option<std::string::String>,
-    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p> 
+    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
     #[doc(hidden)]
     pub remote_ipv6_network_cidr: std::option::Option<std::string::String>,
@@ -28,27 +28,27 @@ pub struct ModifyVpnConnectionOptionsInput  {
 }
 impl ModifyVpnConnectionOptionsInput {
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn vpn_connection_id(&self) -> std::option::Option<& str> {
+    pub fn vpn_connection_id(&self) -> std::option::Option<&str> {
         self.vpn_connection_id.as_deref()
     }
-    /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p> 
+    /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    pub fn local_ipv4_network_cidr(&self) -> std::option::Option<& str> {
+    pub fn local_ipv4_network_cidr(&self) -> std::option::Option<&str> {
         self.local_ipv4_network_cidr.as_deref()
     }
-    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p> 
+    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    pub fn remote_ipv4_network_cidr(&self) -> std::option::Option<& str> {
+    pub fn remote_ipv4_network_cidr(&self) -> std::option::Option<&str> {
         self.remote_ipv4_network_cidr.as_deref()
     }
-    /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p> 
+    /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    pub fn local_ipv6_network_cidr(&self) -> std::option::Option<& str> {
+    pub fn local_ipv6_network_cidr(&self) -> std::option::Option<&str> {
         self.local_ipv6_network_cidr.as_deref()
     }
-    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p> 
+    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    pub fn remote_ipv6_network_cidr(&self) -> std::option::Option<& str> {
+    pub fn remote_ipv6_network_cidr(&self) -> std::option::Option<&str> {
         self.remote_ipv6_network_cidr.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -58,7 +58,7 @@ impl ModifyVpnConnectionOptionsInput {
 }
 impl ModifyVpnConnectionOptionsInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpnConnectionOptionsInput`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput).
-    pub fn builder() -> crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsInputBuilder {
+    pub fn builder() -> crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsInputBuilder{
         crate::operation::modify_vpn_connection_options::builders::ModifyVpnConnectionOptionsInputBuilder::default()
     }
 }
@@ -81,52 +81,72 @@ impl ModifyVpnConnectionOptionsInputBuilder {
         self
     }
     /// <p>The ID of the Site-to-Site VPN connection. </p>
-    pub fn set_vpn_connection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpn_connection_id = input; self
+    pub fn set_vpn_connection_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpn_connection_id = input;
+        self
     }
-    /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p> 
+    /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
     pub fn local_ipv4_network_cidr(mut self, input: impl Into<std::string::String>) -> Self {
         self.local_ipv4_network_cidr = Some(input.into());
         self
     }
-    /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p> 
+    /// <p>The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    pub fn set_local_ipv4_network_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_ipv4_network_cidr = input; self
+    pub fn set_local_ipv4_network_cidr(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.local_ipv4_network_cidr = input;
+        self
     }
-    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p> 
+    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
     pub fn remote_ipv4_network_cidr(mut self, input: impl Into<std::string::String>) -> Self {
         self.remote_ipv4_network_cidr = Some(input.into());
         self
     }
-    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p> 
+    /// <p>The IPv4 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>0.0.0.0/0</code> </p>
-    pub fn set_remote_ipv4_network_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.remote_ipv4_network_cidr = input; self
+    pub fn set_remote_ipv4_network_cidr(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.remote_ipv4_network_cidr = input;
+        self
     }
-    /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p> 
+    /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
     pub fn local_ipv6_network_cidr(mut self, input: impl Into<std::string::String>) -> Self {
         self.local_ipv6_network_cidr = Some(input.into());
         self
     }
-    /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p> 
+    /// <p>The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    pub fn set_local_ipv6_network_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.local_ipv6_network_cidr = input; self
+    pub fn set_local_ipv6_network_cidr(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.local_ipv6_network_cidr = input;
+        self
     }
-    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p> 
+    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
     pub fn remote_ipv6_network_cidr(mut self, input: impl Into<std::string::String>) -> Self {
         self.remote_ipv6_network_cidr = Some(input.into());
         self
     }
-    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p> 
+    /// <p>The IPv6 CIDR on the Amazon Web Services side of the VPN connection.</p>
     /// <p>Default: <code>::/0</code> </p>
-    pub fn set_remote_ipv6_network_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.remote_ipv6_network_cidr = input; self
+    pub fn set_remote_ipv6_network_cidr(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.remote_ipv6_network_cidr = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -135,26 +155,25 @@ impl ModifyVpnConnectionOptionsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyVpnConnectionOptionsInput`](crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput).
-    pub fn build(self) -> Result<crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsInput {
-                vpn_connection_id: self.vpn_connection_id
-                ,
-                local_ipv4_network_cidr: self.local_ipv4_network_cidr
-                ,
-                remote_ipv4_network_cidr: self.remote_ipv4_network_cidr
-                ,
-                local_ipv6_network_cidr: self.local_ipv6_network_cidr
-                ,
-                remote_ipv6_network_cidr: self.remote_ipv6_network_cidr
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                vpn_connection_id: self.vpn_connection_id,
+                local_ipv4_network_cidr: self.local_ipv4_network_cidr,
+                remote_ipv4_network_cidr: self.remote_ipv4_network_cidr,
+                local_ipv6_network_cidr: self.local_ipv6_network_cidr,
+                remote_ipv6_network_cidr: self.remote_ipv6_network_cidr,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

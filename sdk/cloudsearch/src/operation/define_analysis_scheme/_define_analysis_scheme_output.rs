@@ -3,7 +3,7 @@
 /// <p>The result of a <code><code>DefineAnalysisScheme</code></code> request. Contains the status of the newly-configured analysis scheme.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DefineAnalysisSchemeOutput  {
+pub struct DefineAnalysisSchemeOutput {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
     #[doc(hidden)]
     pub analysis_scheme: std::option::Option<crate::types::AnalysisSchemeStatus>,
@@ -11,18 +11,19 @@ pub struct DefineAnalysisSchemeOutput  {
 }
 impl DefineAnalysisSchemeOutput {
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
-    pub fn analysis_scheme(&self) -> std::option::Option<& crate::types::AnalysisSchemeStatus> {
+    pub fn analysis_scheme(&self) -> std::option::Option<&crate::types::AnalysisSchemeStatus> {
         self.analysis_scheme.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DefineAnalysisSchemeOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DefineAnalysisSchemeOutput {
     /// Creates a new builder-style object to manufacture [`DefineAnalysisSchemeOutput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput).
-    pub fn builder() -> crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeOutputBuilder {
         crate::operation::define_analysis_scheme::builders::DefineAnalysisSchemeOutputBuilder::default()
     }
 }
@@ -41,25 +42,27 @@ impl DefineAnalysisSchemeOutputBuilder {
         self
     }
     /// <p>The status and configuration of an <code>AnalysisScheme</code>.</p>
-    pub fn set_analysis_scheme(mut self, input: std::option::Option<crate::types::AnalysisSchemeStatus>) -> Self {
-        self.analysis_scheme = input; self
+    pub fn set_analysis_scheme(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisSchemeStatus>,
+    ) -> Self {
+        self.analysis_scheme = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DefineAnalysisSchemeOutput`](crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput).
     pub fn build(self) -> crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput {
         crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput {
-            analysis_scheme: self.analysis_scheme
-            ,
+            analysis_scheme: self.analysis_scheme,
             _request_id: self._request_id,
         }
     }
 }
-

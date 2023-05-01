@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIamPolicyAssignmentInput  {
+pub struct DeleteIamPolicyAssignmentInput {
     /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
     #[doc(hidden)]
     pub aws_account_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct DeleteIamPolicyAssignmentInput  {
 }
 impl DeleteIamPolicyAssignmentInput {
     /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
-    pub fn aws_account_id(&self) -> std::option::Option<& str> {
+    pub fn aws_account_id(&self) -> std::option::Option<&str> {
         self.aws_account_id.as_deref()
     }
     /// <p>The name of the assignment. </p>
-    pub fn assignment_name(&self) -> std::option::Option<& str> {
+    pub fn assignment_name(&self) -> std::option::Option<&str> {
         self.assignment_name.as_deref()
     }
     /// <p>The namespace that contains the assignment.</p>
-    pub fn namespace(&self) -> std::option::Option<& str> {
+    pub fn namespace(&self) -> std::option::Option<&str> {
         self.namespace.as_deref()
     }
 }
 impl DeleteIamPolicyAssignmentInput {
     /// Creates a new builder-style object to manufacture [`DeleteIamPolicyAssignmentInput`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentInput).
-    pub fn builder() -> crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentInputBuilder {
+    pub fn builder() -> crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentInputBuilder{
         crate::operation::delete_iam_policy_assignment::builders::DeleteIamPolicyAssignmentInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl DeleteIamPolicyAssignmentInputBuilder {
     }
     /// <p>The Amazon Web Services account ID where you want to delete the IAM policy assignment.</p>
     pub fn set_aws_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.aws_account_id = input; self
+        self.aws_account_id = input;
+        self
     }
     /// <p>The name of the assignment. </p>
     pub fn assignment_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl DeleteIamPolicyAssignmentInputBuilder {
     }
     /// <p>The name of the assignment. </p>
     pub fn set_assignment_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assignment_name = input; self
+        self.assignment_name = input;
+        self
     }
     /// <p>The namespace that contains the assignment.</p>
     pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,22 @@ impl DeleteIamPolicyAssignmentInputBuilder {
     }
     /// <p>The namespace that contains the assignment.</p>
     pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace = input; self
+        self.namespace = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteIamPolicyAssignmentInput`](crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentInput).
-    pub fn build(self) -> Result<crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_iam_policy_assignment::DeleteIamPolicyAssignmentInput {
-                aws_account_id: self.aws_account_id
-                ,
-                assignment_name: self.assignment_name
-                ,
-                namespace: self.namespace
-                ,
-            }
+                aws_account_id: self.aws_account_id,
+                assignment_name: self.assignment_name,
+                namespace: self.namespace,
+            },
         )
     }
 }
-

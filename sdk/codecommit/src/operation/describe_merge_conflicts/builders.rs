@@ -4,56 +4,82 @@ pub use crate::operation::describe_merge_conflicts::_describe_merge_conflicts_ou
 pub use crate::operation::describe_merge_conflicts::_describe_merge_conflicts_input::DescribeMergeConflictsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeMergeConflicts`.
-/// 
+///
 /// <p>Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the squash or three-way merge strategy. If the merge option for the attempted merge is specified as FAST_FORWARD_MERGE, an exception is thrown.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMergeConflictsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsInputBuilder,
+    inner: crate::operation::describe_merge_conflicts::builders::DescribeMergeConflictsInputBuilder,
 }
-impl DescribeMergeConflictsFluentBuilder  {
+impl DescribeMergeConflictsFluentBuilder {
     /// Creates a new `DescribeMergeConflicts`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_merge_conflicts::DescribeMergeConflicts, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_merge_conflicts::DescribeMergeConflictsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_merge_conflicts::DescribeMergeConflictsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_merge_conflicts::DescribeMergeConflicts,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator {
-                                crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator
+    {
+        crate::operation::describe_merge_conflicts::paginator::DescribeMergeConflictsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The name of the repository where you want to get information about a merge conflict.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.repository_name(input.into());
@@ -70,7 +96,10 @@ impl DescribeMergeConflictsFluentBuilder  {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn set_destination_commit_specifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_commit_specifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_commit_specifier(input);
         self
     }
@@ -80,7 +109,10 @@ impl DescribeMergeConflictsFluentBuilder  {
         self
     }
     /// <p>The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).</p>
-    pub fn set_source_commit_specifier(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_source_commit_specifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_source_commit_specifier(input);
         self
     }
@@ -90,7 +122,10 @@ impl DescribeMergeConflictsFluentBuilder  {
         self
     }
     /// <p>The merge option or strategy you want to use to merge the code.</p>
-    pub fn set_merge_option(mut self, input: std::option::Option<crate::types::MergeOptionTypeEnum>) -> Self {
+    pub fn set_merge_option(
+        mut self,
+        input: std::option::Option<crate::types::MergeOptionTypeEnum>,
+    ) -> Self {
         self.inner = self.inner.set_merge_option(input);
         self
     }
@@ -115,22 +150,34 @@ impl DescribeMergeConflictsFluentBuilder  {
         self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn conflict_detail_level(mut self, input: crate::types::ConflictDetailLevelTypeEnum) -> Self {
+    pub fn conflict_detail_level(
+        mut self,
+        input: crate::types::ConflictDetailLevelTypeEnum,
+    ) -> Self {
         self.inner = self.inner.conflict_detail_level(input);
         self
     }
     /// <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL is used, which returns a not-mergeable result if the same file has differences in both branches. If LINE_LEVEL is specified, a conflict is considered not mergeable if the same file in both branches has differences on the same line.</p>
-    pub fn set_conflict_detail_level(mut self, input: std::option::Option<crate::types::ConflictDetailLevelTypeEnum>) -> Self {
+    pub fn set_conflict_detail_level(
+        mut self,
+        input: std::option::Option<crate::types::ConflictDetailLevelTypeEnum>,
+    ) -> Self {
         self.inner = self.inner.set_conflict_detail_level(input);
         self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn conflict_resolution_strategy(mut self, input: crate::types::ConflictResolutionStrategyTypeEnum) -> Self {
+    pub fn conflict_resolution_strategy(
+        mut self,
+        input: crate::types::ConflictResolutionStrategyTypeEnum,
+    ) -> Self {
         self.inner = self.inner.conflict_resolution_strategy(input);
         self
     }
     /// <p>Specifies which branch to use when resolving conflicts, or whether to attempt automatically merging two versions of a file. The default is NONE, which requires any conflicts to be resolved manually before the merge operation is successful.</p>
-    pub fn set_conflict_resolution_strategy(mut self, input: std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>) -> Self {
+    pub fn set_conflict_resolution_strategy(
+        mut self,
+        input: std::option::Option<crate::types::ConflictResolutionStrategyTypeEnum>,
+    ) -> Self {
         self.inner = self.inner.set_conflict_resolution_strategy(input);
         self
     }
@@ -145,4 +192,3 @@ impl DescribeMergeConflictsFluentBuilder  {
         self
     }
 }
-

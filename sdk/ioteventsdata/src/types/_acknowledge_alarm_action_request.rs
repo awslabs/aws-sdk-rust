@@ -3,7 +3,7 @@
 /// <p>Information needed to acknowledge the alarm.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcknowledgeAlarmActionRequest  {
+pub struct AcknowledgeAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     #[doc(hidden)]
     pub request_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct AcknowledgeAlarmActionRequest  {
 }
 impl AcknowledgeAlarmActionRequest {
     /// <p>The request ID. Each ID must be unique within each batch.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
     /// <p>The name of the alarm model.</p>
-    pub fn alarm_model_name(&self) -> std::option::Option<& str> {
+    pub fn alarm_model_name(&self) -> std::option::Option<&str> {
         self.alarm_model_name.as_deref()
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
-    pub fn key_value(&self) -> std::option::Option<& str> {
+    pub fn key_value(&self) -> std::option::Option<&str> {
         self.key_value.as_deref()
     }
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
-    pub fn note(&self) -> std::option::Option<& str> {
+    pub fn note(&self) -> std::option::Option<&str> {
         self.note.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl AcknowledgeAlarmActionRequestBuilder {
     }
     /// <p>The request ID. Each ID must be unique within each batch.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     /// <p>The name of the alarm model.</p>
     pub fn alarm_model_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl AcknowledgeAlarmActionRequestBuilder {
     }
     /// <p>The name of the alarm model.</p>
     pub fn set_alarm_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.alarm_model_name = input; self
+        self.alarm_model_name = input;
+        self
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl AcknowledgeAlarmActionRequestBuilder {
     }
     /// <p>The value of the key used as a filter to select only the alarms associated with the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_CreateAlarmModel.html#iotevents-CreateAlarmModel-request-key">key</a>.</p>
     pub fn set_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key_value = input; self
+        self.key_value = input;
+        self
     }
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
     pub fn note(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl AcknowledgeAlarmActionRequestBuilder {
     }
     /// <p>The note that you can leave when you acknowledge the alarm.</p>
     pub fn set_note(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.note = input; self
+        self.note = input;
+        self
     }
     /// Consumes the builder and constructs a [`AcknowledgeAlarmActionRequest`](crate::types::AcknowledgeAlarmActionRequest).
     pub fn build(self) -> crate::types::AcknowledgeAlarmActionRequest {
         crate::types::AcknowledgeAlarmActionRequest {
-            request_id: self.request_id
-            ,
-            alarm_model_name: self.alarm_model_name
-            ,
-            key_value: self.key_value
-            ,
-            note: self.note
-            ,
+            request_id: self.request_id,
+            alarm_model_name: self.alarm_model_name,
+            key_value: self.key_value,
+            note: self.note,
         }
     }
 }
-

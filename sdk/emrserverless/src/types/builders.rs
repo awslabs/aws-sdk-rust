@@ -44,4 +44,3 @@ pub use crate::types::_application::ApplicationBuilder;
 pub use crate::types::_worker_type_specification::WorkerTypeSpecificationBuilder;
 
 pub use crate::types::_image_configuration::ImageConfigurationBuilder;
-

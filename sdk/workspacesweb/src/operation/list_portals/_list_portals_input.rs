@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPortalsInput  {
+pub struct ListPortalsInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListPortalsInput  {
 }
 impl ListPortalsInput {
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to be included in the next page.</p>
@@ -42,7 +42,8 @@ impl ListPortalsInputBuilder {
     }
     /// <p>The pagination token used to retrieve the next page of results for this operation. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -51,18 +52,19 @@ impl ListPortalsInputBuilder {
     }
     /// <p>The maximum number of results to be included in the next page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPortalsInput`](crate::operation::list_portals::ListPortalsInput).
-    pub fn build(self) -> Result<crate::operation::list_portals::ListPortalsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_portals::ListPortalsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_portals::ListPortalsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_portals::ListPortalsInput {
+            next_token: self.next_token,
+            max_results: self.max_results,
+        })
     }
 }
-

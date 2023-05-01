@@ -3,7 +3,7 @@
 /// <p>Describes an explanation code for an unreachable path. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/explanation-codes.html">Reachability Analyzer explanation codes</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Explanation  {
+pub struct Explanation {
     /// <p>The network ACL.</p>
     #[doc(hidden)]
     pub acl: std::option::Option<crate::types::AnalysisComponent>,
@@ -37,10 +37,10 @@ pub struct Explanation  {
     /// <p>The destination VPC.</p>
     #[doc(hidden)]
     pub destination_vpc: std::option::Option<crate::types::AnalysisComponent>,
-    /// <p>The direction. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p>egress</p> </li> 
-    /// <li> <p>ingress</p> </li> 
+    /// <p>The direction. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p>egress</p> </li>
+    /// <li> <p>ingress</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub direction: std::option::Option<std::string::String>,
@@ -58,7 +58,8 @@ pub struct Explanation  {
     pub load_balancer_arn: std::option::Option<std::string::String>,
     /// <p>The listener for a Classic Load Balancer.</p>
     #[doc(hidden)]
-    pub classic_load_balancer_listener: std::option::Option<crate::types::AnalysisLoadBalancerListener>,
+    pub classic_load_balancer_listener:
+        std::option::Option<crate::types::AnalysisLoadBalancerListener>,
     /// <p>The listener port of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_listener_port: std::option::Option<i32>,
@@ -70,7 +71,8 @@ pub struct Explanation  {
     pub load_balancer_target_group: std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The target groups.</p>
     #[doc(hidden)]
-    pub load_balancer_target_groups: std::option::Option<std::vec::Vec<crate::types::AnalysisComponent>>,
+    pub load_balancer_target_groups:
+        std::option::Option<std::vec::Vec<crate::types::AnalysisComponent>>,
     /// <p>The target port.</p>
     #[doc(hidden)]
     pub load_balancer_target_port: std::option::Option<i32>,
@@ -151,7 +153,8 @@ pub struct Explanation  {
     pub transit_gateway_route_table: std::option::Option<crate::types::AnalysisComponent>,
     /// <p>The transit gateway route table route.</p>
     #[doc(hidden)]
-    pub transit_gateway_route_table_route: std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
+    pub transit_gateway_route_table_route:
+        std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
     /// <p>The transit gateway attachment.</p>
     #[doc(hidden)]
     pub transit_gateway_attachment: std::option::Option<crate::types::AnalysisComponent>,
@@ -170,75 +173,77 @@ pub struct Explanation  {
 }
 impl Explanation {
     /// <p>The network ACL.</p>
-    pub fn acl(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn acl(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.acl.as_ref()
     }
     /// <p>The network ACL rule.</p>
-    pub fn acl_rule(&self) -> std::option::Option<& crate::types::AnalysisAclRule> {
+    pub fn acl_rule(&self) -> std::option::Option<&crate::types::AnalysisAclRule> {
         self.acl_rule.as_ref()
     }
     /// <p>The IPv4 address, in CIDR notation.</p>
-    pub fn address(&self) -> std::option::Option<& str> {
+    pub fn address(&self) -> std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>The IPv4 addresses, in CIDR notation.</p>
-    pub fn addresses(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn addresses(&self) -> std::option::Option<&[std::string::String]> {
         self.addresses.as_deref()
     }
     /// <p>The resource to which the component is attached.</p>
-    pub fn attached_to(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn attached_to(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.attached_to.as_ref()
     }
     /// <p>The Availability Zones.</p>
-    pub fn availability_zones(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn availability_zones(&self) -> std::option::Option<&[std::string::String]> {
         self.availability_zones.as_deref()
     }
     /// <p>The CIDR ranges.</p>
-    pub fn cidrs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn cidrs(&self) -> std::option::Option<&[std::string::String]> {
         self.cidrs.as_deref()
     }
     /// <p>The component.</p>
-    pub fn component(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn component(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.component.as_ref()
     }
     /// <p>The customer gateway.</p>
-    pub fn customer_gateway(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn customer_gateway(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.customer_gateway.as_ref()
     }
     /// <p>The destination.</p>
-    pub fn destination(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn destination(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.destination.as_ref()
     }
     /// <p>The destination VPC.</p>
-    pub fn destination_vpc(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn destination_vpc(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.destination_vpc.as_ref()
     }
-    /// <p>The direction. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p>egress</p> </li> 
-    /// <li> <p>ingress</p> </li> 
+    /// <p>The direction. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p>egress</p> </li>
+    /// <li> <p>ingress</p> </li>
     /// </ul>
-    pub fn direction(&self) -> std::option::Option<& str> {
+    pub fn direction(&self) -> std::option::Option<&str> {
         self.direction.as_deref()
     }
     /// <p>The explanation code.</p>
-    pub fn explanation_code(&self) -> std::option::Option<& str> {
+    pub fn explanation_code(&self) -> std::option::Option<&str> {
         self.explanation_code.as_deref()
     }
     /// <p>The route table.</p>
-    pub fn ingress_route_table(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn ingress_route_table(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.ingress_route_table.as_ref()
     }
     /// <p>The internet gateway.</p>
-    pub fn internet_gateway(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn internet_gateway(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.internet_gateway.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The listener for a Classic Load Balancer.</p>
-    pub fn classic_load_balancer_listener(&self) -> std::option::Option<& crate::types::AnalysisLoadBalancerListener> {
+    pub fn classic_load_balancer_listener(
+        &self,
+    ) -> std::option::Option<&crate::types::AnalysisLoadBalancerListener> {
         self.classic_load_balancer_listener.as_ref()
     }
     /// <p>The listener port of the load balancer.</p>
@@ -246,15 +251,21 @@ impl Explanation {
         self.load_balancer_listener_port
     }
     /// <p>The target.</p>
-    pub fn load_balancer_target(&self) -> std::option::Option<& crate::types::AnalysisLoadBalancerTarget> {
+    pub fn load_balancer_target(
+        &self,
+    ) -> std::option::Option<&crate::types::AnalysisLoadBalancerTarget> {
         self.load_balancer_target.as_ref()
     }
     /// <p>The target group.</p>
-    pub fn load_balancer_target_group(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn load_balancer_target_group(
+        &self,
+    ) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.load_balancer_target_group.as_ref()
     }
     /// <p>The target groups.</p>
-    pub fn load_balancer_target_groups(&self) -> std::option::Option<& [crate::types::AnalysisComponent]> {
+    pub fn load_balancer_target_groups(
+        &self,
+    ) -> std::option::Option<&[crate::types::AnalysisComponent]> {
         self.load_balancer_target_groups.as_deref()
     }
     /// <p>The target port.</p>
@@ -262,27 +273,29 @@ impl Explanation {
         self.load_balancer_target_port
     }
     /// <p>The load balancer listener.</p>
-    pub fn elastic_load_balancer_listener(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn elastic_load_balancer_listener(
+        &self,
+    ) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.elastic_load_balancer_listener.as_ref()
     }
     /// <p>The missing component.</p>
-    pub fn missing_component(&self) -> std::option::Option<& str> {
+    pub fn missing_component(&self) -> std::option::Option<&str> {
         self.missing_component.as_deref()
     }
     /// <p>The NAT gateway.</p>
-    pub fn nat_gateway(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn nat_gateway(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.nat_gateway.as_ref()
     }
     /// <p>The network interface.</p>
-    pub fn network_interface(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn network_interface(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.network_interface.as_ref()
     }
     /// <p>The packet field.</p>
-    pub fn packet_field(&self) -> std::option::Option<& str> {
+    pub fn packet_field(&self) -> std::option::Option<&str> {
         self.packet_field.as_deref()
     }
     /// <p>The VPC peering connection.</p>
-    pub fn vpc_peering_connection(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn vpc_peering_connection(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.vpc_peering_connection.as_ref()
     }
     /// <p>The port.</p>
@@ -290,99 +303,111 @@ impl Explanation {
         self.port
     }
     /// <p>The port ranges.</p>
-    pub fn port_ranges(&self) -> std::option::Option<& [crate::types::PortRange]> {
+    pub fn port_ranges(&self) -> std::option::Option<&[crate::types::PortRange]> {
         self.port_ranges.as_deref()
     }
     /// <p>The prefix list.</p>
-    pub fn prefix_list(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn prefix_list(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.prefix_list.as_ref()
     }
     /// <p>The protocols.</p>
-    pub fn protocols(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn protocols(&self) -> std::option::Option<&[std::string::String]> {
         self.protocols.as_deref()
     }
     /// <p>The route table route.</p>
-    pub fn route_table_route(&self) -> std::option::Option<& crate::types::AnalysisRouteTableRoute> {
+    pub fn route_table_route(&self) -> std::option::Option<&crate::types::AnalysisRouteTableRoute> {
         self.route_table_route.as_ref()
     }
     /// <p>The route table.</p>
-    pub fn route_table(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn route_table(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.route_table.as_ref()
     }
     /// <p>The security group.</p>
-    pub fn security_group(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn security_group(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.security_group.as_ref()
     }
     /// <p>The security group rule.</p>
-    pub fn security_group_rule(&self) -> std::option::Option<& crate::types::AnalysisSecurityGroupRule> {
+    pub fn security_group_rule(
+        &self,
+    ) -> std::option::Option<&crate::types::AnalysisSecurityGroupRule> {
         self.security_group_rule.as_ref()
     }
     /// <p>The security groups.</p>
-    pub fn security_groups(&self) -> std::option::Option<& [crate::types::AnalysisComponent]> {
+    pub fn security_groups(&self) -> std::option::Option<&[crate::types::AnalysisComponent]> {
         self.security_groups.as_deref()
     }
     /// <p>The source VPC.</p>
-    pub fn source_vpc(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn source_vpc(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.source_vpc.as_ref()
     }
     /// <p>The state.</p>
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>The subnet.</p>
-    pub fn subnet(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn subnet(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.subnet.as_ref()
     }
     /// <p>The route table for the subnet.</p>
-    pub fn subnet_route_table(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn subnet_route_table(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.subnet_route_table.as_ref()
     }
     /// <p>The component VPC.</p>
-    pub fn vpc(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn vpc(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.vpc.as_ref()
     }
     /// <p>The VPC endpoint.</p>
-    pub fn vpc_endpoint(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn vpc_endpoint(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.vpc_endpoint.as_ref()
     }
     /// <p>The VPN connection.</p>
-    pub fn vpn_connection(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn vpn_connection(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.vpn_connection.as_ref()
     }
     /// <p>The VPN gateway.</p>
-    pub fn vpn_gateway(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn vpn_gateway(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.vpn_gateway.as_ref()
     }
     /// <p>The transit gateway.</p>
-    pub fn transit_gateway(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn transit_gateway(&self) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.transit_gateway.as_ref()
     }
     /// <p>The transit gateway route table.</p>
-    pub fn transit_gateway_route_table(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn transit_gateway_route_table(
+        &self,
+    ) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.transit_gateway_route_table.as_ref()
     }
     /// <p>The transit gateway route table route.</p>
-    pub fn transit_gateway_route_table_route(&self) -> std::option::Option<& crate::types::TransitGatewayRouteTableRoute> {
+    pub fn transit_gateway_route_table_route(
+        &self,
+    ) -> std::option::Option<&crate::types::TransitGatewayRouteTableRoute> {
         self.transit_gateway_route_table_route.as_ref()
     }
     /// <p>The transit gateway attachment.</p>
-    pub fn transit_gateway_attachment(&self) -> std::option::Option<& crate::types::AnalysisComponent> {
+    pub fn transit_gateway_attachment(
+        &self,
+    ) -> std::option::Option<&crate::types::AnalysisComponent> {
         self.transit_gateway_attachment.as_ref()
     }
     /// <p>The Amazon Web Services account for the component.</p>
-    pub fn component_account(&self) -> std::option::Option<& str> {
+    pub fn component_account(&self) -> std::option::Option<&str> {
         self.component_account.as_deref()
     }
     /// <p>The Region for the component.</p>
-    pub fn component_region(&self) -> std::option::Option<& str> {
+    pub fn component_region(&self) -> std::option::Option<&str> {
         self.component_region.as_deref()
     }
     /// <p>The Network Firewall stateless rule.</p>
-    pub fn firewall_stateless_rule(&self) -> std::option::Option<& crate::types::FirewallStatelessRule> {
+    pub fn firewall_stateless_rule(
+        &self,
+    ) -> std::option::Option<&crate::types::FirewallStatelessRule> {
         self.firewall_stateless_rule.as_ref()
     }
     /// <p>The Network Firewall stateful rule.</p>
-    pub fn firewall_stateful_rule(&self) -> std::option::Option<& crate::types::FirewallStatefulRule> {
+    pub fn firewall_stateful_rule(
+        &self,
+    ) -> std::option::Option<&crate::types::FirewallStatefulRule> {
         self.firewall_stateful_rule.as_ref()
     }
 }
@@ -413,11 +438,13 @@ pub struct ExplanationBuilder {
     pub(crate) ingress_route_table: std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) internet_gateway: std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) load_balancer_arn: std::option::Option<std::string::String>,
-    pub(crate) classic_load_balancer_listener: std::option::Option<crate::types::AnalysisLoadBalancerListener>,
+    pub(crate) classic_load_balancer_listener:
+        std::option::Option<crate::types::AnalysisLoadBalancerListener>,
     pub(crate) load_balancer_listener_port: std::option::Option<i32>,
     pub(crate) load_balancer_target: std::option::Option<crate::types::AnalysisLoadBalancerTarget>,
     pub(crate) load_balancer_target_group: std::option::Option<crate::types::AnalysisComponent>,
-    pub(crate) load_balancer_target_groups: std::option::Option<std::vec::Vec<crate::types::AnalysisComponent>>,
+    pub(crate) load_balancer_target_groups:
+        std::option::Option<std::vec::Vec<crate::types::AnalysisComponent>>,
     pub(crate) load_balancer_target_port: std::option::Option<i32>,
     pub(crate) elastic_load_balancer_listener: std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) missing_component: std::option::Option<std::string::String>,
@@ -444,7 +471,8 @@ pub struct ExplanationBuilder {
     pub(crate) vpn_gateway: std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) transit_gateway: std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) transit_gateway_route_table: std::option::Option<crate::types::AnalysisComponent>,
-    pub(crate) transit_gateway_route_table_route: std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
+    pub(crate) transit_gateway_route_table_route:
+        std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
     pub(crate) transit_gateway_attachment: std::option::Option<crate::types::AnalysisComponent>,
     pub(crate) component_account: std::option::Option<std::string::String>,
     pub(crate) component_region: std::option::Option<std::string::String>,
@@ -459,7 +487,8 @@ impl ExplanationBuilder {
     }
     /// <p>The network ACL.</p>
     pub fn set_acl(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.acl = input; self
+        self.acl = input;
+        self
     }
     /// <p>The network ACL rule.</p>
     pub fn acl_rule(mut self, input: crate::types::AnalysisAclRule) -> Self {
@@ -467,8 +496,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The network ACL rule.</p>
-    pub fn set_acl_rule(mut self, input: std::option::Option<crate::types::AnalysisAclRule>) -> Self {
-        self.acl_rule = input; self
+    pub fn set_acl_rule(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisAclRule>,
+    ) -> Self {
+        self.acl_rule = input;
+        self
     }
     /// <p>The IPv4 address, in CIDR notation.</p>
     pub fn address(mut self, input: impl Into<std::string::String>) -> Self {
@@ -477,7 +510,8 @@ impl ExplanationBuilder {
     }
     /// <p>The IPv4 address, in CIDR notation.</p>
     pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address = input; self
+        self.address = input;
+        self
     }
     /// Appends an item to `addresses`.
     ///
@@ -486,13 +520,17 @@ impl ExplanationBuilder {
     /// <p>The IPv4 addresses, in CIDR notation.</p>
     pub fn addresses(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.addresses.unwrap_or_default();
-                        v.push(input.into());
-                        self.addresses = Some(v);
-                        self
+        v.push(input.into());
+        self.addresses = Some(v);
+        self
     }
     /// <p>The IPv4 addresses, in CIDR notation.</p>
-    pub fn set_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.addresses = input; self
+    pub fn set_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.addresses = input;
+        self
     }
     /// <p>The resource to which the component is attached.</p>
     pub fn attached_to(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -500,8 +538,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The resource to which the component is attached.</p>
-    pub fn set_attached_to(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.attached_to = input; self
+    pub fn set_attached_to(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.attached_to = input;
+        self
     }
     /// Appends an item to `availability_zones`.
     ///
@@ -510,13 +552,17 @@ impl ExplanationBuilder {
     /// <p>The Availability Zones.</p>
     pub fn availability_zones(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
-                        v.push(input.into());
-                        self.availability_zones = Some(v);
-                        self
+        v.push(input.into());
+        self.availability_zones = Some(v);
+        self
     }
     /// <p>The Availability Zones.</p>
-    pub fn set_availability_zones(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.availability_zones = input; self
+    pub fn set_availability_zones(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.availability_zones = input;
+        self
     }
     /// Appends an item to `cidrs`.
     ///
@@ -525,13 +571,17 @@ impl ExplanationBuilder {
     /// <p>The CIDR ranges.</p>
     pub fn cidrs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.cidrs.unwrap_or_default();
-                        v.push(input.into());
-                        self.cidrs = Some(v);
-                        self
+        v.push(input.into());
+        self.cidrs = Some(v);
+        self
     }
     /// <p>The CIDR ranges.</p>
-    pub fn set_cidrs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.cidrs = input; self
+    pub fn set_cidrs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.cidrs = input;
+        self
     }
     /// <p>The component.</p>
     pub fn component(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -539,8 +589,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The component.</p>
-    pub fn set_component(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.component = input; self
+    pub fn set_component(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.component = input;
+        self
     }
     /// <p>The customer gateway.</p>
     pub fn customer_gateway(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -548,8 +602,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The customer gateway.</p>
-    pub fn set_customer_gateway(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.customer_gateway = input; self
+    pub fn set_customer_gateway(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.customer_gateway = input;
+        self
     }
     /// <p>The destination.</p>
     pub fn destination(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -557,8 +615,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The destination.</p>
-    pub fn set_destination(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.destination = input; self
+    pub fn set_destination(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.destination = input;
+        self
     }
     /// <p>The destination VPC.</p>
     pub fn destination_vpc(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -566,25 +628,30 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The destination VPC.</p>
-    pub fn set_destination_vpc(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.destination_vpc = input; self
+    pub fn set_destination_vpc(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.destination_vpc = input;
+        self
     }
-    /// <p>The direction. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p>egress</p> </li> 
-    /// <li> <p>ingress</p> </li> 
+    /// <p>The direction. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p>egress</p> </li>
+    /// <li> <p>ingress</p> </li>
     /// </ul>
     pub fn direction(mut self, input: impl Into<std::string::String>) -> Self {
         self.direction = Some(input.into());
         self
     }
-    /// <p>The direction. The following are the possible values:</p> 
-    /// <ul> 
-    /// <li> <p>egress</p> </li> 
-    /// <li> <p>ingress</p> </li> 
+    /// <p>The direction. The following are the possible values:</p>
+    /// <ul>
+    /// <li> <p>egress</p> </li>
+    /// <li> <p>ingress</p> </li>
     /// </ul>
     pub fn set_direction(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.direction = input; self
+        self.direction = input;
+        self
     }
     /// <p>The explanation code.</p>
     pub fn explanation_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -593,7 +660,8 @@ impl ExplanationBuilder {
     }
     /// <p>The explanation code.</p>
     pub fn set_explanation_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.explanation_code = input; self
+        self.explanation_code = input;
+        self
     }
     /// <p>The route table.</p>
     pub fn ingress_route_table(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -601,8 +669,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The route table.</p>
-    pub fn set_ingress_route_table(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.ingress_route_table = input; self
+    pub fn set_ingress_route_table(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.ingress_route_table = input;
+        self
     }
     /// <p>The internet gateway.</p>
     pub fn internet_gateway(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -610,8 +682,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The internet gateway.</p>
-    pub fn set_internet_gateway(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.internet_gateway = input; self
+    pub fn set_internet_gateway(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.internet_gateway = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     pub fn load_balancer_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -619,17 +695,28 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.load_balancer_arn = input; self
+    pub fn set_load_balancer_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.load_balancer_arn = input;
+        self
     }
     /// <p>The listener for a Classic Load Balancer.</p>
-    pub fn classic_load_balancer_listener(mut self, input: crate::types::AnalysisLoadBalancerListener) -> Self {
+    pub fn classic_load_balancer_listener(
+        mut self,
+        input: crate::types::AnalysisLoadBalancerListener,
+    ) -> Self {
         self.classic_load_balancer_listener = Some(input);
         self
     }
     /// <p>The listener for a Classic Load Balancer.</p>
-    pub fn set_classic_load_balancer_listener(mut self, input: std::option::Option<crate::types::AnalysisLoadBalancerListener>) -> Self {
-        self.classic_load_balancer_listener = input; self
+    pub fn set_classic_load_balancer_listener(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisLoadBalancerListener>,
+    ) -> Self {
+        self.classic_load_balancer_listener = input;
+        self
     }
     /// <p>The listener port of the load balancer.</p>
     pub fn load_balancer_listener_port(mut self, input: i32) -> Self {
@@ -638,7 +725,8 @@ impl ExplanationBuilder {
     }
     /// <p>The listener port of the load balancer.</p>
     pub fn set_load_balancer_listener_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.load_balancer_listener_port = input; self
+        self.load_balancer_listener_port = input;
+        self
     }
     /// <p>The target.</p>
     pub fn load_balancer_target(mut self, input: crate::types::AnalysisLoadBalancerTarget) -> Self {
@@ -646,8 +734,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The target.</p>
-    pub fn set_load_balancer_target(mut self, input: std::option::Option<crate::types::AnalysisLoadBalancerTarget>) -> Self {
-        self.load_balancer_target = input; self
+    pub fn set_load_balancer_target(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisLoadBalancerTarget>,
+    ) -> Self {
+        self.load_balancer_target = input;
+        self
     }
     /// <p>The target group.</p>
     pub fn load_balancer_target_group(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -655,8 +747,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The target group.</p>
-    pub fn set_load_balancer_target_group(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.load_balancer_target_group = input; self
+    pub fn set_load_balancer_target_group(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.load_balancer_target_group = input;
+        self
     }
     /// Appends an item to `load_balancer_target_groups`.
     ///
@@ -665,13 +761,17 @@ impl ExplanationBuilder {
     /// <p>The target groups.</p>
     pub fn load_balancer_target_groups(mut self, input: crate::types::AnalysisComponent) -> Self {
         let mut v = self.load_balancer_target_groups.unwrap_or_default();
-                        v.push(input);
-                        self.load_balancer_target_groups = Some(v);
-                        self
+        v.push(input);
+        self.load_balancer_target_groups = Some(v);
+        self
     }
     /// <p>The target groups.</p>
-    pub fn set_load_balancer_target_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::AnalysisComponent>>) -> Self {
-        self.load_balancer_target_groups = input; self
+    pub fn set_load_balancer_target_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AnalysisComponent>>,
+    ) -> Self {
+        self.load_balancer_target_groups = input;
+        self
     }
     /// <p>The target port.</p>
     pub fn load_balancer_target_port(mut self, input: i32) -> Self {
@@ -680,16 +780,24 @@ impl ExplanationBuilder {
     }
     /// <p>The target port.</p>
     pub fn set_load_balancer_target_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.load_balancer_target_port = input; self
+        self.load_balancer_target_port = input;
+        self
     }
     /// <p>The load balancer listener.</p>
-    pub fn elastic_load_balancer_listener(mut self, input: crate::types::AnalysisComponent) -> Self {
+    pub fn elastic_load_balancer_listener(
+        mut self,
+        input: crate::types::AnalysisComponent,
+    ) -> Self {
         self.elastic_load_balancer_listener = Some(input);
         self
     }
     /// <p>The load balancer listener.</p>
-    pub fn set_elastic_load_balancer_listener(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.elastic_load_balancer_listener = input; self
+    pub fn set_elastic_load_balancer_listener(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.elastic_load_balancer_listener = input;
+        self
     }
     /// <p>The missing component.</p>
     pub fn missing_component(mut self, input: impl Into<std::string::String>) -> Self {
@@ -697,8 +805,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The missing component.</p>
-    pub fn set_missing_component(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.missing_component = input; self
+    pub fn set_missing_component(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.missing_component = input;
+        self
     }
     /// <p>The NAT gateway.</p>
     pub fn nat_gateway(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -706,8 +818,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The NAT gateway.</p>
-    pub fn set_nat_gateway(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.nat_gateway = input; self
+    pub fn set_nat_gateway(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.nat_gateway = input;
+        self
     }
     /// <p>The network interface.</p>
     pub fn network_interface(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -715,8 +831,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The network interface.</p>
-    pub fn set_network_interface(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.network_interface = input; self
+    pub fn set_network_interface(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.network_interface = input;
+        self
     }
     /// <p>The packet field.</p>
     pub fn packet_field(mut self, input: impl Into<std::string::String>) -> Self {
@@ -725,7 +845,8 @@ impl ExplanationBuilder {
     }
     /// <p>The packet field.</p>
     pub fn set_packet_field(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.packet_field = input; self
+        self.packet_field = input;
+        self
     }
     /// <p>The VPC peering connection.</p>
     pub fn vpc_peering_connection(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -733,8 +854,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The VPC peering connection.</p>
-    pub fn set_vpc_peering_connection(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.vpc_peering_connection = input; self
+    pub fn set_vpc_peering_connection(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.vpc_peering_connection = input;
+        self
     }
     /// <p>The port.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -743,7 +868,8 @@ impl ExplanationBuilder {
     }
     /// <p>The port.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// Appends an item to `port_ranges`.
     ///
@@ -752,13 +878,17 @@ impl ExplanationBuilder {
     /// <p>The port ranges.</p>
     pub fn port_ranges(mut self, input: crate::types::PortRange) -> Self {
         let mut v = self.port_ranges.unwrap_or_default();
-                        v.push(input);
-                        self.port_ranges = Some(v);
-                        self
+        v.push(input);
+        self.port_ranges = Some(v);
+        self
     }
     /// <p>The port ranges.</p>
-    pub fn set_port_ranges(mut self, input: std::option::Option<std::vec::Vec<crate::types::PortRange>>) -> Self {
-        self.port_ranges = input; self
+    pub fn set_port_ranges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PortRange>>,
+    ) -> Self {
+        self.port_ranges = input;
+        self
     }
     /// <p>The prefix list.</p>
     pub fn prefix_list(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -766,8 +896,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The prefix list.</p>
-    pub fn set_prefix_list(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.prefix_list = input; self
+    pub fn set_prefix_list(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.prefix_list = input;
+        self
     }
     /// Appends an item to `protocols`.
     ///
@@ -776,13 +910,17 @@ impl ExplanationBuilder {
     /// <p>The protocols.</p>
     pub fn protocols(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.protocols.unwrap_or_default();
-                        v.push(input.into());
-                        self.protocols = Some(v);
-                        self
+        v.push(input.into());
+        self.protocols = Some(v);
+        self
     }
     /// <p>The protocols.</p>
-    pub fn set_protocols(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.protocols = input; self
+    pub fn set_protocols(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.protocols = input;
+        self
     }
     /// <p>The route table route.</p>
     pub fn route_table_route(mut self, input: crate::types::AnalysisRouteTableRoute) -> Self {
@@ -790,8 +928,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The route table route.</p>
-    pub fn set_route_table_route(mut self, input: std::option::Option<crate::types::AnalysisRouteTableRoute>) -> Self {
-        self.route_table_route = input; self
+    pub fn set_route_table_route(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisRouteTableRoute>,
+    ) -> Self {
+        self.route_table_route = input;
+        self
     }
     /// <p>The route table.</p>
     pub fn route_table(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -799,8 +941,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The route table.</p>
-    pub fn set_route_table(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.route_table = input; self
+    pub fn set_route_table(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.route_table = input;
+        self
     }
     /// <p>The security group.</p>
     pub fn security_group(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -808,8 +954,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The security group.</p>
-    pub fn set_security_group(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.security_group = input; self
+    pub fn set_security_group(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.security_group = input;
+        self
     }
     /// <p>The security group rule.</p>
     pub fn security_group_rule(mut self, input: crate::types::AnalysisSecurityGroupRule) -> Self {
@@ -817,8 +967,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The security group rule.</p>
-    pub fn set_security_group_rule(mut self, input: std::option::Option<crate::types::AnalysisSecurityGroupRule>) -> Self {
-        self.security_group_rule = input; self
+    pub fn set_security_group_rule(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisSecurityGroupRule>,
+    ) -> Self {
+        self.security_group_rule = input;
+        self
     }
     /// Appends an item to `security_groups`.
     ///
@@ -827,13 +981,17 @@ impl ExplanationBuilder {
     /// <p>The security groups.</p>
     pub fn security_groups(mut self, input: crate::types::AnalysisComponent) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
-                        v.push(input);
-                        self.security_groups = Some(v);
-                        self
+        v.push(input);
+        self.security_groups = Some(v);
+        self
     }
     /// <p>The security groups.</p>
-    pub fn set_security_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::AnalysisComponent>>) -> Self {
-        self.security_groups = input; self
+    pub fn set_security_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AnalysisComponent>>,
+    ) -> Self {
+        self.security_groups = input;
+        self
     }
     /// <p>The source VPC.</p>
     pub fn source_vpc(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -841,8 +999,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The source VPC.</p>
-    pub fn set_source_vpc(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.source_vpc = input; self
+    pub fn set_source_vpc(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.source_vpc = input;
+        self
     }
     /// <p>The state.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -851,7 +1013,8 @@ impl ExplanationBuilder {
     }
     /// <p>The state.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The subnet.</p>
     pub fn subnet(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -859,8 +1022,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The subnet.</p>
-    pub fn set_subnet(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.subnet = input; self
+    pub fn set_subnet(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.subnet = input;
+        self
     }
     /// <p>The route table for the subnet.</p>
     pub fn subnet_route_table(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -868,8 +1035,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The route table for the subnet.</p>
-    pub fn set_subnet_route_table(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.subnet_route_table = input; self
+    pub fn set_subnet_route_table(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.subnet_route_table = input;
+        self
     }
     /// <p>The component VPC.</p>
     pub fn vpc(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -878,7 +1049,8 @@ impl ExplanationBuilder {
     }
     /// <p>The component VPC.</p>
     pub fn set_vpc(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.vpc = input; self
+        self.vpc = input;
+        self
     }
     /// <p>The VPC endpoint.</p>
     pub fn vpc_endpoint(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -886,8 +1058,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The VPC endpoint.</p>
-    pub fn set_vpc_endpoint(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.vpc_endpoint = input; self
+    pub fn set_vpc_endpoint(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.vpc_endpoint = input;
+        self
     }
     /// <p>The VPN connection.</p>
     pub fn vpn_connection(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -895,8 +1071,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The VPN connection.</p>
-    pub fn set_vpn_connection(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.vpn_connection = input; self
+    pub fn set_vpn_connection(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.vpn_connection = input;
+        self
     }
     /// <p>The VPN gateway.</p>
     pub fn vpn_gateway(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -904,8 +1084,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The VPN gateway.</p>
-    pub fn set_vpn_gateway(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.vpn_gateway = input; self
+    pub fn set_vpn_gateway(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.vpn_gateway = input;
+        self
     }
     /// <p>The transit gateway.</p>
     pub fn transit_gateway(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -913,8 +1097,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The transit gateway.</p>
-    pub fn set_transit_gateway(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.transit_gateway = input; self
+    pub fn set_transit_gateway(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.transit_gateway = input;
+        self
     }
     /// <p>The transit gateway route table.</p>
     pub fn transit_gateway_route_table(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -922,17 +1110,28 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The transit gateway route table.</p>
-    pub fn set_transit_gateway_route_table(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.transit_gateway_route_table = input; self
+    pub fn set_transit_gateway_route_table(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.transit_gateway_route_table = input;
+        self
     }
     /// <p>The transit gateway route table route.</p>
-    pub fn transit_gateway_route_table_route(mut self, input: crate::types::TransitGatewayRouteTableRoute) -> Self {
+    pub fn transit_gateway_route_table_route(
+        mut self,
+        input: crate::types::TransitGatewayRouteTableRoute,
+    ) -> Self {
         self.transit_gateway_route_table_route = Some(input);
         self
     }
     /// <p>The transit gateway route table route.</p>
-    pub fn set_transit_gateway_route_table_route(mut self, input: std::option::Option<crate::types::TransitGatewayRouteTableRoute>) -> Self {
-        self.transit_gateway_route_table_route = input; self
+    pub fn set_transit_gateway_route_table_route(
+        mut self,
+        input: std::option::Option<crate::types::TransitGatewayRouteTableRoute>,
+    ) -> Self {
+        self.transit_gateway_route_table_route = input;
+        self
     }
     /// <p>The transit gateway attachment.</p>
     pub fn transit_gateway_attachment(mut self, input: crate::types::AnalysisComponent) -> Self {
@@ -940,8 +1139,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The transit gateway attachment.</p>
-    pub fn set_transit_gateway_attachment(mut self, input: std::option::Option<crate::types::AnalysisComponent>) -> Self {
-        self.transit_gateway_attachment = input; self
+    pub fn set_transit_gateway_attachment(
+        mut self,
+        input: std::option::Option<crate::types::AnalysisComponent>,
+    ) -> Self {
+        self.transit_gateway_attachment = input;
+        self
     }
     /// <p>The Amazon Web Services account for the component.</p>
     pub fn component_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -949,8 +1152,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The Amazon Web Services account for the component.</p>
-    pub fn set_component_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_account = input; self
+    pub fn set_component_account(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.component_account = input;
+        self
     }
     /// <p>The Region for the component.</p>
     pub fn component_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -959,7 +1166,8 @@ impl ExplanationBuilder {
     }
     /// <p>The Region for the component.</p>
     pub fn set_component_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_region = input; self
+        self.component_region = input;
+        self
     }
     /// <p>The Network Firewall stateless rule.</p>
     pub fn firewall_stateless_rule(mut self, input: crate::types::FirewallStatelessRule) -> Self {
@@ -967,8 +1175,12 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The Network Firewall stateless rule.</p>
-    pub fn set_firewall_stateless_rule(mut self, input: std::option::Option<crate::types::FirewallStatelessRule>) -> Self {
-        self.firewall_stateless_rule = input; self
+    pub fn set_firewall_stateless_rule(
+        mut self,
+        input: std::option::Option<crate::types::FirewallStatelessRule>,
+    ) -> Self {
+        self.firewall_stateless_rule = input;
+        self
     }
     /// <p>The Network Firewall stateful rule.</p>
     pub fn firewall_stateful_rule(mut self, input: crate::types::FirewallStatefulRule) -> Self {
@@ -976,119 +1188,69 @@ impl ExplanationBuilder {
         self
     }
     /// <p>The Network Firewall stateful rule.</p>
-    pub fn set_firewall_stateful_rule(mut self, input: std::option::Option<crate::types::FirewallStatefulRule>) -> Self {
-        self.firewall_stateful_rule = input; self
+    pub fn set_firewall_stateful_rule(
+        mut self,
+        input: std::option::Option<crate::types::FirewallStatefulRule>,
+    ) -> Self {
+        self.firewall_stateful_rule = input;
+        self
     }
     /// Consumes the builder and constructs a [`Explanation`](crate::types::Explanation).
     pub fn build(self) -> crate::types::Explanation {
         crate::types::Explanation {
-            acl: self.acl
-            ,
-            acl_rule: self.acl_rule
-            ,
-            address: self.address
-            ,
-            addresses: self.addresses
-            ,
-            attached_to: self.attached_to
-            ,
-            availability_zones: self.availability_zones
-            ,
-            cidrs: self.cidrs
-            ,
-            component: self.component
-            ,
-            customer_gateway: self.customer_gateway
-            ,
-            destination: self.destination
-            ,
-            destination_vpc: self.destination_vpc
-            ,
-            direction: self.direction
-            ,
-            explanation_code: self.explanation_code
-            ,
-            ingress_route_table: self.ingress_route_table
-            ,
-            internet_gateway: self.internet_gateway
-            ,
-            load_balancer_arn: self.load_balancer_arn
-            ,
-            classic_load_balancer_listener: self.classic_load_balancer_listener
-            ,
-            load_balancer_listener_port: self.load_balancer_listener_port
-            ,
-            load_balancer_target: self.load_balancer_target
-            ,
-            load_balancer_target_group: self.load_balancer_target_group
-            ,
-            load_balancer_target_groups: self.load_balancer_target_groups
-            ,
-            load_balancer_target_port: self.load_balancer_target_port
-            ,
-            elastic_load_balancer_listener: self.elastic_load_balancer_listener
-            ,
-            missing_component: self.missing_component
-            ,
-            nat_gateway: self.nat_gateway
-            ,
-            network_interface: self.network_interface
-            ,
-            packet_field: self.packet_field
-            ,
-            vpc_peering_connection: self.vpc_peering_connection
-            ,
-            port: self.port
-            ,
-            port_ranges: self.port_ranges
-            ,
-            prefix_list: self.prefix_list
-            ,
-            protocols: self.protocols
-            ,
-            route_table_route: self.route_table_route
-            ,
-            route_table: self.route_table
-            ,
-            security_group: self.security_group
-            ,
-            security_group_rule: self.security_group_rule
-            ,
-            security_groups: self.security_groups
-            ,
-            source_vpc: self.source_vpc
-            ,
-            state: self.state
-            ,
-            subnet: self.subnet
-            ,
-            subnet_route_table: self.subnet_route_table
-            ,
-            vpc: self.vpc
-            ,
-            vpc_endpoint: self.vpc_endpoint
-            ,
-            vpn_connection: self.vpn_connection
-            ,
-            vpn_gateway: self.vpn_gateway
-            ,
-            transit_gateway: self.transit_gateway
-            ,
-            transit_gateway_route_table: self.transit_gateway_route_table
-            ,
-            transit_gateway_route_table_route: self.transit_gateway_route_table_route
-            ,
-            transit_gateway_attachment: self.transit_gateway_attachment
-            ,
-            component_account: self.component_account
-            ,
-            component_region: self.component_region
-            ,
-            firewall_stateless_rule: self.firewall_stateless_rule
-            ,
-            firewall_stateful_rule: self.firewall_stateful_rule
-            ,
+            acl: self.acl,
+            acl_rule: self.acl_rule,
+            address: self.address,
+            addresses: self.addresses,
+            attached_to: self.attached_to,
+            availability_zones: self.availability_zones,
+            cidrs: self.cidrs,
+            component: self.component,
+            customer_gateway: self.customer_gateway,
+            destination: self.destination,
+            destination_vpc: self.destination_vpc,
+            direction: self.direction,
+            explanation_code: self.explanation_code,
+            ingress_route_table: self.ingress_route_table,
+            internet_gateway: self.internet_gateway,
+            load_balancer_arn: self.load_balancer_arn,
+            classic_load_balancer_listener: self.classic_load_balancer_listener,
+            load_balancer_listener_port: self.load_balancer_listener_port,
+            load_balancer_target: self.load_balancer_target,
+            load_balancer_target_group: self.load_balancer_target_group,
+            load_balancer_target_groups: self.load_balancer_target_groups,
+            load_balancer_target_port: self.load_balancer_target_port,
+            elastic_load_balancer_listener: self.elastic_load_balancer_listener,
+            missing_component: self.missing_component,
+            nat_gateway: self.nat_gateway,
+            network_interface: self.network_interface,
+            packet_field: self.packet_field,
+            vpc_peering_connection: self.vpc_peering_connection,
+            port: self.port,
+            port_ranges: self.port_ranges,
+            prefix_list: self.prefix_list,
+            protocols: self.protocols,
+            route_table_route: self.route_table_route,
+            route_table: self.route_table,
+            security_group: self.security_group,
+            security_group_rule: self.security_group_rule,
+            security_groups: self.security_groups,
+            source_vpc: self.source_vpc,
+            state: self.state,
+            subnet: self.subnet,
+            subnet_route_table: self.subnet_route_table,
+            vpc: self.vpc,
+            vpc_endpoint: self.vpc_endpoint,
+            vpn_connection: self.vpn_connection,
+            vpn_gateway: self.vpn_gateway,
+            transit_gateway: self.transit_gateway,
+            transit_gateway_route_table: self.transit_gateway_route_table,
+            transit_gateway_route_table_route: self.transit_gateway_route_table_route,
+            transit_gateway_attachment: self.transit_gateway_attachment,
+            component_account: self.component_account,
+            component_region: self.component_region,
+            firewall_stateless_rule: self.firewall_stateless_rule,
+            firewall_stateful_rule: self.firewall_stateful_rule,
         }
     }
 }
-

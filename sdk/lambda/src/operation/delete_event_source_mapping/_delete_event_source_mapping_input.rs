@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventSourceMappingInput  {
+pub struct DeleteEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
     #[doc(hidden)]
     pub uuid: std::option::Option<std::string::String>,
 }
 impl DeleteEventSourceMappingInput {
     /// <p>The identifier of the event source mapping.</p>
-    pub fn uuid(&self) -> std::option::Option<& str> {
+    pub fn uuid(&self) -> std::option::Option<&str> {
         self.uuid.as_deref()
     }
 }
 impl DeleteEventSourceMappingInput {
     /// Creates a new builder-style object to manufacture [`DeleteEventSourceMappingInput`](crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput).
-    pub fn builder() -> crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingInputBuilder
+    {
         crate::operation::delete_event_source_mapping::builders::DeleteEventSourceMappingInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl DeleteEventSourceMappingInputBuilder {
     }
     /// <p>The identifier of the event source mapping.</p>
     pub fn set_uuid(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uuid = input; self
+        self.uuid = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteEventSourceMappingInput`](crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput).
-    pub fn build(self) -> Result<crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_event_source_mapping::DeleteEventSourceMappingInput {
-                uuid: self.uuid
-                ,
-            }
+                uuid: self.uuid,
+            },
         )
     }
 }
-

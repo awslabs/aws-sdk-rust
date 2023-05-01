@@ -4,50 +4,70 @@ pub use crate::operation::describe_scaling_plans::_describe_scaling_plans_output
 pub use crate::operation::describe_scaling_plans::_describe_scaling_plans_input::DescribeScalingPlansInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeScalingPlans`.
-/// 
+///
 /// <p>Describes one or more of your scaling plans.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeScalingPlansFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder,
+    inner: crate::operation::describe_scaling_plans::builders::DescribeScalingPlansInputBuilder,
 }
-impl DescribeScalingPlansFluentBuilder  {
+impl DescribeScalingPlansFluentBuilder {
     /// Creates a new `DescribeScalingPlans`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_scaling_plans::DescribeScalingPlans, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_scaling_plans::DescribeScalingPlansError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_scaling_plans::DescribeScalingPlansOutput, aws_smithy_http::result::SdkError<crate::operation::describe_scaling_plans::DescribeScalingPlansError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_scaling_plans::DescribeScalingPlans,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_plans::DescribeScalingPlansError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_scaling_plans::DescribeScalingPlansOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_plans::DescribeScalingPlansError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `ScalingPlanNames`.
     ///
     /// To override the contents of this collection use [`set_scaling_plan_names`](Self::set_scaling_plan_names).
@@ -58,19 +78,22 @@ impl DescribeScalingPlansFluentBuilder  {
         self
     }
     /// <p>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</p>
-    pub fn set_scaling_plan_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_scaling_plan_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_scaling_plan_names(input);
         self
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note> 
-    /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p> 
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+    /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub fn scaling_plan_version(mut self, input: i64) -> Self {
         self.inner = self.inner.scaling_plan_version(input);
         self
     }
-    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note> 
-    /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p> 
+    /// <p>The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+    /// <p>If you specify a scaling plan version, you must also specify a scaling plan name.</p>
     /// </note>
     pub fn set_scaling_plan_version(mut self, input: std::option::Option<i64>) -> Self {
         self.inner = self.inner.set_scaling_plan_version(input);
@@ -86,7 +109,10 @@ impl DescribeScalingPlansFluentBuilder  {
         self
     }
     /// <p>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</p>
-    pub fn set_application_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::ApplicationSource>>) -> Self {
+    pub fn set_application_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ApplicationSource>>,
+    ) -> Self {
         self.inner = self.inner.set_application_sources(input);
         self
     }
@@ -111,4 +137,3 @@ impl DescribeScalingPlansFluentBuilder  {
         self
     }
 }
-

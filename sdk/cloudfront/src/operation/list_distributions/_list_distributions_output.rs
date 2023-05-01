@@ -3,7 +3,7 @@
 /// <p>The returned result of the corresponding request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDistributionsOutput  {
+pub struct ListDistributionsOutput {
     /// <p>The <code>DistributionList</code> type.</p>
     #[doc(hidden)]
     pub distribution_list: std::option::Option<crate::types::DistributionList>,
@@ -11,18 +11,19 @@ pub struct ListDistributionsOutput  {
 }
 impl ListDistributionsOutput {
     /// <p>The <code>DistributionList</code> type.</p>
-    pub fn distribution_list(&self) -> std::option::Option<& crate::types::DistributionList> {
+    pub fn distribution_list(&self) -> std::option::Option<&crate::types::DistributionList> {
         self.distribution_list.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ListDistributionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListDistributionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsOutput`](crate::operation::list_distributions::ListDistributionsOutput).
-    pub fn builder() -> crate::operation::list_distributions::builders::ListDistributionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_distributions::builders::ListDistributionsOutputBuilder {
         crate::operation::list_distributions::builders::ListDistributionsOutputBuilder::default()
     }
 }
@@ -41,25 +42,27 @@ impl ListDistributionsOutputBuilder {
         self
     }
     /// <p>The <code>DistributionList</code> type.</p>
-    pub fn set_distribution_list(mut self, input: std::option::Option<crate::types::DistributionList>) -> Self {
-        self.distribution_list = input; self
+    pub fn set_distribution_list(
+        mut self,
+        input: std::option::Option<crate::types::DistributionList>,
+    ) -> Self {
+        self.distribution_list = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListDistributionsOutput`](crate::operation::list_distributions::ListDistributionsOutput).
     pub fn build(self) -> crate::operation::list_distributions::ListDistributionsOutput {
         crate::operation::list_distributions::ListDistributionsOutput {
-            distribution_list: self.distribution_list
-            ,
+            distribution_list: self.distribution_list,
             _request_id: self._request_id,
         }
     }
 }
-

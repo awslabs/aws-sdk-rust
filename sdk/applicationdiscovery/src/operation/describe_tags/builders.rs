@@ -4,57 +4,73 @@ pub use crate::operation::describe_tags::_describe_tags_output::DescribeTagsOutp
 pub use crate::operation::describe_tags::_describe_tags_input::DescribeTagsInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeTags`.
-/// 
-/// <p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p> 
-/// <p>There are three valid tag filter names:</p> 
-/// <ul> 
-/// <li> <p>tagKey</p> </li> 
-/// <li> <p>tagValue</p> </li> 
-/// <li> <p>configurationId</p> </li> 
-/// </ul> 
+///
+/// <p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name and value, passed to the optional parameter <code>filters</code>.</p>
+/// <p>There are three valid tag filter names:</p>
+/// <ul>
+/// <li> <p>tagKey</p> </li>
+/// <li> <p>tagValue</p> </li>
+/// <li> <p>configurationId</p> </li>
+/// </ul>
 /// <p>Also, all configuration items associated with your user account that have tags can be listed if you call <code>DescribeTags</code> as is without passing any parameters.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeTagsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_tags::builders::DescribeTagsInputBuilder,
+    inner: crate::operation::describe_tags::builders::DescribeTagsInputBuilder,
 }
-impl DescribeTagsFluentBuilder  {
+impl DescribeTagsFluentBuilder {
     /// Creates a new `DescribeTags`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_tags::DescribeTags, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_tags::DescribeTagsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_tags::DescribeTagsOutput, aws_smithy_http::result::SdkError<crate::operation::describe_tags::DescribeTagsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_tags::DescribeTags,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::describe_tags::DescribeTagsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_tags::DescribeTagsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::describe_tags::DescribeTagsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
@@ -65,7 +81,10 @@ impl DescribeTagsFluentBuilder  {
         self
     }
     /// <p>You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>, and <code>configurationId</code>. </p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagFilter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
@@ -90,4 +109,3 @@ impl DescribeTagsFluentBuilder  {
         self
     }
 }
-

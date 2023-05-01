@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let processinginstancetype = unimplemented!();
 /// match processinginstancetype {
@@ -72,14 +72,22 @@
 /// Specifically, when `processinginstancetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ProcessingInstanceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ProcessingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlC42Xlarge,
@@ -170,125 +178,171 @@ pub enum ProcessingInstanceType {
     #[allow(missing_docs)] // documentation missing in model
     MlT3Xlarge,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ProcessingInstanceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ml.c4.2xlarge" => ProcessingInstanceType::MlC42Xlarge,
-"ml.c4.4xlarge" => ProcessingInstanceType::MlC44Xlarge,
-"ml.c4.8xlarge" => ProcessingInstanceType::MlC48Xlarge,
-"ml.c4.xlarge" => ProcessingInstanceType::MlC4Xlarge,
-"ml.c5.18xlarge" => ProcessingInstanceType::MlC518Xlarge,
-"ml.c5.2xlarge" => ProcessingInstanceType::MlC52Xlarge,
-"ml.c5.4xlarge" => ProcessingInstanceType::MlC54Xlarge,
-"ml.c5.9xlarge" => ProcessingInstanceType::MlC59Xlarge,
-"ml.c5.xlarge" => ProcessingInstanceType::MlC5Xlarge,
-"ml.g4dn.12xlarge" => ProcessingInstanceType::MlG4Dn12Xlarge,
-"ml.g4dn.16xlarge" => ProcessingInstanceType::MlG4Dn16Xlarge,
-"ml.g4dn.2xlarge" => ProcessingInstanceType::MlG4Dn2Xlarge,
-"ml.g4dn.4xlarge" => ProcessingInstanceType::MlG4Dn4Xlarge,
-"ml.g4dn.8xlarge" => ProcessingInstanceType::MlG4Dn8Xlarge,
-"ml.g4dn.xlarge" => ProcessingInstanceType::MlG4DnXlarge,
-"ml.m4.10xlarge" => ProcessingInstanceType::MlM410Xlarge,
-"ml.m4.16xlarge" => ProcessingInstanceType::MlM416Xlarge,
-"ml.m4.2xlarge" => ProcessingInstanceType::MlM42Xlarge,
-"ml.m4.4xlarge" => ProcessingInstanceType::MlM44Xlarge,
-"ml.m4.xlarge" => ProcessingInstanceType::MlM4Xlarge,
-"ml.m5.12xlarge" => ProcessingInstanceType::MlM512Xlarge,
-"ml.m5.24xlarge" => ProcessingInstanceType::MlM524Xlarge,
-"ml.m5.2xlarge" => ProcessingInstanceType::MlM52Xlarge,
-"ml.m5.4xlarge" => ProcessingInstanceType::MlM54Xlarge,
-"ml.m5.large" => ProcessingInstanceType::MlM5Large,
-"ml.m5.xlarge" => ProcessingInstanceType::MlM5Xlarge,
-"ml.p2.16xlarge" => ProcessingInstanceType::MlP216Xlarge,
-"ml.p2.8xlarge" => ProcessingInstanceType::MlP28Xlarge,
-"ml.p2.xlarge" => ProcessingInstanceType::MlP2Xlarge,
-"ml.p3.16xlarge" => ProcessingInstanceType::MlP316Xlarge,
-"ml.p3.2xlarge" => ProcessingInstanceType::MlP32Xlarge,
-"ml.p3.8xlarge" => ProcessingInstanceType::MlP38Xlarge,
-"ml.r5.12xlarge" => ProcessingInstanceType::MlR512Xlarge,
-"ml.r5.16xlarge" => ProcessingInstanceType::MlR516Xlarge,
-"ml.r5.24xlarge" => ProcessingInstanceType::MlR524Xlarge,
-"ml.r5.2xlarge" => ProcessingInstanceType::MlR52Xlarge,
-"ml.r5.4xlarge" => ProcessingInstanceType::MlR54Xlarge,
-"ml.r5.8xlarge" => ProcessingInstanceType::MlR58Xlarge,
-"ml.r5.large" => ProcessingInstanceType::MlR5Large,
-"ml.r5.xlarge" => ProcessingInstanceType::MlR5Xlarge,
-"ml.t3.2xlarge" => ProcessingInstanceType::MlT32Xlarge,
-"ml.t3.large" => ProcessingInstanceType::MlT3Large,
-"ml.t3.medium" => ProcessingInstanceType::MlT3Medium,
-"ml.t3.xlarge" => ProcessingInstanceType::MlT3Xlarge,
-other => ProcessingInstanceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ProcessingInstanceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ProcessingInstanceType::from(s))
-                }
-            }
-impl ProcessingInstanceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ProcessingInstanceType::MlC42Xlarge => "ml.c4.2xlarge",
-    ProcessingInstanceType::MlC44Xlarge => "ml.c4.4xlarge",
-    ProcessingInstanceType::MlC48Xlarge => "ml.c4.8xlarge",
-    ProcessingInstanceType::MlC4Xlarge => "ml.c4.xlarge",
-    ProcessingInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
-    ProcessingInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
-    ProcessingInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
-    ProcessingInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
-    ProcessingInstanceType::MlC5Xlarge => "ml.c5.xlarge",
-    ProcessingInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
-    ProcessingInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
-    ProcessingInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
-    ProcessingInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
-    ProcessingInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
-    ProcessingInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
-    ProcessingInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
-    ProcessingInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
-    ProcessingInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
-    ProcessingInstanceType::MlM44Xlarge => "ml.m4.4xlarge",
-    ProcessingInstanceType::MlM4Xlarge => "ml.m4.xlarge",
-    ProcessingInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
-    ProcessingInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
-    ProcessingInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
-    ProcessingInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
-    ProcessingInstanceType::MlM5Large => "ml.m5.large",
-    ProcessingInstanceType::MlM5Xlarge => "ml.m5.xlarge",
-    ProcessingInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
-    ProcessingInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
-    ProcessingInstanceType::MlP2Xlarge => "ml.p2.xlarge",
-    ProcessingInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
-    ProcessingInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
-    ProcessingInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
-    ProcessingInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
-    ProcessingInstanceType::MlR516Xlarge => "ml.r5.16xlarge",
-    ProcessingInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
-    ProcessingInstanceType::MlR52Xlarge => "ml.r5.2xlarge",
-    ProcessingInstanceType::MlR54Xlarge => "ml.r5.4xlarge",
-    ProcessingInstanceType::MlR58Xlarge => "ml.r5.8xlarge",
-    ProcessingInstanceType::MlR5Large => "ml.r5.large",
-    ProcessingInstanceType::MlR5Xlarge => "ml.r5.xlarge",
-    ProcessingInstanceType::MlT32Xlarge => "ml.t3.2xlarge",
-    ProcessingInstanceType::MlT3Large => "ml.t3.large",
-    ProcessingInstanceType::MlT3Medium => "ml.t3.medium",
-    ProcessingInstanceType::MlT3Xlarge => "ml.t3.xlarge",
-    ProcessingInstanceType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ml.c4.2xlarge" => ProcessingInstanceType::MlC42Xlarge,
+            "ml.c4.4xlarge" => ProcessingInstanceType::MlC44Xlarge,
+            "ml.c4.8xlarge" => ProcessingInstanceType::MlC48Xlarge,
+            "ml.c4.xlarge" => ProcessingInstanceType::MlC4Xlarge,
+            "ml.c5.18xlarge" => ProcessingInstanceType::MlC518Xlarge,
+            "ml.c5.2xlarge" => ProcessingInstanceType::MlC52Xlarge,
+            "ml.c5.4xlarge" => ProcessingInstanceType::MlC54Xlarge,
+            "ml.c5.9xlarge" => ProcessingInstanceType::MlC59Xlarge,
+            "ml.c5.xlarge" => ProcessingInstanceType::MlC5Xlarge,
+            "ml.g4dn.12xlarge" => ProcessingInstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => ProcessingInstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => ProcessingInstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => ProcessingInstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => ProcessingInstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => ProcessingInstanceType::MlG4DnXlarge,
+            "ml.m4.10xlarge" => ProcessingInstanceType::MlM410Xlarge,
+            "ml.m4.16xlarge" => ProcessingInstanceType::MlM416Xlarge,
+            "ml.m4.2xlarge" => ProcessingInstanceType::MlM42Xlarge,
+            "ml.m4.4xlarge" => ProcessingInstanceType::MlM44Xlarge,
+            "ml.m4.xlarge" => ProcessingInstanceType::MlM4Xlarge,
+            "ml.m5.12xlarge" => ProcessingInstanceType::MlM512Xlarge,
+            "ml.m5.24xlarge" => ProcessingInstanceType::MlM524Xlarge,
+            "ml.m5.2xlarge" => ProcessingInstanceType::MlM52Xlarge,
+            "ml.m5.4xlarge" => ProcessingInstanceType::MlM54Xlarge,
+            "ml.m5.large" => ProcessingInstanceType::MlM5Large,
+            "ml.m5.xlarge" => ProcessingInstanceType::MlM5Xlarge,
+            "ml.p2.16xlarge" => ProcessingInstanceType::MlP216Xlarge,
+            "ml.p2.8xlarge" => ProcessingInstanceType::MlP28Xlarge,
+            "ml.p2.xlarge" => ProcessingInstanceType::MlP2Xlarge,
+            "ml.p3.16xlarge" => ProcessingInstanceType::MlP316Xlarge,
+            "ml.p3.2xlarge" => ProcessingInstanceType::MlP32Xlarge,
+            "ml.p3.8xlarge" => ProcessingInstanceType::MlP38Xlarge,
+            "ml.r5.12xlarge" => ProcessingInstanceType::MlR512Xlarge,
+            "ml.r5.16xlarge" => ProcessingInstanceType::MlR516Xlarge,
+            "ml.r5.24xlarge" => ProcessingInstanceType::MlR524Xlarge,
+            "ml.r5.2xlarge" => ProcessingInstanceType::MlR52Xlarge,
+            "ml.r5.4xlarge" => ProcessingInstanceType::MlR54Xlarge,
+            "ml.r5.8xlarge" => ProcessingInstanceType::MlR58Xlarge,
+            "ml.r5.large" => ProcessingInstanceType::MlR5Large,
+            "ml.r5.xlarge" => ProcessingInstanceType::MlR5Xlarge,
+            "ml.t3.2xlarge" => ProcessingInstanceType::MlT32Xlarge,
+            "ml.t3.large" => ProcessingInstanceType::MlT3Large,
+            "ml.t3.medium" => ProcessingInstanceType::MlT3Medium,
+            "ml.t3.xlarge" => ProcessingInstanceType::MlT3Xlarge,
+            other => ProcessingInstanceType::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ml.c4.2xlarge", "ml.c4.4xlarge", "ml.c4.8xlarge", "ml.c4.xlarge", "ml.c5.18xlarge", "ml.c5.2xlarge", "ml.c5.4xlarge", "ml.c5.9xlarge", "ml.c5.xlarge", "ml.g4dn.12xlarge", "ml.g4dn.16xlarge", "ml.g4dn.2xlarge", "ml.g4dn.4xlarge", "ml.g4dn.8xlarge", "ml.g4dn.xlarge", "ml.m4.10xlarge", "ml.m4.16xlarge", "ml.m4.2xlarge", "ml.m4.4xlarge", "ml.m4.xlarge", "ml.m5.12xlarge", "ml.m5.24xlarge", "ml.m5.2xlarge", "ml.m5.4xlarge", "ml.m5.large", "ml.m5.xlarge", "ml.p2.16xlarge", "ml.p2.8xlarge", "ml.p2.xlarge", "ml.p3.16xlarge", "ml.p3.2xlarge", "ml.p3.8xlarge", "ml.r5.12xlarge", "ml.r5.16xlarge", "ml.r5.24xlarge", "ml.r5.2xlarge", "ml.r5.4xlarge", "ml.r5.8xlarge", "ml.r5.large", "ml.r5.xlarge", "ml.t3.2xlarge", "ml.t3.large", "ml.t3.medium", "ml.t3.xlarge"]
-                }
-            }
-impl AsRef<str> for ProcessingInstanceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ProcessingInstanceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ProcessingInstanceType::from(s))
+    }
+}
+impl ProcessingInstanceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ProcessingInstanceType::MlC42Xlarge => "ml.c4.2xlarge",
+            ProcessingInstanceType::MlC44Xlarge => "ml.c4.4xlarge",
+            ProcessingInstanceType::MlC48Xlarge => "ml.c4.8xlarge",
+            ProcessingInstanceType::MlC4Xlarge => "ml.c4.xlarge",
+            ProcessingInstanceType::MlC518Xlarge => "ml.c5.18xlarge",
+            ProcessingInstanceType::MlC52Xlarge => "ml.c5.2xlarge",
+            ProcessingInstanceType::MlC54Xlarge => "ml.c5.4xlarge",
+            ProcessingInstanceType::MlC59Xlarge => "ml.c5.9xlarge",
+            ProcessingInstanceType::MlC5Xlarge => "ml.c5.xlarge",
+            ProcessingInstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            ProcessingInstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            ProcessingInstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            ProcessingInstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            ProcessingInstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            ProcessingInstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
+            ProcessingInstanceType::MlM410Xlarge => "ml.m4.10xlarge",
+            ProcessingInstanceType::MlM416Xlarge => "ml.m4.16xlarge",
+            ProcessingInstanceType::MlM42Xlarge => "ml.m4.2xlarge",
+            ProcessingInstanceType::MlM44Xlarge => "ml.m4.4xlarge",
+            ProcessingInstanceType::MlM4Xlarge => "ml.m4.xlarge",
+            ProcessingInstanceType::MlM512Xlarge => "ml.m5.12xlarge",
+            ProcessingInstanceType::MlM524Xlarge => "ml.m5.24xlarge",
+            ProcessingInstanceType::MlM52Xlarge => "ml.m5.2xlarge",
+            ProcessingInstanceType::MlM54Xlarge => "ml.m5.4xlarge",
+            ProcessingInstanceType::MlM5Large => "ml.m5.large",
+            ProcessingInstanceType::MlM5Xlarge => "ml.m5.xlarge",
+            ProcessingInstanceType::MlP216Xlarge => "ml.p2.16xlarge",
+            ProcessingInstanceType::MlP28Xlarge => "ml.p2.8xlarge",
+            ProcessingInstanceType::MlP2Xlarge => "ml.p2.xlarge",
+            ProcessingInstanceType::MlP316Xlarge => "ml.p3.16xlarge",
+            ProcessingInstanceType::MlP32Xlarge => "ml.p3.2xlarge",
+            ProcessingInstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            ProcessingInstanceType::MlR512Xlarge => "ml.r5.12xlarge",
+            ProcessingInstanceType::MlR516Xlarge => "ml.r5.16xlarge",
+            ProcessingInstanceType::MlR524Xlarge => "ml.r5.24xlarge",
+            ProcessingInstanceType::MlR52Xlarge => "ml.r5.2xlarge",
+            ProcessingInstanceType::MlR54Xlarge => "ml.r5.4xlarge",
+            ProcessingInstanceType::MlR58Xlarge => "ml.r5.8xlarge",
+            ProcessingInstanceType::MlR5Large => "ml.r5.large",
+            ProcessingInstanceType::MlR5Xlarge => "ml.r5.xlarge",
+            ProcessingInstanceType::MlT32Xlarge => "ml.t3.2xlarge",
+            ProcessingInstanceType::MlT3Large => "ml.t3.large",
+            ProcessingInstanceType::MlT3Medium => "ml.t3.medium",
+            ProcessingInstanceType::MlT3Xlarge => "ml.t3.xlarge",
+            ProcessingInstanceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ml.c4.2xlarge",
+            "ml.c4.4xlarge",
+            "ml.c4.8xlarge",
+            "ml.c4.xlarge",
+            "ml.c5.18xlarge",
+            "ml.c5.2xlarge",
+            "ml.c5.4xlarge",
+            "ml.c5.9xlarge",
+            "ml.c5.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
+            "ml.m4.10xlarge",
+            "ml.m4.16xlarge",
+            "ml.m4.2xlarge",
+            "ml.m4.4xlarge",
+            "ml.m4.xlarge",
+            "ml.m5.12xlarge",
+            "ml.m5.24xlarge",
+            "ml.m5.2xlarge",
+            "ml.m5.4xlarge",
+            "ml.m5.large",
+            "ml.m5.xlarge",
+            "ml.p2.16xlarge",
+            "ml.p2.8xlarge",
+            "ml.p2.xlarge",
+            "ml.p3.16xlarge",
+            "ml.p3.2xlarge",
+            "ml.p3.8xlarge",
+            "ml.r5.12xlarge",
+            "ml.r5.16xlarge",
+            "ml.r5.24xlarge",
+            "ml.r5.2xlarge",
+            "ml.r5.4xlarge",
+            "ml.r5.8xlarge",
+            "ml.r5.large",
+            "ml.r5.xlarge",
+            "ml.t3.2xlarge",
+            "ml.t3.large",
+            "ml.t3.medium",
+            "ml.t3.xlarge",
+        ]
+    }
+}
+impl AsRef<str> for ProcessingInstanceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

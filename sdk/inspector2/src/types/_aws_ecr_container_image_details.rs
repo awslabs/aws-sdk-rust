@@ -3,7 +3,7 @@
 /// <p>The image details of the Amazon ECR container image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AwsEcrContainerImageDetails  {
+pub struct AwsEcrContainerImageDetails {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct AwsEcrContainerImageDetails  {
 }
 impl AwsEcrContainerImageDetails {
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The image tags attached to the Amazon ECR container image.</p>
-    pub fn image_tags(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn image_tags(&self) -> std::option::Option<&[std::string::String]> {
         self.image_tags.as_deref()
     }
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
-    pub fn pushed_at(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn pushed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.pushed_at.as_ref()
     }
     /// <p>The image author of the Amazon ECR container image.</p>
-    pub fn author(&self) -> std::option::Option<& str> {
+    pub fn author(&self) -> std::option::Option<&str> {
         self.author.as_deref()
     }
     /// <p>The architecture of the Amazon ECR container image.</p>
-    pub fn architecture(&self) -> std::option::Option<& str> {
+    pub fn architecture(&self) -> std::option::Option<&str> {
         self.architecture.as_deref()
     }
     /// <p>The image hash of the Amazon ECR container image.</p>
-    pub fn image_hash(&self) -> std::option::Option<& str> {
+    pub fn image_hash(&self) -> std::option::Option<&str> {
         self.image_hash.as_deref()
     }
     /// <p>The registry for the Amazon ECR container image.</p>
-    pub fn registry(&self) -> std::option::Option<& str> {
+    pub fn registry(&self) -> std::option::Option<&str> {
         self.registry.as_deref()
     }
     /// <p>The platform of the Amazon ECR container image.</p>
-    pub fn platform(&self) -> std::option::Option<& str> {
+    pub fn platform(&self) -> std::option::Option<&str> {
         self.platform.as_deref()
     }
 }
@@ -91,7 +91,8 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The name of the repository the Amazon ECR container image resides in.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// Appends an item to `image_tags`.
     ///
@@ -100,13 +101,17 @@ impl AwsEcrContainerImageDetailsBuilder {
     /// <p>The image tags attached to the Amazon ECR container image.</p>
     pub fn image_tags(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.image_tags.unwrap_or_default();
-                        v.push(input.into());
-                        self.image_tags = Some(v);
-                        self
+        v.push(input.into());
+        self.image_tags = Some(v);
+        self
     }
     /// <p>The image tags attached to the Amazon ECR container image.</p>
-    pub fn set_image_tags(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.image_tags = input; self
+    pub fn set_image_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.image_tags = input;
+        self
     }
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
     pub fn pushed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -115,7 +120,8 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The date and time the Amazon ECR container image was pushed.</p>
     pub fn set_pushed_at(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.pushed_at = input; self
+        self.pushed_at = input;
+        self
     }
     /// <p>The image author of the Amazon ECR container image.</p>
     pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
@@ -124,7 +130,8 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The image author of the Amazon ECR container image.</p>
     pub fn set_author(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.author = input; self
+        self.author = input;
+        self
     }
     /// <p>The architecture of the Amazon ECR container image.</p>
     pub fn architecture(mut self, input: impl Into<std::string::String>) -> Self {
@@ -133,7 +140,8 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The architecture of the Amazon ECR container image.</p>
     pub fn set_architecture(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.architecture = input; self
+        self.architecture = input;
+        self
     }
     /// <p>The image hash of the Amazon ECR container image.</p>
     pub fn image_hash(mut self, input: impl Into<std::string::String>) -> Self {
@@ -142,7 +150,8 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The image hash of the Amazon ECR container image.</p>
     pub fn set_image_hash(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.image_hash = input; self
+        self.image_hash = input;
+        self
     }
     /// <p>The registry for the Amazon ECR container image.</p>
     pub fn registry(mut self, input: impl Into<std::string::String>) -> Self {
@@ -151,7 +160,8 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The registry for the Amazon ECR container image.</p>
     pub fn set_registry(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry = input; self
+        self.registry = input;
+        self
     }
     /// <p>The platform of the Amazon ECR container image.</p>
     pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -160,28 +170,20 @@ impl AwsEcrContainerImageDetailsBuilder {
     }
     /// <p>The platform of the Amazon ECR container image.</p>
     pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// Consumes the builder and constructs a [`AwsEcrContainerImageDetails`](crate::types::AwsEcrContainerImageDetails).
     pub fn build(self) -> crate::types::AwsEcrContainerImageDetails {
         crate::types::AwsEcrContainerImageDetails {
-            repository_name: self.repository_name
-            ,
-            image_tags: self.image_tags
-            ,
-            pushed_at: self.pushed_at
-            ,
-            author: self.author
-            ,
-            architecture: self.architecture
-            ,
-            image_hash: self.image_hash
-            ,
-            registry: self.registry
-            ,
-            platform: self.platform
-            ,
+            repository_name: self.repository_name,
+            image_tags: self.image_tags,
+            pushed_at: self.pushed_at,
+            author: self.author,
+            architecture: self.architecture,
+            image_hash: self.image_hash,
+            registry: self.registry,
+            platform: self.platform,
         }
     }
 }
-

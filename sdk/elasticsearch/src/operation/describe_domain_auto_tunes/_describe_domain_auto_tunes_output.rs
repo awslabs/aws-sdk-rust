@@ -3,7 +3,7 @@
 /// <p>The result of <code>DescribeDomainAutoTunes</code> request. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainAutoTunesOutput  {
+pub struct DescribeDomainAutoTunesOutput {
     /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     #[doc(hidden)]
     pub auto_tunes: std::option::Option<std::vec::Vec<crate::types::AutoTune>>,
@@ -14,22 +14,24 @@ pub struct DescribeDomainAutoTunesOutput  {
 }
 impl DescribeDomainAutoTunesOutput {
     /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
-    pub fn auto_tunes(&self) -> std::option::Option<& [crate::types::AutoTune]> {
+    pub fn auto_tunes(&self) -> std::option::Option<&[crate::types::AutoTune]> {
         self.auto_tunes.as_deref()
     }
     /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDomainAutoTunesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDomainAutoTunesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainAutoTunesOutput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput).
-    pub fn builder() -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesOutputBuilder
+    {
         crate::operation::describe_domain_auto_tunes::builders::DescribeDomainAutoTunesOutputBuilder::default()
     }
 }
@@ -50,13 +52,17 @@ impl DescribeDomainAutoTunesOutputBuilder {
     /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
     pub fn auto_tunes(mut self, input: crate::types::AutoTune) -> Self {
         let mut v = self.auto_tunes.unwrap_or_default();
-                        v.push(input);
-                        self.auto_tunes = Some(v);
-                        self
+        v.push(input);
+        self.auto_tunes = Some(v);
+        self
     }
     /// <p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.</p>
-    pub fn set_auto_tunes(mut self, input: std::option::Option<std::vec::Vec<crate::types::AutoTune>>) -> Self {
-        self.auto_tunes = input; self
+    pub fn set_auto_tunes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AutoTune>>,
+    ) -> Self {
+        self.auto_tunes = input;
+        self
     }
     /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +71,26 @@ impl DescribeDomainAutoTunesOutputBuilder {
     }
     /// <p>Specifies an identifier to allow retrieval of paginated results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDomainAutoTunesOutput`](crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput).
-    pub fn build(self) -> crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput {
         crate::operation::describe_domain_auto_tunes::DescribeDomainAutoTunesOutput {
-            auto_tunes: self.auto_tunes
-            ,
-            next_token: self.next_token
-            ,
+            auto_tunes: self.auto_tunes,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

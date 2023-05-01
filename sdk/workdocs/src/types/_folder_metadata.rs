@@ -3,7 +3,7 @@
 /// <p>Describes a folder.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct FolderMetadata  {
+pub struct FolderMetadata {
     /// <p>The ID of the folder.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -40,39 +40,39 @@ pub struct FolderMetadata  {
 }
 impl FolderMetadata {
     /// <p>The ID of the folder.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the folder.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the creator.</p>
-    pub fn creator_id(&self) -> std::option::Option<& str> {
+    pub fn creator_id(&self) -> std::option::Option<&str> {
         self.creator_id.as_deref()
     }
     /// <p>The ID of the parent folder.</p>
-    pub fn parent_folder_id(&self) -> std::option::Option<& str> {
+    pub fn parent_folder_id(&self) -> std::option::Option<&str> {
         self.parent_folder_id.as_deref()
     }
     /// <p>The time when the folder was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time when the folder was updated.</p>
-    pub fn modified_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn modified_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified_timestamp.as_ref()
     }
     /// <p>The resource state of the folder.</p>
-    pub fn resource_state(&self) -> std::option::Option<& crate::types::ResourceStateType> {
+    pub fn resource_state(&self) -> std::option::Option<&crate::types::ResourceStateType> {
         self.resource_state.as_ref()
     }
     /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
-    pub fn signature(&self) -> std::option::Option<& str> {
+    pub fn signature(&self) -> std::option::Option<&str> {
         self.signature.as_deref()
     }
     /// <p>List of labels on the folder.</p>
-    pub fn labels(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn labels(&self) -> std::option::Option<&[std::string::String]> {
         self.labels.as_deref()
     }
     /// <p>The size of the folder metadata.</p>
@@ -84,7 +84,7 @@ impl FolderMetadata {
         self.latest_version_size
     }
 }
-impl  std::fmt::Debug for FolderMetadata  {
+impl std::fmt::Debug for FolderMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("FolderMetadata");
         formatter.field("id", &self.id);
@@ -132,7 +132,8 @@ impl FolderMetadataBuilder {
     }
     /// <p>The ID of the folder.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the folder.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +142,8 @@ impl FolderMetadataBuilder {
     }
     /// <p>The name of the folder.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of the creator.</p>
     pub fn creator_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +152,8 @@ impl FolderMetadataBuilder {
     }
     /// <p>The ID of the creator.</p>
     pub fn set_creator_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.creator_id = input; self
+        self.creator_id = input;
+        self
     }
     /// <p>The ID of the parent folder.</p>
     pub fn parent_folder_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -159,7 +162,8 @@ impl FolderMetadataBuilder {
     }
     /// <p>The ID of the parent folder.</p>
     pub fn set_parent_folder_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_folder_id = input; self
+        self.parent_folder_id = input;
+        self
     }
     /// <p>The time when the folder was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -167,8 +171,12 @@ impl FolderMetadataBuilder {
         self
     }
     /// <p>The time when the folder was created.</p>
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     /// <p>The time when the folder was updated.</p>
     pub fn modified_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -176,8 +184,12 @@ impl FolderMetadataBuilder {
         self
     }
     /// <p>The time when the folder was updated.</p>
-    pub fn set_modified_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.modified_timestamp = input; self
+    pub fn set_modified_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.modified_timestamp = input;
+        self
     }
     /// <p>The resource state of the folder.</p>
     pub fn resource_state(mut self, input: crate::types::ResourceStateType) -> Self {
@@ -185,8 +197,12 @@ impl FolderMetadataBuilder {
         self
     }
     /// <p>The resource state of the folder.</p>
-    pub fn set_resource_state(mut self, input: std::option::Option<crate::types::ResourceStateType>) -> Self {
-        self.resource_state = input; self
+    pub fn set_resource_state(
+        mut self,
+        input: std::option::Option<crate::types::ResourceStateType>,
+    ) -> Self {
+        self.resource_state = input;
+        self
     }
     /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
     pub fn signature(mut self, input: impl Into<std::string::String>) -> Self {
@@ -195,7 +211,8 @@ impl FolderMetadataBuilder {
     }
     /// <p>The unique identifier created from the subfolders and documents of the folder.</p>
     pub fn set_signature(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.signature = input; self
+        self.signature = input;
+        self
     }
     /// Appends an item to `labels`.
     ///
@@ -204,13 +221,17 @@ impl FolderMetadataBuilder {
     /// <p>List of labels on the folder.</p>
     pub fn labels(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.labels.unwrap_or_default();
-                        v.push(input.into());
-                        self.labels = Some(v);
-                        self
+        v.push(input.into());
+        self.labels = Some(v);
+        self
     }
     /// <p>List of labels on the folder.</p>
-    pub fn set_labels(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.labels = input; self
+    pub fn set_labels(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.labels = input;
+        self
     }
     /// <p>The size of the folder metadata.</p>
     pub fn size(mut self, input: i64) -> Self {
@@ -219,7 +240,8 @@ impl FolderMetadataBuilder {
     }
     /// <p>The size of the folder metadata.</p>
     pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.size = input; self
+        self.size = input;
+        self
     }
     /// <p>The size of the latest version of the folder metadata.</p>
     pub fn latest_version_size(mut self, input: i64) -> Self {
@@ -228,33 +250,23 @@ impl FolderMetadataBuilder {
     }
     /// <p>The size of the latest version of the folder metadata.</p>
     pub fn set_latest_version_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.latest_version_size = input; self
+        self.latest_version_size = input;
+        self
     }
     /// Consumes the builder and constructs a [`FolderMetadata`](crate::types::FolderMetadata).
     pub fn build(self) -> crate::types::FolderMetadata {
         crate::types::FolderMetadata {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            creator_id: self.creator_id
-            ,
-            parent_folder_id: self.parent_folder_id
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            modified_timestamp: self.modified_timestamp
-            ,
-            resource_state: self.resource_state
-            ,
-            signature: self.signature
-            ,
-            labels: self.labels
-            ,
-            size: self.size
-            ,
-            latest_version_size: self.latest_version_size
-            ,
+            id: self.id,
+            name: self.name,
+            creator_id: self.creator_id,
+            parent_folder_id: self.parent_folder_id,
+            created_timestamp: self.created_timestamp,
+            modified_timestamp: self.modified_timestamp,
+            resource_state: self.resource_state,
+            signature: self.signature,
+            labels: self.labels,
+            size: self.size,
+            latest_version_size: self.latest_version_size,
         }
     }
 }
@@ -275,4 +287,3 @@ impl std::fmt::Debug for FolderMetadataBuilder {
         formatter.finish()
     }
 }
-

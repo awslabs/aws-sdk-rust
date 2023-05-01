@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeOrganizationConfigRuleStatusesOutput  {
+pub struct DescribeOrganizationConfigRuleStatusesOutput {
     /// <p>A list of <code>OrganizationConfigRuleStatus</code> objects.</p>
     #[doc(hidden)]
-    pub organization_config_rule_statuses: std::option::Option<std::vec::Vec<crate::types::OrganizationConfigRuleStatus>>,
+    pub organization_config_rule_statuses:
+        std::option::Option<std::vec::Vec<crate::types::OrganizationConfigRuleStatus>>,
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,24 @@ pub struct DescribeOrganizationConfigRuleStatusesOutput  {
 }
 impl DescribeOrganizationConfigRuleStatusesOutput {
     /// <p>A list of <code>OrganizationConfigRuleStatus</code> objects.</p>
-    pub fn organization_config_rule_statuses(&self) -> std::option::Option<& [crate::types::OrganizationConfigRuleStatus]> {
+    pub fn organization_config_rule_statuses(
+        &self,
+    ) -> std::option::Option<&[crate::types::OrganizationConfigRuleStatus]> {
         self.organization_config_rule_statuses.as_deref()
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeOrganizationConfigRuleStatusesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeOrganizationConfigRuleStatusesOutput {
     /// Creates a new builder-style object to manufacture [`DescribeOrganizationConfigRuleStatusesOutput`](crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput).
-    pub fn builder() -> crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesOutputBuilder {
+    pub fn builder() -> crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesOutputBuilder{
         crate::operation::describe_organization_config_rule_statuses::builders::DescribeOrganizationConfigRuleStatusesOutputBuilder::default()
     }
 }
@@ -37,7 +40,8 @@ impl DescribeOrganizationConfigRuleStatusesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeOrganizationConfigRuleStatusesOutputBuilder {
-    pub(crate) organization_config_rule_statuses: std::option::Option<std::vec::Vec<crate::types::OrganizationConfigRuleStatus>>,
+    pub(crate) organization_config_rule_statuses:
+        std::option::Option<std::vec::Vec<crate::types::OrganizationConfigRuleStatus>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -47,15 +51,22 @@ impl DescribeOrganizationConfigRuleStatusesOutputBuilder {
     /// To override the contents of this collection use [`set_organization_config_rule_statuses`](Self::set_organization_config_rule_statuses).
     ///
     /// <p>A list of <code>OrganizationConfigRuleStatus</code> objects.</p>
-    pub fn organization_config_rule_statuses(mut self, input: crate::types::OrganizationConfigRuleStatus) -> Self {
+    pub fn organization_config_rule_statuses(
+        mut self,
+        input: crate::types::OrganizationConfigRuleStatus,
+    ) -> Self {
         let mut v = self.organization_config_rule_statuses.unwrap_or_default();
-                        v.push(input);
-                        self.organization_config_rule_statuses = Some(v);
-                        self
+        v.push(input);
+        self.organization_config_rule_statuses = Some(v);
+        self
     }
     /// <p>A list of <code>OrganizationConfigRuleStatus</code> objects.</p>
-    pub fn set_organization_config_rule_statuses(mut self, input: std::option::Option<std::vec::Vec<crate::types::OrganizationConfigRuleStatus>>) -> Self {
-        self.organization_config_rule_statuses = input; self
+    pub fn set_organization_config_rule_statuses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::OrganizationConfigRuleStatus>>,
+    ) -> Self {
+        self.organization_config_rule_statuses = input;
+        self
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +75,20 @@ impl DescribeOrganizationConfigRuleStatusesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a paginated response. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeOrganizationConfigRuleStatusesOutput`](crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput).
-    pub fn build(self) -> crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput {
+    pub fn build(self) -> crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput{
         crate::operation::describe_organization_config_rule_statuses::DescribeOrganizationConfigRuleStatusesOutput {
             organization_config_rule_statuses: self.organization_config_rule_statuses
             ,
@@ -86,4 +98,3 @@ impl DescribeOrganizationConfigRuleStatusesOutputBuilder {
         }
     }
 }
-

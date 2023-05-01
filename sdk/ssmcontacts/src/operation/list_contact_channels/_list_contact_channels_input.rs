@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListContactChannelsInput  {
+pub struct ListContactChannelsInput {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     #[doc(hidden)]
     pub contact_id: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct ListContactChannelsInput  {
 }
 impl ListContactChannelsInput {
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
-    pub fn contact_id(&self) -> std::option::Option<& str> {
+    pub fn contact_id(&self) -> std::option::Option<&str> {
         self.contact_id.as_deref()
     }
     /// <p>The pagination token to continue to the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of contact channels per page.</p>
@@ -29,8 +29,10 @@ impl ListContactChannelsInput {
 }
 impl ListContactChannelsInput {
     /// Creates a new builder-style object to manufacture [`ListContactChannelsInput`](crate::operation::list_contact_channels::ListContactChannelsInput).
-    pub fn builder() -> crate::operation::list_contact_channels::builders::ListContactChannelsInputBuilder {
-        crate::operation::list_contact_channels::builders::ListContactChannelsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::list_contact_channels::builders::ListContactChannelsInputBuilder {
+        crate::operation::list_contact_channels::builders::ListContactChannelsInputBuilder::default(
+        )
     }
 }
 
@@ -50,7 +52,8 @@ impl ListContactChannelsInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the contact.</p>
     pub fn set_contact_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_id = input; self
+        self.contact_id = input;
+        self
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl ListContactChannelsInputBuilder {
     }
     /// <p>The pagination token to continue to the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of contact channels per page.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -68,20 +72,22 @@ impl ListContactChannelsInputBuilder {
     }
     /// <p>The maximum number of contact channels per page.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListContactChannelsInput`](crate::operation::list_contact_channels::ListContactChannelsInput).
-    pub fn build(self) -> Result<crate::operation::list_contact_channels::ListContactChannelsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_contact_channels::ListContactChannelsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_contact_channels::ListContactChannelsInput {
-                contact_id: self.contact_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                contact_id: self.contact_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

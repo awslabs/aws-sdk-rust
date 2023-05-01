@@ -8,4 +8,3 @@ pub use crate::types::error::_resource_not_found_exception::ResourceNotFoundExce
 pub use crate::types::error::_invalid_request_exception::InvalidRequestExceptionBuilder;
 
 pub use crate::types::error::_internal_failure_exception::InternalFailureExceptionBuilder;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListDiscoveryJobsInput  {
+pub struct ListDiscoveryJobsInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
     #[doc(hidden)]
     pub storage_system_arn: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListDiscoveryJobsInput  {
 }
 impl ListDiscoveryJobsInput {
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
-    pub fn storage_system_arn(&self) -> std::option::Option<& str> {
+    pub fn storage_system_arn(&self) -> std::option::Option<&str> {
         self.storage_system_arn.as_deref()
     }
     /// <p>Specifies how many results you want in the response.</p>
@@ -23,13 +23,14 @@ impl ListDiscoveryJobsInput {
         self.max_results
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListDiscoveryJobsInput {
     /// Creates a new builder-style object to manufacture [`ListDiscoveryJobsInput`](crate::operation::list_discovery_jobs::ListDiscoveryJobsInput).
-    pub fn builder() -> crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsInputBuilder {
         crate::operation::list_discovery_jobs::builders::ListDiscoveryJobsInputBuilder::default()
     }
 }
@@ -49,8 +50,12 @@ impl ListDiscoveryJobsInputBuilder {
         self
     }
     /// <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system. Use this parameter if you only want to list the discovery jobs that are associated with a specific storage system.</p>
-    pub fn set_storage_system_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.storage_system_arn = input; self
+    pub fn set_storage_system_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.storage_system_arn = input;
+        self
     }
     /// <p>Specifies how many results you want in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +64,8 @@ impl ListDiscoveryJobsInputBuilder {
     }
     /// <p>Specifies how many results you want in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +74,22 @@ impl ListDiscoveryJobsInputBuilder {
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListDiscoveryJobsInput`](crate::operation::list_discovery_jobs::ListDiscoveryJobsInput).
-    pub fn build(self) -> Result<crate::operation::list_discovery_jobs::ListDiscoveryJobsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_discovery_jobs::ListDiscoveryJobsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_discovery_jobs::ListDiscoveryJobsInput {
-                storage_system_arn: self.storage_system_arn
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                storage_system_arn: self.storage_system_arn,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

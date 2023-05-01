@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteThreatIntelSetInput  {
+pub struct DeleteThreatIntelSetInput {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
     #[doc(hidden)]
     pub detector_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteThreatIntelSetInput  {
 }
 impl DeleteThreatIntelSetInput {
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
-    pub fn detector_id(&self) -> std::option::Option<& str> {
+    pub fn detector_id(&self) -> std::option::Option<&str> {
         self.detector_id.as_deref()
     }
     /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
-    pub fn threat_intel_set_id(&self) -> std::option::Option<& str> {
+    pub fn threat_intel_set_id(&self) -> std::option::Option<&str> {
         self.threat_intel_set_id.as_deref()
     }
 }
 impl DeleteThreatIntelSetInput {
     /// Creates a new builder-style object to manufacture [`DeleteThreatIntelSetInput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput).
-    pub fn builder() -> crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetInputBuilder {
         crate::operation::delete_threat_intel_set::builders::DeleteThreatIntelSetInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteThreatIntelSetInputBuilder {
     }
     /// <p>The unique ID of the detector that the threatIntelSet is associated with.</p>
     pub fn set_detector_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_id = input; self
+        self.detector_id = input;
+        self
     }
     /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
     pub fn threat_intel_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +52,25 @@ impl DeleteThreatIntelSetInputBuilder {
         self
     }
     /// <p>The unique ID of the threatIntelSet that you want to delete.</p>
-    pub fn set_threat_intel_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.threat_intel_set_id = input; self
+    pub fn set_threat_intel_set_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.threat_intel_set_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteThreatIntelSetInput`](crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput).
-    pub fn build(self) -> Result<crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_threat_intel_set::DeleteThreatIntelSetInput {
-                detector_id: self.detector_id
-                ,
-                threat_intel_set_id: self.threat_intel_set_id
-                ,
-            }
+                detector_id: self.detector_id,
+                threat_intel_set_id: self.threat_intel_set_id,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Information about the additional configuration for a feature in your GuardDuty account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetectorAdditionalConfiguration  {
+pub struct DetectorAdditionalConfiguration {
     /// <p>Name of the additional configuration.</p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::FeatureAdditionalConfiguration>,
@@ -13,11 +13,11 @@ pub struct DetectorAdditionalConfiguration  {
 }
 impl DetectorAdditionalConfiguration {
     /// <p>Name of the additional configuration.</p>
-    pub fn name(&self) -> std::option::Option<& crate::types::FeatureAdditionalConfiguration> {
+    pub fn name(&self) -> std::option::Option<&crate::types::FeatureAdditionalConfiguration> {
         self.name.as_ref()
     }
     /// <p>Status of the additional configuration.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::FeatureStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::FeatureStatus> {
         self.status.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl DetectorAdditionalConfigurationBuilder {
         self
     }
     /// <p>Name of the additional configuration.</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::FeatureAdditionalConfiguration>) -> Self {
-        self.name = input; self
+    pub fn set_name(
+        mut self,
+        input: std::option::Option<crate::types::FeatureAdditionalConfiguration>,
+    ) -> Self {
+        self.name = input;
+        self
     }
     /// <p>Status of the additional configuration.</p>
     pub fn status(mut self, input: crate::types::FeatureStatus) -> Self {
@@ -52,16 +56,14 @@ impl DetectorAdditionalConfigurationBuilder {
     }
     /// <p>Status of the additional configuration.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::FeatureStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`DetectorAdditionalConfiguration`](crate::types::DetectorAdditionalConfiguration).
     pub fn build(self) -> crate::types::DetectorAdditionalConfiguration {
         crate::types::DetectorAdditionalConfiguration {
-            name: self.name
-            ,
-            status: self.status
-            ,
+            name: self.name,
+            status: self.status,
         }
     }
 }
-

@@ -4,57 +4,80 @@ pub use crate::operation::create_scheduled_action::_create_scheduled_action_outp
 pub use crate::operation::create_scheduled_action::_create_scheduled_action_input::CreateScheduledActionInputBuilder;
 
 /// Fluent builder constructing a request to `CreateScheduledAction`.
-/// 
+///
 /// <p>Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateScheduledActionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_scheduled_action::builders::CreateScheduledActionInputBuilder,
+    inner: crate::operation::create_scheduled_action::builders::CreateScheduledActionInputBuilder,
 }
-impl CreateScheduledActionFluentBuilder  {
+impl CreateScheduledActionFluentBuilder {
     /// Creates a new `CreateScheduledAction`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_scheduled_action::CreateScheduledAction, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_scheduled_action::CreateScheduledActionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_scheduled_action::CreateScheduledActionOutput, aws_smithy_http::result::SdkError<crate::operation::create_scheduled_action::CreateScheduledActionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_scheduled_action::CreateScheduledAction,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_scheduled_action::CreateScheduledActionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_scheduled_action::CreateScheduledActionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_scheduled_action::CreateScheduledActionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
     pub fn scheduled_action_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.scheduled_action_name(input.into());
         self
     }
     /// <p>The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    pub fn set_scheduled_action_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_scheduled_action_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_scheduled_action_name(input);
         self
     }
@@ -64,7 +87,10 @@ impl CreateScheduledActionFluentBuilder  {
         self
     }
     /// <p>A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see <code>ScheduledAction</code>. </p>
-    pub fn set_target_action(mut self, input: std::option::Option<crate::types::ScheduledActionType>) -> Self {
+    pub fn set_target_action(
+        mut self,
+        input: std::option::Option<crate::types::ScheduledActionType>,
+    ) -> Self {
         self.inner = self.inner.set_target_action(input);
         self
     }
@@ -94,7 +120,10 @@ impl CreateScheduledActionFluentBuilder  {
         self
     }
     /// <p>The description of the scheduled action. </p>
-    pub fn set_scheduled_action_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_scheduled_action_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_scheduled_action_description(input);
         self
     }
@@ -104,7 +133,10 @@ impl CreateScheduledActionFluentBuilder  {
         self
     }
     /// <p>The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see <code>ScheduledAction</code>.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_start_time(input);
         self
     }
@@ -129,4 +161,3 @@ impl CreateScheduledActionFluentBuilder  {
         self
     }
 }
-

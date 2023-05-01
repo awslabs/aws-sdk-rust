@@ -4,56 +4,63 @@ pub use crate::operation::describe_egress_only_internet_gateways::_describe_egre
 pub use crate::operation::describe_egress_only_internet_gateways::_describe_egress_only_internet_gateways_input::DescribeEgressOnlyInternetGatewaysInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeEgressOnlyInternetGateways`.
-/// 
+///
 /// <p>Describes one or more of your egress-only internet gateways.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEgressOnlyInternetGatewaysFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_egress_only_internet_gateways::builders::DescribeEgressOnlyInternetGatewaysInputBuilder,
 }
-impl DescribeEgressOnlyInternetGatewaysFluentBuilder  {
+impl DescribeEgressOnlyInternetGatewaysFluentBuilder {
     /// Creates a new `DescribeEgressOnlyInternetGateways`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGateways, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput, aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_egress_only_internet_gateways::paginator::DescribeEgressOnlyInternetGatewaysPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_egress_only_internet_gateways::paginator::DescribeEgressOnlyInternetGatewaysPaginator {
-                                crate::operation::describe_egress_only_internet_gateways::paginator::DescribeEgressOnlyInternetGatewaysPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_egress_only_internet_gateways::paginator::DescribeEgressOnlyInternetGatewaysPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::describe_egress_only_internet_gateways::paginator::DescribeEgressOnlyInternetGatewaysPaginator{
+        crate::operation::describe_egress_only_internet_gateways::paginator::DescribeEgressOnlyInternetGatewaysPaginator::new(self.handle, self.inner)
+    }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
         self.inner = self.inner.dry_run(input);
@@ -69,12 +76,18 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder  {
     /// To override the contents of this collection use [`set_egress_only_internet_gateway_ids`](Self::set_egress_only_internet_gateway_ids).
     ///
     /// <p>One or more egress-only internet gateway IDs.</p>
-    pub fn egress_only_internet_gateway_ids(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn egress_only_internet_gateway_ids(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.egress_only_internet_gateway_ids(input.into());
         self
     }
     /// <p>One or more egress-only internet gateway IDs.</p>
-    pub fn set_egress_only_internet_gateway_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_egress_only_internet_gateway_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_egress_only_internet_gateway_ids(input);
         self
     }
@@ -102,35 +115,37 @@ impl DescribeEgressOnlyInternetGatewaysFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
-    /// <p>One or more filters.</p> 
-    /// <ul> 
+    /// <p>One or more filters.</p>
+    /// <ul>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
     pub fn filters(mut self, input: crate::types::Filter) -> Self {
         self.inner = self.inner.filters(input);
         self
     }
-    /// <p>One or more filters.</p> 
-    /// <ul> 
+    /// <p>One or more filters.</p>
+    /// <ul>
     /// <li> <p> <code>tag</code>:<key>
-    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key 
-    /// <code>Owner</code> and the value 
-    /// <code>TeamA</code>, specify 
-    /// <code>tag:Owner</code> for the filter name and 
+    /// - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key
+    /// <code>Owner</code> and the value
+    /// <code>TeamA</code>, specify
+    /// <code>tag:Owner</code> for the filter name and
     /// <code>TeamA</code> for the filter value.
-    /// </key></p> </li> 
-    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li> 
+    /// </key></p> </li>
+    /// <li> <p> <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</p> </li>
     /// </ul>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::Filter>>) -> Self {
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Filter>>,
+    ) -> Self {
         self.inner = self.inner.set_filters(input);
         self
     }
 }
-

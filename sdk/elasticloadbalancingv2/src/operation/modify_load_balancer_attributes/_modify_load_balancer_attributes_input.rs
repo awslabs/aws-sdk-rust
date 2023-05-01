@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyLoadBalancerAttributesInput  {
+pub struct ModifyLoadBalancerAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
     #[doc(hidden)]
     pub load_balancer_arn: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct ModifyLoadBalancerAttributesInput  {
 }
 impl ModifyLoadBalancerAttributesInput {
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn load_balancer_arn(&self) -> std::option::Option<& str> {
+    pub fn load_balancer_arn(&self) -> std::option::Option<&str> {
         self.load_balancer_arn.as_deref()
     }
     /// <p>The load balancer attributes.</p>
-    pub fn attributes(&self) -> std::option::Option<& [crate::types::LoadBalancerAttribute]> {
+    pub fn attributes(&self) -> std::option::Option<&[crate::types::LoadBalancerAttribute]> {
         self.attributes.as_deref()
     }
 }
 impl ModifyLoadBalancerAttributesInput {
     /// Creates a new builder-style object to manufacture [`ModifyLoadBalancerAttributesInput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput).
-    pub fn builder() -> crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder {
+    pub fn builder() -> crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder{
         crate::operation::modify_load_balancer_attributes::builders::ModifyLoadBalancerAttributesInputBuilder::default()
     }
 }
@@ -41,8 +41,12 @@ impl ModifyLoadBalancerAttributesInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-    pub fn set_load_balancer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.load_balancer_arn = input; self
+    pub fn set_load_balancer_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.load_balancer_arn = input;
+        self
     }
     /// Appends an item to `attributes`.
     ///
@@ -51,24 +55,30 @@ impl ModifyLoadBalancerAttributesInputBuilder {
     /// <p>The load balancer attributes.</p>
     pub fn attributes(mut self, input: crate::types::LoadBalancerAttribute) -> Self {
         let mut v = self.attributes.unwrap_or_default();
-                        v.push(input);
-                        self.attributes = Some(v);
-                        self
+        v.push(input);
+        self.attributes = Some(v);
+        self
     }
     /// <p>The load balancer attributes.</p>
-    pub fn set_attributes(mut self, input: std::option::Option<std::vec::Vec<crate::types::LoadBalancerAttribute>>) -> Self {
-        self.attributes = input; self
+    pub fn set_attributes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LoadBalancerAttribute>>,
+    ) -> Self {
+        self.attributes = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyLoadBalancerAttributesInput`](crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput).
-    pub fn build(self) -> Result<crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesInput {
-                load_balancer_arn: self.load_balancer_arn
-                ,
-                attributes: self.attributes
-                ,
-            }
+                load_balancer_arn: self.load_balancer_arn,
+                attributes: self.attributes,
+            },
         )
     }
 }
-

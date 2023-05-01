@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListStorageSystemsInput  {
+pub struct ListStorageSystemsInput {
     /// <p>Specifies how many results you want in the response.</p>
     #[doc(hidden)]
     pub max_results: std::option::Option<i32>,
@@ -16,13 +16,14 @@ impl ListStorageSystemsInput {
         self.max_results
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListStorageSystemsInput {
     /// Creates a new builder-style object to manufacture [`ListStorageSystemsInput`](crate::operation::list_storage_systems::ListStorageSystemsInput).
-    pub fn builder() -> crate::operation::list_storage_systems::builders::ListStorageSystemsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_storage_systems::builders::ListStorageSystemsInputBuilder {
         crate::operation::list_storage_systems::builders::ListStorageSystemsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListStorageSystemsInputBuilder {
     }
     /// <p>Specifies how many results you want in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl ListStorageSystemsInputBuilder {
     }
     /// <p>Specifies an opaque string that indicates the position to begin the next list of results in the response. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListStorageSystemsInput`](crate::operation::list_storage_systems::ListStorageSystemsInput).
-    pub fn build(self) -> Result<crate::operation::list_storage_systems::ListStorageSystemsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_storage_systems::ListStorageSystemsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_storage_systems::ListStorageSystemsInput {
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

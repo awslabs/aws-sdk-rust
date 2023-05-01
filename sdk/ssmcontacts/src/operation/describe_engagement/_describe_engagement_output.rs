@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEngagementOutput  {
+pub struct DescribeEngagementOutput {
     /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
     #[doc(hidden)]
     pub contact_arn: std::option::Option<std::string::String>,
@@ -37,54 +37,55 @@ pub struct DescribeEngagementOutput  {
 }
 impl DescribeEngagementOutput {
     /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
-    pub fn contact_arn(&self) -> std::option::Option<& str> {
+    pub fn contact_arn(&self) -> std::option::Option<&str> {
         self.contact_arn.as_deref()
     }
     /// <p>The ARN of the engagement.</p>
-    pub fn engagement_arn(&self) -> std::option::Option<& str> {
+    pub fn engagement_arn(&self) -> std::option::Option<&str> {
         self.engagement_arn.as_deref()
     }
     /// <p>The user that started the engagement.</p>
-    pub fn sender(&self) -> std::option::Option<& str> {
+    pub fn sender(&self) -> std::option::Option<&str> {
         self.sender.as_deref()
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn subject(&self) -> std::option::Option<& str> {
+    pub fn subject(&self) -> std::option::Option<&str> {
         self.subject.as_deref()
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
-    pub fn content(&self) -> std::option::Option<& str> {
+    pub fn content(&self) -> std::option::Option<&str> {
         self.content.as_deref()
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_subject(&self) -> std::option::Option<& str> {
+    pub fn public_subject(&self) -> std::option::Option<&str> {
         self.public_subject.as_deref()
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
-    pub fn public_content(&self) -> std::option::Option<& str> {
+    pub fn public_content(&self) -> std::option::Option<&str> {
         self.public_content.as_deref()
     }
     /// <p>The ARN of the incident in which the engagement occurred.</p>
-    pub fn incident_id(&self) -> std::option::Option<& str> {
+    pub fn incident_id(&self) -> std::option::Option<&str> {
         self.incident_id.as_deref()
     }
     /// <p>The time that the engagement started.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
     /// <p>The time that the engagement ended.</p>
-    pub fn stop_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn stop_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.stop_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEngagementOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEngagementOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEngagementOutput`](crate::operation::describe_engagement::DescribeEngagementOutput).
-    pub fn builder() -> crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder {
         crate::operation::describe_engagement::builders::DescribeEngagementOutputBuilder::default()
     }
 }
@@ -113,7 +114,8 @@ impl DescribeEngagementOutputBuilder {
     }
     /// <p>The ARN of the escalation plan or contacts involved in the engagement.</p>
     pub fn set_contact_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.contact_arn = input; self
+        self.contact_arn = input;
+        self
     }
     /// <p>The ARN of the engagement.</p>
     pub fn engagement_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -122,7 +124,8 @@ impl DescribeEngagementOutputBuilder {
     }
     /// <p>The ARN of the engagement.</p>
     pub fn set_engagement_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engagement_arn = input; self
+        self.engagement_arn = input;
+        self
     }
     /// <p>The user that started the engagement.</p>
     pub fn sender(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,7 +134,8 @@ impl DescribeEngagementOutputBuilder {
     }
     /// <p>The user that started the engagement.</p>
     pub fn set_sender(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sender = input; self
+        self.sender = input;
+        self
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -140,7 +144,8 @@ impl DescribeEngagementOutputBuilder {
     }
     /// <p>The secure subject of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn set_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subject = input; self
+        self.subject = input;
+        self
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -149,7 +154,8 @@ impl DescribeEngagementOutputBuilder {
     }
     /// <p>The secure content of the message that was sent to the contact. Use this field for engagements to <code>VOICE</code> and <code>EMAIL</code>.</p>
     pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.content = input; self
+        self.content = input;
+        self
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_subject(mut self, input: impl Into<std::string::String>) -> Self {
@@ -158,7 +164,8 @@ impl DescribeEngagementOutputBuilder {
     }
     /// <p>The insecure subject of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn set_public_subject(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_subject = input; self
+        self.public_subject = input;
+        self
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn public_content(mut self, input: impl Into<std::string::String>) -> Self {
@@ -167,7 +174,8 @@ impl DescribeEngagementOutputBuilder {
     }
     /// <p>The insecure content of the message that was sent to the contact. Use this field for engagements to <code>SMS</code>.</p>
     pub fn set_public_content(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.public_content = input; self
+        self.public_content = input;
+        self
     }
     /// <p>The ARN of the incident in which the engagement occurred.</p>
     pub fn incident_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -176,7 +184,8 @@ impl DescribeEngagementOutputBuilder {
     }
     /// <p>The ARN of the incident in which the engagement occurred.</p>
     pub fn set_incident_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.incident_id = input; self
+        self.incident_id = input;
+        self
     }
     /// <p>The time that the engagement started.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -184,8 +193,12 @@ impl DescribeEngagementOutputBuilder {
         self
     }
     /// <p>The time that the engagement started.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
     /// <p>The time that the engagement ended.</p>
     pub fn stop_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -194,42 +207,32 @@ impl DescribeEngagementOutputBuilder {
     }
     /// <p>The time that the engagement ended.</p>
     pub fn set_stop_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.stop_time = input; self
+        self.stop_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEngagementOutput`](crate::operation::describe_engagement::DescribeEngagementOutput).
     pub fn build(self) -> crate::operation::describe_engagement::DescribeEngagementOutput {
         crate::operation::describe_engagement::DescribeEngagementOutput {
-            contact_arn: self.contact_arn
-            ,
-            engagement_arn: self.engagement_arn
-            ,
-            sender: self.sender
-            ,
-            subject: self.subject
-            ,
-            content: self.content
-            ,
-            public_subject: self.public_subject
-            ,
-            public_content: self.public_content
-            ,
-            incident_id: self.incident_id
-            ,
-            start_time: self.start_time
-            ,
-            stop_time: self.stop_time
-            ,
+            contact_arn: self.contact_arn,
+            engagement_arn: self.engagement_arn,
+            sender: self.sender,
+            subject: self.subject,
+            content: self.content,
+            public_subject: self.public_subject,
+            public_content: self.public_content,
+            incident_id: self.incident_id,
+            start_time: self.start_time,
+            stop_time: self.stop_time,
             _request_id: self._request_id,
         }
     }
 }
-

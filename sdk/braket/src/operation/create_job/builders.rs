@@ -4,50 +4,66 @@ pub use crate::operation::create_job::_create_job_output::CreateJobOutputBuilder
 pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 
 /// Fluent builder constructing a request to `CreateJob`.
-/// 
+///
 /// <p>Creates an Amazon Braket job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_job::builders::CreateJobInputBuilder,
+    inner: crate::operation::create_job::builders::CreateJobInputBuilder,
 }
-impl CreateJobFluentBuilder  {
+impl CreateJobFluentBuilder {
     /// Creates a new `CreateJob`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_job::CreateJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_job::CreateJobOutput, aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_job::CreateJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_job::CreateJobOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -64,7 +80,10 @@ impl CreateJobFluentBuilder  {
         self
     }
     /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
-    pub fn set_algorithm_specification(mut self, input: std::option::Option<crate::types::AlgorithmSpecification>) -> Self {
+    pub fn set_algorithm_specification(
+        mut self,
+        input: std::option::Option<crate::types::AlgorithmSpecification>,
+    ) -> Self {
         self.inner = self.inner.set_algorithm_specification(input);
         self
     }
@@ -78,7 +97,10 @@ impl CreateJobFluentBuilder  {
         self
     }
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
-    pub fn set_input_data_config(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputFileConfig>>) -> Self {
+    pub fn set_input_data_config(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InputFileConfig>>,
+    ) -> Self {
         self.inner = self.inner.set_input_data_config(input);
         self
     }
@@ -88,7 +110,10 @@ impl CreateJobFluentBuilder  {
         self
     }
     /// <p>The path to the S3 location where you want to store job artifacts and the encryption key used to store them.</p>
-    pub fn set_output_data_config(mut self, input: std::option::Option<crate::types::JobOutputDataConfig>) -> Self {
+    pub fn set_output_data_config(
+        mut self,
+        input: std::option::Option<crate::types::JobOutputDataConfig>,
+    ) -> Self {
         self.inner = self.inner.set_output_data_config(input);
         self
     }
@@ -98,7 +123,10 @@ impl CreateJobFluentBuilder  {
         self
     }
     /// <p>Information about the output locations for job checkpoint data.</p>
-    pub fn set_checkpoint_config(mut self, input: std::option::Option<crate::types::JobCheckpointConfig>) -> Self {
+    pub fn set_checkpoint_config(
+        mut self,
+        input: std::option::Option<crate::types::JobCheckpointConfig>,
+    ) -> Self {
         self.inner = self.inner.set_checkpoint_config(input);
         self
     }
@@ -128,7 +156,10 @@ impl CreateJobFluentBuilder  {
         self
     }
     /// <p> The user-defined criteria that specifies when a job stops running.</p>
-    pub fn set_stopping_condition(mut self, input: std::option::Option<crate::types::JobStoppingCondition>) -> Self {
+    pub fn set_stopping_condition(
+        mut self,
+        input: std::option::Option<crate::types::JobStoppingCondition>,
+    ) -> Self {
         self.inner = self.inner.set_stopping_condition(input);
         self
     }
@@ -138,7 +169,10 @@ impl CreateJobFluentBuilder  {
         self
     }
     /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
-    pub fn set_instance_config(mut self, input: std::option::Option<crate::types::InstanceConfig>) -> Self {
+    pub fn set_instance_config(
+        mut self,
+        input: std::option::Option<crate::types::InstanceConfig>,
+    ) -> Self {
         self.inner = self.inner.set_instance_config(input);
         self
     }
@@ -147,12 +181,21 @@ impl CreateJobFluentBuilder  {
     /// To override the contents of this collection use [`set_hyper_parameters`](Self::set_hyper_parameters).
     ///
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
-    pub fn hyper_parameters(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn hyper_parameters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.hyper_parameters(k.into(), v.into());
         self
     }
     /// <p>Algorithm-specific parameters used by an Amazon Braket job that influence the quality of the training job. The values are set with a string of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of th hyperparameter.</p>
-    pub fn set_hyper_parameters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_hyper_parameters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_hyper_parameters(input);
         self
     }
@@ -162,7 +205,10 @@ impl CreateJobFluentBuilder  {
         self
     }
     /// <p>The quantum processing unit (QPU) or simulator used to create an Amazon Braket job.</p>
-    pub fn set_device_config(mut self, input: std::option::Option<crate::types::DeviceConfig>) -> Self {
+    pub fn set_device_config(
+        mut self,
+        input: std::option::Option<crate::types::DeviceConfig>,
+    ) -> Self {
         self.inner = self.inner.set_device_config(input);
         self
     }
@@ -171,14 +217,22 @@ impl CreateJobFluentBuilder  {
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.tags(k.into(), v.into());
         self
     }
     /// <p>A tag object that consists of a key and an optional value, used to manage metadata for Amazon Braket resources.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
 }
-

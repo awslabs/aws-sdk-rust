@@ -3,7 +3,7 @@
 /// <p>Details about a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResourceInventory  {
+pub struct ResourceInventory {
     /// <p>ID of the resource.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
@@ -25,27 +25,27 @@ pub struct ResourceInventory  {
 }
 impl ResourceInventory {
     /// <p>ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>Type of resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::ResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Platform of the resource.</p>
-    pub fn platform(&self) -> std::option::Option<& str> {
+    pub fn platform(&self) -> std::option::Option<&str> {
         self.platform.as_deref()
     }
     /// <p>Platform version of the resource in the inventory.</p>
-    pub fn platform_version(&self) -> std::option::Option<& str> {
+    pub fn platform_version(&self) -> std::option::Option<&str> {
         self.platform_version.as_deref()
     }
     /// <p>ID of the account that owns the resource.</p>
-    pub fn resource_owning_account_id(&self) -> std::option::Option<& str> {
+    pub fn resource_owning_account_id(&self) -> std::option::Option<&str> {
         self.resource_owning_account_id.as_deref()
     }
 }
@@ -75,7 +75,8 @@ impl ResourceInventoryBuilder {
     }
     /// <p>ID of the resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>Type of resource.</p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
@@ -83,8 +84,12 @@ impl ResourceInventoryBuilder {
         self
     }
     /// <p>Type of resource.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::ResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +98,8 @@ impl ResourceInventoryBuilder {
     }
     /// <p>Amazon Resource Name (ARN) of the resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>Platform of the resource.</p>
     pub fn platform(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +108,8 @@ impl ResourceInventoryBuilder {
     }
     /// <p>Platform of the resource.</p>
     pub fn set_platform(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform = input; self
+        self.platform = input;
+        self
     }
     /// <p>Platform version of the resource in the inventory.</p>
     pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -111,7 +118,8 @@ impl ResourceInventoryBuilder {
     }
     /// <p>Platform version of the resource in the inventory.</p>
     pub fn set_platform_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.platform_version = input; self
+        self.platform_version = input;
+        self
     }
     /// <p>ID of the account that owns the resource.</p>
     pub fn resource_owning_account_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,25 +127,22 @@ impl ResourceInventoryBuilder {
         self
     }
     /// <p>ID of the account that owns the resource.</p>
-    pub fn set_resource_owning_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_owning_account_id = input; self
+    pub fn set_resource_owning_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_owning_account_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ResourceInventory`](crate::types::ResourceInventory).
     pub fn build(self) -> crate::types::ResourceInventory {
         crate::types::ResourceInventory {
-            resource_id: self.resource_id
-            ,
-            resource_type: self.resource_type
-            ,
-            resource_arn: self.resource_arn
-            ,
-            platform: self.platform
-            ,
-            platform_version: self.platform_version
-            ,
-            resource_owning_account_id: self.resource_owning_account_id
-            ,
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
+            resource_arn: self.resource_arn,
+            platform: self.platform,
+            platform_version: self.platform_version,
+            resource_owning_account_id: self.resource_owning_account_id,
         }
     }
 }
-

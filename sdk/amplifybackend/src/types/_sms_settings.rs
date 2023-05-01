@@ -3,14 +3,14 @@
 /// <p>SMS settings for authentication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SmsSettings  {
+pub struct SmsSettings {
     /// <p>The contents of the SMS message.</p>
     #[doc(hidden)]
     pub sms_message: std::option::Option<std::string::String>,
 }
 impl SmsSettings {
     /// <p>The contents of the SMS message.</p>
-    pub fn sms_message(&self) -> std::option::Option<& str> {
+    pub fn sms_message(&self) -> std::option::Option<&str> {
         self.sms_message.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl SmsSettingsBuilder {
     }
     /// <p>The contents of the SMS message.</p>
     pub fn set_sms_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.sms_message = input; self
+        self.sms_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`SmsSettings`](crate::types::SmsSettings).
     pub fn build(self) -> crate::types::SmsSettings {
         crate::types::SmsSettings {
-            sms_message: self.sms_message
-            ,
+            sms_message: self.sms_message,
         }
     }
 }
-

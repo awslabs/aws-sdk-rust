@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartOnDemandAppReplicationOutput  {
+pub struct StartOnDemandAppReplicationOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for StartOnDemandAppReplicationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartOnDemandAppReplicationOutput {
     /// Creates a new builder-style object to manufacture [`StartOnDemandAppReplicationOutput`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput).
-    pub fn builder() -> crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationOutputBuilder {
+    pub fn builder() -> crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationOutputBuilder{
         crate::operation::start_on_demand_app_replication::builders::StartOnDemandAppReplicationOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct StartOnDemandAppReplicationOutputBuilder {
 }
 impl StartOnDemandAppReplicationOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartOnDemandAppReplicationOutput`](crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput).
-    pub fn build(self) -> crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput {
         crate::operation::start_on_demand_app_replication::StartOnDemandAppReplicationOutput {
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p>A complex type that contains information about changes to the Route&nbsp;53 DNS records that Cloud Map creates when you register an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnsConfigChange  {
+pub struct DnsConfigChange {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
     #[doc(hidden)]
     pub dns_records: std::option::Option<std::vec::Vec<crate::types::DnsRecord>>,
 }
 impl DnsConfigChange {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
-    pub fn dns_records(&self) -> std::option::Option<& [crate::types::DnsRecord]> {
+    pub fn dns_records(&self) -> std::option::Option<&[crate::types::DnsRecord]> {
         self.dns_records.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl DnsConfigChangeBuilder {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
     pub fn dns_records(mut self, input: crate::types::DnsRecord) -> Self {
         let mut v = self.dns_records.unwrap_or_default();
-                        v.push(input);
-                        self.dns_records = Some(v);
-                        self
+        v.push(input);
+        self.dns_records = Some(v);
+        self
     }
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
-    pub fn set_dns_records(mut self, input: std::option::Option<std::vec::Vec<crate::types::DnsRecord>>) -> Self {
-        self.dns_records = input; self
+    pub fn set_dns_records(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DnsRecord>>,
+    ) -> Self {
+        self.dns_records = input;
+        self
     }
     /// Consumes the builder and constructs a [`DnsConfigChange`](crate::types::DnsConfigChange).
     pub fn build(self) -> crate::types::DnsConfigChange {
         crate::types::DnsConfigChange {
-            dns_records: self.dns_records
-            ,
+            dns_records: self.dns_records,
         }
     }
 }
-

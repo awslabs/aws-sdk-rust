@@ -3,7 +3,7 @@
 /// <p>Describes the Apache Airflow log details for the log type (e.g. <code>DagProcessingLogs</code>).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModuleLoggingConfiguration  {
+pub struct ModuleLoggingConfiguration {
     /// <p>Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.</p>
     #[doc(hidden)]
     pub enabled: std::option::Option<bool>,
@@ -20,11 +20,11 @@ impl ModuleLoggingConfiguration {
         self.enabled
     }
     /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
-    pub fn log_level(&self) -> std::option::Option<& crate::types::LoggingLevel> {
+    pub fn log_level(&self) -> std::option::Option<&crate::types::LoggingLevel> {
         self.log_level.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is published. For example, <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
-    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<& str> {
+    pub fn cloud_watch_log_group_arn(&self) -> std::option::Option<&str> {
         self.cloud_watch_log_group_arn.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ModuleLoggingConfigurationBuilder {
     }
     /// <p>Indicates whether the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is enabled.</p>
     pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.enabled = input; self
+        self.enabled = input;
+        self
     }
     /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
     pub fn log_level(mut self, input: crate::types::LoggingLevel) -> Self {
@@ -60,7 +61,8 @@ impl ModuleLoggingConfigurationBuilder {
     }
     /// <p>The Apache Airflow log level for the log type (e.g. <code>DagProcessingLogs</code>). </p>
     pub fn set_log_level(mut self, input: std::option::Option<crate::types::LoggingLevel>) -> Self {
-        self.log_level = input; self
+        self.log_level = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is published. For example, <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
     pub fn cloud_watch_log_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +70,19 @@ impl ModuleLoggingConfigurationBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) for the CloudWatch Logs group where the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>) is published. For example, <code>arn:aws:logs:us-east-1:123456789012:log-group:airflow-MyMWAAEnvironment-MwaaEnvironment-DAGProcessing:*</code>.</p>
-    pub fn set_cloud_watch_log_group_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cloud_watch_log_group_arn = input; self
+    pub fn set_cloud_watch_log_group_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cloud_watch_log_group_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModuleLoggingConfiguration`](crate::types::ModuleLoggingConfiguration).
     pub fn build(self) -> crate::types::ModuleLoggingConfiguration {
         crate::types::ModuleLoggingConfiguration {
-            enabled: self.enabled
-            ,
-            log_level: self.log_level
-            ,
-            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn
-            ,
+            enabled: self.enabled,
+            log_level: self.log_level,
+            cloud_watch_log_group_arn: self.cloud_watch_log_group_arn,
         }
     }
 }
-

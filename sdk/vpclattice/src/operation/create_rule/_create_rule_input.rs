@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateRuleInput  {
+pub struct CreateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
     #[doc(hidden)]
     pub service_identifier: std::option::Option<std::string::String>,
@@ -26,23 +26,24 @@ pub struct CreateRuleInput  {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The tags for the rule.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> std::option::Option<& str> {
+    pub fn service_identifier(&self) -> std::option::Option<&str> {
         self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> std::option::Option<& str> {
+    pub fn listener_identifier(&self) -> std::option::Option<&str> {
         self.listener_identifier.as_deref()
     }
     /// <p>The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The rule match.</p>
-    pub fn r#match(&self) -> std::option::Option<& crate::types::RuleMatch> {
+    pub fn r#match(&self) -> std::option::Option<&crate::types::RuleMatch> {
         self.r#match.as_ref()
     }
     /// <p>The priority assigned to the rule. Each rule for a specific listener must have a unique priority. The lower the priority number the higher the priority.</p>
@@ -50,15 +51,18 @@ impl CreateRuleInput {
         self.priority
     }
     /// <p>The action for the default rule.</p>
-    pub fn action(&self) -> std::option::Option<& crate::types::RuleAction> {
+    pub fn action(&self) -> std::option::Option<&crate::types::RuleAction> {
         self.action.as_ref()
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>The tags for the rule.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
@@ -80,7 +84,8 @@ pub struct CreateRuleInputBuilder {
     pub(crate) priority: std::option::Option<i32>,
     pub(crate) action: std::option::Option<crate::types::RuleAction>,
     pub(crate) client_token: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl CreateRuleInputBuilder {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
@@ -89,8 +94,12 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn set_service_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_identifier = input; self
+    pub fn set_service_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_identifier = input;
+        self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
     pub fn listener_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -98,8 +107,12 @@ impl CreateRuleInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn set_listener_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.listener_identifier = input; self
+    pub fn set_listener_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.listener_identifier = input;
+        self
     }
     /// <p>The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +121,8 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The rule match.</p>
     pub fn r#match(mut self, input: crate::types::RuleMatch) -> Self {
@@ -117,7 +131,8 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The rule match.</p>
     pub fn set_match(mut self, input: std::option::Option<crate::types::RuleMatch>) -> Self {
-        self.r#match = input; self
+        self.r#match = input;
+        self
     }
     /// <p>The priority assigned to the rule. Each rule for a specific listener must have a unique priority. The lower the priority number the higher the priority.</p>
     pub fn priority(mut self, input: i32) -> Self {
@@ -126,7 +141,8 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The priority assigned to the rule. Each rule for a specific listener must have a unique priority. The lower the priority number the higher the priority.</p>
     pub fn set_priority(mut self, input: std::option::Option<i32>) -> Self {
-        self.priority = input; self
+        self.priority = input;
+        self
     }
     /// <p>The action for the default rule.</p>
     pub fn action(mut self, input: crate::types::RuleAction) -> Self {
@@ -135,7 +151,8 @@ impl CreateRuleInputBuilder {
     }
     /// <p>The action for the default rule.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::RuleAction>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,45 +161,50 @@ impl CreateRuleInputBuilder {
     }
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The tags for the rule.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The tags for the rule.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    pub fn build(self) -> Result<crate::operation::create_rule::CreateRuleInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_rule::CreateRuleInput {
-                service_identifier: self.service_identifier
-                ,
-                listener_identifier: self.listener_identifier
-                ,
-                name: self.name
-                ,
-                r#match: self.r#match
-                ,
-                priority: self.priority
-                ,
-                action: self.action
-                ,
-                client_token: self.client_token
-                ,
-                tags: self.tags
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_rule::CreateRuleInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_rule::CreateRuleInput {
+            service_identifier: self.service_identifier,
+            listener_identifier: self.listener_identifier,
+            name: self.name,
+            r#match: self.r#match,
+            priority: self.priority,
+            action: self.action,
+            client_token: self.client_token,
+            tags: self.tags,
+        })
     }
 }
-

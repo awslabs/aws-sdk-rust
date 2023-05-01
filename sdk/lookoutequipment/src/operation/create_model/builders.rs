@@ -4,52 +4,68 @@ pub use crate::operation::create_model::_create_model_output::CreateModelOutputB
 pub use crate::operation::create_model::_create_model_input::CreateModelInputBuilder;
 
 /// Fluent builder constructing a request to `CreateModel`.
-/// 
-/// <p>Creates an ML model for data inference. </p> 
-/// <p>A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for Equipment, the model learns the patterns of normal behavior and detects abnormal behavior that could be potential equipment failure (or maintenance events). The models are made by analyzing normal data and abnormalities in machine behavior that have already occurred.</p> 
+///
+/// <p>Creates an ML model for data inference. </p>
+/// <p>A machine-learning (ML) model is a mathematical model that finds patterns in your data. In Amazon Lookout for Equipment, the model learns the patterns of normal behavior and detects abnormal behavior that could be potential equipment failure (or maintenance events). The models are made by analyzing normal data and abnormalities in machine behavior that have already occurred.</p>
 /// <p>Your model is trained using a portion of the data from your dataset and uses that data to learn patterns of normal behavior and abnormal patterns that lead to equipment failure. Another portion of the data is used to evaluate the model's accuracy. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateModelFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_model::builders::CreateModelInputBuilder,
+    inner: crate::operation::create_model::builders::CreateModelInputBuilder,
 }
-impl CreateModelFluentBuilder  {
+impl CreateModelFluentBuilder {
     /// Creates a new `CreateModel`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_model::CreateModel, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_model::CreateModelOutput, aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_model::CreateModel,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_model::CreateModelOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_model::CreateModelError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name for the ML model to be created.</p>
     pub fn model_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.model_name(input.into());
@@ -76,17 +92,26 @@ impl CreateModelFluentBuilder  {
         self
     }
     /// <p>The data schema for the ML model being created. </p>
-    pub fn set_dataset_schema(mut self, input: std::option::Option<crate::types::DatasetSchema>) -> Self {
+    pub fn set_dataset_schema(
+        mut self,
+        input: std::option::Option<crate::types::DatasetSchema>,
+    ) -> Self {
         self.inner = self.inner.set_dataset_schema(input);
         self
     }
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-    pub fn labels_input_configuration(mut self, input: crate::types::LabelsInputConfiguration) -> Self {
+    pub fn labels_input_configuration(
+        mut self,
+        input: crate::types::LabelsInputConfiguration,
+    ) -> Self {
         self.inner = self.inner.labels_input_configuration(input);
         self
     }
     /// <p>The input configuration for the labels being used for the ML model that's being created. </p>
-    pub fn set_labels_input_configuration(mut self, input: std::option::Option<crate::types::LabelsInputConfiguration>) -> Self {
+    pub fn set_labels_input_configuration(
+        mut self,
+        input: std::option::Option<crate::types::LabelsInputConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_labels_input_configuration(input);
         self
     }
@@ -106,7 +131,10 @@ impl CreateModelFluentBuilder  {
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of training data for the ML model. </p>
-    pub fn set_training_data_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_training_data_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_training_data_start_time(input);
         self
     }
@@ -116,7 +144,10 @@ impl CreateModelFluentBuilder  {
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to end the subset of training data for the ML model. </p>
-    pub fn set_training_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_training_data_end_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_training_data_end_time(input);
         self
     }
@@ -126,7 +157,10 @@ impl CreateModelFluentBuilder  {
         self
     }
     /// <p>Indicates the time reference in the dataset that should be used to begin the subset of evaluation data for the ML model. </p>
-    pub fn set_evaluation_data_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_evaluation_data_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_evaluation_data_start_time(input);
         self
     }
@@ -136,7 +170,10 @@ impl CreateModelFluentBuilder  {
         self
     }
     /// <p> Indicates the time reference in the dataset that should be used to end the subset of evaluation data for the ML model. </p>
-    pub fn set_evaluation_data_end_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_evaluation_data_end_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
         self.inner = self.inner.set_evaluation_data_end_time(input);
         self
     }
@@ -150,15 +187,21 @@ impl CreateModelFluentBuilder  {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn data_pre_processing_configuration(mut self, input: crate::types::DataPreProcessingConfiguration) -> Self {
+    pub fn data_pre_processing_configuration(
+        mut self,
+        input: crate::types::DataPreProcessingConfiguration,
+    ) -> Self {
         self.inner = self.inner.data_pre_processing_configuration(input);
         self
     }
-    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p> 
+    /// <p>The configuration is the <code>TargetSamplingRate</code>, which is the sampling rate of the data after post processing by Amazon Lookout for Equipment. For example, if you provide data that has been collected at a 1 second level and you want the system to resample the data at a 1 minute rate before training, the <code>TargetSamplingRate</code> is 1 minute.</p>
     /// <p>When providing a value for the <code>TargetSamplingRate</code>, you must attach the prefix "PT" to the rate you want. The value for a 1 second rate is therefore <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a 1 hour rate is <i>PT1H</i> </p>
-    pub fn set_data_pre_processing_configuration(mut self, input: std::option::Option<crate::types::DataPreProcessingConfiguration>) -> Self {
+    pub fn set_data_pre_processing_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DataPreProcessingConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_data_pre_processing_configuration(input);
         self
     }
@@ -168,7 +211,10 @@ impl CreateModelFluentBuilder  {
         self
     }
     /// <p>Provides the identifier of the KMS key used to encrypt model data by Amazon Lookout for Equipment. </p>
-    pub fn set_server_side_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_server_side_kms_key_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_server_side_kms_key_id(input);
         self
     }
@@ -182,7 +228,10 @@ impl CreateModelFluentBuilder  {
         self
     }
     /// <p> Any tags associated with the ML model being created. </p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -197,4 +246,3 @@ impl CreateModelFluentBuilder  {
         self
     }
 }
-

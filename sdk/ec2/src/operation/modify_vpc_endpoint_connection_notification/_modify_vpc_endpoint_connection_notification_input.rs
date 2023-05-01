@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyVpcEndpointConnectionNotificationInput  {
+pub struct ModifyVpcEndpointConnectionNotificationInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -22,21 +22,21 @@ impl ModifyVpcEndpointConnectionNotificationInput {
         self.dry_run
     }
     /// <p>The ID of the notification.</p>
-    pub fn connection_notification_id(&self) -> std::option::Option<& str> {
+    pub fn connection_notification_id(&self) -> std::option::Option<&str> {
         self.connection_notification_id.as_deref()
     }
     /// <p>The ARN for the SNS topic for the notification.</p>
-    pub fn connection_notification_arn(&self) -> std::option::Option<& str> {
+    pub fn connection_notification_arn(&self) -> std::option::Option<&str> {
         self.connection_notification_arn.as_deref()
     }
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn connection_events(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn connection_events(&self) -> std::option::Option<&[std::string::String]> {
         self.connection_events.as_deref()
     }
 }
 impl ModifyVpcEndpointConnectionNotificationInput {
     /// Creates a new builder-style object to manufacture [`ModifyVpcEndpointConnectionNotificationInput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput).
-    pub fn builder() -> crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder {
+    pub fn builder() -> crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder{
         crate::operation::modify_vpc_endpoint_connection_notification::builders::ModifyVpcEndpointConnectionNotificationInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the notification.</p>
     pub fn connection_notification_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +67,12 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
         self
     }
     /// <p>The ID of the notification.</p>
-    pub fn set_connection_notification_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_notification_id = input; self
+    pub fn set_connection_notification_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.connection_notification_id = input;
+        self
     }
     /// <p>The ARN for the SNS topic for the notification.</p>
     pub fn connection_notification_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +80,12 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
         self
     }
     /// <p>The ARN for the SNS topic for the notification.</p>
-    pub fn set_connection_notification_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connection_notification_arn = input; self
+    pub fn set_connection_notification_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.connection_notification_arn = input;
+        self
     }
     /// Appends an item to `connection_events`.
     ///
@@ -85,16 +94,20 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
     pub fn connection_events(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.connection_events.unwrap_or_default();
-                        v.push(input.into());
-                        self.connection_events = Some(v);
-                        self
+        v.push(input.into());
+        self.connection_events = Some(v);
+        self
     }
     /// <p>The events for the endpoint. Valid values are <code>Accept</code>, <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
-    pub fn set_connection_events(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.connection_events = input; self
+    pub fn set_connection_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.connection_events = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyVpcEndpointConnectionNotificationInput`](crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput).
-    pub fn build(self) -> Result<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::modify_vpc_endpoint_connection_notification::ModifyVpcEndpointConnectionNotificationInput {
                 dry_run: self.dry_run
@@ -109,4 +122,3 @@ impl ModifyVpcEndpointConnectionNotificationInputBuilder {
         )
     }
 }
-

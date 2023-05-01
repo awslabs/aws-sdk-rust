@@ -3,7 +3,7 @@
 /// <p>Information about the process and any required context values for a specific finding.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RuntimeDetails  {
+pub struct RuntimeDetails {
     /// <p>Information about the observed process.</p>
     #[doc(hidden)]
     pub process: std::option::Option<crate::types::ProcessDetails>,
@@ -13,11 +13,11 @@ pub struct RuntimeDetails  {
 }
 impl RuntimeDetails {
     /// <p>Information about the observed process.</p>
-    pub fn process(&self) -> std::option::Option<& crate::types::ProcessDetails> {
+    pub fn process(&self) -> std::option::Option<&crate::types::ProcessDetails> {
         self.process.as_ref()
     }
     /// <p>Additional information about the suspicious activity.</p>
-    pub fn context(&self) -> std::option::Option<& crate::types::RuntimeContext> {
+    pub fn context(&self) -> std::option::Option<&crate::types::RuntimeContext> {
         self.context.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl RuntimeDetailsBuilder {
     }
     /// <p>Information about the observed process.</p>
     pub fn set_process(mut self, input: std::option::Option<crate::types::ProcessDetails>) -> Self {
-        self.process = input; self
+        self.process = input;
+        self
     }
     /// <p>Additional information about the suspicious activity.</p>
     pub fn context(mut self, input: crate::types::RuntimeContext) -> Self {
@@ -52,16 +53,14 @@ impl RuntimeDetailsBuilder {
     }
     /// <p>Additional information about the suspicious activity.</p>
     pub fn set_context(mut self, input: std::option::Option<crate::types::RuntimeContext>) -> Self {
-        self.context = input; self
+        self.context = input;
+        self
     }
     /// Consumes the builder and constructs a [`RuntimeDetails`](crate::types::RuntimeDetails).
     pub fn build(self) -> crate::types::RuntimeDetails {
         crate::types::RuntimeDetails {
-            process: self.process
-            ,
-            context: self.context
-            ,
+            process: self.process,
+            context: self.context,
         }
     }
 }
-

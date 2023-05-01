@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetSchemaVersionsDiffInput  {
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
-    /// <ul> 
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
+pub struct GetSchemaVersionsDiffInput {
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub schema_id: std::option::Option<crate::types::SchemaId>,
@@ -21,30 +21,36 @@ pub struct GetSchemaVersionsDiffInput  {
     pub schema_diff_type: std::option::Option<crate::types::SchemaDiffType>,
 }
 impl GetSchemaVersionsDiffInput {
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
-    /// <ul> 
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
-    pub fn schema_id(&self) -> std::option::Option<& crate::types::SchemaId> {
+    pub fn schema_id(&self) -> std::option::Option<&crate::types::SchemaId> {
         self.schema_id.as_ref()
     }
     /// <p>The first of the two schema versions to be compared.</p>
-    pub fn first_schema_version_number(&self) -> std::option::Option<& crate::types::SchemaVersionNumber> {
+    pub fn first_schema_version_number(
+        &self,
+    ) -> std::option::Option<&crate::types::SchemaVersionNumber> {
         self.first_schema_version_number.as_ref()
     }
     /// <p>The second of the two schema versions to be compared.</p>
-    pub fn second_schema_version_number(&self) -> std::option::Option<& crate::types::SchemaVersionNumber> {
+    pub fn second_schema_version_number(
+        &self,
+    ) -> std::option::Option<&crate::types::SchemaVersionNumber> {
         self.second_schema_version_number.as_ref()
     }
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
-    pub fn schema_diff_type(&self) -> std::option::Option<& crate::types::SchemaDiffType> {
+    pub fn schema_diff_type(&self) -> std::option::Option<&crate::types::SchemaDiffType> {
         self.schema_diff_type.as_ref()
     }
 }
 impl GetSchemaVersionsDiffInput {
     /// Creates a new builder-style object to manufacture [`GetSchemaVersionsDiffInput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput).
-    pub fn builder() -> crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffInputBuilder
+    {
         crate::operation::get_schema_versions_diff::builders::GetSchemaVersionsDiffInputBuilder::default()
     }
 }
@@ -59,22 +65,23 @@ pub struct GetSchemaVersionsDiffInputBuilder {
     pub(crate) schema_diff_type: std::option::Option<crate::types::SchemaDiffType>,
 }
 impl GetSchemaVersionsDiffInputBuilder {
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
-    /// <ul> 
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn schema_id(mut self, input: crate::types::SchemaId) -> Self {
         self.schema_id = Some(input);
         self
     }
-    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> 
-    /// <ul> 
-    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
-    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> 
+    /// <p>This is a wrapper structure to contain schema identity fields. The structure contains:</p>
+    /// <ul>
+    /// <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
+    /// <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li>
     /// </ul>
     pub fn set_schema_id(mut self, input: std::option::Option<crate::types::SchemaId>) -> Self {
-        self.schema_id = input; self
+        self.schema_id = input;
+        self
     }
     /// <p>The first of the two schema versions to be compared.</p>
     pub fn first_schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
@@ -82,17 +89,28 @@ impl GetSchemaVersionsDiffInputBuilder {
         self
     }
     /// <p>The first of the two schema versions to be compared.</p>
-    pub fn set_first_schema_version_number(mut self, input: std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
-        self.first_schema_version_number = input; self
+    pub fn set_first_schema_version_number(
+        mut self,
+        input: std::option::Option<crate::types::SchemaVersionNumber>,
+    ) -> Self {
+        self.first_schema_version_number = input;
+        self
     }
     /// <p>The second of the two schema versions to be compared.</p>
-    pub fn second_schema_version_number(mut self, input: crate::types::SchemaVersionNumber) -> Self {
+    pub fn second_schema_version_number(
+        mut self,
+        input: crate::types::SchemaVersionNumber,
+    ) -> Self {
         self.second_schema_version_number = Some(input);
         self
     }
     /// <p>The second of the two schema versions to be compared.</p>
-    pub fn set_second_schema_version_number(mut self, input: std::option::Option<crate::types::SchemaVersionNumber>) -> Self {
-        self.second_schema_version_number = input; self
+    pub fn set_second_schema_version_number(
+        mut self,
+        input: std::option::Option<crate::types::SchemaVersionNumber>,
+    ) -> Self {
+        self.second_schema_version_number = input;
+        self
     }
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
     pub fn schema_diff_type(mut self, input: crate::types::SchemaDiffType) -> Self {
@@ -100,23 +118,27 @@ impl GetSchemaVersionsDiffInputBuilder {
         self
     }
     /// <p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>
-    pub fn set_schema_diff_type(mut self, input: std::option::Option<crate::types::SchemaDiffType>) -> Self {
-        self.schema_diff_type = input; self
+    pub fn set_schema_diff_type(
+        mut self,
+        input: std::option::Option<crate::types::SchemaDiffType>,
+    ) -> Self {
+        self.schema_diff_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetSchemaVersionsDiffInput`](crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput).
-    pub fn build(self) -> Result<crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_schema_versions_diff::GetSchemaVersionsDiffInput {
-                schema_id: self.schema_id
-                ,
-                first_schema_version_number: self.first_schema_version_number
-                ,
-                second_schema_version_number: self.second_schema_version_number
-                ,
-                schema_diff_type: self.schema_diff_type
-                ,
-            }
+                schema_id: self.schema_id,
+                first_schema_version_number: self.first_schema_version_number,
+                second_schema_version_number: self.second_schema_version_number,
+                schema_diff_type: self.schema_diff_type,
+            },
         )
     }
 }
-

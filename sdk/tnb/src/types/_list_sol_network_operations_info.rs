@@ -3,7 +3,7 @@
 /// <p>Information parameters for a network operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSolNetworkOperationsInfo  {
+pub struct ListSolNetworkOperationsInfo {
     /// <p>ID of this network operation.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -28,31 +28,31 @@ pub struct ListSolNetworkOperationsInfo  {
 }
 impl ListSolNetworkOperationsInfo {
     /// <p>ID of this network operation.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Network operation ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The state of the network operation.</p>
-    pub fn operation_state(&self) -> std::option::Option<& crate::types::NsLcmOperationState> {
+    pub fn operation_state(&self) -> std::option::Option<&crate::types::NsLcmOperationState> {
         self.operation_state.as_ref()
     }
     /// <p>ID of the network instance related to this operation.</p>
-    pub fn ns_instance_id(&self) -> std::option::Option<& str> {
+    pub fn ns_instance_id(&self) -> std::option::Option<&str> {
         self.ns_instance_id.as_deref()
     }
     /// <p>Type of lifecycle management network operation.</p>
-    pub fn lcm_operation_type(&self) -> std::option::Option<& crate::types::LcmOperationType> {
+    pub fn lcm_operation_type(&self) -> std::option::Option<&crate::types::LcmOperationType> {
         self.lcm_operation_type.as_ref()
     }
     /// <p>Error related to this specific network operation.</p>
-    pub fn error(&self) -> std::option::Option<& crate::types::ProblemDetails> {
+    pub fn error(&self) -> std::option::Option<&crate::types::ProblemDetails> {
         self.error.as_ref()
     }
     /// <p>Metadata related to this network operation.</p>
-    pub fn metadata(&self) -> std::option::Option<& crate::types::ListSolNetworkOperationsMetadata> {
+    pub fn metadata(&self) -> std::option::Option<&crate::types::ListSolNetworkOperationsMetadata> {
         self.metadata.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl ListSolNetworkOperationsInfoBuilder {
     }
     /// <p>ID of this network operation.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>Network operation ARN.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +93,8 @@ impl ListSolNetworkOperationsInfoBuilder {
     }
     /// <p>Network operation ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The state of the network operation.</p>
     pub fn operation_state(mut self, input: crate::types::NsLcmOperationState) -> Self {
@@ -100,8 +102,12 @@ impl ListSolNetworkOperationsInfoBuilder {
         self
     }
     /// <p>The state of the network operation.</p>
-    pub fn set_operation_state(mut self, input: std::option::Option<crate::types::NsLcmOperationState>) -> Self {
-        self.operation_state = input; self
+    pub fn set_operation_state(
+        mut self,
+        input: std::option::Option<crate::types::NsLcmOperationState>,
+    ) -> Self {
+        self.operation_state = input;
+        self
     }
     /// <p>ID of the network instance related to this operation.</p>
     pub fn ns_instance_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,7 +116,8 @@ impl ListSolNetworkOperationsInfoBuilder {
     }
     /// <p>ID of the network instance related to this operation.</p>
     pub fn set_ns_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ns_instance_id = input; self
+        self.ns_instance_id = input;
+        self
     }
     /// <p>Type of lifecycle management network operation.</p>
     pub fn lcm_operation_type(mut self, input: crate::types::LcmOperationType) -> Self {
@@ -118,8 +125,12 @@ impl ListSolNetworkOperationsInfoBuilder {
         self
     }
     /// <p>Type of lifecycle management network operation.</p>
-    pub fn set_lcm_operation_type(mut self, input: std::option::Option<crate::types::LcmOperationType>) -> Self {
-        self.lcm_operation_type = input; self
+    pub fn set_lcm_operation_type(
+        mut self,
+        input: std::option::Option<crate::types::LcmOperationType>,
+    ) -> Self {
+        self.lcm_operation_type = input;
+        self
     }
     /// <p>Error related to this specific network operation.</p>
     pub fn error(mut self, input: crate::types::ProblemDetails) -> Self {
@@ -128,7 +139,8 @@ impl ListSolNetworkOperationsInfoBuilder {
     }
     /// <p>Error related to this specific network operation.</p>
     pub fn set_error(mut self, input: std::option::Option<crate::types::ProblemDetails>) -> Self {
-        self.error = input; self
+        self.error = input;
+        self
     }
     /// <p>Metadata related to this network operation.</p>
     pub fn metadata(mut self, input: crate::types::ListSolNetworkOperationsMetadata) -> Self {
@@ -136,27 +148,23 @@ impl ListSolNetworkOperationsInfoBuilder {
         self
     }
     /// <p>Metadata related to this network operation.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<crate::types::ListSolNetworkOperationsMetadata>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<crate::types::ListSolNetworkOperationsMetadata>,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSolNetworkOperationsInfo`](crate::types::ListSolNetworkOperationsInfo).
     pub fn build(self) -> crate::types::ListSolNetworkOperationsInfo {
         crate::types::ListSolNetworkOperationsInfo {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            operation_state: self.operation_state
-            ,
-            ns_instance_id: self.ns_instance_id
-            ,
-            lcm_operation_type: self.lcm_operation_type
-            ,
-            error: self.error
-            ,
-            metadata: self.metadata
-            ,
+            id: self.id,
+            arn: self.arn,
+            operation_state: self.operation_state,
+            ns_instance_id: self.ns_instance_id,
+            lcm_operation_type: self.lcm_operation_type,
+            error: self.error,
+            metadata: self.metadata,
         }
     }
 }
-

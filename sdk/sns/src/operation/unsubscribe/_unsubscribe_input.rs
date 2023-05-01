@@ -3,14 +3,14 @@
 /// <p>Input for Unsubscribe action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsubscribeInput  {
+pub struct UnsubscribeInput {
     /// <p>The ARN of the subscription to be deleted.</p>
     #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl UnsubscribeInput {
     /// <p>The ARN of the subscription to be deleted.</p>
-    pub fn subscription_arn(&self) -> std::option::Option<& str> {
+    pub fn subscription_arn(&self) -> std::option::Option<&str> {
         self.subscription_arn.as_deref()
     }
 }
@@ -35,16 +35,18 @@ impl UnsubscribeInputBuilder {
     }
     /// <p>The ARN of the subscription to be deleted.</p>
     pub fn set_subscription_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.subscription_arn = input; self
+        self.subscription_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`UnsubscribeInput`](crate::operation::unsubscribe::UnsubscribeInput).
-    pub fn build(self) -> Result<crate::operation::unsubscribe::UnsubscribeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::unsubscribe::UnsubscribeInput {
-                subscription_arn: self.subscription_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::unsubscribe::UnsubscribeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::unsubscribe::UnsubscribeInput {
+            subscription_arn: self.subscription_arn,
+        })
     }
 }
-

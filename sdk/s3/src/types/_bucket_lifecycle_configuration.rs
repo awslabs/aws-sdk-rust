@@ -3,14 +3,14 @@
 /// <p>Specifies the lifecycle configuration for objects in an Amazon S3 bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a> in the <i>Amazon S3 User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BucketLifecycleConfiguration  {
+pub struct BucketLifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
     #[doc(hidden)]
     pub rules: std::option::Option<std::vec::Vec<crate::types::LifecycleRule>>,
 }
 impl BucketLifecycleConfiguration {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
-    pub fn rules(&self) -> std::option::Option<& [crate::types::LifecycleRule]> {
+    pub fn rules(&self) -> std::option::Option<&[crate::types::LifecycleRule]> {
         self.rules.as_deref()
     }
 }
@@ -35,20 +35,20 @@ impl BucketLifecycleConfigurationBuilder {
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
     pub fn rules(mut self, input: crate::types::LifecycleRule) -> Self {
         let mut v = self.rules.unwrap_or_default();
-                        v.push(input);
-                        self.rules = Some(v);
-                        self
+        v.push(input);
+        self.rules = Some(v);
+        self
     }
     /// <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::LifecycleRule>>) -> Self {
-        self.rules = input; self
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LifecycleRule>>,
+    ) -> Self {
+        self.rules = input;
+        self
     }
     /// Consumes the builder and constructs a [`BucketLifecycleConfiguration`](crate::types::BucketLifecycleConfiguration).
     pub fn build(self) -> crate::types::BucketLifecycleConfiguration {
-        crate::types::BucketLifecycleConfiguration {
-            rules: self.rules
-            ,
-        }
+        crate::types::BucketLifecycleConfiguration { rules: self.rules }
     }
 }
-

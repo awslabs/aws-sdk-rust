@@ -3,7 +3,7 @@
 /// <p>Updates the configuration of the email or SMS message for the auth resource configured for your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBackendAuthVerificationMessageConfig  {
+pub struct UpdateBackendAuthVerificationMessageConfig {
     /// <p>The type of verification message to send.</p>
     #[doc(hidden)]
     pub delivery_method: std::option::Option<crate::types::DeliveryMethod>,
@@ -16,15 +16,15 @@ pub struct UpdateBackendAuthVerificationMessageConfig  {
 }
 impl UpdateBackendAuthVerificationMessageConfig {
     /// <p>The type of verification message to send.</p>
-    pub fn delivery_method(&self) -> std::option::Option<& crate::types::DeliveryMethod> {
+    pub fn delivery_method(&self) -> std::option::Option<&crate::types::DeliveryMethod> {
         self.delivery_method.as_ref()
     }
     /// <p>The settings for the email message.</p>
-    pub fn email_settings(&self) -> std::option::Option<& crate::types::EmailSettings> {
+    pub fn email_settings(&self) -> std::option::Option<&crate::types::EmailSettings> {
         self.email_settings.as_ref()
     }
     /// <p>The settings for the SMS message.</p>
-    pub fn sms_settings(&self) -> std::option::Option<& crate::types::SmsSettings> {
+    pub fn sms_settings(&self) -> std::option::Option<&crate::types::SmsSettings> {
         self.sms_settings.as_ref()
     }
 }
@@ -50,8 +50,12 @@ impl UpdateBackendAuthVerificationMessageConfigBuilder {
         self
     }
     /// <p>The type of verification message to send.</p>
-    pub fn set_delivery_method(mut self, input: std::option::Option<crate::types::DeliveryMethod>) -> Self {
-        self.delivery_method = input; self
+    pub fn set_delivery_method(
+        mut self,
+        input: std::option::Option<crate::types::DeliveryMethod>,
+    ) -> Self {
+        self.delivery_method = input;
+        self
     }
     /// <p>The settings for the email message.</p>
     pub fn email_settings(mut self, input: crate::types::EmailSettings) -> Self {
@@ -59,8 +63,12 @@ impl UpdateBackendAuthVerificationMessageConfigBuilder {
         self
     }
     /// <p>The settings for the email message.</p>
-    pub fn set_email_settings(mut self, input: std::option::Option<crate::types::EmailSettings>) -> Self {
-        self.email_settings = input; self
+    pub fn set_email_settings(
+        mut self,
+        input: std::option::Option<crate::types::EmailSettings>,
+    ) -> Self {
+        self.email_settings = input;
+        self
     }
     /// <p>The settings for the SMS message.</p>
     pub fn sms_settings(mut self, input: crate::types::SmsSettings) -> Self {
@@ -68,19 +76,19 @@ impl UpdateBackendAuthVerificationMessageConfigBuilder {
         self
     }
     /// <p>The settings for the SMS message.</p>
-    pub fn set_sms_settings(mut self, input: std::option::Option<crate::types::SmsSettings>) -> Self {
-        self.sms_settings = input; self
+    pub fn set_sms_settings(
+        mut self,
+        input: std::option::Option<crate::types::SmsSettings>,
+    ) -> Self {
+        self.sms_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateBackendAuthVerificationMessageConfig`](crate::types::UpdateBackendAuthVerificationMessageConfig).
     pub fn build(self) -> crate::types::UpdateBackendAuthVerificationMessageConfig {
         crate::types::UpdateBackendAuthVerificationMessageConfig {
-            delivery_method: self.delivery_method
-            ,
-            email_settings: self.email_settings
-            ,
-            sms_settings: self.sms_settings
-            ,
+            delivery_method: self.delivery_method,
+            email_settings: self.email_settings,
+            sms_settings: self.sms_settings,
         }
     }
 }
-

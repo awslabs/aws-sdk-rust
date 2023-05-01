@@ -3,7 +3,7 @@
 /// <p>The list of triggers for the repository is required, but was not specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RepositoryTriggersListRequiredException  {
+pub struct RepositoryTriggersListRequiredException {
     /// <p>Any message associated with the exception.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -11,13 +11,15 @@ pub struct RepositoryTriggersListRequiredException  {
 }
 impl RepositoryTriggersListRequiredException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for RepositoryTriggersListRequiredException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "RepositoryTriggersListRequiredException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -25,18 +27,25 @@ impl std::fmt::Display for RepositoryTriggersListRequiredException {
     }
 }
 impl std::error::Error for RepositoryTriggersListRequiredException {}
-impl aws_http::request_id::RequestId for crate::types::error::RepositoryTriggersListRequiredException {
+impl aws_http::request_id::RequestId
+    for crate::types::error::RepositoryTriggersListRequiredException
+{
     fn request_id(&self) -> Option<&str> {
         use aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for RepositoryTriggersListRequiredException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+impl aws_smithy_types::error::metadata::ProvideErrorMetadata
+    for RepositoryTriggersListRequiredException
+{
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl RepositoryTriggersListRequiredException {
     /// Creates a new builder-style object to manufacture [`RepositoryTriggersListRequiredException`](crate::types::error::RepositoryTriggersListRequiredException).
-    pub fn builder() -> crate::types::error::builders::RepositoryTriggersListRequiredExceptionBuilder {
+    pub fn builder() -> crate::types::error::builders::RepositoryTriggersListRequiredExceptionBuilder
+    {
         crate::types::error::builders::RepositoryTriggersListRequiredExceptionBuilder::default()
     }
 }
@@ -56,26 +65,28 @@ impl RepositoryTriggersListRequiredExceptionBuilder {
     }
     /// <p>Any message associated with the exception.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`RepositoryTriggersListRequiredException`](crate::types::error::RepositoryTriggersListRequiredException).
     pub fn build(self) -> crate::types::error::RepositoryTriggersListRequiredException {
         crate::types::error::RepositoryTriggersListRequiredException {
-            message: self.message
-            ,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

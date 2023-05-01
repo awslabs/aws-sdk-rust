@@ -4,50 +4,70 @@ pub use crate::operation::update_service_template_version::_update_service_templ
 pub use crate::operation::update_service_template_version::_update_service_template_version_input::UpdateServiceTemplateVersionInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateServiceTemplateVersion`.
-/// 
+///
 /// <p>Update a major or minor version of a service template.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServiceTemplateVersionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::update_service_template_version::builders::UpdateServiceTemplateVersionInputBuilder,
 }
-impl UpdateServiceTemplateVersionFluentBuilder  {
+impl UpdateServiceTemplateVersionFluentBuilder {
     /// Creates a new `UpdateServiceTemplateVersion`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_service_template_version::UpdateServiceTemplateVersion, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_service_template_version::UpdateServiceTemplateVersionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_service_template_version::UpdateServiceTemplateVersionOutput, aws_smithy_http::result::SdkError<crate::operation::update_service_template_version::UpdateServiceTemplateVersionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_service_template_version::UpdateServiceTemplateVersion,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_service_template_version::UpdateServiceTemplateVersionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_service_template_version::UpdateServiceTemplateVersionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_service_template_version::UpdateServiceTemplateVersionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the service template.</p>
     pub fn template_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.template_name(input.into());
@@ -94,7 +114,10 @@ impl UpdateServiceTemplateVersionFluentBuilder  {
         self
     }
     /// <p>The status of the service template minor version to update.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::TemplateVersionStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::TemplateVersionStatus>,
+    ) -> Self {
         self.inner = self.inner.set_status(input);
         self
     }
@@ -103,12 +126,18 @@ impl UpdateServiceTemplateVersionFluentBuilder  {
     /// To override the contents of this collection use [`set_compatible_environment_templates`](Self::set_compatible_environment_templates).
     ///
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn compatible_environment_templates(mut self, input: crate::types::CompatibleEnvironmentTemplateInput) -> Self {
+    pub fn compatible_environment_templates(
+        mut self,
+        input: crate::types::CompatibleEnvironmentTemplateInput,
+    ) -> Self {
         self.inner = self.inner.compatible_environment_templates(input);
         self
     }
     /// <p>An array of environment template objects that are compatible with this service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub fn set_compatible_environment_templates(mut self, input: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>) -> Self {
+    pub fn set_compatible_environment_templates(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
+    ) -> Self {
         self.inner = self.inner.set_compatible_environment_templates(input);
         self
     }
@@ -116,21 +145,28 @@ impl UpdateServiceTemplateVersionFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_supported_component_sources`](Self::set_supported_component_sources).
     ///
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note> 
-    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p> 
-    /// </note> 
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+    /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn supported_component_sources(mut self, input: crate::types::ServiceTemplateSupportedComponentSourceType) -> Self {
+    pub fn supported_component_sources(
+        mut self,
+        input: crate::types::ServiceTemplateSupportedComponentSourceType,
+    ) -> Self {
         self.inner = self.inner.supported_component_sources(input);
         self
     }
-    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note> 
-    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p> 
-    /// </note> 
+    /// <p>An array of supported component sources. Components with supported sources can be attached to service instances based on this service template version.</p> <note>
+    /// <p>A change to <code>supportedComponentSources</code> doesn't impact existing component attachments to instances based on this template version. A change only affects later associations.</p>
+    /// </note>
     /// <p>For more information about components, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton components</a> in the <i>Proton User Guide</i>.</p>
-    pub fn set_supported_component_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>>) -> Self {
+    pub fn set_supported_component_sources(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::ServiceTemplateSupportedComponentSourceType>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_supported_component_sources(input);
         self
     }
 }
-

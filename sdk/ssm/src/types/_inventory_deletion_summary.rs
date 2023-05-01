@@ -3,7 +3,7 @@
 /// <p>Information about the delete operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InventoryDeletionSummary  {
+pub struct InventoryDeletionSummary {
     /// <p>The total number of items to delete. This count doesn't change during the delete operation.</p>
     #[doc(hidden)]
     pub total_count: i32,
@@ -12,7 +12,8 @@ pub struct InventoryDeletionSummary  {
     pub remaining_count: i32,
     /// <p>A list of counts and versions for deleted items.</p>
     #[doc(hidden)]
-    pub summary_items: std::option::Option<std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
+    pub summary_items:
+        std::option::Option<std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
 }
 impl InventoryDeletionSummary {
     /// <p>The total number of items to delete. This count doesn't change during the delete operation.</p>
@@ -24,7 +25,9 @@ impl InventoryDeletionSummary {
         self.remaining_count
     }
     /// <p>A list of counts and versions for deleted items.</p>
-    pub fn summary_items(&self) -> std::option::Option<& [crate::types::InventoryDeletionSummaryItem]> {
+    pub fn summary_items(
+        &self,
+    ) -> std::option::Option<&[crate::types::InventoryDeletionSummaryItem]> {
         self.summary_items.as_deref()
     }
 }
@@ -41,7 +44,8 @@ impl InventoryDeletionSummary {
 pub struct InventoryDeletionSummaryBuilder {
     pub(crate) total_count: std::option::Option<i32>,
     pub(crate) remaining_count: std::option::Option<i32>,
-    pub(crate) summary_items: std::option::Option<std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
+    pub(crate) summary_items:
+        std::option::Option<std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
 }
 impl InventoryDeletionSummaryBuilder {
     /// <p>The total number of items to delete. This count doesn't change during the delete operation.</p>
@@ -51,7 +55,8 @@ impl InventoryDeletionSummaryBuilder {
     }
     /// <p>The total number of items to delete. This count doesn't change during the delete operation.</p>
     pub fn set_total_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.total_count = input; self
+        self.total_count = input;
+        self
     }
     /// <p>Remaining number of items to delete.</p>
     pub fn remaining_count(mut self, input: i32) -> Self {
@@ -60,7 +65,8 @@ impl InventoryDeletionSummaryBuilder {
     }
     /// <p>Remaining number of items to delete.</p>
     pub fn set_remaining_count(mut self, input: std::option::Option<i32>) -> Self {
-        self.remaining_count = input; self
+        self.remaining_count = input;
+        self
     }
     /// Appends an item to `summary_items`.
     ///
@@ -69,26 +75,24 @@ impl InventoryDeletionSummaryBuilder {
     /// <p>A list of counts and versions for deleted items.</p>
     pub fn summary_items(mut self, input: crate::types::InventoryDeletionSummaryItem) -> Self {
         let mut v = self.summary_items.unwrap_or_default();
-                        v.push(input);
-                        self.summary_items = Some(v);
-                        self
+        v.push(input);
+        self.summary_items = Some(v);
+        self
     }
     /// <p>A list of counts and versions for deleted items.</p>
-    pub fn set_summary_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>) -> Self {
-        self.summary_items = input; self
+    pub fn set_summary_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InventoryDeletionSummaryItem>>,
+    ) -> Self {
+        self.summary_items = input;
+        self
     }
     /// Consumes the builder and constructs a [`InventoryDeletionSummary`](crate::types::InventoryDeletionSummary).
     pub fn build(self) -> crate::types::InventoryDeletionSummary {
         crate::types::InventoryDeletionSummary {
-            total_count: self.total_count
-                .unwrap_or_default()
-            ,
-            remaining_count: self.remaining_count
-                .unwrap_or_default()
-            ,
-            summary_items: self.summary_items
-            ,
+            total_count: self.total_count.unwrap_or_default(),
+            remaining_count: self.remaining_count.unwrap_or_default(),
+            summary_items: self.summary_items,
         }
     }
 }
-

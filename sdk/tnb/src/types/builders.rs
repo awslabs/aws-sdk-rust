@@ -60,4 +60,3 @@ pub use crate::types::_get_sol_vnf_info::GetSolVnfInfoBuilder;
 pub use crate::types::_get_sol_vnfc_resource_info::GetSolVnfcResourceInfoBuilder;
 
 pub use crate::types::_get_sol_vnfc_resource_info_metadata::GetSolVnfcResourceInfoMetadataBuilder;
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeploymentStrategyOutput  {
+pub struct UpdateDeploymentStrategyOutput {
     /// <p>The deployment strategy ID.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -31,15 +31,15 @@ pub struct UpdateDeploymentStrategyOutput  {
 }
 impl UpdateDeploymentStrategyOutput {
     /// <p>The deployment strategy ID.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the deployment strategy.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the deployment strategy.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Total amount of time the deployment lasted.</p>
@@ -47,7 +47,7 @@ impl UpdateDeploymentStrategyOutput {
         self.deployment_duration_in_minutes
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
-    pub fn growth_type(&self) -> std::option::Option<& crate::types::GrowthType> {
+    pub fn growth_type(&self) -> std::option::Option<&crate::types::GrowthType> {
         self.growth_type.as_ref()
     }
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
@@ -59,18 +59,20 @@ impl UpdateDeploymentStrategyOutput {
         self.final_bake_time_in_minutes
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    pub fn replicate_to(&self) -> std::option::Option<& crate::types::ReplicateTo> {
+    pub fn replicate_to(&self) -> std::option::Option<&crate::types::ReplicateTo> {
         self.replicate_to.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateDeploymentStrategyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateDeploymentStrategyOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDeploymentStrategyOutput`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput).
-    pub fn builder() -> crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyOutputBuilder
+    {
         crate::operation::update_deployment_strategy::builders::UpdateDeploymentStrategyOutputBuilder::default()
     }
 }
@@ -97,7 +99,8 @@ impl UpdateDeploymentStrategyOutputBuilder {
     }
     /// <p>The deployment strategy ID.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the deployment strategy.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -106,7 +109,8 @@ impl UpdateDeploymentStrategyOutputBuilder {
     }
     /// <p>The name of the deployment strategy.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the deployment strategy.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -115,7 +119,8 @@ impl UpdateDeploymentStrategyOutputBuilder {
     }
     /// <p>The description of the deployment strategy.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Total amount of time the deployment lasted.</p>
     pub fn deployment_duration_in_minutes(mut self, input: i32) -> Self {
@@ -124,7 +129,8 @@ impl UpdateDeploymentStrategyOutputBuilder {
     }
     /// <p>Total amount of time the deployment lasted.</p>
     pub fn set_deployment_duration_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.deployment_duration_in_minutes = input; self
+        self.deployment_duration_in_minutes = input;
+        self
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub fn growth_type(mut self, input: crate::types::GrowthType) -> Self {
@@ -133,7 +139,8 @@ impl UpdateDeploymentStrategyOutputBuilder {
     }
     /// <p>The algorithm used to define how percentage grew over time.</p>
     pub fn set_growth_type(mut self, input: std::option::Option<crate::types::GrowthType>) -> Self {
-        self.growth_type = input; self
+        self.growth_type = input;
+        self
     }
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub fn growth_factor(mut self, input: f32) -> Self {
@@ -142,7 +149,8 @@ impl UpdateDeploymentStrategyOutputBuilder {
     }
     /// <p>The percentage of targets that received a deployed configuration during each interval.</p>
     pub fn set_growth_factor(mut self, input: std::option::Option<f32>) -> Self {
-        self.growth_factor = input; self
+        self.growth_factor = input;
+        self
     }
     /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn final_bake_time_in_minutes(mut self, input: i32) -> Self {
@@ -151,7 +159,8 @@ impl UpdateDeploymentStrategyOutputBuilder {
     }
     /// <p>The amount of time that AppConfig monitored for alarms before considering the deployment to be complete and no longer eligible for automatic rollback.</p>
     pub fn set_final_bake_time_in_minutes(mut self, input: std::option::Option<i32>) -> Self {
-        self.final_bake_time_in_minutes = input; self
+        self.final_bake_time_in_minutes = input;
+        self
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
     pub fn replicate_to(mut self, input: crate::types::ReplicateTo) -> Self {
@@ -159,42 +168,36 @@ impl UpdateDeploymentStrategyOutputBuilder {
         self
     }
     /// <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
-    pub fn set_replicate_to(mut self, input: std::option::Option<crate::types::ReplicateTo>) -> Self {
-        self.replicate_to = input; self
+    pub fn set_replicate_to(
+        mut self,
+        input: std::option::Option<crate::types::ReplicateTo>,
+    ) -> Self {
+        self.replicate_to = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateDeploymentStrategyOutput`](crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput).
-    pub fn build(self) -> crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput {
         crate::operation::update_deployment_strategy::UpdateDeploymentStrategyOutput {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            deployment_duration_in_minutes: self.deployment_duration_in_minutes
-                .unwrap_or_default()
-            ,
-            growth_type: self.growth_type
-            ,
-            growth_factor: self.growth_factor
-                .unwrap_or_default()
-            ,
-            final_bake_time_in_minutes: self.final_bake_time_in_minutes
-                .unwrap_or_default()
-            ,
-            replicate_to: self.replicate_to
-            ,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            deployment_duration_in_minutes: self.deployment_duration_in_minutes.unwrap_or_default(),
+            growth_type: self.growth_type,
+            growth_factor: self.growth_factor.unwrap_or_default(),
+            final_bake_time_in_minutes: self.final_bake_time_in_minutes.unwrap_or_default(),
+            replicate_to: self.replicate_to,
             _request_id: self._request_id,
         }
     }
 }
-

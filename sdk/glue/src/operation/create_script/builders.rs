@@ -4,50 +4,66 @@ pub use crate::operation::create_script::_create_script_output::CreateScriptOutp
 pub use crate::operation::create_script::_create_script_input::CreateScriptInputBuilder;
 
 /// Fluent builder constructing a request to `CreateScript`.
-/// 
+///
 /// <p>Transforms a directed acyclic graph (DAG) into code.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateScriptFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_script::builders::CreateScriptInputBuilder,
+    inner: crate::operation::create_script::builders::CreateScriptInputBuilder,
 }
-impl CreateScriptFluentBuilder  {
+impl CreateScriptFluentBuilder {
     /// Creates a new `CreateScript`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_script::CreateScript, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_script::CreateScriptError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_script::CreateScriptOutput, aws_smithy_http::result::SdkError<crate::operation::create_script::CreateScriptError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_script::CreateScript,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_script::CreateScriptError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_script::CreateScriptOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_script::CreateScriptError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `DagNodes`.
     ///
     /// To override the contents of this collection use [`set_dag_nodes`](Self::set_dag_nodes).
@@ -58,7 +74,10 @@ impl CreateScriptFluentBuilder  {
         self
     }
     /// <p>A list of the nodes in the DAG.</p>
-    pub fn set_dag_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::types::CodeGenNode>>) -> Self {
+    pub fn set_dag_nodes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CodeGenNode>>,
+    ) -> Self {
         self.inner = self.inner.set_dag_nodes(input);
         self
     }
@@ -72,7 +91,10 @@ impl CreateScriptFluentBuilder  {
         self
     }
     /// <p>A list of the edges in the DAG.</p>
-    pub fn set_dag_edges(mut self, input: std::option::Option<std::vec::Vec<crate::types::CodeGenEdge>>) -> Self {
+    pub fn set_dag_edges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CodeGenEdge>>,
+    ) -> Self {
         self.inner = self.inner.set_dag_edges(input);
         self
     }
@@ -87,4 +109,3 @@ impl CreateScriptFluentBuilder  {
         self
     }
 }
-

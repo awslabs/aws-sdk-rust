@@ -28,4 +28,3 @@ pub mod builders;
 
 /// Error types that AWS Application Cost Profiler can respond with.
 pub mod error;
-

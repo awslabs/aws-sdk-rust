@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetContainerPolicyInput  {
+pub struct GetContainerPolicyInput {
     /// <p>The name of the container. </p>
     #[doc(hidden)]
     pub container_name: std::option::Option<std::string::String>,
 }
 impl GetContainerPolicyInput {
     /// <p>The name of the container. </p>
-    pub fn container_name(&self) -> std::option::Option<& str> {
+    pub fn container_name(&self) -> std::option::Option<&str> {
         self.container_name.as_deref()
     }
 }
 impl GetContainerPolicyInput {
     /// Creates a new builder-style object to manufacture [`GetContainerPolicyInput`](crate::operation::get_container_policy::GetContainerPolicyInput).
-    pub fn builder() -> crate::operation::get_container_policy::builders::GetContainerPolicyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_container_policy::builders::GetContainerPolicyInputBuilder {
         crate::operation::get_container_policy::builders::GetContainerPolicyInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl GetContainerPolicyInputBuilder {
     }
     /// <p>The name of the container. </p>
     pub fn set_container_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.container_name = input; self
+        self.container_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetContainerPolicyInput`](crate::operation::get_container_policy::GetContainerPolicyInput).
-    pub fn build(self) -> Result<crate::operation::get_container_policy::GetContainerPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_container_policy::GetContainerPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_container_policy::GetContainerPolicyInput {
-                container_name: self.container_name
-                ,
-            }
+                container_name: self.container_name,
+            },
         )
     }
 }
-

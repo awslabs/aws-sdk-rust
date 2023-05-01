@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRelatedItemsOutput  {
+pub struct UpdateRelatedItemsOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for UpdateRelatedItemsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateRelatedItemsOutput {
     /// Creates a new builder-style object to manufacture [`UpdateRelatedItemsOutput`](crate::operation::update_related_items::UpdateRelatedItemsOutput).
-    pub fn builder() -> crate::operation::update_related_items::builders::UpdateRelatedItemsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_related_items::builders::UpdateRelatedItemsOutputBuilder {
         crate::operation::update_related_items::builders::UpdateRelatedItemsOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct UpdateRelatedItemsOutputBuilder {
 }
 impl UpdateRelatedItemsOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateRelatedItemsOutput`](crate::operation::update_related_items::UpdateRelatedItemsOutput).
     pub fn build(self) -> crate::operation::update_related_items::UpdateRelatedItemsOutput {
         crate::operation::update_related_items::UpdateRelatedItemsOutput {
@@ -40,4 +41,3 @@ impl UpdateRelatedItemsOutputBuilder {
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssociatedIpv6PoolCidrsInput  {
+pub struct GetAssociatedIpv6PoolCidrsInput {
     /// <p>The ID of the IPv6 address pool.</p>
     #[doc(hidden)]
     pub pool_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct GetAssociatedIpv6PoolCidrsInput  {
 }
 impl GetAssociatedIpv6PoolCidrsInput {
     /// <p>The ID of the IPv6 address pool.</p>
-    pub fn pool_id(&self) -> std::option::Option<& str> {
+    pub fn pool_id(&self) -> std::option::Option<&str> {
         self.pool_id.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -36,7 +36,7 @@ impl GetAssociatedIpv6PoolCidrsInput {
 }
 impl GetAssociatedIpv6PoolCidrsInput {
     /// Creates a new builder-style object to manufacture [`GetAssociatedIpv6PoolCidrsInput`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput).
-    pub fn builder() -> crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder {
+    pub fn builder() -> crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder{
         crate::operation::get_associated_ipv6_pool_cidrs::builders::GetAssociatedIpv6PoolCidrsInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl GetAssociatedIpv6PoolCidrsInputBuilder {
     }
     /// <p>The ID of the IPv6 address pool.</p>
     pub fn set_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.pool_id = input; self
+        self.pool_id = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl GetAssociatedIpv6PoolCidrsInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,7 +78,8 @@ impl GetAssociatedIpv6PoolCidrsInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -85,22 +88,23 @@ impl GetAssociatedIpv6PoolCidrsInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAssociatedIpv6PoolCidrsInput`](crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput).
-    pub fn build(self) -> Result<crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsInput {
-                pool_id: self.pool_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                pool_id: self.pool_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

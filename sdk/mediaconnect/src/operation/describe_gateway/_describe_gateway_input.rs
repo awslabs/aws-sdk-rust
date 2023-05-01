@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeGatewayInput  {
+pub struct DescribeGatewayInput {
     /// The Amazon Resource Name (ARN) of the gateway that you want to describe.
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl DescribeGatewayInput {
     /// The Amazon Resource Name (ARN) of the gateway that you want to describe.
-    pub fn gateway_arn(&self) -> std::option::Option<& str> {
+    pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DescribeGatewayInputBuilder {
     }
     /// The Amazon Resource Name (ARN) of the gateway that you want to describe.
     pub fn set_gateway_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_arn = input; self
+        self.gateway_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeGatewayInput`](crate::operation::describe_gateway::DescribeGatewayInput).
-    pub fn build(self) -> Result<crate::operation::describe_gateway::DescribeGatewayInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_gateway::DescribeGatewayInput {
-                gateway_arn: self.gateway_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_gateway::DescribeGatewayInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_gateway::DescribeGatewayInput {
+            gateway_arn: self.gateway_arn,
+        })
     }
 }
-

@@ -2,49 +2,36 @@
 #![cfg(feature = "test-util")]
 #[should_panic(expected = "no request was received")]
 #[tokio::test]
-async
-fn operation_input_test_put_events_1() {
+async fn operation_input_test_put_events_1() {
     /* builtIns: {
         "AWS::Region": "us-east-1"
     } */
-                    /* clientParams: {} */
-                    let (conn, rcvr) = aws_smithy_client::test_connection::capture_request(None);
-                    let conf =  {
+    /* clientParams: {} */
+    let (conn, rcvr) = aws_smithy_client::test_connection::capture_request(None);
+    let conf = {
         #[allow(unused_mut)]
-        let mut builder = aws_sdk_eventbridge::Config::builder().with_test_defaults().http_connector(conn);
+        let mut builder = aws_sdk_eventbridge::Config::builder()
+            .with_test_defaults()
+            .http_connector(conn);
         let builder = builder.region(aws_types::region::Region::new("us-east-1"));
         builder.build()
     };
-                    let client = aws_sdk_eventbridge::Client::from_conf(conf);
-                    let _result = dbg!(client.put_events()
-    .set_endpoint_id(Some(
-        "abc123.456def".to_owned()
-    ))
-    .set_entries(Some(
-        vec![
-            aws_sdk_eventbridge::types::PutEventsRequestEntry::builder()
-            .set_detail_type(
-                Some(
-                    "detailType".to_owned()
-                )
-            )
-            .set_detail(
-                Some(
-                    "{ \"test\": [\"test\"] }".to_owned()
-                )
-            )
-            .set_event_bus_name(
-                Some(
-                    "my-sdk-app".to_owned()
-                )
-            )
-            .build()
-            ,
-        ]
-    ))
-    .send().await);
-                    let req = rcvr.expect_request();
-                                let uri = req.uri().to_string();
-                                assert!(uri.starts_with("https://abc123.456def.endpoint.events.amazonaws.com"), "expected URI to start with `https://abc123.456def.endpoint.events.amazonaws.com` but it was `{}`", uri);
+    let client = aws_sdk_eventbridge::Client::from_conf(conf);
+    let _result = dbg!(
+        client
+            .put_events()
+            .set_endpoint_id(Some("abc123.456def".to_owned()))
+            .set_entries(Some(vec![
+                aws_sdk_eventbridge::types::PutEventsRequestEntry::builder()
+                    .set_detail_type(Some("detailType".to_owned()))
+                    .set_detail(Some("{ \"test\": [\"test\"] }".to_owned()))
+                    .set_event_bus_name(Some("my-sdk-app".to_owned()))
+                    .build(),
+            ]))
+            .send()
+            .await
+    );
+    let req = rcvr.expect_request();
+    let uri = req.uri().to_string();
+    assert!(uri.starts_with("https://abc123.456def.endpoint.events.amazonaws.com"), "expected URI to start with `https://abc123.456def.endpoint.events.amazonaws.com` but it was `{}`", uri);
 }
-

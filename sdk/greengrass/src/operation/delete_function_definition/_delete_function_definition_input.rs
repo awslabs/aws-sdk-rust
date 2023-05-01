@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFunctionDefinitionInput  {
+pub struct DeleteFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
     #[doc(hidden)]
     pub function_definition_id: std::option::Option<std::string::String>,
 }
 impl DeleteFunctionDefinitionInput {
     /// The ID of the Lambda function definition.
-    pub fn function_definition_id(&self) -> std::option::Option<& str> {
+    pub fn function_definition_id(&self) -> std::option::Option<&str> {
         self.function_definition_id.as_deref()
     }
 }
 impl DeleteFunctionDefinitionInput {
     /// Creates a new builder-style object to manufacture [`DeleteFunctionDefinitionInput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionInput).
-    pub fn builder() -> crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionInputBuilder
+    {
         crate::operation::delete_function_definition::builders::DeleteFunctionDefinitionInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteFunctionDefinitionInputBuilder {
         self
     }
     /// The ID of the Lambda function definition.
-    pub fn set_function_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_definition_id = input; self
+    pub fn set_function_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.function_definition_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFunctionDefinitionInput`](crate::operation::delete_function_definition::DeleteFunctionDefinitionInput).
-    pub fn build(self) -> Result<crate::operation::delete_function_definition::DeleteFunctionDefinitionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_function_definition::DeleteFunctionDefinitionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_function_definition::DeleteFunctionDefinitionInput {
-                function_definition_id: self.function_definition_id
-                ,
-            }
+                function_definition_id: self.function_definition_id,
+            },
         )
     }
 }
-

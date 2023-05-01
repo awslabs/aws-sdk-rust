@@ -3,7 +3,7 @@
 /// <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GaugeChartFieldWells  {
+pub struct GaugeChartFieldWells {
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
     #[doc(hidden)]
     pub values: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
@@ -13,11 +13,11 @@ pub struct GaugeChartFieldWells  {
 }
 impl GaugeChartFieldWells {
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn values(&self) -> std::option::Option<& [crate::types::MeasureField]> {
+    pub fn values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
         self.values.as_deref()
     }
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn target_values(&self) -> std::option::Option<& [crate::types::MeasureField]> {
+    pub fn target_values(&self) -> std::option::Option<&[crate::types::MeasureField]> {
         self.target_values.as_deref()
     }
 }
@@ -43,13 +43,17 @@ impl GaugeChartFieldWellsBuilder {
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
     pub fn values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.values.unwrap_or_default();
-                        v.push(input);
-                        self.values = Some(v);
-                        self
+        v.push(input);
+        self.values = Some(v);
+        self
     }
     /// <p>The value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>) -> Self {
-        self.values = input; self
+    pub fn set_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    ) -> Self {
+        self.values = input;
+        self
     }
     /// Appends an item to `target_values`.
     ///
@@ -58,22 +62,23 @@ impl GaugeChartFieldWellsBuilder {
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
     pub fn target_values(mut self, input: crate::types::MeasureField) -> Self {
         let mut v = self.target_values.unwrap_or_default();
-                        v.push(input);
-                        self.target_values = Some(v);
-                        self
+        v.push(input);
+        self.target_values = Some(v);
+        self
     }
     /// <p>The target value field wells of a <code>GaugeChartVisual</code>.</p>
-    pub fn set_target_values(mut self, input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>) -> Self {
-        self.target_values = input; self
+    pub fn set_target_values(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MeasureField>>,
+    ) -> Self {
+        self.target_values = input;
+        self
     }
     /// Consumes the builder and constructs a [`GaugeChartFieldWells`](crate::types::GaugeChartFieldWells).
     pub fn build(self) -> crate::types::GaugeChartFieldWells {
         crate::types::GaugeChartFieldWells {
-            values: self.values
-            ,
-            target_values: self.target_values
-            ,
+            values: self.values,
+            target_values: self.target_values,
         }
     }
 }
-

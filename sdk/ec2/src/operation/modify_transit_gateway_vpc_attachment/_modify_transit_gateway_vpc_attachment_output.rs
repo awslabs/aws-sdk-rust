@@ -2,26 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyTransitGatewayVpcAttachmentOutput  {
+pub struct ModifyTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the modified attachment.</p>
     #[doc(hidden)]
-    pub transit_gateway_vpc_attachment: std::option::Option<crate::types::TransitGatewayVpcAttachment>,
+    pub transit_gateway_vpc_attachment:
+        std::option::Option<crate::types::TransitGatewayVpcAttachment>,
     _request_id: Option<String>,
 }
 impl ModifyTransitGatewayVpcAttachmentOutput {
     /// <p>Information about the modified attachment.</p>
-    pub fn transit_gateway_vpc_attachment(&self) -> std::option::Option<& crate::types::TransitGatewayVpcAttachment> {
+    pub fn transit_gateway_vpc_attachment(
+        &self,
+    ) -> std::option::Option<&crate::types::TransitGatewayVpcAttachment> {
         self.transit_gateway_vpc_attachment.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for ModifyTransitGatewayVpcAttachmentOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ModifyTransitGatewayVpcAttachmentOutput {
     /// Creates a new builder-style object to manufacture [`ModifyTransitGatewayVpcAttachmentOutput`](crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput).
-    pub fn builder() -> crate::operation::modify_transit_gateway_vpc_attachment::builders::ModifyTransitGatewayVpcAttachmentOutputBuilder {
+    pub fn builder() -> crate::operation::modify_transit_gateway_vpc_attachment::builders::ModifyTransitGatewayVpcAttachmentOutputBuilder{
         crate::operation::modify_transit_gateway_vpc_attachment::builders::ModifyTransitGatewayVpcAttachmentOutputBuilder::default()
     }
 }
@@ -30,30 +33,38 @@ impl ModifyTransitGatewayVpcAttachmentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ModifyTransitGatewayVpcAttachmentOutputBuilder {
-    pub(crate) transit_gateway_vpc_attachment: std::option::Option<crate::types::TransitGatewayVpcAttachment>,
+    pub(crate) transit_gateway_vpc_attachment:
+        std::option::Option<crate::types::TransitGatewayVpcAttachment>,
     _request_id: Option<String>,
 }
 impl ModifyTransitGatewayVpcAttachmentOutputBuilder {
     /// <p>Information about the modified attachment.</p>
-    pub fn transit_gateway_vpc_attachment(mut self, input: crate::types::TransitGatewayVpcAttachment) -> Self {
+    pub fn transit_gateway_vpc_attachment(
+        mut self,
+        input: crate::types::TransitGatewayVpcAttachment,
+    ) -> Self {
         self.transit_gateway_vpc_attachment = Some(input);
         self
     }
     /// <p>Information about the modified attachment.</p>
-    pub fn set_transit_gateway_vpc_attachment(mut self, input: std::option::Option<crate::types::TransitGatewayVpcAttachment>) -> Self {
-        self.transit_gateway_vpc_attachment = input; self
+    pub fn set_transit_gateway_vpc_attachment(
+        mut self,
+        input: std::option::Option<crate::types::TransitGatewayVpcAttachment>,
+    ) -> Self {
+        self.transit_gateway_vpc_attachment = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ModifyTransitGatewayVpcAttachmentOutput`](crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput).
-    pub fn build(self) -> crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput {
+    pub fn build(self) -> crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput{
         crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput {
             transit_gateway_vpc_attachment: self.transit_gateway_vpc_attachment
             ,
@@ -61,4 +72,3 @@ impl ModifyTransitGatewayVpcAttachmentOutputBuilder {
         }
     }
 }
-

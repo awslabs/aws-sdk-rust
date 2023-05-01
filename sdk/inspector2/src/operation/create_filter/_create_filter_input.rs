@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFilterInput  {
+pub struct CreateFilterInput {
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::types::FilterAction>,
@@ -17,34 +17,38 @@ pub struct CreateFilterInput  {
     pub name: std::option::Option<std::string::String>,
     /// <p>A list of tags for the filter.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The reason for creating the filter.</p>
     #[doc(hidden)]
     pub reason: std::option::Option<std::string::String>,
 }
 impl CreateFilterInput {
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
-    pub fn action(&self) -> std::option::Option<& crate::types::FilterAction> {
+    pub fn action(&self) -> std::option::Option<&crate::types::FilterAction> {
         self.action.as_ref()
     }
     /// <p>A description of the filter.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
-    pub fn filter_criteria(&self) -> std::option::Option<& crate::types::FilterCriteria> {
+    pub fn filter_criteria(&self) -> std::option::Option<&crate::types::FilterCriteria> {
         self.filter_criteria.as_ref()
     }
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A list of tags for the filter.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The reason for creating the filter.</p>
-    pub fn reason(&self) -> std::option::Option<& str> {
+    pub fn reason(&self) -> std::option::Option<&str> {
         self.reason.as_deref()
     }
 }
@@ -63,7 +67,8 @@ pub struct CreateFilterInputBuilder {
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) filter_criteria: std::option::Option<crate::types::FilterCriteria>,
     pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) reason: std::option::Option<std::string::String>,
 }
 impl CreateFilterInputBuilder {
@@ -74,7 +79,8 @@ impl CreateFilterInputBuilder {
     }
     /// <p>Defines the action that is to be applied to the findings that match the filter.</p>
     pub fn set_action(mut self, input: std::option::Option<crate::types::FilterAction>) -> Self {
-        self.action = input; self
+        self.action = input;
+        self
     }
     /// <p>A description of the filter.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +89,8 @@ impl CreateFilterInputBuilder {
     }
     /// <p>A description of the filter.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
     pub fn filter_criteria(mut self, input: crate::types::FilterCriteria) -> Self {
@@ -91,8 +98,12 @@ impl CreateFilterInputBuilder {
         self
     }
     /// <p>Defines the criteria to be used in the filter for querying findings.</p>
-    pub fn set_filter_criteria(mut self, input: std::option::Option<crate::types::FilterCriteria>) -> Self {
-        self.filter_criteria = input; self
+    pub fn set_filter_criteria(
+        mut self,
+        input: std::option::Option<crate::types::FilterCriteria>,
+    ) -> Self {
+        self.filter_criteria = input;
+        self
     }
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,22 +112,33 @@ impl CreateFilterInputBuilder {
     }
     /// <p>The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A list of tags for the filter.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A list of tags for the filter.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The reason for creating the filter.</p>
     pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -125,26 +147,23 @@ impl CreateFilterInputBuilder {
     }
     /// <p>The reason for creating the filter.</p>
     pub fn set_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reason = input; self
+        self.reason = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFilterInput`](crate::operation::create_filter::CreateFilterInput).
-    pub fn build(self) -> Result<crate::operation::create_filter::CreateFilterInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_filter::CreateFilterInput {
-                action: self.action
-                ,
-                description: self.description
-                ,
-                filter_criteria: self.filter_criteria
-                ,
-                name: self.name
-                ,
-                tags: self.tags
-                ,
-                reason: self.reason
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_filter::CreateFilterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_filter::CreateFilterInput {
+            action: self.action,
+            description: self.description,
+            filter_criteria: self.filter_criteria,
+            name: self.name,
+            tags: self.tags,
+            reason: self.reason,
+        })
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The targets to disassociate from the specified event window.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InstanceEventWindowDisassociationRequest  {
+pub struct InstanceEventWindowDisassociationRequest {
     /// <p>The IDs of the instances to disassociate from the event window.</p>
     #[doc(hidden)]
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -16,15 +16,15 @@ pub struct InstanceEventWindowDisassociationRequest  {
 }
 impl InstanceEventWindowDisassociationRequest {
     /// <p>The IDs of the instances to disassociate from the event window.</p>
-    pub fn instance_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn instance_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.instance_ids.as_deref()
     }
     /// <p>The instance tags to disassociate from the event window. Any instances associated with the tags will be disassociated from the event window.</p>
-    pub fn instance_tags(&self) -> std::option::Option<& [crate::types::Tag]> {
+    pub fn instance_tags(&self) -> std::option::Option<&[crate::types::Tag]> {
         self.instance_tags.as_deref()
     }
     /// <p>The IDs of the Dedicated Hosts to disassociate from the event window.</p>
-    pub fn dedicated_host_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn dedicated_host_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.dedicated_host_ids.as_deref()
     }
 }
@@ -51,13 +51,17 @@ impl InstanceEventWindowDisassociationRequestBuilder {
     /// <p>The IDs of the instances to disassociate from the event window.</p>
     pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.instance_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.instance_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.instance_ids = Some(v);
+        self
     }
     /// <p>The IDs of the instances to disassociate from the event window.</p>
-    pub fn set_instance_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.instance_ids = input; self
+    pub fn set_instance_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.instance_ids = input;
+        self
     }
     /// Appends an item to `instance_tags`.
     ///
@@ -66,13 +70,17 @@ impl InstanceEventWindowDisassociationRequestBuilder {
     /// <p>The instance tags to disassociate from the event window. Any instances associated with the tags will be disassociated from the event window.</p>
     pub fn instance_tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.instance_tags.unwrap_or_default();
-                        v.push(input);
-                        self.instance_tags = Some(v);
-                        self
+        v.push(input);
+        self.instance_tags = Some(v);
+        self
     }
     /// <p>The instance tags to disassociate from the event window. Any instances associated with the tags will be disassociated from the event window.</p>
-    pub fn set_instance_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
-        self.instance_tags = input; self
+    pub fn set_instance_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
+        self.instance_tags = input;
+        self
     }
     /// Appends an item to `dedicated_host_ids`.
     ///
@@ -81,24 +89,24 @@ impl InstanceEventWindowDisassociationRequestBuilder {
     /// <p>The IDs of the Dedicated Hosts to disassociate from the event window.</p>
     pub fn dedicated_host_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.dedicated_host_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.dedicated_host_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.dedicated_host_ids = Some(v);
+        self
     }
     /// <p>The IDs of the Dedicated Hosts to disassociate from the event window.</p>
-    pub fn set_dedicated_host_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.dedicated_host_ids = input; self
+    pub fn set_dedicated_host_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.dedicated_host_ids = input;
+        self
     }
     /// Consumes the builder and constructs a [`InstanceEventWindowDisassociationRequest`](crate::types::InstanceEventWindowDisassociationRequest).
     pub fn build(self) -> crate::types::InstanceEventWindowDisassociationRequest {
         crate::types::InstanceEventWindowDisassociationRequest {
-            instance_ids: self.instance_ids
-            ,
-            instance_tags: self.instance_tags
-            ,
-            dedicated_host_ids: self.dedicated_host_ids
-            ,
+            instance_ids: self.instance_ids,
+            instance_tags: self.instance_tags,
+            dedicated_host_ids: self.dedicated_host_ids,
         }
     }
 }
-

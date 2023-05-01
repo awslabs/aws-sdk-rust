@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectAssignmentInput  {
+pub struct RejectAssignmentInput {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     #[doc(hidden)]
     pub assignment_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct RejectAssignmentInput  {
 }
 impl RejectAssignmentInput {
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
-    pub fn assignment_id(&self) -> std::option::Option<& str> {
+    pub fn assignment_id(&self) -> std::option::Option<&str> {
         self.assignment_id.as_deref()
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
-    pub fn requester_feedback(&self) -> std::option::Option<& str> {
+    pub fn requester_feedback(&self) -> std::option::Option<&str> {
         self.requester_feedback.as_deref()
     }
 }
 impl RejectAssignmentInput {
     /// Creates a new builder-style object to manufacture [`RejectAssignmentInput`](crate::operation::reject_assignment::RejectAssignmentInput).
-    pub fn builder() -> crate::operation::reject_assignment::builders::RejectAssignmentInputBuilder {
+    pub fn builder() -> crate::operation::reject_assignment::builders::RejectAssignmentInputBuilder
+    {
         crate::operation::reject_assignment::builders::RejectAssignmentInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl RejectAssignmentInputBuilder {
     }
     /// <p> The ID of the assignment. The assignment must correspond to a HIT created by the Requester. </p>
     pub fn set_assignment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assignment_id = input; self
+        self.assignment_id = input;
+        self
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
     pub fn requester_feedback(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +52,23 @@ impl RejectAssignmentInputBuilder {
         self
     }
     /// <p> A message for the Worker, which the Worker can see in the Status section of the web site. </p>
-    pub fn set_requester_feedback(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.requester_feedback = input; self
+    pub fn set_requester_feedback(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.requester_feedback = input;
+        self
     }
     /// Consumes the builder and constructs a [`RejectAssignmentInput`](crate::operation::reject_assignment::RejectAssignmentInput).
-    pub fn build(self) -> Result<crate::operation::reject_assignment::RejectAssignmentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::reject_assignment::RejectAssignmentInput {
-                assignment_id: self.assignment_id
-                ,
-                requester_feedback: self.requester_feedback
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::reject_assignment::RejectAssignmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::reject_assignment::RejectAssignmentInput {
+            assignment_id: self.assignment_id,
+            requester_feedback: self.requester_feedback,
+        })
     }
 }
-

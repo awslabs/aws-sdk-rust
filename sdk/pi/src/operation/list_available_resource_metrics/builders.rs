@@ -4,63 +4,86 @@ pub use crate::operation::list_available_resource_metrics::_list_available_resou
 pub use crate::operation::list_available_resource_metrics::_list_available_resource_metrics_input::ListAvailableResourceMetricsInputBuilder;
 
 /// Fluent builder constructing a request to `ListAvailableResourceMetrics`.
-/// 
+///
 /// <p>Retrieve metrics of the specified types that can be queried for a specified DB instance. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAvailableResourceMetricsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_available_resource_metrics::builders::ListAvailableResourceMetricsInputBuilder,
 }
-impl ListAvailableResourceMetricsFluentBuilder  {
+impl ListAvailableResourceMetricsFluentBuilder {
     /// Creates a new `ListAvailableResourceMetrics`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_available_resource_metrics::ListAvailableResourceMetrics, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput, aws_smithy_http::result::SdkError<crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetrics,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator {
-                                crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator{
+        crate::operation::list_available_resource_metrics::paginator::ListAvailableResourceMetricsPaginator::new(self.handle, self.inner)
+    }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
     pub fn service_type(mut self, input: crate::types::ServiceType) -> Self {
         self.inner = self.inner.service_type(input);
         self
     }
     /// <p>The Amazon Web Services service for which Performance Insights returns metrics.</p>
-    pub fn set_service_type(mut self, input: std::option::Option<crate::types::ServiceType>) -> Self {
+    pub fn set_service_type(
+        mut self,
+        input: std::option::Option<crate::types::ServiceType>,
+    ) -> Self {
         self.inner = self.inner.set_service_type(input);
         self
     }
@@ -78,25 +101,28 @@ impl ListAvailableResourceMetricsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_metric_types`](Self::set_metric_types).
     ///
-    /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>os</code> (OS counter metrics) - All engines</p> </li> 
-    /// <li> <p> <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p> </li> 
-    /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> 
-    /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li> 
+    /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>os</code> (OS counter metrics) - All engines</p> </li>
+    /// <li> <p> <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p> </li>
+    /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// </ul>
     pub fn metric_types(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.metric_types(input.into());
         self
     }
-    /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>os</code> (OS counter metrics) - All engines</p> </li> 
-    /// <li> <p> <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p> </li> 
-    /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li> 
-    /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li> 
+    /// <p>The types of metrics to return in the response. Valid values in the array include the following:</p>
+    /// <ul>
+    /// <li> <p> <code>os</code> (OS counter metrics) - All engines</p> </li>
+    /// <li> <p> <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB</p> </li>
+    /// <li> <p> <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB</p> </li>
+    /// <li> <p> <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except for Amazon DocumentDB</p> </li>
     /// </ul>
-    pub fn set_metric_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_metric_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_metric_types(input);
         self
     }
@@ -121,4 +147,3 @@ impl ListAvailableResourceMetricsFluentBuilder  {
         self
     }
 }
-

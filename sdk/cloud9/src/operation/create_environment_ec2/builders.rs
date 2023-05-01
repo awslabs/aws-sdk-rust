@@ -4,57 +4,77 @@ pub use crate::operation::create_environment_ec2::_create_environment_ec2_output
 pub use crate::operation::create_environment_ec2::_create_environment_ec2_input::CreateEnvironmentEc2InputBuilder;
 
 /// Fluent builder constructing a request to `CreateEnvironmentEC2`.
-/// 
+///
 /// <p>Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEnvironmentEC2FluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder,
+    inner: crate::operation::create_environment_ec2::builders::CreateEnvironmentEc2InputBuilder,
 }
-impl CreateEnvironmentEC2FluentBuilder  {
+impl CreateEnvironmentEC2FluentBuilder {
     /// Creates a new `CreateEnvironmentEC2`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_environment_ec2::CreateEnvironmentEC2, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_environment_ec2::CreateEnvironmentEC2Error>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_environment_ec2::CreateEnvironmentEc2Output, aws_smithy_http::result::SdkError<crate::operation::create_environment_ec2::CreateEnvironmentEC2Error>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The name of the environment to create.</p> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_environment_ec2::CreateEnvironmentEC2,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_environment_ec2::CreateEnvironmentEc2Output,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The name of the environment to create.</p>
     /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
         self
     }
-    /// <p>The name of the environment to create.</p> 
+    /// <p>The name of the environment to create.</p>
     /// <p>This name is visible to other IAM users in the same Amazon Web Services account.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_name(input);
@@ -70,15 +90,18 @@ impl CreateEnvironmentEC2FluentBuilder  {
         self.inner = self.inner.set_description(input);
         self
     }
-    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p> 
+    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
     pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_request_token(input.into());
         self
     }
-    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p> 
+    /// <p>A unique, case-sensitive string that helps Cloud9 to ensure this operation completes no more than one time.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
-    pub fn set_client_request_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_client_request_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_client_request_token(input);
         self
     }
@@ -102,39 +125,39 @@ impl CreateEnvironmentEC2FluentBuilder  {
         self.inner = self.inner.set_subnet_id(input);
         self
     }
-    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> 
-    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p> 
-    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p> 
-    /// <p> <b>AMI aliases </b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> 
-    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> 
-    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> 
-    /// </ul> 
-    /// <p> <b>SSM paths</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li> 
-    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> 
-    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> 
+    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
+    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p>
+    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p>
+    /// <p> <b>AMI aliases </b> </p>
+    /// <ul>
+    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
+    /// </ul>
+    /// <p> <b>SSM paths</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
     /// </ul>
     pub fn image_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.image_id(input.into());
         self
     }
-    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p> 
-    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p> 
-    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p> 
-    /// <p> <b>AMI aliases </b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li> 
-    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li> 
-    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li> 
-    /// </ul> 
-    /// <p> <b>SSM paths</b> </p> 
-    /// <ul> 
-    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li> 
-    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li> 
-    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li> 
+    /// <p>The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for the instance, you must specify a valid AMI alias or a valid Amazon EC2 Systems Manager (SSM) path.</p>
+    /// <p>The default Amazon Linux AMI is currently used if the parameter isn't explicitly assigned a value in the request. </p>
+    /// <p>In the future the parameter for Amazon Linux will no longer be available when you specify an AMI for your instance. Amazon Linux 2 will then become the default AMI, which is used to launch your instance if no parameter is explicitly defined.</p>
+    /// <p> <b>AMI aliases </b> </p>
+    /// <ul>
+    /// <li> <p> <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> </p> </li>
+    /// </ul>
+    /// <p> <b>SSM paths</b> </p>
+    /// <ul>
+    /// <li> <p> <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b> </p> </li>
+    /// <li> <p>Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code> </p> </li>
+    /// <li> <p>Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code> </p> </li>
     /// </ul>
     pub fn set_image_id(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_image_id(input);
@@ -170,19 +193,25 @@ impl CreateEnvironmentEC2FluentBuilder  {
         self
     }
     /// <p>An array of key-value pairs that will be associated with the new Cloud9 development environment.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
-    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p> 
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
     pub fn connection_type(mut self, input: crate::types::ConnectionType) -> Self {
         self.inner = self.inner.connection_type(input);
         self
     }
-    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p> 
+    /// <p>The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through Amazon EC2 Systems Manager).</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
-    pub fn set_connection_type(mut self, input: std::option::Option<crate::types::ConnectionType>) -> Self {
+    pub fn set_connection_type(
+        mut self,
+        input: std::option::Option<crate::types::ConnectionType>,
+    ) -> Self {
         self.inner = self.inner.set_connection_type(input);
         self
     }
@@ -197,4 +226,3 @@ impl CreateEnvironmentEC2FluentBuilder  {
         self
     }
 }
-

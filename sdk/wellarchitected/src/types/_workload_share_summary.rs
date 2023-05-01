@@ -3,7 +3,7 @@
 /// <p>A workload share summary return object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct WorkloadShareSummary  {
+pub struct WorkloadShareSummary {
     /// <p>The ID associated with the workload share.</p>
     #[doc(hidden)]
     pub share_id: std::option::Option<std::string::String>,
@@ -22,23 +22,23 @@ pub struct WorkloadShareSummary  {
 }
 impl WorkloadShareSummary {
     /// <p>The ID associated with the workload share.</p>
-    pub fn share_id(&self) -> std::option::Option<& str> {
+    pub fn share_id(&self) -> std::option::Option<&str> {
         self.share_id.as_deref()
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
-    pub fn shared_with(&self) -> std::option::Option<& str> {
+    pub fn shared_with(&self) -> std::option::Option<&str> {
         self.shared_with.as_deref()
     }
     /// <p>Permission granted on a workload share.</p>
-    pub fn permission_type(&self) -> std::option::Option<& crate::types::PermissionType> {
+    pub fn permission_type(&self) -> std::option::Option<&crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
     /// <p>The status of a workload share.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::ShareStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::ShareStatus> {
         self.status.as_ref()
     }
     /// <p>Optional message to compliment the Status field.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl WorkloadShareSummaryBuilder {
     }
     /// <p>The ID associated with the workload share.</p>
     pub fn set_share_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.share_id = input; self
+        self.share_id = input;
+        self
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn shared_with(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl WorkloadShareSummaryBuilder {
     }
     /// <p>The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</p>
     pub fn set_shared_with(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.shared_with = input; self
+        self.shared_with = input;
+        self
     }
     /// <p>Permission granted on a workload share.</p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
@@ -84,8 +86,12 @@ impl WorkloadShareSummaryBuilder {
         self
     }
     /// <p>Permission granted on a workload share.</p>
-    pub fn set_permission_type(mut self, input: std::option::Option<crate::types::PermissionType>) -> Self {
-        self.permission_type = input; self
+    pub fn set_permission_type(
+        mut self,
+        input: std::option::Option<crate::types::PermissionType>,
+    ) -> Self {
+        self.permission_type = input;
+        self
     }
     /// <p>The status of a workload share.</p>
     pub fn status(mut self, input: crate::types::ShareStatus) -> Self {
@@ -94,7 +100,8 @@ impl WorkloadShareSummaryBuilder {
     }
     /// <p>The status of a workload share.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::ShareStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>Optional message to compliment the Status field.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +110,17 @@ impl WorkloadShareSummaryBuilder {
     }
     /// <p>Optional message to compliment the Status field.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkloadShareSummary`](crate::types::WorkloadShareSummary).
     pub fn build(self) -> crate::types::WorkloadShareSummary {
         crate::types::WorkloadShareSummary {
-            share_id: self.share_id
-            ,
-            shared_with: self.shared_with
-            ,
-            permission_type: self.permission_type
-            ,
-            status: self.status
-            ,
-            status_message: self.status_message
-            ,
+            share_id: self.share_id,
+            shared_with: self.shared_with,
+            permission_type: self.permission_type,
+            status: self.status,
+            status_message: self.status_message,
         }
     }
 }
-

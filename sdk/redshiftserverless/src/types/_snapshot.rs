@@ -3,7 +3,7 @@
 /// <p>A snapshot object that contains databases.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Snapshot  {
+pub struct Snapshot {
     /// <p>The name of the namepsace.</p>
     #[doc(hidden)]
     pub namespace_name: std::option::Option<std::string::String>,
@@ -63,39 +63,40 @@ pub struct Snapshot  {
     pub accounts_with_restore_access: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
     #[doc(hidden)]
-    pub accounts_with_provisioned_restore_access: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub accounts_with_provisioned_restore_access:
+        std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl Snapshot {
     /// <p>The name of the namepsace.</p>
-    pub fn namespace_name(&self) -> std::option::Option<& str> {
+    pub fn namespace_name(&self) -> std::option::Option<&str> {
         self.namespace_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace the snapshot was created from.</p>
-    pub fn namespace_arn(&self) -> std::option::Option<& str> {
+    pub fn namespace_arn(&self) -> std::option::Option<&str> {
         self.namespace_arn.as_deref()
     }
     /// <p>The name of the snapshot.</p>
-    pub fn snapshot_name(&self) -> std::option::Option<& str> {
+    pub fn snapshot_name(&self) -> std::option::Option<&str> {
         self.snapshot_name.as_deref()
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn snapshot_create_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn snapshot_create_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_create_time.as_ref()
     }
     /// <p>The username of the database within a snapshot.</p>
-    pub fn admin_username(&self) -> std::option::Option<& str> {
+    pub fn admin_username(&self) -> std::option::Option<&str> {
         self.admin_username.as_deref()
     }
     /// <p>The status of the snapshot.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::SnapshotStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::SnapshotStatus> {
         self.status.as_ref()
     }
     /// <p>The unique identifier of the KMS key used to encrypt the snapshot.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The owner Amazon Web Services; account of the snapshot.</p>
-    pub fn owner_account(&self) -> std::option::Option<& str> {
+    pub fn owner_account(&self) -> std::option::Option<&str> {
         self.owner_account.as_deref()
     }
     /// <p>The total size, in megabytes, of how big the snapshot is.</p>
@@ -131,19 +132,23 @@ impl Snapshot {
         self.snapshot_remaining_days
     }
     /// <p>The timestamp of when data within the snapshot started getting retained.</p>
-    pub fn snapshot_retention_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn snapshot_retention_start_time(
+        &self,
+    ) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.snapshot_retention_start_time.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
-    pub fn snapshot_arn(&self) -> std::option::Option<& str> {
+    pub fn snapshot_arn(&self) -> std::option::Option<&str> {
         self.snapshot_arn.as_deref()
     }
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a namespace.</p>
-    pub fn accounts_with_restore_access(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn accounts_with_restore_access(&self) -> std::option::Option<&[std::string::String]> {
         self.accounts_with_restore_access.as_deref()
     }
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
-    pub fn accounts_with_provisioned_restore_access(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn accounts_with_provisioned_restore_access(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
         self.accounts_with_provisioned_restore_access.as_deref()
     }
 }
@@ -176,8 +181,10 @@ pub struct SnapshotBuilder {
     pub(crate) snapshot_remaining_days: std::option::Option<i32>,
     pub(crate) snapshot_retention_start_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) snapshot_arn: std::option::Option<std::string::String>,
-    pub(crate) accounts_with_restore_access: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) accounts_with_provisioned_restore_access: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) accounts_with_restore_access:
+        std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) accounts_with_provisioned_restore_access:
+        std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl SnapshotBuilder {
     /// <p>The name of the namepsace.</p>
@@ -187,7 +194,8 @@ impl SnapshotBuilder {
     }
     /// <p>The name of the namepsace.</p>
     pub fn set_namespace_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_name = input; self
+        self.namespace_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace the snapshot was created from.</p>
     pub fn namespace_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -196,7 +204,8 @@ impl SnapshotBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the namespace the snapshot was created from.</p>
     pub fn set_namespace_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.namespace_arn = input; self
+        self.namespace_arn = input;
+        self
     }
     /// <p>The name of the snapshot.</p>
     pub fn snapshot_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -205,7 +214,8 @@ impl SnapshotBuilder {
     }
     /// <p>The name of the snapshot.</p>
     pub fn set_snapshot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_name = input; self
+        self.snapshot_name = input;
+        self
     }
     /// <p>The timestamp of when the snapshot was created.</p>
     pub fn snapshot_create_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -213,8 +223,12 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn set_snapshot_create_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.snapshot_create_time = input; self
+    pub fn set_snapshot_create_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.snapshot_create_time = input;
+        self
     }
     /// <p>The username of the database within a snapshot.</p>
     pub fn admin_username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -223,7 +237,8 @@ impl SnapshotBuilder {
     }
     /// <p>The username of the database within a snapshot.</p>
     pub fn set_admin_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.admin_username = input; self
+        self.admin_username = input;
+        self
     }
     /// <p>The status of the snapshot.</p>
     pub fn status(mut self, input: crate::types::SnapshotStatus) -> Self {
@@ -232,7 +247,8 @@ impl SnapshotBuilder {
     }
     /// <p>The status of the snapshot.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::SnapshotStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The unique identifier of the KMS key used to encrypt the snapshot.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,7 +257,8 @@ impl SnapshotBuilder {
     }
     /// <p>The unique identifier of the KMS key used to encrypt the snapshot.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>The owner Amazon Web Services; account of the snapshot.</p>
     pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -250,7 +267,8 @@ impl SnapshotBuilder {
     }
     /// <p>The owner Amazon Web Services; account of the snapshot.</p>
     pub fn set_owner_account(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.owner_account = input; self
+        self.owner_account = input;
+        self
     }
     /// <p>The total size, in megabytes, of how big the snapshot is.</p>
     pub fn total_backup_size_in_mega_bytes(mut self, input: f64) -> Self {
@@ -259,7 +277,8 @@ impl SnapshotBuilder {
     }
     /// <p>The total size, in megabytes, of how big the snapshot is.</p>
     pub fn set_total_backup_size_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
-        self.total_backup_size_in_mega_bytes = input; self
+        self.total_backup_size_in_mega_bytes = input;
+        self
     }
     /// <p>The size of the incremental backup in megabytes.</p>
     pub fn actual_incremental_backup_size_in_mega_bytes(mut self, input: f64) -> Self {
@@ -267,8 +286,12 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The size of the incremental backup in megabytes.</p>
-    pub fn set_actual_incremental_backup_size_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
-        self.actual_incremental_backup_size_in_mega_bytes = input; self
+    pub fn set_actual_incremental_backup_size_in_mega_bytes(
+        mut self,
+        input: std::option::Option<f64>,
+    ) -> Self {
+        self.actual_incremental_backup_size_in_mega_bytes = input;
+        self
     }
     /// <p>The size in megabytes of the data that has been backed up to a snapshot.</p>
     pub fn backup_progress_in_mega_bytes(mut self, input: f64) -> Self {
@@ -277,7 +300,8 @@ impl SnapshotBuilder {
     }
     /// <p>The size in megabytes of the data that has been backed up to a snapshot.</p>
     pub fn set_backup_progress_in_mega_bytes(mut self, input: std::option::Option<f64>) -> Self {
-        self.backup_progress_in_mega_bytes = input; self
+        self.backup_progress_in_mega_bytes = input;
+        self
     }
     /// <p>The rate at which data is backed up into a snapshot in megabytes per second.</p>
     pub fn current_backup_rate_in_mega_bytes_per_second(mut self, input: f64) -> Self {
@@ -285,8 +309,12 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The rate at which data is backed up into a snapshot in megabytes per second.</p>
-    pub fn set_current_backup_rate_in_mega_bytes_per_second(mut self, input: std::option::Option<f64>) -> Self {
-        self.current_backup_rate_in_mega_bytes_per_second = input; self
+    pub fn set_current_backup_rate_in_mega_bytes_per_second(
+        mut self,
+        input: std::option::Option<f64>,
+    ) -> Self {
+        self.current_backup_rate_in_mega_bytes_per_second = input;
+        self
     }
     /// <p>The estimated amount of seconds until the snapshot completes backup.</p>
     pub fn estimated_seconds_to_completion(mut self, input: i64) -> Self {
@@ -295,7 +323,8 @@ impl SnapshotBuilder {
     }
     /// <p>The estimated amount of seconds until the snapshot completes backup.</p>
     pub fn set_estimated_seconds_to_completion(mut self, input: std::option::Option<i64>) -> Self {
-        self.estimated_seconds_to_completion = input; self
+        self.estimated_seconds_to_completion = input;
+        self
     }
     /// <p>The amount of time it took to back up data into a snapshot.</p>
     pub fn elapsed_time_in_seconds(mut self, input: i64) -> Self {
@@ -304,7 +333,8 @@ impl SnapshotBuilder {
     }
     /// <p>The amount of time it took to back up data into a snapshot.</p>
     pub fn set_elapsed_time_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.elapsed_time_in_seconds = input; self
+        self.elapsed_time_in_seconds = input;
+        self
     }
     /// <p>The period of time, in days, of how long the snapshot is retained.</p>
     pub fn snapshot_retention_period(mut self, input: i32) -> Self {
@@ -313,7 +343,8 @@ impl SnapshotBuilder {
     }
     /// <p>The period of time, in days, of how long the snapshot is retained.</p>
     pub fn set_snapshot_retention_period(mut self, input: std::option::Option<i32>) -> Self {
-        self.snapshot_retention_period = input; self
+        self.snapshot_retention_period = input;
+        self
     }
     /// <p>The amount of days until the snapshot is deleted.</p>
     pub fn snapshot_remaining_days(mut self, input: i32) -> Self {
@@ -322,7 +353,8 @@ impl SnapshotBuilder {
     }
     /// <p>The amount of days until the snapshot is deleted.</p>
     pub fn set_snapshot_remaining_days(mut self, input: std::option::Option<i32>) -> Self {
-        self.snapshot_remaining_days = input; self
+        self.snapshot_remaining_days = input;
+        self
     }
     /// <p>The timestamp of when data within the snapshot started getting retained.</p>
     pub fn snapshot_retention_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -330,8 +362,12 @@ impl SnapshotBuilder {
         self
     }
     /// <p>The timestamp of when data within the snapshot started getting retained.</p>
-    pub fn set_snapshot_retention_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.snapshot_retention_start_time = input; self
+    pub fn set_snapshot_retention_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.snapshot_retention_start_time = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
     pub fn snapshot_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -340,7 +376,8 @@ impl SnapshotBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the snapshot.</p>
     pub fn set_snapshot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_arn = input; self
+        self.snapshot_arn = input;
+        self
     }
     /// Appends an item to `accounts_with_restore_access`.
     ///
@@ -349,73 +386,67 @@ impl SnapshotBuilder {
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a namespace.</p>
     pub fn accounts_with_restore_access(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.accounts_with_restore_access.unwrap_or_default();
-                        v.push(input.into());
-                        self.accounts_with_restore_access = Some(v);
-                        self
+        v.push(input.into());
+        self.accounts_with_restore_access = Some(v);
+        self
     }
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a namespace.</p>
-    pub fn set_accounts_with_restore_access(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.accounts_with_restore_access = input; self
+    pub fn set_accounts_with_restore_access(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.accounts_with_restore_access = input;
+        self
     }
     /// Appends an item to `accounts_with_provisioned_restore_access`.
     ///
     /// To override the contents of this collection use [`set_accounts_with_provisioned_restore_access`](Self::set_accounts_with_provisioned_restore_access).
     ///
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
-    pub fn accounts_with_provisioned_restore_access(mut self, input: impl Into<std::string::String>) -> Self {
-        let mut v = self.accounts_with_provisioned_restore_access.unwrap_or_default();
-                        v.push(input.into());
-                        self.accounts_with_provisioned_restore_access = Some(v);
-                        self
+    pub fn accounts_with_provisioned_restore_access(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
+        let mut v = self
+            .accounts_with_provisioned_restore_access
+            .unwrap_or_default();
+        v.push(input.into());
+        self.accounts_with_provisioned_restore_access = Some(v);
+        self
     }
     /// <p>All of the Amazon Web Services accounts that have access to restore a snapshot to a provisioned cluster.</p>
-    pub fn set_accounts_with_provisioned_restore_access(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.accounts_with_provisioned_restore_access = input; self
+    pub fn set_accounts_with_provisioned_restore_access(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.accounts_with_provisioned_restore_access = input;
+        self
     }
     /// Consumes the builder and constructs a [`Snapshot`](crate::types::Snapshot).
     pub fn build(self) -> crate::types::Snapshot {
         crate::types::Snapshot {
-            namespace_name: self.namespace_name
-            ,
-            namespace_arn: self.namespace_arn
-            ,
-            snapshot_name: self.snapshot_name
-            ,
-            snapshot_create_time: self.snapshot_create_time
-            ,
-            admin_username: self.admin_username
-            ,
-            status: self.status
-            ,
-            kms_key_id: self.kms_key_id
-            ,
-            owner_account: self.owner_account
-            ,
-            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes
-            ,
-            actual_incremental_backup_size_in_mega_bytes: self.actual_incremental_backup_size_in_mega_bytes
-            ,
-            backup_progress_in_mega_bytes: self.backup_progress_in_mega_bytes
-            ,
-            current_backup_rate_in_mega_bytes_per_second: self.current_backup_rate_in_mega_bytes_per_second
-            ,
-            estimated_seconds_to_completion: self.estimated_seconds_to_completion
-            ,
-            elapsed_time_in_seconds: self.elapsed_time_in_seconds
-            ,
-            snapshot_retention_period: self.snapshot_retention_period
-            ,
-            snapshot_remaining_days: self.snapshot_remaining_days
-            ,
-            snapshot_retention_start_time: self.snapshot_retention_start_time
-            ,
-            snapshot_arn: self.snapshot_arn
-            ,
-            accounts_with_restore_access: self.accounts_with_restore_access
-            ,
-            accounts_with_provisioned_restore_access: self.accounts_with_provisioned_restore_access
-            ,
+            namespace_name: self.namespace_name,
+            namespace_arn: self.namespace_arn,
+            snapshot_name: self.snapshot_name,
+            snapshot_create_time: self.snapshot_create_time,
+            admin_username: self.admin_username,
+            status: self.status,
+            kms_key_id: self.kms_key_id,
+            owner_account: self.owner_account,
+            total_backup_size_in_mega_bytes: self.total_backup_size_in_mega_bytes,
+            actual_incremental_backup_size_in_mega_bytes: self
+                .actual_incremental_backup_size_in_mega_bytes,
+            backup_progress_in_mega_bytes: self.backup_progress_in_mega_bytes,
+            current_backup_rate_in_mega_bytes_per_second: self
+                .current_backup_rate_in_mega_bytes_per_second,
+            estimated_seconds_to_completion: self.estimated_seconds_to_completion,
+            elapsed_time_in_seconds: self.elapsed_time_in_seconds,
+            snapshot_retention_period: self.snapshot_retention_period,
+            snapshot_remaining_days: self.snapshot_remaining_days,
+            snapshot_retention_start_time: self.snapshot_retention_start_time,
+            snapshot_arn: self.snapshot_arn,
+            accounts_with_restore_access: self.accounts_with_restore_access,
+            accounts_with_provisioned_restore_access: self.accounts_with_provisioned_restore_access,
         }
     }
 }
-

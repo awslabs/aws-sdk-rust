@@ -3,7 +3,7 @@
 /// Update the network source of the bridge.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBridgeNetworkSourceRequest  {
+pub struct UpdateBridgeNetworkSourceRequest {
     /// The network source multicast IP.
     #[doc(hidden)]
     pub multicast_ip: std::option::Option<std::string::String>,
@@ -19,11 +19,11 @@ pub struct UpdateBridgeNetworkSourceRequest  {
 }
 impl UpdateBridgeNetworkSourceRequest {
     /// The network source multicast IP.
-    pub fn multicast_ip(&self) -> std::option::Option<& str> {
+    pub fn multicast_ip(&self) -> std::option::Option<&str> {
         self.multicast_ip.as_deref()
     }
     /// The network source's gateway network name.
-    pub fn network_name(&self) -> std::option::Option<& str> {
+    pub fn network_name(&self) -> std::option::Option<&str> {
         self.network_name.as_deref()
     }
     /// The network source port.
@@ -31,7 +31,7 @@ impl UpdateBridgeNetworkSourceRequest {
         self.port
     }
     /// The network source protocol.
-    pub fn protocol(&self) -> std::option::Option<& crate::types::Protocol> {
+    pub fn protocol(&self) -> std::option::Option<&crate::types::Protocol> {
         self.protocol.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl UpdateBridgeNetworkSourceRequestBuilder {
     }
     /// The network source multicast IP.
     pub fn set_multicast_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.multicast_ip = input; self
+        self.multicast_ip = input;
+        self
     }
     /// The network source's gateway network name.
     pub fn network_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl UpdateBridgeNetworkSourceRequestBuilder {
     }
     /// The network source's gateway network name.
     pub fn set_network_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.network_name = input; self
+        self.network_name = input;
+        self
     }
     /// The network source port.
     pub fn port(mut self, input: i32) -> Self {
@@ -77,7 +79,8 @@ impl UpdateBridgeNetworkSourceRequestBuilder {
     }
     /// The network source port.
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// The network source protocol.
     pub fn protocol(mut self, input: crate::types::Protocol) -> Self {
@@ -86,21 +89,16 @@ impl UpdateBridgeNetworkSourceRequestBuilder {
     }
     /// The network source protocol.
     pub fn set_protocol(mut self, input: std::option::Option<crate::types::Protocol>) -> Self {
-        self.protocol = input; self
+        self.protocol = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateBridgeNetworkSourceRequest`](crate::types::UpdateBridgeNetworkSourceRequest).
     pub fn build(self) -> crate::types::UpdateBridgeNetworkSourceRequest {
         crate::types::UpdateBridgeNetworkSourceRequest {
-            multicast_ip: self.multicast_ip
-            ,
-            network_name: self.network_name
-            ,
-            port: self.port
-                .unwrap_or_default()
-            ,
-            protocol: self.protocol
-            ,
+            multicast_ip: self.multicast_ip,
+            network_name: self.network_name,
+            port: self.port.unwrap_or_default(),
+            protocol: self.protocol,
         }
     }
 }
-

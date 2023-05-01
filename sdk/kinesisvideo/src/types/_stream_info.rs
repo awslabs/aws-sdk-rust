@@ -3,7 +3,7 @@
 /// <p>An object describing a Kinesis video stream.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StreamInfo  {
+pub struct StreamInfo {
     /// <p>The name of the device that is associated with the stream.</p>
     #[doc(hidden)]
     pub device_name: std::option::Option<std::string::String>,
@@ -34,35 +34,35 @@ pub struct StreamInfo  {
 }
 impl StreamInfo {
     /// <p>The name of the device that is associated with the stream.</p>
-    pub fn device_name(&self) -> std::option::Option<& str> {
+    pub fn device_name(&self) -> std::option::Option<&str> {
         self.device_name.as_deref()
     }
     /// <p>The name of the stream.</p>
-    pub fn stream_name(&self) -> std::option::Option<& str> {
+    pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>The <code>MediaType</code> of the stream. </p>
-    pub fn media_type(&self) -> std::option::Option<& str> {
+    pub fn media_type(&self) -> std::option::Option<&str> {
         self.media_type.as_deref()
     }
     /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
-    pub fn kms_key_id(&self) -> std::option::Option<& str> {
+    pub fn kms_key_id(&self) -> std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The version of the stream.</p>
-    pub fn version(&self) -> std::option::Option<& str> {
+    pub fn version(&self) -> std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The status of the stream.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::Status> {
+    pub fn status(&self) -> std::option::Option<&crate::types::Status> {
         self.status.as_ref()
     }
     /// <p>A time stamp that indicates when the stream was created.</p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p>How long the stream retains data, in hours.</p>
@@ -99,7 +99,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The name of the device that is associated with the stream.</p>
     pub fn set_device_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_name = input; self
+        self.device_name = input;
+        self
     }
     /// <p>The name of the stream.</p>
     pub fn stream_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +109,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The name of the stream.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input; self
+        self.stream_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +119,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream.</p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
     /// <p>The <code>MediaType</code> of the stream. </p>
     pub fn media_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,7 +129,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The <code>MediaType</code> of the stream. </p>
     pub fn set_media_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.media_type = input; self
+        self.media_type = input;
+        self
     }
     /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
     pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -135,7 +139,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The ID of the Key Management Service (KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>
     pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.kms_key_id = input; self
+        self.kms_key_id = input;
+        self
     }
     /// <p>The version of the stream.</p>
     pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -144,7 +149,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The version of the stream.</p>
     pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version = input; self
+        self.version = input;
+        self
     }
     /// <p>The status of the stream.</p>
     pub fn status(mut self, input: crate::types::Status) -> Self {
@@ -153,7 +159,8 @@ impl StreamInfoBuilder {
     }
     /// <p>The status of the stream.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::Status>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>A time stamp that indicates when the stream was created.</p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -161,8 +168,12 @@ impl StreamInfoBuilder {
         self
     }
     /// <p>A time stamp that indicates when the stream was created.</p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p>How long the stream retains data, in hours.</p>
     pub fn data_retention_in_hours(mut self, input: i32) -> Self {
@@ -171,30 +182,21 @@ impl StreamInfoBuilder {
     }
     /// <p>How long the stream retains data, in hours.</p>
     pub fn set_data_retention_in_hours(mut self, input: std::option::Option<i32>) -> Self {
-        self.data_retention_in_hours = input; self
+        self.data_retention_in_hours = input;
+        self
     }
     /// Consumes the builder and constructs a [`StreamInfo`](crate::types::StreamInfo).
     pub fn build(self) -> crate::types::StreamInfo {
         crate::types::StreamInfo {
-            device_name: self.device_name
-            ,
-            stream_name: self.stream_name
-            ,
-            stream_arn: self.stream_arn
-            ,
-            media_type: self.media_type
-            ,
-            kms_key_id: self.kms_key_id
-            ,
-            version: self.version
-            ,
-            status: self.status
-            ,
-            creation_time: self.creation_time
-            ,
-            data_retention_in_hours: self.data_retention_in_hours
-            ,
+            device_name: self.device_name,
+            stream_name: self.stream_name,
+            stream_arn: self.stream_arn,
+            media_type: self.media_type,
+            kms_key_id: self.kms_key_id,
+            version: self.version,
+            status: self.status,
+            creation_time: self.creation_time,
+            data_retention_in_hours: self.data_retention_in_hours,
         }
     }
 }
-

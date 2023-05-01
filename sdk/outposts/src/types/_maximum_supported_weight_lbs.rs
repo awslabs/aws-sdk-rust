@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let maximumsupportedweightlbs = unimplemented!();
 /// match maximumsupportedweightlbs {
@@ -33,14 +33,22 @@
 /// Specifically, when `maximumsupportedweightlbs` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `MaximumSupportedWeightLbs::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum MaximumSupportedWeightLbs {
     #[allow(missing_docs)] // documentation missing in model
     Max1400Lbs,
@@ -53,47 +61,54 @@ pub enum MaximumSupportedWeightLbs {
     #[allow(missing_docs)] // documentation missing in model
     NoLimit,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for MaximumSupportedWeightLbs {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "MAX_1400_LBS" => MaximumSupportedWeightLbs::Max1400Lbs,
-"MAX_1600_LBS" => MaximumSupportedWeightLbs::Max1600Lbs,
-"MAX_1800_LBS" => MaximumSupportedWeightLbs::Max1800Lbs,
-"MAX_2000_LBS" => MaximumSupportedWeightLbs::Max2000Lbs,
-"NO_LIMIT" => MaximumSupportedWeightLbs::NoLimit,
-other => MaximumSupportedWeightLbs::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for MaximumSupportedWeightLbs {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(MaximumSupportedWeightLbs::from(s))
-                }
-            }
-impl MaximumSupportedWeightLbs {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    MaximumSupportedWeightLbs::Max1400Lbs => "MAX_1400_LBS",
-    MaximumSupportedWeightLbs::Max1600Lbs => "MAX_1600_LBS",
-    MaximumSupportedWeightLbs::Max1800Lbs => "MAX_1800_LBS",
-    MaximumSupportedWeightLbs::Max2000Lbs => "MAX_2000_LBS",
-    MaximumSupportedWeightLbs::NoLimit => "NO_LIMIT",
-    MaximumSupportedWeightLbs::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "MAX_1400_LBS" => MaximumSupportedWeightLbs::Max1400Lbs,
+            "MAX_1600_LBS" => MaximumSupportedWeightLbs::Max1600Lbs,
+            "MAX_1800_LBS" => MaximumSupportedWeightLbs::Max1800Lbs,
+            "MAX_2000_LBS" => MaximumSupportedWeightLbs::Max2000Lbs,
+            "NO_LIMIT" => MaximumSupportedWeightLbs::NoLimit,
+            other => MaximumSupportedWeightLbs::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["MAX_1400_LBS", "MAX_1600_LBS", "MAX_1800_LBS", "MAX_2000_LBS", "NO_LIMIT"]
-                }
-            }
-impl AsRef<str> for MaximumSupportedWeightLbs {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for MaximumSupportedWeightLbs {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MaximumSupportedWeightLbs::from(s))
+    }
+}
+impl MaximumSupportedWeightLbs {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            MaximumSupportedWeightLbs::Max1400Lbs => "MAX_1400_LBS",
+            MaximumSupportedWeightLbs::Max1600Lbs => "MAX_1600_LBS",
+            MaximumSupportedWeightLbs::Max1800Lbs => "MAX_1800_LBS",
+            MaximumSupportedWeightLbs::Max2000Lbs => "MAX_2000_LBS",
+            MaximumSupportedWeightLbs::NoLimit => "NO_LIMIT",
+            MaximumSupportedWeightLbs::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "MAX_1400_LBS",
+            "MAX_1600_LBS",
+            "MAX_1800_LBS",
+            "MAX_2000_LBS",
+            "NO_LIMIT",
+        ]
+    }
+}
+impl AsRef<str> for MaximumSupportedWeightLbs {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

@@ -2,17 +2,18 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateLogStreamOutput  {
+pub struct CreateLogStreamOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for CreateLogStreamOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateLogStreamOutput {
     /// Creates a new builder-style object to manufacture [`CreateLogStreamOutput`](crate::operation::create_log_stream::CreateLogStreamOutput).
-    pub fn builder() -> crate::operation::create_log_stream::builders::CreateLogStreamOutputBuilder {
+    pub fn builder() -> crate::operation::create_log_stream::builders::CreateLogStreamOutputBuilder
+    {
         crate::operation::create_log_stream::builders::CreateLogStreamOutputBuilder::default()
     }
 }
@@ -25,14 +26,14 @@ pub struct CreateLogStreamOutputBuilder {
 }
 impl CreateLogStreamOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateLogStreamOutput`](crate::operation::create_log_stream::CreateLogStreamOutput).
     pub fn build(self) -> crate::operation::create_log_stream::CreateLogStreamOutput {
         crate::operation::create_log_stream::CreateLogStreamOutput {
@@ -40,4 +41,3 @@ impl CreateLogStreamOutputBuilder {
         }
     }
 }
-

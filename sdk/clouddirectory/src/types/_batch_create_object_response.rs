@@ -3,14 +3,14 @@
 /// <p>Represents the output of a <code>CreateObject</code> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCreateObjectResponse  {
+pub struct BatchCreateObjectResponse {
     /// <p>The ID that is associated with the object.</p>
     #[doc(hidden)]
     pub object_identifier: std::option::Option<std::string::String>,
 }
 impl BatchCreateObjectResponse {
     /// <p>The ID that is associated with the object.</p>
-    pub fn object_identifier(&self) -> std::option::Option<& str> {
+    pub fn object_identifier(&self) -> std::option::Option<&str> {
         self.object_identifier.as_deref()
     }
 }
@@ -34,15 +34,17 @@ impl BatchCreateObjectResponseBuilder {
         self
     }
     /// <p>The ID that is associated with the object.</p>
-    pub fn set_object_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_identifier = input; self
+    pub fn set_object_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.object_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchCreateObjectResponse`](crate::types::BatchCreateObjectResponse).
     pub fn build(self) -> crate::types::BatchCreateObjectResponse {
         crate::types::BatchCreateObjectResponse {
-            object_identifier: self.object_identifier
-            ,
+            object_identifier: self.object_identifier,
         }
     }
 }
-

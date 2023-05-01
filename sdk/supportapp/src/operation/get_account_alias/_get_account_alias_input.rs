@@ -2,8 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAccountAliasInput  {
-}
+pub struct GetAccountAliasInput {}
 impl GetAccountAliasInput {
     /// Creates a new builder-style object to manufacture [`GetAccountAliasInput`](crate::operation::get_account_alias::GetAccountAliasInput).
     pub fn builder() -> crate::operation::get_account_alias::builders::GetAccountAliasInputBuilder {
@@ -14,15 +13,15 @@ impl GetAccountAliasInput {
 /// A builder for [`GetAccountAliasInput`](crate::operation::get_account_alias::GetAccountAliasInput).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct GetAccountAliasInputBuilder {
-}
+pub struct GetAccountAliasInputBuilder {}
 impl GetAccountAliasInputBuilder {
     /// Consumes the builder and constructs a [`GetAccountAliasInput`](crate::operation::get_account_alias::GetAccountAliasInput).
-    pub fn build(self) -> Result<crate::operation::get_account_alias::GetAccountAliasInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_account_alias::GetAccountAliasInput {
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_account_alias::GetAccountAliasInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_account_alias::GetAccountAliasInput {})
     }
 }
-

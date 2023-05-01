@@ -3,7 +3,7 @@
 /// <p>The properties of an AutoML candidate job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CandidateProperties  {
+pub struct CandidateProperties {
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
     #[doc(hidden)]
     pub candidate_artifact_locations: std::option::Option<crate::types::CandidateArtifactLocations>,
@@ -13,11 +13,13 @@ pub struct CandidateProperties  {
 }
 impl CandidateProperties {
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
-    pub fn candidate_artifact_locations(&self) -> std::option::Option<& crate::types::CandidateArtifactLocations> {
+    pub fn candidate_artifact_locations(
+        &self,
+    ) -> std::option::Option<&crate::types::CandidateArtifactLocations> {
         self.candidate_artifact_locations.as_ref()
     }
     /// <p>Information about the candidate metrics for an AutoML job.</p>
-    pub fn candidate_metrics(&self) -> std::option::Option<& [crate::types::MetricDatum]> {
+    pub fn candidate_metrics(&self) -> std::option::Option<&[crate::types::MetricDatum]> {
         self.candidate_metrics.as_deref()
     }
 }
@@ -32,18 +34,26 @@ impl CandidateProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CandidatePropertiesBuilder {
-    pub(crate) candidate_artifact_locations: std::option::Option<crate::types::CandidateArtifactLocations>,
+    pub(crate) candidate_artifact_locations:
+        std::option::Option<crate::types::CandidateArtifactLocations>,
     pub(crate) candidate_metrics: std::option::Option<std::vec::Vec<crate::types::MetricDatum>>,
 }
 impl CandidatePropertiesBuilder {
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
-    pub fn candidate_artifact_locations(mut self, input: crate::types::CandidateArtifactLocations) -> Self {
+    pub fn candidate_artifact_locations(
+        mut self,
+        input: crate::types::CandidateArtifactLocations,
+    ) -> Self {
         self.candidate_artifact_locations = Some(input);
         self
     }
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
-    pub fn set_candidate_artifact_locations(mut self, input: std::option::Option<crate::types::CandidateArtifactLocations>) -> Self {
-        self.candidate_artifact_locations = input; self
+    pub fn set_candidate_artifact_locations(
+        mut self,
+        input: std::option::Option<crate::types::CandidateArtifactLocations>,
+    ) -> Self {
+        self.candidate_artifact_locations = input;
+        self
     }
     /// Appends an item to `candidate_metrics`.
     ///
@@ -52,22 +62,23 @@ impl CandidatePropertiesBuilder {
     /// <p>Information about the candidate metrics for an AutoML job.</p>
     pub fn candidate_metrics(mut self, input: crate::types::MetricDatum) -> Self {
         let mut v = self.candidate_metrics.unwrap_or_default();
-                        v.push(input);
-                        self.candidate_metrics = Some(v);
-                        self
+        v.push(input);
+        self.candidate_metrics = Some(v);
+        self
     }
     /// <p>Information about the candidate metrics for an AutoML job.</p>
-    pub fn set_candidate_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::types::MetricDatum>>) -> Self {
-        self.candidate_metrics = input; self
+    pub fn set_candidate_metrics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::MetricDatum>>,
+    ) -> Self {
+        self.candidate_metrics = input;
+        self
     }
     /// Consumes the builder and constructs a [`CandidateProperties`](crate::types::CandidateProperties).
     pub fn build(self) -> crate::types::CandidateProperties {
         crate::types::CandidateProperties {
-            candidate_artifact_locations: self.candidate_artifact_locations
-            ,
-            candidate_metrics: self.candidate_metrics
-            ,
+            candidate_artifact_locations: self.candidate_artifact_locations,
+            candidate_metrics: self.candidate_metrics,
         }
     }
 }
-

@@ -4,61 +4,84 @@ pub use crate::operation::start_instance_refresh::_start_instance_refresh_output
 pub use crate::operation::start_instance_refresh::_start_instance_refresh_input::StartInstanceRefreshInputBuilder;
 
 /// Fluent builder constructing a request to `StartInstanceRefresh`.
-/// 
-/// <p>Starts an instance refresh. During an instance refresh, Amazon EC2 Auto Scaling performs a rolling update of instances in an Auto Scaling group. Instances are terminated first and then replaced, which temporarily reduces the capacity available within your Auto Scaling group.</p> 
-/// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group. This feature is helpful, for example, when you have a new AMI or a new user data script. You just need to create a new launch template that specifies the new AMI or user data script. Then start an instance refresh to immediately begin the process of updating instances in the group. </p> 
-/// <p>If successful, the request's response contains a unique ID that you can use to track the progress of the instance refresh. To query its status, call the <code>DescribeInstanceRefreshes</code> API. To describe the instance refreshes that have already run, call the <code>DescribeInstanceRefreshes</code> API. To cancel an instance refresh that is in progress, use the <code>CancelInstanceRefresh</code> API. </p> 
-/// <p>An instance refresh might fail for several reasons, such as EC2 launch failures, misconfigured health checks, or not ignoring or allowing the termination of instances that are in <code>Standby</code> state or protected from scale in. You can monitor for failed EC2 launches using the scaling activities. To find the scaling activities, call the <code>DescribeScalingActivities</code> API.</p> 
+///
+/// <p>Starts an instance refresh. During an instance refresh, Amazon EC2 Auto Scaling performs a rolling update of instances in an Auto Scaling group. Instances are terminated first and then replaced, which temporarily reduces the capacity available within your Auto Scaling group.</p>
+/// <p>This operation is part of the <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-refresh.html">instance refresh feature</a> in Amazon EC2 Auto Scaling, which helps you update instances in your Auto Scaling group. This feature is helpful, for example, when you have a new AMI or a new user data script. You just need to create a new launch template that specifies the new AMI or user data script. Then start an instance refresh to immediately begin the process of updating instances in the group. </p>
+/// <p>If successful, the request's response contains a unique ID that you can use to track the progress of the instance refresh. To query its status, call the <code>DescribeInstanceRefreshes</code> API. To describe the instance refreshes that have already run, call the <code>DescribeInstanceRefreshes</code> API. To cancel an instance refresh that is in progress, use the <code>CancelInstanceRefresh</code> API. </p>
+/// <p>An instance refresh might fail for several reasons, such as EC2 launch failures, misconfigured health checks, or not ignoring or allowing the termination of instances that are in <code>Standby</code> state or protected from scale in. You can monitor for failed EC2 launches using the scaling activities. To find the scaling activities, call the <code>DescribeScalingActivities</code> API.</p>
 /// <p>If you enable auto rollback, your Auto Scaling group will be rolled back automatically when the instance refresh fails. You can enable this feature before starting an instance refresh by specifying the <code>AutoRollback</code> property in the instance refresh preferences. Otherwise, to roll back an instance refresh before it finishes, use the <code>RollbackInstanceRefresh</code> API. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartInstanceRefreshFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_instance_refresh::builders::StartInstanceRefreshInputBuilder,
+    inner: crate::operation::start_instance_refresh::builders::StartInstanceRefreshInputBuilder,
 }
-impl StartInstanceRefreshFluentBuilder  {
+impl StartInstanceRefreshFluentBuilder {
     /// Creates a new `StartInstanceRefresh`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_instance_refresh::StartInstanceRefresh, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_instance_refresh::StartInstanceRefreshError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_instance_refresh::StartInstanceRefreshOutput, aws_smithy_http::result::SdkError<crate::operation::start_instance_refresh::StartInstanceRefreshError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_instance_refresh::StartInstanceRefresh,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_instance_refresh::StartInstanceRefreshError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_instance_refresh::StartInstanceRefreshOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_instance_refresh::StartInstanceRefreshError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn set_auto_scaling_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_auto_scaling_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
     }
@@ -68,45 +91,53 @@ impl StartInstanceRefreshFluentBuilder  {
         self
     }
     /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
-    pub fn set_strategy(mut self, input: std::option::Option<crate::types::RefreshStrategy>) -> Self {
+    pub fn set_strategy(
+        mut self,
+        input: std::option::Option<crate::types::RefreshStrategy>,
+    ) -> Self {
         self.inner = self.inner.set_strategy(input);
         self
     }
-    /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p> 
-    /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note> 
-    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p> 
+    /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
+    /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
+    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
     pub fn desired_configuration(mut self, input: crate::types::DesiredConfiguration) -> Self {
         self.inner = self.inner.desired_configuration(input);
         self
     }
-    /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p> 
-    /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note> 
-    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p> 
+    /// <p>The desired configuration. For example, the desired configuration can specify a new launch template or a new version of the current launch template.</p>
+    /// <p>Once the instance refresh succeeds, Amazon EC2 Auto Scaling updates the settings of the Auto Scaling group to reflect the new desired configuration. </p> <note>
+    /// <p>When you specify a new launch template or a new version of the current launch template for your desired configuration, consider enabling the <code>SkipMatching</code> property in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances that already use the specified launch template and instance types. This can help you reduce the number of replacements that are required to apply updates. </p>
     /// </note>
-    pub fn set_desired_configuration(mut self, input: std::option::Option<crate::types::DesiredConfiguration>) -> Self {
+    pub fn set_desired_configuration(
+        mut self,
+        input: std::option::Option<crate::types::DesiredConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_desired_configuration(input);
         self
     }
-    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p> 
-    /// <ul> 
-    /// <li> <p>Auto rollback</p> </li> 
-    /// <li> <p>Checkpoints</p> </li> 
-    /// <li> <p>Skip matching</p> </li> 
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <ul>
+    /// <li> <p>Auto rollback</p> </li>
+    /// <li> <p>Checkpoints</p> </li>
+    /// <li> <p>Skip matching</p> </li>
     /// </ul>
     pub fn preferences(mut self, input: crate::types::RefreshPreferences) -> Self {
         self.inner = self.inner.preferences(input);
         self
     }
-    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p> 
-    /// <ul> 
-    /// <li> <p>Auto rollback</p> </li> 
-    /// <li> <p>Checkpoints</p> </li> 
-    /// <li> <p>Skip matching</p> </li> 
+    /// <p>Sets your preferences for the instance refresh so that it performs as expected when you start it. Includes the instance warmup time, the minimum healthy percentage, and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in <code>Standby</code> state or protected from scale in are found. You can also choose to enable additional features, such as the following:</p>
+    /// <ul>
+    /// <li> <p>Auto rollback</p> </li>
+    /// <li> <p>Checkpoints</p> </li>
+    /// <li> <p>Skip matching</p> </li>
     /// </ul>
-    pub fn set_preferences(mut self, input: std::option::Option<crate::types::RefreshPreferences>) -> Self {
+    pub fn set_preferences(
+        mut self,
+        input: std::option::Option<crate::types::RefreshPreferences>,
+    ) -> Self {
         self.inner = self.inner.set_preferences(input);
         self
     }
 }
-

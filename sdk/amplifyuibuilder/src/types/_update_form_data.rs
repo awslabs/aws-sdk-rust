@@ -3,7 +3,7 @@
 /// <p>Updates and saves all of the information about a form, based on form ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFormData  {
+pub struct UpdateFormData {
     /// <p>The name of the form.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -15,13 +15,17 @@ pub struct UpdateFormData  {
     pub form_action_type: std::option::Option<crate::types::FormActionType>,
     /// <p>The configuration information for the form's fields.</p>
     #[doc(hidden)]
-    pub fields: std::option::Option<std::collections::HashMap<std::string::String, crate::types::FieldConfig>>,
+    pub fields: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::FieldConfig>,
+    >,
     /// <p>The configuration for the form's style.</p>
     #[doc(hidden)]
     pub style: std::option::Option<crate::types::FormStyle>,
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
     #[doc(hidden)]
-    pub sectional_elements: std::option::Option<std::collections::HashMap<std::string::String, crate::types::SectionalElement>>,
+    pub sectional_elements: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::SectionalElement>,
+    >,
     /// <p>The schema version of the form.</p>
     #[doc(hidden)]
     pub schema_version: std::option::Option<std::string::String>,
@@ -34,39 +38,47 @@ pub struct UpdateFormData  {
 }
 impl UpdateFormData {
     /// <p>The name of the form.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The type of data source to use to create the form.</p>
-    pub fn data_type(&self) -> std::option::Option<& crate::types::FormDataTypeConfig> {
+    pub fn data_type(&self) -> std::option::Option<&crate::types::FormDataTypeConfig> {
         self.data_type.as_ref()
     }
     /// <p>Specifies whether to perform a create or update action on the form.</p>
-    pub fn form_action_type(&self) -> std::option::Option<& crate::types::FormActionType> {
+    pub fn form_action_type(&self) -> std::option::Option<&crate::types::FormActionType> {
         self.form_action_type.as_ref()
     }
     /// <p>The configuration information for the form's fields.</p>
-    pub fn fields(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::FieldConfig>> {
+    pub fn fields(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::types::FieldConfig>,
+    > {
         self.fields.as_ref()
     }
     /// <p>The configuration for the form's style.</p>
-    pub fn style(&self) -> std::option::Option<& crate::types::FormStyle> {
+    pub fn style(&self) -> std::option::Option<&crate::types::FormStyle> {
         self.style.as_ref()
     }
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-    pub fn sectional_elements(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, crate::types::SectionalElement>> {
+    pub fn sectional_elements(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, crate::types::SectionalElement>,
+    > {
         self.sectional_elements.as_ref()
     }
     /// <p>The schema version of the form.</p>
-    pub fn schema_version(&self) -> std::option::Option<& str> {
+    pub fn schema_version(&self) -> std::option::Option<&str> {
         self.schema_version.as_deref()
     }
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
-    pub fn cta(&self) -> std::option::Option<& crate::types::FormCta> {
+    pub fn cta(&self) -> std::option::Option<&crate::types::FormCta> {
         self.cta.as_ref()
     }
     /// <p>Specifies an icon or decoration to display on the form.</p>
-    pub fn label_decorator(&self) -> std::option::Option<& crate::types::LabelDecorator> {
+    pub fn label_decorator(&self) -> std::option::Option<&crate::types::LabelDecorator> {
         self.label_decorator.as_ref()
     }
 }
@@ -84,9 +96,13 @@ pub struct UpdateFormDataBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) data_type: std::option::Option<crate::types::FormDataTypeConfig>,
     pub(crate) form_action_type: std::option::Option<crate::types::FormActionType>,
-    pub(crate) fields: std::option::Option<std::collections::HashMap<std::string::String, crate::types::FieldConfig>>,
+    pub(crate) fields: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::FieldConfig>,
+    >,
     pub(crate) style: std::option::Option<crate::types::FormStyle>,
-    pub(crate) sectional_elements: std::option::Option<std::collections::HashMap<std::string::String, crate::types::SectionalElement>>,
+    pub(crate) sectional_elements: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::types::SectionalElement>,
+    >,
     pub(crate) schema_version: std::option::Option<std::string::String>,
     pub(crate) cta: std::option::Option<crate::types::FormCta>,
     pub(crate) label_decorator: std::option::Option<crate::types::LabelDecorator>,
@@ -99,7 +115,8 @@ impl UpdateFormDataBuilder {
     }
     /// <p>The name of the form.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The type of data source to use to create the form.</p>
     pub fn data_type(mut self, input: crate::types::FormDataTypeConfig) -> Self {
@@ -107,8 +124,12 @@ impl UpdateFormDataBuilder {
         self
     }
     /// <p>The type of data source to use to create the form.</p>
-    pub fn set_data_type(mut self, input: std::option::Option<crate::types::FormDataTypeConfig>) -> Self {
-        self.data_type = input; self
+    pub fn set_data_type(
+        mut self,
+        input: std::option::Option<crate::types::FormDataTypeConfig>,
+    ) -> Self {
+        self.data_type = input;
+        self
     }
     /// <p>Specifies whether to perform a create or update action on the form.</p>
     pub fn form_action_type(mut self, input: crate::types::FormActionType) -> Self {
@@ -116,23 +137,37 @@ impl UpdateFormDataBuilder {
         self
     }
     /// <p>Specifies whether to perform a create or update action on the form.</p>
-    pub fn set_form_action_type(mut self, input: std::option::Option<crate::types::FormActionType>) -> Self {
-        self.form_action_type = input; self
+    pub fn set_form_action_type(
+        mut self,
+        input: std::option::Option<crate::types::FormActionType>,
+    ) -> Self {
+        self.form_action_type = input;
+        self
     }
     /// Adds a key-value pair to `fields`.
     ///
     /// To override the contents of this collection use [`set_fields`](Self::set_fields).
     ///
     /// <p>The configuration information for the form's fields.</p>
-    pub fn fields(mut self, k: impl Into<std::string::String>, v: crate::types::FieldConfig) -> Self {
+    pub fn fields(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::FieldConfig,
+    ) -> Self {
         let mut hash_map = self.fields.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.fields = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.fields = Some(hash_map);
+        self
     }
     /// <p>The configuration information for the form's fields.</p>
-    pub fn set_fields(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::FieldConfig>>) -> Self {
-        self.fields = input; self
+    pub fn set_fields(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::FieldConfig>,
+        >,
+    ) -> Self {
+        self.fields = input;
+        self
     }
     /// <p>The configuration for the form's style.</p>
     pub fn style(mut self, input: crate::types::FormStyle) -> Self {
@@ -141,22 +176,33 @@ impl UpdateFormDataBuilder {
     }
     /// <p>The configuration for the form's style.</p>
     pub fn set_style(mut self, input: std::option::Option<crate::types::FormStyle>) -> Self {
-        self.style = input; self
+        self.style = input;
+        self
     }
     /// Adds a key-value pair to `sectional_elements`.
     ///
     /// To override the contents of this collection use [`set_sectional_elements`](Self::set_sectional_elements).
     ///
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-    pub fn sectional_elements(mut self, k: impl Into<std::string::String>, v: crate::types::SectionalElement) -> Self {
+    pub fn sectional_elements(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::SectionalElement,
+    ) -> Self {
         let mut hash_map = self.sectional_elements.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.sectional_elements = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.sectional_elements = Some(hash_map);
+        self
     }
     /// <p>The configuration information for the visual helper elements for the form. These elements are not associated with any data.</p>
-    pub fn set_sectional_elements(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::SectionalElement>>) -> Self {
-        self.sectional_elements = input; self
+    pub fn set_sectional_elements(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::SectionalElement>,
+        >,
+    ) -> Self {
+        self.sectional_elements = input;
+        self
     }
     /// <p>The schema version of the form.</p>
     pub fn schema_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,7 +211,8 @@ impl UpdateFormDataBuilder {
     }
     /// <p>The schema version of the form.</p>
     pub fn set_schema_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema_version = input; self
+        self.schema_version = input;
+        self
     }
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
     pub fn cta(mut self, input: crate::types::FormCta) -> Self {
@@ -174,7 +221,8 @@ impl UpdateFormDataBuilder {
     }
     /// <p>The <code>FormCTA</code> object that stores the call to action configuration for the form.</p>
     pub fn set_cta(mut self, input: std::option::Option<crate::types::FormCta>) -> Self {
-        self.cta = input; self
+        self.cta = input;
+        self
     }
     /// <p>Specifies an icon or decoration to display on the form.</p>
     pub fn label_decorator(mut self, input: crate::types::LabelDecorator) -> Self {
@@ -182,31 +230,25 @@ impl UpdateFormDataBuilder {
         self
     }
     /// <p>Specifies an icon or decoration to display on the form.</p>
-    pub fn set_label_decorator(mut self, input: std::option::Option<crate::types::LabelDecorator>) -> Self {
-        self.label_decorator = input; self
+    pub fn set_label_decorator(
+        mut self,
+        input: std::option::Option<crate::types::LabelDecorator>,
+    ) -> Self {
+        self.label_decorator = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFormData`](crate::types::UpdateFormData).
     pub fn build(self) -> crate::types::UpdateFormData {
         crate::types::UpdateFormData {
-            name: self.name
-            ,
-            data_type: self.data_type
-            ,
-            form_action_type: self.form_action_type
-            ,
-            fields: self.fields
-            ,
-            style: self.style
-            ,
-            sectional_elements: self.sectional_elements
-            ,
-            schema_version: self.schema_version
-            ,
-            cta: self.cta
-            ,
-            label_decorator: self.label_decorator
-            ,
+            name: self.name,
+            data_type: self.data_type,
+            form_action_type: self.form_action_type,
+            fields: self.fields,
+            style: self.style,
+            sectional_elements: self.sectional_elements,
+            schema_version: self.schema_version,
+            cta: self.cta,
+            label_decorator: self.label_decorator,
         }
     }
 }
-

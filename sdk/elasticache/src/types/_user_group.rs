@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UserGroup  {
+pub struct UserGroup {
     /// <p>The ID of the user group.</p>
     #[doc(hidden)]
     pub user_group_id: std::option::Option<std::string::String>,
@@ -30,35 +30,35 @@ pub struct UserGroup  {
 }
 impl UserGroup {
     /// <p>The ID of the user group.</p>
-    pub fn user_group_id(&self) -> std::option::Option<& str> {
+    pub fn user_group_id(&self) -> std::option::Option<&str> {
         self.user_group_id.as_deref()
     }
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
-    pub fn status(&self) -> std::option::Option<& str> {
+    pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The current supported value is Redis. </p>
-    pub fn engine(&self) -> std::option::Option<& str> {
+    pub fn engine(&self) -> std::option::Option<&str> {
         self.engine.as_deref()
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn user_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn user_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.user_ids.as_deref()
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn minimum_engine_version(&self) -> std::option::Option<& str> {
+    pub fn minimum_engine_version(&self) -> std::option::Option<&str> {
         self.minimum_engine_version.as_deref()
     }
     /// <p>A list of updates being applied to the user group.</p>
-    pub fn pending_changes(&self) -> std::option::Option<& crate::types::UserGroupPendingChanges> {
+    pub fn pending_changes(&self) -> std::option::Option<&crate::types::UserGroupPendingChanges> {
         self.pending_changes.as_ref()
     }
     /// <p>A list of replication groups that the user group can access.</p>
-    pub fn replication_groups(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn replication_groups(&self) -> std::option::Option<&[std::string::String]> {
         self.replication_groups.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -90,7 +90,8 @@ impl UserGroupBuilder {
     }
     /// <p>The ID of the user group.</p>
     pub fn set_user_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_group_id = input; self
+        self.user_group_id = input;
+        self
     }
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
     pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +100,8 @@ impl UserGroupBuilder {
     }
     /// <p>Indicates user group status. Can be "creating", "active", "modifying", "deleting".</p>
     pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The current supported value is Redis. </p>
     pub fn engine(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +110,8 @@ impl UserGroupBuilder {
     }
     /// <p>The current supported value is Redis. </p>
     pub fn set_engine(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine = input; self
+        self.engine = input;
+        self
     }
     /// Appends an item to `user_ids`.
     ///
@@ -117,13 +120,17 @@ impl UserGroupBuilder {
     /// <p>The list of user IDs that belong to the user group.</p>
     pub fn user_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.user_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.user_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.user_ids = Some(v);
+        self
     }
     /// <p>The list of user IDs that belong to the user group.</p>
-    pub fn set_user_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.user_ids = input; self
+    pub fn set_user_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.user_ids = input;
+        self
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
     pub fn minimum_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -131,8 +138,12 @@ impl UserGroupBuilder {
         self
     }
     /// <p>The minimum engine version required, which is Redis 6.0</p>
-    pub fn set_minimum_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.minimum_engine_version = input; self
+    pub fn set_minimum_engine_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.minimum_engine_version = input;
+        self
     }
     /// <p>A list of updates being applied to the user group.</p>
     pub fn pending_changes(mut self, input: crate::types::UserGroupPendingChanges) -> Self {
@@ -140,8 +151,12 @@ impl UserGroupBuilder {
         self
     }
     /// <p>A list of updates being applied to the user group.</p>
-    pub fn set_pending_changes(mut self, input: std::option::Option<crate::types::UserGroupPendingChanges>) -> Self {
-        self.pending_changes = input; self
+    pub fn set_pending_changes(
+        mut self,
+        input: std::option::Option<crate::types::UserGroupPendingChanges>,
+    ) -> Self {
+        self.pending_changes = input;
+        self
     }
     /// Appends an item to `replication_groups`.
     ///
@@ -150,13 +165,17 @@ impl UserGroupBuilder {
     /// <p>A list of replication groups that the user group can access.</p>
     pub fn replication_groups(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.replication_groups.unwrap_or_default();
-                        v.push(input.into());
-                        self.replication_groups = Some(v);
-                        self
+        v.push(input.into());
+        self.replication_groups = Some(v);
+        self
     }
     /// <p>A list of replication groups that the user group can access.</p>
-    pub fn set_replication_groups(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.replication_groups = input; self
+    pub fn set_replication_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.replication_groups = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -165,28 +184,20 @@ impl UserGroupBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the user group.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`UserGroup`](crate::types::UserGroup).
     pub fn build(self) -> crate::types::UserGroup {
         crate::types::UserGroup {
-            user_group_id: self.user_group_id
-            ,
-            status: self.status
-            ,
-            engine: self.engine
-            ,
-            user_ids: self.user_ids
-            ,
-            minimum_engine_version: self.minimum_engine_version
-            ,
-            pending_changes: self.pending_changes
-            ,
-            replication_groups: self.replication_groups
-            ,
-            arn: self.arn
-            ,
+            user_group_id: self.user_group_id,
+            status: self.status,
+            engine: self.engine,
+            user_ids: self.user_ids,
+            minimum_engine_version: self.minimum_engine_version,
+            pending_changes: self.pending_changes,
+            replication_groups: self.replication_groups,
+            arn: self.arn,
         }
     }
 }
-

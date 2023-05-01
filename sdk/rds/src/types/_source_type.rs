@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let sourcetype = unimplemented!();
 /// match sourcetype {
@@ -37,14 +37,22 @@
 /// Specifically, when `sourcetype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `SourceType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     BlueGreenDeployment,
@@ -65,55 +73,64 @@ pub enum SourceType {
     #[allow(missing_docs)] // documentation missing in model
     DbSnapshot,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for SourceType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "blue-green-deployment" => SourceType::BlueGreenDeployment,
-"custom-engine-version" => SourceType::CustomEngineVersion,
-"db-cluster" => SourceType::DbCluster,
-"db-cluster-snapshot" => SourceType::DbClusterSnapshot,
-"db-instance" => SourceType::DbInstance,
-"db-parameter-group" => SourceType::DbParameterGroup,
-"db-proxy" => SourceType::DbProxy,
-"db-security-group" => SourceType::DbSecurityGroup,
-"db-snapshot" => SourceType::DbSnapshot,
-other => SourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for SourceType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(SourceType::from(s))
-                }
-            }
-impl SourceType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    SourceType::BlueGreenDeployment => "blue-green-deployment",
-    SourceType::CustomEngineVersion => "custom-engine-version",
-    SourceType::DbCluster => "db-cluster",
-    SourceType::DbClusterSnapshot => "db-cluster-snapshot",
-    SourceType::DbInstance => "db-instance",
-    SourceType::DbParameterGroup => "db-parameter-group",
-    SourceType::DbProxy => "db-proxy",
-    SourceType::DbSecurityGroup => "db-security-group",
-    SourceType::DbSnapshot => "db-snapshot",
-    SourceType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "blue-green-deployment" => SourceType::BlueGreenDeployment,
+            "custom-engine-version" => SourceType::CustomEngineVersion,
+            "db-cluster" => SourceType::DbCluster,
+            "db-cluster-snapshot" => SourceType::DbClusterSnapshot,
+            "db-instance" => SourceType::DbInstance,
+            "db-parameter-group" => SourceType::DbParameterGroup,
+            "db-proxy" => SourceType::DbProxy,
+            "db-security-group" => SourceType::DbSecurityGroup,
+            "db-snapshot" => SourceType::DbSnapshot,
+            other => SourceType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["blue-green-deployment", "custom-engine-version", "db-cluster", "db-cluster-snapshot", "db-instance", "db-parameter-group", "db-proxy", "db-security-group", "db-snapshot"]
-                }
-            }
-impl AsRef<str> for SourceType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for SourceType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SourceType::from(s))
+    }
+}
+impl SourceType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            SourceType::BlueGreenDeployment => "blue-green-deployment",
+            SourceType::CustomEngineVersion => "custom-engine-version",
+            SourceType::DbCluster => "db-cluster",
+            SourceType::DbClusterSnapshot => "db-cluster-snapshot",
+            SourceType::DbInstance => "db-instance",
+            SourceType::DbParameterGroup => "db-parameter-group",
+            SourceType::DbProxy => "db-proxy",
+            SourceType::DbSecurityGroup => "db-security-group",
+            SourceType::DbSnapshot => "db-snapshot",
+            SourceType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "blue-green-deployment",
+            "custom-engine-version",
+            "db-cluster",
+            "db-cluster-snapshot",
+            "db-instance",
+            "db-parameter-group",
+            "db-proxy",
+            "db-security-group",
+            "db-snapshot",
+        ]
+    }
+}
+impl AsRef<str> for SourceType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

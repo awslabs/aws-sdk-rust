@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartReplayOutput  {
+pub struct StartReplayOutput {
     /// <p>The ARN of the replay.</p>
     #[doc(hidden)]
     pub replay_arn: std::option::Option<std::string::String>,
@@ -19,27 +19,27 @@ pub struct StartReplayOutput  {
 }
 impl StartReplayOutput {
     /// <p>The ARN of the replay.</p>
-    pub fn replay_arn(&self) -> std::option::Option<& str> {
+    pub fn replay_arn(&self) -> std::option::Option<&str> {
         self.replay_arn.as_deref()
     }
     /// <p>The state of the replay.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::ReplayState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::ReplayState> {
         self.state.as_ref()
     }
     /// <p>The reason that the replay is in the state.</p>
-    pub fn state_reason(&self) -> std::option::Option<& str> {
+    pub fn state_reason(&self) -> std::option::Option<&str> {
         self.state_reason.as_deref()
     }
     /// <p>The time at which the replay started.</p>
-    pub fn replay_start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn replay_start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.replay_start_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartReplayOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartReplayOutput {
     /// Creates a new builder-style object to manufacture [`StartReplayOutput`](crate::operation::start_replay::StartReplayOutput).
     pub fn builder() -> crate::operation::start_replay::builders::StartReplayOutputBuilder {
@@ -65,7 +65,8 @@ impl StartReplayOutputBuilder {
     }
     /// <p>The ARN of the replay.</p>
     pub fn set_replay_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.replay_arn = input; self
+        self.replay_arn = input;
+        self
     }
     /// <p>The state of the replay.</p>
     pub fn state(mut self, input: crate::types::ReplayState) -> Self {
@@ -74,7 +75,8 @@ impl StartReplayOutputBuilder {
     }
     /// <p>The state of the replay.</p>
     pub fn set_state(mut self, input: std::option::Option<crate::types::ReplayState>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>The reason that the replay is in the state.</p>
     pub fn state_reason(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +85,8 @@ impl StartReplayOutputBuilder {
     }
     /// <p>The reason that the replay is in the state.</p>
     pub fn set_state_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state_reason = input; self
+        self.state_reason = input;
+        self
     }
     /// <p>The time at which the replay started.</p>
     pub fn replay_start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -91,31 +94,30 @@ impl StartReplayOutputBuilder {
         self
     }
     /// <p>The time at which the replay started.</p>
-    pub fn set_replay_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.replay_start_time = input; self
+    pub fn set_replay_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.replay_start_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartReplayOutput`](crate::operation::start_replay::StartReplayOutput).
     pub fn build(self) -> crate::operation::start_replay::StartReplayOutput {
         crate::operation::start_replay::StartReplayOutput {
-            replay_arn: self.replay_arn
-            ,
-            state: self.state
-            ,
-            state_reason: self.state_reason
-            ,
-            replay_start_time: self.replay_start_time
-            ,
+            replay_arn: self.replay_arn,
+            state: self.state,
+            state_reason: self.state_reason,
+            replay_start_time: self.replay_start_time,
             _request_id: self._request_id,
         }
     }
 }
-

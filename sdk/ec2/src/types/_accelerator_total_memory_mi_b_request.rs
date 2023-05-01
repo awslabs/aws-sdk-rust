@@ -3,7 +3,7 @@
 /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceleratorTotalMemoryMiBRequest  {
+pub struct AcceleratorTotalMemoryMiBRequest {
     /// <p>The minimum amount of accelerator memory, in MiB. To specify no minimum limit, omit this parameter.</p>
     #[doc(hidden)]
     pub min: std::option::Option<i32>,
@@ -43,7 +43,8 @@ impl AcceleratorTotalMemoryMiBRequestBuilder {
     }
     /// <p>The minimum amount of accelerator memory, in MiB. To specify no minimum limit, omit this parameter.</p>
     pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.min = input; self
+        self.min = input;
+        self
     }
     /// <p>The maximum amount of accelerator memory, in MiB. To specify no maximum limit, omit this parameter.</p>
     pub fn max(mut self, input: i32) -> Self {
@@ -52,16 +53,14 @@ impl AcceleratorTotalMemoryMiBRequestBuilder {
     }
     /// <p>The maximum amount of accelerator memory, in MiB. To specify no maximum limit, omit this parameter.</p>
     pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.max = input; self
+        self.max = input;
+        self
     }
     /// Consumes the builder and constructs a [`AcceleratorTotalMemoryMiBRequest`](crate::types::AcceleratorTotalMemoryMiBRequest).
     pub fn build(self) -> crate::types::AcceleratorTotalMemoryMiBRequest {
         crate::types::AcceleratorTotalMemoryMiBRequest {
-            min: self.min
-            ,
-            max: self.max
-            ,
+            min: self.min,
+            max: self.max,
         }
     }
 }
-

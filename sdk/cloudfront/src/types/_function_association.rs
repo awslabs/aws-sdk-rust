@@ -3,7 +3,7 @@
 /// <p>A CloudFront function that is associated with a cache behavior in a CloudFront distribution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FunctionAssociation  {
+pub struct FunctionAssociation {
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     #[doc(hidden)]
     pub function_arn: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FunctionAssociation  {
 }
 impl FunctionAssociation {
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
-    pub fn function_arn(&self) -> std::option::Option<& str> {
+    pub fn function_arn(&self) -> std::option::Option<&str> {
         self.function_arn.as_deref()
     }
     /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
-    pub fn event_type(&self) -> std::option::Option<& crate::types::EventType> {
+    pub fn event_type(&self) -> std::option::Option<&crate::types::EventType> {
         self.event_type.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl FunctionAssociationBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the function.</p>
     pub fn set_function_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function_arn = input; self
+        self.function_arn = input;
+        self
     }
     /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
     pub fn event_type(mut self, input: crate::types::EventType) -> Self {
@@ -52,16 +53,14 @@ impl FunctionAssociationBuilder {
     }
     /// <p>The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>. You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront function.</p>
     pub fn set_event_type(mut self, input: std::option::Option<crate::types::EventType>) -> Self {
-        self.event_type = input; self
+        self.event_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`FunctionAssociation`](crate::types::FunctionAssociation).
     pub fn build(self) -> crate::types::FunctionAssociation {
         crate::types::FunctionAssociation {
-            function_arn: self.function_arn
-            ,
-            event_type: self.event_type
-            ,
+            function_arn: self.function_arn,
+            event_type: self.event_type,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>The field label type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FieldLabelType  {
+pub struct FieldLabelType {
     /// <p>Indicates the field that is targeted by the field label.</p>
     #[doc(hidden)]
     pub field_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FieldLabelType  {
 }
 impl FieldLabelType {
     /// <p>Indicates the field that is targeted by the field label.</p>
-    pub fn field_id(&self) -> std::option::Option<& str> {
+    pub fn field_id(&self) -> std::option::Option<&str> {
         self.field_id.as_deref()
     }
     /// <p>The visibility of the field label.</p>
-    pub fn visibility(&self) -> std::option::Option<& crate::types::Visibility> {
+    pub fn visibility(&self) -> std::option::Option<&crate::types::Visibility> {
         self.visibility.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl FieldLabelTypeBuilder {
     }
     /// <p>Indicates the field that is targeted by the field label.</p>
     pub fn set_field_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.field_id = input; self
+        self.field_id = input;
+        self
     }
     /// <p>The visibility of the field label.</p>
     pub fn visibility(mut self, input: crate::types::Visibility) -> Self {
@@ -52,16 +53,14 @@ impl FieldLabelTypeBuilder {
     }
     /// <p>The visibility of the field label.</p>
     pub fn set_visibility(mut self, input: std::option::Option<crate::types::Visibility>) -> Self {
-        self.visibility = input; self
+        self.visibility = input;
+        self
     }
     /// Consumes the builder and constructs a [`FieldLabelType`](crate::types::FieldLabelType).
     pub fn build(self) -> crate::types::FieldLabelType {
         crate::types::FieldLabelType {
-            field_id: self.field_id
-            ,
-            visibility: self.visibility
-            ,
+            field_id: self.field_id,
+            visibility: self.visibility,
         }
     }
 }
-

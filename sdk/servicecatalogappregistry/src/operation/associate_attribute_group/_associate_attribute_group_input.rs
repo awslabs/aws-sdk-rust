@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateAttributeGroupInput  {
+pub struct AssociateAttributeGroupInput {
     /// <p> The name, ID, or ARN of the application. </p>
     #[doc(hidden)]
     pub application: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct AssociateAttributeGroupInput  {
 }
 impl AssociateAttributeGroupInput {
     /// <p> The name, ID, or ARN of the application. </p>
-    pub fn application(&self) -> std::option::Option<& str> {
+    pub fn application(&self) -> std::option::Option<&str> {
         self.application.as_deref()
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
-    pub fn attribute_group(&self) -> std::option::Option<& str> {
+    pub fn attribute_group(&self) -> std::option::Option<&str> {
         self.attribute_group.as_deref()
     }
 }
 impl AssociateAttributeGroupInput {
     /// Creates a new builder-style object to manufacture [`AssociateAttributeGroupInput`](crate::operation::associate_attribute_group::AssociateAttributeGroupInput).
-    pub fn builder() -> crate::operation::associate_attribute_group::builders::AssociateAttributeGroupInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::associate_attribute_group::builders::AssociateAttributeGroupInputBuilder
+    {
         crate::operation::associate_attribute_group::builders::AssociateAttributeGroupInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl AssociateAttributeGroupInputBuilder {
     }
     /// <p> The name, ID, or ARN of the application. </p>
     pub fn set_application(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application = input; self
+        self.application = input;
+        self
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn attribute_group(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +54,21 @@ impl AssociateAttributeGroupInputBuilder {
     }
     /// <p> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </p>
     pub fn set_attribute_group(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.attribute_group = input; self
+        self.attribute_group = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateAttributeGroupInput`](crate::operation::associate_attribute_group::AssociateAttributeGroupInput).
-    pub fn build(self) -> Result<crate::operation::associate_attribute_group::AssociateAttributeGroupInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_attribute_group::AssociateAttributeGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::associate_attribute_group::AssociateAttributeGroupInput {
-                application: self.application
-                ,
-                attribute_group: self.attribute_group
-                ,
-            }
+                application: self.application,
+                attribute_group: self.attribute_group,
+            },
         )
     }
 }
-

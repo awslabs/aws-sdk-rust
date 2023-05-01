@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNetworkResourceMetadataInput  {
+pub struct UpdateNetworkResourceMetadataInput {
     /// <p>The ID of the global network.</p>
     #[doc(hidden)]
     pub global_network_id: std::option::Option<std::string::String>,
@@ -11,25 +11,29 @@ pub struct UpdateNetworkResourceMetadataInput  {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The resource metadata.</p>
     #[doc(hidden)]
-    pub metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateNetworkResourceMetadataInput {
     /// <p>The ID of the global network.</p>
-    pub fn global_network_id(&self) -> std::option::Option<& str> {
+    pub fn global_network_id(&self) -> std::option::Option<&str> {
         self.global_network_id.as_deref()
     }
     /// <p>The ARN of the resource.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The resource metadata.</p>
-    pub fn metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.metadata.as_ref()
     }
 }
 impl UpdateNetworkResourceMetadataInput {
     /// Creates a new builder-style object to manufacture [`UpdateNetworkResourceMetadataInput`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataInput).
-    pub fn builder() -> crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataInputBuilder {
+    pub fn builder() -> crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataInputBuilder{
         crate::operation::update_network_resource_metadata::builders::UpdateNetworkResourceMetadataInputBuilder::default()
     }
 }
@@ -40,7 +44,8 @@ impl UpdateNetworkResourceMetadataInput {
 pub struct UpdateNetworkResourceMetadataInputBuilder {
     pub(crate) global_network_id: std::option::Option<std::string::String>,
     pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl UpdateNetworkResourceMetadataInputBuilder {
     /// <p>The ID of the global network.</p>
@@ -49,8 +54,12 @@ impl UpdateNetworkResourceMetadataInputBuilder {
         self
     }
     /// <p>The ID of the global network.</p>
-    pub fn set_global_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.global_network_id = input; self
+    pub fn set_global_network_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.global_network_id = input;
+        self
     }
     /// <p>The ARN of the resource.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,25 +68,41 @@ impl UpdateNetworkResourceMetadataInputBuilder {
     }
     /// <p>The ARN of the resource.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Adds a key-value pair to `metadata`.
     ///
     /// To override the contents of this collection use [`set_metadata`](Self::set_metadata).
     ///
     /// <p>The resource metadata.</p>
-    pub fn metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.metadata.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.metadata = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.metadata = Some(hash_map);
+        self
     }
     /// <p>The resource metadata.</p>
-    pub fn set_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.metadata = input; self
+    pub fn set_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateNetworkResourceMetadataInput`](crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataInput).
-    pub fn build(self) -> Result<crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataInput {
                 global_network_id: self.global_network_id
@@ -90,4 +115,3 @@ impl UpdateNetworkResourceMetadataInputBuilder {
         )
     }
 }
-

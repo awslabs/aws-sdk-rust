@@ -3,14 +3,14 @@
 /// <p> The properties that are applied when using SAPOData as a flow source. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SapoDataSourceProperties  {
+pub struct SapoDataSourceProperties {
     /// <p> The object path specified in the SAPOData flow source. </p>
     #[doc(hidden)]
     pub object_path: std::option::Option<std::string::String>,
 }
 impl SapoDataSourceProperties {
     /// <p> The object path specified in the SAPOData flow source. </p>
-    pub fn object_path(&self) -> std::option::Option<& str> {
+    pub fn object_path(&self) -> std::option::Option<&str> {
         self.object_path.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl SapoDataSourcePropertiesBuilder {
     }
     /// <p> The object path specified in the SAPOData flow source. </p>
     pub fn set_object_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.object_path = input; self
+        self.object_path = input;
+        self
     }
     /// Consumes the builder and constructs a [`SapoDataSourceProperties`](crate::types::SapoDataSourceProperties).
     pub fn build(self) -> crate::types::SapoDataSourceProperties {
         crate::types::SapoDataSourceProperties {
-            object_path: self.object_path
-            ,
+            object_path: self.object_path,
         }
     }
 }
-

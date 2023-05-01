@@ -3,13 +3,13 @@
 /// <p>The input is invalid or an out-of-range value was supplied for the input parameter.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ValidationException  {
+pub struct ValidationException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
     pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
 }
-impl  std::fmt::Debug for ValidationException  {
+impl std::fmt::Debug for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ValidationException");
         formatter.field("message", &"*** Sensitive Data Redacted ***");
@@ -19,7 +19,9 @@ impl  std::fmt::Debug for ValidationException  {
 }
 impl ValidationException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for ValidationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -36,7 +38,9 @@ impl aws_http::request_id::RequestId for crate::types::error::ValidationExceptio
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ValidationException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl ValidationException {
     /// Creates a new builder-style object to manufacture [`ValidationException`](crate::types::error::ValidationException).
@@ -60,24 +64,27 @@ impl ValidationExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`ValidationException`](crate::types::error::ValidationException).
     pub fn build(self) -> crate::types::error::ValidationException {
         crate::types::error::ValidationException {
-            message: self.message
-            ,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
@@ -89,4 +96,3 @@ impl std::fmt::Debug for ValidationExceptionBuilder {
         formatter.finish()
     }
 }
-

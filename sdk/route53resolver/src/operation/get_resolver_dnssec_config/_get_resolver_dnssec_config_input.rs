@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetResolverDnssecConfigInput  {
+pub struct GetResolverDnssecConfigInput {
     /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
     #[doc(hidden)]
     pub resource_id: std::option::Option<std::string::String>,
 }
 impl GetResolverDnssecConfigInput {
     /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
 }
 impl GetResolverDnssecConfigInput {
     /// Creates a new builder-style object to manufacture [`GetResolverDnssecConfigInput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput).
-    pub fn builder() -> crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder
+    {
         crate::operation::get_resolver_dnssec_config::builders::GetResolverDnssecConfigInputBuilder::default()
     }
 }
@@ -34,16 +36,20 @@ impl GetResolverDnssecConfigInputBuilder {
     }
     /// <p>The ID of the virtual private cloud (VPC) for the DNSSEC validation status.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetResolverDnssecConfigInput`](crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput).
-    pub fn build(self) -> Result<crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigInput {
-                resource_id: self.resource_id
-                ,
-            }
+                resource_id: self.resource_id,
+            },
         )
     }
 }
-

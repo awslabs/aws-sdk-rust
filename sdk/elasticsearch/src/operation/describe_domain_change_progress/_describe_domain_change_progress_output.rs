@@ -3,7 +3,7 @@
 /// <p>The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress information of the requested domain change. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDomainChangeProgressOutput  {
+pub struct DescribeDomainChangeProgressOutput {
     /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
     #[doc(hidden)]
     pub change_progress_status: std::option::Option<crate::types::ChangeProgressStatusDetails>,
@@ -11,18 +11,20 @@ pub struct DescribeDomainChangeProgressOutput  {
 }
 impl DescribeDomainChangeProgressOutput {
     /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
-    pub fn change_progress_status(&self) -> std::option::Option<& crate::types::ChangeProgressStatusDetails> {
+    pub fn change_progress_status(
+        &self,
+    ) -> std::option::Option<&crate::types::ChangeProgressStatusDetails> {
         self.change_progress_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeDomainChangeProgressOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeDomainChangeProgressOutput {
     /// Creates a new builder-style object to manufacture [`DescribeDomainChangeProgressOutput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput).
-    pub fn builder() -> crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressOutputBuilder {
+    pub fn builder() -> crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressOutputBuilder{
         crate::operation::describe_domain_change_progress::builders::DescribeDomainChangeProgressOutputBuilder::default()
     }
 }
@@ -31,35 +33,43 @@ impl DescribeDomainChangeProgressOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeDomainChangeProgressOutputBuilder {
-    pub(crate) change_progress_status: std::option::Option<crate::types::ChangeProgressStatusDetails>,
+    pub(crate) change_progress_status:
+        std::option::Option<crate::types::ChangeProgressStatusDetails>,
     _request_id: Option<String>,
 }
 impl DescribeDomainChangeProgressOutputBuilder {
     /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
-    pub fn change_progress_status(mut self, input: crate::types::ChangeProgressStatusDetails) -> Self {
+    pub fn change_progress_status(
+        mut self,
+        input: crate::types::ChangeProgressStatusDetails,
+    ) -> Self {
         self.change_progress_status = Some(input);
         self
     }
     /// <p>Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code> request. </p>
-    pub fn set_change_progress_status(mut self, input: std::option::Option<crate::types::ChangeProgressStatusDetails>) -> Self {
-        self.change_progress_status = input; self
+    pub fn set_change_progress_status(
+        mut self,
+        input: std::option::Option<crate::types::ChangeProgressStatusDetails>,
+    ) -> Self {
+        self.change_progress_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeDomainChangeProgressOutput`](crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput).
-    pub fn build(self) -> crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput {
         crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput {
-            change_progress_status: self.change_progress_status
-            ,
+            change_progress_status: self.change_progress_status,
             _request_id: self._request_id,
         }
     }
 }
-

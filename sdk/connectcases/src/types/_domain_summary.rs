@@ -3,7 +3,7 @@
 /// <p>Object for the summarized details of the domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DomainSummary  {
+pub struct DomainSummary {
     /// <p>The unique identifier of the domain.</p>
     #[doc(hidden)]
     pub domain_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct DomainSummary  {
 }
 impl DomainSummary {
     /// <p>The unique identifier of the domain.</p>
-    pub fn domain_id(&self) -> std::option::Option<& str> {
+    pub fn domain_id(&self) -> std::option::Option<&str> {
         self.domain_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
-    pub fn domain_arn(&self) -> std::option::Option<& str> {
+    pub fn domain_arn(&self) -> std::option::Option<&str> {
         self.domain_arn.as_deref()
     }
     /// <p>The name of the domain.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl DomainSummaryBuilder {
     }
     /// <p>The unique identifier of the domain.</p>
     pub fn set_domain_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_id = input; self
+        self.domain_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
     pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl DomainSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the domain.</p>
     pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_arn = input; self
+        self.domain_arn = input;
+        self
     }
     /// <p>The name of the domain.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,18 +71,15 @@ impl DomainSummaryBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DomainSummary`](crate::types::DomainSummary).
     pub fn build(self) -> crate::types::DomainSummary {
         crate::types::DomainSummary {
-            domain_id: self.domain_id
-            ,
-            domain_arn: self.domain_arn
-            ,
-            name: self.name
-            ,
+            domain_id: self.domain_id,
+            domain_arn: self.domain_arn,
+            name: self.name,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Provides the details of the <code>LambdaFunctionScheduled</code> event. It isn't set for other event types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LambdaFunctionScheduledEventAttributes  {
+pub struct LambdaFunctionScheduledEventAttributes {
     /// <p>The unique ID of the Lambda task.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -25,23 +25,23 @@ pub struct LambdaFunctionScheduledEventAttributes  {
 }
 impl LambdaFunctionScheduledEventAttributes {
     /// <p>The unique ID of the Lambda task.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the Lambda function.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
-    pub fn control(&self) -> std::option::Option<& str> {
+    pub fn control(&self) -> std::option::Option<&str> {
         self.control.as_deref()
     }
     /// <p>The input provided to the Lambda task.</p>
-    pub fn input(&self) -> std::option::Option<& str> {
+    pub fn input(&self) -> std::option::Option<&str> {
         self.input.as_deref()
     }
     /// <p>The maximum amount of time a worker can take to process the Lambda task.</p>
-    pub fn start_to_close_timeout(&self) -> std::option::Option<& str> {
+    pub fn start_to_close_timeout(&self) -> std::option::Option<&str> {
         self.start_to_close_timeout.as_deref()
     }
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
@@ -75,7 +75,8 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
     }
     /// <p>The unique ID of the Lambda task.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the Lambda function.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +85,8 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
     }
     /// <p>The name of the Lambda function.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
     pub fn control(mut self, input: impl Into<std::string::String>) -> Self {
@@ -93,7 +95,8 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
     }
     /// <p>Data attached to the event that the decider can use in subsequent workflow tasks. This data isn't sent to the Lambda task.</p>
     pub fn set_control(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.control = input; self
+        self.control = input;
+        self
     }
     /// <p>The input provided to the Lambda task.</p>
     pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +105,8 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
     }
     /// <p>The input provided to the Lambda task.</p>
     pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input = input; self
+        self.input = input;
+        self
     }
     /// <p>The maximum amount of time a worker can take to process the Lambda task.</p>
     pub fn start_to_close_timeout(mut self, input: impl Into<std::string::String>) -> Self {
@@ -110,8 +114,12 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
         self
     }
     /// <p>The maximum amount of time a worker can take to process the Lambda task.</p>
-    pub fn set_start_to_close_timeout(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.start_to_close_timeout = input; self
+    pub fn set_start_to_close_timeout(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.start_to_close_timeout = input;
+        self
     }
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn decision_task_completed_event_id(mut self, input: i64) -> Self {
@@ -120,25 +128,20 @@ impl LambdaFunctionScheduledEventAttributesBuilder {
     }
     /// <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision that resulted in scheduling this activity task. To help diagnose issues, use this information to trace back the chain of events leading up to this event.</p>
     pub fn set_decision_task_completed_event_id(mut self, input: std::option::Option<i64>) -> Self {
-        self.decision_task_completed_event_id = input; self
+        self.decision_task_completed_event_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`LambdaFunctionScheduledEventAttributes`](crate::types::LambdaFunctionScheduledEventAttributes).
     pub fn build(self) -> crate::types::LambdaFunctionScheduledEventAttributes {
         crate::types::LambdaFunctionScheduledEventAttributes {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            control: self.control
-            ,
-            input: self.input
-            ,
-            start_to_close_timeout: self.start_to_close_timeout
-            ,
-            decision_task_completed_event_id: self.decision_task_completed_event_id
-                .unwrap_or_default()
-            ,
+            id: self.id,
+            name: self.name,
+            control: self.control,
+            input: self.input,
+            start_to_close_timeout: self.start_to_close_timeout,
+            decision_task_completed_event_id: self
+                .decision_task_completed_event_id
+                .unwrap_or_default(),
         }
     }
 }
-

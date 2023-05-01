@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListEventSubscriptionsOutput  {
+pub struct ListEventSubscriptionsOutput {
     /// <p>Details of the returned event subscriptions.</p>
     #[doc(hidden)]
     pub subscriptions: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
@@ -13,22 +13,24 @@ pub struct ListEventSubscriptionsOutput  {
 }
 impl ListEventSubscriptionsOutput {
     /// <p>Details of the returned event subscriptions.</p>
-    pub fn subscriptions(&self) -> std::option::Option<& [crate::types::Subscription]> {
+    pub fn subscriptions(&self) -> std::option::Option<&[crate::types::Subscription]> {
         self.subscriptions.as_deref()
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListEventSubscriptionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListEventSubscriptionsOutput {
     /// Creates a new builder-style object to manufacture [`ListEventSubscriptionsOutput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput).
-    pub fn builder() -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsOutputBuilder
+    {
         crate::operation::list_event_subscriptions::builders::ListEventSubscriptionsOutputBuilder::default()
     }
 }
@@ -49,13 +51,17 @@ impl ListEventSubscriptionsOutputBuilder {
     /// <p>Details of the returned event subscriptions.</p>
     pub fn subscriptions(mut self, input: crate::types::Subscription) -> Self {
         let mut v = self.subscriptions.unwrap_or_default();
-                        v.push(input);
-                        self.subscriptions = Some(v);
-                        self
+        v.push(input);
+        self.subscriptions = Some(v);
+        self
     }
     /// <p>Details of the returned event subscriptions.</p>
-    pub fn set_subscriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::Subscription>>) -> Self {
-        self.subscriptions = input; self
+    pub fn set_subscriptions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Subscription>>,
+    ) -> Self {
+        self.subscriptions = input;
+        self
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +70,24 @@ impl ListEventSubscriptionsOutputBuilder {
     }
     /// <p> When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <b>nextToken</b> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListEventSubscriptionsOutput`](crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput).
     pub fn build(self) -> crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput {
         crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput {
-            subscriptions: self.subscriptions
-            ,
-            next_token: self.next_token
-            ,
+            subscriptions: self.subscriptions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

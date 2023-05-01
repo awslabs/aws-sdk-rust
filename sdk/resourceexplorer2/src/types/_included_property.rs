@@ -3,22 +3,22 @@
 /// <p>Information about an additional property that describes a resource, that you can optionally include in the view. This lets you view that property in search results, and filter your search results based on the value of the property.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IncludedProperty  {
-    /// <p>The name of the property that is included in this view.</p> 
-    /// <p>You can specify the following property names for this field:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Tags</code> </p> </li> 
+pub struct IncludedProperty {
+    /// <p>The name of the property that is included in this view.</p>
+    /// <p>You can specify the following property names for this field:</p>
+    /// <ul>
+    /// <li> <p> <code>Tags</code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
 }
 impl IncludedProperty {
-    /// <p>The name of the property that is included in this view.</p> 
-    /// <p>You can specify the following property names for this field:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Tags</code> </p> </li> 
+    /// <p>The name of the property that is included in this view.</p>
+    /// <p>You can specify the following property names for this field:</p>
+    /// <ul>
+    /// <li> <p> <code>Tags</code> </p> </li>
     /// </ul>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
 }
@@ -36,29 +36,26 @@ pub struct IncludedPropertyBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
 }
 impl IncludedPropertyBuilder {
-    /// <p>The name of the property that is included in this view.</p> 
-    /// <p>You can specify the following property names for this field:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Tags</code> </p> </li> 
+    /// <p>The name of the property that is included in this view.</p>
+    /// <p>You can specify the following property names for this field:</p>
+    /// <ul>
+    /// <li> <p> <code>Tags</code> </p> </li>
     /// </ul>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.name = Some(input.into());
         self
     }
-    /// <p>The name of the property that is included in this view.</p> 
-    /// <p>You can specify the following property names for this field:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Tags</code> </p> </li> 
+    /// <p>The name of the property that is included in this view.</p>
+    /// <p>You can specify the following property names for this field:</p>
+    /// <ul>
+    /// <li> <p> <code>Tags</code> </p> </li>
     /// </ul>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// Consumes the builder and constructs a [`IncludedProperty`](crate::types::IncludedProperty).
     pub fn build(self) -> crate::types::IncludedProperty {
-        crate::types::IncludedProperty {
-            name: self.name
-            ,
-        }
+        crate::types::IncludedProperty { name: self.name }
     }
 }
-

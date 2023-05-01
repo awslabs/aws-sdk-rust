@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartMlEvaluationTaskRunInput  {
+pub struct StartMlEvaluationTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
     #[doc(hidden)]
     pub transform_id: std::option::Option<std::string::String>,
 }
 impl StartMlEvaluationTaskRunInput {
     /// <p>The unique identifier of the machine learning transform.</p>
-    pub fn transform_id(&self) -> std::option::Option<& str> {
+    pub fn transform_id(&self) -> std::option::Option<&str> {
         self.transform_id.as_deref()
     }
 }
 impl StartMlEvaluationTaskRunInput {
     /// Creates a new builder-style object to manufacture [`StartMlEvaluationTaskRunInput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput).
-    pub fn builder() -> crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunInputBuilder {
+    pub fn builder() -> crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunInputBuilder{
         crate::operation::start_ml_evaluation_task_run::builders::StartMlEvaluationTaskRunInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl StartMlEvaluationTaskRunInputBuilder {
     }
     /// <p>The unique identifier of the machine learning transform.</p>
     pub fn set_transform_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transform_id = input; self
+        self.transform_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`StartMlEvaluationTaskRunInput`](crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput).
-    pub fn build(self) -> Result<crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunInput {
-                transform_id: self.transform_id
-                ,
-            }
+                transform_id: self.transform_id,
+            },
         )
     }
 }
-

@@ -3,8 +3,8 @@
 /// <p>Contains X.509 extension information for a certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Extensions  {
-    /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> 
+pub struct Extensions {
+    /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     /// <p>In an end-entity certificate, these terms indicate the policy under which the certificate was issued and the purposes for which it may be used. In a CA certificate, these terms limit the set of policies for certification paths that include this certificate.</p>
     #[doc(hidden)]
     pub certificate_policies: std::option::Option<std::vec::Vec<crate::types::PolicyInformation>>,
@@ -17,32 +17,32 @@ pub struct Extensions  {
     /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
     #[doc(hidden)]
     pub subject_alternative_names: std::option::Option<std::vec::Vec<crate::types::GeneralName>>,
-    /// <p></p> 
+    /// <p></p>
     /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     #[doc(hidden)]
     pub custom_extensions: std::option::Option<std::vec::Vec<crate::types::CustomExtension>>,
 }
 impl Extensions {
-    /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> 
+    /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     /// <p>In an end-entity certificate, these terms indicate the policy under which the certificate was issued and the purposes for which it may be used. In a CA certificate, these terms limit the set of policies for certification paths that include this certificate.</p>
-    pub fn certificate_policies(&self) -> std::option::Option<& [crate::types::PolicyInformation]> {
+    pub fn certificate_policies(&self) -> std::option::Option<&[crate::types::PolicyInformation]> {
         self.certificate_policies.as_deref()
     }
     /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
-    pub fn extended_key_usage(&self) -> std::option::Option<& [crate::types::ExtendedKeyUsage]> {
+    pub fn extended_key_usage(&self) -> std::option::Option<&[crate::types::ExtendedKeyUsage]> {
         self.extended_key_usage.as_deref()
     }
     /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
-    pub fn key_usage(&self) -> std::option::Option<& crate::types::KeyUsage> {
+    pub fn key_usage(&self) -> std::option::Option<&crate::types::KeyUsage> {
         self.key_usage.as_ref()
     }
     /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
-    pub fn subject_alternative_names(&self) -> std::option::Option<& [crate::types::GeneralName]> {
+    pub fn subject_alternative_names(&self) -> std::option::Option<&[crate::types::GeneralName]> {
         self.subject_alternative_names.as_deref()
     }
-    /// <p></p> 
+    /// <p></p>
     /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
-    pub fn custom_extensions(&self) -> std::option::Option<& [crate::types::CustomExtension]> {
+    pub fn custom_extensions(&self) -> std::option::Option<&[crate::types::CustomExtension]> {
         self.custom_extensions.as_deref()
     }
 }
@@ -57,10 +57,13 @@ impl Extensions {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ExtensionsBuilder {
-    pub(crate) certificate_policies: std::option::Option<std::vec::Vec<crate::types::PolicyInformation>>,
-    pub(crate) extended_key_usage: std::option::Option<std::vec::Vec<crate::types::ExtendedKeyUsage>>,
+    pub(crate) certificate_policies:
+        std::option::Option<std::vec::Vec<crate::types::PolicyInformation>>,
+    pub(crate) extended_key_usage:
+        std::option::Option<std::vec::Vec<crate::types::ExtendedKeyUsage>>,
     pub(crate) key_usage: std::option::Option<crate::types::KeyUsage>,
-    pub(crate) subject_alternative_names: std::option::Option<std::vec::Vec<crate::types::GeneralName>>,
+    pub(crate) subject_alternative_names:
+        std::option::Option<std::vec::Vec<crate::types::GeneralName>>,
     pub(crate) custom_extensions: std::option::Option<std::vec::Vec<crate::types::CustomExtension>>,
 }
 impl ExtensionsBuilder {
@@ -68,18 +71,22 @@ impl ExtensionsBuilder {
     ///
     /// To override the contents of this collection use [`set_certificate_policies`](Self::set_certificate_policies).
     ///
-    /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> 
+    /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     /// <p>In an end-entity certificate, these terms indicate the policy under which the certificate was issued and the purposes for which it may be used. In a CA certificate, these terms limit the set of policies for certification paths that include this certificate.</p>
     pub fn certificate_policies(mut self, input: crate::types::PolicyInformation) -> Self {
         let mut v = self.certificate_policies.unwrap_or_default();
-                        v.push(input);
-                        self.certificate_policies = Some(v);
-                        self
+        v.push(input);
+        self.certificate_policies = Some(v);
+        self
     }
-    /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p> 
+    /// <p>Contains a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. For more information, see NIST's definition of <a href="https://csrc.nist.gov/glossary/term/Object_Identifier">Object Identifier (OID)</a>.</p>
     /// <p>In an end-entity certificate, these terms indicate the policy under which the certificate was issued and the purposes for which it may be used. In a CA certificate, these terms limit the set of policies for certification paths that include this certificate.</p>
-    pub fn set_certificate_policies(mut self, input: std::option::Option<std::vec::Vec<crate::types::PolicyInformation>>) -> Self {
-        self.certificate_policies = input; self
+    pub fn set_certificate_policies(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::PolicyInformation>>,
+    ) -> Self {
+        self.certificate_policies = input;
+        self
     }
     /// Appends an item to `extended_key_usage`.
     ///
@@ -88,13 +95,17 @@ impl ExtensionsBuilder {
     /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
     pub fn extended_key_usage(mut self, input: crate::types::ExtendedKeyUsage) -> Self {
         let mut v = self.extended_key_usage.unwrap_or_default();
-                        v.push(input);
-                        self.extended_key_usage = Some(v);
-                        self
+        v.push(input);
+        self.extended_key_usage = Some(v);
+        self
     }
     /// <p>Specifies additional purposes for which the certified public key may be used other than basic purposes indicated in the <code>KeyUsage</code> extension.</p>
-    pub fn set_extended_key_usage(mut self, input: std::option::Option<std::vec::Vec<crate::types::ExtendedKeyUsage>>) -> Self {
-        self.extended_key_usage = input; self
+    pub fn set_extended_key_usage(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ExtendedKeyUsage>>,
+    ) -> Self {
+        self.extended_key_usage = input;
+        self
     }
     /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
     pub fn key_usage(mut self, input: crate::types::KeyUsage) -> Self {
@@ -103,7 +114,8 @@ impl ExtensionsBuilder {
     }
     /// <p>Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.</p>
     pub fn set_key_usage(mut self, input: std::option::Option<crate::types::KeyUsage>) -> Self {
-        self.key_usage = input; self
+        self.key_usage = input;
+        self
     }
     /// Appends an item to `subject_alternative_names`.
     ///
@@ -112,45 +124,47 @@ impl ExtensionsBuilder {
     /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
     pub fn subject_alternative_names(mut self, input: crate::types::GeneralName) -> Self {
         let mut v = self.subject_alternative_names.unwrap_or_default();
-                        v.push(input);
-                        self.subject_alternative_names = Some(v);
-                        self
+        v.push(input);
+        self.subject_alternative_names = Some(v);
+        self
     }
     /// <p>The subject alternative name extension allows identities to be bound to the subject of the certificate. These identities may be included in addition to or in place of the identity in the subject field of the certificate.</p>
-    pub fn set_subject_alternative_names(mut self, input: std::option::Option<std::vec::Vec<crate::types::GeneralName>>) -> Self {
-        self.subject_alternative_names = input; self
+    pub fn set_subject_alternative_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::GeneralName>>,
+    ) -> Self {
+        self.subject_alternative_names = input;
+        self
     }
     /// Appends an item to `custom_extensions`.
     ///
     /// To override the contents of this collection use [`set_custom_extensions`](Self::set_custom_extensions).
     ///
-    /// <p></p> 
+    /// <p></p>
     /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
     pub fn custom_extensions(mut self, input: crate::types::CustomExtension) -> Self {
         let mut v = self.custom_extensions.unwrap_or_default();
-                        v.push(input);
-                        self.custom_extensions = Some(v);
-                        self
+        v.push(input);
+        self.custom_extensions = Some(v);
+        self
     }
-    /// <p></p> 
+    /// <p></p>
     /// <p>Contains a sequence of one or more X.509 extensions, each of which consists of an object identifier (OID), a base64-encoded value, and the critical flag. For more information, see the <a href="https://oidref.com/2.5.29">Global OID reference database.</a> </p>
-    pub fn set_custom_extensions(mut self, input: std::option::Option<std::vec::Vec<crate::types::CustomExtension>>) -> Self {
-        self.custom_extensions = input; self
+    pub fn set_custom_extensions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CustomExtension>>,
+    ) -> Self {
+        self.custom_extensions = input;
+        self
     }
     /// Consumes the builder and constructs a [`Extensions`](crate::types::Extensions).
     pub fn build(self) -> crate::types::Extensions {
         crate::types::Extensions {
-            certificate_policies: self.certificate_policies
-            ,
-            extended_key_usage: self.extended_key_usage
-            ,
-            key_usage: self.key_usage
-            ,
-            subject_alternative_names: self.subject_alternative_names
-            ,
-            custom_extensions: self.custom_extensions
-            ,
+            certificate_policies: self.certificate_policies,
+            extended_key_usage: self.extended_key_usage,
+            key_usage: self.key_usage,
+            subject_alternative_names: self.subject_alternative_names,
+            custom_extensions: self.custom_extensions,
         }
     }
 }
-

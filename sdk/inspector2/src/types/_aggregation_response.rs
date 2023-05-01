@@ -39,8 +39,14 @@ pub enum AggregationResponse {
 impl AggregationResponse {
     /// Tries to convert the enum instance into [`AccountAggregation`](crate::types::AggregationResponse::AccountAggregation), extracting the inner [`AccountAggregationResponse`](crate::types::AccountAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_account_aggregation(&self) -> std::result::Result<&crate::types::AccountAggregationResponse, &Self> {
-        if let AggregationResponse::AccountAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_account_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::AccountAggregationResponse, &Self> {
+        if let AggregationResponse::AccountAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`AccountAggregation`](crate::types::AggregationResponse::AccountAggregation).
     pub fn is_account_aggregation(&self) -> bool {
@@ -48,8 +54,14 @@ impl AggregationResponse {
     }
     /// Tries to convert the enum instance into [`AmiAggregation`](crate::types::AggregationResponse::AmiAggregation), extracting the inner [`AmiAggregationResponse`](crate::types::AmiAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ami_aggregation(&self) -> std::result::Result<&crate::types::AmiAggregationResponse, &Self> {
-        if let AggregationResponse::AmiAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_ami_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::AmiAggregationResponse, &Self> {
+        if let AggregationResponse::AmiAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`AmiAggregation`](crate::types::AggregationResponse::AmiAggregation).
     pub fn is_ami_aggregation(&self) -> bool {
@@ -57,8 +69,14 @@ impl AggregationResponse {
     }
     /// Tries to convert the enum instance into [`AwsEcrContainerAggregation`](crate::types::AggregationResponse::AwsEcrContainerAggregation), extracting the inner [`AwsEcrContainerAggregationResponse`](crate::types::AwsEcrContainerAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_aws_ecr_container_aggregation(&self) -> std::result::Result<&crate::types::AwsEcrContainerAggregationResponse, &Self> {
-        if let AggregationResponse::AwsEcrContainerAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_aws_ecr_container_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::AwsEcrContainerAggregationResponse, &Self> {
+        if let AggregationResponse::AwsEcrContainerAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`AwsEcrContainerAggregation`](crate::types::AggregationResponse::AwsEcrContainerAggregation).
     pub fn is_aws_ecr_container_aggregation(&self) -> bool {
@@ -66,8 +84,14 @@ impl AggregationResponse {
     }
     /// Tries to convert the enum instance into [`Ec2InstanceAggregation`](crate::types::AggregationResponse::Ec2InstanceAggregation), extracting the inner [`Ec2InstanceAggregationResponse`](crate::types::Ec2InstanceAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_ec2_instance_aggregation(&self) -> std::result::Result<&crate::types::Ec2InstanceAggregationResponse, &Self> {
-        if let AggregationResponse::Ec2InstanceAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_ec2_instance_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::Ec2InstanceAggregationResponse, &Self> {
+        if let AggregationResponse::Ec2InstanceAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Ec2InstanceAggregation`](crate::types::AggregationResponse::Ec2InstanceAggregation).
     pub fn is_ec2_instance_aggregation(&self) -> bool {
@@ -75,8 +99,14 @@ impl AggregationResponse {
     }
     /// Tries to convert the enum instance into [`FindingTypeAggregation`](crate::types::AggregationResponse::FindingTypeAggregation), extracting the inner [`FindingTypeAggregationResponse`](crate::types::FindingTypeAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_finding_type_aggregation(&self) -> std::result::Result<&crate::types::FindingTypeAggregationResponse, &Self> {
-        if let AggregationResponse::FindingTypeAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_finding_type_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::FindingTypeAggregationResponse, &Self> {
+        if let AggregationResponse::FindingTypeAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`FindingTypeAggregation`](crate::types::AggregationResponse::FindingTypeAggregation).
     pub fn is_finding_type_aggregation(&self) -> bool {
@@ -84,8 +114,14 @@ impl AggregationResponse {
     }
     /// Tries to convert the enum instance into [`ImageLayerAggregation`](crate::types::AggregationResponse::ImageLayerAggregation), extracting the inner [`ImageLayerAggregationResponse`](crate::types::ImageLayerAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_image_layer_aggregation(&self) -> std::result::Result<&crate::types::ImageLayerAggregationResponse, &Self> {
-        if let AggregationResponse::ImageLayerAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_image_layer_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::ImageLayerAggregationResponse, &Self> {
+        if let AggregationResponse::ImageLayerAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`ImageLayerAggregation`](crate::types::AggregationResponse::ImageLayerAggregation).
     pub fn is_image_layer_aggregation(&self) -> bool {
@@ -93,8 +129,14 @@ impl AggregationResponse {
     }
     /// Tries to convert the enum instance into [`LambdaFunctionAggregation`](crate::types::AggregationResponse::LambdaFunctionAggregation), extracting the inner [`LambdaFunctionAggregationResponse`](crate::types::LambdaFunctionAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_lambda_function_aggregation(&self) -> std::result::Result<&crate::types::LambdaFunctionAggregationResponse, &Self> {
-        if let AggregationResponse::LambdaFunctionAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_lambda_function_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::LambdaFunctionAggregationResponse, &Self> {
+        if let AggregationResponse::LambdaFunctionAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`LambdaFunctionAggregation`](crate::types::AggregationResponse::LambdaFunctionAggregation).
     pub fn is_lambda_function_aggregation(&self) -> bool {
@@ -102,8 +144,14 @@ impl AggregationResponse {
     }
     /// Tries to convert the enum instance into [`LambdaLayerAggregation`](crate::types::AggregationResponse::LambdaLayerAggregation), extracting the inner [`LambdaLayerAggregationResponse`](crate::types::LambdaLayerAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_lambda_layer_aggregation(&self) -> std::result::Result<&crate::types::LambdaLayerAggregationResponse, &Self> {
-        if let AggregationResponse::LambdaLayerAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_lambda_layer_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::LambdaLayerAggregationResponse, &Self> {
+        if let AggregationResponse::LambdaLayerAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`LambdaLayerAggregation`](crate::types::AggregationResponse::LambdaLayerAggregation).
     pub fn is_lambda_layer_aggregation(&self) -> bool {
@@ -111,8 +159,14 @@ impl AggregationResponse {
     }
     /// Tries to convert the enum instance into [`PackageAggregation`](crate::types::AggregationResponse::PackageAggregation), extracting the inner [`PackageAggregationResponse`](crate::types::PackageAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_package_aggregation(&self) -> std::result::Result<&crate::types::PackageAggregationResponse, &Self> {
-        if let AggregationResponse::PackageAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_package_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::PackageAggregationResponse, &Self> {
+        if let AggregationResponse::PackageAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`PackageAggregation`](crate::types::AggregationResponse::PackageAggregation).
     pub fn is_package_aggregation(&self) -> bool {
@@ -120,8 +174,14 @@ impl AggregationResponse {
     }
     /// Tries to convert the enum instance into [`RepositoryAggregation`](crate::types::AggregationResponse::RepositoryAggregation), extracting the inner [`RepositoryAggregationResponse`](crate::types::RepositoryAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_repository_aggregation(&self) -> std::result::Result<&crate::types::RepositoryAggregationResponse, &Self> {
-        if let AggregationResponse::RepositoryAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_repository_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::RepositoryAggregationResponse, &Self> {
+        if let AggregationResponse::RepositoryAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`RepositoryAggregation`](crate::types::AggregationResponse::RepositoryAggregation).
     pub fn is_repository_aggregation(&self) -> bool {
@@ -129,8 +189,14 @@ impl AggregationResponse {
     }
     /// Tries to convert the enum instance into [`TitleAggregation`](crate::types::AggregationResponse::TitleAggregation), extracting the inner [`TitleAggregationResponse`](crate::types::TitleAggregationResponse).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_title_aggregation(&self) -> std::result::Result<&crate::types::TitleAggregationResponse, &Self> {
-        if let AggregationResponse::TitleAggregation(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_title_aggregation(
+        &self,
+    ) -> std::result::Result<&crate::types::TitleAggregationResponse, &Self> {
+        if let AggregationResponse::TitleAggregation(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`TitleAggregation`](crate::types::AggregationResponse::TitleAggregation).
     pub fn is_title_aggregation(&self) -> bool {
@@ -141,4 +207,3 @@ impl AggregationResponse {
         matches!(self, Self::Unknown)
     }
 }
-

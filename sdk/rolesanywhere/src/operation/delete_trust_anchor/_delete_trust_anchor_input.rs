@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrustAnchorInput  {
+pub struct DeleteTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
     #[doc(hidden)]
     pub trust_anchor_id: std::option::Option<std::string::String>,
 }
 impl DeleteTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(&self) -> std::option::Option<& str> {
+    pub fn trust_anchor_id(&self) -> std::option::Option<&str> {
         self.trust_anchor_id.as_deref()
     }
 }
 impl DeleteTrustAnchorInput {
     /// Creates a new builder-style object to manufacture [`DeleteTrustAnchorInput`](crate::operation::delete_trust_anchor::DeleteTrustAnchorInput).
-    pub fn builder() -> crate::operation::delete_trust_anchor::builders::DeleteTrustAnchorInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_trust_anchor::builders::DeleteTrustAnchorInputBuilder {
         crate::operation::delete_trust_anchor::builders::DeleteTrustAnchorInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteTrustAnchorInputBuilder {
     }
     /// <p>The unique identifier of the trust anchor.</p>
     pub fn set_trust_anchor_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.trust_anchor_id = input; self
+        self.trust_anchor_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteTrustAnchorInput`](crate::operation::delete_trust_anchor::DeleteTrustAnchorInput).
-    pub fn build(self) -> Result<crate::operation::delete_trust_anchor::DeleteTrustAnchorInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_trust_anchor::DeleteTrustAnchorInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_trust_anchor::DeleteTrustAnchorInput {
-                trust_anchor_id: self.trust_anchor_id
-                ,
-            }
+                trust_anchor_id: self.trust_anchor_id,
+            },
         )
     }
 }
-

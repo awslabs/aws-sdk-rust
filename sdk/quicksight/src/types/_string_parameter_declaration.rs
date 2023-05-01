@@ -3,7 +3,7 @@
 /// <p>A parameter declaration for the <code>String</code> data type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StringParameterDeclaration  {
+pub struct StringParameterDeclaration {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
     #[doc(hidden)]
     pub parameter_value_type: std::option::Option<crate::types::ParameterValueType>,
@@ -19,19 +19,21 @@ pub struct StringParameterDeclaration  {
 }
 impl StringParameterDeclaration {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    pub fn parameter_value_type(&self) -> std::option::Option<& crate::types::ParameterValueType> {
+    pub fn parameter_value_type(&self) -> std::option::Option<&crate::types::ParameterValueType> {
         self.parameter_value_type.as_ref()
     }
     /// <p>The name of the parameter that is being declared.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    pub fn default_values(&self) -> std::option::Option<& crate::types::StringDefaultValues> {
+    pub fn default_values(&self) -> std::option::Option<&crate::types::StringDefaultValues> {
         self.default_values.as_ref()
     }
     /// <p>The configuration that defines the default value of a <code>String</code> parameter when a value has not been set.</p>
-    pub fn value_when_unset(&self) -> std::option::Option<& crate::types::StringValueWhenUnsetConfiguration> {
+    pub fn value_when_unset(
+        &self,
+    ) -> std::option::Option<&crate::types::StringValueWhenUnsetConfiguration> {
         self.value_when_unset.as_ref()
     }
 }
@@ -49,7 +51,8 @@ pub struct StringParameterDeclarationBuilder {
     pub(crate) parameter_value_type: std::option::Option<crate::types::ParameterValueType>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) default_values: std::option::Option<crate::types::StringDefaultValues>,
-    pub(crate) value_when_unset: std::option::Option<crate::types::StringValueWhenUnsetConfiguration>,
+    pub(crate) value_when_unset:
+        std::option::Option<crate::types::StringValueWhenUnsetConfiguration>,
 }
 impl StringParameterDeclarationBuilder {
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
@@ -58,8 +61,12 @@ impl StringParameterDeclarationBuilder {
         self
     }
     /// <p>The value type determines whether the parameter is a single-value or multi-value parameter.</p>
-    pub fn set_parameter_value_type(mut self, input: std::option::Option<crate::types::ParameterValueType>) -> Self {
-        self.parameter_value_type = input; self
+    pub fn set_parameter_value_type(
+        mut self,
+        input: std::option::Option<crate::types::ParameterValueType>,
+    ) -> Self {
+        self.parameter_value_type = input;
+        self
     }
     /// <p>The name of the parameter that is being declared.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +75,8 @@ impl StringParameterDeclarationBuilder {
     }
     /// <p>The name of the parameter that is being declared.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
     pub fn default_values(mut self, input: crate::types::StringDefaultValues) -> Self {
@@ -76,30 +84,36 @@ impl StringParameterDeclarationBuilder {
         self
     }
     /// <p>The default values of a parameter. If the parameter is a single-value parameter, a maximum of one default value can be provided.</p>
-    pub fn set_default_values(mut self, input: std::option::Option<crate::types::StringDefaultValues>) -> Self {
-        self.default_values = input; self
+    pub fn set_default_values(
+        mut self,
+        input: std::option::Option<crate::types::StringDefaultValues>,
+    ) -> Self {
+        self.default_values = input;
+        self
     }
     /// <p>The configuration that defines the default value of a <code>String</code> parameter when a value has not been set.</p>
-    pub fn value_when_unset(mut self, input: crate::types::StringValueWhenUnsetConfiguration) -> Self {
+    pub fn value_when_unset(
+        mut self,
+        input: crate::types::StringValueWhenUnsetConfiguration,
+    ) -> Self {
         self.value_when_unset = Some(input);
         self
     }
     /// <p>The configuration that defines the default value of a <code>String</code> parameter when a value has not been set.</p>
-    pub fn set_value_when_unset(mut self, input: std::option::Option<crate::types::StringValueWhenUnsetConfiguration>) -> Self {
-        self.value_when_unset = input; self
+    pub fn set_value_when_unset(
+        mut self,
+        input: std::option::Option<crate::types::StringValueWhenUnsetConfiguration>,
+    ) -> Self {
+        self.value_when_unset = input;
+        self
     }
     /// Consumes the builder and constructs a [`StringParameterDeclaration`](crate::types::StringParameterDeclaration).
     pub fn build(self) -> crate::types::StringParameterDeclaration {
         crate::types::StringParameterDeclaration {
-            parameter_value_type: self.parameter_value_type
-            ,
-            name: self.name
-            ,
-            default_values: self.default_values
-            ,
-            value_when_unset: self.value_when_unset
-            ,
+            parameter_value_type: self.parameter_value_type,
+            name: self.name,
+            default_values: self.default_values,
+            value_when_unset: self.value_when_unset,
         }
     }
 }
-

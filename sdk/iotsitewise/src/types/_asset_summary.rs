@@ -3,11 +3,11 @@
 /// <p>Contains a summary of an asset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssetSummary  {
+pub struct AssetSummary {
     /// <p>The ID of the asset.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -35,40 +35,40 @@ pub struct AssetSummary  {
 }
 impl AssetSummary {
     /// <p>The ID of the asset.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the asset.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The ID of the asset model used to create this asset.</p>
-    pub fn asset_model_id(&self) -> std::option::Option<& str> {
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
         self.asset_model_id.as_deref()
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub fn creation_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date.as_ref()
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn last_update_date(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_update_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_update_date.as_ref()
     }
     /// <p>The current status of the asset.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::AssetStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::AssetStatus> {
         self.status.as_ref()
     }
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub fn hierarchies(&self) -> std::option::Option<& [crate::types::AssetHierarchy]> {
+    pub fn hierarchies(&self) -> std::option::Option<&[crate::types::AssetHierarchy]> {
         self.hierarchies.as_deref()
     }
     /// <p>A description for the asset.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
@@ -101,18 +101,20 @@ impl AssetSummaryBuilder {
     }
     /// <p>The ID of the asset.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.arn = Some(input.into());
         self
     }
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p> 
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the asset, which has the following format.</p>
     /// <p> <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> </p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>The name of the asset.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -121,7 +123,8 @@ impl AssetSummaryBuilder {
     }
     /// <p>The name of the asset.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The ID of the asset model used to create this asset.</p>
     pub fn asset_model_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -130,7 +133,8 @@ impl AssetSummaryBuilder {
     }
     /// <p>The ID of the asset model used to create this asset.</p>
     pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_model_id = input; self
+        self.asset_model_id = input;
+        self
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
     pub fn creation_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -138,8 +142,12 @@ impl AssetSummaryBuilder {
         self
     }
     /// <p>The date the asset was created, in Unix epoch time.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date = input; self
+    pub fn set_creation_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date = input;
+        self
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
     pub fn last_update_date(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -147,8 +155,12 @@ impl AssetSummaryBuilder {
         self
     }
     /// <p>The date the asset was last updated, in Unix epoch time.</p>
-    pub fn set_last_update_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_update_date = input; self
+    pub fn set_last_update_date(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_update_date = input;
+        self
     }
     /// <p>The current status of the asset.</p>
     pub fn status(mut self, input: crate::types::AssetStatus) -> Self {
@@ -157,7 +169,8 @@ impl AssetSummaryBuilder {
     }
     /// <p>The current status of the asset.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::AssetStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// Appends an item to `hierarchies`.
     ///
@@ -166,13 +179,17 @@ impl AssetSummaryBuilder {
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
     pub fn hierarchies(mut self, input: crate::types::AssetHierarchy) -> Self {
         let mut v = self.hierarchies.unwrap_or_default();
-                        v.push(input);
-                        self.hierarchies = Some(v);
-                        self
+        v.push(input);
+        self.hierarchies = Some(v);
+        self
     }
     /// <p>A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy specifies allowed parent/child asset relationships.</p>
-    pub fn set_hierarchies(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssetHierarchy>>) -> Self {
-        self.hierarchies = input; self
+    pub fn set_hierarchies(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AssetHierarchy>>,
+    ) -> Self {
+        self.hierarchies = input;
+        self
     }
     /// <p>A description for the asset.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -181,30 +198,21 @@ impl AssetSummaryBuilder {
     }
     /// <p>A description for the asset.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssetSummary`](crate::types::AssetSummary).
     pub fn build(self) -> crate::types::AssetSummary {
         crate::types::AssetSummary {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            name: self.name
-            ,
-            asset_model_id: self.asset_model_id
-            ,
-            creation_date: self.creation_date
-            ,
-            last_update_date: self.last_update_date
-            ,
-            status: self.status
-            ,
-            hierarchies: self.hierarchies
-            ,
-            description: self.description
-            ,
+            id: self.id,
+            arn: self.arn,
+            name: self.name,
+            asset_model_id: self.asset_model_id,
+            creation_date: self.creation_date,
+            last_update_date: self.last_update_date,
+            status: self.status,
+            hierarchies: self.hierarchies,
+            description: self.description,
         }
     }
 }
-

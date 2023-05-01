@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let uploadtype = unimplemented!();
 /// match uploadtype {
@@ -60,14 +60,22 @@
 /// Specifically, when `uploadtype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `UploadType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum UploadType {
     #[allow(missing_docs)] // documentation missing in model
     AndroidApp,
@@ -134,101 +142,133 @@ pub enum UploadType {
     #[allow(missing_docs)] // documentation missing in model
     XctestUiTestSpec,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for UploadType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ANDROID_APP" => UploadType::AndroidApp,
-"APPIUM_JAVA_JUNIT_TEST_PACKAGE" => UploadType::AppiumJavaJunitTestPackage,
-"APPIUM_JAVA_JUNIT_TEST_SPEC" => UploadType::AppiumJavaJunitTestSpec,
-"APPIUM_JAVA_TESTNG_TEST_PACKAGE" => UploadType::AppiumJavaTestngTestPackage,
-"APPIUM_JAVA_TESTNG_TEST_SPEC" => UploadType::AppiumJavaTestngTestSpec,
-"APPIUM_NODE_TEST_PACKAGE" => UploadType::AppiumNodeTestPackage,
-"APPIUM_NODE_TEST_SPEC" => UploadType::AppiumNodeTestSpec,
-"APPIUM_PYTHON_TEST_PACKAGE" => UploadType::AppiumPythonTestPackage,
-"APPIUM_PYTHON_TEST_SPEC" => UploadType::AppiumPythonTestSpec,
-"APPIUM_RUBY_TEST_PACKAGE" => UploadType::AppiumRubyTestPackage,
-"APPIUM_RUBY_TEST_SPEC" => UploadType::AppiumRubyTestSpec,
-"APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE" => UploadType::AppiumWebJavaJunitTestPackage,
-"APPIUM_WEB_JAVA_JUNIT_TEST_SPEC" => UploadType::AppiumWebJavaJunitTestSpec,
-"APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE" => UploadType::AppiumWebJavaTestngTestPackage,
-"APPIUM_WEB_JAVA_TESTNG_TEST_SPEC" => UploadType::AppiumWebJavaTestngTestSpec,
-"APPIUM_WEB_NODE_TEST_PACKAGE" => UploadType::AppiumWebNodeTestPackage,
-"APPIUM_WEB_NODE_TEST_SPEC" => UploadType::AppiumWebNodeTestSpec,
-"APPIUM_WEB_PYTHON_TEST_PACKAGE" => UploadType::AppiumWebPythonTestPackage,
-"APPIUM_WEB_PYTHON_TEST_SPEC" => UploadType::AppiumWebPythonTestSpec,
-"APPIUM_WEB_RUBY_TEST_PACKAGE" => UploadType::AppiumWebRubyTestPackage,
-"APPIUM_WEB_RUBY_TEST_SPEC" => UploadType::AppiumWebRubyTestSpec,
-"CALABASH_TEST_PACKAGE" => UploadType::CalabashTestPackage,
-"EXTERNAL_DATA" => UploadType::ExternalData,
-"INSTRUMENTATION_TEST_PACKAGE" => UploadType::InstrumentationTestPackage,
-"INSTRUMENTATION_TEST_SPEC" => UploadType::InstrumentationTestSpec,
-"IOS_APP" => UploadType::IosApp,
-"UIAUTOMATION_TEST_PACKAGE" => UploadType::UiautomationTestPackage,
-"UIAUTOMATOR_TEST_PACKAGE" => UploadType::UiautomatorTestPackage,
-"WEB_APP" => UploadType::WebApp,
-"XCTEST_TEST_PACKAGE" => UploadType::XctestTestPackage,
-"XCTEST_UI_TEST_PACKAGE" => UploadType::XctestUiTestPackage,
-"XCTEST_UI_TEST_SPEC" => UploadType::XctestUiTestSpec,
-other => UploadType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for UploadType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(UploadType::from(s))
-                }
-            }
-impl UploadType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    UploadType::AndroidApp => "ANDROID_APP",
-    UploadType::AppiumJavaJunitTestPackage => "APPIUM_JAVA_JUNIT_TEST_PACKAGE",
-    UploadType::AppiumJavaJunitTestSpec => "APPIUM_JAVA_JUNIT_TEST_SPEC",
-    UploadType::AppiumJavaTestngTestPackage => "APPIUM_JAVA_TESTNG_TEST_PACKAGE",
-    UploadType::AppiumJavaTestngTestSpec => "APPIUM_JAVA_TESTNG_TEST_SPEC",
-    UploadType::AppiumNodeTestPackage => "APPIUM_NODE_TEST_PACKAGE",
-    UploadType::AppiumNodeTestSpec => "APPIUM_NODE_TEST_SPEC",
-    UploadType::AppiumPythonTestPackage => "APPIUM_PYTHON_TEST_PACKAGE",
-    UploadType::AppiumPythonTestSpec => "APPIUM_PYTHON_TEST_SPEC",
-    UploadType::AppiumRubyTestPackage => "APPIUM_RUBY_TEST_PACKAGE",
-    UploadType::AppiumRubyTestSpec => "APPIUM_RUBY_TEST_SPEC",
-    UploadType::AppiumWebJavaJunitTestPackage => "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE",
-    UploadType::AppiumWebJavaJunitTestSpec => "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC",
-    UploadType::AppiumWebJavaTestngTestPackage => "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE",
-    UploadType::AppiumWebJavaTestngTestSpec => "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC",
-    UploadType::AppiumWebNodeTestPackage => "APPIUM_WEB_NODE_TEST_PACKAGE",
-    UploadType::AppiumWebNodeTestSpec => "APPIUM_WEB_NODE_TEST_SPEC",
-    UploadType::AppiumWebPythonTestPackage => "APPIUM_WEB_PYTHON_TEST_PACKAGE",
-    UploadType::AppiumWebPythonTestSpec => "APPIUM_WEB_PYTHON_TEST_SPEC",
-    UploadType::AppiumWebRubyTestPackage => "APPIUM_WEB_RUBY_TEST_PACKAGE",
-    UploadType::AppiumWebRubyTestSpec => "APPIUM_WEB_RUBY_TEST_SPEC",
-    UploadType::CalabashTestPackage => "CALABASH_TEST_PACKAGE",
-    UploadType::ExternalData => "EXTERNAL_DATA",
-    UploadType::InstrumentationTestPackage => "INSTRUMENTATION_TEST_PACKAGE",
-    UploadType::InstrumentationTestSpec => "INSTRUMENTATION_TEST_SPEC",
-    UploadType::IosApp => "IOS_APP",
-    UploadType::UiautomationTestPackage => "UIAUTOMATION_TEST_PACKAGE",
-    UploadType::UiautomatorTestPackage => "UIAUTOMATOR_TEST_PACKAGE",
-    UploadType::WebApp => "WEB_APP",
-    UploadType::XctestTestPackage => "XCTEST_TEST_PACKAGE",
-    UploadType::XctestUiTestPackage => "XCTEST_UI_TEST_PACKAGE",
-    UploadType::XctestUiTestSpec => "XCTEST_UI_TEST_SPEC",
-    UploadType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ANDROID_APP" => UploadType::AndroidApp,
+            "APPIUM_JAVA_JUNIT_TEST_PACKAGE" => UploadType::AppiumJavaJunitTestPackage,
+            "APPIUM_JAVA_JUNIT_TEST_SPEC" => UploadType::AppiumJavaJunitTestSpec,
+            "APPIUM_JAVA_TESTNG_TEST_PACKAGE" => UploadType::AppiumJavaTestngTestPackage,
+            "APPIUM_JAVA_TESTNG_TEST_SPEC" => UploadType::AppiumJavaTestngTestSpec,
+            "APPIUM_NODE_TEST_PACKAGE" => UploadType::AppiumNodeTestPackage,
+            "APPIUM_NODE_TEST_SPEC" => UploadType::AppiumNodeTestSpec,
+            "APPIUM_PYTHON_TEST_PACKAGE" => UploadType::AppiumPythonTestPackage,
+            "APPIUM_PYTHON_TEST_SPEC" => UploadType::AppiumPythonTestSpec,
+            "APPIUM_RUBY_TEST_PACKAGE" => UploadType::AppiumRubyTestPackage,
+            "APPIUM_RUBY_TEST_SPEC" => UploadType::AppiumRubyTestSpec,
+            "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE" => UploadType::AppiumWebJavaJunitTestPackage,
+            "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC" => UploadType::AppiumWebJavaJunitTestSpec,
+            "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE" => UploadType::AppiumWebJavaTestngTestPackage,
+            "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC" => UploadType::AppiumWebJavaTestngTestSpec,
+            "APPIUM_WEB_NODE_TEST_PACKAGE" => UploadType::AppiumWebNodeTestPackage,
+            "APPIUM_WEB_NODE_TEST_SPEC" => UploadType::AppiumWebNodeTestSpec,
+            "APPIUM_WEB_PYTHON_TEST_PACKAGE" => UploadType::AppiumWebPythonTestPackage,
+            "APPIUM_WEB_PYTHON_TEST_SPEC" => UploadType::AppiumWebPythonTestSpec,
+            "APPIUM_WEB_RUBY_TEST_PACKAGE" => UploadType::AppiumWebRubyTestPackage,
+            "APPIUM_WEB_RUBY_TEST_SPEC" => UploadType::AppiumWebRubyTestSpec,
+            "CALABASH_TEST_PACKAGE" => UploadType::CalabashTestPackage,
+            "EXTERNAL_DATA" => UploadType::ExternalData,
+            "INSTRUMENTATION_TEST_PACKAGE" => UploadType::InstrumentationTestPackage,
+            "INSTRUMENTATION_TEST_SPEC" => UploadType::InstrumentationTestSpec,
+            "IOS_APP" => UploadType::IosApp,
+            "UIAUTOMATION_TEST_PACKAGE" => UploadType::UiautomationTestPackage,
+            "UIAUTOMATOR_TEST_PACKAGE" => UploadType::UiautomatorTestPackage,
+            "WEB_APP" => UploadType::WebApp,
+            "XCTEST_TEST_PACKAGE" => UploadType::XctestTestPackage,
+            "XCTEST_UI_TEST_PACKAGE" => UploadType::XctestUiTestPackage,
+            "XCTEST_UI_TEST_SPEC" => UploadType::XctestUiTestSpec,
+            other => UploadType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ANDROID_APP", "APPIUM_JAVA_JUNIT_TEST_PACKAGE", "APPIUM_JAVA_JUNIT_TEST_SPEC", "APPIUM_JAVA_TESTNG_TEST_PACKAGE", "APPIUM_JAVA_TESTNG_TEST_SPEC", "APPIUM_NODE_TEST_PACKAGE", "APPIUM_NODE_TEST_SPEC", "APPIUM_PYTHON_TEST_PACKAGE", "APPIUM_PYTHON_TEST_SPEC", "APPIUM_RUBY_TEST_PACKAGE", "APPIUM_RUBY_TEST_SPEC", "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE", "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC", "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE", "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC", "APPIUM_WEB_NODE_TEST_PACKAGE", "APPIUM_WEB_NODE_TEST_SPEC", "APPIUM_WEB_PYTHON_TEST_PACKAGE", "APPIUM_WEB_PYTHON_TEST_SPEC", "APPIUM_WEB_RUBY_TEST_PACKAGE", "APPIUM_WEB_RUBY_TEST_SPEC", "CALABASH_TEST_PACKAGE", "EXTERNAL_DATA", "INSTRUMENTATION_TEST_PACKAGE", "INSTRUMENTATION_TEST_SPEC", "IOS_APP", "UIAUTOMATION_TEST_PACKAGE", "UIAUTOMATOR_TEST_PACKAGE", "WEB_APP", "XCTEST_TEST_PACKAGE", "XCTEST_UI_TEST_PACKAGE", "XCTEST_UI_TEST_SPEC"]
-                }
-            }
-impl AsRef<str> for UploadType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for UploadType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(UploadType::from(s))
+    }
+}
+impl UploadType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            UploadType::AndroidApp => "ANDROID_APP",
+            UploadType::AppiumJavaJunitTestPackage => "APPIUM_JAVA_JUNIT_TEST_PACKAGE",
+            UploadType::AppiumJavaJunitTestSpec => "APPIUM_JAVA_JUNIT_TEST_SPEC",
+            UploadType::AppiumJavaTestngTestPackage => "APPIUM_JAVA_TESTNG_TEST_PACKAGE",
+            UploadType::AppiumJavaTestngTestSpec => "APPIUM_JAVA_TESTNG_TEST_SPEC",
+            UploadType::AppiumNodeTestPackage => "APPIUM_NODE_TEST_PACKAGE",
+            UploadType::AppiumNodeTestSpec => "APPIUM_NODE_TEST_SPEC",
+            UploadType::AppiumPythonTestPackage => "APPIUM_PYTHON_TEST_PACKAGE",
+            UploadType::AppiumPythonTestSpec => "APPIUM_PYTHON_TEST_SPEC",
+            UploadType::AppiumRubyTestPackage => "APPIUM_RUBY_TEST_PACKAGE",
+            UploadType::AppiumRubyTestSpec => "APPIUM_RUBY_TEST_SPEC",
+            UploadType::AppiumWebJavaJunitTestPackage => "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE",
+            UploadType::AppiumWebJavaJunitTestSpec => "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC",
+            UploadType::AppiumWebJavaTestngTestPackage => "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE",
+            UploadType::AppiumWebJavaTestngTestSpec => "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC",
+            UploadType::AppiumWebNodeTestPackage => "APPIUM_WEB_NODE_TEST_PACKAGE",
+            UploadType::AppiumWebNodeTestSpec => "APPIUM_WEB_NODE_TEST_SPEC",
+            UploadType::AppiumWebPythonTestPackage => "APPIUM_WEB_PYTHON_TEST_PACKAGE",
+            UploadType::AppiumWebPythonTestSpec => "APPIUM_WEB_PYTHON_TEST_SPEC",
+            UploadType::AppiumWebRubyTestPackage => "APPIUM_WEB_RUBY_TEST_PACKAGE",
+            UploadType::AppiumWebRubyTestSpec => "APPIUM_WEB_RUBY_TEST_SPEC",
+            UploadType::CalabashTestPackage => "CALABASH_TEST_PACKAGE",
+            UploadType::ExternalData => "EXTERNAL_DATA",
+            UploadType::InstrumentationTestPackage => "INSTRUMENTATION_TEST_PACKAGE",
+            UploadType::InstrumentationTestSpec => "INSTRUMENTATION_TEST_SPEC",
+            UploadType::IosApp => "IOS_APP",
+            UploadType::UiautomationTestPackage => "UIAUTOMATION_TEST_PACKAGE",
+            UploadType::UiautomatorTestPackage => "UIAUTOMATOR_TEST_PACKAGE",
+            UploadType::WebApp => "WEB_APP",
+            UploadType::XctestTestPackage => "XCTEST_TEST_PACKAGE",
+            UploadType::XctestUiTestPackage => "XCTEST_UI_TEST_PACKAGE",
+            UploadType::XctestUiTestSpec => "XCTEST_UI_TEST_SPEC",
+            UploadType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ANDROID_APP",
+            "APPIUM_JAVA_JUNIT_TEST_PACKAGE",
+            "APPIUM_JAVA_JUNIT_TEST_SPEC",
+            "APPIUM_JAVA_TESTNG_TEST_PACKAGE",
+            "APPIUM_JAVA_TESTNG_TEST_SPEC",
+            "APPIUM_NODE_TEST_PACKAGE",
+            "APPIUM_NODE_TEST_SPEC",
+            "APPIUM_PYTHON_TEST_PACKAGE",
+            "APPIUM_PYTHON_TEST_SPEC",
+            "APPIUM_RUBY_TEST_PACKAGE",
+            "APPIUM_RUBY_TEST_SPEC",
+            "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE",
+            "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC",
+            "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE",
+            "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC",
+            "APPIUM_WEB_NODE_TEST_PACKAGE",
+            "APPIUM_WEB_NODE_TEST_SPEC",
+            "APPIUM_WEB_PYTHON_TEST_PACKAGE",
+            "APPIUM_WEB_PYTHON_TEST_SPEC",
+            "APPIUM_WEB_RUBY_TEST_PACKAGE",
+            "APPIUM_WEB_RUBY_TEST_SPEC",
+            "CALABASH_TEST_PACKAGE",
+            "EXTERNAL_DATA",
+            "INSTRUMENTATION_TEST_PACKAGE",
+            "INSTRUMENTATION_TEST_SPEC",
+            "IOS_APP",
+            "UIAUTOMATION_TEST_PACKAGE",
+            "UIAUTOMATOR_TEST_PACKAGE",
+            "WEB_APP",
+            "XCTEST_TEST_PACKAGE",
+            "XCTEST_UI_TEST_PACKAGE",
+            "XCTEST_UI_TEST_SPEC",
+        ]
+    }
+}
+impl AsRef<str> for UploadType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

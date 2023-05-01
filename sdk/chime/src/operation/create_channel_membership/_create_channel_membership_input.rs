@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateChannelMembershipInput  {
+pub struct CreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct CreateChannelMembershipInput  {
 }
 impl CreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
-    pub fn channel_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ARN of the member you want to add to the channel.</p>
-    pub fn member_arn(&self) -> std::option::Option<& str> {
+    pub fn member_arn(&self) -> std::option::Option<&str> {
         self.member_arn.as_deref()
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::ChannelMembershipType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::ChannelMembershipType> {
         self.r#type.as_ref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
-    pub fn chime_bearer(&self) -> std::option::Option<& str> {
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
 }
 impl CreateChannelMembershipInput {
     /// Creates a new builder-style object to manufacture [`CreateChannelMembershipInput`](crate::operation::create_channel_membership::CreateChannelMembershipInput).
-    pub fn builder() -> crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder
+    {
         crate::operation::create_channel_membership::builders::CreateChannelMembershipInputBuilder::default()
     }
 }
@@ -58,7 +60,8 @@ impl CreateChannelMembershipInputBuilder {
     }
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input; self
+        self.channel_arn = input;
+        self
     }
     /// <p>The ARN of the member you want to add to the channel.</p>
     pub fn member_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +70,8 @@ impl CreateChannelMembershipInputBuilder {
     }
     /// <p>The ARN of the member you want to add to the channel.</p>
     pub fn set_member_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.member_arn = input; self
+        self.member_arn = input;
+        self
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
     pub fn r#type(mut self, input: crate::types::ChannelMembershipType) -> Self {
@@ -75,8 +79,12 @@ impl CreateChannelMembershipInputBuilder {
         self
     }
     /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ChannelMembershipType>) -> Self {
-        self.r#type = input; self
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::ChannelMembershipType>,
+    ) -> Self {
+        self.r#type = input;
+        self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +93,23 @@ impl CreateChannelMembershipInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.chime_bearer = input; self
+        self.chime_bearer = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateChannelMembershipInput`](crate::operation::create_channel_membership::CreateChannelMembershipInput).
-    pub fn build(self) -> Result<crate::operation::create_channel_membership::CreateChannelMembershipInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_channel_membership::CreateChannelMembershipInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_channel_membership::CreateChannelMembershipInput {
-                channel_arn: self.channel_arn
-                ,
-                member_arn: self.member_arn
-                ,
-                r#type: self.r#type
-                ,
-                chime_bearer: self.chime_bearer
-                ,
-            }
+                channel_arn: self.channel_arn,
+                member_arn: self.member_arn,
+                r#type: self.r#type,
+                chime_bearer: self.chime_bearer,
+            },
         )
     }
 }
-

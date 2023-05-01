@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateIdentityProviderOutput  {
+pub struct CreateIdentityProviderOutput {
     /// <p>The ARN of the identity provider.</p>
     #[doc(hidden)]
     pub identity_provider_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct CreateIdentityProviderOutput  {
 }
 impl CreateIdentityProviderOutput {
     /// <p>The ARN of the identity provider.</p>
-    pub fn identity_provider_arn(&self) -> std::option::Option<& str> {
+    pub fn identity_provider_arn(&self) -> std::option::Option<&str> {
         self.identity_provider_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateIdentityProviderOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateIdentityProviderOutput {
     /// Creates a new builder-style object to manufacture [`CreateIdentityProviderOutput`](crate::operation::create_identity_provider::CreateIdentityProviderOutput).
-    pub fn builder() -> crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder
+    {
         crate::operation::create_identity_provider::builders::CreateIdentityProviderOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl CreateIdentityProviderOutputBuilder {
         self
     }
     /// <p>The ARN of the identity provider.</p>
-    pub fn set_identity_provider_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.identity_provider_arn = input; self
+    pub fn set_identity_provider_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.identity_provider_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateIdentityProviderOutput`](crate::operation::create_identity_provider::CreateIdentityProviderOutput).
     pub fn build(self) -> crate::operation::create_identity_provider::CreateIdentityProviderOutput {
         crate::operation::create_identity_provider::CreateIdentityProviderOutput {
-            identity_provider_arn: self.identity_provider_arn
-            ,
+            identity_provider_arn: self.identity_provider_arn,
             _request_id: self._request_id,
         }
     }
 }
-

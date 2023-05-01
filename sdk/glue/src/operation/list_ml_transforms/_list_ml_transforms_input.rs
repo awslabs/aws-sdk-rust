@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListMlTransformsInput  {
+pub struct ListMlTransformsInput {
     /// <p>A continuation token, if this is a continuation request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -17,11 +17,12 @@ pub struct ListMlTransformsInput  {
     pub sort: std::option::Option<crate::types::TransformSortCriteria>,
     /// <p>Specifies to return only these tagged resources.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListMlTransformsInput {
     /// <p>A continuation token, if this is a continuation request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum size of a list to return.</p>
@@ -29,21 +30,25 @@ impl ListMlTransformsInput {
         self.max_results
     }
     /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
-    pub fn filter(&self) -> std::option::Option<& crate::types::TransformFilterCriteria> {
+    pub fn filter(&self) -> std::option::Option<&crate::types::TransformFilterCriteria> {
         self.filter.as_ref()
     }
     /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
-    pub fn sort(&self) -> std::option::Option<& crate::types::TransformSortCriteria> {
+    pub fn sort(&self) -> std::option::Option<&crate::types::TransformSortCriteria> {
         self.sort.as_ref()
     }
     /// <p>Specifies to return only these tagged resources.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
 impl ListMlTransformsInput {
     /// Creates a new builder-style object to manufacture [`ListMlTransformsInput`](crate::operation::list_ml_transforms::ListMlTransformsInput).
-    pub fn builder() -> crate::operation::list_ml_transforms::builders::ListMlTransformsInputBuilder {
+    pub fn builder() -> crate::operation::list_ml_transforms::builders::ListMlTransformsInputBuilder
+    {
         crate::operation::list_ml_transforms::builders::ListMlTransformsInputBuilder::default()
     }
 }
@@ -56,7 +61,8 @@ pub struct ListMlTransformsInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
     pub(crate) filter: std::option::Option<crate::types::TransformFilterCriteria>,
     pub(crate) sort: std::option::Option<crate::types::TransformSortCriteria>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ListMlTransformsInputBuilder {
     /// <p>A continuation token, if this is a continuation request.</p>
@@ -66,7 +72,8 @@ impl ListMlTransformsInputBuilder {
     }
     /// <p>A continuation token, if this is a continuation request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum size of a list to return.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -75,7 +82,8 @@ impl ListMlTransformsInputBuilder {
     }
     /// <p>The maximum size of a list to return.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
     pub fn filter(mut self, input: crate::types::TransformFilterCriteria) -> Self {
@@ -83,8 +91,12 @@ impl ListMlTransformsInputBuilder {
         self
     }
     /// <p>A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.</p>
-    pub fn set_filter(mut self, input: std::option::Option<crate::types::TransformFilterCriteria>) -> Self {
-        self.filter = input; self
+    pub fn set_filter(
+        mut self,
+        input: std::option::Option<crate::types::TransformFilterCriteria>,
+    ) -> Self {
+        self.filter = input;
+        self
     }
     /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
     pub fn sort(mut self, input: crate::types::TransformSortCriteria) -> Self {
@@ -92,40 +104,53 @@ impl ListMlTransformsInputBuilder {
         self
     }
     /// <p>A <code>TransformSortCriteria</code> used to sort the machine learning transforms.</p>
-    pub fn set_sort(mut self, input: std::option::Option<crate::types::TransformSortCriteria>) -> Self {
-        self.sort = input; self
+    pub fn set_sort(
+        mut self,
+        input: std::option::Option<crate::types::TransformSortCriteria>,
+    ) -> Self {
+        self.sort = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>Specifies to return only these tagged resources.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>Specifies to return only these tagged resources.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListMlTransformsInput`](crate::operation::list_ml_transforms::ListMlTransformsInput).
-    pub fn build(self) -> Result<crate::operation::list_ml_transforms::ListMlTransformsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_ml_transforms::ListMlTransformsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_ml_transforms::ListMlTransformsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-                filter: self.filter
-                ,
-                sort: self.sort
-                ,
-                tags: self.tags
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+                filter: self.filter,
+                sort: self.sort,
+                tags: self.tags,
+            },
         )
     }
 }
-

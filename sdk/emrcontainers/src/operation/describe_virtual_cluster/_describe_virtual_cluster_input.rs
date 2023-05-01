@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeVirtualClusterInput  {
+pub struct DescribeVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be described.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DescribeVirtualClusterInput {
     /// <p>The ID of the virtual cluster that will be described.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DescribeVirtualClusterInput {
     /// Creates a new builder-style object to manufacture [`DescribeVirtualClusterInput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput).
-    pub fn builder() -> crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterInputBuilder
+    {
         crate::operation::describe_virtual_cluster::builders::DescribeVirtualClusterInputBuilder::default()
     }
 }
@@ -34,16 +36,16 @@ impl DescribeVirtualClusterInputBuilder {
     }
     /// <p>The ID of the virtual cluster that will be described.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeVirtualClusterInput`](crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput).
-    pub fn build(self) -> Result<crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_virtual_cluster::DescribeVirtualClusterInput { id: self.id })
     }
 }
-

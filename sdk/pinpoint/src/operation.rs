@@ -366,4 +366,3 @@ pub mod update_voice_template;
 
 /// Types for the `VerifyOTPMessage` operation.
 pub mod verify_otp_message;
-

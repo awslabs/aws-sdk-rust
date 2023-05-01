@@ -4,50 +4,66 @@ pub use crate::operation::put_audit_events::_put_audit_events_output::PutAuditEv
 pub use crate::operation::put_audit_events::_put_audit_events_input::PutAuditEventsInputBuilder;
 
 /// Fluent builder constructing a request to `PutAuditEvents`.
-/// 
+///
 /// <p>Ingests your application events into CloudTrail Lake. A required parameter, <code>auditEvents</code>, accepts the JSON records (also called <i>payload</i>) of events that you want CloudTrail to ingest. You can add up to 100 of these events (or up to 1 MB) per <code>PutAuditEvents</code> request.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutAuditEventsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_audit_events::builders::PutAuditEventsInputBuilder,
+    inner: crate::operation::put_audit_events::builders::PutAuditEventsInputBuilder,
 }
-impl PutAuditEventsFluentBuilder  {
+impl PutAuditEventsFluentBuilder {
     /// Creates a new `PutAuditEvents`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_audit_events::PutAuditEvents, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_audit_events::PutAuditEventsOutput, aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_audit_events::PutAuditEvents,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_audit_events::PutAuditEventsOutput,
+        aws_smithy_http::result::SdkError<crate::operation::put_audit_events::PutAuditEventsError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `auditEvents`.
     ///
     /// To override the contents of this collection use [`set_audit_events`](Self::set_audit_events).
@@ -58,7 +74,10 @@ impl PutAuditEventsFluentBuilder  {
         self
     }
     /// <p>The JSON payload of events that you want to ingest. You can also point to the JSON event payload in a file.</p>
-    pub fn set_audit_events(mut self, input: std::option::Option<std::vec::Vec<crate::types::AuditEvent>>) -> Self {
+    pub fn set_audit_events(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AuditEvent>>,
+    ) -> Self {
         self.inner = self.inner.set_audit_events(input);
         self
     }
@@ -83,4 +102,3 @@ impl PutAuditEventsFluentBuilder  {
         self
     }
 }
-

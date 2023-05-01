@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFleetAttributesOutput  {
+pub struct UpdateFleetAttributesOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
     #[doc(hidden)]
     pub fleet_id: std::option::Option<std::string::String>,
@@ -16,25 +16,27 @@ pub struct UpdateFleetAttributesOutput  {
 }
 impl UpdateFleetAttributesOutput {
     /// <p>A unique identifier for the fleet that was updated.</p>
-    pub fn fleet_id(&self) -> std::option::Option<& str> {
+    pub fn fleet_id(&self) -> std::option::Option<&str> {
         self.fleet_id.as_deref()
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
-    pub fn fleet_arn(&self) -> std::option::Option<& str> {
+    pub fn fleet_arn(&self) -> std::option::Option<&str> {
         self.fleet_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateFleetAttributesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateFleetAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateFleetAttributesOutput`](crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput).
-    pub fn builder() -> crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesOutputBuilder
+    {
         crate::operation::update_fleet_attributes::builders::UpdateFleetAttributesOutputBuilder::default()
     }
 }
@@ -55,7 +57,8 @@ impl UpdateFleetAttributesOutputBuilder {
     }
     /// <p>A unique identifier for the fleet that was updated.</p>
     pub fn set_fleet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_id = input; self
+        self.fleet_id = input;
+        self
     }
     /// <p>The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:
     /// <region>
@@ -70,26 +73,24 @@ impl UpdateFleetAttributesOutputBuilder {
     /// ::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912
     /// </region></code>.</p>
     pub fn set_fleet_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.fleet_arn = input; self
+        self.fleet_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateFleetAttributesOutput`](crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput).
     pub fn build(self) -> crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput {
         crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput {
-            fleet_id: self.fleet_id
-            ,
-            fleet_arn: self.fleet_arn
-            ,
+            fleet_id: self.fleet_id,
+            fleet_arn: self.fleet_arn,
             _request_id: self._request_id,
         }
     }
 }
-

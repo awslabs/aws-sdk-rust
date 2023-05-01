@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetHypervisorOutput  {
+pub struct GetHypervisorOutput {
     /// <p>Details about the requested hypervisor.</p>
     #[doc(hidden)]
     pub hypervisor: std::option::Option<crate::types::HypervisorDetails>,
@@ -10,15 +10,15 @@ pub struct GetHypervisorOutput  {
 }
 impl GetHypervisorOutput {
     /// <p>Details about the requested hypervisor.</p>
-    pub fn hypervisor(&self) -> std::option::Option<& crate::types::HypervisorDetails> {
+    pub fn hypervisor(&self) -> std::option::Option<&crate::types::HypervisorDetails> {
         self.hypervisor.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetHypervisorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetHypervisorOutput {
     /// Creates a new builder-style object to manufacture [`GetHypervisorOutput`](crate::operation::get_hypervisor::GetHypervisorOutput).
     pub fn builder() -> crate::operation::get_hypervisor::builders::GetHypervisorOutputBuilder {
@@ -40,25 +40,27 @@ impl GetHypervisorOutputBuilder {
         self
     }
     /// <p>Details about the requested hypervisor.</p>
-    pub fn set_hypervisor(mut self, input: std::option::Option<crate::types::HypervisorDetails>) -> Self {
-        self.hypervisor = input; self
+    pub fn set_hypervisor(
+        mut self,
+        input: std::option::Option<crate::types::HypervisorDetails>,
+    ) -> Self {
+        self.hypervisor = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetHypervisorOutput`](crate::operation::get_hypervisor::GetHypervisorOutput).
     pub fn build(self) -> crate::operation::get_hypervisor::GetHypervisorOutput {
         crate::operation::get_hypervisor::GetHypervisorOutput {
-            hypervisor: self.hypervisor
-            ,
+            hypervisor: self.hypervisor,
             _request_id: self._request_id,
         }
     }
 }
-

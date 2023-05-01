@@ -4,51 +4,67 @@ pub use crate::operation::update_stream::_update_stream_output::UpdateStreamOutp
 pub use crate::operation::update_stream::_update_stream_input::UpdateStreamInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateStream`.
-/// 
-/// <p>Updates an existing stream. The stream version will be incremented by one.</p> 
+///
+/// <p>Updates an existing stream. The stream version will be incremented by one.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateStream</a> action.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateStreamFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_stream::builders::UpdateStreamInputBuilder,
+    inner: crate::operation::update_stream::builders::UpdateStreamInputBuilder,
 }
-impl UpdateStreamFluentBuilder  {
+impl UpdateStreamFluentBuilder {
     /// Creates a new `UpdateStream`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_stream::UpdateStream, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_stream::UpdateStreamError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_stream::UpdateStreamOutput, aws_smithy_http::result::SdkError<crate::operation::update_stream::UpdateStreamError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_stream::UpdateStream,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::update_stream::UpdateStreamError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_stream::UpdateStreamOutput,
+        aws_smithy_http::result::SdkError<crate::operation::update_stream::UpdateStreamError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The stream ID.</p>
     pub fn stream_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.stream_id(input.into());
@@ -79,7 +95,10 @@ impl UpdateStreamFluentBuilder  {
         self
     }
     /// <p>The files associated with the stream.</p>
-    pub fn set_files(mut self, input: std::option::Option<std::vec::Vec<crate::types::StreamFile>>) -> Self {
+    pub fn set_files(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::StreamFile>>,
+    ) -> Self {
         self.inner = self.inner.set_files(input);
         self
     }
@@ -94,4 +113,3 @@ impl UpdateStreamFluentBuilder  {
         self
     }
 }
-

@@ -2,15 +2,15 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeAffectedAccountsForOrganizationOutput  {
+pub struct DescribeAffectedAccountsForOrganizationOutput {
     /// <p>A JSON set of elements of the affected accounts.</p>
     #[doc(hidden)]
     pub affected_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p> 
-    /// <ul> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li> 
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <ul>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub event_scope_code: std::option::Option<crate::types::EventScopeCode>,
@@ -21,31 +21,31 @@ pub struct DescribeAffectedAccountsForOrganizationOutput  {
 }
 impl DescribeAffectedAccountsForOrganizationOutput {
     /// <p>A JSON set of elements of the affected accounts.</p>
-    pub fn affected_accounts(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn affected_accounts(&self) -> std::option::Option<&[std::string::String]> {
         self.affected_accounts.as_deref()
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p> 
-    /// <ul> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li> 
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <ul>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
     /// </ul>
-    pub fn event_scope_code(&self) -> std::option::Option<& crate::types::EventScopeCode> {
+    pub fn event_scope_code(&self) -> std::option::Option<&crate::types::EventScopeCode> {
         self.event_scope_code.as_ref()
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeAffectedAccountsForOrganizationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeAffectedAccountsForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeAffectedAccountsForOrganizationOutput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput).
-    pub fn builder() -> crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder{
         crate::operation::describe_affected_accounts_for_organization::builders::DescribeAffectedAccountsForOrganizationOutputBuilder::default()
     }
 }
@@ -67,32 +67,40 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     /// <p>A JSON set of elements of the affected accounts.</p>
     pub fn affected_accounts(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.affected_accounts.unwrap_or_default();
-                        v.push(input.into());
-                        self.affected_accounts = Some(v);
-                        self
+        v.push(input.into());
+        self.affected_accounts = Some(v);
+        self
     }
     /// <p>A JSON set of elements of the affected accounts.</p>
-    pub fn set_affected_accounts(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.affected_accounts = input; self
+    pub fn set_affected_accounts(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.affected_accounts = input;
+        self
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p> 
-    /// <ul> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li> 
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <ul>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
     /// </ul>
     pub fn event_scope_code(mut self, input: crate::types::EventScopeCode) -> Self {
         self.event_scope_code = Some(input);
         self
     }
-    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p> 
-    /// <ul> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li> 
-    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li> 
+    /// <p>This parameter specifies if the Health event is a public Amazon Web Services service event or an account-specific event.</p>
+    /// <ul>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is always empty.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts in your organization. For example, if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon Web Services accounts that use that service, those account IDs appear in the response.</p> </li>
+    /// <li> <p>If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified in the request is invalid or doesn't exist.</p> </li>
     /// </ul>
-    pub fn set_event_scope_code(mut self, input: std::option::Option<crate::types::EventScopeCode>) -> Self {
-        self.event_scope_code = input; self
+    pub fn set_event_scope_code(
+        mut self,
+        input: std::option::Option<crate::types::EventScopeCode>,
+    ) -> Self {
+        self.event_scope_code = input;
+        self
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,19 +109,20 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
     }
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next batch of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeAffectedAccountsForOrganizationOutput`](crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput).
-    pub fn build(self) -> crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput {
+    pub fn build(self) -> crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput{
         crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput {
             affected_accounts: self.affected_accounts
             ,
@@ -125,4 +134,3 @@ impl DescribeAffectedAccountsForOrganizationOutputBuilder {
         }
     }
 }
-

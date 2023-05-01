@@ -3,7 +3,7 @@
 /// <p>Contains the API key authorization parameters for the connection.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConnectionApiKeyAuthRequestParameters  {
+pub struct CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
     #[doc(hidden)]
     pub api_key_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CreateConnectionApiKeyAuthRequestParameters  {
 }
 impl CreateConnectionApiKeyAuthRequestParameters {
     /// <p>The name of the API key to use for authorization.</p>
-    pub fn api_key_name(&self) -> std::option::Option<& str> {
+    pub fn api_key_name(&self) -> std::option::Option<&str> {
         self.api_key_name.as_deref()
     }
     /// <p>The value for the API key to use for authorization.</p>
-    pub fn api_key_value(&self) -> std::option::Option<& str> {
+    pub fn api_key_value(&self) -> std::option::Option<&str> {
         self.api_key_value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl CreateConnectionApiKeyAuthRequestParametersBuilder {
     }
     /// <p>The name of the API key to use for authorization.</p>
     pub fn set_api_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_key_name = input; self
+        self.api_key_name = input;
+        self
     }
     /// <p>The value for the API key to use for authorization.</p>
     pub fn api_key_value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl CreateConnectionApiKeyAuthRequestParametersBuilder {
     }
     /// <p>The value for the API key to use for authorization.</p>
     pub fn set_api_key_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_key_value = input; self
+        self.api_key_value = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateConnectionApiKeyAuthRequestParameters`](crate::types::CreateConnectionApiKeyAuthRequestParameters).
     pub fn build(self) -> crate::types::CreateConnectionApiKeyAuthRequestParameters {
         crate::types::CreateConnectionApiKeyAuthRequestParameters {
-            api_key_name: self.api_key_name
-            ,
-            api_key_value: self.api_key_value
-            ,
+            api_key_name: self.api_key_name,
+            api_key_value: self.api_key_value,
         }
     }
 }
-

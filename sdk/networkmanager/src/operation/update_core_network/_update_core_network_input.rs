@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateCoreNetworkInput  {
+pub struct UpdateCoreNetworkInput {
     /// <p>The ID of a core network.</p>
     #[doc(hidden)]
     pub core_network_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct UpdateCoreNetworkInput  {
 }
 impl UpdateCoreNetworkInput {
     /// <p>The ID of a core network.</p>
-    pub fn core_network_id(&self) -> std::option::Option<& str> {
+    pub fn core_network_id(&self) -> std::option::Option<&str> {
         self.core_network_id.as_deref()
     }
     /// <p>The description of the update.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
 }
 impl UpdateCoreNetworkInput {
     /// Creates a new builder-style object to manufacture [`UpdateCoreNetworkInput`](crate::operation::update_core_network::UpdateCoreNetworkInput).
-    pub fn builder() -> crate::operation::update_core_network::builders::UpdateCoreNetworkInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_core_network::builders::UpdateCoreNetworkInputBuilder {
         crate::operation::update_core_network::builders::UpdateCoreNetworkInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl UpdateCoreNetworkInputBuilder {
     }
     /// <p>The ID of a core network.</p>
     pub fn set_core_network_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.core_network_id = input; self
+        self.core_network_id = input;
+        self
     }
     /// <p>The description of the update.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl UpdateCoreNetworkInputBuilder {
     }
     /// <p>The description of the update.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateCoreNetworkInput`](crate::operation::update_core_network::UpdateCoreNetworkInput).
-    pub fn build(self) -> Result<crate::operation::update_core_network::UpdateCoreNetworkInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_core_network::UpdateCoreNetworkInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_core_network::UpdateCoreNetworkInput {
-                core_network_id: self.core_network_id
-                ,
-                description: self.description
-                ,
-            }
+                core_network_id: self.core_network_id,
+                description: self.description,
+            },
         )
     }
 }
-

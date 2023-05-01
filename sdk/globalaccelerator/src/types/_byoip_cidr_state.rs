@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let byoipcidrstate = unimplemented!();
 /// match byoipcidrstate {
@@ -39,14 +39,22 @@
 /// Specifically, when `byoipcidrstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ByoipCidrState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ByoipCidrState {
     #[allow(missing_docs)] // documentation missing in model
     Advertising,
@@ -71,59 +79,72 @@ pub enum ByoipCidrState {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ByoipCidrState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ADVERTISING" => ByoipCidrState::Advertising,
-"DEPROVISIONED" => ByoipCidrState::Deprovisioned,
-"FAILED_ADVERTISING" => ByoipCidrState::FailedAdvertising,
-"FAILED_DEPROVISION" => ByoipCidrState::FailedDeprovision,
-"FAILED_PROVISION" => ByoipCidrState::FailedProvision,
-"FAILED_WITHDRAW" => ByoipCidrState::FailedWithdraw,
-"PENDING_ADVERTISING" => ByoipCidrState::PendingAdvertising,
-"PENDING_DEPROVISIONING" => ByoipCidrState::PendingDeprovisioning,
-"PENDING_PROVISIONING" => ByoipCidrState::PendingProvisioning,
-"PENDING_WITHDRAWING" => ByoipCidrState::PendingWithdrawing,
-"READY" => ByoipCidrState::Ready,
-other => ByoipCidrState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ADVERTISING" => ByoipCidrState::Advertising,
+            "DEPROVISIONED" => ByoipCidrState::Deprovisioned,
+            "FAILED_ADVERTISING" => ByoipCidrState::FailedAdvertising,
+            "FAILED_DEPROVISION" => ByoipCidrState::FailedDeprovision,
+            "FAILED_PROVISION" => ByoipCidrState::FailedProvision,
+            "FAILED_WITHDRAW" => ByoipCidrState::FailedWithdraw,
+            "PENDING_ADVERTISING" => ByoipCidrState::PendingAdvertising,
+            "PENDING_DEPROVISIONING" => ByoipCidrState::PendingDeprovisioning,
+            "PENDING_PROVISIONING" => ByoipCidrState::PendingProvisioning,
+            "PENDING_WITHDRAWING" => ByoipCidrState::PendingWithdrawing,
+            "READY" => ByoipCidrState::Ready,
+            other => {
+                ByoipCidrState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for ByoipCidrState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ByoipCidrState::from(s))
-                }
-            }
-impl ByoipCidrState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ByoipCidrState::Advertising => "ADVERTISING",
-    ByoipCidrState::Deprovisioned => "DEPROVISIONED",
-    ByoipCidrState::FailedAdvertising => "FAILED_ADVERTISING",
-    ByoipCidrState::FailedDeprovision => "FAILED_DEPROVISION",
-    ByoipCidrState::FailedProvision => "FAILED_PROVISION",
-    ByoipCidrState::FailedWithdraw => "FAILED_WITHDRAW",
-    ByoipCidrState::PendingAdvertising => "PENDING_ADVERTISING",
-    ByoipCidrState::PendingDeprovisioning => "PENDING_DEPROVISIONING",
-    ByoipCidrState::PendingProvisioning => "PENDING_PROVISIONING",
-    ByoipCidrState::PendingWithdrawing => "PENDING_WITHDRAWING",
-    ByoipCidrState::Ready => "READY",
-    ByoipCidrState::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ADVERTISING", "DEPROVISIONED", "FAILED_ADVERTISING", "FAILED_DEPROVISION", "FAILED_PROVISION", "FAILED_WITHDRAW", "PENDING_ADVERTISING", "PENDING_DEPROVISIONING", "PENDING_PROVISIONING", "PENDING_WITHDRAWING", "READY"]
-                }
-            }
-impl AsRef<str> for ByoipCidrState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ByoipCidrState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ByoipCidrState::from(s))
+    }
+}
+impl ByoipCidrState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ByoipCidrState::Advertising => "ADVERTISING",
+            ByoipCidrState::Deprovisioned => "DEPROVISIONED",
+            ByoipCidrState::FailedAdvertising => "FAILED_ADVERTISING",
+            ByoipCidrState::FailedDeprovision => "FAILED_DEPROVISION",
+            ByoipCidrState::FailedProvision => "FAILED_PROVISION",
+            ByoipCidrState::FailedWithdraw => "FAILED_WITHDRAW",
+            ByoipCidrState::PendingAdvertising => "PENDING_ADVERTISING",
+            ByoipCidrState::PendingDeprovisioning => "PENDING_DEPROVISIONING",
+            ByoipCidrState::PendingProvisioning => "PENDING_PROVISIONING",
+            ByoipCidrState::PendingWithdrawing => "PENDING_WITHDRAWING",
+            ByoipCidrState::Ready => "READY",
+            ByoipCidrState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ADVERTISING",
+            "DEPROVISIONED",
+            "FAILED_ADVERTISING",
+            "FAILED_DEPROVISION",
+            "FAILED_PROVISION",
+            "FAILED_WITHDRAW",
+            "PENDING_ADVERTISING",
+            "PENDING_DEPROVISIONING",
+            "PENDING_PROVISIONING",
+            "PENDING_WITHDRAWING",
+            "READY",
+        ]
+    }
+}
+impl AsRef<str> for ByoipCidrState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

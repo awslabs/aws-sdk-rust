@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterCertificateInput  {
+pub struct DeregisterCertificateInput {
     /// <p>The identifier of the directory.</p>
     #[doc(hidden)]
     pub directory_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeregisterCertificateInput  {
 }
 impl DeregisterCertificateInput {
     /// <p>The identifier of the directory.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The identifier of the certificate.</p>
-    pub fn certificate_id(&self) -> std::option::Option<& str> {
+    pub fn certificate_id(&self) -> std::option::Option<&str> {
         self.certificate_id.as_deref()
     }
 }
 impl DeregisterCertificateInput {
     /// Creates a new builder-style object to manufacture [`DeregisterCertificateInput`](crate::operation::deregister_certificate::DeregisterCertificateInput).
-    pub fn builder() -> crate::operation::deregister_certificate::builders::DeregisterCertificateInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::deregister_certificate::builders::DeregisterCertificateInputBuilder {
         crate::operation::deregister_certificate::builders::DeregisterCertificateInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeregisterCertificateInputBuilder {
     }
     /// <p>The identifier of the directory.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The identifier of the certificate.</p>
     pub fn certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeregisterCertificateInputBuilder {
     }
     /// <p>The identifier of the certificate.</p>
     pub fn set_certificate_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.certificate_id = input; self
+        self.certificate_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeregisterCertificateInput`](crate::operation::deregister_certificate::DeregisterCertificateInput).
-    pub fn build(self) -> Result<crate::operation::deregister_certificate::DeregisterCertificateInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::deregister_certificate::DeregisterCertificateInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::deregister_certificate::DeregisterCertificateInput {
-                directory_id: self.directory_id
-                ,
-                certificate_id: self.certificate_id
-                ,
-            }
+                directory_id: self.directory_id,
+                certificate_id: self.certificate_id,
+            },
         )
     }
 }
-

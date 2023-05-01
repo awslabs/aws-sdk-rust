@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeDatasetImportJobInput  {
+pub struct DescribeDatasetImportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to describe.</p>
     #[doc(hidden)]
     pub dataset_import_job_arn: std::option::Option<std::string::String>,
 }
 impl DescribeDatasetImportJobInput {
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to describe.</p>
-    pub fn dataset_import_job_arn(&self) -> std::option::Option<& str> {
+    pub fn dataset_import_job_arn(&self) -> std::option::Option<&str> {
         self.dataset_import_job_arn.as_deref()
     }
 }
 impl DescribeDatasetImportJobInput {
     /// Creates a new builder-style object to manufacture [`DescribeDatasetImportJobInput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput).
-    pub fn builder() -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobInputBuilder
+    {
         crate::operation::describe_dataset_import_job::builders::DescribeDatasetImportJobInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DescribeDatasetImportJobInputBuilder {
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the dataset import job to describe.</p>
-    pub fn set_dataset_import_job_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.dataset_import_job_arn = input; self
+    pub fn set_dataset_import_job_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.dataset_import_job_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeDatasetImportJobInput`](crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput).
-    pub fn build(self) -> Result<crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_dataset_import_job::DescribeDatasetImportJobInput {
-                dataset_import_job_arn: self.dataset_import_job_arn
-                ,
-            }
+                dataset_import_job_arn: self.dataset_import_job_arn,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ContinueDeploymentInput  {
+pub struct ContinueDeploymentInput {
     /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
     #[doc(hidden)]
     pub deployment_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct ContinueDeploymentInput  {
 }
 impl ContinueDeploymentInput {
     /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
-    pub fn deployment_id(&self) -> std::option::Option<& str> {
+    pub fn deployment_id(&self) -> std::option::Option<&str> {
         self.deployment_id.as_deref()
     }
     /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
-    pub fn deployment_wait_type(&self) -> std::option::Option<& crate::types::DeploymentWaitType> {
+    pub fn deployment_wait_type(&self) -> std::option::Option<&crate::types::DeploymentWaitType> {
         self.deployment_wait_type.as_ref()
     }
 }
 impl ContinueDeploymentInput {
     /// Creates a new builder-style object to manufacture [`ContinueDeploymentInput`](crate::operation::continue_deployment::ContinueDeploymentInput).
-    pub fn builder() -> crate::operation::continue_deployment::builders::ContinueDeploymentInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::continue_deployment::builders::ContinueDeploymentInputBuilder {
         crate::operation::continue_deployment::builders::ContinueDeploymentInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ContinueDeploymentInputBuilder {
     }
     /// <p> The unique ID of a blue/green deployment for which you want to start rerouting traffic to the replacement environment. </p>
     pub fn set_deployment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_id = input; self
+        self.deployment_id = input;
+        self
     }
     /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
     pub fn deployment_wait_type(mut self, input: crate::types::DeploymentWaitType) -> Self {
@@ -50,19 +52,25 @@ impl ContinueDeploymentInputBuilder {
         self
     }
     /// <p> The status of the deployment's waiting period. <code>READY_WAIT</code> indicates that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code> indicates that the traffic is shifted, but the original target is not terminated. </p>
-    pub fn set_deployment_wait_type(mut self, input: std::option::Option<crate::types::DeploymentWaitType>) -> Self {
-        self.deployment_wait_type = input; self
+    pub fn set_deployment_wait_type(
+        mut self,
+        input: std::option::Option<crate::types::DeploymentWaitType>,
+    ) -> Self {
+        self.deployment_wait_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ContinueDeploymentInput`](crate::operation::continue_deployment::ContinueDeploymentInput).
-    pub fn build(self) -> Result<crate::operation::continue_deployment::ContinueDeploymentInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::continue_deployment::ContinueDeploymentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::continue_deployment::ContinueDeploymentInput {
-                deployment_id: self.deployment_id
-                ,
-                deployment_wait_type: self.deployment_wait_type
-                ,
-            }
+                deployment_id: self.deployment_id,
+                deployment_wait_type: self.deployment_wait_type,
+            },
         )
     }
 }
-

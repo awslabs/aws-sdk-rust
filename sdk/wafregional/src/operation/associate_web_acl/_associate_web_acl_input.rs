@@ -2,31 +2,31 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateWebAclInput  {
+pub struct AssociateWebAclInput {
     /// <p>A unique identifier (ID) for the web ACL. </p>
     #[doc(hidden)]
     pub web_acl_id: std::option::Option<std::string::String>,
-    /// <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p> 
-    /// <p>The ARN should be in one of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li> 
-    /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> 
+    /// <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p>
+    /// <p>The ARN should be in one of the following formats:</p>
+    /// <ul>
+    /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+    /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
     /// </ul>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl AssociateWebAclInput {
     /// <p>A unique identifier (ID) for the web ACL. </p>
-    pub fn web_acl_id(&self) -> std::option::Option<& str> {
+    pub fn web_acl_id(&self) -> std::option::Option<&str> {
         self.web_acl_id.as_deref()
     }
-    /// <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p> 
-    /// <p>The ARN should be in one of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li> 
-    /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> 
+    /// <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p>
+    /// <p>The ARN should be in one of the following formats:</p>
+    /// <ul>
+    /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+    /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
     /// </ul>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
 }
@@ -52,37 +52,39 @@ impl AssociateWebAclInputBuilder {
     }
     /// <p>A unique identifier (ID) for the web ACL. </p>
     pub fn set_web_acl_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.web_acl_id = input; self
+        self.web_acl_id = input;
+        self
     }
-    /// <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p> 
-    /// <p>The ARN should be in one of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li> 
-    /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> 
+    /// <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p>
+    /// <p>The ARN should be in one of the following formats:</p>
+    /// <ul>
+    /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+    /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
     /// </ul>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.resource_arn = Some(input.into());
         self
     }
-    /// <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p> 
-    /// <p>The ARN should be in one of the following formats:</p> 
-    /// <ul> 
-    /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li> 
-    /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li> 
+    /// <p>The ARN (Amazon Resource Name) of the resource to be protected, either an application load balancer or Amazon API Gateway stage. </p>
+    /// <p>The ARN should be in one of the following formats:</p>
+    /// <ul>
+    /// <li> <p>For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i> </code> </p> </li>
+    /// <li> <p>For an Amazon API Gateway stage: <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code> </p> </li>
     /// </ul>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`AssociateWebAclInput`](crate::operation::associate_web_acl::AssociateWebAclInput).
-    pub fn build(self) -> Result<crate::operation::associate_web_acl::AssociateWebAclInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::associate_web_acl::AssociateWebAclInput {
-                web_acl_id: self.web_acl_id
-                ,
-                resource_arn: self.resource_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::associate_web_acl::AssociateWebAclInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::associate_web_acl::AssociateWebAclInput {
+            web_acl_id: self.web_acl_id,
+            resource_arn: self.resource_arn,
+        })
     }
 }
-

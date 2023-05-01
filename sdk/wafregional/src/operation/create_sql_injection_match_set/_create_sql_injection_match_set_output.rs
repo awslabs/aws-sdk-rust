@@ -3,7 +3,7 @@
 /// <p>The response to a <code>CreateSqlInjectionMatchSet</code> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSqlInjectionMatchSetOutput  {
+pub struct CreateSqlInjectionMatchSetOutput {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
     #[doc(hidden)]
     pub sql_injection_match_set: std::option::Option<crate::types::SqlInjectionMatchSet>,
@@ -14,22 +14,24 @@ pub struct CreateSqlInjectionMatchSetOutput  {
 }
 impl CreateSqlInjectionMatchSetOutput {
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
-    pub fn sql_injection_match_set(&self) -> std::option::Option<& crate::types::SqlInjectionMatchSet> {
+    pub fn sql_injection_match_set(
+        &self,
+    ) -> std::option::Option<&crate::types::SqlInjectionMatchSet> {
         self.sql_injection_match_set.as_ref()
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
-    pub fn change_token(&self) -> std::option::Option<& str> {
+    pub fn change_token(&self) -> std::option::Option<&str> {
         self.change_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateSqlInjectionMatchSetOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateSqlInjectionMatchSetOutput {
     /// Creates a new builder-style object to manufacture [`CreateSqlInjectionMatchSetOutput`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput).
-    pub fn builder() -> crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetOutputBuilder {
+    pub fn builder() -> crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetOutputBuilder{
         crate::operation::create_sql_injection_match_set::builders::CreateSqlInjectionMatchSetOutputBuilder::default()
     }
 }
@@ -49,8 +51,12 @@ impl CreateSqlInjectionMatchSetOutputBuilder {
         self
     }
     /// <p>A <code>SqlInjectionMatchSet</code>.</p>
-    pub fn set_sql_injection_match_set(mut self, input: std::option::Option<crate::types::SqlInjectionMatchSet>) -> Self {
-        self.sql_injection_match_set = input; self
+    pub fn set_sql_injection_match_set(
+        mut self,
+        input: std::option::Option<crate::types::SqlInjectionMatchSet>,
+    ) -> Self {
+        self.sql_injection_match_set = input;
+        self
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn change_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,26 +65,26 @@ impl CreateSqlInjectionMatchSetOutputBuilder {
     }
     /// <p>The <code>ChangeToken</code> that you used to submit the <code>CreateSqlInjectionMatchSet</code> request. You can also use this value to query the status of the request. For more information, see <code>GetChangeTokenStatus</code>.</p>
     pub fn set_change_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.change_token = input; self
+        self.change_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateSqlInjectionMatchSetOutput`](crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput).
-    pub fn build(self) -> crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput {
         crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput {
-            sql_injection_match_set: self.sql_injection_match_set
-            ,
-            change_token: self.change_token
-            ,
+            sql_injection_match_set: self.sql_injection_match_set,
+            change_token: self.change_token,
             _request_id: self._request_id,
         }
     }
 }
-

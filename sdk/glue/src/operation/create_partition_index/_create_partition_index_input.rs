@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreatePartitionIndexInput  {
+pub struct CreatePartitionIndexInput {
     /// <p>The catalog ID where the table resides.</p>
     #[doc(hidden)]
     pub catalog_id: std::option::Option<std::string::String>,
@@ -18,25 +18,26 @@ pub struct CreatePartitionIndexInput  {
 }
 impl CreatePartitionIndexInput {
     /// <p>The catalog ID where the table resides.</p>
-    pub fn catalog_id(&self) -> std::option::Option<& str> {
+    pub fn catalog_id(&self) -> std::option::Option<&str> {
         self.catalog_id.as_deref()
     }
     /// <p>Specifies the name of a database in which you want to create a partition index.</p>
-    pub fn database_name(&self) -> std::option::Option<& str> {
+    pub fn database_name(&self) -> std::option::Option<&str> {
         self.database_name.as_deref()
     }
     /// <p>Specifies the name of a table in which you want to create a partition index.</p>
-    pub fn table_name(&self) -> std::option::Option<& str> {
+    pub fn table_name(&self) -> std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
-    pub fn partition_index(&self) -> std::option::Option<& crate::types::PartitionIndex> {
+    pub fn partition_index(&self) -> std::option::Option<&crate::types::PartitionIndex> {
         self.partition_index.as_ref()
     }
 }
 impl CreatePartitionIndexInput {
     /// Creates a new builder-style object to manufacture [`CreatePartitionIndexInput`](crate::operation::create_partition_index::CreatePartitionIndexInput).
-    pub fn builder() -> crate::operation::create_partition_index::builders::CreatePartitionIndexInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_partition_index::builders::CreatePartitionIndexInputBuilder {
         crate::operation::create_partition_index::builders::CreatePartitionIndexInputBuilder::default()
     }
 }
@@ -58,7 +59,8 @@ impl CreatePartitionIndexInputBuilder {
     }
     /// <p>The catalog ID where the table resides.</p>
     pub fn set_catalog_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.catalog_id = input; self
+        self.catalog_id = input;
+        self
     }
     /// <p>Specifies the name of a database in which you want to create a partition index.</p>
     pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +69,8 @@ impl CreatePartitionIndexInputBuilder {
     }
     /// <p>Specifies the name of a database in which you want to create a partition index.</p>
     pub fn set_database_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database_name = input; self
+        self.database_name = input;
+        self
     }
     /// <p>Specifies the name of a table in which you want to create a partition index.</p>
     pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +79,8 @@ impl CreatePartitionIndexInputBuilder {
     }
     /// <p>Specifies the name of a table in which you want to create a partition index.</p>
     pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.table_name = input; self
+        self.table_name = input;
+        self
     }
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
     pub fn partition_index(mut self, input: crate::types::PartitionIndex) -> Self {
@@ -84,23 +88,27 @@ impl CreatePartitionIndexInputBuilder {
         self
     }
     /// <p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>
-    pub fn set_partition_index(mut self, input: std::option::Option<crate::types::PartitionIndex>) -> Self {
-        self.partition_index = input; self
+    pub fn set_partition_index(
+        mut self,
+        input: std::option::Option<crate::types::PartitionIndex>,
+    ) -> Self {
+        self.partition_index = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreatePartitionIndexInput`](crate::operation::create_partition_index::CreatePartitionIndexInput).
-    pub fn build(self) -> Result<crate::operation::create_partition_index::CreatePartitionIndexInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_partition_index::CreatePartitionIndexInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_partition_index::CreatePartitionIndexInput {
-                catalog_id: self.catalog_id
-                ,
-                database_name: self.database_name
-                ,
-                table_name: self.table_name
-                ,
-                partition_index: self.partition_index
-                ,
-            }
+                catalog_id: self.catalog_id,
+                database_name: self.database_name,
+                table_name: self.table_name,
+                partition_index: self.partition_index,
+            },
         )
     }
 }
-

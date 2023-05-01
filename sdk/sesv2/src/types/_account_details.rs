@@ -3,11 +3,11 @@
 /// <p>An object that contains information about your account details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AccountDetails  {
-    /// <p>The type of email your account is sending. The mail type can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li> 
-    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li> 
+pub struct AccountDetails {
+    /// <p>The type of email your account is sending. The mail type can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
+    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub mail_type: std::option::Option<crate::types::MailType>,
@@ -28,43 +28,48 @@ pub struct AccountDetails  {
     pub review_details: std::option::Option<crate::types::ReviewDetails>,
 }
 impl AccountDetails {
-    /// <p>The type of email your account is sending. The mail type can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li> 
-    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li> 
+    /// <p>The type of email your account is sending. The mail type can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
+    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
     /// </ul>
-    pub fn mail_type(&self) -> std::option::Option<& crate::types::MailType> {
+    pub fn mail_type(&self) -> std::option::Option<&crate::types::MailType> {
         self.mail_type.as_ref()
     }
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
-    pub fn website_url(&self) -> std::option::Option<& str> {
+    pub fn website_url(&self) -> std::option::Option<&str> {
         self.website_url.as_deref()
     }
     /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
-    pub fn contact_language(&self) -> std::option::Option<& crate::types::ContactLanguage> {
+    pub fn contact_language(&self) -> std::option::Option<&crate::types::ContactLanguage> {
         self.contact_language.as_ref()
     }
     /// <p>A description of the types of email that you plan to send.</p>
-    pub fn use_case_description(&self) -> std::option::Option<& str> {
+    pub fn use_case_description(&self) -> std::option::Option<&str> {
         self.use_case_description.as_deref()
     }
     /// <p>Additional email addresses where updates are sent about your account review process.</p>
-    pub fn additional_contact_email_addresses(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn additional_contact_email_addresses(
+        &self,
+    ) -> std::option::Option<&[std::string::String]> {
         self.additional_contact_email_addresses.as_deref()
     }
     /// <p>Information about the review of the latest details you submitted.</p>
-    pub fn review_details(&self) -> std::option::Option<& crate::types::ReviewDetails> {
+    pub fn review_details(&self) -> std::option::Option<&crate::types::ReviewDetails> {
         self.review_details.as_ref()
     }
 }
-impl  std::fmt::Debug for AccountDetails  {
+impl std::fmt::Debug for AccountDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AccountDetails");
         formatter.field("mail_type", &self.mail_type);
         formatter.field("website_url", &"*** Sensitive Data Redacted ***");
         formatter.field("contact_language", &self.contact_language);
         formatter.field("use_case_description", &"*** Sensitive Data Redacted ***");
-        formatter.field("additional_contact_email_addresses", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "additional_contact_email_addresses",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("review_details", &self.review_details);
         formatter.finish()
     }
@@ -84,26 +89,28 @@ pub struct AccountDetailsBuilder {
     pub(crate) website_url: std::option::Option<std::string::String>,
     pub(crate) contact_language: std::option::Option<crate::types::ContactLanguage>,
     pub(crate) use_case_description: std::option::Option<std::string::String>,
-    pub(crate) additional_contact_email_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) additional_contact_email_addresses:
+        std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) review_details: std::option::Option<crate::types::ReviewDetails>,
 }
 impl AccountDetailsBuilder {
-    /// <p>The type of email your account is sending. The mail type can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li> 
-    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li> 
+    /// <p>The type of email your account is sending. The mail type can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
+    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
     /// </ul>
     pub fn mail_type(mut self, input: crate::types::MailType) -> Self {
         self.mail_type = Some(input);
         self
     }
-    /// <p>The type of email your account is sending. The mail type can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li> 
-    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li> 
+    /// <p>The type of email your account is sending. The mail type can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed of your latest offering.</p> </li>
+    /// <li> <p> <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during a transaction with a customer.</p> </li>
     /// </ul>
     pub fn set_mail_type(mut self, input: std::option::Option<crate::types::MailType>) -> Self {
-        self.mail_type = input; self
+        self.mail_type = input;
+        self
     }
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
     pub fn website_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -112,7 +119,8 @@ impl AccountDetailsBuilder {
     }
     /// <p>The URL of your website. This information helps us better understand the type of content that you plan to send.</p>
     pub fn set_website_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.website_url = input; self
+        self.website_url = input;
+        self
     }
     /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
     pub fn contact_language(mut self, input: crate::types::ContactLanguage) -> Self {
@@ -120,8 +128,12 @@ impl AccountDetailsBuilder {
         self
     }
     /// <p>The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code> or <code>JAPANESE</code>.</p>
-    pub fn set_contact_language(mut self, input: std::option::Option<crate::types::ContactLanguage>) -> Self {
-        self.contact_language = input; self
+    pub fn set_contact_language(
+        mut self,
+        input: std::option::Option<crate::types::ContactLanguage>,
+    ) -> Self {
+        self.contact_language = input;
+        self
     }
     /// <p>A description of the types of email that you plan to send.</p>
     pub fn use_case_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -129,23 +141,34 @@ impl AccountDetailsBuilder {
         self
     }
     /// <p>A description of the types of email that you plan to send.</p>
-    pub fn set_use_case_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.use_case_description = input; self
+    pub fn set_use_case_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.use_case_description = input;
+        self
     }
     /// Appends an item to `additional_contact_email_addresses`.
     ///
     /// To override the contents of this collection use [`set_additional_contact_email_addresses`](Self::set_additional_contact_email_addresses).
     ///
     /// <p>Additional email addresses where updates are sent about your account review process.</p>
-    pub fn additional_contact_email_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn additional_contact_email_addresses(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         let mut v = self.additional_contact_email_addresses.unwrap_or_default();
-                        v.push(input.into());
-                        self.additional_contact_email_addresses = Some(v);
-                        self
+        v.push(input.into());
+        self.additional_contact_email_addresses = Some(v);
+        self
     }
     /// <p>Additional email addresses where updates are sent about your account review process.</p>
-    pub fn set_additional_contact_email_addresses(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.additional_contact_email_addresses = input; self
+    pub fn set_additional_contact_email_addresses(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.additional_contact_email_addresses = input;
+        self
     }
     /// <p>Information about the review of the latest details you submitted.</p>
     pub fn review_details(mut self, input: crate::types::ReviewDetails) -> Self {
@@ -153,24 +176,22 @@ impl AccountDetailsBuilder {
         self
     }
     /// <p>Information about the review of the latest details you submitted.</p>
-    pub fn set_review_details(mut self, input: std::option::Option<crate::types::ReviewDetails>) -> Self {
-        self.review_details = input; self
+    pub fn set_review_details(
+        mut self,
+        input: std::option::Option<crate::types::ReviewDetails>,
+    ) -> Self {
+        self.review_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`AccountDetails`](crate::types::AccountDetails).
     pub fn build(self) -> crate::types::AccountDetails {
         crate::types::AccountDetails {
-            mail_type: self.mail_type
-            ,
-            website_url: self.website_url
-            ,
-            contact_language: self.contact_language
-            ,
-            use_case_description: self.use_case_description
-            ,
-            additional_contact_email_addresses: self.additional_contact_email_addresses
-            ,
-            review_details: self.review_details
-            ,
+            mail_type: self.mail_type,
+            website_url: self.website_url,
+            contact_language: self.contact_language,
+            use_case_description: self.use_case_description,
+            additional_contact_email_addresses: self.additional_contact_email_addresses,
+            review_details: self.review_details,
         }
     }
 }
@@ -181,9 +202,11 @@ impl std::fmt::Debug for AccountDetailsBuilder {
         formatter.field("website_url", &"*** Sensitive Data Redacted ***");
         formatter.field("contact_language", &self.contact_language);
         formatter.field("use_case_description", &"*** Sensitive Data Redacted ***");
-        formatter.field("additional_contact_email_addresses", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "additional_contact_email_addresses",
+            &"*** Sensitive Data Redacted ***",
+        );
         formatter.field("review_details", &self.review_details);
         formatter.finish()
     }
 }
-

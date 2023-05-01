@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGraphInput  {
+pub struct DeleteGraphInput {
     /// <p>The ARN of the behavior graph to disable.</p>
     #[doc(hidden)]
     pub graph_arn: std::option::Option<std::string::String>,
 }
 impl DeleteGraphInput {
     /// <p>The ARN of the behavior graph to disable.</p>
-    pub fn graph_arn(&self) -> std::option::Option<& str> {
+    pub fn graph_arn(&self) -> std::option::Option<&str> {
         self.graph_arn.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteGraphInputBuilder {
     }
     /// <p>The ARN of the behavior graph to disable.</p>
     pub fn set_graph_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.graph_arn = input; self
+        self.graph_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteGraphInput`](crate::operation::delete_graph::DeleteGraphInput).
-    pub fn build(self) -> Result<crate::operation::delete_graph::DeleteGraphInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_graph::DeleteGraphInput {
-                graph_arn: self.graph_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_graph::DeleteGraphInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_graph::DeleteGraphInput {
+            graph_arn: self.graph_arn,
+        })
     }
 }
-

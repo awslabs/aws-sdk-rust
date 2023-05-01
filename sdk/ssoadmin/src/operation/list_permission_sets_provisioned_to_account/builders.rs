@@ -4,56 +4,63 @@ pub use crate::operation::list_permission_sets_provisioned_to_account::_list_per
 pub use crate::operation::list_permission_sets_provisioned_to_account::_list_permission_sets_provisioned_to_account_input::ListPermissionSetsProvisionedToAccountInputBuilder;
 
 /// Fluent builder constructing a request to `ListPermissionSetsProvisionedToAccount`.
-/// 
+///
 /// <p>Lists all the permission sets that are provisioned to a specified AWS account.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPermissionSetsProvisionedToAccountFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_permission_sets_provisioned_to_account::builders::ListPermissionSetsProvisionedToAccountInputBuilder,
 }
-impl ListPermissionSetsProvisionedToAccountFluentBuilder  {
+impl ListPermissionSetsProvisionedToAccountFluentBuilder {
     /// Creates a new `ListPermissionSetsProvisionedToAccount`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccount, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput, aws_smithy_http::result::SdkError<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_permission_sets_provisioned_to_account::paginator::ListPermissionSetsProvisionedToAccountPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_permission_sets_provisioned_to_account::paginator::ListPermissionSetsProvisionedToAccountPaginator {
-                                crate::operation::list_permission_sets_provisioned_to_account::paginator::ListPermissionSetsProvisionedToAccountPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_permission_sets_provisioned_to_account::paginator::ListPermissionSetsProvisionedToAccountPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(self) -> crate::operation::list_permission_sets_provisioned_to_account::paginator::ListPermissionSetsProvisionedToAccountPaginator{
+        crate::operation::list_permission_sets_provisioned_to_account::paginator::ListPermissionSetsProvisionedToAccountPaginator::new(self.handle, self.inner)
+    }
     /// <p>The ARN of the IAM Identity Center instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
     pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_arn(input.into());
@@ -80,7 +87,10 @@ impl ListPermissionSetsProvisionedToAccountFluentBuilder  {
         self
     }
     /// <p>The status object for the permission set provisioning operation.</p>
-    pub fn set_provisioning_status(mut self, input: std::option::Option<crate::types::ProvisioningStatus>) -> Self {
+    pub fn set_provisioning_status(
+        mut self,
+        input: std::option::Option<crate::types::ProvisioningStatus>,
+    ) -> Self {
         self.inner = self.inner.set_provisioning_status(input);
         self
     }
@@ -105,4 +115,3 @@ impl ListPermissionSetsProvisionedToAccountFluentBuilder  {
         self
     }
 }
-

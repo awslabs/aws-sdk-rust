@@ -3,7 +3,7 @@
 /// <p>The summary of the properties of a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SnapshotSummary  {
+pub struct SnapshotSummary {
     /// <p>The identifier of the snapshot.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct SnapshotSummary  {
 }
 impl SnapshotSummary {
     /// <p>The identifier of the snapshot.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The description of the snapshot.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The timestamp of when the snapshot was created.</p>
-    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
     /// <p>Then timestamp of when the snapshot was last updated.</p>
-    pub fn last_updated(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl SnapshotSummaryBuilder {
     }
     /// <p>The identifier of the snapshot.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The description of the snapshot.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl SnapshotSummaryBuilder {
     }
     /// <p>The description of the snapshot.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The timestamp of when the snapshot was created.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -77,7 +79,8 @@ impl SnapshotSummaryBuilder {
     }
     /// <p>The timestamp of when the snapshot was created.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input; self
+        self.created = input;
+        self
     }
     /// <p>Then timestamp of when the snapshot was last updated.</p>
     pub fn last_updated(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -85,21 +88,20 @@ impl SnapshotSummaryBuilder {
         self
     }
     /// <p>Then timestamp of when the snapshot was last updated.</p>
-    pub fn set_last_updated(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated = input; self
+    pub fn set_last_updated(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated = input;
+        self
     }
     /// Consumes the builder and constructs a [`SnapshotSummary`](crate::types::SnapshotSummary).
     pub fn build(self) -> crate::types::SnapshotSummary {
         crate::types::SnapshotSummary {
-            id: self.id
-            ,
-            description: self.description
-            ,
-            created: self.created
-            ,
-            last_updated: self.last_updated
-            ,
+            id: self.id,
+            description: self.description,
+            created: self.created,
+            last_updated: self.last_updated,
         }
     }
 }
-

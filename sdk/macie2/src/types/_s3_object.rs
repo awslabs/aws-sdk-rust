@@ -3,7 +3,7 @@
 /// <p>Provides information about the S3 object that a finding applies to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3Object  {
+pub struct S3Object {
     /// <p>The Amazon Resource Name (ARN) of the bucket that contains the object.</p>
     #[doc(hidden)]
     pub bucket_arn: std::option::Option<std::string::String>,
@@ -43,27 +43,27 @@ pub struct S3Object  {
 }
 impl S3Object {
     /// <p>The Amazon Resource Name (ARN) of the bucket that contains the object.</p>
-    pub fn bucket_arn(&self) -> std::option::Option<& str> {
+    pub fn bucket_arn(&self) -> std::option::Option<&str> {
         self.bucket_arn.as_deref()
     }
     /// <p>The entity tag (ETag) that identifies the affected version of the object. If the object was overwritten or changed after Amazon Macie produced the finding, this value might be different from the current ETag for the object.</p>
-    pub fn e_tag(&self) -> std::option::Option<& str> {
+    pub fn e_tag(&self) -> std::option::Option<&str> {
         self.e_tag.as_deref()
     }
     /// <p>The file name extension of the object. If the object doesn't have a file name extension, this value is "".</p>
-    pub fn extension(&self) -> std::option::Option<& str> {
+    pub fn extension(&self) -> std::option::Option<&str> {
         self.extension.as_deref()
     }
     /// <p>The full key (name) that's assigned to the object.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
-    pub fn last_modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modified.as_ref()
     }
     /// <p>The path to the object, including the full key (name).</p>
-    pub fn path(&self) -> std::option::Option<& str> {
+    pub fn path(&self) -> std::option::Option<&str> {
         self.path.as_deref()
     }
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
@@ -71,7 +71,9 @@ impl S3Object {
         self.public_access
     }
     /// <p>The type of server-side encryption that was used to encrypt the object.</p>
-    pub fn server_side_encryption(&self) -> std::option::Option<& crate::types::ServerSideEncryption> {
+    pub fn server_side_encryption(
+        &self,
+    ) -> std::option::Option<&crate::types::ServerSideEncryption> {
         self.server_side_encryption.as_ref()
     }
     /// <p>The total storage size, in bytes, of the object.</p>
@@ -79,15 +81,15 @@ impl S3Object {
         self.size
     }
     /// <p>The storage class of the object.</p>
-    pub fn storage_class(&self) -> std::option::Option<& crate::types::StorageClass> {
+    pub fn storage_class(&self) -> std::option::Option<&crate::types::StorageClass> {
         self.storage_class.as_ref()
     }
     /// <p>The tags that are associated with the object.</p>
-    pub fn tags(&self) -> std::option::Option<& [crate::types::KeyValuePair]> {
+    pub fn tags(&self) -> std::option::Option<&[crate::types::KeyValuePair]> {
         self.tags.as_deref()
     }
     /// <p>The identifier for the affected version of the object.</p>
-    pub fn version_id(&self) -> std::option::Option<& str> {
+    pub fn version_id(&self) -> std::option::Option<&str> {
         self.version_id.as_deref()
     }
 }
@@ -123,7 +125,8 @@ impl S3ObjectBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket that contains the object.</p>
     pub fn set_bucket_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_arn = input; self
+        self.bucket_arn = input;
+        self
     }
     /// <p>The entity tag (ETag) that identifies the affected version of the object. If the object was overwritten or changed after Amazon Macie produced the finding, this value might be different from the current ETag for the object.</p>
     pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
@@ -132,7 +135,8 @@ impl S3ObjectBuilder {
     }
     /// <p>The entity tag (ETag) that identifies the affected version of the object. If the object was overwritten or changed after Amazon Macie produced the finding, this value might be different from the current ETag for the object.</p>
     pub fn set_e_tag(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.e_tag = input; self
+        self.e_tag = input;
+        self
     }
     /// <p>The file name extension of the object. If the object doesn't have a file name extension, this value is "".</p>
     pub fn extension(mut self, input: impl Into<std::string::String>) -> Self {
@@ -141,7 +145,8 @@ impl S3ObjectBuilder {
     }
     /// <p>The file name extension of the object. If the object doesn't have a file name extension, this value is "".</p>
     pub fn set_extension(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.extension = input; self
+        self.extension = input;
+        self
     }
     /// <p>The full key (name) that's assigned to the object.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -150,7 +155,8 @@ impl S3ObjectBuilder {
     }
     /// <p>The full key (name) that's assigned to the object.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
     pub fn last_modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -158,8 +164,12 @@ impl S3ObjectBuilder {
         self
     }
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the object was last modified.</p>
-    pub fn set_last_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modified = input; self
+    pub fn set_last_modified(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modified = input;
+        self
     }
     /// <p>The path to the object, including the full key (name).</p>
     pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -168,7 +178,8 @@ impl S3ObjectBuilder {
     }
     /// <p>The path to the object, including the full key (name).</p>
     pub fn set_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.path = input; self
+        self.path = input;
+        self
     }
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
     pub fn public_access(mut self, input: bool) -> Self {
@@ -177,7 +188,8 @@ impl S3ObjectBuilder {
     }
     /// <p>Specifies whether the object is publicly accessible due to the combination of permissions settings that apply to the object.</p>
     pub fn set_public_access(mut self, input: std::option::Option<bool>) -> Self {
-        self.public_access = input; self
+        self.public_access = input;
+        self
     }
     /// <p>The type of server-side encryption that was used to encrypt the object.</p>
     pub fn server_side_encryption(mut self, input: crate::types::ServerSideEncryption) -> Self {
@@ -185,8 +197,12 @@ impl S3ObjectBuilder {
         self
     }
     /// <p>The type of server-side encryption that was used to encrypt the object.</p>
-    pub fn set_server_side_encryption(mut self, input: std::option::Option<crate::types::ServerSideEncryption>) -> Self {
-        self.server_side_encryption = input; self
+    pub fn set_server_side_encryption(
+        mut self,
+        input: std::option::Option<crate::types::ServerSideEncryption>,
+    ) -> Self {
+        self.server_side_encryption = input;
+        self
     }
     /// <p>The total storage size, in bytes, of the object.</p>
     pub fn size(mut self, input: i64) -> Self {
@@ -195,7 +211,8 @@ impl S3ObjectBuilder {
     }
     /// <p>The total storage size, in bytes, of the object.</p>
     pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
-        self.size = input; self
+        self.size = input;
+        self
     }
     /// <p>The storage class of the object.</p>
     pub fn storage_class(mut self, input: crate::types::StorageClass) -> Self {
@@ -203,8 +220,12 @@ impl S3ObjectBuilder {
         self
     }
     /// <p>The storage class of the object.</p>
-    pub fn set_storage_class(mut self, input: std::option::Option<crate::types::StorageClass>) -> Self {
-        self.storage_class = input; self
+    pub fn set_storage_class(
+        mut self,
+        input: std::option::Option<crate::types::StorageClass>,
+    ) -> Self {
+        self.storage_class = input;
+        self
     }
     /// Appends an item to `tags`.
     ///
@@ -213,13 +234,17 @@ impl S3ObjectBuilder {
     /// <p>The tags that are associated with the object.</p>
     pub fn tags(mut self, input: crate::types::KeyValuePair) -> Self {
         let mut v = self.tags.unwrap_or_default();
-                        v.push(input);
-                        self.tags = Some(v);
-                        self
+        v.push(input);
+        self.tags = Some(v);
+        self
     }
     /// <p>The tags that are associated with the object.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::KeyValuePair>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::KeyValuePair>>,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The identifier for the affected version of the object.</p>
     pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -228,38 +253,24 @@ impl S3ObjectBuilder {
     }
     /// <p>The identifier for the affected version of the object.</p>
     pub fn set_version_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.version_id = input; self
+        self.version_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3Object`](crate::types::S3Object).
     pub fn build(self) -> crate::types::S3Object {
         crate::types::S3Object {
-            bucket_arn: self.bucket_arn
-            ,
-            e_tag: self.e_tag
-            ,
-            extension: self.extension
-            ,
-            key: self.key
-            ,
-            last_modified: self.last_modified
-            ,
-            path: self.path
-            ,
-            public_access: self.public_access
-                .unwrap_or_default()
-            ,
-            server_side_encryption: self.server_side_encryption
-            ,
-            size: self.size
-                .unwrap_or_default()
-            ,
-            storage_class: self.storage_class
-            ,
-            tags: self.tags
-            ,
-            version_id: self.version_id
-            ,
+            bucket_arn: self.bucket_arn,
+            e_tag: self.e_tag,
+            extension: self.extension,
+            key: self.key,
+            last_modified: self.last_modified,
+            path: self.path,
+            public_access: self.public_access.unwrap_or_default(),
+            server_side_encryption: self.server_side_encryption,
+            size: self.size.unwrap_or_default(),
+            storage_class: self.storage_class,
+            tags: self.tags,
+            version_id: self.version_id,
         }
     }
 }
-

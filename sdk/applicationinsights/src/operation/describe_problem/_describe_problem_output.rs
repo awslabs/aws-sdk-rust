@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeProblemOutput  {
+pub struct DescribeProblemOutput {
     /// <p>Information about the problem. </p>
     #[doc(hidden)]
     pub problem: std::option::Option<crate::types::Problem>,
@@ -10,15 +10,15 @@ pub struct DescribeProblemOutput  {
 }
 impl DescribeProblemOutput {
     /// <p>Information about the problem. </p>
-    pub fn problem(&self) -> std::option::Option<& crate::types::Problem> {
+    pub fn problem(&self) -> std::option::Option<&crate::types::Problem> {
         self.problem.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeProblemOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeProblemOutput {
     /// Creates a new builder-style object to manufacture [`DescribeProblemOutput`](crate::operation::describe_problem::DescribeProblemOutput).
     pub fn builder() -> crate::operation::describe_problem::builders::DescribeProblemOutputBuilder {
@@ -41,24 +41,23 @@ impl DescribeProblemOutputBuilder {
     }
     /// <p>Information about the problem. </p>
     pub fn set_problem(mut self, input: std::option::Option<crate::types::Problem>) -> Self {
-        self.problem = input; self
+        self.problem = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeProblemOutput`](crate::operation::describe_problem::DescribeProblemOutput).
     pub fn build(self) -> crate::operation::describe_problem::DescribeProblemOutput {
         crate::operation::describe_problem::DescribeProblemOutput {
-            problem: self.problem
-            ,
+            problem: self.problem,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListResourceSetsInput  {
+pub struct ListResourceSetsInput {
     /// <p>The number of objects that you want to return with this call.</p>
     #[doc(hidden)]
     pub max_results: i32,
@@ -16,13 +16,14 @@ impl ListResourceSetsInput {
         self.max_results
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListResourceSetsInput {
     /// Creates a new builder-style object to manufacture [`ListResourceSetsInput`](crate::operation::list_resource_sets::ListResourceSetsInput).
-    pub fn builder() -> crate::operation::list_resource_sets::builders::ListResourceSetsInputBuilder {
+    pub fn builder() -> crate::operation::list_resource_sets::builders::ListResourceSetsInputBuilder
+    {
         crate::operation::list_resource_sets::builders::ListResourceSetsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListResourceSetsInputBuilder {
     }
     /// <p>The number of objects that you want to return with this call.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,19 +53,21 @@ impl ListResourceSetsInputBuilder {
     }
     /// <p>The token that identifies which batch of results you want to see.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListResourceSetsInput`](crate::operation::list_resource_sets::ListResourceSetsInput).
-    pub fn build(self) -> Result<crate::operation::list_resource_sets::ListResourceSetsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_resource_sets::ListResourceSetsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_resource_sets::ListResourceSetsInput {
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_results: self.max_results.unwrap_or_default(),
+                next_token: self.next_token,
+            },
         )
     }
 }
-

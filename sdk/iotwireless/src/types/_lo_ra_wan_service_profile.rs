@@ -3,7 +3,7 @@
 /// <p>LoRaWANServiceProfile object.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LoRaWanServiceProfile  {
+pub struct LoRaWanServiceProfile {
     /// <p>The AddGWMetaData value.</p>
     #[doc(hidden)]
     pub add_gw_metadata: bool,
@@ -67,7 +67,8 @@ impl LoRaWanServiceProfileBuilder {
     }
     /// <p>The AddGWMetaData value.</p>
     pub fn set_add_gw_metadata(mut self, input: std::option::Option<bool>) -> Self {
-        self.add_gw_metadata = input; self
+        self.add_gw_metadata = input;
+        self
     }
     /// <p>The DrMin value.</p>
     pub fn dr_min(mut self, input: i32) -> Self {
@@ -76,7 +77,8 @@ impl LoRaWanServiceProfileBuilder {
     }
     /// <p>The DrMin value.</p>
     pub fn set_dr_min(mut self, input: std::option::Option<i32>) -> Self {
-        self.dr_min = input; self
+        self.dr_min = input;
+        self
     }
     /// <p>The DrMax value.</p>
     pub fn dr_max(mut self, input: i32) -> Self {
@@ -85,7 +87,8 @@ impl LoRaWanServiceProfileBuilder {
     }
     /// <p>The DrMax value.</p>
     pub fn set_dr_max(mut self, input: std::option::Option<i32>) -> Self {
-        self.dr_max = input; self
+        self.dr_max = input;
+        self
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
     pub fn pr_allowed(mut self, input: bool) -> Self {
@@ -94,7 +97,8 @@ impl LoRaWanServiceProfileBuilder {
     }
     /// <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
     pub fn set_pr_allowed(mut self, input: std::option::Option<bool>) -> Self {
-        self.pr_allowed = input; self
+        self.pr_allowed = input;
+        self
     }
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
     pub fn ra_allowed(mut self, input: bool) -> Self {
@@ -103,25 +107,17 @@ impl LoRaWanServiceProfileBuilder {
     }
     /// <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
     pub fn set_ra_allowed(mut self, input: std::option::Option<bool>) -> Self {
-        self.ra_allowed = input; self
+        self.ra_allowed = input;
+        self
     }
     /// Consumes the builder and constructs a [`LoRaWanServiceProfile`](crate::types::LoRaWanServiceProfile).
     pub fn build(self) -> crate::types::LoRaWanServiceProfile {
         crate::types::LoRaWanServiceProfile {
-            add_gw_metadata: self.add_gw_metadata
-                .unwrap_or_default()
-            ,
-            dr_min: self.dr_min
-            ,
-            dr_max: self.dr_max
-            ,
-            pr_allowed: self.pr_allowed
-                .unwrap_or_default()
-            ,
-            ra_allowed: self.ra_allowed
-                .unwrap_or_default()
-            ,
+            add_gw_metadata: self.add_gw_metadata.unwrap_or_default(),
+            dr_min: self.dr_min,
+            dr_max: self.dr_max,
+            pr_allowed: self.pr_allowed.unwrap_or_default(),
+            ra_allowed: self.ra_allowed.unwrap_or_default(),
         }
     }
 }
-

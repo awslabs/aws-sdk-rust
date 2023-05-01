@@ -3,7 +3,7 @@
 /// <p>Information about an HTTP request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Http  {
+pub struct Http {
     /// <p>The request URL.</p>
     #[doc(hidden)]
     pub http_url: std::option::Option<std::string::String>,
@@ -22,7 +22,7 @@ pub struct Http  {
 }
 impl Http {
     /// <p>The request URL.</p>
-    pub fn http_url(&self) -> std::option::Option<& str> {
+    pub fn http_url(&self) -> std::option::Option<&str> {
         self.http_url.as_deref()
     }
     /// <p>The response status.</p>
@@ -30,15 +30,15 @@ impl Http {
         self.http_status
     }
     /// <p>The request method.</p>
-    pub fn http_method(&self) -> std::option::Option<& str> {
+    pub fn http_method(&self) -> std::option::Option<&str> {
         self.http_method.as_deref()
     }
     /// <p>The request's user agent string.</p>
-    pub fn user_agent(&self) -> std::option::Option<& str> {
+    pub fn user_agent(&self) -> std::option::Option<&str> {
         self.user_agent.as_deref()
     }
     /// <p>The IP address of the requestor.</p>
-    pub fn client_ip(&self) -> std::option::Option<& str> {
+    pub fn client_ip(&self) -> std::option::Option<&str> {
         self.client_ip.as_deref()
     }
 }
@@ -67,7 +67,8 @@ impl HttpBuilder {
     }
     /// <p>The request URL.</p>
     pub fn set_http_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.http_url = input; self
+        self.http_url = input;
+        self
     }
     /// <p>The response status.</p>
     pub fn http_status(mut self, input: i32) -> Self {
@@ -76,7 +77,8 @@ impl HttpBuilder {
     }
     /// <p>The response status.</p>
     pub fn set_http_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.http_status = input; self
+        self.http_status = input;
+        self
     }
     /// <p>The request method.</p>
     pub fn http_method(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl HttpBuilder {
     }
     /// <p>The request method.</p>
     pub fn set_http_method(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.http_method = input; self
+        self.http_method = input;
+        self
     }
     /// <p>The request's user agent string.</p>
     pub fn user_agent(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl HttpBuilder {
     }
     /// <p>The request's user agent string.</p>
     pub fn set_user_agent(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_agent = input; self
+        self.user_agent = input;
+        self
     }
     /// <p>The IP address of the requestor.</p>
     pub fn client_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,22 +107,17 @@ impl HttpBuilder {
     }
     /// <p>The IP address of the requestor.</p>
     pub fn set_client_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_ip = input; self
+        self.client_ip = input;
+        self
     }
     /// Consumes the builder and constructs a [`Http`](crate::types::Http).
     pub fn build(self) -> crate::types::Http {
         crate::types::Http {
-            http_url: self.http_url
-            ,
-            http_status: self.http_status
-            ,
-            http_method: self.http_method
-            ,
-            user_agent: self.user_agent
-            ,
-            client_ip: self.client_ip
-            ,
+            http_url: self.http_url,
+            http_status: self.http_status,
+            http_method: self.http_method,
+            user_agent: self.user_agent,
+            client_ip: self.client_ip,
         }
     }
 }
-

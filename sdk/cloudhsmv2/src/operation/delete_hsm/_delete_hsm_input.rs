@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHsmInput  {
+pub struct DeleteHsmInput {
     /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
     #[doc(hidden)]
     pub cluster_id: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct DeleteHsmInput  {
 }
 impl DeleteHsmInput {
     /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
-    pub fn cluster_id(&self) -> std::option::Option<& str> {
+    pub fn cluster_id(&self) -> std::option::Option<&str> {
         self.cluster_id.as_deref()
     }
     /// <p>The identifier (ID) of the HSM that you are deleting.</p>
-    pub fn hsm_id(&self) -> std::option::Option<& str> {
+    pub fn hsm_id(&self) -> std::option::Option<&str> {
         self.hsm_id.as_deref()
     }
     /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
-    pub fn eni_id(&self) -> std::option::Option<& str> {
+    pub fn eni_id(&self) -> std::option::Option<&str> {
         self.eni_id.as_deref()
     }
     /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
-    pub fn eni_ip(&self) -> std::option::Option<& str> {
+    pub fn eni_ip(&self) -> std::option::Option<&str> {
         self.eni_ip.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl DeleteHsmInputBuilder {
     }
     /// <p>The identifier (ID) of the cluster that contains the HSM that you are deleting.</p>
     pub fn set_cluster_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_id = input; self
+        self.cluster_id = input;
+        self
     }
     /// <p>The identifier (ID) of the HSM that you are deleting.</p>
     pub fn hsm_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl DeleteHsmInputBuilder {
     }
     /// <p>The identifier (ID) of the HSM that you are deleting.</p>
     pub fn set_hsm_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.hsm_id = input; self
+        self.hsm_id = input;
+        self
     }
     /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub fn eni_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +78,8 @@ impl DeleteHsmInputBuilder {
     }
     /// <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub fn set_eni_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.eni_id = input; self
+        self.eni_id = input;
+        self
     }
     /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub fn eni_ip(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +88,21 @@ impl DeleteHsmInputBuilder {
     }
     /// <p>The IP address of the elastic network interface (ENI) of the HSM that you are deleting.</p>
     pub fn set_eni_ip(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.eni_ip = input; self
+        self.eni_ip = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteHsmInput`](crate::operation::delete_hsm::DeleteHsmInput).
-    pub fn build(self) -> Result<crate::operation::delete_hsm::DeleteHsmInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_hsm::DeleteHsmInput {
-                cluster_id: self.cluster_id
-                ,
-                hsm_id: self.hsm_id
-                ,
-                eni_id: self.eni_id
-                ,
-                eni_ip: self.eni_ip
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_hsm::DeleteHsmInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_hsm::DeleteHsmInput {
+            cluster_id: self.cluster_id,
+            hsm_id: self.hsm_id,
+            eni_id: self.eni_id,
+            eni_ip: self.eni_ip,
+        })
     }
 }
-

@@ -3,14 +3,14 @@
 /// <p> The connector-specific profile credentials required by Dynatrace. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DynatraceConnectorProfileCredentials  {
+pub struct DynatraceConnectorProfileCredentials {
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
     #[doc(hidden)]
     pub api_token: std::option::Option<std::string::String>,
 }
 impl DynatraceConnectorProfileCredentials {
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
-    pub fn api_token(&self) -> std::option::Option<& str> {
+    pub fn api_token(&self) -> std::option::Option<&str> {
         self.api_token.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl DynatraceConnectorProfileCredentialsBuilder {
     }
     /// <p> The API tokens used by Dynatrace API to authenticate various API calls. </p>
     pub fn set_api_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_token = input; self
+        self.api_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DynatraceConnectorProfileCredentials`](crate::types::DynatraceConnectorProfileCredentials).
     pub fn build(self) -> crate::types::DynatraceConnectorProfileCredentials {
         crate::types::DynatraceConnectorProfileCredentials {
-            api_token: self.api_token
-            ,
+            api_token: self.api_token,
         }
     }
 }
-

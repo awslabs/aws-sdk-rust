@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFirewallManagerRuleGroupsOutput  {
+pub struct DeleteFirewallManagerRuleGroupsOutput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     #[doc(hidden)]
     pub next_web_acl_lock_token: std::option::Option<std::string::String>,
@@ -10,18 +10,18 @@ pub struct DeleteFirewallManagerRuleGroupsOutput  {
 }
 impl DeleteFirewallManagerRuleGroupsOutput {
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn next_web_acl_lock_token(&self) -> std::option::Option<& str> {
+    pub fn next_web_acl_lock_token(&self) -> std::option::Option<&str> {
         self.next_web_acl_lock_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DeleteFirewallManagerRuleGroupsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeleteFirewallManagerRuleGroupsOutput {
     /// Creates a new builder-style object to manufacture [`DeleteFirewallManagerRuleGroupsOutput`](crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput).
-    pub fn builder() -> crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsOutputBuilder {
+    pub fn builder() -> crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsOutputBuilder{
         crate::operation::delete_firewall_manager_rule_groups::builders::DeleteFirewallManagerRuleGroupsOutputBuilder::default()
     }
 }
@@ -40,20 +40,27 @@ impl DeleteFirewallManagerRuleGroupsOutputBuilder {
         self
     }
     /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
-    pub fn set_next_web_acl_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_web_acl_lock_token = input; self
+    pub fn set_next_web_acl_lock_token(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.next_web_acl_lock_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeleteFirewallManagerRuleGroupsOutput`](crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput).
-    pub fn build(self) -> crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput
+    {
         crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput {
             next_web_acl_lock_token: self.next_web_acl_lock_token
             ,
@@ -61,4 +68,3 @@ impl DeleteFirewallManagerRuleGroupsOutputBuilder {
         }
     }
 }
-

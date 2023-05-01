@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSmsSandboxPhoneNumberInput  {
+pub struct DeleteSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to delete.</p>
     #[doc(hidden)]
     pub phone_number: std::option::Option<std::string::String>,
 }
 impl DeleteSmsSandboxPhoneNumberInput {
     /// <p>The destination phone number to delete.</p>
-    pub fn phone_number(&self) -> std::option::Option<& str> {
+    pub fn phone_number(&self) -> std::option::Option<&str> {
         self.phone_number.as_deref()
     }
 }
 impl DeleteSmsSandboxPhoneNumberInput {
     /// Creates a new builder-style object to manufacture [`DeleteSmsSandboxPhoneNumberInput`](crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput).
-    pub fn builder() -> crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSmsSandboxPhoneNumberInputBuilder {
+    pub fn builder() -> crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSmsSandboxPhoneNumberInputBuilder{
         crate::operation::delete_sms_sandbox_phone_number::builders::DeleteSmsSandboxPhoneNumberInputBuilder::default()
     }
 }
@@ -34,16 +34,20 @@ impl DeleteSmsSandboxPhoneNumberInputBuilder {
     }
     /// <p>The destination phone number to delete.</p>
     pub fn set_phone_number(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.phone_number = input; self
+        self.phone_number = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSmsSandboxPhoneNumberInput`](crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput).
-    pub fn build(self) -> Result<crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_sms_sandbox_phone_number::DeleteSmsSandboxPhoneNumberInput {
-                phone_number: self.phone_number
-                ,
-            }
+                phone_number: self.phone_number,
+            },
         )
     }
 }
-

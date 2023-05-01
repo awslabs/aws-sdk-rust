@@ -36,4 +36,3 @@ pub use crate::types::_aws_credentials::AwsCredentialsBuilder;
 pub use crate::types::_permission_group_params::PermissionGroupParamsBuilder;
 
 pub use crate::types::_resource_permission::ResourcePermissionBuilder;
-

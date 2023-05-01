@@ -252,4 +252,3 @@ pub mod update_endpoint;
 
 /// Types for the `UpdateFlywheel` operation.
 pub mod update_flywheel;
-

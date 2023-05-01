@@ -3,7 +3,7 @@
 /// <p>Specifies the details of the page to be fetched.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FetchPageRequest  {
+pub struct FetchPageRequest {
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
     #[doc(hidden)]
     pub transaction_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct FetchPageRequest  {
 }
 impl FetchPageRequest {
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
-    pub fn transaction_id(&self) -> std::option::Option<& str> {
+    pub fn transaction_id(&self) -> std::option::Option<&str> {
         self.transaction_id.as_deref()
     }
     /// <p>Specifies the next page token of the page to be fetched.</p>
-    pub fn next_page_token(&self) -> std::option::Option<& str> {
+    pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl FetchPageRequestBuilder {
     }
     /// <p>Specifies the transaction ID of the page to be fetched.</p>
     pub fn set_transaction_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transaction_id = input; self
+        self.transaction_id = input;
+        self
     }
     /// <p>Specifies the next page token of the page to be fetched.</p>
     pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl FetchPageRequestBuilder {
     }
     /// <p>Specifies the next page token of the page to be fetched.</p>
     pub fn set_next_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_page_token = input; self
+        self.next_page_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`FetchPageRequest`](crate::types::FetchPageRequest).
     pub fn build(self) -> crate::types::FetchPageRequest {
         crate::types::FetchPageRequest {
-            transaction_id: self.transaction_id
-            ,
-            next_page_token: self.next_page_token
-            ,
+            transaction_id: self.transaction_id,
+            next_page_token: self.next_page_token,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateIpamResourceDiscoveryInput  {
+pub struct DisassociateIpamResourceDiscoveryInput {
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -16,13 +16,13 @@ impl DisassociateIpamResourceDiscoveryInput {
         self.dry_run
     }
     /// <p>A resource discovery association ID.</p>
-    pub fn ipam_resource_discovery_association_id(&self) -> std::option::Option<& str> {
+    pub fn ipam_resource_discovery_association_id(&self) -> std::option::Option<&str> {
         self.ipam_resource_discovery_association_id.as_deref()
     }
 }
 impl DisassociateIpamResourceDiscoveryInput {
     /// Creates a new builder-style object to manufacture [`DisassociateIpamResourceDiscoveryInput`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput).
-    pub fn builder() -> crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryInputBuilder {
+    pub fn builder() -> crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryInputBuilder{
         crate::operation::disassociate_ipam_resource_discovery::builders::DisassociateIpamResourceDiscoveryInputBuilder::default()
     }
 }
@@ -42,19 +42,27 @@ impl DisassociateIpamResourceDiscoveryInputBuilder {
     }
     /// <p>A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>A resource discovery association ID.</p>
-    pub fn ipam_resource_discovery_association_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ipam_resource_discovery_association_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.ipam_resource_discovery_association_id = Some(input.into());
         self
     }
     /// <p>A resource discovery association ID.</p>
-    pub fn set_ipam_resource_discovery_association_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.ipam_resource_discovery_association_id = input; self
+    pub fn set_ipam_resource_discovery_association_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.ipam_resource_discovery_association_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateIpamResourceDiscoveryInput`](crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryInput {
                 dry_run: self.dry_run
@@ -65,4 +73,3 @@ impl DisassociateIpamResourceDiscoveryInputBuilder {
         )
     }
 }
-

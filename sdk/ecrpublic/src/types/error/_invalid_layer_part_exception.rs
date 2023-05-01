@@ -3,7 +3,7 @@
 /// <p>The layer part size isn't valid, or the first byte specified isn't consecutive to the last byte of a previous layer part upload.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InvalidLayerPartException  {
+pub struct InvalidLayerPartException {
     /// <p>The Amazon Web Services account ID that's associated with the layer part.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -23,15 +23,15 @@ pub struct InvalidLayerPartException  {
 }
 impl InvalidLayerPartException {
     /// <p>The Amazon Web Services account ID that's associated with the layer part.</p>
-    pub fn registry_id(&self) -> std::option::Option<& str> {
+    pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The upload ID that's associated with the layer part.</p>
-    pub fn upload_id(&self) -> std::option::Option<& str> {
+    pub fn upload_id(&self) -> std::option::Option<&str> {
         self.upload_id.as_deref()
     }
     /// <p>The position of the last byte of the layer part.</p>
@@ -41,13 +41,15 @@ impl InvalidLayerPartException {
 }
 impl InvalidLayerPartException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for InvalidLayerPartException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidLayerPartException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -62,7 +64,9 @@ impl aws_http::request_id::RequestId for crate::types::error::InvalidLayerPartEx
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for InvalidLayerPartException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl InvalidLayerPartException {
     /// Creates a new builder-style object to manufacture [`InvalidLayerPartException`](crate::types::error::InvalidLayerPartException).
@@ -90,7 +94,8 @@ impl InvalidLayerPartExceptionBuilder {
     }
     /// <p>The Amazon Web Services account ID that's associated with the layer part.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input; self
+        self.registry_id = input;
+        self
     }
     /// <p>The name of the repository.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +104,8 @@ impl InvalidLayerPartExceptionBuilder {
     }
     /// <p>The name of the repository.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The upload ID that's associated with the layer part.</p>
     pub fn upload_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +114,8 @@ impl InvalidLayerPartExceptionBuilder {
     }
     /// <p>The upload ID that's associated with the layer part.</p>
     pub fn set_upload_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.upload_id = input; self
+        self.upload_id = input;
+        self
     }
     /// <p>The position of the last byte of the layer part.</p>
     pub fn last_valid_byte_received(mut self, input: i64) -> Self {
@@ -117,7 +124,8 @@ impl InvalidLayerPartExceptionBuilder {
     }
     /// <p>The position of the last byte of the layer part.</p>
     pub fn set_last_valid_byte_received(mut self, input: std::option::Option<i64>) -> Self {
-        self.last_valid_byte_received = input; self
+        self.last_valid_byte_received = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,34 +134,32 @@ impl InvalidLayerPartExceptionBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`InvalidLayerPartException`](crate::types::error::InvalidLayerPartException).
     pub fn build(self) -> crate::types::error::InvalidLayerPartException {
         crate::types::error::InvalidLayerPartException {
-            registry_id: self.registry_id
-            ,
-            repository_name: self.repository_name
-            ,
-            upload_id: self.upload_id
-            ,
-            last_valid_byte_received: self.last_valid_byte_received
-            ,
-            message: self.message
-            ,
+            registry_id: self.registry_id,
+            repository_name: self.repository_name,
+            upload_id: self.upload_id,
+            last_valid_byte_received: self.last_valid_byte_received,
+            message: self.message,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

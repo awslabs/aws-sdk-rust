@@ -22,4 +22,3 @@ pub use crate::types::error::_resource_in_use_exception::ResourceInUseExceptionB
 pub use crate::types::error::_invalid_request_exception::InvalidRequestExceptionBuilder;
 
 pub use crate::types::error::_resource_already_exist_exception::ResourceAlreadyExistExceptionBuilder;
-

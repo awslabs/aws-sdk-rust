@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let instanceinformationfilterkey = unimplemented!();
 /// match instanceinformationfilterkey {
@@ -36,14 +36,22 @@
 /// Specifically, when `instanceinformationfilterkey` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `InstanceInformationFilterKey::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum InstanceInformationFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     ActivationIds,
@@ -62,53 +70,63 @@ pub enum InstanceInformationFilterKey {
     #[allow(missing_docs)] // documentation missing in model
     ResourceType,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for InstanceInformationFilterKey {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ActivationIds" => InstanceInformationFilterKey::ActivationIds,
-"AgentVersion" => InstanceInformationFilterKey::AgentVersion,
-"AssociationStatus" => InstanceInformationFilterKey::AssociationStatus,
-"IamRole" => InstanceInformationFilterKey::IamRole,
-"InstanceIds" => InstanceInformationFilterKey::InstanceIds,
-"PingStatus" => InstanceInformationFilterKey::PingStatus,
-"PlatformTypes" => InstanceInformationFilterKey::PlatformTypes,
-"ResourceType" => InstanceInformationFilterKey::ResourceType,
-other => InstanceInformationFilterKey::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for InstanceInformationFilterKey {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(InstanceInformationFilterKey::from(s))
-                }
-            }
-impl InstanceInformationFilterKey {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    InstanceInformationFilterKey::ActivationIds => "ActivationIds",
-    InstanceInformationFilterKey::AgentVersion => "AgentVersion",
-    InstanceInformationFilterKey::AssociationStatus => "AssociationStatus",
-    InstanceInformationFilterKey::IamRole => "IamRole",
-    InstanceInformationFilterKey::InstanceIds => "InstanceIds",
-    InstanceInformationFilterKey::PingStatus => "PingStatus",
-    InstanceInformationFilterKey::PlatformTypes => "PlatformTypes",
-    InstanceInformationFilterKey::ResourceType => "ResourceType",
-    InstanceInformationFilterKey::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "ActivationIds" => InstanceInformationFilterKey::ActivationIds,
+            "AgentVersion" => InstanceInformationFilterKey::AgentVersion,
+            "AssociationStatus" => InstanceInformationFilterKey::AssociationStatus,
+            "IamRole" => InstanceInformationFilterKey::IamRole,
+            "InstanceIds" => InstanceInformationFilterKey::InstanceIds,
+            "PingStatus" => InstanceInformationFilterKey::PingStatus,
+            "PlatformTypes" => InstanceInformationFilterKey::PlatformTypes,
+            "ResourceType" => InstanceInformationFilterKey::ResourceType,
+            other => InstanceInformationFilterKey::Unknown(crate::primitives::UnknownVariantValue(
+                other.to_owned(),
+            )),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ActivationIds", "AgentVersion", "AssociationStatus", "IamRole", "InstanceIds", "PingStatus", "PlatformTypes", "ResourceType"]
-                }
-            }
-impl AsRef<str> for InstanceInformationFilterKey {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for InstanceInformationFilterKey {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InstanceInformationFilterKey::from(s))
+    }
+}
+impl InstanceInformationFilterKey {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            InstanceInformationFilterKey::ActivationIds => "ActivationIds",
+            InstanceInformationFilterKey::AgentVersion => "AgentVersion",
+            InstanceInformationFilterKey::AssociationStatus => "AssociationStatus",
+            InstanceInformationFilterKey::IamRole => "IamRole",
+            InstanceInformationFilterKey::InstanceIds => "InstanceIds",
+            InstanceInformationFilterKey::PingStatus => "PingStatus",
+            InstanceInformationFilterKey::PlatformTypes => "PlatformTypes",
+            InstanceInformationFilterKey::ResourceType => "ResourceType",
+            InstanceInformationFilterKey::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ActivationIds",
+            "AgentVersion",
+            "AssociationStatus",
+            "IamRole",
+            "InstanceIds",
+            "PingStatus",
+            "PlatformTypes",
+            "ResourceType",
+        ]
+    }
+}
+impl AsRef<str> for InstanceInformationFilterKey {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

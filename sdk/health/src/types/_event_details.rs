@@ -3,7 +3,7 @@
 /// <p>Detailed information about an event. A combination of an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a> object, an <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html">EventDescription</a> object, and additional metadata about the event. Returned by the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventDetails  {
+pub struct EventDetails {
     /// <p>Summary information about the event.</p>
     #[doc(hidden)]
     pub event: std::option::Option<crate::types::Event>,
@@ -12,19 +12,23 @@ pub struct EventDetails  {
     pub event_description: std::option::Option<crate::types::EventDescription>,
     /// <p>Additional metadata about the event.</p>
     #[doc(hidden)]
-    pub event_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub event_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl EventDetails {
     /// <p>Summary information about the event.</p>
-    pub fn event(&self) -> std::option::Option<& crate::types::Event> {
+    pub fn event(&self) -> std::option::Option<&crate::types::Event> {
         self.event.as_ref()
     }
     /// <p>The most recent description of the event.</p>
-    pub fn event_description(&self) -> std::option::Option<& crate::types::EventDescription> {
+    pub fn event_description(&self) -> std::option::Option<&crate::types::EventDescription> {
         self.event_description.as_ref()
     }
     /// <p>Additional metadata about the event.</p>
-    pub fn event_metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn event_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.event_metadata.as_ref()
     }
 }
@@ -41,7 +45,8 @@ impl EventDetails {
 pub struct EventDetailsBuilder {
     pub(crate) event: std::option::Option<crate::types::Event>,
     pub(crate) event_description: std::option::Option<crate::types::EventDescription>,
-    pub(crate) event_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) event_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl EventDetailsBuilder {
     /// <p>Summary information about the event.</p>
@@ -51,7 +56,8 @@ impl EventDetailsBuilder {
     }
     /// <p>Summary information about the event.</p>
     pub fn set_event(mut self, input: std::option::Option<crate::types::Event>) -> Self {
-        self.event = input; self
+        self.event = input;
+        self
     }
     /// <p>The most recent description of the event.</p>
     pub fn event_description(mut self, input: crate::types::EventDescription) -> Self {
@@ -59,34 +65,44 @@ impl EventDetailsBuilder {
         self
     }
     /// <p>The most recent description of the event.</p>
-    pub fn set_event_description(mut self, input: std::option::Option<crate::types::EventDescription>) -> Self {
-        self.event_description = input; self
+    pub fn set_event_description(
+        mut self,
+        input: std::option::Option<crate::types::EventDescription>,
+    ) -> Self {
+        self.event_description = input;
+        self
     }
     /// Adds a key-value pair to `event_metadata`.
     ///
     /// To override the contents of this collection use [`set_event_metadata`](Self::set_event_metadata).
     ///
     /// <p>Additional metadata about the event.</p>
-    pub fn event_metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn event_metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.event_metadata.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.event_metadata = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.event_metadata = Some(hash_map);
+        self
     }
     /// <p>Additional metadata about the event.</p>
-    pub fn set_event_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.event_metadata = input; self
+    pub fn set_event_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.event_metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventDetails`](crate::types::EventDetails).
     pub fn build(self) -> crate::types::EventDetails {
         crate::types::EventDetails {
-            event: self.event
-            ,
-            event_description: self.event_description
-            ,
-            event_metadata: self.event_metadata
-            ,
+            event: self.event,
+            event_description: self.event_description,
+            event_metadata: self.event_metadata,
         }
     }
 }
-

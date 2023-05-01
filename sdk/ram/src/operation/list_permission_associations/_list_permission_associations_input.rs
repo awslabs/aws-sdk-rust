@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListPermissionAssociationsInput  {
+pub struct ListPermissionAssociationsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission.</p>
     #[doc(hidden)]
     pub permission_arn: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct ListPermissionAssociationsInput  {
     /// <p>Specifies that you want to list only those associations with resource shares that have a <code>featureSet</code> with this value.</p>
     #[doc(hidden)]
     pub feature_set: std::option::Option<crate::types::PermissionFeatureSet>,
-    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p> 
+    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p>
     /// <p>When <code>false</code> (the default value), lists associations with resource shares that use any version of the specified managed permission.</p>
     #[doc(hidden)]
     pub default_version: std::option::Option<bool>,
@@ -31,7 +31,7 @@ pub struct ListPermissionAssociationsInput  {
 }
 impl ListPermissionAssociationsInput {
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission.</p>
-    pub fn permission_arn(&self) -> std::option::Option<& str> {
+    pub fn permission_arn(&self) -> std::option::Option<&str> {
         self.permission_arn.as_deref()
     }
     /// <p>Specifies that you want to list only those associations with resource shares that use this version of the managed permission. If you don't provide a value for this parameter, then the operation returns information about associations with resource shares that use any version of the managed permission.</p>
@@ -39,24 +39,26 @@ impl ListPermissionAssociationsInput {
         self.permission_version
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn association_status(&self) -> std::option::Option<& crate::types::ResourceShareAssociationStatus> {
+    pub fn association_status(
+        &self,
+    ) -> std::option::Option<&crate::types::ResourceShareAssociationStatus> {
         self.association_status.as_ref()
     }
     /// <p>Specifies that you want to list only those associations with resource shares that include at least one resource of this resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>Specifies that you want to list only those associations with resource shares that have a <code>featureSet</code> with this value.</p>
-    pub fn feature_set(&self) -> std::option::Option<& crate::types::PermissionFeatureSet> {
+    pub fn feature_set(&self) -> std::option::Option<&crate::types::PermissionFeatureSet> {
         self.feature_set.as_ref()
     }
-    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p> 
+    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p>
     /// <p>When <code>false</code> (the default value), lists associations with resource shares that use any version of the specified managed permission.</p>
     pub fn default_version(&self) -> std::option::Option<bool> {
         self.default_version
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
@@ -66,7 +68,7 @@ impl ListPermissionAssociationsInput {
 }
 impl ListPermissionAssociationsInput {
     /// Creates a new builder-style object to manufacture [`ListPermissionAssociationsInput`](crate::operation::list_permission_associations::ListPermissionAssociationsInput).
-    pub fn builder() -> crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder {
+    pub fn builder() -> crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder{
         crate::operation::list_permission_associations::builders::ListPermissionAssociationsInputBuilder::default()
     }
 }
@@ -77,7 +79,8 @@ impl ListPermissionAssociationsInput {
 pub struct ListPermissionAssociationsInputBuilder {
     pub(crate) permission_arn: std::option::Option<std::string::String>,
     pub(crate) permission_version: std::option::Option<i32>,
-    pub(crate) association_status: std::option::Option<crate::types::ResourceShareAssociationStatus>,
+    pub(crate) association_status:
+        std::option::Option<crate::types::ResourceShareAssociationStatus>,
     pub(crate) resource_type: std::option::Option<std::string::String>,
     pub(crate) feature_set: std::option::Option<crate::types::PermissionFeatureSet>,
     pub(crate) default_version: std::option::Option<bool>,
@@ -92,7 +95,8 @@ impl ListPermissionAssociationsInputBuilder {
     }
     /// <p>Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the managed permission.</p>
     pub fn set_permission_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.permission_arn = input; self
+        self.permission_arn = input;
+        self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that use this version of the managed permission. If you don't provide a value for this parameter, then the operation returns information about associations with resource shares that use any version of the managed permission.</p>
     pub fn permission_version(mut self, input: i32) -> Self {
@@ -101,16 +105,24 @@ impl ListPermissionAssociationsInputBuilder {
     }
     /// <p>Specifies that you want to list only those associations with resource shares that use this version of the managed permission. If you don't provide a value for this parameter, then the operation returns information about associations with resource shares that use any version of the managed permission.</p>
     pub fn set_permission_version(mut self, input: std::option::Option<i32>) -> Self {
-        self.permission_version = input; self
+        self.permission_version = input;
+        self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn association_status(mut self, input: crate::types::ResourceShareAssociationStatus) -> Self {
+    pub fn association_status(
+        mut self,
+        input: crate::types::ResourceShareAssociationStatus,
+    ) -> Self {
         self.association_status = Some(input);
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that match this status.</p>
-    pub fn set_association_status(mut self, input: std::option::Option<crate::types::ResourceShareAssociationStatus>) -> Self {
-        self.association_status = input; self
+    pub fn set_association_status(
+        mut self,
+        input: std::option::Option<crate::types::ResourceShareAssociationStatus>,
+    ) -> Self {
+        self.association_status = input;
+        self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that include at least one resource of this resource type.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -119,7 +131,8 @@ impl ListPermissionAssociationsInputBuilder {
     }
     /// <p>Specifies that you want to list only those associations with resource shares that include at least one resource of this resource type.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that have a <code>featureSet</code> with this value.</p>
     pub fn feature_set(mut self, input: crate::types::PermissionFeatureSet) -> Self {
@@ -127,19 +140,24 @@ impl ListPermissionAssociationsInputBuilder {
         self
     }
     /// <p>Specifies that you want to list only those associations with resource shares that have a <code>featureSet</code> with this value.</p>
-    pub fn set_feature_set(mut self, input: std::option::Option<crate::types::PermissionFeatureSet>) -> Self {
-        self.feature_set = input; self
+    pub fn set_feature_set(
+        mut self,
+        input: std::option::Option<crate::types::PermissionFeatureSet>,
+    ) -> Self {
+        self.feature_set = input;
+        self
     }
-    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p> 
+    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p>
     /// <p>When <code>false</code> (the default value), lists associations with resource shares that use any version of the specified managed permission.</p>
     pub fn default_version(mut self, input: bool) -> Self {
         self.default_version = Some(input);
         self
     }
-    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p> 
+    /// <p>When <code>true</code>, specifies that you want to list only those associations with resource shares that use the default version of the specified managed permission.</p>
     /// <p>When <code>false</code> (the default value), lists associations with resource shares that use any version of the specified managed permission.</p>
     pub fn set_default_version(mut self, input: std::option::Option<bool>) -> Self {
-        self.default_version = input; self
+        self.default_version = input;
+        self
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -148,7 +166,8 @@ impl ListPermissionAssociationsInputBuilder {
     }
     /// <p>Specifies that you want to receive the next page of results. Valid only if you received a <code>NextToken</code> response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's <code>NextToken</code> response to request the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -157,30 +176,27 @@ impl ListPermissionAssociationsInputBuilder {
     }
     /// <p>Specifies the total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the number you specify, the <code>NextToken</code> response element is returned with a value (not null). Include the specified value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListPermissionAssociationsInput`](crate::operation::list_permission_associations::ListPermissionAssociationsInput).
-    pub fn build(self) -> Result<crate::operation::list_permission_associations::ListPermissionAssociationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_permission_associations::ListPermissionAssociationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_permission_associations::ListPermissionAssociationsInput {
-                permission_arn: self.permission_arn
-                ,
-                permission_version: self.permission_version
-                ,
-                association_status: self.association_status
-                ,
-                resource_type: self.resource_type
-                ,
-                feature_set: self.feature_set
-                ,
-                default_version: self.default_version
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                permission_arn: self.permission_arn,
+                permission_version: self.permission_version,
+                association_status: self.association_status,
+                resource_type: self.resource_type,
+                feature_set: self.feature_set,
+                default_version: self.default_version,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

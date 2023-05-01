@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartBatchJobOutput  {
+pub struct StartBatchJobOutput {
     /// <p>The unique identifier of this execution of the batch job.</p>
     #[doc(hidden)]
     pub execution_id: std::option::Option<std::string::String>,
@@ -10,15 +10,15 @@ pub struct StartBatchJobOutput  {
 }
 impl StartBatchJobOutput {
     /// <p>The unique identifier of this execution of the batch job.</p>
-    pub fn execution_id(&self) -> std::option::Option<& str> {
+    pub fn execution_id(&self) -> std::option::Option<&str> {
         self.execution_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for StartBatchJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartBatchJobOutput {
     /// Creates a new builder-style object to manufacture [`StartBatchJobOutput`](crate::operation::start_batch_job::StartBatchJobOutput).
     pub fn builder() -> crate::operation::start_batch_job::builders::StartBatchJobOutputBuilder {
@@ -41,24 +41,23 @@ impl StartBatchJobOutputBuilder {
     }
     /// <p>The unique identifier of this execution of the batch job.</p>
     pub fn set_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.execution_id = input; self
+        self.execution_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartBatchJobOutput`](crate::operation::start_batch_job::StartBatchJobOutput).
     pub fn build(self) -> crate::operation::start_batch_job::StartBatchJobOutput {
         crate::operation::start_batch_job::StartBatchJobOutput {
-            execution_id: self.execution_id
-            ,
+            execution_id: self.execution_id,
             _request_id: self._request_id,
         }
     }
 }
-

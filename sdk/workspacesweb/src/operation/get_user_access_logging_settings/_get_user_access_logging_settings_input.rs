@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetUserAccessLoggingSettingsInput  {
+pub struct GetUserAccessLoggingSettingsInput {
     /// <p>The ARN of the user access logging settings.</p>
     #[doc(hidden)]
     pub user_access_logging_settings_arn: std::option::Option<std::string::String>,
 }
 impl GetUserAccessLoggingSettingsInput {
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<& str> {
+    pub fn user_access_logging_settings_arn(&self) -> std::option::Option<&str> {
         self.user_access_logging_settings_arn.as_deref()
     }
 }
 impl GetUserAccessLoggingSettingsInput {
     /// Creates a new builder-style object to manufacture [`GetUserAccessLoggingSettingsInput`](crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsInput).
-    pub fn builder() -> crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsInputBuilder {
+    pub fn builder() -> crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsInputBuilder{
         crate::operation::get_user_access_logging_settings::builders::GetUserAccessLoggingSettingsInputBuilder::default()
     }
 }
@@ -28,22 +28,32 @@ pub struct GetUserAccessLoggingSettingsInputBuilder {
 }
 impl GetUserAccessLoggingSettingsInputBuilder {
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn user_access_logging_settings_arn(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn user_access_logging_settings_arn(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.user_access_logging_settings_arn = Some(input.into());
         self
     }
     /// <p>The ARN of the user access logging settings.</p>
-    pub fn set_user_access_logging_settings_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_access_logging_settings_arn = input; self
+    pub fn set_user_access_logging_settings_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.user_access_logging_settings_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetUserAccessLoggingSettingsInput`](crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsInput).
-    pub fn build(self) -> Result<crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_user_access_logging_settings::GetUserAccessLoggingSettingsInput {
-                user_access_logging_settings_arn: self.user_access_logging_settings_arn
-                ,
-            }
+                user_access_logging_settings_arn: self.user_access_logging_settings_arn,
+            },
         )
     }
 }
-

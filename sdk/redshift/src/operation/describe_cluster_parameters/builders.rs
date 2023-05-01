@@ -4,91 +4,117 @@ pub use crate::operation::describe_cluster_parameters::_describe_cluster_paramet
 pub use crate::operation::describe_cluster_parameters::_describe_cluster_parameters_input::DescribeClusterParametersInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeClusterParameters`.
-/// 
-/// <p>Returns a detailed list of parameters contained within the specified Amazon Redshift parameter group. For each parameter the response includes information such as parameter name, description, data type, value, whether the parameter value is modifiable, and so on.</p> 
-/// <p>You can specify <i>source</i> filter to retrieve parameters of only specific type. For example, to retrieve parameters that were modified by a user action such as from <code>ModifyClusterParameterGroup</code>, you can specify <i>source</i> equal to <i>user</i>.</p> 
+///
+/// <p>Returns a detailed list of parameters contained within the specified Amazon Redshift parameter group. For each parameter the response includes information such as parameter name, description, data type, value, whether the parameter value is modifiable, and so on.</p>
+/// <p>You can specify <i>source</i> filter to retrieve parameters of only specific type. For example, to retrieve parameters that were modified by a user action such as from <code>ModifyClusterParameterGroup</code>, you can specify <i>source</i> equal to <i>user</i>.</p>
 /// <p> For more information about parameters and parameter groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeClusterParametersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::describe_cluster_parameters::builders::DescribeClusterParametersInputBuilder,
 }
-impl DescribeClusterParametersFluentBuilder  {
+impl DescribeClusterParametersFluentBuilder {
     /// Creates a new `DescribeClusterParameters`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_cluster_parameters::DescribeClusterParameters, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameters::DescribeClusterParametersError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput, aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameters::DescribeClusterParametersError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_cluster_parameters::DescribeClusterParameters,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_parameters::DescribeClusterParametersError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_parameters::DescribeClusterParametersError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_parameters::paginator::DescribeClusterParametersPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_cluster_parameters::paginator::DescribeClusterParametersPaginator {
-                                crate::operation::describe_cluster_parameters::paginator::DescribeClusterParametersPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_cluster_parameters::paginator::DescribeClusterParametersPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_cluster_parameters::paginator::DescribeClusterParametersPaginator
+    {
+        crate::operation::describe_cluster_parameters::paginator::DescribeClusterParametersPaginator::new(self.handle, self.inner)
+    }
     /// <p>The name of a cluster parameter group for which to return details.</p>
     pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.parameter_group_name(input.into());
         self
     }
     /// <p>The name of a cluster parameter group for which to return details.</p>
-    pub fn set_parameter_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_parameter_group_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_parameter_group_name(input);
         self
     }
-    /// <p>The parameter types to return. Specify <code>user</code> to show parameters that are different form the default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter group. </p> 
-    /// <p>Default: All parameter types returned.</p> 
+    /// <p>The parameter types to return. Specify <code>user</code> to show parameters that are different form the default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter group. </p>
+    /// <p>Default: All parameter types returned.</p>
     /// <p>Valid Values: <code>user</code> | <code>engine-default</code> </p>
     pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.source(input.into());
         self
     }
-    /// <p>The parameter types to return. Specify <code>user</code> to show parameters that are different form the default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter group. </p> 
-    /// <p>Default: All parameter types returned.</p> 
+    /// <p>The parameter types to return. Specify <code>user</code> to show parameters that are different form the default. Similarly, specify <code>engine-default</code> to show parameters that are the same as the default parameter group. </p>
+    /// <p>Default: All parameter types returned.</p>
     /// <p>Valid Values: <code>user</code> | <code>engine-default</code> </p>
     pub fn set_source(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_source(input);
         self
     }
-    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> 
-    /// <p>Default: <code>100</code> </p> 
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn max_records(mut self, input: i32) -> Self {
         self.inner = self.inner.max_records(input);
         self
     }
-    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p> 
-    /// <p>Default: <code>100</code> </p> 
+    /// <p>The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified <code>MaxRecords</code> value, a value is returned in a <code>marker</code> field of the response. You can retrieve the next set of records by retrying the command with the returned marker value. </p>
+    /// <p>Default: <code>100</code> </p>
     /// <p>Constraints: minimum 20, maximum 100.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_records(input);
@@ -105,4 +131,3 @@ impl DescribeClusterParametersFluentBuilder  {
         self
     }
 }
-

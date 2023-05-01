@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateVirtualInterfaceAttributesInput  {
+pub struct UpdateVirtualInterfaceAttributesInput {
     /// <p>The ID of the virtual private interface.</p>
     #[doc(hidden)]
     pub virtual_interface_id: std::option::Option<std::string::String>,
@@ -18,7 +18,7 @@ pub struct UpdateVirtualInterfaceAttributesInput  {
 }
 impl UpdateVirtualInterfaceAttributesInput {
     /// <p>The ID of the virtual private interface.</p>
-    pub fn virtual_interface_id(&self) -> std::option::Option<& str> {
+    pub fn virtual_interface_id(&self) -> std::option::Option<&str> {
         self.virtual_interface_id.as_deref()
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
@@ -30,13 +30,13 @@ impl UpdateVirtualInterfaceAttributesInput {
         self.enable_site_link
     }
     /// <p>The name of the virtual private interface.</p>
-    pub fn virtual_interface_name(&self) -> std::option::Option<& str> {
+    pub fn virtual_interface_name(&self) -> std::option::Option<&str> {
         self.virtual_interface_name.as_deref()
     }
 }
 impl UpdateVirtualInterfaceAttributesInput {
     /// Creates a new builder-style object to manufacture [`UpdateVirtualInterfaceAttributesInput`](crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesInput).
-    pub fn builder() -> crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesInputBuilder {
+    pub fn builder() -> crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesInputBuilder{
         crate::operation::update_virtual_interface_attributes::builders::UpdateVirtualInterfaceAttributesInputBuilder::default()
     }
 }
@@ -57,8 +57,12 @@ impl UpdateVirtualInterfaceAttributesInputBuilder {
         self
     }
     /// <p>The ID of the virtual private interface.</p>
-    pub fn set_virtual_interface_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.virtual_interface_id = input; self
+    pub fn set_virtual_interface_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.virtual_interface_id = input;
+        self
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
     pub fn mtu(mut self, input: i32) -> Self {
@@ -67,7 +71,8 @@ impl UpdateVirtualInterfaceAttributesInputBuilder {
     }
     /// <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001. The default value is 1500.</p>
     pub fn set_mtu(mut self, input: std::option::Option<i32>) -> Self {
-        self.mtu = input; self
+        self.mtu = input;
+        self
     }
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub fn enable_site_link(mut self, input: bool) -> Self {
@@ -76,7 +81,8 @@ impl UpdateVirtualInterfaceAttributesInputBuilder {
     }
     /// <p>Indicates whether to enable or disable SiteLink.</p>
     pub fn set_enable_site_link(mut self, input: std::option::Option<bool>) -> Self {
-        self.enable_site_link = input; self
+        self.enable_site_link = input;
+        self
     }
     /// <p>The name of the virtual private interface.</p>
     pub fn virtual_interface_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,11 +90,15 @@ impl UpdateVirtualInterfaceAttributesInputBuilder {
         self
     }
     /// <p>The name of the virtual private interface.</p>
-    pub fn set_virtual_interface_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.virtual_interface_name = input; self
+    pub fn set_virtual_interface_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.virtual_interface_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateVirtualInterfaceAttributesInput`](crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesInput).
-    pub fn build(self) -> Result<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_virtual_interface_attributes::UpdateVirtualInterfaceAttributesInput {
                 virtual_interface_id: self.virtual_interface_id
@@ -103,4 +113,3 @@ impl UpdateVirtualInterfaceAttributesInputBuilder {
         )
     }
 }
-

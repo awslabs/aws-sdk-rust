@@ -3,18 +3,18 @@
 /// <p>The configuration of a <code>ComboChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComboChartConfiguration  {
+pub struct ComboChartConfiguration {
     /// <p>The field wells of the visual.</p>
     #[doc(hidden)]
     pub field_wells: std::option::Option<crate::types::ComboChartFieldWells>,
     /// <p>The sort configuration of a <code>ComboChartVisual</code>.</p>
     #[doc(hidden)]
     pub sort_configuration: std::option::Option<crate::types::ComboChartSortConfiguration>,
-    /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li> 
-    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li> 
-    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li> 
+    /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p>
+    /// <ul>
+    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li>
+    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li>
+    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub bars_arrangement: std::option::Option<crate::types::BarsArrangement>,
@@ -42,11 +42,11 @@ pub struct ComboChartConfiguration  {
     /// <p>The legend display setup of the visual.</p>
     #[doc(hidden)]
     pub legend: std::option::Option<crate::types::LegendOptions>,
-    /// <p>The options that determine if visual data labels are displayed.</p> 
+    /// <p>The options that determine if visual data labels are displayed.</p>
     /// <p>The data label options for a bar in a combo chart.</p>
     #[doc(hidden)]
     pub bar_data_labels: std::option::Option<crate::types::DataLabelOptions>,
-    /// <p>The options that determine if visual data labels are displayed.</p> 
+    /// <p>The options that determine if visual data labels are displayed.</p>
     /// <p>The data label options for a line in a combo chart.</p>
     #[doc(hidden)]
     pub line_data_labels: std::option::Option<crate::types::DataLabelOptions>,
@@ -62,74 +62,86 @@ pub struct ComboChartConfiguration  {
 }
 impl ComboChartConfiguration {
     /// <p>The field wells of the visual.</p>
-    pub fn field_wells(&self) -> std::option::Option<& crate::types::ComboChartFieldWells> {
+    pub fn field_wells(&self) -> std::option::Option<&crate::types::ComboChartFieldWells> {
         self.field_wells.as_ref()
     }
     /// <p>The sort configuration of a <code>ComboChartVisual</code>.</p>
-    pub fn sort_configuration(&self) -> std::option::Option<& crate::types::ComboChartSortConfiguration> {
+    pub fn sort_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::ComboChartSortConfiguration> {
         self.sort_configuration.as_ref()
     }
-    /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li> 
-    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li> 
-    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li> 
+    /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p>
+    /// <ul>
+    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li>
+    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li>
+    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li>
     /// </ul>
-    pub fn bars_arrangement(&self) -> std::option::Option<& crate::types::BarsArrangement> {
+    pub fn bars_arrangement(&self) -> std::option::Option<&crate::types::BarsArrangement> {
         self.bars_arrangement.as_ref()
     }
     /// <p>The category axis of a combo chart.</p>
-    pub fn category_axis(&self) -> std::option::Option<& crate::types::AxisDisplayOptions> {
+    pub fn category_axis(&self) -> std::option::Option<&crate::types::AxisDisplayOptions> {
         self.category_axis.as_ref()
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart category (group/color) field well.</p>
-    pub fn category_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
+    pub fn category_label_options(
+        &self,
+    ) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.category_label_options.as_ref()
     }
     /// <p>The label display options (grid line, range, scale, and axis step) of a combo chart's primary y-axis (bar) field well.</p>
-    pub fn primary_y_axis_display_options(&self) -> std::option::Option<& crate::types::AxisDisplayOptions> {
+    pub fn primary_y_axis_display_options(
+        &self,
+    ) -> std::option::Option<&crate::types::AxisDisplayOptions> {
         self.primary_y_axis_display_options.as_ref()
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's primary y-axis (bar) field well.</p>
-    pub fn primary_y_axis_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
+    pub fn primary_y_axis_label_options(
+        &self,
+    ) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.primary_y_axis_label_options.as_ref()
     }
     /// <p>The label display options (grid line, range, scale, axis step) of a combo chart's secondary y-axis (line) field well.</p>
-    pub fn secondary_y_axis_display_options(&self) -> std::option::Option<& crate::types::AxisDisplayOptions> {
+    pub fn secondary_y_axis_display_options(
+        &self,
+    ) -> std::option::Option<&crate::types::AxisDisplayOptions> {
         self.secondary_y_axis_display_options.as_ref()
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's secondary y-axis(line) field well.</p>
-    pub fn secondary_y_axis_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
+    pub fn secondary_y_axis_label_options(
+        &self,
+    ) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.secondary_y_axis_label_options.as_ref()
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.</p>
-    pub fn color_label_options(&self) -> std::option::Option<& crate::types::ChartAxisLabelOptions> {
+    pub fn color_label_options(&self) -> std::option::Option<&crate::types::ChartAxisLabelOptions> {
         self.color_label_options.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn legend(&self) -> std::option::Option<& crate::types::LegendOptions> {
+    pub fn legend(&self) -> std::option::Option<&crate::types::LegendOptions> {
         self.legend.as_ref()
     }
-    /// <p>The options that determine if visual data labels are displayed.</p> 
+    /// <p>The options that determine if visual data labels are displayed.</p>
     /// <p>The data label options for a bar in a combo chart.</p>
-    pub fn bar_data_labels(&self) -> std::option::Option<& crate::types::DataLabelOptions> {
+    pub fn bar_data_labels(&self) -> std::option::Option<&crate::types::DataLabelOptions> {
         self.bar_data_labels.as_ref()
     }
-    /// <p>The options that determine if visual data labels are displayed.</p> 
+    /// <p>The options that determine if visual data labels are displayed.</p>
     /// <p>The data label options for a line in a combo chart.</p>
-    pub fn line_data_labels(&self) -> std::option::Option<& crate::types::DataLabelOptions> {
+    pub fn line_data_labels(&self) -> std::option::Option<&crate::types::DataLabelOptions> {
         self.line_data_labels.as_ref()
     }
     /// <p>The legend display setup of the visual.</p>
-    pub fn tooltip(&self) -> std::option::Option<& crate::types::TooltipOptions> {
+    pub fn tooltip(&self) -> std::option::Option<&crate::types::TooltipOptions> {
         self.tooltip.as_ref()
     }
     /// <p>The reference line setup of the visual.</p>
-    pub fn reference_lines(&self) -> std::option::Option<& [crate::types::ReferenceLine]> {
+    pub fn reference_lines(&self) -> std::option::Option<&[crate::types::ReferenceLine]> {
         self.reference_lines.as_deref()
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
-    pub fn visual_palette(&self) -> std::option::Option<& crate::types::VisualPalette> {
+    pub fn visual_palette(&self) -> std::option::Option<&crate::types::VisualPalette> {
         self.visual_palette.as_ref()
     }
 }
@@ -149,10 +161,14 @@ pub struct ComboChartConfigurationBuilder {
     pub(crate) bars_arrangement: std::option::Option<crate::types::BarsArrangement>,
     pub(crate) category_axis: std::option::Option<crate::types::AxisDisplayOptions>,
     pub(crate) category_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    pub(crate) primary_y_axis_display_options: std::option::Option<crate::types::AxisDisplayOptions>,
-    pub(crate) primary_y_axis_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
-    pub(crate) secondary_y_axis_display_options: std::option::Option<crate::types::AxisDisplayOptions>,
-    pub(crate) secondary_y_axis_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) primary_y_axis_display_options:
+        std::option::Option<crate::types::AxisDisplayOptions>,
+    pub(crate) primary_y_axis_label_options:
+        std::option::Option<crate::types::ChartAxisLabelOptions>,
+    pub(crate) secondary_y_axis_display_options:
+        std::option::Option<crate::types::AxisDisplayOptions>,
+    pub(crate) secondary_y_axis_label_options:
+        std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) color_label_options: std::option::Option<crate::types::ChartAxisLabelOptions>,
     pub(crate) legend: std::option::Option<crate::types::LegendOptions>,
     pub(crate) bar_data_labels: std::option::Option<crate::types::DataLabelOptions>,
@@ -168,8 +184,12 @@ impl ComboChartConfigurationBuilder {
         self
     }
     /// <p>The field wells of the visual.</p>
-    pub fn set_field_wells(mut self, input: std::option::Option<crate::types::ComboChartFieldWells>) -> Self {
-        self.field_wells = input; self
+    pub fn set_field_wells(
+        mut self,
+        input: std::option::Option<crate::types::ComboChartFieldWells>,
+    ) -> Self {
+        self.field_wells = input;
+        self
     }
     /// <p>The sort configuration of a <code>ComboChartVisual</code>.</p>
     pub fn sort_configuration(mut self, input: crate::types::ComboChartSortConfiguration) -> Self {
@@ -177,27 +197,35 @@ impl ComboChartConfigurationBuilder {
         self
     }
     /// <p>The sort configuration of a <code>ComboChartVisual</code>.</p>
-    pub fn set_sort_configuration(mut self, input: std::option::Option<crate::types::ComboChartSortConfiguration>) -> Self {
-        self.sort_configuration = input; self
+    pub fn set_sort_configuration(
+        mut self,
+        input: std::option::Option<crate::types::ComboChartSortConfiguration>,
+    ) -> Self {
+        self.sort_configuration = input;
+        self
     }
-    /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li> 
-    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li> 
-    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li> 
+    /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p>
+    /// <ul>
+    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li>
+    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li>
+    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li>
     /// </ul>
     pub fn bars_arrangement(mut self, input: crate::types::BarsArrangement) -> Self {
         self.bars_arrangement = Some(input);
         self
     }
-    /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p> 
-    /// <ul> 
-    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li> 
-    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li> 
-    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li> 
+    /// <p>Determines the bar arrangement in a combo chart. The following are valid values in this structure:</p>
+    /// <ul>
+    /// <li> <p> <code>CLUSTERED</code>: For clustered bar combo charts.</p> </li>
+    /// <li> <p> <code>STACKED</code>: For stacked bar combo charts.</p> </li>
+    /// <li> <p> <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns a validation error.</p> </li>
     /// </ul>
-    pub fn set_bars_arrangement(mut self, input: std::option::Option<crate::types::BarsArrangement>) -> Self {
-        self.bars_arrangement = input; self
+    pub fn set_bars_arrangement(
+        mut self,
+        input: std::option::Option<crate::types::BarsArrangement>,
+    ) -> Self {
+        self.bars_arrangement = input;
+        self
     }
     /// <p>The category axis of a combo chart.</p>
     pub fn category_axis(mut self, input: crate::types::AxisDisplayOptions) -> Self {
@@ -205,8 +233,12 @@ impl ComboChartConfigurationBuilder {
         self
     }
     /// <p>The category axis of a combo chart.</p>
-    pub fn set_category_axis(mut self, input: std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
-        self.category_axis = input; self
+    pub fn set_category_axis(
+        mut self,
+        input: std::option::Option<crate::types::AxisDisplayOptions>,
+    ) -> Self {
+        self.category_axis = input;
+        self
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart category (group/color) field well.</p>
     pub fn category_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -214,44 +246,76 @@ impl ComboChartConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart category (group/color) field well.</p>
-    pub fn set_category_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
-        self.category_label_options = input; self
+    pub fn set_category_label_options(
+        mut self,
+        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
+    ) -> Self {
+        self.category_label_options = input;
+        self
     }
     /// <p>The label display options (grid line, range, scale, and axis step) of a combo chart's primary y-axis (bar) field well.</p>
-    pub fn primary_y_axis_display_options(mut self, input: crate::types::AxisDisplayOptions) -> Self {
+    pub fn primary_y_axis_display_options(
+        mut self,
+        input: crate::types::AxisDisplayOptions,
+    ) -> Self {
         self.primary_y_axis_display_options = Some(input);
         self
     }
     /// <p>The label display options (grid line, range, scale, and axis step) of a combo chart's primary y-axis (bar) field well.</p>
-    pub fn set_primary_y_axis_display_options(mut self, input: std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
-        self.primary_y_axis_display_options = input; self
+    pub fn set_primary_y_axis_display_options(
+        mut self,
+        input: std::option::Option<crate::types::AxisDisplayOptions>,
+    ) -> Self {
+        self.primary_y_axis_display_options = input;
+        self
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's primary y-axis (bar) field well.</p>
-    pub fn primary_y_axis_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
+    pub fn primary_y_axis_label_options(
+        mut self,
+        input: crate::types::ChartAxisLabelOptions,
+    ) -> Self {
         self.primary_y_axis_label_options = Some(input);
         self
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's primary y-axis (bar) field well.</p>
-    pub fn set_primary_y_axis_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
-        self.primary_y_axis_label_options = input; self
+    pub fn set_primary_y_axis_label_options(
+        mut self,
+        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
+    ) -> Self {
+        self.primary_y_axis_label_options = input;
+        self
     }
     /// <p>The label display options (grid line, range, scale, axis step) of a combo chart's secondary y-axis (line) field well.</p>
-    pub fn secondary_y_axis_display_options(mut self, input: crate::types::AxisDisplayOptions) -> Self {
+    pub fn secondary_y_axis_display_options(
+        mut self,
+        input: crate::types::AxisDisplayOptions,
+    ) -> Self {
         self.secondary_y_axis_display_options = Some(input);
         self
     }
     /// <p>The label display options (grid line, range, scale, axis step) of a combo chart's secondary y-axis (line) field well.</p>
-    pub fn set_secondary_y_axis_display_options(mut self, input: std::option::Option<crate::types::AxisDisplayOptions>) -> Self {
-        self.secondary_y_axis_display_options = input; self
+    pub fn set_secondary_y_axis_display_options(
+        mut self,
+        input: std::option::Option<crate::types::AxisDisplayOptions>,
+    ) -> Self {
+        self.secondary_y_axis_display_options = input;
+        self
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's secondary y-axis(line) field well.</p>
-    pub fn secondary_y_axis_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
+    pub fn secondary_y_axis_label_options(
+        mut self,
+        input: crate::types::ChartAxisLabelOptions,
+    ) -> Self {
         self.secondary_y_axis_label_options = Some(input);
         self
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's secondary y-axis(line) field well.</p>
-    pub fn set_secondary_y_axis_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
-        self.secondary_y_axis_label_options = input; self
+    pub fn set_secondary_y_axis_label_options(
+        mut self,
+        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
+    ) -> Self {
+        self.secondary_y_axis_label_options = input;
+        self
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.</p>
     pub fn color_label_options(mut self, input: crate::types::ChartAxisLabelOptions) -> Self {
@@ -259,8 +323,12 @@ impl ComboChartConfigurationBuilder {
         self
     }
     /// <p>The label options (label text, label visibility, and sort icon visibility) of a combo chart's color field well.</p>
-    pub fn set_color_label_options(mut self, input: std::option::Option<crate::types::ChartAxisLabelOptions>) -> Self {
-        self.color_label_options = input; self
+    pub fn set_color_label_options(
+        mut self,
+        input: std::option::Option<crate::types::ChartAxisLabelOptions>,
+    ) -> Self {
+        self.color_label_options = input;
+        self
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn legend(mut self, input: crate::types::LegendOptions) -> Self {
@@ -269,29 +337,38 @@ impl ComboChartConfigurationBuilder {
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn set_legend(mut self, input: std::option::Option<crate::types::LegendOptions>) -> Self {
-        self.legend = input; self
+        self.legend = input;
+        self
     }
-    /// <p>The options that determine if visual data labels are displayed.</p> 
+    /// <p>The options that determine if visual data labels are displayed.</p>
     /// <p>The data label options for a bar in a combo chart.</p>
     pub fn bar_data_labels(mut self, input: crate::types::DataLabelOptions) -> Self {
         self.bar_data_labels = Some(input);
         self
     }
-    /// <p>The options that determine if visual data labels are displayed.</p> 
+    /// <p>The options that determine if visual data labels are displayed.</p>
     /// <p>The data label options for a bar in a combo chart.</p>
-    pub fn set_bar_data_labels(mut self, input: std::option::Option<crate::types::DataLabelOptions>) -> Self {
-        self.bar_data_labels = input; self
+    pub fn set_bar_data_labels(
+        mut self,
+        input: std::option::Option<crate::types::DataLabelOptions>,
+    ) -> Self {
+        self.bar_data_labels = input;
+        self
     }
-    /// <p>The options that determine if visual data labels are displayed.</p> 
+    /// <p>The options that determine if visual data labels are displayed.</p>
     /// <p>The data label options for a line in a combo chart.</p>
     pub fn line_data_labels(mut self, input: crate::types::DataLabelOptions) -> Self {
         self.line_data_labels = Some(input);
         self
     }
-    /// <p>The options that determine if visual data labels are displayed.</p> 
+    /// <p>The options that determine if visual data labels are displayed.</p>
     /// <p>The data label options for a line in a combo chart.</p>
-    pub fn set_line_data_labels(mut self, input: std::option::Option<crate::types::DataLabelOptions>) -> Self {
-        self.line_data_labels = input; self
+    pub fn set_line_data_labels(
+        mut self,
+        input: std::option::Option<crate::types::DataLabelOptions>,
+    ) -> Self {
+        self.line_data_labels = input;
+        self
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn tooltip(mut self, input: crate::types::TooltipOptions) -> Self {
@@ -300,7 +377,8 @@ impl ComboChartConfigurationBuilder {
     }
     /// <p>The legend display setup of the visual.</p>
     pub fn set_tooltip(mut self, input: std::option::Option<crate::types::TooltipOptions>) -> Self {
-        self.tooltip = input; self
+        self.tooltip = input;
+        self
     }
     /// Appends an item to `reference_lines`.
     ///
@@ -309,13 +387,17 @@ impl ComboChartConfigurationBuilder {
     /// <p>The reference line setup of the visual.</p>
     pub fn reference_lines(mut self, input: crate::types::ReferenceLine) -> Self {
         let mut v = self.reference_lines.unwrap_or_default();
-                        v.push(input);
-                        self.reference_lines = Some(v);
-                        self
+        v.push(input);
+        self.reference_lines = Some(v);
+        self
     }
     /// <p>The reference line setup of the visual.</p>
-    pub fn set_reference_lines(mut self, input: std::option::Option<std::vec::Vec<crate::types::ReferenceLine>>) -> Self {
-        self.reference_lines = input; self
+    pub fn set_reference_lines(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ReferenceLine>>,
+    ) -> Self {
+        self.reference_lines = input;
+        self
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
     pub fn visual_palette(mut self, input: crate::types::VisualPalette) -> Self {
@@ -323,45 +405,32 @@ impl ComboChartConfigurationBuilder {
         self
     }
     /// <p>The palette (chart color) display setup of the visual.</p>
-    pub fn set_visual_palette(mut self, input: std::option::Option<crate::types::VisualPalette>) -> Self {
-        self.visual_palette = input; self
+    pub fn set_visual_palette(
+        mut self,
+        input: std::option::Option<crate::types::VisualPalette>,
+    ) -> Self {
+        self.visual_palette = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComboChartConfiguration`](crate::types::ComboChartConfiguration).
     pub fn build(self) -> crate::types::ComboChartConfiguration {
         crate::types::ComboChartConfiguration {
-            field_wells: self.field_wells
-            ,
-            sort_configuration: self.sort_configuration
-            ,
-            bars_arrangement: self.bars_arrangement
-            ,
-            category_axis: self.category_axis
-            ,
-            category_label_options: self.category_label_options
-            ,
-            primary_y_axis_display_options: self.primary_y_axis_display_options
-            ,
-            primary_y_axis_label_options: self.primary_y_axis_label_options
-            ,
-            secondary_y_axis_display_options: self.secondary_y_axis_display_options
-            ,
-            secondary_y_axis_label_options: self.secondary_y_axis_label_options
-            ,
-            color_label_options: self.color_label_options
-            ,
-            legend: self.legend
-            ,
-            bar_data_labels: self.bar_data_labels
-            ,
-            line_data_labels: self.line_data_labels
-            ,
-            tooltip: self.tooltip
-            ,
-            reference_lines: self.reference_lines
-            ,
-            visual_palette: self.visual_palette
-            ,
+            field_wells: self.field_wells,
+            sort_configuration: self.sort_configuration,
+            bars_arrangement: self.bars_arrangement,
+            category_axis: self.category_axis,
+            category_label_options: self.category_label_options,
+            primary_y_axis_display_options: self.primary_y_axis_display_options,
+            primary_y_axis_label_options: self.primary_y_axis_label_options,
+            secondary_y_axis_display_options: self.secondary_y_axis_display_options,
+            secondary_y_axis_label_options: self.secondary_y_axis_label_options,
+            color_label_options: self.color_label_options,
+            legend: self.legend,
+            bar_data_labels: self.bar_data_labels,
+            line_data_labels: self.line_data_labels,
+            tooltip: self.tooltip,
+            reference_lines: self.reference_lines,
+            visual_palette: self.visual_palette,
         }
     }
 }
-

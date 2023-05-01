@@ -3,7 +3,7 @@
 /// <p>Details about the state of a resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StateDescription  {
+pub struct StateDescription {
     /// <p>A code that describes the state of a resource.</p>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct StateDescription  {
 }
 impl StateDescription {
     /// <p>A code that describes the state of a resource.</p>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>A message that describes the state of a resource.</p>
-    pub fn message(&self) -> std::option::Option<& str> {
+    pub fn message(&self) -> std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl StateDescriptionBuilder {
     }
     /// <p>A code that describes the state of a resource.</p>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>A message that describes the state of a resource.</p>
     pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl StateDescriptionBuilder {
     }
     /// <p>A message that describes the state of a resource.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// Consumes the builder and constructs a [`StateDescription`](crate::types::StateDescription).
     pub fn build(self) -> crate::types::StateDescription {
         crate::types::StateDescription {
-            code: self.code
-            ,
-            message: self.message
-            ,
+            code: self.code,
+            message: self.message,
         }
     }
 }
-

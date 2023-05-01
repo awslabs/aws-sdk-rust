@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeEndpointAccessOutput  {
+pub struct DescribeEndpointAccessOutput {
     /// <p>The list of endpoints with access to the cluster.</p>
     #[doc(hidden)]
     pub endpoint_access_list: std::option::Option<std::vec::Vec<crate::types::EndpointAccess>>,
@@ -13,22 +13,24 @@ pub struct DescribeEndpointAccessOutput  {
 }
 impl DescribeEndpointAccessOutput {
     /// <p>The list of endpoints with access to the cluster.</p>
-    pub fn endpoint_access_list(&self) -> std::option::Option<& [crate::types::EndpointAccess]> {
+    pub fn endpoint_access_list(&self) -> std::option::Option<&[crate::types::EndpointAccess]> {
         self.endpoint_access_list.as_deref()
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeEndpointAccessOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeEndpointAccessOutput {
     /// Creates a new builder-style object to manufacture [`DescribeEndpointAccessOutput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput).
-    pub fn builder() -> crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessOutputBuilder
+    {
         crate::operation::describe_endpoint_access::builders::DescribeEndpointAccessOutputBuilder::default()
     }
 }
@@ -37,7 +39,8 @@ impl DescribeEndpointAccessOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeEndpointAccessOutputBuilder {
-    pub(crate) endpoint_access_list: std::option::Option<std::vec::Vec<crate::types::EndpointAccess>>,
+    pub(crate) endpoint_access_list:
+        std::option::Option<std::vec::Vec<crate::types::EndpointAccess>>,
     pub(crate) marker: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +52,17 @@ impl DescribeEndpointAccessOutputBuilder {
     /// <p>The list of endpoints with access to the cluster.</p>
     pub fn endpoint_access_list(mut self, input: crate::types::EndpointAccess) -> Self {
         let mut v = self.endpoint_access_list.unwrap_or_default();
-                        v.push(input);
-                        self.endpoint_access_list = Some(v);
-                        self
+        v.push(input);
+        self.endpoint_access_list = Some(v);
+        self
     }
     /// <p>The list of endpoints with access to the cluster.</p>
-    pub fn set_endpoint_access_list(mut self, input: std::option::Option<std::vec::Vec<crate::types::EndpointAccess>>) -> Self {
-        self.endpoint_access_list = input; self
+    pub fn set_endpoint_access_list(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EndpointAccess>>,
+    ) -> Self {
+        self.endpoint_access_list = input;
+        self
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +71,24 @@ impl DescribeEndpointAccessOutputBuilder {
     }
     /// <p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeEndpointAccessOutput`](crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput).
     pub fn build(self) -> crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput {
         crate::operation::describe_endpoint_access::DescribeEndpointAccessOutput {
-            endpoint_access_list: self.endpoint_access_list
-            ,
-            marker: self.marker
-            ,
+            endpoint_access_list: self.endpoint_access_list,
+            marker: self.marker,
             _request_id: self._request_id,
         }
     }
 }
-

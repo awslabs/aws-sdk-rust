@@ -3,7 +3,7 @@
 /// <p>Describes a pending database value modification.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PendingModifiedRelationalDatabaseValues  {
+pub struct PendingModifiedRelationalDatabaseValues {
     /// <p>The password for the master user of the database.</p>
     #[doc(hidden)]
     pub master_user_password: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct PendingModifiedRelationalDatabaseValues  {
 }
 impl PendingModifiedRelationalDatabaseValues {
     /// <p>The password for the master user of the database.</p>
-    pub fn master_user_password(&self) -> std::option::Option<& str> {
+    pub fn master_user_password(&self) -> std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
     /// <p>The database engine version.</p>
-    pub fn engine_version(&self) -> std::option::Option<& str> {
+    pub fn engine_version(&self) -> std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>A Boolean value indicating whether automated backup retention is enabled.</p>
@@ -50,8 +50,12 @@ impl PendingModifiedRelationalDatabaseValuesBuilder {
         self
     }
     /// <p>The password for the master user of the database.</p>
-    pub fn set_master_user_password(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.master_user_password = input; self
+    pub fn set_master_user_password(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.master_user_password = input;
+        self
     }
     /// <p>The database engine version.</p>
     pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +64,8 @@ impl PendingModifiedRelationalDatabaseValuesBuilder {
     }
     /// <p>The database engine version.</p>
     pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.engine_version = input; self
+        self.engine_version = input;
+        self
     }
     /// <p>A Boolean value indicating whether automated backup retention is enabled.</p>
     pub fn backup_retention_enabled(mut self, input: bool) -> Self {
@@ -69,18 +74,15 @@ impl PendingModifiedRelationalDatabaseValuesBuilder {
     }
     /// <p>A Boolean value indicating whether automated backup retention is enabled.</p>
     pub fn set_backup_retention_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.backup_retention_enabled = input; self
+        self.backup_retention_enabled = input;
+        self
     }
     /// Consumes the builder and constructs a [`PendingModifiedRelationalDatabaseValues`](crate::types::PendingModifiedRelationalDatabaseValues).
     pub fn build(self) -> crate::types::PendingModifiedRelationalDatabaseValues {
         crate::types::PendingModifiedRelationalDatabaseValues {
-            master_user_password: self.master_user_password
-            ,
-            engine_version: self.engine_version
-            ,
-            backup_retention_enabled: self.backup_retention_enabled
-            ,
+            master_user_password: self.master_user_password,
+            engine_version: self.engine_version,
+            backup_retention_enabled: self.backup_retention_enabled,
         }
     }
 }
-

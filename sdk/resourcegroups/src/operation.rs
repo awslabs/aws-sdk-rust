@@ -54,4 +54,3 @@ pub mod update_group;
 
 /// Types for the `UpdateGroupQuery` operation.
 pub mod update_group_query;
-

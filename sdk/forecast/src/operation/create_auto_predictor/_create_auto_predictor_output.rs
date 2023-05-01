@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAutoPredictorOutput  {
+pub struct CreateAutoPredictorOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
     #[doc(hidden)]
     pub predictor_arn: std::option::Option<std::string::String>,
@@ -10,19 +10,21 @@ pub struct CreateAutoPredictorOutput  {
 }
 impl CreateAutoPredictorOutput {
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
-    pub fn predictor_arn(&self) -> std::option::Option<& str> {
+    pub fn predictor_arn(&self) -> std::option::Option<&str> {
         self.predictor_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for CreateAutoPredictorOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateAutoPredictorOutput {
     /// Creates a new builder-style object to manufacture [`CreateAutoPredictorOutput`](crate::operation::create_auto_predictor::CreateAutoPredictorOutput).
-    pub fn builder() -> crate::operation::create_auto_predictor::builders::CreateAutoPredictorOutputBuilder {
-        crate::operation::create_auto_predictor::builders::CreateAutoPredictorOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_auto_predictor::builders::CreateAutoPredictorOutputBuilder {
+        crate::operation::create_auto_predictor::builders::CreateAutoPredictorOutputBuilder::default(
+        )
     }
 }
 
@@ -41,24 +43,23 @@ impl CreateAutoPredictorOutputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the predictor.</p>
     pub fn set_predictor_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.predictor_arn = input; self
+        self.predictor_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateAutoPredictorOutput`](crate::operation::create_auto_predictor::CreateAutoPredictorOutput).
     pub fn build(self) -> crate::operation::create_auto_predictor::CreateAutoPredictorOutput {
         crate::operation::create_auto_predictor::CreateAutoPredictorOutput {
-            predictor_arn: self.predictor_arn
-            ,
+            predictor_arn: self.predictor_arn,
             _request_id: self._request_id,
         }
     }
 }
-

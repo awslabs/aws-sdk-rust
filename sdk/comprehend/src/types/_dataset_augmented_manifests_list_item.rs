@@ -3,9 +3,9 @@
 /// <p>An augmented manifest file that provides training data for your custom model. An augmented manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DatasetAugmentedManifestsListItem  {
-    /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p> 
-    /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p> 
+pub struct DatasetAugmentedManifestsListItem {
+    /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
+    /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
     #[doc(hidden)]
     pub attribute_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -18,33 +18,35 @@ pub struct DatasetAugmentedManifestsListItem  {
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
     #[doc(hidden)]
     pub source_documents_s3_uri: std::option::Option<std::string::String>,
-    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p> 
+    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p>
     /// <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
     #[doc(hidden)]
     pub document_type: std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>,
 }
 impl DatasetAugmentedManifestsListItem {
-    /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p> 
-    /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p> 
+    /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
+    /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
-    pub fn attribute_names(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn attribute_names(&self) -> std::option::Option<&[std::string::String]> {
         self.attribute_names.as_deref()
     }
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
-    pub fn s3_uri(&self) -> std::option::Option<& str> {
+    pub fn s3_uri(&self) -> std::option::Option<&str> {
         self.s3_uri.as_deref()
     }
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
-    pub fn annotation_data_s3_uri(&self) -> std::option::Option<& str> {
+    pub fn annotation_data_s3_uri(&self) -> std::option::Option<&str> {
         self.annotation_data_s3_uri.as_deref()
     }
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
-    pub fn source_documents_s3_uri(&self) -> std::option::Option<& str> {
+    pub fn source_documents_s3_uri(&self) -> std::option::Option<&str> {
         self.source_documents_s3_uri.as_deref()
     }
-    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p> 
+    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p>
     /// <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
-    pub fn document_type(&self) -> std::option::Option<& crate::types::AugmentedManifestsDocumentTypeFormat> {
+    pub fn document_type(
+        &self,
+    ) -> std::option::Option<&crate::types::AugmentedManifestsDocumentTypeFormat> {
         self.document_type.as_ref()
     }
 }
@@ -63,27 +65,32 @@ pub struct DatasetAugmentedManifestsListItemBuilder {
     pub(crate) s3_uri: std::option::Option<std::string::String>,
     pub(crate) annotation_data_s3_uri: std::option::Option<std::string::String>,
     pub(crate) source_documents_s3_uri: std::option::Option<std::string::String>,
-    pub(crate) document_type: std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>,
+    pub(crate) document_type:
+        std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>,
 }
 impl DatasetAugmentedManifestsListItemBuilder {
     /// Appends an item to `attribute_names`.
     ///
     /// To override the contents of this collection use [`set_attribute_names`](Self::set_attribute_names).
     ///
-    /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p> 
-    /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p> 
+    /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
+    /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
     pub fn attribute_names(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.attribute_names.unwrap_or_default();
-                        v.push(input.into());
-                        self.attribute_names = Some(v);
-                        self
+        v.push(input.into());
+        self.attribute_names = Some(v);
+        self
     }
-    /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p> 
-    /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p> 
+    /// <p>The JSON attribute that contains the annotations for your training documents. The number of attribute names that you specify depends on whether your augmented manifest file is the output of a single labeling job or a chained labeling job.</p>
+    /// <p>If your file is the output of a single labeling job, specify the LabelAttributeName key that was used when the job was created in Ground Truth.</p>
     /// <p>If your file is the output of a chained labeling job, specify the LabelAttributeName key for one or more jobs in the chain. Each LabelAttributeName key provides the annotations from an individual job.</p>
-    pub fn set_attribute_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.attribute_names = input; self
+    pub fn set_attribute_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.attribute_names = input;
+        self
     }
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
     pub fn s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -92,7 +99,8 @@ impl DatasetAugmentedManifestsListItemBuilder {
     }
     /// <p>The Amazon S3 location of the augmented manifest file.</p>
     pub fn set_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_uri = input; self
+        self.s3_uri = input;
+        self
     }
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
     pub fn annotation_data_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -100,8 +108,12 @@ impl DatasetAugmentedManifestsListItemBuilder {
         self
     }
     /// <p>The S3 prefix to the annotation files that are referred in the augmented manifest file.</p>
-    pub fn set_annotation_data_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.annotation_data_s3_uri = input; self
+    pub fn set_annotation_data_s3_uri(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.annotation_data_s3_uri = input;
+        self
     }
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
     pub fn source_documents_s3_uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -109,34 +121,39 @@ impl DatasetAugmentedManifestsListItemBuilder {
         self
     }
     /// <p>The S3 prefix to the source files (PDFs) that are referred to in the augmented manifest file.</p>
-    pub fn set_source_documents_s3_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.source_documents_s3_uri = input; self
+    pub fn set_source_documents_s3_uri(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.source_documents_s3_uri = input;
+        self
     }
-    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p> 
+    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p>
     /// <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
-    pub fn document_type(mut self, input: crate::types::AugmentedManifestsDocumentTypeFormat) -> Self {
+    pub fn document_type(
+        mut self,
+        input: crate::types::AugmentedManifestsDocumentTypeFormat,
+    ) -> Self {
         self.document_type = Some(input);
         self
     }
-    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p> 
+    /// <p>The type of augmented manifest. If you don't specify, the default is PlainTextDocument. </p>
     /// <p> <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text that is encoded in UTF-8.</p>
-    pub fn set_document_type(mut self, input: std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>) -> Self {
-        self.document_type = input; self
+    pub fn set_document_type(
+        mut self,
+        input: std::option::Option<crate::types::AugmentedManifestsDocumentTypeFormat>,
+    ) -> Self {
+        self.document_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`DatasetAugmentedManifestsListItem`](crate::types::DatasetAugmentedManifestsListItem).
     pub fn build(self) -> crate::types::DatasetAugmentedManifestsListItem {
         crate::types::DatasetAugmentedManifestsListItem {
-            attribute_names: self.attribute_names
-            ,
-            s3_uri: self.s3_uri
-            ,
-            annotation_data_s3_uri: self.annotation_data_s3_uri
-            ,
-            source_documents_s3_uri: self.source_documents_s3_uri
-            ,
-            document_type: self.document_type
-            ,
+            attribute_names: self.attribute_names,
+            s3_uri: self.s3_uri,
+            annotation_data_s3_uri: self.annotation_data_s3_uri,
+            source_documents_s3_uri: self.source_documents_s3_uri,
+            document_type: self.document_type,
         }
     }
 }
-

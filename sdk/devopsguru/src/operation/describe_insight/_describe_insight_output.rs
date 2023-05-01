@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInsightOutput  {
+pub struct DescribeInsightOutput {
     /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
     #[doc(hidden)]
     pub proactive_insight: std::option::Option<crate::types::ProactiveInsight>,
@@ -13,19 +13,19 @@ pub struct DescribeInsightOutput  {
 }
 impl DescribeInsightOutput {
     /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
-    pub fn proactive_insight(&self) -> std::option::Option<& crate::types::ProactiveInsight> {
+    pub fn proactive_insight(&self) -> std::option::Option<&crate::types::ProactiveInsight> {
         self.proactive_insight.as_ref()
     }
     /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
-    pub fn reactive_insight(&self) -> std::option::Option<& crate::types::ReactiveInsight> {
+    pub fn reactive_insight(&self) -> std::option::Option<&crate::types::ReactiveInsight> {
         self.reactive_insight.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeInsightOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeInsightOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInsightOutput`](crate::operation::describe_insight::DescribeInsightOutput).
     pub fn builder() -> crate::operation::describe_insight::builders::DescribeInsightOutputBuilder {
@@ -48,8 +48,12 @@ impl DescribeInsightOutputBuilder {
         self
     }
     /// <p> A <code>ProactiveInsight</code> object that represents the requested insight. </p>
-    pub fn set_proactive_insight(mut self, input: std::option::Option<crate::types::ProactiveInsight>) -> Self {
-        self.proactive_insight = input; self
+    pub fn set_proactive_insight(
+        mut self,
+        input: std::option::Option<crate::types::ProactiveInsight>,
+    ) -> Self {
+        self.proactive_insight = input;
+        self
     }
     /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
     pub fn reactive_insight(mut self, input: crate::types::ReactiveInsight) -> Self {
@@ -57,27 +61,28 @@ impl DescribeInsightOutputBuilder {
         self
     }
     /// <p> A <code>ReactiveInsight</code> object that represents the requested insight. </p>
-    pub fn set_reactive_insight(mut self, input: std::option::Option<crate::types::ReactiveInsight>) -> Self {
-        self.reactive_insight = input; self
+    pub fn set_reactive_insight(
+        mut self,
+        input: std::option::Option<crate::types::ReactiveInsight>,
+    ) -> Self {
+        self.reactive_insight = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeInsightOutput`](crate::operation::describe_insight::DescribeInsightOutput).
     pub fn build(self) -> crate::operation::describe_insight::DescribeInsightOutput {
         crate::operation::describe_insight::DescribeInsightOutput {
-            proactive_insight: self.proactive_insight
-            ,
-            reactive_insight: self.reactive_insight
-            ,
+            proactive_insight: self.proactive_insight,
+            reactive_insight: self.reactive_insight,
             _request_id: self._request_id,
         }
     }
 }
-

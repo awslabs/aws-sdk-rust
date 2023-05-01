@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeImportImageTasksOutput  {
+pub struct DescribeImportImageTasksOutput {
     /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     #[doc(hidden)]
     pub import_image_tasks: std::option::Option<std::vec::Vec<crate::types::ImportImageTask>>,
@@ -13,22 +13,22 @@ pub struct DescribeImportImageTasksOutput  {
 }
 impl DescribeImportImageTasksOutput {
     /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
-    pub fn import_image_tasks(&self) -> std::option::Option<& [crate::types::ImportImageTask]> {
+    pub fn import_image_tasks(&self) -> std::option::Option<&[crate::types::ImportImageTask]> {
         self.import_image_tasks.as_deref()
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeImportImageTasksOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeImportImageTasksOutput {
     /// Creates a new builder-style object to manufacture [`DescribeImportImageTasksOutput`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput).
-    pub fn builder() -> crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksOutputBuilder {
+    pub fn builder() -> crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksOutputBuilder{
         crate::operation::describe_import_image_tasks::builders::DescribeImportImageTasksOutputBuilder::default()
     }
 }
@@ -37,7 +37,8 @@ impl DescribeImportImageTasksOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeImportImageTasksOutputBuilder {
-    pub(crate) import_image_tasks: std::option::Option<std::vec::Vec<crate::types::ImportImageTask>>,
+    pub(crate) import_image_tasks:
+        std::option::Option<std::vec::Vec<crate::types::ImportImageTask>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +50,17 @@ impl DescribeImportImageTasksOutputBuilder {
     /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
     pub fn import_image_tasks(mut self, input: crate::types::ImportImageTask) -> Self {
         let mut v = self.import_image_tasks.unwrap_or_default();
-                        v.push(input);
-                        self.import_image_tasks = Some(v);
-                        self
+        v.push(input);
+        self.import_image_tasks = Some(v);
+        self
     }
     /// <p>A list of zero or more import image tasks that are currently active or were completed or canceled in the previous 7 days.</p>
-    pub fn set_import_image_tasks(mut self, input: std::option::Option<std::vec::Vec<crate::types::ImportImageTask>>) -> Self {
-        self.import_image_tasks = input; self
+    pub fn set_import_image_tasks(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ImportImageTask>>,
+    ) -> Self {
+        self.import_image_tasks = input;
+        self
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +69,26 @@ impl DescribeImportImageTasksOutputBuilder {
     }
     /// <p>The token to use to get the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeImportImageTasksOutput`](crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput).
-    pub fn build(self) -> crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput {
         crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput {
-            import_image_tasks: self.import_image_tasks
-            ,
-            next_token: self.next_token
-            ,
+            import_image_tasks: self.import_image_tasks,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

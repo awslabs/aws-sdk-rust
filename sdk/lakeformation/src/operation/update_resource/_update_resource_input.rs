@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourceInput  {
+pub struct UpdateResourceInput {
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
     #[doc(hidden)]
     pub role_arn: std::option::Option<std::string::String>,
@@ -15,11 +15,11 @@ pub struct UpdateResourceInput  {
 }
 impl UpdateResourceInput {
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
-    pub fn role_arn(&self) -> std::option::Option<& str> {
+    pub fn role_arn(&self) -> std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The resource ARN.</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>Whether or not the resource is a federated resource.</p>
@@ -50,7 +50,8 @@ impl UpdateResourceInputBuilder {
     }
     /// <p>The new role to use for the given resource registered in Lake Formation.</p>
     pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.role_arn = input; self
+        self.role_arn = input;
+        self
     }
     /// <p>The resource ARN.</p>
     pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl UpdateResourceInputBuilder {
     }
     /// <p>The resource ARN.</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn with_federation(mut self, input: bool) -> Self {
@@ -68,20 +70,20 @@ impl UpdateResourceInputBuilder {
     }
     /// <p>Whether or not the resource is a federated resource.</p>
     pub fn set_with_federation(mut self, input: std::option::Option<bool>) -> Self {
-        self.with_federation = input; self
+        self.with_federation = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
-    pub fn build(self) -> Result<crate::operation::update_resource::UpdateResourceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_resource::UpdateResourceInput {
-                role_arn: self.role_arn
-                ,
-                resource_arn: self.resource_arn
-                ,
-                with_federation: self.with_federation
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_resource::UpdateResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_resource::UpdateResourceInput {
+            role_arn: self.role_arn,
+            resource_arn: self.resource_arn,
+            with_federation: self.with_federation,
+        })
     }
 }
-

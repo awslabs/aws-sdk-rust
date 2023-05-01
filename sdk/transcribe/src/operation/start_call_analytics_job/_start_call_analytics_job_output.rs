@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartCallAnalyticsJobOutput  {
+pub struct StartCallAnalyticsJobOutput {
     /// <p>Provides detailed information about the current Call Analytics job, including job status and, if applicable, failure reason.</p>
     #[doc(hidden)]
     pub call_analytics_job: std::option::Option<crate::types::CallAnalyticsJob>,
@@ -10,18 +10,20 @@ pub struct StartCallAnalyticsJobOutput  {
 }
 impl StartCallAnalyticsJobOutput {
     /// <p>Provides detailed information about the current Call Analytics job, including job status and, if applicable, failure reason.</p>
-    pub fn call_analytics_job(&self) -> std::option::Option<& crate::types::CallAnalyticsJob> {
+    pub fn call_analytics_job(&self) -> std::option::Option<&crate::types::CallAnalyticsJob> {
         self.call_analytics_job.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for StartCallAnalyticsJobOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl StartCallAnalyticsJobOutput {
     /// Creates a new builder-style object to manufacture [`StartCallAnalyticsJobOutput`](crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput).
-    pub fn builder() -> crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobOutputBuilder
+    {
         crate::operation::start_call_analytics_job::builders::StartCallAnalyticsJobOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl StartCallAnalyticsJobOutputBuilder {
         self
     }
     /// <p>Provides detailed information about the current Call Analytics job, including job status and, if applicable, failure reason.</p>
-    pub fn set_call_analytics_job(mut self, input: std::option::Option<crate::types::CallAnalyticsJob>) -> Self {
-        self.call_analytics_job = input; self
+    pub fn set_call_analytics_job(
+        mut self,
+        input: std::option::Option<crate::types::CallAnalyticsJob>,
+    ) -> Self {
+        self.call_analytics_job = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`StartCallAnalyticsJobOutput`](crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput).
     pub fn build(self) -> crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput {
         crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput {
-            call_analytics_job: self.call_analytics_job
-            ,
+            call_analytics_job: self.call_analytics_job,
             _request_id: self._request_id,
         }
     }
 }
-

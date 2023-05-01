@@ -3,7 +3,7 @@
 /// <p>The SIP address for the contact containing the URI and SIP address type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct SipAddress  {
+pub struct SipAddress {
     /// <p>The URI for the SIP address.</p>
     #[doc(hidden)]
     pub uri: std::option::Option<std::string::String>,
@@ -13,15 +13,15 @@ pub struct SipAddress  {
 }
 impl SipAddress {
     /// <p>The URI for the SIP address.</p>
-    pub fn uri(&self) -> std::option::Option<& str> {
+    pub fn uri(&self) -> std::option::Option<&str> {
         self.uri.as_deref()
     }
     /// <p>The type of the SIP address.</p>
-    pub fn r#type(&self) -> std::option::Option<& crate::types::SipType> {
+    pub fn r#type(&self) -> std::option::Option<&crate::types::SipType> {
         self.r#type.as_ref()
     }
 }
-impl  std::fmt::Debug for SipAddress  {
+impl std::fmt::Debug for SipAddress {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SipAddress");
         formatter.field("uri", &"*** Sensitive Data Redacted ***");
@@ -51,7 +51,8 @@ impl SipAddressBuilder {
     }
     /// <p>The URI for the SIP address.</p>
     pub fn set_uri(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.uri = input; self
+        self.uri = input;
+        self
     }
     /// <p>The type of the SIP address.</p>
     pub fn r#type(mut self, input: crate::types::SipType) -> Self {
@@ -60,15 +61,14 @@ impl SipAddressBuilder {
     }
     /// <p>The type of the SIP address.</p>
     pub fn set_type(mut self, input: std::option::Option<crate::types::SipType>) -> Self {
-        self.r#type = input; self
+        self.r#type = input;
+        self
     }
     /// Consumes the builder and constructs a [`SipAddress`](crate::types::SipAddress).
     pub fn build(self) -> crate::types::SipAddress {
         crate::types::SipAddress {
-            uri: self.uri
-            ,
-            r#type: self.r#type
-            ,
+            uri: self.uri,
+            r#type: self.r#type,
         }
     }
 }
@@ -80,4 +80,3 @@ impl std::fmt::Debug for SipAddressBuilder {
         formatter.finish()
     }
 }
-

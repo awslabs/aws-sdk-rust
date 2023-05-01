@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListModelMetadataOutput  {
+pub struct ListModelMetadataOutput {
     /// <p>A structure that holds model metadata.</p>
     #[doc(hidden)]
-    pub model_metadata_summaries: std::option::Option<std::vec::Vec<crate::types::ModelMetadataSummary>>,
+    pub model_metadata_summaries:
+        std::option::Option<std::vec::Vec<crate::types::ModelMetadataSummary>>,
     /// <p>A token for getting the next set of recommendations, if there are any.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,22 +14,25 @@ pub struct ListModelMetadataOutput  {
 }
 impl ListModelMetadataOutput {
     /// <p>A structure that holds model metadata.</p>
-    pub fn model_metadata_summaries(&self) -> std::option::Option<& [crate::types::ModelMetadataSummary]> {
+    pub fn model_metadata_summaries(
+        &self,
+    ) -> std::option::Option<&[crate::types::ModelMetadataSummary]> {
         self.model_metadata_summaries.as_deref()
     }
     /// <p>A token for getting the next set of recommendations, if there are any.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListModelMetadataOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListModelMetadataOutput {
     /// Creates a new builder-style object to manufacture [`ListModelMetadataOutput`](crate::operation::list_model_metadata::ListModelMetadataOutput).
-    pub fn builder() -> crate::operation::list_model_metadata::builders::ListModelMetadataOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_model_metadata::builders::ListModelMetadataOutputBuilder {
         crate::operation::list_model_metadata::builders::ListModelMetadataOutputBuilder::default()
     }
 }
@@ -37,7 +41,8 @@ impl ListModelMetadataOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListModelMetadataOutputBuilder {
-    pub(crate) model_metadata_summaries: std::option::Option<std::vec::Vec<crate::types::ModelMetadataSummary>>,
+    pub(crate) model_metadata_summaries:
+        std::option::Option<std::vec::Vec<crate::types::ModelMetadataSummary>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +54,17 @@ impl ListModelMetadataOutputBuilder {
     /// <p>A structure that holds model metadata.</p>
     pub fn model_metadata_summaries(mut self, input: crate::types::ModelMetadataSummary) -> Self {
         let mut v = self.model_metadata_summaries.unwrap_or_default();
-                        v.push(input);
-                        self.model_metadata_summaries = Some(v);
-                        self
+        v.push(input);
+        self.model_metadata_summaries = Some(v);
+        self
     }
     /// <p>A structure that holds model metadata.</p>
-    pub fn set_model_metadata_summaries(mut self, input: std::option::Option<std::vec::Vec<crate::types::ModelMetadataSummary>>) -> Self {
-        self.model_metadata_summaries = input; self
+    pub fn set_model_metadata_summaries(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ModelMetadataSummary>>,
+    ) -> Self {
+        self.model_metadata_summaries = input;
+        self
     }
     /// <p>A token for getting the next set of recommendations, if there are any.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +73,24 @@ impl ListModelMetadataOutputBuilder {
     }
     /// <p>A token for getting the next set of recommendations, if there are any.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListModelMetadataOutput`](crate::operation::list_model_metadata::ListModelMetadataOutput).
     pub fn build(self) -> crate::operation::list_model_metadata::ListModelMetadataOutput {
         crate::operation::list_model_metadata::ListModelMetadataOutput {
-            model_metadata_summaries: self.model_metadata_summaries
-            ,
-            next_token: self.next_token
-            ,
+            model_metadata_summaries: self.model_metadata_summaries,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

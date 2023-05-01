@@ -4,56 +4,82 @@ pub use crate::operation::list_mailbox_permissions::_list_mailbox_permissions_ou
 pub use crate::operation::list_mailbox_permissions::_list_mailbox_permissions_input::ListMailboxPermissionsInputBuilder;
 
 /// Fluent builder constructing a request to `ListMailboxPermissions`.
-/// 
+///
 /// <p>Lists the mailbox permissions associated with a user, group, or resource mailbox.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListMailboxPermissionsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsInputBuilder,
+    inner: crate::operation::list_mailbox_permissions::builders::ListMailboxPermissionsInputBuilder,
 }
-impl ListMailboxPermissionsFluentBuilder  {
+impl ListMailboxPermissionsFluentBuilder {
     /// Creates a new `ListMailboxPermissions`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_mailbox_permissions::ListMailboxPermissions, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_mailbox_permissions::ListMailboxPermissionsOutput, aws_smithy_http::result::SdkError<crate::operation::list_mailbox_permissions::ListMailboxPermissionsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_mailbox_permissions::ListMailboxPermissions,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_mailbox_permissions::ListMailboxPermissionsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_mailbox_permissions::ListMailboxPermissionsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator {
-                                crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator
+    {
+        crate::operation::list_mailbox_permissions::paginator::ListMailboxPermissionsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The identifier of the organization under which the user, group, or resource exists.</p>
     pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.organization_id(input.into());
@@ -95,4 +121,3 @@ impl ListMailboxPermissionsFluentBuilder  {
         self
     }
 }
-

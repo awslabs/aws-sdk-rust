@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDataEndpointInput  {
+pub struct GetDataEndpointInput {
     /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
     #[doc(hidden)]
     pub stream_name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct GetDataEndpointInput  {
 }
 impl GetDataEndpointInput {
     /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
-    pub fn stream_name(&self) -> std::option::Option<& str> {
+    pub fn stream_name(&self) -> std::option::Option<&str> {
         self.stream_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
-    pub fn stream_arn(&self) -> std::option::Option<& str> {
+    pub fn stream_arn(&self) -> std::option::Option<&str> {
         self.stream_arn.as_deref()
     }
     /// <p>The name of the API action for which to get an endpoint.</p>
-    pub fn api_name(&self) -> std::option::Option<& crate::types::ApiName> {
+    pub fn api_name(&self) -> std::option::Option<&crate::types::ApiName> {
         self.api_name.as_ref()
     }
 }
@@ -50,7 +50,8 @@ impl GetDataEndpointInputBuilder {
     }
     /// <p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>
     pub fn set_stream_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_name = input; self
+        self.stream_name = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
     pub fn stream_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl GetDataEndpointInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>
     pub fn set_stream_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stream_arn = input; self
+        self.stream_arn = input;
+        self
     }
     /// <p>The name of the API action for which to get an endpoint.</p>
     pub fn api_name(mut self, input: crate::types::ApiName) -> Self {
@@ -68,20 +70,20 @@ impl GetDataEndpointInputBuilder {
     }
     /// <p>The name of the API action for which to get an endpoint.</p>
     pub fn set_api_name(mut self, input: std::option::Option<crate::types::ApiName>) -> Self {
-        self.api_name = input; self
+        self.api_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDataEndpointInput`](crate::operation::get_data_endpoint::GetDataEndpointInput).
-    pub fn build(self) -> Result<crate::operation::get_data_endpoint::GetDataEndpointInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_data_endpoint::GetDataEndpointInput {
-                stream_name: self.stream_name
-                ,
-                stream_arn: self.stream_arn
-                ,
-                api_name: self.api_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_data_endpoint::GetDataEndpointInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_data_endpoint::GetDataEndpointInput {
+            stream_name: self.stream_name,
+            stream_arn: self.stream_arn,
+            api_name: self.api_name,
+        })
     }
 }
-

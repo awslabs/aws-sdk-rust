@@ -4,59 +4,84 @@ pub use crate::operation::list_principal_policies::_list_principal_policies_outp
 pub use crate::operation::list_principal_policies::_list_principal_policies_input::ListPrincipalPoliciesInputBuilder;
 
 /// Fluent builder constructing a request to `ListPrincipalPolicies`.
-/// 
-/// <p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito Identity format</a>.</p> 
-/// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>ListAttachedPolicies</code> instead.</p> 
+///
+/// <p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito Identity format</a>.</p>
+/// <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <code>ListAttachedPolicies</code> instead.</p>
 /// <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalPolicies</a> action.</p>
 #[deprecated]
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListPrincipalPoliciesFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_principal_policies::builders::ListPrincipalPoliciesInputBuilder,
+    inner: crate::operation::list_principal_policies::builders::ListPrincipalPoliciesInputBuilder,
 }
-impl ListPrincipalPoliciesFluentBuilder  {
+impl ListPrincipalPoliciesFluentBuilder {
     /// Creates a new `ListPrincipalPolicies`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_principal_policies::ListPrincipalPolicies, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_principal_policies::ListPrincipalPoliciesError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_principal_policies::ListPrincipalPoliciesOutput, aws_smithy_http::result::SdkError<crate::operation::list_principal_policies::ListPrincipalPoliciesError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_principal_policies::ListPrincipalPolicies,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_principal_policies::ListPrincipalPoliciesError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_principal_policies::ListPrincipalPoliciesOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_principal_policies::ListPrincipalPoliciesError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_principal_policies::paginator::ListPrincipalPoliciesPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_principal_policies::paginator::ListPrincipalPoliciesPaginator {
-                                crate::operation::list_principal_policies::paginator::ListPrincipalPoliciesPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_principal_policies::paginator::ListPrincipalPoliciesPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_principal_policies::paginator::ListPrincipalPoliciesPaginator {
+        crate::operation::list_principal_policies::paginator::ListPrincipalPoliciesPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// <p>The principal. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).</p>
     pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.principal(input.into());
@@ -98,4 +123,3 @@ impl ListPrincipalPoliciesFluentBuilder  {
         self
     }
 }
-

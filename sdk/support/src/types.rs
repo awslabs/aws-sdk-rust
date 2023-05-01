@@ -68,4 +68,3 @@ pub mod builders;
 
 /// Error types that AWS Support can respond with.
 pub mod error;
-

@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let conditionalformattingiconsettype = unimplemented!();
 /// match conditionalformattingiconsettype {
@@ -39,14 +39,22 @@
 /// Specifically, when `conditionalformattingiconsettype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `ConditionalFormattingIconSetType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum ConditionalFormattingIconSetType {
     #[allow(missing_docs)] // documentation missing in model
     Bars,
@@ -71,59 +79,72 @@ pub enum ConditionalFormattingIconSetType {
     #[allow(missing_docs)] // documentation missing in model
     ThreeShape,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for ConditionalFormattingIconSetType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "BARS" => ConditionalFormattingIconSetType::Bars,
-"CARET_UP_MINUS_DOWN" => ConditionalFormattingIconSetType::CaretUpMinusDown,
-"CHECK_X" => ConditionalFormattingIconSetType::CheckX,
-"FLAGS" => ConditionalFormattingIconSetType::Flags,
-"FOUR_COLOR_ARROW" => ConditionalFormattingIconSetType::FourColorArrow,
-"FOUR_GRAY_ARROW" => ConditionalFormattingIconSetType::FourGrayArrow,
-"PLUS_MINUS" => ConditionalFormattingIconSetType::PlusMinus,
-"THREE_CIRCLE" => ConditionalFormattingIconSetType::ThreeCircle,
-"THREE_COLOR_ARROW" => ConditionalFormattingIconSetType::ThreeColorArrow,
-"THREE_GRAY_ARROW" => ConditionalFormattingIconSetType::ThreeGrayArrow,
-"THREE_SHAPE" => ConditionalFormattingIconSetType::ThreeShape,
-other => ConditionalFormattingIconSetType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for ConditionalFormattingIconSetType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(ConditionalFormattingIconSetType::from(s))
-                }
-            }
-impl ConditionalFormattingIconSetType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    ConditionalFormattingIconSetType::Bars => "BARS",
-    ConditionalFormattingIconSetType::CaretUpMinusDown => "CARET_UP_MINUS_DOWN",
-    ConditionalFormattingIconSetType::CheckX => "CHECK_X",
-    ConditionalFormattingIconSetType::Flags => "FLAGS",
-    ConditionalFormattingIconSetType::FourColorArrow => "FOUR_COLOR_ARROW",
-    ConditionalFormattingIconSetType::FourGrayArrow => "FOUR_GRAY_ARROW",
-    ConditionalFormattingIconSetType::PlusMinus => "PLUS_MINUS",
-    ConditionalFormattingIconSetType::ThreeCircle => "THREE_CIRCLE",
-    ConditionalFormattingIconSetType::ThreeColorArrow => "THREE_COLOR_ARROW",
-    ConditionalFormattingIconSetType::ThreeGrayArrow => "THREE_GRAY_ARROW",
-    ConditionalFormattingIconSetType::ThreeShape => "THREE_SHAPE",
-    ConditionalFormattingIconSetType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "BARS" => ConditionalFormattingIconSetType::Bars,
+            "CARET_UP_MINUS_DOWN" => ConditionalFormattingIconSetType::CaretUpMinusDown,
+            "CHECK_X" => ConditionalFormattingIconSetType::CheckX,
+            "FLAGS" => ConditionalFormattingIconSetType::Flags,
+            "FOUR_COLOR_ARROW" => ConditionalFormattingIconSetType::FourColorArrow,
+            "FOUR_GRAY_ARROW" => ConditionalFormattingIconSetType::FourGrayArrow,
+            "PLUS_MINUS" => ConditionalFormattingIconSetType::PlusMinus,
+            "THREE_CIRCLE" => ConditionalFormattingIconSetType::ThreeCircle,
+            "THREE_COLOR_ARROW" => ConditionalFormattingIconSetType::ThreeColorArrow,
+            "THREE_GRAY_ARROW" => ConditionalFormattingIconSetType::ThreeGrayArrow,
+            "THREE_SHAPE" => ConditionalFormattingIconSetType::ThreeShape,
+            other => ConditionalFormattingIconSetType::Unknown(
+                crate::primitives::UnknownVariantValue(other.to_owned()),
+            ),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["BARS", "CARET_UP_MINUS_DOWN", "CHECK_X", "FLAGS", "FOUR_COLOR_ARROW", "FOUR_GRAY_ARROW", "PLUS_MINUS", "THREE_CIRCLE", "THREE_COLOR_ARROW", "THREE_GRAY_ARROW", "THREE_SHAPE"]
-                }
-            }
-impl AsRef<str> for ConditionalFormattingIconSetType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for ConditionalFormattingIconSetType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ConditionalFormattingIconSetType::from(s))
+    }
+}
+impl ConditionalFormattingIconSetType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            ConditionalFormattingIconSetType::Bars => "BARS",
+            ConditionalFormattingIconSetType::CaretUpMinusDown => "CARET_UP_MINUS_DOWN",
+            ConditionalFormattingIconSetType::CheckX => "CHECK_X",
+            ConditionalFormattingIconSetType::Flags => "FLAGS",
+            ConditionalFormattingIconSetType::FourColorArrow => "FOUR_COLOR_ARROW",
+            ConditionalFormattingIconSetType::FourGrayArrow => "FOUR_GRAY_ARROW",
+            ConditionalFormattingIconSetType::PlusMinus => "PLUS_MINUS",
+            ConditionalFormattingIconSetType::ThreeCircle => "THREE_CIRCLE",
+            ConditionalFormattingIconSetType::ThreeColorArrow => "THREE_COLOR_ARROW",
+            ConditionalFormattingIconSetType::ThreeGrayArrow => "THREE_GRAY_ARROW",
+            ConditionalFormattingIconSetType::ThreeShape => "THREE_SHAPE",
+            ConditionalFormattingIconSetType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "BARS",
+            "CARET_UP_MINUS_DOWN",
+            "CHECK_X",
+            "FLAGS",
+            "FOUR_COLOR_ARROW",
+            "FOUR_GRAY_ARROW",
+            "PLUS_MINUS",
+            "THREE_CIRCLE",
+            "THREE_COLOR_ARROW",
+            "THREE_GRAY_ARROW",
+            "THREE_SHAPE",
+        ]
+    }
+}
+impl AsRef<str> for ConditionalFormattingIconSetType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

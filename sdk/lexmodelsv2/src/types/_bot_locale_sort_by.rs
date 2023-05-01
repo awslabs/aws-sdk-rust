@@ -3,7 +3,7 @@
 /// <p>Specifies attributes for sorting a list of bot locales.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BotLocaleSortBy  {
+pub struct BotLocaleSortBy {
     /// <p>The bot locale attribute to sort by.</p>
     #[doc(hidden)]
     pub attribute: std::option::Option<crate::types::BotLocaleSortAttribute>,
@@ -13,11 +13,11 @@ pub struct BotLocaleSortBy  {
 }
 impl BotLocaleSortBy {
     /// <p>The bot locale attribute to sort by.</p>
-    pub fn attribute(&self) -> std::option::Option<& crate::types::BotLocaleSortAttribute> {
+    pub fn attribute(&self) -> std::option::Option<&crate::types::BotLocaleSortAttribute> {
         self.attribute.as_ref()
     }
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
-    pub fn order(&self) -> std::option::Option<& crate::types::SortOrder> {
+    pub fn order(&self) -> std::option::Option<&crate::types::SortOrder> {
         self.order.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl BotLocaleSortByBuilder {
         self
     }
     /// <p>The bot locale attribute to sort by.</p>
-    pub fn set_attribute(mut self, input: std::option::Option<crate::types::BotLocaleSortAttribute>) -> Self {
-        self.attribute = input; self
+    pub fn set_attribute(
+        mut self,
+        input: std::option::Option<crate::types::BotLocaleSortAttribute>,
+    ) -> Self {
+        self.attribute = input;
+        self
     }
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
     pub fn order(mut self, input: crate::types::SortOrder) -> Self {
@@ -52,16 +56,14 @@ impl BotLocaleSortByBuilder {
     }
     /// <p>Specifies whether to sort the bot locales in ascending or descending order.</p>
     pub fn set_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
-        self.order = input; self
+        self.order = input;
+        self
     }
     /// Consumes the builder and constructs a [`BotLocaleSortBy`](crate::types::BotLocaleSortBy).
     pub fn build(self) -> crate::types::BotLocaleSortBy {
         crate::types::BotLocaleSortBy {
-            attribute: self.attribute
-            ,
-            order: self.order
-            ,
+            attribute: self.attribute,
+            order: self.order,
         }
     }
 }
-

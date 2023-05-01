@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UploadEntityDefinitionsInput  {
+pub struct UploadEntityDefinitionsInput {
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
     #[doc(hidden)]
     pub document: std::option::Option<crate::types::DefinitionDocument>,
@@ -15,7 +15,7 @@ pub struct UploadEntityDefinitionsInput  {
 }
 impl UploadEntityDefinitionsInput {
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
-    pub fn document(&self) -> std::option::Option<& crate::types::DefinitionDocument> {
+    pub fn document(&self) -> std::option::Option<&crate::types::DefinitionDocument> {
         self.document.as_ref()
     }
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
@@ -29,7 +29,9 @@ impl UploadEntityDefinitionsInput {
 }
 impl UploadEntityDefinitionsInput {
     /// Creates a new builder-style object to manufacture [`UploadEntityDefinitionsInput`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput).
-    pub fn builder() -> crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder
+    {
         crate::operation::upload_entity_definitions::builders::UploadEntityDefinitionsInputBuilder::default()
     }
 }
@@ -49,8 +51,12 @@ impl UploadEntityDefinitionsInputBuilder {
         self
     }
     /// <p>The <code>DefinitionDocument</code> that defines the updated entities.</p>
-    pub fn set_document(mut self, input: std::option::Option<crate::types::DefinitionDocument>) -> Self {
-        self.document = input; self
+    pub fn set_document(
+        mut self,
+        input: std::option::Option<crate::types::DefinitionDocument>,
+    ) -> Self {
+        self.document = input;
+        self
     }
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub fn sync_with_public_namespace(mut self, input: bool) -> Self {
@@ -59,7 +65,8 @@ impl UploadEntityDefinitionsInputBuilder {
     }
     /// <p>A Boolean that specifies whether to synchronize with the latest version of the public namespace. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub fn set_sync_with_public_namespace(mut self, input: std::option::Option<bool>) -> Self {
-        self.sync_with_public_namespace = input; self
+        self.sync_with_public_namespace = input;
+        self
     }
     /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub fn deprecate_existing_entities(mut self, input: bool) -> Self {
@@ -68,22 +75,22 @@ impl UploadEntityDefinitionsInputBuilder {
     }
     /// <p>A Boolean that specifies whether to deprecate all entities in the latest version before uploading the new <code>DefinitionDocument</code>. If set to <code>true</code>, the upload will create a new namespace version.</p>
     pub fn set_deprecate_existing_entities(mut self, input: std::option::Option<bool>) -> Self {
-        self.deprecate_existing_entities = input; self
+        self.deprecate_existing_entities = input;
+        self
     }
     /// Consumes the builder and constructs a [`UploadEntityDefinitionsInput`](crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput).
-    pub fn build(self) -> Result<crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::upload_entity_definitions::UploadEntityDefinitionsInput {
-                document: self.document
-                ,
-                sync_with_public_namespace: self.sync_with_public_namespace
-                    .unwrap_or_default()
-                ,
-                deprecate_existing_entities: self.deprecate_existing_entities
-                    .unwrap_or_default()
-                ,
-            }
+                document: self.document,
+                sync_with_public_namespace: self.sync_with_public_namespace.unwrap_or_default(),
+                deprecate_existing_entities: self.deprecate_existing_entities.unwrap_or_default(),
+            },
         )
     }
 }
-

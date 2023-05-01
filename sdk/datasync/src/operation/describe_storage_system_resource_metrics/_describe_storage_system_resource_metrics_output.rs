@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStorageSystemResourceMetricsOutput  {
+pub struct DescribeStorageSystemResourceMetricsOutput {
     /// <p>The details that your discovery job collected about your storage system resource.</p>
     #[doc(hidden)]
     pub metrics: std::option::Option<std::vec::Vec<crate::types::ResourceMetrics>>,
@@ -13,22 +13,22 @@ pub struct DescribeStorageSystemResourceMetricsOutput  {
 }
 impl DescribeStorageSystemResourceMetricsOutput {
     /// <p>The details that your discovery job collected about your storage system resource.</p>
-    pub fn metrics(&self) -> std::option::Option<& [crate::types::ResourceMetrics]> {
+    pub fn metrics(&self) -> std::option::Option<&[crate::types::ResourceMetrics]> {
         self.metrics.as_deref()
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeStorageSystemResourceMetricsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeStorageSystemResourceMetricsOutput {
     /// Creates a new builder-style object to manufacture [`DescribeStorageSystemResourceMetricsOutput`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput).
-    pub fn builder() -> crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsOutputBuilder {
+    pub fn builder() -> crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsOutputBuilder{
         crate::operation::describe_storage_system_resource_metrics::builders::DescribeStorageSystemResourceMetricsOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl DescribeStorageSystemResourceMetricsOutputBuilder {
     /// <p>The details that your discovery job collected about your storage system resource.</p>
     pub fn metrics(mut self, input: crate::types::ResourceMetrics) -> Self {
         let mut v = self.metrics.unwrap_or_default();
-                        v.push(input);
-                        self.metrics = Some(v);
-                        self
+        v.push(input);
+        self.metrics = Some(v);
+        self
     }
     /// <p>The details that your discovery job collected about your storage system resource.</p>
-    pub fn set_metrics(mut self, input: std::option::Option<std::vec::Vec<crate::types::ResourceMetrics>>) -> Self {
-        self.metrics = input; self
+    pub fn set_metrics(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ResourceMetrics>>,
+    ) -> Self {
+        self.metrics = input;
+        self
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +68,20 @@ impl DescribeStorageSystemResourceMetricsOutputBuilder {
     }
     /// <p>The opaque string that indicates the position to begin the next list of results in the response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeStorageSystemResourceMetricsOutput`](crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput).
-    pub fn build(self) -> crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput {
+    pub fn build(self) -> crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput{
         crate::operation::describe_storage_system_resource_metrics::DescribeStorageSystemResourceMetricsOutput {
             metrics: self.metrics
             ,
@@ -86,4 +91,3 @@ impl DescribeStorageSystemResourceMetricsOutputBuilder {
         }
     }
 }
-

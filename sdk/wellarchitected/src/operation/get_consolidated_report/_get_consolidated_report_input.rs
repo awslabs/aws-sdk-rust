@@ -2,8 +2,8 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetConsolidatedReportInput  {
-    /// <p>The format of the consolidated report.</p> 
+pub struct GetConsolidatedReportInput {
+    /// <p>The format of the consolidated report.</p>
     /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::ReportFormat>,
@@ -18,9 +18,9 @@ pub struct GetConsolidatedReportInput  {
     pub max_results: std::option::Option<i32>,
 }
 impl GetConsolidatedReportInput {
-    /// <p>The format of the consolidated report.</p> 
+    /// <p>The format of the consolidated report.</p>
     /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
-    pub fn format(&self) -> std::option::Option<& crate::types::ReportFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::ReportFormat> {
         self.format.as_ref()
     }
     /// <p>Set to <code>true</code> to have shared resources included in the report.</p>
@@ -28,7 +28,7 @@ impl GetConsolidatedReportInput {
         self.include_shared_resources
     }
     /// <p>The token to use to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return for this request.</p>
@@ -38,7 +38,9 @@ impl GetConsolidatedReportInput {
 }
 impl GetConsolidatedReportInput {
     /// Creates a new builder-style object to manufacture [`GetConsolidatedReportInput`](crate::operation::get_consolidated_report::GetConsolidatedReportInput).
-    pub fn builder() -> crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder
+    {
         crate::operation::get_consolidated_report::builders::GetConsolidatedReportInputBuilder::default()
     }
 }
@@ -53,16 +55,17 @@ pub struct GetConsolidatedReportInputBuilder {
     pub(crate) max_results: std::option::Option<i32>,
 }
 impl GetConsolidatedReportInputBuilder {
-    /// <p>The format of the consolidated report.</p> 
+    /// <p>The format of the consolidated report.</p>
     /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
     pub fn format(mut self, input: crate::types::ReportFormat) -> Self {
         self.format = Some(input);
         self
     }
-    /// <p>The format of the consolidated report.</p> 
+    /// <p>The format of the consolidated report.</p>
     /// <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p>
     pub fn set_format(mut self, input: std::option::Option<crate::types::ReportFormat>) -> Self {
-        self.format = input; self
+        self.format = input;
+        self
     }
     /// <p>Set to <code>true</code> to have shared resources included in the report.</p>
     pub fn include_shared_resources(mut self, input: bool) -> Self {
@@ -71,7 +74,8 @@ impl GetConsolidatedReportInputBuilder {
     }
     /// <p>Set to <code>true</code> to have shared resources included in the report.</p>
     pub fn set_include_shared_resources(mut self, input: std::option::Option<bool>) -> Self {
-        self.include_shared_resources = input; self
+        self.include_shared_resources = input;
+        self
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -80,7 +84,8 @@ impl GetConsolidatedReportInputBuilder {
     }
     /// <p>The token to use to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -89,22 +94,23 @@ impl GetConsolidatedReportInputBuilder {
     }
     /// <p>The maximum number of results to return for this request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetConsolidatedReportInput`](crate::operation::get_consolidated_report::GetConsolidatedReportInput).
-    pub fn build(self) -> Result<crate::operation::get_consolidated_report::GetConsolidatedReportInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_consolidated_report::GetConsolidatedReportInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_consolidated_report::GetConsolidatedReportInput {
-                format: self.format
-                ,
-                include_shared_resources: self.include_shared_resources
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                format: self.format,
+                include_shared_resources: self.include_shared_resources,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

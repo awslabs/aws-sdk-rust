@@ -3,7 +3,7 @@
 /// Placeholder documentation for DescribeInputSecurityGroupResponse
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeInputSecurityGroupOutput  {
+pub struct DescribeInputSecurityGroupOutput {
     /// Unique ARN of Input Security Group
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
@@ -18,7 +18,8 @@ pub struct DescribeInputSecurityGroupOutput  {
     pub state: std::option::Option<crate::types::InputSecurityGroupState>,
     /// A collection of key-value pairs.
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// Whitelist rules and their sync status
     #[doc(hidden)]
     pub whitelist_rules: std::option::Option<std::vec::Vec<crate::types::InputWhitelistRule>>,
@@ -26,38 +27,41 @@ pub struct DescribeInputSecurityGroupOutput  {
 }
 impl DescribeInputSecurityGroupOutput {
     /// Unique ARN of Input Security Group
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// The Id of the Input Security Group
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// The list of inputs currently using this Input Security Group.
-    pub fn inputs(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn inputs(&self) -> std::option::Option<&[std::string::String]> {
         self.inputs.as_deref()
     }
     /// The current state of the Input Security Group.
-    pub fn state(&self) -> std::option::Option<& crate::types::InputSecurityGroupState> {
+    pub fn state(&self) -> std::option::Option<&crate::types::InputSecurityGroupState> {
         self.state.as_ref()
     }
     /// A collection of key-value pairs.
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// Whitelist rules and their sync status
-    pub fn whitelist_rules(&self) -> std::option::Option<& [crate::types::InputWhitelistRule]> {
+    pub fn whitelist_rules(&self) -> std::option::Option<&[crate::types::InputWhitelistRule]> {
         self.whitelist_rules.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeInputSecurityGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeInputSecurityGroupOutput {
     /// Creates a new builder-style object to manufacture [`DescribeInputSecurityGroupOutput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput).
-    pub fn builder() -> crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupOutputBuilder {
+    pub fn builder() -> crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupOutputBuilder{
         crate::operation::describe_input_security_group::builders::DescribeInputSecurityGroupOutputBuilder::default()
     }
 }
@@ -70,8 +74,10 @@ pub struct DescribeInputSecurityGroupOutputBuilder {
     pub(crate) id: std::option::Option<std::string::String>,
     pub(crate) inputs: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) state: std::option::Option<crate::types::InputSecurityGroupState>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) whitelist_rules: std::option::Option<std::vec::Vec<crate::types::InputWhitelistRule>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) whitelist_rules:
+        std::option::Option<std::vec::Vec<crate::types::InputWhitelistRule>>,
     _request_id: Option<String>,
 }
 impl DescribeInputSecurityGroupOutputBuilder {
@@ -82,7 +88,8 @@ impl DescribeInputSecurityGroupOutputBuilder {
     }
     /// Unique ARN of Input Security Group
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// The Id of the Input Security Group
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,7 +98,8 @@ impl DescribeInputSecurityGroupOutputBuilder {
     }
     /// The Id of the Input Security Group
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Appends an item to `inputs`.
     ///
@@ -100,13 +108,17 @@ impl DescribeInputSecurityGroupOutputBuilder {
     /// The list of inputs currently using this Input Security Group.
     pub fn inputs(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.inputs.unwrap_or_default();
-                        v.push(input.into());
-                        self.inputs = Some(v);
-                        self
+        v.push(input.into());
+        self.inputs = Some(v);
+        self
     }
     /// The list of inputs currently using this Input Security Group.
-    pub fn set_inputs(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.inputs = input; self
+    pub fn set_inputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.inputs = input;
+        self
     }
     /// The current state of the Input Security Group.
     pub fn state(mut self, input: crate::types::InputSecurityGroupState) -> Self {
@@ -114,23 +126,37 @@ impl DescribeInputSecurityGroupOutputBuilder {
         self
     }
     /// The current state of the Input Security Group.
-    pub fn set_state(mut self, input: std::option::Option<crate::types::InputSecurityGroupState>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::InputSecurityGroupState>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// A collection of key-value pairs.
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// A collection of key-value pairs.
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// Appends an item to `whitelist_rules`.
     ///
@@ -139,40 +165,39 @@ impl DescribeInputSecurityGroupOutputBuilder {
     /// Whitelist rules and their sync status
     pub fn whitelist_rules(mut self, input: crate::types::InputWhitelistRule) -> Self {
         let mut v = self.whitelist_rules.unwrap_or_default();
-                        v.push(input);
-                        self.whitelist_rules = Some(v);
-                        self
+        v.push(input);
+        self.whitelist_rules = Some(v);
+        self
     }
     /// Whitelist rules and their sync status
-    pub fn set_whitelist_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::InputWhitelistRule>>) -> Self {
-        self.whitelist_rules = input; self
+    pub fn set_whitelist_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InputWhitelistRule>>,
+    ) -> Self {
+        self.whitelist_rules = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeInputSecurityGroupOutput`](crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput).
-    pub fn build(self) -> crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput {
         crate::operation::describe_input_security_group::DescribeInputSecurityGroupOutput {
-            arn: self.arn
-            ,
-            id: self.id
-            ,
-            inputs: self.inputs
-            ,
-            state: self.state
-            ,
-            tags: self.tags
-            ,
-            whitelist_rules: self.whitelist_rules
-            ,
+            arn: self.arn,
+            id: self.id,
+            inputs: self.inputs,
+            state: self.state,
+            tags: self.tags,
+            whitelist_rules: self.whitelist_rules,
             _request_id: self._request_id,
         }
     }
 }
-

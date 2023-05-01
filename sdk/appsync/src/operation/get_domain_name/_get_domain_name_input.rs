@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDomainNameInput  {
+pub struct GetDomainNameInput {
     /// <p>The domain name.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
 }
 impl GetDomainNameInput {
     /// <p>The domain name.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetDomainNameInputBuilder {
     }
     /// <p>The domain name.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetDomainNameInput`](crate::operation::get_domain_name::GetDomainNameInput).
-    pub fn build(self) -> Result<crate::operation::get_domain_name::GetDomainNameInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_domain_name::GetDomainNameInput {
-                domain_name: self.domain_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_domain_name::GetDomainNameInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_domain_name::GetDomainNameInput {
+            domain_name: self.domain_name,
+        })
     }
 }
-

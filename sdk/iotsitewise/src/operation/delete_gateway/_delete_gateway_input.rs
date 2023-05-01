@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGatewayInput  {
+pub struct DeleteGatewayInput {
     /// <p>The ID of the gateway to delete.</p>
     #[doc(hidden)]
     pub gateway_id: std::option::Option<std::string::String>,
 }
 impl DeleteGatewayInput {
     /// <p>The ID of the gateway to delete.</p>
-    pub fn gateway_id(&self) -> std::option::Option<& str> {
+    pub fn gateway_id(&self) -> std::option::Option<&str> {
         self.gateway_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl DeleteGatewayInputBuilder {
     }
     /// <p>The ID of the gateway to delete.</p>
     pub fn set_gateway_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.gateway_id = input; self
+        self.gateway_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteGatewayInput`](crate::operation::delete_gateway::DeleteGatewayInput).
-    pub fn build(self) -> Result<crate::operation::delete_gateway::DeleteGatewayInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_gateway::DeleteGatewayInput {
-                gateway_id: self.gateway_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_gateway::DeleteGatewayInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_gateway::DeleteGatewayInput {
+            gateway_id: self.gateway_id,
+        })
     }
 }
-

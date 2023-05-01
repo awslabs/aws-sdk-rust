@@ -3,7 +3,7 @@
 /// <p>Specifies the infrastructure update policy for the compute environment. For more information about infrastructure updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating compute environments</a> in the <i>Batch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePolicy  {
+pub struct UpdatePolicy {
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
     #[doc(hidden)]
     pub terminate_jobs_on_update: std::option::Option<bool>,
@@ -43,7 +43,8 @@ impl UpdatePolicyBuilder {
     }
     /// <p>Specifies whether jobs are automatically terminated when the computer environment infrastructure is updated. The default value is <code>false</code>.</p>
     pub fn set_terminate_jobs_on_update(mut self, input: std::option::Option<bool>) -> Self {
-        self.terminate_jobs_on_update = input; self
+        self.terminate_jobs_on_update = input;
+        self
     }
     /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
     pub fn job_execution_timeout_minutes(mut self, input: i64) -> Self {
@@ -52,17 +53,14 @@ impl UpdatePolicyBuilder {
     }
     /// <p>Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value is 30.</p>
     pub fn set_job_execution_timeout_minutes(mut self, input: std::option::Option<i64>) -> Self {
-        self.job_execution_timeout_minutes = input; self
+        self.job_execution_timeout_minutes = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdatePolicy`](crate::types::UpdatePolicy).
     pub fn build(self) -> crate::types::UpdatePolicy {
         crate::types::UpdatePolicy {
-            terminate_jobs_on_update: self.terminate_jobs_on_update
-            ,
-            job_execution_timeout_minutes: self.job_execution_timeout_minutes
-                .unwrap_or_default()
-            ,
+            terminate_jobs_on_update: self.terminate_jobs_on_update,
+            job_execution_timeout_minutes: self.job_execution_timeout_minutes.unwrap_or_default(),
         }
     }
 }
-

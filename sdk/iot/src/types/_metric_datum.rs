@@ -3,7 +3,7 @@
 /// <p>A metric.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricDatum  {
+pub struct MetricDatum {
     /// <p>The time the metric value was reported.</p>
     #[doc(hidden)]
     pub timestamp: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct MetricDatum  {
 }
 impl MetricDatum {
     /// <p>The time the metric value was reported.</p>
-    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The value reported for the metric.</p>
-    pub fn value(&self) -> std::option::Option<& crate::types::MetricValue> {
+    pub fn value(&self) -> std::option::Option<&crate::types::MetricValue> {
         self.value.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl MetricDatumBuilder {
     }
     /// <p>The time the metric value was reported.</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
     /// <p>The value reported for the metric.</p>
     pub fn value(mut self, input: crate::types::MetricValue) -> Self {
@@ -52,16 +53,14 @@ impl MetricDatumBuilder {
     }
     /// <p>The value reported for the metric.</p>
     pub fn set_value(mut self, input: std::option::Option<crate::types::MetricValue>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricDatum`](crate::types::MetricDatum).
     pub fn build(self) -> crate::types::MetricDatum {
         crate::types::MetricDatum {
-            timestamp: self.timestamp
-            ,
-            value: self.value
-            ,
+            timestamp: self.timestamp,
+            value: self.value,
         }
     }
 }
-

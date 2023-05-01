@@ -4,57 +4,81 @@ pub use crate::operation::delete_local_gateway_route::_delete_local_gateway_rout
 pub use crate::operation::delete_local_gateway_route::_delete_local_gateway_route_input::DeleteLocalGatewayRouteInputBuilder;
 
 /// Fluent builder constructing a request to `DeleteLocalGatewayRoute`.
-/// 
+///
 /// <p>Deletes the specified route from the specified local gateway route table.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLocalGatewayRouteFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteInputBuilder,
+    inner:
+        crate::operation::delete_local_gateway_route::builders::DeleteLocalGatewayRouteInputBuilder,
 }
-impl DeleteLocalGatewayRouteFluentBuilder  {
+impl DeleteLocalGatewayRouteFluentBuilder {
     /// Creates a new `DeleteLocalGatewayRoute`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_local_gateway_route::DeleteLocalGatewayRoute, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput, aws_smithy_http::result::SdkError<crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::delete_local_gateway_route::DeleteLocalGatewayRoute,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
     pub fn destination_cidr_block(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.destination_cidr_block(input.into());
         self
     }
     /// <p>The CIDR range for the route. This must match the CIDR for the route exactly.</p>
-    pub fn set_destination_cidr_block(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_cidr_block(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_cidr_block(input);
         self
     }
@@ -64,7 +88,10 @@ impl DeleteLocalGatewayRouteFluentBuilder  {
         self
     }
     /// <p>The ID of the local gateway route table.</p>
-    pub fn set_local_gateway_route_table_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_local_gateway_route_table_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_local_gateway_route_table_id(input);
         self
     }
@@ -84,9 +111,11 @@ impl DeleteLocalGatewayRouteFluentBuilder  {
         self
     }
     /// <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code> in the same request. </p>
-    pub fn set_destination_prefix_list_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_destination_prefix_list_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_destination_prefix_list_id(input);
         self
     }
 }
-

@@ -12,4 +12,3 @@ pub mod start_next_pending_job_execution;
 
 /// Types for the `UpdateJobExecution` operation.
 pub mod update_job_execution;
-

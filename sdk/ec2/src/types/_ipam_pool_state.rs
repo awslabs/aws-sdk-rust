@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let ipampoolstate = unimplemented!();
 /// match ipampoolstate {
@@ -40,14 +40,22 @@
 /// Specifically, when `ipampoolstate` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `IpamPoolState::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum IpamPoolState {
     #[allow(missing_docs)] // documentation missing in model
     CreateComplete,
@@ -74,61 +82,75 @@ pub enum IpamPoolState {
     #[allow(missing_docs)] // documentation missing in model
     RestoreInProgress,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for IpamPoolState {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "create-complete" => IpamPoolState::CreateComplete,
-"create-failed" => IpamPoolState::CreateFailed,
-"create-in-progress" => IpamPoolState::CreateInProgress,
-"delete-complete" => IpamPoolState::DeleteComplete,
-"delete-failed" => IpamPoolState::DeleteFailed,
-"delete-in-progress" => IpamPoolState::DeleteInProgress,
-"isolate-complete" => IpamPoolState::IsolateComplete,
-"isolate-in-progress" => IpamPoolState::IsolateInProgress,
-"modify-complete" => IpamPoolState::ModifyComplete,
-"modify-failed" => IpamPoolState::ModifyFailed,
-"modify-in-progress" => IpamPoolState::ModifyInProgress,
-"restore-in-progress" => IpamPoolState::RestoreInProgress,
-other => IpamPoolState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "create-complete" => IpamPoolState::CreateComplete,
+            "create-failed" => IpamPoolState::CreateFailed,
+            "create-in-progress" => IpamPoolState::CreateInProgress,
+            "delete-complete" => IpamPoolState::DeleteComplete,
+            "delete-failed" => IpamPoolState::DeleteFailed,
+            "delete-in-progress" => IpamPoolState::DeleteInProgress,
+            "isolate-complete" => IpamPoolState::IsolateComplete,
+            "isolate-in-progress" => IpamPoolState::IsolateInProgress,
+            "modify-complete" => IpamPoolState::ModifyComplete,
+            "modify-failed" => IpamPoolState::ModifyFailed,
+            "modify-in-progress" => IpamPoolState::ModifyInProgress,
+            "restore-in-progress" => IpamPoolState::RestoreInProgress,
+            other => {
+                IpamPoolState::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for IpamPoolState {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(IpamPoolState::from(s))
-                }
-            }
-impl IpamPoolState {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    IpamPoolState::CreateComplete => "create-complete",
-    IpamPoolState::CreateFailed => "create-failed",
-    IpamPoolState::CreateInProgress => "create-in-progress",
-    IpamPoolState::DeleteComplete => "delete-complete",
-    IpamPoolState::DeleteFailed => "delete-failed",
-    IpamPoolState::DeleteInProgress => "delete-in-progress",
-    IpamPoolState::IsolateComplete => "isolate-complete",
-    IpamPoolState::IsolateInProgress => "isolate-in-progress",
-    IpamPoolState::ModifyComplete => "modify-complete",
-    IpamPoolState::ModifyFailed => "modify-failed",
-    IpamPoolState::ModifyInProgress => "modify-in-progress",
-    IpamPoolState::RestoreInProgress => "restore-in-progress",
-    IpamPoolState::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["create-complete", "create-failed", "create-in-progress", "delete-complete", "delete-failed", "delete-in-progress", "isolate-complete", "isolate-in-progress", "modify-complete", "modify-failed", "modify-in-progress", "restore-in-progress"]
-                }
-            }
-impl AsRef<str> for IpamPoolState {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for IpamPoolState {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(IpamPoolState::from(s))
+    }
+}
+impl IpamPoolState {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            IpamPoolState::CreateComplete => "create-complete",
+            IpamPoolState::CreateFailed => "create-failed",
+            IpamPoolState::CreateInProgress => "create-in-progress",
+            IpamPoolState::DeleteComplete => "delete-complete",
+            IpamPoolState::DeleteFailed => "delete-failed",
+            IpamPoolState::DeleteInProgress => "delete-in-progress",
+            IpamPoolState::IsolateComplete => "isolate-complete",
+            IpamPoolState::IsolateInProgress => "isolate-in-progress",
+            IpamPoolState::ModifyComplete => "modify-complete",
+            IpamPoolState::ModifyFailed => "modify-failed",
+            IpamPoolState::ModifyInProgress => "modify-in-progress",
+            IpamPoolState::RestoreInProgress => "restore-in-progress",
+            IpamPoolState::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "create-complete",
+            "create-failed",
+            "create-in-progress",
+            "delete-complete",
+            "delete-failed",
+            "delete-in-progress",
+            "isolate-complete",
+            "isolate-in-progress",
+            "modify-complete",
+            "modify-failed",
+            "modify-in-progress",
+            "restore-in-progress",
+        ]
+    }
+}
+impl AsRef<str> for IpamPoolState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

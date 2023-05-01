@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyUsageLimitInput  {
+pub struct ModifyUsageLimitInput {
     /// <p>The identifier of the usage limit to modify.</p>
     #[doc(hidden)]
     pub usage_limit_id: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ModifyUsageLimitInput  {
 }
 impl ModifyUsageLimitInput {
     /// <p>The identifier of the usage limit to modify.</p>
-    pub fn usage_limit_id(&self) -> std::option::Option<& str> {
+    pub fn usage_limit_id(&self) -> std::option::Option<&str> {
         self.usage_limit_id.as_deref()
     }
     /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
@@ -23,13 +23,14 @@ impl ModifyUsageLimitInput {
         self.amount
     }
     /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
-    pub fn breach_action(&self) -> std::option::Option<& crate::types::UsageLimitBreachAction> {
+    pub fn breach_action(&self) -> std::option::Option<&crate::types::UsageLimitBreachAction> {
         self.breach_action.as_ref()
     }
 }
 impl ModifyUsageLimitInput {
     /// Creates a new builder-style object to manufacture [`ModifyUsageLimitInput`](crate::operation::modify_usage_limit::ModifyUsageLimitInput).
-    pub fn builder() -> crate::operation::modify_usage_limit::builders::ModifyUsageLimitInputBuilder {
+    pub fn builder() -> crate::operation::modify_usage_limit::builders::ModifyUsageLimitInputBuilder
+    {
         crate::operation::modify_usage_limit::builders::ModifyUsageLimitInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl ModifyUsageLimitInputBuilder {
     }
     /// <p>The identifier of the usage limit to modify.</p>
     pub fn set_usage_limit_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.usage_limit_id = input; self
+        self.usage_limit_id = input;
+        self
     }
     /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn amount(mut self, input: i64) -> Self {
@@ -59,7 +61,8 @@ impl ModifyUsageLimitInputBuilder {
     }
     /// <p>The new limit amount. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn set_amount(mut self, input: std::option::Option<i64>) -> Self {
-        self.amount = input; self
+        self.amount = input;
+        self
     }
     /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
     pub fn breach_action(mut self, input: crate::types::UsageLimitBreachAction) -> Self {
@@ -67,21 +70,26 @@ impl ModifyUsageLimitInputBuilder {
         self
     }
     /// <p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <code>UsageLimit</code>. </p>
-    pub fn set_breach_action(mut self, input: std::option::Option<crate::types::UsageLimitBreachAction>) -> Self {
-        self.breach_action = input; self
+    pub fn set_breach_action(
+        mut self,
+        input: std::option::Option<crate::types::UsageLimitBreachAction>,
+    ) -> Self {
+        self.breach_action = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyUsageLimitInput`](crate::operation::modify_usage_limit::ModifyUsageLimitInput).
-    pub fn build(self) -> Result<crate::operation::modify_usage_limit::ModifyUsageLimitInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::modify_usage_limit::ModifyUsageLimitInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::modify_usage_limit::ModifyUsageLimitInput {
-                usage_limit_id: self.usage_limit_id
-                ,
-                amount: self.amount
-                ,
-                breach_action: self.breach_action
-                ,
-            }
+                usage_limit_id: self.usage_limit_id,
+                amount: self.amount,
+                breach_action: self.breach_action,
+            },
         )
     }
 }
-

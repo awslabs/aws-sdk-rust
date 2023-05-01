@@ -2,19 +2,19 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRotationInput  {
+pub struct UpdateRotationInput {
     /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
     #[doc(hidden)]
     pub rotation_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p> 
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     #[doc(hidden)]
     pub contact_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The date and time the rotation goes into effect.</p>
     #[doc(hidden)]
     pub start_time: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note> 
-    /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p> 
+    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
+    /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
     /// </note>
     #[doc(hidden)]
     pub time_zone_id: std::option::Option<std::string::String>,
@@ -24,26 +24,26 @@ pub struct UpdateRotationInput  {
 }
 impl UpdateRotationInput {
     /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
-    pub fn rotation_id(&self) -> std::option::Option<& str> {
+    pub fn rotation_id(&self) -> std::option::Option<&str> {
         self.rotation_id.as_deref()
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p> 
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    pub fn contact_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn contact_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.contact_ids.as_deref()
     }
     /// <p>The date and time the rotation goes into effect.</p>
-    pub fn start_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn start_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.start_time.as_ref()
     }
-    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note> 
-    /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p> 
+    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
+    /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
     /// </note>
-    pub fn time_zone_id(&self) -> std::option::Option<& str> {
+    pub fn time_zone_id(&self) -> std::option::Option<&str> {
         self.time_zone_id.as_deref()
     }
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
-    pub fn recurrence(&self) -> std::option::Option<& crate::types::RecurrenceSettings> {
+    pub fn recurrence(&self) -> std::option::Option<&crate::types::RecurrenceSettings> {
         self.recurrence.as_ref()
     }
 }
@@ -72,24 +72,29 @@ impl UpdateRotationInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the rotation to update.</p>
     pub fn set_rotation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.rotation_id = input; self
+        self.rotation_id = input;
+        self
     }
     /// Appends an item to `contact_ids`.
     ///
     /// To override the contents of this collection use [`set_contact_ids`](Self::set_contact_ids).
     ///
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p> 
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
     pub fn contact_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.contact_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.contact_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.contact_ids = Some(v);
+        self
     }
-    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p> 
+    /// <p>The Amazon Resource Names (ARNs) of the contacts to include in the updated rotation. </p>
     /// <p>The order in which you list the contacts is their shift order in the rotation schedule.</p>
-    pub fn set_contact_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.contact_ids = input; self
+    pub fn set_contact_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.contact_ids = input;
+        self
     }
     /// <p>The date and time the rotation goes into effect.</p>
     pub fn start_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -97,21 +102,26 @@ impl UpdateRotationInputBuilder {
         self
     }
     /// <p>The date and time the rotation goes into effect.</p>
-    pub fn set_start_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.start_time = input; self
+    pub fn set_start_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.start_time = input;
+        self
     }
-    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note> 
-    /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p> 
+    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
+    /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
     /// </note>
     pub fn time_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.time_zone_id = Some(input.into());
         self
     }
-    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note> 
-    /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p> 
+    /// <p>The time zone to base the updated rotation’s activity on, in Internet Assigned Numbers Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</p> <note>
+    /// <p>Designators for time zones that don’t support Daylight Savings Time Rules, such as Pacific Standard Time (PST) and Pacific Daylight Time (PDT), aren't supported.</p>
     /// </note>
     pub fn set_time_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.time_zone_id = input; self
+        self.time_zone_id = input;
+        self
     }
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
     pub fn recurrence(mut self, input: crate::types::RecurrenceSettings) -> Self {
@@ -119,25 +129,26 @@ impl UpdateRotationInputBuilder {
         self
     }
     /// <p>Information about how long the updated rotation lasts before restarting at the beginning of the shift order.</p>
-    pub fn set_recurrence(mut self, input: std::option::Option<crate::types::RecurrenceSettings>) -> Self {
-        self.recurrence = input; self
+    pub fn set_recurrence(
+        mut self,
+        input: std::option::Option<crate::types::RecurrenceSettings>,
+    ) -> Self {
+        self.recurrence = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateRotationInput`](crate::operation::update_rotation::UpdateRotationInput).
-    pub fn build(self) -> Result<crate::operation::update_rotation::UpdateRotationInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_rotation::UpdateRotationInput {
-                rotation_id: self.rotation_id
-                ,
-                contact_ids: self.contact_ids
-                ,
-                start_time: self.start_time
-                ,
-                time_zone_id: self.time_zone_id
-                ,
-                recurrence: self.recurrence
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_rotation::UpdateRotationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_rotation::UpdateRotationInput {
+            rotation_id: self.rotation_id,
+            contact_ids: self.contact_ids,
+            start_time: self.start_time,
+            time_zone_id: self.time_zone_id,
+            recurrence: self.recurrence,
+        })
     }
 }
-

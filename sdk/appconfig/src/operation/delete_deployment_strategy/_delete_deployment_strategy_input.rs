@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDeploymentStrategyInput  {
+pub struct DeleteDeploymentStrategyInput {
     /// <p>The ID of the deployment strategy you want to delete.</p>
     #[doc(hidden)]
     pub deployment_strategy_id: std::option::Option<std::string::String>,
 }
 impl DeleteDeploymentStrategyInput {
     /// <p>The ID of the deployment strategy you want to delete.</p>
-    pub fn deployment_strategy_id(&self) -> std::option::Option<& str> {
+    pub fn deployment_strategy_id(&self) -> std::option::Option<&str> {
         self.deployment_strategy_id.as_deref()
     }
 }
 impl DeleteDeploymentStrategyInput {
     /// Creates a new builder-style object to manufacture [`DeleteDeploymentStrategyInput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput).
-    pub fn builder() -> crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyInputBuilder
+    {
         crate::operation::delete_deployment_strategy::builders::DeleteDeploymentStrategyInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DeleteDeploymentStrategyInputBuilder {
         self
     }
     /// <p>The ID of the deployment strategy you want to delete.</p>
-    pub fn set_deployment_strategy_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.deployment_strategy_id = input; self
+    pub fn set_deployment_strategy_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.deployment_strategy_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDeploymentStrategyInput`](crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput).
-    pub fn build(self) -> Result<crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyInput {
-                deployment_strategy_id: self.deployment_strategy_id
-                ,
-            }
+                deployment_strategy_id: self.deployment_strategy_id,
+            },
         )
     }
 }
-

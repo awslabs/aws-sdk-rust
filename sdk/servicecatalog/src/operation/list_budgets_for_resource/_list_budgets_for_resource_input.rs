@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListBudgetsForResourceInput  {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+pub struct ListBudgetsForResourceInput {
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub accept_language: std::option::Option<std::string::String>,
@@ -21,16 +21,16 @@ pub struct ListBudgetsForResourceInput  {
     pub page_token: std::option::Option<std::string::String>,
 }
 impl ListBudgetsForResourceInput {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
-    pub fn accept_language(&self) -> std::option::Option<& str> {
+    pub fn accept_language(&self) -> std::option::Option<&str> {
         self.accept_language.as_deref()
     }
     /// <p>The resource identifier.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The maximum number of items to return with this call.</p>
@@ -38,13 +38,15 @@ impl ListBudgetsForResourceInput {
         self.page_size
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
-    pub fn page_token(&self) -> std::option::Option<& str> {
+    pub fn page_token(&self) -> std::option::Option<&str> {
         self.page_token.as_deref()
     }
 }
 impl ListBudgetsForResourceInput {
     /// Creates a new builder-style object to manufacture [`ListBudgetsForResourceInput`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceInput).
-    pub fn builder() -> crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceInputBuilder
+    {
         crate::operation::list_budgets_for_resource::builders::ListBudgetsForResourceInputBuilder::default()
     }
 }
@@ -59,22 +61,23 @@ pub struct ListBudgetsForResourceInputBuilder {
     pub(crate) page_token: std::option::Option<std::string::String>,
 }
 impl ListBudgetsForResourceInputBuilder {
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn accept_language(mut self, input: impl Into<std::string::String>) -> Self {
         self.accept_language = Some(input.into());
         self
     }
-    /// <p>The language code.</p> 
-    /// <ul> 
-    /// <li> <p> <code>jp</code> - Japanese</p> </li> 
-    /// <li> <p> <code>zh</code> - Chinese</p> </li> 
+    /// <p>The language code.</p>
+    /// <ul>
+    /// <li> <p> <code>jp</code> - Japanese</p> </li>
+    /// <li> <p> <code>zh</code> - Chinese</p> </li>
     /// </ul>
     pub fn set_accept_language(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.accept_language = input; self
+        self.accept_language = input;
+        self
     }
     /// <p>The resource identifier.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -83,7 +86,8 @@ impl ListBudgetsForResourceInputBuilder {
     }
     /// <p>The resource identifier.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn page_size(mut self, input: i32) -> Self {
@@ -92,7 +96,8 @@ impl ListBudgetsForResourceInputBuilder {
     }
     /// <p>The maximum number of items to return with this call.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -101,22 +106,23 @@ impl ListBudgetsForResourceInputBuilder {
     }
     /// <p>The page token for the next set of results. To retrieve the first set of results, use null.</p>
     pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.page_token = input; self
+        self.page_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListBudgetsForResourceInput`](crate::operation::list_budgets_for_resource::ListBudgetsForResourceInput).
-    pub fn build(self) -> Result<crate::operation::list_budgets_for_resource::ListBudgetsForResourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_budgets_for_resource::ListBudgetsForResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_budgets_for_resource::ListBudgetsForResourceInput {
-                accept_language: self.accept_language
-                ,
-                resource_id: self.resource_id
-                ,
-                page_size: self.page_size
-                ,
-                page_token: self.page_token
-                ,
-            }
+                accept_language: self.accept_language,
+                resource_id: self.resource_id,
+                page_size: self.page_size,
+                page_token: self.page_token,
+            },
         )
     }
 }
-

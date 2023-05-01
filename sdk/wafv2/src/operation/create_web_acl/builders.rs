@@ -4,51 +4,67 @@ pub use crate::operation::create_web_acl::_create_web_acl_output::CreateWebAclOu
 pub use crate::operation::create_web_acl::_create_web_acl_input::CreateWebAclInputBuilder;
 
 /// Fluent builder constructing a request to `CreateWebACL`.
-/// 
-/// <p>Creates a <code>WebACL</code> per the specifications provided.</p> 
+///
+/// <p>Creates a <code>WebACL</code> per the specifications provided.</p>
 /// <p> A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <code>Rule</code>, <code>RuleGroup</code>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateWebACLFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_web_acl::builders::CreateWebAclInputBuilder,
+    inner: crate::operation::create_web_acl::builders::CreateWebAclInputBuilder,
 }
-impl CreateWebACLFluentBuilder  {
+impl CreateWebACLFluentBuilder {
     /// Creates a new `CreateWebACL`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_web_acl::CreateWebACL, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_web_acl::CreateWebACLError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_web_acl::CreateWebAclOutput, aws_smithy_http::result::SdkError<crate::operation::create_web_acl::CreateWebACLError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_web_acl::CreateWebACL,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_web_acl::CreateWebACLError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_web_acl::CreateWebAclOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_web_acl::CreateWebACLError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the web ACL. You cannot change the name of a web ACL after you create it.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.name(input.into());
@@ -59,21 +75,21 @@ impl CreateWebACLFluentBuilder  {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
@@ -85,7 +101,10 @@ impl CreateWebACLFluentBuilder  {
         self
     }
     /// <p>The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code> match. </p>
-    pub fn set_default_action(mut self, input: std::option::Option<crate::types::DefaultAction>) -> Self {
+    pub fn set_default_action(
+        mut self,
+        input: std::option::Option<crate::types::DefaultAction>,
+    ) -> Self {
         self.inner = self.inner.set_default_action(input);
         self
     }
@@ -109,7 +128,10 @@ impl CreateWebACLFluentBuilder  {
         self
     }
     /// <p>The <code>Rule</code> statements used to identify the web requests that you want to allow, block, or count. Each rule includes one top-level statement that WAF uses to identify matching web requests, and parameters that govern how WAF handles them. </p>
-    pub fn set_rules(mut self, input: std::option::Option<std::vec::Vec<crate::types::Rule>>) -> Self {
+    pub fn set_rules(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Rule>>,
+    ) -> Self {
         self.inner = self.inner.set_rules(input);
         self
     }
@@ -119,7 +141,10 @@ impl CreateWebACLFluentBuilder  {
         self
     }
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection. </p>
-    pub fn set_visibility_config(mut self, input: std::option::Option<crate::types::VisibilityConfig>) -> Self {
+    pub fn set_visibility_config(
+        mut self,
+        input: std::option::Option<crate::types::VisibilityConfig>,
+    ) -> Self {
         self.inner = self.inner.set_visibility_config(input);
         self
     }
@@ -133,7 +158,10 @@ impl CreateWebACLFluentBuilder  {
         self
     }
     /// <p>An array of key:value pairs to associate with the resource.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -141,17 +169,26 @@ impl CreateWebACLFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_custom_response_bodies`](Self::set_custom_response_bodies).
     ///
-    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p> 
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p> 
+    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn custom_response_bodies(mut self, k: impl Into<std::string::String>, v: crate::types::CustomResponseBody) -> Self {
+    pub fn custom_response_bodies(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: crate::types::CustomResponseBody,
+    ) -> Self {
         self.inner = self.inner.custom_response_bodies(k.into(), v);
         self
     }
-    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p> 
-    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p> 
+    /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
+    /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
     /// <p>For information about the limits on count and size for custom request and response settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the <i>WAF Developer Guide</i>. </p>
-    pub fn set_custom_response_bodies(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>>) -> Self {
+    pub fn set_custom_response_bodies(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::types::CustomResponseBody>,
+        >,
+    ) -> Self {
         self.inner = self.inner.set_custom_response_bodies(input);
         self
     }
@@ -161,7 +198,10 @@ impl CreateWebACLFluentBuilder  {
         self
     }
     /// <p>Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>CaptchaConfig</code>. </p>
-    pub fn set_captcha_config(mut self, input: std::option::Option<crate::types::CaptchaConfig>) -> Self {
+    pub fn set_captcha_config(
+        mut self,
+        input: std::option::Option<crate::types::CaptchaConfig>,
+    ) -> Self {
         self.inner = self.inner.set_captcha_config(input);
         self
     }
@@ -171,7 +211,10 @@ impl CreateWebACLFluentBuilder  {
         self
     }
     /// <p>Specifies how WAF should handle challenge evaluations for rules that don't have their own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its default settings for <code>ChallengeConfig</code>. </p>
-    pub fn set_challenge_config(mut self, input: std::option::Option<crate::types::ChallengeConfig>) -> Self {
+    pub fn set_challenge_config(
+        mut self,
+        input: std::option::Option<crate::types::ChallengeConfig>,
+    ) -> Self {
         self.inner = self.inner.set_challenge_config(input);
         self
     }
@@ -179,35 +222,40 @@ impl CreateWebACLFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_token_domains`](Self::set_token_domains).
     ///
-    /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p> 
-    /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p> 
+    /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+    /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
     pub fn token_domains(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.token_domains(input.into());
         self
     }
-    /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p> 
-    /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p> 
+    /// <p>Specifies the domains that WAF should accept in a web request token. This enables the use of tokens across multiple protected websites. When WAF provides a token, it uses the domain of the Amazon Web Services resource that the web ACL is protecting. If you don't specify a list of token domains, WAF accepts tokens only for the domain of the protected resource. With a token domain list, WAF accepts the resource's host domain plus all domains in the token domain list, including their prefixed subdomains.</p>
+    /// <p>Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code> </p>
     /// <p>Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
-    pub fn set_token_domains(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_token_domains(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_token_domains(input);
         self
     }
-    /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p> 
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note> 
-    /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+    /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
+    /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
     pub fn association_config(mut self, input: crate::types::AssociationConfig) -> Self {
         self.inner = self.inner.association_config(input);
         self
     }
-    /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p> 
-    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note> 
-    /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
+    /// <p>Specifies custom configurations for the associations between the web ACL and protected resources. </p>
+    /// <p>Use this to customize the maximum size of the request body that your protected CloudFront distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes). </p> <note>
+    /// <p>You are charged additional fees when your protected resources forward body sizes that are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p>
     /// </note>
-    pub fn set_association_config(mut self, input: std::option::Option<crate::types::AssociationConfig>) -> Self {
+    pub fn set_association_config(
+        mut self,
+        input: std::option::Option<crate::types::AssociationConfig>,
+    ) -> Self {
         self.inner = self.inner.set_association_config(input);
         self
     }
 }
-

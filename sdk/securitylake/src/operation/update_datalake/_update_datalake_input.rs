@@ -2,14 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDatalakeInput  {
+pub struct UpdateDatalakeInput {
     /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
     #[doc(hidden)]
-    pub configurations: std::option::Option<std::collections::HashMap<crate::types::Region, crate::types::LakeConfigurationRequest>>,
+    pub configurations: std::option::Option<
+        std::collections::HashMap<crate::types::Region, crate::types::LakeConfigurationRequest>,
+    >,
 }
 impl UpdateDatalakeInput {
     /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-    pub fn configurations(&self) -> std::option::Option<& std::collections::HashMap<crate::types::Region, crate::types::LakeConfigurationRequest>> {
+    pub fn configurations(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<crate::types::Region, crate::types::LakeConfigurationRequest>,
+    > {
         self.configurations.as_ref()
     }
 }
@@ -24,7 +30,9 @@ impl UpdateDatalakeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDatalakeInputBuilder {
-    pub(crate) configurations: std::option::Option<std::collections::HashMap<crate::types::Region, crate::types::LakeConfigurationRequest>>,
+    pub(crate) configurations: std::option::Option<
+        std::collections::HashMap<crate::types::Region, crate::types::LakeConfigurationRequest>,
+    >,
 }
 impl UpdateDatalakeInputBuilder {
     /// Adds a key-value pair to `configurations`.
@@ -32,24 +40,35 @@ impl UpdateDatalakeInputBuilder {
     /// To override the contents of this collection use [`set_configurations`](Self::set_configurations).
     ///
     /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-    pub fn configurations(mut self, k: crate::types::Region, v: crate::types::LakeConfigurationRequest) -> Self {
+    pub fn configurations(
+        mut self,
+        k: crate::types::Region,
+        v: crate::types::LakeConfigurationRequest,
+    ) -> Self {
         let mut hash_map = self.configurations.unwrap_or_default();
-                        hash_map.insert(k, v);
-                        self.configurations = Some(hash_map);
-                        self
+        hash_map.insert(k, v);
+        self.configurations = Some(hash_map);
+        self
     }
     /// <p>Specify the Region or Regions that will contribute data to the rollup region.</p>
-    pub fn set_configurations(mut self, input: std::option::Option<std::collections::HashMap<crate::types::Region, crate::types::LakeConfigurationRequest>>) -> Self {
-        self.configurations = input; self
+    pub fn set_configurations(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<crate::types::Region, crate::types::LakeConfigurationRequest>,
+        >,
+    ) -> Self {
+        self.configurations = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateDatalakeInput`](crate::operation::update_datalake::UpdateDatalakeInput).
-    pub fn build(self) -> Result<crate::operation::update_datalake::UpdateDatalakeInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_datalake::UpdateDatalakeInput {
-                configurations: self.configurations
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_datalake::UpdateDatalakeInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_datalake::UpdateDatalakeInput {
+            configurations: self.configurations,
+        })
     }
 }
-

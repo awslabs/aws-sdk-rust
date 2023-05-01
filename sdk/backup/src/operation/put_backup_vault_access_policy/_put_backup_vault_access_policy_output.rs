@@ -2,17 +2,17 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutBackupVaultAccessPolicyOutput  {
+pub struct PutBackupVaultAccessPolicyOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for PutBackupVaultAccessPolicyOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl PutBackupVaultAccessPolicyOutput {
     /// Creates a new builder-style object to manufacture [`PutBackupVaultAccessPolicyOutput`](crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput).
-    pub fn builder() -> crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyOutputBuilder {
+    pub fn builder() -> crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyOutputBuilder{
         crate::operation::put_backup_vault_access_policy::builders::PutBackupVaultAccessPolicyOutputBuilder::default()
     }
 }
@@ -25,19 +25,20 @@ pub struct PutBackupVaultAccessPolicyOutputBuilder {
 }
 impl PutBackupVaultAccessPolicyOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`PutBackupVaultAccessPolicyOutput`](crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput).
-    pub fn build(self) -> crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput {
         crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput {
             _request_id: self._request_id,
         }
     }
 }
-

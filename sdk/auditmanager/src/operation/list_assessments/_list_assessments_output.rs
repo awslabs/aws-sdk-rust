@@ -2,10 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAssessmentsOutput  {
+pub struct ListAssessmentsOutput {
     /// <p> The metadata that's associated with the assessment. </p>
     #[doc(hidden)]
-    pub assessment_metadata: std::option::Option<std::vec::Vec<crate::types::AssessmentMetadataItem>>,
+    pub assessment_metadata:
+        std::option::Option<std::vec::Vec<crate::types::AssessmentMetadataItem>>,
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +14,21 @@ pub struct ListAssessmentsOutput  {
 }
 impl ListAssessmentsOutput {
     /// <p> The metadata that's associated with the assessment. </p>
-    pub fn assessment_metadata(&self) -> std::option::Option<& [crate::types::AssessmentMetadataItem]> {
+    pub fn assessment_metadata(
+        &self,
+    ) -> std::option::Option<&[crate::types::AssessmentMetadataItem]> {
         self.assessment_metadata.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAssessmentsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAssessmentsOutput {
     /// Creates a new builder-style object to manufacture [`ListAssessmentsOutput`](crate::operation::list_assessments::ListAssessmentsOutput).
     pub fn builder() -> crate::operation::list_assessments::builders::ListAssessmentsOutputBuilder {
@@ -37,7 +40,8 @@ impl ListAssessmentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct ListAssessmentsOutputBuilder {
-    pub(crate) assessment_metadata: std::option::Option<std::vec::Vec<crate::types::AssessmentMetadataItem>>,
+    pub(crate) assessment_metadata:
+        std::option::Option<std::vec::Vec<crate::types::AssessmentMetadataItem>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
@@ -49,13 +53,17 @@ impl ListAssessmentsOutputBuilder {
     /// <p> The metadata that's associated with the assessment. </p>
     pub fn assessment_metadata(mut self, input: crate::types::AssessmentMetadataItem) -> Self {
         let mut v = self.assessment_metadata.unwrap_or_default();
-                        v.push(input);
-                        self.assessment_metadata = Some(v);
-                        self
+        v.push(input);
+        self.assessment_metadata = Some(v);
+        self
     }
     /// <p> The metadata that's associated with the assessment. </p>
-    pub fn set_assessment_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::types::AssessmentMetadataItem>>) -> Self {
-        self.assessment_metadata = input; self
+    pub fn set_assessment_metadata(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AssessmentMetadataItem>>,
+    ) -> Self {
+        self.assessment_metadata = input;
+        self
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +72,24 @@ impl ListAssessmentsOutputBuilder {
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAssessmentsOutput`](crate::operation::list_assessments::ListAssessmentsOutput).
     pub fn build(self) -> crate::operation::list_assessments::ListAssessmentsOutput {
         crate::operation::list_assessments::ListAssessmentsOutput {
-            assessment_metadata: self.assessment_metadata
-            ,
-            next_token: self.next_token
-            ,
+            assessment_metadata: self.assessment_metadata,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

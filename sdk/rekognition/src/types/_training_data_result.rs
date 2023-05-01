@@ -3,7 +3,7 @@
 /// <p>Sagemaker Groundtruth format manifest files for the input, output and validation datasets that are used and created during testing.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TrainingDataResult  {
+pub struct TrainingDataResult {
     /// <p>The training assets that you supplied for training.</p>
     #[doc(hidden)]
     pub input: std::option::Option<crate::types::TrainingData>,
@@ -16,15 +16,15 @@ pub struct TrainingDataResult  {
 }
 impl TrainingDataResult {
     /// <p>The training assets that you supplied for training.</p>
-    pub fn input(&self) -> std::option::Option<& crate::types::TrainingData> {
+    pub fn input(&self) -> std::option::Option<&crate::types::TrainingData> {
         self.input.as_ref()
     }
     /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
-    pub fn output(&self) -> std::option::Option<& crate::types::TrainingData> {
+    pub fn output(&self) -> std::option::Option<&crate::types::TrainingData> {
         self.output.as_ref()
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
-    pub fn validation(&self) -> std::option::Option<& crate::types::ValidationData> {
+    pub fn validation(&self) -> std::option::Option<&crate::types::ValidationData> {
         self.validation.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl TrainingDataResultBuilder {
     }
     /// <p>The training assets that you supplied for training.</p>
     pub fn set_input(mut self, input: std::option::Option<crate::types::TrainingData>) -> Self {
-        self.input = input; self
+        self.input = input;
+        self
     }
     /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
     pub fn output(mut self, input: crate::types::TrainingData) -> Self {
@@ -60,7 +61,8 @@ impl TrainingDataResultBuilder {
     }
     /// <p>The images (assets) that were actually trained by Amazon Rekognition Custom Labels. </p>
     pub fn set_output(mut self, input: std::option::Option<crate::types::TrainingData>) -> Self {
-        self.output = input; self
+        self.output = input;
+        self
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
     pub fn validation(mut self, input: crate::types::ValidationData) -> Self {
@@ -68,19 +70,19 @@ impl TrainingDataResultBuilder {
         self
     }
     /// <p>The location of the data validation manifest. The data validation manifest is created for the training dataset during model training.</p>
-    pub fn set_validation(mut self, input: std::option::Option<crate::types::ValidationData>) -> Self {
-        self.validation = input; self
+    pub fn set_validation(
+        mut self,
+        input: std::option::Option<crate::types::ValidationData>,
+    ) -> Self {
+        self.validation = input;
+        self
     }
     /// Consumes the builder and constructs a [`TrainingDataResult`](crate::types::TrainingDataResult).
     pub fn build(self) -> crate::types::TrainingDataResult {
         crate::types::TrainingDataResult {
-            input: self.input
-            ,
-            output: self.output
-            ,
-            validation: self.validation
-            ,
+            input: self.input,
+            output: self.output,
+            validation: self.validation,
         }
     }
 }
-

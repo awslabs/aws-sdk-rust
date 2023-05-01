@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAssetModelInput  {
+pub struct DeleteAssetModelInput {
     /// <p>The ID of the asset model to delete.</p>
     #[doc(hidden)]
     pub asset_model_id: std::option::Option<std::string::String>,
@@ -12,17 +12,18 @@ pub struct DeleteAssetModelInput  {
 }
 impl DeleteAssetModelInput {
     /// <p>The ID of the asset model to delete.</p>
-    pub fn asset_model_id(&self) -> std::option::Option<& str> {
+    pub fn asset_model_id(&self) -> std::option::Option<&str> {
         self.asset_model_id.as_deref()
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl DeleteAssetModelInput {
     /// Creates a new builder-style object to manufacture [`DeleteAssetModelInput`](crate::operation::delete_asset_model::DeleteAssetModelInput).
-    pub fn builder() -> crate::operation::delete_asset_model::builders::DeleteAssetModelInputBuilder {
+    pub fn builder() -> crate::operation::delete_asset_model::builders::DeleteAssetModelInputBuilder
+    {
         crate::operation::delete_asset_model::builders::DeleteAssetModelInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl DeleteAssetModelInputBuilder {
     }
     /// <p>The ID of the asset model to delete.</p>
     pub fn set_asset_model_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.asset_model_id = input; self
+        self.asset_model_id = input;
+        self
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl DeleteAssetModelInputBuilder {
     }
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAssetModelInput`](crate::operation::delete_asset_model::DeleteAssetModelInput).
-    pub fn build(self) -> Result<crate::operation::delete_asset_model::DeleteAssetModelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_asset_model::DeleteAssetModelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_asset_model::DeleteAssetModelInput {
-                asset_model_id: self.asset_model_id
-                ,
-                client_token: self.client_token
-                ,
-            }
+                asset_model_id: self.asset_model_id,
+                client_token: self.client_token,
+            },
         )
     }
 }
-

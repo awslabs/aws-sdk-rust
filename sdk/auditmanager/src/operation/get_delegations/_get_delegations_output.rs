@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDelegationsOutput  {
+pub struct GetDelegationsOutput {
     /// <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
     #[doc(hidden)]
     pub delegations: std::option::Option<std::vec::Vec<crate::types::DelegationMetadata>>,
@@ -13,19 +13,19 @@ pub struct GetDelegationsOutput  {
 }
 impl GetDelegationsOutput {
     /// <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
-    pub fn delegations(&self) -> std::option::Option<& [crate::types::DelegationMetadata]> {
+    pub fn delegations(&self) -> std::option::Option<&[crate::types::DelegationMetadata]> {
         self.delegations.as_deref()
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetDelegationsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDelegationsOutput {
     /// Creates a new builder-style object to manufacture [`GetDelegationsOutput`](crate::operation::get_delegations::GetDelegationsOutput).
     pub fn builder() -> crate::operation::get_delegations::builders::GetDelegationsOutputBuilder {
@@ -49,13 +49,17 @@ impl GetDelegationsOutputBuilder {
     /// <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
     pub fn delegations(mut self, input: crate::types::DelegationMetadata) -> Self {
         let mut v = self.delegations.unwrap_or_default();
-                        v.push(input);
-                        self.delegations = Some(v);
-                        self
+        v.push(input);
+        self.delegations = Some(v);
+        self
     }
     /// <p> The list of delegations that the <code>GetDelegations</code> API returned. </p>
-    pub fn set_delegations(mut self, input: std::option::Option<std::vec::Vec<crate::types::DelegationMetadata>>) -> Self {
-        self.delegations = input; self
+    pub fn set_delegations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DelegationMetadata>>,
+    ) -> Self {
+        self.delegations = input;
+        self
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl GetDelegationsOutputBuilder {
     }
     /// <p> The pagination token that's used to fetch the next set of results. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDelegationsOutput`](crate::operation::get_delegations::GetDelegationsOutput).
     pub fn build(self) -> crate::operation::get_delegations::GetDelegationsOutput {
         crate::operation::get_delegations::GetDelegationsOutput {
-            delegations: self.delegations
-            ,
-            next_token: self.next_token
-            ,
+            delegations: self.delegations,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

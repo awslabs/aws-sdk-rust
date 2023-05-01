@@ -4,50 +4,66 @@ pub use crate::operation::get_admin_scope::_get_admin_scope_output::GetAdminScop
 pub use crate::operation::get_admin_scope::_get_admin_scope_input::GetAdminScopeInputBuilder;
 
 /// Fluent builder constructing a request to `GetAdminScope`.
-/// 
+///
 /// <p>Returns information about the specified account's administrative scope. The admistrative scope defines the resources that an Firewall Manager administrator can manage.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetAdminScopeFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_admin_scope::builders::GetAdminScopeInputBuilder,
+    inner: crate::operation::get_admin_scope::builders::GetAdminScopeInputBuilder,
 }
-impl GetAdminScopeFluentBuilder  {
+impl GetAdminScopeFluentBuilder {
     /// Creates a new `GetAdminScope`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_admin_scope::GetAdminScope, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_admin_scope::GetAdminScopeError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_admin_scope::GetAdminScopeOutput, aws_smithy_http::result::SdkError<crate::operation::get_admin_scope::GetAdminScopeError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_admin_scope::GetAdminScope,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::get_admin_scope::GetAdminScopeError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_admin_scope::GetAdminScopeOutput,
+        aws_smithy_http::result::SdkError<crate::operation::get_admin_scope::GetAdminScopeError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The administator account that you want to get the details for.</p>
     pub fn admin_account(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.admin_account(input.into());
@@ -59,4 +75,3 @@ impl GetAdminScopeFluentBuilder  {
         self
     }
 }
-

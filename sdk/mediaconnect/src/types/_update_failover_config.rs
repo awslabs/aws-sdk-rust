@@ -3,7 +3,7 @@
 /// The settings for source failover.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateFailoverConfig  {
+pub struct UpdateFailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
     #[doc(hidden)]
     pub failover_mode: std::option::Option<crate::types::FailoverMode>,
@@ -19,7 +19,7 @@ pub struct UpdateFailoverConfig  {
 }
 impl UpdateFailoverConfig {
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
-    pub fn failover_mode(&self) -> std::option::Option<& crate::types::FailoverMode> {
+    pub fn failover_mode(&self) -> std::option::Option<&crate::types::FailoverMode> {
         self.failover_mode.as_ref()
     }
     /// Recovery window time to look for dash-7 packets
@@ -27,11 +27,11 @@ impl UpdateFailoverConfig {
         self.recovery_window
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-    pub fn source_priority(&self) -> std::option::Option<& crate::types::SourcePriority> {
+    pub fn source_priority(&self) -> std::option::Option<&crate::types::SourcePriority> {
         self.source_priority.as_ref()
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn state(&self) -> std::option::Option<& crate::types::State> {
+    pub fn state(&self) -> std::option::Option<&crate::types::State> {
         self.state.as_ref()
     }
 }
@@ -58,8 +58,12 @@ impl UpdateFailoverConfigBuilder {
         self
     }
     /// The type of failover you choose for this flow. MERGE combines the source streams into a single stream, allowing graceful recovery from any single-source loss. FAILOVER allows switching between different streams.
-    pub fn set_failover_mode(mut self, input: std::option::Option<crate::types::FailoverMode>) -> Self {
-        self.failover_mode = input; self
+    pub fn set_failover_mode(
+        mut self,
+        input: std::option::Option<crate::types::FailoverMode>,
+    ) -> Self {
+        self.failover_mode = input;
+        self
     }
     /// Recovery window time to look for dash-7 packets
     pub fn recovery_window(mut self, input: i32) -> Self {
@@ -68,7 +72,8 @@ impl UpdateFailoverConfigBuilder {
     }
     /// Recovery window time to look for dash-7 packets
     pub fn set_recovery_window(mut self, input: std::option::Option<i32>) -> Self {
-        self.recovery_window = input; self
+        self.recovery_window = input;
+        self
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
     pub fn source_priority(mut self, input: crate::types::SourcePriority) -> Self {
@@ -76,8 +81,12 @@ impl UpdateFailoverConfigBuilder {
         self
     }
     /// The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
-    pub fn set_source_priority(mut self, input: std::option::Option<crate::types::SourcePriority>) -> Self {
-        self.source_priority = input; self
+    pub fn set_source_priority(
+        mut self,
+        input: std::option::Option<crate::types::SourcePriority>,
+    ) -> Self {
+        self.source_priority = input;
+        self
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn state(mut self, input: crate::types::State) -> Self {
@@ -86,21 +95,16 @@ impl UpdateFailoverConfigBuilder {
     }
     #[allow(missing_docs)] // documentation missing in model
     pub fn set_state(mut self, input: std::option::Option<crate::types::State>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateFailoverConfig`](crate::types::UpdateFailoverConfig).
     pub fn build(self) -> crate::types::UpdateFailoverConfig {
         crate::types::UpdateFailoverConfig {
-            failover_mode: self.failover_mode
-            ,
-            recovery_window: self.recovery_window
-                .unwrap_or_default()
-            ,
-            source_priority: self.source_priority
-            ,
-            state: self.state
-            ,
+            failover_mode: self.failover_mode,
+            recovery_window: self.recovery_window.unwrap_or_default(),
+            source_priority: self.source_priority,
+            state: self.state,
         }
     }
 }
-

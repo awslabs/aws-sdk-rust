@@ -3,7 +3,7 @@
 /// <p>An Amazon FSx for NetApp ONTAP storage virtual machine (SVM) has the following endpoints that are used to access data or to manage the SVM using the NetApp ONTAP CLI, REST API, or NetApp CloudManager.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SvmEndpoints  {
+pub struct SvmEndpoints {
     /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI) protocol.</p>
     #[doc(hidden)]
     pub iscsi: std::option::Option<crate::types::SvmEndpoint>,
@@ -19,19 +19,19 @@ pub struct SvmEndpoints  {
 }
 impl SvmEndpoints {
     /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI) protocol.</p>
-    pub fn iscsi(&self) -> std::option::Option<& crate::types::SvmEndpoint> {
+    pub fn iscsi(&self) -> std::option::Option<&crate::types::SvmEndpoint> {
         self.iscsi.as_ref()
     }
     /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
-    pub fn management(&self) -> std::option::Option<& crate::types::SvmEndpoint> {
+    pub fn management(&self) -> std::option::Option<&crate::types::SvmEndpoint> {
         self.management.as_ref()
     }
     /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
-    pub fn nfs(&self) -> std::option::Option<& crate::types::SvmEndpoint> {
+    pub fn nfs(&self) -> std::option::Option<&crate::types::SvmEndpoint> {
         self.nfs.as_ref()
     }
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
-    pub fn smb(&self) -> std::option::Option<& crate::types::SvmEndpoint> {
+    pub fn smb(&self) -> std::option::Option<&crate::types::SvmEndpoint> {
         self.smb.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl SvmEndpointsBuilder {
     }
     /// <p>An endpoint for connecting using the Internet Small Computer Systems Interface (iSCSI) protocol.</p>
     pub fn set_iscsi(mut self, input: std::option::Option<crate::types::SvmEndpoint>) -> Self {
-        self.iscsi = input; self
+        self.iscsi = input;
+        self
     }
     /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
     pub fn management(mut self, input: crate::types::SvmEndpoint) -> Self {
@@ -68,7 +69,8 @@ impl SvmEndpointsBuilder {
     }
     /// <p>An endpoint for managing SVMs using the NetApp ONTAP CLI, NetApp ONTAP API, or NetApp CloudManager.</p>
     pub fn set_management(mut self, input: std::option::Option<crate::types::SvmEndpoint>) -> Self {
-        self.management = input; self
+        self.management = input;
+        self
     }
     /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
     pub fn nfs(mut self, input: crate::types::SvmEndpoint) -> Self {
@@ -77,7 +79,8 @@ impl SvmEndpointsBuilder {
     }
     /// <p>An endpoint for connecting using the Network File System (NFS) protocol.</p>
     pub fn set_nfs(mut self, input: std::option::Option<crate::types::SvmEndpoint>) -> Self {
-        self.nfs = input; self
+        self.nfs = input;
+        self
     }
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
     pub fn smb(mut self, input: crate::types::SvmEndpoint) -> Self {
@@ -86,20 +89,16 @@ impl SvmEndpointsBuilder {
     }
     /// <p>An endpoint for connecting using the Server Message Block (SMB) protocol.</p>
     pub fn set_smb(mut self, input: std::option::Option<crate::types::SvmEndpoint>) -> Self {
-        self.smb = input; self
+        self.smb = input;
+        self
     }
     /// Consumes the builder and constructs a [`SvmEndpoints`](crate::types::SvmEndpoints).
     pub fn build(self) -> crate::types::SvmEndpoints {
         crate::types::SvmEndpoints {
-            iscsi: self.iscsi
-            ,
-            management: self.management
-            ,
-            nfs: self.nfs
-            ,
-            smb: self.smb
-            ,
+            iscsi: self.iscsi,
+            management: self.management,
+            nfs: self.nfs,
+            smb: self.smb,
         }
     }
 }
-

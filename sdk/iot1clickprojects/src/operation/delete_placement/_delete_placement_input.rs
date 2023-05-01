@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlacementInput  {
+pub struct DeletePlacementInput {
     /// <p>The name of the empty placement to delete.</p>
     #[doc(hidden)]
     pub placement_name: std::option::Option<std::string::String>,
@@ -12,11 +12,11 @@ pub struct DeletePlacementInput  {
 }
 impl DeletePlacementInput {
     /// <p>The name of the empty placement to delete.</p>
-    pub fn placement_name(&self) -> std::option::Option<& str> {
+    pub fn placement_name(&self) -> std::option::Option<&str> {
         self.placement_name.as_deref()
     }
     /// <p>The project containing the empty placement to delete.</p>
-    pub fn project_name(&self) -> std::option::Option<& str> {
+    pub fn project_name(&self) -> std::option::Option<&str> {
         self.project_name.as_deref()
     }
 }
@@ -42,7 +42,8 @@ impl DeletePlacementInputBuilder {
     }
     /// <p>The name of the empty placement to delete.</p>
     pub fn set_placement_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.placement_name = input; self
+        self.placement_name = input;
+        self
     }
     /// <p>The project containing the empty placement to delete.</p>
     pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +52,19 @@ impl DeletePlacementInputBuilder {
     }
     /// <p>The project containing the empty placement to delete.</p>
     pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_name = input; self
+        self.project_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeletePlacementInput`](crate::operation::delete_placement::DeletePlacementInput).
-    pub fn build(self) -> Result<crate::operation::delete_placement::DeletePlacementInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_placement::DeletePlacementInput {
-                placement_name: self.placement_name
-                ,
-                project_name: self.project_name
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_placement::DeletePlacementInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_placement::DeletePlacementInput {
+            placement_name: self.placement_name,
+            project_name: self.project_name,
+        })
     }
 }
-

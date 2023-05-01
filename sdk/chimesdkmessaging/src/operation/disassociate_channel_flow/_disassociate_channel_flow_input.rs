@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateChannelFlowInput  {
+pub struct DisassociateChannelFlowInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct DisassociateChannelFlowInput  {
 }
 impl DisassociateChannelFlowInput {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
         self.channel_flow_arn.as_deref()
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
-    pub fn chime_bearer(&self) -> std::option::Option<& str> {
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
 }
 impl DisassociateChannelFlowInput {
     /// Creates a new builder-style object to manufacture [`DisassociateChannelFlowInput`](crate::operation::disassociate_channel_flow::DisassociateChannelFlowInput).
-    pub fn builder() -> crate::operation::disassociate_channel_flow::builders::DisassociateChannelFlowInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::disassociate_channel_flow::builders::DisassociateChannelFlowInputBuilder
+    {
         crate::operation::disassociate_channel_flow::builders::DisassociateChannelFlowInputBuilder::default()
     }
 }
@@ -50,7 +52,8 @@ impl DisassociateChannelFlowInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input; self
+        self.channel_arn = input;
+        self
     }
     /// <p>The ARN of the channel flow.</p>
     pub fn channel_flow_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl DisassociateChannelFlowInputBuilder {
     }
     /// <p>The ARN of the channel flow.</p>
     pub fn set_channel_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_flow_arn = input; self
+        self.channel_flow_arn = input;
+        self
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +72,22 @@ impl DisassociateChannelFlowInputBuilder {
     }
     /// <p>The <code>AppInstanceUserArn</code> of the user making the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.chime_bearer = input; self
+        self.chime_bearer = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisassociateChannelFlowInput`](crate::operation::disassociate_channel_flow::DisassociateChannelFlowInput).
-    pub fn build(self) -> Result<crate::operation::disassociate_channel_flow::DisassociateChannelFlowInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disassociate_channel_flow::DisassociateChannelFlowInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disassociate_channel_flow::DisassociateChannelFlowInput {
-                channel_arn: self.channel_arn
-                ,
-                channel_flow_arn: self.channel_flow_arn
-                ,
-                chime_bearer: self.chime_bearer
-                ,
-            }
+                channel_arn: self.channel_arn,
+                channel_flow_arn: self.channel_flow_arn,
+                chime_bearer: self.chime_bearer,
+            },
         )
     }
 }
-

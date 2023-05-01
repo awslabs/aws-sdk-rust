@@ -318,4 +318,3 @@ pub mod update_response_headers_policy;
 
 /// Types for the `UpdateStreamingDistribution` operation.
 pub mod update_streaming_distribution;
-

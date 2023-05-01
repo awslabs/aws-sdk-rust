@@ -3,14 +3,14 @@
 /// <p>The parameters for using a Step Functions state machine as a target.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PipeTargetStateMachineParameters  {
+pub struct PipeTargetStateMachineParameters {
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
     #[doc(hidden)]
     pub invocation_type: std::option::Option<crate::types::PipeTargetInvocationType>,
 }
 impl PipeTargetStateMachineParameters {
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
-    pub fn invocation_type(&self) -> std::option::Option<& crate::types::PipeTargetInvocationType> {
+    pub fn invocation_type(&self) -> std::option::Option<&crate::types::PipeTargetInvocationType> {
         self.invocation_type.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl PipeTargetStateMachineParametersBuilder {
         self
     }
     /// <p>Specify whether to wait for the state machine to finish or not.</p>
-    pub fn set_invocation_type(mut self, input: std::option::Option<crate::types::PipeTargetInvocationType>) -> Self {
-        self.invocation_type = input; self
+    pub fn set_invocation_type(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetInvocationType>,
+    ) -> Self {
+        self.invocation_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`PipeTargetStateMachineParameters`](crate::types::PipeTargetStateMachineParameters).
     pub fn build(self) -> crate::types::PipeTargetStateMachineParameters {
         crate::types::PipeTargetStateMachineParameters {
-            invocation_type: self.invocation_type
-            ,
+            invocation_type: self.invocation_type,
         }
     }
 }
-

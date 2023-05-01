@@ -3,14 +3,14 @@
 /// <p>Automatic rollback configuration for handling endpoint deployment failures and recovery.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AutoRollbackConfig  {
+pub struct AutoRollbackConfig {
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
     #[doc(hidden)]
     pub alarms: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
 }
 impl AutoRollbackConfig {
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
-    pub fn alarms(&self) -> std::option::Option<& [crate::types::Alarm]> {
+    pub fn alarms(&self) -> std::option::Option<&[crate::types::Alarm]> {
         self.alarms.as_deref()
     }
 }
@@ -35,20 +35,22 @@ impl AutoRollbackConfigBuilder {
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
     pub fn alarms(mut self, input: crate::types::Alarm) -> Self {
         let mut v = self.alarms.unwrap_or_default();
-                        v.push(input);
-                        self.alarms = Some(v);
-                        self
+        v.push(input);
+        self.alarms = Some(v);
+        self
     }
     /// <p>List of CloudWatch alarms in your account that are configured to monitor metrics on an endpoint. If any alarms are tripped during a deployment, SageMaker rolls back the deployment.</p>
-    pub fn set_alarms(mut self, input: std::option::Option<std::vec::Vec<crate::types::Alarm>>) -> Self {
-        self.alarms = input; self
+    pub fn set_alarms(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Alarm>>,
+    ) -> Self {
+        self.alarms = input;
+        self
     }
     /// Consumes the builder and constructs a [`AutoRollbackConfig`](crate::types::AutoRollbackConfig).
     pub fn build(self) -> crate::types::AutoRollbackConfig {
         crate::types::AutoRollbackConfig {
-            alarms: self.alarms
-            ,
+            alarms: self.alarms,
         }
     }
 }
-

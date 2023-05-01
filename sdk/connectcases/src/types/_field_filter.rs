@@ -30,7 +30,11 @@ impl FieldFilter {
     /// Tries to convert the enum instance into [`Contains`](crate::types::FieldFilter::Contains), extracting the inner [`FieldValue`](crate::types::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_contains(&self) -> std::result::Result<&crate::types::FieldValue, &Self> {
-        if let FieldFilter::Contains(val) = &self { Ok(val) } else { Err(self) }
+        if let FieldFilter::Contains(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`Contains`](crate::types::FieldFilter::Contains).
     pub fn is_contains(&self) -> bool {
@@ -39,7 +43,11 @@ impl FieldFilter {
     /// Tries to convert the enum instance into [`EqualTo`](crate::types::FieldFilter::EqualTo), extracting the inner [`FieldValue`](crate::types::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_equal_to(&self) -> std::result::Result<&crate::types::FieldValue, &Self> {
-        if let FieldFilter::EqualTo(val) = &self { Ok(val) } else { Err(self) }
+        if let FieldFilter::EqualTo(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`EqualTo`](crate::types::FieldFilter::EqualTo).
     pub fn is_equal_to(&self) -> bool {
@@ -48,7 +56,11 @@ impl FieldFilter {
     /// Tries to convert the enum instance into [`GreaterThan`](crate::types::FieldFilter::GreaterThan), extracting the inner [`FieldValue`](crate::types::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_greater_than(&self) -> std::result::Result<&crate::types::FieldValue, &Self> {
-        if let FieldFilter::GreaterThan(val) = &self { Ok(val) } else { Err(self) }
+        if let FieldFilter::GreaterThan(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`GreaterThan`](crate::types::FieldFilter::GreaterThan).
     pub fn is_greater_than(&self) -> bool {
@@ -56,8 +68,14 @@ impl FieldFilter {
     }
     /// Tries to convert the enum instance into [`GreaterThanOrEqualTo`](crate::types::FieldFilter::GreaterThanOrEqualTo), extracting the inner [`FieldValue`](crate::types::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_greater_than_or_equal_to(&self) -> std::result::Result<&crate::types::FieldValue, &Self> {
-        if let FieldFilter::GreaterThanOrEqualTo(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_greater_than_or_equal_to(
+        &self,
+    ) -> std::result::Result<&crate::types::FieldValue, &Self> {
+        if let FieldFilter::GreaterThanOrEqualTo(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`GreaterThanOrEqualTo`](crate::types::FieldFilter::GreaterThanOrEqualTo).
     pub fn is_greater_than_or_equal_to(&self) -> bool {
@@ -66,7 +84,11 @@ impl FieldFilter {
     /// Tries to convert the enum instance into [`LessThan`](crate::types::FieldFilter::LessThan), extracting the inner [`FieldValue`](crate::types::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_less_than(&self) -> std::result::Result<&crate::types::FieldValue, &Self> {
-        if let FieldFilter::LessThan(val) = &self { Ok(val) } else { Err(self) }
+        if let FieldFilter::LessThan(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`LessThan`](crate::types::FieldFilter::LessThan).
     pub fn is_less_than(&self) -> bool {
@@ -74,8 +96,14 @@ impl FieldFilter {
     }
     /// Tries to convert the enum instance into [`LessThanOrEqualTo`](crate::types::FieldFilter::LessThanOrEqualTo), extracting the inner [`FieldValue`](crate::types::FieldValue).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_less_than_or_equal_to(&self) -> std::result::Result<&crate::types::FieldValue, &Self> {
-        if let FieldFilter::LessThanOrEqualTo(val) = &self { Ok(val) } else { Err(self) }
+    pub fn as_less_than_or_equal_to(
+        &self,
+    ) -> std::result::Result<&crate::types::FieldValue, &Self> {
+        if let FieldFilter::LessThanOrEqualTo(val) = &self {
+            Ok(val)
+        } else {
+            Err(self)
+        }
     }
     /// Returns true if this is a [`LessThanOrEqualTo`](crate::types::FieldFilter::LessThanOrEqualTo).
     pub fn is_less_than_or_equal_to(&self) -> bool {
@@ -86,4 +114,3 @@ impl FieldFilter {
         matches!(self, Self::Unknown)
     }
 }
-

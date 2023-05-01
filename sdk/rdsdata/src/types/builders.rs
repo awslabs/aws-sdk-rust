@@ -16,4 +16,3 @@ pub use crate::types::_struct_value::StructValueBuilder;
 pub use crate::types::_result_set_metadata::ResultSetMetadataBuilder;
 
 pub use crate::types::_update_result::UpdateResultBuilder;
-

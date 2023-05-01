@@ -417,4 +417,3 @@ mod tests {
         assert!(!is_part_level_checksum("abcd==-AA"));
     }
 }
-

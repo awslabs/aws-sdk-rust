@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetStatementResultOutput  {
+pub struct GetStatementResultOutput {
     /// <p>The results of the SQL statement.</p>
     #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::Field>>>,
@@ -19,11 +19,11 @@ pub struct GetStatementResultOutput  {
 }
 impl GetStatementResultOutput {
     /// <p>The results of the SQL statement.</p>
-    pub fn records(&self) -> std::option::Option<& [std::vec::Vec<crate::types::Field>]> {
+    pub fn records(&self) -> std::option::Option<&[std::vec::Vec<crate::types::Field>]> {
         self.records.as_deref()
     }
     /// <p>The properties (metadata) of a column. </p>
-    pub fn column_metadata(&self) -> std::option::Option<& [crate::types::ColumnMetadata]> {
+    pub fn column_metadata(&self) -> std::option::Option<&[crate::types::ColumnMetadata]> {
         self.column_metadata.as_deref()
     }
     /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
@@ -31,18 +31,19 @@ impl GetStatementResultOutput {
         self.total_num_rows
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for GetStatementResultOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetStatementResultOutput {
     /// Creates a new builder-style object to manufacture [`GetStatementResultOutput`](crate::operation::get_statement_result::GetStatementResultOutput).
-    pub fn builder() -> crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder {
         crate::operation::get_statement_result::builders::GetStatementResultOutputBuilder::default()
     }
 }
@@ -65,13 +66,17 @@ impl GetStatementResultOutputBuilder {
     /// <p>The results of the SQL statement.</p>
     pub fn records(mut self, input: std::vec::Vec<crate::types::Field>) -> Self {
         let mut v = self.records.unwrap_or_default();
-                        v.push(input);
-                        self.records = Some(v);
-                        self
+        v.push(input);
+        self.records = Some(v);
+        self
     }
     /// <p>The results of the SQL statement.</p>
-    pub fn set_records(mut self, input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::Field>>>) -> Self {
-        self.records = input; self
+    pub fn set_records(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::vec::Vec<crate::types::Field>>>,
+    ) -> Self {
+        self.records = input;
+        self
     }
     /// Appends an item to `column_metadata`.
     ///
@@ -80,13 +85,17 @@ impl GetStatementResultOutputBuilder {
     /// <p>The properties (metadata) of a column. </p>
     pub fn column_metadata(mut self, input: crate::types::ColumnMetadata) -> Self {
         let mut v = self.column_metadata.unwrap_or_default();
-                        v.push(input);
-                        self.column_metadata = Some(v);
-                        self
+        v.push(input);
+        self.column_metadata = Some(v);
+        self
     }
     /// <p>The properties (metadata) of a column. </p>
-    pub fn set_column_metadata(mut self, input: std::option::Option<std::vec::Vec<crate::types::ColumnMetadata>>) -> Self {
-        self.column_metadata = input; self
+    pub fn set_column_metadata(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ColumnMetadata>>,
+    ) -> Self {
+        self.column_metadata = input;
+        self
     }
     /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
     pub fn total_num_rows(mut self, input: i64) -> Self {
@@ -95,7 +104,8 @@ impl GetStatementResultOutputBuilder {
     }
     /// <p>The total number of rows in the result set returned from a query. You can use this number to estimate the number of calls to the <code>GetStatementResult</code> operation needed to page through the results. </p>
     pub fn set_total_num_rows(mut self, input: std::option::Option<i64>) -> Self {
-        self.total_num_rows = input; self
+        self.total_num_rows = input;
+        self
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -104,31 +114,26 @@ impl GetStatementResultOutputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetStatementResultOutput`](crate::operation::get_statement_result::GetStatementResultOutput).
     pub fn build(self) -> crate::operation::get_statement_result::GetStatementResultOutput {
         crate::operation::get_statement_result::GetStatementResultOutput {
-            records: self.records
-            ,
-            column_metadata: self.column_metadata
-            ,
-            total_num_rows: self.total_num_rows
-                .unwrap_or_default()
-            ,
-            next_token: self.next_token
-            ,
+            records: self.records,
+            column_metadata: self.column_metadata,
+            total_num_rows: self.total_num_rows.unwrap_or_default(),
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

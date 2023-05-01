@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListScheduledActionsInput  {
+pub struct ListScheduledActionsInput {
     /// <p>The name of the domain.</p>
     #[doc(hidden)]
     pub domain_name: std::option::Option<std::string::String>,
@@ -15,7 +15,7 @@ pub struct ListScheduledActionsInput  {
 }
 impl ListScheduledActionsInput {
     /// <p>The name of the domain.</p>
-    pub fn domain_name(&self) -> std::option::Option<& str> {
+    pub fn domain_name(&self) -> std::option::Option<&str> {
         self.domain_name.as_deref()
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
@@ -23,13 +23,14 @@ impl ListScheduledActionsInput {
         self.max_results
     }
     /// <p>If your initial <code>ListScheduledActions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListScheduledActions</code> operations, which returns results in the next page.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListScheduledActionsInput {
     /// Creates a new builder-style object to manufacture [`ListScheduledActionsInput`](crate::operation::list_scheduled_actions::ListScheduledActionsInput).
-    pub fn builder() -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_scheduled_actions::builders::ListScheduledActionsInputBuilder {
         crate::operation::list_scheduled_actions::builders::ListScheduledActionsInputBuilder::default()
     }
 }
@@ -50,7 +51,8 @@ impl ListScheduledActionsInputBuilder {
     }
     /// <p>The name of the domain.</p>
     pub fn set_domain_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_name = input; self
+        self.domain_name = input;
+        self
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -59,7 +61,8 @@ impl ListScheduledActionsInputBuilder {
     }
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>If your initial <code>ListScheduledActions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListScheduledActions</code> operations, which returns results in the next page.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +71,22 @@ impl ListScheduledActionsInputBuilder {
     }
     /// <p>If your initial <code>ListScheduledActions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListScheduledActions</code> operations, which returns results in the next page.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListScheduledActionsInput`](crate::operation::list_scheduled_actions::ListScheduledActionsInput).
-    pub fn build(self) -> Result<crate::operation::list_scheduled_actions::ListScheduledActionsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_scheduled_actions::ListScheduledActionsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_scheduled_actions::ListScheduledActionsInput {
-                domain_name: self.domain_name
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                domain_name: self.domain_name,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

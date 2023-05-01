@@ -3,7 +3,7 @@
 /// <p>Represents the input of a <code>PutThirdPartyJobFailureResult</code> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutThirdPartyJobFailureResultInput  {
+pub struct PutThirdPartyJobFailureResultInput {
     /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
@@ -16,21 +16,21 @@ pub struct PutThirdPartyJobFailureResultInput  {
 }
 impl PutThirdPartyJobFailureResultInput {
     /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
-    pub fn job_id(&self) -> std::option::Option<& str> {
+    pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>Represents information about failure details.</p>
-    pub fn failure_details(&self) -> std::option::Option<& crate::types::FailureDetails> {
+    pub fn failure_details(&self) -> std::option::Option<&crate::types::FailureDetails> {
         self.failure_details.as_ref()
     }
 }
 impl PutThirdPartyJobFailureResultInput {
     /// Creates a new builder-style object to manufacture [`PutThirdPartyJobFailureResultInput`](crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultInput).
-    pub fn builder() -> crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultInputBuilder {
+    pub fn builder() -> crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultInputBuilder{
         crate::operation::put_third_party_job_failure_result::builders::PutThirdPartyJobFailureResultInputBuilder::default()
     }
 }
@@ -51,7 +51,8 @@ impl PutThirdPartyJobFailureResultInputBuilder {
     }
     /// <p>The ID of the job that failed. This is the same ID returned from <code>PollForThirdPartyJobs</code>.</p>
     pub fn set_job_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_id = input; self
+        self.job_id = input;
+        self
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl PutThirdPartyJobFailureResultInputBuilder {
     }
     /// <p>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>Represents information about failure details.</p>
     pub fn failure_details(mut self, input: crate::types::FailureDetails) -> Self {
@@ -68,11 +70,20 @@ impl PutThirdPartyJobFailureResultInputBuilder {
         self
     }
     /// <p>Represents information about failure details.</p>
-    pub fn set_failure_details(mut self, input: std::option::Option<crate::types::FailureDetails>) -> Self {
-        self.failure_details = input; self
+    pub fn set_failure_details(
+        mut self,
+        input: std::option::Option<crate::types::FailureDetails>,
+    ) -> Self {
+        self.failure_details = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutThirdPartyJobFailureResultInput`](crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultInput).
-    pub fn build(self) -> Result<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultInput {
                 job_id: self.job_id
@@ -85,4 +96,3 @@ impl PutThirdPartyJobFailureResultInputBuilder {
         )
     }
 }
-

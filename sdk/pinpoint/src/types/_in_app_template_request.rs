@@ -3,42 +3,50 @@
 /// <p>InApp Template Request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InAppTemplateRequest  {
+pub struct InAppTemplateRequest {
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
     #[doc(hidden)]
     pub content: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
     /// <p>Custom config to be sent to client.</p>
     #[doc(hidden)]
-    pub custom_config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub custom_config:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The layout of the message.</p>
     #[doc(hidden)]
     pub layout: std::option::Option<crate::types::Layout>,
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The description of the template.</p>
     #[doc(hidden)]
     pub template_description: std::option::Option<std::string::String>,
 }
 impl InAppTemplateRequest {
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub fn content(&self) -> std::option::Option<& [crate::types::InAppMessageContent]> {
+    pub fn content(&self) -> std::option::Option<&[crate::types::InAppMessageContent]> {
         self.content.as_deref()
     }
     /// <p>Custom config to be sent to client.</p>
-    pub fn custom_config(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn custom_config(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.custom_config.as_ref()
     }
     /// <p>The layout of the message.</p>
-    pub fn layout(&self) -> std::option::Option<& crate::types::Layout> {
+    pub fn layout(&self) -> std::option::Option<&crate::types::Layout> {
         self.layout.as_ref()
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The description of the template.</p>
-    pub fn template_description(&self) -> std::option::Option<& str> {
+    pub fn template_description(&self) -> std::option::Option<&str> {
         self.template_description.as_deref()
     }
 }
@@ -54,9 +62,11 @@ impl InAppTemplateRequest {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct InAppTemplateRequestBuilder {
     pub(crate) content: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
-    pub(crate) custom_config: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) custom_config:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) layout: std::option::Option<crate::types::Layout>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) template_description: std::option::Option<std::string::String>,
 }
 impl InAppTemplateRequestBuilder {
@@ -67,28 +77,42 @@ impl InAppTemplateRequestBuilder {
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
     pub fn content(mut self, input: crate::types::InAppMessageContent) -> Self {
         let mut v = self.content.unwrap_or_default();
-                        v.push(input);
-                        self.content = Some(v);
-                        self
+        v.push(input);
+        self.content = Some(v);
+        self
     }
     /// <p>The content of the message, can include up to 5 modals. Each modal must contain a message, a header, and background color. ImageUrl and buttons are optional.</p>
-    pub fn set_content(mut self, input: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>) -> Self {
-        self.content = input; self
+    pub fn set_content(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InAppMessageContent>>,
+    ) -> Self {
+        self.content = input;
+        self
     }
     /// Adds a key-value pair to `custom_config`.
     ///
     /// To override the contents of this collection use [`set_custom_config`](Self::set_custom_config).
     ///
     /// <p>Custom config to be sent to client.</p>
-    pub fn custom_config(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn custom_config(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.custom_config.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.custom_config = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.custom_config = Some(hash_map);
+        self
     }
     /// <p>Custom config to be sent to client.</p>
-    pub fn set_custom_config(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.custom_config = input; self
+    pub fn set_custom_config(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.custom_config = input;
+        self
     }
     /// <p>The layout of the message.</p>
     pub fn layout(mut self, input: crate::types::Layout) -> Self {
@@ -97,22 +121,33 @@ impl InAppTemplateRequestBuilder {
     }
     /// <p>The layout of the message.</p>
     pub fn set_layout(mut self, input: std::option::Option<crate::types::Layout>) -> Self {
-        self.layout = input; self
+        self.layout = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A string-to-string map of key-value pairs that defines the tags to associate with the message template. Each tag consists of a required tag key and an associated tag value.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The description of the template.</p>
     pub fn template_description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -120,23 +155,21 @@ impl InAppTemplateRequestBuilder {
         self
     }
     /// <p>The description of the template.</p>
-    pub fn set_template_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.template_description = input; self
+    pub fn set_template_description(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.template_description = input;
+        self
     }
     /// Consumes the builder and constructs a [`InAppTemplateRequest`](crate::types::InAppTemplateRequest).
     pub fn build(self) -> crate::types::InAppTemplateRequest {
         crate::types::InAppTemplateRequest {
-            content: self.content
-            ,
-            custom_config: self.custom_config
-            ,
-            layout: self.layout
-            ,
-            tags: self.tags
-            ,
-            template_description: self.template_description
-            ,
+            content: self.content,
+            custom_config: self.custom_config,
+            layout: self.layout,
+            tags: self.tags,
+            template_description: self.template_description,
         }
     }
 }
-

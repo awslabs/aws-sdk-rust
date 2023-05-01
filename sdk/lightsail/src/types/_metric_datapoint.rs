@@ -3,7 +3,7 @@
 /// <p>Describes the metric data point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricDatapoint  {
+pub struct MetricDatapoint {
     /// <p>The average.</p>
     #[doc(hidden)]
     pub average: std::option::Option<f64>,
@@ -48,11 +48,11 @@ impl MetricDatapoint {
         self.sum
     }
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
-    pub fn timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.timestamp.as_ref()
     }
     /// <p>The unit. </p>
-    pub fn unit(&self) -> std::option::Option<& crate::types::MetricUnit> {
+    pub fn unit(&self) -> std::option::Option<&crate::types::MetricUnit> {
         self.unit.as_ref()
     }
 }
@@ -83,7 +83,8 @@ impl MetricDatapointBuilder {
     }
     /// <p>The average.</p>
     pub fn set_average(mut self, input: std::option::Option<f64>) -> Self {
-        self.average = input; self
+        self.average = input;
+        self
     }
     /// <p>The maximum.</p>
     pub fn maximum(mut self, input: f64) -> Self {
@@ -92,7 +93,8 @@ impl MetricDatapointBuilder {
     }
     /// <p>The maximum.</p>
     pub fn set_maximum(mut self, input: std::option::Option<f64>) -> Self {
-        self.maximum = input; self
+        self.maximum = input;
+        self
     }
     /// <p>The minimum.</p>
     pub fn minimum(mut self, input: f64) -> Self {
@@ -101,7 +103,8 @@ impl MetricDatapointBuilder {
     }
     /// <p>The minimum.</p>
     pub fn set_minimum(mut self, input: std::option::Option<f64>) -> Self {
-        self.minimum = input; self
+        self.minimum = input;
+        self
     }
     /// <p>The sample count.</p>
     pub fn sample_count(mut self, input: f64) -> Self {
@@ -110,7 +113,8 @@ impl MetricDatapointBuilder {
     }
     /// <p>The sample count.</p>
     pub fn set_sample_count(mut self, input: std::option::Option<f64>) -> Self {
-        self.sample_count = input; self
+        self.sample_count = input;
+        self
     }
     /// <p>The sum.</p>
     pub fn sum(mut self, input: f64) -> Self {
@@ -119,7 +123,8 @@ impl MetricDatapointBuilder {
     }
     /// <p>The sum.</p>
     pub fn set_sum(mut self, input: std::option::Option<f64>) -> Self {
-        self.sum = input; self
+        self.sum = input;
+        self
     }
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
     pub fn timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -128,7 +133,8 @@ impl MetricDatapointBuilder {
     }
     /// <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
     pub fn set_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.timestamp = input; self
+        self.timestamp = input;
+        self
     }
     /// <p>The unit. </p>
     pub fn unit(mut self, input: crate::types::MetricUnit) -> Self {
@@ -137,26 +143,19 @@ impl MetricDatapointBuilder {
     }
     /// <p>The unit. </p>
     pub fn set_unit(mut self, input: std::option::Option<crate::types::MetricUnit>) -> Self {
-        self.unit = input; self
+        self.unit = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricDatapoint`](crate::types::MetricDatapoint).
     pub fn build(self) -> crate::types::MetricDatapoint {
         crate::types::MetricDatapoint {
-            average: self.average
-            ,
-            maximum: self.maximum
-            ,
-            minimum: self.minimum
-            ,
-            sample_count: self.sample_count
-            ,
-            sum: self.sum
-            ,
-            timestamp: self.timestamp
-            ,
-            unit: self.unit
-            ,
+            average: self.average,
+            maximum: self.maximum,
+            minimum: self.minimum,
+            sample_count: self.sample_count,
+            sum: self.sum,
+            timestamp: self.timestamp,
+            unit: self.unit,
         }
     }
 }
-

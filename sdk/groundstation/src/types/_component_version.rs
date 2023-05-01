@@ -3,7 +3,7 @@
 /// <p>Version information for agent components.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ComponentVersion  {
+pub struct ComponentVersion {
     /// <p>Component type.</p>
     #[doc(hidden)]
     pub component_type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ComponentVersion  {
 }
 impl ComponentVersion {
     /// <p>Component type.</p>
-    pub fn component_type(&self) -> std::option::Option<& str> {
+    pub fn component_type(&self) -> std::option::Option<&str> {
         self.component_type.as_deref()
     }
     /// <p>List of versions.</p>
-    pub fn versions(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn versions(&self) -> std::option::Option<&[std::string::String]> {
         self.versions.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl ComponentVersionBuilder {
     }
     /// <p>Component type.</p>
     pub fn set_component_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.component_type = input; self
+        self.component_type = input;
+        self
     }
     /// Appends an item to `versions`.
     ///
@@ -52,22 +53,23 @@ impl ComponentVersionBuilder {
     /// <p>List of versions.</p>
     pub fn versions(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.versions.unwrap_or_default();
-                        v.push(input.into());
-                        self.versions = Some(v);
-                        self
+        v.push(input.into());
+        self.versions = Some(v);
+        self
     }
     /// <p>List of versions.</p>
-    pub fn set_versions(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.versions = input; self
+    pub fn set_versions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.versions = input;
+        self
     }
     /// Consumes the builder and constructs a [`ComponentVersion`](crate::types::ComponentVersion).
     pub fn build(self) -> crate::types::ComponentVersion {
         crate::types::ComponentVersion {
-            component_type: self.component_type
-            ,
-            versions: self.versions
-            ,
+            component_type: self.component_type,
+            versions: self.versions,
         }
     }
 }
-

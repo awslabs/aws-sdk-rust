@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceProfileInput  {
+pub struct DeleteServiceProfileInput {
     /// <p>The ID of the resource to delete.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteServiceProfileInput {
     /// <p>The ID of the resource to delete.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeleteServiceProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteServiceProfileInput`](crate::operation::delete_service_profile::DeleteServiceProfileInput).
-    pub fn builder() -> crate::operation::delete_service_profile::builders::DeleteServiceProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_service_profile::builders::DeleteServiceProfileInputBuilder {
         crate::operation::delete_service_profile::builders::DeleteServiceProfileInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl DeleteServiceProfileInputBuilder {
     }
     /// <p>The ID of the resource to delete.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteServiceProfileInput`](crate::operation::delete_service_profile::DeleteServiceProfileInput).
-    pub fn build(self) -> Result<crate::operation::delete_service_profile::DeleteServiceProfileInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_service_profile::DeleteServiceProfileInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_service_profile::DeleteServiceProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_service_profile::DeleteServiceProfileInput { id: self.id })
     }
 }
-

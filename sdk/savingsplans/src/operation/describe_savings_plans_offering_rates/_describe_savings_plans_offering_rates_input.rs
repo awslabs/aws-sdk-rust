@@ -2,13 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSavingsPlansOfferingRatesInput  {
+pub struct DescribeSavingsPlansOfferingRatesInput {
     /// <p>The IDs of the offerings.</p>
     #[doc(hidden)]
     pub savings_plan_offering_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The payment options.</p>
     #[doc(hidden)]
-    pub savings_plan_payment_options: std::option::Option<std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
+    pub savings_plan_payment_options:
+        std::option::Option<std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
     /// <p>The plan types.</p>
     #[doc(hidden)]
     pub savings_plan_types: std::option::Option<std::vec::Vec<crate::types::SavingsPlanType>>,
@@ -26,7 +27,8 @@ pub struct DescribeSavingsPlansOfferingRatesInput  {
     pub operations: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The filters.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>>,
+    pub filters:
+        std::option::Option<std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>>,
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -36,39 +38,45 @@ pub struct DescribeSavingsPlansOfferingRatesInput  {
 }
 impl DescribeSavingsPlansOfferingRatesInput {
     /// <p>The IDs of the offerings.</p>
-    pub fn savings_plan_offering_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn savings_plan_offering_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.savings_plan_offering_ids.as_deref()
     }
     /// <p>The payment options.</p>
-    pub fn savings_plan_payment_options(&self) -> std::option::Option<& [crate::types::SavingsPlanPaymentOption]> {
+    pub fn savings_plan_payment_options(
+        &self,
+    ) -> std::option::Option<&[crate::types::SavingsPlanPaymentOption]> {
         self.savings_plan_payment_options.as_deref()
     }
     /// <p>The plan types.</p>
-    pub fn savings_plan_types(&self) -> std::option::Option<& [crate::types::SavingsPlanType]> {
+    pub fn savings_plan_types(&self) -> std::option::Option<&[crate::types::SavingsPlanType]> {
         self.savings_plan_types.as_deref()
     }
     /// <p>The AWS products.</p>
-    pub fn products(&self) -> std::option::Option<& [crate::types::SavingsPlanProductType]> {
+    pub fn products(&self) -> std::option::Option<&[crate::types::SavingsPlanProductType]> {
         self.products.as_deref()
     }
     /// <p>The services.</p>
-    pub fn service_codes(&self) -> std::option::Option<& [crate::types::SavingsPlanRateServiceCode]> {
+    pub fn service_codes(
+        &self,
+    ) -> std::option::Option<&[crate::types::SavingsPlanRateServiceCode]> {
         self.service_codes.as_deref()
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn usage_types(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn usage_types(&self) -> std::option::Option<&[std::string::String]> {
         self.usage_types.as_deref()
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn operations(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn operations(&self) -> std::option::Option<&[std::string::String]> {
         self.operations.as_deref()
     }
     /// <p>The filters.</p>
-    pub fn filters(&self) -> std::option::Option<& [crate::types::SavingsPlanOfferingRateFilterElement]> {
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<&[crate::types::SavingsPlanOfferingRateFilterElement]> {
         self.filters.as_deref()
     }
     /// <p>The token for the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
@@ -78,7 +86,7 @@ impl DescribeSavingsPlansOfferingRatesInput {
 }
 impl DescribeSavingsPlansOfferingRatesInput {
     /// Creates a new builder-style object to manufacture [`DescribeSavingsPlansOfferingRatesInput`](crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput).
-    pub fn builder() -> crate::operation::describe_savings_plans_offering_rates::builders::DescribeSavingsPlansOfferingRatesInputBuilder {
+    pub fn builder() -> crate::operation::describe_savings_plans_offering_rates::builders::DescribeSavingsPlansOfferingRatesInputBuilder{
         crate::operation::describe_savings_plans_offering_rates::builders::DescribeSavingsPlansOfferingRatesInputBuilder::default()
     }
 }
@@ -88,13 +96,17 @@ impl DescribeSavingsPlansOfferingRatesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeSavingsPlansOfferingRatesInputBuilder {
     pub(crate) savings_plan_offering_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) savings_plan_payment_options: std::option::Option<std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
-    pub(crate) savings_plan_types: std::option::Option<std::vec::Vec<crate::types::SavingsPlanType>>,
+    pub(crate) savings_plan_payment_options:
+        std::option::Option<std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
+    pub(crate) savings_plan_types:
+        std::option::Option<std::vec::Vec<crate::types::SavingsPlanType>>,
     pub(crate) products: std::option::Option<std::vec::Vec<crate::types::SavingsPlanProductType>>,
-    pub(crate) service_codes: std::option::Option<std::vec::Vec<crate::types::SavingsPlanRateServiceCode>>,
+    pub(crate) service_codes:
+        std::option::Option<std::vec::Vec<crate::types::SavingsPlanRateServiceCode>>,
     pub(crate) usage_types: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) operations: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) filters: std::option::Option<std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>>,
+    pub(crate) filters:
+        std::option::Option<std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>>,
     pub(crate) next_token: std::option::Option<std::string::String>,
     pub(crate) max_results: std::option::Option<i32>,
 }
@@ -106,28 +118,39 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The IDs of the offerings.</p>
     pub fn savings_plan_offering_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.savings_plan_offering_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.savings_plan_offering_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.savings_plan_offering_ids = Some(v);
+        self
     }
     /// <p>The IDs of the offerings.</p>
-    pub fn set_savings_plan_offering_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.savings_plan_offering_ids = input; self
+    pub fn set_savings_plan_offering_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.savings_plan_offering_ids = input;
+        self
     }
     /// Appends an item to `savings_plan_payment_options`.
     ///
     /// To override the contents of this collection use [`set_savings_plan_payment_options`](Self::set_savings_plan_payment_options).
     ///
     /// <p>The payment options.</p>
-    pub fn savings_plan_payment_options(mut self, input: crate::types::SavingsPlanPaymentOption) -> Self {
+    pub fn savings_plan_payment_options(
+        mut self,
+        input: crate::types::SavingsPlanPaymentOption,
+    ) -> Self {
         let mut v = self.savings_plan_payment_options.unwrap_or_default();
-                        v.push(input);
-                        self.savings_plan_payment_options = Some(v);
-                        self
+        v.push(input);
+        self.savings_plan_payment_options = Some(v);
+        self
     }
     /// <p>The payment options.</p>
-    pub fn set_savings_plan_payment_options(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanPaymentOption>>) -> Self {
-        self.savings_plan_payment_options = input; self
+    pub fn set_savings_plan_payment_options(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanPaymentOption>>,
+    ) -> Self {
+        self.savings_plan_payment_options = input;
+        self
     }
     /// Appends an item to `savings_plan_types`.
     ///
@@ -136,13 +159,17 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The plan types.</p>
     pub fn savings_plan_types(mut self, input: crate::types::SavingsPlanType) -> Self {
         let mut v = self.savings_plan_types.unwrap_or_default();
-                        v.push(input);
-                        self.savings_plan_types = Some(v);
-                        self
+        v.push(input);
+        self.savings_plan_types = Some(v);
+        self
     }
     /// <p>The plan types.</p>
-    pub fn set_savings_plan_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanType>>) -> Self {
-        self.savings_plan_types = input; self
+    pub fn set_savings_plan_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanType>>,
+    ) -> Self {
+        self.savings_plan_types = input;
+        self
     }
     /// Appends an item to `products`.
     ///
@@ -151,13 +178,17 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The AWS products.</p>
     pub fn products(mut self, input: crate::types::SavingsPlanProductType) -> Self {
         let mut v = self.products.unwrap_or_default();
-                        v.push(input);
-                        self.products = Some(v);
-                        self
+        v.push(input);
+        self.products = Some(v);
+        self
     }
     /// <p>The AWS products.</p>
-    pub fn set_products(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanProductType>>) -> Self {
-        self.products = input; self
+    pub fn set_products(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanProductType>>,
+    ) -> Self {
+        self.products = input;
+        self
     }
     /// Appends an item to `service_codes`.
     ///
@@ -166,13 +197,17 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The services.</p>
     pub fn service_codes(mut self, input: crate::types::SavingsPlanRateServiceCode) -> Self {
         let mut v = self.service_codes.unwrap_or_default();
-                        v.push(input);
-                        self.service_codes = Some(v);
-                        self
+        v.push(input);
+        self.service_codes = Some(v);
+        self
     }
     /// <p>The services.</p>
-    pub fn set_service_codes(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanRateServiceCode>>) -> Self {
-        self.service_codes = input; self
+    pub fn set_service_codes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanRateServiceCode>>,
+    ) -> Self {
+        self.service_codes = input;
+        self
     }
     /// Appends an item to `usage_types`.
     ///
@@ -181,13 +216,17 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The usage details of the line item in the billing report.</p>
     pub fn usage_types(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.usage_types.unwrap_or_default();
-                        v.push(input.into());
-                        self.usage_types = Some(v);
-                        self
+        v.push(input.into());
+        self.usage_types = Some(v);
+        self
     }
     /// <p>The usage details of the line item in the billing report.</p>
-    pub fn set_usage_types(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.usage_types = input; self
+    pub fn set_usage_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.usage_types = input;
+        self
     }
     /// Appends an item to `operations`.
     ///
@@ -196,13 +235,17 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The specific AWS operation for the line item in the billing report.</p>
     pub fn operations(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.operations.unwrap_or_default();
-                        v.push(input.into());
-                        self.operations = Some(v);
-                        self
+        v.push(input.into());
+        self.operations = Some(v);
+        self
     }
     /// <p>The specific AWS operation for the line item in the billing report.</p>
-    pub fn set_operations(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.operations = input; self
+    pub fn set_operations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.operations = input;
+        self
     }
     /// Appends an item to `filters`.
     ///
@@ -211,13 +254,19 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     /// <p>The filters.</p>
     pub fn filters(mut self, input: crate::types::SavingsPlanOfferingRateFilterElement) -> Self {
         let mut v = self.filters.unwrap_or_default();
-                        v.push(input);
-                        self.filters = Some(v);
-                        self
+        v.push(input);
+        self.filters = Some(v);
+        self
     }
     /// <p>The filters.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<
+            std::vec::Vec<crate::types::SavingsPlanOfferingRateFilterElement>,
+        >,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -226,7 +275,8 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     }
     /// <p>The token for the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -235,10 +285,11 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
     }
     /// <p>The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSavingsPlansOfferingRatesInput`](crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput).
-    pub fn build(self) -> Result<crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_savings_plans_offering_rates::DescribeSavingsPlansOfferingRatesInput {
                 savings_plan_offering_ids: self.savings_plan_offering_ids
@@ -266,4 +317,3 @@ impl DescribeSavingsPlansOfferingRatesInputBuilder {
         )
     }
 }
-

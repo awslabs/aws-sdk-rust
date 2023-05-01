@@ -236,4 +236,3 @@ pub mod builders;
 
 /// Error types that Managed Streaming for Kafka Connect can respond with.
 pub mod error;
-

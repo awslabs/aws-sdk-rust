@@ -3,7 +3,7 @@
 /// <p>Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled server's users. A server can have only one method of authentication.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct IdentityProviderDetails  {
+pub struct IdentityProviderDetails {
     /// <p>Provides the location of the service endpoint used to authenticate users.</p>
     #[doc(hidden)]
     pub url: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct IdentityProviderDetails  {
 }
 impl IdentityProviderDetails {
     /// <p>Provides the location of the service endpoint used to authenticate users.</p>
-    pub fn url(&self) -> std::option::Option<& str> {
+    pub fn url(&self) -> std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
-    pub fn invocation_role(&self) -> std::option::Option<& str> {
+    pub fn invocation_role(&self) -> std::option::Option<&str> {
         self.invocation_role.as_deref()
     }
     /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
-    pub fn directory_id(&self) -> std::option::Option<& str> {
+    pub fn directory_id(&self) -> std::option::Option<&str> {
         self.directory_id.as_deref()
     }
     /// <p>The ARN for a lambda function to use for the Identity provider.</p>
-    pub fn function(&self) -> std::option::Option<& str> {
+    pub fn function(&self) -> std::option::Option<&str> {
         self.function.as_deref()
     }
 }
@@ -59,7 +59,8 @@ impl IdentityProviderDetailsBuilder {
     }
     /// <p>Provides the location of the service endpoint used to authenticate users.</p>
     pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.url = input; self
+        self.url = input;
+        self
     }
     /// <p>Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
     pub fn invocation_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,7 +69,8 @@ impl IdentityProviderDetailsBuilder {
     }
     /// <p>Provides the type of <code>InvocationRole</code> used to authenticate the user account.</p>
     pub fn set_invocation_role(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.invocation_role = input; self
+        self.invocation_role = input;
+        self
     }
     /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
     pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +79,8 @@ impl IdentityProviderDetailsBuilder {
     }
     /// <p>The identifier of the Directory Service directory that you want to stop sharing.</p>
     pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.directory_id = input; self
+        self.directory_id = input;
+        self
     }
     /// <p>The ARN for a lambda function to use for the Identity provider.</p>
     pub fn function(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +89,16 @@ impl IdentityProviderDetailsBuilder {
     }
     /// <p>The ARN for a lambda function to use for the Identity provider.</p>
     pub fn set_function(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.function = input; self
+        self.function = input;
+        self
     }
     /// Consumes the builder and constructs a [`IdentityProviderDetails`](crate::types::IdentityProviderDetails).
     pub fn build(self) -> crate::types::IdentityProviderDetails {
         crate::types::IdentityProviderDetails {
-            url: self.url
-            ,
-            invocation_role: self.invocation_role
-            ,
-            directory_id: self.directory_id
-            ,
-            function: self.function
-            ,
+            url: self.url,
+            invocation_role: self.invocation_role,
+            directory_id: self.directory_id,
+            function: self.function,
         }
     }
 }
-

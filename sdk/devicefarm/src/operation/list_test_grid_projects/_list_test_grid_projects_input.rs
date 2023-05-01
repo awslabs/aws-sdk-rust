@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTestGridProjectsInput  {
+pub struct ListTestGridProjectsInput {
     /// <p>Return no more than this number of results.</p>
     #[doc(hidden)]
     pub max_result: std::option::Option<i32>,
@@ -16,13 +16,14 @@ impl ListTestGridProjectsInput {
         self.max_result
     }
     /// <p>From a response, used to continue a paginated listing. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl ListTestGridProjectsInput {
     /// Creates a new builder-style object to manufacture [`ListTestGridProjectsInput`](crate::operation::list_test_grid_projects::ListTestGridProjectsInput).
-    pub fn builder() -> crate::operation::list_test_grid_projects::builders::ListTestGridProjectsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_test_grid_projects::builders::ListTestGridProjectsInputBuilder {
         crate::operation::list_test_grid_projects::builders::ListTestGridProjectsInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListTestGridProjectsInputBuilder {
     }
     /// <p>Return no more than this number of results.</p>
     pub fn set_max_result(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_result = input; self
+        self.max_result = input;
+        self
     }
     /// <p>From a response, used to continue a paginated listing. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,18 +53,21 @@ impl ListTestGridProjectsInputBuilder {
     }
     /// <p>From a response, used to continue a paginated listing. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListTestGridProjectsInput`](crate::operation::list_test_grid_projects::ListTestGridProjectsInput).
-    pub fn build(self) -> Result<crate::operation::list_test_grid_projects::ListTestGridProjectsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_test_grid_projects::ListTestGridProjectsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_test_grid_projects::ListTestGridProjectsInput {
-                max_result: self.max_result
-                ,
-                next_token: self.next_token
-                ,
-            }
+                max_result: self.max_result,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

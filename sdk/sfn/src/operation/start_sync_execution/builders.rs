@@ -4,61 +4,84 @@ pub use crate::operation::start_sync_execution::_start_sync_execution_output::St
 pub use crate::operation::start_sync_execution::_start_sync_execution_input::StartSyncExecutionInputBuilder;
 
 /// Fluent builder constructing a request to `StartSyncExecution`.
-/// 
-/// <p>Starts a Synchronous Express state machine execution. <code>StartSyncExecution</code> is not available for <code>STANDARD</code> workflows.</p> <note> 
-/// <p> <code>StartSyncExecution</code> will return a <code>200 OK</code> response, even if your execution fails, because the status code in the API response doesn't reflect function errors. Error codes are reserved for errors that prevent your execution from running, such as permissions errors, limit errors, or issues with your state machine code and configuration. </p> 
-/// </note> <note> 
-/// <p>This API action isn't logged in CloudTrail.</p> 
+///
+/// <p>Starts a Synchronous Express state machine execution. <code>StartSyncExecution</code> is not available for <code>STANDARD</code> workflows.</p> <note>
+/// <p> <code>StartSyncExecution</code> will return a <code>200 OK</code> response, even if your execution fails, because the status code in the API response doesn't reflect function errors. Error codes are reserved for errors that prevent your execution from running, such as permissions errors, limit errors, or issues with your state machine code and configuration. </p>
+/// </note> <note>
+/// <p>This API action isn't logged in CloudTrail.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct StartSyncExecutionFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::start_sync_execution::builders::StartSyncExecutionInputBuilder,
+    inner: crate::operation::start_sync_execution::builders::StartSyncExecutionInputBuilder,
 }
-impl StartSyncExecutionFluentBuilder  {
+impl StartSyncExecutionFluentBuilder {
     /// Creates a new `StartSyncExecution`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::start_sync_execution::StartSyncExecution, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::start_sync_execution::StartSyncExecutionError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::start_sync_execution::StartSyncExecutionOutput, aws_smithy_http::result::SdkError<crate::operation::start_sync_execution::StartSyncExecutionError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::start_sync_execution::StartSyncExecution,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_sync_execution::StartSyncExecutionError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::start_sync_execution::StartSyncExecutionOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::start_sync_execution::StartSyncExecutionError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
     pub fn state_machine_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.state_machine_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the state machine to execute.</p>
-    pub fn set_state_machine_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state_machine_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_state_machine_arn(input);
         self
     }
@@ -72,19 +95,19 @@ impl StartSyncExecutionFluentBuilder  {
         self.inner = self.inner.set_name(input);
         self
     }
-    /// <p>The string that contains the JSON input data for the execution, for example:</p> 
-    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note> 
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p> 
-    /// </note> 
+    /// <p>The string that contains the JSON input data for the execution, for example:</p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
+    /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.input(input.into());
         self
     }
-    /// <p>The string that contains the JSON input data for the execution, for example:</p> 
-    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note> 
-    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p> 
-    /// </note> 
+    /// <p>The string that contains the JSON input data for the execution, for example:</p>
+    /// <p> <code>"input": "{\"first_name\" : \"test\"}"</code> </p> <note>
+    /// <p>If you don't include any JSON input data, you still must include the two braces, for example: <code>"input": "{}"</code> </p>
+    /// </note>
     /// <p>Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.</p>
     pub fn set_input(mut self, input: std::option::Option<std::string::String>) -> Self {
         self.inner = self.inner.set_input(input);
@@ -101,4 +124,3 @@ impl StartSyncExecutionFluentBuilder  {
         self
     }
 }
-

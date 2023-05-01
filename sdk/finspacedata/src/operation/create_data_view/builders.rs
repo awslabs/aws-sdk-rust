@@ -4,50 +4,66 @@ pub use crate::operation::create_data_view::_create_data_view_output::CreateData
 pub use crate::operation::create_data_view::_create_data_view_input::CreateDataViewInputBuilder;
 
 /// Fluent builder constructing a request to `CreateDataView`.
-/// 
+///
 /// <p>Creates a Dataview for a Dataset.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDataViewFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_data_view::builders::CreateDataViewInputBuilder,
+    inner: crate::operation::create_data_view::builders::CreateDataViewInputBuilder,
 }
-impl CreateDataViewFluentBuilder  {
+impl CreateDataViewFluentBuilder {
     /// Creates a new `CreateDataView`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_data_view::CreateDataView, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_data_view::CreateDataViewOutput, aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_data_view::CreateDataView,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_data_view::CreateDataViewOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_data_view::CreateDataViewError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>A token that ensures idempotency. This token expires in 10 minutes.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.client_token(input.into());
@@ -88,7 +104,10 @@ impl CreateDataViewFluentBuilder  {
         self
     }
     /// <p>Columns to be used for sorting the data.</p>
-    pub fn set_sort_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_sort_columns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_sort_columns(input);
         self
     }
@@ -102,7 +121,10 @@ impl CreateDataViewFluentBuilder  {
         self
     }
     /// <p>Ordered set of column names used to partition data.</p>
-    pub fn set_partition_columns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_partition_columns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_partition_columns(input);
         self
     }
@@ -117,14 +139,19 @@ impl CreateDataViewFluentBuilder  {
         self
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn destination_type_params(mut self, input: crate::types::DataViewDestinationTypeParams) -> Self {
+    pub fn destination_type_params(
+        mut self,
+        input: crate::types::DataViewDestinationTypeParams,
+    ) -> Self {
         self.inner = self.inner.destination_type_params(input);
         self
     }
     /// <p>Options that define the destination type for the Dataview.</p>
-    pub fn set_destination_type_params(mut self, input: std::option::Option<crate::types::DataViewDestinationTypeParams>) -> Self {
+    pub fn set_destination_type_params(
+        mut self,
+        input: std::option::Option<crate::types::DataViewDestinationTypeParams>,
+    ) -> Self {
         self.inner = self.inner.set_destination_type_params(input);
         self
     }
 }
-

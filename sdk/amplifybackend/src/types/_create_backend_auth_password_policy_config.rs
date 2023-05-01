@@ -3,17 +3,20 @@
 /// <p>The password policy configuration for the backend to your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBackendAuthPasswordPolicyConfig  {
+pub struct CreateBackendAuthPasswordPolicyConfig {
     /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
     #[doc(hidden)]
-    pub additional_constraints: std::option::Option<std::vec::Vec<crate::types::AdditionalConstraintsElement>>,
+    pub additional_constraints:
+        std::option::Option<std::vec::Vec<crate::types::AdditionalConstraintsElement>>,
     /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
     #[doc(hidden)]
     pub minimum_length: f64,
 }
 impl CreateBackendAuthPasswordPolicyConfig {
     /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
-    pub fn additional_constraints(&self) -> std::option::Option<& [crate::types::AdditionalConstraintsElement]> {
+    pub fn additional_constraints(
+        &self,
+    ) -> std::option::Option<&[crate::types::AdditionalConstraintsElement]> {
         self.additional_constraints.as_deref()
     }
     /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
@@ -32,7 +35,8 @@ impl CreateBackendAuthPasswordPolicyConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateBackendAuthPasswordPolicyConfigBuilder {
-    pub(crate) additional_constraints: std::option::Option<std::vec::Vec<crate::types::AdditionalConstraintsElement>>,
+    pub(crate) additional_constraints:
+        std::option::Option<std::vec::Vec<crate::types::AdditionalConstraintsElement>>,
     pub(crate) minimum_length: std::option::Option<f64>,
 }
 impl CreateBackendAuthPasswordPolicyConfigBuilder {
@@ -41,15 +45,22 @@ impl CreateBackendAuthPasswordPolicyConfigBuilder {
     /// To override the contents of this collection use [`set_additional_constraints`](Self::set_additional_constraints).
     ///
     /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
-    pub fn additional_constraints(mut self, input: crate::types::AdditionalConstraintsElement) -> Self {
+    pub fn additional_constraints(
+        mut self,
+        input: crate::types::AdditionalConstraintsElement,
+    ) -> Self {
         let mut v = self.additional_constraints.unwrap_or_default();
-                        v.push(input);
-                        self.additional_constraints = Some(v);
-                        self
+        v.push(input);
+        self.additional_constraints = Some(v);
+        self
     }
     /// <p>Additional constraints for the password used to access the backend of your Amplify project.</p>
-    pub fn set_additional_constraints(mut self, input: std::option::Option<std::vec::Vec<crate::types::AdditionalConstraintsElement>>) -> Self {
-        self.additional_constraints = input; self
+    pub fn set_additional_constraints(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AdditionalConstraintsElement>>,
+    ) -> Self {
+        self.additional_constraints = input;
+        self
     }
     /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
     pub fn minimum_length(mut self, input: f64) -> Self {
@@ -58,17 +69,14 @@ impl CreateBackendAuthPasswordPolicyConfigBuilder {
     }
     /// <p>The minimum length of the password used to access the backend of your Amplify project.</p>
     pub fn set_minimum_length(mut self, input: std::option::Option<f64>) -> Self {
-        self.minimum_length = input; self
+        self.minimum_length = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateBackendAuthPasswordPolicyConfig`](crate::types::CreateBackendAuthPasswordPolicyConfig).
     pub fn build(self) -> crate::types::CreateBackendAuthPasswordPolicyConfig {
         crate::types::CreateBackendAuthPasswordPolicyConfig {
-            additional_constraints: self.additional_constraints
-            ,
-            minimum_length: self.minimum_length
-                .unwrap_or_default()
-            ,
+            additional_constraints: self.additional_constraints,
+            minimum_length: self.minimum_length.unwrap_or_default(),
         }
     }
 }
-

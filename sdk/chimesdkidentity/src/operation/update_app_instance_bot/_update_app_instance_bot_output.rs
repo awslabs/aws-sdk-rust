@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAppInstanceBotOutput  {
+pub struct UpdateAppInstanceBotOutput {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
     #[doc(hidden)]
     pub app_instance_bot_arn: std::option::Option<std::string::String>,
@@ -10,18 +10,20 @@ pub struct UpdateAppInstanceBotOutput  {
 }
 impl UpdateAppInstanceBotOutput {
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn app_instance_bot_arn(&self) -> std::option::Option<& str> {
+    pub fn app_instance_bot_arn(&self) -> std::option::Option<&str> {
         self.app_instance_bot_arn.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateAppInstanceBotOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateAppInstanceBotOutput {
     /// Creates a new builder-style object to manufacture [`UpdateAppInstanceBotOutput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotOutput).
-    pub fn builder() -> crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotOutputBuilder
+    {
         crate::operation::update_app_instance_bot::builders::UpdateAppInstanceBotOutputBuilder::default()
     }
 }
@@ -40,25 +42,27 @@ impl UpdateAppInstanceBotOutputBuilder {
         self
     }
     /// <p>The ARN of the <code>AppInstanceBot</code>.</p>
-    pub fn set_app_instance_bot_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.app_instance_bot_arn = input; self
+    pub fn set_app_instance_bot_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.app_instance_bot_arn = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateAppInstanceBotOutput`](crate::operation::update_app_instance_bot::UpdateAppInstanceBotOutput).
     pub fn build(self) -> crate::operation::update_app_instance_bot::UpdateAppInstanceBotOutput {
         crate::operation::update_app_instance_bot::UpdateAppInstanceBotOutput {
-            app_instance_bot_arn: self.app_instance_bot_arn
-            ,
+            app_instance_bot_arn: self.app_instance_bot_arn,
             _request_id: self._request_id,
         }
     }
 }
-

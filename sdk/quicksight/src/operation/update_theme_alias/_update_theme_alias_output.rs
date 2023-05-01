@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateThemeAliasOutput  {
+pub struct UpdateThemeAliasOutput {
     /// <p>Information about the theme alias.</p>
     #[doc(hidden)]
     pub theme_alias: std::option::Option<crate::types::ThemeAlias>,
@@ -16,7 +16,7 @@ pub struct UpdateThemeAliasOutput  {
 }
 impl UpdateThemeAliasOutput {
     /// <p>Information about the theme alias.</p>
-    pub fn theme_alias(&self) -> std::option::Option<& crate::types::ThemeAlias> {
+    pub fn theme_alias(&self) -> std::option::Option<&crate::types::ThemeAlias> {
         self.theme_alias.as_ref()
     }
     /// <p>The HTTP status of the request.</p>
@@ -24,18 +24,19 @@ impl UpdateThemeAliasOutput {
         self.status
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
-    pub fn request_id(&self) -> std::option::Option<& str> {
+    pub fn request_id(&self) -> std::option::Option<&str> {
         self.request_id.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateThemeAliasOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateThemeAliasOutput {
     /// Creates a new builder-style object to manufacture [`UpdateThemeAliasOutput`](crate::operation::update_theme_alias::UpdateThemeAliasOutput).
-    pub fn builder() -> crate::operation::update_theme_alias::builders::UpdateThemeAliasOutputBuilder {
+    pub fn builder() -> crate::operation::update_theme_alias::builders::UpdateThemeAliasOutputBuilder
+    {
         crate::operation::update_theme_alias::builders::UpdateThemeAliasOutputBuilder::default()
     }
 }
@@ -57,7 +58,8 @@ impl UpdateThemeAliasOutputBuilder {
     }
     /// <p>Information about the theme alias.</p>
     pub fn set_theme_alias(mut self, input: std::option::Option<crate::types::ThemeAlias>) -> Self {
-        self.theme_alias = input; self
+        self.theme_alias = input;
+        self
     }
     /// <p>The HTTP status of the request.</p>
     pub fn status(mut self, input: i32) -> Self {
@@ -66,7 +68,8 @@ impl UpdateThemeAliasOutputBuilder {
     }
     /// <p>The HTTP status of the request.</p>
     pub fn set_status(mut self, input: std::option::Option<i32>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,29 +78,25 @@ impl UpdateThemeAliasOutputBuilder {
     }
     /// <p>The Amazon Web Services request ID for this operation.</p>
     pub fn set_request_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.request_id = input; self
+        self.request_id = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateThemeAliasOutput`](crate::operation::update_theme_alias::UpdateThemeAliasOutput).
     pub fn build(self) -> crate::operation::update_theme_alias::UpdateThemeAliasOutput {
         crate::operation::update_theme_alias::UpdateThemeAliasOutput {
-            theme_alias: self.theme_alias
-            ,
-            status: self.status
-                .unwrap_or_default()
-            ,
-            request_id: self.request_id
-            ,
+            theme_alias: self.theme_alias,
+            status: self.status.unwrap_or_default(),
+            request_id: self.request_id,
             _request_id: self._request_id,
         }
     }
 }
-

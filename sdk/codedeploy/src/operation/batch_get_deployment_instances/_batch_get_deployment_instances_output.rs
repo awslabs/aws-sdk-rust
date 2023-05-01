@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>BatchGetDeploymentInstances</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetDeploymentInstancesOutput  {
+pub struct BatchGetDeploymentInstancesOutput {
     /// <p>Information about the instance.</p>
     #[doc(hidden)]
     pub instances_summary: std::option::Option<std::vec::Vec<crate::types::InstanceSummary>>,
@@ -14,22 +14,22 @@ pub struct BatchGetDeploymentInstancesOutput  {
 }
 impl BatchGetDeploymentInstancesOutput {
     /// <p>Information about the instance.</p>
-    pub fn instances_summary(&self) -> std::option::Option<& [crate::types::InstanceSummary]> {
+    pub fn instances_summary(&self) -> std::option::Option<&[crate::types::InstanceSummary]> {
         self.instances_summary.as_deref()
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for BatchGetDeploymentInstancesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl BatchGetDeploymentInstancesOutput {
     /// Creates a new builder-style object to manufacture [`BatchGetDeploymentInstancesOutput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput).
-    pub fn builder() -> crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesOutputBuilder {
+    pub fn builder() -> crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesOutputBuilder{
         crate::operation::batch_get_deployment_instances::builders::BatchGetDeploymentInstancesOutputBuilder::default()
     }
 }
@@ -50,13 +50,17 @@ impl BatchGetDeploymentInstancesOutputBuilder {
     /// <p>Information about the instance.</p>
     pub fn instances_summary(mut self, input: crate::types::InstanceSummary) -> Self {
         let mut v = self.instances_summary.unwrap_or_default();
-                        v.push(input);
-                        self.instances_summary = Some(v);
-                        self
+        v.push(input);
+        self.instances_summary = Some(v);
+        self
     }
     /// <p>Information about the instance.</p>
-    pub fn set_instances_summary(mut self, input: std::option::Option<std::vec::Vec<crate::types::InstanceSummary>>) -> Self {
-        self.instances_summary = input; self
+    pub fn set_instances_summary(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::InstanceSummary>>,
+    ) -> Self {
+        self.instances_summary = input;
+        self
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +69,26 @@ impl BatchGetDeploymentInstancesOutputBuilder {
     }
     /// <p>Information about errors that might have occurred during the API call.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`BatchGetDeploymentInstancesOutput`](crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput).
-    pub fn build(self) -> crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput {
         crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput {
-            instances_summary: self.instances_summary
-            ,
-            error_message: self.error_message
-            ,
+            instances_summary: self.instances_summary,
+            error_message: self.error_message,
             _request_id: self._request_id,
         }
     }
 }
-

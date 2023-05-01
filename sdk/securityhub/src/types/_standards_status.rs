@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let standardsstatus = unimplemented!();
 /// match standardsstatus {
@@ -33,14 +33,22 @@
 /// Specifically, when `standardsstatus` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `StandardsStatus::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum StandardsStatus {
     #[allow(missing_docs)] // documentation missing in model
     Deleting,
@@ -53,47 +61,48 @@ pub enum StandardsStatus {
     #[allow(missing_docs)] // documentation missing in model
     Ready,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for StandardsStatus {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "DELETING" => StandardsStatus::Deleting,
-"FAILED" => StandardsStatus::Failed,
-"INCOMPLETE" => StandardsStatus::Incomplete,
-"PENDING" => StandardsStatus::Pending,
-"READY" => StandardsStatus::Ready,
-other => StandardsStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "DELETING" => StandardsStatus::Deleting,
+            "FAILED" => StandardsStatus::Failed,
+            "INCOMPLETE" => StandardsStatus::Incomplete,
+            "PENDING" => StandardsStatus::Pending,
+            "READY" => StandardsStatus::Ready,
+            other => {
+                StandardsStatus::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for StandardsStatus {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(StandardsStatus::from(s))
-                }
-            }
-impl StandardsStatus {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    StandardsStatus::Deleting => "DELETING",
-    StandardsStatus::Failed => "FAILED",
-    StandardsStatus::Incomplete => "INCOMPLETE",
-    StandardsStatus::Pending => "PENDING",
-    StandardsStatus::Ready => "READY",
-    StandardsStatus::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["DELETING", "FAILED", "INCOMPLETE", "PENDING", "READY"]
-                }
-            }
-impl AsRef<str> for StandardsStatus {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for StandardsStatus {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(StandardsStatus::from(s))
+    }
+}
+impl StandardsStatus {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            StandardsStatus::Deleting => "DELETING",
+            StandardsStatus::Failed => "FAILED",
+            StandardsStatus::Incomplete => "INCOMPLETE",
+            StandardsStatus::Pending => "PENDING",
+            StandardsStatus::Ready => "READY",
+            StandardsStatus::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["DELETING", "FAILED", "INCOMPLETE", "PENDING", "READY"]
+    }
+}
+impl AsRef<str> for StandardsStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

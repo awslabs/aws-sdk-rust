@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListAvailableManagementCidrRangesOutput  {
+pub struct ListAvailableManagementCidrRangesOutput {
     /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
     #[doc(hidden)]
     pub management_cidr_ranges: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,22 @@ pub struct ListAvailableManagementCidrRangesOutput  {
 }
 impl ListAvailableManagementCidrRangesOutput {
     /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
-    pub fn management_cidr_ranges(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn management_cidr_ranges(&self) -> std::option::Option<&[std::string::String]> {
         self.management_cidr_ranges.as_deref()
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListAvailableManagementCidrRangesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListAvailableManagementCidrRangesOutput {
     /// Creates a new builder-style object to manufacture [`ListAvailableManagementCidrRangesOutput`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput).
-    pub fn builder() -> crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesOutputBuilder {
+    pub fn builder() -> crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesOutputBuilder{
         crate::operation::list_available_management_cidr_ranges::builders::ListAvailableManagementCidrRangesOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListAvailableManagementCidrRangesOutputBuilder {
     /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
     pub fn management_cidr_ranges(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.management_cidr_ranges.unwrap_or_default();
-                        v.push(input.into());
-                        self.management_cidr_ranges = Some(v);
-                        self
+        v.push(input.into());
+        self.management_cidr_ranges = Some(v);
+        self
     }
     /// <p>The list of available IP address ranges, specified as IPv4 CIDR blocks.</p>
-    pub fn set_management_cidr_ranges(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.management_cidr_ranges = input; self
+    pub fn set_management_cidr_ranges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.management_cidr_ranges = input;
+        self
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,19 +68,20 @@ impl ListAvailableManagementCidrRangesOutputBuilder {
     }
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return. </p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListAvailableManagementCidrRangesOutput`](crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput).
-    pub fn build(self) -> crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput {
+    pub fn build(self) -> crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput{
         crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput {
             management_cidr_ranges: self.management_cidr_ranges
             ,
@@ -86,4 +91,3 @@ impl ListAvailableManagementCidrRangesOutputBuilder {
         }
     }
 }
-

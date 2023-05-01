@@ -58,4 +58,3 @@ pub use crate::types::error::_throttling_exception::ThrottlingExceptionBuilder;
 pub use crate::types::error::_access_point_limit_exceeded::AccessPointLimitExceededBuilder;
 
 pub use crate::types::error::_access_point_already_exists::AccessPointAlreadyExistsBuilder;
-

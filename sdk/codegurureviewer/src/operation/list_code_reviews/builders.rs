@@ -4,56 +4,81 @@ pub use crate::operation::list_code_reviews::_list_code_reviews_output::ListCode
 pub use crate::operation::list_code_reviews::_list_code_reviews_input::ListCodeReviewsInputBuilder;
 
 /// Fluent builder constructing a request to `ListCodeReviews`.
-/// 
+///
 /// <p>Lists all the code reviews that the customer has created in the past 90 days.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListCodeReviewsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::list_code_reviews::builders::ListCodeReviewsInputBuilder,
+    inner: crate::operation::list_code_reviews::builders::ListCodeReviewsInputBuilder,
 }
-impl ListCodeReviewsFluentBuilder  {
+impl ListCodeReviewsFluentBuilder {
     /// Creates a new `ListCodeReviews`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::list_code_reviews::ListCodeReviews, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::list_code_reviews::ListCodeReviewsOutput, aws_smithy_http::result::SdkError<crate::operation::list_code_reviews::ListCodeReviewsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::list_code_reviews::ListCodeReviews,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_code_reviews::ListCodeReviewsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::list_code_reviews::ListCodeReviewsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::list_code_reviews::ListCodeReviewsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator {
-                                crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator {
+        crate::operation::list_code_reviews::paginator::ListCodeReviewsPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// Appends an item to `ProviderTypes`.
     ///
     /// To override the contents of this collection use [`set_provider_types`](Self::set_provider_types).
@@ -64,7 +89,10 @@ impl ListCodeReviewsFluentBuilder  {
         self
     }
     /// <p>List of provider types for filtering that needs to be applied before displaying the result. For example, <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.</p>
-    pub fn set_provider_types(mut self, input: std::option::Option<std::vec::Vec<crate::types::ProviderType>>) -> Self {
+    pub fn set_provider_types(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::ProviderType>>,
+    ) -> Self {
         self.inner = self.inner.set_provider_types(input);
         self
     }
@@ -72,27 +100,30 @@ impl ListCodeReviewsFluentBuilder  {
     ///
     /// To override the contents of this collection use [`set_states`](Self::set_states).
     ///
-    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p> 
-    /// <p>The valid code review states are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li> 
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> 
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li> 
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> 
+    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
+    /// <p>The valid code review states are:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
     pub fn states(mut self, input: crate::types::JobState) -> Self {
         self.inner = self.inner.states(input);
         self
     }
-    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p> 
-    /// <p>The valid code review states are:</p> 
-    /// <ul> 
-    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li> 
-    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li> 
-    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li> 
-    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li> 
+    /// <p>List of states for filtering that needs to be applied before displaying the result. For example, <code>states=[Pending]</code> lists code reviews in the Pending state.</p>
+    /// <p>The valid code review states are:</p>
+    /// <ul>
+    /// <li> <p> <code>Completed</code>: The code review is complete.</p> </li>
+    /// <li> <p> <code>Pending</code>: The code review started and has not completed or failed.</p> </li>
+    /// <li> <p> <code>Failed</code>: The code review failed.</p> </li>
+    /// <li> <p> <code>Deleting</code>: The code review is being deleted.</p> </li>
     /// </ul>
-    pub fn set_states(mut self, input: std::option::Option<std::vec::Vec<crate::types::JobState>>) -> Self {
+    pub fn set_states(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::JobState>>,
+    ) -> Self {
         self.inner = self.inner.set_states(input);
         self
     }
@@ -106,7 +137,10 @@ impl ListCodeReviewsFluentBuilder  {
         self
     }
     /// <p>List of repository names for filtering that needs to be applied before displaying the result.</p>
-    pub fn set_repository_names(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_repository_names(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_repository_names(input);
         self
     }
@@ -141,4 +175,3 @@ impl ListCodeReviewsFluentBuilder  {
         self
     }
 }
-

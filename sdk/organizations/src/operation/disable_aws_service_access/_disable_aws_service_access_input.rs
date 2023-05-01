@@ -2,20 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableAwsServiceAccessInput  {
+pub struct DisableAwsServiceAccessInput {
     /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
     #[doc(hidden)]
     pub service_principal: std::option::Option<std::string::String>,
 }
 impl DisableAwsServiceAccessInput {
     /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn service_principal(&self) -> std::option::Option<& str> {
+    pub fn service_principal(&self) -> std::option::Option<&str> {
         self.service_principal.as_deref()
     }
 }
 impl DisableAwsServiceAccessInput {
     /// Creates a new builder-style object to manufacture [`DisableAwsServiceAccessInput`](crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput).
-    pub fn builder() -> crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder
+    {
         crate::operation::disable_aws_service_access::builders::DisableAwsServiceAccessInputBuilder::default()
     }
 }
@@ -33,17 +35,24 @@ impl DisableAwsServiceAccessInputBuilder {
         self
     }
     /// <p>The service principal name of the Amazon Web Services service for which you want to disable integration with your organization. This is typically in the form of a URL, such as <code> <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-    pub fn set_service_principal(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_principal = input; self
+    pub fn set_service_principal(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.service_principal = input;
+        self
     }
     /// Consumes the builder and constructs a [`DisableAwsServiceAccessInput`](crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput).
-    pub fn build(self) -> Result<crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::disable_aws_service_access::DisableAwsServiceAccessInput {
-                service_principal: self.service_principal
-                ,
-            }
+                service_principal: self.service_principal,
+            },
         )
     }
 }
-

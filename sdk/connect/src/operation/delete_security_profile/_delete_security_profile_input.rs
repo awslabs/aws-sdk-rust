@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSecurityProfileInput  {
+pub struct DeleteSecurityProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -12,17 +12,19 @@ pub struct DeleteSecurityProfileInput  {
 }
 impl DeleteSecurityProfileInput {
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>The identifier for the security profle.</p>
-    pub fn security_profile_id(&self) -> std::option::Option<& str> {
+    pub fn security_profile_id(&self) -> std::option::Option<&str> {
         self.security_profile_id.as_deref()
     }
 }
 impl DeleteSecurityProfileInput {
     /// Creates a new builder-style object to manufacture [`DeleteSecurityProfileInput`](crate::operation::delete_security_profile::DeleteSecurityProfileInput).
-    pub fn builder() -> crate::operation::delete_security_profile::builders::DeleteSecurityProfileInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_security_profile::builders::DeleteSecurityProfileInputBuilder
+    {
         crate::operation::delete_security_profile::builders::DeleteSecurityProfileInputBuilder::default()
     }
 }
@@ -42,7 +44,8 @@ impl DeleteSecurityProfileInputBuilder {
     }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>The identifier for the security profle.</p>
     pub fn security_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +53,25 @@ impl DeleteSecurityProfileInputBuilder {
         self
     }
     /// <p>The identifier for the security profle.</p>
-    pub fn set_security_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.security_profile_id = input; self
+    pub fn set_security_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.security_profile_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSecurityProfileInput`](crate::operation::delete_security_profile::DeleteSecurityProfileInput).
-    pub fn build(self) -> Result<crate::operation::delete_security_profile::DeleteSecurityProfileInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_security_profile::DeleteSecurityProfileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_security_profile::DeleteSecurityProfileInput {
-                instance_id: self.instance_id
-                ,
-                security_profile_id: self.security_profile_id
-                ,
-            }
+                instance_id: self.instance_id,
+                security_profile_id: self.security_profile_id,
+            },
         )
     }
 }
-

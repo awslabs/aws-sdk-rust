@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetDefaultPatchBaselineOutput  {
+pub struct GetDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
     #[doc(hidden)]
     pub baseline_id: std::option::Option<std::string::String>,
@@ -13,22 +13,24 @@ pub struct GetDefaultPatchBaselineOutput  {
 }
 impl GetDefaultPatchBaselineOutput {
     /// <p>The ID of the default patch baseline.</p>
-    pub fn baseline_id(&self) -> std::option::Option<& str> {
+    pub fn baseline_id(&self) -> std::option::Option<&str> {
         self.baseline_id.as_deref()
     }
     /// <p>The operating system for the returned patch baseline. </p>
-    pub fn operating_system(&self) -> std::option::Option<& crate::types::OperatingSystem> {
+    pub fn operating_system(&self) -> std::option::Option<&crate::types::OperatingSystem> {
         self.operating_system.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetDefaultPatchBaselineOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetDefaultPatchBaselineOutput {
     /// Creates a new builder-style object to manufacture [`GetDefaultPatchBaselineOutput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput).
-    pub fn builder() -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineOutputBuilder
+    {
         crate::operation::get_default_patch_baseline::builders::GetDefaultPatchBaselineOutputBuilder::default()
     }
 }
@@ -49,7 +51,8 @@ impl GetDefaultPatchBaselineOutputBuilder {
     }
     /// <p>The ID of the default patch baseline.</p>
     pub fn set_baseline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.baseline_id = input; self
+        self.baseline_id = input;
+        self
     }
     /// <p>The operating system for the returned patch baseline. </p>
     pub fn operating_system(mut self, input: crate::types::OperatingSystem) -> Self {
@@ -57,27 +60,30 @@ impl GetDefaultPatchBaselineOutputBuilder {
         self
     }
     /// <p>The operating system for the returned patch baseline. </p>
-    pub fn set_operating_system(mut self, input: std::option::Option<crate::types::OperatingSystem>) -> Self {
-        self.operating_system = input; self
+    pub fn set_operating_system(
+        mut self,
+        input: std::option::Option<crate::types::OperatingSystem>,
+    ) -> Self {
+        self.operating_system = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetDefaultPatchBaselineOutput`](crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput).
-    pub fn build(self) -> crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput {
         crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput {
-            baseline_id: self.baseline_id
-            ,
-            operating_system: self.operating_system
-            ,
+            baseline_id: self.baseline_id,
+            operating_system: self.operating_system,
             _request_id: self._request_id,
         }
     }
 }
-

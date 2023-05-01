@@ -3,14 +3,14 @@
 /// <p>A structure containing information about an Amazon Managed Grafana workspace in your account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct WorkspaceDescription  {
+pub struct WorkspaceDescription {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
     #[doc(hidden)]
     pub account_access_type: std::option::Option<crate::types::AccountAccessType>,
     /// <p>The date that the workspace was created.</p>
     #[doc(hidden)]
     pub created: std::option::Option<aws_smithy_types::DateTime>,
-    /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p> 
+    /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
     /// <p>This list is only used when the workspace was created through the Amazon Web Services console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
     #[doc(hidden)]
     pub data_sources: std::option::Option<std::vec::Vec<crate::types::DataSourceType>>,
@@ -37,13 +37,14 @@ pub struct WorkspaceDescription  {
     pub organization_role_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
     #[doc(hidden)]
-    pub notification_destinations: std::option::Option<std::vec::Vec<crate::types::NotificationDestinationType>>,
+    pub notification_destinations:
+        std::option::Option<std::vec::Vec<crate::types::NotificationDestinationType>>,
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
     #[doc(hidden)]
     pub organizational_units: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p> 
-    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p> 
-    /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p> 
+    /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p>
+    /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p>
     /// <p>For more information about converting between customer and service managed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>. For more information about the roles and permissions that must be managed for customer managed workspaces, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
     #[doc(hidden)]
     pub permission_type: std::option::Option<crate::types::PermissionType>,
@@ -73,7 +74,8 @@ pub struct WorkspaceDescription  {
     pub authentication: std::option::Option<crate::types::AuthenticationSummary>,
     /// <p>The list of tags associated with the workspace.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
     #[doc(hidden)]
     pub vpc_configuration: std::option::Option<crate::types::VpcConfiguration>,
@@ -83,75 +85,77 @@ pub struct WorkspaceDescription  {
 }
 impl WorkspaceDescription {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
-    pub fn account_access_type(&self) -> std::option::Option<& crate::types::AccountAccessType> {
+    pub fn account_access_type(&self) -> std::option::Option<&crate::types::AccountAccessType> {
         self.account_access_type.as_ref()
     }
     /// <p>The date that the workspace was created.</p>
-    pub fn created(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created.as_ref()
     }
-    /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p> 
+    /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
     /// <p>This list is only used when the workspace was created through the Amazon Web Services console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
-    pub fn data_sources(&self) -> std::option::Option<& [crate::types::DataSourceType]> {
+    pub fn data_sources(&self) -> std::option::Option<&[crate::types::DataSourceType]> {
         self.data_sources.as_deref()
     }
     /// <p>The user-defined description of the workspace.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
-    pub fn endpoint(&self) -> std::option::Option<& str> {
+    pub fn endpoint(&self) -> std::option::Option<&str> {
         self.endpoint.as_deref()
     }
     /// <p>The version of Grafana supported in this workspace.</p>
-    pub fn grafana_version(&self) -> std::option::Option<& str> {
+    pub fn grafana_version(&self) -> std::option::Option<&str> {
         self.grafana_version.as_deref()
     }
     /// <p>The unique ID of this workspace.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The most recent date that the workspace was modified.</p>
-    pub fn modified(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn modified(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.modified.as_ref()
     }
     /// <p>The name of the workspace.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
-    pub fn organization_role_name(&self) -> std::option::Option<& str> {
+    pub fn organization_role_name(&self) -> std::option::Option<&str> {
         self.organization_role_name.as_deref()
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
-    pub fn notification_destinations(&self) -> std::option::Option<& [crate::types::NotificationDestinationType]> {
+    pub fn notification_destinations(
+        &self,
+    ) -> std::option::Option<&[crate::types::NotificationDestinationType]> {
         self.notification_destinations.as_deref()
     }
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub fn organizational_units(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn organizational_units(&self) -> std::option::Option<&[std::string::String]> {
         self.organizational_units.as_deref()
     }
-    /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p> 
-    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p> 
-    /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p> 
+    /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p>
+    /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p>
     /// <p>For more information about converting between customer and service managed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>. For more information about the roles and permissions that must be managed for customer managed workspaces, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
-    pub fn permission_type(&self) -> std::option::Option<& crate::types::PermissionType> {
+    pub fn permission_type(&self) -> std::option::Option<&crate::types::PermissionType> {
         self.permission_type.as_ref()
     }
     /// <p>The name of the CloudFormation stack set that is used to generate IAM roles to be used for this workspace.</p>
-    pub fn stack_set_name(&self) -> std::option::Option<& str> {
+    pub fn stack_set_name(&self) -> std::option::Option<&str> {
         self.stack_set_name.as_deref()
     }
     /// <p>The current status of the workspace.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::WorkspaceStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::WorkspaceStatus> {
         self.status.as_ref()
     }
     /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
-    pub fn workspace_role_arn(&self) -> std::option::Option<& str> {
+    pub fn workspace_role_arn(&self) -> std::option::Option<&str> {
         self.workspace_role_arn.as_deref()
     }
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
-    pub fn license_type(&self) -> std::option::Option<& crate::types::LicenseType> {
+    pub fn license_type(&self) -> std::option::Option<&crate::types::LicenseType> {
         self.license_type.as_ref()
     }
     /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
@@ -159,31 +163,36 @@ impl WorkspaceDescription {
         self.free_trial_consumed
     }
     /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
-    pub fn license_expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn license_expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.license_expiration.as_ref()
     }
     /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
-    pub fn free_trial_expiration(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn free_trial_expiration(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.free_trial_expiration.as_ref()
     }
     /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    pub fn authentication(&self) -> std::option::Option<& crate::types::AuthenticationSummary> {
+    pub fn authentication(&self) -> std::option::Option<&crate::types::AuthenticationSummary> {
         self.authentication.as_ref()
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
     /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
-    pub fn vpc_configuration(&self) -> std::option::Option<& crate::types::VpcConfiguration> {
+    pub fn vpc_configuration(&self) -> std::option::Option<&crate::types::VpcConfiguration> {
         self.vpc_configuration.as_ref()
     }
     /// <p>The configuration settings for network access to your workspace.</p>
-    pub fn network_access_control(&self) -> std::option::Option<& crate::types::NetworkAccessConfiguration> {
+    pub fn network_access_control(
+        &self,
+    ) -> std::option::Option<&crate::types::NetworkAccessConfiguration> {
         self.network_access_control.as_ref()
     }
 }
-impl  std::fmt::Debug for WorkspaceDescription  {
+impl std::fmt::Debug for WorkspaceDescription {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("WorkspaceDescription");
         formatter.field("account_access_type", &self.account_access_type);
@@ -234,7 +243,8 @@ pub struct WorkspaceDescriptionBuilder {
     pub(crate) modified: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) organization_role_name: std::option::Option<std::string::String>,
-    pub(crate) notification_destinations: std::option::Option<std::vec::Vec<crate::types::NotificationDestinationType>>,
+    pub(crate) notification_destinations:
+        std::option::Option<std::vec::Vec<crate::types::NotificationDestinationType>>,
     pub(crate) organizational_units: std::option::Option<std::vec::Vec<std::string::String>>,
     pub(crate) permission_type: std::option::Option<crate::types::PermissionType>,
     pub(crate) stack_set_name: std::option::Option<std::string::String>,
@@ -245,9 +255,11 @@ pub struct WorkspaceDescriptionBuilder {
     pub(crate) license_expiration: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) free_trial_expiration: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) authentication: std::option::Option<crate::types::AuthenticationSummary>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     pub(crate) vpc_configuration: std::option::Option<crate::types::VpcConfiguration>,
-    pub(crate) network_access_control: std::option::Option<crate::types::NetworkAccessConfiguration>,
+    pub(crate) network_access_control:
+        std::option::Option<crate::types::NetworkAccessConfiguration>,
 }
 impl WorkspaceDescriptionBuilder {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
@@ -256,8 +268,12 @@ impl WorkspaceDescriptionBuilder {
         self
     }
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If this is <code>ORGANIZATION</code>, the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational units the workspace can access.</p>
-    pub fn set_account_access_type(mut self, input: std::option::Option<crate::types::AccountAccessType>) -> Self {
-        self.account_access_type = input; self
+    pub fn set_account_access_type(
+        mut self,
+        input: std::option::Option<crate::types::AccountAccessType>,
+    ) -> Self {
+        self.account_access_type = input;
+        self
     }
     /// <p>The date that the workspace was created.</p>
     pub fn created(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -266,24 +282,29 @@ impl WorkspaceDescriptionBuilder {
     }
     /// <p>The date that the workspace was created.</p>
     pub fn set_created(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created = input; self
+        self.created = input;
+        self
     }
     /// Appends an item to `data_sources`.
     ///
     /// To override the contents of this collection use [`set_data_sources`](Self::set_data_sources).
     ///
-    /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p> 
+    /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
     /// <p>This list is only used when the workspace was created through the Amazon Web Services console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
     pub fn data_sources(mut self, input: crate::types::DataSourceType) -> Self {
         let mut v = self.data_sources.unwrap_or_default();
-                        v.push(input);
-                        self.data_sources = Some(v);
-                        self
+        v.push(input);
+        self.data_sources = Some(v);
+        self
     }
-    /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p> 
+    /// <p>Specifies the Amazon Web Services data sources that have been configured to have IAM roles and permissions created to allow Amazon Managed Grafana to read data from these sources.</p>
     /// <p>This list is only used when the workspace was created through the Amazon Web Services console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.</p>
-    pub fn set_data_sources(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataSourceType>>) -> Self {
-        self.data_sources = input; self
+    pub fn set_data_sources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DataSourceType>>,
+    ) -> Self {
+        self.data_sources = input;
+        self
     }
     /// <p>The user-defined description of the workspace.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -292,7 +313,8 @@ impl WorkspaceDescriptionBuilder {
     }
     /// <p>The user-defined description of the workspace.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
     pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
@@ -301,7 +323,8 @@ impl WorkspaceDescriptionBuilder {
     }
     /// <p>The URL that users can use to access the Grafana console in the workspace.</p>
     pub fn set_endpoint(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.endpoint = input; self
+        self.endpoint = input;
+        self
     }
     /// <p>The version of Grafana supported in this workspace.</p>
     pub fn grafana_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -310,7 +333,8 @@ impl WorkspaceDescriptionBuilder {
     }
     /// <p>The version of Grafana supported in this workspace.</p>
     pub fn set_grafana_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.grafana_version = input; self
+        self.grafana_version = input;
+        self
     }
     /// <p>The unique ID of this workspace.</p>
     pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -319,7 +343,8 @@ impl WorkspaceDescriptionBuilder {
     }
     /// <p>The unique ID of this workspace.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The most recent date that the workspace was modified.</p>
     pub fn modified(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -328,7 +353,8 @@ impl WorkspaceDescriptionBuilder {
     }
     /// <p>The most recent date that the workspace was modified.</p>
     pub fn set_modified(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.modified = input; self
+        self.modified = input;
+        self
     }
     /// <p>The name of the workspace.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -337,7 +363,8 @@ impl WorkspaceDescriptionBuilder {
     }
     /// <p>The name of the workspace.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
     pub fn organization_role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -345,23 +372,34 @@ impl WorkspaceDescriptionBuilder {
         self
     }
     /// <p>The name of the IAM role that is used to access resources through Organizations.</p>
-    pub fn set_organization_role_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.organization_role_name = input; self
+    pub fn set_organization_role_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.organization_role_name = input;
+        self
     }
     /// Appends an item to `notification_destinations`.
     ///
     /// To override the contents of this collection use [`set_notification_destinations`](Self::set_notification_destinations).
     ///
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
-    pub fn notification_destinations(mut self, input: crate::types::NotificationDestinationType) -> Self {
+    pub fn notification_destinations(
+        mut self,
+        input: crate::types::NotificationDestinationType,
+    ) -> Self {
         let mut v = self.notification_destinations.unwrap_or_default();
-                        v.push(input);
-                        self.notification_destinations = Some(v);
-                        self
+        v.push(input);
+        self.notification_destinations = Some(v);
+        self
     }
     /// <p>The Amazon Web Services notification channels that Amazon Managed Grafana can automatically create IAM roles and permissions for, to allow Amazon Managed Grafana to use these channels.</p>
-    pub fn set_notification_destinations(mut self, input: std::option::Option<std::vec::Vec<crate::types::NotificationDestinationType>>) -> Self {
-        self.notification_destinations = input; self
+    pub fn set_notification_destinations(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::NotificationDestinationType>>,
+    ) -> Self {
+        self.notification_destinations = input;
+        self
     }
     /// Appends an item to `organizational_units`.
     ///
@@ -370,28 +408,36 @@ impl WorkspaceDescriptionBuilder {
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
     pub fn organizational_units(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.organizational_units.unwrap_or_default();
-                        v.push(input.into());
-                        self.organizational_units = Some(v);
-                        self
+        v.push(input.into());
+        self.organizational_units = Some(v);
+        self
     }
     /// <p>Specifies the organizational units that this workspace is allowed to use data sources from, if this workspace is in an account that is part of an organization.</p>
-    pub fn set_organizational_units(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.organizational_units = input; self
+    pub fn set_organizational_units(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.organizational_units = input;
+        self
     }
-    /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p> 
-    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p> 
-    /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p> 
+    /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p>
+    /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p>
     /// <p>For more information about converting between customer and service managed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>. For more information about the roles and permissions that must be managed for customer managed workspaces, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
     pub fn permission_type(mut self, input: crate::types::PermissionType) -> Self {
         self.permission_type = Some(input);
         self
     }
-    /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p> 
-    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p> 
-    /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p> 
+    /// <p>If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and notification channels.</p>
+    /// <p>If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions yourself.</p>
+    /// <p>If you are working with a workspace in a member account of an organization and that account is not a delegated administrator account, and you want the workspace to access data sources in other Amazon Web Services accounts in the organization, this parameter must be set to <code>CUSTOMER_MANAGED</code>.</p>
     /// <p>For more information about converting between customer and service managed, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-datasource-and-notification.html">Managing permissions for data sources and notification channels</a>. For more information about the roles and permissions that must be managed for customer managed workspaces, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a> </p>
-    pub fn set_permission_type(mut self, input: std::option::Option<crate::types::PermissionType>) -> Self {
-        self.permission_type = input; self
+    pub fn set_permission_type(
+        mut self,
+        input: std::option::Option<crate::types::PermissionType>,
+    ) -> Self {
+        self.permission_type = input;
+        self
     }
     /// <p>The name of the CloudFormation stack set that is used to generate IAM roles to be used for this workspace.</p>
     pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -400,7 +446,8 @@ impl WorkspaceDescriptionBuilder {
     }
     /// <p>The name of the CloudFormation stack set that is used to generate IAM roles to be used for this workspace.</p>
     pub fn set_stack_set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_set_name = input; self
+        self.stack_set_name = input;
+        self
     }
     /// <p>The current status of the workspace.</p>
     pub fn status(mut self, input: crate::types::WorkspaceStatus) -> Self {
@@ -409,7 +456,8 @@ impl WorkspaceDescriptionBuilder {
     }
     /// <p>The current status of the workspace.</p>
     pub fn set_status(mut self, input: std::option::Option<crate::types::WorkspaceStatus>) -> Self {
-        self.status = input; self
+        self.status = input;
+        self
     }
     /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
     pub fn workspace_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -417,8 +465,12 @@ impl WorkspaceDescriptionBuilder {
         self
     }
     /// <p>The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from. This role must already exist.</p>
-    pub fn set_workspace_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workspace_role_arn = input; self
+    pub fn set_workspace_role_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.workspace_role_arn = input;
+        self
     }
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
     pub fn license_type(mut self, input: crate::types::LicenseType) -> Self {
@@ -426,8 +478,12 @@ impl WorkspaceDescriptionBuilder {
         self
     }
     /// <p>Specifies whether this workspace has a full Grafana Enterprise license or a free trial license.</p>
-    pub fn set_license_type(mut self, input: std::option::Option<crate::types::LicenseType>) -> Self {
-        self.license_type = input; self
+    pub fn set_license_type(
+        mut self,
+        input: std::option::Option<crate::types::LicenseType>,
+    ) -> Self {
+        self.license_type = input;
+        self
     }
     /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
     pub fn free_trial_consumed(mut self, input: bool) -> Self {
@@ -436,7 +492,8 @@ impl WorkspaceDescriptionBuilder {
     }
     /// <p>Specifies whether this workspace has already fully used its free trial for Grafana Enterprise.</p>
     pub fn set_free_trial_consumed(mut self, input: std::option::Option<bool>) -> Self {
-        self.free_trial_consumed = input; self
+        self.free_trial_consumed = input;
+        self
     }
     /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
     pub fn license_expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -444,8 +501,12 @@ impl WorkspaceDescriptionBuilder {
         self
     }
     /// <p>If this workspace has a full Grafana Enterprise license, this specifies when the license ends and will need to be renewed.</p>
-    pub fn set_license_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.license_expiration = input; self
+    pub fn set_license_expiration(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.license_expiration = input;
+        self
     }
     /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
     pub fn free_trial_expiration(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -453,8 +514,12 @@ impl WorkspaceDescriptionBuilder {
         self
     }
     /// <p>If this workspace is currently in the free trial period for Grafana Enterprise, this value specifies when that free trial ends.</p>
-    pub fn set_free_trial_expiration(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.free_trial_expiration = input; self
+    pub fn set_free_trial_expiration(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.free_trial_expiration = input;
+        self
     }
     /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
     pub fn authentication(mut self, input: crate::types::AuthenticationSummary) -> Self {
@@ -462,23 +527,37 @@ impl WorkspaceDescriptionBuilder {
         self
     }
     /// <p>A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.</p>
-    pub fn set_authentication(mut self, input: std::option::Option<crate::types::AuthenticationSummary>) -> Self {
-        self.authentication = input; self
+    pub fn set_authentication(
+        mut self,
+        input: std::option::Option<crate::types::AuthenticationSummary>,
+    ) -> Self {
+        self.authentication = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>The list of tags associated with the workspace.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
     pub fn vpc_configuration(mut self, input: crate::types::VpcConfiguration) -> Self {
@@ -486,69 +565,56 @@ impl WorkspaceDescriptionBuilder {
         self
     }
     /// <p>The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).</p>
-    pub fn set_vpc_configuration(mut self, input: std::option::Option<crate::types::VpcConfiguration>) -> Self {
-        self.vpc_configuration = input; self
+    pub fn set_vpc_configuration(
+        mut self,
+        input: std::option::Option<crate::types::VpcConfiguration>,
+    ) -> Self {
+        self.vpc_configuration = input;
+        self
     }
     /// <p>The configuration settings for network access to your workspace.</p>
-    pub fn network_access_control(mut self, input: crate::types::NetworkAccessConfiguration) -> Self {
+    pub fn network_access_control(
+        mut self,
+        input: crate::types::NetworkAccessConfiguration,
+    ) -> Self {
         self.network_access_control = Some(input);
         self
     }
     /// <p>The configuration settings for network access to your workspace.</p>
-    pub fn set_network_access_control(mut self, input: std::option::Option<crate::types::NetworkAccessConfiguration>) -> Self {
-        self.network_access_control = input; self
+    pub fn set_network_access_control(
+        mut self,
+        input: std::option::Option<crate::types::NetworkAccessConfiguration>,
+    ) -> Self {
+        self.network_access_control = input;
+        self
     }
     /// Consumes the builder and constructs a [`WorkspaceDescription`](crate::types::WorkspaceDescription).
     pub fn build(self) -> crate::types::WorkspaceDescription {
         crate::types::WorkspaceDescription {
-            account_access_type: self.account_access_type
-            ,
-            created: self.created
-            ,
-            data_sources: self.data_sources
-            ,
-            description: self.description
-            ,
-            endpoint: self.endpoint
-            ,
-            grafana_version: self.grafana_version
-            ,
-            id: self.id
-            ,
-            modified: self.modified
-            ,
-            name: self.name
-            ,
-            organization_role_name: self.organization_role_name
-            ,
-            notification_destinations: self.notification_destinations
-            ,
-            organizational_units: self.organizational_units
-            ,
-            permission_type: self.permission_type
-            ,
-            stack_set_name: self.stack_set_name
-            ,
-            status: self.status
-            ,
-            workspace_role_arn: self.workspace_role_arn
-            ,
-            license_type: self.license_type
-            ,
-            free_trial_consumed: self.free_trial_consumed
-            ,
-            license_expiration: self.license_expiration
-            ,
-            free_trial_expiration: self.free_trial_expiration
-            ,
-            authentication: self.authentication
-            ,
-            tags: self.tags
-            ,
-            vpc_configuration: self.vpc_configuration
-            ,
-            network_access_control: self.network_access_control
-            ,
+            account_access_type: self.account_access_type,
+            created: self.created,
+            data_sources: self.data_sources,
+            description: self.description,
+            endpoint: self.endpoint,
+            grafana_version: self.grafana_version,
+            id: self.id,
+            modified: self.modified,
+            name: self.name,
+            organization_role_name: self.organization_role_name,
+            notification_destinations: self.notification_destinations,
+            organizational_units: self.organizational_units,
+            permission_type: self.permission_type,
+            stack_set_name: self.stack_set_name,
+            status: self.status,
+            workspace_role_arn: self.workspace_role_arn,
+            license_type: self.license_type,
+            free_trial_consumed: self.free_trial_consumed,
+            license_expiration: self.license_expiration,
+            free_trial_expiration: self.free_trial_expiration,
+            authentication: self.authentication,
+            tags: self.tags,
+            vpc_configuration: self.vpc_configuration,
+            network_access_control: self.network_access_control,
         }
     }
 }
@@ -582,4 +648,3 @@ impl std::fmt::Debug for WorkspaceDescriptionBuilder {
         formatter.finish()
     }
 }
-

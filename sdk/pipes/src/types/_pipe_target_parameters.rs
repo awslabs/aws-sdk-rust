@@ -3,19 +3,22 @@
 /// <p>The parameters required to set up a target for your pipe.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct PipeTargetParameters  {
+pub struct PipeTargetParameters {
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     #[doc(hidden)]
     pub input_template: std::option::Option<std::string::String>,
     /// <p>The parameters for using a Lambda function as a target.</p>
     #[doc(hidden)]
-    pub lambda_function_parameters: std::option::Option<crate::types::PipeTargetLambdaFunctionParameters>,
+    pub lambda_function_parameters:
+        std::option::Option<crate::types::PipeTargetLambdaFunctionParameters>,
     /// <p>The parameters for using a Step Functions state machine as a target.</p>
     #[doc(hidden)]
-    pub step_function_state_machine_parameters: std::option::Option<crate::types::PipeTargetStateMachineParameters>,
+    pub step_function_state_machine_parameters:
+        std::option::Option<crate::types::PipeTargetStateMachineParameters>,
     /// <p>The parameters for using a Kinesis stream as a source.</p>
     #[doc(hidden)]
-    pub kinesis_stream_parameters: std::option::Option<crate::types::PipeTargetKinesisStreamParameters>,
+    pub kinesis_stream_parameters:
+        std::option::Option<crate::types::PipeTargetKinesisStreamParameters>,
     /// <p>The parameters for using an Amazon ECS task as a target.</p>
     #[doc(hidden)]
     pub ecs_task_parameters: std::option::Option<crate::types::PipeTargetEcsTaskParameters>,
@@ -30,82 +33,121 @@ pub struct PipeTargetParameters  {
     pub http_parameters: std::option::Option<crate::types::PipeTargetHttpParameters>,
     /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
     #[doc(hidden)]
-    pub redshift_data_parameters: std::option::Option<crate::types::PipeTargetRedshiftDataParameters>,
+    pub redshift_data_parameters:
+        std::option::Option<crate::types::PipeTargetRedshiftDataParameters>,
     /// <p>The parameters for using a SageMaker pipeline as a target.</p>
     #[doc(hidden)]
-    pub sage_maker_pipeline_parameters: std::option::Option<crate::types::PipeTargetSageMakerPipelineParameters>,
+    pub sage_maker_pipeline_parameters:
+        std::option::Option<crate::types::PipeTargetSageMakerPipelineParameters>,
     /// <p>The parameters for using an EventBridge event bus as a target.</p>
     #[doc(hidden)]
-    pub event_bridge_event_bus_parameters: std::option::Option<crate::types::PipeTargetEventBridgeEventBusParameters>,
+    pub event_bridge_event_bus_parameters:
+        std::option::Option<crate::types::PipeTargetEventBridgeEventBusParameters>,
     /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
     #[doc(hidden)]
-    pub cloud_watch_logs_parameters: std::option::Option<crate::types::PipeTargetCloudWatchLogsParameters>,
+    pub cloud_watch_logs_parameters:
+        std::option::Option<crate::types::PipeTargetCloudWatchLogsParameters>,
 }
 impl PipeTargetParameters {
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
-    pub fn input_template(&self) -> std::option::Option<& str> {
+    pub fn input_template(&self) -> std::option::Option<&str> {
         self.input_template.as_deref()
     }
     /// <p>The parameters for using a Lambda function as a target.</p>
-    pub fn lambda_function_parameters(&self) -> std::option::Option<& crate::types::PipeTargetLambdaFunctionParameters> {
+    pub fn lambda_function_parameters(
+        &self,
+    ) -> std::option::Option<&crate::types::PipeTargetLambdaFunctionParameters> {
         self.lambda_function_parameters.as_ref()
     }
     /// <p>The parameters for using a Step Functions state machine as a target.</p>
-    pub fn step_function_state_machine_parameters(&self) -> std::option::Option<& crate::types::PipeTargetStateMachineParameters> {
+    pub fn step_function_state_machine_parameters(
+        &self,
+    ) -> std::option::Option<&crate::types::PipeTargetStateMachineParameters> {
         self.step_function_state_machine_parameters.as_ref()
     }
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    pub fn kinesis_stream_parameters(&self) -> std::option::Option<& crate::types::PipeTargetKinesisStreamParameters> {
+    pub fn kinesis_stream_parameters(
+        &self,
+    ) -> std::option::Option<&crate::types::PipeTargetKinesisStreamParameters> {
         self.kinesis_stream_parameters.as_ref()
     }
     /// <p>The parameters for using an Amazon ECS task as a target.</p>
-    pub fn ecs_task_parameters(&self) -> std::option::Option<& crate::types::PipeTargetEcsTaskParameters> {
+    pub fn ecs_task_parameters(
+        &self,
+    ) -> std::option::Option<&crate::types::PipeTargetEcsTaskParameters> {
         self.ecs_task_parameters.as_ref()
     }
     /// <p>The parameters for using an Batch job as a target.</p>
-    pub fn batch_job_parameters(&self) -> std::option::Option<& crate::types::PipeTargetBatchJobParameters> {
+    pub fn batch_job_parameters(
+        &self,
+    ) -> std::option::Option<&crate::types::PipeTargetBatchJobParameters> {
         self.batch_job_parameters.as_ref()
     }
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    pub fn sqs_queue_parameters(&self) -> std::option::Option<& crate::types::PipeTargetSqsQueueParameters> {
+    pub fn sqs_queue_parameters(
+        &self,
+    ) -> std::option::Option<&crate::types::PipeTargetSqsQueueParameters> {
         self.sqs_queue_parameters.as_ref()
     }
     /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations.</p>
-    pub fn http_parameters(&self) -> std::option::Option<& crate::types::PipeTargetHttpParameters> {
+    pub fn http_parameters(&self) -> std::option::Option<&crate::types::PipeTargetHttpParameters> {
         self.http_parameters.as_ref()
     }
     /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
-    pub fn redshift_data_parameters(&self) -> std::option::Option<& crate::types::PipeTargetRedshiftDataParameters> {
+    pub fn redshift_data_parameters(
+        &self,
+    ) -> std::option::Option<&crate::types::PipeTargetRedshiftDataParameters> {
         self.redshift_data_parameters.as_ref()
     }
     /// <p>The parameters for using a SageMaker pipeline as a target.</p>
-    pub fn sage_maker_pipeline_parameters(&self) -> std::option::Option<& crate::types::PipeTargetSageMakerPipelineParameters> {
+    pub fn sage_maker_pipeline_parameters(
+        &self,
+    ) -> std::option::Option<&crate::types::PipeTargetSageMakerPipelineParameters> {
         self.sage_maker_pipeline_parameters.as_ref()
     }
     /// <p>The parameters for using an EventBridge event bus as a target.</p>
-    pub fn event_bridge_event_bus_parameters(&self) -> std::option::Option<& crate::types::PipeTargetEventBridgeEventBusParameters> {
+    pub fn event_bridge_event_bus_parameters(
+        &self,
+    ) -> std::option::Option<&crate::types::PipeTargetEventBridgeEventBusParameters> {
         self.event_bridge_event_bus_parameters.as_ref()
     }
     /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
-    pub fn cloud_watch_logs_parameters(&self) -> std::option::Option<& crate::types::PipeTargetCloudWatchLogsParameters> {
+    pub fn cloud_watch_logs_parameters(
+        &self,
+    ) -> std::option::Option<&crate::types::PipeTargetCloudWatchLogsParameters> {
         self.cloud_watch_logs_parameters.as_ref()
     }
 }
-impl  std::fmt::Debug for PipeTargetParameters  {
+impl std::fmt::Debug for PipeTargetParameters {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetParameters");
         formatter.field("input_template", &"*** Sensitive Data Redacted ***");
-        formatter.field("lambda_function_parameters", &self.lambda_function_parameters);
-        formatter.field("step_function_state_machine_parameters", &self.step_function_state_machine_parameters);
+        formatter.field(
+            "lambda_function_parameters",
+            &self.lambda_function_parameters,
+        );
+        formatter.field(
+            "step_function_state_machine_parameters",
+            &self.step_function_state_machine_parameters,
+        );
         formatter.field("kinesis_stream_parameters", &self.kinesis_stream_parameters);
         formatter.field("ecs_task_parameters", &self.ecs_task_parameters);
         formatter.field("batch_job_parameters", &self.batch_job_parameters);
         formatter.field("sqs_queue_parameters", &self.sqs_queue_parameters);
         formatter.field("http_parameters", &self.http_parameters);
         formatter.field("redshift_data_parameters", &self.redshift_data_parameters);
-        formatter.field("sage_maker_pipeline_parameters", &self.sage_maker_pipeline_parameters);
-        formatter.field("event_bridge_event_bus_parameters", &self.event_bridge_event_bus_parameters);
-        formatter.field("cloud_watch_logs_parameters", &self.cloud_watch_logs_parameters);
+        formatter.field(
+            "sage_maker_pipeline_parameters",
+            &self.sage_maker_pipeline_parameters,
+        );
+        formatter.field(
+            "event_bridge_event_bus_parameters",
+            &self.event_bridge_event_bus_parameters,
+        );
+        formatter.field(
+            "cloud_watch_logs_parameters",
+            &self.cloud_watch_logs_parameters,
+        );
         formatter.finish()
     }
 }
@@ -121,17 +163,26 @@ impl PipeTargetParameters {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
 pub struct PipeTargetParametersBuilder {
     pub(crate) input_template: std::option::Option<std::string::String>,
-    pub(crate) lambda_function_parameters: std::option::Option<crate::types::PipeTargetLambdaFunctionParameters>,
-    pub(crate) step_function_state_machine_parameters: std::option::Option<crate::types::PipeTargetStateMachineParameters>,
-    pub(crate) kinesis_stream_parameters: std::option::Option<crate::types::PipeTargetKinesisStreamParameters>,
+    pub(crate) lambda_function_parameters:
+        std::option::Option<crate::types::PipeTargetLambdaFunctionParameters>,
+    pub(crate) step_function_state_machine_parameters:
+        std::option::Option<crate::types::PipeTargetStateMachineParameters>,
+    pub(crate) kinesis_stream_parameters:
+        std::option::Option<crate::types::PipeTargetKinesisStreamParameters>,
     pub(crate) ecs_task_parameters: std::option::Option<crate::types::PipeTargetEcsTaskParameters>,
-    pub(crate) batch_job_parameters: std::option::Option<crate::types::PipeTargetBatchJobParameters>,
-    pub(crate) sqs_queue_parameters: std::option::Option<crate::types::PipeTargetSqsQueueParameters>,
+    pub(crate) batch_job_parameters:
+        std::option::Option<crate::types::PipeTargetBatchJobParameters>,
+    pub(crate) sqs_queue_parameters:
+        std::option::Option<crate::types::PipeTargetSqsQueueParameters>,
     pub(crate) http_parameters: std::option::Option<crate::types::PipeTargetHttpParameters>,
-    pub(crate) redshift_data_parameters: std::option::Option<crate::types::PipeTargetRedshiftDataParameters>,
-    pub(crate) sage_maker_pipeline_parameters: std::option::Option<crate::types::PipeTargetSageMakerPipelineParameters>,
-    pub(crate) event_bridge_event_bus_parameters: std::option::Option<crate::types::PipeTargetEventBridgeEventBusParameters>,
-    pub(crate) cloud_watch_logs_parameters: std::option::Option<crate::types::PipeTargetCloudWatchLogsParameters>,
+    pub(crate) redshift_data_parameters:
+        std::option::Option<crate::types::PipeTargetRedshiftDataParameters>,
+    pub(crate) sage_maker_pipeline_parameters:
+        std::option::Option<crate::types::PipeTargetSageMakerPipelineParameters>,
+    pub(crate) event_bridge_event_bus_parameters:
+        std::option::Option<crate::types::PipeTargetEventBridgeEventBusParameters>,
+    pub(crate) cloud_watch_logs_parameters:
+        std::option::Option<crate::types::PipeTargetCloudWatchLogsParameters>,
 }
 impl PipeTargetParametersBuilder {
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
@@ -141,34 +192,56 @@ impl PipeTargetParametersBuilder {
     }
     /// <p>Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see <a href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation (JSON) Data Interchange Format</a>.</p>
     pub fn set_input_template(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.input_template = input; self
+        self.input_template = input;
+        self
     }
     /// <p>The parameters for using a Lambda function as a target.</p>
-    pub fn lambda_function_parameters(mut self, input: crate::types::PipeTargetLambdaFunctionParameters) -> Self {
+    pub fn lambda_function_parameters(
+        mut self,
+        input: crate::types::PipeTargetLambdaFunctionParameters,
+    ) -> Self {
         self.lambda_function_parameters = Some(input);
         self
     }
     /// <p>The parameters for using a Lambda function as a target.</p>
-    pub fn set_lambda_function_parameters(mut self, input: std::option::Option<crate::types::PipeTargetLambdaFunctionParameters>) -> Self {
-        self.lambda_function_parameters = input; self
+    pub fn set_lambda_function_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetLambdaFunctionParameters>,
+    ) -> Self {
+        self.lambda_function_parameters = input;
+        self
     }
     /// <p>The parameters for using a Step Functions state machine as a target.</p>
-    pub fn step_function_state_machine_parameters(mut self, input: crate::types::PipeTargetStateMachineParameters) -> Self {
+    pub fn step_function_state_machine_parameters(
+        mut self,
+        input: crate::types::PipeTargetStateMachineParameters,
+    ) -> Self {
         self.step_function_state_machine_parameters = Some(input);
         self
     }
     /// <p>The parameters for using a Step Functions state machine as a target.</p>
-    pub fn set_step_function_state_machine_parameters(mut self, input: std::option::Option<crate::types::PipeTargetStateMachineParameters>) -> Self {
-        self.step_function_state_machine_parameters = input; self
+    pub fn set_step_function_state_machine_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetStateMachineParameters>,
+    ) -> Self {
+        self.step_function_state_machine_parameters = input;
+        self
     }
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    pub fn kinesis_stream_parameters(mut self, input: crate::types::PipeTargetKinesisStreamParameters) -> Self {
+    pub fn kinesis_stream_parameters(
+        mut self,
+        input: crate::types::PipeTargetKinesisStreamParameters,
+    ) -> Self {
         self.kinesis_stream_parameters = Some(input);
         self
     }
     /// <p>The parameters for using a Kinesis stream as a source.</p>
-    pub fn set_kinesis_stream_parameters(mut self, input: std::option::Option<crate::types::PipeTargetKinesisStreamParameters>) -> Self {
-        self.kinesis_stream_parameters = input; self
+    pub fn set_kinesis_stream_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetKinesisStreamParameters>,
+    ) -> Self {
+        self.kinesis_stream_parameters = input;
+        self
     }
     /// <p>The parameters for using an Amazon ECS task as a target.</p>
     pub fn ecs_task_parameters(mut self, input: crate::types::PipeTargetEcsTaskParameters) -> Self {
@@ -176,26 +249,44 @@ impl PipeTargetParametersBuilder {
         self
     }
     /// <p>The parameters for using an Amazon ECS task as a target.</p>
-    pub fn set_ecs_task_parameters(mut self, input: std::option::Option<crate::types::PipeTargetEcsTaskParameters>) -> Self {
-        self.ecs_task_parameters = input; self
+    pub fn set_ecs_task_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetEcsTaskParameters>,
+    ) -> Self {
+        self.ecs_task_parameters = input;
+        self
     }
     /// <p>The parameters for using an Batch job as a target.</p>
-    pub fn batch_job_parameters(mut self, input: crate::types::PipeTargetBatchJobParameters) -> Self {
+    pub fn batch_job_parameters(
+        mut self,
+        input: crate::types::PipeTargetBatchJobParameters,
+    ) -> Self {
         self.batch_job_parameters = Some(input);
         self
     }
     /// <p>The parameters for using an Batch job as a target.</p>
-    pub fn set_batch_job_parameters(mut self, input: std::option::Option<crate::types::PipeTargetBatchJobParameters>) -> Self {
-        self.batch_job_parameters = input; self
+    pub fn set_batch_job_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetBatchJobParameters>,
+    ) -> Self {
+        self.batch_job_parameters = input;
+        self
     }
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    pub fn sqs_queue_parameters(mut self, input: crate::types::PipeTargetSqsQueueParameters) -> Self {
+    pub fn sqs_queue_parameters(
+        mut self,
+        input: crate::types::PipeTargetSqsQueueParameters,
+    ) -> Self {
         self.sqs_queue_parameters = Some(input);
         self
     }
     /// <p>The parameters for using a Amazon SQS stream as a source.</p>
-    pub fn set_sqs_queue_parameters(mut self, input: std::option::Option<crate::types::PipeTargetSqsQueueParameters>) -> Self {
-        self.sqs_queue_parameters = input; self
+    pub fn set_sqs_queue_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetSqsQueueParameters>,
+    ) -> Self {
+        self.sqs_queue_parameters = input;
+        self
     }
     /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations.</p>
     pub fn http_parameters(mut self, input: crate::types::PipeTargetHttpParameters) -> Self {
@@ -203,72 +294,92 @@ impl PipeTargetParametersBuilder {
         self
     }
     /// <p>These are custom parameter to be used when the target is an API Gateway REST APIs or EventBridge ApiDestinations.</p>
-    pub fn set_http_parameters(mut self, input: std::option::Option<crate::types::PipeTargetHttpParameters>) -> Self {
-        self.http_parameters = input; self
+    pub fn set_http_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetHttpParameters>,
+    ) -> Self {
+        self.http_parameters = input;
+        self
     }
     /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
-    pub fn redshift_data_parameters(mut self, input: crate::types::PipeTargetRedshiftDataParameters) -> Self {
+    pub fn redshift_data_parameters(
+        mut self,
+        input: crate::types::PipeTargetRedshiftDataParameters,
+    ) -> Self {
         self.redshift_data_parameters = Some(input);
         self
     }
     /// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement.</p>
-    pub fn set_redshift_data_parameters(mut self, input: std::option::Option<crate::types::PipeTargetRedshiftDataParameters>) -> Self {
-        self.redshift_data_parameters = input; self
+    pub fn set_redshift_data_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetRedshiftDataParameters>,
+    ) -> Self {
+        self.redshift_data_parameters = input;
+        self
     }
     /// <p>The parameters for using a SageMaker pipeline as a target.</p>
-    pub fn sage_maker_pipeline_parameters(mut self, input: crate::types::PipeTargetSageMakerPipelineParameters) -> Self {
+    pub fn sage_maker_pipeline_parameters(
+        mut self,
+        input: crate::types::PipeTargetSageMakerPipelineParameters,
+    ) -> Self {
         self.sage_maker_pipeline_parameters = Some(input);
         self
     }
     /// <p>The parameters for using a SageMaker pipeline as a target.</p>
-    pub fn set_sage_maker_pipeline_parameters(mut self, input: std::option::Option<crate::types::PipeTargetSageMakerPipelineParameters>) -> Self {
-        self.sage_maker_pipeline_parameters = input; self
+    pub fn set_sage_maker_pipeline_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetSageMakerPipelineParameters>,
+    ) -> Self {
+        self.sage_maker_pipeline_parameters = input;
+        self
     }
     /// <p>The parameters for using an EventBridge event bus as a target.</p>
-    pub fn event_bridge_event_bus_parameters(mut self, input: crate::types::PipeTargetEventBridgeEventBusParameters) -> Self {
+    pub fn event_bridge_event_bus_parameters(
+        mut self,
+        input: crate::types::PipeTargetEventBridgeEventBusParameters,
+    ) -> Self {
         self.event_bridge_event_bus_parameters = Some(input);
         self
     }
     /// <p>The parameters for using an EventBridge event bus as a target.</p>
-    pub fn set_event_bridge_event_bus_parameters(mut self, input: std::option::Option<crate::types::PipeTargetEventBridgeEventBusParameters>) -> Self {
-        self.event_bridge_event_bus_parameters = input; self
+    pub fn set_event_bridge_event_bus_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetEventBridgeEventBusParameters>,
+    ) -> Self {
+        self.event_bridge_event_bus_parameters = input;
+        self
     }
     /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
-    pub fn cloud_watch_logs_parameters(mut self, input: crate::types::PipeTargetCloudWatchLogsParameters) -> Self {
+    pub fn cloud_watch_logs_parameters(
+        mut self,
+        input: crate::types::PipeTargetCloudWatchLogsParameters,
+    ) -> Self {
         self.cloud_watch_logs_parameters = Some(input);
         self
     }
     /// <p>The parameters for using an CloudWatch Logs log stream as a target.</p>
-    pub fn set_cloud_watch_logs_parameters(mut self, input: std::option::Option<crate::types::PipeTargetCloudWatchLogsParameters>) -> Self {
-        self.cloud_watch_logs_parameters = input; self
+    pub fn set_cloud_watch_logs_parameters(
+        mut self,
+        input: std::option::Option<crate::types::PipeTargetCloudWatchLogsParameters>,
+    ) -> Self {
+        self.cloud_watch_logs_parameters = input;
+        self
     }
     /// Consumes the builder and constructs a [`PipeTargetParameters`](crate::types::PipeTargetParameters).
     pub fn build(self) -> crate::types::PipeTargetParameters {
         crate::types::PipeTargetParameters {
-            input_template: self.input_template
-            ,
-            lambda_function_parameters: self.lambda_function_parameters
-            ,
-            step_function_state_machine_parameters: self.step_function_state_machine_parameters
-            ,
-            kinesis_stream_parameters: self.kinesis_stream_parameters
-            ,
-            ecs_task_parameters: self.ecs_task_parameters
-            ,
-            batch_job_parameters: self.batch_job_parameters
-            ,
-            sqs_queue_parameters: self.sqs_queue_parameters
-            ,
-            http_parameters: self.http_parameters
-            ,
-            redshift_data_parameters: self.redshift_data_parameters
-            ,
-            sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters
-            ,
-            event_bridge_event_bus_parameters: self.event_bridge_event_bus_parameters
-            ,
-            cloud_watch_logs_parameters: self.cloud_watch_logs_parameters
-            ,
+            input_template: self.input_template,
+            lambda_function_parameters: self.lambda_function_parameters,
+            step_function_state_machine_parameters: self.step_function_state_machine_parameters,
+            kinesis_stream_parameters: self.kinesis_stream_parameters,
+            ecs_task_parameters: self.ecs_task_parameters,
+            batch_job_parameters: self.batch_job_parameters,
+            sqs_queue_parameters: self.sqs_queue_parameters,
+            http_parameters: self.http_parameters,
+            redshift_data_parameters: self.redshift_data_parameters,
+            sage_maker_pipeline_parameters: self.sage_maker_pipeline_parameters,
+            event_bridge_event_bus_parameters: self.event_bridge_event_bus_parameters,
+            cloud_watch_logs_parameters: self.cloud_watch_logs_parameters,
         }
     }
 }
@@ -276,18 +387,32 @@ impl std::fmt::Debug for PipeTargetParametersBuilder {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("PipeTargetParametersBuilder");
         formatter.field("input_template", &"*** Sensitive Data Redacted ***");
-        formatter.field("lambda_function_parameters", &self.lambda_function_parameters);
-        formatter.field("step_function_state_machine_parameters", &self.step_function_state_machine_parameters);
+        formatter.field(
+            "lambda_function_parameters",
+            &self.lambda_function_parameters,
+        );
+        formatter.field(
+            "step_function_state_machine_parameters",
+            &self.step_function_state_machine_parameters,
+        );
         formatter.field("kinesis_stream_parameters", &self.kinesis_stream_parameters);
         formatter.field("ecs_task_parameters", &self.ecs_task_parameters);
         formatter.field("batch_job_parameters", &self.batch_job_parameters);
         formatter.field("sqs_queue_parameters", &self.sqs_queue_parameters);
         formatter.field("http_parameters", &self.http_parameters);
         formatter.field("redshift_data_parameters", &self.redshift_data_parameters);
-        formatter.field("sage_maker_pipeline_parameters", &self.sage_maker_pipeline_parameters);
-        formatter.field("event_bridge_event_bus_parameters", &self.event_bridge_event_bus_parameters);
-        formatter.field("cloud_watch_logs_parameters", &self.cloud_watch_logs_parameters);
+        formatter.field(
+            "sage_maker_pipeline_parameters",
+            &self.sage_maker_pipeline_parameters,
+        );
+        formatter.field(
+            "event_bridge_event_bus_parameters",
+            &self.event_bridge_event_bus_parameters,
+        );
+        formatter.field(
+            "cloud_watch_logs_parameters",
+            &self.cloud_watch_logs_parameters,
+        );
         formatter.finish()
     }
 }
-

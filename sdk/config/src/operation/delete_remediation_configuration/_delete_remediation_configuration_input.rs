@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRemediationConfigurationInput  {
+pub struct DeleteRemediationConfigurationInput {
     /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
     #[doc(hidden)]
     pub config_rule_name: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DeleteRemediationConfigurationInput  {
 }
 impl DeleteRemediationConfigurationInput {
     /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
-    pub fn config_rule_name(&self) -> std::option::Option<& str> {
+    pub fn config_rule_name(&self) -> std::option::Option<&str> {
         self.config_rule_name.as_deref()
     }
     /// <p>The type of a resource.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
 }
 impl DeleteRemediationConfigurationInput {
     /// Creates a new builder-style object to manufacture [`DeleteRemediationConfigurationInput`](crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationInput).
-    pub fn builder() -> crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationInputBuilder{
         crate::operation::delete_remediation_configuration::builders::DeleteRemediationConfigurationInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DeleteRemediationConfigurationInputBuilder {
     }
     /// <p>The name of the Config rule for which you want to delete remediation configuration.</p>
     pub fn set_config_rule_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.config_rule_name = input; self
+        self.config_rule_name = input;
+        self
     }
     /// <p>The type of a resource.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -51,10 +52,16 @@ impl DeleteRemediationConfigurationInputBuilder {
     }
     /// <p>The type of a resource.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteRemediationConfigurationInput`](crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationInput {
                 config_rule_name: self.config_rule_name
@@ -65,4 +72,3 @@ impl DeleteRemediationConfigurationInputBuilder {
         )
     }
 }
-

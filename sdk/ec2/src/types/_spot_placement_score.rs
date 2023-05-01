@@ -3,7 +3,7 @@
 /// <p>The Spot placement score for this Region or Availability Zone. The score is calculated based on the assumption that the <code>capacity-optimized</code> allocation strategy is used and that all of the Availability Zones in the Region can be used.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SpotPlacementScore  {
+pub struct SpotPlacementScore {
     /// <p>The Region.</p>
     #[doc(hidden)]
     pub region: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct SpotPlacementScore  {
 }
 impl SpotPlacementScore {
     /// <p>The Region.</p>
-    pub fn region(&self) -> std::option::Option<& str> {
+    pub fn region(&self) -> std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>The Availability Zone.</p>
-    pub fn availability_zone_id(&self) -> std::option::Option<& str> {
+    pub fn availability_zone_id(&self) -> std::option::Option<&str> {
         self.availability_zone_id.as_deref()
     }
     /// <p>The placement score, on a scale from <code>1</code> to <code>10</code>. A score of <code>10</code> indicates that your Spot request is highly likely to succeed in this Region or Availability Zone. A score of <code>1</code> indicates that your Spot request is not likely to succeed. </p>
@@ -51,7 +51,8 @@ impl SpotPlacementScoreBuilder {
     }
     /// <p>The Region.</p>
     pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.region = input; self
+        self.region = input;
+        self
     }
     /// <p>The Availability Zone.</p>
     pub fn availability_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,8 +60,12 @@ impl SpotPlacementScoreBuilder {
         self
     }
     /// <p>The Availability Zone.</p>
-    pub fn set_availability_zone_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.availability_zone_id = input; self
+    pub fn set_availability_zone_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.availability_zone_id = input;
+        self
     }
     /// <p>The placement score, on a scale from <code>1</code> to <code>10</code>. A score of <code>10</code> indicates that your Spot request is highly likely to succeed in this Region or Availability Zone. A score of <code>1</code> indicates that your Spot request is not likely to succeed. </p>
     pub fn score(mut self, input: i32) -> Self {
@@ -69,18 +74,15 @@ impl SpotPlacementScoreBuilder {
     }
     /// <p>The placement score, on a scale from <code>1</code> to <code>10</code>. A score of <code>10</code> indicates that your Spot request is highly likely to succeed in this Region or Availability Zone. A score of <code>1</code> indicates that your Spot request is not likely to succeed. </p>
     pub fn set_score(mut self, input: std::option::Option<i32>) -> Self {
-        self.score = input; self
+        self.score = input;
+        self
     }
     /// Consumes the builder and constructs a [`SpotPlacementScore`](crate::types::SpotPlacementScore).
     pub fn build(self) -> crate::types::SpotPlacementScore {
         crate::types::SpotPlacementScore {
-            region: self.region
-            ,
-            availability_zone_id: self.availability_zone_id
-            ,
-            score: self.score
-            ,
+            region: self.region,
+            availability_zone_id: self.availability_zone_id,
+            score: self.score,
         }
     }
 }
-

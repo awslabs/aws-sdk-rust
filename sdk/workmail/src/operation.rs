@@ -240,4 +240,3 @@ pub mod update_primary_email_address;
 
 /// Types for the `UpdateResource` operation.
 pub mod update_resource;
-

@@ -3,16 +3,16 @@
 /// <p>Describes a recommendation option for an Amazon Elastic Block Store (Amazon EBS) instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VolumeRecommendationOption  {
+pub struct VolumeRecommendationOption {
     /// <p>An array of objects that describe a volume configuration.</p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::types::VolumeConfiguration>,
-    /// <p>The performance risk of the volume recommendation option.</p> 
-    /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p> 
+    /// <p>The performance risk of the volume recommendation option.</p>
+    /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
     #[doc(hidden)]
     pub performance_risk: f64,
-    /// <p>The rank of the volume recommendation option.</p> 
+    /// <p>The rank of the volume recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     #[doc(hidden)]
     pub rank: i32,
@@ -22,22 +22,22 @@ pub struct VolumeRecommendationOption  {
 }
 impl VolumeRecommendationOption {
     /// <p>An array of objects that describe a volume configuration.</p>
-    pub fn configuration(&self) -> std::option::Option<& crate::types::VolumeConfiguration> {
+    pub fn configuration(&self) -> std::option::Option<&crate::types::VolumeConfiguration> {
         self.configuration.as_ref()
     }
-    /// <p>The performance risk of the volume recommendation option.</p> 
-    /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p> 
+    /// <p>The performance risk of the volume recommendation option.</p>
+    /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
     pub fn performance_risk(&self) -> f64 {
         self.performance_risk
     }
-    /// <p>The rank of the volume recommendation option.</p> 
+    /// <p>The rank of the volume recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(&self) -> i32 {
         self.rank
     }
     /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn savings_opportunity(&self) -> std::option::Option<& crate::types::SavingsOpportunity> {
+    pub fn savings_opportunity(&self) -> std::option::Option<&crate::types::SavingsOpportunity> {
         self.savings_opportunity.as_ref()
     }
 }
@@ -64,32 +64,38 @@ impl VolumeRecommendationOptionBuilder {
         self
     }
     /// <p>An array of objects that describe a volume configuration.</p>
-    pub fn set_configuration(mut self, input: std::option::Option<crate::types::VolumeConfiguration>) -> Self {
-        self.configuration = input; self
+    pub fn set_configuration(
+        mut self,
+        input: std::option::Option<crate::types::VolumeConfiguration>,
+    ) -> Self {
+        self.configuration = input;
+        self
     }
-    /// <p>The performance risk of the volume recommendation option.</p> 
-    /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p> 
+    /// <p>The performance risk of the volume recommendation option.</p>
+    /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
     pub fn performance_risk(mut self, input: f64) -> Self {
         self.performance_risk = Some(input);
         self
     }
-    /// <p>The performance risk of the volume recommendation option.</p> 
-    /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p> 
+    /// <p>The performance risk of the volume recommendation option.</p>
+    /// <p>Performance risk is the likelihood of the recommended volume type meeting the performance requirement of your workload.</p>
     /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning that the recommended resource is predicted to always provide enough hardware capability. The higher the performance risk is, the more likely you should validate whether the recommendation will meet the performance requirements of your workload before migrating your resource.</p>
     pub fn set_performance_risk(mut self, input: std::option::Option<f64>) -> Self {
-        self.performance_risk = input; self
+        self.performance_risk = input;
+        self
     }
-    /// <p>The rank of the volume recommendation option.</p> 
+    /// <p>The rank of the volume recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn rank(mut self, input: i32) -> Self {
         self.rank = Some(input);
         self
     }
-    /// <p>The rank of the volume recommendation option.</p> 
+    /// <p>The rank of the volume recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
     pub fn set_rank(mut self, input: std::option::Option<i32>) -> Self {
-        self.rank = input; self
+        self.rank = input;
+        self
     }
     /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
     pub fn savings_opportunity(mut self, input: crate::types::SavingsOpportunity) -> Self {
@@ -97,23 +103,20 @@ impl VolumeRecommendationOptionBuilder {
         self
     }
     /// <p>An object that describes the savings opportunity for the EBS volume recommendation option. Savings opportunity includes the estimated monthly savings amount and percentage.</p>
-    pub fn set_savings_opportunity(mut self, input: std::option::Option<crate::types::SavingsOpportunity>) -> Self {
-        self.savings_opportunity = input; self
+    pub fn set_savings_opportunity(
+        mut self,
+        input: std::option::Option<crate::types::SavingsOpportunity>,
+    ) -> Self {
+        self.savings_opportunity = input;
+        self
     }
     /// Consumes the builder and constructs a [`VolumeRecommendationOption`](crate::types::VolumeRecommendationOption).
     pub fn build(self) -> crate::types::VolumeRecommendationOption {
         crate::types::VolumeRecommendationOption {
-            configuration: self.configuration
-            ,
-            performance_risk: self.performance_risk
-                .unwrap_or_default()
-            ,
-            rank: self.rank
-                .unwrap_or_default()
-            ,
-            savings_opportunity: self.savings_opportunity
-            ,
+            configuration: self.configuration,
+            performance_risk: self.performance_risk.unwrap_or_default(),
+            rank: self.rank.unwrap_or_default(),
+            savings_opportunity: self.savings_opportunity,
         }
     }
 }
-

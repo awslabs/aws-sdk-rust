@@ -3,21 +3,21 @@
 /// <p>Returns the kind of currency detected.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExpenseCurrency  {
-    /// <p>Currency code for detected currency. the current supported codes are:</p> 
-    /// <ul> 
-    /// <li> <p>USD</p> </li> 
-    /// <li> <p>EUR</p> </li> 
-    /// <li> <p>GBP</p> </li> 
-    /// <li> <p>CAD</p> </li> 
-    /// <li> <p>INR</p> </li> 
-    /// <li> <p>JPY</p> </li> 
-    /// <li> <p>CHF</p> </li> 
-    /// <li> <p>AUD</p> </li> 
-    /// <li> <p>CNY</p> </li> 
-    /// <li> <p>BZR</p> </li> 
-    /// <li> <p>SEK</p> </li> 
-    /// <li> <p>HKD</p> </li> 
+pub struct ExpenseCurrency {
+    /// <p>Currency code for detected currency. the current supported codes are:</p>
+    /// <ul>
+    /// <li> <p>USD</p> </li>
+    /// <li> <p>EUR</p> </li>
+    /// <li> <p>GBP</p> </li>
+    /// <li> <p>CAD</p> </li>
+    /// <li> <p>INR</p> </li>
+    /// <li> <p>JPY</p> </li>
+    /// <li> <p>CHF</p> </li>
+    /// <li> <p>AUD</p> </li>
+    /// <li> <p>CNY</p> </li>
+    /// <li> <p>BZR</p> </li>
+    /// <li> <p>SEK</p> </li>
+    /// <li> <p>HKD</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub code: std::option::Option<std::string::String>,
@@ -26,22 +26,22 @@ pub struct ExpenseCurrency  {
     pub confidence: std::option::Option<f32>,
 }
 impl ExpenseCurrency {
-    /// <p>Currency code for detected currency. the current supported codes are:</p> 
-    /// <ul> 
-    /// <li> <p>USD</p> </li> 
-    /// <li> <p>EUR</p> </li> 
-    /// <li> <p>GBP</p> </li> 
-    /// <li> <p>CAD</p> </li> 
-    /// <li> <p>INR</p> </li> 
-    /// <li> <p>JPY</p> </li> 
-    /// <li> <p>CHF</p> </li> 
-    /// <li> <p>AUD</p> </li> 
-    /// <li> <p>CNY</p> </li> 
-    /// <li> <p>BZR</p> </li> 
-    /// <li> <p>SEK</p> </li> 
-    /// <li> <p>HKD</p> </li> 
+    /// <p>Currency code for detected currency. the current supported codes are:</p>
+    /// <ul>
+    /// <li> <p>USD</p> </li>
+    /// <li> <p>EUR</p> </li>
+    /// <li> <p>GBP</p> </li>
+    /// <li> <p>CAD</p> </li>
+    /// <li> <p>INR</p> </li>
+    /// <li> <p>JPY</p> </li>
+    /// <li> <p>CHF</p> </li>
+    /// <li> <p>AUD</p> </li>
+    /// <li> <p>CNY</p> </li>
+    /// <li> <p>BZR</p> </li>
+    /// <li> <p>SEK</p> </li>
+    /// <li> <p>HKD</p> </li>
     /// </ul>
-    pub fn code(&self) -> std::option::Option<& str> {
+    pub fn code(&self) -> std::option::Option<&str> {
         self.code.as_deref()
     }
     /// <p>Percentage confideence in the detected currency.</p>
@@ -64,42 +64,43 @@ pub struct ExpenseCurrencyBuilder {
     pub(crate) confidence: std::option::Option<f32>,
 }
 impl ExpenseCurrencyBuilder {
-    /// <p>Currency code for detected currency. the current supported codes are:</p> 
-    /// <ul> 
-    /// <li> <p>USD</p> </li> 
-    /// <li> <p>EUR</p> </li> 
-    /// <li> <p>GBP</p> </li> 
-    /// <li> <p>CAD</p> </li> 
-    /// <li> <p>INR</p> </li> 
-    /// <li> <p>JPY</p> </li> 
-    /// <li> <p>CHF</p> </li> 
-    /// <li> <p>AUD</p> </li> 
-    /// <li> <p>CNY</p> </li> 
-    /// <li> <p>BZR</p> </li> 
-    /// <li> <p>SEK</p> </li> 
-    /// <li> <p>HKD</p> </li> 
+    /// <p>Currency code for detected currency. the current supported codes are:</p>
+    /// <ul>
+    /// <li> <p>USD</p> </li>
+    /// <li> <p>EUR</p> </li>
+    /// <li> <p>GBP</p> </li>
+    /// <li> <p>CAD</p> </li>
+    /// <li> <p>INR</p> </li>
+    /// <li> <p>JPY</p> </li>
+    /// <li> <p>CHF</p> </li>
+    /// <li> <p>AUD</p> </li>
+    /// <li> <p>CNY</p> </li>
+    /// <li> <p>BZR</p> </li>
+    /// <li> <p>SEK</p> </li>
+    /// <li> <p>HKD</p> </li>
     /// </ul>
     pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
         self.code = Some(input.into());
         self
     }
-    /// <p>Currency code for detected currency. the current supported codes are:</p> 
-    /// <ul> 
-    /// <li> <p>USD</p> </li> 
-    /// <li> <p>EUR</p> </li> 
-    /// <li> <p>GBP</p> </li> 
-    /// <li> <p>CAD</p> </li> 
-    /// <li> <p>INR</p> </li> 
-    /// <li> <p>JPY</p> </li> 
-    /// <li> <p>CHF</p> </li> 
-    /// <li> <p>AUD</p> </li> 
-    /// <li> <p>CNY</p> </li> 
-    /// <li> <p>BZR</p> </li> 
-    /// <li> <p>SEK</p> </li> 
-    /// <li> <p>HKD</p> </li> 
+    /// <p>Currency code for detected currency. the current supported codes are:</p>
+    /// <ul>
+    /// <li> <p>USD</p> </li>
+    /// <li> <p>EUR</p> </li>
+    /// <li> <p>GBP</p> </li>
+    /// <li> <p>CAD</p> </li>
+    /// <li> <p>INR</p> </li>
+    /// <li> <p>JPY</p> </li>
+    /// <li> <p>CHF</p> </li>
+    /// <li> <p>AUD</p> </li>
+    /// <li> <p>CNY</p> </li>
+    /// <li> <p>BZR</p> </li>
+    /// <li> <p>SEK</p> </li>
+    /// <li> <p>HKD</p> </li>
     /// </ul>
     pub fn set_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.code = input; self
+        self.code = input;
+        self
     }
     /// <p>Percentage confideence in the detected currency.</p>
     pub fn confidence(mut self, input: f32) -> Self {
@@ -108,16 +109,14 @@ impl ExpenseCurrencyBuilder {
     }
     /// <p>Percentage confideence in the detected currency.</p>
     pub fn set_confidence(mut self, input: std::option::Option<f32>) -> Self {
-        self.confidence = input; self
+        self.confidence = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExpenseCurrency`](crate::types::ExpenseCurrency).
     pub fn build(self) -> crate::types::ExpenseCurrency {
         crate::types::ExpenseCurrency {
-            code: self.code
-            ,
-            confidence: self.confidence
-            ,
+            code: self.code,
+            confidence: self.confidence,
         }
     }
 }
-

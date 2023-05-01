@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSecurityGroupRuleDescriptionsIngressInput  {
+pub struct UpdateSecurityGroupRuleDescriptionsIngressInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -17,7 +17,8 @@ pub struct UpdateSecurityGroupRuleDescriptionsIngressInput  {
     pub ip_permissions: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
     /// <p>[VPC only] The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
     #[doc(hidden)]
-    pub security_group_rule_descriptions: std::option::Option<std::vec::Vec<crate::types::SecurityGroupRuleDescription>>,
+    pub security_group_rule_descriptions:
+        std::option::Option<std::vec::Vec<crate::types::SecurityGroupRuleDescription>>,
 }
 impl UpdateSecurityGroupRuleDescriptionsIngressInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -25,25 +26,27 @@ impl UpdateSecurityGroupRuleDescriptionsIngressInput {
         self.dry_run
     }
     /// <p>The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
-    pub fn group_id(&self) -> std::option::Option<& str> {
+    pub fn group_id(&self) -> std::option::Option<&str> {
         self.group_id.as_deref()
     }
     /// <p>[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
-    pub fn group_name(&self) -> std::option::Option<& str> {
+    pub fn group_name(&self) -> std::option::Option<&str> {
         self.group_name.as_deref()
     }
     /// <p>The IP permissions for the security group rule. You must specify either IP permissions or a description.</p>
-    pub fn ip_permissions(&self) -> std::option::Option<& [crate::types::IpPermission]> {
+    pub fn ip_permissions(&self) -> std::option::Option<&[crate::types::IpPermission]> {
         self.ip_permissions.as_deref()
     }
     /// <p>[VPC only] The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
-    pub fn security_group_rule_descriptions(&self) -> std::option::Option<& [crate::types::SecurityGroupRuleDescription]> {
+    pub fn security_group_rule_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::types::SecurityGroupRuleDescription]> {
         self.security_group_rule_descriptions.as_deref()
     }
 }
 impl UpdateSecurityGroupRuleDescriptionsIngressInput {
     /// Creates a new builder-style object to manufacture [`UpdateSecurityGroupRuleDescriptionsIngressInput`](crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressInput).
-    pub fn builder() -> crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
+    pub fn builder() -> crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressInputBuilder{
         crate::operation::update_security_group_rule_descriptions_ingress::builders::UpdateSecurityGroupRuleDescriptionsIngressInputBuilder::default()
     }
 }
@@ -56,7 +59,8 @@ pub struct UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
     pub(crate) group_id: std::option::Option<std::string::String>,
     pub(crate) group_name: std::option::Option<std::string::String>,
     pub(crate) ip_permissions: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
-    pub(crate) security_group_rule_descriptions: std::option::Option<std::vec::Vec<crate::types::SecurityGroupRuleDescription>>,
+    pub(crate) security_group_rule_descriptions:
+        std::option::Option<std::vec::Vec<crate::types::SecurityGroupRuleDescription>>,
 }
 impl UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -66,7 +70,8 @@ impl UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
     pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,7 +80,8 @@ impl UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
     }
     /// <p>The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
     pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_id = input; self
+        self.group_id = input;
+        self
     }
     /// <p>[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
     pub fn group_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,7 +90,8 @@ impl UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
     }
     /// <p>[EC2-Classic, default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.</p>
     pub fn set_group_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_name = input; self
+        self.group_name = input;
+        self
     }
     /// Appends an item to `ip_permissions`.
     ///
@@ -93,31 +100,42 @@ impl UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
     /// <p>The IP permissions for the security group rule. You must specify either IP permissions or a description.</p>
     pub fn ip_permissions(mut self, input: crate::types::IpPermission) -> Self {
         let mut v = self.ip_permissions.unwrap_or_default();
-                        v.push(input);
-                        self.ip_permissions = Some(v);
-                        self
+        v.push(input);
+        self.ip_permissions = Some(v);
+        self
     }
     /// <p>The IP permissions for the security group rule. You must specify either IP permissions or a description.</p>
-    pub fn set_ip_permissions(mut self, input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>) -> Self {
-        self.ip_permissions = input; self
+    pub fn set_ip_permissions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::IpPermission>>,
+    ) -> Self {
+        self.ip_permissions = input;
+        self
     }
     /// Appends an item to `security_group_rule_descriptions`.
     ///
     /// To override the contents of this collection use [`set_security_group_rule_descriptions`](Self::set_security_group_rule_descriptions).
     ///
     /// <p>[VPC only] The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
-    pub fn security_group_rule_descriptions(mut self, input: crate::types::SecurityGroupRuleDescription) -> Self {
+    pub fn security_group_rule_descriptions(
+        mut self,
+        input: crate::types::SecurityGroupRuleDescription,
+    ) -> Self {
         let mut v = self.security_group_rule_descriptions.unwrap_or_default();
-                        v.push(input);
-                        self.security_group_rule_descriptions = Some(v);
-                        self
+        v.push(input);
+        self.security_group_rule_descriptions = Some(v);
+        self
     }
     /// <p>[VPC only] The description for the ingress security group rules. You must specify either a description or IP permissions.</p>
-    pub fn set_security_group_rule_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::SecurityGroupRuleDescription>>) -> Self {
-        self.security_group_rule_descriptions = input; self
+    pub fn set_security_group_rule_descriptions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::SecurityGroupRuleDescription>>,
+    ) -> Self {
+        self.security_group_rule_descriptions = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateSecurityGroupRuleDescriptionsIngressInput`](crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressInput).
-    pub fn build(self) -> Result<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressInput {
                 dry_run: self.dry_run
@@ -134,4 +152,3 @@ impl UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
         )
     }
 }
-

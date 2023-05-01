@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateMeetingOutput  {
+pub struct CreateMeetingOutput {
     /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
     #[doc(hidden)]
     pub meeting: std::option::Option<crate::types::Meeting>,
@@ -10,15 +10,15 @@ pub struct CreateMeetingOutput  {
 }
 impl CreateMeetingOutput {
     /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
-    pub fn meeting(&self) -> std::option::Option<& crate::types::Meeting> {
+    pub fn meeting(&self) -> std::option::Option<&crate::types::Meeting> {
         self.meeting.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for CreateMeetingOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateMeetingOutput {
     /// Creates a new builder-style object to manufacture [`CreateMeetingOutput`](crate::operation::create_meeting::CreateMeetingOutput).
     pub fn builder() -> crate::operation::create_meeting::builders::CreateMeetingOutputBuilder {
@@ -41,24 +41,23 @@ impl CreateMeetingOutputBuilder {
     }
     /// <p> The meeting information, including the meeting ID and <code>MediaPlacement</code> . </p>
     pub fn set_meeting(mut self, input: std::option::Option<crate::types::Meeting>) -> Self {
-        self.meeting = input; self
+        self.meeting = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateMeetingOutput`](crate::operation::create_meeting::CreateMeetingOutput).
     pub fn build(self) -> crate::operation::create_meeting::CreateMeetingOutput {
         crate::operation::create_meeting::CreateMeetingOutput {
-            meeting: self.meeting
-            ,
+            meeting: self.meeting,
             _request_id: self._request_id,
         }
     }
 }
-

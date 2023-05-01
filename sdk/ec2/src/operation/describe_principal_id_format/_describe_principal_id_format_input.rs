@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribePrincipalIdFormatInput  {
+pub struct DescribePrincipalIdFormatInput {
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     #[doc(hidden)]
     pub dry_run: std::option::Option<bool>,
@@ -22,7 +22,7 @@ impl DescribePrincipalIdFormatInput {
         self.dry_run
     }
     /// <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
-    pub fn resources(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn resources(&self) -> std::option::Option<&[std::string::String]> {
         self.resources.as_deref()
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned NextToken value. </p>
@@ -30,13 +30,13 @@ impl DescribePrincipalIdFormatInput {
         self.max_results
     }
     /// <p>The token to request the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl DescribePrincipalIdFormatInput {
     /// Creates a new builder-style object to manufacture [`DescribePrincipalIdFormatInput`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput).
-    pub fn builder() -> crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder {
+    pub fn builder() -> crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder{
         crate::operation::describe_principal_id_format::builders::DescribePrincipalIdFormatInputBuilder::default()
     }
 }
@@ -58,7 +58,8 @@ impl DescribePrincipalIdFormatInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Appends an item to `resources`.
     ///
@@ -67,13 +68,17 @@ impl DescribePrincipalIdFormatInputBuilder {
     /// <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
     pub fn resources(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.resources.unwrap_or_default();
-                        v.push(input.into());
-                        self.resources = Some(v);
-                        self
+        v.push(input.into());
+        self.resources = Some(v);
+        self
     }
     /// <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code> | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
-    pub fn set_resources(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.resources = input; self
+    pub fn set_resources(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.resources = input;
+        self
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned NextToken value. </p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -82,7 +87,8 @@ impl DescribePrincipalIdFormatInputBuilder {
     }
     /// <p>The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned NextToken value. </p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -91,22 +97,23 @@ impl DescribePrincipalIdFormatInputBuilder {
     }
     /// <p>The token to request the next page of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribePrincipalIdFormatInput`](crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput).
-    pub fn build(self) -> Result<crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_principal_id_format::DescribePrincipalIdFormatInput {
-                dry_run: self.dry_run
-                ,
-                resources: self.resources
-                ,
-                max_results: self.max_results
-                ,
-                next_token: self.next_token
-                ,
-            }
+                dry_run: self.dry_run,
+                resources: self.resources,
+                max_results: self.max_results,
+                next_token: self.next_token,
+            },
         )
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ModifyVerifiedAccessInstanceLoggingConfigurationInput  {
+pub struct ModifyVerifiedAccessInstanceLoggingConfigurationInput {
     /// <p>The ID of the Verified Access instance.</p>
     #[doc(hidden)]
     pub verified_access_instance_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ModifyVerifiedAccessInstanceLoggingConfigurationInput  {
 }
 impl ModifyVerifiedAccessInstanceLoggingConfigurationInput {
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn verified_access_instance_id(&self) -> std::option::Option<& str> {
+    pub fn verified_access_instance_id(&self) -> std::option::Option<&str> {
         self.verified_access_instance_id.as_deref()
     }
     /// <p>The configuration options for Verified Access instances.</p>
-    pub fn access_logs(&self) -> std::option::Option<& crate::types::VerifiedAccessLogOptions> {
+    pub fn access_logs(&self) -> std::option::Option<&crate::types::VerifiedAccessLogOptions> {
         self.access_logs.as_ref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -30,13 +30,13 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInput {
         self.dry_run
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
 }
 impl ModifyVerifiedAccessInstanceLoggingConfigurationInput {
     /// Creates a new builder-style object to manufacture [`ModifyVerifiedAccessInstanceLoggingConfigurationInput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput).
-    pub fn builder() -> crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
+    pub fn builder() -> crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder{
         crate::operation::modify_verified_access_instance_logging_configuration::builders::ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder::default()
     }
 }
@@ -57,8 +57,12 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
         self
     }
     /// <p>The ID of the Verified Access instance.</p>
-    pub fn set_verified_access_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.verified_access_instance_id = input; self
+    pub fn set_verified_access_instance_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.verified_access_instance_id = input;
+        self
     }
     /// <p>The configuration options for Verified Access instances.</p>
     pub fn access_logs(mut self, input: crate::types::VerifiedAccessLogOptions) -> Self {
@@ -66,8 +70,12 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
         self
     }
     /// <p>The configuration options for Verified Access instances.</p>
-    pub fn set_access_logs(mut self, input: std::option::Option<crate::types::VerifiedAccessLogOptions>) -> Self {
-        self.access_logs = input; self
+    pub fn set_access_logs(
+        mut self,
+        input: std::option::Option<crate::types::VerifiedAccessLogOptions>,
+    ) -> Self {
+        self.access_logs = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -76,7 +84,8 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,10 +94,11 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
     }
     /// <p>A unique, case-sensitive token that you provide to ensure idempotency of your modification request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a>.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ModifyVerifiedAccessInstanceLoggingConfigurationInput`](crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput).
-    pub fn build(self) -> Result<crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput {
                 verified_access_instance_id: self.verified_access_instance_id
@@ -103,4 +113,3 @@ impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
         )
     }
 }
-

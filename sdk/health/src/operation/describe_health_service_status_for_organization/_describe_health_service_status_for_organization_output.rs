@@ -2,28 +2,29 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeHealthServiceStatusForOrganizationOutput  {
-    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p> 
+pub struct DescribeHealthServiceStatusForOrganizationOutput {
+    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
     #[doc(hidden)]
     pub health_service_access_status_for_organization: std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeHealthServiceStatusForOrganizationOutput {
-    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p> 
+    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
-    pub fn health_service_access_status_for_organization(&self) -> std::option::Option<& str> {
-        self.health_service_access_status_for_organization.as_deref()
+    pub fn health_service_access_status_for_organization(&self) -> std::option::Option<&str> {
+        self.health_service_access_status_for_organization
+            .as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeHealthServiceStatusForOrganizationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeHealthServiceStatusForOrganizationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeHealthServiceStatusForOrganizationOutput`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput).
-    pub fn builder() -> crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationOutputBuilder {
+    pub fn builder() -> crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationOutputBuilder{
         crate::operation::describe_health_service_status_for_organization::builders::DescribeHealthServiceStatusForOrganizationOutputBuilder::default()
     }
 }
@@ -32,32 +33,40 @@ impl DescribeHealthServiceStatusForOrganizationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeHealthServiceStatusForOrganizationOutputBuilder {
-    pub(crate) health_service_access_status_for_organization: std::option::Option<std::string::String>,
+    pub(crate) health_service_access_status_for_organization:
+        std::option::Option<std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeHealthServiceStatusForOrganizationOutputBuilder {
-    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p> 
+    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
-    pub fn health_service_access_status_for_organization(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn health_service_access_status_for_organization(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.health_service_access_status_for_organization = Some(input.into());
         self
     }
-    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p> 
+    /// <p>Information about the status of enabling or disabling the Health organizational view feature in your organization.</p>
     /// <p>Valid values are <code>ENABLED | DISABLED | PENDING</code>. </p>
-    pub fn set_health_service_access_status_for_organization(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.health_service_access_status_for_organization = input; self
+    pub fn set_health_service_access_status_for_organization(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.health_service_access_status_for_organization = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeHealthServiceStatusForOrganizationOutput`](crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput).
-    pub fn build(self) -> crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput {
+    pub fn build(self) -> crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput{
         crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput {
             health_service_access_status_for_organization: self.health_service_access_status_for_organization
             ,
@@ -65,4 +74,3 @@ impl DescribeHealthServiceStatusForOrganizationOutputBuilder {
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListTaskDefinitionFamiliesOutput  {
+pub struct ListTaskDefinitionFamiliesOutput {
     /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
     #[doc(hidden)]
     pub families: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -13,22 +13,22 @@ pub struct ListTaskDefinitionFamiliesOutput  {
 }
 impl ListTaskDefinitionFamiliesOutput {
     /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
-    pub fn families(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn families(&self) -> std::option::Option<&[std::string::String]> {
         self.families.as_deref()
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitionFamilies</code> request. When the results of a <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListTaskDefinitionFamiliesOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListTaskDefinitionFamiliesOutput {
     /// Creates a new builder-style object to manufacture [`ListTaskDefinitionFamiliesOutput`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput).
-    pub fn builder() -> crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesOutputBuilder {
+    pub fn builder() -> crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesOutputBuilder{
         crate::operation::list_task_definition_families::builders::ListTaskDefinitionFamiliesOutputBuilder::default()
     }
 }
@@ -49,13 +49,17 @@ impl ListTaskDefinitionFamiliesOutputBuilder {
     /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
     pub fn families(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.families.unwrap_or_default();
-                        v.push(input.into());
-                        self.families = Some(v);
-                        self
+        v.push(input.into());
+        self.families = Some(v);
+        self
     }
     /// <p>The list of task definition family names that match the <code>ListTaskDefinitionFamilies</code> request.</p>
-    pub fn set_families(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.families = input; self
+    pub fn set_families(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.families = input;
+        self
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitionFamilies</code> request. When the results of a <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,26 @@ impl ListTaskDefinitionFamiliesOutputBuilder {
     }
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTaskDefinitionFamilies</code> request. When the results of a <code>ListTaskDefinitionFamilies</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListTaskDefinitionFamiliesOutput`](crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput).
-    pub fn build(self) -> crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput {
         crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput {
-            families: self.families
-            ,
-            next_token: self.next_token
-            ,
+            families: self.families,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

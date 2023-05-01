@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListParallelDataInput  {
+pub struct ListParallelDataInput {
     /// <p>A string that specifies the next page of results to return in a paginated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct ListParallelDataInput  {
 }
 impl ListParallelDataInput {
     /// <p>A string that specifies the next page of results to return in a paginated response.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of parallel data resources returned for each request.</p>
@@ -22,7 +22,8 @@ impl ListParallelDataInput {
 }
 impl ListParallelDataInput {
     /// Creates a new builder-style object to manufacture [`ListParallelDataInput`](crate::operation::list_parallel_data::ListParallelDataInput).
-    pub fn builder() -> crate::operation::list_parallel_data::builders::ListParallelDataInputBuilder {
+    pub fn builder() -> crate::operation::list_parallel_data::builders::ListParallelDataInputBuilder
+    {
         crate::operation::list_parallel_data::builders::ListParallelDataInputBuilder::default()
     }
 }
@@ -42,7 +43,8 @@ impl ListParallelDataInputBuilder {
     }
     /// <p>A string that specifies the next page of results to return in a paginated response.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of parallel data resources returned for each request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -51,18 +53,21 @@ impl ListParallelDataInputBuilder {
     }
     /// <p>The maximum number of parallel data resources returned for each request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListParallelDataInput`](crate::operation::list_parallel_data::ListParallelDataInput).
-    pub fn build(self) -> Result<crate::operation::list_parallel_data::ListParallelDataInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_parallel_data::ListParallelDataInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_parallel_data::ListParallelDataInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

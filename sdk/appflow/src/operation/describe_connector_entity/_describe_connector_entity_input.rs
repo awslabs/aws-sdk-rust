@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeConnectorEntityInput  {
+pub struct DescribeConnectorEntityInput {
     /// <p> The entity name for that connector. </p>
     #[doc(hidden)]
     pub connector_entity_name: std::option::Option<std::string::String>,
@@ -18,25 +18,27 @@ pub struct DescribeConnectorEntityInput  {
 }
 impl DescribeConnectorEntityInput {
     /// <p> The entity name for that connector. </p>
-    pub fn connector_entity_name(&self) -> std::option::Option<& str> {
+    pub fn connector_entity_name(&self) -> std::option::Option<&str> {
         self.connector_entity_name.as_deref()
     }
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
-    pub fn connector_type(&self) -> std::option::Option<& crate::types::ConnectorType> {
+    pub fn connector_type(&self) -> std::option::Option<&crate::types::ConnectorType> {
         self.connector_type.as_ref()
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn connector_profile_name(&self) -> std::option::Option<& str> {
+    pub fn connector_profile_name(&self) -> std::option::Option<&str> {
         self.connector_profile_name.as_deref()
     }
     /// <p>The version of the API that's used by the connector.</p>
-    pub fn api_version(&self) -> std::option::Option<& str> {
+    pub fn api_version(&self) -> std::option::Option<&str> {
         self.api_version.as_deref()
     }
 }
 impl DescribeConnectorEntityInput {
     /// Creates a new builder-style object to manufacture [`DescribeConnectorEntityInput`](crate::operation::describe_connector_entity::DescribeConnectorEntityInput).
-    pub fn builder() -> crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder
+    {
         crate::operation::describe_connector_entity::builders::DescribeConnectorEntityInputBuilder::default()
     }
 }
@@ -57,8 +59,12 @@ impl DescribeConnectorEntityInputBuilder {
         self
     }
     /// <p> The entity name for that connector. </p>
-    pub fn set_connector_entity_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connector_entity_name = input; self
+    pub fn set_connector_entity_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.connector_entity_name = input;
+        self
     }
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
     pub fn connector_type(mut self, input: crate::types::ConnectorType) -> Self {
@@ -66,8 +72,12 @@ impl DescribeConnectorEntityInputBuilder {
         self
     }
     /// <p> The type of connector application, such as Salesforce, Amplitude, and so on. </p>
-    pub fn set_connector_type(mut self, input: std::option::Option<crate::types::ConnectorType>) -> Self {
-        self.connector_type = input; self
+    pub fn set_connector_type(
+        mut self,
+        input: std::option::Option<crate::types::ConnectorType>,
+    ) -> Self {
+        self.connector_type = input;
+        self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
     pub fn connector_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -75,8 +85,12 @@ impl DescribeConnectorEntityInputBuilder {
         self
     }
     /// <p> The name of the connector profile. The name is unique for each <code>ConnectorProfile</code> in the Amazon Web Services account. </p>
-    pub fn set_connector_profile_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.connector_profile_name = input; self
+    pub fn set_connector_profile_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.connector_profile_name = input;
+        self
     }
     /// <p>The version of the API that's used by the connector.</p>
     pub fn api_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,22 +99,23 @@ impl DescribeConnectorEntityInputBuilder {
     }
     /// <p>The version of the API that's used by the connector.</p>
     pub fn set_api_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.api_version = input; self
+        self.api_version = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeConnectorEntityInput`](crate::operation::describe_connector_entity::DescribeConnectorEntityInput).
-    pub fn build(self) -> Result<crate::operation::describe_connector_entity::DescribeConnectorEntityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_connector_entity::DescribeConnectorEntityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_connector_entity::DescribeConnectorEntityInput {
-                connector_entity_name: self.connector_entity_name
-                ,
-                connector_type: self.connector_type
-                ,
-                connector_profile_name: self.connector_profile_name
-                ,
-                api_version: self.api_version
-                ,
-            }
+                connector_entity_name: self.connector_entity_name,
+                connector_type: self.connector_type,
+                connector_profile_name: self.connector_profile_name,
+                api_version: self.api_version,
+            },
         )
     }
 }
-

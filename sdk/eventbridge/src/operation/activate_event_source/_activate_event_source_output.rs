@@ -2,18 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ActivateEventSourceOutput  {
+pub struct ActivateEventSourceOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for ActivateEventSourceOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ActivateEventSourceOutput {
     /// Creates a new builder-style object to manufacture [`ActivateEventSourceOutput`](crate::operation::activate_event_source::ActivateEventSourceOutput).
-    pub fn builder() -> crate::operation::activate_event_source::builders::ActivateEventSourceOutputBuilder {
-        crate::operation::activate_event_source::builders::ActivateEventSourceOutputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::activate_event_source::builders::ActivateEventSourceOutputBuilder {
+        crate::operation::activate_event_source::builders::ActivateEventSourceOutputBuilder::default(
+        )
     }
 }
 
@@ -25,14 +27,14 @@ pub struct ActivateEventSourceOutputBuilder {
 }
 impl ActivateEventSourceOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ActivateEventSourceOutput`](crate::operation::activate_event_source::ActivateEventSourceOutput).
     pub fn build(self) -> crate::operation::activate_event_source::ActivateEventSourceOutput {
         crate::operation::activate_event_source::ActivateEventSourceOutput {
@@ -40,4 +42,3 @@ impl ActivateEventSourceOutputBuilder {
         }
     }
 }
-

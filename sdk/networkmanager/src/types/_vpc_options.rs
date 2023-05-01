@@ -3,7 +3,7 @@
 /// <p>Describes the VPC options.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcOptions  {
+pub struct VpcOptions {
     /// <p>Indicates whether IPv6 is supported.</p>
     #[doc(hidden)]
     pub ipv6_support: bool,
@@ -43,7 +43,8 @@ impl VpcOptionsBuilder {
     }
     /// <p>Indicates whether IPv6 is supported.</p>
     pub fn set_ipv6_support(mut self, input: std::option::Option<bool>) -> Self {
-        self.ipv6_support = input; self
+        self.ipv6_support = input;
+        self
     }
     /// <p>Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is <code>false</code>.</p>
     pub fn appliance_mode_support(mut self, input: bool) -> Self {
@@ -52,18 +53,14 @@ impl VpcOptionsBuilder {
     }
     /// <p>Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is <code>false</code>.</p>
     pub fn set_appliance_mode_support(mut self, input: std::option::Option<bool>) -> Self {
-        self.appliance_mode_support = input; self
+        self.appliance_mode_support = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcOptions`](crate::types::VpcOptions).
     pub fn build(self) -> crate::types::VpcOptions {
         crate::types::VpcOptions {
-            ipv6_support: self.ipv6_support
-                .unwrap_or_default()
-            ,
-            appliance_mode_support: self.appliance_mode_support
-                .unwrap_or_default()
-            ,
+            ipv6_support: self.ipv6_support.unwrap_or_default(),
+            appliance_mode_support: self.appliance_mode_support.unwrap_or_default(),
         }
     }
 }
-

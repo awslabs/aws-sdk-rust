@@ -3,29 +3,29 @@
 /// <p>Each tag includes the following elements.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Tag  {
-    /// <p>The key (name) of a tag.</p> 
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
+pub struct Tag {
+    /// <p>The key (name) of a tag.</p>
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
     /// <p>Constraints: Each key can be 1-128 characters long.</p>
     #[doc(hidden)]
     pub key: std::option::Option<std::string::String>,
-    /// <p>The value of a tag.</p> 
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
+    /// <p>The value of a tag.</p>
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
     /// <p>Constraints: Each value can be 0-256 characters long.</p>
     #[doc(hidden)]
     pub value: std::option::Option<std::string::String>,
 }
 impl Tag {
-    /// <p>The key (name) of a tag.</p> 
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
+    /// <p>The key (name) of a tag.</p>
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
     /// <p>Constraints: Each key can be 1-128 characters long.</p>
-    pub fn key(&self) -> std::option::Option<& str> {
+    pub fn key(&self) -> std::option::Option<&str> {
         self.key.as_deref()
     }
-    /// <p>The value of a tag.</p> 
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
+    /// <p>The value of a tag.</p>
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
     /// <p>Constraints: Each value can be 0-256 characters long.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -44,40 +44,39 @@ pub struct TagBuilder {
     pub(crate) value: std::option::Option<std::string::String>,
 }
 impl TagBuilder {
-    /// <p>The key (name) of a tag.</p> 
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
+    /// <p>The key (name) of a tag.</p>
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
     /// <p>Constraints: Each key can be 1-128 characters long.</p>
     pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
         self.key = Some(input.into());
         self
     }
-    /// <p>The key (name) of a tag.</p> 
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
+    /// <p>The key (name) of a tag.</p>
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
     /// <p>Constraints: Each key can be 1-128 characters long.</p>
     pub fn set_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.key = input; self
+        self.key = input;
+        self
     }
-    /// <p>The value of a tag.</p> 
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
+    /// <p>The value of a tag.</p>
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
     /// <p>Constraints: Each value can be 0-256 characters long.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
         self.value = Some(input.into());
         self
     }
-    /// <p>The value of a tag.</p> 
-    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p> 
+    /// <p>The value of a tag.</p>
+    /// <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
     /// <p>Constraints: Each value can be 0-256 characters long.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`Tag`](crate::types::Tag).
     pub fn build(self) -> crate::types::Tag {
         crate::types::Tag {
-            key: self.key
-            ,
-            value: self.value
-            ,
+            key: self.key,
+            value: self.value,
         }
     }
 }
-

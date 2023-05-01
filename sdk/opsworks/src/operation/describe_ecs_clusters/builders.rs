@@ -4,58 +4,83 @@ pub use crate::operation::describe_ecs_clusters::_describe_ecs_clusters_output::
 pub use crate::operation::describe_ecs_clusters::_describe_ecs_clusters_input::DescribeEcsClustersInputBuilder;
 
 /// Fluent builder constructing a request to `DescribeEcsClusters`.
-/// 
-/// <p>Describes Amazon ECS clusters that are registered with a stack. If you specify only a stack ID, you can use the <code>MaxResults</code> and <code>NextToken</code> parameters to paginate the response. However, AWS OpsWorks Stacks currently supports only one cluster per layer, so the result set has a maximum of one element.</p> 
-/// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permission. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p> 
+///
+/// <p>Describes Amazon ECS clusters that are registered with a stack. If you specify only a stack ID, you can use the <code>MaxResults</code> and <code>NextToken</code> parameters to paginate the response. However, AWS OpsWorks Stacks currently supports only one cluster per layer, so the result set has a maximum of one element.</p>
+/// <p> <b>Required Permissions</b>: To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack or an attached policy that explicitly grants permission. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 /// <p>This call accepts only one resource-identifying parameter.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEcsClustersFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersInputBuilder,
+    inner: crate::operation::describe_ecs_clusters::builders::DescribeEcsClustersInputBuilder,
 }
-impl DescribeEcsClustersFluentBuilder  {
+impl DescribeEcsClustersFluentBuilder {
     /// Creates a new `DescribeEcsClusters`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::describe_ecs_clusters::DescribeEcsClusters, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::describe_ecs_clusters::DescribeEcsClustersError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput, aws_smithy_http::result::SdkError<crate::operation::describe_ecs_clusters::DescribeEcsClustersError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::describe_ecs_clusters::DescribeEcsClusters,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_ecs_clusters::DescribeEcsClustersError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::describe_ecs_clusters::DescribeEcsClustersError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Create a paginator for this request
-                            ///
-                            /// Paginators are used by calling [`send().await`](crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator::send) which returns a `Stream`.
-                            pub fn into_paginator(self) -> crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator {
-                                crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator::new(self.handle, self.inner)
-                            }
+    ///
+    /// Paginators are used by calling [`send().await`](crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator::send) which returns a `Stream`.
+    pub fn into_paginator(
+        self,
+    ) -> crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator {
+        crate::operation::describe_ecs_clusters::paginator::DescribeEcsClustersPaginator::new(
+            self.handle,
+            self.inner,
+        )
+    }
     /// Appends an item to `EcsClusterArns`.
     ///
     /// To override the contents of this collection use [`set_ecs_cluster_arns`](Self::set_ecs_cluster_arns).
@@ -66,7 +91,10 @@ impl DescribeEcsClustersFluentBuilder  {
         self
     }
     /// <p>A list of ARNs, one for each cluster to be described.</p>
-    pub fn set_ecs_cluster_arns(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_ecs_cluster_arns(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_ecs_cluster_arns(input);
         self
     }
@@ -101,4 +129,3 @@ impl DescribeEcsClustersFluentBuilder  {
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Used to specify changes to the ONTAP configuration for the volume you are updating.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateOntapVolumeConfiguration  {
+pub struct UpdateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     #[doc(hidden)]
     pub junction_path: std::option::Option<std::string::String>,
@@ -19,13 +19,13 @@ pub struct UpdateOntapVolumeConfiguration  {
     /// <p>Update the volume's data tiering policy.</p>
     #[doc(hidden)]
     pub tiering_policy: std::option::Option<crate::types::TieringPolicy>,
-    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p> 
-    /// <ul> 
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li> 
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li> 
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li> 
-    /// </ul> 
-    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p> 
+    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// </ul>
+    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     #[doc(hidden)]
     pub snapshot_policy: std::option::Option<std::string::String>,
@@ -35,11 +35,11 @@ pub struct UpdateOntapVolumeConfiguration  {
 }
 impl UpdateOntapVolumeConfiguration {
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
-    pub fn junction_path(&self) -> std::option::Option<& str> {
+    pub fn junction_path(&self) -> std::option::Option<&str> {
         self.junction_path.as_deref()
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>. <code>NTFS</code>, or <code>MIXED</code>.</p>
-    pub fn security_style(&self) -> std::option::Option<& crate::types::SecurityStyle> {
+    pub fn security_style(&self) -> std::option::Option<&crate::types::SecurityStyle> {
         self.security_style.as_ref()
     }
     /// <p>Specifies the size of the volume in megabytes.</p>
@@ -51,18 +51,18 @@ impl UpdateOntapVolumeConfiguration {
         self.storage_efficiency_enabled
     }
     /// <p>Update the volume's data tiering policy.</p>
-    pub fn tiering_policy(&self) -> std::option::Option<& crate::types::TieringPolicy> {
+    pub fn tiering_policy(&self) -> std::option::Option<&crate::types::TieringPolicy> {
         self.tiering_policy.as_ref()
     }
-    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p> 
-    /// <ul> 
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li> 
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li> 
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li> 
-    /// </ul> 
-    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p> 
+    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// </ul>
+    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
-    pub fn snapshot_policy(&self) -> std::option::Option<& str> {
+    pub fn snapshot_policy(&self) -> std::option::Option<&str> {
         self.snapshot_policy.as_deref()
     }
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
@@ -97,7 +97,8 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code> must have a leading forward slash, such as <code>/vol3</code>.</p>
     pub fn set_junction_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.junction_path = input; self
+        self.junction_path = input;
+        self
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>. <code>NTFS</code>, or <code>MIXED</code>.</p>
     pub fn security_style(mut self, input: crate::types::SecurityStyle) -> Self {
@@ -105,8 +106,12 @@ impl UpdateOntapVolumeConfigurationBuilder {
         self
     }
     /// <p>The security style for the volume, which can be <code>UNIX</code>. <code>NTFS</code>, or <code>MIXED</code>.</p>
-    pub fn set_security_style(mut self, input: std::option::Option<crate::types::SecurityStyle>) -> Self {
-        self.security_style = input; self
+    pub fn set_security_style(
+        mut self,
+        input: std::option::Option<crate::types::SecurityStyle>,
+    ) -> Self {
+        self.security_style = input;
+        self
     }
     /// <p>Specifies the size of the volume in megabytes.</p>
     pub fn size_in_megabytes(mut self, input: i32) -> Self {
@@ -115,7 +120,8 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>Specifies the size of the volume in megabytes.</p>
     pub fn set_size_in_megabytes(mut self, input: std::option::Option<i32>) -> Self {
-        self.size_in_megabytes = input; self
+        self.size_in_megabytes = input;
+        self
     }
     /// <p>Default is <code>false</code>. Set to true to enable the deduplication, compression, and compaction storage efficiency features on the volume.</p>
     pub fn storage_efficiency_enabled(mut self, input: bool) -> Self {
@@ -124,7 +130,8 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>Default is <code>false</code>. Set to true to enable the deduplication, compression, and compaction storage efficiency features on the volume.</p>
     pub fn set_storage_efficiency_enabled(mut self, input: std::option::Option<bool>) -> Self {
-        self.storage_efficiency_enabled = input; self
+        self.storage_efficiency_enabled = input;
+        self
     }
     /// <p>Update the volume's data tiering policy.</p>
     pub fn tiering_policy(mut self, input: crate::types::TieringPolicy) -> Self {
@@ -132,31 +139,36 @@ impl UpdateOntapVolumeConfigurationBuilder {
         self
     }
     /// <p>Update the volume's data tiering policy.</p>
-    pub fn set_tiering_policy(mut self, input: std::option::Option<crate::types::TieringPolicy>) -> Self {
-        self.tiering_policy = input; self
+    pub fn set_tiering_policy(
+        mut self,
+        input: std::option::Option<crate::types::TieringPolicy>,
+    ) -> Self {
+        self.tiering_policy = input;
+        self
     }
-    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p> 
-    /// <ul> 
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li> 
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li> 
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li> 
-    /// </ul> 
-    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p> 
+    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// </ul>
+    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub fn snapshot_policy(mut self, input: impl Into<std::string::String>) -> Self {
         self.snapshot_policy = Some(input.into());
         self
     }
-    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p> 
-    /// <ul> 
-    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li> 
-    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li> 
-    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li> 
-    /// </ul> 
-    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p> 
+    /// <p>Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+    /// <ul>
+    /// <li> <p> <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.</p> </li>
+    /// <li> <p> <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only retains one snapshot from the weekly schedule.</p> </li>
+    /// <li> <p> <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent automatic snapshots from being taken.</p> </li>
+    /// </ul>
+    /// <p>You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
     pub fn set_snapshot_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.snapshot_policy = input; self
+        self.snapshot_policy = input;
+        self
     }
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     pub fn copy_tags_to_backups(mut self, input: bool) -> Self {
@@ -165,26 +177,19 @@ impl UpdateOntapVolumeConfigurationBuilder {
     }
     /// <p>A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from the volume, regardless of this value.</p>
     pub fn set_copy_tags_to_backups(mut self, input: std::option::Option<bool>) -> Self {
-        self.copy_tags_to_backups = input; self
+        self.copy_tags_to_backups = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateOntapVolumeConfiguration`](crate::types::UpdateOntapVolumeConfiguration).
     pub fn build(self) -> crate::types::UpdateOntapVolumeConfiguration {
         crate::types::UpdateOntapVolumeConfiguration {
-            junction_path: self.junction_path
-            ,
-            security_style: self.security_style
-            ,
-            size_in_megabytes: self.size_in_megabytes
-            ,
-            storage_efficiency_enabled: self.storage_efficiency_enabled
-            ,
-            tiering_policy: self.tiering_policy
-            ,
-            snapshot_policy: self.snapshot_policy
-            ,
-            copy_tags_to_backups: self.copy_tags_to_backups
-            ,
+            junction_path: self.junction_path,
+            security_style: self.security_style,
+            size_in_megabytes: self.size_in_megabytes,
+            storage_efficiency_enabled: self.storage_efficiency_enabled,
+            tiering_policy: self.tiering_policy,
+            snapshot_policy: self.snapshot_policy,
+            copy_tags_to_backups: self.copy_tags_to_backups,
         }
     }
 }
-

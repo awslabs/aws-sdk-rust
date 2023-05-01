@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateTransitGatewayConnectInput  {
+pub struct CreateTransitGatewayConnectInput {
     /// <p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>
     #[doc(hidden)]
     pub transport_transit_gateway_attachment_id: std::option::Option<std::string::String>,
@@ -18,15 +18,17 @@ pub struct CreateTransitGatewayConnectInput  {
 }
 impl CreateTransitGatewayConnectInput {
     /// <p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>
-    pub fn transport_transit_gateway_attachment_id(&self) -> std::option::Option<& str> {
+    pub fn transport_transit_gateway_attachment_id(&self) -> std::option::Option<&str> {
         self.transport_transit_gateway_attachment_id.as_deref()
     }
     /// <p>The Connect attachment options.</p>
-    pub fn options(&self) -> std::option::Option<& crate::types::CreateTransitGatewayConnectRequestOptions> {
+    pub fn options(
+        &self,
+    ) -> std::option::Option<&crate::types::CreateTransitGatewayConnectRequestOptions> {
         self.options.as_ref()
     }
     /// <p>The tags to apply to the Connect attachment.</p>
-    pub fn tag_specifications(&self) -> std::option::Option<& [crate::types::TagSpecification]> {
+    pub fn tag_specifications(&self) -> std::option::Option<&[crate::types::TagSpecification]> {
         self.tag_specifications.as_deref()
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
@@ -36,7 +38,7 @@ impl CreateTransitGatewayConnectInput {
 }
 impl CreateTransitGatewayConnectInput {
     /// Creates a new builder-style object to manufacture [`CreateTransitGatewayConnectInput`](crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput).
-    pub fn builder() -> crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectInputBuilder {
+    pub fn builder() -> crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectInputBuilder{
         crate::operation::create_transit_gateway_connect::builders::CreateTransitGatewayConnectInputBuilder::default()
     }
 }
@@ -46,28 +48,44 @@ impl CreateTransitGatewayConnectInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateTransitGatewayConnectInputBuilder {
     pub(crate) transport_transit_gateway_attachment_id: std::option::Option<std::string::String>,
-    pub(crate) options: std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions>,
-    pub(crate) tag_specifications: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    pub(crate) options:
+        std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions>,
+    pub(crate) tag_specifications:
+        std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
     pub(crate) dry_run: std::option::Option<bool>,
 }
 impl CreateTransitGatewayConnectInputBuilder {
     /// <p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>
-    pub fn transport_transit_gateway_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn transport_transit_gateway_attachment_id(
+        mut self,
+        input: impl Into<std::string::String>,
+    ) -> Self {
         self.transport_transit_gateway_attachment_id = Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway attachment. You can specify a VPC attachment or Amazon Web Services Direct Connect attachment.</p>
-    pub fn set_transport_transit_gateway_attachment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.transport_transit_gateway_attachment_id = input; self
+    pub fn set_transport_transit_gateway_attachment_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.transport_transit_gateway_attachment_id = input;
+        self
     }
     /// <p>The Connect attachment options.</p>
-    pub fn options(mut self, input: crate::types::CreateTransitGatewayConnectRequestOptions) -> Self {
+    pub fn options(
+        mut self,
+        input: crate::types::CreateTransitGatewayConnectRequestOptions,
+    ) -> Self {
         self.options = Some(input);
         self
     }
     /// <p>The Connect attachment options.</p>
-    pub fn set_options(mut self, input: std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions>) -> Self {
-        self.options = input; self
+    pub fn set_options(
+        mut self,
+        input: std::option::Option<crate::types::CreateTransitGatewayConnectRequestOptions>,
+    ) -> Self {
+        self.options = input;
+        self
     }
     /// Appends an item to `tag_specifications`.
     ///
@@ -76,13 +94,17 @@ impl CreateTransitGatewayConnectInputBuilder {
     /// <p>The tags to apply to the Connect attachment.</p>
     pub fn tag_specifications(mut self, input: crate::types::TagSpecification) -> Self {
         let mut v = self.tag_specifications.unwrap_or_default();
-                        v.push(input);
-                        self.tag_specifications = Some(v);
-                        self
+        v.push(input);
+        self.tag_specifications = Some(v);
+        self
     }
     /// <p>The tags to apply to the Connect attachment.</p>
-    pub fn set_tag_specifications(mut self, input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>) -> Self {
-        self.tag_specifications = input; self
+    pub fn set_tag_specifications(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TagSpecification>>,
+    ) -> Self {
+        self.tag_specifications = input;
+        self
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn dry_run(mut self, input: bool) -> Self {
@@ -91,22 +113,24 @@ impl CreateTransitGatewayConnectInputBuilder {
     }
     /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
     pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
-        self.dry_run = input; self
+        self.dry_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateTransitGatewayConnectInput`](crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput).
-    pub fn build(self) -> Result<crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_transit_gateway_connect::CreateTransitGatewayConnectInput {
-                transport_transit_gateway_attachment_id: self.transport_transit_gateway_attachment_id
-                ,
-                options: self.options
-                ,
-                tag_specifications: self.tag_specifications
-                ,
-                dry_run: self.dry_run
-                ,
-            }
+                transport_transit_gateway_attachment_id: self
+                    .transport_transit_gateway_attachment_id,
+                options: self.options,
+                tag_specifications: self.tag_specifications,
+                dry_run: self.dry_run,
+            },
         )
     }
 }
-

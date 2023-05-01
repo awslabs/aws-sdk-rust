@@ -2,21 +2,22 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRegisterAccountStatusOutput  {
+pub struct GetRegisterAccountStatusOutput {
     /// <p> The unique ID of the Amazon Web Services account, provided at account creation. </p>
     #[doc(hidden)]
     pub customer_account_id: std::option::Option<std::string::String>,
-    /// <p> The status of registering your account and resources. The status can be one of:</p> 
-    /// <ul> 
-    /// <li> <p> <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p> </li> 
-    /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li> 
-    /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li> 
+    /// <p> The status of registering your account and resources. The status can be one of:</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p> </li>
+    /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li>
+    /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub account_status: std::option::Option<crate::types::RegistrationStatus>,
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
     #[doc(hidden)]
-    pub timestream_registration_response: std::option::Option<crate::types::TimestreamRegistrationResponse>,
+    pub timestream_registration_response:
+        std::option::Option<crate::types::TimestreamRegistrationResponse>,
     /// <p> Information about the registered IAM resources or errors, if any. </p>
     #[doc(hidden)]
     pub iam_registration_response: std::option::Option<crate::types::IamRegistrationResponse>,
@@ -30,43 +31,47 @@ pub struct GetRegisterAccountStatusOutput  {
 }
 impl GetRegisterAccountStatusOutput {
     /// <p> The unique ID of the Amazon Web Services account, provided at account creation. </p>
-    pub fn customer_account_id(&self) -> std::option::Option<& str> {
+    pub fn customer_account_id(&self) -> std::option::Option<&str> {
         self.customer_account_id.as_deref()
     }
-    /// <p> The status of registering your account and resources. The status can be one of:</p> 
-    /// <ul> 
-    /// <li> <p> <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p> </li> 
-    /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li> 
-    /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li> 
+    /// <p> The status of registering your account and resources. The status can be one of:</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p> </li>
+    /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li>
+    /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li>
     /// </ul>
-    pub fn account_status(&self) -> std::option::Option<& crate::types::RegistrationStatus> {
+    pub fn account_status(&self) -> std::option::Option<&crate::types::RegistrationStatus> {
         self.account_status.as_ref()
     }
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
-    pub fn timestream_registration_response(&self) -> std::option::Option<& crate::types::TimestreamRegistrationResponse> {
+    pub fn timestream_registration_response(
+        &self,
+    ) -> std::option::Option<&crate::types::TimestreamRegistrationResponse> {
         self.timestream_registration_response.as_ref()
     }
     /// <p> Information about the registered IAM resources or errors, if any. </p>
-    pub fn iam_registration_response(&self) -> std::option::Option<& crate::types::IamRegistrationResponse> {
+    pub fn iam_registration_response(
+        &self,
+    ) -> std::option::Option<&crate::types::IamRegistrationResponse> {
         self.iam_registration_response.as_ref()
     }
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn creation_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_time.as_ref()
     }
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn last_modification_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_modification_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_modification_time.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetRegisterAccountStatusOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetRegisterAccountStatusOutput {
     /// Creates a new builder-style object to manufacture [`GetRegisterAccountStatusOutput`](crate::operation::get_register_account_status::GetRegisterAccountStatusOutput).
-    pub fn builder() -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder {
+    pub fn builder() -> crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder{
         crate::operation::get_register_account_status::builders::GetRegisterAccountStatusOutputBuilder::default()
     }
 }
@@ -77,8 +82,10 @@ impl GetRegisterAccountStatusOutput {
 pub struct GetRegisterAccountStatusOutputBuilder {
     pub(crate) customer_account_id: std::option::Option<std::string::String>,
     pub(crate) account_status: std::option::Option<crate::types::RegistrationStatus>,
-    pub(crate) timestream_registration_response: std::option::Option<crate::types::TimestreamRegistrationResponse>,
-    pub(crate) iam_registration_response: std::option::Option<crate::types::IamRegistrationResponse>,
+    pub(crate) timestream_registration_response:
+        std::option::Option<crate::types::TimestreamRegistrationResponse>,
+    pub(crate) iam_registration_response:
+        std::option::Option<crate::types::IamRegistrationResponse>,
     pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
     pub(crate) last_modification_time: std::option::Option<aws_smithy_types::DateTime>,
     _request_id: Option<String>,
@@ -90,45 +97,67 @@ impl GetRegisterAccountStatusOutputBuilder {
         self
     }
     /// <p> The unique ID of the Amazon Web Services account, provided at account creation. </p>
-    pub fn set_customer_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.customer_account_id = input; self
+    pub fn set_customer_account_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.customer_account_id = input;
+        self
     }
-    /// <p> The status of registering your account and resources. The status can be one of:</p> 
-    /// <ul> 
-    /// <li> <p> <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p> </li> 
-    /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li> 
-    /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li> 
+    /// <p> The status of registering your account and resources. The status can be one of:</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p> </li>
+    /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li>
+    /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li>
     /// </ul>
     pub fn account_status(mut self, input: crate::types::RegistrationStatus) -> Self {
         self.account_status = Some(input);
         self
     }
-    /// <p> The status of registering your account and resources. The status can be one of:</p> 
-    /// <ul> 
-    /// <li> <p> <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p> </li> 
-    /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li> 
-    /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li> 
+    /// <p> The status of registering your account and resources. The status can be one of:</p>
+    /// <ul>
+    /// <li> <p> <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully registered.</p> </li>
+    /// <li> <p> <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing the registration request. This process takes approximately five minutes to complete.</p> </li>
+    /// <li> <p> <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register the AWS resource. Try again later.</p> </li>
     /// </ul>
-    pub fn set_account_status(mut self, input: std::option::Option<crate::types::RegistrationStatus>) -> Self {
-        self.account_status = input; self
+    pub fn set_account_status(
+        mut self,
+        input: std::option::Option<crate::types::RegistrationStatus>,
+    ) -> Self {
+        self.account_status = input;
+        self
     }
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
-    pub fn timestream_registration_response(mut self, input: crate::types::TimestreamRegistrationResponse) -> Self {
+    pub fn timestream_registration_response(
+        mut self,
+        input: crate::types::TimestreamRegistrationResponse,
+    ) -> Self {
         self.timestream_registration_response = Some(input);
         self
     }
     /// <p> Information about the registered Amazon Timestream resources or errors, if any.</p>
-    pub fn set_timestream_registration_response(mut self, input: std::option::Option<crate::types::TimestreamRegistrationResponse>) -> Self {
-        self.timestream_registration_response = input; self
+    pub fn set_timestream_registration_response(
+        mut self,
+        input: std::option::Option<crate::types::TimestreamRegistrationResponse>,
+    ) -> Self {
+        self.timestream_registration_response = input;
+        self
     }
     /// <p> Information about the registered IAM resources or errors, if any. </p>
-    pub fn iam_registration_response(mut self, input: crate::types::IamRegistrationResponse) -> Self {
+    pub fn iam_registration_response(
+        mut self,
+        input: crate::types::IamRegistrationResponse,
+    ) -> Self {
         self.iam_registration_response = Some(input);
         self
     }
     /// <p> Information about the registered IAM resources or errors, if any. </p>
-    pub fn set_iam_registration_response(mut self, input: std::option::Option<crate::types::IamRegistrationResponse>) -> Self {
-        self.iam_registration_response = input; self
+    pub fn set_iam_registration_response(
+        mut self,
+        input: std::option::Option<crate::types::IamRegistrationResponse>,
+    ) -> Self {
+        self.iam_registration_response = input;
+        self
     }
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn creation_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -136,8 +165,12 @@ impl GetRegisterAccountStatusOutputBuilder {
         self
     }
     /// <p> The time the account was registered, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_creation_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_time = input; self
+    pub fn set_creation_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_time = input;
+        self
     }
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
     pub fn last_modification_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -145,35 +178,34 @@ impl GetRegisterAccountStatusOutputBuilder {
         self
     }
     /// <p> The time this registration was last updated, in seconds since epoch (January 1, 1970 at midnight UTC time). </p>
-    pub fn set_last_modification_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_modification_time = input; self
+    pub fn set_last_modification_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_modification_time = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetRegisterAccountStatusOutput`](crate::operation::get_register_account_status::GetRegisterAccountStatusOutput).
-    pub fn build(self) -> crate::operation::get_register_account_status::GetRegisterAccountStatusOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_register_account_status::GetRegisterAccountStatusOutput {
         crate::operation::get_register_account_status::GetRegisterAccountStatusOutput {
-            customer_account_id: self.customer_account_id
-            ,
-            account_status: self.account_status
-            ,
-            timestream_registration_response: self.timestream_registration_response
-            ,
-            iam_registration_response: self.iam_registration_response
-            ,
-            creation_time: self.creation_time
-            ,
-            last_modification_time: self.last_modification_time
-            ,
+            customer_account_id: self.customer_account_id,
+            account_status: self.account_status,
+            timestream_registration_response: self.timestream_registration_response,
+            iam_registration_response: self.iam_registration_response,
+            creation_time: self.creation_time,
+            last_modification_time: self.last_modification_time,
             _request_id: self._request_id,
         }
     }
 }
-

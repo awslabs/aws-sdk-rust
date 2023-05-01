@@ -3,7 +3,7 @@
 /// <p>The time range. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TimeRange  {
+pub struct TimeRange {
     /// <p>The start time, in Unix time in seconds. </p>
     #[doc(hidden)]
     pub from_inclusive: std::option::Option<aws_smithy_types::DateTime>,
@@ -13,11 +13,11 @@ pub struct TimeRange  {
 }
 impl TimeRange {
     /// <p>The start time, in Unix time in seconds. </p>
-    pub fn from_inclusive(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn from_inclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.from_inclusive.as_ref()
     }
     /// <p>The end time, in Unix time in seconds. </p>
-    pub fn to_exclusive(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn to_exclusive(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.to_exclusive.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl TimeRangeBuilder {
         self
     }
     /// <p>The start time, in Unix time in seconds. </p>
-    pub fn set_from_inclusive(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.from_inclusive = input; self
+    pub fn set_from_inclusive(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.from_inclusive = input;
+        self
     }
     /// <p>The end time, in Unix time in seconds. </p>
     pub fn to_exclusive(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -51,17 +55,18 @@ impl TimeRangeBuilder {
         self
     }
     /// <p>The end time, in Unix time in seconds. </p>
-    pub fn set_to_exclusive(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.to_exclusive = input; self
+    pub fn set_to_exclusive(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.to_exclusive = input;
+        self
     }
     /// Consumes the builder and constructs a [`TimeRange`](crate::types::TimeRange).
     pub fn build(self) -> crate::types::TimeRange {
         crate::types::TimeRange {
-            from_inclusive: self.from_inclusive
-            ,
-            to_exclusive: self.to_exclusive
-            ,
+            from_inclusive: self.from_inclusive,
+            to_exclusive: self.to_exclusive,
         }
     }
 }
-

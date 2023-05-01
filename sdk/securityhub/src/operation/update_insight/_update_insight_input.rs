@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInsightInput  {
+pub struct UpdateInsightInput {
     /// <p>The ARN of the insight that you want to update.</p>
     #[doc(hidden)]
     pub insight_arn: std::option::Option<std::string::String>,
@@ -18,19 +18,19 @@ pub struct UpdateInsightInput  {
 }
 impl UpdateInsightInput {
     /// <p>The ARN of the insight that you want to update.</p>
-    pub fn insight_arn(&self) -> std::option::Option<& str> {
+    pub fn insight_arn(&self) -> std::option::Option<&str> {
         self.insight_arn.as_deref()
     }
     /// <p>The updated name for the insight.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The updated filters that define this insight.</p>
-    pub fn filters(&self) -> std::option::Option<& crate::types::AwsSecurityFindingFilters> {
+    pub fn filters(&self) -> std::option::Option<&crate::types::AwsSecurityFindingFilters> {
         self.filters.as_ref()
     }
     /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
-    pub fn group_by_attribute(&self) -> std::option::Option<& str> {
+    pub fn group_by_attribute(&self) -> std::option::Option<&str> {
         self.group_by_attribute.as_deref()
     }
 }
@@ -58,7 +58,8 @@ impl UpdateInsightInputBuilder {
     }
     /// <p>The ARN of the insight that you want to update.</p>
     pub fn set_insight_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.insight_arn = input; self
+        self.insight_arn = input;
+        self
     }
     /// <p>The updated name for the insight.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,7 +68,8 @@ impl UpdateInsightInputBuilder {
     }
     /// <p>The updated name for the insight.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The updated filters that define this insight.</p>
     pub fn filters(mut self, input: crate::types::AwsSecurityFindingFilters) -> Self {
@@ -75,8 +77,12 @@ impl UpdateInsightInputBuilder {
         self
     }
     /// <p>The updated filters that define this insight.</p>
-    pub fn set_filters(mut self, input: std::option::Option<crate::types::AwsSecurityFindingFilters>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<crate::types::AwsSecurityFindingFilters>,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
     pub fn group_by_attribute(mut self, input: impl Into<std::string::String>) -> Self {
@@ -84,23 +90,25 @@ impl UpdateInsightInputBuilder {
         self
     }
     /// <p>The updated <code>GroupBy</code> attribute that defines this insight.</p>
-    pub fn set_group_by_attribute(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.group_by_attribute = input; self
+    pub fn set_group_by_attribute(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.group_by_attribute = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateInsightInput`](crate::operation::update_insight::UpdateInsightInput).
-    pub fn build(self) -> Result<crate::operation::update_insight::UpdateInsightInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::update_insight::UpdateInsightInput {
-                insight_arn: self.insight_arn
-                ,
-                name: self.name
-                ,
-                filters: self.filters
-                ,
-                group_by_attribute: self.group_by_attribute
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_insight::UpdateInsightInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::update_insight::UpdateInsightInput {
+            insight_arn: self.insight_arn,
+            name: self.name,
+            filters: self.filters,
+            group_by_attribute: self.group_by_attribute,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePermissionVersionOutput  {
+pub struct DeletePermissionVersionOutput {
     /// <p>A boolean value that indicates whether the operation is successful.</p>
     #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
@@ -20,22 +20,24 @@ impl DeletePermissionVersionOutput {
         self.return_value
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
-    pub fn client_token(&self) -> std::option::Option<& str> {
+    pub fn client_token(&self) -> std::option::Option<&str> {
         self.client_token.as_deref()
     }
     /// <p>This operation is performed asynchronously, and this response parameter indicates the current status.</p>
-    pub fn permission_status(&self) -> std::option::Option<& crate::types::PermissionStatus> {
+    pub fn permission_status(&self) -> std::option::Option<&crate::types::PermissionStatus> {
         self.permission_status.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for DeletePermissionVersionOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DeletePermissionVersionOutput {
     /// Creates a new builder-style object to manufacture [`DeletePermissionVersionOutput`](crate::operation::delete_permission_version::DeletePermissionVersionOutput).
-    pub fn builder() -> crate::operation::delete_permission_version::builders::DeletePermissionVersionOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_permission_version::builders::DeletePermissionVersionOutputBuilder
+    {
         crate::operation::delete_permission_version::builders::DeletePermissionVersionOutputBuilder::default()
     }
 }
@@ -57,7 +59,8 @@ impl DeletePermissionVersionOutputBuilder {
     }
     /// <p>A boolean value that indicates whether the operation is successful.</p>
     pub fn set_return_value(mut self, input: std::option::Option<bool>) -> Self {
-        self.return_value = input; self
+        self.return_value = input;
+        self
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,7 +69,8 @@ impl DeletePermissionVersionOutputBuilder {
     }
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.client_token = input; self
+        self.client_token = input;
+        self
     }
     /// <p>This operation is performed asynchronously, and this response parameter indicates the current status.</p>
     pub fn permission_status(mut self, input: crate::types::PermissionStatus) -> Self {
@@ -74,29 +78,31 @@ impl DeletePermissionVersionOutputBuilder {
         self
     }
     /// <p>This operation is performed asynchronously, and this response parameter indicates the current status.</p>
-    pub fn set_permission_status(mut self, input: std::option::Option<crate::types::PermissionStatus>) -> Self {
-        self.permission_status = input; self
+    pub fn set_permission_status(
+        mut self,
+        input: std::option::Option<crate::types::PermissionStatus>,
+    ) -> Self {
+        self.permission_status = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DeletePermissionVersionOutput`](crate::operation::delete_permission_version::DeletePermissionVersionOutput).
-    pub fn build(self) -> crate::operation::delete_permission_version::DeletePermissionVersionOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::delete_permission_version::DeletePermissionVersionOutput {
         crate::operation::delete_permission_version::DeletePermissionVersionOutput {
-            return_value: self.return_value
-            ,
-            client_token: self.client_token
-            ,
-            permission_status: self.permission_status
-            ,
+            return_value: self.return_value,
+            client_token: self.client_token,
+            permission_status: self.permission_status,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -4,75 +4,101 @@ pub use crate::operation::update_recipe_job::_update_recipe_job_output::UpdateRe
 pub use crate::operation::update_recipe_job::_update_recipe_job_input::UpdateRecipeJobInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateRecipeJob`.
-/// 
+///
 /// <p>Modifies the definition of an existing DataBrew recipe job.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRecipeJobFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_recipe_job::builders::UpdateRecipeJobInputBuilder,
+    inner: crate::operation::update_recipe_job::builders::UpdateRecipeJobInputBuilder,
 }
-impl UpdateRecipeJobFluentBuilder  {
+impl UpdateRecipeJobFluentBuilder {
     /// Creates a new `UpdateRecipeJob`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_recipe_job::UpdateRecipeJob, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_recipe_job::UpdateRecipeJobError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_recipe_job::UpdateRecipeJobOutput, aws_smithy_http::result::SdkError<crate::operation::update_recipe_job::UpdateRecipeJobError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_recipe_job::UpdateRecipeJob,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_recipe_job::UpdateRecipeJobError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_recipe_job::UpdateRecipeJobOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_recipe_job::UpdateRecipeJobError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
     pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.encryption_key_arn(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the job.</p>
-    pub fn set_encryption_key_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encryption_key_arn(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_encryption_key_arn(input);
         self
     }
-    /// <p>The encryption mode for the job, which can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
     pub fn encryption_mode(mut self, input: crate::types::EncryptionMode) -> Self {
         self.inner = self.inner.encryption_mode(input);
         self
     }
-    /// <p>The encryption mode for the job, which can be one of the following:</p> 
-    /// <ul> 
-    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li> 
-    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li> 
+    /// <p>The encryption mode for the job, which can be one of the following:</p>
+    /// <ul>
+    /// <li> <p> <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.</p> </li>
+    /// <li> <p> <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.</p> </li>
     /// </ul>
-    pub fn set_encryption_mode(mut self, input: std::option::Option<crate::types::EncryptionMode>) -> Self {
+    pub fn set_encryption_mode(
+        mut self,
+        input: std::option::Option<crate::types::EncryptionMode>,
+    ) -> Self {
         self.inner = self.inner.set_encryption_mode(input);
         self
     }
@@ -92,7 +118,10 @@ impl UpdateRecipeJobFluentBuilder  {
         self
     }
     /// <p>Enables or disables Amazon CloudWatch logging for the job. If logging is enabled, CloudWatch writes one log stream for each job run.</p>
-    pub fn set_log_subscription(mut self, input: std::option::Option<crate::types::LogSubscription>) -> Self {
+    pub fn set_log_subscription(
+        mut self,
+        input: std::option::Option<crate::types::LogSubscription>,
+    ) -> Self {
         self.inner = self.inner.set_log_subscription(input);
         self
     }
@@ -126,7 +155,10 @@ impl UpdateRecipeJobFluentBuilder  {
         self
     }
     /// <p>One or more artifacts that represent the output from running the job. </p>
-    pub fn set_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::Output>>) -> Self {
+    pub fn set_outputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Output>>,
+    ) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
@@ -140,7 +172,10 @@ impl UpdateRecipeJobFluentBuilder  {
         self
     }
     /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
-    pub fn set_data_catalog_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::DataCatalogOutput>>) -> Self {
+    pub fn set_data_catalog_outputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DataCatalogOutput>>,
+    ) -> Self {
         self.inner = self.inner.set_data_catalog_outputs(input);
         self
     }
@@ -154,7 +189,10 @@ impl UpdateRecipeJobFluentBuilder  {
         self
     }
     /// <p>Represents a list of JDBC database output objects which defines the output destination for a DataBrew recipe job to write into.</p>
-    pub fn set_database_outputs(mut self, input: std::option::Option<std::vec::Vec<crate::types::DatabaseOutput>>) -> Self {
+    pub fn set_database_outputs(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DatabaseOutput>>,
+    ) -> Self {
         self.inner = self.inner.set_database_outputs(input);
         self
     }
@@ -179,4 +217,3 @@ impl UpdateRecipeJobFluentBuilder  {
         self
     }
 }
-

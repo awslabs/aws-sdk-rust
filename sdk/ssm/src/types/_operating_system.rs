@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let operatingsystem = unimplemented!();
 /// match operatingsystem {
@@ -43,14 +43,22 @@
 /// Specifically, when `operatingsystem` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `OperatingSystem::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum OperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
     AlmaLinux,
@@ -83,67 +91,84 @@ pub enum OperatingSystem {
     #[allow(missing_docs)] // documentation missing in model
     Windows,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for OperatingSystem {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "ALMA_LINUX" => OperatingSystem::AlmaLinux,
-"AMAZON_LINUX" => OperatingSystem::AmazonLinux,
-"AMAZON_LINUX_2" => OperatingSystem::AmazonLinux2,
-"AMAZON_LINUX_2022" => OperatingSystem::AmazonLinux2022,
-"AMAZON_LINUX_2023" => OperatingSystem::AmazonLinux2023,
-"CENTOS" => OperatingSystem::CentOs,
-"DEBIAN" => OperatingSystem::Debian,
-"MACOS" => OperatingSystem::MacOs,
-"ORACLE_LINUX" => OperatingSystem::OracleLinux,
-"RASPBIAN" => OperatingSystem::Raspbian,
-"REDHAT_ENTERPRISE_LINUX" => OperatingSystem::RedhatEnterpriseLinux,
-"ROCKY_LINUX" => OperatingSystem::RockyLinux,
-"SUSE" => OperatingSystem::Suse,
-"UBUNTU" => OperatingSystem::Ubuntu,
-"WINDOWS" => OperatingSystem::Windows,
-other => OperatingSystem::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "ALMA_LINUX" => OperatingSystem::AlmaLinux,
+            "AMAZON_LINUX" => OperatingSystem::AmazonLinux,
+            "AMAZON_LINUX_2" => OperatingSystem::AmazonLinux2,
+            "AMAZON_LINUX_2022" => OperatingSystem::AmazonLinux2022,
+            "AMAZON_LINUX_2023" => OperatingSystem::AmazonLinux2023,
+            "CENTOS" => OperatingSystem::CentOs,
+            "DEBIAN" => OperatingSystem::Debian,
+            "MACOS" => OperatingSystem::MacOs,
+            "ORACLE_LINUX" => OperatingSystem::OracleLinux,
+            "RASPBIAN" => OperatingSystem::Raspbian,
+            "REDHAT_ENTERPRISE_LINUX" => OperatingSystem::RedhatEnterpriseLinux,
+            "ROCKY_LINUX" => OperatingSystem::RockyLinux,
+            "SUSE" => OperatingSystem::Suse,
+            "UBUNTU" => OperatingSystem::Ubuntu,
+            "WINDOWS" => OperatingSystem::Windows,
+            other => {
+                OperatingSystem::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for OperatingSystem {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(OperatingSystem::from(s))
-                }
-            }
-impl OperatingSystem {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    OperatingSystem::AlmaLinux => "ALMA_LINUX",
-    OperatingSystem::AmazonLinux => "AMAZON_LINUX",
-    OperatingSystem::AmazonLinux2 => "AMAZON_LINUX_2",
-    OperatingSystem::AmazonLinux2022 => "AMAZON_LINUX_2022",
-    OperatingSystem::AmazonLinux2023 => "AMAZON_LINUX_2023",
-    OperatingSystem::CentOs => "CENTOS",
-    OperatingSystem::Debian => "DEBIAN",
-    OperatingSystem::MacOs => "MACOS",
-    OperatingSystem::OracleLinux => "ORACLE_LINUX",
-    OperatingSystem::Raspbian => "RASPBIAN",
-    OperatingSystem::RedhatEnterpriseLinux => "REDHAT_ENTERPRISE_LINUX",
-    OperatingSystem::RockyLinux => "ROCKY_LINUX",
-    OperatingSystem::Suse => "SUSE",
-    OperatingSystem::Ubuntu => "UBUNTU",
-    OperatingSystem::Windows => "WINDOWS",
-    OperatingSystem::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["ALMA_LINUX", "AMAZON_LINUX", "AMAZON_LINUX_2", "AMAZON_LINUX_2022", "AMAZON_LINUX_2023", "CENTOS", "DEBIAN", "MACOS", "ORACLE_LINUX", "RASPBIAN", "REDHAT_ENTERPRISE_LINUX", "ROCKY_LINUX", "SUSE", "UBUNTU", "WINDOWS"]
-                }
-            }
-impl AsRef<str> for OperatingSystem {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for OperatingSystem {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(OperatingSystem::from(s))
+    }
+}
+impl OperatingSystem {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            OperatingSystem::AlmaLinux => "ALMA_LINUX",
+            OperatingSystem::AmazonLinux => "AMAZON_LINUX",
+            OperatingSystem::AmazonLinux2 => "AMAZON_LINUX_2",
+            OperatingSystem::AmazonLinux2022 => "AMAZON_LINUX_2022",
+            OperatingSystem::AmazonLinux2023 => "AMAZON_LINUX_2023",
+            OperatingSystem::CentOs => "CENTOS",
+            OperatingSystem::Debian => "DEBIAN",
+            OperatingSystem::MacOs => "MACOS",
+            OperatingSystem::OracleLinux => "ORACLE_LINUX",
+            OperatingSystem::Raspbian => "RASPBIAN",
+            OperatingSystem::RedhatEnterpriseLinux => "REDHAT_ENTERPRISE_LINUX",
+            OperatingSystem::RockyLinux => "ROCKY_LINUX",
+            OperatingSystem::Suse => "SUSE",
+            OperatingSystem::Ubuntu => "UBUNTU",
+            OperatingSystem::Windows => "WINDOWS",
+            OperatingSystem::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "ALMA_LINUX",
+            "AMAZON_LINUX",
+            "AMAZON_LINUX_2",
+            "AMAZON_LINUX_2022",
+            "AMAZON_LINUX_2023",
+            "CENTOS",
+            "DEBIAN",
+            "MACOS",
+            "ORACLE_LINUX",
+            "RASPBIAN",
+            "REDHAT_ENTERPRISE_LINUX",
+            "ROCKY_LINUX",
+            "SUSE",
+            "UBUNTU",
+            "WINDOWS",
+        ]
+    }
+}
+impl AsRef<str> for OperatingSystem {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

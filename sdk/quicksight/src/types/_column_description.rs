@@ -3,14 +3,14 @@
 /// <p>Metadata that contains a description for a column.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ColumnDescription  {
+pub struct ColumnDescription {
     /// <p>The text of a description for a column.</p>
     #[doc(hidden)]
     pub text: std::option::Option<std::string::String>,
 }
 impl ColumnDescription {
     /// <p>The text of a description for a column.</p>
-    pub fn text(&self) -> std::option::Option<& str> {
+    pub fn text(&self) -> std::option::Option<&str> {
         self.text.as_deref()
     }
 }
@@ -35,14 +35,11 @@ impl ColumnDescriptionBuilder {
     }
     /// <p>The text of a description for a column.</p>
     pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.text = input; self
+        self.text = input;
+        self
     }
     /// Consumes the builder and constructs a [`ColumnDescription`](crate::types::ColumnDescription).
     pub fn build(self) -> crate::types::ColumnDescription {
-        crate::types::ColumnDescription {
-            text: self.text
-            ,
-        }
+        crate::types::ColumnDescription { text: self.text }
     }
 }
-

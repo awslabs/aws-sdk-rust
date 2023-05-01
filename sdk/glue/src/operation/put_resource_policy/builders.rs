@@ -4,50 +4,70 @@ pub use crate::operation::put_resource_policy::_put_resource_policy_output::PutR
 pub use crate::operation::put_resource_policy::_put_resource_policy_input::PutResourcePolicyInputBuilder;
 
 /// Fluent builder constructing a request to `PutResourcePolicy`.
-/// 
+///
 /// <p>Sets the Data Catalog resource policy for access control.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct PutResourcePolicyFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder,
+    inner: crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder,
 }
-impl PutResourcePolicyFluentBuilder  {
+impl PutResourcePolicyFluentBuilder {
     /// Creates a new `PutResourcePolicy`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::put_resource_policy::PutResourcePolicy, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyOutput, aws_smithy_http::result::SdkError<crate::operation::put_resource_policy::PutResourcePolicyError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::put_resource_policy::PutResourcePolicy,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_policy::PutResourcePolicyError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::put_resource_policy::PutResourcePolicyOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_policy::PutResourcePolicyError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>Contains the policy document to set, in JSON format.</p>
     pub fn policy_in_json(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.policy_in_json(input.into());
@@ -74,7 +94,10 @@ impl PutResourcePolicyFluentBuilder  {
         self
     }
     /// <p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>
-    pub fn set_policy_hash_condition(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy_hash_condition(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_policy_hash_condition(input);
         self
     }
@@ -84,29 +107,34 @@ impl PutResourcePolicyFluentBuilder  {
         self
     }
     /// <p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>
-    pub fn set_policy_exists_condition(mut self, input: std::option::Option<crate::types::ExistCondition>) -> Self {
+    pub fn set_policy_exists_condition(
+        mut self,
+        input: std::option::Option<crate::types::ExistCondition>,
+    ) -> Self {
         self.inner = self.inner.set_policy_exists_condition(input);
         self
     }
-    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p> 
-    /// <ul> 
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li> 
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li> 
-    /// </ul> 
+    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
+    /// <ul>
+    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
+    /// </ul>
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
     pub fn enable_hybrid(mut self, input: crate::types::EnableHybridValues) -> Self {
         self.inner = self.inner.enable_hybrid(input);
         self
     }
-    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p> 
-    /// <ul> 
-    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li> 
-    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li> 
-    /// </ul> 
+    /// <p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p>
+    /// <ul>
+    /// <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li>
+    /// <li> <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p> </li>
+    /// </ul>
     /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>
-    pub fn set_enable_hybrid(mut self, input: std::option::Option<crate::types::EnableHybridValues>) -> Self {
+    pub fn set_enable_hybrid(
+        mut self,
+        input: std::option::Option<crate::types::EnableHybridValues>,
+    ) -> Self {
         self.inner = self.inner.set_enable_hybrid(input);
         self
     }
 }
-

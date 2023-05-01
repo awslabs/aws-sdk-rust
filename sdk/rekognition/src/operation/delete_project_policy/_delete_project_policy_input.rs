@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProjectPolicyInput  {
+pub struct DeleteProjectPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
@@ -15,22 +15,24 @@ pub struct DeleteProjectPolicyInput  {
 }
 impl DeleteProjectPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
-    pub fn project_arn(&self) -> std::option::Option<& str> {
+    pub fn project_arn(&self) -> std::option::Option<&str> {
         self.project_arn.as_deref()
     }
     /// <p>The name of the policy that you want to delete.</p>
-    pub fn policy_name(&self) -> std::option::Option<& str> {
+    pub fn policy_name(&self) -> std::option::Option<&str> {
         self.policy_name.as_deref()
     }
     /// <p>The ID of the project policy revision that you want to delete.</p>
-    pub fn policy_revision_id(&self) -> std::option::Option<& str> {
+    pub fn policy_revision_id(&self) -> std::option::Option<&str> {
         self.policy_revision_id.as_deref()
     }
 }
 impl DeleteProjectPolicyInput {
     /// Creates a new builder-style object to manufacture [`DeleteProjectPolicyInput`](crate::operation::delete_project_policy::DeleteProjectPolicyInput).
-    pub fn builder() -> crate::operation::delete_project_policy::builders::DeleteProjectPolicyInputBuilder {
-        crate::operation::delete_project_policy::builders::DeleteProjectPolicyInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_project_policy::builders::DeleteProjectPolicyInputBuilder {
+        crate::operation::delete_project_policy::builders::DeleteProjectPolicyInputBuilder::default(
+        )
     }
 }
 
@@ -50,7 +52,8 @@ impl DeleteProjectPolicyInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.</p>
     pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.project_arn = input; self
+        self.project_arn = input;
+        self
     }
     /// <p>The name of the policy that you want to delete.</p>
     pub fn policy_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +62,8 @@ impl DeleteProjectPolicyInputBuilder {
     }
     /// <p>The name of the policy that you want to delete.</p>
     pub fn set_policy_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_name = input; self
+        self.policy_name = input;
+        self
     }
     /// <p>The ID of the project policy revision that you want to delete.</p>
     pub fn policy_revision_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,21 +71,26 @@ impl DeleteProjectPolicyInputBuilder {
         self
     }
     /// <p>The ID of the project policy revision that you want to delete.</p>
-    pub fn set_policy_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.policy_revision_id = input; self
+    pub fn set_policy_revision_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.policy_revision_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteProjectPolicyInput`](crate::operation::delete_project_policy::DeleteProjectPolicyInput).
-    pub fn build(self) -> Result<crate::operation::delete_project_policy::DeleteProjectPolicyInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_project_policy::DeleteProjectPolicyInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_project_policy::DeleteProjectPolicyInput {
-                project_arn: self.project_arn
-                ,
-                policy_name: self.policy_name
-                ,
-                policy_revision_id: self.policy_revision_id
-                ,
-            }
+                project_arn: self.project_arn,
+                policy_name: self.policy_name,
+                policy_revision_id: self.policy_revision_id,
+            },
         )
     }
 }
-

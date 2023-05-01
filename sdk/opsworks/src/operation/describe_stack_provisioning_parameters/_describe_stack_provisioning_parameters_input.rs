@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeStackProvisioningParametersInput  {
+pub struct DescribeStackProvisioningParametersInput {
     /// <p>The stack ID.</p>
     #[doc(hidden)]
     pub stack_id: std::option::Option<std::string::String>,
 }
 impl DescribeStackProvisioningParametersInput {
     /// <p>The stack ID.</p>
-    pub fn stack_id(&self) -> std::option::Option<& str> {
+    pub fn stack_id(&self) -> std::option::Option<&str> {
         self.stack_id.as_deref()
     }
 }
 impl DescribeStackProvisioningParametersInput {
     /// Creates a new builder-style object to manufacture [`DescribeStackProvisioningParametersInput`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput).
-    pub fn builder() -> crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersInputBuilder {
+    pub fn builder() -> crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersInputBuilder{
         crate::operation::describe_stack_provisioning_parameters::builders::DescribeStackProvisioningParametersInputBuilder::default()
     }
 }
@@ -34,10 +34,11 @@ impl DescribeStackProvisioningParametersInputBuilder {
     }
     /// <p>The stack ID.</p>
     pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.stack_id = input; self
+        self.stack_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeStackProvisioningParametersInput`](crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput).
-    pub fn build(self) -> Result<crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::describe_stack_provisioning_parameters::DescribeStackProvisioningParametersInput {
                 stack_id: self.stack_id
@@ -46,4 +47,3 @@ impl DescribeStackProvisioningParametersInputBuilder {
         )
     }
 }
-

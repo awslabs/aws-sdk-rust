@@ -4,65 +4,72 @@ pub use crate::operation::list_available_managed_rule_groups::_list_available_ma
 pub use crate::operation::list_available_managed_rule_groups::_list_available_managed_rule_groups_input::ListAvailableManagedRuleGroupsInputBuilder;
 
 /// Fluent builder constructing a request to `ListAvailableManagedRuleGroups`.
-/// 
+///
 /// <p>Retrieves an array of managed rule groups that are available for you to use. This list includes all Amazon Web Services Managed Rules rule groups and all of the Amazon Web Services Marketplace managed rule groups that you're subscribed to.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct ListAvailableManagedRuleGroupsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::list_available_managed_rule_groups::builders::ListAvailableManagedRuleGroupsInputBuilder,
 }
-impl ListAvailableManagedRuleGroupsFluentBuilder  {
+impl ListAvailableManagedRuleGroupsFluentBuilder {
     /// Creates a new `ListAvailableManagedRuleGroups`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
+    /// sent. The operation's inner [http::Request] can be modified as well.
                     pub async fn customize(self) -> std::result::Result<
                         crate::client::customize::CustomizableOperation<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroups, aws_http::retry::AwsResponseRetryClassifier,>,
                         aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
+    >{
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
                     pub async fn send(self) -> std::result::Result<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput, aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError>>
                      {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn scope(mut self, input: crate::types::Scope) -> Self {
         self.inner = self.inner.scope(input);
         self
     }
-    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p> 
-    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p> 
-    /// <ul> 
-    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li> 
-    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li> 
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service. </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li> <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p> </li>
+    /// <li> <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p> </li>
     /// </ul>
     pub fn set_scope(mut self, input: std::option::Option<crate::types::Scope>) -> Self {
         self.inner = self.inner.set_scope(input);
@@ -89,4 +96,3 @@ impl ListAvailableManagedRuleGroupsFluentBuilder  {
         self
     }
 }
-

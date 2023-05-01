@@ -3,7 +3,7 @@
 /// <p>Provides summary information about an import in an import list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportSummary  {
+pub struct ImportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
@@ -31,35 +31,35 @@ pub struct ImportSummary  {
 }
 impl ImportSummary {
     /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
-    pub fn import_id(&self) -> std::option::Option<& str> {
+    pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
     }
     /// <p>The unique identifier that Amazon Lex assigned to the imported resource.</p>
-    pub fn imported_resource_id(&self) -> std::option::Option<& str> {
+    pub fn imported_resource_id(&self) -> std::option::Option<&str> {
         self.imported_resource_id.as_deref()
     }
     /// <p>The name that you gave the imported resource.</p>
-    pub fn imported_resource_name(&self) -> std::option::Option<& str> {
+    pub fn imported_resource_name(&self) -> std::option::Option<&str> {
         self.imported_resource_name.as_deref()
     }
     /// <p>The status of the resource. When the status is <code>Completed</code> the resource is ready to build.</p>
-    pub fn import_status(&self) -> std::option::Option<& crate::types::ImportStatus> {
+    pub fn import_status(&self) -> std::option::Option<&crate::types::ImportStatus> {
         self.import_status.as_ref()
     }
     /// <p>The strategy used to merge existing bot or bot locale definitions with the imported definition.</p>
-    pub fn merge_strategy(&self) -> std::option::Option<& crate::types::MergeStrategy> {
+    pub fn merge_strategy(&self) -> std::option::Option<&crate::types::MergeStrategy> {
         self.merge_strategy.as_ref()
     }
     /// <p>The date and time that the import was created.</p>
-    pub fn creation_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn creation_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.creation_date_time.as_ref()
     }
     /// <p>The date and time that the import was last updated.</p>
-    pub fn last_updated_date_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_date_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_date_time.as_ref()
     }
     /// <p>The type of resource that was imported.</p>
-    pub fn imported_resource_type(&self) -> std::option::Option<& crate::types::ImportResourceType> {
+    pub fn imported_resource_type(&self) -> std::option::Option<&crate::types::ImportResourceType> {
         self.imported_resource_type.as_ref()
     }
 }
@@ -91,7 +91,8 @@ impl ImportSummaryBuilder {
     }
     /// <p>The unique identifier that Amazon Lex assigned to the import.</p>
     pub fn set_import_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.import_id = input; self
+        self.import_id = input;
+        self
     }
     /// <p>The unique identifier that Amazon Lex assigned to the imported resource.</p>
     pub fn imported_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,8 +100,12 @@ impl ImportSummaryBuilder {
         self
     }
     /// <p>The unique identifier that Amazon Lex assigned to the imported resource.</p>
-    pub fn set_imported_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.imported_resource_id = input; self
+    pub fn set_imported_resource_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.imported_resource_id = input;
+        self
     }
     /// <p>The name that you gave the imported resource.</p>
     pub fn imported_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,8 +113,12 @@ impl ImportSummaryBuilder {
         self
     }
     /// <p>The name that you gave the imported resource.</p>
-    pub fn set_imported_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.imported_resource_name = input; self
+    pub fn set_imported_resource_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.imported_resource_name = input;
+        self
     }
     /// <p>The status of the resource. When the status is <code>Completed</code> the resource is ready to build.</p>
     pub fn import_status(mut self, input: crate::types::ImportStatus) -> Self {
@@ -117,8 +126,12 @@ impl ImportSummaryBuilder {
         self
     }
     /// <p>The status of the resource. When the status is <code>Completed</code> the resource is ready to build.</p>
-    pub fn set_import_status(mut self, input: std::option::Option<crate::types::ImportStatus>) -> Self {
-        self.import_status = input; self
+    pub fn set_import_status(
+        mut self,
+        input: std::option::Option<crate::types::ImportStatus>,
+    ) -> Self {
+        self.import_status = input;
+        self
     }
     /// <p>The strategy used to merge existing bot or bot locale definitions with the imported definition.</p>
     pub fn merge_strategy(mut self, input: crate::types::MergeStrategy) -> Self {
@@ -126,8 +139,12 @@ impl ImportSummaryBuilder {
         self
     }
     /// <p>The strategy used to merge existing bot or bot locale definitions with the imported definition.</p>
-    pub fn set_merge_strategy(mut self, input: std::option::Option<crate::types::MergeStrategy>) -> Self {
-        self.merge_strategy = input; self
+    pub fn set_merge_strategy(
+        mut self,
+        input: std::option::Option<crate::types::MergeStrategy>,
+    ) -> Self {
+        self.merge_strategy = input;
+        self
     }
     /// <p>The date and time that the import was created.</p>
     pub fn creation_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -135,8 +152,12 @@ impl ImportSummaryBuilder {
         self
     }
     /// <p>The date and time that the import was created.</p>
-    pub fn set_creation_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.creation_date_time = input; self
+    pub fn set_creation_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.creation_date_time = input;
+        self
     }
     /// <p>The date and time that the import was last updated.</p>
     pub fn last_updated_date_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -144,8 +165,12 @@ impl ImportSummaryBuilder {
         self
     }
     /// <p>The date and time that the import was last updated.</p>
-    pub fn set_last_updated_date_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_date_time = input; self
+    pub fn set_last_updated_date_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_date_time = input;
+        self
     }
     /// <p>The type of resource that was imported.</p>
     pub fn imported_resource_type(mut self, input: crate::types::ImportResourceType) -> Self {
@@ -153,29 +178,24 @@ impl ImportSummaryBuilder {
         self
     }
     /// <p>The type of resource that was imported.</p>
-    pub fn set_imported_resource_type(mut self, input: std::option::Option<crate::types::ImportResourceType>) -> Self {
-        self.imported_resource_type = input; self
+    pub fn set_imported_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::ImportResourceType>,
+    ) -> Self {
+        self.imported_resource_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportSummary`](crate::types::ImportSummary).
     pub fn build(self) -> crate::types::ImportSummary {
         crate::types::ImportSummary {
-            import_id: self.import_id
-            ,
-            imported_resource_id: self.imported_resource_id
-            ,
-            imported_resource_name: self.imported_resource_name
-            ,
-            import_status: self.import_status
-            ,
-            merge_strategy: self.merge_strategy
-            ,
-            creation_date_time: self.creation_date_time
-            ,
-            last_updated_date_time: self.last_updated_date_time
-            ,
-            imported_resource_type: self.imported_resource_type
-            ,
+            import_id: self.import_id,
+            imported_resource_id: self.imported_resource_id,
+            imported_resource_name: self.imported_resource_name,
+            import_status: self.import_status,
+            merge_strategy: self.merge_strategy,
+            creation_date_time: self.creation_date_time,
+            last_updated_date_time: self.last_updated_date_time,
+            imported_resource_type: self.imported_resource_type,
         }
     }
 }
-

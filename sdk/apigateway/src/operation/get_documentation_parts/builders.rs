@@ -4,50 +4,70 @@ pub use crate::operation::get_documentation_parts::_get_documentation_parts_outp
 pub use crate::operation::get_documentation_parts::_get_documentation_parts_input::GetDocumentationPartsInputBuilder;
 
 /// Fluent builder constructing a request to `GetDocumentationParts`.
-/// 
+///
 /// <p>Gets documentation parts.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct GetDocumentationPartsFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::get_documentation_parts::builders::GetDocumentationPartsInputBuilder,
+    inner: crate::operation::get_documentation_parts::builders::GetDocumentationPartsInputBuilder,
 }
-impl GetDocumentationPartsFluentBuilder  {
+impl GetDocumentationPartsFluentBuilder {
     /// Creates a new `GetDocumentationParts`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::get_documentation_parts::GetDocumentationParts, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::get_documentation_parts::GetDocumentationPartsError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::get_documentation_parts::GetDocumentationPartsOutput, aws_smithy_http::result::SdkError<crate::operation::get_documentation_parts::GetDocumentationPartsError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::get_documentation_parts::GetDocumentationParts,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_documentation_parts::GetDocumentationPartsError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::get_documentation_parts::GetDocumentationPartsOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::get_documentation_parts::GetDocumentationPartsError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The string identifier of the associated RestApi.</p>
     pub fn rest_api_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.rest_api_id(input.into());
@@ -64,7 +84,10 @@ impl GetDocumentationPartsFluentBuilder  {
         self
     }
     /// <p>The type of API entities of the to-be-retrieved documentation parts. </p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::DocumentationPartType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: std::option::Option<crate::types::DocumentationPartType>,
+    ) -> Self {
         self.inner = self.inner.set_type(input);
         self
     }
@@ -114,9 +137,11 @@ impl GetDocumentationPartsFluentBuilder  {
         self
     }
     /// <p>The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.</p>
-    pub fn set_location_status(mut self, input: std::option::Option<crate::types::LocationStatusType>) -> Self {
+    pub fn set_location_status(
+        mut self,
+        input: std::option::Option<crate::types::LocationStatusType>,
+    ) -> Self {
         self.inner = self.inner.set_location_status(input);
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Represents the output of a <code>ListApplicationRevisions</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListApplicationRevisionsOutput  {
+pub struct ListApplicationRevisionsOutput {
     /// <p>A list of locations that contain the matching revisions.</p>
     #[doc(hidden)]
     pub revisions: std::option::Option<std::vec::Vec<crate::types::RevisionLocation>>,
@@ -14,22 +14,24 @@ pub struct ListApplicationRevisionsOutput  {
 }
 impl ListApplicationRevisionsOutput {
     /// <p>A list of locations that contain the matching revisions.</p>
-    pub fn revisions(&self) -> std::option::Option<& [crate::types::RevisionLocation]> {
+    pub fn revisions(&self) -> std::option::Option<&[crate::types::RevisionLocation]> {
         self.revisions.as_deref()
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListApplicationRevisionsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListApplicationRevisionsOutput {
     /// Creates a new builder-style object to manufacture [`ListApplicationRevisionsOutput`](crate::operation::list_application_revisions::ListApplicationRevisionsOutput).
-    pub fn builder() -> crate::operation::list_application_revisions::builders::ListApplicationRevisionsOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_application_revisions::builders::ListApplicationRevisionsOutputBuilder
+    {
         crate::operation::list_application_revisions::builders::ListApplicationRevisionsOutputBuilder::default()
     }
 }
@@ -50,13 +52,17 @@ impl ListApplicationRevisionsOutputBuilder {
     /// <p>A list of locations that contain the matching revisions.</p>
     pub fn revisions(mut self, input: crate::types::RevisionLocation) -> Self {
         let mut v = self.revisions.unwrap_or_default();
-                        v.push(input);
-                        self.revisions = Some(v);
-                        self
+        v.push(input);
+        self.revisions = Some(v);
+        self
     }
     /// <p>A list of locations that contain the matching revisions.</p>
-    pub fn set_revisions(mut self, input: std::option::Option<std::vec::Vec<crate::types::RevisionLocation>>) -> Self {
-        self.revisions = input; self
+    pub fn set_revisions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::RevisionLocation>>,
+    ) -> Self {
+        self.revisions = input;
+        self
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -65,26 +71,26 @@ impl ListApplicationRevisionsOutputBuilder {
     }
     /// <p>If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list application revisions call to return the next set of application revisions in the list.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListApplicationRevisionsOutput`](crate::operation::list_application_revisions::ListApplicationRevisionsOutput).
-    pub fn build(self) -> crate::operation::list_application_revisions::ListApplicationRevisionsOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::list_application_revisions::ListApplicationRevisionsOutput {
         crate::operation::list_application_revisions::ListApplicationRevisionsOutput {
-            revisions: self.revisions
-            ,
-            next_token: self.next_token
-            ,
+            revisions: self.revisions,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

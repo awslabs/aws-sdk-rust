@@ -3,7 +3,7 @@
 /// <p>Specifies one or more property- and tag-based conditions that define criteria for including or excluding S3 objects from a classification job. Exclude conditions take precedence over include conditions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Scoping  {
+pub struct Scoping {
     /// <p>The property- and tag-based conditions that determine which objects to exclude from the analysis.</p>
     #[doc(hidden)]
     pub excludes: std::option::Option<crate::types::JobScopingBlock>,
@@ -13,11 +13,11 @@ pub struct Scoping  {
 }
 impl Scoping {
     /// <p>The property- and tag-based conditions that determine which objects to exclude from the analysis.</p>
-    pub fn excludes(&self) -> std::option::Option<& crate::types::JobScopingBlock> {
+    pub fn excludes(&self) -> std::option::Option<&crate::types::JobScopingBlock> {
         self.excludes.as_ref()
     }
     /// <p>The property- and tag-based conditions that determine which objects to include in the analysis.</p>
-    pub fn includes(&self) -> std::option::Option<& crate::types::JobScopingBlock> {
+    pub fn includes(&self) -> std::option::Option<&crate::types::JobScopingBlock> {
         self.includes.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl ScopingBuilder {
         self
     }
     /// <p>The property- and tag-based conditions that determine which objects to exclude from the analysis.</p>
-    pub fn set_excludes(mut self, input: std::option::Option<crate::types::JobScopingBlock>) -> Self {
-        self.excludes = input; self
+    pub fn set_excludes(
+        mut self,
+        input: std::option::Option<crate::types::JobScopingBlock>,
+    ) -> Self {
+        self.excludes = input;
+        self
     }
     /// <p>The property- and tag-based conditions that determine which objects to include in the analysis.</p>
     pub fn includes(mut self, input: crate::types::JobScopingBlock) -> Self {
@@ -51,17 +55,18 @@ impl ScopingBuilder {
         self
     }
     /// <p>The property- and tag-based conditions that determine which objects to include in the analysis.</p>
-    pub fn set_includes(mut self, input: std::option::Option<crate::types::JobScopingBlock>) -> Self {
-        self.includes = input; self
+    pub fn set_includes(
+        mut self,
+        input: std::option::Option<crate::types::JobScopingBlock>,
+    ) -> Self {
+        self.includes = input;
+        self
     }
     /// Consumes the builder and constructs a [`Scoping`](crate::types::Scoping).
     pub fn build(self) -> crate::types::Scoping {
         crate::types::Scoping {
-            excludes: self.excludes
-            ,
-            includes: self.includes
-            ,
+            excludes: self.excludes,
+            includes: self.includes,
         }
     }
 }
-

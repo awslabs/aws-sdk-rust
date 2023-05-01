@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriberInput  {
+pub struct DeleteSubscriberInput {
     /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteSubscriberInput {
     /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
 impl DeleteSubscriberInput {
     /// Creates a new builder-style object to manufacture [`DeleteSubscriberInput`](crate::operation::delete_subscriber::DeleteSubscriberInput).
-    pub fn builder() -> crate::operation::delete_subscriber::builders::DeleteSubscriberInputBuilder {
+    pub fn builder() -> crate::operation::delete_subscriber::builders::DeleteSubscriberInputBuilder
+    {
         crate::operation::delete_subscriber::builders::DeleteSubscriberInputBuilder::default()
     }
 }
@@ -34,16 +35,16 @@ impl DeleteSubscriberInputBuilder {
     }
     /// <p>A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code> API request. </p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteSubscriberInput`](crate::operation::delete_subscriber::DeleteSubscriberInput).
-    pub fn build(self) -> Result<crate::operation::delete_subscriber::DeleteSubscriberInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_subscriber::DeleteSubscriberInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_subscriber::DeleteSubscriberInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_subscriber::DeleteSubscriberInput { id: self.id })
     }
 }
-

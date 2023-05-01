@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetWorkflowExecutionInput  {
+pub struct GetWorkflowExecutionInput {
     /// <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
     #[doc(hidden)]
     pub workflow_execution_id: std::option::Option<std::string::String>,
 }
 impl GetWorkflowExecutionInput {
     /// <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
-    pub fn workflow_execution_id(&self) -> std::option::Option<& str> {
+    pub fn workflow_execution_id(&self) -> std::option::Option<&str> {
         self.workflow_execution_id.as_deref()
     }
 }
 impl GetWorkflowExecutionInput {
     /// Creates a new builder-style object to manufacture [`GetWorkflowExecutionInput`](crate::operation::get_workflow_execution::GetWorkflowExecutionInput).
-    pub fn builder() -> crate::operation::get_workflow_execution::builders::GetWorkflowExecutionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::get_workflow_execution::builders::GetWorkflowExecutionInputBuilder {
         crate::operation::get_workflow_execution::builders::GetWorkflowExecutionInputBuilder::default()
     }
 }
@@ -33,17 +34,24 @@ impl GetWorkflowExecutionInputBuilder {
         self
     }
     /// <p>Use the unique identifier for a runtime instance of the workflow to get runtime details.</p>
-    pub fn set_workflow_execution_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.workflow_execution_id = input; self
+    pub fn set_workflow_execution_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.workflow_execution_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetWorkflowExecutionInput`](crate::operation::get_workflow_execution::GetWorkflowExecutionInput).
-    pub fn build(self) -> Result<crate::operation::get_workflow_execution::GetWorkflowExecutionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_workflow_execution::GetWorkflowExecutionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::get_workflow_execution::GetWorkflowExecutionInput {
-                workflow_execution_id: self.workflow_execution_id
-                ,
-            }
+                workflow_execution_id: self.workflow_execution_id,
+            },
         )
     }
 }
-

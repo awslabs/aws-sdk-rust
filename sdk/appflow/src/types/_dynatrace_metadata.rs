@@ -3,8 +3,7 @@
 /// <p> The connector metadata specific to Dynatrace. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DynatraceMetadata  {
-}
+pub struct DynatraceMetadata {}
 impl DynatraceMetadata {
     /// Creates a new builder-style object to manufacture [`DynatraceMetadata`](crate::types::DynatraceMetadata).
     pub fn builder() -> crate::types::builders::DynatraceMetadataBuilder {
@@ -15,13 +14,10 @@ impl DynatraceMetadata {
 /// A builder for [`DynatraceMetadata`](crate::types::DynatraceMetadata).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-pub struct DynatraceMetadataBuilder {
-}
+pub struct DynatraceMetadataBuilder {}
 impl DynatraceMetadataBuilder {
     /// Consumes the builder and constructs a [`DynatraceMetadata`](crate::types::DynatraceMetadata).
     pub fn build(self) -> crate::types::DynatraceMetadata {
-        crate::types::DynatraceMetadata {
-        }
+        crate::types::DynatraceMetadata {}
     }
 }
-

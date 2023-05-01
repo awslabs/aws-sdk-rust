@@ -3,7 +3,7 @@
 /// <p>The parent entity update request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ParentEntityUpdateRequest  {
+pub struct ParentEntityUpdateRequest {
     /// <p>The type of the update.</p>
     #[doc(hidden)]
     pub update_type: std::option::Option<crate::types::ParentEntityUpdateType>,
@@ -13,11 +13,11 @@ pub struct ParentEntityUpdateRequest  {
 }
 impl ParentEntityUpdateRequest {
     /// <p>The type of the update.</p>
-    pub fn update_type(&self) -> std::option::Option<& crate::types::ParentEntityUpdateType> {
+    pub fn update_type(&self) -> std::option::Option<&crate::types::ParentEntityUpdateType> {
         self.update_type.as_ref()
     }
     /// <p>The ID of the parent entity.</p>
-    pub fn parent_entity_id(&self) -> std::option::Option<& str> {
+    pub fn parent_entity_id(&self) -> std::option::Option<&str> {
         self.parent_entity_id.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl ParentEntityUpdateRequestBuilder {
         self
     }
     /// <p>The type of the update.</p>
-    pub fn set_update_type(mut self, input: std::option::Option<crate::types::ParentEntityUpdateType>) -> Self {
-        self.update_type = input; self
+    pub fn set_update_type(
+        mut self,
+        input: std::option::Option<crate::types::ParentEntityUpdateType>,
+    ) -> Self {
+        self.update_type = input;
+        self
     }
     /// <p>The ID of the parent entity.</p>
     pub fn parent_entity_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl ParentEntityUpdateRequestBuilder {
     }
     /// <p>The ID of the parent entity.</p>
     pub fn set_parent_entity_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.parent_entity_id = input; self
+        self.parent_entity_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ParentEntityUpdateRequest`](crate::types::ParentEntityUpdateRequest).
     pub fn build(self) -> crate::types::ParentEntityUpdateRequest {
         crate::types::ParentEntityUpdateRequest {
-            update_type: self.update_type
-            ,
-            parent_entity_id: self.parent_entity_id
-            ,
+            update_type: self.update_type,
+            parent_entity_id: self.parent_entity_id,
         }
     }
 }
-

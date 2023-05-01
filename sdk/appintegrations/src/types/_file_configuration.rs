@@ -3,21 +3,27 @@
 /// <p>The configuration for what files should be pulled from the source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct FileConfiguration  {
+pub struct FileConfiguration {
     /// <p>Identifiers for the source folders to pull all files from recursively.</p>
     #[doc(hidden)]
     pub folders: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Restrictions for what files should be pulled from the source.</p>
     #[doc(hidden)]
-    pub filters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+    pub filters: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    >,
 }
 impl FileConfiguration {
     /// <p>Identifiers for the source folders to pull all files from recursively.</p>
-    pub fn folders(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn folders(&self) -> std::option::Option<&[std::string::String]> {
         self.folders.as_deref()
     }
     /// <p>Restrictions for what files should be pulled from the source.</p>
-    pub fn filters(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>> {
+    pub fn filters(
+        &self,
+    ) -> std::option::Option<
+        &std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    > {
         self.filters.as_ref()
     }
 }
@@ -33,7 +39,9 @@ impl FileConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct FileConfigurationBuilder {
     pub(crate) folders: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) filters: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>,
+    pub(crate) filters: std::option::Option<
+        std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+    >,
 }
 impl FileConfigurationBuilder {
     /// Appends an item to `folders`.
@@ -43,37 +51,48 @@ impl FileConfigurationBuilder {
     /// <p>Identifiers for the source folders to pull all files from recursively.</p>
     pub fn folders(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.folders.unwrap_or_default();
-                        v.push(input.into());
-                        self.folders = Some(v);
-                        self
+        v.push(input.into());
+        self.folders = Some(v);
+        self
     }
     /// <p>Identifiers for the source folders to pull all files from recursively.</p>
-    pub fn set_folders(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.folders = input; self
+    pub fn set_folders(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.folders = input;
+        self
     }
     /// Adds a key-value pair to `filters`.
     ///
     /// To override the contents of this collection use [`set_filters`](Self::set_filters).
     ///
     /// <p>Restrictions for what files should be pulled from the source.</p>
-    pub fn filters(mut self, k: impl Into<std::string::String>, v: std::vec::Vec<std::string::String>) -> Self {
+    pub fn filters(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: std::vec::Vec<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.filters.unwrap_or_default();
-                        hash_map.insert(k.into(), v);
-                        self.filters = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v);
+        self.filters = Some(hash_map);
+        self
     }
     /// <p>Restrictions for what files should be pulled from the source.</p>
-    pub fn set_filters(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>>) -> Self {
-        self.filters = input; self
+    pub fn set_filters(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
+        >,
+    ) -> Self {
+        self.filters = input;
+        self
     }
     /// Consumes the builder and constructs a [`FileConfiguration`](crate::types::FileConfiguration).
     pub fn build(self) -> crate::types::FileConfiguration {
         crate::types::FileConfiguration {
-            folders: self.folders
-            ,
-            filters: self.filters
-            ,
+            folders: self.folders,
+            filters: self.filters,
         }
     }
 }
-

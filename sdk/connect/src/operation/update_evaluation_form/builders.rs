@@ -4,51 +4,71 @@ pub use crate::operation::update_evaluation_form::_update_evaluation_form_output
 pub use crate::operation::update_evaluation_form::_update_evaluation_form_input::UpdateEvaluationFormInputBuilder;
 
 /// Fluent builder constructing a request to `UpdateEvaluationForm`.
-/// 
-/// <p>Updates details about a specific evaluation form version in the specified Amazon Connect instance. An evaluation form must have a unique title within an instance. Question and section identifiers cannot be duplicated within the same evaluation form.</p> 
+///
+/// <p>Updates details about a specific evaluation form version in the specified Amazon Connect instance. An evaluation form must have a unique title within an instance. Question and section identifiers cannot be duplicated within the same evaluation form.</p>
 /// <p>This operation does not support partial updates. Instead it does a full update of evaluation form content.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEvaluationFormFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::update_evaluation_form::builders::UpdateEvaluationFormInputBuilder,
+    inner: crate::operation::update_evaluation_form::builders::UpdateEvaluationFormInputBuilder,
 }
-impl UpdateEvaluationFormFluentBuilder  {
+impl UpdateEvaluationFormFluentBuilder {
     /// Creates a new `UpdateEvaluationForm`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::update_evaluation_form::UpdateEvaluationForm, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::update_evaluation_form::UpdateEvaluationFormError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::update_evaluation_form::UpdateEvaluationFormOutput, aws_smithy_http::result::SdkError<crate::operation::update_evaluation_form::UpdateEvaluationFormError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::update_evaluation_form::UpdateEvaluationForm,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_evaluation_form::UpdateEvaluationFormError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::update_evaluation_form::UpdateEvaluationFormOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::update_evaluation_form::UpdateEvaluationFormError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
     pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.instance_id(input.into());
@@ -65,7 +85,10 @@ impl UpdateEvaluationFormFluentBuilder  {
         self
     }
     /// <p>The unique identifier for the evaluation form.</p>
-    pub fn set_evaluation_form_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_evaluation_form_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_evaluation_form_id(input);
         self
     }
@@ -119,7 +142,10 @@ impl UpdateEvaluationFormFluentBuilder  {
         self
     }
     /// <p>Items that are part of the evaluation form. The total number of sections and questions must not exceed 100 each. Questions must be contained in a section.</p>
-    pub fn set_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::EvaluationFormItem>>) -> Self {
+    pub fn set_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::EvaluationFormItem>>,
+    ) -> Self {
         self.inner = self.inner.set_items(input);
         self
     }
@@ -129,7 +155,10 @@ impl UpdateEvaluationFormFluentBuilder  {
         self
     }
     /// <p>A scoring strategy of the evaluation form.</p>
-    pub fn set_scoring_strategy(mut self, input: std::option::Option<crate::types::EvaluationFormScoringStrategy>) -> Self {
+    pub fn set_scoring_strategy(
+        mut self,
+        input: std::option::Option<crate::types::EvaluationFormScoringStrategy>,
+    ) -> Self {
         self.inner = self.inner.set_scoring_strategy(input);
         self
     }
@@ -144,4 +173,3 @@ impl UpdateEvaluationFormFluentBuilder  {
         self
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Describes the state of a CIDR block.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubnetCidrBlockState  {
+pub struct SubnetCidrBlockState {
     /// <p>The state of a CIDR block.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::types::SubnetCidrBlockStateCode>,
@@ -13,11 +13,11 @@ pub struct SubnetCidrBlockState  {
 }
 impl SubnetCidrBlockState {
     /// <p>The state of a CIDR block.</p>
-    pub fn state(&self) -> std::option::Option<& crate::types::SubnetCidrBlockStateCode> {
+    pub fn state(&self) -> std::option::Option<&crate::types::SubnetCidrBlockStateCode> {
         self.state.as_ref()
     }
     /// <p>A message about the status of the CIDR block, if applicable.</p>
-    pub fn status_message(&self) -> std::option::Option<& str> {
+    pub fn status_message(&self) -> std::option::Option<&str> {
         self.status_message.as_deref()
     }
 }
@@ -42,8 +42,12 @@ impl SubnetCidrBlockStateBuilder {
         self
     }
     /// <p>The state of a CIDR block.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::SubnetCidrBlockStateCode>) -> Self {
-        self.state = input; self
+    pub fn set_state(
+        mut self,
+        input: std::option::Option<crate::types::SubnetCidrBlockStateCode>,
+    ) -> Self {
+        self.state = input;
+        self
     }
     /// <p>A message about the status of the CIDR block, if applicable.</p>
     pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +56,14 @@ impl SubnetCidrBlockStateBuilder {
     }
     /// <p>A message about the status of the CIDR block, if applicable.</p>
     pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.status_message = input; self
+        self.status_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`SubnetCidrBlockState`](crate::types::SubnetCidrBlockState).
     pub fn build(self) -> crate::types::SubnetCidrBlockState {
         crate::types::SubnetCidrBlockState {
-            state: self.state
-            ,
-            status_message: self.status_message
-            ,
+            state: self.state,
+            status_message: self.status_message,
         }
     }
 }
-

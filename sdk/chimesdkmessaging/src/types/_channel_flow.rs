@@ -3,7 +3,7 @@
 /// <p>The details of a channel flow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ChannelFlow  {
+pub struct ChannelFlow {
     /// <p>The ARN of the channel flow.</p>
     #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
@@ -22,27 +22,27 @@ pub struct ChannelFlow  {
 }
 impl ChannelFlow {
     /// <p>The ARN of the channel flow.</p>
-    pub fn channel_flow_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
         self.channel_flow_arn.as_deref()
     }
     /// <p>Information about the processor Lambda functions.</p>
-    pub fn processors(&self) -> std::option::Option<& [crate::types::Processor]> {
+    pub fn processors(&self) -> std::option::Option<&[crate::types::Processor]> {
         self.processors.as_deref()
     }
     /// <p>The name of the channel flow.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The time at which the channel flow was created.</p>
-    pub fn created_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_timestamp.as_ref()
     }
     /// <p>The time at which a channel flow was updated.</p>
-    pub fn last_updated_timestamp(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn last_updated_timestamp(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.last_updated_timestamp.as_ref()
     }
 }
-impl  std::fmt::Debug for ChannelFlow  {
+impl std::fmt::Debug for ChannelFlow {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ChannelFlow");
         formatter.field("channel_flow_arn", &self.channel_flow_arn);
@@ -78,7 +78,8 @@ impl ChannelFlowBuilder {
     }
     /// <p>The ARN of the channel flow.</p>
     pub fn set_channel_flow_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_flow_arn = input; self
+        self.channel_flow_arn = input;
+        self
     }
     /// Appends an item to `processors`.
     ///
@@ -87,13 +88,17 @@ impl ChannelFlowBuilder {
     /// <p>Information about the processor Lambda functions.</p>
     pub fn processors(mut self, input: crate::types::Processor) -> Self {
         let mut v = self.processors.unwrap_or_default();
-                        v.push(input);
-                        self.processors = Some(v);
-                        self
+        v.push(input);
+        self.processors = Some(v);
+        self
     }
     /// <p>Information about the processor Lambda functions.</p>
-    pub fn set_processors(mut self, input: std::option::Option<std::vec::Vec<crate::types::Processor>>) -> Self {
-        self.processors = input; self
+    pub fn set_processors(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Processor>>,
+    ) -> Self {
+        self.processors = input;
+        self
     }
     /// <p>The name of the channel flow.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -102,7 +107,8 @@ impl ChannelFlowBuilder {
     }
     /// <p>The name of the channel flow.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The time at which the channel flow was created.</p>
     pub fn created_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -110,8 +116,12 @@ impl ChannelFlowBuilder {
         self
     }
     /// <p>The time at which the channel flow was created.</p>
-    pub fn set_created_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_timestamp = input; self
+    pub fn set_created_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_timestamp = input;
+        self
     }
     /// <p>The time at which a channel flow was updated.</p>
     pub fn last_updated_timestamp(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -119,22 +129,21 @@ impl ChannelFlowBuilder {
         self
     }
     /// <p>The time at which a channel flow was updated.</p>
-    pub fn set_last_updated_timestamp(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.last_updated_timestamp = input; self
+    pub fn set_last_updated_timestamp(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.last_updated_timestamp = input;
+        self
     }
     /// Consumes the builder and constructs a [`ChannelFlow`](crate::types::ChannelFlow).
     pub fn build(self) -> crate::types::ChannelFlow {
         crate::types::ChannelFlow {
-            channel_flow_arn: self.channel_flow_arn
-            ,
-            processors: self.processors
-            ,
-            name: self.name
-            ,
-            created_timestamp: self.created_timestamp
-            ,
-            last_updated_timestamp: self.last_updated_timestamp
-            ,
+            channel_flow_arn: self.channel_flow_arn,
+            processors: self.processors,
+            name: self.name,
+            created_timestamp: self.created_timestamp,
+            last_updated_timestamp: self.last_updated_timestamp,
         }
     }
 }
@@ -149,4 +158,3 @@ impl std::fmt::Debug for ChannelFlowBuilder {
         formatter.finish()
     }
 }
-

@@ -46,7 +46,7 @@ impl<'a> Url<'a> {
     }
 }
 
-pub(crate) fn parse_url<'a, 'b>(url: &'a str, e: &'b mut DiagnosticCollector) -> Option<Url<'a>> {
+pub(crate) fn parse_url<'a>(url: &'a str, e: &mut DiagnosticCollector) -> Option<Url<'a>> {
     let raw = url;
     let uri: Uri = e.capture(url.parse())?;
     let url: ParsedUrl = e.capture(url.parse())?;
@@ -112,4 +112,3 @@ mod test {
         assert_eq!(parse_url(url, &mut DiagnosticCollector::new()), None);
     }
 }
-

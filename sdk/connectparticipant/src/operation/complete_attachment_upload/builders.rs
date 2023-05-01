@@ -4,53 +4,73 @@ pub use crate::operation::complete_attachment_upload::_complete_attachment_uploa
 pub use crate::operation::complete_attachment_upload::_complete_attachment_upload_input::CompleteAttachmentUploadInputBuilder;
 
 /// Fluent builder constructing a request to `CompleteAttachmentUpload`.
-/// 
-/// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API. </p> <note> 
-/// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p> 
-/// </note> 
+///
+/// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API. </p> <note>
+/// <p> <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.</p>
+/// </note>
 /// <p>The Amazon Connect Participant Service APIs do not use <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 authentication</a>.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CompleteAttachmentUploadFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::complete_attachment_upload::builders::CompleteAttachmentUploadInputBuilder,
 }
-impl CompleteAttachmentUploadFluentBuilder  {
+impl CompleteAttachmentUploadFluentBuilder {
     /// Creates a new `CompleteAttachmentUpload`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::complete_attachment_upload::CompleteAttachmentUpload, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput, aws_smithy_http::result::SdkError<crate::operation::complete_attachment_upload::CompleteAttachmentUploadError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::complete_attachment_upload::CompleteAttachmentUpload,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// Appends an item to `AttachmentIds`.
     ///
     /// To override the contents of this collection use [`set_attachment_ids`](Self::set_attachment_ids).
@@ -61,7 +81,10 @@ impl CompleteAttachmentUploadFluentBuilder  {
         self
     }
     /// <p>A list of unique identifiers for the attachments.</p>
-    pub fn set_attachment_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_attachment_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_attachment_ids(input);
         self
     }
@@ -86,4 +109,3 @@ impl CompleteAttachmentUploadFluentBuilder  {
         self
     }
 }
-

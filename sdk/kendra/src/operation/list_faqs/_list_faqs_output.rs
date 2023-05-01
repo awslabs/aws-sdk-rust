@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListFaqsOutput  {
+pub struct ListFaqsOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of FAQs.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -13,19 +13,19 @@ pub struct ListFaqsOutput  {
 }
 impl ListFaqsOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of FAQs.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>information about the FAQs associated with the specified index.</p>
-    pub fn faq_summary_items(&self) -> std::option::Option<& [crate::types::FaqSummary]> {
+    pub fn faq_summary_items(&self) -> std::option::Option<&[crate::types::FaqSummary]> {
         self.faq_summary_items.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListFaqsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListFaqsOutput {
     /// Creates a new builder-style object to manufacture [`ListFaqsOutput`](crate::operation::list_faqs::ListFaqsOutput).
     pub fn builder() -> crate::operation::list_faqs::builders::ListFaqsOutputBuilder {
@@ -49,7 +49,8 @@ impl ListFaqsOutputBuilder {
     }
     /// <p>If the response is truncated, Amazon Kendra returns this token that you can use in the subsequent request to retrieve the next set of FAQs.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Appends an item to `faq_summary_items`.
     ///
@@ -58,32 +59,33 @@ impl ListFaqsOutputBuilder {
     /// <p>information about the FAQs associated with the specified index.</p>
     pub fn faq_summary_items(mut self, input: crate::types::FaqSummary) -> Self {
         let mut v = self.faq_summary_items.unwrap_or_default();
-                        v.push(input);
-                        self.faq_summary_items = Some(v);
-                        self
+        v.push(input);
+        self.faq_summary_items = Some(v);
+        self
     }
     /// <p>information about the FAQs associated with the specified index.</p>
-    pub fn set_faq_summary_items(mut self, input: std::option::Option<std::vec::Vec<crate::types::FaqSummary>>) -> Self {
-        self.faq_summary_items = input; self
+    pub fn set_faq_summary_items(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::FaqSummary>>,
+    ) -> Self {
+        self.faq_summary_items = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListFaqsOutput`](crate::operation::list_faqs::ListFaqsOutput).
     pub fn build(self) -> crate::operation::list_faqs::ListFaqsOutput {
         crate::operation::list_faqs::ListFaqsOutput {
-            next_token: self.next_token
-            ,
-            faq_summary_items: self.faq_summary_items
-            ,
+            next_token: self.next_token,
+            faq_summary_items: self.faq_summary_items,
             _request_id: self._request_id,
         }
     }
 }
-

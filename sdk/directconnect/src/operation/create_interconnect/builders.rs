@@ -4,62 +4,85 @@ pub use crate::operation::create_interconnect::_create_interconnect_output::Crea
 pub use crate::operation::create_interconnect::_create_interconnect_input::CreateInterconnectInputBuilder;
 
 /// Fluent builder constructing a request to `CreateInterconnect`.
-/// 
-/// <p>Creates an interconnect between an Direct Connect Partner's network and a specific Direct Connect location.</p> 
-/// <p>An interconnect is a connection that is capable of hosting other connections. The Direct Connect Partner can use an interconnect to provide Direct Connect hosted connections to customers through their own network services. Like a standard connection, an interconnect links the partner's network to an Direct Connect location over a standard Ethernet fiber-optic cable. One end is connected to the partner's router, the other to an Direct Connect router.</p> 
-/// <p>You can automatically add the new interconnect to a link aggregation group (LAG) by specifying a LAG ID in the request. This ensures that the new interconnect is allocated on the same Direct Connect endpoint that hosts the specified LAG. If there are no available ports on the endpoint, the request fails and no interconnect is created.</p> 
-/// <p>For each end customer, the Direct Connect Partner provisions a connection on their interconnect by calling <code>AllocateHostedConnection</code>. The end customer can then connect to Amazon Web Services resources by creating a virtual interface on their connection, using the VLAN assigned to them by the Direct Connect Partner.</p> <note> 
-/// <p>Intended for use by Direct Connect Partners only.</p> 
+///
+/// <p>Creates an interconnect between an Direct Connect Partner's network and a specific Direct Connect location.</p>
+/// <p>An interconnect is a connection that is capable of hosting other connections. The Direct Connect Partner can use an interconnect to provide Direct Connect hosted connections to customers through their own network services. Like a standard connection, an interconnect links the partner's network to an Direct Connect location over a standard Ethernet fiber-optic cable. One end is connected to the partner's router, the other to an Direct Connect router.</p>
+/// <p>You can automatically add the new interconnect to a link aggregation group (LAG) by specifying a LAG ID in the request. This ensures that the new interconnect is allocated on the same Direct Connect endpoint that hosts the specified LAG. If there are no available ports on the endpoint, the request fails and no interconnect is created.</p>
+/// <p>For each end customer, the Direct Connect Partner provisions a connection on their interconnect by calling <code>AllocateHostedConnection</code>. The end customer can then connect to Amazon Web Services resources by creating a virtual interface on their connection, using the VLAN assigned to them by the Direct Connect Partner.</p> <note>
+/// <p>Intended for use by Direct Connect Partners only.</p>
 /// </note>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateInterconnectFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder,
+    inner: crate::operation::create_interconnect::builders::CreateInterconnectInputBuilder,
 }
-impl CreateInterconnectFluentBuilder  {
+impl CreateInterconnectFluentBuilder {
     /// Creates a new `CreateInterconnect`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_interconnect::CreateInterconnect, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_interconnect::CreateInterconnectError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_interconnect::CreateInterconnectOutput, aws_smithy_http::result::SdkError<crate::operation::create_interconnect::CreateInterconnectError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_interconnect::CreateInterconnect,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_interconnect::CreateInterconnectError,
+        >,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_interconnect::CreateInterconnectOutput,
+        aws_smithy_http::result::SdkError<
+            crate::operation::create_interconnect::CreateInterconnectError,
+        >,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
     /// <p>The name of the interconnect.</p>
     pub fn interconnect_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.inner = self.inner.interconnect_name(input.into());
         self
     }
     /// <p>The name of the interconnect.</p>
-    pub fn set_interconnect_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_interconnect_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_interconnect_name(input);
         self
     }
@@ -103,7 +126,10 @@ impl CreateInterconnectFluentBuilder  {
         self
     }
     /// <p>The tags to associate with the interconnect.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::vec::Vec<crate::types::Tag>>) -> Self {
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
     }
@@ -118,4 +144,3 @@ impl CreateInterconnectFluentBuilder  {
         self
     }
 }
-

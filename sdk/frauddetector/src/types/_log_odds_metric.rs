@@ -3,7 +3,7 @@
 /// <p>The log odds metric details.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct LogOddsMetric  {
+pub struct LogOddsMetric {
     /// <p>The name of the variable.</p>
     #[doc(hidden)]
     pub variable_name: std::option::Option<std::string::String>,
@@ -16,11 +16,11 @@ pub struct LogOddsMetric  {
 }
 impl LogOddsMetric {
     /// <p>The name of the variable.</p>
-    pub fn variable_name(&self) -> std::option::Option<& str> {
+    pub fn variable_name(&self) -> std::option::Option<&str> {
         self.variable_name.as_deref()
     }
     /// <p>The type of variable.</p>
-    pub fn variable_type(&self) -> std::option::Option<& str> {
+    pub fn variable_type(&self) -> std::option::Option<&str> {
         self.variable_type.as_deref()
     }
     /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
@@ -51,7 +51,8 @@ impl LogOddsMetricBuilder {
     }
     /// <p>The name of the variable.</p>
     pub fn set_variable_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.variable_name = input; self
+        self.variable_name = input;
+        self
     }
     /// <p>The type of variable.</p>
     pub fn variable_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl LogOddsMetricBuilder {
     }
     /// <p>The type of variable.</p>
     pub fn set_variable_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.variable_type = input; self
+        self.variable_type = input;
+        self
     }
     /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
     pub fn variable_importance(mut self, input: f32) -> Self {
@@ -69,18 +71,15 @@ impl LogOddsMetricBuilder {
     }
     /// <p>The relative importance of the variable. For more information, see <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model variable importance</a>.</p>
     pub fn set_variable_importance(mut self, input: std::option::Option<f32>) -> Self {
-        self.variable_importance = input; self
+        self.variable_importance = input;
+        self
     }
     /// Consumes the builder and constructs a [`LogOddsMetric`](crate::types::LogOddsMetric).
     pub fn build(self) -> crate::types::LogOddsMetric {
         crate::types::LogOddsMetric {
-            variable_name: self.variable_name
-            ,
-            variable_type: self.variable_type
-            ,
-            variable_importance: self.variable_importance
-            ,
+            variable_name: self.variable_name,
+            variable_type: self.variable_type,
+            variable_importance: self.variable_importance,
         }
     }
 }
-

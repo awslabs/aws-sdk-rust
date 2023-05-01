@@ -3,7 +3,7 @@
 /// <p>Summary information for an Amazon OpenSearch Service-managed VPC endpoint.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct VpcEndpointSummary  {
+pub struct VpcEndpointSummary {
     /// <p>The unique identifier of the endpoint.</p>
     #[doc(hidden)]
     pub vpc_endpoint_id: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct VpcEndpointSummary  {
 }
 impl VpcEndpointSummary {
     /// <p>The unique identifier of the endpoint.</p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<& str> {
+    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The creator of the endpoint.</p>
-    pub fn vpc_endpoint_owner(&self) -> std::option::Option<& str> {
+    pub fn vpc_endpoint_owner(&self) -> std::option::Option<&str> {
         self.vpc_endpoint_owner.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
-    pub fn domain_arn(&self) -> std::option::Option<& str> {
+    pub fn domain_arn(&self) -> std::option::Option<&str> {
         self.domain_arn.as_deref()
     }
     /// <p>The current status of the endpoint.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::VpcEndpointStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::VpcEndpointStatus> {
         self.status.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl VpcEndpointSummaryBuilder {
     }
     /// <p>The unique identifier of the endpoint.</p>
     pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_endpoint_id = input; self
+        self.vpc_endpoint_id = input;
+        self
     }
     /// <p>The creator of the endpoint.</p>
     pub fn vpc_endpoint_owner(mut self, input: impl Into<std::string::String>) -> Self {
@@ -67,8 +68,12 @@ impl VpcEndpointSummaryBuilder {
         self
     }
     /// <p>The creator of the endpoint.</p>
-    pub fn set_vpc_endpoint_owner(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.vpc_endpoint_owner = input; self
+    pub fn set_vpc_endpoint_owner(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_owner = input;
+        self
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
     pub fn domain_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +82,8 @@ impl VpcEndpointSummaryBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the domain associated with the endpoint.</p>
     pub fn set_domain_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.domain_arn = input; self
+        self.domain_arn = input;
+        self
     }
     /// <p>The current status of the endpoint.</p>
     pub fn status(mut self, input: crate::types::VpcEndpointStatus) -> Self {
@@ -85,21 +91,20 @@ impl VpcEndpointSummaryBuilder {
         self
     }
     /// <p>The current status of the endpoint.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::VpcEndpointStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::VpcEndpointStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`VpcEndpointSummary`](crate::types::VpcEndpointSummary).
     pub fn build(self) -> crate::types::VpcEndpointSummary {
         crate::types::VpcEndpointSummary {
-            vpc_endpoint_id: self.vpc_endpoint_id
-            ,
-            vpc_endpoint_owner: self.vpc_endpoint_owner
-            ,
-            domain_arn: self.domain_arn
-            ,
-            status: self.status
-            ,
+            vpc_endpoint_id: self.vpc_endpoint_id,
+            vpc_endpoint_owner: self.vpc_endpoint_owner,
+            domain_arn: self.domain_arn,
+            status: self.status,
         }
     }
 }
-

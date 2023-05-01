@@ -4,57 +4,73 @@ pub use crate::operation::create_cluster::_create_cluster_output::CreateClusterO
 pub use crate::operation::create_cluster::_create_cluster_input::CreateClusterInputBuilder;
 
 /// Fluent builder constructing a request to `CreateCluster`.
-/// 
+///
 /// <p>Creates an empty cluster. Each cluster supports five nodes. You use the <code>CreateJob</code> action separately to create the jobs for each of these nodes. The cluster does not ship until these five node jobs have been created.</p>
 #[derive(std::clone::Clone, std::fmt::Debug)]
 pub struct CreateClusterFluentBuilder {
     handle: std::sync::Arc<crate::client::Handle>,
-                    inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
+    inner: crate::operation::create_cluster::builders::CreateClusterInputBuilder,
 }
-impl CreateClusterFluentBuilder  {
+impl CreateClusterFluentBuilder {
     /// Creates a new `CreateCluster`.
     pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
-            handle, inner: Default::default(),
+            handle,
+            inner: Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
-                    /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::create_cluster::CreateCluster, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>
-                    >  {
-                        let handle = self.handle.clone();
-                        let operation = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        Ok(crate::client::customize::CustomizableOperation { handle, operation })
-                    }
-    
-                    /// Sends the request and returns the response.
-                    ///
-                    /// If an error occurs, an `SdkError` will be returned with additional details that
-                    /// can be matched against.
-                    ///
-                    /// By default, any retryable failures will be retried twice. Retry behavior
-                    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
-                    /// set when configuring the client.
-                    pub async fn send(self) -> std::result::Result<crate::operation::create_cluster::CreateClusterOutput, aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>>
-                     {
-                        let op = self.inner.build().map_err(aws_smithy_http::result::SdkError::construction_failure)?
-                            .make_operation(&self.handle.conf)
-                            .await
-                            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-                        self.handle.client.call(op).await
-                    }
-    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p> 
+    /// sent. The operation's inner [http::Request] can be modified as well.
+    pub async fn customize(
+        self,
+    ) -> std::result::Result<
+        crate::client::customize::CustomizableOperation<
+            crate::operation::create_cluster::CreateCluster,
+            aws_http::retry::AwsResponseRetryClassifier,
+        >,
+        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+    > {
+        let handle = self.handle.clone();
+        let operation = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+    }
+
+    /// Sends the request and returns the response.
+    ///
+    /// If an error occurs, an `SdkError` will be returned with additional details that
+    /// can be matched against.
+    ///
+    /// By default, any retryable failures will be retried twice. Retry behavior
+    /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
+    /// set when configuring the client.
+    pub async fn send(
+        self,
+    ) -> std::result::Result<
+        crate::operation::create_cluster::CreateClusterOutput,
+        aws_smithy_http::result::SdkError<crate::operation::create_cluster::CreateClusterError>,
+    > {
+        let op = self
+            .inner
+            .build()
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .make_operation(&self.handle.conf)
+            .await
+            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+        self.handle.client.call(op).await
+    }
+    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
         self.inner = self.inner.job_type(input);
         self
     }
-    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p> 
+    /// <p>The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
         self.inner = self.inner.set_job_type(input);
@@ -71,12 +87,18 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn on_device_service_configuration(mut self, input: crate::types::OnDeviceServiceConfiguration) -> Self {
+    pub fn on_device_service_configuration(
+        mut self,
+        input: crate::types::OnDeviceServiceConfiguration,
+    ) -> Self {
         self.inner = self.inner.on_device_service_configuration(input);
         self
     }
     /// <p>Specifies the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family device clusters support Amazon S3 and NFS (Network File System).</p>
-    pub fn set_on_device_service_configuration(mut self, input: std::option::Option<crate::types::OnDeviceServiceConfiguration>) -> Self {
+    pub fn set_on_device_service_configuration(
+        mut self,
+        input: std::option::Option<crate::types::OnDeviceServiceConfiguration>,
+    ) -> Self {
         self.inner = self.inner.set_on_device_service_configuration(input);
         self
     }
@@ -120,53 +142,59 @@ impl CreateClusterFluentBuilder  {
         self.inner = self.inner.set_role_arn(input);
         self
     }
-    /// <p>The type of Snow Family devices to use for this cluster. </p> <note> 
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
-    /// </note> 
+    /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// </note>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn snowball_type(mut self, input: crate::types::SnowballType) -> Self {
         self.inner = self.inner.snowball_type(input);
         self
     }
-    /// <p>The type of Snow Family devices to use for this cluster. </p> <note> 
-    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p> 
-    /// </note> 
+    /// <p>The type of Snow Family devices to use for this cluster. </p> <note>
+    /// <p>For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code> device type.</p>
+    /// </note>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn set_snowball_type(mut self, input: std::option::Option<crate::types::SnowballType>) -> Self {
+    pub fn set_snowball_type(
+        mut self,
+        input: std::option::Option<crate::types::SnowballType>,
+    ) -> Self {
         self.inner = self.inner.set_snowball_type(input);
         self
     }
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p> 
-    /// <ul> 
-    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
-    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
+    /// </ul>
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
     pub fn shipping_option(mut self, input: crate::types::ShippingOption) -> Self {
         self.inner = self.inner.shipping_option(input);
         self
     }
-    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p> 
-    /// <ul> 
-    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li> 
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
-    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li> 
-    /// </ul> 
-    /// <ul> 
-    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li> 
-    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li> 
-    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li> 
-    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li> 
+    /// <p>The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each Snowball Edge device, rather it represents how quickly each device moves to its destination while in transit. Regional shipping speeds are as follows: </p>
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the United States of America (US), you have access to one-day shipping and two-day shipping.</p> </li>
     /// </ul>
-    pub fn set_shipping_option(mut self, input: std::option::Option<crate::types::ShippingOption>) -> Self {
+    /// <ul>
+    /// <li> <p>In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a day.</p> </li>
+    /// <li> <p>In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically takes less than a week, one way.</p> </li>
+    /// <li> <p>In India, Snow devices are delivered in one to seven days.</p> </li>
+    /// <li> <p>In the US, you have access to one-day shipping and two-day shipping.</p> </li>
+    /// </ul>
+    pub fn set_shipping_option(
+        mut self,
+        input: std::option::Option<crate::types::ShippingOption>,
+    ) -> Self {
         self.inner = self.inner.set_shipping_option(input);
         self
     }
@@ -176,7 +204,10 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>The Amazon Simple Notification Service (Amazon SNS) notification settings for this cluster.</p>
-    pub fn set_notification(mut self, input: std::option::Option<crate::types::Notification>) -> Self {
+    pub fn set_notification(
+        mut self,
+        input: std::option::Option<crate::types::Notification>,
+    ) -> Self {
         self.inner = self.inner.set_notification(input);
         self
     }
@@ -186,7 +217,10 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>The forwarding address ID for a cluster. This field is not supported in most regions.</p>
-    pub fn set_forwarding_address_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_forwarding_address_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_forwarding_address_id(input);
         self
     }
@@ -196,7 +230,10 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>The tax documents required in your Amazon Web Services Region.</p>
-    pub fn set_tax_documents(mut self, input: std::option::Option<crate::types::TaxDocuments>) -> Self {
+    pub fn set_tax_documents(
+        mut self,
+        input: std::option::Option<crate::types::TaxDocuments>,
+    ) -> Self {
         self.inner = self.inner.set_tax_documents(input);
         self
     }
@@ -206,7 +243,10 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>Allows you to securely operate and manage Snow devices in a cluster remotely from outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management will automatically be available when the device arrives at your location. Otherwise, you need to use the Snowball Client to manage the device.</p>
-    pub fn set_remote_management(mut self, input: std::option::Option<crate::types::RemoteManagement>) -> Self {
+    pub fn set_remote_management(
+        mut self,
+        input: std::option::Option<crate::types::RemoteManagement>,
+    ) -> Self {
         self.inner = self.inner.set_remote_management(input);
         self
     }
@@ -240,21 +280,26 @@ impl CreateClusterFluentBuilder  {
         self
     }
     /// <p>Lists long-term pricing id that will be used to associate with jobs automatically created for the new cluster.</p>
-    pub fn set_long_term_pricing_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
+    pub fn set_long_term_pricing_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
         self.inner = self.inner.set_long_term_pricing_ids(input);
         self
     }
-    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p> 
+    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
     pub fn snowball_capacity_preference(mut self, input: crate::types::SnowballCapacity) -> Self {
         self.inner = self.inner.snowball_capacity_preference(input);
         self
     }
-    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p> 
+    /// <p>If your job is being created in one of the US regions, you have the option of specifying what size Snow device you'd like for this job. In all other regions, Snowballs come with 80 TB in storage capacity.</p>
     /// <p>For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
-    pub fn set_snowball_capacity_preference(mut self, input: std::option::Option<crate::types::SnowballCapacity>) -> Self {
+    pub fn set_snowball_capacity_preference(
+        mut self,
+        input: std::option::Option<crate::types::SnowballCapacity>,
+    ) -> Self {
         self.inner = self.inner.set_snowball_capacity_preference(input);
         self
     }
 }
-

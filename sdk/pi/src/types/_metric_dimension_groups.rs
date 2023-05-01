@@ -3,7 +3,7 @@
 /// <p>The available dimension information for a metric type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct MetricDimensionGroups  {
+pub struct MetricDimensionGroups {
     /// <p>The metric type to which the dimension information belongs.</p>
     #[doc(hidden)]
     pub metric: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct MetricDimensionGroups  {
 }
 impl MetricDimensionGroups {
     /// <p>The metric type to which the dimension information belongs.</p>
-    pub fn metric(&self) -> std::option::Option<& str> {
+    pub fn metric(&self) -> std::option::Option<&str> {
         self.metric.as_deref()
     }
     /// <p>The available dimension groups for a metric type.</p>
-    pub fn groups(&self) -> std::option::Option<& [crate::types::DimensionGroupDetail]> {
+    pub fn groups(&self) -> std::option::Option<&[crate::types::DimensionGroupDetail]> {
         self.groups.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl MetricDimensionGroupsBuilder {
     }
     /// <p>The metric type to which the dimension information belongs.</p>
     pub fn set_metric(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.metric = input; self
+        self.metric = input;
+        self
     }
     /// Appends an item to `groups`.
     ///
@@ -52,22 +53,23 @@ impl MetricDimensionGroupsBuilder {
     /// <p>The available dimension groups for a metric type.</p>
     pub fn groups(mut self, input: crate::types::DimensionGroupDetail) -> Self {
         let mut v = self.groups.unwrap_or_default();
-                        v.push(input);
-                        self.groups = Some(v);
-                        self
+        v.push(input);
+        self.groups = Some(v);
+        self
     }
     /// <p>The available dimension groups for a metric type.</p>
-    pub fn set_groups(mut self, input: std::option::Option<std::vec::Vec<crate::types::DimensionGroupDetail>>) -> Self {
-        self.groups = input; self
+    pub fn set_groups(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::DimensionGroupDetail>>,
+    ) -> Self {
+        self.groups = input;
+        self
     }
     /// Consumes the builder and constructs a [`MetricDimensionGroups`](crate::types::MetricDimensionGroups).
     pub fn build(self) -> crate::types::MetricDimensionGroups {
         crate::types::MetricDimensionGroups {
-            metric: self.metric
-            ,
-            groups: self.groups
-            ,
+            metric: self.metric,
+            groups: self.groups,
         }
     }
 }
-

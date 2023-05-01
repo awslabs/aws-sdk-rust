@@ -3,14 +3,14 @@
 /// <p>DescribeTaskRequest</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTaskInput  {
+pub struct DescribeTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
     #[doc(hidden)]
     pub task_arn: std::option::Option<std::string::String>,
 }
 impl DescribeTaskInput {
     /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
-    pub fn task_arn(&self) -> std::option::Option<& str> {
+    pub fn task_arn(&self) -> std::option::Option<&str> {
         self.task_arn.as_deref()
     }
 }
@@ -35,16 +35,18 @@ impl DescribeTaskInputBuilder {
     }
     /// <p>The Amazon Resource Name (ARN) of the task to describe.</p>
     pub fn set_task_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.task_arn = input; self
+        self.task_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeTaskInput`](crate::operation::describe_task::DescribeTaskInput).
-    pub fn build(self) -> Result<crate::operation::describe_task::DescribeTaskInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::describe_task::DescribeTaskInput {
-                task_arn: self.task_arn
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_task::DescribeTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::describe_task::DescribeTaskInput {
+            task_arn: self.task_arn,
+        })
     }
 }
-

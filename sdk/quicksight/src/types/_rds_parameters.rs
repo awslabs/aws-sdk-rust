@@ -3,7 +3,7 @@
 /// <p>The parameters for Amazon RDS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RdsParameters  {
+pub struct RdsParameters {
     /// <p>Instance ID.</p>
     #[doc(hidden)]
     pub instance_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct RdsParameters  {
 }
 impl RdsParameters {
     /// <p>Instance ID.</p>
-    pub fn instance_id(&self) -> std::option::Option<& str> {
+    pub fn instance_id(&self) -> std::option::Option<&str> {
         self.instance_id.as_deref()
     }
     /// <p>Database.</p>
-    pub fn database(&self) -> std::option::Option<& str> {
+    pub fn database(&self) -> std::option::Option<&str> {
         self.database.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl RdsParametersBuilder {
     }
     /// <p>Instance ID.</p>
     pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.instance_id = input; self
+        self.instance_id = input;
+        self
     }
     /// <p>Database.</p>
     pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl RdsParametersBuilder {
     }
     /// <p>Database.</p>
     pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.database = input; self
+        self.database = input;
+        self
     }
     /// Consumes the builder and constructs a [`RdsParameters`](crate::types::RdsParameters).
     pub fn build(self) -> crate::types::RdsParameters {
         crate::types::RdsParameters {
-            instance_id: self.instance_id
-            ,
-            database: self.database
-            ,
+            instance_id: self.instance_id,
+            database: self.database,
         }
     }
 }
-

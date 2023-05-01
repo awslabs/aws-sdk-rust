@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchCheckLayerAvailabilityInput  {
+pub struct BatchCheckLayerAvailabilityInput {
     /// <p>The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
     #[doc(hidden)]
     pub registry_id: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct BatchCheckLayerAvailabilityInput  {
 }
 impl BatchCheckLayerAvailabilityInput {
     /// <p>The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
-    pub fn registry_id(&self) -> std::option::Option<& str> {
+    pub fn registry_id(&self) -> std::option::Option<&str> {
         self.registry_id.as_deref()
     }
     /// <p>The name of the repository that's associated with the image layers to check.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The digests of the image layers to check.</p>
-    pub fn layer_digests(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn layer_digests(&self) -> std::option::Option<&[std::string::String]> {
         self.layer_digests.as_deref()
     }
 }
 impl BatchCheckLayerAvailabilityInput {
     /// Creates a new builder-style object to manufacture [`BatchCheckLayerAvailabilityInput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput).
-    pub fn builder() -> crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder {
+    pub fn builder() -> crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder{
         crate::operation::batch_check_layer_availability::builders::BatchCheckLayerAvailabilityInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl BatchCheckLayerAvailabilityInputBuilder {
     }
     /// <p>The Amazon Web Services account ID, or registry alias, associated with the public registry that contains the image layers to check. If you do not specify a registry, the default public registry is assumed.</p>
     pub fn set_registry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.registry_id = input; self
+        self.registry_id = input;
+        self
     }
     /// <p>The name of the repository that's associated with the image layers to check.</p>
     pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl BatchCheckLayerAvailabilityInputBuilder {
     }
     /// <p>The name of the repository that's associated with the image layers to check.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// Appends an item to `layer_digests`.
     ///
@@ -68,26 +70,31 @@ impl BatchCheckLayerAvailabilityInputBuilder {
     /// <p>The digests of the image layers to check.</p>
     pub fn layer_digests(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.layer_digests.unwrap_or_default();
-                        v.push(input.into());
-                        self.layer_digests = Some(v);
-                        self
+        v.push(input.into());
+        self.layer_digests = Some(v);
+        self
     }
     /// <p>The digests of the image layers to check.</p>
-    pub fn set_layer_digests(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.layer_digests = input; self
+    pub fn set_layer_digests(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.layer_digests = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchCheckLayerAvailabilityInput`](crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput).
-    pub fn build(self) -> Result<crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityInput {
-                registry_id: self.registry_id
-                ,
-                repository_name: self.repository_name
-                ,
-                layer_digests: self.layer_digests
-                ,
-            }
+                registry_id: self.registry_id,
+                repository_name: self.repository_name,
+                layer_digests: self.layer_digests,
+            },
         )
     }
 }
-

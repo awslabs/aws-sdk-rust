@@ -3,7 +3,7 @@
 /// <p> The object containing information about distinct imports or groups for Strategy Recommendations. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Group  {
+pub struct Group {
     /// <p> The key of the specific import group. </p>
     #[doc(hidden)]
     pub name: std::option::Option<crate::types::GroupName>,
@@ -13,11 +13,11 @@ pub struct Group  {
 }
 impl Group {
     /// <p> The key of the specific import group. </p>
-    pub fn name(&self) -> std::option::Option<& crate::types::GroupName> {
+    pub fn name(&self) -> std::option::Option<&crate::types::GroupName> {
         self.name.as_ref()
     }
     /// <p> The value of the specific import group. </p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl GroupBuilder {
     }
     /// <p> The key of the specific import group. </p>
     pub fn set_name(mut self, input: std::option::Option<crate::types::GroupName>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p> The value of the specific import group. </p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl GroupBuilder {
     }
     /// <p> The value of the specific import group. </p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`Group`](crate::types::Group).
     pub fn build(self) -> crate::types::Group {
         crate::types::Group {
-            name: self.name
-            ,
-            value: self.value
-            ,
+            name: self.name,
+            value: self.value,
         }
     }
 }
-

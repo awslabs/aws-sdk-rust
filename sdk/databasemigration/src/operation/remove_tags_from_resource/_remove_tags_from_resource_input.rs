@@ -3,7 +3,7 @@
 /// <p>Removes one or more tags from an DMS resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RemoveTagsFromResourceInput  {
+pub struct RemoveTagsFromResourceInput {
     /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
@@ -13,17 +13,19 @@ pub struct RemoveTagsFromResourceInput  {
 }
 impl RemoveTagsFromResourceInput {
     /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> std::option::Option<& str> {
+    pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The tag key (name) of the tag to be removed.</p>
-    pub fn tag_keys(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn tag_keys(&self) -> std::option::Option<&[std::string::String]> {
         self.tag_keys.as_deref()
     }
 }
 impl RemoveTagsFromResourceInput {
     /// Creates a new builder-style object to manufacture [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
-    pub fn builder() -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder
+    {
         crate::operation::remove_tags_from_resource::builders::RemoveTagsFromResourceInputBuilder::default()
     }
 }
@@ -43,7 +45,8 @@ impl RemoveTagsFromResourceInputBuilder {
     }
     /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
     pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_arn = input; self
+        self.resource_arn = input;
+        self
     }
     /// Appends an item to `tag_keys`.
     ///
@@ -52,24 +55,30 @@ impl RemoveTagsFromResourceInputBuilder {
     /// <p>The tag key (name) of the tag to be removed.</p>
     pub fn tag_keys(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.tag_keys.unwrap_or_default();
-                        v.push(input.into());
-                        self.tag_keys = Some(v);
-                        self
+        v.push(input.into());
+        self.tag_keys = Some(v);
+        self
     }
     /// <p>The tag key (name) of the tag to be removed.</p>
-    pub fn set_tag_keys(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.tag_keys = input; self
+    pub fn set_tag_keys(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.tag_keys = input;
+        self
     }
     /// Consumes the builder and constructs a [`RemoveTagsFromResourceInput`](crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput).
-    pub fn build(self) -> Result<crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::remove_tags_from_resource::RemoveTagsFromResourceInput {
-                resource_arn: self.resource_arn
-                ,
-                tag_keys: self.tag_keys
-                ,
-            }
+                resource_arn: self.resource_arn,
+                tag_keys: self.tag_keys,
+            },
         )
     }
 }
-

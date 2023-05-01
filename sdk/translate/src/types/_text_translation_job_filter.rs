@@ -3,7 +3,7 @@
 /// <p>Provides information for filtering a list of translation jobs. For more information, see <code>ListTextTranslationJobs</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TextTranslationJobFilter  {
+pub struct TextTranslationJobFilter {
     /// <p>Filters the list of jobs by name.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
@@ -19,19 +19,19 @@ pub struct TextTranslationJobFilter  {
 }
 impl TextTranslationJobFilter {
     /// <p>Filters the list of jobs by name.</p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>Filters the list of jobs based by job status.</p>
-    pub fn job_status(&self) -> std::option::Option<& crate::types::JobStatus> {
+    pub fn job_status(&self) -> std::option::Option<&crate::types::JobStatus> {
         self.job_status.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
-    pub fn submitted_before_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn submitted_before_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_before_time.as_ref()
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
-    pub fn submitted_after_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn submitted_after_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.submitted_after_time.as_ref()
     }
 }
@@ -59,7 +59,8 @@ impl TextTranslationJobFilterBuilder {
     }
     /// <p>Filters the list of jobs by name.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     /// <p>Filters the list of jobs based by job status.</p>
     pub fn job_status(mut self, input: crate::types::JobStatus) -> Self {
@@ -68,7 +69,8 @@ impl TextTranslationJobFilterBuilder {
     }
     /// <p>Filters the list of jobs based by job status.</p>
     pub fn set_job_status(mut self, input: std::option::Option<crate::types::JobStatus>) -> Self {
-        self.job_status = input; self
+        self.job_status = input;
+        self
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
     pub fn submitted_before_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -76,8 +78,12 @@ impl TextTranslationJobFilterBuilder {
         self
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted before the specified time. Jobs are returned in ascending order, oldest to newest.</p>
-    pub fn set_submitted_before_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.submitted_before_time = input; self
+    pub fn set_submitted_before_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.submitted_before_time = input;
+        self
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
     pub fn submitted_after_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -85,21 +91,20 @@ impl TextTranslationJobFilterBuilder {
         self
     }
     /// <p>Filters the list of jobs based on the time that the job was submitted for processing and returns only the jobs submitted after the specified time. Jobs are returned in descending order, newest to oldest.</p>
-    pub fn set_submitted_after_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.submitted_after_time = input; self
+    pub fn set_submitted_after_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.submitted_after_time = input;
+        self
     }
     /// Consumes the builder and constructs a [`TextTranslationJobFilter`](crate::types::TextTranslationJobFilter).
     pub fn build(self) -> crate::types::TextTranslationJobFilter {
         crate::types::TextTranslationJobFilter {
-            job_name: self.job_name
-            ,
-            job_status: self.job_status
-            ,
-            submitted_before_time: self.submitted_before_time
-            ,
-            submitted_after_time: self.submitted_after_time
-            ,
+            job_name: self.job_name,
+            job_status: self.job_status,
+            submitted_before_time: self.submitted_before_time,
+            submitted_after_time: self.submitted_after_time,
         }
     }
 }
-

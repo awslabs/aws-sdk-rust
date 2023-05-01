@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let accesstype = unimplemented!();
 /// match accesstype {
@@ -30,55 +30,62 @@
 /// Specifically, when `accesstype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `AccessType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum AccessType {
     #[allow(missing_docs)] // documentation missing in model
     S3Sigv4,
     #[allow(missing_docs)] // documentation missing in model
     SecretsManagerAccessToken,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for AccessType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "S3_SIGV4" => AccessType::S3Sigv4,
-"SECRETS_MANAGER_ACCESS_TOKEN" => AccessType::SecretsManagerAccessToken,
-other => AccessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
-            }
-impl std::str::FromStr for AccessType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(AccessType::from(s))
-                }
-            }
-impl AccessType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    AccessType::S3Sigv4 => "S3_SIGV4",
-    AccessType::SecretsManagerAccessToken => "SECRETS_MANAGER_ACCESS_TOKEN",
-    AccessType::Unknown(value) => value.as_str()
+    fn from(s: &str) -> Self {
+        match s {
+            "S3_SIGV4" => AccessType::S3Sigv4,
+            "SECRETS_MANAGER_ACCESS_TOKEN" => AccessType::SecretsManagerAccessToken,
+            other => AccessType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned())),
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["S3_SIGV4", "SECRETS_MANAGER_ACCESS_TOKEN"]
-                }
-            }
-impl AsRef<str> for AccessType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for AccessType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AccessType::from(s))
+    }
+}
+impl AccessType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            AccessType::S3Sigv4 => "S3_SIGV4",
+            AccessType::SecretsManagerAccessToken => "SECRETS_MANAGER_ACCESS_TOKEN",
+            AccessType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &["S3_SIGV4", "SECRETS_MANAGER_ACCESS_TOKEN"]
+    }
+}
+impl AsRef<str> for AccessType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

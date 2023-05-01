@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateScriptInput  {
+pub struct CreateScriptInput {
     /// <p>A list of the nodes in the DAG.</p>
     #[doc(hidden)]
     pub dag_nodes: std::option::Option<std::vec::Vec<crate::types::CodeGenNode>>,
@@ -15,15 +15,15 @@ pub struct CreateScriptInput  {
 }
 impl CreateScriptInput {
     /// <p>A list of the nodes in the DAG.</p>
-    pub fn dag_nodes(&self) -> std::option::Option<& [crate::types::CodeGenNode]> {
+    pub fn dag_nodes(&self) -> std::option::Option<&[crate::types::CodeGenNode]> {
         self.dag_nodes.as_deref()
     }
     /// <p>A list of the edges in the DAG.</p>
-    pub fn dag_edges(&self) -> std::option::Option<& [crate::types::CodeGenEdge]> {
+    pub fn dag_edges(&self) -> std::option::Option<&[crate::types::CodeGenEdge]> {
         self.dag_edges.as_deref()
     }
     /// <p>The programming language of the resulting code from the DAG.</p>
-    pub fn language(&self) -> std::option::Option<& crate::types::Language> {
+    pub fn language(&self) -> std::option::Option<&crate::types::Language> {
         self.language.as_ref()
     }
 }
@@ -50,13 +50,17 @@ impl CreateScriptInputBuilder {
     /// <p>A list of the nodes in the DAG.</p>
     pub fn dag_nodes(mut self, input: crate::types::CodeGenNode) -> Self {
         let mut v = self.dag_nodes.unwrap_or_default();
-                        v.push(input);
-                        self.dag_nodes = Some(v);
-                        self
+        v.push(input);
+        self.dag_nodes = Some(v);
+        self
     }
     /// <p>A list of the nodes in the DAG.</p>
-    pub fn set_dag_nodes(mut self, input: std::option::Option<std::vec::Vec<crate::types::CodeGenNode>>) -> Self {
-        self.dag_nodes = input; self
+    pub fn set_dag_nodes(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CodeGenNode>>,
+    ) -> Self {
+        self.dag_nodes = input;
+        self
     }
     /// Appends an item to `dag_edges`.
     ///
@@ -65,13 +69,17 @@ impl CreateScriptInputBuilder {
     /// <p>A list of the edges in the DAG.</p>
     pub fn dag_edges(mut self, input: crate::types::CodeGenEdge) -> Self {
         let mut v = self.dag_edges.unwrap_or_default();
-                        v.push(input);
-                        self.dag_edges = Some(v);
-                        self
+        v.push(input);
+        self.dag_edges = Some(v);
+        self
     }
     /// <p>A list of the edges in the DAG.</p>
-    pub fn set_dag_edges(mut self, input: std::option::Option<std::vec::Vec<crate::types::CodeGenEdge>>) -> Self {
-        self.dag_edges = input; self
+    pub fn set_dag_edges(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::CodeGenEdge>>,
+    ) -> Self {
+        self.dag_edges = input;
+        self
     }
     /// <p>The programming language of the resulting code from the DAG.</p>
     pub fn language(mut self, input: crate::types::Language) -> Self {
@@ -80,20 +88,20 @@ impl CreateScriptInputBuilder {
     }
     /// <p>The programming language of the resulting code from the DAG.</p>
     pub fn set_language(mut self, input: std::option::Option<crate::types::Language>) -> Self {
-        self.language = input; self
+        self.language = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateScriptInput`](crate::operation::create_script::CreateScriptInput).
-    pub fn build(self) -> Result<crate::operation::create_script::CreateScriptInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::create_script::CreateScriptInput {
-                dag_nodes: self.dag_nodes
-                ,
-                dag_edges: self.dag_edges
-                ,
-                language: self.language
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_script::CreateScriptInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::create_script::CreateScriptInput {
+            dag_nodes: self.dag_nodes,
+            dag_edges: self.dag_edges,
+            language: self.language,
+        })
     }
 }
-

@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetAssessmentInput  {
+pub struct GetAssessmentInput {
     /// <p>The unique identifier for the assessment. </p>
     #[doc(hidden)]
     pub assessment_id: std::option::Option<std::string::String>,
 }
 impl GetAssessmentInput {
     /// <p>The unique identifier for the assessment. </p>
-    pub fn assessment_id(&self) -> std::option::Option<& str> {
+    pub fn assessment_id(&self) -> std::option::Option<&str> {
         self.assessment_id.as_deref()
     }
 }
@@ -34,16 +34,18 @@ impl GetAssessmentInputBuilder {
     }
     /// <p>The unique identifier for the assessment. </p>
     pub fn set_assessment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.assessment_id = input; self
+        self.assessment_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetAssessmentInput`](crate::operation::get_assessment::GetAssessmentInput).
-    pub fn build(self) -> Result<crate::operation::get_assessment::GetAssessmentInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_assessment::GetAssessmentInput {
-                assessment_id: self.assessment_id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_assessment::GetAssessmentInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_assessment::GetAssessmentInput {
+            assessment_id: self.assessment_id,
+        })
     }
 }
-

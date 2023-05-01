@@ -3,7 +3,7 @@
 /// <p>The input to the ListOutgoingCertificates operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListOutgoingCertificatesInput  {
+pub struct ListOutgoingCertificatesInput {
     /// <p>The result page size.</p>
     #[doc(hidden)]
     pub page_size: std::option::Option<i32>,
@@ -20,7 +20,7 @@ impl ListOutgoingCertificatesInput {
         self.page_size
     }
     /// <p>The marker for the next set of results.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
@@ -30,7 +30,9 @@ impl ListOutgoingCertificatesInput {
 }
 impl ListOutgoingCertificatesInput {
     /// Creates a new builder-style object to manufacture [`ListOutgoingCertificatesInput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput).
-    pub fn builder() -> crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesInputBuilder
+    {
         crate::operation::list_outgoing_certificates::builders::ListOutgoingCertificatesInputBuilder::default()
     }
 }
@@ -51,7 +53,8 @@ impl ListOutgoingCertificatesInputBuilder {
     }
     /// <p>The result page size.</p>
     pub fn set_page_size(mut self, input: std::option::Option<i32>) -> Self {
-        self.page_size = input; self
+        self.page_size = input;
+        self
     }
     /// <p>The marker for the next set of results.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +63,8 @@ impl ListOutgoingCertificatesInputBuilder {
     }
     /// <p>The marker for the next set of results.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn ascending_order(mut self, input: bool) -> Self {
@@ -69,20 +73,22 @@ impl ListOutgoingCertificatesInputBuilder {
     }
     /// <p>Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.</p>
     pub fn set_ascending_order(mut self, input: std::option::Option<bool>) -> Self {
-        self.ascending_order = input; self
+        self.ascending_order = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListOutgoingCertificatesInput`](crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput).
-    pub fn build(self) -> Result<crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_outgoing_certificates::ListOutgoingCertificatesInput {
-                page_size: self.page_size
-                ,
-                marker: self.marker
-                ,
-                ascending_order: self.ascending_order
-                ,
-            }
+                page_size: self.page_size,
+                marker: self.marker,
+                ascending_order: self.ascending_order,
+            },
         )
     }
 }
-

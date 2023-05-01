@@ -3,10 +3,11 @@
 /// <p>Describes the instances that could not be launched by the fleet.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateFleetError  {
+pub struct CreateFleetError {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
     #[doc(hidden)]
-    pub launch_template_and_overrides: std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
+    pub launch_template_and_overrides:
+        std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     /// <p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>
     #[doc(hidden)]
     pub lifecycle: std::option::Option<crate::types::InstanceLifecycle>,
@@ -19,19 +20,21 @@ pub struct CreateFleetError  {
 }
 impl CreateFleetError {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn launch_template_and_overrides(&self) -> std::option::Option<& crate::types::LaunchTemplateAndOverridesResponse> {
+    pub fn launch_template_and_overrides(
+        &self,
+    ) -> std::option::Option<&crate::types::LaunchTemplateAndOverridesResponse> {
         self.launch_template_and_overrides.as_ref()
     }
     /// <p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>
-    pub fn lifecycle(&self) -> std::option::Option<& crate::types::InstanceLifecycle> {
+    pub fn lifecycle(&self) -> std::option::Option<&crate::types::InstanceLifecycle> {
         self.lifecycle.as_ref()
     }
     /// <p>The error code that indicates why the instance could not be launched. For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
-    pub fn error_code(&self) -> std::option::Option<& str> {
+    pub fn error_code(&self) -> std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The error message that describes why the instance could not be launched. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
-    pub fn error_message(&self) -> std::option::Option<& str> {
+    pub fn error_message(&self) -> std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -46,20 +49,28 @@ impl CreateFleetError {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct CreateFleetErrorBuilder {
-    pub(crate) launch_template_and_overrides: std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
+    pub(crate) launch_template_and_overrides:
+        std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
     pub(crate) lifecycle: std::option::Option<crate::types::InstanceLifecycle>,
     pub(crate) error_code: std::option::Option<std::string::String>,
     pub(crate) error_message: std::option::Option<std::string::String>,
 }
 impl CreateFleetErrorBuilder {
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn launch_template_and_overrides(mut self, input: crate::types::LaunchTemplateAndOverridesResponse) -> Self {
+    pub fn launch_template_and_overrides(
+        mut self,
+        input: crate::types::LaunchTemplateAndOverridesResponse,
+    ) -> Self {
         self.launch_template_and_overrides = Some(input);
         self
     }
     /// <p>The launch templates and overrides that were used for launching the instances. The values that you specify in the Overrides replace the values in the launch template.</p>
-    pub fn set_launch_template_and_overrides(mut self, input: std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>) -> Self {
-        self.launch_template_and_overrides = input; self
+    pub fn set_launch_template_and_overrides(
+        mut self,
+        input: std::option::Option<crate::types::LaunchTemplateAndOverridesResponse>,
+    ) -> Self {
+        self.launch_template_and_overrides = input;
+        self
     }
     /// <p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>
     pub fn lifecycle(mut self, input: crate::types::InstanceLifecycle) -> Self {
@@ -67,8 +78,12 @@ impl CreateFleetErrorBuilder {
         self
     }
     /// <p>Indicates if the instance that could not be launched was a Spot Instance or On-Demand Instance.</p>
-    pub fn set_lifecycle(mut self, input: std::option::Option<crate::types::InstanceLifecycle>) -> Self {
-        self.lifecycle = input; self
+    pub fn set_lifecycle(
+        mut self,
+        input: std::option::Option<crate::types::InstanceLifecycle>,
+    ) -> Self {
+        self.lifecycle = input;
+        self
     }
     /// <p>The error code that indicates why the instance could not be launched. For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
     pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -77,7 +92,8 @@ impl CreateFleetErrorBuilder {
     }
     /// <p>The error code that indicates why the instance could not be launched. For more information about error codes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
     pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_code = input; self
+        self.error_code = input;
+        self
     }
     /// <p>The error message that describes why the instance could not be launched. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
     pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -86,20 +102,16 @@ impl CreateFleetErrorBuilder {
     }
     /// <p>The error message that describes why the instance could not be launched. For more information about error messages, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error codes</a>.</p>
     pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_message = input; self
+        self.error_message = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateFleetError`](crate::types::CreateFleetError).
     pub fn build(self) -> crate::types::CreateFleetError {
         crate::types::CreateFleetError {
-            launch_template_and_overrides: self.launch_template_and_overrides
-            ,
-            lifecycle: self.lifecycle
-            ,
-            error_code: self.error_code
-            ,
-            error_message: self.error_message
-            ,
+            launch_template_and_overrides: self.launch_template_and_overrides,
+            lifecycle: self.lifecycle,
+            error_code: self.error_code,
+            error_message: self.error_message,
         }
     }
 }
-

@@ -2,27 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAggregateResourceConfigInput  {
+pub struct BatchGetAggregateResourceConfigInput {
     /// <p>The name of the configuration aggregator.</p>
     #[doc(hidden)]
     pub configuration_aggregator_name: std::option::Option<std::string::String>,
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
     #[doc(hidden)]
-    pub resource_identifiers: std::option::Option<std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
+    pub resource_identifiers:
+        std::option::Option<std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
 }
 impl BatchGetAggregateResourceConfigInput {
     /// <p>The name of the configuration aggregator.</p>
-    pub fn configuration_aggregator_name(&self) -> std::option::Option<& str> {
+    pub fn configuration_aggregator_name(&self) -> std::option::Option<&str> {
         self.configuration_aggregator_name.as_deref()
     }
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
-    pub fn resource_identifiers(&self) -> std::option::Option<& [crate::types::AggregateResourceIdentifier]> {
+    pub fn resource_identifiers(
+        &self,
+    ) -> std::option::Option<&[crate::types::AggregateResourceIdentifier]> {
         self.resource_identifiers.as_deref()
     }
 }
 impl BatchGetAggregateResourceConfigInput {
     /// Creates a new builder-style object to manufacture [`BatchGetAggregateResourceConfigInput`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigInput).
-    pub fn builder() -> crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder {
+    pub fn builder() -> crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder{
         crate::operation::batch_get_aggregate_resource_config::builders::BatchGetAggregateResourceConfigInputBuilder::default()
     }
 }
@@ -32,7 +35,8 @@ impl BatchGetAggregateResourceConfigInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct BatchGetAggregateResourceConfigInputBuilder {
     pub(crate) configuration_aggregator_name: std::option::Option<std::string::String>,
-    pub(crate) resource_identifiers: std::option::Option<std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
+    pub(crate) resource_identifiers:
+        std::option::Option<std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
 }
 impl BatchGetAggregateResourceConfigInputBuilder {
     /// <p>The name of the configuration aggregator.</p>
@@ -41,26 +45,42 @@ impl BatchGetAggregateResourceConfigInputBuilder {
         self
     }
     /// <p>The name of the configuration aggregator.</p>
-    pub fn set_configuration_aggregator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_aggregator_name = input; self
+    pub fn set_configuration_aggregator_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_aggregator_name = input;
+        self
     }
     /// Appends an item to `resource_identifiers`.
     ///
     /// To override the contents of this collection use [`set_resource_identifiers`](Self::set_resource_identifiers).
     ///
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
-    pub fn resource_identifiers(mut self, input: crate::types::AggregateResourceIdentifier) -> Self {
+    pub fn resource_identifiers(
+        mut self,
+        input: crate::types::AggregateResourceIdentifier,
+    ) -> Self {
         let mut v = self.resource_identifiers.unwrap_or_default();
-                        v.push(input);
-                        self.resource_identifiers = Some(v);
-                        self
+        v.push(input);
+        self.resource_identifiers = Some(v);
+        self
     }
     /// <p>A list of aggregate ResourceIdentifiers objects. </p>
-    pub fn set_resource_identifiers(mut self, input: std::option::Option<std::vec::Vec<crate::types::AggregateResourceIdentifier>>) -> Self {
-        self.resource_identifiers = input; self
+    pub fn set_resource_identifiers(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AggregateResourceIdentifier>>,
+    ) -> Self {
+        self.resource_identifiers = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetAggregateResourceConfigInput`](crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigInput).
-    pub fn build(self) -> Result<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigInput {
                 configuration_aggregator_name: self.configuration_aggregator_name
@@ -71,4 +91,3 @@ impl BatchGetAggregateResourceConfigInputBuilder {
         )
     }
 }
-

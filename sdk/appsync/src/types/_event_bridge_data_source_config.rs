@@ -3,14 +3,14 @@
 /// <p>Describes an Amazon EventBridge bus data source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EventBridgeDataSourceConfig  {
+pub struct EventBridgeDataSourceConfig {
     /// <p>The ARN of the event bus. For more information about event buses, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon EventBridge event buses</a>.</p>
     #[doc(hidden)]
     pub event_bus_arn: std::option::Option<std::string::String>,
 }
 impl EventBridgeDataSourceConfig {
     /// <p>The ARN of the event bus. For more information about event buses, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon EventBridge event buses</a>.</p>
-    pub fn event_bus_arn(&self) -> std::option::Option<& str> {
+    pub fn event_bus_arn(&self) -> std::option::Option<&str> {
         self.event_bus_arn.as_deref()
     }
 }
@@ -35,14 +35,13 @@ impl EventBridgeDataSourceConfigBuilder {
     }
     /// <p>The ARN of the event bus. For more information about event buses, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-bus.html">Amazon EventBridge event buses</a>.</p>
     pub fn set_event_bus_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.event_bus_arn = input; self
+        self.event_bus_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`EventBridgeDataSourceConfig`](crate::types::EventBridgeDataSourceConfig).
     pub fn build(self) -> crate::types::EventBridgeDataSourceConfig {
         crate::types::EventBridgeDataSourceConfig {
-            event_bus_arn: self.event_bus_arn
-            ,
+            event_bus_arn: self.event_bus_arn,
         }
     }
 }
-

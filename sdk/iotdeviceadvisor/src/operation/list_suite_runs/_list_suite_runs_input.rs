@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListSuiteRunsInput  {
+pub struct ListSuiteRunsInput {
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
     #[doc(hidden)]
     pub suite_definition_id: std::option::Option<std::string::String>,
@@ -18,11 +18,11 @@ pub struct ListSuiteRunsInput  {
 }
 impl ListSuiteRunsInput {
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
-    pub fn suite_definition_id(&self) -> std::option::Option<& str> {
+    pub fn suite_definition_id(&self) -> std::option::Option<&str> {
         self.suite_definition_id.as_deref()
     }
     /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
-    pub fn suite_definition_version(&self) -> std::option::Option<& str> {
+    pub fn suite_definition_version(&self) -> std::option::Option<&str> {
         self.suite_definition_version.as_deref()
     }
     /// <p>The maximum number of results to return at once.</p>
@@ -30,7 +30,7 @@ impl ListSuiteRunsInput {
         self.max_results
     }
     /// <p>A token to retrieve the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
@@ -57,8 +57,12 @@ impl ListSuiteRunsInputBuilder {
         self
     }
     /// <p>Lists the test suite runs of the specified test suite based on suite definition ID.</p>
-    pub fn set_suite_definition_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suite_definition_id = input; self
+    pub fn set_suite_definition_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.suite_definition_id = input;
+        self
     }
     /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
     pub fn suite_definition_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -66,8 +70,12 @@ impl ListSuiteRunsInputBuilder {
         self
     }
     /// <p>Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs of the specified test suite based on suite definition version.</p>
-    pub fn set_suite_definition_version(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.suite_definition_version = input; self
+    pub fn set_suite_definition_version(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.suite_definition_version = input;
+        self
     }
     /// <p>The maximum number of results to return at once.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -76,7 +84,8 @@ impl ListSuiteRunsInputBuilder {
     }
     /// <p>The maximum number of results to return at once.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// <p>A token to retrieve the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,23 +94,21 @@ impl ListSuiteRunsInputBuilder {
     }
     /// <p>A token to retrieve the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListSuiteRunsInput`](crate::operation::list_suite_runs::ListSuiteRunsInput).
-    pub fn build(self) -> Result<crate::operation::list_suite_runs::ListSuiteRunsInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::list_suite_runs::ListSuiteRunsInput {
-                suite_definition_id: self.suite_definition_id
-                ,
-                suite_definition_version: self.suite_definition_version
-                ,
-                max_results: self.max_results
-                    .unwrap_or_default()
-                ,
-                next_token: self.next_token
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_suite_runs::ListSuiteRunsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::list_suite_runs::ListSuiteRunsInput {
+            suite_definition_id: self.suite_definition_id,
+            suite_definition_version: self.suite_definition_version,
+            max_results: self.max_results.unwrap_or_default(),
+            next_token: self.next_token,
+        })
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutChannelExpirationSettingsInput  {
+pub struct PutChannelExpirationSettingsInput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
@@ -15,21 +15,21 @@ pub struct PutChannelExpirationSettingsInput  {
 }
 impl PutChannelExpirationSettingsInput {
     /// <p>The ARN of the channel.</p>
-    pub fn channel_arn(&self) -> std::option::Option<& str> {
+    pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
-    pub fn chime_bearer(&self) -> std::option::Option<& str> {
+    pub fn chime_bearer(&self) -> std::option::Option<&str> {
         self.chime_bearer.as_deref()
     }
     /// <p>Settings that control the interval after which a channel is deleted.</p>
-    pub fn expiration_settings(&self) -> std::option::Option<& crate::types::ExpirationSettings> {
+    pub fn expiration_settings(&self) -> std::option::Option<&crate::types::ExpirationSettings> {
         self.expiration_settings.as_ref()
     }
 }
 impl PutChannelExpirationSettingsInput {
     /// Creates a new builder-style object to manufacture [`PutChannelExpirationSettingsInput`](crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput).
-    pub fn builder() -> crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder {
+    pub fn builder() -> crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder{
         crate::operation::put_channel_expiration_settings::builders::PutChannelExpirationSettingsInputBuilder::default()
     }
 }
@@ -50,7 +50,8 @@ impl PutChannelExpirationSettingsInputBuilder {
     }
     /// <p>The ARN of the channel.</p>
     pub fn set_channel_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.channel_arn = input; self
+        self.channel_arn = input;
+        self
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn chime_bearer(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl PutChannelExpirationSettingsInputBuilder {
     }
     /// <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call.</p>
     pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.chime_bearer = input; self
+        self.chime_bearer = input;
+        self
     }
     /// <p>Settings that control the interval after which a channel is deleted.</p>
     pub fn expiration_settings(mut self, input: crate::types::ExpirationSettings) -> Self {
@@ -67,21 +69,26 @@ impl PutChannelExpirationSettingsInputBuilder {
         self
     }
     /// <p>Settings that control the interval after which a channel is deleted.</p>
-    pub fn set_expiration_settings(mut self, input: std::option::Option<crate::types::ExpirationSettings>) -> Self {
-        self.expiration_settings = input; self
+    pub fn set_expiration_settings(
+        mut self,
+        input: std::option::Option<crate::types::ExpirationSettings>,
+    ) -> Self {
+        self.expiration_settings = input;
+        self
     }
     /// Consumes the builder and constructs a [`PutChannelExpirationSettingsInput`](crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput).
-    pub fn build(self) -> Result<crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::put_channel_expiration_settings::PutChannelExpirationSettingsInput {
-                channel_arn: self.channel_arn
-                ,
-                chime_bearer: self.chime_bearer
-                ,
-                expiration_settings: self.expiration_settings
-                ,
-            }
+                channel_arn: self.channel_arn,
+                chime_bearer: self.chime_bearer,
+                expiration_settings: self.expiration_settings,
+            },
         )
     }
 }
-

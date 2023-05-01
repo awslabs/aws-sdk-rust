@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListLexBotsOutput  {
+pub struct ListLexBotsOutput {
     /// <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
     #[doc(hidden)]
     pub lex_bots: std::option::Option<std::vec::Vec<crate::types::LexBot>>,
@@ -13,19 +13,19 @@ pub struct ListLexBotsOutput  {
 }
 impl ListLexBotsOutput {
     /// <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
-    pub fn lex_bots(&self) -> std::option::Option<& [crate::types::LexBot]> {
+    pub fn lex_bots(&self) -> std::option::Option<&[crate::types::LexBot]> {
         self.lex_bots.as_deref()
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for ListLexBotsOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ListLexBotsOutput {
     /// Creates a new builder-style object to manufacture [`ListLexBotsOutput`](crate::operation::list_lex_bots::ListLexBotsOutput).
     pub fn builder() -> crate::operation::list_lex_bots::builders::ListLexBotsOutputBuilder {
@@ -49,13 +49,17 @@ impl ListLexBotsOutputBuilder {
     /// <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
     pub fn lex_bots(mut self, input: crate::types::LexBot) -> Self {
         let mut v = self.lex_bots.unwrap_or_default();
-                        v.push(input);
-                        self.lex_bots = Some(v);
-                        self
+        v.push(input);
+        self.lex_bots = Some(v);
+        self
     }
     /// <p>The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.</p>
-    pub fn set_lex_bots(mut self, input: std::option::Option<std::vec::Vec<crate::types::LexBot>>) -> Self {
-        self.lex_bots = input; self
+    pub fn set_lex_bots(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::LexBot>>,
+    ) -> Self {
+        self.lex_bots = input;
+        self
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -64,26 +68,24 @@ impl ListLexBotsOutputBuilder {
     }
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ListLexBotsOutput`](crate::operation::list_lex_bots::ListLexBotsOutput).
     pub fn build(self) -> crate::operation::list_lex_bots::ListLexBotsOutput {
         crate::operation::list_lex_bots::ListLexBotsOutput {
-            lex_bots: self.lex_bots
-            ,
-            next_token: self.next_token
-            ,
+            lex_bots: self.lex_bots,
+            next_token: self.next_token,
             _request_id: self._request_id,
         }
     }
 }
-

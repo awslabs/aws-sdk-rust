@@ -3,7 +3,7 @@
 /// <p>An object that specifies how to interpolate data in a list.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InterpolationParameters  {
+pub struct InterpolationParameters {
     /// <p>The interpolation type.</p>
     #[doc(hidden)]
     pub interpolation_type: std::option::Option<crate::types::InterpolationType>,
@@ -13,7 +13,7 @@ pub struct InterpolationParameters  {
 }
 impl InterpolationParameters {
     /// <p>The interpolation type.</p>
-    pub fn interpolation_type(&self) -> std::option::Option<& crate::types::InterpolationType> {
+    pub fn interpolation_type(&self) -> std::option::Option<&crate::types::InterpolationType> {
         self.interpolation_type.as_ref()
     }
     /// <p>The interpolation time interval in seconds.</p>
@@ -42,8 +42,12 @@ impl InterpolationParametersBuilder {
         self
     }
     /// <p>The interpolation type.</p>
-    pub fn set_interpolation_type(mut self, input: std::option::Option<crate::types::InterpolationType>) -> Self {
-        self.interpolation_type = input; self
+    pub fn set_interpolation_type(
+        mut self,
+        input: std::option::Option<crate::types::InterpolationType>,
+    ) -> Self {
+        self.interpolation_type = input;
+        self
     }
     /// <p>The interpolation time interval in seconds.</p>
     pub fn interval_in_seconds(mut self, input: i64) -> Self {
@@ -52,16 +56,14 @@ impl InterpolationParametersBuilder {
     }
     /// <p>The interpolation time interval in seconds.</p>
     pub fn set_interval_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
-        self.interval_in_seconds = input; self
+        self.interval_in_seconds = input;
+        self
     }
     /// Consumes the builder and constructs a [`InterpolationParameters`](crate::types::InterpolationParameters).
     pub fn build(self) -> crate::types::InterpolationParameters {
         crate::types::InterpolationParameters {
-            interpolation_type: self.interpolation_type
-            ,
-            interval_in_seconds: self.interval_in_seconds
-            ,
+            interpolation_type: self.interpolation_type,
+            interval_in_seconds: self.interval_in_seconds,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Summary information about a provisioning artifact (also known as a version) for a product.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProvisioningArtifactSummary  {
+pub struct ProvisioningArtifactSummary {
     /// <p>The identifier of the provisioning artifact.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -18,27 +18,31 @@ pub struct ProvisioningArtifactSummary  {
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
     /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
     #[doc(hidden)]
-    pub provisioning_artifact_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub provisioning_artifact_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ProvisioningArtifactSummary {
     /// <p>The identifier of the provisioning artifact.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The name of the provisioning artifact.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The description of the provisioning artifact.</p>
-    pub fn description(&self) -> std::option::Option<& str> {
+    pub fn description(&self) -> std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn created_time(&self) -> std::option::Option<& aws_smithy_types::DateTime> {
+    pub fn created_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
         self.created_time.as_ref()
     }
     /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
-    pub fn provisioning_artifact_metadata(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn provisioning_artifact_metadata(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.provisioning_artifact_metadata.as_ref()
     }
 }
@@ -57,7 +61,8 @@ pub struct ProvisioningArtifactSummaryBuilder {
     pub(crate) name: std::option::Option<std::string::String>,
     pub(crate) description: std::option::Option<std::string::String>,
     pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) provisioning_artifact_metadata: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) provisioning_artifact_metadata:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl ProvisioningArtifactSummaryBuilder {
     /// <p>The identifier of the provisioning artifact.</p>
@@ -67,7 +72,8 @@ impl ProvisioningArtifactSummaryBuilder {
     }
     /// <p>The identifier of the provisioning artifact.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>The name of the provisioning artifact.</p>
     pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +82,8 @@ impl ProvisioningArtifactSummaryBuilder {
     }
     /// <p>The name of the provisioning artifact.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>The description of the provisioning artifact.</p>
     pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +92,8 @@ impl ProvisioningArtifactSummaryBuilder {
     }
     /// <p>The description of the provisioning artifact.</p>
     pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.description = input; self
+        self.description = input;
+        self
     }
     /// <p>The UTC time stamp of the creation time.</p>
     pub fn created_time(mut self, input: aws_smithy_types::DateTime) -> Self {
@@ -93,38 +101,46 @@ impl ProvisioningArtifactSummaryBuilder {
         self
     }
     /// <p>The UTC time stamp of the creation time.</p>
-    pub fn set_created_time(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
-        self.created_time = input; self
+    pub fn set_created_time(
+        mut self,
+        input: std::option::Option<aws_smithy_types::DateTime>,
+    ) -> Self {
+        self.created_time = input;
+        self
     }
     /// Adds a key-value pair to `provisioning_artifact_metadata`.
     ///
     /// To override the contents of this collection use [`set_provisioning_artifact_metadata`](Self::set_provisioning_artifact_metadata).
     ///
     /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
-    pub fn provisioning_artifact_metadata(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn provisioning_artifact_metadata(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.provisioning_artifact_metadata.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.provisioning_artifact_metadata = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.provisioning_artifact_metadata = Some(hash_map);
+        self
     }
     /// <p>The metadata for the provisioning artifact. This is used with Amazon Web Services Marketplace products.</p>
-    pub fn set_provisioning_artifact_metadata(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.provisioning_artifact_metadata = input; self
+    pub fn set_provisioning_artifact_metadata(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.provisioning_artifact_metadata = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProvisioningArtifactSummary`](crate::types::ProvisioningArtifactSummary).
     pub fn build(self) -> crate::types::ProvisioningArtifactSummary {
         crate::types::ProvisioningArtifactSummary {
-            id: self.id
-            ,
-            name: self.name
-            ,
-            description: self.description
-            ,
-            created_time: self.created_time
-            ,
-            provisioning_artifact_metadata: self.provisioning_artifact_metadata
-            ,
+            id: self.id,
+            name: self.name,
+            description: self.description,
+            created_time: self.created_time,
+            provisioning_artifact_metadata: self.provisioning_artifact_metadata,
         }
     }
 }
-

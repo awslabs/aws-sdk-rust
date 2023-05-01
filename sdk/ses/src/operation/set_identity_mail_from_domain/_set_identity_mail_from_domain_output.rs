@@ -3,17 +3,17 @@
 /// <p>An empty element returned on a successful request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetIdentityMailFromDomainOutput  {
+pub struct SetIdentityMailFromDomainOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for SetIdentityMailFromDomainOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl SetIdentityMailFromDomainOutput {
     /// Creates a new builder-style object to manufacture [`SetIdentityMailFromDomainOutput`](crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput).
-    pub fn builder() -> crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainOutputBuilder {
+    pub fn builder() -> crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainOutputBuilder{
         crate::operation::set_identity_mail_from_domain::builders::SetIdentityMailFromDomainOutputBuilder::default()
     }
 }
@@ -26,19 +26,20 @@ pub struct SetIdentityMailFromDomainOutputBuilder {
 }
 impl SetIdentityMailFromDomainOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`SetIdentityMailFromDomainOutput`](crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput).
-    pub fn build(self) -> crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput {
         crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput {
             _request_id: self._request_id,
         }
     }
 }
-

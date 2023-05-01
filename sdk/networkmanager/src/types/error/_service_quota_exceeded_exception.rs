@@ -3,7 +3,7 @@
 /// <p>A service limit was exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ServiceQuotaExceededException  {
+pub struct ServiceQuotaExceededException {
     /// <p>The error message.</p>
     #[doc(hidden)]
     pub message: std::option::Option<std::string::String>,
@@ -23,31 +23,33 @@ pub struct ServiceQuotaExceededException  {
 }
 impl ServiceQuotaExceededException {
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<& str> {
+    pub fn resource_id(&self) -> std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The resource type.</p>
-    pub fn resource_type(&self) -> std::option::Option<& str> {
+    pub fn resource_type(&self) -> std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>The limit code.</p>
-    pub fn limit_code(&self) -> std::option::Option<& str> {
+    pub fn limit_code(&self) -> std::option::Option<&str> {
         self.limit_code.as_deref()
     }
     /// <p>The service code.</p>
-    pub fn service_code(&self) -> std::option::Option<& str> {
+    pub fn service_code(&self) -> std::option::Option<&str> {
         self.service_code.as_deref()
     }
 }
 impl ServiceQuotaExceededException {
     /// Returns the error message.
-                        pub fn message(&self) -> std::option::Option<& str> { self.message.as_deref() }
+    pub fn message(&self) -> std::option::Option<&str> {
+        self.message.as_deref()
+    }
 }
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
         if let Some(inner_1) = &self.message {
-             {
+            {
                 write!(f, ": {}", inner_1)?;
             }
         }
@@ -62,7 +64,9 @@ impl aws_http::request_id::RequestId for crate::types::error::ServiceQuotaExceed
     }
 }
 impl aws_smithy_types::error::metadata::ProvideErrorMetadata for ServiceQuotaExceededException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata { &self.meta }
+    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+        &self.meta
+    }
 }
 impl ServiceQuotaExceededException {
     /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
@@ -90,7 +94,8 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>The error message.</p>
     pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.message = input; self
+        self.message = input;
+        self
     }
     /// <p>The ID of the resource.</p>
     pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -99,7 +104,8 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>The ID of the resource.</p>
     pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_id = input; self
+        self.resource_id = input;
+        self
     }
     /// <p>The resource type.</p>
     pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -108,7 +114,8 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>The resource type.</p>
     pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_type = input; self
+        self.resource_type = input;
+        self
     }
     /// <p>The limit code.</p>
     pub fn limit_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -117,7 +124,8 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>The limit code.</p>
     pub fn set_limit_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.limit_code = input; self
+        self.limit_code = input;
+        self
     }
     /// <p>The service code.</p>
     pub fn service_code(mut self, input: impl Into<std::string::String>) -> Self {
@@ -126,34 +134,32 @@ impl ServiceQuotaExceededExceptionBuilder {
     }
     /// <p>The service code.</p>
     pub fn set_service_code(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.service_code = input; self
+        self.service_code = input;
+        self
     }
     /// Sets error metadata
-                                            pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
-                                                self.meta = Some(meta);
-                                                self
-                                            }
-    
-                                            /// Sets error metadata
-                                            pub fn set_meta(&mut self, meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>) -> &mut Self {
-                                                self.meta = meta;
-                                                self
-                                            }
+    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+        self.meta = Some(meta);
+        self
+    }
+
+    /// Sets error metadata
+    pub fn set_meta(
+        &mut self,
+        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    ) -> &mut Self {
+        self.meta = meta;
+        self
+    }
     /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::types::error::ServiceQuotaExceededException).
     pub fn build(self) -> crate::types::error::ServiceQuotaExceededException {
         crate::types::error::ServiceQuotaExceededException {
-            message: self.message
-            ,
-            resource_id: self.resource_id
-            ,
-            resource_type: self.resource_type
-            ,
-            limit_code: self.limit_code
-            ,
-            service_code: self.service_code
-            ,
+            message: self.message,
+            resource_id: self.resource_id,
+            resource_type: self.resource_type,
+            limit_code: self.limit_code,
+            service_code: self.service_code,
             meta: self.meta.unwrap_or_default(),
         }
     }
 }
-

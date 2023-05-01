@@ -3,7 +3,7 @@
 /// <p>Represents a parameter value that is applicable to a particular node type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct NodeTypeSpecificValue  {
+pub struct NodeTypeSpecificValue {
     /// <p>A node type to which the parameter value applies.</p>
     #[doc(hidden)]
     pub node_type: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct NodeTypeSpecificValue  {
 }
 impl NodeTypeSpecificValue {
     /// <p>A node type to which the parameter value applies.</p>
-    pub fn node_type(&self) -> std::option::Option<& str> {
+    pub fn node_type(&self) -> std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The parameter value for this node type.</p>
-    pub fn value(&self) -> std::option::Option<& str> {
+    pub fn value(&self) -> std::option::Option<&str> {
         self.value.as_deref()
     }
 }
@@ -43,7 +43,8 @@ impl NodeTypeSpecificValueBuilder {
     }
     /// <p>A node type to which the parameter value applies.</p>
     pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.node_type = input; self
+        self.node_type = input;
+        self
     }
     /// <p>The parameter value for this node type.</p>
     pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
@@ -52,16 +53,14 @@ impl NodeTypeSpecificValueBuilder {
     }
     /// <p>The parameter value for this node type.</p>
     pub fn set_value(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.value = input; self
+        self.value = input;
+        self
     }
     /// Consumes the builder and constructs a [`NodeTypeSpecificValue`](crate::types::NodeTypeSpecificValue).
     pub fn build(self) -> crate::types::NodeTypeSpecificValue {
         crate::types::NodeTypeSpecificValue {
-            node_type: self.node_type
-            ,
-            value: self.value
-            ,
+            node_type: self.node_type,
+            value: self.value,
         }
     }
 }
-

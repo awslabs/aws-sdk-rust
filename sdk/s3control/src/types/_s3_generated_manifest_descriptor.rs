@@ -3,7 +3,7 @@
 /// <p>Describes the specified job's generated manifest. Batch Operations jobs created with a ManifestGenerator populate details of this descriptor after execution of the ManifestGenerator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct S3GeneratedManifestDescriptor  {
+pub struct S3GeneratedManifestDescriptor {
     /// <p>The format of the generated manifest.</p>
     #[doc(hidden)]
     pub format: std::option::Option<crate::types::GeneratedManifestFormat>,
@@ -13,11 +13,11 @@ pub struct S3GeneratedManifestDescriptor  {
 }
 impl S3GeneratedManifestDescriptor {
     /// <p>The format of the generated manifest.</p>
-    pub fn format(&self) -> std::option::Option<& crate::types::GeneratedManifestFormat> {
+    pub fn format(&self) -> std::option::Option<&crate::types::GeneratedManifestFormat> {
         self.format.as_ref()
     }
     /// <p>Contains the information required to locate a manifest object.</p>
-    pub fn location(&self) -> std::option::Option<& crate::types::JobManifestLocation> {
+    pub fn location(&self) -> std::option::Option<&crate::types::JobManifestLocation> {
         self.location.as_ref()
     }
 }
@@ -42,8 +42,12 @@ impl S3GeneratedManifestDescriptorBuilder {
         self
     }
     /// <p>The format of the generated manifest.</p>
-    pub fn set_format(mut self, input: std::option::Option<crate::types::GeneratedManifestFormat>) -> Self {
-        self.format = input; self
+    pub fn set_format(
+        mut self,
+        input: std::option::Option<crate::types::GeneratedManifestFormat>,
+    ) -> Self {
+        self.format = input;
+        self
     }
     /// <p>Contains the information required to locate a manifest object.</p>
     pub fn location(mut self, input: crate::types::JobManifestLocation) -> Self {
@@ -51,17 +55,18 @@ impl S3GeneratedManifestDescriptorBuilder {
         self
     }
     /// <p>Contains the information required to locate a manifest object.</p>
-    pub fn set_location(mut self, input: std::option::Option<crate::types::JobManifestLocation>) -> Self {
-        self.location = input; self
+    pub fn set_location(
+        mut self,
+        input: std::option::Option<crate::types::JobManifestLocation>,
+    ) -> Self {
+        self.location = input;
+        self
     }
     /// Consumes the builder and constructs a [`S3GeneratedManifestDescriptor`](crate::types::S3GeneratedManifestDescriptor).
     pub fn build(self) -> crate::types::S3GeneratedManifestDescriptor {
         crate::types::S3GeneratedManifestDescriptor {
-            format: self.format
-            ,
-            location: self.location
-            ,
+            format: self.format,
+            location: self.location,
         }
     }
 }
-

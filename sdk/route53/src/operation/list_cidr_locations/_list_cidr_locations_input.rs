@@ -2,11 +2,11 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ListCidrLocationsInput  {
+pub struct ListCidrLocationsInput {
     /// <p>The CIDR collection ID.</p>
     #[doc(hidden)]
     pub collection_id: std::option::Option<std::string::String>,
-    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p> 
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -16,12 +16,12 @@ pub struct ListCidrLocationsInput  {
 }
 impl ListCidrLocationsInput {
     /// <p>The CIDR collection ID.</p>
-    pub fn collection_id(&self) -> std::option::Option<& str> {
+    pub fn collection_id(&self) -> std::option::Option<&str> {
         self.collection_id.as_deref()
     }
-    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p> 
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of CIDR collection locations to return in the response.</p>
@@ -31,7 +31,8 @@ impl ListCidrLocationsInput {
 }
 impl ListCidrLocationsInput {
     /// Creates a new builder-style object to manufacture [`ListCidrLocationsInput`](crate::operation::list_cidr_locations::ListCidrLocationsInput).
-    pub fn builder() -> crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder {
         crate::operation::list_cidr_locations::builders::ListCidrLocationsInputBuilder::default()
     }
 }
@@ -52,18 +53,20 @@ impl ListCidrLocationsInputBuilder {
     }
     /// <p>The CIDR collection ID.</p>
     pub fn set_collection_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.collection_id = input; self
+        self.collection_id = input;
+        self
     }
-    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p> 
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
     pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
         self.next_token = Some(input.into());
         self
     }
-    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p> 
+    /// <p>An opaque pagination token to indicate where the service is to begin enumerating results.</p>
     /// <p>If no value is provided, the listing of results starts from the beginning.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of CIDR collection locations to return in the response.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -72,20 +75,22 @@ impl ListCidrLocationsInputBuilder {
     }
     /// <p>The maximum number of CIDR collection locations to return in the response.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`ListCidrLocationsInput`](crate::operation::list_cidr_locations::ListCidrLocationsInput).
-    pub fn build(self) -> Result<crate::operation::list_cidr_locations::ListCidrLocationsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::list_cidr_locations::ListCidrLocationsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::list_cidr_locations::ListCidrLocationsInput {
-                collection_id: self.collection_id
-                ,
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                collection_id: self.collection_id,
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Import task error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ImportTaskError  {
+pub struct ImportTaskError {
     /// <p>Import task error datetime.</p>
     #[doc(hidden)]
     pub error_date_time: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ImportTaskError  {
 }
 impl ImportTaskError {
     /// <p>Import task error datetime.</p>
-    pub fn error_date_time(&self) -> std::option::Option<& str> {
+    pub fn error_date_time(&self) -> std::option::Option<&str> {
         self.error_date_time.as_deref()
     }
     /// <p>Import task error type.</p>
-    pub fn error_type(&self) -> std::option::Option<& crate::types::ImportErrorType> {
+    pub fn error_type(&self) -> std::option::Option<&crate::types::ImportErrorType> {
         self.error_type.as_ref()
     }
     /// <p>Import task error data.</p>
-    pub fn error_data(&self) -> std::option::Option<& crate::types::ImportErrorData> {
+    pub fn error_data(&self) -> std::option::Option<&crate::types::ImportErrorData> {
         self.error_data.as_ref()
     }
 }
@@ -51,7 +51,8 @@ impl ImportTaskErrorBuilder {
     }
     /// <p>Import task error datetime.</p>
     pub fn set_error_date_time(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.error_date_time = input; self
+        self.error_date_time = input;
+        self
     }
     /// <p>Import task error type.</p>
     pub fn error_type(mut self, input: crate::types::ImportErrorType) -> Self {
@@ -59,8 +60,12 @@ impl ImportTaskErrorBuilder {
         self
     }
     /// <p>Import task error type.</p>
-    pub fn set_error_type(mut self, input: std::option::Option<crate::types::ImportErrorType>) -> Self {
-        self.error_type = input; self
+    pub fn set_error_type(
+        mut self,
+        input: std::option::Option<crate::types::ImportErrorType>,
+    ) -> Self {
+        self.error_type = input;
+        self
     }
     /// <p>Import task error data.</p>
     pub fn error_data(mut self, input: crate::types::ImportErrorData) -> Self {
@@ -68,19 +73,19 @@ impl ImportTaskErrorBuilder {
         self
     }
     /// <p>Import task error data.</p>
-    pub fn set_error_data(mut self, input: std::option::Option<crate::types::ImportErrorData>) -> Self {
-        self.error_data = input; self
+    pub fn set_error_data(
+        mut self,
+        input: std::option::Option<crate::types::ImportErrorData>,
+    ) -> Self {
+        self.error_data = input;
+        self
     }
     /// Consumes the builder and constructs a [`ImportTaskError`](crate::types::ImportTaskError).
     pub fn build(self) -> crate::types::ImportTaskError {
         crate::types::ImportTaskError {
-            error_date_time: self.error_date_time
-            ,
-            error_type: self.error_type
-            ,
-            error_data: self.error_data
-            ,
+            error_date_time: self.error_date_time,
+            error_type: self.error_type,
+            error_data: self.error_data,
         }
     }
 }
-

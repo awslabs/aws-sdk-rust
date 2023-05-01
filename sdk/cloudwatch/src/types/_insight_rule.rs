@@ -3,7 +3,7 @@
 /// <p>This structure contains the definition for a Contributor Insights rule. For more information about this rule, see<a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html"> Using Constributor Insights to analyze high-cardinality data</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct InsightRule  {
+pub struct InsightRule {
     /// <p>The name of the rule.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
@@ -22,19 +22,19 @@ pub struct InsightRule  {
 }
 impl InsightRule {
     /// <p>The name of the rule.</p>
-    pub fn name(&self) -> std::option::Option<& str> {
+    pub fn name(&self) -> std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Indicates whether the rule is enabled or disabled.</p>
-    pub fn state(&self) -> std::option::Option<& str> {
+    pub fn state(&self) -> std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
-    pub fn schema(&self) -> std::option::Option<& str> {
+    pub fn schema(&self) -> std::option::Option<&str> {
         self.schema.as_deref()
     }
     /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
-    pub fn definition(&self) -> std::option::Option<& str> {
+    pub fn definition(&self) -> std::option::Option<&str> {
         self.definition.as_deref()
     }
     /// <p> An optional built-in rule that Amazon Web Services manages. </p>
@@ -67,7 +67,8 @@ impl InsightRuleBuilder {
     }
     /// <p>The name of the rule.</p>
     pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.name = input; self
+        self.name = input;
+        self
     }
     /// <p>Indicates whether the rule is enabled or disabled.</p>
     pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
@@ -76,7 +77,8 @@ impl InsightRuleBuilder {
     }
     /// <p>Indicates whether the rule is enabled or disabled.</p>
     pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.state = input; self
+        self.state = input;
+        self
     }
     /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
     pub fn schema(mut self, input: impl Into<std::string::String>) -> Self {
@@ -85,7 +87,8 @@ impl InsightRuleBuilder {
     }
     /// <p>For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version": 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version": 1}</code> </p>
     pub fn set_schema(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.schema = input; self
+        self.schema = input;
+        self
     }
     /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
     pub fn definition(mut self, input: impl Into<std::string::String>) -> Self {
@@ -94,7 +97,8 @@ impl InsightRuleBuilder {
     }
     /// <p>The definition of the rule, as a JSON object. The definition contains the keywords used to define contributors, the value to aggregate on if this rule returns a sum instead of a count, and the filters. For details on the valid syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights-RuleSyntax.html">Contributor Insights Rule Syntax</a>.</p>
     pub fn set_definition(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.definition = input; self
+        self.definition = input;
+        self
     }
     /// <p> An optional built-in rule that Amazon Web Services manages. </p>
     pub fn managed_rule(mut self, input: bool) -> Self {
@@ -103,23 +107,17 @@ impl InsightRuleBuilder {
     }
     /// <p> An optional built-in rule that Amazon Web Services manages. </p>
     pub fn set_managed_rule(mut self, input: std::option::Option<bool>) -> Self {
-        self.managed_rule = input; self
+        self.managed_rule = input;
+        self
     }
     /// Consumes the builder and constructs a [`InsightRule`](crate::types::InsightRule).
     pub fn build(self) -> crate::types::InsightRule {
         crate::types::InsightRule {
-            name: self.name
-            ,
-            state: self.state
-            ,
-            schema: self.schema
-            ,
-            definition: self.definition
-            ,
-            managed_rule: self.managed_rule
-                .unwrap_or_default()
-            ,
+            name: self.name,
+            state: self.state,
+            schema: self.schema,
+            definition: self.definition,
+            managed_rule: self.managed_rule.unwrap_or_default(),
         }
     }
 }
-

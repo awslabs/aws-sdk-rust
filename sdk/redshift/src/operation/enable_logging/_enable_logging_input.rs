@@ -3,31 +3,31 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableLoggingInput  {
-    /// <p>The identifier of the cluster on which logging is to be started.</p> 
+pub struct EnableLoggingInput {
+    /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
     #[doc(hidden)]
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be in the same region as the cluster</p> </li> 
-    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li> 
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the same region as the cluster</p> </li>
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
     #[doc(hidden)]
     pub bucket_name: std::option::Option<std::string::String>,
-    /// <p>The prefix applied to the log file names.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Cannot exceed 512 characters</p> </li> 
-    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> 
-    /// <ul> 
-    /// <li> <p>x00 to x20</p> </li> 
-    /// <li> <p>x22</p> </li> 
-    /// <li> <p>x27</p> </li> 
-    /// <li> <p>x5c</p> </li> 
-    /// <li> <p>x7f or larger</p> </li> 
-    /// </ul> </li> 
+    /// <p>The prefix applied to the log file names.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot exceed 512 characters</p> </li>
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
+    /// <ul>
+    /// <li> <p>x00 to x20</p> </li>
+    /// <li> <p>x22</p> </li>
+    /// <li> <p>x27</p> </li>
+    /// <li> <p>x5c</p> </li>
+    /// <li> <p>x7f or larger</p> </li>
+    /// </ul> </li>
     /// </ul>
     #[doc(hidden)]
     pub s3_key_prefix: std::option::Option<std::string::String>,
@@ -39,42 +39,42 @@ pub struct EnableLoggingInput  {
     pub log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableLoggingInput {
-    /// <p>The identifier of the cluster on which logging is to be started.</p> 
+    /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn cluster_identifier(&self) -> std::option::Option<& str> {
+    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
-    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be in the same region as the cluster</p> </li> 
-    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li> 
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the same region as the cluster</p> </li>
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
-    pub fn bucket_name(&self) -> std::option::Option<& str> {
+    pub fn bucket_name(&self) -> std::option::Option<&str> {
         self.bucket_name.as_deref()
     }
-    /// <p>The prefix applied to the log file names.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Cannot exceed 512 characters</p> </li> 
-    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> 
-    /// <ul> 
-    /// <li> <p>x00 to x20</p> </li> 
-    /// <li> <p>x22</p> </li> 
-    /// <li> <p>x27</p> </li> 
-    /// <li> <p>x5c</p> </li> 
-    /// <li> <p>x7f or larger</p> </li> 
-    /// </ul> </li> 
+    /// <p>The prefix applied to the log file names.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot exceed 512 characters</p> </li>
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
+    /// <ul>
+    /// <li> <p>x00 to x20</p> </li>
+    /// <li> <p>x22</p> </li>
+    /// <li> <p>x27</p> </li>
+    /// <li> <p>x5c</p> </li>
+    /// <li> <p>x7f or larger</p> </li>
+    /// </ul> </li>
     /// </ul>
-    pub fn s3_key_prefix(&self) -> std::option::Option<& str> {
+    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    pub fn log_destination_type(&self) -> std::option::Option<& crate::types::LogDestinationType> {
+    pub fn log_destination_type(&self) -> std::option::Option<&crate::types::LogDestinationType> {
         self.log_destination_type.as_ref()
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn log_exports(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn log_exports(&self) -> std::option::Option<&[std::string::String]> {
         self.log_exports.as_deref()
     }
 }
@@ -96,68 +96,74 @@ pub struct EnableLoggingInputBuilder {
     pub(crate) log_exports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl EnableLoggingInputBuilder {
-    /// <p>The identifier of the cluster on which logging is to be started.</p> 
+    /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
     pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
         self.cluster_identifier = Some(input.into());
         self
     }
-    /// <p>The identifier of the cluster on which logging is to be started.</p> 
+    /// <p>The identifier of the cluster on which logging is to be started.</p>
     /// <p>Example: <code>examplecluster</code> </p>
-    pub fn set_cluster_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.cluster_identifier = input; self
+    pub fn set_cluster_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = input;
+        self
     }
-    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be in the same region as the cluster</p> </li> 
-    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li> 
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the same region as the cluster</p> </li>
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
     pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
         self.bucket_name = Some(input.into());
         self
     }
-    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Must be in the same region as the cluster</p> </li> 
-    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li> 
+    /// <p>The name of an existing S3 bucket where the log files are to be stored.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Must be in the same region as the cluster</p> </li>
+    /// <li> <p>The cluster must have read bucket and put object permissions</p> </li>
     /// </ul>
     pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.bucket_name = input; self
+        self.bucket_name = input;
+        self
     }
-    /// <p>The prefix applied to the log file names.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Cannot exceed 512 characters</p> </li> 
-    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> 
-    /// <ul> 
-    /// <li> <p>x00 to x20</p> </li> 
-    /// <li> <p>x22</p> </li> 
-    /// <li> <p>x27</p> </li> 
-    /// <li> <p>x5c</p> </li> 
-    /// <li> <p>x7f or larger</p> </li> 
-    /// </ul> </li> 
+    /// <p>The prefix applied to the log file names.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot exceed 512 characters</p> </li>
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
+    /// <ul>
+    /// <li> <p>x00 to x20</p> </li>
+    /// <li> <p>x22</p> </li>
+    /// <li> <p>x27</p> </li>
+    /// <li> <p>x5c</p> </li>
+    /// <li> <p>x7f or larger</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
         self.s3_key_prefix = Some(input.into());
         self
     }
-    /// <p>The prefix applied to the log file names.</p> 
-    /// <p>Constraints:</p> 
-    /// <ul> 
-    /// <li> <p>Cannot exceed 512 characters</p> </li> 
-    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p> 
-    /// <ul> 
-    /// <li> <p>x00 to x20</p> </li> 
-    /// <li> <p>x22</p> </li> 
-    /// <li> <p>x27</p> </li> 
-    /// <li> <p>x5c</p> </li> 
-    /// <li> <p>x7f or larger</p> </li> 
-    /// </ul> </li> 
+    /// <p>The prefix applied to the log file names.</p>
+    /// <p>Constraints:</p>
+    /// <ul>
+    /// <li> <p>Cannot exceed 512 characters</p> </li>
+    /// <li> <p>Cannot contain spaces( ), double quotes ("), single quotes ('), a backslash (\), or control characters. The hexadecimal codes for invalid characters are: </p>
+    /// <ul>
+    /// <li> <p>x00 to x20</p> </li>
+    /// <li> <p>x22</p> </li>
+    /// <li> <p>x27</p> </li>
+    /// <li> <p>x5c</p> </li>
+    /// <li> <p>x7f or larger</p> </li>
+    /// </ul> </li>
     /// </ul>
     pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.s3_key_prefix = input; self
+        self.s3_key_prefix = input;
+        self
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
     pub fn log_destination_type(mut self, input: crate::types::LogDestinationType) -> Self {
@@ -165,8 +171,12 @@ impl EnableLoggingInputBuilder {
         self
     }
     /// <p>The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.</p>
-    pub fn set_log_destination_type(mut self, input: std::option::Option<crate::types::LogDestinationType>) -> Self {
-        self.log_destination_type = input; self
+    pub fn set_log_destination_type(
+        mut self,
+        input: std::option::Option<crate::types::LogDestinationType>,
+    ) -> Self {
+        self.log_destination_type = input;
+        self
     }
     /// Appends an item to `log_exports`.
     ///
@@ -175,30 +185,31 @@ impl EnableLoggingInputBuilder {
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
     pub fn log_exports(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.log_exports.unwrap_or_default();
-                        v.push(input.into());
-                        self.log_exports = Some(v);
-                        self
+        v.push(input.into());
+        self.log_exports = Some(v);
+        self
     }
     /// <p>The collection of exported log types. Possible values are <code>connectionlog</code>, <code>useractivitylog</code>, and <code>userlog</code>.</p>
-    pub fn set_log_exports(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.log_exports = input; self
+    pub fn set_log_exports(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.log_exports = input;
+        self
     }
     /// Consumes the builder and constructs a [`EnableLoggingInput`](crate::operation::enable_logging::EnableLoggingInput).
-    pub fn build(self) -> Result<crate::operation::enable_logging::EnableLoggingInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::enable_logging::EnableLoggingInput {
-                cluster_identifier: self.cluster_identifier
-                ,
-                bucket_name: self.bucket_name
-                ,
-                s3_key_prefix: self.s3_key_prefix
-                ,
-                log_destination_type: self.log_destination_type
-                ,
-                log_exports: self.log_exports
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::enable_logging::EnableLoggingInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::enable_logging::EnableLoggingInput {
+            cluster_identifier: self.cluster_identifier,
+            bucket_name: self.bucket_name,
+            s3_key_prefix: self.s3_key_prefix,
+            log_destination_type: self.log_destination_type,
+            log_exports: self.log_exports,
+        })
     }
 }
-

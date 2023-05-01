@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateResourcePositionInput  {
+pub struct UpdateResourcePositionInput {
     /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
     #[doc(hidden)]
     pub resource_identifier: std::option::Option<std::string::String>,
@@ -15,21 +15,23 @@ pub struct UpdateResourcePositionInput  {
 }
 impl UpdateResourcePositionInput {
     /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    pub fn resource_identifier(&self) -> std::option::Option<& str> {
+    pub fn resource_identifier(&self) -> std::option::Option<&str> {
         self.resource_identifier.as_deref()
     }
     /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
-    pub fn resource_type(&self) -> std::option::Option<& crate::types::PositionResourceType> {
+    pub fn resource_type(&self) -> std::option::Option<&crate::types::PositionResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-    pub fn geo_json_payload(&self) -> std::option::Option<& aws_smithy_types::Blob> {
+    pub fn geo_json_payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.geo_json_payload.as_ref()
     }
 }
 impl UpdateResourcePositionInput {
     /// Creates a new builder-style object to manufacture [`UpdateResourcePositionInput`](crate::operation::update_resource_position::UpdateResourcePositionInput).
-    pub fn builder() -> crate::operation::update_resource_position::builders::UpdateResourcePositionInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_resource_position::builders::UpdateResourcePositionInputBuilder
+    {
         crate::operation::update_resource_position::builders::UpdateResourcePositionInputBuilder::default()
     }
 }
@@ -49,8 +51,12 @@ impl UpdateResourcePositionInputBuilder {
         self
     }
     /// <p>The identifier of the resource for which position information is updated. It can be the wireless device ID or the wireless gateway ID, depending on the resource type.</p>
-    pub fn set_resource_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.resource_identifier = input; self
+    pub fn set_resource_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.resource_identifier = input;
+        self
     }
     /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
     pub fn resource_type(mut self, input: crate::types::PositionResourceType) -> Self {
@@ -58,8 +64,12 @@ impl UpdateResourcePositionInputBuilder {
         self
     }
     /// <p>The type of resource for which position information is updated, which can be a wireless device or a wireless gateway.</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<crate::types::PositionResourceType>) -> Self {
-        self.resource_type = input; self
+    pub fn set_resource_type(
+        mut self,
+        input: std::option::Option<crate::types::PositionResourceType>,
+    ) -> Self {
+        self.resource_type = input;
+        self
     }
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
     pub fn geo_json_payload(mut self, input: aws_smithy_types::Blob) -> Self {
@@ -67,21 +77,26 @@ impl UpdateResourcePositionInputBuilder {
         self
     }
     /// <p>The position information of the resource, displayed as a JSON payload. The payload uses the GeoJSON format, which a format that's used to encode geographic data structures. For more information, see <a href="https://geojson.org/">GeoJSON</a>.</p>
-    pub fn set_geo_json_payload(mut self, input: std::option::Option<aws_smithy_types::Blob>) -> Self {
-        self.geo_json_payload = input; self
+    pub fn set_geo_json_payload(
+        mut self,
+        input: std::option::Option<aws_smithy_types::Blob>,
+    ) -> Self {
+        self.geo_json_payload = input;
+        self
     }
     /// Consumes the builder and constructs a [`UpdateResourcePositionInput`](crate::operation::update_resource_position::UpdateResourcePositionInput).
-    pub fn build(self) -> Result<crate::operation::update_resource_position::UpdateResourcePositionInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::update_resource_position::UpdateResourcePositionInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::update_resource_position::UpdateResourcePositionInput {
-                resource_identifier: self.resource_identifier
-                ,
-                resource_type: self.resource_type
-                ,
-                geo_json_payload: self.geo_json_payload
-                ,
-            }
+                resource_identifier: self.resource_identifier,
+                resource_type: self.resource_type,
+                geo_json_payload: self.geo_json_payload,
+            },
         )
     }
 }
-

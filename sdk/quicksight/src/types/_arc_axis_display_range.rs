@@ -3,7 +3,7 @@
 /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ArcAxisDisplayRange  {
+pub struct ArcAxisDisplayRange {
     /// <p>The minimum value of the arc axis range.</p>
     #[doc(hidden)]
     pub min: std::option::Option<f64>,
@@ -43,7 +43,8 @@ impl ArcAxisDisplayRangeBuilder {
     }
     /// <p>The minimum value of the arc axis range.</p>
     pub fn set_min(mut self, input: std::option::Option<f64>) -> Self {
-        self.min = input; self
+        self.min = input;
+        self
     }
     /// <p>The maximum value of the arc axis range.</p>
     pub fn max(mut self, input: f64) -> Self {
@@ -52,16 +53,14 @@ impl ArcAxisDisplayRangeBuilder {
     }
     /// <p>The maximum value of the arc axis range.</p>
     pub fn set_max(mut self, input: std::option::Option<f64>) -> Self {
-        self.max = input; self
+        self.max = input;
+        self
     }
     /// Consumes the builder and constructs a [`ArcAxisDisplayRange`](crate::types::ArcAxisDisplayRange).
     pub fn build(self) -> crate::types::ArcAxisDisplayRange {
         crate::types::ArcAxisDisplayRange {
-            min: self.min
-            ,
-            max: self.max
-            ,
+            min: self.min,
+            max: self.max,
         }
     }
 }
-

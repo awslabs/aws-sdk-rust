@@ -60,4 +60,3 @@ pub use crate::types::_summarized_counter::SummarizedCounterBuilder;
 pub use crate::types::_sub_resource_summary::SubResourceSummaryBuilder;
 
 pub use crate::types::_summarized_attack_vector::SummarizedAttackVectorBuilder;
-

@@ -3,7 +3,7 @@
 /// <p>Represents the output of an <code>UpdateDeploymentGroup</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDeploymentGroupOutput  {
+pub struct UpdateDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::types::AutoScalingGroup>>,
@@ -11,18 +11,20 @@ pub struct UpdateDeploymentGroupOutput  {
 }
 impl UpdateDeploymentGroupOutput {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
-    pub fn hooks_not_cleaned_up(&self) -> std::option::Option<& [crate::types::AutoScalingGroup]> {
+    pub fn hooks_not_cleaned_up(&self) -> std::option::Option<&[crate::types::AutoScalingGroup]> {
         self.hooks_not_cleaned_up.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for UpdateDeploymentGroupOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl UpdateDeploymentGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateDeploymentGroupOutput`](crate::operation::update_deployment_group::UpdateDeploymentGroupOutput).
-    pub fn builder() -> crate::operation::update_deployment_group::builders::UpdateDeploymentGroupOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::update_deployment_group::builders::UpdateDeploymentGroupOutputBuilder
+    {
         crate::operation::update_deployment_group::builders::UpdateDeploymentGroupOutputBuilder::default()
     }
 }
@@ -31,7 +33,8 @@ impl UpdateDeploymentGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct UpdateDeploymentGroupOutputBuilder {
-    pub(crate) hooks_not_cleaned_up: std::option::Option<std::vec::Vec<crate::types::AutoScalingGroup>>,
+    pub(crate) hooks_not_cleaned_up:
+        std::option::Option<std::vec::Vec<crate::types::AutoScalingGroup>>,
     _request_id: Option<String>,
 }
 impl UpdateDeploymentGroupOutputBuilder {
@@ -42,30 +45,32 @@ impl UpdateDeploymentGroupOutputBuilder {
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
     pub fn hooks_not_cleaned_up(mut self, input: crate::types::AutoScalingGroup) -> Self {
         let mut v = self.hooks_not_cleaned_up.unwrap_or_default();
-                        v.push(input);
-                        self.hooks_not_cleaned_up = Some(v);
-                        self
+        v.push(input);
+        self.hooks_not_cleaned_up = Some(v);
+        self
     }
     /// <p>If the output contains no data, and the corresponding deployment group contained at least one Auto Scaling group, CodeDeploy successfully removed all corresponding Auto Scaling lifecycle event hooks from the Amazon Web Services account. If the output contains data, CodeDeploy could not remove some Auto Scaling lifecycle event hooks from the Amazon Web Services account.</p>
-    pub fn set_hooks_not_cleaned_up(mut self, input: std::option::Option<std::vec::Vec<crate::types::AutoScalingGroup>>) -> Self {
-        self.hooks_not_cleaned_up = input; self
+    pub fn set_hooks_not_cleaned_up(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::AutoScalingGroup>>,
+    ) -> Self {
+        self.hooks_not_cleaned_up = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`UpdateDeploymentGroupOutput`](crate::operation::update_deployment_group::UpdateDeploymentGroupOutput).
     pub fn build(self) -> crate::operation::update_deployment_group::UpdateDeploymentGroupOutput {
         crate::operation::update_deployment_group::UpdateDeploymentGroupOutput {
-            hooks_not_cleaned_up: self.hooks_not_cleaned_up
-            ,
+            hooks_not_cleaned_up: self.hooks_not_cleaned_up,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateJobForDevicesInput  {
+pub struct CreateJobForDevicesInput {
     /// <p>ID of target device.</p>
     #[doc(hidden)]
     pub device_ids: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -15,22 +15,24 @@ pub struct CreateJobForDevicesInput  {
 }
 impl CreateJobForDevicesInput {
     /// <p>ID of target device.</p>
-    pub fn device_ids(&self) -> std::option::Option<& [std::string::String]> {
+    pub fn device_ids(&self) -> std::option::Option<&[std::string::String]> {
         self.device_ids.as_deref()
     }
     /// <p>Configuration settings for a software update job.</p>
-    pub fn device_job_config(&self) -> std::option::Option<& crate::types::DeviceJobConfig> {
+    pub fn device_job_config(&self) -> std::option::Option<&crate::types::DeviceJobConfig> {
         self.device_job_config.as_ref()
     }
     /// <p>The type of job to run.</p>
-    pub fn job_type(&self) -> std::option::Option<& crate::types::JobType> {
+    pub fn job_type(&self) -> std::option::Option<&crate::types::JobType> {
         self.job_type.as_ref()
     }
 }
 impl CreateJobForDevicesInput {
     /// Creates a new builder-style object to manufacture [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
-    pub fn builder() -> crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder {
-        crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder {
+        crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder::default(
+        )
     }
 }
 
@@ -50,13 +52,17 @@ impl CreateJobForDevicesInputBuilder {
     /// <p>ID of target device.</p>
     pub fn device_ids(mut self, input: impl Into<std::string::String>) -> Self {
         let mut v = self.device_ids.unwrap_or_default();
-                        v.push(input.into());
-                        self.device_ids = Some(v);
-                        self
+        v.push(input.into());
+        self.device_ids = Some(v);
+        self
     }
     /// <p>ID of target device.</p>
-    pub fn set_device_ids(mut self, input: std::option::Option<std::vec::Vec<std::string::String>>) -> Self {
-        self.device_ids = input; self
+    pub fn set_device_ids(
+        mut self,
+        input: std::option::Option<std::vec::Vec<std::string::String>>,
+    ) -> Self {
+        self.device_ids = input;
+        self
     }
     /// <p>Configuration settings for a software update job.</p>
     pub fn device_job_config(mut self, input: crate::types::DeviceJobConfig) -> Self {
@@ -64,8 +70,12 @@ impl CreateJobForDevicesInputBuilder {
         self
     }
     /// <p>Configuration settings for a software update job.</p>
-    pub fn set_device_job_config(mut self, input: std::option::Option<crate::types::DeviceJobConfig>) -> Self {
-        self.device_job_config = input; self
+    pub fn set_device_job_config(
+        mut self,
+        input: std::option::Option<crate::types::DeviceJobConfig>,
+    ) -> Self {
+        self.device_job_config = input;
+        self
     }
     /// <p>The type of job to run.</p>
     pub fn job_type(mut self, input: crate::types::JobType) -> Self {
@@ -74,20 +84,22 @@ impl CreateJobForDevicesInputBuilder {
     }
     /// <p>The type of job to run.</p>
     pub fn set_job_type(mut self, input: std::option::Option<crate::types::JobType>) -> Self {
-        self.job_type = input; self
+        self.job_type = input;
+        self
     }
     /// Consumes the builder and constructs a [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
-    pub fn build(self) -> Result<crate::operation::create_job_for_devices::CreateJobForDevicesInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::create_job_for_devices::CreateJobForDevicesInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::create_job_for_devices::CreateJobForDevicesInput {
-                device_ids: self.device_ids
-                ,
-                device_job_config: self.device_job_config
-                ,
-                job_type: self.job_type
-                ,
-            }
+                device_ids: self.device_ids,
+                device_job_config: self.device_job_config,
+                job_type: self.job_type,
+            },
         )
     }
 }
-

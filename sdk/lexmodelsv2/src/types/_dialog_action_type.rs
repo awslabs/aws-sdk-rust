@@ -6,9 +6,9 @@
 /// variant in a current version of SDK, your code should continue to work when you
 /// upgrade SDK to a future version in which the enum does include a variant for that
 /// feature.
-/// 
+///
 /// Here is an example of how you can make a match expression forward-compatible:
-/// 
+///
 /// ```text
 /// # let dialogactiontype = unimplemented!();
 /// match dialogactiontype {
@@ -37,14 +37,22 @@
 /// Specifically, when `dialogactiontype` represents `NewFeature`,
 /// the execution path will hit the second last match arm as before by virtue of
 /// calling `as_str` on `DialogActionType::NewFeature` also yielding `"NewFeature"`.
-/// 
+///
 /// Explicitly matching on the `Unknown` variant should
 /// be avoided for two reasons:
 /// - The inner data `UnknownVariantValue` is opaque, and no further information can be extracted.
 /// - It might inadvertently shadow other intended match arms.
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::Eq, std::cmp::Ord, std::cmp::PartialEq, std::cmp::PartialOrd, std::fmt::Debug, std::hash::Hash)]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
 pub enum DialogActionType {
     #[allow(missing_docs)] // documentation missing in model
     CloseIntent,
@@ -65,55 +73,66 @@ pub enum DialogActionType {
     #[allow(missing_docs)] // documentation missing in model
     StartIntent,
     /// `Unknown` contains new variants that have been added since this code was generated.
-    Unknown(crate::primitives::UnknownVariantValue)
+    Unknown(crate::primitives::UnknownVariantValue),
 }
 impl std::convert::From<&str> for DialogActionType {
-                fn from(s: &str) -> Self {
-                    match s {
-                        "CloseIntent" => DialogActionType::CloseIntent,
-"ConfirmIntent" => DialogActionType::ConfirmIntent,
-"ElicitIntent" => DialogActionType::ElicitIntent,
-"ElicitSlot" => DialogActionType::ElicitSlot,
-"EndConversation" => DialogActionType::EndConversation,
-"EvaluateConditional" => DialogActionType::EvaluateConditional,
-"FulfillIntent" => DialogActionType::FulfillIntent,
-"InvokeDialogCodeHook" => DialogActionType::InvokeDialogCodeHook,
-"StartIntent" => DialogActionType::StartIntent,
-other => DialogActionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
-                    }
-                }
+    fn from(s: &str) -> Self {
+        match s {
+            "CloseIntent" => DialogActionType::CloseIntent,
+            "ConfirmIntent" => DialogActionType::ConfirmIntent,
+            "ElicitIntent" => DialogActionType::ElicitIntent,
+            "ElicitSlot" => DialogActionType::ElicitSlot,
+            "EndConversation" => DialogActionType::EndConversation,
+            "EvaluateConditional" => DialogActionType::EvaluateConditional,
+            "FulfillIntent" => DialogActionType::FulfillIntent,
+            "InvokeDialogCodeHook" => DialogActionType::InvokeDialogCodeHook,
+            "StartIntent" => DialogActionType::StartIntent,
+            other => {
+                DialogActionType::Unknown(crate::primitives::UnknownVariantValue(other.to_owned()))
             }
-impl std::str::FromStr for DialogActionType {
-                type Err = std::convert::Infallible;
-
-                fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-                    Ok(DialogActionType::from(s))
-                }
-            }
-impl DialogActionType {
-                /// Returns the `&str` value of the enum member.
-                pub fn as_str(&self) -> &str {
-                    match self {
-    DialogActionType::CloseIntent => "CloseIntent",
-    DialogActionType::ConfirmIntent => "ConfirmIntent",
-    DialogActionType::ElicitIntent => "ElicitIntent",
-    DialogActionType::ElicitSlot => "ElicitSlot",
-    DialogActionType::EndConversation => "EndConversation",
-    DialogActionType::EvaluateConditional => "EvaluateConditional",
-    DialogActionType::FulfillIntent => "FulfillIntent",
-    DialogActionType::InvokeDialogCodeHook => "InvokeDialogCodeHook",
-    DialogActionType::StartIntent => "StartIntent",
-    DialogActionType::Unknown(value) => value.as_str()
+        }
+    }
 }
-                }
-                /// Returns all the `&str` representations of the enum members.
-                pub const fn values() -> &'static [&'static str] {
-                    &["CloseIntent", "ConfirmIntent", "ElicitIntent", "ElicitSlot", "EndConversation", "EvaluateConditional", "FulfillIntent", "InvokeDialogCodeHook", "StartIntent"]
-                }
-            }
-impl AsRef<str> for DialogActionType {
-                fn as_ref(&self) -> &str {
-                    self.as_str()
-                }
-            }
+impl std::str::FromStr for DialogActionType {
+    type Err = std::convert::Infallible;
 
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DialogActionType::from(s))
+    }
+}
+impl DialogActionType {
+    /// Returns the `&str` value of the enum member.
+    pub fn as_str(&self) -> &str {
+        match self {
+            DialogActionType::CloseIntent => "CloseIntent",
+            DialogActionType::ConfirmIntent => "ConfirmIntent",
+            DialogActionType::ElicitIntent => "ElicitIntent",
+            DialogActionType::ElicitSlot => "ElicitSlot",
+            DialogActionType::EndConversation => "EndConversation",
+            DialogActionType::EvaluateConditional => "EvaluateConditional",
+            DialogActionType::FulfillIntent => "FulfillIntent",
+            DialogActionType::InvokeDialogCodeHook => "InvokeDialogCodeHook",
+            DialogActionType::StartIntent => "StartIntent",
+            DialogActionType::Unknown(value) => value.as_str(),
+        }
+    }
+    /// Returns all the `&str` representations of the enum members.
+    pub const fn values() -> &'static [&'static str] {
+        &[
+            "CloseIntent",
+            "ConfirmIntent",
+            "ElicitIntent",
+            "ElicitSlot",
+            "EndConversation",
+            "EvaluateConditional",
+            "FulfillIntent",
+            "InvokeDialogCodeHook",
+            "StartIntent",
+        ]
+    }
+}
+impl AsRef<str> for DialogActionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}

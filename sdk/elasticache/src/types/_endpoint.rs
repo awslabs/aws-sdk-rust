@@ -3,7 +3,7 @@
 /// <p>Represents the information required for client programs to connect to a cache node.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct Endpoint  {
+pub struct Endpoint {
     /// <p>The DNS hostname of the cache node.</p>
     #[doc(hidden)]
     pub address: std::option::Option<std::string::String>,
@@ -13,7 +13,7 @@ pub struct Endpoint  {
 }
 impl Endpoint {
     /// <p>The DNS hostname of the cache node.</p>
-    pub fn address(&self) -> std::option::Option<& str> {
+    pub fn address(&self) -> std::option::Option<&str> {
         self.address.as_deref()
     }
     /// <p>The port number that the cache engine is listening on.</p>
@@ -43,7 +43,8 @@ impl EndpointBuilder {
     }
     /// <p>The DNS hostname of the cache node.</p>
     pub fn set_address(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address = input; self
+        self.address = input;
+        self
     }
     /// <p>The port number that the cache engine is listening on.</p>
     pub fn port(mut self, input: i32) -> Self {
@@ -52,17 +53,14 @@ impl EndpointBuilder {
     }
     /// <p>The port number that the cache engine is listening on.</p>
     pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
-        self.port = input; self
+        self.port = input;
+        self
     }
     /// Consumes the builder and constructs a [`Endpoint`](crate::types::Endpoint).
     pub fn build(self) -> crate::types::Endpoint {
         crate::types::Endpoint {
-            address: self.address
-            ,
-            port: self.port
-                .unwrap_or_default()
-            ,
+            address: self.address,
+            port: self.port.unwrap_or_default(),
         }
     }
 }
-

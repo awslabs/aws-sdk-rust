@@ -2,21 +2,23 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDetectorModelInput  {
+pub struct DeleteDetectorModelInput {
     /// <p>The name of the detector model to be deleted.</p>
     #[doc(hidden)]
     pub detector_model_name: std::option::Option<std::string::String>,
 }
 impl DeleteDetectorModelInput {
     /// <p>The name of the detector model to be deleted.</p>
-    pub fn detector_model_name(&self) -> std::option::Option<& str> {
+    pub fn detector_model_name(&self) -> std::option::Option<&str> {
         self.detector_model_name.as_deref()
     }
 }
 impl DeleteDetectorModelInput {
     /// Creates a new builder-style object to manufacture [`DeleteDetectorModelInput`](crate::operation::delete_detector_model::DeleteDetectorModelInput).
-    pub fn builder() -> crate::operation::delete_detector_model::builders::DeleteDetectorModelInputBuilder {
-        crate::operation::delete_detector_model::builders::DeleteDetectorModelInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::delete_detector_model::builders::DeleteDetectorModelInputBuilder {
+        crate::operation::delete_detector_model::builders::DeleteDetectorModelInputBuilder::default(
+        )
     }
 }
 
@@ -33,17 +35,24 @@ impl DeleteDetectorModelInputBuilder {
         self
     }
     /// <p>The name of the detector model to be deleted.</p>
-    pub fn set_detector_model_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.detector_model_name = input; self
+    pub fn set_detector_model_name(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.detector_model_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteDetectorModelInput`](crate::operation::delete_detector_model::DeleteDetectorModelInput).
-    pub fn build(self) -> Result<crate::operation::delete_detector_model::DeleteDetectorModelInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_detector_model::DeleteDetectorModelInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_detector_model::DeleteDetectorModelInput {
-                detector_model_name: self.detector_model_name
-                ,
-            }
+                detector_model_name: self.detector_model_name,
+            },
         )
     }
 }
-

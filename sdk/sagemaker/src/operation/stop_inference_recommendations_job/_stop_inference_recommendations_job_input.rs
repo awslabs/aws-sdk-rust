@@ -2,20 +2,20 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopInferenceRecommendationsJobInput  {
+pub struct StopInferenceRecommendationsJobInput {
     /// <p>The name of the job you want to stop.</p>
     #[doc(hidden)]
     pub job_name: std::option::Option<std::string::String>,
 }
 impl StopInferenceRecommendationsJobInput {
     /// <p>The name of the job you want to stop.</p>
-    pub fn job_name(&self) -> std::option::Option<& str> {
+    pub fn job_name(&self) -> std::option::Option<&str> {
         self.job_name.as_deref()
     }
 }
 impl StopInferenceRecommendationsJobInput {
     /// Creates a new builder-style object to manufacture [`StopInferenceRecommendationsJobInput`](crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput).
-    pub fn builder() -> crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobInputBuilder {
+    pub fn builder() -> crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobInputBuilder{
         crate::operation::stop_inference_recommendations_job::builders::StopInferenceRecommendationsJobInputBuilder::default()
     }
 }
@@ -34,10 +34,16 @@ impl StopInferenceRecommendationsJobInputBuilder {
     }
     /// <p>The name of the job you want to stop.</p>
     pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.job_name = input; self
+        self.job_name = input;
+        self
     }
     /// Consumes the builder and constructs a [`StopInferenceRecommendationsJobInput`](crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput).
-    pub fn build(self) -> Result<crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobInput {
                 job_name: self.job_name
@@ -46,4 +52,3 @@ impl StopInferenceRecommendationsJobInputBuilder {
         )
     }
 }
-

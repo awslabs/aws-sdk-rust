@@ -15,4 +15,3 @@ pub mod list_outposts_with_s3;
 
 /// Types for the `ListSharedEndpoints` operation.
 pub mod list_shared_endpoints;
-

@@ -3,7 +3,7 @@
 /// <p>Contains information for an entry that has been processed by the previous <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct BatchGetAssetPropertyValueSkippedEntry  {
+pub struct BatchGetAssetPropertyValueSkippedEntry {
     /// <p>The ID of the entry.</p>
     #[doc(hidden)]
     pub entry_id: std::option::Option<std::string::String>,
@@ -16,15 +16,19 @@ pub struct BatchGetAssetPropertyValueSkippedEntry  {
 }
 impl BatchGetAssetPropertyValueSkippedEntry {
     /// <p>The ID of the entry.</p>
-    pub fn entry_id(&self) -> std::option::Option<& str> {
+    pub fn entry_id(&self) -> std::option::Option<&str> {
         self.entry_id.as_deref()
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
-    pub fn completion_status(&self) -> std::option::Option<& crate::types::BatchEntryCompletionStatus> {
+    pub fn completion_status(
+        &self,
+    ) -> std::option::Option<&crate::types::BatchEntryCompletionStatus> {
         self.completion_status.as_ref()
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn error_info(&self) -> std::option::Option<& crate::types::BatchGetAssetPropertyValueErrorInfo> {
+    pub fn error_info(
+        &self,
+    ) -> std::option::Option<&crate::types::BatchGetAssetPropertyValueErrorInfo> {
         self.error_info.as_ref()
     }
 }
@@ -51,7 +55,8 @@ impl BatchGetAssetPropertyValueSkippedEntryBuilder {
     }
     /// <p>The ID of the entry.</p>
     pub fn set_entry_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.entry_id = input; self
+        self.entry_id = input;
+        self
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
     pub fn completion_status(mut self, input: crate::types::BatchEntryCompletionStatus) -> Self {
@@ -59,8 +64,12 @@ impl BatchGetAssetPropertyValueSkippedEntryBuilder {
         self
     }
     /// <p>The completion status of each entry that is associated with the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a> request.</p>
-    pub fn set_completion_status(mut self, input: std::option::Option<crate::types::BatchEntryCompletionStatus>) -> Self {
-        self.completion_status = input; self
+    pub fn set_completion_status(
+        mut self,
+        input: std::option::Option<crate::types::BatchEntryCompletionStatus>,
+    ) -> Self {
+        self.completion_status = input;
+        self
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
     pub fn error_info(mut self, input: crate::types::BatchGetAssetPropertyValueErrorInfo) -> Self {
@@ -68,19 +77,19 @@ impl BatchGetAssetPropertyValueSkippedEntryBuilder {
         self
     }
     /// <p>The error information, such as the error code and the timestamp.</p>
-    pub fn set_error_info(mut self, input: std::option::Option<crate::types::BatchGetAssetPropertyValueErrorInfo>) -> Self {
-        self.error_info = input; self
+    pub fn set_error_info(
+        mut self,
+        input: std::option::Option<crate::types::BatchGetAssetPropertyValueErrorInfo>,
+    ) -> Self {
+        self.error_info = input;
+        self
     }
     /// Consumes the builder and constructs a [`BatchGetAssetPropertyValueSkippedEntry`](crate::types::BatchGetAssetPropertyValueSkippedEntry).
     pub fn build(self) -> crate::types::BatchGetAssetPropertyValueSkippedEntry {
         crate::types::BatchGetAssetPropertyValueSkippedEntry {
-            entry_id: self.entry_id
-            ,
-            completion_status: self.completion_status
-            ,
-            error_info: self.error_info
-            ,
+            entry_id: self.entry_id,
+            completion_status: self.completion_status,
+            error_info: self.error_info,
         }
     }
 }
-

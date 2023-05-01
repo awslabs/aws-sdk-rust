@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetTargetGroupInput  {
+pub struct GetTargetGroupInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
     #[doc(hidden)]
     pub target_group_identifier: std::option::Option<std::string::String>,
 }
 impl GetTargetGroupInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> std::option::Option<& str> {
+    pub fn target_group_identifier(&self) -> std::option::Option<&str> {
         self.target_group_identifier.as_deref()
     }
 }
@@ -33,17 +33,22 @@ impl GetTargetGroupInputBuilder {
         self
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn set_target_group_identifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.target_group_identifier = input; self
+    pub fn set_target_group_identifier(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.target_group_identifier = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetTargetGroupInput`](crate::operation::get_target_group::GetTargetGroupInput).
-    pub fn build(self) -> Result<crate::operation::get_target_group::GetTargetGroupInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_target_group::GetTargetGroupInput {
-                target_group_identifier: self.target_group_identifier
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_target_group::GetTargetGroupInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_target_group::GetTargetGroupInput {
+            target_group_identifier: self.target_group_identifier,
+        })
     }
 }
-

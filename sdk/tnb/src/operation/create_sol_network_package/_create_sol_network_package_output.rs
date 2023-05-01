@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CreateSolNetworkPackageOutput  {
+pub struct CreateSolNetworkPackageOutput {
     /// <p>ID of the network package.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
@@ -20,36 +20,40 @@ pub struct CreateSolNetworkPackageOutput  {
     pub nsd_usage_state: std::option::Option<crate::types::NsdUsageState>,
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateSolNetworkPackageOutput {
     /// <p>ID of the network package.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>Network package ARN.</p>
-    pub fn arn(&self) -> std::option::Option<& str> {
+    pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
-    pub fn nsd_onboarding_state(&self) -> std::option::Option<& crate::types::NsdOnboardingState> {
+    pub fn nsd_onboarding_state(&self) -> std::option::Option<&crate::types::NsdOnboardingState> {
         self.nsd_onboarding_state.as_ref()
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn nsd_operational_state(&self) -> std::option::Option<& crate::types::NsdOperationalState> {
+    pub fn nsd_operational_state(&self) -> std::option::Option<&crate::types::NsdOperationalState> {
         self.nsd_operational_state.as_ref()
     }
     /// <p>Usage state of the network service descriptor in the network package.</p>
-    pub fn nsd_usage_state(&self) -> std::option::Option<& crate::types::NsdUsageState> {
+    pub fn nsd_usage_state(&self) -> std::option::Option<&crate::types::NsdUsageState> {
         self.nsd_usage_state.as_ref()
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(&self) -> std::option::Option<& std::collections::HashMap<std::string::String, std::string::String>> {
+    pub fn tags(
+        &self,
+    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
+    {
         self.tags.as_ref()
     }
 }
-impl  std::fmt::Debug for CreateSolNetworkPackageOutput  {
+impl std::fmt::Debug for CreateSolNetworkPackageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateSolNetworkPackageOutput");
         formatter.field("id", &self.id);
@@ -63,13 +67,15 @@ impl  std::fmt::Debug for CreateSolNetworkPackageOutput  {
     }
 }
 impl aws_http::request_id::RequestId for CreateSolNetworkPackageOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl CreateSolNetworkPackageOutput {
     /// Creates a new builder-style object to manufacture [`CreateSolNetworkPackageOutput`](crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput).
-    pub fn builder() -> crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageOutputBuilder
+    {
         crate::operation::create_sol_network_package::builders::CreateSolNetworkPackageOutputBuilder::default()
     }
 }
@@ -83,7 +89,8 @@ pub struct CreateSolNetworkPackageOutputBuilder {
     pub(crate) nsd_onboarding_state: std::option::Option<crate::types::NsdOnboardingState>,
     pub(crate) nsd_operational_state: std::option::Option<crate::types::NsdOperationalState>,
     pub(crate) nsd_usage_state: std::option::Option<crate::types::NsdUsageState>,
-    pub(crate) tags: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     _request_id: Option<String>,
 }
 impl CreateSolNetworkPackageOutputBuilder {
@@ -94,7 +101,8 @@ impl CreateSolNetworkPackageOutputBuilder {
     }
     /// <p>ID of the network package.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// <p>Network package ARN.</p>
     pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -103,7 +111,8 @@ impl CreateSolNetworkPackageOutputBuilder {
     }
     /// <p>Network package ARN.</p>
     pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.arn = input; self
+        self.arn = input;
+        self
     }
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
     pub fn nsd_onboarding_state(mut self, input: crate::types::NsdOnboardingState) -> Self {
@@ -111,8 +120,12 @@ impl CreateSolNetworkPackageOutputBuilder {
         self
     }
     /// <p>Onboarding state of the network service descriptor in the network package.</p>
-    pub fn set_nsd_onboarding_state(mut self, input: std::option::Option<crate::types::NsdOnboardingState>) -> Self {
-        self.nsd_onboarding_state = input; self
+    pub fn set_nsd_onboarding_state(
+        mut self,
+        input: std::option::Option<crate::types::NsdOnboardingState>,
+    ) -> Self {
+        self.nsd_onboarding_state = input;
+        self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
     pub fn nsd_operational_state(mut self, input: crate::types::NsdOperationalState) -> Self {
@@ -120,8 +133,12 @@ impl CreateSolNetworkPackageOutputBuilder {
         self
     }
     /// <p>Operational state of the network service descriptor in the network package.</p>
-    pub fn set_nsd_operational_state(mut self, input: std::option::Option<crate::types::NsdOperationalState>) -> Self {
-        self.nsd_operational_state = input; self
+    pub fn set_nsd_operational_state(
+        mut self,
+        input: std::option::Option<crate::types::NsdOperationalState>,
+    ) -> Self {
+        self.nsd_operational_state = input;
+        self
     }
     /// <p>Usage state of the network service descriptor in the network package.</p>
     pub fn nsd_usage_state(mut self, input: crate::types::NsdUsageState) -> Self {
@@ -129,48 +146,58 @@ impl CreateSolNetworkPackageOutputBuilder {
         self
     }
     /// <p>Usage state of the network service descriptor in the network package.</p>
-    pub fn set_nsd_usage_state(mut self, input: std::option::Option<crate::types::NsdUsageState>) -> Self {
-        self.nsd_usage_state = input; self
+    pub fn set_nsd_usage_state(
+        mut self,
+        input: std::option::Option<crate::types::NsdUsageState>,
+    ) -> Self {
+        self.nsd_usage_state = input;
+        self
     }
     /// Adds a key-value pair to `tags`.
     ///
     /// To override the contents of this collection use [`set_tags`](Self::set_tags).
     ///
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn tags(mut self, k: impl Into<std::string::String>, v: impl Into<std::string::String>) -> Self {
+    pub fn tags(
+        mut self,
+        k: impl Into<std::string::String>,
+        v: impl Into<std::string::String>,
+    ) -> Self {
         let mut hash_map = self.tags.unwrap_or_default();
-                        hash_map.insert(k.into(), v.into());
-                        self.tags = Some(hash_map);
-                        self
+        hash_map.insert(k.into(), v.into());
+        self.tags = Some(hash_map);
+        self
     }
     /// <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.</p>
-    pub fn set_tags(mut self, input: std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>) -> Self {
-        self.tags = input; self
+    pub fn set_tags(
+        mut self,
+        input: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    ) -> Self {
+        self.tags = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`CreateSolNetworkPackageOutput`](crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput).
-    pub fn build(self) -> crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput {
         crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput {
-            id: self.id
-            ,
-            arn: self.arn
-            ,
-            nsd_onboarding_state: self.nsd_onboarding_state
-            ,
-            nsd_operational_state: self.nsd_operational_state
-            ,
-            nsd_usage_state: self.nsd_usage_state
-            ,
-            tags: self.tags
-            ,
+            id: self.id,
+            arn: self.arn,
+            nsd_onboarding_state: self.nsd_onboarding_state,
+            nsd_operational_state: self.nsd_operational_state,
+            nsd_usage_state: self.nsd_usage_state,
+            tags: self.tags,
             _request_id: self._request_id,
         }
     }
@@ -188,4 +215,3 @@ impl std::fmt::Debug for CreateSolNetworkPackageOutputBuilder {
         formatter.finish()
     }
 }
-

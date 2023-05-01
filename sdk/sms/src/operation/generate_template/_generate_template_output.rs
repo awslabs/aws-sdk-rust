@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GenerateTemplateOutput  {
+pub struct GenerateTemplateOutput {
     /// <p>The location of the Amazon S3 object.</p>
     #[doc(hidden)]
     pub s3_location: std::option::Option<crate::types::S3Location>,
@@ -10,18 +10,19 @@ pub struct GenerateTemplateOutput  {
 }
 impl GenerateTemplateOutput {
     /// <p>The location of the Amazon S3 object.</p>
-    pub fn s3_location(&self) -> std::option::Option<& crate::types::S3Location> {
+    pub fn s3_location(&self) -> std::option::Option<&crate::types::S3Location> {
         self.s3_location.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GenerateTemplateOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GenerateTemplateOutput {
     /// Creates a new builder-style object to manufacture [`GenerateTemplateOutput`](crate::operation::generate_template::GenerateTemplateOutput).
-    pub fn builder() -> crate::operation::generate_template::builders::GenerateTemplateOutputBuilder {
+    pub fn builder() -> crate::operation::generate_template::builders::GenerateTemplateOutputBuilder
+    {
         crate::operation::generate_template::builders::GenerateTemplateOutputBuilder::default()
     }
 }
@@ -41,24 +42,23 @@ impl GenerateTemplateOutputBuilder {
     }
     /// <p>The location of the Amazon S3 object.</p>
     pub fn set_s3_location(mut self, input: std::option::Option<crate::types::S3Location>) -> Self {
-        self.s3_location = input; self
+        self.s3_location = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GenerateTemplateOutput`](crate::operation::generate_template::GenerateTemplateOutput).
     pub fn build(self) -> crate::operation::generate_template::GenerateTemplateOutput {
         crate::operation::generate_template::GenerateTemplateOutput {
-            s3_location: self.s3_location
-            ,
+            s3_location: self.s3_location,
             _request_id: self._request_id,
         }
     }
 }
-

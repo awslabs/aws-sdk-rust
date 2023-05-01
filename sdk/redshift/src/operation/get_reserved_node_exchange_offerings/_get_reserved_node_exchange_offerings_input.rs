@@ -3,7 +3,7 @@
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetReservedNodeExchangeOfferingsInput  {
+pub struct GetReservedNodeExchangeOfferingsInput {
     /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
     #[doc(hidden)]
     pub reserved_node_id: std::option::Option<std::string::String>,
@@ -16,7 +16,7 @@ pub struct GetReservedNodeExchangeOfferingsInput  {
 }
 impl GetReservedNodeExchangeOfferingsInput {
     /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
-    pub fn reserved_node_id(&self) -> std::option::Option<& str> {
+    pub fn reserved_node_id(&self) -> std::option::Option<&str> {
         self.reserved_node_id.as_deref()
     }
     /// <p>An integer setting the maximum number of ReservedNodeOfferings to retrieve.</p>
@@ -24,13 +24,13 @@ impl GetReservedNodeExchangeOfferingsInput {
         self.max_records
     }
     /// <p>A value that indicates the starting point for the next set of ReservedNodeOfferings.</p>
-    pub fn marker(&self) -> std::option::Option<& str> {
+    pub fn marker(&self) -> std::option::Option<&str> {
         self.marker.as_deref()
     }
 }
 impl GetReservedNodeExchangeOfferingsInput {
     /// Creates a new builder-style object to manufacture [`GetReservedNodeExchangeOfferingsInput`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput).
-    pub fn builder() -> crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsInputBuilder {
+    pub fn builder() -> crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsInputBuilder{
         crate::operation::get_reserved_node_exchange_offerings::builders::GetReservedNodeExchangeOfferingsInputBuilder::default()
     }
 }
@@ -51,7 +51,8 @@ impl GetReservedNodeExchangeOfferingsInputBuilder {
     }
     /// <p>A string representing the node identifier for the DC1 Reserved Node to be exchanged.</p>
     pub fn set_reserved_node_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.reserved_node_id = input; self
+        self.reserved_node_id = input;
+        self
     }
     /// <p>An integer setting the maximum number of ReservedNodeOfferings to retrieve.</p>
     pub fn max_records(mut self, input: i32) -> Self {
@@ -60,7 +61,8 @@ impl GetReservedNodeExchangeOfferingsInputBuilder {
     }
     /// <p>An integer setting the maximum number of ReservedNodeOfferings to retrieve.</p>
     pub fn set_max_records(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_records = input; self
+        self.max_records = input;
+        self
     }
     /// <p>A value that indicates the starting point for the next set of ReservedNodeOfferings.</p>
     pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,10 +71,11 @@ impl GetReservedNodeExchangeOfferingsInputBuilder {
     }
     /// <p>A value that indicates the starting point for the next set of ReservedNodeOfferings.</p>
     pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.marker = input; self
+        self.marker = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetReservedNodeExchangeOfferingsInput`](crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput).
-    pub fn build(self) -> Result<crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(self) -> Result<crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput, aws_smithy_http::operation::error::BuildError>{
         Ok(
             crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsInput {
                 reserved_node_id: self.reserved_node_id
@@ -85,4 +88,3 @@ impl GetReservedNodeExchangeOfferingsInputBuilder {
         )
     }
 }
-

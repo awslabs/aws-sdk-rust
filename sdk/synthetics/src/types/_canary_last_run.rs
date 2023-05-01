@@ -3,7 +3,7 @@
 /// <p>This structure contains information about the most recent run of a single canary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CanaryLastRun  {
+pub struct CanaryLastRun {
     /// <p>The name of the canary.</p>
     #[doc(hidden)]
     pub canary_name: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct CanaryLastRun  {
 }
 impl CanaryLastRun {
     /// <p>The name of the canary.</p>
-    pub fn canary_name(&self) -> std::option::Option<& str> {
+    pub fn canary_name(&self) -> std::option::Option<&str> {
         self.canary_name.as_deref()
     }
     /// <p>The results from this canary's most recent run.</p>
-    pub fn last_run(&self) -> std::option::Option<& crate::types::CanaryRun> {
+    pub fn last_run(&self) -> std::option::Option<&crate::types::CanaryRun> {
         self.last_run.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl CanaryLastRunBuilder {
     }
     /// <p>The name of the canary.</p>
     pub fn set_canary_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.canary_name = input; self
+        self.canary_name = input;
+        self
     }
     /// <p>The results from this canary's most recent run.</p>
     pub fn last_run(mut self, input: crate::types::CanaryRun) -> Self {
@@ -52,16 +53,14 @@ impl CanaryLastRunBuilder {
     }
     /// <p>The results from this canary's most recent run.</p>
     pub fn set_last_run(mut self, input: std::option::Option<crate::types::CanaryRun>) -> Self {
-        self.last_run = input; self
+        self.last_run = input;
+        self
     }
     /// Consumes the builder and constructs a [`CanaryLastRun`](crate::types::CanaryLastRun).
     pub fn build(self) -> crate::types::CanaryLastRun {
         crate::types::CanaryLastRun {
-            canary_name: self.canary_name
-            ,
-            last_run: self.last_run
-            ,
+            canary_name: self.canary_name,
+            last_run: self.last_run,
         }
     }
 }
-

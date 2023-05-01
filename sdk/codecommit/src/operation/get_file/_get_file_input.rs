@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetFileInput  {
+pub struct GetFileInput {
     /// <p>The name of the repository that contains the file.</p>
     #[doc(hidden)]
     pub repository_name: std::option::Option<std::string::String>,
@@ -15,15 +15,15 @@ pub struct GetFileInput  {
 }
 impl GetFileInput {
     /// <p>The name of the repository that contains the file.</p>
-    pub fn repository_name(&self) -> std::option::Option<& str> {
+    pub fn repository_name(&self) -> std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
-    pub fn commit_specifier(&self) -> std::option::Option<& str> {
+    pub fn commit_specifier(&self) -> std::option::Option<&str> {
         self.commit_specifier.as_deref()
     }
     /// <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
-    pub fn file_path(&self) -> std::option::Option<& str> {
+    pub fn file_path(&self) -> std::option::Option<&str> {
         self.file_path.as_deref()
     }
 }
@@ -50,7 +50,8 @@ impl GetFileInputBuilder {
     }
     /// <p>The name of the repository that contains the file.</p>
     pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.repository_name = input; self
+        self.repository_name = input;
+        self
     }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
     pub fn commit_specifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -59,7 +60,8 @@ impl GetFileInputBuilder {
     }
     /// <p>The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, the head commit is used.</p>
     pub fn set_commit_specifier(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.commit_specifier = input; self
+        self.commit_specifier = input;
+        self
     }
     /// <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
     pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,20 +70,20 @@ impl GetFileInputBuilder {
     }
     /// <p>The fully qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully qualified path to a file named file.md in a folder named examples.</p>
     pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.file_path = input; self
+        self.file_path = input;
+        self
     }
     /// Consumes the builder and constructs a [`GetFileInput`](crate::operation::get_file::GetFileInput).
-    pub fn build(self) -> Result<crate::operation::get_file::GetFileInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::get_file::GetFileInput {
-                repository_name: self.repository_name
-                ,
-                commit_specifier: self.commit_specifier
-                ,
-                file_path: self.file_path
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::get_file::GetFileInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::get_file::GetFileInput {
+            repository_name: self.repository_name,
+            commit_specifier: self.commit_specifier,
+            file_path: self.file_path,
+        })
     }
 }
-

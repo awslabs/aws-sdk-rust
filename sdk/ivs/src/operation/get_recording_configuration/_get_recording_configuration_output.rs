@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct GetRecordingConfigurationOutput  {
+pub struct GetRecordingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
     pub recording_configuration: std::option::Option<crate::types::RecordingConfiguration>,
@@ -10,18 +10,20 @@ pub struct GetRecordingConfigurationOutput  {
 }
 impl GetRecordingConfigurationOutput {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn recording_configuration(&self) -> std::option::Option<& crate::types::RecordingConfiguration> {
+    pub fn recording_configuration(
+        &self,
+    ) -> std::option::Option<&crate::types::RecordingConfiguration> {
         self.recording_configuration.as_ref()
     }
 }
 impl aws_http::request_id::RequestId for GetRecordingConfigurationOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl GetRecordingConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetRecordingConfigurationOutput`](crate::operation::get_recording_configuration::GetRecordingConfigurationOutput).
-    pub fn builder() -> crate::operation::get_recording_configuration::builders::GetRecordingConfigurationOutputBuilder {
+    pub fn builder() -> crate::operation::get_recording_configuration::builders::GetRecordingConfigurationOutputBuilder{
         crate::operation::get_recording_configuration::builders::GetRecordingConfigurationOutputBuilder::default()
     }
 }
@@ -40,25 +42,29 @@ impl GetRecordingConfigurationOutputBuilder {
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_recording_configuration(mut self, input: std::option::Option<crate::types::RecordingConfiguration>) -> Self {
-        self.recording_configuration = input; self
+    pub fn set_recording_configuration(
+        mut self,
+        input: std::option::Option<crate::types::RecordingConfiguration>,
+    ) -> Self {
+        self.recording_configuration = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`GetRecordingConfigurationOutput`](crate::operation::get_recording_configuration::GetRecordingConfigurationOutput).
-    pub fn build(self) -> crate::operation::get_recording_configuration::GetRecordingConfigurationOutput {
+    pub fn build(
+        self,
+    ) -> crate::operation::get_recording_configuration::GetRecordingConfigurationOutput {
         crate::operation::get_recording_configuration::GetRecordingConfigurationOutput {
-            recording_configuration: self.recording_configuration
-            ,
+            recording_configuration: self.recording_configuration,
             _request_id: self._request_id,
         }
     }
 }
-

@@ -3,7 +3,7 @@
 /// <p>Returns information about a change in the approval state for a pull request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApprovalStateChangedEventMetadata  {
+pub struct ApprovalStateChangedEventMetadata {
     /// <p>The revision ID of the pull request when the approval state changed.</p>
     #[doc(hidden)]
     pub revision_id: std::option::Option<std::string::String>,
@@ -13,11 +13,11 @@ pub struct ApprovalStateChangedEventMetadata  {
 }
 impl ApprovalStateChangedEventMetadata {
     /// <p>The revision ID of the pull request when the approval state changed.</p>
-    pub fn revision_id(&self) -> std::option::Option<& str> {
+    pub fn revision_id(&self) -> std::option::Option<&str> {
         self.revision_id.as_deref()
     }
     /// <p>The approval status for the pull request.</p>
-    pub fn approval_status(&self) -> std::option::Option<& crate::types::ApprovalState> {
+    pub fn approval_status(&self) -> std::option::Option<&crate::types::ApprovalState> {
         self.approval_status.as_ref()
     }
 }
@@ -43,7 +43,8 @@ impl ApprovalStateChangedEventMetadataBuilder {
     }
     /// <p>The revision ID of the pull request when the approval state changed.</p>
     pub fn set_revision_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.revision_id = input; self
+        self.revision_id = input;
+        self
     }
     /// <p>The approval status for the pull request.</p>
     pub fn approval_status(mut self, input: crate::types::ApprovalState) -> Self {
@@ -51,17 +52,18 @@ impl ApprovalStateChangedEventMetadataBuilder {
         self
     }
     /// <p>The approval status for the pull request.</p>
-    pub fn set_approval_status(mut self, input: std::option::Option<crate::types::ApprovalState>) -> Self {
-        self.approval_status = input; self
+    pub fn set_approval_status(
+        mut self,
+        input: std::option::Option<crate::types::ApprovalState>,
+    ) -> Self {
+        self.approval_status = input;
+        self
     }
     /// Consumes the builder and constructs a [`ApprovalStateChangedEventMetadata`](crate::types::ApprovalStateChangedEventMetadata).
     pub fn build(self) -> crate::types::ApprovalStateChangedEventMetadata {
         crate::types::ApprovalStateChangedEventMetadata {
-            revision_id: self.revision_id
-            ,
-            approval_status: self.approval_status
-            ,
+            revision_id: self.revision_id,
+            approval_status: self.approval_status,
         }
     }
 }
-

@@ -2,26 +2,30 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeTargetHealthOutput  {
+pub struct DescribeTargetHealthOutput {
     /// <p>Information about the health of the targets.</p>
     #[doc(hidden)]
-    pub target_health_descriptions: std::option::Option<std::vec::Vec<crate::types::TargetHealthDescription>>,
+    pub target_health_descriptions:
+        std::option::Option<std::vec::Vec<crate::types::TargetHealthDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeTargetHealthOutput {
     /// <p>Information about the health of the targets.</p>
-    pub fn target_health_descriptions(&self) -> std::option::Option<& [crate::types::TargetHealthDescription]> {
+    pub fn target_health_descriptions(
+        &self,
+    ) -> std::option::Option<&[crate::types::TargetHealthDescription]> {
         self.target_health_descriptions.as_deref()
     }
 }
 impl aws_http::request_id::RequestId for DescribeTargetHealthOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl DescribeTargetHealthOutput {
     /// Creates a new builder-style object to manufacture [`DescribeTargetHealthOutput`](crate::operation::describe_target_health::DescribeTargetHealthOutput).
-    pub fn builder() -> crate::operation::describe_target_health::builders::DescribeTargetHealthOutputBuilder {
+    pub fn builder(
+    ) -> crate::operation::describe_target_health::builders::DescribeTargetHealthOutputBuilder {
         crate::operation::describe_target_health::builders::DescribeTargetHealthOutputBuilder::default()
     }
 }
@@ -30,7 +34,8 @@ impl DescribeTargetHealthOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
 pub struct DescribeTargetHealthOutputBuilder {
-    pub(crate) target_health_descriptions: std::option::Option<std::vec::Vec<crate::types::TargetHealthDescription>>,
+    pub(crate) target_health_descriptions:
+        std::option::Option<std::vec::Vec<crate::types::TargetHealthDescription>>,
     _request_id: Option<String>,
 }
 impl DescribeTargetHealthOutputBuilder {
@@ -39,32 +44,37 @@ impl DescribeTargetHealthOutputBuilder {
     /// To override the contents of this collection use [`set_target_health_descriptions`](Self::set_target_health_descriptions).
     ///
     /// <p>Information about the health of the targets.</p>
-    pub fn target_health_descriptions(mut self, input: crate::types::TargetHealthDescription) -> Self {
+    pub fn target_health_descriptions(
+        mut self,
+        input: crate::types::TargetHealthDescription,
+    ) -> Self {
         let mut v = self.target_health_descriptions.unwrap_or_default();
-                        v.push(input);
-                        self.target_health_descriptions = Some(v);
-                        self
+        v.push(input);
+        self.target_health_descriptions = Some(v);
+        self
     }
     /// <p>Information about the health of the targets.</p>
-    pub fn set_target_health_descriptions(mut self, input: std::option::Option<std::vec::Vec<crate::types::TargetHealthDescription>>) -> Self {
-        self.target_health_descriptions = input; self
+    pub fn set_target_health_descriptions(
+        mut self,
+        input: std::option::Option<std::vec::Vec<crate::types::TargetHealthDescription>>,
+    ) -> Self {
+        self.target_health_descriptions = input;
+        self
     }
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`DescribeTargetHealthOutput`](crate::operation::describe_target_health::DescribeTargetHealthOutput).
     pub fn build(self) -> crate::operation::describe_target_health::DescribeTargetHealthOutput {
         crate::operation::describe_target_health::DescribeTargetHealthOutput {
-            target_health_descriptions: self.target_health_descriptions
-            ,
+            target_health_descriptions: self.target_health_descriptions,
             _request_id: self._request_id,
         }
     }
 }
-

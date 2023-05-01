@@ -3,7 +3,7 @@
 /// <p>Represents the request to get the device, as an administrator.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AdminGetDeviceInput  {
+pub struct AdminGetDeviceInput {
     /// <p>The device key.</p>
     #[doc(hidden)]
     pub device_key: std::option::Option<std::string::String>,
@@ -16,19 +16,19 @@ pub struct AdminGetDeviceInput  {
 }
 impl AdminGetDeviceInput {
     /// <p>The device key.</p>
-    pub fn device_key(&self) -> std::option::Option<& str> {
+    pub fn device_key(&self) -> std::option::Option<&str> {
         self.device_key.as_deref()
     }
     /// <p>The user pool ID.</p>
-    pub fn user_pool_id(&self) -> std::option::Option<& str> {
+    pub fn user_pool_id(&self) -> std::option::Option<&str> {
         self.user_pool_id.as_deref()
     }
     /// <p>The user name.</p>
-    pub fn username(&self) -> std::option::Option<& str> {
+    pub fn username(&self) -> std::option::Option<&str> {
         self.username.as_deref()
     }
 }
-impl  std::fmt::Debug for AdminGetDeviceInput  {
+impl std::fmt::Debug for AdminGetDeviceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AdminGetDeviceInput");
         formatter.field("device_key", &self.device_key);
@@ -60,7 +60,8 @@ impl AdminGetDeviceInputBuilder {
     }
     /// <p>The device key.</p>
     pub fn set_device_key(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.device_key = input; self
+        self.device_key = input;
+        self
     }
     /// <p>The user pool ID.</p>
     pub fn user_pool_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -69,7 +70,8 @@ impl AdminGetDeviceInputBuilder {
     }
     /// <p>The user pool ID.</p>
     pub fn set_user_pool_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.user_pool_id = input; self
+        self.user_pool_id = input;
+        self
     }
     /// <p>The user name.</p>
     pub fn username(mut self, input: impl Into<std::string::String>) -> Self {
@@ -78,20 +80,21 @@ impl AdminGetDeviceInputBuilder {
     }
     /// <p>The user name.</p>
     pub fn set_username(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.username = input; self
+        self.username = input;
+        self
     }
     /// Consumes the builder and constructs a [`AdminGetDeviceInput`](crate::operation::admin_get_device::AdminGetDeviceInput).
-    pub fn build(self) -> Result<crate::operation::admin_get_device::AdminGetDeviceInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::admin_get_device::AdminGetDeviceInput {
-                device_key: self.device_key
-                ,
-                user_pool_id: self.user_pool_id
-                ,
-                username: self.username
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::admin_get_device::AdminGetDeviceInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::admin_get_device::AdminGetDeviceInput {
+            device_key: self.device_key,
+            user_pool_id: self.user_pool_id,
+            username: self.username,
+        })
     }
 }
 impl std::fmt::Debug for AdminGetDeviceInputBuilder {
@@ -103,4 +106,3 @@ impl std::fmt::Debug for AdminGetDeviceInputBuilder {
         formatter.finish()
     }
 }
-

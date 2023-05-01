@@ -3,14 +3,14 @@
 /// <p>Contains information on the status of DNS logs as a data source.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DnsLogsConfigurationResult  {
+pub struct DnsLogsConfigurationResult {
     /// <p>Denotes whether DNS logs is enabled as a data source.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::types::DataSourceStatus>,
 }
 impl DnsLogsConfigurationResult {
     /// <p>Denotes whether DNS logs is enabled as a data source.</p>
-    pub fn status(&self) -> std::option::Option<& crate::types::DataSourceStatus> {
+    pub fn status(&self) -> std::option::Option<&crate::types::DataSourceStatus> {
         self.status.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl DnsLogsConfigurationResultBuilder {
         self
     }
     /// <p>Denotes whether DNS logs is enabled as a data source.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::DataSourceStatus>) -> Self {
-        self.status = input; self
+    pub fn set_status(
+        mut self,
+        input: std::option::Option<crate::types::DataSourceStatus>,
+    ) -> Self {
+        self.status = input;
+        self
     }
     /// Consumes the builder and constructs a [`DnsLogsConfigurationResult`](crate::types::DnsLogsConfigurationResult).
     pub fn build(self) -> crate::types::DnsLogsConfigurationResult {
         crate::types::DnsLogsConfigurationResult {
-            status: self.status
-            ,
+            status: self.status,
         }
     }
 }
-

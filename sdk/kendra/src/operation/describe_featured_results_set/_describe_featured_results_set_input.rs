@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeFeaturedResultsSetInput  {
+pub struct DescribeFeaturedResultsSetInput {
     /// <p>The identifier of the index used for featuring results.</p>
     #[doc(hidden)]
     pub index_id: std::option::Option<std::string::String>,
@@ -12,17 +12,17 @@ pub struct DescribeFeaturedResultsSetInput  {
 }
 impl DescribeFeaturedResultsSetInput {
     /// <p>The identifier of the index used for featuring results.</p>
-    pub fn index_id(&self) -> std::option::Option<& str> {
+    pub fn index_id(&self) -> std::option::Option<&str> {
         self.index_id.as_deref()
     }
     /// <p>The identifier of the set of featured results that you want to get information on.</p>
-    pub fn featured_results_set_id(&self) -> std::option::Option<& str> {
+    pub fn featured_results_set_id(&self) -> std::option::Option<&str> {
         self.featured_results_set_id.as_deref()
     }
 }
 impl DescribeFeaturedResultsSetInput {
     /// Creates a new builder-style object to manufacture [`DescribeFeaturedResultsSetInput`](crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput).
-    pub fn builder() -> crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetInputBuilder {
+    pub fn builder() -> crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetInputBuilder{
         crate::operation::describe_featured_results_set::builders::DescribeFeaturedResultsSetInputBuilder::default()
     }
 }
@@ -42,7 +42,8 @@ impl DescribeFeaturedResultsSetInputBuilder {
     }
     /// <p>The identifier of the index used for featuring results.</p>
     pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.index_id = input; self
+        self.index_id = input;
+        self
     }
     /// <p>The identifier of the set of featured results that you want to get information on.</p>
     pub fn featured_results_set_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -50,19 +51,25 @@ impl DescribeFeaturedResultsSetInputBuilder {
         self
     }
     /// <p>The identifier of the set of featured results that you want to get information on.</p>
-    pub fn set_featured_results_set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.featured_results_set_id = input; self
+    pub fn set_featured_results_set_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.featured_results_set_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeFeaturedResultsSetInput`](crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput).
-    pub fn build(self) -> Result<crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetInput {
-                index_id: self.index_id
-                ,
-                featured_results_set_id: self.featured_results_set_id
-                ,
-            }
+                index_id: self.index_id,
+                featured_results_set_id: self.featured_results_set_id,
+            },
         )
     }
 }
-

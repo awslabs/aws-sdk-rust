@@ -2,7 +2,7 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DescribeSpendLimitsInput  {
+pub struct DescribeSpendLimitsInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
@@ -12,7 +12,7 @@ pub struct DescribeSpendLimitsInput  {
 }
 impl DescribeSpendLimitsInput {
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
-    pub fn next_token(&self) -> std::option::Option<& str> {
+    pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of results to return per each request.</p>
@@ -22,8 +22,10 @@ impl DescribeSpendLimitsInput {
 }
 impl DescribeSpendLimitsInput {
     /// Creates a new builder-style object to manufacture [`DescribeSpendLimitsInput`](crate::operation::describe_spend_limits::DescribeSpendLimitsInput).
-    pub fn builder() -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsInputBuilder {
-        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsInputBuilder::default()
+    pub fn builder(
+    ) -> crate::operation::describe_spend_limits::builders::DescribeSpendLimitsInputBuilder {
+        crate::operation::describe_spend_limits::builders::DescribeSpendLimitsInputBuilder::default(
+        )
     }
 }
 
@@ -42,7 +44,8 @@ impl DescribeSpendLimitsInputBuilder {
     }
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
     pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.next_token = input; self
+        self.next_token = input;
+        self
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -51,18 +54,21 @@ impl DescribeSpendLimitsInputBuilder {
     }
     /// <p>The maximum number of results to return per each request.</p>
     pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
-        self.max_results = input; self
+        self.max_results = input;
+        self
     }
     /// Consumes the builder and constructs a [`DescribeSpendLimitsInput`](crate::operation::describe_spend_limits::DescribeSpendLimitsInput).
-    pub fn build(self) -> Result<crate::operation::describe_spend_limits::DescribeSpendLimitsInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::describe_spend_limits::DescribeSpendLimitsInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::describe_spend_limits::DescribeSpendLimitsInput {
-                next_token: self.next_token
-                ,
-                max_results: self.max_results
-                ,
-            }
+                next_token: self.next_token,
+                max_results: self.max_results,
+            },
         )
     }
 }
-

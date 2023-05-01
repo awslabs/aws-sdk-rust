@@ -3,14 +3,14 @@
 /// <p>The S3 location where Identity Resolution Jobs write result files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ExportingLocation  {
+pub struct ExportingLocation {
     /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
     #[doc(hidden)]
     pub s3_exporting: std::option::Option<crate::types::S3ExportingLocation>,
 }
 impl ExportingLocation {
     /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
-    pub fn s3_exporting(&self) -> std::option::Option<& crate::types::S3ExportingLocation> {
+    pub fn s3_exporting(&self) -> std::option::Option<&crate::types::S3ExportingLocation> {
         self.s3_exporting.as_ref()
     }
 }
@@ -34,15 +34,17 @@ impl ExportingLocationBuilder {
         self
     }
     /// <p>Information about the S3 location where Identity Resolution Jobs write result files.</p>
-    pub fn set_s3_exporting(mut self, input: std::option::Option<crate::types::S3ExportingLocation>) -> Self {
-        self.s3_exporting = input; self
+    pub fn set_s3_exporting(
+        mut self,
+        input: std::option::Option<crate::types::S3ExportingLocation>,
+    ) -> Self {
+        self.s3_exporting = input;
+        self
     }
     /// Consumes the builder and constructs a [`ExportingLocation`](crate::types::ExportingLocation).
     pub fn build(self) -> crate::types::ExportingLocation {
         crate::types::ExportingLocation {
-            s3_exporting: self.s3_exporting
-            ,
+            s3_exporting: self.s3_exporting,
         }
     }
 }
-

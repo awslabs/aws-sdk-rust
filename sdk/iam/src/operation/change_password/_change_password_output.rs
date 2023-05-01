@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ChangePasswordOutput  {
+pub struct ChangePasswordOutput {
     _request_id: Option<String>,
 }
 impl aws_http::request_id::RequestId for ChangePasswordOutput {
-                                fn request_id(&self) -> Option<&str> {
-                                    self._request_id.as_deref()
-                                }
-                            }
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 impl ChangePasswordOutput {
     /// Creates a new builder-style object to manufacture [`ChangePasswordOutput`](crate::operation::change_password::ChangePasswordOutput).
     pub fn builder() -> crate::operation::change_password::builders::ChangePasswordOutputBuilder {
@@ -25,14 +25,14 @@ pub struct ChangePasswordOutputBuilder {
 }
 impl ChangePasswordOutputBuilder {
     pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
-                                    self._request_id = Some(request_id.into());
-                                    self
-                                }
-    
-                                pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
-                                    self._request_id = request_id;
-                                    self
-                                }
+        self._request_id = Some(request_id.into());
+        self
+    }
+
+    pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+        self._request_id = request_id;
+        self
+    }
     /// Consumes the builder and constructs a [`ChangePasswordOutput`](crate::operation::change_password::ChangePasswordOutput).
     pub fn build(self) -> crate::operation::change_password::ChangePasswordOutput {
         crate::operation::change_password::ChangePasswordOutput {
@@ -40,4 +40,3 @@ impl ChangePasswordOutputBuilder {
         }
     }
 }
-

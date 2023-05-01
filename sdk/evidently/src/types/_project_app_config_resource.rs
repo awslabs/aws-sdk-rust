@@ -3,7 +3,7 @@
 /// <p>This is a structure that defines the configuration of how your application integrates with AppConfig to run client-side evaluation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ProjectAppConfigResource  {
+pub struct ProjectAppConfigResource {
     /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
     #[doc(hidden)]
     pub application_id: std::option::Option<std::string::String>,
@@ -16,15 +16,15 @@ pub struct ProjectAppConfigResource  {
 }
 impl ProjectAppConfigResource {
     /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-    pub fn application_id(&self) -> std::option::Option<& str> {
+    pub fn application_id(&self) -> std::option::Option<&str> {
         self.application_id.as_deref()
     }
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
-    pub fn environment_id(&self) -> std::option::Option<& str> {
+    pub fn environment_id(&self) -> std::option::Option<&str> {
         self.environment_id.as_deref()
     }
     /// <p>The ID of the AppConfig profile to use for client-side evaluation. </p>
-    pub fn configuration_profile_id(&self) -> std::option::Option<& str> {
+    pub fn configuration_profile_id(&self) -> std::option::Option<&str> {
         self.configuration_profile_id.as_deref()
     }
 }
@@ -51,7 +51,8 @@ impl ProjectAppConfigResourceBuilder {
     }
     /// <p>The ID of the AppConfig application to use for client-side evaluation. </p>
     pub fn set_application_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.application_id = input; self
+        self.application_id = input;
+        self
     }
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
     pub fn environment_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -60,7 +61,8 @@ impl ProjectAppConfigResourceBuilder {
     }
     /// <p>The ID of the AppConfig environment to use for client-side evaluation. This must be an environment that is within the application that you specify for <code>applicationId</code>.</p>
     pub fn set_environment_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.environment_id = input; self
+        self.environment_id = input;
+        self
     }
     /// <p>The ID of the AppConfig profile to use for client-side evaluation. </p>
     pub fn configuration_profile_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -68,19 +70,19 @@ impl ProjectAppConfigResourceBuilder {
         self
     }
     /// <p>The ID of the AppConfig profile to use for client-side evaluation. </p>
-    pub fn set_configuration_profile_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.configuration_profile_id = input; self
+    pub fn set_configuration_profile_id(
+        mut self,
+        input: std::option::Option<std::string::String>,
+    ) -> Self {
+        self.configuration_profile_id = input;
+        self
     }
     /// Consumes the builder and constructs a [`ProjectAppConfigResource`](crate::types::ProjectAppConfigResource).
     pub fn build(self) -> crate::types::ProjectAppConfigResource {
         crate::types::ProjectAppConfigResource {
-            application_id: self.application_id
-            ,
-            environment_id: self.environment_id
-            ,
-            configuration_profile_id: self.configuration_profile_id
-            ,
+            application_id: self.application_id,
+            environment_id: self.environment_id,
+            configuration_profile_id: self.configuration_profile_id,
         }
     }
 }
-

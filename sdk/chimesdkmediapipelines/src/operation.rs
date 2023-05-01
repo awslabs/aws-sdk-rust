@@ -57,4 +57,3 @@ pub mod update_media_insights_pipeline_configuration;
 
 /// Types for the `UpdateMediaInsightsPipelineStatus` operation.
 pub mod update_media_insights_pipeline_status;
-

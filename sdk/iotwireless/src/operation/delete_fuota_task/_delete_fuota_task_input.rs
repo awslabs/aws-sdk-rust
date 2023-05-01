@@ -2,14 +2,14 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteFuotaTaskInput  {
+pub struct DeleteFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
 }
 impl DeleteFuotaTaskInput {
     /// <p>The ID of a FUOTA task.</p>
-    pub fn id(&self) -> std::option::Option<& str> {
+    pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
     }
 }
@@ -34,16 +34,16 @@ impl DeleteFuotaTaskInputBuilder {
     }
     /// <p>The ID of a FUOTA task.</p>
     pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.id = input; self
+        self.id = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteFuotaTaskInput`](crate::operation::delete_fuota_task::DeleteFuotaTaskInput).
-    pub fn build(self) -> Result<crate::operation::delete_fuota_task::DeleteFuotaTaskInput, aws_smithy_http::operation::error::BuildError> {
-        Ok(
-            crate::operation::delete_fuota_task::DeleteFuotaTaskInput {
-                id: self.id
-                ,
-            }
-        )
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_fuota_task::DeleteFuotaTaskInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
+        Ok(crate::operation::delete_fuota_task::DeleteFuotaTaskInput { id: self.id })
     }
 }
-

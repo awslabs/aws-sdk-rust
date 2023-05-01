@@ -2,20 +2,21 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAddressBookInput  {
+pub struct DeleteAddressBookInput {
     /// <p>The ARN of the address book to delete.</p>
     #[doc(hidden)]
     pub address_book_arn: std::option::Option<std::string::String>,
 }
 impl DeleteAddressBookInput {
     /// <p>The ARN of the address book to delete.</p>
-    pub fn address_book_arn(&self) -> std::option::Option<& str> {
+    pub fn address_book_arn(&self) -> std::option::Option<&str> {
         self.address_book_arn.as_deref()
     }
 }
 impl DeleteAddressBookInput {
     /// Creates a new builder-style object to manufacture [`DeleteAddressBookInput`](crate::operation::delete_address_book::DeleteAddressBookInput).
-    pub fn builder() -> crate::operation::delete_address_book::builders::DeleteAddressBookInputBuilder {
+    pub fn builder(
+    ) -> crate::operation::delete_address_book::builders::DeleteAddressBookInputBuilder {
         crate::operation::delete_address_book::builders::DeleteAddressBookInputBuilder::default()
     }
 }
@@ -34,16 +35,20 @@ impl DeleteAddressBookInputBuilder {
     }
     /// <p>The ARN of the address book to delete.</p>
     pub fn set_address_book_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
-        self.address_book_arn = input; self
+        self.address_book_arn = input;
+        self
     }
     /// Consumes the builder and constructs a [`DeleteAddressBookInput`](crate::operation::delete_address_book::DeleteAddressBookInput).
-    pub fn build(self) -> Result<crate::operation::delete_address_book::DeleteAddressBookInput, aws_smithy_http::operation::error::BuildError> {
+    pub fn build(
+        self,
+    ) -> Result<
+        crate::operation::delete_address_book::DeleteAddressBookInput,
+        aws_smithy_http::operation::error::BuildError,
+    > {
         Ok(
             crate::operation::delete_address_book::DeleteAddressBookInput {
-                address_book_arn: self.address_book_arn
-                ,
-            }
+                address_book_arn: self.address_book_arn,
+            },
         )
     }
 }
-
